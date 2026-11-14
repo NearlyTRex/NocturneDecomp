@@ -15,7 +15,7 @@ permissions: {}
 jobs:
   check:
     name: Check
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -27,7 +27,7 @@ jobs:
 
   pending:
     name: Pending
-    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -38,7 +38,7 @@ jobs:
     name: Package (${{ matrix.preset }})
     needs: pending
     if: needs.pending.outputs.pending == 'true'
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     strategy:
@@ -171,7 +171,7 @@ jobs:
   release:
     name: Release
     needs: [check, package]
-    uses: NearlyTRex/Workflows/.github/workflows/release.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/release.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: write
     with:
