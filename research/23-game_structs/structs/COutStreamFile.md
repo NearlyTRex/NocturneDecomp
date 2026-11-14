@@ -14,5 +14,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|
-| `vtable` | `void*` | 0x0 | 0x0 | 0x0 |
+| `base` | `COutStream` | 0x0 | 0x0 | 0x0 |
 | `file` | `_FILE*` | 0x4 | 0x4 | 0x4 |

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
+; void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   argc
@@ -51,7 +51,7 @@
 section .text
 
     PUSH EBX                            ; 005032a0
-        ;   Label: core_main.c_FUN_005032a0
+        ;   Label: core_main.c_initializeGameSystems_FUN_005032a0
     PUSH ESI                            ; 005032a1
     PUSH EDI                            ; 005032a2
     PUSH EBP                            ; 005032a3

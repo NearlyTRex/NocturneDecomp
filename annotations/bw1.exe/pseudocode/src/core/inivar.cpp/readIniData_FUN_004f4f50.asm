@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x210]:1  local_210
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 00503303
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503303
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inivar_cpp_005e5906

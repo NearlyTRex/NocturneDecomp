@@ -15,7 +15,7 @@
 ;   core_game.cpp_FUN_004bda10 at 004bdaef
 ;   core_game.cpp_FUN_004bdfb0 at 004be351
 ;   core_game.cpp_FUN_004be8d0 at 004be966
-;   core_main.c_FUN_004e44e0 at 004e4517
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4517
 ;   core_podmain.cpp_FUN_005152e0 at 005152fb
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052ce9d
 ;   ... and 16 more

@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d8e83
-;   core_main.c_FUN_004e44e0 at 004e4c04
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4c04
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFileAttributesA_005b363c = 001b41ae

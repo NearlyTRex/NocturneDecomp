@@ -123,6 +123,7 @@
 #include "types/structs/SPlayer.h"
 #include "types/structs/SPlayerActionState.h"
 #include "types/structs/SPlayerInput.h"
+#include "types/structs/SPod3Header.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SPoseData.h"
 #include "types/structs/SProjectedVertex.h"

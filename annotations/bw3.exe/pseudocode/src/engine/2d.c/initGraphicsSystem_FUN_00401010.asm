@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x30]:1  local_30
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e45cc
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e45cc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vga_act_005b5004

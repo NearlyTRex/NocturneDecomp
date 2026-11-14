@@ -17,7 +17,7 @@
 ;   core_inv.cpp_FUN_004f7690 at 004f83f1
 ;   core_inv.cpp_FUN_004fae10 at 004fafd3
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fef05
-;   core_main.c_FUN_005032a0 at 00503845
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503845
 ;   ... and 22 more
 ;
 ; *****************************************************************************

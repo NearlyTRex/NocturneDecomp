@@ -299,7 +299,7 @@ LAB_00513493:
                 if (uVar9 == local_3a8) {
                   uVar7 = support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(&local_84);
                   param_1->dependency_records_offset = uVar7;
-                  param_1->total_file_size =
+                  param_1->audit_records_offset =
                        param_1->dependency_records_offset + param_1->dependency_count * 0x108;
                   uVar9 = local_3a8;
                   goto LAB_005133bd;
@@ -349,7 +349,7 @@ LAB_00513493:
                 ;
                 if (uVar5 == uVar9) {
                   iVar6 = param_1->file_count + -1;
-                  param_1->total_file_size =
+                  param_1->audit_records_offset =
                        param_1->directory_entries[iVar6].offset +
                        param_1->directory_entries[iVar6].size;
                   goto LAB_005133bd;

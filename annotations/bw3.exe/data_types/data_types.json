@@ -2661,6 +2661,10 @@
       "type":"struct"
     },
     {
+      "name":"SPod3Header",
+      "type":"struct"
+    },
+    {
       "name":"SPoseData",
       "type":"struct"
     },
@@ -29758,7 +29762,7 @@
         },
         {
           "len":4,
-          "name":"total_file_size",
+          "name":"audit_records_offset",
           "offset":1056,
           "type":"uint"
         },
@@ -43513,6 +43517,95 @@
       "importable":true,
       "len":52,
       "name":"SPlayerInput",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"POD3 header as the Blair Witch builds read it (0x120 bytes, CPodFile_mountFromFile, read at 005136fb); POD2-prefix compatible, unlike nocedit's SPod3Header. Version 300.",
+      "fields":[
+        {
+          "comment":"\"POD3\", compared byte by byte",
+          "len":4,
+          "name":"magic",
+          "offset":0,
+          "type":"char[4]"
+        },
+        {
+          "comment":"CRC-32/MPEG-2 of [0x8, EOF); BW never checks it",
+          "len":4,
+          "name":"checksum",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "comment":"strcpy to CPodFile.description",
+          "len":80,
+          "name":"description",
+          "offset":8,
+          "type":"char[80]"
+        },
+        {
+          "comment":"to CPodFile.file_count, 0..9999999",
+          "len":4,
+          "name":"file_count",
+          "offset":88,
+          "type":"int"
+        },
+        {
+          "comment":"to CPodFile.audit_count",
+          "len":4,
+          "name":"audit_count",
+          "offset":92,
+          "type":"int"
+        },
+        {
+          "comment":"to CPodFile.mount_priority",
+          "len":4,
+          "name":"mount_priority",
+          "offset":100,
+          "type":"int"
+        },
+        {
+          "comment":"strcpy to CPodFile.author_info",
+          "len":80,
+          "name":"author",
+          "offset":104,
+          "type":"char[80]"
+        },
+        {
+          "comment":"strcpy to CPodFile.copyright_info",
+          "len":80,
+          "name":"copyright",
+          "offset":184,
+          "type":"char[80]"
+        },
+        {
+          "comment":"absolute; seek target for the directory",
+          "len":4,
+          "name":"directory_offset",
+          "offset":264,
+          "type":"int"
+        },
+        {
+          "comment":"must lie in [file_count, file_count*256]",
+          "len":4,
+          "name":"name_table_size",
+          "offset":272,
+          "type":"uint"
+        },
+        {
+          "comment":"to CPodFile.dependency_count",
+          "len":4,
+          "name":"dependency_count",
+          "offset":276,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":288,
+      "name":"SPod3Header",
       "pack":false,
       "type":"struct"
     },

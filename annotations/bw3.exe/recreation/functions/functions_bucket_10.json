@@ -7543,14 +7543,24 @@
     "calls":[
       "005a4b74"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
     "method":"safeAcos",
     "name":"core_fire.cpp_safeAcos_FUN_00496c10",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7571,14 +7581,49 @@
       "00584450",
       "005a5cc1"
     ],
-    "conv":"unknown",
+    "cls":"CBulletHole",
+    "conv":"__cdecl",
     "instructions":188,
-    "method":"FUN_00497290",
-    "name":"core_fire.cpp_FUN_00497290",
-    "receiver":false,
+    "method":"init",
+    "name":"core_fire.cpp_CBulletHole_init_FUN_00497290",
+    "params":[
+      {
+        "name":"hit_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"surface_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hit_actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"decal_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7655,17 +7700,18 @@
       "005375c0",
       "005632a3"
     ],
-    "conv":"unknown",
+    "cls":"CFireball",
+    "conv":"__cdecl",
     "data_refs":[
       "005df9dc"
     ],
     "instructions":544,
-    "method":"FUN_00499690",
-    "name":"core_fire.cpp_FUN_00499690",
-    "receiver":false,
+    "method":"render",
+    "name":"core_fire.cpp_CFireball_render_FUN_00499690",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7677,17 +7723,18 @@
       "00509f30",
       "005a3120"
     ],
-    "conv":"unknown",
+    "cls":"CRock",
+    "conv":"__cdecl",
     "data_refs":[
       "005df9b8"
     ],
     "instructions":47,
-    "method":"FUN_0049a010",
-    "name":"core_fire.cpp_FUN_0049a010",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CRock_process_FUN_0049a010",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7703,17 +7750,18 @@
       "0046d080",
       "005375c0"
     ],
-    "conv":"unknown",
+    "cls":"CRock",
+    "conv":"__cdecl",
     "data_refs":[
       "005df9bc"
     ],
     "instructions":59,
-    "method":"FUN_0049a090",
-    "name":"core_fire.cpp_FUN_0049a090",
-    "receiver":false,
+    "method":"render",
+    "name":"core_fire.cpp_CRock_render_FUN_0049a090",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7730,19 +7778,12 @@
       "0045b9b0",
       "005372f0"
     ],
+    "cls":"CMuzzleFlash",
     "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_0049a390",
-    "name":"core_fire.cpp_FUN_0049a390",
+    "method":"init",
+    "name":"core_fire.cpp_CMuzzleFlash_init_FUN_0049a390",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMuzzleFlash",
-          "ptr":1
-        }
-      },
       {
         "name":"position",
         "type":{
@@ -7760,7 +7801,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -7793,17 +7834,28 @@
   },
   {
     "addr":"0049ac90",
-    "conv":"unknown",
+    "cls":"CGlassParticle",
+    "conv":"__cdecl",
     "data_refs":[
       "005df980"
     ],
     "instructions":2,
-    "method":"FUN_0049ac90",
-    "name":"core_fire.cpp_FUN_0049ac90",
-    "receiver":false,
+    "method":"onCollision",
+    "name":"core_fire.cpp_CGlassParticle_onCollision_FUN_0049ac90",
+    "params":[
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7869,14 +7921,15 @@
       "00556be0",
       "005609d0"
     ],
-    "conv":"unknown",
+    "cls":"CToss",
+    "conv":"__cdecl",
     "instructions":356,
-    "method":"FUN_0049d090",
-    "name":"core_fire.cpp_FUN_0049d090",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CToss_process_FUN_0049d090",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -7892,14 +7945,33 @@
       "0049d980",
       "0053bc80"
     ],
-    "conv":"unknown",
+    "cls":"CCrater",
+    "conv":"__cdecl",
     "instructions":271,
-    "method":"FUN_0049d590",
-    "name":"core_fire.cpp_FUN_0049d590",
-    "receiver":false,
+    "method":"activate",
+    "name":"core_fire.cpp_CCrater_activate_FUN_0049d590",
+    "params":[
+      {
+        "name":"center_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8086,14 +8158,57 @@
       "00560a70",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":259,
-    "method":"FUN_004a2090",
-    "name":"core_fire.cpp_FUN_004a2090",
-    "receiver":false,
+    "method":"createBulletImpact",
+    "name":"core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090",
+    "params":[
+      {
+        "name":"impact_pos",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"surface_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ground_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"hit_actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"decal_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8184,17 +8299,60 @@
     "callers":[
       "005353e0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "data_refs":[
       "0056e690"
     ],
     "instructions":143,
-    "method":"FUN_004a3790",
-    "name":"core_fire.cpp_FUN_004a3790",
-    "receiver":false,
+    "method":"getExplosionEffect",
+    "name":"core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_force_dir",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_gore_multiplier",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_explosion_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -16270,14 +16428,25 @@
       "004fb210",
       "005a30b6"
     ],
-    "conv":"unknown",
+    "cls":"CSkeleton",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_00547b90",
-    "name":"core_skeleton.cpp_FUN_00547b90",
-    "receiver":false,
+    "method":"free",
+    "name":"core_skeleton.cpp_CSkeleton_free_FUN_00547b90",
+    "params":[
+      {
+        "name":"free_motion_list",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -16748,21 +16917,12 @@
       "0040bba0",
       "0054eae0"
     ],
+    "cls":"CDeformableModelInstance",
     "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_0054e690",
-    "name":"core_skeleton.cpp_FUN_0054e690",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDeformableModelInstance",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"clearAllTextureSetIndices",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0054e690",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -16783,8 +16943,8 @@
     ],
     "conv":"__cdecl",
     "instructions":59,
-    "method":"FUN_00550310",
-    "name":"core_skeleton.cpp_FUN_00550310",
+    "method":"getMemoryStats",
+    "name":"core_skeleton.cpp_getMemoryStats_FUN_00550310",
     "params":[
       {
         "name":"output_buffer",

@@ -9,7 +9,7 @@
 ; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e4536
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4536
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44

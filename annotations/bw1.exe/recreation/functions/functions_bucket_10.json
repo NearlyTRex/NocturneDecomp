@@ -9081,14 +9081,15 @@
     "calls":[
       "00408b40"
     ],
-    "conv":"unknown",
+    "cls":"CBulletHole",
+    "conv":"__cdecl",
     "instructions":38,
-    "method":"FUN_004ac690",
-    "name":"core_fire.cpp_FUN_004ac690",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CBulletHole_process_FUN_004ac690",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9338,17 +9339,18 @@
     "calls":[
       "00532250"
     ],
-    "conv":"unknown",
+    "cls":"CShell",
+    "conv":"__cdecl",
     "data_refs":[
       "00600008"
     ],
     "instructions":56,
-    "method":"FUN_004b4190",
-    "name":"core_fire.cpp_FUN_004b4190",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CShell_process_FUN_004b4190",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -18329,15 +18331,50 @@
     "calls":[
       "005b5080"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModel",
+    "conv":"__stack4_esi",
     "instructions":120,
-    "method":"FUN_00563e90",
-    "name":"core_skeleton.cpp_FUN_00563e90",
-    "receiver":false,
+    "method":"skinSingleVertex",
+    "name":"core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_00563e90",
+    "params":[
+      {
+        "name":"lod_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_matrices",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_pos",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false
@@ -18621,14 +18658,41 @@
     "calls":[
       "0056a4b0"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":50,
-    "method":"FUN_0056a410",
-    "name":"core_skeleton.cpp_FUN_0056a410",
-    "receiver":false,
+    "method":"accumulateScaledRootMotion",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0056a410",
+    "params":[
+      {
+        "name":"start_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18683,18 +18747,18 @@
     "name":"core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_0056af90",
     "params":[
       {
-        "name":"param_2",
+        "name":"color",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"render_flags",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -18721,8 +18785,8 @@
     ],
     "conv":"__cdecl",
     "instructions":18,
-    "method":"FUN_0056b610",
-    "name":"core_skeleton.cpp_FUN_0056b610",
+    "method":"freeAllModels",
+    "name":"core_skeleton.cpp_freeAllModels_FUN_0056b610",
     "receiver":false,
     "ret":{
       "kind":"builtin",

@@ -47,8 +47,8 @@
 ; Called Functions:
 ;   BringWindowToTop
 ;   core_main.c_enterMainGameMenu_FUN_004e44d0
-;   core_main.c_FUN_004e44e0
 ;   core_main.c_FUN_004e4c70
+;   core_main.c_initializeGameSystems_FUN_004e44e0
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_stdlib.c_srand_FUN_005a35f0
 ;   ExitProcess
@@ -267,8 +267,8 @@ section .text
     MOV [0x02d21b8c],EAX                ; 005812bf | DAT_02d21b8c
     MOV EAX,[0x02d22818]                ; 005812c4 | DAT_02d22818
     PUSH EAX                            ; 005812c9
-    CALL core_main.c_FUN_004e44e0       ; 005812ca
-        ;   XREF to: 004e44e0 (UNCONDITIONAL_CALL)  ; void core_main.c_FUN_004e44e0(int argc, char * * argv)
+    CALL core_main.c_initializeGameSystems_FUN_004e44e0 ; 005812ca
+        ;   XREF to: 004e44e0 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_004e44e0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005812cf
     CALL core_main.c_enterMainGameMenu_FUN_004e44d0 ; 005812d2
         ;   XREF to: 004e44d0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004e44d0()

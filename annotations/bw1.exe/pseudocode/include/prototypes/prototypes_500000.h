@@ -72,7 +72,7 @@ void __cdecl core_main_c_staticInit_FUN_00503070(void);
 void core_main_c_FUN_005030e0(char *param_1);
 void core_main_c_FUN_005031c0(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_00503290(void);
-void __cdecl core_main_c_FUN_005032a0(int argc,char **argv);
+void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv);
 void core_main_c_FUN_00503a30(void);
 void __cdecl core_manpuz_cpp_staticInit_FUN_00503ac0(void);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10(void);

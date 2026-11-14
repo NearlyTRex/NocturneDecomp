@@ -19,5 +19,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `filename` | `char[256]` | 0x28 | 0x28 |
 | `original_timestamp` | `int` | 0x128 | 0x128 |
 | `original_file_size` | `int` | 0x12c | 0x12c |
-| `file_offset` | `int` | 0x130 | 0x130 |
-| `compressed_size` | `int` | 0x134 | 0x134 |
+| `new_timestamp` | `int` | 0x130 | 0x130 |
+| `new_file_size` | `int` | 0x134 | 0x134 |

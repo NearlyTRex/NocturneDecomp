@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f67
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004ccc6d
 ;   core_inv.cpp_FUN_004fae10 at 004fafb9
-;   core_main.c_FUN_005032a0 at 00503856
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503856
 ;   ... and 27 more
 ;
 ; *****************************************************************************

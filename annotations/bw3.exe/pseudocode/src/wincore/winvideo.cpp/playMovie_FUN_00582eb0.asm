@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e4a39
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4a39
 ;
 ; Referenced Globals:
 ;   void* PTR_mciGetErrorStringA_005b3444 = 001b38d8

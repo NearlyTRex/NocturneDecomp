@@ -21,9 +21,9 @@ void FUN_004e4400(void);
 // Address: 004e44d0
 int __cdecl enterMainGameMenu(void);
 
-// Original: core_main.c_FUN_004e44e0
+// Original: core_main.c_initializeGameSystems_FUN_004e44e0
 // Address: 004e44e0
-void __cdecl FUN_004e44e0(int argc,char **argv);
+void __cdecl initializeGameSystems(int argc,char **argv);
 
 // Original: core_main.c_FUN_004e4c70
 // Address: 004e4c70

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e45d1
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e45d1
 ;
 ; Referenced Globals:
 ;   void* PTR_timeBeginPeriod_005b3450 = 001b3912

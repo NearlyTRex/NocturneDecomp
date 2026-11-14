@@ -105,7 +105,7 @@ LAB_004bd3c3:
         local_44 = g_AuditRecordCount;
         _fseek(file,0,0);
         _fwrite(&local_a0,sizeof(SPod2Header),1,file);
-        _fseek(file,local_9d8.total_file_size,0);
+        _fseek(file,local_9d8.audit_records_offset,0);
         _fwrite(g_AuditRecordsArray,0x138,g_AuditRecordCount,file);
         g_AuditRecordCount = 0;
         if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {

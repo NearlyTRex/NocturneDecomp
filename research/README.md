@@ -776,7 +776,7 @@ they are mounted and searched, nocedit's builder, and every shipped POD checked 
 
 | File | Description |
 |------|-------------|
-| `README.md` | Index, key facts, Ghidra corrections, open questions |
+| `README.md` | Index, key facts, the POD types, open questions |
 | `formats.md` | Every layout with its read sites; CRC-32/MPEG-2 and its ranges; audit and dependency records |
 | `mounting.md` | `pod.ini`, priority and dependency ordering, lookup precedence per build, reading, checksums, errors |
 | `editor.md` | nocedit's POD tools: the POD2 builder, response files, audit trail, mount management |

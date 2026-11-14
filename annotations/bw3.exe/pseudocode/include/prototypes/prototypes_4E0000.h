@@ -75,7 +75,7 @@ void __cdecl core_main_c_staticInit_FUN_004e42c0(void);
 void core_main_c_FUN_004e4330(char *param_1);
 void core_main_c_FUN_004e4400(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004e44d0(void);
-void __cdecl core_main_c_FUN_004e44e0(int argc,char **argv);
+void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv);
 void core_main_c_FUN_004e4c70(void);
 undefined8 core_main_c_FUN_004e4d00(void);
 void core_main_c_FUN_004e4d80(void);

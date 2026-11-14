@@ -16,7 +16,7 @@
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4946
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddd9d
 ;   core_inv.cpp_FUN_004da880 at 004db0e2
-;   core_main.c_FUN_004e44e0 at 004e4a85
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4a85
 ;   core_menu.cpp_FUN_004e7860 at 004e78d8
 ;   ... and 20 more
 ;

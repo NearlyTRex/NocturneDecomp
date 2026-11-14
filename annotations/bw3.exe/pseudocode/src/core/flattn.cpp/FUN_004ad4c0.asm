@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e453e
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e453e
 ;
 ; *****************************************************************************
 

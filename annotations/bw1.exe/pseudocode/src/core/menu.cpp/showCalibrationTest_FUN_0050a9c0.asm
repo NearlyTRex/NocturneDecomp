@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_005032a0 at 00503a24
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503a24
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050b3e9
 ;
 ; Referenced Globals:

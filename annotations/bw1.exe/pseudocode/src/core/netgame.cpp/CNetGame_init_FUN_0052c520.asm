@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 00503986
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503986
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_netlog_txt_005eb66f

@@ -228,7 +228,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
             if ((local_30->_flag & 0x20) == 0) {
               uVar5 = _ftell(local_30);
               this_ptr->dependency_records_offset = uVar5;
-              this_ptr->total_file_size =
+              this_ptr->audit_records_offset =
                    this_ptr->dependency_records_offset + this_ptr->dependency_count * 0x108;
               size = local_380;
               goto LAB_0051a22e;
@@ -276,7 +276,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
       }
       _fread(this_ptr->file_data_buffer,size,1,local_30);
       iVar2 = this_ptr->file_count + -1;
-      this_ptr->total_file_size =
+      this_ptr->audit_records_offset =
            this_ptr->directory_entries[iVar2].offset + this_ptr->directory_entries[iVar2].size;
       goto LAB_0051a22e;
     }

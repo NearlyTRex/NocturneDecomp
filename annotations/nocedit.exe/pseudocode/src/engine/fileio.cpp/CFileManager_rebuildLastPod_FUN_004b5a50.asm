@@ -471,8 +471,8 @@ section .text
     LEA EDI,[ESP + 0xf90]               ; 004b5e66
     MOV ESI,0x2d12990                   ; 004b5e6d | g_WorkingAuditRecord
     ADD EAX,EDX                         ; 004b5e72
-    MOV dword ptr [0x02d12ac0],EBX      ; 004b5e74 | g_WorkingAuditRecord.file_offset
-    MOV dword ptr [0x02d12ac4],EBX      ; 004b5e7a | g_WorkingAuditRecord.compressed_size
+    MOV dword ptr [0x02d12ac0],EBX      ; 004b5e74 | g_WorkingAuditRecord.new_timestamp
+    MOV dword ptr [0x02d12ac4],EBX      ; 004b5e7a | g_WorkingAuditRecord.new_file_size
     MOV EDX,dword ptr [EAX + 0xc]       ; 004b5e80
     MOV EAX,dword ptr [EAX + 0x4]       ; 004b5e83
     MOV dword ptr [0x02d12ab8],EDX      ; 004b5e86 | g_WorkingAuditRecord.original_timestamp
@@ -1100,10 +1100,10 @@ section .text
         ;   Label: LAB_004b6654
     MOV EAX,dword ptr [EBP + 0xc]       ; 004b6655
     MOV ECX,dword ptr [ESP + 0x181c]    ; 004b6658
-    MOV [0x02d12ac0],EAX                ; 004b665f | g_WorkingAuditRecord.file_offset
+    MOV [0x02d12ac0],EAX                ; 004b665f | g_WorkingAuditRecord.new_timestamp
     MOV EAX,dword ptr [EBP + 0x4]       ; 004b6664
     PUSH ECX                            ; 004b6667
-    MOV [0x02d12ac4],EAX                ; 004b6668 | g_WorkingAuditRecord.compressed_size
+    MOV [0x02d12ac4],EAX                ; 004b6668 | g_WorkingAuditRecord.new_file_size
     LEA EAX,[ESP + 0x4]                 ; 004b666d
     PUSH EAX                            ; 004b6671
     CALL engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140 ; 004b6672

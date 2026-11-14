@@ -14,7 +14,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|
-| `vtable` | `void*` | 0x0 | 0x0 | 0x0 |
+| `base` | `CPuzzle` | 0x0 | 0x0 | 0x0 |
 | `background` | `CAlphaBitmap` | 0x4 | 0x4 | 0x4 |
 | `cursor_index` | `int` | 0x18 | 0x18 | 0x18 |
 | `button_count` | `int` | 0x1c | 0x1c | 0x1c |

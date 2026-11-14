@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e4b04
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4b04
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wav_005d512f

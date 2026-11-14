@@ -20,7 +20,7 @@
 ;   core_game.cpp_FUN_004d77d0 at 004d79ad
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fef5d
 ;   core_main.c_FUN_005031c0 at 00503207
-;   core_main.c_FUN_005032a0 at 005038a6
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 005038a6
 ;   core_menu.cpp_FUN_0050b470 at 0050b791
 ;   core_menu.cpp_FUN_0050ba70 at 0050c2fa
 ;   ... and 28 more

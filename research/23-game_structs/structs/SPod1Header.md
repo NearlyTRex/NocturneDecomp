@@ -14,4 +14,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne |
 |---|---|---:|---:|
 | `file_count` | `int` | 0x0 | 0x0 |
-| `description` | `char[80]` | 0x4 | 0x4 |
+| `description` | `char[76]` | 0x4 | 0x4 |
+| `checksum` | `uint` | 0x50 | 0x50 |

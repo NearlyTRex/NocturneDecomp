@@ -7,7 +7,7 @@
 ; XREF[7]:
 ;   core_game.cpp_CGame_setGameRes_FUN_004b7de0 at 004b7e0f
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f0b
-;   core_main.c_FUN_004e44e0 at 004e45e7
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e45e7
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040103d
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_0057a2f0 at 0057a3b1
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_0057a0e0 at 0057a244

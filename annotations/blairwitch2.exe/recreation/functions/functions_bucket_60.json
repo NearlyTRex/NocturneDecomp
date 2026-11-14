@@ -8916,14 +8916,57 @@
       "0040cf60",
       "00510e00"
     ],
-    "conv":"unknown",
+    "cls":"CGlassParticle",
+    "conv":"__cdecl",
     "instructions":284,
-    "method":"FUN_00496c60",
-    "name":"core_fire.cpp_FUN_00496c60",
-    "receiver":false,
+    "method":"init",
+    "name":"core_fire.cpp_CGlassParticle_init_FUN_00496c60",
+    "params":[
+      {
+        "name":"triangle_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"STriangleVertices",
+          "ptr":1
+        }
+      },
+      {
+        "name":"uv_u_per_vertex",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"uv_v_per_vertex",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lifetime",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -18023,14 +18066,57 @@
       "00593c60",
       "00593df0"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":444,
-    "method":"FUN_00545a60",
-    "name":"core_skeleton.cpp_FUN_00545a60",
-    "receiver":false,
+    "method":"blendMotion",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
+    "params":[
+      {
+        "name":"target_motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"target_frame_number",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"callback_func",
+        "type":{
+          "kind":"funcdef",
+          "name":"CDeformableModel_MotionBlendWeightFunc",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",

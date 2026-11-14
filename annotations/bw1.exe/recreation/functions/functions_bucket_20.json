@@ -10967,14 +10967,14 @@
       "00468950",
       "005bfb40"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
     "method":"loadLeafAssets",
     "name":"core_fire.cpp_loadLeafAssets_FUN_004af120",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -11407,14 +11407,49 @@
       "00559310",
       "005c1d04"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":570,
-    "method":"FUN_004b6420",
-    "name":"core_fire.cpp_FUN_004b6420",
-    "receiver":false,
+    "method":"traceLaser",
+    "name":"core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420",
+    "params":[
+      {
+        "name":"origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"laser_info",
+        "type":{
+          "kind":"struct",
+          "name":"SLaserInfo",
+          "ptr":0
+        }
+      },
+      {
+        "name":"recursion_depth",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -14474,8 +14509,8 @@
     ],
     "conv":"__cdecl",
     "instructions":622,
-    "method":"FUN_005032a0",
-    "name":"core_main.c_FUN_005032a0",
+    "method":"initializeGameSystems",
+    "name":"core_main.c_initializeGameSystems_FUN_005032a0",
     "params":[
       {
         "name":"argc",
@@ -18990,14 +19025,41 @@
       "005b5930",
       "005b6270"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModel",
+    "conv":"__cdecl",
     "instructions":160,
-    "method":"FUN_00564b20",
-    "name":"core_skeleton.cpp_FUN_00564b20",
-    "receiver":false,
+    "method":"renderSkeleton",
+    "name":"core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20",
+    "params":[
+      {
+        "name":"color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_matrices",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"render_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -19200,14 +19262,41 @@
       "005b7750",
       "005b77b0"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":683,
-    "method":"FUN_00567620",
-    "name":"core_skeleton.cpp_FUN_00567620",
-    "receiver":false,
+    "method":"updateMotion",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620",
+    "params":[
+      {
+        "name":"motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frame_number",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -19321,19 +19410,12 @@
       "005635a0",
       "00569f30"
     ],
+    "cls":"CDeformableModelInstance",
     "conv":"__cdecl",
     "instructions":159,
-    "method":"FUN_0056a220",
-    "name":"core_skeleton.cpp_FUN_0056a220",
+    "method":"computeBoneTransformsForFrame",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0056a220",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDeformableModelInstance",
-          "ptr":1
-        }
-      },
       {
         "name":"motion_index",
         "type":{
@@ -19359,7 +19441,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19380,15 +19462,25 @@
       "00564e40",
       "005c04e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":85,
-    "method":"FUN_0056b520",
-    "name":"core_skeleton.cpp_FUN_0056b520",
+    "method":"getDeformableModel",
+    "name":"core_skeleton.cpp_getDeformableModel_FUN_0056b520",
+    "params":[
+      {
+        "name":"model_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CDeformableModel",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false

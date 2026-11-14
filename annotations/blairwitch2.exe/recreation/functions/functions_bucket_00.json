@@ -8856,14 +8856,14 @@
       "0044fd70",
       "005b7790"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
-    "method":"FUN_00496780",
-    "name":"core_fire.cpp_FUN_00496780",
+    "method":"loadLeafAssets",
+    "name":"core_fire.cpp_loadLeafAssets_FUN_00496780",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -18331,14 +18331,25 @@
       "005027b0",
       "005b7fce"
     ],
-    "conv":"unknown",
+    "cls":"CSkeleton",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_00540980",
-    "name":"core_skeleton.cpp_FUN_00540980",
-    "receiver":false,
+    "method":"free",
+    "name":"core_skeleton.cpp_CSkeleton_free_FUN_00540980",
+    "params":[
+      {
+        "name":"free_motion_list",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18806,14 +18817,41 @@
       "00593c00",
       "00593c60"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":684,
-    "method":"FUN_00544f80",
-    "name":"core_skeleton.cpp_FUN_00544f80",
-    "receiver":false,
+    "method":"updateMotion",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
+    "params":[
+      {
+        "name":"motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frame_number",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18922,19 +18960,12 @@
       "00540f30",
       "00547890"
     ],
+    "cls":"CDeformableModelInstance",
     "conv":"__cdecl",
     "instructions":159,
-    "method":"FUN_00547b80",
-    "name":"core_skeleton.cpp_FUN_00547b80",
+    "method":"computeBoneTransformsForFrame",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDeformableModelInstance",
-          "ptr":1
-        }
-      },
       {
         "name":"motion_index",
         "type":{
@@ -18960,7 +18991,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -18981,15 +19012,25 @@
       "005427c0",
       "005b8130"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":87,
-    "method":"FUN_00548e80",
-    "name":"core_skeleton.cpp_FUN_00548e80",
+    "method":"getDeformableModel",
+    "name":"core_skeleton.cpp_getDeformableModel_FUN_00548e80",
+    "params":[
+      {
+        "name":"model_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CDeformableModel",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false
@@ -19007,8 +19048,8 @@
     ],
     "conv":"__cdecl",
     "instructions":18,
-    "method":"FUN_00548f80",
-    "name":"core_skeleton.cpp_FUN_00548f80",
+    "method":"freeAllModels",
+    "name":"core_skeleton.cpp_freeAllModels_FUN_00548f80",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -19026,14 +19067,14 @@
     "calls":[
       "005b77c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_00549180",
-    "name":"core_skeleton.cpp_FUN_00549180",
+    "method":"clearModelAndSkeletonInUseFlags",
+    "name":"core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",

@@ -8730,14 +8730,14 @@
       "004625f0",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
     "method":"loadLeafAssets",
     "name":"core_fire.cpp_loadLeafAssets_FUN_0049a170",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8824,8 +8824,8 @@
     ],
     "conv":"__cdecl",
     "instructions":15,
-    "method":"loadLightningBoltAssets",
-    "name":"core_fire.cpp_loadLightningBoltAssets_FUN_0049e170",
+    "method":"loadGunFlameAssets",
+    "name":"core_fire.cpp_loadGunFlameAssets_FUN_0049e170",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -8840,14 +8840,73 @@
     "callers":[
       "004a3c50"
     ],
-    "conv":"unknown",
+    "cls":"CLightningBolt",
+    "conv":"__cdecl",
     "instructions":38,
-    "method":"FUN_0049f470",
-    "name":"core_fire.cpp_FUN_0049f470",
-    "receiver":false,
+    "method":"activateDirectional",
+    "name":"core_fire.cpp_CLightningBolt_activateDirectional_FUN_0049f470",
+    "params":[
+      {
+        "name":"start_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_spread",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"lifetime",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"render_alpha",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8886,14 +8945,15 @@
     "callers":[
       "004a1480"
     ],
-    "conv":"unknown",
+    "cls":"CStormEffect",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_004a0470",
-    "name":"core_fire.cpp_FUN_004a0470",
-    "receiver":false,
+    "method":"reset",
+    "name":"core_fire.cpp_CStormEffect_reset_FUN_004a0470",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8908,14 +8968,15 @@
       "00556be0",
       "0057d050"
     ],
-    "conv":"unknown",
+    "cls":"CStormEffect",
+    "conv":"__cdecl",
     "instructions":37,
-    "method":"FUN_004a0570",
-    "name":"core_fire.cpp_FUN_004a0570",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CStormEffect_process_FUN_004a0570",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8955,17 +9016,18 @@
     "calls":[
       "00509f30"
     ],
-    "conv":"unknown",
+    "cls":"CShell",
+    "conv":"__cdecl",
     "data_refs":[
       "005df958"
     ],
     "instructions":56,
-    "method":"FUN_004a0af0",
-    "name":"core_fire.cpp_FUN_004a0af0",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CShell_process_FUN_004a0af0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8995,14 +9057,49 @@
       "00497ac0",
       "00560a70"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":120,
-    "method":"FUN_004a25f0",
-    "name":"core_fire.cpp_FUN_004a25f0",
-    "receiver":false,
+    "method":"createStake",
+    "name":"core_fire.cpp_CFireEffect_createStake_FUN_004a25f0",
+    "params":[
+      {
+        "name":"impact_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"surface_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ground_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9357,14 +9454,25 @@
     "calls":[
       "0046e5e0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_004a42f0",
-    "name":"core_fire.cpp_FUN_004a42f0",
-    "receiver":false,
+    "method":"preloadExplosionStyle",
+    "name":"core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0",
+    "params":[
+      {
+        "name":"explosion_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -16881,7 +16989,7 @@
   },
   {
     "addr":"0054bef0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "004321ac",
       "004c71ee",
@@ -16927,12 +17035,54 @@
       "0058ec74"
     ],
     "instructions":2,
-    "method":"FUN_0054bef0",
-    "name":"core_skeleton.cpp_FUN_0054bef0",
+    "method":"blendWeightCallback",
+    "name":"core_skeleton.cpp_blendWeightCallback_FUN_0054bef0",
+    "params":[
+      {
+        "name":"current_bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"target_bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"hierarchy_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"instance",
+        "type":{
+          "kind":"class",
+          "name":"CDeformableModelInstance",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -17142,14 +17292,15 @@
       "00442a20",
       "0054eae0"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_0054e670",
-    "name":"core_skeleton.cpp_FUN_0054e670",
-    "receiver":false,
+    "method":"showAllParts",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0054e670",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -17255,14 +17406,56 @@
       "0054fcc0",
       "00585b20"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":141,
-    "method":"FUN_0054fef0",
-    "name":"core_skeleton.cpp_FUN_0054fef0",
+    "method":"blendBoneTransformData",
+    "name":"core_skeleton.cpp_blendBoneTransformData_FUN_0054fef0",
+    "params":[
+      {
+        "name":"result_pose",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bone_data_out",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bone_data_in",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      },
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"instance_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDeformableModelInstance",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -17277,14 +17470,14 @@
       "00547b90",
       "00548370"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_005503f0",
-    "name":"core_skeleton.cpp_FUN_005503f0",
+    "method":"freeUnusedModelsAndSkeletons",
+    "name":"core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",

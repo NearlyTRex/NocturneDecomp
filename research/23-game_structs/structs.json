@@ -1744,8 +1744,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CPuzzle",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -8361,8 +8361,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CPuzzle",
      "offsets": {
       "bw1.exe": 0,
       "bw3.exe": 0
@@ -11950,7 +11950,7 @@
     },
     {
      "name": "bone_update_mode",
-     "type": "int",
+     "type": "EBoneUpdateMode",
      "offsets": {
       "nocedit.exe": 8784,
       "nocturne.exe": 8784,
@@ -13920,7 +13920,7 @@
     },
     {
      "name": "shadow_bounds_mode",
-     "type": "int",
+     "type": "EShadowBoundsMode",
      "offsets": {
       "nocedit.exe": 7352,
       "nocturne.exe": 7352,
@@ -18127,7 +18127,7 @@
    "fields": [
     {
      "name": "checkbox_mode",
-     "type": "int",
+     "type": "ECheckboxMode",
      "offsets": {
       "nocedit.exe": 0,
       "nocturne.exe": 0,
@@ -19336,8 +19336,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CPuzzle",
      "offsets": {
       "blairwitch2.exe": 0
      }
@@ -27050,6 +27050,40 @@
     }
    ]
   },
+  "CInStream": {
+   "category": "/Nocturne/Class/Game",
+   "builds": {
+    "bw1.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "vtable",
+     "type": "void*",
+     "offsets": {
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
+     }
+    }
+   ]
+  },
   "CInStreamFile": {
    "category": "/Nocturne/Class/Game",
    "builds": {
@@ -27074,8 +27108,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CInStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -27197,8 +27231,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CInStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -27267,8 +27301,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "CInStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -34524,6 +34558,40 @@
     }
    ]
   },
+  "COutStream": {
+   "category": "/Nocturne/Class/Game",
+   "builds": {
+    "bw1.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "vtable",
+     "type": "void*",
+     "offsets": {
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
+     }
+    }
+   ]
+  },
   "COutStreamDebug": {
    "category": "/Nocturne/Class/Game",
    "builds": {
@@ -34548,8 +34616,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "COutStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -34582,8 +34650,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "COutStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -34625,8 +34693,8 @@
    },
    "fields": [
     {
-     "name": "vtable",
-     "type": "void*",
+     "name": "base",
+     "type": "COutStream",
      "offsets": {
       "bw1.exe": 0,
       "blairwitch2.exe": 0,
@@ -36626,7 +36694,7 @@
      }
     },
     {
-     "name": "file_offset",
+     "name": "new_timestamp",
      "type": "int",
      "offsets": {
       "nocedit.exe": 304,
@@ -36634,7 +36702,7 @@
      }
     },
     {
-     "name": "compressed_size",
+     "name": "new_file_size",
      "type": "int",
      "offsets": {
       "nocedit.exe": 308,
@@ -36933,7 +37001,7 @@
      }
     },
     {
-     "name": "total_file_size",
+     "name": "audit_records_offset",
      "type": "uint",
      "offsets": {
       "nocedit.exe": 1056,
@@ -37671,6 +37739,40 @@
      "type": "float",
      "offsets": {
       "bw3.exe": 136260
+     }
+    }
+   ]
+  },
+  "CPuzzle": {
+   "category": "/Nocturne/Class/Game",
+   "builds": {
+    "bw1.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 4,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "vtable",
+     "type": "void*",
+     "offsets": {
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
      }
     }
    ]
@@ -40797,6 +40899,24 @@
      "state": "laid",
      "rtti": 28,
      "gaps": []
+    },
+    "bw1.exe": {
+     "size": 28,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 28,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 28,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
     }
    },
    "fields": [
@@ -40805,7 +40925,10 @@
      "type": "CVector3f",
      "offsets": {
       "nocedit.exe": 0,
-      "nocturne.exe": 0
+      "nocturne.exe": 0,
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
      }
     },
     {
@@ -40813,7 +40936,10 @@
      "type": "UOrientationVector",
      "offsets": {
       "nocedit.exe": 12,
-      "nocturne.exe": 12
+      "nocturne.exe": 12,
+      "bw1.exe": 12,
+      "blairwitch2.exe": 12,
+      "bw3.exe": 12
      }
     },
     {
@@ -40821,7 +40947,10 @@
      "type": "float",
      "offsets": {
       "nocedit.exe": 24,
-      "nocturne.exe": 24
+      "nocturne.exe": 24,
+      "bw1.exe": 24,
+      "blairwitch2.exe": 24,
+      "bw3.exe": 24
      }
     }
    ]
@@ -42440,6 +42569,40 @@
      "type": "CWeapon",
      "offsets": {
       "bw3.exe": 0
+     }
+    }
+   ]
+  },
+  "CStormEffect": {
+   "category": "/Nocturne/Class/Game",
+   "builds": {
+    "bw3.exe": {
+     "size": 12,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "time_remaining",
+     "type": "float",
+     "offsets": {
+      "bw3.exe": 0
+     }
+    },
+    {
+     "name": "saved_weather_type",
+     "type": "int",
+     "offsets": {
+      "bw3.exe": 4
+     }
+    },
+    {
+     "name": "sfx_handle",
+     "type": "uint",
+     "offsets": {
+      "bw3.exe": 8
      }
     }
    ]
@@ -58170,6 +58333,24 @@
      "state": "laid",
      "rtti": null,
      "gaps": []
+    },
+    "bw1.exe": {
+     "size": 44,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 44,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 44,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
     }
    },
    "fields": [
@@ -58178,7 +58359,10 @@
      "type": "float*[8]",
      "offsets": {
       "nocedit.exe": 0,
-      "nocturne.exe": 0
+      "nocturne.exe": 0,
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
      }
     },
     {
@@ -58186,7 +58370,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 32,
-      "nocturne.exe": 32
+      "nocturne.exe": 32,
+      "bw1.exe": 32,
+      "blairwitch2.exe": 32,
+      "bw3.exe": 32
      }
     },
     {
@@ -58194,7 +58381,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 36,
-      "nocturne.exe": 36
+      "nocturne.exe": 36,
+      "bw1.exe": 36,
+      "blairwitch2.exe": 36,
+      "bw3.exe": 36
      }
     },
     {
@@ -58202,7 +58392,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 40,
-      "nocturne.exe": 40
+      "nocturne.exe": 40,
+      "bw1.exe": 40,
+      "blairwitch2.exe": 40,
+      "bw3.exe": 40
      }
     }
    ]
@@ -62775,10 +62968,18 @@
     },
     {
      "name": "description",
-     "type": "char[80]",
+     "type": "char[76]",
      "offsets": {
       "nocedit.exe": 4,
       "nocturne.exe": 4
+     }
+    },
+    {
+     "name": "checksum",
+     "type": "uint",
+     "offsets": {
+      "nocedit.exe": 80,
+      "nocturne.exe": 80
      }
     }
    ]
@@ -62848,6 +63049,63 @@
      "state": "laid",
      "rtti": null,
      "gaps": []
+    },
+    "bw1.exe": {
+     "size": 288,
+     "state": "laid",
+     "rtti": null,
+     "gaps": [
+      [
+       96,
+       4
+      ],
+      [
+       268,
+       4
+      ],
+      [
+       280,
+       8
+      ]
+     ]
+    },
+    "blairwitch2.exe": {
+     "size": 288,
+     "state": "laid",
+     "rtti": null,
+     "gaps": [
+      [
+       96,
+       4
+      ],
+      [
+       268,
+       4
+      ],
+      [
+       280,
+       8
+      ]
+     ]
+    },
+    "bw3.exe": {
+     "size": 288,
+     "state": "laid",
+     "rtti": null,
+     "gaps": [
+      [
+       96,
+       4
+      ],
+      [
+       268,
+       4
+      ],
+      [
+       280,
+       8
+      ]
+     ]
     }
    },
    "fields": [
@@ -62864,7 +63122,10 @@
      "type": "char[84]",
      "offsets": {
       "nocedit.exe": 8,
-      "nocturne.exe": 8
+      "nocturne.exe": 8,
+      "bw1.exe": 8,
+      "blairwitch2.exe": 8,
+      "bw3.exe": 8
      }
     },
     {
@@ -62872,7 +63133,10 @@
      "type": "char[80]",
      "offsets": {
       "nocedit.exe": 92,
-      "nocturne.exe": 92
+      "nocturne.exe": 92,
+      "bw1.exe": 104,
+      "blairwitch2.exe": 104,
+      "bw3.exe": 104
      }
     },
     {
@@ -62880,7 +63144,10 @@
      "type": "char[80]",
      "offsets": {
       "nocedit.exe": 172,
-      "nocturne.exe": 172
+      "nocturne.exe": 172,
+      "bw1.exe": 184,
+      "blairwitch2.exe": 184,
+      "bw3.exe": 184
      }
     },
     {
@@ -62888,15 +63155,21 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 252,
-      "nocturne.exe": 252
+      "nocturne.exe": 252,
+      "bw1.exe": 88,
+      "blairwitch2.exe": 88,
+      "bw3.exe": 88
      }
     },
     {
-     "name": "data_start_offset",
+     "name": "directory_offset",
      "type": "int",
      "offsets": {
       "nocedit.exe": 256,
-      "nocturne.exe": 256
+      "nocturne.exe": 256,
+      "bw1.exe": 264,
+      "blairwitch2.exe": 264,
+      "bw3.exe": 264
      }
     },
     {
@@ -62912,15 +63185,21 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 264,
-      "nocturne.exe": 264
+      "nocturne.exe": 264,
+      "bw1.exe": 100,
+      "blairwitch2.exe": 100,
+      "bw3.exe": 100
      }
     },
     {
-     "name": "total_file_size",
+     "name": "name_table_size",
      "type": "uint",
      "offsets": {
       "nocedit.exe": 268,
-      "nocturne.exe": 268
+      "nocturne.exe": 268,
+      "bw1.exe": 272,
+      "blairwitch2.exe": 272,
+      "bw3.exe": 272
      }
     },
     {
@@ -62928,7 +63207,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 272,
-      "nocturne.exe": 272
+      "nocturne.exe": 272,
+      "bw1.exe": 276,
+      "blairwitch2.exe": 276,
+      "bw3.exe": 276
      }
     },
     {
@@ -62944,7 +63226,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 280,
-      "nocturne.exe": 280
+      "nocturne.exe": 280,
+      "bw1.exe": 92,
+      "blairwitch2.exe": 92,
+      "bw3.exe": 92
      }
     },
     {
@@ -62953,6 +63238,24 @@
      "offsets": {
       "nocedit.exe": 284,
       "nocturne.exe": 284
+     }
+    },
+    {
+     "name": "magic",
+     "type": "char[4]",
+     "offsets": {
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
+     }
+    },
+    {
+     "name": "checksum",
+     "type": "uint",
+     "offsets": {
+      "bw1.exe": 4,
+      "blairwitch2.exe": 4,
+      "bw3.exe": 4
      }
     }
    ]
@@ -64891,7 +65194,7 @@
     },
     {
      "name": "type",
-     "type": "int",
+     "type": "EScriptXRefType",
      "offsets": {
       "nocedit.exe": 256,
       "nocturne.exe": 256

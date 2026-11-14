@@ -20,7 +20,7 @@ typedef struct CPodFile {
     struct CPodDirectoryEntry* directory_entries; // 0x20c
     char* file_data_buffer; // 0x210
     int audit_count; // 0x214
-    uint total_file_size; // 0x218
+    uint audit_records_offset; // 0x218
 } CPodFile;
 #pragma pack(pop)
 

@@ -128,7 +128,7 @@ LAB_005b2f58:
   GlobalMemoryStatus(&local_30);
   _DAT_02c9be78 = local_30.dwTotalPhys;
   _DAT_02c9be7c = local_30.dwAvailPageFile;
-  core_main_c_FUN_005032a0(_DAT_02c9cb08,(char **)0x2c9cb0c);
+  core_main_c_initializeGameSystems_FUN_005032a0(_DAT_02c9cb08,(char **)0x2c9cb0c);
   core_main_c_enterMainGameMenu_FUN_00503290();
   core_main_c_FUN_00503a30();
                     /* WARNING: Subroutine does not return */

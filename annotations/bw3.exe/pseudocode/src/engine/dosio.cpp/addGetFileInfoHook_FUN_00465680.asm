@@ -7,7 +7,7 @@
 ; FileSearchHandlerFunc * Stack[0x4]:4   handler
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44e0 at 004e4566
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4566
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_dosio_c_005bbf9b

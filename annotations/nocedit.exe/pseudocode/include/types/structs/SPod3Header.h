@@ -14,10 +14,10 @@ typedef struct SPod3Header {
     char author[80]; // 0x5c
     char copyright[80]; // 0xac
     int file_count; // 0xfc
-    int data_start_offset; // 0x100
+    int directory_offset; // 0x100
     int unk1; // 0x104
     int mount_priority; // 0x108
-    uint total_file_size; // 0x10c
+    uint name_table_size; // 0x10c
     int dependency_count; // 0x110
     int unk2; // 0x114
     int audit_count; // 0x118

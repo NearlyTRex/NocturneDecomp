@@ -39,22 +39,16 @@ editor that builds them, and the shipped files measured against all of it.
 and EPD are the candidates for Blair Witch support. `crc32UpdateByte` and `crc32UpdateBuffer`
 are recreated in `engine/pod/pod_functions.*` and checked against nocedit's own machine code.
 
-## Corrections to Ghidra
+## Types
 
-These field names are wrong in the current types, from the read and write sites:
+The Ghidra types follow the read and write sites:
 
-| Type | Field | Is |
+| Type | Field | Meaning |
 |---|---|---|
-| `SPod3Header` | `data_start_offset` (`0x100`) | the directory's absolute offset |
-| `SPod3Header` | `total_file_size` (`0x10c`) | the name table's size |
-| `SPod3Header` (BW) | whole layout | the BW column of [formats.md](formats.md#pod3-two-incompatible-layouts) |
-| `CPodAuditRecord` | `file_offset` (`0x130`) | the file's new timestamp |
-| `CPodAuditRecord` | `compressed_size` (`0x134`) | the file's new size |
-| `SPod1Header` | `description` | 76 bytes, then the CRC at `0x50` |
-
-Also: bw3's `FUN_004e44e0` is its `initializeGameSystems` (it registers the file-lookup hooks);
-`CPod_resolveDependenciesAndSort.keep.cpp` tests `is_required` (`+0x104`) where its third phase
-should test the ordering field (`+0x100`, asm `00551539`, `005516ef`).
+| `SPod1Header` | `description` (`0x4`, 76 bytes), `checksum` (`0x50`) | the CRC ends the 80 bytes the reader copies as the description |
+| `SPod3Header` | `directory_offset` (`0x100`), `name_table_size` (`0x10c`) | nocedit and retail; bw1, blairwitch2 and bw3 have the BW layout |
+| `CPodAuditRecord` | `new_timestamp` (`0x130`), `new_file_size` (`0x134`) | |
+| `CPodFile` | `audit_records_offset` (`0x420`; retail `0x218`) | set to the end of the data (POD2) or of the dependency records (POD3) |
 
 ## Open
 

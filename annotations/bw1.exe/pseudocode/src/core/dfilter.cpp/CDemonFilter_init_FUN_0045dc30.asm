@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0 at 0045d8ae
-;   core_main.c_FUN_005032a0 at 0050390c
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050390c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d85a1

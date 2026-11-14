@@ -205,6 +205,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CHotDemon](structs/CHotDemon.md) | 48880 ✓ | 48472 ✓ | 49820 ✓ | 68396 ✓ | 53384 ✓ |
 | [CIcePick](structs/CIcePick.md) | 130052 ✓ | 129644 ✓ | 131036 ✓ | 153200 ✓ | — |
 | [CImp](structs/CImp.md) | 48884 ✓ | 48476 ✓ | 49824 ✓ | 68400 ✓ | 53388 ✓ |
+| [CInStream](structs/CInStream.md) | — | — | 4 | 4 | 4 |
 | [CInStreamFile](structs/CInStreamFile.md) | — | — | 44 ✓ | 40 ✓ | 44 ✓ |
 | [CInStreamMemory](structs/CInStreamMemory.md) | — | — | 20 ✓ | 20 ✓ | 20 ✓ |
 | [CInStreamPipe](structs/CInStreamPipe.md) | — | — | 36 ✓ | 36 ✓ | 36 ✓ |
@@ -278,6 +279,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CObj](structs/CObj.md) | 28 ✓ | 28 | — | — | — |
 | [COptimize](structs/COptimize.md) | 68 ✓ | — | — | — | — |
 | [COrientation](structs/COrientation.md) | 12 | 12 | 12 | 12 | 12 |
+| [COutStream](structs/COutStream.md) | — | — | 4 | 4 | 4 |
 | [COutStreamDebug](structs/COutStreamDebug.md) | — | — | 4 ✓ | 4 ✓ | 4 ✓ |
 | [COutStreamFile](structs/COutStreamFile.md) | — | — | 8 ✓ | 8 ✓ | 8 ✓ |
 | [COutStreamMemory](structs/COutStreamMemory.md) | — | — | 24 ✓ | 24 ✓ | 24 ✓ |
@@ -307,6 +309,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CProceduralTexture](structs/CProceduralTexture.md) | 67080 | — | — | — | — |
 | [CPrye](structs/CPrye.md) | — | — | — | — | 134404 ✓ |
 | [CPryeMorph](structs/CPryeMorph.md) | — | — | — | — | 136264 ✓ |
+| [CPuzzle](structs/CPuzzle.md) | — | — | 4 | 4 | 4 |
 | [CQuaternion4f](structs/CQuaternion4f.md) | 16 | 16 | 16 | 16 | 16 |
 | [CQuaternion4i](structs/CQuaternion4i.md) | 16 | — | — | — | — |
 | [CRainDrop](structs/CRainDrop.md) | 56 ✓ | 56 ✓ | 64 ✓ | 64 ✓ | 64 ✓ |
@@ -338,7 +341,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CSkeletonDemon](structs/CSkeletonDemon.md) | — | — | — | — | 54936 |
 | [CSkeletonForest](structs/CSkeletonForest.md) | — | — | — | — | 54936 |
 | [CSkeletonIndian](structs/CSkeletonIndian.md) | — | — | — | — | 54936 |
-| [CSlew](structs/CSlew.md) | 28 ✓ | 28 ✓ | — | — | — |
+| [CSlew](structs/CSlew.md) | 28 ✓ | 28 ✓ | 28 | 28 | 28 |
 | [CSmiley](structs/CSmiley.md) | 48896 ✓ | 48488 ✓ | 49836 ✓ | 68412 ✓ | — |
 | [CSmokeParticle](structs/CSmokeParticle.md) | 44 ✓ | 44 ✓ | 44 ✓ | 44 ✓ | 44 ✓ |
 | [CSocket](structs/CSocket.md) | 4 | 4 | 4 | 4 | 4 |
@@ -358,6 +361,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CStake](structs/CStake.md) | 608 ✓ | 608 ✓ | 608 ✓ | 608 ✓ | 608 ✓ |
 | [CSteuben](structs/CSteuben.md) | — | — | — | 71760 ✓ | — |
 | [CStorm](structs/CStorm.md) | — | — | — | — | 1428 ✓ |
+| [CStormEffect](structs/CStormEffect.md) | — | — | — | — | 12 |
 | [CStrList](structs/CStrList.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
 | [CStranger](structs/CStranger.md) | 130672 ✓ | 130264 ✓ | 131652 ✓ | 153820 ✓ | — |
 | [CStyler](structs/CStyler.md) | — | — | — | — | 296904 ✓ |
@@ -544,7 +548,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SMRGLVertex](structs/SMRGLVertex.md) | 12 | 12 | 12 | 12 | 12 |
 | [SMRGLVertexBlock](structs/SMRGLVertexBlock.md) | 24 | 24 | — | — | — |
 | [SMemHead](structs/SMemHead.md) | 40 | 40 | — | — | — |
-| [SMixBuffer](structs/SMixBuffer.md) | 44 | 44 | — | — | — |
+| [SMixBuffer](structs/SMixBuffer.md) | 44 | 44 | 44 | 44 | 44 |
 | [SModelPartName](structs/SModelPartName.md) | 20 | 20 | — | — | — |
 | [SMorphControlPoint](structs/SMorphControlPoint.md) | 32 ✓ | 32 | — | — | — |
 | [SMorphPart](structs/SMorphPart.md) | 16 | 16 | 16 | 16 | 16 |
@@ -603,7 +607,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SPod1DirEntry](structs/SPod1DirEntry.md) | 40 | 40 | — | — | — |
 | [SPod1Header](structs/SPod1Header.md) | 84 | 84 | — | — | — |
 | [SPod2Header](structs/SPod2Header.md) | 96 | 96 | — | — | — |
-| [SPod3Header](structs/SPod3Header.md) | 288 | 288 | — | — | — |
+| [SPod3Header](structs/SPod3Header.md) | 288 | 288 | 288 | 288 | 288 |
 | [SPodDirEntryOnDisk](structs/SPodDirEntryOnDisk.md) | 20 | 20 | — | — | — |
 | [SPodManageRecord](structs/SPodManageRecord.md) | 924 | 924 | — | — | — |
 | [SPoint2i](structs/SPoint2i.md) | 8 | 8 | — | — | — |

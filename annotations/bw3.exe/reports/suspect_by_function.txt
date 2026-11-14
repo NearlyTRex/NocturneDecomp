@@ -29806,7 +29806,21 @@ core_main.c_FUN_004e4330 (5 suspects)
   Line 37 [unrolled_strchr]: do {
 
 ====================================================================================================
-core_main.c_FUN_004e44e0 (79 suspects)
+core_main.c_FUN_004e4d00 (9 suspects)
+  File: core/main.c
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 7 [extra_output]: int extraout_ECX;
+  Line 9 [extra_output]: int extraout_EDX;
+  Line 28 [extra_output]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
+  Line 28 [pointer_truncation]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
+  Line 28 [pointer_cast]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
+  Line 29 [extra_output]: iVar1 = extraout_EDX + 1;
+  Line 30 [extra_output]: *(int *)(extraout_ECX + 0x1d7223c) = (int)ROUND(fVar5);
+  Line 32 [concat_reconstruction]: return CONCAT44(iVar1,(int)ROUND(fVar5));
+
+====================================================================================================
+core_main.c_initializeGameSystems_FUN_004e44e0 (79 suspects)
   File: core/main.c
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -29888,20 +29902,6 @@ core_main.c_FUN_004e44e0 (79 suspects)
   Line 488 [pointer_truncation]: puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);
   Line 488 [pointer_cast]: puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);
   Line 500 [undefined_data]: ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_005c6e6a);
-
-====================================================================================================
-core_main.c_FUN_004e4d00 (9 suspects)
-  File: core/main.c
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 7 [extra_output]: int extraout_ECX;
-  Line 9 [extra_output]: int extraout_EDX;
-  Line 28 [extra_output]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
-  Line 28 [pointer_truncation]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
-  Line 28 [pointer_cast]: *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
-  Line 29 [extra_output]: iVar1 = extraout_EDX + 1;
-  Line 30 [extra_output]: *(int *)(extraout_ECX + 0x1d7223c) = (int)ROUND(fVar5);
-  Line 32 [concat_reconstruction]: return CONCAT44(iVar1,(int)ROUND(fVar5));
 
 ====================================================================================================
 core_mattnntt.cpp_CMattanntote_ctor_FUN_00591ba0 (54 suspects)
@@ -54270,7 +54270,7 @@ engine_pod.cpp_FUN_00512fb0 (152 suspects)
   Line 286 [unnamed_param]: (param_1->file_count * 0x100 < (int)local_3a8)) goto LAB_0051345e;
   Line 288 [unnamed_param]: param_1->file_data_buffer = pcVar2;
   Line 294 [unnamed_param]: param_1->dependency_records_offset = uVar7;
-  Line 295 [unnamed_param]: param_1->total_file_size =
+  Line 295 [unnamed_param]: param_1->audit_records_offset =
   Line 296 [unnamed_param]: param_1->dependency_records_offset + param_1->dependency_count * 0x108;
   Line 296 [unnamed_param]: param_1->dependency_records_offset + param_1->dependency_count * 0x108;
   Line 308 [unnamed_param]: pcVar2 = param_1->description;
@@ -54288,7 +54288,7 @@ engine_pod.cpp_FUN_00512fb0 (152 suspects)
   Line 336 [unnamed_param]: uVar9 = (param_1->directory_entries->offset - 0x60) + iVar6 * -0x14;
   Line 339 [unnamed_param]: param_1->file_data_buffer = pcVar2;
   Line 344 [unnamed_param]: iVar6 = param_1->file_count + -1;
-  Line 345 [unnamed_param]: param_1->total_file_size =
+  Line 345 [unnamed_param]: param_1->audit_records_offset =
   Line 346 [unnamed_param]: param_1->directory_entries[iVar6].offset +
   Line 347 [unnamed_param]: param_1->directory_entries[iVar6].size;
   Line 354 [unnamed_param]: param_1->pod_format_version = 1;

@@ -9539,14 +9539,57 @@
       "0040ce40",
       "00509e40"
     ],
-    "conv":"unknown",
+    "cls":"CGlassParticle",
+    "conv":"__cdecl",
     "instructions":275,
-    "method":"FUN_0049a650",
-    "name":"core_fire.cpp_FUN_0049a650",
-    "receiver":false,
+    "method":"init",
+    "name":"core_fire.cpp_CGlassParticle_init_FUN_0049a650",
+    "params":[
+      {
+        "name":"triangle_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"STriangleVertices",
+          "ptr":1
+        }
+      },
+      {
+        "name":"uv_u_per_vertex",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"uv_v_per_vertex",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lifetime",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9827,14 +9870,41 @@
     "calls":[
       "004a3a30"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":17,
-    "method":"FUN_004a39d0",
-    "name":"core_fire.cpp_FUN_004a39d0",
-    "receiver":false,
+    "method":"createDiseaseToss",
+    "name":"core_fire.cpp_CFireEffect_createDiseaseToss_FUN_004a39d0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      },
+      {
+        "name":"velocity",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9851,14 +9921,49 @@
       "0049f420",
       "0053b440"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":40,
-    "method":"FUN_004a3bd0",
-    "name":"core_fire.cpp_FUN_004a3bd0",
-    "receiver":false,
+    "method":"createLightningBolt",
+    "name":"core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0",
+    "params":[
+      {
+        "name":"start_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"enable_camera_shake",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9879,14 +9984,81 @@
       "0049f470",
       "0053b440"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":53,
-    "method":"FUN_004a3c50",
-    "name":"core_fire.cpp_FUN_004a3c50",
-    "receiver":false,
+    "method":"createLightningBoltDirectional",
+    "name":"core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50",
+    "params":[
+      {
+        "name":"start_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"enable_camera_shake",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_spread",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"lifetime",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"render_alpha",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -10007,14 +10179,25 @@
     "calls":[
       "004a0480"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_004a3fd0",
-    "name":"core_fire.cpp_FUN_004a3fd0",
-    "receiver":false,
+    "method":"createStormEffect",
+    "name":"core_fire.cpp_CFireEffect_createStormEffect_FUN_004a3fd0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -10030,14 +10213,25 @@
     "calls":[
       "0046e5e0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":83,
-    "method":"FUN_004a41d0",
-    "name":"core_fire.cpp_FUN_004a41d0",
-    "receiver":false,
+    "method":"preloadGunFlameStyle",
+    "name":"core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0",
+    "params":[
+      {
+        "name":"flame_style",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -18077,19 +18271,12 @@
     "calls":[
       "00583260"
     ],
+    "cls":"CDeformableModel",
     "conv":"__cdecl",
     "instructions":148,
-    "method":"FUN_00548850",
-    "name":"core_skeleton.cpp_FUN_00548850",
+    "method":"skinVertices",
+    "name":"core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00548850",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDeformableModel",
-          "ptr":1
-        }
-      },
       {
         "name":"lod_index",
         "type":{
@@ -18123,7 +18310,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -18180,14 +18367,25 @@
       "005632a3",
       "00584450"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModel",
+    "conv":"__cdecl",
     "instructions":80,
-    "method":"FUN_005498d0",
-    "name":"core_skeleton.cpp_FUN_005498d0",
-    "receiver":false,
+    "method":"renderBones",
+    "name":"core_skeleton.cpp_CDeformableModel_renderBones_FUN_005498d0",
+    "params":[
+      {
+        "name":"bone_matrices",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18239,14 +18437,57 @@
       "004e4330",
       "005a30d7"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModel",
+    "conv":"__cdecl",
     "instructions":206,
-    "method":"FUN_0054ac50",
-    "name":"core_skeleton.cpp_FUN_0054ac50",
-    "receiver":false,
+    "method":"exactRayTrace",
+    "name":"core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0054ac50",
+    "params":[
+      {
+        "name":"lod_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"ray_origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"skinned_vertices",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"part_visibility_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18299,15 +18540,34 @@
       "0054eac0",
       "00583260"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__stack2_esi",
     "instructions":74,
-    "method":"FUN_0054dbd0",
-    "name":"core_skeleton.cpp_FUN_0054dbd0",
-    "receiver":false,
+    "method":"getBoneModelPosition",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0",
+    "params":[
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false
@@ -18323,14 +18583,57 @@
       "00585cd0",
       "00585d10"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":121,
-    "method":"FUN_0054dfd0",
-    "name":"core_skeleton.cpp_FUN_0054dfd0",
-    "receiver":false,
+    "method":"aimBoneAtTarget",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0",
+    "params":[
+      {
+        "name":"target_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"base_orientation",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"blend_callback",
+        "type":{
+          "kind":"funcdef",
+          "name":"CDeformableModel_MotionBlendWeightFunc",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -18441,8 +18744,8 @@
     ],
     "conv":"__cdecl",
     "instructions":20,
-    "method":"FUN_005502d0",
-    "name":"core_skeleton.cpp_FUN_005502d0",
+    "method":"freeAllSkeletons",
+    "name":"core_skeleton.cpp_freeAllSkeletons_FUN_005502d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -18460,14 +18763,24 @@
     "calls":[
       "005a3260"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":54,
-    "method":"FUN_00550450",
-    "name":"core_skeleton.cpp_FUN_00550450",
+    "method":"markModelInUse",
+    "name":"core_skeleton.cpp_markModelInUse_FUN_00550450",
+    "params":[
+      {
+        "name":"model_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",

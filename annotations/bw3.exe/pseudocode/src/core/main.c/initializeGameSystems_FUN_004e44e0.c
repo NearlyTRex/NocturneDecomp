@@ -1,14 +1,14 @@
-// Name: core_main.c_FUN_004e44e0
+// Name: core_main.c_initializeGameSystems_FUN_004e44e0
 // Address: 004e44e0
 // Address Range: [[004e44e0, 004e4c6d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_main_c_FUN_004e44e0(int argc,char **argv)
+// Signature: void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_main_c_FUN_004e44e0(int argc,char **argv)
+void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv)
 
 {
   uint *puVar1;

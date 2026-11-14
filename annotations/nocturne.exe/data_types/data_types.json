@@ -37226,13 +37226,13 @@
         },
         {
           "len":4,
-          "name":"file_offset",
+          "name":"new_timestamp",
           "offset":304,
           "type":"int"
         },
         {
           "len":4,
-          "name":"compressed_size",
+          "name":"new_file_size",
           "offset":308,
           "type":"int"
         }
@@ -37342,7 +37342,7 @@
         },
         {
           "len":4,
-          "name":"total_file_size",
+          "name":"audit_records_offset",
           "offset":536,
           "type":"uint"
         }
@@ -53734,24 +53734,32 @@
     {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
-      "desc":"",
+      "desc":"POD1 header, 0x54 bytes read by CPodFile_mountFromFile 004f7ed6; the whole-file CRC sits at hdr-4",
       "fields":[
         {
+          "comment":"the entry count",
           "len":4,
           "name":"file_count",
           "offset":0,
           "type":"int"
         },
         {
-          "len":80,
+          "comment":"strcpy runs into the CRC",
+          "len":76,
           "name":"description",
           "offset":4,
-          "type":"char[80]"
+          "type":"char[76]"
+        },
+        {
+          "comment":"CRC-32/MPEG-2 of [0x54, EOF)",
+          "len":4,
+          "name":"checksum",
+          "offset":80,
+          "type":"uint"
         }
       ],
       "importable":true,
       "len":84,
-      "min_alig":1,
       "name":"SPod1Header",
       "pack":false,
       "type":"struct"
@@ -53830,7 +53838,7 @@
         },
         {
           "len":4,
-          "name":"data_start_offset",
+          "name":"directory_offset",
           "offset":256,
           "type":"int"
         },
@@ -53848,7 +53856,7 @@
         },
         {
           "len":4,
-          "name":"total_file_size",
+          "name":"name_table_size",
           "offset":268,
           "type":"uint"
         },

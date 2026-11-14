@@ -9965,14 +9965,15 @@
       "0052fad0",
       "0052fea0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_0049eb50",
-    "name":"core_fire.cpp_FUN_0049eb50",
-    "receiver":false,
+    "method":"hasActiveMuzzleFlash",
+    "name":"core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -17808,15 +17809,26 @@
       "00547810",
       "00591530"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__stack_esi",
     "instructions":93,
-    "method":"FUN_005487d0",
-    "name":"core_skeleton.cpp_FUN_005487d0",
-    "receiver":false,
+    "method":"computeBoundingBoxFromBones",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0",
+    "params":[
+      {
+        "name":"output_bbox",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CBoundingBox3D",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false
@@ -17833,8 +17845,8 @@
     ],
     "conv":"__cdecl",
     "instructions":59,
-    "method":"FUN_005490d0",
-    "name":"core_skeleton.cpp_FUN_005490d0",
+    "method":"getMemoryStats",
+    "name":"core_skeleton.cpp_getMemoryStats_FUN_005490d0",
     "params":[
       {
         "name":"output_buffer",

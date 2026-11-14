@@ -140,9 +140,8 @@ in nocedit (fread at `0054fc83`) and `ESP + 0x414` in bw1 (read at `0053b99b`).
 | dependency count | `0x110` | `0x114` |
 
 The BW layout keeps POD2's prefix (`count` at `0x58`, `audits` at `0x5c`), so a POD2-only tool
-reads a BW POD3's counts correctly. Ghidra's `SPod3Header` is nocedit's layout; its
-`data_start_offset` (`0x100`) is the directory offset and its `total_file_size` (`0x10c`) is the
-name table size.
+reads a BW POD3's counts correctly. `SPod3Header` has nocedit's layout in nocedit and retail, and
+the BW layout in bw1, blairwitch2 and bw3.
 
 From the directory offset, in both:
 
@@ -221,8 +220,8 @@ writes them. Layout from the editor's write sites (`rebuildLastPod`):
 | `0x130` | `time_t` | the file's new timestamp (0 for remove) |
 | `0x134` | uint | the file's new size (0 for remove) |
 
-Ghidra's `CPodAuditRecord` names `0x130` and `0x134` `file_offset` and `compressed_size`; the
-write sites (`004b6655`–`004b6668`) store the new timestamp and size there.
+`CPodAuditRecord` names them `new_timestamp` and `new_file_size`, from the write sites
+(`004b6655`–`004b6668`).
 
 ## Dependency records
 

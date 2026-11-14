@@ -8957,14 +8957,15 @@
     "calls":[
       "0046d4c0"
     ],
-    "conv":"unknown",
+    "cls":"CBulletHole",
+    "conv":"__cdecl",
     "instructions":27,
-    "method":"FUN_004975a0",
-    "name":"core_fire.cpp_FUN_004975a0",
-    "receiver":false,
+    "method":"setupRenderState",
+    "name":"core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8972,19 +8973,30 @@
   },
   {
     "addr":"004988a0",
-    "conv":"unknown",
+    "cls":"CSpark",
+    "conv":"__cdecl",
     "data_refs":[
       "005df9c0",
       "005dfa00",
       "005dfa20"
     ],
     "instructions":2,
-    "method":"FUN_004988a0",
-    "name":"core_fire.cpp_FUN_004988a0",
-    "receiver":false,
+    "method":"onCollision",
+    "name":"core_fire.cpp_CSpark_onCollision_FUN_004988a0",
+    "params":[
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9122,14 +9134,24 @@
       "004f6930",
       "004f7530"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":161,
-    "method":"FUN_0049cca0",
-    "name":"core_fire.cpp_FUN_0049cca0",
+    "method":"spawnDiseaseBugs",
+    "name":"core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9230,14 +9252,41 @@
     "callers":[
       "004a3bd0"
     ],
-    "conv":"unknown",
+    "cls":"CLightningBolt",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_0049f420",
-    "name":"core_fire.cpp_FUN_0049f420",
-    "receiver":false,
+    "method":"activate",
+    "name":"core_fire.cpp_CLightningBolt_activate_FUN_0049f420",
+    "params":[
+      {
+        "name":"start_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_width",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9262,14 +9311,15 @@
       "005a3120",
       "005a35cc"
     ],
-    "conv":"unknown",
+    "cls":"CLightningBolt",
+    "conv":"__cdecl",
     "instructions":518,
-    "method":"FUN_0049f520",
-    "name":"core_fire.cpp_FUN_0049f520",
-    "receiver":false,
+    "method":"render",
+    "name":"core_fire.cpp_CLightningBolt_render_FUN_0049f520",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9309,14 +9359,15 @@
       "0049e170",
       "0049f380"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":54,
-    "method":"FUN_004a24a0",
-    "name":"core_fire.cpp_FUN_004a24a0",
-    "receiver":false,
+    "method":"loadAssets",
+    "name":"core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9440,14 +9491,49 @@
       "0053ecd0",
       "005a4b74"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":607,
-    "method":"FUN_004a2e20",
-    "name":"core_fire.cpp_FUN_004a2e20",
-    "receiver":false,
+    "method":"traceLaser",
+    "name":"core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20",
+    "params":[
+      {
+        "name":"origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"laser_info",
+        "type":{
+          "kind":"struct",
+          "name":"SLaserInfo",
+          "ptr":0
+        }
+      },
+      {
+        "name":"recursion_depth",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9462,14 +9548,57 @@
       "004a3a30",
       "00556930"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":46,
-    "method":"FUN_004a3920",
-    "name":"core_fire.cpp_FUN_004a3920",
-    "receiver":false,
+    "method":"createToss",
+    "name":"core_fire.cpp_CFireEffect_createToss_FUN_004a3920",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      },
+      {
+        "name":"velocity",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"fuse_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9483,14 +9612,41 @@
     "calls":[
       "004a3a30"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":17,
-    "method":"FUN_004a39a0",
-    "name":"core_fire.cpp_FUN_004a39a0",
-    "receiver":false,
+    "method":"createBindEvilToss",
+    "name":"core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      },
+      {
+        "name":"velocity",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -16654,14 +16810,41 @@
     "calls":[
       "0054f040"
     ],
-    "conv":"unknown",
+    "cls":"CDeformableModelInstance",
+    "conv":"__cdecl",
     "instructions":50,
-    "method":"FUN_0054efa0",
-    "name":"core_skeleton.cpp_FUN_0054efa0",
-    "receiver":false,
+    "method":"accumulateScaledRootMotion",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0054efa0",
+    "params":[
+      {
+        "name":"start_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -16714,18 +16897,18 @@
     "name":"core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_0054fb20",
     "params":[
       {
-        "name":"param_2",
+        "name":"color",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"render_flags",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -16752,8 +16935,8 @@
     ],
     "conv":"__cdecl",
     "instructions":18,
-    "method":"FUN_005501a0",
-    "name":"core_skeleton.cpp_FUN_005501a0",
+    "method":"freeAllModels",
+    "name":"core_skeleton.cpp_freeAllModels_FUN_005501a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
