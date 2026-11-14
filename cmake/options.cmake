@@ -54,9 +54,9 @@ if(NOCTURNE_USE_CCACHE)
         # rebuilt nocturne.h PCH never matches the last one and every file that
         # includes it misses the cache. Without the stamp the PCH is
         # reproducible. ccache must also be told to accept PCH use at all; see
-        # "ccache" in docs/building.md.
+        # "ccache" in docs/building.md. Xcode's clang reports AppleClang.
         add_compile_options(
-            "$<$<OR:$<COMPILE_LANG_AND_ID:C,Clang>,$<COMPILE_LANG_AND_ID:CXX,Clang>>:-Xclang=-fno-pch-timestamp>")
+            "$<$<OR:$<COMPILE_LANG_AND_ID:C,Clang,AppleClang>,$<COMPILE_LANG_AND_ID:CXX,Clang,AppleClang>>:-Xclang=-fno-pch-timestamp>")
     else()
         message(STATUS "ccache: not found (install with apt/brew for faster rebuilds)")
     endif()
