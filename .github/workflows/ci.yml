@@ -29,7 +29,7 @@ jobs:
   # preset also runs clang-tidy over each shim as it compiles.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     strategy:
@@ -104,7 +104,7 @@ jobs:
   # release.yml has the setup.
   package-linux:
     name: Package (exe-linux-x86_64, Ubuntu 22.04)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -141,7 +141,7 @@ jobs:
   # works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     strategy:
@@ -165,43 +165,6 @@ jobs:
       cache-key: ${{ matrix.preset }}
       build-command: |
         ci-phase Package ./scripts/Bash/package_release.sh ${{ matrix.preset }}
-      # TEMPORARY, not for main: why macOS ccache misses between runs. Records
-      # the compiler's identity and ccache's config, then recompiles a few
-      # objects through ccache with its debug output on, which writes the exact
-      # inputs it hashed. Diffing two attempts' artifacts shows what changes.
-      test-command: |
-        build="build/${{ matrix.preset }}"
-        diag="$PWD/ccache-diag"
-        mkdir -p "$diag/debug"
-        {
-          echo "ImageOS=${ImageOS:-} ImageVersion=${ImageVersion:-}"
-          sw_vers
-          xcodebuild -version
-          xcode-select -p
-          for tool in clang clang++; do
-            path=$(xcrun --find "$tool")
-            echo "$tool -> $path"
-            stat -f '%N mtime=%m size=%z' "$path" "/usr/bin/$tool"
-          done
-          clang --version
-          ccache --version | sed -n 1p
-          ccache -p | grep -v '(default)'
-        } > "$diag/env.txt" 2>&1 || true
-        objects=$(ninja -C "$build" -t targets all | sed -n 's/^\([^:]*\.o\): .*/\1/p')
-        for pattern in /shims/ _deps/sdl2-build/CMakeFiles/SDL2.dir/ /src/; do
-          object=$(printf '%s\n' "$objects" | grep -m1 -e "$pattern" || true)
-          [ -n "$object" ] || { echo "== no object matches $pattern" >> "$diag/env.txt"; continue; }
-          command=$(ninja -C "$build" -t commands "$object" | sed -n '$p')
-          {
-            echo "== $object"
-            echo "$command"
-          } >> "$diag/env.txt"
-          (cd "$build" && CCACHE_DEBUG=1 CCACHE_DEBUGDIR="$diag/debug" bash -c "$command") >> "$diag/env.txt" 2>&1 || true
-        done
-        grep -rh "^\[.*Result:" "$diag/debug" >> "$diag/env.txt" 2>/dev/null || true
-        cat "$diag/env.txt"
-      artifact: ccache-diag-${{ matrix.preset }}-${{ github.run_attempt }}
-      artifact-path: ccache-diag
       os-floors: macos:11.0
       os-floor-paths: dist/*
 
@@ -212,7 +175,7 @@ jobs:
   # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     strategy:
@@ -251,7 +214,7 @@ jobs:
   # loader and heap are not Windows'.
   build-windows-tests:
     name: Build (exe-windows-x86_64 tests)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -285,7 +248,7 @@ jobs:
   windows-tests:
     name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -295,7 +258,7 @@ jobs:
   windows-tests-msvc:
     name: Windows tests (exe-windows-msvc)
     needs: build-windows
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -309,7 +272,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -349,7 +312,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -383,7 +346,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
@@ -399,7 +362,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: read
     with:
