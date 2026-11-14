@@ -14,10 +14,11 @@ permissions: {}
 jobs:
   prepare:
     name: Prepare
-    uses: NearlyTRex/Workflows/.github/workflows/prepare-release.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/prepare-release.yml@9da59c0221ecb8f6029bb6fdae34081e512db6b0 # v0.2.27
     permissions:
       contents: write
       pull-requests: write
     with:
+      runs-on: ubuntu-26.04
       bump: ${{ inputs.bump }}
       version-file: CMakeLists.txt

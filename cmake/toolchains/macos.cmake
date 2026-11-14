@@ -17,9 +17,27 @@ if(NOT CMAKE_OSX_ARCHITECTURES)
     set(CMAKE_OSX_ARCHITECTURES "${CMAKE_HOST_SYSTEM_PROCESSOR}" CACHE STRING "")
 endif()
 
-if(NOT DEFINED CMAKE_C_COMPILER)
-    set(CMAKE_C_COMPILER   clang)
+# The oldest macOS the app runs on. Unset, clang targets the SDK's own release,
+# so every binary asks for the macOS of the machine that built it. 11.0 is the
+# first with Apple silicon.
+if(NOT CMAKE_OSX_DEPLOYMENT_TARGET)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Minimum macOS")
 endif()
-if(NOT DEFINED CMAKE_CXX_COMPILER)
-    set(CMAKE_CXX_COMPILER clang++)
-endif()
+
+# The selected Xcode's own clang, not /usr/bin/clang: that is a trampoline into
+# whichever Xcode is selected, and stays the same file when Xcode changes, so
+# ccache would keep reusing objects an older compiler built.
+function(_nocturne_xcode_compiler lang tool)
+    if(DEFINED CMAKE_${lang}_COMPILER)
+        return()
+    endif()
+    execute_process(COMMAND xcrun --find "${tool}"
+                    OUTPUT_VARIABLE _found OUTPUT_STRIP_TRAILING_WHITESPACE
+                    RESULT_VARIABLE _status ERROR_QUIET)
+    if(NOT _status EQUAL 0 OR NOT _found)
+        set(_found "${tool}")
+    endif()
+    set(CMAKE_${lang}_COMPILER "${_found}" PARENT_SCOPE)
+endfunction()
+_nocturne_xcode_compiler(C clang)
+_nocturne_xcode_compiler(CXX clang++)
