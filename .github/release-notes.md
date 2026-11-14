@@ -24,6 +24,8 @@ for exactly what differs.
 | `nocturne-{version}-exe-windows-x86_64.zip` | Windows, 64-bit | Enhanced |
 | `nocturne-{version}-exe-windows-vanilla-x86_64.zip` | Windows, 64-bit | Vanilla |
 
+Needs Windows 10 or later.
+
 1. Install Nocturne from your own copy as usual.
 2. Unpack the archive into that same install folder, so `nocturne.exe` replaces the game's own.
 3. Set up the cutscenes ([below](#cutscenes)).
@@ -40,6 +42,8 @@ when the game was started with `--data-dir` or `--user-dir`. Attach it, along wi
 | `nocturne-{version}-exe-macos-vanilla-arm64.tar.gz` | Apple silicon | Vanilla |
 | `nocturne-{version}-exe-macos-x86_64.tar.gz` | Intel | Enhanced |
 | `nocturne-{version}-exe-macos-vanilla-x86_64.tar.gz` | Intel | Vanilla |
+
+Needs macOS 11 Big Sur or later.
 
 1. Unpack the archive and move `Nocturne.app` (or `Nocturne Vanilla.app`) wherever you like,
    such as `/Applications`.
@@ -66,6 +70,9 @@ The macOS builds are compiled in CI but have had little testing on real Macs yet
 | `nocturne-{version}-exe-linux-vanilla-x86_64.tar.gz` | x86-64 | Vanilla |
 | `nocturne-{version}-exe-linux-aarch64.tar.gz` | 64-bit Arm | Enhanced |
 | `nocturne-{version}-exe-linux-vanilla-aarch64.tar.gz` | 64-bit Arm | Vanilla |
+
+Needs glibc 2.35 or later: Ubuntu 22.04, Debian 12, Linux Mint 21, Fedora 36, or newer. Check
+yours with `ldd --version`.
 
 1. Copy a Nocturne install folder onto the machine: a Windows install, or one made under Wine.
 2. Unpack the archive into that folder, so `nocturne` sits beside the game's own files.

@@ -17,6 +17,13 @@ if(NOT CMAKE_OSX_ARCHITECTURES)
     set(CMAKE_OSX_ARCHITECTURES "${CMAKE_HOST_SYSTEM_PROCESSOR}" CACHE STRING "")
 endif()
 
+# The oldest macOS the app runs on. Unset, clang targets the SDK's own release,
+# so every binary asks for the macOS of the machine that built it. 11.0 is the
+# first with Apple silicon.
+if(NOT CMAKE_OSX_DEPLOYMENT_TARGET)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Minimum macOS")
+endif()
+
 if(NOT DEFINED CMAKE_C_COMPILER)
     set(CMAKE_C_COMPILER   clang)
 endif()

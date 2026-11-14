@@ -19,25 +19,29 @@ concurrency:
 jobs:
   security:
     name: Security
-    uses: NearlyTRex/Workflows/.github/workflows/security.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/security.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       pip-audit-files: requirements-dev.txt
 
   codeql:
     name: CodeQL
-    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
     permissions:
       actions: read
       contents: read
       security-events: write
     with:
+      runs-on: ubuntu-26.04
       languages: '["actions"]'
 
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@f4f6d346e23615bbe138b98013a337be4f27b74f # v0.2.26
     permissions:
       contents: read
+    with:
+      runs-on: ubuntu-26.04
