@@ -5726,10 +5726,10 @@ static_assert(__builtin_offsetof(CPodAuditRecord, original_timestamp) == 296,
               "offsetof(CPodAuditRecord, original_timestamp) != 296");
 static_assert(__builtin_offsetof(CPodAuditRecord, original_file_size) == 300,
               "offsetof(CPodAuditRecord, original_file_size) != 300");
-static_assert(__builtin_offsetof(CPodAuditRecord, file_offset) == 304,
-              "offsetof(CPodAuditRecord, file_offset) != 304");
-static_assert(__builtin_offsetof(CPodAuditRecord, compressed_size) == 308,
-              "offsetof(CPodAuditRecord, compressed_size) != 308");
+static_assert(__builtin_offsetof(CPodAuditRecord, new_timestamp) == 304,
+              "offsetof(CPodAuditRecord, new_timestamp) != 304");
+static_assert(__builtin_offsetof(CPodAuditRecord, new_file_size) == 308,
+              "offsetof(CPodAuditRecord, new_file_size) != 308");
 
 // ---- CPodDependencyRecord (264 bytes) ----
 static_assert(sizeof(CPodDependencyRecord) == 264,
@@ -5782,8 +5782,8 @@ static_assert(__builtin_offsetof(CPodFile, file_data_buffer) == 1048,
               "offsetof(CPodFile, file_data_buffer) != 1048");
 static_assert(__builtin_offsetof(CPodFile, audit_count) == 1052,
               "offsetof(CPodFile, audit_count) != 1052");
-static_assert(__builtin_offsetof(CPodFile, total_file_size) == 1056,
-              "offsetof(CPodFile, total_file_size) != 1056");
+static_assert(__builtin_offsetof(CPodFile, audit_records_offset) == 1056,
+              "offsetof(CPodFile, audit_records_offset) != 1056");
 static_assert(__builtin_offsetof(CPodFile, dependency_count) == 1060,
               "offsetof(CPodFile, dependency_count) != 1060");
 static_assert(__builtin_offsetof(CPodFile, dependency_records_offset) == 1064,
@@ -9738,6 +9738,8 @@ static_assert(__builtin_offsetof(SPod1Header, file_count) == 0,
               "offsetof(SPod1Header, file_count) != 0");
 static_assert(__builtin_offsetof(SPod1Header, description) == 4,
               "offsetof(SPod1Header, description) != 4");
+static_assert(__builtin_offsetof(SPod1Header, checksum) == 80,
+              "offsetof(SPod1Header, checksum) != 80");
 
 // ---- SPod2Header (96 bytes) ----
 static_assert(sizeof(SPod2Header) == 96,
@@ -9764,14 +9766,14 @@ static_assert(__builtin_offsetof(SPod3Header, copyright) == 172,
               "offsetof(SPod3Header, copyright) != 172");
 static_assert(__builtin_offsetof(SPod3Header, file_count) == 252,
               "offsetof(SPod3Header, file_count) != 252");
-static_assert(__builtin_offsetof(SPod3Header, data_start_offset) == 256,
-              "offsetof(SPod3Header, data_start_offset) != 256");
+static_assert(__builtin_offsetof(SPod3Header, directory_offset) == 256,
+              "offsetof(SPod3Header, directory_offset) != 256");
 static_assert(__builtin_offsetof(SPod3Header, unk1) == 260,
               "offsetof(SPod3Header, unk1) != 260");
 static_assert(__builtin_offsetof(SPod3Header, mount_priority) == 264,
               "offsetof(SPod3Header, mount_priority) != 264");
-static_assert(__builtin_offsetof(SPod3Header, total_file_size) == 268,
-              "offsetof(SPod3Header, total_file_size) != 268");
+static_assert(__builtin_offsetof(SPod3Header, name_table_size) == 268,
+              "offsetof(SPod3Header, name_table_size) != 268");
 static_assert(__builtin_offsetof(SPod3Header, dependency_count) == 272,
               "offsetof(SPod3Header, dependency_count) != 272");
 static_assert(__builtin_offsetof(SPod3Header, unk2) == 276,
