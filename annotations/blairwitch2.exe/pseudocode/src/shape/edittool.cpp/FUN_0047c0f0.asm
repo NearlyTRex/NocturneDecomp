@@ -31,8 +31,8 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c7c4
-;   shape_edittool.cpp_FUN_0047c7f0 at 0047c854
-;   shape_edittool.cpp_FUN_0047c880 at 0047c908
+;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047c880 at 0047c908
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0047c7f0 at 0047c854
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1e6f
@@ -65,9 +65,9 @@
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_004852f0
+;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20
 ;   shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00484ed0
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_00485240
-;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -607,8 +607,8 @@ section .text
     PUSH EAX                            ; 0047c6d8
     PUSH ESI                            ; 0047c6d9
     INC EBX                             ; 0047c6da
-    CALL shape_edittool.cpp_FUN_00484f20 ; 0047c6db
-        ;   XREF to: 00484f20 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00484f20()
+    CALL shape_edittool.cpp_CEdButton_paint_FUN_00484f20 ; 0047c6db
+        ;   XREF to: 00484f20 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_00484f20(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 0047c6e0
     ADD ESI,0xe4                        ; 0047c6e3
     CMP EBX,EBP                         ; 0047c6e9
@@ -642,8 +642,8 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV ESI,dword ptr [0x006138e0]      ; 0047c73b | g_CEditorToolsPtr
     PUSH ESI                            ; 0047c741
-    CALL shape_edittool.cpp_FUN_0047e760 ; 0047c742
-        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e760()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 0047c742
+        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047c747
     MOV EAX,EDI                         ; 0047c74a
     POP EDI                             ; 0047c74c

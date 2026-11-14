@@ -25,9 +25,9 @@
 ; XREF[8]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e818f
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470 at 0047e55a
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047eefb
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 004843e1
 ;   shape_edittool.cpp_FUN_0047d0a0 at 0047d114
-;   shape_edittool.cpp_FUN_0047ee50 at 0047eefb
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047cac2
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 at 0047d855
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c48c
@@ -57,10 +57,10 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
-;   engine_font.cpp_FUN_004b0a20
 ;   engine_matrix.c_popViewport_FUN_004e6c50
 ;   engine_matrix.c_pushViewport_FUN_004e6af0
 ;   engine_mini3d.cpp_drawHLine_FUN_004f3ab0
@@ -390,8 +390,8 @@ section .text
     PUSH ESI                            ; 0047fe08
     MOV EAX,[0x01c5b0e0]                ; 0047fe09 | DAT_01c5b0e0
     PUSH EAX                            ; 0047fe0e
-    CALL engine_font.cpp_FUN_004b0a20   ; 0047fe0f
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 0047fe0f
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047fe14
     PUSH ESI                            ; 0047fe17
     MOV EDX,dword ptr [0x01c5b0e0]      ; 0047fe18 | DAT_01c5b0e0

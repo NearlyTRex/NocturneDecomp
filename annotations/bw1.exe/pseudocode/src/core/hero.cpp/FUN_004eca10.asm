@@ -15,12 +15,12 @@
 ; Called Functions:
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004ebc40
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
+;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090
+;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
 ;   core_hero.cpp_FUN_004eb3e0
 ;   core_hero.cpp_FUN_004eb5b0
 ;   core_hero.cpp_FUN_004eb660
-;   core_hero.cpp_FUN_004eb890
-;   core_hero.cpp_FUN_004ec090
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
         ;   XREF to: 004ecaa5 (CONDITIONAL_JUMP)  ; LAB_004ecaa5
     PUSH 0x5e4b83                       ; 004eca8f | = "!CBodyPart"
     PUSH EBX                            ; 004eca94
-    CALL core_hero.cpp_FUN_004ec090     ; 004eca95
-        ;   XREF to: 004ec090 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ec090()
+    CALL core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090 ; 004eca95
+        ;   XREF to: 004ec090 (UNCONDITIONAL_CALL)  ; bool core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 004eca9a
     TEST EAX,EAX                        ; 004eca9d
     JNZ 0x004ecb43                      ; 004eca9f
@@ -128,8 +128,8 @@ section .text
     JZ 0x004ecb17                       ; 004ecb08
         ;   XREF to: 004ecb17 (CONDITIONAL_JUMP)  ; LAB_004ecb17
     PUSH EBX                            ; 004ecb0a
-    CALL core_hero.cpp_FUN_004eb890     ; 004ecb0b
-        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb890()
+    CALL core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890 ; 004ecb0b
+        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ecb10
     TEST EAX,EAX                        ; 004ecb13
     JNZ 0x004ecb43                      ; 004ecb15
@@ -167,8 +167,8 @@ section .text
     PUSH 0x5e4b8e                       ; 004ecb4b | = "CBodyPart"
         ;   Label: LAB_004ecb4b
     PUSH EBX                            ; 004ecb50
-    CALL core_hero.cpp_FUN_004ec090     ; 004ecb51
-        ;   XREF to: 004ec090 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ec090()
+    CALL core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090 ; 004ecb51
+        ;   XREF to: 004ec090 (UNCONDITIONAL_CALL)  ; bool core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 004ecb56
     TEST EAX,EAX                        ; 004ecb59
     JZ 0x004ecb3e                       ; 004ecb5b

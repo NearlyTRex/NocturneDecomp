@@ -45,9 +45,9 @@ void __cdecl CPackedBitmap::renderClippedRegion(CPackedBitmap *this_ptr,int dest
 // Address: 00516590
 void __cdecl CPackedBitmap::renderWithGlobalClipping(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516690
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_00516690
 // Address: 00516690
-void FUN_00516690(void);
+void __cdecl CPackedBitmap::renderIfIntersectsRect(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0
 // Address: 005168e0

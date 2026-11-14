@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00433d50
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
 ;   core_thehand.cpp_FUN_00599be0
 ;   core_xform.cpp_FUN_005b5760
 ;   core_xform.cpp_FUN_005b6270
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 00599b7f
     MOV ECX,dword ptr [EBX + 0xc1e8]    ; 00599b80
     PUSH ECX                            ; 00599b86
-    CALL core_charactr.cpp_FUN_00433d50 ; 00599b87
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 00599b87
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     MOV EAX,0x1                         ; 00599b8c
     ADD ESP,0x8                         ; 00599b91
     POP ESI                             ; 00599b94

@@ -14,6 +14,6 @@ void __cdecl engine_mini3d_cpp_useTexture_FUN_004ed980(int texture)
   if (_DAT_01d7a694 != 0) {
     return;
   }
-  engine_texture_cpp_FUN_0056aa10(texture);
+  engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10((SMRGLTextureBasic *)texture);
   return;
 }

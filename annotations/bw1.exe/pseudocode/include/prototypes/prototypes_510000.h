@@ -192,7 +192,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirro
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_00519be0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_00519c20(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
-int core_mirror_cpp_FUN_00519cb0(void);
+int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00519cb0(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40(CMirror *this_ptr);
 void core_mirror_cpp_FUN_00519ff0(undefined4 param_1,int *param_2);
 void core_mirror_cpp_FUN_0051a0a0(undefined4 param_1,int *param_2,int *param_3);
@@ -202,7 +202,7 @@ void core_mission_cpp_FUN_0051a2d0(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_0051a3a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_0051a3b0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
-void core_mission_cpp_FUN_0051a490(CDemonMission *param_1,char *param_2);
+void __cdecl core_mission_cpp_CDemonMission_save_FUN_0051a490(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_0051ab60(CDemonMission *this_ptr,char *actor_name);
 void core_mission_cpp_FUN_0051abf0(int param_1);
@@ -223,7 +223,7 @@ void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_0051b700(CDemo
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
 void core_mission_cpp_FUN_0051b7b0(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_0051ba60(void);
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_0051ba60(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_0051bc90(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0(CDemonMission *this_ptr,char *out_buf,char *base_name);

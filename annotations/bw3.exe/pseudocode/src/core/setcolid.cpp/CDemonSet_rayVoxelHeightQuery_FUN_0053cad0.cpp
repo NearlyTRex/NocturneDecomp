@@ -39,6 +39,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0(CDemo
   if ((local_30 < 1.0) && (this_ptr->ground_type == 0)) {
     this_ptr->ground_type = this_ptr->default_ground_type;
   }
-  fVar1 = (float)core_setcolid_cpp_FUN_0053d270(this_ptr,0xbf800000,&local_20,&local_2c,local_30);
+  fVar1 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0053d270
+                    (this_ptr,-1.0,&local_20,&local_2c,local_30);
   return (local_2c.y - local_20.y) * fVar1 + local_20.y;
 }

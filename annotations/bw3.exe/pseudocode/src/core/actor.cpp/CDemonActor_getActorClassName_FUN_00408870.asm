@@ -14,9 +14,9 @@
 ;   core_enemy.cpp_FUN_0048a130 at 0048a140
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00494e70 at 00494ea4
 ;   core_event.cpp_resolveActorByName_FUN_0048b950 at 0048ba53
+;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80 at 004dbe0e
 ;   core_inv.cpp_CInventory_saveItems_FUN_004dc700 at 004dc71c
 ;   core_inv.cpp_FUN_004da880 at 004db52c
-;   core_inv.cpp_FUN_004dbd80 at 004dbe0e
 ;   ... and 3 more
 ;
 ; *****************************************************************************

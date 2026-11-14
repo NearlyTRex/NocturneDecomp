@@ -2465,6 +2465,10 @@
       "type":"struct"
     },
     {
+      "name":"SActorRayHit",
+      "type":"struct"
+    },
+    {
       "name":"SActorVarBlock",
       "type":"struct"
     },
@@ -40879,6 +40883,48 @@
       "len":6,
       "min_alig":1,
       "name":"RuntimeHandlerEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"nocedit's layout and size. CDemonActor_rayIntersect (004093a0) writes out_hit as words 0-6 at nocedit's field offsets; its caller FUN_00536490 (nocedit CDemonSet_raycastAgainstActors) places the buffer 0x28 above its SCollisionInfo and 0x1c below the next local, as bw1 and nocedit do.",
+      "fields":[
+        {
+          "len":12,
+          "name":"normal",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"part_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"lod_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"triangle_index",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bone_index",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SActorRayHit",
       "pack":false,
       "type":"struct"
     },

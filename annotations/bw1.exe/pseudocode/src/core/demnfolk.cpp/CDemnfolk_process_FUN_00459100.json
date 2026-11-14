@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2671,
-    "complexity_score": 2966,
+    "complexity_score": 2969,
     "cross_reference_count": 0,
     "function_call_count": 50,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1281,
+    "pseudocode_lines": 1284,
     "suspect_count": 161,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -26,7 +26,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 3952
+    "total_lines": 3955
   },
   "cross_references": [],
   "function": {
@@ -109,6 +109,11 @@
       "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0"
     },
     {
+      "addr": "00430960",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960"
+    },
+    {
       "addr": "00434a80",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00434a80"
@@ -137,11 +142,6 @@
       "addr": "0042d750",
       "is_variadic": false,
       "name": "core_charactr.cpp_FUN_0042d750"
-    },
-    {
-      "addr": "00430960",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00430960"
     },
     {
       "addr": "00430a90",
@@ -239,14 +239,14 @@
       "name": "core_setcolid.cpp_CDemonSet_init_FUN_00559220"
     },
     {
+      "addr": "00558450",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450"
+    },
+    {
       "addr": "00557230",
       "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00557230"
-    },
-    {
-      "addr": "00558450",
-      "is_variadic": false,
-      "name": "core_setcolid.cpp_FUN_00558450"
     },
     {
       "addr": "00569130",
@@ -1395,7 +1395,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1106,
+      "line": 1109,
       "match": "in_stack_fffffac0",
       "severity": "moderate",
       "text": "in_stack_fffffac0 = (CDemnfolk *)0x45a272;",
@@ -1403,7 +1403,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1132,
+      "line": 1135,
       "match": "in_stack_fffffac0",
       "severity": "moderate",
       "text": "fVar27,(float)in_stack_fffffac0);",
@@ -1659,7 +1659,7 @@
     },
     {
       "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1226,
+      "line": 1229,
       "match": "(int)&CStack_10c",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_10c + (uint)bVar20 * -8 + 4) = afStack_1ec[(uint)bVar20 * -2 + 3];",
@@ -1667,7 +1667,7 @@
     },
     {
       "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1227,
+      "line": 1230,
       "match": "(int)&CStack_10c",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_10c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
@@ -1715,7 +1715,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1174,
+      "line": 1177,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1723,7 +1723,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1191,
+      "line": 1194,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCStack_2c->z = 0.0;",
@@ -1731,7 +1731,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1229,
+      "line": 1232,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1739,7 +1739,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1232,
+      "line": 1235,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1947,7 +1947,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1226,
+      "line": 1229,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_10c + (uint)bVar20 * -8 + 4) = afStack_1ec[(uint)bVar20 * -2 + 3];",
@@ -1955,7 +1955,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1227,
+      "line": 1230,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_10c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",

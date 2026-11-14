@@ -178,9 +178,9 @@
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_lever.cpp_FUN_004ff6b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_motion.cpp_FUN_00524a40
-;   core_motion.cpp_FUN_00525110
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
@@ -1629,8 +1629,8 @@ section .text
     PUSH EAX                            ; 00589ec2
     PUSH ESI                            ; 00589ec3
     MOV EDI,EAX                         ; 00589ec4
-    CALL core_motion.cpp_FUN_00525110   ; 00589ec6
-        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00525110()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110 ; 00589ec6
+        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x2084],EAX    ; 00589ecb
     FLD float ptr [ESP + 0x2084]        ; 00589ed2
     ADD ESP,0xc                         ; 00589ed9

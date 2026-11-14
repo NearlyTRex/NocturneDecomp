@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[6]:
-;   core_dmodel.cpp_FUN_00467c00 at 00467e2a
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00467c00 at 00467e2a
 ;   core_dtri.cpp_FUN_00490a40 at 00490c63
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580 at 00504633
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0 at 00566238

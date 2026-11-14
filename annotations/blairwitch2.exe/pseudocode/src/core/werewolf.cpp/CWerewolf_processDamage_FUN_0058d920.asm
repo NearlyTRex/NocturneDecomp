@@ -22,8 +22,8 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_werewolf.cpp_CWerewolf_playHowl_FUN_0058d060
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058d988
     PUSH EBX                            ; 0058d98b
     MOV dword ptr [EAX + 0x25a8],0x0    ; 0058d98c
-    CALL core_motion.cpp_FUN_005035c0   ; 0058d996
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058d996
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058d99b
     ADD ESP,0x4                         ; 0058d99e
     CMP EAX,0xd                         ; 0058d9a1
@@ -223,8 +223,8 @@ section .text
     JZ 0x0058db89                       ; 0058db18
         ;   XREF to: 0058db89 (CONDITIONAL_JUMP)  ; LAB_0058db89
     PUSH EBX                            ; 0058db1a
-    CALL core_motion.cpp_FUN_005035c0   ; 0058db1b
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058db1b
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058db20
     ADD ESP,0x4                         ; 0058db23
     CMP EAX,0xe                         ; 0058db26

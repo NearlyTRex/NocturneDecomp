@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b2970 at 004b29ce
-;   core_game.cpp_FUN_004b90d0 at 004b98c7
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b98c7
+;   core_game.cpp_setupMovieRecording_FUN_004b2970 at 004b29ce
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_005d2136

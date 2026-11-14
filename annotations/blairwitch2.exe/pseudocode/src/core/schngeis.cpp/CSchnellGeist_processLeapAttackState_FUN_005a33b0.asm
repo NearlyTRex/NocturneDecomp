@@ -11,8 +11,8 @@
 ;   TerminatedCString s_Chasing_005f0121
 ;
 ; Called Functions:
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a33b1
     ADD EBX,0x2b4                       ; 005a33b5
     PUSH EBX                            ; 005a33bb
-    CALL core_motion.cpp_FUN_005035c0   ; 005a33bc
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a33bc
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a33c1
     ADD ESP,0x4                         ; 005a33c4
     CMP EAX,0xb                         ; 005a33c7

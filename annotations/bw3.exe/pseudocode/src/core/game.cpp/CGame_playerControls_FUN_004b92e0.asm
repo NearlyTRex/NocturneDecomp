@@ -30,8 +30,8 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0
 ;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
 ;   core_game.cpp_FUN_004b9960
-;   core_game.cpp_FUN_004ba490
 ;   core_game.cpp_FUN_004c07b0
 ;   core_main.c_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00507f10
@@ -65,8 +65,8 @@ section .text
     RET                                 ; 004b9323
     PUSH ESI                            ; 004b9324
         ;   Label: LAB_004b9324
-    CALL core_game.cpp_FUN_004ba490     ; 004b9325
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 004b9325
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b932a
     POP ESI                             ; 004b932d
     RET                                 ; 004b932e

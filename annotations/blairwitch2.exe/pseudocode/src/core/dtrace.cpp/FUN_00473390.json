@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 216,
+    "complexity_score": 269,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
-    "suspect_count": 2,
+    "pseudocode_lines": 189,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "warning_overlapping_globals"
     ],
-    "total_lines": 608
+    "total_lines": 611
   },
   "cross_references": [
     {
@@ -40,7 +42,7 @@
     {
       "addr": "00446b60",
       "is_variadic": false,
-      "name": "core_dcube.cpp_FUN_00446b60"
+      "name": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00446b60"
     },
     {
       "addr": "00472af0",
@@ -447,6 +449,38 @@
       "severity": "moderate",
       "text": "float afStackY_1080 [1007];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Pointer value `&local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)&local_8c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + 4) = local_94[(uint)bVar6 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)&local_8c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + 4) = local_94[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 93,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
     }
   ]
 }

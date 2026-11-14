@@ -40,7 +40,7 @@
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
-;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 ;   ... and 30 more
 ;
 ; *****************************************************************************
@@ -1258,8 +1258,8 @@ section .text
         ;   XREF to: 0042fe90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 00426c16
     PUSH EBX                            ; 00426c19
-    CALL core_charactr.cpp_FUN_0042fc90 ; 00426c1a
-        ;   XREF to: 0042fc90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fc90()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90 ; 00426c1a
+        ;   XREF to: 0042fc90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00426c1f
     PUSH 0x1                            ; 00426c22
         ;   Label: LAB_00426c22

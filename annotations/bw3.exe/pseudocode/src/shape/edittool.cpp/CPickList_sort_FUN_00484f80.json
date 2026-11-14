@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 78,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 103
+  },
+  "cross_references": [
+    {
+      "addr": "0047dd20",
+      "from_addr": "0047df74",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00484f80",
+    "address_range": [
+      [
+        "00484f80",
+        "00485005"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_sort_FUN_00484f80",
+    "signature": "void __cdecl shape_edittool_cpp_CPickList_sort_FUN_00484f80(CPickList *this_ptr,int start_index,int end_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "004823d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004823d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0047df74",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.637931034482759,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 50,
+      "INT_ADD": 31,
+      "INT_AND": 27,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 28,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 22,
+      "LOAD": 23,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 269
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00483d80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049c3e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a57f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2796
+    },
+    "nocturne.exe": {
+      "addr": "004761a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4419
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "start_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(char **)(iVar3 + (int)ppcVar1",
+      "severity": "moderate",
+      "text": "(*(char **)(iVar3 + (int)ppcVar1),*(char **)(iVar3 + 4 + (int)ppcVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(char **)(iVar3 + 4 + (int)ppcVar1",
+      "severity": "moderate",
+      "text": "(*(char **)(iVar3 + (int)ppcVar1),*(char **)(iVar3 + 4 + (int)ppcVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)ppcVar1",
+      "severity": "moderate",
+      "text": "(*(char **)(iVar3 + (int)ppcVar1),*(char **)(iVar3 + 4 + (int)ppcVar1));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)ppcVar1",
+      "severity": "moderate",
+      "text": "(*(char **)(iVar3 + (int)ppcVar1),*(char **)(iVar3 + 4 + (int)ppcVar1));",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 8,
+        "vtable_addr": "005df044"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

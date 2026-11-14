@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_glass.cpp_FUN_004cc040
+;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004ca584
     PUSH EAX                            ; 004ca587
     PUSH EBX                            ; 004ca588
-    CALL core_glass.cpp_FUN_004cc040    ; 004ca589
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004cc040()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004cc040 ; 004ca589
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004cc040(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004ca58e
     POP EBX                             ; 004ca591
     RET                                 ; 004ca592

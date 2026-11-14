@@ -26,7 +26,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_main.c_FUN_004e4330
-;   core_set.cpp_FUN_0053b460
+;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -63,8 +63,8 @@ section .text
     ADD ESP,0x4                         ; 004f6fbc
     MOV EDX,dword ptr [0x00603b28]      ; 004f6fbf | g_CDemonSetPtr
     PUSH EDX                            ; 004f6fc5 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0053b460      ; 004f6fc6
-        ;   XREF to: 0053b460 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0053b460()
+    CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460 ; 004f6fc6
+        ;   XREF to: 0053b460 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004f6fcb
     POP EDI                             ; 004f6fce
     POP ESI                             ; 004f6fcf

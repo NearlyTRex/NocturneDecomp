@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
   int *local_14;
   
   shape_edittool_cpp_FUN_00496ee0(g_CEditorToolsPtr);
-  shape_edittool_cpp_FUN_00497660(g_CEditorToolsPtr,1);
+  shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00497660(g_CEditorToolsPtr,1);
   local_28 = _DAT_01c4f008;
   local_24 = this_ptr->scroll_top;
   local_34 = 0;
@@ -134,7 +134,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
         else {
           iVar8 = 1;
         }
-        iVar9 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
         if (this_ptr->scroll_mode != 2) {
           iVar6 = 0;
         }
@@ -158,16 +158,18 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
          ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column;
     (this_ptr->scrollbar).page_size = this_ptr->column_count;
   }
-  shape_edittool_cpp_FUN_0049caa0(&this_ptr->scrollbar);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_0049caa0(&this_ptr->scrollbar);
 LAB_0049ba48:
   if (this_ptr->ok_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_0049d580(&this_ptr->ok_button,this_ptr->selection_state == 0);
+    shape_edittool_cpp_CEdButton_paint_FUN_0049d580
+              (&this_ptr->ok_button,(uint)(this_ptr->selection_state == 0));
   }
   if (this_ptr->cancel_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_0049d580(&this_ptr->cancel_button,this_ptr->selection_state == 1);
+    shape_edittool_cpp_CEdButton_paint_FUN_0049d580
+              (&this_ptr->cancel_button,(uint)(this_ptr->selection_state == 1));
   }
   if (this_ptr->state_flag == 0) {
-    shape_edittool_cpp_FUN_00497870(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00497870(g_CEditorToolsPtr,0);
     return;
   }
   return;

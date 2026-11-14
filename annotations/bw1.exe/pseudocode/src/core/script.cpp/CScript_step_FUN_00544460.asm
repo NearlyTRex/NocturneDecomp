@@ -4633,8 +4633,8 @@ section .text
     PUSH 0x5eee76                       ; 00547587 | = "system\\nocturne.ini"
     LEA EAX,[ESP + 0x3c]                ; 0054758c
     PUSH EAX                            ; 00547590
-    CALL engine_ini.cpp_FUN_004f4b00    ; 00547591
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 00547591
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 00547596
     LEA EAX,[ESP + 0x2bf4]              ; 00547599
     PUSH EAX                            ; 005475a0
@@ -5970,8 +5970,8 @@ section .text
         ;   XREF to: 0054862d (CONDITIONAL_JUMP)  ; LAB_0054862d
     MOV EDX,dword ptr [0x0061d95c]      ; 00548618 | g_CGamePtr
     PUSH EDX                            ; 0054861e | g_CGameInstance
-    CALL core_game.cpp_FUN_004d19d0     ; 0054861f
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 0054861f
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 00548624
     MOV dword ptr [0x01e818b4],EDI      ; 00548627 | DAT_01e818b4
     MOV dword ptr [ESI],0x1             ; 0054862d
@@ -6139,8 +6139,8 @@ section .text
         ;   XREF to: 0054881a (CONDITIONAL_JUMP)  ; LAB_0054881a
     MOV EDI,dword ptr [0x0061d95c]      ; 00548804 | g_CGamePtr
     PUSH EDI                            ; 0054880a | g_CGameInstance
-    CALL core_game.cpp_FUN_004d19d0     ; 0054880b
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 0054880b
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     XOR EAX,EAX                         ; 00548810
     ADD ESP,0x4                         ; 00548812
     MOV [0x01e818b4],EAX                ; 00548815 | DAT_01e818b4
@@ -6321,8 +6321,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4894]    ; 00548a53
     ADD EAX,0x1fae8                     ; 00548a5a
     PUSH EAX                            ; 00548a5f
-    CALL core_inv.cpp_FUN_004f8d00      ; 00548a60
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 00548a60
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 00548a65
     TEST EDI,EDI                        ; 00548a68
     JNZ 0x0054450b                      ; 00548a6a
@@ -7513,8 +7513,8 @@ section .text
     PUSH 0x5ef907                       ; 00549891 | = "system\\nocturne.ini"
     LEA EAX,[ESP + 0x240]               ; 00549896
     PUSH EAX                            ; 0054989d
-    CALL engine_ini.cpp_FUN_004f4b00    ; 0054989e
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 0054989e
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 005498a3
     MOV ESI,dword ptr [ESP + 0x48d8]    ; 005498a6
     PUSH ESI                            ; 005498ad

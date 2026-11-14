@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059db70
 ;   core_xform.cpp_FUN_00592720
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -110,8 +110,8 @@ section .text
     ADD EAX,0x2b4                       ; 0059fb9b
     FSTP double ptr [ESP]               ; 0059fba0
     PUSH EAX                            ; 0059fba3
-    CALL core_motion.cpp_FUN_005035c0   ; 0059fba4
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0059fba4
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0059fba9
     PUSH EAX                            ; 0059fbac
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059fbad

@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_event.cpp_FUN_00489670 at 0048c376
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c376
 ;   core_fire.cpp_CFireEffect_ctor_FUN_0049c170 at 0049c176
 ;   core_fire.cpp_CFireEffect_load_FUN_0049ea80 at 0049eaa1
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b683c

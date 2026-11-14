@@ -111,8 +111,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStran
     iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0
                       (&this_ptr_01->motion_list,pcVar3,iVar6);
     this_ptr_00 = local_1c;
-    local_34 = (float)core_motion_cpp_FUN_00525110
-                                (local_1c,iVar6,(this_ptr->base).base.layer_action_t);
+    local_34 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                         (&local_1c->base,iVar6,(this_ptr->base).base.layer_action_t);
     local_18 = local_34;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
               (this_ptr_00,iVar6,local_34,local_1e0,local_24,

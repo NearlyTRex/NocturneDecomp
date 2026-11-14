@@ -89,9 +89,9 @@ void __cdecl CDemonCube::load(CDemonCube *this_ptr,_FILE *file_handle);
 // Address: 004540c0
 void __cdecl CDemonCube::rotateVertices(CDemonCube *this_ptr,uint rendering_mode);
 
-// Original: core_dcube.cpp_FUN_00454360
+// Original: core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360
 // Address: 00454360
-float FUN_00454360(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
+float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 
 // Original: core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00454520
 // Address: 00454520

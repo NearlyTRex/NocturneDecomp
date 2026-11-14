@@ -315,7 +315,8 @@ LAB_004edcf2:
           if (this_ptr->next_way_point == (CDemonActor *)0x0) {
             iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004eee80(this_ptr,delta_time);
             if (iVar12 == 0) {
-              iVar12 = core_charactr_cpp_FUN_00434c60(this_ptr,delta_time);
+              iVar12 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
+                                 ((CCharacter *)this_ptr,delta_time);
               if (iVar12 == 0) {
                 core_charactr_cpp_FUN_00431cc0
                           (this_ptr,*(uint *)(_DAT_01d06ab4 * 4 + 0x1d06aa4),0x40a00000,
@@ -427,7 +428,8 @@ LAB_004edcf2:
               core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0,1);
               core_event_cpp_CEventList_executeCommands_FUN_004a1b70
                         (0x01C51D80,this_ptr->sit_down_event);
-              core_event_cpp_FUN_004a9870(0x01C51D80,this_ptr->rescue_event,1);
+              core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
+                        (0x01C51D80,this_ptr->rescue_event,1);
               this_ptr->hostage_state = 4;
               this_ptr->next_way_point = (CDemonActor *)0x0;
             }
@@ -506,7 +508,8 @@ LAB_004edcf2:
               }
               core_event_cpp_CEventList_executeCommands_FUN_004a1b70
                         (0x01C51D80,this_ptr->sit_down_event);
-              core_event_cpp_FUN_004a9870(0x01C51D80,this_ptr->rescue_event,1);
+              core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
+                        (0x01C51D80,this_ptr->rescue_event,1);
               this_ptr->sit_down_way_point = (CDemonActor *)0x0;
             }
             fStack_4c = delta_time * _DAT_005e4ebf;
@@ -737,8 +740,8 @@ LAB_004ede83:
       }
       pCVar2 = &(this_ptr->base).base.model;
       pCStack_6c = (CCharacter_full_vtable *)
-                   core_motion_cpp_FUN_00525110
-                             (pCVar2,_DAT_01d06b8c,
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                             (&pCVar2->base,_DAT_01d06b8c,
                               this_ptr->gun_raise_progress * (float)_DAT_005e4eef +
                               (float)_DAT_005e4ef7);
       pCStack_18 = pCStack_6c;

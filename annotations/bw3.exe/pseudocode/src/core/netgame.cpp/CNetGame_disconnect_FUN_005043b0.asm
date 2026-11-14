@@ -47,10 +47,10 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00507f90
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0047ce80
-;   shape_edittool.cpp_FUN_0047ee50
-;   shape_edittool.cpp_FUN_0047f970
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
@@ -184,8 +184,8 @@ section .text
     MOV EDI,dword ptr [0x005fb140]      ; 00504521 | g_CEditorToolsPtr
         ;   Label: LAB_00504521
     PUSH EDI                            ; 00504527
-    CALL shape_edittool.cpp_FUN_0047f970 ; 00504528
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 ; 00504528
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0050452d
     JMP 0x005043ca                      ; 00504530
         ;   XREF to: 005043ca (UNCONDITIONAL_JUMP)  ; LAB_005043ca
@@ -208,8 +208,8 @@ section .text
     MOV ECX,dword ptr [0x005fb140]      ; 0050455a | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00504560
     PUSH ECX                            ; 00504563
-    CALL shape_edittool.cpp_FUN_0047ee50 ; 00504564
-        ;   XREF to: 0047ee50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047ee50()
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 ; 00504564
+        ;   XREF to: 0047ee50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 00504569
     MOV EAX,[0x01da6478]                ; 0050456c | DAT_01da6478
         ;   Label: LAB_0050456c
@@ -292,8 +292,8 @@ section .text
         ;   XREF to: 00504499 (CONDITIONAL_JUMP)  ; LAB_00504499
     MOV EDI,dword ptr [0x005fb140]      ; 00504637 | g_CEditorToolsPtr
     PUSH EDI                            ; 0050463d
-    CALL shape_edittool.cpp_FUN_0047f970 ; 0050463e
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 ; 0050463e
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00504643
     JMP 0x005043ca                      ; 00504646
         ;   XREF to: 005043ca (UNCONDITIONAL_JUMP)  ; LAB_005043ca
@@ -387,8 +387,8 @@ section .text
     MOV ECX,dword ptr [0x005fb140]      ; 0050474e | g_CEditorToolsPtr
         ;   Label: LAB_0050474e
     PUSH ECX                            ; 00504754
-    CALL shape_edittool.cpp_FUN_0047f970 ; 00504755
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 ; 00504755
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0050475a
     JMP 0x005043d3                      ; 0050475d
         ;   XREF to: 005043d3 (UNCONDITIONAL_JUMP)  ; LAB_005043d3
@@ -412,8 +412,8 @@ section .text
     FSTP float ptr [ESP]                ; 0050478e
     PUSH EAX                            ; 00504791
     MOV EDI,0x20000                     ; 00504792
-    CALL shape_edittool.cpp_FUN_0047ee50 ; 00504797
-        ;   XREF to: 0047ee50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047ee50()
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 ; 00504797
+        ;   XREF to: 0047ee50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 0050479c
     MOV EAX,[0x01da6478]                ; 0050479f | DAT_01da6478
         ;   Label: LAB_0050479f
@@ -510,8 +510,8 @@ section .text
         ;   XREF to: 005046bf (CONDITIONAL_JUMP)  ; LAB_005046bf
     MOV ECX,dword ptr [0x005fb140]      ; 00504879 | g_CEditorToolsPtr
     PUSH ECX                            ; 0050487f
-    CALL shape_edittool.cpp_FUN_0047f970 ; 00504880
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 ; 00504880
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00504885
     JMP 0x005043d3                      ; 00504888
         ;   XREF to: 005043d3 (UNCONDITIONAL_JUMP)  ; LAB_005043d3

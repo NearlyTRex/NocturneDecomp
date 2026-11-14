@@ -158,8 +158,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00459ab8
     MOVSD ES:EDI,ESI                    ; 00459ab9
     MOVSD ES:EDI,ESI                    ; 00459aba
-    CALL core_setcolid.cpp_FUN_00536210 ; 00459abb
-        ;   XREF to: 00536210 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00536210()
+    CALL core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00536210 ; 00459abb
+        ;   XREF to: 00536210 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00536210(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * direction)
     MOV dword ptr [ESP + 0x78],EAX      ; 00459ac0
     FLD float ptr [ESP + 0x78]          ; 00459ac4
     ADD ESP,0xc                         ; 00459ac8

@@ -10,9 +10,9 @@
 ; XREF[5]:
 ;   core_doc.cpp_FUN_0046bde0 at 0046c0d1
 ;   core_doc.cpp_FUN_00474400 at 00474678
-;   core_gabriela.cpp_FUN_004c83b0 at 004c852e
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0 at 004c852e
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 005884c5
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 0059095e
-;   core_stranger.cpp_FUN_005881d0 at 005884c5
 ;
 ; Called Functions:
 ;   core_inv.cpp_FUN_004f7690

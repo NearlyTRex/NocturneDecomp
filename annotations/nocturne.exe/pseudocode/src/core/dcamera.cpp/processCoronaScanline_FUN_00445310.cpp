@@ -2,13 +2,13 @@
 // Address: 00445310
 // Address Range: [[00445310, 00445642]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCorona *corona)
+// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCoronaLightEntry *corona)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCorona *corona)
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCoronaLightEntry *corona)
 
 {
   byte bVar1;
@@ -30,23 +30,23 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_s
   puVar7 = (uint *)(row * 0x500 + 0x146ba10 + x_start * 4);
   puVar13 = g_ZBufferScanlineArray[row << (DAT_012b0660 & 0x1f)] +
             (x_start << (DAT_012b0660 & 0x1f));
-  pcVar6 = corona->intensity[row] + x_start;
+  pcVar6 = corona->lightmap[row] + x_start;
   bVar1 = DAT_012b0660;
   do {
     DAT_012b0660 = bVar1;
     if (x_end <= x_start) {
-      iVar2 = corona->row_min_x[row];
-      iVar3 = corona->row_max_x[row];
-      for (pcVar6 = corona->intensity[row] + iVar2; (iVar2 < iVar3 && (*pcVar6 == '\0'));
+      iVar2 = corona->left_extents[row];
+      iVar3 = corona->right_extents[row];
+      for (pcVar6 = corona->lightmap[row] + iVar2; (iVar2 < iVar3 && (*pcVar6 == '\0'));
           pcVar6 = pcVar6 + 1) {
         iVar2 = iVar2 + 1;
       }
-      pcVar6 = corona->intensity[row] + iVar3;
+      pcVar6 = corona->lightmap[row] + iVar3;
       while ((iVar2 < iVar3 && (pcVar6 = pcVar6 + -1, *pcVar6 == '\0'))) {
         iVar3 = iVar3 + -1;
       }
-      corona->row_min_x[row] = iVar2;
-      corona->row_max_x[row] = iVar3;
+      corona->left_extents[row] = iVar2;
+      corona->right_extents[row] = iVar3;
       return;
     }
     local_14 = '\0';

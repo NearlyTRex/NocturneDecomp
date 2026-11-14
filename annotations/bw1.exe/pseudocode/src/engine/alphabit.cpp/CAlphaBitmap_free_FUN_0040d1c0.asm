@@ -16,7 +16,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004be970 at 004be9ca
 ;   core_fldnotes.cpp_SNotesMap_reset_FUN_004bc250 at 004bc269
 ;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004baad0 at 004baae7
-;   core_game.cpp_FUN_004dc040 at 004dc04f
+;   core_game.cpp_freeCursorBitmaps_FUN_004dc180 at 004dc18e
 ;   ... and 7 more
 ;
 ; Called Functions:

@@ -28,7 +28,7 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840
-;   shape_edittool.cpp_FUN_004962b0
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
     MOV dword ptr [EAX + 0x1c3ed4c],ESI ; 00496263
     PUSH ECX                            ; 00496269
     MOV dword ptr [EAX + 0x1c3ed50],EDX ; 0049626a
-    CALL shape_edittool.cpp_FUN_004962b0 ; 00496270
-        ;   XREF to: 004962b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004962b0()
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 ; 00496270
+        ;   XREF to: 004962b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 00496275
     POP EBP                             ; 00496278
     POP EDI                             ; 00496279

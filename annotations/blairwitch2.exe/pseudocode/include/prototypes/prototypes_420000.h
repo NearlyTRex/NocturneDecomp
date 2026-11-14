@@ -26,6 +26,7 @@
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRGBColorPalette.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x420000
@@ -35,7 +36,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00420830(CBugs *this_ptr,float delta_time);
 undefined4 core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4);
-void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00420e90(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00421a00(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(CBugs *this_ptr,CDemonActor *target);
@@ -54,7 +55,7 @@ void __cdecl core_charactr_cpp_staticInit_FUN_004222a0(void);
 SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo *this_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00422be0(int param_1);
+void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_00422be0(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_00422c10(int param_1);
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
@@ -85,12 +86,12 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_004268b0(CCharact
 void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_00426990(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
-void core_charactr_cpp_FUN_00426f30(int param_1);
+void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_00426f30(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_00427060(int param_1,int param_2,int param_3,float param_4);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_004271e0(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_00427210(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00427260(CCharacter *param_1,undefined4 param_2,undefined4 param_3,CVector3f *param_4,float param_5);
+void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427360(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(CCharacter *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_00427730(CCharacter *this_ptr,SLaserInfo *laser_info);
@@ -132,10 +133,10 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00429b40(CCharacter *t
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429c60(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429c70(CCharacter *this_ptr,uint *out_crc);
 int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429ce0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2);
+void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter *this_ptr,UOrientationVector *orientation);
 void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00429e60(CCharacter *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CCharacter *this_ptr,float delta_time);
-undefined4 core_charactr_cpp_FUN_00429f20(CCharacter *param_1,float param_2,char *param_3);
+int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 void core_charactr_cpp_FUN_0042a2d0(int param_1,float param_2,int param_3);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
@@ -144,7 +145,7 @@ float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCharacter *this_ptr,int layer_action_index);
 void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00(CCharacter *this_ptr,int bone_index);
-undefined4 core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2);
+int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b260(CCharacter *this_ptr,char *sound_name);
 void core_charactr_cpp_FUN_0042b2a0(int param_1,float param_2);
 int core_charactr_cpp_FUN_0042b300(int param_1,char *param_2);
@@ -196,9 +197,9 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042ebf0(int x
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_0042f260(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_FUN_0042f2f0(void);
-int __cdecl cockpit_ckptutil_c_FUN_0042f300(void);
+int __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f300(void);
 void cockpit_ckptutil_c_FUN_0042f310(void);
-void cockpit_ckptutil_c_FUN_0042f320(undefined4 param_1);
+void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(int disabled);
 void * cockpit_ckptutil_c_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_0042f4f0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_0042f6b0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);

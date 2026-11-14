@@ -41,9 +41,9 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 // Address: 0051aa00
 void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
-// Original: engine_pod.cpp_FUN_0051aa80
+// Original: engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80
 // Address: 0051aa80
-bool FUN_0051aa80(int *param_1);
+int __cdecl CPodFile::verifyChecksum(CPodFile *this_ptr);
 
 // Original: engine_pod.cpp_FUN_0051ad50
 // Address: 0051ad50
@@ -103,7 +103,7 @@ void FUN_0051b6e0(void);
 
 // Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0
 // Address: 0051b8d0
-undefined4 __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *param_2);
+int __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *param_2);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_0051b9d0
 // Address: 0051b9d0

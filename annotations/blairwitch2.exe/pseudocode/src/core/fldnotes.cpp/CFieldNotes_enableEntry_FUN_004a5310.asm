@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 00489e17
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489e17
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004a52ec = 004a5361

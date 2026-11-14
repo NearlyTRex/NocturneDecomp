@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_dtrace.cpp_FUN_00472600 at 00472617
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050b951
-;   engine_pod.cpp_FUN_0051aa80 at 0051abd5
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80 at 0051abd5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1e6f
@@ -28,7 +28,7 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
-;   shape_edittool.cpp_FUN_0047dc40
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
     MOV dword ptr [EAX + 0x1c2578c],ESI ; 0047dbf3
     PUSH ECX                            ; 0047dbf9
     MOV dword ptr [EAX + 0x1c25790],EDX ; 0047dbfa
-    CALL shape_edittool.cpp_FUN_0047dc40 ; 0047dc00
-        ;   XREF to: 0047dc40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047dc40()
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 ; 0047dc00
+        ;   XREF to: 0047dc40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 0047dc05
     POP EBP                             ; 0047dc08
     POP EDI                             ; 0047dc09

@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00444910
-;   core_course.cpp_FUN_00444aa0
+;   core_course.cpp_CCourse_allocMemory_FUN_00444910
+;   core_course.cpp_CCourse_free_FUN_00444aa0
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
@@ -37,8 +37,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00444977
     MOV EBX,dword ptr [ESP + 0x20]      ; 0044497b
     PUSH EDI                            ; 0044497f
-    CALL core_course.cpp_FUN_00444aa0   ; 00444980
-        ;   XREF to: 00444aa0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00444aa0()
+    CALL core_course.cpp_CCourse_free_FUN_00444aa0 ; 00444980
+        ;   XREF to: 00444aa0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00444aa0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00444985
     PUSH 0x5b983c                       ; 00444988
     PUSH EBX                            ; 0044498d
@@ -96,8 +96,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4]       ; 004449f5
     PUSH EBX                            ; 004449f9
     PUSH EDI                            ; 004449fa
-    CALL core_course.cpp_FUN_00444910   ; 004449fb
-        ;   XREF to: 00444910 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00444910()
+    CALL core_course.cpp_CCourse_allocMemory_FUN_00444910 ; 004449fb
+        ;   XREF to: 00444910 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00444910(CCourse * this_ptr, int param_2)
     MOV EBX,EBP                         ; 00444a00
     ADD ESP,0x8                         ; 00444a02
     PUSH EBX                            ; 00444a05

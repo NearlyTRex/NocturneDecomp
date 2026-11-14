@@ -64,7 +64,7 @@ void __cdecl core_menu_cpp_FUN_0050ba70(void)
     puVar7 = puVar7 + 0x100;
   } while (iVar2 != 0x28);
   do {
-    core_game_cpp_FUN_004cbf20(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004cbf20(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(this_ptr,50000,50000,0x10000);

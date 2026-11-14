@@ -80,12 +80,12 @@ void core_dtrace_cpp_FUN_0048aaf0(void)
       puVar6[0x15] = uVar3;
     }
     iStack_1c = iStack_1c + 1;
-    shape_edittool_cpp_FUN_004962b0
+    shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0
               (g_CEditorToolsPtr,(float)iStack_1c,
                (float)(*(int *)(in_stack_00000004 + 0x40) * *(int *)(in_stack_00000004 + 0x44) *
                       *(int *)(in_stack_00000004 + 0x48)));
     iStack_20 = iStack_20 + 0x58;
   }
-  shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
   return;
 }

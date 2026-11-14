@@ -11,11 +11,11 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 77
+  Total mismatches found: 79
 
   By union member used:
     _uc (CCharacter_vtable): 76
-    _ue (CEnemy_vtable): 1
+    _ue (CEnemy_vtable): 3
 
   By source file:
     core/blundrbs.cpp                        22
@@ -27,6 +27,7 @@ SUMMARY
     core/burncrss.cpp                        3
     core/gun.cpp                             3
     core/rifle.cpp                           3
+    core/hero.cpp                            2
     core/tommygun.cpp                        2
     core/charactr.cpp                        1
     core/holycrss.cpp                        1
@@ -40,10 +41,10 @@ SUMMARY
     CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
     CWeapon                   4  (CWeapon -> CDemonActor)
     CBurncross                3  (CBurncross -> CWeapon -> CDemonActor)
+    CHero                     3  (CHero -> CCharacter -> CDemonActor)
     CGun                      3  (CGun -> CWeapon -> CDemonActor)
     CRifle                    3  (CRifle -> CWeapon -> CDemonActor)
     CTommyGun                 2  (CTommyGun -> CWeapon -> CDemonActor)
-    CHero                     1  (CHero -> CCharacter -> CDemonActor)
     CHolycross                1  (CHolycross -> CWeapon -> CDemonActor)
     CMelee                    1  (CMelee -> CWeapon -> CDemonActor)
 
@@ -140,6 +141,10 @@ DETAILED FINDINGS
     CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
     CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
+
+  core/hero.cpp (2)
+    CHero_reset_FUN_004d4410                            this_ptr on CHero            used _ue, need _uh  updateVictim -> drawWeapon
+    CHero_tryPickupActorOfClass_FUN_004d3e20            this_ptr on CHero            used _ue, need _uh  randomize -> isWeaponDrawn
 
   core/tommygun.cpp (2)
     CTommyGun_fire_FUN_0056b410                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage

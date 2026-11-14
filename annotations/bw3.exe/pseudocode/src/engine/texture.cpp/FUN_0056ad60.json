@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 448,
-    "complexity_score": 646,
+    "complexity_score": 666,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 181,
-    "suspect_count": 44,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -65,7 +65,7 @@
     {
       "addr": "0056aa10",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_0056aa10"
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10"
     },
     {
       "addr": "0056aab0",
@@ -190,7 +190,7 @@
       "line": 18,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "int in_stack_00000004;",
+      "text": "SMRGLTextureBasic *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -207,6 +207,14 @@
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (in_stack_00000008 == (char *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -230,7 +238,7 @@
       "line": 77,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "core_main_c_FUN_004e4330(\"cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length\",in_stack_00000004 + 8);",
+      "text": "core_main_c_FUN_004e4330(\"cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length\",in_stack_00000004->texture_name);",
       "type": "stack_param"
     },
     {
@@ -286,7 +294,7 @@
       "line": 173,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "pcVar10 = (char *)(in_stack_00000004 + 8);",
+      "text": "pcVar10 = in_stack_00000004->texture_name;",
       "type": "stack_param"
     },
     {
@@ -319,6 +327,14 @@
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 183,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10(in_stack_00000004);",
       "type": "stack_param"
     },
     {

@@ -20,18 +20,19 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
   EDeathState EVar5;
   int iVar6;
   uint bone_index;
-  int iVar7;
+  SMotion *pSVar7;
+  int iVar8;
   CPathMap *path_map;
-  CSmiley *pCVar8;
-  byte bVar9;
+  CSmiley *pCVar9;
+  byte bVar10;
   float afStackY_115c [952];
-  float *pfVar10;
-  uint *puVar11;
-  CVector3f *pCVar12;
-  float fVar13;
-  SDamageInfo *pSVar14;
+  float *pfVar11;
+  uint *puVar12;
+  CVector3f *pCVar13;
+  float fVar14;
+  SDamageInfo *pSVar15;
   EBloodType blood_type;
-  float fVar15;
+  float fVar16;
   SDamageInfo SStack_264;
   SDamageInfo SStack_228;
   SDamageInfo SStack_1ec;
@@ -88,10 +89,10 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
   float fStack_18;
   CVector3f *pCStack_14;
   
-  bVar9 = 0;
-  fVar13 = this_ptr->dismember_cooldown - delta_time;
-  this_ptr->dismember_cooldown = fVar13;
-  if (fVar13 < 0.0) {
+  bVar10 = 0;
+  fVar14 = this_ptr->dismember_cooldown - delta_time;
+  this_ptr->dismember_cooldown = fVar14;
+  if (fVar14 < 0.0) {
     this_ptr->dismember_cooldown = 0.0;
   }
   if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) &&
@@ -164,16 +165,16 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,bone_index);
     }
   }
-  fVar13 = (this_ptr->base).speed;
+  fVar14 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar13);
+  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar14);
   pCStack_1c = &(this_ptr->base).base.model;
-  iVar6 = core_motion_cpp_FUN_005035c0(pCStack_1c);
-  iVar6 = *(int *)(iVar6 + 0x24);
+  pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCStack_1c->base);
+  iVar6 = pSVar7->state_index;
   iStack_24 = iVar6;
-  iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
+  iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                     ((CCharacter *)this_ptr,delta_time);
-  if (iVar7 == 0) {
+  if (iVar8 == 0) {
     switch(iVar6) {
     case 1:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -189,18 +190,18 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
           fStack_7c = (pCVar3->base).location.position.z -
                       (this_ptr->base).base.base.location.position.z;
           fStack_108 = fStack_84;
-          afStack_11c[(uint)bVar9 * -2 + 6] = afStack_e0[(uint)bVar9 * -2 + 0x18];
-          afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-               afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x19];
+          afStack_11c[(uint)bVar10 * -2 + 6] = afStack_e0[(uint)bVar10 * -2 + 0x18];
+          afStack_11c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+               afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x19];
           fStack_28 = SQRT(fStack_100 * fStack_100 +
                            fStack_108 * fStack_108 + fStack_104 * fStack_104);
           fStack_18 = fStack_28;
           if (fStack_28 < 0x40200000 + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_11c + 5);
             uStack_144 = uStack_90;
-            afStack_140[(uint)bVar9 * -2] = afStack_e0[(uint)bVar9 * -2 + 0x15];
-            afStack_140[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-                 afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x16];
+            afStack_140[(uint)bVar10 * -2] = afStack_e0[(uint)bVar10 * -2 + 0x15];
+            afStack_140[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+                 afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16];
             pCStack_14 = (CVector3f *)
                          core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                    (afStack_140[0] - (this_ptr->base).base.base.orient.vec.y);
@@ -238,15 +239,15 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
                (this_ptr->base).base.model.accumulated_root_motion.y;
           CStack_3c.x = 0.0;
           CStack_3c.y = 0.0;
-          fVar15 = 0.17453292;
-          pCVar12 = &CStack_3c;
-          fVar13 = 0.5;
+          fVar16 = 0.17453292;
+          pCVar13 = &CStack_3c;
+          fVar14 = 0.5;
           pCVar3 = (this_ptr->base).victim;
           path_map = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
           iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                             ((CCharacter *)this_ptr,
-                             &(((this_ptr->base).victim)->base).location.position,path_map,pCVar12,
-                             fVar13,fVar15);
+                             &(((this_ptr->base).victim)->base).location.position,path_map,pCVar13,
+                             fVar14,fVar16);
           if ((-1 < iVar6) && (0 < iVar6)) {
             pCVar3 = (this_ptr->base).victim;
             fStack_b4 = (pCVar3->base).location.position.x -
@@ -256,9 +257,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
             fStack_ac = (pCVar3->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
             fStack_6c = fStack_b4;
-            afStack_e0[(uint)bVar9 * -2 + 0x1e] = afStack_e0[(uint)bVar9 * -2 + 0xc];
-            afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x1f] =
-                 afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
+            afStack_e0[(uint)bVar10 * -2 + 0x1e] = afStack_e0[(uint)bVar10 * -2 + 0xc];
+            afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1f] =
+                 afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
             if ((SQRT(fStack_64 * fStack_64 + fStack_6c * fStack_6c + fStack_68 * fStack_68) <
                  fStack_20 + 1.0) && (this_ptr->attack_cooldown <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
@@ -280,27 +281,27 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
       else {
         core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_1ec);
         SStack_1ec.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(7.0,15.0);
-        pSVar14 = &SStack_1ec;
+        pSVar15 = &SStack_1ec;
         SStack_1ec.attacker = (CDemonActor *)this_ptr;
         SStack_1ec.wielder = (CDemonActor *)this_ptr;
-        fVar13 = 1.0;
+        fVar14 = 1.0;
         pCStack_14 = (CVector3f *)SStack_1ec.damage_amount;
         core_xform_cpp_FUN_00591530
                   (&DAT_0265370c,
                    (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02628618);
-        pfVar10 = afStack_11c + 8;
+        pfVar11 = afStack_11c + 8;
         afStack_fc[0] = afStack_11c[2];
-        afStack_11c[(uint)bVar9 * -2 + 9] = afStack_11c[(uint)bVar9 * -2 + 3];
-        afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
-             afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-        core_actor_cpp_FUN_00408d70(this_ptr,pfVar10);
-        pCVar12 = &CStack_f0;
+        afStack_11c[(uint)bVar10 * -2 + 9] = afStack_11c[(uint)bVar10 * -2 + 3];
+        afStack_11c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
+             afStack_11c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+        core_actor_cpp_FUN_00408d70(this_ptr,pfVar11);
+        pCVar13 = &CStack_f0;
         CStack_f0.x = fStack_174;
-        *(float *)((int)&CStack_f0 + (uint)bVar9 * -8 + 4) = afStack_170[(uint)bVar9 * -2];
-        pCVar8 = this_ptr;
-        *(float *)((int)&CStack_f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-             afStack_170[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-        core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(&pCVar8->base,pCVar12,fVar13,pSVar14);
+        *(float *)((int)&CStack_f0 + (uint)bVar10 * -8 + 4) = afStack_170[(uint)bVar10 * -2];
+        pCVar9 = this_ptr;
+        *(float *)((int)&CStack_f0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             afStack_170[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(&pCVar9->base,pCVar13,fVar14,pSVar15);
       }
       break;
     case 8:
@@ -308,17 +309,17 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                   (pCStack_1c,0,&CStack_138);
-        pfVar10 = afStack_e0 + 5;
+        pfVar11 = afStack_e0 + 5;
         afStack_cc[0] = CStack_138.x;
-        afStack_e0[(uint)bVar9 * -2 + 6] = *(float *)((int)&CStack_138 + (uint)bVar9 * -8 + 4);
-        afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-             *(float *)((int)&CStack_138 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-        core_actor_cpp_FUN_00408d70(this_ptr,pfVar10);
+        afStack_e0[(uint)bVar10 * -2 + 6] = *(float *)((int)&CStack_138 + (uint)bVar10 * -8 + 4);
+        afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+             *(float *)((int)&CStack_138 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+        core_actor_cpp_FUN_00408d70(this_ptr,pfVar11);
         blood_type = BLOOD_TYPE_RED;
         CStack_150.x = afStack_50[2];
-        *(float *)((int)&CStack_150 + (uint)bVar9 * -8 + 4) = afStack_50[(uint)bVar9 * -2 + 3];
-        *(float *)((int)&CStack_150 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-             afStack_50[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+        *(float *)((int)&CStack_150 + (uint)bVar10 * -8 + 4) = afStack_50[(uint)bVar10 * -2 + 3];
+        *(float *)((int)&CStack_150 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             afStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
         core_gore_cpp_CGore_createBloodPool_FUN_004c9ad0(g_CGorePtr,&CStack_150,blood_type);
         (this_ptr->base).pool_me = 1;
       }
@@ -336,28 +337,28 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         if (EVar5 == DEATH_STATE_ALIVE) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_1b0);
           SStack_1b0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(7.0,15.0);
-          pSVar14 = &SStack_1b0;
+          pSVar15 = &SStack_1b0;
           SStack_1b0.attacker = (CDemonActor *)this_ptr;
           SStack_1b0.wielder = (CDemonActor *)this_ptr;
-          fVar13 = 1.0;
+          fVar14 = 1.0;
           pCStack_14 = (CVector3f *)SStack_1b0.damage_amount;
           core_xform_cpp_FUN_00591530
                     (&DAT_0265370c,
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02628618)
           ;
-          puVar11 = &uStack_54;
+          puVar12 = &uStack_54;
           uStack_54 = uStack_c0;
-          afStack_50[(uint)bVar9 * -2] = afStack_e0[(uint)bVar9 * -2 + 9];
-          afStack_50[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-               afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
-          core_actor_cpp_FUN_00408d70(this_ptr,puVar11);
-          pCVar12 = &CStack_60;
+          afStack_50[(uint)bVar10 * -2] = afStack_e0[(uint)bVar10 * -2 + 9];
+          afStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+               afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+          core_actor_cpp_FUN_00408d70(this_ptr,puVar12);
+          pCVar13 = &CStack_60;
           CStack_60.x = fStack_120;
-          *(float *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = afStack_11c[(uint)bVar9 * -2];
-          pCVar8 = this_ptr;
-          *(float *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-               afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-          core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(&pCVar8->base,pCVar12,fVar13,pSVar14);
+          *(float *)((int)&CStack_60 + (uint)bVar10 * -8 + 4) = afStack_11c[(uint)bVar10 * -2];
+          pCVar9 = this_ptr;
+          *(float *)((int)&CStack_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+               afStack_11c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(&pCVar9->base,pCVar13,fVar14,pSVar15);
         }
         else {
           pCVar3 = (this_ptr->base).victim;
@@ -412,14 +413,14 @@ switchD_0054a4fd_caseD_3:
     core_actor_cpp_FUN_00408cf0(this_ptr,pCStack_14);
     pCVar1 = &(this_ptr->base).base.base.location;
     fStack_15c = fStack_78;
-    afStack_170[(uint)bVar9 * -2 + 6] = afStack_e0[(uint)bVar9 * -2 + 0x1b];
-    afStack_170[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-         afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x1c];
-    fVar13 = (this_ptr->base).base.base.location.position.y;
-    fVar15 = (this_ptr->base).base.base.location.position.z;
+    afStack_170[(uint)bVar10 * -2 + 6] = afStack_e0[(uint)bVar10 * -2 + 0x1b];
+    afStack_170[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+         afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1c];
+    fVar14 = (this_ptr->base).base.base.location.position.y;
+    fVar16 = (this_ptr->base).base.base.location.position.z;
     (pCVar1->position).x = (pCVar1->position).x + fStack_15c;
-    (this_ptr->base).base.base.location.position.y = fVar13 + fStack_158;
-    (this_ptr->base).base.base.location.position.z = fVar15 + fStack_154;
+    (this_ptr->base).base.base.location.position.y = fVar14 + fStack_158;
+    (this_ptr->base).base.base.location.position.z = fVar16 + fStack_154;
     pCStack_14->z = 0.0;
     pCStack_14->y = pCStack_14->z;
     pCStack_14->x = pCStack_14->y;
@@ -429,8 +430,8 @@ switchD_0054a4fd_caseD_3:
     if (iVar6 != 0) {
       pCVar3 = (this_ptr->base).victim;
       if ((pCVar3 != (CCharacter *)0x0) &&
-         (pCVar8 = (CSmiley *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
-         pCVar8 == this_ptr)) {
+         (pCVar9 = (CSmiley *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
+         pCVar9 == this_ptr)) {
         core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                   (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
       }
@@ -439,32 +440,32 @@ switchD_0054a4fd_caseD_3:
       afStack_e0[0] = (this_ptr->base).base.velocity.y * delta_time;
       afStack_e0[1] = (this_ptr->base).base.velocity.z * delta_time;
       afStack_e0[2] = fStack_e4;
-      afStack_e0[(uint)bVar9 * -2 + 3] = afStack_e0[(uint)bVar9 * -2];
-      afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-           afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      pCVar12 = &(this_ptr->base).base.position_delta;
-      fStack_a8 = afStack_e0[2] + pCVar12->x;
+      afStack_e0[(uint)bVar10 * -2 + 3] = afStack_e0[(uint)bVar10 * -2];
+      afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+           afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+      pCVar13 = &(this_ptr->base).base.position_delta;
+      fStack_a8 = afStack_e0[2] + pCVar13->x;
       fStack_a4 = afStack_e0[3] + (this_ptr->base).base.position_delta.y;
       fStack_a0 = fStack_d0 + (this_ptr->base).base.position_delta.z;
       afStack_170[2] = fStack_a8;
-      afStack_170[(uint)bVar9 * -2 + 3] = afStack_e0[(uint)bVar9 * -2 + 0xf];
-      afStack_170[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-           afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
+      afStack_170[(uint)bVar10 * -2 + 3] = afStack_e0[(uint)bVar10 * -2 + 0xf];
+      afStack_170[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+           afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
       pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
       fStack_9c = afStack_170[2] + pCVar2->x;
       fStack_98 = afStack_170[3] + (this_ptr->base).base.model.accumulated_root_motion.y;
       fStack_94 = fStack_160 + (this_ptr->base).base.model.accumulated_root_motion.z;
       CStack_12c.x = fStack_9c;
-      *(float *)((int)&CStack_12c + (uint)bVar9 * -8 + 4) = afStack_e0[(uint)bVar9 * -2 + 0x12];
-      *(float *)((int)&CStack_12c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-           afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x13];
+      *(float *)((int)&CStack_12c + (uint)bVar10 * -8 + 4) = afStack_e0[(uint)bVar10 * -2 + 0x12];
+      *(float *)((int)&CStack_12c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           afStack_e0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
       (this_ptr->base).base.position_delta.z = 0.0;
       (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-      pCVar12->x = (this_ptr->base).base.position_delta.y;
+      pCVar13->x = (this_ptr->base).base.position_delta.y;
       (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-      fVar13 = (this_ptr->base).base.model.accumulated_root_motion.z;
-      (this_ptr->base).base.model.accumulated_root_motion.y = fVar13;
-      pCVar2->x = fVar13;
+      fVar14 = (this_ptr->base).base.model.accumulated_root_motion.z;
+      (this_ptr->base).base.model.accumulated_root_motion.y = fVar14;
+      pCVar2->x = fVar14;
       core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,&CStack_12c);
     }
   }

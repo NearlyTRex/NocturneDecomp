@@ -33,12 +33,12 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00430960
 ;   core_charactr.cpp_FUN_00430a90
 ;   core_charactr.cpp_FUN_00435320
 ;   ... and 12 more
@@ -1136,8 +1136,8 @@ section .text
         ;   XREF to: 00430b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 00424822
     PUSH EBX                            ; 00424825
-    CALL core_charactr.cpp_FUN_00430960 ; 00424826
-        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430960()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 ; 00424826
+        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042482b
     LEA ESP,[EBP + 0x7a]                ; 0042482e
         ;   Label: LAB_0042482e

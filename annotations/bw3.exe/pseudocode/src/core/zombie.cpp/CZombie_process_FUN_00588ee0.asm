@@ -36,11 +36,11 @@
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
 ;   ... and 32 more
 ;
 ; *****************************************************************************
@@ -1169,8 +1169,8 @@ section .text
         ;   XREF to: 0058af31 (CONDITIONAL_JUMP)  ; LAB_0058af31
     PUSH EBX                            ; 00589c73
         ;   Label: LAB_00589c73
-    CALL core_charactr.cpp_FUN_0042fc90 ; 00589c74
-        ;   XREF to: 0042fc90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fc90()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90 ; 00589c74
+        ;   XREF to: 0042fc90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00589c79
     PUSH 0x1                            ; 00589c7c
         ;   Label: LAB_00589c7c
@@ -1504,8 +1504,8 @@ section .text
     MOV EDX,dword ptr [0x00603b28]      ; 0058a084 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 0058a08a
     PUSH EDX                            ; 0058a08d | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053de10 ; 0058a08e
-        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053de10()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 ; 0058a08e
+        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV ECX,dword ptr [0x00603b28]      ; 0058a093 | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 0058a099
     ADD ESP,0x20                        ; 0058a09c

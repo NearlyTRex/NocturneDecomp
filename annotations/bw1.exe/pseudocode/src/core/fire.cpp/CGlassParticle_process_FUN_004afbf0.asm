@@ -12,7 +12,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00532250
+;   core_particle.cpp_CParticle_process_FUN_00532250
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     FXCH                                ; 004afc19
     FSTP float ptr [EBX + 0x5c]         ; 004afc1b
     FSTP float ptr [EBX + 0x60]         ; 004afc1e
-    CALL core_particle.cpp_FUN_00532250 ; 004afc21
-        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00532250()
+    CALL core_particle.cpp_CParticle_process_FUN_00532250 ; 004afc21
+        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00532250(CParticle * this_ptr)
     MOV EAX,[0x01c43530]                ; 004afc26 | DAT_01c43530
     MOV EDX,EAX                         ; 004afc2b
     MOV ECX,0x6                         ; 004afc2d

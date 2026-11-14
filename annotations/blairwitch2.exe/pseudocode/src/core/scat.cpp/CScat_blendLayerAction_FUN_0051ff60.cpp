@@ -52,7 +52,8 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar1);
     iVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
                       (&this_ptr_00->motion_list,motion_name,iVar7);
-    fVar2 = (float)core_motion_cpp_FUN_00503f50(pCVar1,iVar7,(this_ptr->base).base.layer_action_t);
+    fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00503f50
+                      (&pCVar1->base,iVar7,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
               (pCVar1,iVar7,fVar2,local_28,_DAT_01e620a8,
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);

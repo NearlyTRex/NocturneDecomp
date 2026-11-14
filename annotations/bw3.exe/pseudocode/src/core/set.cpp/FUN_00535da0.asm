@@ -474,8 +474,8 @@ section .text
     MOV EAX,[0x006071f0]                ; 005361a0 | DAT_006071f0
         ;   Label: LAB_005361a0
     PUSH EAX                            ; 005361a5
-    CALL core_weather.cpp_FUN_0057c890  ; 005361a6
-        ;   XREF to: 0057c890 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_FUN_0057c890(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_renderParticles_FUN_0057c890 ; 005361a6
+        ;   XREF to: 0057c890 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_renderParticles_FUN_0057c890(CWeather * this_ptr)
     MOV ECX,dword ptr [0x0203ad1c]      ; 005361ab | DAT_0203ad1c
     XOR EDX,EDX                         ; 005361b1
     ADD ESP,0x4                         ; 005361b3

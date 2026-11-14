@@ -19,11 +19,11 @@
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30 at 00415e4a
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330 at 004163af
 ;   core_box.cpp_CBox_processPhysics_FUN_0041b470 at 0041b94c
-;   core_box.cpp_FUN_0041b1d0 at 0041b20a
+;   core_box.cpp_CBox_updateTransform_FUN_0041b1d0 at 0041b20a
 ;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420645
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 004228d1
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 00422358
-;   core_charactr.cpp_FUN_004300e0 at 00430375
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 00430375
 ;   core_charactr.cpp_FUN_00434190 at 00434413
 ;   ... and 33 more
 ;

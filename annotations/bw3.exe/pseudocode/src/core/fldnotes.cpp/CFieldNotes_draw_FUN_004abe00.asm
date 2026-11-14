@@ -49,10 +49,10 @@
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
-;   engine_alphabit.cpp_FUN_0040d8a0
-;   engine_alphabit.cpp_FUN_0040dbb0
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -315,8 +315,8 @@ section .text
     PUSH 0x1d19cf0                      ; 004ac0fb | DAT_01d19cf0
     MOV ESI,dword ptr [0x01549ac0]      ; 004ac100 | DAT_01549ac0
     PUSH ESI                            ; 004ac106
-    CALL engine_font.cpp_FUN_004b0a20   ; 004ac107
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004ac107
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004ac10c
     PUSH 0xffff                         ; 004ac10f
         ;   Label: LAB_004ac10f
@@ -365,8 +365,8 @@ section .text
     PUSH 0x1d19f90                      ; 004ac195 | DAT_01d19f90
     MOV EAX,[0x01549aa4]                ; 004ac19a | DAT_01549aa4
     PUSH EAX                            ; 004ac19f
-    CALL engine_font.cpp_FUN_004b0a20   ; 004ac1a0
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004ac1a0
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004ac1a5
     MOV ESI,dword ptr [ESP + 0x508]     ; 004ac1a8
         ;   Label: LAB_004ac1a8
@@ -540,8 +540,8 @@ section .text
     PUSH 0x1d19bac                      ; 004ac3c0
     MOV EBP,0x9                         ; 004ac3c5
     XOR EBX,EBX                         ; 004ac3ca
-    CALL engine_alphabit.cpp_FUN_0040dbb0 ; 004ac3cc
-        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbb0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0 ; 004ac3cc
+        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(CAlphaBitmap * this_ptr, int value)
     MOV EDI,dword ptr [0x01d0d210]      ; 004ac3d1 | DAT_01d0d210
     ADD ESP,0x8                         ; 004ac3d7
     TEST EDI,EDI                        ; 004ac3da
@@ -662,8 +662,8 @@ section .text
     ADD ESP,0x10                        ; 004ac560
     PUSH 0xff                           ; 004ac563
     PUSH 0x1d19cc4                      ; 004ac568
-    CALL engine_alphabit.cpp_FUN_0040dbb0 ; 004ac56d
-        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbb0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0 ; 004ac56d
+        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004ac572
     PUSH 0x8                            ; 004ac575
     PUSH 0x100                          ; 004ac577
@@ -703,8 +703,8 @@ section .text
     PUSH EBP                            ; 004ac5de
     PUSH 0x246                          ; 004ac5df
     PUSH EDI                            ; 004ac5e4
-    CALL engine_alphabit.cpp_FUN_0040d8a0 ; 004ac5e5
-        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d8a0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 ; 004ac5e5
+        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 004ac5ea
     JMP 0x004abf65                      ; 004ac5ed
         ;   XREF to: 004abf65 (UNCONDITIONAL_JUMP)  ; LAB_004abf65

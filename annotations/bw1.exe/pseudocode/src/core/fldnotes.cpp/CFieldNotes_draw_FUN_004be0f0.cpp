@@ -77,7 +77,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004be0f0(CFieldNotes *this_p
     ;
     iVar1 = 9;
     iVar5 = 0;
-    engine_alphabit_cpp_FUN_0040d970(&CAlphaBitmap_01cc7b94,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970(&CAlphaBitmap_01cc7b94,0xff);
     if (0 < _DAT_01cc4470) {
       pCVar6 = CAlphaBitmap_ARRAY_01cc7ba8;
       do {
@@ -111,7 +111,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004be0f0(CFieldNotes *this_p
               (&CAlphaBitmap_01cc7c98,"rtarrow",0x40,0x20);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
               (&CAlphaBitmap_01cc7cac,"fieldnotes_exit",0x1e,0x20);
-    engine_alphabit_cpp_FUN_0040d970(&CAlphaBitmap_01cc7cac,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970(&CAlphaBitmap_01cc7cac,0xff);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
               (&CAlphaBitmap_01cc7cc0,"underline",0x100,8);
     DAT_0061d2e0 = 0;
@@ -156,7 +156,7 @@ LAB_004be1f2:
                   (pCVar6,pSVar4->tab_x + -2,pSVar4->tab_y + -2,0xffff);
       }
       else {
-        engine_alphabit_cpp_FUN_0040d660
+        engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d660
                   (pCVar6,0x246,pSVar4->tab_y,0x246 - pSVar4->tab_x,0,
                    CAlphaBitmap_ARRAY_01cc7ba8[iVar1].width + -1,
                    CAlphaBitmap_ARRAY_01cc7ba8[iVar1].height + -1,0xffff);

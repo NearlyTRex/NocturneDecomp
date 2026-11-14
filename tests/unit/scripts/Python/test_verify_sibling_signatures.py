@@ -221,8 +221,10 @@ def test_main_verifies_every_pair_and_writes_the_verdicts(mapping, tmp_path, cap
     assert "(1 of the agreements through a verified override of the same virtual)" in printed
     assert "of the 3 measurable pairs, 66.7% agree" in printed
     assert "1 of 1 signature conflicts" in printed and "RET 8 vs 4 stack bytes" in printed
-    verdicts = [p["sig_verdict"] for p in json.loads(out.read_text())["pairs"]]
-    assert verdicts == ["agree", "conflict", "agree", "unverifiable"]
+    assert "structural match: 0 measured pair(s) accepted, 0 of them conflicts; 0 unverifiable" in printed
+    pairs = json.loads(out.read_text())["pairs"]
+    assert [p["sig_verdict"] for p in pairs] == ["agree", "conflict", "agree", "unverifiable"]
+    assert all(p["sig_structural"] is False for p in pairs)
 
 
 def test_main_without_conflicts_or_output_only_reports(mapping, tmp_path, capsys):
@@ -232,6 +234,62 @@ def test_main_without_conflicts_or_output_only_reports(mapping, tmp_path, capsys
     vss.main([mapping, "--show", "0"])
     printed = capsys.readouterr().out
     assert "unverifiable :     1" in printed and "measurable" not in printed and "through a verified" not in printed
+
+
+def insn(mnemonic, ops = ""):
+    return (0, mnemonic, ops)
+
+
+def test_stack_arguments_are_read_through_the_tracked_esp_and_an_ebp_frame():
+    body = [insn("mov", "eax, dword ptr [esp + 4]"),      # argument 0
+            insn("push", "esi"),
+            insn("mov", "esi, dword ptr [esp + 0xc]"),    # argument 1, past the push
+            insn("sub", "esp, 8"),
+            insn("mov", "ecx, dword ptr [esp]"),          # a local
+            insn("mov", "edx, dword ptr [esp + 0x1a]"),   # not a slot
+            insn("add", "esp, 8"),
+            insn("add", "esp, eax"),                      # not an immediate: ignored
+            insn("pushal"), insn("popal"),
+            insn("push", "ebp"),
+            insn("mov", "ebp, esp"),
+            insn("mov", "eax, dword ptr [ebp + 0x14]"),   # argument 2
+            insn("mov", "eax, dword ptr [ebp + 2]"),      # not an argument
+            insn("pop", "ebp"), insn("pop", "esi"), insn("ret")]
+    assert vss.stack_args_read(body) == {0, 1, 2}
+    assert vss.stack_args_read([insn("mov", "eax, dword ptr [ebp + 8]")]) == set()
+
+
+def test_callees_must_all_appear_in_the_sources_order():
+    a = [insn("call", "0x401000"), insn("call", "0x402000"), insn("call", "eax"), insn("call", "0x409999")]
+    a_to_b = {"00401000": "00501000", "00402000": "00502000"}
+    in_order = [insn("call", "0x501000"), insn("call", "0x505000"), insn("call", "0x502000")]
+    swapped = [insn("call", "0x502000"), insn("call", "0x501000")]
+    assert vss.direct_callees(a) == ["00401000", "00402000", "00409999"]
+    assert vss.callees_in_order(a, in_order, a_to_b) is True
+    assert vss.callees_in_order(a, swapped, a_to_b) is False
+    assert vss.callees_in_order(a, in_order[:1], a_to_b) is False
+    assert vss.callees_in_order([insn("call", "0x409999")], in_order, a_to_b) is None
+
+
+def test_a_structural_match_needs_callees_the_receiver_and_the_same_arguments():
+    two = {"vars": {"params": [{}, {}]}}
+    calls = [insn("call", "0x401000")]
+    mapped = [insn("call", "0x501000")]
+    a_to_b = {"00401000": "00501000"}
+    reads_0_1 = [insn("mov", "eax, dword ptr [esp + 4]"), insn("mov", "eax, dword ptr [esp + 8]")]
+    assert vss.structural_match(two, reads_0_1 + calls, reads_0_1 + mapped, a_to_b)
+    assert not vss.structural_match(two, reads_0_1 + calls, reads_0_1[:1] + mapped, a_to_b)   # dropped one
+    assert not vss.structural_match(two, reads_0_1[1:] + calls, reads_0_1[1:] + mapped, a_to_b)  # no receiver
+    past = reads_0_1 + [insn("mov", "eax, dword ptr [esp + 0xc]")]
+    assert not vss.structural_match(two, past + calls, past + mapped, a_to_b)               # varargs
+    assert not vss.structural_match(two, reads_0_1, reads_0_1, a_to_b)                      # no callees
+    assert not vss.structural_match({}, reads_0_1 + calls, reads_0_1 + mapped, a_to_b)      # no parameters
+
+
+def test_the_structural_tally_counts_measured_pairs_only():
+    results = [{"sig_verdict": "agree", "sig_structural": True}, {"sig_verdict": "conflict", "sig_structural": False},
+               {"sig_verdict": "unverifiable", "sig_structural": True}]
+    assert vss.structural_tally(results) == {("agree", True): 1, ("conflict", False): 1}
 
 
 def test_runs_as_a_script(monkeypatch):

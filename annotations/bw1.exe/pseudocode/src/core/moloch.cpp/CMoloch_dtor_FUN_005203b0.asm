@@ -12,7 +12,7 @@
 ;   WatcomTypeInfo g_CMolochTypeInfo
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ea980
+;   core_hero.cpp_CHero_dtor_FUN_004ea980
 ;   core_morph.cpp_CMorph_dtor_FUN_00522fc0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
 ;   crt_memory.c___vec_delete_FUN_005c030f
@@ -45,8 +45,8 @@ section .text
     PUSH 0x1                            ; 005203e7
     LEA EBX,[EAX + 0xfffe0054]          ; 005203e9
     PUSH EBX                            ; 005203ef
-    CALL core_hero.cpp_FUN_004ea980     ; 005203f0
-        ;   XREF to: 004ea980 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ea980()
+    CALL core_hero.cpp_CHero_dtor_FUN_004ea980 ; 005203f0
+        ;   XREF to: 004ea980 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_dtor_FUN_004ea980(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005203f5
     MOV DL,byte ptr [ESP + 0xc]         ; 005203f8
     MOV EBX,EAX                         ; 005203fc

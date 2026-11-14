@@ -50,7 +50,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
   if (this_ptr->cinematic_skip_in_progress != 0) {
     if (this_ptr->letterbox_mode == 0) {
       this_ptr->cinematic_skip_in_progress = 0;
-      core_sound_cpp_FUN_0055a1d0(this_ptr_00);
+      core_sound_cpp_CSound_init_FUN_0055a1d0(this_ptr_00);
       core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
       core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
       g_CScriptPtr->focus_actor_changed = 0;
@@ -96,7 +96,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
   }
   core_terrain_cpp_CTerrain_process_FUN_0057b970(0x0265364C);
   core_weather_cpp_CWeather_update_FUN_0058a660(0x02661F80);
-  core_game_cpp_FUN_004b90d0();
+  core_game_cpp_CGame_processCheatCodes_FUN_004b90d0(this_ptr);
   core_fldnotes_cpp_CFieldNotes_process_FUN_004a5f60(g_CFieldNotesPtr);
   core_bmppuzzl_cpp_processActivePuzzle_FUN_0059ac60();
   core_set_cpp_CDemonSet_processActors_FUN_0052e940(g_CDemonSetPtr);

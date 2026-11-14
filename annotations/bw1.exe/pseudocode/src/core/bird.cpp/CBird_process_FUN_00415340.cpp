@@ -45,7 +45,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
   if (iVar3 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00434790(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(&this_ptr->base,delta_time);
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   uStack_14 = 0;
   (this_ptr->base).model.accumulated_root_motion.y =

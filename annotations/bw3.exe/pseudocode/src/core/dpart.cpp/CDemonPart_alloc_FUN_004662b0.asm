@@ -7,7 +7,7 @@
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dpart.cpp_FUN_00466540 at 00466580
+;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_00466540 at 00466580
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

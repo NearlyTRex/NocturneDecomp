@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_muzzle.cpp_FUN_0059daa0
@@ -43,8 +43,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 005ac2f9
     LEA EAX,[EDI + 0x2b4]               ; 005ac2fc
     PUSH EAX                            ; 005ac302
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac303
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac303
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005ac308
     ADD ESP,0x4                         ; 005ac30b
     CMP EAX,0x1                         ; 005ac30e
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 005ac459 (CONDITIONAL_JUMP)  ; LAB_005ac459
     LEA EBX,[EDI + 0x2b4]               ; 005ac33d
     PUSH EBX                            ; 005ac343
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac344
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac344
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005ac349
     ADD ESP,0x4                         ; 005ac34c
     TEST EAX,EAX                        ; 005ac34f
@@ -172,8 +172,8 @@ section .text
         ;   XREF to: 005ac321 (UNCONDITIONAL_JUMP)  ; LAB_005ac321
     PUSH EBX                            ; 005ac46f
         ;   Label: LAB_005ac46f
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac470
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac470
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005ac475
     ADD ESP,0x4                         ; 005ac478
     CMP EAX,0x8                         ; 005ac47b

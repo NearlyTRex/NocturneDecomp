@@ -226,7 +226,7 @@ CBodyPart * __cdecl core_bodypart_cpp_factoryFuncBodyPart_FUN_00418b10(void);
 CDemonActorType * __cdecl core_bodypart_cpp_CBodyPart_getActorType_FUN_00418b30(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00418b40(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags);
-void core_bodypart_cpp_setCounts_FUN_00418d00(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(CBodyPart *this_ptr,int vertex_count,int tri_count);
 void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00418e50(CBodyPart *this_ptr,int render_flags);
 int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00418fc0(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419130(CBodyPart *this_ptr,int layer_flag);
@@ -247,7 +247,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a70
 void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041aaa0(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles);
 void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ab20(CBodyPart *this_ptr,CVector3f *position);
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041ac60(CBodyPart *this_ptr,char *texture_name);
-void core_bodypart_cpp_FUN_0041ad40(int param_1);
+void core_bodypart_cpp_FUN_0041ad40(CBodyPart *param_1);
 void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_0041aef0(CBodyPart *this_ptr);
 int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041af30(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
@@ -290,7 +290,7 @@ CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041da00(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dab0(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dac0(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 void core_box_cpp_FUN_0041dcf0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
-void __cdecl core_box_cpp_FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_0041e0d0(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e130(CBox *this_ptr,float delta_time);
 

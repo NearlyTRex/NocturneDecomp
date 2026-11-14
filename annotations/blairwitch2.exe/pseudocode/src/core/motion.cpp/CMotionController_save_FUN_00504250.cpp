@@ -11,7 +11,8 @@
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00504250(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 
 {
-  uint uVar1;
+  SMotion *pSVar1;
+  double dVar2;
   
   if (this_ptr->current_motion_name[0] == '\0') {
     if (this_ptr->motion_list_ptr == (CMotionList *)0x0) {
@@ -19,8 +20,10 @@ void __cdecl core_motion_cpp_CMotionController_save_FUN_00504250(CMotionControll
       _DAT_01d046a4 = 0x581;
       core_main_c_FUN_004e4500();
     }
-    uVar1 = core_motion_cpp_FUN_005035c0(this_ptr,(double)this_ptr->current_frame_number);
-    FUN_005b8010(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",indent_prefix,uVar1);
+    dVar2 = (double)this_ptr->current_frame_number;
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+    FUN_005b8010
+              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",indent_prefix,pSVar1,dVar2);
     return;
   }
   FUN_005b8010

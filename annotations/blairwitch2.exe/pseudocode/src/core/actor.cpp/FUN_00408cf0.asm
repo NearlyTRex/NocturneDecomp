@@ -8,8 +8,8 @@
 ;
 ; XREF[63]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a25f
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 004095ef
 ;   core_actor.cpp_FUN_004090f0 at 00409186
-;   core_actor.cpp_FUN_004093a0 at 004095ef
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040ff5b
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410080 at 004100cb
 ;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a051d

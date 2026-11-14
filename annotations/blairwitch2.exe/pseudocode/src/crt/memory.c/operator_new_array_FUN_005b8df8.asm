@@ -9,12 +9,12 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00516a60 at 00516aab
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 0051703a
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280 at 00517350
-;   cockpit_pkbmpset.cpp_FUN_00517670 at 005176b3
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_00517670 at 005176b3
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_005ade20 at 005ade38
 ;   core_course.cpp_CCourse_allocMemory_FUN_00438a90 at 00438aaf
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00446590 at 004465a7
+;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80 at 0044eb19
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760 at 0044f7f8
-;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010 at 0044e4c6
 ;   ... and 10 more
 ;
 ; Called Functions:

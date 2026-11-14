@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_doc_cpp_FUN_00459555(void)
+; undefined4 core_doc_cpp_FUN_00459555(float param_1,float param_2,float param_3)
 ;
 ;
 ; Referenced Globals:
@@ -13,8 +13,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030
 ;   core_setcolid.cpp_FUN_00534ea0
-;   core_setcolid.cpp_FUN_00537030
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV ESI,dword ptr [0x0061b5a8]      ; 00459570 | g_CDemonSetPtr
     PUSH dword ptr [ESP + 0x74]         ; 00459576
     PUSH ESI                            ; 0045957a
-    CALL core_setcolid.cpp_FUN_00537030 ; 0045957b
-        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00537030()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 ; 0045957b
+        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x1a4],EAX     ; 00459580
     FLD float ptr [ESP + 0x1a4]         ; 00459587
     FLD1                                ; 0045958e

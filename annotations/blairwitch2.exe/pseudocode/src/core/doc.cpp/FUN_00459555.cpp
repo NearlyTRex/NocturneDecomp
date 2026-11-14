@@ -2,13 +2,13 @@
 // Address: 00459555
 // Address Range: [[00459555, 0045979a]]
 // Convention: unknown
-// Signature: undefined4 core_doc_cpp_FUN_00459555(void)
+// Signature: undefined4 core_doc_cpp_FUN_00459555(float param_1,float param_2,float param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_doc_cpp_FUN_00459555(void)
+uint core_doc_cpp_FUN_00459555(float param_1,float param_2,float param_3)
 
 {
   float fVar1;
@@ -16,9 +16,10 @@ uint core_doc_cpp_FUN_00459555(void)
   char *in_EAX;
   char *pcVar3;
   CDemonActor *pCVar4;
+  int iVar5;
   int unaff_EBX;
-  byte bVar5;
-  int iVar6;
+  byte bVar6;
+  float unaff_retaddr;
   float in_stack_0000006c;
   float in_stack_00000070;
   float in_stack_00000074;
@@ -43,15 +44,16 @@ uint core_doc_cpp_FUN_00459555(void)
   uint auStack_f10 [9];
   uint auStack_eec [951];
   
-  bVar5 = 0;
+  bVar6 = 0;
   cVar2 = (char)in_EAX;
   *in_EAX = *in_EAX + cVar2;
   pcVar3 = (char *)(CONCAT31((int3)(CONCAT22((short)((uint)in_EAX >> 0x10),CONCAT11(0x24,cVar2)) >>
                                    8),cVar2) | 1);
   *pcVar3 = *pcVar3 + (char)pcVar3;
   in_stack_00000194 =
-       (float)core_setcolid_cpp_FUN_00537030
-                        (g_CDemonSetPtr,in_stack_0000006c,in_stack_00000074,in_stack_00000108);
+       core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030
+                 (g_CDemonSetPtr,in_stack_0000006c,in_stack_00000074,in_stack_00000108,unaff_retaddr
+                  ,param_1,param_2,param_3);
   if (in_stack_00000194 < 1.0) {
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return 0;
@@ -60,9 +62,9 @@ uint core_doc_cpp_FUN_00459555(void)
   in_stack_000000c4 = in_stack_00000070 + in_stack_0000010c;
   in_stack_000000c8 = in_stack_00000074 + in_stack_00000110;
   in_stack_000000fc = in_stack_000000c0;
-  *(float *)(&stack0x00000100 + (uint)bVar5 * -8) = (&stack0x000000c4)[(uint)bVar5 * -2];
-  *(float *)(&stack0x00000104 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       (&stack0x000000c8)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+  *(float *)(&stack0x00000100 + (uint)bVar6 * -8) = (&stack0x000000c4)[(uint)bVar6 * -2];
+  *(float *)(&stack0x00000104 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+       (&stack0x000000c8)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
   in_stack_00000160 = (float)core_setcolid_cpp_FUN_00534ea0();
   in_stack_00000194 = in_stack_00000160;
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
@@ -73,15 +75,15 @@ uint core_doc_cpp_FUN_00459555(void)
       if (g_CDemonSetPtr->actor_count <= in_stack_0000017c) {
         *(uint *)(unaff_EBX + 0x256a4) = 6;
         if ((*(int *)(unaff_EBX + 0x2698) == 0) ||
-           (iVar6 = (**(code **)(*(int *)(*(int *)(unaff_EBX + 0x2698) + 0x2b0) + 0x8c))(),
-           iVar6 != 4)) {
-          iVar6 = 0x14;
+           (iVar5 = (**(code **)(*(int *)(*(int *)(unaff_EBX + 0x2698) + 0x2b0) + 0x8c))(),
+           iVar5 != 4)) {
+          param_2 = 2.8026e-44;
         }
         else {
-          iVar6 = 0x19;
+          param_2 = 3.50325e-44;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)(unaff_EBX + 0x2b4),iVar6,1);
+                  ((CMotionController *)(unaff_EBX + 0x2b4),(int)param_2,1);
         return 1;
       }
       pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
@@ -92,9 +94,9 @@ uint core_doc_cpp_FUN_00459555(void)
         in_stack_000000d8 = fVar1;
         in_stack_000000dc = (pCVar4->location).position.y - in_stack_00000070;
         in_stack_000000e0 = (pCVar4->location).position.z - in_stack_00000074;
-        (&stack0x00000088)[(uint)bVar5 * -2] = (&stack0x000000dc)[(uint)bVar5 * -2];
-        (&stack0x0000008c)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-             (&stack0x000000e0)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+        (&stack0x00000088)[(uint)bVar6 * -2] = (&stack0x000000dc)[(uint)bVar6 * -2];
+        (&stack0x0000008c)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             (&stack0x000000e0)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
         if (SQRT(in_stack_0000008c * in_stack_0000008c +
                  fVar1 * fVar1 + in_stack_00000088 * in_stack_00000088) < (float)_DAT_005d0417) {
           return 0;

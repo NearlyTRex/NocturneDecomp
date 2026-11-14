@@ -428,8 +428,8 @@ section .text
     CALL dword ptr [EAX + 0x144]        ; 004c57af
     ADD ESP,0x8                         ; 004c57b5
     PUSH EBX                            ; 004c57b8
-    CALL core_gargoyle.cpp_FUN_004c51a0 ; 004c57b9
-        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004c51a0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0 ; 004c57b9
+        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004c57be
     TEST EAX,EAX                        ; 004c57c1
     JZ 0x004c548e                       ; 004c57c3
@@ -474,8 +474,8 @@ section .text
     CALL dword ptr [EAX + 0x144]        ; 004c5843
     ADD ESP,0x8                         ; 004c5849
     PUSH EBX                            ; 004c584c
-    CALL core_gargoyle.cpp_FUN_004c51a0 ; 004c584d
-        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004c51a0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0 ; 004c584d
+        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004c5852
     TEST EAX,EAX                        ; 004c5855
     JZ 0x004c5914                       ; 004c5857
@@ -675,8 +675,8 @@ section .text
     CALL dword ptr [EAX + 0x144]        ; 004c5a4e
     ADD ESP,0x8                         ; 004c5a54
     PUSH EBX                            ; 004c5a57
-    CALL core_gargoyle.cpp_FUN_004c51a0 ; 004c5a58
-        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004c51a0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0 ; 004c5a58
+        ;   XREF to: 004c51a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0(CGargoyle * this_ptr)
     LEA EDX,[EBX + 0x158]               ; 004c5a5d
     ADD ESP,0x4                         ; 004c5a63
     MOV dword ptr [EBP + 0x6a],EDX      ; 004c5a66

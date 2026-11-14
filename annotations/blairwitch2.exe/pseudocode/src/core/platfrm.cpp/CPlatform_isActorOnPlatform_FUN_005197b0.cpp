@@ -20,9 +20,11 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
   float *pfVar6;
   float *pfVar7;
   byte bVar8;
-  float afStackY_1028 [988];
-  uint uVar9;
+  CKeyFramedModelInstance *apCStackY_1028 [988];
+  CVector3f *ray_origin;
   CBoundingBox3D *out_box;
+  CVector3f *ray_direction;
+  CVector3f *output_normal;
   CKeyFramedModelInstance *pCStack_84;
   float fStack_80;
   float fStack_7c;
@@ -34,12 +36,10 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  uint auStack_3c [5];
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  float fStack_1c;
-  float afStack_18 [2];
+  uint auStack_3c [2];
+  CVector3f CStack_34;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   
   bVar8 = 0;
   if (actor != (CDemonActor *)0x0) {
@@ -74,19 +74,23 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
           pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
                              (&this_ptr->model);
           if (pCVar3->collision_triangle_list != (CDemonTriangle *)0x0) {
-            uStack_28 = 0;
-            uStack_20 = 0;
-            pfVar6 = &fStack_1c;
-            fStack_1c = fStack_40;
-            afStack_18[(uint)bVar8 * -2] = *(float *)(&stack0xfffffff4 + (uint)bVar8 * -8);
-            afStack_18[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-                 *(float *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-            uVar9 = 0;
-            afStack_18[0] = fStack_80 + _DAT_005e23c8 + afStack_18[0];
-            uStack_24 = 0x3f800000;
+            output_normal = &CStack_34;
+            CStack_28.x = 0.0;
+            ray_direction = &CStack_28;
+            CStack_28.z = 0.0;
+            ray_origin = &CStack_1c;
+            CStack_1c.x = fStack_40;
+            *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + 4) =
+                 *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);
+            *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+                 *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+            iVar5 = 0;
+            CStack_1c.y = fStack_80 + _DAT_005e23c8 + CStack_1c.y;
+            CStack_28.y = 1.0;
             pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
                                (&this_ptr->model);
-            fVar4 = (float)core_dmodel_cpp_FUN_0044f020(pCVar3,uVar9,pfVar6);
+            fVar4 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_0044f020
+                              (pCVar3,iVar5,ray_origin,ray_direction,output_normal);
             if (fVar4 < 0.0) {
               return 0;
             }

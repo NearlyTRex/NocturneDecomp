@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 393,
+    "complexity_score": 392,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 228,
+    "pseudocode_lines": 227,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
@@ -18,7 +18,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 771
+    "total_lines": 770
   },
   "cross_references": [
     {
@@ -74,7 +74,7 @@
     {
       "addr": "00554440",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_00554440"
+      "name": "core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00554440"
     },
     {
       "addr": "0057be00",
@@ -694,7 +694,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_00626114",
       "severity": "mild",
       "text": "while ((((cVar4 != '\\0' && (((&DAT_00626114)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
@@ -702,7 +702,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_005f5975",
       "severity": "mild",
       "text": "iVar1 = _sprintf(pcVar6,&DAT_005f5975);",
@@ -710,7 +710,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_005f5977",
       "severity": "mild",
       "text": "iVar1 = _sprintf(pcVar5,&DAT_005f5977);",
@@ -718,7 +718,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 81,
       "match": "DAT_005f5979",
       "severity": "mild",
       "text": "pcVar5 = &DAT_005f5979;",
@@ -726,7 +726,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 103,
       "match": "DAT_00623870",
       "severity": "mild",
       "text": "puVar7 = &DAT_00623870;",
@@ -734,7 +734,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 178,
       "match": "DAT_00626114",
       "severity": "mild",
       "text": "if (((&DAT_00626114)[(byte)(*local_14 + 1)] & 2) == 0) {",
@@ -742,7 +742,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 95,
+      "line": 93,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -750,7 +750,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 107,
+      "line": 105,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -758,7 +758,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 86,
+      "line": 84,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -766,7 +766,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 86,
+      "line": 84,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -774,7 +774,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -782,7 +782,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

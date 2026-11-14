@@ -562,7 +562,7 @@ LAB_004ec9a8:
                (iVar10 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar4 = iVar3, iVar10 == 0)
                ) && (iVar10 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar10 == 0));
       DAT_0061ec60 = iVar4;
-      shape_edittool_cpp_FUN_0047e760();
+      shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
     }
     iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);
     if (iVar3 != 0) {

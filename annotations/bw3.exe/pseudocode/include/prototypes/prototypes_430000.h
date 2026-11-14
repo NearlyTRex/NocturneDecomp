@@ -5,7 +5,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBodyPart.h"
-#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
@@ -23,12 +22,13 @@
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x430000
 // =============================================================================
 
-void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoundingBox3D *param_3,int param_4);
+void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_004300e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00430430(CCharacter *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_004304e0(CCharacter *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
@@ -62,17 +62,17 @@ CMatrix3x4f * __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_F
 int __cdecl core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432060(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_00432090(CCharacter *this_ptr,char *motion_name);
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00432220(int param_1,float param_2);
+void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00432220(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004322a0(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_00432330(CCharacter *param_1,float param_2,int param_3);
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00433120(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130(CCharacter *this_ptr,uint *out_crc);
 int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_004331a0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00433220(CDemonActor *param_1,float *param_2);
+void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_00433220(CCharacter *this_ptr,UOrientationVector *orientation);
 void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00433320(CCharacter *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(CCharacter *this_ptr,float delta_time);
-undefined4 core_charactr_cpp_FUN_004333e0(CCharacter *param_1,float param_2,char *param_3);
+int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_00433580(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00433880(CCharacter *this_ptr);
@@ -151,7 +151,7 @@ void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043a8c0(SR
 void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ab20(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
-void engine_clipper_c_FUN_0043ad90(void);
+byte engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_0043ad90(void);
 void engine_clipper_c_FUN_0043aed0(void);
 void engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043b150(void);
 void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_0043b280(void);
@@ -159,7 +159,7 @@ undefined4 engine_clipper_c_FUN_0043b3c0(void);
 undefined4 engine_clipper_c_FUN_0043b4e0(void);
 void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_0043bac0(int vertex_count,int *vertex_indices);
 CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_0043c220(CCloth *this_ptr);
-void core_cloth_cpp_FUN_0043c280(CCloth *param_1);
+CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_0043c280(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_0043c300(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filename);
@@ -179,11 +179,11 @@ CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043f900(CClothList *thi
 void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043f9d0(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_add_FUN_0043fa40(CClothList *this_ptr,char *filename);
-void core_cloth_cpp_FUN_0043fac0(void);
+void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043fac0(CClothList *this_ptr,int index);
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043fbc0(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_0043fc00(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_0043fc50(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_FUN_0043fd10(void);
+void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_0043fd10(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043fd60(CCloth *this_ptr,char *bone_name,int vertex_index);
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043ff90(float dist_sq);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043ffe0(CVector3f *v);

@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
+;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043e620
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;   crt_unknown.c_FUN_005c0344
@@ -94,8 +94,8 @@ section .text
     PUSH 0x0                            ; 00441d4d
         ;   Label: LAB_00441d4d
     PUSH EAX                            ; 00441d4f
-    CALL core_cloth.cpp_FUN_0043e620    ; 00441d50
-        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e620()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_0043e620 ; 00441d50
+        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00441d55
     PUSH EAX                            ; 00441d58
     CALL crt_unknown.c_FUN_005c0344     ; 00441d59

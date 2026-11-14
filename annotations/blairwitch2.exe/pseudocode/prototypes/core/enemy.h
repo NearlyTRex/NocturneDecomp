@@ -37,9 +37,9 @@ int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *
 // Address: 00488250
 CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
-// Original: core_enemy.cpp_FUN_00488320
+// Original: core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320
 // Address: 00488320
-bool FUN_00488320(int param_1,int param_2);
+int __cdecl CEnemy::canSeeTarget(CEnemy *this_ptr,CDemonActor *target);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_00488450
 // Address: 00488450

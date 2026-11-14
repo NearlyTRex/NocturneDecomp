@@ -9,6 +9,6 @@
 CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004a7b90(CBitFont *this_ptr,uint flags)
 
 {
-  engine_font_cpp_FUN_004a8850(this_ptr);
+  engine_font_cpp_CBitFont_free_FUN_004a8850(this_ptr);
   return this_ptr;
 }

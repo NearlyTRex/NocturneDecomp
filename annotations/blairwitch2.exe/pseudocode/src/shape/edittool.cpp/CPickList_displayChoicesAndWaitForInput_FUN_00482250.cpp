@@ -32,7 +32,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482
       wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     } while (iVar2 == -2);
     engine_2d_c_clearInputAndWait_FUN_004032b0();
-    shape_edittool_cpp_FUN_0047e760(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
     DAT_006141cc = uVar1;
     return iVar2;
   }

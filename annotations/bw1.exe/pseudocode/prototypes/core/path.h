@@ -5,9 +5,9 @@
 // Function prototypes for core/path.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_path.cpp_FUN_00532f60
+// Original: core_path.cpp_queuePop_FUN_00532f60
 // Address: 00532f60
-void FUN_00532f60(void);
+void __cdecl queuePop(int *out_x,int *out_cost,int *out_z);
 
 // Original: core_path.cpp_CPathMap_ctor_FUN_00532fe0
 // Address: 00532fe0
@@ -41,9 +41,9 @@ int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int st
 // Address: 00533dc0
 int __cdecl CPathMap::findPathToDestination(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
-// Original: core_path.cpp_FUN_005348a0
+// Original: core_path.cpp_CPathMap_previewPathfinding_FUN_005348a0
 // Address: 005348a0
-void FUN_005348a0(void);
+void __cdecl CPathMap::previewPathfinding(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 // Address: 005349a0
@@ -81,9 +81,9 @@ void __cdecl renderAllPathMaps(int depth,int red,int green,int fog);
 // Address: 00535370
 void __cdecl renderPathMapsAtPosition(CVector3f *position,int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_00535440
+// Original: core_path.cpp_CPathMap_setupPathSearch_FUN_00535440
 // Address: 00535440
-void FUN_00535440(void);
+void __cdecl CPathMap::setupPathSearch(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_searchGrid_FUN_00535490
 // Address: 00535490

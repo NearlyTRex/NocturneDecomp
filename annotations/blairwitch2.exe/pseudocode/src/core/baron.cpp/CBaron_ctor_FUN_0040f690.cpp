@@ -14,7 +14,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f690(CBaron *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CBaron *)core_hero_cpp_FUN_004ce240(this_ptr);
+  pCVar2 = (CBaron *)core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CBaronVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar2->base).base.model,(char *)0x5cb413);

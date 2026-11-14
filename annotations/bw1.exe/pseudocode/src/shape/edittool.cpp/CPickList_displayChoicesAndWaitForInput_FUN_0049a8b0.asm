@@ -17,8 +17,8 @@
 ;   core_mission.cpp_FUN_0051c240 at 0051c2bf
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057dbac
 ;   engine_pod.cpp_FUN_0053bfc0 at 0053c211
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 004953fe
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 004950b7
-;   shape_edittool.cpp_FUN_00495180 at 004953fe
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68
@@ -35,10 +35,10 @@
 ;   core_main.c_FUN_005030e0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_0049add0
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_0049a980
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830
-;   shape_edittool.cpp_FUN_00496dd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV ESI,dword ptr [0x0061abc0]      ; 0049a958 | g_CEditorToolsPtr
     PUSH ESI                            ; 0049a95e
-    CALL shape_edittool.cpp_FUN_00496dd0 ; 0049a95f
-        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496dd0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0 ; 0049a95f
+        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049a964
     MOV dword ptr [0x0061b4ac],EDI      ; 0049a967 | DAT_0061b4ac
     MOV EAX,EBX                         ; 0049a96d

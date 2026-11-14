@@ -31,9 +31,9 @@
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
-;   core_hero.cpp_FUN_004cec50
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -258,8 +258,8 @@ section .text
     JNZ 0x004ccc99                      ; 004ccc47
         ;   XREF to: 004ccc99 (CONDITIONAL_JUMP)  ; LAB_004ccc99
     PUSH EBP                            ; 004ccc49
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccc4a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccc4a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccc4f
     ADD ESP,0x4                         ; 004ccc52
     CMP EAX,0x13                        ; 004ccc55
@@ -402,8 +402,8 @@ section .text
     FMUL float ptr [EBX + 0x2598]       ; 004ccdcc
     PUSH EBP                            ; 004ccdd2
     FSTP float ptr [EBX + 0x2578]       ; 004ccdd3
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccdd9
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccdd9
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccdde
     ADD ESP,0x4                         ; 004ccde1
     CMP ESI,EAX                         ; 004ccde4
@@ -475,8 +475,8 @@ section .text
         ;   XREF to: 004cce30 (UNCONDITIONAL_JUMP)  ; LAB_004cce30
     PUSH EBX                            ; 004cce66
         ;   Label: LAB_004cce66
-    CALL core_hero.cpp_FUN_004cf440     ; 004cce67
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf440()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 ; 004cce67
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
     ADD ESP,0x4                         ; 004cce6c
     JMP 0x004ccd9f                      ; 004cce6f
         ;   XREF to: 004ccd9f (UNCONDITIONAL_JUMP)  ; LAB_004ccd9f
@@ -486,8 +486,8 @@ section .text
         ;   XREF to: 004ccdc0 (UNCONDITIONAL_JUMP)  ; LAB_004ccdc0
     PUSH EAX                            ; 004cce7e
         ;   Label: LAB_004cce7e
-    CALL core_motion.cpp_FUN_005035c0   ; 004cce7f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004cce7f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004cce84
     ADD ESP,0x4                         ; 004cce87
     CMP EAX,0xa                         ; 004cce8a
@@ -546,8 +546,8 @@ section .text
     PUSH EAX                            ; 004ccf2b
     FST float ptr [EDX + 0x4]           ; 004ccf2c
     FSTP float ptr [EDX]                ; 004ccf2f
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccf31
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccf31
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccf36
     ADD ESP,0x4                         ; 004ccf39
     CMP EAX,0xe                         ; 004ccf3c

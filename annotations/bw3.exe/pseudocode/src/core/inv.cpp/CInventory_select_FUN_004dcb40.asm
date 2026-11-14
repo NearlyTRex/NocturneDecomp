@@ -37,7 +37,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
-;   core_health.cpp_FUN_004d20c0
+;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
 ;   core_inv.cpp_FUN_004dd2d0
@@ -254,8 +254,8 @@ section .text
     PUSH ECX                            ; 004dcd20
     MOV ESI,dword ptr [ESP + 0x104]     ; 004dcd21
     PUSH ESI                            ; 004dcd28
-    CALL core_health.cpp_FUN_004d20c0   ; 004dcd29
-        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_FUN_004d20c0()
+    CALL core_health.cpp_CHealthItem_useItem_FUN_004d20c0 ; 004dcd29
+        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_useItem_FUN_004d20c0(CHealthItem * this_ptr, CCharacter * user)
     ADD ESP,0x8                         ; 004dcd2e
     TEST EAX,EAX                        ; 004dcd31
     JG 0x004dcbb2                       ; 004dcd33

@@ -22,7 +22,7 @@
 ;   core_fire.cpp_CTrail_render_FUN_004a0680 at 004a072d
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 at 004a6659
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0 at 0053ae4e
-;   core_weather.cpp_FUN_0057c890 at 0057c8c3
+;   core_weather.cpp_CWeather_renderParticles_FUN_0057c890 at 0057c8c3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc563

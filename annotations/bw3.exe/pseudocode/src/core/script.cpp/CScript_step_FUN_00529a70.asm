@@ -6050,8 +6050,8 @@ section .text
         ;   XREF to: 0052dd1d (CONDITIONAL_JUMP)  ; LAB_0052dd1d
     MOV EDX,dword ptr [0x005fe9dc]      ; 0052dd08 | g_CGamePtr
     PUSH EDX                            ; 0052dd0e
-    CALL core_game.cpp_FUN_004ba490     ; 0052dd0f
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 0052dd0f
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052dd14
     MOV dword ptr [0x01ed7014],EDI      ; 0052dd17 | DAT_01ed7014
     MOV dword ptr [ESI],0x1             ; 0052dd1d
@@ -6219,8 +6219,8 @@ section .text
         ;   XREF to: 0052df0a (CONDITIONAL_JUMP)  ; LAB_0052df0a
     MOV EDI,dword ptr [0x005fe9dc]      ; 0052def4 | g_CGamePtr
     PUSH EDI                            ; 0052defa
-    CALL core_game.cpp_FUN_004ba490     ; 0052defb
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 0052defb
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     XOR EAX,EAX                         ; 0052df00
     ADD ESP,0x4                         ; 0052df02
     MOV [0x01ed7014],EAX                ; 0052df05 | DAT_01ed7014

@@ -96,10 +96,10 @@ int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2)
   char local_385 [101];
   char local_320 [100];
   byte local_2bc [48];
-  byte local_28c [32];
-  byte local_26c [32];
-  byte local_24c [32];
-  byte local_22c [32];
+  char local_28c [32];
+  char local_26c [32];
+  char local_24c [32];
+  char local_22c [32];
   CVector3f local_20c;
   int local_200;
   CVector3f local_1fc;
@@ -1322,7 +1322,7 @@ LAB_0048c367:
                                       local_16c = local_16c + 1;
                                     }
                                     pcVar21 = (char *)core_event_cpp_extractParenArg_FUN_0048bc10
-                                                                (&local_16c,local_28c,0x20,1);
+                                                                (&local_16c,local_28c,0x20);
                                     if (pcVar21 != (char *)0x0) {
 LAB_0048c717:
                                       pcVar20 = &DAT_01c734b0;
@@ -1340,7 +1340,8 @@ LAB_0048c717:
                                       return 0;
                                     }
                                     if (local_170 != 0) {
-                                      core_event_cpp_FUN_004946f0(param_1,local_28c,1);
+                                      core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
+                                                (param_1,local_28c,1);
                                     }
                                   }
                                   else {
@@ -1353,10 +1354,11 @@ LAB_0048c717:
                                         local_16c = local_16c + 1;
                                       }
                                       pcVar21 = (char *)core_event_cpp_extractParenArg_FUN_0048bc10
-                                                                  (&local_16c,local_26c,0x20,1);
+                                                                  (&local_16c,local_26c,0x20);
                                       if (pcVar21 != (char *)0x0) goto LAB_0048c717;
                                       if (local_170 != 0) {
-                                        core_event_cpp_FUN_004946f0(param_1,local_26c,0);
+                                        core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
+                                                  (param_1,local_26c,0);
                                       }
                                     }
                                     else {
@@ -1370,10 +1372,11 @@ LAB_0048c717:
                                         }
                                         pcVar21 = (char *)
                                                   core_event_cpp_extractParenArg_FUN_0048bc10
-                                                            (&local_16c,local_22c,0x20,1);
+                                                            (&local_16c,local_22c,0x20);
                                         if (pcVar21 != (char *)0x0) goto LAB_0048c717;
                                         if (local_170 != 0) {
-                                          core_event_cpp_FUN_004948e0(param_1,local_22c,1);
+                                          core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0
+                                                    (param_1,local_22c,1);
                                         }
                                       }
                                       else {
@@ -1389,10 +1392,11 @@ LAB_0048c717:
                                           }
                                           pcVar21 = (char *)
                                                   core_event_cpp_extractParenArg_FUN_0048bc10
-                                                            (&local_16c,local_24c,0x20,1);
+                                                            (&local_16c,local_24c,0x20);
                                           if (pcVar21 != (char *)0x0) goto LAB_0048c717;
                                           if (local_170 != 0) {
-                                            core_event_cpp_FUN_004948e0(param_1,local_24c,0);
+                                            core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0
+                                                      (param_1,local_24c,0);
                                           }
                                         }
                                         else {

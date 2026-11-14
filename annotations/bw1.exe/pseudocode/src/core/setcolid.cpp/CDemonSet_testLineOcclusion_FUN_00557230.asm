@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_FUN_00432f10 at 00433517
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459470
 ;   core_doc.cpp_FUN_004724a0 at 00472d28
-;   core_gabriela.cpp_FUN_004caff0 at 004cb17f
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 at 004cb17f
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d553
 ;   core_sound.cpp_FUN_0057c580 at 0057c645
 ;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50 at 0058f3d8
@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_0048b880
-;   core_setcolid.cpp_FUN_005578b0
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0055726e
     PUSH 0xbf800000                     ; 00557271
     PUSH EDI                            ; 00557276
-    CALL core_setcolid.cpp_FUN_005578b0 ; 00557277
-        ;   XREF to: 005578b0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005578b0()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0 ; 00557277
+        ;   XREF to: 005578b0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0055727c
     FLD float ptr [ESP + 0x1c]          ; 00557280
     ADD ESP,0x14                        ; 00557284

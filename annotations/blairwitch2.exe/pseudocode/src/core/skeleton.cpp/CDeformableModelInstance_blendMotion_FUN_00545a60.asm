@@ -49,9 +49,9 @@
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 004558e7
 ;   core_doc.cpp_FUN_00453d80 at 0045515a
 ;   core_doc.cpp_FUN_004562a0 at 00456450
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b21c0
 ;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00 at 004b2091
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afda9
-;   core_gabriela.cpp_FUN_004b20d0 at 004b21c0
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c1f06
 ;   ... and 8 more
 ;

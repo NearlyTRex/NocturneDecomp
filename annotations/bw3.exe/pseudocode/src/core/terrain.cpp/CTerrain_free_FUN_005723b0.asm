@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_clear_FUN_00532b30 at 00532b68
-;   core_set.cpp_FUN_00532b80 at 00533921
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533921
 ;
 ; Referenced Globals:
 ;   CGround* g_CGroundPtr = 01d5b8a8

@@ -38,10 +38,10 @@
 ;   core_game.cpp_CGame_process_FUN_004bf4b0
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004bd7d0
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
-;   core_game.cpp_FUN_004b4440
-;   core_game.cpp_FUN_004b51e0
-;   core_game.cpp_FUN_004c4a10
+;   core_game.cpp_CGame_updateDT_FUN_004b4440
+;   core_game.cpp_drawCursor_FUN_004c4a10
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_00507c00
 ;   ... and 42 more
@@ -120,8 +120,8 @@ section .text
         ;   XREF to: 004b6f59 (UNCONDITIONAL_JUMP)  ; LAB_004b6f59
     PUSH EAX                            ; 004b6fe5
         ;   Label: LAB_004b6fe5
-    CALL core_game.cpp_FUN_004b4440     ; 004b6fe6
-        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b4440()
+    CALL core_game.cpp_CGame_updateDT_FUN_004b4440 ; 004b6fe6
+        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004b4440(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b6feb
     JMP 0x004b6fbe                      ; 004b6fee
         ;   XREF to: 004b6fbe (UNCONDITIONAL_JUMP)  ; LAB_004b6fbe
@@ -269,8 +269,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b71e9
         ;   Label: LAB_004b71e9
     PUSH EBX                            ; 004b71ec
-    CALL core_game.cpp_FUN_004b4440     ; 004b71ed
-        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b4440()
+    CALL core_game.cpp_CGame_updateDT_FUN_004b4440 ; 004b71ed
+        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004b4440(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b71f2
     MOV ESI,dword ptr [0x00603450]      ; 004b71f5 | g_CNetGamePtr
     PUSH ESI                            ; 004b71fb | g_CNetGameInstance
@@ -319,8 +319,8 @@ section .text
     CMP dword ptr [EAX + 0x22c],0x0     ; 004b728e
     JNZ 0x004b79de                      ; 004b7295
         ;   XREF to: 004b79de (CONDITIONAL_JUMP)  ; LAB_004b79de
-    CALL engine_special.cpp_FUN_00565820 ; 004b729b
-        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
+    CALL engine_special.cpp_lockFrame_FUN_00565820 ; 004b729b
+        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00565820()
     MOV EAX,[0x005fe4b0]                ; 004b72a0 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004b72a5 | g_CFieldNotesInstance.is_displayed
     JZ 0x004b7a87                       ; 004b72a9
@@ -710,32 +710,32 @@ section .text
         ;   XREF to: 004b77d6 (CONDITIONAL_JUMP)  ; LAB_004b77d6
     PUSH 0x400                          ; 004b775f
     CALL engine_special.cpp_FUN_005664c0 ; 004b7764
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b7769
     PUSH EAX                            ; 004b776c
     PUSH 0x200                          ; 004b776d
     CALL engine_special.cpp_FUN_005664c0 ; 004b7772
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b7777
     PUSH EAX                            ; 004b777a
     PUSH 0x100                          ; 004b777b
     CALL engine_special.cpp_FUN_005664c0 ; 004b7780
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b7785
     PUSH EAX                            ; 004b7788
     PUSH 0x80                           ; 004b7789
     CALL engine_special.cpp_FUN_005664c0 ; 004b778e
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b7793
     PUSH EAX                            ; 004b7796
     PUSH 0x40                           ; 004b7797
     CALL engine_special.cpp_FUN_005664c0 ; 004b7799
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b779e
     PUSH EAX                            ; 004b77a1
     PUSH 0x20                           ; 004b77a2
     CALL engine_special.cpp_FUN_005664c0 ; 004b77a4
-        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005664c0()
+        ;   XREF to: 005664c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005664c0(int texture_size)
     ADD ESP,0x4                         ; 004b77a9
     PUSH EAX                            ; 004b77ac
     PUSH 0x5c2523                       ; 004b77ad | = "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d"
@@ -884,8 +884,8 @@ section .text
     JZ 0x004b7927                       ; 004b791c
         ;   XREF to: 004b7927 (CONDITIONAL_JUMP)  ; LAB_004b7927
     PUSH EAX                            ; 004b791e
-    CALL core_game.cpp_FUN_004b51e0     ; 004b791f
-        ;   XREF to: 004b51e0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b51e0()
+    CALL core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0 ; 004b791f
+        ;   XREF to: 004b51e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b7924
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b7927
         ;   Label: LAB_004b7927
@@ -914,8 +914,8 @@ section .text
     PUSH 0x0                            ; 004b7963
     MOV ECX,dword ptr [0x005fb140]      ; 004b7965 | g_CEditorToolsPtr
     PUSH ECX                            ; 004b796b
-    CALL shape_edittool.cpp_FUN_00480410 ; 004b796c
-        ;   XREF to: 00480410 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480410()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 ; 004b796c
+        ;   XREF to: 00480410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004b7971
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b7974
         ;   Label: LAB_004b7974
@@ -934,8 +934,8 @@ section .text
         ;   XREF to: 004b79aa (CONDITIONAL_JUMP)  ; LAB_004b79aa
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b799e
     PUSH EAX                            ; 004b79a1
-    CALL core_game.cpp_FUN_004c4a10     ; 004b79a2
-        ;   XREF to: 004c4a10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4a10()
+    CALL core_game.cpp_drawCursor_FUN_004c4a10 ; 004b79a2
+        ;   XREF to: 004c4a10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_drawCursor_FUN_004c4a10()
     ADD ESP,0x4                         ; 004b79a7
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b79aa
         ;   Label: LAB_004b79aa

@@ -445,7 +445,7 @@ LAB_0052cc07:
     pcVar9[1] = cVar3;
     pcVar9 = pcVar9 + 2;
   } while (cVar3 != '\0');
-  core_setdir_cpp_FUN_00539860(this_ptr,local_cc);
+  core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00539860(this_ptr,local_cc);
   if (this_ptr->use_enviro_model != 0) {
     core_dmodel_cpp_CKeyFramedModel_load_FUN_0044dcd0
               (&g_CKeyFramedModelInstance,this_ptr->enviro_model_name);

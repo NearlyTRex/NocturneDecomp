@@ -43,13 +43,13 @@
 ;   core_game.cpp_CGame_loadAssets_FUN_004bb050
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050
 ;   core_game.cpp_CGame_processFudge_FUN_004b39d0
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_setGameRes_FUN_004b5fd0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0
 ;   core_game.cpp_CGame_updateStatusDisplays_FUN_004b3820
-;   core_game.cpp_FUN_004b5190
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -343,8 +343,8 @@ section .text
     ADD ESP,0x8                         ; 004b6589
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b658c
     PUSH EAX                            ; 004b658f
-    CALL core_game.cpp_FUN_004b82e0     ; 004b6590
-        ;   XREF to: 004b82e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b82e0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_processHotkeys_FUN_004b82e0 ; 004b6590
+        ;   XREF to: 004b82e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processHotkeys_FUN_004b82e0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b6595
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b6598
     PUSH EDX                            ; 004b659b
@@ -454,8 +454,8 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV EAX,[0x006138e0]                ; 004b66aa | g_CEditorToolsPtr
     PUSH EAX                            ; 004b66af
-    CALL shape_edittool.cpp_FUN_0047e760 ; 004b66b0
-        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e760()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 004b66b0
+        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004b66b5
     PUSH 0x1cb778c                      ; 004b66b8 | g_CPickList
     CALL shape_edittool.cpp_CPickList_clear_FUN_00483d10 ; 004b66bd
@@ -948,8 +948,8 @@ section .text
         ;   XREF to: 004b6c26 (CONDITIONAL_JUMP)  ; LAB_004b6c26
     MOV ESI,dword ptr [0x0061c068]      ; 004b6c17 | DAT_0061c068
     PUSH ESI                            ; 004b6c1d
-    CALL core_sound.cpp_FUN_0055a1d0    ; 004b6c1e
-        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055a1d0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0055a1d0 ; 004b6c1e
+        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0055a1d0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004b6c23
     MOV EAX,[0x01cedef4]                ; 004b6c26 | DAT_01cedef4
         ;   Label: LAB_004b6c26
@@ -1116,8 +1116,8 @@ section .text
     MOV EDX,dword ptr [0x0061c068]      ; 004b6de8 | DAT_0061c068
     PUSH EDX                            ; 004b6dee
     MOV dword ptr [EBP + -0x4],ESI      ; 004b6def
-    CALL core_sound.cpp_FUN_0055a1d0    ; 004b6df2
-        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055a1d0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0055a1d0 ; 004b6df2
+        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0055a1d0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004b6df7
     JMP 0x004b6569                      ; 004b6dfa
         ;   XREF to: 004b6569 (UNCONDITIONAL_JUMP)  ; LAB_004b6569

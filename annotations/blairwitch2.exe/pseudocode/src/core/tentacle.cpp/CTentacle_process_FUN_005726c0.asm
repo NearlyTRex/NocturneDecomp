@@ -33,8 +33,8 @@
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004ca3e0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;   core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_00573010
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 00572b5f (CONDITIONAL_JUMP)  ; LAB_00572b5f
     MOV EDX,dword ptr [ESP + 0x298]     ; 00572732
     PUSH EDX                            ; 00572739
-    CALL core_motion.cpp_FUN_005035c0   ; 0057273a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0057273a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0057273f
     ADD ESP,0x4                         ; 00572742
     CMP EAX,0x2                         ; 00572745

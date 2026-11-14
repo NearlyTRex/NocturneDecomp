@@ -19,7 +19,7 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_0041ead0 at 0041ebdf
 ;   core_bride.cpp_CBride_processDismemberment_FUN_0041e8a0 at 0041e93f
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041df97
-;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427130 at 0042714f
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30 at 00426f9c
 ;   ... and 37 more
 ;
 ; Referenced Globals:

@@ -44,7 +44,7 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *thi
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005b1b90(CWinFont *this_ptr,uint flags);
 int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005b1c00(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
-void engine_winfont_cpp_FUN_005b1c50(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005b1c50(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005b1e90(CWinFont *this_ptr,int width,int height);
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005b2080(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_005b2100(CWinFont *this_ptr,char *text_string);

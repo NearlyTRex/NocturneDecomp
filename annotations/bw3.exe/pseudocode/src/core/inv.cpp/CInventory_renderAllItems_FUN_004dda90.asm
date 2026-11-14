@@ -71,10 +71,10 @@
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
-;   engine_alphabit.cpp_FUN_0040d8a0
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
-;   engine_font.cpp_FUN_004b0a20
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -245,8 +245,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x568]     ; 004ddca4
     PUSH EAX                            ; 004ddcab
     INC ESI                             ; 004ddcac
-    CALL engine_font.cpp_FUN_004b0a20   ; 004ddcad
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004ddcad
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004ddcb2
     ADD EDI,0x100                       ; 004ddcb5
     MOV EDX,dword ptr [ESP + 0x544]     ; 004ddcbb
@@ -333,8 +333,8 @@ section .text
     PUSH EAX                            ; 004dddd0
     MOV EAX,dword ptr [ESP + 0x548]     ; 004dddd1
     PUSH EAX                            ; 004dddd8
-    CALL engine_font.cpp_FUN_004b0a20   ; 004dddd9
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004dddd9
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004dddde
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddde1
         ;   Label: LAB_004ddde1
@@ -408,8 +408,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x564]     ; 004ddecb
     PUSH EDX                            ; 004dded2
     INC ESI                             ; 004dded3
-    CALL engine_font.cpp_FUN_004b0a20   ; 004dded4
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004dded4
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004dded9
     ADD EDI,0x100                       ; 004ddedc
     MOV ECX,dword ptr [ESP + 0x538]     ; 004ddee2
@@ -544,8 +544,8 @@ section .text
     PUSH EAX                            ; 004de07e
     PUSH ESI                            ; 004de07f
     PUSH 0x1d708b8                      ; 004de080
-    CALL engine_alphabit.cpp_FUN_0040d8a0 ; 004de085
-        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d8a0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 ; 004de085
+        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 004de08a
     FLD float ptr [ESP + 0x518]         ; 004de08d
     FMUL float ptr [ESP + 0x10]         ; 004de094
@@ -565,8 +565,8 @@ section .text
     PUSH EAX                            ; 004de0c9
     PUSH ESI                            ; 004de0ca
     PUSH 0x1d70890                      ; 004de0cb
-    CALL engine_alphabit.cpp_FUN_0040d8a0 ; 004de0d0
-        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d8a0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 ; 004de0d0
+        ;   XREF to: 0040d8a0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 004de0d5
     MOV EAX,dword ptr [ESP + 0x564]     ; 004de0d8
     PUSH EAX                            ; 004de0df
@@ -612,8 +612,8 @@ section .text
     PUSH EAX                            ; 004de16e
     MOV EDX,dword ptr [ESP + 0x548]     ; 004de16f
     PUSH EDX                            ; 004de176
-    CALL engine_font.cpp_FUN_004b0a20   ; 004de177
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004de177
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01d5ba14]                ; 004de17c | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004de181
     ADD ESP,0x18                        ; 004de188
@@ -635,8 +635,8 @@ section .text
     PUSH EAX                            ; 004de1bd
     MOV EBX,dword ptr [ESP + 0x548]     ; 004de1be
     PUSH EBX                            ; 004de1c5
-    CALL engine_font.cpp_FUN_004b0a20   ; 004de1c6
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004de1c6
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004de1cb
     MOV EAX,dword ptr [EBP + 0x14]      ; 004de1ce
         ;   Label: LAB_004de1ce
@@ -835,8 +835,8 @@ section .text
     PUSH EAX                            ; 004de448
     MOV EAX,dword ptr [ESP + 0x548]     ; 004de449
     PUSH EAX                            ; 004de450
-    CALL engine_font.cpp_FUN_004b0a20   ; 004de451
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004de451
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004de456
     JMP 0x004ddba3                      ; 004de459
         ;   XREF to: 004ddba3 (UNCONDITIONAL_JUMP)  ; LAB_004ddba3
@@ -959,8 +959,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x574]     ; 004de59d
     PUSH EDX                            ; 004de5a4
     INC ESI                             ; 004de5a5
-    CALL engine_font.cpp_FUN_004b0a20   ; 004de5a6
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004de5a6
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004de5ab
     ADD EDI,0x100                       ; 004de5ae
     MOV ECX,dword ptr [ESP + 0x54c]     ; 004de5b4

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004333e0 at 00433472
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0 at 00433472
 ;   core_shadow.cpp_FUN_005438d0 at 00543f3c
 ;
 ; Referenced Globals:

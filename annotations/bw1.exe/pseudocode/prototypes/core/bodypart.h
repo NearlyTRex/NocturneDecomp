@@ -29,9 +29,9 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 // Address: 00418c70
 CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_setCounts_FUN_00418d00
+// Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
 // Address: 00418d00
-void setCounts(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr,int vertex_count,int tri_count);
 
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00418e50
 // Address: 00418e50
@@ -115,7 +115,7 @@ int __cdecl CBodyPart::addTexture(CBodyPart *this_ptr,char *texture_name);
 
 // Original: core_bodypart.cpp_FUN_0041ad40
 // Address: 0041ad40
-void FUN_0041ad40(int param_1);
+void FUN_0041ad40(CBodyPart *param_1);
 
 // Original: core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0
 // Address: 0041aef0

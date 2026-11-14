@@ -642,8 +642,8 @@ section .text
     ADD EAX,0x14d138                    ; 0056bc3f
     PUSH EAX                            ; 0056bc44 | g_CDemonSetInstance.collision_impact_position.x
     PUSH EDI                            ; 0056bc45
-    CALL core_glass.cpp_FUN_004cc040    ; 0056bc46
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004cc040()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004cc040 ; 0056bc46
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004cc040(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 0056bc4b
     JMP 0x0056bcb5                      ; 0056bc4e
         ;   XREF to: 0056bcb5 (UNCONDITIONAL_JUMP)  ; LAB_0056bcb5

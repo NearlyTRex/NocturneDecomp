@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 0048d439
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048d439
 ;
 ; *****************************************************************************
 

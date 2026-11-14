@@ -97,9 +97,9 @@
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423f90
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429bcc
 ;   core_carved.cpp_FUN_0042a930 at 0042ad8a
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 at 00434ce2
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432377
-;   core_charactr.cpp_FUN_00431cc0 at 00431fec
-;   core_charactr.cpp_FUN_00433f10 at 0043406f
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 at 0043406f
 ;   ... and 25 more
 ;
 ; Referenced Globals:

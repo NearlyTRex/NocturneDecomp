@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_0042b550
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     RET                                 ; 005ac558
     PUSH ESI                            ; 005ac559
         ;   Label: LAB_005ac559
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac55a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac55a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005ac55f
     ADD ESP,0x4                         ; 005ac562
     CMP EAX,0x6                         ; 005ac565

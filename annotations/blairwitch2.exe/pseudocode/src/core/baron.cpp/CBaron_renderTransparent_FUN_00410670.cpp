@@ -14,27 +14,28 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00410670(CBaron *this_pt
   CDeformableModelInstance *pCVar1;
   uint uVar2;
   float fVar3;
-  int iVar4;
-  uint *puVar5;
+  SMotion *pSVar4;
+  int iVar5;
   uint *puVar6;
-  byte bVar7;
-  float10 fVar8;
+  uint *puVar7;
+  byte bVar8;
+  float10 fVar9;
   uint auStack_58 [6];
   uint auStack_40 [6];
   CVector3f CStack_28;
   float fStack_1c;
   int iStack_18;
   
-  bVar7 = 0;
+  bVar8 = 0;
   if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
     return 0;
   }
   pCVar1 = &(this_ptr->base).base.model;
-  iVar4 = core_motion_cpp_FUN_005035c0(pCVar1);
-  uVar2 = *(uint *)(iVar4 + 0x24);
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
+  uVar2 = pSVar4->state_index;
   fVar3 = (this_ptr->base).base.model.base.current_frame_number;
   fStack_1c = fVar3;
-  iVar4 = core_motion_cpp_FUN_005035c0(pCVar1);
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   if (uVar2 < 6) {
     if (uVar2 != 5) {
 LAB_00410867:
@@ -42,16 +43,16 @@ LAB_00410867:
       goto LAB_004106e9;
     }
 LAB_004106d3:
-    fVar8 = ((float10)fVar3 * (float10)_DAT_005cb59f) / (float10)*(int *)(iVar4 + 100);
+    fVar9 = ((float10)fVar3 * (float10)_DAT_005cb59f) / (float10)pSVar4->frame_count;
   }
   else {
     if (uVar2 < 7) goto LAB_004106d3;
     if (uVar2 != 7) goto LAB_00410867;
-    fVar8 = (float10)*(int *)(iVar4 + 100);
-    fVar8 = ((fVar8 - (float10)fStack_1c) * (float10)_DAT_005cb59f) / fVar8;
+    fVar9 = (float10)pSVar4->frame_count;
+    fVar9 = ((fVar9 - (float10)fStack_1c) * (float10)_DAT_005cb59f) / fVar9;
   }
   round();
-  iStack_18 = (int)ROUND(fVar8);
+  iStack_18 = (int)ROUND(fVar9);
 LAB_004106e9:
   if (this_ptr->shell_visible != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406da0((iStack_18 * 2) / 3);
@@ -69,15 +70,15 @@ LAB_004106e9:
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar5 = auStack_58;
-  puVar6 = auStack_40;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+  puVar6 = auStack_58;
+  puVar7 = auStack_40;
+  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar7 = *puVar6;
+    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
   }
-  iVar4 = core_box_cpp_FUN_0041a840(auStack_40);
-  if (iVar4 != 0) {
+  iVar5 = core_box_cpp_FUN_0041a840(auStack_40);
+  if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,iStack_18);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540(DAT_0060b280,1);
@@ -90,5 +91,5 @@ LAB_004106e9:
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
-  return iVar4;
+  return iVar5;
 }

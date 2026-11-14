@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param_3)
+; void __cdecl core_stranger_cpp_FUN_0056bf00(CStranger *this_ptr,int hand_index,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
 ; undefined4       Stack[-0x4c]:4  local_4c

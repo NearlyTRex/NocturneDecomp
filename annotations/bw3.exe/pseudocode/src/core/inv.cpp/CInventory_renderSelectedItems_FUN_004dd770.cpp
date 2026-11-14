@@ -40,12 +40,12 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd770(CInventory
         iVar7 = 0x28;
         iVar1 = 4;
       }
-      iVar5 = (DAT_005fba18 - iVar7) - iVar1;
+      iVar5 = DAT_005fba18 - iVar7;
       iVar6 = DAT_005fba1c - iVar7;
       local_1c = 0xffff;
       if (this_ptr->weapon_highlight_timer < 1.0) {
         fVar8 = (float10)this_ptr->weapon_highlight_timer * (float10)_DAT_005c65ff;
-        round(iVar5);
+        round();
         local_1c = (int)ROUND(fVar8);
         iVar4 = extraout_ECX;
       }
@@ -60,8 +60,9 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd770(CInventory
                   (DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,
                    iVar2);
       }
-      core_inv_cpp_FUN_004dbe70
-                (this_ptr,this_ptr->selected_weapon,iVar5,iVar6 - iVar1,iVar7,0x3fc90fdb,local_1c);
+      core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70
+                (this_ptr,&this_ptr->selected_weapon->base,iVar5 - iVar1,iVar6 - iVar1,iVar7,
+                 1.5707964,local_1c);
     }
     if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
       iVar1 = 0x10;
@@ -94,8 +95,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd770(CInventory
                   (DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,
                    iVar2);
       }
-      core_inv_cpp_FUN_004dbe70
-                (this_ptr,this_ptr->selected_item,iVar5 - iVar1,iVar6 - iVar1,iVar7,0,local_18);
+      core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70
+                (this_ptr,this_ptr->selected_item,iVar5 - iVar1,iVar6 - iVar1,iVar7,0.0,local_18);
     }
   }
   return;

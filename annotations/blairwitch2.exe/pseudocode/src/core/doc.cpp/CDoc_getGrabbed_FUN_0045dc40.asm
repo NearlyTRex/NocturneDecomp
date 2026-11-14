@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004cea50
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     ADD ESP,0x10                        ; 0045dc6e
     LEA EAX,[EBX + 0x2b4]               ; 0045dc71
     PUSH EAX                            ; 0045dc77
-    CALL core_motion.cpp_FUN_005035c0   ; 0045dc78
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0045dc78
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0045dc7d
     PUSH EAX                            ; 0045dc80
     PUSH 0x5d0851                       ; 0045dc81 | = "  current motion is %s\n"

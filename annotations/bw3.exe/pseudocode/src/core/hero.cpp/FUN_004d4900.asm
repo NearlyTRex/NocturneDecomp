@@ -16,12 +16,12 @@
 ; Called Functions:
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004d2cf0
+;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004d32d0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0
 ;   core_hero.cpp_FUN_004d3040
 ;   core_hero.cpp_FUN_004d3210
 ;   core_hero.cpp_FUN_004d3500
-;   core_hero.cpp_FUN_004d3e20
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EBX                            ; 004d4948
     XOR ESI,ESI                         ; 004d4949
     MOV EDI,EAX                         ; 004d494b
-    CALL core_hero.cpp_FUN_004d3e20     ; 004d494d
-        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3e20()
+    CALL core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 ; 004d494d
+        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; bool core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero * this_ptr, char * class_name)
     MOV EBP,dword ptr [EBX + 0x20b68]   ; 004d4952
     ADD ESP,0x8                         ; 004d4958
     CMP EBP,0x5                         ; 004d495b
@@ -185,8 +185,8 @@ section .text
     PUSH 0x5c50d6                       ; 004d4a69 | = "!CBodyPart"
         ;   Label: LAB_004d4a69
     PUSH EBX                            ; 004d4a6e
-    CALL core_hero.cpp_FUN_004d3e20     ; 004d4a6f
-        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3e20()
+    CALL core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 ; 004d4a6f
+        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; bool core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d4a74
     TEST EAX,EAX                        ; 004d4a77
     JZ 0x004d49bb                       ; 004d4a79
@@ -201,8 +201,8 @@ section .text
     PUSH 0x5c50e1                       ; 004d4a89 | = "CBodyPart"
         ;   Label: LAB_004d4a89
     PUSH EBX                            ; 004d4a8e
-    CALL core_hero.cpp_FUN_004d3e20     ; 004d4a8f
-        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3e20()
+    CALL core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 ; 004d4a8f
+        ;   XREF to: 004d3e20 (UNCONDITIONAL_CALL)  ; bool core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d4a94
     TEST EAX,EAX                        ; 004d4a97
     JZ 0x004d4a58                       ; 004d4a99

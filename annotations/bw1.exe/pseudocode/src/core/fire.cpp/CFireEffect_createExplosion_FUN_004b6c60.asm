@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   radius
 ;
 ; XREF[6]:
-;   core_charactr.cpp_FUN_00430c90 at 00430d60
+;   core_charactr.cpp_CCharacter_explode_FUN_00430c90 at 00430d60
 ;   core_crate.cpp_FUN_00449600 at 00449694
 ;   core_event.cpp_FUN_004a1d00 at 004a2cdd
 ;   core_fire.cpp_CToss_process_FUN_004b1d90 at 004b1dff

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00433f10 at 00433fa2
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 at 00433fa2
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 00460688
 ;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055e47e
 ;

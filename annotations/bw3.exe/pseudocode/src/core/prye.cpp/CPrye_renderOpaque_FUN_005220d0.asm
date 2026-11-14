@@ -39,7 +39,7 @@
 ;   core_prye.cpp_FUN_00524800
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
+;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0053cff0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -159,8 +159,8 @@ section .text
     PUSH ECX                            ; 005221e5
     MOV ESI,dword ptr [0x00603b28]      ; 005221e6 | g_CDemonSetPtr
     PUSH ESI                            ; 005221ec | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053cff0 ; 005221ed
-        ;   XREF to: 0053cff0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053cff0()
+    CALL core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0053cff0 ; 005221ed
+        ;   XREF to: 0053cff0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * direction)
     FLDZ                                ; 005221f2
     MOV dword ptr [EBP + 0x7e],EAX      ; 005221f4
     ADD ESP,0xc                         ; 005221f7

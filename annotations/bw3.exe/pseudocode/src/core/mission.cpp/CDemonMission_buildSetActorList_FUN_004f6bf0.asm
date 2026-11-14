@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   core_set.cpp_FUN_0053b460
+;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     ADD ESP,0x4                         ; 004f6c38
     MOV EBX,dword ptr [0x00603b28]      ; 004f6c3b | g_CDemonSetPtr
     PUSH EBX                            ; 004f6c41 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0053b460      ; 004f6c42
-        ;   XREF to: 0053b460 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0053b460()
+    CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460 ; 004f6c42
+        ;   XREF to: 0053b460 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004f6c47
     POP EBP                             ; 004f6c4a
     POP EDI                             ; 004f6c4b

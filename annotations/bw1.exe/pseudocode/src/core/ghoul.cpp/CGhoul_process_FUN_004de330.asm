@@ -34,13 +34,13 @@
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00430960
 ;   ... and 27 more
 ;
 ; *****************************************************************************
@@ -300,8 +300,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0xc280]    ; 004de638
     PUSH EDI                            ; 004de63e
     PUSH ESI                            ; 004de63f
-    CALL core_motion.cpp_FUN_00525110   ; 004de640
-        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00525110()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110 ; 004de640
+        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController * this_ptr, int motion_index, float marker_position)
     FLD float ptr [EBX + 0xc27c]        ; 004de645
     FLD1                                ; 004de64b
     FSUBRP                              ; 004de64d
@@ -1276,8 +1276,8 @@ section .text
     MOV EAX,[0x00622c18]                ; 004df170 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 004df175
     PUSH EAX                            ; 004df178 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00558450 ; 004df179
-        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00558450()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 ; 004df179
+        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV EDX,dword ptr [0x00622c18]      ; 004df17e | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 004df184
     ADD ESP,0x20                        ; 004df187
@@ -2543,8 +2543,8 @@ section .text
         ;   XREF to: 00430b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 004e00b4
     PUSH EBX                            ; 004e00b7
-    CALL core_charactr.cpp_FUN_00430960 ; 004e00b8
-        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430960()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 ; 004e00b8
+        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004e00bd
     JMP 0x004de709                      ; 004e00c0
         ;   XREF to: 004de709 (UNCONDITIONAL_JUMP)  ; LAB_004de709

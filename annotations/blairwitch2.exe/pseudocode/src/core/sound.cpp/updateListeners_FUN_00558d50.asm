@@ -72,8 +72,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a20e
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a3ff
-;   core_sound.cpp_FUN_0055a1d0 at 0055a20e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_castle_005ea6f4

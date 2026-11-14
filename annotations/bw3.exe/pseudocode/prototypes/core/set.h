@@ -29,9 +29,9 @@ CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 // Address: 00532b30
 void __cdecl CDemonSet::clear(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00532b80
+// Original: core_set.cpp_CDemonSet_load_FUN_00532b80
 // Address: 00532b80
-CDemonSet * FUN_00532b80(CDemonSet *param_1,char *param_2);
+void __cdecl CDemonSet::load(CDemonSet *this_ptr,char *filename);
 
 // Original: core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 // Address: 00533b80
@@ -165,9 +165,9 @@ void __cdecl CDemonSet::lightVerticies(CDemonSet *this_ptr,int vertex_count,int 
 // Address: 00539c50
 void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00539dd0
+// Original: core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00539dd0
 // Address: 00539dd0
-float FUN_00539dd0(int param_1,float *param_2);
+int __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_set.cpp_CDemonSet_loadAssets_FUN_00539ee0
 // Address: 00539ee0
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 0053a6c0
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_0053ab10
+// Original: core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_0053ab10
 // Address: 0053ab10
-void FUN_0053ab10(void);
+void __cdecl CDemonSet::renderFaceBatchOrEnvMap(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80
 // Address: 0053ab80
@@ -281,9 +281,9 @@ void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr,char *light_name,C3DS
 // Address: 0053b440
 void __cdecl CDemonSet::initCameraShake(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 
-// Original: core_set.cpp_FUN_0053b460
+// Original: core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460
 // Address: 0053b460
-void FUN_0053b460(int param_1);
+void __cdecl CDemonSet::buildActorTypeLists(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0053b660
 // Address: 0053b660

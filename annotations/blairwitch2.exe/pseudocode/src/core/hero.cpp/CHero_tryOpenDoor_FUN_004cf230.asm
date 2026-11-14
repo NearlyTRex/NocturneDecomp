@@ -10,18 +10,18 @@
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435cca
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045cc7b
 ;   core_doc.cpp_FUN_00453250 at 00453bd4
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410 at 004af8bb
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae92c
-;   core_gabriela.cpp_FUN_004af410 at 004af8bb
 ;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004cce5c
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d03b0 at 004d0563
 ;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d5241
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e659
-;   core_stranger.cpp_FUN_005656f0 at 00565e45
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0 at 00565e45
 ;   ... and 1 more
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_onLocked_FUN_00460800
-;   core_door.cpp_FUN_0045efc0
+;   core_door.cpp_CDoor_onOpened_FUN_0045efc0
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004dee70
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x25604]   ; 004cf265
     PUSH EBP                            ; 004cf26b
     MOV ESI,0x1                         ; 004cf26c
-    CALL core_door.cpp_FUN_0045efc0     ; 004cf271
-        ;   XREF to: 0045efc0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0045efc0(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onOpened_FUN_0045efc0 ; 004cf271
+        ;   XREF to: 0045efc0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_0045efc0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004cf276
     MOV dword ptr [EBX + 0x25604],0x0   ; 004cf279
     MOV EAX,ESI                         ; 004cf283

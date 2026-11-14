@@ -21,7 +21,7 @@ void __cdecl core_fire_cpp_CLeaf_process_FUN_004af170(CLeaf *this_ptr)
   float10 fVar7;
   float10 fVar8;
   
-  core_particle_cpp_FUN_00532250(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00532250(&this_ptr->base);
   fVar6 = (float10)(this_ptr->base).velocity.y;
   fVar7 = (float10)(this_ptr->base).velocity.x;
   fVar8 = (float10)(this_ptr->base).velocity.z;

@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_FUN_004bda10 at 004bdb29
-;   core_mission.cpp_FUN_004f5c60 at 004f5c85
+;   core_mission.cpp_CDemonMission_save_FUN_004f5c60 at 004f5c85
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mission_version_actor_ve_005c87b6

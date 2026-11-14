@@ -1527,7 +1527,7 @@ void FUN_005c3fb0(uint param_1,uint param_2);
 
 // Original: crt_unknown.c_FUN_005c4030
 // Address: 005c4030
-undefined4 FUN_005c4030(undefined4 *param_1);
+time_t FUN_005c4030(time_t *param_1);
 
 // Original: crt_unknown.c_FUN_005c4070
 // Address: 005c4070
@@ -1561,9 +1561,9 @@ char * FUN_005c42a0(char *param_1,char *param_2,ulong param_3);
 // Address: 005c4310
 int FUN_005c4310(undefined4 *param_1,short *param_2,uint param_3);
 
-// Original: crt_unknown.c_FUN_005c43e0
+// Original: crt_unknown.c__mktime_FUN_005c43e0
 // Address: 005c43e0
-int FUN_005c43e0(int *param_1);
+time_t __cdecl ::mktime(_tm *timeptr);
 
 // Original: crt_unknown.c_FUN_005c45a0
 // Address: 005c45a0

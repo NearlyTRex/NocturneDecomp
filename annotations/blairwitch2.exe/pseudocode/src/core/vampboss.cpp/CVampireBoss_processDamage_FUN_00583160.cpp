@@ -55,7 +55,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
                                ((CInventory *)&pCVar4[0xd6].process_disabled,this_ptr_00->actor_name
                                );
             if (pCVar5 == this_ptr_00) {
-              core_inv_cpp_FUN_004db8e0(&pCVar4[0xd6].process_disabled,this_ptr_00,0);
+              core_inv_cpp_CInventory_removeItem_FUN_004db8e0
+                        ((CInventory *)&pCVar4[0xd6].process_disabled,this_ptr_00,0);
               core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,this_ptr_00);
             }
           }

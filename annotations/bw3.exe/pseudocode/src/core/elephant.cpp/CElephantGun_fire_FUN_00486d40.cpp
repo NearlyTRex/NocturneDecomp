@@ -228,7 +228,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00486d40(CElephantGun *this_
             iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0((CGlass *)pCVar5);
             if (iVar3 == 0) break;
             in_stack_fffffe58 = (CDemonActor *)0x4874d7;
-            core_glass_cpp_FUN_004cc040(pCVar5,&g_CDemonSetPtr->collision_impact_position);
+            core_glass_cpp_CGlass_shatter_FUN_004cc040
+                      ((CGlass *)pCVar5,&g_CDemonSetPtr->collision_impact_position);
           }
         }
         else {

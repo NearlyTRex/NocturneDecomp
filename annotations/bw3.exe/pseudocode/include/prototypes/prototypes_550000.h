@@ -306,7 +306,7 @@ CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055fc40(CSound *this_ptr);
 void __cdecl core_sound_cpp_FUN_0055fc60(CSound *this_ptr);
 void __cdecl core_sound_cpp_shutdownSoundSystem_FUN_0055fcc0(void);
 void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055fcd0(void);
-void __cdecl core_sound_cpp_FUN_0055fd30(CSound *this_ptr);
+void __cdecl core_sound_cpp_CSound_init_FUN_0055fd30(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_0055fee0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_process_FUN_0055ff40(CSound *this_ptr);
 

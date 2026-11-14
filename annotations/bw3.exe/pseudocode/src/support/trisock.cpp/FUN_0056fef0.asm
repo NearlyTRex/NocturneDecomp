@@ -10,12 +10,12 @@
 ;   support_trisock.cpp_createNetworkAddr_FUN_0056f730
 ;   support_trisock.cpp_CSocket_bindSocket_FUN_0056f970
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30
+;   support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0
 ;   support_trisock.cpp_CSocket_createSocket_FUN_0056f900
 ;   support_trisock.cpp_CSocket_ctor_FUN_0056f8d0
 ;   support_trisock.cpp_CSocket_dtor_FUN_0056f8e0
 ;   support_trisock.cpp_CSocket_setSocketBlocking_FUN_0056fd60
 ;   support_trisock.cpp_formatSocketAddress_FUN_0056f820
-;   support_trisock.cpp_FUN_0056f9c0
 ;   support_trisock.cpp_FUN_0056fa20
 ;   support_trisock.cpp_FUN_005709c0
 ;   support_trisock.cpp_FUN_00572190
@@ -156,8 +156,8 @@ section .text
     LEA EAX,[ESP + 0xbd8]               ; 00570043
     PUSH EAX                            ; 0057004a
     PUSH ESI                            ; 0057004b
-    CALL support_trisock.cpp_FUN_0056f9c0 ; 0057004c
-        ;   XREF to: 0056f9c0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0056f9c0()
+    CALL support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0 ; 0057004c
+        ;   XREF to: 0056f9c0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0(CSocket * this_ptr, SNetworkAddr * dest_addr)
     ADD ESP,0x8                         ; 00570051
     TEST EAX,EAX                        ; 00570054
     JZ 0x005700c8                       ; 00570056

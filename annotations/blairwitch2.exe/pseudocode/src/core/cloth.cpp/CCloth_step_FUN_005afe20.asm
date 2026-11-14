@@ -187,7 +187,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
 ;   core_dirmat.cpp_FUN_004495a0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_xform.cpp_FUN_00591530
 ;
 ; *****************************************************************************
@@ -363,8 +363,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x28]      ; 005b0090
         ;   Label: LAB_005b0090
     PUSH EBX                            ; 005b0093
-    CALL core_motion.cpp_FUN_005035c0   ; 005b0094
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005b0094
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005b0099
     ADD ESP,0x4                         ; 005b009c
     TEST EAX,EAX                        ; 005b009f

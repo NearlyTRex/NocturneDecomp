@@ -19,13 +19,13 @@
 ;   engine_mini3d.cpp_drawHLine_FUN_004f9390 at 004f93a0
 ;   engine_mini3d.cpp_drawPixel_FUN_004f8fe0 at 004f8fec
 ;   engine_mini3d.cpp_drawVLine_FUN_004f93b0 at 004f93c4
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 0048454d
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047de69
+;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047b130
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048357c
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a80e
 ;   shape_edittool.cpp_FUN_0047a890 at 0047a8ba
-;   shape_edittool.cpp_FUN_0047afb0 at 0047b130
-;   shape_edittool.cpp_FUN_0047dc40 at 0047de69
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ea28
-;   shape_edittool.cpp_FUN_00483ea0 at 00484025
 ;   ... and 1 more
 ;
 ; Referenced Globals:

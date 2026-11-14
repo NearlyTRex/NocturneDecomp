@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   core_charactr.cpp_FUN_0042ff70
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042ff70
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -143,8 +143,8 @@ section .text
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 00489c75
     PUSH EBX                            ; 00489c78
-    CALL core_charactr.cpp_FUN_0042ff70 ; 00489c79
-        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042ff70()
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_0042ff70 ; 00489c79
+        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_0042ff70(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00489c7e
     POP EBP                             ; 00489c81
     POP EDI                             ; 00489c82

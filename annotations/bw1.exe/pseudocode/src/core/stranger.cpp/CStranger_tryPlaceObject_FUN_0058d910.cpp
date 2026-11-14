@@ -24,9 +24,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
   uint *puVar10;
   byte bVar11;
   float afStackY_1160 [1002];
-  uint uVar12;
-  uint *puVar13;
-  uint uVar14;
+  float bottom_y;
+  uint *puVar12;
+  float top_y;
+  uint uVar13;
   float fStack_174;
   float fStack_170;
   float fStack_16c;
@@ -267,7 +268,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
   core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
             (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
   pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  puVar13 = &stack0xffffff0c;
+  puVar12 = &stack0xffffff0c;
   puVar10 = (uint *)((int)pCVar8 + (uint)bVar11 * -8 + 0x24);
   local_13c = (pCVar8->location).position.x;
   *(uint *)((int)&stack0xfffffec8 + (uint)bVar11 * -8) = *puVar10;
@@ -276,7 +277,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
   local_f4 = 0;
   local_f0 = 0;
   local_ec = 0x3f800000;
-  core_actor_cpp_FUN_00408ac0(this_ptr,puVar13);
+  core_actor_cpp_FUN_00408ac0(this_ptr,puVar12);
   local_a0 = local_148;
   *(uint *)(&stack0xffffff64 + (uint)bVar11 * -8) =
        *(uint *)(&stack0xfffffebc + (uint)bVar11 * -8);
@@ -289,21 +290,20 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
   local_134 = local_134 + local_98;
   local_b0 = 0x3fc00000;
   core_actor_cpp_FUN_00408ac0(this_ptr,&stack0xffffff48);
-  uVar14 = 0x40400000;
-  uVar12 = 0x3dcccccd;
+  top_y = 3.0;
+  bottom_y = 0.1;
   local_64 = local_7c;
   *(uint *)((int)&stack0xffffffa0 + (uint)bVar11 * -8) =
        *(uint *)(&stack0xffffff88 + (uint)bVar11 * -8);
   *(uint *)((int)&stack0xffffffa4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
        *(uint *)(&stack0xffffff8c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-  local_14 = (float)core_setcolid_cpp_FUN_00558450
-                              (g_CDemonSetPtr,local_13c,local_134,local_64,local_5c,0x3f800000,
-                               uVar12,uVar14);
+  local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450
+                       (g_CDemonSetPtr,local_13c,local_134,local_64,local_5c,1.0,bottom_y,top_y);
   if (local_14 < 1.0) {
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     return 0;
   }
-  uVar12 = 0x3f000000;
+  uVar13 = 0x3f000000;
   local_e8 = local_13c + local_64;
   local_e4 = local_138 + local_60;
   local_e0 = local_134 + local_5c;
@@ -312,7 +312,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
        (&stack0xffffff1c)[(uint)bVar11 * 0xfffffffe];
   *(uint *)(&stack0xffffff5c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
        *(uint *)((int)&stack0xffffff20 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-  local_48 = (float)core_setcolid_cpp_FUN_005562c0(g_CDemonSetPtr,&stack0xffffff54,uVar12);
+  local_48 = (float)core_setcolid_cpp_FUN_005562c0(g_CDemonSetPtr,&stack0xffffff54,uVar13);
   local_14 = local_48;
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   if (ABS(local_48 - (this_ptr->base).base.base.location.position.y) <= 1.0) {

@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0 at 0040d4f0
-;   engine_alphabit.cpp_FUN_0040d660 at 0040d70a
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660 at 0040d70a
 ;   engine_alphabit.cpp_FUN_0040d9a0 at 0040d9ac
 ;
 ; Referenced Globals:

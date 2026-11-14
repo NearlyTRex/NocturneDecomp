@@ -39,8 +39,8 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
-;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   ... and 35 more
 ;
 ; *****************************************************************************
@@ -1164,8 +1164,8 @@ section .text
         ;   XREF to: 0045b0bd (CONDITIONAL_JUMP)  ; LAB_0045b0bd
     PUSH EBX                            ; 00459e9d
         ;   Label: LAB_00459e9d
-    CALL core_charactr.cpp_FUN_00430960 ; 00459e9e
-        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430960()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 ; 00459e9e
+        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00459ea3
     PUSH 0x1                            ; 00459ea6
         ;   Label: LAB_00459ea6
@@ -1474,8 +1474,8 @@ section .text
     MOV ECX,dword ptr [0x00622c18]      ; 0045a24b | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 0045a251
     PUSH ECX                            ; 0045a254 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00558450 ; 0045a255
-        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00558450()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 ; 0045a255
+        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV EDI,dword ptr [0x00622c18]      ; 0045a25a | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 0045a260
     ADD ESP,0x20                        ; 0045a263

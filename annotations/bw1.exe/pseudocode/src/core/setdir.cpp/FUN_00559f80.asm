@@ -40,7 +40,7 @@
 ;   core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421620
 ;   core_box.cpp_FUN_00420570
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
-;   core_setdir.cpp_FUN_0055c060
+;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0055c060
 ;   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0055c6f0
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -298,8 +298,8 @@ section .text
     FADD float ptr [0x005f0fed]         ; 0055a2d7 | DAT_005f0fed
     LEA EDI,[ESP + 0x294]               ; 0055a2dd
     FSTP float ptr [ESP + 0x214]        ; 0055a2e4
-    CALL core_setdir.cpp_FUN_0055c060   ; 0055a2eb
-        ;   XREF to: 0055c060 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0055c060()
+    CALL core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0055c060 ; 0055a2eb
+        ;   XREF to: 0055c060 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0055c060(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0055a2f0
     LEA ESI,[ESP + 0x250]               ; 0055a2f3
     FLD float ptr [ESP + 0x1f0]         ; 0055a2fa

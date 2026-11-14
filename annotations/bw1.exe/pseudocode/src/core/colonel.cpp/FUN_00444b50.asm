@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_colonel_cpp_FUN_00444b50(int param_1,float param_2)
+; void __cdecl core_colonel_cpp_FUN_00444b50(CColonel *this_ptr,float delta_time)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0xec]:4  local_ec
 ; undefined8       Stack[-0xe8]:8  local_e8
@@ -68,7 +71,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
-;   core_hero.cpp_FUN_004ec350
+;   core_hero.cpp_CHero_closestEnemy_FUN_004ec350
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_path.cpp_getPathMap_FUN_005351f0
@@ -153,8 +156,8 @@ section .text
         ;   Label: LAB_00444c34
     PUSH EAX                            ; 00444c38
     PUSH EBX                            ; 00444c39
-    CALL core_hero.cpp_FUN_004ec350     ; 00444c3a
-        ;   XREF to: 004ec350 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ec350()
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004ec350 ; 00444c3a
+        ;   XREF to: 004ec350 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004ec350(CHero * this_ptr, float * out_distance)
     MOV EDX,EAX                         ; 00444c3f
     ADD ESP,0x8                         ; 00444c41
     TEST EAX,EAX                        ; 00444c44

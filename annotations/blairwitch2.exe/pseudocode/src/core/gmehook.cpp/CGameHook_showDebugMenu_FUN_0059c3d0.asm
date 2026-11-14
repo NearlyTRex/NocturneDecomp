@@ -7,7 +7,7 @@
 ; CGameHook *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b82e0 at 004b8d7f
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b8d7f
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0059c3b4 = 0059c519

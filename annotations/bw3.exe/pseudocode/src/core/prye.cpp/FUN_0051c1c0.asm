@@ -289,9 +289,9 @@
 ;   core_door.cpp_FUN_00464c10
 ;   core_lever.cpp_FUN_004e0770
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_motion.cpp_FUN_004fc350
-;   core_motion.cpp_FUN_004fca20
 ;   core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0
 ;   core_prye.cpp_FUN_0051c0f0
@@ -991,8 +991,8 @@ section .text
     PUSH EAX                            ; 0051cbaf
     PUSH ESI                            ; 0051cbb0
     MOV EDI,EAX                         ; 0051cbb1
-    CALL core_motion.cpp_FUN_004fca20   ; 0051cbb3
-        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fca20()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20 ; 0051cbb3
+        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x2490],EAX    ; 0051cbb8
     FLD float ptr [ESP + 0x2490]        ; 0051cbbf
     ADD ESP,0xc                         ; 0051cbc6

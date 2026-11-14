@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 0048cbbd
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048cbbd
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_reposition_FUN_0045f030

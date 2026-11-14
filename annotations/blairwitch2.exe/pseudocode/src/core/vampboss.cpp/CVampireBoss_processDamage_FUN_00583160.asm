@@ -29,7 +29,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004db830
-;   core_inv.cpp_FUN_004db8e0
+;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_sound.cpp_CSound_playSound_FUN_0055ae30
@@ -234,8 +234,8 @@ section .text
     PUSH 0x0                            ; 00583342
     PUSH EBX                            ; 00583344
     PUSH ESI                            ; 00583345
-    CALL core_inv.cpp_FUN_004db8e0      ; 00583346
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 00583346
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0058334b
     PUSH EBX                            ; 0058334e
     MOV EDX,dword ptr [0x00618170]      ; 0058334f | DAT_00618170

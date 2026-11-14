@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420450
-;   core_boxactor.cpp_FUN_00421e80
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00422c74
     PUSH EBX                            ; 00422c78
     MOV dword ptr [EBX + 0x318],0x0     ; 00422c79
-    CALL core_boxactor.cpp_FUN_00421e80 ; 00422c83
-        ;   XREF to: 00421e80 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00421e80()
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80 ; 00422c83
+        ;   XREF to: 00421e80 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 00422c88
     MOV EDX,dword ptr [ESP + 0x18]      ; 00422c8b
     TEST EDX,EDX                        ; 00422c8f

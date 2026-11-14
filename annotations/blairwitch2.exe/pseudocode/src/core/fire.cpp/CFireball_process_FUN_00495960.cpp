@@ -35,7 +35,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00495960(CFireball *this_ptr)
       this_ptr->timer = 0;
     }
   }
-  core_particle_cpp_FUN_00510ef0(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00510ef0(&this_ptr->base);
   iVar3 = _DAT_01c2a370 / 2;
   this_ptr->rotation_angle1 =
        this_ptr->rotation_angle1 +

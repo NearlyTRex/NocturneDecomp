@@ -102,14 +102,15 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
     engine_font_cpp_FUN_004c1dd0(_DAT_01c3eb50,pcVar9,iVar4,iVar3,uVar6,uVar11);
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Filename: ");
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,pcVar9);
-    shape_edittool_cpp_FUN_004934b0(&local_158,iVar4 + _DAT_01c4f008,_DAT_01c4f00c + _DAT_01c3f53c);
+    shape_edittool_cpp_CInputString_draw_FUN_004934b0
+              (&local_158,iVar4 + _DAT_01c4f008,_DAT_01c4f00c + _DAT_01c3f53c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     if (local_14 != 0) break;
     while (iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar4 != 0) {
       iVar4 = engine_keys_cpp_CKeys_getInputKey_FUN_004fd260(0x01D1BCA0);
       if ((iVar4 == 0x1b) || (_DAT_02c9be70 != 0)) {
         *output_buffer = '\0';
-        shape_edittool_cpp_FUN_00496dd0(this_ptr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
         DAT_0061b4ac = local_18;
@@ -209,7 +210,7 @@ LAB_00495c2e:
     output_buffer[1] = cVar1;
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
-  shape_edittool_cpp_FUN_00496dd0(this_ptr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(this_ptr);
   DAT_0061b4ac = local_18;
   return 1;
 }

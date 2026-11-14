@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 00489e70
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489e70
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cab9f0

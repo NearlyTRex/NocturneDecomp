@@ -81,9 +81,9 @@ void clipPolygonRightPlaneGlobal(void);
 // Address: 0043d280
 void __cdecl clipPolygonLeftPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_0043d500
+// Original: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
 // Address: 0043d500
-void FUN_0043d500(void);
+byte clipPolygonBottomPlaneGlobal(void);
 
 // Original: engine_clipper.c_FUN_0043d880
 // Address: 0043d880

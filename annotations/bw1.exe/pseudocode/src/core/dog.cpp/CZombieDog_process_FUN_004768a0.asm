@@ -33,12 +33,12 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00432f10
-;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   ... and 12 more
@@ -73,8 +73,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004768d0
         ;   Label: LAB_004768d0
     PUSH EBX                            ; 004768d6
-    CALL core_charactr.cpp_FUN_00434790 ; 004768d7
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 004768d7
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004768dc
     PUSH 0x0                            ; 004768df
     PUSH dword ptr [EBP + 0x92]         ; 004768e1

@@ -41,10 +41,10 @@
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00433d50
-;   core_charactr.cpp_FUN_00434790
 ;   ... and 41 more
 ;
 ; *****************************************************************************
@@ -193,8 +193,8 @@ section .text
     ADD ESP,0x8                         ; 0046973d
     PUSH dword ptr [EBP + 0x18]         ; 00469740
     PUSH EBX                            ; 00469743
-    CALL core_charactr.cpp_FUN_00434790 ; 00469744
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 00469744
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00469749
     FLD float ptr [EBX + 0xc1d0]        ; 0046974c
     FSUB float ptr [EBP + 0x18]         ; 00469752
@@ -1511,8 +1511,8 @@ section .text
     FADD float ptr [ESP + 0x4c0]        ; 0046a885
     PUSH EBX                            ; 0046a88c
     FSTP float ptr [EBX + 0x34]         ; 0046a88d
-    CALL core_charactr.cpp_FUN_00433d50 ; 0046a890
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 0046a890
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0046a895
     MOV EAX,dword ptr [EBX + 0x26fc]    ; 0046a898
         ;   Label: LAB_0046a898
@@ -1863,8 +1863,8 @@ section .text
     FADD float ptr [ESP + 0x1b0]        ; 0046ad86
     PUSH EBX                            ; 0046ad8d
     FSTP float ptr [ESP + 0x1b4]        ; 0046ad8e
-    CALL core_charactr.cpp_FUN_00433d50 ; 0046ad95
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 0046ad95
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0046ad9a
     FLD float ptr [ESP + 0xa0]          ; 0046ad9d
     FADD double ptr [0x005d9dc4]        ; 0046ada4 | DAT_005d9dc4
@@ -2218,8 +2218,8 @@ section .text
     FADD float ptr [ESP + 0x5c]         ; 0046b2a9
     PUSH EBX                            ; 0046b2ad
     FSTP float ptr [EBX + 0x34]         ; 0046b2ae
-    CALL core_charactr.cpp_FUN_00433d50 ; 0046b2b1
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 0046b2b1
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0046b2b6
     JMP 0x00469e25                      ; 0046b2b9
         ;   XREF to: 00469e25 (UNCONDITIONAL_JUMP)  ; LAB_00469e25

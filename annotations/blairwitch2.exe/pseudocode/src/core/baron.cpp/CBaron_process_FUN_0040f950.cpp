@@ -13,7 +13,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f950(CBaron *this_ptr,float d
 {
   EWalkState EVar1;
   int iVar2;
-  int iVar3;
+  SMotion *pSVar3;
   byte bVar4;
   float afStackY_1894 [1520];
   CDeformableModelInstance *pCVar5;
@@ -83,8 +83,8 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f950(CBaron *this_ptr,float d
                     ((CCharacter *)this_ptr,delta_time);
   pCVar5 = &(this_ptr->base).base.model;
   if (iVar2 == 0) {
-    iVar2 = core_motion_cpp_FUN_005035c0(pCVar5);
-    switch(*(uint *)(iVar2 + 0x24)) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar5->base);
+    switch(pSVar3->state_index) {
     case 0:
     case 1:
     case 2:
@@ -108,8 +108,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f950(CBaron *this_ptr,float d
       }
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
-      iVar3 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-      if (iVar2 == *(int *)(iVar3 + 0x24)) break;
+      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                         (&(this_ptr->base).base.model.base);
+      if (iVar2 == pSVar3->state_index) break;
       goto LAB_0040faba;
     case 4:
       core_xform_cpp_FUN_00591530

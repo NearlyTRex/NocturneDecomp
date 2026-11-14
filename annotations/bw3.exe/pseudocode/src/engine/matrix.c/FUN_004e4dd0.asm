@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_inv.cpp_FUN_004dbe70 at 004dbf66
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dbf66
 ;   engine_matrix.c_buildRotationMatrix_FUN_004e50f0 at 004e510b
 ;   engine_matrix.c_matrixPushAndTransform_FUN_004e56b0 at 004e5819
 ;

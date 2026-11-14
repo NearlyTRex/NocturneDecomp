@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0055a1d0 at 0055a33a
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a33a
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90

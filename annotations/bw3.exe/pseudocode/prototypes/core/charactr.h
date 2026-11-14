@@ -157,9 +157,9 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 // Address: 0042fbd0
 void FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
 
-// Original: core_charactr.cpp_FUN_0042fc90
+// Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 // Address: 0042fc90
-void FUN_0042fc90(int param_1);
+void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042fdc0
 // Address: 0042fdc0
@@ -173,17 +173,17 @@ void __cdecl CCharacter::spawnBloodAtBone(CCharacter *this_ptr,int part_index,in
 // Address: 0042ff40
 CBoundingBox3D * __cdecl CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_charactr.cpp_FUN_0042ff70
+// Original: core_charactr.cpp_CCharacter_shatter_FUN_0042ff70
 // Address: 0042ff70
-void FUN_0042ff70(CDemonActor *param_1);
+void __cdecl CCharacter::shatter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042ffe0
+// Original: core_charactr.cpp_CCharacter_explode_FUN_0042ffe0
 // Address: 0042ffe0
-void FUN_0042ffe0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::explode(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 
-// Original: core_charactr.cpp_FUN_004300e0
+// Original: core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 // Address: 004300e0
-void FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoundingBox3D *param_3,int param_4);
+void __cdecl CCharacter::dismember(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 
 // Original: core_charactr.cpp_CCharacter_getCollisionType_FUN_00430430
 // Address: 00430430
@@ -317,9 +317,9 @@ int __cdecl CCharacter::initGesture(CCharacter *this_ptr,char *motion_name);
 // Address: 004320d0
 void __cdecl CCharacter::applyGesture(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00432220
+// Original: core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220
 // Address: 00432220
-void FUN_00432220(int param_1,float param_2);
+void __cdecl CCharacter::advanceGesture(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004322a0
 // Address: 004322a0
@@ -345,9 +345,9 @@ void __cdecl CCharacter::calculateChecksum(CCharacter *this_ptr,uint *out_crc);
 // Address: 004331a0
 int __cdecl CCharacter::canLookAt(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00433220
+// Original: core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
 // Address: 00433220
-void FUN_00433220(CDemonActor *param_1,float *param_2);
+void __cdecl CCharacter::setOrientation(CCharacter *this_ptr,UOrientationVector *orientation);
 
 // Original: core_charactr.cpp_CCharacter_spawnFlies_FUN_00433320
 // Address: 00433320
@@ -357,9 +357,9 @@ void __cdecl CCharacter::spawnFlies(CCharacter *this_ptr,int fly_count,float spa
 // Address: 00433350
 void __cdecl CCharacter::applyGestureLookAt(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_004333e0
+// Original: core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0
 // Address: 004333e0
-undefined4 FUN_004333e0(CCharacter *param_1,float param_2,char *param_3);
+int __cdecl CCharacter::updateWanderToWaypoint(CCharacter *this_ptr,float delta_time,char *pattern);
 
 // Original: core_charactr.cpp_CCharacter_advanceLayerAction_FUN_00433580
 // Address: 00433580

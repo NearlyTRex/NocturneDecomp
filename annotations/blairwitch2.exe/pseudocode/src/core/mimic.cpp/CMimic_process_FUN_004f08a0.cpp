@@ -14,6 +14,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
   float fVar1;
   uint uVar2;
   int iVar3;
+  SMotion *pSVar4;
   
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     _DAT_01d046a0 = "..\\core\\mimic.cpp";
@@ -42,8 +43,9 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
                         (0x01C38BC0,this_ptr->mirror_condition);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_CMimic_updatePose_FUN_004f0a50(this_ptr), this_ptr->attack_mode == 1)) {
-        iVar3 = core_motion_cpp_FUN_005035c0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2b4);
-        uVar2 = *(uint *)(iVar3 + 0x24);
+        pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                           ((CMotionController *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2b4));
+        uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_004f09fa:
           core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(this_ptr);

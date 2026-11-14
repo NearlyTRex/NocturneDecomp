@@ -66,11 +66,11 @@
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_doc.cpp_FUN_004562a0
 ;   core_main.c_FUN_004e4500
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005038a0
 ;   core_motion.cpp_FUN_00503e60
-;   core_motion.cpp_FUN_00503f50
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -200,8 +200,8 @@ section .text
     PUSH ESI                            ; 004556f8
     FSTP float ptr [EBP + 0x5e]         ; 004556f9
     MOV dword ptr [EBP + 0x6a],EAX      ; 004556fc
-    CALL core_motion.cpp_FUN_005035c0   ; 004556ff
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004556ff
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV ESI,dword ptr [EAX + 0x24]      ; 00455704
     ADD ESP,0x4                         ; 00455707
     CMP ESI,0x17                        ; 0045570a
@@ -261,8 +261,8 @@ section .text
     PUSH EAX                            ; 004557a4
     PUSH ESI                            ; 004557a5
     MOV dword ptr [EBP + 0x52],EAX      ; 004557a6
-    CALL core_motion.cpp_FUN_00503f50   ; 004557a9
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 004557a9
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [EBP + 0x7a],EAX      ; 004557ae
     ADD ESP,0xc                         ; 004557b1
     MOV EAX,[0x01cede1c]                ; 004557b4 | g_CGunClassInfo.name_hash
@@ -334,8 +334,8 @@ section .text
         ;   XREF to: 00455c38 (CONDITIONAL_JUMP)  ; LAB_00455c38
     LEA EAX,[EBX + 0x2b4]               ; 00455890
     PUSH EAX                            ; 00455896
-    CALL core_motion.cpp_FUN_005035c0   ; 00455897
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00455897
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0045589c
     ADD ESP,0x4                         ; 0045589f
     TEST EAX,EAX                        ; 004558a2

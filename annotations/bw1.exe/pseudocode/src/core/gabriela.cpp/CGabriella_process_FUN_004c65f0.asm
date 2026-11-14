@@ -109,8 +109,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004c66a8
     MOV EDX,dword ptr [EAX + 0x4]       ; 004c66ab
     MOV dword ptr [EAX],EDX             ; 004c66ae
-    CALL core_gabriela.cpp_FUN_004c83b0 ; 004c66b0
-        ;   XREF to: 004c83b0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004c83b0()
+    CALL core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0 ; 004c66b0
+        ;   XREF to: 004c83b0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0(CGabriella * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x2538]        ; 004c66b5
     FLDZ                                ; 004c66bb
     XOR ECX,ECX                         ; 004c66bd
@@ -809,8 +809,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004c6efb
         ;   Label: LAB_004c6efb
     PUSH EBX                            ; 004c6f01
-    CALL core_gabriela.cpp_FUN_004c7aa0 ; 004c6f02
-        ;   XREF to: 004c7aa0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004c7aa0()
+    CALL core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0 ; 004c6f02
+        ;   XREF to: 004c7aa0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0(CGabriella * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004c6f07
     JMP 0x004c6629                      ; 004c6f0a
         ;   XREF to: 004c6629 (UNCONDITIONAL_JUMP)  ; LAB_004c6629
@@ -1682,8 +1682,8 @@ section .text
     JNZ 0x004c6c79                      ; 004c78e0
         ;   XREF to: 004c6c79 (CONDITIONAL_JUMP)  ; LAB_004c6c79
     PUSH EBX                            ; 004c78e6
-    CALL core_hero.cpp_FUN_004eb890     ; 004c78e7
-        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb890()
+    CALL core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890 ; 004c78e7
+        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero * this_ptr)
     ADD ESP,0x4                         ; 004c78ec
     TEST EAX,EAX                        ; 004c78ef
     JNZ 0x004c790e                      ; 004c78f1

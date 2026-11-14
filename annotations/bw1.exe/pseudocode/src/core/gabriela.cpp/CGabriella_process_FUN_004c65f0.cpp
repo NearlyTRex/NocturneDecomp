@@ -146,7 +146,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004c65f0(CGabriella *this_
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_gabriela_cpp_FUN_004c7aa0(this_ptr,delta_time);
+    core_gabriela_cpp_CGabriella_processAI_FUN_004c7aa0(this_ptr,delta_time);
   }
   fVar3 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar3;
@@ -169,7 +169,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004c65f0(CGabriella *this_
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_gabriela_cpp_FUN_004c83b0(this_ptr,delta_time);
+  core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004c83b0(this_ptr,delta_time);
   uStack_1c = (uint)((this_ptr->base).base.hit_points <= 0.0);
   if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
     uStack_1c = 1;
@@ -710,7 +710,7 @@ LAB_004c6bf3:
         if ((iVar10 == 0) &&
            (iVar10 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(&this_ptr->base),
            iVar10 == 0)) {
-          iVar10 = core_hero_cpp_FUN_004eb890(this_ptr);
+          iVar10 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(&this_ptr->base);
           if (iVar10 == 0) {
             iVar10 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
             if (iVar10 == 0) {

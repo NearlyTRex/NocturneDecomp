@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 004955a9
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80 at 00499d8d
-;   shape_edittool.cpp_FUN_00495180 at 004955a9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_005faad0
@@ -38,7 +38,7 @@
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c2750
 ;   crt_unknown.c_FUN_005c9428
-;   crt_unknown.c_FUN_005c9e48
+;   crt_unknown.c_IntegerToString_FUN_005c9e48
 ;
 ; *****************************************************************************
 
@@ -303,8 +303,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 005c29dd
     ADD EAX,0x65                        ; 005c29e0
     PUSH EAX                            ; 005c29e3
-    CALL crt_unknown.c_FUN_005c9e48     ; 005c29e4
-        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c9e48()
+    CALL crt_unknown.c_IntegerToString_FUN_005c9e48 ; 005c29e4
+        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005c9e48(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005c29e9
     DEC byte ptr [ESP]                  ; 005c29ec
     JMP 0x005c2b70                      ; 005c29ef
@@ -447,8 +447,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 005c2b40
     ADD EAX,0x76c                       ; 005c2b43
     PUSH EAX                            ; 005c2b48
-    CALL crt_unknown.c_FUN_005c9e48     ; 005c2b49
-        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c9e48()
+    CALL crt_unknown.c_IntegerToString_FUN_005c9e48 ; 005c2b49
+        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005c9e48(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005c2b4e
     JMP 0x005c2b70                      ; 005c2b51
         ;   XREF to: 005c2b70 (UNCONDITIONAL_JUMP)  ; LAB_005c2b70

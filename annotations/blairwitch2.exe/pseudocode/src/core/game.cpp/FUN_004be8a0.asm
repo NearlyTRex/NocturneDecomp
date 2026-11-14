@@ -41,8 +41,8 @@
 ;   core_door.cpp_FUN_0045fec0
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
 ;   core_inv.cpp_CInventory_selectItem_FUN_004dbb50
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0
-;   core_inv.cpp_FUN_004db9d0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00521840
@@ -1092,8 +1092,8 @@ section .text
     PUSH 0x0                            ; 004bf62f
     ADD EAX,0x2437c                     ; 004bf631
     PUSH EAX                            ; 004bf636
-    CALL core_inv.cpp_FUN_004db9d0      ; 004bf637
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004bf637
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004bf63c
     JMP 0x004beacd                      ; 004bf63f
         ;   XREF to: 004beacd (UNCONDITIONAL_JUMP)  ; LAB_004beacd
@@ -1105,8 +1105,8 @@ section .text
     PUSH 0x0                            ; 004bf654
     ADD EAX,0x2437c                     ; 004bf656
     PUSH EAX                            ; 004bf65b
-    CALL core_inv.cpp_FUN_004db9d0      ; 004bf65c
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004bf65c
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004bf661
     JMP 0x004beb20                      ; 004bf664
         ;   XREF to: 004beb20 (UNCONDITIONAL_JUMP)  ; LAB_004beb20
@@ -1118,8 +1118,8 @@ section .text
     PUSH 0x0                            ; 004bf679
     ADD EAX,0x2437c                     ; 004bf67b
     PUSH EAX                            ; 004bf680
-    CALL core_inv.cpp_FUN_004db9d0      ; 004bf681
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004bf681
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004bf686
     JMP 0x004bec4e                      ; 004bf689
         ;   XREF to: 004bec4e (UNCONDITIONAL_JUMP)  ; LAB_004bec4e
@@ -1131,8 +1131,8 @@ section .text
     PUSH 0x0                            ; 004bf69e
     ADD EAX,0x2437c                     ; 004bf6a0
     PUSH EAX                            ; 004bf6a5
-    CALL core_inv.cpp_FUN_004db9d0      ; 004bf6a6
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004bf6a6
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004bf6ab
     JMP 0x004beca0                      ; 004bf6ae
         ;   XREF to: 004beca0 (UNCONDITIONAL_JUMP)  ; LAB_004beca0
@@ -1144,8 +1144,8 @@ section .text
     PUSH 0x0                            ; 004bf6c3
     ADD EAX,0x2437c                     ; 004bf6c5
     PUSH EAX                            ; 004bf6ca
-    CALL core_inv.cpp_FUN_004db9d0      ; 004bf6cb
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004bf6cb
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004bf6d0
     JMP 0x004becf3                      ; 004bf6d3
         ;   XREF to: 004becf3 (UNCONDITIONAL_JUMP)  ; LAB_004becf3

@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   param_3
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00434d60
+;   support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00434e06
     PUSH EDX                            ; 00434e0a
     XOR EBX,EBX                         ; 00434e0b
-    CALL support_codec.cpp_FUN_00434d60 ; 00434e0d
-        ;   XREF to: 00434d60 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434d60()
+    CALL support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60 ; 00434e0d
+        ;   XREF to: 00434d60 (UNCONDITIONAL_CALL)  ; uint support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60(CCheesyCipher * this_ptr, byte param_2)
     MOV BL,AL                           ; 00434e12
     XOR EAX,EAX                         ; 00434e14
     ADD ESP,0x8                         ; 00434e16

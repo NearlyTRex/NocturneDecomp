@@ -13,13 +13,13 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005627f0(CStranger *thi
   uint uVar1;
   uint uVar2;
   uint uVar3;
-  int iVar4;
+  CHero *pCVar4;
   CKeyFramedModelInstance *pCVar5;
-  uint uStack00000140;
+  uint uStack00000144;
   
-  iVar4 = core_hero_cpp_FUN_004ce240(this_ptr);
+  pCVar4 = core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
   pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-                     ((CKeyFramedModelInstance *)(iVar4 + 0x25744));
+                     ((CKeyFramedModelInstance *)&pCVar4[1].base.base.process_disabled);
   this_ptr_00 = (CStranger *)(pCVar5[-0x194].part_visibility_flags + 0x1b);
   pCVar5[-0x192].part_visibility_flags[9] = (int)&g_CStrangerVTable;
   pCVar5[-0xffffffff00000001].model_name[0] = '\0';
@@ -218,7 +218,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005627f0(CStranger *thi
             ((CCharacter *)this_ptr_00,3,10,"draw_coatPocket2GasMask",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
             ((CCharacter *)this_ptr_00,10,0,"draw_gasMask2Stand",0);
-  uStack00000140 = 0x562b73;
+  uStack00000144 = 0x562b73;
   core_cloth_cpp_CClothList_add_FUN_005b15c0
             ((CClothList *)(pCVar5[-0x176].model_name + 0x78),"strcoat.cth");
   pCVar5[1].part_visibility_flags[6] = 0;

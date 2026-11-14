@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   crt_ddraw.c_DirectDrawCreate
 ;   engine_special.cpp_restoreVideoMode_FUN_00582310
-;   wincore_wddvmem.cpp_FUN_005ac300
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300
 ;
 ; *****************************************************************************
 
@@ -110,8 +110,8 @@ section .text
     PUSH EBP                            ; 005acafa
     MOV EAX,[0x0061b498]                ; 005acafb | DAT_0061b498
     PUSH EAX                            ; 005acb00
-    CALL wincore_wddvmem.cpp_FUN_005ac300 ; 005acb01
-        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005ac300()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 005acb01
+        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005acb06
     POP EBX                             ; 005acb09
     POP ESI                             ; 005acb0a

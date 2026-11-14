@@ -31,7 +31,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bbbbb
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bb054
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0 at 004d41cc
-;   core_hero.cpp_FUN_004d3e20 at 004d4016
+;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 at 004d4016
 ;   core_inv.cpp_FUN_004db8d0 at 004db974
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 005184b8
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b3eb
@@ -61,7 +61,7 @@
 ;   core_actor.cpp_FUN_004085a0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
-;   core_health.cpp_FUN_004d20c0
+;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
 ;   core_inv.cpp_getItemDescription_FUN_004d9eb0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
@@ -123,8 +123,8 @@ section .text
         ;   XREF to: 004da90c (CONDITIONAL_JUMP)  ; LAB_004da90c
     PUSH EAX                            ; 004da902
     PUSH ESI                            ; 004da903
-    CALL core_health.cpp_FUN_004d20c0   ; 004da904
-        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_FUN_004d20c0()
+    CALL core_health.cpp_CHealthItem_useItem_FUN_004d20c0 ; 004da904
+        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_useItem_FUN_004d20c0(CHealthItem * this_ptr, CCharacter * user)
     ADD ESP,0x8                         ; 004da909
     XOR EBX,EBX                         ; 004da90c
         ;   Label: LAB_004da90c

@@ -21,8 +21,8 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d970
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     ADD ESP,0xc                         ; 004bc37c
     PUSH 0x0                            ; 004bc37f
     PUSH ESI                            ; 004bc381
-    CALL engine_alphabit.cpp_FUN_0040d970 ; 004bc382
-        ;   XREF to: 0040d970 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d970()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970 ; 004bc382
+        ;   XREF to: 0040d970 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004bc387
     MOV ESI,dword ptr [EBX + 0x9c]      ; 004bc38a
     XOR ECX,ECX                         ; 004bc390

@@ -112,7 +112,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
     switch(iVar4) {
     case 0:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      iVar4 = core_gargoyle_cpp_FUN_004c51a0(this_ptr);
+      iVar4 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004c51a0(this_ptr);
       if (iVar4 == 0) {
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,1.0);
         this_ptr->petrify_timer = fStack_14;
@@ -184,7 +184,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
     case 1:
     case 2:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      iVar4 = core_gargoyle_cpp_FUN_004c51a0(this_ptr);
+      iVar4 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004c51a0(this_ptr);
       fVar12 = 0x40400000;
       pCStack_20 = &(this_ptr->base).base.model.base;
       if (iVar4 == 0) {
@@ -335,7 +335,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
       break;
     case 5:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      iVar4 = core_gargoyle_cpp_FUN_004c51a0(this_ptr);
+      iVar4 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004c51a0(this_ptr);
       if ((iVar4 != 0) &&
          (fVar12 = this_ptr->petrify_timer - delta_time, this_ptr->petrify_timer = fVar12,
          fVar12 < 0.0)) {

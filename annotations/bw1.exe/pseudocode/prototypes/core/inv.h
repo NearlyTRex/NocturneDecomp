@@ -61,9 +61,9 @@ void __cdecl CInventory::clear(CInventory *this_ptr);
 // Address: 004f7050
 void __cdecl CInventory::initialize(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004f70e0
+// Original: core_inv.cpp_loadAssets_FUN_004f70e0
 // Address: 004f70e0
-void FUN_004f70e0(void);
+void __cdecl loadAssets(void);
 
 // Original: core_inv.cpp_freeInventory_FUN_004f75a0
 // Address: 004f75a0
@@ -93,9 +93,9 @@ int __cdecl FUN_004f8c90(CInventory *this_ptr,char *class_name);
 // Address: 004f8ce0
 bool FUN_004f8ce0(CInventory *param_1,char *param_2);
 
-// Original: core_inv.cpp_FUN_004f8d00
+// Original: core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 // Address: 004f8d00
-void __cdecl FUN_004f8d00(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
+void __cdecl CInventory::removeItem(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
 
 // Original: core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
 // Address: 004f8dc0
@@ -157,9 +157,9 @@ float __cdecl CInventory::calculateTotalBatteryCharge(CInventory *this_ptr,float
 // Address: 004fa4e0
 void __cdecl CInventory::updateSelectedWeaponAmmoDisplay(CInventory *this_ptr,int ammo_type);
 
-// Original: core_inv.cpp_FUN_004fa540
+// Original: core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540
 // Address: 004fa540
-undefined4 FUN_004fa540(undefined4 param_1,CDemonActor *param_2,int param_3);
+int __cdecl CInventory::isWeaponInCategory(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 
 // Original: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
 // Address: 004fa6c0
@@ -187,7 +187,7 @@ void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004fae10
 // Address: 004fae10
-void FUN_004fae10(int param_1);
+void FUN_004fae10(CInventory *param_1);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004fc240
 // Address: 004fc240

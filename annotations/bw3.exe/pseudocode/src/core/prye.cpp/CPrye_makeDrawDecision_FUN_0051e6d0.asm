@@ -59,10 +59,10 @@
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_main.c_FUN_004e4330
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_motion.cpp_FUN_004fc350
 ;   core_motion.cpp_FUN_004fc930
-;   core_motion.cpp_FUN_004fca20
 ;   core_prye.cpp_FUN_0051ee10
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
@@ -253,8 +253,8 @@ section .text
     PUSH EAX                            ; 0051e90e
     PUSH ESI                            ; 0051e90f
     MOV dword ptr [ESP + 0xe4],EAX      ; 0051e910
-    CALL core_motion.cpp_FUN_004fca20   ; 0051e917
-        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fca20()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20 ; 0051e917
+        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xec],EAX      ; 0051e91c
     FLD float ptr [ESP + 0xec]          ; 0051e923
     ADD ESP,0xc                         ; 0051e92a
@@ -297,8 +297,8 @@ section .text
     FSTP float ptr [ESP]                ; 0051e99f
     PUSH EDI                            ; 0051e9a2
     PUSH ESI                            ; 0051e9a3
-    CALL core_motion.cpp_FUN_004fca20   ; 0051e9a4
-        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fca20()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20 ; 0051e9a4
+        ;   XREF to: 004fca20 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xec],EAX      ; 0051e9a9
     FLD float ptr [ESP + 0xec]          ; 0051e9b0
     ADD ESP,0xc                         ; 0051e9b7

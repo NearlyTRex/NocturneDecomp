@@ -12,7 +12,8 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004ed2b0(CHiram *this_ptr,float d
   CDeformableModelInstance *pCVar1;
   int iVar2;
   SMotion *pSVar3;
-  CDemonActor *pCVar4;
+  CDemonActor *actor_ptr;
+  CGlass *this_ptr_00;
   uint class_name_hash;
   float afStack_18 [2];
   
@@ -29,11 +30,13 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004ed2b0(CHiram *this_ptr,float d
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,1,1);
       class_name_hash = g_CGlassClassInfo.name_hash;
-      pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0
-                         (0x01D2C900,"GlassHiram");
-      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,class_name_hash);
-      if (pCVar4 != (CDemonActor *)0x0) {
-        core_glass_cpp_FUN_004e34b0(pCVar4,&pCVar4->location);
+      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0
+                            (0x01D2C900,"GlassHiram");
+      this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,class_name_hash)
+      ;
+      if (this_ptr_00 != (CGlass *)0x0) {
+        core_glass_cpp_CGlass_shatter_FUN_004e34b0
+                  (this_ptr_00,&(this_ptr_00->base).location.position);
       }
     }
   }

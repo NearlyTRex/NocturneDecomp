@@ -30,7 +30,7 @@ void shape_edittool_cpp_FUN_0047ccb0(void)
         iVar2 = iVar1;
       } while (iVar1 < DAT_005fba1c * 4);
     }
-    iVar2 = engine_special_cpp_FUN_00565820();
+    iVar2 = engine_special_cpp_lockFrame_FUN_00565820();
     if (iVar2 != 0) {
       iVar2 = DAT_005fba18 * DAT_005fba20 >> 0x1f;
       uVar3 = (int)((DAT_005fba18 * DAT_005fba20 + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3;

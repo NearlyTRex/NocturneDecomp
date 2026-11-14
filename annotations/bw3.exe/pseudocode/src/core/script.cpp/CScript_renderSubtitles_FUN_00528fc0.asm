@@ -38,9 +38,9 @@
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00528f60
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
-;   engine_font.cpp_FUN_004b0a20
 ;   engine_font.cpp_FUN_004b2e40
 ;
 ; *****************************************************************************
@@ -238,8 +238,8 @@ section .text
     PUSH EBX                            ; 005291ae
     PUSH EBP                            ; 005291af
     INC EDI                             ; 005291b0
-    CALL engine_font.cpp_FUN_004b0a20   ; 005291b1
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 005291b1
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005291b6
     ADD EBX,0x400                       ; 005291b9
     MOV EAX,dword ptr [ESP + 0xc]       ; 005291bf

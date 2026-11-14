@@ -23,8 +23,8 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0048fed0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0
 ;   core_manpuz.cpp_FUN_00504ee0
-;   core_manpuz.cpp_FUN_005062a0
 ;   core_xform.cpp_FUN_005b5080
 ;   core_xform.cpp_FUN_005b5760
 ;   core_xform.cpp_FUN_005b6270
@@ -501,8 +501,8 @@ section .text
     PUSH EBX                            ; 0050425b
         ;   Label: LAB_0050425b
     PUSH ESI                            ; 0050425c
-    CALL core_manpuz.cpp_FUN_005062a0   ; 0050425d
-        ;   XREF to: 005062a0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_005062a0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0 ; 0050425d
+        ;   XREF to: 005062a0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 00504262
     ADD ESP,0x8                         ; 00504263
     CMP EBX,0x2                         ; 00504266

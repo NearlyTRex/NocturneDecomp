@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[5]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20 at 0047fb98
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70 at 0047eedc
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80 at 0047ec9f
 ;   cockpit_drawsurf.cpp_FUN_0047ef60 at 0047f0e5
-;   cockpit_drawsurf.cpp_FUN_0047fb20 at 0047fb98
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090 at 00481355
 ;
 ; Referenced Globals:

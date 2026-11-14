@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01c6cee8
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00565820
+;   engine_special.cpp_lockFrame_FUN_00565820
 ;   engine_special.cpp_unlockFrame_FUN_00565870
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     LEA EAX,[EAX]                       ; 0047cc12
     LEA EDX,[EDX]                       ; 0047cc18
     MOV EAX,EAX                         ; 0047cc1e
-    CALL engine_special.cpp_FUN_00565820 ; 0047cc20
-        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
+    CALL engine_special.cpp_lockFrame_FUN_00565820 ; 0047cc20
+        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00565820()
         ;   Label: LAB_0047cc20
     TEST EAX,EAX                        ; 0047cc25
     JZ 0x0047cc9d                       ; 0047cc27

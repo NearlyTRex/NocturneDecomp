@@ -205,7 +205,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10(CMirro
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac50(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004fac90(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004facd0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
-int core_mirror_cpp_FUN_004fad60(void);
+int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004fad60(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0(CMirror *this_ptr);
 void core_mirror_cpp_FUN_004fb0a0(undefined4 param_1,int *param_2);
 void core_mirror_cpp_FUN_004fb150(undefined4 param_1,int *param_2,int *param_3);
@@ -215,7 +215,7 @@ void core_mission_cpp_FUN_004fb380(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004fb440(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_004fb450(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004fb490(CDemonMission *this_ptr,char *mission_filename,int load_flags);
-void core_mission_cpp_FUN_004fb530(CDemonMission *param_1,char *param_2);
+void __cdecl core_mission_cpp_CDemonMission_save_FUN_004fb530(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004fbc00(CDemonMission *this_ptr,char *actor_name);
 void core_mission_cpp_FUN_004fbc90(int param_1);

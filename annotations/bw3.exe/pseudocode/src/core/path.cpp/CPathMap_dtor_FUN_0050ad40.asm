@@ -10,7 +10,7 @@
 ; XREF[9]:
 ;   core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50 at 005a1b65
 ;   core_bird.cpp_CBird_dtor_FUN_004101f0 at 00410205
-;   core_hero.cpp_FUN_004d2620 at 004d265a
+;   core_hero.cpp_CHero_dtor_FUN_004d2620 at 004d265a
 ;   core_npc.cpp_CNPC_dtor_FUN_00509af0 at 00509b05
 ;   core_passngr.cpp_CPassenger_dtor_FUN_0050a530 at 0050a583
 ;   core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0 at 00527533

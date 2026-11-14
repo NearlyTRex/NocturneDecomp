@@ -10,9 +10,9 @@
 ; XREF[5]:
 ;   core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004bb890 at 004bb8a4
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 at 004dbc6e
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 at 004db9ff
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0 at 004deffa
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dccd0 at 004dcd1a
-;   core_inv.cpp_FUN_004db9d0 at 004db9ff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cedef4

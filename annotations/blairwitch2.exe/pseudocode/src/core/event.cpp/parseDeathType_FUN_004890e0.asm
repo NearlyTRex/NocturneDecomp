@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   out_type_id
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 0048bb4d
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048bb4d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_generic_005d2f6c

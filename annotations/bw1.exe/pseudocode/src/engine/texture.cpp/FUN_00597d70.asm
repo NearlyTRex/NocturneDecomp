@@ -16,7 +16,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   engine_dosio.cpp_makePath_FUN_004795b0
 ;   engine_dosio.cpp_splitPath_FUN_00479580
-;   engine_texture.cpp_FUN_00597a20
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00597a20
 ;   engine_texture.cpp_FUN_00597ac0
 ;   support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0
@@ -386,8 +386,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x368]     ; 0059820d
         ;   Label: LAB_0059820d
     PUSH EAX                            ; 00598214
-    CALL engine_texture.cpp_FUN_00597a20 ; 00598215
-        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597a20()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 00598215
+        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00597a20(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0059821a
     ADD ESP,0x358                       ; 0059821d
     POP EBP                             ; 00598223
@@ -415,8 +415,8 @@ section .text
     POP EDI                             ; 00598251
         ;   Label: LAB_00598251
     PUSH EBP                            ; 00598252
-    CALL engine_texture.cpp_FUN_00597a20 ; 00598253
-        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597a20()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 00598253
+        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00597a20(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00598258
     ADD ESP,0x358                       ; 0059825b
     POP EBP                             ; 00598261

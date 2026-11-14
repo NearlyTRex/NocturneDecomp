@@ -89,9 +89,9 @@ void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 // Address: 00420840
 undefined4 FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4);
 
-// Original: core_bugs.cpp_FUN_00420e90
+// Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00420e90
 // Address: 00420e90
-void FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl CBugs::updateBugRenderingData(CBugs *this_ptr,SBug *bug_data,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00421800
 // Address: 00421800

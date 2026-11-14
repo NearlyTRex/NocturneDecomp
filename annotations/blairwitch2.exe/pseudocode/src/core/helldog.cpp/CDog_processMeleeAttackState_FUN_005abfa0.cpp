@@ -40,7 +40,7 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
   fVar4 = (this_ptr->base).base.base.base.location.position.z - (pCVar2->base).location.position.z;
   fStack_14 = SQRT(fVar4 * fVar4 + fVar3 * fVar3);
   this_ptr_00 = &(this_ptr->base).base.base.model;
-  core_motion_cpp_FUN_005035c0(this_ptr_00);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   if (_DAT_00600c4c < fStack_14) {
     core_actor_cpp_FUN_00408de0(this_ptr,&(((this_ptr->base).base.victim)->base).location);
     uStack_30 = uStack_48;

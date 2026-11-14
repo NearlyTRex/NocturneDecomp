@@ -125,9 +125,9 @@ int __cdecl CMansionPuzzleCircle::getPrevPanelIndex(CMansionPuzzleCircle *this_p
 // Address: 00506220
 void __cdecl CMansionPuzzleCircle::updateReflector(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time);
 
-// Original: core_manpuz.cpp_FUN_005062a0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0
 // Address: 005062a0
-void FUN_005062a0(int param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::updateReflectorPosition(CMansionPuzzleCircle *this_ptr,int reflector_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_00506390
 // Address: 00506390

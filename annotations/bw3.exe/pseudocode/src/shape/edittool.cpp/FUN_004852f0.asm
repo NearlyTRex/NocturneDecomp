@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00485640 at 0048581f
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00485640 at 0048581f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c5baec

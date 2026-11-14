@@ -53,7 +53,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
   local_8 = 1;
   core_game_cpp_CGame_saveClockTime_FUN_004cbf10(g_CGamePtr);
   do {
-    core_game_cpp_FUN_004cbf20(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004cbf20(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
     local_c = g_CGamePtr->delta_time_float;
     g_CDemonSetPtr->rendering_mode = 1;

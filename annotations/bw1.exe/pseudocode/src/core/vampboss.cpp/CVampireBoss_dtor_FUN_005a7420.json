@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 57,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 121
+    "total_lines": 123
   },
   "cross_references": [],
   "function": {
@@ -39,14 +39,14 @@
       "name": "core_armour.cpp_FUN_0040ee30"
     },
     {
+      "addr": "0043e620",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_0043e620"
+    },
+    {
       "addr": "00441ca0",
       "is_variadic": false,
       "name": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0"
-    },
-    {
-      "addr": "0043e620",
-      "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043e620"
     },
     {
       "addr": "00522fc0",
@@ -161,15 +161,23 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar3[-4].",
+      "line": 24,
+      "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "iVar2 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);",
+      "text": "((CDeformableModelInstance *)&pCVar2[-1].collide_bones[0x12].euler1.z,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 25,
+      "match": "pCVar3[-4].",
+      "severity": "mild",
+      "text": "iVar4 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",

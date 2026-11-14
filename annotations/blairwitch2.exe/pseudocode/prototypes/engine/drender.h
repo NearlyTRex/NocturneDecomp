@@ -41,9 +41,9 @@ int __cdecl CDemonRenderer::renderDepthProfiledDirect(CDemonRenderer *this_ptr,S
 // Address: 00469a90
 void __cdecl CDemonRenderer::renderNearPlaneTexturedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_00469be0
+// Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_00469be0
 // Address: 00469be0
-void FUN_00469be0(void);
+void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,int param_2);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
 // Address: 00469c60
@@ -57,9 +57,9 @@ void __cdecl CDemonRenderer::renderTexturedPoly(CDemonRenderer *this_ptr,SMRGLPr
 // Address: 00469e80
 void __cdecl CDemonRenderer::renderTexturedFace(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
 
-// Original: engine_drender.cpp_FUN_00469fa0
+// Original: engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_00469fa0
 // Address: 00469fa0
-void FUN_00469fa0(void);
+void __cdecl CDemonRenderer::renderAlphaBlendedDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046a030
 // Address: 0046a030
@@ -193,9 +193,9 @@ CVector3i * __stack_esi CDemonRenderer::getCameraRotationFixed(CDemonRenderer *t
 // Address: 0046b670
 void FUN_0046b670(void);
 
-// Original: engine_drender.cpp_FUN_0046b6f0
+// Original: engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046b6f0
 // Address: 0046b6f0
-float FUN_0046b6f0(void);
+float __cdecl CDemonRenderer::calculateProjectionFactor(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
 // Address: 0046b710
@@ -281,9 +281,9 @@ void __cdecl CDemonRenderer::renderFacetList(CDemonRenderer *this_ptr,SMRGLPrimi
 // Address: 0046bff0
 void __cdecl CDemonRenderer::renderFaceList(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
 
-// Original: engine_drender.cpp_FUN_0046c290
+// Original: engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290
 // Address: 0046c290
-void FUN_0046c290(void);
+void __cdecl CDemonRenderer::renderGeometryBatch(CDemonRenderer *this_ptr,ushort *vertex_indices,int face_count,int vertices_per_face ,int render_mode);
 
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540
 // Address: 0046c540

@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   y
 ;
 ; XREF[5]:
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 at 0048057f
+;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_00481ab0 at 00481ba7
 ;   shape_edittool.cpp_FUN_0047b4e0 at 0047b4f3
 ;   shape_edittool.cpp_FUN_0047b510 at 0047b562
 ;   shape_edittool.cpp_FUN_0047b5e0 at 0047b647
-;   shape_edittool.cpp_FUN_00480410 at 0048057f
-;   shape_edittool.cpp_FUN_00481ab0 at 00481ba7
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_fillRect_FUN_004f37e0

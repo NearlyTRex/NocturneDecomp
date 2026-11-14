@@ -13,8 +13,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
 ;   core_armour.cpp_FUN_0040ee30
+;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
 ;   core_cloth.cpp_CClothList_dtor_FUN_00441ca0
-;   core_cloth.cpp_FUN_0043e620
 ;   core_morph.cpp_CMorph_dtor_FUN_00522fc0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
 ;   crt_memory.c___vec_delete_FUN_005c030f
@@ -40,20 +40,20 @@ section .text
     PUSH 0x0                            ; 005a7441
     SUB EAX,0x3ab34                     ; 005a7443
     PUSH EAX                            ; 005a7448
-    CALL core_cloth.cpp_FUN_0043e620    ; 005a7449
-        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e620()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_0043e620 ; 005a7449
+        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a744e
     PUSH 0x0                            ; 005a7451
     SUB EAX,0x3ab30                     ; 005a7453
     PUSH EAX                            ; 005a7458
-    CALL core_cloth.cpp_FUN_0043e620    ; 005a7459
-        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e620()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_0043e620 ; 005a7459
+        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a745e
     PUSH 0x0                            ; 005a7461
     SUB EAX,0x3ab30                     ; 005a7463
     PUSH EAX                            ; 005a7468
-    CALL core_cloth.cpp_FUN_0043e620    ; 005a7469
-        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e620()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_0043e620 ; 005a7469
+        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a746e
     PUSH 0x0                            ; 005a7471
     SUB EAX,0x23a4                      ; 005a7473

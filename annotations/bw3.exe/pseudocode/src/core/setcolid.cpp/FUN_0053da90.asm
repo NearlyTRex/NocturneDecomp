@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_0053de10 at 0053e2f5
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 at 0053e2f5
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

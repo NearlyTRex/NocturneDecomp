@@ -17,9 +17,9 @@ CParticle * __cdecl CParticle::dtor(CParticle *this_ptr,uint flags);
 // Address: 00532160
 void __cdecl CParticle::setup(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
 
-// Original: core_particle.cpp_FUN_00532250
+// Original: core_particle.cpp_CParticle_process_FUN_00532250
 // Address: 00532250
-void FUN_00532250(CVector3f *param_1);
+void __cdecl CParticle::process(CParticle *this_ptr);
 
 // Original: core_particle.cpp_CParticle_render_FUN_005326d0
 // Address: 005326d0

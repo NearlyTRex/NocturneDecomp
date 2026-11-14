@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 0045e3dd (UNCONDITIONAL_JUMP)  ; LAB_0045e3dd
     PUSH ESI                            ; 0045e402
         ;   Label: LAB_0045e402
-    CALL core_motion.cpp_FUN_005035c0   ; 0045e403
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0045e403
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 0045e408
     FMUL float ptr [EBX + 0x10a60]      ; 0045e40e
     FLD float ptr [EBX + 0x2510]        ; 0045e414

@@ -52,11 +52,11 @@
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0047abd0
 ;   shape_edittool.cpp_CInputString_deleteSelection_FUN_0047ab80
+;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0
-;   shape_edittool.cpp_CInputString_init_FUN_0047a9d0
-;   shape_edittool.cpp_CInputString_insertChar_FUN_0047aa80
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -263,8 +263,8 @@ section .text
     PUSH ECX                            ; 0047d4b3
     LEA EAX,[ESP + 0x210]               ; 0047d4b4
     PUSH EAX                            ; 0047d4bb
-    CALL shape_edittool.cpp_FUN_0047afb0 ; 0047d4bc
-        ;   XREF to: 0047afb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047afb0()
+    CALL shape_edittool.cpp_CInputString_draw_FUN_0047afb0 ; 0047d4bc
+        ;   XREF to: 0047afb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_draw_FUN_0047afb0(CInputString * this_ptr, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0047d4c1
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 0047d4c4
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
@@ -319,8 +319,8 @@ section .text
     POP EDI                             ; 0047d549
         ;   Label: LAB_0047d549
     PUSH ECX                            ; 0047d54a
-    CALL shape_edittool.cpp_FUN_0047e760 ; 0047d54b
-        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e760()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 0047d54b
+        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047d550
     MOV EAX,dword ptr [ESP + 0x348]     ; 0047d553
     MOV [0x006141cc],EAX                ; 0047d55a | DAT_006141cc
@@ -485,8 +485,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x374]     ; 0047d6e2
     PUSH EDI                            ; 0047d6e9
     MOV byte ptr [EAX],0x0              ; 0047d6ea
-    CALL shape_edittool.cpp_FUN_0047e760 ; 0047d6ed
-        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e760()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 0047d6ed
+        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047d6f2
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0047d6f5
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()

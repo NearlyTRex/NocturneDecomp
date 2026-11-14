@@ -14,8 +14,8 @@
 ;   core_mission.cpp_FUN_004f7a20 at 004f7b88
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90 at 00560cfd
 ;   engine_pod.cpp_FUN_00513d20 at 00513f56
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047e00e
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dcc2
-;   shape_edittool.cpp_FUN_0047dd20 at 0047e00e
 ;
 ; Referenced Globals:
 ;   undefined1* g_CPickListVTable = 004832b0

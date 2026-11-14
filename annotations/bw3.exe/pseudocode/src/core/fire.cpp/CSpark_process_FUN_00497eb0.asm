@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
-;   core_particle.cpp_FUN_00509f30
+;   core_particle.cpp_CParticle_process_FUN_00509f30
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
         ;   XREF to: 004bf3a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004bf3a0(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00497f04
     PUSH EBX                            ; 00497f07
-    CALL core_particle.cpp_FUN_00509f30 ; 00497f08
-        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00509f30()
+    CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 00497f08
+        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
     ADD ESP,0x4                         ; 00497f0d
     MOV EBP,dword ptr [0x005fe9dc]      ; 00497f10 | g_CGamePtr
     PUSH dword ptr [ESP]                ; 00497f16

@@ -17,7 +17,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_00591e60(CStranger *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CStranger *)core_hero_cpp_FUN_004ea980(this_ptr,1);
+  pCVar1 = (CStranger *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

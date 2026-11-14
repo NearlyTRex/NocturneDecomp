@@ -32,8 +32,8 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423bc0
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90
-;   core_bugs.cpp_FUN_00423050
 ;   core_bugs.cpp_FUN_00423fb0
 ;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
@@ -182,8 +182,8 @@ section .text
     PUSH EDI                            ; 004226df
     PUSH EBX                            ; 004226e0
     INC ESI                             ; 004226e1
-    CALL core_bugs.cpp_FUN_00423050     ; 004226e2
-        ;   XREF to: 00423050 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423050()
+    CALL core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050 ; 004226e2
+        ;   XREF to: 00423050 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050(CBugs * this_ptr, SBug * bug_data, float delta_time)
     ADD EDI,0x40                        ; 004226e7
     MOV EAX,dword ptr [EBX + 0xd058]    ; 004226ea
     ADD ESP,0xc                         ; 004226f0

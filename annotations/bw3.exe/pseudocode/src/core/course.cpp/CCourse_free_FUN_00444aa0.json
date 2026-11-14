@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 7,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [
+    {
+      "addr": "00444910",
+      "from_addr": "00444916",
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00444910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004448f0",
+      "from_addr": "004448f6",
+      "name": "core_course.cpp_CCourse_dtor_FUN_004448f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444970",
+      "from_addr": "00444980",
+      "name": "core_course.cpp_CCourse_load_FUN_00444970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00444aa0",
+    "address_range": [
+      [
+        "00444aa0",
+        "00444abf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_free_FUN_00444aa0",
+    "signature": "void __cdecl core_course_cpp_CCourse_free_FUN_00444aa0(CCourse *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004448f6",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_dtor_FUN_004448f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00444980",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_load_FUN_00444970",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00444916",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_allocMemory_FUN_00444910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 36
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00438c20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00447ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004426c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4516
+    },
+    "nocturne.exe": {
+      "addr": "0043b7c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5185
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 69,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 38,
     "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -48,14 +48,14 @@
       "name": "core_cloth.cpp_CCloth_ctor_FUN_0043e5c0"
     },
     {
+      "addr": "0043e620",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_0043e620"
+    },
+    {
       "addr": "0043e6d0",
       "is_variadic": false,
       "name": "core_cloth.cpp_CCloth_load_FUN_0043e6d0"
-    },
-    {
-      "addr": "0043e620",
-      "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043e620"
     },
     {
       "addr": "005030e0",
@@ -211,11 +211,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 36,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
-      "text": "pCVar4 = (CClothList *)pCVar4->filenames;",
+      "text": "pCVar3 = (CClothList *)pCVar3->filenames;",
       "type": "shadow_pointer_walk"
     }
   ]

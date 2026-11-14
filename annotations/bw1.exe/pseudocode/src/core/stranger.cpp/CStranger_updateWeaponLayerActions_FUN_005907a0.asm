@@ -57,7 +57,7 @@
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_00492640
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004f9ed0
-;   core_inv.cpp_FUN_004f8d00
+;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -240,8 +240,8 @@ section .text
     PUSH EAX                            ; 00590987
     MOV ESI,dword ptr [ESP + 0x58]      ; 00590988
     PUSH ESI                            ; 0059098c
-    CALL core_inv.cpp_FUN_004f8d00      ; 0059098d
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 0059098d
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 00590992
     MOV EDI,dword ptr [EBX + 0x1ff8c]   ; 00590995
     PUSH EDI                            ; 0059099b

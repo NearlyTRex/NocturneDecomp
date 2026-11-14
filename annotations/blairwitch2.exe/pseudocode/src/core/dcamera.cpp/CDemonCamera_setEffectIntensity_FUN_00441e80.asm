@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   intensity
 ;
 ; XREF[6]:
-;   core_game.cpp_FUN_004b90d0 at 004ba7af
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba7af
 ;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052da4e
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00534640 at 0053466d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_0053ad20 at 0053ad95

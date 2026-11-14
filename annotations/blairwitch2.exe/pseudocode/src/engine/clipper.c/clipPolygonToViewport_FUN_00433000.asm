@@ -26,7 +26,7 @@
 ;   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407740 at 0040787d
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_00407640 at 00407726
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590 at 00469624
-;   engine_drender.cpp_FUN_0046c290 at 0046c44e
+;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290 at 0046c44e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00432fb8 = 0043328c
@@ -52,8 +52,8 @@
 ;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00431e10
 ;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00432070
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760
-;   engine_prim.c_FUN_0051da80
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130
+;   engine_prim.c_renderScanlinePolygon_FUN_0051da80
 ;   engine_special.cpp_drawPolygon2_FUN_0055f920
 ;
 ; *****************************************************************************
@@ -251,8 +251,8 @@ section .text
         ;   XREF to: 004330e4 (CONDITIONAL_JUMP)  ; LAB_004330e4
     PUSH EBX                            ; 004331af
     PUSH 0x7bee34                       ; 004331b0 | DAT_007bee34
-    CALL engine_prim.c_FUN_0051da80     ; 004331b5
-        ;   XREF to: 0051da80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0051da80(SRenderVertex * vertices, int vertex_count)
+    CALL engine_prim.c_renderScanlinePolygon_FUN_0051da80 ; 004331b5
+        ;   XREF to: 0051da80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderScanlinePolygon_FUN_0051da80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004331ba
     ADD ESP,0x20                        ; 004331bd
     POP EBP                             ; 004331c0

@@ -109,7 +109,7 @@ LAB_004d6e32:
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_FUN_004a9a00(0x01C51D80);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(0x01C51D80);
     core_level_cpp_FUN_004fe840(0x01D1BD1C,9,0,0xffffffff);
     file_handle = engine_dosio_cpp_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);
     local_18 = _ftell(file_handle);

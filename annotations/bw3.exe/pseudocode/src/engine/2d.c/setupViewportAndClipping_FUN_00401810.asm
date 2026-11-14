@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   engine_matrix.c_pushViewport_FUN_004e6af0 at 004e6c0c
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0 at 0047f91e
-;   wincore_wddvmem.cpp_FUN_00579bb0 at 00579f96
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0 at 00579f96
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6b598

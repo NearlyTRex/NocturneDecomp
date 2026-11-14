@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   crt_time.c__strftime_FUN_005c2784 at 005c2b53
 ;   crt_unknown.c_FUN_005c26e0 at 005c26e6
-;   crt_unknown.c_FUN_005cc6e0 at 005cc7fb
+;   crt_unknown.c__mktime_FUN_005cc6e0 at 005cc7fb
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_005d05d4 = 001d0fa2

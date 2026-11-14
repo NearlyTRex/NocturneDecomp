@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 421,
+    "complexity_score": 445,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 266,
-    "suspect_count": 13,
+    "pseudocode_lines": 275,
+    "suspect_count": 14,
     "suspect_types": [
+      "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
       "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 853
+    "total_lines": 862
   },
   "cross_references": [
     {
@@ -48,12 +49,12 @@
     {
       "addr": "00434c60",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00434c60"
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60"
     },
     {
       "addr": "004ec350",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004ec350"
+      "name": "core_hero.cpp_CHero_closestEnemy_FUN_004ec350"
     },
     {
       "addr": "00524770",
@@ -344,23 +345,31 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 18,
       "match": "afStackY_10c4",
       "severity": "moderate",
       "text": "float afStackY_10c4 [1009];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 60,
+      "match": "*(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "severity": "moderate",
+      "text": "local_30 = *(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 71,
       "match": "&stack0xffffff28",
       "severity": "moderate",
-      "text": "(&stack0xffffff28)[(uint)bVar7 * 0xfffffffe] = afStack_b4[(uint)bVar7 * -2 + 0xc];",
+      "text": "(&stack0xffffff28)[(uint)bVar8 * 0xfffffffe] = afStack_b4[(uint)bVar8 * -2 + 0xc];",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 80,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x148))(iVar4);",
@@ -368,7 +377,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 109,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "if (&stack0xffffff24 != afStack_b4 + 5) {",
@@ -376,7 +385,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
+      "line": 121,
       "match": "code *",
       "severity": "moderate",
       "text": "this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x154) + 0xc4))(iVar4);",
@@ -384,7 +393,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
+      "line": 123,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x148))(iVar4);",
@@ -392,7 +401,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 183,
+      "line": 188,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x148))(iVar4);",
@@ -400,7 +409,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 196,
+      "line": 202,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);",
@@ -408,7 +417,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 237,
+      "line": 246,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "if (&stack0xffffff24 != afStack_b4 + 8) {",
@@ -416,7 +425,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 242,
+      "line": 251,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);",
@@ -424,7 +433,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 247,
+      "line": 256,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "if (&stack0xffffff24 != afStack_b4 + 0x11) {",

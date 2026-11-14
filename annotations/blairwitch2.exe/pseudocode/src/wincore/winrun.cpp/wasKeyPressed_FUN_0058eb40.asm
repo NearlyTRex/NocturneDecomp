@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004b90d0 at 004b916f
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b916f
 ;   core_game.cpp_FUN_004bcbf0 at 004bcfdc
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d4d3
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00482350 at 00482460

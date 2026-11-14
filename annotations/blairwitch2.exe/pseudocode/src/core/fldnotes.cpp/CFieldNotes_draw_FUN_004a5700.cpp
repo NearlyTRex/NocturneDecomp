@@ -77,7 +77,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
     ;
     iVar1 = 9;
     iVar5 = 0;
-    engine_alphabit_cpp_FUN_0040dd20(&CAlphaBitmap_01caf114,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf114,0xff);
     if (0 < _DAT_01cab9f0) {
       pCVar6 = CAlphaBitmap_ARRAY_01caf128;
       do {
@@ -109,7 +109,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes *this_p
               (&CAlphaBitmap_01caf204,"rtarrow",0x40,0x20);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
               (&CAlphaBitmap_01caf218,"fieldnotes_exit",0x1e,0x20);
-    engine_alphabit_cpp_FUN_0040dd20(&CAlphaBitmap_01caf218,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&CAlphaBitmap_01caf218,0xff);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
               (&CAlphaBitmap_01caf22c,"underline",0x100,8);
     DAT_00616010 = 0;

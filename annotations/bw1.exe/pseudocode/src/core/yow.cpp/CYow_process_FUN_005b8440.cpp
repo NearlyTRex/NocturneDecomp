@@ -83,7 +83,7 @@ void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               (&(this_ptr->base).base.model.base,0x10,1);
   }
-  core_charactr_cpp_FUN_00434790(this_ptr,param_2);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790((CCharacter *)this_ptr,param_2);
   core_charactr_cpp_FUN_00432f10(this_ptr,param_2,(this_ptr->base).pool_me == 1);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

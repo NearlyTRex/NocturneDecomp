@@ -2,28 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 960,
-    "complexity_score": 1799,
+    "complexity_score": 1752,
     "cross_reference_count": 9,
     "function_call_count": 20,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 469,
-    "suspect_count": 127,
+    "pseudocode_lines": 457,
+    "suspect_count": 124,
     "suspect_types": [
       "derived_field_index_pun",
-      "pointer_cast",
       "raw_address_constant",
+      "raw_address_pointer_store",
       "shadow_pointer_walk",
       "suspect_float",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1429
+    "total_lines": 1417
   },
   "cross_references": [
     {
@@ -33,15 +32,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b8e10",
-      "from_addr": "004b8ee1",
-      "name": "core_game.cpp_FUN_004b8e10",
+      "addr": "004b90d0",
+      "from_addr": "004b9af6",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b90d0",
-      "from_addr": "004b9af6",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "addr": "004b8e10",
+      "from_addr": "004b8ee1",
+      "name": "core_game.cpp_FUN_004b8e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,7 +90,7 @@
     ],
     "convention": "unknown",
     "name": "core_inv.cpp_FUN_004dadb0",
-    "signature": "undefined4 core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)"
+    "signature": "undefined4 core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -132,7 +131,7 @@
     {
       "addr": "004db9d0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db9d0"
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0"
     },
     {
       "addr": "004d9f80",
@@ -564,7 +563,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -572,7 +571,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -580,7 +579,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -588,7 +587,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = param_1[1].particle_systems[1].next_particle;",
+      "text": "local_24 = param_1->current_group;",
       "type": "unnamed_param"
     },
     {
@@ -596,7 +595,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (99 < *(int *)(param_1->actor_name + 0x10)) {",
+      "text": "if (99 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -620,7 +619,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (pCVar3 != *(CDemonActor **)(param_1->actor_name + 4)) {",
+      "text": "if (pCVar3 != param_1->owner) {",
       "type": "unnamed_param"
     },
     {
@@ -644,7 +643,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(CDemonActor **)(param_1->actor_name + 4) != (CDemonActor *)0x0) {",
+      "text": "if (param_1->owner != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -652,7 +651,7 @@
       "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,param_1->owner);",
       "type": "unnamed_param"
     },
     {
@@ -660,7 +659,7 @@
       "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,param_1->owner);",
       "type": "unnamed_param"
     },
     {
@@ -668,23 +667,31 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,param_1->owner);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 48,
+      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "if (((param_1->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) && (param_3 != 0)) &&",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)(param_1->actor_name + 4) == *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4)) &&",
+      "text": "if (((param_1->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) && (param_3 != 0)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_3",
       "severity": "mild",
-      "text": "(param_3 != 0)) && (g_CGamePtr->letterbox_mode == 0)) {",
+      "text": "if (((param_1->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) && (param_3 != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -732,7 +739,7 @@
       "line": 111,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar7 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
+      "text": "iVar6 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
       "type": "unnamed_param"
     },
     {
@@ -740,7 +747,7 @@
       "line": 252,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar7 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CKeyActor\");",
+      "text": "iVar6 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CKeyActor\");",
       "type": "unnamed_param"
     },
     {
@@ -772,7 +779,7 @@
       "line": 313,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar12 = param_1[1].create_event + 0x28;",
+      "text": "pcVar12 = param_1->message_text;",
       "type": "unnamed_param"
     },
     {
@@ -780,7 +787,7 @@
       "line": 324,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_01511cc4,param_1[1].create_event + 0x28);",
+      "text": "(_DAT_01511cc4,param_1->message_text);",
       "type": "unnamed_param"
     },
     {
@@ -788,7 +795,7 @@
       "line": 325,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1[1].create_event + 0x20) = (float)iStack_14 * (float)_DAT_005db702;",
+      "text": "param_1->message_display_timer = (float)iStack_14 * (float)_DAT_005db702;",
       "type": "unnamed_param"
     },
     {
@@ -804,7 +811,7 @@
       "line": 333,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1;",
+      "text": "pCVar8 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -812,28 +819,20 @@
       "line": 334,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 340,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 339,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) &&",
+      "text": "if (((pCVar8->item_groups[0] == param_1->current_group) && (pCVar3 != (CDemonActor *)0x0))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 348,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);",
@@ -841,10 +840,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 356,
+      "line": 354,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
+      "text": "} while (iVar6 < param_1->item_count);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 357,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -852,36 +859,28 @@
       "line": 359,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
+      "text": "pCVar8 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 361,
+      "line": 370,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1;",
+      "text": "} while (iVar6 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 373,
+      "line": 378,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
+      "text": "(*((pCVar3->vtable)._ub)->pickup)(pCVar3,param_1->owner);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 381,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((pCVar3->vtable)._ub)->pickup)(pCVar3,*(CDemonActor **)(param_1->actor_name + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 382,
+      "line": 379,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408730(param_2);",
@@ -889,7 +888,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 385,
+      "line": 382,
       "match": "param_1",
       "severity": "mild",
       "text": "core_inv_cpp_FUN_004dadb0(param_1,pCVar3,1,0);",
@@ -897,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 389,
+      "line": 386,
       "match": "param_2",
       "severity": "mild",
       "text": "pCStack_2c = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CHealthItemClassInfo.name_hash)",
@@ -905,39 +904,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 392,
+      "line": 388,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7 = 0, pCVar3 = param_1, 0 < *(int *)(param_1->actor_name + 0x10))) {",
+      "text": "if ((pCStack_2c != (CDemonActor *)0x0) && (iVar6 = 0, pCVar8 = param_1, 0 < param_1->item_count))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 392,
+      "line": 388,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7 = 0, pCVar3 = param_1, 0 < *(int *)(param_1->actor_name + 0x10))) {",
+      "text": "if ((pCStack_2c != (CDemonActor *)0x0) && (iVar6 = 0, pCVar8 = param_1, 0 < param_1->item_count))",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
+      "line": 394,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((pCVar8->item_groups[0] == param_1->current_group) && (pCVar3 != (CDemonActor *)0x0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 398,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 399,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 403,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,1);",
@@ -945,15 +936,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 408,
+      "line": 403,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
+      "text": "} while (iVar6 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 410,
+      "line": 405,
       "match": "param_2",
       "severity": "mild",
       "text": "pCStack_18 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CWeaponClassInfo.name_hash);",
@@ -961,71 +952,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 414,
+      "line": 409,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) =",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 414,
+      "line": 409,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) =",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 415,
+      "line": 409,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2;",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 416,
+      "line": 410,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
+      "text": "param_1->item_groups[param_1->item_count] = local_24;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 416,
+      "line": 410,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
+      "text": "param_1->item_groups[param_1->item_count] = local_24;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 416,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 419,
+      "line": 412,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "text": "param_1->item_count = param_1->item_count + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 419,
+      "line": 412,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "text": "param_1->item_count = param_1->item_count + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 420,
+      "line": 413,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,0);",
@@ -1033,63 +1016,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 421,
+      "line": 414,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 421,
+      "line": 414,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 421,
+      "line": 414,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 425,
+      "line": 418,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1;",
+      "text": "pCVar8 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 426,
+      "line": 419,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 431,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 432,
+      "line": 423,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) {",
+      "text": "if ((pCVar8->item_groups[0] == param_1->current_group) && (pCVar3 != (CDemonActor *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 446,
+      "line": 437,
       "match": "2.8026e-43",
       "severity": "mild",
       "text": "pCVar3[2].particle_systems[0].position.z = 2.8026e-43;",
@@ -1097,7 +1072,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 450,
+      "line": 441,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);",
@@ -1105,87 +1080,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 456,
+      "line": 447,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
+      "text": "} while (iVar6 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 459,
+      "line": 450,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 459,
+      "line": 450,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 459,
+      "line": 450,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
+      "text": "param_1->items[param_1->item_count] = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 461,
+      "line": 451,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
+      "text": "param_1->item_groups[param_1->item_count] = param_1->current_group;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 461,
+      "line": 451,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
+      "text": "param_1->item_groups[param_1->item_count] = param_1->current_group;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 461,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 462,
+      "line": 451,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].particle_systems[1].next_particle;",
+      "text": "param_1->item_groups[param_1->item_count] = param_1->current_group;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 464,
+      "line": 453,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "text": "param_1->item_count = param_1->item_count + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 464,
+      "line": 453,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "text": "param_1->item_count = param_1->item_count + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 465,
+      "line": 454,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_removeActorFromList_FUN_004fc270(pCVar2,param_2);",
@@ -1193,55 +1160,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 466,
+      "line": 455,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 466,
+      "line": 455,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 466,
+      "line": 455,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 468,
+      "line": 457,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1[2].create_event + param_1[1].particle_systems[1].next_particle * 4 + 0x30) ==",
+      "text": "(param_1->selected_weapons[param_1->current_group] == (CWeapon *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 468,
+      "line": 457,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1[2].create_event + param_1[1].particle_systems[1].next_particle * 4 + 0x30) ==",
+      "text": "(param_1->selected_weapons[param_1->current_group] == (CWeapon *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 470,
+      "line": 458,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_FUN_004db9d0(param_1,pCStack_18,5,1);",
+      "text": "core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0(param_1,pCStack_18,5,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 397,
+      "line": 393,
       "match": "0x1d182f0",
       "severity": "moderate",
       "text": "pCVar2 = 0x01D182F0;",
@@ -1249,7 +1216,7 @@
     },
     {
       "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 418,
+      "line": 411,
       "match": "0x1d182f0",
       "severity": "moderate",
       "text": "pCVar2 = 0x01D182F0;",
@@ -1257,7 +1224,7 @@
     },
     {
       "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 463,
+      "line": 452,
       "match": "0x1d182f0",
       "severity": "moderate",
       "text": "pCVar2 = 0x01D182F0;",
@@ -1376,27 +1343,35 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 325,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 352,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD",
       "severity": "moderate",
-      "text": "*(float *)(param_1[1].create_event + 0x20) = (float)iStack_14 * (float)_DAT_005db702;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 354,
-      "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
-      "severity": "moderate",
-      "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",
+      "text": "pCVar8 = (CInventory *)&pCVar8->owner;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 372,
-      "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 369,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",
+      "text": "pCVar8 = (CInventory *)&pCVar8->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 402,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInventory *)&pCVar8->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 446,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInventory *)&pCVar8->owner;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -1560,10 +1535,10 @@
       "type": "unrolled_strcat"
     },
     {
-      "description": "'(char *)&pCVar5[1].particle_systems[0].fade_end' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[0].fade_end) (0x17c) + 0x0 = 0x430, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 343,
+      "description": "'(char *)&pCVar3[1].particle_systems[0].fade_end' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[0].fade_end) (0x17c) + 0x0 = 0x430, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 341,
       "severity": "moderate",
-      "text": "(pcStack_20,(char *)&pCVar5[1].particle_systems[0].fade_end),",
+      "text": "(pcStack_20,(char *)&pCVar3[1].particle_systems[0].fade_end),",
       "type": "derived_field_index_pun"
     }
   ]

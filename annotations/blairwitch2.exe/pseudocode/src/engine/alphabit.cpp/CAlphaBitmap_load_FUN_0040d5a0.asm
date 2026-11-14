@@ -26,7 +26,7 @@
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 at 004a21d2
 ;   core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290 at 004a230a
 ;   core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0 at 004a25cf
-;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0d9
+;   core_game.cpp_CGame_displayActStats_FUN_004bdc20 at 004bdc51
 ;   ... and 10 more
 ;
 ; Referenced Globals:

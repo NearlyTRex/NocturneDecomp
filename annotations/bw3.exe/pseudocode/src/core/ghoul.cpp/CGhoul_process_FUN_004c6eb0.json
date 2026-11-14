@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2525,
-    "complexity_score": 2785,
+    "complexity_score": 2787,
     "cross_reference_count": 0,
     "function_call_count": 41,
     "global_count": 64,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1225,
+    "pseudocode_lines": 1227,
     "suspect_count": 148,
     "suspect_types": [
       "concat_reconstruction",
@@ -27,7 +27,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 3750
+    "total_lines": 3752
   },
   "cross_references": [],
   "function": {
@@ -80,6 +80,11 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30"
     },
     {
+      "addr": "0042fc90",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90"
+    },
+    {
       "addr": "00433fb0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0"
@@ -108,11 +113,6 @@
       "addr": "0042c230",
       "is_variadic": false,
       "name": "core_charactr.cpp_FUN_0042c230"
-    },
-    {
-      "addr": "0042fc90",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042fc90"
     },
     {
       "addr": "0042fdc0",
@@ -165,6 +165,11 @@
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
     },
     {
+      "addr": "004fca20",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20"
+    },
+    {
       "addr": "004fc0d0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
@@ -180,11 +185,6 @@
       "name": "core_motion.cpp_FUN_004fc930"
     },
     {
-      "addr": "004fca20",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fca20"
-    },
-    {
       "addr": "0053ec10",
       "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10"
@@ -197,7 +197,7 @@
     {
       "addr": "0053de10",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_FUN_0053de10"
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10"
     },
     {
       "addr": "0054cc90",
@@ -1388,7 +1388,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 1167,
+      "line": 1169,
       "match": "&stack0xfffffb24",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffb24,\"ghoul-walk-?.wav *%f\");",
@@ -1396,7 +1396,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 1169,
+      "line": 1171,
       "match": "&stack0xfffffb24",
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffb24);",
@@ -1404,7 +1404,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1199,
+      "line": 1201,
       "match": "2.38221e-44",
       "severity": "mild",
       "text": "if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) && (fStack_34 == 2.38221e-44)) {",
@@ -1644,7 +1644,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 1225,
+      "line": 1227,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->prev_position).x = (pCVar14->position).x;",

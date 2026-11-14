@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 69,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 25,
     "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
+      "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 92
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -37,12 +37,12 @@
     {
       "addr": "0042f300",
       "is_variadic": false,
-      "name": "cockpit_ckptutil.c_FUN_0042f300"
+      "name": "cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0042f300"
     },
     {
       "addr": "0042f320",
       "is_variadic": false,
-      "name": "cockpit_ckptutil.c_FUN_0042f320"
+      "name": "cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320"
     }
   ],
   "globals": [
@@ -188,20 +188,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "unaff_EBX",
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBX",
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "_DAT_01c35e4c = unaff_EBX;",
-      "type": "unaffected_reg"
+      "text": "(y1 + this_ptr->x,x2 + this_ptr->y,y2 + this_ptr->x,in_stack_00000018 + this_ptr->y,",
+      "type": "stack_param"
     }
   ]
 }

@@ -93,13 +93,13 @@ void __cdecl CInventory::selectWeapon(CInventory *this_ptr,CDemonActor *specific
 // Address: 004dbc40
 void __cdecl CInventory::selectItem(CInventory *this_ptr,int direction);
 
-// Original: core_inv.cpp_FUN_004dbd80
+// Original: core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80
 // Address: 004dbd80
-void FUN_004dbd80(void);
+void __cdecl CInventory::cycleWeaponOfSameClass(CInventory *this_ptr,int direction);
 
-// Original: core_inv.cpp_FUN_004dbe70
+// Original: core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70
 // Address: 004dbe70
-void FUN_004dbe70(undefined4 param_1,CDemonActor *param_2,int param_3,int param_4,int param_5,float param_6,int param_7);
+void __cdecl CInventory::renderItemModel(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
 
 // Original: core_inv.cpp_CInventory_save_FUN_004dc560
 // Address: 004dc560

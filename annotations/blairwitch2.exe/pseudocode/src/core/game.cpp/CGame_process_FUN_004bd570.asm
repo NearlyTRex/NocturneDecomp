@@ -38,9 +38,9 @@
 ;   core_event.cpp_CEventList_process_FUN_004893d0
 ;   core_fire.cpp_CFireEffect_process_FUN_0049c430
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_updateFadeTransition_FUN_004bb2f0
-;   core_game.cpp_FUN_004b90d0
 ;   core_game.cpp_FUN_004bb5b0
 ;   core_gore.cpp_CGore_process_FUN_004c9670
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940
@@ -366,8 +366,8 @@ section .text
         ;   XREF to: 0058a660 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_update_FUN_0058a660(CWeather * this_ptr)
     ADD ESP,0x4                         ; 004bd96d
     PUSH EBX                            ; 004bd970
-    CALL core_game.cpp_FUN_004b90d0     ; 004bd971
-        ;   XREF to: 004b90d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b90d0()
+    CALL core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 ; 004bd971
+        ;   XREF to: 004b90d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processCheatCodes_FUN_004b90d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004bd976
     MOV EDX,dword ptr [0x00616044]      ; 004bd979 | g_CFieldNotesPtr
     PUSH EDX                            ; 004bd97f | g_CFieldNotesInstance
@@ -453,8 +453,8 @@ section .text
         ;   Label: LAB_004bda74
     PUSH EDX                            ; 004bda7a
     MOV dword ptr [EBX + 0xe0],EAX      ; 004bda7b
-    CALL core_sound.cpp_FUN_0055a1d0    ; 004bda81
-        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055a1d0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0055a1d0 ; 004bda81
+        ;   XREF to: 0055a1d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0055a1d0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004bda86
     MOV EAX,[0x0061b460]                ; 004bda89 | g_CScriptPtr
     PUSH 0x2                            ; 004bda8e

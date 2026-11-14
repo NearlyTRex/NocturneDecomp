@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_charactr.cpp_FUN_004300e0
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10
@@ -120,8 +120,8 @@ section .text
     PUSH 0xbf800000                     ; 004c629e
     PUSH 0x0                            ; 004c62a3
     PUSH EBP                            ; 004c62a5
-    CALL core_charactr.cpp_FUN_004300e0 ; 004c62a6
-        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004300e0()
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_004300e0 ; 004c62a6
+        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_004300e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 004c62ab
     MOV EDI,dword ptr [ESP + 0x30]      ; 004c62ae
         ;   Label: LAB_004c62ae

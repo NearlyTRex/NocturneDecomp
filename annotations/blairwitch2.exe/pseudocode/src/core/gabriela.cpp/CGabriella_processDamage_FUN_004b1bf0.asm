@@ -24,8 +24,8 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bb8b0
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -70,16 +70,16 @@ section .text
         ;   XREF to: 004b1d6b (CONDITIONAL_JUMP)  ; LAB_004b1d6b
     PUSH EDI                            ; 004b1c64
     MOV dword ptr [EBX + 0x25a8],0x0    ; 004b1c65
-    CALL core_motion.cpp_FUN_005035c0   ; 004b1c6f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004b1c6f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b1c74
     ADD ESP,0x4                         ; 004b1c77
     CMP EAX,0xc                         ; 004b1c7a
     JZ 0x004b1d36                       ; 004b1c7d
         ;   XREF to: 004b1d36 (CONDITIONAL_JUMP)  ; LAB_004b1d36
     PUSH EDI                            ; 004b1c83
-    CALL core_motion.cpp_FUN_005035c0   ; 004b1c84
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004b1c84
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b1c89
     ADD ESP,0x4                         ; 004b1c8c
     CMP EAX,0xb                         ; 004b1c8f

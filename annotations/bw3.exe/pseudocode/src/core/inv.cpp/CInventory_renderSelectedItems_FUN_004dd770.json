@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 401,
+    "complexity_score": 402,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 92,
     "suspect_count": 29,
     "suspect_types": [
       "extra_output",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 369
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -39,6 +39,11 @@
   },
   "function_calls": [
     {
+      "addr": "004dbe70",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70"
+    },
+    {
       "addr": "004dd5b0",
       "is_variadic": false,
       "name": "core_inv.cpp_drawItemIconBackground_FUN_004dd5b0"
@@ -47,11 +52,6 @@
       "addr": "004dd3f0",
       "is_variadic": false,
       "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004dd3f0"
-    },
-    {
-      "addr": "004dbe70",
-      "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dbe70"
     },
     {
       "addr": "004da570",
@@ -364,7 +364,7 @@
       "line": 36,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "iVar5 = (DAT_005fba18 - iVar7) - iVar1;",
+      "text": "iVar5 = DAT_005fba18 - iVar7;",
       "type": "undefined_data"
     },
     {
@@ -449,7 +449,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -457,7 +457,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 71,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "iVar5 = DAT_005fba18 - iVar7;",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar6 = DAT_005fba1c - iVar7;",
@@ -473,7 +473,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
+      "line": 78,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "iVar4 = extraout_ECX_00;",
@@ -481,7 +481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -489,7 +489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -505,7 +505,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",

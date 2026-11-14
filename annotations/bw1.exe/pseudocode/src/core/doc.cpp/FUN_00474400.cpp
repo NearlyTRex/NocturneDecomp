@@ -417,7 +417,7 @@ LAB_0047463c:
         param_1->action_pending = 0;
       }
       if ((param_1->target_actor != (CDemonActor *)0x0) && (local_44 == 3)) {
-        core_inv_cpp_FUN_004f8d00(local_18,param_1->target_actor,0);
+        core_inv_cpp_CInventory_removeItem_FUN_004f8d00(local_18,param_1->target_actor,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
                   (0x01D2C900,param_1->target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0

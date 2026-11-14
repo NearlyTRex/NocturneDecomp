@@ -11,15 +11,15 @@
 ;
 ; XREF[95]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a609
-;   core_actor.cpp_FUN_004093a0 at 004094d2
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 004094d2
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 004101b4
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 at 0041cdc9
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40 at 0041cb5b
-;   core_boxactor.cpp_FUN_0041cda0 at 0041cdc9
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_005b5ca0 at 005b5d70
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0 at 00427c1a
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acc5
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428900
 ;   core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80 at 00427cb4
-;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 at 00423868
 ;   ... and 85 more
 ;
 ; Called Functions:

@@ -20,8 +20,8 @@
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -123,8 +123,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0041ebb5
     PUSH EBX                            ; 0041ebb8
     MOV dword ptr [EAX + 0x25a8],0x0    ; 0041ebb9
-    CALL core_motion.cpp_FUN_005035c0   ; 0041ebc3
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041ebc3
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0041ebc8
     ADD ESP,0x4                         ; 0041ebcb
     CMP EAX,0xe                         ; 0041ebce

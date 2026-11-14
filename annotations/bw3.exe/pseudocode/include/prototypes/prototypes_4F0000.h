@@ -122,7 +122,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130(CMirro
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004f5370(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004f53f0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
-int core_mirror_cpp_FUN_004f5480(void);
+int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004f5480(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610(CMirror *this_ptr);
 void core_mirror_cpp_FUN_004f57c0(undefined4 param_1,int *param_2);
 void core_mirror_cpp_FUN_004f5870(undefined4 param_1,int *param_2,int *param_3);
@@ -132,7 +132,7 @@ void core_mission_cpp_FUN_004f5aa0(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004f5b70(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_004f5b80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
-void core_mission_cpp_FUN_004f5c60(CDemonMission *param_1,char *param_2);
+void __cdecl core_mission_cpp_CDemonMission_save_FUN_004f5c60(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004f6330(CDemonMission *this_ptr,char *actor_name);
 void core_mission_cpp_FUN_004f63c0(int param_1);
@@ -153,7 +153,7 @@ void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0(CDemo
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
 void core_mission_cpp_FUN_004f6f80(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004f7230(void);
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004f7230(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004f7460(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004f7490(CDemonMission *this_ptr,char *out_buf,char *base_name);
@@ -241,7 +241,7 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(CMot
 void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004fc160(CMotionController *this_ptr,char *state_name,int force_immediate);
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004fc190(CMotionController *this_ptr,SMotionTransition *transition);
 int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004fc250(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
-void core_motion_cpp_FUN_004fc280(undefined4 *param_1,undefined4 param_2);
+void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004fc280(CMotionController *this_ptr,CMotionList *motion_list);
 void core_motion_cpp_FUN_004fc2c0(CMotionController *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController *this_ptr);
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004fc320(CMotionController *this_ptr);
@@ -253,7 +253,7 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004fc680(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 void core_motion_cpp_FUN_004fc850(int *param_1,int param_2,float param_3,float *param_4);
 float __cdecl core_motion_cpp_FUN_004fc930(CMotionController *this_ptr);
-float core_motion_cpp_FUN_004fca20(int *param_1,int param_2,float param_3);
+float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004fca20(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_004fcc90(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_004fcd30(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);

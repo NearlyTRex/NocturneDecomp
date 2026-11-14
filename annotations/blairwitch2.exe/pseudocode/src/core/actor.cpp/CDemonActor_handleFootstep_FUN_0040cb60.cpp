@@ -112,7 +112,7 @@ LAB_0040cc81:
       } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }
-  core_ground_cpp_FUN_004ca7c0(ground_type,(double)volume);
+  core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(ground_type);
   _sprintf(acStack_d0,"footstep%s0?");
   uVar5 = core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                     (0x0264B290,this_ptr,acStack_d0,position);

@@ -136,8 +136,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0056f7bd
     PUSH EAX                            ; 0056f7c3
     MOV dword ptr [EBP + 0x6e],EAX      ; 0056f7c4
-    CALL core_motion.cpp_FUN_005035c0   ; 0056f7c7
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056f7c7
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0056f7cc
     PUSH dword ptr [EBP + 0x92]         ; 0056f7cf
     PUSH EBX                            ; 0056f7d5
@@ -282,8 +282,8 @@ section .text
         ;   XREF to: 00429e90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0056f959
     PUSH ESI                            ; 0056f95c
-    CALL core_motion.cpp_FUN_005035c0   ; 0056f95d
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056f95d
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0056f962
     MOV EDX,dword ptr [ESI + 0x8]       ; 0056f965
     PUSH EDX                            ; 0056f968

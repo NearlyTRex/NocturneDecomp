@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 911,
-    "complexity_score": 626,
+    "complexity_score": 551,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 291,
-    "suspect_count": 31,
+    "pseudocode_lines": 296,
+    "suspect_count": 24,
     "suspect_types": [
-      "extra_output",
-      "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1202
+    "total_lines": 1207
   },
   "cross_references": [
     {
@@ -98,7 +96,12 @@
     {
       "addr": "0040d8a0",
       "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040d8a0"
+      "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0"
+    },
+    {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
     },
     {
       "addr": "004b30f0",
@@ -109,11 +112,6 @@
       "addr": "004b2a80",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
-    },
-    {
-      "addr": "004b0a20",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
     },
     {
       "addr": "004b2e40",
@@ -660,22 +658,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "uint extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 52,
       "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
@@ -784,7 +766,7 @@
       "line": 160,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "(DAT_005fba1c - iVar6) - (int)local_60,0xf8);",
+      "text": "(DAT_005fba1c - iVar6) - (int)local_60,0xf8,0);",
       "type": "undefined_data"
     },
     {
@@ -820,24 +802,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 224,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "(&CAlphaBitmap_01d708b8,iVar5,local_64 + 4,0,local_64,extraout_ECX);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 229,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(&CAlphaBitmap_01d70890,iVar5,local_64 + 4,0,local_64,extraout_EDX);",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 241,
       "match": "DAT_005c6640",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6640);",
@@ -845,7 +811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 244,
       "match": "DAT_005c6643",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6643);",
@@ -853,7 +819,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 247,
       "match": "DAT_005c6645",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6645);",
@@ -861,7 +827,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 257,
+      "line": 262,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -869,35 +835,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
+      "line": 268,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar4 = (DAT_005fba1c + -4) - local_2c * iVar4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1d5be88 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 131,
-      "match": "0x1d5be88",
-      "severity": "moderate",
-      "text": "iVar6 = 0x1d5be88;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d5c888 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 174,
-      "match": "0x1d5c888",
-      "severity": "moderate",
-      "text": "iVar6 = 0x1d5c888;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d5d288 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 265,
-      "match": "0x1d5d288",
-      "severity": "moderate",
-      "text": "iVar6 = 0x1d5d288;",
-      "type": "raw_address_constant"
     }
   ]
 }

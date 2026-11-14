@@ -21,8 +21,8 @@
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005117c5
         ;   Label: LAB_005117c5
     PUSH ESI                            ; 005117cb
-    CALL core_motion.cpp_FUN_005035c0   ; 005117cc
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005117cc
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005117d1
     ADD ESP,0x4                         ; 005117d4
     MOV EDI,EAX                         ; 005117d7

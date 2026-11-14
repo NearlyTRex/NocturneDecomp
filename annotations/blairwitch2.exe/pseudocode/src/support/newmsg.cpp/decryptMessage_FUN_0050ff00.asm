@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b90d0 at 004b91ae
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b91ae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_newmsg_cpp_005e13cd

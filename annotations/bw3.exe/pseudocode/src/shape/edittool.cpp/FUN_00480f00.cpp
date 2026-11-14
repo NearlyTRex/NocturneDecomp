@@ -210,10 +210,13 @@ void __cdecl shape_edittool_cpp_FUN_00480f00(CEditorTools *this_ptr,float scale_
   iVar1 = 0;
   do {
     if ((*(byte *)((int)puVar2 + 0x13) & 0x80) == 0) {
+      iVar17 = puVar2[4];
+      iVar18 = puVar2[5];
       _sprintf((char *)&iStack_14,(char *)0x5bd32b);
       engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
       engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
-      engine_font_cpp_FUN_004b0a20();
+      engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+                (_DAT_01c5b0e0,(char *)&iStack_14,iVar17 >> 0x10,iVar18 >> 0x10,_DAT_01c5bb3c,-1);
     }
     iVar1 = iVar1 + 1;
     puVar2 = puVar2 + 0xc;

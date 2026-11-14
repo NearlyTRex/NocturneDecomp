@@ -65,10 +65,10 @@
 ;   engine_dosio.cpp_FUN_00479180
 ;   support_codec.cpp_CCodec_dtor_FUN_00442bb0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00443490
+;   support_codec.cpp_CLZWCompress_finalize_FUN_00443630
 ;   support_codec.cpp_CLZWCompress_init_FUN_004434e0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00442f90
 ;   support_codec.cpp_FUN_00442d10
-;   support_codec.cpp_FUN_00443630
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -450,8 +450,8 @@ section .text
     PUSH EAX                            ; 00453ba7
     LEA EAX,[ESP + 0x168]               ; 00453ba8
     PUSH EAX                            ; 00453baf
-    CALL support_codec.cpp_FUN_00443630 ; 00453bb0
-        ;   XREF to: 00443630 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00443630()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_00443630 ; 00453bb0
+        ;   XREF to: 00443630 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_00443630(CLZWCompress * this_ptr, COutStream * ostream)
     ADD ESP,0x8                         ; 00453bb5
     PUSH 0x0                            ; 00453bb8
     LEA EAX,[ESP + 0x16c]               ; 00453bba

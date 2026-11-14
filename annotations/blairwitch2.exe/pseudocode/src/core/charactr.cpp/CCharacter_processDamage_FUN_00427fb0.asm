@@ -41,9 +41,9 @@
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
+;   core_charactr.cpp_CCharacter_explode_FUN_00427260
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_charactr.cpp_CCharacter_shatter_FUN_00427210
-;   core_charactr.cpp_FUN_00427260
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bb8d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
@@ -108,8 +108,8 @@ section .text
     PUSH dword ptr [EAX + 0x18]         ; 00428027
     PUSH ECX                            ; 0042802a
     PUSH EBX                            ; 0042802b
-    CALL core_charactr.cpp_FUN_00427260 ; 0042802c
-        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427260()
+    CALL core_charactr.cpp_CCharacter_explode_FUN_00427260 ; 0042802c
+        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_explode_FUN_00427260(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0xc                         ; 00428031
     MOV EAX,dword ptr [EBP + 0x18]      ; 00428034
         ;   Label: LAB_00428034

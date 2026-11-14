@@ -111,7 +111,7 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
       local_1c = local_1c + 4;
     } while (iVar6 != 0x200);
     wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0();
-    engine_special_cpp_FUN_00565820();
+    engine_special_cpp_lockFrame_FUN_00565820();
     engine_special_cpp_clearScreen_FUN_00560d70();
     engine_special_cpp_unlockFrame_FUN_00565870(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0();
@@ -154,7 +154,7 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
         } while (local_24 < DAT_005fba1c);
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
-      core_game_cpp_FUN_004ba490(param_1);
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(param_1);
       while( true ) {
         wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
         if (param_1->game_control == CONTROL_MODE_GAMEPAD) {
@@ -165,7 +165,7 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
              (iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0)) ||
             (_DAT_01c5fae4 != 0)) || ((_DAT_01d22b44 != 1 && (param_1->bitmap_display_time < 0.0))))
         break;
-        core_game_cpp_FUN_004b4440(g_CGamePtr);
+        core_game_cpp_CGame_updateDT_FUN_004b4440(g_CGamePtr);
         param_1->bitmap_display_time = param_1->bitmap_display_time - g_CGamePtr->delta_time_float;
       }
       while ((_DAT_01c5fae4 != 0 ||
@@ -179,7 +179,7 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
         }
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
-      core_game_cpp_FUN_004ba490(param_1);
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(param_1);
       core_game_cpp_CGame_saveClockTime_FUN_004b4430(param_1);
       param_1->bitmap_filename[0] = '\0';
       FUN_005a3770(local_18);

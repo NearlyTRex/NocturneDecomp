@@ -41,9 +41,9 @@ void __cdecl CStranger::process(CStranger *this_ptr,float delta_time);
 // Address: 00563060
 void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_005656f0
+// Original: core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0
 // Address: 005656f0
-void FUN_005656f0(CStranger *param_1,float param_2);
+void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_FUN_00565f30
 // Address: 00565f30
@@ -89,9 +89,9 @@ int __cdecl CStranger::tryPickupObject(CStranger *this_ptr,char *class_name);
 // Address: 0056a160
 void __cdecl FUN_0056a160(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0056a1e0
+// Original: core_stranger.cpp_CStranger_dropRightHandObject_FUN_0056a1e0
 // Address: 0056a1e0
-void FUN_0056a1e0(int param_1);
+void __cdecl CStranger::dropRightHandObject(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_tryClimbLadder_FUN_0056a240
 // Address: 0056a240
@@ -127,7 +127,7 @@ float * FUN_0056bd50(void);
 
 // Original: core_stranger.cpp_FUN_0056bf00
 // Address: 0056bf00
-void FUN_0056bf00(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl FUN_0056bf00(CStranger *this_ptr,int hand_index,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10
 // Address: 0056ca10

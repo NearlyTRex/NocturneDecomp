@@ -1421,7 +1421,7 @@ LAB_00546ffc:
                                                   core_script_cpp_trimString_FUN_00543240
                                                             (local_1d64);
                                                   if (_DAT_01e810a8 == 0) {
-                                                    engine_ini_cpp_FUN_004f4b00
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                                                               (&local_4924,
                                                                "system\\nocturne.ini",
                                                                &DAT_005eee71);
@@ -2128,10 +2128,12 @@ joined_r0x00546052:
                                                   }
                                                   if (_DAT_01e810a8 == 0) {
                                                     if (_DAT_01e818b4 != 0) {
-                                                      core_game_cpp_FUN_004d19d0(g_CGamePtr);
-                                                      _DAT_01e818b4 = uVar14;
-                                                    }
-                                                    *piVar9 = 1;
+                                                                                                            
+                                                  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
+                                                            (g_CGamePtr);
+                                                  _DAT_01e818b4 = uVar14;
+                                                  }
+                                                  *piVar9 = 1;
                                                   }
                                                   }
                                                   else {
@@ -2218,10 +2220,12 @@ joined_r0x00546052:
                                                   }
                                                   if (_DAT_01e810a8 == 0) {
                                                     if (_DAT_01e818b4 != 0) {
-                                                      core_game_cpp_FUN_004d19d0(g_CGamePtr);
-                                                      _DAT_01e818b4 = 0;
-                                                    }
-                                                    *piVar9 = 0;
+                                                                                                            
+                                                  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
+                                                            (g_CGamePtr);
+                                                  _DAT_01e818b4 = 0;
+                                                  }
+                                                  *piVar9 = 0;
                                                   }
                                                   }
                                                   else {
@@ -2338,7 +2342,7 @@ joined_r0x00546052:
                                                                                       * 4 + 
                                                   0x1d06aa4) + 0x1fae8),local_26c4),
                                                   pCVar13 != (CDemonActor *)0x0)) &&
-                                                  (core_inv_cpp_FUN_004f8d00
+                                                  (core_inv_cpp_CInventory_removeItem_FUN_004f8d00
                                                              ((CInventory *)
                                                               &local_cc[0x179].orient_matrix.m[1].z,
                                                               pCVar13,iVar6), iVar6 == 0)) {
@@ -2925,7 +2929,7 @@ LAB_005494ec:
                                                   core_script_cpp_trimString_FUN_00543240
                                                             (local_165c);
                                                   if (_DAT_01e810a8 == 0) {
-                                                    engine_ini_cpp_FUN_004f4b00
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                                                               (&local_4720,
                                                                "system\\nocturne.ini",
                                                                &DAT_005ef902);

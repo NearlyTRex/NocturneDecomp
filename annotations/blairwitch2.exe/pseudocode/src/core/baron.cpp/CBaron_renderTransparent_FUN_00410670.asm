@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_FUN_005042e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   crt_math.c_round_FUN_005b7ff0
@@ -54,16 +54,16 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 00410695
         ;   Label: LAB_00410695
     PUSH EDI                            ; 0041069b
-    CALL core_motion.cpp_FUN_005035c0   ; 0041069c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041069c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004106a1
     MOV ESI,dword ptr [EAX + 0x24]      ; 004106a4
     MOV EAX,dword ptr [EDI + 0x8]       ; 004106a7
     PUSH EDI                            ; 004106aa
     MOV dword ptr [ESP + 0x48],EAX      ; 004106ab
     MOV dword ptr [ESP + 0x8],EAX       ; 004106af
-    CALL core_motion.cpp_FUN_005035c0   ; 004106b3
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004106b3
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004106b8
     FILD dword ptr [EAX + 0x64]         ; 004106bb
     FSTP float ptr [ESP]                ; 004106be

@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 406,
+    "complexity_score": 421,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 216,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
@@ -62,7 +63,7 @@
     {
       "addr": "004ce240",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004ce240"
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ce240"
     },
     {
       "addr": "005478b0",
@@ -287,12 +288,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x562b73 assigned to bare local `uStack00000140`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000140` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x562b73 assigned to bare local `uStack00000144`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000144` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 214,
       "match": "0x562b73",
       "severity": "moderate",
-      "text": "uStack00000140 = 0x562b73;",
+      "text": "uStack00000144 = 0x562b73;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar4[1].base.base.process_disabled' walks 1 x sizeof(CHero) (0x25640) + offsetof(base.base.process_disabled) (0x104) + 0x0 = 0x25744, which is exactly offsetof(CStranger, model). Ghidra had no CStranger type here and reached the field by index arithmetic; write it as ((CStranger *)pCVar4)->model (\u00a7de-pun/\u00a712).",
+      "line": 15,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar4[1].base.base.process_disabled);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

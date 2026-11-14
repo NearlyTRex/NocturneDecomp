@@ -52,7 +52,7 @@ void __cdecl core_cloth_cpp_CClothList_process_FUN_005b1780(CClothList *this_ptr
 void __cdecl core_cloth_cpp_CClothList_render_FUN_005b17d0(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(CCloth *this_ptr,char *bone_name,int vertex_index);
-void __cdecl core_cloth_cpp_FUN_005b1980(CCloth *this_ptr,int vertex_index);
+void __cdecl core_cloth_cpp_CCloth_resetState_FUN_005b1980(CCloth *this_ptr,int vertex_index);
 void core_cloth_cpp_FUN_005b19b0(int param_1,float *param_2);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_005b1b10(CVector3f *v);
 CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_005b1b40(CVector3f *v);
@@ -62,7 +62,7 @@ CBox * __cdecl core_box_cpp_CBox_ctor_FUN_005b1bc0(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_005b1c70(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_005b1c80(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 void core_box_cpp_FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
-void __cdecl core_box_cpp_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl core_box_cpp_CBox_updateTransform_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_005b2290(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_loadFromFile_FUN_005b4300(CBox *this_ptr,_FILE *file_handle);

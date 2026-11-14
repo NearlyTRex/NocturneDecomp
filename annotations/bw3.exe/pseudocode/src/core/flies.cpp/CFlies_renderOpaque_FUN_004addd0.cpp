@@ -102,7 +102,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr->a = iVar3;
       pCVar2->vertex_buffer_ptr[1].a = iVar3;
       pCVar2->vertex_buffer_ptr[2].a = iVar3;
-      engine_texture_cpp_FUN_0056aa10(0x5fe8c8);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10((SMRGLTextureBasic *)0x5fe8c8);
     }
     iStack_20 = 0;
     if (0 < this_ptr->fly_count) {

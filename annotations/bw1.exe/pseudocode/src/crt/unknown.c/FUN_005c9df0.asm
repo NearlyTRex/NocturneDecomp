@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_005c9e48 at 005c9e6b
+;   crt_unknown.c_IntegerToString_FUN_005c9e48 at 005c9e6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789abcdefghijkl_006269a8

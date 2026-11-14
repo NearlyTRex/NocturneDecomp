@@ -100,9 +100,9 @@ void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2)
   float fStack_26c;
   float fStack_268;
   float fStack_248;
-  float afStack_244 [4];
-  float fStack_234;
-  float fStack_22c;
+  float afStack_244 [2];
+  UOrientationVector UStack_23c;
+  float afStack_230 [4];
   float fStack_220;
   float fStack_21c;
   float fStack_218;
@@ -207,10 +207,10 @@ void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2)
     fStack_19c = fStack_10c * _DAT_005cd14b;
     fStack_198 = fStack_108 * _DAT_005cd14b;
     fStack_194 = fStack_104 * _DAT_005cd14b;
-    fStack_22c = fStack_10c * _DAT_005cd14b;
-    afStack_244[(uint)bVar15 * -2 + 7] =
+    afStack_230[1] = fStack_10c * _DAT_005cd14b;
+    afStack_230[(uint)bVar15 * -2 + 2] =
          *(float *)((int)&CStack_1d8 + ((uint)bVar15 * -2 + 0xf) * 4 + 4);
-    afStack_244[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 8] =
+    afStack_230[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 3] =
          *(float *)((int)&CStack_1d8 + ((uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x10) * 4 + 4);
     core_actor_cpp_FUN_00408b80(param_1[0x32e].vec.x);
     afStack_f4[0] = fStack_190;
@@ -643,11 +643,11 @@ LAB_0051ac8d:
               afStack_34c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
                    afStack_208[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
               core_actor_cpp_FUN_00408bf0(param_1,pfVar12);
-              afStack_244[2] = fStack_b0;
-              afStack_244[(uint)bVar15 * -2 + 3] = afStack_ac[(uint)bVar15 * -2];
-              afStack_244[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
+              UStack_23c.vec.x = fStack_b0;
+              afStack_230[(uint)bVar15 * -2 + -2] = afStack_ac[(uint)bVar15 * -2];
+              afStack_230[(uint)bVar15 * -2 + (uint)bVar15 * -2 + -1] =
                    afStack_ac[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(afStack_244 + 2);
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&UStack_23c);
               afStack_34c[2] = (float)uStack_3b0;
               afStack_34c[(uint)bVar15 * -2 + 3] = afStack_3ac[(uint)bVar15 * -2];
               afStack_34c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
@@ -670,9 +670,10 @@ LAB_0051ac8d:
               afStack_1ec[(uint)bVar15 * -2 + (uint)bVar15 * -2] =
                    afStack_f4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
               uStack_1f0 = 0;
-              if ((((fStack_234 - SQRT(afStack_1ec[0] * afStack_1ec[0] + fStack_1f4 * fStack_1f4) <
-                     (float)_DAT_005cd167) && (1.0 < (double)afStack_244[3])) &&
-                  ((double)afStack_244[3] < _DAT_005cd16f)) &&
+              if ((((UStack_23c.vec.z -
+                     SQRT(afStack_1ec[0] * afStack_1ec[0] + fStack_1f4 * fStack_1f4) <
+                     (float)_DAT_005cd167) && (1.0 < (double)UStack_23c.vec.y)) &&
+                  ((double)UStack_23c.vec.y < _DAT_005cd16f)) &&
                  (ABS(fStack_4a0) < (float)_DAT_005cd177)) {
                 fStack_50 = param_2 * _DAT_005cd17f;
                 fStack_64 = -fStack_50;
@@ -685,7 +686,8 @@ LAB_0051ac8d:
                 in_stack_fffffb1c = param_1 + 4;
                 *(float *)((int)param_1 + 0x34) = *(float *)((int)param_1 + 0x34) + fStack_4a0;
                 in_stack_fffffb18 = param_1;
-                core_charactr_cpp_FUN_00433220();
+                core_charactr_cpp_CCharacter_setOrientation_FUN_00433220
+                          ((CCharacter *)&param_1->vec,in_stack_fffffb1c);
                 goto LAB_0051976f;
               }
             }
@@ -724,7 +726,8 @@ LAB_0051ac8d:
               fStack_30 = fStack_54;
             }
             *(float *)((int)param_1 + 0x34) = *(float *)((int)param_1 + 0x34) + fStack_30;
-            core_charactr_cpp_FUN_00433220(param_1);
+            core_charactr_cpp_CCharacter_setOrientation_FUN_00433220
+                      ((CCharacter *)&param_1->vec,param_1 + 4);
           }
           apCStack_7c[2] = *(CCharacter **)((int)param_1 + 0x26fc);
           pUStack_20 = (UOrientationVector *)(apCStack_7c[2]->base).vtable._uc;
@@ -835,11 +838,13 @@ LAB_0051ac8d:
                       ((CMotionController *)((int)param_1 + 0x158),iVar10,1);
             fVar7 = SStack_48c.gore_multiplier;
             pfVar12 = (float *)((int)param_1 + (uint)bVar15 * -8 + 0x34);
-            afStack_244[2] = param_1[4].vec.x;
-            afStack_244[(uint)bVar15 * -2 + 3] = *pfVar12;
-            afStack_244[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] = pfVar12[(uint)bVar15 * -2 + 1];
-            afStack_244[3] = fVar7 * param_1[0x2baf].vec.x + afStack_244[3];
-            core_charactr_cpp_FUN_00433220();
+            UStack_23c.vec.x = param_1[4].vec.x;
+            afStack_230[(uint)bVar15 * -2 + -2] = *pfVar12;
+            afStack_230[(uint)bVar15 * -2 + (uint)bVar15 * -2 + -1] = pfVar12[(uint)bVar15 * -2 + 1]
+            ;
+            UStack_23c.vec.y = fVar7 * param_1[0x2baf].vec.x + UStack_23c.vec.y;
+            core_charactr_cpp_CCharacter_setOrientation_FUN_00433220
+                      ((CCharacter *)&param_1->vec,&UStack_23c);
             afStack_3ac[1] = SStack_450.pitch_min + (float)_DAT_005cd197;
             uStack_3b0 = 0;
             afStack_3ac[0] = 0.0;
@@ -1042,9 +1047,9 @@ LAB_0051976f:
     fStack_21c = *(float *)((int)param_1 + 0x24a0) + *(float *)((int)param_1 + 0x2510);
     fStack_218 = *(float *)((int)param_1 + 0x24a4) + param_1[0x317].vec.x;
     CStack_d0.x = fStack_220;
-    afStack_c4[(uint)bVar15 * -2 + -2] = afStack_244[(uint)bVar15 * -2 + 10];
+    afStack_c4[(uint)bVar15 * -2 + -2] = afStack_230[(uint)bVar15 * -2 + 5];
     afStack_c4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + -1] =
-         afStack_244[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xb];
+         afStack_230[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 6];
     *(uint *)((int)param_1 + 0x24a4) = 0;
     *(uint *)((int)param_1 + 0x24a0) = *(uint *)((int)param_1 + 0x24a4);
     param_1[0x30d].vec.x = *(float *)((int)param_1 + 0x24a0);
@@ -1069,10 +1074,10 @@ LAB_0051976f:
     *(float *)((int)param_1 + 0x251c) = fVar7;
     iStack_48 = iVar10;
     core_actor_cpp_FUN_00408b40(param_1);
-    fStack_274 = afStack_244[3];
-    afStack_2a0[(uint)bVar15 * -2 + 0xc] = afStack_244[(uint)bVar15 * -2 + 4];
+    fStack_274 = UStack_23c.vec.y;
+    afStack_2a0[(uint)bVar15 * -2 + 0xc] = afStack_230[(uint)bVar15 * -2 + -1];
     afStack_2a0[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xd] =
-         afStack_244[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 5];
+         afStack_230[(uint)bVar15 * -2 + (uint)bVar15 * -2];
     fStack_370 = *(float *)((int)param_1 + 0x2518) * param_2;
     pCVar17 = &CStack_d0;
     fStack_36c = *(float *)((int)param_1 + 0x251c) * param_2;

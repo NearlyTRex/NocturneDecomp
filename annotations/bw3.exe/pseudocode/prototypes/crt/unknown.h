@@ -295,7 +295,7 @@ int FUN_005a67bc(short *param_1,undefined4 param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_005a6838
 // Address: 005a6838
-void FUN_005a6838(undefined4 param_1,char *param_2,int param_3);
+void FUN_005a6838(int param_1,char *param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_005a689c
 // Address: 005a689c
@@ -1101,9 +1101,9 @@ int FUN_005acbd7(int param_1,uint param_2,int param_3);
 // Address: 005acc30
 char * FUN_005acc30(uint param_1,char *param_2,uint param_3);
 
-// Original: crt_unknown.c_FUN_005acc88
+// Original: crt_unknown.c_IntegerToString_FUN_005acc88
 // Address: 005acc88
-undefined1 * FUN_005acc88(int param_1,undefined1 *param_2,int param_3);
+char * __cdecl IntegerToString(int value,char *buffer,int base);
 
 // Original: crt_unknown.c_FUN_005accb8
 // Address: 005accb8

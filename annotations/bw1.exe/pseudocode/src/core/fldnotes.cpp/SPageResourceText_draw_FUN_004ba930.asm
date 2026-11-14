@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
-;   engine_alphabit.cpp_FUN_0040d660
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_FUN_004c1dd0
 ;
@@ -99,8 +99,8 @@ section .text
     PUSH EDI                            ; 004ba9d2
     PUSH ESI                            ; 004ba9d3
     PUSH 0x1cc7cc0                      ; 004ba9d4
-    CALL engine_alphabit.cpp_FUN_0040d660 ; 004ba9d9
-        ;   XREF to: 0040d660 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d660()
+    CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660 ; 004ba9d9
+        ;   XREF to: 0040d660 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 004ba9de
     POP EBP                             ; 004ba9e1
     POP EDI                             ; 004ba9e2

@@ -12,9 +12,9 @@
 void shape_edittool_cpp_FUN_0047ff50(void)
 
 {
-  uint in_stack_00000004;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
+  CEditorTools *in_stack_00000004;
+  float in_stack_00000008;
+  int in_stack_0000000c;
   float *in_stack_00000010;
   float *in_stack_00000014;
   SMRGLPoint SStack_28;
@@ -31,6 +31,7 @@ void shape_edittool_cpp_FUN_0047ff50(void)
   iStack_10 = (int)ROUND(in_stack_00000014[1] * _DAT_005f5cfc);
   engine_matrix_c_matrixPushAndTransform_FUN_004e8fd0(iStack_18,iStack_14,iStack_10,0,0,0);
   shape_edittool_cpp_FUN_0047fd00(in_stack_00000004,in_stack_00000008,in_stack_0000000c);
+  SStack_28.point.y = 0x47ffed;
   engine_matrix_c_pop_FUN_004e9810();
   return;
 }

@@ -104,7 +104,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_00506110(CMansionP
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200(CMansionPuzzleCircle *this_ptr,int panel_index);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_00506220(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time);
-void core_manpuz_cpp_FUN_005062a0(int param_1,int param_2);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0(CMansionPuzzleCircle *this_ptr,int reflector_index);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_00506390(CMansionPuzzleCircle *this_ptr,int panel_index);
 CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void);
 CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_00506440(CMirrorHack *this_ptr);
@@ -163,7 +163,7 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_00509050(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_00509080(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_005090b0(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_00509210(void);
-void engine_matrix_c_FUN_005093d0(void);
+void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_005093d0(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_00509480(void);
 void __cdecl core_melee_cpp_staticInit_FUN_005094f0(void);
 CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_00509520(void);

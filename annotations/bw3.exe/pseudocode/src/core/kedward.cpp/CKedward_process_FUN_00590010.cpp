@@ -713,17 +713,15 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
                           (g_CDemonSetPtr,(CDemonActor *)this_ptr);
                 fVar9 = (float10)fcos((float10)fStack_20);
                 fVar10 = (float10)fsin((float10)fStack_20);
-                fStack_98 = (float)core_setcolid_cpp_FUN_0053de10
-                                             (g_CDemonSetPtr,
-                                              (this_ptr->base).base.base.location.position.x,
-                                              (this_ptr->base).base.base.location.position.z,
-                                              (float)(fVar10 * (float10)_DAT_005d8e84),
-                                              (float)(fVar9 * (float10)_DAT_005d8e84),
-                                              (this_ptr->base).base.collision_cylinder_radius,
-                                              (this_ptr->base).base.base.location.position.y +
-                                              (this_ptr->base).base.collision_cylinder_bottom,
-                                              (this_ptr->base).base.base.location.position.y +
-                                              fStack_30);
+                fStack_98 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
+                                      (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x
+                                       ,(this_ptr->base).base.base.location.position.z,
+                                       (float)(fVar10 * (float10)_DAT_005d8e84),
+                                       (float)(fVar9 * (float10)_DAT_005d8e84),
+                                       (this_ptr->base).base.collision_cylinder_radius,
+                                       (this_ptr->base).base.base.location.position.y +
+                                       (this_ptr->base).base.collision_cylinder_bottom,
+                                       (this_ptr->base).base.base.location.position.y + fStack_30);
                 fStack_14 = fStack_98;
                 core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
                 if (fStack_98 < 1.0) break;

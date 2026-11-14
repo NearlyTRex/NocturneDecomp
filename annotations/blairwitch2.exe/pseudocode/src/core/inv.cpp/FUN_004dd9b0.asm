@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_inv_cpp_FUN_004dd9b0(float *param_1)
+; void core_inv_cpp_FUN_004dd9b0(CInventory *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x918]:8  local_918
@@ -133,8 +133,8 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
+;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0
 ;   core_inv.cpp_FUN_004d9ff0
-;   core_inv.cpp_FUN_004dd0a0
 ;   core_inv.cpp_getItemDescription_FUN_004d9f80
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
 ;   core_inv.cpp_loadAssets_FUN_004da990
@@ -296,8 +296,8 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x610] ; 004ddbb4
     PUSH EDX                            ; 004ddbbb
     PUSH EBX                            ; 004ddbbc
-    CALL core_inv.cpp_FUN_004dd0a0      ; 004ddbbd
-        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd0a0()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0 ; 004ddbbd
+        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004ddbc2
     TEST EAX,EAX                        ; 004ddbc5
     JZ 0x004dec9b                       ; 004ddbc7
@@ -1305,8 +1305,8 @@ section .text
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x610] ; 004dea40
     PUSH EDI                            ; 004dea47
     PUSH EBX                            ; 004dea48
-    CALL core_inv.cpp_FUN_004dd0a0      ; 004dea49
-        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd0a0()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0 ; 004dea49
+        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004dea4e
     TEST EAX,EAX                        ; 004dea51
     JNZ 0x004ddb9f                      ; 004dea53
@@ -1316,8 +1316,8 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x610] ; 004dea61
     PUSH EDX                            ; 004dea68
     PUSH EBX                            ; 004dea69
-    CALL core_inv.cpp_FUN_004dd0a0      ; 004dea6a
-        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd0a0()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0 ; 004dea6a
+        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004dea6f
     TEST EAX,EAX                        ; 004dea72
     JNZ 0x004ddb9f                      ; 004dea74
@@ -1492,8 +1492,8 @@ section .text
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x610] ; 004deca2
     PUSH ECX                            ; 004deca9
     PUSH EBX                            ; 004decaa
-    CALL core_inv.cpp_FUN_004dd0a0      ; 004decab
-        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd0a0()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0 ; 004decab
+        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004decb0
     TEST EAX,EAX                        ; 004decb3
     JNZ 0x004decd8                      ; 004decb5
@@ -1503,8 +1503,8 @@ section .text
     MOV ESI,dword ptr [EBX + EAX*0x4 + 0x610] ; 004decbf
     PUSH ESI                            ; 004decc6
     PUSH EBX                            ; 004decc7
-    CALL core_inv.cpp_FUN_004dd0a0      ; 004decc8
-        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd0a0()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0 ; 004decc8
+        ;   XREF to: 004dd0a0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004deccd
     TEST EAX,EAX                        ; 004decd0
     JZ 0x004ded62                       ; 004decd2

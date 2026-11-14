@@ -25,7 +25,7 @@
 ;   core_main.c_FUN_004e4500
 ;   engine_2d.c_resetGraphicsSystem_FUN_00402ac0
 ;   engine_special.cpp_selectCard_FUN_005600c0
-;   wincore_wddvmem.cpp_FUN_00588a50
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EAX                            ; 004b5ffb
     MOV EDX,dword ptr [EBX]             ; 004b5ffc
     PUSH EDX                            ; 004b5ffe
-    CALL wincore_wddvmem.cpp_FUN_00588a50 ; 004b5fff
-        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00588a50(int width, int height, int bits_per_pixel)
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50 ; 004b5fff
+        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 004b6004
     TEST EAX,EAX                        ; 004b6007
     JNZ 0x004b605c                      ; 004b6009
@@ -67,8 +67,8 @@ section .text
     PUSH ESI                            ; 004b601f
     MOV EDI,dword ptr [EBX]             ; 004b6020
     PUSH EDI                            ; 004b6022
-    CALL wincore_wddvmem.cpp_FUN_00588a50 ; 004b6023
-        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00588a50(int width, int height, int bits_per_pixel)
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50 ; 004b6023
+        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 004b6028
     TEST EAX,EAX                        ; 004b602b
     JNZ 0x004b605c                      ; 004b602d

@@ -19,8 +19,8 @@
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004855c0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580
+;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0
 ;   shape_edittool.cpp_FUN_00483ea0
-;   shape_edittool.cpp_FUN_004855f0
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     SAR EAX,0x1                         ; 00485687
     PUSH EAX                            ; 00485689
     PUSH EBX                            ; 0048568a
-    CALL shape_edittool.cpp_FUN_004855f0 ; 0048568b
-        ;   XREF to: 004855f0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004855f0()
+    CALL shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0 ; 0048568b
+        ;   XREF to: 004855f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 00485690
     ADD EAX,EBP                         ; 00485693
     PUSH EAX                            ; 00485695

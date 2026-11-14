@@ -46,7 +46,7 @@ float * core_doc_cpp_FUN_004568e0(CCharacter *param_1,CDemonActor *param_2,float
 void core_doc_cpp_FUN_00458320(int param_1);
 void core_doc_cpp_FUN_004583a0(int param_1);
 undefined4 core_doc_cpp_FUN_004583f0(void);
-undefined4 core_doc_cpp_FUN_00459555(void);
+undefined4 core_doc_cpp_FUN_00459555(float param_1,float param_2,float param_3);
 void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00459d40(CDoc *this_ptr);
@@ -96,7 +96,7 @@ CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_0045ed30(void);
 CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0045ed50(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_0045ef40(CDoor *this_ptr);
-void __cdecl core_door_cpp_FUN_0045efc0(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_onOpened_FUN_0045efc0(CDoor *this_ptr);
 void core_door_cpp_FUN_0045efe0(CDoor *param_1,EDoorState param_2);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_0045f030(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delta_time);

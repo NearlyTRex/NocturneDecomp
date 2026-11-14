@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 at 004dbd63
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc713
-;   core_inv.cpp_FUN_004db9d0 at 004dbb3c
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 at 004dbb3c
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408a50

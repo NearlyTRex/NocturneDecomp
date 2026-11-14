@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
   int *local_14;
   
   shape_edittool_cpp_FUN_0047e870(g_CEditorToolsPtr);
-  shape_edittool_cpp_FUN_0047eff0(g_CEditorToolsPtr,1);
+  shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(g_CEditorToolsPtr,1);
   local_28 = _DAT_01c35e48;
   local_24 = this_ptr->scroll_top;
   local_34 = 0;
@@ -158,13 +158,15 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
          ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column;
     (this_ptr->scrollbar).page_size = this_ptr->column_count;
   }
-  shape_edittool_cpp_FUN_00484440(&this_ptr->scrollbar);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_00484440(&this_ptr->scrollbar);
 LAB_004833e8:
   if (this_ptr->ok_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_00484f20(&this_ptr->ok_button,this_ptr->selection_state == 0);
+    shape_edittool_cpp_CEdButton_paint_FUN_00484f20
+              (&this_ptr->ok_button,(uint)(this_ptr->selection_state == 0));
   }
   if (this_ptr->cancel_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_00484f20(&this_ptr->cancel_button,this_ptr->selection_state == 1);
+    shape_edittool_cpp_CEdButton_paint_FUN_00484f20
+              (&this_ptr->cancel_button,(uint)(this_ptr->selection_state == 1));
   }
   if (this_ptr->state_flag == 0) {
     shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);

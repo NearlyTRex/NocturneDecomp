@@ -63,7 +63,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_set.cpp_FUN_00533190
+;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -213,8 +213,8 @@ section .text
     PUSH EAX                            ; 005595da
     MOV ESI,dword ptr [0x0061b5a8]      ; 005595db | g_CDemonSetPtr
     PUSH ESI                            ; 005595e1 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00533190      ; 005595e2
-        ;   XREF to: 00533190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00533190()
+    CALL core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190 ; 005595e2
+        ;   XREF to: 00533190 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 005595e7
     MOV dword ptr [ESP + 0x150],EAX     ; 005595ea
     MOV dword ptr [ESP + 0x15c],EAX     ; 005595f1

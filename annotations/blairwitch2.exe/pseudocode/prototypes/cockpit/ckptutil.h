@@ -149,17 +149,17 @@ void __cdecl putPixel(int x,int y,int color);
 // Address: 0042f2f0
 undefined4 FUN_0042f2f0(void);
 
-// Original: cockpit_ckptutil.c_FUN_0042f300
+// Original: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0042f300
 // Address: 0042f300
-int __cdecl FUN_0042f300(void);
+int __cdecl setLineBlendingDisabled(void);
 
 // Original: cockpit_ckptutil.c_FUN_0042f310
 // Address: 0042f310
 void FUN_0042f310(void);
 
-// Original: cockpit_ckptutil.c_FUN_0042f320
+// Original: cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320
 // Address: 0042f320
-void FUN_0042f320(undefined4 param_1);
+void __cdecl setLineClippingDisabled(int disabled);
 
 // Original: cockpit_ckptutil.c_FUN_0042f330
 // Address: 0042f330

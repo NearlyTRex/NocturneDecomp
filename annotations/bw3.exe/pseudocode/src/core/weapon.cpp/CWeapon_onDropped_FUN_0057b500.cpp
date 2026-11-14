@@ -20,7 +20,7 @@ void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_0057b500(CWeapon *this_ptr,CV
   
   bVar2 = 0;
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
-  core_weapon_cpp_FUN_0057ba10(this_ptr);
+  core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_0057ba10(this_ptr);
   if (drop_position != (CVector3f *)0x0) {
     core_dirmat_cpp_FUN_0045b870(&(this_ptr->physics_box).rotation_matrix,drop_position);
     pCVar1 = &(this_ptr->physics_box).linear_velocity_local;

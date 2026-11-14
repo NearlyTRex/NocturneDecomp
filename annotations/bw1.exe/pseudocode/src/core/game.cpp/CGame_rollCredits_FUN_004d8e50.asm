@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
-;   core_game.cpp_FUN_004cbf20
+;   core_game.cpp_CGame_updateDT_FUN_004cbf20
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_malloc_FUN_005c08d0
@@ -281,8 +281,8 @@ section .text
         ;   XREF to: 004d91eb (CONDITIONAL_JUMP)  ; LAB_004d91eb
     MOV EDX,dword ptr [ESP + 0x1140]    ; 004d90df
     PUSH EDX                            ; 004d90e6
-    CALL core_game.cpp_FUN_004cbf20     ; 004d90e7
-        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
+    CALL core_game.cpp_CGame_updateDT_FUN_004cbf20 ; 004d90e7
+        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004cbf20(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d90ec
     MOV EAX,dword ptr [ESP + 0x1140]    ; 004d90ef
     FLD float ptr [EAX + 0x294]         ; 004d90f6

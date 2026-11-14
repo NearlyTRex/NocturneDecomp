@@ -11,19 +11,20 @@
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *this_ptr)
 
 {
+  CLocation *start_position;
+  CEnemy *this_ptr_00;
   int iVar1;
   int iVar2;
-  int iVar3;
-  byte bVar4;
+  byte bVar3;
   float afStackY_10d4 [36];
   CMatrix3x4f *apCStackY_1044 [929];
-  CFireEffect *this_ptr_00;
-  CVector3f *start_position;
+  CFireEffect *this_ptr_01;
+  CVector3f *start_position_00;
   CVector3f *end_position;
   float end_width;
-  uint *puVar5;
+  uint *puVar4;
   float end_spread;
-  byte local_1a0 [120];
+  CVector3f local_1a0 [10];
   SDamageInfo local_128;
   uint uStack_ec;
   float afStack_e8 [5];
@@ -49,25 +50,25 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
   CMatrix3x4f *local_40 [5];
   uint uStack_2c;
   uint uStack_20;
-  byte local_14 [4];
+  float local_14;
   int iStack_10;
   CMatrix3x4f *local_c;
   
-  bVar4 = 0;
-  iVar1 = core_hero_cpp_FUN_004ec350(this_ptr,local_14);
-  if (iVar1 == 0) {
+  bVar3 = 0;
+  this_ptr_00 = core_hero_cpp_CHero_closestEnemy_FUN_004ec350(&this_ptr->base,&local_14);
+  if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }
-  core_actor_cpp_FUN_00408bb0(this_ptr,iVar1 + 0x20);
+  core_actor_cpp_FUN_00408bb0(this_ptr,&(this_ptr_00->base).base.location);
   local_44 = local_a4;
-  local_40[(uint)bVar4 * -2] = (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2];
-  local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  local_40[(uint)bVar3 * -2] = (CMatrix3x4f *)afStack_a0[(uint)bVar3 * -2];
+  local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       (CMatrix3x4f *)afStack_a0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_44);
   local_5c = local_40[2];
-  local_58[(uint)bVar4 * -2] = local_40[(uint)bVar4 * -2 + 3];
-  local_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+  local_58[(uint)bVar3 * -2] = local_40[(uint)bVar3 * -2 + 3];
+  local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
   if (&local_44 != &local_5c) {
     local_44 = local_5c;
     local_40[0] = local_58[0];
@@ -76,32 +77,33 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
   local_40[0] = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60((float)local_40[0]);
   local_c = local_40[0];
   if (((float)local_40[0] < _DAT_005d34de) || (0x3f490fdb < (int)local_40[0])) {
+    start_position = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004b6fe0
-              (0x01C57074,(CVector3f *)(iVar1 + 0x20),16.0,1,0.0);
-    core_fire_cpp_CFireEffect_createCrater_FUN_004b6f30
-              (0x01C57074,(CVector3f *)(iVar1 + 0x20),4.0);
+              (0x01C57074,&start_position->position,16.0,1,0.0);
+    core_fire_cpp_CFireEffect_createCrater_FUN_004b6f30(0x01C57074,&start_position->position,4.0);
   }
   else {
     __arrinit(local_1a0,10,&g_CVectorTypeInfo);
-    iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x54))(iVar1,local_1a0);
-    iStack_10 = iVar2;
-    iVar3 = rand();
-    core_actor_cpp_FUN_00408b40(iVar1,local_1a0 + (iVar3 % iVar2) * 0xc);
+    iVar1 = (*((this_ptr_00->base).base.vtable._ub)->getTargetPoints)
+                      ((CDemonActor *)this_ptr_00,local_1a0);
+    iStack_10 = iVar1;
+    iVar2 = rand();
+    core_actor_cpp_FUN_00408b40(this_ptr_00,local_1a0 + iVar2 % iVar1);
     CStack_bc.x = afStack_88[2];
-    afStack_e8[(uint)bVar4 * -2 + 0xc] = afStack_88[(uint)bVar4 * -2 + 3];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
-         afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+    afStack_e8[(uint)bVar3 * -2 + 0xc] = afStack_88[(uint)bVar3 * -2 + 3];
+    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =
+         afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
     if (&CStack_50 != (CVector3f *)(afStack_e8 + 0xb)) {
       CStack_50.x = CStack_bc.x;
       CStack_50.y = CStack_bc.y;
       CStack_50.z = CStack_bc.z;
     }
-    iVar2 = rand();
-    core_actor_cpp_FUN_00408b40(iVar1,local_1a0 + (iVar2 % iStack_10) * 0xc);
+    iVar1 = rand();
+    core_actor_cpp_FUN_00408b40(this_ptr_00,local_1a0 + iVar1 % iStack_10);
     fStack_d4 = (float)uStack_20;
-    afStack_e8[(uint)bVar4 * -2 + 6] = (float)local_40[(uint)bVar4 * -2 + 9];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-         (float)local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+    afStack_e8[(uint)bVar3 * -2 + 6] = (float)local_40[(uint)bVar3 * -2 + 9];
+    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
+         (float)local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
     if (afStack_88 + 8 != afStack_e8 + 5) {
       fStack_68 = fStack_d4;
       uStack_64 = uStack_d0;
@@ -109,35 +111,35 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
     }
     local_c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
     core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc);
-    puVar5 = &uStack_ec;
+    puVar4 = &uStack_ec;
     uStack_ec = uStack_2c;
-    afStack_e8[(uint)bVar4 * -2] = (float)local_40[(uint)bVar4 * -2 + 6];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         (float)local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar5);
+    afStack_e8[(uint)bVar3 * -2] = (float)local_40[(uint)bVar3 * -2 + 6];
+    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         (float)local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
+    core_actor_cpp_FUN_00408b40(this_ptr,puVar4);
     CStack_b0.x = fStack_74;
-    *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4) = afStack_88[(uint)bVar4 * -2 + 6];
-    *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+    *(float *)((int)&CStack_b0 + (uint)bVar3 * -8 + 4) = afStack_88[(uint)bVar3 * -2 + 6];
+    *(float *)((int)&CStack_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
     core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0);
-    puVar5 = &uStack_8c;
+    puVar4 = &uStack_8c;
     uStack_8c = uStack_c8;
-    afStack_88[(uint)bVar4 * -2] = afStack_e8[(uint)bVar4 * -2 + 9];
-    afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar5);
+    afStack_88[(uint)bVar3 * -2] = afStack_e8[(uint)bVar3 * -2 + 9];
+    afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
+    core_actor_cpp_FUN_00408b40(this_ptr,puVar4);
     end_spread = 4.0;
     end_width = 0.5;
-    iVar2 = 1;
+    iVar1 = 1;
     end_position = &CStack_50;
-    start_position = &CStack_b0;
+    start_position_00 = &CStack_b0;
     CStack_98.x = afStack_e8[2];
-    *(float *)((int)&CStack_98 + (uint)bVar4 * -8 + 4) = afStack_e8[(uint)bVar4 * -2 + 3];
-    this_ptr_00 = 0x01C57074;
-    *(float *)((int)&CStack_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+    *(float *)((int)&CStack_98 + (uint)bVar3 * -8 + 4) = afStack_e8[(uint)bVar3 * -2 + 3];
+    this_ptr_01 = 0x01C57074;
+    *(float *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004b7060
-              (this_ptr_00,start_position,end_position,iVar2,end_width,end_spread);
+              (this_ptr_01,start_position_00,end_position,iVar1,end_width,end_spread);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004b7060
               (0x01C57074,&CStack_98,&CStack_50,1,0.5,4.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -151,7 +153,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
   if ((CBaron *)local_128.wielder == (CBaron *)0x0) {
     local_128.wielder = (CDemonActor *)this_ptr;
   }
-  (**(code **)(*(int *)(iVar1 + 0x154) + 0x108))(iVar1,&local_128);
-  *(uint *)(iVar1 + 0xb9f0) = 0x40400000;
+  (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_128);
+  (this_ptr_00->base).stagger_amount = 3.0;
   return;
 }

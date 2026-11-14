@@ -16,7 +16,7 @@ void core_fforest_cpp_FUN_005a2ac0(CEnemy *param_1)
   float fVar1;
   float fVar2;
   CDemonActor *pCVar3;
-  int iVar4;
+  SMotion *pSVar4;
   byte bVar5;
   float afStackY_106c [999];
   SDamageInfo SStack_c0;
@@ -44,8 +44,8 @@ void core_fforest_cpp_FUN_005a2ac0(CEnemy *param_1)
     this_ptr = &(param_1->base).model;
     fStack_18 = core_motion_cpp_FUN_00503e60(&this_ptr->base);
     pCStack_14 = (CMatrix3x4f *)fStack_18;
-    iVar4 = core_motion_cpp_FUN_005035c0(this_ptr);
-    if (*(int *)(iVar4 + 0x24) != 2) {
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr->base);
+    if (pSVar4->state_index != 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr->base,2,1);
       return;
     }

@@ -21,9 +21,9 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_cloth.cpp_FUN_005ae680
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00503950
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     ADD EAX,0x2b4                       ; 004f1805
     FSTP float ptr [ESP]                ; 004f180a
     PUSH EAX                            ; 004f180d
-    CALL core_motion.cpp_FUN_005035c0   ; 004f180e
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f180e
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004f1813
     PUSH EAX                            ; 004f1816
     LEA ESI,[EBX + 0x2b4]               ; 004f1817

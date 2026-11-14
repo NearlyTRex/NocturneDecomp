@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_dtor_FUN_0047b690 at 0047b6a2
-;   shape_edittool.cpp_FUN_0047e760 at 0047e76f
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 at 0047e76f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d238e

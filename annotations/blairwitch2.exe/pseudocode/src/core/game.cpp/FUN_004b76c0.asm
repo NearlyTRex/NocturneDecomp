@@ -40,8 +40,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
 ;   core_inv.cpp_CInventory_selectItem_FUN_004dbb50
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0
-;   core_inv.cpp_FUN_004db9d0
 ;
 ; *****************************************************************************
 
@@ -741,8 +741,8 @@ section .text
     PUSH 0x0                            ; 004b7ed8
     ADD EAX,0x2437c                     ; 004b7eda
     PUSH EAX                            ; 004b7edf
-    CALL core_inv.cpp_FUN_004db9d0      ; 004b7ee0
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004b7ee0
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b7ee5
     JMP 0x004b79de                      ; 004b7ee8
         ;   XREF to: 004b79de (UNCONDITIONAL_JUMP)  ; LAB_004b79de
@@ -754,8 +754,8 @@ section .text
     PUSH 0x0                            ; 004b7efd
     ADD EAX,0x2437c                     ; 004b7eff
     PUSH EAX                            ; 004b7f04
-    CALL core_inv.cpp_FUN_004db9d0      ; 004b7f05
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004b7f05
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b7f0a
     JMP 0x004b7a2d                      ; 004b7f0d
         ;   XREF to: 004b7a2d (UNCONDITIONAL_JUMP)  ; LAB_004b7a2d
@@ -767,8 +767,8 @@ section .text
     PUSH 0x0                            ; 004b7f22
     ADD EAX,0x2437c                     ; 004b7f24
     PUSH EAX                            ; 004b7f29
-    CALL core_inv.cpp_FUN_004db9d0      ; 004b7f2a
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004b7f2a
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b7f2f
     JMP 0x004b7b4c                      ; 004b7f32
         ;   XREF to: 004b7b4c (UNCONDITIONAL_JUMP)  ; LAB_004b7b4c
@@ -780,8 +780,8 @@ section .text
     PUSH 0x0                            ; 004b7f47
     ADD EAX,0x2437c                     ; 004b7f49
     PUSH EAX                            ; 004b7f4e
-    CALL core_inv.cpp_FUN_004db9d0      ; 004b7f4f
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004b7f4f
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b7f54
     JMP 0x004b7b9b                      ; 004b7f57
         ;   XREF to: 004b7b9b (UNCONDITIONAL_JUMP)  ; LAB_004b7b9b
@@ -812,8 +812,8 @@ section .text
     PUSH 0x0                            ; 004b7f9f
     ADD EAX,0x2437c                     ; 004b7fa1
     PUSH EAX                            ; 004b7fa6
-    CALL core_inv.cpp_FUN_004db9d0      ; 004b7fa7
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004b7fa7
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b7fac
     ADD ESP,0x14                        ; 004b7faf
     POP EBP                             ; 004b7fb2

@@ -12,8 +12,8 @@
 ;   core_doc.cpp_FUN_00450c60 at 00453162
 ;   core_dracbrid.cpp_FUN_00465400 at 00465864
 ;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046df05
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c227
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0 at 00491c11
-;   core_event.cpp_FUN_00489670 at 0048c227
 ;   core_fire.cpp_CFireball_onCollision_FUN_004964c0 at 0049653a
 ;   ... and 20 more
 ;

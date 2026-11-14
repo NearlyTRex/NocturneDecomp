@@ -118,7 +118,7 @@ float * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,flo
                                    &param_1->collision_normal);
   }
   else {
-    local_14 = (float *)core_dtrace_cpp_FUN_004738d0
+    local_14 = (float *)core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0
                                   (&g_CDemonRaytraceInstance,param_2,&param_1->ground_type,
                                    &param_1->collision_normal);
   }

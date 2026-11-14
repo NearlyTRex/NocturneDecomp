@@ -26,7 +26,7 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004cea50(CHero *this_ptr,CDemonAc
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"CHero::startGettingGrabbed by %s, type %d\n")
   ;
   this_ptr_00 = &(this_ptr->base).model;
-  core_motion_cpp_FUN_005035c0(this_ptr_00);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  current motion is %s\n");
   if (grab_type == 0) {
     pcVar4 = "GETGRABBED";

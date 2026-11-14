@@ -53,8 +53,8 @@
 ;   undefined4 DAT_01c51cac
 ;
 ; Called Functions:
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_004205e0
-;   core_box.cpp_FUN_00420990
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_special.cpp_FUN_00580173
@@ -70,8 +70,8 @@ section .text
     SUB ESP,0x84                        ; 004207b3
     MOV EBX,dword ptr [ESP + 0x94]      ; 004207b9
     PUSH EBX                            ; 004207c0
-    CALL core_box.cpp_FUN_00420990      ; 004207c1
-        ;   XREF to: 00420990 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420990()
+    CALL core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990 ; 004207c1
+        ;   XREF to: 00420990 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 004207c6
     CMP EAX,-0x1                        ; 004207c9
     JZ 0x004207dc                       ; 004207cc

@@ -19,8 +19,8 @@
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_FUN_004dadb0
-;   core_inv.cpp_FUN_004db9d0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5                            ; 0051ec76
     PUSH 0x0                            ; 0051ec78
     PUSH EBX                            ; 0051ec7a
-    CALL core_inv.cpp_FUN_004db9d0      ; 0051ec7b
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 0051ec7b
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0051ec80
     POP EDI                             ; 0051ec83
     POP ESI                             ; 0051ec84

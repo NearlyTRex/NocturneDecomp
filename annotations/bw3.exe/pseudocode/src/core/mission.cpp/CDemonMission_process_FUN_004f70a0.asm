@@ -30,7 +30,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_alphabit.cpp_FUN_0040dbe0
-;   engine_special.cpp_FUN_00565820
+;   engine_special.cpp_lockFrame_FUN_00565820
 ;   engine_special.cpp_unlockFrame_FUN_00565870
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
@@ -135,8 +135,8 @@ section .text
     XOR EBX,EBX                         ; 004f71b1
     MOV ESI,ESP                         ; 004f71b3
         ;   Label: LAB_004f71b3
-    CALL engine_special.cpp_FUN_00565820 ; 004f71b5
-        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
+    CALL engine_special.cpp_lockFrame_FUN_00565820 ; 004f71b5
+        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00565820()
     PUSH ESI                            ; 004f71ba
     CALL engine_alphabit.cpp_FUN_0040dbe0 ; 004f71bb
         ;   XREF to: 0040dbe0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbe0()

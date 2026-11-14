@@ -10,7 +10,7 @@
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090 at 004819de
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0047fb20
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH 0x0                            ; 0047fcfd
     PUSH 0x0                            ; 0047fcff
     PUSH EDX                            ; 0047fd01
-    CALL cockpit_drawsurf.cpp_FUN_0047fb20 ; 0047fd02
-        ;   XREF to: 0047fb20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_0047fb20(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20 ; 0047fd02
+        ;   XREF to: 0047fb20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0047fd07
     RET                                 ; 0047fd0a
 

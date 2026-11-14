@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004e4500 at 004e457e
-;   core_main.c_FUN_004e4e20 at 004e4e78
+;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e78
 ;
 ; Referenced Globals:
 ;   void* PTR_timeEndPeriod_005c8448 = 001c890c

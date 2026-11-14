@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_00474400
-;   core_setcolid.cpp_FUN_0053d270
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0053cc2e
     PUSH 0xbf800000                     ; 0053cc31
     PUSH EDI                            ; 0053cc36
-    CALL core_setcolid.cpp_FUN_0053d270 ; 0053cc37
-        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053d270()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270 ; 0053cc37
+        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0053cc3c
     FLD float ptr [ESP + 0x1c]          ; 0053cc40
     ADD ESP,0x14                        ; 0053cc44

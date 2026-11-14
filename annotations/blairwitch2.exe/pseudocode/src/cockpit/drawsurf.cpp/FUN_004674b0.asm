@@ -9,7 +9,7 @@
 ;   undefined4 DAT_0060b274
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_00467610
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     XOR ECX,ECX                         ; 004674e9
     PUSH EDX                            ; 004674eb
     MOV dword ptr [0x0060b274],ECX      ; 004674ec | DAT_0060b274
-    CALL cockpit_drawsurf.cpp_FUN_00467610 ; 004674f2
-        ;   XREF to: 00467610 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467610(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610 ; 004674f2
+        ;   XREF to: 00467610 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 004674f7
     MOV EAX,dword ptr [ESP]             ; 004674fa
     MOV dword ptr [0x0060b270],EBX      ; 004674fd | DAT_0060b270

@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   new_state
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_00489670 at 0048d107
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048d107
 ;   core_lever.cpp_CLever_process_FUN_004e1d70 at 004e1ec1
 ;
 ; Referenced Globals:

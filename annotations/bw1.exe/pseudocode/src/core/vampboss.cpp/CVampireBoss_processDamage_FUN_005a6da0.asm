@@ -28,8 +28,8 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
+;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 ;   core_inv.cpp_FUN_004f8c40
-;   core_inv.cpp_FUN_004f8d00
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
@@ -234,8 +234,8 @@ section .text
     PUSH 0x0                            ; 005a6f82
     PUSH EBX                            ; 005a6f84
     PUSH ESI                            ; 005a6f85
-    CALL core_inv.cpp_FUN_004f8d00      ; 005a6f86
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 005a6f86
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 005a6f8b
     PUSH EBX                            ; 005a6f8e
     MOV EDX,dword ptr [0x0061f650]      ; 005a6f8f | DAT_0061f650

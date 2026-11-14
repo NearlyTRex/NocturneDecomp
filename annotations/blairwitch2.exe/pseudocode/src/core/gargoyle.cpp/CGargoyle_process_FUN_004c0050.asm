@@ -98,8 +98,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 004c00d0
         ;   Label: LAB_004c00d0
     PUSH EAX                            ; 004c00d6
-    CALL core_motion.cpp_FUN_005035c0   ; 004c00d7
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004c00d7
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004c00dc
     ADD ESP,0x4                         ; 004c00df
     CMP EAX,0x8                         ; 004c00e2
@@ -128,8 +128,8 @@ section .text
     ADD ESP,0x8                         ; 004c0118
     MOV EDX,dword ptr [EBP + 0x72]      ; 004c011b
     PUSH EDX                            ; 004c011e
-    CALL core_motion.cpp_FUN_005035c0   ; 004c011f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004c011f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004c0124
     PUSH dword ptr [EBP + 0x92]         ; 004c0127
     MOV ESI,dword ptr [EAX + 0x24]      ; 004c012d
@@ -428,8 +428,8 @@ section .text
     CALL dword ptr [EAX + 0x150]        ; 004c04a5
     ADD ESP,0x8                         ; 004c04ab
     PUSH EBX                            ; 004c04ae
-    CALL core_gargoyle.cpp_FUN_004bfea0 ; 004c04af
-        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004bfea0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0 ; 004c04af
+        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004c04b4
     TEST EAX,EAX                        ; 004c04b7
     JZ 0x004c0187                       ; 004c04b9
@@ -474,8 +474,8 @@ section .text
     CALL dword ptr [EAX + 0x150]        ; 004c0539
     ADD ESP,0x8                         ; 004c053f
     PUSH EBX                            ; 004c0542
-    CALL core_gargoyle.cpp_FUN_004bfea0 ; 004c0543
-        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004bfea0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0 ; 004c0543
+        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004c0548
     TEST EAX,EAX                        ; 004c054b
     JZ 0x004c0613                       ; 004c054d
@@ -675,8 +675,8 @@ section .text
     CALL dword ptr [EAX + 0x150]        ; 004c074d
     ADD ESP,0x8                         ; 004c0753
     PUSH EBX                            ; 004c0756
-    CALL core_gargoyle.cpp_FUN_004bfea0 ; 004c0757
-        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_FUN_004bfea0()
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0 ; 004c0757
+        ;   XREF to: 004bfea0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0(CGargoyle * this_ptr)
     LEA EDX,[EBX + 0x2b4]               ; 004c075c
     ADD ESP,0x4                         ; 004c0762
     MOV dword ptr [EBP + 0x6e],EDX      ; 004c0765

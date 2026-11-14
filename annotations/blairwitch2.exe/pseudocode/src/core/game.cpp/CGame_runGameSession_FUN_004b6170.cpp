@@ -140,7 +140,7 @@ LAB_004b6569:
       iVar5 = 1;
     }
     engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(0x01D02F84,iVar5);
-    core_game_cpp_FUN_004b82e0(this_ptr);
+    core_game_cpp_CGame_processHotkeys_FUN_004b82e0(this_ptr);
     core_game_cpp_CGame_updateStatusDisplays_FUN_004b3820(this_ptr);
     core_game_cpp_CGame_processFudge_FUN_004b39d0(this_ptr);
     core_game_cpp_CGame_playerControls_FUN_004b7050(this_ptr);
@@ -272,7 +272,7 @@ LAB_004b6635:
               }
               engine_2d_c_clearInputAndWait_FUN_004032b0();
               if (this_ptr->cinematic_skip_in_progress == 0) {
-                core_sound_cpp_FUN_0055a1d0(0x0264B290);
+                core_sound_cpp_CSound_init_FUN_0055a1d0(0x0264B290);
               }
               *(EAimMode *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) = this_ptr->aim_mode;
               iVar5 = 1;
@@ -297,7 +297,7 @@ LAB_004b6635:
         iVar6 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_00482770(&g_CPickList);
         if (iVar6 != -2) {
           engine_2d_c_clearInputAndWait_FUN_004032b0();
-          shape_edittool_cpp_FUN_0047e760(g_CEditorToolsPtr);
+          shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
           shape_edittool_cpp_CPickList_clear_FUN_00483d10(&g_CPickList);
           _DAT_01cb7788 = 0;
         }
@@ -343,7 +343,7 @@ LAB_004b6635:
     if (this_ptr->need_chapter_reload == 0) {
       if (local_14 != 0) {
         local_14 = this_ptr->need_chapter_reload;
-        core_sound_cpp_FUN_0055a1d0(0x0264B290);
+        core_sound_cpp_CSound_init_FUN_0055a1d0(0x0264B290);
       }
       goto LAB_004b6569;
     }

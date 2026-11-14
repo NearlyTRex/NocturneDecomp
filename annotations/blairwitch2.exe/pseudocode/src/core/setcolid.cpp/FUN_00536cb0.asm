@@ -42,7 +42,7 @@
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004e5e70 at 004e5ed6
-;   core_setcolid.cpp_FUN_00537030 at 00537515
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 at 00537515
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

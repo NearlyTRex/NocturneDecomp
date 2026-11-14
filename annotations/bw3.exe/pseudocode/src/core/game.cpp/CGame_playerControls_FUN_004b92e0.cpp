@@ -60,6 +60,6 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr)
     }
     return;
   }
-  core_game_cpp_FUN_004ba490(this_ptr);
+  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(this_ptr);
   return;
 }

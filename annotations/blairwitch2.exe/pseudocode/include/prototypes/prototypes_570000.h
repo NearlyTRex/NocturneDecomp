@@ -95,7 +95,7 @@ CTeleportDest * __cdecl core_teleport_cpp_factoryFuncTeleportDest_FUN_00572210(v
 CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_00572230(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00572240(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00572260(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
-undefined4 __cdecl core_teleport_cpp_CTeleport_getCollisionType_FUN_005722b0(CTeleport *this_ptr);
+ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_005722b0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_005722c0(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005722e0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005722f0(CTeleport *this_ptr);
@@ -140,9 +140,9 @@ void engine_texture_cpp_FUN_00574a80(int param_1,int param_2);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00574af0(CTextureCache *this_ptr,char *output_buffer);
 void engine_texture_cpp_FUN_00574bc0(void);
 void engine_texture_cpp_FUN_00574ce0(int param_1);
-void engine_texture_cpp_FUN_00574d50(void);
+CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00574d50(void);
 void __cdecl engine_texture_cpp_freeTextureCache_FUN_00574db0(void);
-int engine_texture_cpp_FUN_00574e00(int param_1);
+SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic *texture);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic *texture_info);
 void engine_texture_cpp_FUN_00574ea0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 void engine_texture_cpp_FUN_00574f60(void);
@@ -207,7 +207,7 @@ void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_00578500(CTrigger *this_pt
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00578550(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_00578570(CTrigger *this_ptr,CDemonActor *actor);
 void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005785b0(CTrigger *this_ptr,float hit_points);
-void core_trigger_cpp_FUN_00578650(int param_1);
+void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00578650(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_00578720(CTrigger *this_ptr,CVector3f *out_points_array);
 undefined4 core_trigger_cpp_FUN_00578800(int param_1,CDemonActor *param_2);
 void __cdecl support_trisock_cpp_staticInit_FUN_00578b90(void);
@@ -230,7 +230,7 @@ int __cdecl support_trisock_cpp_CSocket_createSocket_FUN_00579030(CSocket *this_
 int __cdecl support_trisock_cpp_CSocket_createUDPSocket_FUN_00579060(CSocket *this_ptr);
 int __cdecl support_trisock_cpp_CSocket_isSocketValid_FUN_00579090(CSocket *this_ptr);
 int __cdecl support_trisock_cpp_CSocket_bindSocket_FUN_005790a0(CSocket *this_ptr,ushort port);
-undefined4 support_trisock_cpp_FUN_005790f0(SOCKET *param_1,undefined4 param_2);
+int __cdecl support_trisock_cpp_CSocket_connectSocket_FUN_005790f0(CSocket *this_ptr,SNetworkAddr *dest_addr);
 byte support_trisock_cpp_FUN_00579150(CSocket *param_1);
 int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_00579240(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_005792e0(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr);

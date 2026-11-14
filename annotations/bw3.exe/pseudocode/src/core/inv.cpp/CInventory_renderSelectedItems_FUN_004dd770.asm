@@ -34,9 +34,9 @@
 ;   undefined4 DAT_01d70a34
 ;
 ; Called Functions:
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70
 ;   core_inv.cpp_drawItemIconBackground_FUN_004dd5b0
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_004dd3f0
-;   core_inv.cpp_FUN_004dbe70
 ;   core_inv.cpp_loadAssets_FUN_004da570
 ;   crt_math.c_round_FUN_005a3120
 ;
@@ -153,8 +153,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x338]     ; 004dd8c1
     PUSH EAX                            ; 004dd8c7
     PUSH EBX                            ; 004dd8c8
-    CALL core_inv.cpp_FUN_004dbe70      ; 004dd8c9
-        ;   XREF to: 004dbe70 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dbe70()
+    CALL core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 ; 004dd8c9
+        ;   XREF to: 004dbe70 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, ...)
     ADD ESP,0x1c                        ; 004dd8ce
     CMP dword ptr [EBX + 0x33c],0x0     ; 004dd8d1
         ;   Label: LAB_004dd8d1
@@ -245,8 +245,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x33c]     ; 004dd9d9
     PUSH EAX                            ; 004dd9df
     PUSH EBX                            ; 004dd9e0
-    CALL core_inv.cpp_FUN_004dbe70      ; 004dd9e1
-        ;   XREF to: 004dbe70 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dbe70()
+    CALL core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 ; 004dd9e1
+        ;   XREF to: 004dbe70 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, ...)
     ADD ESP,0x1c                        ; 004dd9e6
     ADD ESP,0x2c                        ; 004dd9e9
         ;   Label: LAB_004dd9e9

@@ -10,9 +10,9 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfffa
-;   shape_edittool.cpp_FUN_0049c290 at 0049c2c4
-;   shape_edittool.cpp_FUN_0049c310 at 0049c34a
-;   shape_edittool.cpp_FUN_0049c470 at 0049c4a8
+;   shape_edittool.cpp_CPickList_insert_FUN_0049c290 at 0049c2c4
+;   shape_edittool.cpp_CPickList_remove_FUN_0049c310 at 0049c34a
+;   shape_edittool.cpp_CPickList_swap_FUN_0049c470 at 0049c4a8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc6d0

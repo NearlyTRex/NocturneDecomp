@@ -35,8 +35,8 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
 ;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -490,8 +490,8 @@ section .text
     FMUL float ptr [EBX + 0x2598]       ; 0040fe9a
     PUSH EBP                            ; 0040fea0
     FSTP float ptr [EBX + 0x2578]       ; 0040fea1
-    CALL core_motion.cpp_FUN_005035c0   ; 0040fea7
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0040fea7
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0040feac
     ADD ESP,0x4                         ; 0040feaf
     CMP ESI,EAX                         ; 0040feb2
@@ -508,8 +508,8 @@ section .text
         ;   XREF to: 0040fe5e (UNCONDITIONAL_JUMP)  ; LAB_0040fe5e
     PUSH EAX                            ; 0040feca
         ;   Label: LAB_0040feca
-    CALL core_motion.cpp_FUN_005035c0   ; 0040fecb
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0040fecb
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0040fed0
     ADD ESP,0x4                         ; 0040fed3
     CMP EAX,0x4                         ; 0040fed6

@@ -40,8 +40,8 @@
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40
 ;   core_game.cpp_CGame_slamDT_FUN_004d7f50
-;   core_game.cpp_FUN_004cbf20
-;   core_game.cpp_FUN_004dc1a0
+;   core_game.cpp_CGame_updateDT_FUN_004cbf20
+;   core_game.cpp_drawCursor_FUN_004dc1a0
 ;   core_inv.cpp_FUN_004fae10
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_00530340
 ;   ... and 42 more
@@ -120,8 +120,8 @@ section .text
         ;   XREF to: 004ce5a9 (UNCONDITIONAL_JUMP)  ; LAB_004ce5a9
     PUSH EAX                            ; 004ce635
         ;   Label: LAB_004ce635
-    CALL core_game.cpp_FUN_004cbf20     ; 004ce636
-        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
+    CALL core_game.cpp_CGame_updateDT_FUN_004cbf20 ; 004ce636
+        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004cbf20(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ce63b
     JMP 0x004ce60e                      ; 004ce63e
         ;   XREF to: 004ce60e (UNCONDITIONAL_JUMP)  ; LAB_004ce60e
@@ -269,8 +269,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004ce839
         ;   Label: LAB_004ce839
     PUSH EBX                            ; 004ce83c
-    CALL core_game.cpp_FUN_004cbf20     ; 004ce83d
-        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
+    CALL core_game.cpp_CGame_updateDT_FUN_004cbf20 ; 004ce83d
+        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004cbf20(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ce842
     MOV ESI,dword ptr [0x00622580]      ; 004ce845 | g_CNetGamePtr
     PUSH ESI                            ; 004ce84b | g_CNetGameInstance
@@ -319,8 +319,8 @@ section .text
     CMP dword ptr [EAX + 0x224],0x0     ; 004ce8de
     JNZ 0x004cf02e                      ; 004ce8e5
         ;   XREF to: 004cf02e (CONDITIONAL_JUMP)  ; LAB_004cf02e
-    CALL engine_special.cpp_FUN_00581f50 ; 004ce8eb
-        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
+    CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 004ce8eb
+        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00581f50()
     MOV EAX,[0x0061d418]                ; 004ce8f0 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004ce8f5 | g_CFieldNotesInstance.is_displayed
     JZ 0x004cf0d7                       ; 004ce8f9
@@ -710,32 +710,32 @@ section .text
         ;   XREF to: 004cee26 (CONDITIONAL_JUMP)  ; LAB_004cee26
     PUSH 0x400                          ; 004cedaf
     CALL engine_special.cpp_FUN_00582bf0 ; 004cedb4
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cedb9
     PUSH EAX                            ; 004cedbc
     PUSH 0x200                          ; 004cedbd
     CALL engine_special.cpp_FUN_00582bf0 ; 004cedc2
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cedc7
     PUSH EAX                            ; 004cedca
     PUSH 0x100                          ; 004cedcb
     CALL engine_special.cpp_FUN_00582bf0 ; 004cedd0
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cedd5
     PUSH EAX                            ; 004cedd8
     PUSH 0x80                           ; 004cedd9
     CALL engine_special.cpp_FUN_00582bf0 ; 004cedde
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cede3
     PUSH EAX                            ; 004cede6
     PUSH 0x40                           ; 004cede7
     CALL engine_special.cpp_FUN_00582bf0 ; 004cede9
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cedee
     PUSH EAX                            ; 004cedf1
     PUSH 0x20                           ; 004cedf2
     CALL engine_special.cpp_FUN_00582bf0 ; 004cedf4
-        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00582bf0()
+        ;   XREF to: 00582bf0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582bf0(int texture_size)
     ADD ESP,0x4                         ; 004cedf9
     PUSH EAX                            ; 004cedfc
     PUSH 0x5e16c6                       ; 004cedfd | = "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d"
@@ -914,8 +914,8 @@ section .text
     PUSH 0x0                            ; 004cefb3
     MOV ECX,dword ptr [0x0061abc0]      ; 004cefb5 | g_CEditorToolsPtr
     PUSH ECX                            ; 004cefbb
-    CALL shape_edittool.cpp_FUN_00497870 ; 004cefbc
-        ;   XREF to: 00497870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00497870()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870 ; 004cefbc
+        ;   XREF to: 00497870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004cefc1
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cefc4
         ;   Label: LAB_004cefc4
@@ -934,8 +934,8 @@ section .text
         ;   XREF to: 004ceffa (CONDITIONAL_JUMP)  ; LAB_004ceffa
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cefee
     PUSH EAX                            ; 004ceff1
-    CALL core_game.cpp_FUN_004dc1a0     ; 004ceff2
-        ;   XREF to: 004dc1a0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004dc1a0()
+    CALL core_game.cpp_drawCursor_FUN_004dc1a0 ; 004ceff2
+        ;   XREF to: 004dc1a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_drawCursor_FUN_004dc1a0()
     ADD ESP,0x4                         ; 004ceff7
     MOV EDX,dword ptr [EBP + 0x14]      ; 004ceffa
         ;   Label: LAB_004ceffa

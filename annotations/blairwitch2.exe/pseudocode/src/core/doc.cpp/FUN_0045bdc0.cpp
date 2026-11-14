@@ -516,18 +516,18 @@ LAB_0045bfdc:
         pCVar3[1].off_event[0x4e] = '\0';
         pCVar3[1].off_event[0x4f] = '\0';
       }
-      iVar5 = *(int *)(param_1[2].flames[1].on_event + 0x28);
-      if (iVar5 != 0) {
+      pCVar7 = *(CDemonActor **)(param_1[2].flames[1].on_event + 0x28);
+      if (pCVar7 != (CDemonActor *)0x0) {
         if (local_20 != 0) {
           if (local_20 == 5) {
-            core_inv_cpp_FUN_004db8e0(local_24,iVar5,0);
+            core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar7,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
                       (param_1,1,*(int *)(param_1[2].flames[1].on_event + 0x28),0,0);
           }
           else if (local_20 == 6) {
-            core_inv_cpp_FUN_004db8e0(local_24,iVar5,0);
+            core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar7,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10

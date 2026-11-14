@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   model_filename
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00422be0 at 00422c02
+;   core_charactr.cpp_CCharacter_markResourcesInUse_FUN_00422be0 at 00422c02
 ;
 ; Referenced Globals:
 ;   undefined4 g_DeformableModelPool[0].model_filename[0]

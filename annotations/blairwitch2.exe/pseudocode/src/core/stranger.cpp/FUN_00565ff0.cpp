@@ -13,7 +13,7 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
 {
   CDemonActor *pCVar1;
   CVector3f *pCVar2;
-  int iVar3;
+  SMotion *pSVar3;
   CSkeleton *this_ptr_00;
   float *pfVar4;
   float *pfVar5;
@@ -24,6 +24,7 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
   float fVar9;
   char *motion_name;
   code *blend_callback;
+  int iVar10;
   CBoundingBox3D *in_stack_ffffdf70;
   float local_204c;
   float local_203c;
@@ -199,10 +200,10 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
   }
   core_stranger_cpp_CStranger_makeDrawDecision_FUN_00567880(this_ptr);
   local_1c = &(this_ptr->base).base.model;
-  iVar3 = core_motion_cpp_FUN_005035c0();
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&local_1c->base);
   pCVar8 = local_1c;
-  iVar3 = *(int *)(iVar3 + 0x24);
-  if (iVar3 == 0x15) {
+  iVar10 = pSVar3->state_index;
+  if (iVar10 == 0x15) {
     pfVar4 = (float *)((int)this_ptr + (uint)bVar6 * -8 + 0x25708);
     afStack_8c[2] = (this_ptr->carry_object_world_center).x;
     afStack_8c[(uint)bVar6 * -2 + 3] = *pfVar4;
@@ -257,9 +258,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
     *pfVar4 = afStack_334[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 9];
     pfVar4[(uint)bVar6 * -2 + 1] =
          (afStack_334 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 9)[(uint)bVar6 * -2 + 1];
-    iVar3 = _DAT_0264be40;
+    iVar10 = _DAT_0264be40;
   }
-  else if (iVar3 == 0x13) {
+  else if (iVar10 == 0x13) {
     pfVar4 = (float *)((int)this_ptr + (uint)bVar6 * -8 + 0x25708);
     local_cc = (this_ptr->carry_object_world_center).x;
     afStack_f8[(uint)bVar6 * -2 + 0xc] = *pfVar4;
@@ -316,9 +317,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
     rotation_quat = &local_3c8;
     pCVar8 = local_18;
     local_2034 = local_202c;
-    iVar3 = _DAT_0264be40;
+    iVar10 = _DAT_0264be40;
   }
-  else if (iVar3 == 0x16) {
+  else if (iVar10 == 0x16) {
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
               (&local_570,&(this_ptr->base).target_orientation.vec);
     if ((DAT_0264be10 & 1) == 0) {
@@ -329,7 +330,7 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
       (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_ffffdf70);
       pfVar4 = afStack_528;
       pfVar5 = &fStack_540;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+      for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
         *pfVar5 = *pfVar4;
         pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
         pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
@@ -425,9 +426,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
          (afStack_374 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
     pCVar8 = local_18;
     local_2034 = fStack_2030;
-    iVar3 = _DAT_0264be40;
+    iVar10 = _DAT_0264be40;
   }
-  else if (iVar3 == 0x1f) {
+  else if (iVar10 == 0x1f) {
     local_20 = &this_ptr->carry_object_world_center;
     if ((this_ptr->base).lever_to_pull == (CLever *)0x0) {
       core_lever_cpp_FUN_004e2220();
@@ -563,9 +564,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
     rotation_quat = &local_4c8;
     pCVar8 = local_18;
     local_2034 = local_2024;
-    iVar3 = _DAT_0264be40;
+    iVar10 = _DAT_0264be40;
   }
-  else if (iVar3 == 0x17) {
+  else if (iVar10 == 0x17) {
     local_2038 = (local_1c->base).current_frame_number * (float)_DAT_005eb7f5;
     if (1.0 < local_2038) {
       local_2038 = 1.0;
@@ -595,9 +596,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
          (afStack_514 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     pCVar8 = local_18;
     local_2034 = local_2038;
-    iVar3 = _DAT_0264be3c;
+    iVar10 = _DAT_0264be3c;
   }
-  else if (iVar3 == 0x18) {
+  else if (iVar10 == 0x18) {
     local_204c = (local_1c->base).current_frame_number;
     if ((float)_DAT_005eb7e5 <= local_204c) {
       local_204c = 1.0 - (local_204c + (float)_DAT_005eb7ed) * (float)_DAT_005eb7f5;
@@ -667,9 +668,9 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
          (afStack_3e4 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
     pCVar8 = local_18;
     local_2034 = local_204c;
-    iVar3 = _DAT_0264be3c;
+    iVar10 = _DAT_0264be3c;
   }
-  else if (iVar3 == 0x19) {
+  else if (iVar10 == 0x19) {
     local_2010 = 1.0 - ((local_1c->base).current_frame_number + (float)_DAT_005eb7ed) *
                        (float)_DAT_005eb7f5;
     if (local_2010 < 0.0) {
@@ -703,10 +704,10 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
     rotation_quat = &local_408;
     pCVar8 = local_18;
     local_2034 = local_2010;
-    iVar3 = _DAT_0264be3c;
+    iVar10 = _DAT_0264be3c;
   }
   else {
-    if (iVar3 != 0x1a) goto LAB_0056629e;
+    if (iVar10 != 0x1a) goto LAB_0056629e;
     local_203c = (local_1c->base).current_frame_number;
     if (local_203c < (float)_DAT_005eb7e5) {
       local_203c = local_203c * (float)_DAT_005eb7f5;
@@ -766,10 +767,10 @@ void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
     rotation_quat = &local_4e8;
     pCVar8 = local_18;
     local_2034 = local_203c;
-    iVar3 = _DAT_0264be3c;
+    iVar10 = _DAT_0264be3c;
   }
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
-            (pCVar8,rotation_quat,local_2034,iVar3,
+            (pCVar8,rotation_quat,local_2034,iVar10,
              core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
 LAB_0056629e:
   if (g_CGamePtr->goggles_active != 0) {
@@ -781,7 +782,7 @@ LAB_0056629e:
     }
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar9 = 1.0;
-    iVar3 = _DAT_0264be30;
+    iVar10 = _DAT_0264be30;
     core_xform_cpp_FUN_00594380(afStack_f8 + 0x17);
     local_448.w = afStack_3b4[3];
     pfVar4 = (float *)((int)&local_448 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -790,21 +791,22 @@ LAB_0056629e:
     pfVar4[(uint)bVar6 * -2 + 1] =
          (afStack_3b4 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
-              (&(this_ptr->base).base.model,&local_448,fVar9,iVar3,blend_callback);
+              (&(this_ptr->base).base.model,&local_448,fVar9,iVar10,blend_callback);
   }
   if (this_ptr->interact_blend <= 0.0) {
     return;
   }
-  iVar3 = 1;
+  iVar10 = 1;
   motion_name = "?draw_holsters2aimPistols" + 1;
   pCVar8 = &(this_ptr->base).base.model;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar8);
-  iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
-                    (&this_ptr_00->motion_list,motion_name,iVar3);
-  local_2c = (float)core_motion_cpp_FUN_00503f50(pCVar8,iVar3);
+  iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
+                     (&this_ptr_00->motion_list,motion_name,iVar10);
+  local_2c = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00503f50
+                       (&pCVar8->base,iVar10,1.0);
   local_18 = (CDeformableModelInstance *)local_2c;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-            (pCVar8,iVar3,local_2c,this_ptr->interact_blend,_DAT_0264be70,
+            (pCVar8,iVar10,local_2c,this_ptr->interact_blend,_DAT_0264be70,
              core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
   return;
 }

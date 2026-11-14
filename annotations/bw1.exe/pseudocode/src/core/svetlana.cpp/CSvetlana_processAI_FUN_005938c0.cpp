@@ -17,10 +17,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
   EHeroTask EVar2;
   float fVar3;
   int iVar4;
-  SMotion *pSVar5;
-  uint uVar6;
+  CEnemy *pCVar5;
+  SMotion *pSVar6;
+  uint uVar7;
   CPathMap *this_ptr_01;
-  byte bVar7;
+  byte bVar8;
   float afStackY_10c4 [1009];
   float local_dc;
   float local_d8;
@@ -54,7 +55,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
   float fStack_3c;
   float local_38;
   float local_34;
-  int local_30;
+  CEnemy *local_30;
   float fStack_2c;
   int local_28;
   float local_24;
@@ -62,8 +63,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
   float local_1c;
   float fStack_14;
   
-  bVar7 = 0;
-  local_30 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+  bVar8 = 0;
+  local_30 = *(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
   local_28 = 0;
   local_24 = 0.25;
   local_34 = 0.7853982;
@@ -74,9 +75,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
     local_84 = (this_ptr->base).base.base.location.position.y - *(float *)(iVar4 + 0x24);
     local_80 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar4 + 0x28);
     local_dc = local_88;
-    (&stack0xffffff28)[(uint)bVar7 * 0xfffffffe] = afStack_b4[(uint)bVar7 * -2 + 0xc];
-    afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -8] =
-         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+    (&stack0xffffff28)[(uint)bVar8 * 0xfffffffe] = afStack_b4[(uint)bVar8 * -2 + 0xc];
+    afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -8] =
+         afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd];
     local_1c = SQRT(local_d4 * local_d4 + local_dc * local_dc + local_d8 * local_d8);
     if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
       local_1c = 0.0;
@@ -91,24 +92,27 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       fStack_4c = 9999.9;
-      iVar4 = core_hero_cpp_FUN_004ec350(this_ptr,afStack_b4 + 0x1a);
-      if ((iVar4 == 0) || (local_38 <= fStack_4c)) {
+      pCVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004ec350(&this_ptr->base,afStack_b4 + 0x1a);
+      if ((pCVar5 == (CEnemy *)0x0) || (local_38 <= fStack_4c)) {
         if (this_ptr->blades_drawn != 0) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
       else {
-        local_30 = iVar4;
+        local_30 = pCVar5;
         local_28 = 1;
       }
     }
-    fStack_58 = *(float *)(local_30 + 0x20) - (this_ptr->base).base.base.location.position.x;
-    fStack_54 = *(float *)(local_30 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    fStack_50 = *(float *)(local_30 + 0x28) - (this_ptr->base).base.base.location.position.z;
+    fStack_58 = (local_30->base).base.location.position.x -
+                (this_ptr->base).base.base.location.position.x;
+    fStack_54 = (local_30->base).base.location.position.y -
+                (this_ptr->base).base.base.location.position.y;
+    fStack_50 = (local_30->base).base.location.position.z -
+                (this_ptr->base).base.base.location.position.z;
     fStack_a0 = fStack_58;
-    afStack_b4[(uint)bVar7 * -2 + 6] = afStack_b4[(uint)bVar7 * -2 + 0x18];
-    afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x19];
+    afStack_b4[(uint)bVar8 * -2 + 6] = afStack_b4[(uint)bVar8 * -2 + 0x18];
+    afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
+         afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x19];
     if (&stack0xffffff24 != afStack_b4 + 5) {
       local_dc = fStack_a0;
       local_d8 = fStack_9c;
@@ -125,11 +129,12 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
         iVar4 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x148))(iVar4);
         if ((iVar4 == 0) &&
-           (uVar6 = core_charactr_cpp_FUN_00434c60(this_ptr,delta_time), uVar6 != 0)) {
-          if (uVar6 < 2) {
+           (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
+                              ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
+          if (uVar7 < 2) {
             (this_ptr->base).player_input.action_state.walk = 1;
           }
-          else if (uVar6 == 2) {
+          else if (uVar7 == 2) {
             (this_ptr->base).player_input.action_state.run = 1;
             (this_ptr->base).player_input.action_state.walk = 1;
           }
@@ -139,7 +144,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
-        this_ptr_01 = core_path_cpp_getPathMap_FUN_005351f0((CLocation *)(local_30 + 0x20));
+        this_ptr_01 = core_path_cpp_getPathMap_FUN_005351f0(&(local_30->base).base.location);
       }
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&CStack_d0,
@@ -172,28 +177,29 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
           (this_ptr->base).player_input.action_state.draw = 1;
         }
         else {
-          pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                              (&this_ptr_00->base);
-          if ((pSVar5->state_index != 2) && (pSVar5->state_index != 1)) {
+          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
             (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
-        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base)
+        pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base)
         ;
-        if ((pSVar5->state_index == 10) && (this_ptr->blades_drawn != 0)) {
+        if ((pSVar6->state_index == 10) && (this_ptr->blades_drawn != 0)) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
         iVar4 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x148))(iVar4);
         if ((iVar4 == 0) &&
-           (uVar6 = core_charactr_cpp_FUN_00434c60(this_ptr,delta_time), uVar6 != 0)) {
-          if (uVar6 < 2) {
+           (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
+                              ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
+          if (uVar7 < 2) {
             (this_ptr->base).player_input.action_state.walk = 1;
           }
-          else if (uVar6 == 2) {
+          else if (uVar7 == 2) {
             (this_ptr->base).player_input.action_state.run = 1;
             (this_ptr->base).player_input.action_state.walk = 1;
           }
@@ -202,9 +208,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
       if (local_28 == 1) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);
         uStack_64 = uStack_b8;
-        afStack_b4[(uint)bVar7 * -2 + 0x15] = afStack_b4[(uint)bVar7 * -2];
-        afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16] =
-             afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        afStack_b4[(uint)bVar8 * -2 + 0x15] = afStack_b4[(uint)bVar8 * -2];
+        afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16] =
+             afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                               (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = fStack_14 * _DAT_005f7597 * (float)_DAT_005f759f;
@@ -234,13 +240,16 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
       (this_ptr->base).player_input.turn_speed = local_24;
     }
-    fStack_7c = *(float *)(local_30 + 0x20) - (this_ptr->base).base.base.location.position.x;
-    fStack_78 = *(float *)(local_30 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    fStack_74 = *(float *)(local_30 + 0x28) - (this_ptr->base).base.base.location.position.z;
+    fStack_7c = (local_30->base).base.location.position.x -
+                (this_ptr->base).base.base.location.position.x;
+    fStack_78 = (local_30->base).base.location.position.y -
+                (this_ptr->base).base.base.location.position.y;
+    fStack_74 = (local_30->base).base.location.position.z -
+                (this_ptr->base).base.base.location.position.z;
     fStack_94 = fStack_7c;
-    afStack_b4[(uint)bVar7 * -2 + 9] = afStack_b4[(uint)bVar7 * -2 + 0xf];
-    afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
-         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
+    afStack_b4[(uint)bVar8 * -2 + 9] = afStack_b4[(uint)bVar8 * -2 + 0xf];
+    afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10] =
+         afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
     if (&stack0xffffff24 != afStack_b4 + 8) {
       local_dc = fStack_94;
       local_d8 = fStack_90;
@@ -248,9 +257,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005938c0(CSvetlana *this_
     }
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);
     fStack_70 = afStack_b4[2];
-    afStack_b4[(uint)bVar7 * -2 + 0x12] = afStack_b4[(uint)bVar7 * -2 + 3];
-    afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
-         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+    afStack_b4[(uint)bVar8 * -2 + 0x12] = afStack_b4[(uint)bVar8 * -2 + 3];
+    afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
+         afStack_b4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
     if (&stack0xffffff24 != afStack_b4 + 0x11) {
       local_dc = fStack_70;
       local_d8 = fStack_6c;

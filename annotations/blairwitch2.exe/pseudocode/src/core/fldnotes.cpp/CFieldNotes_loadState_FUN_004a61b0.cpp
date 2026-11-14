@@ -94,7 +94,9 @@ LAB_004a63af:
       iVar3 = 0;
       do {
         if (*(int *)(*(int *)(SNotesMap_ARRAY_01cacb50[0].image_name + iVar3 + -4) + 0x140) == 6) {
-          engine_alphabit_cpp_FUN_0040dd20(iVar3 + 0x1cacbd8,0xff);
+          engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
+                    ((CAlphaBitmap *)
+                     (SNotesMap_ARRAY_01cacb50[0].sets[0].level_name + iVar3 + -0x18),0xff);
         }
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x970;

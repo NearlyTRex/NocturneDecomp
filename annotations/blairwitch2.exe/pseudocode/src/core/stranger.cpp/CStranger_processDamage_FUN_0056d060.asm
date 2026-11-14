@@ -35,8 +35,8 @@
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
 ;   core_hero.cpp_CHero_stopNearbyInteraction_FUN_004cfad0
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -151,16 +151,16 @@ section .text
     CALL dword ptr [EAX + 0xf8]         ; 0056d196
     ADD ESP,0x4                         ; 0056d19c
     PUSH EDI                            ; 0056d19f
-    CALL core_motion.cpp_FUN_005035c0   ; 0056d1a0
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056d1a0
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0056d1a5
     ADD ESP,0x4                         ; 0056d1a8
     CMP EAX,0x29                        ; 0056d1ab
     JZ 0x0056d245                       ; 0056d1ae
         ;   XREF to: 0056d245 (CONDITIONAL_JUMP)  ; LAB_0056d245
     PUSH EDI                            ; 0056d1b4
-    CALL core_motion.cpp_FUN_005035c0   ; 0056d1b5
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056d1b5
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0056d1ba
     ADD ESP,0x4                         ; 0056d1bd
     CMP EAX,0x28                        ; 0056d1c0

@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_backupScreen_FUN_00494030(CEditorTo
         iVar2 = iVar1;
       } while (iVar1 < DAT_0061b49c * 4);
     }
-    iVar2 = engine_special_cpp_FUN_00581f50();
+    iVar2 = engine_special_cpp_lockFrame_FUN_00581f50();
     if (iVar2 != 0) {
       iVar2 = DAT_0061b498 * DAT_0061b4a0 >> 0x1f;
       uVar3 = (int)((DAT_0061b498 * DAT_0061b4a0 + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3;

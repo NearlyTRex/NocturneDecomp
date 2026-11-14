@@ -241,7 +241,7 @@ CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055a0e0(CSound *this_ptr);
 void __cdecl core_sound_cpp_FUN_0055a100(CSound *this_ptr);
 void __cdecl core_sound_cpp_shutdownSoundSystem_FUN_0055a160(void);
 void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055a170(void);
-void __cdecl core_sound_cpp_FUN_0055a1d0(CSound *this_ptr);
+void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_0055a360(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_configure_FUN_0055ac50(CSound *this_ptr);
@@ -255,7 +255,7 @@ uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30(C
 int __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(CSound *this_ptr,uint sfx_handle);
 void __cdecl core_sound_cpp_CSound_killSound_FUN_0055af80(CSound *this_ptr,uint sfx_handle);
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_0055af90(CSound *this_ptr,char *sound_name);
-undefined4 core_sound_cpp_FUN_0055b060(void);
+char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_0055b060(CSound *this_ptr,int sound_mode_index);
 void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_0055b080(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0055b0b0(CSound *this_ptr,int index);
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0055b110(CSound *this_ptr,char *title,int *selection_inout);

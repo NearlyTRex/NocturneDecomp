@@ -36,7 +36,7 @@
 ;   ... and 31 more
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004a9a00
+;   core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
 ;   core_game.cpp_FUN_004d6990
 ;   core_level.cpp_FUN_004fe840
@@ -48,8 +48,8 @@
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   engine_dosio.cpp_FUN_00479180
+;   engine_ini.cpp_CIniFile_ctor_FUN_004f4b00
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
-;   engine_ini.cpp_FUN_004f4b00
 ;   engine_ini.cpp_FUN_004f4d10
 ;   ... and 7 more
 ;
@@ -110,8 +110,8 @@ section .text
     PUSH 0x5e3126                       ; 004d7308 | = "system\\nocturne.ini"
     LEA EAX,[ESP + 0x3c8]               ; 004d730d
     PUSH EAX                            ; 004d7314
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004d7315
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004d7315
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004d731a
     LEA EAX,[ESP + 0x6dc]               ; 004d731d
     PUSH EAX                            ; 004d7324
@@ -231,8 +231,8 @@ section .text
     ADD ESP,0x4                         ; 004d748f
     MOV EBX,dword ptr [0x0061b4d0]      ; 004d7492 | DAT_0061b4d0
     PUSH EBX                            ; 004d7498
-    CALL core_event.cpp_FUN_004a9a00    ; 004d7499
-        ;   XREF to: 004a9a00 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a00()
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00 ; 004d7499
+        ;   XREF to: 004a9a00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004d749e
     LEA EAX,[ESP + 0x5c4]               ; 004d74a1
     PUSH EAX                            ; 004d74a8

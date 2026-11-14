@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 271,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 21,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 175
+    "total_lines": 176
   },
   "cross_references": [
     {
@@ -42,14 +42,14 @@
       "name": "core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850"
     },
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
     },
     {
       "addr": "0059d7f0",
@@ -235,12 +235,12 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = core_motion_cpp_FUN_005035c0(&param_1->model);",
+      "text": "pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&(param_1->model).base)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&(param_1->model).base,2,1);",
@@ -248,15 +248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
@@ -267,7 +259,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_005f0556 < (param_1->model).base.current_frame_number) {",
+      "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -275,7 +267,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&(param_1->model).base,3,1);",
+      "text": "if (_DAT_005f0556 < (param_1->model).base.current_frame_number) {",
       "type": "unnamed_param"
     },
     {
@@ -283,7 +275,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_union_cpp_FUN_005a5460(param_1);",
+      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&(param_1->model).base,3,1);",
       "type": "unnamed_param"
     },
     {
@@ -291,7 +283,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w;",
+      "text": "core_union_cpp_FUN_005a5460(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -299,7 +291,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = 0.0;",
+      "text": "fVar3 = param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w;",
       "type": "unnamed_param"
     },
     {
@@ -307,15 +299,15 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w = (float)((int)fVar3 + -1);",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_005f0552 < (param_1->model).base.current_frame_number) {",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w = (float)((int)fVar3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -323,12 +315,20 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].model.rest_bone_scales[0x5c] = 0.0;",
+      "text": "if (_DAT_005f0552 < (param_1->model).base.current_frame_number) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].model.rest_bone_scales[0x5c] = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.rest_bone_scales[0x5b] = fVar3;",

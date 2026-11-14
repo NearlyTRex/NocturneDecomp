@@ -11,7 +11,8 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004cd880(CHaystack *t
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
+  int desired_state_index;
   
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
@@ -28,10 +29,10 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004cd880(CHaystack *t
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar2 + 0x24) != 9) {
-      iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-      if (*(int *)(iVar2 + 0x24) != 8) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar2->state_index != 9) {
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+      if (pSVar2->state_index != 8) {
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
@@ -43,12 +44,13 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004cd880(CHaystack *t
   }
   else if (0.0 < damage_info->damage_amount) {
     if (this_ptr->guns_drawn == 0) {
-      iVar2 = 4;
+      desired_state_index = 4;
     }
     else {
-      iVar2 = 0xb;
+      desired_state_index = 0xb;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,iVar2,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
+              (&this_ptr_00->base,desired_state_index,1);
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0((CCharacter *)this_ptr,damage_info);
   return;

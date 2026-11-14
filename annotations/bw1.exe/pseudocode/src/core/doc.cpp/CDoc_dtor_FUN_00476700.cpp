@@ -17,7 +17,7 @@ CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00476700(CDoc *this_ptr,uint flags)
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CDoc *)core_hero_cpp_FUN_004ea980(this_ptr,1);
+  pCVar1 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

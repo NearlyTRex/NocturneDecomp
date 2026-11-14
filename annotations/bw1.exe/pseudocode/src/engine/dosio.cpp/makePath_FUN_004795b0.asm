@@ -17,10 +17,10 @@
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e3d
 ;   engine_font.cpp_FUN_004c0fa0 at 004c10f2
 ;   engine_texture.cpp_FUN_00597d70 at 00597ed8
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 0049531a
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00495084
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80 at 00499d1e
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0 at 00499fb4
-;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_0049a0d0 at 0049a1b4
 ;   ... and 3 more
 ;
 ; Called Functions:

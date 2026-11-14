@@ -27,7 +27,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004faaf0(CInventory
   if ((g_CGamePtr->letterbox_mode == 0) &&
      (this_ptr->owner == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {
     if (DAT_0061b49c != _DAT_01d1bc5c) {
-      core_inv_cpp_FUN_004f70e0();
+      core_inv_cpp_loadAssets_FUN_004f70e0();
     }
     if ((this_ptr->selected_weapon != (CWeapon *)0x0) && (0.0 < this_ptr->weapon_highlight_timer)) {
       iVar1 = 8;

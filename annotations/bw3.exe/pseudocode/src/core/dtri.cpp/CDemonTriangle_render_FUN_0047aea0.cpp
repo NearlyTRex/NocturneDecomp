@@ -1,0 +1,63 @@
+// Name: core_dtri.cpp_CDemonTriangle_render_FUN_0047aea0
+// Address: 0047aea0
+// Address Range: [[0047aea0, 0047afeb]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0047aea0(CDemonTriangle *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0047aea0(CDemonTriangle *this_ptr)
+
+{
+  float10 fVar1;
+  float10 fVar2;
+  CDemonRenderer *this_ptr_00;
+  SMRGLPrimitivePoly *poly;
+  int iStack_74;
+  UIntegerFloat UStack_70;
+  UIntegerFloat UStack_6c;
+  UIntegerFloat UStack_68;
+  UIntegerFloat UStack_64;
+  int iStack_60;
+  int iStack_54;
+  int iStack_48;
+  CVector3i CStack_30;
+  CVector3i CStack_24;
+  CVector3i CStack_18;
+  
+  CStack_30.x = (int)ROUND((this_ptr->vertex1).x * _DAT_005dee70);
+  CStack_30.y = (int)ROUND((this_ptr->vertex1).y * _DAT_005dee70);
+  CStack_30.z = (int)ROUND((this_ptr->vertex1).z * _DAT_005dee70);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr->projected_vertex,&CStack_30);
+  CStack_18.x = (int)ROUND((this_ptr->vertex2).x * _DAT_005dee70);
+  CStack_18.y = (int)ROUND((this_ptr->vertex2).y * _DAT_005dee70);
+  CStack_18.z = (int)ROUND((this_ptr->vertex2).z * _DAT_005dee70);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr[1].projected_vertex,&CStack_18);
+  CStack_24.x = (int)ROUND((this_ptr->vertex3).x * _DAT_005dee70);
+  CStack_24.y = (int)ROUND((this_ptr->vertex3).y * _DAT_005dee70);
+  CStack_24.z = (int)ROUND((this_ptr->vertex3).z * _DAT_005dee70);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr[2].projected_vertex,&CStack_24);
+  poly = (SMRGLPrimitivePoly *)&stack0xffffff88;
+  iStack_74 = 3;
+  fVar1 = (float10)_DAT_005bccd9;
+  fVar2 = (float10)(this_ptr->normal).x * fVar1;
+  round();
+  UStack_70.i = (int)ROUND(fVar2);
+  fVar2 = (float10)(this_ptr->normal).y * fVar1;
+  round();
+  UStack_6c.i = (int)ROUND(fVar2);
+  fVar1 = fVar1 * (float10)(this_ptr->normal).z;
+  round();
+  UStack_68.i = (int)ROUND(fVar1);
+  fVar2 = (float10)this_ptr->plane_distance * (float10)_DAT_005bcce1 * (float10)_DAT_005bcce9;
+  iStack_60 = 0;
+  iStack_54 = 1;
+  iStack_48 = 2;
+  this_ptr_00 = 0x01BDD7E4;
+  round();
+  UStack_64.i = (int)ROUND(fVar2);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(this_ptr_00,poly);
+  return;
+}

@@ -25,9 +25,9 @@ int __cdecl isAnyHeroWithinCylinder(CVector3f *point,float horizontal_radius,flo
 // Address: 004d24b0
 CHero * __cdecl CHero::ctor(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d2620
+// Original: core_hero.cpp_CHero_dtor_FUN_004d2620
 // Address: 004d2620
-void FUN_004d2620(int param_1);
+CHero * __cdecl CHero::dtor(CHero *this_ptr,uint flags);
 
 // Original: core_hero.cpp_CHero_setup_FUN_004d26b0
 // Address: 004d26b0
@@ -97,9 +97,9 @@ int __cdecl CHero::tryOpenDoor(CHero *this_ptr);
 // Address: 004d32d0
 int __cdecl CHero::tryPullLever(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d3460
+// Original: core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460
 // Address: 004d3460
-undefined4 FUN_004d3460(int param_1);
+undefined4 __cdecl CHero::toggleLeverNow(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d3500
 // Address: 004d3500
@@ -125,9 +125,9 @@ int __cdecl FUN_004d3b20(CHero *this_ptr);
 // Address: 004d3c90
 int FUN_004d3c90(CHero *param_1);
 
-// Original: core_hero.cpp_FUN_004d3e20
+// Original: core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20
 // Address: 004d3e20
-bool FUN_004d3e20(CHero *param_1,char *param_2);
+bool __cdecl CHero::tryPickupActorOfClass(CHero *this_ptr,char *class_name);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004d4090
 // Address: 004d4090
@@ -157,9 +157,9 @@ int FUN_004d4230(int param_1,float *param_2);
 // Address: 004d43e0
 void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 
-// Original: core_hero.cpp_FUN_004d4410
+// Original: core_hero.cpp_CHero_reset_FUN_004d4410
 // Address: 004d4410
-void FUN_004d4410(int param_1);
+void __cdecl CHero::reset(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_doHeroAction_FUN_004d4520
 // Address: 004d4520
@@ -197,9 +197,9 @@ CHeroPlaceholder * __cdecl CHeroPlaceholder::dtor(CHeroPlaceholder *this_ptr,uin
 // Address: 004d4ba0
 CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_hero.cpp_FUN_004d4be0
+// Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d4be0
 // Address: 004d4be0
-CDemonActor * FUN_004d4be0(int param_1);
+CHero * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 
 // Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004d4c90
 // Address: 004d4c90

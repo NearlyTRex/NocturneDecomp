@@ -23,8 +23,9 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,floa
   CCharacter_full_vtable *pCVar7;
   int iVar8;
   CMotionController *this_ptr_02;
-  char *pcVar9;
+  SMotion *pSVar9;
   CMorph *this_ptr_03;
+  char *model_name;
   byte bVar10;
   uint uVar11;
   float fStack_1b60;
@@ -88,8 +89,9 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,floa
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_moloch_cpp_CMoloch_processAI_FUN_00501c60(this_ptr,delta_time);
     }
-    iVar8 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-    uVar11 = *(uint *)(iVar8 + 0x24);
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                       (&(this_ptr->base).base.model.base);
+    uVar11 = pSVar9->state_index;
     if ((((uVar11 == 0) || (uVar11 < 2)) || (uVar11 == 2)) &&
        ((this_ptr->base).base.is_on_ground != 0)) {
       uVar11 = (uint)((this_ptr->base).player_input.action_state.walk != 0);
@@ -104,8 +106,9 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,floa
       }
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
-      iVar8 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-      if (uVar11 != *(uint *)(iVar8 + 0x24)) goto LAB_00501615;
+      pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                         (&(this_ptr->base).base.model.base);
+      if (uVar11 != pSVar9->state_index) goto LAB_00501615;
     }
   }
   else {
@@ -253,22 +256,22 @@ LAB_005017f4:
     }
   }
   else {
-    pcVar9 = (char *)core_motion_cpp_FUN_005035c0(pCVar3);
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar3->base);
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950
-              (&(this_ptr->model).base,pcVar9,(this_ptr->base).base.model.base.current_frame_number)
-    ;
+              (&(this_ptr->model).base,pSVar9->motion_name,
+               (this_ptr->base).base.model.base.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0
               (&this_ptr->model);
     fVar6 = this_ptr->morph_timer + delta_time;
     this_ptr->morph_timer = fVar6;
     if (_DAT_005fa3d8 < fVar6) {
       if (this_ptr->in_human_form == 0) {
-        pcVar9 = "moloch_h.dfm";
+        model_name = "moloch_h.dfm";
         this_ptr->in_human_form = 1;
         pcStack_24 = "moloch_d.dfm";
       }
       else {
-        pcVar9 = "moloch_d.dfm";
+        model_name = "moloch_d.dfm";
         this_ptr->in_human_form = 0;
         pcStack_24 = "moloch_h.dfm";
       }
@@ -276,10 +279,11 @@ LAB_005017f4:
       this_ptr->morphing = 0;
       this_ptr->morph_timer = 0.0;
       core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(pCVar3,&SStack_1b5c);
-      pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_005035c0(pCVar3);
+      pCStack_14 = (CCharacter_full_vtable *)
+                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar3->base);
       this_ptr_00 = &(this_ptr->base).base.model;
       fStack_2c = (this_ptr->model).base.current_frame_number;
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_00,pcVar9);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_00,model_name);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950
                 (&this_ptr_00->base,(char *)pCStack_14,fStack_2c);

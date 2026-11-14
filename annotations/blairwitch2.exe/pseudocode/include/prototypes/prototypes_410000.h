@@ -223,7 +223,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(CBoundingBox3D *thi
 void core_box_cpp_FUN_0041a600(undefined4 *param_1,uint param_2);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670(CBoundingBox3D *this_ptr);
 undefined4 core_box_cpp_FUN_0041a840(CBoundingBox3D *param_1,int param_2);
-undefined4 core_box_cpp_FUN_0041aa20(float *param_1);
+int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20(CBoundingBox3D *this_ptr);
 float __cdecl core_box_cpp_FUN_0041ae50(CBoundingBox3D *this_ptr);
 float core_box_cpp_FUN_0041af70(float *param_1,float *param_2,float *param_3,float *param_4);
 void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_0041b600(CBoundingBox3D *this_ptr);
@@ -231,13 +231,13 @@ int __cdecl core_box_cpp_FUN_0041b660(CBoundingBox3D *this_ptr,CBoundingBox3D *o
 float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0(CBoundingBox3D *this_ptr);
 void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041b700(CBoundingBox3D *this_ptr);
 void core_box_cpp_FUN_0041bb80(float *param_1,float *param_2);
-bool core_box_cpp_FUN_0041bc20(undefined4 param_1,float *param_2,float param_3);
+int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041bc20(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 void __cdecl core_boxactor_cpp_staticInit_FUN_0041bc90(void);
 CBoxActor * __cdecl core_boxactor_cpp_factoryFuncBoxActor_FUN_0041bd00(void);
 CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_0041bd20(CBoxActor *this_ptr);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041be70(CBoxActor *this_ptr);
-void core_boxactor_cpp_FUN_0041bf10(int param_1);
+void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_ptr,float delta_time);
 int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041c580(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690(CBoxActor *this_ptr);
@@ -252,7 +252,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_0041cd00(CBoxActor *this_
 CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_0041cd60(CBoxActor *this_ptr);
 EGroundType __cdecl core_boxactor_cpp_CBoxActor_getGroundType_FUN_0041cd70(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_0041cd80(CBoxActor *this_ptr,CDemonActor *owner);
-void core_boxactor_cpp_FUN_0041cda0(int param_1);
+void __cdecl core_boxactor_cpp_CBoxActor_constrainToExtents_FUN_0041cda0(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041cf20(CBoxActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_0041cf30(void);

@@ -45,14 +45,14 @@
   },
   "function_calls": [
     {
+      "addr": "00503f50",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50"
+    },
+    {
       "addr": "00502f10",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10"
-    },
-    {
-      "addr": "00503f50",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503f50"
     },
     {
       "addr": "005466c0",
@@ -879,10 +879,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = (float)core_motion_cpp_FUN_00503f50(local_1c,iVar4,*(uint *)(param_1 + 0x2d08))",
+      "text": "(&local_1c->base,iVar4,*(float *)(param_1 + 0x2d08));",
       "type": "unnamed_param"
     },
     {

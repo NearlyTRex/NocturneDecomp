@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c400
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 004624aa
-;   core_set.cpp_FUN_00532b80 at 005336f0
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 005336f0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bb5c4
@@ -27,9 +27,9 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00461530
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890
-;   core_dmodel.cpp_FUN_00460e10
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
@@ -47,8 +47,8 @@ section .text
     PUSH EBP                            ; 00460553
     MOV EBX,dword ptr [ESP + 0x14]      ; 00460554
     PUSH EBX                            ; 00460558
-    CALL core_dmodel.cpp_FUN_00460e10   ; 00460559
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 00460559
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0046055e
     PUSH 0x5bb5c4                       ; 00460561 | DAT_005bb5c4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00460566

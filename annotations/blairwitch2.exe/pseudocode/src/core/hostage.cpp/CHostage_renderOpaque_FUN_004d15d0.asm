@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01ba5c50
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_npc.cpp_CNPC_renderOpaque_FUN_00510900
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;
@@ -38,8 +38,8 @@ section .text
         ;   XREF to: 004d1615 (CONDITIONAL_JUMP)  ; LAB_004d1615
     LEA EAX,[EBX + 0x2b4]               ; 004d15fa
     PUSH EAX                            ; 004d1600
-    CALL core_motion.cpp_FUN_005035c0   ; 004d1601
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d1601
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d1606
     ADD ESP,0x4                         ; 004d1609
     CMP EAX,0xa                         ; 004d160c

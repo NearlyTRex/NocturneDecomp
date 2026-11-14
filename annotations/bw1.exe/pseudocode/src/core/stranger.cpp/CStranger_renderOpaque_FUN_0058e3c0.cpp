@@ -87,7 +87,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *thi
       *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) = afStack_c8[(uint)bVar6 * -2];
       *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-      fStack_14 = (float)core_setcolid_cpp_FUN_00557630(g_CDemonSetPtr,pCVar7,pCVar9);
+      fStack_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00557630
+                            (g_CDemonSetPtr,pCVar7,pCVar9);
       fStack_1c = fStack_14;
       if (fStack_14 < 0.0) {
         fStack_1c = 10.0;

@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   y2
 ;
 ; XREF[4]:
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004844ec
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047ddf7
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a7b1
-;   shape_edittool.cpp_FUN_0047dc40 at 0047ddf7
 ;   shape_edittool.cpp_FUN_0047e870 at 0047e9bc
-;   shape_edittool.cpp_FUN_00484440 at 004844ec
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_drawHLine_FUN_004f9390

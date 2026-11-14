@@ -167,7 +167,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     if (iVar5 < iVar9) {
       iVar5 = iVar9;
     }
-    local_1c = shape_edittool_cpp_FUN_00486580((char *)0x0);
+    local_1c = shape_edittool_cpp_calculateButtonHeight_FUN_00486580((char *)0x0);
     iVar9 = local_28 + local_1c;
     local_20 = local_18 * iVar5 + (local_18 - 1) * local_34;
     if (this_ptr->scroll_mode == 2) {

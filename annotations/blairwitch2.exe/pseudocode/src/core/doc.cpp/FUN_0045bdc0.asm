@@ -57,7 +57,7 @@
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150
 ;   core_hero.cpp_FUN_004cff90
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
-;   core_inv.cpp_FUN_004db8e0
+;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   ... and 3 more
@@ -1067,8 +1067,8 @@ section .text
     PUSH EDX                            ; 0045c857
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0045c858
     PUSH EDX                            ; 0045c85c
-    CALL core_inv.cpp_FUN_004db8e0      ; 0045c85d
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 0045c85d
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0045c862
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0045c865
     PUSH ECX                            ; 0045c86b
@@ -1097,8 +1097,8 @@ section .text
     PUSH EDX                            ; 0045c8c0
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0045c8c1
     PUSH EDX                            ; 0045c8c5
-    CALL core_inv.cpp_FUN_004db8e0      ; 0045c8c6
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 0045c8c6
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0045c8cb
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0045c8ce
     PUSH ECX                            ; 0045c8d4

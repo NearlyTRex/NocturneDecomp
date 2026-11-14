@@ -221,7 +221,8 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
                               ((CGlass *)this_ptr_00);
             if (iVar2 == 0) break;
             in_stack_fffffe58 = (CDemonActor *)0x53f90a;
-            core_glass_cpp_FUN_004c6d40(this_ptr_00,&g_CDemonSetPtr->collision_impact_position);
+            core_glass_cpp_CGlass_shatter_FUN_004c6d40
+                      ((CGlass *)this_ptr_00,&g_CDemonSetPtr->collision_impact_position);
           }
         }
         else {

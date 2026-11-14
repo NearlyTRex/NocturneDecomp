@@ -101,7 +101,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr)
     iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(&pCVar1->rule);
     if (iVar3 == 0) {
       this_ptr->lever_to_pull = pCVar1;
-      core_hero_cpp_FUN_004d3460(this_ptr);
+      core_hero_cpp_CHero_toggleLeverNow_FUN_004d3460(this_ptr);
       core_hero_cpp_FUN_004d3210(this_ptr);
       return;
     }

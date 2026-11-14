@@ -77,7 +77,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
     ;
     iVar1 = 9;
     iVar5 = 0;
-    engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
     if (0 < _DAT_01d0d210) {
       pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
       do {
@@ -111,7 +111,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
               (&CAlphaBitmap_01d19cb0,"rtarrow",0x40,0x20);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
               (&CAlphaBitmap_01d19cc4,"fieldnotes_exit",0x1e,0x20);
-    engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19cc4,0xff);
+    engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(&CAlphaBitmap_01d19cc4,0xff);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
               (&CAlphaBitmap_01d19cd8,"underline",0x100,8);
     DAT_005fe370 = 0;
@@ -157,7 +157,7 @@ LAB_004abf0c:
                   (pCVar6,pSVar4->tab_x + -2,pSVar4->tab_y + -2,0xffff);
       }
       else {
-        engine_alphabit_cpp_FUN_0040d8a0
+        engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d8a0
                   (pCVar6,0x246,pSVar4->tab_y,0x246 - pSVar4->tab_x,0,
                    CAlphaBitmap_ARRAY_01d19bc0[iVar1].width + -1,
                    CAlphaBitmap_ARRAY_01d19bc0[iVar1].height + -1,0xffff);
@@ -202,8 +202,8 @@ LAB_004abf0c:
               (&CAlphaBitmap_01d19cb0,0x000001F4,0x000001AE,0xffff);
   }
   if (DAT_01d19cf0 != '\0') {
-    engine_font_cpp_FUN_004b0a20(_DAT_01549ac0,&DAT_01d19cf0,0x000000FA,0x000001AE,0,0xffffffff)
-    ;
+    engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+              (_DAT_01549ac0,&DAT_01d19cf0,0x000000FA,0x000001AE,0,-1);
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
             (&CAlphaBitmap_01d19cc4,0x00000262,0x000001C0,0xffff);
@@ -223,8 +223,8 @@ LAB_004abf0c:
     else {
       engine_2d_c_fillRectColor_FUN_004031c0
                 (DAT_005fe3a8,_DAT_01d19f7c,_DAT_01d19f80 + -1,_DAT_01d19f84 + -1,0);
-      engine_font_cpp_FUN_004b0a20
-                (_DAT_01549aa4,&DAT_01d19f90,_DAT_01d19f88,_DAT_01d19f8c,0xff,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+                (_DAT_01549aa4,&DAT_01d19f90,_DAT_01d19f88,_DAT_01d19f8c,0xff,-1);
     }
   }
   if (local_18 == 0) {

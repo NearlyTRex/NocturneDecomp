@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d7a694
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 004ed98a
         ;   Label: LAB_004ed98a
     PUSH ECX                            ; 004ed98e
-    CALL engine_texture.cpp_FUN_0056aa10 ; 004ed98f
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 004ed98f
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 004ed994
     RET                                 ; 004ed997
 

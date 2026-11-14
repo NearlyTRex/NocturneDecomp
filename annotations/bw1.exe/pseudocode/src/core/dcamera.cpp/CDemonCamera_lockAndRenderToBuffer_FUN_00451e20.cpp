@@ -14,7 +14,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20(CDe
   int iVar1;
   
   if (DAT_0061b49c < 0x1e1) {
-    engine_special_cpp_FUN_00581f50();
+    engine_special_cpp_lockFrame_FUN_00581f50();
   }
   else {
     iVar1 = engine_special_cpp_FUN_00582b70();

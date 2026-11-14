@@ -61,9 +61,9 @@ int __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimi
 // Address: 004f53f0
 void __cdecl CMirror::renderMirroredPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: core_mirror.cpp_FUN_004f5480
+// Original: core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004f5480
 // Address: 004f5480
-int FUN_004f5480(void);
+int __cdecl CMirror::renderMirrorQuad(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610
 // Address: 004f5610

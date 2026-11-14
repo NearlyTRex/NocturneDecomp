@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00434c60 at 00434d1d
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 at 00434d1d
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0 at 0049f0fb
 ;
 ; Referenced Globals:

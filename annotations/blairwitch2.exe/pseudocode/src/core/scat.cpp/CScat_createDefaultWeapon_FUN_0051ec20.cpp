@@ -30,6 +30,6 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_0051ec20(CScat *this_pt
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   core_inv_cpp_FUN_004dadb0(this_ptr_00,pCVar2,1,0);
-  core_inv_cpp_FUN_004db9d0(this_ptr_00,0,5,1);
+  core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0(this_ptr_00,(CDemonActor *)0x0,5,1);
   return;
 }

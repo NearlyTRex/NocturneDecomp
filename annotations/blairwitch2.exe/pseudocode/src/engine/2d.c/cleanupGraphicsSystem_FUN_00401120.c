@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_00401120(void)
 
 {
-  wincore_wddvmem_cpp_FUN_00588900();
+  wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00588900();
   return;
 }

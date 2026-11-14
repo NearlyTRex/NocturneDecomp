@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)
+; int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00519e50
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00519ec0
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
-;   engine_pod.cpp_FUN_0051aa80
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
         ;   XREF to: 0051b921 (CONDITIONAL_JUMP)  ; LAB_0051b921
     MOV EAX,ESP                         ; 0051b8fb
     PUSH EAX                            ; 0051b8fd
-    CALL engine_pod.cpp_FUN_0051aa80    ; 0051b8fe
-        ;   XREF to: 0051aa80 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0051aa80()
+    CALL engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80 ; 0051b8fe
+        ;   XREF to: 0051aa80 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 0051b903
     PUSH 0x0                            ; 0051b906
     MOV EBX,EAX                         ; 0051b908

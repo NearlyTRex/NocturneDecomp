@@ -24,7 +24,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
   this_ptr->slow_motion_mode = 0;
   this_ptr->slow_motion_timer = 0.0;
   this_ptr->game_control = CONTROL_MODE_MOUSE;
-  core_game_cpp_FUN_004d0400(this_ptr);
+  core_game_cpp_CGame_restoreDefaultControls_FUN_004d0400(this_ptr);
   this_ptr->debug_info_string[0] = '\0';
   this_ptr->god_mode_enabled = 0;
   this_ptr->freeze_enemies_enabled = 0;

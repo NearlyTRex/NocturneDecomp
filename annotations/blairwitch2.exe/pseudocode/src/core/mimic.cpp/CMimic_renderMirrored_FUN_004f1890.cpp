@@ -123,7 +123,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
            iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_FUN_005042e0(&this_ptr_00->base,(CDemonActor *)this_ptr);
-          core_motion_cpp_FUN_005035c0(this_ptr_00);
+          core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
         }
         engine_drender_cpp_pop_FUN_0046b4a0();
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90

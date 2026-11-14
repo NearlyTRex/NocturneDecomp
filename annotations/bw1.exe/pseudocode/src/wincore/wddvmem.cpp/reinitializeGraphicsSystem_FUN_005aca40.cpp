@@ -39,6 +39,6 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005aca40(void)
   if (HVar1 == 0) {
     (**(code **)(*_DAT_02c99300 + 0x50))(_DAT_02c99300,_DAT_02c9be68,0x11);
   }
-  wincore_wddvmem_cpp_FUN_005ac300(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);
+  wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);
   return;
 }

@@ -47,10 +47,10 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_box.cpp_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
 ;   core_charactr.cpp_FUN_0042e8c0
-;   core_charactr.cpp_FUN_00432220
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bd930
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0
 ;   core_script.cpp_CScript_setSpeaker_FUN_00530390
@@ -302,8 +302,8 @@ section .text
     ADD ESP,0x8                         ; 0042d08e
     PUSH dword ptr [ESP + 0x10c]        ; 0042d091
     PUSH EBX                            ; 0042d098
-    CALL core_charactr.cpp_FUN_00432220 ; 0042d099
-        ;   XREF to: 00432220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432220()
+    CALL core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220 ; 0042d099
+        ;   XREF to: 00432220 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042d09e
     FLD float ptr [EBX + 0xbc70]        ; 0042d0a1
     FSUB float ptr [ESP + 0x10c]        ; 0042d0a7

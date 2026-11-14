@@ -44,18 +44,18 @@
 ;   engine_2d.c_drawLine_FUN_004011a0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
-;   engine_font.cpp_FUN_004b0a20
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_mini3d.cpp_fillRect_FUN_004f37e0
 ;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
 ;   engine_mini3d.cpp_setColor_FUN_004f3520
+;   shape_edittool.cpp_calculateButtonHeight_FUN_00486580
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00485ff0
+;   shape_edittool.cpp_CEdButton_paint_FUN_00486120
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410
+;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00485640
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00484ca0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
-;   shape_edittool.cpp_FUN_0047b5e0
-;   shape_edittool.cpp_FUN_0047fa80
-;   shape_edittool.cpp_FUN_00480200
-;   shape_edittool.cpp_FUN_00480410
-;   shape_edittool.cpp_FUN_00485640
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     PUSH 0x1                            ; 004843e9
     MOV ECX,dword ptr [0x005fb140]      ; 004843eb | g_CEditorToolsPtr
     PUSH ECX                            ; 004843f1
-    CALL shape_edittool.cpp_FUN_00480200 ; 004843f2
-        ;   XREF to: 00480200 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480200()
+    CALL shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200 ; 004843f2
+        ;   XREF to: 00480200 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200(CEditorTools * this_ptr, int line_position)
     MOV EAX,[0x01c6b5a8]                ; 004843f7 | DAT_01c6b5a8
     ADD ESP,0x8                         ; 004843fc
     MOV dword ptr [ESP + 0x13c],EAX     ; 004843ff
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_00484504
     IMUL ESI,EAX                        ; 00484506
     PUSH 0x0                            ; 00484509
-    CALL shape_edittool.cpp_FUN_00486580 ; 0048450b
-        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00486580(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_00486580 ; 0048450b
+        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00486580(char * button_text)
     ADD ESP,0x4                         ; 00484510
     LEA EDX,[EAX + ESI*0x1]             ; 00484513
     MOV EAX,dword ptr [ESP + 0x168]     ; 00484516
@@ -205,8 +205,8 @@ section .text
     MOV EAX,dword ptr [EDX + 0x1a0]     ; 004845d3
     PUSH ECX                            ; 004845d9
     MOV dword ptr [EDX + 0x1c4],EAX     ; 004845da
-    CALL shape_edittool.cpp_FUN_00485640 ; 004845e0
-        ;   XREF to: 00485640 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00485640()
+    CALL shape_edittool.cpp_CEdScrollBar_render_FUN_00485640 ; 004845e0
+        ;   XREF to: 00485640 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar * this_ptr)
         ;   Label: LAB_004845e0
     ADD ESP,0x4                         ; 004845e5
     MOV EAX,dword ptr [ESP + 0x168]     ; 004845e8
@@ -221,8 +221,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x16c]     ; 00484605
     ADD EAX,0x1f4                       ; 0048460c
     PUSH EAX                            ; 00484611
-    CALL shape_edittool.cpp_FUN_00486120 ; 00484612
-        ;   XREF to: 00486120 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00486120()
+    CALL shape_edittool.cpp_CEdButton_paint_FUN_00486120 ; 00484612
+        ;   XREF to: 00486120 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_00486120(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 00484617
     MOV EAX,dword ptr [ESP + 0x168]     ; 0048461a
         ;   Label: LAB_0048461a
@@ -236,8 +236,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x16c]     ; 0048463a
     ADD EAX,0x2d8                       ; 00484641
     PUSH EAX                            ; 00484646
-    CALL shape_edittool.cpp_FUN_00486120 ; 00484647
-        ;   XREF to: 00486120 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00486120()
+    CALL shape_edittool.cpp_CEdButton_paint_FUN_00486120 ; 00484647
+        ;   XREF to: 00486120 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_00486120(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 0048464c
     MOV EAX,dword ptr [ESP + 0x168]     ; 0048464f
         ;   Label: LAB_0048464f
@@ -428,8 +428,8 @@ section .text
     PUSH EAX                            ; 004848ba
     MOV ECX,dword ptr [0x01c5b0e0]      ; 004848bb | DAT_01c5b0e0
     PUSH ECX                            ; 004848c1
-    CALL engine_font.cpp_FUN_004b0a20   ; 004848c2
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004848c2
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004848c7
     MOV EAX,dword ptr [ESP + 0x150]     ; 004848ca
     MOV EBP,ESI                         ; 004848d1
@@ -527,8 +527,8 @@ section .text
         ;   Label: LAB_004849ca
     MOV ESI,dword ptr [0x005fb140]      ; 004849cb | g_CEditorToolsPtr
     PUSH ESI                            ; 004849d1
-    CALL shape_edittool.cpp_FUN_00480410 ; 004849d2
-        ;   XREF to: 00480410 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480410()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 ; 004849d2
+        ;   XREF to: 00480410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004849d7
     ADD ESP,0x154                       ; 004849da
     POP EBP                             ; 004849e0

@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_0058d020
     ADD EAX,0x2b4                       ; 0058d024
     PUSH EAX                            ; 0058d029
-    CALL core_motion.cpp_FUN_005035c0   ; 0058d02a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058d02a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058d02f
     ADD ESP,0x4                         ; 0058d032
     CMP EAX,0x13                        ; 0058d035

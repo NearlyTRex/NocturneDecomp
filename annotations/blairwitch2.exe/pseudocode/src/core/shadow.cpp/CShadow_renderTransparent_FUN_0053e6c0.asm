@@ -21,7 +21,7 @@
 ;   core_box.cpp_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_FUN_005042e0
 ;   core_set.cpp_FUN_005306e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
@@ -42,8 +42,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x40]      ; 0053e6c6
     LEA EAX,[EBX + 0x2b4]               ; 0053e6ca
     PUSH EAX                            ; 0053e6d0
-    CALL core_motion.cpp_FUN_005035c0   ; 0053e6d1
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0053e6d1
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0053e6d6
     PUSH 0x5e6704                       ; 0053e6d9 | = "heroCanSee"
     MOV EDX,dword ptr [0x006141f0]      ; 0053e6de | DAT_006141f0

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 774,
-    "complexity_score": 938,
+    "complexity_score": 948,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 238,
+    "pseudocode_lines": 248,
     "suspect_count": 68,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1012
+    "total_lines": 1022
   },
   "cross_references": [
     {
@@ -66,14 +66,14 @@
       "name": "core_inv.cpp_CInventory_selectItem_FUN_004dbb50"
     },
     {
+      "addr": "004db9d0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0"
+    },
+    {
       "addr": "004defa0",
       "is_variadic": false,
       "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0"
-    },
-    {
-      "addr": "004db9d0",
-      "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db9d0"
     }
   ],
   "globals": [
@@ -709,7 +709,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 188,
+      "line": 190,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);",
@@ -717,7 +717,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 188,
+      "line": 190,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);",
@@ -725,7 +725,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 191,
+      "line": 193,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
@@ -733,7 +733,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 196,
+      "line": 200,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);",
@@ -741,7 +741,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 196,
+      "line": 200,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 201,
+      "line": 205,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_item);",
@@ -757,7 +757,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 201,
+      "line": 205,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_item);",
@@ -765,7 +765,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 206,
+      "line": 210,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_ammo);",
@@ -773,7 +773,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 206,
+      "line": 210,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_ammo);",
@@ -781,7 +781,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 211,
+      "line": 215,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_item_desc);",
@@ -789,7 +789,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 211,
+      "line": 215,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_item_desc);",
@@ -797,7 +797,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 216,
+      "line": 220,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);",
@@ -805,7 +805,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 216,
+      "line": 220,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);",
@@ -813,7 +813,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 219,
+      "line": 223,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
@@ -821,7 +821,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 224,
+      "line": 230,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 224,
+      "line": 230,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);",
@@ -837,7 +837,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 227,
+      "line": 233,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
@@ -845,7 +845,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 232,
+      "line": 240,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);",
@@ -853,7 +853,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 232,
+      "line": 240,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);",
@@ -861,7 +861,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 235,
+      "line": 243,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",

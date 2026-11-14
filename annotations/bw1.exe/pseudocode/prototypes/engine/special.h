@@ -85,9 +85,9 @@ int __cdecl kill(void);
 // Address: 00581f40
 int __cdecl isExternalRendererActive(void);
 
-// Original: engine_special.cpp_FUN_00581f50
+// Original: engine_special.cpp_lockFrame_FUN_00581f50
 // Address: 00581f50
-undefined4 FUN_00581f50(void);
+int __cdecl lockFrame(void);
 
 // Original: engine_special.cpp_unlockFrame_FUN_00581fa0
 // Address: 00581fa0
@@ -239,15 +239,15 @@ undefined4 FUN_00582bd0(void);
 
 // Original: engine_special.cpp_FUN_00582bf0
 // Address: 00582bf0
-undefined4 FUN_00582bf0(undefined4 param_1);
+int __cdecl FUN_00582bf0(int texture_size);
 
-// Original: engine_special.cpp_FUN_00582c10
+// Original: engine_special.cpp_setVideoModeX_FUN_00582c10
 // Address: 00582c10
-undefined4 FUN_00582c10(void);
+int __cdecl setVideoModeX(int width,int height,int bits_per_pixel,int flags);
 
-// Original: engine_special.cpp_FUN_00582c90
+// Original: engine_special.cpp_lockFrameX_FUN_00582c90
 // Address: 00582c90
-undefined4 FUN_00582c90(void);
+int __cdecl lockFrameX(void);
 
 // Original: engine_special.cpp_FUN_00582cf0
 // Address: 00582cf0
@@ -265,6 +265,6 @@ int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRen
 // Address: 00582ec0
 void switchRenderer(void);
 
-// Original: engine_special.cpp_FUN_00582f10
+// Original: engine_special.cpp_getCurrentRenderer_FUN_00582f10
 // Address: 00582f10
-undefined1 * FUN_00582f10(void);
+char * __cdecl getCurrentRenderer(int *card_index_out);

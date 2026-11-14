@@ -109,9 +109,9 @@ void __cdecl CClothList::setWindVelocity(CClothList *this_ptr,CVector3f *wind_ve
 // Address: 005b18e0
 void __cdecl CCloth::grabCloth(CCloth *this_ptr,char *bone_name,int vertex_index);
 
-// Original: core_cloth.cpp_FUN_005b1980
+// Original: core_cloth.cpp_CCloth_resetState_FUN_005b1980
 // Address: 005b1980
-void __cdecl FUN_005b1980(CCloth *this_ptr,int vertex_index);
+void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 
 // Original: core_cloth.cpp_FUN_005b19b0
 // Address: 005b19b0

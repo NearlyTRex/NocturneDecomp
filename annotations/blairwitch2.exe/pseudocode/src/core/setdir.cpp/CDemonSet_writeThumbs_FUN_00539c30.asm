@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_00539860 at 00539892
+;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860 at 00539892
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e604d

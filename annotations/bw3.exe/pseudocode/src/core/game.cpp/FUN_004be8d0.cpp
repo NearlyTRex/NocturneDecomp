@@ -68,7 +68,7 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
     } while (cVar1 != '\0');
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004ab7a0(g_CFieldNotesPtr);
-  core_event_cpp_FUN_00494880(0x01C6E360);
+  core_event_cpp_CEventList_resetGameFlags_FUN_00494880(0x01C6E360);
   load_flags = 1;
   iVar4 = _stricmp(&DAT_01d225c8,local_11c);
   if (iVar4 != 0) {

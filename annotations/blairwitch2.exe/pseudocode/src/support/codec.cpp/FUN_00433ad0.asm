@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00434910 at 00434966
+;   support_codec.cpp_CLZWCompress_finalize_FUN_00434910 at 00434966
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_00433a90

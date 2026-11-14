@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_CPryeTypeInfo
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004d2620
+;   core_hero.cpp_CHero_dtor_FUN_004d2620
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -28,8 +28,8 @@ section .text
         ;   XREF to: 00527326 (CONDITIONAL_JUMP)  ; LAB_00527326
     PUSH 0x1                            ; 0052730c
     PUSH EBX                            ; 0052730e
-    CALL core_hero.cpp_FUN_004d2620     ; 0052730f
-        ;   XREF to: 004d2620 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d2620()
+    CALL core_hero.cpp_CHero_dtor_FUN_004d2620 ; 0052730f
+        ;   XREF to: 004d2620 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_dtor_FUN_004d2620(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00527314
     MOV DL,byte ptr [ESP + 0xc]         ; 00527317
     MOV EBX,EAX                         ; 0052731b

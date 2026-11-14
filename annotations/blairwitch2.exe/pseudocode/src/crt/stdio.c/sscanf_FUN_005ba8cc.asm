@@ -11,7 +11,7 @@
 ;
 ; XREF[25]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048ea33
-;   core_event.cpp_FUN_00489670 at 004898c1
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 004898c1
 ;   core_event.cpp_parseIntOrCounter_FUN_00488cc0 at 00488cd0
 ;   core_event.cpp_parseVectorLocation_FUN_00488e30 at 00488e6d
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4c24

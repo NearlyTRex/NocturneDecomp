@@ -321,9 +321,9 @@ void FUN_00407700(undefined4 param_1);
 // Address: 00407710
 void FUN_00407710(undefined4 param_1);
 
-// Original: engine_3d.c_FUN_00407720
+// Original: engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 // Address: 00407720
-void FUN_00407720(int *param_1);
+void dispatchMRGLBlockChain(int *param_1);
 
 // Original: engine_3d.c_FUN_00407760
 // Address: 00407760

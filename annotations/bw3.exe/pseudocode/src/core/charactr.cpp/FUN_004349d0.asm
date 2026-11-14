@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431935
-;   core_charactr.cpp_FUN_004333e0 at 00433502
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0 at 00433502
 ;   core_charactr.cpp_FUN_004348b0 at 004349ad
 ;
 ; Called Functions:

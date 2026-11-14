@@ -17,7 +17,7 @@
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580
-;   shape_edittool.cpp_FUN_004855f0
+;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x10]      ; 00485500
     PUSH EBX                            ; 00485503
     ADD EDI,EAX                         ; 00485504
-    CALL shape_edittool.cpp_FUN_004855f0 ; 00485506
-        ;   XREF to: 004855f0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004855f0()
+    CALL shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0 ; 00485506
+        ;   XREF to: 004855f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 0048550b
     PUSH ESI                            ; 0048550e
     MOV EBP,dword ptr [0x01c25590]      ; 0048550f | DAT_01c25590

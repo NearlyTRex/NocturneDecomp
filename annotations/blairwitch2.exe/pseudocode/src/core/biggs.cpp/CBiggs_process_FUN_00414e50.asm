@@ -26,8 +26,8 @@
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
@@ -78,8 +78,8 @@ section .text
         ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
     ADD ESP,0x8                         ; 00414ec2
     PUSH ESI                            ; 00414ec5
-    CALL core_motion.cpp_FUN_005035c0   ; 00414ec6
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00414ec6
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00414ecb
     PUSH dword ptr [EBP + 0x18]         ; 00414ece
     PUSH EBX                            ; 00414ed1

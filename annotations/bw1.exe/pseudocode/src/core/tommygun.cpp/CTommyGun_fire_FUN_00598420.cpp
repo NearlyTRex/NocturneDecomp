@@ -200,7 +200,8 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr)
       else {
         iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004e3a40(this_ptr_01);
         if (iVar3 == 0) goto LAB_005986af;
-        core_glass_cpp_FUN_004e34b0(this_ptr_01,&g_CDemonSetPtr->collision_impact_position);
+        core_glass_cpp_CGlass_shatter_FUN_004e34b0
+                  (this_ptr_01,&g_CDemonSetPtr->collision_impact_position);
       }
     }
     else {

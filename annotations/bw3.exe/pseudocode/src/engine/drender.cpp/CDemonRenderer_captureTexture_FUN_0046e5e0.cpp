@@ -16,7 +16,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemo
   char *pcVar3;
   char *pcVar4;
   
-  engine_texture_cpp_FUN_0056aa10(texture);
+  engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10(texture);
   if (this_ptr->texture_capture_enabled != 0) {
     _DAT_01bdd85c = _DAT_01bdd85c + 1;
     if (100 < _DAT_01bdd85c) {

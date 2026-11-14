@@ -96,6 +96,6 @@ void core_box_cpp_FUN_0041dcf0(CBox *param_1,CVector3f *param_2,CVector3f *param
       param_5 = param_5 + 3;
     } while (iVar2 < param_4);
   }
-  core_box_cpp_FUN_0041de90(param_1,param_2,param_3,param_6);
+  core_box_cpp_CBox_updateTransform_FUN_0041de90(param_1,param_2,param_3,param_6);
   return;
 }

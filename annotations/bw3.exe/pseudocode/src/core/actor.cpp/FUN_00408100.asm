@@ -35,8 +35,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0 at 0040948f
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408da0 at 00408e2b
-;   core_actor.cpp_FUN_004091b0 at 0040948f
 ;
 ; *****************************************************************************
 

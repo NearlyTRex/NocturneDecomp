@@ -231,7 +231,7 @@ void __cdecl renderCoronaScanlineSegment(int row_index,int column_start,int colu
 
 // Original: core_dcamera.cpp_processCoronaScanline_FUN_00445310
 // Address: 00445310
-void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCorona *corona);
+void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 
 // Original: core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
 // Address: 00445650

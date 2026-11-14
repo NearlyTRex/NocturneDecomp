@@ -111,7 +111,9 @@ LAB_004bedcb:
         do {
           if (*(int *)(*(int *)(SNotesMap_ARRAY_01cc55d0[0].image_name + iVar3 + -4) + 0x140) == 6)
           {
-            engine_alphabit_cpp_FUN_0040d970(iVar3 + 0x1cc5658,0xff);
+            engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970
+                      ((CAlphaBitmap *)
+                       (SNotesMap_ARRAY_01cc55d0[0].sets[0].level_name + iVar3 + -0x18),0xff);
           }
           iVar2 = iVar2 + 1;
           iVar3 = iVar3 + 0x970;

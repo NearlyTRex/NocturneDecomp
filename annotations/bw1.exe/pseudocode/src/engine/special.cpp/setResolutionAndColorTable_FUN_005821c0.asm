@@ -29,8 +29,8 @@
 ;   undefined4 DAT_02c834c4
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00581f50
 ;   engine_special.cpp_loadExternalRenderer_FUN_00581310
+;   engine_special.cpp_lockFrame_FUN_00581f50
 ;   engine_special.cpp_unlockFrame_FUN_00581fa0
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70
 ;
@@ -91,8 +91,8 @@ section .text
     ADD ESP,0xc                         ; 00582253
     MOV dword ptr [0x01c50948],EDI      ; 00582256 | DAT_01c50948
     MOV dword ptr [0x02c834c4],EBX      ; 0058225c | DAT_02c834c4
-    CALL engine_special.cpp_FUN_00581f50 ; 00582262
-        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
+    CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 00582262
+        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00581f50()
     TEST EAX,EAX                        ; 00582267
     JZ 0x005822a4                       ; 00582269
         ;   XREF to: 005822a4 (CONDITIONAL_JUMP)  ; LAB_005822a4

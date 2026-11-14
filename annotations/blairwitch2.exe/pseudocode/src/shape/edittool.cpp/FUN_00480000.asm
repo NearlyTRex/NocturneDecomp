@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0047dc40 at 0047dcdb
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047dcdb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d24e7

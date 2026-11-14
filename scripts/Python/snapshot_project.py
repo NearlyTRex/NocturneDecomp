@@ -111,7 +111,12 @@ def choose_out_path(project_dir, name, date_tag, extra_tag):
     return candidate
 
 
-def main():
+def inside(path, folder):
+    """Whether path lies in folder (or is it)."""
+    return os.path.commonpath([os.path.abspath(path), os.path.abspath(folder)]) == os.path.abspath(folder)
+
+
+def main(argv = None):
     p = argparse.ArgumentParser(
         description="Create a Ghidra .gar snapshot of a project (no Ghidra needed).")
     p.add_argument("project_dir", help="dir holding <name>.gpr and <name>.rep (e.g. /abs/projects)")
@@ -120,7 +125,7 @@ def main():
     p.add_argument("--date", default=None, help="date tag for the default name (default: today, YYYY_MM_DD)")
     p.add_argument("--tag", default=None, help="extra label appended to the default name, e.g. pre-delete")
     p.add_argument("--force", action="store_true", help="overwrite --out if it already exists")
-    args = p.parse_args()
+    args = p.parse_args(argv)
 
     project_dir = os.path.abspath(args.project_dir)
     name = args.project_name
@@ -143,6 +148,10 @@ def main():
     date_tag = args.date or datetime.date.today().strftime("%Y_%m_%d")
     if args.out:
         out_path = os.path.abspath(args.out)
+        if inside(out_path, rep_path):
+            # the archive would be walked into itself while it is being written
+            print("ERROR: %s is inside %s" % (out_path, rep_path))
+            sys.exit(1)
         if os.path.exists(out_path) and not args.force:
             print("ERROR: %s already exists (use --force to overwrite)" % out_path)
             sys.exit(1)

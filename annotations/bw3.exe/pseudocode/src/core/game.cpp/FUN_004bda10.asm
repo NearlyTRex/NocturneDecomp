@@ -404,8 +404,8 @@ section .text
     PUSH EAX                            ; 004bddd4
     LEA EAX,[ESP + 0x410]               ; 004bddd5
     PUSH EAX                            ; 004bdddc
-    CALL support_codec.cpp_FUN_00441290 ; 004bdddd
-        ;   XREF to: 00441290 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00441290()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_00441290 ; 004bdddd
+        ;   XREF to: 00441290 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_00441290(CLZWCompress * this_ptr, COutStream * ostream)
     ADD ESP,0x8                         ; 004bdde2
     LEA EAX,[ESP + 0x44c]               ; 004bdde5
     PUSH EAX                            ; 004bddec

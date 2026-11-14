@@ -74,11 +74,11 @@
 ;   core_doc.cpp_FUN_00458320
 ;   core_doc.cpp_FUN_004583a0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_FUN_004cf440
 ;   core_hero.cpp_FUN_004cff50
 ;   core_hero.cpp_FUN_004cff90
-;   core_inv.cpp_FUN_004db9d0
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;   ... and 5 more
 ;
@@ -373,8 +373,8 @@ section .text
     PUSH ESI                            ; 0045359f
     MOV EAX,dword ptr [ESP + 0x14c]     ; 004535a0
     PUSH EAX                            ; 004535a7
-    CALL core_inv.cpp_FUN_004db9d0      ; 004535a8
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004535a8
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     MOV dword ptr [EBX + 0x25640],0x1   ; 004535ad
     MOV dword ptr [EBX + 0x2d04],0x3    ; 004535b7
     MOV dword ptr [EBX + 0x2d08],0x3f800000 ; 004535c1
@@ -787,8 +787,8 @@ section .text
         ;   XREF to: 00453bb1 (UNCONDITIONAL_JUMP)  ; LAB_00453bb1
     PUSH EBX                            ; 00453b25
         ;   Label: LAB_00453b25
-    CALL core_hero.cpp_FUN_004cf440     ; 00453b26
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf440()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 ; 00453b26
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
     ADD ESP,0x4                         ; 00453b2b
     JMP 0x00453374                      ; 00453b2e
         ;   XREF to: 00453374 (UNCONDITIONAL_JUMP)  ; LAB_00453374

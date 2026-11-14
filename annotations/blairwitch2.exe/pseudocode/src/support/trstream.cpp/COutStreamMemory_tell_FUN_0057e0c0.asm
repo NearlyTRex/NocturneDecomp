@@ -7,9 +7,9 @@
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   support_codec.cpp_CCodec_finalizeBuffer_FUN_004341e0 at 00434219
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00435300 at 0043537c
 ;   support_codec.cpp_FUN_00433f60 at 00433fa5
-;   support_codec.cpp_FUN_004341e0 at 00434219
 ;
 ; *****************************************************************************
 

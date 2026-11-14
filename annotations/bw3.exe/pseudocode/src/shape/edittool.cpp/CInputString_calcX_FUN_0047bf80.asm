@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0047c050 at 0047c178
+;   shape_edittool.cpp_CInputString_draw_FUN_0047c050 at 0047c178
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd69

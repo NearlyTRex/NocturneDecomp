@@ -51,7 +51,7 @@ int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a0680(CEnemy *this_ptr,
 int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
 int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004a0810(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
 CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0(CEnemy *this_ptr,CVector3f *out_point);
-bool core_enemy_cpp_FUN_004a0980(int param_1,int param_2);
+int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a0980(CEnemy *this_ptr,CDemonActor *target);
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_004a0ee0(CEnemy *this_ptr,CDemonActor *victim);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(CEnemy *this_ptr,SDamageInfo *damage_info);
@@ -87,9 +87,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_004a6d80(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3);
-void core_event_cpp_FUN_004a9a00(int param_1);
-void core_event_cpp_FUN_004a9a60(CEventList *param_1,char *param_2,int param_3);
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList *this_ptr,char *name,int add_flag);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004a9bf0(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004a9d70(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(CEventList *this_ptr,char *str);

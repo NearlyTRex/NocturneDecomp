@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0
   
   engine_2d_c_reinitializeGraphicsSystem_FUN_00402ad0();
   if ((DAT_006141bc != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
-    wincore_wddvmem_cpp_FUN_00588a50(0x280,0x1e0,0x20);
+    wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(0x280,0x1e0,0x20);
   }
   if (*(int *)(0x01D182F0 + 0x1008) == 0) {
     _DAT_01c25590 = _DAT_01511cc0;

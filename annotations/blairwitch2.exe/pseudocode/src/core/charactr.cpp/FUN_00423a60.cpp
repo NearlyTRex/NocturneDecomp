@@ -15,17 +15,17 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
   UOrientationVector *pUVar2;
   float fVar3;
   float fVar4;
-  char cVar5;
-  float fVar6;
-  bool bVar7;
+  float fVar5;
+  bool bVar6;
+  char *pcVar7;
   CVector3f *pCVar8;
-  char *str1;
+  SMotion *str1;
   uint uVar9;
   CVector3f *pCVar10;
   int iVar11;
   float *pfVar12;
   uint *puVar13;
-  char *pcVar14;
+  SMotion *pSVar14;
   int iVar15;
   byte bVar16;
   float afStackY_10d4 [1003];
@@ -107,15 +107,15 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
     return;
   }
   if ((this_ptr->model).model_name[0] != '\0') {
-    str1 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->model);
+    str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&(this_ptr->model).base);
     uVar9 = 0xffffffff;
-    pcVar14 = str1;
+    pSVar14 = str1;
     do {
       if (uVar9 == 0) break;
       uVar9 = uVar9 - 1;
-      cVar5 = *pcVar14;
-      pcVar14 = pcVar14 + (uint)bVar16 * -2 + 1;
-    } while (cVar5 != '\0');
+      pcVar7 = pSVar14->motion_name;
+      pSVar14 = (SMotion *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+    } while (*pcVar7 != '\0');
     iVar11 = ~uVar9 - 0xc;
     local_80[0] = "noCollision"[0];
     local_80[1] = "noCollision"[1];
@@ -128,7 +128,7 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
     local_20 = iVar11;
     if (-1 < iVar11) {
       do {
-        iVar11 = _strnicmp(str1,local_80,0xb);
+        iVar11 = _strnicmp(str1->motion_name,local_80,0xb);
         if (iVar11 == 0) {
           (this_ptr->velocity).z = 0.0;
           (this_ptr->velocity).y = (this_ptr->velocity).z;
@@ -136,7 +136,7 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
           return;
         }
         iVar15 = iVar15 + 1;
-        str1 = str1 + 1;
+        str1 = (SMotion *)(str1->motion_name + 1);
       } while (iVar15 <= local_20);
     }
   }
@@ -208,13 +208,13 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
     if (local_3c < fVar3) {
       local_3c = this_ptr->size_scale * (float)_DAT_005ccc7e + fVar3;
     }
-    local_f8 = (float)core_setcolid_cpp_FUN_00537030
-                                (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                                 (this_ptr->base).location.position.z,local_68,local_60,
-                                 this_ptr->collision_cylinder_radius * this_ptr->size_scale,
-                                 this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
-                                 (this_ptr->base).location.position.y,
-                                 (this_ptr->base).location.position.y + local_3c);
+    local_f8 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030
+                         (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                          (this_ptr->base).location.position.z,local_68,local_60,
+                          this_ptr->collision_cylinder_radius * this_ptr->size_scale,
+                          this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
+                          (this_ptr->base).location.position.y,
+                          (this_ptr->base).location.position.y + local_3c);
     pCVar1 = local_28;
     local_18 = local_f8;
     if (DAT_007bdc98 == (CDemonActor *)0x0) {
@@ -259,7 +259,7 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
            puVar13[(uint)bVar16 * -2 + 1];
       local_18 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                            (&this_ptr->base,this_ptr->collision_cylinder_height,pCVar10);
-      bVar7 = false;
+      bVar6 = false;
       pCVar10 = local_5c + local_1c * 3;
       this_ptr->closest_distance_threshold = local_18;
       if (pCVar10 != (CVector3f *)&DAT_01510da8) {
@@ -296,13 +296,13 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
       local_64 = fVar4;
       local_68 = fVar3;
       local_60 = local_60 * fStack_4c;
-      fVar6 = fStack_cc * local_60 + local_d4 * fVar3 + fStack_d0 * fVar4;
-      if (0.0 <= fVar6) break;
-      fVar6 = fVar6 * (float)_DAT_005ccc86;
-      fStack_8c = local_d4 * fVar6;
-      fStack_88 = fStack_d0 * fVar6;
-      fStack_84 = fStack_cc * fVar6;
-      afStack_ac[2] = local_d4 * fVar6;
+      fVar5 = fStack_cc * local_60 + local_d4 * fVar3 + fStack_d0 * fVar4;
+      if (0.0 <= fVar5) break;
+      fVar5 = fVar5 * (float)_DAT_005ccc86;
+      fStack_8c = local_d4 * fVar5;
+      fStack_88 = fStack_d0 * fVar5;
+      fStack_84 = fStack_cc * fVar5;
+      afStack_ac[2] = local_d4 * fVar5;
       afStack_ac[(uint)bVar16 * -2 + 3] = afStack_ac[(uint)bVar16 * -2 + 9];
       afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
            afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10];
@@ -318,7 +318,7 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
       afStack_7c[(uint)bVar16 * -2 + 3] = *(float *)((int)&stack0xffffff18 + (uint)bVar16 * -8);
       afStack_7c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
            *(float *)((int)&stack0xffffff1c + (uint)bVar16 * -8 + (uint)bVar16 * -8);
-      bVar7 = true;
+      bVar6 = true;
       (pCVar1->position).x = (pCVar1->position).x - afStack_7c[2];
       (pCVar1->position).y = (pCVar1->position).y - afStack_7c[3];
       (pCVar1->position).z = (pCVar1->position).z - local_6c;
@@ -329,7 +329,7 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
     local_38 = local_38 + 3;
     local_1c = local_1c + 1;
   } while (local_1c < 3);
-  if (bVar7) {
+  if (bVar6) {
     local_18 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                          (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
     this_ptr->closest_distance_threshold = local_18;

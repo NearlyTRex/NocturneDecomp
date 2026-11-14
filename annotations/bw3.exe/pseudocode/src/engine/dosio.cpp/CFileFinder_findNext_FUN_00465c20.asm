@@ -8,9 +8,9 @@
 ;
 ; XREF[6]:
 ;   core_podmain.cpp_FUN_005152e0 at 00515351
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047de31
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482bfe
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482dfd
-;   shape_edittool.cpp_FUN_0047dd20 at 0047de31
 ;   shape_edittool.cpp_FUN_00482ea0 at 00482f34
 ;   shape_edittool.cpp_FUN_00483020 at 0048310f
 ;

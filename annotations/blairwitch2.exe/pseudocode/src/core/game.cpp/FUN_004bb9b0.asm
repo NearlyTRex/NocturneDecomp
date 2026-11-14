@@ -21,8 +21,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b8b45
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6ba3
-;   core_game.cpp_FUN_004b82e0 at 004b8b45
 ;
 ; Referenced Globals:
 ;   undefined4 s_GUnable_to_save_during_c_005d8406+1
@@ -387,8 +387,8 @@ section .text
     PUSH EAX                            ; 004bbd4b
     LEA EAX,[ESP + 0x410]               ; 004bbd4c
     PUSH EAX                            ; 004bbd53
-    CALL support_codec.cpp_FUN_00434910 ; 004bbd54
-        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434910()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_00434910 ; 004bbd54
+        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_00434910(CLZWCompress * this_ptr, COutStream * ostream)
     ADD ESP,0x8                         ; 004bbd59
     LEA EAX,[ESP + 0x44c]               ; 004bbd5c
     PUSH EAX                            ; 004bbd63

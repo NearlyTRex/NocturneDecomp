@@ -70,8 +70,8 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
-;   core_hero.cpp_FUN_004d3460
 ;   core_hero.cpp_FUN_004d4160
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -879,8 +879,8 @@ section .text
         ;   XREF to: 0051bff1 (UNCONDITIONAL_JUMP)  ; LAB_0051bff1
     PUSH EBX                            ; 0051bf65
         ;   Label: LAB_0051bf65
-    CALL core_hero.cpp_FUN_004d3460     ; 0051bf66
-        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3460()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460 ; 0051bf66
+        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460(CHero * this_ptr)
     ADD ESP,0x4                         ; 0051bf6b
     JMP 0x0051b667                      ; 0051bf6e
         ;   XREF to: 0051b667 (UNCONDITIONAL_JUMP)  ; LAB_0051b667

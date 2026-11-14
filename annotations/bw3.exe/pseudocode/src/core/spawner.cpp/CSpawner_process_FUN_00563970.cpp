@@ -103,11 +103,11 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
     uStack_4c = 0;
     uStack_48 = 0x3fc00000;
     core_actor_cpp_FUN_00408b00(this_ptr,&uStack_50);
-    fStack_2c = (float)core_setcolid_cpp_FUN_0053de10
-                                 (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                                  (this_ptr->base).location.position.z,0,0,0x3f800000,
-                                  (this_ptr->base).location.position.y,
-                                  (this_ptr->base).location.position.y + _DAT_005d54b7);
+    fStack_2c = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
+                          (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                           (this_ptr->base).location.position.z,0.0,0.0,1.0,
+                           (this_ptr->base).location.position.y,
+                           (this_ptr->base).location.position.y + _DAT_005d54b7);
     fStack_14 = fStack_2c;
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
     if (1.0 <= fStack_2c) {

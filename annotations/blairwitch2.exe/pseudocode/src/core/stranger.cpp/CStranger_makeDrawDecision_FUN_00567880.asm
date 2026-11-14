@@ -58,11 +58,11 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_main.c_FUN_004e4500
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005038a0
 ;   core_motion.cpp_FUN_00503e60
-;   core_motion.cpp_FUN_00503f50
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -192,8 +192,8 @@ section .text
     PUSH ESI                            ; 005679f8
     FSTP float ptr [ESP + 0x18]         ; 005679f9
     MOV dword ptr [ESP + 0xf0],EAX      ; 005679fd
-    CALL core_motion.cpp_FUN_005035c0   ; 00567a04
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00567a04
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00567a09
     ADD ESP,0x4                         ; 00567a0c
     CMP EAX,0x17                        ; 00567a0f
@@ -254,8 +254,8 @@ section .text
     PUSH EAX                            ; 00567ac0
     PUSH ESI                            ; 00567ac1
     MOV dword ptr [ESP + 0xf4],EAX      ; 00567ac2
-    CALL core_motion.cpp_FUN_00503f50   ; 00567ac9
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 00567ac9
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xfc],EAX      ; 00567ace
     FLD float ptr [ESP + 0xfc]          ; 00567ad5
     ADD ESP,0xc                         ; 00567adc
@@ -298,8 +298,8 @@ section .text
     FSTP float ptr [ESP]                ; 00567b51
     PUSH EDI                            ; 00567b54
     PUSH ESI                            ; 00567b55
-    CALL core_motion.cpp_FUN_00503f50   ; 00567b56
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 00567b56
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xfc],EAX      ; 00567b5b
     FLD float ptr [ESP + 0xfc]          ; 00567b62
     ADD ESP,0xc                         ; 00567b69

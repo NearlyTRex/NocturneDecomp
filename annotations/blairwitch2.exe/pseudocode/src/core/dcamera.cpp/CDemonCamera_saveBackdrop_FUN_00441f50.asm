@@ -64,11 +64,11 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;   support_codec.cpp_CCodec_dtor_FUN_00433e90
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00434770
+;   support_codec.cpp_CLZWCompress_finalize_FUN_00434910
 ;   support_codec.cpp_CLZWCompress_init_FUN_004347c0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00434270
-;   support_codec.cpp_FUN_00433ff0
-;   support_codec.cpp_FUN_00434910
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -402,8 +402,8 @@ section .text
     MOV EBP,0x12c00                     ; 00442432
     PUSH EAX                            ; 00442437
     MOV dword ptr [ESP + 0x1cc],EBP     ; 00442438
-    CALL support_codec.cpp_FUN_00433ff0 ; 0044243f
-        ;   XREF to: 00433ff0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00433ff0()
+    CALL support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0 ; 0044243f
+        ;   XREF to: 00433ff0 (UNCONDITIONAL_CALL)  ; bool support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0(CCodec * this_ptr, char * input, int * input_length, COutStream * ostream)
     ADD ESP,0x10                        ; 00442444
     TEST EAX,EAX                        ; 00442447
     JZ 0x0044256b                       ; 00442449
@@ -450,8 +450,8 @@ section .text
     PUSH EAX                            ; 004424e7
     LEA EAX,[ESP + 0x168]               ; 004424e8
     PUSH EAX                            ; 004424ef
-    CALL support_codec.cpp_FUN_00434910 ; 004424f0
-        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434910()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_00434910 ; 004424f0
+        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_00434910(CLZWCompress * this_ptr, COutStream * ostream)
     ADD ESP,0x8                         ; 004424f5
     PUSH 0x0                            ; 004424f8
     LEA EAX,[ESP + 0x16c]               ; 004424fa

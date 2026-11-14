@@ -17,7 +17,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00588de0(void)
   _DAT_02661af8 = 1;
   if (_DAT_0264bba0 != 0) {
     if (DAT_006141c0 < 0x10) {
-      wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,0x10);
+      wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,0x10);
       engine_special_cpp_clearScreen_FUN_0055b1f0();
       engine_2d_c_drawText_FUN_00401fe0("You have hit a kludge in the program.",0,0);
       engine_2d_c_drawText_FUN_00401fe0("You are setting acceleration mode without setting",0,0x16);
@@ -72,7 +72,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00588de0(void)
       if (HVar2 == 0) {
         (**(code **)(*_DAT_02661ae0 + 0x50))(_DAT_02661ae0,_DAT_02664628,0x11);
       }
-      wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
+      wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
     }
   }
   return;

@@ -29,7 +29,7 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
   pCVar1 = _DAT_01549aac;
   local_18 = _DAT_01549aac;
   if (title != (char *)0x0) {
-    engine_font_cpp_FUN_004b0a20(_DAT_01549aac,title,0xaf,y_position,0x9a,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004b0a20(_DAT_01549aac,title,0xaf,y_position,0x9a,0);
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar1,0x58);
     y_position = y_position + iVar2 * 2;
     local_18 = _DAT_01549ab0;
@@ -75,13 +75,14 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
                     ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                      (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
           iVar2 = iVar2 + 1;
-          engine_font_cpp_FUN_004b0a20
+          engine_font_cpp_CBitFont_drawText_FUN_004b0a20
                     (local_18,*local_1c,((uVar3 & 3) - 2) + local_14,((uVar4 & 3) - 2) + y_position,
-                     0xab,0xffffffff);
+                     0xab,-1);
         } while (iVar2 < 5);
       }
       engine_3d_c_setRenderAlpha_FUN_00406bf0(48000);
-      engine_font_cpp_FUN_004b0a20(local_18,*local_24,local_14,y_position,0x9a,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004b0a20(local_18,*local_24,local_14,y_position,0x9a,-1)
+      ;
       y_position = y_position + local_28;
       if (title == (char *)0x0) {
         y_position = y_position + local_28;
@@ -100,7 +101,8 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
     iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549ab4,local_f0);
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549ab4,local_f0);
   }
-  engine_font_cpp_FUN_004b0a20(_DAT_01549ab4,local_f0,0x26b - iVar5,0x1df - iVar2,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+            (_DAT_01549ab4,local_f0,0x26b - iVar5,0x1df - iVar2,0xf8,0);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
     pcVar6 = pcVar7;

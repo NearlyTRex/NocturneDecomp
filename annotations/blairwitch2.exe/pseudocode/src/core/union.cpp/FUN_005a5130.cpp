@@ -14,7 +14,7 @@ void core_union_cpp_FUN_005a5130(CCharacter *param_1,float param_2)
   CDeformableModelInstance *this_ptr;
   uint uVar1;
   CDemonActor *pCVar2;
-  int iVar3;
+  SMotion *pSVar3;
   
   (param_1->model).accumulated_root_motion.z = 0.0;
   (param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;
@@ -26,8 +26,8 @@ void core_union_cpp_FUN_005a5130(CCharacter *param_1,float param_2)
               (&this_ptr->base,(int)param_1[1].model.rest_bone_scales[0x57],1);
     return;
   }
-  iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
-  uVar1 = *(uint *)(iVar3 + 0x24);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr->base);
+  uVar1 = pSVar3->state_index;
   if (uVar1 < 2) {
     if (uVar1 != 0) {
 LAB_005a5261:

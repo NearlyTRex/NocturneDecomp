@@ -28,6 +28,6 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemo
     }
   }
   core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0(g_CDemonSetPtr);
-  core_set_cpp_FUN_0053b460(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(g_CDemonSetPtr);
   return;
 }

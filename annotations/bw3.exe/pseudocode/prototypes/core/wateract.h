@@ -25,9 +25,9 @@ CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 // Address: 00577ee0
 void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578490
+// Original: core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00578490
 // Address: 00578490
-void FUN_00578490(int param_1);
+void __cdecl CWaterActor::updateWorldPositions(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_FUN_00578570
 // Address: 00578570

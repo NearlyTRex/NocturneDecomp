@@ -27,7 +27,8 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_t
       if (ABS(this_ptr->quick_turn_angle) <= (float)_DAT_005d9be4) {
         (this_ptr->base).base.base.orient.vec.y =
              _DAT_005fecb4 + (this_ptr->base).base.base.orient.vec.y;
-        core_charactr_cpp_FUN_00433d50(this_ptr,&(this_ptr->base).base.base.orient);
+        core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50
+                  ((CCharacter *)this_ptr,&(this_ptr->base).base.base.orient);
       }
       else {
         this_ptr->quick_turn_active = 0;

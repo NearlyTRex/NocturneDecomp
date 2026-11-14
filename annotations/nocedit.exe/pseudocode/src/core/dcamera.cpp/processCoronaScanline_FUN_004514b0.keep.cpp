@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004514b0, 004517e2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona)
+// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCoronaLightEntry *corona)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona)
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCoronaLightEntry *corona)
 
 {
   uint uVar2;
@@ -33,23 +33,23 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_s
   piVar14 = g_CoronaDepthBuffer[row] + x_start;
   puVar13 = g_ZBufferScanlineArray[row << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
             (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
-  pcVar8 = corona->intensity[row] + x_start;
+  pcVar8 = corona->lightmap[row] + x_start;
   uVar1 = g_CameraDownscaleIterations.bytes[0];
   do {
     g_CameraDownscaleIterations.bytes[0] = uVar1;
     if (x_end <= x_start) {
-      iVar7 = corona->row_min_x[row];
-      iVar13 = corona->row_max_x[row];
-      for (pcVar8 = corona->intensity[row] + iVar7; (iVar7 < iVar13 && (*pcVar8 == '\0'));
+      iVar7 = corona->left_extents[row];
+      iVar13 = corona->right_extents[row];
+      for (pcVar8 = corona->lightmap[row] + iVar7; (iVar7 < iVar13 && (*pcVar8 == '\0'));
           pcVar8 = pcVar8 + 1) {
         iVar7 = iVar7 + 1;
       }
-      pcVar7 = corona->intensity[row] + iVar13;
+      pcVar7 = corona->lightmap[row] + iVar13;
       while ((iVar7 < iVar13 && (pcVar7 = pcVar7 + -1, *pcVar7 == '\0'))) {
         iVar13 = iVar13 + -1;
       }
-      corona->row_min_x[row] = iVar7;
-      corona->row_max_x[row] = iVar13;
+      corona->left_extents[row] = iVar7;
+      corona->right_extents[row] = iVar13;
       return;
     }
     local_14 = '\0';

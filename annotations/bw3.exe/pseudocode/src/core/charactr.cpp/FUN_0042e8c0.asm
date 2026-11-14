@@ -42,8 +42,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0
-;   core_charactr.cpp_FUN_004300e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -363,8 +363,8 @@ section .text
     PUSH 0xbf800000                     ; 0042ecdb
     PUSH 0x0                            ; 0042ece0
     PUSH EBX                            ; 0042ece2
-    CALL core_charactr.cpp_FUN_004300e0 ; 0042ece3
-        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004300e0()
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_004300e0 ; 0042ece3
+        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_004300e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 0042ece8
     JMP 0x0042eaaf                      ; 0042eceb
         ;   XREF to: 0042eaaf (UNCONDITIONAL_JUMP)  ; LAB_0042eaaf

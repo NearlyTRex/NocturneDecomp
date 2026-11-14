@@ -9,8 +9,8 @@
 ; char *           Stack[0xc]:4   sound_name
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_00489670 at 0048c24b
-;   core_game.cpp_FUN_004b90d0 at 004bab21
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c24b
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004bab21
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005298ca
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_0055adc0 at 0055ae12
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 at 005833a1

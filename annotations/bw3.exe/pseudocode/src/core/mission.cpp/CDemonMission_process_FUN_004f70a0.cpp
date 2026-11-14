@@ -41,7 +41,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&local_24,&DAT_01d88308,0x280,0x1e0);
       iVar2 = 0;
       do {
-        engine_special_cpp_FUN_00565820();
+        engine_special_cpp_lockFrame_FUN_00565820();
         engine_alphabit_cpp_FUN_0040dbe0(&local_24);
         engine_special_cpp_unlockFrame_FUN_00565870(0);
         iVar2 = iVar2 + 1;

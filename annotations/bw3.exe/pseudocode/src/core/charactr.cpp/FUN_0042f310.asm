@@ -46,7 +46,7 @@
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -186,48 +186,48 @@ section .text
     ADD EAX,0x5f1124                    ; 0042f494 | DAT_005f1124
         ;   Label: LAB_0042f494
     PUSH EAX                            ; 0042f499
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f49a
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f49a
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f49f
     JMP 0x0042f3f1                      ; 0042f4a2
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1
     ADD EAX,0x5f1004                    ; 0042f4a7 | DAT_005f1004
         ;   Label: LAB_0042f4a7
     PUSH EAX                            ; 0042f4ac
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f4ad
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f4ad
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f4b2
     JMP 0x0042f3f1                      ; 0042f4b5
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1
     ADD EAX,0x5f1094                    ; 0042f4ba | DAT_005f1094
         ;   Label: LAB_0042f4ba
     PUSH EAX                            ; 0042f4bf
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f4c0
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f4c0
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f4c5
     JMP 0x0042f3f1                      ; 0042f4c8
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1
     ADD EAX,0x5f11b4                    ; 0042f4cd | DAT_005f11b4
         ;   Label: LAB_0042f4cd
     PUSH EAX                            ; 0042f4d2
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f4d3
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f4d3
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f4d8
     JMP 0x0042f3f1                      ; 0042f4db
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1
     ADD EAX,0x5f1244                    ; 0042f4e0 | DAT_005f1244
         ;   Label: LAB_0042f4e0
     PUSH EAX                            ; 0042f4e5
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f4e6
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f4e6
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f4eb
     JMP 0x0042f3f1                      ; 0042f4ee
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1
     ADD EAX,0x5f0f74                    ; 0042f4f3 | DAT_005f0f74
         ;   Label: LAB_0042f4f3
     PUSH EAX                            ; 0042f4f8
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0042f4f9
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0042f4f9
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0042f4fe
     JMP 0x0042f3f1                      ; 0042f501
         ;   XREF to: 0042f3f1 (UNCONDITIONAL_JUMP)  ; LAB_0042f3f1

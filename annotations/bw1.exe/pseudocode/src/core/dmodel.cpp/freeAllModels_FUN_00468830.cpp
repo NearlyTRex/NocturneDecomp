@@ -11,13 +11,13 @@
 void __cdecl core_dmodel_cpp_freeAllModels_FUN_00468830(void)
 
 {
-  CKeyFramedModel *pCVar1;
+  CKeyFramedModel *this_ptr;
   
-  pCVar1 = g_CKeyFramedModelPool;
+  this_ptr = g_CKeyFramedModelPool;
   do {
-    core_dmodel_cpp_FUN_00467160(pCVar1);
-    pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != (CKeyFramedModel *)&DAT_01b687e0);
+    core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != (CKeyFramedModel *)&DAT_01b687e0);
   _DAT_01b2efdc = 0;
   return;
 }

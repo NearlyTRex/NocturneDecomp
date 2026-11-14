@@ -25,7 +25,7 @@
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403890
 ;   engine_model.c_FUN_00500f30
 ;   engine_special.cpp_drawPolyList_FUN_0055f950
-;   engine_texture.cpp_FUN_00574e00
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     MOV dword ptr [0x007ba070],EDX      ; 00407aeb | DAT_007ba070
     PUSH EDI                            ; 00407af1
         ;   Label: LAB_00407af1
-    CALL engine_texture.cpp_FUN_00574e00 ; 00407af2
-        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 ; 00407af2
+        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00407af7
     JMP 0x00407a3f                      ; 00407afa
         ;   XREF to: 00407a3f (UNCONDITIONAL_JUMP)  ; LAB_00407a3f

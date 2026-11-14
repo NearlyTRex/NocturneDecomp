@@ -38,7 +38,6 @@
 #include "types/structs/SColorQuantCentroid.h"
 #include "types/structs/SColorQuantMapper.h"
 #include "types/structs/SConditionVariable.h"
-#include "types/structs/SCorona.h"
 #include "types/structs/SCoronaLightCache.h"
 #include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SCounterBlock.h"

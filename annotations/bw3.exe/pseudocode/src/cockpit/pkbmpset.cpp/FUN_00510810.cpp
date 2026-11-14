@@ -46,7 +46,7 @@ void cockpit_pkbmpset_cpp_FUN_00510810(void)
     _DAT_01d71de0 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004e4330(acStack_140);
   }
-  cockpit_pkbmpset_cpp_FUN_005106a0(in_stack_00000004,iVar2);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005106a0(in_stack_00000004,iVar2);
   in_stack_00000004->height = in_stack_00000010;
   in_stack_00000004->width = in_stack_00000018;
   bitmap_data = (uchar *)malloc(unaff_ESI);

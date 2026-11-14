@@ -19,6 +19,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00441f50(CDemonCamer
   uint uVar4;
   int iVar5;
   undefined3 extraout_var_00;
+  undefined3 extraout_var_01;
   int iVar6;
   char cVar7;
   byte *puVar8;
@@ -179,8 +180,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00441f50(CDemonCamer
           } while (local_34 < this_ptr->display_height);
         }
         local_50 = 0x12c00;
-        iVar3 = support_codec_cpp_FUN_00433ff0(&local_a8,&DAT_01326d20,&local_50,&local_5c);
-        if (iVar3 == 0) {
+        bVar1 = support_codec_cpp_CCodec_processFromBuffer_FUN_00433ff0
+                          (&local_a8.base,&DAT_01326d20,&local_50,&local_5c.base);
+        if (CONCAT31(extraout_var_00,bVar1) == 0) {
           _DAT_01d046a0 = "..\\core\\dcamera.cpp";
           _DAT_01d046a4 = 0x1392;
           core_main_c_FUN_004e4500("Error compressing %s",local_10c);
@@ -191,7 +193,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00441f50(CDemonCamer
           core_main_c_FUN_004e4500("Not all bytes consumed compressing %s",local_10c);
         }
         bVar1 = support_trstream_cpp_COutStreamFile_isOpen_FUN_0057dd40(&local_5c);
-        if (CONCAT31(extraout_var_00,bVar1) == 0) {
+        if (CONCAT31(extraout_var_01,bVar1) == 0) {
           _DAT_01d046a0 = "..\\core\\dcamera.cpp";
           _DAT_01d046a4 = 0x1395;
           core_main_c_FUN_004e4500("Error writing compressed file %s",local_10c);
@@ -201,7 +203,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00441f50(CDemonCamer
         local_18 = local_18 + 1;
       } while (local_18 < _DAT_01465928);
     }
-    support_codec_cpp_FUN_00434910(&local_a8,&local_5c);
+    support_codec_cpp_CLZWCompress_finalize_FUN_00434910(&local_a8,&local_5c.base);
     support_codec_cpp_CLZWDictionary_dtor_FUN_00434270(&local_a8.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_00433e90(&local_a8.base,1);
   }

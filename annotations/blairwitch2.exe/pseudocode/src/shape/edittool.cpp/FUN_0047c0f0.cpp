@@ -240,7 +240,7 @@ LAB_0047c1ff:
       do {
         bVar12 = iVar5 == local_14;
         iVar5 = iVar5 + 1;
-        shape_edittool_cpp_FUN_00484f20(pCVar10,bVar12);
+        shape_edittool_cpp_CEdButton_paint_FUN_00484f20(pCVar10,(uint)bVar12);
         pCVar10 = pCVar10 + 1;
       } while (iVar5 < iVar2);
     }
@@ -251,6 +251,6 @@ LAB_0047c1ff:
   FUN_005b7fce(ptr);
   DAT_006141cc = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  shape_edittool_cpp_FUN_0047e760(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
   return iVar8;
 }

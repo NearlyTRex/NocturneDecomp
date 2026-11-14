@@ -35,6 +35,7 @@ annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_free_FUN_0
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_getTotalMemoryUsage_FUN_005375a0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_loadByFileExtension_FUN_005380c0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_loadPBMFile_FUN_00538530.cpp
+annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_renderIfIntersectsRect_FUN_005379e0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_reset_FUN_00537520.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_setFilename_FUN_005375c0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_005391e0.cpp
@@ -304,6 +305,7 @@ annotations/bw1.exe/pseudocode/src/core/chain.cpp/CChain_getCollisionType_FUN_00
 annotations/bw1.exe/pseudocode/src/core/chain.cpp/SChainVertex_ctor_FUN_00436f10.cpp
 annotations/bw1.exe/pseudocode/src/core/chain.cpp/factoryFuncChain_FUN_00435630.cpp
 annotations/bw1.exe/pseudocode/src/core/chain.cpp/staticInit_FUN_00435600.cpp
+annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_advanceGesture_FUN_00432e00.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_applyDamage_FUN_0042d6a0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_applyGestureLookAt_FUN_00433e80.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_blendLayerActionMotion_FUN_004342c0.cpp
@@ -339,6 +341,7 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/clampFloat_FUN_0042cc30.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_00435500.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CClothList_ctor_FUN_00441c60.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CClothList_dtor_FUN_00441ca0.cpp
+annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CCloth_dtor_FUN_0043e620.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CCloth_free_FUN_0043e6a0.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CCloth_process_FUN_00440610.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CCloth_resetState_FUN_004421a0.cpp
@@ -368,6 +371,7 @@ annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/factoryFuncConveyor_FUN_004
 annotations/bw1.exe/pseudocode/src/core/conveyor.cpp/staticInit_FUN_004476f0.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_ctor_FUN_00447d10.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_dtor_FUN_00447d30.cpp
+annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_free_FUN_00447ee0.cpp
 annotations/bw1.exe/pseudocode/src/core/cow.cpp/CZombieCow_archive_FUN_00448af0.cpp
 annotations/bw1.exe/pseudocode/src/core/cow.cpp/CZombieCow_getActorType_FUN_00448390.cpp
 annotations/bw1.exe/pseudocode/src/core/cow.cpp/CZombieCow_processDamage_FUN_00448df0.cpp
@@ -472,6 +476,7 @@ annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_prepa
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_arrdtor256_FUN_00468990.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_ctor_FUN_004667e0.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_dtor_FUN_00466880.cpp
+annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_free_FUN_00467160.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_getFrameVertices_FUN_004672b0.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_prepareForRender_FUN_00467270.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_rotateAndLightVertices_FUN_004672f0.cpp
@@ -571,6 +576,7 @@ annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_findTimer_FUN_004a9
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_getCounterValue_FUN_004a9e80.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_getSfxHandle_FUN_004aa290.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_render_FUN_004a6d80.cpp
+annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_resetGameFlags_FUN_004a9a00.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_reset_FUN_004a19f0.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_restartSfxEntries_FUN_004aa550.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CRuleList_clear_FUN_004aacc0.cpp
@@ -747,7 +753,6 @@ annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_archive_FUN_004c
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_canFireWeapon_FUN_004c9dd0.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_collectAmmo_FUN_004c9990.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_drawWeapon_FUN_004cb730.cpp
-annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_dtor_FUN_004cb760.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_getActorType_FUN_004c6260.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_getFlashlightMaxAngle_FUN_004c88f0.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_isWeaponDrawn_FUN_004cb710.cpp
@@ -759,6 +764,7 @@ annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_clearOverlay_FUN_004cc1f0
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_dtor_FUN_004cbf00.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_loadAssets_FUN_004d5e40.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_processJoystickControls_FUN_004d0d30.cpp
+annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_restoreDefaultControls_FUN_004d0400.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_saveClockTime_FUN_004cbf10.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_setFudgeTarget_FUN_004cc9a0.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/staticInit_FUN_004cb7d0.cpp
@@ -988,6 +994,7 @@ annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_getColli
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_getPanelColor_FUN_005056f0.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210.cpp
+annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_dtor_FUN_00506710.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_getActorType_FUN_00506440.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_getCollisionType_FUN_005065e0.cpp
@@ -1104,6 +1111,7 @@ annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_jumpToMotio
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_reset_FUN_00524790.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_reverseTransition_FUN_00524710.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_setDesiredStateByName_FUN_00524850.cpp
+annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_setMotionList_FUN_00524970.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_dtor_FUN_0052c500.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_sendDisconnectNotify_FUN_005306d0.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_sendPacket_FUN_0052dfc0.cpp
@@ -1212,6 +1220,7 @@ annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/SRaytraceState_ctor_FUN_005
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/SRaytraceState_dtor_FUN_00559700.cpp
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/staticInit_FUN_005561c0.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_clearCameraSwitchCooldown_FUN_0055b200.cpp
+annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_findVdirBoxAtPosition_FUN_0055c060.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_findVdirBoxRoot_FUN_0055c020.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_isPointInVdirGroup_FUN_0055ba50.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_setPendingCamera_FUN_0055b1e0.cpp
@@ -1364,7 +1373,6 @@ annotations/bw1.exe/pseudocode/src/core/succubus.cpp/factoryFuncSuccubus_FUN_005
 annotations/bw1.exe/pseudocode/src/core/succubus.cpp/staticInit_FUN_00591eb0.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_archive_FUN_00594330.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_drawWeapon_FUN_00594670.cpp
-annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_dtor_FUN_00594680.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_getActorType_FUN_00592df0.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_getGrabbed_FUN_00594650.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_isWeaponDrawn_FUN_00594660.cpp
@@ -1575,6 +1583,7 @@ annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_arrdtor4_FUN
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_arrdtor5_FUN_004188d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_ctor_FUN_0040d0a0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_dtor_FUN_0040d0c0.cpp
+annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_fillOpa_FUN_0040d970.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_free_FUN_0040d1c0.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_scale_FUN_0040d840.cpp
 annotations/bw1.exe/pseudocode/src/engine/clipper.c/FUN_0043d880.c
@@ -1622,6 +1631,7 @@ annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_drawTextFV_FUN_004c2
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_drawTextRight_FUN_004c2150.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_drawTextWrapper_FUN_004c2060.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_dtor_FUN_004c0b60.cpp
+annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_free_FUN_004c1830.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_getCharHeight_FUN_004c4510.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_getCharWidth_FUN_004c44e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_getCharYOffset_FUN_004c4540.cpp
@@ -1633,6 +1643,7 @@ annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_reset_FUN_004c0b80.c
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_setCharYOffsetRange_FUN_004c4570.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_setFontReady_FUN_004c45d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_setInitializedFlag_FUN_004c18b0.cpp
+annotations/bw1.exe/pseudocode/src/engine/ini.cpp/CIniFile_ctor_FUN_004f4b00.cpp
 annotations/bw1.exe/pseudocode/src/engine/ini.cpp/CIniFile_dtor_FUN_004f4b30.cpp
 annotations/bw1.exe/pseudocode/src/engine/ini.cpp/CIni_ctor_FUN_004f4f30.cpp
 annotations/bw1.exe/pseudocode/src/engine/ini.cpp/CIni_dtor_FUN_004f4f40.cpp
@@ -1694,6 +1705,7 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdScrollBar_clampScrollPo
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdScrollBar_ctor_FUN_0049c970.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdScrollBar_dtor_FUN_0049c9b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_getTimeCycledColorByte_FUN_00497830.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_restoreWindowAndCleanup_FUN_00496dd0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showCheatInputDialog_FUN_00496180.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showFileSelectionDialog_FUN_00494fd0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showTextInputDialog_FUN_00496150.cpp
@@ -1705,7 +1717,10 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CInputString_insertChar_FU
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CInputString_setSelectionToCursor_FUN_00492f50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_clear_FUN_0049c370.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_initializeDialog_FUN_0049a980.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_insert_FUN_0049c290.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_remove_FUN_0049c310.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_setSelectedResult_FUN_0049a8a0.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_swap_FUN_0049c470.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_validateScrollBounds_FUN_0049be50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_add_FUN_004994d0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_copyFrom_FUN_00499420.cpp
@@ -1793,12 +1808,14 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_advanceKey_FU
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCheesyCipher_dtor_FUN_00444120.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCodec_ctor_FUN_00442ba0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCodec_dtor_FUN_00442bb0.cpp
+annotations/bw1.exe/pseudocode/src/support/codec.cpp/CCodec_finalize_FUN_00442c70.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_ctor_FUN_00443b90.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_dtor_FUN_00443c60.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_getChar_FUN_00443cc0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_isEof_FUN_00443ed0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_peekChar_FUN_00443d40.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_ungetChar_FUN_00443d10.cpp
+annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWCompress_finalize_FUN_00443630.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWCompress_init_FUN_004434e0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDecompress_init_FUN_004436f0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_addNode_FUN_00443110.cpp
@@ -1806,7 +1823,6 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_ctor_FUN_004
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_dtor_FUN_00442f90.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_findCode_FUN_004430d0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_free_FUN_00442fb0.cpp
-annotations/bw1.exe/pseudocode/src/support/codec.cpp/FUN_00442c70.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/resetBitBuffer_FUN_00442470.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/CSocket_closeSocket_FUN_0059cc40.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/CSocket_createSocket_FUN_0059c910.cpp

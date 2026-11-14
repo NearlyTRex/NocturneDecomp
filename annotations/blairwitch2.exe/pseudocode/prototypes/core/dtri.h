@@ -73,9 +73,9 @@ undefined4 FUN_00479df0(void);
 // Address: 00479e00
 undefined * FUN_00479e00(void);
 
-// Original: core_dtri.cpp_FUN_00479e10
+// Original: core_dtri.cpp_CDemonTriangle_render_FUN_00479e10
 // Address: 00479e10
-void FUN_00479e10(void);
+void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_ctor_FUN_00479f60
 // Address: 00479f60

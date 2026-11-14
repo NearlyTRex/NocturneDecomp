@@ -34,6 +34,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -233,7 +234,7 @@ void core_actor_cpp_FUN_00408ef0(void);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408f00(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 undefined4 * core_actor_cpp_FUN_004090f0(int param_1,int param_2,uint param_3);
-float core_actor_cpp_FUN_004093a0(int param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_00409850(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_plotPixelWithBoundsCheck_FUN_00409860(int x,int y);
@@ -327,7 +328,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0(CAlphaBitmap *
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040dbd0(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 void engine_alphabit_cpp_FUN_0040dca0(int param_1);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_0040dcf0(CAlphaBitmap *this_ptr);
-void engine_alphabit_cpp_FUN_0040dd20(int param_1,int param_2);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(CAlphaBitmap *this_ptr,int value);
 void __cdecl core_ammo_cpp_staticInit_FUN_0040dd50(void);
 CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040dd80(void);
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_0040dda0(CAmmo *this_ptr);

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 572,
+    "complexity_score": 571,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 257,
+    "pseudocode_lines": 256,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 844
+    "total_lines": 843
   },
   "cross_references": [
     {
@@ -77,7 +77,7 @@
     {
       "addr": "004cc040",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004cc040"
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004cc040"
     },
     {
       "addr": "0050b1d0",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 204,
+      "line": 203,
       "match": "pCVar6 = (T *)pCVar6->ARRAY",
       "severity": "moderate",
       "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_34->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 231,
+      "line": 230,
       "match": "local_34 = (T *)((local_34->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_34 = (CCharacter *)((local_34->base).actor_name + 4);",

@@ -17,9 +17,9 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005105e0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00510670
-;   cockpit_pkbmpset.cpp_FUN_005106a0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     INC EAX                             ; 0051076f
     PUSH EAX                            ; 00510770
     PUSH EDI                            ; 00510771
-    CALL cockpit_pkbmpset.cpp_FUN_005106a0 ; 00510772
-        ;   XREF to: 005106a0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_FUN_005106a0(CPackedBitmapSet * this_ptr, int bitmap_count)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0 ; 00510772
+        ;   XREF to: 005106a0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0(CPackedBitmapSet * this_ptr, int bitmap_count)
     ADD ESP,0x8                         ; 00510777
     MOV EAX,dword ptr [ESP + 0x84]      ; 0051077a
     MOV dword ptr [EDI + 0x20],EAX      ; 00510781

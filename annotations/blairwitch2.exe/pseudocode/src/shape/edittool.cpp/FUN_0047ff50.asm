@@ -68,7 +68,7 @@ section .text
     PUSH dword ptr [ESP + 0x34]         ; 0047ffdb
     PUSH EDI                            ; 0047ffdf
     CALL shape_edittool.cpp_FUN_0047fd00 ; 0047ffe0
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fd00()
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 0047ffe5
     CALL engine_matrix.c_pop_FUN_004e9810 ; 0047ffe8
         ;   XREF to: 004e9810 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004e9810()

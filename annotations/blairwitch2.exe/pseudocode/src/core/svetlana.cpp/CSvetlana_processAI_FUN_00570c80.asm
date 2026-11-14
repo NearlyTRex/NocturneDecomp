@@ -36,9 +36,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
-;   core_charactr.cpp_FUN_0042abe0
-;   core_hero.cpp_FUN_004d00c0
-;   core_motion.cpp_FUN_005035c0
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0
+;   core_hero.cpp_CHero_closestEnemy_FUN_004d00c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
@@ -145,8 +145,8 @@ section .text
     MOV EDX,0x461c3f9a                  ; 00570dbc
     PUSH EBX                            ; 00570dc1
     MOV dword ptr [ESP + 0xac],EDX      ; 00570dc2
-    CALL core_hero.cpp_FUN_004d00c0     ; 00570dc9
-        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d00c0()
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004d00c0 ; 00570dc9
+        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004d00c0(CHero * this_ptr, float * out_distance)
     MOV ESI,EAX                         ; 00570dce
     ADD ESP,0x8                         ; 00570dd0
     TEST EAX,EAX                        ; 00570dd3
@@ -438,8 +438,8 @@ section .text
         ;   XREF to: 00570e04 (UNCONDITIONAL_JUMP)  ; LAB_00570e04
     PUSH EAX                            ; 005711cc
         ;   Label: LAB_005711cc
-    CALL core_motion.cpp_FUN_005035c0   ; 005711cd
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005711cd
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005711d2
     ADD ESP,0x4                         ; 005711d5
     CMP EAX,0x2                         ; 005711d8
@@ -453,8 +453,8 @@ section .text
         ;   XREF to: 00570edf (UNCONDITIONAL_JUMP)  ; LAB_00570edf
     PUSH EAX                            ; 005711f9
         ;   Label: LAB_005711f9
-    CALL core_motion.cpp_FUN_005035c0   ; 005711fa
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005711fa
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005711ff
     ADD ESP,0x4                         ; 00571202
     CMP EAX,0xa                         ; 00571205
@@ -476,8 +476,8 @@ section .text
         ;   XREF to: 00570ee9 (CONDITIONAL_JUMP)  ; LAB_00570ee9
     PUSH dword ptr [EBP + 0x18]         ; 00571241
     PUSH EBX                            ; 00571244
-    CALL core_charactr.cpp_FUN_0042abe0 ; 00571245
-        ;   XREF to: 0042abe0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042abe0()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 ; 00571245
+        ;   XREF to: 0042abe0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0057124a
     CMP EAX,0x1                         ; 0057124d
     JC 0x00570ee9                       ; 00571250
@@ -599,8 +599,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005713dc
         ;   Label: LAB_005713dc
     PUSH EBX                            ; 005713df
-    CALL core_charactr.cpp_FUN_0042abe0 ; 005713e0
-        ;   XREF to: 0042abe0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042abe0()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 ; 005713e0
+        ;   XREF to: 0042abe0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005713e5
     CMP EAX,0x1                         ; 005713e8
     JC 0x005712dd                       ; 005713eb

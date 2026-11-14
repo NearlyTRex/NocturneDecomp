@@ -21,12 +21,12 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_00419940
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0
-;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_box.cpp_CBox_process_FUN_0041e0d0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
-;   core_setcolid.cpp_FUN_00559350
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00559350
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH 0x0                            ; 004197d4
     PUSH EBX                            ; 004197d6
     MOV dword ptr [EBX + 0x70],0x2      ; 004197d7
-    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 004197de
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00 ; 004197de
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x168]               ; 004197e3
     ADD ESP,0xc                         ; 004197e9
     MOV ESI,EAX                         ; 004197ec
@@ -215,8 +215,8 @@ section .text
     MOV EDI,dword ptr [0x00622c18]      ; 00419915 | g_CDemonSetPtr
     PUSH EDI                            ; 0041991b | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x14]         ; 0041991c
-    CALL core_setcolid.cpp_FUN_00559350 ; 00419920
-        ;   XREF to: 00559350 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00559350()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00559350 ; 00419920
+        ;   XREF to: 00559350 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00559350(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00419925
     PUSH dword ptr [EBP + 0x18]         ; 00419928
     PUSH EBX                            ; 0041992b

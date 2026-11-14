@@ -46,6 +46,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
+;   shape_edittool.cpp_calculateButtonHeight_FUN_00486580
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_004864f0
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00485ff0
 ;   shape_edittool.cpp_calculateGridWidth_FUN_00485fd0
@@ -53,7 +54,6 @@
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
 ;   shape_edittool.cpp_CEdScrollBar_setPosition_FUN_00485590
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
-;   shape_edittool.cpp_FUN_00486580
 ;
 ; *****************************************************************************
 
@@ -414,8 +414,8 @@ section .text
     MOV EDI,EAX                         ; 00484084
     PUSH 0x0                            ; 00484086
         ;   Label: LAB_00484086
-    CALL shape_edittool.cpp_FUN_00486580 ; 00484088
-        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00486580(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_00486580 ; 00484088
+        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00486580(char * button_text)
     ADD ESP,0x4                         ; 0048408d
     MOV EDX,dword ptr [ESP + 0x148]     ; 00484090
     MOV ECX,dword ptr [ESP + 0x12c]     ; 00484097

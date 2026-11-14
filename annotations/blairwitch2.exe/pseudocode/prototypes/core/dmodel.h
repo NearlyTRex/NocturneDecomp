@@ -29,9 +29,9 @@ void __cdecl CKeyFramedModel::readBinaryModel(CKeyFramedModel *this_ptr,_FILE *f
 // Address: 0044e010
 void __cdecl CKeyFramedModel::readTextModel(CKeyFramedModel *this_ptr,_FILE *file);
 
-// Original: core_dmodel.cpp_FUN_0044e590
+// Original: core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590
 // Address: 0044e590
-void FUN_0044e590(int param_1);
+void __cdecl CKeyFramedModel::free(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_0044e6a0
 // Address: 0044e6a0
@@ -49,9 +49,9 @@ void __cdecl CKeyFramedModel::rotateAndLightVertices(CKeyFramedModel *this_ptr,i
 // Address: 0044e7d0
 void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 
-// Original: core_dmodel.cpp_FUN_0044ea80
+// Original: core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80
 // Address: 0044ea80
-void FUN_0044ea80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl CKeyFramedModel::allocate(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0
 // Address: 0044ecb0
@@ -65,9 +65,9 @@ void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *this_ptr);
 // Address: 0044efe0
 void __cdecl CKeyFramedModel::captureTextures(CKeyFramedModel *this_ptr);
 
-// Original: core_dmodel.cpp_FUN_0044f020
+// Original: core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020
 // Address: 0044f020
-float FUN_0044f020(CKeyFramedModel *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,float *param_5);
+float __cdecl CKeyFramedModel::intersectRay(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_0044f580
 // Address: 0044f580

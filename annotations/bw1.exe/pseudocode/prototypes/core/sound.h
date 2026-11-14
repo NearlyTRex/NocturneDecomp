@@ -49,9 +49,9 @@ void __cdecl shutdownSoundSystem(void);
 // Address: 0057cba0
 void __cdecl syncChannel3WithChannel0(void);
 
-// Original: core_sound.cpp_FUN_0057cc00
+// Original: core_sound.cpp_CSound_init_FUN_0057cc00
 // Address: 0057cc00
-void __cdecl FUN_0057cc00(CSound *this_ptr);
+void __cdecl CSound::init(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_shutdown_FUN_0057cdb0
 // Address: 0057cdb0
@@ -105,9 +105,9 @@ void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 // Address: 0057d9e0
 float __cdecl CSound::getSoundDuration(CSound *this_ptr,char *sound_name);
 
-// Original: core_sound.cpp_FUN_0057dab0
+// Original: core_sound.cpp_CSound_getSoundModeName_FUN_0057dab0
 // Address: 0057dab0
-undefined4 FUN_0057dab0(void);
+char * __cdecl CSound::getSoundModeName(CSound *this_ptr,int sound_mode_index);
 
 // Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0057dad0
 // Address: 0057dad0

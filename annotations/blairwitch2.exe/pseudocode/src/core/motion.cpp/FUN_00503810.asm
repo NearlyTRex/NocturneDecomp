@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_motion_cpp_FUN_00503810(int *param_1)
+; void core_motion_cpp_FUN_00503810(CMotionController *param_1)
 ;
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_FUN_00422c10 at 00422c1a
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
         ;   Label: LAB_00503828
     PUSH ESI                            ; 00503829
     PUSH EBX                            ; 0050382a
-    CALL core_motion.cpp_FUN_005035c0   ; 0050382b
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0050382b
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00503830
     LEA EDI,[EBX + 0x30]                ; 00503833
     MOV ESI,EAX                         ; 00503836

@@ -25,6 +25,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/COutStream.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRect.h"
@@ -81,10 +82,10 @@ void __cdecl support_codec_cpp_CCodec_init_FUN_00433eb0(CCodec *this_ptr);
 undefined4 support_codec_cpp_FUN_00433ee0(undefined4 param_1,int *param_2,int *param_3);
 int __cdecl support_codec_cpp_FUN_00433f50(CCodec *this_ptr,void *ostream);
 undefined4 support_codec_cpp_FUN_00433f60(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5);
-bool support_codec_cpp_FUN_00433ff0(int *param_1,char *param_2,int *param_3,undefined4 param_4);
+bool __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_00433ff0(CCodec *this_ptr,char *input,int *input_length,COutStream *ostream);
 int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_00434070(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 undefined4 support_codec_cpp_FUN_004340f0(int *param_1,char *param_2,char *param_3);
-bool support_codec_cpp_FUN_004341e0(int *param_1,char *param_2,int *param_3);
+int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_004341e0(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00434250(CLZWDictionary *this_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_00434270(CLZWDictionary *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CLZWDictionary_free_FUN_00434290(CLZWDictionary *this_ptr);
@@ -99,7 +100,7 @@ int __cdecl support_codec_cpp_FUN_004346d0(CLZWDictionary *this_ptr,SBitBuffer *
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00434770(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 void __cdecl support_codec_cpp_CLZWCompress_init_FUN_004347c0(CLZWCompress *this_ptr);
 undefined4 support_codec_cpp_FUN_00434810(int param_1,int *param_2,undefined4 param_3);
-undefined4 support_codec_cpp_FUN_00434910(int param_1,undefined4 param_2);
+int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_00434910(CLZWCompress *this_ptr,COutStream *ostream);
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_00434990(CLZWDecompress *this_ptr,int buffer_size,int initial_bits);
 void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_004349d0(CLZWDecompress *this_ptr);
 int support_codec_cpp_FUN_00434a10(int *param_1,undefined4 param_2,undefined4 param_3);
@@ -114,7 +115,7 @@ undefined4 __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUna
 CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00434ce0(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3);
 void __cdecl support_codec_cpp_CCheesyCipher_setMode_FUN_00434d20(CCheesyCipher *this_ptr,int param_2);
 void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00434d30(CCheesyCipher *this_ptr,uint param_2);
-uint support_codec_cpp_FUN_00434d60(CCheesyCipher *param_1,byte param_2);
+uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00434d60(CCheesyCipher *this_ptr,byte param_2);
 undefined4 __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00434dd0(CCheesyCipher *this_ptr,int *param_2,int *param_3);
 void __cdecl support_codec_cpp_CCheesyCipher_advanceKey_FUN_00434e50(CCheesyCipher *this_ptr);
 CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_ctor_FUN_00434e70(CInStreamPipe *this_ptr);
@@ -188,7 +189,7 @@ CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_00438a50(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_00438a70(CCourse *this_ptr,uint flags);
 void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00438a90(CCourse *this_ptr,int param_2);
 void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *filename);
-void core_course_cpp_FUN_00438c20(undefined4 *param_1);
+void __cdecl core_course_cpp_CCourse_free_FUN_00438c20(CCourse *this_ptr);
 void __cdecl core_course_cpp_CCourse_evaluate_FUN_00438c40(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
 void __cdecl core_cow_cpp_staticInit_FUN_00439080(void);
@@ -212,7 +213,7 @@ void __cdecl core_crate_cpp_CCrate_pickup_FUN_00439ec0(CCrate *this_ptr,CDemonAc
 void __cdecl core_crate_cpp_CCrate_onDropped_FUN_00439ed0(CCrate *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_00439ef0(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_process_FUN_00439f00(CCrate *this_ptr,float delta_time);
-int core_crate_cpp_FUN_0043a130(int param_1);
+int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_0043a130(CCrate *this_ptr);
 void core_crate_cpp_FUN_0043a1b0(void);
 void __cdecl core_crate_cpp_CCrate_archive_FUN_0043a1d0(CCrate *this_ptr);
 ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043a220(CCrate *this_ptr,SCollisionInfo *collision_info);
@@ -267,7 +268,7 @@ void core_dcamera_cpp_FUN_0043d770(int param_1,float *param_2,float param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0043d870(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0043dca0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int core_dcamera_cpp_FUN_0043e300(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
-void core_dcamera_cpp_FUN_0043e7e0(void);
+void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0043e7e0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0043e930(CDemonCamera *this_ptr,char *filename);
 void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_0043f820(void);

@@ -1,0 +1,324 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 131,
+    "complexity_score": 101,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 61,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 192
+  },
+  "cross_references": [
+    {
+      "addr": "00509cd0",
+      "from_addr": "00509d2f",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00509db0",
+    "address_range": [
+      [
+        "00509db0",
+        "00509f2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0",
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00509db0(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b929c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005b929c"
+    },
+    {
+      "addr": "005baab0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_005baab0"
+    },
+    {
+      "addr": "005b86a0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b86a0"
+    },
+    {
+      "addr": "00504670",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMpegFrame_FUN_00504670"
+    },
+    {
+      "addr": "00505170",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00505170"
+    },
+    {
+      "addr": "00504ca0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00504ca0"
+    },
+    {
+      "addr": "00509f30",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00509f30"
+    },
+    {
+      "addr": "0050a0e0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dfee2",
+      "name": "s_sound_mp3_cpp_005dfee2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dfef3",
+      "name": "s_Out_of_memory_File_s_005dfef3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0333",
+      "name": "DAT_005e0333",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e88",
+      "name": "DAT_00618e88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00509d2f",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.12962962962963,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CBRANCH": 3,
+      "COPY": 100,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 52,
+      "INT_AND": 48,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 53,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 446
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052af80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00502890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00534630",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1467
+    },
+    "nocturne.exe": {
+      "addr": "004e7ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1492
+    }
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "file_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_01d23558",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4500(\"Out of memory.  File: %s\",&DAT_01d23558);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00618e88",
+      "severity": "mild",
+      "text": "(&DAT_00618e88 + local_68.sampling_rate_index * 8 + local_68.mpeg_version * 0x20",
+      "type": "undefined_data"
+    }
+  ]
+}

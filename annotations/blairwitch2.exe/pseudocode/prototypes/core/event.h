@@ -77,9 +77,9 @@ int __cdecl CEventList::executeCommands(CEventList *this_ptr,char *commands);
 // Address: 00489510
 int __cdecl CEventList::executeCommandString(CEventList *this_ptr,char *command_string);
 
-// Original: core_event.cpp_FUN_00489670
+// Original: core_event.cpp_CEventList_executeCommand_FUN_00489670
 // Address: 00489670
-int FUN_00489670(CEventList *param_1,char *param_2);
+int __cdecl CEventList::executeCommand(CEventList *this_ptr,char *command_buffer);
 
 // Original: core_event.cpp_CEventList_resolveVariable_FUN_0048e2b0
 // Address: 0048e2b0

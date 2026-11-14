@@ -16,10 +16,10 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005035c0
 ;   core_zombie.cpp_CZombie_dropAndClearTarget_FUN_00598f20
 ;   core_zombie.cpp_CZombie_processDismemberment_FUN_00599400
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
@@ -64,8 +64,8 @@ section .text
         ;   XREF to: 00599851 (CONDITIONAL_JUMP)  ; LAB_00599851
     PUSH EDX                            ; 0059973c
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0059973d
-    CALL core_motion.cpp_FUN_005035c0   ; 00599747
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00599747
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0059974c
     ADD ESP,0x4                         ; 0059974f
     CMP EAX,0x8                         ; 00599752

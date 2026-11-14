@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EBP                            ; 0046e5e1
     MOV ESI,dword ptr [ESP + 0x10]      ; 0046e5e2
     PUSH ESI                            ; 0046e5e6
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0046e5e7
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0046e5e7
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0046e5ec
     MOV EAX,dword ptr [ESP + 0xc]       ; 0046e5ef
     CMP dword ptr [EAX + 0x1c],0x0      ; 0046e5f3

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b90d0 at 004b9d3b
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9d3b
 ;
 ; Referenced Globals:
 ;   undefined4 s_CMeleeAxe_005d79f1+2

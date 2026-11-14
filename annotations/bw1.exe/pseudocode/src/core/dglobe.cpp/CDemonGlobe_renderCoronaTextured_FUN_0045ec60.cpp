@@ -55,7 +55,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
     iVar2 = iVar2 + 0x30;
   } while (iVar3 != 0x2e8);
-  engine_texture_cpp_FUN_00597a20(0x611388);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20((SMRGLTextureBasic *)0x611388);
   iVar2 = 0;
   do {
     SStack_50.base.count = *(int *)((int)&DAT_00611688 + iVar2);

@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
-;   core_wateract.cpp_FUN_005870a0
+;   core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005870a0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -217,8 +217,8 @@ section .text
     MOV EBX,EBX                         ; 00586dbe
     PUSH EDI                            ; 00586dc0
         ;   Label: LAB_00586dc0
-    CALL core_wateract.cpp_FUN_005870a0 ; 00586dc1
-        ;   XREF to: 005870a0 (UNCONDITIONAL_CALL)  ; undefined core_wateract.cpp_FUN_005870a0()
+    CALL core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005870a0 ; 00586dc1
+        ;   XREF to: 005870a0 (UNCONDITIONAL_CALL)  ; void core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005870a0(CWaterActor * this_ptr)
     MOV dword ptr [EDI + 0x2b384],0x0   ; 00586dc6
     ADD ESP,0x4                         ; 00586dd0
     MOV dword ptr [EDI + 0x2b388],0x0   ; 00586dd3

@@ -1,7 +1,7 @@
-Scanning 529 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
+Scanning 532 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (175 files still need ADJ)
+UNFINISHED CTORS/DTORS (178 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -324,6 +324,8 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
   [core/gabriela.cpp]
     CGabriella_ctor_FUN_004c6270:
       CCloth_ctor @ this+0x1ffec (131052) -> CGabriella_ptr_131052
+    CGabriella_dtor_FUN_004cb760:
+      CCloth_dtor @ this+0x1ffec (131052) -> CGabriella_ptr_131052
 
   [core/gargoyle.cpp]
     CGargoyle_dtor_FUN_004dd9d0:
@@ -368,6 +370,12 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
     CHero_ctor_FUN_004ea830:
       CPathMap_ctor @ this+0xc208 (49672) -> CHero_ptr_49672
       CInventory_ctor @ this+0x1fae8 (129768) -> CHero_ptr_129768
+    CHero_dtor_FUN_004ea980:
+      CInventory_dtor @ this+0x1fae8 (129768) -> CHero_ptr_129768
+      CPathMap_dtor @ this+0xc208 (49672) -> CHero_ptr_49672
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+      CDemonActor_dtor @ ??? (UNKNOWN)
 
   [core/hiram.cpp]
     CHiram_dtor_FUN_004ed1f0:
@@ -450,6 +458,7 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
       CMorph_ctor @ this+0x46e90 (290448) -> CMimic_ptr_290448
     CMimic_dtor_FUN_0050f1b0:
       CMorph_dtor @ this+0x46e90 (290448) -> CMimic_ptr_290448
+      CCloth_dtor @ this+0xc330 (49968) -> CMimic_ptr_49968
       CDemonActor_dtor @ this+0x46e90 (290448) -> CMimic_ptr_290448
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
@@ -608,6 +617,9 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
     CSvetlana_ctor_FUN_00592e00:
       CCloth_ctor @ this+0x1ffb4 (130996) -> CSvetlana_ptr_130996
       CCloth_ctor @ this+0x5aae4 (371428) -> CSvetlana_ptr_371428
+    CSvetlana_dtor_FUN_00594680:
+      CCloth_dtor @ this+0x5aae4 (371428) -> CSvetlana_ptr_371428
+      CCloth_dtor @ this+0x1ffb4 (130996) -> CSvetlana_ptr_130996
 
   [core/tbplayer.cpp]
     CBassPlayer_dtor_FUN_00594d50:
@@ -662,8 +674,11 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
       CMorph_ctor @ this+0xbe7a0 (780192) -> CVampireBoss_ptr_780192
     CVampireBoss_dtor_FUN_005a7420:
       CMorph_dtor @ this+0xbe7a0 (780192) -> CVampireBoss_ptr_780192
+      CCloth_dtor @ this+0x83c6c (539756) -> CVampireBoss_ptr_539756
+      CCloth_dtor @ this+0x4913c (299324) -> CVampireBoss_ptr_299324
+      CCloth_dtor @ this+0xe60c (58892) -> CVampireBoss_ptr_58892
+      CDeformableModelInstance_dtor @ this+0xc268 (49768) -> CVampireBoss_ptr_49768
       CDemonActor_dtor @ this+0xbe7a0 (780192) -> CVampireBoss_ptr_780192
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
@@ -947,7 +962,7 @@ NEEDED ADJ POINTER TYPES
 Total: 193 types across 131 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (96 calls with unknown offset)
+MANUAL REVIEW NEEDED (98 calls with unknown offset)
 ======================================================================
   CArmour_dtor_FUN_0040ecc0.asm: CClothList_dtor
   CArmour_dtor_FUN_0040ecc0.asm: CDeformableModelInstance_dtor
@@ -993,6 +1008,9 @@ MANUAL REVIEW NEEDED (96 calls with unknown offset)
   CGargoyle_dtor_FUN_004dd9d0.asm: CDeformableModelInstance_dtor
   CGhoul_dtor_FUN_004e0f20.asm: CClothList_dtor
   CGhoul_dtor_FUN_004e0f20.asm: CDeformableModelInstance_dtor
+  CHero_dtor_FUN_004ea980.asm: CClothList_dtor
+  CHero_dtor_FUN_004ea980.asm: CDeformableModelInstance_dtor
+  CHero_dtor_FUN_004ea980.asm: CDemonActor_dtor
   CHiram_dtor_FUN_004ed1f0.asm: CClothList_dtor
   CHiram_dtor_FUN_004ed1f0.asm: CDeformableModelInstance_dtor
   CNPC_dtor_FUN_004ed400.asm: CClothList_dtor
@@ -1035,7 +1053,6 @@ MANUAL REVIEW NEEDED (96 calls with unknown offset)
   CTheHand_dtor_FUN_00599c20.asm: CDeformableModelInstance_dtor
   CTVBat_dtor_FUN_005a5080.asm: CClothList_dtor
   CTVBat_dtor_FUN_005a5080.asm: CDeformableModelInstance_dtor
-  CVampireBoss_dtor_FUN_005a7420.asm: CDeformableModelInstance_dtor
   CVampireBoss_dtor_FUN_005a7420.asm: CClothList_dtor
   CVampireBoss_dtor_FUN_005a7420.asm: CDeformableModelInstance_dtor
   CWerewolf_dtor_FUN_005b1a40.asm: CClothList_dtor

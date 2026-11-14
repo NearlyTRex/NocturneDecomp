@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059daa0
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -42,8 +42,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005a2946
         ;   Label: LAB_005a2946
     PUSH ESI                            ; 005a294c
-    CALL core_motion.cpp_FUN_005035c0   ; 005a294d
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a294d
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a2952
     ADD ESP,0x4                         ; 005a2955
     CMP EAX,0x1                         ; 005a2958
@@ -121,8 +121,8 @@ section .text
         ;   XREF to: 005a2936 (UNCONDITIONAL_JUMP)  ; LAB_005a2936
     PUSH ESI                            ; 005a2a20
         ;   Label: LAB_005a2a20
-    CALL core_motion.cpp_FUN_005035c0   ; 005a2a21
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a2a21
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a2a26
     ADD ESP,0x4                         ; 005a2a29
     CMP EAX,0x6                         ; 005a2a2c

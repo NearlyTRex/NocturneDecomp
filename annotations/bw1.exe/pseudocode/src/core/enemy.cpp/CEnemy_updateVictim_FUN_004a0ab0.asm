@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
-;   core_enemy.cpp_FUN_004a0980
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
@@ -212,8 +212,8 @@ section .text
     PUSH ESI                            ; 004a0cc8
     MOV EDX,dword ptr [EBP + 0x14]      ; 004a0cc9
     PUSH EDX                            ; 004a0ccc
-    CALL core_enemy.cpp_FUN_004a0980    ; 004a0ccd
-        ;   XREF to: 004a0980 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a0980()
+    CALL core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980 ; 004a0ccd
+        ;   XREF to: 004a0980 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980(CEnemy * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 004a0cd2
     TEST EAX,EAX                        ; 004a0cd5
     JNZ 0x004a0e8f                      ; 004a0cd7

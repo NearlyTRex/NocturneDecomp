@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_3d.c_FUN_00407720
+;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_3d.c_processVertexLighting_FUN_004039f0
 ;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
@@ -25,7 +25,7 @@
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403840
 ;   engine_model.c_FUN_004f8730
 ;   engine_special.cpp_drawPolyList_FUN_00565c70
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     RET                                 ; 0040790c
     PUSH EDI                            ; 0040790d
         ;   Label: LAB_0040790d
-    CALL engine_3d.c_FUN_00407720       ; 0040790e
-        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407720()
+    CALL engine_3d.c_dispatchMRGLBlockChain_FUN_00407720 ; 0040790e
+        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_dispatchMRGLBlockChain_FUN_00407720()
     ADD ESP,0x4                         ; 00407913
     ADD ESP,0x100                       ; 00407916
     POP EBP                             ; 0040791c
@@ -140,8 +140,8 @@ section .text
     MOV dword ptr [0x007dd9f0],EDX      ; 0040795b | DAT_007dd9f0
     PUSH EDI                            ; 00407961
         ;   Label: LAB_00407961
-    CALL engine_texture.cpp_FUN_0056aa10 ; 00407962
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 00407962
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00407967
     JMP 0x004078af                      ; 0040796a
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af

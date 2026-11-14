@@ -26,7 +26,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
-;   wincore_wddvmem.cpp_FUN_005ac300
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_004cf54f
     PUSH 0x1e0                          ; 004cf551
     PUSH 0x280                          ; 004cf556
-    CALL wincore_wddvmem.cpp_FUN_005ac300 ; 004cf55b
-        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005ac300()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 004cf55b
+        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 004cf560
     MOV EAX,[0x0061f650]                ; 004cf563 | DAT_0061f650
         ;   Label: LAB_004cf563

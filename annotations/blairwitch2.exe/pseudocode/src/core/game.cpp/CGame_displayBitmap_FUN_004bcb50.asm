@@ -11,7 +11,7 @@
 ; uint             Stack[0x14]:4   param_5
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 0048a8fb
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048a8fb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005d86f6

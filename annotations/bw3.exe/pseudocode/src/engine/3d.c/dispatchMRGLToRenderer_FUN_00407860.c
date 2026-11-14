@@ -52,7 +52,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407860(SMRGLHeaderExtended
           engine_3d_c_transformAndBufferVertices_FUN_00403840(mrgl);
           if (DAT_005fba40 != 0) {
             apSStack_110[0] = (SMRGLHeaderPrimitive *)mrgl;
-            engine_3d_c_FUN_00407720();
+            engine_3d_c_dispatchMRGLBlockChain_FUN_00407720();
             return;
           }
         }
@@ -89,7 +89,7 @@ LAB_00407a42:
           }
           _DAT_007dd9f0 = 0;
         }
-        engine_texture_cpp_FUN_0056aa10(mrgl);
+        engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10((SMRGLTextureBasic *)mrgl);
       }
     }
     else if (0x14 < bVar3) {

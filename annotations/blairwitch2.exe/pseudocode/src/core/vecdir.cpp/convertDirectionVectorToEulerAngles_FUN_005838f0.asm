@@ -17,9 +17,9 @@
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 at 00426c40
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 00427533
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 004297e9
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acea
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 0042891a
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 at 00423884
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000 at 0042304f
 ;   ... and 78 more
 ;
 ; Called Functions:

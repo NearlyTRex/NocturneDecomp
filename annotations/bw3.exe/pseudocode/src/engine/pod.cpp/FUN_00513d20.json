@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 310,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 20,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 369
@@ -32,9 +32,9 @@
         "00513fe8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_pod.cpp_FUN_00513d20",
-    "signature": "bool engine_pod_cpp_FUN_00513d20(int *param_1)"
+    "signature": "int __cdecl engine_pod_cpp_FUN_00513d20(CPodFile *this_ptr)"
   },
   "function_calls": [
     {
@@ -88,9 +88,19 @@
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0"
     },
     {
+      "addr": "0047f970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970"
+    },
+    {
       "addr": "0047ed50",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50"
+    },
+    {
+      "addr": "0047ee50",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50"
     },
     {
       "addr": "004831c0",
@@ -111,16 +121,6 @@
       "addr": "00482070",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
-    },
-    {
-      "addr": "0047ee50",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047ee50"
-    },
-    {
-      "addr": "0047f970",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047f970"
     }
   ],
   "globals": [
@@ -150,21 +150,19 @@
         "call_addr": "00514be0",
         "call_type": "direct",
         "caller": "engine_pod.cpp_FUN_00514bb0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.5,
@@ -209,12 +207,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -226,159 +232,52 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bool engine_pod_cpp_FUN_00513d20(int *param_1)",
-      "type": "unnamed_param"
+      "description": "Pointer value `&pCVar1->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&pCVar1->offset",
+      "severity": "moderate",
+      "text": "iStack_14 = *(int *)((int)&pCVar1->offset + iVar4) - pCVar1->offset;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*param_1 == 0) || ((char)param_1[1] == '\\0')) {",
-      "type": "unnamed_param"
+      "description": "Pointer value `&pCVar1->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&pCVar1->checksum",
+      "severity": "moderate",
+      "text": "if (iVar3 != *(int *)((int)&pCVar1->checksum + iVar4)) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*param_1 == 0) || ((char)param_1[1] == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == 200) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1[0x104]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = (param_1[0x104] + -1) * 0x14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1[0x105];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1[0x105];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_pod_cpp_FUN_00514220(param_1,iVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CStack_3e0.base,*(char **)(iVar4 + param_1[0x105]));",
-      "type": "unnamed_param"
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "(&CStack_3e0.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar5 < param_1[0x104]);",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iStack_14 = *(int *)((int)&pCVar1->offset + iVar4) - pCVar1->offset;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = *param_1;",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (iVar3 != *(int *)((int)&pCVar1->checksum + iVar4)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Invalid pod version for %s: %d\",param_1 + 1,iVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "p_Var1 = _fopen((char *)param_1,(char *)0x5cc61e);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cc4c6,(char *)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "p_Var1 = _fopen((char *)param_1,(char *)0x5cc4c7);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(&CStack_3e0.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_cast"
     }
   ]
 }

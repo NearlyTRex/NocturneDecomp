@@ -66,8 +66,8 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a700
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
 ;   core_bodypart.cpp_FUN_0041ad40
-;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_dirmat.cpp_FUN_0045f700
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -97,8 +97,8 @@ section .text
     PUSH 0x0                            ; 00419bb6
     PUSH EBX                            ; 00419bb8
     MOV dword ptr [EBX + 0x70],0x2      ; 00419bb9
-    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 00419bc0
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00 ; 00419bc0
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x168]               ; 00419bc5
     ADD ESP,0xc                         ; 00419bcb
     MOV EDX,EAX                         ; 00419bce

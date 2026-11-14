@@ -19,8 +19,8 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   core_dmodel.cpp_FUN_004618a0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
 ;
 ; *****************************************************************************
@@ -203,8 +203,8 @@ section .text
         ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005129f9
     PUSH EAX                            ; 005129fc
-    CALL core_dmodel.cpp_FUN_004618a0   ; 005129fd
-        ;   XREF to: 004618a0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_004618a0()
+    CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0 ; 005129fd
+        ;   XREF to: 004618a0 (UNCONDITIONAL_CALL)  ; float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0xb0],EAX      ; 00512a02
     FLD float ptr [ESP + 0xb0]          ; 00512a09
     ADD ESP,0x14                        ; 00512a10

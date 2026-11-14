@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00573110(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 {
@@ -16,7 +18,7 @@ int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00573110(CTentacl
   CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
   byte bVar7;
-  float afStackY_101c [905];
+  uint auStackY_101c [905];
   CMatrix3x4f CStack_1e4;
   float afStack_1b4 [12];
   CMatrix3x4f CStack_184;
@@ -26,10 +28,9 @@ int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00573110(CTentacl
   float afStack_c4 [12];
   CMatrix3x4f CStack_94;
   CMatrix3x4f CStack_64;
-  uint uStack_34;
-  float afStack_30 [4];
-  float fStack_20;
-  uint uStack_1c;
+  UOrientationVector UStack_34;
+  float fStack_28;
+  float afStack_24 [5];
   float fStack_10;
   
   bVar7 = 0;
@@ -73,19 +74,19 @@ int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00573110(CTentacl
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
   }
   core_xform_cpp_FUN_00592720(afStack_124);
-  afStack_30[2] = fStack_10;
-  afStack_30[(uint)bVar7 * -2 + 3] = afStack_30[(uint)bVar7 * -2 + 9];
-  afStack_30[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-       afStack_30[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
+  fStack_28 = fStack_10;
+  afStack_24[(uint)bVar7 * 0xfffffffe] = afStack_24[(uint)bVar7 * -2 + 6];
+  afStack_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+       afStack_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
   pCVar1 = (this_ptr->base).victim;
-  (pCVar1->base).location.position.x = afStack_30[2];
-  (pCVar1->base).location.position.y = afStack_30[3];
-  (pCVar1->base).location.position.z = fStack_20;
+  (pCVar1->base).location.position.x = fStack_28;
+  (pCVar1->base).location.position.y = afStack_24[0];
+  (pCVar1->base).location.position.z = afStack_24[1];
   core_xform_cpp_matrixToEulerAngles_FUN_00591de0(afStack_124);
-  uStack_34 = uStack_1c;
-  afStack_30[(uint)bVar7 * -2] = afStack_30[(uint)bVar7 * -2 + 6];
-  afStack_30[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-       afStack_30[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  core_charactr_cpp_FUN_00429d60((this_ptr->base).victim,&uStack_34);
+  UStack_34.vec.x = afStack_24[2];
+  *(float *)((int)&UStack_34 + (uint)bVar7 * -8 + 4) = afStack_24[(uint)bVar7 * -2 + 3];
+  *(float *)((int)&UStack_34 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+       afStack_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+  core_charactr_cpp_CCharacter_setOrientation_FUN_00429d60((this_ptr->base).victim,&UStack_34);
   return 1;
 }

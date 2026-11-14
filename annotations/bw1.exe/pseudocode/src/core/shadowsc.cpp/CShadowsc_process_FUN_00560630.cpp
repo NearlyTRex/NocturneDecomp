@@ -81,7 +81,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
   iStack_24 = pSVar6->state_index;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
   fStack_34 = (float)pSVar6->frame_count;
-  core_charactr_cpp_FUN_00434790(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790((CCharacter *)this_ptr,delta_time);
   core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,(this_ptr->base).pool_me == 1);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

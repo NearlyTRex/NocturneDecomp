@@ -2139,10 +2139,12 @@ joined_r0x0052b739:
                                                   }
                                                   if (_DAT_01ed6808 == 0) {
                                                     if (_DAT_01ed7014 != 0) {
-                                                      core_game_cpp_FUN_004ba490(g_CGamePtr);
-                                                      _DAT_01ed7014 = uVar14;
-                                                    }
-                                                    *piVar9 = 1;
+                                                                                                            
+                                                  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
+                                                            (g_CGamePtr);
+                                                  _DAT_01ed7014 = uVar14;
+                                                  }
+                                                  *piVar9 = 1;
                                                   }
                                                   }
                                                   else {
@@ -2229,10 +2231,12 @@ joined_r0x0052b739:
                                                   }
                                                   if (_DAT_01ed6808 == 0) {
                                                     if (_DAT_01ed7014 != 0) {
-                                                      core_game_cpp_FUN_004ba490(g_CGamePtr);
-                                                      _DAT_01ed7014 = 0;
-                                                    }
-                                                    *piVar9 = 0;
+                                                                                                            
+                                                  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
+                                                            (g_CGamePtr);
+                                                  _DAT_01ed7014 = 0;
+                                                  }
+                                                  *piVar9 = 0;
                                                   }
                                                   }
                                                   else {

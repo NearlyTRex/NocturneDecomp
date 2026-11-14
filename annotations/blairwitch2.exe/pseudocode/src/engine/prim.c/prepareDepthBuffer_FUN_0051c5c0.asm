@@ -12,9 +12,9 @@
 ;   core_zombie.cpp_FUN_0059a0b0 at 0059a3c0
 ;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a85b
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407fc0 at 00408221
-;   engine_prim.c_FUN_0051da80 at 0051dd99
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e2a2
 ;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd28
+;   engine_prim.c_renderScanlinePolygon_FUN_0051da80 at 0051dd99
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c38b50

@@ -48,7 +48,7 @@
 ;   core_fire.cpp_CBulletHole_init_FUN_00493a40
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;   core_fire.cpp_CSmokeParticle_init_FUN_00493510
-;   core_ground.cpp_FUN_004ca7c0
+;   core_ground.cpp_getGroundTypeCode_FUN_004ca7c0
 ;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
@@ -268,8 +268,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cf72
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x2                            ; 0049cf78
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049cf7a
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049cf7a
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049cf7f
     PUSH EAX                            ; 0049cf82
     PUSH 0x5d5772                       ; 0049cf83 | = "ric-%s!?.wav"
@@ -296,8 +296,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cfb6
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x5                            ; 0049cfbc
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049cfbe
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049cfbe
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049cfc3
     PUSH EAX                            ; 0049cfc6
     PUSH 0x5d577f                       ; 0049cfc7 | = "ric-%s!?.wav"
@@ -324,8 +324,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cffa
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x7                            ; 0049d000
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049d002
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049d002
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049d007
     PUSH EAX                            ; 0049d00a
     PUSH 0x5d578c                       ; 0049d00b | = "ric-%s!?.wav"
@@ -352,8 +352,8 @@ section .text
     JZ 0x0049cee3                       ; 0049d03a
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3                            ; 0049d040
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049d042
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049d042
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049d047
     PUSH EAX                            ; 0049d04a
     PUSH 0x5d5799                       ; 0049d04b | = "ric-%s.wav"

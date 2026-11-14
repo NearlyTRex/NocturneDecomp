@@ -46,7 +46,8 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(CDemonSet 
     _DAT_020af5bc = local_28;
     _DAT_020af5c0 = local_24;
   }
-  _DAT_020af5c4 = (float)engine_drender_cpp_FUN_00483bf0();
+  _DAT_020af5c4 =
+       engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00483bf0(DAT_00612560);
   local_14 = _DAT_020af5c4;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,

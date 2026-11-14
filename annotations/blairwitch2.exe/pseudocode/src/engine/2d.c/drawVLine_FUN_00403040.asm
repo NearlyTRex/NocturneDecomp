@@ -10,8 +10,8 @@
 ;
 ; XREF[6]:
 ;   engine_2d.c_drawRect_FUN_00403170 at 0040319d
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047e198
 ;   shape_edittool.cpp_FUN_0047a960 at 0047a984
-;   shape_edittool.cpp_FUN_0047dc40 at 0047e198
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ef8a
 ;   shape_edittool.cpp_FUN_00483ea0 at 00484059
 ;   shape_edittool.cpp_FUN_004840f0 at 00484224

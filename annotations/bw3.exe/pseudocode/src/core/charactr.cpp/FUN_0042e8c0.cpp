@@ -124,7 +124,7 @@ void core_charactr_cpp_FUN_0042e8c0(CCharacter *param_1,float param_2)
       sound_sndmain_cpp_killSfx_FUN_00556be0(param_1->sfx_handle);
       (*((param_1->base).vtable._ub)->playSound)
                 (&param_1->base,"?character-onfire-fallapart.wav" + 1);
-      core_charactr_cpp_FUN_004300e0(param_1,0,0xbf800000,1);
+      core_charactr_cpp_CCharacter_dismember_FUN_004300e0(param_1,(CVector3f *)0x0,-1.0,1);
     }
   }
   local_2c = 0;

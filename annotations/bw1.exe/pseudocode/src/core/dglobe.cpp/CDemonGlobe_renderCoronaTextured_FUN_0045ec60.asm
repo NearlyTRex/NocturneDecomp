@@ -16,7 +16,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_special.cpp_FUN_00580173
-;   engine_texture.cpp_FUN_00597a20
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00597a20
 ;
 ; *****************************************************************************
 
@@ -92,8 +92,8 @@ section .text
     JNZ 0x0045ec82                      ; 0045ed4e
         ;   XREF to: 0045ec82 (CONDITIONAL_JUMP)  ; LAB_0045ec82
     PUSH 0x611388                       ; 0045ed54
-    CALL engine_texture.cpp_FUN_00597a20 ; 0045ed59
-        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597a20()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 0045ed59
+        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00597a20(SMRGLTextureBasic * texture)
     XOR EBX,EBX                         ; 0045ed5e
     ADD ESP,0x4                         ; 0045ed60
     MOV EAX,dword ptr [EBX + 0x611688]  ; 0045ed63

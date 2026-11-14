@@ -99,8 +99,8 @@ section .text
     PUSH 0x80                           ; 0046a7eb
     PUSH 0x80                           ; 0046a7f0
     PUSH 0x80                           ; 0046a7f5
-    CALL cockpit_drawsurf.cpp_FUN_00467c80 ; 0046a7fa
-        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467c80(int red, int green, int blue)
+    CALL cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80 ; 0046a7fa
+        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0046a7ff
     LEA EAX,[ESP + 0x68]                ; 0046a802
     PUSH EAX                            ; 0046a806
@@ -320,8 +320,8 @@ section .text
     PUSH 0x0                            ; 0046aa50
     PUSH 0x0                            ; 0046aa52
     PUSH 0xff                           ; 0046aa54
-    CALL cockpit_drawsurf.cpp_FUN_00467c80 ; 0046aa59
-        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467c80(int red, int green, int blue)
+    CALL cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80 ; 0046aa59
+        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0046aa5e
     LEA EAX,[ESP + 0x28]                ; 0046aa61
     PUSH EAX                            ; 0046aa65
@@ -357,8 +357,8 @@ section .text
     PUSH 0xff                           ; 0046aab0
     PUSH 0x0                            ; 0046aab5
     PUSH 0x0                            ; 0046aab7
-    CALL cockpit_drawsurf.cpp_FUN_00467c80 ; 0046aab9
-        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467c80(int red, int green, int blue)
+    CALL cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80 ; 0046aab9
+        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0046aabe
     LEA EAX,[ESP + 0x8]                 ; 0046aac1
     PUSH EAX                            ; 0046aac5
@@ -415,8 +415,8 @@ section .text
     PUSH 0x80                           ; 0046ab56
     PUSH 0x80                           ; 0046ab5b
     PUSH 0x80                           ; 0046ab60
-    CALL cockpit_drawsurf.cpp_FUN_00467c80 ; 0046ab65
-        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467c80(int red, int green, int blue)
+    CALL cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80 ; 0046ab65
+        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0046ab6a
     LEA EAX,[ESP + 0x88]                ; 0046ab6d
     PUSH EAX                            ; 0046ab74
@@ -647,8 +647,8 @@ section .text
     PUSH 0x80                           ; 0046ae4c
     PUSH 0x80                           ; 0046ae51
     PUSH 0x80                           ; 0046ae56
-    CALL cockpit_drawsurf.cpp_FUN_00467c80 ; 0046ae5b
-        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00467c80(int red, int green, int blue)
+    CALL cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80 ; 0046ae5b
+        ;   XREF to: 00467c80 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColorRGB_FUN_00467c80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0046ae60
     LEA EAX,[ESP + 0x48]                ; 0046ae63
     PUSH EAX                            ; 0046ae67

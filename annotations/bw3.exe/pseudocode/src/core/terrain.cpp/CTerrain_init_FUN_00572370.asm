@@ -7,7 +7,7 @@
 ; CTerrain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00532b80 at 00532fe7
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00532fe7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_junk_jnk_005d6e04

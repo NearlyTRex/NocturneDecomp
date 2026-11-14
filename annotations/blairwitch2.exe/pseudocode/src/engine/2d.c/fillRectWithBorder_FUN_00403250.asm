@@ -17,10 +17,10 @@
 ;   core_menu.cpp_FUN_004eba50 at 004ebb9a
 ;   core_menu.cpp_FUN_004ebf10 at 004ecaab
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb90a
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004846b6
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047e16d
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a880
-;   shape_edittool.cpp_FUN_0047dc40 at 0047e16d
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ef69
-;   shape_edittool.cpp_FUN_00484440 at 004846b6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c35e60

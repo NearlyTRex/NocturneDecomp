@@ -7,6 +7,7 @@
 // =============================================================================
 // Auto-generated aggregate of all structs type definitions.
 
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SActorVarBlock.h"
 #include "types/structs/SArmAimData.h"
 #include "types/structs/SBitBuffer.h"

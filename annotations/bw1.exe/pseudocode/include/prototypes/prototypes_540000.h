@@ -110,7 +110,7 @@ void core_set_cpp_FUN_0054cf80(int param_1);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0054d370(CDemonSet *this_ptr);
-CDemonSet * core_set_cpp_FUN_0054d3c0(CDemonSet *param_1,char *param_2);
+void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *this_ptr,float frustum_param,int render_mode);
 void core_set_cpp_FUN_0054e6a0(void);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr);

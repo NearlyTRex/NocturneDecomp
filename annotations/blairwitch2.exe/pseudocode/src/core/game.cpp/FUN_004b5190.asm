@@ -808,32 +808,32 @@ section .text
         ;   XREF to: 004b5a56 (CONDITIONAL_JUMP)  ; LAB_004b5a56
     PUSH 0x400                          ; 004b59e1
     CALL engine_special.cpp_FUN_005601a0 ; 004b59e6
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b59eb
     PUSH EAX                            ; 004b59ee
     PUSH 0x200                          ; 004b59ef
     CALL engine_special.cpp_FUN_005601a0 ; 004b59f4
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b59f9
     PUSH EAX                            ; 004b59fc
     PUSH 0x100                          ; 004b59fd
     CALL engine_special.cpp_FUN_005601a0 ; 004b5a02
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a07
     PUSH EAX                            ; 004b5a0a
     PUSH 0x80                           ; 004b5a0b
     CALL engine_special.cpp_FUN_005601a0 ; 004b5a10
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a15
     PUSH EAX                            ; 004b5a18
     PUSH 0x40                           ; 004b5a19
     CALL engine_special.cpp_FUN_005601a0 ; 004b5a1b
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a20
     PUSH EAX                            ; 004b5a23
     PUSH 0x20                           ; 004b5a24
     CALL engine_special.cpp_FUN_005601a0 ; 004b5a26
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005601a0()
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a2b
     PUSH EAX                            ; 004b5a2e
     PUSH 0x5d7603                       ; 004b5a2f | = "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d"

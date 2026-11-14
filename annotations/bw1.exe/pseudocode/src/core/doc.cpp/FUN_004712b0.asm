@@ -81,8 +81,8 @@
 ;   core_motion.cpp_FUN_00524a40
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
 ;   core_setcolid.cpp_FUN_005562c0
-;   core_setcolid.cpp_FUN_00558450
 ;   shape_edittool.cpp_FUN_00494340
 ;
 ; *****************************************************************************
@@ -479,8 +479,8 @@ section .text
     MOV EDX,dword ptr [0x00622c18]      ; 00471758 | g_CDemonSetPtr
     PUSH dword ptr [ESP + 0x74]         ; 0047175e
     PUSH EDX                            ; 00471762 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00558450 ; 00471763
-        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00558450()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 ; 00471763
+        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x124],EAX     ; 00471768
     FLD float ptr [ESP + 0x124]         ; 0047176f
     FLD1                                ; 00471776

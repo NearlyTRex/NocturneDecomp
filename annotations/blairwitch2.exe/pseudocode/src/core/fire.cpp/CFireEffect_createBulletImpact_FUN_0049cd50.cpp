@@ -101,7 +101,7 @@ LAB_0049ce50:
   case 8:
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.16666667);
     if (iVar1 != 0) {
-      core_ground_cpp_FUN_004ca7c0(2);
+      core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(GROUND_TYPE_CONCRETE);
       _sprintf(acStack_70,"ric-%s!?.wav");
       if (acStack_70[0] == '\0') {
         return;
@@ -113,7 +113,7 @@ LAB_0049ce50:
   case 4:
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.16666667);
     if (iVar1 != 0) {
-      core_ground_cpp_FUN_004ca7c0(3);
+      core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(GROUND_TYPE_DIRT);
       _sprintf(acStack_70,"ric-%s.wav");
       if (acStack_70[0] == '\0') {
         return;
@@ -124,7 +124,7 @@ LAB_0049ce50:
   case 5:
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.16666667);
     if (iVar1 != 0) {
-      core_ground_cpp_FUN_004ca7c0(5);
+      core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(GROUND_TYPE_METAL);
       _sprintf(acStack_70,"ric-%s!?.wav");
       if (acStack_70[0] == '\0') {
         return;
@@ -135,7 +135,7 @@ LAB_0049ce50:
   case 7:
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.16666667);
     if (iVar1 != 0) {
-      core_ground_cpp_FUN_004ca7c0(7);
+      core_ground_cpp_getGroundTypeCode_FUN_004ca7c0(GROUND_TYPE_WOOD);
       _sprintf(acStack_70,"ric-%s!?.wav");
       if (acStack_70[0] == '\0') {
         return;

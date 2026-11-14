@@ -14,6 +14,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
   float fVar1;
   int iVar2;
   int iVar3;
+  SMotion *pSVar4;
   float local_b0;
   float local_ac;
   char local_a8 [100];
@@ -38,17 +39,17 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
     local_b0 = *delta_time;
     iVar2 = 0;
     if (this_ptr->tween_progress < 0.0) {
-      iVar2 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0
-                        (this_ptr,(int *)this_ptr->current_motion_index,
-                         (float *)this_ptr->current_frame_number,(float)&local_b0,(float)&local_44);
+      iVar2 = core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00503bd0
+                        (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                         &local_b0,&local_44);
       switch(local_44.cmd) {
       case MOTION_CMD_JUMP:
       case MOTION_CMD_WAIT_EXIT:
         this_ptr->current_motion_index = local_44.to_motion_number;
         this_ptr->current_frame_number = local_44.to_frame_number;
         if (local_44.set_new_state_as_desired != 0) {
-          iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
-          this_ptr->state_index = *(int *)(iVar3 + 0x24);
+          pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+          this_ptr->state_index = pSVar4->state_index;
         }
         break;
       case MOTION_CMD_TWEEN:
@@ -107,11 +108,11 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
 switchD_005031c9_caseD_3:
     if (local_1c != 0) {
 LAB_005031da:
-      iVar2 = core_motion_cpp_FUN_00503a10
+      iVar2 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10
                         (this_ptr,local_28,local_20,local_b0,this_ptr->tween_progress);
     }
     if ((local_14 != 0) &&
-       (iVar3 = core_motion_cpp_FUN_00503a10
+       (iVar3 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10
                           (this_ptr,local_24,local_2c,local_b0,1.0 - this_ptr->tween_progress),
        iVar2 == 0)) {
       iVar2 = iVar3;
@@ -122,8 +123,8 @@ LAB_005031da:
       if (((float)_DAT_005dfc38 < fVar1) &&
          (core_motion_cpp_CMotionController_reverseTransition_FUN_00503560(this_ptr),
          this_ptr->tween_set_new_state != 0)) {
-        iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
-        this_ptr->state_index = *(int *)(iVar3 + 0x24);
+        pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+        this_ptr->state_index = pSVar4->state_index;
       }
     }
     else {

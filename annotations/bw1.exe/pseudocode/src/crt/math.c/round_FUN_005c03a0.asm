@@ -12,8 +12,8 @@
 ; XREF[212]:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900 at 00439adc
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_00439ca0 at 00439e0f
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20 at 0047fb4b
 ;   cockpit_drawsurf.cpp_FUN_0047ef60 at 0047ef98
-;   cockpit_drawsurf.cpp_FUN_0047fb20 at 0047fb4b
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a24f
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60 at 0040ccbd
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 00410260

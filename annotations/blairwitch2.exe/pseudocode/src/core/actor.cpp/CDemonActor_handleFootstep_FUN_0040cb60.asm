@@ -33,7 +33,7 @@
 ;   core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600
 ;   core_gore.cpp_CGore_createFootstep_FUN_004c9d00
 ;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80
-;   core_ground.cpp_FUN_004ca7c0
+;   core_ground.cpp_getGroundTypeCode_FUN_004ca7c0
 ;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00538180
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -235,8 +235,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xe4]      ; 0040cd9f
     FSTP double ptr [ESP]               ; 0040cda6
     PUSH EDX                            ; 0040cda9
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0040cdaa
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0040cdaa
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0040cdaf
     PUSH EAX                            ; 0040cdb2
     PUSH 0x5caeff                       ; 0040cdb3 | = "footstep%s0?"

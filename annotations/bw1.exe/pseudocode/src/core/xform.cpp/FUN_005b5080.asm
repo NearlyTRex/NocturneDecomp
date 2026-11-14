@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c2ba
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_00424e20 at 00424e75
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 0042418b
-;   core_bugs.cpp_FUN_00426ec0 at 0042710b
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00426ec0 at 0042710b
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0 at 0042a6c4
 ;   ... and 51 more
 ;

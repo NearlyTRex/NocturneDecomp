@@ -90,8 +90,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 44
     - [alt_frame_pointer] at 0040908a: MOV ESI,ESP
 
-  core_actor.cpp_FUN_004091b0
-    File: core/actor.cpp, Suspects: 76
+  core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0
+    File: core/actor.cpp, Suspects: 21
     - [stack_alignment] at 004091bc: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409980
@@ -103,7 +103,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00409db9: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60
-    File: core/actor.cpp, Suspects: 47
+    File: core/actor.cpp, Suspects: 62
     - [stack_alignment] at 00409f6c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b7a0
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 29.2 suspects/function
-  Without stack patterns: avg 6.9 suspects/function
+  With stack patterns:    avg 27.9 suspects/function
+  Without stack patterns: avg 6.6 suspects/function

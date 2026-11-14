@@ -27,8 +27,8 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760
-;   core_dmodel.cpp_FUN_0044ea80
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_stdio.c_fread_FUN_005b87c0
@@ -119,8 +119,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0044ded9
     PUSH EBP                            ; 0044dedd
     PUSH EBX                            ; 0044dede
-    CALL core_dmodel.cpp_FUN_0044ea80   ; 0044dedf
-        ;   XREF to: 0044ea80 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044ea80()
+    CALL core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80 ; 0044dedf
+        ;   XREF to: 0044ea80 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, ...)
     MOV EDI,dword ptr [EBX + 0x104]     ; 0044dee4
     IMUL EDI,dword ptr [EBX + 0x100]    ; 0044deea
     ADD ESP,0x18                        ; 0044def1

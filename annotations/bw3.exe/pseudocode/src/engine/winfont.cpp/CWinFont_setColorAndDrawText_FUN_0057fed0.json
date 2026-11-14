@@ -1,0 +1,336 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 228,
+    "complexity_score": 263,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 341
+  },
+  "cross_references": [
+    {
+      "addr": "0057fe80",
+      "from_addr": "0057febd",
+      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_0057fe80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057fed0",
+    "address_range": [
+      [
+        "0057fed0",
+        "0058010c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_0057fed0",
+    "signature": "void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000013",
+      "is_variadic": false,
+      "name": "SetTextColor"
+    },
+    {
+      "addr": "EXTERNAL:00000014",
+      "is_variadic": false,
+      "name": "TextOutA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3430",
+      "name": "PTR_SetTextColor_005b3430",
+      "type": "void*",
+      "value": "001b389e"
+    },
+    {
+      "addr": "005b3434",
+      "name": "PTR_TextOutA_005b3434",
+      "type": "void*",
+      "value": "001b38ae"
+    },
+    {
+      "addr": "005fba18",
+      "name": "DAT_005fba18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba1c",
+      "name": "DAT_005fba1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5faec",
+      "name": "DAT_01c5faec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057febd",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_drawText_FUN_0057fe80",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.038674033149171,
+    "instruction_count": 181,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 6,
+      "BRANCH": 5,
+      "CALLIND": 4,
+      "CBRANCH": 23,
+      "COPY": 139,
+      "INT_ADD": 89,
+      "INT_AND": 129,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 117,
+      "INT_LEFT": 2,
+      "INT_LESS": 20,
+      "INT_MULT": 7,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 5,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 6,
+      "INT_SLESS": 58,
+      "INT_SUB": 45,
+      "INT_XOR": 6,
+      "INT_ZEXT": 1,
+      "LOAD": 65,
+      "POPCOUNT": 56,
+      "RETURN": 1,
+      "STORE": 38,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 912
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058e110",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6792
+    },
+    "bw1.exe": {
+      "addr": "005b1c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f2440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5202
+    },
+    "nocturne.exe": {
+      "addr": "005580b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5202
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
+      {
+        "is_param": true,
+        "name": "device_context",
+        "offset": 8,
+        "size": 4,
+        "type": "HDC"
+      },
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "foreground_color",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "background_color",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "if (this_ptr->right + x < DAT_005fba18) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "iVar2 = DAT_005fba18 - x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if (this_ptr->top + y < DAT_005fba1c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "iStack_2c = DAT_005fba1c - y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 == 0x10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "puVar6 = (ushort *)(x * 2 + *(int *)(&DAT_01c5faec + iVar3 * 4));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(short *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "if (*(short *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar4) * 2) !=",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if ((-1 < iVar3) && (iVar3 < DAT_005fba1c)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "piVar7 = (int *)(*(int *)(&DAT_01c5faec + iVar3 * 4) + x * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)this_ptr->ppv_bits + (iStack_1c * this_ptr->right + iVar4) * 4) !=",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 39,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

@@ -48,7 +48,7 @@ LAB_00528ec5:
     }
 LAB_00528e73:
     if (_DAT_01ed7014 != 0) {
-      core_game_cpp_FUN_004ba490(g_CGamePtr);
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
       _DAT_01ed7014 = 0;
     }
     this_ptr_00 = (CCharacter *)this_ptr->who_is_speaking;

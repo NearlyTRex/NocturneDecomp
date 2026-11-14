@@ -15,14 +15,13 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
   CNetGame *this_ptr;
   int iVar2;
   uint uVar3;
-  uint uVar4;
-  int iVar5;
-  char *pcVar6;
-  uint *puVar7;
+  int iVar4;
+  char *pcVar5;
+  uint *puVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  char *pcVar10;
-  byte bVar11;
+  char *pcVar9;
+  byte bVar10;
   int aiStackY_1074 [579];
   CVector3i *input_ptr;
   int iStack_728;
@@ -57,7 +56,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
   int iStack_1c;
   int iStack_18;
   
-  bVar11 = 0;
+  bVar10 = 0;
   local_44 = 0;
   if (param_1->profile_mode != 0) {
     local_48 = wincore_winrun_cpp_getTime_FUN_005b2420();
@@ -105,16 +104,16 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         core_dcamera_cpp_FUN_0044dd70(&g_CDemonCameraInstance,_DAT_01c4353c,_DAT_01c43540);
         input_ptr = &CStack_8c;
         CStack_8c.x = iStack_68;
-        *(int *)((int)&CStack_8c + (uint)bVar11 * -8 + 4) = aiStack_64[(uint)bVar11 * -2];
-        *(int *)((int)&CStack_8c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-             aiStack_64[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+        *(int *)((int)&CStack_8c + (uint)bVar10 * -8 + 4) = aiStack_64[(uint)bVar10 * -2];
+        *(int *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             aiStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044de40
                   (&g_CDemonCameraInstance,input_ptr,&CStack_80);
         CStack_8c.x = CStack_80.x;
-        *(uint *)((int)&CStack_8c + (uint)bVar11 * -8 + 4) =
-             *(uint *)((int)&CStack_80 + (uint)bVar11 * -8 + 4);
-        *(uint *)((int)&CStack_8c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-             *(uint *)((int)&CStack_80 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+        *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4) =
+             *(uint *)((int)&CStack_80 + (uint)bVar10 * -8 + 4);
+        *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             *(uint *)((int)&CStack_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         fStack_74 = (float)CStack_8c.x * _DAT_00600f74;
         fStack_70 = (float)CStack_8c.y * _DAT_00600f74;
         fStack_6c = (float)CStack_8c.z * _DAT_00600f74;
@@ -123,7 +122,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         DAT_01c43544 = DAT_01c43544 & 0xfe;
       }
     }
-    core_game_cpp_FUN_004cbf20(param_1);
+    core_game_cpp_CGame_updateDT_FUN_004cbf20(param_1);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(g_CNetGamePtr);
     if (((g_CFieldNotesPtr->is_displayed == 0) && (param_1->goggles_active == 0)) &&
        (DAT_007c3978 == (int *)0x0)) {
@@ -137,7 +136,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
       ;
     }
     if (param_1->skip_frame_render == 0) {
-      engine_special_cpp_FUN_00581f50();
+      engine_special_cpp_lockFrame_FUN_00581f50();
       if (g_CFieldNotesPtr->is_displayed == 0) {
         if (DAT_007c3978 == (int *)0x0) {
           if (param_1->goggles_active == 0) {
@@ -157,8 +156,8 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         core_fldnotes_cpp_CFieldNotes_draw_FUN_004be0f0(g_CFieldNotesPtr);
       }
       if (((param_1->developer_mode_enabled != 0) ||
-          (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))
-         && (iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x3e), iVar2 != 0)) {
+          (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
+         (iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x3e), iVar2 != 0)) {
         _DAT_01ccfe94 = _DAT_01ccfe94 + 1;
         _sprintf((char *)0x1ccfe98,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_00535d80((char *)0x1ccfe98);
@@ -197,37 +196,37 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
                       iStack_2c = (iStack_34 * DAT_0061b498) / 0x00000040;
                       iStack_24 = ((iStack_34 + 1) * DAT_0061b498) / 0x00000040;
                       iVar2 = (iStack_3c * DAT_0061b49c) / 0x00000040;
-                      iVar5 = (iStack_40 * DAT_0061b49c) / 0x00000040;
+                      iVar4 = (iStack_40 * DAT_0061b49c) / 0x00000040;
                       iStack_1c = 0;
                       iStack_20 = 0;
+                      iVar7 = 0;
                       iVar8 = 0;
-                      iVar9 = 0;
-                      if (iVar2 < iVar5) {
+                      if (iVar2 < iVar4) {
                         iStack_28 = iVar2 << 2;
-                        iStack_30 = iVar5 << 2;
+                        iStack_30 = iVar4 << 2;
                         do {
                           if (iStack_2c < iStack_24) {
-                            puVar7 = (uint *)(iStack_2c * 4 + *(int *)(&DAT_01c4354c + iStack_28));
+                            puVar6 = (uint *)(iStack_2c * 4 + *(int *)(&DAT_01c4354c + iStack_28));
                             iVar2 = iStack_2c;
                             do {
-                              uVar4 = *puVar7;
-                              puVar7 = puVar7 + 1;
-                              iStack_20 = iStack_20 + (uVar4 >> 0x10 & 0xff);
+                              uVar3 = *puVar6;
+                              puVar6 = puVar6 + 1;
+                              iStack_20 = iStack_20 + (uVar3 >> 0x10 & 0xff);
                               iVar2 = iVar2 + 1;
-                              iVar8 = iVar8 + (uVar4 & 0xff);
+                              iVar7 = iVar7 + (uVar3 & 0xff);
                               iStack_1c = iStack_1c + 1;
-                              iVar9 = iVar9 + (uVar4 >> 8 & 0xff);
+                              iVar8 = iVar8 + (uVar3 >> 8 & 0xff);
                             } while (iVar2 < iStack_24);
                           }
                           iStack_28 = iStack_28 + 4;
                         } while (iStack_28 < iStack_30);
                       }
                       iStack_20 = iStack_20 / iStack_1c;
-                      iVar9 = iVar9 / iStack_1c;
                       iVar8 = iVar8 / iStack_1c;
+                      iVar7 = iVar7 / iStack_1c;
                       _fputc(iStack_20,p_Stack_38);
-                      _fputc(iVar9,p_Stack_38);
                       _fputc(iVar8,p_Stack_38);
+                      _fputc(iVar7,p_Stack_38);
                       iStack_34 = iStack_34 + 1;
                     } while (iStack_34 < 0x00000040);
                   }
@@ -282,23 +281,23 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(param_1->debug_info_string,0,DAT_0061b49c + -0x21);
         if (_DAT_02c83370 != 0) {
-          uVar3 = engine_special_cpp_FUN_00582bf0(0x400);
-          uVar3 = engine_special_cpp_FUN_00582bf0(0x200,uVar3);
-          uVar3 = engine_special_cpp_FUN_00582bf0(0x100,uVar3);
-          uVar3 = engine_special_cpp_FUN_00582bf0(0x80,uVar3);
-          uVar3 = engine_special_cpp_FUN_00582bf0(0x40,uVar3);
-          engine_special_cpp_FUN_00582bf0(0x20,uVar3);
+          engine_special_cpp_FUN_00582bf0(0x400);
+          engine_special_cpp_FUN_00582bf0(0x200);
+          engine_special_cpp_FUN_00582bf0(0x100);
+          engine_special_cpp_FUN_00582bf0(0x80);
+          engine_special_cpp_FUN_00582bf0(0x40);
+          engine_special_cpp_FUN_00582bf0(0x20);
           _sprintf(acStack_2d4,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,0x2c);
         }
       }
       if (_DAT_01cd0c48 != 0) {
-        uVar4 = sound_sndmain_cpp_getFirstActiveSfx_FUN_00573d20();
+        uVar3 = sound_sndmain_cpp_getFirstActiveSfx_FUN_00573d20();
         iVar2 = 0x37;
-        for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_getNextActiveSfx_FUN_00573d60(uVar4)) {
+        for (; uVar3 != 0; uVar3 = sound_sndmain_cpp_getNextActiveSfx_FUN_00573d60(uVar3)) {
           sound_sndmain_cpp_CSfxSample_init_FUN_00572340(&CStack_724);
-          iVar5 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00573620(uVar4,&CStack_724);
-          if (iVar5 != 0) {
+          iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00573620(uVar3,&CStack_724);
+          if (iVar4 != 0) {
             engine_2d_c_drawTextXY_FUN_00402140(0,iVar2,(char *)&CStack_724);
             iVar2 = iVar2 + 0xb;
           }
@@ -319,17 +318,17 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
       iVar2 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
       iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x10c))(iVar2);
       if (iVar2 == 2) {
-        pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
+        pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("You're dead.  Game over.");
-        pcVar10 = acStack_3d4;
+        pcVar9 = acStack_3d4;
         do {
-          cVar1 = *pcVar6;
-          *pcVar10 = cVar1;
+          cVar1 = *pcVar5;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pcVar10[1] = cVar1;
-          pcVar10 = pcVar10 + 2;
+          cVar1 = pcVar5[1];
+          pcVar5 = pcVar5 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
       if (param_1->show_customizable_keys != 0) {
@@ -342,18 +341,18 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(&g_CPickList);
       }
       if (param_1->is_paused != 0) {
-        shape_edittool_cpp_FUN_00497870(g_CEditorToolsPtr,0);
+        shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00497870(g_CEditorToolsPtr,0);
       }
       if ((param_1->game_control == CONTROL_MODE_POINT_AND_CLICK) &&
          (core_event_cpp_CEventList_executeCommands_FUN_004a1b70
                     (0x01C51D80,"MouseControlMode"), -1 < _DAT_01cd0b40)) {
-        core_game_cpp_FUN_004dc1a0(param_1);
+        core_game_cpp_drawCursor_FUN_004dc1a0();
       }
-      uVar4 = param_1->goggles_active | param_1->special_view_active;
-      if ((uVar4 == 0) && (_DAT_01cd0c5c != 0)) {
+      uVar3 = param_1->goggles_active | param_1->special_view_active;
+      if ((uVar3 == 0) && (_DAT_01cd0c5c != 0)) {
         engine_special_cpp_clearScreen_FUN_0057dc40();
       }
-      _DAT_01cd0c5c = uVar4;
+      _DAT_01cd0c5c = uVar3;
       engine_special_cpp_unlockFrame_FUN_00581fa0(0);
     }
     if (local_44 != 0) {
@@ -366,7 +365,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
     core_netgame_cpp_CNetGame_processClientFrame_FUN_00530340(this_ptr);
     core_game_cpp_CGame_process_FUN_004d8060(param_1);
     if (param_1->cinematic_skip_in_progress == 0) {
-      core_game_cpp_FUN_004cbf20(param_1);
+      core_game_cpp_CGame_updateDT_FUN_004cbf20(param_1);
     }
     else {
       core_game_cpp_CGame_slamDT_FUN_004d7f50(param_1,0.25);

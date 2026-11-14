@@ -201,7 +201,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
         local_18 = local_18 + 1;
       } while (local_18 < _DAT_0149d6d8);
     }
-    support_codec_cpp_FUN_00441290(&local_a8,&local_5c);
+    support_codec_cpp_CLZWCompress_finalize_FUN_00441290(&local_a8,&local_5c.base);
     support_codec_cpp_CLZWDictionary_dtor_FUN_00440bf0(&local_a8.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_00440810(&local_a8.base,1);
   }

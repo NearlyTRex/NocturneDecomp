@@ -26,7 +26,7 @@
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0
 ;   core_mimic.cpp_CMimic_updatePose_FUN_004f0a50
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -143,8 +143,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f09d0
     ADD EAX,0x2b4                       ; 004f09d7
     PUSH EAX                            ; 004f09dc
-    CALL core_motion.cpp_FUN_005035c0   ; 004f09dd
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f09dd
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004f09e2
     ADD ESP,0x4                         ; 004f09e5
     CMP EAX,0x3                         ; 004f09e8

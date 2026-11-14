@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0 at 00428630
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 0045080b
 ;   core_doc.cpp_FUN_0045bdc0 at 0045beb8
-;   core_event.cpp_FUN_00489670 at 0048d2d8
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048d2d8
 ;   ... and 19 more
 ;
 ; *****************************************************************************

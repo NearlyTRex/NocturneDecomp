@@ -10,7 +10,7 @@
 ;   core_colonel.cpp_factoryFuncColonel_FUN_004355e0 at 004355f3
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_colonel.cpp_CColonel_ctor_FUN_00435610
     MOV EDX,dword ptr [ESP + 0x8]       ; 00435611
     PUSH EDX                            ; 00435615
-    CALL core_hero.cpp_FUN_004ce240     ; 00435616
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 00435616
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     MOV EBX,EAX                         ; 0043561b
     ADD EAX,0x2b4                       ; 0043561d
     ADD ESP,0x4                         ; 00435622

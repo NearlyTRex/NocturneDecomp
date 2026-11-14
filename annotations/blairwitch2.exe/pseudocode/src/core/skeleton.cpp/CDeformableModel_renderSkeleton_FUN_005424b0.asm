@@ -190,7 +190,7 @@ section .text
     PUSH 0x3f000000                     ; 00542676
     PUSH ESI                            ; 0054267b
     CALL shape_edittool.cpp_FUN_0047fd00 ; 0054267c
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fd00()
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00542681
     MOV EDI,dword ptr [0x0060b280]      ; 00542684 | DAT_0060b280
     PUSH EDI                            ; 0054268a

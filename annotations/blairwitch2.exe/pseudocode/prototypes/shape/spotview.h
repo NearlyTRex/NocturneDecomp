@@ -17,14 +17,14 @@ CSpotView * __cdecl CSpotView::ctor(CSpotView *this_ptr);
 // Address: 005619a0
 void __cdecl CSpotView::reset(CSpotView *this_ptr,uint control_flags);
 
-// Original: shape_spotview.cpp_FUN_005619f0
+// Original: shape_spotview.cpp_CSpotView_handleInput_FUN_005619f0
 // Address: 005619f0
-void FUN_005619f0(void);
+void __cdecl CSpotView::handleInput(CSpotView *this_ptr,uint control_flags);
 
 // Original: shape_spotview.cpp_CSpotView_clampValues_FUN_00561cd0
 // Address: 00561cd0
 void __cdecl CSpotView::clampValues(CSpotView *this_ptr);
 
-// Original: shape_spotview.cpp_FUN_00561d90
+// Original: shape_spotview.cpp_CSpotView_applyCamera_FUN_00561d90
 // Address: 00561d90
-void FUN_00561d90(int param_1);
+void __cdecl CSpotView::applyCamera(CSpotView *this_ptr);

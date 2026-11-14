@@ -365,7 +365,7 @@ LAB_0044ba02:
           this_ptr->simulate_me = 0;
         }
       }
-      core_curtain_cpp_FUN_0044ab20(this_ptr);
+      core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0044ab20(this_ptr);
     }
   }
   return;

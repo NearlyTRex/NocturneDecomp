@@ -53,7 +53,7 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
         }
       }
       if (_DAT_01ed7014 != 0) {
-        core_game_cpp_FUN_004ba490(g_CGamePtr);
+        core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
         _DAT_01ed7014 = 0;
       }
       this_ptr->next_cmd = local_10;

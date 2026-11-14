@@ -20,9 +20,9 @@
 ;   CloseHandle
 ;   CreateEventA
 ;   CreateThread
-;   crt_unknown.c_FUN_005acc88
 ;   crt_unknown.c_FUN_005adaec
 ;   crt_unknown.c_FUN_005adc24
+;   crt_unknown.c_IntegerToString_FUN_005acc88
 ;   GetCurrentThread
 ;   GetCurrentThreadId
 ;   WaitForSingleObject
@@ -74,8 +74,8 @@ section .text
     MOVSB ES:EDI,ESI                    ; 005b18a9 | DAT_005daf80
     CALL dword ptr CS:[0x5b3590]        ; 005b18aa | PTR_GetCurrentThreadId_005b3590
     PUSH EAX                            ; 005b18b1
-    CALL crt_unknown.c_FUN_005acc88     ; 005b18b2
-        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005acc88()
+    CALL crt_unknown.c_IntegerToString_FUN_005acc88 ; 005b18b2
+        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005acc88(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005b18b7
     MOV EAX,ESP                         ; 005b18ba
     PUSH EAX                            ; 005b18bc

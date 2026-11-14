@@ -109,7 +109,8 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
       *(float *)((int)&CStack_14c + (uint)bVar7 * -8 + 4) = afStack_dc[(uint)bVar7 * -2 + 6];
       *(float *)((int)&CStack_14c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            afStack_dc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-      fStack_14 = (float)core_setcolid_cpp_FUN_0053cff0(g_CDemonSetPtr,pCVar9,pCVar11);
+      fStack_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0
+                            (g_CDemonSetPtr,pCVar9,pCVar11);
       fStack_1c = fStack_14;
       if (fStack_14 < 0.0) {
         fStack_1c = 10.0;

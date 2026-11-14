@@ -12,7 +12,7 @@
 ;   core_necklace.cpp_FUN_005ade00 at 005ade14
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_0044e590
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dmodel.cpp_CKeyFramedModel_dtor_FUN_0044dcb0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0044dcb1
     PUSH EBX                            ; 0044dcb5
-    CALL core_dmodel.cpp_FUN_0044e590   ; 0044dcb6
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590 ; 0044dcb6
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0044dcbb
     MOV EAX,EBX                         ; 0044dcbe
     POP EBX                             ; 0044dcc0

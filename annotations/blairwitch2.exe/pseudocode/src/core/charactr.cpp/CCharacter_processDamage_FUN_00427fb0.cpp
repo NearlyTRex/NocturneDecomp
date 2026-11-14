@@ -48,7 +48,8 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0(CCharacter 
   if (EVar3 < DAMAGE_TYPE_ELECTROCUTE) {
     if (EVar3 < DAMAGE_TYPE_FALL_APART) {
       if (EVar3 == DAMAGE_TYPE_EXPLODE) {
-        core_charactr_cpp_FUN_00427260(this_ptr,impact_point,damage_info->impact_force);
+        core_charactr_cpp_CCharacter_explode_FUN_00427260
+                  (this_ptr,impact_point,damage_info->impact_force);
       }
       goto LAB_00428034;
     }

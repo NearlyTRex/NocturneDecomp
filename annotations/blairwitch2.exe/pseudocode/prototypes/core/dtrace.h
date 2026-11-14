@@ -63,15 +63,15 @@ void FUN_00472b50(undefined4 param_1,float *param_2,float *param_3);
 
 // Original: core_dtrace.cpp_FUN_00472c60
 // Address: 00472c60
-float FUN_00472c60(CDemonRaytrace *param_1,float *param_2,float *param_3,undefined4 *param_4,undefined4 *param_5);
+float FUN_00472c60(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
 
 // Original: core_dtrace.cpp_FUN_00473390
 // Address: 00473390
 int __cdecl FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 
-// Original: core_dtrace.cpp_FUN_004738d0
+// Original: core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0
 // Address: 004738d0
-float FUN_004738d0(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4);
+float __cdecl CDemonRaytrace::getGroundHeight(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20
 // Address: 00473b20

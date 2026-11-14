@@ -69,8 +69,8 @@
 ;   core_set.cpp_CDemonSet_clear_FUN_0052c090
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00538160
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610
+;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860
 ;   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00539ff0
-;   core_setdir.cpp_FUN_00539860
 ;   core_setutil.cpp_C3DSCamera_load_FUN_0053a8e0
 ;   core_setutil.cpp_C3DSCamera_loadPVS_FUN_0053ac70
 ;   core_setutil.cpp_C3DSLight_load_FUN_0053af30
@@ -1078,8 +1078,8 @@ section .text
     PUSH EAX                            ; 0052cc2d
     MOV EDI,dword ptr [EBP + 0x14]      ; 0052cc2e
     PUSH EDI                            ; 0052cc31
-    CALL core_setdir.cpp_FUN_00539860   ; 0052cc32
-        ;   XREF to: 00539860 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00539860()
+    CALL core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860 ; 0052cc32
+        ;   XREF to: 00539860 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860(CDemonSet * this_ptr, char * filename)
     MOV EDX,dword ptr [EDI + 0x15aca4]  ; 0052cc37
     ADD ESP,0x8                         ; 0052cc3d
     TEST EDX,EDX                        ; 0052cc40

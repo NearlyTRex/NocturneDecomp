@@ -21,8 +21,8 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -53,8 +53,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 004e1171
     PUSH ESI                            ; 004e1177
     MOV dword ptr [EBX + 0x25a8],0x0    ; 004e1178
-    CALL core_motion.cpp_FUN_005035c0   ; 004e1182
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004e1182
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004e1187
     ADD ESP,0x4                         ; 004e118a
     CMP EAX,0x5                         ; 004e118d

@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_actor.cpp_FUN_004091b0 at 004091ef
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0 at 004091ef
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 at 0053e143
 ;   core_setcolid.cpp_FUN_0053bc80 at 0053bfb7
-;   core_setcolid.cpp_FUN_0053de10 at 0053e143
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00

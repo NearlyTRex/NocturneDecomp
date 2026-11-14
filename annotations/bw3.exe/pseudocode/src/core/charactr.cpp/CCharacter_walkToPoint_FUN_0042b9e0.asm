@@ -79,8 +79,8 @@
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426e88
 ;   core_carved.cpp_FUN_00427bc0 at 0042801a
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 004317aa
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0 at 0043353f
 ;   core_charactr.cpp_FUN_004310e0 at 0043140c
-;   core_charactr.cpp_FUN_004333e0 at 0043353f
 ;   core_charactr.cpp_FUN_00434190 at 00434212
 ;   ... and 25 more
 ;

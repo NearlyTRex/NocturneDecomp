@@ -17,7 +17,7 @@ CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CPrye *)core_hero_cpp_FUN_004d2620(this_ptr,1);
+  pCVar1 = (CPrye *)core_hero_cpp_CHero_dtor_FUN_004d2620(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

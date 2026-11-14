@@ -1026,7 +1026,7 @@ LAB_004296f2:
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
               ((CCharacter *)this_ptr,iVar7,iVar12,fVar10);
-    core_charactr_cpp_FUN_00430960();
+    core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
   }
   iVar7 = iStack_54;
   iVar12 = core_carved_cpp_FUN_0042b290(this_ptr);

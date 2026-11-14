@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_texture.cpp_FUN_00597a20 at 00597a6f
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 at 00597a6f
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000

@@ -17,7 +17,8 @@ void cockpit_drawsurf_cpp_FUN_0047f9c0(CDrawSurface *param_1,int param_2,int par
   uVar1 = _DAT_00612550;
   _DAT_00612550 = 1;
   _DAT_00612554 = 0;
-  cockpit_drawsurf_cpp_FUN_0047fb20(param_1,param_2,param_3,param_4,param_5);
+  cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20
+            (param_1,param_2,param_3,param_4,param_5);
   _DAT_00612550 = uVar1;
   _DAT_00612554 = unaff_retaddr;
   return;

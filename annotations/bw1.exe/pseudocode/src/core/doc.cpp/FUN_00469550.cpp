@@ -39,7 +39,7 @@ void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2)
   CBoundingBox3D *in_stack_fffffb18;
   ulonglong uVar22;
   CVector3f *pCVar23;
-  UOrientationVector *user_orientation;
+  UOrientationVector *pUVar24;
   double in_stack_fffffb20;
   float fStack_498;
   float fStack_494;
@@ -76,8 +76,9 @@ void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2)
   float fStack_348;
   float fStack_344;
   uint uStack_32c;
-  float afStack_328 [5];
-  float fStack_314;
+  float fStack_328;
+  UOrientationVector UStack_324;
+  float afStack_318 [9];
   float fStack_2f4;
   float afStack_2f0 [4];
   float fStack_2e0;
@@ -205,9 +206,9 @@ void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2)
     afStack_128[3] = fStack_17c * _DAT_005d9d74;
     fStack_118 = fStack_178 * _DAT_005d9d74;
     fStack_114 = fStack_174 * _DAT_005d9d74;
-    fStack_314 = fStack_17c * _DAT_005d9d74;
-    afStack_328[(uint)bVar21 * -2 + 6] = afStack_128[(uint)bVar21 * -2 + 4];
-    afStack_328[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 7] =
+    afStack_318[1] = fStack_17c * _DAT_005d9d74;
+    afStack_318[(uint)bVar21 * -2 + 2] = afStack_128[(uint)bVar21 * -2 + 4];
+    afStack_318[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 3] =
          afStack_128[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 5];
     core_actor_cpp_FUN_00408b40((param_1->base).base.carry_hands[1].carry_actor);
     fStack_398 = afStack_368[0];
@@ -215,10 +216,10 @@ void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2)
     afStack_394[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1] =
          afStack_368[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 2];
     core_actor_cpp_FUN_00408bb0(param_1);
-    afStack_1d0[3] = afStack_328[2];
-    afStack_1d0[(uint)bVar21 * -2 + 4] = afStack_328[(uint)bVar21 * -2 + 3];
+    afStack_1d0[3] = UStack_324.vec.y;
+    afStack_1d0[(uint)bVar21 * -2 + 4] = afStack_318[(uint)bVar21 * -2 + -1];
     afStack_1d0[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 5] =
-         afStack_328[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 4];
+         afStack_318[(uint)bVar21 * -2 + (uint)bVar21 * -2];
     if (&param_1->carry_object_world_center != (CVector3f *)(afStack_1d0 + 3)) {
       (param_1->carry_object_world_center).x = afStack_1d0[3];
       (param_1->carry_object_world_center).y = afStack_1d0[4];
@@ -226,7 +227,7 @@ void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2)
     }
   }
   core_game_cpp_CGame_slamDT_FUN_004d7f50(g_CGamePtr,param_2);
-  core_charactr_cpp_FUN_00434790(param_1);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790((CCharacter *)param_1,param_2);
   fVar11 = (param_1->base).invincibility_timer - param_2;
   (param_1->base).invincibility_timer = fVar11;
   if (fVar11 < 0.0) {
@@ -660,10 +661,12 @@ LAB_0046b2fb:
                 if (fStack_38 < SStack_484.damage_amount) {
                   SStack_484.damage_amount = fStack_38;
                 }
-                in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(&(param_1->base).base.base.orient,param_1));
+                pUVar24 = &(param_1->base).base.base.orient;
+                in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(pUVar24,param_1));
                 (param_1->base).base.base.orient.vec.y =
                      (param_1->base).base.base.orient.vec.y + SStack_484.damage_amount;
-                core_charactr_cpp_FUN_00433d50();
+                core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50
+                          ((CCharacter *)param_1,pUVar24);
                 goto LAB_00469e25;
               }
             }
@@ -703,7 +706,8 @@ LAB_0046b2fb:
             }
             (param_1->base).base.base.orient.vec.y =
                  (param_1->base).base.base.orient.vec.y + fStack_24;
-            core_charactr_cpp_FUN_00433d50(param_1);
+            core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50
+                      ((CCharacter *)param_1,&(param_1->base).base.base.orient);
           }
           pCStack_68 = (CCharacter *)(param_1->base).base.grabbed_by;
           pCVar8 = (pCStack_68->base).vtable._uc;
@@ -780,13 +784,13 @@ LAB_0046b2fb:
           }
           UStack_1ec.vec.x =
                core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(UStack_1ec.vec.x + fStack_30);
-          user_orientation = &UStack_1ec;
+          pUVar24 = &UStack_1ec;
           pCVar13 = (param_1->base).nearby_interactive_actor;
           pCVar2 = &(param_1->base).base.model;
           iVar15 = (*((pCVar13->vtable)._ub)->updateInteraction)
-                             (pCVar13,user_orientation,&(param_1->base).player_input);
+                             (pCVar13,pUVar24,&(param_1->base).player_input);
           if (iVar15 == 0) {
-            in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46af43,user_orientation));
+            in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46af43,pUVar24));
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0,1);
             core_hero_cpp_CHero_stopNearbyInteraction_FUN_004ebe80(&param_1->base);
           }
@@ -806,15 +810,17 @@ LAB_0046b2fb:
             else {
               iVar15 = 6;
             }
-            in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46ad64,user_orientation));
+            in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46ad64,pUVar24));
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,iVar15,1);
             fVar11 = SStack_484.gore_multiplier;
             pfVar16 = (float *)((int)param_1 + (uint)bVar21 * -8 + 0x34);
-            afStack_328[1] = (param_1->base).base.base.orient.vec.x;
-            afStack_328[(uint)bVar21 * -2 + 2] = *pfVar16;
-            afStack_328[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 3] = pfVar16[(uint)bVar21 * -2 + 1];
-            afStack_328[2] = fVar11 * param_1->interact_blend + afStack_328[2];
-            core_charactr_cpp_FUN_00433d50();
+            UStack_324.vec.x = (param_1->base).base.base.orient.vec.x;
+            afStack_318[(uint)bVar21 * -2 + -2] = *pfVar16;
+            afStack_318[(uint)bVar21 * -2 + (uint)bVar21 * -2 + -1] = pfVar16[(uint)bVar21 * -2 + 1]
+            ;
+            UStack_324.vec.y = fVar11 * param_1->interact_blend + UStack_324.vec.y;
+            core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50
+                      ((CCharacter *)param_1,&UStack_324);
             fStack_70 = SStack_448.pitch_min + (float)_DAT_005d9dc4;
             uStack_78 = 0;
             uStack_74 = 0;
@@ -1315,10 +1321,10 @@ LAB_0046a09c:
       aCStack_1ac[0].y = 0.0;
       core_actor_cpp_FUN_00408b00(param_1);
       uStack_32c = uStack_158;
-      afStack_328[(uint)bVar21 * -2] = afStack_190[(uint)bVar21 * -2 + 0xf];
-      afStack_328[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1] =
+      (&fStack_328)[(uint)bVar21 * -2] = afStack_190[(uint)bVar21 * -2 + 0xf];
+      *(float *)((int)&UStack_324 + ((uint)bVar21 * -2 + (uint)bVar21 * -2) * 4) =
            afStack_190[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 0x10];
-      if (0.0 < afStack_328[1]) {
+      if (0.0 < UStack_324.vec.x) {
         core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422ab0(pCStack_60,&CStack_3a4,aCStack_1ac);
       }
     }

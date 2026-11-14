@@ -25,9 +25,9 @@ CBoxActor * __cdecl CBoxActor::ctor(CBoxActor *this_ptr);
 // Address: 00421de0
 void __cdecl CBoxActor::setup(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00421e80
+// Original: core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80
 // Address: 00421e80
-void FUN_00421e80(int param_1);
+void __cdecl CBoxActor::setupPhysicsBox(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_process_FUN_00422000
 // Address: 00422000
@@ -85,9 +85,9 @@ EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 // Address: 00422cf0
 void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 
-// Original: core_boxactor.cpp_FUN_00422d10
+// Original: core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422d10
 // Address: 00422d10
-void FUN_00422d10(int param_1);
+void __cdecl CBoxActor::constrainToExtents(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00
 // Address: 00422e00

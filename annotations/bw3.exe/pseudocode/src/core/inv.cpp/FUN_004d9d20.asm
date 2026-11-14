@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_inv.cpp_FUN_004dbe70 at 004dbfc8
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dbfc8
 ;   core_inv.cpp_getItemDescription_FUN_004d9eb0 at 004d9ec1
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40 at 004d9e51
 ;

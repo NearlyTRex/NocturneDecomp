@@ -1115,7 +1115,9 @@ LAB_0051cae3:
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar11);
     iVar15 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0
                        (&this_ptr->motion_list,motion_name,iVar15);
-    local_50 = (CDeformableModelInstance *)core_motion_cpp_FUN_004fca20(pCVar11,iVar15);
+    local_50 = (CDeformableModelInstance *)
+               core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004fca20
+                         (&pCVar11->base,iVar15,1.0);
     local_14 = local_50;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
               (pCVar11,iVar15,(float)local_50,param_1->interact_blend,_DAT_01ed371c,

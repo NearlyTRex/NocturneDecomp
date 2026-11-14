@@ -29,9 +29,9 @@ CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 // Address: 004cbf10
 void __cdecl CGame::saveClockTime(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004cbf20
+// Original: core_game.cpp_CGame_updateDT_FUN_004cbf20
 // Address: 004cbf20
-void FUN_004cbf20(int param_1);
+void __cdecl CGame::updateDT(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0
 // Address: 004cc0c0
@@ -93,9 +93,9 @@ void __cdecl CGame::setScreenResolutionAndDisplayFangs(CGame *this_ptr);
 // Address: 004cf5e0
 int __cdecl CGame::runGameSession(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004d0400
+// Original: core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400
 // Address: 004d0400
-void FUN_004d0400(int param_1);
+void __cdecl CGame::restoreDefaultControls(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_playerControls_FUN_004d0860
 // Address: 004d0860
@@ -113,9 +113,9 @@ void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerInput *player
 // Address: 004d0d70
 void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 
-// Original: core_game.cpp_FUN_004d0da0
+// Original: core_game.cpp_pollKeyEdgeTrigger_FUN_004d0da0
 // Address: 004d0da0
-void FUN_004d0da0(void);
+void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
 // Original: core_game.cpp_FUN_004d0dd0
 // Address: 004d0dd0
@@ -141,9 +141,9 @@ void FUN_004d17c0(int param_1,int param_2);
 // Address: 004d1820
 void __cdecl CGame::processMouseControls(CGame *this_ptr,SPlayerInput *player_control);
 
-// Original: core_game.cpp_FUN_004d19d0
+// Original: core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 // Address: 004d19d0
-void FUN_004d19d0(void);
+void __cdecl CGame::resetInputAndCenterCursor(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_processHotkeys_FUN_004d1a80
 // Address: 004d1a80
@@ -235,7 +235,7 @@ void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int 
 
 // Original: core_game.cpp_FUN_004d77d0
 // Address: 004d77d0
-void FUN_004d77d0(CGame *param_1);
+void __cdecl FUN_004d77d0(CGame *this_ptr);
 
 // Original: core_game.cpp_joinNetworkGame_FUN_004d7e90
 // Address: 004d7e90
@@ -281,17 +281,17 @@ void FUN_004d9260(int param_1,undefined4 *param_2);
 // Address: 004dc000
 void FUN_004dc000(int param_1);
 
-// Original: core_game.cpp_FUN_004dc040
+// Original: core_game.cpp_loadCursorBitmaps_FUN_004dc040
 // Address: 004dc040
-void FUN_004dc040(void);
+void __cdecl loadCursorBitmaps(void);
 
-// Original: core_game.cpp_FUN_004dc180
+// Original: core_game.cpp_freeCursorBitmaps_FUN_004dc180
 // Address: 004dc180
-void FUN_004dc180(void);
+void __cdecl freeCursorBitmaps(void);
 
-// Original: core_game.cpp_FUN_004dc1a0
+// Original: core_game.cpp_drawCursor_FUN_004dc1a0
 // Address: 004dc1a0
-void FUN_004dc1a0(void);
+void __cdecl drawCursor(void);
 
 // Original: core_game.cpp_CAlphaBitmap_arrdtor8_FUN_004dc1f0
 // Address: 004dc1f0

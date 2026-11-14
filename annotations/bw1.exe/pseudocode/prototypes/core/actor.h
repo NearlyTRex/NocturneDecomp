@@ -145,9 +145,9 @@ int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *l
 // Address: 00408ec0
 undefined4 * FUN_00408ec0(int param_1,int param_2,uint param_3);
 
-// Original: core_actor.cpp_FUN_00409170
+// Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
 // Address: 00409170
-float FUN_00409170(int param_1,CBoundingBox3D *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 
 // Original: core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
 // Address: 00409680

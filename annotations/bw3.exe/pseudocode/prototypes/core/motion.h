@@ -69,9 +69,9 @@ void __cdecl CMotionController::startTransition(CMotionController *this_ptr,SMot
 // Address: 004fc250
 int __cdecl CMotionController::findPatchToFrame(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
 
-// Original: core_motion.cpp_FUN_004fc280
+// Original: core_motion.cpp_CMotionController_setMotionList_FUN_004fc280
 // Address: 004fc280
-void FUN_004fc280(undefined4 *param_1,undefined4 param_2);
+void __cdecl CMotionController::setMotionList(CMotionController *this_ptr,CMotionList *motion_list);
 
 // Original: core_motion.cpp_FUN_004fc2c0
 // Address: 004fc2c0
@@ -117,9 +117,9 @@ void FUN_004fc850(int *param_1,int param_2,float param_3,float *param_4);
 // Address: 004fc930
 float __cdecl FUN_004fc930(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_004fca20
+// Original: core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 // Address: 004fca20
-float FUN_004fca20(int *param_1,int param_2,float param_3);
+float __cdecl CMotionController::markerPositionToFrame(CMotionController *this_ptr,int motion_index,float marker_position);
 
 // Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50
 // Address: 004fcb50

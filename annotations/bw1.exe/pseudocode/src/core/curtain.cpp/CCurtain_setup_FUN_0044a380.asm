@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
-;   core_curtain.cpp_FUN_0044aa10
+;   core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
@@ -508,8 +508,8 @@ section .text
         ;   XREF to: 0044a7b8 (CONDITIONAL_JUMP)  ; LAB_0044a7b8
     PUSH EBX                            ; 0044a981
         ;   Label: LAB_0044a981
-    CALL core_curtain.cpp_FUN_0044aa10  ; 0044a982
-        ;   XREF to: 0044aa10 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0044aa10()
+    CALL core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10 ; 0044a982
+        ;   XREF to: 0044aa10 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10(CCurtain * this_ptr)
     MOV EDX,dword ptr [EBX + 0x17c]     ; 0044a987
     ADD ESP,0x4                         ; 0044a98d
     CMP EDX,0xfde8                      ; 0044a990

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 2644,
+    "complexity_score": 2645,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 424,
+    "pseudocode_lines": 425,
     "suspect_count": 219,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1159
+    "total_lines": 1160
   },
   "cross_references": [
     {
@@ -77,7 +77,7 @@
     {
       "addr": "0046c290",
       "from_addr": "0046c44e",
-      "name": "engine_drender.cpp_FUN_0046c290",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -120,14 +120,14 @@
       "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760"
     },
     {
-      "addr": "0051da80",
-      "is_variadic": false,
-      "name": "engine_prim.c_FUN_0051da80"
-    },
-    {
       "addr": "0051e130",
       "is_variadic": false,
       "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130"
+    },
+    {
+      "addr": "0051da80",
+      "is_variadic": false,
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80"
     },
     {
       "addr": "0055f920",
@@ -1862,18 +1862,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 422,
+      "line": 423,
       "match": "DAT_007bee34",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_0051da80((SRenderVertex *)&DAT_007bee34,DAT_007bee30);",
+      "text": "((SRenderVertex *)&DAT_007bee34,DAT_007bee30);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 422,
+      "line": 423,
       "match": "DAT_007bee30",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_0051da80((SRenderVertex *)&DAT_007bee34,DAT_007bee30);",
+      "text": "((SRenderVertex *)&DAT_007bee34,DAT_007bee30);",
       "type": "undefined_data"
     },
     {

@@ -21,9 +21,9 @@ void __cdecl CCourse::allocMemory(CCourse *this_ptr,int param_2);
 // Address: 00447db0
 void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 
-// Original: core_course.cpp_FUN_00447ee0
+// Original: core_course.cpp_CCourse_free_FUN_00447ee0
 // Address: 00447ee0
-void FUN_00447ee0(undefined4 *param_1);
+void __cdecl CCourse::free(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_evaluate_FUN_00447f00
 // Address: 00447f00

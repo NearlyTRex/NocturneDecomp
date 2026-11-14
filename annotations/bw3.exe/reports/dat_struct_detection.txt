@@ -26,15 +26,15 @@ They appear only as inline constant values (e.g. MOV EDX,0xf80000).
 Consider removing the Ghidra label and leaving the raw number.
 
   DAT_0078a123  value=0x78A123 (7905571)  refs=5
+    CBoxActor_setupPhysicsBox
+      CMP dword ptr [EBX + 0x68],0x78a123 ; 0041f207 | DAT_0078a123
     CDemonActor_ctor
       MOV dword ptr [EBX + 0x68],0x78a123 ; 00408743 | DAT_0078a123
     CEnemy_releaseVictim
       CMP EDI,0x78a123                    ; 0048a0b2 | DAT_0078a123
     CHero_releaseFromGrab
       CMP dword ptr [EBX + 0x68],0x78a123 ; 004d2c37 | DAT_0078a123
-    FUN_0041f1e0
-      CMP dword ptr [EBX + 0x68],0x78a123 ; 0041f207 | DAT_0078a123
-    FUN_0057ba10
+    CWeapon_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0057ba2d | DAT_0078a123
 
   DAT_006034c0  value=0x6034C0 (6304960)  refs=5
@@ -202,10 +202,10 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV ESI,0x5fde88                    ; 004a5adf | DAT_005fde88
 
   DAT_005fed34  value=0x5FED34 (6286644)  refs=2
+    CBloodParticle_render
+      PUSH 0x5fed34                       ; 004ccdf9 | DAT_005fed34
     CGore_loadAssets
       PUSH 0x5fed34                       ; 004cec74 | DAT_005fed34
-    FUN_004ccbe0
-      PUSH 0x5fed34                       ; 004ccdf9 | DAT_005fed34
 
   DAT_005ffeac  value=0x5FFEAC (6291116)  refs=2
     CGore_loadAssets
@@ -349,13 +349,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CEmitter_process
       PUSH 0x5bda2d                       ; 00488112 | DAT_005bda2d
 
+  DAT_005bfdf0  value=0x5BFDF0 (6028784)  refs=1
+    CEventList_addOrRemovePersistentEvent
+      PUSH 0x5bfdf0                       ; 004947ca | DAT_005bfdf0
+
   DAT_005bf55d  value=0x5BF55D (6026589)  refs=1
     CEventList_evaluateAtom
       PUSH 0x5bf55d                       ; 00492130 | DAT_005bf55d
-
-  DAT_005bfdf0  value=0x5BFDF0 (6028784)  refs=1
-    FUN_004946f0
-      PUSH 0x5bfdf0                       ; 004947ca | DAT_005bfdf0
 
   DAT_005bdde3  value=0x5BDDE3 (6020579)  refs=1
     resolveActorByName
@@ -474,15 +474,15 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5d7293                       ; 00578afe | DAT_005d7293
 
   DAT_006071f4  value=0x6071F4 (6320628)  refs=1
-    FUN_0057c890
+    CWeather_renderParticles
       PUSH 0x6071f4                       ; 0057c8ff | DAT_006071f4
 
   DAT_0060720c  value=0x60720C (6320652)  refs=1
-    FUN_0057c890
+    CWeather_renderParticles
       PUSH 0x60720c                       ; 0057cd40 | DAT_0060720c
 
   DAT_00607224  value=0x607224 (6320676)  refs=1
-    FUN_0057c890
+    CWeather_renderParticles
       PUSH 0x607224                       ; 0057ce36 | DAT_00607224
 
   DAT_00607240  value=0x607240 (6320704)  refs=1

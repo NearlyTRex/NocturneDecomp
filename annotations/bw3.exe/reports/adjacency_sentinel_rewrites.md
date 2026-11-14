@@ -16,5 +16,5 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 ### `core_dmodel.cpp_freeAllModels_FUN_004624d0`
 
 - Pool `g_CKeyFramedModelPool` sentinel `g_CZombieDogClassInfo` (count 256)
-  - Before: `while (pCVar1 != (CKeyFramedModel *)&g_CZombieDogClassInfo)`
-  - After:  `while (pCVar1 != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]))`
+  - Before: `while (this_ptr != (CKeyFramedModel *)&g_CZombieDogClassInfo)`
+  - After:  `while (this_ptr != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]))`

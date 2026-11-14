@@ -20,7 +20,7 @@
 ;   core_doc.cpp_FUN_00455170 at 004551e7
 ;   core_doc.cpp_FUN_00455d10 at 00456008
 ;   core_doc.cpp_FUN_004562a0 at 0045642f
-;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00 at 004b2075
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b21ad
 ;   ... and 17 more
 ;
 ; *****************************************************************************

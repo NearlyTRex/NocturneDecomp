@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CFirefly_process_FUN_004988b0(CFirefly *this_ptr)
             (g_CGamePtr,
              (float)(int)((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) *
              (float)_DAT_005c0530);
-  core_particle_cpp_FUN_00509f30(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00509f30(&this_ptr->base);
   fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,this_ptr->jitter * _DAT_005c0538);
   fVar1 = this_ptr->jitter;
   fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,this_ptr->jitter * _DAT_005c0538);

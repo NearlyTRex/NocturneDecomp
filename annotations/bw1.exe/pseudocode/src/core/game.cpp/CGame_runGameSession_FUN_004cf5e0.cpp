@@ -85,7 +85,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
   }
   core_dlight_cpp_CDemonLight_init_FUN_00462590(&g_CDemonLightInstance);
   pcVar3 = "Flashlight";
-  core_game_cpp_FUN_004dc040(this_ptr);
+  core_game_cpp_loadCursorBitmaps_FUN_004dc040();
   pcVar6 = g_CDemonLightInstance.base.camera_name;
   do {
     cVar1 = *pcVar3;
@@ -128,7 +128,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
      (iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(g_CNetGamePtr,4), iVar4 != 0)) {
     g_CNetGamePtr->network_mode = NET_MODE_PLAYING;
     core_game_cpp_CGame_saveClockTime_FUN_004cbf10(this_ptr);
-    core_game_cpp_FUN_004d19d0(this_ptr);
+    core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(g_CNetGamePtr);
     core_level_cpp_CLevelLoader_cleanup_FUN_004fefa0(0x01D1BD1C);
     *(EAimMode *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae4) = this_ptr->aim_mode;
@@ -290,7 +290,7 @@ LAB_004cfb22:
             }
             engine_2d_c_clearInputAndWait_FUN_004032b0();
             if (this_ptr->cinematic_skip_in_progress == 0) {
-              core_sound_cpp_FUN_0057cc00(0x02C82A60);
+              core_sound_cpp_CSound_init_FUN_0057cc00(0x02C82A60);
             }
             *(EAimMode *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae4) = this_ptr->aim_mode;
             shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_8a0,0);
@@ -313,7 +313,7 @@ LAB_004cfb22:
       iVar5 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_0049add0(&g_CPickList);
       if (iVar5 != -2) {
         engine_2d_c_clearInputAndWait_FUN_004032b0();
-        shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
         shape_edittool_cpp_CPickList_clear_FUN_0049c370(&g_CPickList);
         _DAT_01cd01f8 = 0;
       }
@@ -375,14 +375,15 @@ LAB_004cfde8:
     if (this_ptr->need_chapter_reload == 0) {
       if (local_18 != 0) {
         local_18 = this_ptr->need_chapter_reload;
-        core_sound_cpp_FUN_0057cc00(0x02C82A60);
+        core_sound_cpp_CSound_init_FUN_0057cc00(0x02C82A60);
       }
       if ((this_ptr->developer_mode_enabled != 0) &&
          (iVar4 = (*0x01D1BCA0->vtable->getKeyState)(0x01D1BCA0,DIK_LCONTROL), iVar4 != 0)) {
         (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_P);
       }
       if (this_ptr->new_set_event_pending != 0) {
-        core_event_cpp_FUN_004a9870(0x01C51D80,"NewSet",1);
+        core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
+                  (0x01C51D80,"NewSet",1);
         this_ptr->new_set_event_pending = this_ptr->new_set_event_pending + -1;
       }
       goto LAB_004cf9e0;
@@ -417,7 +418,7 @@ LAB_004cfbd7:
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0057cdb0(0x02C82A60);
   core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00415c80();
-  core_game_cpp_FUN_004dc180(this_ptr);
+  core_game_cpp_freeCursorBitmaps_FUN_004dc180();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(this_ptr);
   (*0x01D1BCA0->vtable->clearKeyPresses)(0x01D1BCA0);
   core_set_cpp_CDemonSet_clearLights_FUN_00551b90(g_CDemonSetPtr);

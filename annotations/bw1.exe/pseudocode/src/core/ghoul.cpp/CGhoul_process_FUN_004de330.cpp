@@ -902,15 +902,15 @@ LAB_004df0bb:
             core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,(CDemonActor *)this_ptr);
             fVar23 = (float10)fcos((float10)fStack_90);
             fVar22 = (float10)fsin((float10)fStack_90);
-            fStack_2c = (float)core_setcolid_cpp_FUN_00558450
-                                         (g_CDemonSetPtr,
-                                          (this_ptr->base).base.base.location.position.x,
-                                          (this_ptr->base).base.base.location.position.z,
-                                          (float)(fVar22 * (float10)_DAT_005e3d19),
-                                          (float)(fVar23 * (float10)_DAT_005e3d19),
-                                          (this_ptr->base).base.collision_cylinder_radius,
-                                          (this_ptr->base).base.base.location.position.y +
-                                          (this_ptr->base).base.collision_cylinder_bottom);
+            fStack_2c = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450
+                                  (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
+                                   (this_ptr->base).base.base.location.position.z,
+                                   (float)(fVar22 * (float10)_DAT_005e3d19),
+                                   (float)(fVar23 * (float10)_DAT_005e3d19),
+                                   (this_ptr->base).base.collision_cylinder_radius,
+                                   (this_ptr->base).base.base.location.position.y +
+                                   (this_ptr->base).base.collision_cylinder_bottom,
+                                   (this_ptr->base).base.base.location.position.y + fStack_20);
             fStack_14 = fStack_2c;
             core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
             if (fStack_2c < 1.0) break;
@@ -1158,7 +1158,9 @@ LAB_004de489:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(this_ptr_00);
   dStack_b8 = (double)this_ptr->flinch_blend_weight;
   if (0.0 < dStack_b8) {
-    fStack_6c = (float)core_motion_cpp_FUN_00525110(this_ptr_00,this_ptr->flinch_motion_index);
+    fStack_6c = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                          (&this_ptr_00->base,this_ptr->flinch_motion_index,
+                           1.0 - this_ptr->flinch_blend_weight);
     fVar30 = 1.0 - this_ptr->flinch_blend_weight;
     fStack_68 = 1.0 - fVar30 * fVar30 * fVar30;
     fStack_14 = fStack_6c;
@@ -1208,7 +1210,7 @@ LAB_004de489:
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
               ((CCharacter *)this_ptr,iVar5,iVar9,fVar30);
-    core_charactr_cpp_FUN_00430960();
+    core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
   }
   if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) && (fStack_34 == 2.38221e-44)) {
     fStack_278 = (this_ptr->base).base.base.location.position.x - (this_ptr->prev_position).x;

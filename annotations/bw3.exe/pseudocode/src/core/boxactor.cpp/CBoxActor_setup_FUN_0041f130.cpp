@@ -23,7 +23,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041f130(CBoxActor *this_ptr)
     this_ptr->anim_frame = (float)(iVar1 + -1);
   }
   if ((this_ptr->physics_box).is_valid < 0) {
-    core_boxactor_cpp_FUN_0041f1e0(this_ptr);
+    core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0(this_ptr);
   }
   this_ptr->fade_timer = 0.0;
   this_ptr->fade_alpha = 0x10000;

@@ -87,6 +87,6 @@ LAB_0050a643:
   } while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_0050a815:
-  shape_edittool_cpp_FUN_00496dd0();
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
   return;
 }

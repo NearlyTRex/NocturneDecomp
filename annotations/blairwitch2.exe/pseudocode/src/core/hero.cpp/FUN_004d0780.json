@@ -2,18 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 335,
+    "complexity_score": 436,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 36,
     "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
       "param_count_too_few",
+      "undefined_type",
       "unnamed_param"
     ],
-    "total_lines": 196
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -48,6 +51,16 @@
       "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890"
     },
     {
+      "addr": "004cfd60",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004cfd60"
+    },
+    {
+      "addr": "004cf4e0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0"
+    },
+    {
       "addr": "004cee90",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90"
@@ -71,16 +84,6 @@
       "addr": "004cf2b0",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004cf2b0"
-    },
-    {
-      "addr": "004cf4e0",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004cf4e0"
-    },
-    {
-      "addr": "004cfd60",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004cfd60"
     }
   ],
   "globals": [
@@ -181,8 +184,40 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved type",
+      "line": 8,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 10,
+      "match": "undefined3 extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004cf200(param_1);",
@@ -190,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = (param_1->base).base.vtable._uh;",
@@ -198,7 +233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_action_range = 0.0;",
@@ -206,18 +241,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(pCVar1->_uh).canDoHeroAction)(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar2 != 0) && (iVar2 = core_hero_cpp_FUN_004cec50(param_1), iVar2 != 0)) {",
+      "text": "iVar3 = (*(pCVar1->_uh).canDoHeroAction)(param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -225,23 +252,23 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2);",
+      "text": "if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cec50(param_1), iVar3 != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2);",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(param_1), iVar2 != 0)) {",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2);",
       "type": "unnamed_param"
     },
     {
@@ -249,23 +276,23 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,4);",
+      "text": "(iVar3 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(param_1), iVar3 != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,4);",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar2 != 0) && (iVar3 = core_hero_cpp_FUN_004cfd60(param_1,\"!CBodyPart\"), iVar3 != 0)",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,4);",
       "type": "unnamed_param"
     },
     {
@@ -273,31 +300,23 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3);",
+      "text": "(bVar2 = core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004cfd60(param_1,\"!CBodyPart\"),",
       "type": "unnamed_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "CONCAT31(extraout_var,bVar2) != 0)) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cf030(param_1,param_2), iVar3 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cf030(param_1,param_2), iVar3 != 0)) {",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3);",
       "type": "unnamed_param"
     },
     {
@@ -305,15 +324,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3);",
       "type": "unnamed_param"
     },
     {
@@ -321,7 +332,15 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cf2b0(param_1), iVar3 != 0)) {",
+      "text": "if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004cf030(param_1,param_2), iVar4 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004cf030(param_1,param_2), iVar4 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -329,7 +348,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);",
       "type": "unnamed_param"
     },
     {
@@ -337,7 +356,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);",
       "type": "unnamed_param"
     },
     {
@@ -345,7 +364,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cf4e0(param_1), iVar3 != 0)) {",
+      "text": "if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004cf2b0(param_1), iVar4 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -353,7 +372,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
       "type": "unnamed_param"
     },
     {
@@ -361,7 +380,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
       "type": "unnamed_param"
     },
     {
@@ -369,7 +388,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004cf890(param_1), iVar3 != 0)) {",
+      "text": "(iVar4 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004cf4e0(param_1), iVar4 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -377,8 +396,56 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar2 != 0) && (iVar2 = core_hero_cpp_FUN_004cfd60(param_1,\"CBodyPart\"), iVar2 != 0)",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004cf890(param_1), iVar4 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(bVar2 = core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004cfd60(param_1,\"CBodyPart\"),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 50,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "CONCAT31(extraout_var_00,bVar2) != 0)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 27,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "CONCAT31(extraout_var,bVar2) != 0)) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 50,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "CONCAT31(extraout_var_00,bVar2) != 0)) {",
+      "type": "concat_reconstruction"
     },
     {
       "call_site_count": 2,

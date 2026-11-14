@@ -29,10 +29,10 @@
 ;   ... and 119 more
 ;
 ; Called Functions:
+;   engine_ini.cpp_CIniFile_ctor_FUN_004f4b00
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004f4bc0
 ;   engine_ini.cpp_CIniFile_setString_FUN_004f4c90
-;   engine_ini.cpp_FUN_004f4b00
 ;   engine_ini.cpp_FUN_004f4d70
 ;   sound_sndmain.cpp_writeIni_FUN_005763b0
 ;
@@ -50,8 +50,8 @@ section .text
     PUSH 0x61f010                       ; 004f576c | = ".\\system\\nocturne.ini"
     LEA EAX,[ESP + 0x8]                 ; 004f5771
     PUSH EAX                            ; 004f5775
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004f5776
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004f5776
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004f577b
     PUSH 0x61f038                       ; 004f577e | = "Graphics"
     LEA EAX,[ESP + 0x4]                 ; 004f5783

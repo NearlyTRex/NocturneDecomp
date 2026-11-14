@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_curtain.cpp_CCurtain_solveConstraints_FUN_00446d50
-;   core_curtain.cpp_FUN_00446c60
+;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00446c60
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;
@@ -453,8 +453,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00447cc0
         ;   Label: LAB_00447cc0
     PUSH ESI                            ; 00447cc3
-    CALL core_curtain.cpp_FUN_00446c60  ; 00447cc4
-        ;   XREF to: 00446c60 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_00446c60()
+    CALL core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00446c60 ; 00447cc4
+        ;   XREF to: 00446c60 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00446c60(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 00447cc9
     MOV ESP,EBP                         ; 00447ccc
         ;   Label: LAB_00447ccc

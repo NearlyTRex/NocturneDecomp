@@ -32,9 +32,9 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_004207b0
+;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0
-;   core_charactr.cpp_FUN_00432e00
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004d6340
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ea770
 ;   core_script.cpp_CScript_setSpeaker_FUN_0054aca0
@@ -69,8 +69,8 @@ section .text
     ADD ESP,0x8                         ; 0042e1d8
     PUSH dword ptr [ESP + 0x4c]         ; 0042e1db
     PUSH EBP                            ; 0042e1df
-    CALL core_charactr.cpp_FUN_00432e00 ; 0042e1e0
-        ;   XREF to: 00432e00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432e00()
+    CALL core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00 ; 0042e1e0
+        ;   XREF to: 00432e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042e1e5
     FLD float ptr [EBP + 0xb9f0]        ; 0042e1e8
     FSUB float ptr [ESP + 0x4c]         ; 0042e1ee

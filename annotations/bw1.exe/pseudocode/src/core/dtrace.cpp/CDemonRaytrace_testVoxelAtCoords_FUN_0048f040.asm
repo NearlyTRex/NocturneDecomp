@@ -8,7 +8,7 @@
 ; CVector3i *      Stack[0x8]:4   voxel_coords
 ;
 ; XREF[1]:
-;   core_particle.cpp_FUN_00532250 at 00532399
+;   core_particle.cpp_CParticle_process_FUN_00532250 at 00532399
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061ab68

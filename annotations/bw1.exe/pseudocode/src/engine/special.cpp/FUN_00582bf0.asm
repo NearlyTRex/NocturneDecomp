@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_FUN_00582bf0(undefined4 param_1)
+; int __cdecl engine_special_cpp_FUN_00582bf0(int texture_size)
 ;
+; Parameters:
+; int              Stack[0x4]:4   texture_size
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004ce580 at 004cedb4

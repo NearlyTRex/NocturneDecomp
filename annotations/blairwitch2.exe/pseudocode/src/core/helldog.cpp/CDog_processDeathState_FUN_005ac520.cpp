@@ -10,14 +10,14 @@ void __cdecl core_helldog_cpp_CDog_processDeathState_FUN_005ac520(CDog *this_ptr
 
 {
   CDeformableModelInstance *this_ptr_00;
-  int iVar1;
+  SMotion *pSVar1;
   
   this_ptr_00 = &(this_ptr->base).base.base.model;
   (this_ptr->base).base.base.follow_leader = (CCharacter *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
   if (((this_ptr->base).base.base.eye_glow_enabled != 0) && (this_ptr->death_effect_done == 0)) {
-    iVar1 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar1 + 0x24) == 6) {
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar1->state_index == 6) {
       this_ptr->death_effect_done = 1;
       core_charactr_cpp_FUN_0042b550(this_ptr,1,0x3f800000,0,0x40a00000,0x3f800000,0,0);
       return;

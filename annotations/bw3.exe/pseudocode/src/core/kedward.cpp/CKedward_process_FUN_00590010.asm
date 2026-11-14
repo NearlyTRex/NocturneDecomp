@@ -868,8 +868,8 @@ section .text
     MOV EAX,[0x00603b28]                ; 00590a39 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 00590a3e
     PUSH EAX                            ; 00590a41 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053de10 ; 00590a42
-        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053de10()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 ; 00590a42
+        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV EDX,dword ptr [0x00603b28]      ; 00590a47 | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 00590a4d
     ADD ESP,0x20                        ; 00590a50

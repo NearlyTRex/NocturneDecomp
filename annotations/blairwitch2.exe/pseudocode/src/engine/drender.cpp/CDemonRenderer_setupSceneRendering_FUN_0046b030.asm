@@ -16,7 +16,7 @@
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0 at 00534318
 ;   core_set.cpp_FUN_0052fad0 at 0052fe2a
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0 at 00538a23
-;   shape_spotview.cpp_FUN_00561d90 at 00561e79
+;   shape_spotview.cpp_CSpotView_applyCamera_FUN_00561d90 at 00561e79
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280

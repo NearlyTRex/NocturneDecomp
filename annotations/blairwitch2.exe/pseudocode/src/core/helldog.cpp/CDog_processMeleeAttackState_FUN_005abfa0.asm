@@ -16,8 +16,8 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408de0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
@@ -64,8 +64,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005abff4
     PUSH ESI                            ; 005abffa
     FSTP float ptr [ESP + 0x38]         ; 005abffb
-    CALL core_motion.cpp_FUN_005035c0   ; 005abfff
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005abfff
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005ac004
     FLD float ptr [ESP + 0x34]          ; 005ac007
     FCOMP float ptr [0x00600c4c]        ; 005ac00b | DAT_00600c4c

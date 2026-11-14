@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
-;   core_charactr.cpp_FUN_00434c60
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -348,8 +348,8 @@ section .text
         ;   XREF to: 00520dfc (CONDITIONAL_JUMP)  ; LAB_00520dfc
     PUSH dword ptr [EBP + 0x18]         ; 00520ffd
     PUSH EBX                            ; 00521000
-    CALL core_charactr.cpp_FUN_00434c60 ; 00521001
-        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434c60()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 ; 00521001
+        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00521006
     CMP EAX,0x1                         ; 00521009
     JC 0x00520dfc                       ; 0052100c

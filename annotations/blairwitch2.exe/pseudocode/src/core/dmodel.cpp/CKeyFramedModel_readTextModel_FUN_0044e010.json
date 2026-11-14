@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 459,
+    "complexity_score": 460,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 130,
     "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 711
+    "total_lines": 712
   },
   "cross_references": [
     {
@@ -39,14 +39,14 @@
   },
   "function_calls": [
     {
+      "addr": "0044ea80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80"
+    },
+    {
       "addr": "0044f760",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760"
-    },
-    {
-      "addr": "0044ea80",
-      "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_0044ea80"
     },
     {
       "addr": "004e4500",
@@ -628,7 +628,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_005cf709",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf709);",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 89,
       "match": "(int *)((int)pSVar1",
       "severity": "moderate",
       "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 93,
       "match": "(int *)((int)pSVar1",
       "severity": "moderate",
       "text": "} while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_005cf734",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf734);",

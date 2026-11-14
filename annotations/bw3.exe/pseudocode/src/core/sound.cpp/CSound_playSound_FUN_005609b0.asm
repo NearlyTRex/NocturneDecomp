@@ -17,8 +17,8 @@
 ;   core_inv.cpp_FUN_004da020 at 004da186
 ;   core_inv.cpp_FUN_004dcdb0 at 004dd131
 ;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005302ca
+;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fe25
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_00560940 at 00560992
-;   core_sound.cpp_FUN_0055fd30 at 0055fe25
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -34,7 +34,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;   engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040dbd0
 ;   engine_dosio.cpp_FUN_00460c70
-;   engine_texture.cpp_FUN_00574e00
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
 
@@ -188,8 +188,8 @@ section .text
     POP EDI                             ; 004dab47
         ;   Label: LAB_004dab47
     PUSH 0x1d02ee4                      ; 004dab48
-    CALL engine_texture.cpp_FUN_00574e00 ; 004dab4d
-        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 ; 004dab4d
+        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic * texture)
     MOV EAX,[0x00616494]                ; 004dab52 | g_CGamePtr
     MOV ECX,dword ptr [EAX + 0x4]       ; 004dab57 | g_CGameInstance.game_pixy
     ADD ESP,0x4                         ; 004dab5a

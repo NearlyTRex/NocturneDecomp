@@ -9,14 +9,12 @@
 void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_0042e160(CCharacter *this_ptr)
 
 {
-  float fStack_14;
-  float local_10;
-  float fStack_c;
+  UOrientationVector UStack_14;
   
-  fStack_14 = (this_ptr->base).orient.vec.x;
-  fStack_c = (this_ptr->base).orient.vec.z;
-  local_10 = (this_ptr->base).orient.vec.y + this_ptr->turn_angle_accumulator;
+  UStack_14.vec.x = (this_ptr->base).orient.vec.x;
+  UStack_14.vec.z = (this_ptr->base).orient.vec.z;
+  UStack_14.vec.y = (this_ptr->base).orient.vec.y + this_ptr->turn_angle_accumulator;
   this_ptr->turn_angle_accumulator = 0.0;
-  core_charactr_cpp_FUN_00433d50(this_ptr,&fStack_14);
+  core_charactr_cpp_CCharacter_setOrientation_FUN_00433d50(this_ptr,&UStack_14);
   return;
 }

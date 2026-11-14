@@ -372,7 +372,7 @@ LAB_0056dcd2:
       }
       pCVar9 = (this_ptr->base).target_actor;
       if ((pCVar9 != (CDemonActor *)0x0) && (local_1c == 3)) {
-        core_inv_cpp_FUN_004db8e0(local_24,pCVar9,0);
+        core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar9,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                   (0x01D182F0,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10

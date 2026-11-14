@@ -15,8 +15,8 @@ void core_flashlit_cpp_FUN_004a7bb0(void)
     if (_DAT_01d1a058 != 0) {
       engine_2d_c_fillRectColor_FUN_004031c0
                 (DAT_005fe3a8,_DAT_01d19f7c,_DAT_01d19f80 + -1,_DAT_01d19f84 + -1,0);
-      engine_font_cpp_FUN_004b0a20
-                (_DAT_01549aa4,&DAT_01d19f90,_DAT_01d19f88,_DAT_01d19f8c,0xff,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+                (_DAT_01549aa4,&DAT_01d19f90,_DAT_01d19f88,_DAT_01d19f8c,0xff,-1);
       return;
     }
     _DAT_01d19f78 = _DAT_01d1a058;

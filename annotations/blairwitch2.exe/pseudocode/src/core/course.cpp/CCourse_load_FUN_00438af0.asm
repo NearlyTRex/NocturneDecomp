@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00438a90
-;   core_course.cpp_FUN_00438c20
+;   core_course.cpp_CCourse_free_FUN_00438c20
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
@@ -49,8 +49,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00438af7
     MOV EBX,dword ptr [ESP + 0x20]      ; 00438afb
     PUSH EDI                            ; 00438aff
-    CALL core_course.cpp_FUN_00438c20   ; 00438b00
-        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00438c20()
+    CALL core_course.cpp_CCourse_free_FUN_00438c20 ; 00438b00
+        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00438c20(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00438b05
     PUSH 0x5ce019                       ; 00438b08 | DAT_005ce019
     PUSH EBX                            ; 00438b0d

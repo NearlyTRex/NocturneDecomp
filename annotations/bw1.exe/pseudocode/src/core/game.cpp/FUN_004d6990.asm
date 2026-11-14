@@ -54,7 +54,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_event.cpp_CEventList_loadState_FUN_004aa610
-;   core_event.cpp_FUN_004a9a00
+;   core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00
 ;   core_fire.cpp_CFireEffect_init_FUN_004b4b30
 ;   core_fire.cpp_CFireEffect_load_FUN_004b7370
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
@@ -185,8 +185,8 @@ section .text
     MOV EDI,dword ptr [0x0061b4d0]      ; 004d6ae0 | DAT_0061b4d0
         ;   Label: LAB_004d6ae0
     PUSH EDI                            ; 004d6ae6
-    CALL core_event.cpp_FUN_004a9a00    ; 004d6ae7
-        ;   XREF to: 004a9a00 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a00()
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00 ; 004d6ae7
+        ;   XREF to: 004a9a00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004d6aec
     PUSH -0x1                           ; 004d6aef
     PUSH 0x0                            ; 004d6af1

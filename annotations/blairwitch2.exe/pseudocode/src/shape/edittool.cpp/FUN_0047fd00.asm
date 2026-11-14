@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,uint param_3)
+; void __cdecl shape_edittool_cpp_FUN_0047fd00(CEditorTools *this_ptr,float scale_factor,int text_color)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   text_color
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_005b0ce0 at 005b0edd

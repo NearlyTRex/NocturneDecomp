@@ -10,7 +10,7 @@
 ;   core_svetlana.cpp_factoryFuncSvetlana_FUN_00570190 at 005701a3
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_necklace.cpp_FUN_005adda0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_svetlana.cpp_CSvetlana_ctor_FUN_005701c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005701c1
     PUSH EBX                            ; 005701c5
-    CALL core_hero.cpp_FUN_004ce240     ; 005701c6
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 005701c6
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     ADD ESP,0x4                         ; 005701cb
     ADD EAX,0x25648                     ; 005701ce
     PUSH EAX                            ; 005701d3

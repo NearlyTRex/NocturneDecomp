@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   commands
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b90d0 at 004b9e76
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9e76
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00523d07
 ;
 ; Referenced Globals:

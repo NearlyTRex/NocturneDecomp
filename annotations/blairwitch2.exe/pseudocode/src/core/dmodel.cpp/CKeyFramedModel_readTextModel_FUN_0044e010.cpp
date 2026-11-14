@@ -40,11 +40,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFram
   int iVar2;
   int iVar3;
   int local_48;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
   int local_20;
   int local_1c;
   
@@ -63,7 +63,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFram
     if (iVar2 < 0) break;
   } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(file,"%d,%d,%d,%d,%d\n");
-  core_dmodel_cpp_FUN_0044ea80(this_ptr,local_40,local_3c,local_38,local_34,local_30);
+  core_dmodel_cpp_CKeyFramedModel_allocate_FUN_0044ea80
+            (this_ptr,local_40,local_3c,local_38,local_34,local_30);
   iVar3 = 1;
   do {
     iVar2 = _fgetc(file);

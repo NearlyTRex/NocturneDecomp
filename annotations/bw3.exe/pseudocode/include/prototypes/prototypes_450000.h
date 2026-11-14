@@ -39,7 +39,7 @@
 
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00450020(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004503f0(CDemonCamera *this_ptr,SFog *fog_config);
-int core_dcamera_cpp_FUN_004504b0(int param_1,int *param_2);
+int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004504b0(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);
 void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670(CDemonCamera *this_ptr,int param_2);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00450700(CDemonCamera *this_ptr,int alpha_index);
@@ -76,7 +76,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCu
 void core_dcube_cpp_FUN_00453ec0(int *param_1);
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00453fa0(CDemonCube *this_ptr,_FILE *file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004540c0(CDemonCube *this_ptr,uint rendering_mode);
-float core_dcube_cpp_FUN_00454360(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
+float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00454360(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_FUN_004545f0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 void __cdecl core_demnfolk_cpp_staticInit_FUN_00454750(void);

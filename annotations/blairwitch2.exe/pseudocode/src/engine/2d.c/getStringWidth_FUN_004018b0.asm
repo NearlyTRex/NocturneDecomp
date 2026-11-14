@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   text
 ;
 ; XREF[6]:
+;   cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00468af0 at 00468b1b
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00468b50 at 00468b6a
-;   cockpit_drawsurf.cpp_FUN_00468af0 at 00468b1b
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600 at 0040260b
 ;   engine_2d.c_drawTextCenteredColor_FUN_004026d0 at 004026e6
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 0040254b

@@ -17,9 +17,9 @@
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 0042a1b0
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 00430670
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90 at 00430f63
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 at 00434d6a
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 004323bc
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_0042d540 at 0042d574
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0 at 0042cd3f
 ;   ... and 79 more
 ;
 ; Called Functions:

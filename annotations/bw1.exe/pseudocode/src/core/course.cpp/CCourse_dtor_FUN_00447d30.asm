@@ -17,7 +17,7 @@
 ;   core_vehicle.cpp_CVehicle_dtor_FUN_005a8a10 at 005a8a25
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00447ee0
+;   core_course.cpp_CCourse_free_FUN_00447ee0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_course.cpp_CCourse_dtor_FUN_00447d30
     MOV EBX,dword ptr [ESP + 0x8]       ; 00447d31
     PUSH EBX                            ; 00447d35
-    CALL core_course.cpp_FUN_00447ee0   ; 00447d36
-        ;   XREF to: 00447ee0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00447ee0()
+    CALL core_course.cpp_CCourse_free_FUN_00447ee0 ; 00447d36
+        ;   XREF to: 00447ee0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00447ee0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00447d3b
     MOV EAX,EBX                         ; 00447d3e
     POP EBX                             ; 00447d40

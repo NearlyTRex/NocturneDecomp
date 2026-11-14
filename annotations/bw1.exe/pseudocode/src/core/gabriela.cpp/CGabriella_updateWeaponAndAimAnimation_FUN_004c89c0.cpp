@@ -114,7 +114,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
         }
         pCVar4 = &(this_ptr->base).base.model;
         local_4c = (CDeformableModelInstance *)
-                   core_motion_cpp_FUN_00525110(pCVar4,_DAT_01cc913c,local_1c);
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                             (&pCVar4->base,_DAT_01cc913c,local_1c);
         local_14 = local_4c;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
                   (pCVar4,_DAT_01cc913c,(float)local_4c,local_24,_DAT_01cc9118,
@@ -189,7 +190,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
         fVar7 = this_ptr->fire_cooldown_timer;
         pCVar4 = &(this_ptr->base).base.model;
         (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
-        local_40 = (CDeformableModelInstance *)core_motion_cpp_FUN_00525110(pCVar4,iVar2,fVar7);
+        local_40 = (CDeformableModelInstance *)
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                             (&pCVar4->base,iVar2,fVar7);
         local_14 = local_40;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00567620
                   (pCVar4,_DAT_01cc9140,(float)local_40,0);
@@ -223,7 +226,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
         }
         pCVar4 = &(this_ptr->base).base.model;
         local_50 = (CDeformableModelInstance *)
-                   core_motion_cpp_FUN_00525110(pCVar4,_DAT_01cc913c,local_20);
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                             (&pCVar4->base,_DAT_01cc913c,local_20);
         local_14 = local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
                   (pCVar4,_DAT_01cc913c,(float)local_50,local_24,_DAT_01cc9118,
@@ -286,7 +290,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
         (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
         pCVar4 = &(this_ptr->base).base.model;
         local_18 = (CDeformableModelInstance *)
-                   core_motion_cpp_FUN_00525110(pCVar4,_DAT_01cc9144,1.0 - fVar7 * fVar1);
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                             (&pCVar4->base,_DAT_01cc9144,1.0 - fVar7 * fVar1);
         local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00567620
                   (pCVar4,_DAT_01cc9144,(float)local_18,_DAT_01cc9120);

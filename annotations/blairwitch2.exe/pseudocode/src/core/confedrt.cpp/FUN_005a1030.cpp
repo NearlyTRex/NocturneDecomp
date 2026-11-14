@@ -15,7 +15,7 @@ void core_confedrt_cpp_FUN_005a1030(CCharacter *param_1)
   uint uVar2;
   float fVar3;
   CDemonActor *pCVar4;
-  int iVar5;
+  SMotion *pSVar5;
   
   pCVar4 = (*(param_1->base).vtable._ub[1].getCarrier)(&param_1->base);
   if (pCVar4 != (CDemonActor *)0x0) {
@@ -27,9 +27,10 @@ void core_confedrt_cpp_FUN_005a1030(CCharacter *param_1)
       core_muzzle_cpp_FUN_0059d8e0(pcVar1,"Chasing");
       return;
     }
-    iVar5 = core_motion_cpp_FUN_005035c0(&param_1->model);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&(param_1->model).base)
+    ;
     fVar3 = _DAT_005fedb4;
-    uVar2 = *(uint *)(iVar5 + 0x24);
+    uVar2 = pSVar5->state_index;
     if (uVar2 < 3) {
       if (uVar2 != 2) {
 LAB_005a1166:

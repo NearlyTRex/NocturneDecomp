@@ -7,7 +7,7 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_00489670 at 0048c368
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c368
 ;   core_game.cpp_FUN_004bbf70 at 004bc802
 ;   core_gore.cpp_CGore_ctor_FUN_004c93c0 at 004c93c6
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fba74

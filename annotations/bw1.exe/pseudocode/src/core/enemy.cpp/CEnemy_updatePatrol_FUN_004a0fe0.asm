@@ -27,7 +27,7 @@
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00433f10
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_004a100b
     PUSH dword ptr [ESP + 0x10]         ; 004a100d
     PUSH EBX                            ; 004a1011
-    CALL core_charactr.cpp_FUN_00433f10 ; 004a1012
-        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433f10()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 ; 004a1012
+        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004a1017
     POP EBX                             ; 004a101a
     RET                                 ; 004a101b
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 004a1022
     PUSH dword ptr [ESP + 0x10]         ; 004a1023
     PUSH EBX                            ; 004a1027
-    CALL core_charactr.cpp_FUN_00433f10 ; 004a1028
-        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433f10()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 ; 004a1028
+        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004a102d
     POP EBX                             ; 004a1030
     RET                                 ; 004a1031

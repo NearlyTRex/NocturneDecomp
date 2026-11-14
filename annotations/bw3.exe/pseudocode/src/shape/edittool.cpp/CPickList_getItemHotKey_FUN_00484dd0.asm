@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   index
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_00484e30 at 00484e6e
-;   shape_edittool.cpp_FUN_00484eb0 at 00484ef4
-;   shape_edittool.cpp_FUN_00485010 at 0048505d
+;   shape_edittool.cpp_CPickList_insert_FUN_00484e30 at 00484e6e
+;   shape_edittool.cpp_CPickList_remove_FUN_00484eb0 at 00484ef4
+;   shape_edittool.cpp_CPickList_swap_FUN_00485010 at 0048505d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd88f

@@ -45,6 +45,6 @@ void FUN_0040dca0(int param_1);
 // Address: 0040dcf0
 void __cdecl CAlphaBitmap::copyRawToOpa(CAlphaBitmap *this_ptr);
 
-// Original: engine_alphabit.cpp_FUN_0040dd20
+// Original: engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
 // Address: 0040dd20
-void FUN_0040dd20(int param_1,int param_2);
+void __cdecl CAlphaBitmap::fillOpa(CAlphaBitmap *this_ptr,int value);

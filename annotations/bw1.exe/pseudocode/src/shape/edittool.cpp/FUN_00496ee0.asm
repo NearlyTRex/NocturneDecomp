@@ -25,9 +25,9 @@
 ; XREF[8]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0 at 0050a67f
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0 at 004959ba
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 at 0049635b
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049b841
 ;   shape_edittool.cpp_FUN_00494500 at 00494574
-;   shape_edittool.cpp_FUN_004962b0 at 0049635b
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40 at 00493f22
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 00494cb5
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 004938ec

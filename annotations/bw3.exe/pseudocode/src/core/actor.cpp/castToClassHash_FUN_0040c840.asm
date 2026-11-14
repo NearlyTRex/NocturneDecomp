@@ -16,8 +16,8 @@
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0 at 00423cfb
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424814
 ;   core_burncrss.cpp_CBurncross_renderOpaque_FUN_00425360 at 004253b6
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 0043023a
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431927
-;   core_charactr.cpp_FUN_0042ff70 at 0042ffb4
 ;   ... and 110 more
 ;
 ; Called Functions:

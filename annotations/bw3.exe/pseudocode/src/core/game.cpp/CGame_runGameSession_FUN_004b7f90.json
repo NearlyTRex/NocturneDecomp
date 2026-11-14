@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1258,
-    "complexity_score": 648,
+    "complexity_score": 649,
     "cross_reference_count": 1,
     "function_call_count": 67,
     "global_count": 81,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 433,
+    "pseudocode_lines": 434,
     "suspect_count": 19,
     "suspect_types": [
       "raw_address_constant",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1691
+    "total_lines": 1692
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     {
       "addr": "004946f0",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004946f0"
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0"
     },
     {
       "addr": "004a1480",
@@ -106,6 +106,11 @@
       "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bfa40"
     },
     {
+      "addr": "004ba490",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490"
+    },
+    {
       "addr": "004b4430",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_saveClockTime_FUN_004b4430"
@@ -126,14 +131,14 @@
       "name": "core_game.cpp_CGame_updateStatusDisplays_FUN_004b4d50"
     },
     {
+      "addr": "004c49f0",
+      "is_variadic": false,
+      "name": "core_game.cpp_freeCursorBitmaps_FUN_004c49f0"
+    },
+    {
       "addr": "004b6f30",
       "is_variadic": false,
       "name": "core_game.cpp_FUN_004b6f30"
-    },
-    {
-      "addr": "004ba490",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004ba490"
     },
     {
       "addr": "004bd470",
@@ -156,16 +161,6 @@
       "name": "core_game.cpp_FUN_004bec20"
     },
     {
-      "addr": "004c48b0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004c48b0"
-    },
-    {
-      "addr": "004c49f0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004c49f0"
-    },
-    {
       "addr": "004c4bc0",
       "is_variadic": false,
       "name": "core_game.cpp_FUN_004c4bc0"
@@ -174,6 +169,11 @@
       "addr": "004c4cc0",
       "is_variadic": false,
       "name": "core_game.cpp_FUN_004c4cc0"
+    },
+    {
+      "addr": "004c48b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_loadCursorBitmaps_FUN_004c48b0"
     },
     {
       "addr": "004da840",
@@ -246,14 +246,14 @@
       "name": "core_setdir.cpp_FUN_0053f940"
     },
     {
+      "addr": "0055fd30",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_init_FUN_0055fd30"
+    },
+    {
       "addr": "0055fee0",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_shutdown_FUN_0055fee0"
-    },
-    {
-      "addr": "0055fd30",
-      "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055fd30"
     },
     {
       "addr": "005a5ec0",
@@ -306,6 +306,11 @@
       "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0"
     },
     {
+      "addr": "0047f970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970"
+    },
+    {
       "addr": "0047d8c0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0"
@@ -349,11 +354,6 @@
       "addr": "00482070",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
-    },
-    {
-      "addr": "0047f970",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047f970"
     },
     {
       "addr": "00508960",
@@ -1149,7 +1149,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 403,
+      "line": 404,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x10c))(iVar5);",
@@ -1157,7 +1157,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 408,
+      "line": 409,
       "match": "DAT_005c27a6",
       "severity": "mild",
       "text": "pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c27a6);",
@@ -1165,7 +1165,7 @@
     },
     {
       "description": "Raw hex address 0x1d70a78 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 424,
+      "line": 425,
       "match": "0x1d70a78",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01D70A78;",

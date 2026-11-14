@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_health.cpp_FUN_004d20c0 at 004d2110
+;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0 at 004d2110
 ;   core_prye.cpp_CPrye_processDamage_FUN_00523e50 at 0052403d
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880 at 0057b8dd
 ;

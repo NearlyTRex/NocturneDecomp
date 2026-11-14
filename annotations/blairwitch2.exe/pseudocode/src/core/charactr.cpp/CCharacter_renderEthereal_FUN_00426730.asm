@@ -37,7 +37,7 @@
 ;   crt_stdlib.c_rand_FUN_005b849c
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-;   engine_texture.cpp_FUN_00574e00
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     SHL EAX,0x3                         ; 004267c6
     ADD EAX,0x609a10                    ; 004267c9 | DAT_00609a10
     PUSH EAX                            ; 004267ce
-    CALL engine_texture.cpp_FUN_00574e00 ; 004267cf
-        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 ; 004267cf
+        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 004267d4
     LEA EAX,[ESP + 0x4]                 ; 004267d7
     PUSH EAX                            ; 004267db

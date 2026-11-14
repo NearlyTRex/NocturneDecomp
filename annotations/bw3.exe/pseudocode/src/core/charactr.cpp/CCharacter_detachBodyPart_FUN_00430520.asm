@@ -11,7 +11,7 @@
 ;
 ; XREF[10]:
 ;   core_carved.cpp_FUN_00428810 at 004289cf
-;   core_charactr.cpp_FUN_004300e0 at 004302bf
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 004302bf
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 0044580d
 ;   core_demnfolk.cpp_FUN_00458680 at 004587bc
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10 at 004c6041

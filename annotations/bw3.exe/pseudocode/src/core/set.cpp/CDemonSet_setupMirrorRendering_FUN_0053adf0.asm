@@ -39,11 +39,11 @@
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0
+;   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0046d850
 ;   engine_drender.cpp_FUN_0046d1c0
 ;   engine_drender.cpp_FUN_0046d250
-;   engine_drender.cpp_FUN_0046d2d0
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     MOV ESI,dword ptr [0x005f2afc]      ; 0053ae83 | DAT_005f2afc
         ;   Label: LAB_0053ae83
     PUSH ESI                            ; 0053ae89 | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046d2d0 ; 0053ae8a
-        ;   XREF to: 0046d2d0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d2d0()
+    CALL engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0 ; 0053ae8a
+        ;   XREF to: 0046d2d0 (UNCONDITIONAL_CALL)  ; float engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0(CDemonRenderer * this_ptr)
     MOV dword ptr [ESP + 0x34],EAX      ; 0053ae8f
     LEA ESI,[EBX*0x4 + 0x0]             ; 0053ae93
     FLD float ptr [ESP + 0x34]          ; 0053ae9a

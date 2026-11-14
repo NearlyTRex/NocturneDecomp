@@ -11,8 +11,8 @@
 ;
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0 at 0041af1d
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 at 00430a82
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60 at 00430bf8
-;   core_charactr.cpp_FUN_00430960 at 00430a82
 ;   core_charactr.cpp_FUN_00430a90 at 00430b45
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 at 004e6094
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ede00

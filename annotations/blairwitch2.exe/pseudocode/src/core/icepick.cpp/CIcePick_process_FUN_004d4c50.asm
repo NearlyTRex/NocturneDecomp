@@ -32,10 +32,10 @@
 ;   core_charactr.cpp_FUN_00423a10
 ;   core_charactr.cpp_FUN_00423a60
 ;   core_charactr.cpp_FUN_0042b2a0
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
 ;   core_hero.cpp_FUN_004cec50
-;   core_hero.cpp_FUN_004cf030
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -458,8 +458,8 @@ section .text
     FMUL float ptr [EBX + 0x2598]       ; 004d5148
     PUSH EAX                            ; 004d514e
     FSTP float ptr [EBX + 0x2578]       ; 004d514f
-    CALL core_motion.cpp_FUN_005035c0   ; 004d5155
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d5155
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d515a
     ADD ESP,0x4                         ; 004d515d
     CMP ESI,EAX                         ; 004d5160
@@ -567,8 +567,8 @@ section .text
         ;   XREF to: 004d5215 (UNCONDITIONAL_JUMP)  ; LAB_004d5215
     PUSH EBX                            ; 004d524b
         ;   Label: LAB_004d524b
-    CALL core_hero.cpp_FUN_004cf440     ; 004d524c
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf440()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 ; 004d524c
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d5251
     JMP 0x004d50f7                      ; 004d5254
         ;   XREF to: 004d50f7 (UNCONDITIONAL_JUMP)  ; LAB_004d50f7
@@ -612,8 +612,8 @@ section .text
         ;   XREF to: 004d5184 (UNCONDITIONAL_JUMP)  ; LAB_004d5184
     PUSH EDX                            ; 004d52c7
         ;   Label: LAB_004d52c7
-    CALL core_motion.cpp_FUN_005035c0   ; 004d52c8
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d52c8
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d52cd
     ADD ESP,0x4                         ; 004d52d0
     CMP EAX,0x9                         ; 004d52d3

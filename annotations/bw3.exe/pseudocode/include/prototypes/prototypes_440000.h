@@ -27,6 +27,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/COutStream.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
@@ -63,7 +64,7 @@ undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,_FILE *param_2,int 
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00440800(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00440810(CCodec *this_ptr,uint flags);
 undefined4 support_codec_cpp_FUN_00440860(undefined4 param_1,int *param_2,int *param_3);
-undefined4 support_codec_cpp_FUN_004408d0(void);
+int __cdecl support_codec_cpp_CCodec_finalize_FUN_004408d0(CCodec *this_ptr,void *ostream);
 undefined4 support_codec_cpp_FUN_004408e0(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5);
 bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,undefined4 param_4);
 int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_004409f0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
@@ -83,7 +84,7 @@ int __cdecl support_codec_cpp_FUN_00441050(CLZWDictionary *this_ptr,SBitBuffer *
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_004410f0(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 void __cdecl support_codec_cpp_CLZWCompress_init_FUN_00441140(CLZWCompress *this_ptr);
 undefined4 support_codec_cpp_FUN_00441190(int param_1,int *param_2,undefined4 param_3);
-undefined4 support_codec_cpp_FUN_00441290(int param_1,undefined4 param_2);
+int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_00441290(CLZWCompress *this_ptr,COutStream *ostream);
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_00441310(CLZWDecompress *this_ptr,int buffer_size,int initial_bits);
 void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_00441350(CLZWDecompress *this_ptr);
 int support_codec_cpp_FUN_00441390(int *param_1,undefined4 param_2,undefined4 param_3);
@@ -153,9 +154,9 @@ CConstructBone * __cdecl core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CCon
 CConstruct * __cdecl core_construc_cpp_CConstruct_dtor_FUN_00444780(CConstruct *this_ptr,uint flags);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004448d0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004448f0(CCourse *this_ptr,uint flags);
-void core_course_cpp_FUN_00444910(int *param_1,int param_2);
+void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00444910(CCourse *this_ptr,int param_2);
 void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *filename);
-void core_course_cpp_FUN_00444aa0(undefined4 *param_1);
+void __cdecl core_course_cpp_CCourse_free_FUN_00444aa0(CCourse *this_ptr);
 void __cdecl core_course_cpp_CCourse_evaluate_FUN_00444ac0(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 void __cdecl core_course_cpp_FUN_00444b70(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
 void __cdecl core_cow_cpp_staticInit_FUN_00444f00(void);
@@ -192,8 +193,8 @@ CCurtain * __cdecl core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void);
 CDemonActorType * __cdecl core_curtain_cpp_CCurtain_getActorType_FUN_00446340(CCurtain *this_ptr);
 CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr);
-void core_curtain_cpp_FUN_00446b50(int param_1);
-void core_curtain_cpp_FUN_00446c60(int param_1);
+void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00446b50(CCurtain *this_ptr);
+void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_00446c60(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00446d50(CCurtain *this_ptr,SCurtainVertex *vertex);
 void __cdecl core_curtain_cpp_CCurtain_process_FUN_00447830(CCurtain *this_ptr,float delta_time);
 int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_00448060(CCurtain *this_ptr);
@@ -241,7 +242,7 @@ void core_dcamera_cpp_FUN_0044af70(int param_1,float *param_2,float param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044b4a0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int core_dcamera_cpp_FUN_0044bb00(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
-void core_dcamera_cpp_FUN_0044bfe0(void);
+void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044bfe0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *this_ptr,char *filename);
 void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_0044d020(void);
@@ -259,7 +260,7 @@ CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_0044ded0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int start_y,int depth_reciprocal);
-void core_dcamera_cpp_FUN_0044e250(void);
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_0044e250(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);

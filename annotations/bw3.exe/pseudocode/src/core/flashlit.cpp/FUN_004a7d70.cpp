@@ -48,7 +48,7 @@ void core_flashlit_cpp_FUN_004a7d70(void)
   ;
   iVar3 = 9;
   iVar2 = 0;
-  engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
+  engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
   if (0 < _DAT_01d0d210) {
     pCVar1 = CAlphaBitmap_ARRAY_01d19bc0;
     do {
@@ -82,7 +82,7 @@ void core_flashlit_cpp_FUN_004a7d70(void)
             (&CAlphaBitmap_01d19cb0,"rtarrow",0x40,0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (&CAlphaBitmap_01d19cc4,"fieldnotes_exit",0x1e,0x20);
-  engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19cc4,0xff);
+  engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(&CAlphaBitmap_01d19cc4,0xff);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (&CAlphaBitmap_01d19cd8,"underline",0x100,8);
   DAT_005fe370 = 0;

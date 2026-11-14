@@ -21,9 +21,9 @@ void __cdecl CDemonMission::clearMissionData(CDemonMission *this_ptr);
 // Address: 004f5bc0
 void __cdecl CDemonMission::load(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 
-// Original: core_mission.cpp_FUN_004f5c60
+// Original: core_mission.cpp_CDemonMission_save_FUN_004f5c60
 // Address: 004f5c60
-void FUN_004f5c60(CDemonMission *param_1,char *param_2);
+void __cdecl CDemonMission::save(CDemonMission *this_ptr,char *filename);
 
 // Original: core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0
 // Address: 004f5cc0
@@ -105,9 +105,9 @@ void FUN_004f6f80(int *param_1);
 // Address: 004f70a0
 void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f7230
+// Original: core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004f7230
 // Address: 004f7230
-void FUN_004f7230(void);
+void __cdecl CDemonMission::createFromSingleSet(CDemonMission *this_ptr,char *set_name);
 
 // Original: core_mission.cpp_CDemonMission_run_FUN_004f72a0
 // Address: 004f72a0

@@ -13,7 +13,7 @@
 ; _FILE *          Stack[0x1c]:4   file_handle
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_005398d0 at 00539bc3
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0 at 00539bc3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_005e5f5d

@@ -14,7 +14,7 @@ void __cdecl core_hellhag_cpp_CHag_processHagAlertState_FUN_005aaa80(CHag *this_
   CEnemy_full_vtable *pCVar1;
   CCharacter *this_ptr_00;
   EDeathState EVar2;
-  int iVar3;
+  SMotion *pSVar3;
   SStateMachine *pSVar4;
   CDeformableModelInstance *this_ptr_01;
   
@@ -24,8 +24,8 @@ void __cdecl core_hellhag_cpp_CHag_processHagAlertState_FUN_005aaa80(CHag *this_
   this_ptr_00 = (this_ptr->base).base.victim;
   if (this_ptr_00 == (CCharacter *)0x0) {
     this_ptr_01 = &(this_ptr->base).base.base.model;
-    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_01);
-    if (*(int *)(iVar3 + 0x24) != 2) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_01->base);
+    if (pSVar3->state_index != 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_01->base,0,1);
       return;
     }

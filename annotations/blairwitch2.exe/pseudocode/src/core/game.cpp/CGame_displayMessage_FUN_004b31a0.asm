@@ -10,8 +10,8 @@
 ;
 ; XREF[8]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00460630 at 004606fd
-;   core_game.cpp_FUN_004b82e0 at 004b8684
-;   core_game.cpp_FUN_004b90d0 at 004b9139
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9139
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b8684
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004dee70 at 004deed2
 ;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dc9e1
 ;   core_inv.cpp_FUN_004dadb0 at 004db203

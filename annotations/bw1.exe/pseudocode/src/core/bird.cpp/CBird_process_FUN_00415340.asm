@@ -26,11 +26,11 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00432f10
-;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004e62e0
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
@@ -68,8 +68,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00415369
         ;   Label: LAB_00415369
     PUSH EBX                            ; 0041536c
-    CALL core_charactr.cpp_FUN_00434790 ; 0041536d
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 0041536d
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x249c]              ; 00415372
     XOR EDX,EDX                         ; 00415378
     ADD ESP,0x8                         ; 0041537a

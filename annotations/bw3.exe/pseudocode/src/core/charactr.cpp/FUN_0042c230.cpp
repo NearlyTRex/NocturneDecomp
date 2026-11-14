@@ -204,13 +204,13 @@ void __cdecl core_charactr_cpp_FUN_0042c230(CCharacter *this_ptr,CVector3f *velo
     if (local_34 < fVar3) {
       local_34 = this_ptr->size_scale * (float)_DAT_005b822e + fVar3;
     }
-    local_104 = (float)core_setcolid_cpp_FUN_0053de10
-                                 (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                                  (this_ptr->base).location.position.z,local_fc,local_f4,
-                                  this_ptr->collision_cylinder_radius * this_ptr->size_scale,
-                                  this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
-                                  (this_ptr->base).location.position.y,
-                                  (this_ptr->base).location.position.y + local_34);
+    local_104 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
+                          (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                           (this_ptr->base).location.position.z,local_fc,local_f4,
+                           this_ptr->collision_cylinder_radius * this_ptr->size_scale,
+                           this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
+                           (this_ptr->base).location.position.y,
+                           (this_ptr->base).location.position.y + local_34);
     pCVar1 = local_20;
     local_14 = local_104;
     if (DAT_007e2cf0 == (CDemonActor *)0x0) {

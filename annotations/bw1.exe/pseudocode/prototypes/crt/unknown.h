@@ -299,7 +299,7 @@ int FUN_005c394c(short *param_1,undefined4 param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_005c39c8
 // Address: 005c39c8
-void FUN_005c39c8(undefined4 param_1,char *param_2,int param_3);
+void FUN_005c39c8(int param_1,char *param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_005c3a2c
 // Address: 005c3a2c
@@ -1109,9 +1109,9 @@ undefined4 FUN_005c9db8(int *param_1,int *param_2);
 // Address: 005c9df0
 char * FUN_005c9df0(uint param_1,char *param_2,uint param_3);
 
-// Original: crt_unknown.c_FUN_005c9e48
+// Original: crt_unknown.c_IntegerToString_FUN_005c9e48
 // Address: 005c9e48
-undefined1 * FUN_005c9e48(int param_1,undefined1 *param_2,int param_3);
+char * __cdecl IntegerToString(int value,char *buffer,int base);
 
 // Original: crt_unknown.c_FUN_005c9e80
 // Address: 005c9e80
@@ -1523,7 +1523,7 @@ void FUN_005cc2b0(uint param_1,uint param_2);
 
 // Original: crt_unknown.c_FUN_005cc330
 // Address: 005cc330
-undefined4 FUN_005cc330(undefined4 *param_1);
+time_t FUN_005cc330(time_t *param_1);
 
 // Original: crt_unknown.c_FUN_005cc370
 // Address: 005cc370
@@ -1557,9 +1557,9 @@ char * FUN_005cc5a0(char *param_1,char *param_2,ulong param_3);
 // Address: 005cc610
 int FUN_005cc610(undefined4 *param_1,short *param_2,uint param_3);
 
-// Original: crt_unknown.c_FUN_005cc6e0
+// Original: crt_unknown.c__mktime_FUN_005cc6e0
 // Address: 005cc6e0
-int FUN_005cc6e0(int *param_1);
+time_t __cdecl ::mktime(_tm *timeptr);
 
 // Original: crt_unknown.c_FUN_005cc8a0
 // Address: 005cc8a0

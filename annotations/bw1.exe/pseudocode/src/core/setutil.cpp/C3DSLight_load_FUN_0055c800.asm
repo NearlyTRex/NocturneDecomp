@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0054d3c0 at 0054d883
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054d883
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005f11f1

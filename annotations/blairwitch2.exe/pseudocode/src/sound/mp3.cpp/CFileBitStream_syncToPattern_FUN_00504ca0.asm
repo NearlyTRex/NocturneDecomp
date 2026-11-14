@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050a2df
-;   sound_mp3.cpp_FUN_00509db0 at 00509e84
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0 at 00509e84
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00

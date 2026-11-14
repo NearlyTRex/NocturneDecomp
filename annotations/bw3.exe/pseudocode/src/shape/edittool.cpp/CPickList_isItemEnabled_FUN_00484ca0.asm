@@ -10,10 +10,10 @@
 ; XREF[6]:
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00483970 at 004839af
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00483550 at 00483587
+;   shape_edittool.cpp_CPickList_insert_FUN_00484e30 at 00484e59
+;   shape_edittool.cpp_CPickList_remove_FUN_00484eb0 at 00484edf
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 0048483c
-;   shape_edittool.cpp_FUN_00484e30 at 00484e59
-;   shape_edittool.cpp_FUN_00484eb0 at 00484edf
-;   shape_edittool.cpp_FUN_00485010 at 0048502d
+;   shape_edittool.cpp_CPickList_swap_FUN_00485010 at 0048502d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd7ed

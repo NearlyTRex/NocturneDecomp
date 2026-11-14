@@ -428,7 +428,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 
 | struct | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---:|---:|---:|---:|---:|
-| [SActorRayHit](structs/SActorRayHit.md) | 28 | 28 | — | — | — |
+| [SActorRayHit](structs/SActorRayHit.md) | 28 | 28 | 28 | 28 | 28 |
 | [SActorVarBlock](structs/SActorVarBlock.md) | 1504 | 1504 | 1504 | 1504 | 1504 |
 | [SAlphaEntry](structs/SAlphaEntry.md) | 8 | 8 | — | — | — |
 | [SArmAimData](structs/SArmAimData.md) | 32 | 32 | 32 | 32 | 32 |
@@ -460,7 +460,6 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SColorQuantCentroid](structs/SColorQuantCentroid.md) | 32 | 32 | — | — | — |
 | [SColorQuantMapper](structs/SColorQuantMapper.md) | 33544 | 33544 | — | — | — |
 | [SConditionVariable](structs/SConditionVariable.md) | 8 | 8 | — | — | — |
-| [SCorona](structs/SCorona.md) | 78724 | 78724 | — | — | — |
 | [SCoronaLightCache](structs/SCoronaLightCache.md) | 629796 | 629796 | — | — | — |
 | [SCoronaLightEntry](structs/SCoronaLightEntry.md) | 78724 | 78724 | 78724 | 78724 | 78724 |
 | [SCounterBlock](structs/SCounterBlock.md) | 364 | 364 | 364 | 364 | 364 |

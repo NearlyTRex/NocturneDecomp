@@ -33,7 +33,7 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005821c0(int width
   (*_DAT_02c833ec)(_DAT_02c834b4,_DAT_02c834b8,_DAT_02c834bc);
   _DAT_01c50948 = 1;
   _DAT_02c834c4 = bits_per_pixel;
-  iVar2 = engine_special_cpp_FUN_00581f50();
+  iVar2 = engine_special_cpp_lockFrame_FUN_00581f50();
   piVar1 = _DAT_01c4354c;
   if (iVar2 == 0) {
     return 1;

@@ -405,7 +405,8 @@ LAB_004116f9:
         else {
           iVar5 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0(this_ptr_01);
           if (iVar5 == 0) break;
-          core_glass_cpp_FUN_004cc040(this_ptr_01,&g_CDemonSetPtr->collision_impact_position);
+          core_glass_cpp_CGlass_shatter_FUN_004cc040
+                    (this_ptr_01,&g_CDemonSetPtr->collision_impact_position);
         }
         iStack_18 = iStack_18 + 1;
       } while (iStack_18 < 4);

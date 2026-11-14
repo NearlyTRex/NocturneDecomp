@@ -35,11 +35,11 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
+;   core_charactr.cpp_CCharacter_explode_FUN_0042ffe0
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042ff70
 ;   core_charactr.cpp_FUN_0042fbd0
-;   core_charactr.cpp_FUN_0042ff70
-;   core_charactr.cpp_FUN_0042ffe0
-;   core_charactr.cpp_FUN_004300e0
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bd930
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
@@ -105,8 +105,8 @@ section .text
     PUSH dword ptr [EAX + 0x18]         ; 00430de1
     PUSH ECX                            ; 00430de4
     PUSH EBX                            ; 00430de5
-    CALL core_charactr.cpp_FUN_0042ffe0 ; 00430de6
-        ;   XREF to: 0042ffe0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042ffe0()
+    CALL core_charactr.cpp_CCharacter_explode_FUN_0042ffe0 ; 00430de6
+        ;   XREF to: 0042ffe0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_explode_FUN_0042ffe0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0xc                         ; 00430deb
     MOV EAX,dword ptr [EBP + 0x18]      ; 00430dee
         ;   Label: LAB_00430dee
@@ -271,8 +271,8 @@ section .text
     PUSH dword ptr [EAX + 0x18]         ; 00430f8a
     PUSH ECX                            ; 00430f8d
     PUSH EBX                            ; 00430f8e
-    CALL core_charactr.cpp_FUN_004300e0 ; 00430f8f
-        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004300e0()
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_004300e0 ; 00430f8f
+        ;   XREF to: 004300e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_004300e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 00430f94
     JMP 0x00430dee                      ; 00430f97
         ;   XREF to: 00430dee (UNCONDITIONAL_JUMP)  ; LAB_00430dee
@@ -310,8 +310,8 @@ section .text
         ;   XREF to: 00430f85 (CONDITIONAL_JUMP)  ; LAB_00430f85
         ;   Label: LAB_00430fd6
     PUSH EBX                            ; 00430fd8
-    CALL core_charactr.cpp_FUN_0042ff70 ; 00430fd9
-        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042ff70()
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_0042ff70 ; 00430fd9
+        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_0042ff70(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00430fde
     JMP 0x00430dee                      ; 00430fe1
         ;   XREF to: 00430dee (UNCONDITIONAL_JUMP)  ; LAB_00430dee

@@ -15,10 +15,12 @@ int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(CEnemy *this_ptr,flo
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                       (0x01C38BC0,"Capture");
     if (iVar1 == 0) {
-      iVar1 = core_charactr_cpp_FUN_00429f20(this_ptr,delta_time,this_ptr->patrol_name_pattern);
+      iVar1 = core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20
+                        (&this_ptr->base,delta_time,this_ptr->patrol_name_pattern);
       return iVar1;
     }
   }
-  iVar1 = core_charactr_cpp_FUN_00429f20(this_ptr,delta_time,0);
+  iVar1 = core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20
+                    (&this_ptr->base,delta_time,(char *)0x0);
   return iVar1;
 }

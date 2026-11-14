@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CGlassParticle_process_FUN_0049ac10(CGlassParticle *t
   fVar1 = g_CGamePtr->delta_time_float;
   (this_ptr->euler_angles).x = (this_ptr->euler_angles).x + fVar1;
   (this_ptr->euler_angles).y = (this_ptr->euler_angles).y + fVar1;
-  core_particle_cpp_FUN_00509f30(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00509f30(&this_ptr->base);
   iVar2 = this_ptr->lifetime - _DAT_01c5fad0 / 6;
   this_ptr->lifetime = iVar2;
   if (-1 < iVar2) {

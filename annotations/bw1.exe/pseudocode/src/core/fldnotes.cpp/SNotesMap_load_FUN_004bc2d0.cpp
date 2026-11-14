@@ -14,6 +14,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(SNotesMap *this_ptr)
   void *pvVar1;
   int iVar2;
   int iVar3;
+  int extraout_EAX;
   uint uVar4;
   uint uVar5;
   SNotesMapSet *pSVar6;
@@ -54,8 +55,9 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(SNotesMap *this_ptr)
     iVar3 = 1;
   }
   engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(&this_ptr->reveal_mask,iVar2,iVar3);
-  iVar2 = engine_alphabit_cpp_FUN_0040d970(&this_ptr->reveal_mask,0);
+  engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970(&this_ptr->reveal_mask,0);
   iVar3 = 0;
+  iVar2 = extraout_EAX;
   if (0 < this_ptr->set_count) {
     pSVar6 = this_ptr->sets;
     do {

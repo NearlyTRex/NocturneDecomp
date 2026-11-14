@@ -7,7 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[87]:
-;   core_actor.cpp_FUN_004093a0 at 00409718
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 00409718
 ;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170 at 0040e185
 ;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e820 at 0040e835
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e780 at 0040e7e1

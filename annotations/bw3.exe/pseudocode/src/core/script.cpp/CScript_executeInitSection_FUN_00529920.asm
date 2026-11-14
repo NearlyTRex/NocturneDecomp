@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01ed7014
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004ba490
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
 ;   core_main.c_FUN_004e4330
 ;   core_script.cpp_CScript_findLabelIndex_FUN_005303b0
 ;   core_script.cpp_CScript_step_FUN_00529a70
@@ -108,8 +108,8 @@ section .text
     MOV ECX,dword ptr [0x005fe9dc]      ; 005299b4 | g_CGamePtr
     PUSH ECX                            ; 005299ba
     XOR ESI,ESI                         ; 005299bb
-    CALL core_game.cpp_FUN_004ba490     ; 005299bd
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 005299bd
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     ADD ESP,0x4                         ; 005299c2
     MOV dword ptr [0x01ed7014],ESI      ; 005299c5 | DAT_01ed7014
     MOV EAX,dword ptr [ESP + 0x8]       ; 005299cb

@@ -14,10 +14,10 @@
 ;   engine_2d.c_draw320x200SizeDot_FUN_00402ae0 at 00402b81
 ;   engine_2d.c_drawLine_FUN_004011a0 at 004011f6
 ;   engine_2d.c_project3DPointToScreen_FUN_00401780 at 004017bc
+;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004808b0 at 004809b8
 ;   shape_edittool.cpp_FUN_0047a450 at 0047a46e
 ;   shape_edittool.cpp_FUN_0047a480 at 0047a4dd
 ;   shape_edittool.cpp_FUN_0047a590 at 0047a6e5
-;   shape_edittool.cpp_FUN_0047f210 at 0047f38e
 ;   ... and 3 more
 ;
 ; Referenced Globals:

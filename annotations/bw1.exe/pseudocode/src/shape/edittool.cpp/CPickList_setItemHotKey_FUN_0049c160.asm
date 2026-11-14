@@ -9,9 +9,9 @@
 ; int              Stack[0xc]:4   hotkey_code
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_0049c290 at 0049c2d9
-;   shape_edittool.cpp_FUN_0049c310 at 0049c360
-;   shape_edittool.cpp_FUN_0049c470 at 0049c4dd
+;   shape_edittool.cpp_CPickList_insert_FUN_0049c290 at 0049c2d9
+;   shape_edittool.cpp_CPickList_remove_FUN_0049c310 at 0049c360
+;   shape_edittool.cpp_CPickList_swap_FUN_0049c470 at 0049c4dd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc76f

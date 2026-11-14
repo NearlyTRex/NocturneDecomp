@@ -31,24 +31,30 @@ void __cdecl core_charactr_cpp_FUN_0042f310(CCharacter *this_ptr)
   DAT_005f2afc->skip_uv_extraction = 1;
   iVar2 = (iVar2 % 6) * 0x18;
   if (ABS(this_ptr->bind_time) == 0.0) {
-    engine_texture_cpp_FUN_0056aa10(&DAT_005f0f74 + iVar2);
+    engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+              ((SMRGLTextureBasic *)(&DAT_005f0f74 + iVar2));
   }
   else {
     iVar1 = this_ptr->bind_type;
     if (iVar1 == 0) {
-      engine_texture_cpp_FUN_0056aa10(&DAT_005f1124 + iVar2);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+                ((SMRGLTextureBasic *)(&DAT_005f1124 + iVar2));
     }
     else if (iVar1 == 1) {
-      engine_texture_cpp_FUN_0056aa10(&DAT_005f1004 + iVar2);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+                ((SMRGLTextureBasic *)(&DAT_005f1004 + iVar2));
     }
     else if (iVar1 == 2) {
-      engine_texture_cpp_FUN_0056aa10(&DAT_005f1094 + iVar2);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+                ((SMRGLTextureBasic *)(&DAT_005f1094 + iVar2));
     }
     else if (iVar1 == 4) {
-      engine_texture_cpp_FUN_0056aa10(&DAT_005f11b4 + iVar2);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+                ((SMRGLTextureBasic *)(&DAT_005f11b4 + iVar2));
     }
     else if (iVar1 == 3) {
-      engine_texture_cpp_FUN_0056aa10(&DAT_005f1244 + iVar2);
+      engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10
+                ((SMRGLTextureBasic *)(&DAT_005f1244 + iVar2));
     }
   }
   this_ptr_00 = &this_ptr->model;

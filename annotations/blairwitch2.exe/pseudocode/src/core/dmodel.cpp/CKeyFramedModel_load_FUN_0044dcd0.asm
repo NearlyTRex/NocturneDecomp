@@ -28,9 +28,9 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010
-;   core_dmodel.cpp_FUN_0044e590
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
@@ -48,8 +48,8 @@ section .text
     PUSH EBP                            ; 0044dcd3
     MOV EBX,dword ptr [ESP + 0x14]      ; 0044dcd4
     PUSH EBX                            ; 0044dcd8
-    CALL core_dmodel.cpp_FUN_0044e590   ; 0044dcd9
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590 ; 0044dcd9
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0044dcde
     PUSH 0x5cf58f                       ; 0044dce1 | DAT_005cf58f
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0044dce6

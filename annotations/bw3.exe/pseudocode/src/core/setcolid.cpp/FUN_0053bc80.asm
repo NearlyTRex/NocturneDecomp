@@ -57,7 +57,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00461ef0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00474b90
-;   core_dtrace.cpp_FUN_00474940
+;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00474940
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50
 ;   core_dtri.cpp_FUN_004795c0
 ;   core_main.c_FUN_004e4330
@@ -90,8 +90,8 @@ section .text
     PUSH ESI                            ; 0053bcc0
     PUSH EBX                            ; 0053bcc1
     PUSH 0x203b37c                      ; 0053bcc2 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00474940   ; 0053bcc7
-        ;   XREF to: 00474940 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00474940()
+    CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00474940 ; 0053bcc7
+        ;   XREF to: 00474940 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00474940(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0x3b4],EAX     ; 0053bccc
     FLD float ptr [ESP + 0x3b4]         ; 0053bcd3
     ADD ESP,0x10                        ; 0053bcda

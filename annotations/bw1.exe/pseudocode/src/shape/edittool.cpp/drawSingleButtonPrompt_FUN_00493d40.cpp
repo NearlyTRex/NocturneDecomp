@@ -31,7 +31,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40(char *title,
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   iVar1 = DAT_0061b49c / 0x60;
   local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_0049d950("Cancel");
-  iVar2 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+  iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
   iVar2 = iVar1 * 2 + iVar2;
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,title);
   local_14 = iVar1;
@@ -48,7 +48,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40(char *title,
              0);
   local_1c = shape_edittool_cpp_calculateButtonWidth_FUN_0049d950("Cancel");
   local_24 = ((_DAT_01c4f010 + _DAT_01c4f008) - local_1c) / 2 + 1;
-  iVar4 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
   local_20 = (_DAT_01c4f014 - iVar4) + 1;
   shape_edittool_cpp_CEdButton_ctor_FUN_0049d480(&local_108);
   shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_0049d530
@@ -60,18 +60,18 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40(char *title,
     iVar4 = shape_edittool_cpp_CEdButton_wasClicked_FUN_0049d8a0(&local_108);
     if ((iVar4 != 0) || (_DAT_02c9be70 != 0)) break;
     shape_edittool_cpp_FUN_00496ee0(g_CEditorToolsPtr);
-    shape_edittool_cpp_FUN_00497660(g_CEditorToolsPtr,1);
+    shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00497660(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
     engine_font_cpp_FUN_004c1dd0
               (_DAT_01c3eb50,message,((_DAT_01c4f008 + _DAT_01c4f010) - iVar3) / 2,
                (((_DAT_01c4f00c + _DAT_01c4f014) - iVar1) - iVar2) / 2,color,0xffffffff);
-    shape_edittool_cpp_FUN_0049d580(&local_108,1);
-    shape_edittool_cpp_FUN_00497870(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEdButton_paint_FUN_0049d580(&local_108,1);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00497870(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
   shape_edittool_cpp_CEdButton_dtor_FUN_0049d4b0(&local_108,0);
   return;
 }

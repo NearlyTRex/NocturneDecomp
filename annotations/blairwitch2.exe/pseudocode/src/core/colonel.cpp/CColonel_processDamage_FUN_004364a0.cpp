@@ -11,7 +11,7 @@ void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004364a0(CColonel *this
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
@@ -28,10 +28,10 @@ void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004364a0(CColonel *this
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar2 + 0x24) != 6) {
-      iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-      if (*(int *)(iVar2 + 0x24) != 5) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar2->state_index != 6) {
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+      if (pSVar2->state_index != 5) {
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004c9cc0

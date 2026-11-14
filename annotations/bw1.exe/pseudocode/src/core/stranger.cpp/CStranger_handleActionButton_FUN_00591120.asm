@@ -27,10 +27,10 @@
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004ebc40
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
+;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
 ;   core_hero.cpp_FUN_004eb3e0
 ;   core_hero.cpp_FUN_004eb660
-;   core_hero.cpp_FUN_004eb890
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_motion.cpp_FUN_00524a40
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0058ce80
@@ -246,8 +246,8 @@ section .text
     RET                                 ; 00591313
     PUSH EBX                            ; 00591314
         ;   Label: LAB_00591314
-    CALL core_hero.cpp_FUN_004eb890     ; 00591315
-        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb890()
+    CALL core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890 ; 00591315
+        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero * this_ptr)
     ADD ESP,0x4                         ; 0059131a
     LEA ESI,[EBX + 0x158]               ; 0059131d
     TEST EAX,EAX                        ; 00591323

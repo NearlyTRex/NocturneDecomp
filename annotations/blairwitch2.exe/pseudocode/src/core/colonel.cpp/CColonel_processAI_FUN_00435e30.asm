@@ -71,8 +71,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
-;   core_hero.cpp_FUN_004d00c0
-;   core_motion.cpp_FUN_005035c0
+;   core_hero.cpp_CHero_closestEnemy_FUN_004d00c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
@@ -156,8 +156,8 @@ section .text
         ;   Label: LAB_00435f14
     PUSH EAX                            ; 00435f18
     PUSH EBX                            ; 00435f19
-    CALL core_hero.cpp_FUN_004d00c0     ; 00435f1a
-        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d00c0()
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004d00c0 ; 00435f1a
+        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004d00c0(CHero * this_ptr, float * out_distance)
     MOV EDX,EAX                         ; 00435f1f
     ADD ESP,0x8                         ; 00435f21
     TEST EAX,EAX                        ; 00435f24
@@ -437,8 +437,8 @@ section .text
         ;   XREF to: 00435f4a (UNCONDITIONAL_JUMP)  ; LAB_00435f4a
     PUSH EAX                            ; 004362c4
         ;   Label: LAB_004362c4
-    CALL core_motion.cpp_FUN_005035c0   ; 004362c5
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004362c5
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004362ca
     ADD ESP,0x4                         ; 004362cd
     CMP EAX,0x2                         ; 004362d0
@@ -452,8 +452,8 @@ section .text
         ;   XREF to: 00436015 (UNCONDITIONAL_JUMP)  ; LAB_00436015
     PUSH EAX                            ; 004362ec
         ;   Label: LAB_004362ec
-    CALL core_motion.cpp_FUN_005035c0   ; 004362ed
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004362ed
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004362f2
     JMP 0x00436015                      ; 004362f5
         ;   XREF to: 00436015 (UNCONDITIONAL_JUMP)  ; LAB_00436015

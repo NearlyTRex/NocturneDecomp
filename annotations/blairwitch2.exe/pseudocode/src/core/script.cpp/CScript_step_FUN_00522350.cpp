@@ -2340,8 +2340,9 @@ joined_r0x0052419d:
                                                              (*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4
                                                                       ) + 0x2437c),local_38bc),
                                                   pCVar15 != (CDemonActor *)0x0)) &&
-                                                  (core_inv_cpp_FUN_004db8e0
-                                                             (&local_178[0xd6].process_disabled,
+                                                  (core_inv_cpp_CInventory_removeItem_FUN_004db8e0
+                                                             ((CInventory *)
+                                                              &local_178[0xd6].process_disabled,
                                                               pCVar15,iVar5), iVar5 == 0)) {
                                                     core_event_cpp_copyQuaternion_FUN_00492610
                                                               ((CQuaternion4f *)&pCVar15->location,
@@ -2543,7 +2544,9 @@ LAB_00526d4a:
                                                   iVar5 = core_actor_cpp_isOfClass_FUN_0040c840
                                                                     (pCVar15,local_838);
                                                   if (iVar5 != 0) goto LAB_005223fb;
-                                                  core_inv_cpp_FUN_004db9d0(piVar9,0,5,1);
+                                                  core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+                                                            ((CInventory *)piVar9,(CDemonActor *)0x0
+                                                             ,5,1);
                                                   pCVar15 = (CDemonActor *)
                                                             core_doc_cpp_FUN_0045e1b0(piVar9);
                                                   } while (pCVar15 != local_15c);

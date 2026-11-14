@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01c5fad0
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00509f30
+;   core_particle.cpp_CParticle_process_FUN_00509f30
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0049a017
     MOV EBX,dword ptr [EBP + 0xc]       ; 0049a01a
     PUSH EBX                            ; 0049a01d
-    CALL core_particle.cpp_FUN_00509f30 ; 0049a01e
-        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00509f30()
+    CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 0049a01e
+        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
     LEA EAX,[EBX + 0xc]                 ; 0049a023
     FLD float ptr [EAX + 0x4]           ; 0049a026
     FMUL ST0                            ; 0049a029

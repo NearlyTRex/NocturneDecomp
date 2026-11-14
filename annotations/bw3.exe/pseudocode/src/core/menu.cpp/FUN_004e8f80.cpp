@@ -39,7 +39,7 @@ void __cdecl core_menu_cpp_FUN_004e8f80(void)
   do {
     pcVar8 = local_114;
     pcVar9 = local_114;
-    core_game_cpp_FUN_004b4440();
+    core_game_cpp_CGame_updateDT_FUN_004b4440(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);

@@ -29,7 +29,7 @@
 ;   core_main.c_FUN_005030e0
 ;   engine_dosio.cpp_FUN_00479180
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
-;   sound_mp3.cpp_FUN_0052af80
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_0052aefc
     PUSH EBX                            ; 0052aefd
     PUSH EDI                            ; 0052aefe
-    CALL sound_mp3.cpp_FUN_0052af80     ; 0052aeff
-        ;   XREF to: 0052af80 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_FUN_0052af80()
+    CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80 ; 0052aeff
+        ;   XREF to: 0052af80 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
     ADD ESP,0xc                         ; 0052af04
     TEST EAX,EAX                        ; 0052af07
     JZ 0x0052af53                       ; 0052af09

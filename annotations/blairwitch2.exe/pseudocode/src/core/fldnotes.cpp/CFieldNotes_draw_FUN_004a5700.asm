@@ -49,10 +49,10 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0
-;   engine_alphabit.cpp_FUN_0040dd20
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -519,8 +519,8 @@ section .text
     PUSH 0x1caf114                      ; 004a5c84
     MOV EBP,0x9                         ; 004a5c89
     XOR EBX,EBX                         ; 004a5c8e
-    CALL engine_alphabit.cpp_FUN_0040dd20 ; 004a5c90
-        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dd20()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20 ; 004a5c90
+        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(CAlphaBitmap * this_ptr, int value)
     MOV EDI,dword ptr [0x01cab9f0]      ; 004a5c95 | DAT_01cab9f0
     ADD ESP,0x8                         ; 004a5c9b
     TEST EDI,EDI                        ; 004a5c9e
@@ -634,8 +634,8 @@ section .text
     ADD ESP,0x10                        ; 004a5e07
     PUSH 0xff                           ; 004a5e0a
     PUSH 0x1caf218                      ; 004a5e0f
-    CALL engine_alphabit.cpp_FUN_0040dd20 ; 004a5e14
-        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dd20()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20 ; 004a5e14
+        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004a5e19
     PUSH 0x8                            ; 004a5e1c
     PUSH 0x100                          ; 004a5e1e

@@ -1141,13 +1141,15 @@ LAB_005bbf94:
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar22 = (float10)fcos((float10)fStack_90);
               fVar23 = (float10)fsin((float10)fStack_90);
-              fStack_8c = (float)core_setcolid_cpp_FUN_00558450
-                                           (g_CDemonSetPtr,
-                                            (this_ptr->base).base.base.location.position.x,
-                                            (this_ptr->base).base.base.location.position.z,
-                                            (float)(fVar23 * (float10)_DAT_005fa76c),
-                                            (float)(fVar22 * (float10)_DAT_005fa76c),
-                                            (this_ptr->base).base.collision_cylinder_radius);
+              fStack_8c = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450
+                                    (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
+                                     (this_ptr->base).base.base.location.position.z,
+                                     (float)(fVar23 * (float10)_DAT_005fa76c),
+                                     (float)(fVar22 * (float10)_DAT_005fa76c),
+                                     (this_ptr->base).base.collision_cylinder_radius,
+                                     (this_ptr->base).base.base.location.position.y +
+                                     (this_ptr->base).base.collision_cylinder_bottom,
+                                     (this_ptr->base).base.base.location.position.y + fStack_1c);
               in_stack_fffff9d8 = (CZombie *)0x5bc15b;
               pCStack_14 = (CCharacter_full_vtable *)fStack_8c;
               core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
@@ -1383,7 +1385,7 @@ LAB_005bbbdf:
                 (this_ptr,this_ptr->part_indices[5],this_ptr->bone_indices[10],0x3e4ccccd);
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] = 1;
     }
-    core_charactr_cpp_FUN_00430960(this_ptr);
+    core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
   }
   iVar7 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005bdec0(this_ptr,1);
   if (((fStack_a0 != 0.0) && (-1 < iVar7)) &&

@@ -9,7 +9,7 @@
 ;
 ; XREF[9]:
 ;   core_bird.cpp_CBird_dtor_FUN_004159f0 at 00415a05
-;   core_hero.cpp_FUN_004ea980 at 004ea9ba
+;   core_hero.cpp_CHero_dtor_FUN_004ea980 at 004ea9ba
 ;   core_hiram.cpp_CHiram_dtor_FUN_004ed1f0 at 004ed20f
 ;   core_hiram.cpp_CNPC_dtor_FUN_004ed400 at 004ed415
 ;   core_hostage.cpp_CHostage_dtor_FUN_004ef910 at 004ef925

@@ -30,8 +30,8 @@
 ;   core_charactr.cpp_FUN_00423a60
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dccd0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005038a0
 ;   core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_0051f9c0
 ;   ... and 12 more
@@ -507,8 +507,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0051f1d5
         ;   Label: LAB_0051f1d5
     PUSH EAX                            ; 0051f1db
-    CALL core_motion.cpp_FUN_005035c0   ; 0051f1dc
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0051f1dc
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0051f1e1
     ADD ESP,0x4                         ; 0051f1e4
     CMP EAX,0xa                         ; 0051f1e7
@@ -590,8 +590,8 @@ section .text
     FADD float ptr [EBX + 0x2578]       ; 0051f2ce
     PUSH EDI                            ; 0051f2d4
     FSTP float ptr [EBX + 0x2578]       ; 0051f2d5
-    CALL core_motion.cpp_FUN_005035c0   ; 0051f2db
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0051f2db
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0051f2e0
     ADD ESP,0x4                         ; 0051f2e3
     CMP ESI,EAX                         ; 0051f2e6

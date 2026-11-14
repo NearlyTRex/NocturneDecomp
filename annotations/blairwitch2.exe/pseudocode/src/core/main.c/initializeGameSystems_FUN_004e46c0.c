@@ -66,7 +66,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0();
   wincore_winrun_cpp_initJoystick_FUN_0058ffd0();
-  iVar6 = wincore_wddvmem_cpp_FUN_00588a50(0x280,0x1e0,0x20);
+  iVar6 = wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(0x280,0x1e0,0x20);
   if (iVar6 == 0) {
     _DAT_01d046a0 = "..\\core\\main.c";
     _DAT_01d046a4 = 0x3f2;

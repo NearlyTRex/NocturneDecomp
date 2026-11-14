@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 82,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 55,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
       "warning_overlapping_globals"
     ],
-    "total_lines": 195
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "004d4be0",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d4be0"
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d4be0"
     },
     {
       "addr": "004e4330",
@@ -294,9 +294,9 @@
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 31,
-      "match": "*(CCharacter **)(index * 4 + 0x1d5ba04",
+      "match": "*(CHero **)(index * 4 + 0x1d5ba04",
       "severity": "moderate",
-      "text": "*(CCharacter **)(index * 4 + 0x1d5ba04) = local_14;",
+      "text": "*(CHero **)(index * 4 + 0x1d5ba04) = local_14;",
       "type": "raw_address_pointer_store"
     }
   ]

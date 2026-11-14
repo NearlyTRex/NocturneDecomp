@@ -39,8 +39,8 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
-;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -1011,8 +1011,8 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 00596af3
         ;   Label: LAB_00596af3
     PUSH EDI                            ; 00596af9
-    CALL core_motion.cpp_FUN_005035c0   ; 00596afa
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00596afa
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00596aff
     MOV ESI,dword ptr [EAX + 0x24]      ; 00596b02
     PUSH dword ptr [EBP + 0x92]         ; 00596b05
@@ -1061,8 +1061,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00596b80
         ;   Label: LAB_00596b80
     PUSH EAX                            ; 00596b86
-    CALL core_motion.cpp_FUN_005035c0   ; 00596b87
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00596b87
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00596b8c
     MOV EAX,dword ptr [EAX + 0x24]      ; 00596b8f
     LEA EDX,[EBX + 0x2508]              ; 00596b92
@@ -1167,8 +1167,8 @@ section .text
         ;   XREF to: 00598044 (CONDITIONAL_JUMP)  ; LAB_00598044
     PUSH EBX                            ; 00596cc6
         ;   Label: LAB_00596cc6
-    CALL core_charactr.cpp_FUN_00426f30 ; 00596cc7
-        ;   XREF to: 00426f30 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00426f30()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30 ; 00596cc7
+        ;   XREF to: 00426f30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00596ccc
     PUSH 0x1                            ; 00596ccf
         ;   Label: LAB_00596ccf
@@ -1495,8 +1495,8 @@ section .text
     MOV ECX,dword ptr [0x0061b5a8]      ; 005970b7 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 005970bd
     PUSH ECX                            ; 005970c0 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00537030 ; 005970c1
-        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00537030()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 ; 005970c1
+        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV EDI,dword ptr [0x0061b5a8]      ; 005970c6 | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 005970cc
     ADD ESP,0x20                        ; 005970cf
@@ -2476,8 +2476,8 @@ section .text
     PUSH EDI                            ; 00597c57
     MOV dword ptr [EBP + -0xe],EDX      ; 00597c58
     MOV dword ptr [EBP + 0x6a],ECX      ; 00597c5b
-    CALL core_motion.cpp_FUN_005035c0   ; 00597c5e
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00597c5e
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00597c63
     ADD ESP,0x4                         ; 00597c66
     CMP EAX,0x8                         ; 00597c69

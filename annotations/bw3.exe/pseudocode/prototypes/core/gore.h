@@ -21,9 +21,9 @@ void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,
 // Address: 004ccaf0
 void __cdecl CBloodParticle::setupRenderState(CBloodParticle *this_ptr);
 
-// Original: core_gore.cpp_FUN_004ccbe0
+// Original: core_gore.cpp_CBloodParticle_render_FUN_004ccbe0
 // Address: 004ccbe0
-void FUN_004ccbe0(CVector3f *param_1);
+void __cdecl CBloodParticle::render(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_FUN_004cd3f0
 // Address: 004cd3f0
@@ -49,13 +49,13 @@ void FUN_004cd690(undefined4 *param_1,int param_2);
 // Address: 004cdb20
 void __cdecl CBloodSplat::processAge(CBloodSplat *this_ptr);
 
-// Original: core_gore.cpp_FUN_004cdb50
+// Original: core_gore.cpp_CBloodSplat_load_FUN_004cdb50
 // Address: 004cdb50
-void FUN_004cdb50(undefined4 param_1,_FILE *param_2);
+int __cdecl CBloodSplat::load(CBloodSplat *this_ptr,_FILE *file_handle);
 
-// Original: core_gore.cpp_FUN_004cdbe0
+// Original: core_gore.cpp_CBloodSplat_save_FUN_004cdbe0
 // Address: 004cdbe0
-void FUN_004cdbe0(undefined4 *param_1,undefined4 param_2);
+int __cdecl CBloodSplat::save(CBloodSplat *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_CBloodPool_setupRenderState_FUN_004cdc90
 // Address: 004cdc90
@@ -73,13 +73,13 @@ void __cdecl CBloodPool::processAge(CBloodPool *this_ptr);
 // Address: 004cdff0
 void __cdecl CBloodPool::init(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
 
-// Original: core_gore.cpp_FUN_004ce090
+// Original: core_gore.cpp_CBloodPool_load_FUN_004ce090
 // Address: 004ce090
-void FUN_004ce090(undefined4 param_1,_FILE *param_2);
+int __cdecl CBloodPool::load(CBloodPool *this_ptr,_FILE *file_handle);
 
-// Original: core_gore.cpp_FUN_004ce0f0
+// Original: core_gore.cpp_CBloodPool_save_FUN_004ce0f0
 // Address: 004ce0f0
-void FUN_004ce0f0(int param_1,undefined4 param_2);
+int __cdecl CBloodPool::save(CBloodPool *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_CFootstep_init_FUN_004ce170
 // Address: 004ce170

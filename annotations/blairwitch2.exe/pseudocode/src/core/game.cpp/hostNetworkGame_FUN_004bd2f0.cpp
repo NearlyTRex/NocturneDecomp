@@ -11,7 +11,7 @@ void __cdecl core_game_cpp_hostNetworkGame_FUN_004bd2f0(void)
 {
   int iVar1;
   
-  iVar1 = core_netgame_cpp_FUN_0050b420(g_CNetGamePtr);
+  iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0050b420(g_CNetGamePtr);
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                       (g_CEditorToolsPtr,"Select mission to play","world",

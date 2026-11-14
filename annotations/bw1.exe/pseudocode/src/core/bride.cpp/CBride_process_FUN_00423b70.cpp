@@ -472,7 +472,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
                 ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_007c5388,0.7);
-      core_charactr_cpp_FUN_00430960(this_ptr);
+      core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
     }
   }
   return;

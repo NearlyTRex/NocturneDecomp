@@ -279,11 +279,11 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00576ab0(CTrash *this_ptr,float d
   afStack_19c[(uint)bVar11 * -2 + 6] = afStack_d0[(uint)bVar11 * -2 + 0xc];
   afStack_19c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
-  fStack_14 = (float)core_setcolid_cpp_FUN_00537030
-                               (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                                (this_ptr->base).location.position.z,fStack_134,fStack_12c,
-                                this_ptr->collision_radius,this_ptr->collision_bottom_y,
-                                this_ptr->collision_top_y);
+  fStack_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030
+                        (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                         (this_ptr->base).location.position.z,fStack_134,fStack_12c,
+                         this_ptr->collision_radius,this_ptr->collision_bottom_y,
+                         this_ptr->collision_top_y);
   bVar4 = false;
   if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
     fStack_134 = fStack_134 * fStack_14;

@@ -13,12 +13,12 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505ba0
 ;   engine_2d.c_drawRect_FUN_00403170 at 00403187
 ;   engine_2d.c_fillRectColor_FUN_004031c0 at 00403224
+;   shape_edittool.cpp_CEdButton_paint_FUN_00486120 at 0048641e
+;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200 at 00480377
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047f397
 ;   shape_edittool.cpp_FUN_0047b980 at 0047b9a4
-;   shape_edittool.cpp_FUN_0047ee50 at 0047f397
 ;   shape_edittool.cpp_FUN_0047fa80 at 00480190
-;   shape_edittool.cpp_FUN_00480200 at 00480377
 ;   shape_edittool.cpp_FUN_004850a0 at 0048524c
-;   shape_edittool.cpp_FUN_004852f0 at 0048536c
 ;   ... and 1 more
 ;
 ; Referenced Globals:

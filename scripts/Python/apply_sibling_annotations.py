@@ -48,16 +48,14 @@
 #@category Annotations
 
 import argparse
+import contextlib
 import json
 import os
 import re
 import sys
 from collections import Counter
 
-THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
-
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sibling_match as sm
 from thunk_names import derived_name_thunks, plan_thunk_names
 
@@ -95,9 +93,38 @@ def needs_custom_storage(conv, spec):
 # normalised away. Same code, therefore same parameters.
 PROVEN_SHAPES = frozenset(("identical", "same_mnemonics"))
 
+# apply_row outcomes that leave the function as it was, besides the "skipped (...)" ones
+UNCHANGED_OUTCOMES = frozenset(("prototype rejected",))
+
 ORDER = ["NAME_SIG", "NAME", "SIG_ONLY", "ALREADY", "SKIP_LEDGER", "SKIP_NO_RECEIVER",
          "SKIP_CONF", "SKIP_SHAPE",
          "SKIP_CRT", "SKIP_NAMED", "SKIP_TU"]
+
+
+def measured_despite_shape(shape, sig_verdict, pairing_ok, trust_measured):
+    """--trust-measured-signature: the measured argument size stands in for the shape.
+
+    `size_mismatch` says the build edited the body, not that it is another
+    function, and a sampled read of such pairs (BW builds against nocedit)
+    found every one the same function doing the same job, grown or trimmed.
+    The argument size measured against the target's own bytes is the evidence
+    about the prototype, so where it agrees and the pairing already passes the
+    name gate, the shape does not get to veto. A conflict still does.
+    """
+    return bool(trust_measured and shape in WEAK_SHAPES and sig_verdict == "agree" and pairing_ok)
+
+
+def structural_supported(sig_verdict, sig_structural, pairing_ok, trust_structural):
+    """--trust-structural-signature: verify_sibling_signatures' structural match.
+
+    For a pair nothing could measure (a virtual with no caller and no RET n):
+    the target calls every mapped callee in order and both bodies read the
+    same stack arguments, argument 0 among them. Scored on the measured pairs
+    of the Blair Witch builds it accepted no conflict in 3461, and a hand-read
+    sample of the unmeasured pairs it carries kept every prototype. Only for
+    pairs that pass the name gate; a measured verdict, either way, wins.
+    """
+    return bool(trust_structural and sig_verdict == "unverifiable" and sig_structural and pairing_ok)
 
 
 def signature_supported(shape, sig_verdict, confidence, min_confidence):
@@ -164,9 +191,25 @@ def target_name(nocedit_name, nocturne_name, nocturne_addr):
     return "%s%s_FUN_%s" % (prefix, core, nocturne_addr.lower())
 
 
+_CLASS_RE = re.compile(r'^(?:[a-z0-9_]+\.(?:cpp|c)_)?(C[A-Z]\w*?|S[A-Z]\w*?)_\w+_FUN_[0-9a-f]{8}$')
+
+
+def claimed_class(want):
+    """The class a `[<unit>_]<Class>_<method>_FUN_<addr>` name asserts as receiver.
+
+    The unit is optional: a target with no unit of its own and a source with
+    none either still gets a class name, and the receiver gate must see it.
+    """
+    if not want:
+        return None
+    m = _CLASS_RE.match(want)
+    return m.group(1) if m else None
+
+
 def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
          require_tu_match=True, refresh_signatures=False, ledger=None,
-         current_params=None, upgrade_class_only=False, current_receiver=None):
+         current_params=None, upgrade_class_only=False, current_receiver=None,
+         trust_measured=False, trust_structural=False):
     """Decide an action per pair without touching Ghidra.
 
     `ledger` is an optional reviewed approval list keyed by nocturne address
@@ -192,10 +235,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         # Does the desired name assert a class receiver, and can the target
         # honour it? `current_params` is the live parameter count keyed by
         # nocturne address; 0 means the function declares none at all.
-        claimed_cls = None
-        if want:
-            mcls = re.match(r'^[a-z0-9_]+\.(?:cpp|c)_(C[A-Z]\w*|S[A-Z]\w*)_\w+_FUN_', want)
-            claimed_cls = mcls.group(1) if mcls else None
+        claimed_cls = claimed_class(want)
         needs_receiver = claimed_cls is not None
         has_receiver = (current_params or {}).get(b, 0) > 0
         # Counting parameters is not enough. The name asserts parameter 0 is
@@ -248,10 +288,16 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         # Evaluated up front because it is independent of everything the name
         # gate below decides -- including the confidence test that the name
         # gate rejects on.
+        pairing_ok = ledger_ok or p["confidence"] >= min_confidence
+        measured = (measured_despite_shape(row["shape"], row["sig_verdict"], pairing_ok,
+                                           trust_measured)
+                    or structural_supported(row["sig_verdict"], p.get("sig_structural"),
+                                            pairing_ok, trust_structural))
         sig_ok = (want_signatures
                   and not p.get("ambiguous")
-                  and signature_supported(row["shape"], row["sig_verdict"],
-                                          p["confidence"], min_confidence))
+                  and (measured
+                       or signature_supported(row["shape"], row["sig_verdict"],
+                                              p["confidence"], min_confidence)))
 
         if b in interior:
             row["action"] = "SKIP_CRT"
@@ -319,7 +365,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["action"] = "SKIP_NO_RECEIVER"
             row["detail"] = ("name claims class %s but the target declares no "
                              "parameters; needs a signature first" % claimed_cls)
-        elif row["shape"] in WEAK_SHAPES and not ledger_ok:
+        elif row["shape"] in WEAK_SHAPES and not ledger_ok and not (measured and sig_ok):
             # A reviewed row overrides this one but NOT SKIP_TU above, and the
             # asymmetry is the point. `size_mismatch` is a heuristic *about the
             # shape*, and a review that read both bodies has already accounted
@@ -535,9 +581,12 @@ def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
         # pins a convention onto storage which does not match it, and is what
         # locked seven `crt_math.c` functions into a broken state.
         ok = make_readable(func)
+        # Put the old name back first, readable or not: a class name left on a
+        # function with no `this_ptr` aborts the next export on its own.
+        undone = undo_receiver_name(func, row)
         if not ok:
             return "UNREADABLE"
-        if undo_receiver_name(func, row):
+        if undone:
             return "skipped (prototype rejected, no receiver)"
         return "prototype rejected" if sig_only else "name (prototype rejected)"
 
@@ -551,7 +600,7 @@ def undo_receiver_name(func, row):
     return True
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description="Apply sibling-mapped names/signatures into nocturne.")
     ap.add_argument("project_path")
@@ -570,6 +619,14 @@ def main():
     ap.add_argument("--signatures", action="store_true",
                     help="also transfer prototypes where the signature gate is "
                          "satisfied (see signature_supported)")
+    ap.add_argument("--trust-measured-signature", action="store_true",
+                    help="let a measured argument-size agreement (sig_verdict agree) "
+                         "carry the prototype past a size_mismatch shape, for pairs "
+                         "that pass the name gate. A conflict still vetoes.")
+    ap.add_argument("--trust-structural-signature", action="store_true",
+                    help="for a pair nothing could measure, let verify_sibling_signatures' "
+                         "structural match (callees in order, same stack arguments "
+                         "read) carry the prototype, for pairs that pass the name gate")
     ap.add_argument("--refresh-signatures", action="store_true",
                     help="also (re)apply signatures to already-named functions, "
                          "for prototypes blocked earlier by a missing type")
@@ -583,7 +640,7 @@ def main():
                     help="apply at most N rows; use for a first small batch")
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--out", default=None)
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)
@@ -597,9 +654,11 @@ def main():
         with open(args.ledger) as fh:
             blob = json.load(fh)
         ledger = {e["b"].lower(): e for e in blob["entries"]}
-        n_ok = sum(1 for e in ledger.values() if e.get("status") == "approve")
+        # Counted per status: a row with neither status is neither, and plan()
+        # treats it as unreviewed.
+        statuses = Counter(e.get("status") for e in ledger.values())
         print("Ledger: %d reviewed row(s) -- %d approved, %d rejected"
-              % (len(ledger), n_ok, len(ledger) - n_ok))
+              % (len(ledger), statuses["approve"], statuses["reject"]))
 
     print("Loaded %d pairs from %s" % (len(mapping["pairs"]), args.mapping))
     if crt_wall:
@@ -633,7 +692,10 @@ def main():
     code = 0
     try:
         project = pyghidra.open_project(project_path, args.project_name)
-        with pyghidra.program_context(project, "/" + args.program_name) as program:
+        # closing() shuts the project however the block ends, a failed program
+        # open included, so a crash never leaves its lock behind.
+        with contextlib.closing(project), \
+                pyghidra.program_context(project, "/" + args.program_name) as program:
             fm = program.getFunctionManager()
             funcs = {}
             for f in fm.getFunctions(True):
@@ -657,7 +719,9 @@ def main():
                         refresh_signatures=args.refresh_signatures,
                         ledger=ledger, current_params=current_params,
                         upgrade_class_only=args.upgrade_class_only,
-                        current_receiver=current_receiver)
+                        current_receiver=current_receiver,
+                        trust_measured=args.trust_measured_signature,
+                        trust_structural=args.trust_structural_signature)
             for r in rows:
                 r["conv"] = conv_by_a.get(r["a"])
                 r["sig"] = sig_by_a.get(r["a"])
@@ -738,10 +802,14 @@ def main():
                 try:
                     for r in to_apply:
                         try:
-                            outcomes[apply_row(program, funcs[r["b"]], r,
-                                               args.signatures, dtm,
-                                               type_cache)] += 1
-                            done += 1
+                            outcome = apply_row(program, funcs[r["b"]], r,
+                                                args.signatures, dtm, type_cache)
+                            outcomes[outcome] += 1
+                            # A skipped row, or a SIG_ONLY row whose prototype
+                            # was refused, changed nothing: it is not "applied".
+                            if outcome not in UNCHANGED_OUTCOMES \
+                                    and not outcome.startswith("skipped"):
+                                done += 1
                         except Exception as e:
                             # One prototype Ghidra will not accept must not
                             # cost the other two thousand: record it, leave
@@ -749,8 +817,16 @@ def main():
                             outcomes["FAILED"] += 1
                             failures.append((r["b"], r.get("conv"),
                                              str(e).split("\n")[0][:90]))
+                    # The report planned the thunks from the names this run
+                    # meant to give. Some never land (no receiver, rejected
+                    # prototype), so the thunks are named from the names
+                    # that did: a thunk must not claim a name its target lacks.
                     from ghidra.program.model.symbol import SourceType
-                    for t in thunk_rows:
+                    landed = plan_thunk_names(
+                        derived_name_thunks(funcs),
+                        {a: f.getName() for a, f in funcs.items()},
+                        {p["b"].lower(): p["name"] for p in mapping["pairs"]})
+                    for t in landed:
                         funcs[t["b"]].setName(t["want"], SourceType.USER_DEFINED)
                         outcomes["thunk name"] += 1
                         done += 1
@@ -782,7 +858,6 @@ def main():
                     print("Saved.")
             elif not args.apply:
                 print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
     except Exception as e:
         print("ERROR: %s" % e)
         import traceback

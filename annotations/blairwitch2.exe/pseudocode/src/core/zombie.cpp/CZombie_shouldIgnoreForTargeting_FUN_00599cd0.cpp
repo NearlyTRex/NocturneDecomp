@@ -9,12 +9,14 @@
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_00599cd0(CZombie *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
+  int iVar2;
   
-  iVar1 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-  if (*(int *)(iVar1 + 0x24) == 0xe) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
+  if (pSVar1->state_index == 0xe) {
     return 1;
   }
-  iVar1 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890((CDemonActor *)this_ptr);
-  return iVar1;
+  iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890((CDemonActor *)this_ptr);
+  return iVar2;
 }

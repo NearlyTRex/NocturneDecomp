@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 430,
-    "complexity_score": 310,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
+    "pseudocode_lines": 162,
     "suspect_count": 13,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -15,7 +15,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 590
+    "total_lines": 592
   },
   "cross_references": [
     {
@@ -70,6 +70,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
     },
     {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
       "addr": "004b0fa0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0"
@@ -88,11 +93,6 @@
       "addr": "004b2a80",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
-    },
-    {
-      "addr": "004b0a20",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
     },
     {
       "addr": "004b2e40",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
@@ -553,7 +553,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
@@ -561,7 +561,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 105,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar4 = DAT_005fba1c - iVar4;",
@@ -569,7 +569,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 116,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (0x280 < DAT_005fba18) {",
@@ -577,7 +577,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 119,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (800 < DAT_005fba18) {",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 157,
+      "line": 159,
       "match": "local_1c = (T *)&local_1c->FIELD",
       "severity": "moderate",
       "text": "local_1c = (CGame *)&local_1c->game_pixy;",

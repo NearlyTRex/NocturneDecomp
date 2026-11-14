@@ -41,7 +41,8 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
   }
-  engine_ini_cpp_FUN_004f4b00(&local_338,"system\\nocturne.ini",&DAT_005e3121);
+  engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_338,"system\\nocturne.ini",&DAT_005e3121)
+  ;
   local_1c = 0;
   engine_ini_cpp_FUN_004f4d10(&local_338,"Act1Code",&local_1c);
   local_30[0] = support_newmsg_cpp_getLocalizedString_FUN_00531090
@@ -143,7 +144,7 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
     _DAT_01cd0aec = 0x41000000;
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
-  core_event_cpp_FUN_004a9a00(0x01C51D80);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(0x01C51D80);
   iVar5 = 1;
   iVar3 = _stricmp(&DAT_01cd05c0,local_134);
   if (iVar3 != 0) {

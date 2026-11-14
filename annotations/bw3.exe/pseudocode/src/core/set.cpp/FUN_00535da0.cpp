@@ -201,7 +201,7 @@ void __cdecl core_set_cpp_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender)
       core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(this_ptr);
     } while (iVar5 < this_ptr->mirror_glass_actor_count);
   }
-  core_weather_cpp_FUN_0057c890(0x02D0C1A0);
+  core_weather_cpp_CWeather_renderParticles_FUN_0057c890(0x02D0C1A0);
   local_34 = 0;
   if (0 < _DAT_0203ad1c) {
     local_44 = 0;

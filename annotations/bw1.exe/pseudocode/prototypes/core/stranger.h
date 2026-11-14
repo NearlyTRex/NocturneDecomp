@@ -41,9 +41,9 @@ void __cdecl CStranger::process(CStranger *this_ptr,float delta_time);
 // Address: 00585b00
 void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_005881d0
+// Original: core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0
 // Address: 005881d0
-void FUN_005881d0(CStranger *param_1,float param_2);
+void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_FUN_00588a10
 // Address: 00588a10

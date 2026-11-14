@@ -893,6 +893,10 @@ class Variable(JavaObject):
     def getOrdinal(self):
         return self.ordinal
 
+    # A convention's implicit parameter (`this`, a return-storage pointer); none here are
+    def isAutoParameter(self):
+        return False
+
     def isStackVariable(self):
         return self.storage.kind == "stack"
 

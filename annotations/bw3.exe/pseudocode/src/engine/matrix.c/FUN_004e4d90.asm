@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   angle
 ;
 ; XREF[3]:
-;   core_inv.cpp_FUN_004dbe70 at 004dbf55
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dbf55
 ;   engine_matrix.c_buildRotationMatrix_FUN_004e50f0 at 004e5100
 ;   engine_matrix.c_matrixPushAndTransform_FUN_004e56b0 at 004e580c
 ;

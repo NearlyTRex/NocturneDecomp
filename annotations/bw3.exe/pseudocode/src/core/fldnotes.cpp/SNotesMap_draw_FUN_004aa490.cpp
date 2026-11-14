@@ -47,9 +47,9 @@ LAB_004aa521:
   if (0 < this_ptr->annotation_count) {
     do {
       if (pSVar2->annotations[0].visible != 0) {
-        engine_font_cpp_FUN_004b0a20
+        engine_font_cpp_CBitFont_drawText_FUN_004b0a20
                   (_DAT_01549abc,this_ptr->annotations[iVar1].text,y + pSVar2->annotations[0].x,
-                   pSVar2->annotations[0].y + y,1,0xffffffff);
+                   pSVar2->annotations[0].y + y,1,-1);
       }
       iVar1 = iVar1 + 1;
       pSVar2 = (SNotesMap *)(pSVar2->sets[0].level_name + 0x34);

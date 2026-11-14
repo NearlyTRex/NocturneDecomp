@@ -81,7 +81,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       }
-      iVar2 = core_hero_cpp_FUN_004cf4e0(this_ptr);
+      iVar2 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004cf4e0(&this_ptr->base);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar2 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,6,1);

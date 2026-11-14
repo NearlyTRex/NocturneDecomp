@@ -41,14 +41,14 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
   iVar2 = (int)((DAT_005fba18 + (DAT_005fba18 >> 0x1f) * -0x80) -
                (uint)((DAT_005fba18 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = DAT_005fba1c / 0x60;
-  iVar4 = shape_edittool_cpp_FUN_00486580((char *)0x0);
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00486580((char *)0x0);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
             (g_CEditorToolsPtr,(DAT_005fba18 << 2) / 5,iVar4 + iVar3 * 2 + _DAT_01c5bae4,
              dialog_title,0);
   iVar3 = shape_edittool_cpp_calculateButtonWidth_FUN_004864f0("Cancel");
   iVar4 = ((_DAT_01c6b5a8 + _DAT_01c6b5b0) - iVar2) / 2 - iVar3;
   iVar2 = (_DAT_01c6b5a8 + _DAT_01c6b5b0 + iVar2) / 2;
-  iVar5 = shape_edittool_cpp_FUN_00486580((char *)0x0);
+  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00486580((char *)0x0);
   local_18 = (_DAT_01c6b5b4 - iVar5) + 1;
   shape_edittool_cpp_CEdButton_ctor_FUN_00486020(&local_fc);
   shape_edittool_cpp_CEdButton_ctor_FUN_00486020(&local_1e0);
@@ -61,11 +61,11 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_tit
   iVar2 = 0;
   while( true ) {
     shape_edittool_cpp_FUN_0047fa80(g_CEditorToolsPtr);
-    shape_edittool_cpp_FUN_00480200(g_CEditorToolsPtr,1);
-    shape_edittool_cpp_FUN_0047c050(&local_320,_DAT_01c6b5a8,_DAT_01c6b5ac);
-    shape_edittool_cpp_FUN_00486120(&local_fc,iVar2 == 0);
-    shape_edittool_cpp_FUN_00486120(&local_1e0,iVar2 == 1);
-    shape_edittool_cpp_FUN_00480410(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00480200(g_CEditorToolsPtr,1);
+    shape_edittool_cpp_CInputString_draw_FUN_0047c050(&local_320,_DAT_01c6b5a8,_DAT_01c6b5ac);
+    shape_edittool_cpp_CEdButton_paint_FUN_00486120(&local_fc,(uint)(iVar2 == 0));
+    shape_edittool_cpp_CEdButton_paint_FUN_00486120(&local_1e0,(uint)(iVar2 == 1));
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00480410(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar3 = (*0x01D70A78->vtable->getKeyState)(0x01D70A78,DIK_LSHIFT);
     if ((iVar3 == 0) &&
@@ -137,7 +137,7 @@ LAB_0047c658:
     if (cVar1 == '\0') break;
   }
 LAB_0047c598:
-  shape_edittool_cpp_FUN_0047f970(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   DAT_005fba2c = local_14;
   shape_edittool_cpp_CEdButton_dtor_FUN_00486050(&local_1e0,0);

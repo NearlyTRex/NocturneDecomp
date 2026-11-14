@@ -16,7 +16,7 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_00
   CCharacter *pCVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
+  SMotion *pSVar5;
   byte bVar6;
   float afStackY_1040 [1015];
   uint uStack_58;
@@ -30,8 +30,9 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_00
   uint uStack_20;
   
   bVar6 = 0;
-  iVar5 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);
-  if (*(int *)(iVar5 + 0x24) == 2) {
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.base.model.base);
+  if (pSVar5->state_index == 2) {
     if ((this_ptr->base).base.base.model.base.current_frame_number < _DAT_005efe5f) {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
                 ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_FUN_00441500 at 004416e1
-;   shape_edittool.cpp_FUN_00497870 at 00497880
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870 at 00497880
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_005b2420

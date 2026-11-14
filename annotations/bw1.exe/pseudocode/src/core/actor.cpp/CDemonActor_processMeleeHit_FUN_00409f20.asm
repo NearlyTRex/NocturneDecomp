@@ -31,12 +31,12 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_isOfClass_FUN_0040c550
-;   core_box.cpp_FUN_00421b90
+;   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_crate.cpp_FUN_00449600
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004b9180
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004e3a40
-;   core_glass.cpp_FUN_004e34b0
+;   core_glass.cpp_CGlass_shatter_FUN_004e34b0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
@@ -333,8 +333,8 @@ section .text
     LEA ESI,[ESP + 0x198]               ; 0040a349
     PUSH EAX                            ; 0040a350
     MOVSD.REP ES:EDI,ESI                ; 0040a351
-    CALL core_box.cpp_FUN_00421b90      ; 0040a353
-        ;   XREF to: 00421b90 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00421b90()
+    CALL core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90 ; 0040a353
+        ;   XREF to: 00421b90 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90(CBoundingBox3D * this_ptr, CVector3f * sphere_center, float radius)
     ADD ESP,0xc                         ; 0040a358
     TEST EAX,EAX                        ; 0040a35b
     JZ 0x0040a14a                       ; 0040a35d
@@ -423,8 +423,8 @@ section .text
     LEA ESI,[ESP + 0x180]               ; 0040a47a
     PUSH EAX                            ; 0040a481
     MOVSD.REP ES:EDI,ESI                ; 0040a482
-    CALL core_box.cpp_FUN_00421b90      ; 0040a484
-        ;   XREF to: 00421b90 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00421b90()
+    CALL core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90 ; 0040a484
+        ;   XREF to: 00421b90 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90(CBoundingBox3D * this_ptr, CVector3f * sphere_center, float radius)
     ADD ESP,0xc                         ; 0040a489
     TEST EAX,EAX                        ; 0040a48c
     JZ 0x0040a14a                       ; 0040a48e
@@ -465,8 +465,8 @@ section .text
     PUSH EAX                            ; 0040a4f8
     MOV EDX,dword ptr [ESP + 0x338]     ; 0040a4f9
     PUSH EDX                            ; 0040a500
-    CALL core_glass.cpp_FUN_004e34b0    ; 0040a501
-        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004e34b0()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004e34b0 ; 0040a501
+        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004e34b0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 0040a506
     JMP 0x0040a14a                      ; 0040a509
         ;   XREF to: 0040a14a (UNCONDITIONAL_JUMP)  ; LAB_0040a14a
@@ -822,8 +822,8 @@ section .text
     ADD EAX,0x14d138                    ; 0040a99a
     PUSH EAX                            ; 0040a99f
     PUSH ESI                            ; 0040a9a0
-    CALL core_glass.cpp_FUN_004e34b0    ; 0040a9a1
-        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004e34b0()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004e34b0 ; 0040a9a1
+        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004e34b0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 0040a9a6
     JMP 0x0040a6b8                      ; 0040a9a9
         ;   XREF to: 0040a6b8 (UNCONDITIONAL_JUMP)  ; LAB_0040a6b8

@@ -17,7 +17,7 @@
 ;   core_set.cpp_FUN_00550da0 at 005510fa
 ;   core_setdir.cpp_FUN_00559f80 at 0055a99a
 ;   core_setdir.cpp_FUN_0055b330 at 0055b3ec
-;   shape_spotview.cpp_FUN_005847e0 at 005848c9
+;   shape_spotview.cpp_CSpotView_applyCamera_FUN_005847e0 at 005848c9
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0

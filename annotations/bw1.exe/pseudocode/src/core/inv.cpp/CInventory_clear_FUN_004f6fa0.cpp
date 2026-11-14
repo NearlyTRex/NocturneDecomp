@@ -14,7 +14,8 @@ void __cdecl core_inv_cpp_CInventory_clear_FUN_004f6fa0(CInventory *this_ptr)
   
   iVar1 = this_ptr->item_count;
   while (0 < iVar1) {
-    core_inv_cpp_FUN_004f8d00(this_ptr,this_ptr->items[0],(uint)(this_ptr->preserve_items == 0));
+    core_inv_cpp_CInventory_removeItem_FUN_004f8d00
+              (this_ptr,this_ptr->items[0],(uint)(this_ptr->preserve_items == 0));
     iVar1 = this_ptr->item_count;
   }
   this_ptr->selected_item = (CDemonActor *)0x0;

@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_game.cpp_CGame_slamDT_FUN_004d7f50
-;   core_particle.cpp_FUN_00532250
+;   core_particle.cpp_CParticle_process_FUN_00532250
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
         ;   XREF to: 004d7f50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004d7f50(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ad8b9
     PUSH EBX                            ; 004ad8bc
-    CALL core_particle.cpp_FUN_00532250 ; 004ad8bd
-        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00532250()
+    CALL core_particle.cpp_CParticle_process_FUN_00532250 ; 004ad8bd
+        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00532250(CParticle * this_ptr)
     FLD float ptr [EBX + 0x48]          ; 004ad8c2
     ADD ESP,0x4                         ; 004ad8c5
     FMUL float ptr [0x005df1fc]         ; 004ad8c8 | DAT_005df1fc

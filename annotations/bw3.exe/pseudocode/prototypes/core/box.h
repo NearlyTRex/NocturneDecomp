@@ -21,9 +21,9 @@ void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *or
 // Address: 0041b030
 void FUN_0041b030(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
 
-// Original: core_box.cpp_FUN_0041b1d0
+// Original: core_box.cpp_CBox_updateTransform_FUN_0041b1d0
 // Address: 0041b1d0
-void __cdecl FUN_0041b1d0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl CBox::updateTransform(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 
 // Original: core_box.cpp_CBox_process_FUN_0041b410
 // Address: 0041b410
@@ -65,9 +65,9 @@ int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 // Address: 0041daf0
 undefined4 FUN_0041daf0(CBoundingBox3D *param_1,int param_2);
 
-// Original: core_box.cpp_FUN_0041dcd0
+// Original: core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0
 // Address: 0041dcd0
-undefined4 FUN_0041dcd0(float *param_1);
+int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_0041e100
 // Address: 0041e100
@@ -97,9 +97,9 @@ void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 // Address: 0041ee30
 void FUN_0041ee30(float *param_1,float *param_2);
 
-// Original: core_box.cpp_FUN_0041eed0
+// Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041eed0
 // Address: 0041eed0
-bool FUN_0041eed0(undefined4 param_1,float *param_2,float param_3);
+int __cdecl CBoundingBox3D::doesSphereIntersect(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_004fb160
 // Address: 004fb160

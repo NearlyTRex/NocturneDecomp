@@ -49,7 +49,8 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
       if ((float)_DAT_005cd017 <= this_ptr->quick_turn_angle) {
         (this_ptr->base).base.base.orient.vec.y =
              _DAT_005e3504 + (this_ptr->base).base.base.orient.vec.y;
-        core_charactr_cpp_FUN_00433220(this_ptr,&(this_ptr->base).base.base.orient);
+        core_charactr_cpp_CCharacter_setOrientation_FUN_00433220
+                  ((CCharacter *)this_ptr,&(this_ptr->base).base.base.orient);
       }
       else {
         this_ptr->quick_turn_active = 0;

@@ -206,7 +206,7 @@ CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
 CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_00577d80(CWaterActor *this_ptr);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_00577d90(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00577ee0(CWaterActor *this_ptr);
-void core_wateract_cpp_FUN_00578490(int param_1);
+void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00578490(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_00578570(int param_1);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00578670(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005787f0(CWaterActor *this_ptr);
@@ -237,9 +237,9 @@ int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void);
 void wincore_wddvmem_cpp_FUN_005797d0(void);
 void wincore_wddvmem_cpp_FUN_005798a0(void);
 int __cdecl wincore_wddvmem_cpp_FUN_005798f0(int width,int height);
-void __cdecl wincore_wddvmem_cpp_FUN_00579a60(void);
-void wincore_wddvmem_cpp_FUN_00579b20(void);
-undefined4 wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3);
+void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00579a60(void);
+void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00579b20(void);
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int height,int bits_per_pixel);
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_0057a0e0(void);
 void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_0057a2f0(void);
 void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void);
@@ -275,7 +275,7 @@ CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon 
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_0057b880(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_0057ba00(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_0057ba10(int param_1);
+void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_0057ba10(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_0057bba0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void);
@@ -284,7 +284,7 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1);
 float core_weather_cpp_FUN_0057c2c0(void);
 void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_0057c840(CWeather *this_ptr);
-void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0057c890(CWeather *this_ptr);
 void core_weather_cpp_FUN_0057d050(int *param_1,int param_2);
 void core_weather_cpp_FUN_0057d1a0(int *param_1,float *param_2,int *param_3);
 void core_weather_cpp_FUN_0057d420(undefined4 param_1,int param_2);
@@ -307,5 +307,5 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *thi
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_0057fe10(CWinFont *this_ptr,uint flags);
 int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_0057fe80(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
-void engine_winfont_cpp_FUN_0057fed0(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 

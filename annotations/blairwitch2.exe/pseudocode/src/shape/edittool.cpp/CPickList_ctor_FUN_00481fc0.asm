@@ -15,8 +15,8 @@
 ;   core_mission.cpp_FUN_004fd280 at 004fd293
 ;   core_script.cpp_staticInit_FUN_00520f90 at 00520f95
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110 at 0055b11c
-;   engine_pod.cpp_FUN_0051aa80 at 0051abe2
-;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970 at 0047c984
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80 at 0051abe2
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20 at 0047cbcc
 ;   ... and 1 more
 ;
 ; Referenced Globals:

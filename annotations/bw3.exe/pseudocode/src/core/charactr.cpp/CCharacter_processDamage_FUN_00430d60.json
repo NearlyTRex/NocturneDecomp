@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 312,
+    "complexity_score": 314,
     "cross_reference_count": 6,
     "function_call_count": 11,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 119,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 394
+    "total_lines": 396
   },
   "cross_references": [
     {
@@ -83,29 +83,29 @@
       "name": "core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770"
     },
     {
+      "addr": "004300e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismember_FUN_004300e0"
+    },
+    {
       "addr": "00431ce0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0"
     },
     {
-      "addr": "0042fbd0",
+      "addr": "0042ffe0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042fbd0"
+      "name": "core_charactr.cpp_CCharacter_explode_FUN_0042ffe0"
     },
     {
       "addr": "0042ff70",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042ff70"
+      "name": "core_charactr.cpp_CCharacter_shatter_FUN_0042ff70"
     },
     {
-      "addr": "0042ffe0",
+      "addr": "0042fbd0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042ffe0"
-    },
-    {
-      "addr": "004300e0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004300e0"
+      "name": "core_charactr.cpp_FUN_0042fbd0"
     },
     {
       "addr": "0048c150",
@@ -358,58 +358,42 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 79,
+      "line": 81,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar6 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar5 * 0xfffffffe * 4) =",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)local_34",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + (uint)bVar6 * -8 + -0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)local_34",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -0x1c) =",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(uint *)((int)local_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -0x10);",
+      "text": "*(uint *)((int)local_34 + (uint)bVar5 * -8 + -0x14);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffffa8",
-      "severity": "moderate",
-      "text": "(this_ptr,&stack0xffffffa8,damage_info->hit_part_index,0,uVar8,uVar9,uVar10);",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 83,
       "match": "(uint *)((int)local_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x1c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)local_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
-      "match": "&stack0xffffffc4",
+      "line": 86,
+      "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar6 * -8);",
+      "text": "(this_ptr,&stack0xffffffa8,damage_info->hit_part_index,0,uVar7,uVar8,uVar9);",
       "type": "stack_ref"
     },
     {
@@ -417,20 +401,36 @@
       "line": 99,
       "match": "(uint *)((int)local_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)local_34 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 100,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(uint *)((int)local_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 105,
+      "line": 107,
       "match": "*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
       "severity": "moderate",
       "text": "(this_ptr != *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04))) {",
@@ -438,7 +438,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 110,
+      "line": 112,
       "match": "*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
       "severity": "moderate",
       "text": "if ((this_ptr != *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) &&",
@@ -446,18 +446,18 @@
     },
     {
       "description": "Pointer value `&stack0xffffffac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
+      "line": 81,
       "match": "(int)&stack0xffffffac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar6 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar5 * 0xfffffffe * 4) =",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 79,
+      "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar6 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar5 * 0xfffffffe * 4) =",
       "type": "pointer_cast"
     }
   ]

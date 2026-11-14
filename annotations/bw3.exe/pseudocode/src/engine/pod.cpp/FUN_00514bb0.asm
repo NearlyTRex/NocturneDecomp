@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_pod_cpp_FUN_00514bb0(undefined4 param_1,undefined4 param_2)
+; int engine_pod_cpp_FUN_00514bb0(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     MOV EAX,ESP                         ; 00514bdd
     PUSH EAX                            ; 00514bdf
     CALL engine_pod.cpp_FUN_00513d20    ; 00514be0
-        ;   XREF to: 00513d20 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_00513d20()
+        ;   XREF to: 00513d20 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_FUN_00513d20(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 00514be5
     PUSH 0x0                            ; 00514be8
     MOV EBX,EAX                         ; 00514bea

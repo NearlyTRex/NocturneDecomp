@@ -12,7 +12,7 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_0054aa70(CSmiley *this_pt
   CDeformableModelInstance *this_ptr_00;
   EDamageType EVar1;
   float fVar2;
-  int iVar3;
+  SMotion *pSVar3;
   
   if (this_ptr->model_variant != 1) {
     damage_info->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
@@ -34,8 +34,8 @@ LAB_0054aaa4:
   (this_ptr->base).base.hit_points = fVar2;
   if (fVar2 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if ((*(int *)(iVar3 + 0x24) != 8) && (*(int *)(iVar3 + 0x24) != 7)) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,7,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);

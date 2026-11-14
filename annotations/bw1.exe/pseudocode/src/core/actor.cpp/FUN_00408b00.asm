@@ -7,12 +7,12 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[20]:
-;   core_actor.cpp_FUN_00409170 at 004092c7
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170 at 004092c7
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0 at 00422aeb
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429453
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 at 00433dcc
 ;   core_charactr.cpp_FUN_00431cc0 at 00431e2c
 ;   core_charactr.cpp_FUN_00432f10 at 00433362
-;   core_charactr.cpp_FUN_00433d50 at 00433dcc
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459b04
 ;   core_doc.cpp_FUN_00469550 at 00469ec7
 ;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac63b

@@ -16,14 +16,13 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
   CBitFont *this_ptr_00;
   int iVar2;
   uint uVar3;
-  uint uVar4;
-  int iVar5;
-  char *pcVar6;
-  uint *puVar7;
+  int iVar4;
+  char *pcVar5;
+  uint *puVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  char *pcVar10;
-  byte bVar11;
+  char *pcVar9;
+  byte bVar10;
   float afStackY_1080 [518];
   CVector3i *input_ptr;
   CSfxSample local_830;
@@ -59,7 +58,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
   int local_18;
   int local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   local_40 = 0;
   if (param_1->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
@@ -107,16 +106,16 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance,_DAT_01c2a37c,_DAT_01c2a380);
         input_ptr = &local_80;
         local_80.x = local_98;
-        *(float *)((int)local_74 + (uint)bVar11 * -8 + -8) = afStack_94[(uint)bVar11 * -2];
-        *(float *)((int)local_74 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + -4) =
-             afStack_94[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+        *(float *)((int)local_74 + (uint)bVar10 * -8 + -8) = afStack_94[(uint)bVar10 * -2];
+        *(float *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4) =
+             afStack_94[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
                   (&g_CDemonCameraInstance,input_ptr,local_74);
         local_80.x = local_74[0].x;
-        *(uint *)((int)local_74 + (uint)bVar11 * -8 + -8) =
-             *(uint *)((int)local_74 + (uint)bVar11 * -8 + 4);
-        *(uint *)((int)local_74 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + -4) =
-             *(uint *)((int)local_74 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+        *(uint *)((int)local_74 + (uint)bVar10 * -8 + -8) =
+             *(uint *)((int)local_74 + (uint)bVar10 * -8 + 4);
+        *(uint *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4) =
+             *(uint *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         afStack_94[2] = (float)local_80.x * _DAT_005f7558;
         afStack_94[3] = (float)local_80.y * _DAT_005f7558;
         local_84 = (float)local_80.z * _DAT_005f7558;
@@ -159,8 +158,8 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(g_CFieldNotesPtr);
       }
       if (((param_1->developer_mode_enabled != 0) ||
-          (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))
-         && (iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x3e), iVar2 != 0)) {
+          (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
+         (iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x3e), iVar2 != 0)) {
         _DAT_01cb7420 = _DAT_01cb7420 + 1;
         _sprintf((char *)0x1cb7428,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_00514a30((char *)0x1cb7428);
@@ -208,35 +207,35 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
                       local_28 = (local_30 * DAT_006141b8) / 0x00000040;
                       local_20 = ((local_30 + 1) * DAT_006141b8) / 0x00000040;
                       iVar2 = (local_38 * DAT_006141bc) / 0x00000040;
-                      iVar5 = (local_3c * DAT_006141bc) / 0x00000040;
-                      iVar8 = 0;
+                      iVar4 = (local_3c * DAT_006141bc) / 0x00000040;
+                      iVar7 = 0;
                       local_1c = 0;
                       local_18 = 0;
-                      iVar9 = 0;
-                      if (iVar2 < iVar5) {
+                      iVar8 = 0;
+                      if (iVar2 < iVar4) {
                         local_24 = iVar2 * 4;
-                        local_2c = iVar5 << 2;
+                        local_2c = iVar4 << 2;
                         do {
                           if (local_28 < local_20) {
-                            puVar7 = (uint *)(local_28 * 4 + *(int *)(&DAT_01c2a38c + local_24));
+                            puVar6 = (uint *)(local_28 * 4 + *(int *)(&DAT_01c2a38c + local_24));
                             iVar2 = local_28;
                             do {
-                              uVar4 = *puVar7;
-                              iVar9 = iVar9 + (uVar4 >> 0x10 & 0xff);
-                              puVar7 = puVar7 + 1;
-                              iVar8 = iVar8 + (uVar4 >> 8 & 0xff);
+                              uVar3 = *puVar6;
+                              iVar8 = iVar8 + (uVar3 >> 0x10 & 0xff);
+                              puVar6 = puVar6 + 1;
+                              iVar7 = iVar7 + (uVar3 >> 8 & 0xff);
                               iVar2 = iVar2 + 1;
-                              local_18 = local_18 + (uVar4 & 0xff);
+                              local_18 = local_18 + (uVar3 & 0xff);
                               local_1c = local_1c + 1;
                             } while (iVar2 < local_20);
                           }
                           local_24 = local_24 + 4;
                         } while (local_24 < local_2c);
                       }
-                      iVar8 = iVar8 / local_1c;
+                      iVar7 = iVar7 / local_1c;
                       local_18 = local_18 / local_1c;
-                      _fputc(iVar9 / local_1c,local_34);
-                      _fputc(iVar8,local_34);
+                      _fputc(iVar8 / local_1c,local_34);
+                      _fputc(iVar7,local_34);
                       iVar2 = local_30 + 1;
                       local_30 = iVar2;
                       _fputc(local_18,local_34);
@@ -291,23 +290,23 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(param_1->debug_info_string,0,DAT_006141bc + -0x21);
         if (_DAT_0264bba0 != 0) {
-          uVar3 = engine_special_cpp_FUN_005601a0(0x400);
-          uVar3 = engine_special_cpp_FUN_005601a0(0x200,uVar3);
-          uVar3 = engine_special_cpp_FUN_005601a0(0x100,uVar3);
-          uVar3 = engine_special_cpp_FUN_005601a0(0x80,uVar3);
-          uVar3 = engine_special_cpp_FUN_005601a0(0x40,uVar3);
-          engine_special_cpp_FUN_005601a0(0x20,uVar3);
+          engine_special_cpp_FUN_005601a0(0x400);
+          engine_special_cpp_FUN_005601a0(0x200);
+          engine_special_cpp_FUN_005601a0(0x100);
+          engine_special_cpp_FUN_005601a0(0x80);
+          engine_special_cpp_FUN_005601a0(0x40);
+          engine_special_cpp_FUN_005601a0(0x20);
           _sprintf((char *)&local_830.taken,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,0x2c);
         }
       }
       if (_DAT_01cb80e4 != 0) {
-        uVar4 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005512f0();
+        uVar3 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005512f0();
         iVar2 = 0x37;
-        for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_getNextActiveSfx_FUN_00551330(uVar4)) {
+        for (; uVar3 != 0; uVar3 = sound_sndmain_cpp_getNextActiveSfx_FUN_00551330(uVar3)) {
           sound_sndmain_cpp_CSfxSample_init_FUN_0054fcd0(&local_830);
-          iVar5 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00550bf0(uVar4,&local_830);
-          if (iVar5 != 0) {
+          iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00550bf0(uVar3,&local_830);
+          if (iVar4 != 0) {
             engine_2d_c_drawTextXY_FUN_00402140(0,iVar2,(char *)&local_830);
             iVar2 = iVar2 + 0xb;
           }
@@ -328,16 +327,16 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2);
       if (iVar2 == 2) {
-        pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("You have failed");
-        pcVar10 = local_2e0;
+        pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("You have failed");
+        pcVar9 = local_2e0;
         do {
-          cVar1 = *pcVar6;
-          *pcVar10 = cVar1;
+          cVar1 = *pcVar5;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pcVar10[1] = cVar1;
-          pcVar10 = pcVar10 + 2;
+          cVar1 = pcVar5[1];
+          pcVar5 = pcVar5 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0
                   (_DAT_01511cb8,0,DAT_006141b8,DAT_006141bc + _DAT_01511cb8->max_char_height * -2,

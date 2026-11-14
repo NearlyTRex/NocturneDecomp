@@ -18,12 +18,12 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
   CVector3f *pCVar4;
   byte bVar5;
   float afStackY_1058 [1006];
-  CDemonSet *pCVar6;
-  CBoxActor *this_ptr_00;
-  CVector3f *pCVar7;
-  CVector3f *pCVar8;
-  float *pfVar9;
-  uint uVar10;
+  CDemonSet *this_ptr_00;
+  CBoxActor *this_ptr_01;
+  CVector3f *start_pos;
+  CVector3f *pCVar6;
+  float *pfVar7;
+  uint uVar8;
   float fStack_70;
   CVector3f CStack_64;
   CVector3f CStack_58;
@@ -62,21 +62,22 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
       core_doc_cpp_FUN_0045bba0(this_ptr);
-      pfVar9 = afStack_3c + 8;
+      pfVar7 = afStack_3c + 8;
       afStack_1c[0] = (float)uStack_40;
       afStack_3c[(uint)bVar5 * -2 + 9] = afStack_3c[(uint)bVar5 * -2];
       afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
            afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-      core_actor_cpp_FUN_00408cf0(this_ptr,pfVar9);
-      pCVar8 = &CStack_64;
+      core_actor_cpp_FUN_00408cf0(this_ptr,pfVar7);
+      pCVar6 = &CStack_64;
       CStack_64.x = fStack_70;
       *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + 4) =
            *(uint *)(&stack0xffffff94 + (uint)bVar5 * -8);
-      pCVar6 = g_CDemonSetPtr;
-      pCVar7 = pCVar4;
+      this_ptr_00 = g_CDemonSetPtr;
+      start_pos = pCVar4;
       *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
            *(uint *)(&stack0xffffff98 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      fStack_c = (float)core_setcolid_cpp_FUN_00536210(pCVar6,pCVar7,pCVar8);
+      fStack_c = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00536210
+                           (this_ptr_00,start_pos,pCVar6);
       fStack_10 = fStack_c;
       if (fStack_c < 0.0) {
         fStack_10 = 10.0;
@@ -92,14 +93,14 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
     if (pCVar2 != (CWeapon *)0x0) {
       if ((pCVar2->weapon_type == WEAPON_TYPE_GUN) &&
          (pCVar2 != (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) {
-        uVar10 = 1;
+        uVar8 = 1;
       }
       else {
         if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon)
         goto LAB_00459b81;
-        uVar10 = 0;
+        uVar8 = 0;
       }
-      core_doc_cpp_FUN_004567c0(this_ptr,uVar10);
+      core_doc_cpp_FUN_004567c0(this_ptr,uVar8);
       (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
     }
 LAB_00459b81:
@@ -111,13 +112,13 @@ LAB_00459b81:
            afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
       core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&this_ptr->lantern_transform);
       pCVar4 = &CStack_4c;
-      pCVar8 = &CStack_58;
+      pCVar6 = &CStack_58;
       CStack_4c.x = fStack_28;
       *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + 4) = afStack_3c[(uint)bVar5 * -2 + 6];
-      this_ptr_00 = &this_ptr->lantern_box;
+      this_ptr_01 = &this_ptr->lantern_box;
       *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
            afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
-      core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90(this_ptr_00,pCVar8,pCVar4);
+      core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90(this_ptr_01,pCVar6,pCVar4);
       core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041c580(&this_ptr->lantern_box);
     }
   }

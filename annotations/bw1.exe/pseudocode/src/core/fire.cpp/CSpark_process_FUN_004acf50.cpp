@@ -36,7 +36,7 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr)
             (g_CGamePtr,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
              (float)_DAT_005df1dc);
-  core_particle_cpp_FUN_00532250(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00532250(&this_ptr->base);
   core_game_cpp_CGame_slamDT_FUN_004d7f50(g_CGamePtr,delta_time);
   return;
 }

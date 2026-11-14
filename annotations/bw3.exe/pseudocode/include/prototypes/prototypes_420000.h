@@ -41,7 +41,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_00420100(CBoxActor *this_
 CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_00420160(CBoxActor *this_ptr);
 EGroundType __cdecl core_boxactor_cpp_CBoxActor_getGroundType_FUN_00420170(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_00420180(CBoxActor *this_ptr,CDemonActor *owner);
-void core_boxactor_cpp_FUN_004201a0(int param_1);
+void __cdecl core_boxactor_cpp_CBoxActor_constrainToExtents_FUN_004201a0(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00420290(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_00420320(CBoxActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void);
@@ -50,7 +50,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00420360(CLightActo
 void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_004203f0(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00420420(CLightActor *this_ptr,float delta_time);
 void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_004207f0(CLightActor *this_ptr);
-void core_boxactor_cpp_FUN_004208d0(int param_1);
+void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_004208d0(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_00420d30(CLightActor *this_ptr,uint flags);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00420db0(CBoxActor *this_ptr,uint flags);
 CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_00420e20(CDemonFilter *this_ptr,uint flags);
@@ -75,7 +75,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_004221c0(CBugs *this_ptr
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_004229f0(CBugs *this_ptr,float delta_time);
 undefined4 core_bugs_cpp_FUN_00422a00(CBugs *param_1,int *param_2,float param_3,float *param_4);
-void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00423050(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423bc0(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDemonActor *target);
@@ -181,10 +181,10 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510(CCharact
 void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
-void core_charactr_cpp_FUN_0042fc90(int param_1);
+void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042fc90(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_0042fdc0(int param_1,int param_2,int param_3,float param_4);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff40(CCharacter *this_ptr,CBoundingBox3D *out_box);
-void core_charactr_cpp_FUN_0042ff70(CDemonActor *param_1);
-void core_charactr_cpp_FUN_0042ffe0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_0042ff70(CCharacter *this_ptr);
+void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042ffe0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 

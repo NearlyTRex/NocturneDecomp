@@ -15,9 +15,9 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_005039e0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00503980
 ;   core_motion.cpp_CMotionController_startTransition_FUN_005036e0
-;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EBP                            ; 00503473
     MOV EBX,dword ptr [ESP + 0x14]      ; 00503474
     PUSH EBX                            ; 00503478
-    CALL core_motion.cpp_FUN_005035c0   ; 00503479
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00503479
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0050347e
     MOV EDX,dword ptr [EBX + 0x28]      ; 00503481
     MOV ESI,EAX                         ; 00503484
@@ -91,8 +91,8 @@ section .text
     JZ 0x00503508                       ; 005034f7
         ;   XREF to: 00503508 (CONDITIONAL_JUMP)  ; LAB_00503508
     PUSH EBX                            ; 005034f9
-    CALL core_motion.cpp_FUN_005035c0   ; 005034fa
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005034fa
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005034ff
     ADD ESP,0x4                         ; 00503502
     MOV dword ptr [EBX + 0x28],EAX      ; 00503505

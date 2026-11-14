@@ -53,7 +53,7 @@
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   core_morph.cpp_CMorph_render_FUN_005b76a0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_FUN_005042e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   core_xform.cpp_FUN_00591c10
@@ -302,8 +302,8 @@ section .text
         ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f1b07
     PUSH ESI                            ; 004f1b0a
-    CALL core_motion.cpp_FUN_005035c0   ; 004f1b0b
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f1b0b
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004f1b10
     MOV EDX,dword ptr [0x0060b280]      ; 004f1b13 | DAT_0060b280
         ;   Label: LAB_004f1b13

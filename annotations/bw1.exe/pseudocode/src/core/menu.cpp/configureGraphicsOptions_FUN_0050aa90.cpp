@@ -53,7 +53,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
   engine_special_cpp_getVideoMemory_FUN_00582ae0(local_1c,local_1c + 1,local_1c + 2);
   do {
     pcVar7 = local_140;
-    core_game_cpp_FUN_004cbf20(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004cbf20(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(this_ptr,50000,50000,0x10000);

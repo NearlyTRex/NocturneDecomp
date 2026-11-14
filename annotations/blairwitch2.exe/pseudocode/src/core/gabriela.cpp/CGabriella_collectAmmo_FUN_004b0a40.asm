@@ -7,7 +7,7 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004af410 at 004af8ad
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410 at 004af8ad
 ;
 ; Referenced Globals:
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash

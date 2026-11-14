@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_box.cpp_FUN_0041bc20 at 0041bc38
-;   core_boxactor.cpp_FUN_0041cda0 at 0041ce10
-;   core_enemy.cpp_FUN_00488320 at 004883e1
+;   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041bc20 at 0041bc38
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 at 0041ce10
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 at 004883e1
 ;   core_platfrm.cpp_CPlatform_process_FUN_005184c0 at 00518b55
 ;
 ; *****************************************************************************

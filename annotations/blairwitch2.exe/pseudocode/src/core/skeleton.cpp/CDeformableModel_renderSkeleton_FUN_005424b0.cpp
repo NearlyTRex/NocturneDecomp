@@ -17,6 +17,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
   int iVar3;
   int iVar4;
   CSkeleton *pCVar5;
+  int unaff_ESI;
   SRenderVertex *pSVar6;
   uint *puVar7;
   int *piVar8;
@@ -137,10 +138,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
            afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                 (this_ptr_00,euler_angles,translation);
-      shape_edittool_cpp_FUN_0047fd00();
+      shape_edittool_cpp_FUN_0047fd00(g_CEditorToolsPtr,0.5,0xff);
+      CStack_74.z = (float)DAT_0060b280;
+      CStack_74.y = 7.728015e-39;
       engine_drender_cpp_pop_FUN_0046b4a0();
       iVar4 = iVar4 + 1;
-    } while (iVar4 < pCStack_14->bone_count);
+    } while (iVar4 < *(int *)(unaff_ESI + 0x1d1f8));
   }
   return;
 }

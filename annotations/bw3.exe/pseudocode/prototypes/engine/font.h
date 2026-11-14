@@ -45,25 +45,25 @@ void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width
 // Address: 004b01d0
 void FUN_004b01d0(void);
 
-// Original: engine_font.cpp_FUN_004b0480
+// Original: engine_font.cpp_CBitFont_free_FUN_004b0480
 // Address: 004b0480
-void FUN_004b0480(CBitFont *param_1);
+void __cdecl CBitFont::free(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_CBitFont_setInitializedFlag_FUN_004b0500
 // Address: 004b0500
 void __cdecl CBitFont::setInitializedFlag(CBitFont *this_ptr);
 
-// Original: engine_font.cpp_FUN_004b0510
+// Original: engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510
 // Address: 004b0510
-void FUN_004b0510(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char);
 
 // Original: engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004b09c0
 // Address: 004b09c0
 int __cdecl CBitFont::calculateCharacterHeight(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride);
 
-// Original: engine_font.cpp_FUN_004b0a20
+// Original: engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 // Address: 004b0a20
-int FUN_004b0a20(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
+int __cdecl CBitFont::drawText(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value);
 
 // Original: engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
 // Address: 004b0cb0
@@ -193,9 +193,9 @@ void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
 // Address: 004b33d0
 int FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
 
-// Original: engine_font.cpp_FUN_004b3780
+// Original: engine_font.cpp_packPixelNative_FUN_004b3780
 // Address: 004b3780
-uint FUN_004b3780(void);
+uint __cdecl packPixelNative(int red,int green,int blue);
 
 // Original: engine_font.cpp_FUN_004b37d0
 // Address: 004b37d0

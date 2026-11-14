@@ -26,15 +26,15 @@ They appear only as inline constant values (e.g. MOV EDX,0xf80000).
 Consider removing the Ghidra label and leaving the raw number.
 
   DAT_0078a123  value=0x78A123 (7905571)  refs=5
+    CBoxActor_setupPhysicsBox
+      CMP dword ptr [EBX + 0x68],0x78a123 ; 00421ea7 | DAT_0078a123
     CDemonActor_ctor
       MOV dword ptr [EBX + 0x68],0x78a123 ; 00408703 | DAT_0078a123
     CEnemy_releaseVictim
       CMP EDI,0x78a123                    ; 004a10a2 | DAT_0078a123
     CHero_releaseFromGrab
       CMP dword ptr [EBX + 0x68],0x78a123 ; 004eaf37 | DAT_0078a123
-    FUN_00421e80
-      CMP dword ptr [EBX + 0x68],0x78a123 ; 00421ea7 | DAT_0078a123
-    FUN_005ade40
+    CWeapon_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 005ade5d | DAT_0078a123
 
   DAT_006225f0  value=0x6225F0 (6432240)  refs=5
@@ -137,17 +137,17 @@ Consider removing the Ghidra label and leaving the raw number.
     CSpark_render
       PUSH 0x61c41c                       ; 004ad682 | DAT_0061c41c
 
+  DAT_0061dcb4  value=0x61DCB4 (6413492)  refs=2
+    CBloodParticle_render
+      PUSH 0x61dcb4                       ; 004e412f | DAT_0061dcb4
+    CGore_loadAssets
+      PUSH 0x61dcb4                       ; 004e6314 | DAT_0061dcb4
+
   DAT_0061ee2c  value=0x61EE2C (6417964)  refs=2
     CFootstep_render
       PUSH 0x61ee2c                       ; 004e58f9 | DAT_0061ee2c
     CGore_loadAssets
       PUSH 0x61ee2c                       ; 004e63c2 | DAT_0061ee2c
-
-  DAT_0061dcb4  value=0x61DCB4 (6413492)  refs=2
-    CGore_loadAssets
-      PUSH 0x61dcb4                       ; 004e6314 | DAT_0061dcb4
-    FUN_004e3f40
-      PUSH 0x61dcb4                       ; 004e412f | DAT_0061dcb4
 
   DAT_0061f274  value=0x61F274 (6419060)  refs=2
     drawItemIconBackground
@@ -263,13 +263,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CEmitter_process
       PUSH 0x5dc970                       ; 0049f572 | DAT_005dc970
 
+  DAT_005deab4  value=0x5DEAB4 (6154932)  refs=1
+    CEventList_addOrRemovePersistentEvent
+      PUSH 0x5deab4                       ; 004a994a | DAT_005deab4
+
   DAT_005de221  value=0x5DE221 (6152737)  refs=1
     CEventList_evaluateAtom
       PUSH 0x5de221                       ; 004a72c0 | DAT_005de221
-
-  DAT_005deab4  value=0x5DEAB4 (6154932)  refs=1
-    FUN_004a9870
-      PUSH 0x5deab4                       ; 004a994a | DAT_005deab4
 
   DAT_005dcbef  value=0x5DCBEF (6147055)  refs=1
     resolveActorByName
@@ -344,7 +344,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61cda8                       ; 004b89ba | DAT_0061cda8
 
   DAT_005e61c6  value=0x5E61C6 (6185414)  refs=1
-    FUN_004f70e0
+    loadAssets
       PUSH 0x5e61c6                       ; 004f7517 | DAT_005e61c6
 
   DAT_00626308  value=0x626308 (6447880)  refs=1
@@ -424,7 +424,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61f5e8                       ; 00518238 | DAT_0061f5e8
 
   DAT_00480000  value=0x480000 (4718592)  refs=1
-    FUN_004962b0
+    CEditorTools_updatePercentage
       CMP EBX,0x480000                    ; 0049634b | DAT_00480000
 
   DAT_006235c0  value=0x6235C0 (6436288)  refs=1

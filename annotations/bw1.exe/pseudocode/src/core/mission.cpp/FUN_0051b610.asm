@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_0051ba60 at 0051babf
 ;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051ba10
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bb27
-;   core_mission.cpp_FUN_0051ba60 at 0051babf
 ;   core_mission.cpp_FUN_0051bdc0 at 0051be62
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0
 ;   core_mission.cpp_FUN_0051b7b0
-;   core_set.cpp_FUN_0054d3c0
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0
 ;   sound_sndmain.cpp_killAllSfx_FUN_00573b00
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 0051b62a
     MOV ECX,dword ptr [0x00622c18]      ; 0051b62b | g_CDemonSetPtr
     PUSH ECX                            ; 0051b631 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0054d3c0      ; 0051b632
-        ;   XREF to: 0054d3c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0054d3c0()
+    CALL core_set.cpp_CDemonSet_load_FUN_0054d3c0 ; 0051b632
+        ;   XREF to: 0054d3c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet * this_ptr, char * filename)
     MOV ESI,dword ptr [EBX + 0x1008]    ; 0051b637
     ADD ESP,0x8                         ; 0051b63d
     TEST ESI,ESI                        ; 0051b640

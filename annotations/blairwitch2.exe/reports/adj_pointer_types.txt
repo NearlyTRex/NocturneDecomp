@@ -1,7 +1,7 @@
-Scanning 562 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
+Scanning 564 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (184 files still need ADJ)
+UNFINISHED CTORS/DTORS (185 files still need ADJ)
 ======================================================================
 
   [core/actor.cpp]
@@ -232,7 +232,7 @@ UNFINISHED CTORS/DTORS (184 files still need ADJ)
 
   [core/doc.cpp]
     CDoc_ctor_FUN_004500d0:
-      CBoxActor_ctor @ ??? (UNKNOWN)
+      CBoxActor_ctor @ this+0x259b4 (154036) -> CDoc_ptr_154036
     CDoc_dtor_FUN_00450580:
       CBox_dtor @ this+0x25ea4 (155300) -> CDoc_ptr_155300
       CDemonActor_dtor @ this+0x259b4 (154036) -> CDoc_ptr_154036
@@ -406,6 +406,11 @@ UNFINISHED CTORS/DTORS (184 files still need ADJ)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
   [core/hero.cpp]
+    CHero_ctor_FUN_004ce240:
+      CPathMap_ctor @ this+0x10a9c (68252) -> CHero_ptr_68252
+      CInventory_ctor @ this+0x2437c (148348) -> CHero_ptr_148348
+      CInventory_ctor @ this+0x249a0 (149920) -> CHero_ptr_149920
+      CInventory_ctor @ this+0x24fc4 (151492) -> CHero_ptr_151492
     CHero_dtor_FUN_004ce3d0:
       CInventory_dtor @ this+0x24fc4 (151492) -> CHero_ptr_151492
       CInventory_dtor @ this+0x249a0 (149920) -> CHero_ptr_149920
@@ -523,8 +528,8 @@ UNFINISHED CTORS/DTORS (184 files still need ADJ)
 
   [core/moloch.cpp]
     CMoloch_ctor_FUN_00501340:
-      CDeformableModelInstance_ctor @ ??? (UNKNOWN)
-      CMorph_ctor @ ??? (UNKNOWN)
+      CDeformableModelInstance_ctor @ this+0x25640 (153152) -> CMoloch_ptr_153152
+      CMorph_ctor @ this+0x279c8 (162248) -> CMoloch_ptr_162248
     CMoloch_dtor_FUN_00501400:
       CMorph_dtor @ this+0x279c8 (162248) -> CMoloch_ptr_162248
       CDeformableModelInstance_dtor @ this+0x25640 (153152) -> CMoloch_ptr_153152
@@ -640,7 +645,7 @@ UNFINISHED CTORS/DTORS (184 files still need ADJ)
 
   [core/stranger.cpp]
     CStranger_ctor_FUN_005627f0:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x25744 (153412) -> CStranger_ptr_153412
 
   [core/succubus.cpp]
     CSuccubus_ctor_FUN_0056f2c0:
@@ -962,6 +967,7 @@ NEEDED ADJ POINTER TYPES
   CStairs_ptr_716  (0x2cc)
   CStake_ptr_4  (0x4)
   CSteuben_ptr_14880  (0x3a20)
+  CStranger_ptr_153412  (0x25744)
   CSuccubus_ptr_68344  (0x10af8)
   CSuccubus_ptr_77228  (0x12dac)
   CSuccubus_ptr_77688  (0x12f78)
@@ -1005,10 +1011,10 @@ NEEDED ADJ POINTER TYPES
   SPageResourceTwanaEntry_ptr_216  (0xd8)
   SVert_ptr_16  (0x10)
 
-Total: 195 types across 139 classes
+Total: 196 types across 140 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (126 calls with unknown offset)
+MANUAL REVIEW NEEDED (122 calls with unknown offset)
 ======================================================================
   CDemonActor_ctor_FUN_00408790.asm: _arrinit
   CArmour_dtor_FUN_0040f120.asm: CClothList_dtor
@@ -1053,7 +1059,6 @@ MANUAL REVIEW NEEDED (126 calls with unknown offset)
   CConstruct_dtor_FUN_00438390.asm: CDeformableModelInstance_dtor
   CZombieCow_dtor_FUN_00439c60.asm: CClothList_dtor
   CZombieCow_dtor_FUN_00439c60.asm: CDeformableModelInstance_dtor
-  CDoc_ctor_FUN_004500d0.asm: CBoxActor_ctor
   CZombieDog_dtor_FUN_0045ec60.asm: CClothList_dtor
   CZombieDog_dtor_FUN_0045ec60.asm: CDeformableModelInstance_dtor
   CDraculaBride_dtor_FUN_00465c60.asm: CClothList_dtor
@@ -1096,8 +1101,6 @@ MANUAL REVIEW NEEDED (126 calls with unknown offset)
   CMimic_dtor_FUN_004f0400.asm: CDeformableModelInstance_dtor
   CMobster_dtor_FUN_005004f0.asm: CClothList_dtor
   CMobster_dtor_FUN_005004f0.asm: CDeformableModelInstance_dtor
-  CMoloch_ctor_FUN_00501340.asm: CDeformableModelInstance_ctor
-  CMoloch_ctor_FUN_00501340.asm: CMorph_ctor
   CPassenger_dtor_FUN_005114f0.asm: CClothList_dtor
   CPassenger_dtor_FUN_005114f0.asm: CDeformableModelInstance_dtor
   CSchnellGeist_dtor_FUN_005a3c30.asm: CClothList_dtor
@@ -1108,7 +1111,6 @@ MANUAL REVIEW NEEDED (126 calls with unknown offset)
   CShadow_dtor_FUN_0053eed0.asm: CDeformableModelInstance_dtor
   CSmiley_dtor_FUN_0054ad80.asm: CClothList_dtor
   CSmiley_dtor_FUN_0054ad80.asm: CDeformableModelInstance_dtor
-  CStranger_ctor_FUN_005627f0.asm: CKeyFramedModelInstance_ctor
   CSuccubus_dtor_FUN_00570090.asm: CClothList_dtor
   CSuccubus_dtor_FUN_00570090.asm: CDeformableModelInstance_dtor
   CBassPlayer_dtor_FUN_00572110.asm: CClothList_dtor

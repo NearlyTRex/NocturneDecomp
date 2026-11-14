@@ -178,7 +178,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0 ||
       (pCVar6[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               5,1);
   }
   iVar5 = (**(code **)(*0x01D02F84 + 4))();
   if ((iVar5 != 0) &&
@@ -186,7 +188,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0 ||
       (pCVar6[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               5,-1);
   }
   iVar5 = (**(code **)(*0x01D02F84 + 4))();
   if (iVar5 != 0) {
@@ -214,7 +218,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0 ||
       (pCVar6[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               0,1);
   }
   iVar5 = (**(code **)(*0x01D02F84 + 4))();
   if ((iVar5 != 0) &&
@@ -222,7 +228,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0 ||
       (pCVar6[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               3,1);
   }
   iVar5 = (**(code **)(*0x01D02F84 + 4))();
   if ((iVar5 != 0) &&
@@ -230,7 +238,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0 ||
       (pCVar6[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               6,1);
   }
   if ((_DAT_01cb811c != 0) ||
      (iVar5 = core_script_cpp_CScript_getLetterboxHeight_FUN_00521840(g_CScriptPtr), 2 < iVar5)) {

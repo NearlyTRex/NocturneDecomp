@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
   int local_48;
   int iStack_44;
   int local_40;
-  CLocation *pCStack_3c;
+  CVector3f *pCStack_3c;
   CCharacter *local_38;
   CCharacter *local_34;
   int local_30;
@@ -174,14 +174,13 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                       core_actor_cpp_castToClassHash_FUN_0040c840
                                 (pCVar6->actors[0],g_CGlassClassInfo.name_hash);
         if (this_ptr_02 != (CGlass *)0x0) {
-          pCStack_3c = &(this_ptr_02->base).location;
+          pCStack_3c = &(this_ptr_02->base).location.position;
           iVar4 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
-                            (0x01C73654,&pCStack_3c->position,0.0,(CVector3f *)0x0,(float *)0x0,
-                             (int *)0x0);
+                            (0x01C73654,pCStack_3c,0.0,(CVector3f *)0x0,(float *)0x0,(int *)0x0);
           if ((iVar4 != 0) &&
              (iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0(this_ptr_02),
              iVar4 != 0)) {
-            core_glass_cpp_FUN_004cc040(this_ptr_02);
+            core_glass_cpp_CGlass_shatter_FUN_004cc040(this_ptr_02,pCStack_3c);
           }
         }
         this_ptr_03 = (CTrigger *)

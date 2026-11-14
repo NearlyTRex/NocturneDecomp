@@ -9,11 +9,11 @@
 ;
 ; XREF[19]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60 at 00414b2e
-;   core_box.cpp_FUN_0041dcd0 at 0041dd98
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0 at 0041dd98
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460 at 0043f67c
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004540c0 at 004540f7
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00461050 at 0046114a
-;   core_dpart.cpp_FUN_00466830 at 004668e6
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_00466830 at 004668e6
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004fa6d0 at 004fa7d1
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004fa490 at 004fa6b3
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 at 005347c0

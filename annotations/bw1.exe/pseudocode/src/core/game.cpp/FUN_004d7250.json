@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 418,
-    "complexity_score": 533,
+    "complexity_score": 534,
     "cross_reference_count": 2,
     "function_call_count": 22,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 168,
+    "pseudocode_lines": 169,
     "suspect_count": 34,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 586
+    "total_lines": 587
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     {
       "addr": "004a9a00",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004a9a00"
+      "name": "core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00"
     },
     {
       "addr": "004bdaa0",
@@ -106,14 +106,14 @@
       "name": "engine_dosio.cpp_FUN_00479180"
     },
     {
+      "addr": "004f4b00",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004f4b00"
+    },
+    {
       "addr": "004f4b30",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_dtor_FUN_004f4b30"
-    },
-    {
-      "addr": "004f4b00",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004f4b00"
     },
     {
       "addr": "004f4d10",
@@ -655,12 +655,12 @@
       "line": 37,
       "match": "DAT_005e3121",
       "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004f4b00(&local_338,\"system\\\\nocturne.ini\",&DAT_005e3121);",
+      "text": "engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_338,\"system\\\\nocturne.ini\",&DAT_005e3121)",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1 || p_Var2 != (_FILE *)0x0) {",
@@ -668,7 +668,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_01cd09e8",
       "severity": "mild",
       "text": "DAT_01cd09e8 = 0;",
@@ -676,7 +676,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->combat_difficulty_mode = 0;",
@@ -684,15 +684,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->puzzle_difficulty_mode = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->puzzle_difficulty_mode = 0;",
@@ -703,15 +695,15 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->combat_difficulty_mode = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->combat_difficulty_mode = 0;",
+      "text": "param_1->combat_difficulty_mode = 1;",
       "type": "unnamed_param"
     },
     {
@@ -719,15 +711,15 @@
       "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->puzzle_difficulty_mode = 1;",
+      "text": "param_1->combat_difficulty_mode = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->combat_difficulty_mode = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
     },
     {
@@ -735,12 +727,20 @@
       "line": 119,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->combat_difficulty_mode = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 125,
       "match": "DAT_01cd09e8",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01cd09e8;",
@@ -748,7 +748,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 126,
       "match": "DAT_0061db5c",
       "severity": "mild",
       "text": "_DAT_01cd0ae8 = *(uint *)(&DAT_0061db5c + local_14 * 4);",
@@ -756,7 +756,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 142,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "iVar3 = _stricmp(&DAT_01cd05c0,local_134);",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 145,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01cd05c0;",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 163,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->need_chapter_reload != 0) {",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->need_chapter_reload = 0;",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 96,
+      "line": 97,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 145,
+      "line": 146,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

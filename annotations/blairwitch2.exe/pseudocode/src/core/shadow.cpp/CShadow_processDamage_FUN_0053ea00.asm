@@ -17,8 +17,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_shadow.cpp_FUN_0053df40
 ;   core_shadow.cpp_FUN_0053e000
 ;   core_shadow.cpp_FUN_0053e040
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 0053eacf (CONDITIONAL_JUMP)  ; LAB_0053eacf
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0053ea63
     PUSH EDI                            ; 0053ea67
-    CALL core_motion.cpp_FUN_005035c0   ; 0053ea68
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0053ea68
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0053ea6d
     ADD ESP,0x4                         ; 0053ea70
     TEST EAX,EAX                        ; 0053ea73
@@ -163,8 +163,8 @@ section .text
         ;   Label: LAB_0053eb35
     PUSH EAX                            ; 0053eb39
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0053eb3a
-    CALL core_motion.cpp_FUN_005035c0   ; 0053eb44
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0053eb44
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0053eb49
     ADD ESP,0x4                         ; 0053eb4c
     CMP EAX,0xf                         ; 0053eb4f

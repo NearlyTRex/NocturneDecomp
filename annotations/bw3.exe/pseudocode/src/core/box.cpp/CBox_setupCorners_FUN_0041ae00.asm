@@ -13,17 +13,17 @@
 ; XREF[7]:
 ;   core_bodypart.cpp_FUN_00416970 at 00416b05
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d57b
-;   core_boxactor.cpp_FUN_0041f1e0 at 0041f346
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0 at 0041f346
 ;   core_fire.cpp_CStake_spawn_FUN_00497ac0 at 00497d12
 ;   core_fire.cpp_CToss_create_FUN_0049cee0 at 0049cfc3
 ;   core_simbox.cpp_CSimBox_setup_FUN_00547280 at 00547342
-;   core_weapon.cpp_FUN_0057ba10 at 0057bb4d
+;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0057ba10 at 0057bb4d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7331
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041b1d0
+;   core_box.cpp_CBox_updateTransform_FUN_0041b1d0
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     FSTP float ptr [EAX + 0x224]        ; 0041b018
     PUSH EAX                            ; 0041b01e
     FSTP float ptr [EAX + 0x228]        ; 0041b01f
-    CALL core_box.cpp_FUN_0041b1d0      ; 0041b025
-        ;   XREF to: 0041b1d0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_0041b1d0(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
+    CALL core_box.cpp_CBox_updateTransform_FUN_0041b1d0 ; 0041b025
+        ;   XREF to: 0041b1d0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_updateTransform_FUN_0041b1d0(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
     ADD ESP,0x10                        ; 0041b02a
     RET                                 ; 0041b02d
 

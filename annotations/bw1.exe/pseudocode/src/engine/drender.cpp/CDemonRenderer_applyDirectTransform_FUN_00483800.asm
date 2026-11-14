@@ -18,7 +18,7 @@
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0 at 004ac193
 ;   core_fire.cpp_CSpark_render_FUN_004ad140 at 004ad3e2
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b8251
-;   core_gore.cpp_FUN_004e3f40 at 004e3fc3
+;   core_gore.cpp_CBloodParticle_render_FUN_004e3f40 at 004e3fc3
 ;
 ; Called Functions:
 ;   engine_matrix.c_matrixPushAndTransform_FUN_00507c70

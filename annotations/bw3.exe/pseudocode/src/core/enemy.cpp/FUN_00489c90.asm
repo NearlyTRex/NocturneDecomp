@@ -27,8 +27,8 @@
 ;
 ; XREF[4]:
 ;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a85d
-;   core_charactr.cpp_FUN_0042ff70 at 0042ffca
-;   core_charactr.cpp_FUN_004300e0 at 00430410
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 00430410
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042ff70 at 0042ffca
 ;   core_enemy.cpp_CEnemy_randomize_FUN_0048a220 at 0048a261
 ;
 ; Referenced Globals:

@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[4]:
-;   core_gore.cpp_FUN_004ccbe0 at 004cced2
+;   core_gore.cpp_CBloodParticle_render_FUN_004ccbe0 at 004cced2
 ;   core_gore.cpp_FUN_004cd690 at 004cd8ed
 ;   core_gore.cpp_FUN_004cdd30 at 004cdf3a
 ;   core_gore.cpp_FUN_004ce310 at 004ce4c4

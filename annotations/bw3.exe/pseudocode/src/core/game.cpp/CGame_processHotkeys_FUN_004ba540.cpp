@@ -94,7 +94,7 @@ LAB_004ba56c:
     iVar5 = 1 - this_ptr->is_paused;
     this_ptr->is_paused = iVar5;
     if (iVar5 == 0) {
-      core_sound_cpp_FUN_0055fd30(0x02CF5680);
+      core_sound_cpp_CSound_init_FUN_0055fd30(0x02CF5680);
     }
     else {
       _DAT_01c5fae4 = 0;
@@ -122,7 +122,7 @@ LAB_004ba56c:
     }
     else {
       sound_sndmain_cpp_setSoundMuted_FUN_00556760(0);
-      core_sound_cpp_FUN_0055fd30(0x02CF5680);
+      core_sound_cpp_CSound_init_FUN_0055fd30(0x02CF5680);
     }
   }
   if ((((this_ptr->developer_mode_enabled != 0) &&

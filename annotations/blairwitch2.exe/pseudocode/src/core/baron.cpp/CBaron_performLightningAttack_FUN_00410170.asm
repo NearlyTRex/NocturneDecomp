@@ -43,7 +43,7 @@
 ;   core_fire.cpp_CFireEffect_createCrater_FUN_0049e630
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
-;   core_hero.cpp_FUN_004d00c0
+;   core_hero.cpp_CHero_closestEnemy_FUN_004d00c0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   core_xform.cpp_FUN_00591530
 ;   crt_memory.c___arrinit_FUN_005b7f5f
@@ -61,8 +61,8 @@ section .text
     LEA EAX,[ESP + 0x18c]               ; 0041017f
     PUSH EAX                            ; 00410186
     PUSH EBP                            ; 00410187
-    CALL core_hero.cpp_FUN_004d00c0     ; 00410188
-        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d00c0()
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004d00c0 ; 00410188
+        ;   XREF to: 004d00c0 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004d00c0(CHero * this_ptr, float * out_distance)
     ADD ESP,0x8                         ; 0041018d
     MOV EBX,EAX                         ; 00410190
     TEST EAX,EAX                        ; 00410192

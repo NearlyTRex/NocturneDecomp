@@ -1,0 +1,1268 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 707,
+    "complexity_score": 1105,
+    "cross_reference_count": 8,
+    "function_call_count": 13,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 295,
+    "suspect_count": 78,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "stack_param",
+      "unknown_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1002
+  },
+  "cross_references": [
+    {
+      "addr": "0042c230",
+      "from_addr": "0042c4cb",
+      "name": "core_charactr.cpp_FUN_0042c230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455080",
+      "from_addr": "0045625d",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6eb0",
+      "from_addr": "004c7d05",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00590010",
+      "from_addr": "00590a42",
+      "name": "core_kedward.cpp_CKedward_process_FUN_00590010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521880",
+      "from_addr": "00521d33",
+      "name": "core_prye.cpp_FUN_00521880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563970",
+      "from_addr": "00563b14",
+      "name": "core_spawner.cpp_CSpawner_process_FUN_00563970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d360",
+      "from_addr": "0056da02",
+      "name": "core_trash.cpp_CTrash_process_FUN_0056d360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588ee0",
+      "from_addr": "0058a08e",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053de10",
+    "address_range": [
+      [
+        "0053de10",
+        "0053e86c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10",
+    "signature": "float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b00"
+    },
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b40"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "00408f00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408f00"
+    },
+    {
+      "addr": "0041e910",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041e910"
+    },
+    {
+      "addr": "00461e00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00"
+    },
+    {
+      "addr": "004625a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0"
+    },
+    {
+      "addr": "00474e80",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00474e80"
+    },
+    {
+      "addr": "00474db0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "0053d770",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770"
+    },
+    {
+      "addr": "0053da90",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_0053da90"
+    },
+    {
+      "addr": "0053ed80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0ade",
+      "name": "s_core_setcolid_cpp_005d0ade",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0af3",
+      "name": "s_info_keyFramedModelInsta_005d0af3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b3f",
+      "name": "s_core_setcolid_cpp_005d0b3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b54",
+      "name": "s_Invalid_collision_type_005d0b54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b6e",
+      "name": "DAT_005d0b6e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b37c",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0042c4cb",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042c230",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0045625d",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "004c7d05",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00521d33",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_00521880",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0058a08e",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00590a42",
+        "call_type": "direct",
+        "caller": "core_kedward.cpp_CKedward_process_FUN_00590010",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00563b14",
+        "call_type": "direct",
+        "caller": "core_spawner.cpp_CSpawner_process_FUN_00563970",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0056da02",
+        "call_type": "direct",
+        "caller": "core_trash.cpp_CTrash_process_FUN_0056d360",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.256077795786061,
+    "instruction_count": 617,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 24,
+      "BRANCH": 13,
+      "CALL": 16,
+      "CALLIND": 3,
+      "CBRANCH": 37,
+      "COPY": 1753,
+      "FLOAT2FLOAT": 154,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 16,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 17,
+      "FLOAT_LESS": 17,
+      "FLOAT_MULT": 17,
+      "FLOAT_NAN": 34,
+      "FLOAT_NEG": 2,
+      "FLOAT_SQRT": 3,
+      "FLOAT_SUB": 20,
+      "INT2FLOAT": 8,
+      "INT_ADD": 365,
+      "INT_AND": 200,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 106,
+      "INT_LEFT": 68,
+      "INT_LESS": 14,
+      "INT_MULT": 22,
+      "INT_NOTEQUAL": 88,
+      "INT_OR": 85,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 52,
+      "INT_SUB": 113,
+      "INT_XOR": 5,
+      "INT_ZEXT": 90,
+      "LOAD": 206,
+      "POPCOUNT": 52,
+      "RETURN": 2,
+      "STORE": 182
+    },
+    "pcode_op_count": 3860
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00537030",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00558450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00573470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8505
+    },
+    "nocturne.exe": {
+      "addr": "00510a40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8505
+    }
+  },
+  "stack_frame": {
+    "frame_size": 460,
+    "local_size": 428,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1a8",
+        "offset": -424,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a0",
+        "offset": -416,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_19c",
+        "offset": -412,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18c",
+        "offset": -396,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_184",
+        "offset": -388,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "start_z",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "dir_x",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "dir_z",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "bottom_y",
+        "offset": 28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "top_y",
+        "offset": 32,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053de1c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "afStackY_108c",
+      "severity": "moderate",
+      "text": "float afStackY_108c [859];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_fffffd08",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_fffffd08;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_fffffd0c",
+      "severity": "moderate",
+      "text": "CMatrix3x3f *in_stack_fffffd0c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_dc = (float)local_198._0_4_ - (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_dc = (float)local_198._0_4_ - (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_d4.min.y = (float)local_198._0_4_ + (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_d4.min.y = (float)local_198._0_4_ + (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "if ((float)local_198._8_4_ <= 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_dc = local_dc + (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_d4.min.y = local_d4.min.y + (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "local_d8 = (float)local_198._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_d4.min.x = (float)local_198._4_4_ - (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_d4.min.x = (float)local_198._4_4_ - (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_d4.max.x = (float)local_198._4_4_ + (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_d4.max.x = (float)local_198._4_4_ + (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "local_d4.min.z = (float)local_198._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "if ((float)local_198._12_4_ <= 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_d4.min.x = local_d4.min.x + (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_d4.max.x = local_d4.max.x + (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._76_4_",
+      "severity": "mild",
+      "text": "local_198._76_4_ = (this_ptr->ray_query).ray_type;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_fffffd08",
+      "severity": "moderate",
+      "text": "(CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_fffffd0c",
+      "severity": "moderate",
+      "text": "in_stack_fffffd0c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 149,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "if ((fStack_130 < (float)local_198._28_4_) && ((float)local_198._32_4_ < local_12c))",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 149,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "if ((fStack_130 < (float)local_198._28_4_) && ((float)local_198._32_4_ < local_12c))",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fVar2 = fVar8 - (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "fVar4 = fVar1 - (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 153,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "fVar5 = local_128 + (float)local_198._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._48_4_",
+      "severity": "mild",
+      "text": "fVar2 = fVar4 * (float)local_198._48_4_ + fVar2 * (float)local_198._44_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._44_4_",
+      "severity": "mild",
+      "text": "fVar2 = fVar4 * (float)local_198._48_4_ + fVar2 * (float)local_198._44_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 159,
+      "match": "._44_4_",
+      "severity": "mild",
+      "text": "fVar5 = (float)local_198._44_4_ * fVar2 + (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 159,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fVar5 = (float)local_198._44_4_ * fVar2 + (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._48_4_",
+      "severity": "mild",
+      "text": "fVar4 = (float)local_198._48_4_ * fVar2 + (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "fVar4 = (float)local_198._48_4_ * fVar2 + (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._44_4_",
+      "severity": "mild",
+      "text": "fVar5 = fVar5 - (float)local_198._44_4_ * fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._48_4_",
+      "severity": "mild",
+      "text": "fVar4 = fVar4 - (float)local_198._48_4_ * fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "if (ABS((float)local_198._16_4_) <= ABS((float)local_198._20_4_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "if (ABS((float)local_198._16_4_) <= ABS((float)local_198._20_4_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "fVar2 = (fVar4 - (float)local_198._12_4_) / (float)local_198._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "fVar2 = (fVar4 - (float)local_198._12_4_) / (float)local_198._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fVar2 = (fVar5 - (float)local_198._8_4_) / (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "fVar2 = (fVar5 - (float)local_198._8_4_) / (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 176,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_198._4_4_ = fVar4 - fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 177,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 191,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_198._4_4_ = -fVar4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 201,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "afStack_a0[2] = (float)local_198._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 202,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "fStack_90 = (float)local_198._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 205,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "uVar7 = local_198._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 206,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "afStack_50[0] = (float)local_198._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 222,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_258._0_4_ = local_1a0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 225,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "if ((float)auStack_258._8_4_ < (float)local_198._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 225,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((float)auStack_258._8_4_ < (float)local_198._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 226,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = auStack_258._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 226,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = auStack_258._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffffd0c",
+      "severity": "moderate",
+      "text": "in_stack_fffffd0c = (CMatrix3x3f *)(auStack_258 + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 228,
+      "match": "in_stack_fffffd08",
+      "severity": "moderate",
+      "text": "in_stack_fffffd08 = actor;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 235,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_198._4_4_ = fStack_54;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 236,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_198._8_4_ = afStack_50[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 237,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_198._12_4_ = afStack_50[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 253,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "(float)local_198._8_4_ - (actor->location).position.x,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 254,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "(float)local_198._12_4_ - (actor->location).position.z,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 255,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "(float)local_198._16_4_,(float)local_198._20_4_,radius,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 255,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "(float)local_198._16_4_,(float)local_198._20_4_,radius,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 258,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_1fc._0_4_ = local_1a0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 261,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((float)auStack_1fc._0_4_ < local_1a0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 263,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_19c = (float)auStack_1fc._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 264,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = auStack_1fc._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 264,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_198._0_4_ = auStack_1fc._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 265,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_198._4_4_ = auStack_1fc._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 265,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_198._4_4_ = auStack_1fc._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 268,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1a0 = (float)auStack_1fc._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 278,
+      "match": "._84_4_",
+      "severity": "mild",
+      "text": "if ((float)auStack_1fc._84_4_ <= 1.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 295,
+      "match": "._84_4_",
+      "severity": "mild",
+      "text": "return (float)auStack_1fc._84_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 298,
+      "match": "._84_4_",
+      "severity": "mild",
+      "text": "return (float)auStack_1fc._84_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 110,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 124,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 273,
+      "match": "local_18 = (T *)local_18->ARRAY",
+      "severity": "moderate",
+      "text": "local_18 = (CDemonSet *)local_18->cameras;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

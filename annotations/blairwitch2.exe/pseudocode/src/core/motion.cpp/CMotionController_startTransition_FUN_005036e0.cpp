@@ -14,6 +14,7 @@ void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_005036e0(CMot
   float fVar1;
   EMotionTransitionCmd EVar2;
   int iVar3;
+  SMotion *pSVar4;
   float local_18;
   
   local_18 = transition->to_frame_number;
@@ -27,8 +28,8 @@ void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_005036e0(CMot
     core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
               (this_ptr,transition->to_motion_number,local_18);
     if (transition->set_new_state_as_desired != 0) {
-      iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
-      this_ptr->state_index = *(int *)(iVar3 + 0x24);
+      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+      this_ptr->state_index = pSVar4->state_index;
       return;
     }
   }

@@ -7,13 +7,13 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_00489670 at 0048c22e
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c22e
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be816
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005298b6
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ad47
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a2ad
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a765
 ;   core_sound.cpp_FUN_00559b50 at 00559c5f
-;   core_sound.cpp_FUN_0055a1d0 at 0055a2ad
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8bdf

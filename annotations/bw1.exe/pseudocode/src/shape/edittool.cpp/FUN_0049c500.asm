@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_0049caa0 at 0049cc10
-;   shape_edittool.cpp_FUN_0049d580 at 0049d5b0
+;   shape_edittool.cpp_CEdButton_paint_FUN_0049d580 at 0049d5b0
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0 at 0049cc10
 ;   shape_edittool.cpp_FUN_0049dc70 at 0049dd16
 ;
 ; Referenced Globals:

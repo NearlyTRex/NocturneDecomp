@@ -17,11 +17,11 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr)
     engine_special_cpp_selectCard_FUN_005663e0(_DAT_01d74020);
   }
   if (((DAT_005fba1c != this_ptr->game_pixy) || (DAT_005fba20 != this_ptr->game_bpp)) &&
-     (iVar1 = wincore_wddvmem_cpp_FUN_00579bb0
+     (iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0
                         (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp), iVar1 == 0)) {
     this_ptr->game_pixy = 0x1e0;
     this_ptr->game_pixx = 0x280;
-    iVar1 = wincore_wddvmem_cpp_FUN_00579bb0
+    iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0
                       (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp);
     if (iVar1 == 0) {
       _DAT_01d71de0 = "..\\core\\game.cpp";

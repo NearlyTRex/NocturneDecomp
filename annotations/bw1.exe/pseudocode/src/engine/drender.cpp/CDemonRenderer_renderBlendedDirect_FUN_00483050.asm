@@ -15,9 +15,9 @@
 ;   core_fire.cpp_CLightningBolt_render_FUN_004b3570 at 004b38ba
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0 at 004ac3bf
 ;   core_fire.cpp_CTrail_render_FUN_004b3d20 at 004b3fd1
+;   core_gore.cpp_CBloodParticle_render_FUN_004e3f40 at 004e42b5
 ;   core_gore.cpp_CBloodPool_render_FUN_004e5180 at 004e542f
 ;   core_gore.cpp_CBloodSplat_render_FUN_004e49a0 at 004e4c8c
-;   core_gore.cpp_CFootstep_render_FUN_004e5860 at 004e5a41
 ;   ... and 3 more
 ;
 ; Referenced Globals:

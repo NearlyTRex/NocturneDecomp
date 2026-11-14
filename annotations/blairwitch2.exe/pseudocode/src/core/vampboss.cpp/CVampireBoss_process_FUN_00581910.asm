@@ -227,8 +227,8 @@ section .text
     LEA ESI,[EBX + 0x10af8]             ; 00581b52
         ;   Label: LAB_00581b52
     PUSH ESI                            ; 00581b58
-    CALL core_motion.cpp_FUN_005035c0   ; 00581b59
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00581b59
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00581b5e
     ADD ESP,0x4                         ; 00581b61
     TEST EAX,EAX                        ; 00581b64
@@ -530,8 +530,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00581f5f
         ;   Label: LAB_00581f5f
     PUSH EAX                            ; 00581f65
-    CALL core_motion.cpp_FUN_005035c0   ; 00581f66
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00581f66
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00581f6b
     ADD ESP,0x4                         ; 00581f6e
     CMP EAX,0x2                         ; 00581f71
@@ -1049,8 +1049,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 00582599
         ;   Label: LAB_00582599
     PUSH ESI                            ; 0058259f
-    CALL core_motion.cpp_FUN_005035c0   ; 005825a0
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005825a0
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005825a5
     MOV EAX,dword ptr [EAX + 0x24]      ; 005825a8
     MOV dword ptr [ESP + 0x2c4],EAX     ; 005825ab

@@ -17,7 +17,7 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f2740(CIcePick *this_pt
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CIcePick *)core_hero_cpp_FUN_004ea980(this_ptr,1);
+  pCVar1 = (CIcePick *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

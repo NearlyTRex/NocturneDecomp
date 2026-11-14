@@ -238,7 +238,7 @@
     {
       "addr": "00489670",
       "from_addr": "0048a717",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -296,6 +296,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004af410",
+      "from_addr": "004af51b",
+      "name": "core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ad640",
       "from_addr": "004add46",
       "name": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
@@ -317,12 +323,6 @@
       "addr": "004b0a90",
       "from_addr": "004b0b1c",
       "name": "core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004b0a90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af410",
-      "from_addr": "004af51b",
-      "name": "core_gabriela.cpp_FUN_004af410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -374,6 +374,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d0a40",
+      "from_addr": "004d0a5e",
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d00c0",
+      "from_addr": "004d0143",
+      "name": "core_hero.cpp_CHero_closestEnemy_FUN_004d00c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d03b0",
       "from_addr": "004d0486",
       "name": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
@@ -398,6 +410,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004cf4e0",
+      "from_addr": "004cf54c",
+      "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004cec50",
       "from_addr": "004ced73",
       "name": "core_hero.cpp_FUN_004cec50",
@@ -413,24 +431,6 @@
       "addr": "004cf2b0",
       "from_addr": "004cf318",
       "name": "core_hero.cpp_FUN_004cf2b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cf4e0",
-      "from_addr": "004cf54c",
-      "name": "core_hero.cpp_FUN_004cf4e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d00c0",
-      "from_addr": "004d0143",
-      "name": "core_hero.cpp_FUN_004d00c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d0a40",
-      "from_addr": "004d0a5e",
-      "name": "core_hero.cpp_FUN_004d0a40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -512,6 +512,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004db9d0",
+      "from_addr": "004dba68",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dc8c0",
       "from_addr": "004dc8ed",
       "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
@@ -527,12 +533,6 @@
       "addr": "004dadb0",
       "from_addr": "004daea4",
       "name": "core_inv.cpp_FUN_004dadb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004db9d0",
-      "from_addr": "004dba68",
-      "name": "core_inv.cpp_FUN_004db9d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -740,6 +740,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005656f0",
+      "from_addr": "00565b79",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0056eed0",
       "from_addr": "0056ef04",
       "name": "core_stranger.cpp_CStranger_processWeaponTick_FUN_0056eed0",
@@ -767,12 +773,6 @@
       "addr": "0056db50",
       "from_addr": "0056de7b",
       "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005656f0",
-      "from_addr": "00565b79",
-      "name": "core_stranger.cpp_FUN_005656f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -950,7 +950,7 @@
       {
         "call_addr": "0048a717",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -961,7 +961,7 @@
       {
         "call_addr": "0048a741",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -972,7 +972,7 @@
       {
         "call_addr": "0048e06e",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

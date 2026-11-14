@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "system/time.h"
 #include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
@@ -158,7 +159,7 @@ void crt_unknown_c_FUN_005c3ef0(WORD param_1,WORD param_2,LPFILETIME param_3);
 void crt_unknown_c_FUN_005c3f24(int param_1,undefined1 *param_2);
 undefined4 crt_unknown_c_FUN_005c3f6c(HANDLE param_1,uint param_2,LPWIN32_FIND_DATAA param_3);
 void crt_unknown_c_FUN_005c3fb0(uint param_1,uint param_2);
-undefined4 crt_unknown_c_FUN_005c4030(undefined4 *param_1);
+time_t crt_unknown_c_FUN_005c4030(time_t *param_1);
 undefined1 * crt_unknown_c_FUN_005c4070(void);
 undefined4 crt_unknown_c_FUN_005c4080(uint param_1);
 void crt_unknown_c_FUN_005c40d2(undefined4 *param_1,undefined4 param_2);
@@ -167,7 +168,7 @@ bool crt_unknown_c_FUN_005c41d2(int *param_1,int param_2);
 undefined4 crt_unknown_c_FUN_005c4260(byte *param_1);
 char * crt_unknown_c_FUN_005c42a0(char *param_1,char *param_2,ulong param_3);
 int crt_unknown_c_FUN_005c4310(undefined4 *param_1,short *param_2,uint param_3);
-int crt_unknown_c_FUN_005c43e0(int *param_1);
+time_t __cdecl crt_unknown_c__mktime_FUN_005c43e0(_tm *timeptr);
 void crt_unknown_c_FUN_005c45a0(ulong param_1);
 void crt_unknown_c_FUN_005c45b0(void);
 void crt_unknown_c_FUN_005c469c(void);

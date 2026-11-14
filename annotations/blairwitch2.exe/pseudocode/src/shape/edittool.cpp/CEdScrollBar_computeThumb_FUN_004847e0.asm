@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00484900 at 00484912
-;   shape_edittool.cpp_FUN_00484440 at 0048444d
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 0048444d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2abe

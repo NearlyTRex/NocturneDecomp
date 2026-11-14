@@ -14,11 +14,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
   SIZE_T SVar1;
   int iVar2;
   int local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
   int local_14;
   
   SVar1 = _fread(&local_2c,0x18,1,file);
@@ -32,7 +32,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
     local_14 = 0;
     if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
     {
-      core_dmodel_cpp_FUN_00467650(this_ptr,local_28,local_24,local_20,local_1c,local_18);
+      core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650
+                (this_ptr,local_28,local_24,local_20,local_1c,local_18);
       SVar1 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
                          1,file);
       if ((SVar1 == 1) &&

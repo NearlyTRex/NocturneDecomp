@@ -13,8 +13,8 @@
 ;
 ; XREF[11]:
 ;   core_actor.cpp_FUN_00408ec0 at 00408f29
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990 at 004209bd
 ;   core_box.cpp_CBoundingBox3D_render_FUN_00421670 at 0042169c
-;   core_box.cpp_FUN_00420990 at 004209bd
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f4f2
 ;   core_setcolid.cpp_FUN_005562c0 at 005566bb
 ;   core_setcolid.cpp_FUN_005580d0 at 0055810b

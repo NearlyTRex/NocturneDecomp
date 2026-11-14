@@ -10,8 +10,8 @@
 ; XREF[70]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 at 00409b7d
 ;   core_basicene.cpp_FUN_0059fae0 at 0059fb77
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20 at 0041aa9a
 ;   core_box.cpp_FUN_0041a840 at 0041a972
-;   core_box.cpp_FUN_0041aa20 at 0041aa9a
 ;   core_box.cpp_FUN_0041ae50 at 0041aefd
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620 at 0041f6cf
 ;   core_bwspart.cpp_FUN_005a86a0 at 005a8825

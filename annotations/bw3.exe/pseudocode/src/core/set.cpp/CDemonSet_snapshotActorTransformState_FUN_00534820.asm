@@ -10,7 +10,7 @@
 ; XREF[5]:
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00456f07
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 00488103
-;   core_glass.cpp_FUN_004cc040 at 004cc456
+;   core_glass.cpp_CGlass_shatter_FUN_004cc040 at 004cc456
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004cf580 at 004cf5ce
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005349f8
 ;

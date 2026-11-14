@@ -23,8 +23,8 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_005E0E48 = (undefined1*)core_particle_cpp_FUN_00509f30;
-static undefined1* DAT_005E0E4C = (undefined1*)core_gore_cpp_FUN_004ccbe0;
+static undefined1* DAT_005E0E48 = (undefined1*)core_particle_cpp_CParticle_process_FUN_00509f30;
+static undefined1* DAT_005E0E4C = (undefined1*)core_gore_cpp_CBloodParticle_render_FUN_004ccbe0;
 static undefined1* DAT_005E0E50 = (undefined1*)core_gore_cpp_FUN_004cd3f0;
 static undefined1* DAT_005E1544 = (undefined1*)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220;
 static undefined1* DAT_005E1548 = (undefined1*)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510;
@@ -54,7 +54,7 @@ static undefined1* DAT_005E15F4 = (undefined1*)core_actor_cpp_CDemonActor_custom
 static undefined1* DAT_005E15F8 = (undefined1*)core_hero_cpp_CHero_getPathMap_FUN_004d2a70;
 static undefined1* DAT_005E15FC = (undefined1*)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130;
 static undefined1* DAT_005E1600 = (undefined1*)core_actor_cpp_CDemonActor_getActorType_FUN_00408840;
-static undefined1* DAT_005E1604 = (undefined1*)core_hero_cpp_FUN_004d2620;
+static undefined1* DAT_005E1604 = (undefined1*)core_hero_cpp_CHero_dtor_FUN_004d2620;
 static undefined1* DAT_005E1608 = (undefined1*)core_hero_cpp_CHero_archive_FUN_004d27b0;
 static undefined1* DAT_005E160C = (undefined1*)core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180;
 static undefined1* DAT_005E1610 = (undefined1*)core_hero_cpp_CHero_kill_FUN_004d43e0;
@@ -83,14 +83,14 @@ static undefined1* DAT_005E1670 = (undefined1*)core_charactr_cpp_CCharacter_isWa
 static undefined1* DAT_005E1674 = (undefined1*)core_hero_cpp_FUN_004d2cd0;
 static undefined1* DAT_005E1678 = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E167C = (undefined1*)crt_unknown_c_FUN_005a3e21;
-static undefined1* DAT_005E1680 = (undefined1*)core_hero_cpp_FUN_004d4410;
+static undefined1* DAT_005E1680 = (undefined1*)core_hero_cpp_CHero_reset_FUN_004d4410;
 static undefined1* DAT_005E1684 = (undefined1*)core_hero_cpp_CHero_toggleGoggles_FUN_004d48d0;
 static undefined1* DAT_005E2F78 = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E2F7C = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E2F80 = (undefined1*)crt_unknown_c_FUN_005a3e21;
 static undefined1* DAT_005E2F84 = (undefined1*)engine_palette_cpp_FUN_00509e00;
 static undefined1* DAT_005E2FA4 = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00509e40;
-static undefined1* DAT_005E2FA8 = (undefined1*)core_particle_cpp_FUN_00509f30;
+static undefined1* DAT_005E2FA8 = (undefined1*)core_particle_cpp_CParticle_process_FUN_00509f30;
 static undefined1* DAT_005E2FAC = (undefined1*)core_particle_cpp_CParticle_render_FUN_0050a3b0;
 static undefined1* DAT_005E2FB0 = (undefined1*)core_particle_cpp_FUN_0050a3e0;
 static undefined1* DAT_005E3428 = (undefined1*)0x00514380; // LAB_00514380

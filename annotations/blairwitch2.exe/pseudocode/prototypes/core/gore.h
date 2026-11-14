@@ -17,9 +17,9 @@ void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,
 // Address: 004c7490
 void __cdecl CBloodParticle::setupRenderState(CBloodParticle *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c7580
+// Original: core_gore.cpp_CBloodParticle_render_FUN_004c7580
 // Address: 004c7580
-void FUN_004c7580(CVector3f *param_1);
+void __cdecl CBloodParticle::render(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_CBloodParticle_onCollision_FUN_004c7da0
 // Address: 004c7da0

@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
-;   core_game.cpp_FUN_004cbf20
+;   core_game.cpp_CGame_updateDT_FUN_004cbf20
 ;   core_inivar.cpp_writeIniData_FUN_004f5760
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90
 ;   core_menu.cpp_FUN_0050b470
@@ -82,8 +82,8 @@ section .text
     MOV EBP,dword ptr [0x0061d95c]      ; 0050c9d9 | g_CGamePtr
         ;   Label: LAB_0050c9d9
     PUSH EBP                            ; 0050c9df
-    CALL core_game.cpp_FUN_004cbf20     ; 0050c9e0
-        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
+    CALL core_game.cpp_CGame_updateDT_FUN_004cbf20 ; 0050c9e0
+        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004cbf20(CGame * this_ptr)
     ADD ESP,0x4                         ; 0050c9e5
     PUSH 0x10000                        ; 0050c9e8
     PUSH 0xc350                         ; 0050c9ed

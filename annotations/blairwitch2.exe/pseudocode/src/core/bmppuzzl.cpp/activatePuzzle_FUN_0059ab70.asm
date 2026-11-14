@@ -11,7 +11,7 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_0059b5a0 at 0059b718
 ;   core_bmppuzzl.cpp_CExamplePuzzle_onMouse_FUN_0059adf0 at 0059ae29
 ;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_0059ac10 at 0059ac4f
-;   core_event.cpp_FUN_00489670 at 00489cbf
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489cbf
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b65fb
 ;
 ; Referenced Globals:

@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040106f
-;   wincore_wddvmem.cpp_FUN_00579bb0 at 00579fa0
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0 at 00579fa0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005d76f6

@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_smiley.cpp_CSmiley_processDismemberment_FUN_0054a790
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 0054ab5b (CONDITIONAL_JUMP)  ; LAB_0054ab5b
     PUSH EDI                            ; 0054aadd
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0054aade
-    CALL core_motion.cpp_FUN_005035c0   ; 0054aae8
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0054aae8
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0054aaed
     ADD ESP,0x4                         ; 0054aaf0
     CMP EAX,0x8                         ; 0054aaf3

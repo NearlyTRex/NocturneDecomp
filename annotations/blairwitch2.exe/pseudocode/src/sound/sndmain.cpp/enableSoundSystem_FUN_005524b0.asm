@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be528
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ad3b
-;   core_sound.cpp_FUN_0055a1d0 at 0055a234
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a234
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bc98

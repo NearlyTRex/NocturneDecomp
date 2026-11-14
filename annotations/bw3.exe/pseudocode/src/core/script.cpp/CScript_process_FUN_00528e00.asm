@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_00434b00
-;   core_game.cpp_FUN_004ba490
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
 ;   core_script.cpp_CScript_step_FUN_00529a70
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -86,8 +86,8 @@ section .text
         ;   XREF to: 00528e93 (CONDITIONAL_JUMP)  ; LAB_00528e93
     MOV EDX,dword ptr [0x005fe9dc]      ; 00528e7c | g_CGamePtr
     PUSH EDX                            ; 00528e82
-    CALL core_game.cpp_FUN_004ba490     ; 00528e83
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 00528e83
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     XOR ECX,ECX                         ; 00528e88
     ADD ESP,0x4                         ; 00528e8a
     MOV dword ptr [0x01ed7014],ECX      ; 00528e8d | DAT_01ed7014

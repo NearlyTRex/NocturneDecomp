@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_processBuffer_FUN_00434070 at 00434088
-;   support_codec.cpp_FUN_00433ff0 at 00434008
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0 at 00434008
 ;
 ; Referenced Globals:
 ;   undefined1* g_CInStreamMemoryVTable = 0057d5a0

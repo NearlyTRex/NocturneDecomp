@@ -25,6 +25,6 @@ int __cdecl enterMainGameMenu(void);
 // Address: 004e46c0
 void __cdecl initializeGameSystems(int argc,char **argv);
 
-// Original: core_main.c_FUN_004e4e20
+// Original: core_main.c_finalizeGameSystems_FUN_004e4e20
 // Address: 004e4e20
-void FUN_004e4e20(void);
+void __cdecl finalizeGameSystems(void);

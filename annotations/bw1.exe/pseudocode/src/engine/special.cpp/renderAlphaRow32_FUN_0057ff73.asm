@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0 at 0040d577
-;   engine_alphabit.cpp_FUN_0040d660 at 0040d775
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660 at 0040d775
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_006247d0

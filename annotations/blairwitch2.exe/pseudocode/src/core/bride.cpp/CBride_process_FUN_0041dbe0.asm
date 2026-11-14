@@ -33,12 +33,12 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427130
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_charactr.cpp_FUN_00423a10
 ;   core_charactr.cpp_FUN_00423a60
-;   core_charactr.cpp_FUN_00426f30
 ;   core_charactr.cpp_FUN_00427060
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   ... and 12 more
@@ -79,8 +79,8 @@ section .text
     MOV EDX,0xbf800000                  ; 0041dc33
     PUSH ESI                            ; 0041dc38
     MOV dword ptr [EBP + 0x72],EDX      ; 0041dc39
-    CALL core_motion.cpp_FUN_005035c0   ; 0041dc3c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041dc3c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0041dc41
     ADD ESP,0x4                         ; 0041dc44
     CMP EAX,0x5                         ; 0041dc47
@@ -986,8 +986,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041e6b5
     MOVSD ES:EDI,ESI                    ; 0041e6b6
     MOVSD ES:EDI,ESI                    ; 0041e6b7
-    CALL core_motion.cpp_FUN_005035c0   ; 0041e6b8
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041e6b8
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0041e6bd
     ADD ESP,0x4                         ; 0041e6c0
     CMP EAX,0x1                         ; 0041e6c3
@@ -1085,8 +1085,8 @@ section .text
         ;   XREF to: 00427130 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0041e7e3
     PUSH EBX                            ; 0041e7e6
-    CALL core_charactr.cpp_FUN_00426f30 ; 0041e7e7
-        ;   XREF to: 00426f30 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00426f30()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30 ; 0041e7e7
+        ;   XREF to: 00426f30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041e7ec
     LEA ESP,[EBP + 0x7a]                ; 0041e7ef
         ;   Label: LAB_0041e7ef

@@ -30,8 +30,8 @@
 ;   core_actor.cpp_FUN_00408d30
 ;   core_actor.cpp_FUN_00408de0
 ;   core_box.cpp_FUN_0041af70
-;   core_boxactor.cpp_FUN_0041bf10
-;   core_boxactor.cpp_FUN_0041cda0
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10
 ;
 ; *****************************************************************************
 
@@ -164,12 +164,12 @@ section .text
     FXCH                                ; 0041cc95
     FSTP float ptr [EAX + 0x4]          ; 0041cc97
     FSTP float ptr [EAX + 0x8]          ; 0041cc9a
-    CALL core_boxactor.cpp_FUN_0041bf10 ; 0041cc9d
-        ;   XREF to: 0041bf10 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041bf10()
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10 ; 0041cc9d
+        ;   XREF to: 0041bf10 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041cca2
     PUSH EBX                            ; 0041cca5
-    CALL core_boxactor.cpp_FUN_0041cda0 ; 0041cca6
-        ;   XREF to: 0041cda0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041cda0()
+    CALL core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 ; 0041cca6
+        ;   XREF to: 0041cda0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041ccab
     MOV ESP,EBP                         ; 0041ccae
     POP EBP                             ; 0041ccb0

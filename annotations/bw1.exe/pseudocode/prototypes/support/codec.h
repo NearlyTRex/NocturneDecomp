@@ -53,9 +53,9 @@ CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,uint flags);
 // Address: 00442c00
 undefined4 FUN_00442c00(undefined4 param_1,int *param_2,int *param_3);
 
-// Original: support_codec.cpp_FUN_00442c70
+// Original: support_codec.cpp_CCodec_finalize_FUN_00442c70
 // Address: 00442c70
-undefined4 FUN_00442c70(void);
+int __cdecl CCodec::finalize(CCodec *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_FUN_00442c80
 // Address: 00442c80
@@ -133,9 +133,9 @@ void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 // Address: 00443530
 undefined4 FUN_00443530(int param_1,int *param_2,undefined4 param_3);
 
-// Original: support_codec.cpp_FUN_00443630
+// Original: support_codec.cpp_CLZWCompress_finalize_FUN_00443630
 // Address: 00443630
-undefined4 FUN_00443630(int param_1,undefined4 param_2);
+int __cdecl CLZWCompress::finalize(CLZWCompress *this_ptr,COutStream *ostream);
 
 // Original: support_codec.cpp_CLZWDecompress_ctor_FUN_004436b0
 // Address: 004436b0

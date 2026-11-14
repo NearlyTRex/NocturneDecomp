@@ -101,6 +101,6 @@ void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041ae00(CBox *this_ptr,CVector3
   this_ptr->scrape_points[7].local_position.x = (this_ptr->extents).x * fVar3;
   this_ptr->scrape_points[7].local_position.y = fVar1 * fVar3;
   this_ptr->scrape_points[7].local_position.z = -fVar2 * fVar3;
-  core_box_cpp_FUN_0041b1d0(this_ptr,position,orientation,volume);
+  core_box_cpp_CBox_updateTransform_FUN_0041b1d0(this_ptr,position,orientation,volume);
   return;
 }

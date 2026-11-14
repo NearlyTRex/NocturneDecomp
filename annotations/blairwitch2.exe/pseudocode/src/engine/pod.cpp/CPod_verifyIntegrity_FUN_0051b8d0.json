@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 40,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 7,
     "suspect_types": [
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 61
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -25,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0",
-    "signature": "undefined4 __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)"
+    "signature": "int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)"
   },
   "function_calls": [
     {
@@ -46,7 +47,7 @@
     {
       "addr": "0051aa80",
       "is_variadic": false,
-      "name": "engine_pod.cpp_FUN_0051aa80"
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80"
     }
   ],
   "globals": [],
@@ -126,16 +127,56 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)",
+      "text": "int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)",
       "type": "unnamed_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 7,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_ctor_FUN_00519e50((CPodFile *)&stack0xfffffbd0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 8,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00((CPodFile *)&stack0xfffffbd0,param_2);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(&CStack_430,param_2);",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00((CPodFile *)&stack0xfffffbd0,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80((CPodFile *)&stack0xfffffbd0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0xfffffbd4",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_00519ec0((CPodFile *)&stack0xfffffbd4,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_00519ec0((CPodFile *)&stack0xfffffbd0,0);",
+      "type": "stack_ref"
     }
   ]
 }

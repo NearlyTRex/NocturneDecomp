@@ -21,9 +21,9 @@ void FUN_004663b0(int param_1);
 // Address: 004663f2
 void FUN_004663f2(void);
 
-// Original: core_dpart.cpp_FUN_00466410
+// Original: core_dpart.cpp_CDemonPart_load_FUN_00466410
 // Address: 00466410
-void FUN_00466410(void);
+void __cdecl CDemonPart::load(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_save_FUN_00466440
 // Address: 00466440
@@ -33,13 +33,13 @@ void __cdecl CDemonPart::save(CDemonPart *this_ptr);
 // Address: 00466470
 void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00466540
+// Original: core_dpart.cpp_CDemonPart_loadFromFile_FUN_00466540
 // Address: 00466540
-void FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
+void __cdecl CDemonPart::loadFromFile(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 
-// Original: core_dpart.cpp_FUN_00466830
+// Original: core_dpart.cpp_CDemonPart_renderFaces_FUN_00466830
 // Address: 00466830
-void FUN_00466830(void);
+void __cdecl CDemonPart::renderFaces(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0
 // Address: 00466bf0

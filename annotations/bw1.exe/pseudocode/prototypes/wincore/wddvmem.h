@@ -37,13 +37,13 @@ int __cdecl FUN_005ac040(int width,int height);
 // Address: 005ac1b0
 void __cdecl FUN_005ac1b0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac270
+// Original: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ac270
 // Address: 005ac270
-void FUN_005ac270(void);
+void __cdecl initializeScanlinePointers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac300
+// Original: wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300
 // Address: 005ac300
-undefined4 FUN_005ac300(int param_1,int param_2,int param_3);
+int __cdecl setScreenResolution(int width,int height,int bits_per_pixel);
 
 // Original: wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ac830
 // Address: 005ac830

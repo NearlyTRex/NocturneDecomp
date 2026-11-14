@@ -15,7 +15,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *f
   int iVar1;
   int local_14;
   
-  core_course_cpp_FUN_00438c20(this_ptr);
+  core_course_cpp_CCourse_free_FUN_00438c20(this_ptr);
   file = engine_dosio_cpp_FUN_00460c70(&DAT_005ce01c,filename,&DAT_005ce019);
   if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\core\\course.cpp";

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 140,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 126
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "005035c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
     }
   ],
   "globals": [],
@@ -136,7 +136,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)param_1[2].flames[2].base.create_event != 0) &&",
@@ -144,7 +144,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "((float)param_1[2].flames[2].globe.linear_radius_scaled < 1.0)) {",
@@ -152,7 +152,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)param_1[2].flames[2].base.create_event == 0) &&",
@@ -160,7 +160,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "(0.0 < (float)param_1[2].flames[2].globe.linear_radius_scaled)) {",
@@ -168,31 +168,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_FUN_005035c0(&param_1->model);",
+      "text": "pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&(param_1->model).base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
+      "text": "fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,2),",
+      "text": "(fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,2),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",

@@ -41,13 +41,13 @@ void __cdecl CGabriella::setup(CGabriella *this_ptr);
 // Address: 004ad640
 void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004aeb00
+// Original: core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00
 // Address: 004aeb00
-void FUN_004aeb00(CDemonActor *param_1);
+void __cdecl CGabriella::processAI(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004af410
+// Original: core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410
 // Address: 004af410
-void FUN_004af410(CGabriella *param_1,float param_2);
+void __cdecl CGabriella::processMotionEvents(CGabriella *this_ptr,float delta_time);
 
 // Original: core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004af900
 // Address: 004af900
@@ -85,9 +85,9 @@ int __cdecl CGabriella::tryClimbLadder(CGabriella *this_ptr);
 // Address: 004b0e80
 int __cdecl CGabriella::canFireWeapon(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004b0ef0
+// Original: core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004b0ef0
 // Address: 004b0ef0
-void FUN_004b0ef0(CDemonActor *param_1);
+void __cdecl CGabriella::tryFireWeapon(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004b0f70
 // Address: 004b0f70
@@ -121,9 +121,9 @@ void __cdecl CGabriella::processDamage(CGabriella *this_ptr,SDamageInfo *damage_
 // Address: 004b1e00
 void __cdecl CGabriella::updateClavicleCollisionAvoidance(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 
-// Original: core_gabriela.cpp_FUN_004b20d0
+// Original: core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
 // Address: 004b20d0
-void FUN_004b20d0(int param_1,float param_2,float *param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl CGabriella::binarySearchClavicleBlend(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset);
 
 // Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0
 // Address: 004b22c0

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   add_flag
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_00489670 at 0048b4e6
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048b4e6
 ;   core_event.cpp_FUN_004910b0 at 004910e8
 ;
 ; Referenced Globals:

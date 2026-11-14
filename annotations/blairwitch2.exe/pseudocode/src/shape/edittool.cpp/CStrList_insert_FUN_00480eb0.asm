@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   string_data
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00483c30 at 00483c42
+;   shape_edittool.cpp_CPickList_insert_FUN_00483c30 at 00483c42
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d259f

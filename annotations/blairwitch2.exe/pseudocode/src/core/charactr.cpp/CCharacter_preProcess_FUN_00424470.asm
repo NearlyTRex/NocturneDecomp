@@ -23,7 +23,7 @@
 ;   ... and 28 more
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00429d60
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH EAX                            ; 0042448e
     FSTP float ptr [ESP + 0xc]          ; 0042448f
     MOV dword ptr [EAX + 0x2578],0x0    ; 00424493
-    CALL core_charactr.cpp_FUN_00429d60 ; 0042449d
-        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429d60()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 ; 0042449d
+        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 004244a2
     ADD ESP,0xc                         ; 004244a5
     POP EDI                             ; 004244a8

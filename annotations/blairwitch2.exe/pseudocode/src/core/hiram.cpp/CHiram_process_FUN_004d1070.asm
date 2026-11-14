@@ -21,12 +21,12 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_glass.cpp_FUN_004c6d40
+;   core_glass.cpp_CGlass_shatter_FUN_004c6d40
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 004d1096
         ;   Label: LAB_004d1096
     PUSH ESI                            ; 004d109c
-    CALL core_motion.cpp_FUN_005035c0   ; 004d109d
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d109d
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d10a2
     ADD ESP,0x4                         ; 004d10a5
     CMP EAX,0x1                         ; 004d10a8
@@ -137,8 +137,8 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 004d115f
     PUSH ESI                            ; 004d1162
     PUSH EAX                            ; 004d1163
-    CALL core_glass.cpp_FUN_004c6d40    ; 004d1164
-        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004c6d40()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004c6d40 ; 004d1164
+        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004c6d40(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004d1169
     JMP 0x004d10ad                      ; 004d116c
         ;   XREF to: 004d10ad (UNCONDITIONAL_JUMP)  ; LAB_004d10ad

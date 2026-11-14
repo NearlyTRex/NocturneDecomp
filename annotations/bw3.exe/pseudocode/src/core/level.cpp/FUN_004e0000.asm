@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80 at 004f6a9e
 ;   core_mission.cpp_FUN_004f7590 at 004f765b
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 00534442
-;   core_set.cpp_FUN_00532b80 at 00532ba9
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00532ba9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

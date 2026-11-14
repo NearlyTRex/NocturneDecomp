@@ -140,7 +140,7 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(CMot
 void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_00524850(CMotionController *this_ptr,char *state_name,int force_immediate);
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_00524880(CMotionController *this_ptr,SMotionTransition *transition);
 int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_00524940(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
-void core_motion_cpp_FUN_00524970(undefined4 *param_1,undefined4 param_2);
+void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_00524970(CMotionController *this_ptr,CMotionList *motion_list);
 void core_motion_cpp_FUN_005249b0(CMotionController *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController *this_ptr);
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_00524a10(CMotionController *this_ptr);
@@ -152,7 +152,7 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 void core_motion_cpp_FUN_00524f40(int *param_1,int param_2,float param_3,float *param_4);
 float __cdecl core_motion_cpp_FUN_00525020(CMotionController *this_ptr);
-float core_motion_cpp_FUN_00525110(int *param_1,int param_2,float param_3);
+float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00525240(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
@@ -198,7 +198,7 @@ int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(SMpegFrame frame_in
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_0052ae40(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_0052ae80(CMP3Decoder *this_ptr,uint flags);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_0052aea0(CMP3Decoder *this_ptr,char *filename);
-void sound_mp3_cpp_FUN_0052af80(CMP3Decoder *param_1,_FILE *param_2,int param_3);
+int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_0052b100(CMP3Decoder *this_ptr);
 int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_0052b170(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested);
 int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0(CMP3Decoder *this_ptr,int sample_offset);

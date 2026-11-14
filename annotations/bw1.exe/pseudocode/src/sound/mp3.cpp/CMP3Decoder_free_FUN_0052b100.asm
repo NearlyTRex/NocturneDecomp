@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_0052ae80 at 0052ae86
-;   sound_mp3.cpp_FUN_0052af80 at 0052af8c
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80 at 0052af8c
 ;   sound_sndmain.cpp_getSampleInfo_FUN_00574410 at 00574638
 ;   sound_sndmain.cpp_getSfxSample_FUN_0056e830 at 0056eaad
 ;

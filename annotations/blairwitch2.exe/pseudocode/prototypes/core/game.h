@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 004b2930
 undefined4 FUN_004b2930(void);
 
-// Original: core_game.cpp_FUN_004b2970
+// Original: core_game.cpp_setupMovieRecording_FUN_004b2970
 // Address: 004b2970
-void FUN_004b2970(void);
+void __cdecl setupMovieRecording(void);
 
 // Original: core_game.cpp_captureDebugMovieFrame_FUN_004b2a50
 // Address: 004b2a50
@@ -117,9 +117,9 @@ void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerInput *player
 // Address: 004b7550
 void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 
-// Original: core_game.cpp_FUN_004b7580
+// Original: core_game.cpp_pollKeyEdgeTrigger_FUN_004b7580
 // Address: 004b7580
-void FUN_004b7580(void);
+void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
 // Original: core_game.cpp_FUN_004b7650
 // Address: 004b7650
@@ -145,9 +145,9 @@ void __cdecl CGame::processMouseControls(CGame *this_ptr,SPlayerInput *player_co
 // Address: 004b8250
 void __cdecl CGame::resetInputAndCenterCursor(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004b82e0
+// Original: core_game.cpp_CGame_processHotkeys_FUN_004b82e0
 // Address: 004b82e0
-void __cdecl FUN_004b82e0(CGame *this_ptr);
+void __cdecl CGame::processHotkeys(CGame *this_ptr);
 
 // Original: core_game.cpp_checkCheatCode_FUN_004b8d90
 // Address: 004b8d90
@@ -165,9 +165,9 @@ void __cdecl giveHeroWeaponAmmo(char *class_name,EAmmoType ammo_type);
 // Address: 004b9060
 void __cdecl scaleBoneRecursive(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 
-// Original: core_game.cpp_FUN_004b90d0
+// Original: core_game.cpp_CGame_processCheatCodes_FUN_004b90d0
 // Address: 004b90d0
-void FUN_004b90d0(CGame *param_1);
+void __cdecl CGame::processCheatCodes(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_loadAssets_FUN_004bb050
 // Address: 004bb050
@@ -281,9 +281,9 @@ void __cdecl CGame::process(CGame *this_ptr);
 // Address: 004bdb10
 void __cdecl CGame::promptLoadGame(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bdc20
+// Original: core_game.cpp_CGame_displayActStats_FUN_004bdc20
 // Address: 004bdc20
-void FUN_004bdc20(void);
+void __cdecl CGame::displayActStats(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_finishAct_FUN_004bdfb0
 // Address: 004bdfb0

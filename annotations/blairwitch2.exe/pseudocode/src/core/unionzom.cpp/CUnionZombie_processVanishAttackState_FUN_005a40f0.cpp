@@ -15,7 +15,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f
   CDeformableModelInstance *this_ptr_00;
   SStateMachine *pSVar1;
   uint uVar2;
-  int iVar3;
+  SMotion *pSVar3;
   
   uVar2 = this_ptr->vanish_phase;
   this_ptr_00 = &(this_ptr->base).base.base.model;
@@ -27,8 +27,8 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f
     return;
   }
   if (uVar2 < 2) {
-    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar3 + 0x24) == 4) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar3->state_index == 4) {
       if (_DAT_005f02de <= (this_ptr->base).base.base.model.base.current_frame_number) {
         core_basicene_cpp_FUN_005a01a0(this_ptr,(this_ptr->base).fade_val,0x3f800000,0x3f400000);
         core_basicene_cpp_FUN_0059f570(this_ptr);
@@ -44,8 +44,8 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f
     if (uVar2 != 2) {
       return;
     }
-    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar3 + 0x24) == 3) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar3->state_index == 3) {
       pSVar1 = &(this_ptr->base).state_machine;
       (this_ptr->base).attack_range = _DAT_005ff544;
       core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","MeleeAttack");

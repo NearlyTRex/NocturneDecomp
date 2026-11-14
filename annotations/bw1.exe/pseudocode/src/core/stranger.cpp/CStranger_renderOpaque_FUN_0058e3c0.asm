@@ -31,8 +31,8 @@
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004b6140
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
+;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00557630
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
-;   core_setcolid.cpp_FUN_00557630
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0058aeb0
 ;   core_stranger.cpp_FUN_005906e0
 ;   core_xform.cpp_FUN_005b5760
@@ -155,8 +155,8 @@ section .text
     PUSH ECX                            ; 0058e4c9
     MOV ESI,dword ptr [0x00622c18]      ; 0058e4ca | g_CDemonSetPtr
     PUSH ESI                            ; 0058e4d0 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557630 ; 0058e4d1
-        ;   XREF to: 00557630 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557630()
+    CALL core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00557630 ; 0058e4d1
+        ;   XREF to: 00557630 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00557630(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * direction)
     FLDZ                                ; 0058e4d6
     MOV dword ptr [EBP + 0x7a],EAX      ; 0058e4d8
     ADD ESP,0xc                         ; 0058e4db

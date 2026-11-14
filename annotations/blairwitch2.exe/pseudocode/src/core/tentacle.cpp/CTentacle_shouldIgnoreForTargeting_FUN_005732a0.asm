@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5ec542                       ; 005732a6 | DAT_005ec542
     ADD EAX,0x2b4                       ; 005732ab
     PUSH EAX                            ; 005732b0
-    CALL core_motion.cpp_FUN_005035c0   ; 005732b1
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005732b1
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005732b6
     PUSH EAX                            ; 005732b9
     CALL crt_string.c__stricmp_FUN_005b8130 ; 005732ba

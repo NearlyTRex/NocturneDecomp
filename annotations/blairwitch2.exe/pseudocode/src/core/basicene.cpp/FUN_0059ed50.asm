@@ -11,7 +11,7 @@
 ;   core_basicene.cpp_FUN_0059ec10
 ;   core_basicene.cpp_FUN_0059f570
 ;   core_basicene.cpp_FUN_005a01a0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0059ed76
         ;   Label: LAB_0059ed76
     PUSH EAX                            ; 0059ed7c
-    CALL core_motion.cpp_FUN_005035c0   ; 0059ed7d
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0059ed7d
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0059ed82
     MOV ESI,dword ptr [EBX + 0x11384]   ; 0059ed85
     ADD ESP,0x4                         ; 0059ed8b

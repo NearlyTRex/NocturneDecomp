@@ -56,7 +56,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr)
     iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004925c0(&this_ptr_00->open_rule);
     if (iVar3 == 0) {
       if (this_ptr->hero_action_data == 1) {
-        core_door_cpp_FUN_0045efc0(this_ptr_00);
+        core_door_cpp_CDoor_onOpened_FUN_0045efc0(this_ptr_00);
         core_hero_cpp_FUN_004cf200(this_ptr);
         return;
       }
@@ -101,7 +101,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr)
     iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004925c0(&pCVar1->rule);
     if (iVar3 == 0) {
       this_ptr->lever_to_pull = pCVar1;
-      core_hero_cpp_FUN_004cf440(this_ptr);
+      core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(this_ptr);
       core_hero_cpp_FUN_004cf200(this_ptr);
       return;
     }

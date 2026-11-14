@@ -1988,12 +1988,15 @@ LAB_004d42bf:
       }
       if (iStack_130 == iStack_134) {
         DAT_01cd0c68 = 0;
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"puzzleModeHard",0);
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"combatModeHard",0);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"puzzleModeHard",0);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"combatModeHard",0);
         pCVar6 = g_CGamePtr;
         g_CGamePtr->puzzle_difficulty_mode = 0;
         pCVar6->combat_difficulty_mode = 0;
-        engine_ini_cpp_FUN_004f4b00(&CStack_abc,"system\\nocturne.ini","Game");
+        engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
+                  (&CStack_abc,"system\\nocturne.ini","Game");
         engine_ini_cpp_FUN_004f4d70
                   (&CStack_abc,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
         engine_ini_cpp_FUN_004f4d70
@@ -2030,12 +2033,15 @@ LAB_004d42bf:
       }
       if (iStack_128 == iStack_12c) {
         DAT_01cd0c68 = 0;
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"puzzleModeHard",1);
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"combatModeHard",0);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"puzzleModeHard",1);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"combatModeHard",0);
         pCVar6 = g_CGamePtr;
         g_CGamePtr->puzzle_difficulty_mode = 1;
         pCVar6->combat_difficulty_mode = 0;
-        engine_ini_cpp_FUN_004f4b00(&CStack_6b4,"system\\nocturne.ini","Game");
+        engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
+                  (&CStack_6b4,"system\\nocturne.ini","Game");
         engine_ini_cpp_FUN_004f4d70
                   (&CStack_6b4,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
         engine_ini_cpp_FUN_004f4d70
@@ -2072,12 +2078,15 @@ LAB_004d42bf:
       }
       if (iStack_120 == iStack_124) {
         DAT_01cd0c68 = (byte)iStack_120 ^ (byte)iStack_124;
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"puzzleModeHard",0);
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"combatModeHard",1);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"puzzleModeHard",0);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"combatModeHard",1);
         pCVar6 = g_CGamePtr;
         g_CGamePtr->puzzle_difficulty_mode = 0;
         pCVar6->combat_difficulty_mode = 1;
-        engine_ini_cpp_FUN_004f4b00(&CStack_cc0,"system\\nocturne.ini","Game");
+        engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
+                  (&CStack_cc0,"system\\nocturne.ini","Game");
         engine_ini_cpp_FUN_004f4d70
                   (&CStack_cc0,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
         engine_ini_cpp_FUN_004f4d70
@@ -2114,12 +2123,15 @@ LAB_004d42bf:
       }
       if (iStack_118 == iStack_11c) {
         DAT_01cd0c68 = (byte)((uint)iStack_118 >> 8) ^ (byte)((uint)iStack_11c >> 8);
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"puzzleModeHard",1);
-        core_event_cpp_FUN_004a9a60(0x01C51D80,"combatModeHard",1);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"puzzleModeHard",1);
+        core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
+                  (0x01C51D80,"combatModeHard",1);
         pCVar6 = g_CGamePtr;
         g_CGamePtr->puzzle_difficulty_mode = 1;
         pCVar6->combat_difficulty_mode = 1;
-        engine_ini_cpp_FUN_004f4b00(&CStack_8b8,"system\\nocturne.ini","Game");
+        engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
+                  (&CStack_8b8,"system\\nocturne.ini","Game");
         engine_ini_cpp_FUN_004f4d70
                   (&CStack_8b8,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
         engine_ini_cpp_FUN_004f4d70

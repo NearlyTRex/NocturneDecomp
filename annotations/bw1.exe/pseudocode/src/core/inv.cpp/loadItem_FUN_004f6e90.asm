@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_inv.cpp_FUN_004f70e0 at 004f7553
+;   core_inv.cpp_loadAssets_FUN_004f70e0 at 004f7553
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005e6040

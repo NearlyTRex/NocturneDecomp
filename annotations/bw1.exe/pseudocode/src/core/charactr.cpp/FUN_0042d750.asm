@@ -87,7 +87,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
-;   core_setcolid.cpp_FUN_00558450
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
 ;   crt_string.c__strnicmp_FUN_005c1210
 ;
 ; *****************************************************************************
@@ -280,8 +280,8 @@ section .text
     MOV EDI,dword ptr [0x00622c18]      ; 0042d9e7 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 0042d9ed
     PUSH EDI                            ; 0042d9f0 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00558450 ; 0042d9f1
-        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00558450()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 ; 0042d9f1
+        ;   XREF to: 00558450 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x110],EAX     ; 0042d9f6
     FLD float ptr [ESP + 0x110]         ; 0042d9fd
     ADD ESP,0x20                        ; 0042da04

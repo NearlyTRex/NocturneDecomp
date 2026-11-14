@@ -5105,15 +5105,26 @@
       "0043e6a0",
       "00466880"
     ],
-    "conv":"unknown",
+    "cls":"CCloth",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_0043e620",
-    "name":"core_cloth.cpp_FUN_0043e620",
-    "receiver":false,
+    "method":"dtor",
+    "name":"core_cloth.cpp_CCloth_dtor_FUN_0043e620",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CCloth",
+      "ptr":1
     },
     "tu":"core/cloth.cpp",
     "variadic":false
@@ -6112,14 +6123,15 @@
     "calls":[
       "0045f700"
     ],
-    "conv":"unknown",
+    "cls":"CCurtain",
+    "conv":"__cdecl",
     "instructions":81,
-    "method":"FUN_0044ab20",
-    "name":"core_curtain.cpp_FUN_0044ab20",
-    "receiver":false,
+    "method":"updateLocalPositions",
+    "name":"core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0044ab20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/curtain.cpp",
@@ -6315,14 +6327,15 @@
   },
   {
     "addr":"0044fea0",
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
     "instructions":39,
-    "method":"FUN_0044fea0",
-    "name":"core_dcamera.cpp_FUN_0044fea0",
-    "receiver":false,
+    "method":"convertPaletteToDisplayFormat",
+    "name":"core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -8409,19 +8422,12 @@
       "0047e870",
       "005c03a0"
     ],
+    "cls":"CDrawSurface",
     "conv":"__cdecl",
     "instructions":153,
-    "method":"FUN_0047fb20",
-    "name":"cockpit_drawsurf.cpp_FUN_0047fb20",
+    "method":"drawAnimatedDashedLine",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDrawSurface",
-          "ptr":1
-        }
-      },
       {
         "name":"x1",
         "type":{
@@ -8455,7 +8461,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -10340,14 +10346,15 @@
       "00518010",
       "00518290"
     ],
-    "conv":"unknown",
+    "cls":"CEdScrollBar",
+    "conv":"__cdecl",
     "instructions":306,
-    "method":"FUN_0049caa0",
-    "name":"shape_edittool.cpp_FUN_0049caa0",
-    "receiver":false,
+    "method":"render",
+    "name":"shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -12386,14 +12393,40 @@
   },
   {
     "addr":"004c4ba0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
-    "method":"FUN_004c4ba0",
-    "name":"engine_font.cpp_FUN_004c4ba0",
+    "method":"packPixelNative",
+    "name":"engine_font.cpp_packPixelNative_FUN_004c4ba0",
+    "params":[
+      {
+        "name":"red",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"green",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blue",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"engine/font.cpp",
@@ -12435,14 +12468,25 @@
       "005a7520",
       "005bfb70"
     ],
-    "conv":"unknown",
+    "cls":"CGabriella",
+    "conv":"__cdecl",
     "instructions":541,
-    "method":"FUN_004c7aa0",
-    "name":"core_gabriela.cpp_FUN_004c7aa0",
-    "receiver":false,
+    "method":"processAI",
+    "name":"core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gabriela.cpp",
@@ -12557,14 +12601,15 @@
       "005b2420",
       "005c03a0"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":95,
-    "method":"FUN_004cbf20",
-    "name":"core_game.cpp_FUN_004cbf20",
-    "receiver":false,
+    "method":"updateDT",
+    "name":"core_game.cpp_CGame_updateDT_FUN_004cbf20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -12609,14 +12654,32 @@
   },
   {
     "addr":"004d0da0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_004d0da0",
-    "name":"core_game.cpp_FUN_004d0da0",
+    "method":"pollKeyEdgeTrigger",
+    "name":"core_game.cpp_pollKeyEdgeTrigger_FUN_004d0da0",
+    "params":[
+      {
+        "name":"key_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_state",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -12759,14 +12822,14 @@
     "calls":[
       "0040d4b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":20,
-    "method":"FUN_004dc1a0",
-    "name":"core_game.cpp_FUN_004dc1a0",
+    "method":"drawCursor",
+    "name":"core_game.cpp_drawCursor_FUN_004dc1a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -13670,15 +13733,26 @@
       "005030e0",
       "0051bd60"
     ],
-    "conv":"unknown",
+    "cls":"CHeroPlaceholder",
+    "conv":"__cdecl",
     "instructions":58,
-    "method":"FUN_004ecca0",
-    "name":"core_hero.cpp_FUN_004ecca0",
-    "receiver":false,
+    "method":"createHero",
+    "name":"core_hero.cpp_CHeroPlaceholder_createHero_FUN_004ecca0",
+    "params":[
+      {
+        "name":"hero_type",
+        "type":{
+          "kind":"enum",
+          "name":"EHeroType",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CHero",
+      "ptr":1
     },
     "tu":"core/hero.cpp",
     "variadic":false
@@ -14613,14 +14687,25 @@
       "00503c90",
       "00504400"
     ],
-    "conv":"unknown",
+    "cls":"CMansionPuzzleCircle",
+    "conv":"__cdecl",
     "instructions":85,
-    "method":"FUN_005062a0",
-    "name":"core_manpuz.cpp_FUN_005062a0",
-    "receiver":false,
+    "method":"updateReflectorPosition",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0",
+    "params":[
+      {
+        "name":"reflector_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/manpuz.cpp",
@@ -16927,14 +17012,15 @@
       "00401fe0",
       "005bfb40"
     ],
-    "conv":"unknown",
+    "cls":"CPathMap",
+    "conv":"__cdecl",
     "instructions":68,
-    "method":"FUN_005348a0",
-    "name":"core_path.cpp_FUN_005348a0",
-    "receiver":false,
+    "method":"previewPathfinding",
+    "name":"core_path.cpp_CPathMap_previewPathfinding_FUN_005348a0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/path.cpp",
@@ -21851,18 +21937,28 @@
       "005970b0",
       "00597140"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "00610528"
     ],
     "instructions":45,
-    "method":"FUN_00597a20",
-    "name":"engine_texture.cpp_FUN_00597a20",
+    "method":"ensureTextureLoaded",
+    "name":"engine_texture.cpp_ensureTextureLoaded_FUN_00597a20",
+    "params":[
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/texture.cpp",
     "variadic":false

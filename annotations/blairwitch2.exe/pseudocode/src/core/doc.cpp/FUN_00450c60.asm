@@ -788,8 +788,8 @@ section .text
     ADD ESP,0x8                         ; 004511f6
     LEA ESI,[EBX + 0x2b4]               ; 004511f9
     PUSH ESI                            ; 004511ff
-    CALL core_motion.cpp_FUN_005035c0   ; 00451200
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00451200
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00451205
     ADD ESP,0x4                         ; 00451208
     CMP EAX,0x4                         ; 0045120b
@@ -919,8 +919,8 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 0045139d
         ;   Label: caseD_6
     PUSH EDI                            ; 004513a3
-    CALL core_motion.cpp_FUN_005035c0   ; 004513a4
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004513a4
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004513a9
     ADD ESP,0x4                         ; 004513ac
     CMP EAX,0x1b                        ; 004513af
@@ -1636,8 +1636,8 @@ section .text
         ;   XREF to: 004511b0 (UNCONDITIONAL_JUMP)  ; LAB_004511b0
     PUSH ESI                            ; 00451c29
         ;   Label: LAB_00451c29
-    CALL core_motion.cpp_FUN_005035c0   ; 00451c2a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00451c2a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00451c2f
     ADD ESP,0x4                         ; 00451c32
     CMP EAX,0x5                         ; 00451c35
@@ -1792,8 +1792,8 @@ section .text
     FADD float ptr [EBP + 0x4a]         ; 00451df6
     PUSH EBX                            ; 00451df9
     FSTP float ptr [EBX + 0x34]         ; 00451dfa
-    CALL core_charactr.cpp_FUN_00429d60 ; 00451dfd
-        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429d60()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 ; 00451dfd
+        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 00451e02
     MOV EAX,dword ptr [EBX + 0x276c]    ; 00451e05
         ;   Label: LAB_00451e05
@@ -2140,8 +2140,8 @@ section .text
     FADD float ptr [EBP + -0x42]        ; 00452236
     XOR EDI,EDI                         ; 00452239
     FSTP float ptr [EBP + -0x42]        ; 0045223b
-    CALL core_charactr.cpp_FUN_00429d60 ; 0045223e
-        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429d60()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 ; 0045223e
+        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter * this_ptr, UOrientationVector * orientation)
     FLD float ptr [EBP + 0xfffffb12]    ; 00452243
     FADD double ptr [0x005cffbf]        ; 00452249 | DAT_005cffbf
     ADD ESP,0x8                         ; 0045224f
@@ -2492,8 +2492,8 @@ section .text
     FADD float ptr [EBP + 0x3a]         ; 004526a2
     PUSH EBX                            ; 004526a5
     FSTP float ptr [EBX + 0x34]         ; 004526a6
-    CALL core_charactr.cpp_FUN_00429d60 ; 004526a9
-        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429d60()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 ; 004526a9
+        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 004526ae
     JMP 0x0045139d                      ; 004526b1
         ;   XREF to: 0045139d (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -2581,8 +2581,8 @@ section .text
     JZ 0x0045139d                       ; 00452760
         ;   XREF to: 0045139d (CONDITIONAL_JUMP)  ; caseD_6
     PUSH ESI                            ; 00452766
-    CALL core_motion.cpp_FUN_005035c0   ; 00452767
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00452767
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0045276c
     ADD ESP,0x4                         ; 0045276f
     CMP EAX,0xe                         ; 00452772
@@ -2603,8 +2603,8 @@ section .text
         ;   Label: LAB_00452795
     PUSH EAX                            ; 0045279b
     XOR ESI,ESI                         ; 0045279c
-    CALL core_motion.cpp_FUN_005035c0   ; 0045279e
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0045279e
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004527a3
     MOV EAX,dword ptr [EAX + 0x24]      ; 004527a6
     MOV EDI,dword ptr [EBX + 0x10a68]   ; 004527a9
@@ -2779,8 +2779,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 004529e7
     PUSH EAX                            ; 004529ed
     MOV dword ptr [EBP + 0x72],EAX      ; 004529ee
-    CALL core_motion.cpp_FUN_005035c0   ; 004529f1
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004529f1
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     FLD float ptr [0x005f513c]          ; 004529f6 | DAT_005f513c
     FMUL float ptr [EBP + 0x92]         ; 004529fc
     LEA EDI,[EBP + 0xfffffc96]          ; 00452a02

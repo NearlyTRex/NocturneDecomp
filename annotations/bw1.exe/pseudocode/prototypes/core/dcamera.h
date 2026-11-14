@@ -145,9 +145,9 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 // Address: 0044f9c0
 int FUN_0044f9c0(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
 
-// Original: core_dcamera.cpp_FUN_0044fea0
+// Original: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0
 // Address: 0044fea0
-void FUN_0044fea0(void);
+void __cdecl CDemonCamera::convertPaletteToDisplayFormat(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20
 // Address: 0044ff20
@@ -217,9 +217,9 @@ int __cdecl CDemonCamera::lockAndRenderToBuffer(CDemonCamera *this_ptr);
 // Address: 00451eb0
 int __cdecl testCoronaVisibility(int start_x,int start_y,int depth_reciprocal);
 
-// Original: core_dcamera.cpp_FUN_00452110
+// Original: core_dcamera.cpp_processCoronaScanline_FUN_00452110
 // Address: 00452110
-void FUN_00452110(void);
+void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 
 // Original: core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450
 // Address: 00452450
@@ -269,9 +269,9 @@ void __cdecl CDemonCamera::compositeLightmapToFramebuffer(CDemonCamera *this_ptr
 // Address: 004542a0
 void __cdecl CDemonCamera::initCameraFog(CDemonCamera *this_ptr,SFog *fog_config);
 
-// Original: core_dcamera.cpp_FUN_00454360
+// Original: core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00454360
 // Address: 00454360
-int FUN_00454360(int param_1,int *param_2);
+int __cdecl CDemonCamera::getFogValueAtPosition(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 
 // Original: core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
 // Address: 00454430

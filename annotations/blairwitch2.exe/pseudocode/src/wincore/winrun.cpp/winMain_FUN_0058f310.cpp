@@ -131,7 +131,7 @@ LAB_0058f46b:
     _DAT_0266463c = local_30.dwAvailPageFile;
     core_main_c_initializeGameSystems_FUN_004e46c0(_DAT_026652b8,(char **)0x26652bc);
     core_main_c_enterMainGameMenu_FUN_004e46b0();
-    core_main_c_FUN_004e4e20();
+    core_main_c_finalizeGameSystems_FUN_004e4e20();
                     /* WARNING: Subroutine does not return */
     ExitProcess(0);
   }

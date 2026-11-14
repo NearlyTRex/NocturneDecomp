@@ -13,74 +13,75 @@ void cockpit_pkbmpset_cpp_FUN_005177e0(void)
 
 {
   int iVar1;
-  ulong size;
+  int iVar2;
   uchar *bitmap_data;
-  SIZE_T SVar2;
-  int iVar3;
+  SIZE_T SVar3;
+  ulong unaff_ESI;
+  _FILE *unaff_EDI;
   CPackedBitmapSet *in_stack_00000004;
   char *in_stack_0000000c;
   int in_stack_00000010;
+  char *in_stack_00000014;
   int in_stack_00000018;
-  int in_stack_00000024;
-  char acStack_1a4 [4];
-  char acStack_140 [100];
-  char acStack_dc [100];
-  char acStack_78 [100];
+  int in_stack_00000020;
+  int in_stack_0000002c;
+  char acStack_140 [108];
+  char acStack_d4 [100];
+  char acStack_70 [92];
   _FILE *p_Stack_14;
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00517640(in_stack_00000004);
   iVar1 = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e1f1d,in_stack_0000000c);
   p_Stack_14 = engine_dosio_cpp_FUN_00460c70((char *)0x5e1f24,in_stack_0000000c,(char *)0x5e1f21);
   if (p_Stack_14 == (_FILE *)0x0) {
-    _sprintf(acStack_1a4,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW");
+    _sprintf(&stack0xfffffe5c,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW");
     _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
     _DAT_01d046a4 = 0xba;
-    core_main_c_FUN_004e4500(acStack_1a4);
+    core_main_c_FUN_004e4500(&stack0xfffffe5c);
   }
-  size = in_stack_00000010 * in_stack_00000010;
-  if (size * (iVar1 / (int)size) - iVar1 != 0) {
+  iVar2 = iVar1 / (in_stack_00000010 * in_stack_00000010);
+  if (in_stack_00000010 * in_stack_00000010 * iVar2 - iVar1 != 0) {
     _sprintf(acStack_140,"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW");
     _DAT_01d046a4 = 199;
     _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004e4500(acStack_140);
   }
-  cockpit_pkbmpset_cpp_FUN_00517670();
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_00517670(in_stack_00000004,iVar2);
   in_stack_00000004->height = in_stack_00000010;
-  in_stack_00000004->width = in_stack_00000010;
-  bitmap_data = (uchar *)malloc(size);
+  in_stack_00000004->width = in_stack_00000018;
+  bitmap_data = (uchar *)malloc(unaff_ESI);
   if (bitmap_data == (uchar *)0x0) {
-    _sprintf(acStack_dc,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
+    _sprintf(acStack_d4,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
     _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
     _DAT_01d046a4 = 0xd8;
-    core_main_c_FUN_004e4500(acStack_dc);
+    core_main_c_FUN_004e4500();
   }
   iVar1 = 0;
   if (0 < in_stack_00000004->bitmap_count) {
-    iVar3 = 0;
+    iVar2 = 0;
     do {
-      SVar2 = _fread(bitmap_data,size,1,p_Stack_14);
-      if (SVar2 != 1) {
-        _sprintf(acStack_78,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
+      SVar3 = _fread(bitmap_data,unaff_ESI,1,unaff_EDI);
+      if (SVar3 != 1) {
+        _sprintf(acStack_70,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
         _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";
         _DAT_01d046a4 = 0xe2;
-        core_main_c_FUN_004e4500(acStack_78);
+        core_main_c_FUN_004e4500();
       }
       iVar1 = iVar1 + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00516a60
-                ((CPackedBitmap *)(in_stack_00000004->bitmap_array->filename + iVar3),bitmap_data,
-                 in_stack_00000004->width,in_stack_00000004->height,in_stack_00000018,
-                 in_stack_00000010);
-      iVar3 = iVar3 + 0x24;
+                ((CPackedBitmap *)(in_stack_00000004->bitmap_array->filename + iVar2),bitmap_data,
+                 in_stack_00000004->width,in_stack_00000004->height,in_stack_00000020,
+                 in_stack_00000018);
+      iVar2 = iVar2 + 0x24;
     } while (iVar1 < in_stack_00000004->bitmap_count);
   }
-  FUN_005b86a0(bitmap_data);
-  _fclose(p_Stack_14);
+  FUN_005b86a0();
+  _fclose();
   cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00517f60
-            (in_stack_00000004,in_stack_0000000c);
-  if (in_stack_00000024 == 0) {
+            (in_stack_00000004,in_stack_00000014);
+  if (in_stack_0000002c == 0) {
     return;
   }
-  builtin_strncpy(acStack_1a4,"FzQ",4);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00517f80(in_stack_00000004);
   return;
 }

@@ -36,8 +36,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
-;   core_charactr.cpp_FUN_00434c60
-;   core_hero.cpp_FUN_004ec350
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
+;   core_hero.cpp_CHero_closestEnemy_FUN_004ec350
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_path.cpp_getPathMap_FUN_005351f0
@@ -145,8 +145,8 @@ section .text
     MOV EDX,0x461c3f9a                  ; 005939fc
     PUSH EBX                            ; 00593a01
     MOV dword ptr [ESP + 0xac],EDX      ; 00593a02
-    CALL core_hero.cpp_FUN_004ec350     ; 00593a09
-        ;   XREF to: 004ec350 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ec350()
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004ec350 ; 00593a09
+        ;   XREF to: 004ec350 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004ec350(CHero * this_ptr, float * out_distance)
     MOV ESI,EAX                         ; 00593a0e
     ADD ESP,0x8                         ; 00593a10
     TEST EAX,EAX                        ; 00593a13
@@ -476,8 +476,8 @@ section .text
         ;   XREF to: 00593b29 (CONDITIONAL_JUMP)  ; LAB_00593b29
     PUSH dword ptr [EBP + 0x18]         ; 00593e81
     PUSH EBX                            ; 00593e84
-    CALL core_charactr.cpp_FUN_00434c60 ; 00593e85
-        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434c60()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 ; 00593e85
+        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00593e8a
     CMP EAX,0x1                         ; 00593e8d
     JC 0x00593b29                       ; 00593e90
@@ -599,8 +599,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0059401c
         ;   Label: LAB_0059401c
     PUSH EBX                            ; 0059401f
-    CALL core_charactr.cpp_FUN_00434c60 ; 00594020
-        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434c60()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 ; 00594020
+        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00594025
     CMP EAX,0x1                         ; 00594028
     JC 0x00593f1d                       ; 0059402b

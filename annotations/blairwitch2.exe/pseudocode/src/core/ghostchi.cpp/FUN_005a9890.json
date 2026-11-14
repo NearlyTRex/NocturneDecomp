@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 192,
+    "complexity_score": 194,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 39,
     "suspect_count": 14,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 137
+    "total_lines": 139
   },
   "cross_references": [],
   "function": {
@@ -36,14 +36,14 @@
       "name": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180"
     },
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
     },
     {
       "addr": "0059d7f0",
@@ -159,16 +159,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
-      "severity": "mild",
-      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
       "severity": "mild",
       "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
       "type": "unnamed_param"
@@ -176,9 +168,9 @@
     {
       "description": "Unnamed function parameter",
       "line": 11,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)(param_1 + 0x11430)) {",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
       "type": "unnamed_param"
     },
     {
@@ -186,12 +178,20 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (0.0 < *(float *)(param_1 + 0x11430)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
       "text": "this_ptr = (CMotionController *)(param_1 + 0x2b4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "core_muzzle_cpp_FUN_0059d7f0(param_1 + 0x10af8,\"BurnComplete\",\"Death\");",
@@ -199,18 +199,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x10a28) = 0;",
+      "text": "((CMotionController *)(param_1 + 0x2b4));",
       "type": "unnamed_param"
     },
     {
@@ -218,20 +210,28 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1 + 0x10af8;",
+      "text": "*(uint *)(param_1 + 0x10a28) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = param_1 + 0x10af8;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 34,
       "match": "DAT_005f0987",
       "severity": "mild",
-      "text": "iVar1 = core_muzzle_cpp_FUN_0059daa0(iVar1,&DAT_005f0987);",
+      "text": "iVar3 = core_muzzle_cpp_FUN_0059daa0(iVar3,&DAT_005f0987);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -239,7 +239,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",

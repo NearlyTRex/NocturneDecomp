@@ -7,7 +7,7 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004ce240 at 004ce254
+;   core_hero.cpp_CHero_ctor_FUN_004ce240 at 004ce254
 ;   core_npc.cpp_CNPC_ctor_FUN_00510460 at 00510477
 ;
 ; Referenced Globals:

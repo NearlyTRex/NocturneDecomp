@@ -17,10 +17,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
 ;   core_actor.cpp_FUN_00408ac0
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
-;   core_actor.cpp_FUN_00409170
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_00421570
 ;   core_box.cpp_FUN_00420570
@@ -338,8 +338,8 @@ section .text
     LEA EAX,[ESP + 0x1c4]               ; 00583b67
     PUSH EAX                            ; 00583b6e
     PUSH EBX                            ; 00583b6f
-    CALL core_actor.cpp_FUN_00409170    ; 00583b70
-        ;   XREF to: 00409170 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409170()
+    CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170 ; 00583b70
+        ;   XREF to: 00409170 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, SActorRayHit * out_hit, ...)
     MOV dword ptr [ESP + 0x250],EAX     ; 00583b75
     FLD float ptr [ESP + 0x250]         ; 00583b7c
     ADD ESP,0x1c                        ; 00583b83

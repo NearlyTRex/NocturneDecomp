@@ -69,7 +69,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00593150(CSvetlana *this_pt
 switchD_005935af_caseD_9:
     return;
   }
-  core_charactr_cpp_FUN_00434790(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790((CCharacter *)this_ptr,delta_time);
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
   fVar12 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar12;

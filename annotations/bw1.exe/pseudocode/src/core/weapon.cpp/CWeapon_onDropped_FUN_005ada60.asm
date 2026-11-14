@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045f700
-;   core_weapon.cpp_FUN_005ade40
+;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x30]      ; 005ada6b
     PUSH EBX                            ; 005ada6f
     MOV dword ptr [EBX + 0x304],0x0     ; 005ada70
-    CALL core_weapon.cpp_FUN_005ade40   ; 005ada7a
-        ;   XREF to: 005ade40 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ade40()
+    CALL core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40 ; 005ada7a
+        ;   XREF to: 005ade40 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005ada7f
     TEST EBP,EBP                        ; 005ada82
     JNZ 0x005adaaa                      ; 005ada84

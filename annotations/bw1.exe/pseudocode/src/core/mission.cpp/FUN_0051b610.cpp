@@ -17,7 +17,7 @@ void core_mission_cpp_FUN_0051b610(CDemonMission *param_1,int param_2)
     return;
   }
   param_1->current_set_index = param_2;
-  core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1->set_names + param_2);
+  core_set_cpp_CDemonSet_load_FUN_0054d3c0(g_CDemonSetPtr,param_1->set_names[param_2]);
   if (param_1->is_in_editor == 0) {
     core_mission_cpp_FUN_0051b7b0(param_1);
   }

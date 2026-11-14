@@ -16,7 +16,7 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(CStr
   bool bVar2;
   bool bVar3;
   EDeathState EVar4;
-  int iVar5;
+  SMotion *pSVar5;
   CVector3f *pCVar6;
   uint auStack_28 [3];
   uint auStack_1c [3];
@@ -76,30 +76,31 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(CStr
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 R Forearm",0x25);
     }
     else {
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x32);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x33);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x34);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x35);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x36);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x37);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x20);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x21);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x22);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x23);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x24);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x25);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x32);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x33);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x34);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x35);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x36);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x37);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x20);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x21);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x22);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x23);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x24);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x25);
     }
     if (bVar2) {
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x2f);
       core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(this_ptr_00,"Bip01 L Forearm",0x32);
     }
     else {
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x2f);
-      core_cloth_cpp_FUN_005b1980(this_ptr_00,0x32);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x2f);
+      core_cloth_cpp_CCloth_resetState_FUN_005b1980(this_ptr_00,0x32);
     }
     pCVar6 = &this_ptr_00->wind_velocity;
-    iVar5 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-    if (*(int *)(iVar5 + 0x24) == 0x2a) {
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                       (&(this_ptr->base).base.model.base);
+    if (pSVar5->state_index == 0x2a) {
       if (pCVar6 != (CVector3f *)auStack_28) {
         (this_ptr_00->wind_velocity).y = 0.0;
         pCVar6->x = 0.0;
@@ -107,7 +108,7 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(CStr
         return;
       }
     }
-    else if (*(int *)(iVar5 + 0x24) == 0x2b) {
+    else if (pSVar5->state_index == 0x2b) {
       if (pCVar6 != (CVector3f *)auStack_1c) {
         (this_ptr_00->wind_velocity).y = 0.0;
         pCVar6->x = 0.0;

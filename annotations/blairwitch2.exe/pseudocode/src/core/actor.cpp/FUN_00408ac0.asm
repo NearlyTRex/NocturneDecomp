@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00422be0 at 00422be5
+;   core_charactr.cpp_CCharacter_markResourcesInUse_FUN_00422be0 at 00422be5
 ;   core_charactr.cpp_FUN_00422c10 at 00422c27
 ;
 ; *****************************************************************************

@@ -61,9 +61,9 @@ ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo 
 // Address: 004c5bb0
 void FUN_004c5bb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
 
-// Original: core_glass.cpp_FUN_004c6d40
+// Original: core_glass.cpp_CGlass_shatter_FUN_004c6d40
 // Address: 004c6d40
-void FUN_004c6d40(CDemonActor *param_1);
+void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 
 // Original: core_glass.cpp_CGlass_onLaserHit_FUN_004c7180
 // Address: 004c7180

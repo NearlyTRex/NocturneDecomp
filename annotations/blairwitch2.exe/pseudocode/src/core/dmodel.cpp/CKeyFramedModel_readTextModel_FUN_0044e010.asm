@@ -44,8 +44,8 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760
-;   core_dmodel.cpp_FUN_0044ea80
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_stdio.c_fgetc_FUN_005b8180
@@ -154,8 +154,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x60]      ; 0044e0ed
     PUSH EBX                            ; 0044e0f1
     MOV ESI,EBP                         ; 0044e0f2
-    CALL core_dmodel.cpp_FUN_0044ea80   ; 0044e0f4
-        ;   XREF to: 0044ea80 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044ea80()
+    CALL core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80 ; 0044e0f4
+        ;   XREF to: 0044ea80 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, ...)
     MOV EBX,0x1                         ; 0044e0f9
     ADD ESP,0x18                        ; 0044e0fe
     PUSH ESI                            ; 0044e101

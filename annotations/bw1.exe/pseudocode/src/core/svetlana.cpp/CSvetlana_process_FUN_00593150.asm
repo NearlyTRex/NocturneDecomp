@@ -27,10 +27,10 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   core_cloth.cpp_CCloth_process_FUN_00440610
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
@@ -86,8 +86,8 @@ section .text
     PUSH dword ptr [ESP + 0xd8]         ; 005931c2
         ;   Label: LAB_005931c2
     PUSH EBX                            ; 005931c9
-    CALL core_charactr.cpp_FUN_00434790 ; 005931ca
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 005931ca
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005931cf
     PUSH dword ptr [ESP + 0xd8]         ; 005931d2
     PUSH EBX                            ; 005931d9

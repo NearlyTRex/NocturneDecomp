@@ -25,9 +25,9 @@ void __cdecl CDemonMission::clearMissionData(CDemonMission *this_ptr);
 // Address: 004fb490
 void __cdecl CDemonMission::load(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 
-// Original: core_mission.cpp_FUN_004fb530
+// Original: core_mission.cpp_CDemonMission_save_FUN_004fb530
 // Address: 004fb530
-void FUN_004fb530(CDemonMission *param_1,char *param_2);
+void __cdecl CDemonMission::save(CDemonMission *this_ptr,char *filename);
 
 // Original: core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590
 // Address: 004fb590

@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041de90
+;   core_box.cpp_CBox_updateTransform_FUN_0041de90
 ;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
@@ -164,8 +164,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 0041de43
     PUSH EAX                            ; 0041de47
     PUSH EBP                            ; 0041de48
-    CALL core_box.cpp_FUN_0041de90      ; 0041de49
-        ;   XREF to: 0041de90 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_0041de90(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
+    CALL core_box.cpp_CBox_updateTransform_FUN_0041de90 ; 0041de49
+        ;   XREF to: 0041de90 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_updateTransform_FUN_0041de90(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
     ADD ESP,0x10                        ; 0041de4e
     ADD ESP,0x30                        ; 0041de51
     POP EBP                             ; 0041de54

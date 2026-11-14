@@ -26,7 +26,7 @@
 ;   core_box.cpp_CBox_process_FUN_005b2290
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_setcolid.cpp_FUN_00537f30
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30
 ;
 ; *****************************************************************************
 
@@ -215,8 +215,8 @@ section .text
     MOV EDI,dword ptr [0x0061b5a8]      ; 00416485 | g_CDemonSetPtr
     PUSH EDI                            ; 0041648b | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x14]         ; 0041648c
-    CALL core_setcolid.cpp_FUN_00537f30 ; 00416490
-        ;   XREF to: 00537f30 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00537f30()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30 ; 00416490
+        ;   XREF to: 00537f30 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00416495
     PUSH dword ptr [EBP + 0x18]         ; 00416498
     PUSH EBX                            ; 0041649b

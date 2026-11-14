@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_0043e640 at 0043e646
-;   core_cloth.cpp_FUN_0043e620 at 0043e625
+;   core_cloth.cpp_CCloth_dtor_FUN_0043e620 at 0043e625
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0336

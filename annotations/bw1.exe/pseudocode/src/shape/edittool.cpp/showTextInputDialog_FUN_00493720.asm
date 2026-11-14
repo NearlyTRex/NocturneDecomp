@@ -43,17 +43,17 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004fd260
+;   shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_0049d950
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_0049d480
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_0049d4b0
+;   shape_edittool.cpp_CEdButton_paint_FUN_0049d580
 ;   shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_0049d530
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_0049d8a0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840
-;   shape_edittool.cpp_CInputString_backspace_FUN_004930c0
-;   shape_edittool.cpp_CInputString_deleteSelection_FUN_00493070
-;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_004931b0
-;   shape_edittool.cpp_CInputString_init_FUN_00492ec0
-;   shape_edittool.cpp_CInputString_insertChar_FUN_00492f70
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870
+;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     IDIV ECX                            ; 004937b3
     PUSH 0x0                            ; 004937b5
     MOV EBX,EAX                         ; 004937b7
-    CALL shape_edittool.cpp_FUN_0049d9e0 ; 004937b9
-        ;   XREF to: 0049d9e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049d9e0(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0 ; 004937b9
+        ;   XREF to: 0049d9e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0(char * button_text)
     ADD ESP,0x4                         ; 004937be
     MOV ECX,dword ptr [0x01c3f53c]      ; 004937c1 | DAT_01c3f53c
     ADD EBX,EBX                         ; 004937c7
@@ -156,8 +156,8 @@ section .text
     ADD ESP,0x4                         ; 00493835
     PUSH 0x0                            ; 00493838
     MOV ESI,EAX                         ; 0049383a
-    CALL shape_edittool.cpp_FUN_0049d9e0 ; 0049383c
-        ;   XREF to: 0049d9e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049d9e0(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0 ; 0049383c
+        ;   XREF to: 0049d9e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0(char * button_text)
     MOV EDX,dword ptr [0x01c4f014]      ; 00493841 | DAT_01c4f014
     SUB EDX,EAX                         ; 00493847
     ADD ESP,0x4                         ; 00493849
@@ -215,8 +215,8 @@ section .text
     PUSH 0x1                            ; 004938f4
     MOV EDX,dword ptr [0x0061abc0]      ; 004938f6 | g_CEditorToolsPtr
     PUSH EDX                            ; 004938fc
-    CALL shape_edittool.cpp_FUN_00497660 ; 004938fd
-        ;   XREF to: 00497660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00497660()
+    CALL shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660 ; 004938fd
+        ;   XREF to: 00497660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660(CEditorTools * this_ptr, int line_position)
     ADD ESP,0x8                         ; 00493902
     MOV ECX,dword ptr [0x01c4f00c]      ; 00493905 | DAT_01c4f00c
     PUSH ECX                            ; 0049390b
@@ -224,8 +224,8 @@ section .text
     PUSH EBX                            ; 00493912
     LEA EAX,[ESP + 0x8]                 ; 00493913
     PUSH EAX                            ; 00493917
-    CALL shape_edittool.cpp_FUN_004934b0 ; 00493918
-        ;   XREF to: 004934b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004934b0()
+    CALL shape_edittool.cpp_CInputString_draw_FUN_004934b0 ; 00493918
+        ;   XREF to: 004934b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_draw_FUN_004934b0(CInputString * this_ptr, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0049391d
     TEST ESI,ESI                        ; 00493920
     SETZ AL                             ; 00493922
@@ -233,8 +233,8 @@ section .text
     PUSH EAX                            ; 0049392a
     LEA EAX,[ESP + 0x228]               ; 0049392b
     PUSH EAX                            ; 00493932
-    CALL shape_edittool.cpp_FUN_0049d580 ; 00493933
-        ;   XREF to: 0049d580 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049d580()
+    CALL shape_edittool.cpp_CEdButton_paint_FUN_0049d580 ; 00493933
+        ;   XREF to: 0049d580 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_0049d580(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 00493938
     CMP ESI,0x1                         ; 0049393b
     SETZ AL                             ; 0049393e
@@ -242,14 +242,14 @@ section .text
     PUSH EAX                            ; 00493946
     LEA EAX,[ESP + 0x144]               ; 00493947
     PUSH EAX                            ; 0049394e
-    CALL shape_edittool.cpp_FUN_0049d580 ; 0049394f
-        ;   XREF to: 0049d580 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049d580()
+    CALL shape_edittool.cpp_CEdButton_paint_FUN_0049d580 ; 0049394f
+        ;   XREF to: 0049d580 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_0049d580(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 00493954
     PUSH 0x0                            ; 00493957
     MOV EAX,[0x0061abc0]                ; 00493959 | g_CEditorToolsPtr
     PUSH EAX                            ; 0049395e
-    CALL shape_edittool.cpp_FUN_00497870 ; 0049395f
-        ;   XREF to: 00497870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00497870()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870 ; 0049395f
+        ;   XREF to: 00497870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00493964
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 00493967
         ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
@@ -317,8 +317,8 @@ section .text
     MOV EDX,dword ptr [0x0061abc0]      ; 004939f8 | g_CEditorToolsPtr
         ;   Label: LAB_004939f8
     PUSH EDX                            ; 004939fe
-    CALL shape_edittool.cpp_FUN_00496dd0 ; 004939ff
-        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496dd0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0 ; 004939ff
+        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00493a04
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00493a07
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()

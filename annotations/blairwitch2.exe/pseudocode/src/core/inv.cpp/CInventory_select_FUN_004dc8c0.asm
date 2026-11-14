@@ -44,8 +44,8 @@
 ;   core_event.cpp_FUN_00490f80
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_health.cpp_CHealthItem_useItem_FUN_004cdf90
-;   core_inv.cpp_FUN_004db8e0
-;   core_inv.cpp_FUN_004db9d0
+;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
 ;   core_main.c_FUN_004e4500
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
@@ -214,8 +214,8 @@ section .text
     PUSH EBX                            ; 004dca65
     MOV EDI,dword ptr [EBP + 0x14]      ; 004dca66
     PUSH EDI                            ; 004dca69
-    CALL core_inv.cpp_FUN_004db8e0      ; 004dca6a
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 004dca6a
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EAX,0x1                         ; 004dca6f
     ADD ESP,0xc                         ; 004dca74
     MOV ESP,EBP                         ; 004dca77
@@ -238,8 +238,8 @@ section .text
     PUSH EBX                            ; 004dca94
     MOV ECX,dword ptr [EBP + 0x14]      ; 004dca95
     PUSH ECX                            ; 004dca98
-    CALL core_inv.cpp_FUN_004db9d0      ; 004dca99
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004dca99
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004dca9e
     XOR EAX,EAX                         ; 004dcaa1
     MOV ESP,EBP                         ; 004dcaa3
@@ -391,8 +391,8 @@ section .text
     PUSH EBX                            ; 004dcbf9
     MOV EDX,dword ptr [EBP + 0x14]      ; 004dcbfa
     PUSH EDX                            ; 004dcbfd
-    CALL core_inv.cpp_FUN_004db8e0      ; 004dcbfe
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 004dcbfe
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EAX,0x1                         ; 004dcc03
     ADD ESP,0xc                         ; 004dcc08
     MOV ESP,EBP                         ; 004dcc0b

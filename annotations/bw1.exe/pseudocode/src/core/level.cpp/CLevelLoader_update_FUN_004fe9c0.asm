@@ -45,7 +45,7 @@
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0 at 0051b2ce
 ;   core_mission.cpp_FUN_0051bdc0 at 0051be81
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ec82
-;   core_set.cpp_FUN_0054d3c0 at 0054d3e9
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054d3e9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00602eac

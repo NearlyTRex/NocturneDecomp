@@ -183,7 +183,8 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
     else {
       iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0(this_ptr_00);
       if (iVar3 == 0) goto LAB_0048b40f;
-      core_glass_cpp_FUN_004cc040(this_ptr_00,&g_CDemonSetPtr->collision_impact_position);
+      core_glass_cpp_CGlass_shatter_FUN_004cc040
+                (this_ptr_00,&g_CDemonSetPtr->collision_impact_position);
     }
     iStack_18 = iStack_18 + 1;
     if (3 < iStack_18) {

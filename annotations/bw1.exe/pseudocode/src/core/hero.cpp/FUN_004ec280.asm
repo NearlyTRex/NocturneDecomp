@@ -9,8 +9,8 @@
 ;
 ; XREF[3]:
 ;   core_doc.cpp_FUN_0046bde0 at 0046c075
-;   core_gabriela.cpp_FUN_004c83b0 at 004c84dd
-;   core_stranger.cpp_FUN_005881d0 at 00588469
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0 at 004c84dd
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 00588469
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0

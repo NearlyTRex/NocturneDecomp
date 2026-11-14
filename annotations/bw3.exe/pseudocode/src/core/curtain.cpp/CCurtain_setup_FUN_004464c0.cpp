@@ -316,7 +316,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr)
       iStack_38 = iStack_38 + 1;
     } while (iStack_38 < (this_ptr->mesh).grid_rows);
   }
-  core_curtain_cpp_FUN_00446b50(this_ptr);
+  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00446b50(this_ptr);
   (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
   return;
 }

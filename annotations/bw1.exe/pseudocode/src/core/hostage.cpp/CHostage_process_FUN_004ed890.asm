@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -1029,8 +1029,8 @@ section .text
         ;   XREF to: 004edcfd (CONDITIONAL_JUMP)  ; caseD_5
     PUSH dword ptr [EBP + 0x18]         ; 004ee4cf
     PUSH EBX                            ; 004ee4d2
-    CALL core_charactr.cpp_FUN_00434c60 ; 004ee4d3
-        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434c60()
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 ; 004ee4d3
+        ;   XREF to: 00434c60 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ee4d8
     TEST EAX,EAX                        ; 004ee4db
     JNZ 0x004ee534                      ; 004ee4dd
@@ -1276,8 +1276,8 @@ section .text
     PUSH EAX                            ; 004ee767
     MOV ESI,dword ptr [0x0061b4d0]      ; 004ee768 | DAT_0061b4d0
     PUSH ESI                            ; 004ee76e
-    CALL core_event.cpp_FUN_004a9870    ; 004ee76f
-        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9870()
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 ; 004ee76f
+        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList * this_ptr, char * name, int add_flag)
     MOV dword ptr [EBX + 0x1fe6c],0x4   ; 004ee774
     ADD ESP,0xc                         ; 004ee77e
     MOV dword ptr [EBX + 0x1fe78],0x0   ; 004ee781
@@ -1492,8 +1492,8 @@ section .text
     PUSH EAX                            ; 004eea45
     MOV ESI,dword ptr [0x0061b4d0]      ; 004eea46 | DAT_0061b4d0
     PUSH ESI                            ; 004eea4c
-    CALL core_event.cpp_FUN_004a9870    ; 004eea4d
-        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9870()
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 ; 004eea4d
+        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004eea52
     MOV dword ptr [EBX + 0x1fe74],0x0   ; 004eea55
     FLD float ptr [EBP + 0x18]          ; 004eea5f
@@ -1725,8 +1725,8 @@ section .text
     PUSH EAX                            ; 004eed59
     LEA ESI,[EBX + 0x158]               ; 004eed5a
     PUSH ESI                            ; 004eed60
-    CALL core_motion.cpp_FUN_00525110   ; 004eed61
-        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00525110()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110 ; 004eed61
+        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x28c],EAX     ; 004eed66
     FLD float ptr [ESP + 0x28c]         ; 004eed6d
     ADD ESP,0xc                         ; 004eed74

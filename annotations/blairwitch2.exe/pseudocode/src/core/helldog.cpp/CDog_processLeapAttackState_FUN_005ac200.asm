@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503e60
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
@@ -51,8 +51,8 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 005ac22a
         ;   Label: LAB_005ac22a
     PUSH EDI                            ; 005ac230
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac231
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac231
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005ac236
     PUSH EDI                            ; 005ac239
     MOV ESI,dword ptr [EAX + 0x24]      ; 005ac23a

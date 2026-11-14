@@ -26,9 +26,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
-;   core_inv.cpp_FUN_004fa540
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
     PUSH ECX                            ; 004f8e59
     PUSH EAX                            ; 004f8e5a
     PUSH ESI                            ; 004f8e5b
-    CALL core_inv.cpp_FUN_004fa540      ; 004f8e5c
-        ;   XREF to: 004fa540 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004fa540()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540 ; 004f8e5c
+        ;   XREF to: 004fa540 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004f8e61
     TEST EAX,EAX                        ; 004f8e64
     JZ 0x004f8e31                       ; 004f8e66

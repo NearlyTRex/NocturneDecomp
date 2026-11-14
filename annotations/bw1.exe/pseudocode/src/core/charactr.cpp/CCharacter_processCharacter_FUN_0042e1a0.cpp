@@ -31,7 +31,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
     this_ptr->sound_cooldown = 0.0;
   }
   core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(this_ptr,delta_time);
-  core_charactr_cpp_FUN_00432e00(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_advanceGesture_FUN_00432e00(this_ptr,delta_time);
   fVar1 = this_ptr->stagger_amount - delta_time;
   this_ptr->stagger_amount = fVar1;
   if (fVar1 < 0.0) {

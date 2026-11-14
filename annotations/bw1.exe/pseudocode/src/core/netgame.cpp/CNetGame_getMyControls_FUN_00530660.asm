@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_playerControls_FUN_004d0860 at 004d093c
-;   core_game.cpp_FUN_004d19d0 at 004d19db
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 at 004d19db
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ec371

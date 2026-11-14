@@ -57,9 +57,9 @@ void __cdecl renderIndexedPolygonSoftware(int *vertex_indices,int vertex_count);
 // Address: 0051d7a0
 void __cdecl setupColoredSoftwareEdge(SRenderVertex *vertex0,SRenderVertex *vertex1);
 
-// Original: engine_prim.c_FUN_0051da80
+// Original: engine_prim.c_renderScanlinePolygon_FUN_0051da80
 // Address: 0051da80
-void __cdecl FUN_0051da80(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderScanlinePolygon(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130
 // Address: 0051e130

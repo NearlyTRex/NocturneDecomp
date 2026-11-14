@@ -14,9 +14,9 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
-;   engine_alphabit.cpp_FUN_0040dbb0
 ;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;
 ; *****************************************************************************
@@ -115,8 +115,8 @@ section .text
     PUSH 0x1d19bac                      ; 004a7e8b
     MOV EBP,0x9                         ; 004a7e90
     XOR EBX,EBX                         ; 004a7e95
-    CALL engine_alphabit.cpp_FUN_0040dbb0 ; 004a7e97
-        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbb0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0 ; 004a7e97
+        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(CAlphaBitmap * this_ptr, int value)
     MOV EDI,dword ptr [0x01d0d210]      ; 004a7e9c | DAT_01d0d210
     ADD ESP,0x8                         ; 004a7ea2
     TEST EDI,EDI                        ; 004a7ea5
@@ -237,8 +237,8 @@ section .text
     ADD ESP,0x10                        ; 004a8030
     PUSH 0xff                           ; 004a8033
     PUSH 0x1d19cc4                      ; 004a8038
-    CALL engine_alphabit.cpp_FUN_0040dbb0 ; 004a803d
-        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbb0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0 ; 004a803d
+        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004a8042
     PUSH 0x8                            ; 004a8045
     PUSH 0x100                          ; 004a8047

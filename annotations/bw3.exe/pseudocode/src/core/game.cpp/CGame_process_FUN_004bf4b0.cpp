@@ -49,7 +49,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr)
   if (this_ptr->cinematic_skip_in_progress != 0) {
     if (this_ptr->letterbox_mode == 0) {
       this_ptr->cinematic_skip_in_progress = 0;
-      core_sound_cpp_FUN_0055fd30(this_ptr_00);
+      core_sound_cpp_CSound_init_FUN_0055fd30(this_ptr_00);
       core_setdir_cpp_FUN_0053f940(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
       core_game_cpp_CGame_saveClockTime_FUN_004b4430(this_ptr);
       g_CScriptPtr->focus_actor_changed = 0;

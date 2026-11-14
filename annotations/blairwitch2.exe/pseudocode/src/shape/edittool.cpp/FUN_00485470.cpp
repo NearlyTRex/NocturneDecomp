@@ -50,7 +50,7 @@ void shape_edittool_cpp_FUN_00485470(void)
   in_stack_00000004->right_boundary = in_stack_00000004->y_position + iVar2;
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(in_stack_00000004);
   iVar2 = in_stack_00000004->x_position;
-  iVar4 = shape_edittool_cpp_FUN_004855f0();
+  iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(in_stack_00000004);
   iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00
                     (_DAT_01c25590,in_stack_00000004->checkbox_text);
   in_stack_00000004->total_width = iVar2 + iVar3 + iVar4 + iVar5;

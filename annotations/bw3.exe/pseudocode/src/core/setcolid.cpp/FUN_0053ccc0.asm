@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setcolid_cpp_FUN_0053ccc0(int param_1,float *param_2,float *param_3)
+; float core_setcolid_cpp_FUN_0053ccc0(CDemonSet *param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_00473cd0
-;   core_setcolid.cpp_FUN_0053d270
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     PUSH EBP                            ; 0053cd6c
     PUSH 0xbf800000                     ; 0053cd6d
     PUSH EBX                            ; 0053cd72
-    CALL core_setcolid.cpp_FUN_0053d270 ; 0053cd73
-        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053d270()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270 ; 0053cd73
+        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x5c],EAX      ; 0053cd78
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0053cd7c
     MOV dword ptr [EBX + 0x15f6dc],EAX  ; 0053cd80

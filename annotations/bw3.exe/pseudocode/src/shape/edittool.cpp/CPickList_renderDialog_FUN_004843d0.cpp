@@ -31,13 +31,13 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
   int local_2c;
   int local_28;
   int local_24;
-  uint local_20;
+  int local_20;
   int local_1c;
   int local_18;
   int *local_14;
   
   shape_edittool_cpp_FUN_0047fa80(g_CEditorToolsPtr);
-  shape_edittool_cpp_FUN_00480200(g_CEditorToolsPtr,1);
+  shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00480200(g_CEditorToolsPtr,1);
   local_28 = _DAT_01c6b5a8;
   local_24 = this_ptr->scroll_top;
   local_34 = 0;
@@ -103,8 +103,8 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
             *pcVar12 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
             engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
-            engine_font_cpp_FUN_004b0a20(_DAT_01c5b0e0,local_164,iVar6,local_1c,local_20,0xffffffff)
-            ;
+            engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+                      (_DAT_01c5b0e0,local_164,iVar6,local_1c,local_20,-1);
             piVar1 = local_14 + 1;
             iVar6 = iVar6 + local_14[4];
             local_18 = local_18 + 1;
@@ -134,7 +134,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
         else {
           iVar8 = 1;
         }
-        iVar9 = shape_edittool_cpp_FUN_00486580((char *)0x0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00486580((char *)0x0);
         if (this_ptr->scroll_mode != 2) {
           iVar6 = 0;
         }
@@ -158,16 +158,18 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
          ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column;
     (this_ptr->scrollbar).page_size = this_ptr->column_count;
   }
-  shape_edittool_cpp_FUN_00485640(&this_ptr->scrollbar);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(&this_ptr->scrollbar);
 LAB_004845e8:
   if (this_ptr->ok_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_00486120(&this_ptr->ok_button,this_ptr->selection_state == 0);
+    shape_edittool_cpp_CEdButton_paint_FUN_00486120
+              (&this_ptr->ok_button,(uint)(this_ptr->selection_state == 0));
   }
   if (this_ptr->cancel_button_text[0] != '\0') {
-    shape_edittool_cpp_FUN_00486120(&this_ptr->cancel_button,this_ptr->selection_state == 1);
+    shape_edittool_cpp_CEdButton_paint_FUN_00486120
+              (&this_ptr->cancel_button,(uint)(this_ptr->selection_state == 1));
   }
   if (this_ptr->state_flag == 0) {
-    shape_edittool_cpp_FUN_00480410(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00480410(g_CEditorToolsPtr,0);
     return;
   }
   return;

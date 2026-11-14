@@ -194,7 +194,8 @@ LAB_004535e0:
                 if (pCVar7 != (CDemonActor *)0x0) {
                   core_hero_cpp_FUN_004cff50(param_1,1);
                   core_hero_cpp_FUN_004cff90();
-                  core_inv_cpp_FUN_004db9d0(local_28,pCVar7);
+                  core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+                            ((CInventory *)local_28,pCVar7,5,1);
                   pCVar11 = param_1 + 1;
                   (pCVar11->base).base.actor_name[0] = '\x01';
                   (pCVar11->base).base.actor_name[1] = '\0';
@@ -368,7 +369,7 @@ LAB_004533c6:
         }
       }
       else if (uVar2 < 0x18) {
-        core_hero_cpp_FUN_004cf440(param_1);
+        core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(param_1);
       }
       else if (uVar2 < 0x29a) {
         if (uVar2 != 0x18) goto LAB_00453c4c;

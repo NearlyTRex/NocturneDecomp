@@ -190,7 +190,9 @@ LAB_004b77cb:
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
       (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,1);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               5,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);
   if ((iVar4 != 0) &&
@@ -198,7 +200,9 @@ LAB_004b77cb:
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
       (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,0xffffffff);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               5,-1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);
   if (iVar4 != 0) {
@@ -226,7 +230,9 @@ LAB_004b77cb:
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
       (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,0,1);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               0,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);
   if ((iVar4 != 0) &&
@@ -234,7 +240,9 @@ LAB_004b77cb:
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
       (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,3,1);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               3,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);
   if ((iVar4 != 0) &&
@@ -242,7 +250,9 @@ LAB_004b77cb:
                           (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                            g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
       (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
-    core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,6,1);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),(CDemonActor *)0x0,
+               6,1);
     return;
   }
   return;

@@ -34,6 +34,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -184,7 +185,7 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00407470(SMRGLHeaderPr
 void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407570(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 void engine_3d_c_FUN_004076c0(undefined4 param_1);
 void engine_3d_c_FUN_004076d0(undefined4 param_1);
-void engine_3d_c_FUN_004076e0(int *param_1);
+void engine_3d_c_dispatchMRGLBlockChain_FUN_004076e0(int *param_1);
 void engine_3d_c_FUN_00407720(void);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_004077b0(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407820(SMRGLHeaderExtended *mrgl);
@@ -227,7 +228,7 @@ void core_actor_cpp_FUN_00408cc0(void);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408cd0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408d60(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 undefined4 * core_actor_cpp_FUN_00408ec0(int param_1,int param_2,uint param_3);
-float core_actor_cpp_FUN_00409170(int param_1,CBoundingBox3D *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_plotPixelWithBoundsCheck_FUN_004096b0(int x,int y);
@@ -312,10 +313,10 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *this_ptr,char *filename,int width,int height);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(CAlphaBitmap *this_ptr,int x,int y,int alpha);
-void engine_alphabit_cpp_FUN_0040d660(CAlphaBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d660(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040d910(CAlphaBitmap *this_ptr);
-void engine_alphabit_cpp_FUN_0040d970(int param_1,int param_2);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970(CAlphaBitmap *this_ptr,int value);
 void engine_alphabit_cpp_FUN_0040d9a0(CAlphaBitmap *param_1);
 void __cdecl core_ammo_cpp_staticInit_FUN_0040db60(void);
 CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040db90(void);

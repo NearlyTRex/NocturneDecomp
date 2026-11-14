@@ -30,7 +30,7 @@
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
 ;   support_trstream.cpp_CInStreamFile_read_FUN_005a0c10
 ;   wincore_wddvmem.cpp_FUN_005ac040
-;   wincore_wddvmem.cpp_FUN_005ac300
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH 0x20                           ; 00401031
     PUSH 0x1e0                          ; 00401033
     PUSH 0x280                          ; 00401038
-    CALL wincore_wddvmem.cpp_FUN_005ac300 ; 0040103d
-        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005ac300()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 0040103d
+        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00401042
     PUSH 0x5d2004                       ; 00401045 | = "vga.act"
     CALL engine_2d.c_FUN_00401590       ; 0040104a

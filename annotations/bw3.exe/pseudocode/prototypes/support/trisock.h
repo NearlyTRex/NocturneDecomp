@@ -85,9 +85,9 @@ int __cdecl CSocket::isSocketValid(CSocket *this_ptr);
 // Address: 0056f970
 int __cdecl CSocket::bindSocket(CSocket *this_ptr,ushort port);
 
-// Original: support_trisock.cpp_FUN_0056f9c0
+// Original: support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0
 // Address: 0056f9c0
-undefined4 FUN_0056f9c0(SOCKET *param_1,undefined4 param_2);
+int __cdecl CSocket::connectSocket(CSocket *this_ptr,SNetworkAddr *dest_addr);
 
 // Original: support_trisock.cpp_FUN_0056fa20
 // Address: 0056fa20

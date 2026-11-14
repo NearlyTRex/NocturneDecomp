@@ -12,11 +12,11 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
 
 {
   CCharacter *pCVar1;
-  CCharacter *this_ptr_00;
+  CCharacter *target;
   float fVar2;
   int iVar3;
   EDeathState EVar4;
-  CPathMap *this_ptr_01;
+  CPathMap *this_ptr_00;
   int iVar5;
   int iVar6;
   byte bVar7;
@@ -113,24 +113,24 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
           } while (iVar6 < iStack_20);
         }
         if (iVar3 < 0) break;
-        this_ptr_00 = *(CCharacter **)(&DAT_01c264e4 + iVar3 * 4);
-        iVar6 = core_enemy_cpp_FUN_00488320(this_ptr,this_ptr_00);
+        target = *(CCharacter **)(&DAT_01c264e4 + iVar3 * 4);
+        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00488320(this_ptr,&target->base);
         if (iVar6 != 0) {
-          this_ptr->victim = this_ptr_00;
+          this_ptr->victim = target;
           engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s can see hero\n");
           return;
         }
-        if (((this_ptr->allow_pathfind_to_new_targets != 0) || (this_ptr_00 == pCVar1)) &&
-           ((this_ptr_01 = (*((this_ptr_00->base).vtable._ub)->getPathMap)(&this_ptr_00->base),
-            this_ptr_01 != (CPathMap *)0x0 &&
+        if (((this_ptr->allow_pathfind_to_new_targets != 0) || (target == pCVar1)) &&
+           ((this_ptr_00 = (*((target->base).vtable._ub)->getPathMap)(&target->base),
+            this_ptr_00 != (CPathMap *)0x0 &&
             (iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                               (this_ptr_01,pCStack_18,&CStack_44,
+                               (this_ptr_00,pCStack_18,&CStack_44,
                                 (this_ptr->base).base.direction_hint), iVar6 == 1)))) {
-          this_ptr->victim = this_ptr_00;
+          this_ptr->victim = target;
           return;
         }
         *(uint *)(&DAT_01c28424 + iVar3 * 4) = 0x7149f2ca;
-        if (this_ptr_00 == pCVar1) {
+        if (target == pCVar1) {
           this_ptr->victim = pCVar1;
         }
       }

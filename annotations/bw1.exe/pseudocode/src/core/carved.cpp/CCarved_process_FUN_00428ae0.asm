@@ -1256,8 +1256,8 @@ section .text
         ;   XREF to: 00430b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 00429959
     PUSH EBX                            ; 0042995c
-    CALL core_charactr.cpp_FUN_00430960 ; 0042995d
-        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430960()
+    CALL core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 ; 0042995d
+        ;   XREF to: 00430960 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00429962
     PUSH 0x1                            ; 00429965
         ;   Label: LAB_00429965

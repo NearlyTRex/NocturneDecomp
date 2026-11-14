@@ -20,10 +20,10 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0
 ;   core_main.c_FUN_005030e0
-;   engine_special.cpp_FUN_00581f50
 ;   engine_special.cpp_FUN_00581fe0
 ;   engine_special.cpp_FUN_00582b70
 ;   engine_special.cpp_FUN_00582b90
+;   engine_special.cpp_lockFrame_FUN_00581f50
 ;   engine_special.cpp_unlockFrame_FUN_00581fa0
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     CMP dword ptr [0x0061b49c],0x1e0    ; 00451e22 | DAT_0061b49c
     JG 0x00451e61                       ; 00451e2c
         ;   XREF to: 00451e61 (CONDITIONAL_JUMP)  ; LAB_00451e61
-    CALL engine_special.cpp_FUN_00581f50 ; 00451e2e
-        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
+    CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 00451e2e
+        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00581f50()
     MOV ESI,dword ptr [ESP + 0xc]       ; 00451e33
         ;   Label: LAB_00451e33
     PUSH ESI                            ; 00451e37

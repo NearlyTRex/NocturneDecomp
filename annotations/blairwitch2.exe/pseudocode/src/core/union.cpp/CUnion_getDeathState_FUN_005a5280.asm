@@ -11,7 +11,7 @@
 ;   TerminatedCString s_Animation_005f0578
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059daa0
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_005a52af
     ADD EAX,0x2b4                       ; 005a52b3
     PUSH EAX                            ; 005a52b8
-    CALL core_motion.cpp_FUN_005035c0   ; 005a52b9
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a52b9
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a52be
     ADD ESP,0x4                         ; 005a52c1
     CMP EAX,0x6                         ; 005a52c4

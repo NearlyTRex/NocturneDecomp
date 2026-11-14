@@ -54,7 +54,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00414e50(CBiggs *this_ptr,float d
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
-  core_motion_cpp_FUN_005035c0(this_ptr_00);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) goto LAB_00414f21;

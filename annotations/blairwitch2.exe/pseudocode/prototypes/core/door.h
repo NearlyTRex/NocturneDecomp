@@ -25,9 +25,9 @@ CDoor * __cdecl CDoor::ctor(CDoor *this_ptr);
 // Address: 0045ef40
 void __cdecl CDoor::setup(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_0045efc0
+// Original: core_door.cpp_CDoor_onOpened_FUN_0045efc0
 // Address: 0045efc0
-void __cdecl FUN_0045efc0(CDoor *this_ptr);
+void __cdecl CDoor::onOpened(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_0045efe0
 // Address: 0045efe0

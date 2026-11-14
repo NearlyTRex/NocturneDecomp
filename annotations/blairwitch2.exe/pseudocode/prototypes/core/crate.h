@@ -45,9 +45,9 @@ CDemonActor * __cdecl CCrate::getCarrier(CCrate *this_ptr);
 // Address: 00439f00
 void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 
-// Original: core_crate.cpp_FUN_0043a130
+// Original: core_crate.cpp_CCrate_renderOpaque_FUN_0043a130
 // Address: 0043a130
-int FUN_0043a130(int param_1);
+int __cdecl CCrate::renderOpaque(CCrate *this_ptr);
 
 // Original: core_crate.cpp_FUN_0043a1b0
 // Address: 0043a1b0

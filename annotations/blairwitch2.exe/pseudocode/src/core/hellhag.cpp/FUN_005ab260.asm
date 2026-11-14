@@ -22,7 +22,7 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059daa0
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
@@ -81,8 +81,8 @@ section .text
     ADD ESP,0x8                         ; 005ab2da
     ADD EAX,0x2b4                       ; 005ab2dd
     PUSH EAX                            ; 005ab2e2
-    CALL core_motion.cpp_FUN_005035c0   ; 005ab2e3
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ab2e3
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005ab2e8
     ADD ESP,0x4                         ; 005ab2eb
     TEST EAX,EAX                        ; 005ab2ee

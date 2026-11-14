@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     LEA EAX,[EDX + 0x2b4]               ; 00410a0c
         ;   Label: LAB_00410a0c
     PUSH EAX                            ; 00410a12
-    CALL core_motion.cpp_FUN_005035c0   ; 00410a13
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00410a13
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00410a18
     ADD ESP,0x4                         ; 00410a1b
     CMP EAX,0x3                         ; 00410a1e

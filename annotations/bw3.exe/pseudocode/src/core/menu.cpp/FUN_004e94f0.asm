@@ -53,7 +53,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
-;   core_game.cpp_FUN_004b4440
+;   core_game.cpp_CGame_updateDT_FUN_004b4440
 ;   core_menu.cpp_FUN_004e7860
 ;   core_moon.cpp_CMoon_render_FUN_004f9670
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
@@ -100,8 +100,8 @@ section .text
     MOV EBX,dword ptr [0x005fe9dc]      ; 004e9532 | g_CGamePtr
         ;   Label: LAB_004e9532
     PUSH EBX                            ; 004e9538 | g_CGameInstance
-    CALL core_game.cpp_FUN_004b4440     ; 004e9539
-        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b4440()
+    CALL core_game.cpp_CGame_updateDT_FUN_004b4440 ; 004e9539
+        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004b4440(CGame * this_ptr)
     ADD ESP,0x4                         ; 004e953e
     PUSH 0x10000                        ; 004e9541
     PUSH 0xc350                         ; 004e9546

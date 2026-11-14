@@ -426,7 +426,8 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00433000(int vertex_coun
         }
       }
       if (2 < (int)DAT_007bee30) {
-        engine_prim_c_FUN_0051da80((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
+        engine_prim_c_renderScanlinePolygon_FUN_0051da80
+                  ((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
         return;
       }
     }

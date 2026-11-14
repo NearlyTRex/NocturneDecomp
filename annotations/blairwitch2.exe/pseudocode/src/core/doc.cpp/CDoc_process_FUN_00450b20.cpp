@@ -14,7 +14,8 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   float delta_time_00;
   bool bVar1;
   int iVar2;
-  float fVar3;
+  SMotion *pSVar3;
+  float fVar4;
   
   iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0
                     ((CCharacter *)this_ptr,delta_time);
@@ -23,9 +24,10 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   }
   core_charactr_cpp_FUN_0042b5e0(this_ptr,delta_time);
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
   bVar1 = false;
-  switch(*(uint *)(iVar2 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:
@@ -47,13 +49,13 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   case 0x1b:
     bVar1 = true;
   }
-  if ((this_ptr->action_pending == 7) || (fVar3 = delta_time, bVar1)) {
-    fVar3 = delta_time * (float)_DAT_005cfe37;
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
+  if ((this_ptr->action_pending == 7) || (fVar4 = delta_time, bVar1)) {
+    fVar4 = delta_time * (float)_DAT_005cfe37;
+    core_doc_cpp_FUN_00450c60(this_ptr,fVar4);
+    core_doc_cpp_FUN_00450c60(this_ptr,fVar4);
+    core_doc_cpp_FUN_00450c60(this_ptr,fVar4);
   }
-  core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
+  core_doc_cpp_FUN_00450c60(this_ptr,fVar4);
   core_game_cpp_CGame_slamDT_FUN_004bd460(g_CGamePtr,delta_time_00);
   core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((this_ptr->base).base.base.particle_systems,delta_time);

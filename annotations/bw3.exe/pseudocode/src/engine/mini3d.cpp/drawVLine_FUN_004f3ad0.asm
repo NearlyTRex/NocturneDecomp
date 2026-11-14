@@ -10,8 +10,8 @@
 ;
 ; XREF[6]:
 ;   engine_mini3d.cpp_drawRect_FUN_004f3a60 at 004f3a8d
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047f110
 ;   shape_edittool.cpp_FUN_0047b9b0 at 0047b9c8
-;   shape_edittool.cpp_FUN_0047ee50 at 0047f110
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047fcb2
 ;   shape_edittool.cpp_FUN_004850a0 at 0048513e
 ;   shape_edittool.cpp_FUN_004852f0 at 004854a6

@@ -227,7 +227,7 @@ CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_005aa5a0(void)
 CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_005aa5c0(CWaterActor *this_ptr);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005aa5d0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_ptr);
-void core_wateract_cpp_FUN_005aacd0(int param_1);
+void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005aacd0(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_005aadb0(int param_1);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterActor *this_ptr);
@@ -255,8 +255,8 @@ void wincore_wddvmem_cpp_FUN_005abf20(void);
 void wincore_wddvmem_cpp_FUN_005abff0(void);
 int __cdecl wincore_wddvmem_cpp_FUN_005ac040(int width,int height);
 void __cdecl wincore_wddvmem_cpp_FUN_005ac1b0(void);
-void wincore_wddvmem_cpp_FUN_005ac270(void);
-undefined4 wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3);
+void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ac270(void);
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int height,int bits_per_pixel);
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ac830(void);
 void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005aca40(void);
 void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005acb10(void);
@@ -290,7 +290,7 @@ CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005add80(CWeapon 
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005adde0(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ade10(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ade30(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_005ade40(int param_1);
+void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_005adfc0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_005ae140(void);

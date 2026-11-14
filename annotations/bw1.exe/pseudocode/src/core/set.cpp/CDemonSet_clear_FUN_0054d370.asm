@@ -8,13 +8,13 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_dtor_FUN_0054d340 at 0054d346
-;   core_set.cpp_FUN_0054d3c0 at 0054d3f5
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054d3f5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00625bc0
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00467160
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160
 ;   core_setdir.cpp_FUN_0055c0a0
 ;   core_setutil.cpp_C3DSCamera_free_FUN_0055c100
 ;   core_terrain.cpp_CTerrain_free_FUN_0059f3c0
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_clear_FUN_0054d370
     PUSH ESI                            ; 0054d371
     PUSH 0x1fe5fac                      ; 0054d372
-    CALL core_dmodel.cpp_FUN_00467160   ; 0054d377
-        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467160()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160 ; 0054d377
+        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0054d37c
     MOV ESI,dword ptr [ESP + 0xc]       ; 0054d37f
     ADD ESI,0x4                         ; 0054d383

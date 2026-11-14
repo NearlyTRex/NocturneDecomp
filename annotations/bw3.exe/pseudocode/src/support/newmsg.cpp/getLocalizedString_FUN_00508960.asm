@@ -16,7 +16,7 @@
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004bacb9
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40 at 004bfae5
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b88fb
-;   core_game.cpp_FUN_004b51e0 at 004b524c
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0 at 004b524c
 ;   ... and 30 more
 ;
 ; Referenced Globals:

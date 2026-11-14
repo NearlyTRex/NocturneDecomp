@@ -33,7 +33,7 @@
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_00494880
+;   core_event.cpp_CEventList_resetGameFlags_FUN_00494880
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_game.cpp_FUN_004bdfb0
 ;   core_game.cpp_FUN_004c4d10
@@ -160,8 +160,8 @@ section .text
     ADD ESP,0x4                         ; 004bea3c
     MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | DAT_005fba60
     PUSH EDI                            ; 004bea45
-    CALL core_event.cpp_FUN_00494880    ; 004bea46
-        ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00494880()
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_00494880 ; 004bea46
+        ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_00494880(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004bea4b
     LEA EAX,[ESP + 0x204]               ; 004bea4e
     PUSH EAX                            ; 004bea55

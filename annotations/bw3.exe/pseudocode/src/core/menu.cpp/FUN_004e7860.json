@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 279,
+    "complexity_score": 281,
     "cross_reference_count": 5,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
+    "pseudocode_lines": 141,
     "suspect_count": 12,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -15,7 +15,7 @@
       "unrolled_strchr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 554
+    "total_lines": 556
   },
   "cross_references": [
     {
@@ -83,6 +83,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
     },
     {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
       "addr": "004b30f0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
@@ -96,11 +101,6 @@
       "addr": "004b2a80",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
-    },
-    {
-      "addr": "004b0a20",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
     }
   ],
   "globals": [
@@ -363,7 +363,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 109,
+      "line": 111,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x48);",
@@ -371,7 +371,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x48);",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 118,
+      "line": 120,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x50);",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x50);",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 129,
+      "line": 131,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 129,
+      "line": 131,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 134,
+      "line": 136,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 134,
+      "line": 136,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 137,
+      "line": 139,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 137,
+      "line": 139,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 98,
+      "line": 100,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

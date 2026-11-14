@@ -81,7 +81,8 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004a7d00(CBitFont *this_ptr
     } while (iVar2 != 0x300);
     support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_38);
   }
-  engine_font_cpp_FUN_004a88e0(this_ptr,this_ptr->bitmap_count,width,height,first_char);
+  engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004a88e0
+            (this_ptr,this_ptr->bitmap_count,width,height,first_char);
   this_ptr->bitmap_count = this_ptr->bitmap_count + 1;
   engine_font_cpp_CBitFont_remapPalette_FUN_004ab630(this_ptr);
   support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_38,0);

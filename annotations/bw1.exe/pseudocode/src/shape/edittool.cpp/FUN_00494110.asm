@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x12c8]:4  local_12c8
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00496dd0 at 00496dd5
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0 at 00496dd5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498
@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01c50948
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00581f50
+;   engine_special.cpp_lockFrame_FUN_00581f50
 ;   engine_special.cpp_unlockFrame_FUN_00581fa0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
         ;   XREF to: 00494138 (CONDITIONAL_JUMP)  ; LAB_00494138
     LEA EAX,[EAX]                       ; 00494149
     NOP                                 ; 0049414f
-    CALL engine_special.cpp_FUN_00581f50 ; 00494150
-        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
+    CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 00494150
+        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00581f50()
         ;   Label: LAB_00494150
     TEST EAX,EAX                        ; 00494155
     JZ 0x004941cd                       ; 00494157

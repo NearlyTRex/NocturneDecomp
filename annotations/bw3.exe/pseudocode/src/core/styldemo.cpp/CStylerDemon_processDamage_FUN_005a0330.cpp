@@ -25,7 +25,8 @@ void __cdecl core_styldemo_cpp_CStylerDemon_processDamage_FUN_005a0330(CStylerDe
     if ((damage_info->damage_type == DAMAGE_TYPE_EXORCISM) &&
        (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                           (0x01C6E360,"exorcism_death"), iVar2 == 0)) {
-      core_event_cpp_FUN_004946f0(0x01C6E360,"exorcism_death",1);
+      core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
+                (0x01C6E360,"exorcism_death",1);
     }
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                        (&(this_ptr->base).base.model.base);

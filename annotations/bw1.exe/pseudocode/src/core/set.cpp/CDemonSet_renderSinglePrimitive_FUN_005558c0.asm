@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[3]:
-;   core_box.cpp_FUN_00420990 at 00420b30
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990 at 00420b30
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0 at 00455246
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_004665c0 at 0046661e
 ;

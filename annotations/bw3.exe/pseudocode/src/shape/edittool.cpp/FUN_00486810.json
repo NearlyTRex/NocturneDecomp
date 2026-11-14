@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 299,
+    "complexity_score": 315,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 23,
+    "pseudocode_lines": 50,
+    "suspect_count": 24,
     "suspect_types": [
+      "pointer_truncation",
       "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 191
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -37,14 +38,14 @@
       "name": "engine_2d.c_clipLineGlobal_FUN_00402ca0"
     },
     {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
       "addr": "004b2b30",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30"
-    },
-    {
-      "addr": "004b0a20",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
     },
     {
       "addr": "004f3520",
@@ -191,7 +192,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 12,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -210,7 +211,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1->right_boundary;",
+      "text": "iVar3 = param_1->right_boundary;",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +259,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1->text_color_mode;",
+      "text": "iVar3 = param_1->text_color_mode;",
       "type": "unnamed_param"
     },
     {
@@ -271,7 +272,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "shape_edittool_cpp_FUN_004850a0(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
@@ -279,7 +280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_004850a0(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
@@ -287,7 +288,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->border_style_flag == 0) {",
@@ -295,7 +296,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -303,7 +304,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -311,7 +312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->checked_state == 1) {",
@@ -319,7 +320,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -327,7 +328,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -335,7 +336,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -343,7 +344,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
@@ -351,11 +352,19 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,iVar5 + 1,unaff_EBX + -2);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `text_string` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)text_string",
+      "severity": "moderate",
+      "text": "(_DAT_01c5b0e0,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);",
+      "type": "pointer_truncation"
     }
   ]
 }

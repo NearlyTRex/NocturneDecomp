@@ -24,10 +24,10 @@
 ;   core_fldnotes.cpp_SPageResourceBitmap_draw_FUN_004a2270 at 004a2284
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060 at 004a20d3
 ;   core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0 at 004a260a
+;   core_game.cpp_CGame_displayActStats_FUN_004bdc20 at 004bdc6f
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0f7
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be5e6
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b613b
-;   core_game.cpp_FUN_004bdc20 at 004bdc6f
 ;   ... and 7 more
 ;
 ; Referenced Globals:

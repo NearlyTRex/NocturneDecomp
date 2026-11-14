@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004d77d0(CGame *param_1)
+; void __cdecl core_game_cpp_FUN_004d77d0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x62c]:1  local_62c
 ; undefined        Stack[-0x12c]:1  local_12c
@@ -37,10 +39,10 @@
 ;   ... and 19 more
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;   core_game.cpp_CGame_resetKeyState_FUN_004d0960
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
-;   core_game.cpp_FUN_004cbf20
-;   core_game.cpp_FUN_004d19d0
+;   core_game.cpp_CGame_updateDT_FUN_004cbf20
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_stdio.c_fclose_FUN_005c0d10
@@ -51,7 +53,7 @@
 ;   engine_dosio.cpp_FUN_00479180
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
-;   engine_special.cpp_FUN_00581f50
+;   engine_special.cpp_lockFrame_FUN_00581f50
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -197,8 +199,8 @@ section .text
         ;   XREF to: 004d78d7 (CONDITIONAL_JUMP)  ; LAB_004d78d7
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10 ; 004d798f
         ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
-    CALL engine_special.cpp_FUN_00581f50 ; 004d7994
-        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
+    CALL engine_special.cpp_lockFrame_FUN_00581f50 ; 004d7994
+        ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00581f50()
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 004d7999
         ;   XREF to: 0057dc40 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0057dc40()
     PUSH 0x0                            ; 004d799e
@@ -330,8 +332,8 @@ section .text
         ;   Label: LAB_004d7b62
     MOV ECX,dword ptr [ESP + 0xa30]     ; 004d7b67
     PUSH ECX                            ; 004d7b6e
-    CALL core_game.cpp_FUN_004d19d0     ; 004d7b6f
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 004d7b6f
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d7b74
     MOV EBX,dword ptr [ESP + 0xa30]     ; 004d7b77
     ADD EBX,0x3b8                       ; 004d7b7e
@@ -483,8 +485,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004d7d2d | g_CGamePtr
         ;   Label: LAB_004d7d2d
     PUSH EAX                            ; 004d7d32 | g_CGameInstance
-    CALL core_game.cpp_FUN_004cbf20     ; 004d7d33
-        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
+    CALL core_game.cpp_CGame_updateDT_FUN_004cbf20 ; 004d7d33
+        ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004cbf20(CGame * this_ptr)
     MOV EAX,[0x0061d95c]                ; 004d7d38 | g_CGamePtr
     FLD float ptr [EAX + 0x294]         ; 004d7d3d | g_CGameInstance.delta_time_float
     FSUBR float ptr [EBX]               ; 004d7d43
@@ -518,8 +520,8 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004d7d90
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     PUSH EDI                            ; 004d7d95
-    CALL core_game.cpp_FUN_004d19d0     ; 004d7d96
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 004d7d96
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d7d9b
     PUSH EDI                            ; 004d7d9e
     CALL core_game.cpp_CGame_saveClockTime_FUN_004cbf10 ; 004d7d9f

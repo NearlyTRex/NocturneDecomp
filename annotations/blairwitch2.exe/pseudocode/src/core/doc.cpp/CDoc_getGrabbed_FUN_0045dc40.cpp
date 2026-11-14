@@ -14,7 +14,8 @@ int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_0045dc40(CDoc *this_ptr,CDemonActor
   if (grabber != (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_00436710
               (g_CConsolePtr,"?CDoc::startGettingGrabbed by %s, type %d\n" + 1);
-    core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
+    core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+              (&(this_ptr->base).base.model.base);
     engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  current motion is %s\n");
     if (((((this_ptr->base).object_to_pick_up == (CDemonActor *)0x0) &&
          ((this_ptr->base).door_to_open == (CDoor *)0x0)) &&

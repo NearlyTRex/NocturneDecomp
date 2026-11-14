@@ -16,7 +16,7 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
   float fVar2;
   float fVar3;
   CDemonActor *pCVar4;
-  int iVar5;
+  SMotion *pSVar5;
   CDeformableModelInstance *this_ptr_00;
   SStateMachine *pSVar6;
   
@@ -38,8 +38,8 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
               ((CCharacter *)this_ptr,&(pCVar1->base).location.position);
     this_ptr_00 = &(this_ptr->base).base.base.base.model;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
-    iVar5 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar5 + 0x24) == 5) {
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar5->state_index == 5) {
       core_motion_cpp_FUN_00503e60(&this_ptr_00->base);
       return;
     }

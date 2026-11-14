@@ -13,7 +13,7 @@
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9727
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec741
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f144c
-;   core_stranger.cpp_FUN_005881d0 at 00588877
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 00588877
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 00593711
 ;
 ; Referenced Globals:

@@ -8,7 +8,7 @@
 ;   core_doc.cpp_FUN_00450c60 at 004515d1
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     ADD EBX,0x2b4                       ; 0045db6a
     PUSH EBX                            ; 0045db70
     MOV ESI,dword ptr [EBX + 0x2bec]    ; 0045db71
-    CALL core_motion.cpp_FUN_005035c0   ; 0045db77
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0045db77
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0045db7c
     MOV EAX,dword ptr [EAX + 0x24]      ; 0045db7f
     LEA EDX,[ESI + 0x3ab24]             ; 0045db82

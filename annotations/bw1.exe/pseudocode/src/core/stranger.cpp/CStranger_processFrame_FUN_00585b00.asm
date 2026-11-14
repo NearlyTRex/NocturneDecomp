@@ -43,10 +43,10 @@
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00433d50
-;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   ... and 36 more
 ;
@@ -190,8 +190,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00585cde
         ;   Label: LAB_00585cde
     PUSH EBX                            ; 00585ce1
-    CALL core_charactr.cpp_FUN_00434790 ; 00585ce2
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 00585ce2
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00585ce7
     MOV EDI,dword ptr [0x0061d95c]      ; 00585cea | g_CGamePtr
     PUSH dword ptr [EBP + 0x18]         ; 00585cf0
@@ -251,8 +251,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00585da3
     MOVSD ES:EDI,ESI                    ; 00585da4
     MOVSD ES:EDI,ESI                    ; 00585da5
-    CALL core_stranger.cpp_FUN_005881d0 ; 00585da6
-        ;   XREF to: 005881d0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005881d0()
+    CALL core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 ; 00585da6
+        ;   XREF to: 005881d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0(CStranger * this_ptr, float delta_time)
     MOV EAX,0x1                         ; 00585dab
     ADD ESP,0x8                         ; 00585db0
     MOV dword ptr [ESP + 0x45c],EAX     ; 00585db3
@@ -1347,8 +1347,8 @@ section .text
     FADD float ptr [ESP + 0x464]        ; 00586bdb
     PUSH EBX                            ; 00586be2
     FSTP float ptr [EBX + 0x34]         ; 00586be3
-    CALL core_charactr.cpp_FUN_00433d50 ; 00586be6
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 00586be6
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 00586beb
     MOV EAX,dword ptr [EBX + 0x26fc]    ; 00586bee
         ;   Label: LAB_00586bee
@@ -1695,8 +1695,8 @@ section .text
     FADD float ptr [ESP + 0x3cc]        ; 005870ca
     PUSH EBX                            ; 005870d1
     FSTP float ptr [ESP + 0x3d0]        ; 005870d2
-    CALL core_charactr.cpp_FUN_00433d50 ; 005870d9
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 005870d9
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 005870de
     FLD float ptr [ESP + 0x7c]          ; 005870e1
     FADD double ptr [0x005f6891]        ; 005870e5 | DAT_005f6891
@@ -2050,8 +2050,8 @@ section .text
     FADD float ptr [ESP + 0x2c]         ; 005875e9
     PUSH EBX                            ; 005875ed
     FSTP float ptr [EBX + 0x34]         ; 005875ee
-    CALL core_charactr.cpp_FUN_00433d50 ; 005875f1
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 005875f1
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 005875f6
     JMP 0x0058636e                      ; 005875f9
         ;   XREF to: 0058636e (UNCONDITIONAL_JUMP)  ; LAB_0058636e

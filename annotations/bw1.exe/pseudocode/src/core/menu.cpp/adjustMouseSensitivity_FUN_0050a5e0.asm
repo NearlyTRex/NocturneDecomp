@@ -34,7 +34,7 @@
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840
-;   shape_edittool.cpp_FUN_00496dd0
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0
 ;   shape_edittool.cpp_FUN_00496ee0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;   wincore_winrun.cpp_setCursorPosition_FUN_005b2750
@@ -250,8 +250,8 @@ section .text
     MOV EBX,dword ptr [0x0061abc0]      ; 0050a815 | g_CEditorToolsPtr
         ;   Label: LAB_0050a815
     PUSH EBX                            ; 0050a81b
-    CALL shape_edittool.cpp_FUN_00496dd0 ; 0050a81c
-        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496dd0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0 ; 0050a81c
+        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0050a821
     MOV ESP,EBP                         ; 0050a824
     POP EBP                             ; 0050a826

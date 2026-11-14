@@ -29,9 +29,9 @@ void FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
 // Address: 0057c840
 void __cdecl CWeather::createThunder(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057c890
+// Original: core_weather.cpp_CWeather_renderParticles_FUN_0057c890
 // Address: 0057c890
-void __cdecl FUN_0057c890(CWeather *this_ptr);
+void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
 // Original: core_weather.cpp_FUN_0057d050
 // Address: 0057d050

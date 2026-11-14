@@ -39,9 +39,9 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
 ;   core_health.cpp_CHealthItem_useItem_FUN_004ea530
+;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
-;   core_inv.cpp_FUN_004f8d00
 ;   core_inv.cpp_getItemDisplayName_FUN_004f62e0
 ;   core_main.c_FUN_005030e0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
@@ -264,8 +264,8 @@ section .text
     PUSH 0x1                            ; 004f9dc9
     PUSH EBX                            ; 004f9dcb
     PUSH EBP                            ; 004f9dcc
-    CALL core_inv.cpp_FUN_004f8d00      ; 004f9dcd
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 004f9dcd
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EAX,0x1                         ; 004f9dd2
     ADD ESP,0xc                         ; 004f9dd7
     ADD ESP,0x104                       ; 004f9dda

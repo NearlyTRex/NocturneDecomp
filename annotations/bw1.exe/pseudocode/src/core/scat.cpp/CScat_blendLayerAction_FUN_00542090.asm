@@ -20,9 +20,9 @@
 ;   undefined4 DAT_01e7e054
 ;
 ; Called Functions:
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_motion.cpp_FUN_00524a40
-;   core_motion.cpp_FUN_00525110
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
@@ -165,8 +165,8 @@ section .text
     PUSH EAX                            ; 005421fd
     PUSH ESI                            ; 005421fe
     MOV EDI,EAX                         ; 005421ff
-    CALL core_motion.cpp_FUN_00525110   ; 00542201
-        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00525110()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110 ; 00542201
+        ;   XREF to: 00525110 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x28],EAX      ; 00542206
     FLD float ptr [ESP + 0x28]          ; 0054220a
     ADD ESP,0xc                         ; 0054220e

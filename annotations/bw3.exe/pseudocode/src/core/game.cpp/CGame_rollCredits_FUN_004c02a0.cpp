@@ -194,7 +194,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300(&local_4c,0);
       return;
     }
-    core_game_cpp_FUN_004b4440(this_ptr);
+    core_game_cpp_CGame_updateDT_FUN_004b4440(this_ptr);
     local_38 = local_38 - this_ptr->delta_time_float * _DAT_005c3bdc;
     if ((local_18 == 0) && (local_38 < 0.0)) {
       local_38 = 480.0;

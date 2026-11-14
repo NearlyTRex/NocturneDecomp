@@ -13,9 +13,9 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *f
 {
   _FILE *file;
   int iVar1;
-  uint uStack_14;
+  int in_stack_ffffffec;
   
-  core_course_cpp_FUN_00444aa0(this_ptr);
+  core_course_cpp_CCourse_free_FUN_00444aa0(this_ptr);
   file = engine_dosio_cpp_FUN_004659c0((char *)0x5b983f,filename,(char *)0x5b983c);
   if (file == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\course.cpp";
@@ -32,7 +32,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *f
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   _fscanf(file,(char *)0x5b987e);
-  core_course_cpp_FUN_00444910(this_ptr,uStack_14);
+  core_course_cpp_CCourse_allocMemory_FUN_00444910(this_ptr,in_stack_ffffffec);
   do {
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
@@ -44,6 +44,6 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *f
       _fscanf(file,(char *)0x5b9885);
     } while (iVar1 < this_ptr->len);
   }
-  _fclose(file);
+  _fclose();
   return;
 }

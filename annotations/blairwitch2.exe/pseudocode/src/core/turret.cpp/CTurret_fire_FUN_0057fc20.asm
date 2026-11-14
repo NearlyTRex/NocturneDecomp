@@ -35,7 +35,7 @@
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004c72d0
-;   core_glass.cpp_FUN_004c6d40
+;   core_glass.cpp_CGlass_shatter_FUN_004c6d40
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_setcolid.cpp_FUN_00535ee0
@@ -437,8 +437,8 @@ section .text
     ADD EAX,0x14d138                    ; 0058016c
     PUSH EAX                            ; 00580171 | g_CDemonSetInstance.collision_impact_position.x
     PUSH EDI                            ; 00580172
-    CALL core_glass.cpp_FUN_004c6d40    ; 00580173
-        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004c6d40()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004c6d40 ; 00580173
+        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004c6d40(CGlass * this_ptr, CVector3f * location)
     JMP 0x00580078                      ; 00580178
         ;   XREF to: 00580078 (UNCONDITIONAL_JUMP)  ; LAB_00580078
     MOV ESI,dword ptr [ESP + 0x114]     ; 0058017d

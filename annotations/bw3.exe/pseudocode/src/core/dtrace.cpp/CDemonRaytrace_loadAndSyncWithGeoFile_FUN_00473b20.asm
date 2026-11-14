@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00532b80 at 00533607
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533607
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bca01

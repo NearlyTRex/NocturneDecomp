@@ -19,7 +19,7 @@
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40 at 004baa81
 ;   core_game.cpp_FUN_004ce580 at 004cea50
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00546432
-;   core_set.cpp_FUN_0054d3c0 at 0054d7ee
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054d7ee
 ;   engine_dosio.cpp_FUN_004795e0 at 00479612
 ;   ... and 17 more
 ;

@@ -42,7 +42,7 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,S
       (damage_info->damage_type == DAMAGE_TYPE_HOLY_CROSS)) && ((this_ptr->base).hit_points <= 0.0))
   {
     sound_sndmain_cpp_killSfx_FUN_00556be0((this_ptr->base).bind_sound_handle);
-    core_charactr_cpp_FUN_0042ff70(this_ptr);
+    core_charactr_cpp_CCharacter_shatter_FUN_0042ff70(&this_ptr->base);
     return;
   }
   return;

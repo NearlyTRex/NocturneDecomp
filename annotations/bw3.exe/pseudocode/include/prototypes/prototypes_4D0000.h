@@ -37,6 +37,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EHeroType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -88,7 +89,7 @@ CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004d1fa0
 void __cdecl core_health_cpp_CHealthItem_archive_FUN_004d1fe0(CHealthItem *this_ptr);
 ECollisionType __cdecl core_health_cpp_CHealthItem_getCollisionType_FUN_004d2080(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004d2090(CHealthItem *this_ptr,CDemonActor *picker);
-undefined4 core_health_cpp_FUN_004d20c0(int param_1,int param_2);
+int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004d20c0(CHealthItem *this_ptr,CCharacter *user);
 void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004d2130(CHealthItem *this_ptr,CDemonActor *owner);
 void core_health_cpp_FUN_004d2150(void);
 CDemonActorType * __cdecl core_health_cpp_CHealthItemSmall_getActorType_FUN_004d2170(CHealthItemSmall *this_ptr);
@@ -100,7 +101,7 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004d22c0(CLocation *locatio
 int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004d2370(CVector3f *point,float radius);
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004d23f0(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004d24b0(CHero *this_ptr);
-void core_hero_cpp_FUN_004d2620(int param_1);
+CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004d2620(CHero *this_ptr,uint flags);
 void __cdecl core_hero_cpp_CHero_setup_FUN_004d26b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004d2720(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004d2760(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
@@ -119,14 +120,14 @@ bool core_hero_cpp_FUN_004d3040(CDemonActor *param_1);
 void core_hero_cpp_FUN_004d3210(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004d3460(int param_1);
+undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004d3460(CHero *this_ptr);
 undefined4 core_hero_cpp_FUN_004d3500(CCharacter *param_1);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004d3850(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004d3af0(CHero *this_ptr);
 int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr);
 int core_hero_cpp_FUN_004d3c90(CHero *param_1);
-bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2);
+bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero *this_ptr,char *class_name);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004d4090(CHero *this_ptr);
 void __cdecl core_hero_cpp_FUN_004d4160(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004d41a0(CHero *this_ptr,int hand_index);
@@ -134,7 +135,7 @@ void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004d41e0(CHero *this_ptr
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004d4200(CHero *this_ptr,int ai_task);
 int core_hero_cpp_FUN_004d4230(int param_1,float *param_2);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004d43e0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
-void core_hero_cpp_FUN_004d4410(int param_1);
+void __cdecl core_hero_cpp_CHero_reset_FUN_004d4410(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr);
 undefined4 core_hero_cpp_FUN_004d4840(CCharacter *param_1,undefined4 param_2);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004d48d0(CHero *this_ptr);
@@ -144,7 +145,7 @@ CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d4a
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d4b40(CHeroPlaceholder *this_ptr,uint flags);
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d4ba0(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
-CDemonActor * core_hero_cpp_FUN_004d4be0(int param_1);
+CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d4be0(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004d4c90(CHeroPlaceholder *this_ptr);
 undefined8 core_hero_cpp_FUN_004d4ce0(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d4e30(void);
@@ -243,8 +244,8 @@ bool core_inv_cpp_FUN_004dba80(CInventory *param_1,char *param_2);
 void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
 void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction);
 void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004dbc40(CInventory *this_ptr,int direction);
-void core_inv_cpp_FUN_004dbd80(void);
-void core_inv_cpp_FUN_004dbe70(undefined4 param_1,CDemonActor *param_2,int param_3,int param_4,int param_5,float param_6,int param_7);
+void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80(CInventory *this_ptr,int direction);
+void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
 void __cdecl core_inv_cpp_CInventory_save_FUN_004dc560(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004dc700(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FILE *file_handle);

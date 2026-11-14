@@ -113,7 +113,7 @@ section .text
     PUSH dword ptr [ESP + 0xdc]         ; 004445d2
     PUSH EBX                            ; 004445d9
     CALL core_colonel.cpp_FUN_00444b50  ; 004445da
-        ;   XREF to: 00444b50 (UNCONDITIONAL_CALL)  ; undefined core_colonel.cpp_FUN_00444b50()
+        ;   XREF to: 00444b50 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_FUN_00444b50(CColonel * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004445df
     PUSH dword ptr [ESP + 0xdc]         ; 004445e2
         ;   Label: LAB_004445e2

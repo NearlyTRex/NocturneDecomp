@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   end_index
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00483d80 at 00483df9
+;   shape_edittool.cpp_CPickList_sort_FUN_00483d80 at 00483df9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d26f6

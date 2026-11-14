@@ -57,9 +57,9 @@ int __cdecl FUN_00433f50(CCodec *this_ptr,void *ostream);
 // Address: 00433f60
 undefined4 FUN_00433f60(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5);
 
-// Original: support_codec.cpp_FUN_00433ff0
+// Original: support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0
 // Address: 00433ff0
-bool FUN_00433ff0(int *param_1,char *param_2,int *param_3,undefined4 param_4);
+bool __cdecl CCodec::processFromBuffer(CCodec *this_ptr,char *input,int *input_length,COutStream *ostream);
 
 // Original: support_codec.cpp_CCodec_processBuffer_FUN_00434070
 // Address: 00434070
@@ -69,9 +69,9 @@ int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length
 // Address: 004340f0
 undefined4 FUN_004340f0(int *param_1,char *param_2,char *param_3);
 
-// Original: support_codec.cpp_FUN_004341e0
+// Original: support_codec.cpp_CCodec_finalizeBuffer_FUN_004341e0
 // Address: 004341e0
-bool FUN_004341e0(int *param_1,char *param_2,int *param_3);
+int __cdecl CCodec::finalizeBuffer(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
 
 // Original: support_codec.cpp_CLZWDictionary_ctor_FUN_00434250
 // Address: 00434250
@@ -129,9 +129,9 @@ void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 // Address: 00434810
 undefined4 FUN_00434810(int param_1,int *param_2,undefined4 param_3);
 
-// Original: support_codec.cpp_FUN_00434910
+// Original: support_codec.cpp_CLZWCompress_finalize_FUN_00434910
 // Address: 00434910
-undefined4 FUN_00434910(int param_1,undefined4 param_2);
+int __cdecl CLZWCompress::finalize(CLZWCompress *this_ptr,COutStream *ostream);
 
 // Original: support_codec.cpp_CLZWDecompress_ctor_FUN_00434990
 // Address: 00434990
@@ -189,9 +189,9 @@ void __cdecl CCheesyCipher::setMode(CCheesyCipher *this_ptr,int param_2);
 // Address: 00434d30
 void __cdecl CCheesyCipher::setKey(CCheesyCipher *this_ptr,uint param_2);
 
-// Original: support_codec.cpp_FUN_00434d60
+// Original: support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60
 // Address: 00434d60
-uint FUN_00434d60(CCheesyCipher *param_1,byte param_2);
+uint __cdecl CCheesyCipher::transformByte(CCheesyCipher *this_ptr,byte param_2);
 
 // Original: support_codec.cpp_CCheesyCipher_process_FUN_00434dd0
 // Address: 00434dd0

@@ -32,9 +32,9 @@
 ;   core_door.cpp_CDoor_onOpened_FUN_00463d10
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
 ;   core_hero.cpp_FUN_004d3210
-;   core_hero.cpp_FUN_004d3460
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
@@ -152,8 +152,8 @@ section .text
         ;   XREF to: 004d453a (CONDITIONAL_JUMP)  ; caseD_c
     PUSH EBX                            ; 004d461a
     MOV dword ptr [EBX + 0x20ba0],ESI   ; 004d461b
-    CALL core_hero.cpp_FUN_004d3460     ; 004d4621
-        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3460()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460 ; 004d4621
+        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d4626
     PUSH EBX                            ; 004d4629
     CALL core_hero.cpp_FUN_004d3210     ; 004d462a

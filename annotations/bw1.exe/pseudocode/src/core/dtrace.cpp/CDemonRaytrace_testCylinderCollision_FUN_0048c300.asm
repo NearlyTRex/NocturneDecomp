@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_00558450 at 005584a3
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 at 005584a3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0152c2a8

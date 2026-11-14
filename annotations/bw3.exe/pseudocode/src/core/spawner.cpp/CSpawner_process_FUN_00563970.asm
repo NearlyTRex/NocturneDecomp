@@ -31,7 +31,7 @@
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004fc420
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_FUN_0053de10
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
@@ -184,8 +184,8 @@ section .text
     MOV EAX,[0x00603b28]                ; 00563b0b | g_CDemonSetPtr
     PUSH dword ptr [EBP + 0x20]         ; 00563b10
     PUSH EAX                            ; 00563b13
-    CALL core_setcolid.cpp_FUN_0053de10 ; 00563b14
-        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053de10()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 ; 00563b14
+        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0xbc],EAX      ; 00563b19
     FLD float ptr [ESP + 0xbc]          ; 00563b20
     ADD ESP,0x20                        ; 00563b27

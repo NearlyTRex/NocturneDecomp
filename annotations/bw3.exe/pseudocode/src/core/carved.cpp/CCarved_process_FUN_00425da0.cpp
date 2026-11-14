@@ -1029,7 +1029,7 @@ LAB_004269b6:
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
               ((CCharacter *)this_ptr,iVar5,bone_index,fVar22);
-    core_charactr_cpp_FUN_0042fc90();
+    core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042fc90((CCharacter *)this_ptr);
   }
   iVar5 = core_carved_cpp_FUN_00428520();
   if (((iStack_48 != 0) && (-1 < iVar5)) &&

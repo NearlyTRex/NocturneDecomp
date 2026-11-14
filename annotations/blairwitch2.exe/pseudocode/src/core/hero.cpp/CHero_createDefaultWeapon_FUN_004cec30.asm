@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004ce240 at 004ce37a
+;   core_hero.cpp_CHero_ctor_FUN_004ce240 at 004ce37a
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900

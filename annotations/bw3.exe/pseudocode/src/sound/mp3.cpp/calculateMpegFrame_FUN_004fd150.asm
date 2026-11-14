@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00503944
-;   sound_mp3.cpp_FUN_00502890 at 00502987
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890 at 00502987
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9ec7

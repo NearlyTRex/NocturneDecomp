@@ -28,9 +28,9 @@
 // FUNCTION PROTOTYPES - Range 0x480000
 // =============================================================================
 
-void shape_edittool_cpp_FUN_00480200(undefined4 param_1,int param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00480200(CEditorTools *this_ptr,int line_position);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_00480410(CEditorTools *param_1,int param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00480410(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00480db0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00480e30(CEditorTools *this_ptr,char *text_data);
 void __cdecl shape_edittool_cpp_FUN_00480f00(CEditorTools *this_ptr,float scale_factor,int text_color);
@@ -39,8 +39,8 @@ void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2);
 void shape_edittool_cpp_FUN_00481350(undefined4 param_1,int *param_2,int *param_3,uint param_4);
 void shape_edittool_cpp_FUN_00481920(undefined4 param_1,float *param_2,undefined4 param_3);
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0(CEditorTools *this_ptr,char *output_buffer);
-void shape_edittool_cpp_FUN_00481ab0(undefined4 param_1,int param_2,int param_3,int param_4);
-void shape_edittool_cpp_FUN_00481d70(void);
+void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_00481ab0(CEditorTools *this_ptr,int start_x,int start_y,int length);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_00481d70(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00481df0(CEditorTools *this_ptr,int cursor_type,int height,int width);
 undefined4 shape_edittool_cpp_FUN_00481ef0(void);
 void shape_edittool_cpp_FUN_00481f00(void);
@@ -87,18 +87,18 @@ void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(CPickList *thi
 int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(CPickList *this_ptr,int item_index);
 void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(CPickList *this_ptr,int item_index,int hotkey_code);
 int __cdecl shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(CPickList *this_ptr,int index);
-void shape_edittool_cpp_FUN_00484e30(CPickList *param_1,int param_2,char *param_3);
-void shape_edittool_cpp_FUN_00484eb0(CPickList *param_1,int param_2,int param_3);
+void __cdecl shape_edittool_cpp_CPickList_insert_FUN_00484e30(CPickList *this_ptr,int insert_index,char *string_data);
+void __cdecl shape_edittool_cpp_CPickList_remove_FUN_00484eb0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_00484f10(CPickList *this_ptr);
-void shape_edittool_cpp_FUN_00484f80(CStrList *param_1,int param_2,int param_3);
-void shape_edittool_cpp_FUN_00485010(CPickList *param_1,int param_2,int param_3);
+void __cdecl shape_edittool_cpp_CPickList_sort_FUN_00484f80(CPickList *this_ptr,int start_index,int end_index);
+void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00485010(CPickList *this_ptr,int index1,int index2);
 void shape_edittool_cpp_FUN_004850a0(int param_1,int param_2,int param_3,int param_4,int param_5);
 void shape_edittool_cpp_FUN_004852f0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_00485510(CEdScrollBar *this_ptr);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_00485550(CEdScrollBar *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_00485570(CEdScrollBar *this_ptr);
 void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_00485590(CEdScrollBar *this_ptr,int left_pos,int top_pos,int right_pos,int bottom_pos);
-void shape_edittool_cpp_FUN_00485640(CEdScrollBar *param_1);
+void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00485640(CEdScrollBar *this_ptr);
 void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004859e0(CEdScrollBar *this_ptr);
 void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollBar *this_ptr);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_00485ec0(CEdScrollBar *this_ptr);
@@ -108,10 +108,10 @@ CEdButton * __cdecl shape_edittool_cpp_CEdButton_ctor_FUN_00486020(CEdButton *th
 CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_00486050(CEdButton *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_FUN_00486070(CEdButton *this_ptr);
 void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004860d0(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text);
-void shape_edittool_cpp_FUN_00486120(int param_1,int param_2);
+void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00486120(CEdButton *this_ptr,int draw_border_flag);
 int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00486440(CEdButton *this_ptr);
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004864f0(char *button_text);
-int __cdecl shape_edittool_cpp_FUN_00486580(char *button_text);
+int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00486580(char *button_text);
 void shape_edittool_cpp_FUN_00486670(void);
 void shape_edittool_cpp_FUN_00486760(void);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00486780(CEdCheck *this_ptr);

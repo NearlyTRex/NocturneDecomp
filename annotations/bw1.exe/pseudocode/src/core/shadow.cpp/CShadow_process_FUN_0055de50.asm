@@ -34,12 +34,12 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00431cc0
-;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   ... and 25 more
 ;
@@ -73,8 +73,8 @@ section .text
     FILD dword ptr [EAX + 0x64]         ; 0055de92
     PUSH EDX                            ; 0055de95
     FSTP float ptr [EBP + 0x6e]         ; 0055de96
-    CALL core_charactr.cpp_FUN_00434790 ; 0055de99
-        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434790()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 ; 0055de99
+        ;   XREF to: 00434790 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00434790(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055de9e
     MOV ECX,dword ptr [EBP + 0x8e]      ; 0055dea1
     PUSH dword ptr [EBP + 0x92]         ; 0055dea7

@@ -41,8 +41,8 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_00433220
 ;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   ... and 34 more
@@ -1699,8 +1699,8 @@ section .text
     FADD float ptr [ESP + 0x4bc]        ; 0051a208
     PUSH EBX                            ; 0051a20f
     FSTP float ptr [EBX + 0x34]         ; 0051a210
-    CALL core_charactr.cpp_FUN_00433220 ; 0051a213
-        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433220()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433220 ; 0051a213
+        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433220(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0051a218
     MOV EAX,dword ptr [EBX + 0x26fc]    ; 0051a21b
         ;   Label: LAB_0051a21b
@@ -2051,8 +2051,8 @@ section .text
     FADD float ptr [ESP + 0x2a0]        ; 0051a709
     PUSH EBX                            ; 0051a710
     FSTP float ptr [ESP + 0x2a4]        ; 0051a711
-    CALL core_charactr.cpp_FUN_00433220 ; 0051a718
-        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433220()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433220 ; 0051a718
+        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433220(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0051a71d
     FLD float ptr [ESP + 0xa0]          ; 0051a720
     FADD double ptr [0x005cd197]        ; 0051a727 | DAT_005cd197
@@ -2409,8 +2409,8 @@ section .text
     FADD float ptr [ESP + 0x44]         ; 0051ac3e
     PUSH EBX                            ; 0051ac42
     FSTP float ptr [EBX + 0x34]         ; 0051ac43
-    CALL core_charactr.cpp_FUN_00433220 ; 0051ac46
-        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433220()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433220 ; 0051ac46
+        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433220(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 0051ac4b
     JMP 0x0051976f                      ; 0051ac4e
         ;   XREF to: 0051976f (UNCONDITIONAL_JUMP)  ; LAB_0051976f

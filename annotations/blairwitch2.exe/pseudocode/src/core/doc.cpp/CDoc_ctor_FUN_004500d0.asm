@@ -16,7 +16,7 @@
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041bd30
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
 ;
@@ -32,8 +32,8 @@ section .text
     SUB ESP,0x24                        ; 004500d4
     MOV EBX,dword ptr [ESP + 0x38]      ; 004500d7
     PUSH EBX                            ; 004500db
-    CALL core_hero.cpp_FUN_004ce240     ; 004500dc
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 004500dc
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     ADD ESP,0x4                         ; 004500e1
     ADD EAX,0x259b4                     ; 004500e4
     PUSH EAX                            ; 004500e9

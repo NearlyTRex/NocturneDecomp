@@ -16,8 +16,8 @@
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_enemy.cpp_FUN_0048a1b0
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_event.cpp_FUN_004946f0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5da526                       ; 005a03e4 | = "exorcism_death"
     MOV EDI,dword ptr [0x005fba60]      ; 005a03e9 | DAT_005fba60
     PUSH EDI                            ; 005a03ef
-    CALL core_event.cpp_FUN_004946f0    ; 005a03f0
-        ;   XREF to: 004946f0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004946f0()
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0 ; 005a03f0
+        ;   XREF to: 004946f0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 005a03f5
     JMP 0x005a039b                      ; 005a03f8
         ;   XREF to: 005a039b (UNCONDITIONAL_JUMP)  ; LAB_005a039b

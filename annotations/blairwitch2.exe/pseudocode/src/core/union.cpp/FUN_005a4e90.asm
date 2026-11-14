@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_union.cpp_FUN_005a5460
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 005a4ef7 (CONDITIONAL_JUMP)  ; LAB_005a4ef7
     LEA ESI,[EBX + 0x2b4]               ; 005a4ebb
     PUSH ESI                            ; 005a4ec1
-    CALL core_motion.cpp_FUN_005035c0   ; 005a4ec2
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a4ec2
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a4ec7
     ADD ESP,0x4                         ; 005a4eca
     CMP EAX,0x2                         ; 005a4ecd

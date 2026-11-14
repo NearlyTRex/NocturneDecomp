@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_hero.cpp_FUN_004d0a40
+;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00503980
@@ -158,8 +158,8 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x617a68] ; 004fd0a1 | PTR_s_CGabriella_00617a68
     PUSH EDX                            ; 004fd0a8
     PUSH EBX                            ; 004fd0a9
-    CALL core_hero.cpp_FUN_004d0a40     ; 004fd0aa
-        ;   XREF to: 004d0a40 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d0a40()
+    CALL core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40 ; 004fd0aa
+        ;   XREF to: 004d0a40 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlaceholder * this_ptr, EHeroType hero_type)
     ADD ESP,0x8                         ; 004fd0af
     MOV dword ptr [ESP],EAX             ; 004fd0b2
     JMP 0x004fd085                      ; 004fd0b5

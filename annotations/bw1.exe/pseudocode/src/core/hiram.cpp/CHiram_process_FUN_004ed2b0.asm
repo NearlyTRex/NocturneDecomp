@@ -21,7 +21,7 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
-;   core_glass.cpp_FUN_004e34b0
+;   core_glass.cpp_CGlass_shatter_FUN_004e34b0
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
@@ -137,8 +137,8 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 004ed39f
     PUSH ESI                            ; 004ed3a2
     PUSH EAX                            ; 004ed3a3
-    CALL core_glass.cpp_FUN_004e34b0    ; 004ed3a4
-        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004e34b0()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004e34b0 ; 004ed3a4
+        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004e34b0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004ed3a9
     JMP 0x004ed2ed                      ; 004ed3ac
         ;   XREF to: 004ed2ed (UNCONDITIONAL_JUMP)  ; LAB_004ed2ed

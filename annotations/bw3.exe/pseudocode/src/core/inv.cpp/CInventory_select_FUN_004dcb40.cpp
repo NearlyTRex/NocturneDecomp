@@ -19,7 +19,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
   char *pcVar6;
   byte bVar7;
   char local_114 [256];
-  CDemonActor *local_14;
+  CHealthItem *local_14;
   
   bVar7 = 0;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"CAmmo");
@@ -41,9 +41,10 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
       }
     }
     else {
-      local_14 = core_actor_cpp_castToClassHash_FUN_0040c840
+      local_14 = (CHealthItem *)
+                 core_actor_cpp_castToClassHash_FUN_0040c840
                            (actor_ptr,g_CHealthItemClassInfo.name_hash);
-      if (local_14 == (CDemonActor *)0x0) {
+      if (local_14 == (CHealthItem *)0x0) {
         _DAT_01d71de0 = "..\\core\\inv.cpp";
         _DAT_01d71de4 = 0x7c2;
         core_main_c_FUN_004e4330("CInventory::select - Catch 22");
@@ -105,7 +106,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_004b46b0(g_CGamePtr,local_114,5.0);
-      iVar2 = core_health_cpp_FUN_004d20c0(local_14,*(uint *)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
+      iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004d20c0
+                        (local_14,*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
       if (iVar2 < 1) {
         core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(this_ptr,actor_ptr,1);
         return 1;

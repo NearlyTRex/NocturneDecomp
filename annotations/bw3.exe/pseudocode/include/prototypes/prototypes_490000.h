@@ -54,9 +54,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_00491b80(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_00491bf0(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00494630(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004946f0(CEventList *param_1,char *param_2,int param_3);
-void core_event_cpp_FUN_00494880(int param_1);
-void core_event_cpp_FUN_004948e0(CEventList *param_1,char *param_2,int param_3);
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_00494880(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0(CEventList *this_ptr,char *name,int add_flag);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00494a70(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_00494bf0(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_00494d00(CEventList *this_ptr,char *str);

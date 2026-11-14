@@ -171,7 +171,7 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
     }
   }
   core_charactr_cpp_FUN_0042e8c0(param_1,param_2);
-  core_charactr_cpp_FUN_00432220(param_1,param_2);
+  core_charactr_cpp_CCharacter_advanceGesture_FUN_00432220(param_1,param_2);
   fVar1 = param_1->stagger_amount - param_2;
   param_1->stagger_amount = fVar1;
   if (fVar1 < 0.0) {

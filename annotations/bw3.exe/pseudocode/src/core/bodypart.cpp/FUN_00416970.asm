@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_FUN_00416970(int param_1)
+; void core_bodypart_cpp_FUN_00416970(CBodyPart *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_bodypart.cpp_setCounts_FUN_00414910
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x0                            ; 00416992
     PUSH EBX                            ; 00416994
     MOV dword ptr [EBX + 0x70],0x2      ; 00416995
-    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 0041699c
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910 ; 0041699c
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x168]               ; 004169a1
     ADD ESP,0xc                         ; 004169a7
     MOV EDX,EAX                         ; 004169aa

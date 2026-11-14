@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[16]:
+;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20 at 00485085
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004844d0
+;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0 at 0047f0ab
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047ddd7
+;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047b174
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004832c9
 ;   shape_edittool.cpp_FUN_0047a720 at 0047a767
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a802
 ;   shape_edittool.cpp_FUN_0047a890 at 0047a8f8
-;   shape_edittool.cpp_FUN_0047afb0 at 0047b174
-;   shape_edittool.cpp_FUN_0047dc40 at 0047ddd7
 ;   shape_edittool.cpp_FUN_0047e870 at 0047e9a3
-;   shape_edittool.cpp_FUN_0047eff0 at 0047f0ab
-;   shape_edittool.cpp_FUN_0047f210 at 0047f327
-;   shape_edittool.cpp_FUN_0047fd00 at 0047fd93
 ;   ... and 6 more
 ;
 ; Referenced Globals:

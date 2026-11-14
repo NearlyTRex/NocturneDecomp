@@ -176,7 +176,8 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00527d70(CRifle *this_ptr)
       else {
         iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0(this_ptr_01);
         if (iVar2 == 0) break;
-        core_glass_cpp_FUN_004cc040();
+        core_glass_cpp_CGlass_shatter_FUN_004cc040
+                  (this_ptr_01,&g_CDemonSetPtr->collision_impact_position);
       }
     }
     else {

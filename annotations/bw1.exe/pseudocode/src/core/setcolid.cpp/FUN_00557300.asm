@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setcolid_cpp_FUN_00557300(int param_1,float *param_2,float *param_3)
+; float core_setcolid_cpp_FUN_00557300(CDemonSet *param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
@@ -31,8 +31,8 @@
 ;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10 at 00473f7c
 ;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e49e
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b64c6
+;   core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0 at 004c812b
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0 at 004ca3d9
-;   core_gabriela.cpp_FUN_004c7aa0 at 004c812b
 ;   core_game.cpp_FUN_004d9260 at 004d9a5e
 ;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8850
 ;   ... and 11 more
@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_0048b150
-;   core_setcolid.cpp_FUN_005578b0
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     PUSH EBP                            ; 005573ac
     PUSH 0xbf800000                     ; 005573ad
     PUSH EBX                            ; 005573b2
-    CALL core_setcolid.cpp_FUN_005578b0 ; 005573b3
-        ;   XREF to: 005578b0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005578b0()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0 ; 005573b3
+        ;   XREF to: 005578b0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x5c],EAX      ; 005573b8
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005573bc
     MOV dword ptr [EBX + 0x15f6dc],EAX  ; 005573c0

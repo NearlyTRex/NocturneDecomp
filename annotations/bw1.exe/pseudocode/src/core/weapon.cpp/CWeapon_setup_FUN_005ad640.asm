@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-;   core_weapon.cpp_FUN_005ade40
+;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   XREF to: 004688e0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005ad65a
     PUSH EBX                            ; 005ad65d
-    CALL core_weapon.cpp_FUN_005ade40   ; 005ad65e
-        ;   XREF to: 005ade40 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ade40()
+    CALL core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40 ; 005ad65e
+        ;   XREF to: 005ade40 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005ad663
     MOV dword ptr [EBX + 0x574],0x0     ; 005ad666
     POP EBX                             ; 005ad670

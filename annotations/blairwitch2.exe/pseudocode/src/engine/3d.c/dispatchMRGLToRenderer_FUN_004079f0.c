@@ -89,7 +89,7 @@ LAB_00407bd2:
           }
           _DAT_007ba070 = 0;
         }
-        engine_texture_cpp_FUN_00574e00(mrgl);
+        engine_texture_cpp_ensureTextureLoaded_FUN_00574e00((SMRGLTextureBasic *)mrgl);
       }
     }
     else if (0x14 < bVar3) {

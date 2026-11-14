@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,float *param_2,float *param_3,undefined4 *param_4,undefined4 *param_5)
+; float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xc8]:8  local_c8
@@ -50,7 +50,7 @@
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e130 at 0041e1cf
 ;   core_dtrace.cpp_FUN_0048b040 at 0048b05d
 ;   core_gore.cpp_CFootstep_init_FUN_004e56e0 at 004e57b7
-;   core_particle.cpp_FUN_00532250 at 005323c7
+;   core_particle.cpp_CParticle_process_FUN_00532250 at 005323c7
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110 at 00557187
 ;   core_setcolid.cpp_FUN_00557300 at 00557350
 ;   core_tvbat.cpp_CTVBat_process_FUN_005a4260 at 005a4abb
@@ -59,7 +59,7 @@
 ;   undefined4 DAT_005db94c
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00458210
+;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
 ;   crt_math.c_floor_FUN_005c0880
 ;   crt_math.c_round_FUN_005c03a0
@@ -546,8 +546,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 0048b76c
     PUSH ECX                            ; 0048b76f
     PUSH EAX                            ; 0048b770
-    CALL core_dcube.cpp_FUN_00458210    ; 0048b771
-        ;   XREF to: 00458210 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00458210()
+    CALL core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210 ; 0048b771
+        ;   XREF to: 00458210 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210(CDemonCube * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * hit_normal, ...)
     MOV dword ptr [ESP + 0xbc],EAX      ; 0048b776
     FLD float ptr [ESP + 0xbc]          ; 0048b77d
     ADD ESP,0x14                        ; 0048b784

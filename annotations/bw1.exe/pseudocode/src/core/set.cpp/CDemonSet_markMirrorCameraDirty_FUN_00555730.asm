@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004e34b0 at 004e3882
+;   core_glass.cpp_CGlass_shatter_FUN_004e34b0 at 004e3882
 ;
 ; *****************************************************************************
 

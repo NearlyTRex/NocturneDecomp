@@ -206,7 +206,7 @@ section .text
     FSTP float ptr [ESP]                ; 005b0ed9
     PUSH EBX                            ; 005b0edc
     CALL shape_edittool.cpp_FUN_0047fd00 ; 005b0edd
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fd00()
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 005b0ee2
     JMP 0x005b0e5c                      ; 005b0ee5
         ;   XREF to: 005b0e5c (UNCONDITIONAL_JUMP)  ; LAB_005b0e5c

@@ -161,7 +161,7 @@ LAB_004d91eb:
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     iVar3 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,1);
     if (iVar3 != 0) goto LAB_004d91eb;
-    core_game_cpp_FUN_004cbf20(this_ptr);
+    core_game_cpp_CGame_updateDT_FUN_004cbf20(this_ptr);
     local_14 = local_14 - this_ptr->delta_time_float * _DAT_005e35ec;
   } while( true );
 }

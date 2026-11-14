@@ -17,17 +17,17 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
   float fVar4;
   float fVar5;
   int iVar6;
-  float *pfVar7;
+  uint *puVar7;
   byte bVar8;
-  float afStackY_100c [999];
+  uint auStackY_100c [999];
   SDamageInfo SStack_60;
-  float fStack_24;
-  float afStack_20 [4];
+  CVector3f CStack_24;
+  float fStack_18;
   
   bVar8 = 0;
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
-    core_bodypart_cpp_setCounts_FUN_00418d00(this_ptr,0,0);
+    core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(this_ptr,0,0);
     pCVar2 = &(this_ptr->bounding_box).max;
     if (pCVar2 != (CVector3f *)&DAT_02c8af28) {
       pCVar2->x = _DAT_02c8af28;
@@ -51,10 +51,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
         fVar3 = this_ptr->physics_timer - delta_time;
         this_ptr->physics_timer = fVar3;
         if (0.0 <= fVar3) {
-          pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
-          fStack_24 = (this_ptr->base).location.position.x;
-          afStack_20[(uint)bVar8 * -2] = *pfVar7;
-          afStack_20[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] = pfVar7[(uint)bVar8 * -2 + 1];
+          puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
+          CStack_24.x = (this_ptr->base).location.position.x;
+          *(uint *)((int)&CStack_24 + (uint)bVar8 * -8 + 4) = *puVar7;
+          *(uint *)((int)&CStack_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+               puVar7[(uint)bVar8 * -2 + 1];
           core_box_cpp_CBox_process_FUN_0041e0d0(&this_ptr->physics_box,delta_time);
           (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
           (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
@@ -79,9 +80,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_pt
                    core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(10.0,15.0);
               SStack_60.attacker = &this_ptr->base;
               SStack_60.wielder = &this_ptr->base;
-              afStack_20[2] = SStack_60.damage_amount;
-              core_setcolid_cpp_FUN_00559350
-                        (g_CDemonSetPtr,&fStack_24,&(this_ptr->base).location,&SStack_60);
+              fStack_18 = SStack_60.damage_amount;
+              core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00559350
+                        (g_CDemonSetPtr,&CStack_24,&(this_ptr->base).location.position,&SStack_60);
               core_bodypart_cpp_CBodyPart_processFires_FUN_00419940(this_ptr,delta_time);
               return;
             }

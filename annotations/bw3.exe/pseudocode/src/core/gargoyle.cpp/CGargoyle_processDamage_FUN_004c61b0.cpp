@@ -54,7 +54,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c61b0(CGargoyle *t
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,8,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"@gargoyle-shatter.wav" + 1);
-        core_charactr_cpp_FUN_004300e0(this_ptr,0,0xbf800000,1);
+        core_charactr_cpp_CCharacter_dismember_FUN_004300e0
+                  ((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0,1);
       }
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);

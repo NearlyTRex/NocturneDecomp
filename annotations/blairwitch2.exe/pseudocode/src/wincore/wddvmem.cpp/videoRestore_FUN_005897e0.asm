@@ -30,7 +30,7 @@
 ;   crt_ddraw.c_DirectDrawCreate
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
 ;   SetFocus
-;   wincore_wddvmem.cpp_FUN_00588a50
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
     PUSH EDX                            ; 005898b0
     MOV ECX,dword ptr [0x006141b8]      ; 005898b1 | DAT_006141b8
     PUSH ECX                            ; 005898b7
-    CALL wincore_wddvmem.cpp_FUN_00588a50 ; 005898b8
-        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00588a50(int width, int height, int bits_per_pixel)
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50 ; 005898b8
+        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005898bd
     POP EDI                             ; 005898c0
     MOV EBX,dword ptr [0x02664628]      ; 005898c1 | DAT_02664628

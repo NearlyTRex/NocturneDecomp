@@ -12,9 +12,10 @@ void core_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
 
 {
   int iVar1;
-  uint uVar2;
+  SMotion *pSVar2;
   byte bVar3;
   float afStackY_1010 [1008];
+  double dVar4;
   CVector3i local_34;
   float local_28;
   float afStack_24 [4];
@@ -37,9 +38,10 @@ void core_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   engine_special_cpp_FUN_0055d723((SProjectedVertex *)*DAT_0060b280,&local_34);
   iVar1 = *DAT_0060b280;
   if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
-    uVar2 = core_motion_cpp_FUN_005035c0
-                      (param_1 + 1,(double)*(float *)(param_1[0x66].actor_name + 0xc));
-    core_muzzle_cpp_FUN_0059db70(&param_1[0x62].particle_systems[2].stop_after_fade,uVar2);
+    dVar4 = (double)*(float *)(param_1[0x66].actor_name + 0xc);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                       ((CMotionController *)(param_1 + 1));
+    core_muzzle_cpp_FUN_0059db70(&param_1[0x62].particle_systems[2].stop_after_fade,pSVar2,dVar4);
     _sprintf((char *)0x2668360,"@(%s)\n%s:[%s] (%0.2f)" + 1);
     engine_2d_c_drawText_FUN_00401fe0
               ((char *)0x2668360,*(int *)(iVar1 + 0x10) >> 0x10,*(int *)(iVar1 + 0x14) >> 0x10);

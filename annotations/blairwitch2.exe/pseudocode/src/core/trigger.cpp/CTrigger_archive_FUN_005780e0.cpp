@@ -54,7 +54,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005780e0(CTrigger *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->hit_points,"hitPoints");
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->pressure_plate,"pressurePlate");
     if (g_CTriggerClassVersion < 8) {
-      core_trigger_cpp_FUN_00578650(this_ptr);
+      core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00578650(this_ptr);
     }
     else {
       core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->test_radius,"testRadius");

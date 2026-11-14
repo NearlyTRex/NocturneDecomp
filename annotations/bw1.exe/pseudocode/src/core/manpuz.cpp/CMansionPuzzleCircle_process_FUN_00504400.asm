@@ -18,8 +18,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_00506220
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0
 ;   core_manpuz.cpp_FUN_00504ee0
-;   core_manpuz.cpp_FUN_005062a0
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     PUSH ESI                            ; 0050448b
         ;   Label: LAB_0050448b
     PUSH EBX                            ; 0050448c
-    CALL core_manpuz.cpp_FUN_005062a0   ; 0050448d
-        ;   XREF to: 005062a0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_005062a0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0 ; 0050448d
+        ;   XREF to: 005062a0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC ESI                             ; 00504492
     ADD ESP,0x8                         ; 00504493
     CMP ESI,0x2                         ; 00504496

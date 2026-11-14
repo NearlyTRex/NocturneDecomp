@@ -22,7 +22,7 @@ void engine_texture_cpp_FUN_00575150(void)
   byte *puVar8;
   byte *puVar9;
   char *pcVar10;
-  int in_stack_00000004;
+  SMRGLTextureBasic *in_stack_00000004;
   char *in_stack_00000008;
   char acStack_360 [256];
   char acStack_260 [256];
@@ -41,7 +41,7 @@ void engine_texture_cpp_FUN_00575150(void)
   int iStack_10;
   
   if (in_stack_00000008 == (char *)0x0) {
-    engine_texture_cpp_FUN_00574e00();
+    engine_texture_cpp_ensureTextureLoaded_FUN_00574e00(in_stack_00000004);
     return;
   }
   if (_DAT_0264bbac == (void *)0x0) {
@@ -81,7 +81,7 @@ void engine_texture_cpp_FUN_00575150(void)
     if (iVar3 == 0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x580;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length",in_stack_00000004 + 8);
+      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length",in_stack_00000004->texture_name);
     }
     support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
               (&CStack_60,pvStack_2c,(int)pvStack_14 * (int)pvStack_14);
@@ -177,7 +177,7 @@ void engine_texture_cpp_FUN_00575150(void)
     support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_60,0);
     return;
   }
-  pcVar10 = (char *)(in_stack_00000004 + 8);
+  pcVar10 = in_stack_00000004->texture_name;
   do {
     cVar2 = *in_stack_00000008;
     *pcVar10 = cVar2;
@@ -187,6 +187,6 @@ void engine_texture_cpp_FUN_00575150(void)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  engine_texture_cpp_FUN_00574e00();
+  engine_texture_cpp_ensureTextureLoaded_FUN_00574e00(in_stack_00000004);
   return;
 }

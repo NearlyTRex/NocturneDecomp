@@ -19,7 +19,8 @@ int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirGroup_FUN_00541410(CDemonSet 
     do {
       iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_005419e0(this_ptr,box_index_00);
       if (iVar2 == iVar1) {
-        iVar2 = core_setdir_cpp_FUN_00541350(this_ptr,box_index_00,point);
+        iVar2 = core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00541350(this_ptr,box_index_00,point)
+        ;
         if (iVar2 != 0) {
           return 1;
         }

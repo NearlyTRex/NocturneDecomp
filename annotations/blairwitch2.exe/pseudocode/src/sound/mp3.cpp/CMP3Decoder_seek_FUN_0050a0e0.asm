@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   sample_offset
 ;
 ; XREF[2]:
-;   sound_mp3.cpp_FUN_00509db0 at 00509ede
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0 at 00509ede
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50 at 0054dcf9
 ;
 ; Called Functions:

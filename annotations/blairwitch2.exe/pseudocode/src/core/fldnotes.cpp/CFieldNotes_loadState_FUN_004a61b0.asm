@@ -41,7 +41,7 @@
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   engine_alphabit.cpp_FUN_0040dd20
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 ;
 ; *****************************************************************************
@@ -265,8 +265,8 @@ section .text
     PUSH 0xff                           ; 004a6423
     ADD EAX,0x88                        ; 004a6428
     PUSH EAX                            ; 004a642d
-    CALL engine_alphabit.cpp_FUN_0040dd20 ; 004a642e
-        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dd20()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20 ; 004a642e
+        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004a6433
     JMP 0x004a63e0                      ; 004a6436
         ;   XREF to: 004a63e0 (UNCONDITIONAL_JUMP)  ; LAB_004a63e0

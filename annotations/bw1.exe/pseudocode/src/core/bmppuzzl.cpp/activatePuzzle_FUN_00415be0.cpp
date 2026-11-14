@@ -17,6 +17,6 @@ void __cdecl core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(CPuzzle *puzzle,int a
     DAT_007c3980 = _DAT_01c43544;
   }
   (**(code **)((int)puzzle->vtable + 0x14))(puzzle,activate);
-  core_game_cpp_FUN_004d19d0(g_CGamePtr);
+  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(g_CGamePtr);
   return;
 }

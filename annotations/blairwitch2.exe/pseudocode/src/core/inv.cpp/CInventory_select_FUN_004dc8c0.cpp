@@ -30,7 +30,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CD
   if (iVar2 == 0) {
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CWeapon");
     if (iVar2 != 0) {
-      core_inv_cpp_FUN_004db9d0(this_ptr,param_2,5,1);
+      core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0(this_ptr,param_2,5,1);
       return 0;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CHealthItem");
@@ -122,7 +122,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CD
       iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004cdf90
                         (local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));
       if (iVar2 < 1) {
-        core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);
+        core_inv_cpp_CInventory_removeItem_FUN_004db8e0(this_ptr,param_2,1);
         return 1;
       }
     }
@@ -174,6 +174,6 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CD
   if (local_14[1].particle_systems[1].fade_start != 0.0) {
     return 0;
   }
-  core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);
+  core_inv_cpp_CInventory_removeItem_FUN_004db8e0(this_ptr,param_2,1);
   return 1;
 }

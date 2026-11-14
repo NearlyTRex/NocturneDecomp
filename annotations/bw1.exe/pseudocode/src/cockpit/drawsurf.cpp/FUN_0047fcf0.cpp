@@ -9,6 +9,7 @@
 void __cdecl cockpit_drawsurf_cpp_FUN_0047fcf0(CDrawSurface *this_ptr)
 
 {
-  cockpit_drawsurf_cpp_FUN_0047fb20(this_ptr,0,0,this_ptr->width + -1,this_ptr->height + -1);
+  cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20
+            (this_ptr,0,0,this_ptr->width + -1,this_ptr->height + -1);
   return;
 }

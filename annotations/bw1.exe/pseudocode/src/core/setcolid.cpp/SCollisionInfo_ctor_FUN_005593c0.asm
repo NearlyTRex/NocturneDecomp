@@ -15,8 +15,8 @@
 ;   core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290 at 005362a5
 ;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0053ab00 at 0053ab26
 ;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 00539f52
-;   core_setcolid.cpp_FUN_005562c0 at 005564a1
-;   core_setcolid.cpp_FUN_005578b0 at 00557a4b
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_005578b0 at 00557a4b
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 at 005585b8
 ;   ... and 6 more
 ;
 ; *****************************************************************************

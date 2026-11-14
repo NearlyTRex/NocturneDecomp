@@ -42,7 +42,7 @@ CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_004406d0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00440760(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_004407f0(int start_x,int start_y,int depth_reciprocal);
-void core_dcamera_cpp_FUN_00440a50(void);
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00440a50(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00440e90(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
@@ -55,7 +55,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_004425d0(CDe
 void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00442710(CDemonCamera *this_ptr,int plane_index,uint blend_alpha);
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00442bf0(CDemonCamera *this_ptr,SFog *fog_config);
-int core_dcamera_cpp_FUN_00442cb0(int param_1,int *param_2);
+int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00442cb0(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);
 void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int param_2);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00(CDemonCamera *this_ptr,int alpha_index);
@@ -92,7 +92,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCu
 void core_dcube_cpp_FUN_004466c0(int *param_1);
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_004467a0(CDemonCube *this_ptr,_FILE *file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *this_ptr,uint rendering_mode);
-float core_dcube_cpp_FUN_00446b60(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
+float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00446b60(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00446d20(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_FUN_00446df0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 void core_dcube_cpp_FUN_00446f50(void);
@@ -186,16 +186,16 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_0044dcb0(CKey
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_0044dcd0(CKeyFramedModel *this_ptr,char *filename);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFramedModel *this_ptr,_FILE *file);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFramedModel *this_ptr,_FILE *file);
-void core_dmodel_cpp_FUN_0044e590(int param_1);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_0044e590(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_0044e6a0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags);
 CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(CKeyFramedModel *this_ptr,int frame_index);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
-void core_dmodel_cpp_FUN_0044ea80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_0044ea80(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_0044efe0(CKeyFramedModel *this_ptr);
-float core_dmodel_cpp_FUN_0044f020(CKeyFramedModel *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,float *param_5);
+float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_0044f020(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_0044f580(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
 int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_0044f670(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760(CKeyFramedModel *this_ptr);

@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_00547e10 at 00547e8f
-;   core_trigger.cpp_FUN_00578650 at 005786f0
+;   core_trigger.cpp_CTrigger_calculateTestRadius_FUN_00578650 at 005786f0
 ;   wincore_winrun.cpp_sleep_FUN_0058fd90 at 0058fdbb
 ;
 ; Called Functions:

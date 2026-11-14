@@ -10,8 +10,8 @@
 ; CVector3f *      Stack[0x10]:4   vertex3
 ;
 ; XREF[8]:
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020 at 0044f200
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840 at 0044fae0
-;   core_dmodel.cpp_FUN_0044f020 at 0044f200
 ;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080 at 004e54a1
 ;   core_setcolid.cpp_FUN_00534ea0 at 00535326
 ;   core_setcolid.cpp_FUN_00536cb0 at 00536dc4

@@ -225,8 +225,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 0058bb3a
         ;   Label: LAB_0058bb3a
     PUSH ESI                            ; 0058bb40
-    CALL core_motion.cpp_FUN_005035c0   ; 0058bb41
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058bb41
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0058bb46
     PUSH dword ptr [EBP + 0x92]         ; 0058bb49
     MOV EDI,dword ptr [EAX + 0x24]      ; 0058bb4f
@@ -312,8 +312,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0058bc35
         ;   Label: LAB_0058bc35
     PUSH EAX                            ; 0058bc3b
-    CALL core_motion.cpp_FUN_005035c0   ; 0058bc3c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058bc3c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058bc41
     ADD ESP,0x4                         ; 0058bc44
     CMP EAX,0xd                         ; 0058bc47
@@ -1849,8 +1849,8 @@ section .text
         ;   XREF to: 0058ce03 (CONDITIONAL_JUMP)  ; LAB_0058ce03
     ADD EAX,0x2b4                       ; 0058ce18
     PUSH EAX                            ; 0058ce1d
-    CALL core_motion.cpp_FUN_005035c0   ; 0058ce1e
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058ce1e
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058ce23
     ADD ESP,0x4                         ; 0058ce26
     CMP EAX,0x8                         ; 0058ce29

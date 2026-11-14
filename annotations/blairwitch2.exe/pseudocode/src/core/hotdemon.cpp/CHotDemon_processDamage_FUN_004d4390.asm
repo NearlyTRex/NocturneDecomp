@@ -17,8 +17,8 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -53,8 +53,8 @@ section .text
     JNC 0x004d448c                      ; 004d43d2
         ;   XREF to: 004d448c (CONDITIONAL_JUMP)  ; LAB_004d448c
     PUSH EBX                            ; 004d43d8
-    CALL core_motion.cpp_FUN_005035c0   ; 004d43d9
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d43d9
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d43de
     ADD ESP,0x4                         ; 004d43e1
     CMP EAX,0x6                         ; 004d43e4
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 004d448c
         ;   Label: LAB_004d448c
     MOV dword ptr [EBP + 0x25a8],0x0    ; 004d448d
-    CALL core_motion.cpp_FUN_005035c0   ; 004d4497
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d4497
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d449c
     ADD ESP,0x4                         ; 004d449f
     CMP EAX,0x4                         ; 004d44a2

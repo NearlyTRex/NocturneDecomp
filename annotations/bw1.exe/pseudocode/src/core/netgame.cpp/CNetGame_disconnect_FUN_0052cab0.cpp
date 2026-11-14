@@ -39,7 +39,7 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(CNetGame *this_pt
       _DAT_01d51da0 = iVar2;
       if (this_ptr->server_player_index < 0) {
 LAB_0052cc24:
-        shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
       }
       else {
         do {
@@ -63,7 +63,8 @@ LAB_0052cc24:
                       (g_CEditorToolsPtr,"Couldn't contact server to disconnect.");
             goto LAB_0052cc24;
           }
-          shape_edittool_cpp_FUN_004962b0(g_CEditorToolsPtr,local_24 * _DAT_005eb8e8,0x453b8000);
+          shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0
+                    (g_CEditorToolsPtr,local_24 * _DAT_005eb8e8,3000.0);
           while( true ) {
             local_30 = (float)(_DAT_01d51da0 - iVar3) * (float)_DAT_005eb8e0;
             if (local_30 < 0.0) {
@@ -89,7 +90,7 @@ LAB_0052cc24:
           iVar3 = _DAT_01d51da0;
           core_netgame_cpp_CNetGame_receivePackets_FUN_0052d360(this_ptr);
         } while (-1 < this_ptr->server_player_index);
-        shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
       }
     }
     if (this_ptr->connection_type == CONNECTION_HOST) {
@@ -110,7 +111,7 @@ LAB_0052cc24:
       _DAT_01d51da0 = iVar2;
       if (this_ptr->player_count < 2) {
 LAB_0052ce47:
-        shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
       }
       else {
         do {
@@ -134,7 +135,8 @@ LAB_0052ce47:
                       (g_CEditorToolsPtr,"Couldn't connect to all clients to disconnect.");
             goto LAB_0052ce47;
           }
-          shape_edittool_cpp_FUN_004962b0(g_CEditorToolsPtr,local_2c * _DAT_005eb8e8,0x459c4000);
+          shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0
+                    (g_CEditorToolsPtr,local_2c * _DAT_005eb8e8,5000.0);
           while( true ) {
             local_28 = (float)(_DAT_01d51da0 - iVar3) * (float)_DAT_005eb8e0;
             if (local_28 < 0.0) {
@@ -169,7 +171,7 @@ LAB_0052ce47:
           iVar3 = _DAT_01d51da0;
           core_netgame_cpp_CNetGame_receivePackets_FUN_0052d360(this_ptr);
         } while (1 < this_ptr->player_count);
-        shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
       }
     }
   }

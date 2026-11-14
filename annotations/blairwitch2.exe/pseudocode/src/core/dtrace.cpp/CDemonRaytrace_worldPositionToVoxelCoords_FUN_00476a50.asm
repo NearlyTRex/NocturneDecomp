@@ -16,7 +16,7 @@
 ; XREF[7]:
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00477550 at 004775b5
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_00477430 at 00477494
-;   core_particle.cpp_FUN_00510ef0 at 0051101c
+;   core_particle.cpp_CParticle_process_FUN_00510ef0 at 0051101c
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00512a70 at 00512a9c
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005121a0 at 0051225b
 ;   core_path.cpp_getOrCreatePathMap_FUN_00513d30 at 00513d76

@@ -19,8 +19,8 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_scat.cpp_CScat_isWeaponReady_FUN_0051fcb0
 ;
 ; *****************************************************************************
@@ -90,16 +90,16 @@ section .text
     PUSH ESI                            ; 0051fbd2
         ;   Label: LAB_0051fbd2
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0051fbd3
-    CALL core_motion.cpp_FUN_005035c0   ; 0051fbdd
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0051fbdd
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0051fbe2
     ADD ESP,0x4                         ; 0051fbe5
     CMP EAX,0x5                         ; 0051fbe8
     JZ 0x0051fc2e                       ; 0051fbeb
         ;   XREF to: 0051fc2e (CONDITIONAL_JUMP)  ; LAB_0051fc2e
     PUSH ESI                            ; 0051fbed
-    CALL core_motion.cpp_FUN_005035c0   ; 0051fbee
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0051fbee
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0051fbf3
     ADD ESP,0x4                         ; 0051fbf6
     CMP EAX,0x4                         ; 0051fbf9

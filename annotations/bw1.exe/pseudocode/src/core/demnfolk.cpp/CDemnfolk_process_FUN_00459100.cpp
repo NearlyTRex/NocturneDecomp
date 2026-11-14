@@ -1104,12 +1104,15 @@ LAB_0045a676:
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar21 = (float10)fcos((float10)fStack_88);
               fVar22 = (float10)fsin((float10)fStack_88);
-              fStack_44 = (float)core_setcolid_cpp_FUN_00558450
-                                           (g_CDemonSetPtr,
-                                            (this_ptr->base).base.base.location.position.x,
-                                            (this_ptr->base).base.base.location.position.z,
-                                            (float)(fVar22 * (float10)_DAT_005d8093),
-                                            (float)(fVar21 * (float10)_DAT_005d8093));
+              fStack_44 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450
+                                    (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
+                                     (this_ptr->base).base.base.location.position.z,
+                                     (float)(fVar22 * (float10)_DAT_005d8093),
+                                     (float)(fVar21 * (float10)_DAT_005d8093),
+                                     (this_ptr->base).base.collision_cylinder_radius,
+                                     (this_ptr->base).base.base.location.position.y +
+                                     (this_ptr->base).base.collision_cylinder_bottom,
+                                     (this_ptr->base).base.base.location.position.y + fStack_18);
               in_stack_fffffac0 = (CDemnfolk *)0x45a272;
               pCStack_14 = (CCharacter_full_vtable *)fStack_44;
               core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
@@ -1279,7 +1282,7 @@ LAB_00459d36:
       core_charactr_cpp_FUN_00430a90(this_ptr,this_ptr->part_indices[5],this_ptr->bone_indices[10]);
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] = 1;
     }
-    core_charactr_cpp_FUN_00430960();
+    core_charactr_cpp_CCharacter_processDamageDecals_FUN_00430960((CCharacter *)this_ptr);
   }
   iVar10 = core_demnfolk_cpp_FUN_0045bec0(this_ptr);
   if (((iStack_a4 != 0) && (-1 < iVar10)) &&

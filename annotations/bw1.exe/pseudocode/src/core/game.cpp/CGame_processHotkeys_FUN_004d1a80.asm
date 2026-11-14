@@ -38,8 +38,8 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00555830
 ;   core_setdir.cpp_FUN_00559f80
+;   core_sound.cpp_CSound_init_FUN_0057cc00
 ;   core_sound.cpp_CSound_shutdown_FUN_0057cdb0
-;   core_sound.cpp_FUN_0057cc00
 ;   crt_env.c_getenv_FUN_005c3050
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -185,8 +185,8 @@ section .text
     ADD ESP,0x4                         ; 004d1bd6
     MOV EDI,dword ptr [0x006236b8]      ; 004d1bd9 | DAT_006236b8
     PUSH EDI                            ; 004d1bdf
-    CALL core_sound.cpp_FUN_0057cc00    ; 004d1be0
-        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cc00(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0057cc00 ; 004d1be0
+        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0057cc00(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d1be5
         ;   Label: LAB_004d1be5
     CMP dword ptr [EBX + 0x22c],0x0     ; 004d1be8
@@ -685,8 +685,8 @@ section .text
     MOV EAX,[0x006236b8]                ; 004d211f | DAT_006236b8
         ;   Label: LAB_004d211f
     PUSH EAX                            ; 004d2124
-    CALL core_sound.cpp_FUN_0057cc00    ; 004d2125
-        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cc00(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0057cc00 ; 004d2125
+        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0057cc00(CSound * this_ptr)
     JMP 0x004d1b09                      ; 004d212a
         ;   XREF to: 004d1b09 (UNCONDITIONAL_JUMP)  ; LAB_004d1b09
     PUSH 0x5e1a27                       ; 004d212f | = "SPOOKHOUSE"

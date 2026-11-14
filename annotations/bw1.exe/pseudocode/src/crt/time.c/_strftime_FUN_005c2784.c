@@ -120,7 +120,7 @@ LAB_005c2b09:
           if (bVar2 == 0x5a) goto LAB_005c2b53;
           goto LAB_005c2b64;
         }
-        FUN_005c9e48(time_ptr->tm_year + 0x76c,local_a0,10);
+        IntegerToString(time_ptr->tm_year + 0x76c,local_a0,10);
         pcVar6 = local_a0;
       }
     }
@@ -147,7 +147,7 @@ LAB_005c2952:
           goto LAB_005c2952;
         }
         if (bVar2 < 0x6b) {
-          FUN_005c9e48(time_ptr->tm_yday + 0x65,local_a0,10);
+          IntegerToString(time_ptr->tm_yday + 0x65,local_a0,10);
           local_a0[0] = local_a0[0] + -1;
           pcVar6 = local_a0;
         }

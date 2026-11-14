@@ -44,7 +44,7 @@
 ;   core_main.c_FUN_004e4330
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0
-;   core_setdir.cpp_FUN_00541a20
+;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00542aa0
 ;   core_setutil.cpp_C3DSLight_create_FUN_00542940
 ;   ... and 2 more
@@ -226,8 +226,8 @@ section .text
     PUSH EBX                            ; 0053460e
     ADD EDI,0x1a4                       ; 0053460f
     INC ESI                             ; 00534615
-    CALL core_setdir.cpp_FUN_00541a20   ; 00534616
-        ;   XREF to: 00541a20 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00541a20()
+    CALL core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20 ; 00534616
+        ;   XREF to: 00541a20 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20(CDemonSet * this_ptr, CVector3f * position)
     MOV dword ptr [EDI + -0x4],EAX      ; 0053461b
     ADD EBP,0x1a4                       ; 0053461e
     MOV EDX,dword ptr [EBX]             ; 00534624

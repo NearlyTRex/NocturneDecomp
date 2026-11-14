@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x108]:1  local_108
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_0054d3c0 at 0054e060
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054e060
 ;   core_setutil.cpp_C3DSCamera_load_FUN_0055c1b0 at 0055c392
 ;
 ; Referenced Globals:

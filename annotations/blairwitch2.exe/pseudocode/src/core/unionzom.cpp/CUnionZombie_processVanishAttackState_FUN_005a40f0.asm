@@ -18,8 +18,8 @@
 ;   core_basicene.cpp_FUN_0059f570
 ;   core_basicene.cpp_FUN_005a01a0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;
@@ -67,8 +67,8 @@ section .text
     RET                                 ; 005a414a
     PUSH ESI                            ; 005a414b
         ;   Label: LAB_005a414b
-    CALL core_motion.cpp_FUN_005035c0   ; 005a414c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a414c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a4151
     ADD ESP,0x4                         ; 005a4154
     CMP EAX,0x4                         ; 005a4157
@@ -108,8 +108,8 @@ section .text
     RET                                 ; 005a41ae
     PUSH ESI                            ; 005a41af
         ;   Label: LAB_005a41af
-    CALL core_motion.cpp_FUN_005035c0   ; 005a41b0
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a41b0
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a41b5
     ADD ESP,0x4                         ; 005a41b8
     CMP EAX,0x3                         ; 005a41bb

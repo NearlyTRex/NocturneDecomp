@@ -9,7 +9,7 @@
 void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043f9d0(CClothList *this_ptr)
 
 {
-  uint uVar1;
+  CCloth *pCVar1;
   int iVar2;
   CClothList *pCVar3;
   
@@ -18,8 +18,8 @@ void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043f9d0(CClothList *this_ptr)
   if (0 < this_ptr->count) {
     do {
       if (pCVar3->cloths[0] != (CCloth *)0x0) {
-        uVar1 = core_cloth_cpp_FUN_0043c280(pCVar3->cloths[0],0);
-        FUN_005a30c4(uVar1);
+        pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_0043c280(pCVar3->cloths[0],0);
+        FUN_005a30c4(pCVar1);
       }
       iVar2 = iVar2 + 1;
       pCVar3 = (CClothList *)pCVar3->filenames;

@@ -42,9 +42,9 @@
 ;   undefined4 DAT_01d1cdc8
 ;
 ; Called Functions:
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_00503870
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
-;   core_motion.cpp_FUN_005035c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
@@ -144,8 +144,8 @@ section .text
         ;   XREF to: 0050448d (CONDITIONAL_JUMP)  ; LAB_0050448d
     PUSH EAX                            ; 005043df
     MOV ESI,EAX                         ; 005043e0
-    CALL core_motion.cpp_FUN_005035c0   ; 005043e2
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005043e2
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EDX,ESI                         ; 005043e7
     MOV EAX,dword ptr [EAX + 0x24]      ; 005043e9
     MOV EDI,dword ptr [EDX + 0x28]      ; 005043ec
@@ -192,8 +192,8 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 00504453
     FSTP double ptr [ESP]               ; 00504456
     PUSH EAX                            ; 00504459
-    CALL core_motion.cpp_FUN_005035c0   ; 0050445a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0050445a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0050445f
     PUSH EAX                            ; 00504462
     PUSH 0x5dfe50                       ; 00504463 | = "%s : %5.2f"

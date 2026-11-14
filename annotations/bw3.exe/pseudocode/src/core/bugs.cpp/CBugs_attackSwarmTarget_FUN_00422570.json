@@ -59,14 +59,14 @@
       "name": "core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423bc0"
     },
     {
+      "addr": "00423050",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050"
+    },
+    {
       "addr": "00421c90",
       "is_variadic": false,
       "name": "core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90"
-    },
-    {
-      "addr": "00423050",
-      "is_variadic": false,
-      "name": "core_bugs.cpp_FUN_00423050"
     },
     {
       "addr": "00423fb0",
@@ -397,7 +397,7 @@
       "line": 104,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
-      "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);",
+      "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -405,7 +405,7 @@
       "line": 110,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
-      "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);",
+      "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -413,7 +413,7 @@
       "line": 150,
       "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -421,7 +421,7 @@
       "line": 151,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -429,7 +429,7 @@
       "line": 101,
       "match": "(int)&CStack_4c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_4c + (uint)bVar9 * -8 + 4) = afStack_9c[(uint)bVar9 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar8 * -8 + 4) = afStack_9c[(uint)bVar8 * -2 + 3];",
       "type": "pointer_truncation"
     },
     {
@@ -437,7 +437,7 @@
       "line": 102,
       "match": "(int)&CStack_4c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_4c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -445,7 +445,7 @@
       "line": 150,
       "match": "(int)pCVar5",
       "severity": "moderate",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -453,7 +453,7 @@
       "line": 151,
       "match": "(int)pCVar7",
       "severity": "moderate",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -469,7 +469,7 @@
       "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_4c + (uint)bVar9 * -8 + 4) = afStack_9c[(uint)bVar9 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar8 * -8 + 4) = afStack_9c[(uint)bVar8 * -2 + 3];",
       "type": "pointer_cast"
     },
     {
@@ -477,7 +477,7 @@
       "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_4c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {

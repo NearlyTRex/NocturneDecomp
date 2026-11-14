@@ -13,7 +13,8 @@ void __cdecl core_motion_cpp_FUN_005042e0(CMotionController *this_ptr,CDemonActo
 {
   char cVar1;
   SRenderVertex *pSVar2;
-  int iVar3;
+  int x;
+  SMotion *pSVar3;
   char *pcVar4;
   int iVar5;
   uint *puVar6;
@@ -55,8 +56,8 @@ void __cdecl core_motion_cpp_FUN_005042e0(CMotionController *this_ptr,CDemonActo
       local_14 = (pSVar2[19999].projected_vertex.screen_x >> 0x10) + -0x23;
       engine_2d_c_drawText_FUN_00401fe0(actor->actor_name,local_14,iVar5 + -0x21);
       if ((this_ptr->state_index < 0) ||
-         (iVar3 = core_motion_cpp_FUN_005035c0(), *(int *)(iVar3 + 0x24) == this_ptr->state_index))
-      {
+         (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr),
+         pSVar3->state_index == this_ptr->state_index)) {
         pcVar4 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(this_ptr);
         pcVar8 = &stack0xffffff40;
         do {
@@ -74,11 +75,11 @@ void __cdecl core_motion_cpp_FUN_005042e0(CMotionController *this_ptr,CDemonActo
         core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(this_ptr);
         _sprintf(&stack0xffffff40,"%s -> %s");
       }
-      iVar3 = local_14;
+      x = local_14;
       engine_2d_c_drawText_FUN_00401fe0(&stack0xffffff40,local_14,iVar5 + -0x16);
-      core_motion_cpp_FUN_005035c0(this_ptr);
+      core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
       _sprintf(&stack0xffffff40,"%s : %5.2f");
-      engine_2d_c_drawText_FUN_00401fe0(&stack0xffffff40,iVar3,iVar5 + -0xb);
+      engine_2d_c_drawText_FUN_00401fe0(&stack0xffffff40,x,iVar5 + -0xb);
       return;
     }
   }

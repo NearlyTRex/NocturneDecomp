@@ -63,15 +63,15 @@ void FUN_0048b040(undefined4 param_1,float *param_2,float *param_3);
 
 // Original: core_dtrace.cpp_FUN_0048b150
 // Address: 0048b150
-float FUN_0048b150(CDemonRaytrace *param_1,float *param_2,float *param_3,undefined4 *param_4,undefined4 *param_5);
+float FUN_0048b150(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
 
 // Original: core_dtrace.cpp_FUN_0048b880
 // Address: 0048b880
 int __cdecl FUN_0048b880(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 
-// Original: core_dtrace.cpp_FUN_0048bdc0
+// Original: core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0
 // Address: 0048bdc0
-float FUN_0048bdc0(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4);
+float __cdecl CDemonRaytrace::getGroundHeight(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010
 // Address: 0048c010
@@ -89,9 +89,9 @@ void __cdecl CDemonRaytrace::testCylinderCollision(CDemonRaytrace *this_ptr,SInt
 // Address: 0048c510
 void __cdecl FUN_0048c510(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 
-// Original: core_dtrace.cpp_FUN_0048ca40
+// Original: core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40
 // Address: 0048ca40
-void FUN_0048ca40(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
+void __cdecl CDemonRaytrace::renderVoxelGrid(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0
 // Address: 0048cba0

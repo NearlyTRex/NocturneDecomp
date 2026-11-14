@@ -27,9 +27,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_actor.cpp_FUN_004091b0 at 00409393
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0 at 00409393
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20 at 0041ffca
-;   core_dmodel.cpp_FUN_004618a0 at 004618ea
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0 at 004618ea
 ;   core_setdir.cpp_testOBBIntersection_FUN_00541470 at 0054170e
 ;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30 at 00578d74
 ;

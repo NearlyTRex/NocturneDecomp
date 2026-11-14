@@ -12,11 +12,12 @@
 void core_game_cpp_FUN_004b5040(void)
 
 {
-  uint in_stack_00000004;
+  char *in_stack_00000004;
   
-  engine_font_cpp_FUN_004b0a20(_DAT_01549aa8);
-  engine_font_cpp_FUN_004b0a20
-            (_DAT_01549aa8,in_stack_00000004,_DAT_01d22c54,_DAT_01d22c58,7,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+            (_DAT_01549aa8,in_stack_00000004,_DAT_01d22c54 + 2,_DAT_01d22c58 + 2,0,-1);
+  engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+            (_DAT_01549aa8,in_stack_00000004,_DAT_01d22c54,_DAT_01d22c58,7,-1);
   _DAT_01d22c58 = _DAT_01d22c58 + _DAT_01d22c5c;
   if (_DAT_01d22c58 <= DAT_005fba1c + _DAT_01d22c5c * -4) {
     return;

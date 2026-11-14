@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   world_pos
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_0048ca40 at 0048cb43
+;   core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40 at 0048cb43
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005db964

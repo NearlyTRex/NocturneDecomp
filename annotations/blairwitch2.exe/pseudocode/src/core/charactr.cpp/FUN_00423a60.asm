@@ -84,10 +84,10 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 ;   core_actor.cpp_FUN_00408cf0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
-;   core_setcolid.cpp_FUN_00537030
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030
 ;   crt_string.c__strnicmp_FUN_005b8da0
 ;
 ; *****************************************************************************
@@ -280,8 +280,8 @@ section .text
     MOV EDI,dword ptr [0x0061b5a8]      ; 00423cf7 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 00423cfd
     PUSH EDI                            ; 00423d00 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00537030 ; 00423d01
-        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00537030()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 ; 00423d01
+        ;   XREF to: 00537030 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x110],EAX     ; 00423d06
     FLD float ptr [ESP + 0x110]         ; 00423d0d
     ADD ESP,0x20                        ; 00423d14
@@ -488,8 +488,8 @@ section .text
     PUSH EDX                            ; 00423fee
         ;   Label: LAB_00423fee
     MOV ESI,0x609ac0                    ; 00423fef | = "noCollision"
-    CALL core_motion.cpp_FUN_005035c0   ; 00423ff4
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00423ff4
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00423ff9
     MOV EDI,EAX                         ; 00423ffc
     MOV EDX,EAX                         ; 00423ffe

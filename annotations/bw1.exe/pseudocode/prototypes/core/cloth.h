@@ -9,9 +9,9 @@
 // Address: 0043e5c0
 CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043e620
+// Original: core_cloth.cpp_CCloth_dtor_FUN_0043e620
 // Address: 0043e620
-void FUN_0043e620(CCloth *param_1);
+CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_0043e640
 // Address: 0043e640
@@ -89,9 +89,9 @@ void __cdecl CClothList::reset(CClothList *this_ptr);
 // Address: 00441de0
 void __cdecl CClothList::add(CClothList *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_00441e60
+// Original: core_cloth.cpp_CClothList_remove_FUN_00441e60
 // Address: 00441e60
-void FUN_00441e60(void);
+void __cdecl CClothList::remove(CClothList *this_ptr,int index);
 
 // Original: core_cloth.cpp_CClothList_setup_FUN_00441f60
 // Address: 00441f60
@@ -113,9 +113,9 @@ void __cdecl CCloth::grabCloth(CCloth *this_ptr,char *bone_name,int vertex_index
 // Address: 004421a0
 void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 
-// Original: core_cloth.cpp_FUN_004421d0
+// Original: core_cloth.cpp_CCloth_applyRotation_FUN_004421d0
 // Address: 004421d0
-void FUN_004421d0(int param_1,float *param_2);
+void __cdecl CCloth::applyRotation(CCloth *this_ptr,CVector3f *euler);
 
 // Original: core_cloth.cpp_fastInvSqrt_FUN_00442330
 // Address: 00442330

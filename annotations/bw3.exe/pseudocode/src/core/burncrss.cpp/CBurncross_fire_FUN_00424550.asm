@@ -36,7 +36,7 @@
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
-;   core_glass.cpp_FUN_004cc040
+;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
@@ -646,8 +646,8 @@ section .text
     ADD EAX,0x14d138                    ; 00424d86
     PUSH EAX                            ; 00424d8b | g_CDemonSetInstance.collision_impact_position.x
     PUSH ESI                            ; 00424d8c
-    CALL core_glass.cpp_FUN_004cc040    ; 00424d8d
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004cc040()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004cc040 ; 00424d8d
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004cc040(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 00424d92
     INC EDI                             ; 00424d95
         ;   Label: LAB_00424d95

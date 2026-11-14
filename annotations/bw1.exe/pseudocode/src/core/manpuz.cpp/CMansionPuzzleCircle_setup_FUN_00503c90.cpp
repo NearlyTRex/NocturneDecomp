@@ -260,7 +260,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             (&this_ptr->reflectors[1].rotation_matrix,pCVar11);
   do {
-    core_manpuz_cpp_FUN_005062a0(this_ptr,iVar9);
+    core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0(this_ptr,iVar9);
     iVar9 = iVar9 + 1;
   } while (iVar9 < 2);
   return;

@@ -20,7 +20,7 @@ void core_mission_cpp_FUN_004f6f80(int *param_1)
   do {
     if (pCVar1 == (CDemonActor *)0x0) {
       core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0(g_CDemonSetPtr);
-      core_set_cpp_FUN_0053b460(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(g_CDemonSetPtr);
       return;
     }
     if (*param_1 == (pCVar1->location).area_id) {

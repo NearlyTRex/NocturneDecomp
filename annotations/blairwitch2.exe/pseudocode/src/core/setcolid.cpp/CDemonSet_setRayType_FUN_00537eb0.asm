@@ -14,8 +14,8 @@
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a37
 ;   core_doc.cpp_FUN_00459ff0 at 0045a879
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00485dfb
+;   core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00 at 004af153
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0 at 004b1488
-;   core_gabriela.cpp_FUN_004aeb00 at 004af153
 ;   core_game.cpp_FUN_004be8a0 at 004bee30
 ;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cbfa9
 ;   ... and 7 more

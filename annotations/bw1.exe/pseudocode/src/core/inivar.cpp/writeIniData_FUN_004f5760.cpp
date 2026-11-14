@@ -13,7 +13,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void)
 {
   CIniFile local_214;
   
-  engine_ini_cpp_FUN_004f4b00(&local_214,".\\system\\nocturne.ini",0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_214,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(&local_214,"Graphics");
   engine_ini_cpp_FUN_004f4d70(&local_214,"gamePIXX",g_CGamePtr->game_pixx);
   engine_ini_cpp_FUN_004f4d70(&local_214,"gamePIXY",g_CGamePtr->game_pixy);

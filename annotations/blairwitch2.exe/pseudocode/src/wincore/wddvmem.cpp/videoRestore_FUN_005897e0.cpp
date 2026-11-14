@@ -56,7 +56,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005897e0(void)
       if (HVar2 == 0) {
         (**(code **)(*_DAT_02661ae0 + 0x50))(_DAT_02661ae0,_DAT_02664628,0x11);
       }
-      wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
+      wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
     }
     SetFocus(_DAT_02664628);
   }

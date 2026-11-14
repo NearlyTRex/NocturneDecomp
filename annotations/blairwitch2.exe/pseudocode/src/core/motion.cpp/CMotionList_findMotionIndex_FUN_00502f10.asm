@@ -16,7 +16,7 @@
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450814
 ;   core_doc.cpp_FUN_00453d80 at 00455111
 ;   core_doc.cpp_FUN_004562a0 at 00456400
-;   core_event.cpp_FUN_00489670 at 0048da60
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048da60
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004ad3e0 at 004ad5b4
 ;   core_ghoul.cpp_CGhoul_processDamage_FUN_004c40f0 at 004c4495
 ;   ... and 13 more

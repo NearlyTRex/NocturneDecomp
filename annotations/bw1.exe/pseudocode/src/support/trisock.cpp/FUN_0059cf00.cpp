@@ -45,7 +45,8 @@ uint support_trisock_cpp_FUN_0059cf00(uint param_1,uint param_2,uint16_t *param_
         support_trisock_cpp_CSocket_createSocket_FUN_0059c910(param_6);
         support_trisock_cpp_CSocket_setSocketBlocking_FUN_0059cd70(param_6,0);
         support_trisock_cpp_CSocket_bindSocket_FUN_0059c980(param_6,0);
-        iVar1 = support_trisock_cpp_FUN_0059c9d0(param_6);
+        iVar1 = support_trisock_cpp_CSocket_connectSocket_FUN_0059c9d0
+                          (param_6,(SNetworkAddr *)&uStack_18);
         if (iVar1 == 0) {
 LAB_0059d0d8:
           _sprintf(acStack_bf0,"Error connecting to %s");

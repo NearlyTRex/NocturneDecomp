@@ -37,7 +37,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004ba930(SPageResource
       x = x + CAlphaBitmap_01cc7cc0.width;
     } while (CAlphaBitmap_01cc7cc0.width < iVar2);
   }
-  engine_alphabit_cpp_FUN_0040d660
+  engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d660
             (&CAlphaBitmap_01cc7cc0,x,iVar1,0,0,iVar2 + -1,CAlphaBitmap_01cc7cc0.height + -1,0xffff)
   ;
   return;

@@ -62,7 +62,8 @@ uint support_trisock_cpp_FUN_0059e350(int param_1,char *param_2)
       support_trisock_cpp_CSocket_createSocket_FUN_0059c910(this_ptr);
       support_trisock_cpp_CSocket_setSocketBlocking_FUN_0059cd70(this_ptr,0);
       support_trisock_cpp_CSocket_bindSocket_FUN_0059c980(this_ptr,0);
-      iVar5 = support_trisock_cpp_FUN_0059c9d0(this_ptr,param_1 + 0x600);
+      iVar5 = support_trisock_cpp_CSocket_connectSocket_FUN_0059c9d0
+                        (this_ptr,(SNetworkAddr *)(param_1 + 0x600));
       if (iVar5 == 0) {
         *(uint *)(param_1 + 0xd28) = 0xfffffffd;
         _sprintf((char *)(param_1 + 0xa18),"Error connecting socket to %s");

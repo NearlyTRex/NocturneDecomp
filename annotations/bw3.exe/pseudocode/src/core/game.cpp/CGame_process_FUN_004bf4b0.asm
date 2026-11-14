@@ -439,8 +439,8 @@ section .text
         ;   Label: LAB_004bf98b
     PUSH EDX                            ; 004bf991
     MOV dword ptr [EBX + 0xe8],EAX      ; 004bf992
-    CALL core_sound.cpp_FUN_0055fd30    ; 004bf998
-        ;   XREF to: 0055fd30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055fd30(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0055fd30 ; 004bf998
+        ;   XREF to: 0055fd30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0055fd30(CSound * this_ptr)
     ADD ESP,0x4                         ; 004bf99d
     MOV EAX,[0x006039e0]                ; 004bf9a0 | g_CScriptPtr
     PUSH 0x2                            ; 004bf9a5

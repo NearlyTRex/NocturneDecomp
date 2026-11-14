@@ -8,9 +8,9 @@
 ; CBoundingBox3D * Stack[0x8]:4   other
 ;
 ; XREF[3]:
-;   core_actor.cpp_FUN_004093a0 at 004094ac
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 004094ac
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 at 00537389
 ;   core_setcolid.cpp_FUN_00534ea0 at 005351fd
-;   core_setcolid.cpp_FUN_00537030 at 00537389
 ;
 ; *****************************************************************************
 

@@ -36,15 +36,15 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EAX,0x70ca84                    ; 00405a71 | DAT_0070ca84
 
   DAT_0078a123  value=0x78A123 (7905571)  refs=5
+    CBoxActor_setupPhysicsBox
+      CMP dword ptr [EBX + 0x68],0x78a123 ; 0041bf37 | DAT_0078a123
     CDemonActor_ctor
       MOV dword ptr [EBX + 0x68],0x78a123 ; 004088e6 | DAT_0078a123
     CEnemy_releaseVictim
       CMP EDI,0x78a123                    ; 00488a32 | DAT_0078a123
     CHero_releaseFromGrab
       CMP dword ptr [EBX + 0x68],0x78a123 ; 004ceb97 | DAT_0078a123
-    FUN_0041bf10
-      CMP dword ptr [EBX + 0x68],0x78a123 ; 0041bf37 | DAT_0078a123
-    FUN_0058a2f0
+    CWeapon_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0058a30d | DAT_0078a123
 
   DAT_0061b190  value=0x61B190 (6402448)  refs=5
@@ -130,10 +130,10 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61513c                       ; 00494ce2 | DAT_0061513c
 
   DAT_006167f0  value=0x6167F0 (6383600)  refs=2
+    CBloodParticle_render
+      PUSH 0x6167f0                       ; 004c776f | DAT_006167f0
     CGore_loadAssets
       PUSH 0x6167f0                       ; 004c9b04 | DAT_006167f0
-    FUN_004c7580
-      PUSH 0x6167f0                       ; 004c776f | DAT_006167f0
 
   DAT_00617968  value=0x617968 (6388072)  refs=2
     CGore_loadAssets

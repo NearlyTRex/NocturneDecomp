@@ -17,9 +17,9 @@ void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
 // Address: 00510670
 void __cdecl CPackedBitmapSet::reset(CPackedBitmapSet *this_ptr);
 
-// Original: cockpit_pkbmpset.cpp_FUN_005106a0
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0
 // Address: 005106a0
-void __cdecl FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
+void __cdecl CPackedBitmapSet::alloc(CPackedBitmapSet *this_ptr,int bitmap_count);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740
 // Address: 00510740

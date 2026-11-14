@@ -22,7 +22,7 @@
 ;   CGame g_CGameInstance
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004d19d0
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     ADD ESP,0x8                         ; 00415c04
     MOV ESI,dword ptr [0x0061d95c]      ; 00415c07 | g_CGamePtr
     PUSH ESI                            ; 00415c0d | g_CGameInstance
-    CALL core_game.cpp_FUN_004d19d0     ; 00415c0e
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 00415c0e
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 00415c13
     POP ESI                             ; 00415c16
     RET                                 ; 00415c17

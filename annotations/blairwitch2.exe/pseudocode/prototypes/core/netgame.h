@@ -57,9 +57,9 @@ void __cdecl CNetGame::init(CNetGame *this_ptr);
 // Address: 0050b3f0
 void __cdecl CNetGame::shutdown(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_0050b420
+// Original: core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420
 // Address: 0050b420
-int __cdecl FUN_0050b420(CNetGame *this_ptr);
+int __cdecl CNetGame::initializeNetworkToHost(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0
 // Address: 0050b4d0

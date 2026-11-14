@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d3460 at 004d34c8
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460 at 004d34c8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c691a

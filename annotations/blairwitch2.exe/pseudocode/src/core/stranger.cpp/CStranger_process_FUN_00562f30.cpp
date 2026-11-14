@@ -14,6 +14,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_pt
   float delta_time_00;
   bool bVar1;
   int iVar2;
+  SMotion *pSVar3;
   
   iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0
                     ((CCharacter *)this_ptr,delta_time);
@@ -21,9 +22,10 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_pt
     return;
   }
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
   bVar1 = false;
-  switch(*(uint *)(iVar2 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:

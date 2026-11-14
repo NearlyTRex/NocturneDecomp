@@ -29,7 +29,7 @@ uint core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2)
   float local_10;
   
   bVar2 = 0;
-  iVar1 = core_box_cpp_FUN_00420990(param_1);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(param_1);
   if ((iVar1 == -1) || (iVar1 == 0)) {
     return 0;
   }

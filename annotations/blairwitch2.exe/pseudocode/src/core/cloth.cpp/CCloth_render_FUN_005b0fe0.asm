@@ -45,7 +45,7 @@
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880
-;   engine_texture.cpp_FUN_00574e00
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
     LEA EAX,[EBP + 0x124]               ; 005b1070
         ;   Label: LAB_005b1070
     PUSH EAX                            ; 005b1076
-    CALL engine_texture.cpp_FUN_00574e00 ; 005b1077
-        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 ; 005b1077
+        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic * texture)
     MOV EDX,dword ptr [EBP + 0x37b44]   ; 005b107c
     ADD ESP,0x4                         ; 005b1082
     TEST EDX,EDX                        ; 005b1085

@@ -1171,8 +1171,8 @@ section .text
     MOV EBX,dword ptr [0x006138e0]      ; 004ecb86 | g_CEditorToolsPtr
         ;   Label: LAB_004ecb86
     PUSH EBX                            ; 004ecb8c
-    CALL shape_edittool.cpp_FUN_0047e760 ; 004ecb8d
-        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e760()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 ; 004ecb8d
+        ;   XREF to: 0047e760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004ecb92
     JMP 0x004ec46d                      ; 004ecb95
         ;   XREF to: 004ec46d (UNCONDITIONAL_JUMP)  ; caseD_2

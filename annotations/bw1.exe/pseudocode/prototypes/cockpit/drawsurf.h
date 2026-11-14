@@ -17,9 +17,9 @@ void __cdecl CDrawSurface::init(CDrawSurface *this_ptr,int x,int y,int width,int
 // Address: 0047e3b0
 void __cdecl setColor(int color_value);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047e5c0
+// Original: cockpit_drawsurf.cpp_setColorRGB_FUN_0047e5c0
 // Address: 0047e5c0
-void __cdecl FUN_0047e5c0(int red,int green,int blue);
+void __cdecl setColorRGB(int red,int green,int blue);
 
 // Original: cockpit_drawsurf.cpp_setCurrentFont_FUN_0047e860
 // Address: 0047e860
@@ -101,9 +101,9 @@ void __cdecl CDrawSurface::drawSurfaceBorder(CDrawSurface *this_ptr);
 // Address: 0047f9c0
 void FUN_0047f9c0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047fb20
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20
 // Address: 0047fb20
-void __cdecl FUN_0047fb20(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl CDrawSurface::drawAnimatedDashedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_FUN_0047fcf0
 // Address: 0047fcf0
@@ -233,9 +233,9 @@ void __cdecl CDrawSurface::drawTextCenteredFullSurface(CDrawSurface *this_ptr,ch
 // Address: 00480fa0
 void __cdecl CDrawSurface::drawTextCenteredFullSurfacePrintf(CDrawSurface *this_ptr,char *format);
 
-// Original: cockpit_drawsurf.cpp_FUN_00481000
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00481000
 // Address: 00481000
-int FUN_00481000(void);
+int __cdecl CDrawSurface::getCharWidth(CDrawSurface *this_ptr,int char_code);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00481040
 // Address: 00481040

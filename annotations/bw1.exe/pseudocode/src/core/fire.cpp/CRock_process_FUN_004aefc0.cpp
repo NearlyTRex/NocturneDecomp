@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CRock_process_FUN_004aefc0(CRock *this_ptr)
   float10 fVar6;
   float10 fVar7;
   
-  core_particle_cpp_FUN_00532250(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00532250(&this_ptr->base);
   fVar5 = (float10)(this_ptr->base).velocity.y;
   fVar6 = (float10)(this_ptr->base).velocity.x;
   fVar7 = (float10)(this_ptr->base).velocity.z;

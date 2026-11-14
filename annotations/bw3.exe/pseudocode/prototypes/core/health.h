@@ -49,9 +49,9 @@ ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SColl
 // Address: 004d2090
 int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
-// Original: core_health.cpp_FUN_004d20c0
+// Original: core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 // Address: 004d20c0
-undefined4 FUN_004d20c0(int param_1,int param_2);
+int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_CHealthItem_onPickup_FUN_004d2130
 // Address: 004d2130

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setcolid_cpp_FUN_00535ee0(int param_1,float *param_2,float *param_3)
+; float core_setcolid_cpp_FUN_00535ee0(CDemonSet *param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
@@ -32,8 +32,8 @@
 ;   core_doc.cpp_FUN_0045b510 at 0045b87c
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00485e3e
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049dbc6
+;   core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00 at 004af18b
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0 at 004b14b9
-;   core_gabriela.cpp_FUN_004aeb00 at 004af18b
 ;   core_game.cpp_FUN_004be8a0 at 004bee6b
 ;   ... and 11 more
 ;
@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_00472c60
-;   core_setcolid.cpp_FUN_00536490
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     PUSH EBP                            ; 00535f8c
     PUSH 0xbf800000                     ; 00535f8d
     PUSH EBX                            ; 00535f92
-    CALL core_setcolid.cpp_FUN_00536490 ; 00535f93
-        ;   XREF to: 00536490 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00536490()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490 ; 00535f93
+        ;   XREF to: 00536490 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x5c],EAX      ; 00535f98
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00535f9c
     MOV dword ptr [EBX + 0x15f6d8],EAX  ; 00535fa0

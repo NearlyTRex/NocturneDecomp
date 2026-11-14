@@ -7,8 +7,8 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420 at 0050b497
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b532
-;   core_netgame.cpp_FUN_0050b420 at 0050b497
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594

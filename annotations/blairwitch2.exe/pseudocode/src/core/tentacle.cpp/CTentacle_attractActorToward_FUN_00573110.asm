@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00429d60
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60
 ;   core_tentacle.cpp_FUN_005732e0
 ;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_FUN_00592720
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 0057327f
     MOV ECX,dword ptr [EBX + 0x10a78]   ; 00573280
     PUSH ECX                            ; 00573286
-    CALL core_charactr.cpp_FUN_00429d60 ; 00573287
-        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429d60()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 ; 00573287
+        ;   XREF to: 00429d60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60(CCharacter * this_ptr, UOrientationVector * orientation)
     MOV EAX,0x1                         ; 0057328c
     ADD ESP,0x8                         ; 00573291
     POP ESI                             ; 00573294

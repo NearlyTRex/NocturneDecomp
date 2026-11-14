@@ -26,7 +26,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421de0(CBoxActor *this_ptr)
     this_ptr->push_sfx_handle = 0;
     return;
   }
-  core_boxactor_cpp_FUN_00421e80(this_ptr);
+  core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(this_ptr);
   this_ptr->push_sfx_handle = 0;
   return;
 }

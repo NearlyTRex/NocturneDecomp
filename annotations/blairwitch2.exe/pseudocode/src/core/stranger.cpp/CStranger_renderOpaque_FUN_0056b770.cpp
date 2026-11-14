@@ -15,14 +15,14 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
   CDemonActor *pCVar1;
   CWeapon *this_ptr_00;
   bool bVar2;
-  CVector3f *pCVar3;
-  int iVar4;
-  CMatrix3x4f *pCVar5;
-  float *pfVar6;
-  byte bVar7;
+  CVector3f *start_pos;
+  int iVar3;
+  CMatrix3x4f *pCVar4;
+  float *pfVar5;
+  byte bVar6;
   float afStackY_10b4 [948];
-  CVector3f *pCVar8;
-  uint *puVar9;
+  CVector3f *pCVar7;
+  uint *puVar8;
   CMatrix3x4f CStack_1bc;
   CMatrix3x4f CStack_18c;
   float afStack_15c [12];
@@ -46,9 +46,9 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
   CVector3f *pCStack_18;
   float fStack_14;
   
-  bVar7 = 0;
-  iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
-  if (iVar4 == 0) {
+  bVar6 = 0;
+  iVar3 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
+  if (iVar3 == 0) {
     return 0;
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
@@ -70,19 +70,20 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
       core_stranger_cpp_FUN_0056da90(this_ptr);
-      pfVar6 = afStack_b0 + 8;
+      pfVar5 = afStack_b0 + 8;
       afStack_9c[3] = (float)uStack_b4;
-      afStack_8c[(uint)bVar7 * -2] = afStack_b0[(uint)bVar7 * -2];
-      afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-           afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      core_actor_cpp_FUN_00408cf0(this_ptr,pfVar6);
-      pCVar3 = pCStack_18;
-      pCVar8 = &CStack_6c;
+      afStack_8c[(uint)bVar6 * -2] = afStack_b0[(uint)bVar6 * -2];
+      afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+      core_actor_cpp_FUN_00408cf0(this_ptr,pfVar5);
+      start_pos = pCStack_18;
+      pCVar7 = &CStack_6c;
       CStack_6c.x = fStack_cc;
-      *(float *)((int)&CStack_6c + (uint)bVar7 * -8 + 4) = afStack_c8[(uint)bVar7 * -2];
-      *(float *)((int)&CStack_6c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-           afStack_c8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      fStack_14 = (float)core_setcolid_cpp_FUN_00536210(g_CDemonSetPtr,pCVar3,pCVar8);
+      *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) = afStack_c8[(uint)bVar6 * -2];
+      *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+      fStack_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00536210
+                            (g_CDemonSetPtr,start_pos,pCVar7);
       fStack_1c = fStack_14;
       if (fStack_14 < 0.0) {
         fStack_1c = 10.0;
@@ -102,31 +103,31 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0056b770(CStranger *thi
   (*((this_ptr_00->base).vtable._ub)->renderOpaque)(&this_ptr_00->base);
   if (this_ptr->weapon == (CWeapon *)0x0) {
 switchD_0056b94f_caseD_3:
-    iVar4 = 0;
+    iVar3 = 0;
   }
   else {
     switch(this_ptr->weapon->weapon_type) {
     case WEAPON_TYPE_GUN:
     case WEAPON_TYPE_FLASHLIGHT:
-      iVar4 = 2;
+      iVar3 = 2;
       break;
     case WEAPON_TYPE_SHOTGUN:
-      iVar4 = 4;
+      iVar3 = 4;
       break;
     case WEAPON_TYPE_LIGHT_GUN:
-      iVar4 = 5;
+      iVar3 = 5;
       break;
     default:
       goto switchD_0056b94f_caseD_3;
     case WEAPON_TYPE_TOMMY_GUN:
-      iVar4 = 7;
+      iVar3 = 7;
       break;
     case WEAPON_TYPE_MELEE:
-      iVar4 = 8;
+      iVar3 = 8;
     }
   }
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-                        ((CCharacter *)this_ptr,iVar4);
+                        ((CCharacter *)this_ptr,iVar3);
   bVar2 = (float)_DAT_005ebc4d < fStack_14;
   if ((this_ptr->weapon->weapon_type == WEAPON_TYPE_SHOTGUN) &&
      ((this_ptr->base).base.layer_action_index == 8)) {
@@ -152,67 +153,67 @@ LAB_0056ba07:
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     pCStack_20 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
     if ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_ON_FACE) {
-      puVar9 = &uStack_60;
+      puVar8 = &uStack_60;
       afStack_48[6] = -0.140457;
       afStack_48[8] = 0.0;
       afStack_48[7] = -3.0786;
       afStack_48[1] = 0.283614;
       afStack_48[0] = 0.00604827;
-      pfVar6 = afStack_5c + 5;
-      pCVar5 = &CStack_18c;
+      pfVar5 = afStack_5c + 5;
+      pCVar4 = &CStack_18c;
       afStack_48[2] = 0.537644;
       uStack_60 = 0xbe0fd3f6;
-      afStack_5c[(uint)bVar7 * -2] = afStack_5c[(uint)bVar7 * -2 + 0xc];
-      afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-           afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
-      core_xform_cpp_FUN_00591c10(pCVar5,pfVar6,puVar9);
+      afStack_5c[(uint)bVar6 * -2] = afStack_5c[(uint)bVar6 * -2 + 0xc];
+      afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
+      core_xform_cpp_FUN_00591c10(pCVar4,pfVar5,puVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_18c,pCStack_20 + _DAT_0264be30,&CStack_1bc);
-      pCVar5 = &CStack_1bc;
+      pCVar4 = &CStack_1bc;
     }
     else {
       afStack_48[3] = 1.16195;
       afStack_48[5] = 0.0489636;
-      pfVar6 = afStack_8c + 2;
+      pfVar5 = afStack_8c + 2;
       afStack_48[4] = 0.368073;
       afStack_8c[2] = 1.16195;
-      afStack_8c[(uint)bVar7 * -2 + 3] = afStack_5c[(uint)bVar7 * -2 + 9];
-      afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-           afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
+      afStack_8c[(uint)bVar6 * -2 + 3] = afStack_5c[(uint)bVar6 * -2 + 9];
+      afStack_8c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+           afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
       afStack_9c[2] = 0.130713;
       afStack_9c[0] = 0.512623;
       afStack_9c[1] = -0.0202601;
-      core_xform_cpp_FUN_00591c10(&CStack_fc,afStack_b0 + 5,pfVar6);
+      core_xform_cpp_FUN_00591c10(&CStack_fc,afStack_b0 + 5,pfVar5);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_fc,pCStack_20 + _DAT_0264be68,&CStack_12c);
-      pCVar5 = &CStack_12c;
+      pCVar4 = &CStack_12c;
     }
-    pfVar6 = afStack_15c;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pfVar6 = pCVar5->m[0].w;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+    pfVar5 = afStack_15c;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *pfVar5 = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
     }
     core_xform_cpp_matrixToEulerAngles_FUN_00591de0(afStack_15c);
     CStack_c0.x = afStack_5c[2];
-    *(float *)((int)&CStack_c0 + (uint)bVar7 * -8 + 4) = afStack_5c[(uint)bVar7 * -2 + 3];
-    *(float *)((int)&CStack_c0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+    *(float *)((int)&CStack_c0 + (uint)bVar6 * -8 + 4) = afStack_5c[(uint)bVar6 * -2 + 3];
+    *(float *)((int)&CStack_c0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
     core_xform_cpp_FUN_00592720(afStack_15c);
-    pCVar8 = &CStack_78;
+    pCVar7 = &CStack_78;
     CStack_78.x = afStack_b0[2];
-    *(float *)((int)&CStack_78 + (uint)bVar7 * -8 + 4) = afStack_b0[(uint)bVar7 * -2 + 3];
-    *(float *)((int)&CStack_78 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+    *(float *)((int)&CStack_78 + (uint)bVar6 * -8 + 4) = afStack_b0[(uint)bVar6 * -2 + 3];
+    *(float *)((int)&CStack_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-              (DAT_0060b280,&CStack_c0,pCVar8);
+              (DAT_0060b280,&CStack_c0,pCVar7);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&(pCStack_24->base).model,0.0,-1);
     engine_drender_cpp_pop_FUN_0046b4a0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_0264be88] == 0) &&
-      (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar4 == 0
+      (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar3 == 0
       )) && (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_005b1550(&(this_ptr->base).base.cloth_list);
   }

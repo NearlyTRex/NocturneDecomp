@@ -39,7 +39,7 @@
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
 ;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590
-;   core_event.cpp_FUN_004a9870
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
 ;   core_fire.cpp_CFireEffect_init_FUN_004b4b30
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004d6070
 ;   core_game.cpp_CGame_clearOverlay_FUN_004cc1f0
@@ -49,8 +49,8 @@
 ;   core_game.cpp_CGame_processFudge_FUN_004cc9c0
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
-;   core_game.cpp_CGame_setGameRes_FUN_004cf430
 ;   ... and 48 more
 ;
 ; *****************************************************************************
@@ -192,8 +192,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004cf836
     PUSH EDI                            ; 004cf839
     MOV ESI,0x5e1825                    ; 004cf83a | = "Flashlight"
-    CALL core_game.cpp_FUN_004dc040     ; 004cf83f
-        ;   XREF to: 004dc040 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004dc040()
+    CALL core_game.cpp_loadCursorBitmaps_FUN_004dc040 ; 004cf83f
+        ;   XREF to: 004dc040 (UNCONDITIONAL_CALL)  ; void core_game.cpp_loadCursorBitmaps_FUN_004dc040()
     ADD ESP,0x4                         ; 004cf844
     MOV EDI,0x1ccc424                   ; 004cf847
     MOV EDX,0x42000000                  ; 004cf84c
@@ -308,8 +308,8 @@ section .text
         ;   XREF to: 004cbf10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004cbf10(CGame * this_ptr)
     ADD ESP,0x4                         ; 004cf988
     PUSH ESI                            ; 004cf98b
-    CALL core_game.cpp_FUN_004d19d0     ; 004cf98c
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 004cf98c
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004cf991
     MOV EAX,[0x00622580]                ; 004cf994 | g_CNetGamePtr
     PUSH EAX                            ; 004cf999 | g_CNetGameInstance
@@ -502,8 +502,8 @@ section .text
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV EDX,dword ptr [0x0061abc0]      ; 004cfb9c | g_CEditorToolsPtr
     PUSH EDX                            ; 004cfba2
-    CALL shape_edittool.cpp_FUN_00496dd0 ; 004cfba3
-        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496dd0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0 ; 004cfba3
+        ;   XREF to: 00496dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004cfba8
     PUSH 0x1cd01fc                      ; 004cfbab | g_CPickList
     CALL shape_edittool.cpp_CPickList_clear_FUN_0049c370 ; 004cfbb0
@@ -612,8 +612,8 @@ section .text
         ;   XREF to: 00415c80 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80()
     MOV EDX,dword ptr [EBP + 0x14]      ; 004cfcd8
     PUSH EDX                            ; 004cfcdb
-    CALL core_game.cpp_FUN_004dc180     ; 004cfcdc
-        ;   XREF to: 004dc180 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004dc180()
+    CALL core_game.cpp_freeCursorBitmaps_FUN_004dc180 ; 004cfcdc
+        ;   XREF to: 004dc180 (UNCONDITIONAL_CALL)  ; void core_game.cpp_freeCursorBitmaps_FUN_004dc180()
     ADD ESP,0x4                         ; 004cfce1
     MOV ECX,dword ptr [EBP + 0x14]      ; 004cfce4
     PUSH ECX                            ; 004cfce7
@@ -1010,8 +1010,8 @@ section .text
         ;   XREF to: 004d014c (CONDITIONAL_JUMP)  ; LAB_004d014c
     MOV ECX,dword ptr [0x006236b8]      ; 004d013d | DAT_006236b8
     PUSH ECX                            ; 004d0143
-    CALL core_sound.cpp_FUN_0057cc00    ; 004d0144
-        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cc00(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0057cc00 ; 004d0144
+        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0057cc00(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d0149
     MOV EAX,[0x01d06ab4]                ; 004d014c | DAT_01d06ab4
         ;   Label: LAB_004d014c
@@ -1193,7 +1193,7 @@ section .text
         ;   Label: LAB_004d0338
     PUSH EBX                            ; 004d033b
     CALL core_game.cpp_FUN_004d77d0     ; 004d033c
-        ;   XREF to: 004d77d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d77d0()
+        ;   XREF to: 004d77d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d77d0(CGame * this_ptr)
     MOV ESI,dword ptr [EBX + 0x21c]     ; 004d0341
     ADD ESP,0x4                         ; 004d0347
     TEST ESI,ESI                        ; 004d034a
@@ -1218,8 +1218,8 @@ section .text
     MOV ESI,dword ptr [0x006236b8]      ; 004d0370 | DAT_006236b8
     PUSH ESI                            ; 004d0376
     MOV dword ptr [EBP + -0x8],EDX      ; 004d0377
-    CALL core_sound.cpp_FUN_0057cc00    ; 004d037a
-        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cc00(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0057cc00 ; 004d037a
+        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0057cc00(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d037f
     MOV EAX,dword ptr [EBP + 0x14]      ; 004d0382
         ;   Label: LAB_004d0382
@@ -1250,8 +1250,8 @@ section .text
     PUSH 0x5e1959                       ; 004d03c2 | = "NewSet"
     MOV EBX,dword ptr [0x0061b4d0]      ; 004d03c7 | DAT_0061b4d0
     PUSH EBX                            ; 004d03cd
-    CALL core_event.cpp_FUN_004a9870    ; 004d03ce
-        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9870()
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 ; 004d03ce
+        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList * this_ptr, char * name, int add_flag)
     MOV EAX,dword ptr [EBP + 0x14]      ; 004d03d3
     MOV ESI,dword ptr [EAX + 0x288]     ; 004d03d6
     DEC ESI                             ; 004d03dc

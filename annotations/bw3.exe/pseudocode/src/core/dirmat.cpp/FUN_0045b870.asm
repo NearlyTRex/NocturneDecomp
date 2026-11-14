@@ -16,7 +16,7 @@
 ;   core_box.cpp_CBox_processPhysics_FUN_0041b470 at 0041b5e2
 ;   core_box.cpp_CBox_setupVelocities_FUN_0041d790 at 0041d7ce
 ;   core_cloth.cpp_CCloth_step_FUN_0043e2a0 at 0043e7f8
-;   core_curtain.cpp_FUN_00446c60 at 00446cfa
+;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00446c60 at 00446cfa
 ;   core_dcamera.cpp_FUN_00450e10 at 00451092
 ;   core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045af60 at 0045afb5
 ;   ... and 14 more

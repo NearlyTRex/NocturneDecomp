@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01b2efdc
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00467160
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     LEA ESI,[EBX + 0x39800]             ; 00468837
     PUSH EBX                            ; 0046883d
         ;   Label: LAB_0046883d
-    CALL core_dmodel.cpp_FUN_00467160   ; 0046883e
-        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467160()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160 ; 0046883e
+        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00467160(CKeyFramedModel * this_ptr)
     ADD EBX,0x398                       ; 00468843
     ADD ESP,0x4                         ; 00468849
     CMP EBX,ESI                         ; 0046884c

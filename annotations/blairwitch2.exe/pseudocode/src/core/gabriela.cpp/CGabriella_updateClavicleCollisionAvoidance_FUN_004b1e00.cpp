@@ -18,7 +18,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
-  uint in_stack_00000010;
+  float in_stack_00000010;
   float afStackY_1030 [986];
   CBoundingBox3D *in_stack_ffffff50;
   CBoundingBox3D *in_stack_ffffff58;
@@ -91,9 +91,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
            *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       local_18 = -local_1c;
     }
-    core_gabriela_cpp_FUN_004b20d0
+    core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
               (this_ptr,in_stack_00000010,&this_ptr->left_clavicle_blend,_DAT_01cb06b8,_DAT_01cb067c
-               ,&stack0xffffffe8);
+               ,(CVector3f *)&stack0xffffffe8);
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       local_18 = 0.5;
@@ -116,9 +116,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
       *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
            *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     }
-    core_gabriela_cpp_FUN_004b20d0
+    core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
               (this_ptr,in_stack_00000010,&this_ptr->right_clavicle_blend,_DAT_01cb06bc,
-               _DAT_01cb0680,&stack0xffffffe8);
+               _DAT_01cb0680,(CVector3f *)&stack0xffffffe8);
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;
   }

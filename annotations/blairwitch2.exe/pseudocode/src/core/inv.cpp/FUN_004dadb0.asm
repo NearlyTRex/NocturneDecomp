@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)
+; undefined4 core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[9]:
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 at 0040e696
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9af6
 ;   core_game.cpp_FUN_004b8e10 at 004b8ee1
-;   core_game.cpp_FUN_004b90d0 at 004b9af6
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9053
 ;   core_hero.cpp_FUN_004cff90 at 004d0011
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d19c3
@@ -43,7 +43,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
-;   core_inv.cpp_FUN_004db9d0
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_getItemDescription_FUN_004d9f80
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
@@ -736,8 +736,8 @@ section .text
     PUSH 0x5                            ; 004db42f
     PUSH EBP                            ; 004db431
     PUSH EBX                            ; 004db432
-    CALL core_inv.cpp_FUN_004db9d0      ; 004db433
-        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db9d0()
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 ; 004db433
+        ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004db438
     MOV EAX,0x1                         ; 004db43b
         ;   Label: LAB_004db43b

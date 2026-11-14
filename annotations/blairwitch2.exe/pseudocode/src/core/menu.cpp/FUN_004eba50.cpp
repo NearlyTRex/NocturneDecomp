@@ -87,6 +87,6 @@ LAB_004ebab3:
   } while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar1 == 0));
   *param_1 = iVar3;
 LAB_004ebc85:
-  shape_edittool_cpp_FUN_0047e760();
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
   return;
 }

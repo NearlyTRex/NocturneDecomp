@@ -40,7 +40,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
   if (iVar10 < 63000) {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,iVar10);
   }
-  engine_texture_cpp_FUN_00597a20((this_ptr->model).texture_list);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20
+            ((SMRGLTextureBasic *)(this_ptr->model).texture_list);
   if (this_ptr->double_sided == 0) {
     core_set_cpp_CDemonSet_lightVerticies_FUN_00553440
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count / 2,

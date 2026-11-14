@@ -38,7 +38,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_00489670 at 0048bf80
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048bf80
 ;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e3a20
 ;   core_weather.cpp_CWeather_update_FUN_0058a660 at 0058a93d
 ;

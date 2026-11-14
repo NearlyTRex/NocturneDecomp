@@ -10,13 +10,13 @@
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449ea
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 0047520b
 ;   core_doc.cpp_FUN_0046bde0 at 0046c8ed
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0 at 004c885b
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c78c5
-;   core_gabriela.cpp_FUN_004c83b0 at 004c885b
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e971c
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec7f3
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f1441
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005912a9
-;   core_stranger.cpp_FUN_005881d0 at 00588925
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 00588925
 ;   ... and 1 more
 ;
 ; Called Functions:

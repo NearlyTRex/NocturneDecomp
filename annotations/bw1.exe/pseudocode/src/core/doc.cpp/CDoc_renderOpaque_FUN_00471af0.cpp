@@ -105,7 +105,8 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr)
       *(float *)((int)&CStack_11c + (uint)bVar6 * -8 + 4) = afStack_13c[(uint)bVar6 * -2];
       *(float *)((int)&CStack_11c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_13c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-      fStack_14 = (float)core_setcolid_cpp_FUN_00557630(g_CDemonSetPtr,pCVar8,pCVar10);
+      fStack_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00557630
+                            (g_CDemonSetPtr,pCVar8,pCVar10);
       fStack_1c = fStack_14;
       if (fStack_14 < 0.0) {
         fStack_1c = 10.0;

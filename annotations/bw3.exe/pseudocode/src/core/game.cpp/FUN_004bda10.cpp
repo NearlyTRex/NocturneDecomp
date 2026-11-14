@@ -148,7 +148,7 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
     support_codec_cpp_CLZWCompress_ctor_FUN_004410f0(&local_88,0x8000,8);
     support_codec_cpp_CLZWCompress_init_FUN_00441140(&local_88);
     support_codec_cpp_FUN_00441190();
-    support_codec_cpp_FUN_00441290(&local_88,&local_1c);
+    support_codec_cpp_CLZWCompress_finalize_FUN_00441290(&local_88,&local_1c.base);
     support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_48);
     support_trstream_cpp_COutStreamFile_close_FUN_005749a0(&local_1c);
     support_codec_cpp_CLZWDictionary_dtor_FUN_00440bf0(&local_88.dictionary,0);

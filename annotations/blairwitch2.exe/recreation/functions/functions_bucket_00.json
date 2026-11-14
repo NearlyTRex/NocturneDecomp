@@ -4030,8 +4030,8 @@
     ],
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_0042f300",
-    "name":"cockpit_ckptutil.c_FUN_0042f300",
+    "method":"setLineBlendingDisabled",
+    "name":"cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0042f300",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -5631,14 +5631,57 @@
       "004e4500",
       "005b8df8"
     ],
-    "conv":"unknown",
+    "cls":"CKeyFramedModel",
+    "conv":"__cdecl",
     "instructions":137,
-    "method":"FUN_0044ea80",
-    "name":"core_dmodel.cpp_FUN_0044ea80",
-    "receiver":false,
+    "method":"allocate",
+    "name":"core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80",
+    "params":[
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"poly_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"texture_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"part_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frame_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dmodel.cpp",
@@ -7770,14 +7813,25 @@
       "00480e70",
       "005b7768"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":79,
-    "method":"FUN_0047c880",
-    "name":"shape_edittool.cpp_FUN_0047c880",
-    "receiver":false,
+    "method":"showYesAllNoCancelDialog",
+    "name":"shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047c880",
+    "params":[
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -7975,14 +8029,40 @@
       "005b7790",
       "005b7ff0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":168,
     "method":"FUN_0047fd00",
     "name":"shape_edittool.cpp_FUN_0047fd00",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CEditorTools",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"text_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -8183,17 +8263,36 @@
       "004811d0",
       "005b8130"
     ],
-    "conv":"unknown",
+    "cls":"CPickList",
+    "conv":"__cdecl",
     "data_refs":[
       "005f5d3c"
     ],
     "instructions":58,
-    "method":"FUN_00483d80",
-    "name":"shape_edittool.cpp_FUN_00483d80",
-    "receiver":false,
+    "method":"sort",
+    "name":"shape_edittool.cpp_CPickList_sort_FUN_00483d80",
+    "params":[
+      {
+        "name":"start_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10431,14 +10530,25 @@
       "005838f0",
       "005b77c0"
     ],
-    "conv":"unknown",
+    "cls":"CGabriella",
+    "conv":"__cdecl",
     "instructions":541,
-    "method":"FUN_004aeb00",
-    "name":"core_gabriela.cpp_FUN_004aeb00",
-    "receiver":false,
+    "method":"processAI",
+    "name":"core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gabriela.cpp",
@@ -10608,14 +10718,32 @@
   },
   {
     "addr":"004b7580",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_004b7580",
-    "name":"core_game.cpp_FUN_004b7580",
+    "method":"pollKeyEdgeTrigger",
+    "name":"core_game.cpp_pollKeyEdgeTrigger_FUN_004b7580",
+    "params":[
+      {
+        "name":"key_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_state",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -11026,17 +11154,18 @@
       "0055d723",
       "0055d9ec"
     ],
-    "conv":"unknown",
+    "cls":"CBloodParticle",
+    "conv":"__cdecl",
     "data_refs":[
       "005f7bdc"
     ],
     "instructions":544,
-    "method":"FUN_004c7580",
-    "name":"core_gore.cpp_FUN_004c7580",
-    "receiver":false,
+    "method":"render",
+    "name":"core_gore.cpp_CBloodParticle_render_FUN_004c7580",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gore.cpp",
@@ -13804,14 +13933,25 @@
       "004e5080",
       "004e57f0"
     ],
-    "conv":"unknown",
+    "cls":"CMansionPuzzleCircle",
+    "conv":"__cdecl",
     "instructions":85,
-    "method":"FUN_004e7600",
-    "name":"core_manpuz.cpp_FUN_004e7600",
-    "receiver":false,
+    "method":"updateReflectorPosition",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004e7600",
+    "params":[
+      {
+        "name":"reflector_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/manpuz.cpp",
@@ -16817,14 +16957,15 @@
       "005b910c",
       "005b929c"
     ],
-    "conv":"unknown",
+    "cls":"CPodFile",
+    "conv":"__cdecl",
     "instructions":222,
-    "method":"FUN_0051aa80",
-    "name":"engine_pod.cpp_FUN_0051aa80",
-    "receiver":false,
+    "method":"verifyChecksum",
+    "name":"engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -17066,8 +17207,8 @@
     ],
     "conv":"__cdecl",
     "instructions":545,
-    "method":"FUN_0051da80",
-    "name":"engine_prim.c_FUN_0051da80",
+    "method":"renderScanlinePolygon",
+    "name":"engine_prim.c_renderScanlinePolygon_FUN_0051da80",
     "params":[
       {
         "name":"vertices",
@@ -20638,14 +20779,40 @@
       "005838f0",
       "005b7f5f"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":642,
     "method":"FUN_0056bf00",
     "name":"core_stranger.cpp_FUN_0056bf00",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStranger",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/stranger.cpp",
@@ -20997,18 +21164,28 @@
       "00574490",
       "00574520"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "006093f8"
     ],
     "instructions":45,
-    "method":"FUN_00574e00",
-    "name":"engine_texture.cpp_FUN_00574e00",
+    "method":"ensureTextureLoaded",
+    "name":"engine_texture.cpp_ensureTextureLoaded_FUN_00574e00",
+    "params":[
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/texture.cpp",
     "variadic":false
@@ -22407,8 +22584,8 @@
     ],
     "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_00588900",
-    "name":"wincore_wddvmem.cpp_FUN_00588900",
+    "method":"cleanupGraphicsSystem",
+    "name":"wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_00588900",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -25318,19 +25495,12 @@
     "callers":[
       "0056eb60"
     ],
+    "cls":"CCloth",
     "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_005b1980",
-    "name":"core_cloth.cpp_FUN_005b1980",
+    "method":"resetState",
+    "name":"core_cloth.cpp_CCloth_resetState_FUN_005b1980",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCloth",
-          "ptr":1
-        }
-      },
       {
         "name":"vertex_index",
         "type":{
@@ -25340,7 +25510,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",

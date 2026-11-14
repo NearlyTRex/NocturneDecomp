@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00562fc7
     PUSH EAX                            ; 00562fcd
     FSTP float ptr [ESP + 0xc]          ; 00562fce
-    CALL core_motion.cpp_FUN_005035c0   ; 00562fd2
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00562fd2
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00562fd7
     XOR ESI,ESI                         ; 00562fda
     SUB EAX,0x7                         ; 00562fdc

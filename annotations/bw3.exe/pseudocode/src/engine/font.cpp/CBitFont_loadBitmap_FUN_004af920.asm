@@ -43,8 +43,8 @@
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
 ;   engine_dosio.cpp_makePath_FUN_00465e80
 ;   engine_dosio.cpp_splitPath_FUN_00465e50
+;   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004b31c0
-;   engine_font.cpp_FUN_004b0510
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
@@ -249,8 +249,8 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004afb5e
     PUSH EAX                            ; 004afb60
     PUSH EBX                            ; 004afb61
-    CALL engine_font.cpp_FUN_004b0510   ; 004afb62
-        ;   XREF to: 004b0510 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0510()
+    CALL engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510 ; 004afb62
+        ;   XREF to: 004b0510 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510(CBitFont * this_ptr, int bitmap_count, int bitmap_width, int bitmap_height, ...)
     MOV EDX,dword ptr [EBX]             ; 004afb67
     ADD ESP,0x14                        ; 004afb69
     INC EDX                             ; 004afb6c

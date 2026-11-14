@@ -20,9 +20,9 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
 ;   core_charactr.cpp_FUN_0042cd70
 ;   core_charactr.cpp_FUN_00432330
-;   core_charactr.cpp_FUN_00433220
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
@@ -209,8 +209,8 @@ section .text
     FADD float ptr [EBX + 0x34]         ; 00518ca9
     PUSH EBX                            ; 00518cac
     FSTP float ptr [EBX + 0x34]         ; 00518cad
-    CALL core_charactr.cpp_FUN_00433220 ; 00518cb0
-        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433220()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433220 ; 00518cb0
+        ;   XREF to: 00433220 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433220(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 00518cb5
     JMP 0x00518bb8                      ; 00518cb8
         ;   XREF to: 00518bb8 (UNCONDITIONAL_JUMP)  ; LAB_00518bb8

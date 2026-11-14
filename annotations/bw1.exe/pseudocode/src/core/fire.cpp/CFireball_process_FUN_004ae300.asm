@@ -20,7 +20,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045e970
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
-;   core_particle.cpp_FUN_00532250
+;   core_particle.cpp_CParticle_process_FUN_00532250
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     MOV dword ptr [EBP + 0x50],EDX      ; 004ae31d
     PUSH EBP                            ; 004ae320
         ;   Label: LAB_004ae320
-    CALL core_particle.cpp_FUN_00532250 ; 004ae321
-        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00532250()
+    CALL core_particle.cpp_CParticle_process_FUN_00532250 ; 004ae321
+        ;   XREF to: 00532250 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00532250(CParticle * this_ptr)
     MOV EAX,[0x01c43530]                ; 004ae326 | DAT_01c43530
     MOV EDX,EAX                         ; 004ae32b
     SAR EDX,0x1f                        ; 004ae32d

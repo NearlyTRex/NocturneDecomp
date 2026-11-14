@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00402ca0
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
-;   engine_font.cpp_FUN_004b0a20
 ;   engine_mini3d.cpp_setColor_FUN_004f3520
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780
@@ -89,8 +89,8 @@ section .text
     PUSH EAX                            ; 0048689a
     MOV EDX,dword ptr [0x01c5b0e0]      ; 0048689b | DAT_01c5b0e0
     PUSH EDX                            ; 004868a1
-    CALL engine_font.cpp_FUN_004b0a20   ; 004868a2
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004868a2
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004868a7
     MOV ECX,dword ptr [EBX + 0x20]      ; 004868aa
     PUSH ECX                            ; 004868ad

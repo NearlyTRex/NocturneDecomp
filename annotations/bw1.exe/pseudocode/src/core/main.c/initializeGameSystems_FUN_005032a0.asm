@@ -133,8 +133,8 @@ section .text
     PUSH 0x20                           ; 0050339b
     PUSH 0x1e0                          ; 0050339d
     PUSH 0x280                          ; 005033a2
-    CALL wincore_wddvmem.cpp_FUN_005ac300 ; 005033a7
-        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005ac300()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 005033a7
+        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005033ac
     TEST EAX,EAX                        ; 005033af
     JNZ 0x005033d5                      ; 005033b1

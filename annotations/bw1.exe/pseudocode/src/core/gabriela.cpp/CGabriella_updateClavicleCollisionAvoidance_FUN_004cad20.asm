@@ -26,7 +26,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_gabriela.cpp_FUN_004caff0
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005592b0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
@@ -160,8 +160,8 @@ section .text
     PUSH EAX                            ; 004cae9c
     PUSH dword ptr [ESP + 0xc8]         ; 004cae9d
     PUSH EBX                            ; 004caea4
-    CALL core_gabriela.cpp_FUN_004caff0 ; 004caea5
-        ;   XREF to: 004caff0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004caff0()
+    CALL core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 ; 004caea5
+        ;   XREF to: 004caff0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0(CGabriella * this_ptr, float delta_time, float * clavicle_blend, int probe_bone_index, ...)
     MOV ECX,dword ptr [EBX + 0x2628]    ; 004caeaa
     ADD ESP,0x18                        ; 004caeb0
     TEST ECX,ECX                        ; 004caeb3
@@ -209,8 +209,8 @@ section .text
     PUSH EAX                            ; 004caf3f
     PUSH dword ptr [ESP + 0xc8]         ; 004caf40
     PUSH EBX                            ; 004caf47
-    CALL core_gabriela.cpp_FUN_004caff0 ; 004caf48
-        ;   XREF to: 004caff0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004caff0()
+    CALL core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 ; 004caf48
+        ;   XREF to: 004caff0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0(CGabriella * this_ptr, float delta_time, float * clavicle_blend, int probe_bone_index, ...)
     ADD ESP,0x18                        ; 004caf4d
     MOV EAX,[0x00622c18]                ; 004caf50 | g_CDemonSetPtr
     PUSH EAX                            ; 004caf55 | g_CDemonSetInstance

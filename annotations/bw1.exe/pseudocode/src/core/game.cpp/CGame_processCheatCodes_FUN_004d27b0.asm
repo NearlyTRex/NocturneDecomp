@@ -76,10 +76,10 @@
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_event.cpp_CEventList_validateCommands_FUN_004a6cd0
-;   core_event.cpp_FUN_004a9a60
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
 ;   ... and 30 more
 ;
@@ -3992,15 +3992,15 @@ section .text
     XOR CL,CL                           ; 004d540c
     PUSH ESI                            ; 004d540e
     MOV byte ptr [0x01cd0c68],CL        ; 004d540f | DAT_01cd0c68
-    CALL core_event.cpp_FUN_004a9a60    ; 004d5415
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d5415
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d541a
     PUSH 0x0                            ; 004d541d
     PUSH 0x5e29ba                       ; 004d541f | = "combatModeHard"
     MOV EDI,dword ptr [0x0061b4d0]      ; 004d5424 | DAT_0061b4d0
     PUSH EDI                            ; 004d542a
-    CALL core_event.cpp_FUN_004a9a60    ; 004d542b
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d542b
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d5430
     MOV EAX,[0x0061d95c]                ; 004d5433 | g_CGamePtr
     PUSH 0x5e29c9                       ; 004d5438 | = "Game"
@@ -4009,8 +4009,8 @@ section .text
     MOV dword ptr [EAX + 0xe8],0x0      ; 004d544c | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x20c]               ; 004d5456
     PUSH EAX                            ; 004d545d
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004d545e
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004d545e
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     MOV EAX,[0x0061d95c]                ; 004d5463 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5468
     MOV EDX,dword ptr [EAX + 0xe4]      ; 004d546b | g_CGameInstance.puzzle_difficulty_mode
@@ -4101,15 +4101,15 @@ section .text
     XOR CH,CH                           ; 004d5564
     PUSH EBX                            ; 004d5566
     MOV byte ptr [0x01cd0c68],CH        ; 004d5567 | DAT_01cd0c68
-    CALL core_event.cpp_FUN_004a9a60    ; 004d556d
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d556d
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d5572
     PUSH 0x0                            ; 004d5575
     PUSH 0x5e2a9d                       ; 004d5577 | = "combatModeHard"
     MOV ESI,dword ptr [0x0061b4d0]      ; 004d557c | DAT_0061b4d0
     PUSH ESI                            ; 004d5582
-    CALL core_event.cpp_FUN_004a9a60    ; 004d5583
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d5583
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d5588
     MOV EAX,[0x0061d95c]                ; 004d558b | g_CGamePtr
     PUSH 0x5e2aac                       ; 004d5590 | = "Game"
@@ -4118,8 +4118,8 @@ section .text
     MOV dword ptr [EAX + 0xe8],0x0      ; 004d55a4 | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x614]               ; 004d55ae
     PUSH EAX                            ; 004d55b5
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004d55b6
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004d55b6
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     MOV EAX,[0x0061d95c]                ; 004d55bb | g_CGamePtr
     ADD ESP,0xc                         ; 004d55c0
     MOV EDI,dword ptr [EAX + 0xe4]      ; 004d55c3 | g_CGameInstance.puzzle_difficulty_mode
@@ -4211,15 +4211,15 @@ section .text
     XOR AL,CL                           ; 004d56be
     PUSH EBX                            ; 004d56c0
     MOV [0x01cd0c68],AL                 ; 004d56c1 | DAT_01cd0c68
-    CALL core_event.cpp_FUN_004a9a60    ; 004d56c6
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d56c6
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d56cb
     PUSH 0x1                            ; 004d56ce
     PUSH 0x5e2b82                       ; 004d56d0 | = "combatModeHard"
     MOV ESI,dword ptr [0x0061b4d0]      ; 004d56d5 | DAT_0061b4d0
     PUSH ESI                            ; 004d56db
-    CALL core_event.cpp_FUN_004a9a60    ; 004d56dc
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d56dc
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d56e1
     MOV EAX,[0x0061d95c]                ; 004d56e4 | g_CGamePtr
     PUSH 0x5e2b91                       ; 004d56e9 | = "Game"
@@ -4228,8 +4228,8 @@ section .text
     MOV dword ptr [EAX + 0xe8],0x1      ; 004d56fd | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x8]                 ; 004d5707
     PUSH EAX                            ; 004d570b
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004d570c
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004d570c
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     MOV EAX,[0x0061d95c]                ; 004d5711 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5716
     MOV EDI,dword ptr [EAX + 0xe4]      ; 004d5719 | g_CGameInstance.puzzle_difficulty_mode
@@ -4321,15 +4321,15 @@ section .text
     XOR AH,CH                           ; 004d580b
     PUSH EBX                            ; 004d580d
     MOV byte ptr [0x01cd0c68],AH        ; 004d580e | DAT_01cd0c68
-    CALL core_event.cpp_FUN_004a9a60    ; 004d5814
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d5814
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d5819
     PUSH 0x1                            ; 004d581c
     PUSH 0x5e2c5d                       ; 004d581e | = "combatModeHard"
     MOV ESI,dword ptr [0x0061b4d0]      ; 004d5823 | DAT_0061b4d0
     PUSH ESI                            ; 004d5829
-    CALL core_event.cpp_FUN_004a9a60    ; 004d582a
-        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a9a60()
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 ; 004d582a
+        ;   XREF to: 004a9a60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d582f
     MOV EAX,[0x0061d95c]                ; 004d5832 | g_CGamePtr
     PUSH 0x5e2c6c                       ; 004d5837 | = "Game"
@@ -4338,8 +4338,8 @@ section .text
     MOV dword ptr [EAX + 0xe8],0x1      ; 004d584b | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x410]               ; 004d5855
     PUSH EAX                            ; 004d585c
-    CALL engine_ini.cpp_FUN_004f4b00    ; 004d585d
-        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004f4b00 ; 004d585d
+        ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004f4b00(CIniFile * this_ptr, char * filename, char * section)
     MOV EAX,[0x0061d95c]                ; 004d5862 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5867
     MOV EDI,dword ptr [EAX + 0xe4]      ; 004d586a | g_CGameInstance.puzzle_difficulty_mode

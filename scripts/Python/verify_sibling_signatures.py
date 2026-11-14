@@ -364,6 +364,100 @@ def propagate_through_slots(results, expected_by_b, peers):
     return confirmed
 
 
+# A fixed stack slot read through ESP or EBP; an index register makes it an array, not an argument
+_ESP_READ_RE = re.compile(r"\[esp(?:\s*\+\s*(0x[0-9a-f]+|\d+))?\]")
+_EBP_READ_RE = re.compile(r"\[ebp\s*\+\s*(0x[0-9a-f]+|\d+)\]")
+_ESP_IMM_RE = re.compile(r"^esp,\s*(0x[0-9a-f]+|\d+)$")
+
+
+def stack_args_read(insns):
+    """Indices of the stack arguments a body reads, from its own instructions.
+
+    ESP is tracked linearly through PUSH/POP/PUSHAD/POPAD and immediate SUB/ADD,
+    and an EBP frame from `mov ebp, esp`. Argument 0 sits at [ESP+4] on entry.
+    Linear tracking ignores branches, which Watcom bodies keep balanced; a
+    misread surfaces as a slot past the declared parameters, which the rule
+    below refuses.
+    """
+    delta, ebp, out = 0, None, set()
+    for _, mnem, ops in insns:
+        for m in _ESP_READ_RE.finditer(ops):
+            off = int(m.group(1) or "0", 0) - delta
+            if off >= 4 and off % 4 == 0:
+                out.add((off - 4) // 4)
+        if ebp is not None:
+            for m in _EBP_READ_RE.finditer(ops):
+                off = int(m.group(1), 0) - ebp
+                if off >= 4 and off % 4 == 0:
+                    out.add((off - 4) // 4)
+        if mnem == "push":
+            delta += 4
+        elif mnem == "pop":
+            delta -= 4
+        elif mnem == "pushal":
+            delta += 32
+        elif mnem == "popal":
+            delta -= 32
+        elif mnem in ("sub", "add"):
+            m = _ESP_IMM_RE.match(ops)
+            if m:
+                delta += int(m.group(1), 0) * (1 if mnem == "sub" else -1)
+        elif mnem == "mov" and ops.replace(" ", "") == "ebp,esp":
+            ebp = delta
+    return out
+
+
+def direct_callees(insns):
+    """Direct call targets in order, as 8-digit hex."""
+    out = []
+    for _, mnem, ops in insns:
+        if mnem == "call" and re.fullmatch(r"0x[0-9a-f]+", ops):
+            out.append("%08x" % int(ops, 16))
+    return out
+
+
+def callees_in_order(a_insns, b_insns, a_to_b):
+    """Does the target call every mapped callee of the source, in the source's order?
+
+    None when the source calls nothing the mapping pairs: no evidence either way.
+    """
+    mapped = [a_to_b[c] for c in direct_callees(a_insns) if c in a_to_b]
+    if not mapped:
+        return None
+    calls = direct_callees(b_insns)
+    if not set(mapped) <= set(calls):
+        return False
+    prev = [0] * (len(calls) + 1)
+    for x in mapped:
+        cur = [0]
+        for j, y in enumerate(calls):
+            cur.append(prev[j] + 1 if x == y else max(prev[j + 1], cur[j]))
+        prev = cur
+    return prev[-1] == len(mapped)
+
+
+def structural_match(a_func, a_insns, b_insns, a_to_b):
+    """The structural receiver check, for pairs nothing can measure.
+
+    True when the target calls every mapped callee in order, both bodies read
+    exactly the same stack arguments with argument 0 among them, and the
+    source reads none past its declared parameters (which leaves out varargs
+    and bodies the ESP tracking misreads). Scored against the measured pairs
+    of the three Blair Witch builds: 0 conflicts in 3461 accepted.
+    """
+    n = len((a_func.get("vars") or {}).get("params") or [])
+    if not n or not callees_in_order(a_insns, b_insns, a_to_b):
+        return False
+    read_a, read_b = stack_args_read(a_insns), stack_args_read(b_insns)
+    return 0 in read_b and read_a == read_b and all(i < n for i in read_a)
+
+
+def structural_tally(results):
+    """How the structural check scores against the measured verdicts."""
+    return Counter((r["sig_verdict"], r["sig_structural"]) for r in results
+                   if r["sig_verdict"] in ("agree", "conflict"))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -383,6 +477,8 @@ def main(argv=None):
 
     results = []
     expected_by_b = {}
+    a_to_b = {p["a"]: p["b"] for p in mapping["pairs"] if not p.get("ambiguous")}
+    a_cache = {}
     for pair in mapping["pairs"]:
         a_func = a_img.by_addr.get(pair["a"])
         b_func = b_img.by_addr.get(pair["b"])
@@ -391,7 +487,10 @@ def main(argv=None):
         verdict, detail = verify_pair(a_func, b_func, b_img,
                                       sites.get(pair["b"], ()), insn_cache)
         expected_by_b[pair["b"]] = expected_param_bytes(a_func)[0]
-        results.append({**pair, "sig_verdict": verdict, "sig_detail": detail})
+        structural = structural_match(a_func, _function_insns(a_img, a_cache, pair["a"]),
+                                      _function_insns(b_img, insn_cache, pair["b"]), a_to_b)
+        results.append({**pair, "sig_verdict": verdict, "sig_detail": detail,
+                        "sig_structural": structural})
     by_slot = propagate_through_slots(results, expected_by_b, override_peers(b_img.vtables))
 
     tally = Counter(r["sig_verdict"] for r in results)
@@ -414,6 +513,15 @@ def main(argv=None):
     if measurable:
         print(f"\nof the {measurable} measurable pairs, "
               f"{100.0 * tally['agree'] / measurable:.1f}% agree")
+
+    # The structural check's own score, against the pairs that were measured:
+    # what --trust-structural-signature rests on, re-checked on every run.
+    st = structural_tally(results)
+    accepted = st[("agree", True)] + st[("conflict", True)]
+    unverified = sum(1 for r in results if r["sig_verdict"] == "unverifiable" and r["sig_structural"])
+    print(f"\nstructural match: {accepted} measured pair(s) accepted, "
+          f"{st[('conflict', True)]} of them conflicts; "
+          f"{unverified} unverifiable pair(s) it would carry")
 
     print("\nby mapping confidence:")
     print(f"  {'':<8} {'agree':>7} {'conflict':>9} {'unverif':>9}")

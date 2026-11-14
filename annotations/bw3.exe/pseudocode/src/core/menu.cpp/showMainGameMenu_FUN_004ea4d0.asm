@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
-;   core_game.cpp_FUN_004b4440
+;   core_game.cpp_CGame_updateDT_FUN_004b4440
 ;   core_game.cpp_FUN_004bdfb0
 ;   core_game.cpp_FUN_004be8d0
 ;   core_main.c_FUN_004e4400
@@ -128,8 +128,8 @@ section .text
     MOV ECX,dword ptr [0x005fe9dc]      ; 004ea5a0 | g_CGamePtr
         ;   Label: LAB_004ea5a0
     PUSH ECX                            ; 004ea5a6
-    CALL core_game.cpp_FUN_004b4440     ; 004ea5a7
-        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b4440()
+    CALL core_game.cpp_CGame_updateDT_FUN_004b4440 ; 004ea5a7
+        ;   XREF to: 004b4440 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004b4440(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ea5ac
     PUSH 0x10000                        ; 004ea5af
     MOV EAX,[0x005fe9dc]                ; 004ea5b4 | g_CGamePtr

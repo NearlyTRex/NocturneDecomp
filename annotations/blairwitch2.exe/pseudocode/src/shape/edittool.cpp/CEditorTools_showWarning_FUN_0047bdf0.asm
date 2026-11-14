@@ -16,9 +16,9 @@
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4a70
 ;   core_script.cpp_CScript_loadState_FUN_0052a0d0 at 0052a3e4
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_00534a90 at 00534b00
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0 at 00565e3c
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0056acd0 at 0056b05b
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056e444
-;   core_stranger.cpp_FUN_005656f0 at 00565e3c
 ;   core_stranger.cpp_FUN_0056a160 at 0056a1ce
 ;
 ; Referenced Globals:

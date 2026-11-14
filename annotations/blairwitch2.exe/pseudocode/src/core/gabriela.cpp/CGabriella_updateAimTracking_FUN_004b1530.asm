@@ -44,7 +44,7 @@
 ;   core_actor.cpp_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
@@ -139,8 +139,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 004b1645
         ;   Label: LAB_004b1645
     PUSH EAX                            ; 004b164b
-    CALL core_motion.cpp_FUN_005035c0   ; 004b164c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004b164c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b1651
     ADD ESP,0x4                         ; 004b1654
     CMP EAX,0x2                         ; 004b1657

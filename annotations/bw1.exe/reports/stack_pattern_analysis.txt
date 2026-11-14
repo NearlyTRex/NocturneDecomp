@@ -97,8 +97,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 44
     - [alt_frame_pointer] at 0040904a: MOV ESI,ESP
 
-  core_actor.cpp_FUN_00409170
-    File: core/actor.cpp, Suspects: 76
+  core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
+    File: core/actor.cpp, Suspects: 21
     - [stack_alignment] at 0040917c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940
@@ -110,7 +110,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00409d79: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
-    File: core/actor.cpp, Suspects: 43
+    File: core/actor.cpp, Suspects: 68
     - [stack_alignment] at 00409f2c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b560
@@ -229,7 +229,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
-    File: core/bodypart.cpp, Suspects: 6
+    File: core/bodypart.cpp, Suspects: 10
     - [stack_alignment] at 00419749: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_processFires_FUN_00419940
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 27.4 suspects/function
-  Without stack patterns: avg 6.8 suspects/function
+  With stack patterns:    avg 26.0 suspects/function
+  Without stack patterns: avg 6.5 suspects/function

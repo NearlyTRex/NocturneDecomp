@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 004899d1
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 004899d1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_No_opening_parenthesis_005d2f24

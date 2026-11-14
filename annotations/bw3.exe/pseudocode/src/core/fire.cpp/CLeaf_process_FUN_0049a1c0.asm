@@ -13,7 +13,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00509f30
+;   core_particle.cpp_CParticle_process_FUN_00509f30
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0049a1c8
     MOV EBX,dword ptr [EBP + 0x10]      ; 0049a1cb
     PUSH EBX                            ; 0049a1ce
-    CALL core_particle.cpp_FUN_00509f30 ; 0049a1cf
-        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00509f30()
+    CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 0049a1cf
+        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
     LEA ECX,[EBX + 0xc]                 ; 0049a1d4
     FLD float ptr [ECX + 0x4]           ; 0049a1d7
     FMUL ST0                            ; 0049a1da

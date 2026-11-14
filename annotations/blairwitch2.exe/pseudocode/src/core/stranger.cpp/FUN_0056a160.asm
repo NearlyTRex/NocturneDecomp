@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005656f0 at 00565d6a
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0 at 00565d6a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_005eba7d

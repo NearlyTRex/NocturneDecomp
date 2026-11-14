@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   transform_vector
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_00558450 at 00558879
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450 at 00558879
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d964c

@@ -56,14 +56,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00473b20(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00473b60(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 void core_dtrace_cpp_FUN_00473bc0(undefined4 param_1,float *param_2,float *param_3);
-float core_dtrace_cpp_FUN_00473cd0(CDemonRaytrace *param_1,float *param_2,float *param_3,undefined4 *param_4,undefined4 *param_5);
+float core_dtrace_cpp_FUN_00473cd0(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
 int __cdecl core_dtrace_cpp_FUN_00474400(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
-float core_dtrace_cpp_FUN_00474940(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4);
+float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00474940(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00474b90(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00474db0(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00474e80(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
-void core_dtrace_cpp_FUN_00475090(int param_1,float *param_2);
-void core_dtrace_cpp_FUN_004755c0(int param_1,int *param_2,int param_3,int param_4,int param_5);
+void __cdecl core_dtrace_cpp_FUN_00475090(CDemonRaytrace *this_ptr,CVector3f *world_pos);
+void core_dtrace_cpp_FUN_004755c0(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00475720(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00477060(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices);
@@ -102,7 +102,7 @@ int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0047ae00(int flags);
 CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0047ae10(int flags);
 undefined4 core_dtri_cpp_FUN_0047ae80(void);
 undefined * core_dtri_cpp_FUN_0047ae90(void);
-void core_dtri_cpp_FUN_0047aea0(void);
+void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0047aea0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_ctor_FUN_0047aff0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_dtor_FUN_0047b000(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0047b010(void);
@@ -137,7 +137,7 @@ void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bc
 void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0047bcf0(CInputString *this_ptr);
 void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047bd50(CInputString *this_ptr);
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047bf80(CInputString *this_ptr,int char_index);
-void shape_edittool_cpp_FUN_0047c050(CInputString *param_1,int param_2,int param_3);
+void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047c050(CInputString *this_ptr,int x_pos,int y_pos);
 int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047c2c0(char *dialog_title,char *input_buffer,int max_length,int flags,int dialog_mode);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0047c740(CEditorTools *this_ptr);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047c770(CEditorTools *this_ptr,uint flags);
@@ -157,7 +157,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
 bool shape_edittool_cpp_FUN_0047d980(undefined4 param_1,char *param_2);
 undefined4 shape_edittool_cpp_FUN_0047da40(undefined4 param_1,char *param_2);
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
-undefined4 shape_edittool_cpp_FUN_0047dd20(void);
+int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_0047e940(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_0047ea10(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value);
@@ -166,10 +166,10 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_0047ec20(CE
 int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_0047ecf0(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_0047ed20(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50(CEditorTools *this_ptr,char *message_text);
-void shape_edittool_cpp_FUN_0047ee50(undefined4 param_1,float param_2,float param_3);
+void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEditorTools *this_ptr,float current_progress,float total_progress);
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047f3e0(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags);
-void shape_edittool_cpp_FUN_0047f970(CEditorTools *param_1);
+void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditorTools *this_ptr);
 void shape_edittool_cpp_FUN_0047fa80(void);
 

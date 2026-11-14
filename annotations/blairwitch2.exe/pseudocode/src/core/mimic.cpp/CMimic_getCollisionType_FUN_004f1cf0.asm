@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005dda01
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     LEA EAX,[EDX + 0x2b4]               ; 004f1d19
         ;   Label: LAB_004f1d19
     PUSH EAX                            ; 004f1d1f
-    CALL core_motion.cpp_FUN_005035c0   ; 004f1d20
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f1d20
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004f1d25
     ADD ESP,0x4                         ; 004f1d28
     CMP EAX,0xc                         ; 004f1d2b

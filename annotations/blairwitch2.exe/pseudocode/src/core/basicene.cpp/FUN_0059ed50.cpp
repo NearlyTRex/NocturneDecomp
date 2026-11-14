@@ -9,7 +9,7 @@
 void core_basicene_cpp_FUN_0059ed50(int param_1,uint param_2)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
   core_basicene_cpp_FUN_0059ec10(param_1,param_2);
   if ((*(int *)(param_1 + 0x113b4) == 0) && (*(int *)(param_1 + 0x10a78) != 0)) {
@@ -19,9 +19,9 @@ void core_basicene_cpp_FUN_0059ed50(int param_1,uint param_2)
     *(uint *)(param_1 + 0x113b4) = 1;
     return;
   }
-  iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);
-  if ((*(int *)(iVar1 + 0x24) == *(int *)(param_1 + 0x11384)) && (*(int *)(param_1 + 0x113b4) != 0))
-  {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     ((CMotionController *)(param_1 + 0x2b4));
+  if ((pSVar1->state_index == *(int *)(param_1 + 0x11384)) && (*(int *)(param_1 + 0x113b4) != 0)) {
     core_basicene_cpp_FUN_005a01a0(param_1,*(uint *)(param_1 + 0x113c4),0,0x41200000);
     core_basicene_cpp_FUN_0059f570(param_1);
     *(uint *)(param_1 + 0x113b4) = 0;

@@ -17,7 +17,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_setup_FUN_00462c90 at 00462cbf
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048e9e9
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 at 0048e358
-;   core_event.cpp_CEventList_findActorVariable_FUN_004918d0 at 004918f0
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 004896af
 ;   ... and 96 more
 ;
 ; *****************************************************************************

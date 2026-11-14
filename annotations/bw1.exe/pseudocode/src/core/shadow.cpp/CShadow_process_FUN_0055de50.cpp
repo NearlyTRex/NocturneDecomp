@@ -137,7 +137,7 @@ void __cdecl core_shadow_cpp_CShadow_process_FUN_0055de50(CShadow *this_ptr,floa
   iVar10 = pSVar5->state_index;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar11->base);
   fStack_1c = (float)pSVar5->frame_count;
-  core_charactr_cpp_FUN_00434790(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00434790((CCharacter *)this_ptr,delta_time);
   iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {

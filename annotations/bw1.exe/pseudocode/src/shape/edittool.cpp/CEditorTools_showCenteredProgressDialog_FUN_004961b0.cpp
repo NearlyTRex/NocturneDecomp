@@ -34,6 +34,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0049
   iVar1 = (_DAT_01c3eb5c + -1) * 0x1f8;
   *(int *)(iVar1 + 0x1c3ed4c) = iVar2;
   *(uint *)(iVar1 + 0x1c3ed50) = 0xffffffff;
-  shape_edittool_cpp_FUN_004962b0(this_ptr,0,0x3f800000);
+  shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(this_ptr,0.0,1.0);
   return;
 }

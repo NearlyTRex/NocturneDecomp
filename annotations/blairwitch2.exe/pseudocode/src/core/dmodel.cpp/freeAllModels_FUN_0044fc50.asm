@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e4e20 at 004e4e64
+;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e64
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50 at 004fcf55
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b13a1c
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_0044e590
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     LEA ESI,[EBX + 0x39800]             ; 0044fc57
     PUSH EBX                            ; 0044fc5d
         ;   Label: LAB_0044fc5d
-    CALL core_dmodel.cpp_FUN_0044e590   ; 0044fc5e
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590 ; 0044fc5e
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590(CKeyFramedModel * this_ptr)
     ADD EBX,0x398                       ; 0044fc63
     ADD ESP,0x4                         ; 0044fc69
     CMP EBX,ESI                         ; 0044fc6c

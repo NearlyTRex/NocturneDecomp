@@ -476,8 +476,8 @@ section .text
         ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
     ADD ESP,0x8                         ; 0043735c
     PUSH ESI                            ; 0043735f
-    CALL core_motion.cpp_FUN_005035c0   ; 00437360
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00437360
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00437365
     PUSH dword ptr [EBP + 0x92]         ; 00437368
     MOV EDI,dword ptr [EAX + 0x24]      ; 0043736e

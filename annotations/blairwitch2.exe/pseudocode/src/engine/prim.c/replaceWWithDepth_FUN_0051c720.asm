@@ -14,9 +14,9 @@
 ;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a8b7
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970 at 0046bc22
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046cad0 at 0046cb19
-;   engine_prim.c_FUN_0051da80 at 0051ddf5
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e36f
 ;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd84
+;   engine_prim.c_renderScanlinePolygon_FUN_0051da80 at 0051ddf5
 ;
 ; *****************************************************************************
 

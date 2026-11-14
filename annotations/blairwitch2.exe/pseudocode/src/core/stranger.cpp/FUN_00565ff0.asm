@@ -177,10 +177,10 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
 ;   core_lever.cpp_FUN_004e2220
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005038a0
-;   core_motion.cpp_FUN_00503f50
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
@@ -279,8 +279,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005660de
     PUSH EAX                            ; 005660e4
     MOV dword ptr [ESP + 0x2078],EAX    ; 005660e5
-    CALL core_motion.cpp_FUN_005035c0   ; 005660ec
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005660ec
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005660f1
     ADD ESP,0x4                         ; 005660f4
     CMP EAX,0x15                        ; 005660f7
@@ -1629,8 +1629,8 @@ section .text
     PUSH EAX                            ; 005673e2
     PUSH ESI                            ; 005673e3
     MOV EDI,EAX                         ; 005673e4
-    CALL core_motion.cpp_FUN_00503f50   ; 005673e6
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 005673e6
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x2084],EAX    ; 005673eb
     FLD float ptr [ESP + 0x2084]        ; 005673f2
     ADD ESP,0xc                         ; 005673f9

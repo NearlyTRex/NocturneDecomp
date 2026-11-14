@@ -115,8 +115,8 @@ void core_prye_cpp_FUN_0051ee10(int param_1,int param_2)
     iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0
                       (&pCVar2->motion_list,motion_name,iVar8);
     pCVar1 = local_1c;
-    local_30 = (float)core_motion_cpp_FUN_004fca20(local_1c,iVar8,*(uint *)(param_1 + 0x2f04))
-    ;
+    local_30 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004fca20
+                         (&local_1c->base,iVar8,*(float *)(param_1 + 0x2f04));
     local_18 = local_30;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
               (pCVar1,iVar8,local_30,local_240,local_24,

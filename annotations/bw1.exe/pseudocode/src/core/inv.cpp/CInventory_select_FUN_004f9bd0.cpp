@@ -130,7 +130,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
       iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004ea530
                         (local_14,*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4));
       if (iVar2 < 1) {
-        core_inv_cpp_FUN_004f8d00(this_ptr,actor_ptr,1);
+        core_inv_cpp_CInventory_removeItem_FUN_004f8d00(this_ptr,actor_ptr,1);
         return 1;
       }
     }

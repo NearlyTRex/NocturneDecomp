@@ -53,7 +53,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
-;   core_enemy.cpp_FUN_004a0980
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980
 ;   core_main.c_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
@@ -98,8 +98,8 @@ section .text
     PUSH ECX                            ; 0051df2b
         ;   Label: LAB_0051df2b
     PUSH EBX                            ; 0051df2c
-    CALL core_enemy.cpp_FUN_004a0980    ; 0051df2d
-        ;   XREF to: 004a0980 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a0980()
+    CALL core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980 ; 0051df2d
+        ;   XREF to: 004a0980 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980(CEnemy * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 0051df32
     TEST EAX,EAX                        ; 0051df35
     JZ 0x0051e245                       ; 0051df37

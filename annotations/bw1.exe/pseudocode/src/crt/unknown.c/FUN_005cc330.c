@@ -2,24 +2,24 @@
 // Address: 005cc330
 // Address Range: [[005cc330, 005cc366]]
 // Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_005cc330(undefined4 *param_1)
+// Signature: time_t crt_unknown_c_FUN_005cc330(time_t *param_1)
 
 #include "nocturne.h"
 
-uint FUN_005cc330(uint *param_1)
+time_t FUN_005cc330(time_t *param_1)
 
 {
   int iVar1;
-  uint uVar2;
-  int aiStack_28 [9];
+  time_t tVar2;
+  _tm _Stack_28;
   
-  iVar1 = FUN_005cdb80(aiStack_28);
+  iVar1 = FUN_005cdb80(&_Stack_28);
   if (499 < iVar1) {
-    aiStack_28[0] = aiStack_28[0] + 1;
+    _Stack_28.tm_sec = _Stack_28.tm_sec + 1;
   }
-  uVar2 = FUN_005cc6e0(aiStack_28);
-  if (param_1 != (uint *)0x0) {
-    *param_1 = uVar2;
+  tVar2 = _mktime(&_Stack_28);
+  if (param_1 != (time_t *)0x0) {
+    *param_1 = tVar2;
   }
-  return uVar2;
+  return tVar2;
 }

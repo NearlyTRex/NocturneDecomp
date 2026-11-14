@@ -11,8 +11,8 @@
 ;   WatcomTypeInfo g_CGabriellaTypeInfo
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043e620
-;   core_hero.cpp_FUN_004ea980
+;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
+;   core_hero.cpp_CHero_dtor_FUN_004ea980
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
@@ -30,14 +30,14 @@ section .text
     PUSH 0x0                            ; 004cb76c
     ADD EBX,0x1ffec                     ; 004cb76e
     PUSH EBX                            ; 004cb774
-    CALL core_cloth.cpp_FUN_0043e620    ; 004cb775
-        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e620()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_0043e620 ; 004cb775
+        ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cb77a
     PUSH 0x1                            ; 004cb77d
     LEA EBX,[EAX + 0xfffe0014]          ; 004cb77f
     PUSH EBX                            ; 004cb785
-    CALL core_hero.cpp_FUN_004ea980     ; 004cb786
-        ;   XREF to: 004ea980 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ea980()
+    CALL core_hero.cpp_CHero_dtor_FUN_004ea980 ; 004cb786
+        ;   XREF to: 004ea980 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_dtor_FUN_004ea980(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cb78b
     MOV DL,byte ptr [ESP + 0xc]         ; 004cb78e
     MOV EBX,EAX                         ; 004cb792

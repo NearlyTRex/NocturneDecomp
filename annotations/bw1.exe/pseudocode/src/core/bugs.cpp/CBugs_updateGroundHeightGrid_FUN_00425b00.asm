@@ -56,7 +56,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048bdc0
+;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0
 ;   crt_math.c_floor_FUN_005c0880
 ;   crt_math.c_round_FUN_005c03a0
 ;
@@ -324,8 +324,8 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 00425ea7
     PUSH EAX                            ; 00425eab
     PUSH 0x1fe5c1c                      ; 00425eac | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_0048bdc0   ; 00425eb1
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048bdc0()
+    CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0 ; 00425eb1
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0xa4],EAX      ; 00425eb6
     FLD float ptr [ESP + 0xa4]          ; 00425ebd
     ADD ESP,0x10                        ; 00425ec4

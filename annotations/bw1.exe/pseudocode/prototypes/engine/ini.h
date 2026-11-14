@@ -33,9 +33,9 @@ int __cdecl getProfileInteger(char *section,char *key,int default_value,char *fi
 // Address: 004f4ad0
 void __cdecl writeProfileString(char *section,char *key,char *value,char *filename);
 
-// Original: engine_ini.cpp_FUN_004f4b00
+// Original: engine_ini.cpp_CIniFile_ctor_FUN_004f4b00
 // Address: 004f4b00
-CIniFile * FUN_004f4b00(CIniFile *param_1,char *param_2,char *param_3);
+CIniFile * __cdecl CIniFile::ctor(CIniFile *this_ptr,char *filename,char *section);
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
 // Address: 004f4b30

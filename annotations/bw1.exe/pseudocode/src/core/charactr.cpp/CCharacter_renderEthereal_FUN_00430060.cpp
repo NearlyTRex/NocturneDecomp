@@ -30,7 +30,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00430060(CCharacter
   iVar2 = rand();
   _DAT_007c617c = iVar2 % 6;
   DAT_00612560->skip_uv_extraction = 1;
-  engine_texture_cpp_FUN_00597a20(&DAT_00610c20 + (iVar2 % 6) * 0x18);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20
+            ((SMRGLTextureBasic *)(&DAT_00610c20 + (iVar2 % 6) * 0x18));
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0(this_ptr_00,&local_1aac);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005697b0

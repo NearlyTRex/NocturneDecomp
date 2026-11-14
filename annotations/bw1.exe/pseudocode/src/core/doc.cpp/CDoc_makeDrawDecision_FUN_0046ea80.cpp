@@ -121,8 +121,8 @@ LAB_0046ecd2:
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(pCVar10);
     local_24 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0
                          (&pCVar3->motion_list,pcVar12,iVar13);
-    local_28 = (float)core_motion_cpp_FUN_00525110
-                                (pCVar10,local_24,(this_ptr->base).base.layer_action_t);
+    local_28 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                         (&pCVar10->base,local_24,(this_ptr->base).base.layer_action_t);
     local_18 = local_28;
     if ((((this_ptr->base).base.layer_action_index == 9) &&
         (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->can_grab_weapon != 0)) {
@@ -133,7 +133,8 @@ LAB_0046ecd2:
                          (&pCVar3->motion_list,pcVar12,iVar13);
       local_24 = iVar13;
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-      local_18 = (float)core_motion_cpp_FUN_00525110(pCVar10,iVar13,local_18);
+      local_18 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110
+                           (&pCVar10->base,iVar13,local_18);
     }
     local_28 = local_18;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100

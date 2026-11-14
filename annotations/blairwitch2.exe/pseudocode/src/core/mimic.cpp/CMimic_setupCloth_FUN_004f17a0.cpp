@@ -13,7 +13,7 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(CMimic *this_ptr)
 {
   CDeformableModelInstance *this_ptr_00;
   CDemonActor *pCVar1;
-  char *motion_name;
+  SMotion *motion_name;
   uint uVar2;
   int iVar3;
   float *pfVar4;
@@ -46,10 +46,11 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(CMimic *this_ptr)
   }
   iVar3 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   frame_number = *(float *)(iVar3 + 700);
-  motion_name = (char *)core_motion_cpp_FUN_005035c0(iVar3 + 0x2b4);
+  motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                          ((CMotionController *)(iVar3 + 0x2b4));
   this_ptr_00 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950
-            (&this_ptr_00->base,motion_name,frame_number);
+            (&this_ptr_00->base,motion_name->motion_name,frame_number);
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,1,1);
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,">@%s attacking hero\n" + 2);
   return;

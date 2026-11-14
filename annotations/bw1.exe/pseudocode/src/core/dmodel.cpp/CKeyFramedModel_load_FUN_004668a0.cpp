@@ -17,7 +17,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
   CKeyFramedModel *pCVar3;
   char *pcVar4;
   
-  core_dmodel_cpp_FUN_00467160(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
   file = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005d92ac);
   pcVar4 = filename;
   pCVar3 = this_ptr;

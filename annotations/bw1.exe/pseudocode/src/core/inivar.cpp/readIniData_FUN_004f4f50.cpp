@@ -20,7 +20,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
     _DAT_01d1d404 = 0x57;
     core_main_c_FUN_005030e0("Please copy Nocturne to your hard drive");
   }
-  engine_ini_cpp_FUN_004f4b00(&local_210,".\\system\\nocturne.ini",0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_210,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(&local_210,"Graphics");
   engine_ini_cpp_FUN_004f4d10(&local_210,"gamePIXX",g_CGamePtr);
   engine_ini_cpp_FUN_004f4d10(&local_210,"gamePIXY",&g_CGamePtr->game_pixy);
@@ -50,7 +50,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
   sound_sndmain_cpp_readIni_FUN_005760b0(&local_210);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(&local_210,"Control");
   engine_ini_cpp_FUN_004f4d10(&local_210,"gameControl",&g_CGamePtr->game_control);
-  core_game_cpp_FUN_004d0400(g_CGamePtr);
+  core_game_cpp_CGame_restoreDefaultControls_FUN_004d0400(g_CGamePtr);
   engine_ini_cpp_FUN_004f4d10(&local_210,"keyWalk",&g_CGamePtr->key_walk);
   engine_ini_cpp_FUN_004f4d10(&local_210,"keyBackup",&g_CGamePtr->key_backup);
   engine_ini_cpp_FUN_004f4d10(&local_210,"keyRun",&g_CGamePtr->key_run);

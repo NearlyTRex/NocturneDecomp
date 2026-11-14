@@ -33,7 +33,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0
 ;   engine_prim.c_replaceWWithDepth_FUN_0051c720
 ;   engine_special.cpp_FUN_0055d723
-;   engine_texture.cpp_FUN_00574e00
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
 
@@ -168,8 +168,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 004a725f
     PUSH 0x616378                       ; 004a7261
     MOV dword ptr [EAX + 0x8c],EDX      ; 004a7266
-    CALL engine_texture.cpp_FUN_00574e00 ; 004a726c
-        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 ; 004a726c
+        ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00574e00(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 004a7271
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a7274
         ;   Label: LAB_004a7274

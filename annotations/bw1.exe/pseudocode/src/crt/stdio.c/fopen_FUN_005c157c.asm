@@ -9,9 +9,9 @@
 ;
 ; XREF[26]:
 ;   cockpit_pkbitmap.cpp_FUN_00538130 at 0053813f
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 at 004a9b44
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 at 004a9954
 ;   core_event.cpp_FUN_004a1d00 at 004a1e87
-;   core_event.cpp_FUN_004a9870 at 004a9954
-;   core_event.cpp_FUN_004a9a60 at 004a9b44
 ;   core_game.cpp_FUN_004d6420 at 004d64ff
 ;   core_game.cpp_FUN_004d6990 at 004d6d0b
 ;   core_game.cpp_FUN_004d7250 at 004d72d9

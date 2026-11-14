@@ -165,9 +165,9 @@ void __cdecl CDemonSet::lightVerticies(CDemonSet *this_ptr,int vertex_count,int 
 // Address: 00533010
 void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00533190
+// Original: core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190
 // Address: 00533190
-float FUN_00533190(int param_1,float *param_2);
+int __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_set.cpp_CDemonSet_loadAssets_FUN_005332a0
 // Address: 005332a0
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 00533a80
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_00533ed0
+// Original: core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00533ed0
 // Address: 00533ed0
-void FUN_00533ed0(void);
+void __cdecl CDemonSet::renderFaceBatchOrEnvMap(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
 // Address: 00533f40

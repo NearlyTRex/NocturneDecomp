@@ -8,9 +8,9 @@
 ;
 ; XREF[11]:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b1c
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9a9d
 ;   core_game.cpp_FUN_004b8e10 at 004b8e1c
-;   core_game.cpp_FUN_004b90d0 at 004b9a9d
-;   core_hero.cpp_FUN_004d0a40 at 004d0a55
+;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40 at 004d0a55
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900 at 004da95a
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc76a
 ;   core_inv.cpp_FUN_004dadb0 at 004db508

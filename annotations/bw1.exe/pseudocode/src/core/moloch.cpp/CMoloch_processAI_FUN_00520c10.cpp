@@ -84,8 +84,9 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00520c10(CMoloch *this_ptr,fl
         (float)_DAT_005ea296) {
       iVar6 = *(int *)(iVar6 + 0x1d06aa4);
       iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x148))(iVar6);
-      if ((iVar6 == 0) && (uVar5 = core_charactr_cpp_FUN_00434c60(this_ptr,delta_time), uVar5 != 0))
-      {
+      if ((iVar6 == 0) &&
+         (uVar5 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
+                            ((CCharacter *)this_ptr,delta_time), uVar5 != 0)) {
         if (uVar5 < 2) {
           (this_ptr->base).player_input.action_state.walk = 1;
         }

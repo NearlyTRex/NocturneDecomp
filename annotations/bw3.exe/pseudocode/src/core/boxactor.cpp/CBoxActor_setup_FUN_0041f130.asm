@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
-;   core_boxactor.cpp_FUN_0041f1e0
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;
@@ -75,8 +75,8 @@ section .text
         ;   XREF to: 0041f16f (UNCONDITIONAL_JUMP)  ; LAB_0041f16f
     PUSH EBX                            ; 0041f1c6
         ;   Label: LAB_0041f1c6
-    CALL core_boxactor.cpp_FUN_0041f1e0 ; 0041f1c7
-        ;   XREF to: 0041f1e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041f1e0()
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0 ; 0041f1c7
+        ;   XREF to: 0041f1e0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f1cc
     JMP 0x0041f196                      ; 0041f1cf
         ;   XREF to: 0041f196 (UNCONDITIONAL_JUMP)  ; LAB_0041f196

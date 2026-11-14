@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 232,
+    "complexity_score": 234,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 177,
+    "pseudocode_lines": 179,
     "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 635
+    "total_lines": 637
   },
   "cross_references": [
     {
@@ -91,6 +91,11 @@
       "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00507f90"
     },
     {
+      "addr": "0047f970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970"
+    },
+    {
       "addr": "0047ed50",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50"
@@ -103,12 +108,7 @@
     {
       "addr": "0047ee50",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047ee50"
-    },
-    {
-      "addr": "0047f970",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047f970"
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50"
     },
     {
       "addr": "005806a0",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 159,
+      "line": 161,
       "match": "dest_addr = dest_addr + N",
       "severity": "moderate",
       "text": "dest_addr = dest_addr + 0x10;",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
-      "line": 125,
+      "line": 126,
       "match": "0x40a00000 < (int)local_2c))",
       "severity": "moderate",
       "text": "if (((float)_DAT_005ca701 < local_2c) || (0x40a00000 < (int)local_2c)) {",

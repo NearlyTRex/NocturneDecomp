@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0048bfd0
-;   core_event.cpp_FUN_00494880
+;   core_event.cpp_CEventList_resetGameFlags_FUN_00494880
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0048bfd0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0048bfd0(CEventList * this_ptr)
     ADD ESP,0x4                         ; 0048bfbb
     PUSH EBX                            ; 0048bfbe
-    CALL core_event.cpp_FUN_00494880    ; 0048bfbf
-        ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00494880()
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_00494880 ; 0048bfbf
+        ;   XREF to: 00494880 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_00494880(CEventList * this_ptr)
     ADD ESP,0x4                         ; 0048bfc4
     MOV EAX,EBX                         ; 0048bfc7
     POP EBX                             ; 0048bfc9

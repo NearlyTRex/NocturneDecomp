@@ -49,7 +49,7 @@
 ;   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0049e3e0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004c72d0
-;   core_glass.cpp_FUN_004c6d40
+;   core_glass.cpp_CGlass_shatter_FUN_004c6d40
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005121a0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_005785b0
@@ -396,8 +396,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x70]      ; 0052ed19
     PUSH ECX                            ; 0052ed1d
     PUSH EBX                            ; 0052ed1e
-    CALL core_glass.cpp_FUN_004c6d40    ; 0052ed1f
-        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004c6d40()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004c6d40 ; 0052ed1f
+        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004c6d40(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 0052ed24
     MOV EBX,dword ptr [0x02653628]      ; 0052ed27 | g_CTriggerClassInfo.name_hash
         ;   Label: LAB_0052ed27
