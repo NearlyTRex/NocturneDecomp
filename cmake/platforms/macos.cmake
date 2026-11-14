@@ -34,6 +34,13 @@ foreach(_arch IN LISTS CMAKE_OSX_ARCHITECTURES)
     list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS
         "--extra-cflags=-arch ${_arch}" "--extra-ldflags=-arch ${_arch}")
 endforeach()
+# CMake hands SDL the deployment target itself; FFmpeg's configure has to be
+# told, or its objects ask for the build machine's macOS.
+if(CMAKE_OSX_DEPLOYMENT_TARGET)
+    list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS
+        "--extra-cflags=-mmacosx-version-min=${CMAKE_OSX_DEPLOYMENT_TARGET}"
+        "--extra-ldflags=-mmacosx-version-min=${CMAKE_OSX_DEPLOYMENT_TARGET}")
+endif()
 if(CMAKE_OSX_ARCHITECTURES AND NOT CMAKE_OSX_ARCHITECTURES STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
     list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS --enable-cross-compile)
 endif()

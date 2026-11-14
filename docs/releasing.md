@@ -111,6 +111,24 @@ The workflows come from the shared
 [NearlyTRex/Workflows](https://github.com/NearlyTRex/Workflows) library; see its README for how
 `release-check`, `cpp-build` and `release` fit together.
 
+## The oldest system each archive runs on
+
+| Platform | Floor | Held by |
+|---|---|---|
+| Linux | glibc 2.35 and GCC 12's libstdc++ (Ubuntu 22.04, Debian 12, Mint 21) | `cpp-build`'s `linux-image: ubuntu-22.04` |
+| macOS | 11.0 Big Sur | `CMAKE_OSX_DEPLOYMENT_TARGET` in `cmake/toolchains/macos.cmake` |
+| Windows | 10 | mingw-w64's defaults |
+
+A binary asks for the system it was built on unless told otherwise, so a runner image moving on
+would move every archive's floor with it. Each release lane names its floors in `release.yml`'s
+`floors`, and `cpp-build`'s `os-floors` fails the lane if any binary in the archive needs more.
+The CI `Package` lanes do the same for the Linux 22.04 build and the macOS builds on every pull
+request, so a change that raises the floor fails there instead of at release. Every runner names
+its image, and lint's `pinned-runners` fails on a `-latest` label.
+
+To raise a floor, change the image or deployment target, the `floors` and `os-floors` in both
+workflows, and the table here and in `.github/release-notes.md`.
+
 ## Building an archive locally
 
 ```sh
@@ -124,6 +142,9 @@ Archives land in `dist/`, named `nocturne-<version>-<preset>.tar.gz` (or `.zip` 
 The script knows nothing about platforms: every executable build writes `build/<preset>/package.txt`
 naming the binary, the archive format and the runtime libraries its platform file ships beside
 it (`cmake/platforms/README.md`), and the script copies what that lists.
+
+An archive built locally asks for the glibc of the machine that built it, so it runs there and
+on newer systems; only the release lanes are held to the floors above.
 
 The default is **not** the ASan preset that everything else in the repository defaults to. A
 release must not carry sanitizer instrumentation: it is far slower, and UBSan aborts the process
