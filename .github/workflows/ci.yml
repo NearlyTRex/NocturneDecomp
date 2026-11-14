@@ -165,6 +165,43 @@ jobs:
       cache-key: ${{ matrix.preset }}
       build-command: |
         ci-phase Package ./scripts/Bash/package_release.sh ${{ matrix.preset }}
+      # TEMPORARY, not for main: why macOS ccache misses between runs. Records
+      # the compiler's identity and ccache's config, then recompiles a few
+      # objects through ccache with its debug output on, which writes the exact
+      # inputs it hashed. Diffing two attempts' artifacts shows what changes.
+      test-command: |
+        build="build/${{ matrix.preset }}"
+        diag="$PWD/ccache-diag"
+        mkdir -p "$diag/debug"
+        {
+          echo "ImageOS=${ImageOS:-} ImageVersion=${ImageVersion:-}"
+          sw_vers
+          xcodebuild -version
+          xcode-select -p
+          for tool in clang clang++; do
+            path=$(xcrun --find "$tool")
+            echo "$tool -> $path"
+            stat -f '%N mtime=%m size=%z' "$path" "/usr/bin/$tool"
+          done
+          clang --version
+          ccache --version | sed -n 1p
+          ccache -p | grep -v '(default)'
+        } > "$diag/env.txt" 2>&1 || true
+        objects=$(ninja -C "$build" -t targets all | sed -n 's/^\([^:]*\.o\): .*/\1/p')
+        for pattern in /shims/ _deps/sdl2-build/CMakeFiles/SDL2.dir/ /src/; do
+          object=$(printf '%s\n' "$objects" | grep -m1 -e "$pattern" || true)
+          [ -n "$object" ] || { echo "== no object matches $pattern" >> "$diag/env.txt"; continue; }
+          command=$(ninja -C "$build" -t commands "$object" | sed -n '$p')
+          {
+            echo "== $object"
+            echo "$command"
+          } >> "$diag/env.txt"
+          (cd "$build" && CCACHE_DEBUG=1 CCACHE_DEBUGDIR="$diag/debug" bash -c "$command") >> "$diag/env.txt" 2>&1 || true
+        done
+        grep -rh "^\[.*Result:" "$diag/debug" >> "$diag/env.txt" 2>/dev/null || true
+        cat "$diag/env.txt"
+      artifact: ccache-diag-${{ matrix.preset }}-${{ github.run_attempt }}
+      artifact-path: ccache-diag
       os-floors: macos:11.0
       os-floor-paths: dist/*
 
