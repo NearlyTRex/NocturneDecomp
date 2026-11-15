@@ -14,7 +14,7 @@
 ;
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 004301bd
-;   core_doc.cpp_FUN_0046e630 at 0046e711
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630 at 0046e711
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 at 004cb0c5
 ;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10 at 00589ff1
 ;   core_thehand.cpp_CTheHand_process_FUN_00599150 at 0059958c

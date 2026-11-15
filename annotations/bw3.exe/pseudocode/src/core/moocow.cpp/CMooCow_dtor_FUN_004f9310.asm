@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_armour.cpp_FUN_00410370
+;   core_armour.cpp_CFlame_arrdtor50_FUN_00410370
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
@@ -32,8 +32,8 @@ section .text
     PUSH 0x0                            ; 004f931c
     ADD EBX,0x385c                      ; 004f931e
     PUSH EBX                            ; 004f9324
-    CALL core_armour.cpp_FUN_00410370   ; 004f9325
-        ;   XREF to: 00410370 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_00410370()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_00410370 ; 004f9325
+        ;   XREF to: 00410370 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_00410370(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f932a
     PUSH 0x0                            ; 004f932d
     SUB EAX,0x954                       ; 004f932f

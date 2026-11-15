@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00475920(CCharacter *param_1)
+; void core_doc_cpp_FUN_00475920(CDoc *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00469550 at 0046a49d
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a49d
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004758f4 = 00475a12
@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
-;   core_doc.cpp_FUN_0046f610
+;   core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610
 ;
 ; *****************************************************************************
 
@@ -282,8 +282,8 @@ section .text
     PUSH 0x0                            ; 00475bcd
         ;   Label: LAB_00475bcd
     PUSH EBX                            ; 00475bcf
-    CALL core_doc.cpp_FUN_0046f610      ; 00475bd0
-        ;   XREF to: 0046f610 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046f610()
+    CALL core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610 ; 00475bd0
+        ;   XREF to: 0046f610 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610(CDoc * this_ptr, int hand_index)
     MOV EAX,dword ptr [EBX + 0x20004]   ; 00475bd5
     MOV ECX,dword ptr [EAX + 0x2dc]     ; 00475bdb
     ADD ESP,0x8                         ; 00475be1

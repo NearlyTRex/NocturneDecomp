@@ -11,10 +11,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[12]:
-;   core_doc.cpp_FUN_0046bde0 at 0046c8e4
-;   core_doc.cpp_FUN_00470750 at 004707be
-;   core_doc.cpp_FUN_004712b0 at 00471503
-;   core_doc.cpp_FUN_00474400 at 00474dea
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0 at 0046c8e4
+;   core_doc.cpp_CDoc_processPickupComplete_FUN_00470750 at 004707be
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0 at 00471503
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 00474dea
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0 at 004bedc3
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503650
 ;   core_script.cpp_CScript_loadState_FUN_0054b3e0 at 0054b6f4

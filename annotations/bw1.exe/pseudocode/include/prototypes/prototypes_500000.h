@@ -37,7 +37,7 @@
 // FUNCTION PROTOTYPES - Range 0x500000
 // =============================================================================
 
-void core_lightgun_cpp_FUN_00500090(CCharacter *param_1);
+void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00500090(CLightGun *this_ptr);
 CVector3f * __cdecl core_lightgun_cpp_CLightGun_getMuzzlePoint_FUN_00500160(CLightGun *this_ptr,CVector3f *out_point);
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00500310(CLightGun *this_ptr);
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_ptr,float delta_time);

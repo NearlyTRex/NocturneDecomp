@@ -14,18 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "00437e10",
-      "from_addr": "00437e3f",
-      "name": "cockpit_ckptutil.c_FUN_00437e10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00438ef0",
-      "from_addr": "00438fa7",
-      "name": "cockpit_ckptutil.c_FUN_00438ef0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004367e0",
       "from_addr": "00436954",
       "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0",
@@ -34,7 +22,19 @@
     {
       "addr": "00437c50",
       "from_addr": "00437d52",
-      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_00437c50",
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00437c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438ef0",
+      "from_addr": "00438fa7",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437e10",
+      "from_addr": "00437e3f",
+      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_00437e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -328,7 +328,7 @@
     {
       "addr": "005797d0",
       "from_addr": "005797f5",
-      "name": "wincore_wddvmem.cpp_FUN_005797d0",
+      "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005797d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -425,7 +425,7 @@
       {
         "call_addr": "00438fa7",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_00438ef0",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

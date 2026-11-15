@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 49,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "00440e10",
       "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00440e10"
+      "name": "support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00440e10"
     }
   ],
   "globals": [],
@@ -151,7 +151,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 20,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0xc))(this_ptr,ostream);",
@@ -159,7 +159,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0xc))(this_ptr,ostream);",

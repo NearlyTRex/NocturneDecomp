@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_0046caa0 at 0046cbd7
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cbd7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ff018

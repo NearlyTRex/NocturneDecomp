@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_armour.cpp_FUN_0040f2b0
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 ;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
@@ -48,8 +48,8 @@ section .text
     PUSH 0x0                            ; 005a09f5
     ADD EBX,0x3a20                      ; 005a09f7
     PUSH EBX                            ; 005a09fd
-    CALL core_armour.cpp_FUN_0040f2b0   ; 005a09fe
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0 ; 005a09fe
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a0a03
     PUSH 0x0                            ; 005a0a06
     SUB EAX,0x9c8                       ; 005a0a08

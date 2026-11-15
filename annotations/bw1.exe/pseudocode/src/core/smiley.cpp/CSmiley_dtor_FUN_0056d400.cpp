@@ -9,7 +9,7 @@
 CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,uint flags)
 
 {
-  int iVar1;
+  CFlame *pCVar1;
   CClothList *pCVar2;
   CDeformableModelInstance *pCVar3;
   CSmiley *pCVar4;
@@ -20,8 +20,8 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,ui
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  iVar1 = core_armour_cpp_FUN_0040ee30((this_ptr->base).base.flames,0);
-  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar1 + -0x93c),0);
+  pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30((this_ptr->base).base.flames,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar1[-4].base.vtable,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
   pCVar4 = (CSmiley *)

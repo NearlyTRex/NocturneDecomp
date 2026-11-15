@@ -10544,13 +10544,70 @@
         "start":"00443370"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"support_codec.cpp_FUN_00443370",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00443370",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLZWDictionary*"
+        },
+        {
+          "name":"code",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"ostream",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -27617,15 +27674,10 @@
         "start":"004bf770"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_flattn.cpp_FUN_004bf770",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_flattn.cpp_doNothing_FUN_004bf770",
+    "ret":"void"
   },
   {
     "addr":"004c0970",
@@ -33486,13 +33538,38 @@
         "start":"004fff70"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_lightgun.cpp_FUN_004fff70",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightGun*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -52833,7 +52910,7 @@
       }
     ],
     "importable":true,
-    "name":"wincore_wddvmem.cpp_FUN_005abff0",
+    "name":"wincore_wddvmem.cpp_freeRenderBuffers_FUN_005abff0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -54156,12 +54233,18 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_005b7ff0",
+    "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0",
     "ret":"undefined1",
-    "sig":"default",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"AL",
+        "size":1,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":1
+          }
+        ]
       }
     }
   },

@@ -31,6 +31,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -85,7 +86,7 @@ CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_005434d0(void);
 CDemonActorType * __cdecl core_shadow_cpp_CShadow_getActorType_FUN_005434f0(CShadow *this_ptr);
 CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr);
 void core_shadow_cpp_FUN_00543680(CEnemy *param_1);
-void core_shadow_cpp_FUN_005438d0(CEnemy *param_1,float param_2);
+void __cdecl core_shadow_cpp_CShadow_process_FUN_005438d0(CShadow *this_ptr,float delta_time);
 void __cdecl core_shadow_cpp_CShadow_setWalkTarget_FUN_00544fd0(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void core_shadow_cpp_FUN_00545000(int param_1);
 void core_shadow_cpp_FUN_00545040(int param_1);
@@ -95,10 +96,10 @@ void core_shadow_cpp_FUN_00545100(int param_1);
 void core_shadow_cpp_FUN_00545140(int param_1,float *param_2);
 void core_shadow_cpp_FUN_00545700(CCharacter *param_1);
 int core_shadow_cpp_FUN_00545710(CCharacter *param_1);
-void core_shadow_cpp_FUN_00545910(CEnemy *param_1);
-void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
-undefined4 core_shadow_cpp_FUN_00545bd0(int param_1);
-undefined4 core_shadow_cpp_FUN_00545c10(int param_1,float *param_2);
+void __cdecl core_shadow_cpp_CShadow_archive_FUN_00545910(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_005459b0(CShadow *this_ptr,SDamageInfo *damage_info);
+EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_00545bd0(CShadow *this_ptr);
+int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_00545c10(CShadow *this_ptr,CVector3f *out_points_array);
 void core_shadow_cpp_FUN_00545c80(CCharacter *param_1);
 void core_shadow_cpp_FUN_00545e70(void);
 undefined4 core_shadow_cpp_FUN_00545e90(void);

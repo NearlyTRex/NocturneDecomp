@@ -15,7 +15,8 @@ int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00443790(CLZWDecompres
   bit_buffer = (SBitBuffer *)this_ptr->current_code;
   if (-1 < (int)bit_buffer) {
     if (this_ptr->pending_sequence_index < 0) {
-      iVar1 = support_codec_cpp_FUN_00443370(&this_ptr->lzw_dict,bit_buffer,ostream);
+      iVar1 = support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00443370
+                        (&this_ptr->lzw_dict,(int)bit_buffer,ostream);
     }
     else {
       iVar1 = support_codec_cpp_FUN_004433f0

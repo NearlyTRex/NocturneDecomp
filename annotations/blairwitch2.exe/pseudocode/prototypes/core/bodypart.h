@@ -141,9 +141,9 @@ CVector3f * __stack2_esi subtractVector(CVector3f *a,CVector3f *b,CVector3f *dst
 // Address: 00417ba0
 CVector3f * __stack2_esi addVector(CVector3f *a,CVector3f *b,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_00417c00
+// Original: core_bodypart.cpp_boundingBoxExtent_FUN_00417c00
 // Address: 00417c00
-void FUN_00417c00(float *param_1);
+CBoundingBox3D * __stack_esi boundingBoxExtent(CBoundingBox3D *src,CBoundingBox3D *dst);
 
 // Original: core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0
 // Address: 00417cb0
@@ -157,6 +157,6 @@ SBodyPartFire * __cdecl SBodyPartFire::dtor(SBodyPartFire *this_ptr,uint flags);
 // Address: 00417cf0
 SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00417d10
+// Original: core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10
 // Address: 00417d10
-void FUN_00417d10(void *param_1);
+SBodyPartFire * __cdecl SBodyPartFire::arrdtor2(SBodyPartFire *this_ptr,uint flags);

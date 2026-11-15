@@ -201,7 +201,7 @@ CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex
 CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_0051a0a0(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_0051a290(SClipPlane *this_ptr);
 void __cdecl core_mission_cpp_staticInit_FUN_0051a2a0(void);
-void core_mission_cpp_FUN_0051a2d0(int param_1);
+void __cdecl core_mission_cpp_CDemonMission_reset_FUN_0051a2d0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_0051a3a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_0051a3b0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
@@ -243,7 +243,7 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_0051c48c(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_0051c539(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_0051c54f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_0051c5b0(void);
-void core_mobster_cpp_FUN_0051c5e0(int param_1);
+CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointLocal_FUN_0051c5e0(CDemonActor *actor,CVector3f *out);
 CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointWorld_FUN_0051c6a0(CDemonActor *actor,CVector3f *out);
 CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_0051c7a0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_0051c7c0(CMobster *this_ptr);

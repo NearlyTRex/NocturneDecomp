@@ -2,17 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 49,
+    "complexity_score": 335,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 27,
     "suspect_types": [
+      "derived_field_index_pun",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 90
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -37,6 +41,11 @@
   },
   "function_calls": [
     {
+      "addr": "005adda0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_ctor_FUN_005adda0"
+    },
+    {
       "addr": "0044fd70",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
@@ -45,11 +54,6 @@
       "addr": "004ce240",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_ctor_FUN_004ce240"
-    },
-    {
-      "addr": "005adda0",
-      "is_variadic": false,
-      "name": "core_necklace.cpp_FUN_005adda0"
     },
     {
       "addr": "005478b0",
@@ -152,6 +156,213 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].vertices[0x132].connected_indices[7] = (int)&g_CGabriellaVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].locked_vertex_indices[0x381] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].locked_vertex_indices[0x382] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].locked_vertex_indices[899] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].vertex_sort_buffer = (int *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_euler.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].inv_delta_time = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].floor_y = -0.5235988;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].wind_velocity.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].version_num = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_euler.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].wind_velocity.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 28,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_position.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_position.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_position.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "fVar1 = pCVar4[-1].last_euler.y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].wind_velocity.x = (float)pCVar4[-1].version_num;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].wind_velocity.x = (float)pCVar4[-1].version_num;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].last_euler.z = fVar1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(pCVar4[-1].vertices[0x132].connected_indices + 8),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)pCVar4 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 41,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "(int)pCVar4[-1].collide_bones[0x31].world_matrix.m[1].w * 4 + -0xcf4) + 0x2b4)",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 43,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "return (CGabriella *)&pCVar4[-1].vertices[0x12f].bone_positions[0].z;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&g_CGabriellaVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&g_CGabriellaVTable",
+      "severity": "moderate",
+      "text": "pCVar4[-1].vertices[0x132].connected_indices[7] = (int)&g_CGabriellaVTable;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)pCVar4 +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "'(CCloth *)&pCVar3[1].base.base.orient_matrix.m[0].y' walks 1 x sizeof(CHero) (0x25640) + offsetof(base.base.orient_matrix.m[0].y) (0x40) + 0x0 = 0x25680, which is exactly offsetof(CBaron, summon_event[64]). Ghidra had no CBaron type here and reached the field by index arithmetic; write it as ((CBaron *)pCVar3)->summon_event[64] (\u00a7de-pun/\u00a712). Ambiguous: CGabriella::coat_cloth also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
+      "severity": "moderate",
+      "text": "((CCloth *)&pCVar3[1].base.base.orient_matrix.m[0].y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

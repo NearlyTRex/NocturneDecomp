@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
+;   core_set.cpp_C3DSCamera_arrdtor250_FUN_0053bb60
 ;   core_set.cpp_CDemonSet_clear_FUN_00532b30
-;   core_set.cpp_FUN_0053bb60
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x0                            ; 00532b0e
     ADD EBX,0x4                         ; 00532b10
     PUSH EBX                            ; 00532b13
-    CALL core_set.cpp_FUN_0053bb60      ; 00532b14
-        ;   XREF to: 0053bb60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0053bb60()
+    CALL core_set.cpp_C3DSCamera_arrdtor250_FUN_0053bb60 ; 00532b14
+        ;   XREF to: 0053bb60 (UNCONDITIONAL_CALL)  ; C3DSCamera * core_set.cpp_C3DSCamera_arrdtor250_FUN_0053bb60(C3DSCamera * objs, uint flags)
     ADD ESP,0x8                         ; 00532b19
     SUB EAX,0x4                         ; 00532b1c
     POP EBX                             ; 00532b1f

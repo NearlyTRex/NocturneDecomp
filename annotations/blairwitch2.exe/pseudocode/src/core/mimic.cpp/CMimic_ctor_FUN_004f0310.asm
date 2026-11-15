@@ -14,9 +14,9 @@
 ;   undefined4 DAT_005f9e80
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_morph.cpp_CMorph_ctor_FUN_005b6e60
-;   core_necklace.cpp_FUN_005adda0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     ADD ESP,0x4                         ; 004f031c
     ADD EAX,0x10bc0                     ; 004f031f
     PUSH EAX                            ; 004f0324
-    CALL core_necklace.cpp_FUN_005adda0 ; 004f0325
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 004f0325
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 004f032a
     ADD EAX,0x3ab60                     ; 004f032d
     PUSH EAX                            ; 004f0332

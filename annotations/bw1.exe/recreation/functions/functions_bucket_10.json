@@ -2799,15 +2799,26 @@
     "calls":[
       "005c1066"
     ],
-    "conv":"unknown",
+    "cls":"SBodyPartFire",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_0041b190",
-    "name":"core_bodypart.cpp_FUN_0041b190",
-    "receiver":false,
+    "method":"arrdtor2",
+    "name":"core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b190",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SBodyPartFire",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -4787,10 +4798,10 @@
       "005030e0",
       "005bfb40"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":139,
-    "method":"FUN_0043b090",
-    "name":"cockpit_ckptutil.c_FUN_0043b090",
+    "method":"generateTransparencySpans",
+    "name":"cockpit_ckptutil.c_generateTransparencySpans_FUN_0043b090",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -7155,14 +7166,25 @@
       "005b5930",
       "005b6270"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":83,
-    "method":"FUN_0046f610",
-    "name":"core_doc.cpp_FUN_0046f610",
-    "receiver":false,
+    "method":"updateWeaponPosition",
+    "name":"core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610",
+    "params":[
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -7235,17 +7257,18 @@
   },
   {
     "addr":"00476210",
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "data_refs":[
       "005fee2c"
     ],
     "instructions":3,
-    "method":"FUN_00476210",
-    "name":"core_doc.cpp_FUN_00476210",
-    "receiver":false,
+    "method":"isWeaponDrawn",
+    "name":"core_doc.cpp_CDoc_isWeaponDrawn_FUN_00476210",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -13678,19 +13701,12 @@
     "calls":[
       "0040c550"
     ],
+    "cls":"CInventory",
     "conv":"__cdecl",
     "instructions":35,
-    "method":"FUN_004f8c90",
-    "name":"core_inv.cpp_FUN_004f8c90",
+    "method":"findItemOfClass",
+    "name":"core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CInventory",
-          "ptr":1
-        }
-      },
       {
         "name":"class_name",
         "type":{
@@ -13700,11 +13716,11 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"int",
-      "ptr":0
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
     },
     "tu":"core/inv.cpp",
     "variadic":false
@@ -14327,14 +14343,15 @@
       "0045f3e0",
       "00465da0"
     ],
-    "conv":"unknown",
+    "cls":"CLightGun",
+    "conv":"__cdecl",
     "instructions":58,
-    "method":"FUN_00500090",
-    "name":"core_lightgun.cpp_FUN_00500090",
-    "receiver":false,
+    "method":"updateBeamLight",
+    "name":"core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/lightgun.cpp",
@@ -22197,14 +22214,25 @@
     "calls":[
       "0040c550"
     ],
-    "conv":"unknown",
+    "cls":"CTheHand",
+    "conv":"__cdecl",
     "instructions":90,
-    "method":"FUN_00599910",
-    "name":"core_thehand.cpp_FUN_00599910",
-    "receiver":false,
+    "method":"findNearbyTarget",
+    "name":"core_thehand.cpp_CTheHand_findNearbyTarget_FUN_00599910",
+    "params":[
+      {
+        "name":"class_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/thehand.cpp",

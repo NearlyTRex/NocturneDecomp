@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 202,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 74,
     "suspect_count": 11,
     "suspect_types": [
       "derived_field_index_pun",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 130
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -39,6 +39,11 @@
   },
   "function_calls": [
     {
+      "addr": "005adda0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_ctor_FUN_005adda0"
+    },
+    {
       "addr": "00487db0",
       "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_ctor_FUN_00487db0"
@@ -47,11 +52,6 @@
       "addr": "005b6e60",
       "is_variadic": false,
       "name": "core_morph.cpp_CMorph_ctor_FUN_005b6e60"
-    },
-    {
-      "addr": "005adda0",
-      "is_variadic": false,
-      "name": "core_necklace.cpp_FUN_005adda0"
     }
   ],
   "globals": [
@@ -161,7 +161,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 22,
       "match": "pCVar7[-99].",
       "severity": "mild",
       "text": "*(CEnemy_full_vtable **)(pCVar7[-99].models[0].textures[0].texture_name + 0x24) = &g_CMimicVTable;",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 40,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pSVar2 = pCVar7[-1].models[1].textures;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 43,
+      "line": 45,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].texture_name + 0x34;",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 44,
+      "line": 46,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pSVar2 = pCVar7[-1].models[1].textures;",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 60,
+      "line": 62,
       "match": "pCVar7[-100].",
       "severity": "mild",
       "text": "pSVar2 = pCVar7[-100].models[1].textures;",
@@ -201,7 +201,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 65,
+      "line": 67,
       "match": "pCVar7[-100].",
       "severity": "mild",
       "text": "pSVar2 = pCVar7[-100].models[1].textures;",
@@ -209,7 +209,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 70,
+      "line": 72,
       "match": "pCVar7[-100].",
       "severity": "mild",
       "text": "pSVar2 = pCVar7[-100].models[1].textures;",
@@ -217,7 +217,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 75,
+      "line": 77,
       "match": "pCVar7[-100].",
       "severity": "mild",
       "text": "return (CMimic *)(pCVar7[-100].models[1].textures[0xc].texture_name + 0x38);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -233,9 +233,9 @@
     },
     {
       "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0x10af8) + offsetof(base.base.create_event) (0x78) + 0x50 = 0x10bc0, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar5)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CConstruct::death_event[24], CDraculaBride::part_list[6] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 18,
+      "line": 19,
       "severity": "moderate",
-      "text": "iVar6 = core_necklace_cpp_FUN_005adda0(pCVar5[1].base.base.create_event + 0x50);",
+      "text": "((CCloth *)(pCVar5[1].base.base.create_event + 0x50));",
       "type": "derived_field_index_pun"
     }
   ],

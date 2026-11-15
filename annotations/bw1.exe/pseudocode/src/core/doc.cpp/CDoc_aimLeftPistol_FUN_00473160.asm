@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00469550 at 0046a2bd
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a2bd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_doc_cpp_005da304

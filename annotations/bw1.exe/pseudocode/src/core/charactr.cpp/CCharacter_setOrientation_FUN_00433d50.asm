@@ -22,8 +22,8 @@
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160 at 0042e18d
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a890
 ;   core_doc.cpp_CDoc_process_FUN_004693e0 at 0046952a
-;   core_doc.cpp_FUN_00469550 at 0046a890
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00586be6
 ;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00595d40 at 00595eb7
 ;   core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10 at 00599b87

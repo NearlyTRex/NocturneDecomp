@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[8]:
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 00469738
 ;   core_doc.cpp_CDoc_process_FUN_004693e0 at 004694c4
-;   core_doc.cpp_FUN_00469550 at 00469738
 ;   core_fire.cpp_CFirefly_process_FUN_004ad860 at 004ad8b4
 ;   core_fire.cpp_CSpark_process_FUN_004acf50 at 004acf9f
 ;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce606

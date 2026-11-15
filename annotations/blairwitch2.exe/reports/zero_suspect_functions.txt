@@ -120,6 +120,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CArmour_getCollisionT
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CArmour_getTargetPoints_FUN_0040f0f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CArmour_processDamage_FUN_0040f0a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CArmour_setup_FUN_0040eee0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CFlame_arrdtor50_FUN_0040f2b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/CFlame_dtor_FUN_0040f260.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/factoryFuncArmour_FUN_0040ee10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/armour.cpp/staticInit_FUN_0040ede0.cpp
@@ -262,7 +263,9 @@ annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCarrie
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCollisionType_FUN_00416610.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_onDropped_FUN_00416680.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_pickup_FUN_00416670.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/SBodyPartFire_arrdtor2_FUN_00417d10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/addVector_FUN_00417ba0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/boundingBoxExtent_FUN_00417c00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/factoryFuncBodyPart_FUN_004156b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/scaleVector_FUN_00417b20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/staticInit_FUN_004154c0.cpp
@@ -388,6 +391,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/getGameDeltaTime_FU
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_0042bf20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CClothList_ctor_FUN_005b1440.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CClothList_dtor_FUN_005b1480.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CCloth_dtor_FUN_005ade00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CCloth_free_FUN_005ade80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CCloth_process_FUN_005afdf0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CCloth_resetState_FUN_005b1980.cpp
@@ -773,7 +777,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/flashlit.cpp/CFlashlight_renderA
 annotations/blairwitch2.exe/pseudocode/src/core/flashlit.cpp/FUN_004a1200.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/flashlit.cpp/factoryFuncFlashlight_FUN_004a1030.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/flashlit.cpp/staticInit_FUN_004a1000.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/flattn.cpp/FUN_004a67a0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/flattn.cpp/doNothing_FUN_004a67a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor3_FUN_004a66f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor6_FUN_004a6710.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_ctor_FUN_004a4170.cpp
@@ -822,7 +826,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_archive_
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_canFireWeapon_FUN_004b0e80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_collectAmmo_FUN_004b0a40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_drawWeapon_FUN_004b2810.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_dtor_FUN_004b2840.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_getActorType_FUN_004ad2b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_getFlashlightMaxAngle_FUN_004af950.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gabriela.cpp/CGabriella_isWeaponDrawn_FUN_004b27f0.cpp
@@ -1192,6 +1195,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_addAct
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_clearMissionData_FUN_004fb450.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_clearMission_FUN_004fb440.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_countActors_FUN_004fc320.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_countDamageableEnemies_FUN_004fd450.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_findActorByName_FUN_004fc740.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_freeAllAssets_FUN_004fcf50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActorFromList_FUN_004fc270.cpp
@@ -1271,7 +1275,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/CNPC_getPathMap_FUN_0051
 annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/CNPC_isInvulnerable_FUN_00510c70.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/CNPC_renderBackground_FUN_005108d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/CNPC_renderTransparent_FUN_00510990.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/FUN_00510ca0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/factoryFuncNPC_FUN_00510430.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/npc.cpp/staticInit_FUN_00510400.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/particle.cpp/CParticle_ctor_FUN_00510dd0.cpp
@@ -1521,7 +1524,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/succubus.cpp/factoryFuncSuccubus
 annotations/blairwitch2.exe/pseudocode/src/core/succubus.cpp/staticInit_FUN_0056f260.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_archive_FUN_005716f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_drawWeapon_FUN_00571a20.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_dtor_FUN_00571a30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_getActorType_FUN_005701b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_getGrabbed_FUN_00571a00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_isWeaponDrawn_FUN_00571a10.cpp
@@ -1848,8 +1850,9 @@ annotations/blairwitch2.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_dtor_FUN_00
 annotations/blairwitch2.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_load_FUN_005100b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_reset_FUN_00510190.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ncursfx.cpp/staticInit_FUN_0050fff0.cpp
+annotations/blairwitch2.exe/pseudocode/src/engine/palette.cpp/CFont_ctor_FUN_00510ca0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/palette.cpp/CFont_dtor_FUN_00510cc0.cpp
-annotations/blairwitch2.exe/pseudocode/src/engine/palette.cpp/FUN_00510dc0.cpp
+annotations/blairwitch2.exe/pseudocode/src/engine/palette.cpp/CFont_getLineSpacing_FUN_00510dc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/pod.cpp/CPodFile_cleanup_FUN_0051a8f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/pod.cpp/CPodFile_ctor_FUN_00519e50.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/pod.cpp/CPodFile_dtor_FUN_00519ec0.cpp
@@ -1863,6 +1866,7 @@ annotations/blairwitch2.exe/pseudocode/src/engine/prim.c/normalizeTextureCoords_
 annotations/blairwitch2.exe/pseudocode/src/engine/prim.c/replaceWWithDepth_FUN_0051c720.c
 annotations/blairwitch2.exe/pseudocode/src/engine/special.cpp/CExternalRenderer_ctor_FUN_005602c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/special.cpp/FUN_0055bb20.cpp
+annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/CTextureCache_ctor_FUN_00573940.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/CTextureCache_findTexture_FUN_00574490.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/CTextureCache_getTextureCacheStats_FUN_00574af0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/CTextureCache_reset_FUN_005739a0.cpp
@@ -1991,7 +1995,6 @@ annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_getCh
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_isEof_FUN_004351b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_peekChar_FUN_00435020.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_ungetChar_FUN_00434ff0.cpp
-annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWCompress_finalize_FUN_00434910.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWCompress_init_FUN_004347c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDecompress_init_FUN_004349d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_addNode_FUN_004343f0.cpp
@@ -1999,6 +2002,7 @@ annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_ctor
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_dtor_FUN_00434270.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_findCode_FUN_004343b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_free_FUN_00434290.cpp
+annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_writeCodeBits_FUN_00434570.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/resetBitBuffer_FUN_00433760.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/trisock.cpp/CSocket_closeSocket_FUN_00579360.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/trisock.cpp/CSocket_createSocket_FUN_00579030.cpp

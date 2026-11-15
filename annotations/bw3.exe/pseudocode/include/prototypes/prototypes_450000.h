@@ -86,7 +86,7 @@ float core_demnfolk_cpp_FUN_00454780(int param_1);
 void core_demnfolk_cpp_FUN_00454820(int param_1);
 void core_demnfolk_cpp_FUN_004548e0(CDemonActor *param_1);
 undefined4 core_demnfolk_cpp_FUN_004549e0(float *param_1);
-void core_demnfolk_cpp_FUN_00454b30(void);
+CDemnfolk * __cdecl core_demnfolk_cpp_factoryFuncDemnfolk_FUN_00454b30(void);
 CDemonActorType * __cdecl core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00454b50(CDemnfolk *this_ptr);
 CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *this_ptr);
 void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr);

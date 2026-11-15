@@ -15,7 +15,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   core_zombie.cpp_FUN_005bf120 at 005bf3e1
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043c274
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60 at 0043df2c
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790 at 004848a5
@@ -25,6 +24,7 @@
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650 at 0053e69d
 ;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e1d3
 ;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f133
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 at 005bf8a3
 ;   ... and 1 more
 ;
 ; Referenced Globals:

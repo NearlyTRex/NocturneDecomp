@@ -39,8 +39,8 @@
 // FUNCTION PROTOTYPES - Range 0x530000
 // =============================================================================
 
-void core_set_cpp_FUN_005301d0(CDemonSet *param_1);
-void core_set_cpp_FUN_00530410(CDemonSet *param_1);
+void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_005301d0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_00530410(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00530630(CDemonSet *this_ptr,CDemonLight *light);
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(CDemonSet *this_ptr,CDemonGlobe *globe);
 void core_set_cpp_FUN_005306e0(undefined4 param_1,int param_2);

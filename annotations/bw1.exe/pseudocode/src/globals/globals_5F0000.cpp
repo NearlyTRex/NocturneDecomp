@@ -3138,9 +3138,9 @@ CHero_full_vtable g_CDocVTable = {
     },
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0,
-        .drawWeapon = (CHero_drawWeapon *)core_doc_cpp_FUN_00476220,
-        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_doc_cpp_FUN_00476210,
-        .reset = (CHero_reset *)core_doc_cpp_FUN_004763c0,
+        .drawWeapon = (CHero_drawWeapon *)core_doc_cpp_CDoc_drawWeapon_FUN_00476220,
+        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_doc_cpp_CDoc_isWeaponDrawn_FUN_00476210,
+        .reset = (CHero_reset *)core_doc_cpp_CDoc_reset_FUN_004763c0,
         .toggleGoggles = (CHero_toggleGoggles *)core_doc_cpp_CDoc_toggleGoggles_FUN_00476510,
         .canReachPickup = (CHero_canReachPickup *)core_doc_cpp_CDoc_canReachPickup_FUN_00475c20,
         .doHeroAction = (CHero_doHeroAction *)core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0,

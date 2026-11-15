@@ -81,17 +81,17 @@ void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 // Address: 0052fad0
 void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_0052fea0
+// Original: core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0
 // Address: 0052fea0
-void FUN_0052fea0(CDemonSet *param_1);
+void __cdecl CDemonSet::renderMonsterVisionView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_005301d0
+// Original: core_set.cpp_CDemonSet_renderOpaqueActors_FUN_005301d0
 // Address: 005301d0
-void FUN_005301d0(CDemonSet *param_1);
+void __cdecl CDemonSet::renderOpaqueActors(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00530410
+// Original: core_set.cpp_CDemonSet_renderTransparentActors_FUN_00530410
 // Address: 00530410
-void FUN_00530410(CDemonSet *param_1);
+void __cdecl CDemonSet::renderTransparentActors(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
 // Address: 00530630

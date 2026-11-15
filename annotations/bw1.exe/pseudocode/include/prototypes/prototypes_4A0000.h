@@ -10,6 +10,7 @@
 #include "types/classes/CBulletTrail.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEmitter.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CEventList.h"
@@ -41,7 +42,7 @@
 // =============================================================================
 
 ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_004a02d0(CEmitter *this_ptr,SCollisionInfo *collision_info);
-void core_emitter_cpp_FUN_004a02e0(CDemonActor *param_1);
+CVector3f * __stack_esi core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0(CEmitter *this_ptr,CVector3f *out_point);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a0390(CEmitter *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a03e0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr);
@@ -114,7 +115,7 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_004aae10(CRuleList *this_ptr,in
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004aaee0(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(CRuleList *this_ptr);
 CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_004aafc0(CQuaternion4f *dest,CQuaternion4f *src);
-undefined4 core_event_cpp_FUN_004aafe0(int param_1);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004aafe0(CDemonSet *set_ptr);
 void __fastcall crt_watcom_c__memset_FUN_004ab020(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_004ab090(void);
 void crt_unknown_c_FUN_004ab098(void);

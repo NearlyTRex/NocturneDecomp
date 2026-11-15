@@ -149,9 +149,9 @@ int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *exist
 // Address: 004fd280
 void __cdecl CDemonMission::ensureHeroPlaceholder(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004fd450
+// Original: core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004fd450
 // Address: 004fd450
-undefined4 FUN_004fd450(void);
+int __cdecl CDemonMission::countDamageableEnemies(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_setVersionControlDirectory_FUN_004fd460
 // Address: 004fd460

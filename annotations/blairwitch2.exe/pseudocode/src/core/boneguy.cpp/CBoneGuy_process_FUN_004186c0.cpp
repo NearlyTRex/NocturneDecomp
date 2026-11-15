@@ -183,7 +183,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
         afStack_1c4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] = *pfVar14;
         (afStack_1c4 + (uint)bVar16 * -2 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
              pfVar14[(uint)bVar16 * -2 + 1];
-        core_xform_cpp_FUN_005940b0();
+        core_xform_cpp_quaternionToEulerAngles_FUN_005940b0();
         fStack_ac = fStack_b8;
         afStack_cc[(uint)bVar16 * -2 + 9] = afStack_cc[(uint)bVar16 * -2 + 6];
         afStack_cc[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10] =

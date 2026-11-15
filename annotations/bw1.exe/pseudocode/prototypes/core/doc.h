@@ -17,9 +17,9 @@ float FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param
 // Address: 00468a90
 undefined4 FUN_00468a90(CDemonActor *param_1);
 
-// Original: core_doc.cpp_FUN_00468b80
+// Original: core_doc.cpp_getCarriedObjectVerticalOffset_FUN_00468b80
 // Address: 00468b80
-float FUN_00468b80(CDemonActor *param_1);
+float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
 // Original: core_doc.cpp_factoryFuncDoc_FUN_00468c50
 // Address: 00468c50
@@ -41,33 +41,33 @@ void __cdecl CDoc::setup(CDoc *this_ptr);
 // Address: 004693e0
 void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
-// Original: core_doc.cpp_FUN_00469550
+// Original: core_doc.cpp_CDoc_processFrame_FUN_00469550
 // Address: 00469550
-void FUN_00469550(CDoc *param_1,float param_2);
+void __cdecl CDoc::processFrame(CDoc *this_ptr,float delta_time);
 
-// Original: core_doc.cpp_FUN_0046bde0
+// Original: core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0
 // Address: 0046bde0
-void FUN_0046bde0(CHero *param_1,float param_2);
+void __cdecl CDoc::processMotionEvents(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_CDoc_getCarryLightIntensity_FUN_0046c980
 // Address: 0046c980
 float __cdecl CDoc::getCarryLightIntensity(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_0046c9e0
+// Original: core_doc.cpp_CDoc_getHandsMidpoint_FUN_0046c9e0
 // Address: 0046c9e0
-void FUN_0046c9e0(int param_1);
+CVector3f * __stack_esi CDoc::getHandsMidpoint(CDoc *this_ptr,CVector3f *out_position);
 
-// Original: core_doc.cpp_FUN_0046caa0
+// Original: core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0
 // Address: 0046caa0
-void FUN_0046caa0(CDoc *param_1);
+void __cdecl CDoc::updateProceduralAnimation(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_0046e630
+// Original: core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630
 // Address: 0046e630
-void FUN_0046e630(int param_1,SPose *param_2);
+void __cdecl CDoc::extractTurnPose(CDoc *this_ptr,SPose *out_pose);
 
-// Original: core_doc.cpp_FUN_0046e730
+// Original: core_doc.cpp_CDoc_updateTurnBlending_FUN_0046e730
 // Address: 0046e730
-void FUN_0046e730(int param_1,float param_2);
+void __cdecl CDoc::updateTurnBlending(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_CDoc_setPositionAndOrientation_FUN_0046ea40
 // Address: 0046ea40
@@ -77,21 +77,21 @@ void __cdecl CDoc::setPositionAndOrientation(CDoc *this_ptr,CVector3f *new_posit
 // Address: 0046ea80
 void __cdecl CDoc::makeDrawDecision(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_0046f200
+// Original: core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200
 // Address: 0046f200
-void FUN_0046f200(int param_1,int param_2);
+void __cdecl CDoc::applyArmAimRotation(CDoc *this_ptr,int arm_side);
 
-// Original: core_doc.cpp_FUN_0046f610
+// Original: core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610
 // Address: 0046f610
-void FUN_0046f610(int param_1,int param_2);
+void __cdecl CDoc::updateWeaponPosition(CDoc *this_ptr,int hand_index);
 
-// Original: core_doc.cpp_FUN_0046f740
+// Original: core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740
 // Address: 0046f740
-float * FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int param_3);
+CMatrix3x4f * __stack3_esi CDoc::computeWeaponAttachXForm(CDoc *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 
-// Original: core_doc.cpp_FUN_00470750
+// Original: core_doc.cpp_CDoc_processPickupComplete_FUN_00470750
 // Address: 00470750
-void FUN_00470750(int param_1);
+void __cdecl CDoc::processPickupComplete(CDoc *this_ptr);
 
 // Original: core_doc.cpp_FUN_004707d0
 // Address: 004707d0
@@ -101,9 +101,9 @@ void FUN_004707d0(int param_1);
 // Address: 00470820
 undefined4 FUN_00470820(void);
 
-// Original: core_doc.cpp_FUN_004712b0
+// Original: core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0
 // Address: 004712b0
-undefined4 FUN_004712b0(CCharacter *param_1);
+int __cdecl CDoc::tryPlaceObject(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_archive_FUN_00471970
 // Address: 00471970
@@ -125,9 +125,9 @@ void FUN_00472260(void);
 // Address: 004722f0
 undefined4 * FUN_004722f0(void);
 
-// Original: core_doc.cpp_FUN_004724a0
+// Original: core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0
 // Address: 004724a0
-void FUN_004724a0(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl CDoc::autoAimAtThreat(CDoc *this_ptr,int hand_index,float delta_time);
 
 // Original: core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160
 // Address: 00473160
@@ -145,17 +145,17 @@ void __cdecl CDoc::updateArmRecoilBlend(CDoc *this_ptr,float delta_time,int is_w
 // Address: 00474250
 CMatrix3x4f * __stack2_esi CDoc::getCarryObjToBodyXForm(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_doc.cpp_FUN_004742a0
+// Original: core_doc.cpp_CDoc_getThrowDirection_FUN_004742a0
 // Address: 004742a0
-void FUN_004742a0(int param_1);
+CVector3f * __stack_esi CDoc::getThrowDirection(CDoc *this_ptr,CVector3f *out_direction);
 
-// Original: core_doc.cpp_FUN_00474400
+// Original: core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400
 // Address: 00474400
-void FUN_00474400(CHero *param_1,float param_2);
+void __cdecl CDoc::updateWeaponLayerActions(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00474ef0
 // Address: 00474ef0
-void FUN_00474ef0(int param_1);
+void FUN_00474ef0(CDoc *param_1);
 
 // Original: core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0
 // Address: 00474fc0
@@ -171,7 +171,7 @@ undefined4 FUN_00475890(int param_1);
 
 // Original: core_doc.cpp_FUN_00475920
 // Address: 00475920
-void FUN_00475920(CCharacter *param_1);
+void FUN_00475920(CDoc *param_1);
 
 // Original: core_doc.cpp_CDoc_canReachPickup_FUN_00475c20
 // Address: 00475c20
@@ -185,21 +185,21 @@ void FUN_00476080(int param_1);
 // Address: 00476150
 void FUN_00476150(int param_1,undefined4 param_2);
 
-// Original: core_doc.cpp_FUN_00476210
+// Original: core_doc.cpp_CDoc_isWeaponDrawn_FUN_00476210
 // Address: 00476210
-undefined4 FUN_00476210(int param_1);
+int __cdecl CDoc::isWeaponDrawn(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00476220
+// Original: core_doc.cpp_CDoc_drawWeapon_FUN_00476220
 // Address: 00476220
-void FUN_00476220(int param_1,int param_2);
+void __cdecl CDoc::drawWeapon(CDoc *this_ptr,int drawn);
 
 // Original: core_doc.cpp_CDoc_getGrabbed_FUN_00476260
 // Address: 00476260
 int __cdecl CDoc::getGrabbed(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_doc.cpp_FUN_004763c0
+// Original: core_doc.cpp_CDoc_reset_FUN_004763c0
 // Address: 004763c0
-void FUN_004763c0(CHero *param_1);
+void __cdecl CDoc::reset(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_getDeathState_FUN_00476430
 // Address: 00476430

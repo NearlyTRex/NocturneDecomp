@@ -2894,15 +2894,33 @@
   },
   {
     "addr":"00417d60",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":67,
-    "method":"FUN_00417d60",
-    "name":"core_boneguy.cpp_FUN_00417d60",
+    "method":"getLocalBoundingBoxCenter",
+    "name":"core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00417d60",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/boneguy.cpp",
     "variadic":false
@@ -6507,14 +6525,25 @@
       "005a8130",
       "005a8300"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":2609,
-    "method":"FUN_00450c60",
-    "name":"core_doc.cpp_FUN_00450c60",
-    "receiver":false,
+    "method":"processFrame",
+    "name":"core_doc.cpp_CDoc_processFrame_FUN_00450c60",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -6525,14 +6554,15 @@
     "calls":[
       "0040c8f0"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":26,
-    "method":"FUN_00453c60",
-    "name":"core_doc.cpp_FUN_00453c60",
-    "receiver":false,
+    "method":"getCarryLightIntensity",
+    "name":"core_doc.cpp_CDoc_getCarryLightIntensity_FUN_00453c60",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/doc.cpp",

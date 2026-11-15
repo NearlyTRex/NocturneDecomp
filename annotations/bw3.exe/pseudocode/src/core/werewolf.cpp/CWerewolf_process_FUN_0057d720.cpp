@@ -945,7 +945,7 @@ LAB_0057d989:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
-  core_werewolf_cpp_FUN_0057fad0();
+  core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_0057fad0(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)_DAT_005d7b3b + this_ptr->eye_glow_phase;
   return;
 }

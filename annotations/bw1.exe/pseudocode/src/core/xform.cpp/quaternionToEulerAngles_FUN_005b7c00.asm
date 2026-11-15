@@ -12,7 +12,7 @@
 ; XREF[6]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bd52
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446098
-;   core_doc.cpp_FUN_0046e630 at 0046e695
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630 at 0046e695
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660 at 0053978f
 ;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10 at 00589f75
 ;   core_turret.cpp_CTurret_process_FUN_005a23b0 at 005a27a5

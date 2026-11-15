@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CAsciiArmor_encode_FUN_00441530 at 00441546
-;   support_codec.cpp_FUN_00440e10 at 00440e4c
+;   support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00440e10 at 00440e4c
 ;
 ; *****************************************************************************
 

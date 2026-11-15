@@ -12,8 +12,8 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbd54
 ;
 ; Called Functions:
+;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570
 ;   support_codec.cpp_flushBitBuffer_FUN_00433ad0
-;   support_codec.cpp_FUN_00434570
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 00434926
     LEA EAX,[EBX + 0x4]                 ; 00434927
     PUSH EAX                            ; 0043492a
-    CALL support_codec.cpp_FUN_00434570 ; 0043492b
-        ;   XREF to: 00434570 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434570()
+    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570 ; 0043492b
+        ;   XREF to: 00434570 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, void * ostream)
     ADD ESP,0x10                        ; 00434930
     TEST EAX,EAX                        ; 00434933
     JZ 0x0043495d                       ; 00434935
@@ -67,7 +67,7 @@ section .text
     ADD EBX,0x18                        ; 00434962
     PUSH EBX                            ; 00434965
     CALL support_codec.cpp_flushBitBuffer_FUN_00433ad0 ; 00434966
-        ;   XREF to: 00433ad0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_flushBitBuffer_FUN_00433ad0()
+        ;   XREF to: 00433ad0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_flushBitBuffer_FUN_00433ad0(SBitBuffer * bit_buffer, void * ostream)
     ADD ESP,0x8                         ; 0043496b
     TEST EAX,EAX                        ; 0043496e
     JZ 0x0043497f                       ; 00434970

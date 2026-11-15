@@ -440,8 +440,8 @@ section .text
         ;   XREF to: 00433350 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0057dba0
     PUSH EBX                            ; 0057dba3
-    CALL core_werewolf.cpp_FUN_0057fad0 ; 0057dba4
-        ;   XREF to: 0057fad0 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_0057fad0()
+    CALL core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_0057fad0 ; 0057dba4
+        ;   XREF to: 0057fad0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_0057fad0(CWerewolf * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 0057dba9
     FMUL double ptr [0x005d7b3b]        ; 0057dbaf | DAT_005d7b3b
     FLD float ptr [EBX + 0xd098]        ; 0057dbb5

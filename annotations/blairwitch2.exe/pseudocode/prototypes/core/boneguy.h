@@ -9,9 +9,9 @@
 // Address: 00417d30
 void __cdecl staticInit(void);
 
-// Original: core_boneguy.cpp_FUN_00417d60
+// Original: core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00417d60
 // Address: 00417d60
-void FUN_00417d60(int param_1);
+CVector3f * __stack_esi getLocalBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00417e20
 // Address: 00417e20

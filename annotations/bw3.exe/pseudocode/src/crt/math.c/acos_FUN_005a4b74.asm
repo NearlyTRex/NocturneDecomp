@@ -12,8 +12,8 @@
 ;   core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800 at 00523d2a
 ;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 00523463
 ;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c4f4
-;   core_prye.cpp_FUN_005228c0 at 0052290d
-;   core_prye.cpp_FUN_00522950 at 00522a10
+;   core_prye.cpp_adjustAimAngleForOffset_FUN_005228c0 at 0052290d
+;   core_prye.cpp_calculateAimAnglesWithOffset_FUN_00522950 at 00522a10
 ;   core_xform.cpp_angleFromSinCos_FUN_00583a40 at 00583af2
 ;   ... and 3 more
 ;

@@ -25,9 +25,9 @@ void FUN_004548e0(CDemonActor *param_1);
 // Address: 004549e0
 undefined4 FUN_004549e0(float *param_1);
 
-// Original: core_demnfolk.cpp_FUN_00454b30
+// Original: core_demnfolk.cpp_factoryFuncDemnfolk_FUN_00454b30
 // Address: 00454b30
-void FUN_00454b30(void);
+CDemnfolk * __cdecl factoryFuncDemnfolk(void);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getActorType_FUN_00454b50
 // Address: 00454b50

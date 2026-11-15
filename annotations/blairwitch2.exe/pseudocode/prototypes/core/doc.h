@@ -49,17 +49,17 @@ void __cdecl CDoc::setCharacterModel(CDoc *this_ptr,char *model_name,char *cloth
 // Address: 00450b20
 void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
-// Original: core_doc.cpp_FUN_00450c60
+// Original: core_doc.cpp_CDoc_processFrame_FUN_00450c60
 // Address: 00450c60
-void FUN_00450c60(CHero *param_1,float param_2);
+void __cdecl CDoc::processFrame(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00453250
 // Address: 00453250
 void FUN_00453250(CHero *param_1,float param_2);
 
-// Original: core_doc.cpp_FUN_00453c60
+// Original: core_doc.cpp_CDoc_getCarryLightIntensity_FUN_00453c60
 // Address: 00453c60
-undefined4 FUN_00453c60(void);
+float __cdecl CDoc::getCarryLightIntensity(CDoc *this_ptr);
 
 // Original: core_doc.cpp_FUN_00453cc0
 // Address: 00453cc0
@@ -133,21 +133,21 @@ int __cdecl CDoc::renderTransparent(CDoc *this_ptr);
 // Address: 00459db0
 void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
-// Original: core_doc.cpp_FUN_00459ff0
+// Original: core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0
 // Address: 00459ff0
-void FUN_00459ff0(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl CDoc::autoAimAtThreat(CDoc *this_ptr,int hand_index,float delta_time);
 
-// Original: core_doc.cpp_FUN_0045ab40
+// Original: core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40
 // Address: 0045ab40
-void FUN_0045ab40(CDemonActor *param_1);
+void __cdecl CDoc::aimLeftPistol(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_processDamage_FUN_0045b190
 // Address: 0045b190
 void __cdecl CDoc::processDamage(CDoc *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_doc.cpp_FUN_0045b510
+// Original: core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510
 // Address: 0045b510
-void FUN_0045b510(CCharacter *param_1,float param_2,int param_3);
+void __cdecl CDoc::updateArmRecoilBlend(CDoc *this_ptr,float delta_time,int is_weapon_active);
 
 // Original: core_doc.cpp_CDoc_getCarryObjToBodyXForm_FUN_0045bb50
 // Address: 0045bb50

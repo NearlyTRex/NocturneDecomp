@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0 at 00433472
-;   core_shadow.cpp_FUN_005438d0 at 00543f3c
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 00543f3c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b892a

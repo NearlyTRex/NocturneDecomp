@@ -959,9 +959,14 @@
    "note": "setLineClippingDisabled_FUN_00434680. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.33x), so the slot is sound: logic-change d=0.143 (12/16 B)."
   },
   {
-   "a": "00434870",
+   "a": "00434690",
    "b": "00437c50",
-   "note": "rotateBitmap_FUN_00434870. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.07x), so the slot is sound: logic-change d=0.639 (480/447 B)."
+   "note": "loadRotatedBitmapFile_FUN_00434690. Was paired with rotateBitmap by position; the body opens the file with getFile/fgetc like blairwitch2's loadRotatedBitmapFile."
+  },
+  {
+   "a": "00434870",
+   "b": "00437e10",
+   "note": "rotateBitmap_FUN_00434870. Same 446-byte body as blairwitch2's rotateBitmap (malloc, then a size-check error); sits after loadRotatedBitmapFile."
   },
   {
    "a": "00434af0",
@@ -970,8 +975,13 @@
   },
   {
    "a": "00435730",
+   "b": "00438ca0",
+   "note": "generateTransparencySpans_FUN_00435730. Same 139 instructions and struct offsets as nocedit; sits right after flipEdgeArrayHorizontally."
+  },
+  {
+   "a": "00431870",
    "b": "00438ef0",
-   "note": "generateTransparencySpans_FUN_00435730. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.42x), so the slot is sound: logic-change d=0.630 (591/415 B)."
+   "note": "readBitmapFile_FUN_00431870. Was paired with generateTransparencySpans by position; it opens a CInStreamFile and matches blairwitch2's readBitmapFile."
   },
   {
    "a": "004359f0",
@@ -7892,6 +7902,121 @@
    "a": "005fcfc0",
    "b": "005a1ea0",
    "note": "rasterizeTriangle_FUN_005fcfc0. Read by hand (high): Same size, same two callers (clipAndFillPoly, renderGeometryBatch) and the same callee chain as nocedit...."
+  },
+  {
+   "a": "00407920",
+   "b": "00407760",
+   "note": "renderPrim_FUN_00407920. Read by hand: Both read prim->opcode, bounds-check it 0..0x43 and dispatch through the MRGL block handler table [EAX*4+table]. BW has the null-pointer and 'Bad prim' error paths removed. Same..."
+  },
+  {
+   "a": "00412720",
+   "b": "00410370",
+   "note": "CFlame_arrdtor50_FUN_00412720. Read by hand: BW is an arrdtor: PUSH g_CFlameTypeInfo; PUSH 0x32; __arrfini, which matches nocedit core_armour CFlame_arrdtor50 (00412720). getCollisionType forwards to CCharacter_getCollisio..."
+  },
+  {
+   "a": "0041b590",
+   "b": "00416cb0",
+   "note": "boundingBoxExtent_FUN_0041b590. Read by hand: BW computes max-min (FSUB of [src+0xc..] minus [src..]), which is nocedit boundingBoxExtent (0041b590). nocedit boundingBoxCenter does (min+max)*0.5."
+  },
+  {
+   "a": "0041b6b0",
+   "b": "00416dc0",
+   "note": "SBodyPartFire_arrdtor2_FUN_0041b6b0. Read by hand: BW is PUSH g_SBodyPartFireTypeInfo; PUSH 2; __arrfini, which matches nocedit SBodyPartFire_arrdtor2 (0041b6b0). staticInit registers the CBodyPart class."
+  },
+  {
+   "a": "0041b700",
+   "b": "00416e90",
+   "note": "getLocalBoundingBoxCenter_FUN_0041b700. Read by hand: Both get the bbox via actor vtable (BW +0x1c, shifted from +0x14), compute (min+max)*0.5, then set z = min.z + a double constant. Same slot right after the boneguy staticInit an..."
+  },
+  {
+   "a": "0043f030",
+   "b": "00440e10",
+   "note": "CLZWDictionary_readCodeFromStream_FUN_0043f030. Read by hand: Same mask = 1<<(this+8 - 1) loop, which reads one bit per step (callee 004400f0, mislabelled writeBitsToStream in BW) and ORs it into the code, checking against this+0xc - 1. Sa..."
+  },
+  {
+   "a": "0043f200",
+   "b": "00440fd0",
+   "note": "CLZWDictionary_writeCodeSequence_FUN_0043f200. Read by hand: Both are recursive self-calls on the parent code (node table this+0x10, code<<4, parent at +4), then emit the node's byte. Same slot after writeCodeBits."
+  },
+  {
+   "a": "004a8d20",
+   "b": "00488ea0",
+   "note": "CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20. Read by hand: BW gets the bbox via vtable +0x1c, takes three getRandomFloatFromRange picks between min and max, then localToWorldPoint, written out via ESI. Called from CEmitter_process. That..."
+  },
+  {
+   "a": "004b1970",
+   "b": "00495e60",
+   "note": "getSelectedCameraIndex_FUN_004b1970. Read by hand: BW returns set->[0x15aeb8] (selected_camera_index), which is getSelectedCameraIndex. Nocedit staticInit constructs g_CEventListInstance."
+  },
+  {
+   "a": "004cbce0",
+   "b": "004ad4c0",
+   "note": "doNothing_FUN_004cbce0. Read by hand: Single RET, directly after core_flattn staticInit in both builds (the only stub in that slot)."
+  },
+  {
+   "a": "004ffab0",
+   "b": "004dcda0",
+   "note": "CInventory_getActiveLightGun_FUN_004ffab0. Read by hand: Tiny stub that always returns 0 (XOR EAX,EAX; RET). It sits in the same slot in both builds, between CInventory_select and updateInventory, and BW has no light gun, so the gette..."
+  },
+  {
+   "a": "004ffad0",
+   "b": "004dcdb0",
+   "note": "CInventory_updateInventory_FUN_004ffad0. Read by hand: Same timer-decrement-and-clamp blocks on the +0x338.. range (delta_time_float), the goggles_active check, castToClassHash and a resetWeaponSwitchTimers call. Called from CPrye_p..."
+  },
+  {
+   "a": "00522c00",
+   "b": "004f5a70",
+   "note": "SClipPlane_dtor_FUN_00522c00. Read by hand: Trivial dtor directly after SClipPlane_ctor at the end of core_mirror in both builds. Nocedit only loads EAX=this. Accepted on position."
+  },
+  {
+   "a": "00522c80",
+   "b": "004f5aa0",
+   "note": "CDemonMission_reset_FUN_00522c80. Read by hand: Same reset pattern: zero a few ints, set one to -1, zero a 3-dword block by chained copy from +8 (LEA X,[this+N]; [X+8]=0; [X+4]=[X+8]; [X]=[X+4]), clear a name byte and a globa..."
+  },
+  {
+   "a": "00544f00",
+   "b": "00509e00",
+   "note": "CFont_getLineSpacing_FUN_00544f00. Read by hand: Identical XOR EAX,EAX; RET, the last engine_palette CFont function before the next unit in both builds. Accepted on position."
+  },
+  {
+   "a": "00546310",
+   "b": "0050ab80",
+   "note": "resetPathfindingQueue_FUN_00546310. Read by hand: BW zeroes three globals at +0, +4, +0x2780. That is the same layout as nocedit core_path resetPathfindingQueue (head 0x030d284c, tail +4, nodesExpanded +0x2780). The next functi..."
+  },
+  {
+   "a": "0056cd60",
+   "b": "00536c90",
+   "note": "CDemonSet_renderOpaqueActors_FUN_0056cd60. Read by hand: Same callee set: setupMirrorRendering, restoreCameraAfterMirror, setLightingParameters, 2x setFlatColor, 2x enableFaceCapture, and setRenderAlpha (only the opaque pass has it)...."
+  },
+  {
+   "a": "0056cf00",
+   "b": "00536f90",
+   "note": "CDemonSet_renderTransparentActors_FUN_0056cf00. Read by hand: Same callees as the opaque pass but without setRenderAlpha, which matches nocedit renderTransparentActors. It is the second call from renderScene, directly followed by addDynami..."
+  },
+  {
+   "a": "005dcab0",
+   "b": "00569550",
+   "note": "CTextureCache_ctor_FUN_005dcab0. Read by hand: BW zeroes +0, +0x18004 and +0x18008, memsets +4 for 0x18000 bytes, and returns this. +0x18004 is the texture count bounds-checked in selectTextureByHandle. It sits just before C..."
+  },
+  {
+   "a": "005dd8e0",
+   "b": "0056ac20",
+   "note": "clearTextureCache_FUN_005dd8e0. Read by hand: Both push the global texture-cache instance and call CTextureCache_freeTextures. BW also zeroes the global next to it (cache+4). Both sit right after loadTextureAndGetData and b..."
+  },
+  {
+   "a": "005ecac0",
+   "b": "005797d0",
+   "note": "allocateRenderBuffers_FUN_005ecac0. Read by hand: Same width*height*(bpp/8) malloc into the back buffer, the same out-of-memory displayErrorAndQuit, and the same width*height*4+0x40 buffer aligned to 16 for the z-buffer. Same s..."
+  },
+  {
+   "a": "005ecba0",
+   "b": "005798a0",
+   "note": "freeRenderBuffers_FUN_005ecba0. Read by hand: Frees the same two globals (back buffer, frame buffer) and zeroes the back buffer and z-buffer pointers. Identical branch shape. BW uses plain free where nocedit uses debugFree."
+  },
+  {
+   "a": "005f1e40",
+   "b": "0057fad0",
+   "note": "CWerewolf_processChainConstraint_FUN_005f1e40. Read by hand: Same callees: 2x CCharacter_moveAndCollide, worldToLocalPoint, transformVector3x4 and a CConsole_printf. Same paired field use (+0xd080/+0xd084 vs +0xbee8/+0xbeec) and +0xfd8. C..."
   }
  ]
 }

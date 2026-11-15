@@ -2881,15 +2881,26 @@
     "calls":[
       "005a3de6"
     ],
-    "conv":"unknown",
+    "cls":"SBodyPartFire",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_00416dc0",
-    "name":"core_bodypart.cpp_FUN_00416dc0",
-    "receiver":false,
+    "method":"arrdtor2",
+    "name":"core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00416dc0",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SBodyPartFire",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -4748,10 +4759,28 @@
     "instructions":31,
     "method":"flushBitBuffer",
     "name":"support_codec.cpp_flushBitBuffer_FUN_00440440",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ostream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -10291,14 +10320,14 @@
     "callers":[
       "004e44e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1,
-    "method":"FUN_004ad4c0",
-    "name":"core_flattn.cpp_FUN_004ad4c0",
+    "method":"doNothing",
+    "name":"core_flattn.cpp_doNothing_FUN_004ad4c0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -11862,14 +11891,33 @@
     "calls":[
       "005a28c0"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_004d8d40",
-    "name":"engine_ini.cpp_FUN_004d8d40",
-    "receiver":false,
+    "method":"setFloatValue",
+    "name":"engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -11988,14 +12036,14 @@
     "calls":[
       "0040d400"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":12,
-    "method":"FUN_004da840",
-    "name":"core_inv.cpp_FUN_004da840",
+    "method":"freeInventory",
+    "name":"core_inv.cpp_freeInventory_FUN_004da840",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/inv.cpp",
@@ -14431,17 +14479,51 @@
   },
   {
     "addr":"0050abc0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_0050abc0",
-    "name":"core_passngr.cpp_FUN_0050abc0",
+    "method":"queuePush",
+    "name":"core_path.cpp_queuePush_FUN_0050abc0",
+    "params":[
+      {
+        "name":"grid_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"cost",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"grid_z",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"direction",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
-    "tu":"core/passngr.cpp",
+    "tu":"core/path.cpp",
     "variadic":false
   },
   {
@@ -15320,14 +15402,40 @@
       "0040cfa0",
       "005a4b74"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":56,
-    "method":"FUN_005228c0",
-    "name":"core_prye.cpp_FUN_005228c0",
+    "method":"adjustAimAngleForOffset",
+    "name":"core_prye.cpp_adjustAimAngleForOffset_FUN_005228c0",
+    "params":[
+      {
+        "name":"angle",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/prye.cpp",

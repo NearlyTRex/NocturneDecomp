@@ -145,7 +145,7 @@ void core_xform_cpp_quaternionFromAxisAngle_FUN_005b7bb0(float param_1,float *pa
 undefined4 * core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(float *param_1);
 undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(float *param_1);
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f *euler_angles,CQuaternion4f *quat_out);
-void core_xform_cpp_FUN_005b7ff0(float *param_1);
+undefined1 core_xform_cpp_eulerToQuaternionIndirect_FUN_005b7ff0(void);
 void __cdecl core_yow_cpp_staticInit_FUN_005b8100(void);
 CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_005b8130(void);
 CDemonActorType * __cdecl core_yow_cpp_CYow_getActorType_FUN_005b8150(CYow *this_ptr);
@@ -192,9 +192,9 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005bece0(CZombie *this_ptr,CD
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005bed50(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005bed80(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005bedf0(CZombie *this_ptr,uint flags);
-void core_zombie_cpp_FUN_005bee80(void);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,SRenderVertex *v1);
 int * core_zombie_cpp_FUN_005bf0e0(void);
-void __cdecl core_zombie_cpp_FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_zraster_c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {

@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   core_texlist.cpp_FUN_00573940
 ;   crt_memory.c_operator_new_FUN_005b8be2
+;   engine_texture.cpp_CTextureCache_ctor_FUN_00573940
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     RET                                 ; 00574d6a
     PUSH EAX                            ; 00574d6b
         ;   Label: LAB_00574d6b
-    CALL core_texlist.cpp_FUN_00573940  ; 00574d6c
-        ;   XREF to: 00573940 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_FUN_00573940()
+    CALL engine_texture.cpp_CTextureCache_ctor_FUN_00573940 ; 00574d6c
+        ;   XREF to: 00573940 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_texture.cpp_CTextureCache_ctor_FUN_00573940(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 00574d71
     MOV [0x02652eb0],EAX                ; 00574d74 | DAT_02652eb0
     TEST EAX,EAX                        ; 00574d79

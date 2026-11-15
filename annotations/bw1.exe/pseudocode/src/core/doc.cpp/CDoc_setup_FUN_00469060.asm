@@ -25,7 +25,7 @@
 ;   ... and 31 more
 ;
 ; Called Functions:
-;   core_doc.cpp_FUN_0046caa0
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0
 ;   core_hero.cpp_CHero_setup_FUN_004eaa10
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
@@ -288,8 +288,8 @@ section .text
     MOV dword ptr [EBX + 0x8],EAX       ; 00469328
     PUSH EBP                            ; 0046932b
         ;   Label: LAB_0046932b
-    CALL core_doc.cpp_FUN_0046caa0      ; 0046932c
-        ;   XREF to: 0046caa0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046caa0()
+    CALL core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 ; 0046932c
+        ;   XREF to: 0046caa0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0(CDoc * this_ptr)
     MOV dword ptr [EBP + 0x200a8],0x0   ; 00469331
     MOV dword ptr [EBP + 0x200bc],0x0   ; 0046933b
     MOV dword ptr [EBP + 0x200d0],0x0   ; 00469345

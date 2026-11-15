@@ -7,7 +7,7 @@
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_00474400 at 004745c8
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 004745c8
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 005908ac
 ;
 ; *****************************************************************************

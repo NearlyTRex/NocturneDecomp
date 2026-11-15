@@ -284,7 +284,8 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
         }
       }
       else if (this_ptr->post_mode == 0) {
-        iVar6 = core_zombiepriest_cpp_FUN_0058efb0();
+        iVar6 = core_zombiepriest_cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0
+                          (this_ptr,param_2);
         if (iVar6 == 0) {
           fStack_30 = 0x40400000 + 1.0;
           if (((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) ||
@@ -642,7 +643,7 @@ switchD_0058e8bf_caseD_3:
             (&(this_ptr->base).base.model);
   EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar7 == DEATH_STATE_ALIVE) {
-    core_zombiepriest_cpp_FUN_0058e8d0();
+    core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(this_ptr,param_2);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,param_2);
   return;

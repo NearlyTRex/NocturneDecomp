@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/C3DSCamera.h"
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModel.h"
@@ -81,9 +82,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00535a80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_005365c0(CDemonSet *this_ptr);
-void core_set_cpp_FUN_00536990(CDemonSet *param_1);
-void core_set_cpp_FUN_00536c90(CDemonSet *param_1);
-void core_set_cpp_FUN_00536f90(CDemonSet *param_1);
+void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00536990(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_00536f90(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00537270(CDemonSet *this_ptr,CDemonLight *light);
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet *this_ptr,CDemonGlobe *globe);
 void core_set_cpp_FUN_00537320(undefined4 param_1,int param_2);
@@ -141,7 +142,7 @@ void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_pt
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_0053ba40(CDemonSet *this_ptr);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
-void core_set_cpp_FUN_0053bb60(void *param_1);
+C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor250_FUN_0053bb60(C3DSCamera *objs,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_0053bb80(void);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet *this_ptr,CVector3f *position,float radius);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0(CDemonSet *this_ptr,CVector3f *position);

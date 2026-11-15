@@ -2,27 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 638,
+    "complexity_score": 646,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 163,
-    "suspect_count": 45,
+    "pseudocode_lines": 146,
+    "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
-      "suspect_float",
+      "unaffected_reg",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 438
+    "total_lines": 421
   },
   "cross_references": [
     {
       "addr": "00469550",
       "from_addr": "0046a49d",
-      "name": "core_doc.cpp_FUN_00469550",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +35,7 @@
     ],
     "convention": "unknown",
     "name": "core_doc.cpp_FUN_00475920",
-    "signature": "void core_doc_cpp_FUN_00475920(CCharacter *param_1)"
+    "signature": "void core_doc_cpp_FUN_00475920(CDoc *param_1)"
   },
   "function_calls": [
     {
@@ -52,7 +51,7 @@
     {
       "addr": "0046f610",
       "is_variadic": false,
-      "name": "core_doc.cpp_FUN_0046f610"
+      "name": "core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610"
     }
   ],
   "globals": [
@@ -81,7 +80,7 @@
       {
         "call_addr": "0046a49d",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00469550",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,23 +164,47 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_doc_cpp_FUN_00475920(CCharacter *param_1)",
+      "text": "void core_doc_cpp_FUN_00475920(CDoc *param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1[1].base.actor_name + 0x14);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = param_1[2].flames;",
+      "text": "iVar6 = (param_1->base).player_input.action_state.fire;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->can_grab_weapon = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->base).base.grabbed_by != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +212,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->grabbed_by != (CDemonActor *)0x0) {",
+      "text": "if ((param_1->base).action_pending != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -197,7 +220,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x != 0.0) {",
+      "text": "if (param_1->guns_drawn == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -205,31 +228,31 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[2].flames[0x1a].globe.corona_mode == 0) {",
+      "text": "this_ptr = param_1->weapon;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = *(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "this_ptr = (CWeapon *)(param_1->base).base.carry_hands[1].carry_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = param_1->carry_hands[1].carry_actor;",
+      "text": "iVar8 = param_1->melee_attack_index + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 1;",
+      "text": "param_1->melee_attack_index = iVar8;",
       "type": "unnamed_param"
     },
     {
@@ -237,15 +260,23 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1[2].flames[0x1a].on_event + 0x34) = iVar10;",
+      "text": "param_1->melee_attack_index = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = param_1[2].flames;",
+      "text": "(&param_1->weapon->base,g_CWeaponClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar5 = param_1->melee_attack_index + 0xc;",
       "type": "unnamed_param"
     },
     {
@@ -253,79 +284,95 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28),",
+      "text": "if (param_1->weapon->ammo_type == AMMO_TYPE_STAGGER) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 0xc;",
+      "text": "(param_1->base).base.layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1[2].flames[0x1a].on_event + 0x28) + 0x56c) == 9) {",
+      "text": "iVar6 = param_1->melee_attack_index;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
+      "text": "(param_1->base).action_pending = 7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
-      "match": "9.80909e-45",
-      "severity": "mild",
-      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x = 9.80909e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x = 9.80909e-45;",
+      "text": "(param_1->base).base.layer_action_index = iVar6 + 0xc;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->layer_action_index = iVar8 + 0xc;",
+      "text": "if (param_1->weapon == (CWeapon *)0x0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 88,
-      "match": "9.80909e-45",
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
       "severity": "mild",
-      "text": "else if (pCVar6[2].orient.vec.x == 9.80909e-45) goto LAB_0047597e;",
-      "type": "suspect_float"
+      "text": "EVar1 = param_1->weapon->weapon_type;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "if (((param_1->base).aim_mode == AIM_MODE_AUTO) && (EVar1 == WEAPON_TYPE_GUN)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar7 = &param_1->right_arm_aim;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar2 = &param_1->left_arm_aim;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->dual_wield_side != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar7 = &param_1->left_arm_aim;",
       "type": "unnamed_param"
     },
     {
@@ -333,71 +380,111 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1[2].flames[0x18].on_event + 0x50) == 0) && (iVar8 == 0)) {",
+      "text": "param_1->dual_wield_side = (uint)(param_1->dual_wield_side == 0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar9 = &param_1[2].flames[0x1a].globe.inverse_radius;",
+      "text": "param_1->dual_wield_side = (uint)(param_1->dual_wield_side == 0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1[2].flames[0x1a].on_event + 4);",
+      "text": "if (param_1->weapon == (CWeapon *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[2].flames[0x1a].on_event + 0x2c) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
       "line": 105,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar9[7] != 2.8026e-45)) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 105,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar9[7] != 2.8026e-45)) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1[2].flames[0x1a].on_event + 0x2c) =",
+      "text": "switch(param_1->weapon->weapon_type) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "(uint)(*(int *)(param_1[2].flames[0x1a].on_event + 0x2c) == 0);",
+      "text": "((CCharacter *)param_1,iVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "if (((((float)_DAT_005da5c4 <= (float)pCVar3) && (1.0 <= (param_1->right_arm_aim).kickback_factor)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
+      "match": "param_1",
+      "severity": "mild",
+      "text": ") && ((param_1->right_arm_aim).recoil_timer <= 0.0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 134,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar6 = (*(((((CCharacter *)param_1->weapon)->base).vtable._uc)->_uc).canBeGrabbed)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 135,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CCharacter *)param_1->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 135,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCharacter *)param_1->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->can_grab_weapon = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 137,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = (*(((((CCharacter *)param_1->weapon)->base).vtable._uc)->_uc).isGrabbable)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 138,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((CCharacter *)param_1->weapon,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 138,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCharacter *)param_1->weapon,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
@@ -405,15 +492,7 @@
       "line": 140,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,iVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 141,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((((float)_DAT_005da5c4 <= fVar4) && (1.0 <= (float)param_1[2].flames[0x1a].sfx_handle)) &&",
+      "text": "param_1->can_grab_weapon = 1;",
       "type": "unnamed_param"
     },
     {
@@ -421,7 +500,7 @@
       "line": 142,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[0x1a].globe_scalar <= 0.0)) &&",
+      "text": "core_doc_cpp_CDoc_updateWeaponPosition_FUN_0046f610(param_1,0);",
       "type": "unnamed_param"
     },
     {
@@ -429,79 +508,23 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28),",
+      "text": "if (param_1->weapon->fire_mode == (FIRE_MODE_PUMP|FIRE_MODE_SINGLE)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unnamed function parameter",
       "line": 144,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0xe8))(iVar8), iVar8 != 0)) {",
-      "type": "unresolved_funcptr"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.layer_action_t = 0.0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 151,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0xe4))(iVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_doc_cpp_FUN_0046f610(param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1[2].flames[0x1a].on_event + 0x28) + 0x2dc) == 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 161,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 162,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 0x12;",
+      "text": "(param_1->base).base.layer_action_index = 0x12;",
       "type": "unnamed_param"
     },
     {

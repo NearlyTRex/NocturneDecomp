@@ -11,7 +11,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_005380c0 at 00538124
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0043b2e0
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005380b0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00
 ;   crt_unknown.c_FUN_005c09f0
@@ -29,8 +29,8 @@ section .text
     PUSH ESI                            ; 00537cbd
     PUSH 0x0                            ; 00537cbe
     PUSH EBX                            ; 00537cc0
-    CALL cockpit_ckptutil.c_FUN_0043b2e0 ; 00537cc1
-        ;   XREF to: 0043b2e0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_0043b2e0(char * filename, void * buffer, int size)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0 ; 00537cc1
+        ;   XREF to: 0043b2e0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0(char * filename, void * buffer, int size)
     MOV ESI,EAX                         ; 00537cc6
     ADD ESP,0xc                         ; 00537cc8
     TEST EAX,EAX                        ; 00537ccb

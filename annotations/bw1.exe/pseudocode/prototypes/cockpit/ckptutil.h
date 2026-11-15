@@ -157,13 +157,13 @@ void __cdecl setLineBlendingDisabled(int disabled);
 // Address: 0043a030
 void __cdecl setLineClippingDisabled(int disabled);
 
-// Original: cockpit_ckptutil.c_rotateBitmap_FUN_0043a040
+// Original: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0043a040
 // Address: 0043a040
-void * rotateBitmap(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
+char * __cdecl loadRotatedBitmapFile(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index);
 
-// Original: cockpit_ckptutil.c_FUN_0043a200
+// Original: cockpit_ckptutil.c_rotateBitmap_FUN_0043a200
 // Address: 0043a200
-void FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+void rotateBitmap(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 
 // Original: cockpit_ckptutil.c_setEdgeData_FUN_0043a3c0
 // Address: 0043a3c0
@@ -177,10 +177,10 @@ void * traceConnectedEdges(void);
 // Address: 0043af20
 void __cdecl flipEdgeArrayHorizontally(SEdge *edge_array,int edge_count,int flip_width);
 
-// Original: cockpit_ckptutil.c_FUN_0043b090
+// Original: cockpit_ckptutil.c_generateTransparencySpans_FUN_0043b090
 // Address: 0043b090
-void FUN_0043b090(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
+void __cdecl generateTransparencySpans(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
 
-// Original: cockpit_ckptutil.c_FUN_0043b2e0
+// Original: cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0
 // Address: 0043b2e0
-void * __cdecl FUN_0043b2e0(char *filename,void *buffer,int size);
+void * __cdecl readBitmapFile(char *filename,void *buffer,int size);

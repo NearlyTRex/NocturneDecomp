@@ -9,9 +9,9 @@
 // Address: 004bf740
 void __cdecl staticInit(void);
 
-// Original: core_flattn.cpp_FUN_004bf770
+// Original: core_flattn.cpp_doNothing_FUN_004bf770
 // Address: 004bf770
-void FUN_004bf770(void);
+void __cdecl doNothing(void);
 
 // Original: core_flattn.cpp_FUN_004bf780
 // Address: 004bf780

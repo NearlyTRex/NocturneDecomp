@@ -1032,8 +1032,8 @@ section .text
         ;   XREF to: 004b72b8 (CONDITIONAL_JUMP)  ; LAB_004b72b8
     MOV EBX,dword ptr [0x00603b28]      ; 004b7aaa | g_CDemonSetPtr
     PUSH EBX                            ; 004b7ab0 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00536990      ; 004b7ab1
-        ;   XREF to: 00536990 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00536990()
+    CALL core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990 ; 004b7ab1
+        ;   XREF to: 00536990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990(CDemonSet * this_ptr)
     JMP 0x004b72b5                      ; 004b7ab6
         ;   XREF to: 004b72b5 (UNCONDITIONAL_JUMP)  ; LAB_004b72b5
     PUSH EDI                            ; 004b7abb

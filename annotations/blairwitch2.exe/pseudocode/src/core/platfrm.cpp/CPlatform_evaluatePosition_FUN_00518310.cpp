@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform *this_ptr)
 
 {
@@ -78,13 +76,13 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
               (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_88);
     local_98 = local_88.w;
     puVar2 = (uint *)((int)&local_88 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-    *(uint *)((int)&stack0xffffff6c + (uint)bVar3 * 0xfffffffe * 4) =
+    *(uint *)(&stack0xffffff6c + (uint)bVar3 * -8) =
          *(uint *)((int)&local_88 + (uint)bVar3 * -8 + 4);
     *(uint *)(&stack0xffffff70 + (uint)bVar3 * -8 + (uint)bVar3 * -8) = *puVar2;
     *(uint *)
      ((int)(&stack0xffffff70 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4) =
          puVar2[(uint)bVar3 * -2 + 1];
-    core_xform_cpp_FUN_005940b0(&stack0xffffff68);
+    core_xform_cpp_quaternionToEulerAngles_FUN_005940b0();
     local_78.x = local_3c;
     *(float *)((int)&local_78 + (uint)bVar3 * -8 + 4) = afStack_38[(uint)bVar3 * -2];
     *(float *)((int)&local_78 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =

@@ -100,5 +100,5 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0052e940(CDemonSet *this_p
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0052fad0(CDemonSet *this_ptr);
-void core_set_cpp_FUN_0052fea0(CDemonSet *param_1);
+void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0(CDemonSet *this_ptr);
 

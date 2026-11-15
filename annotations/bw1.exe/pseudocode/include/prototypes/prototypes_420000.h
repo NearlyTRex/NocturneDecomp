@@ -13,6 +13,7 @@
 #include "types/classes/CCameraView.h"
 #include "types/classes/CCarved.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
@@ -126,7 +127,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427b40(CBugs *this_ptr,CDe
 void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00427e00(CBugs *this_ptr,CVector3f *new_position);
 void __cdecl core_bugs_cpp_normalizeVector_FUN_00428010(CVector3f *dest);
 CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00428080(CVector3f *dest,CVector3i *src);
-int core_bugs_cpp_FUN_00428120(int param_1);
+char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00428120(CDeformableModelInstance *model_ptr);
 float __cdecl core_bugs_cpp_maxFloat_FUN_00428150(float a,float b);
 CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags);
 SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_00428210(SBug *this_ptr);

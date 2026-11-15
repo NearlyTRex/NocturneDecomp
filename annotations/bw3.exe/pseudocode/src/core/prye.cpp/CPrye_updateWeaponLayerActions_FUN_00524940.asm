@@ -60,13 +60,13 @@
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
+;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047b230
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0
-;   core_dynamite.cpp_FUN_0047b230
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0
+;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0
+;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80
 ;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
-;   core_inv.cpp_FUN_004dba80
-;   core_inv.cpp_FUN_004dcda0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   ... and 4 more
 ;
@@ -106,12 +106,12 @@ section .text
     LEA ESI,[EBX + 0x206e8]             ; 00524997
         ;   Label: LAB_00524997
     PUSH ESI                            ; 0052499d
-    CALL core_inv.cpp_FUN_004dcda0      ; 0052499e
-        ;   XREF to: 004dcda0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dcda0()
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0 ; 0052499e
+        ;   XREF to: 004dcda0 (UNCONDITIONAL_CALL)  ; void * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 005249a3
     PUSH ESI                            ; 005249a6
-    CALL core_inv.cpp_FUN_004dcda0      ; 005249a7
-        ;   XREF to: 004dcda0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dcda0()
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0 ; 005249a7
+        ;   XREF to: 004dcda0 (UNCONDITIONAL_CALL)  ; void * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 005249ac
     XOR EAX,EAX                         ; 005249af
     MOV dword ptr [ESP + 0x74],EAX      ; 005249b1
@@ -181,8 +181,8 @@ section .text
     JZ 0x00524a9c                       ; 00524a89
         ;   XREF to: 00524a9c (CONDITIONAL_JUMP)  ; LAB_00524a9c
     PUSH EAX                            ; 00524a8b
-    CALL core_dynamite.cpp_FUN_0047b230 ; 00524a8c
-        ;   XREF to: 0047b230 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0047b230()
+    CALL core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047b230 ; 00524a8c
+        ;   XREF to: 0047b230 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047b230(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 00524a91
     TEST EAX,EAX                        ; 00524a94
     JZ 0x00525204                       ; 00524a96
@@ -1328,8 +1328,8 @@ section .text
         ;   Label: LAB_005257d2
     MOV EDI,dword ptr [ESP + 0x5c]      ; 005257d7
     PUSH EDI                            ; 005257db
-    CALL core_inv.cpp_FUN_004dba80      ; 005257dc
-        ;   XREF to: 004dba80 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dba80()
+    CALL core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80 ; 005257dc
+        ;   XREF to: 004dba80 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005257e1
     TEST EAX,EAX                        ; 005257e4
     JZ 0x00524bde                       ; 005257e6

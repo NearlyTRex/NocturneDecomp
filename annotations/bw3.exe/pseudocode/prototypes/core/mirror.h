@@ -81,6 +81,6 @@ CVector3i * __stack3_esi CMirrorReflection::transformMirrorEdgeToIntegerSpace(CM
 // Address: 004f5a60
 SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);
 
-// Original: core_mirror.cpp_FUN_004f5a70
+// Original: core_mirror.cpp_SClipPlane_dtor_FUN_004f5a70
 // Address: 004f5a70
-void FUN_004f5a70(void);
+void __cdecl SClipPlane::dtor(SClipPlane *this_ptr,uint flags);

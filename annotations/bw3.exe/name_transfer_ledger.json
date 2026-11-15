@@ -1065,6 +1065,15 @@
    "verdict": "CONFIRMED",
    "status": "approve",
    "note": "APPROVE despite size_mismatch: read by hand, same xform.cpp position and body as bw1 005b7ed0."
+  },
+  {
+   "a": "0043e7e0",
+   "b": "00440440",
+   "name": "support_codec.cpp_flushBitBuffer_FUN_0043e7e0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: the name is already in place. BW returns an error code and writes through its own stream object, so nocedit's void (SBitBuffer *, _ostream *) is wrong here; the prototype is set by hand with void * for the stream."
   }
  ]
 }

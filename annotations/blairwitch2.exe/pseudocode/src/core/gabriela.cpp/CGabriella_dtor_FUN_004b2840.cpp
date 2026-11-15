@@ -9,7 +9,7 @@
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004b2840(CGabriella *this_ptr,uint flags)
 
 {
-  int iVar1;
+  CCloth *pCVar1;
   CGabriella *pCVar2;
   void *ptr;
   
@@ -18,8 +18,10 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004b2840(CGabriella *
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->coat_cloth,0);
-  pCVar2 = (CGabriella *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)(iVar1 + -0x25680),1);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_005ade00(&this_ptr->coat_cloth,0);
+  pCVar2 = (CGabriella *)
+           core_hero_cpp_CHero_dtor_FUN_004ce3d0
+                     ((CHero *)&pCVar1[-1].vertices[0x12f].bone_positions[0].z,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

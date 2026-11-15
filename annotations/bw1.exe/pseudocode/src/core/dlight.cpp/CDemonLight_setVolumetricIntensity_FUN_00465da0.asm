@@ -11,7 +11,7 @@
 ;
 ; XREF[8]:
 ;   core_elephant.cpp_CElephantGun_process_FUN_0049e090 at 0049e168
-;   core_lightgun.cpp_FUN_00500090 at 00500148
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090 at 00500148
 ;   core_lightpis.cpp_FUN_005017f0 at 005018a8
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00550ec3
 ;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170 at 005512b6

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_004343f0
-;   support_codec.cpp_FUN_00434650
+;   support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00434650
 ;   support_codec.cpp_FUN_004346d0
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH EDX                            ; 00434a8b
     PUSH ECX                            ; 00434a8c
     PUSH EAX                            ; 00434a8d
-    CALL support_codec.cpp_FUN_00434650 ; 00434a8e
-        ;   XREF to: 00434650 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434650()
+    CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00434650 ; 00434a8e
+        ;   XREF to: 00434650 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00434650(CLZWDictionary * this_ptr, int code, void * ostream)
     ADD ESP,0xc                         ; 00434a93
     CMP EAX,-0x1                        ; 00434a96
         ;   Label: LAB_00434a96

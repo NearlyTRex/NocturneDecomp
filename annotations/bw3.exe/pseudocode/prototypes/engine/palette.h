@@ -21,6 +21,6 @@ undefined4 FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int p
 // Address: 00509d90
 void FUN_00509d90(int *param_1);
 
-// Original: engine_palette.cpp_FUN_00509e00
+// Original: engine_palette.cpp_CFont_getLineSpacing_FUN_00509e00
 // Address: 00509e00
-undefined4 FUN_00509e00(void);
+int __cdecl CFont::getLineSpacing(CFont *this_ptr);

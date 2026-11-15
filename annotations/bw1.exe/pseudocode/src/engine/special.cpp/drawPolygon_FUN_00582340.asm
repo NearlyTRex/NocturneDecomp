@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[5]:
-;   core_zombie.cpp_FUN_005bf120 at 005bf410
 ;   engine_mini3d.cpp_rasterizeTriangle_FUN_00516060 at 005167e7
 ;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e30e
 ;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f358
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005827b0 at 0058284d
+;   engine_zraster.c_rasterizeTriangle_FUN_005bf120 at 005bf410
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c50948

@@ -11,7 +11,7 @@
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_0046caa0 at 0046cb7a
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cb7a
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 00588bad
 ;
 ; Called Functions:

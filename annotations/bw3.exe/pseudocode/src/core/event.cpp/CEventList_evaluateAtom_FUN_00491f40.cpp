@@ -452,8 +452,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
                   *parse_position = *parse_position + local_78;
                 }
                 else {
-                  local_104 = core_inv_cpp_FUN_004dba80
-                                        (&pCVar11[2].base.flames[0x11].base.collision_disabled,
+                  local_104 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004dba80
+                                        ((CInventory *)
+                                         &pCVar11[2].base.flames[0x11].base.collision_disabled,
                                          local_a25 + 1);
                   *parse_position = *parse_position + local_78;
                 }

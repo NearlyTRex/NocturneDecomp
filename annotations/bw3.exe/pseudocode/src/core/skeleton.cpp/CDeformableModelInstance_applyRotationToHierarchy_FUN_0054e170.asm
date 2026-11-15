@@ -26,7 +26,7 @@
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb98
 ;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c555
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c802
-;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058ebc2
+;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058ebc2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2034

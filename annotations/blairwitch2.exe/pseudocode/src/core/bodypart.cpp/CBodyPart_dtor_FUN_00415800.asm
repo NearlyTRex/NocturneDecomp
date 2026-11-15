@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
-;   core_bodypart.cpp_FUN_00417d10
+;   core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10
 ;   core_box.cpp_CBox_dtor_FUN_005b1c70
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
@@ -46,8 +46,8 @@ section .text
     PUSH 0x0                            ; 00415834
     SUB EAX,0x834                       ; 00415836
     PUSH EAX                            ; 0041583b
-    CALL core_bodypart.cpp_FUN_00417d10 ; 0041583c
-        ;   XREF to: 00417d10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00417d10()
+    CALL core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10 ; 0041583c
+        ;   XREF to: 00417d10 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10(SBodyPartFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415841
     PUSH 0x1                            ; 00415844
     LEA EBX,[EAX + 0xfffff754]          ; 00415846

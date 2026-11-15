@@ -195,6 +195,14 @@ def test_refresh_resignatures_an_already_named_function_only_on_evidence():
     assert [r["refresh"] for r in rows.values()] == [True, False]
 
 
+def test_a_rejected_row_is_not_refreshed_even_with_its_name_in_place():
+    pairs = [pair("a", "00000001", "core_a.cpp_f_FUN_a", sig_verdict = "agree")]
+    current = {"00000001": "core_a.cpp_f_FUN_00000001"}
+    ledger = {"00000001": {"status": "reject", "note": "own stream class"}}
+    row = run_plan(pairs, current, refresh_signatures = True, ledger = ledger)["00000001"]
+    assert (row["action"], row["detail"]) == ("SKIP_LEDGER", "rejected on review: own stream class")
+
+
 def test_a_unit_conflict_can_be_waived_and_a_placeholder_unit_is_no_conflict():
     pairs = [pair("a", "00000001", "core_b.cpp_f_FUN_a"), pair("b", "00000002", "core_b.cpp_g_FUN_b")]
     current = {"00000001": "core_a.cpp_FUN_00000001", "00000002": "crt_unknown.c_FUN_00000002"}

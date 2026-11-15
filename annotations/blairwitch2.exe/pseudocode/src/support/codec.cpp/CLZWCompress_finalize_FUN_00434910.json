@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 24,
+    "complexity_score": 70,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 24,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 89
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -40,14 +42,14 @@
   },
   "function_calls": [
     {
+      "addr": "00434570",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570"
+    },
+    {
       "addr": "00433ad0",
       "is_variadic": false,
       "name": "support_codec.cpp_flushBitBuffer_FUN_00433ad0"
-    },
-    {
-      "addr": "00434570",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00434570"
     }
   ],
   "globals": [],
@@ -158,7 +160,40 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX != 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX == -1) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX == -2) {",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -16,11 +16,11 @@
 ;   core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_0045c350 at 0045c365
 ;   core_doc.cpp_CDoc_canDoHeroAction_FUN_00475650 at 00475684
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046eb25
-;   core_doc.cpp_FUN_00469550 at 0046993d
-;   core_doc.cpp_FUN_0046bde0 at 0046c13d
-;   core_doc.cpp_FUN_0046caa0 at 0046cabb
-;   core_doc.cpp_FUN_0046e730 at 0046e760
-;   core_doc.cpp_FUN_004712b0 at 00471318
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046993d
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0 at 0046c13d
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0 at 00471318
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cabb
+;   core_doc.cpp_CDoc_updateTurnBlending_FUN_0046e730 at 0046e760
 ;   ... and 18 more
 ;
 ; *****************************************************************************

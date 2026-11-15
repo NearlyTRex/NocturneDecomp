@@ -31,7 +31,7 @@ int __cdecl core_weapon_cpp_CWeapon_renderTransparent_FUN_0057b040(CWeapon *this
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
                     ((CBoundingBox3D *)(auStack_28 + 2),in_stack_ffffffc4);
   if (this_ptr->render_alpha == 0x10000) {
-    core_actor_cpp_FUN_004087d0(&this_ptr->base);
+    core_actor_cpp_CDemonActor_renderTransparent_FUN_004087d0(&this_ptr->base);
   }
   else {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);

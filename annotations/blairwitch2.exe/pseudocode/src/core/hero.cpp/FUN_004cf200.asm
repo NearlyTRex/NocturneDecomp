@@ -6,7 +6,7 @@
 ;
 ; XREF[4]:
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045ca54
-;   core_doc.cpp_FUN_00450c60 at 00453137
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00453137
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d03b0 at 004d03cb
 ;   core_hero.cpp_FUN_004d0780 at 004d0787
 ;

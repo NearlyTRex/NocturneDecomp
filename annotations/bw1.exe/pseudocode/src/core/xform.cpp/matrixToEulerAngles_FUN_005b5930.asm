@@ -40,9 +40,9 @@
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 at 0042f461
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432a95
 ;   core_course.cpp_CCourse_evaluate_FUN_00447f00 at 00447f64
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740 at 0047040a
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471e6c
-;   core_doc.cpp_FUN_0046f610 at 0046f6e2
-;   core_doc.cpp_FUN_0046f740 at 0047040a
+;   core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610 at 0046f6e2
 ;   ... and 21 more
 ;
 ; Referenced Globals:

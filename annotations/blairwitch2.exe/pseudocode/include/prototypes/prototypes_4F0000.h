@@ -247,14 +247,14 @@ void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004fcf50(CDemonMis
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280(CDemonMission *this_ptr);
-undefined4 core_mission_cpp_FUN_004fd450(void);
+int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004fd450(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_004fd460(CDemonMission *this_ptr,char *directory);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_004fd490(void);
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_004fd4cc(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004fd579(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_004fd58f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_004fd5f0(void);
-void core_mobster_cpp_FUN_004fd620(int param_1);
+CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointLocal_FUN_004fd620(CDemonActor *actor,CVector3f *out);
 CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointWorld_FUN_004fd6e0(CDemonActor *actor,CVector3f *out);
 CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_004fd800(CMobster *this_ptr);

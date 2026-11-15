@@ -97,7 +97,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *t
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00446b60(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00446d20(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
-void core_dcube_cpp_FUN_00446f50(void);
+void __cdecl shape_design_c_showHelpFile_FUN_00446f50(char *help_filename);
 void __cdecl core_dest_cpp_staticInit_FUN_00447030(void);
 CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_00447060(void);
 CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_00447080(CActorDestination *this_ptr);

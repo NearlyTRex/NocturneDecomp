@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 69,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "pseudocode_lines": 35,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 123
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     {
       "addr": "0040ee30",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_0040ee30"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30"
     },
     {
       "addr": "0043e620",
@@ -169,15 +169,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 26,
       "match": "pCVar3[-4].",
       "severity": "mild",
-      "text": "iVar4 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);",
+      "text": "((CFlame *)&pCVar3[-4].bone_origins[0x23].z,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 27,
+      "match": "pCVar4[-4].",
+      "severity": "mild",
+      "text": "pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar4[-4].base.vtable,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",

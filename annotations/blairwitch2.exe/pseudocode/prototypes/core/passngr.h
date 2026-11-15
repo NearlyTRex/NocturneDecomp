@@ -44,11 +44,3 @@ void __cdecl CPassenger::archive(CPassenger *this_ptr);
 // Original: core_passngr.cpp_FUN_00511b50
 // Address: 00511b50
 void FUN_00511b50(void);
-
-// Original: core_passngr.cpp_FUN_00511b70
-// Address: 00511b70
-bool FUN_00511b70(void);
-
-// Original: core_passngr.cpp_FUN_00511b90
-// Address: 00511b90
-void FUN_00511b90(void);

@@ -12,37 +12,36 @@ int __cdecl support_codec_cpp_CLZWCompress_process_FUN_00434810(CLZWCompress *th
   CLZWDictionary *this_ptr_00;
   uint uVar1;
   int iVar2;
-  int iVar3;
+  int extraout_EAX;
   
   this_ptr_00 = &this_ptr->dictionary;
   do {
     if (-1 < this_ptr->pending_code) {
-      iVar2 = support_codec_cpp_FUN_00434570
-                        (this_ptr_00,this_ptr->current_code,&(this_ptr->dictionary).bit_state,
-                         ostream);
-      if (iVar2 != 0) {
-        if (iVar2 == -1) {
+      support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00434570
+                (this_ptr_00,this_ptr->current_code,&(this_ptr->dictionary).bit_state,ostream);
+      if (extraout_EAX != 0) {
+        if (extraout_EAX == -1) {
           return 2;
         }
-        if (iVar2 != -2) {
+        if (extraout_EAX != -2) {
           return 0;
         }
       }
       this_ptr->pending_code = -1;
       if ((this_ptr->prev_code < 0) ||
-         (iVar3 = support_codec_cpp_CLZWDictionary_addNode_FUN_004343f0
-                            (this_ptr_00,this_ptr->prev_char_code,this_ptr->prev_code), iVar3 == 0))
+         (iVar2 = support_codec_cpp_CLZWDictionary_addNode_FUN_004343f0
+                            (this_ptr_00,this_ptr->prev_char_code,this_ptr->prev_code), iVar2 == 0))
       {
         this_ptr->prev_code = this_ptr->current_code;
       }
       else {
         this_ptr->prev_code = -1;
       }
-      iVar3 = this_ptr->pending_char_code;
+      iVar2 = this_ptr->pending_char_code;
       this_ptr->pending_char_code = -1;
-      this_ptr->prev_char_code = iVar3;
-      this_ptr->current_code = iVar3;
-      if (iVar2 != 0) {
+      this_ptr->prev_char_code = iVar2;
+      this_ptr->current_code = iVar2;
+      if (extraout_EAX != 0) {
         return 2;
       }
     }

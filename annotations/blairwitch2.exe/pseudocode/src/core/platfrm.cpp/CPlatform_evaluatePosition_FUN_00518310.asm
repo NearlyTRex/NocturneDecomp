@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00438c40
-;   core_xform.cpp_FUN_005940b0
+;   core_xform.cpp_quaternionToEulerAngles_FUN_005940b0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
 ;
 ; *****************************************************************************
@@ -162,8 +162,8 @@ section .text
     PUSH EAX                            ; 00518438
     LEA ESI,[EBP + 0x52]                ; 00518439
     LEA EDI,[EBP + 0x16]                ; 0051843c
-    CALL core_xform.cpp_FUN_005940b0    ; 0051843f
-        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005940b0()
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005940b0 ; 0051843f
+        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined1 core_xform.cpp_quaternionToEulerAngles_FUN_005940b0()
     LEA ESI,[EBP + 0x52]                ; 00518444
     LEA EAX,[EBP + 0x16]                ; 00518447
     ADD ESP,0x4                         ; 0051844a

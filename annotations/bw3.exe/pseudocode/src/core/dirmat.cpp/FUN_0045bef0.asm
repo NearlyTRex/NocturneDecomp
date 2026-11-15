@@ -6,9 +6,9 @@
 ;
 ; XREF[6]:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 at 0045b568
-;   core_xform.cpp_FUN_005861d0 at 005861f6
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 at 0058395d
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 at 0058381d
+;   core_xform.cpp_eulerToQuaternionIndirect_FUN_005861d0 at 005861f6
 ;   core_xform.cpp_eulerToQuaternion_FUN_005860b0 at 005860d6
 ;   engine_mini3d.cpp_matrixPushAndTransform_FUN_004ed1e0 at 004ed245
 ;

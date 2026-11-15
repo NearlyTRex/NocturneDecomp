@@ -7,7 +7,7 @@
 ; uint             Stack[0x4]:4   flag_mask
 ;
 ; XREF[4]:
-;   core_doc.cpp_FUN_00450c60 at 00453169
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00453169
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0 at 00491c30
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ad51
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00565642

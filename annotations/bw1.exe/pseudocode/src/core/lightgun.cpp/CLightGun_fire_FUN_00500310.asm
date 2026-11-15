@@ -33,8 +33,8 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0
-;   core_lightgun.cpp_FUN_004fff70
-;   core_lightgun.cpp_FUN_00500090
+;   core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
@@ -236,8 +236,8 @@ section .text
     ADD ESP,0x4                         ; 00500581
     MOV EDI,dword ptr [EBP + 0x14]      ; 00500584
     PUSH EDI                            ; 00500587
-    CALL core_lightgun.cpp_FUN_00500090 ; 00500588
-        ;   XREF to: 00500090 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_00500090()
+    CALL core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090 ; 00500588
+        ;   XREF to: 00500090 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 0050058d
     XOR EAX,EAX                         ; 00500590
     MOV dword ptr [ESP + 0x1f4],EAX     ; 00500592
@@ -266,8 +266,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1e4]     ; 005005fe
         ;   Label: LAB_005005fe
     PUSH ECX                            ; 00500605
-    CALL core_lightgun.cpp_FUN_004fff70 ; 00500606
-        ;   XREF to: 004fff70 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_004fff70()
+    CALL core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70 ; 00500606
+        ;   XREF to: 004fff70 (UNCONDITIONAL_CALL)  ; int core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 0050060b
     TEST EAX,EAX                        ; 0050060e
     JNZ 0x00500809                      ; 00500610
@@ -627,8 +627,8 @@ section .text
     ADD ESP,0x4                         ; 00500aab
     MOV ESI,dword ptr [ESP + 0x1e4]     ; 00500aae
     PUSH ESI                            ; 00500ab5
-    CALL core_lightgun.cpp_FUN_004fff70 ; 00500ab6
-        ;   XREF to: 004fff70 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_004fff70()
+    CALL core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70 ; 00500ab6
+        ;   XREF to: 004fff70 (UNCONDITIONAL_CALL)  ; int core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 00500abb
     TEST EAX,EAX                        ; 00500abe
     JZ 0x00500ca5                       ; 00500ac0

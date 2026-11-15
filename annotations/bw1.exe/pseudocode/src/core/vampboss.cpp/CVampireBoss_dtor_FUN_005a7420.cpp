@@ -12,7 +12,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampire
   CMorph *pCVar1;
   CCloth *pCVar2;
   CDeformableModelInstance *pCVar3;
-  int iVar4;
+  CFlame *pCVar4;
   CClothList *pCVar5;
   CVampireBoss *pCVar6;
   void *ptr;
@@ -29,8 +29,9 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampire
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_0043e620(pCVar2 + -1,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)&pCVar2[-1].collide_bones[0x12].euler1.z,0);
-  iVar4 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);
-  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar4 + -0x93c),0);
+  pCVar4 = core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30
+                     ((CFlame *)&pCVar3[-4].bone_origins[0x23].z,0);
+  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar4[-4].base.vtable,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar5[-0x19].filenames[0] + 0x10),0);
   pCVar6 = (CVampireBoss *)

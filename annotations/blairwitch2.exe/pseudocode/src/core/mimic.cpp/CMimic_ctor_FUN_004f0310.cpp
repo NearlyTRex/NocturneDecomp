@@ -16,14 +16,16 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004f0310(CMimic *this_ptr)
   uint uVar3;
   uint uVar4;
   CEnemy *pCVar5;
-  int iVar6;
+  CCloth *pCVar6;
   CMorph *pCVar7;
   char *pcVar8;
   char *pcVar9;
   
   pCVar5 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
-  iVar6 = core_necklace_cpp_FUN_005adda0(pCVar5[1].base.base.create_event + 0x50);
-  pCVar7 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)(iVar6 + 0x3ab60));
+  pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_005adda0
+                     ((CCloth *)(pCVar5[1].base.base.create_event + 0x50));
+  pCVar7 = core_morph_cpp_CMorph_ctor_FUN_005b6e60
+                     ((CMorph *)(pCVar6[1].model.model_filename + 0x30));
   *(CEnemy_full_vtable **)(pCVar7[-99].models[0].textures[0].texture_name + 0x24) = &g_CMimicVTable;
   pSVar2 = pCVar7[-0x5f].models[0].textures;
   pSVar2[3].texture_name[0x1c] = '\0';

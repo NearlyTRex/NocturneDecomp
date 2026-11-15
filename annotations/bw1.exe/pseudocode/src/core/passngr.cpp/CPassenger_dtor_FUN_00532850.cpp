@@ -12,7 +12,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *t
   CWerewolf *this_ptr_00;
   CMorph *pCVar1;
   CPathMap *pCVar2;
-  int iVar3;
+  CFlame *pCVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
   CPassenger *pCVar6;
@@ -31,8 +31,9 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *t
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0(&this_ptr->morph,0);
   pCVar2 = core_path_cpp_CPathMap_dtor_FUN_00533060
                      ((CPathMap *)(pCVar1[-0x1a].models[0].textures[7].texture_name + 0x1c),0);
-  iVar3 = core_armour_cpp_FUN_0040ee30(pCVar2[-1].height_cache_tags[10] + 0x36,0);
-  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar3 + -0x93c),0);
+  pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30
+                     ((CFlame *)(pCVar2[-1].height_cache_tags[10] + 0x36),0);
+  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar3[-4].base.vtable,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[0] + 0x10),0);
   pCVar6 = (CPassenger *)

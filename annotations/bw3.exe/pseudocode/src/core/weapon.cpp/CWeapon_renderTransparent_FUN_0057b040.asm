@@ -10,9 +10,9 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_renderTransparent_FUN_004087d0
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_actor.cpp_FUN_004087d0
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
@@ -98,8 +98,8 @@ section .text
     RET                                 ; 0057b0f8
     PUSH EBX                            ; 0057b0f9
         ;   Label: LAB_0057b0f9
-    CALL core_actor.cpp_FUN_004087d0    ; 0057b0fa
-        ;   XREF to: 004087d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004087d0(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_renderTransparent_FUN_004087d0 ; 0057b0fa
+        ;   XREF to: 004087d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_renderTransparent_FUN_004087d0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0057b0ff
     JMP 0x0057b0ef                      ; 0057b102
         ;   XREF to: 0057b0ef (UNCONDITIONAL_JUMP)  ; LAB_0057b0ef

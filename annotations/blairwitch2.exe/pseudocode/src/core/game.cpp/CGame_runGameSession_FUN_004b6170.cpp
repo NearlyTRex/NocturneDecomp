@@ -372,7 +372,7 @@ LAB_004b66e4:
     } while (iVar4 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_004820b0(&local_4dc,0);
   }
-  iVar4 = core_mission_cpp_FUN_004fd450(0x01D182F0);
+  iVar4 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004fd450(0x01D182F0);
   this_ptr_00 = 0x01D02F84;
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(this_ptr_00,0);

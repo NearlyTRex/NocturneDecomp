@@ -12,7 +12,6 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CIniFile.h"
 #include "types/classes/CKedward.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -136,7 +135,7 @@ void core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float param_1,float *pa
 undefined4 * core_xform_cpp_quaternionToEulerAngles_FUN_00585de0(float *param_1);
 undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(float *param_1);
 void core_xform_cpp_eulerToQuaternion_FUN_005860b0(float *param_1);
-void core_xform_cpp_FUN_005861d0(float *param_1);
+undefined1 core_xform_cpp_eulerToQuaternionIndirect_FUN_005861d0(void);
 void __cdecl core_yow_cpp_staticInit_FUN_005862e0(void);
 CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_00586310(void);
 CDemonActorType * __cdecl core_yow_cpp_CYow_getActorType_FUN_00586330(CYow *this_ptr);
@@ -211,9 +210,9 @@ CDemonActorType * __cdecl core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0
 CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_setup_FUN_0058d5e0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePriest *this_ptr,float param_2);
-void core_zombiepriest_cpp_FUN_0058e8d0(CEnemy *param_1,float param_2);
+void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombiePriest *this_ptr,float delta_time);
 CMatrix3x4f * __stack2_esi core_zombiepriest_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-undefined4 core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2);
+int __cdecl core_zombiepriest_cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0(CZombiePriest *this_ptr,float delta_time);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_archive_FUN_0058f510(CZombiePriest *this_ptr);
 undefined4 core_zombiepriest_cpp_FUN_0058f610(void);

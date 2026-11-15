@@ -13,10 +13,10 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 at 00423f46
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a17e4
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a952
+;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045acf1
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a868
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a26
-;   core_doc.cpp_FUN_00459555 at 00459626
-;   core_doc.cpp_FUN_00459ff0 at 0045a868
-;   core_doc.cpp_FUN_0045ab40 at 0045acf1
+;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510 at 0045b6af
 ;   ... and 29 more
 ;
 ; *****************************************************************************

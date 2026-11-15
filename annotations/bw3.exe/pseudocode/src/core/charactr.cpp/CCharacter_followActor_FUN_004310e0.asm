@@ -31,7 +31,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 0043190a
-;   core_shadow.cpp_FUN_005438d0 at 0054473c
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 0054473c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_tried_to_follow_NULL_a_005b83ec

@@ -37,9 +37,9 @@ void __cdecl CDynamite::renderAimBeam(CDynamite *this_ptr);
 // Address: 0047b1e0
 void __cdecl CDynamite::lightFuse(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0047b230
+// Original: core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047b230
 // Address: 0047b230
-undefined4 FUN_0047b230(int param_1);
+int __cdecl CDynamite::isFuseLit(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0047b270
 // Address: 0047b270

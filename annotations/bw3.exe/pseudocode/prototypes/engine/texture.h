@@ -5,6 +5,10 @@
 // Function prototypes for engine/texture.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_texture.cpp_CTextureCache_ctor_FUN_00569550
+// Address: 00569550
+CTextureCache * __cdecl CTextureCache::ctor(CTextureCache *this_ptr);
+
 // Original: engine_texture.cpp_CTextureCache_reset_FUN_005695b0
 // Address: 005695b0
 void __cdecl CTextureCache::reset(CTextureCache *this_ptr);
@@ -89,9 +93,9 @@ void FUN_0056aab0(SMRGLTextureBasic *param_1,undefined4 param_2,undefined4 param
 // Address: 0056ab70
 void FUN_0056ab70(void);
 
-// Original: engine_texture.cpp_FUN_0056ac20
+// Original: engine_texture.cpp_clearTextureCache_FUN_0056ac20
 // Address: 0056ac20
-void FUN_0056ac20(void);
+void __cdecl clearTextureCache(void);
 
 // Original: engine_texture.cpp_updateTextureWithPalette_FUN_0056ac50
 // Address: 0056ac50

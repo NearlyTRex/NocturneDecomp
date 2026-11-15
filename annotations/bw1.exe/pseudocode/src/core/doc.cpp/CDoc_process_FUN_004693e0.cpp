@@ -56,11 +56,11 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_t
     }
     if (((this_ptr->base).action_pending == 7) || (bVar1)) {
       delta_time = delta_time * (float)_DAT_005d9bec;
-      core_doc_cpp_FUN_00469550(this_ptr,delta_time);
-      core_doc_cpp_FUN_00469550(this_ptr,delta_time);
-      core_doc_cpp_FUN_00469550(this_ptr,delta_time);
+      core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
+      core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
+      core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
     }
-    core_doc_cpp_FUN_00469550(this_ptr,delta_time);
+    core_doc_cpp_CDoc_processFrame_FUN_00469550(this_ptr,delta_time);
     core_game_cpp_CGame_slamDT_FUN_004d7f50(g_CGamePtr,delta_time_00);
   }
   return;

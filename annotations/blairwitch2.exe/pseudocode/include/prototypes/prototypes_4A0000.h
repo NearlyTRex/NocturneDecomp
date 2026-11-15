@@ -179,7 +179,7 @@ CAlphaBitmap * __cdecl core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004a6710(CAlp
 SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_arrdtor4_FUN_004a6730(SNotesMap *this_ptr,uint flags);
 SNotesSection * __cdecl core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004a6750(SNotesSection *this_ptr,uint flags);
 void __cdecl core_flattn_cpp_staticInit_FUN_004a6770(void);
-void core_flattn_cpp_FUN_004a67a0(void);
+void __cdecl core_flattn_cpp_doNothing_FUN_004a67a0(void);
 void core_flattn_cpp_FUN_004a67b0(undefined4 *param_1);
 void core_flattn_cpp_FUN_004a6830(undefined4 *param_1,undefined4 *param_2);
 void core_flattn_cpp_FUN_004a68c0(undefined4 *param_1);

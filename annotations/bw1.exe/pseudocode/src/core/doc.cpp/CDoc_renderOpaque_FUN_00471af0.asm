@@ -33,10 +33,10 @@
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240
 ;   core_cloth.cpp_CClothList_reset_FUN_00441d70
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-;   core_doc.cpp_FUN_0046f610
-;   core_doc.cpp_FUN_004742a0
+;   core_doc.cpp_CDoc_getThrowDirection_FUN_004742a0
+;   core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004b6140
-;   core_inv.cpp_FUN_004f8c90
+;   core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00557630
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 00471bca
     LEA ESI,[EBP + -0x42]               ; 00471bcb
     LEA EDI,[EBP + -0x66]               ; 00471bce
-    CALL core_doc.cpp_FUN_004742a0      ; 00471bd1
-        ;   XREF to: 004742a0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_004742a0()
+    CALL core_doc.cpp_CDoc_getThrowDirection_FUN_004742a0 ; 00471bd1
+        ;   XREF to: 004742a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_doc.cpp_CDoc_getThrowDirection_FUN_004742a0(CDoc * this_ptr, CVector3f * out_direction)
     ADD ESP,0x4                         ; 00471bd6
     LEA EAX,[EBP + -0x66]               ; 00471bd9
     LEA ESI,[EBP + -0x42]               ; 00471bdc
@@ -267,8 +267,8 @@ section .text
     PUSH 0x0                            ; 00471d57
         ;   Label: LAB_00471d57
     PUSH EBX                            ; 00471d59
-    CALL core_doc.cpp_FUN_0046f610      ; 00471d5a
-        ;   XREF to: 0046f610 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046f610()
+    CALL core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610 ; 00471d5a
+        ;   XREF to: 0046f610 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610(CDoc * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00471d5f
     CMP dword ptr [EBX + 0x1ff54],0x0   ; 00471d62
         ;   Label: LAB_00471d62
@@ -283,8 +283,8 @@ section .text
     PUSH 0x5da291                       ; 00471d89 | = "CGasMask"
     LEA EAX,[EBX + 0x1fae8]             ; 00471d8e
     PUSH EAX                            ; 00471d94
-    CALL core_inv.cpp_FUN_004f8c90      ; 00471d95
-        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f8c90(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90 ; 00471d95
+        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 00471d9a
     PUSH EAX                            ; 00471d9d
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00471d9e
@@ -409,8 +409,8 @@ section .text
     PUSH 0x5da29a                       ; 00471eff | = "CGoggles"
     LEA EAX,[EBX + 0x1fae8]             ; 00471f04
     PUSH EAX                            ; 00471f0a
-    CALL core_inv.cpp_FUN_004f8c90      ; 00471f0b
-        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f8c90(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90 ; 00471f0b
+        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 00471f10
     PUSH EAX                            ; 00471f13
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00471f14

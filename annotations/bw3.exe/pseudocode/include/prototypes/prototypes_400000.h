@@ -188,8 +188,8 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_004074b0(SMRGLHeaderPr
 void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_004075b0(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 void __cdecl engine_3d_c_setProcessorType_FUN_00407700(int processor_type);
 void __cdecl engine_3d_c_setRenderingQuality_FUN_00407710(int quality);
-void engine_3d_c_dispatchMRGLBlockChain_FUN_00407720(int *param_1);
-void engine_3d_c_FUN_00407760(void);
+void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407720(SMRGLHeaderExtended *chain);
+void __cdecl engine_3d_c_renderPrim_FUN_00407760(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_004077f0(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407860(SMRGLHeaderExtended *mrgl);
 void engine_3d_c_drawLine2DFromIndices_FUN_00407ab0(int param_1,int param_2);
@@ -203,7 +203,7 @@ CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_004085
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408600(CDemonActor *this_ptr);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408770(CDemonActor *this_ptr,uint flags);
 void __cdecl core_actor_cpp_CDemonActor_process_FUN_004087a0(CDemonActor *this_ptr,float delta_time);
-int __cdecl core_actor_cpp_FUN_004087d0(CDemonActor *this_ptr);
+int __cdecl core_actor_cpp_CDemonActor_renderTransparent_FUN_004087d0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_004087e0(CDemonActor *this_ptr,int layer_flag);
 void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(CDemonActor *this_ptr);

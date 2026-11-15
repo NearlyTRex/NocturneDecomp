@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00 at 005ade14
 ;   core_moon.cpp_CMoon_dtor_FUN_00502390 at 005023a7
-;   core_necklace.cpp_FUN_005ade00 at 005ade14
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590

@@ -32,12 +32,12 @@
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00459b80
 ;   core_dfont.cpp_initFonts_FUN_00459f50
-;   core_flattn.cpp_FUN_004ad4c0
+;   core_flattn.cpp_doNothing_FUN_004ad4c0
 ;   core_inivar.cpp_readIniData_FUN_004d8e70
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_main.c_FUN_004e4d00
 ;   core_menu.cpp_showCalibrationTest_FUN_004e84d0
-;   core_mission.cpp_FUN_004f5aa0
+;   core_mission.cpp_CDemonMission_reset_FUN_004f5aa0
 ;   core_mmx.c_detectCPUFeatures_FUN_004f7c30
 ;   core_netgame.cpp_CNetGame_init_FUN_00503e20
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60
@@ -79,8 +79,8 @@ section .text
     CALL crt_stdio.c_freopen_FUN_005a4484 ; 004e4536
         ;   XREF to: 005a4484 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_005a4484(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 004e453b
-    CALL core_flattn.cpp_FUN_004ad4c0   ; 004e453e
-        ;   XREF to: 004ad4c0 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004ad4c0()
+    CALL core_flattn.cpp_doNothing_FUN_004ad4c0 ; 004e453e
+        ;   XREF to: 004ad4c0 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_004ad4c0()
     CALL core_inivar.cpp_readIniData_FUN_004d8e70 ; 004e4543
         ;   XREF to: 004d8e70 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004d8e70()
     MOV EDX,dword ptr [0x0060395c]      ; 004e4548 | g_CDemonPodPtr
@@ -720,8 +720,8 @@ section .text
     PUSH EDI                            ; 004e4b12 | DAT_01d81080
     XOR EBX,EBX                         ; 004e4b13
     XOR ESI,ESI                         ; 004e4b15
-    CALL core_mission.cpp_FUN_004f5aa0  ; 004e4b17
-        ;   XREF to: 004f5aa0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f5aa0()
+    CALL core_mission.cpp_CDemonMission_reset_FUN_004f5aa0 ; 004e4b17
+        ;   XREF to: 004f5aa0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_reset_FUN_004f5aa0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004e4b1c
     MOV dword ptr [ESP + 0x714],EBX     ; 004e4b1f
         ;   Label: LAB_004e4b1f

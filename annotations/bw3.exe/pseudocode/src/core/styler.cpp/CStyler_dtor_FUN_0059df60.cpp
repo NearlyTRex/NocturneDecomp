@@ -11,7 +11,7 @@ CStyler * __cdecl core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,ui
 {
   CMorph *pCVar1;
   CCloth *pCVar2;
-  int iVar3;
+  CFlame *pCVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
   CStyler *pCVar6;
@@ -25,8 +25,11 @@ CStyler * __cdecl core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,ui
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004fa8c0(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_0043c280
                      ((CCloth *)(pCVar1[-0x4e].models[1].textures[0xd].texture_name + 4),0);
-  iVar3 = core_armour_cpp_FUN_00410370(pCVar2[-1].vertices[0x2c2].connected_indices + 0xd,0);
-  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043f900((CClothList *)(iVar3 + -0x954),0);
+  pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_00410370
+                     ((CFlame *)(pCVar2[-1].vertices[0x2c2].connected_indices + 0xd),0);
+  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043f900
+                     ((CClothList *)((int)&pCVar3[-4].base.previous_transform_state.orientation + 4)
+                      ,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar4[-0x1b].filenames[7] + 8),0);
   pCVar6 = (CStyler *)

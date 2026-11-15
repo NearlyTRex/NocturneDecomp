@@ -145,7 +145,7 @@ LAB_0057e7f7:
       afStack_4c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] = *pfVar9;
       (afStack_4c + (uint)bVar11 * -2 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] =
            pfVar9[(uint)bVar11 * -2 + 1];
-      core_xform_cpp_FUN_005940b0();
+      core_xform_cpp_quaternionToEulerAngles_FUN_005940b0();
       pCVar5 = pCStack_1c;
       CStack_34.x = afStack_4c[3];
       *(float *)((int)&CStack_34 + (uint)bVar11 * -8 + 4) = afStack_4c[(uint)bVar11 * -2 + 4];

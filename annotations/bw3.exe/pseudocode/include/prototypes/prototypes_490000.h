@@ -12,6 +12,7 @@
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CExplosion.h"
 #include "types/classes/CFilmProjector.h"
@@ -81,7 +82,7 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_00495c90(CRuleList *this_ptr,in
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00495d60(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(CRuleList *this_ptr);
 CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00495e40(CQuaternion4f *dest,CQuaternion4f *src);
-undefined4 core_event_cpp_FUN_00495e60(int param_1);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00495e60(CDemonSet *set_ptr);
 void __fastcall crt_watcom_c__memset_FUN_00495ec0(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_00495f30(void);
 void crt_unknown_c_FUN_00495f38(void);

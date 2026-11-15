@@ -228,7 +228,7 @@ LAB_0046ecd2:
       puVar5[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
                 (pCVar10,pCVar11,fVar1,iVar13,pcVar14);
-      core_doc_cpp_FUN_0046f200(this_ptr,1);
+      core_doc_cpp_CDoc_applyArmAimRotation_FUN_0046f200(this_ptr,1);
       iVar13 = _DAT_01b68828;
       puVar6 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01b6884c].w
       ;

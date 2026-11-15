@@ -65,9 +65,9 @@ void __cdecl CIniFile::setInteger(CIniFile *this_ptr,char *key,int value);
 // Address: 004d8cd0
 void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 
-// Original: engine_ini.cpp_FUN_004d8d40
+// Original: engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40
 // Address: 004d8d40
-void FUN_004d8d40(int param_1,undefined4 param_2);
+void __cdecl CIniFile::setFloatValue(CIniFile *this_ptr,char *key,float value);
 
 // Original: engine_ini.cpp_FUN_004d8d90
 // Address: 004d8d90

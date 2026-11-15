@@ -53,7 +53,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00559520(CIniFile *ini_file)
   iVar2 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0();
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(ini_file,"AccelEnabled",iVar2);
   fStack_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_005591a0();
-  engine_ini_cpp_FUN_004d8d40(ini_file,"MaxSwLatency",fStack_14);
+  engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8d40(ini_file,"MaxSwLatency",fStack_14);
   iVar2 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
   channel_index = 0;
   engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(ini_file,&DAT_005d3e6b,iVar2);
@@ -65,7 +65,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00559520(CIniFile *ini_file)
       _sprintf(acStack_84,"SfxChannel%dVol");
       fStack_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(channel_index);
       channel_index = channel_index + 1;
-      engine_ini_cpp_FUN_004d8d40(ini_file,acStack_84,fStack_14);
+      engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8d40(ini_file,acStack_84,fStack_14);
     } while (channel_index < DAT_00604224);
   }
   return;

@@ -32,7 +32,7 @@
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0
 ;   core_dfont.cpp_initFonts_FUN_00447ea0
-;   core_flattn.cpp_FUN_004a67a0
+;   core_flattn.cpp_doNothing_FUN_004a67a0
 ;   core_inivar.cpp_readIniData_FUN_004d8d60
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_marquee.cpp_FUN_004e8620
@@ -79,8 +79,8 @@ section .text
     CALL crt_stdio.c_freopen_FUN_005b91a4 ; 004e4716
         ;   XREF to: 005b91a4 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_005b91a4(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 004e471b
-    CALL core_flattn.cpp_FUN_004a67a0   ; 004e471e
-        ;   XREF to: 004a67a0 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004a67a0()
+    CALL core_flattn.cpp_doNothing_FUN_004a67a0 ; 004e471e
+        ;   XREF to: 004a67a0 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_004a67a0()
     CALL core_inivar.cpp_readIniData_FUN_004d8d60 ; 004e4723
         ;   XREF to: 004d8d60 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004d8d60()
     MOV EDX,dword ptr [0x0061b40c]      ; 004e4728 | g_CDemonPodPtr

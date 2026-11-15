@@ -1,0 +1,60 @@
+// Name: core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630
+// Address: 0046e630
+// Address Range: [[0046e630, 0046e722]]
+// Convention: __cdecl
+// Signature: void __cdecl core_doc_cpp_CDoc_extractTurnPose_FUN_0046e630(CDoc *this_ptr,SPose *out_pose)
+
+#include "nocturne.h"
+
+/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_doc_cpp_CDoc_extractTurnPose_FUN_0046e630(CDoc *this_ptr,SPose *out_pose)
+
+{
+  CDeformableModelInstance *this_ptr_00;
+  uint *puVar1;
+  uint *puVar2;
+  byte bVar3;
+  float blend_weight;
+  int bone_index;
+  code *blend_callback;
+  SPose SStack_1ae4;
+  CQuaternion4f local_48;
+  CQuaternion4f local_38;
+  uint local_28;
+  float afStack_24 [5];
+  float local_10;
+  
+  bVar3 = 0;
+  this_ptr_00 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0(this_ptr_00,&SStack_1ae4)
+  ;
+  core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00567620
+            (this_ptr_00,this_ptr->turn_motion_index,
+             this_ptr->turn_blend_weight * (float)_DAT_005d9ff4,-1);
+  core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00
+            ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + _DAT_01b68814);
+  afStack_24[2] = (float)local_28;
+  afStack_24[(uint)bVar3 * -2 + 3] = afStack_24[(uint)bVar3 * -2];
+  afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+       afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
+  bone_index = -1;
+  local_10 = -afStack_24[3];
+  blend_weight = 1.0;
+  core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(local_10,&local_38);
+  local_48.w = local_38.w;
+  puVar2 = (uint *)((int)&local_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  puVar1 = (uint *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  *(uint *)((int)&local_48 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_38 + (uint)bVar3 * -8 + 4);
+  *puVar2 = *puVar1;
+  puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
+  core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
+            (this_ptr_00,&local_48,blend_weight,bone_index,blend_callback);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0(this_ptr_00,out_pose);
+  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90(this_ptr_00,&SStack_1ae4)
+  ;
+  return;
+}

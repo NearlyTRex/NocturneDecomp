@@ -123,7 +123,7 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_005734b0(CTextureList *this_
 void __cdecl core_texlist_cpp_CTextureList_save_FUN_00573770(CTextureList *this_ptr,char *filename);
 void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005738d0(CTextureList *this_ptr);
 void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00573910(CTextureList *this_ptr,uint texture_index);
-undefined4 * core_texlist_cpp_FUN_00573940(undefined4 *param_1);
+CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_00573940(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005739a0(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00573a60(CTextureCache *this_ptr);
@@ -145,7 +145,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00574e0
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic *texture_info);
 void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 void engine_texture_cpp_FUN_00574f60(void);
-void engine_texture_cpp_FUN_00575010(void);
+void __cdecl engine_texture_cpp_clearTextureCache_FUN_00575010(void);
 void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00575040(SMRGLTextureBasic *texture);
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00575070(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005750a0(int enabled);

@@ -17,7 +17,7 @@
 ;   core_firestff.cpp_CFirestaff_process_FUN_004a4dc0 at 004a56a5
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004de8b0 at 004de93e
 ;   core_lightsta.cpp_CLightStaff_process_FUN_004e2050 at 004e22e4
-;   core_shadow.cpp_FUN_005438d0 at 00544489
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 00544489
 ;   ... and 1 more
 ;
 ; Referenced Globals:

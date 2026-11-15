@@ -31,7 +31,7 @@
 ;
 ; XREF[9]:
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 0041536d
-;   core_doc.cpp_FUN_00469550 at 00469744
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 00469744
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 004768d7
 ;   core_npc.cpp_CNPC_process_FUN_005317c0 at 005317ed
 ;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055de99

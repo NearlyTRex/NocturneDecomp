@@ -33,7 +33,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_0046caa0 at 0046cb83
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cb83
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_doc_cpp_005da024
@@ -56,7 +56,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
-;   core_doc.cpp_FUN_0046f200
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -513,8 +513,8 @@ section .text
     ADD ESP,0x14                        ; 0046f03e
     PUSH 0x1                            ; 0046f041
     PUSH EBX                            ; 0046f043
-    CALL core_doc.cpp_FUN_0046f200      ; 0046f044
-        ;   XREF to: 0046f200 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046f200()
+    CALL core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 ; 0046f044
+        ;   XREF to: 0046f200 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200(CDoc * this_ptr, int arm_side)
     MOV ESI,dword ptr [0x01b6884c]      ; 0046f049 | DAT_01b6884c
     MOV EAX,[0x01b6882c]                ; 0046f04f | DAT_01b6882c
     SHL ESI,0x4                         ; 0046f054

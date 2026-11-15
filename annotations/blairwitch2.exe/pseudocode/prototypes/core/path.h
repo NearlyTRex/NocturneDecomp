@@ -5,6 +5,14 @@
 // Function prototypes for core/path.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_path.cpp_isPathfindingQueueEmpty_FUN_00511b70
+// Address: 00511b70
+int __cdecl isPathfindingQueueEmpty(void);
+
+// Original: core_path.cpp_queuePush_FUN_00511b90
+// Address: 00511b90
+void __cdecl queuePush(int grid_x,int cost,int grid_z,char direction);
+
 // Original: core_path.cpp_queuePop_FUN_00511c10
 // Address: 00511c10
 void __cdecl queuePop(int *out_x,int *out_cost,int *out_z);

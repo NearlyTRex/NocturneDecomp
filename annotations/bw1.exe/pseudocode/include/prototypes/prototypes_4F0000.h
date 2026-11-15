@@ -134,8 +134,8 @@ void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004f7660(CDemonActor *actor_p
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70(CInventory *this_ptr,CWeapon *weapon);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004f8c40(CInventory *this_ptr,char *item_name);
-int __cdecl core_inv_cpp_FUN_004f8c90(CInventory *this_ptr,char *class_name);
-bool core_inv_cpp_FUN_004f8ce0(CInventory *param_1,char *param_2);
+CDemonActor * __cdecl core_inv_cpp_CInventory_findItemOfClass_FUN_004f8c90(CInventory *this_ptr,char *class_name);
+int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004f8ce0(CInventory *this_ptr,char *class_name);
 void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004f8d00(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
 void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction);
 void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004f8ec0(CInventory *this_ptr,int direction);
@@ -249,6 +249,6 @@ void __cdecl core_lightgun_cpp_staticInit_FUN_004ffe50(void);
 CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_004ffea0(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *this_ptr);
-undefined4 core_lightgun_cpp_FUN_004fff70(CDemonActor *param_1);
+int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004fff70(CLightGun *this_ptr);
 undefined4 core_lightgun_cpp_FUN_004ffff0(CCharacter *param_1);
 

@@ -85,13 +85,13 @@ void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
 // Address: 00551170
 void __cdecl CDemonSet::renderMonsterVisionView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00551480
+// Original: core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00551480
 // Address: 00551480
-void FUN_00551480(CDemonSet *param_1);
+void __cdecl CDemonSet::renderOpaqueActors(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_005516c0
+// Original: core_set.cpp_CDemonSet_renderTransparentActors_FUN_005516c0
 // Address: 005516c0
-void FUN_005516c0(CDemonSet *param_1);
+void __cdecl CDemonSet::renderTransparentActors(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
 // Address: 005518e0
@@ -321,6 +321,6 @@ SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 // Address: 00556140
 SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
-// Original: core_set.cpp_FUN_005561a0
+// Original: core_set.cpp_C3DSCamera_arrdtor250_FUN_005561a0
 // Address: 005561a0
-void FUN_005561a0(void *param_1);
+C3DSCamera * __cdecl C3DSCamera::arrdtor250(C3DSCamera *objs,uint flags);

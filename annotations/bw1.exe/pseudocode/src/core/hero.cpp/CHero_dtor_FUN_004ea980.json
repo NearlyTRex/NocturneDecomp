@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 67,
+    "complexity_score": 79,
     "cross_reference_count": 10,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "raw_address_pointer_store"
     ],
-    "total_lines": 84
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -98,7 +98,7 @@
     {
       "addr": "0040ee30",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_0040ee30"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30"
     },
     {
       "addr": "00441ca0",
@@ -327,7 +327,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
+      "line": 17,
       "match": "*(CHero **)(iVar1 + 0x1d06aa4",
       "severity": "moderate",
       "text": "if (this_ptr == *(CHero **)(iVar1 + 0x1d06aa4)) {",
@@ -335,18 +335,26 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 25,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "iVar1 = core_armour_cpp_FUN_0040ee30(pCVar3[-1].height_cache_tags[10] + 0x28,0);",
+      "text": "((CFlame *)(pCVar3[-1].height_cache_tags[10] + 0x28),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
-      "match": "pCVar5[-1].",
+      "line": 26,
+      "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",
+      "text": "pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar4[-4].base.vtable,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pCVar6[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
     }
   ],

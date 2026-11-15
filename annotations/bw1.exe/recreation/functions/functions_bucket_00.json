@@ -3254,15 +3254,33 @@
   },
   {
     "addr":"0041b080",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":27,
-    "method":"FUN_0041b080",
-    "name":"core_bodypart.cpp_FUN_0041b080",
+    "method":"boundingBoxExtent",
+    "name":"core_bodypart.cpp_boundingBoxExtent_FUN_0041b080",
+    "params":[
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CBoundingBox3D",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -4921,8 +4939,8 @@
     ],
     "conv":"unknown",
     "instructions":141,
-    "method":"FUN_0043a200",
-    "name":"cockpit_ckptutil.c_FUN_0043a200",
+    "method":"rotateBitmap",
+    "name":"cockpit_ckptutil.c_rotateBitmap_FUN_0043a200",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -6842,14 +6860,24 @@
       "0040c600",
       "00468900"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":78,
-    "method":"FUN_00468b80",
-    "name":"core_doc.cpp_FUN_00468b80",
+    "method":"getCarriedObjectVerticalOffset",
+    "name":"core_doc.cpp_getCarriedObjectVerticalOffset_FUN_00468b80",
+    "params":[
+      {
+        "name":"object",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -6957,14 +6985,25 @@
       "005b7b30",
       "005b7b70"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":295,
-    "method":"FUN_0046f200",
-    "name":"core_doc.cpp_FUN_0046f200",
-    "receiver":false,
+    "method":"applyArmAimRotation",
+    "name":"core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200",
+    "params":[
+      {
+        "name":"arm_side",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -6995,14 +7034,25 @@
       "005247c0",
       "00524a00"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":711,
-    "method":"FUN_00474400",
-    "name":"core_doc.cpp_FUN_00474400",
-    "receiver":false,
+    "method":"updateWeaponLayerActions",
+    "name":"core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -17590,14 +17640,15 @@
       "00555590",
       "00555770"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":177,
-    "method":"FUN_00551480",
-    "name":"core_set.cpp_FUN_00551480",
-    "receiver":false,
+    "method":"renderOpaqueActors",
+    "name":"core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00551480",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/set.cpp",
@@ -23743,17 +23794,35 @@
   },
   {
     "addr":"005bee80",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":94,
-    "method":"FUN_005bee80",
-    "name":"core_zombie.cpp_FUN_005bee80",
+    "method":"addRasterizerEdge",
+    "name":"engine_zraster.c_addRasterizerEdge_FUN_005bee80",
+    "params":[
+      {
+        "name":"v0",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
-    "tu":"core/zombie.cpp",
+    "tu":"engine/zraster.c",
     "variadic":false
   },
   {

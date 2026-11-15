@@ -322,6 +322,13 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         elif want is None:
             row["action"] = "SKIP_NAMED"
             row["detail"] = "source name carries no class/method core"
+        elif ledger_reject:
+            # Ahead of the refresh below: a reviewer who rejects a pair whose
+            # name is already in place is rejecting the prototype it would
+            # bring, often the source's stream class where the target has its
+            # own.
+            row["action"] = "SKIP_LEDGER"
+            row["detail"] = "rejected on review: %s" % ledger[b].get("note", "")
         elif cur == want:
             # The name matching says nothing about whether the prototype was
             # ever applied -- a type the target lacked at the time would have
@@ -347,9 +354,6 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["action"] = "SKIP_TU"
             row["detail"] = "unit disagrees: nocturne %s vs nocedit %s" % (
                 cur_tu, edit_tu)
-        elif ledger_reject:
-            row["action"] = "SKIP_LEDGER"
-            row["detail"] = "rejected on review: %s" % ledger[b].get("note", "")
         elif (not ledger_ok) and (p["confidence"] < min_confidence
                                   or p.get("ambiguous")):
             # Too weak to name, but the prototype stands on its own evidence,

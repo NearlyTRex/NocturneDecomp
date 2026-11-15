@@ -370,8 +370,8 @@ section .text
         ;   XREF to: 005332f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0052f5a8
     PUSH EBX                            ; 0052f5ab
-    CALL core_set.cpp_FUN_005301d0      ; 0052f5ac
-        ;   XREF to: 005301d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005301d0()
+    CALL core_set.cpp_CDemonSet_renderOpaqueActors_FUN_005301d0 ; 0052f5ac
+        ;   XREF to: 005301d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderOpaqueActors_FUN_005301d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0052f5b1
     PUSH 0x0                            ; 0052f5b4
     PUSH 0x0                            ; 0052f5b6
@@ -423,8 +423,8 @@ section .text
     ADD ESP,0x8                         ; 0052f622
     PUSH EBX                            ; 0052f625
         ;   Label: LAB_0052f625
-    CALL core_set.cpp_FUN_00530410      ; 0052f626
-        ;   XREF to: 00530410 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00530410()
+    CALL core_set.cpp_CDemonSet_renderTransparentActors_FUN_00530410 ; 0052f626
+        ;   XREF to: 00530410 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderTransparentActors_FUN_00530410(CDemonSet * this_ptr)
     MOV ESI,dword ptr [EBX + 0x15acb8]  ; 0052f62b
     ADD ESP,0x4                         ; 0052f631
     TEST ESI,ESI                        ; 0052f634

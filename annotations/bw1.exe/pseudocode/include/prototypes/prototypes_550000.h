@@ -38,8 +38,8 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00550260(CDemonSet *t
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonSet *this_ptr);
-void core_set_cpp_FUN_00551480(CDemonSet *param_1);
-void core_set_cpp_FUN_005516c0(CDemonSet *param_1);
+void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00551480(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_005516c0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_005518e0(CDemonSet *this_ptr,CDemonLight *light);
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(CDemonSet *this_ptr,CDemonGlobe *globe);
 void core_set_cpp_FUN_00551990(undefined4 param_1,int param_2);
@@ -97,7 +97,7 @@ void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00556040(CDemonSet *this_pt
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_00556080(CDemonSet *this_ptr);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00556130(SRoom *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00556140(SVDBox *this_ptr);
-void core_set_cpp_FUN_005561a0(void *param_1);
+C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor250_FUN_005561a0(C3DSCamera *objs,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_005561c0(void);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet *this_ptr,CVector3f *position,float radius);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110(CDemonSet *this_ptr,CVector3f *position);

@@ -8,7 +8,6 @@
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -235,8 +234,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_0057943
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005795e0(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void);
-void wincore_wddvmem_cpp_FUN_005797d0(void);
-void wincore_wddvmem_cpp_FUN_005798a0(void);
+void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void);
+void wincore_wddvmem_cpp_freeRenderBuffers_FUN_005798a0(void);
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005798f0(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00579a60(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00579b20(void);
@@ -303,7 +302,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_0057f5b0(CWerewolf *this_pt
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_0057f6f0(CWerewolf *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_0057fa20(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_0057fa60(CWerewolf *this_ptr,CVector3f *out_points_array);
-void core_werewolf_cpp_FUN_0057fad0(CCharacter *param_1);
+void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_0057fad0(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_0057fe10(CWinFont *this_ptr,uint flags);

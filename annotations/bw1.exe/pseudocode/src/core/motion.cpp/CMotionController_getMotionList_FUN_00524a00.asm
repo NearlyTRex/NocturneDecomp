@@ -15,7 +15,7 @@
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432c70 at 00432c8d
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050 at 00432090
 ;   core_doc.cpp_CDoc_setup_FUN_00469060 at 00469247
-;   core_doc.cpp_FUN_00474400 at 00474587
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 00474587
 ;   core_event.cpp_FUN_004a1d00 at 004a5b4d
 ;   ... and 20 more
 ;

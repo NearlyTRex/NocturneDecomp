@@ -12,6 +12,7 @@
 #include "types/classes/CCarved.h"
 #include "types/classes/CChain.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
@@ -82,7 +83,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
 void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423fb0(CBugs *this_ptr,CVector3f *new_position);
 void __cdecl core_bugs_cpp_normalizeVector_FUN_004241c0(CVector3f *dest);
 CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00424230(CVector3f *dest,CVector3i *src);
-int core_bugs_cpp_FUN_004242d0(int param_1);
+char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_004242d0(CDeformableModelInstance *model_ptr);
 float __cdecl core_bugs_cpp_maxFloat_FUN_00424300(float a,float b);
 CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00424330(CBugs *this_ptr,uint flags);
 SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_004243c0(SBug *this_ptr);

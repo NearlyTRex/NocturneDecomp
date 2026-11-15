@@ -37,7 +37,7 @@
 ;   core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40 at 00597f99
 ;   core_npc.cpp_CNPC_process_FUN_00509120 at 005091a9
 ;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00518ec4
-;   core_shadow.cpp_FUN_005438d0 at 00543919
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 00543919
 ;   core_shotgun.cpp_CShadowsc_process_FUN_00546400 at 0054643e
 ;   core_spirbear.cpp_CSpiritBear_process_FUN_0059ae00 at 0059ae16
 ;   ... and 4 more

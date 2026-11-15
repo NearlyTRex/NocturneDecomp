@@ -14,8 +14,8 @@
 ; XREF[9]:
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 at 0040e696
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9af6
-;   core_game.cpp_FUN_004b8e10 at 004b8ee1
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9053
+;   core_game.cpp_giveHeroWeapon_FUN_004b8e10 at 004b8ee1
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 at 004d0011
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d19c3
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760 at 004db81a

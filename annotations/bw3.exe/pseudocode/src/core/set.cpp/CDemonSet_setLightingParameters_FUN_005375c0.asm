@@ -21,7 +21,7 @@
 ;   core_gore.cpp_CGore_renderParticles_FUN_004ce5b0 at 004ce5e8
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 at 00534753
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536831
-;   core_set.cpp_FUN_00536990 at 00536bf4
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990 at 00536bf4
 ;   ... and 3 more
 ;
 ; Referenced Globals:

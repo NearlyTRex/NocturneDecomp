@@ -53,9 +53,9 @@ void __cdecl CEmitter::archive(CEmitter *this_ptr);
 // Address: 00487c70
 ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_emitter.cpp_FUN_00487c80
+// Original: core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00487c80
 // Address: 00487c80
-void FUN_00487c80(CDemonActor *param_1);
+CVector3f * __stack_esi CEmitter::getRandomBoundingBoxPoint(CEmitter *this_ptr,CVector3f *out_point);
 
 // Original: core_emitter.cpp_CEmitter_dtor_FUN_00487d30
 // Address: 00487d30

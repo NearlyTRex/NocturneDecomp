@@ -11,16 +11,16 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_00581530(CVampire
 {
   CEnemy *pCVar1;
   CDeformableModelInstance *pCVar2;
-  int iVar3;
+  CCloth *pCVar3;
   CMorph *pCVar4;
   
   pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00544cd0
                      ((CDeformableModelInstance *)(pCVar1 + 1));
-  iVar3 = core_necklace_cpp_FUN_005adda0(pCVar2 + 1);
-  iVar3 = core_necklace_cpp_FUN_005adda0(iVar3 + 0x3ab30);
-  iVar3 = core_necklace_cpp_FUN_005adda0(iVar3 + 0x3ab30);
-  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)(iVar3 + 0x3ab34));
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_005adda0((CCloth *)(pCVar2 + 1));
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_005adda0(pCVar3 + 1);
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_005adda0(pCVar3 + 1);
+  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)(pCVar3[1].model.model_filename + 4));
   *(CEnemy_full_vtable **)(pCVar4[-0x101].models[1].textures[0x12].texture_name + 0x14) =
        &g_CVampireBossVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0

@@ -19,7 +19,7 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00450c60 at 00451aa2
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451aa2
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ade21
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563d9a
 ;

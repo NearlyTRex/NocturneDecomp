@@ -25,9 +25,9 @@ CShadow * __cdecl CShadow::ctor(CShadow *this_ptr);
 // Address: 00543680
 void FUN_00543680(CEnemy *param_1);
 
-// Original: core_shadow.cpp_FUN_005438d0
+// Original: core_shadow.cpp_CShadow_process_FUN_005438d0
 // Address: 005438d0
-void FUN_005438d0(CEnemy *param_1,float param_2);
+void __cdecl CShadow::process(CShadow *this_ptr,float delta_time);
 
 // Original: core_shadow.cpp_CShadow_setWalkTarget_FUN_00544fd0
 // Address: 00544fd0
@@ -65,21 +65,21 @@ void FUN_00545700(CCharacter *param_1);
 // Address: 00545710
 int FUN_00545710(CCharacter *param_1);
 
-// Original: core_shadow.cpp_FUN_00545910
+// Original: core_shadow.cpp_CShadow_archive_FUN_00545910
 // Address: 00545910
-void FUN_00545910(CEnemy *param_1);
+void __cdecl CShadow::archive(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_005459b0
+// Original: core_shadow.cpp_CShadow_processDamage_FUN_005459b0
 // Address: 005459b0
-void FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl CShadow::processDamage(CShadow *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_shadow.cpp_FUN_00545bd0
+// Original: core_shadow.cpp_CShadow_getDeathState_FUN_00545bd0
 // Address: 00545bd0
-undefined4 FUN_00545bd0(int param_1);
+EDeathState __cdecl CShadow::getDeathState(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545c10
+// Original: core_shadow.cpp_CShadow_getTargetPoints_FUN_00545c10
 // Address: 00545c10
-undefined4 FUN_00545c10(int param_1,float *param_2);
+int __cdecl CShadow::getTargetPoints(CShadow *this_ptr,CVector3f *out_points_array);
 
 // Original: core_shadow.cpp_FUN_00545c80
 // Address: 00545c80

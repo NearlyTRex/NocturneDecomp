@@ -2450,15 +2450,33 @@
   },
   {
     "addr":"00417c00",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":27,
-    "method":"FUN_00417c00",
-    "name":"core_bodypart.cpp_FUN_00417c00",
+    "method":"boundingBoxExtent",
+    "name":"core_bodypart.cpp_boundingBoxExtent_FUN_00417c00",
+    "params":[
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CBoundingBox3D",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -8655,15 +8673,26 @@
       "00408d70",
       "0040cf60"
     ],
-    "conv":"unknown",
+    "cls":"CEmitter",
+    "conv":"__stack_esi",
     "instructions":53,
-    "method":"FUN_00487c80",
-    "name":"core_emitter.cpp_FUN_00487c80",
-    "receiver":false,
+    "method":"getRandomBoundingBoxPoint",
+    "name":"core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00487c80",
+    "params":[
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/emitter.cpp",
     "variadic":false
@@ -25685,17 +25714,28 @@
       "0044dcb0",
       "005ade80"
     ],
-    "conv":"unknown",
+    "cls":"CCloth",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_005ade00",
-    "name":"core_necklace.cpp_FUN_005ade00",
-    "receiver":false,
+    "method":"dtor",
+    "name":"core_cloth.cpp_CCloth_dtor_FUN_005ade00",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CCloth",
+      "ptr":1
     },
-    "tu":"core/necklace.cpp",
+    "tu":"core/cloth.cpp",
     "variadic":false
   },
   {

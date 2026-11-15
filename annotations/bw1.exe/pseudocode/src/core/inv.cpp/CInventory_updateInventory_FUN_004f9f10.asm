@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   core_doc.cpp_FUN_00469550 at 0046a4ac
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a4ac
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f1121
 ;   core_scat.cpp_CScat_process_FUN_00540df0 at 00541099
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 0058686e

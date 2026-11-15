@@ -250,8 +250,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005abb8
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005abd30(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005abd80(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005abde0(void);
-void wincore_wddvmem_cpp_FUN_005abf20(void);
-void wincore_wddvmem_cpp_FUN_005abff0(void);
+void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005abf20(void);
+void wincore_wddvmem_cpp_freeRenderBuffers_FUN_005abff0(void);
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ac040(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ac1b0(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ac270(void);

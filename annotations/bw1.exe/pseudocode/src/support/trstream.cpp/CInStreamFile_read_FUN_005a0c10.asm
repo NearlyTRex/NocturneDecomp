@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b364
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 00437564
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0 at 0043b364
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010ef
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402aa6
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015ca

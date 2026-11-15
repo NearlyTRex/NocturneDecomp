@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[6]:
-;   core_doc.cpp_FUN_00459ff0 at 0045a8c2
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a8c2
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b225f
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a71b
 ;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c15

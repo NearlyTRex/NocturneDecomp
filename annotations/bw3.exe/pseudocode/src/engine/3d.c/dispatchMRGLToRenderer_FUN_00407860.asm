@@ -103,7 +103,7 @@ section .text
     PUSH EDI                            ; 0040790d
         ;   Label: LAB_0040790d
     CALL engine_3d.c_dispatchMRGLBlockChain_FUN_00407720 ; 0040790e
-        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_dispatchMRGLBlockChain_FUN_00407720()
+        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; void engine_3d.c_dispatchMRGLBlockChain_FUN_00407720(SMRGLHeaderExtended * chain)
     ADD ESP,0x4                         ; 00407913
     ADD ESP,0x100                       ; 00407916
     POP EBP                             ; 0040791c

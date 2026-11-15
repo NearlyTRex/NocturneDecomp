@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_doc.cpp_FUN_0046f200 at 0046f48c
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f48c
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 at 0056877b
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_00568860 at 00568c5e
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620 at 00567b5d

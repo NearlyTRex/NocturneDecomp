@@ -63,6 +63,7 @@ annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSoundWithDelay
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSound_FUN_00408c60.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_process_FUN_004087a0.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderBackground_FUN_004087e0.cpp
+annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderTransparent_FUN_004087d0.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_restoreRenderState_FUN_00408830.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_setup_FUN_00408890.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_shouldIgnoreForTargeting_FUN_0040c7e0.cpp
@@ -73,7 +74,6 @@ annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateCollisionDat
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateOrientationMatrix_FUN_004088f0.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CVector3f_ctor_FUN_0040d220.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/CVector3f_dtor_FUN_0040d2d0.cpp
-annotations/bw3.exe/pseudocode/src/core/actor.cpp/FUN_004087d0.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/FUN_004088d0.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/FUN_00408a30.cpp
 annotations/bw3.exe/pseudocode/src/core/actor.cpp/FUN_00408d00.cpp
@@ -116,6 +116,7 @@ annotations/bw3.exe/pseudocode/src/core/ammobox.cpp/CAmmoBox_process_FUN_0040e6a
 annotations/bw3.exe/pseudocode/src/core/ammobox.cpp/CAmmoBox_setup_FUN_0040e670.cpp
 annotations/bw3.exe/pseudocode/src/core/ammobox.cpp/factoryFuncAmmoBox_FUN_0040e590.cpp
 annotations/bw3.exe/pseudocode/src/core/ammobox.cpp/staticInit_FUN_0040e560.cpp
+annotations/bw3.exe/pseudocode/src/core/armour.cpp/CFlame_arrdtor50_FUN_00410370.cpp
 annotations/bw3.exe/pseudocode/src/core/armour.cpp/CFlame_dtor_FUN_00410320.cpp
 annotations/bw3.exe/pseudocode/src/core/asgaya.cpp/CAsgaya_archive_FUN_005a1aa0.cpp
 annotations/bw3.exe/pseudocode/src/core/asgaya.cpp/CAsgaya_getActorType_FUN_005a0a00.cpp
@@ -207,7 +208,9 @@ annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCarrier_FUN_00
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCollisionType_FUN_004156d0.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_onDropped_FUN_00415740.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_pickup_FUN_00415730.cpp
+annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/SBodyPartFire_arrdtor2_FUN_00416dc0.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/addVector_FUN_00416c50.cpp
+annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/boundingBoxExtent_FUN_00416cb0.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/factoryFuncBodyPart_FUN_00414720.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/scaleVector_FUN_00416bd0.cpp
 annotations/bw3.exe/pseudocode/src/core/bodypart.cpp/staticInit_FUN_00414520.cpp
@@ -261,6 +264,7 @@ annotations/bw3.exe/pseudocode/src/core/bugs.cpp/CBugs_processDamage_FUN_00421ad
 annotations/bw3.exe/pseudocode/src/core/bugs.cpp/CBugs_updateBoundingBox_FUN_004229f0.cpp
 annotations/bw3.exe/pseudocode/src/core/bugs.cpp/SBug_ctor_FUN_004243c0.cpp
 annotations/bw3.exe/pseudocode/src/core/bugs.cpp/factoryFuncBugs_FUN_00420e70.cpp
+annotations/bw3.exe/pseudocode/src/core/bugs.cpp/getDeformableModelName_FUN_004242d0.cpp
 annotations/bw3.exe/pseudocode/src/core/bugs.cpp/maxFloat_FUN_00424300.cpp
 annotations/bw3.exe/pseudocode/src/core/bugs.cpp/staticInit_FUN_00420e40.cpp
 annotations/bw3.exe/pseudocode/src/core/burncrss.cpp/CBurncross_dtor_FUN_00425420.cpp
@@ -410,7 +414,7 @@ annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_getGrabbed_FUN_00
 annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_isGrabbable_FUN_00458ec0.cpp
 annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_renderOpaque_FUN_004581c0.cpp
 annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_shouldIgnoreForTargeting_FUN_00458f80.cpp
-annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/FUN_00454b30.cpp
+annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/factoryFuncDemnfolk_FUN_00454b30.cpp
 annotations/bw3.exe/pseudocode/src/core/demnfolk.cpp/staticInit_FUN_00454750.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_acceptsActor_FUN_004594a0.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_archive_FUN_00459500.cpp
@@ -511,6 +515,7 @@ annotations/bw3.exe/pseudocode/src/core/dtri.cpp/rayTriangleIntersection_FUN_004
 annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/CDynamite_dtor_FUN_0047b470.cpp
 annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/CDynamite_getActorType_FUN_0047b070.cpp
 annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/CDynamite_getDamage_FUN_0047b1a0.cpp
+annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/CDynamite_isFuseLit_FUN_0047b230.cpp
 annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/CDynamite_renderAimBeam_FUN_0047b1d0.cpp
 annotations/bw3.exe/pseudocode/src/core/dynamite.cpp/factoryFuncDynamite_FUN_0047b050.cpp
 annotations/bw3.exe/pseudocode/src/core/elephant.cpp/CElephantGun_dtor_FUN_00487930.cpp
@@ -550,6 +555,7 @@ annotations/bw3.exe/pseudocode/src/core/event.cpp/CEventList_restartSfxEntries_F
 annotations/bw3.exe/pseudocode/src/core/event.cpp/CRuleList_clear_FUN_00495b40.cpp
 annotations/bw3.exe/pseudocode/src/core/event.cpp/CRuleList_evaluateAndRun_FUN_00495db0.cpp
 annotations/bw3.exe/pseudocode/src/core/event.cpp/CRuleList_findFirst_FUN_00495d60.cpp
+annotations/bw3.exe/pseudocode/src/core/event.cpp/getSelectedCameraIndex_FUN_00495e60.cpp
 annotations/bw3.exe/pseudocode/src/core/exorcism.cpp/CExorcism_ctor_FUN_0048a310.cpp
 annotations/bw3.exe/pseudocode/src/core/exorcism.cpp/CExorcism_dtor_FUN_0048b730.cpp
 annotations/bw3.exe/pseudocode/src/core/exorcism.cpp/CExorcism_getActorType_FUN_0048a300.cpp
@@ -685,7 +691,7 @@ annotations/bw3.exe/pseudocode/src/core/flashlit.cpp/CFlashlight_renderAimBeam_F
 annotations/bw3.exe/pseudocode/src/core/flashlit.cpp/FUN_004a76f0.cpp
 annotations/bw3.exe/pseudocode/src/core/flashlit.cpp/factoryFuncFlashlight_FUN_004a7520.cpp
 annotations/bw3.exe/pseudocode/src/core/flashlit.cpp/staticInit_FUN_004a74f0.cpp
-annotations/bw3.exe/pseudocode/src/core/flattn.cpp/FUN_004ad4c0.cpp
+annotations/bw3.exe/pseudocode/src/core/flattn.cpp/doNothing_FUN_004ad4c0.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor3_FUN_004ad410.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor6_FUN_004ad430.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_ctor_FUN_004aa7d0.cpp
@@ -847,6 +853,7 @@ annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_dtor_FUN_004d4
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_getActorType_FUN_004d4ad0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_addCarriedItemToInventory_FUN_004d41a0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_canBeGrabbed_FUN_004d2aa0.cpp
+annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_canReachPickup_FUN_004d2ae0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_createDefaultWeapon_FUN_004d2cd0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_doHeroAction_FUN_004d4520.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_executeObjectPickup_FUN_004d4160.cpp
@@ -863,7 +870,6 @@ annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_testLineIntersection_FUN_
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_toggleLeverNow_FUN_004d3460.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_tryOpenDoor_FUN_004d3250.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_tryUseSelectedItem_FUN_004d3c90.cpp
-annotations/bw3.exe/pseudocode/src/core/hero.cpp/FUN_004d2ae0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/factoryFuncHeroPlaceholder_FUN_004d4ab0.cpp
 annotations/bw3.exe/pseudocode/src/core/hino.cpp/CHino_archive_FUN_0059d310.cpp
 annotations/bw3.exe/pseudocode/src/core/hino.cpp/CHino_getActorType_FUN_0059b660.cpp
@@ -904,8 +910,10 @@ annotations/bw3.exe/pseudocode/src/core/imp.cpp/FUN_004d8280.cpp
 annotations/bw3.exe/pseudocode/src/core/imp.cpp/factoryFuncImp_FUN_004d66d0.cpp
 annotations/bw3.exe/pseudocode/src/core/imp.cpp/staticInit_FUN_004d66a0.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_dtor_FUN_004da420.cpp
+annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_getActiveLightGun_FUN_004dcda0.cpp
+annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_hasItemOfClass_FUN_004dba80.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0.cpp
-annotations/bw3.exe/pseudocode/src/core/inv.cpp/FUN_004da840.cpp
+annotations/bw3.exe/pseudocode/src/core/inv.cpp/freeInventory_FUN_004da840.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/loadItem_FUN_004da320.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/staticInit_FUN_004d9c90.cpp
 annotations/bw3.exe/pseudocode/src/core/kedward.cpp/CKedward_archive_FUN_005919f0.cpp
@@ -981,8 +989,8 @@ annotations/bw3.exe/pseudocode/src/core/melee.cpp/staticInit_FUN_004e6f30.cpp
 annotations/bw3.exe/pseudocode/src/core/menu.cpp/isKeyCodeValidForMode_FUN_004eacb0.cpp
 annotations/bw3.exe/pseudocode/src/core/menu.cpp/staticInit_FUN_004e7610.cpp
 annotations/bw3.exe/pseudocode/src/core/mirror.cpp/CMirror_dtor_FUN_004f3fe0.cpp
-annotations/bw3.exe/pseudocode/src/core/mirror.cpp/FUN_004f5a70.cpp
 annotations/bw3.exe/pseudocode/src/core/mirror.cpp/SClipPlane_ctor_FUN_004f5a60.cpp
+annotations/bw3.exe/pseudocode/src/core/mirror.cpp/SClipPlane_dtor_FUN_004f5a70.cpp
 annotations/bw3.exe/pseudocode/src/core/mirror.cpp/computePlaneFromTriangle_FUN_004f3b80.cpp
 annotations/bw3.exe/pseudocode/src/core/mission.cpp/CDemonMission_addActorToList_FUN_004f6930.cpp
 annotations/bw3.exe/pseudocode/src/core/mission.cpp/CDemonMission_clearMissionData_FUN_004f5b80.cpp
@@ -1084,6 +1092,7 @@ annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_drop_FUN_00527050.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_dtor_FUN_00527300.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_getActorType_FUN_00517f70.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_getDeathState_FUN_00526fc0.cpp
+annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_getFlashlightMaxAngle_FUN_0051c0f0.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_isWeaponDrawn_FUN_00526df0.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_processPickupComplete_FUN_00520d20.cpp
 annotations/bw3.exe/pseudocode/src/core/prye.cpp/CPrye_renderTransparent_FUN_00522880.cpp
@@ -1116,8 +1125,8 @@ annotations/bw3.exe/pseudocode/src/core/sentinel.cpp/CSentinel_getCollisionType_
 annotations/bw3.exe/pseudocode/src/core/sentinel.cpp/CSentinel_processDamage_FUN_00532270.cpp
 annotations/bw3.exe/pseudocode/src/core/sentinel.cpp/factoryFuncSentinel_FUN_005310d0.cpp
 annotations/bw3.exe/pseudocode/src/core/sentinel.cpp/staticInit_FUN_005310a0.cpp
+annotations/bw3.exe/pseudocode/src/core/set.cpp/C3DSCamera_arrdtor250_FUN_0053bb60.cpp
 annotations/bw3.exe/pseudocode/src/core/set.cpp/CDemonSet_clear_FUN_00532b30.cpp
-annotations/bw3.exe/pseudocode/src/core/set.cpp/CDemonSet_dtor_FUN_00532b00.cpp
 annotations/bw3.exe/pseudocode/src/core/set.cpp/CDemonSet_expireDecals_FUN_0053ba00.cpp
 annotations/bw3.exe/pseudocode/src/core/set.cpp/CDemonSet_findCameraByName_FUN_00535360.cpp
 annotations/bw3.exe/pseudocode/src/core/set.cpp/CDemonSet_initCameraShake_FUN_0053b440.cpp
@@ -1163,7 +1172,9 @@ annotations/bw3.exe/pseudocode/src/core/setutil.cpp/C3DSLight_doNothing_FUN_0054
 annotations/bw3.exe/pseudocode/src/core/setutil.cpp/C3DSLight_reset_FUN_00542f40.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CDemonShadow_ctor_FUN_00545fc0.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CShadowForest_ctor_FUN_00545ea0.cpp
+annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CShadow_archive_FUN_00545910.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CShadow_getActorType_FUN_005434f0.cpp
+annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CShadow_getDeathState_FUN_00545bd0.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CShadow_setWalkTarget_FUN_00544fd0.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/CSpiritShadow_ctor_FUN_00545f30.cpp
 annotations/bw3.exe/pseudocode/src/core/shadow.cpp/FUN_00545e70.cpp
@@ -1617,7 +1628,7 @@ annotations/bw3.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_reset_FUN_00508c70.
 annotations/bw3.exe/pseudocode/src/engine/ncursfx.cpp/staticInit_FUN_00508ad0.cpp
 annotations/bw3.exe/pseudocode/src/engine/palette.cpp/CFont_ctor_FUN_00509b90.cpp
 annotations/bw3.exe/pseudocode/src/engine/palette.cpp/CFont_dtor_FUN_00509bb0.cpp
-annotations/bw3.exe/pseudocode/src/engine/palette.cpp/FUN_00509e00.cpp
+annotations/bw3.exe/pseudocode/src/engine/palette.cpp/CFont_getLineSpacing_FUN_00509e00.cpp
 annotations/bw3.exe/pseudocode/src/engine/pod.cpp/CPodFile_cleanup_FUN_00513b90.cpp
 annotations/bw3.exe/pseudocode/src/engine/pod.cpp/CPodFile_ctor_FUN_00512f00.cpp
 annotations/bw3.exe/pseudocode/src/engine/pod.cpp/CPodFile_dtor_FUN_00512f70.cpp
@@ -1631,6 +1642,7 @@ annotations/bw3.exe/pseudocode/src/engine/prim.c/normalizeTextureCoords_FUN_0051
 annotations/bw3.exe/pseudocode/src/engine/prim.c/replaceWWithDepth_FUN_00515a80.c
 annotations/bw3.exe/pseudocode/src/engine/special.cpp/CExternalRenderer_ctor_FUN_005665e0.cpp
 annotations/bw3.exe/pseudocode/src/engine/special.cpp/FUN_005616a0.cpp
+annotations/bw3.exe/pseudocode/src/engine/texture.cpp/CTextureCache_ctor_FUN_00569550.cpp
 annotations/bw3.exe/pseudocode/src/engine/texture.cpp/CTextureCache_findTexture_FUN_0056a0a0.cpp
 annotations/bw3.exe/pseudocode/src/engine/texture.cpp/CTextureCache_getTextureCacheStats_FUN_0056a700.cpp
 annotations/bw3.exe/pseudocode/src/engine/texture.cpp/CTextureCache_reset_FUN_005695b0.cpp
@@ -1765,6 +1777,7 @@ annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_ctor_FUN_004
 annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_dtor_FUN_00440bf0.cpp
 annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_findCode_FUN_00440d30.cpp
 annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_free_FUN_00440c10.cpp
+annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_readCodeFromStream_FUN_00440e10.cpp
 annotations/bw3.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_writeCodeBits_FUN_00440ef0.cpp
 annotations/bw3.exe/pseudocode/src/support/codec.cpp/resetBitBuffer_FUN_004400d0.cpp
 annotations/bw3.exe/pseudocode/src/support/trisock.cpp/CSocket_closeSocket_FUN_0056fc30.cpp

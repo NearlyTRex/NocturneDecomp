@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8731,
-    "complexity_score": 7003,
+    "complexity_score": 7007,
     "cross_reference_count": 4,
     "function_call_count": 95,
     "global_count": 389,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 3728,
+    "pseudocode_lines": 3732,
     "suspect_count": 322,
     "suspect_types": [
       "pointer_cast",
@@ -22,7 +22,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 12459
+    "total_lines": 12463
   },
   "cross_references": [
     {
@@ -112,7 +112,7 @@
     {
       "addr": "00428120",
       "is_variadic": false,
-      "name": "core_bugs.cpp_FUN_00428120"
+      "name": "core_bugs.cpp_getDeformableModelName_FUN_00428120"
     },
     {
       "addr": "00431210",
@@ -207,7 +207,7 @@
     {
       "addr": "004aafe0",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004aafe0"
+      "name": "core_event.cpp_getSelectedCameraIndex_FUN_004aafe0"
     },
     {
       "addr": "004bcba0",
@@ -4636,7 +4636,7 @@
       "line": 250,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -4652,7 +4652,7 @@
       "line": 275,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "((((&DAT_00626114)[(byte)(*pcVar16 + 1)] & 0xe0) != 0 || (*pcVar16 == '_'))));",
+      "text": "((((&DAT_00626114)[(byte)(*pcVar15 + 1)] & 0xe0) != 0 || (*pcVar15 == '_'))));",
       "type": "undefined_data"
     },
     {
@@ -4676,7 +4676,7 @@
       "line": 298,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -4692,7 +4692,7 @@
       "line": 306,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -4708,7 +4708,7 @@
       "line": 314,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if (((((((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)) ||",
+      "text": "if (((((((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4716,7 +4716,7 @@
       "line": 316,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4724,7 +4724,7 @@
       "line": 319,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4732,7 +4732,7 @@
       "line": 322,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x12] + 1)] & 0xe0) == 0)) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x12] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4740,7 +4740,7 @@
       "line": 325,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4748,7 +4748,7 @@
       "line": 328,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x16] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x16] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4756,7 +4756,7 @@
       "line": 331,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4764,7 +4764,7 @@
       "line": 333,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4772,7 +4772,7 @@
       "line": 335,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": ", iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)) ||",
+      "text": ", iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4780,7 +4780,7 @@
       "line": 338,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4788,7 +4788,7 @@
       "line": 340,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[8] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[8] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4796,7 +4796,7 @@
       "line": 343,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4804,7 +4804,7 @@
       "line": 345,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4812,7 +4812,7 @@
       "line": 347,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4820,7 +4820,7 @@
       "line": 350,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x15] + 1)] & 0xe0) == 0)))))))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x15] + 1)] & 0xe0) == 0)))))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4828,7 +4828,7 @@
       "line": 353,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x1a] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x1a] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4836,7 +4836,7 @@
       "line": 355,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[7] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[7] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4844,7 +4844,7 @@
       "line": 358,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x10] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x10] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4852,7 +4852,7 @@
       "line": 360,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[6] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[6] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4860,7 +4860,7 @@
       "line": 362,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[7] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[7] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4868,7 +4868,7 @@
       "line": 364,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4876,7 +4876,7 @@
       "line": 367,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4884,7 +4884,7 @@
       "line": 370,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4892,7 +4892,7 @@
       "line": 372,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[8] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[8] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4900,7 +4900,7 @@
       "line": 374,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[7] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[7] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4908,7 +4908,7 @@
       "line": 376,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[9] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[9] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4916,7 +4916,7 @@
       "line": 378,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[7] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[7] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4924,7 +4924,7 @@
       "line": 380,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[9] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[9] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4932,7 +4932,7 @@
       "line": 383,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] & 0xe0) == 0)) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4940,7 +4940,7 @@
       "line": 386,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x10] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x10] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4948,7 +4948,7 @@
       "line": 388,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)))))))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)))))))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4956,7 +4956,7 @@
       "line": 390,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4964,7 +4964,7 @@
       "line": 392,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": ", iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] & 0xe0) == 0)) ||",
+      "text": ", iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4972,7 +4972,7 @@
       "line": 395,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x13] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x13] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -4980,7 +4980,7 @@
       "line": 397,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -4988,7 +4988,7 @@
       "line": 399,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -4996,7 +4996,7 @@
       "line": 401,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] & 0xe0) == 0)) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -5004,7 +5004,7 @@
       "line": 403,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[8] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[8] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -5012,7 +5012,7 @@
       "line": 405,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -5020,7 +5020,7 @@
       "line": 407,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "iVar6 == 0 && (((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] & 0xe0) == 0)))))) ||",
+      "text": "iVar5 == 0 && (((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] & 0xe0) == 0)))))) ||",
       "type": "undefined_data"
     },
     {
@@ -5028,7 +5028,7 @@
       "line": 410,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] & 0xe0) == 0)) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] & 0xe0) == 0)) ||",
       "type": "undefined_data"
     },
     {
@@ -5036,7 +5036,7 @@
       "line": 413,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x15] + 1)] & 0xe0) == 0)))) ||",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x15] + 1)] & 0xe0) == 0)))) ||",
       "type": "undefined_data"
     },
     {
@@ -5044,7 +5044,7 @@
       "line": 415,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "&& (((&DAT_00626114)[(byte)(pcVar16[6] + 1)] & 0xe0) == 0)))))))) {",
+      "text": "&& (((&DAT_00626114)[(byte)(pcVar15[6] + 1)] & 0xe0) == 0)))))))) {",
       "type": "undefined_data"
     },
     {
@@ -5060,7 +5060,7 @@
       "line": 427,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0x12] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0x12] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5076,7 +5076,7 @@
       "line": 452,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5100,7 +5100,7 @@
       "line": 467,
       "match": "DAT_005ee83e",
       "severity": "mild",
-      "text": "iVar6 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&DAT_005ee83e,local_6bc);",
+      "text": "iVar5 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&DAT_005ee83e,local_6bc);",
       "type": "undefined_data"
     },
     {
@@ -5116,7 +5116,7 @@
       "line": 478,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0x10] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0x10] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5124,7 +5124,7 @@
       "line": 483,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -5132,7 +5132,7 @@
       "line": 506,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5140,7 +5140,7 @@
       "line": 520,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] & 0xe0) == 0)) {",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5148,7 +5148,7 @@
       "line": 533,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0x15] + 1)] & 0xe0) == 0))",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0x15] + 1)] & 0xe0) == 0))",
       "type": "undefined_data"
     },
     {
@@ -5164,7 +5164,7 @@
       "line": 561,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "if ((iVar6 == 0) && (((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] & 0xe0) == 0))",
+      "text": "if ((iVar5 == 0) && (((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] & 0xe0) == 0))",
       "type": "undefined_data"
     },
     {
@@ -5172,7 +5172,7 @@
       "line": 572,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5180,7 +5180,7 @@
       "line": 582,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5188,7 +5188,7 @@
       "line": 595,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x10] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x10] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5196,7 +5196,7 @@
       "line": 607,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5204,7 +5204,7 @@
       "line": 613,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -5212,7 +5212,7 @@
       "line": 627,
       "match": "DAT_005ee94c",
       "severity": "mild",
-      "text": "iVar6 = _stricmp(local_101c,&DAT_005ee94c)",
+      "text": "iVar5 = _stricmp(local_101c,&DAT_005ee94c)",
       "type": "undefined_data"
     },
     {
@@ -5220,7 +5220,7 @@
       "line": 663,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5228,7 +5228,7 @@
       "line": 670,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -5236,7 +5236,7 @@
       "line": 697,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5260,7 +5260,7 @@
       "line": 716,
       "match": "DAT_005ee9c0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_005ee9c0;",
+      "text": "pcVar17 = &DAT_005ee9c0;",
       "type": "undefined_data"
     },
     {
@@ -5276,7 +5276,7 @@
       "line": 753,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[5] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[5] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5300,7 +5300,7 @@
       "line": 813,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] & 0xe0) == 0)) {",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] & 0xe0) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -5324,7 +5324,7 @@
       "line": 866,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] & 0xe0) == 0)",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] & 0xe0) == 0)",
       "type": "undefined_data"
     },
     {
@@ -5340,7 +5340,7 @@
       "line": 925,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[5] + 1)] & 0xe0) == 0)",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[5] + 1)] & 0xe0) == 0)",
       "type": "undefined_data"
     },
     {
@@ -5348,7 +5348,7 @@
       "line": 942,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[9] + 1)] & 0xe0) ==",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[9] + 1)] & 0xe0) ==",
       "type": "undefined_data"
     },
     {
@@ -5380,7 +5380,7 @@
       "line": 1035,
       "match": "(int *)((int)local_39ac",
       "severity": "moderate",
-      "text": "if (*(int *)((int)local_39ac + iVar11) != 0) {",
+      "text": "if (*(int *)((int)local_39ac + iVar10) != 0) {",
       "type": "pointer_cast"
     },
     {
@@ -5388,7 +5388,7 @@
       "line": 1051,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[7] + 1)] & 0xe0)",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[7] + 1)] & 0xe0)",
       "type": "undefined_data"
     },
     {
@@ -5404,7 +5404,7 @@
       "line": 1068,
       "match": "DAT_005eebf6",
       "severity": "mild",
-      "text": "(pcVar16,&DAT_005eebf6,4);",
+      "text": "(pcVar15,&DAT_005eebf6,4);",
       "type": "undefined_data"
     },
     {
@@ -5412,7 +5412,7 @@
       "line": 1070,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[4] + 1)] & 0xe0)",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[4] + 1)] & 0xe0)",
       "type": "undefined_data"
     },
     {
@@ -5428,7 +5428,7 @@
       "line": 1090,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5452,7 +5452,7 @@
       "line": 1128,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -5460,7 +5460,7 @@
       "line": 1149,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x11] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x11] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5476,7 +5476,7 @@
       "line": 1178,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
@@ -5484,7 +5484,7 @@
       "line": 1199,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5516,7 +5516,7 @@
       "line": 1252,
       "match": "DAT_005eed49",
       "severity": "mild",
-      "text": "(pcVar16,&DAT_005eed49,3);",
+      "text": "(pcVar15,&DAT_005eed49,3);",
       "type": "undefined_data"
     },
     {
@@ -5524,7 +5524,7 @@
       "line": 1254,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[3] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[3] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5532,7 +5532,7 @@
       "line": 1268,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[6] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[6] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5540,7 +5540,7 @@
       "line": 1296,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[7] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[7] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5548,7 +5548,7 @@
       "line": 1325,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[7] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[7] + 1)] &",
       "type": "undefined_data"
     },
     {
@@ -5577,7 +5577,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1389,
+      "line": 1391,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5585,15 +5585,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1399,
+      "line": 1401,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[9] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[9] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1408,
+      "line": 1410,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5601,7 +5601,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1421,
+      "line": 1423,
       "match": "DAT_005eee71",
       "severity": "mild",
       "text": "&DAT_005eee71);",
@@ -5609,15 +5609,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1438,
+      "line": 1440,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1447,
+      "line": 1449,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5625,23 +5625,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1480,
+      "line": 1482,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[5] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[5] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1491,
+      "line": 1493,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e810b0,pcVar16);",
+      "text": "_sprintf(&DAT_01e810b0,pcVar15);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1497,
+      "line": 1499,
       "match": "DAT_005eef13",
       "severity": "mild",
       "text": "&DAT_005eef13);",
@@ -5649,7 +5649,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1521,
+      "line": 1523,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5657,7 +5657,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1531,
+      "line": 1533,
       "match": "DAT_005eef88",
       "severity": "mild",
       "text": "local_34 = &DAT_005eef88;",
@@ -5665,31 +5665,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1534,
+      "line": 1536,
       "match": "DAT_005eef88",
       "severity": "mild",
       "text": "local_34 = &DAT_005eef88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1539,
-      "match": "DAT_005eef89",
-      "severity": "mild",
-      "text": "(pcVar16,&DAT_005eef89,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 1541,
+      "match": "DAT_005eef89",
+      "severity": "mild",
+      "text": "(pcVar15,&DAT_005eef89,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1543,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[4] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[4] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1555,
+      "line": 1557,
       "match": "DAT_005eefc3",
       "severity": "mild",
       "text": "local_34 = &DAT_005eefc3;",
@@ -5697,39 +5697,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1558,
+      "line": 1560,
       "match": "DAT_005eefc3",
       "severity": "mild",
       "text": "local_34 = &DAT_005eefc3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1563,
-      "match": "DAT_005eefc4",
-      "severity": "mild",
-      "text": "(pcVar16,&DAT_005eefc4,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 1565,
+      "match": "DAT_005eefc4",
+      "severity": "mild",
+      "text": "(pcVar15,&DAT_005eefc4,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1567,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[4] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[4] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1588,
+      "line": 1590,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1597,
+      "line": 1599,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5737,7 +5737,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1624,
+      "line": 1626,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5745,47 +5745,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1659,
+      "line": 1661,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1672,
-      "match": "DAT_005ef092",
-      "severity": "mild",
-      "text": "(pcVar16,&DAT_005ef092,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 1674,
-      "match": "DAT_00626114",
+      "match": "DAT_005ef092",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[4] + 1)] &",
+      "text": "(pcVar15,&DAT_005ef092,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1684,
-      "match": "DAT_005ef097",
+      "line": 1676,
+      "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(pcVar16,&DAT_005ef097,2);",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[4] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 1686,
-      "match": "DAT_00626114",
+      "match": "DAT_005ef097",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[2] + 1)] &",
+      "text": "(pcVar15,&DAT_005ef097,2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1703,
+      "line": 1688,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[2] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1705,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5793,7 +5793,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1709,
+      "line": 1711,
       "match": "DAT_005ef0d0",
       "severity": "mild",
       "text": "text,&DAT_005ef0d0,4);",
@@ -5801,15 +5801,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1721,
+      "line": 1723,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1731,
+      "line": 1733,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5817,23 +5817,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1747,
+      "line": 1749,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[9] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[9] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1757,
+      "line": 1759,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1778,
+      "line": 1780,
       "match": "DAT_005ef11a",
       "severity": "mild",
       "text": "(local_658,&DAT_005ef11a);",
@@ -5841,7 +5841,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1789,
+      "line": 1791,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5849,15 +5849,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1810,
+      "line": 1812,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x150))",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x154) + 0x150))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1812,
+      "line": 1814,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);",
@@ -5865,15 +5865,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1835,
+      "line": 1839,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1856,
+      "line": 1860,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "&DAT_01e810b0);",
@@ -5881,23 +5881,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1868,
+      "line": 1872,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1888,
+      "line": 1892,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[6] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[6] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1897,
+      "line": 1901,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5905,7 +5905,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1923,
+      "line": 1927,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5913,7 +5913,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1940,
+      "line": 1944,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5921,15 +5921,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1956,
+      "line": 1960,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1966,
+      "line": 1970,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5937,7 +5937,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1985,
+      "line": 1989,
       "match": "(code **)((int)g_CGamePtr",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -5945,7 +5945,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1985,
+      "line": 1989,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -5953,15 +5953,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1994,
+      "line": 1998,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2003,
+      "line": 2007,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5969,7 +5969,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2018,
+      "line": 2022,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5977,15 +5977,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2037,
+      "line": 2041,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[8] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[8] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2046,
+      "line": 2050,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -5993,15 +5993,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2089,
+      "line": 2093,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2098,
+      "line": 2102,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6009,7 +6009,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2120,
+      "line": 2124,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6017,15 +6017,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2138,
+      "line": 2142,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[5] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[5] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2147,
+      "line": 2151,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6033,23 +6033,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2161,
+      "line": 2165,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2182,
+      "line": 2186,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2191,
+      "line": 2195,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6057,7 +6057,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2212,
+      "line": 2216,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6065,15 +6065,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2231,
+      "line": 2235,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x1b] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x1b] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2240,
+      "line": 2244,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6081,15 +6081,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2265,
+      "line": 2269,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x17] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x17] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2274,
+      "line": 2278,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6097,7 +6097,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2295,
+      "line": 2299,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6105,15 +6105,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2311,
+      "line": 2315,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2328,
+      "line": 2332,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6121,15 +6121,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2358,
+      "line": 2362,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2367,
+      "line": 2371,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6137,7 +6137,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2374,
+      "line": 2378,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6145,15 +6145,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2390,
+      "line": 2394,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[6] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[6] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2398,
+      "line": 2402,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6161,15 +6161,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2413,
+      "line": 2417,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2423,
+      "line": 2427,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6177,47 +6177,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2436,
+      "line": 2440,
       "match": "DAT_005ef5fd",
       "severity": "mild",
-      "text": "(pcVar16,&DAT_005ef5fd,3);",
+      "text": "(pcVar15,&DAT_005ef5fd,3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2438,
+      "line": 2442,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[3] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[3] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2448,
+      "line": 2452,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2466,
-      "match": "DAT_01e810b0",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e810b0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2501,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2510,
+      "line": 2470,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6225,15 +6209,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2563,
+      "line": 2505,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x10] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2572,
+      "line": 2514,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6241,23 +6225,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2608,
+      "line": 2567,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xf] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x10] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2628,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2637,
+      "line": 2576,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6265,7 +6241,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2664,
+      "line": 2612,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xf] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2632,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2641,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6273,15 +6265,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2674,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x12] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2683,
+      "line": 2668,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6289,15 +6273,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2708,
+      "line": 2678,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[7] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x12] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2717,
+      "line": 2687,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6305,55 +6289,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2743,
+      "line": 2712,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[7] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2753,
-      "match": "DAT_01e810b0",
-      "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2780,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x18] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2800,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2809,
-      "match": "DAT_01e810b0",
-      "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2840,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xb] + 1)] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2849,
+      "line": 2721,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6361,7 +6305,63 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2875,
+      "line": 2747,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2757,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "pcVar17 = &DAT_01e810b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2784,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x18] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2804,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2813,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "pcVar17 = &DAT_01e810b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2844,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xb] + 1)] &",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2853,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "_sprintf(&DAT_01e810b0,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2879,
       "match": "DAT_005ef89f",
       "severity": "mild",
       "text": "(local_2d4,&DAT_005ef89f);",
@@ -6369,7 +6369,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2891,
+      "line": 2895,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6377,15 +6377,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2910,
+      "line": 2914,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[9] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[9] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2919,
+      "line": 2923,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6393,7 +6393,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2930,
+      "line": 2934,
       "match": "DAT_005ef902",
       "severity": "mild",
       "text": "&DAT_005ef902);",
@@ -6401,15 +6401,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2942,
+      "line": 2946,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[8] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[8] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2951,
+      "line": 2955,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6417,15 +6417,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2975,
+      "line": 2979,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0x12] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0x12] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2984,
+      "line": 2988,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6433,7 +6433,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2998,
+      "line": 3002,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6441,23 +6441,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3014,
+      "line": 3018,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3024,
+      "line": 3028,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3042,
+      "line": 3046,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6465,23 +6465,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3055,
+      "line": 3059,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3092,
+      "line": 3096,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xd] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xd] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3102,
+      "line": 3106,
       "match": "DAT_005efa0a",
       "severity": "mild",
       "text": "(local_7e8,&DAT_005efa0a);",
@@ -6489,31 +6489,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3103,
-      "match": "DAT_01e810b0",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e810b0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 3107,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "_sprintf(&DAT_01e810b0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3125,
+      "line": 3111,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "pcVar17 = &DAT_01e810b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 3129,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[9] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[9] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3134,
+      "line": 3138,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6521,7 +6521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3154,
+      "line": 3158,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6529,7 +6529,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3176,
+      "line": 3180,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6537,15 +6537,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3191,
+      "line": 3195,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xe] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xe] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3200,
+      "line": 3204,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6553,15 +6553,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3225,
+      "line": 3229,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3234,
+      "line": 3238,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6569,23 +6569,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3290,
+      "line": 3294,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[8] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[8] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3299,
+      "line": 3303,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3317,
+      "line": 3321,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6593,31 +6593,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3340,
+      "line": 3344,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3349,
+      "line": 3353,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3375,
+      "line": 3379,
       "match": "DAT_005efb91",
       "severity": "mild",
-      "text": "pcVar17 = &DAT_005efb91;",
+      "text": "pcVar16 = &DAT_005efb91;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3398,
+      "line": 3402,
       "match": "DAT_005efb93",
       "severity": "mild",
       "text": "(local_31b4,&DAT_005efb93);",
@@ -6625,15 +6625,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3401,
+      "line": 3405,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3422,
+      "line": 3426,
       "match": "DAT_005efbba",
       "severity": "mild",
       "text": "(local_31b4 + local_40,&DAT_005efbba",
@@ -6641,7 +6641,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3424,
+      "line": 3428,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6649,23 +6649,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3439,
+      "line": 3443,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[0xc] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[0xc] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3449,
+      "line": 3453,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "pcVar18 = &DAT_01e810b0;",
+      "text": "pcVar17 = &DAT_01e810b0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3467,
+      "line": 3471,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6673,15 +6673,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3498,
+      "line": 3502,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[10] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[10] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3507,
+      "line": 3511,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6689,23 +6689,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3537,
+      "line": 3541,
       "match": "DAT_005efc44",
       "severity": "mild",
-      "text": "(pcVar16,&DAT_005efc44,4);",
+      "text": "(pcVar15,&DAT_005efc44,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3539,
+      "line": 3543,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[4] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[4] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3548,
+      "line": 3552,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6713,23 +6713,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3564,
+      "line": 3568,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[7] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[7] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3584,
+      "line": 3588,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar16[6] + 1)] &",
+      "text": "(((&DAT_00626114)[(byte)(pcVar15[6] + 1)] &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 3596,
+      "line": 3600,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6737,7 +6737,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3611,
+      "line": 3615,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6745,7 +6745,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3624,
+      "line": 3628,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6753,7 +6753,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3632,
+      "line": 3636,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,",
@@ -6761,7 +6761,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3737,
+      "line": 3741,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,\"Extra characters \\\"%s\\\" on line %d\");",
@@ -6769,7 +6769,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3746,
+      "line": 3750,
       "match": "DAT_01e810b0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01e810b0,\"Overrun past the end of the script.\");",
@@ -6784,11 +6784,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pcVar16` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pcVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 284,
-      "match": "(int)pcVar16",
+      "match": "(int)pcVar15",
       "severity": "moderate",
-      "text": "if ((int)pcVar16 < 0) {",
+      "text": "if ((int)pcVar15 < 0) {",
       "type": "pointer_truncation"
     },
     {
@@ -6796,7 +6796,7 @@
       "line": 995,
       "match": "(int)&local_1a8",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_1a8 + (uint)bVar20 * -8 + 4",
+      "text": "*(float *)((int)&local_1a8 + (uint)bVar19 * -8 + 4",
       "type": "pointer_truncation"
     },
     {
@@ -6825,7 +6825,7 @@
     },
     {
       "description": "Pointer value `&local_1e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3263,
+      "line": 3267,
       "match": "(int)&local_1e4",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1e4 +",
@@ -6833,7 +6833,7 @@
     },
     {
       "description": "Pointer value `&local_1e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 3267,
+      "line": 3271,
       "match": "(int)&local_1e4",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1e4 +",
@@ -6929,7 +6929,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1758,
+      "line": 1760,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6937,7 +6937,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2162,
+      "line": 2166,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6945,7 +6945,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2312,
+      "line": 2316,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6953,7 +6953,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2449,
+      "line": 2453,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6961,7 +6961,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2754,
+      "line": 2758,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6969,7 +6969,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2810,
+      "line": 2814,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6977,7 +6977,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3025,
+      "line": 3029,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6985,7 +6985,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3108,
+      "line": 3112,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6993,7 +6993,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3300,
+      "line": 3304,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7001,7 +7001,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3350,
+      "line": 3354,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7009,7 +7009,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3388,
+      "line": 3392,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7017,7 +7017,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3402,
+      "line": 3406,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7025,7 +7025,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3450,
+      "line": 3454,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7033,7 +7033,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3476,
+      "line": 3480,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7052,7 +7052,7 @@
       "line": 995,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_1a8 + (uint)bVar20 * -8 + 4",
+      "text": "*(float *)((int)&local_1a8 + (uint)bVar19 * -8 + 4",
       "type": "pointer_cast"
     },
     {
@@ -7081,14 +7081,6 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 3263,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_1e4 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 3267,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
@@ -7096,6 +7088,14 @@
       "type": "pointer_cast"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 3271,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_1e4 +",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 719,
       "match": "do { if (v==0) break; v=v-1; ... }",
@@ -7105,7 +7105,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1616,
+      "line": 1618,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -7113,7 +7113,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 3379,
+      "line": 3383,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -7129,7 +7129,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 3379,
+      "line": 3383,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -7137,7 +7137,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 3364,
+      "line": 3368,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

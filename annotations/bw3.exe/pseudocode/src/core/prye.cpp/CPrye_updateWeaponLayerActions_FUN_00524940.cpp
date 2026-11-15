@@ -90,8 +90,8 @@ void __cdecl core_prye_cpp_CPrye_updateWeaponLayerActions_FUN_00524940(CPrye *th
   this_ptr->guns_drawn = 0;
 LAB_00524997:
   pCVar11 = &(this_ptr->base).inventory;
-  core_inv_cpp_FUN_004dcda0(pCVar11);
-  core_inv_cpp_FUN_004dcda0(pCVar11);
+  core_inv_cpp_CInventory_getActiveLightGun_FUN_004dcda0(pCVar11);
+  core_inv_cpp_CInventory_getActiveLightGun_FUN_004dcda0(pCVar11);
   local_38 = 0;
   pCStack_34 = &(this_ptr->base).base.model.base;
   local_58 = pCVar11;
@@ -243,9 +243,9 @@ switchD_00524f8d_caseD_1:
                              core_actor_cpp_castToClassHash_FUN_0040c840
                                        (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash),
               this_ptr_00 != (CDynamite *)0x0)) &&
-             ((iVar4 = core_dynamite_cpp_FUN_0047b230(this_ptr_00), iVar4 == 0 &&
-              ((float)(int)(0xb / (longlong)pCVar3->motions[iVar6].frame_count) <=
-               (this_ptr->base).base.layer_action_t)))) {
+             ((iVar4 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0047b230(this_ptr_00), iVar4 == 0
+              && ((float)(int)(0xb / (longlong)pCVar3->motions[iVar6].frame_count) <=
+                  (this_ptr->base).base.layer_action_t)))) {
             core_dynamite_cpp_CDynamite_lightFuse_FUN_0047b1e0(this_ptr_00);
           }
         }
@@ -580,7 +580,8 @@ LAB_00524bde:
         if (((this_ptr->base).action_pending == 8) && (local_20 == 3)) {
           if (((this_ptr->weapon == (CWeapon *)0x0) ||
               (this_ptr->weapon->number_of_hands_needed == 1)) &&
-             (iVar6 = core_inv_cpp_FUN_004dba80(local_54,"CLightActor"), iVar6 != 0)) {
+             (iVar6 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004dba80
+                                (local_54,"CLightActor"), iVar6 != 0)) {
             pCVar11 = pCStack_18;
             for (local_14 = 0; local_14 < pCStack_18->item_count; local_14 = local_14 + 1) {
               pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);

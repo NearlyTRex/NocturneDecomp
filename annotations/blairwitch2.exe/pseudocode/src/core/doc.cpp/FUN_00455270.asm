@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00450c60 at 004513fd
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004513fd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d01df

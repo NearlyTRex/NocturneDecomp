@@ -188,13 +188,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417ad0(CBody
 CVector3f * __stack2_esi core_bodypart_cpp_scaleVector_FUN_00417b20(CVector3f *src,float *scalar,CVector3f *dst);
 CVector3f * __stack2_esi core_bodypart_cpp_subtractVector_FUN_00417b60(CVector3f *a,CVector3f *b,CVector3f *dst);
 CVector3f * __stack2_esi core_bodypart_cpp_addVector_FUN_00417ba0(CVector3f *a,CVector3f *b,CVector3f *dst);
-void core_bodypart_cpp_FUN_00417c00(float *param_1);
+CBoundingBox3D * __stack_esi core_bodypart_cpp_boundingBoxExtent_FUN_00417c00(CBoundingBox3D *src,CBoundingBox3D *dst);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_00417cb0(SBodyPartFire *this_ptr);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_00417cd0(SBodyPartFire *this_ptr,uint flags);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_00417cf0(SBodyPartModel *this_ptr);
-void core_bodypart_cpp_FUN_00417d10(void *param_1);
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor2_FUN_00417d10(SBodyPartFire *this_ptr,uint flags);
 void __cdecl core_boneguy_cpp_staticInit_FUN_00417d30(void);
-void core_boneguy_cpp_FUN_00417d60(int param_1);
+CVector3f * __stack_esi core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_00417d60(CDemonActor *actor,CVector3f *out);
 CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_00417e20(CDemonActor *actor,CVector3f *out);
 CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417f20(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_00417f40(CBoneGuy *this_ptr);

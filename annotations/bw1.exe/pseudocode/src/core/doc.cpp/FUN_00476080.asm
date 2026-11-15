@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00469550 at 0046a2e3
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a2e3
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770

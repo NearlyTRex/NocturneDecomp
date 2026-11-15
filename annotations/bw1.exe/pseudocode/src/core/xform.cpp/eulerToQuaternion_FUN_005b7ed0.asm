@@ -30,7 +30,7 @@
 ;   core_construc.cpp_FUN_00447560 at 00447595
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00447810 at 0044784b
 ;   core_djien.cpp_FUN_00460cb0 at 00460e11
-;   core_doc.cpp_FUN_0046caa0 at 0046d42e
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046d42e
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8a0b
 ;   ... and 7 more
 ;

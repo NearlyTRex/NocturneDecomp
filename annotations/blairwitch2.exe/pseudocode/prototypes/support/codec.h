@@ -31,7 +31,7 @@ int FUN_00433a90(int *param_1,int *param_2);
 
 // Original: support_codec.cpp_flushBitBuffer_FUN_00433ad0
 // Address: 00433ad0
-int __cdecl flushBitBuffer(int *param_1,int *param_2);
+int __cdecl flushBitBuffer(SBitBuffer *bit_buffer,void *ostream);
 
 // Original: support_codec.cpp_CCodec_ctor_FUN_00433e80
 // Address: 00433e80
@@ -105,13 +105,13 @@ int __cdecl CLZWDictionary::addNode(CLZWDictionary *this_ptr,int code,int parent
 // Address: 00434490
 uint FUN_00434490(int param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: support_codec.cpp_FUN_00434570
+// Original: support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570
 // Address: 00434570
-undefined4 FUN_00434570(int param_1,uint param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CLZWDictionary::writeCodeBits(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,void *ostream);
 
-// Original: support_codec.cpp_FUN_00434650
+// Original: support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00434650
 // Address: 00434650
-int FUN_00434650(int param_1,int param_2,int *param_3);
+int __cdecl CLZWDictionary::writeCodeSequence(CLZWDictionary *this_ptr,int code,void *ostream);
 
 // Original: support_codec.cpp_FUN_004346d0
 // Address: 004346d0

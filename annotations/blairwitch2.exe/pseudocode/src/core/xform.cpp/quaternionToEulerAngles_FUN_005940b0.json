@@ -1,0 +1,811 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 694,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 74,
+    "suspect_count": 59,
+    "suspect_types": [
+      "extra_output",
+      "param_count_too_few",
+      "pointer_truncation",
+      "stack_param",
+      "suspect_float",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 216
+  },
+  "cross_references": [
+    {
+      "addr": "004186c0",
+      "from_addr": "004188d2",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "0043708c",
+      "name": "core_construc.cpp_CConstruct_process_FUN_00436e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455170",
+      "from_addr": "004551d5",
+      "name": "core_doc.cpp_FUN_00455170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00518310",
+      "from_addr": "0051843f",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567430",
+      "from_addr": "00567495",
+      "name": "core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057e760",
+      "from_addr": "0057eb55",
+      "name": "core_turret.cpp_CTurret_process_FUN_0057e760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005940b0",
+    "address_range": [
+      [
+        "005940b0",
+        "0059420e"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005940b0",
+    "signature": "undefined1 core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b98f6",
+      "is_variadic": false,
+      "name": "crt_math.c_asin_FUN_005b98f6"
+    },
+    {
+      "addr": "005b9989",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_005b9989"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eedba",
+      "name": "DAT_005eedba",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eedbe",
+      "name": "DAT_005eedbe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eedc2",
+      "name": "DAT_005eedc2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eedc6",
+      "name": "DAT_005eedc6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eedca",
+      "name": "DAT_005eedca",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eedce",
+      "name": "DAT_005eedce",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004551d5",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00455170",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0051843f",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00567495",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057eb55",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_process_FUN_0057e760",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004188d2",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043708c",
+        "call_type": "direct",
+        "caller": "core_construc.cpp_CConstruct_process_FUN_00436e80",
+        "estimated_params": 3,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.769230769230769,
+    "instruction_count": 130,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 465,
+      "FLOAT2FLOAT": 45,
+      "FLOAT_ADD": 5,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 18,
+      "FLOAT_NAN": 6,
+      "FLOAT_NEG": 2,
+      "FLOAT_SUB": 8,
+      "INT_ADD": 67,
+      "INT_AND": 24,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 27,
+      "INT_XOR": 2,
+      "INT_ZEXT": 30,
+      "LOAD": 52,
+      "POPCOUNT": 4,
+      "RETURN": 3,
+      "STORE": 28
+    },
+    "pcode_op_count": 880
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b7c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585de0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f7ac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0811
+    },
+    "nocturne.exe": {
+      "addr": "0055d5b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0811
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005940b8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "uint *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "uint *extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "uint *extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "float *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "float *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 23,
+      "match": "8.196904e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.196904e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 33,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*extraout_ECX_00 = 0xbfc90fdb;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "extraout_ECX_00[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 35,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "(extraout_ECX_00 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 40,
+      "match": "8.196675e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.196675e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "fVar2 = ((float10)_DAT_005eedce - (float10)in_stack_00000004[1] * (float10)in_stack_00000004[1])",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "fVar2 = ((float10)_DAT_005eedce - (float10)in_stack_00000004[1] * (float10)in_stack_00000004[1])",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "- (float10)in_stack_00000004[2] * (float10)in_stack_00000004[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "- (float10)in_stack_00000004[2] * (float10)in_stack_00000004[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],fVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],fVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "((float10)*extraout_EDX * (float10)extraout_EDX[3] +",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "((float10)*extraout_EDX * (float10)extraout_EDX[3] +",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 54,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 54,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 57,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*extraout_ECX = 0x594144;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 58,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fb];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 59,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "(extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 61,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 63,
+      "match": "8.197006e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.197006e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 73,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "*extraout_ECX_01 = 0x3fc90fdb;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 74,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "extraout_ECX_01[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 75,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "(extraout_ECX_01 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Pointer value `extraout_ECX_00` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(char)extraout_ECX_00",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX_00;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `extraout_ECX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(char)extraout_ECX",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `extraout_ECX_01` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(char)extraout_ECX_01",
+      "severity": "moderate",
+      "text": "return (char)extraout_ECX_01;",
+      "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 6,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

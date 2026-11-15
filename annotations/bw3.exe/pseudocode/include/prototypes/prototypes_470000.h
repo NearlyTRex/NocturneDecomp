@@ -113,7 +113,7 @@ int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0047b130(CDynamite *this_ptr);
 float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0047b1a0(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_renderAimBeam_FUN_0047b1d0(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0047b1e0(CDynamite *this_ptr);
-undefined4 core_dynamite_cpp_FUN_0047b230(int param_1);
+int __cdecl core_dynamite_cpp_CDynamite_isFuseLit_FUN_0047b230(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0047b270(CDynamite *this_ptr,float delta_time);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0047b470(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0047b4c0(void);

@@ -65,17 +65,9 @@ CPathMap * __cdecl CAsgaya::getPathMap(CAsgaya *this_ptr);
 // Address: 005a1b50
 CAsgaya * __cdecl CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
 
-// Original: core_asgaya.cpp_FUN_005a1c00
-// Address: 005a1c00
-void FUN_005a1c00(void);
-
 // Original: core_asgaya.cpp_FUN_005a1e60
 // Address: 005a1e60
 int * FUN_005a1e60(void);
-
-// Original: core_asgaya.cpp_FUN_005a1ea0
-// Address: 005a1ea0
-void FUN_005a1ea0(SRenderVertex *param_1,int param_2);
 
 // Original: core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
 // Address: 005a23c0

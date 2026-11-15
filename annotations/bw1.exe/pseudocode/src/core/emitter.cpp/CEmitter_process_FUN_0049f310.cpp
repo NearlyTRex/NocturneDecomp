@@ -66,7 +66,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_0049f310(CEmitter *this_ptr,f
   CVector3f CStack_a4;
   CVector3f CStack_90;
   float afStack_84 [4];
-  float afStack_74 [5];
+  CVector3f CStack_74;
   float fStack_60;
   float afStack_5c [2];
   CVector3f aCStack_54 [2];
@@ -165,16 +165,17 @@ LAB_0049f3c7:
               (0x01C57074,&(this_ptr->base).location.position,&CStack_14c,pCVar5);
     break;
   case EMITTER_TYPE_FLAME:
-    core_emitter_cpp_FUN_004a02e0(this_ptr);
+    core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0(this_ptr,&CStack_74);
     iVar4 = 1;
     euler_angles = (CVector3f *)&(this_ptr->base).orient;
     iVar7 = 2;
     position = &CStack_b0;
-    CStack_b0.x = afStack_74[0];
-    *(float *)((int)&CStack_b0 + (uint)bVar10 * -8 + 4) = afStack_74[(uint)bVar10 * -2 + 1];
+    CStack_b0.x = CStack_74.x;
+    *(uint *)((int)&CStack_b0 + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&CStack_74 + (uint)bVar10 * -8 + 4);
     this_ptr_01 = 0x01C57074;
-    *(float *)((int)&CStack_b0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+    *(uint *)((int)&CStack_b0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004b6f80
               (this_ptr_01,position,euler_angles,iVar7,iVar4);
     pCVar2 = *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
@@ -254,12 +255,12 @@ LAB_0049f3c7:
       afStack_c8[0] = fStack_17c + fStack_170;
       afStack_c8[1] = fStack_178 + fStack_16c;
       afStack_84[3] = fStack_180 + fStack_174;
-      afStack_74[(uint)bVar10 * -2] = afStack_c8[(uint)bVar10 * -2];
-      afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+      *(float *)((int)&CStack_74 + (uint)bVar10 * -8) = afStack_c8[(uint)bVar10 * -2];
+      *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =
            afStack_c8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
       fStack_60 = afStack_84[3] * _DAT_005dc97f;
-      afStack_5c[0] = afStack_74[0] * _DAT_005dc97f;
-      afStack_5c[1] = afStack_74[1] * _DAT_005dc97f;
+      afStack_5c[0] = CStack_74.x * _DAT_005dc97f;
+      afStack_5c[1] = CStack_74.y * _DAT_005dc97f;
       aCStack_54[0].x = afStack_84[3] * _DAT_005dc97f;
       *(float *)((int)aCStack_54 + (uint)bVar10 * -8 + 4) = afStack_5c[(uint)bVar10 * -2];
       *(float *)((int)aCStack_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =

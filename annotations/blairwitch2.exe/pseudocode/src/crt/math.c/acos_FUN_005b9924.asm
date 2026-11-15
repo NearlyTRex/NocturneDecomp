@@ -7,8 +7,8 @@
 ; XREF[15]:
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 at 00449a2c
 ;   core_dirmat.cpp_angleFromSinCos_FUN_00449610 at 004496c1
+;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045b06a
 ;   core_doc.cpp_FUN_00453d80 at 00454368
-;   core_doc.cpp_FUN_0045ab40 at 0045b06a
 ;   core_doc.cpp_adjustAimAngleForOffset_FUN_00459db0 at 00459dfd
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049e32a
 ;   core_fire.cpp_safeAcos_FUN_004933c0 at 004933ff

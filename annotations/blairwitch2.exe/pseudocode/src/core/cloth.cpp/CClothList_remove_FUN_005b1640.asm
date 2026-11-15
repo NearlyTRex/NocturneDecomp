@@ -17,8 +17,8 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   core_necklace.cpp_FUN_005ade00
 ;   crt_unknown.c_FUN_005b7fdc
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 005b16a1 (CONDITIONAL_JUMP)  ; LAB_005b16a1
     PUSH 0x0                            ; 005b168d
     PUSH EAX                            ; 005b168f
-    CALL core_necklace.cpp_FUN_005ade00 ; 005b1690
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 005b1690
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005b1695
     PUSH EAX                            ; 005b1698
     CALL crt_unknown.c_FUN_005b7fdc     ; 005b1699

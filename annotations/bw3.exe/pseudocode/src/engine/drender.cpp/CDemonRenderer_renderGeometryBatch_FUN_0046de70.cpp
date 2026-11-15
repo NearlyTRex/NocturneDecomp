@@ -70,7 +70,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046de70(
             ((_DAT_01c6e2b4 & 5) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(iVar3,&aCStack_68[0].x);
           if (2 < DAT_007e3e88) {
-            core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);
+            engine_zraster_c_rasterizeTriangle_FUN_005a1ea0
+                      ((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);
           }
         }
         else if ((_DAT_01c6e2b4 & 0x200) == 0) {
@@ -117,7 +118,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046de70(
           else {
             core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(iVar3,&aCStack_68[0].x);
             if (2 < DAT_007e3e88) {
-              core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);
+              engine_zraster_c_rasterizeTriangle_FUN_005a1ea0
+                        ((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);
             }
           }
         }

@@ -9,6 +9,14 @@
 // Address: 00534c80
 float __cdecl fastInvSqrt(float dist_sq);
 
+// Original: core_cloth.cpp_CCloth_ctor_FUN_005adda0
+// Address: 005adda0
+CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
+
+// Original: core_cloth.cpp_CCloth_dtor_FUN_005ade00
+// Address: 005ade00
+CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
+
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_005ade20
 // Address: 005ade20
 void __cdecl CCloth::allocMemory(CCloth *this_ptr);

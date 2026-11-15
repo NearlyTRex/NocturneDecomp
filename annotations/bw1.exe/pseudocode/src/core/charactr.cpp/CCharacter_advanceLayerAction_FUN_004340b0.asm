@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00474400 at 00474562
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 00474562
 ;   core_scat.cpp_CScat_updateWeaponState_FUN_00541e30 at 00541ee1
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 00590846
 ;

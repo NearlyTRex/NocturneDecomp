@@ -1120,7 +1120,8 @@ LAB_0051cae3:
   if ((pCVar5 != (CDemonActor *)0x0) && (this_ptr->weapon == (CWeapon *)0x0)) {
     fStack_5c = core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(this_ptr);
     local_18 = (CDeformableModelInstance *)fStack_5c;
-    local_18 = (CDeformableModelInstance *)core_prye_cpp_FUN_0051c0f0();
+    local_18 = (CDeformableModelInstance *)
+               core_prye_cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(this_ptr);
     _DAT_01ed36d8 =
          (1.0 - (this_ptr->aim_pitch - fStack_5c) / ((float)local_18 - fStack_5c)) *
          (float)_DAT_005cd3bf;

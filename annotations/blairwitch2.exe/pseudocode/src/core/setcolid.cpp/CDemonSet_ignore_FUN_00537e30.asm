@@ -17,7 +17,7 @@
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a1804
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439404
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a972
-;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a46
+;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045aca2
 ;   ... and 34 more
 ;
 ; Referenced Globals:

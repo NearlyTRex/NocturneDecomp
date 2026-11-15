@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 68,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "pseudocode_lines": 32,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_pointer_store"
     ],
-    "total_lines": 85
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -44,7 +46,7 @@
     {
       "addr": "00410370",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_00410370"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_00410370"
     },
     {
       "addr": "0043f900",
@@ -174,7 +176,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
+      "line": 17,
       "match": "*(CHero **)(iVar1 + 0x1d5ba04",
       "severity": "moderate",
       "text": "if (this_ptr == *(CHero **)(iVar1 + 0x1d5ba04)) {",
@@ -182,19 +184,43 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 26,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "iVar1 = core_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x20,0);",
+      "text": "((CFlame *)(pCVar3[-1].height_cache_tags[4] + 0x20),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar5[-1].",
+      "line": 28,
+      "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
       "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pCVar6[-1].part_data.texture_set_indices + 7),1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&pCVar4[-4].base.previous_transform_state.orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&pCVar4[-4].base.previous_transform_state.orientation",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

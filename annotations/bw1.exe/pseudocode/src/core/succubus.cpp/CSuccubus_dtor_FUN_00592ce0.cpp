@@ -12,7 +12,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *thi
   CMorph *pCVar1;
   CClothList *pCVar2;
   CDeformableModelInstance *pCVar3;
-  int iVar4;
+  CFlame *pCVar4;
   CSuccubus *pCVar5;
   void *ptr;
   
@@ -26,8 +26,9 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *thi
                      ((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x15].filenames[4] + 0x24),0);
-  iVar4 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);
-  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar4 + -0x93c),0);
+  pCVar4 = core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30
+                     ((CFlame *)&pCVar3[-4].bone_origins[0x23].z,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar4[-4].base.vtable,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
   pCVar5 = (CSuccubus *)

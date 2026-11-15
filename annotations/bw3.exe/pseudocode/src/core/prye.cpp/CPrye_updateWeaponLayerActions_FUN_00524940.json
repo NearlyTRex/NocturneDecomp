@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1358,
-    "complexity_score": 1797,
+    "complexity_score": 1798,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 642,
+    "pseudocode_lines": 643,
     "suspect_count": 110,
     "suspect_types": [
       "bit_int_float_compare",
@@ -22,7 +22,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2000
+    "total_lines": 2001
   },
   "cross_references": [
     {
@@ -82,14 +82,14 @@
       "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0"
     },
     {
+      "addr": "0047b230",
+      "is_variadic": false,
+      "name": "core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047b230"
+    },
+    {
       "addr": "0047b1e0",
       "is_variadic": false,
       "name": "core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0"
-    },
-    {
-      "addr": "0047b230",
-      "is_variadic": false,
-      "name": "core_dynamite.cpp_FUN_0047b230"
     },
     {
       "addr": "0048c150",
@@ -102,19 +102,19 @@
       "name": "core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0"
     },
     {
-      "addr": "004dbaa0",
+      "addr": "004dcda0",
       "is_variadic": false,
-      "name": "core_inv.cpp_CInventory_removeItem_FUN_004dbaa0"
+      "name": "core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0"
     },
     {
       "addr": "004dba80",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dba80"
+      "name": "core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80"
     },
     {
-      "addr": "004dcda0",
+      "addr": "004dbaa0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dcda0"
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004dbaa0"
     },
     {
       "addr": "004f6930",
@@ -1169,7 +1169,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 579,
+      "line": 580,
       "match": "DAT_007e1a50",
       "severity": "mild",
       "text": "pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);",
@@ -1177,7 +1177,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 597,
+      "line": 598,
       "match": "DAT_007e1a50",
       "severity": "mild",
       "text": "((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -1185,7 +1185,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 600,
+      "line": 601,
       "match": "DAT_007e1a50",
       "severity": "mild",
       "text": "((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -1321,7 +1321,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 582,
+      "line": 583,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,0,(int)pCVar5,0,0);",
@@ -1425,7 +1425,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 590,
+      "line": 591,
       "match": "pCVar11 = (T *)&pCVar11->FIELD",
       "severity": "moderate",
       "text": "pCVar11 = (CInventory *)&pCVar11->owner;",

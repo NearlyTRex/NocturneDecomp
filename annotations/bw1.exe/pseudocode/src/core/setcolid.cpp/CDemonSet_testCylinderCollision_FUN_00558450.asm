@@ -44,7 +44,7 @@
 ; XREF[7]:
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 at 0042d9f1
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a255
-;   core_doc.cpp_FUN_004712b0 at 00471763
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0 at 00471763
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004df179
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058e00b
 ;   core_trash.cpp_CTrash_process_FUN_0059a370 at 0059aa12

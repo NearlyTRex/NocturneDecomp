@@ -749,11 +749,11 @@ LAB_004b9228:
       }
       if (iStack_14c == iStack_150) {
         DAT_01cb80f8 = (byte)((uint)iStack_14c >> 8) ^ (byte)((uint)iStack_150 >> 8);
-        core_game_cpp_FUN_004b8e10(&DAT_005d7ecb,0);
-        core_game_cpp_FUN_004b8e10("CMelee",0);
-        core_game_cpp_FUN_004b8e10("CMeleeAxe",0);
-        core_game_cpp_FUN_004b8e10("CCross",0);
-        core_game_cpp_FUN_004b8e10("CBoxActor","Lantern");
+        core_game_cpp_giveHeroWeapon_FUN_004b8e10(&DAT_005d7ecb,(char *)0x0);
+        core_game_cpp_giveHeroWeapon_FUN_004b8e10("CMelee",(char *)0x0);
+        core_game_cpp_giveHeroWeapon_FUN_004b8e10("CMeleeAxe",(char *)0x0);
+        core_game_cpp_giveHeroWeapon_FUN_004b8e10("CCross",(char *)0x0);
+        core_game_cpp_giveHeroWeapon_FUN_004b8e10("CBoxActor","Lantern");
         pCVar11 = (CAmmo *)operator_new(0x47c);
         if (pCVar11 == (CAmmo *)0x0) {
           pCVar11 = (CAmmo *)0x0;

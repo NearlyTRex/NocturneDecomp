@@ -7,11 +7,11 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00536c90 at 00536f46
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80 at 00533d2a
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00535ef3
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535c24
-;   core_set.cpp_FUN_00536c90 at 00536f46
-;   core_set.cpp_FUN_00536f90 at 00537235
+;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_00536f90 at 00537235
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   binary_mode
 ;
 ; XREF[15]:
-;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f2e
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 00435156
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 at 00438f2e
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010c0
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029dc
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015af

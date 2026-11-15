@@ -10022,6 +10022,101 @@
    "a": "005fcfc0",
    "b": "0059a0b0",
    "note": "rasterizeTriangle_FUN_005fcfc0. Read by hand (high): Same size, same two callers (clipAndFillPoly, renderGeometryBatch) and the same callee chain as nocedit...."
+  },
+  {
+   "a": "00407920",
+   "b": "004078f0",
+   "note": "renderPrim_FUN_00407920. Read by hand: Same core: prim->type checked in [0,0x43) then CALL [type*4 + MRGL handler table]. BW drops the 'Bad prim'/'Bad input pointer' error paths. Same slot after dispatchMRGLBlockChain."
+  },
+  {
+   "a": "00412720",
+   "b": "0040f2b0",
+   "note": "CFlame_arrdtor50_FUN_00412720. Read by hand: BW is PUSH g_CFlameTypeInfo; PUSH 0x32; __arrfini, matching nocedit CFlame_arrdtor50 (00412720). Nocedit staticInit calls registerActorClass instead."
+  },
+  {
+   "a": "0041b590",
+   "b": "00417c00",
+   "note": "boundingBoxExtent_FUN_0041b590. Read by hand: BW computes max-min ([box+0xc..] FSUB [box..]) into an ESI output, which is nocedit boundingBoxExtent (0041b590: FLD [+0xc]; FSUB [0]). There is no FADD or 0.5 multiply as in bo..."
+  },
+  {
+   "a": "0041b6b0",
+   "b": "00417d10",
+   "note": "SBodyPartFire_arrdtor2_FUN_0041b6b0. Read by hand: BW is PUSH g_SBodyPartFireTypeInfo; PUSH 2; __arrfini, called from CBodyPart_dtor. That matches nocedit SBodyPartFire_arrdtor2 (0041b6b0)."
+  },
+  {
+   "a": "0041b700",
+   "b": "00417d60",
+   "note": "getLocalBoundingBoxCenter_FUN_0041b700. Read by hand: Same math: vtbl getBoundingBox, (min+max)*0.5 constant, z += double constant. Same slot right after staticInit and before getWorldBoundingBoxCenter. The vtbl is +0x2b0 slot +0x2..."
+  },
+  {
+   "a": "0043f200",
+   "b": "00434650",
+   "note": "CLZWDictionary_writeCodeSequence_FUN_0043f200. Read by hand: Both are recursive (this, code, stream) with node = [this+0x10]+code*16, prefix at +4, recurse when prefix>=0, emit byte at node+0, return dword at node; both called from CLZWDe..."
+  },
+  {
+   "a": "00457f00",
+   "b": "00446f50",
+   "note": "showHelpFile_FUN_00457f00. Read by hand: Same body as nocedit shape/design.c showHelpFile (00457f00): clearInputAndWait, getFile('help',name,'rt'), clearScreen, fgets 0x4f, drawText loop, same 0x58 frame. It follows dc..."
+  },
+  {
+   "a": "004a8d20",
+   "b": "00487c80",
+   "note": "CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20. Read by hand: BW calls vtbl getBoundingBox, 3x getRandomFloatFromRange, then localToWorldPoint, matching nocedit CEmitter_getRandomBoundingBoxPoint (004a8d20) callee for callee. Not factoryFu..."
+  },
+  {
+   "a": "004cbce0",
+   "b": "004a67a0",
+   "note": "doNothing_FUN_004cbce0. Read by hand: Both are a lone RET called from initializeGameSystems, in the slot right after the unit's staticInit. Nocedit has only this one stub in the unit."
+  },
+  {
+   "a": "00524e00",
+   "b": "004fd450",
+   "note": "CDemonMission_countDamageableEnemies_FUN_00524e00. Read by hand: BW 'XOR EAX,EAX; RET' is called from CGame_runGameSession right after CPickList_dtor with the result stored into a game field. That is exactly where nocedit calls countDamageabl..."
+  },
+  {
+   "a": "005250a0",
+   "b": "004fd620",
+   "note": "getObjectGrabPointLocal_FUN_005250a0. Read by hand: Same body as BW boneguy getLocalBoundingBoxCenter and nocedit: vtbl bbox, (min+max)*0.5, z += double. Same slot right after mobster staticInit and before getObjectGrabPointWorld."
+  },
+  {
+   "a": "00544f00",
+   "b": "00510dc0",
+   "note": "CFont_getLineSpacing_FUN_00544f00. Read by hand: Both are 'XOR EAX,EAX; RET' and the last function of palette.cpp's CFont group (after dtor/drawText-slot functions). It is the only zero-stub in the bracket: a positional tiny-s..."
+  },
+  {
+   "a": "0056cd60",
+   "b": "005301d0",
+   "note": "CDemonSet_renderOpaqueActors_FUN_0056cd60. Read by hand: Same callees in order: setLightingParameters, setFlatColor, setRenderAlpha(0xffff), vtbl render, enableFaceCapture(1), setupMirrorRendering(0), restoreCameraAfterMirror, setFlat..."
+  },
+  {
+   "a": "0056cf00",
+   "b": "00530410",
+   "note": "CDemonSet_renderTransparentActors_FUN_0056cf00. Read by hand: Same sequence as the opaque pass minus setRenderAlpha, vtbl slot +0xc to +0x1c (opaque is +0x8 to +0x18). It directly follows BW 005301d0, matching nocedit's opaque then transpa..."
+  },
+  {
+   "a": "005dcab0",
+   "b": "00573940",
+   "note": "CTextureCache_ctor_FUN_005dcab0. Read by hand: BW zeroes [0], [+0x18004], [+0x18008], memsets 0x18000 bytes at +4 and returns this. Called by initTextureCache right after operator new(0x1800c), so it is the revised texture c..."
+  },
+  {
+   "a": "005dd8e0",
+   "b": "00575010",
+   "note": "clearTextureCache_FUN_005dd8e0. Read by hand: Both push the global texture cache and call CTextureCache_freeTextures; shared callers showMainGameMenu and CDemonMission_freeAllAssets. Same slot after loadTextureAndGetData. B..."
+  },
+  {
+   "a": "005ecac0",
+   "b": "00588670",
+   "note": "allocateRenderBuffers_FUN_005ecac0. Read by hand: Identical shape: malloc(w*h*bpp/8) into back buffer with fatal error at line 0xea, then malloc(w*h*4+0x40) aligned to 16 with line 0xef error. BW uses plain malloc instead of de..."
+  },
+  {
+   "a": "005ecba0",
+   "b": "00588740",
+   "note": "freeRenderBuffers_FUN_005ecba0. Read by hand: Same two-step free of back buffer (0x00622010) and frame/Z buffer (0x02661af0, clears 0x0070c62c), the exact globals set by BW 00588670. BW uses plain free instead of debugFree."
+  },
+  {
+   "a": "005fcf80",
+   "b": "0059a070",
+   "note": "findRasterizerEdge_FUN_005fcf80. Read by hand: BW is instruction-identical to nocedit engine/zraster.c findRasterizerEdge (005fcf80): count global, array scan, match y and != exclude, rewrite count; stride 0x50 vs 0x48. It i..."
   }
  ]
 }

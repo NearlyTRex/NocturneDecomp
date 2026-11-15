@@ -2,25 +2,25 @@
 // Address: 004427e0
 // Address Range: [[004427e0, 00442826]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_flushBitBuffer_FUN_004427e0(int *param_1,int *param_2)
+// Signature: int __cdecl support_codec_cpp_flushBitBuffer_FUN_004427e0(SBitBuffer *bit_buffer,void *ostream)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_flushBitBuffer_FUN_004427e0(int *param_1,int *param_2)
+int __cdecl support_codec_cpp_flushBitBuffer_FUN_004427e0(SBitBuffer *bit_buffer,void *ostream)
 
 {
   int iVar1;
   
-  iVar1 = support_codec_cpp_FUN_004427a0(param_1,param_2);
+  iVar1 = support_codec_cpp_FUN_004427a0(bit_buffer,ostream);
   if (-1 < iVar1) {
-    if (*param_1 < 1) {
+    if (bit_buffer->bits_available < 1) {
       iVar1 = 0;
     }
     else {
-      iVar1 = (**(code **)(*param_2 + 4))(param_2,(char)param_1[1]);
+      iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)bit_buffer->accumulated_bits);
       if (-1 < iVar1) {
-        *param_1 = 0;
-        param_1[1] = 0;
+        bit_buffer->bits_available = 0;
+        bit_buffer->accumulated_bits = 0;
         return 0;
       }
     }

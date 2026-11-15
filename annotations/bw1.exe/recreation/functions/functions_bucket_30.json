@@ -1472,15 +1472,26 @@
     "calls":[
       "005c1066"
     ],
-    "conv":"unknown",
+    "cls":"CFlame",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_0040ee30",
-    "name":"core_armour.cpp_FUN_0040ee30",
-    "receiver":false,
+    "method":"arrdtor50",
+    "name":"core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CFlame",
+      "ptr":1
     },
     "tu":"core/armour.cpp",
     "variadic":false
@@ -4190,14 +4201,33 @@
       "00442490",
       "004425b0"
     ],
-    "conv":"unknown",
+    "cls":"CLZWDictionary",
+    "conv":"__cdecl",
     "instructions":98,
-    "method":"FUN_004431b0",
-    "name":"support_codec.cpp_FUN_004431b0",
-    "receiver":false,
+    "method":"readCodeFromStream",
+    "name":"support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"istream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -6381,14 +6411,25 @@
       "005b7b30",
       "005b7c00"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_0046e630",
-    "name":"core_doc.cpp_FUN_0046e630",
-    "receiver":false,
+    "method":"extractTurnPose",
+    "name":"core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630",
+    "params":[
+      {
+        "name":"out_pose",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -6402,14 +6443,25 @@
     "calls":[
       "00524a40"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":211,
-    "method":"FUN_0046e730",
-    "name":"core_doc.cpp_FUN_0046e730",
-    "receiver":false,
+    "method":"updateTurnBlending",
+    "name":"core_doc.cpp_CDoc_updateTurnBlending_FUN_0046e730",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -6435,14 +6487,15 @@
       "00559220",
       "00559250"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":494,
-    "method":"FUN_004712b0",
-    "name":"core_doc.cpp_FUN_004712b0",
-    "receiver":false,
+    "method":"tryPlaceObject",
+    "name":"core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -15220,14 +15273,26 @@
     "calls":[
       "005c03c0"
     ],
-    "conv":"unknown",
+    "cls":"CMotionList",
+    "conv":"__cdecl",
     "instructions":266,
-    "method":"FUN_00523db0",
-    "name":"core_motion.cpp_FUN_00523db0",
-    "receiver":false,
+    "method":"save",
+    "name":"core_motion.cpp_CMotionList_save_FUN_00523db0",
+    "params":[
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/motion.cpp",
@@ -15773,27 +15838,18 @@
     "callers":[
       "005b1ad0"
     ],
+    "cls":"CFont",
     "conv":"__cdecl",
     "instructions":4,
-    "method":"FUN_00531eb0",
-    "name":"core_npc.cpp_FUN_00531eb0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CFont",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"ctor",
+    "name":"engine_palette.cpp_CFont_ctor_FUN_00531eb0",
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CFont",
       "ptr":1
     },
-    "tu":"core/npc.cpp",
+    "tu":"engine/palette.cpp",
     "variadic":false
   },
   {
@@ -21203,14 +21259,14 @@
     "calls":[
       "005965d0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_00597c30",
-    "name":"engine_texture.cpp_FUN_00597c30",
+    "method":"clearTextureCache",
+    "name":"engine_texture.cpp_clearTextureCache_FUN_00597c30",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/texture.cpp",

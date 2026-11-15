@@ -11,8 +11,8 @@
 ;   WatcomTypeInfo g_CSvetlanaTypeInfo
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
 ;   core_hero.cpp_CHero_dtor_FUN_004ce3d0
-;   core_necklace.cpp_FUN_005ade00
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
@@ -30,14 +30,14 @@ section .text
     PUSH 0x0                            ; 00571a3c
     ADD EBX,0x60178                     ; 00571a3e
     PUSH EBX                            ; 00571a44
-    CALL core_necklace.cpp_FUN_005ade00 ; 00571a45
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 00571a45
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00571a4a
     PUSH 0x0                            ; 00571a4d
     SUB EAX,0x3ab30                     ; 00571a4f
     PUSH EAX                            ; 00571a54
-    CALL core_necklace.cpp_FUN_005ade00 ; 00571a55
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 00571a55
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00571a5a
     PUSH 0x1                            ; 00571a5d
     LEA EBX,[EAX + 0xfffda9b8]          ; 00571a5f

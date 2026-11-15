@@ -25,7 +25,7 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004488e6
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a43d
 ;   core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160 at 00473427
-;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 0047547e
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0 at 00472759
 ;   ... and 40 more
 ;
 ; Called Functions:

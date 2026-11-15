@@ -13,9 +13,9 @@
 #include "types/classes/CDjien.h"
 #include "types/classes/CDoc.h"
 #include "types/classes/CEnemy.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -111,22 +111,22 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0046899
 void __cdecl core_doc_cpp_staticInit_FUN_004689b0(void);
 float core_doc_cpp_FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 undefined4 core_doc_cpp_FUN_00468a90(CDemonActor *param_1);
-float core_doc_cpp_FUN_00468b80(CDemonActor *param_1);
+float __cdecl core_doc_cpp_getCarriedObjectVerticalOffset_FUN_00468b80(CDemonActor *object);
 CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_00468c50(void);
 CDemonActorType * __cdecl core_doc_cpp_CDoc_getActorType_FUN_00468c70(CDoc *this_ptr);
 CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_time);
-void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2);
-void core_doc_cpp_FUN_0046bde0(CHero *param_1,float param_2);
+void __cdecl core_doc_cpp_CDoc_processFrame_FUN_00469550(CDoc *this_ptr,float delta_time);
+void __cdecl core_doc_cpp_CDoc_processMotionEvents_FUN_0046bde0(CDoc *this_ptr,float delta_time);
 float __cdecl core_doc_cpp_CDoc_getCarryLightIntensity_FUN_0046c980(CDoc *this_ptr);
-void core_doc_cpp_FUN_0046c9e0(int param_1);
-void core_doc_cpp_FUN_0046caa0(CDoc *param_1);
-void core_doc_cpp_FUN_0046e630(int param_1,SPose *param_2);
-void core_doc_cpp_FUN_0046e730(int param_1,float param_2);
+CVector3f * __stack_esi core_doc_cpp_CDoc_getHandsMidpoint_FUN_0046c9e0(CDoc *this_ptr,CVector3f *out_position);
+void __cdecl core_doc_cpp_CDoc_updateProceduralAnimation_FUN_0046caa0(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_extractTurnPose_FUN_0046e630(CDoc *this_ptr,SPose *out_pose);
+void __cdecl core_doc_cpp_CDoc_updateTurnBlending_FUN_0046e730(CDoc *this_ptr,float delta_time);
 void __cdecl core_doc_cpp_CDoc_setPositionAndOrientation_FUN_0046ea40(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_0046ea80(CDoc *this_ptr);
-void core_doc_cpp_FUN_0046f200(int param_1,int param_2);
-void core_doc_cpp_FUN_0046f610(int param_1,int param_2);
-float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int param_3);
+void __cdecl core_doc_cpp_CDoc_applyArmAimRotation_FUN_0046f200(CDoc *this_ptr,int arm_side);
+void __cdecl core_doc_cpp_CDoc_updateWeaponPosition_FUN_0046f610(CDoc *this_ptr,int hand_index);
+CMatrix3x4f * __stack3_esi core_doc_cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740(CDoc *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 

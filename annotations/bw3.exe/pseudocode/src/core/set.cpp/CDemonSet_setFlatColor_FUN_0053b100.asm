@@ -18,8 +18,8 @@
 ;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea2f1
 ;   core_moon.cpp_CMoon_render_FUN_004f9670 at 004f9789
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 at 00534771
-;   core_set.cpp_FUN_005326b0 at 00532758
-;   core_set.cpp_FUN_00536c90 at 00536ebb
+;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00536c90 at 00536ebb
+;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_00536f90 at 005371be
 ;   ... and 1 more
 ;
 ; *****************************************************************************

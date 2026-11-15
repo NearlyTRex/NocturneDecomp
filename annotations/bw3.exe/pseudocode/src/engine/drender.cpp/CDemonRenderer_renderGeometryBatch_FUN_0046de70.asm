@@ -22,13 +22,13 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_asgaya.cpp_FUN_005a1ea0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_clipper.c_clipAndRasterize_FUN_0043a840
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004673d0
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0
+;   engine_zraster.c_rasterizeTriangle_FUN_005a1ea0
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
         ;   XREF to: 0046df54 (CONDITIONAL_JUMP)  ; LAB_0046df54
     PUSH EDI                            ; 0046df46
     PUSH 0x7e3e8c                       ; 0046df47
-    CALL core_asgaya.cpp_FUN_005a1ea0   ; 0046df4c
-        ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)  ; undefined core_asgaya.cpp_FUN_005a1ea0()
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005a1ea0 ; 0046df4c
+        ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005a1ea0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0046df51
         ;   Label: LAB_0046df51
     MOV EDX,dword ptr [ESP + 0x50]      ; 0046df54
@@ -315,8 +315,8 @@ section .text
         ;   XREF to: 0046e036 (CONDITIONAL_JUMP)  ; LAB_0046e036
     PUSH EAX                            ; 0046e103
     PUSH 0x7e3e8c                       ; 0046e104
-    CALL core_asgaya.cpp_FUN_005a1ea0   ; 0046e109
-        ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)  ; undefined core_asgaya.cpp_FUN_005a1ea0()
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005a1ea0 ; 0046e109
+        ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005a1ea0(SRenderVertex * vertex_buffer, int vertex_count)
     JMP 0x0046e033                      ; 0046e10e
         ;   XREF to: 0046e033 (UNCONDITIONAL_JUMP)  ; LAB_0046e033
 

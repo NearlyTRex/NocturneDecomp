@@ -140,7 +140,7 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_005960d0(CTextureList *this_
 void __cdecl core_texlist_cpp_CTextureList_save_FUN_00596390(CTextureList *this_ptr,char *filename);
 void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005964f0(CTextureList *this_ptr);
 void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00596530(CTextureList *this_ptr,uint texture_index);
-undefined4 * core_texlist_cpp_FUN_00596560(undefined4 *param_1);
+CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_00596560(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005965c0(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005965d0(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureCache *this_ptr);
@@ -162,7 +162,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00597a2
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00597aa0(SMRGLTextureBasic *texture_info);
 void engine_texture_cpp_FUN_00597ac0(SMRGLTextureBasic *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 void engine_texture_cpp_FUN_00597b80(void);
-void engine_texture_cpp_FUN_00597c30(void);
+void __cdecl engine_texture_cpp_clearTextureCache_FUN_00597c30(void);
 void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00597c60(SMRGLTextureBasic *texture);
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00597c90(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_00597cc0(int enabled);
@@ -188,7 +188,7 @@ void __cdecl core_thehand_cpp_CTheHand_setup_FUN_005990d0(CTheHand *this_ptr);
 void __cdecl core_thehand_cpp_CTheHand_process_FUN_00599150(CTheHand *this_ptr,float delta_time);
 int __cdecl core_thehand_cpp_CTheHand_renderOpaque_FUN_00599890(CTheHand *this_ptr);
 void __cdecl core_thehand_cpp_CTheHand_archive_FUN_005998d0(CTheHand *this_ptr);
-undefined4 core_thehand_cpp_FUN_00599910(CDemonActor *param_1,char *param_2);
+int __cdecl core_thehand_cpp_CTheHand_findNearbyTarget_FUN_00599910(CTheHand *this_ptr,char *class_name);
 int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_thehand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0(CTheHand *this_ptr);
 void core_thehand_cpp_FUN_00599be0(int param_1);

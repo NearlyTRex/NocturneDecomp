@@ -137,7 +137,7 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
 void __cdecl core_prye_cpp_CPrye_processFrame_FUN_00518cd0(CPrye *this_ptr,float delta_time);
 void __cdecl core_prye_cpp_CPrye_processMotionEvents_FUN_0051b550(CPrye *this_ptr,float delta_time);
 float __cdecl core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(CPrye *this_ptr);
-undefined4 core_prye_cpp_FUN_0051c0f0(void);
+float __cdecl core_prye_cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(CPrye *this_ptr);
 CVector3f * __stack_esi core_prye_cpp_CPrye_getHandsMidpoint_FUN_0051c100(CPrye *this_ptr,CVector3f *out_position);
 void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_extractTurnPose_FUN_0051e280(CPrye *this_ptr,SPose *out_pose);

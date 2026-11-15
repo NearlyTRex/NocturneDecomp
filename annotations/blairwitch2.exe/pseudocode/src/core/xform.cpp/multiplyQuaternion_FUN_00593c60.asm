@@ -15,7 +15,7 @@
 ; XREF[16]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429bbe
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d86
-;   core_doc.cpp_FUN_00450c60 at 0045176e
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 0045176e
 ;   core_doc.cpp_FUN_00455d10 at 00455e06
 ;   core_doc.cpp_FUN_004562a0 at 00456375
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbfe

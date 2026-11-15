@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00474400 at 0047446b
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 0047446b
 ;
 ; *****************************************************************************
 

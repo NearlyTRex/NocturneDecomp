@@ -31,8 +31,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40
 ;   engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90
-;   engine_ini.cpp_FUN_004d8d40
 ;   sound_sndmain.cpp_getAudioFormat_FUN_00558330
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20
@@ -145,8 +145,8 @@ section .text
     FSTP float ptr [ESP]                ; 00559632
     PUSH 0x5d3e5e                       ; 00559635 | = "MaxSwLatency"
     PUSH EBP                            ; 0055963a
-    CALL engine_ini.cpp_FUN_004d8d40    ; 0055963b
-        ;   XREF to: 004d8d40 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8d40()
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40 ; 0055963b
+        ;   XREF to: 004d8d40 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40(CIniFile * this_ptr, char * key, float value)
     ADD ESP,0xc                         ; 00559640
     CALL sound_sndmain.cpp_isSoundMuted_FUN_00556750 ; 00559643
         ;   XREF to: 00556750 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00556750()
@@ -199,8 +199,8 @@ section .text
     PUSH EAX                            ; 005596d2
     PUSH EBP                            ; 005596d3
     INC EBX                             ; 005596d4
-    CALL engine_ini.cpp_FUN_004d8d40    ; 005596d5
-        ;   XREF to: 004d8d40 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8d40()
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40 ; 005596d5
+        ;   XREF to: 004d8d40 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8d40(CIniFile * this_ptr, char * key, float value)
     MOV ECX,dword ptr [0x00604224]      ; 005596da | DAT_00604224
     ADD ESP,0xc                         ; 005596e0
     CMP EBX,ECX                         ; 005596e3

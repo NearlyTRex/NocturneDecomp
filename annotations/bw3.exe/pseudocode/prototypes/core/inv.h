@@ -53,9 +53,9 @@ void __cdecl CInventory::initialize(CInventory *this_ptr);
 // Address: 004da570
 void __cdecl loadAssets(void);
 
-// Original: core_inv.cpp_FUN_004da840
+// Original: core_inv.cpp_freeInventory_FUN_004da840
 // Address: 004da840
-void FUN_004da840(void);
+void __cdecl freeInventory(void);
 
 // Original: core_inv.cpp_CInventory_addItem_FUN_004da880
 // Address: 004da880
@@ -69,17 +69,17 @@ void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weap
 // Address: 004db990
 CDemonActor * __cdecl CInventory::findItemByName(CInventory *this_ptr,char *item_name);
 
-// Original: core_inv.cpp_FUN_004db9e0
+// Original: core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0
 // Address: 004db9e0
-int __cdecl FUN_004db9e0(CInventory *this_ptr,char *class_name);
+CDemonActor * __cdecl CInventory::findItemOfClass(CInventory *this_ptr,char *class_name);
 
 // Original: core_inv.cpp_FUN_004dba30
 // Address: 004dba30
 undefined4 FUN_004dba30(int param_1,int param_2);
 
-// Original: core_inv.cpp_FUN_004dba80
+// Original: core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80
 // Address: 004dba80
-bool FUN_004dba80(CInventory *param_1,char *param_2);
+int __cdecl CInventory::hasItemOfClass(CInventory *this_ptr,char *class_name);
 
 // Original: core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
 // Address: 004dbaa0
@@ -125,13 +125,13 @@ void setupItems(int param_1);
 // Address: 004dcb40
 int __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004dcda0
+// Original: core_inv.cpp_CInventory_getActiveLightGun_FUN_004dcda0
 // Address: 004dcda0
-undefined4 FUN_004dcda0(void);
+void * __cdecl CInventory::getActiveLightGun(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004dcdb0
+// Original: core_inv.cpp_CInventory_updateInventory_FUN_004dcdb0
 // Address: 004dcdb0
-void FUN_004dcdb0(CInventory *param_1);
+void __cdecl CInventory::updateInventory(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 // Address: 004dd2d0

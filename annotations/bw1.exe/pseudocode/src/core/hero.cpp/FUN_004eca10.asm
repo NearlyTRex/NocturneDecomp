@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_00469550 at 0046a4eb
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a4eb
 ;   core_doc.cpp_FUN_00474ef0 at 00474f24
 ;
 ; Referenced Globals:

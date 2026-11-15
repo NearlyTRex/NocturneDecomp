@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_doc.cpp_FUN_0046f200 at 0046f264
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f264
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8e75
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005422d9
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058ab11

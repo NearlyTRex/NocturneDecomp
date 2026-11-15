@@ -129,8 +129,8 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610(CMirror 
 CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
 CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_004f5a60(SClipPlane *this_ptr);
-void core_mirror_cpp_FUN_004f5a70(void);
-void core_mission_cpp_FUN_004f5aa0(int param_1);
+void __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_004f5a70(SClipPlane *this_ptr,uint flags);
+void __cdecl core_mission_cpp_CDemonMission_reset_FUN_004f5aa0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004f5b70(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_004f5b80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *this_ptr,char *mission_filename,int load_flags);

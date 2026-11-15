@@ -440,6 +440,6 @@ LAB_004b8594:
   core_set_cpp_CDemonSet_clearLights_FUN_00537520(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00484f10(&g_CPickList);
-  core_inv_cpp_FUN_004da840();
+  core_inv_cpp_freeInventory_FUN_004da840();
   return local_1c;
 }

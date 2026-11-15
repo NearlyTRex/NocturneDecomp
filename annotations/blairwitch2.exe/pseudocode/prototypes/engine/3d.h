@@ -349,9 +349,9 @@ void __cdecl setRenderingQuality(int quality);
 // Address: 004078b0
 void __cdecl dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 
-// Original: engine_3d.c_FUN_004078f0
+// Original: engine_3d.c_renderPrim_FUN_004078f0
 // Address: 004078f0
-void FUN_004078f0(int *param_1);
+void __cdecl renderPrim(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_flushRenderQueue_FUN_00407980
 // Address: 00407980

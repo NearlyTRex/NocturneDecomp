@@ -49,7 +49,7 @@
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e9e7
 ;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051cbea
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130 at 0054c169
-;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058eb7a
+;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058eb7a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1fd4

@@ -24,11 +24,11 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
-;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
 ;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
+;   engine_zraster.c_rasterizeTriangle_FUN_005bf120
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
         ;   XREF to: 00484874 (CONDITIONAL_JUMP)  ; LAB_00484874
     PUSH EDI                            ; 00484866
     PUSH 0x7c7558                       ; 00484867
-    CALL core_zombie.cpp_FUN_005bf120   ; 0048486c
-        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005bf120 ; 0048486c
+        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 00484871
         ;   Label: LAB_00484871
     MOV EDX,dword ptr [ESP + 0x50]      ; 00484874
@@ -315,8 +315,8 @@ section .text
         ;   XREF to: 00484956 (CONDITIONAL_JUMP)  ; LAB_00484956
     PUSH EAX                            ; 00484a23
     PUSH 0x7c7558                       ; 00484a24
-    CALL core_zombie.cpp_FUN_005bf120   ; 00484a29
-        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005bf120 ; 00484a29
+        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
     JMP 0x00484953                      ; 00484a2e
         ;   XREF to: 00484953 (UNCONDITIONAL_JUMP)  ; LAB_00484953
 

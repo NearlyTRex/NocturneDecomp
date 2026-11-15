@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_0046bde0 at 0046bf15
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0 at 0046bf15
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0

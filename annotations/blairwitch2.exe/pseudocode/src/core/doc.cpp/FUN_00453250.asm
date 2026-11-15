@@ -44,7 +44,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00450c60 at 00450ec2
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00450ec2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_doc_cpp_005d000b

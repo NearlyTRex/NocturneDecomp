@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_005438d0 at 0054421d
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 0054421d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shb_attack_wav_005d1332

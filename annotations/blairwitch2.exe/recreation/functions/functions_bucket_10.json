@@ -3161,15 +3161,26 @@
     "calls":[
       "005b854f"
     ],
-    "conv":"unknown",
+    "cls":"SBodyPartFire",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_00417d10",
-    "name":"core_bodypart.cpp_FUN_00417d10",
-    "receiver":false,
+    "method":"arrdtor2",
+    "name":"core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10",
+    "params":[
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SBodyPartFire",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -6299,14 +6310,33 @@
       "00537fa0",
       "005469a0"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":424,
-    "method":"FUN_0045b510",
-    "name":"core_doc.cpp_FUN_0045b510",
-    "receiver":false,
+    "method":"updateArmRecoilBlend",
+    "name":"core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"is_weapon_active",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -11195,14 +11225,32 @@
       "004fcda0",
       "005b8c30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":136,
-    "method":"FUN_004b8e10",
-    "name":"core_game.cpp_FUN_004b8e10",
+    "method":"giveHeroWeapon",
+    "name":"core_game.cpp_giveHeroWeapon_FUN_004b8e10",
+    "params":[
+      {
+        "name":"class_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"item_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -15361,17 +15409,51 @@
   },
   {
     "addr":"00511b90",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_00511b90",
-    "name":"core_passngr.cpp_FUN_00511b90",
+    "method":"queuePush",
+    "name":"core_path.cpp_queuePush_FUN_00511b90",
+    "params":[
+      {
+        "name":"grid_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"cost",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"grid_z",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"direction",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
-    "tu":"core/passngr.cpp",
+    "tu":"core/path.cpp",
     "variadic":false
   },
   {
@@ -16949,14 +17031,15 @@
       "005342e0",
       "005344c0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":172,
-    "method":"FUN_00530410",
-    "name":"core_set.cpp_FUN_00530410",
-    "receiver":false,
+    "method":"renderTransparentActors",
+    "name":"core_set.cpp_CDemonSet_renderTransparentActors_FUN_00530410",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/set.cpp",
@@ -21578,14 +21661,14 @@
     "calls":[
       "005739b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_00575010",
-    "name":"engine_texture.cpp_FUN_00575010",
+    "method":"clearTextureCache",
+    "name":"engine_texture.cpp_clearTextureCache_FUN_00575010",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/texture.cpp",
@@ -23972,17 +24055,35 @@
   },
   {
     "addr":"00599e10",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":94,
-    "method":"FUN_00599e10",
-    "name":"core_zombie.cpp_FUN_00599e10",
+    "method":"addRasterizerEdge",
+    "name":"engine_zraster.c_addRasterizerEdge_FUN_00599e10",
+    "params":[
+      {
+        "name":"v0",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
-    "tu":"core/zombie.cpp",
+    "tu":"engine/zraster.c",
     "variadic":false
   },
   {

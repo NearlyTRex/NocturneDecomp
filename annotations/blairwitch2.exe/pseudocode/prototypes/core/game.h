@@ -153,9 +153,9 @@ void __cdecl CGame::processHotkeys(CGame *this_ptr);
 // Address: 004b8d90
 int __cdecl checkCheatCode(char *cheat_string);
 
-// Original: core_game.cpp_FUN_004b8e10
+// Original: core_game.cpp_giveHeroWeapon_FUN_004b8e10
 // Address: 004b8e10
-void FUN_004b8e10(char *param_1,char *param_2);
+void __cdecl giveHeroWeapon(char *class_name,char *item_name);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0
 // Address: 004b8fd0

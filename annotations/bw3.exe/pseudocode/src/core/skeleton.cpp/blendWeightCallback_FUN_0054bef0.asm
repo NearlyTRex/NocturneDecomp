@@ -19,7 +19,7 @@
 ;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c284
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130 at 0054c157
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c7e2
-;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058eb60
+;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058eb60
 ;
 ; *****************************************************************************
 

@@ -5,6 +5,10 @@
 // Function prototypes for engine/palette.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_palette.cpp_CFont_ctor_FUN_00531eb0
+// Address: 00531eb0
+CFont * __cdecl CFont::ctor(CFont *this_ptr);
+
 // Original: engine_palette.cpp_CFont_dtor_FUN_00531ed0
 // Address: 00531ed0
 CFont * __cdecl CFont::dtor(CFont *this_ptr,uint flags);
@@ -17,6 +21,6 @@ undefined4 FUN_00531ee0(int *param_1,char *param_2,int param_3,int param_4,int p
 // Address: 005320b0
 void FUN_005320b0(int *param_1);
 
-// Original: engine_palette.cpp_FUN_00532120
+// Original: engine_palette.cpp_CFont_getLineSpacing_FUN_00532120
 // Address: 00532120
-undefined4 FUN_00532120(void);
+int __cdecl CFont::getLineSpacing(CFont *this_ptr);

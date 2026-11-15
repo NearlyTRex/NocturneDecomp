@@ -161,9 +161,9 @@ CQuaternion4f * __stack_esi quaternionFromAngleZ(float angle_radians,CQuaternion
 // Address: 00594060
 void quaternionFromAxisAngle(float param_1,float *param_2);
 
-// Original: core_xform.cpp_FUN_005940b0
+// Original: core_xform.cpp_quaternionToEulerAngles_FUN_005940b0
 // Address: 005940b0
-undefined4 * FUN_005940b0(float *param_1);
+undefined1 quaternionToEulerAngles(void);
 
 // Original: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00594210
 // Address: 00594210

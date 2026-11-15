@@ -9,7 +9,7 @@
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00571a30(CSvetlana *this_ptr,uint flags)
 
 {
-  int iVar1;
+  CCloth *pCVar1;
   CSvetlana *pCVar2;
   void *ptr;
   
@@ -18,9 +18,10 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00571a30(CSvetlana *thi
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->hair_cloth,0);
-  iVar1 = core_necklace_cpp_FUN_005ade00(iVar1 + -0x3ab30,0);
-  pCVar2 = (CSvetlana *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)(iVar1 + -0x25648),1);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_005ade00(&this_ptr->hair_cloth,0);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_005ade00(pCVar1 + -1,0);
+  pCVar2 = (CSvetlana *)
+           core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar1[-1].vertices[0x130].force.y,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

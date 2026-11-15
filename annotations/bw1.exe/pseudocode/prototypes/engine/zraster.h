@@ -5,6 +5,14 @@
 // Function prototypes for engine/zraster.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_zraster.c_addRasterizerEdge_FUN_005bee80
+// Address: 005bee80
+void __cdecl addRasterizerEdge(SRenderVertex *v0,SRenderVertex *v1);
+
+// Original: engine_zraster.c_rasterizeTriangle_FUN_005bf120
+// Address: 005bf120
+void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);
+
 // Original: engine_zraster.c_rasterizePolygonCustom_FUN_005bf640
 // Address: 005bf640
 void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

@@ -46,7 +46,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     }
   }
   _freopen("stderr.txt","wt",(_FILE *)&DAT_00626308);
-  core_flattn_cpp_FUN_004bf770();
+  core_flattn_cpp_doNothing_FUN_004bf770();
   core_inivar_cpp_readIniData_FUN_004f4f50();
   _DAT_02c8337c = 2;
   engine_pod_cpp_CPod_init_FUN_0053c8a0(&g_CDemonPodPtr->base);
@@ -476,7 +476,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&CStack_28,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_0057cb30(0x02C82A60);
   iVar6 = 0;
-  core_mission_cpp_FUN_0051a2d0();
+  core_mission_cpp_CDemonMission_reset_FUN_0051a2d0(0x01D2C900);
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);

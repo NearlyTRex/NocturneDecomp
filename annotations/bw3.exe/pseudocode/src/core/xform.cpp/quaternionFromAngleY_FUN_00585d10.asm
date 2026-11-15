@@ -18,7 +18,7 @@
 ;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c50e
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e0e0
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c813
-;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058ebde
+;   core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 at 0058ebde
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d81ab

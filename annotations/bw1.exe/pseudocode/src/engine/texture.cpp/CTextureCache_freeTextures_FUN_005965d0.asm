@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   engine_texture.cpp_CTextureCache_reset_FUN_005965c0 at 005965c5
-;   engine_texture.cpp_FUN_00597c30 at 00597c37
+;   engine_texture.cpp_clearTextureCache_FUN_00597c30 at 00597c37
 ;   engine_texture.cpp_freeTextureCache_FUN_005979d0 at 005979f7
 ;
 ; Referenced Globals:

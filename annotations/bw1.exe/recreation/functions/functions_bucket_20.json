@@ -677,14 +677,24 @@
   },
   {
     "addr":"00407720",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_00407720",
-    "name":"engine_3d.c_FUN_00407720",
+    "method":"renderPrim",
+    "name":"engine_3d.c_renderPrim_FUN_00407720",
+    "params":[
+      {
+        "name":"primitive",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -3743,15 +3753,25 @@
     "callers":[
       "00544460"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00428120",
-    "name":"core_bugs.cpp_FUN_00428120",
+    "method":"getDeformableModelName",
+    "name":"core_bugs.cpp_getDeformableModelName_FUN_00428120",
+    "params":[
+      {
+        "name":"model_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDeformableModelInstance",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/bugs.cpp",
     "variadic":false
@@ -7613,14 +7633,15 @@
       "005c1d04",
       "005c1d69"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":1717,
-    "method":"FUN_0046caa0",
-    "name":"core_doc.cpp_FUN_0046caa0",
-    "receiver":false,
+    "method":"updateProceduralAnimation",
+    "name":"core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -7692,14 +7713,33 @@
       "005c0357",
       "005c1d04"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":763,
-    "method":"FUN_004724a0",
-    "name":"core_doc.cpp_FUN_004724a0",
-    "receiver":false,
+    "method":"autoAimAtThreat",
+    "name":"core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0",
+    "params":[
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -7715,15 +7755,26 @@
       "0045f3e0",
       "0045f690"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__stack_esi",
     "instructions":38,
-    "method":"FUN_004742a0",
-    "name":"core_doc.cpp_FUN_004742a0",
-    "receiver":false,
+    "method":"getThrowDirection",
+    "name":"core_doc.cpp_CDoc_getThrowDirection_FUN_004742a0",
+    "params":[
+      {
+        "name":"out_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/doc.cpp",
     "variadic":false
@@ -7803,17 +7854,28 @@
   },
   {
     "addr":"00476220",
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "data_refs":[
       "005fee28"
     ],
     "instructions":16,
-    "method":"FUN_00476220",
-    "name":"core_doc.cpp_FUN_00476220",
-    "receiver":false,
+    "method":"drawWeapon",
+    "name":"core_doc.cpp_CDoc_drawWeapon_FUN_00476220",
+    "params":[
+      {
+        "name":"drawn",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -17182,17 +17244,18 @@
   },
   {
     "addr":"00532120",
-    "conv":"unknown",
+    "cls":"CFont",
+    "conv":"__cdecl",
     "data_refs":[
       "006045c0"
     ],
     "instructions":2,
-    "method":"FUN_00532120",
-    "name":"engine_palette.cpp_FUN_00532120",
-    "receiver":false,
+    "method":"getLineSpacing",
+    "name":"engine_palette.cpp_CFont_getLineSpacing_FUN_00532120",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/palette.cpp",
@@ -18713,15 +18776,34 @@
     "calls":[
       "005c1066"
     ],
-    "conv":"unknown",
+    "cls":"C3DSCamera",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_005561a0",
-    "name":"core_set.cpp_FUN_005561a0",
+    "method":"arrdtor250",
+    "name":"core_set.cpp_C3DSCamera_arrdtor250_FUN_005561a0",
+    "params":[
+      {
+        "name":"objs",
+        "type":{
+          "kind":"class",
+          "name":"C3DSCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"C3DSCamera",
+      "ptr":1
     },
     "tu":"core/set.cpp",
     "variadic":false
@@ -23574,8 +23656,8 @@
     ],
     "conv":"unknown",
     "instructions":57,
-    "method":"FUN_005abf20",
-    "name":"wincore_wddvmem.cpp_FUN_005abf20",
+    "method":"allocateRenderBuffers",
+    "name":"wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005abf20",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -24219,8 +24301,8 @@
     ],
     "conv":"__cdecl",
     "instructions":373,
-    "method":"FUN_005bf120",
-    "name":"core_zombie.cpp_FUN_005bf120",
+    "method":"rasterizeTriangle",
+    "name":"engine_zraster.c_rasterizeTriangle_FUN_005bf120",
     "params":[
       {
         "name":"vertex_buffer",
@@ -24245,7 +24327,7 @@
       "name":"void",
       "ptr":0
     },
-    "tu":"core/zombie.cpp",
+    "tu":"engine/zraster.c",
     "variadic":false
   },
   {

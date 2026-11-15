@@ -11,7 +11,7 @@
 void __cdecl engine_mini3d_cpp_resetTextureCache_FUN_00512250(void)
 
 {
-  engine_texture_cpp_FUN_00597c30();
+  engine_texture_cpp_clearTextureCache_FUN_00597c30();
   if ((_DAT_02c8348c != (code *)0x0) && (_DAT_01c50948 != 0)) {
     (*_DAT_02c8348c)();
     return;

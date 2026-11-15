@@ -226,12 +226,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bodypart.cpp, Suspects: 0
     - [alt_frame_pointer] at 00416c68: MOV ESI,ESP
 
-  core_bodypart.cpp_FUN_00416cb0
-    File: core/bodypart.cpp, Suspects: 11
+  core_bodypart.cpp_boundingBoxExtent_FUN_00416cb0
+    File: core/bodypart.cpp, Suspects: 0
     - [alt_frame_pointer] at 00416cc7: MOV ESI,ESP
 
-  core_boneguy.cpp_FUN_00416e90
-    File: core/boneguy.cpp, Suspects: 39
+  core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00416e90
+    File: core/boneguy.cpp, Suspects: 34
     - [stack_alignment] at 00416e98: AND ESP,0xfffffff8
 
   core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00416f50
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 25.8 suspects/function
+  With stack patterns:    avg 25.5 suspects/function
   Without stack patterns: avg 6.4 suspects/function

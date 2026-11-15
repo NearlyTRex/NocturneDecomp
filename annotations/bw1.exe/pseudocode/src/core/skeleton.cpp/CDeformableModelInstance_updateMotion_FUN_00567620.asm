@@ -92,7 +92,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_doc.cpp_FUN_0046e630 at 0046e66e
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630 at 0046e66e
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8e48
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0 at 005675af
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0 at 00567601

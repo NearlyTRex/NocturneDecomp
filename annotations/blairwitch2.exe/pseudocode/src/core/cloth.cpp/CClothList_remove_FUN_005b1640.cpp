@@ -12,7 +12,7 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_005b1640(CClothList *this_ptr,
 
 {
   char cVar1;
-  uint uVar2;
+  CCloth *pCVar2;
   char *pcVar3;
   char (*pacVar4) [40];
   char (*pacVar5) [40];
@@ -26,8 +26,8 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_005b1640(CClothList *this_ptr,
     core_main_c_displayErrorAndQuit_FUN_004e4500("CClothList::remove - invalid index");
   }
   if (this_ptr->cloths[index] != (CCloth *)0x0) {
-    uVar2 = core_necklace_cpp_FUN_005ade00(this_ptr->cloths[index],0);
-    FUN_005b7fdc(uVar2);
+    pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_005ade00(this_ptr->cloths[index],0);
+    FUN_005b7fdc(pCVar2);
   }
   iVar6 = index + 1;
   if (iVar6 < this_ptr->count) {

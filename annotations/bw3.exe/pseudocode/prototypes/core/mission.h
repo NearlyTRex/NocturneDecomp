@@ -5,9 +5,9 @@
 // Function prototypes for core/mission.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_mission.cpp_FUN_004f5aa0
+// Original: core_mission.cpp_CDemonMission_reset_FUN_004f5aa0
 // Address: 004f5aa0
-void FUN_004f5aa0(int param_1);
+void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70
 // Address: 004f5b70

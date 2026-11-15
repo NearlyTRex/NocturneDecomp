@@ -117,18 +117,6 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 // Address: 00599d70
 CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_00599e10
-// Address: 00599e10
-void FUN_00599e10(void);
-
-// Original: core_zombie.cpp_FUN_0059a070
-// Address: 0059a070
-int * FUN_0059a070(void);
-
-// Original: core_zombie.cpp_FUN_0059a0b0
-// Address: 0059a0b0
-void __cdecl FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
-
 // Original: core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0
 // Address: 0059a5d0
 void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

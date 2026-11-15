@@ -11,10 +11,12 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint f
 {
   CDemonActor *this_ptr_00;
   CMorph *pCVar1;
-  int iVar2;
-  CClothList *pCVar3;
-  CDeformableModelInstance *pCVar4;
-  CMimic *pCVar5;
+  CCloth *pCVar2;
+  CFlame *pCVar3;
+  int iVar4;
+  CClothList *pCVar5;
+  CDeformableModelInstance *pCVar6;
+  CMimic *pCVar7;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -29,19 +31,20 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint f
   }
   this_ptr->morph_target_actor = (CDemonActor *)0x0;
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80(&this_ptr->morph,0);
-  iVar2 = core_necklace_cpp_FUN_005ade00
-                    (pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30,0);
-  iVar2 = core_armour_cpp_FUN_0040f2b0(iVar2 + -0xd1a0,0);
-  iVar2 = core_muzzle_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
-  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
-                     ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
-  pCVar5 = (CMimic *)
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_005ade00
+                     ((CCloth *)(pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30),0);
+  pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0
+                     ((CFlame *)(pCVar2[-1].vertices[0x28e].connected_indices + 0xf),0);
+  iVar4 = core_muzzle_cpp_FUN_0059df70(&pCVar3[-3].base.particle_systems[3].max_particles,0);
+  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar4 + -0x34c),0);
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
+                     ((CDeformableModelInstance *)(pCVar5[-0x19].filenames[6] + 0x10),0);
+  pCVar7 = (CMimic *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
+                     ((CDemonActor *)(pCVar6[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return pCVar7;
   }
-  FUN_005b7fdc(pCVar5);
-  return pCVar5;
+  FUN_005b7fdc(pCVar7);
+  return pCVar7;
 }

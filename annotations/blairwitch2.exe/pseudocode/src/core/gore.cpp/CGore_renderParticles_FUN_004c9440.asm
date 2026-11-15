@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fce6
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0 at 005300a7
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f5cc
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 at 0052f163
-;   core_set.cpp_FUN_0052fea0 at 005300a7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

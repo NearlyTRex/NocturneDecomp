@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 167,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 80
+    "total_lines": 81
   },
   "cross_references": [
     {
       "addr": "00469550",
       "from_addr": "0046a273",
-      "name": "core_doc.cpp_FUN_00469550",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,13 +33,13 @@
     ],
     "convention": "unknown",
     "name": "core_doc.cpp_FUN_00474ef0",
-    "signature": "void core_doc_cpp_FUN_00474ef0(int param_1)"
+    "signature": "void core_doc_cpp_FUN_00474ef0(CDoc *param_1)"
   },
   "function_calls": [
     {
       "addr": "004712b0",
       "is_variadic": false,
-      "name": "core_doc.cpp_FUN_004712b0"
+      "name": "core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0"
     },
     {
       "addr": "00475890",
@@ -60,7 +59,7 @@
       {
         "call_addr": "0046a273",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00469550",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +113,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_doc_cpp_FUN_00474ef0(int param_1)",
+      "text": "void core_doc_cpp_FUN_00474ef0(CDoc *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -122,7 +121,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc1e4) != 0) && (*(int *)(param_1 + 0x1ff5c) == 0)) {",
+      "text": "if (((param_1->base).player_input.action_state.fire != 0) && ((param_1->base).action_pending == 0)",
       "type": "unnamed_param"
     },
     {
@@ -130,15 +129,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc1e4) != 0) && (*(int *)(param_1 + 0x1ff5c) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_doc_cpp_FUN_00475890(param_1);",
+      "text": "if (((param_1->base).player_input.action_state.fire != 0) && ((param_1->base).action_pending == 0)",
       "type": "unnamed_param"
     },
     {
@@ -146,7 +137,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar1 == 0) && (*(int *)(param_1 + 0x1ffac) == 0)) {",
+      "text": "iVar1 = core_doc_cpp_FUN_00475890(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -154,55 +145,55 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
+      "text": "if ((iVar1 == 0) && (param_1->guns_drawn == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar1 = core_hero_cpp_FUN_004eca10(param_1,0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x158))(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x158))(param_1);",
+      "text": "(*(((param_1->base).base.base.vtable._uh)->_uh).doHeroAction)(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x158))(param_1);",
+      "text": "(*(((param_1->base).base.base.vtable._uh)->_uh).doHeroAction)(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_doc_cpp_FUN_004712b0(param_1);",
+      "text": "iVar1 = core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc1e4) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc1e4) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {

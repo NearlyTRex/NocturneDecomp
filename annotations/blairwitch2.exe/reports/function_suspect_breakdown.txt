@@ -4,66 +4,66 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2077 functions
-  1 suspects: 922 functions
-  2 suspects: 483 functions
-  3 suspects: 300 functions
-  4 suspects: 181 functions
+  0 suspects: 2081 functions
+  1 suspects: 881 functions
+  2 suspects: 514 functions
+  3 suspects: 310 functions
+  4 suspects: 182 functions
   5 suspects: 136 functions
-  6 suspects: 139 functions
+  6 suspects: 140 functions
   7 suspects: 119 functions
-  8 suspects: 104 functions
+  8 suspects: 105 functions
   9 suspects: 92 functions
-  10 suspects: 65 functions
-  11 suspects: 68 functions
-  12 suspects: 75 functions
+  10 suspects: 67 functions
+  11 suspects: 67 functions
+  12 suspects: 74 functions
   13 suspects: 53 functions
-  14 suspects: 60 functions
-  15 suspects: 42 functions
-  16 suspects: 33 functions
-  17 suspects: 40 functions
-  18 suspects: 38 functions
+  14 suspects: 58 functions
+  15 suspects: 40 functions
+  16 suspects: 32 functions
+  17 suspects: 41 functions
+  18 suspects: 36 functions
   19 suspects: 25 functions
   20 suspects: 31 functions
   21 suspects: 25 functions
-  22 suspects: 23 functions
-  23 suspects: 14 functions
+  22 suspects: 22 functions
+  23 suspects: 13 functions
   24 suspects: 24 functions
   25 suspects: 20 functions
-  26 suspects: 24 functions
-  27 suspects: 23 functions
+  26 suspects: 25 functions
+  27 suspects: 24 functions
   28 suspects: 12 functions
   29 suspects: 23 functions
   30 suspects: 14 functions
-  31 suspects: 20 functions
+  31 suspects: 21 functions
   32 suspects: 19 functions
   33 suspects: 10 functions
-  34 suspects: 15 functions
+  34 suspects: 17 functions
   35 suspects: 9 functions
-  36 suspects: 12 functions
+  36 suspects: 11 functions
   37 suspects: 13 functions
-  38 suspects: 9 functions
-  39 suspects: 10 functions
+  38 suspects: 10 functions
+  39 suspects: 8 functions
   40 suspects: 13 functions
   41 suspects: 10 functions
-  42 suspects: 6 functions
-  43 suspects: 6 functions
+  42 suspects: 5 functions
+  43 suspects: 5 functions
   44 suspects: 7 functions
   45 suspects: 9 functions
   46 suspects: 11 functions
   47 suspects: 12 functions
   48 suspects: 8 functions
   49 suspects: 8 functions
-  50 suspects: 4 functions
+  50 suspects: 5 functions
   51 suspects: 6 functions
   52 suspects: 7 functions
   53 suspects: 6 functions
   54 suspects: 7 functions
-  55 suspects: 4 functions
-  56 suspects: 3 functions
+  55 suspects: 5 functions
+  56 suspects: 2 functions
   57 suspects: 5 functions
   58 suspects: 7 functions
-  59 suspects: 6 functions
+  59 suspects: 7 functions
   60 suspects: 2 functions
   61 suspects: 5 functions
   62 suspects: 2 functions
@@ -72,14 +72,14 @@ SUSPECT COUNT DISTRIBUTION
   65 suspects: 4 functions
   66 suspects: 4 functions
   67 suspects: 5 functions
-  68 suspects: 5 functions
+  68 suspects: 4 functions
   69 suspects: 2 functions
   70 suspects: 6 functions
   71 suspects: 7 functions
   72 suspects: 2 functions
   74 suspects: 5 functions
   75 suspects: 1 functions
-  77 suspects: 3 functions
+  77 suspects: 2 functions
   78 suspects: 1 functions
   79 suspects: 1 functions
   80 suspects: 2 functions
@@ -123,6 +123,7 @@ SUSPECT COUNT DISTRIBUTION
   183 suspects: 1 functions
   184 suspects: 1 functions
   186 suspects: 1 functions
+  191 suspects: 1 functions
   195 suspects: 1 functions
   196 suspects: 1 functions
   199 suspects: 1 functions
@@ -138,13 +139,12 @@ SUSPECT COUNT DISTRIBUTION
   318 suspects: 1 functions
   351 suspects: 1 functions
   355 suspects: 1 functions
-  619 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [warning_overlapping_globals] (560 functions)
+  [warning_overlapping_globals] (559 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0042 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -163,6 +163,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_mini3d.cpp_isClippingEnabled_FUN_004f5de0   (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_mini3d.cpp_getColor_FUN_004f8f90            (  5 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_path.cpp_isPathfindingQueueEmpty_FUN_00511b70 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_isSoundMuted_FUN_00550bc0        (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -228,8 +230,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_mini3d.cpp_disableUserClip_FUN_004f5f00     (  6 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    core_passngr.cpp_FUN_00511b70                      (  6 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_setNextSfxVolume_FUN_00550270    (  6 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_0055 (  6 lines)
@@ -266,7 +266,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_sound.cpp_CSound_setVolumeFade_FUN_0055b1b0   (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_texture.cpp_FUN_00575010                    (  7 lines)
+    engine_texture.cpp_clearTextureCache_FUN_00575010  (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_texture.cpp_updateTextureWithPalette_FUN_00 (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -1044,8 +1044,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     shape_edittool.cpp_CInputString_calcX_FUN_0047aef0 ( 34 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    core_gabriela.cpp_CGabriella_ctor_FUN_004ad2c0     ( 34 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_mp3.cpp_CFileBitStream_init_FUN_005048e0     ( 34 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_pod.cpp_CPod_mount_FUN_0051b110             ( 34 lines)
@@ -1267,7 +1265,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_matrix.c_matrixPushAndTransform_FUN_004e8fd (206 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
 
-  [undefined_data] (122 functions)
+  [undefined_data] (123 functions)
   ------------------------------------------------------------
     engine_2d.c_getTextWrapEnabled_FUN_00402800        (  4 lines)
       return DAT_0060936c;...
@@ -1481,6 +1479,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if (((byte *)(this_ptr->base).base.validation_magic == &DAT_...
     core_set.cpp_CDemonSet_addLightFilter_FUN_00534770 ( 30 lines)
       *out_master_light = *(CDemonLight **)(&DAT_01fc8d04 + iVar5 ...
+    shape_design.c_showHelpFile_FUN_00446f50           ( 31 lines)
+      if (DAT_006141bc + -0xb < iStack_14) {...
     core_shadow.cpp_CShadow_archive_FUN_0053e860       ( 31 lines)
       core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->type,&...
     core_werewolf.cpp_CWerewolf_archive_FUN_0058d7e0   ( 31 lines)
@@ -1513,151 +1513,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(weapon_actor,...
     core_charactr.cpp_CCharacter_archive_FUN_00422c30  ( 78 lines)
       if (DAT_007bc038 == 1) {...
-
-  [negative_offset] (71 functions)
-  ------------------------------------------------------------
-    core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0  (  6 lines)
-      return (SBodyPartFire *)&pCVar1[-1].do_visibility_check;...
-    core_bodypart.cpp_SBodyPartModel_ctor_FUN_00417cf0 (  6 lines)
-      return (SBodyPartModel *)(pCVar1[-1].model_name + 0xec);...
-    core_fire.cpp_CToss_dtor_FUN_0049ed50              (  6 lines)
-      return (CToss *)&pCVar1[-1].scrape_points[0].raytrace_inters...
-    core_fire.cpp_CStake_ctor_FUN_0049ef10             (  6 lines)
-      return (CStake *)&pCVar1[-1].is_valid;...
-    core_fire.cpp_CStake_dtor_FUN_0049ef30             (  6 lines)
-      return (CStake *)&pCVar1[-1].is_valid;...
-    core_vehicle.cpp_CTire_ctor_FUN_00584e50           (  6 lines)
-      return (CTire *)(pCVar1[-1].model_name + 0xf0);...
-    core_script.cpp_CScript_dtor_FUN_00521600          (  7 lines)
-      return (CScript *)&pCVar1[-4].vtable;...
-    core_set.cpp_CDemonSet_dtor_FUN_0052c060           (  7 lines)
-      return (CDemonSet *)&pCVar1[-1].enabled;...
-    sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810     (  7 lines)
-      return (CSfxSample *)&pCVar1[-10].buffer_alloc;...
-    core_fire.cpp_CToss_ctor_FUN_00499270              (  9 lines)
-      return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_inters...
-    core_moon.cpp_CMoon_dtor_FUN_00502390              (  9 lines)
-      return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z...
-    core_moon.cpp_CMoon_ctor_FUN_00502350              ( 11 lines)
-      pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;...
-    core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780    ( 14 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_simbox.cpp_CSimBox_dtor_FUN_00540510          ( 19 lines)
-      core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)...
-    core_necklace.cpp_CNecklace_dtor_FUN_005add30      ( 19 lines)
-      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
-    core_boxactor.cpp_CBoxActor_dtor_FUN_0041d830      ( 20 lines)
-      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
-    support_codec.cpp_CLZWDecompress_dtor_FUN_004354f0 ( 20 lines)
-      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
-    support_codec.cpp_CLZWCompress_dtor_FUN_00435550   ( 20 lines)
-      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
-    core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70      ( 20 lines)
-      ((CWeapon *)&pCVar1[-3].previous_transform_state.dirty_flags...
-    core_flamecan.cpp_CFlameCan_dtor_FUN_004a0c40      ( 20 lines)
-      ((CDemonActor *)(pCVar1[-2].create_event + 0x54),1);...
-    core_glass.cpp_CGlass_dtor_FUN_004c72f0            ( 20 lines)
-      ((CDemonActor *)&pCVar1[-3].reflection.corner3,1);...
-    core_stone.cpp_CTempleStone_dtor_FUN_005624f0      ( 20 lines)
-      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
-    core_vessel.cpp_CCryptVessel_dtor_FUN_00585cd0     ( 20 lines)
-      ((CDemonActor *)(pCVar1[-2].orient_matrix.m + 1),1);...
-    core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004 ( 21 lines)
-      core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90((SPageReso...
-    core_weapon.cpp_CWeapon_dtor_FUN_00589ae0          ( 21 lines)
-      ((CDemonActor *)&pCVar1[-2].linear_velocity_local,1);...
-    core_bodypart.cpp_CBodyPart_dtor_FUN_00415800      ( 23 lines)
-      iVar2 = core_bodypart_cpp_FUN_00417d10(&pCVar1[-4].scrape_po...
-    core_moloch.cpp_CMoloch_dtor_FUN_00501400          ( 24 lines)
-      ((CDeformableModelInstance *)&pCVar1[-3].models[0].textures[...
-    core_beast.cpp_CBeast_dtor_FUN_00414c10            ( 25 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980      ( 25 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_villain.cpp_CSteuben_dtor_FUN_005a5d70        ( 25 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_bwsearch.cpp_CSearchParty_dtor_FUN_005a8e80   ( 25 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_belling.cpp_CBelling_dtor_FUN_005a9130        ( 25 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_mine.cpp_CSpiritMine_dtor_FUN_005ad460        ( 25 lines)
-      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
-    core_armour.cpp_CArmour_dtor_FUN_0040f120          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_armour.cpp_CEnemy_dtor_FUN_0040f1c0           ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_batcreat.cpp_CBatCreature_dtor_FUN_00412a20   ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_batman.cpp_CBatman_dtor_FUN_00414620          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a3d0        ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_bride.cpp_CBride_dtor_FUN_0041ee50            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_bugs.cpp_CBugs_dtor_FUN_00422150              ( 26 lines)
-      (pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),...
-    core_charactr.cpp_CCharacter_dtor_FUN_0042c000     ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_construc.cpp_CConstruct_dtor_FUN_00438390     ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_cow.cpp_CZombieCow_dtor_FUN_00439c60          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_dog.cpp_CZombieDog_dtor_FUN_0045ec60          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_dracbrid.cpp_CDraculaBride_dtor_FUN_00465c60  ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_drone.cpp_CDrone_dtor_FUN_0046e1c0            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_gargoyle.cpp_CGargoyle_dtor_FUN_004c1240      ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_ghoul.cpp_CGhoul_dtor_FUN_004c47a0            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_hotdemon.cpp_CHotDemon_dtor_FUN_004d4680      ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_imp.cpp_CImp_dtor_FUN_004d80d0                ( 26 lines)
-      (pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),...
-    core_larva.cpp_CLarva_dtor_FUN_004e13a0            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_mobster.cpp_CMobster_dtor_FUN_005004f0        ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_sentinel.cpp_CSentinel_dtor_FUN_0052bb40      ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_shadow.cpp_CShadow_dtor_FUN_0053eed0          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_smiley.cpp_CSmiley_dtor_FUN_0054ad80          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_tentacle.cpp_CTentacle_dtor_FUN_005733d0      ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_tvbat.cpp_CTVBat_dtor_FUN_00581430            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_werewolf.cpp_CWerewolf_dtor_FUN_0058def0      ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_zombie.cpp_CZombie_dtor_FUN_00599d70          ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_fforest.cpp_CTwigZombie_dtor_FUN_005a2eb0     ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_schngeis.cpp_CSchnellGeist_dtor_FUN_005a3c30  ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_union.cpp_CUnion_dtor_FUN_005a5a40            ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_bwgrndma.cpp_CGrandma_dtor_FUN_005a7e10       ( 26 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_doc.cpp_CDoc_dtor_FUN_00450580                ( 27 lines)
-      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
-    core_hand.cpp_CHand_dtor_FUN_005a9d30              ( 27 lines)
-      (pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),...
-    core_helldog.cpp_CDog_dtor_FUN_005abd30            ( 27 lines)
-      (pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),...
-    core_biggs.cpp_CBiggs_dtor_FUN_00415410            ( 28 lines)
-      ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matric...
-    core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0   ( 31 lines)
-      ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matric...
-    core_hpbox.cpp_CParticleBox_dtor_FUN_005ac7f0      ( 34 lines)
-      ((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal...
-    core_mimic.cpp_CMimic_dtor_FUN_004f0400            ( 37 lines)
-      ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matric...
-    core_vampboss.cpp_CVampireBoss_ctor_FUN_00581530   ( 39 lines)
-      pCVar4[-1].rescale_enabled = 0;...
 
   [shadow_pointer_walk] (38 functions)
   ------------------------------------------------------------
@@ -1737,6 +1592,71 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar4 = (CInventory *)&pCVar4->owner;...
     core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0  ( 64 lines)
       pCVar4 = (CInventory *)&pCVar4->owner;...
+
+  [negative_offset] (31 functions)
+  ------------------------------------------------------------
+    core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0  (  6 lines)
+      return (SBodyPartFire *)&pCVar1[-1].do_visibility_check;...
+    core_bodypart.cpp_SBodyPartModel_ctor_FUN_00417cf0 (  6 lines)
+      return (SBodyPartModel *)(pCVar1[-1].model_name + 0xec);...
+    core_fire.cpp_CToss_dtor_FUN_0049ed50              (  6 lines)
+      return (CToss *)&pCVar1[-1].scrape_points[0].raytrace_inters...
+    core_fire.cpp_CStake_ctor_FUN_0049ef10             (  6 lines)
+      return (CStake *)&pCVar1[-1].is_valid;...
+    core_fire.cpp_CStake_dtor_FUN_0049ef30             (  6 lines)
+      return (CStake *)&pCVar1[-1].is_valid;...
+    core_vehicle.cpp_CTire_ctor_FUN_00584e50           (  6 lines)
+      return (CTire *)(pCVar1[-1].model_name + 0xf0);...
+    core_script.cpp_CScript_dtor_FUN_00521600          (  7 lines)
+      return (CScript *)&pCVar1[-4].vtable;...
+    core_set.cpp_CDemonSet_dtor_FUN_0052c060           (  7 lines)
+      return (CDemonSet *)&pCVar1[-1].enabled;...
+    sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810     (  7 lines)
+      return (CSfxSample *)&pCVar1[-10].buffer_alloc;...
+    core_fire.cpp_CToss_ctor_FUN_00499270              (  9 lines)
+      return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_inters...
+    core_moon.cpp_CMoon_dtor_FUN_00502390              (  9 lines)
+      return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z...
+    core_moon.cpp_CMoon_ctor_FUN_00502350              ( 11 lines)
+      pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;...
+    core_simbox.cpp_CSimBox_dtor_FUN_00540510          ( 19 lines)
+      core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)...
+    core_necklace.cpp_CNecklace_dtor_FUN_005add30      ( 19 lines)
+      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
+    core_boxactor.cpp_CBoxActor_dtor_FUN_0041d830      ( 20 lines)
+      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
+    support_codec.cpp_CLZWDecompress_dtor_FUN_004354f0 ( 20 lines)
+      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
+    support_codec.cpp_CLZWCompress_dtor_FUN_00435550   ( 20 lines)
+      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
+    core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70      ( 20 lines)
+      ((CWeapon *)&pCVar1[-3].previous_transform_state.dirty_flags...
+    core_flamecan.cpp_CFlameCan_dtor_FUN_004a0c40      ( 20 lines)
+      ((CDemonActor *)(pCVar1[-2].create_event + 0x54),1);...
+    core_gabriela.cpp_CGabriella_dtor_FUN_004b2840     ( 20 lines)
+      ((CHero *)&pCVar1[-1].vertices[0x12f].bone_positions[0].z,1)...
+    core_glass.cpp_CGlass_dtor_FUN_004c72f0            ( 20 lines)
+      ((CDemonActor *)&pCVar1[-3].reflection.corner3,1);...
+    core_stone.cpp_CTempleStone_dtor_FUN_005624f0      ( 20 lines)
+      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
+    core_svetlana.cpp_CSvetlana_dtor_FUN_00571a30      ( 20 lines)
+      core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar1[-1].v...
+    core_vessel.cpp_CCryptVessel_dtor_FUN_00585cd0     ( 20 lines)
+      ((CDemonActor *)(pCVar1[-2].orient_matrix.m + 1),1);...
+    core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004 ( 21 lines)
+      core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90((SPageReso...
+    core_weapon.cpp_CWeapon_dtor_FUN_00589ae0          ( 21 lines)
+      ((CDemonActor *)&pCVar1[-2].linear_velocity_local,1);...
+    core_moloch.cpp_CMoloch_dtor_FUN_00501400          ( 24 lines)
+      ((CDeformableModelInstance *)&pCVar1[-3].models[0].textures[...
+    core_mine.cpp_CSpiritMine_dtor_FUN_005ad460        ( 25 lines)
+      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
+    core_doc.cpp_CDoc_dtor_FUN_00450580                ( 27 lines)
+      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal...
+    core_hpbox.cpp_CParticleBox_dtor_FUN_005ac7f0      ( 34 lines)
+      ((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal...
+    core_vampboss.cpp_CVampireBoss_ctor_FUN_00581530   ( 39 lines)
+      pCVar4[-1].rescale_enabled = 0;...
 
   [unrolled_strcpy] (28 functions)
   ------------------------------------------------------------
@@ -1970,31 +1890,22 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_schngeis.cpp_CSchnellGeist_processMotionEvent ( 59 lines)
       this_ptr_00 = 0x0264B290;...
 
-  [param_count_too_few] (5 functions)
+  [unresolved_funcptr] (7 functions)
   ------------------------------------------------------------
-    core_mission.cpp_FUN_004fd450                      (  4 lines)
-      Function declares 0 params but call sites push 2 (2 missing)...
-    engine_drender.cpp_pop_FUN_0046b4a0                (  5 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
-    engine_drender.cpp_popViewport_FUN_0046b740        (  5 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
-    core_sound.cpp_shutdownSoundSystem_FUN_0055a160    (  5 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
-    core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0    (  6 lines)
-      Function declares 1 params but call sites push 2 (1 missing)...
-
-  [unresolved_funcptr] (5 functions)
-  ------------------------------------------------------------
+    engine_3d.c_renderPrim_FUN_004078f0                ( 10 lines)
+      (*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_00403800_00609...
     support_codec.cpp_CInStreamPipe_isOpen_FUN_0043518 ( 11 lines)
       uVar2 = (**(code **)(*piVar1 + 0x1c))(piVar1);...
     sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_ ( 16 lines)
       (**(code **)(*piVar1 + 8))(piVar1);...
+    support_codec.cpp_flushBitBuffer_FUN_00433ad0      ( 19 lines)
+      iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)bit...
+    support_codec.cpp_CLZWDictionary_writeCodeSequence ( 23 lines)
+      iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)thi...
     core_menu.cpp_getSinglePressedKey_FUN_004eece0     ( 29 lines)
       iVar1 = (**(code **)*0x01D02F84)(0x01D02F84,iVar2);...
     support_codec.cpp_FUN_004346d0                     ( 32 lines)
       iVar2 = (**(code **)(*bytes_remaining + 4))...
-    support_codec.cpp_CLZWCompress_process_FUN_0043481 ( 57 lines)
-      uVar1 = (**(code **)(*(int *)istream + 4))(istream);...
 
   [unrolled_strlen] (5 functions)
   ------------------------------------------------------------
@@ -2008,6 +1919,17 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     engine_2d.c_drawTextWrappedColor_FUN_00401ec0      ( 42 lines)
       do {...
+
+  [param_count_too_few] (4 functions)
+  ------------------------------------------------------------
+    engine_drender.cpp_pop_FUN_0046b4a0                (  5 lines)
+      Function declares 0 params but call sites push 1 (1 missing)...
+    engine_drender.cpp_popViewport_FUN_0046b740        (  5 lines)
+      Function declares 0 params but call sites push 1 (1 missing)...
+    core_sound.cpp_shutdownSoundSystem_FUN_0055a160    (  5 lines)
+      Function declares 0 params but call sites push 1 (1 missing)...
+    core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0    (  6 lines)
+      Function declares 1 params but call sites push 2 (1 missing)...
 
   [preinc_loop_idiom] (3 functions)
   ------------------------------------------------------------
@@ -2025,13 +1947,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_2d.c_getInputWithPrompt_FUN_00403310        ( 39 lines)
       uStack_14._0_1_ = (char)uVar2;...
 
-  [pointer_truncation] (2 functions)
-  ------------------------------------------------------------
-    core_melee.cpp_CMelee_playAttackHitEffects_FUN_004 ( 23 lines)
-      (this_ptr,0x14,(int)pCVar1[0xe].particle_systems[3].owner);...
-    support_codec.cpp_CLZWDecompress_finalize_FUN_0043 ( 36 lines)
-      if (-1 < (int)bit_buffer) {...
-
   [unrolled_strchr] (2 functions)
   ------------------------------------------------------------
     engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ( 55 lines)
@@ -2044,10 +1959,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_inv.cpp_clampWeaponAmmoCount_FUN_004dad80     ( 10 lines)
       pCVar1[2].particle_systems[0].position.z = 2.8026e-43;...
 
-  [derived_field_index_pun] (1 functions)
+  [pointer_truncation] (1 functions)
   ------------------------------------------------------------
-    core_svetlana.cpp_CSvetlana_ctor_FUN_005701c0      ( 18 lines)
-      iVar2 = core_necklace_cpp_FUN_005adda0(pCVar1[1].base.base.a...
+    core_melee.cpp_CMelee_playAttackHitEffects_FUN_004 ( 23 lines)
+      (this_ptr,0x14,(int)pCVar1[0xe].particle_systems[3].owner);...
 
   [sign_compare_idiom] (1 functions)
   ------------------------------------------------------------
@@ -2403,6 +2318,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/special.cpp, Lines: 15, Types: ['undefined_data', 'warning_overlapping_globals']
   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_0057de80
     File: support/trstream.cpp, Lines: 15, Types: ['unaffected_reg']
+  core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780
+    File: core/basicene.cpp, Lines: 15, Types: ['negative_offset']
   engine_3d.c_processTextureCoordinates_FUN_00403aa0
     File: engine/3d.c, Lines: 16, Types: ['undefined_data']
   cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042c3e0
@@ -2479,6 +2396,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/snddx.cpp, Lines: 18, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0
     File: support/trstream.cpp, Lines: 18, Types: ['pointer_cast', 'warning_overlapping_globals']
+  engine_zraster.c_findRasterizerEdge_FUN_0059a070
+    File: engine/zraster.c, Lines: 18, Types: ['undefined_data', 'warning_overlapping_globals']
   core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0
     File: core/bmppuzzl.cpp, Lines: 18, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_0059abe0
@@ -2597,6 +2516,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/actor.cpp, Lines: 25, Types: ['undefined_data', 'unrolled_strcpy']
   core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0
     File: core/actor.cpp, Lines: 25, Types: ['undefined_data', 'unrolled_strcpy']
+  core_bodypart.cpp_CBodyPart_dtor_FUN_00415800
+    File: core/bodypart.cpp, Lines: 25, Types: ['negative_offset']
   shape_edittool.cpp_CPickList_dtor_FUN_004820b0
     File: shape/edittool.cpp, Lines: 25, Types: ['negative_offset']
   core_emitter.cpp_CEmitter_setup_FUN_004869b0
@@ -2619,6 +2540,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndwav.cpp, Lines: 25, Types: ['undefined_data', 'warning_overlapping_globals']
   core_weaver.cpp_CRobin_ctor_FUN_005a5e70
     File: core/weaver.cpp, Lines: 25, Types: ['unnamed_field', 'warning_type_propagation']
+  core_beast.cpp_CBeast_dtor_FUN_00414c10
+    File: core/beast.cpp, Lines: 26, Types: ['negative_offset']
   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044a210
     File: core/dlight.cpp, Lines: 26, Types: ['pointer_cast', 'warning_overlapping_globals']
   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_F
@@ -2637,14 +2560,82 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeleton.cpp, Lines: 26, Types: ['shadow_pointer_walk', 'unrolled_memset']
   sound_sndmain.cpp_startRecording_FUN_00553070
     File: sound/sndmain.cpp, Lines: 26, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
+  core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980
+    File: core/basicnpc.cpp, Lines: 26, Types: ['negative_offset']
+  core_villain.cpp_CSteuben_dtor_FUN_005a5d70
+    File: core/villain.cpp, Lines: 26, Types: ['negative_offset']
+  core_bwsearch.cpp_CSearchParty_dtor_FUN_005a8e80
+    File: core/bwsearch.cpp, Lines: 26, Types: ['negative_offset']
+  core_belling.cpp_CBelling_dtor_FUN_005a9130
+    File: core/belling.cpp, Lines: 26, Types: ['negative_offset']
+  core_armour.cpp_CArmour_dtor_FUN_0040f120
+    File: core/armour.cpp, Lines: 27, Types: ['negative_offset']
+  core_armour.cpp_CEnemy_dtor_FUN_0040f1c0
+    File: core/armour.cpp, Lines: 27, Types: ['negative_offset']
+  core_batcreat.cpp_CBatCreature_dtor_FUN_00412a20
+    File: core/batcreat.cpp, Lines: 27, Types: ['negative_offset']
+  core_batman.cpp_CBatman_dtor_FUN_00414620
+    File: core/batman.cpp, Lines: 27, Types: ['negative_offset']
+  core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a3d0
+    File: core/boneguy.cpp, Lines: 27, Types: ['negative_offset']
+  core_bride.cpp_CBride_dtor_FUN_0041ee50
+    File: core/bride.cpp, Lines: 27, Types: ['negative_offset']
+  core_bugs.cpp_CBugs_dtor_FUN_00422150
+    File: core/bugs.cpp, Lines: 27, Types: ['negative_offset']
+  core_charactr.cpp_CCharacter_dtor_FUN_0042c000
+    File: core/charactr.cpp, Lines: 27, Types: ['negative_offset']
+  core_construc.cpp_CConstruct_dtor_FUN_00438390
+    File: core/construc.cpp, Lines: 27, Types: ['negative_offset']
+  core_cow.cpp_CZombieCow_dtor_FUN_00439c60
+    File: core/cow.cpp, Lines: 27, Types: ['negative_offset']
+  core_dog.cpp_CZombieDog_dtor_FUN_0045ec60
+    File: core/dog.cpp, Lines: 27, Types: ['negative_offset']
+  core_dracbrid.cpp_CDraculaBride_dtor_FUN_00465c60
+    File: core/dracbrid.cpp, Lines: 27, Types: ['negative_offset']
+  core_drone.cpp_CDrone_dtor_FUN_0046e1c0
+    File: core/drone.cpp, Lines: 27, Types: ['negative_offset']
   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004724c0
     File: core/dtrace.cpp, Lines: 27, Types: ['pointer_cast', 'pointer_truncation']
   shape_edittool.cpp_CStrList_allocate_FUN_00480fa0
     File: shape/edittool.cpp, Lines: 27, Types: ['alloc_magic_size', 'warning_overlapping_globals']
+  core_gargoyle.cpp_CGargoyle_dtor_FUN_004c1240
+    File: core/gargoyle.cpp, Lines: 27, Types: ['negative_offset']
+  core_ghoul.cpp_CGhoul_dtor_FUN_004c47a0
+    File: core/ghoul.cpp, Lines: 27, Types: ['negative_offset']
+  core_hotdemon.cpp_CHotDemon_dtor_FUN_004d4680
+    File: core/hotdemon.cpp, Lines: 27, Types: ['negative_offset']
+  core_imp.cpp_CImp_dtor_FUN_004d80d0
+    File: core/imp.cpp, Lines: 27, Types: ['negative_offset']
+  core_larva.cpp_CLarva_dtor_FUN_004e13a0
+    File: core/larva.cpp, Lines: 27, Types: ['negative_offset']
+  core_mobster.cpp_CMobster_dtor_FUN_005004f0
+    File: core/mobster.cpp, Lines: 27, Types: ['negative_offset']
+  core_sentinel.cpp_CSentinel_dtor_FUN_0052bb40
+    File: core/sentinel.cpp, Lines: 27, Types: ['negative_offset']
   core_set.cpp_CDemonSet_setGamma_FUN_00534580
     File: core/set.cpp, Lines: 27, Types: ['suspect_float', 'warning_overlapping_globals']
+  core_shadow.cpp_CShadow_dtor_FUN_0053eed0
+    File: core/shadow.cpp, Lines: 27, Types: ['negative_offset']
+  core_smiley.cpp_CSmiley_dtor_FUN_0054ad80
+    File: core/smiley.cpp, Lines: 27, Types: ['negative_offset']
+  core_tentacle.cpp_CTentacle_dtor_FUN_005733d0
+    File: core/tentacle.cpp, Lines: 27, Types: ['negative_offset']
+  core_tvbat.cpp_CTVBat_dtor_FUN_00581430
+    File: core/tvbat.cpp, Lines: 27, Types: ['negative_offset']
+  core_werewolf.cpp_CWerewolf_dtor_FUN_0058def0
+    File: core/werewolf.cpp, Lines: 27, Types: ['negative_offset']
   wincore_winrun.cpp_setRegistryStringValue_FUN_0058ff40
     File: wincore/winrun.cpp, Lines: 27, Types: ['undefined_data', 'unrolled_strlen']
+  core_zombie.cpp_CZombie_dtor_FUN_00599d70
+    File: core/zombie.cpp, Lines: 27, Types: ['negative_offset']
+  core_fforest.cpp_CTwigZombie_dtor_FUN_005a2eb0
+    File: core/fforest.cpp, Lines: 27, Types: ['negative_offset']
+  core_schngeis.cpp_CSchnellGeist_dtor_FUN_005a3c30
+    File: core/schngeis.cpp, Lines: 27, Types: ['negative_offset']
+  core_union.cpp_CUnion_dtor_FUN_005a5a40
+    File: core/union.cpp, Lines: 27, Types: ['negative_offset']
+  core_bwgrndma.cpp_CGrandma_dtor_FUN_005a7e10
+    File: core/bwgrndma.cpp, Lines: 27, Types: ['negative_offset']
   engine_2d.c_clearInputAndWait_FUN_004032b0
     File: engine/2d.c, Lines: 28, Types: ['undefined_data']
   engine_3d.c_flushRenderQueue_FUN_00407980
@@ -2657,22 +2648,16 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/fldnotes.cpp, Lines: 28, Types: ['undefined_data', 'unrolled_strcpy']
   core_ground.cpp_CGround_init_FUN_004ca9c0
     File: core/ground.cpp, Lines: 28, Types: ['alloc_magic_size', 'warning_overlapping_globals']
-  core_hiram.cpp_CNPC_dtor_FUN_004d11c0
-    File: core/hiram.cpp, Lines: 28, Types: ['negative_offset']
-  core_hostage.cpp_CHostage_dtor_FUN_004d36e0
-    File: core/hostage.cpp, Lines: 28, Types: ['negative_offset']
-  core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004d4880
-    File: core/hpriest.cpp, Lines: 28, Types: ['negative_offset']
   core_lightgun.cpp_CLightGun_ctor_FUN_004e2a20
     File: core/lightgun.cpp, Lines: 28, Types: ['unnamed_field', 'warning_overlapping_globals']
   engine_special.cpp_drawPolyList3_FUN_0055fbd0
     File: engine/special.cpp, Lines: 28, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
-  core_tbplayer.cpp_CDrummer_dtor_FUN_00572060
-    File: core/tbplayer.cpp, Lines: 28, Types: ['negative_offset']
-  core_tbplayer.cpp_CBassPlayer_dtor_FUN_00572110
-    File: core/tbplayer.cpp, Lines: 28, Types: ['negative_offset']
   core_bwspart.cpp_CSimpleParticleSystem_render_FUN_005a8290
     File: core/bwspart.cpp, Lines: 28, Types: ['pointer_cast', 'undefined_data']
+  core_hand.cpp_CHand_dtor_FUN_005a9d30
+    File: core/hand.cpp, Lines: 28, Types: ['negative_offset']
+  core_helldog.cpp_CDog_dtor_FUN_005abd30
+    File: core/helldog.cpp, Lines: 28, Types: ['negative_offset']
   support_codec.cpp_CInStreamPipe_close_FUN_004351e0
     File: support/codec.cpp, Lines: 29, Types: ['unresolved_funcptr']
   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0
@@ -2681,8 +2666,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/drip.cpp, Lines: 29, Types: ['undefined_data']
   core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070
     File: core/fldnotes.cpp, Lines: 29, Types: ['undefined_data', 'warning_overlapping_globals']
-  core_hiram.cpp_CHiram_dtor_FUN_004d0f90
-    File: core/hiram.cpp, Lines: 29, Types: ['negative_offset']
   core_marquee.cpp_FUN_004e8620
     File: core/marquee.cpp, Lines: 29, Types: ['concat_reconstruction', 'warning_overlapping_globals']
   engine_matrix.c_popViewport_FUN_004ea570
@@ -2691,6 +2674,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/mini3d.cpp, Lines: 29, Types: ['undefined_data', 'warning_overlapping_globals']
   sound_sndmain.cpp_closeSoundDevice_FUN_00552c40
     File: sound/sndmain.cpp, Lines: 29, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
+  core_biggs.cpp_CBiggs_dtor_FUN_00415410
+    File: core/biggs.cpp, Lines: 30, Types: ['negative_offset']
   core_bugs.cpp_CBugs_archive_FUN_0041f7c0
     File: core/bugs.cpp, Lines: 30, Types: ['undefined_data']
   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
@@ -2735,14 +2720,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/gore.cpp, Lines: 32, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
   engine_matrix.c_normalizeVector3DFloat_FUN_004e9ae0
     File: engine/matrix.c, Lines: 32, Types: ['sub84_truncation', 'warning_overlapping_globals']
-  core_confzomb.cpp_CConfederateZombie_dtor_FUN_005a1cc0
-    File: core/confzomb.cpp, Lines: 32, Types: ['negative_offset', 'warning_type_propagation']
-  core_unionzom.cpp_CUnionZombie_dtor_FUN_005a3e70
-    File: core/unionzom.cpp, Lines: 32, Types: ['negative_offset', 'warning_type_propagation']
+  core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0
+    File: core/confedrt.cpp, Lines: 32, Types: ['negative_offset']
   core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a
     File: core/bwspart.cpp, Lines: 32, Types: ['unnamed_param']
-  core_ghostchi.cpp_CGhostChild_dtor_FUN_005a9370
-    File: core/ghostchi.cpp, Lines: 32, Types: ['negative_offset', 'warning_type_propagation']
   core_hellhag.cpp_CHag_processHealingState_FUN_005aaca0
     File: core/hellhag.cpp, Lines: 32, Types: ['warning_overlapping_globals', 'warning_type_propagation']
   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca0
@@ -2765,8 +2746,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dcamera.cpp, Lines: 34, Types: ['fast_inv_sqrt_inline', 'warning_overlapping_globals']
   support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240
     File: support/trisock.cpp, Lines: 34, Types: ['pointer_cast', 'pointer_truncation']
-  core_vampboss.cpp_CVampireBoss_dtor_FUN_005837e0
-    File: core/vampboss.cpp, Lines: 34, Types: ['negative_offset']
   core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers
     File: core/dcamera.cpp, Lines: 35, Types: ['pointer_cast', 'undefined_data']
   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00448
@@ -2783,10 +2762,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hero.cpp, Lines: 35, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
   engine_mini3d.cpp_flushTriangleBatch_FUN_004f6970
     File: engine/mini3d.cpp, Lines: 35, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
-  core_weaver.cpp_CRobin_dtor_FUN_005a5f50
-    File: core/weaver.cpp, Lines: 35, Types: ['negative_offset', 'warning_type_propagation']
-  core_hellhag.cpp_CHag_dtor_FUN_005aa7e0
-    File: core/hellhag.cpp, Lines: 35, Types: ['negative_offset', 'warning_type_propagation']
   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
     File: cockpit/ckptutil.c, Lines: 36, Types: ['undefined_data', 'warning_overlapping_globals']
   core_inv.cpp_CInventory_ctor_FUN_004da760
@@ -2797,10 +2772,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/mp3.cpp, Lines: 36, Types: ['undefined_data']
   engine_special.cpp_drawPolyList2_FUN_0055fa90
     File: engine/special.cpp, Lines: 36, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
+  support_codec.cpp_CLZWDecompress_finalize_FUN_00434a70
+    File: support/codec.cpp, Lines: 37, Types: ['pointer_truncation']
   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30
     File: sound/mp3.cpp, Lines: 37, Types: ['undefined_data', 'warning_overlapping_globals']
-  core_passngr.cpp_CPassenger_dtor_FUN_005114f0
-    File: core/passngr.cpp, Lines: 37, Types: ['negative_offset']
   core_path.cpp_CPathMap_previewPathfinding_FUN_00513550
     File: core/path.cpp, Lines: 37, Types: ['undefined_data', 'warning_overlapping_globals']
   sound_sndwav.cpp_CWavInDevice_close_FUN_00558240
@@ -2815,12 +2790,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/litecone.cpp, Lines: 38, Types: ['unrolled_strcpy']
   core_xform.cpp_buildRotationY_FUN_005932c0
     File: core/xform.cpp, Lines: 38, Types: ['unrolled_memcpy']
+  core_cloth.cpp_CClothList_load_FUN_005b14a0
+    File: core/cloth.cpp, Lines: 38, Types: ['shadow_pointer_walk', 'warning_overlapping_globals']
   core_bodypart.cpp_CBodyPart_addTexture_FUN_004177e0
     File: core/bodypart.cpp, Lines: 39, Types: ['unrolled_strcpy', 'warning_overlapping_globals']
   core_skeleton.cpp_CDeformableModel_computeFarthestChildBones
     File: core/skeleton.cpp, Lines: 39, Types: ['shadow_pointer_walk']
-  core_cloth.cpp_CClothList_load_FUN_005b14a0
-    File: core/cloth.cpp, Lines: 39, Types: ['shadow_pointer_walk', 'warning_overlapping_globals']
   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_005b6940
     File: core/morph.cpp, Lines: 39, Types: ['unrolled_strcpy', 'warning_overlapping_globals']
   core_conveyor.cpp_CConveyor_ctor_FUN_00438490
@@ -2943,6 +2918,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hellhag.cpp, Lines: 60, Types: ['warning_overlapping_globals', 'warning_type_propagation']
   core_icepick.cpp_CIcePick_setup_FUN_004d4a20
     File: core/icepick.cpp, Lines: 61, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
+  engine_zraster.c_addRasterizerEdge_FUN_00599e10
+    File: engine/zraster.c, Lines: 61, Types: ['undefined_data', 'warning_overlapping_globals']
   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481
     File: shape/edittool.cpp, Lines: 64, Types: ['unrolled_strcpy', 'unrolled_strlen']
   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_005052
@@ -3033,10 +3010,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/muzzle.cpp, Lines: 4, Types: ['param_count_too_few', 'unnamed_param']
   core_actor.cpp_generateRandomValue_FUN_0040cef0
     File: core/actor.cpp, Lines: 5, Types: ['undefined_data']
-  core_armour.cpp_FUN_0040f2b0
-    File: core/armour.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
-  core_bodypart.cpp_FUN_00417d10
-    File: core/bodypart.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
   core_moon.cpp_FUN_00502790
     File: core/moon.cpp, Lines: 5, Types: ['unnamed_param']
   wincore_winrun.cpp_FUN_0058ffc0
@@ -3121,6 +3094,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dcamera.cpp, Lines: 13, Types: ['pointer_cast', 'undefined_data']
   core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00443
     File: core/dcamera.cpp, Lines: 13, Types: ['pointer_cast', 'undefined_data']
+  core_doc.cpp_CDoc_getCarryLightIntensity_FUN_00453c60
+    File: core/doc.cpp, Lines: 13, Types: ['suspect_float', 'undefined_data']
   core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004af
     File: core/gabriela.cpp, Lines: 13, Types: ['suspect_float', 'undefined_data']
   core_game.cpp_drawCreditsLine_FUN_004b3b10
@@ -3361,6 +3336,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/event.cpp, Lines: 30, Types: ['undefined_data', 'unrolled_strlen']
   core_gore.cpp_CGore_save_FUN_004c9f20
     File: core/gore.cpp, Lines: 30, Types: ['undefined_data', 'warning_overlapping_globals']
+  core_hiram.cpp_CNPC_dtor_FUN_004d11c0
+    File: core/hiram.cpp, Lines: 30, Types: ['negative_offset']
+  core_hostage.cpp_CHostage_dtor_FUN_004d36e0
+    File: core/hostage.cpp, Lines: 30, Types: ['negative_offset']
+  core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004d4880
+    File: core/hpriest.cpp, Lines: 30, Types: ['negative_offset']
   engine_light.cpp_calculateLighting_FUN_004e28b0
     File: engine/light.cpp, Lines: 30, Types: ['undefined_data', 'warning_overlapping_globals']
   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190
@@ -3371,6 +3352,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndmain.cpp, Lines: 30, Types: ['unknown_field', 'warning_overlapping_globals']
   shape_spotview.cpp_CSpotView_clampValues_FUN_00561cd0
     File: shape/spotview.cpp, Lines: 30, Types: ['bit_int_float_compare', 'warning_overlapping_globals']
+  core_tbplayer.cpp_CDrummer_dtor_FUN_00572060
+    File: core/tbplayer.cpp, Lines: 30, Types: ['negative_offset']
+  core_tbplayer.cpp_CBassPlayer_dtor_FUN_00572110
+    File: core/tbplayer.cpp, Lines: 30, Types: ['negative_offset']
   core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050
     File: core/bwspart.cpp, Lines: 30, Types: ['unnamed_param', 'unrolled_memcpy']
   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044
@@ -3383,6 +3368,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/gore.cpp, Lines: 31, Types: ['undefined_data', 'warning_overlapping_globals']
   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40
     File: core/hero.cpp, Lines: 31, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
+  core_hiram.cpp_CHiram_dtor_FUN_004d0f90
+    File: core/hiram.cpp, Lines: 31, Types: ['negative_offset']
   engine_matrix.c_pushViewport_FUN_004ea410
     File: engine/matrix.c, Lines: 31, Types: ['undefined_data', 'warning_overlapping_globals']
   core_podmain.cpp_CDemonPod_load_FUN_0051c000
@@ -3397,22 +3384,24 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/mp3.cpp, Lines: 32, Types: ['pointer_cast', 'pointer_truncation']
   sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0
     File: sound/sndmain.cpp, Lines: 32, Types: ['stack_ref', 'unresolved_funcptr', 'warning_overlapping_globals']
-  core_succubus.cpp_CSuccubus_dtor_FUN_00570090
-    File: core/succubus.cpp, Lines: 32, Types: ['negative_offset']
   engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0
     File: engine/texture.cpp, Lines: 32, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270
     File: core/tvbat.cpp, Lines: 32, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_xform.cpp_buildYFlipMatrix_FUN_00593540
     File: core/xform.cpp, Lines: 32, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
-  core_dcube.cpp_FUN_00446f50
-    File: core/dcube.cpp, Lines: 33, Types: ['stack_param', 'undefined_data']
   shape_edittool.cpp_CEdButton_wasClicked_FUN_00485240
     File: shape/edittool.cpp, Lines: 33, Types: ['undefined_data', 'warning_overlapping_globals']
   core_grave.cpp_CGrave_renderOpaque_FUN_004ca290
     File: core/grave.cpp, Lines: 33, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040
     File: core/ladder.cpp, Lines: 33, Types: ['unaffected_reg', 'unrolled_memcpy']
+  core_confzomb.cpp_CConfederateZombie_dtor_FUN_005a1cc0
+    File: core/confzomb.cpp, Lines: 33, Types: ['negative_offset', 'warning_type_propagation']
+  core_unionzom.cpp_CUnionZombie_dtor_FUN_005a3e70
+    File: core/unionzom.cpp, Lines: 33, Types: ['negative_offset', 'warning_type_propagation']
+  core_ghostchi.cpp_CGhostChild_dtor_FUN_005a9370
+    File: core/ghostchi.cpp, Lines: 33, Types: ['negative_offset', 'warning_type_propagation']
   engine_console.cpp_CConsole_scrollUp_FUN_004368f0
     File: engine/console.cpp, Lines: 34, Types: ['unrolled_memcpy']
   core_crate.cpp_CCrate_explode_FUN_0043a350
@@ -3445,6 +3434,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/grave.cpp, Lines: 36, Types: ['unaffected_reg', 'unrolled_memcpy']
   core_xform.cpp_buildXFlipMatrix_FUN_005934e0
     File: core/xform.cpp, Lines: 36, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
+  core_weaver.cpp_CRobin_dtor_FUN_005a5f50
+    File: core/weaver.cpp, Lines: 36, Types: ['negative_offset', 'warning_type_propagation']
+  core_hellhag.cpp_CHag_dtor_FUN_005aa7e0
+    File: core/hellhag.cpp, Lines: 36, Types: ['negative_offset', 'warning_type_propagation']
   core_batman.cpp_CBatman_ctor_FUN_00412b20
     File: core/batman.cpp, Lines: 37, Types: ['unrolled_memset', 'unrolled_strcpy', 'warning_overlapping_globals']
   cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042e380
@@ -3477,6 +3470,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/drender.cpp, Lines: 39, Types: ['shadow_pointer_walk', 'undefined_data', 'warning_overlapping_globals']
   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760
     File: core/inv.cpp, Lines: 39, Types: ['shadow_pointer_walk', 'unrolled_strcpy', 'warning_overlapping_globals']
+  core_passngr.cpp_CPassenger_dtor_FUN_005114f0
+    File: core/passngr.cpp, Lines: 39, Types: ['negative_offset']
   core_setutil.cpp_C3DSLight_apply_FUN_0053b810
     File: core/setutil.cpp, Lines: 39, Types: ['unrolled_memcpy', 'unrolled_strcpy', 'warning_overlapping_globals']
   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
@@ -3489,6 +3484,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/drender.cpp, Lines: 40, Types: ['shadow_pointer_walk', 'undefined_data', 'warning_overlapping_globals']
   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00
     File: engine/drender.cpp, Lines: 40, Types: ['shadow_pointer_walk', 'undefined_data', 'warning_overlapping_globals']
+  core_mimic.cpp_CMimic_dtor_FUN_004f0400
+    File: core/mimic.cpp, Lines: 40, Types: ['negative_offset']
   core_waypoint.cpp_CWayPoint_setup_FUN_00587dc0
     File: core/waypoint.cpp, Lines: 41, Types: ['shadow_pointer_walk', 'warning_overlapping_globals', 'warning_type_propagation']
   wincore_winrun.cpp_calibrateCPUSpeed_FUN_0058e7a0

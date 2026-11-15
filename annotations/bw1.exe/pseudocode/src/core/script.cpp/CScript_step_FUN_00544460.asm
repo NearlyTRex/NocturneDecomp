@@ -260,7 +260,7 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
 ;   core_bodypart.cpp_createBodyPart_FUN_00418940
 ;   core_bodypart.cpp_subtractVector_FUN_0041afe0
-;   core_bugs.cpp_FUN_00428120
+;   core_bugs.cpp_getDeformableModelName_FUN_00428120
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432c70
 ;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_00433c50
@@ -4553,8 +4553,8 @@ section .text
         ;   XREF to: 0054450b (CONDITIONAL_JUMP)  ; LAB_0054450b
     LEA EAX,[EDI + 0x158]               ; 00547484
     PUSH EAX                            ; 0054748a
-    CALL core_bugs.cpp_FUN_00428120     ; 0054748b
-        ;   XREF to: 00428120 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00428120()
+    CALL core_bugs.cpp_getDeformableModelName_FUN_00428120 ; 0054748b
+        ;   XREF to: 00428120 (UNCONDITIONAL_CALL)  ; char * core_bugs.cpp_getDeformableModelName_FUN_00428120(CDeformableModelInstance * model_ptr)
     ADD ESP,0x4                         ; 00547490
     PUSH EAX                            ; 00547493
     LEA EAX,[ESP + 0x3170]              ; 00547494
@@ -5326,8 +5326,8 @@ section .text
     ADD ESP,0x8                         ; 00547e2f
     MOV EAX,[0x00622c18]                ; 00547e32 | g_CDemonSetPtr
     PUSH EAX                            ; 00547e37 | g_CDemonSetInstance
-    CALL core_event.cpp_FUN_004aafe0    ; 00547e38
-        ;   XREF to: 004aafe0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aafe0()
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_004aafe0 ; 00547e38
+        ;   XREF to: 004aafe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004aafe0(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 00547e3d
     MOV ESI,EAX                         ; 00547e40
     MOV EAX,[0x00622ad0]                ; 00547e42 | g_CScriptPtr
@@ -5343,8 +5343,8 @@ section .text
     MOV EAX,[0x00622ad0]                ; 00547e62 | g_CScriptPtr
     PUSH EDI                            ; 00547e67 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x10],0x0      ; 00547e68 | g_CScriptInstance.focus_actor_changed
-    CALL core_event.cpp_FUN_004aafe0    ; 00547e6f
-        ;   XREF to: 004aafe0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aafe0()
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_004aafe0 ; 00547e6f
+        ;   XREF to: 004aafe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004aafe0(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 00547e74
     CMP ESI,EAX                         ; 00547e77
     JNZ 0x0054450b                      ; 00547e79

@@ -7,8 +7,8 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[17]:
-;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f19
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 004350bf
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 at 00438f19
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be23b
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdce7
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010a7

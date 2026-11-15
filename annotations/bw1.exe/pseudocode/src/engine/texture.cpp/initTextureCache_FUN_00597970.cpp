@@ -12,15 +12,15 @@
 CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00597970(void)
 
 {
-  int iVar1;
+  CTextureCache *this_ptr;
   CTextureCache *extraout_EAX;
   
-  iVar1 = operator_new(0x1800c);
-  if (iVar1 == 0) {
+  this_ptr = (CTextureCache *)operator_new(0x1800c);
+  if (this_ptr == (CTextureCache *)0x0) {
     _DAT_02c8a680 = (CTextureCache *)0x0;
   }
   else {
-    _DAT_02c8a680 = (CTextureCache *)core_texlist_cpp_FUN_00596560(iVar1);
+    _DAT_02c8a680 = engine_texture_cpp_CTextureCache_ctor_FUN_00596560(this_ptr);
     if (_DAT_02c8a680 != (CTextureCache *)0x0) {
       return _DAT_02c8a680;
     }

@@ -193,7 +193,7 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407740(SMRGLHeader
 void __cdecl engine_3d_c_setProcessorType_FUN_00407890(int processor_type);
 void __cdecl engine_3d_c_setRenderingQuality_FUN_004078a0(int quality);
 void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_004078b0(SMRGLHeaderExtended *chain);
-void engine_3d_c_FUN_004078f0(int *param_1);
+void __cdecl engine_3d_c_renderPrim_FUN_004078f0(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_00407980(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407c40(int vertex_index1,int vertex_index2);
@@ -383,7 +383,7 @@ ECollisionType __cdecl core_armour_cpp_CArmour_getCollisionType_FUN_0040f100(CAr
 CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags);
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040f260(CFlame *this_ptr,uint flags);
-void core_armour_cpp_FUN_0040f2b0(void *param_1);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_0040f2d0(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040f300(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040f320(CBackgroundActor *this_ptr);

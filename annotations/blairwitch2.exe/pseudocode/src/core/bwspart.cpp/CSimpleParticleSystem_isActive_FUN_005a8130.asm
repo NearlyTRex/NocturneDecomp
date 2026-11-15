@@ -8,7 +8,7 @@
 ;
 ; XREF[6]:
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0c59
-;   core_doc.cpp_FUN_00450c60 at 00451631
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451631
 ;   core_hellhag.cpp_FUN_005ab260 at 005ab4af
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c6d4
 ;   core_hpbox.cpp_CParticleBox_process_FUN_005ac960 at 005aca0c

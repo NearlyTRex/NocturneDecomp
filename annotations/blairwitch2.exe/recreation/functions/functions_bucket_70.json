@@ -706,14 +706,24 @@
   },
   {
     "addr":"004078f0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_004078f0",
-    "name":"engine_3d.c_FUN_004078f0",
+    "method":"renderPrim",
+    "name":"engine_3d.c_renderPrim_FUN_004078f0",
+    "params":[
+      {
+        "name":"primitive",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -5614,14 +5624,41 @@
       "004338f0",
       "00433a90"
     ],
-    "conv":"unknown",
+    "cls":"CLZWDictionary",
+    "conv":"__cdecl",
     "instructions":103,
-    "method":"FUN_00434570",
-    "name":"support_codec.cpp_FUN_00434570",
-    "receiver":false,
+    "method":"writeCodeBits",
+    "name":"support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00434570",
+    "params":[
+      {
+        "name":"code_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ostream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -7442,14 +7479,33 @@
       "005838f0",
       "005b7f5f"
     ],
-    "conv":"unknown",
+    "cls":"CDoc",
+    "conv":"__cdecl",
     "instructions":665,
-    "method":"FUN_00459ff0",
-    "name":"core_doc.cpp_FUN_00459ff0",
-    "receiver":false,
+    "method":"autoAimAtThreat",
+    "name":"core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0",
+    "params":[
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -17425,17 +17481,17 @@
   },
   {
     "addr":"00511b70",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00511b70",
-    "name":"core_passngr.cpp_FUN_00511b70",
+    "method":"isPathfindingQueueEmpty",
+    "name":"core_path.cpp_isPathfindingQueueEmpty_FUN_00511b70",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
-    "tu":"core/passngr.cpp",
+    "tu":"core/path.cpp",
     "variadic":false
   },
   {
@@ -23170,8 +23226,8 @@
     ],
     "conv":"unknown",
     "instructions":57,
-    "method":"FUN_00588670",
-    "name":"wincore_wddvmem.cpp_FUN_00588670",
+    "method":"allocateRenderBuffers",
+    "name":"wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00588670",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -23926,17 +23982,35 @@
   },
   {
     "addr":"0059a070",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_0059a070",
-    "name":"core_zombie.cpp_FUN_0059a070",
+    "method":"findRasterizerEdge",
+    "name":"engine_zraster.c_findRasterizerEdge_FUN_0059a070",
+    "params":[
+      {
+        "name":"y_start",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"exclude_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SSoftwareEdge",
+      "ptr":1
     },
-    "tu":"core/zombie.cpp",
+    "tu":"engine/zraster.c",
     "variadic":false
   },
   {

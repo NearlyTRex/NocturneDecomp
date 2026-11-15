@@ -13,9 +13,9 @@
 ;   undefined4 DAT_005f736c
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
 ;   core_hero.cpp_CHero_ctor_FUN_004ce240
-;   core_necklace.cpp_FUN_005adda0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     ADD ESP,0x4                         ; 004ad2cd
     ADD EAX,0x25680                     ; 004ad2d0
     PUSH EAX                            ; 004ad2d5
-    CALL core_necklace.cpp_FUN_005adda0 ; 004ad2d6
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 004ad2d6
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffda980]          ; 004ad2db
     MOV dword ptr [EBX + 0x2b0],0x5f7384 ; 004ad2e1
     MOV dword ptr [EBX + 0x25640],0x0   ; 004ad2eb

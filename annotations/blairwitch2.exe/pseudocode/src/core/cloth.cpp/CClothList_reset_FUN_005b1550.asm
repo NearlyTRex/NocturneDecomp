@@ -12,7 +12,7 @@
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770 at 0056bb97
 ;
 ; Called Functions:
-;   core_necklace.cpp_FUN_005ade00
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_unknown.c_FUN_005b7fdc
 ;
@@ -38,8 +38,8 @@ section .text
         ;   XREF to: 005b157f (CONDITIONAL_JUMP)  ; LAB_005b157f
     PUSH 0x0                            ; 005b156b
     PUSH EAX                            ; 005b156d
-    CALL core_necklace.cpp_FUN_005ade00 ; 005b156e
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 005b156e
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005b1573
     PUSH EAX                            ; 005b1576
     CALL crt_unknown.c_FUN_005b7fdc     ; 005b1577

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 52,
+    "complexity_score": 75,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 1,
+    "pseudocode_lines": 40,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 126
+    "total_lines": 129
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,12 @@
     {
       "addr": "0040f2b0",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_0040f2b0"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0"
+    },
+    {
+      "addr": "005ade00",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_005ade00"
     },
     {
       "addr": "005b1480",
@@ -52,11 +57,6 @@
       "addr": "0059df70",
       "is_variadic": false,
       "name": "core_muzzle.cpp_FUN_0059df70"
-    },
-    {
-      "addr": "005ade00",
-      "is_variadic": false,
-      "name": "core_necklace.cpp_FUN_005ade00"
     },
     {
       "addr": "00544d50",
@@ -173,10 +173,26 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
-      "match": "pCVar4[-1].",
+      "line": 30,
+      "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
+      "text": "((CFlame *)(pCVar2[-1].vertices[0x28e].connected_indices + 0xf),0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "pCVar3[-3].",
+      "severity": "mild",
+      "text": "iVar4 = core_muzzle_cpp_FUN_0059df70(&pCVar3[-3].base.particle_systems[3].max_particles,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pCVar6[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
       "type": "negative_offset"
     }
   ],

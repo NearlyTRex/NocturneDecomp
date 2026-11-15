@@ -75,7 +75,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_event.cpp_CEventList_validateCommands_FUN_0048e3e0
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
-;   core_game.cpp_FUN_004b8e10
+;   core_game.cpp_giveHeroWeapon_FUN_004b8e10
 ;   core_game.cpp_scaleBoneRecursive_FUN_004b9060
 ;   core_inv.cpp_CInventory_addItem_FUN_004dadb0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004db830
@@ -1211,28 +1211,28 @@ section .text
     XOR AH,DH                           ; 004b9d2e
     PUSH 0x5d7ecb                       ; 004b9d30 | DAT_005d7ecb
     MOV byte ptr [0x01cb80f8],AH        ; 004b9d35 | DAT_01cb80f8
-    CALL core_game.cpp_FUN_004b8e10     ; 004b9d3b
-        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e10()
+    CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d3b
+        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d40
     PUSH 0x0                            ; 004b9d43
     PUSH 0x5d7ed0                       ; 004b9d45 | = "CMelee"
-    CALL core_game.cpp_FUN_004b8e10     ; 004b9d4a
-        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e10()
+    CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d4a
+        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d4f
     PUSH 0x0                            ; 004b9d52
     PUSH 0x5d7ed7                       ; 004b9d54 | = "CMeleeAxe"
-    CALL core_game.cpp_FUN_004b8e10     ; 004b9d59
-        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e10()
+    CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d59
+        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d5e
     PUSH 0x0                            ; 004b9d61
     PUSH 0x5d7ee1                       ; 004b9d63 | = "CCross"
-    CALL core_game.cpp_FUN_004b8e10     ; 004b9d68
-        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e10()
+    CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d68
+        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d6d
     PUSH 0x5d7ee8                       ; 004b9d70 | = "Lantern"
     PUSH 0x5d7ef0                       ; 004b9d75 | = "CBoxActor"
-    CALL core_game.cpp_FUN_004b8e10     ; 004b9d7a
-        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e10()
+    CALL core_game.cpp_giveHeroWeapon_FUN_004b8e10 ; 004b9d7a
+        ;   XREF to: 004b8e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004b8e10(char * class_name, char * item_name)
     ADD ESP,0x8                         ; 004b9d7f
     PUSH 0x47c                          ; 004b9d82
     MOV EDI,0x5d7efa                    ; 004b9d87 | DAT_005d7efa

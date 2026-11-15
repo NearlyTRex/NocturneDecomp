@@ -16,7 +16,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 005107e8
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00438ef0
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90
@@ -49,8 +49,8 @@ section .text
     PUSH ESI                            ; 0050f93a
     PUSH 0x0                            ; 0050f93b
     PUSH EBX                            ; 0050f93d
-    CALL cockpit_ckptutil.c_FUN_00438ef0 ; 0050f93e
-        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_00438ef0(char * filename, void * buffer, int size)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 ; 0050f93e
+        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 0050f943
     PUSH EDI                            ; 0050f946
     MOV ECX,dword ptr [ESP + 0x28]      ; 0050f947

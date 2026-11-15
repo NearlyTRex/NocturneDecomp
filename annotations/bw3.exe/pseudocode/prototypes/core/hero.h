@@ -57,9 +57,9 @@ bool __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *param_2);
 // Address: 004d2aa0
 int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hero.cpp_FUN_004d2ae0
+// Original: core_hero.cpp_CHero_canReachPickup_FUN_004d2ae0
 // Address: 004d2ae0
-undefined4 FUN_004d2ae0(void);
+int __cdecl CHero::canReachPickup(CHero *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 
 // Original: core_hero.cpp_CHero_getGrabbed_FUN_004d2af0
 // Address: 004d2af0

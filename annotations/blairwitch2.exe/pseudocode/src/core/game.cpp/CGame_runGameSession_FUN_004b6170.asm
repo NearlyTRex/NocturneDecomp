@@ -544,8 +544,8 @@ section .text
     MOV EDX,dword ptr [0x00618170]      ; 004b67a9 | DAT_00618170
         ;   Label: LAB_004b67a9
     PUSH EDX                            ; 004b67af
-    CALL core_mission.cpp_FUN_004fd450  ; 004b67b0
-        ;   XREF to: 004fd450 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fd450()
+    CALL core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004fd450 ; 004b67b0
+        ;   XREF to: 004fd450 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004fd450(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004b67b5
     PUSH 0x0                            ; 004b67b8
     MOV ECX,dword ptr [0x00617dd4]      ; 004b67ba | DAT_00617dd4

@@ -169,9 +169,9 @@ undefined4 * quaternionToEulerAnglesZYX(float *param_1);
 // Address: 005b7ed0
 CQuaternion4f * __stack_esi eulerToQuaternion(CVector3f *euler_angles,CQuaternion4f *quat_out);
 
-// Original: core_xform.cpp_FUN_005b7ff0
+// Original: core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0
 // Address: 005b7ff0
-void FUN_005b7ff0(float *param_1);
+undefined1 eulerToQuaternionIndirect(void);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_005b9630
 // Address: 005b9630

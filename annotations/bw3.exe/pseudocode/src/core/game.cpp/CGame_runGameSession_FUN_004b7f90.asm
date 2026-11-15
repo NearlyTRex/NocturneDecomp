@@ -589,8 +589,8 @@ section .text
     CALL shape_edittool.cpp_CPickList_clear_FUN_00484f10 ; 004b864d
         ;   XREF to: 00484f10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00484f10(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004b8652
-    CALL core_inv.cpp_FUN_004da840      ; 004b8655
-        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004da840()
+    CALL core_inv.cpp_freeInventory_FUN_004da840 ; 004b8655
+        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_freeInventory_FUN_004da840()
     MOV EAX,dword ptr [EBP + -0xc]      ; 004b865a
     MOV ESP,EBP                         ; 004b865d
     POP EBP                             ; 004b865f

@@ -221,6 +221,6 @@ int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
 // Address: 00495e40
 CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);
 
-// Original: core_event.cpp_FUN_00495e60
+// Original: core_event.cpp_getSelectedCameraIndex_FUN_00495e60
 // Address: 00495e60
-undefined4 FUN_00495e60(int param_1);
+int __cdecl getSelectedCameraIndex(CDemonSet *set_ptr);

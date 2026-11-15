@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00450c60 at 004514f1
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004514f1
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0

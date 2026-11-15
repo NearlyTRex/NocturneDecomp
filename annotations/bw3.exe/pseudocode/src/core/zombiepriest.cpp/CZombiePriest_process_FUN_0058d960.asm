@@ -465,8 +465,8 @@ section .text
         ;   XREF to: 0058de54 (CONDITIONAL_JUMP)  ; LAB_0058de54
     PUSH dword ptr [EBP + 0x92]         ; 0058de45
     PUSH EBX                            ; 0058de4b
-    CALL core_zombiepriest.cpp_FUN_0058e8d0 ; 0058de4c
-        ;   XREF to: 0058e8d0 (UNCONDITIONAL_CALL)  ; undefined core_zombiepriest.cpp_FUN_0058e8d0()
+    CALL core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0 ; 0058de4c
+        ;   XREF to: 0058e8d0 (UNCONDITIONAL_CALL)  ; void core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombiePriest * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0058de51
     PUSH dword ptr [EBP + 0x92]         ; 0058de54
         ;   Label: LAB_0058de54
@@ -1113,8 +1113,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0058e5b9
         ;   Label: LAB_0058e5b9
     PUSH EBX                            ; 0058e5bf
-    CALL core_zombiepriest.cpp_FUN_0058efb0 ; 0058e5c0
-        ;   XREF to: 0058efb0 (UNCONDITIONAL_CALL)  ; undefined core_zombiepriest.cpp_FUN_0058efb0()
+    CALL core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0 ; 0058e5c0
+        ;   XREF to: 0058efb0 (UNCONDITIONAL_CALL)  ; int core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0(CZombiePriest * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0058e5c5
     TEST EAX,EAX                        ; 0058e5c8
     JNZ 0x0058dc68                      ; 0058e5ca

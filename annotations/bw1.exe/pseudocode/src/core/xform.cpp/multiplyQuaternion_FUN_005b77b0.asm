@@ -14,7 +14,7 @@
 ;
 ; XREF[10]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433bae
-;   core_doc.cpp_FUN_0046f200 at 0046f3c6
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f3c6
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8b9e
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005423b7
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00569440 at 00569575

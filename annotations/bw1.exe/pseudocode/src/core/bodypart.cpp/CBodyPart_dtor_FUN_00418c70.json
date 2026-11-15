@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 38,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 83
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     {
       "addr": "0041b190",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_0041b190"
+      "name": "core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b190"
     },
     {
       "addr": "0041dab0",
@@ -163,10 +163,18 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 19,
       "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "iVar2 = core_bodypart_cpp_FUN_0041b190(&pCVar1[-3].scrape_points[4].local_position.y,0);",
+      "text": "((SBodyPartFire *)&pCVar1[-3].scrape_points[4].local_position.y,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pSVar2[-3].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pSVar2[-3].flame.base.create_event + 0x3c),1);",
       "type": "negative_offset"
     }
   ],

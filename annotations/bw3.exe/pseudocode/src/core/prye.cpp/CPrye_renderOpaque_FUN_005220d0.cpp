@@ -191,8 +191,8 @@ LAB_00522382:
   if (((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] != 0)) {
     uVar11 = g_CGasMaskClassInfo.name_hash;
-    pCVar4 = (CDemonActor *)
-             core_inv_cpp_FUN_004db9e0(&(this_ptr->base).inventory,"CGasMask");
+    pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
+                       (&(this_ptr->base).inventory,"CGasMask");
     apCStack_34[2] = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,uVar11);
     if (apCStack_34[2] != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
@@ -263,8 +263,8 @@ LAB_00522382:
   if (((this_ptr->base).is_wearing_goggles != 0) &&
      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01ed3744] != 0)) {
     uVar11 = g_CGogglesClassInfo.name_hash;
-    pCVar4 = (CDemonActor *)
-             core_inv_cpp_FUN_004db9e0(&(this_ptr->base).inventory,"CGoggles");
+    pCVar4 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
+                       (&(this_ptr->base).inventory,"CGoggles");
     apCStack_34[3] = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,uVar11);
     if (apCStack_34[3] != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);

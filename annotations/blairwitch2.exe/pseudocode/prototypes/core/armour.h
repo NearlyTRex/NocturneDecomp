@@ -57,6 +57,6 @@ CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 // Address: 0040f260
 CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
-// Original: core_armour.cpp_FUN_0040f2b0
+// Original: core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 // Address: 0040f2b0
-void FUN_0040f2b0(void *param_1);
+CFlame * __cdecl CFlame::arrdtor50(CFlame *this_ptr,uint flags);

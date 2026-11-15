@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_004431b0 at 00443220
+;   support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0 at 00443220
 ;
 ; *****************************************************************************
 

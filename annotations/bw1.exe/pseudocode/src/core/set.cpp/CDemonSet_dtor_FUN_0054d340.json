@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 7,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "negative_offset"
+    ],
     "total_lines": 23
   },
   "cross_references": [],
@@ -27,14 +29,14 @@
   },
   "function_calls": [
     {
+      "addr": "005561a0",
+      "is_variadic": false,
+      "name": "core_set.cpp_C3DSCamera_arrdtor250_FUN_005561a0"
+    },
+    {
       "addr": "0054d370",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_clear_FUN_0054d370"
-    },
-    {
-      "addr": "005561a0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_005561a0"
     }
   ],
   "globals": [],
@@ -118,7 +120,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 9,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "return (CDemonSet *)&pCVar1[-1].enabled;",
+      "type": "negative_offset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

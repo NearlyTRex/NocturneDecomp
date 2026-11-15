@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_ptr,float delta_time)
@@ -35,8 +34,6 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
   float fVar18;
   float in_stack_fffffdf4;
   float fStack_208;
-  float fStack_1d8;
-  float afStack_1d4 [3];
   CQuaternion4f CStack_1c8;
   uint uStack_1b8;
   uint uStack_1b4;
@@ -194,15 +191,15 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
              afStack_d0[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
         core_xform_cpp_slerpQuaternion_FUN_00593df0
                   (pCStack_2c,pCStack_30,this_ptr->recombine_interpolation,&CStack_1c8);
-        fStack_1d8 = CStack_1c8.w;
         puVar13 = (uint *)((int)&CStack_1c8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
-        *(uint *)((int)afStack_1d4 + (uint)bVar15 * 0xfffffff8) =
+        *(uint *)(&stack0xfffffe2c + (uint)bVar15 * -8) =
              *(uint *)((int)&CStack_1c8 + (uint)bVar15 * -8 + 4);
-        *(uint *)((int)afStack_1d4 + ((uint)bVar15 * -2 + (uint)bVar15 * -2 + 1) * 4) =
+        *(uint *)(&stack0xfffffe2c + ((uint)bVar15 * -2 + (uint)bVar15 * -2 + 1) * 4) =
              *puVar13;
-        ((uint *)((int)afStack_1d4 + ((uint)bVar15 * -2 + (uint)bVar15 * -2 + 1) * 4))
-        [(uint)bVar15 * -2 + 1] = puVar13[(uint)bVar15 * -2 + 1];
-        core_xform_cpp_FUN_005940b0(&fStack_1d8);
+        *(uint *)
+         ((int)(&stack0xfffffe2c + ((uint)bVar15 * -2 + (uint)bVar15 * -2 + 1) * 4) +
+         ((uint)bVar15 * -2 + 1) * 4) = puVar13[(uint)bVar15 * -2 + 1];
+        core_xform_cpp_quaternionToEulerAngles_FUN_005940b0();
         fStack_1a0 = fStack_17c;
         afStack_19c[(uint)bVar15 * -2] = afStack_178[(uint)bVar15 * -2];
         afStack_19c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =

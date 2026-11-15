@@ -1284,9 +1284,14 @@
    "note": "setLineClippingDisabled_FUN_00434680. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.33x), so the slot is sound: logic-change d=0.143 (12/16 B)."
   },
   {
-   "a": "00434870",
+   "a": "00434690",
    "b": "0043a040",
-   "note": "rotateBitmap_FUN_00434870. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.07x), so the slot is sound: logic-change d=0.639 (480/447 B)."
+   "note": "loadRotatedBitmapFile_FUN_00434690. Was paired with rotateBitmap by position; the body opens the file with getFile/fgetc like blairwitch2's loadRotatedBitmapFile."
+  },
+  {
+   "a": "00434870",
+   "b": "0043a200",
+   "note": "rotateBitmap_FUN_00434870. Same 446-byte body as blairwitch2's rotateBitmap (malloc, then a size-check error); sits after loadRotatedBitmapFile."
   },
   {
    "a": "00434af0",
@@ -1295,8 +1300,13 @@
   },
   {
    "a": "00435730",
+   "b": "0043b090",
+   "note": "generateTransparencySpans_FUN_00435730. Same 139 instructions and struct offsets as nocedit; sits right after flipEdgeArrayHorizontally."
+  },
+  {
+   "a": "00431870",
    "b": "0043b2e0",
-   "note": "generateTransparencySpans_FUN_00435730. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.42x), so the slot is sound: logic-change d=0.630 (591/415 B)."
+   "note": "readBitmapFile_FUN_00431870. Was paired with generateTransparencySpans by position; it opens a CInStreamFile and matches blairwitch2's readBitmapFile."
   },
   {
    "a": "004359f0",
@@ -9302,6 +9312,106 @@
    "a": "005fcfc0",
    "b": "005bf120",
    "note": "rasterizeTriangle_FUN_005fcfc0. Read by hand (high): Same size (1272 bytes) and same two callers (CDemonRenderer_clipAndFillPoly, renderGeometryBatch). Same..."
+  },
+  {
+   "a": "00407920",
+   "b": "00407720",
+   "note": "renderPrim_FUN_00407920. Read by hand: BW body is renderPrim with the error paths dropped: prim->type checked 0..0x42 (CMP 0x43) then CALL [type*4 + handler table]; same slot between dispatchMRGLBlockChain and flushR..."
+  },
+  {
+   "a": "00412720",
+   "b": "0040ee30",
+   "note": "CFlame_arrdtor50_FUN_00412720. Read by hand: BW is an arrdtor: PUSH g_CFlameTypeInfo; PUSH 0x32; CALL __arrfini; nocedit staticInit calls registerActorClass(\"CArmour\")."
+  },
+  {
+   "a": "0041b590",
+   "b": "0041b080",
+   "note": "boundingBoxExtent_FUN_0041b590. Read by hand: BW computes max-min (FSUB [ECX],[ECX+4],[ECX+8] from [ECX+0xc..]) and MOVSDs to ESI: that is boundingBoxExtent, not boundingBoxCenter (FADD then FMUL by 0.5)."
+  },
+  {
+   "a": "0041b6b0",
+   "b": "0041b190",
+   "note": "SBodyPartFire_arrdtor2_FUN_0041b6b0. Read by hand: BW is PUSH g_SBodyPartFireTypeInfo; PUSH 2; CALL __arrfini (matches nocedit SBodyPartFire_arrdtor2 at 0041b6b0); nocedit staticInit registers CBodyPart."
+  },
+  {
+   "a": "0041b700",
+   "b": "0041b1e0",
+   "note": "getLocalBoundingBoxCenter_FUN_0041b700. Read by hand: Same: bbox through actor vtable (slot 0x14 -> 0x1c in BW), (min+max) times a constant, then adds a double constant to the vertical component. Same slot right after staticInit, b..."
+  },
+  {
+   "a": "0043f030",
+   "b": "004431b0",
+   "note": "CLZWDictionary_readCodeFromStream_FUN_0043f030. Read by hand: Same loop: mask = 1<<(this+8 - 1), limit = this+0xc - 1, one bit read per iteration, OR mask into result, -1 on read error; BW adds a FUN_004425b0 call on error. Same slot after..."
+  },
+  {
+   "a": "0043f200",
+   "b": "00443370",
+   "note": "CLZWDictionary_writeCodeSequence_FUN_0043f200. Read by hand: Same recursion on dict->table[code*16].prefix (+4 < 0 ends), emits the table byte, returns the first char; BW swaps ostream_put for a vtable put with error returns. Same slot af..."
+  },
+  {
+   "a": "004a8d20",
+   "b": "004a02e0",
+   "note": "CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20. Read by hand: BW: vtable bbox, three getRandomFloatFromRange(min,max) calls, CDemonActor_localToWorldPoint, result via ESI; same callees as nocedit CEmitter_getRandomBoundingBoxPoint, not fac..."
+  },
+  {
+   "a": "004b1970",
+   "b": "004aafe0",
+   "note": "getSelectedCameraIndex_FUN_004b1970. Read by hand: BW returns set+0x15aeb8 (labelled selected_camera_index elsewhere in bw1); nocedit staticInit constructs g_CEventListInstance."
+  },
+  {
+   "a": "004cbce0",
+   "b": "004bf770",
+   "note": "doNothing_FUN_004cbce0. Read by hand: Both a lone RET placed directly after the unit staticInit; the only stub at that slot."
+  },
+  {
+   "a": "005059c0",
+   "b": "004fff70",
+   "note": "CLightGun_isVampireType_FUN_005059c0. Read by hand: BW is isOfClass checks for \"CDraculaBride\",\"CBatman\",\"CBatCreature\",\"CBride\" (+BW-only \"CShadow\",\"CShadowsc\"), the same strings as nocedit CLightGun_isVampireType; not factoryFu..."
+  },
+  {
+   "a": "00522c80",
+   "b": "0051a2d0",
+   "note": "CDemonMission_reset_FUN_00522c80. Read by hand: Same reset sequence with shifted offsets: zeroes, +N = -1, triple chained copy of a zeroed vec, byte clear, global byte clear, another -1; BW adds strcpy(\"fangs\") into a global...."
+  },
+  {
+   "a": "005250a0",
+   "b": "0051c5e0",
+   "note": "getObjectGrabPointLocal_FUN_005250a0. Read by hand: Same as nocedit getObjectGrabPointLocal: vtable bbox (slot 0x14 -> 0x1c), center computation, result copied out; same slot right after staticInit, before getObjectGrabPointWorld."
+  },
+  {
+   "a": "00544f00",
+   "b": "00532120",
+   "note": "CFont_getLineSpacing_FUN_00544f00. Read by hand: Identical XOR EAX,EAX; RET stub as the last CFont method, after the dtor/drawText/flush group, matching nocedit getLineSpacing right after drawText; the only such stub in the BW..."
+  },
+  {
+   "a": "0056cd60",
+   "b": "00551480",
+   "note": "CDemonSet_renderOpaqueActors_FUN_0056cd60. Read by hand: Same loop: test actor+0xf8 (opaque flag), AND flag byte with 0xfb, vtable bbox call, same visible-actor walk; BW only shifts the flag byte (0x140->0x144) and vtable slot (0x14->..."
+  },
+  {
+   "a": "0056cf00",
+   "b": "005516c0",
+   "note": "CDemonSet_renderTransparentActors_FUN_0056cf00. Read by hand: Twin of row 4 with actor+0xfc test and AND 0xf7 (transparent flag), same 0x140->0x144 shift; directly follows the opaque renderer in both builds."
+  },
+  {
+   "a": "005dcab0",
+   "b": "00596560",
+   "note": "CTextureCache_ctor_FUN_005dcab0. Read by hand: BW zeroes +0, +0x18004, +0x18008 and memsets 0x18000 bytes then returns this; +0x18004 is the texture count checked by BW texture code, and it sits right before CTextureCache_re..."
+  },
+  {
+   "a": "005dd8e0",
+   "b": "00597c30",
+   "note": "clearTextureCache_FUN_005dd8e0. Read by hand: Both load the texture-cache global, call CTextureCache_freeTextures on it and return; BW also zeroes the next global (0x02c8a684). Same slot after loadTextureAndGetData, before..."
+  },
+  {
+   "a": "005ecac0",
+   "b": "005abf20",
+   "note": "allocateRenderBuffers_FUN_005ecac0. Read by hand: Identical: width*height*bpp/8 back buffer alloc, then width*height*4+0x40 buffer aligned (+0x10, AND 0xf0) into the Z-buffer global, displayErrorAndQuit on each failure; BW uses..."
+  },
+  {
+   "a": "005ecba0",
+   "b": "005abff0",
+   "note": "freeRenderBuffers_FUN_005ecba0. Read by hand: Identical: free back buffer if set and null it, then free the software frame buffer and null the Z-buffer pointer; BW uses plain free instead of debugFree."
   }
  ]
 }

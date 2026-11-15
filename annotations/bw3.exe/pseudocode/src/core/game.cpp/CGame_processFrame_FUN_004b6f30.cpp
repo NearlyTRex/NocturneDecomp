@@ -142,7 +142,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         if (DAT_007dffb4 == (int *)0x0) {
           if (this_ptr->goggles_active == 0) {
             if (this_ptr->special_view_active != 0) {
-              core_set_cpp_FUN_00536990(g_CDemonSetPtr);
+              core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00536990(g_CDemonSetPtr);
             }
           }
           else {

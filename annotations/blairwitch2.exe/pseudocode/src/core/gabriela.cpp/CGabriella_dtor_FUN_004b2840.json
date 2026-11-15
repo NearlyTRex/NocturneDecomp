@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 18,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 65
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -27,14 +29,14 @@
   },
   "function_calls": [
     {
+      "addr": "005ade00",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_005ade00"
+    },
+    {
       "addr": "004ce3d0",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_dtor_FUN_004ce3d0"
-    },
-    {
-      "addr": "005ade00",
-      "is_variadic": false,
-      "name": "core_necklace.cpp_FUN_005ade00"
     },
     {
       "addr": "005b7fa7",
@@ -134,7 +136,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "((CHero *)&pCVar1[-1].vertices[0x12f].bone_positions[0].z,1);",
+      "type": "negative_offset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

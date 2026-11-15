@@ -295,9 +295,9 @@
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_prye.cpp_CPrye_extractTurnPose_FUN_0051e280
+;   core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0
 ;   core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0
-;   core_prye.cpp_FUN_0051c0f0
 ;   ... and 16 more
 ;
 ; *****************************************************************************
@@ -2303,8 +2303,8 @@ section .text
     ADD ESP,0x4                         ; 0051de0a
     PUSH EBX                            ; 0051de0d
     FSTP float ptr [ESP + 0x2444]       ; 0051de0e
-    CALL core_prye.cpp_FUN_0051c0f0     ; 0051de15
-        ;   XREF to: 0051c0f0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051c0f0()
+    CALL core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0 ; 0051de15
+        ;   XREF to: 0051c0f0 (UNCONDITIONAL_CALL)  ; float core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(CPrye * this_ptr)
     MOV dword ptr [ESP + 0x2488],EAX    ; 0051de1a
     FLD float ptr [ESP + 0x2488]        ; 0051de21
     ADD ESP,0x4                         ; 0051de28

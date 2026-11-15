@@ -9,9 +9,9 @@
 // Address: 0051a2a0
 void __cdecl staticInit(void);
 
-// Original: core_mission.cpp_FUN_0051a2d0
+// Original: core_mission.cpp_CDemonMission_reset_FUN_0051a2d0
 // Address: 0051a2d0
-void FUN_0051a2d0(int param_1);
+void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_clearMission_FUN_0051a3a0
 // Address: 0051a3a0

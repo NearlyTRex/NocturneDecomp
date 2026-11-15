@@ -1778,13 +1778,54 @@
         "start":"0040f2b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_armour.cpp_FUN_0040f2b0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0",
+    "ret":"CFlame*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFlame*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -57527,9 +57568,8 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_005940b0",
+    "name":"core_xform.cpp_quaternionToEulerAngles_FUN_005940b0",
     "ret":"undefined1",
-    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -57598,7 +57638,14 @@
         }
       ],
       "ret_storage":{
-        "invalid":true
+        "reg":"AL",
+        "size":1,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":1
+          }
+        ]
       }
     }
   },
@@ -57888,7 +57935,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_FUN_0059a0b0",
+    "name":"engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
     "ret":"void",
     "vars":{
       "locals":[

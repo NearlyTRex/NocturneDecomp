@@ -9,14 +9,14 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[544]:
-;   cockpit_ckptutil.c_FUN_00437e10 at 00437f28
-;   cockpit_ckptutil.c_FUN_00438ca0 at 00438de3
-;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f65
 ;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400 at 004365bf
+;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00438ca0 at 00438de3
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 004351b3
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0 at 0043683a
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00437c50 at 00437d04
 ;   cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_00436ca0 at 00436d38
-;   cockpit_ckptutil.c_rotateBitmap_FUN_00437c50 at 00437d04
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 at 00438f65
+;   cockpit_ckptutil.c_rotateBitmap_FUN_00437e10 at 00437f28
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00436a50 at 00436aae
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00438070 at 0043819b
 ;   ... and 534 more

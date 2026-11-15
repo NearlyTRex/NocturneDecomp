@@ -85,13 +85,13 @@ void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weap
 // Address: 004f8c40
 CDemonActor * __cdecl CInventory::findItemByName(CInventory *this_ptr,char *item_name);
 
-// Original: core_inv.cpp_FUN_004f8c90
+// Original: core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90
 // Address: 004f8c90
-int __cdecl FUN_004f8c90(CInventory *this_ptr,char *class_name);
+CDemonActor * __cdecl CInventory::findItemOfClass(CInventory *this_ptr,char *class_name);
 
-// Original: core_inv.cpp_FUN_004f8ce0
+// Original: core_inv.cpp_CInventory_hasItemOfClass_FUN_004f8ce0
 // Address: 004f8ce0
-bool FUN_004f8ce0(CInventory *param_1,char *param_2);
+int __cdecl CInventory::hasItemOfClass(CInventory *this_ptr,char *class_name);
 
 // Original: core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 // Address: 004f8d00

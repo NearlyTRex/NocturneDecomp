@@ -61,9 +61,9 @@ void __cdecl CPrye::processMotionEvents(CPrye *this_ptr,float delta_time);
 // Address: 0051c0a0
 float __cdecl CPrye::getFlashlightMinAngle(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_0051c0f0
+// Original: core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0
 // Address: 0051c0f0
-undefined4 FUN_0051c0f0(void);
+float __cdecl CPrye::getFlashlightMaxAngle(CPrye *this_ptr);
 
 // Original: core_prye.cpp_CPrye_getHandsMidpoint_FUN_0051c100
 // Address: 0051c100
@@ -129,13 +129,13 @@ int __cdecl CPrye::renderOpaque(CPrye *this_ptr);
 // Address: 00522880
 int __cdecl CPrye::renderTransparent(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_005228c0
+// Original: core_prye.cpp_adjustAimAngleForOffset_FUN_005228c0
 // Address: 005228c0
-void FUN_005228c0(void);
+void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
-// Original: core_prye.cpp_FUN_00522950
+// Original: core_prye.cpp_calculateAimAnglesWithOffset_FUN_00522950
 // Address: 00522950
-undefined4 * FUN_00522950(void);
+CVector3f * __stack2_esi calculateAimAnglesWithOffset(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
 
 // Original: core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00
 // Address: 00522b00

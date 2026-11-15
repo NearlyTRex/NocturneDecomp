@@ -147,8 +147,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004515b5
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 004508e2
-;   core_doc.cpp_FUN_00450c60 at 004515b5
 ;
 ; Referenced Globals:
 ;   undefined4 s_draw_holsters2aimPistols_005d0142+1

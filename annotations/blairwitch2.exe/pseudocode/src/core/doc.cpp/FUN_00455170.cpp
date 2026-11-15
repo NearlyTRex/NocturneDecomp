@@ -31,7 +31,7 @@ void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2)
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00544f80
             (this_ptr,*(int *)(param_1 + 0x256ec),
              *(float *)(param_1 + 0x256bc) * (float)_DAT_005d01d7,-1);
-  core_xform_cpp_FUN_005940b0(_DAT_01b4d258 * 0x10 + param_1 + 0x964);
+  core_xform_cpp_quaternionToEulerAngles_FUN_005940b0();
   afStack_24[2] = (float)local_28;
   afStack_24[(uint)bVar3 * -2 + 3] = afStack_24[(uint)bVar3 * -2];
   afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =

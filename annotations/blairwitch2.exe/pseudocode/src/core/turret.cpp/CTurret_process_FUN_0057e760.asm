@@ -25,7 +25,7 @@
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0
 ;   core_xform.cpp_eulerToQuaternion_FUN_00594380
-;   core_xform.cpp_FUN_005940b0
+;   core_xform.cpp_quaternionToEulerAngles_FUN_005940b0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 0057eb46
     LEA ESI,[ESP + 0xcc]                ; 0057eb47
     LEA EDI,[ESP + 0xd8]                ; 0057eb4e
-    CALL core_xform.cpp_FUN_005940b0    ; 0057eb55
-        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005940b0()
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005940b0 ; 0057eb55
+        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined1 core_xform.cpp_quaternionToEulerAngles_FUN_005940b0()
     LEA ESI,[ESP + 0xcc]                ; 0057eb5a
     ADD ESP,0x4                         ; 0057eb61
     LEA EAX,[ESP + 0xd4]                ; 0057eb64

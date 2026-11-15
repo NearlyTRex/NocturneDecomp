@@ -21,7 +21,6 @@
 #include "types/classes/CGrandma.h"
 #include "types/classes/CHag.h"
 #include "types/classes/CHand.h"
-#include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CNecklace.h"
 #include "types/classes/CParticleBox.h"
@@ -357,8 +356,8 @@ CDemonActorType * __cdecl core_necklace_cpp_CNecklace_getActorType_FUN_005adaa0(
 CNecklace * __cdecl core_necklace_cpp_CNecklace_ctor_FUN_005adab0(CNecklace *this_ptr);
 void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_ptr,float delta_time);
 CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags);
-int core_necklace_cpp_FUN_005adda0(CKeyFramedModel *param_1);
-void core_necklace_cpp_FUN_005ade00(CCloth *param_1);
+CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_005adda0(CCloth *this_ptr);
+CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_005ade00(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_005ade20(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_005ade80(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_005adeb0(CCloth *this_ptr,char *filename);

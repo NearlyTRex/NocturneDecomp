@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_doc.cpp_FUN_00469550 at 0046bbc5
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bbc5
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d11e0
 ;   core_game.cpp_FUN_004d9260 at 004d9492
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eb046

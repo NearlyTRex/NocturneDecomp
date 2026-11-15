@@ -1,0 +1,17 @@
+// Name: engine_texture.cpp_clearTextureCache_FUN_0056ac20
+// Address: 0056ac20
+// Address Range: [[0056ac20, 0056ac40]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_texture_cpp_clearTextureCache_FUN_0056ac20(void)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl engine_texture_cpp_clearTextureCache_FUN_0056ac20(void)
+
+{
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005695c0(_DAT_02cfd0d0);
+  _DAT_02cfd0d4 = 0;
+  return;
+}

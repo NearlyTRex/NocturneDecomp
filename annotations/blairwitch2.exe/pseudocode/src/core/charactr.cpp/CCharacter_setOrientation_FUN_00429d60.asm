@@ -22,7 +22,7 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470 at 0042449d
-;   core_doc.cpp_FUN_00450c60 at 00451dfd
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451dfd
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00564154
 ;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110 at 00573287
 ;

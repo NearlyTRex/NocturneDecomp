@@ -10561,14 +10561,14 @@
     "callers":[
       "004e46c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1,
-    "method":"FUN_004a67a0",
-    "name":"core_flattn.cpp_FUN_004a67a0",
+    "method":"doNothing",
+    "name":"core_flattn.cpp_doNothing_FUN_004a67a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -14629,15 +14629,33 @@
   },
   {
     "addr":"004fd620",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":67,
-    "method":"FUN_004fd620",
-    "name":"core_mobster.cpp_FUN_004fd620",
+    "method":"getObjectGrabPointLocal",
+    "name":"core_mobster.cpp_getObjectGrabPointLocal_FUN_004fd620",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/mobster.cpp",
     "variadic":false
@@ -15862,27 +15880,18 @@
     "callers":[
       "0058df90"
     ],
+    "cls":"CFont",
     "conv":"__cdecl",
     "instructions":4,
-    "method":"FUN_00510ca0",
-    "name":"core_npc.cpp_FUN_00510ca0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CFont",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"ctor",
+    "name":"engine_palette.cpp_CFont_ctor_FUN_00510ca0",
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CFont",
       "ptr":1
     },
-    "tu":"core/npc.cpp",
+    "tu":"engine/palette.cpp",
     "variadic":false
   },
   {
@@ -16982,14 +16991,15 @@
       "00591530",
       "00591de0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":276,
-    "method":"FUN_0052fea0",
-    "name":"core_set.cpp_FUN_0052fea0",
-    "receiver":false,
+    "method":"renderMonsterVisionView",
+    "name":"core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/set.cpp",
@@ -23619,17 +23629,18 @@
       "0044dc10",
       "005b7f5f"
     ],
-    "conv":"unknown",
+    "cls":"CCloth",
+    "conv":"__cdecl",
     "instructions":21,
-    "method":"FUN_005adda0",
-    "name":"core_necklace.cpp_FUN_005adda0",
-    "receiver":false,
+    "method":"ctor",
+    "name":"core_cloth.cpp_CCloth_ctor_FUN_005adda0",
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CCloth",
+      "ptr":1
     },
-    "tu":"core/necklace.cpp",
+    "tu":"core/cloth.cpp",
     "variadic":false
   },
   {

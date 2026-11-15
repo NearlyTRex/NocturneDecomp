@@ -44,10 +44,10 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr)
   CVector3f CStack_104;
   CVector3f CStack_f8;
   uint uStack_ec;
-  float afStack_e8 [8];
+  float afStack_e8 [5];
+  CVector3f CStack_d4;
   uint uStack_c8;
-  uint uStack_c4;
-  uint uStack_c0;
+  float afStack_c4 [2];
   CVector3f CStack_bc;
   float fStack_b0;
   float afStack_ac [2];
@@ -93,12 +93,13 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      core_doc_cpp_FUN_004742a0(this_ptr);
+      core_doc_cpp_CDoc_getThrowDirection_FUN_004742a0(this_ptr,&CStack_d4);
       pCVar9 = &CStack_f8;
-      CStack_f8.x = afStack_e8[5];
-      *(float *)((int)&CStack_f8 + (uint)bVar6 * -8 + 4) = afStack_e8[(uint)bVar6 * -2 + 6];
-      *(float *)((int)&CStack_f8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           afStack_e8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+      CStack_f8.x = CStack_d4.x;
+      *(uint *)((int)&CStack_f8 + (uint)bVar6 * -8 + 4) =
+           *(uint *)((int)&CStack_d4 + (uint)bVar6 * -8 + 4);
+      *(uint *)((int)&CStack_f8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           *(uint *)((int)&CStack_d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0
                 ((CDemonActor *)this_ptr,pCVar9,&CStack_140);
       pCVar8 = pCStack_18;
@@ -167,27 +168,27 @@ switchD_00471ce6_caseD_3:
     (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
               ((CCharacter *)this_ptr->weapon);
   }
-  core_doc_cpp_FUN_0046f610(this_ptr,0);
+  core_doc_cpp_CDoc_updateWeaponPosition_FUN_0046f610(this_ptr,0);
 LAB_00471d62:
   if (((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01b6886c] != 0)) {
     uVar10 = g_CGasMaskClassInfo.name_hash;
-    pCVar3 = (CDemonActor *)
-             core_inv_cpp_FUN_004f8c90(&(this_ptr->base).inventory,"CGasMask");
+    pCVar3 = core_inv_cpp_CInventory_findItemOfClass_FUN_004f8c90
+                       (&(this_ptr->base).inventory,"CGasMask");
     pCStack_28 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar3,uVar10);
     if (pCStack_28 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
       pCStack_20 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       if ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_ON_FACE) {
         uStack_c8 = 0xbe0fd3f6;
-        uStack_c0 = 0;
-        uStack_c4 = 0xc04507c8;
+        afStack_c4[1] = 0.0;
+        afStack_c4[0] = -3.0786;
         CStack_bc.x = 0.00604827;
         pCVar9 = &CStack_98;
         CStack_98.x = -0.140457;
-        *(float *)((int)&CStack_98 + (uint)bVar6 * -8 + 4) = afStack_e8[(uint)bVar6 * -2 + 9];
+        *(float *)((int)&CStack_98 + (uint)bVar6 * -8 + 4) = afStack_c4[(uint)bVar6 * -2];
         *(float *)((int)&CStack_98 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             afStack_e8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
+             afStack_c4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
         CStack_bc.y = 0.283614;
         CStack_bc.z = 0.537644;
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
@@ -244,8 +245,8 @@ LAB_00471d62:
   if (((this_ptr->base).is_wearing_goggles != 0) &&
      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_01b6886c] != 0)) {
     uVar10 = g_CGogglesClassInfo.name_hash;
-    pCVar3 = (CDemonActor *)
-             core_inv_cpp_FUN_004f8c90(&(this_ptr->base).inventory,"CGoggles");
+    pCVar3 = core_inv_cpp_CInventory_findItemOfClass_FUN_004f8c90
+                       (&(this_ptr->base).inventory,"CGoggles");
     pCStack_2c = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar3,uVar10);
     if (pCStack_2c != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);

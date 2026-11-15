@@ -66,11 +66,11 @@ int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00510ab0(CNPC *this_ptr
 void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00510b90(CNPC *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_npc_cpp_CNPC_isInvulnerable_FUN_00510c70(CNPC *this_ptr);
 CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00510c90(CNPC *this_ptr);
-CFont * __cdecl core_npc_cpp_FUN_00510ca0(CFont *this_ptr);
+CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00510ca0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00510cc0(CFont *this_ptr,uint flags);
 undefined4 engine_palette_cpp_FUN_00510cd0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
 void engine_palette_cpp_FUN_00510d50(int *param_1);
-undefined4 engine_palette_cpp_FUN_00510dc0(void);
+int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00510dc0(CFont *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00510dd0(CParticle *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_00510df0(CParticle *this_ptr,uint flags);
 void __cdecl core_particle_cpp_CParticle_setup_FUN_00510e00(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
@@ -87,8 +87,8 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_005117a0(CPassenger *this_p
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_00511980(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00511a70(CPassenger *this_ptr);
 void core_passngr_cpp_FUN_00511b50(void);
-bool core_passngr_cpp_FUN_00511b70(void);
-void core_passngr_cpp_FUN_00511b90(void);
+int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_00511b70(void);
+void __cdecl core_path_cpp_queuePush_FUN_00511b90(int grid_x,int cost,int grid_z,char direction);
 void __cdecl core_path_cpp_queuePop_FUN_00511c10(int *out_x,int *out_cost,int *out_z);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00511c90(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_00511d10(CPathMap *this_ptr,uint flags);

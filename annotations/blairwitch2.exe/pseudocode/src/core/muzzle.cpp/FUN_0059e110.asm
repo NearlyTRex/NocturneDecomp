@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00450c60 at 00450c82
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00450c82
 ;
 ; Called Functions:
 ;   core_muzzle.cpp_FUN_0059dd00

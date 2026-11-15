@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00474ef0(int param_1)
+; void core_doc_cpp_FUN_00474ef0(CDoc *param_1)
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00469550 at 0046a273
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a273
 ;
 ; Called Functions:
-;   core_doc.cpp_FUN_004712b0
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0
 ;   core_doc.cpp_FUN_00475890
 ;   core_hero.cpp_FUN_004eca10
 ;
@@ -51,8 +51,8 @@ section .text
     JNZ 0x00474f46                      ; 00474f2e
         ;   XREF to: 00474f46 (CONDITIONAL_JUMP)  ; LAB_00474f46
     PUSH EBX                            ; 00474f30
-    CALL core_doc.cpp_FUN_004712b0      ; 00474f31
-        ;   XREF to: 004712b0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_004712b0()
+    CALL core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0 ; 00474f31
+        ;   XREF to: 004712b0 (UNCONDITIONAL_CALL)  ; int core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc * this_ptr)
     ADD ESP,0x4                         ; 00474f36
     TEST EAX,EAX                        ; 00474f39
     JZ 0x00474f59                       ; 00474f3b

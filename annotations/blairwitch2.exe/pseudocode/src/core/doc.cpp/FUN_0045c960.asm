@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00450c60 at 004515ac
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004515ac
 ;
 ; Called Functions:
 ;   core_doc.cpp_FUN_0045d1f0

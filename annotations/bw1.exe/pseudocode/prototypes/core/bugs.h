@@ -117,9 +117,9 @@ void __cdecl normalizeVector(CVector3f *dest);
 // Address: 00428080
 CVector3i * __cdecl convertVector(CVector3f *dest,CVector3i *src);
 
-// Original: core_bugs.cpp_FUN_00428120
+// Original: core_bugs.cpp_getDeformableModelName_FUN_00428120
 // Address: 00428120
-int FUN_00428120(int param_1);
+char * __cdecl getDeformableModelName(CDeformableModelInstance *model_ptr);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00428150
 // Address: 00428150

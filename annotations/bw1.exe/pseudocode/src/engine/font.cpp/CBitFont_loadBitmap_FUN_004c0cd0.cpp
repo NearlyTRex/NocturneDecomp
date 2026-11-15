@@ -57,7 +57,8 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
     _DAT_01d1d400 = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_005030e0(local_468);
   }
-  cockpit_ckptutil_c_FUN_0043b2e0(filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
+  cockpit_ckptutil_c_readBitmapFile_FUN_0043b2e0
+            (filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
   engine_dosio_cpp_splitPath_FUN_00479580(filename,(char *)0x0,local_23c,local_13c,(char *)0x0);
   engine_dosio_cpp_makePath_FUN_004795b0(local_33c,(char *)0x0,local_23c,local_13c,&DAT_005e0841);
   support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_3c);

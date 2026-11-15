@@ -1,7 +1,7 @@
-Scanning 567 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
+Scanning 571 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (185 files still need ADJ)
+UNFINISHED CTORS/DTORS (188 files still need ADJ)
 ======================================================================
 
   [core/actor.cpp]
@@ -185,6 +185,9 @@ UNFINISHED CTORS/DTORS (185 files still need ADJ)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
   [core/cloth.cpp]
+    CCloth_ctor_FUN_005adda0:
+      _arrinit @ this+0x398 (920) -> CCloth_ptr_920
+      _arrinit @ this+0x37b50 (228176) -> CCloth_ptr_228176
     SClothVertex_ctor_FUN_005b1ba0:
       _arrinit @ this+0xec (236) -> SClothVertex_ptr_236
 
@@ -339,8 +342,10 @@ UNFINISHED CTORS/DTORS (185 files still need ADJ)
       CCourse_dtor @ this+0x45c (1116) -> CFrankenstienMachine_ptr_1116
 
   [core/gabriela.cpp]
+    CGabriella_ctor_FUN_004ad2c0:
+      CCloth_ctor @ this+0x25680 (153216) -> CGabriella_ptr_153216
     CGabriella_dtor_FUN_004b2840:
-      CHero_dtor @ this+0x25680 (153216) -> CGabriella_ptr_153216
+      CCloth_dtor @ this+0x25680 (153216) -> CGabriella_ptr_153216
 
   [core/gargoyle.cpp]
     CGargoyle_dtor_FUN_004c1240:
@@ -501,9 +506,11 @@ UNFINISHED CTORS/DTORS (185 files still need ADJ)
 
   [core/mimic.cpp]
     CMimic_ctor_FUN_004f0310:
-      CMorph_ctor @ ??? (UNKNOWN)
+      CCloth_ctor @ this+0x10bc0 (68544) -> CMimic_ptr_68544
+      CMorph_ctor @ this+0x4b720 (309024) -> CMimic_ptr_309024
     CMimic_dtor_FUN_004f0400:
       CMorph_dtor @ this+0x4b720 (309024) -> CMimic_ptr_309024
+      CCloth_dtor @ this+0x10bc0 (68544) -> CMimic_ptr_68544
       CDemonActor_dtor @ this+0x4b720 (309024) -> CMimic_ptr_309024
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
@@ -661,8 +668,12 @@ UNFINISHED CTORS/DTORS (185 files still need ADJ)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
   [core/svetlana.cpp]
+    CSvetlana_ctor_FUN_005701c0:
+      CCloth_ctor @ this+0x25648 (153160) -> CSvetlana_ptr_153160
+      CCloth_ctor @ this+0x60178 (393592) -> CSvetlana_ptr_393592
     CSvetlana_dtor_FUN_00571a30:
-      CHero_dtor @ this+0x60178 (393592) -> CSvetlana_ptr_393592
+      CCloth_dtor @ this+0x60178 (393592) -> CSvetlana_ptr_393592
+      CCloth_dtor @ this+0x25648 (153160) -> CSvetlana_ptr_153160
 
   [core/tbplayer.cpp]
     CBassPlayer_dtor_FUN_00572110:
@@ -717,11 +728,17 @@ UNFINISHED CTORS/DTORS (185 files still need ADJ)
   [core/vampboss.cpp]
     CVampireBoss_ctor_FUN_00581530:
       CDeformableModelInstance_ctor @ this+0x10af8 (68344) -> CVampireBoss_ptr_68344
-      CMorph_ctor @ ??? (UNKNOWN)
+      CCloth_ctor @ this+0x12dac (77228) -> CVampireBoss_ptr_77228
+      CCloth_ctor @ this+0x4d8dc (317660) -> CVampireBoss_ptr_317660
+      CCloth_ctor @ this+0x8840c (558092) -> CVampireBoss_ptr_558092
+      CMorph_ctor @ this+0xc2f40 (798528) -> CVampireBoss_ptr_798528
     CVampireBoss_dtor_FUN_005837e0:
       CMorph_dtor @ this+0xc2f40 (798528) -> CVampireBoss_ptr_798528
+      CCloth_dtor @ this+0x8840c (558092) -> CVampireBoss_ptr_558092
+      CCloth_dtor @ this+0x4d8dc (317660) -> CVampireBoss_ptr_317660
+      CCloth_dtor @ this+0x12dac (77228) -> CVampireBoss_ptr_77228
+      CDeformableModelInstance_dtor @ this+0x10af8 (68344) -> CVampireBoss_ptr_68344
       CDemonActor_dtor @ this+0xc2f40 (798528) -> CVampireBoss_ptr_798528
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
@@ -852,6 +869,8 @@ NEEDED ADJ POINTER TYPES
   CCharacter_ptr_11988  (0x2ed4)
   CCharacter_ptr_12168  (0x2f88)
   CCharacter_ptr_14880  (0x3a20)
+  CCloth_ptr_920  (0x398)
+  CCloth_ptr_228176  (0x37b50)
   CConfederate_ptr_14880  (0x3a20)
   CConfederateZombie_ptr_14880  (0x3a20)
   CConstruct_ptr_14880  (0x3a20)
@@ -927,6 +946,7 @@ NEEDED ADJ POINTER TYPES
   CMansionPuzzleCircle_ptr_3068  (0xbfc)
   CMansionPuzzleCircle_ptr_5276  (0x149c)
   CMarquee_ptr_768  (0x300)
+  CMimic_ptr_68544  (0x10bc0)
   CMimic_ptr_309024  (0x4b720)
   CMineCar_ptr_1132  (0x46c)
   CMirror_ptr_152  (0x98)
@@ -971,6 +991,7 @@ NEEDED ADJ POINTER TYPES
   CSuccubus_ptr_68344  (0x10af8)
   CSuccubus_ptr_77228  (0x12dac)
   CSuccubus_ptr_77688  (0x12f78)
+  CSvetlana_ptr_153160  (0x25648)
   CSvetlana_ptr_393592  (0x60178)
   CTVBat_ptr_14880  (0x3a20)
   CTVBat_ptr_68348  (0x10afc)
@@ -986,6 +1007,9 @@ NEEDED ADJ POINTER TYPES
   CUnion_ptr_14880  (0x3a20)
   CUnionZombie_ptr_14880  (0x3a20)
   CVampireBoss_ptr_68344  (0x10af8)
+  CVampireBoss_ptr_77228  (0x12dac)
+  CVampireBoss_ptr_317660  (0x4d8dc)
+  CVampireBoss_ptr_558092  (0x8840c)
   CVampireBoss_ptr_798528  (0xc2f40)
   CVehicle_ptr_692  (0x2b4)
   CVehicle_ptr_1072  (0x430)
@@ -1011,10 +1035,10 @@ NEEDED ADJ POINTER TYPES
   SPageResourceTwanaEntry_ptr_216  (0xd8)
   SVert_ptr_16  (0x10)
 
-Total: 196 types across 140 classes
+Total: 203 types across 141 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (122 calls with unknown offset)
+MANUAL REVIEW NEEDED (119 calls with unknown offset)
 ======================================================================
   CDemonActor_ctor_FUN_00408790.asm: _arrinit
   CArmour_dtor_FUN_0040f120.asm: CClothList_dtor
@@ -1096,7 +1120,6 @@ MANUAL REVIEW NEEDED (122 calls with unknown offset)
   CImp_dtor_FUN_004d80d0.asm: CDeformableModelInstance_dtor
   CLarva_dtor_FUN_004e13a0.asm: CClothList_dtor
   CLarva_dtor_FUN_004e13a0.asm: CDeformableModelInstance_dtor
-  CMimic_ctor_FUN_004f0310.asm: CMorph_ctor
   CMimic_dtor_FUN_004f0400.asm: CClothList_dtor
   CMimic_dtor_FUN_004f0400.asm: CDeformableModelInstance_dtor
   CMobster_dtor_FUN_005004f0.asm: CClothList_dtor
@@ -1125,8 +1148,6 @@ MANUAL REVIEW NEEDED (122 calls with unknown offset)
   CUnion_dtor_FUN_005a5a40.asm: CDeformableModelInstance_dtor
   CUnionZombie_dtor_FUN_005a3e70.asm: CClothList_dtor
   CUnionZombie_dtor_FUN_005a3e70.asm: CDeformableModelInstance_dtor
-  CVampireBoss_ctor_FUN_00581530.asm: CMorph_ctor
-  CVampireBoss_dtor_FUN_005837e0.asm: CDeformableModelInstance_dtor
   CVampireBoss_dtor_FUN_005837e0.asm: CClothList_dtor
   CVampireBoss_dtor_FUN_005837e0.asm: CDeformableModelInstance_dtor
   CSteuben_dtor_FUN_005a5d70.asm: CClothList_dtor

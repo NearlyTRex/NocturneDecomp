@@ -67,7 +67,7 @@ section .text
     ADD EBX,0x18                        ; 004412e2
     PUSH EBX                            ; 004412e5
     CALL support_codec.cpp_flushBitBuffer_FUN_00440440 ; 004412e6
-        ;   XREF to: 00440440 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_flushBitBuffer_FUN_00440440()
+        ;   XREF to: 00440440 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_flushBitBuffer_FUN_00440440(SBitBuffer * bit_buffer, void * ostream)
     ADD ESP,0x8                         ; 004412eb
     TEST EAX,EAX                        ; 004412ee
     JZ 0x004412ff                       ; 004412f0

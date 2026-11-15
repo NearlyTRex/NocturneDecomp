@@ -9,14 +9,14 @@
 ;   undefined4 DAT_0264bcbc
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_00575010
+;   engine_texture.cpp_clearTextureCache_FUN_00575010
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL engine_texture.cpp_FUN_00575010 ; 004f3420
-        ;   XREF to: 00575010 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00575010()
+    CALL engine_texture.cpp_clearTextureCache_FUN_00575010 ; 004f3420
+        ;   XREF to: 00575010 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_00575010()
         ;   Label: engine_mini3d.cpp_resetTextureCache_FUN_004f3420
     CMP dword ptr [0x0264bcbc],0x0      ; 004f3425 | DAT_0264bcbc
     JZ 0x004f3437                       ; 004f342c

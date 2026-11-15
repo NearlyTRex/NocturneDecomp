@@ -55,9 +55,9 @@ int __cdecl core_asgaya_cpp_CAsgaya_shouldIgnoreForTargeting_FUN_005a1b10(CAsgay
 int __cdecl core_asgaya_cpp_CAsgaya_isInvulnerable_FUN_005a1b20(CAsgaya *this_ptr);
 CPathMap * __cdecl core_asgaya_cpp_CAsgaya_getPathMap_FUN_005a1b40(CAsgaya *this_ptr);
 CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags);
-void core_asgaya_cpp_FUN_005a1c00(void);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005a1c00(SRenderVertex *v0,SRenderVertex *v1);
 int * core_asgaya_cpp_FUN_005a1e60(void);
-void core_asgaya_cpp_FUN_005a1ea0(SRenderVertex *param_1,int param_2);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005a1ea0(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {

@@ -134,7 +134,7 @@ void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004878a0(CEmitter *t
 CBoundingBox3D * __stack_esi core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_emitter_cpp_CEmitter_archive_FUN_00487990(CEmitter *this_ptr);
 ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_00487c70(CEmitter *this_ptr,SCollisionInfo *collision_info);
-void core_emitter_cpp_FUN_00487c80(CDemonActor *param_1);
+CVector3f * __stack_esi core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00487c80(CEmitter *this_ptr,CVector3f *out_point);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_00487d30(CEmitter *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_00487d80(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr);

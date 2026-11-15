@@ -468,7 +468,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_mirror_cpp_FUN_004f5a70
+        .func = (RUNTIME_HANDLER_FUNC *)core_mirror_cpp_SClipPlane_dtor_FUN_004f5a70
     },
     {
         .status = 0x00,

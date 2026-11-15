@@ -33,9 +33,9 @@ CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 // Address: 004087a0
 void __cdecl CDemonActor::process(CDemonActor *this_ptr,float delta_time);
 
-// Original: core_actor.cpp_FUN_004087d0
+// Original: core_actor.cpp_CDemonActor_renderTransparent_FUN_004087d0
 // Address: 004087d0
-int __cdecl FUN_004087d0(CDemonActor *this_ptr);
+int __cdecl CDemonActor::renderTransparent(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_renderBackground_FUN_004087e0
 // Address: 004087e0

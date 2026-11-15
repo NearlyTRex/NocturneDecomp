@@ -171,7 +171,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
     } while (iVar5 < _DAT_0203a598);
   }
   core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(this_ptr,0xc);
-  core_set_cpp_FUN_00536c90();
+  core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(this_ptr);
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
             (&g_CDemonCameraInstance,(CVector3f *)0x0,(SProjectedVertex *)0x0);
   core_gore_cpp_CGore_renderParticles_FUN_004ce5b0(g_CGorePtr);
@@ -187,7 +187,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
   if (g_CWaterPtr->wave_animation_enabled != 0) {
     core_water_cpp_CWater_render_FUN_00577760(g_CWaterPtr,0);
   }
-  core_set_cpp_FUN_00536f90();
+  core_set_cpp_CDemonSet_renderTransparentActors_FUN_00536f90(this_ptr);
   if (this_ptr->player_on_train != 0) {
     core_terrain_cpp_CTerrain_render_FUN_005723d0(0x02CFD8B8,0);
   }

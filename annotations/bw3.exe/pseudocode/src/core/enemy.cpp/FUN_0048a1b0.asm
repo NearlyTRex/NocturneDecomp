@@ -15,7 +15,7 @@
 ;   core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d5fd0 at 004d6024
 ;   core_kedward.cpp_CKedward_processDamage_FUN_005918e0 at 00591973
 ;   core_mattnntt.cpp_CMattanntote_processDamage_FUN_005939b0 at 005939f3
-;   core_shadow.cpp_FUN_005459b0 at 00545a00
+;   core_shadow.cpp_CShadow_processDamage_FUN_005459b0 at 00545a00
 ;   core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330 at 005a042a
 ;   ... and 1 more
 ;

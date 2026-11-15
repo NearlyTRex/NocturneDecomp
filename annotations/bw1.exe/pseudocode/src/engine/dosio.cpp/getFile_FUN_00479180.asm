@@ -14,7 +14,7 @@
 ;
 ; XREF[44]:
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0 at 00438bea
-;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a071
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0043a040 at 0043a071
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40 at 00438e65
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480 at 005384ab
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750 at 0053877a

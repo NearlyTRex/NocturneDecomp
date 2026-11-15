@@ -8,7 +8,6 @@
 #include "system/stdio.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPart.h"
@@ -17,7 +16,6 @@
 #include "types/classes/CDraculaBride.h"
 #include "types/classes/CDrawSurface.h"
 #include "types/classes/CFileFinder.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -37,34 +35,34 @@
 // FUNCTION PROTOTYPES - Range 0x470000
 // =============================================================================
 
-void core_doc_cpp_FUN_00470750(int param_1);
+void __cdecl core_doc_cpp_CDoc_processPickupComplete_FUN_00470750(CDoc *this_ptr);
 void core_doc_cpp_FUN_004707d0(int param_1);
 undefined4 core_doc_cpp_FUN_00470820(void);
-undefined4 core_doc_cpp_FUN_004712b0(CCharacter *param_1);
+int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_archive_FUN_00471970(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00472220(CDoc *this_ptr);
 void core_doc_cpp_FUN_00472260(void);
 undefined4 * core_doc_cpp_FUN_004722f0(void);
-void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl core_doc_cpp_CDoc_autoAimAtThreat_FUN_004724a0(CDoc *this_ptr,int hand_index,float delta_time);
 void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_00473160(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,float delta_time,int is_weapon_active);
 CMatrix3x4f * __stack2_esi core_doc_cpp_CDoc_getCarryObjToBodyXForm_FUN_00474250(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-void core_doc_cpp_FUN_004742a0(int param_1);
-void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2);
-void core_doc_cpp_FUN_00474ef0(int param_1);
+CVector3f * __stack_esi core_doc_cpp_CDoc_getThrowDirection_FUN_004742a0(CDoc *this_ptr,CVector3f *out_direction);
+void __cdecl core_doc_cpp_CDoc_updateWeaponLayerActions_FUN_00474400(CDoc *this_ptr,float delta_time);
+void core_doc_cpp_FUN_00474ef0(CDoc *param_1);
 void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_00475650(CDoc *this_ptr,int action_type);
 undefined4 core_doc_cpp_FUN_00475890(int param_1);
-void core_doc_cpp_FUN_00475920(CCharacter *param_1);
+void core_doc_cpp_FUN_00475920(CDoc *param_1);
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 void core_doc_cpp_FUN_00476080(int param_1);
 void core_doc_cpp_FUN_00476150(int param_1,undefined4 param_2);
-undefined4 core_doc_cpp_FUN_00476210(int param_1);
-void core_doc_cpp_FUN_00476220(int param_1,int param_2);
+int __cdecl core_doc_cpp_CDoc_isWeaponDrawn_FUN_00476210(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_00476220(CDoc *this_ptr,int drawn);
 int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_00476260(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
-void core_doc_cpp_FUN_004763c0(CHero *param_1);
+void __cdecl core_doc_cpp_CDoc_reset_FUN_004763c0(CDoc *this_ptr);
 EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_00476430(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_dropCarriedObject_FUN_00476460(CDoc *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_doc_cpp_CDoc_drop_FUN_004764c0(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position);

@@ -1265,7 +1265,9 @@ LAB_005199e6:
                           ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
       if (pCVar13 == (CDemonActor *)0x0) {
         if (((this_ptr->weapon == (CWeapon *)0x0) || (this_ptr->weapon->number_of_hands_needed == 1)
-            ) && (iVar14 = core_inv_cpp_FUN_004dba80(&(this_ptr->base).inventory), iVar14 != 0)) {
+            ) && (iVar14 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004dba80
+                                     (&(this_ptr->base).inventory,"CLightActor"),
+                 iVar14 != 0)) {
           (this_ptr->base).action_pending = 8;
         }
       }
@@ -1280,7 +1282,7 @@ LAB_005199e6:
            (this_ptr->base).player_input.look_up_down_speed * _DAT_005cd17f * (float)_DAT_005cd14f *
            delta_time + this_ptr->aim_pitch;
       fStack_64 = core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(this_ptr);
-      fStack_1c = (float)core_prye_cpp_FUN_0051c0f0();
+      fStack_1c = core_prye_cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(this_ptr);
       if (this_ptr->aim_pitch < fStack_64) {
         this_ptr->aim_pitch = fStack_64;
       }
@@ -1388,7 +1390,7 @@ LAB_005199e6:
   core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(this_ptr,0,delta_time);
   core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(this_ptr,1,delta_time);
   core_prye_cpp_FUN_005263c0(this_ptr);
-  core_inv_cpp_FUN_004dcdb0();
+  core_inv_cpp_CInventory_updateInventory_FUN_004dcdb0(&(this_ptr->base).inventory);
   core_prye_cpp_FUN_00526dc0(this_ptr);
   pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c840
                       ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);

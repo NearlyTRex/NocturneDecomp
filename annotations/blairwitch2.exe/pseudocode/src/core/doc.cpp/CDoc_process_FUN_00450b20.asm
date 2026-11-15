@@ -18,7 +18,7 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_FUN_0042b5e0
-;   core_doc.cpp_FUN_00450c60
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
@@ -53,24 +53,24 @@ section .text
     FSTP float ptr [ESP + 0x4]          ; 00450b5e
     PUSH dword ptr [ESP + 0x4]          ; 00450b62
     PUSH EBX                            ; 00450b66
-    CALL core_doc.cpp_FUN_00450c60      ; 00450b67
-        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00450c60()
+    CALL core_doc.cpp_CDoc_processFrame_FUN_00450c60 ; 00450b67
+        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processFrame_FUN_00450c60(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450b6c
     PUSH dword ptr [ESP + 0x4]          ; 00450b6f
     PUSH EBX                            ; 00450b73
-    CALL core_doc.cpp_FUN_00450c60      ; 00450b74
-        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00450c60()
+    CALL core_doc.cpp_CDoc_processFrame_FUN_00450c60 ; 00450b74
+        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processFrame_FUN_00450c60(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450b79
     PUSH dword ptr [ESP + 0x4]          ; 00450b7c
     PUSH EBX                            ; 00450b80
-    CALL core_doc.cpp_FUN_00450c60      ; 00450b81
-        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00450c60()
+    CALL core_doc.cpp_CDoc_processFrame_FUN_00450c60 ; 00450b81
+        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processFrame_FUN_00450c60(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450b86
     PUSH dword ptr [ESP + 0x4]          ; 00450b89
     PUSH EBX                            ; 00450b8d
         ;   Label: LAB_00450b8d
-    CALL core_doc.cpp_FUN_00450c60      ; 00450b8e
-        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00450c60()
+    CALL core_doc.cpp_CDoc_processFrame_FUN_00450c60 ; 00450b8e
+        ;   XREF to: 00450c60 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processFrame_FUN_00450c60(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450b93
     MOV ECX,dword ptr [0x00616494]      ; 00450b96 | g_CGamePtr
     PUSH dword ptr [ESP + 0x8]          ; 00450b9c

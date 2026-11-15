@@ -9,9 +9,9 @@
 // Address: 0051c5b0
 void __cdecl staticInit(void);
 
-// Original: core_mobster.cpp_FUN_0051c5e0
+// Original: core_mobster.cpp_getObjectGrabPointLocal_FUN_0051c5e0
 // Address: 0051c5e0
-void FUN_0051c5e0(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out);
 
 // Original: core_mobster.cpp_getObjectGrabPointWorld_FUN_0051c6a0
 // Address: 0051c6a0

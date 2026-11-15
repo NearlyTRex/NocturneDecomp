@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00450c60 at 004513e5
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004513e5
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae548
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 0056391f
 ;

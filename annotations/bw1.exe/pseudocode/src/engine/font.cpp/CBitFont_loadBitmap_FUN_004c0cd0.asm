@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0043b2e0
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_string.c_strupr_FUN_005c2c20
@@ -163,8 +163,8 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x194] ; 004c0df0
     PUSH EDX                            ; 004c0df7
     PUSH EBP                            ; 004c0df8
-    CALL cockpit_ckptutil.c_FUN_0043b2e0 ; 004c0df9
-        ;   XREF to: 0043b2e0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_0043b2e0(char * filename, void * buffer, int size)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0 ; 004c0df9
+        ;   XREF to: 0043b2e0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 004c0dfe
     PUSH 0x0                            ; 004c0e01
     LEA EAX,[ESP + 0x330]               ; 004c0e03

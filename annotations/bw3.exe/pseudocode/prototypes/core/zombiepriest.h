@@ -37,17 +37,17 @@ void __cdecl CZombiePriest::setup(CZombiePriest *this_ptr);
 // Address: 0058d960
 void __cdecl CZombiePriest::process(CZombiePriest *this_ptr,float param_2);
 
-// Original: core_zombiepriest.cpp_FUN_0058e8d0
+// Original: core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0
 // Address: 0058e8d0
-void FUN_0058e8d0(CEnemy *param_1,float param_2);
+void __cdecl CZombiePriest::aimTommyGun(CZombiePriest *this_ptr,float delta_time);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0
 // Address: 0058ecd0
 CMatrix3x4f * __stack2_esi CZombiePriest::getCarryObjToBodyXForm(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_zombiepriest.cpp_FUN_0058efb0
+// Original: core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0
 // Address: 0058efb0
-undefined4 FUN_0058efb0(CCharacter *param_1,float param_2);
+int __cdecl CZombiePriest::processWeaponPickup(CZombiePriest *this_ptr,float delta_time);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0
 // Address: 0058f4a0

@@ -126,7 +126,7 @@ undefined4 * core_morph_cpp_FUN_005238c0(undefined4 *param_1);
 undefined4 core_morph_cpp_FUN_005238f0(undefined4 param_1);
 void core_morph_cpp_FUN_00523910(undefined4 *param_1);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_00523980(CMotionList *this_ptr,_FILE *file_handle);
-void core_motion_cpp_FUN_00523db0(int *param_1,undefined4 param_2);
+void __cdecl core_motion_cpp_CMotionList_save_FUN_00523db0(CMotionList *this_ptr,_FILE *file_handle);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
 int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(CMotionList *this_ptr,char *state_name,int error_on_not_found);
 CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_005241d0(CMotionController *this_ptr);

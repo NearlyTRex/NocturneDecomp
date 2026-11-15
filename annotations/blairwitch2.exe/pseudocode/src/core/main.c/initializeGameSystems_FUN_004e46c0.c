@@ -46,7 +46,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     }
   }
   _freopen("stderr.txt",&DAT_005dc1da,(_FILE *)&DAT_0061ef88);
-  core_flattn_cpp_FUN_004a67a0();
+  core_flattn_cpp_doNothing_FUN_004a67a0();
   core_inivar_cpp_readIniData_FUN_004d8d60();
   _DAT_0264bbac = 2;
   engine_pod_cpp_CPod_init_FUN_0051b320(&g_CDemonPodPtr->base);

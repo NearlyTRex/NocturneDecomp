@@ -1,0 +1,392 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 168,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "suspect_float",
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 242
+  },
+  "cross_references": [
+    {
+      "addr": "004b90d0",
+      "from_addr": "004b9d3b",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b8e10",
+    "address_range": [
+      [
+        "004b8e10",
+        "004b8fc4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_giveHeroWeapon_FUN_004b8e10",
+    "signature": "void __cdecl core_game_cpp_giveHeroWeapon_FUN_004b8e10(char *class_name,char *item_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    },
+    {
+      "addr": "004dadb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "004fcda0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d79f3",
+      "name": "s_CMeleeAxe_005d79f1+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d79fd",
+      "name": "DAT_005d79fd",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d79fe",
+      "name": "DAT_005d79fe",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d79ff",
+      "name": "DAT_005d79ff",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7a00",
+      "name": "DAT_005d7a00",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7a01",
+      "name": "s_CBoxActor_005d7a01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a0b",
+      "name": "s_Lantern_005d7a0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a13",
+      "name": "s_Lantern_kfm_005d7a13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a1f",
+      "name": "s_core_game_cpp_005d7a1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a30",
+      "name": "s_giveHeroWeapon_This_is_n_005d7a30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661f38",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004b9d3b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d4a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d59",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d68",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d7a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.132352941176471,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CALLIND": 3,
+      "CBRANCH": 9,
+      "COPY": 97,
+      "INT_ADD": 48,
+      "INT_AND": 69,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 64,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 32,
+      "INT_SUB": 53,
+      "LOAD": 25,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 55
+    },
+    "pcode_op_count": 562
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d2540",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5208
+    },
+    "bw3.exe": {
+      "addr": "004bafd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5208
+    },
+    "nocedit.exe": {
+      "addr": "004dd870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5208
+    },
+    "nocturne.exe": {
+      "addr": "004a02e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5208
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "item_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 44,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "this_ptr[1].particle_systems[1].fade_start = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_005d79fd",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d79fd;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 70,
+      "match": "7.00649e-43",
+      "severity": "mild",
+      "text": "pCVar3[2].particle_systems[0].position.z = 7.00649e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 71,
+      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(*((actor_ptr->vtable)._ub)->pickup)(actor_ptr,*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 27,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 53,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

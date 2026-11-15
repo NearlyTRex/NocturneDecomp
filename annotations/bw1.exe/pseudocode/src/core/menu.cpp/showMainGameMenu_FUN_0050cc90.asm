@@ -111,8 +111,8 @@ section .text
     XOR EBP,EBP                         ; 0050cd2b
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050cd2d
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    CALL engine_texture.cpp_FUN_00597c30 ; 0050cd32
-        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597c30()
+    CALL engine_texture.cpp_clearTextureCache_FUN_00597c30 ; 0050cd32
+        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_00597c30()
     PUSH 0x1d1e380                      ; 0050cd37
     MOV dword ptr [ESP + 0x10],EBP      ; 0050cd3c
     CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050cd40
@@ -314,8 +314,8 @@ section .text
     ADD ESP,0x8                         ; 0050cf48
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050cf4b
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    CALL engine_texture.cpp_FUN_00597c30 ; 0050cf50
-        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597c30()
+    CALL engine_texture.cpp_clearTextureCache_FUN_00597c30 ; 0050cf50
+        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_00597c30()
     PUSH 0x1d1e380                      ; 0050cf55
     CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050cf5a
         ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_00521c50(CMoon * this_ptr)
@@ -404,8 +404,8 @@ section .text
         ;   XREF to: 005031c0 (UNCONDITIONAL_CALL)  ; void core_main.c_showDeveloperToolsMenu_FUN_005031c0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050d023
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    CALL engine_texture.cpp_FUN_00597c30 ; 0050d028
-        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597c30()
+    CALL engine_texture.cpp_clearTextureCache_FUN_00597c30 ; 0050d028
+        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_00597c30()
     PUSH 0x1d1e380                      ; 0050d02d
     CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050d032
         ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_00521c50(CMoon * this_ptr)
@@ -518,8 +518,8 @@ section .text
     ADD ESP,0xc                         ; 0050d142
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050d145
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
-    CALL engine_texture.cpp_FUN_00597c30 ; 0050d14a
-        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597c30()
+    CALL engine_texture.cpp_clearTextureCache_FUN_00597c30 ; 0050d14a
+        ;   XREF to: 00597c30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_00597c30()
     PUSH 0x1d1e380                      ; 0050d14f
     CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050d154
         ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_00521c50(CMoon * this_ptr)

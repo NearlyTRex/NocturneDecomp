@@ -37,6 +37,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFollowSlotStruct.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x590000
@@ -101,7 +102,7 @@ CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(flo
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float angle_radians,CQuaternion4f *quat_out);
 void core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float param_1,float *param_2);
-undefined4 * core_xform_cpp_FUN_005940b0(float *param_1);
+undefined1 core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(void);
 undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00594210(float *param_1);
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_00594380(CVector3f *euler_angles,CQuaternion4f *quat_out);
 void core_xform_cpp_eulerToQuaternionIndirect_FUN_005944a0(float *param_1);
@@ -140,9 +141,9 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00599c60(CZombie *this_ptr,CD
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_00599cd0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_00599d70(CZombie *this_ptr,uint flags);
-void core_zombie_cpp_FUN_00599e10(void);
-int * core_zombie_cpp_FUN_0059a070(void);
-void __cdecl core_zombie_cpp_FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00599e10(SRenderVertex *v0,SRenderVertex *v1);
+SSoftwareEdge * __cdecl engine_zraster_c_findRasterizerEdge_FUN_0059a070(int y_start,SSoftwareEdge *exclude_edge);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl core_zombie_cpp_rasterizePolygonCustom_FUN_0059a5d0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void core_zombie_cpp_rasterizePolygonCustom_FUN_0059a5d0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {

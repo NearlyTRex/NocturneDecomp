@@ -1136,8 +1136,8 @@ section .text
     ADD ESP,0x4                         ; 00519af1
     PUSH EBX                            ; 00519af4
     FSTP float ptr [ESP + 0x488]        ; 00519af5
-    CALL core_prye.cpp_FUN_0051c0f0     ; 00519afc
-        ;   XREF to: 0051c0f0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051c0f0()
+    CALL core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0 ; 00519afc
+        ;   XREF to: 0051c0f0 (UNCONDITIONAL_CALL)  ; float core_prye.cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(CPrye * this_ptr)
     MOV dword ptr [ESP + 0x4dc],EAX     ; 00519b01
     FLD float ptr [ESP + 0x4dc]         ; 00519b08
     ADD ESP,0x4                         ; 00519b0f
@@ -1410,8 +1410,8 @@ section .text
     ADD ESP,0x8                         ; 00519e56
     LEA EAX,[EBX + 0x206e8]             ; 00519e59
     PUSH EAX                            ; 00519e5f
-    CALL core_inv.cpp_FUN_004dcdb0      ; 00519e60
-        ;   XREF to: 004dcdb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dcdb0()
+    CALL core_inv.cpp_CInventory_updateInventory_FUN_004dcdb0 ; 00519e60
+        ;   XREF to: 004dcdb0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004dcdb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 00519e65
     PUSH dword ptr [EBP + 0x18]         ; 00519e68
     PUSH EBX                            ; 00519e6b
@@ -3108,8 +3108,8 @@ section .text
         ;   Label: LAB_0051b4a7
     LEA EAX,[EBX + 0x206e8]             ; 0051b4ac
     PUSH EAX                            ; 0051b4b2
-    CALL core_inv.cpp_FUN_004dba80      ; 0051b4b3
-        ;   XREF to: 004dba80 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dba80()
+    CALL core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80 ; 0051b4b3
+        ;   XREF to: 004dba80 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 0051b4b8
     TEST EAX,EAX                        ; 0051b4bb
     JZ 0x00519a8c                       ; 0051b4bd

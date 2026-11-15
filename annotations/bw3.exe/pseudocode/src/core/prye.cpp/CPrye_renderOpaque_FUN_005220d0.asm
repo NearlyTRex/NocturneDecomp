@@ -34,7 +34,7 @@
 ;   core_cloth.cpp_CClothList_reset_FUN_0043f9d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70
-;   core_inv.cpp_FUN_004db9e0
+;   core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0
 ;   core_prye.cpp_CPrye_getThrowDirection_FUN_00524800
 ;   core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
@@ -310,8 +310,8 @@ section .text
     PUSH 0x5cd674                       ; 005223a9 | = "CGasMask"
     LEA EAX,[EBX + 0x206e8]             ; 005223ae
     PUSH EAX                            ; 005223b4
-    CALL core_inv.cpp_FUN_004db9e0      ; 005223b5
-        ;   XREF to: 004db9e0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004db9e0(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0 ; 005223b5
+        ;   XREF to: 004db9e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005223ba
     PUSH EAX                            ; 005223bd
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 005223be
@@ -436,8 +436,8 @@ section .text
     PUSH 0x5cd67d                       ; 0052252b | = "CGoggles"
     LEA EAX,[EBX + 0x206e8]             ; 00522530
     PUSH EAX                            ; 00522536
-    CALL core_inv.cpp_FUN_004db9e0      ; 00522537
-        ;   XREF to: 004db9e0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004db9e0(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0 ; 00522537
+        ;   XREF to: 004db9e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemOfClass_FUN_004db9e0(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 0052253c
     PUSH EAX                            ; 0052253f
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00522540
