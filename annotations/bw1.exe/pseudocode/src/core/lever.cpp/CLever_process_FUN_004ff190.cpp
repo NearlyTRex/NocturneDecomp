@@ -13,9 +13,9 @@ void __cdecl core_lever_cpp_CLever_process_FUN_004ff190(CLever *this_ptr,float d
 {
   float fVar1;
   float fVar2;
-  CDemonActor *pCVar3;
+  CLever *this_ptr_00;
+  int iVar3;
   int iVar4;
-  int iVar5;
   char *commands;
   
   if (this_ptr->moving == 0) goto LAB_004ff1a8;
@@ -50,22 +50,23 @@ LAB_004ff27c:
     (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->sound);
   }
   if (this_ptr->linked_lever != (CLever *)0x0) {
-    core_lever_cpp_FUN_004ff3f0(this_ptr->linked_lever,this_ptr->param,0);
+    core_lever_cpp_CLever_setState_FUN_004ff3f0(this_ptr->linked_lever,this_ptr->param,0);
   }
-  iVar5 = 0;
   iVar4 = 0;
-  while (iVar4 < g_CDemonSetPtr->actor_count) {
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
-                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
-                        g_CLeverClassInfo.name_hash);
-    if ((pCVar3 == (CDemonActor *)0x0) || (this_ptr != *(CLever **)(pCVar3[3].actor_name + 8))) {
-      iVar4 = iVar4 + 1;
-      iVar5 = iVar5 + 4;
+  iVar3 = 0;
+  while (iVar3 < g_CDemonSetPtr->actor_count) {
+    this_ptr_00 = (CLever *)
+                  core_actor_cpp_castToClassHash_FUN_0040c600
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),
+                             g_CLeverClassInfo.name_hash);
+    if ((this_ptr_00 == (CLever *)0x0) || (this_ptr != this_ptr_00->linked_lever)) {
+      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 4;
     }
     else {
-      core_lever_cpp_FUN_004ff3f0(pCVar3,(*(CLever **)(pCVar3[3].actor_name + 8))->param,0);
-      iVar4 = iVar4 + 1;
-      iVar5 = iVar5 + 4;
+      core_lever_cpp_CLever_setState_FUN_004ff3f0(this_ptr_00,this_ptr_00->linked_lever->param,0);
+      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 4;
     }
   }
 LAB_004ff1a8:

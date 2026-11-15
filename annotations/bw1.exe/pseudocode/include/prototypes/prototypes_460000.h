@@ -65,7 +65,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00463130(C
 void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_00463460(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_FUN_00463820(CDemonLight *this_ptr);
-void core_dlight_cpp_FUN_00463850(void);
+void __cdecl core_dlight_cpp_FUN_00463850(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00463de0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x,int filter_pos_y);
 void __cdecl core_dlight_cpp_captureLightTextures_FUN_00464150(void);

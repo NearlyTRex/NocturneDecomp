@@ -18,6 +18,7 @@
 #include "types/classes/CExamplePuzzle.h"
 #include "types/classes/CGameHook.h"
 #include "types/classes/CGoggles.h"
+#include "types/classes/CIniFile.h"
 #include "types/classes/CLantern.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -54,7 +55,7 @@ float wincore_winrun_cpp_FUN_00590860(void);
 void wincore_winrun_cpp_FUN_005908c0(int param_1);
 void wincore_winrun_cpp_FUN_00590910(undefined4 param_1);
 undefined4 wincore_winrun_cpp_FUN_00590920(undefined4 param_1);
-void wincore_winrun_cpp_FUN_00590960(undefined4 param_1);
+void wincore_winrun_cpp_FUN_00590960(CIniFile *param_1);
 void wincore_winrun_cpp_FUN_00590b10(void);
 void wincore_winrun_cpp_FUN_00590d80(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00590e40(HWND window_handle);
@@ -86,7 +87,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_005932c0(float angle
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_005934e0(float x_offset,CMatrix3x4f *matrix_out);
 void core_xform_cpp_FUN_00593540(void);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005935a0(float z_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_lerpMatrix3x4_FUN_00593770(undefined4 *param_1,undefined4 *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_00593770(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out);
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 void core_xform_cpp_matrixToQuaternion_FUN_00593a50(float *param_1);
@@ -95,14 +96,14 @@ void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00593c40(CQuaternion4f *qu
 CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out);
 CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr);
 void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_00593d50(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
-float * core_xform_cpp_slerpQuaternion_FUN_00593df0(float *param_1,float *param_2,float param_3);
+CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float angle_radians,CQuaternion4f *quat_out);
 void core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float param_1,float *param_2);
 undefined4 * core_xform_cpp_FUN_005940b0(float *param_1);
 undefined4 * core_xform_cpp_FUN_00594210(float *param_1);
-void core_xform_cpp_FUN_00594380(float *param_1);
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_00594380(CVector3f *euler_angles,CQuaternion4f *quat_out);
 void core_xform_cpp_FUN_005944a0(float *param_1);
 void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005945b0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00594670(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);

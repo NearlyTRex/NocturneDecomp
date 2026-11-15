@@ -23,6 +23,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_005577b0(CDirectSo
   fStack_8 = decay_time;
   uStack_10 = 0;
   fStack_4 = damping;
-  (**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf70,0,0,0,&uStack_10,0x10);
+  (**(code **)(*_DAT_0264a5d4 + 0x10))
+            (_DAT_0264a5d4,&g_DSPROPSETID_EAX_ReverbProperties,0,0,0,&uStack_10,0x10);
   return;
 }

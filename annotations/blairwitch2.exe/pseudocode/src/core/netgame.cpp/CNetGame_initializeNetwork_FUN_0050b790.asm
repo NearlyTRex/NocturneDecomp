@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
-;   shape_edittool.cpp_FUN_0047be90
 ;   support_trisock.cpp_CSocket_bindSocket_FUN_005790a0
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_00579360
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_00579060
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5e054d                       ; 0050b797
     MOV EDX,dword ptr [0x006138e0]      ; 0050b79c | g_CEditorToolsPtr
     PUSH EDX                            ; 0050b7a2
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0050b7a3
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0050b7a3
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b7a8
     LEA EBX,[ESI + 0x180]               ; 0050b7ab
     PUSH EBX                            ; 0050b7b1
@@ -98,8 +98,8 @@ section .text
     MOV [0x01d34e34],EAX                ; 0050b841 | DAT_01d34e34
     MOV EAX,[0x006138e0]                ; 0050b846 | g_CEditorToolsPtr
     PUSH EAX                            ; 0050b84b
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0050b84c
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0050b84c
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b851
     MOV EAX,EBP                         ; 0050b854
     POP EBP                             ; 0050b856

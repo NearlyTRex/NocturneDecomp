@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004f7590 at 004f7672
-;   core_script.cpp_FUN_00529410 at 00529546
-;   core_script.cpp_FUN_00529710 at 0052972f
+;   core_script.cpp_CScript_loadScript_FUN_00529410 at 00529546
+;   core_script.cpp_CScript_validateSyntax_FUN_00529710 at 0052972f
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_005cdf02

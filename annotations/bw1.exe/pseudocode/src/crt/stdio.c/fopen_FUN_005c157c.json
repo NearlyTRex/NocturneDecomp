@@ -16,7 +16,7 @@
     {
       "addr": "00538130",
       "from_addr": "0053813f",
-      "name": "cockpit_pkbitmap.cpp_FUN_00538130",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00538130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -64,7 +64,7 @@
     {
       "addr": "0053d580",
       "from_addr": "0053d59b",
-      "name": "core_podmain.cpp_FUN_0053d580",
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_0053d580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,6 +86,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004f4550",
+      "from_addr": "004f4578",
+      "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004f4550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f4370",
       "from_addr": "004f4397",
       "name": "engine_ini.cpp_CIni_getProfileString_FUN_004f4370",
@@ -95,12 +101,6 @@
       "addr": "004f4720",
       "from_addr": "004f4781",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004f4720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4550",
-      "from_addr": "004f4578",
-      "name": "engine_ini.cpp_FUN_004f4550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -122,21 +122,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053bfc0",
-      "from_addr": "0053c024",
-      "name": "engine_pod.cpp_FUN_0053bfc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053c290",
       "from_addr": "0053c2e1",
-      "name": "engine_pod.cpp_FUN_0053c290",
+      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_0053c290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053c3b0",
       "from_addr": "0053c401",
-      "name": "engine_pod.cpp_FUN_0053c3b0",
+      "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bfc0",
+      "from_addr": "0053c024",
+      "name": "engine_pod.cpp_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -295,7 +295,7 @@
       {
         "call_addr": "004f4578",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004f4550",
+        "caller": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004f4550",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

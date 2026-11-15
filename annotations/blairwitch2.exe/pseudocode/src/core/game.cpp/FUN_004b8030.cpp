@@ -14,7 +14,8 @@ void core_game_cpp_FUN_004b8030(int param_1,int param_2)
   if ((param_2 != *(int *)(param_1 + 0x260)) && (*(int *)(param_1 + 0x260) = param_2, param_2 == 0))
   {
     iVar1 = g_CDemonSetPtr->selected_camera_index;
-    core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
     g_CScriptPtr->focus_actor_changed = 0;
     if (iVar1 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0

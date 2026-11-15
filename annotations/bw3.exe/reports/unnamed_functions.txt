@@ -1,4 +1,4 @@
-bw3.exe: 5895 functions, 4868 named (82.6%), 562 unnamed game, 465 unnamed CRT
+bw3.exe: 5895 functions, 4941 named (83.8%), 489 unnamed game, 465 unnamed CRT
 
 core_prye.cpp  28 unnamed, 42978 bytes
   00517c90      80  core_prye.cpp_FUN_00517c90
@@ -30,9 +30,14 @@ core_prye.cpp  28 unnamed, 42978 bytes
   005271d0      47  core_prye.cpp_FUN_005271d0
   00527200      41  core_prye.cpp_FUN_00527200
 
-core_game.cpp  17 unnamed, 23555 bytes
+core_event.cpp  4 unnamed, 22834 bytes
+  0048c2e0   22311  core_event.cpp_FUN_0048c2e0
+  00495b50     315  core_event.cpp_FUN_00495b50
+  00495c90     197  core_event.cpp_FUN_00495c90
+  00495e60      11  core_event.cpp_FUN_00495e60
+
+core_game.cpp  16 unnamed, 19801 bytes
   004b5040     171  core_game.cpp_FUN_004b5040
-  004b6f30    3754  core_game.cpp_FUN_004b6f30
   004b8e60    1136  core_game.cpp_FUN_004b8e60
   004b9850     149  core_game.cpp_FUN_004b9850
   004b98f0     100  core_game.cpp_FUN_004b98f0
@@ -48,36 +53,6 @@ core_game.cpp  17 unnamed, 23555 bytes
   004c4cc0      67  core_game.cpp_FUN_004c4cc0
   004c4d10      52  core_game.cpp_FUN_004c4d10
   004c4d50      11  core_game.cpp_FUN_004c4d50
-
-core_event.cpp  4 unnamed, 22834 bytes
-  0048c2e0   22311  core_event.cpp_FUN_0048c2e0
-  00495b50     315  core_event.cpp_FUN_00495b50
-  00495c90     197  core_event.cpp_FUN_00495c90
-  00495e60      11  core_event.cpp_FUN_00495e60
-
-core_charactr.cpp  22 unnamed, 10907 bytes
-  0042b430      32  core_charactr.cpp_FUN_0042b430
-  0042b970      98  core_charactr.cpp_FUN_0042b970
-  0042c1e0      71  core_charactr.cpp_FUN_0042c1e0
-  0042cd70    1554  core_charactr.cpp_FUN_0042cd70
-  0042d390     361  core_charactr.cpp_FUN_0042d390
-  0042d500     864  core_charactr.cpp_FUN_0042d500
-  0042d860      50  core_charactr.cpp_FUN_0042d860
-  0042d8a0      25  core_charactr.cpp_FUN_0042d8a0
-  0042f280     140  core_charactr.cpp_FUN_0042f280
-  0042fbd0     189  core_charactr.cpp_FUN_0042fbd0
-  0042fdc0     196  core_charactr.cpp_FUN_0042fdc0
-  004307b0       3  core_charactr.cpp_FUN_004307b0
-  004307f0       1  core_charactr.cpp_FUN_004307f0
-  004310e0     909  core_charactr.cpp_FUN_004310e0
-  00432330    3277  core_charactr.cpp_FUN_00432330
-  00433c60     835  core_charactr.cpp_FUN_00433c60
-  00434190    1660  core_charactr.cpp_FUN_00434190
-  00434850      91  core_charactr.cpp_FUN_00434850
-  004348b0     277  core_charactr.cpp_FUN_004348b0
-  004349d0      29  core_charactr.cpp_FUN_004349d0
-  00434b00      11  core_charactr.cpp_FUN_00434b00
-  00434b30     234  core_charactr.cpp_FUN_00434b30
 
 core_shadow.cpp  21 unnamed, 10089 bytes
   00543680     493  core_shadow.cpp_FUN_00543680
@@ -102,15 +77,13 @@ core_shadow.cpp  21 unnamed, 10089 bytes
   00545f90      28  core_shadow.cpp_FUN_00545f90
   00545fb0       6  core_shadow.cpp_FUN_00545fb0
 
-engine_font.cpp  11 unnamed, 10028 bytes
+engine_font.cpp  9 unnamed, 8884 bytes
   004afbf0    1399  engine_font.cpp_FUN_004afbf0
   004b0170      27  engine_font.cpp_FUN_004b0170
-  004b01d0     686  engine_font.cpp_FUN_004b01d0
   004b13a0     187  engine_font.cpp_FUN_004b13a0
   004b1460    5662  engine_font.cpp_FUN_004b1460
   004b2c10     545  engine_font.cpp_FUN_004b2c10
   004b2e40     171  engine_font.cpp_FUN_004b2e40
-  004b2ef0     458  engine_font.cpp_FUN_004b2ef0
   004b33d0     833  engine_font.cpp_FUN_004b33d0
   004b37d0       6  engine_font.cpp_FUN_004b37d0
   004b3920      54  engine_font.cpp_FUN_004b3920
@@ -149,18 +122,25 @@ support_trisock.cpp  32 unnamed, 8374 bytes
   00572310      31  support_trisock.cpp_FUN_00572310
   00572330      17  support_trisock.cpp_FUN_00572330
 
-engine_pod.cpp  9 unnamed, 5560 bytes
-  00512fb0    3034  engine_pod.cpp_FUN_00512fb0
-  00513d20     713  engine_pod.cpp_FUN_00513d20
-  00513ff0     277  engine_pod.cpp_FUN_00513ff0
-  00514110     270  engine_pod.cpp_FUN_00514110
-  00514220     246  engine_pod.cpp_FUN_00514220
-  005143b0     253  engine_pod.cpp_FUN_005143b0
-  005144b0     168  engine_pod.cpp_FUN_005144b0
-  005149c0     490  engine_pod.cpp_FUN_005149c0
-  00514bb0     109  engine_pod.cpp_FUN_00514bb0
+core_charactr.cpp  16 unnamed, 7949 bytes
+  0042b430      32  core_charactr.cpp_FUN_0042b430
+  0042b970      98  core_charactr.cpp_FUN_0042b970
+  0042c1e0      71  core_charactr.cpp_FUN_0042c1e0
+  0042cd70    1554  core_charactr.cpp_FUN_0042cd70
+  0042d390     361  core_charactr.cpp_FUN_0042d390
+  0042d500     864  core_charactr.cpp_FUN_0042d500
+  0042d860      50  core_charactr.cpp_FUN_0042d860
+  0042d8a0      25  core_charactr.cpp_FUN_0042d8a0
+  0042f280     140  core_charactr.cpp_FUN_0042f280
+  00432330    3277  core_charactr.cpp_FUN_00432330
+  00433c60     835  core_charactr.cpp_FUN_00433c60
+  00434850      91  core_charactr.cpp_FUN_00434850
+  004348b0     277  core_charactr.cpp_FUN_004348b0
+  004349d0      29  core_charactr.cpp_FUN_004349d0
+  00434b00      11  core_charactr.cpp_FUN_00434b00
+  00434b30     234  core_charactr.cpp_FUN_00434b30
 
-core_set.cpp  11 unnamed, 5064 bytes
+core_set.cpp  10 unnamed, 4541 bytes
   00532630     116  core_set.cpp_FUN_00532630
   005326b0     264  core_set.cpp_FUN_005326b0
   00533e60    1463  core_set.cpp_FUN_00533e60
@@ -168,23 +148,9 @@ core_set.cpp  11 unnamed, 5064 bytes
   00536c90     753  core_set.cpp_FUN_00536c90
   00536f90     736  core_set.cpp_FUN_00536f90
   00537320     105  core_set.cpp_FUN_00537320
-  005386d0     523  core_set.cpp_FUN_005386d0
   0053b2c0      60  core_set.cpp_FUN_0053b2c0
   0053b6e0     261  core_set.cpp_FUN_0053b6e0
   0053bb60      24  core_set.cpp_FUN_0053bb60
-
-core_dtrace.cpp  5 unnamed, 4966 bytes
-  00473cd0    1831  core_dtrace.cpp_FUN_00473cd0
-  00474400    1338  core_dtrace.cpp_FUN_00474400
-  00475090    1316  core_dtrace.cpp_FUN_00475090
-  004755c0     338  core_dtrace.cpp_FUN_004755c0
-  00477dd0     143  core_dtrace.cpp_FUN_00477dd0
-
-core_setcolid.cpp  4 unnamed, 4567 bytes
-  0053bc80    3649  core_setcolid.cpp_FUN_0053bc80
-  0053ccc0     448  core_setcolid.cpp_FUN_0053ccc0
-  0053ce80     365  core_setcolid.cpp_FUN_0053ce80
-  0053ed10     105  core_setcolid.cpp_FUN_0053ed10
 
 core_carved.cpp  10 unnamed, 4534 bytes
   00425580     148  core_carved.cpp_FUN_00425580
@@ -197,28 +163,6 @@ core_carved.cpp  10 unnamed, 4534 bytes
   00428600      57  core_carved.cpp_FUN_00428600
   00428810     624  core_carved.cpp_FUN_00428810
   00429090     340  core_carved.cpp_FUN_00429090
-
-core_glass.cpp  1 unnamed, 4490 bytes
-  004caeb0    4490  core_glass.cpp_FUN_004caeb0
-
-engine_texture.cpp  17 unnamed, 4451 bytes
-  005695c0     166  engine_texture.cpp_FUN_005695c0
-  00569e50     102  engine_texture.cpp_FUN_00569e50
-  00569ec0      88  engine_texture.cpp_FUN_00569ec0
-  00569f20     201  engine_texture.cpp_FUN_00569f20
-  00569ff0     176  engine_texture.cpp_FUN_00569ff0
-  0056a130    1235  engine_texture.cpp_FUN_0056a130
-  0056a610     116  engine_texture.cpp_FUN_0056a610
-  0056a690      96  engine_texture.cpp_FUN_0056a690
-  0056a7d0     273  engine_texture.cpp_FUN_0056a7d0
-  0056a8f0     105  engine_texture.cpp_FUN_0056a8f0
-  0056aab0     182  engine_texture.cpp_FUN_0056aab0
-  0056ab70     161  engine_texture.cpp_FUN_0056ab70
-  0056ac20      33  engine_texture.cpp_FUN_0056ac20
-  0056ac80      36  engine_texture.cpp_FUN_0056ac80
-  0056ace0      16  engine_texture.cpp_FUN_0056ace0
-  0056ad50      11  engine_texture.cpp_FUN_0056ad50
-  0056ad60    1454  engine_texture.cpp_FUN_0056ad60
 
 core_demnfolk.cpp  11 unnamed, 4443 bytes
   00454780     148  core_demnfolk.cpp_FUN_00454780
@@ -238,38 +182,6 @@ core_dlight.cpp  4 unnamed, 4028 bytes
   0045d560       1  core_dlight.cpp_FUN_0045d560
   0045e6a0    1732  core_dlight.cpp_FUN_0045e6a0
   0045ff30     827  core_dlight.cpp_FUN_0045ff30
-
-shape_edittool.cpp  25 unnamed, 3926 bytes
-  0047b4e0      39  shape_edittool.cpp_FUN_0047b4e0
-  0047b770      80  shape_edittool.cpp_FUN_0047b770
-  0047b7c0     285  shape_edittool.cpp_FUN_0047b7c0
-  0047b8e0     149  shape_edittool.cpp_FUN_0047b8e0
-  0047b980      45  shape_edittool.cpp_FUN_0047b980
-  0047b9b0      45  shape_edittool.cpp_FUN_0047b9b0
-  0047b9e0      50  shape_edittool.cpp_FUN_0047b9e0
-  0047ccb0     198  shape_edittool.cpp_FUN_0047ccb0
-  0047cee0      92  shape_edittool.cpp_FUN_0047cee0
-  0047d0a0     248  shape_edittool.cpp_FUN_0047d0a0
-  0047d1a0     129  shape_edittool.cpp_FUN_0047d1a0
-  0047d980     177  shape_edittool.cpp_FUN_0047d980
-  0047da40     291  shape_edittool.cpp_FUN_0047da40
-  00481920     158  shape_edittool.cpp_FUN_00481920
-  00481ef0       6  shape_edittool.cpp_FUN_00481ef0
-  00481f00      31  shape_edittool.cpp_FUN_00481f00
-  00482ea0     345  shape_edittool.cpp_FUN_00482ea0
-  00483000      31  shape_edittool.cpp_FUN_00483000
-  00483020     414  shape_edittool.cpp_FUN_00483020
-  004852f0     542  shape_edittool.cpp_FUN_004852f0
-  00486070      17  shape_edittool.cpp_FUN_00486070
-  00486670     226  shape_edittool.cpp_FUN_00486670
-  00486760      17  shape_edittool.cpp_FUN_00486760
-  00486810     304  shape_edittool.cpp_FUN_00486810
-  00486af0       7  shape_edittool.cpp_FUN_00486af0
-
-core_cloth.cpp  3 unnamed, 3522 bytes
-  0043cb00    2934  core_cloth.cpp_FUN_0043cb00
-  0043f110      66  core_cloth.cpp_FUN_0043f110
-  0043f160     522  core_cloth.cpp_FUN_0043f160
 
 core_zombiepriest.cpp  6 unnamed, 3503 bytes
   0058d2f0     186  core_zombiepriest.cpp_FUN_0058d2f0
@@ -297,14 +209,29 @@ engine_special.cpp  16 unnamed, 3492 bytes
   005664c0      27  engine_special.cpp_FUN_005664c0
   005665c0      19  engine_special.cpp_FUN_005665c0
 
-core_gore.cpp  7 unnamed, 3106 bytes
-  004cc970     322  core_gore.cpp_FUN_004cc970
-  004cd3f0      81  core_gore.cpp_FUN_004cd3f0
-  004cd690    1165  core_gore.cpp_FUN_004cd690
-  004cdd30     649  core_gore.cpp_FUN_004cdd30
-  004ce310     530  core_gore.cpp_FUN_004ce310
-  004ced40     232  core_gore.cpp_FUN_004ced40
-  004cee70     127  core_gore.cpp_FUN_004cee70
+engine_texture.cpp  16 unnamed, 3216 bytes
+  005695c0     166  engine_texture.cpp_FUN_005695c0
+  00569e50     102  engine_texture.cpp_FUN_00569e50
+  00569ec0      88  engine_texture.cpp_FUN_00569ec0
+  00569f20     201  engine_texture.cpp_FUN_00569f20
+  00569ff0     176  engine_texture.cpp_FUN_00569ff0
+  0056a610     116  engine_texture.cpp_FUN_0056a610
+  0056a690      96  engine_texture.cpp_FUN_0056a690
+  0056a7d0     273  engine_texture.cpp_FUN_0056a7d0
+  0056a8f0     105  engine_texture.cpp_FUN_0056a8f0
+  0056aab0     182  engine_texture.cpp_FUN_0056aab0
+  0056ab70     161  engine_texture.cpp_FUN_0056ab70
+  0056ac20      33  engine_texture.cpp_FUN_0056ac20
+  0056ac80      36  engine_texture.cpp_FUN_0056ac80
+  0056ace0      16  engine_texture.cpp_FUN_0056ace0
+  0056ad50      11  engine_texture.cpp_FUN_0056ad50
+  0056ad60    1454  engine_texture.cpp_FUN_0056ad60
+
+core_dtrace.cpp  4 unnamed, 3135 bytes
+  00474400    1338  core_dtrace.cpp_FUN_00474400
+  00475090    1316  core_dtrace.cpp_FUN_00475090
+  004755c0     338  core_dtrace.cpp_FUN_004755c0
+  00477dd0     143  core_dtrace.cpp_FUN_00477dd0
 
 wincore_winrun.cpp  19 unnamed, 3089 bytes
   00580870      10  wincore_winrun.cpp_FUN_00580870
@@ -350,33 +277,13 @@ core_dpart.cpp  3 unnamed, 2935 bytes
   00466d50    1650  core_dpart.cpp_FUN_00466d50
   004673d0    1265  core_dpart.cpp_FUN_004673d0
 
-support_codec.cpp  20 unnamed, 2788 bytes
-  00440210      42  support_codec.cpp_FUN_00440210
-  00440240      31  support_codec.cpp_FUN_00440240
-  00440260     405  support_codec.cpp_FUN_00440260
-  00440400      64  support_codec.cpp_FUN_00440400
-  00440440      71  support_codec.cpp_FUN_00440440
-  004404e0     210  support_codec.cpp_FUN_004404e0
-  004406e0      98  support_codec.cpp_FUN_004406e0
-  00440860     100  support_codec.cpp_FUN_00440860
-  004408e0     130  support_codec.cpp_FUN_004408e0
-  00440970     113  support_codec.cpp_FUN_00440970
-  00440a70     227  support_codec.cpp_FUN_00440a70
-  00440e10     217  support_codec.cpp_FUN_00440e10
-  00440ef0     210  support_codec.cpp_FUN_00440ef0
-  00440fd0     122  support_codec.cpp_FUN_00440fd0
-  00441050     152  support_codec.cpp_FUN_00441050
-  00441190     249  support_codec.cpp_FUN_00441190
-  00441390      90  support_codec.cpp_FUN_00441390
-  004413f0     147  support_codec.cpp_FUN_004413f0
-  00441490      93  support_codec.cpp_FUN_00441490
-  00441510      17  support_codec.cpp_FUN_00441510
+core_dcube.cpp  1 unnamed, 2572 bytes
+  00453230    2572  core_dcube.cpp_FUN_00453230
 
-core_inv.cpp  12 unnamed, 2694 bytes
+core_inv.cpp  11 unnamed, 2517 bytes
   004d9fc0      89  core_inv.cpp_FUN_004d9fc0
   004da020     753  core_inv.cpp_FUN_004da020
   004da840      49  core_inv.cpp_FUN_004da840
-  004db8d0     177  core_inv.cpp_FUN_004db8d0
   004db990      66  core_inv.cpp_FUN_004db990
   004db9e0      66  core_inv.cpp_FUN_004db9e0
   004dba30      79  core_inv.cpp_FUN_004dba30
@@ -385,9 +292,6 @@ core_inv.cpp  12 unnamed, 2694 bytes
   004dcdb0    1291  core_inv.cpp_FUN_004dcdb0
   004dd2d0      58  core_inv.cpp_FUN_004dd2d0
   004dd310      34  core_inv.cpp_FUN_004dd310
-
-core_dcube.cpp  1 unnamed, 2572 bytes
-  00453230    2572  core_dcube.cpp_FUN_00453230
 
 core_xform.cpp  6 unnamed, 2324 bytes
   00584b00     985  core_xform.cpp_FUN_00584b00
@@ -408,10 +312,41 @@ cockpit_ckptutil.c  9 unnamed, 2243 bytes
   00438ca0     591  cockpit_ckptutil.c_FUN_00438ca0
   00438ef0     329  cockpit_ckptutil.c_FUN_00438ef0
 
-core_hero.cpp  9 unnamed, 2230 bytes
+core_tawiscara.cpp  3 unnamed, 2028 bytes
+  00595710      72  core_tawiscara.cpp_FUN_00595710
+  00595760    1472  core_tawiscara.cpp_FUN_00595760
+  00596380     484  core_tawiscara.cpp_FUN_00596380
+
+shape_edittool.cpp  18 unnamed, 1908 bytes
+  0047b4e0      39  shape_edittool.cpp_FUN_0047b4e0
+  0047b770      80  shape_edittool.cpp_FUN_0047b770
+  0047b7c0     285  shape_edittool.cpp_FUN_0047b7c0
+  0047b8e0     149  shape_edittool.cpp_FUN_0047b8e0
+  0047b980      45  shape_edittool.cpp_FUN_0047b980
+  0047b9b0      45  shape_edittool.cpp_FUN_0047b9b0
+  0047b9e0      50  shape_edittool.cpp_FUN_0047b9e0
+  0047d0a0     248  shape_edittool.cpp_FUN_0047d0a0
+  0047d1a0     129  shape_edittool.cpp_FUN_0047d1a0
+  00481920     158  shape_edittool.cpp_FUN_00481920
+  00481ef0       6  shape_edittool.cpp_FUN_00481ef0
+  00481f00      31  shape_edittool.cpp_FUN_00481f00
+  00482ea0     345  shape_edittool.cpp_FUN_00482ea0
+  00483000      31  shape_edittool.cpp_FUN_00483000
+  00486070      17  shape_edittool.cpp_FUN_00486070
+  00486670     226  shape_edittool.cpp_FUN_00486670
+  00486760      17  shape_edittool.cpp_FUN_00486760
+  00486af0       7  shape_edittool.cpp_FUN_00486af0
+
+engine_pod.cpp  5 unnamed, 1811 bytes
+  00513d20     713  engine_pod.cpp_FUN_00513d20
+  00514220     246  engine_pod.cpp_FUN_00514220
+  005143b0     253  engine_pod.cpp_FUN_005143b0
+  005149c0     490  engine_pod.cpp_FUN_005149c0
+  00514bb0     109  engine_pod.cpp_FUN_00514bb0
+
+core_hero.cpp  8 unnamed, 1768 bytes
   004d2ae0       3  core_hero.cpp_FUN_004d2ae0
   004d2cd0      19  core_hero.cpp_FUN_004d2cd0
-  004d3040     462  core_hero.cpp_FUN_004d3040
   004d3210      55  core_hero.cpp_FUN_004d3210
   004d3c90     388  core_hero.cpp_FUN_004d3c90
   004d4230     427  core_hero.cpp_FUN_004d4230
@@ -419,25 +354,20 @@ core_hero.cpp  9 unnamed, 2230 bytes
   004d4900     421  core_hero.cpp_FUN_004d4900
   004d4ce0     321  core_hero.cpp_FUN_004d4ce0
 
-core_tawiscara.cpp  3 unnamed, 2028 bytes
-  00595710      72  core_tawiscara.cpp_FUN_00595710
-  00595760    1472  core_tawiscara.cpp_FUN_00595760
-  00596380     484  core_tawiscara.cpp_FUN_00596380
-
-core_box.cpp  3 unnamed, 1964 bytes
-  0041b030     401  core_box.cpp_FUN_0041b030
-  0041daf0     471  core_box.cpp_FUN_0041daf0
-  0041e220    1092  core_box.cpp_FUN_0041e220
-
-core_dcamera.cpp  4 unnamed, 1739 bytes
-  0044af70     244  core_dcamera.cpp_FUN_0044af70
-  0044bb00     336  core_dcamera.cpp_FUN_0044bb00
-  0044dd00      84  core_dcamera.cpp_FUN_0044dd00
-  00450e10    1075  core_dcamera.cpp_FUN_00450e10
-
-core_bugs.cpp  2 unnamed, 1619 bytes
-  00422a00    1609  core_bugs.cpp_FUN_00422a00
-  004242d0      10  core_bugs.cpp_FUN_004242d0
+support_codec.cpp  13 unnamed, 1732 bytes
+  00440210      42  support_codec.cpp_FUN_00440210
+  00440240      31  support_codec.cpp_FUN_00440240
+  00440260     405  support_codec.cpp_FUN_00440260
+  00440400      64  support_codec.cpp_FUN_00440400
+  00440440      71  support_codec.cpp_FUN_00440440
+  004404e0     210  support_codec.cpp_FUN_004404e0
+  004406e0      98  support_codec.cpp_FUN_004406e0
+  00440e10     217  support_codec.cpp_FUN_00440e10
+  00440ef0     210  support_codec.cpp_FUN_00440ef0
+  00440fd0     122  support_codec.cpp_FUN_00440fd0
+  00441050     152  support_codec.cpp_FUN_00441050
+  00441490      93  support_codec.cpp_FUN_00441490
+  00441510      17  support_codec.cpp_FUN_00441510
 
 core_asgaya.cpp  3 unnamed, 1610 bytes
   005a1c00     284  core_asgaya.cpp_FUN_005a1c00
@@ -449,72 +379,23 @@ core_enemy.cpp  3 unnamed, 1186 bytes
   00489c90     811  core_enemy.cpp_FUN_00489c90
   0048a1b0      80  core_enemy.cpp_FUN_0048a1b0
 
-cockpit_pkbmpset.cpp  3 unnamed, 1099 bytes
-  00510810     628  cockpit_pkbmpset.cpp_FUN_00510810
-  00510a90     466  cockpit_pkbmpset.cpp_FUN_00510a90
-  00510de0       5  cockpit_pkbmpset.cpp_FUN_00510de0
-
-core_level.cpp  3 unnamed, 1085 bytes
-  004dfc40      12  core_level.cpp_FUN_004dfc40
-  004dfc50     941  core_level.cpp_FUN_004dfc50
-  004e0000     132  core_level.cpp_FUN_004e0000
-
-core_path.cpp  1 unnamed, 942 bytes
-  0050ae20     942  core_path.cpp_FUN_0050ae20
-
 core_motion.cpp  3 unnamed, 867 bytes
   004fb6b0     783  core_motion.cpp_FUN_004fb6b0
   004fc0c0       8  core_motion.cpp_FUN_004fc0c0
   004fc2c0      76  core_motion.cpp_FUN_004fc2c0
 
-engine_ini.cpp  6 unnamed, 850 bytes
-  004d8470     463  engine_ini.cpp_FUN_004d8470
-  004d8c30      92  engine_ini.cpp_FUN_004d8c30
-  004d8c90      61  engine_ini.cpp_FUN_004d8c90
-  004d8d40      66  engine_ini.cpp_FUN_004d8d40
-  004d8d90     100  engine_ini.cpp_FUN_004d8d90
-  004d8e00      68  engine_ini.cpp_FUN_004d8e00
+core_gore.cpp  2 unnamed, 852 bytes
+  004cc970     322  core_gore.cpp_FUN_004cc970
+  004ce310     530  core_gore.cpp_FUN_004ce310
 
 core_setdir.cpp  3 unnamed, 743 bytes
   0053f5d0     351  core_setdir.cpp_FUN_0053f5d0
   00540cf0     391  core_setdir.cpp_FUN_00540cf0
   00541a60       1  core_setdir.cpp_FUN_00541a60
 
-core_actor.cpp  9 unnamed, 699 bytes
-  004085a0      30  core_actor.cpp_FUN_004085a0
-  004087d0      16  core_actor.cpp_FUN_004087d0
-  004088d0       1  core_actor.cpp_FUN_004088d0
-  00408a30       3  core_actor.cpp_FUN_00408a30
-  00408d00       1  core_actor.cpp_FUN_00408d00
-  00408f00     555  core_actor.cpp_FUN_00408f00
-  0040d200      21  core_actor.cpp_FUN_0040d200
-  0040d230      30  core_actor.cpp_FUN_0040d230
-  0040d250      42  core_actor.cpp_FUN_0040d250
-
-core_bodypart.cpp  6 unnamed, 685 bytes
-  00416970     423  core_bodypart.cpp_FUN_00416970
-  00416bd0      53  core_bodypart.cpp_FUN_00416bd0
-  00416c10      63  core_bodypart.cpp_FUN_00416c10
-  00416c50      63  core_bodypart.cpp_FUN_00416c50
-  00416cb0      62  core_bodypart.cpp_FUN_00416cb0
-  00416dc0      21  core_bodypart.cpp_FUN_00416dc0
-
-core_waypoint.cpp  2 unnamed, 685 bytes
-  00579130     257  core_waypoint.cpp_FUN_00579130
-  00579430     428  core_waypoint.cpp_FUN_00579430
-
-cockpit_drawsurf.cpp  7 unnamed, 681 bytes
-  00468620     526  cockpit_drawsurf.cpp_FUN_00468620
-  00469080      96  cockpit_drawsurf.cpp_FUN_00469080
-  004693b0      27  cockpit_drawsurf.cpp_FUN_004693b0
-  004694b0       6  cockpit_drawsurf.cpp_FUN_004694b0
-  004694c0       6  cockpit_drawsurf.cpp_FUN_004694c0
-  004694d0      10  cockpit_drawsurf.cpp_FUN_004694d0
-  004694e0      10  cockpit_drawsurf.cpp_FUN_004694e0
-
-core_script.cpp  2 unnamed, 605 bytes
-  00529410     461  core_script.cpp_FUN_00529410
-  00529710     144  core_script.cpp_FUN_00529710
+cockpit_pkbmpset.cpp  2 unnamed, 633 bytes
+  00510810     628  cockpit_pkbmpset.cpp_FUN_00510810
+  00510de0       5  cockpit_pkbmpset.cpp_FUN_00510de0
 
 core_flattn.cpp  6 unnamed, 594 bytes
   004ad4c0       1  core_flattn.cpp_FUN_004ad4c0
@@ -523,6 +404,10 @@ core_flattn.cpp  6 unnamed, 594 bytes
   004ad5e0     115  core_flattn.cpp_FUN_004ad5e0
   004ad660     125  core_flattn.cpp_FUN_004ad660
   004ad6e0     107  core_flattn.cpp_FUN_004ad6e0
+
+core_cloth.cpp  2 unnamed, 588 bytes
+  0043f110      66  core_cloth.cpp_FUN_0043f110
+  0043f160     522  core_cloth.cpp_FUN_0043f160
 
 core_dimage.cpp  1 unnamed, 579 bytes
   0045b300     579  core_dimage.cpp_FUN_0045b300
@@ -535,12 +420,6 @@ engine_palette.cpp  4 unnamed, 574 bytes
 
 core_styldemo.cpp  1 unnamed, 572 bytes
   005a0480     572  core_styldemo.cpp_FUN_005a0480
-
-core_mission.cpp  4 unnamed, 540 bytes
-  004f5aa0     194  core_mission.cpp_FUN_004f5aa0
-  004f63c0      66  core_mission.cpp_FUN_004f63c0
-  004f6f80     277  core_mission.cpp_FUN_004f6f80
-  004f7bf0       3  core_mission.cpp_FUN_004f7bf0
 
 engine_dosio.cpp  5 unnamed, 525 bytes
   00465650      10  engine_dosio.cpp_FUN_00465650
@@ -582,9 +461,8 @@ core_baal.cpp  2 unnamed, 407 bytes
   00597700     269  core_baal.cpp_FUN_00597700
   00597be0     138  core_baal.cpp_FUN_00597be0
 
-core_podmain.cpp  2 unnamed, 398 bytes
-  005152e0     388  core_podmain.cpp_FUN_005152e0
-  005154f0      10  core_podmain.cpp_FUN_005154f0
+core_box.cpp  1 unnamed, 401 bytes
+  0041b030     401  core_box.cpp_FUN_0041b030
 
 engine_clipper.c  3 unnamed, 379 bytes
   0043aed0     173  engine_clipper.c_FUN_0043aed0
@@ -594,8 +472,9 @@ engine_clipper.c  3 unnamed, 379 bytes
 core_moocow.cpp  1 unnamed, 378 bytes
   004f9050     378  core_moocow.cpp_FUN_004f9050
 
-core_lever.cpp  1 unnamed, 369 bytes
-  004e04b0     369  core_lever.cpp_FUN_004e04b0
+core_dcamera.cpp  2 unnamed, 328 bytes
+  0044af70     244  core_dcamera.cpp_FUN_0044af70
+  0044dd00      84  core_dcamera.cpp_FUN_0044dd00
 
 core_hino.cpp  2 unnamed, 315 bytes
   0059b740      42  core_hino.cpp_FUN_0059b740
@@ -616,13 +495,21 @@ wincore_wddvmem.cpp  2 unnamed, 275 bytes
   005797d0     198  wincore_wddvmem.cpp_FUN_005797d0
   005798a0      77  wincore_wddvmem.cpp_FUN_005798a0
 
-core_wateract.cpp  2 unnamed, 267 bytes
-  00578570     239  core_wateract.cpp_FUN_00578570
-  00578ff0      28  core_wateract.cpp_FUN_00578ff0
+core_bodypart.cpp  5 unnamed, 262 bytes
+  00416bd0      53  core_bodypart.cpp_FUN_00416bd0
+  00416c10      63  core_bodypart.cpp_FUN_00416c10
+  00416c50      63  core_bodypart.cpp_FUN_00416c50
+  00416cb0      62  core_bodypart.cpp_FUN_00416cb0
+  00416dc0      21  core_bodypart.cpp_FUN_00416dc0
 
 core_door.cpp  2 unnamed, 241 bytes
   00463d30      57  core_door.cpp_FUN_00463d30
   00464c10     184  core_door.cpp_FUN_00464c10
+
+engine_ini.cpp  3 unnamed, 234 bytes
+  004d8d40      66  engine_ini.cpp_FUN_004d8d40
+  004d8d90     100  engine_ini.cpp_FUN_004d8d90
+  004d8e00      68  engine_ini.cpp_FUN_004d8e00
 
 core_netgame.cpp  2 unnamed, 230 bytes
   00503bf0      67  core_netgame.cpp_FUN_00503bf0
@@ -640,6 +527,10 @@ sound_snddx.cpp  2 unnamed, 214 bytes
 
 core_melee.cpp  1 unnamed, 208 bytes
   004e7540     208  core_melee.cpp_FUN_004e7540
+
+core_mission.cpp  2 unnamed, 197 bytes
+  004f5aa0     194  core_mission.cpp_FUN_004f5aa0
+  004f7bf0       3  core_mission.cpp_FUN_004f7bf0
 
 core_crate.cpp  1 unnamed, 190 bytes
   004461c0     190  core_crate.cpp_FUN_004461c0
@@ -664,9 +555,15 @@ core_passngr.cpp  3 unnamed, 161 bytes
 engine_drender.cpp  1 unnamed, 152 bytes
   0046bd80     152  engine_drender.cpp_FUN_0046bd80
 
-cockpit_pkbitmap.cpp  2 unnamed, 149 bytes
-  0050fcb8      27  cockpit_pkbitmap.cpp_FUN_0050fcb8
-  0050fe10     122  cockpit_pkbitmap.cpp_FUN_0050fe10
+core_actor.cpp  8 unnamed, 144 bytes
+  004085a0      30  core_actor.cpp_FUN_004085a0
+  004087d0      16  core_actor.cpp_FUN_004087d0
+  004088d0       1  core_actor.cpp_FUN_004088d0
+  00408a30       3  core_actor.cpp_FUN_00408a30
+  00408d00       1  core_actor.cpp_FUN_00408d00
+  0040d200      21  core_actor.cpp_FUN_0040d200
+  0040d230      30  core_actor.cpp_FUN_0040d230
+  0040d250      42  core_actor.cpp_FUN_0040d250
 
 core_sound.cpp  1 unnamed, 132 bytes
   0055f610     132  core_sound.cpp_FUN_0055f610
@@ -674,6 +571,9 @@ core_sound.cpp  1 unnamed, 132 bytes
 engine_matrix.c  2 unnamed, 114 bytes
   004e4d90      57  engine_matrix.c_FUN_004e4d90
   004e4dd0      57  engine_matrix.c_FUN_004e4dd0
+
+core_setcolid.cpp  1 unnamed, 105 bytes
+  0053ed10     105  core_setcolid.cpp_FUN_0053ed10
 
 core_ammo.cpp  3 unnamed, 84 bytes
   0040e0c0      28  core_ammo.cpp_FUN_0040e0c0
@@ -707,6 +607,13 @@ engine_2d.c  6 unnamed, 60 bytes
   00402850      10  engine_2d.c_FUN_00402850
   00402860      17  engine_2d.c_FUN_00402860
 
+cockpit_drawsurf.cpp  5 unnamed, 59 bytes
+  004693b0      27  cockpit_drawsurf.cpp_FUN_004693b0
+  004694b0       6  cockpit_drawsurf.cpp_FUN_004694b0
+  004694c0       6  cockpit_drawsurf.cpp_FUN_004694c0
+  004694d0      10  cockpit_drawsurf.cpp_FUN_004694d0
+  004694e0      10  cockpit_drawsurf.cpp_FUN_004694e0
+
 core_flame.cpp  1 unnamed, 59 bytes
   004a5ad0      59  core_flame.cpp_FUN_004a5ad0
 
@@ -737,9 +644,11 @@ core_dynamite.cpp  1 unnamed, 28 bytes
 core_health.cpp  1 unnamed, 28 bytes
   004d2150      28  core_health.cpp_FUN_004d2150
 
-core_tvbat.cpp  2 unnamed, 24 bytes
-  005760f0       3  core_tvbat.cpp_FUN_005760f0
-  00576230      21  core_tvbat.cpp_FUN_00576230
+core_wateract.cpp  1 unnamed, 28 bytes
+  00578ff0      28  core_wateract.cpp_FUN_00578ff0
+
+cockpit_pkbitmap.cpp  1 unnamed, 27 bytes
+  0050fcb8      27  cockpit_pkbitmap.cpp_FUN_0050fcb8
 
 core_armour.cpp  1 unnamed, 21 bytes
   00410370      21  core_armour.cpp_FUN_00410370
@@ -756,9 +665,8 @@ core_firestff.cpp  1 unnamed, 21 bytes
 core_npc.cpp  1 unnamed, 21 bytes
   00509b90      21  core_npc.cpp_FUN_00509b90
 
-core_camview.cpp  2 unnamed, 20 bytes
-  00425520       3  core_camview.cpp_FUN_00425520
-  00425530      17  core_camview.cpp_FUN_00425530
+core_tvbat.cpp  1 unnamed, 21 bytes
+  00576230      21  core_tvbat.cpp_FUN_00576230
 
 core_weapon.cpp  1 unnamed, 15 bytes
   0057b030      15  core_weapon.cpp_FUN_0057b030
@@ -769,6 +677,12 @@ core_dtri.cpp  2 unnamed, 12 bytes
 
 support_trstream.cpp  1 unnamed, 11 bytes
   00572550      11  support_trstream.cpp_FUN_00572550
+
+core_bugs.cpp  1 unnamed, 10 bytes
+  004242d0      10  core_bugs.cpp_FUN_004242d0
+
+core_podmain.cpp  1 unnamed, 10 bytes
+  005154f0      10  core_podmain.cpp_FUN_005154f0
 
 engine_light.cpp  1 unnamed, 10 bytes
   004e0b80      10  engine_light.cpp_FUN_004e0b80
@@ -782,9 +696,6 @@ core_mirror.cpp  2 unnamed, 6 bytes
 
 core_particle.cpp  1 unnamed, 6 bytes
   0050a3e0       6  core_particle.cpp_FUN_0050a3e0
-
-core_dest.cpp  1 unnamed, 3 bytes
-  00459400       3  core_dest.cpp_FUN_00459400
 
 engine_winfont.cpp  1 unnamed, 3 bytes
   00580450       3  engine_winfont.cpp_FUN_00580450

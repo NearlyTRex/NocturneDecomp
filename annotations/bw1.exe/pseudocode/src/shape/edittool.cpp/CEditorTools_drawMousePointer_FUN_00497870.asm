@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004ce580 at 004cefbc
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cefbc
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049be32
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40 at 00493fba
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 00494cf7

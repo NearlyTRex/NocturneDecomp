@@ -23,7 +23,8 @@ void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,uint *par
     (this_ptr->center).y = (float)param_2[1];
     (this_ptr->center).z = (float)param_2[2];
   }
-  fVar1 = (float)core_setcolid_cpp_FUN_0053bc80(g_CDemonSetPtr,&this_ptr->center,0);
+  fVar1 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
+                    (g_CDemonSetPtr,&this_ptr->center,0.0);
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
   if ((this_ptr->center).y - fVar1 < 1.0) {
     (this_ptr->center).y = fVar1 + 1.0;

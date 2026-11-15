@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Duplicate_sound_buffer_005d48cc
 ;   TerminatedCString s_get_DirectSound3DBuffer_005d48e3
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   undefined4 DAT_00608bb8
+;   GUID g_IID_IDirectSound3DBuffer = IDirectSound3DBuffer 279afa86-4981-11ce-a521-0020af0be560
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
@@ -233,7 +233,7 @@ section .text
         ;   Label: LAB_0055c054
     PUSH EDX                            ; 0055c057
     MOV EAX,dword ptr [EDI]             ; 0055c058 | DAT_02cf5054
-    PUSH 0x608bb8                       ; 0055c05a | DAT_00608bb8
+    PUSH 0x608bb8                       ; 0055c05a | g_IID_IDirectSound3DBuffer
     MOV ECX,dword ptr [EAX]             ; 0055c05f
     PUSH EAX                            ; 0055c061
     CALL dword ptr [ECX]                ; 0055c062

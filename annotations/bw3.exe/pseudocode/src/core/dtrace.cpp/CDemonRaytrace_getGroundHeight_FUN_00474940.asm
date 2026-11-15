@@ -33,7 +33,7 @@
 ;
 ; XREF[2]:
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90 at 00422041
-;   core_setcolid.cpp_FUN_0053bc80 at 0053bcc7
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 at 0053bcc7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bca11

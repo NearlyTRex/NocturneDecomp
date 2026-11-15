@@ -5,7 +5,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
-#include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CAngelDemon.h"
 #include "types/classes/CAngelForest.h"
 #include "types/classes/CAngelSpirit.h"
@@ -27,13 +26,16 @@
 #include "types/classes/CIniFile.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CKeys.h"
 #include "types/classes/CLadder.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
@@ -116,7 +118,7 @@ void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004d2c20(CHero *this_ptr);
 void core_hero_cpp_FUN_004d2cd0(int param_1);
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004d2cf0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0(CHero *this_ptr);
-bool core_hero_cpp_FUN_004d3040(CDemonActor *param_1);
+int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero *this_ptr,int ignore_lock);
 void core_hero_cpp_FUN_004d3210(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr);
@@ -139,7 +141,7 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004d4410(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr);
 undefined4 core_hero_cpp_FUN_004d4840(CCharacter *param_1,undefined4 param_2);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004d48d0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,undefined4 param_2);
+undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d4ad0(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr);
@@ -201,7 +203,7 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004d81d0(CImp *thi
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d81f0(CImp *this_ptr,uint flags);
 void core_imp_cpp_FUN_004d8280(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8290(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int engine_ini_cpp_FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004d8470(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004d8910(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8950(char *section,char *key,int default_value,char *filename);
@@ -212,8 +214,8 @@ void __cdecl engine_ini_cpp_initIniFile_FUN_004d8aa0(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(CIniFile *this_ptr,char *section);
 void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004d8b20(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004d8bb0(CIniFile *this_ptr,char *key,char *value);
-void engine_ini_cpp_FUN_004d8c30(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8c90(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(CIniFile *this_ptr,char *key_name,int *value_ptr);
+void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile *this_ptr,char *key,int value);
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8cd0(CIniFile *this_ptr,char *key,float *output);
 void engine_ini_cpp_FUN_004d8d40(int param_1,undefined4 param_2);
 void engine_ini_cpp_FUN_004d8d90(void);
@@ -223,7 +225,7 @@ CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004d8e60(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void);
 void __cdecl core_inv_cpp_staticInit_FUN_004d9c90(void);
-CDemonActor * core_inv_cpp_getItemModel_FUN_004d9d20(CDemonActor *param_1);
+CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9d20(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9e40(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9eb0(CDemonActor *actor_ptr);
 undefined4 core_inv_cpp_FUN_004d9fc0(int param_1,char *param_2);
@@ -236,7 +238,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da4e0(CInventory *this_pt
 void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void);
 void core_inv_cpp_FUN_004da840(void);
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
-void core_inv_cpp_FUN_004db8d0(CInventory *param_1,int param_2);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0(CInventory *this_ptr,CWeapon *weapon);
 CDemonActor * __cdecl core_inv_cpp_FUN_004db990(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_FUN_004db9e0(CInventory *this_ptr,char *class_name);
 undefined4 core_inv_cpp_FUN_004dba30(int param_1,int param_2);
@@ -308,6 +310,6 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004dfa70(CLadder 
 EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_004dfbb0(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004dfbc0(CLadder *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_004dfc10(void);
-void core_level_cpp_FUN_004dfc40(int param_1);
-CAlphaBitmap * core_level_cpp_FUN_004dfc50(undefined4 *param_1,undefined4 param_2,int param_3);
+void __cdecl core_level_cpp_CLevelLoader_reset_FUN_004dfc40(CLevelLoader *this_ptr);
+void __cdecl core_level_cpp_CLevelLoader_show_FUN_004dfc50(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 

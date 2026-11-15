@@ -22,7 +22,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
   CIniFile local_338;
   char local_134 [260];
   char *local_30 [5];
-  uint local_1c;
+  int local_1c;
   uint local_18;
   int local_14;
   
@@ -45,7 +45,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
   engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_338,"system\\nocturne.ini",&DAT_005e3121)
   ;
   local_1c = 0;
-  engine_ini_cpp_FUN_004f4d10(&local_338,"Act1Code",&local_1c);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(&local_338,"Act1Code",&local_1c);
   local_30[0] = support_newmsg_cpp_getLocalizedString_FUN_00531090
                           ("The Rustin Parr Investigation");
   iVar3 = -1;
@@ -162,7 +162,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,
     } while (cVar1 != '\0');
     iVar5 = 0;
   }
-  core_level_cpp_FUN_004fe840(0x01D1BD1C,10,0,local_14);
+  core_level_cpp_CLevelLoader_show_FUN_004fe840(g_CLevelLoaderPtr,10,0,local_14);
   core_mission_cpp_CDemonMission_load_FUN_0051a3f0(0x01D2C900,local_134,iVar5);
   iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(0x01D2C900,(CCharacter *)0x0);
   if (iVar3 != 0) {

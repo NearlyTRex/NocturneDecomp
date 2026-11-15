@@ -17,6 +17,7 @@
 #include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWayPoint.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/funcdefs/ColorConversionFunc.h"
@@ -27,6 +28,7 @@
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -37,7 +39,7 @@
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004203a0(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00420830(CBugs *this_ptr,float delta_time);
-undefined4 core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4);
+int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00420840(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00420e90(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00421a00(CBugs *this_ptr);
@@ -51,8 +53,8 @@ CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00422150(CBugs *this_ptr,uint flags
 SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_004221f0(SBug *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00422200(CCameraView *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00422220(CCameraView *this_ptr,uint flags);
-undefined4 core_camview_cpp_FUN_00422270(void);
-undefined4 core_camview_cpp_FUN_00422280(void);
+int __cdecl core_camview_cpp_CCameraView_getFogValueAtPosition_FUN_00422270(CCameraView *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
+int __cdecl core_camview_cpp_CCameraView_testVisibility_FUN_00422280(CCameraView *this_ptr,CVector3i *corners);
 void __cdecl core_charactr_cpp_staticInit_FUN_004222a0(void);
 SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo *this_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr);
@@ -89,7 +91,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_00426990(CCharacter *
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
 void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_00426f30(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00427060(CDemonActor *param_1,int param_2,int param_3,float param_4);
+void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00427060(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __stack_esi core_charactr_cpp_CCharacter_getBoundingBox_FUN_004271e0(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_00427210(CCharacter *this_ptr);
@@ -101,7 +103,7 @@ void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427770(CCharacter
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
 int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_00427a00(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_00427a10(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00427a40(void);
+void __cdecl core_charactr_cpp_CCharacter_doNothing_FUN_00427a40(CCharacter *this_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_00427a50(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00427a60(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00427ac0(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
@@ -109,7 +111,7 @@ int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf
 int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_00427c80(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0(CCharacter *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_004281d0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428260(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428750(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_004287a0(CCharacter *this_ptr,float timeout);
@@ -151,7 +153,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0(CCharacte
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b260(CCharacter *this_ptr,char *sound_name);
 void core_charactr_cpp_FUN_0042b2a0(int param_1,float param_2);
 int core_charactr_cpp_FUN_0042b300(int param_1,char *param_2);
-void core_charactr_cpp_FUN_0042b420(int param_1,undefined4 param_2);
+void core_charactr_cpp_FUN_0042b420(int param_1,CWayPoint *param_2);
 void __cdecl core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440(CCharacter *this_ptr,char *model_name,char *cloth_name);
 void core_charactr_cpp_FUN_0042b550(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
 void core_charactr_cpp_FUN_0042b5e0(int param_1,float param_2);

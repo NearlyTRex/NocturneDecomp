@@ -35,7 +35,7 @@
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
-;   core_hero.cpp_CHero_tryPullLever_FUN_004eb660
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -528,8 +528,8 @@ section .text
         ;   XREF to: 004f12f7 (CONDITIONAL_JUMP)  ; LAB_004f12f7
     PUSH EAX                            ; 004f1400
     PUSH EBX                            ; 004f1401
-    CALL core_hero.cpp_FUN_004eb3e0     ; 004f1402
-        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb3e0()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0 ; 004f1402
+        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 004f1407
     MOV EDI,EAX                         ; 004f140a
     TEST EAX,EAX                        ; 004f140c

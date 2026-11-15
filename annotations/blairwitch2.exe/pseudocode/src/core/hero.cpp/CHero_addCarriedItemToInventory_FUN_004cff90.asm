@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
-;   core_inv.cpp_FUN_004dadb0
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     PUSH EBX                            ; 004d0009
     LEA EAX,[ESI + 0x2437c]             ; 004d000a
     PUSH EAX                            ; 004d0010
-    CALL core_inv.cpp_FUN_004dadb0      ; 004d0011
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 004d0011
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     ADD ESP,0x10                        ; 004d0016
     MOV EAX,dword ptr [ESP + 0x10]      ; 004d0019
     SHL EAX,0x3                         ; 004d001d

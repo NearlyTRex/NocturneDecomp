@@ -33,7 +33,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048b150
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 004e57aa
     PUSH 0x1fe5c1c                      ; 004e57ae | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x24]         ; 004e57b3
-    CALL core_dtrace.cpp_FUN_0048b150   ; 004e57b7
-        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048b150()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150 ; 004e57b7
+        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x3c],EAX      ; 004e57bc
     FLD float ptr [ESP + 0x3c]          ; 004e57c0
     FMUL double ptr [0x005e411d]        ; 004e57c4 | DAT_005e411d

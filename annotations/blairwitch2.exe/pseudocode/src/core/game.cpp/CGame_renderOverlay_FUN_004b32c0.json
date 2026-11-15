@@ -2,26 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 304,
+    "complexity_score": 335,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
-    "suspect_count": 14,
+    "pseudocode_lines": 145,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 549
+    "total_lines": 550
   },
   "cross_references": [
     {
       "addr": "004b5190",
       "from_addr": "004b567b",
-      "name": "core_game.cpp_FUN_004b5190",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,6 +70,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
     },
     {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004a8df0"
+    },
+    {
       "addr": "004ab560",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
@@ -83,11 +88,6 @@
       "addr": "004aaf00",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
-    },
-    {
-      "addr": "004a8df0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a8df0"
     },
     {
       "addr": "004ab2b0",
@@ -199,7 +199,7 @@
       {
         "call_addr": "004b567b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b5190",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -499,7 +499,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_60 = DAT_006141b8;",
@@ -507,7 +507,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_5c = DAT_006141bc;",
@@ -515,7 +515,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_64 = DAT_006141bc;",
@@ -523,7 +523,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 58,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar2 = DAT_006141bc - iVar2 * iVar4;",
@@ -531,7 +531,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 68,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_4c = DAT_006141b8 + -1;",
@@ -563,7 +563,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "if (0x280 < DAT_006141b8) {",
@@ -571,11 +571,35 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "if (800 < DAT_006141b8) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "if ((int)local_44 < iVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_50 = ((int)local_44 * 3) / 2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_34 = iVar2 - (int)local_44;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -586,19 +610,19 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)local_40",
+      "severity": "moderate",
+      "text": "(local_44,local_20,(int)local_40,local_34,0xf8,0);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x4b36a2 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 45,
+      "line": 44,
       "match": "0x4b36a2",
       "severity": "moderate",
       "text": "iVar2 = 0x4b36a2;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x4b35d1 assigned to bare local `uVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 132,
-      "match": "0x4b35d1",
-      "severity": "moderate",
-      "text": "uVar6 = 0x4b35d1;",
       "type": "raw_address_constant"
     }
   ]

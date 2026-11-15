@@ -22,7 +22,7 @@
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00519ec0
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
 ;   engine_pod.cpp_crc32UpdateByte_FUN_00519cb0
-;   shape_edittool.cpp_FUN_0047be90
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x5e2859                       ; 0051b6f2
     MOV ECX,dword ptr [0x006138e0]      ; 0051b6f7 | g_CEditorToolsPtr
     PUSH ECX                            ; 0051b6fd
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0051b6fe
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0051b6fe
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051b703
     MOV EAX,ESP                         ; 0051b706
     PUSH EAX                            ; 0051b708

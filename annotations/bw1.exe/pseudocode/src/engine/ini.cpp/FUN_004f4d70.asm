@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_FUN_004f4d70(int param_1,undefined4 param_2)
+; void __cdecl engine_ini_cpp_FUN_004f4d70(CIniFile *this_ptr,char *key,int value)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; int              Stack[0xc]:4   value
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
 ;

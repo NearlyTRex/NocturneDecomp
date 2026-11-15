@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b5190 at 004b5c1b
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5c1b
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250 at 004822e1
 ;
 ; Referenced Globals:
@@ -44,7 +44,7 @@
 ;   engine_2d.c_drawLine_FUN_004011a0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
-;   engine_font.cpp_FUN_004a8df0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_mini3d.cpp_fillRect_FUN_004f90d0
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
@@ -428,8 +428,8 @@ section .text
     PUSH EAX                            ; 004836ba
     MOV ECX,dword ptr [0x01c25590]      ; 004836bb | DAT_01c25590
     PUSH ECX                            ; 004836c1
-    CALL engine_font.cpp_FUN_004a8df0   ; 004836c2
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004836c2
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004836c7
     MOV EAX,dword ptr [ESP + 0x150]     ; 004836ca
     MOV EBP,ESI                         ; 004836d1

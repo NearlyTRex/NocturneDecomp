@@ -19,12 +19,11 @@ void __cdecl core_fire_cpp_CGunFlame_burnNearby_FUN_0049df60(CGunFlame *this_ptr
   int iVar5;
   int iVar6;
   byte bVar7;
-  float afStackY_103c [996];
+  uint auStackY_103c [996];
   CCharacter *pCVar8;
   uint class_name_hash;
   SDamageInfo SStack_90;
-  float local_54;
-  float local_50 [2];
+  CVector3f local_54;
   CVector3f local_48 [2];
   int local_2c;
   int local_28;
@@ -45,11 +44,12 @@ void __cdecl core_fire_cpp_CGunFlame_burnNearby_FUN_0049df60(CGunFlame *this_ptr
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                   (&local_24->base,&this_ptr->position,local_48);
         pCVar8 = local_24;
-        local_54 = local_48[0].x;
-        local_50[(uint)bVar7 * -2] = *(float *)((int)local_48 + (uint)bVar7 * -8 + 4);
+        local_54.x = local_48[0].x;
+        *(uint *)((int)local_48 + (uint)bVar7 * -8 + -8) =
+             *(uint *)((int)local_48 + (uint)bVar7 * -8 + 4);
         class_name_hash = g_CHeroClassInfo.name_hash;
-        local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             *(float *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+        *(uint *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -4) =
+             *(uint *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840(&pCVar8->base,class_name_hash);
         if (((pCVar4 != (CDemonActor *)0x0) && (this_ptr->flame_type == 2)) ||
            ((pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -59,15 +59,15 @@ void __cdecl core_fire_cpp_CGunFlame_burnNearby_FUN_0049df60(CGunFlame *this_ptr
           local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,20.0);
           pCVar8 = local_24;
           SStack_90.damage_amount = (local_18 * this_ptr->lifetime) / _DAT_005df900;
-          if (&SStack_90.impact_direction != (CVector3f *)&local_54) {
-            SStack_90.impact_direction.x = local_54;
-            SStack_90.impact_direction.y = local_50[0];
-            SStack_90.impact_direction.z = local_50[1];
+          if (&SStack_90.impact_direction != &local_54) {
+            SStack_90.impact_direction.x = local_54.x;
+            SStack_90.impact_direction.y = local_54.y;
+            SStack_90.impact_direction.z = local_54.z;
           }
           SStack_90.ammo_type = AMMO_TYPE_MANA;
           SStack_90.damage_type = DAMAGE_TYPE_GUN_FLAME;
           (*(((local_24->base).vtable._uc)->_uc).processDamage)(local_24,&SStack_90);
-          core_charactr_cpp_FUN_0042fbd0(pCVar8,&local_54,0,0,0x3f800000,1,0x40a00000);
+          core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0(pCVar8,&local_54,0,0,1.0,1,5.0);
         }
       }
       local_2c = local_2c + 4;

@@ -12,34 +12,30 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeath
 
 {
   CEventList *this_ptr_00;
-  CCharacter *pCVar1;
-  EDeathState EVar2;
-  CWeather *pCVar3;
-  int iVar4;
-  uint *puVar5;
+  CCharacter *this_ptr_01;
+  EDeathState EVar1;
+  CWeather *pCVar2;
+  int iVar3;
+  uint *puVar4;
   CLocation *start_position;
-  uint *puVar6;
-  byte bVar7;
+  float unaff_EDI;
+  uint *puVar5;
+  byte bVar6;
   float afStackY_10a8 [975];
   float min_value;
-  float max_value;
-  float local_158;
-  SDamageInfo SStack_154;
+  float fVar7;
+  int in_stack_fffffeb0;
+  float fStack_144;
+  EAmmoType EStack_120;
   CMatrix3x3f local_118;
-  uint auStack_f0 [6];
-  uint auStack_d8 [6];
-  float local_c0;
-  float local_bc [2];
+  uint auStack_e4 [4];
+  uint auStack_d4 [2];
+  CBoundingBox3D CStack_cc;
   CVector3f local_b4;
   float local_a8;
-  float local_a4;
-  float local_a0;
-  CVector3f local_9c;
-  float fStack_90;
-  float afStack_8c [2];
-  CVector3f local_84;
-  float fStack_78;
-  float afStack_74 [2];
+  float local_a4 [2];
+  CVector3f local_9c [2];
+  CVector3f local_84 [2];
   CVector3f local_6c;
   CVector3f local_60;
   float local_54;
@@ -55,20 +51,21 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeath
   CCharacter *local_20;
   float local_1c;
   float local_18;
+  CCharacter *pCStack_14;
   
-  bVar7 = 0;
+  bVar6 = 0;
   if (this_ptr->weather_type == 5) {
     local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.5,0.75);
-    max_value = this_ptr->max_flash_interval;
+    fVar7 = this_ptr->max_flash_interval;
     min_value = 0.5;
   }
   else {
     local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,20.0);
-    max_value = this_ptr->max_flash_interval;
+    fVar7 = this_ptr->max_flash_interval;
     min_value = 2.0;
   }
   this_ptr->lightning_countdown = local_18;
-  local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,max_value);
+  local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,fVar7);
   this_ptr->sub_flash_interval = local_18;
   this_ptr->lightning_active = 1;
   local_3c = 0;
@@ -76,62 +73,64 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeath
   if (this_ptr->weather_type == 5) {
     local_2c = 0;
     for (local_28 = 0; local_28 < g_CDemonSetPtr->actor_count; local_28 = local_28 + 1) {
-      pCVar1 = (CCharacter *)
-               core_actor_cpp_castToClassHash_FUN_0040c840
-                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_2c),
-                          g_CEnemyClassInfo.name_hash);
-      local_24 = pCVar1;
-      local_20 = pCVar1;
-      if ((pCVar1 != (CCharacter *)0x0) &&
-         (EVar2 = (*(((pCVar1->base).vtable._uc)->_uc).getDeathState)(pCVar1),
-         EVar2 == DEATH_STATE_ALIVE)) {
-        (*((pCVar1->base).vtable._ub)->getBoundingBox)((CDemonActor *)pCVar1,(CBoundingBox3D *)0x0);
-        puVar5 = auStack_f0;
-        puVar6 = auStack_d8;
-        for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar6 = *puVar5;
-          puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-          puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+      this_ptr_01 = (CCharacter *)
+                    core_actor_cpp_castToClassHash_FUN_0040c840
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_2c),
+                               g_CEnemyClassInfo.name_hash);
+      local_24 = this_ptr_01;
+      local_20 = this_ptr_01;
+      if ((this_ptr_01 != (CCharacter *)0x0) &&
+         (EVar1 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
+         EVar1 == DEATH_STATE_ALIVE)) {
+        (*((this_ptr_01->base).vtable._ub)->getBoundingBox)
+                  ((CDemonActor *)this_ptr_01,(CBoundingBox3D *)0x0);
+        puVar4 = auStack_e4;
+        puVar5 = auStack_d4;
+        for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *puVar5 = *puVar4;
+          puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+          puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
         }
-        iVar4 = core_box_cpp_FUN_0041daf0(auStack_d8);
-        if (iVar4 != 0) {
-          iVar4 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-          if (iVar4 != 0) {
-            fStack_90 = *(float *)(iVar4 + 0x20) - (local_24->base).location.position.x;
-            afStack_8c[0] = *(float *)(iVar4 + 0x24) - (local_24->base).location.position.y;
-            afStack_8c[1] = *(float *)(iVar4 + 0x28) - (local_24->base).location.position.z;
-            fStack_78 = fStack_90;
-            afStack_74[(uint)bVar7 * -2] = afStack_8c[(uint)bVar7 * -2];
-            afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_cc,in_stack_fffffeb0);
+        if (iVar3 != 0) {
+          iVar3 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
+          if (iVar3 != 0) {
+            local_84[0].x = *(float *)(iVar3 + 0x20) - *(float *)((int)local_18 + 0x20);
+            local_84[0].y = *(float *)(iVar3 + 0x24) - *(float *)((int)local_18 + 0x24);
+            local_84[0].z = *(float *)(iVar3 + 0x28) - *(float *)((int)local_18 + 0x28);
+            local_6c.x = local_84[0].x;
+            *(uint *)((int)&local_6c + (uint)bVar6 * -8 + 4) =
+                 *(uint *)((int)local_84 + (uint)bVar6 * -8 + 4);
+            *(uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+                 *(uint *)((int)local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
             if (_DAT_005d7977 <
-                SQRT(afStack_74[1] * afStack_74[1] +
-                     fStack_78 * fStack_78 + afStack_74[0] * afStack_74[0])) goto LAB_0057c3b7;
+                SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y))
+            goto LAB_0057c3b7;
           }
-          iVar4 = 0;
-          pCVar3 = this_ptr;
+          iVar3 = 0;
+          pCVar2 = this_ptr;
           if ((int)this_ptr[1].sub_flash_interval < 1) {
 code_r0x0057c51b:
-            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_154);
-            pCVar1 = local_20;
-            SStack_154.damage_amount = 25.0;
-            SStack_154.ammo_type = AMMO_TYPE_MANA;
-            SStack_154.damage_type = DAMAGE_TYPE_ATTACK_ELECTROCUTE;
-            (*(((local_20->base).vtable._uc)->_uc).processDamage)(local_20,&SStack_154);
-            start_position = &(pCVar1->base).location;
+            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffffeb8);
+            fStack_144 = 25.0;
+            EStack_120 = AMMO_TYPE_MANA;
+            local_118.m[0].x = 1.48538e-43;
+            (*(((pCStack_14->base).vtable._uc)->_uc).processDamage)
+                      (pCStack_14,(SDamageInfo *)&stack0xfffffeb8);
+            start_position = &(pCStack_14->base).location;
             core_fire_cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
                       (0x01C73654,&start_position->position,30.0,1,0.0);
             core_sound_cpp_CSound_playActorSound_FUN_005609d0
                       (0x02CF5680,(CDemonActor *)this_ptr,"light?.wav",
                        &start_position->position);
-            (&this_ptr[1].particle_speed)[(int)this_ptr[1].sub_flash_interval] = (float)local_20;
+            (&this_ptr[1].particle_speed)[(int)this_ptr[1].sub_flash_interval] = unaff_EDI;
             this_ptr[1].sub_flash_interval = (float)((int)this_ptr[1].sub_flash_interval + 1);
             goto LAB_0057c5a8;
           }
-          while (local_20 != (CCharacter *)pCVar3[1].particle_speed) {
-            iVar4 = iVar4 + 1;
-            pCVar3 = (CWeather *)&pCVar3->particle_speed;
-            if ((int)this_ptr[1].sub_flash_interval <= iVar4) goto code_r0x0057c51b;
+          while (pCStack_14 != (CCharacter *)pCVar2[1].particle_speed) {
+            iVar3 = iVar3 + 1;
+            pCVar2 = (CWeather *)&pCVar2->particle_speed;
+            if ((int)this_ptr[1].sub_flash_interval <= iVar3) goto code_r0x0057c51b;
           }
         }
       }
@@ -142,69 +141,69 @@ LAB_0057c3b7:
   if (local_3c == 0) {
     core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90(&g_CDemonRaytraceInstance,&local_6c);
     local_54 = local_6c.x;
-    local_50[(uint)bVar7 * -2] = *(float *)((int)&local_6c + (uint)bVar7 * -8 + 4);
-    local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         *(float *)((int)&local_6c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_50[(uint)bVar6 * -2] = *(float *)((int)&local_6c + (uint)bVar6 * -8 + 4);
+    local_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         *(float *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0(&g_CDemonRaytraceInstance,&local_60);
-    local_c0 = local_60.x;
-    local_bc[(uint)bVar7 * -2] = *(float *)((int)&local_60 + (uint)bVar7 * -8 + 4);
-    local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         *(float *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-    local_1c = (local_c0 - local_54) * (float)_DAT_005d796b;
+    CStack_cc.max.x = local_60.x;
+    *(uint *)((int)&CStack_cc + (uint)bVar6 * -8 + 0x10) =
+         *(uint *)((int)&local_60 + (uint)bVar6 * -8 + 4);
+    *(uint *)((int)&CStack_cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 0x14) =
+         *(uint *)((int)&local_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    local_1c = (CStack_cc.max.x - local_54) * (float)_DAT_005d796b;
     local_30 = 0.0;
     if (0.0 < local_1c) {
       local_30 = local_1c;
     }
-    local_34 = local_bc[0] - local_50[0];
+    local_34 = CStack_cc.max.y - local_50[0];
     if (local_30 < local_34) {
       local_30 = local_34;
     }
-    local_38 = (local_bc[1] - local_50[1]) * (float)_DAT_005d796b;
+    local_38 = (CStack_cc.max.z - local_50[1]) * (float)_DAT_005d796b;
     if (local_30 < local_38) {
       local_30 = local_38;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&local_118,&this_ptr->rotation);
-    local_84.z = local_30;
-    local_84.x = 0.0;
-    local_84.y = 0.0;
-    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(&local_118,&local_84,&local_9c);
-    local_a8 = local_9c.x;
-    local_bc[(uint)bVar7 * -2 + 6] = *(float *)((int)&local_9c + (uint)bVar7 * -8 + 4);
-    local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         *(float *)((int)&local_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_84[0].z = local_30;
+    local_84[0].x = 0.0;
+    local_84[0].y = 0.0;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(&local_118,local_84,local_9c);
+    local_a8 = local_9c[0].x;
+    local_a4[(uint)bVar6 * -2] = *(float *)((int)local_9c + (uint)bVar6 * -8 + 4);
+    local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         *(float *)((int)local_9c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     local_50[2] = local_a8 + (this_ptr->direction).x;
-    local_50[3] = local_a4 + (this_ptr->direction).y;
-    local_40 = local_a0 + (this_ptr->direction).z;
+    local_50[3] = local_a4[0] + (this_ptr->direction).y;
+    local_40 = local_a4[1] + (this_ptr->direction).z;
     local_b4.x = local_50[2];
-    local_bc[(uint)bVar7 * -2 + 3] = local_50[(uint)bVar7 * -2 + 3];
-    local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    if (&local_84 != (CVector3f *)(local_bc + 2)) {
-      local_84.x = local_b4.x;
-      local_84.y = local_b4.y;
-      local_84.z = local_b4.z;
+    *(float *)((int)&local_b4 + (uint)bVar6 * -8 + 4) = local_50[(uint)bVar6 * -2 + 3];
+    *(float *)((int)&local_b4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         local_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+    if (local_84 != &local_b4) {
+      local_84[0].x = local_b4.x;
+      local_84[0].y = local_b4.y;
+      local_84[0].z = local_b4.z;
     }
     if (play_sound != 0) {
       core_fire_cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
-                (0x01C73654,&local_84,local_30,0,0.0);
+                (0x01C73654,local_84,local_30,0,0.0);
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                (0x02CF5680,(CDemonActor *)this_ptr,"light?.wav",&local_84);
+                (0x02CF5680,(CDemonActor *)this_ptr,"light?.wav",local_84);
     }
   }
 LAB_0057c5a8:
   local_18 = (float)core_weather_cpp_FUN_0057c2c0();
   this_ptr_00 = 0x01C6E360;
   this_ptr->base_ambient = local_18;
-  local_158 = this_ptr->base_ambient;
-  iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
+  fVar7 = this_ptr->base_ambient;
+  iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                     (this_ptr_00,"noLightningFlash");
-  if (iVar4 == 0) {
-    local_158 = local_158 + _DAT_005d7973;
-    if (1.0 < local_158) {
-      local_158 = 1.0;
+  if (iVar3 == 0) {
+    fVar7 = fVar7 + _DAT_005d7973;
+    if (1.0 < fVar7) {
+      fVar7 = 1.0;
     }
-    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680(&g_CDemonCameraInstance,local_158)
-    ;
+    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680(&g_CDemonCameraInstance,fVar7);
   }
   return;
 }

@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Set_cooperative_level_005ea4c3
 ;   TerminatedCString s_Create_the_primary_buffe_005ea4d9
 ;   TerminatedCString s_Create_the_primary_buffe_005ea4f3
-;   undefined4 DAT_00621060
+;   GUID g_IID_IDirectSound3DListener = IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560
 ;   undefined4 DAT_0264a5c4
 ;   undefined4 DAT_0264a5c8
 ;   undefined4 DAT_0264a5d0
@@ -163,7 +163,7 @@ section .text
         ;   XREF to: 00557a6e (CONDITIONAL_JUMP)  ; LAB_00557a6e
     PUSH 0x264a5d0                      ; 00557a5a | DAT_0264a5d0
     MOV EAX,[0x0264a5c8]                ; 00557a5f | DAT_0264a5c8
-    PUSH 0x621060                       ; 00557a64 | DAT_00621060
+    PUSH 0x621060                       ; 00557a64 | g_IID_IDirectSound3DListener
     MOV EDX,dword ptr [EAX]             ; 00557a69
     PUSH EAX                            ; 00557a6b
     CALL dword ptr [EDX]                ; 00557a6c

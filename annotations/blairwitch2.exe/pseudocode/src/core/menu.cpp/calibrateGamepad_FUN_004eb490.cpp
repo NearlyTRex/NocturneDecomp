@@ -37,7 +37,8 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004eb490(void)
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cb8,pcVar2);
     local_24 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01511cb8,0x58);
-    engine_font_cpp_FUN_004a8df0(_DAT_01511cb8,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+              (_DAT_01511cb8,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
     _sprintf(local_124,"%d,%d,%x");
     engine_2d_c_drawText_FUN_00401fe0(local_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004b7140(g_CGamePtr);
@@ -61,7 +62,8 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004eb490(void)
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cb8,pcVar2);
     iStack_20 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01511cb8,0x58);
-    engine_font_cpp_FUN_004a8df0(_DAT_01511cb8,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+              (_DAT_01511cb8,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
     _sprintf(acStack_224,"%d,%d,%x");
     engine_2d_c_drawText_FUN_00401fe0(acStack_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004b7140(g_CGamePtr);

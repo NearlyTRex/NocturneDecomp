@@ -11,16 +11,16 @@
 void core_cloth_cpp_FUN_004414b0(void)
 
 {
-  int iVar1;
-  int in_stack_00000004;
+  int bone_index;
+  CCloth *in_stack_00000004;
   
-  iVar1 = 0;
+  bone_index = 0;
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(DAT_00612560,0xff);
-  if (0 < *(int *)(in_stack_00000004 + 0x37b4c)) {
+  if (0 < in_stack_00000004->collide_bone_count) {
     do {
-      core_cloth_cpp_FUN_00441500();
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < *(int *)(in_stack_00000004 + 0x37b4c));
+      core_cloth_cpp_FUN_00441500(in_stack_00000004,bone_index,0);
+      bone_index = bone_index + 1;
+    } while (bone_index < in_stack_00000004->collide_bone_count);
   }
   return;
 }

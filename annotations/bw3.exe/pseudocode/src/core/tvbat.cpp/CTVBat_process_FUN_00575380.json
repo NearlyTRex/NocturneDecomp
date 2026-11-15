@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 872,
-    "complexity_score": 573,
+    "complexity_score": 618,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 408,
-    "suspect_count": 13,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "unknown_field",
@@ -63,7 +64,7 @@
     {
       "addr": "00473cd0",
       "is_variadic": false,
-      "name": "core_dtrace.cpp_FUN_00473cd0"
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0"
     },
     {
       "addr": "004ce9c0",
@@ -385,7 +386,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 28,
+      "line": 29,
       "match": "afStackY_1160",
       "severity": "moderate",
       "text": "float afStackY_1160 [981];",
@@ -393,7 +394,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),",
@@ -401,7 +402,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14);",
@@ -409,10 +410,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(float *)((int)this_ptr",
+      "line": 125,
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "pfVar15 = (float *)((int)this_ptr + (uint)bVar17 * -8 + 0x24);",
+      "text": "puVar16 = (uint *)((int)this_ptr + (uint)bVar18 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -420,7 +421,7 @@
       "line": 210,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
-      "text": "pfVar15 = (float *)((int)this_ptr + (uint)bVar17 * -8 + 0x24);",
+      "text": "pfVar15 = (float *)((int)this_ptr + (uint)bVar18 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -464,8 +465,24 @@
       "type": "unknown_field"
     },
     {
+      "description": "Pointer value `&CStack_15c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)&CStack_15c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_15c + (uint)bVar18 * -8 + 4) = *puVar16;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_15c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)&CStack_15c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_15c + ((uint)bVar18 * -2 + (uint)bVar18 * -2) * 4 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 112,
+      "line": 111,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->home_pos).x = (pCVar8->location).position.x;",
@@ -478,6 +495,22 @@
       "severity": "moderate",
       "text": "pCStack_24->z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 127,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_15c + (uint)bVar18 * -8 + 4) = *puVar16;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 128,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_15c + ((uint)bVar18 * -2 + (uint)bVar18 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

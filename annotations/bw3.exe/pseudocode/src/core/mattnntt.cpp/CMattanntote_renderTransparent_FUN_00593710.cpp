@@ -21,8 +21,10 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
   uint *puVar4;
   byte bVar5;
   double dVar6;
-  uint auStack_58 [6];
-  uint auStack_40 [9];
+  int in_stack_ffffffb0;
+  uint auStack_4c [4];
+  uint auStack_3c [2];
+  CBoundingBox3D CStack_34;
   float fStack_1c;
   float fStack_18;
   
@@ -31,7 +33,6 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
   fStack_1c = ((float)_DAT_005d91eb - (float)this_ptr->fade_out_opacity) * (float)_DAT_005d91f3 *
               (float)_DAT_005d91fb;
   if (this_ptr->fading_out == 0) {
-    auStack_58[0] = 0x59377b;
     dVar6 = round
                       ((double)((fStack_18 * this_ptr->fade_timer) / this_ptr->max_fade_time));
     fStack_18 = (float)(int)ROUND(dVar6);
@@ -43,7 +44,6 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
   }
   else {
     fVar1 = this_ptr->fade_timer;
-    auStack_58[0] = 0x59395f;
     dVar6 = round
                       ((double)((fStack_18 * this_ptr->fade_timer) / this_ptr->max_fade_time +
                                fStack_1c));
@@ -73,14 +73,14 @@ LAB_005937aa:
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar3 = auStack_58;
-  puVar4 = auStack_40;
+  puVar3 = auStack_4c;
+  puVar4 = auStack_3c;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar4 = *puVar3;
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  iVar2 = core_box_cpp_FUN_0041daf0(auStack_40);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_34,in_stack_ffffffb0);
   this_ptr_01 = DAT_005f2afc;
   if (iVar2 != 0) {
     iVar2 = this_ptr->opacity;
@@ -107,7 +107,7 @@ LAB_005937aa:
   if (this_ptr->opacity == 0x10000) {
     this_ptr_03 = &this_ptr->flames[0].base;
     do {
-      (*((UActorVTable *)(this_ptr_03->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_03);
+      (*((this_ptr_03->vtable)._ub)->renderTransparent)(this_ptr_03);
       this_ptr_03 = (CDemonActor *)&this_ptr_03[1].next_actor;
     } while ((CFlame *)this_ptr_03 != this_ptr->flames + 4);
   }

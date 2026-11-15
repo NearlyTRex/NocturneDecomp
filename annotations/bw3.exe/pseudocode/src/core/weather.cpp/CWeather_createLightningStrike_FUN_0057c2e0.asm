@@ -66,7 +66,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
@@ -184,8 +184,8 @@ section .text
     LEA ESI,[ESP + 0x6c]                ; 0057c446
     PUSH EAX                            ; 0057c44a
     MOVSD.REP ES:EDI,ESI                ; 0057c44b
-    CALL core_box.cpp_FUN_0041daf0      ; 0057c44d
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 0057c44d
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0057c452
     TEST EAX,EAX                        ; 0057c455
     JZ 0x0057c3b7                       ; 0057c457

@@ -87,8 +87,9 @@ void __cdecl core_djien_cpp_CDjien_process_FUN_00460230(CDjien *this_ptr,float d
     if (this_ptr->walk_target != 0) {
       (this_ptr->base).victim = (CCharacter *)0x0;
       this_ptr->state_timer = 0.0;
-      core_charactr_cpp_FUN_00431cc0
-                (this_ptr,this_ptr->walk_target,0x3f800000,0x41000000,&this_ptr->walk_status);
+      core_charactr_cpp_CCharacter_followActor_FUN_00431cc0
+                ((CCharacter *)this_ptr,(CDemonActor *)this_ptr->walk_target,1.0,8.0,
+                 &this_ptr->walk_status);
       uVar4 = this_ptr->walk_status;
       if (uVar4 == 0) {
 LAB_004605ea:

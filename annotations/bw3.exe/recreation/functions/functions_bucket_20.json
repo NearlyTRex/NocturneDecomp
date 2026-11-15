@@ -3136,14 +3136,41 @@
       "00541470",
       "00578d30"
     ],
-    "conv":"unknown",
+    "cls":"CBoundingBox3D",
+    "conv":"__cdecl",
     "instructions":377,
-    "method":"FUN_0041e220",
-    "name":"core_box.cpp_FUN_0041e220",
-    "receiver":false,
+    "method":"doesRayIntersect",
+    "name":"core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041e220",
+    "params":[
+      {
+        "name":"ray_origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/box.cpp",
@@ -3469,17 +3496,36 @@
   },
   {
     "addr":"00425520",
-    "conv":"unknown",
+    "cls":"CCameraView",
+    "conv":"__cdecl",
     "data_refs":[
       "005dcefc"
     ],
     "instructions":2,
-    "method":"FUN_00425520",
-    "name":"core_camview.cpp_FUN_00425520",
-    "receiver":false,
+    "method":"getFogValueAtPosition",
+    "name":"core_camview.cpp_CCameraView_getFogValueAtPosition_FUN_00425520",
+    "params":[
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"projected_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SProjectedVertex",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/camview.cpp",
@@ -7301,14 +7347,49 @@
       "00467f30",
       "005a3120"
     ],
-    "conv":"unknown",
+    "cls":"CDrawSurface",
+    "conv":"__cdecl",
     "instructions":165,
-    "method":"FUN_00468620",
-    "name":"cockpit_drawsurf.cpp_FUN_00468620",
-    "receiver":false,
+    "method":"drawDashedLine",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00468620",
+    "params":[
+      {
+        "name":"x1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
@@ -8510,14 +8591,33 @@
       "00465ff0",
       "00482070"
     ],
-    "conv":"unknown",
+    "cls":"CStrList",
+    "conv":"__cdecl",
     "instructions":114,
-    "method":"FUN_00483020",
-    "name":"shape_edittool.cpp_FUN_00483020",
-    "receiver":false,
+    "method":"populateWithFullPaths",
+    "name":"shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020",
+    "params":[
+      {
+        "name":"base_path",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"search_path",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -12238,15 +12338,25 @@
       "0040c840",
       "004e4330"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":99,
     "method":"getItemModel",
     "name":"core_inv.cpp_getItemModel_FUN_004d9d20",
+    "params":[
+      {
+        "name":"actor_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CKeyFramedModelInstance",
+      "ptr":1
     },
     "tu":"core/inv.cpp",
     "variadic":false
@@ -14651,14 +14761,49 @@
       "004e4330",
       "00576250"
     ],
-    "conv":"unknown",
+    "cls":"CPathMap",
+    "conv":"__cdecl",
     "instructions":278,
-    "method":"FUN_0050ae20",
-    "name":"core_path.cpp_FUN_0050ae20",
-    "receiver":false,
+    "method":"getDirection",
+    "name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
+    "params":[
+      {
+        "name":"current_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"next_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"prev_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/path.cpp",

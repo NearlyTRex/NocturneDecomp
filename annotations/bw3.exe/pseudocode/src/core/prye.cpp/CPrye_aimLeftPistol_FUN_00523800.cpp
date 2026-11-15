@@ -32,9 +32,7 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   float fStack_114;
   float afStack_110 [5];
   float fStack_fc;
-  float fStack_f0;
-  float fStack_ec;
-  float fStack_e8;
+  CVector3f CStack_f0;
   CVector3f CStack_e4;
   CVector3f CStack_d8;
   float fStack_cc;
@@ -84,18 +82,18 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   fStack_34 = -1.3089969;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             (&this_ptr->weapon->base,&CStack_120,&CStack_9c);
-  fStack_f0 = CStack_9c.x;
-  afStack_110[(uint)bVar4 * -2 + 9] = afStack_90[(uint)bVar4 * -2 + -2];
-  afStack_110[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
+  CStack_f0.x = CStack_9c.x;
+  *(float *)((int)&CStack_f0 + (uint)bVar4 * -8 + 4) = afStack_90[(uint)bVar4 * -2 + -2];
+  *(float *)((int)&CStack_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -1];
   CStack_12c.x = 0.0;
   CStack_12c.y = 0.0;
   CStack_12c.z = 1000.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
             (&this_ptr->weapon->base,&CStack_12c,&CStack_144);
-  fVar3 = fStack_e8;
-  fVar2 = fStack_ec;
-  fVar1 = fStack_f0;
+  fVar3 = CStack_f0.z;
+  fVar2 = CStack_f0.y;
+  fVar1 = CStack_f0.x;
   fStack_54 = CStack_144.x;
   afStack_50[(uint)bVar4 * -2] = *(float *)((int)&CStack_144 + (uint)bVar4 * -8 + 4);
   afStack_50[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -116,10 +114,11 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
             (this_ptr_00,laser_type,color_r,color_g,color_b);
   core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,&this_ptr->weapon->base);
   core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-  fStack_150 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,afStack_110 + 8,&CStack_60);
+  fStack_150 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                         (g_CDemonSetPtr,&CStack_f0,&CStack_60);
   fStack_18 = fStack_150;
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
-  fVar1 = fStack_f0;
+  fVar1 = CStack_f0.x;
   if ((fStack_150 < 0.0) || (1.0 < fStack_150)) {
     fStack_150 = 1.0;
   }
@@ -131,13 +130,13 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   afStack_134[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
   fStack_78 = fVar1 + fStack_138;
-  fStack_74 = fStack_ec + afStack_134[0];
-  fStack_70 = fStack_e8 + afStack_134[1];
+  fStack_74 = CStack_f0.y + afStack_134[0];
+  fStack_70 = CStack_f0.z + afStack_134[1];
   CStack_e4.x = fVar1 + fStack_138;
-  afStack_110[(uint)bVar4 * -2 + 0xc] = afStack_90[(uint)bVar4 * -2 + 7];
-  afStack_110[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
+  *(float *)((int)&CStack_e4 + (uint)bVar4 * -8 + 4) = afStack_90[(uint)bVar4 * -2 + 7];
+  *(float *)((int)&CStack_e4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 8];
-  if (&CStack_60 != (CVector3f *)(afStack_110 + 0xb)) {
+  if (&CStack_60 != &CStack_e4) {
     CStack_60.x = CStack_e4.x;
     CStack_60.y = CStack_e4.y;
     CStack_60.z = CStack_e4.z;

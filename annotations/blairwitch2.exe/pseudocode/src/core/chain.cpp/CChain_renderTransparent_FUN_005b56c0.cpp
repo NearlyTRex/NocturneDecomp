@@ -14,18 +14,19 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_005b56c0(CChain *this_pt
   int *piVar1;
   CDemonRenderer *pCVar2;
   int iVar3;
-  uint *puVar4;
+  float *pfVar4;
   SChainVertex *pSVar5;
-  uint *puVar6;
+  CBoundingBox3D *pCVar6;
   SChainVertex *pSVar7;
   byte bVar8;
+  int skip_shadow_test;
   SMRGLHeaderPrimitive SStack_d4;
   uint uStack_bc;
   uint uStack_b8;
   uint uStack_b4;
   uint uStack_b0;
-  uint auStack_ac [6];
-  uint auStack_94 [6];
+  float afStack_ac [6];
+  CBoundingBox3D CStack_94;
   CVector3i CStack_7c;
   CVector3i CStack_70;
   CVector3i CStack_64;
@@ -40,15 +41,16 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_005b56c0(CChain *this_pt
   iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
+    skip_shadow_test = 0;
     (*this_ptr->vtable->renderTransparent)((CDemonActor *)this_ptr);
-    puVar4 = auStack_ac;
-    puVar6 = auStack_94;
+    pfVar4 = afStack_ac;
+    pCVar6 = &CStack_94;
     for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+      (pCVar6->min).x = *pfVar4;
+      pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
+      pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    iVar3 = core_box_cpp_FUN_0041a840(auStack_94);
+    iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_94,skip_shadow_test);
     this_ptr->is_visible = iVar3;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
     if (this_ptr->is_visible != 0) {

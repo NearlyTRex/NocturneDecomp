@@ -47,7 +47,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_fire.cpp_CCrater_render_FUN_0049d980
-;   core_setcolid.cpp_FUN_0053bc80
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH EDX                            ; 0049d5dc | g_CDemonSetInstance
     MOV dword ptr [EBP + 0x8],0x3dcccccd ; 0049d5dd
     MOV EBX,EBP                         ; 0049d5e4
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049d5e6
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049d5e6
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d5eb
     LEA ESI,[EBP + 0x24]                ; 0049d5ef
     MOV EAX,dword ptr [ESP + 0x70]      ; 0049d5f2
@@ -250,8 +250,8 @@ section .text
     PUSH EAX                            ; 0049d7af
     MOV ECX,dword ptr [0x00603b28]      ; 0049d7b0 | g_CDemonSetPtr
     PUSH ECX                            ; 0049d7b6 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049d7b7
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049d7b7
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d7bc
     FLD float ptr [ESP + 0x70]          ; 0049d7c0
     ADD ESP,0xc                         ; 0049d7c4
@@ -262,8 +262,8 @@ section .text
     FADD double ptr [0x005c0770]        ; 0049d7d3 | DAT_005c0770
     PUSH EBX                            ; 0049d7d9 | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x44]         ; 0049d7da
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049d7dd
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049d7dd
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d7e2
     FLD float ptr [ESP + 0x70]          ; 0049d7e6
     ADD ESP,0xc                         ; 0049d7ea
@@ -274,8 +274,8 @@ section .text
     FADD double ptr [0x005c0770]        ; 0049d7f9 | DAT_005c0770
     PUSH ESI                            ; 0049d7ff | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x50]         ; 0049d800
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049d803
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049d803
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d808
     FLD float ptr [ESP + 0x70]          ; 0049d80c
     ADD ESP,0xc                         ; 0049d810
@@ -286,8 +286,8 @@ section .text
     FADD double ptr [0x005c0770]        ; 0049d81f | DAT_005c0770
     PUSH EDI                            ; 0049d825 | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x5c]         ; 0049d826
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049d829
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049d829
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     FLD float ptr [EBP + 0x44]          ; 0049d82e
     FSUB float ptr [EBP + 0x10]         ; 0049d831
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d834

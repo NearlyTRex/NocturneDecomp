@@ -35,6 +35,7 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CVector4i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -44,6 +45,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SQuadVertices.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -71,7 +73,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e1fb0(CGlass *this_pt
 CBoundingBox3D * __stack_esi core_glass_cpp_CGlass_getBoundingBox_FUN_004e2170(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004e21f0(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004e22f0(CGlass *this_ptr,SCollisionInfo *collision_info);
-void core_glass_cpp_FUN_004e2320(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004e3a30(CGlass *this_ptr);
@@ -123,7 +125,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060(CGore *this_ptr,CV
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004e6290(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004e6310(CGore *this_ptr);
-CFlies * core_gore_cpp_FUN_004e63e0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004e64d0(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004e6510(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type);
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004e6590(CGore *this_ptr,CVector3f *position,int *out_blood_type);
@@ -228,7 +230,7 @@ void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004eaf20(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004eb090(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *this_ptr);
-bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1);
+int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,int ignore_lock);
 void core_hero_cpp_FUN_004eb5b0(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr);
@@ -252,7 +254,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004ec640(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(CHero *this_ptr,int action_type);
 undefined4 switchD_004ec9a0::default(void);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004eca10(CHero *param_1,undefined4 param_2);
+undefined4 core_hero_cpp_FUN_004eca10(CHero *param_1,int param_2);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004ecb90(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr);

@@ -17,7 +17,7 @@
 ;   core_doc.cpp_FUN_004568e0 at 00457bc1
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 at 004b23b8
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 005470ff
-;   core_stranger.cpp_FUN_00568500 at 0056914f
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500 at 0056914f
 ;
 ; *****************************************************************************
 

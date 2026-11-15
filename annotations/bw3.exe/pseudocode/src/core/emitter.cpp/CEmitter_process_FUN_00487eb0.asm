@@ -30,7 +30,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
@@ -588,8 +588,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004885cb
     MOVSD ES:EDI,ESI                    ; 004885cc
     MOVSD ES:EDI,ESI                    ; 004885cd
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 004885ce
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 004885ce
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 004885d3
     JMP 0x0048804b                      ; 004885d6
         ;   XREF to: 0048804b (UNCONDITIONAL_JUMP)  ; caseD_a

@@ -37,7 +37,7 @@
 ;   undefined4 DAT_0207ffdc
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_0044bb00
+;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00
 ;   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045b070
 ;   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870
 ;   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0
@@ -91,8 +91,8 @@ section .text
     PUSH 0x2038f4c                      ; 00537e79
     ADD EDI,0x4                         ; 00537e7e
     INC ESI                             ; 00537e81
-    CALL core_dcamera.cpp_FUN_0044bb00  ; 00537e82
-        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044bb00()
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00 ; 00537e82
+        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD EBX,EAX                         ; 00537e87
     MOV EAX,[0x0207fadc]                ; 00537e89 | DAT_0207fadc
     ADD ESP,0x10                        ; 00537e8e
@@ -118,8 +118,8 @@ section .text
     PUSH 0x2038f4c                      ; 00537ebb
     ADD ESI,0x4                         ; 00537ec0
     INC EDI                             ; 00537ec3
-    CALL core_dcamera.cpp_FUN_0044bb00  ; 00537ec4
-        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044bb00()
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00 ; 00537ec4
+        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     MOV EDX,dword ptr [0x0207f958]      ; 00537ec9 | DAT_0207f958
     ADD ESP,0x10                        ; 00537ecf
     ADD EBX,EAX                         ; 00537ed2
@@ -227,8 +227,8 @@ section .text
         ;   Label: LAB_00537fde
     PUSH EAX                            ; 00537fe2
     PUSH 0x2038f4c                      ; 00537fe3
-    CALL core_dcamera.cpp_FUN_0044bb00  ; 00537fe8
-        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044bb00()
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00 ; 00537fe8
+        ;   XREF to: 0044bb00 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
     ADD ESP,0x10                        ; 00537fed
     ADD EBX,EAX                         ; 00537ff0
     MOV EAX,[0x0203ad1c]                ; 00537ff2 | DAT_0203ad1c

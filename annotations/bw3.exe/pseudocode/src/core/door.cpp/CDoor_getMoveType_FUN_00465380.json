@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 195,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 9,
+    "pseudocode_lines": 74,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 297
+    "total_lines": 296
   },
   "cross_references": [
     {
@@ -29,7 +27,7 @@
     {
       "addr": "004d3040",
       "from_addr": "004d31af",
-      "name": "core_hero.cpp_FUN_004d3040",
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_door.cpp_CDoor_getMoveType_FUN_00465380",
-    "signature": "int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00465380(CDoor *this_ptr,CDemonActor *opener)"
+    "signature": "int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00465380(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)"
   },
   "function_calls": [
     {
@@ -145,7 +143,7 @@
       {
         "call_addr": "004d31af",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d3040",
+        "caller": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,10 +153,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 2,
-    "declared_stack_bytes": 8,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.153409090909091,
@@ -225,10 +223,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 56,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -265,6 +263,13 @@
         "offset": 8,
         "size": 4,
         "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "ignore_lock",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -303,32 +308,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 9,
       "match": "afStackY_1010",
       "severity": "moderate",
       "text": "float afStackY_1010 [1015];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c == 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "afStack_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);",
@@ -336,7 +325,7 @@
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "*(float *)((int)&local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
@@ -344,7 +333,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "afStack_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);",
@@ -352,22 +341,11 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

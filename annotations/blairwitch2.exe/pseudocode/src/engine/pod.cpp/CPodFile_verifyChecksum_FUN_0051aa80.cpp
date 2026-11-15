@@ -77,7 +77,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
     core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid pod version for %s: %d");
   }
   filename = this_ptr->filename;
-  shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Verifying CRC for %s...",filename);
+  shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+            (g_CEditorToolsPtr,"Verifying CRC for %s...",filename);
   p_Var2 = _fopen(filename,(char *)0x5e256f);
   if (p_Var2 == (_FILE *)0x0) {
     return 0;

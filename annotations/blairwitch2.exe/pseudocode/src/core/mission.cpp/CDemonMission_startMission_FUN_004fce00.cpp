@@ -32,8 +32,8 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004fce00(CDemonMissi
                 (this_ptr,*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2c));
       clear_screen = 0;
       pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Loading script");
-      core_level_cpp_CLevelLoader_update_FUN_004e1600(0x01D03000,pcVar1,clear_screen);
-      core_mission_cpp_FUN_004fbc90(this_ptr);
+      core_level_cpp_CLevelLoader_update_FUN_004e1600(g_CLevelLoaderPtr,pcVar1,clear_screen);
+      core_mission_cpp_CDemonMission_loadScript_FUN_004fbc90(this_ptr);
       core_script_cpp_CScript_initRuntime_FUN_00522080(g_CScriptPtr);
       core_script_cpp_CScript_executeInitSection_FUN_00522200(g_CScriptPtr);
       core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00539840(g_CDemonSetPtr);

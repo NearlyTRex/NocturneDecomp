@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_processBuffer_FUN_00442d90 at 00442def
-;   support_codec.cpp_FUN_00442d10 at 00442d6f
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00442d10 at 00442d6f
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamMemoryTypeInfo

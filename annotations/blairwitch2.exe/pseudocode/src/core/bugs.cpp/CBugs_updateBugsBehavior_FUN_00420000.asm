@@ -20,8 +20,8 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00421a00
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0
-;   core_bugs.cpp_FUN_00420840
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
@@ -124,8 +124,8 @@ section .text
     PUSH ESI                            ; 004200f6
     PUSH EBX                            ; 004200f7
     INC EDI                             ; 004200f8
-    CALL core_bugs.cpp_FUN_00420840     ; 004200f9
-        ;   XREF to: 00420840 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00420840()
+    CALL core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840 ; 004200f9
+        ;   XREF to: 00420840 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840(CBugs * this_ptr, SBug * bug_data, float delta_time, CVector3f * dest_vertex)
     ADD ESI,0x40                        ; 004200fe
     MOV EAX,dword ptr [EBX + 0x10afc]   ; 00420101
     ADD ESP,0x10                        ; 00420107

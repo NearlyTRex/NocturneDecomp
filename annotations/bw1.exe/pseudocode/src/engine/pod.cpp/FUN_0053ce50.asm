@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_pod_cpp_FUN_0053ce50(undefined4 param_1,undefined4 param_2)
+; int engine_pod_cpp_FUN_0053ce50(undefined4 param_1,char *param_2)
 ;
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0053b1a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0053b210
-;   engine_pod.cpp_FUN_0053b250
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250
 ;   engine_pod.cpp_FUN_0053bfc0
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH EDX                            ; 0053ce6b
     LEA EAX,[ESP + 0x8]                 ; 0053ce6c
     PUSH EAX                            ; 0053ce70
-    CALL engine_pod.cpp_FUN_0053b250    ; 0053ce71
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053b250()
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 ; 0053ce71
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile * this_ptr, char * pod_filename, char * out_error_message)
     ADD ESP,0xc                         ; 0053ce76
     TEST EAX,EAX                        ; 0053ce79
     JZ 0x0053cea3                       ; 0053ce7b

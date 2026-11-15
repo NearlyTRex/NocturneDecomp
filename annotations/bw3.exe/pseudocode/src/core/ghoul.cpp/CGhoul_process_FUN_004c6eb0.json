@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2525,
-    "complexity_score": 3645,
+    "complexity_score": 3649,
     "cross_reference_count": 0,
     "function_call_count": 41,
     "global_count": 64,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1245,
+    "pseudocode_lines": 1249,
     "suspect_count": 232,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -27,7 +27,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3770
+    "total_lines": 3774
   },
   "cross_references": [],
   "function": {
@@ -105,6 +105,11 @@
       "name": "core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90"
     },
     {
+      "addr": "0042fdc0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0"
+    },
+    {
       "addr": "0042b9e0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0"
@@ -113,11 +118,6 @@
       "addr": "0042c1e0",
       "is_variadic": false,
       "name": "core_charactr.cpp_FUN_0042c1e0"
-    },
-    {
-      "addr": "0042fdc0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042fdc0"
     },
     {
       "addr": "00434850",
@@ -1380,7 +1380,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1219,
+      "line": 1223,
       "match": "2.38221e-44",
       "severity": "mild",
       "text": "if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) && (fStack_34 == 2.38221e-44)) {",
@@ -1996,7 +1996,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 1245,
+      "line": 1249,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->prev_position).x = (pCVar14->position).x;",

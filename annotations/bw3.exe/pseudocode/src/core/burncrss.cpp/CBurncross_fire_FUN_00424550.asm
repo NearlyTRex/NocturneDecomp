@@ -30,7 +30,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
@@ -39,7 +39,7 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -227,8 +227,8 @@ section .text
     PUSH EAX                            ; 004247c3
     MOV ESI,dword ptr [0x00603b28]      ; 004247c4 | g_CDemonSetPtr
     PUSH ESI                            ; 004247ca | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 004247cb
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 004247cb
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x17c],EAX     ; 004247d0
     FLD float ptr [ESP + 0x17c]         ; 004247d7
     ADD ESP,0xc                         ; 004247de
@@ -512,8 +512,8 @@ section .text
     PUSH EAX                            ; 00424c0f
     MOV EAX,dword ptr [ESP + 0x184]     ; 00424c10
     PUSH EAX                            ; 00424c17
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 00424c18
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 00424c18
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 00424c1d
     MOV EDX,dword ptr [0x00603b28]      ; 00424c20 | g_CDemonSetPtr
         ;   Label: LAB_00424c20

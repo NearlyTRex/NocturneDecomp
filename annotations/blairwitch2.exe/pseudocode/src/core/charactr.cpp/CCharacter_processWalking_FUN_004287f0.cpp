@@ -50,9 +50,9 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
                     (g_CConsolePtr,"@%s can't figure out next waypoint trying to reach %s\n" + 1);
           return 1;
         }
-        core_charactr_cpp_FUN_00428260
+        core_charactr_cpp_CCharacter_followActor_FUN_00428260
                   (this_ptr,actor_ptr,this_ptr->walk_min_distance,this_ptr->walk_max_distance,
-                   &this_ptr->walk_state);
+                   (int *)&this_ptr->walk_state);
         return 1;
       }
       core_door_cpp_CDoor_getOpenStandPos_FUN_00460350

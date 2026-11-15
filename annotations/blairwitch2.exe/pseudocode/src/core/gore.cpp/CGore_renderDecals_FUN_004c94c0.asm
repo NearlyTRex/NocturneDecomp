@@ -23,11 +23,11 @@
 ;   undefined4 DAT_01cde348
 ;
 ; Called Functions:
+;   core_gore.cpp_CBloodPool_render_FUN_004c88a0
 ;   core_gore.cpp_CBloodPool_setupRenderState_FUN_004c8800
+;   core_gore.cpp_CBloodSplat_render_FUN_004c8010
 ;   core_gore.cpp_CBloodSplat_setupRenderState_FUN_004c7f80
-;   core_gore.cpp_FUN_004c8010
-;   core_gore.cpp_FUN_004c88a0
-;   core_gore.cpp_FUN_004c9000
+;   core_gore.cpp_CFootstep_render_FUN_004c9000
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_004c950b
     PUSH EBX                            ; 004c950d
     INC ESI                             ; 004c950e
-    CALL core_gore.cpp_FUN_004c8010     ; 004c950f
-        ;   XREF to: 004c8010 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c8010()
+    CALL core_gore.cpp_CBloodSplat_render_FUN_004c8010 ; 004c950f
+        ;   XREF to: 004c8010 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004c8010(CBloodSplat * this_ptr, int expire_flag)
     MOV ECX,dword ptr [0x01cbcaf8]      ; 004c9514 | DAT_01cbcaf8
     ADD ESP,0x8                         ; 004c951a
     ADD EBX,0x44                        ; 004c951d
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_004c9556
     PUSH ESI                            ; 004c9558
     INC EBX                             ; 004c9559
-    CALL core_gore.cpp_FUN_004c88a0     ; 004c955a
-        ;   XREF to: 004c88a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c88a0()
+    CALL core_gore.cpp_CBloodPool_render_FUN_004c88a0 ; 004c955a
+        ;   XREF to: 004c88a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004c88a0(CBloodPool * this_ptr, int expire_flag)
     MOV ECX,dword ptr [0x01cdde40]      ; 004c955f | DAT_01cdde40
     ADD ESP,0x8                         ; 004c9565
     ADD ESI,0x28                        ; 004c9568
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_004c958d
     PUSH ESI                            ; 004c958f
     INC EBX                             ; 004c9590
-    CALL core_gore.cpp_FUN_004c9000     ; 004c9591
-        ;   XREF to: 004c9000 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c9000()
+    CALL core_gore.cpp_CFootstep_render_FUN_004c9000 ; 004c9591
+        ;   XREF to: 004c9000 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004c9000(CFootstep * this_ptr, int expire_flag)
     MOV EDX,dword ptr [0x01cde348]      ; 004c9596 | DAT_01cde348
     ADD ESP,0x8                         ; 004c959c
     ADD ESI,0x40                        ; 004c959f
@@ -159,8 +159,8 @@ section .text
     PUSH EDI                            ; 004c95de
     ADD EAX,EBX                         ; 004c95df
     PUSH EAX                            ; 004c95e1
-    CALL core_gore.cpp_FUN_004c8010     ; 004c95e2
-        ;   XREF to: 004c8010 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c8010()
+    CALL core_gore.cpp_CBloodSplat_render_FUN_004c8010 ; 004c95e2
+        ;   XREF to: 004c8010 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004c8010(CBloodSplat * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004c95e7
     JMP 0x004c95c6                      ; 004c95ea
         ;   XREF to: 004c95c6 (UNCONDITIONAL_JUMP)  ; LAB_004c95c6
@@ -189,8 +189,8 @@ section .text
     PUSH EDI                            ; 004c961f
     ADD EAX,EBX                         ; 004c9620
     PUSH EAX                            ; 004c9622
-    CALL core_gore.cpp_FUN_004c88a0     ; 004c9623
-        ;   XREF to: 004c88a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c88a0()
+    CALL core_gore.cpp_CBloodPool_render_FUN_004c88a0 ; 004c9623
+        ;   XREF to: 004c88a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004c88a0(CBloodPool * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004c9628
     JMP 0x004c9607                      ; 004c962b
         ;   XREF to: 004c9607 (UNCONDITIONAL_JUMP)  ; LAB_004c9607
@@ -219,8 +219,8 @@ section .text
     PUSH EDI                            ; 004c9661
     ADD EAX,EBX                         ; 004c9662
     PUSH EAX                            ; 004c9664
-    CALL core_gore.cpp_FUN_004c9000     ; 004c9665
-        ;   XREF to: 004c9000 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c9000()
+    CALL core_gore.cpp_CFootstep_render_FUN_004c9000 ; 004c9665
+        ;   XREF to: 004c9000 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004c9000(CFootstep * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004c966a
     JMP 0x004c9648                      ; 004c966d
         ;   XREF to: 004c9648 (UNCONDITIONAL_JUMP)  ; LAB_004c9648

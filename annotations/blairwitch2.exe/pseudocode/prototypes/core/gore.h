@@ -37,9 +37,9 @@ void __cdecl CBloodSplat::initWallSplat(CBloodSplat *this_ptr,CVector3f *positio
 // Address: 004c7f80
 void __cdecl CBloodSplat::setupRenderState(CBloodSplat *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c8010
+// Original: core_gore.cpp_CBloodSplat_render_FUN_004c8010
 // Address: 004c8010
-void FUN_004c8010(undefined4 *param_1,int param_2);
+void __cdecl CBloodSplat::render(CBloodSplat *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CBloodSplat_processAge_FUN_004c8690
 // Address: 004c8690
@@ -57,9 +57,9 @@ int __cdecl CBloodSplat::save(CBloodSplat *this_ptr,_FILE *file_handle);
 // Address: 004c8800
 int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c88a0
+// Original: core_gore.cpp_CBloodPool_render_FUN_004c88a0
 // Address: 004c88a0
-void FUN_004c88a0(undefined4 *param_1);
+void __cdecl CBloodPool::render(CBloodPool *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CBloodPool_processAge_FUN_004c8ce0
 // Address: 004c8ce0
@@ -81,9 +81,9 @@ int __cdecl CBloodPool::save(CBloodPool *this_ptr,_FILE *file_handle);
 // Address: 004c8e80
 void __cdecl CFootstep::init(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
 
-// Original: core_gore.cpp_FUN_004c9000
+// Original: core_gore.cpp_CFootstep_render_FUN_004c9000
 // Address: 004c9000
-void FUN_004c9000(undefined4 *param_1,int param_2);
+void __cdecl CFootstep::render(CFootstep *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CGore_ctor_FUN_004c93c0
 // Address: 004c93c0
@@ -141,9 +141,9 @@ void __cdecl CGore::createBloodPool(CGore *this_ptr,CVector3f *position,EBloodTy
 // Address: 004c9b00
 void __cdecl CGore::loadAssets(CGore *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c9bd0
+// Original: core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0
 // Address: 004c9bd0
-CFlies * FUN_004c9bd0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl CGore::spawnFlies(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 
 // Original: core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
 // Address: 004c9cc0

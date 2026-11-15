@@ -125,7 +125,8 @@ void __cdecl core_course_cpp_CCourse_interpolate_FUN_00438cf0(CCourse *this_ptr,
       CStack_80.pos.z = local_44.pos.z;
     }
     core_xform_cpp_slerpQuaternion_FUN_00593df0
-              (&this_ptr->frames[local_1c].orient,&this_ptr->frames[iVar3].orient,local_a8);
+              (&this_ptr->frames[local_1c].orient,&this_ptr->frames[iVar3].orient,local_a8,&local_a0
+              );
     pCVar5 = &local_a0;
   }
   pfVar7 = (float *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);

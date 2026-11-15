@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   search_pattern
 ;
 ; XREF[6]:
-;   core_podmain.cpp_FUN_005152e0 at 00515322
+;   core_podmain.cpp_CDemonPod_load_FUN_005152e0 at 00515322
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047de09
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482bc1
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482db4
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020 at 004830f4
 ;   shape_edittool.cpp_FUN_00482ea0 at 00482f0d
-;   shape_edittool.cpp_FUN_00483020 at 004830f4
 ;
 ; Referenced Globals:
 ;   void* PTR_FindFirstFileA_005b3558 = 001b3d70

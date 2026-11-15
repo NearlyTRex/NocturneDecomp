@@ -26,7 +26,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c5e1
-;   core_cloth.cpp_FUN_0043cb00 at 0043cdbb
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00 at 0043cdbb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b90b9

@@ -28,7 +28,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5ca3
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5ca3
 ;
 ; Referenced Globals:
 ;   undefined4 s_comp_3_2f_3_2f_actren_3_005e58b9+1

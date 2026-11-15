@@ -16,8 +16,8 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20 at 00484f50
+;   shape_edittool.cpp_CEdCheck_render_FUN_00485610 at 004856b6
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004845b0
-;   shape_edittool.cpp_FUN_00485610 at 004856b6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c25f84

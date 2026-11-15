@@ -36,7 +36,9 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
   uint uVar13;
   uint uVar14;
   CDemonSet *pCVar15;
+  CVector3f *ray_origin;
   float fVar16;
+  CVector3f *ray_target;
   float local_168;
   float local_15c;
   float local_158;
@@ -97,11 +99,13 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
       core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
                 (g_CDemonSetPtr,laser_info.laser_type,laser_info.color.r,laser_info.color.g,
                  laser_info.color.b);
+      ray_target = &local_c4;
       puVar4 = (uint *)((int)origin + (uint)bVar7 * -8 + 4);
       local_e8.x = origin->x;
       *(uint *)((int)&local_e8 + (uint)bVar7 * -8 + 4) = *puVar4;
       *(uint *)((int)&local_e8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8) =
            puVar4[(uint)bVar7 * -2 + 1];
+      ray_origin = &local_e8;
       local_100 = local_e8.x + direction->x;
       local_fc[0] = local_e8.y + direction->y;
       local_fc[1] = local_e8.z + direction->z;
@@ -111,7 +115,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
       *(float *)((int)&local_c4 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8) =
            local_fc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
       uVar13 = 0x4a2edd;
-      local_14 = (float)core_setcolid_cpp_FUN_0053ccc0();
+      local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0(pCVar15,ray_origin,ray_target);
       if ((local_14 < 0.0) || (1.0 <= local_14)) {
         local_54 = -direction->y;
         local_50 = -direction->z;

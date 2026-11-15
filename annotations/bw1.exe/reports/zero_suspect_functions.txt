@@ -148,7 +148,7 @@ annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_dtor_FUN_00410780.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_getActorType_FUN_0040f200.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_getCollisionType_FUN_00410720.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_processDamage_FUN_00410400.cpp
-annotations/bw1.exe/pseudocode/src/core/baron.cpp/FUN_004101e0.cpp
+annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_renderOpaque_FUN_004101e0.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/factoryFuncBaronWeapon_FUN_00410430.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/factoryFuncBaron_FUN_0040f1e0.cpp
 annotations/bw1.exe/pseudocode/src/core/barrier.cpp/CBarrier_ctor_FUN_00410830.cpp
@@ -289,8 +289,8 @@ annotations/bw1.exe/pseudocode/src/core/bugs.cpp/maxFloat_FUN_00428150.cpp
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/staticInit_FUN_00424f20.cpp
 annotations/bw1.exe/pseudocode/src/core/camview.cpp/CCameraView_ctor_FUN_00428220.cpp
 annotations/bw1.exe/pseudocode/src/core/camview.cpp/CCameraView_dtor_FUN_00428240.cpp
-annotations/bw1.exe/pseudocode/src/core/camview.cpp/FUN_00428290.cpp
-annotations/bw1.exe/pseudocode/src/core/camview.cpp/FUN_004282a0.cpp
+annotations/bw1.exe/pseudocode/src/core/camview.cpp/CCameraView_getFogValueAtPosition_FUN_00428290.cpp
+annotations/bw1.exe/pseudocode/src/core/camview.cpp/CCameraView_testVisibility_FUN_004282a0.cpp
 annotations/bw1.exe/pseudocode/src/core/carved.cpp/CCarved_archive_FUN_0042b3c0.cpp
 annotations/bw1.exe/pseudocode/src/core/carved.cpp/CCarved_canBeGrabbed_FUN_0042bd90.cpp
 annotations/bw1.exe/pseudocode/src/core/carved.cpp/CCarved_getActorType_FUN_004286c0.cpp
@@ -314,6 +314,7 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_blendLayerAction
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_calculateChecksum_FUN_00433c60.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_clearDoorTarget_FUN_00432560.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_detachBodyPart_FUN_004311a0.cpp
+annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_doNothing_FUN_00431470.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_dropAllCarriedObjects_FUN_004328c0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_drop_FUN_00431490.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_getCollisionType_FUN_004310b0.cpp
@@ -337,7 +338,6 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTargetImm
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTimeout_FUN_004321f0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_shatter_FUN_00430c40.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_spawnFlies_FUN_00433e50.cpp
-annotations/bw1.exe/pseudocode/src/core/charactr.cpp/FUN_00431470.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/SFire_ctor_FUN_004355e0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/clampFloat_FUN_0042cc30.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_00435500.cpp
@@ -444,7 +444,7 @@ annotations/bw1.exe/pseudocode/src/core/dest.cpp/CActorDestination_acceptsActor_
 annotations/bw1.exe/pseudocode/src/core/dest.cpp/CActorDestination_archive_FUN_0045d5b0.cpp
 annotations/bw1.exe/pseudocode/src/core/dest.cpp/CActorDestination_dtor_FUN_0045d670.cpp
 annotations/bw1.exe/pseudocode/src/core/dest.cpp/CActorDestination_getActorType_FUN_0045d1e0.cpp
-annotations/bw1.exe/pseudocode/src/core/dest.cpp/FUN_0045d4b0.cpp
+annotations/bw1.exe/pseudocode/src/core/dest.cpp/CActorDestination_getCollisionType_FUN_0045d4b0.cpp
 annotations/bw1.exe/pseudocode/src/core/dest.cpp/factoryFuncActorDestination_FUN_0045d1c0.cpp
 annotations/bw1.exe/pseudocode/src/core/dest.cpp/staticInit_FUN_0045d190.cpp
 annotations/bw1.exe/pseudocode/src/core/dfilter.cpp/CDemonFilter_arrdtor4_FUN_0045dfe0.cpp
@@ -477,6 +477,7 @@ annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_freeMasterZBuffer
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_free_FUN_00462670.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_initializeVisibilityBuffer_FUN_00465780.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_testShadowMapRegion_FUN_004657c0.cpp
+annotations/bw1.exe/pseudocode/src/core/dlight.cpp/FUN_00463850.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_ctor_FUN_00468860.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_preCache_FUN_004688e0.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_arrdtor256_FUN_00468990.cpp
@@ -1675,6 +1676,7 @@ annotations/bw1.exe/pseudocode/src/engine/keys.cpp/CKeys_getInputKey_FUN_004fd26
 annotations/bw1.exe/pseudocode/src/engine/keys.cpp/CKeys_getUppercasedInputKey_FUN_004fd270.cpp
 annotations/bw1.exe/pseudocode/src/engine/keys.cpp/clearKeypresses_FUN_004fd250.cpp
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/FUN_00507350.c
+annotations/bw1.exe/pseudocode/src/engine/matrix.c/FUN_00507390.c
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/calculate3DDistance_FUN_005085c0.c
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/vectorLength3DToInt_FUN_00508860.c
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/CMini3D_dtor_FUN_00511020.cpp
@@ -1753,6 +1755,7 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_findByFirstField_
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_findString_FUN_00499960.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getFieldAt_FUN_004998b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getStringAt_FUN_004998a0.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateWithFullPaths_FUN_0049a480.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_sortAll_FUN_004997f0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049df50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/qsortByString_FUN_00499810.cpp

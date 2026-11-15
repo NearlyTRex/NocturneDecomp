@@ -108,7 +108,7 @@
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0
-;   core_bugs.cpp_FUN_00422a00
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_xform.cpp_transformVector3x4_FUN_00583260
@@ -692,8 +692,8 @@ section .text
     PUSH ESI                            ; 004238b5
     MOV EDI,dword ptr [EBP + 0x14]      ; 004238b6
     PUSH EDI                            ; 004238b9
-    CALL core_bugs.cpp_FUN_00422a00     ; 004238ba
-        ;   XREF to: 00422a00 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00422a00()
+    CALL core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 ; 004238ba
+        ;   XREF to: 00422a00 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs * this_ptr, SBug * bug_data, float delta_time, CVector3f * dest_vertex)
     ADD ESP,0x10                        ; 004238bf
     TEST EAX,EAX                        ; 004238c2
     JZ 0x00423842                       ; 004238c4

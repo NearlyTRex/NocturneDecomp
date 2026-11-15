@@ -55,14 +55,14 @@
 ;   undefined4 DAT_020ccff0
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
-;   core_actor.cpp_FUN_004090f0
 ;   core_actor.cpp_rayCylinderIntersect_FUN_00408290
 ;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
-;   core_box.cpp_FUN_0041af70
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -103,8 +103,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004093d7
     PUSH EDI                            ; 004093da
     LEA ESI,[ESP + 0x40]                ; 004093db
-    CALL core_actor.cpp_FUN_004090f0    ; 004093df
-        ;   XREF to: 004090f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004090f0()
+    CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 ; 004093df
+        ;   XREF to: 004090f0 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0(CDemonActor * this_ptr, SCollisionInfo * collision_info, int bounding_box_type, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 004093e4
     LEA EDI,[ESP + 0x88]                ; 004093e9
     ADD ESP,0xc                         ; 004093f0
@@ -230,8 +230,8 @@ section .text
     LEA ESI,[ESP + 0x58]                ; 0040955d
     PUSH EAX                            ; 00409561
     MOVSD.REP ES:EDI,ESI                ; 00409562
-    CALL core_box.cpp_FUN_0041af70      ; 00409564
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 00409564
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x114],EAX     ; 00409569
         ;   Label: LAB_00409569
     FLD float ptr [ESP + 0x114]         ; 00409570

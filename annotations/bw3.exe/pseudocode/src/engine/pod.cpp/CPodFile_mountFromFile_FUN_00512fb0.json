@@ -1,0 +1,1218 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1011,
+    "complexity_score": 1105,
+    "cross_reference_count": 4,
+    "function_call_count": 19,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 480,
+    "suspect_count": 56,
+    "suspect_types": [
+      "alloc_magic_size",
+      "concat_reconstruction",
+      "extra_output",
+      "pointer_cast",
+      "pointer_stride_bytecount",
+      "pointer_truncation",
+      "sign_compare_idiom",
+      "undefined_data",
+      "undefined_type",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1491
+  },
+  "cross_references": [
+    {
+      "addr": "005144b0",
+      "from_addr": "00514501",
+      "name": "engine_pod.cpp_CPod_remount_FUN_005144b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005143b0",
+      "from_addr": "005143da",
+      "name": "engine_pod.cpp_FUN_005143b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005149c0",
+      "from_addr": "00514a00",
+      "name": "engine_pod.cpp_FUN_005149c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00514bb0",
+      "from_addr": "00514bd1",
+      "name": "engine_pod.cpp_FUN_00514bb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00512fb0",
+    "address_range": [
+      [
+        "00512fb0",
+        "00513b89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0",
+    "signature": "int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00512fb0(CPodFile *this_ptr,char *pod_filename,char *out_error_message)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
+      "addr": "005a3e50",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005a3e50"
+    },
+    {
+      "addr": "005a29e8",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__qsort_FUN_005a29e8"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "00465730",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_findFileNormally_FUN_00465730"
+    },
+    {
+      "addr": "00465660",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00465660"
+    },
+    {
+      "addr": "00465e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50"
+    },
+    {
+      "addr": "00513b90",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_cleanup_FUN_00513b90"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_00573db0"
+    },
+    {
+      "addr": "005738c0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60"
+    },
+    {
+      "addr": "00573f50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_00573f50"
+    },
+    {
+      "addr": "00573c00",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_00573c00"
+    },
+    {
+      "addr": "00573cf0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0"
+    },
+    {
+      "addr": "00573d40",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_tell_FUN_00573d40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc4ca",
+      "name": "s_File_not_found_005cc4ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc4d9",
+      "name": "s_Unable_to_open_file_s_005cc4d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc4f2",
+      "name": "DAT_005cc4f2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc4f6",
+      "name": "DAT_005cc4f6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc4fb",
+      "name": "s_I_O_Error_accessing_file_005cc4fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc528",
+      "name": "s_File_is_corrupt_005cc528",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc538",
+      "name": "s_Out_of_memory_005cc538",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc546",
+      "name": "s_engine_pod_cpp_005cc546",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc558",
+      "name": "s_realloc_returns_NULL_shr_005cc558",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603730",
+      "name": "s_Unknown_error_00603730",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603734",
+      "name": "s_Unknown_error_00603730+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005143da",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_005143b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00514501",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_remount_FUN_005144b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00514bd1",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00514bb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00514a00",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_005149c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.038509316770186,
+    "instruction_count": 805,
+    "opcode_distribution": {
+      "BOOL_AND": 8,
+      "BOOL_NEGATE": 104,
+      "BOOL_OR": 7,
+      "BRANCH": 11,
+      "CALL": 45,
+      "CBRANCH": 98,
+      "COPY": 559,
+      "INT_ADD": 373,
+      "INT_AND": 638,
+      "INT_CARRY": 103,
+      "INT_EQUAL": 504,
+      "INT_LEFT": 24,
+      "INT_LESS": 78,
+      "INT_MULT": 17,
+      "INT_NEGATE": 2,
+      "INT_NOTEQUAL": 48,
+      "INT_OR": 60,
+      "INT_SBORROW": 82,
+      "INT_SCARRY": 110,
+      "INT_SEXT": 6,
+      "INT_SLESS": 264,
+      "INT_SUB": 256,
+      "INT_XOR": 22,
+      "INT_ZEXT": 4,
+      "LOAD": 157,
+      "POPCOUNT": 240,
+      "RETURN": 1,
+      "STORE": 231,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 4056
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00519f00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3228
+    },
+    "bw1.exe": {
+      "addr": "0053b250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054f650",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2019
+    },
+    "nocturne.exe": {
+      "addr": "004f7ae0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0663
+    }
+  },
+  "stack_frame": {
+    "frame_size": 2268,
+    "local_size": 2256,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8cc",
+        "offset": -2252,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7cc",
+        "offset": -1996,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7cb",
+        "offset": -1995,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c8",
+        "offset": -1736,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c0",
+        "offset": -1728,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b8",
+        "offset": -1720,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b7",
+        "offset": -1719,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4b8",
+        "offset": -1208,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4b0",
+        "offset": -1200,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4af",
+        "offset": -1199,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_460",
+        "offset": -1120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_45c",
+        "offset": -1116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_454",
+        "offset": -1108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_450",
+        "offset": -1104,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_44f",
+        "offset": -1103,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_400",
+        "offset": -1024,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3ff",
+        "offset": -1023,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3b0",
+        "offset": -944,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a8",
+        "offset": -936,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a4",
+        "offset": -932,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_398",
+        "offset": -920,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_394",
+        "offset": -916,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_393",
+        "offset": -915,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_294",
+        "offset": -660,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_288",
+        "offset": -648,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_17f",
+        "offset": -383,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_123",
+        "offset": -291,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_d3",
+        "offset": -211,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_57",
+        "offset": -87,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2f",
+        "offset": -47,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2e",
+        "offset": -46,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2d",
+        "offset": -45,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      },
+      {
+        "is_param": true,
+        "name": "pod_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "out_error_message",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 10,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_005cc4f2",
+      "severity": "mild",
+      "text": "iVar6 = _stricmp(local_288,&DAT_005cc4f2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_005cc4f6",
+      "severity": "mild",
+      "text": "(iVar6 = _stricmp(local_288,&DAT_005cc4f6), iVar6 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 169,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar13 = SBORROW4(uVar9,local_28);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 177,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar13) != 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 426,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar13 = SBORROW4(uVar9,local_24);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_2c) = uVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_2c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 159,
+      "match": "(int)&this_ptr->directory_entries->size",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_2c) = local_94;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 160,
+      "match": "(int)&this_ptr->directory_entries->offset",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_2c) = local_90;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 161,
+      "match": "(int)&this_ptr->directory_entries->checksum",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_2c) = local_88;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
+      "match": "(int)&this_ptr->directory_entries->timestamp",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_2c) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 192,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)&this_ptr->directory_entries->name + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 382,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_14) = uVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 406,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 416,
+      "match": "(int)&this_ptr->directory_entries->size",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->size + local_14) = local_38;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 417,
+      "match": "(int)&this_ptr->directory_entries->offset",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_34;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 418,
+      "match": "(int)&this_ptr->directory_entries->checksum",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 420,
+      "match": "(int)&this_ptr->directory_entries->timestamp",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 83,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 109,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 150,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 218,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 229,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 240,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 262,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 309,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 359,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 407,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 436,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 454,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 470,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 67,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 177,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar13) != 0) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_2c) = uVar9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 149,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 159,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_2c) = local_94;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_2c) = local_90;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 161,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_2c) = local_88;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 164,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 192,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)&this_ptr->directory_entries->name + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 382,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_14) = uVar9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 406,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 416,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->size + local_14) = local_38;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 417,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 418,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 420,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 134,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 385,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 120,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 255,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 322,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 370,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "_qsort element width is the literal 0x14 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 199,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

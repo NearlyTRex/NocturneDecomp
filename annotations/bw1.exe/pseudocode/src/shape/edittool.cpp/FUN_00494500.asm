@@ -18,8 +18,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
-;   engine_font.cpp_FUN_004c1dd0
 ;   engine_mini3d.cpp_setAlpha_FUN_00512320
 ;   shape_edittool.cpp_FUN_00496ee0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 004945b0
     MOV EBX,dword ptr [0x01c3eb50]      ; 004945b1 | DAT_01c3eb50
     PUSH EBX                            ; 004945b7
-    CALL engine_font.cpp_FUN_004c1dd0   ; 004945b8
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004945b8
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004945bd
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004945c0
         ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()

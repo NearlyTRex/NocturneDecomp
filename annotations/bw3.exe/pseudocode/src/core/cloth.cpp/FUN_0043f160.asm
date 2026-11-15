@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3)
+; void __cdecl core_cloth_cpp_FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
+; int              Stack[0xc]:4   show_labels
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_FUN_0043f110 at 0043f13b

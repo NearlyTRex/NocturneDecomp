@@ -113,9 +113,9 @@ void __cdecl CDemonRenderer::renderBlendedPoly(CDemonRenderer *this_ptr,SMRGLPri
 // Address: 0046ad70
 void __cdecl CDemonRenderer::renderOverlayDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: engine_drender.cpp_FUN_0046ae40
+// Original: engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40
 // Address: 0046ae40
-void FUN_0046ae40(CDemonRenderer *param_1,int param_2);
+void __cdecl CDemonRenderer::renderOverlayPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
 // Original: engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0046af90
 // Address: 0046af90

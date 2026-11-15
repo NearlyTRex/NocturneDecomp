@@ -13,8 +13,8 @@
 ; int              Stack[0x1c]:4   load_flags
 ;
 ; XREF[2]:
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580 at 004c17c5
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004c0ca0 at 004c0cc3
-;   engine_font.cpp_FUN_004c1580 at 004c17c5
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_free_FUN_004c1830

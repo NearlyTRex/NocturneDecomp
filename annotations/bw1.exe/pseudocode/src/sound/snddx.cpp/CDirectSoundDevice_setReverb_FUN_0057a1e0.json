@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 62,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 47
+    "total_lines": 48
   },
   "cross_references": [],
   "function": {
@@ -33,9 +32,9 @@
   "globals": [
     {
       "addr": "006235c0",
-      "name": "DAT_006235c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DSPROPSETID_EAX_ReverbProperties",
+      "type": "GUID",
+      "value": "4a4e6fc1-c341-11d1-b73a-444553540000"
     },
     {
       "addr": "02c81da4",
@@ -149,16 +148,8 @@
       "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 0x10))(_DAT_02c81da4,&DAT_006235c0,0,0,0,&uStack_10,0x10);",
+      "text": "(**(code **)(*_DAT_02c81da4 + 0x10))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_006235c0",
-      "severity": "mild",
-      "text": "(**(code **)(*_DAT_02c81da4 + 0x10))(_DAT_02c81da4,&DAT_006235c0,0,0,0,&uStack_10,0x10);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

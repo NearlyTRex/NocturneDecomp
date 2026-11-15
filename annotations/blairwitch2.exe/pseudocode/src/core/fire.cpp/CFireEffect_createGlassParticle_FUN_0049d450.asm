@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   lifetime
 ;
 ; XREF[2]:
-;   core_glass.cpp_FUN_004c5bb0 at 004c5cd0
+;   core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0 at 004c5cd0
 ;   core_skeleton.cpp_CDeformableModel_shatter_FUN_00543d80 at 005440ab
 ;
 ; Referenced Globals:

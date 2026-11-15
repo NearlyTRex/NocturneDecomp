@@ -300,7 +300,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_FUN_0047cee0(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,acStack_528);
   }
   if (_DAT_02d21b8c < 0xc800000) {
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Windows is reporting ");
@@ -443,7 +443,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_FUN_0047cee0(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,&stack0xfffff8d8);
   }
   pCVar4 = g_CGamePtr;
   if (_DAT_01d5bc7c != 0) {

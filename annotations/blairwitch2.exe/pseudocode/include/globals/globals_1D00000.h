@@ -7,6 +7,7 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMoon.h"
 
@@ -54,6 +55,9 @@ extern CDemonActorType g_CMineCarClassInfo;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_LoadingMoonModel;
+
+// CLevelLoader
+extern CLevelLoader g_CLevelLoaderInstance;
 
 // CMini3D
 extern CMini3D g_CMini3DInstance;

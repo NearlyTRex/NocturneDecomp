@@ -47,6 +47,9 @@ CDemonActorType g_CMeleeClassInfo = {};
 // CKeyFramedModel
 CKeyFramedModel g_LoadingMoonModel = {};
 
+// CLevelLoader
+CLevelLoader g_CLevelLoaderInstance = {};
+
 // CMoon
 CMoon g_CMoonInstance = {};
 

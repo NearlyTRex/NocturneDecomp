@@ -54,7 +54,6 @@ static TerminatedCString s_CMP3Decoder_00623534 = "$CMP3Decoder$$";
 static TerminatedCString s_SfxSample_00623554 = "$SfxSample$$";
 static TerminatedCString s_SfxOptions_00623574 = "$SfxOptions$$";
 static TerminatedCString s_SfxSlot_00623594 = "$SfxSlot$$";
-static TerminatedCString s_DEST_006235c9 = ":DEST";
 static TerminatedCString s_STrainNoise_00623944 = "$STrainNoise$$";
 static TerminatedCString s_CSpike_006258ec = "$CSpike$$";
 static TerminatedCString s_CStairs_0062590c = "$CStairs$$";

@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_set_cpp_005d042d
 ;   TerminatedCString s_CDemonSet_initScene_Too_005d043d
 ;   CFilterCache* g_CFilterCachePtr = 01548f90
-;   undefined4 DAT_006002ac
+;   CLevelLoader* g_CLevelLoaderPtr = 01d70ab8
 ;   undefined4 DAT_006071f0
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
@@ -40,7 +40,7 @@
 ;   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0045d070
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0045c7e0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0045c470
-;   core_level.cpp_FUN_004e0000
+;   core_level.cpp_CLevelLoader_update_FUN_004e0000
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0
@@ -66,10 +66,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 00534437
     PUSH EAX                            ; 0053443a
-    MOV EDX,dword ptr [0x006002ac]      ; 0053443b | DAT_006002ac
+    MOV EDX,dword ptr [0x006002ac]      ; 0053443b | g_CLevelLoaderPtr
     PUSH EDX                            ; 00534441
-    CALL core_level.cpp_FUN_004e0000    ; 00534442
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 00534442
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 00534447
     CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0045c470 ; 0053444a
         ;   XREF to: 0045c470 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0045c470()

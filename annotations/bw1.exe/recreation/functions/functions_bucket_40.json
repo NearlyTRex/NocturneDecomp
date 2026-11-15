@@ -1706,15 +1706,42 @@
       "00420500",
       "00420570"
     ],
-    "conv":"unknown",
+    "cls":"CDemonActor",
+    "conv":"__stack3_esi",
     "instructions":161,
-    "method":"FUN_00408ec0",
-    "name":"core_actor.cpp_FUN_00408ec0",
-    "receiver":false,
+    "method":"getWorldBoundingBox",
+    "name":"core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bounding_box_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"output_bbox",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CBoundingBox3D",
+      "ptr":1
     },
     "tu":"core/actor.cpp",
     "variadic":false
@@ -3786,14 +3813,15 @@
       "00418d00",
       "0041dac0"
     ],
-    "conv":"unknown",
+    "cls":"CBodyPart",
+    "conv":"__cdecl",
     "instructions":128,
-    "method":"FUN_0041ad40",
-    "name":"core_bodypart.cpp_FUN_0041ad40",
-    "receiver":false,
+    "method":"setupPhysicsBox",
+    "name":"core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/bodypart.cpp",
@@ -4794,14 +4822,49 @@
       "00445430",
       "005a7520"
     ],
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "instructions":300,
-    "method":"FUN_00431cc0",
-    "name":"core_charactr.cpp_FUN_00431cc0",
-    "receiver":false,
+    "method":"followActor",
+    "name":"core_charactr.cpp_CCharacter_followActor_FUN_00431cc0",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"min_dist",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"max_dist",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_state",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -6289,14 +6352,41 @@
     "calls":[
       "0044f360"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
     "instructions":116,
-    "method":"FUN_0044f9c0",
-    "name":"core_dcamera.cpp_FUN_0044f9c0",
-    "receiver":false,
+    "method":"calculateAttenuatedDirectionalLight",
+    "name":"core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0",
+    "params":[
+      {
+        "name":"world_pos",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"light_source",
+        "type":{
+          "kind":"class",
+          "name":"CDemonLight",
+          "ptr":1
+        }
+      },
+      {
+        "name":"light_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -6487,15 +6577,26 @@
       "0044de40",
       "0045f700"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__stack_esi",
     "instructions":256,
-    "method":"FUN_00454cc0",
-    "name":"core_dcamera.cpp_FUN_00454cc0",
-    "receiver":false,
+    "method":"computeVisibleFrustumBounds",
+    "name":"core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0",
+    "params":[
+      {
+        "name":"output_bounds",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/dcamera.cpp",
     "variadic":false
@@ -7442,6 +7543,14 @@
           "name":"CDemonActor",
           "ptr":1
         }
+      },
+      {
+        "name":"ignore_lock",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
       }
     ],
     "receiver":true,
@@ -8006,14 +8115,49 @@
     "calls":[
       "0047fb20"
     ],
-    "conv":"unknown",
+    "cls":"CDrawSurface",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_0047f9c0",
-    "name":"cockpit_drawsurf.cpp_FUN_0047f9c0",
-    "receiver":false,
+    "method":"drawSolidRectangle",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0047f9c0",
+    "params":[
+      {
+        "name":"x1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
@@ -9464,18 +9608,29 @@
       "00493d40",
       "005bfb18"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":24,
-    "method":"FUN_00494340",
-    "name":"shape_edittool.cpp_FUN_00494340",
-    "receiver":false,
+    "method":"showWarning",
+    "name":"shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340",
+    "params":[
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"00496840",
@@ -13872,14 +14027,41 @@
       "00484f00",
       "0057dc40"
     ],
-    "conv":"unknown",
+    "cls":"CLevelLoader",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_004fe840",
-    "name":"core_level.cpp_FUN_004fe840",
-    "receiver":false,
+    "method":"show",
+    "name":"core_level.cpp_CLevelLoader_show_FUN_004fe840",
+    "params":[
+      {
+        "name":"total_frames",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"use_custom_viewport",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"image_variant",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/level.cpp",
@@ -17562,14 +17744,49 @@
       "005030e0",
       "005a7520"
     ],
-    "conv":"unknown",
+    "cls":"CPathMap",
+    "conv":"__cdecl",
     "instructions":278,
-    "method":"FUN_00533140",
-    "name":"core_path.cpp_FUN_00533140",
-    "receiver":false,
+    "method":"getDirection",
+    "name":"core_path.cpp_CPathMap_getDirection_FUN_00533140",
+    "params":[
+      {
+        "name":"current_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"next_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"prev_direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/path.cpp",
@@ -19399,14 +19616,33 @@
       "005593c0",
       "005c0357"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":855,
-    "method":"FUN_005562c0",
-    "name":"core_setcolid.cpp_FUN_005562c0",
-    "receiver":false,
+    "method":"processCollisionTypes",
+    "name":"core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/setcolid.cpp",
@@ -19417,14 +19653,15 @@
     "calls":[
       "005578b0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":116,
-    "method":"FUN_005574c0",
-    "name":"core_setcolid.cpp_FUN_005574c0",
-    "receiver":false,
+    "method":"refinedRaycast",
+    "name":"core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005574c0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/setcolid.cpp",
@@ -22487,14 +22724,33 @@
       "00597ac0",
       "00597b80"
     ],
-    "conv":"unknown",
+    "cls":"CTextureCache",
+    "conv":"__cdecl",
     "instructions":322,
-    "method":"FUN_00597140",
-    "name":"engine_texture.cpp_FUN_00597140",
-    "receiver":false,
+    "method":"setupTexture",
+    "name":"engine_texture.cpp_CTextureCache_setupTexture_FUN_00597140",
+    "params":[
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"upload_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/texture.cpp",
@@ -24801,15 +25057,49 @@
       "005b75a0",
       "005b7940"
     ],
-    "conv":"unknown",
+    "conv":"__stack3_esi",
     "instructions":96,
     "method":"lerpMatrix3x4",
     "name":"core_xform.cpp_lerpMatrix3x4_FUN_005b72c0",
+    "params":[
+      {
+        "name":"matrix_a",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix_b",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"t",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"matrix_out",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

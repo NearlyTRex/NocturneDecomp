@@ -17,14 +17,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   CTerrain *this_ptr_00;
   char *pcVar4;
   _FILE *p_Var5;
-  int iVar6;
-  CDemonSet *pCVar7;
-  CVector3f *pCVar8;
+  CDemonSet *pCVar6;
+  CVector3f *pCVar7;
   C3DSLight *this_ptr_01;
-  C3DSCamera *pCVar9;
+  C3DSCamera *pCVar8;
+  char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
-  uint uVar12;
+  int iVar11;
   char local_330 [256];
   char local_230 [256];
   char local_130 [100];
@@ -46,9 +45,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   CVector3f *local_18;
   int *local_14;
   
-  uVar12 = 0;
+  iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Loading set");
-  core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar4,uVar12);
+  core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar4,iVar11);
   core_set_cpp_CDemonSet_clear_FUN_00532b30(this_ptr);
   p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,&DAT_005d012d);
   if (p_Var5 == (_FILE *)0x0) {
@@ -61,23 +60,23 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   _fscanf(p_Var5,&DAT_005d016c);
   _fscanf(p_Var5,&DAT_005d0170);
   _fscanf(p_Var5,&DAT_005d0174);
-  pCVar8 = &this_ptr->directional_light_dir;
+  pCVar7 = &this_ptr->directional_light_dir;
   if (this_ptr->set_file_version < 0x1e) {
     (this_ptr->directional_light_dir).x = -1.0;
     (this_ptr->directional_light_dir).y = -1.0;
     (this_ptr->directional_light_dir).z = -1.0;
     fVar1 = (this_ptr->directional_light_dir).y;
     fVar2 = (this_ptr->directional_light_dir).z;
-    local_48 = SQRT(fVar2 * fVar2 + pCVar8->x * pCVar8->x + fVar1 * fVar1);
+    local_48 = SQRT(fVar2 * fVar2 + pCVar7->x * pCVar7->x + fVar1 * fVar1);
     if (local_48 <= 0.0) {
       (this_ptr->directional_light_dir).z = 0.0;
       (this_ptr->directional_light_dir).y = (this_ptr->directional_light_dir).z;
-      pCVar8->x = (this_ptr->directional_light_dir).y;
+      pCVar7->x = (this_ptr->directional_light_dir).y;
       this_ptr->directional_light_intensity = 0.0;
     }
     else {
       fVar1 = 1.0 / local_48;
-      pCVar8->x = pCVar8->x * fVar1;
+      pCVar7->x = pCVar7->x * fVar1;
       (this_ptr->directional_light_dir).y = (this_ptr->directional_light_dir).y * fVar1;
       (this_ptr->directional_light_dir).z = (this_ptr->directional_light_dir).z * fVar1;
       this_ptr->directional_light_intensity = 0.0;
@@ -118,8 +117,8 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   _fgets(local_330,0xff,p_Var5);
   _fscanf(p_Var5,"%d,%s\n");
   if (this_ptr->set_file_version < 5) {
-    iVar6 = _strnicmp(local_130,&DAT_005d01c8,4);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,&DAT_005d01c8,4);
+    if (iVar11 == 0) {
       g_CWaterPtr->wave_animation_enabled = 1;
     }
     else {
@@ -139,13 +138,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   pcVar4 = this_ptr->sky_texture_name;
   if (this_ptr->set_file_version < 0xc) {
-    pcVar10 = "NITESKY.RAW";
+    pcVar9 = "NITESKY.RAW";
     do {
-      cVar3 = *pcVar10;
+      cVar3 = *pcVar9;
       *pcVar4 = cVar3;
       if (cVar3 == '\0') break;
-      cVar3 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar3 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar4[1] = cVar3;
       pcVar4 = pcVar4 + 2;
     } while (cVar3 != '\0');
@@ -156,14 +155,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   pcVar4 = this_ptr->world_geometry_name;
   if (this_ptr->set_file_version < 0xd) {
-    pcVar10 = &DAT_005d01eb;
+    pcVar9 = &DAT_005d01eb;
     this_ptr->use_world_geometry_flag = 0;
     do {
-      cVar3 = *pcVar10;
+      cVar3 = *pcVar9;
       *pcVar4 = cVar3;
       if (cVar3 == '\0') break;
-      cVar3 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar3 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar4[1] = cVar3;
       pcVar4 = pcVar4 + 2;
     } while (cVar3 != '\0');
@@ -187,9 +186,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     _fscanf(p_Var5,&DAT_005d01f4);
   }
   engine_dosio_cpp_splitPath_FUN_00465e50(local_130,(char *)0x0,(char *)0x0,local_230,(char *)0x0);
-  iVar6 = _stricmp(local_230,"train");
+  iVar11 = _stricmp(local_230,"train");
   this_ptr_00 = 0x02CFD8B8;
-  if (iVar6 == 0) {
+  if (iVar11 == 0) {
     this_ptr->player_on_train = 1;
     core_terrain_cpp_CTerrain_init_FUN_00572370(this_ptr_00);
   }
@@ -201,48 +200,48 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     _fgets(local_330,0xff,p_Var5);
   }
   _fscanf(p_Var5,&DAT_005d01fe);
-  iVar6 = 0;
+  iVar11 = 0;
   if (0 < this_ptr->light_count) {
     this_ptr_01 = this_ptr->lights;
     do {
       core_setutil_cpp_C3DSLight_load_FUN_005421c0(this_ptr_01,p_Var5);
-      iVar6 = iVar6 + 1;
+      iVar11 = iVar11 + 1;
       this_ptr_01 = this_ptr_01 + 1;
-    } while (iVar6 < this_ptr->light_count);
+    } while (iVar11 < this_ptr->light_count);
   }
   if (10 < this_ptr->set_file_version) {
     _fgets(local_330,0xff,p_Var5);
   }
   _fscanf(p_Var5,&DAT_005d0202);
-  iVar6 = 0;
+  iVar11 = 0;
   if (0 < this_ptr->camera_count) {
-    pCVar9 = this_ptr->cameras;
+    pCVar8 = this_ptr->cameras;
     do {
-      core_setutil_cpp_C3DSCamera_load_FUN_00541b70(pCVar9,p_Var5);
-      iVar6 = iVar6 + 1;
-      pCVar9 = pCVar9 + 1;
-    } while (iVar6 < this_ptr->camera_count);
+      core_setutil_cpp_C3DSCamera_load_FUN_00541b70(pCVar8,p_Var5);
+      iVar11 = iVar11 + 1;
+      pCVar8 = pCVar8 + 1;
+    } while (iVar11 < this_ptr->camera_count);
   }
   if (this_ptr->set_file_version < 1) {
     this_ptr->default_room_size = 0;
-    iVar6 = _strnicmp(local_130,"mauso",5);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"mauso",5);
+    if (iVar11 == 0) {
       this_ptr->default_room_size = 2;
     }
-    iVar6 = _strnicmp(local_130,&DAT_005d0236,4);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,&DAT_005d0236,4);
+    if (iVar11 == 0) {
       this_ptr->default_room_size = 0;
     }
-    iVar6 = _strnicmp(local_130,"smill",5);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"smill",5);
+    if (iVar11 == 0) {
       this_ptr->default_room_size = 3;
     }
-    iVar6 = _strnicmp(local_130,"pier59",6);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"pier59",6);
+    if (iVar11 == 0) {
       this_ptr->default_room_size = 0;
     }
-    iVar6 = _strnicmp(local_130,&DAT_005d0248,4);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,&DAT_005d0248,4);
+    if (iVar11 == 0) {
       this_ptr->default_room_size = 3;
     }
     this_ptr->room_count = 0;
@@ -251,7 +250,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     _fgets(local_330,0xff,p_Var5);
     _fscanf(p_Var5,&DAT_005d0206);
     _fscanf(p_Var5,&DAT_005d020a);
-    iVar6 = 0;
+    iVar11 = 0;
     if (0 < this_ptr->room_count) {
       local_44 = this_ptr->rooms;
       local_14 = &this_ptr->rooms[0].reverb_size;
@@ -266,40 +265,40 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
         _fscanf(p_Var5,"%f,%f,%f\n");
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(local_34,&local_5c);
         _fscanf(p_Var5,&DAT_005d022c);
-        iVar6 = iVar6 + 1;
+        iVar11 = iVar11 + 1;
         local_14 = local_14 + 0x11;
         local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);
         local_18 = (CVector3f *)((int)(local_18 + 5) + 8);
         local_30 = local_30 + 0x11;
         local_2c = local_2c + 0x11;
         local_24 = local_24 + 0x11;
-      } while (iVar6 < this_ptr->room_count);
+      } while (iVar11 < this_ptr->room_count);
     }
   }
   if (this_ptr->set_file_version < 3) {
     this_ptr->default_ground_type = 2;
-    iVar6 = _strnicmp(local_130,"mauso",5);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"mauso",5);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 8;
     }
-    iVar6 = _strnicmp(local_130,&DAT_005d0257,4);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,&DAT_005d0257,4);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 3;
     }
-    iVar6 = _strnicmp(local_130,"smill",5);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"smill",5);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 2;
     }
-    iVar6 = _strnicmp(local_130,"pier59",6);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"pier59",6);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 7;
     }
-    iVar6 = _strnicmp(local_130,"castle",6);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,"castle",6);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 2;
     }
-    iVar6 = _strnicmp(local_130,&DAT_005d0270,4);
-    if (iVar6 == 0) {
+    iVar11 = _strnicmp(local_130,&DAT_005d0270,4);
+    if (iVar11 == 0) {
       this_ptr->default_ground_type = 8;
     }
   }
@@ -323,7 +322,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   else {
     _fgets(local_330,0xff,p_Var5);
     _fscanf(p_Var5,&DAT_005d0279);
-    iVar6 = 0;
+    iVar11 = 0;
     if (0 < this_ptr->vdir_box_count) {
       local_40 = this_ptr->vdir_boxes;
       local_20 = &this_ptr->vdir_boxes[0].rotation_matrix;
@@ -335,14 +334,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
         _fscanf(p_Var5,"%f,%f,%f\n");
         _fscanf(p_Var5,"%f,%f,%f\n");
         _fscanf(p_Var5,"%f,%f,%f\n");
-        iVar6 = iVar6 + 1;
+        iVar11 = iVar11 + 1;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(local_20,&local_68);
         local_20 = (CMatrix3x3f *)((int)(local_20 + 1) + 0x20);
         local_28 = local_28 + 0x11;
         local_1c = local_1c + 0x11;
         local_3c = local_3c + 0x11;
         local_38 = local_38 + 0x11;
-      } while (iVar6 < this_ptr->vdir_box_count);
+      } while (iVar11 < this_ptr->vdir_box_count);
     }
     core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(this_ptr);
   }
@@ -352,36 +351,36 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
   }
   if (0x13 < this_ptr->set_file_version) {
     _fgets(local_330,0xff,p_Var5);
-    iVar6 = 0;
+    iVar11 = 0;
     if (0 < this_ptr->camera_count) {
-      pCVar9 = this_ptr->cameras;
+      pCVar8 = this_ptr->cameras;
       do {
-        core_setutil_cpp_C3DSCamera_loadPVS_FUN_00541f00(pCVar9,p_Var5);
-        iVar6 = iVar6 + 1;
-        pCVar9 = pCVar9 + 1;
-      } while (iVar6 < this_ptr->camera_count);
+        core_setutil_cpp_C3DSCamera_loadPVS_FUN_00541f00(pCVar8,p_Var5);
+        iVar11 = iVar11 + 1;
+        pCVar8 = pCVar8 + 1;
+      } while (iVar11 < this_ptr->camera_count);
     }
   }
   _fclose(p_Var5);
-  uVar12 = 0;
+  iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Loading set geometry");
-  core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar4,uVar12);
+  core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar4,iVar11);
   pcVar4 = this_ptr->geometry_filename;
-  iVar6 = _stricmp(pcVar4,local_130);
-  if (iVar6 == 0) {
+  iVar11 = _stricmp(pcVar4,local_130);
+  if (iVar11 == 0) {
     core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(this_ptr);
   }
   else {
-    pcVar10 = local_130;
-    pcVar11 = pcVar4;
+    pcVar9 = local_130;
+    pcVar10 = pcVar4;
     do {
-      cVar3 = *pcVar10;
-      *pcVar11 = cVar3;
+      cVar3 = *pcVar9;
+      *pcVar10 = cVar3;
       if (cVar3 == '\0') break;
-      cVar3 = pcVar10[1];
+      cVar3 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
+      pcVar10[1] = cVar3;
       pcVar10 = pcVar10 + 2;
-      pcVar11[1] = cVar3;
-      pcVar11 = pcVar11 + 2;
     } while (cVar3 != '\0');
     p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d02b3,pcVar4,&DAT_005d02b0);
     if (p_Var5 == (_FILE *)0x0) {
@@ -398,70 +397,70 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *
     }
     core_path_cpp_resetAllPathMaps_FUN_0050cf60();
   }
-  uVar12 = 0;
+  iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Loading thumbs");
-  core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar4,uVar12);
+  core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar4,iVar11);
   pcVar4 = local_cc;
-  pcVar10 = this_ptr->geometry_filename;
+  pcVar9 = this_ptr->geometry_filename;
   do {
-    cVar3 = *pcVar10;
+    cVar3 = *pcVar9;
     *pcVar4 = cVar3;
     if (cVar3 == '\0') break;
-    cVar3 = pcVar10[1];
-    pcVar10 = pcVar10 + 2;
+    cVar3 = pcVar9[1];
+    pcVar9 = pcVar9 + 2;
     pcVar4[1] = cVar3;
     pcVar4 = pcVar4 + 2;
   } while (cVar3 != '\0');
   pcVar4 = local_cc;
   do {
-    pcVar10 = pcVar4;
+    pcVar9 = pcVar4;
     if (*pcVar4 == '.') goto LAB_0053367e;
     if (*pcVar4 == '\0') break;
-    pcVar10 = pcVar4 + 1;
-    if (*pcVar10 == '.') goto LAB_0053367e;
+    pcVar9 = pcVar4 + 1;
+    if (*pcVar9 == '.') goto LAB_0053367e;
     pcVar4 = pcVar4 + 2;
-  } while (*pcVar10 != '\0');
-  pcVar10 = (char *)0x0;
+  } while (*pcVar9 != '\0');
+  pcVar9 = (char *)0x0;
 LAB_0053367e:
-  if (pcVar10 == (char *)0x0) {
+  if (pcVar9 == (char *)0x0) {
     pcVar4 = local_cc;
     do {
-      pcVar10 = pcVar4;
+      pcVar9 = pcVar4;
       if (*pcVar4 == '\0') goto LAB_005336a7;
       if (*pcVar4 == '\0') break;
-      pcVar10 = pcVar4 + 1;
-      if (*pcVar10 == '\0') goto LAB_005336a7;
+      pcVar9 = pcVar4 + 1;
+      if (*pcVar9 == '\0') goto LAB_005336a7;
       pcVar4 = pcVar4 + 2;
-    } while (*pcVar10 != '\0');
-    pcVar10 = (char *)0x0;
+    } while (*pcVar9 != '\0');
+    pcVar9 = (char *)0x0;
   }
 LAB_005336a7:
   pcVar4 = &DAT_005d02ee;
   do {
     cVar3 = *pcVar4;
-    *pcVar10 = cVar3;
+    *pcVar9 = cVar3;
     if (cVar3 == '\0') break;
     cVar3 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar10[1] = cVar3;
-    pcVar10 = pcVar10 + 2;
+    pcVar9[1] = cVar3;
+    pcVar9 = pcVar9 + 2;
   } while (cVar3 != '\0');
   core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00540be0(this_ptr,local_cc);
   if (this_ptr->use_enviro_model != 0) {
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00460550
               (&g_CKeyFramedModelInstance,this_ptr->enviro_model_name);
   }
-  iVar6 = 0;
-  pCVar7 = this_ptr;
+  iVar11 = 0;
+  pCVar6 = this_ptr;
   if (0 < this_ptr->camera_count) {
     do {
       fVar1 = this_ptr->min_ambient_value;
-      pCVar7->cameras[0].camera_group = 0;
-      pCVar7->cameras[0].enabled = 1;
-      iVar6 = iVar6 + 1;
-      pCVar7->cameras[0].ambient_value = fVar1;
-      pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
-    } while (iVar6 < this_ptr->camera_count);
+      pCVar6->cameras[0].camera_group = 0;
+      pCVar6->cameras[0].enabled = 1;
+      iVar11 = iVar11 + 1;
+      pCVar6->cameras[0].ambient_value = fVar1;
+      pCVar6 = (CDemonSet *)&pCVar6->cameras[0].enabled;
+    } while (iVar11 < this_ptr->camera_count);
   }
   _DAT_0207baa8 = 1;
   return;

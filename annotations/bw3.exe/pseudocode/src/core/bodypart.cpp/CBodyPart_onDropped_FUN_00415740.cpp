@@ -12,7 +12,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_onDropped_FUN_00415740(CBodyPart *this_
   CVector3f CStack_10;
   
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
-  core_bodypart_cpp_FUN_00416970(this_ptr);
+  core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00416970(this_ptr);
   if (drop_position == (CVector3f *)0x0) {
     this_ptr->physics_timer = 10.0;
     return;

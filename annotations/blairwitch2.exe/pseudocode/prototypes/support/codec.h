@@ -53,21 +53,21 @@ undefined4 FUN_00433ee0(undefined4 param_1,int *param_2,int *param_3);
 // Address: 00433f50
 int __cdecl FUN_00433f50(CCodec *this_ptr,void *ostream);
 
-// Original: support_codec.cpp_FUN_00433f60
+// Original: support_codec.cpp_CCodec_processToBuffer_FUN_00433f60
 // Address: 00433f60
-undefined4 FUN_00433f60(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5);
+int __cdecl CCodec::processToBuffer(CCodec *this_ptr,void *istream,char *output_buffer,int *output_size,int enable_finalize);
 
 // Original: support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0
 // Address: 00433ff0
-bool __cdecl CCodec::processFromBuffer(CCodec *this_ptr,char *input,int *input_length,COutStream *ostream);
+int __cdecl CCodec::processFromBuffer(CCodec *this_ptr,char *input,int *input_length,void *ostream);
 
 // Original: support_codec.cpp_CCodec_processBuffer_FUN_00434070
 // Address: 00434070
 int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 
-// Original: support_codec.cpp_FUN_004340f0
+// Original: support_codec.cpp_CCodec_processFiles_FUN_004340f0
 // Address: 004340f0
-undefined4 FUN_004340f0(int *param_1,char *param_2,char *param_3);
+int __cdecl CCodec::processFiles(CCodec *this_ptr,char *input_file_path,char *output_file_path);
 
 // Original: support_codec.cpp_CCodec_finalizeBuffer_FUN_004341e0
 // Address: 004341e0
@@ -125,9 +125,9 @@ CLZWCompress * __cdecl CLZWCompress::ctor(CLZWCompress *this_ptr,int buffer_size
 // Address: 004347c0
 void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 
-// Original: support_codec.cpp_FUN_00434810
+// Original: support_codec.cpp_CLZWCompress_process_FUN_00434810
 // Address: 00434810
-undefined4 FUN_00434810(int param_1,int *param_2,undefined4 param_3);
+int __cdecl CLZWCompress::process(CLZWCompress *this_ptr,void *istream,void *ostream);
 
 // Original: support_codec.cpp_CLZWCompress_finalize_FUN_00434910
 // Address: 00434910
@@ -141,13 +141,13 @@ CLZWDecompress * __cdecl CLZWDecompress::ctor(CLZWDecompress *this_ptr,int buffe
 // Address: 004349d0
 void __cdecl CLZWDecompress::init(CLZWDecompress *this_ptr);
 
-// Original: support_codec.cpp_FUN_00434a10
+// Original: support_codec.cpp_CLZWDecompress_process_FUN_00434a10
 // Address: 00434a10
-int FUN_00434a10(int *param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl CLZWDecompress::process(CLZWDecompress *this_ptr,void *istream,void *ostream);
 
-// Original: support_codec.cpp_FUN_00434a70
+// Original: support_codec.cpp_CLZWDecompress_finalize_FUN_00434a70
 // Address: 00434a70
-undefined4 FUN_00434a70(int param_1,int *param_2);
+int __cdecl CLZWDecompress::finalize(CLZWDecompress *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_FUN_00434b10
 // Address: 00434b10

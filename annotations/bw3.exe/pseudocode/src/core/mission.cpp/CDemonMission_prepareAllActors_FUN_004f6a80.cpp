@@ -14,11 +14,11 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemon
   CDemonActor *pCVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
+  int iVar6;
   
-  uVar6 = 0;
+  iVar5 = 0;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
-  core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
+  core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar1,iVar5);
   core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_005503c0();
   iVar5 = 0;
   for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
@@ -36,19 +36,19 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemon
       iVar4 = iVar4 + 1;
       (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       if (iVar4 == (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2) {
-        uVar6 = 0;
+        iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
-        core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       if (iVar4 == iVar5 / 2) {
-        uVar6 = 0;
+        iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
-        core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       if (iVar4 == (int)((iVar5 * 3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2) {
-        uVar6 = 0;
+        iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
-        core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004e0000(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       pCVar3 = pCVar3->next_actor;
     } while (pCVar3 != (CDemonActor *)0x0);

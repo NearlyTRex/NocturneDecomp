@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 234,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 125,
     "suspect_count": 8,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 406
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -67,14 +67,14 @@
       "name": "core_netgame.cpp_CNetGame_send_FUN_0050cd90"
     },
     {
+      "addr": "0047be90",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90"
+    },
+    {
       "addr": "0047be40",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
-    },
-    {
-      "addr": "0047be90",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be90"
     },
     {
       "addr": "00578e60",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_0061e990",
       "severity": "mild",
       "text": "uStack_1c = DAT_0061e990;",
@@ -294,7 +294,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_0061e990",
       "severity": "mild",
       "text": "DAT_0061e990 = 0;",
@@ -302,7 +302,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 73,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uStack_53 = auStack_2c._0_4_;",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_0061e990",
       "severity": "mild",
       "text": "DAT_0061e990 = uStack_1c;",
@@ -318,7 +318,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 118,
+      "line": 119,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -326,7 +326,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
+      "line": 119,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -334,7 +334,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

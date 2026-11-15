@@ -16,9 +16,9 @@
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_drawText_FUN_00401fe0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c1dd0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EDI                            ; 0050a24f
     MOV EBP,dword ptr [0x0152d23c]      ; 0050a250 | DAT_0152d23c
     PUSH EBP                            ; 0050a256
-    CALL engine_font.cpp_FUN_004c1dd0   ; 0050a257
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0050a257
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0050a25c
     MOV EAX,[0x01c51cc0]                ; 0050a25f | DAT_01c51cc0
     PUSH EAX                            ; 0050a264

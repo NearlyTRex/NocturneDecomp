@@ -23,9 +23,9 @@
 ;   TerminatedCString s_Set_Primary_buffer_forma_005941dc
 ;   TerminatedCString s_Get_Primary_buffer_forma_005941f6
 ;   TerminatedCString s_Create_the_secondary_buf_00594210
-;   undefined4 DAT_005bed10
-;   undefined4 DAT_005bed20
-;   undefined4 DAT_005c3918
+;   GUID g_IID_IKsPropertySet
+;   GUID g_DSPROPSETID_VoiceManager
+;   GUID g_IID_IDirectSound3DBuffer
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9218
 ;   undefined4 DAT_02dc921c
@@ -209,7 +209,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0052a688
     LEA EAX,[ESP + 0x694]               ; 0052a68a
     PUSH EAX                            ; 0052a691
-    PUSH 0x5c3918                       ; 0052a692 | DAT_005c3918
+    PUSH 0x5c3918                       ; 0052a692 | g_IID_IDirectSound3DBuffer
     MOV EAX,dword ptr [ESP + 0x698]     ; 0052a697
     PUSH EAX                            ; 0052a69e
     CALL dword ptr [EDX]                ; 0052a69f
@@ -239,7 +239,7 @@ section .text
     MOV EAX,0x1                         ; 0052a6e2
     PUSH 0x0                            ; 0052a6e7
     MOV dword ptr [ESP + 0x6ac],EAX     ; 0052a6e9
-    PUSH 0x5bed20                       ; 0052a6f0 | DAT_005bed20
+    PUSH 0x5bed20                       ; 0052a6f0 | g_DSPROPSETID_VoiceManager
     MOV EDX,dword ptr [EBP]             ; 0052a6f5
     PUSH EBP                            ; 0052a6f8
     CALL dword ptr [EDX + 0x10]         ; 0052a6f9
@@ -383,7 +383,7 @@ section .text
         ;   XREF to: 0052a6ca (UNCONDITIONAL_JUMP)  ; LAB_0052a6ca
     PUSH 0x2dc9224                      ; 0052a8c7 | DAT_02dc9224
         ;   Label: LAB_0052a8c7
-    PUSH 0x5bed10                       ; 0052a8cc | DAT_005bed10
+    PUSH 0x5bed10                       ; 0052a8cc | g_IID_IKsPropertySet
     MOV EAX,dword ptr [EDX]             ; 0052a8d1
     PUSH EDX                            ; 0052a8d3
     CALL dword ptr [EAX]                ; 0052a8d4

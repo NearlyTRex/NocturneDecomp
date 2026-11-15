@@ -101,9 +101,9 @@ extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
 
 // GUID
 extern GUID g_IID_IKsPropertySet;
-extern GUID g_KSPROPSETID_DirectSound3DListener;
-extern GUID GUID_00681df0;
-extern GUID GUID_00686d58;
+extern GUID g_DSPROPSETID_VoiceManager;
+extern GUID g_DSPROPSETID_EAX_ReverbProperties;
+extern GUID g_IID_IDirectSound3DListener;
 extern GUID g_IID_IDirectSound3DBuffer;
 
 // HANDLE

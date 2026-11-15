@@ -35,8 +35,8 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004e34b0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00557300
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
-;   core_setcolid.cpp_FUN_00557300
 ;   core_sound.cpp_CSound_playActorSound_FUN_0057d8a0
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_0059be30
@@ -196,8 +196,8 @@ section .text
     PUSH EAX                            ; 00449c50
     MOV EAX,[0x00622c18]                ; 00449c51 | g_CDemonSetPtr
     PUSH EAX                            ; 00449c56 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 00449c57
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 00449c57
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x14c],EAX     ; 00449c5c
     FLD float ptr [ESP + 0x14c]         ; 00449c63
     ADD ESP,0xc                         ; 00449c6a

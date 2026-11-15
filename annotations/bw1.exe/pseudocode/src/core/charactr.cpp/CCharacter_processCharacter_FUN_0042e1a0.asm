@@ -31,7 +31,7 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0
@@ -252,8 +252,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 0042e3dc
     PUSH EAX                            ; 0042e3e0
     MOVSD.REP ES:EDI,ESI                ; 0042e3e1
-    CALL core_box.cpp_FUN_004207b0      ; 0042e3e3
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 0042e3e3
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0042e3e8
     TEST EAX,EAX                        ; 0042e3eb
     JZ 0x0042e354                       ; 0042e3ed

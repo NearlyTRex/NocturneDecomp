@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_00538d10 at 00538ff3
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 at 00538ff3
 ;
 ; *****************************************************************************
 

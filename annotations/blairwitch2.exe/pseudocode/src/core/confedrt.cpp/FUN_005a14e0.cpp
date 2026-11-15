@@ -43,7 +43,8 @@ void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1)
   float local_5c;
   CVector3f local_58;
   float local_4c;
-  float local_48 [5];
+  float local_48 [2];
+  CVector3f CStack_40;
   CVector3f local_34;
   float local_28;
   float local_24 [3];
@@ -128,14 +129,16 @@ void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1)
     local_d0.y = CStack_70.y;
     local_d0.z = CStack_70.z;
   }
-  local_48[2] = local_118.x;
-  local_48[(uint)bVar4 * -2 + 3] = *(float *)((int)&local_118 + (uint)bVar4 * -8 + 4);
-  local_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-       *(float *)((int)&local_118 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  CStack_40.x = local_118.x;
+  *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_118 + (uint)bVar4 * -8 + 4);
+  *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       *(uint *)((int)&local_118 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00537eb0(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,param_1);
-  local_14 = (int *)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,local_48 + 2,&local_d0);
+  local_14 = (int *)core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                              (g_CDemonSetPtr,&CStack_40,&local_d0);
   if (((float)local_14 < 0.0) || (1.0 < (float)local_14)) {
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;

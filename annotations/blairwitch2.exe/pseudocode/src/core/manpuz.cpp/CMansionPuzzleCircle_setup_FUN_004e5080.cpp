@@ -30,10 +30,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   float10 fVar17;
   float10 fVar18;
   float10 fVar19;
-  float afStackY_10a0 [923];
-  uint uStack_220;
+  float afStackY_10a0 [930];
+  float fStack_204;
   CVector3f *position;
-  CVector3f *in_stack_fffffdf4;
+  CVector3f *in_stack_fffffe10;
   CMatrix3x4f CStack_1dc;
   CMatrix3x4f CStack_1ac;
   CMatrix3x4f CStack_17c;
@@ -122,7 +122,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   }
   do {
     iVar9 = iStack_28;
-    core_manpuz_cpp_FUN_004e6240(this_ptr,iStack_28);
+    core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(this_ptr,iStack_28);
     pSVar10 = pSStack_38 + iVar9;
     pSStack_24 = pSVar10;
     core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50
@@ -176,7 +176,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
       pCStack_2c->y = afStack_84[0];
       pCStack_2c->z = afStack_84[1];
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&CStack_1dc,in_stack_fffffdf4);
+    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&CStack_1dc,in_stack_fffffe10);
     fStack_4c = afStack_84[2];
     afStack_48[(uint)bVar16 * -2] = afStack_84[(uint)bVar16 * -2 + 3];
     afStack_48[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
@@ -205,11 +205,11 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
       iStack_18 = iStack_18 + 1;
       pCVar11 = pCVar11 + 1;
     } while (iStack_18 < 4);
-    uStack_220 = 0x4e54a6;
+    fStack_204 = 7.193535e-39;
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0
               (&pSStack_24->collision_tri_a,&CStack_134,&CStack_140,&CStack_14c);
     pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);
-    uStack_220 = 0x4e54d6;
+    fStack_204 = 7.193602e-39;
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0
               (&pSStack_24->collision_tri_b,&CStack_134,&CStack_128,&CStack_140);
     pfStack_30 = pfStack_30 + 0x2e;

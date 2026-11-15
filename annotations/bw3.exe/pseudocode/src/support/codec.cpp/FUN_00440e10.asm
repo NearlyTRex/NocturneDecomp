@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00441390 at 004413c3
+;   support_codec.cpp_CLZWDecompress_process_FUN_00441390 at 004413c3
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_00440210

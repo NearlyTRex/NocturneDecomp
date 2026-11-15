@@ -1646,8 +1646,8 @@ section .text
         ;   XREF to: 004c6c79 (CONDITIONAL_JUMP)  ; LAB_004c6c79
     PUSH ESI                            ; 004c7897
     PUSH EBX                            ; 004c7898
-    CALL core_hero.cpp_FUN_004eb3e0     ; 004c7899
-        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb3e0()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0 ; 004c7899
+        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 004c789e
     MOV ESI,EAX                         ; 004c78a1
     CMP EAX,0x3                         ; 004c78a3

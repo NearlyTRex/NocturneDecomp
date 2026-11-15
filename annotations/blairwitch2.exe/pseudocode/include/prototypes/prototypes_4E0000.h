@@ -62,7 +62,7 @@ int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_004e1340(CLarva *this_ptr,
 CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004e13a0(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_004e1440(void);
 void __cdecl core_level_cpp_CLevelLoader_reset_FUN_004e1470(CLevelLoader *this_ptr);
-void core_level_cpp_FUN_004e1480(undefined4 *param_1,undefined4 param_2,int param_3);
+void __cdecl core_level_cpp_CLevelLoader_show_FUN_004e1480(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004e1b80(CLevelLoader *this_ptr);
 void __cdecl core_lever_cpp_staticInit_FUN_004e1bc0(void);
@@ -131,7 +131,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_004e5ef0(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004e5f00(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010(CMansionPuzzleCircle *this_ptr);
-void core_manpuz_cpp_FUN_004e6240(CDemonActor *param_1,int param_2);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0(CMansionPuzzleCircle *this_ptr,int gem_index);
 void __cdecl core_manpuz_cpp_FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);

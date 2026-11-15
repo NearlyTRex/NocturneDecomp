@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/stdlib.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CTextureList.h"
 #include "types/classes/CWater.h"
 
@@ -18,6 +19,10 @@ extern CTextureList* g_CTextureListPtr;
 
 // CWater*
 extern CWater* g_CWaterPtr;
+
+// GUID
+extern GUID g_IID_IDirectSound3DListener;
+extern GUID g_IID_IDirectSound3DBuffer;
 
 // RuntimeHandlerEntry
 extern RuntimeHandlerEntry g_FirstInitHandler;

@@ -61,7 +61,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00481870(CSt
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void shape_edittool_cpp_FUN_00481ca0(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *param_4);
 void shape_edittool_cpp_FUN_00481e00(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void shape_edittool_cpp_FUN_00481e20(CStrList *param_1,char *param_2,char *param_3);
+void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_00481e20(CStrList *this_ptr,char *base_path,char *search_path);
 CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(CPickList *this_ptr);
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004820b0(CPickList *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_00482150(CPickList *this_ptr,char *text);
@@ -85,7 +85,7 @@ void __cdecl shape_edittool_cpp_CPickList_clear_FUN_00483d10(CPickList *this_ptr
 void __cdecl shape_edittool_cpp_CPickList_sort_FUN_00483d80(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00483e10(CPickList *this_ptr,int index1,int index2);
 void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00483ea0(int left,int top,int right,int bottom,int pressed);
-void shape_edittool_cpp_FUN_004840f0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004840f0(int left,int top,int right,int bottom,int pressed_offset,int direction);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_00484310(CEdScrollBar *this_ptr);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_00484350(CEdScrollBar *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_00484370(CEdScrollBar *this_ptr);
@@ -109,7 +109,7 @@ void shape_edittool_cpp_FUN_00485560(void);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(CEdCheck *this_ptr);
-void shape_edittool_cpp_FUN_00485610(CEdCheck *param_1);
+void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00485610(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_00485840(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_FUN_004858f0(CStrList *this_ptr);
 void __cdecl core_elephant_cpp_staticInit_FUN_00485940(void);

@@ -439,8 +439,8 @@ section .text
     PUSH EAX                            ; 004e4888
     MOV ECX,dword ptr [0x005fb140]      ; 004e4889 | g_CEditorToolsPtr
     PUSH ECX                            ; 004e488f
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 004e4890
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 004e4890
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e4895
     CMP dword ptr [0x02d21b8c],0xc800000 ; 004e4898 | DAT_02d21b8c
         ;   Label: LAB_004e4898
@@ -632,8 +632,8 @@ section .text
     PUSH EAX                            ; 004e4a12
     MOV ESI,dword ptr [0x005fb140]      ; 004e4a13 | g_CEditorToolsPtr
     PUSH ESI                            ; 004e4a19
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 004e4a1a
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 004e4a1a
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e4a1f
     CMP dword ptr [0x01d5bc7c],0x0      ; 004e4a22 | DAT_01d5bc7c
         ;   Label: LAB_004e4a22

@@ -13,10 +13,10 @@ CCameraView * __cdecl CCameraView::ctor(CCameraView *this_ptr);
 // Address: 00422220
 CCameraView * __cdecl CCameraView::dtor(CCameraView *this_ptr,uint flags);
 
-// Original: core_camview.cpp_FUN_00422270
+// Original: core_camview.cpp_CCameraView_getFogValueAtPosition_FUN_00422270
 // Address: 00422270
-undefined4 FUN_00422270(void);
+int __cdecl CCameraView::getFogValueAtPosition(CCameraView *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 
-// Original: core_camview.cpp_FUN_00422280
+// Original: core_camview.cpp_CCameraView_testVisibility_FUN_00422280
 // Address: 00422280
-undefined4 FUN_00422280(void);
+int __cdecl CCameraView::testVisibility(CCameraView *this_ptr,CVector3i *corners);

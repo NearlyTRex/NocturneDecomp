@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 630,
+    "complexity_score": 589,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 205,
-    "suspect_count": 38,
+    "pseudocode_lines": 204,
+    "suspect_count": 34,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
@@ -20,7 +20,7 @@
       "undefined_type",
       "warning_overlapping_globals"
     ],
-    "total_lines": 660
+    "total_lines": 659
   },
   "cross_references": [
     {
@@ -670,24 +670,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved type",
-      "line": 13,
-      "match": "undefined3 extraout_var_01",
-      "severity": "moderate",
-      "text": "undefined3 extraout_var_01;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_var_01",
-      "severity": "moderate",
-      "text": "undefined3 extraout_var_01;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 16,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CDemonCamera *unaff_ESI;",
@@ -695,7 +679,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_005ce64d",
       "severity": "mild",
       "text": "file_handle = engine_dosio_cpp_getFile_FUN_00460c70(\"backdrop\",local_20c,&DAT_005ce64d);",
@@ -703,7 +687,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 58,
       "match": "DAT_005ce665",
       "severity": "mild",
       "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_0057dba0(&local_5c,local_10c,&DAT_005ce665);",
@@ -711,7 +695,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 60,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
@@ -719,7 +703,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 92,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (1 < unaff_ESI->display_height) {",
@@ -727,7 +711,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_0083c7d4",
       "severity": "mild",
       "text": "end_pos = (CVector3i *)(&DAT_0083c7d4 + local_48);",
@@ -735,7 +719,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_01326d20",
       "severity": "mild",
       "text": "puVar6 = &DAT_01326d20 + local_4c;",
@@ -743,7 +727,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 101,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (1 < unaff_ESI->display_width) {",
@@ -751,7 +735,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 120,
+      "line": 119,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_ESI->display_width);",
@@ -759,7 +743,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 126,
+      "line": 125,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (local_3c < unaff_ESI->display_height);",
@@ -767,7 +751,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 128,
+      "line": 127,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_004425d0(unaff_ESI,local_24);",
@@ -775,7 +759,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 129,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (0 < unaff_ESI->display_height) {",
@@ -783,7 +767,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 139,
+      "line": 138,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (0 < unaff_ESI->display_width) {",
@@ -791,7 +775,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 156,
       "match": "DAT_01326d20",
       "severity": "mild",
       "text": "(&DAT_01326d20)[iVar8] = (char)iVar3;",
@@ -799,7 +783,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
+      "line": 167,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (iVar12 < unaff_ESI->display_width);",
@@ -807,7 +791,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 173,
+      "line": 172,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "} while (local_40 < unaff_ESI->display_height);",
@@ -815,31 +799,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 176,
       "match": "DAT_01326d20",
       "severity": "mild",
-      "text": "((CCodec *)auStack_b4,&DAT_01326d20,(int *)&local_5c,&local_68.base);",
+      "text": "((CCodec *)auStack_b4,&DAT_01326d20,(int *)&local_5c,&local_68);",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 178,
+      "line": 188,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 189,
-      "match": "extraout_var_01",
-      "severity": "moderate",
-      "text": "if (CONCAT31(extraout_var_01,bVar1) == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Pointer value `&local_5c.file[0xbd4a8]._handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
+      "line": 146,
       "match": "(int)&local_5c.file[0xbd4a8]._handle",
       "severity": "moderate",
       "text": "uVar2 = uVar2 - *(byte *)((int)&local_5c.file[0xbd4a8]._handle +",
@@ -847,7 +823,7 @@
     },
     {
       "description": "Pointer value `&local_5c.file[0xbd4a8]._handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 160,
       "match": "(int)&local_5c.file[0xbd4a8]._handle",
       "severity": "moderate",
       "text": "cVar5 = cVar5 + *(char *)((int)&local_5c.file[0xbd4a8]._handle +",
@@ -855,7 +831,7 @@
     },
     {
       "description": "Pointer value `&local_5c.file[0xb89]._bufsize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 195,
+      "line": 194,
       "match": "(int)&local_5c.file[0xb89]._bufsize",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
@@ -863,7 +839,7 @@
     },
     {
       "description": "Raw hex address 0x444645 assigned to bare local `local_54`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_54` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 71,
+      "line": 70,
       "match": "0x444645",
       "severity": "moderate",
       "text": "local_54 = 0x00444645;",
@@ -871,7 +847,7 @@
     },
     {
       "description": "Raw hex address 0x4420c1 assigned to bare local `flags`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `flags` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
+      "line": 73,
       "match": "0x4420c1",
       "severity": "moderate",
       "text": "flags = 0x4420c1;",
@@ -879,7 +855,7 @@
     },
     {
       "description": "Raw hex address 0x4420ef assigned to bare local `iVar11`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar11` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 80,
+      "line": 79,
       "match": "0x4420ef",
       "severity": "moderate",
       "text": "iVar11 = 0x4420ef;",
@@ -887,7 +863,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
@@ -895,23 +871,15 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 178,
+      "line": 188,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "concat_reconstruction"
     },
     {
-      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 189,
-      "match": "CONCAT31",
-      "severity": "moderate",
-      "text": "if (CONCAT31(extraout_var_01,bVar1) == 0) {",
-      "type": "concat_reconstruction"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 147,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "uVar2 = uVar2 - *(byte *)((int)&local_5c.file[0xbd4a8]._handle +",
@@ -919,7 +887,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 161,
+      "line": 160,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "cVar5 = cVar5 + *(char *)((int)&local_5c.file[0xbd4a8]._handle +",
@@ -927,7 +895,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 195,
+      "line": 194,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",

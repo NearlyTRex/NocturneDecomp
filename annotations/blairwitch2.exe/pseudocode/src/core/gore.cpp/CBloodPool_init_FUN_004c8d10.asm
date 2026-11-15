@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   core_setcolid.cpp_FUN_00534ea0
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     FLD float ptr [EBX]                 ; 004c8d35
     PUSH EDX                            ; 004c8d37 | g_CDemonSetInstance
     FSTP float ptr [ESI + 0x4]          ; 004c8d38
-    CALL core_setcolid.cpp_FUN_00534ea0 ; 004c8d3b
-        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00534ea0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 ; 004c8d3b
+        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0xc],EAX       ; 004c8d40
     FLD float ptr [ESP + 0xc]           ; 004c8d44
     LEA EAX,[ESI + 0x4]                 ; 004c8d48

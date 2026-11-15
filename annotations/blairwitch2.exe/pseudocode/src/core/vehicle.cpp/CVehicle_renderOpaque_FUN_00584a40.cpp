@@ -24,7 +24,9 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
   uint auStackY_1040 [990];
   CVector3f *pCVar8;
   CVector3f *pCVar9;
+  CBoundingBox3D *this_ptr_01;
   float fov;
+  int in_stack_ffffff44;
   float falloff;
   CBoundingBox3D *in_stack_ffffff48;
   CBoundingBox3D aCStack_98 [2];
@@ -39,6 +41,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
   bVar7 = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
+  this_ptr_01 = (CBoundingBox3D *)&stack0xffffff48;
   pfVar3 = &aCStack_98[0].max.y;
   pfVar5 = (float *)&stack0xffffff40;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -46,7 +49,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_00584a40(CVehicle *this_p
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
     pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
   }
-  pvVar1 = (void *)core_box_cpp_FUN_0041a840();
+  pvVar1 = (void *)core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_01,in_stack_ffffff44)
+  ;
   in_stack_0000000c[6].particle_systems[0].particles = pvVar1;
   if (pvVar1 != (void *)0x0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);

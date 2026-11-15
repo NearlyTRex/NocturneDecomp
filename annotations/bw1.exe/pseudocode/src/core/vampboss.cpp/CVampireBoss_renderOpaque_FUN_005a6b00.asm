@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0
 ;   core_cloth.cpp_CCloth_render_FUN_00441800
 ;   core_morph.cpp_CMorph_render_FUN_005237e0
@@ -60,8 +60,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005a6b45
     PUSH EAX                            ; 005a6b49
     MOVSD.REP ES:EDI,ESI                ; 005a6b4a
-    CALL core_box.cpp_FUN_004207b0      ; 005a6b4c
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 005a6b4c
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005a6b51
     MOV dword ptr [ESP + 0x38],EAX      ; 005a6b54
     TEST EAX,EAX                        ; 005a6b58

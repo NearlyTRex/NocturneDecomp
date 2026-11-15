@@ -48,10 +48,10 @@
 ;   core_game.cpp_CGame_fadeIn_FUN_004bd8d0
 ;   core_game.cpp_CGame_loadAssets_FUN_004bd430
 ;   core_game.cpp_CGame_playerControls_FUN_004b92e0
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30
 ;   core_game.cpp_CGame_processFudge_FUN_004b4f00
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40
-;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
 ;   ... and 52 more
 ;
 ; *****************************************************************************
@@ -317,10 +317,10 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_00507790 ; 004b834a
         ;   XREF to: 00507790 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_00507790(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004b834f
-    MOV EDX,dword ptr [0x006002ac]      ; 004b8352 | DAT_006002ac
+    MOV EDX,dword ptr [0x006002ac]      ; 004b8352 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004b8358
-    CALL core_level.cpp_FUN_004dfc40    ; 004b8359
-        ;   XREF to: 004dfc40 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004dfc40()
+    CALL core_level.cpp_CLevelLoader_reset_FUN_004dfc40 ; 004b8359
+        ;   XREF to: 004dfc40 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_reset_FUN_004dfc40(CLevelLoader * this_ptr)
     MOV EAX,[0x01d5ba14]                ; 004b835e | DAT_01d5ba14
     LEA EDI,[ESI + 0xb80]               ; 004b8363
     ADD ESP,0x4                         ; 004b8369
@@ -485,8 +485,8 @@ section .text
         ;   Label: LAB_004b8518
     PUSH ECX                            ; 004b851b
     XOR EBX,EBX                         ; 004b851c
-    CALL core_game.cpp_FUN_004b6f30     ; 004b851e
-        ;   XREF to: 004b6f30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b6f30()
+    CALL core_game.cpp_CGame_processFrame_FUN_004b6f30 ; 004b851e
+        ;   XREF to: 004b6f30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processFrame_FUN_004b6f30(CGame * this_ptr)
     MOV ESI,dword ptr [0x01d22200]      ; 004b8523 | DAT_01d22200
     ADD ESP,0x4                         ; 004b8529
     TEST ESI,ESI                        ; 004b852c

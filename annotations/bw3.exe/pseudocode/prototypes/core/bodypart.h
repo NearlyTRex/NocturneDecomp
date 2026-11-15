@@ -113,9 +113,9 @@ void __cdecl CBodyPart::addFire(CBodyPart *this_ptr,CVector3f *position);
 // Address: 00416890
 int __cdecl CBodyPart::addTexture(CBodyPart *this_ptr,char *texture_name);
 
-// Original: core_bodypart.cpp_FUN_00416970
+// Original: core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00416970
 // Address: 00416970
-void FUN_00416970(CBodyPart *param_1);
+void __cdecl CBodyPart::setupPhysicsBox(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_spawnGore_FUN_00416b20
 // Address: 00416b20

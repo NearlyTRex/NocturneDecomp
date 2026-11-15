@@ -38,7 +38,7 @@
 ;   core_script.cpp_readActorReference_FUN_0054b320
 ;   crt_stdio.c_fgets_FUN_005c1180
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   shape_edittool.cpp_FUN_00494340
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340
 ;
 ; *****************************************************************************
 
@@ -328,8 +328,8 @@ section .text
     PUSH 0x5f00e4                       ; 0054b6e8 | = "The script you were using when this g..."
     MOV EBX,dword ptr [0x0061abc0]      ; 0054b6ed | g_CEditorToolsPtr
     PUSH EBX                            ; 0054b6f3
-    CALL shape_edittool.cpp_FUN_00494340 ; 0054b6f4
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 0054b6f4
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0054b6f9
     ADD ESP,0x108                       ; 0054b6fc
     POP EBP                             ; 0054b702

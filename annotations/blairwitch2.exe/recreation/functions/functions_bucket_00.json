@@ -2937,17 +2937,28 @@
   },
   {
     "addr":"00422280",
-    "conv":"unknown",
+    "cls":"CCameraView",
+    "conv":"__cdecl",
     "data_refs":[
       "005f4030"
     ],
     "instructions":5,
-    "method":"FUN_00422280",
-    "name":"core_camview.cpp_FUN_00422280",
-    "receiver":false,
+    "method":"testVisibility",
+    "name":"core_camview.cpp_CCameraView_testVisibility_FUN_00422280",
+    "params":[
+      {
+        "name":"corners",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/camview.cpp",
@@ -4992,14 +5003,41 @@
     "calls":[
       "0043dca0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
     "instructions":116,
-    "method":"FUN_0043e300",
-    "name":"core_dcamera.cpp_FUN_0043e300",
-    "receiver":false,
+    "method":"calculateAttenuatedDirectionalLight",
+    "name":"core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0043e300",
+    "params":[
+      {
+        "name":"world_pos",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"light_source",
+        "type":{
+          "kind":"class",
+          "name":"CDemonLight",
+          "ptr":1
+        }
+      },
+      {
+        "name":"light_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -7898,18 +7936,29 @@
       "00589560",
       "005b7768"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":63,
-    "method":"FUN_0047bf80",
-    "name":"shape_edittool.cpp_FUN_0047bf80",
-    "receiver":false,
+    "method":"drawWindowStatusMessage",
+    "name":"shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80",
+    "params":[
+      {
+        "name":"format_string",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"0047c880",
@@ -11476,14 +11525,25 @@
       "0046ca00",
       "0055d9ec"
     ],
-    "conv":"unknown",
+    "cls":"CFootstep",
+    "conv":"__cdecl",
     "instructions":222,
-    "method":"FUN_004c9000",
-    "name":"core_gore.cpp_FUN_004c9000",
-    "receiver":false,
+    "method":"render",
+    "name":"core_gore.cpp_CFootstep_render_FUN_004c9000",
+    "params":[
+      {
+        "name":"expire_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gore.cpp",
@@ -12683,14 +12743,33 @@
     "calls":[
       "005b7790"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_004d8b80",
-    "name":"engine_ini.cpp_FUN_004d8b80",
-    "receiver":false,
+    "method":"setInteger",
+    "name":"engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -13080,14 +13159,41 @@
       "0046ca00",
       "0055b1f0"
     ],
-    "conv":"unknown",
+    "cls":"CLevelLoader",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_004e1480",
-    "name":"core_level.cpp_FUN_004e1480",
-    "receiver":false,
+    "method":"show",
+    "name":"core_level.cpp_CLevelLoader_show_FUN_004e1480",
+    "params":[
+      {
+        "name":"total_frames",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"use_custom_viewport",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"image_variant",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/level.cpp",
@@ -20861,15 +20967,42 @@
       "005932c0",
       "00593770"
     ],
-    "conv":"unknown",
+    "cls":"CStranger",
+    "conv":"__stack3_esi",
     "instructions":1075,
-    "method":"FUN_00568500",
-    "name":"core_stranger.cpp_FUN_00568500",
-    "receiver":false,
+    "method":"computeWeaponAttachXForm",
+    "name":"core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500",
+    "params":[
+      {
+        "name":"carried_actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"output_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/stranger.cpp",
     "variadic":false
@@ -22581,14 +22714,15 @@
     "calls":[
       "004495a0"
     ],
-    "conv":"unknown",
+    "cls":"CWaterActor",
+    "conv":"__cdecl",
     "instructions":82,
-    "method":"FUN_00587180",
-    "name":"core_wateract.cpp_FUN_00587180",
-    "receiver":false,
+    "method":"updateLocalPositions",
+    "name":"core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_00587180",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/wateract.cpp",
@@ -23262,15 +23396,33 @@
     "calls":[
       "00449c20"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":94,
-    "method":"FUN_00594380",
-    "name":"core_xform.cpp_FUN_00594380",
+    "method":"eulerToQuaternion",
+    "name":"core_xform.cpp_eulerToQuaternion_FUN_00594380",
+    "params":[
+      {
+        "name":"euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

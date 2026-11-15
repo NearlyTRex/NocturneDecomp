@@ -517,8 +517,8 @@ section .text
     PUSH EAX                            ; 004bee63
     MOV EBX,dword ptr [0x0061b5a8]      ; 004bee64 | g_CDemonSetPtr
     PUSH EBX                            ; 004bee6a
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004bee6b
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004bee6b
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x210],EAX     ; 004bee70
     FLD float ptr [ESP + 0x210]         ; 004bee77
     ADD ESP,0xc                         ; 004bee7e
@@ -615,8 +615,8 @@ section .text
     PUSH EAX                            ; 004befbd
     MOV EBX,dword ptr [0x0061b5a8]      ; 004befbe | g_CDemonSetPtr
     PUSH EBX                            ; 004befc4
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004befc5
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004befc5
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x210],EAX     ; 004befca
     FLD float ptr [ESP + 0x210]         ; 004befd1
     ADD ESP,0xc                         ; 004befd8

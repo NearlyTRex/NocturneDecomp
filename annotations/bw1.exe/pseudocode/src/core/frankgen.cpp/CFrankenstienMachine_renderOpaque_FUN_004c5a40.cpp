@@ -14,21 +14,20 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFr
   float fVar1;
   CDemonActor *pCVar2;
   int iVar3;
-  uint unaff_EBP;
-  uint *puVar4;
+  int iVar4;
   uint *puVar5;
-  byte bVar6;
-  float10 fVar7;
+  uint *puVar6;
+  byte bVar7;
+  float10 fVar8;
+  double dVar9;
   ulonglong in_stack_ffffffb0;
-  uint uVar8;
   float fStack_48;
   uint auStack_44 [4];
   uint auStack_34 [2];
-  byte auStack_2c [28];
+  CBoundingBox3D CStack_2c;
   
-  uVar8 = (uint)((ulonglong)in_stack_ffffffb0 >> 0x20);
-  bVar6 = 0;
-  stack0xffffffec = __BITCAST_DOUBLE(CONCAT44(unaff_EBP,auStack_2c._24_4_));
+  iVar3 = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);
+  bVar7 = 0;
   if (*(int *)(0x01D2C900 + 0x1008) != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_004c5e10();
     this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
@@ -36,14 +35,14 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFr
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar4 = auStack_44;
-  puVar5 = auStack_34;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  puVar5 = auStack_44;
+  puVar6 = auStack_34;
+  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *puVar6 = *puVar5;
+    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  iVar3 = core_box_cpp_FUN_004207b0(CONCAT44(uVar8,auStack_2c));
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_2c,iVar3);
   if (iVar3 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->bed_model,this_ptr->part_frame,-1);
@@ -63,11 +62,10 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFr
       }
       else {
         fVar1 = (this_ptr->master_frame + _DAT_005e0d1e) * (float)_DAT_005e0d22;
-        join_0x00000008_0x00000000_ = floor((double)(fVar1 * _DAT_005e0d2a))
-        ;
-        fVar7 = (float10)fVar1 - (float10)join_0x00000008_0x00000000_ * (float10)_DAT_005e0d32;
-        fStack_48 = (float)fVar7;
-        if ((float10)_DAT_005e0d3a < fVar7) {
+        dVar9 = floor((double)(fVar1 * _DAT_005e0d2a));
+        fVar8 = (float10)fVar1 - (float10)dVar9 * (float10)_DAT_005e0d32;
+        fStack_48 = (float)fVar8;
+        if ((float10)_DAT_005e0d3a < fVar8) {
           fStack_48 = _DAT_005e0d3e - fStack_48;
         }
         fStack_48 = fStack_48 + _DAT_005e0d42;

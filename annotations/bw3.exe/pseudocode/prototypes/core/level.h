@@ -9,14 +9,14 @@
 // Address: 004dfc10
 void __cdecl staticInit(void);
 
-// Original: core_level.cpp_FUN_004dfc40
+// Original: core_level.cpp_CLevelLoader_reset_FUN_004dfc40
 // Address: 004dfc40
-void FUN_004dfc40(int param_1);
+void __cdecl CLevelLoader::reset(CLevelLoader *this_ptr);
 
-// Original: core_level.cpp_FUN_004dfc50
+// Original: core_level.cpp_CLevelLoader_show_FUN_004dfc50
 // Address: 004dfc50
-CAlphaBitmap * FUN_004dfc50(undefined4 *param_1,undefined4 param_2,int param_3);
+void __cdecl CLevelLoader::show(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 
-// Original: core_level.cpp_FUN_004e0000
+// Original: core_level.cpp_CLevelLoader_update_FUN_004e0000
 // Address: 004e0000
-void FUN_004e0000(int *param_1,undefined4 param_2,int param_3);
+void __cdecl CLevelLoader::update(CLevelLoader *this_ptr,char *text,int clear_screen);

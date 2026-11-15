@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   start_index
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00434810 at 0043484b
+;   support_codec.cpp_CLZWCompress_process_FUN_00434810 at 0043484b
 ;
 ; *****************************************************************************
 

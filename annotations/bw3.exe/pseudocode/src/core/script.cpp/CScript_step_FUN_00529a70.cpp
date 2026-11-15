@@ -226,7 +226,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *t
   char *local_7c;
   int local_78;
   int local_74;
-  uint local_70;
+  int local_70;
   int local_6c;
   uint local_68;
   uint local_64;
@@ -1444,7 +1444,7 @@ LAB_0052c6e3:
                                                     local_10c = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_00494d00
                                                             (0x01C6E360,local_291c);
-                                                  engine_ini_cpp_FUN_004d8c30
+                                                  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30
                                                             (&local_4720,local_14cc,&local_10c);
                                                   core_event_cpp_CEventList_setCounter_FUN_00494bf0
                                                             (0x01C6E360,local_291c,local_10c);
@@ -2949,7 +2949,7 @@ LAB_0052ebdc:
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004d8a20
                                                               (&local_4924,"system\\bw3.ini"
                                                                ,&DAT_005cf59c);
-                                                    engine_ini_cpp_FUN_004d8c90
+                                                    engine_ini_cpp_CIniFile_setInteger_FUN_004d8c90
                                                               (&local_4924,local_340c,local_70);
                                                     engine_ini_cpp_CIniFile_dtor_FUN_004d8a50
                                                               (&local_4924,0);

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 607,
-    "complexity_score": 158,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 96,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 140,
     "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 695
+    "total_lines": 747
   },
   "cross_references": [
     {
@@ -62,6 +62,11 @@
       "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8a50"
     },
     {
+      "addr": "004d8c30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30"
+    },
+    {
       "addr": "004d8b20",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_getString_FUN_004d8b20"
@@ -70,11 +75,6 @@
       "addr": "004d8ae0",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d8ae0"
-    },
-    {
-      "addr": "004d8c30",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8c30"
     },
     {
       "addr": "00559220",
@@ -760,23 +760,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 25,
       "match": "DAT_02cf5fcc",
       "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"useDirect3D\",&DAT_02cf5fcc);",
+      "text": "(&local_210,\"useDirect3D\",(int *)&DAT_02cf5fcc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 27,
       "match": "DAT_02cf5fd8",
       "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"useAGPFlag\",&DAT_02cf5fd8);",
+      "text": "(&local_210,\"useAGPFlag\",(int *)&DAT_02cf5fd8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 29,
       "match": "DAT_00606730",
       "severity": "mild",
       "text": "(&local_210,\"rendererDLLPath\",&DAT_00606730,0xfa);",
@@ -784,18 +784,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 36,
       "match": "DAT_01d5bc7c",
       "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"firstTimeFlag\",&DAT_01d5bc7c);",
+      "text": "(&local_210,\"firstTimeFlag\",(int *)&DAT_01d5bc7c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 49,
       "match": "DAT_01d74020",
       "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"currentBoard\",&DAT_01d74020);",
+      "text": "(&local_210,\"currentBoard\",(int *)&DAT_01d74020);",
       "type": "undefined_data"
     }
   ]

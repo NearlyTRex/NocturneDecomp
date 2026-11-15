@@ -4,6 +4,10 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x620000
 // =============================================================================
 
+// GUID
+GUID g_IID_IDirectSound3DListener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+GUID g_IID_IDirectSound3DBuffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+
 // undefined4
 undefined4 DAT_00622010 = {};
 undefined4 DAT_00622014 = {};

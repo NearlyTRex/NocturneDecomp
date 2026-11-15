@@ -137,9 +137,9 @@ void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_po
 // Address: 00538400
 void __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
-// Original: core_set.cpp_FUN_005386d0
+// Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_005386d0
 // Address: 005386d0
-void FUN_005386d0(undefined4 param_1,float *param_2,float *param_3,int param_4);
+void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 
 // Original: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0
 // Address: 005388e0

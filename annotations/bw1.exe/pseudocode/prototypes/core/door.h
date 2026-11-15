@@ -91,7 +91,7 @@ void __cdecl CDoor::updateCollisionData(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getMoveType_FUN_00478b40
 // Address: 00478b40
-int __cdecl CDoor::getMoveType(CDoor *this_ptr,CDemonActor *opener);
+int __cdecl CDoor::getMoveType(CDoor *this_ptr,CDemonActor *opener,int ignore_lock);
 
 // Original: core_door.cpp_CDoor_onLocked_FUN_00478d10
 // Address: 00478d10

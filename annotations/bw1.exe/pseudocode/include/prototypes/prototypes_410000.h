@@ -49,7 +49,7 @@
 
 void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00410110(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_archive_FUN_00410180(CBaron *this_ptr);
-undefined4 core_baron_cpp_FUN_004101e0(void);
+int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_004101e0(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004101f0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_processDamage_FUN_00410400(CBaron *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_baron_cpp_CBaron_drawWeapon_FUN_00410420(CBaron *this_ptr,int drawn);
@@ -248,7 +248,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a70
 void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041aaa0(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles);
 void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ab20(CBodyPart *this_ptr,CVector3f *position);
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041ac60(CBodyPart *this_ptr,char *texture_name);
-void core_bodypart_cpp_FUN_0041ad40(CBodyPart *param_1);
+void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_0041aef0(CBodyPart *this_ptr);
 int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041af30(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);

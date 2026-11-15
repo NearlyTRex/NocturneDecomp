@@ -31,8 +31,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_ini.cpp_FUN_004d8b80
-;   engine_ini.cpp_FUN_004d8c30
+;   engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30
+;   engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80
 ;   sound_sndmain.cpp_getAudioFormat_FUN_00552790
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_00553600
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00551190
@@ -112,30 +112,30 @@ section .text
     PUSH ESI                            ; 00553a2d
     PUSH 0x5e934c                       ; 00553a2e | DAT_005e934c
     PUSH EBP                            ; 00553a33
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553a34
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553a34
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00553a39
     MOV EDI,dword ptr [ESP + 0x27c]     ; 00553a3c
     PUSH EDI                            ; 00553a43
     PUSH 0x5e9351                       ; 00553a44 | = "Channels"
     PUSH EBP                            ; 00553a49
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553a4a
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553a4a
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00553a4f
     MOV EAX,dword ptr [ESP + 0x280]     ; 00553a52
     PUSH EAX                            ; 00553a59
     PUSH 0x5e935a                       ; 00553a5a | DAT_005e935a
     PUSH EBP                            ; 00553a5f
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553a60
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553a60
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00553a65
     CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40 ; 00553a68
         ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40()
     PUSH EAX                            ; 00553a6d
     PUSH 0x5e935d                       ; 00553a6e | = "AccelEnabled"
     PUSH EBP                            ; 00553a73
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553a74
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553a74
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00553a79
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 00553a7c
         ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
@@ -145,8 +145,8 @@ section .text
     FSTP float ptr [ESP]                ; 00553a92
     PUSH 0x5e936a                       ; 00553a95 | = "MaxSwLatency"
     PUSH EBP                            ; 00553a9a
-    CALL engine_ini.cpp_FUN_004d8c30    ; 00553a9b
-        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c30()
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30 ; 00553a9b
+        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile * this_ptr, char * key, float value)
     ADD ESP,0xc                         ; 00553aa0
     CALL sound_sndmain.cpp_isSoundMuted_FUN_00550bc0 ; 00553aa3
         ;   XREF to: 00550bc0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00550bc0()
@@ -154,8 +154,8 @@ section .text
     PUSH 0x5e9377                       ; 00553aa9 | DAT_005e9377
     PUSH EBP                            ; 00553aae
     XOR EBX,EBX                         ; 00553aaf
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553ab1
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553ab1
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     MOV EDX,dword ptr [0x0061bc94]      ; 00553ab6 | DAT_0061bc94
     ADD ESP,0xc                         ; 00553abc
     TEST EDX,EDX                        ; 00553abf
@@ -177,8 +177,8 @@ section .text
     LEA EAX,[ESP + 0x21c]               ; 00553ae7
     PUSH EAX                            ; 00553aee
     PUSH EBP                            ; 00553aef
-    CALL engine_ini.cpp_FUN_004d8b80    ; 00553af0
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 00553af0
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00553af5
     PUSH EBX                            ; 00553af8
     PUSH 0x5e9390                       ; 00553af9 | = "SfxChannel%dVol"
@@ -199,8 +199,8 @@ section .text
     PUSH EAX                            ; 00553b32
     PUSH EBP                            ; 00553b33
     INC EBX                             ; 00553b34
-    CALL engine_ini.cpp_FUN_004d8c30    ; 00553b35
-        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c30()
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30 ; 00553b35
+        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile * this_ptr, char * key, float value)
     MOV ECX,dword ptr [0x0061bc94]      ; 00553b3a | DAT_0061bc94
     ADD ESP,0xc                         ; 00553b40
     CMP EBX,ECX                         ; 00553b43

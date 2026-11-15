@@ -244,8 +244,8 @@ section .text
     PUSH EAX                            ; 00487036
     MOV EDI,dword ptr [0x00603b28]      ; 00487037 | g_CDemonSetPtr
     PUSH EDI                            ; 0048703d | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0048703e
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0048703e
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x188],EAX     ; 00487043
     FLD float ptr [ESP + 0x188]         ; 0048704a
     ADD ESP,0xc                         ; 00487051

@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004dadb0 at 004dae94
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004dae94
 ;   core_inv.cpp_FUN_004dd9b0 at 004ddbdb
 ;
 ; Referenced Globals:

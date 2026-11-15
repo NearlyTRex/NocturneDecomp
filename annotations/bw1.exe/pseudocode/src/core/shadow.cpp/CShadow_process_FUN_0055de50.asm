@@ -31,6 +31,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
@@ -39,7 +40,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00431cc0
 ;   core_charactr.cpp_FUN_00435320
 ;   ... and 25 more
 ;
@@ -1180,8 +1180,8 @@ section .text
     PUSH 0x3f800000                     ; 0055ed3d
     PUSH EDX                            ; 0055ed42
     PUSH EAX                            ; 0055ed43
-    CALL core_charactr.cpp_FUN_00431cc0 ; 0055ed44
-        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431cc0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 ; 0055ed44
+        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00431cc0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0055ed49
     MOV EAX,dword ptr [EAX + 0xc2ec]    ; 0055ed4f
     ADD ESP,0x14                        ; 0055ed55
@@ -1585,8 +1585,8 @@ section .text
     PUSH 0x3f800000                     ; 0055f213
     PUSH EDI                            ; 0055f218
     PUSH EAX                            ; 0055f219
-    CALL core_charactr.cpp_FUN_00431cc0 ; 0055f21a
-        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431cc0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 ; 0055f21a
+        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00431cc0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0055f21f
     MOV EAX,dword ptr [EAX + 0xc2ec]    ; 0055f225
     ADD ESP,0x14                        ; 0055f22b

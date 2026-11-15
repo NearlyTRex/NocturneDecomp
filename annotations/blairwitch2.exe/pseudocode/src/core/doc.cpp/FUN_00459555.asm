@@ -13,8 +13,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030
-;   core_setcolid.cpp_FUN_00534ea0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH EAX                            ; 004595fb
     MOV EDI,dword ptr [0x0061b5a8]      ; 004595fc | g_CDemonSetPtr
     PUSH EDI                            ; 00459602
-    CALL core_setcolid.cpp_FUN_00534ea0 ; 00459603
-        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00534ea0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 ; 00459603
+        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x190],EAX     ; 00459608
     FLD float ptr [ESP + 0x190]         ; 0045960f
     ADD ESP,0xc                         ; 00459616

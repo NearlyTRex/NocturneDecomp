@@ -79,7 +79,7 @@ void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042cd70
 // Address: 0042cd70
-undefined4 FUN_0042cd70(CCharacter *param_1,float param_2);
+undefined4 FUN_0042cd70(CCharacter *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5);
 
 // Original: core_charactr.cpp_FUN_0042d390
 // Address: 0042d390
@@ -153,17 +153,17 @@ void __cdecl CCharacter::renderFlames(CCharacter *this_ptr);
 // Address: 0042f770
 void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042fbd0
+// Original: core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 // Address: 0042fbd0
-void FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
+void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero,float on_fire_time);
 
 // Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 // Address: 0042fc90
 void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042fdc0
+// Original: core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
 // Address: 0042fdc0
-void FUN_0042fdc0(CDemonActor *param_1,int param_2,int param_3,float param_4);
+void __cdecl CCharacter::spawnGoreAtBone(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
 // Address: 0042fe90
@@ -201,17 +201,17 @@ void __cdecl CCharacter::detachBodyPart(CCharacter *this_ptr,int part_index,CVec
 // Address: 00430590
 void __cdecl CCharacter::dismemberPartInternal(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
 
-// Original: core_charactr.cpp_FUN_004307b0
+// Original: core_charactr.cpp_CCharacter_returnZero_FUN_004307b0
 // Address: 004307b0
-undefined4 FUN_004307b0(void);
+int __cdecl CCharacter::returnZero(CCharacter *this_ptr,CDemonActor *grabber);
 
 // Original: core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0
 // Address: 004307c0
 void __cdecl CCharacter::releaseFromGrab(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_004307f0
+// Original: core_charactr.cpp_CCharacter_doNothing_FUN_004307f0
 // Address: 004307f0
-void FUN_004307f0(void);
+void __cdecl CCharacter::doNothing(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_getGrabber_FUN_00430800
 // Address: 00430800
@@ -241,9 +241,9 @@ void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_
 // Address: 00431000
 EDeathState __cdecl CCharacter::getDeathState(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_004310e0
+// Original: core_charactr.cpp_CCharacter_followActor_FUN_004310e0
 // Address: 004310e0
-void FUN_004310e0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl CCharacter::followActor(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state);
 
 // Original: core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470
 // Address: 00431470
@@ -389,9 +389,9 @@ void FUN_00433c60(CCharacter *param_1,float param_2);
 // Address: 00433fb0
 int __cdecl CCharacter::processMotion(CCharacter *this_ptr,int bone_index);
 
-// Original: core_charactr.cpp_FUN_00434190
+// Original: core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190
 // Address: 00434190
-undefined4 FUN_00434190(CCharacter *param_1,float param_2);
+int __cdecl CCharacter::moveOutOfHeroWay(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_00434810
 // Address: 00434810
@@ -407,7 +407,7 @@ int FUN_004348b0(int param_1,char *param_2);
 
 // Original: core_charactr.cpp_FUN_004349d0
 // Address: 004349d0
-void FUN_004349d0(int param_1,undefined4 param_2);
+void FUN_004349d0(int param_1,CWayPoint *param_2);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_00434a30
 // Address: 00434a30

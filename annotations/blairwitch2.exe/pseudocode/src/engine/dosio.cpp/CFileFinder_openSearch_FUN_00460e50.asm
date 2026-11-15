@@ -12,8 +12,8 @@
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20 at 0047cc09
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870 at 004819c1
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70 at 00481bb4
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20 at 00481ef4
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481d0d
-;   shape_edittool.cpp_FUN_00481e20 at 00481ef4
 ;
 ; Referenced Globals:
 ;   void* PTR_FindFirstFileA_005c8548 = 001c8d42

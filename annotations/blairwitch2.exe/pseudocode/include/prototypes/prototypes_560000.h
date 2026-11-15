@@ -5,7 +5,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CExternalRenderer.h"
@@ -111,7 +110,7 @@ void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_00567840(
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00567880(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_00567fd0(CStranger *this_ptr,int arm_side);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005683d0(CStranger *this_ptr,int hand_index);
-float * core_stranger_cpp_FUN_00568500(CCharacter *param_1,CDemonActor *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_00568500(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *this_ptr,char *class_name);
 void __cdecl core_stranger_cpp_FUN_0056a160(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_0056a1e0(CStranger *this_ptr);

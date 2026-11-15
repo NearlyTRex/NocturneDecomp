@@ -418,7 +418,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
-;   core_dtrace.cpp_FUN_0048b150
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150
 ;
 ; *****************************************************************************
 
@@ -469,8 +469,8 @@ section .text
     FSTP float ptr [ESP + 0x184]        ; 0041e1bc
     PUSH 0x1fe5c1c                      ; 0041e1c3 | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x3f8]        ; 0041e1c8
-    CALL core_dtrace.cpp_FUN_0048b150   ; 0041e1cf
-        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048b150()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150 ; 0041e1cf
+        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0041e1d4
     FLD float ptr [ESP + 0x6a0]         ; 0041e1db
     ADD ESP,0x14                        ; 0041e1e2
@@ -2358,8 +2358,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x674]     ; 00420008
     PUSH ECX                            ; 0042000f
     PUSH 0x1fe5c1c                      ; 00420010 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_0048b150   ; 00420015
-        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048b150()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150 ; 00420015
+        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0042001a
     FLD float ptr [ESP + 0x6a0]         ; 00420021
     ADD ESP,0x14                        ; 00420028

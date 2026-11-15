@@ -17,9 +17,9 @@ CPathMap * __cdecl CPathMap::ctor(CPathMap *this_ptr);
 // Address: 00511d10
 CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr,uint flags);
 
-// Original: core_path.cpp_FUN_00511df0
+// Original: core_path.cpp_CPathMap_getDirection_FUN_00511df0
 // Address: 00511df0
-float FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5);
+float __cdecl CPathMap::getDirection(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position);
 
 // Original: core_path.cpp_CPathMap_updateIfNeeded_FUN_005121a0
 // Address: 005121a0

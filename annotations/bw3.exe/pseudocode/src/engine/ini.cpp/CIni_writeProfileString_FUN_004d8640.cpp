@@ -26,7 +26,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(CIni *this_ptr,c
   
   bVar6 = 0;
   local_14 = 0;
-  iVar2 = engine_ini_cpp_FUN_004d8470(this_ptr,section,key,filename,value);
+  iVar2 = engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004d8470
+                    (this_ptr,section,key,filename,value);
   if (this_ptr->initialized == 0) {
     return 1;
   }

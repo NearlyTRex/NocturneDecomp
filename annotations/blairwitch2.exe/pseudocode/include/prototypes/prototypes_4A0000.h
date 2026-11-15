@@ -211,12 +211,12 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004a7d00(CBitFont *this_ptr
 void engine_font_cpp_FUN_004a7fd0(void);
 void engine_font_cpp_FUN_004a8540(int param_1,float param_2);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004a8560(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004a85a0(void);
+void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004a85a0(CBitFont *this_ptr,char *font_path);
 void __cdecl engine_font_cpp_CBitFont_free_FUN_004a8850(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004a88e0(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char);
 int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride);
-int engine_font_cpp_FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,undefined4 param_6);
+int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004a8df0(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value);
 int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004a90b0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004a90e0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
@@ -241,7 +241,7 @@ int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont *this_pt
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
 int engine_font_cpp_FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
-int engine_font_cpp_FUN_004ab360(void);
+int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004ab360(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width,int indent_chars,int indent_first_line);
 int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004ab530(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(CBitFont *this_ptr,int char_code);

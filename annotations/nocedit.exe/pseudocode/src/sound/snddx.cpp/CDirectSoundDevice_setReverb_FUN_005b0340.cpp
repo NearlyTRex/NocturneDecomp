@@ -22,6 +22,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_005b0340(CDirectSo
   local_10 = 0;
   fStack_4 = damping;
   (*g_DirectSoundPropertySet->vtable->Set)
-            (g_DirectSoundPropertySet,&GUID_00681df0,0,(LPVOID)0x0,0,&local_10,0x10);
+            (g_DirectSoundPropertySet,&g_DSPROPSETID_EAX_ReverbProperties,0,(LPVOID)0x0,0,&local_10,
+             0x10);
   return;
 }

@@ -22,7 +22,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
-;   core_setcolid.cpp_FUN_005562c0
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     PUSH EAX                            ; 0040c7d9
     MOV ESI,dword ptr [0x00622c18]      ; 0040c7da | g_CDemonSetPtr
     PUSH ESI                            ; 0040c7e0 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_005562c0 ; 0040c7e1
-        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005562c0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 ; 0040c7e1
+        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x50],EAX      ; 0040c7e6
     FLD float ptr [ESP + 0x50]          ; 0040c7ea
     ADD ESP,0xc                         ; 0040c7ee
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 0040c7fc | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x3c]         ; 0040c7fd
     MOV ESI,dword ptr [EAX + 0x14d134]  ; 0040c801 | g_CDemonSetInstance.ground_type
-    CALL core_setcolid.cpp_FUN_005562c0 ; 0040c807
-        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005562c0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 ; 0040c807
+        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x50],EAX      ; 0040c80c
     FLD float ptr [ESP + 0x50]          ; 0040c810
     ADD ESP,0xc                         ; 0040c814

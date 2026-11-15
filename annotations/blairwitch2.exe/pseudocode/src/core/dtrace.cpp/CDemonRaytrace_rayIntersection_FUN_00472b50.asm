@@ -12,7 +12,7 @@
 ;   core_drip.cpp_CDrip_process_FUN_0046d110 at 0046d1ae
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00472c60
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 00472b68
     MOV ECX,dword ptr [EBP + 0x10]      ; 00472b69
     PUSH ECX                            ; 00472b6c
-    CALL core_dtrace.cpp_FUN_00472c60   ; 00472b6d
-        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00472c60()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60 ; 00472b6d
+        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x68],EAX      ; 00472b72
     FLD float ptr [ESP + 0x68]          ; 00472b76
     ADD ESP,0x14                        ; 00472b7a

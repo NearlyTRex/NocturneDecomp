@@ -12,7 +12,8 @@ So measure the argument size from nocturne's own bytes, independently of the
 mapping, and compare it with the sum of the transferred parameters' stack
 slots. A callee-clean function ends `RET imm16` and that imm16 *is* the
 argument size; otherwise the callers reveal it, three different ways depending
-on which argument-passing shape Watcom chose (see `observed_arg_bytes`).
+on which argument-passing shape Watcom chose (see `observed_arg_bytes`), plus a
+cleanup Watcom scheduled later, which can only confirm (`delayed_cleanup_bytes`).
 
 Which parameters even belong in that sum comes from the project's Watcom cspec
 (`spec/.../x86watcom.cspec`, loaded at runtime) plus the exported per-parameter
@@ -234,6 +235,52 @@ def observed_arg_bytes(image, callsites, cache):
     return consensus(push_votes), consensus(pop_votes), consensus(mov_votes)
 
 
+# Instructions that end the scan for a call's cleanup: control flow, or anything
+# that moves ESP without saying by how much.
+_FLOW = ("call", "ret", "jmp", "int", "leave", "enter")
+_ESP_IMPLICIT = ("push", "pop", "pushal", "popal", "pushad", "popad", "pushfd", "popfd")
+
+
+def delayed_cleanup_bytes(image, callsites, cache):
+    """The callers' cleanup when Watcom schedules other work before it, or None.
+
+    `observed_arg_bytes` reads only the instruction right after the CALL, but
+    Watcom often moves an independent load in between (`call f; mov eax, [g];
+    add esp, 0xc`). This takes the first instruction after the call that touches
+    ESP at all, past ones that neither read nor write it, and stops at control
+    flow. It may over-read -- after a callee-clean call the first ESP adjustment
+    belongs to something else -- so it can only confirm a size, never convict.
+    """
+    votes = Counter()
+    for va in callsites:
+        caller = image.func_containing(va)
+        insns = _function_insns(image, cache, caller) if caller else []
+        idx = next((i for i, ins in enumerate(insns) if ins[0] == va), None)
+        if idx is None:
+            continue
+        found = 0
+        for _, mnem, op in insns[idx + 1:idx + 1 + ARG_STORE_SCAN]:
+            if mnem in _FLOW or mnem.startswith(("j", "loop")):
+                break
+            if mnem == "add" and op.startswith("esp,"):
+                try:
+                    found = int(op.split(",")[1].strip(), 0)
+                except ValueError:
+                    found = None
+                break
+            if mnem == "pop" and op in ("ecx", "edx"):
+                found = 4
+                break
+            if mnem in _ESP_IMPLICIT or "esp" in op:
+                break
+        if found is not None:
+            votes[found] += 1
+    if not votes:
+        return None
+    top, n = votes.most_common(1)[0]
+    return top if n >= 0.6 * sum(votes.values()) else None
+
+
 def call_sites_to(image):
     """callee_addr -> [call instruction VA]."""
     out = defaultdict(list)
@@ -283,6 +330,9 @@ def verify_pair(a_func, b_func, b_img, sites, cache):
     for label, value in (("pop", popped), ("push", pushed), ("store", stored)):
         if value == expected:
             return "agree", f"callers {label} {value} == {expected} stack bytes{regnote}"
+    delayed = delayed_cleanup_bytes(b_img, sites, cache)
+    if delayed == expected:
+        return "agree", f"callers' later cleanup {delayed} == {expected} stack bytes{regnote}"
 
     # Only a definite, positive `ADD ESP, n` may *convict*. The push count
     # under-reads interleaved setup and the store scan over-reads neighbouring

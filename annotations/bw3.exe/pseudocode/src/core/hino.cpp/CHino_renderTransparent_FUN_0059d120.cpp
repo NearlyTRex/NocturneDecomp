@@ -12,6 +12,7 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
+  double value;
   CDemonRenderer *this_ptr_01;
   CCharacter *this_ptr_02;
   int iVar1;
@@ -19,25 +20,26 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
   uint *puVar3;
   byte bVar4;
   double dVar5;
-  ulonglong uStack_58;
-  uint auStack_3c [7];
-  double dStack_20;
+  int in_stack_ffffffa0;
+  uint auStack_4c [4];
+  uint auStack_3c [2];
+  byte auStack_34 [28];
   int iStack_18;
   
   bVar4 = 0;
-  uStack_58 = (double)this_ptr->vanish_timer;
-  if (0.0 < uStack_58) {
-    dVar5 = uStack_58 * _DAT_005d9e74;
+  if (0.0 < (double)this_ptr->vanish_timer) {
+    dVar5 = (double)this_ptr->vanish_timer * _DAT_005d9e74;
     if (this_ptr->vanishing == 0) {
       iStack_18 = core_hino_cpp_FUN_0059b740(100);
-      dVar5 = (double)iStack_18 * dVar5;
+      value = (double)iStack_18 * dVar5;
     }
     else {
-      dStack_20 = 1.0 - dVar5;
+      auStack_34._20_8_ = 1.0 - dVar5;
       iStack_18 = core_hino_cpp_FUN_0059b740(100);
-      dVar5 = (double)iStack_18 * dStack_20;
+      value = (double)iStack_18 * (double)auStack_34._20_8_;
     }
-    dVar5 = round(dVar5);
+    in_stack_ffffffa0 = SUB84(__BITCAST_UINT64(dVar5),0);
+    dVar5 = round(value);
     this_ptr->render_alpha = (int)ROUND(dVar5);
     this_ptr_02 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c840
@@ -59,14 +61,15 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = (uint *)((int)&uStack_58 + 4);
+  puVar2 = auStack_4c;
   puVar3 = auStack_3c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041daf0(auStack_3c);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+                    ((CBoundingBox3D *)auStack_34,in_stack_ffffffa0);
   this_ptr_01 = DAT_005f2afc;
   if (iVar1 != 0) {
     iVar1 = this_ptr->render_alpha;

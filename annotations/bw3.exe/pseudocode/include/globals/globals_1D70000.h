@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMoon.h"
 
@@ -41,6 +42,9 @@ extern CDemonActorType g_CLeverClassInfo;
 extern CDemonActorType g_CLightStaffClassInfo;
 extern CDemonActorType g_CLightConeClassInfo;
 extern CDemonActorType g_CMeleeClassInfo;
+
+// CLevelLoader
+extern CLevelLoader g_CLevelLoaderInstance;
 
 // CMini3D
 extern CMini3D g_CMini3DInstance;

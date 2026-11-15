@@ -10,6 +10,10 @@ CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
 // CWater*
 CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
 
+// GUID
+GUID g_IID_IDirectSound3DListener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+GUID g_IID_IDirectSound3DBuffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_FirstInitHandler = {
     .status = 0x00,

@@ -1,0 +1,171 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 214,
+    "complexity_score": 79,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a85a0",
+    "address_range": [
+      [
+        "004a85a0",
+        "004a884b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
+    "signature": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004a85a0(CBitFont *this_ptr,char *font_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ba840",
+      "is_variadic": false,
+      "name": "crt_string.c_strupr_FUN_005ba840"
+    },
+    {
+      "addr": "004a8560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560"
+    },
+    {
+      "addr": "004a7cd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0"
+    },
+    {
+      "addr": "0057cc20",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStream_readLine_FUN_0057cc20"
+    },
+    {
+      "addr": "0057ba20",
+      "is_variadic": true,
+      "name": "support_trstream.cpp_CInStream_scanf_FUN_0057ba20"
+    },
+    {
+      "addr": "0057d180",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_0057d180"
+    },
+    {
+      "addr": "0057cd50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50"
+    },
+    {
+      "addr": "0057cec0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0"
+    },
+    {
+      "addr": "0057d390",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7055555555555557,
+    "instruction_count": 180,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 19,
+      "CBRANCH": 5,
+      "COPY": 134,
+      "INT_ADD": 81,
+      "INT_AND": 57,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 56,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 28,
+      "INT_SUB": 88,
+      "LOAD": 23,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 88
+    },
+    "pcode_op_count": 667
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c1580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9972
+    },
+    "bw3.exe": {
+      "addr": "004b01d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9972
+    },
+    "nocedit.exe": {
+      "addr": "004cd2c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6135
+    },
+    "nocturne.exe": {
+      "addr": "00490210",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6049
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "font_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

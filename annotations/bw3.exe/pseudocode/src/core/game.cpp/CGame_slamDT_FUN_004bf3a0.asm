@@ -10,7 +10,7 @@
 ; XREF[6]:
 ;   core_fire.cpp_CFirefly_process_FUN_004988b0 at 00498904
 ;   core_fire.cpp_CSpark_process_FUN_00497eb0 at 00497eff
-;   core_game.cpp_FUN_004b6f30 at 004b6fb6
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b6fb6
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00507e50 at 00507e80
 ;   core_prye.cpp_CPrye_process_FUN_00518ab0 at 00518c57
 ;   core_prye.cpp_FUN_00518cd0 at 00518eb8

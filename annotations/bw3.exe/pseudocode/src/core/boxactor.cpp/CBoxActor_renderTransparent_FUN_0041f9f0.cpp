@@ -14,9 +14,11 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
   CKeyFramedModel *pCVar1;
   int iVar2;
   uint *puVar3;
+  int unaff_EDI;
   uint *puVar4;
   byte bVar5;
   double dVar6;
+  uint auStack_34 [4];
   uint auStack_24 [7];
   
   bVar5 = 0;
@@ -32,14 +34,15 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
               (0x01BDD7E4,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-    puVar3 = (uint *)&stack0xffffffc4;
+    puVar3 = auStack_34;
     puVar4 = auStack_24;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = *puVar3;
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar2 = core_box_cpp_FUN_0041daf0(auStack_24);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+                      ((CBoundingBox3D *)(auStack_24 + 2),unaff_EDI);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->fade_alpha)
     ;
     if (this_ptr->dont_use_normals != 0) {

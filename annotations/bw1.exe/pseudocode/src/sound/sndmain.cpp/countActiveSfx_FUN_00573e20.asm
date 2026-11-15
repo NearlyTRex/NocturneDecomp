@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004cecfe
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cecfe
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c74650

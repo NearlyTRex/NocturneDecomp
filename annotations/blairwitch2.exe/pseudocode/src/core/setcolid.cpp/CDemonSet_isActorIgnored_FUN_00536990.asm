@@ -8,9 +8,9 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 at 005350e1
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490 at 005366b2
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030 at 0053721f
-;   core_setcolid.cpp_FUN_00534ea0 at 005350e1
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterClassInfo.name_hash

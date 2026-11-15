@@ -55,7 +55,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042fbd0 at 0042fc18
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 at 0042fc18
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0

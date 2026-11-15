@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720
-;   shape_edittool.cpp_FUN_0047cee0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5cd4df                       ; 00520d82 | s_actionPending_d_prye_cpp_005cd4de+1
     MOV EDI,dword ptr [0x005fb140]      ; 00520d87 | g_CEditorToolsPtr
     PUSH EDI                            ; 00520d8d
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 00520d8e
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 00520d8e
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00520d93
     POP EDI                             ; 00520d96
     JMP 0x00520d3a                      ; 00520d97

@@ -65,9 +65,9 @@ void __cdecl CDemonRenderer::renderAlphaBlendedDirect(CDemonRenderer *this_ptr,S
 // Address: 00482540
 void __cdecl CDemonRenderer::renderAlphaBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_004826a0
-// Address: 004826a0
-void FUN_004826a0(void);
+// Original: engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_00482680
+// Address: 00482680
+void __cdecl CDemonRenderer::renderAlphaBlendedFace(CDemonRenderer *this_ptr,SInputFace *face);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_00482780
 // Address: 00482780

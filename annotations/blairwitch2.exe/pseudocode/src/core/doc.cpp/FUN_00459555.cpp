@@ -65,7 +65,9 @@ uint core_doc_cpp_FUN_00459555(float param_1,float param_2,float param_3)
   *(float *)(&stack0x00000100 + (uint)bVar6 * -8) = (&stack0x000000c4)[(uint)bVar6 * -2];
   *(float *)(&stack0x00000104 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        (&stack0x000000c8)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
-  in_stack_00000160 = (float)core_setcolid_cpp_FUN_00534ea0();
+  in_stack_00000160 =
+       core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
+                 (g_CDemonSetPtr,(CVector3f *)&stack0x000000fc,0.5);
   in_stack_00000194 = in_stack_00000160;
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
   if (ABS(in_stack_00000160 - *(float *)(unaff_EBX + 0x24)) <= 1.0) {

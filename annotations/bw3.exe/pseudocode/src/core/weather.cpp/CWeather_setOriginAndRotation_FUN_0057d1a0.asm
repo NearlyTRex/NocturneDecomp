@@ -52,7 +52,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_0053ec70
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_FUN_0053ccc0
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 ;
 ; *****************************************************************************
 
@@ -190,8 +190,8 @@ section .text
     PUSH EAX                            ; 0057d311
     MOV ECX,dword ptr [0x00603b28]      ; 0057d312 | g_CDemonSetPtr
     PUSH ECX                            ; 0057d318 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0057d319
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0057d319
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x50],EAX      ; 0057d31e
     FLD float ptr [ESP + 0x50]          ; 0057d322
     ADD ESP,0xc                         ; 0057d326

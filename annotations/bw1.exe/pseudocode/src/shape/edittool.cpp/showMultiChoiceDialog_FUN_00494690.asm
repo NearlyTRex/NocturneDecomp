@@ -31,8 +31,8 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20 at 00494da4
-;   shape_edittool.cpp_FUN_00494de0 at 00494e64
-;   shape_edittool.cpp_FUN_00494ea0 at 00494f4e
+;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_00494ea0 at 00494f4e
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_00494de0 at 00494e64
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68

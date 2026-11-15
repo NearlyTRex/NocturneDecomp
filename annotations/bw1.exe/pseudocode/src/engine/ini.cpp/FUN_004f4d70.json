@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 107,
+    "complexity_score": 52,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 7,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 31
@@ -57,9 +56,9 @@
         "004f4dac"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_ini.cpp_FUN_004f4d70",
-    "signature": "void engine_ini_cpp_FUN_004f4d70(int param_1,undefined4 param_2)"
+    "signature": "void __cdecl engine_ini_cpp_FUN_004f4d70(CIniFile *this_ptr,char *key,int value)"
   },
   "function_calls": [
     {
@@ -83,13 +82,10 @@
         "call_addr": "004f57a2",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -97,13 +93,10 @@
         "call_addr": "004f57bd",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -111,13 +104,10 @@
         "call_addr": "004f57d8",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -125,12 +115,10 @@
         "call_addr": "004f57f1",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -138,13 +126,10 @@
         "call_addr": "004f580a",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -152,13 +137,10 @@
         "call_addr": "004f583f",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -166,13 +148,10 @@
         "call_addr": "004f585d",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -180,13 +159,10 @@
         "call_addr": "004f5878",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -194,13 +170,10 @@
         "call_addr": "004f5891",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -208,21 +181,19 @@
         "call_addr": "004f58ac",
         "call_type": "direct",
         "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.136363636363637,
@@ -262,10 +233,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 108,
+    "frame_size": 120,
     "local_size": 108,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -274,26 +245,31 @@
         "offset": -104,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_ini_cpp_FUN_004f4d70(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_ini_cpp_FUN_004f4d70(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -303,47 +279,20 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,local_68);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 8,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x200) + 8))(param_1,param_2,local_68);",
+      "text": "(**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,local_68);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x200) + 8))(param_1,param_2,local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x200) + 8))(param_1,param_2,local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x200) + 8))(param_1,param_2,local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

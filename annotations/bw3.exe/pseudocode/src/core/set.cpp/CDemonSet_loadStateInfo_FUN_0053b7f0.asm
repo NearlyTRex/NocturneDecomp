@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
-;   shape_edittool.cpp_FUN_0047cee0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5d096c                       ; 0053b87c | = "The set has changed since you saved y..."
     MOV ECX,dword ptr [0x005fb140]      ; 0053b881 | g_CEditorToolsPtr
     PUSH ECX                            ; 0053b887
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0053b888
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0053b888
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053b88d
     MOV ESI,dword ptr [ESP + 0x4]       ; 0053b890
         ;   Label: LAB_0053b890

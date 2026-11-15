@@ -45,6 +45,9 @@ CDemonActorType g_CMineCarClassInfo = {};
 // CKeyFramedModel
 CKeyFramedModel g_LoadingMoonModel = {};
 
+// CLevelLoader
+CLevelLoader g_CLevelLoaderInstance = {};
+
 // CMini3D
 CMini3D g_CMini3DInstance = {};
 

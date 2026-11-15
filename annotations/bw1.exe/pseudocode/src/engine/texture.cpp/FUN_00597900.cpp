@@ -2,13 +2,13 @@
 // Address: 00597900
 // Address Range: [[00597900, 00597968]]
 // Convention: unknown
-// Signature: void engine_texture_cpp_FUN_00597900(int param_1)
+// Signature: void engine_texture_cpp_FUN_00597900(CTextureCache *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_texture_cpp_FUN_00597900(int param_1)
+void engine_texture_cpp_FUN_00597900(CTextureCache *param_1)
 
 {
   char cVar1;
@@ -19,8 +19,8 @@ void engine_texture_cpp_FUN_00597900(int param_1)
   char *pcVar6;
   
   iVar3 = 0;
-  if (0 < *(int *)(param_1 + 0x18004)) {
-    pcVar5 = (char *)(param_1 + 8);
+  if (0 < param_1->current_texture_count) {
+    pcVar5 = param_1->entries[0].texture_name;
     pcVar6 = (char *)0x2c8a638;
     iVar2 = iVar3;
     pcVar4 = pcVar5;
@@ -37,13 +37,14 @@ LAB_00597925:
         iVar2 = _DAT_02c8a634;
         if (cVar1 != '\0') goto LAB_00597925;
       }
-      engine_texture_cpp_FUN_00597140(param_1,0x2c8a630,1);
+      engine_texture_cpp_CTextureCache_setupTexture_FUN_00597140
+                (param_1,(SMRGLTextureBasic *)0x2c8a630,1);
       iVar3 = iVar3 + 1;
       pcVar5 = pcVar4 + 0x60;
       pcVar6 = (char *)0x2c8a638;
       iVar2 = iVar3;
       pcVar4 = pcVar5;
-    } while (iVar3 < *(int *)(param_1 + 0x18004));
+    } while (iVar3 < param_1->current_texture_count);
   }
   return;
 }

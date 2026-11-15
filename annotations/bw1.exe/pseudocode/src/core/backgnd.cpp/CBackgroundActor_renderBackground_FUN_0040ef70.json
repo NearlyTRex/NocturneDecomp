@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 61,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
+    "pseudocode_lines": 32,
+    "suspect_count": 5,
     "suspect_types": [
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 95
+    "total_lines": 96
   },
   "cross_references": [],
   "function": {
@@ -42,7 +44,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004688a0",
@@ -151,16 +153,40 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar1 == 0",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Direct stack address reference",
       "line": 21,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffc8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_30,in_stack_ffffffc8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

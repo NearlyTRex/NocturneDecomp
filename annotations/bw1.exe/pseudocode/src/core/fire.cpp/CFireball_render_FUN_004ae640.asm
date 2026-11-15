@@ -25,7 +25,7 @@
 ;   ... and 22 more
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_00551c30
@@ -98,8 +98,8 @@ section .text
     MOV ECX,0x6                         ; 004ae6d4
     PUSH EAX                            ; 004ae6d9
     MOVSD.REP ES:EDI,ESI                ; 004ae6da
-    CALL core_box.cpp_FUN_004207b0      ; 004ae6dc
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 004ae6dc
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004ae6e1
     MOV ESI,EAX                         ; 004ae6e4
     TEST EAX,EAX                        ; 004ae6e6

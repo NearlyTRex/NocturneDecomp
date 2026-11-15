@@ -117,9 +117,9 @@ void __cdecl drawSingleButtonPrompt(char *title,char *message,int color);
 // Address: 00494030
 void __cdecl CEditorTools::backupScreen(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00494110
+// Original: shape_edittool.cpp_restoreScreen_FUN_00494110
 // Address: 00494110
-void FUN_00494110(void);
+void __cdecl restoreScreen(void);
 
 // Original: shape_edittool.cpp_paintWindowBackground_FUN_004941e0
 // Address: 004941e0
@@ -129,9 +129,9 @@ void __cdecl paintWindowBackground(void);
 // Address: 004942e0
 void __cdecl CEditorTools::showMessage(CEditorTools *this_ptr,char *format);
 
-// Original: shape_edittool.cpp_FUN_00494340
+// Original: shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340
 // Address: 00494340
-void FUN_00494340(undefined4 param_1,char *param_2);
+void __cdecl CEditorTools::showWarning(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 // Address: 004943a0
@@ -157,13 +157,13 @@ int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dial
 // Address: 00494d20
 int __cdecl CEditorTools::showDestructiveActionConfirmDialog(CEditorTools *this_ptr,char *format_string);
 
-// Original: shape_edittool.cpp_FUN_00494de0
+// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_00494de0
 // Address: 00494de0
-bool FUN_00494de0(undefined4 param_1,char *param_2);
+int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_FUN_00494ea0
+// Original: shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_00494ea0
 // Address: 00494ea0
-undefined4 FUN_00494ea0(undefined4 param_1,char *param_2);
+int __cdecl CEditorTools::showYesAllNoCancelDialog(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
 // Address: 00494fd0
@@ -261,9 +261,9 @@ void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,float scale
 // Address: 00498660
 void __cdecl draw3DInterpolatedLine(CVector3f *start_point,CVector3f *end_point);
 
-// Original: shape_edittool.cpp_FUN_004987b0
+// Original: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
 // Address: 004987b0
-void FUN_004987b0(void);
+void __cdecl CEditorTools::draw3DWireframeCube(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40
 // Address: 00498e40
@@ -389,9 +389,9 @@ void FUN_0049a300(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *
 // Address: 0049a460
 void FUN_0049a460(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: shape_edittool.cpp_FUN_0049a480
+// Original: shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_0049a480
 // Address: 0049a480
-void FUN_0049a480(CStrList *param_1,char *param_2,char *param_3);
+void __cdecl CStrList::populateWithFullPaths(CStrList *this_ptr,char *base_path,char *search_path);
 
 // Original: shape_edittool.cpp_CPickList_ctor_FUN_0049a620
 // Address: 0049a620
@@ -485,9 +485,9 @@ void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 // Address: 0049c500
 void __cdecl draw3DBorder(int left,int top,int right,int bottom,int pressed);
 
-// Original: shape_edittool.cpp_FUN_0049c750
+// Original: shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750
 // Address: 0049c750
-void FUN_0049c750(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int pressed_offset,int direction);
 
 // Original: shape_edittool.cpp_CEdScrollBar_ctor_FUN_0049c970
 // Address: 0049c970
@@ -581,9 +581,9 @@ int __cdecl CEdCheck::calculateBaseWidth(CEdCheck *this_ptr);
 // Address: 0049dc50
 int __cdecl CEdCheck::calculateSpacing(CEdCheck *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0049dc70
+// Original: shape_edittool.cpp_CEdCheck_render_FUN_0049dc70
 // Address: 0049dc70
-void FUN_0049dc70(CEdCheck *param_1);
+void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0
 // Address: 0049dea0

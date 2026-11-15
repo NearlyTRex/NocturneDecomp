@@ -11,9 +11,9 @@
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_findTexture_FUN_00574490
+;   engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520
 ;   engine_texture.cpp_FUN_005742b0
 ;   engine_texture.cpp_FUN_005743e0
-;   engine_texture.cpp_FUN_00574520
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV EDI,dword ptr [0x02652eb0]      ; 00574fc4 | DAT_02652eb0
     PUSH EDI                            ; 00574fca
     MOV dword ptr [0x02652eac],ESI      ; 00574fcb | DAT_02652eac
-    CALL engine_texture.cpp_FUN_00574520 ; 00574fd1
-        ;   XREF to: 00574520 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574520()
+    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520 ; 00574fd1
+        ;   XREF to: 00574520 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520(CTextureCache * this_ptr, SMRGLTextureBasic * texture, int upload_mode)
     ADD ESP,0xc                         ; 00574fd6
     POP ESI                             ; 00574fd9
     POP EDI                             ; 00574fda

@@ -17,15 +17,9 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeathe
   uint *puVar4;
   float10 fVar5;
   float10 fVar6;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
+  CVector3f local_58;
+  CVector3f local_4c;
+  CVector3f local_40;
   double local_2c;
   int local_20;
   int local_1c;
@@ -57,38 +51,39 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeathe
         ;
         fVar5 = (float10)fsin((float10)local_14);
         fVar6 = (float10)fcos((float10)local_14);
-        local_58 = (float)(fVar5 * (float10)local_18 + (float10)direction->x);
-        local_54 = direction->y;
-        local_50 = (float)(fVar6 * (float10)local_18 + (float10)direction->z);
+        local_58.x = (float)(fVar5 * (float10)local_18 + (float10)direction->x);
+        local_58.y = direction->y;
+        local_58.z = (float)(fVar6 * (float10)local_18 + (float10)direction->z);
         if (&local_4c != &local_58) {
-          local_4c = local_58;
-          local_48 = local_54;
-          local_44 = local_50;
+          local_4c.x = local_58.x;
+          local_4c.y = local_58.y;
+          local_4c.z = local_58.z;
         }
         if (&local_40 != &local_58) {
-          local_40 = local_58;
-          local_3c = local_54;
-          local_38 = local_50;
+          local_40.x = local_58.x;
+          local_40.y = local_58.y;
+          local_40.z = local_58.z;
         }
-        local_48 = local_48 + _DAT_005d79a3;
-        local_3c = local_3c + _DAT_005d79a7;
+        local_4c.y = local_4c.y + _DAT_005d79a3;
+        local_40.y = local_40.y + _DAT_005d79a7;
         core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
         core_setcolid_cpp_CDemonSet_disableIgnore_FUN_0053ec70(g_CDemonSetPtr);
-        local_14 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&local_4c,&local_40);
-        fVar1 = (local_3c - local_48) * local_14 + local_48;
+        local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                             (g_CDemonSetPtr,&local_4c,&local_40);
+        fVar1 = (local_40.y - local_4c.y) * local_14 + local_4c.y;
         *(float *)(local_1c + 0x2d1db48) = fVar1;
         local_2c = (double)fVar1;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,1.0);
-        local_54 = local_14 * (float)_DAT_005d798b + (float)local_2c;
-        if (pfVar2 != &local_58) {
-          *pfVar2 = local_58;
-          pfVar2[1] = local_54;
-          pfVar2[2] = local_50;
+        local_58.y = local_14 * (float)_DAT_005d798b + (float)local_2c;
+        if ((CVector3f *)pfVar2 != &local_58) {
+          *pfVar2 = local_58.x;
+          pfVar2[1] = local_58.y;
+          pfVar2[2] = local_58.z;
         }
-        if (pfVar3 != &local_58) {
-          *pfVar3 = local_58;
-          pfVar3[1] = local_54;
-          pfVar3[2] = local_50;
+        if ((CVector3f *)pfVar3 != &local_58) {
+          *pfVar3 = local_58.x;
+          pfVar3[1] = local_58.y;
+          pfVar3[2] = local_58.z;
         }
         if (puVar4 != (uint *)&DAT_02cfd900) {
           *puVar4 = _DAT_02cfd900;

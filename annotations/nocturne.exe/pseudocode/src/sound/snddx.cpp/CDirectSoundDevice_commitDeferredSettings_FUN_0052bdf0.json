@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 56,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 41
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -33,8 +32,8 @@
   "globals": [
     {
       "addr": "005bed30",
-      "name": "DAT_005bed30",
-      "type": "undefined4",
+      "name": "g_DSPROPSETID_EAX_ReverbProperties",
+      "type": "GUID",
       "value": null
     },
     {
@@ -162,16 +161,8 @@
       "line": 13,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed30,0,0,0,local_10,0x10);",
+      "text": "(**(code **)(*_DAT_02dc9224 + 0x10))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005bed30",
-      "severity": "mild",
-      "text": "(**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed30,0,0,0,local_10,0x10);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

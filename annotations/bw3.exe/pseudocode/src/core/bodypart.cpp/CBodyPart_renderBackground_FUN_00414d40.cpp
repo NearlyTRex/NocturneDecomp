@@ -13,10 +13,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00414d40(CBodyPart
   int iVar1;
   int iVar2;
   uint *puVar3;
+  int unaff_EDI;
   uint *puVar4;
   byte bVar5;
-  uint auStack_38 [6];
-  uint auStack_20 [6];
+  uint auStack_34 [2];
+  CBoundingBox3D CStack_2c;
+  uint auStack_14 [3];
   
   bVar5 = 0;
   if (this_ptr->render_disabled == 0) {
@@ -38,14 +40,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00414d40(CBodyPart
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
       g_CDemonSetPtr->disable_directional_lighting = this_ptr->dont_use_normals;
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-      puVar3 = auStack_20;
-      puVar4 = auStack_38;
+      puVar3 = auStack_14;
+      puVar4 = auStack_34;
       for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
         *puVar4 = *puVar3;
         puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
-      iVar2 = core_box_cpp_FUN_0041daf0(auStack_38);
+      iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_2c,unaff_EDI);
       if ((iVar2 != 0) &&
          ((this_ptr->transparent_geometry_flag == 0 ||
           (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc),

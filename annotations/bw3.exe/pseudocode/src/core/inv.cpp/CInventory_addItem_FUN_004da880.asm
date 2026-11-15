@@ -32,7 +32,7 @@
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bb054
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0 at 004d41cc
 ;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 at 004d4016
-;   core_inv.cpp_FUN_004db8d0 at 004db974
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0 at 004db974
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 005184b8
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b3eb
 ;

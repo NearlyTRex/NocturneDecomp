@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00543e00 at 00543f2d
+;   core_script.cpp_CScript_loadScript_FUN_00543e00 at 00543f2d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005ee22b

@@ -161,9 +161,9 @@ void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int
 // Address: 00430960
 void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00430a90
+// Original: core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
 // Address: 00430a90
-void FUN_00430a90(CDemonActor *param_1,int param_2,int param_3,float param_4);
+void __cdecl CCharacter::spawnGoreAtBone(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 // Address: 00430b60
@@ -209,9 +209,9 @@ int __cdecl CCharacter::isGrabbable(CCharacter *this_ptr,CDemonActor *grabber);
 // Address: 00431440
 void __cdecl CCharacter::releaseFromGrab(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00431470
+// Original: core_charactr.cpp_CCharacter_doNothing_FUN_00431470
 // Address: 00431470
-void FUN_00431470(void);
+void __cdecl CCharacter::doNothing(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_getGrabber_FUN_00431480
 // Address: 00431480
@@ -241,9 +241,9 @@ void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_
 // Address: 00431c30
 EDeathState __cdecl CCharacter::getDeathState(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00431cc0
+// Original: core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 // Address: 00431cc0
-void FUN_00431cc0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl CCharacter::followActor(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state);
 
 // Original: core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050
 // Address: 00432050
@@ -411,7 +411,7 @@ int FUN_00435380(int param_1,char *param_2);
 
 // Original: core_charactr.cpp_FUN_004354a0
 // Address: 004354a0
-void FUN_004354a0(int param_1,undefined4 param_2);
+void FUN_004354a0(int param_1,CWayPoint *param_2);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_00435500
 // Address: 00435500

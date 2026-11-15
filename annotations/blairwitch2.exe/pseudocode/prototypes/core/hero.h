@@ -85,9 +85,9 @@ bool FUN_004cec50(CDemonActor *param_1);
 // Address: 004cee90
 int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004cf030
+// Original: core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 // Address: 004cf030
-bool FUN_004cf030(CDemonActor *param_1);
+int __cdecl CHero::tryOpenNearbyDoor(CHero *this_ptr,int ignore_lock);
 
 // Original: core_hero.cpp_FUN_004cf200
 // Address: 004cf200
@@ -179,7 +179,7 @@ void __cdecl CHero::toggleGoggles(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d0780
 // Address: 004d0780
-undefined4 FUN_004d0780(CHero *param_1,undefined4 param_2);
+undefined4 FUN_004d0780(CHero *param_1,int param_2);
 
 // Original: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d0910
 // Address: 004d0910

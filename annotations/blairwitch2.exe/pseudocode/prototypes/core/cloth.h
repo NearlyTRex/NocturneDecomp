@@ -55,7 +55,7 @@ void FUN_005b0c90(void);
 
 // Original: core_cloth.cpp_FUN_005b0ce0
 // Address: 005b0ce0
-void FUN_005b0ce0(int param_1,int param_2,int param_3);
+void __cdecl FUN_005b0ce0(CCloth *this_ptr,int bone_index,int show_labels);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_005b0ef0
 // Address: 005b0ef0

@@ -3,13 +3,13 @@ GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
 Total globals analyzed:      12526
-  Named globals:             6643
-  DAT_ globals:              5883
+  Named globals:             6649
+  DAT_ globals:              5877
 Gaps found:                  3582
-  With exact size bounds:    3570
-  With estimated bounds:     12
-Total gap bytes:             45,682,665
-  Exact gap bytes:           45,676,968
+  With exact size bounds:    3565
+  With estimated bounds:     17
+Total gap bytes:             45,682,680
+  Exact gap bytes:           45,672,012
 Overlaps (size <= 0):        5920
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0056e220                     undefined1*          at 0x0056e220
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (3570) - size bounds are known precisely
+ALL EXACT GAPS (3565) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b9e558  between DAT_00b9e554                   and DAT_012a6558
    6,291,656 bytes  at 0x01549b14  between DAT_01549b10                   and DAT_01b49bdc
@@ -351,7 +351,6 @@ ALL EXACT GAPS (3570) - size bounds are known precisely
        5,054 bytes  at 0x01ed02b4  between DAT_01ed02b0                   and DAT_01ed1672
        5,046 bytes  at 0x01ed1676  between DAT_01ed1672                   and DAT_01ed2a2c
        4,976 bytes  at 0x01cf2814  between g_RockPool[1].base.vtable      and DAT_01cf3b84
-       4,908 bytes  at 0x00608bcc  between DAT_00608bc8                   and DAT_00609ef8
        4,840 bytes  at 0x01d0bb94  between DAT_01d0bb90                   and DAT_01d0ce7c
        4,820 bytes  at 0x01d20034  between g_CDemonLightInstance.antialia and g_CDemonLightInstance.volumetr
        4,800 bytes  at 0x01547208  between DAT_01547204                   and DAT_015484c8
@@ -441,7 +440,7 @@ ALL EXACT GAPS (3570) - size bounds are known precisely
        1,900 bytes  at 0x01c743fc  between DAT_01c743f8                   and DAT_01c74b68
        1,800 bytes  at 0x005dc148  between DAT_005dc144                   and g_CBaalSkelTypeInfo
        1,790 bytes  at 0x01c6a272  between DAT_01c6a26e                   and DAT_01c6a970
-       1,788 bytes  at 0x006084bc  between DAT_006084b8                   and DAT_00608bb8
+       1,788 bytes  at 0x006084bc  between DAT_006084b8                   and g_IID_IDirectSound3DBuffer
        1,744 bytes  at 0x01cbba1c  between DAT_01cbba18                   and DAT_01cbc0ec
        1,700 bytes  at 0x004c9120  between switchdataD_004c911c           and switchdataD_004c97c4
        1,696 bytes  at 0x00516dbc  between switchdataD_00516db8           and switchdataD_0051745c
@@ -612,7 +611,7 @@ ALL EXACT GAPS (3570) - size bounds are known precisely
          372 bytes  at 0x005e4860  between DAT_005e485c                   and DAT_005e49d4
          372 bytes  at 0x00603b48  between DAT_00603b44                   and DAT_00603cbc
          368 bytes  at 0x005e3530  between DAT_005e352c                   and g_CPryeTypeInfo
-         368 bytes  at 0x00604370  between DAT_0060436c                   and DAT_006044e0
+         368 bytes  at 0x00604370  between DAT_0060436c                   and g_IID_IKsPropertySet
          364 bytes  at 0x005e1538  between PTR_core_hero.cpp_CHero_setup_ and g_CHeroPlaceholderVTable
          364 bytes  at 0x01d80ef0  between DAT_01d80eec                   and DAT_01d8105c
          364 bytes  at 0x02cebd88  between g_SfxSamples[0].streaming_slot and g_SfxSamples[1].sample_data
@@ -1290,7 +1289,7 @@ ALL EXACT GAPS (3570) - size bounds are known precisely
           32 bytes  at 0x005e76a8  between g_CTawiscaraTypeInfo           and DAT_005e76c8
           32 bytes  at 0x005e79d8  between g_CHecaitomixTypeInfo          and DAT_005e79f8
           32 bytes  at 0x005e8328  between g_CHinoTypeInfo                and DAT_005e8348
-          32 bytes  at 0x0060028c  between g_CLadderClassVersion          and DAT_006002ac
+          32 bytes  at 0x0060028c  between g_CLadderClassVersion          and g_CLevelLoaderPtr
           32 bytes  at 0x00603668  between DAT_00603664                   and DAT_00603688
           32 bytes  at 0x007dff94  between DAT_007dff90                   and DAT_007dffb4
           32 bytes  at 0x01cefd14  between DAT_01cefd10                   and DAT_01cefd34
@@ -1759,13 +1758,9 @@ ALL EXACT GAPS (3570) - size bounds are known precisely
           12 bytes  at 0x006004bc  between DAT_006004b8                   and DAT_006004c8
           12 bytes  at 0x0060168c  between DAT_00601688                   and DAT_00601698
           12 bytes  at 0x006035e8  between g_CNPCClassVersion             and g_CPassengerClassVersion
-          12 bytes  at 0x006044e4  between DAT_006044e0                   and DAT_006044f0
-          12 bytes  at 0x006044f4  between DAT_006044f0                   and DAT_00604500
-          12 bytes  at 0x00604504  between DAT_00604500                   and DAT_00604510
           12 bytes  at 0x00604d84  between DAT_00604d80                   and DAT_00604d90
           12 bytes  at 0x00604da4  between DAT_00604da0                   and DAT_00604db0
           12 bytes  at 0x00604dc4  between DAT_00604dc0                   and DAT_00604dd0
-          12 bytes  at 0x00608bbc  between DAT_00608bb8                   and DAT_00608bc8
           12 bytes  at 0x00609efc  between DAT_00609ef8                   and DAT_00609f08
           12 bytes  at 0x0060a018  between DAT_0060a014                   and PTR_crt_unknown.c_FUN_005af4b0
           12 bytes  at 0x0060b078  between DAT_0060b074                   and DAT_0060b084

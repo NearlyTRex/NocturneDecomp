@@ -85,9 +85,9 @@ void __cdecl CPackedBitmap::applyPalette(CPackedBitmap *this_ptr);
 // Address: 00516d70
 void __cdecl CPackedBitmap::loadByFileExtension(CPackedBitmap *this_ptr,int apply_palette_flag);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516de0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0
 // Address: 00516de0
-void FUN_00516de0(CPackedBitmap *param_1,char *param_2);
+void __cdecl CPackedBitmap::saveToPBMFile(CPackedBitmap *this_ptr,char *filename);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60
 // Address: 00516e60

@@ -10,7 +10,7 @@
 ; float            Stack[0x10]:4   damping
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006235c0
+;   GUID g_DSPROPSETID_EAX_ReverbProperties = 4a4e6fc1-c341-11d1-b73a-444553540000
 ;   undefined4 DAT_02c81da4
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 0057a21a
     PUSH 0x0                            ; 0057a21c
     PUSH 0x0                            ; 0057a21e
-    PUSH 0x6235c0                       ; 0057a220 | DAT_006235c0
+    PUSH 0x6235c0                       ; 0057a220 | g_DSPROPSETID_EAX_ReverbProperties
     PUSH EAX                            ; 0057a225
     CALL dword ptr [ECX + 0x10]         ; 0057a226
     ADD ESP,0x10                        ; 0057a229

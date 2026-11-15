@@ -29,6 +29,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SProjectedVertex.h"
 #include "types/structs/SScrape.h"
 
 // =============================================================================
@@ -42,10 +43,10 @@ SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_004204f0(SScrape *this_ptr);
 void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_00420500(CBoundingBox3D *this_ptr,CVector3f *point);
 CVector3f * __stack2_esi core_box_cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_004205e0(CBoundingBox3D *this_ptr);
-undefined4 core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2);
+int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D *this_ptr,int skip_shadow_test);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundingBox3D *this_ptr);
 float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420dc0(CBoundingBox3D *this_ptr);
-float core_box_cpp_FUN_00420ee0(float *param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_00421570(CBoundingBox3D *this_ptr);
 int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421620(CBoundingBox3D *this_ptr);
@@ -117,7 +118,7 @@ float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425ee0(CBugs *this_pt
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00426030(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426860(CBugs *this_ptr,float delta_time);
-undefined4 core_bugs_cpp_FUN_00426870(CBugs *param_1,int *param_2,float param_3,float *param_4);
+int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426870(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00427a30(CBugs *this_ptr);
@@ -131,8 +132,8 @@ CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags
 SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_00428210(SBug *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00428220(CCameraView *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00428240(CCameraView *this_ptr,uint flags);
-undefined4 core_camview_cpp_FUN_00428290(void);
-undefined4 core_camview_cpp_FUN_004282a0(void);
+int __cdecl core_camview_cpp_CCameraView_getFogValueAtPosition_FUN_00428290(CCameraView *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
+int __cdecl core_camview_cpp_CCameraView_testVisibility_FUN_004282a0(CCameraView *this_ptr,CVector3i *corners);
 void __cdecl core_carved_cpp_staticInit_FUN_004282c0(void);
 float core_carved_cpp_FUN_004282f0(int param_1);
 void core_carved_cpp_FUN_00428390(int param_1);

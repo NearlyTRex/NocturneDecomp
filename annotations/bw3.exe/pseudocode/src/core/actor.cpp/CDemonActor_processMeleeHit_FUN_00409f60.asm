@@ -39,8 +39,8 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
-;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -584,8 +584,8 @@ section .text
     PUSH EAX                            ; 0040a6df
     MOV EDX,dword ptr [0x00603b28]      ; 0040a6e0 | g_CDemonSetPtr
     PUSH EDX                            ; 0040a6e6 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0040a6e7
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0040a6e7
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x39c],EAX     ; 0040a6ec
     FLD float ptr [ESP + 0x39c]         ; 0040a6f3
     ADD ESP,0xc                         ; 0040a6fa
@@ -629,8 +629,8 @@ section .text
     FADD float ptr [0x005b5689]         ; 0040a77c | DAT_005b5689
     PUSH ESI                            ; 0040a782 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x2a8]        ; 0040a783
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0040a78a
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0040a78a
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x39c],EAX     ; 0040a78f
     FLD float ptr [ESP + 0x39c]         ; 0040a796
     ADD ESP,0xc                         ; 0040a79d

@@ -11,10 +11,10 @@
 ;
 ; XREF[36]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b92f1
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5244
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bda5c
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000 at 004b3000
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010 at 004b3017
-;   core_game.cpp_FUN_004b5190 at 004b5244
 ;   core_game.cpp_beginProfileTimer_FUN_004bd4d0 at 004bd4df
 ;   core_game.cpp_endProfileTimer_FUN_004bd4f0 at 004bd507
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050b959

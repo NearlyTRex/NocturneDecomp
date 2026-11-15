@@ -115,9 +115,9 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
+;   core_path.cpp_CPathMap_getDirection_FUN_00511df0
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_00512390
 ;   core_path.cpp_CPathMap_searchGrid_FUN_00514140
-;   core_path.cpp_FUN_00511df0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -644,8 +644,8 @@ section .text
     MOV dword ptr [EDX],0x0             ; 00513103
     PUSH EBP                            ; 00513109
     MOV dword ptr [EDX + 0x8],0x0       ; 0051310a
-    CALL core_path.cpp_FUN_00511df0     ; 00513111
-        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00511df0()
+    CALL core_path.cpp_CPathMap_getDirection_FUN_00511df0 ; 00513111
+        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_00511df0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x1e4],EAX     ; 00513116
     FLD float ptr [ESP + 0x1e4]         ; 0051311d
     ADD ESP,0x14                        ; 00513124
@@ -843,8 +843,8 @@ section .text
     PUSH EAX                            ; 0051338d
     PUSH EBX                            ; 0051338e
     PUSH EBP                            ; 0051338f
-    CALL core_path.cpp_FUN_00511df0     ; 00513390
-        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00511df0()
+    CALL core_path.cpp_CPathMap_getDirection_FUN_00511df0 ; 00513390
+        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_00511df0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x1e4],EAX     ; 00513395
     FLD float ptr [ESP + 0x1e4]         ; 0051339c
     ADD ESP,0x14                        ; 005133a3

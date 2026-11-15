@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 122,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 5,
+    "pseudocode_lines": 53,
+    "suspect_count": 8,
     "suspect_types": [
+      "raw_address_constant",
+      "stack_param",
       "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 178
+    "total_lines": 179
   },
   "cross_references": [],
   "function": {
@@ -44,7 +46,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "00505060",
@@ -181,19 +183,35 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffb8",
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffbc",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffffb8;",
+      "text": "int in_stack_ffffffbc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffc0;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_28,in_stack_ffffffbc);",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(&DAT_00612560->vertex_buffer_ptr[1000].projected_vertex,&CStack_18);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[1000].projected_vertex,(CVector3i *)&iStack_10);",
       "type": "undefined_data"
     },
     {
@@ -205,8 +223,16 @@
       "type": "undefined_data"
     },
     {
+      "description": "Raw hex address 0x5043c9 assigned to bare local `uStack_30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 51,
+      "match": "0x5043c9",
+      "severity": "moderate",
+      "text": "uStack_30 = 0x5043c9;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 20,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

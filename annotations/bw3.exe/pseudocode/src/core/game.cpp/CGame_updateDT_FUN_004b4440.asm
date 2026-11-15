@@ -9,9 +9,9 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[8]:
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b6fe6
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c073a
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bf183
-;   core_game.cpp_FUN_004b6f30 at 004b6fe6
 ;   core_menu.cpp_configureCustomKeys_FUN_004e8f80 at 004e8fc4
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e8653
 ;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9539

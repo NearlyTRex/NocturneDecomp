@@ -26,7 +26,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00472c60
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490
 ;
 ; *****************************************************************************
@@ -75,8 +75,8 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 00535d5a
     PUSH 0x1fc9c68                      ; 00535d5e | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x1c]         ; 00535d63
-    CALL core_dtrace.cpp_FUN_00472c60   ; 00535d67
-        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00472c60()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60 ; 00535d67
+        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x34],EAX      ; 00535d6c
     FLD float ptr [ESP + 0x34]          ; 00535d70
     ADD ESP,0x14                        ; 00535d74

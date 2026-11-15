@@ -14,7 +14,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_pod.cpp_CPod_dismountPod_FUN_0053d490
 ;   engine_pod.cpp_CPod_getPodIndexByFilename_FUN_0053d3f0
-;   engine_pod.cpp_FUN_0053c3b0
+;   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 0053d0e4
     LEA ESI,[ESP + 0x648]               ; 0053d0e5
     LEA EDI,[ESP + 0x960]               ; 0053d0ec
-    CALL engine_pod.cpp_FUN_0053c3b0    ; 0053d0f3
-        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053c3b0()
+    CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0 ; 0053d0f3
+        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 0053d0f8
     LEA ESI,[ESP + 0x648]               ; 0053d0fd
     ADD ESP,0x8                         ; 0053d104
@@ -152,8 +152,8 @@ section .text
     PUSH ESI                            ; 0053d12e
     LEA ESI,[ESP + 0x858]               ; 0053d12f
     LEA EDI,[ESP + 0x750]               ; 0053d136
-    CALL engine_pod.cpp_FUN_0053c3b0    ; 0053d13d
-        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053c3b0()
+    CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0 ; 0053d13d
+        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 0053d142
     LEA ESI,[ESP + 0x858]               ; 0053d147
     ADD ESP,0x8                         ; 0053d14e

@@ -9,9 +9,9 @@
 // Address: 00587c00
 void __cdecl staticInit(void);
 
-// Original: core_waypoint.cpp_FUN_00587c30
+// Original: core_waypoint.cpp_CWayPoint_isReachable_FUN_00587c30
 // Address: 00587c30
-bool FUN_00587c30(float *param_1,CLocation *param_2,int param_3,int param_4);
+int __cdecl CWayPoint::isReachable(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds,int skip_path_check);
 
 // Original: core_waypoint.cpp_factoryFuncWayPoint_FUN_00587d40
 // Address: 00587d40
@@ -37,9 +37,9 @@ int __cdecl CWayPoint::renderOpaque(CWayPoint *this_ptr);
 // Address: 00588230
 void __cdecl CWayPoint::archive(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_FUN_005882d0
+// Original: core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0
 // Address: 005882d0
-int FUN_005882d0(undefined4 param_1,int param_2,undefined4 param_3);
+CWayPoint * __cdecl CWayPoint::findNearestReachable(CWayPoint *this_ptr,CWayPoint *start_waypoint,int skip_path_check);
 
 // Original: core_waypoint.cpp_CWayPoint_dtor_FUN_00588480
 // Address: 00588480

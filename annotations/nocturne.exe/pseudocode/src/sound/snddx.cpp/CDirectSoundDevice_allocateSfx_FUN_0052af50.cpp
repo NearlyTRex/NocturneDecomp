@@ -81,7 +81,7 @@ LAB_0052b04d:
   if (uVar5 == 0) {
     puVar3 = *(uint **)(iVar1 + 0x2dc92a8);
     if (puVar3 != (uint *)0x0) {
-      uVar5 = (**(code **)*puVar3)(puVar3,&DAT_005c3918,iVar1 + 0x2dc9324);
+      uVar5 = (**(code **)*puVar3)(puVar3,&g_IID_IDirectSound3DBuffer,iVar1 + 0x2dc9324);
       if (uVar5 == 0) {
         if (*(int *)(iVar1 + 0x2dc9324) != 0) {
           return iVar7;

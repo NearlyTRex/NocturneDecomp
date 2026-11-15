@@ -63,7 +63,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
            (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) &&
           (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) &&
          (iVar7 = 1 - this_ptr->is_game_active, this_ptr->is_game_active = iVar7, iVar7 != 0)) {
-        core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
+        core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
+                  (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
         g_CScriptPtr->focus_actor_changed = 0;
       }
       if ((this_ptr->is_game_active == 0) &&

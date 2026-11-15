@@ -1,0 +1,24 @@
+// Name: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0
+// Address: 004674b0
+// Address Range: [[004674b0, 0046750f]]
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
+
+{
+  uint uVar1;
+  uint unaff_retaddr;
+  
+  uVar1 = _DAT_0060b270;
+  _DAT_0060b270 = 1;
+  _DAT_0060b274 = 0;
+  cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610(this_ptr,x1,y1,x2,y2);
+  _DAT_0060b270 = uVar1;
+  _DAT_0060b274 = unaff_retaddr;
+  return;
+}

@@ -141,9 +141,9 @@ int __cdecl CDemonActor::testCylinderCollision(CDemonActor *this_ptr,SCollisionR
 // Address: 00408d60
 int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
-// Original: core_actor.cpp_FUN_00408ec0
+// Original: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
 // Address: 00408ec0
-undefined4 * FUN_00408ec0(CDemonActor *param_1,int param_2,uint param_3);
+CBoundingBox3D * __stack3_esi CDemonActor::getWorldBoundingBox(CDemonActor *this_ptr,SCollisionInfo *collision_info,int bounding_box_type,CBoundingBox3D *output_bbox);
 
 // Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
 // Address: 00409170

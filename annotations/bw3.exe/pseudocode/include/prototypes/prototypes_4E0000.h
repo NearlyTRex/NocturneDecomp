@@ -7,6 +7,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CLever.h"
 #include "types/classes/CLightCone.h"
 #include "types/classes/CLightStaff.h"
@@ -26,14 +27,14 @@
 // FUNCTION PROTOTYPES - Range 0x4E0000
 // =============================================================================
 
-void core_level_cpp_FUN_004e0000(int *param_1,undefined4 param_2,int param_3);
+void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_lever_cpp_staticInit_FUN_004e00a0(void);
 CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_004e00d0(void);
 CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_004e00f0(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004e0100(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004e01d0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_process_FUN_004e0250(CLever *this_ptr,float delta_time);
-void core_lever_cpp_FUN_004e04b0(int param_1,float param_2,int param_3);
+void __cdecl core_lever_cpp_CLever_setState_FUN_004e04b0(CLever *this_ptr,float new_state,int silent);
 void __cdecl core_lever_cpp_CLever_activate_FUN_004e0630(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_004e0690(CLever *this_ptr);
 CBoundingBox3D * __stack_esi core_lever_cpp_CLever_getBoundingBox_FUN_004e0730(CLever *this_ptr,CBoundingBox3D *out_box);

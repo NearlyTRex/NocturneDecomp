@@ -37,7 +37,7 @@
 ;   engine_mini3d.cpp_setColor_FUN_00517d50
 ;   shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_0049ce40
 ;   shape_edittool.cpp_draw3DBorder_FUN_0049c500
-;   shape_edittool.cpp_FUN_0049c750
+;   shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750
 ;
 ; *****************************************************************************
 
@@ -225,8 +225,8 @@ section .text
     PUSH EDX                            ; 0049cc7c
     PUSH EDI                            ; 0049cc7d
     PUSH ESI                            ; 0049cc7e
-    CALL shape_edittool.cpp_FUN_0049c750 ; 0049cc7f
-        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049c750()
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750 ; 0049cc7f
+        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750(int left, int top, int right, int bottom, ...)
     MOV ECX,dword ptr [0x01c3f5d0]      ; 0049cc84 | DAT_01c3f5d0
     ADD ESP,0x18                        ; 0049cc8a
     CMP EBX,ECX                         ; 0049cc8d
@@ -266,8 +266,8 @@ section .text
     PUSH EDI                            ; 0049cce4
     MOV ESI,dword ptr [EBX + 0x28]      ; 0049cce5
     PUSH ESI                            ; 0049cce8
-    CALL shape_edittool.cpp_FUN_0049c750 ; 0049cce9
-        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049c750()
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750 ; 0049cce9
+        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 0049ccee
     MOV ESP,EBP                         ; 0049ccf1
     POP EBP                             ; 0049ccf3
@@ -362,8 +362,8 @@ section .text
     PUSH EDX                            ; 0049cdaf
     PUSH EDI                            ; 0049cdb0
     PUSH ESI                            ; 0049cdb1
-    CALL shape_edittool.cpp_FUN_0049c750 ; 0049cdb2
-        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049c750()
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750 ; 0049cdb2
+        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750(int left, int top, int right, int bottom, ...)
     MOV ECX,dword ptr [0x01c3f5d0]      ; 0049cdb7 | DAT_01c3f5d0
     ADD ESP,0x18                        ; 0049cdbd
     CMP EBX,ECX                         ; 0049cdc0
@@ -403,8 +403,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x28]      ; 0049ce0b
     PUSH EDI                            ; 0049ce0e
     PUSH ESI                            ; 0049ce0f
-    CALL shape_edittool.cpp_FUN_0049c750 ; 0049ce10
-        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049c750()
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750 ; 0049ce10
+        ;   XREF to: 0049c750 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 0049ce15
     MOV ESP,EBP                         ; 0049ce18
     POP EBP                             ; 0049ce1a

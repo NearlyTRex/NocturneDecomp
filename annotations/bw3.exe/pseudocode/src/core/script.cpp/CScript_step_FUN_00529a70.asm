@@ -230,7 +230,7 @@
 ;   core_script.cpp_CScript_executeInitSection_FUN_00529920 at 00529996
 ;   core_script.cpp_CScript_process_FUN_00528e00 at 00528eb1
 ;   core_script.cpp_CScript_skipCinematic_FUN_00530530 at 0053058d
-;   core_script.cpp_FUN_00529710 at 0052975d
+;   core_script.cpp_CScript_validateSyntax_FUN_00529710 at 0052975d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005ce01e
@@ -4730,8 +4730,8 @@ section .text
     PUSH EAX                            ; 0052ccb0
     LEA EAX,[ESP + 0x240]               ; 0052ccb1
     PUSH EAX                            ; 0052ccb8
-    CALL engine_ini.cpp_FUN_004d8c30    ; 0052ccb9
-        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c30()
+    CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30 ; 0052ccb9
+        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 0052ccbe
     MOV ECX,dword ptr [ESP + 0x484c]    ; 0052ccc1
     PUSH ECX                            ; 0052ccc8
@@ -7602,8 +7602,8 @@ section .text
     PUSH EAX                            ; 0052efa2
     LEA EAX,[ESP + 0x3c]                ; 0052efa3
     PUSH EAX                            ; 0052efa7
-    CALL engine_ini.cpp_FUN_004d8c90    ; 0052efa8
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 0052efa8
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 0052efad
     PUSH 0x0                            ; 0052efb0
     LEA EAX,[ESP + 0x38]                ; 0052efb2

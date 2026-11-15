@@ -9,9 +9,9 @@
 // Address: 00534da0
 void __cdecl staticInit(void);
 
-// Original: core_setcolid.cpp_FUN_00534ea0
+// Original: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
 // Address: 00534ea0
-CDemonSet * FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CDemonActor *param_7);
+float __cdecl CDemonSet::processCollisionTypes(CDemonSet *this_ptr,CVector3f *position,float radius);
 
 // Original: core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0
 // Address: 00535cf0
@@ -29,13 +29,13 @@ float __cdecl CDemonSet::getVoxelHeight(CDemonSet *this_ptr,CVector3f *world_pos
 // Address: 00535ec0
 int __cdecl CDemonSet::testVoxelRaycast(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 
-// Original: core_setcolid.cpp_FUN_00535ee0
+// Original: core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 // Address: 00535ee0
-float FUN_00535ee0(CDemonSet *param_1,CVector3f *param_2,CVector3f *param_3);
+float __cdecl CDemonSet::raycast(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target);
 
-// Original: core_setcolid.cpp_FUN_005360a0
+// Original: core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005360a0
 // Address: 005360a0
-float FUN_005360a0(CDemonSet *param_1);
+float __cdecl CDemonSet::refinedRaycast(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00536210
 // Address: 00536210

@@ -24,7 +24,7 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 004228d1
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 00422358
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 00430375
-;   core_charactr.cpp_FUN_00434190 at 00434413
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 00434413
 ;   ... and 33 more
 ;
 ; Called Functions:

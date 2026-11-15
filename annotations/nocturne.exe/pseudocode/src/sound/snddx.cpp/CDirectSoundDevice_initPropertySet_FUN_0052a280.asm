@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_Create_temp_secondary_bu_005941a5
-;   undefined4 DAT_005bed10
-;   undefined4 DAT_005c3918
+;   GUID g_IID_IKsPropertySet
+;   GUID g_IID_IDirectSound3DBuffer
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9224
 ;
@@ -96,7 +96,7 @@ section .text
     LEA EDX,[ESP + 0x1bc]               ; 0052a373
     PUSH EDX                            ; 0052a37a
     MOV EAX,dword ptr [ESP + 0x1bc]     ; 0052a37b
-    PUSH 0x5c3918                       ; 0052a382 | DAT_005c3918
+    PUSH 0x5c3918                       ; 0052a382 | g_IID_IDirectSound3DBuffer
     MOV EBX,dword ptr [ESP + 0x1c0]     ; 0052a387
     MOV EAX,dword ptr [EAX]             ; 0052a38e
     PUSH EBX                            ; 0052a390
@@ -145,7 +145,7 @@ section .text
         ;   XREF to: 0052a3a9 (UNCONDITIONAL_JUMP)  ; LAB_0052a3a9
     PUSH 0x2dc9224                      ; 0052a3f2 | DAT_02dc9224
         ;   Label: LAB_0052a3f2
-    PUSH 0x5bed10                       ; 0052a3f7 | DAT_005bed10
+    PUSH 0x5bed10                       ; 0052a3f7 | g_IID_IKsPropertySet
     MOV EAX,dword ptr [ESI]             ; 0052a3fc
     PUSH ESI                            ; 0052a3fe
     CALL dword ptr [EAX]                ; 0052a3ff

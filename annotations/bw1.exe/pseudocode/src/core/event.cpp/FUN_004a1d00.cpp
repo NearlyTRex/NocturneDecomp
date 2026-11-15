@@ -2085,7 +2085,8 @@ LAB_004a2140:
                                                   }
                                                   }
                                                   0x01D2C900->current_set_index = local_a8;
-                                                  core_mission_cpp_FUN_0051b7b0();
+                                                  core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0
+                                                            (this_ptr_00);
                                                   }
                                                   }
                                                   else {
@@ -2695,6 +2696,7 @@ LAB_004a2140:
                                                   }
                                                   }
                                                   else {
+                                                    iVar6 = 1;
                                                     iVar5 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                                                             (0x01C51D80,local_12d5 + 1);
@@ -2705,10 +2707,10 @@ LAB_004a2140:
                                                     uStack_160 = 0x3ff00000;
                                                   }
                                                   local_164 = 0;
-                                                  core_lever_cpp_FUN_004ff3f0
-                                                            (pCVar7,(float)(double)((ulonglong)
-                                                                                    uStack_160 <<
-                                                                                   0x20));
+                                                  core_lever_cpp_CLever_setState_FUN_004ff3f0
+                                                            ((CLever *)pCVar7,
+                                                             (float)(double)((ulonglong)uStack_160
+                                                                            << 0x20),iVar6);
                                                   }
                                                   }
                                                   else {

@@ -23,8 +23,8 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
-;   core_setcolid.cpp_FUN_005562c0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -531,8 +531,8 @@ section .text
     PUSH ESI                            ; 0059aac6
     MOV EAX,[0x00622c18]                ; 0059aac7 | g_CDemonSetPtr
     PUSH EAX                            ; 0059aacc
-    CALL core_setcolid.cpp_FUN_005562c0 ; 0059aacd
-        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005562c0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 ; 0059aacd
+        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x268],EAX     ; 0059aad2
     FLD float ptr [ESP + 0x268]         ; 0059aad9
     ADD ESP,0xc                         ; 0059aae0

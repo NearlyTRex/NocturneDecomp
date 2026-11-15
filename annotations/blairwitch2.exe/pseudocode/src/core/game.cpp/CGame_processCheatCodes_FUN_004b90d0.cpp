@@ -636,8 +636,9 @@ LAB_004b9228:
             pCVar10->actor_name[1] = cVar3;
             pCVar10 = (CDemonActor *)(pCVar10->actor_name + 2);
           } while (cVar3 != '\0');
-          core_inv_cpp_FUN_004dadb0
-                    (*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,this_ptr_00,1,0);
+          core_inv_cpp_CInventory_addItem_FUN_004dadb0
+                    ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),this_ptr_00,1
+                     ,0);
           fVar18 = 5.0;
           pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                              ("You have the skeleton key");
@@ -768,7 +769,8 @@ LAB_004b9228:
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(pCVar11,&DAT_005d7efa);
           iVar5 = _DAT_01cedef4;
           pCVar11->ammo_count = 500;
-          core_inv_cpp_FUN_004dadb0(*(int *)(iVar5 * 4 + 0x1cedee4) + 0x2437c,pCVar11,1,0);
+          core_inv_cpp_CInventory_addItem_FUN_004dadb0
+                    ((CInventory *)(*(int *)(iVar5 * 4 + 0x1cedee4) + 0x2437c),&pCVar11->base,1,0);
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {

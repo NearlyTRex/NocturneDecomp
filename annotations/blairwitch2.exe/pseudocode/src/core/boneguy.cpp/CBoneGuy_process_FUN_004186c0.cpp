@@ -45,8 +45,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
   float fStack_1e8;
   float fStack_1e4;
   float afStack_1e0 [6];
-  uint uStack_1c8;
-  uint auStack_1c4 [7];
+  float fStack_1c8;
+  float afStack_1c4 [3];
+  CQuaternion4f CStack_1b8;
   CVector3f CStack_1a8;
   float fStack_19c;
   float afStack_198 [4];
@@ -174,13 +175,14 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
              *(float *)((int)&CStack_7c + ((uint)bVar16 * -2 + 9) * 4 + 4);
         afStack_cc[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
              *(float *)((int)&CStack_7c + ((uint)bVar16 * -2 + (uint)bVar16 * -2 + 10) * 4 + 4);
-        core_xform_cpp_slerpQuaternion_FUN_00593df0();
-        uStack_1c8 = auStack_1c4[3];
-        auStack_1c4[(uint)bVar16 * -2] = auStack_1c4[(uint)bVar16 * -2 + 4];
-        auStack_1c4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
-             auStack_1c4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 5];
-        (auStack_1c4 + (uint)bVar16 * -2 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
-             (auStack_1c4 + (uint)bVar16 * -2 + (uint)bVar16 * -2 + 5)[(uint)bVar16 * -2 + 1];
+        core_xform_cpp_slerpQuaternion_FUN_00593df0
+                  (pCStack_28,pCStack_2c,this_ptr->recombine_interpolation,&CStack_1b8);
+        fStack_1c8 = CStack_1b8.w;
+        pfVar14 = (float *)((int)&CStack_1b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+        afStack_1c4[(uint)bVar16 * -2] = *(float *)((int)&CStack_1b8 + (uint)bVar16 * -8 + 4);
+        afStack_1c4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] = *pfVar14;
+        (afStack_1c4 + (uint)bVar16 * -2 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
+             pfVar14[(uint)bVar16 * -2 + 1];
         core_xform_cpp_FUN_005940b0();
         fStack_ac = fStack_b8;
         afStack_cc[(uint)bVar16 * -2 + 9] = afStack_cc[(uint)bVar16 * -2 + 6];
@@ -208,8 +210,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
           (pCStack_44->physics_box).orientation.z = fStack_a4;
         }
         iStack_24 = iStack_24 + 1;
-        pCStack_28 = (CQuaternion4f *)((int)(pCStack_28 + 4) + 8);
-        pCStack_2c = (CQuaternion4f *)((int)(pCStack_2c + 4) + 8);
+        pCStack_28 = (CQuaternion4f *)&pCStack_28[4].y;
+        pCStack_2c = (CQuaternion4f *)&pCStack_2c[4].y;
         pCStack_20 = pCStack_20 + 6;
       } while (iStack_24 < this_ptr->box_count);
       return;

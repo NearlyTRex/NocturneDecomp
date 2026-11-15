@@ -37,7 +37,7 @@
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004910b0
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70
-;   core_level.cpp_FUN_004e1480
+;   core_level.cpp_CLevelLoader_show_FUN_004e1480
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00
@@ -48,7 +48,7 @@
 ;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8940
-;   engine_ini.cpp_FUN_004d8b20
+;   engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     XOR ECX,ECX                         ; 004bc915
     PUSH EAX                            ; 004bc917
     MOV dword ptr [ESP + 0x314],ECX     ; 004bc918
-    CALL engine_ini.cpp_FUN_004d8b20    ; 004bc91f
-        ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b20()
+    CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 004bc91f
+        ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bc924
     PUSH 0x5d86be                       ; 004bc927 | = "Coffin Rock"
     MOV EDI,0xffffffff                  ; 004bc92c
@@ -194,10 +194,10 @@ section .text
     PUSH ECX                            ; 004bc9ff
     PUSH 0x0                            ; 004bca00
     PUSH 0xa                            ; 004bca02
-    MOV EDI,dword ptr [0x00617e10]      ; 004bca04 | DAT_00617e10
+    MOV EDI,dword ptr [0x00617e10]      ; 004bca04 | g_CLevelLoaderPtr
     PUSH EDI                            ; 004bca0a
-    CALL core_level.cpp_FUN_004e1480    ; 004bca0b
-        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e1480()
+    CALL core_level.cpp_CLevelLoader_show_FUN_004e1480 ; 004bca0b
+        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004e1480(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
     ADD ESP,0x10                        ; 004bca10
     PUSH ESI                            ; 004bca13
     LEA EAX,[ESP + 0x208]               ; 004bca14

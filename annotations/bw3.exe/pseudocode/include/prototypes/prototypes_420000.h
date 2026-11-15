@@ -23,13 +23,13 @@
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
-#include "types/enums/EFlameType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SChainVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SProjectedVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x420000
@@ -74,7 +74,7 @@ float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00422070(CBugs *this_pt
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_004221c0(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_004229f0(CBugs *this_ptr,float delta_time);
-undefined4 core_bugs_cpp_FUN_00422a00(CBugs *param_1,int *param_2,float param_3,float *param_4);
+int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00422a00(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00423050(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423bc0(CBugs *this_ptr);
@@ -100,8 +100,8 @@ CBurncross * __cdecl core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *
 void core_burncrss_cpp_FUN_00425490(void *param_1);
 CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_004254b0(CCameraView *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_004254d0(CCameraView *this_ptr,uint flags);
-undefined4 core_camview_cpp_FUN_00425520(void);
-undefined4 core_camview_cpp_FUN_00425530(void);
+int __cdecl core_camview_cpp_CCameraView_getFogValueAtPosition_FUN_00425520(CCameraView *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
+int __cdecl core_camview_cpp_CCameraView_testVisibility_FUN_00425530(CCameraView *this_ptr,CVector3i *corners);
 void __cdecl core_carved_cpp_staticInit_FUN_00425550(void);
 float core_carved_cpp_FUN_00425580(int param_1);
 void core_carved_cpp_FUN_00425620(int param_1);
@@ -161,7 +161,7 @@ void core_charactr_cpp_FUN_0042c1e0(int param_1,float param_2);
 void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter *this_ptr,CVector3f *velocity);
 int __cdecl core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter *this_ptr);
-undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2);
+undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5);
 void core_charactr_cpp_FUN_0042d390(int *param_1,int param_2,int param_3);
 void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1);
 void core_charactr_cpp_FUN_0042d860(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
@@ -180,9 +180,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter
 int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
+void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero,float on_fire_time);
 void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042fc90(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_0042fdc0(CDemonActor *param_1,int param_2,int param_3,float param_4);
+void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __stack_esi core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff40(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_0042ff70(CCharacter *this_ptr);

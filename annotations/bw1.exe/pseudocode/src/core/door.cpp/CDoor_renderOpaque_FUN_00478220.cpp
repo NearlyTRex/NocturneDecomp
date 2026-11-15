@@ -13,13 +13,14 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00478220(CDoor *this_ptr)
   int iVar2;
   float *pfVar3;
   uint *puVar4;
+  int unaff_EDI;
   float *pfVar5;
   uint *puVar6;
   byte bVar7;
   CBoundingBox3D *in_stack_ffffff98;
   uint auStack_58 [2];
   float afStack_50 [2];
-  byte auStack_48 [24];
+  CBoundingBox3D CStack_48;
   uint auStack_30 [2];
   CBoundingBox3D CStack_28;
   
@@ -36,7 +37,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00478220(CDoor *this_ptr)
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
     pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
   }
-  iVar2 = core_box_cpp_FUN_004207b0(auStack_48);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_48,unaff_EDI);
   if (iVar2 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);

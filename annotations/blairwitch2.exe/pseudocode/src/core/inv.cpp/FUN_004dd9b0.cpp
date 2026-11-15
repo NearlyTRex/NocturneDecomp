@@ -103,7 +103,7 @@ void core_inv_cpp_FUN_004dd9b0(CInventory *param_1)
   CBitFont *local_38;
   CBitFont *local_34;
   CBitFont *local_30;
-  int local_2c;
+  char *local_2c;
   int local_28;
   int local_24;
   float local_20;
@@ -232,7 +232,8 @@ void core_inv_cpp_FUN_004dd9b0(CInventory *param_1)
     pcVar7 = (char *)((DAT_006141b8 - (int)local_64) - iVar4);
     pCVar5 = (CBitFont *)acStack_708;
 LAB_004ddb97:
-    engine_font_cpp_FUN_004a8df0(pCVar5,pcVar7,iVar8,iVar12,lVar14);
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+              (pCVar5,pcVar7,iVar8,iVar12,(int)lVar14,(int)((ulonglong)lVar14 >> 0x20));
   }
   if (param_1->render_mode_flag == 0) goto LAB_004ddd00;
   iVar8 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004dd0a0
@@ -296,10 +297,10 @@ LAB_004ddc00:
   local_54 = local_60 + (DAT_006141b8 - local_6c);
   local_24 = 0;
   if (0 < iVar8) {
-    iVar8 = 0x1cee3b0;
+    pcVar7 = (char *)0x1cee3b0;
     do {
-      engine_font_cpp_FUN_004a8df0(local_44,iVar8,local_54,iVar12,0xf8);
-      iVar8 = iVar8 + 0x100;
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0(local_44,pcVar7,local_54,iVar12,0xf8,0);
+      pcVar7 = pcVar7 + 0x100;
       local_24 = local_24 + 1;
       iVar12 = iVar12 + local_5c;
     } while (local_24 < local_50);
@@ -324,9 +325,9 @@ LAB_004ddd00:
       _sprintf(acStack_404,"%d x%3.0f%%");
       local_20 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_34,0x58);
       iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_34,acStack_404);
-      engine_font_cpp_FUN_004a8df0
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0
                 (local_34,acStack_404,(DAT_006141b8 - iVar12) - iVar4,
-                 (DAT_006141bc - iVar12) - (int)local_20,0xf8);
+                 (DAT_006141bc - iVar12) - (int)local_20,0xf8,0);
     }
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                        (param_1->selected_items[param_1->current_group],g_CAmmoClassInfo.name_hash);
@@ -334,9 +335,9 @@ LAB_004ddd00:
       _sprintf(acStack_504,"%d x 6");
       local_20 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_34,0x58);
       iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_34,acStack_504);
-      engine_font_cpp_FUN_004a8df0
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0
                 (local_34,acStack_504,(DAT_006141b8 - iVar12) - iVar4,
-                 (DAT_006141bc - iVar12) - (int)local_20,0xf8);
+                 (DAT_006141bc - iVar12) - (int)local_20,0xf8,0);
     }
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                        (param_1->selected_items[param_1->current_group],
@@ -346,9 +347,9 @@ LAB_004ddd00:
       _sprintf(acStack_604,&DAT_005dbafa);
       local_20 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_34,0x58);
       iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_34,acStack_604);
-      engine_font_cpp_FUN_004a8df0
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0
                 (local_34,acStack_604,(DAT_006141b8 - iVar12) - iVar4,
-                 (DAT_006141bc - iVar12) - (int)local_20,0xf8);
+                 (DAT_006141bc - iVar12) - (int)local_20,0xf8,0);
     }
     if (param_1->render_mode_flag != 0) {
       core_inv_cpp_getItemDescription_FUN_004d9f80(param_1->selected_items[param_1->current_group]);
@@ -362,10 +363,10 @@ LAB_004ddd00:
       local_3c = (DAT_006141b8 - local_68) + iVar12;
       local_28 = 0;
       if (0 < (int)local_20) {
-        iVar12 = 0x1ceedb0;
+        pcVar7 = (char *)0x1ceedb0;
         do {
-          engine_font_cpp_FUN_004a8df0(local_48,iVar12,local_3c,iVar8,0xf8);
-          iVar12 = iVar12 + 0x100;
+          engine_font_cpp_CBitFont_drawText_FUN_004a8df0(local_48,pcVar7,local_3c,iVar8,0xf8,0);
+          pcVar7 = pcVar7 + 0x100;
           local_28 = local_28 + 1;
           iVar8 = iVar8 + local_58;
         } while (local_28 < local_4c);
@@ -439,9 +440,9 @@ LAB_004ddd00:
     local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_30,0x58);
     iVar8 = (DAT_006141bc + -4) - local_40 * (int)pCVar5;
     if (((_DAT_01511ccc != local_30) || (_DAT_01d63250 == 0)) && (iVar12 = 0, 0 < (int)local_38)) {
-      local_2c = 0x1cef7b0;
+      local_2c = (char *)0x1cef7b0;
       do {
-        engine_font_cpp_FUN_004a8df0(local_30,local_2c,4,iVar8,0xf8);
+        engine_font_cpp_CBitFont_drawText_FUN_004a8df0(local_30,local_2c,4,iVar8,0xf8,0);
         iVar12 = iVar12 + 1;
         local_2c = local_2c + 0x100;
         iVar8 = iVar8 + local_40;

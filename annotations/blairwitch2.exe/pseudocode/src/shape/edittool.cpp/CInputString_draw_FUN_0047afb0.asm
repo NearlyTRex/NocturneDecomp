@@ -40,7 +40,7 @@
 ;   engine_2d.c_drawLine_FUN_004011a0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
-;   engine_font.cpp_FUN_004a8df0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_mini3d.cpp_fillRect_FUN_004f90d0
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
@@ -111,8 +111,8 @@ section .text
     XOR DL,DL                           ; 0047b06a
     PUSH ESI                            ; 0047b06c
     MOV byte ptr [EAX + 0x1c25f88],DL   ; 0047b06d
-    CALL engine_font.cpp_FUN_004a8df0   ; 0047b073
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047b073
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
         ;   Label: LAB_0047b073
     ADD ESP,0x18                        ; 0047b078
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0047b07b

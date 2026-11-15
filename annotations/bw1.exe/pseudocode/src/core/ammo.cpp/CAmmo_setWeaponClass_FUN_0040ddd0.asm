@@ -12,8 +12,8 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4159
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d2657
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f8443
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8bea
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0 at 004fa535
-;   core_inv.cpp_FUN_004f8b70 at 004f8bea
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040dda4 = 0040de12

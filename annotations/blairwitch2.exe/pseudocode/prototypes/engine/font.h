@@ -41,9 +41,9 @@ void FUN_004a8540(int param_1,float param_2);
 // Address: 004a8560
 void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
 
-// Original: engine_font.cpp_FUN_004a85a0
+// Original: engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0
 // Address: 004a85a0
-void FUN_004a85a0(void);
+void __cdecl CBitFont::loadFromFile(CBitFont *this_ptr,char *font_path);
 
 // Original: engine_font.cpp_CBitFont_free_FUN_004a8850
 // Address: 004a8850
@@ -61,9 +61,9 @@ void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmap_count
 // Address: 004a8d90
 int __cdecl CBitFont::calculateCharacterHeight(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride);
 
-// Original: engine_font.cpp_FUN_004a8df0
+// Original: engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 // Address: 004a8df0
-int FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,undefined4 param_6);
+int __cdecl CBitFont::drawText(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value);
 
 // Original: engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
 // Address: 004a90b0
@@ -161,9 +161,9 @@ undefined4 FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_
 // Address: 004ab2b0
 int FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
 
-// Original: engine_font.cpp_FUN_004ab360
+// Original: engine_font.cpp_CBitFont_wrapText_FUN_004ab360
 // Address: 004ab360
-int FUN_004ab360(void);
+int __cdecl CBitFont::wrapText(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width,int indent_chars,int indent_first_line);
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530
 // Address: 004ab530

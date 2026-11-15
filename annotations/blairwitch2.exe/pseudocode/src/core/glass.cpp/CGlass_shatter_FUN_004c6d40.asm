@@ -98,7 +98,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
-;   core_glass.cpp_FUN_004c5bb0
+;   core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0
 ;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00534480
 ;   core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80
 ;   crt_memory.c___arrinit_FUN_005b7f5f
@@ -353,8 +353,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004c70a7
     PUSH EAX                            ; 004c70ab
     PUSH EBX                            ; 004c70ac
-    CALL core_glass.cpp_FUN_004c5bb0    ; 004c70ad
-        ;   XREF to: 004c5bb0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004c5bb0()
+    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0 ; 004c70ad
+        ;   XREF to: 004c5bb0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
     ADD ESP,0x14                        ; 004c70b2
     PUSH 0x5d9405                       ; 004c70b5 | = "glass-1.wav@2.0"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 004c70ba

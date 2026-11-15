@@ -296,9 +296,9 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00576ab0(CTrash *this_ptr,float d
   (this_ptr->base).location.position.y = fVar2 + fStack_130;
   (this_ptr->base).location.position.z = fVar3 + fStack_12c;
   fStack_14 = fStack_264;
-  fStack_14 = (float)core_setcolid_cpp_FUN_00534ea0
-                               (g_CDemonSetPtr,pCVar1,
-                                this_ptr->collision_radius * (float)_DAT_005ecd46);
+  fStack_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
+                        (g_CDemonSetPtr,&pCVar1->position,
+                         this_ptr->collision_radius * (float)_DAT_005ecd46);
   pCVar12 = SUB84(__BITCAST_UINT64(dVar13),0);
   fStack_2c = fStack_14;
   if (fStack_14 <= (this_ptr->base).location.position.y) {

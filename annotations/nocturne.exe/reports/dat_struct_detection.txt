@@ -2,24 +2,24 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2388
-Filtered out (inside named data): 111
-Immediate constants (not real globals): 72
-Real globals remaining: 2316
+Total DAT_ globals found: 2381
+Filtered out (inside named data): 113
+Immediate constants (not real globals): 67
+Real globals remaining: 2314
 Clusters detected: 223
-DAT_ globals in clusters: 2232
+DAT_ globals in clusters: 2230
 
 Classification summary:
-  unknown              86 clusters
+  unknown              87 clusters
   vector_groups        49 clusters
-  struct               48 clusters
+  struct               47 clusters
   array                25 clusters
   char_array           7 clusters
   byte_blob            5 clusters
   struct_array         3 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (72)
+LIKELY IMMEDIATE CONSTANTS (67)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -90,14 +90,6 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5b84cc                       ; 00484b4b | DAT_005b84cc
     CSpark_render
       PUSH 0x5b84cc                       ; 0048393b | DAT_005b84cc
-
-  DAT_005c3918  value=0x5C3918 (6043928)  refs=3
-    CDirectSoundDevice_allocateSfx
-      PUSH 0x5c3918                       ; 0052b1d4 | DAT_005c3918
-    CDirectSoundDevice_initPropertySet
-      PUSH 0x5c3918                       ; 0052a382 | DAT_005c3918
-    CDirectSoundDevice_setMode
-      PUSH 0x5c3918                       ; 0052a692 | DAT_005c3918
 
   DAT_005acf40  value=0x5ACF40 (5951296)  refs=2
     CBaron_process
@@ -186,12 +178,6 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EBX,0x5c1894                    ; 0056858c | DAT_005c1894
     get_standard_file_handle
       ADD EAX,0x5c1894                    ; 0056fe0c | DAT_005c1894
-
-  DAT_005bed10  value=0x5BED10 (6024464)  refs=2
-    CDirectSoundDevice_initPropertySet
-      PUSH 0x5bed10                       ; 0052a3f7 | DAT_005bed10
-    CDirectSoundDevice_setMode
-      PUSH 0x5bed10                       ; 0052a8cc | DAT_005bed10
 
   DAT_0076595c  value=0x76595C (7756124)  refs=1
     CCharacter_dismemberPartInternal
@@ -352,18 +338,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005a44a0  value=0x5A44A0 (5915808)  refs=1
     CWinFont_dtor
       PUSH 0x5a44a0                       ; 00558035 | DAT_005a44a0
-
-  DAT_005bed30  value=0x5BED30 (6024496)  refs=1
-    CDirectSoundDevice_commitDeferredSettings
-      PUSH 0x5bed30                       ; 0052be30 | DAT_005bed30
-
-  DAT_005bed20  value=0x5BED20 (6024480)  refs=1
-    CDirectSoundDevice_setMode
-      PUSH 0x5bed20                       ; 0052a6f0 | DAT_005bed20
-
-  DAT_005c3908  value=0x5C3908 (6043912)  refs=1
-    getDirectSoundDevice
-      PUSH 0x5c3908                       ; 0052c043 | DAT_005c3908
 
   DAT_80000002  value=0x80000002  refs=1
     getRegistryStringValue
@@ -1953,18 +1927,6 @@ LOW CONFIDENCE (135 clusters)
       0x005b8bd8  DAT_005b8bd8  undefined4
       0x005b8bdc  DAT_005b8bdc  undefined2
 
-  0x005bed40 - 0x005bed78  (5 items, 56 bytes span)
-    Classification: struct
-    Likely type: struct (56 bytes span, 5 fields)
-    Reason: mixed strides, shared by 5 functions
-    Referenced by: 5 functions
-     near: PTR_s_int_005bed60 (void*) at -32
-      0x005bed40  DAT_005bed40  undefined4
-      0x005bed44  DAT_005bed44  undefined4
-      0x005bed70  DAT_005bed70  undefined4
-      0x005bed74  DAT_005bed74  undefined4
-      0x005bed78  DAT_005bed78  undefined4
-
   0x005c17ec - 0x005c18d5  (5 items, 233 bytes span)
     Classification: struct
     Likely type: struct (233 bytes span, 5 fields)
@@ -2209,6 +2171,16 @@ LOW CONFIDENCE (135 clusters)
       0x005be4fc  DAT_005be4fc  undefined4
       0x005be500  DAT_005be500  undefined4
       0x005be504  DAT_005be504  undefined4
+
+  0x005bed70 - 0x005bed78  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+     near: PTR_s_OFF_00594c3d_005bed6c (void*) at +4
+      0x005bed70  DAT_005bed70  undefined4
+      0x005bed74  DAT_005bed74  undefined4
+      0x005bed78  DAT_005bed78  undefined4
 
   0x00761ec4 - 0x00761ecc  (3 items, 8 bytes span)
     Classification: unknown
@@ -2964,7 +2936,7 @@ ISOLATED DAT_ GLOBALS (84 - not part of any cluster)
   ... +34 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (111)
+FILTERED OUT - INSIDE NAMED DATA (113)
 --------------------------------------------------------------------------------
   DAT_005779d5                    inside s_Dangling_corrupt_actor_p_00577987
   DAT_00578e76                    inside s_CBodyPart_00578e6a
@@ -3064,6 +3036,8 @@ FILTERED OUT - INSIDE NAMED DATA (111)
   DAT_005b9385                    inside s_save_SAVE_TMP_005b9370
   DAT_005be230                    inside s_none_005be228
   DAT_005be234                    inside s_none_005be228
+  DAT_005bed40                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_005bed44                    inside g_DSPROPSETID_EAX_ReverbProperties
   DAT_005c1794                    inside g_CharacterClassificationTable
   DAT_005c1795                    inside g_CharacterClassificationTable
   DAT_005c1ab8                    inside s_Stack_Overflow_005c1aa4

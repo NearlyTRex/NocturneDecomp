@@ -7,7 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_cloth.cpp_FUN_0043cb00 at 0043ce32
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00 at 0043ce32
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0054fa00 at 0054fa1a
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0 at 0054eace
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0054bb60 at 0054bb6c

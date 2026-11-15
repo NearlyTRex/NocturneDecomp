@@ -16,8 +16,8 @@
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00496f60 at 0049726f
 ;   core_fire.cpp_CTrail_render_FUN_004a0680 at 004a0931
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ccbe0 at 004ccf70
-;   core_gore.cpp_FUN_004cd690 at 004cd952
-;   core_gore.cpp_FUN_004cdd30 at 004cdf9f
+;   core_gore.cpp_CBloodPool_render_FUN_004cdd30 at 004cdf9f
+;   core_gore.cpp_CBloodSplat_render_FUN_004cd690 at 004cd952
 ;   ... and 3 more
 ;
 ; Referenced Globals:

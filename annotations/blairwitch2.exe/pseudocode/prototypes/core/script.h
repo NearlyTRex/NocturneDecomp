@@ -77,17 +77,17 @@ void __cdecl CScript::renderSubtitles(CScript *this_ptr);
 // Address: 00521af0
 void __cdecl CScript::renderEditor(CScript *this_ptr,int left,int top,int right,int bottom);
 
-// Original: core_script.cpp_FUN_00521cf0
+// Original: core_script.cpp_CScript_loadScript_FUN_00521cf0
 // Address: 00521cf0
-undefined4 FUN_00521cf0(CScript *param_1,char *param_2);
+int __cdecl CScript::loadScript(CScript *this_ptr,char *filename);
 
 // Original: core_script.cpp_CScript_buildParsedLines_FUN_00521ec0
 // Address: 00521ec0
 void __cdecl CScript::buildParsedLines(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_00521ff0
+// Original: core_script.cpp_CScript_validateSyntax_FUN_00521ff0
 // Address: 00521ff0
-undefined * FUN_00521ff0(CScript *param_1,int *param_2,int param_3);
+char * __cdecl CScript::validateSyntax(CScript *this_ptr,int *error_line_out,int min_error_line);
 
 // Original: core_script.cpp_CScript_initRuntime_FUN_00522080
 // Address: 00522080

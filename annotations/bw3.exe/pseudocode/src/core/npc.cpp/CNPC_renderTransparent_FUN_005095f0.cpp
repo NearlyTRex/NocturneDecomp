@@ -21,7 +21,10 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
   uint *puVar6;
   byte bVar7;
   double dVar8;
-  uint auStack_2c [7];
+  CBoundingBox3D *this_ptr_02;
+  int in_stack_ffffffc0;
+  CBoundingBox3D CStack_3c;
+  uint auStack_24 [5];
   
   bVar7 = 0;
   if (((this_ptr->fade_state != -1) || ((this_ptr->base).is_spectral != 0)) ||
@@ -57,14 +60,15 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                 ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-      puVar5 = auStack_2c;
+      this_ptr_02 = &CStack_3c;
+      puVar5 = auStack_24;
       puVar6 = (uint *)&stack0xffffffbc;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar6 = *puVar5;
         puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
         puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
       }
-      iVar3 = core_box_cpp_FUN_0041daf0(&stack0xffffffbc);
+      iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffffc0);
       this_ptr_01 = DAT_005f2afc;
       if (iVar3 != 0) {
         iVar3 = this_ptr->fade_alpha;

@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004cee70 at 004ceed8
+;   core_gore.cpp_CGore_createFootstep_FUN_004cee70 at 004ceed8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4739
@@ -34,7 +34,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00473cd0
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0
 ;
 ; *****************************************************************************
 
@@ -118,8 +118,8 @@ section .text
     FSTP float ptr [ESP + 0x20]         ; 004ce23c
     PUSH 0x203b37c                      ; 004ce240 | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x18]         ; 004ce245
-    CALL core_dtrace.cpp_FUN_00473cd0   ; 004ce249
-        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473cd0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 ; 004ce249
+        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x3c],EAX      ; 004ce24e
     FLD float ptr [ESP + 0x3c]          ; 004ce252
     FMUL double ptr [0x005c4741]        ; 004ce256 | DAT_005c4741

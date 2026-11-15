@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_0044f9c0 at 0044f9e4
+;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0 at 0044f9e4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7727

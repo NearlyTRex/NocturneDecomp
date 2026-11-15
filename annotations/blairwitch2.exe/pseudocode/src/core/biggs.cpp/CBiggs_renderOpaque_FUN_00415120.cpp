@@ -15,11 +15,12 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
   CKeyFramedModel *model_ptr;
   int iVar1;
   uint *puVar2;
+  int unaff_EDI;
   uint *puVar3;
   byte bVar4;
   int iVar5;
   int part_index;
-  uint auStack_38 [6];
+  uint auStack_30 [4];
   uint auStack_20 [6];
   
   bVar4 = 0;
@@ -29,14 +30,15 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_38;
+  puVar2 = auStack_30;
   puVar3 = auStack_20;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041a840(auStack_20);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840
+                    ((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);
   if (iVar1 != 0) {
     iVar5 = this_ptr->morphing;
     (this_ptr->base).base.was_rendered_opaque = 1;

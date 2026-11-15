@@ -38,8 +38,8 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00537c40
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00537a90
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00537ef0
-;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00537df0
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -187,8 +187,8 @@ section .text
     PUSH EAX                            ; 004e3055
     MOV ESI,dword ptr [0x0061b5a8]      ; 004e3056 | g_CDemonSetPtr
     PUSH ESI                            ; 004e305c | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004e305d
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004e305d
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x20c],EAX     ; 004e3062
     FLD float ptr [ESP + 0x20c]         ; 004e3069
     ADD ESP,0xc                         ; 004e3070
@@ -642,8 +642,8 @@ section .text
     PUSH EAX                            ; 004e3623
     MOV EDX,dword ptr [0x0061b5a8]      ; 004e3624 | g_CDemonSetPtr
     PUSH EDX                            ; 004e362a | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004e362b
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004e362b
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV EAX,[0x0061b5a8]                ; 004e3630 | g_CDemonSetPtr
     MOV ECX,dword ptr [EAX + 0x14d144]  ; 004e3635 | g_CDemonSetInstance.collision_actor
     ADD ESP,0xc                         ; 004e363b

@@ -61,13 +61,13 @@ void __cdecl freeInventory(void);
 // Address: 004dad80
 void __cdecl clampWeaponAmmoCount(CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004dadb0
+// Original: core_inv.cpp_CInventory_addItem_FUN_004dadb0
 // Address: 004dadb0
-undefined4 FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3);
+int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message,int unused_flag);
 
-// Original: core_inv.cpp_FUN_004db760
+// Original: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760
 // Address: 004db760
-void FUN_004db760(undefined4 param_1,int param_2);
+void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weapon);
 
 // Original: core_inv.cpp_CInventory_findItemByName_FUN_004db830
 // Address: 004db830

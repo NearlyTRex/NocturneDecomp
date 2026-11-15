@@ -32,8 +32,8 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
-;   core_setcolid.cpp_FUN_00535ee0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -280,8 +280,8 @@ section .text
     PUSH EAX                            ; 004b14b2
     MOV EAX,[0x0061b5a8]                ; 004b14b3 | g_CDemonSetPtr
     PUSH EAX                            ; 004b14b8 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004b14b9
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004b14b9
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x15c],EAX     ; 004b14be
     FLD float ptr [ESP + 0x15c]         ; 004b14c5
     ADD ESP,0xc                         ; 004b14cc

@@ -30,8 +30,8 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_matrix.c_transformToCache_FUN_004e8e60
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
@@ -233,8 +233,8 @@ section .text
     PUSH EAX                            ; 0047ff36
     MOV ECX,dword ptr [0x01c25590]      ; 0047ff37 | DAT_01c25590
     PUSH ECX                            ; 0047ff3d
-    CALL engine_font.cpp_FUN_004a8df0   ; 0047ff3e
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047ff3e
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047ff43
     JMP 0x0047fea2                      ; 0047ff46
         ;   XREF to: 0047fea2 (UNCONDITIONAL_JUMP)  ; LAB_0047fea2

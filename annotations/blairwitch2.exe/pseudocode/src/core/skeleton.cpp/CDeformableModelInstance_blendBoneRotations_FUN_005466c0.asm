@@ -117,7 +117,7 @@ section .text
     PUSH EBP                            ; 0054676d
     LEA ESI,[ESP + 0xc]                 ; 0054676e
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00546772
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 00546777
     MOV EDI,dword ptr [ESP + 0x14]      ; 0054677a
     MOV ESI,ESP                         ; 0054677e

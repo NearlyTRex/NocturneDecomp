@@ -13,8 +13,8 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047e198
 ;   shape_edittool.cpp_FUN_0047a960 at 0047a984
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ef8a
-;   shape_edittool.cpp_FUN_004840f0 at 00484224
 ;   shape_edittool.cpp_draw3DBorder_FUN_00483ea0 at 00484059
+;   shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0 at 00484224
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005ca182

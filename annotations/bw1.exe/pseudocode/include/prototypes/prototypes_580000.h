@@ -6,10 +6,10 @@
 #include "system/basetypes.h"
 #include "system/winuser.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CExternalRenderer.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CSpike.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CStairs.h"
@@ -153,7 +153,7 @@ void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_0058a320(
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_0058a360(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStranger *this_ptr,int arm_side);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(CStranger *this_ptr,int hand_index);
-float * core_stranger_cpp_FUN_0058afe0(CCharacter *param_1,CDemonActor *param_2,int param_3);
+CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0058c260(CStranger *this_ptr,char *class_name);
 void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0058cda0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_0058ce20(CStranger *this_ptr);

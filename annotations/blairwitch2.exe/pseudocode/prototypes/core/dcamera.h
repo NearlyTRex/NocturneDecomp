@@ -141,9 +141,9 @@ void __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
 // Address: 0043dca0
 int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 
-// Original: core_dcamera.cpp_FUN_0043e300
+// Original: core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0043e300
 // Address: 0043e300
-int FUN_0043e300(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
+int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
 // Original: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0043e7e0
 // Address: 0043e7e0
@@ -317,9 +317,9 @@ void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 // Address: 00443570
 void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 
-// Original: core_dcamera.cpp_FUN_00443610
+// Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00443610
 // Address: 00443610
-undefined4 * FUN_00443610(CDemonCamera *param_1);
+CVector3f * __stack_esi CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00443a50
 // Address: 00443a50

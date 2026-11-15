@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1536,
-    "complexity_score": 1474,
+    "complexity_score": 1475,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 719,
+    "pseudocode_lines": 720,
     "suspect_count": 70,
     "suspect_types": [
       "pointer_cast",
@@ -22,7 +22,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 2255
+    "total_lines": 2256
   },
   "cross_references": [],
   "function": {
@@ -85,6 +85,11 @@
       "name": "core_charactr.cpp_CCharacter_dismember_FUN_00427360"
     },
     {
+      "addr": "00428260",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_00428260"
+    },
+    {
       "addr": "00423a60",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60"
@@ -98,11 +103,6 @@
       "addr": "004244b0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0"
-    },
-    {
-      "addr": "00428260",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00428260"
     },
     {
       "addr": "004222d0",
@@ -696,10 +696,10 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 564,
-      "match": "(float *)((int)(&this_ptr->morph + 1) +",
+      "line": 565,
+      "match": "(CDemonActor **)((int)(&this_ptr->morph + 1) +",
       "severity": "moderate",
-      "text": "(this_ptr,*(float *)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0x3e4ccccd,",
+      "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0.2,999999.0,",
       "type": "pointer_cast"
     },
     {
@@ -792,15 +792,15 @@
     },
     {
       "description": "Pointer value `(&this_ptr->morph + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 564,
+      "line": 565,
       "match": "(int)(&this_ptr->morph + 1)",
       "severity": "moderate",
-      "text": "(this_ptr,*(float *)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0x3e4ccccd,",
+      "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0.2,999999.0,",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 687,
+      "line": 688,
       "match": "(int)&CStack_f4",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_f4 + (uint)bVar14 * -8 + 4) = afStack_138[(uint)bVar14 * -2 + 9];",
@@ -808,7 +808,7 @@
     },
     {
       "description": "Pointer value `&CStack_f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 688,
+      "line": 689,
       "match": "(int)&CStack_f4",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_f4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
@@ -888,7 +888,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 693,
+      "line": 694,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -896,7 +896,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 696,
+      "line": 697,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -920,7 +920,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 687,
+      "line": 688,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_f4 + (uint)bVar14 * -8 + 4) = afStack_138[(uint)bVar14 * -2 + 9];",
@@ -928,7 +928,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 688,
+      "line": 689,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_f4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
@@ -1032,7 +1032,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 576,
+      "line": 577,
       "match": "(float *)(iVar6 + 0x20)",
       "severity": "moderate",
       "text": "fStack_160 = *(float *)(iVar6 + 0x20) - (point->position).x;",
@@ -1040,7 +1040,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 577,
+      "line": 578,
       "match": "(float *)(iVar6 + 0x24)",
       "severity": "moderate",
       "text": "afStack_15c[0] = *(float *)(iVar6 + 0x24) - (this_ptr->base).base.base.location.position.y",
@@ -1048,7 +1048,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 579,
+      "line": 580,
       "match": "(float *)(iVar6 + 0x28)",
       "severity": "moderate",
       "text": "afStack_15c[1] = *(float *)(iVar6 + 0x28) - (this_ptr->base).base.base.location.position.z",
@@ -1056,7 +1056,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 638,
+      "line": 639,
       "match": "(float *)(iVar6 + 0x20)",
       "severity": "moderate",
       "text": "fStack_13c = *(float *)(iVar6 + 0x20) - (this_ptr->base).base.base.location.position.x;",
@@ -1064,7 +1064,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 639,
+      "line": 640,
       "match": "(float *)(iVar6 + 0x24)",
       "severity": "moderate",
       "text": "afStack_138[0] = *(float *)(iVar6 + 0x24) - (this_ptr->base).base.base.location.position.y;",
@@ -1072,7 +1072,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 640,
+      "line": 641,
       "match": "(float *)(iVar6 + 0x28)",
       "severity": "moderate",
       "text": "afStack_138[1] = *(float *)(iVar6 + 0x28) - (this_ptr->base).base.base.location.position.z;",

@@ -20,9 +20,9 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   char *pcVar6;
   CIniFile local_324;
   char local_120 [260];
-  uint local_1c;
+  int local_1c;
   char *local_18;
-  uint local_14;
+  int local_14;
   
   p_Var3 = engine_dosio_cpp_getFile_FUN_00460c70
                      (&DAT_005d8690,"blairhero.pod",&DAT_005d867f);
@@ -43,9 +43,9 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   engine_ini_cpp_CIniFile_ctor_FUN_004d8910(&local_324,"system\\nocturne.ini",&DAT_005d869c)
   ;
   local_1c = 0;
-  engine_ini_cpp_FUN_004d8b20(&local_324,"Act1Code",&local_1c);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(&local_324,"Act1Code",&local_1c);
   local_18 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Coffin Rock");
-  local_14 = 0xffffffff;
+  local_14 = -1;
   if (param_2 == 1 || p_Var3 != (_FILE *)0x0) {
     iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                       (g_CEditorToolsPtr,"Select mission to play","world",
@@ -102,7 +102,7 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
     } while (cVar1 != '\0');
     load_flags = 0;
   }
-  core_level_cpp_FUN_004e1480(0x01D03000,10,0,local_14);
+  core_level_cpp_CLevelLoader_show_FUN_004e1480(g_CLevelLoaderPtr,10,0,local_14);
   core_mission_cpp_CDemonMission_load_FUN_004fb490(0x01D182F0,local_120,load_flags);
   iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(0x01D182F0,(CCharacter *)0x0);
   if (iVar4 != 0) {

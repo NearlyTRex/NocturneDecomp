@@ -191,7 +191,7 @@ undefined4 FUN_005b4460(undefined4 param_1);
 
 // Original: wincore_winrun.cpp_FUN_005b44a0
 // Address: 005b44a0
-void FUN_005b44a0(undefined4 param_1);
+void FUN_005b44a0(CIniFile *param_1);
 
 // Original: wincore_winrun.cpp_FUN_005b4650
 // Address: 005b4650

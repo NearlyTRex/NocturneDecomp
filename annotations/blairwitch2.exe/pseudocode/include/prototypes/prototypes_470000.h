@@ -54,7 +54,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004728d0(CDemonRaytra
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00472ab0(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 CVector3f * __stack3_esi core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00472b50(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);
-float core_dtrace_cpp_FUN_00472c60(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
@@ -141,13 +141,13 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditor
 void __cdecl shape_edittool_cpp_CEditorTools_init_FUN_0047b6f0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047b800(char *title,char *message,int color);
 void __cdecl shape_edittool_cpp_CEditorTools_backupScreen_FUN_0047baf0(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_0047bbd0(void);
+void __cdecl shape_edittool_cpp_restoreScreen_FUN_0047bbd0(void);
 void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void);
 void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_0047bda0(CEditorTools *this_ptr,char *format);
-void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools *this_ptr,char *format);
+void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(CEditorTools *this_ptr,char *format);
-void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,char *param_2);
-void shape_edittool_cpp_FUN_0047bf80(void);
+void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
 int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760(CEditorTools *this_ptr,char *format_string);
 int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0047c7f0(CEditorTools *this_ptr,char *format_string);

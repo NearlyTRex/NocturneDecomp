@@ -16,11 +16,11 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0
 ;   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451cf0
+;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044d610
 ;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00451c20
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044e8e0
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30
-;   core_dcamera.cpp_FUN_00454cc0
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00551b90
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60
@@ -255,8 +255,8 @@ section .text
     PUSH 0x1fe37ec                      ; 0054e9e1
     LEA ESI,[ESP + 0x104]               ; 0054e9e6
     LEA EDI,[ESP + 0x11c]               ; 0054e9ed
-    CALL core_dcamera.cpp_FUN_00454cc0  ; 0054e9f4
-        ;   XREF to: 00454cc0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00454cc0()
+    CALL core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0 ; 0054e9f4
+        ;   XREF to: 00454cc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0(CDemonCamera * this_ptr, CVector3f * output_bounds)
     MOV ECX,0x6                         ; 0054e9f9
     LEA ESI,[ESP + 0x104]               ; 0054e9fe
     ADD ESP,0x4                         ; 0054ea05

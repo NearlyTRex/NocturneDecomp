@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
-;   core_lever.cpp_FUN_004e04b0
+;   core_lever.cpp_CLever_setState_FUN_004e04b0
 ;
 ; *****************************************************************************
 
@@ -207,8 +207,8 @@ section .text
         ;   Label: LAB_004e0453
     PUSH dword ptr [EBX + 0x2dc]        ; 004e0455
     PUSH ECX                            ; 004e045b
-    CALL core_lever.cpp_FUN_004e04b0    ; 004e045c
-        ;   XREF to: 004e04b0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_004e04b0()
+    CALL core_lever.cpp_CLever_setState_FUN_004e04b0 ; 004e045c
+        ;   XREF to: 004e04b0 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_004e04b0(CLever * this_ptr, float new_state, int silent)
     ADD ESP,0xc                         ; 004e0461
     JMP 0x004e0387                      ; 004e0464
         ;   XREF to: 004e0387 (UNCONDITIONAL_JUMP)  ; LAB_004e0387
@@ -220,8 +220,8 @@ section .text
     PUSH 0x0                            ; 004e0477
     PUSH dword ptr [ECX + 0x2dc]        ; 004e0479
     PUSH EAX                            ; 004e047f
-    CALL core_lever.cpp_FUN_004e04b0    ; 004e0480
-        ;   XREF to: 004e04b0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_004e04b0()
+    CALL core_lever.cpp_CLever_setState_FUN_004e04b0 ; 004e0480
+        ;   XREF to: 004e04b0 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_004e04b0(CLever * this_ptr, float new_state, int silent)
     ADD ESP,0xc                         ; 004e0485
     INC ESI                             ; 004e0488
     ADD EDI,0x4                         ; 004e0489

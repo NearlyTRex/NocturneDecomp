@@ -11,7 +11,7 @@ int __cdecl FUN_00507350(int angle);
 
 // Original: engine_matrix.c_FUN_00507390
 // Address: 00507390
-int FUN_00507390(uint param_1);
+int __cdecl FUN_00507390(int angle);
 
 // Original: engine_matrix.c_invertTransformMatrix_FUN_005073d0
 // Address: 005073d0

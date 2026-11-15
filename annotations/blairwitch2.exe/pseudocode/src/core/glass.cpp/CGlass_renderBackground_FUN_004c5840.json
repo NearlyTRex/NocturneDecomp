@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 146,
+    "complexity_score": 189,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 5,
+    "pseudocode_lines": 79,
+    "suspect_count": 8,
     "suspect_types": [
       "shadow_pointer_walk",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 230
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -44,7 +46,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "004c5640",
@@ -202,8 +204,32 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0xffffffc4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_01,in_stack_ffffffc8);",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 48,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);",
@@ -211,7 +237,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 70,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_0060b280;",
@@ -219,7 +245,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -227,7 +253,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
+      "line": 75,
       "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);",

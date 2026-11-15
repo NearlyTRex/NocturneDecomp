@@ -7,8 +7,8 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820 at 004fc857
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004fc4c0 at 004fc503
-;   core_mission.cpp_FUN_004fc820 at 004fc857
 ;   core_set.cpp_CDemonSet_processActors_FUN_0052e940 at 0052e9b5
 ;
 ; *****************************************************************************

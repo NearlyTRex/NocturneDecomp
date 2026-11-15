@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b54c6
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b54c6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d59e3
@@ -344,8 +344,8 @@ section .text
     PUSH 0x1caf4a0                      ; 004a5a52 | DAT_01caf4a0
     MOV EBP,dword ptr [0x01511cbc]      ; 004a5a57 | DAT_01511cbc
     PUSH EBP                            ; 004a5a5d
-    CALL engine_font.cpp_FUN_004a8df0   ; 004a5a5e
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004a5a5e
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a5a63
     MOV ESI,dword ptr [ESP + 0x508]     ; 004a5a66
         ;   Label: LAB_004a5a66

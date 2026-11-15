@@ -19,7 +19,7 @@
 ;   core_doc.cpp_FUN_00474400 at 00474807
 ;   core_doc.cpp_FUN_00475920 at 00475a19
 ;   core_scat.cpp_CScat_renderOpaque_FUN_00541bc0 at 00541c1d
-;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 00591358
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0 at 0058b283
 ;   ... and 9 more
 ;
 ; *****************************************************************************

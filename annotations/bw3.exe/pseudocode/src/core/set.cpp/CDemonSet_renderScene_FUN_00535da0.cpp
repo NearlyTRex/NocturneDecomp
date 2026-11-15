@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
   int local_28;
   int local_24;
   CDemonLight *local_20;
-  int local_1c;
+  CDemonLight *local_1c;
   int local_18;
   int local_14;
   
@@ -261,12 +261,12 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
   if (0 < _DAT_0203ad1c) {
     local_40 = 0;
     do {
-      local_1c = *(int *)(local_40 + 0x203ad20);
-      if (*(int *)(local_1c + 0x1cb4) != 0) {
+      local_1c = *(CDemonLight **)(local_40 + 0x203ad20);
+      if (local_1c->light_enabled_flag != 0) {
         pSVar11 = (SProjectedVertex *)0x0;
         pCVar10 = &local_78;
-        pfVar7 = (float *)(local_1c + 8 + (uint)bVar9 * -8);
-        local_6c = *(float *)(local_1c + 4);
+        pfVar7 = (float *)((int)local_1c + (uint)bVar9 * -8 + 8);
+        local_6c = (local_1c->base).base.position.f.x;
         afStack_68[(uint)bVar9 * -2] = *pfVar7;
         afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] = pfVar7[(uint)bVar9 * -2 + 1];
         local_78.x = local_6c;
@@ -276,11 +276,11 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
                   (&g_CDemonCameraInstance,pCVar10,pSVar11);
         iVar5 = 0;
-        core_dlight_cpp_FUN_0045d560();
+        core_dlight_cpp_FUN_0045d560(local_1c);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(this_ptr,iVar5,0);
-            core_dlight_cpp_FUN_0045d560();
+            core_dlight_cpp_FUN_0045d560(local_1c);
             iVar5 = iVar5 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(this_ptr);
           } while (iVar5 < this_ptr->mirror_glass_actor_count);

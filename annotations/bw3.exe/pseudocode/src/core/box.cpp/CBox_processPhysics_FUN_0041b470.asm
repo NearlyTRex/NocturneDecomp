@@ -418,7 +418,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
-;   core_dtrace.cpp_FUN_00473cd0
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0
 ;
 ; *****************************************************************************
 
@@ -469,8 +469,8 @@ section .text
     FSTP float ptr [ESP + 0x184]        ; 0041b4fc
     PUSH 0x203b37c                      ; 0041b503 | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x3f8]        ; 0041b508
-    CALL core_dtrace.cpp_FUN_00473cd0   ; 0041b50f
-        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473cd0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 ; 0041b50f
+        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0041b514
     FLD float ptr [ESP + 0x6a0]         ; 0041b51b
     ADD ESP,0x14                        ; 0041b522
@@ -2358,8 +2358,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x674]     ; 0041d348
     PUSH ECX                            ; 0041d34f
     PUSH 0x203b37c                      ; 0041d350 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00473cd0   ; 0041d355
-        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473cd0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 ; 0041d355
+        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0041d35a
     FLD float ptr [ESP + 0x6a0]         ; 0041d361
     ADD ESP,0x14                        ; 0041d368

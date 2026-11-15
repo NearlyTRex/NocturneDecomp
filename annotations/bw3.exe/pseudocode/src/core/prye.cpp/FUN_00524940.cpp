@@ -612,7 +612,7 @@ LAB_00524bde:
         if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_34,0x21,1);
           if (param_1->action_pending != 0) {
-            shape_edittool_cpp_FUN_0047cee0
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0
                       (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d",param_1->action_pending
                        ,0x172a);
           }

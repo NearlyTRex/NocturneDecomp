@@ -26,17 +26,11 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
   CVector3f *start_position;
   CVector3f *end_position;
   int iVar11;
-  float *pfVar12;
+  float fVar12;
   float fVar13;
-  uint uVar14;
+  int iVar14;
   float fVar15;
-  uint uVar16;
-  int mode;
-  uint uVar17;
-  float fVar18;
-  uint uVar19;
-  int render_alpha;
-  uint uVar20;
+  int iVar16;
   SDamageInfo local_138;
   CVector3f local_fc;
   float local_f0;
@@ -48,7 +42,8 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
   CVector3f local_c0;
   float local_b4 [3];
   float local_a8;
-  float local_a4 [5];
+  float local_a4 [2];
+  CVector3f local_9c;
   CVector3f local_90;
   float local_84;
   float local_80 [4];
@@ -74,37 +69,37 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
   
   bVar9 = 0;
   core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&local_138);
-  fVar18 = this_ptr->lifetime;
+  fVar15 = this_ptr->lifetime;
   pCVar4 = (CRing *)CONCAT22((short)((uint)this_ptr >> 0x10),
-                             (ushort)(0.0 < fVar18) << 8 | (ushort)NAN(fVar18) << 10 |
-                             (ushort)(fVar18 == 0.0) << 0xe);
-  if (0.0 < fVar18) {
-    fVar18 = g_CGamePtr->delta_time_float;
-    local_44 = fVar18;
-    local_2c = fVar18;
-    fVar13 = this_ptr->lifetime - fVar18;
-    this_ptr->lifetime = fVar13;
-    fVar15 = _DAT_005c0908;
+                             (ushort)(0.0 < fVar15) << 8 | (ushort)NAN(fVar15) << 10 |
+                             (ushort)(fVar15 == 0.0) << 0xe);
+  if (0.0 < fVar15) {
+    fVar15 = g_CGamePtr->delta_time_float;
+    local_44 = fVar15;
+    local_2c = fVar15;
+    fVar12 = this_ptr->lifetime - fVar15;
+    this_ptr->lifetime = fVar12;
+    fVar13 = _DAT_005c0908;
     pCVar4 = this_ptr;
-    if (fVar13 < 0.0) {
+    if (fVar12 < 0.0) {
       this_ptr->lifetime = 0.0;
     }
     else if (ABS(this_ptr->lifetime) != 0.0) {
       pCVar1 = this_ptr->points;
       pCVar6 = this_ptr->directions;
       do {
-        local_ec[2] = pCVar6->x * fVar15;
-        local_ec[3] = pCVar6->y * fVar15;
-        local_dc = pCVar6->z * fVar15;
+        local_ec[2] = pCVar6->x * fVar13;
+        local_ec[3] = pCVar6->y * fVar13;
+        local_dc = pCVar6->z * fVar13;
         local_80[2] = local_ec[2];
         local_80[(uint)bVar9 * -2 + 3] = local_ec[(uint)bVar9 * -2 + 3];
         local_80[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              local_ec[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
         pCVar8 = pCVar1 + 1;
-        local_84 = local_80[2] * fVar18;
-        local_80[0] = local_80[3] * fVar18;
-        local_80[1] = local_70 * fVar18;
-        local_f0 = local_80[2] * fVar18;
+        local_84 = local_80[2] * fVar15;
+        local_80[0] = local_80[3] * fVar15;
+        local_80[1] = local_70 * fVar15;
+        local_f0 = local_80[2] * fVar15;
         local_ec[(uint)bVar9 * -2] = local_80[(uint)bVar9 * -2];
         local_ec[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
              local_80[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
@@ -114,17 +109,17 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
         pCVar1->z = pCVar1->z + local_ec[1];
         pCVar1 = pCVar8;
       } while (pCVar6 != (CVector3f *)&this_ptr->segment_timer);
-      fVar18 = this_ptr->directions[0].y;
-      fVar13 = this_ptr->directions[0].x;
-      fVar15 = this_ptr->directions[0].z;
-      fVar18 = SQRT(fVar15 * fVar15 + fVar13 * fVar13 + fVar18 * fVar18) * _DAT_005c0908;
+      fVar15 = this_ptr->directions[0].y;
+      fVar12 = this_ptr->directions[0].x;
+      fVar13 = this_ptr->directions[0].z;
+      fVar15 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar15 * fVar15) * _DAT_005c0908;
       this_ptr->segment_timer = this_ptr->segment_timer - local_2c;
-      this_ptr->radius = fVar18 * local_2c + this_ptr->radius;
-      fVar18 = this_ptr->segment_timer;
+      this_ptr->radius = fVar15 * local_2c + this_ptr->radius;
+      fVar15 = this_ptr->segment_timer;
       pCVar4 = (CRing *)CONCAT22((short)((uint)pCVar8 >> 0x10),
-                                 (ushort)(0.0 < fVar18) << 8 | (ushort)NAN(fVar18) << 10 |
-                                 (ushort)(fVar18 == 0.0) << 0xe);
-      if (0.0 >= fVar18) {
+                                 (ushort)(0.0 < fVar15) << 8 | (ushort)NAN(fVar15) << 10 |
+                                 (ushort)(fVar15 == 0.0) << 0xe);
+      if (0.0 >= fVar15) {
         pCVar1 = this_ptr->points;
         local_28 = 0;
         pCVar6 = this_ptr->points;
@@ -149,34 +144,34 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
             local_90.z = pCVar6->z;
           }
           if (this_ptr->ring_type == 0) {
-            render_alpha = 0x49ffac;
+            iVar16 = 0x49ffac;
             dVar10 = round
                                ((double)(this_ptr->lifetime * (float)_DAT_005c0910 *
                                         (float)_DAT_005c0918));
-            fVar18 = (float)(int)ROUND(dVar10);
-            mode = 0x3d4ccccd;
-            fVar15 = 2.8026e-45;
-            fVar13 = 3.0;
+            fVar15 = (float)(int)ROUND(dVar10);
+            iVar14 = 0x3d4ccccd;
+            fVar13 = 2.8026e-45;
+            fVar12 = 3.0;
             iVar11 = 0x40400000;
             start_position = &local_90;
             end_position = (CVector3f *)0x0;
             this_ptr_00 = &local_c0;
-            local_40 = fVar18;
+            local_40 = fVar15;
           }
           else {
-            render_alpha = 0xffff;
-            fVar18 = 0.05;
-            mode = 5;
-            fVar15 = 2.0;
+            iVar16 = 0xffff;
+            fVar15 = 0.05;
+            iVar14 = 5;
             fVar13 = 2.0;
+            fVar12 = 2.0;
             iVar11 = 0;
             end_position = &local_90;
             start_position = &local_c0;
             this_ptr_00 = 0x01C73654;
           }
           core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
-                    ((CFireEffect *)this_ptr_00,start_position,end_position,iVar11,fVar13,fVar15,
-                     mode,fVar18,render_alpha);
+                    ((CFireEffect *)this_ptr_00,start_position,end_position,iVar11,fVar12,fVar13,
+                     iVar14,fVar15,iVar16);
           local_28 = local_28 + 1;
           pCVar8 = pCVar8 + 1;
         } while (local_28 < 0x10);
@@ -208,12 +203,12 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
               local_b4[0] = local_d8[0];
               local_b4[2] = local_d0;
             }
-            fVar18 = SQRT(local_b4[2] * local_b4[2] + local_b4[0] * local_b4[0]);
+            fVar15 = SQRT(local_b4[2] * local_b4[2] + local_b4[0] * local_b4[0]);
             iVar11 = 0;
             local_b4[1] = 0.0;
             local_4c = (double)this_ptr->radius;
-            local_54 = (double)fVar18;
-            if ((this_ptr->radius + (float)_DAT_005c0928 < fVar18) && (local_54 < local_4c + 1.0)) {
+            local_54 = (double)fVar15;
+            if ((this_ptr->radius + (float)_DAT_005c0928 < fVar15) && (local_54 < local_4c + 1.0)) {
               pCVar4 = this_ptr;
               if (0 < this_ptr->hit_count) {
                 do {
@@ -230,21 +225,21 @@ int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr)
                        (float)_DAT_005c0930;
                   (*(((local_24->base).vtable._uc)->_uc).processDamage)(local_24,&local_138);
                   if (pCVar2->gun_flame_ignitable != 0) {
-                    uVar20 = 0x40a00000;
-                    uVar19 = 1;
+                    fVar12 = 5.0;
+                    iVar16 = 1;
                     local_a8 = (pCVar2->base).location.position.x;
-                    uVar17 = 0x3f800000;
-                    uVar16 = 0;
-                    uVar14 = 0;
+                    fVar15 = 1.0;
+                    iVar14 = 0;
+                    iVar11 = 0;
                     local_a4[1] = (pCVar2->base).location.position.z;
-                    pfVar12 = local_a4 + 2;
+                    pCVar1 = &local_9c;
                     local_a4[0] = (pCVar2->base).location.position.y + _DAT_005c0938;
-                    local_a4[2] = local_a8;
-                    local_a4[(uint)bVar9 * -2 + 3] = local_a4[(uint)bVar9 * -2];
-                    local_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+                    local_9c.x = local_a8;
+                    *(float *)((int)&local_9c + (uint)bVar9 * -8 + 4) = local_a4[(uint)bVar9 * -2];
+                    *(float *)((int)&local_9c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
                          local_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-                    core_charactr_cpp_FUN_0042fbd0
-                              (pCVar2,pfVar12,uVar14,uVar16,uVar17,uVar19,uVar20);
+                    core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
+                              (pCVar2,pCVar1,iVar11,iVar14,fVar15,iVar16,fVar12);
                   }
                 }
                 else if ((this_ptr->ring_type == 1) &&

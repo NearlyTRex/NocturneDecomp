@@ -16,8 +16,8 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041b700
-;   core_box.cpp_FUN_0041a840
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
@@ -53,8 +53,8 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 00584a88
     PUSH EAX                            ; 00584a8c
     MOVSD.REP ES:EDI,ESI                ; 00584a8d
-    CALL core_box.cpp_FUN_0041a840      ; 00584a8f
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 00584a8f
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00584a94
     MOV EBX,dword ptr [ESP + 0xc4]      ; 00584a97
     MOV dword ptr [ESP + 0xa8],EAX      ; 00584a9e

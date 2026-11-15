@@ -12,11 +12,11 @@
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
+      "suspect_float",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
@@ -74,14 +74,14 @@
       "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0"
     },
     {
+      "addr": "00504ee0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0"
+    },
+    {
       "addr": "005062a0",
       "is_variadic": false,
       "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0"
-    },
-    {
-      "addr": "00504ee0",
-      "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_00504ee0"
     },
     {
       "addr": "005b5760",
@@ -268,15 +268,15 @@
       "line": 26,
       "match": "afStackY_10a0",
       "severity": "moderate",
-      "text": "float afStackY_10a0 [923];",
+      "text": "float afStackY_10a0 [930];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_fffffdf4",
+      "match": "in_stack_fffffe10",
       "severity": "moderate",
-      "text": "CVector3f *in_stack_fffffdf4;",
+      "text": "CVector3f *in_stack_fffffe10;",
       "type": "stack_param"
     },
     {
@@ -338,10 +338,18 @@
     {
       "description": "Unresolved stack parameter",
       "line": 172,
-      "match": "in_stack_fffffdf4",
+      "match": "in_stack_fffffe10",
       "severity": "moderate",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&CStack_1dc,in_stack_fffffdf4);",
+      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&CStack_1dc,in_stack_fffffe10);",
       "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 201,
+      "match": "7.370054e-39",
+      "severity": "mild",
+      "text": "fStack_204 = 7.370054e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
@@ -350,6 +358,14 @@
       "severity": "moderate",
       "text": "pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 205,
+      "match": "7.370121e-39",
+      "severity": "mild",
+      "text": "fStack_204 = 7.370121e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -470,22 +486,6 @@
       "severity": "moderate",
       "text": "pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x5040b6 assigned to bare local `uStack_220`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_220` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 201,
-      "match": "0x5040b6",
-      "severity": "moderate",
-      "text": "uStack_220 = 0x5040b6;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x5040e6 assigned to bare local `uStack_220`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_220` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 205,
-      "match": "0x5040e6",
-      "severity": "moderate",
-      "text": "uStack_220 = 0x5040e6;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

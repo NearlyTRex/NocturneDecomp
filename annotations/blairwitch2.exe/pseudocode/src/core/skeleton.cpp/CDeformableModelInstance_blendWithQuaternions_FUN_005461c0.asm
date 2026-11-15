@@ -124,7 +124,7 @@ section .text
     PUSH EDX                            ; 005462a8
     LEA ESI,[ESP + 0xc]                 ; 005462a9
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 005462ad
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 005462b2
     MOV EDI,dword ptr [ESP + 0xdc]      ; 005462b5
     MOV ESI,ESP                         ; 005462bc
@@ -286,7 +286,7 @@ section .text
     PUSH ECX                            ; 0054652a
     LEA ESI,[ESP + 0x6c]                ; 0054652b
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 0054652f
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 00546534
     MOV EDI,dword ptr [ESP + 0xec]      ; 00546537
     LEA ESI,[ESP + 0x60]                ; 0054653e

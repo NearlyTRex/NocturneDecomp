@@ -26,6 +26,8 @@
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFog.h"
@@ -78,7 +80,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00454a10(CDe
 void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(SFog *fog,_FILE *file_handle,int file_version);
 void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00454b70(SFog *fog,_FILE *file_handle);
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00454c20(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
-undefined4 * core_dcamera_cpp_FUN_00454cc0(CDemonCamera *param_1);
+CVector3f * __stack_esi core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0(CDemonCamera *this_ptr,CVector3f *output_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00455100(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00455150(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004551a0(CDemonCamera *this_ptr,CVector3i *corners);
@@ -144,7 +146,7 @@ CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0045d
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0045d1f0(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0045d260(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_process_FUN_0045d2a0(CActorDestination *this_ptr,float delta_time);
-undefined4 core_dest_cpp_FUN_0045d4b0(void);
+ECollisionType __cdecl core_dest_cpp_CActorDestination_getCollisionType_FUN_0045d4b0(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0045d4c0(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0045d550(CActorDestination *this_ptr,CDemonActor *actor);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0045d5b0(CActorDestination *this_ptr);

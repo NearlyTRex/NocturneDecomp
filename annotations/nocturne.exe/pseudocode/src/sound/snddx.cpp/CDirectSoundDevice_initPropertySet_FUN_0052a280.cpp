@@ -51,14 +51,14 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDi
   piStack_1e0 = _DAT_02dc9214;
   error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();
   if (error_code == 0) {
-    (**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);
+    (**(code **)*puStack_28)(puStack_28,&g_IID_IDirectSound3DBuffer,&uStack_24);
     if (puStack_30 == (uint *)0x0) {
       if (piStack_34 != (int *)0x0) {
         (**(code **)(*piStack_34 + 8))(piStack_34);
       }
     }
     else {
-      (**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);
+      (**(code **)*puStack_30)(puStack_30,&g_IID_IKsPropertySet,&DAT_02dc9224);
       if (piStack_40 != (int *)0x0) {
         (**(code **)(*piStack_40 + 8))(piStack_40);
         piStack_40 = (int *)0x0;

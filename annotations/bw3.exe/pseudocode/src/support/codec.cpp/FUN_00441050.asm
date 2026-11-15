@@ -10,7 +10,7 @@
 ; int *            Stack[0x10]:4   bytes_remaining
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_004413f0 at 0044145f
+;   support_codec.cpp_CLZWDecompress_finalize_FUN_004413f0 at 0044145f
 ;
 ; *****************************************************************************
 

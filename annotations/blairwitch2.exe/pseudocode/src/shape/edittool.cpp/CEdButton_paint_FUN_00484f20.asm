@@ -30,12 +30,12 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40
 ;   engine_2d.c_drawHLine_FUN_00402f30
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530
 ;   engine_font.cpp_CBitFont_getCharYOffset_FUN_004ab590
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_mini3d.cpp_drawHLine_FUN_004f9390
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
 ;   shape_edittool.cpp_draw3DBorder_FUN_00483ea0
@@ -118,8 +118,8 @@ section .text
     MOV dword ptr [ESP + 0xdc],EDX      ; 00484fd1
     MOV EDX,dword ptr [0x01c25590]      ; 00484fd8 | DAT_01c25590
     PUSH EDX                            ; 00484fde
-    CALL engine_font.cpp_FUN_004a8df0   ; 00484fdf
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 00484fdf
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c263f8]                ; 00484fe4 | DAT_01c263f8
     MOV ECX,dword ptr [0x01c25f84]      ; 00484fe9 | DAT_01c25f84
     ADD ESP,0x18                        ; 00484fef

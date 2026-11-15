@@ -29,7 +29,8 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00555e30(CDemonSet *this_p
   _fscanf(file_handle,"%*[^\n]\n");
   _fscanf(file_handle,&DAT_005f0cbf);
   if (this_ptr->camera_count != local_20) {
-    shape_edittool_cpp_FUN_00494340(g_CEditorToolsPtr,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
+              (g_CEditorToolsPtr,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
   }
   iVar1 = 0;
   pCVar2 = this_ptr;

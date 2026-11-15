@@ -19,13 +19,13 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
   int iVar5;
   char *pcVar6;
   char *pcVar7;
-  uint local_24;
+  int local_24;
   int local_20;
   char **local_1c;
   
   this_ptr = _DAT_0152d244;
   if (title != (char *)0x0) {
-    engine_font_cpp_FUN_004c1dd0(_DAT_0152d244,title,400,y_position,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(_DAT_0152d244,title,400,y_position,7,0);
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
@@ -52,14 +52,13 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
             iVar2 = iVar2 + 1;
-            engine_font_cpp_FUN_004c1dd0
-                      (this_ptr,*local_1c,(uVar3 & 3) + 0x18e,((uVar4 & 3) - 2) + y_position,7,
-                       0xffffffff);
+            engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+                      (this_ptr,*local_1c,(uVar3 & 3) + 0x18e,((uVar4 & 3) - 2) + y_position,7,-1);
           } while (iVar2 < 5);
         }
       }
       engine_3d_c_setRenderAlpha_FUN_00406bd0(48000);
-      engine_font_cpp_FUN_004c1dd0(this_ptr,*local_1c,400,y_position,local_24,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(this_ptr,*local_1c,400,y_position,local_24,-1);
       y_position = y_position + iVar1;
       if (title == (char *)0x0) {
         y_position = y_position + iVar1;
@@ -83,9 +82,10 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
                       (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.";
   }
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,pcVar7,0x26b - iVar1,0x1df - iVar2,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (_DAT_0152d248,pcVar7,0x26b - iVar1,0x1df - iVar2,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0x8000);
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,&DAT_005e7aac,0x206,399,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(_DAT_0152d248,&DAT_005e7aac,0x206,399,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {

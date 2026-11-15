@@ -22,6 +22,8 @@
 #include "types/classes/CPendulum.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
+#include "types/classes/CPodDependencyRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CScat.h"
@@ -90,7 +92,7 @@ void core_passngr_cpp_FUN_00511b90(void);
 void __cdecl core_path_cpp_queuePop_FUN_00511c10(int *out_x,int *out_cost,int *out_z);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00511c90(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_00511d10(CPathMap *this_ptr,uint flags);
-float core_path_cpp_FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5);
+float __cdecl core_path_cpp_CPathMap_getDirection_FUN_00511df0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position);
 void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_005121a0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0(CPathMap *this_ptr,int grid_z,int grid_x,int current_height);
 int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00512390(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height);
@@ -148,7 +150,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_00516d60(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_00516d70(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,char *param_2);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0(CPackedBitmap *this_ptr,char *filename);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00516f30(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00517130(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
@@ -162,7 +164,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00517640(CPackedBit
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_00517670(CPackedBitmapSet *this_ptr,int bitmap_count);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 void cockpit_pkbmpset_cpp_FUN_005177e0(void);
-void cockpit_pkbmpset_cpp_FUN_00517a60(CPackedBitmapSet *param_1,int param_2,int param_3);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00517a60(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 void cockpit_pkbmpset_cpp_FUN_00517db0(void);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40(CPackedBitmapSet *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90(CPackedBitmapSet *this_ptr,char *palette_data);
@@ -198,12 +200,12 @@ void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_0051a8f0(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_0051a990(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0051aa00(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_ptr);
-void engine_pod_cpp_FUN_0051ad50(int param_1,int param_2);
-void engine_pod_cpp_FUN_0051ae70(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_0051ad50(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
+CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_0051ae70(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
 uint engine_pod_cpp_FUN_0051af80(int param_1,int param_2);
 CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_0051b080(CPod *this_ptr);
 CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0051b0b0(CPod *this_ptr,uint flags);
-void engine_pod_cpp_FUN_0051b110(int *param_1,char *param_2);
+void __cdecl engine_pod_cpp_CPod_mount_FUN_0051b110(CPod *this_ptr,char *pod_filename);
 void __cdecl engine_pod_cpp_CPod_remount_FUN_0051b1e0(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_0051b280(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_0051b320(CPod *this_ptr);

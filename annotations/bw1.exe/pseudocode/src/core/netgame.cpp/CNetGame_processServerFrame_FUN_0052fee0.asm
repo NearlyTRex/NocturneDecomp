@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce615
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf99a
-;   core_game.cpp_FUN_004ce580 at 004ce615
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005eb62a

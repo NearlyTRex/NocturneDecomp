@@ -20,8 +20,8 @@
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_0053be30
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0053b1a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0053b210
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250
 ;   engine_pod.cpp_crc32UpdateByte_FUN_0053b000
-;   engine_pod.cpp_FUN_0053b250
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 0053cc9a
     LEA EAX,[ESP + 0x8]                 ; 0053cc9b
     PUSH EAX                            ; 0053cc9f
-    CALL engine_pod.cpp_FUN_0053b250    ; 0053cca0
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053b250()
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 ; 0053cca0
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile * this_ptr, char * pod_filename, char * out_error_message)
     ADD ESP,0xc                         ; 0053cca5
     TEST EAX,EAX                        ; 0053cca8
     JNZ 0x0053ccd0                      ; 0053ccaa

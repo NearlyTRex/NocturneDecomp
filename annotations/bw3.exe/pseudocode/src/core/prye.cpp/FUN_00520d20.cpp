@@ -13,7 +13,7 @@ void core_prye_cpp_FUN_00520d20(int param_1)
   
   if (*(int *)(param_1 + 0x20b98) != 0) {
     if (*(int *)(param_1 + 0x20b64) != 4) {
-      shape_edittool_cpp_FUN_0047cee0
+      shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0
                 (g_CEditorToolsPtr,"?actionPending = %d\nprye.cpp line %d" + 1,
                  *(int *)(param_1 + 0x20b64),0x108a);
     }

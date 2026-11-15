@@ -18,8 +18,10 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   uint *puVar3;
   byte bVar4;
   double dVar5;
-  uint auStack_58 [6];
-  uint auStack_40 [8];
+  CBoundingBox3D *this_ptr_02;
+  int in_stack_ffffffac;
+  CBoundingBox3D CStack_50;
+  uint auStack_38 [6];
   int iStack_20;
   float fStack_18;
   float fStack_14;
@@ -29,14 +31,12 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   fStack_18 = ((float)_DAT_005d9691 - (float)this_ptr->fade_out_opacity) * (float)_DAT_005d9699 *
               (float)_DAT_005d96a1;
   if (this_ptr->fading_in == 0) {
-    auStack_58[0] = 0x5979db;
     dVar5 = round
                       ((double)((fStack_14 * this_ptr->fade_timer) / this_ptr->max_fade_time));
     iStack_20 = (int)ROUND(dVar5);
     this_ptr->render_alpha = 0x10000 - iStack_20;
   }
   else {
-    auStack_58[0] = 0x597a57;
     dVar5 = round
                       ((double)((fStack_14 * this_ptr->fade_timer) / this_ptr->max_fade_time +
                                fStack_18));
@@ -45,14 +45,15 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_40;
-  puVar3 = auStack_58;
+  this_ptr_02 = &CStack_50;
+  puVar2 = auStack_38;
+  puVar3 = (uint *)&stack0xffffffa8;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041daf0(auStack_58);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffffac);
   this_ptr_01 = DAT_005f2afc;
   if (iVar1 != 0) {
     iVar1 = this_ptr->render_alpha;

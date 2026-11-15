@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 0040dfe6
     LEA ESI,[EBP + -0x3a]               ; 0040dfe7
     LEA EDI,[EBP + -0x2a]               ; 0040dfea
-    CALL core_xform.cpp_FUN_00594380    ; 0040dfed
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 0040dfed
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x3a]               ; 0040dff2
     LEA EAX,[EBP + -0x2a]               ; 0040dff5
     ADD ESP,0x4                         ; 0040dff8

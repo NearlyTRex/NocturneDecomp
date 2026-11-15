@@ -144,7 +144,7 @@ void core_inv_cpp_FUN_004fae10(CInventory *param_1)
     _sprintf(acStack_6e8,&DAT_005e6894);
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_24,0x58);
     iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_24,acStack_6e8);
-    engine_font_cpp_FUN_004c1dd0
+    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
               (local_24,acStack_6e8,(DAT_0061b498 - iVar9) - iVar5,
                (DAT_0061b49c - (int)local_50) - iVar4,0xf8,0);
   }
@@ -157,8 +157,8 @@ void core_inv_cpp_FUN_004fae10(CInventory *param_1)
     _sprintf((char *)local_8e8,&DAT_005e6899);
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_24,0x58);
     iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_24,(char *)local_8e8);
-    engine_font_cpp_FUN_004c1dd0
-              (local_24,local_8e8,(DAT_0061b498 - iVar9) - iVar5,
+    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+              (local_24,(char *)local_8e8,(DAT_0061b498 - iVar9) - iVar5,
                (DAT_0061b49c - (int)local_50) - iVar4,0xf8,0);
   }
   iVar9 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004fa540
@@ -216,9 +216,9 @@ void core_inv_cpp_FUN_004fae10(CInventory *param_1)
       iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_20,0x58);
       pCVar6 = local_20;
       iVar9 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_20,acStack_5e4);
-      engine_font_cpp_FUN_004c1dd0
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
                 (pCVar6,acStack_5e4,(DAT_0061b498 - local_4c) - iVar9,
-                 (DAT_0061b49c - local_4c) - iVar8,0xf8);
+                 (DAT_0061b49c - local_4c) - iVar8,0xf8,0);
     }
   }
   if (param_1->render_mode_flag == 0) goto LAB_004fb230;
@@ -277,11 +277,11 @@ LAB_004fb13d:
   local_34 = local_4c + (DAT_0061b498 - local_58);
   iVar4 = 0;
   if (0 < iVar8) {
-    iVar8 = 0x1d06f78;
+    pcVar13 = (char *)0x1d06f78;
     do {
       iVar4 = iVar4 + 1;
-      engine_font_cpp_FUN_004c1dd0(local_30,iVar8,local_34,iVar9,0xf8);
-      iVar8 = iVar8 + 0x100;
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(local_30,pcVar13,local_34,iVar9,0xf8,0);
+      pcVar13 = pcVar13 + 0x100;
       iVar9 = iVar9 + local_40;
     } while (iVar4 < local_38);
   }
@@ -303,9 +303,9 @@ LAB_004fb230:
       _sprintf(acStack_4e4,"%d x%3.0f%%");
       local_18 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_20,0x58);
       iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_20,acStack_4e4);
-      engine_font_cpp_FUN_004c1dd0
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
                 (local_20,acStack_4e4,(DAT_0061b498 - iVar4) - iVar5,
-                 (DAT_0061b49c - iVar4) - (int)local_18,0xf8);
+                 (DAT_0061b49c - iVar4) - (int)local_18,0xf8,0);
     }
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
                        (param_1->selected_item,g_CFilmReelClassInfo.name_hash);
@@ -314,9 +314,9 @@ LAB_004fb230:
       _sprintf(acStack_7e4,&DAT_005e6909);
       local_18 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_20,0x58);
       iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_20,acStack_7e4);
-      engine_font_cpp_FUN_004c1dd0
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
                 (local_20,acStack_7e4,(DAT_0061b498 - iVar4) - iVar5,
-                 (DAT_0061b49c - iVar4) - (int)local_18,0xf8);
+                 (DAT_0061b49c - iVar4) - (int)local_18,0xf8,0);
     }
     if (param_1->render_mode_flag != 0) {
       core_inv_cpp_getItemDescription_FUN_004f6350(param_1->selected_item);
@@ -330,11 +330,11 @@ LAB_004fb230:
       local_2c = (DAT_0061b498 - iVar9) + iVar4;
       iVar9 = 0;
       if (0 < (int)local_18) {
-        iVar4 = 0x1d07978;
+        pcVar13 = (char *)0x1d07978;
         do {
           iVar9 = iVar9 + 1;
-          engine_font_cpp_FUN_004c1dd0(local_44,iVar4,local_2c,iVar8,0xf8);
-          iVar4 = iVar4 + 0x100;
+          engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(local_44,pcVar13,local_2c,iVar8,0xf8,0);
+          pcVar13 = pcVar13 + 0x100;
           iVar8 = iVar8 + local_3c;
         } while (iVar9 < local_28);
       }
@@ -395,11 +395,11 @@ LAB_004fb230:
     local_48 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
     iVar8 = (DAT_0061b49c + -4) - local_48 * (int)pCVar6;
     if (((_DAT_0152d250 != local_1c) || (_DAT_01d7f1b8 == 0)) && (iVar9 = 0, 0 < (int)local_24)) {
-      iVar4 = 0x1d08378;
+      pcVar13 = (char *)0x1d08378;
       do {
         iVar9 = iVar9 + 1;
-        engine_font_cpp_FUN_004c1dd0(local_1c,iVar4,4,iVar8,0xf8);
-        iVar4 = iVar4 + 0x100;
+        engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(local_1c,pcVar13,4,iVar8,0xf8,0);
+        pcVar13 = pcVar13 + 0x100;
         iVar8 = iVar8 + local_48;
       } while (iVar9 < (int)local_24);
     }

@@ -62,10 +62,10 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408f00
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
-;   core_actor.cpp_FUN_00408f00
 ;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910
 ;   core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
@@ -298,8 +298,8 @@ section .text
     PUSH EBX                            ; 0053e134
     LEA ESI,[ESP + 0x248]               ; 0053e135
     LEA EDI,[ESP + 0x218]               ; 0053e13c
-    CALL core_actor.cpp_FUN_00408f00    ; 0053e143
-        ;   XREF to: 00408f00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408f00()
+    CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408f00 ; 0053e143
+        ;   XREF to: 00408f00 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408f00(CDemonActor * this_ptr, SCollisionInfo * collision_info, int bounding_box_type, CBoundingBox3D * output_bbox)
     ADD ESP,0xc                         ; 0053e148
     LEA EAX,[ESP + 0x20c]               ; 0053e14b
     MOV ECX,0x6                         ; 0053e152

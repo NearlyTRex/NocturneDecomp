@@ -12,7 +12,7 @@
 ; int *            Stack[0x18]:4   out_available_memory
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004cec75
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cec75
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000

@@ -30,8 +30,8 @@ void shape_edittool_cpp_FUN_00494500(void)
   shape_edittool_cpp_FUN_00496ee0(in_stack_00000004);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
-  engine_font_cpp_FUN_004c1dd0
-            (_DAT_01c3eb50,acStack_414,_DAT_01c4f008,_DAT_01c4f00c,_DAT_01c3f578,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (_DAT_01c3eb50,acStack_414,_DAT_01c4f008,_DAT_01c4f00c,_DAT_01c3f578,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   return;
 }

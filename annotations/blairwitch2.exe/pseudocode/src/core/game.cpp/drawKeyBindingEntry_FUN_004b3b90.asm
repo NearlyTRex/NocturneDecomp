@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_font.cpp_FUN_004a8df0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 004b3bdb
     MOV EDI,dword ptr [0x01511cc0]      ; 004b3bdc | DAT_01511cc0
     PUSH EDI                            ; 004b3be2
-    CALL engine_font.cpp_FUN_004a8df0   ; 004b3be3
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004b3be3
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01cb80f0]                ; 004b3be8 | DAT_01cb80f0
     MOV EBP,dword ptr [0x01cb80ec]      ; 004b3bed | DAT_01cb80ec
     MOV EDX,dword ptr [0x006141bc]      ; 004b3bf3 | DAT_006141bc

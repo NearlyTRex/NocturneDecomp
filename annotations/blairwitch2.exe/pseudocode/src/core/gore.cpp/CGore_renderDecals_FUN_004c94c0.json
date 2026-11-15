@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 134,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 90,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
       "warning_overlapping_globals"
     ],
-    "total_lines": 275
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -55,9 +54,19 @@
   },
   "function_calls": [
     {
+      "addr": "004c88a0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004c88a0"
+    },
+    {
       "addr": "004c8800",
       "is_variadic": false,
       "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004c8800"
+    },
+    {
+      "addr": "004c8010",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004c8010"
     },
     {
       "addr": "004c7f80",
@@ -65,19 +74,9 @@
       "name": "core_gore.cpp_CBloodSplat_setupRenderState_FUN_004c7f80"
     },
     {
-      "addr": "004c8010",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004c8010"
-    },
-    {
-      "addr": "004c88a0",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004c88a0"
-    },
-    {
       "addr": "004c9000",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004c9000"
+      "name": "core_gore.cpp_CFootstep_render_FUN_004c9000"
     }
   ],
   "globals": [
@@ -264,30 +263,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1cbcafc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 28,
-      "match": "0x1cbcafc",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1cbcafc;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cdde44 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 53,
-      "match": "0x1cdde44",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1cdde44;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cde34c assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 77,
-      "match": "0x1cde34c",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1cde34c;",
-      "type": "raw_address_constant"
     }
   ]
 }

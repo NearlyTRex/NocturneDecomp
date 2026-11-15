@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_FUN_0056a8f0(int param_1)
+; void engine_texture_cpp_FUN_0056a8f0(CTextureCache *param_1)
 ;
 ;
 ; XREF[1]:
@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02cfd084
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_0056a130
+;   engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH 0x2cfd080                      ; 0056a930
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056a935
     PUSH ECX                            ; 0056a939
-    CALL engine_texture.cpp_FUN_0056a130 ; 0056a93a
-        ;   XREF to: 0056a130 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056a130()
+    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130 ; 0056a93a
+        ;   XREF to: 0056a130 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130(CTextureCache * this_ptr, SMRGLTextureBasic * texture, int upload_mode)
     ADD ESP,0xc                         ; 0056a93f
     MOV EAX,dword ptr [ESP + 0x14]      ; 0056a942
     INC EBX                             ; 0056a946

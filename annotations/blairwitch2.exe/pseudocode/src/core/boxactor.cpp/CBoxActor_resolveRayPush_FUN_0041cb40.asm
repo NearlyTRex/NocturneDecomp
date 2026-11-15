@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
-;   core_box.cpp_FUN_0041af70
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
 ;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0
 ;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10
 ;
@@ -109,8 +109,8 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0041cbe3
     PUSH EAX                            ; 0041cbe7
     MOVSD.REP ES:EDI,ESI                ; 0041cbe8
-    CALL core_box.cpp_FUN_0041af70      ; 0041cbea
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0041cbea
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0041cbef
     FLD float ptr [ESP + 0xa0]          ; 0041cbf6
     ADD ESP,0x10                        ; 0041cbfd

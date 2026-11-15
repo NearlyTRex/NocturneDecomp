@@ -513,8 +513,8 @@ section .text
         ;   XREF to: 00593649 (CONDITIONAL_JUMP)  ; LAB_00593649
     PUSH EAX                            ; 005936c5
     PUSH EBX                            ; 005936c6
-    CALL core_hero.cpp_FUN_004eb3e0     ; 005936c7
-        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb3e0()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0 ; 005936c7
+        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 005936cc
     MOV EBP,EAX                         ; 005936cf
     TEST EAX,EAX                        ; 005936d1

@@ -11,9 +11,9 @@
 ;   core_fldnotes.cpp_SNotesEntry_dtor_FUN_004bbcf0 at 004bbcfc
 ;   core_script.cpp_CScript_dtor_FUN_00543710 at 00543724
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20 at 00494dbf
+;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_00494ea0 at 00494f6f
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_00494de0 at 00494e7f
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710 at 0049a764
-;   shape_edittool.cpp_FUN_00494de0 at 00494e7f
-;   shape_edittool.cpp_FUN_00494ea0 at 00494f6f
 ;
 ; Referenced Globals:
 ;   undefined1* g_CStrListVTable = 004993a0

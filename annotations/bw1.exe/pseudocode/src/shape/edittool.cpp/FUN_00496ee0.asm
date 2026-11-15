@@ -57,10 +57,10 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c1dd0
 ;   engine_matrix.c_popViewport_FUN_00509210
 ;   engine_matrix.c_pushViewport_FUN_005090b0
 ;   engine_mini3d.cpp_drawHLine_FUN_005182e0
@@ -390,8 +390,8 @@ section .text
     PUSH ESI                            ; 00497268
     MOV EAX,[0x01c3eb50]                ; 00497269 | DAT_01c3eb50
     PUSH EAX                            ; 0049726e
-    CALL engine_font.cpp_FUN_004c1dd0   ; 0049726f
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0049726f
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00497274
     PUSH ESI                            ; 00497277
     MOV EDX,dword ptr [0x01c3eb50]      ; 00497278 | DAT_01c3eb50

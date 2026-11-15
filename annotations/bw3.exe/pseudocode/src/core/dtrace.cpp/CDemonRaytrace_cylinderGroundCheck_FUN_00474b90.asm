@@ -32,7 +32,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_0053bc80 at 0053bf38
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 at 0053bf38
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bca19

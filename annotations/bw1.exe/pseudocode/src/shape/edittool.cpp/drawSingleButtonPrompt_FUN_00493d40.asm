@@ -18,7 +18,7 @@
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 at 004943ec
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0 at 0049432c
-;   shape_edittool.cpp_FUN_00494340 at 0049438c
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 at 0049438c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68
@@ -42,10 +42,10 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c1dd0
 ;   engine_mini3d.cpp_setAlpha_FUN_00512320
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_0049d950
@@ -256,8 +256,8 @@ section .text
     PUSH ESI                            ; 00493f92
     MOV EDX,dword ptr [0x01c3eb50]      ; 00493f93 | DAT_01c3eb50
     PUSH EDX                            ; 00493f99
-    CALL engine_font.cpp_FUN_004c1dd0   ; 00493f9a
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00493f9a
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00493f9f
     PUSH 0x1                            ; 00493fa2
     LEA EAX,[ESP + 0x4]                 ; 00493fa4

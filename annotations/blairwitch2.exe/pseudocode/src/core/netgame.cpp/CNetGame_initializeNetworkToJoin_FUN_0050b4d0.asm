@@ -28,8 +28,8 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190
 ;   core_netgame.cpp_CNetGame_send_FUN_0050cd90
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
-;   shape_edittool.cpp_FUN_0047be90
 ;   support_trisock.cpp_createNetworkAddr_FUN_00578e60
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 0050b599
     MOV dword ptr [0x01d34e3c],ECX      ; 0050b59a | DAT_01d34e3c
     SUB EDI,0x50000                     ; 0050b5a0
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0050b5a6
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0050b5a6
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     MOV EAX,[0x0061e990]                ; 0050b5ab | DAT_0061e990
     ADD ESP,0x8                         ; 0050b5b0
     MOV ECX,dword ptr [EBX + 0x120]     ; 0050b5b3

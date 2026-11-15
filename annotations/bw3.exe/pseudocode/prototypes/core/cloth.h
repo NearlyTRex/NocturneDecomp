@@ -29,9 +29,9 @@ int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 // Address: 0043c8a0
 void __cdecl CCloth::initializeConnections(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043cb00
+// Original: core_cloth.cpp_CCloth_setup_FUN_0043cb00
 // Address: 0043cb00
-void FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
+void __cdecl CCloth::setup(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043d680
 // Address: 0043d680
@@ -59,7 +59,7 @@ void FUN_0043f110(void);
 
 // Original: core_cloth.cpp_FUN_0043f160
 // Address: 0043f160
-void FUN_0043f160(int param_1,int param_2,int param_3);
+void __cdecl FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043f370
 // Address: 0043f370

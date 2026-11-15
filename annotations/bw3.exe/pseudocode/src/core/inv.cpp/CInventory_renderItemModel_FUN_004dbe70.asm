@@ -190,7 +190,7 @@ section .text
     ADD ESP,0x14                        ; 004dbfc4
     PUSH EBX                            ; 004dbfc7
     CALL core_inv.cpp_getItemModel_FUN_004d9d20 ; 004dbfc8
-        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemModel_FUN_004d9d20()
+        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004d9d20(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004dbfcd
     PUSH EAX                            ; 004dbfd0
     LEA EDI,[EBP + -0x3e]               ; 004dbfd1

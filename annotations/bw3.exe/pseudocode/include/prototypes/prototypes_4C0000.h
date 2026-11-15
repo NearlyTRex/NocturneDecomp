@@ -25,12 +25,14 @@
 #include "types/classes/CGround.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CVector4i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SQuadVertices.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -103,7 +105,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004cab40(CGlass *this_pt
 CBoundingBox3D * __stack_esi core_glass_cpp_CGlass_getBoundingBox_FUN_004cad00(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004cad80(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004cae80(CGlass *this_ptr,SCollisionInfo *collision_info);
-void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004caeb0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004cc040(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004cc480(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004cc5c0(CGlass *this_ptr);
@@ -126,16 +128,16 @@ void core_gore_cpp_FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ccac0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *this_ptr);
-undefined4 core_gore_cpp_FUN_004cd3f0(CVector3f *param_1,CVector3f *param_2);
+int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004cd3f0(CBloodParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004cd450(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004cd510(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004cd600(CBloodSplat *this_ptr);
-void core_gore_cpp_FUN_004cd690(undefined4 *param_1,int param_2);
+void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr,int expire_flag);
 void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004cdb20(CBloodSplat *this_ptr);
 int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004cdb50(CBloodSplat *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004cdbe0(CBloodSplat *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004cdc90(CBloodPool *this_ptr);
-void core_gore_cpp_FUN_004cdd30(undefined4 *param_1);
+void __cdecl core_gore_cpp_CBloodPool_render_FUN_004cdd30(CBloodPool *this_ptr,int expire_flag);
 void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004cdfc0(CBloodPool *this_ptr);
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004cdff0(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
 int __cdecl core_gore_cpp_CBloodPool_load_FUN_004ce090(CBloodPool *this_ptr,_FILE *file_handle);
@@ -156,9 +158,9 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0(CGore *this_ptr,CV
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004cebf0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004cec40(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004cec70(CGore *this_ptr);
-CFlies * core_gore_cpp_FUN_004ced40(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004ced40(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004cee30(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
-void core_gore_cpp_FUN_004cee70(undefined4 param_1,CVector3f *param_2,UOrientationVector *param_3,int param_4,int param_5,EBloodType param_6);
+void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004cee70(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type);
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0(CGore *this_ptr,CVector3f *position,int *out_blood_type);
 int __cdecl core_gore_cpp_CGore_load_FUN_004cf010(CGore *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CGore_save_FUN_004cf0c0(CGore *this_ptr,_FILE *file_handle);

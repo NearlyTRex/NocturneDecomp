@@ -41,13 +41,18 @@
     ],
     "convention": "unknown",
     "name": "engine_texture.cpp_FUN_00574ea0",
-    "signature": "void engine_texture_cpp_FUN_00574ea0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
+    "signature": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
   },
   "function_calls": [
     {
       "addr": "00574490",
       "is_variadic": false,
       "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00574490"
+    },
+    {
+      "addr": "00574520",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520"
     },
     {
       "addr": "00574240",
@@ -58,11 +63,6 @@
       "addr": "00574310",
       "is_variadic": false,
       "name": "engine_texture.cpp_FUN_00574310"
-    },
-    {
-      "addr": "00574520",
-      "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00574520"
     }
   ],
   "globals": [
@@ -187,7 +187,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void engine_texture_cpp_FUN_00574ea0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -195,7 +195,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void engine_texture_cpp_FUN_00574ea0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -203,7 +203,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void engine_texture_cpp_FUN_00574ea0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -211,7 +211,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void engine_texture_cpp_FUN_00574ea0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -219,7 +219,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void engine_texture_cpp_FUN_00574ea0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void engine_texture_cpp_FUN_00574ea0(SMRGLTextureBasic *param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -227,7 +227,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((DAT_0070ca74 == 0) && (*(char *)(param_1 + 8) != '\\0')) {",
+      "text": "if ((DAT_0070ca74 == 0) && (param_1->texture_name[0] != '\\0')) {",
       "type": "unnamed_param"
     },
     {
@@ -235,7 +235,7 @@
       "line": 9,
       "match": "DAT_0070ca74",
       "severity": "mild",
-      "text": "if ((DAT_0070ca74 == 0) && (*(char *)(param_1 + 8) != '\\0')) {",
+      "text": "if ((DAT_0070ca74 == 0) && (param_1->texture_name[0] != '\\0')) {",
       "type": "undefined_data"
     },
     {
@@ -243,7 +243,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,*(uint *)(param_1 + 4) & 0xffff,(char *)(param_1 + 8));",
+      "text": "(_DAT_02652eb0,(param_1->base).count & 0xffff,param_1->texture_name);",
       "type": "unnamed_param"
     },
     {
@@ -251,7 +251,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,*(uint *)(param_1 + 4) & 0xffff,(char *)(param_1 + 8));",
+      "text": "(_DAT_02652eb0,(param_1->base).count & 0xffff,param_1->texture_name);",
       "type": "unnamed_param"
     },
     {
@@ -259,7 +259,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);",
+      "text": "(_DAT_02652eb0,param_1->texture_name,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -267,7 +267,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);",
+      "text": "(_DAT_02652eb0,param_1->texture_name,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -275,7 +275,7 @@
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);",
+      "text": "(_DAT_02652eb0,param_1->texture_name,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -283,7 +283,7 @@
       "line": 14,
       "match": "param_4",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);",
+      "text": "(_DAT_02652eb0,param_1->texture_name,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -291,7 +291,7 @@
       "line": 14,
       "match": "param_5",
       "severity": "mild",
-      "text": "(_DAT_02652eb0,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);",
+      "text": "(_DAT_02652eb0,param_1->texture_name,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -299,7 +299,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 4) = iVar1;",
+      "text": "(param_1->base).count = iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -307,7 +307,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 4) = iVar1;",
+      "text": "(param_1->base).count = iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -355,7 +355,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_texture_cpp_FUN_00574520(_DAT_02652eb0,param_1,1);",
+      "text": "engine_texture_cpp_CTextureCache_setupTexture_FUN_00574520(_DAT_02652eb0,param_1,1);",
       "type": "unnamed_param"
     },
     {

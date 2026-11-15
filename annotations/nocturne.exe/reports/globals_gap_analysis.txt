@@ -3,13 +3,13 @@ GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
 Total globals analyzed:      12952
-  Named globals:             10453
-  DAT_ globals:              2499
+  Named globals:             10458
+  DAT_ globals:              2494
 Gaps found:                  1936
-  With exact size bounds:    1928
-  With estimated bounds:     8
-Total gap bytes:             2,141,053,614
-  Exact gap bytes:           41,661,638
+  With exact size bounds:    1923
+  With estimated bounds:     13
+Total gap bytes:             2,141,053,629
+  Exact gap bytes:           41,659,978
 Overlaps (size <= 0):        7152
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: g_INT_01d16408                           int                  at 0x01d16408
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1928) - size bounds are known precisely
+ALL EXACT GAPS (1923) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
@@ -331,7 +331,7 @@ ALL EXACT GAPS (1928) - size bounds are known precisely
        4,791 bytes  at 0x01ab99fd  between DAT_01ab99f9                   and DAT_01abacb4
        4,791 bytes  at 0x01bd2fa9  between g_ScreenBufferArray[1]+1       and g_ZBufferScanlineArray
        4,652 bytes  at 0x0040db28  between PTR_caseD_1_0040db24           and switchdataD_0040ed54
-       4,618 bytes  at 0x005c26fe  between RuntimeHandlerEntry_005c26f8   and DAT_005c3908
+       4,618 bytes  at 0x005c26fe  between RuntimeHandlerEntry_005c26f8   and g_IID_IDirectSound3DListener
        4,616 bytes  at 0x01bd1d98  between DAT_01bd1d94                   and g_ScreenBufferArray
        4,480 bytes  at 0x01c5b580  between g_RockPool[1].base.vtable      and DAT_01c5c700
        4,468 bytes  at 0x0054865c  between switchdataD_00548658           and switchdataD_005497d0
@@ -417,7 +417,6 @@ ALL EXACT GAPS (1928) - size bounds are known precisely
        1,792 bytes  at 0x01bff920  between g_ColorTable16                 and g_CurrentPalette
        1,692 bytes  at 0x004ab178  between switchdataD_004ab174           and switchdataD_004ab814
        1,680 bytes  at 0x004facdc  between switchdataD_004facd8           and switchdataD_004fb36c
-       1,612 bytes  at 0x005c391c  between DAT_005c3918                   and DAT_005c3f68
        1,604 bytes  at 0x02dc9624  between DAT_02dc9620                   and DAT_02dc9c68
        1,536 bytes  at 0x02de437c  between DAT_02de4378                   and DAT_02de497c
        1,527 bytes  at 0x01c0002d  between g_Hardware32BitPalette[1]+1    and g_RedBitPosition
@@ -531,7 +530,7 @@ ALL EXACT GAPS (1928) - size bounds are known precisely
          364 bytes  at 0x0055dca4  between PTR_caseD_3_0055dca0           and switchdataD_0055de10
          364 bytes  at 0x005a2178  between FLOAT_005a2174                 and FLOAT_005a22e4
          360 bytes  at 0x0055d9bc  between PTR_caseD_3_0055d9b8           and PTR_caseD_1_0055db24
-         360 bytes  at 0x005beba8  between DAT_005beba4                   and DAT_005bed10
+         360 bytes  at 0x005beba8  between DAT_005beba4                   and g_IID_IKsPropertySet
          356 bytes  at 0x0055db30  between PTR_caseD_3_0055db2c           and switchdataD_0055dc94
          356 bytes  at 0x005b9768  between DAT_005b9764                   and DAT_005b98cc
          356 bytes  at 0x005c1210  between DAT_005c120c                   and DAT_005c1374
@@ -1469,11 +1468,7 @@ ALL EXACT GAPS (1928) - size bounds are known precisely
           12 bytes  at 0x005ba840  between FLOAT_005ba83c                 and DAT_005ba84c
           12 bytes  at 0x005bc11c  between DAT_005bc118                   and DAT_005bc128
           12 bytes  at 0x005bea54  between g_CMP3DecoderDestructorNode2   and DAT_005bea60
-          12 bytes  at 0x005bed14  between DAT_005bed10                   and DAT_005bed20
-          12 bytes  at 0x005bed24  between DAT_005bed20                   and DAT_005bed30
-          12 bytes  at 0x005bed34  between DAT_005bed30                   and DAT_005bed40
           12 bytes  at 0x005bf4f4  between g_TempTransformedZ             and g_VertexRedStart
-          12 bytes  at 0x005c390c  between DAT_005c3908                   and DAT_005c3918
           12 bytes  at 0x005c3f6c  between DAT_005c3f68                   and DAT_005c3f78
           12 bytes  at 0x005c4088  between DAT_005c4084                   and PTR_crt_unknown.c_FUN_00570eb0
           12 bytes  at 0x007658d0  between DAT_007658cf                   and DAT_007658dc

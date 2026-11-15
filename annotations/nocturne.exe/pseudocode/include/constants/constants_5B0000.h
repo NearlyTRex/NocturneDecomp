@@ -289,7 +289,6 @@ static TerminatedCString s_CMP3Decoder_005beca4 = "$CMP3Decoder$$";
 static TerminatedCString s_SfxSample_005becc4 = "$SfxSample$$";
 static TerminatedCString s_SfxOptions_005bece4 = "$SfxOptions$$";
 static TerminatedCString s_SfxSlot_005bed04 = "$SfxSlot$$";
-static TerminatedCString s_DEST_005bed39 = ":DEST";
 static TerminatedCString s_STrainNoise_005beff4 = "$STrainNoise$$";
 
 // char*[5][13] constants

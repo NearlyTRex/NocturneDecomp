@@ -23,6 +23,8 @@
 #include "types/classes/CPendulum.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
+#include "types/classes/CPodDependencyRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CRifle.h"
@@ -114,7 +116,7 @@ void core_passngr_cpp_FUN_00532ee0(void);
 void __cdecl core_path_cpp_queuePop_FUN_00532f60(int *out_x,int *out_cost,int *out_z);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00532fe0(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_00533060(CPathMap *this_ptr,uint flags);
-float core_path_cpp_FUN_00533140(float *param_1,int param_2,int param_3,int param_4,float *param_5);
+float __cdecl core_path_cpp_CPathMap_getDirection_FUN_00533140(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position);
 void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_005334f0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00533640(CPathMap *this_ptr,int grid_z,int grid_x,int current_height);
 int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_005336e0(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height);
@@ -172,7 +174,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_00538000(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00538050(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_005380b0(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_005380c0(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_00538130(CPackedBitmap *this_ptr,char *filename);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_005381b0(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
@@ -186,7 +188,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(CPackedBit
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005389c0(CPackedBitmapSet *this_ptr,int bitmap_count);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 void cockpit_pkbmpset_cpp_FUN_00538b30(void);
-void cockpit_pkbmpset_cpp_FUN_00538db0(CPackedBitmapSet *param_1,int param_2,int param_3);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00538db0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 void cockpit_pkbmpset_cpp_FUN_00539100(void);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190(CPackedBitmapSet *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_005391e0(CPackedBitmapSet *this_ptr,char *palette_data);
@@ -217,18 +219,18 @@ uint engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *param_1,int param_2
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0053b210(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_0053b230(char **filename1_ptr,char **filename2_ptr);
-undefined4 engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3);
+int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile *this_ptr,char *pod_filename,char *out_error_message);
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_0053bed0(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0053bf40(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 int __cdecl engine_pod_cpp_FUN_0053bfc0(CPodFile *this_ptr);
-void engine_pod_cpp_FUN_0053c290(int param_1,int param_2);
-void engine_pod_cpp_FUN_0053c3b0(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_0053c290(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
+CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_0053c3b0(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
 uint engine_pod_cpp_FUN_0053c4c0(int param_1,int param_2);
 CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_0053c5c0(CPod *this_ptr);
 CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags);
-undefined4 engine_pod_cpp_FUN_0053c650(int *param_1,undefined4 param_2,char *param_3);
-void engine_pod_cpp_FUN_0053c750(int *param_1);
+undefined4 engine_pod_cpp_FUN_0053c650(int *param_1,char *param_2,char *param_3);
+void __cdecl engine_pod_cpp_CPod_remount_FUN_0053c750(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_0053c800(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_0053c8a0(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_cleanup_FUN_0053c8f0(CPod *this_ptr);
@@ -236,7 +238,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0053c940(CPod *pod,char *ext
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0053cb00(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0053cb50(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_0053cc60(void);
-int engine_pod_cpp_FUN_0053ce50(undefined4 param_1,undefined4 param_2);
+int engine_pod_cpp_FUN_0053ce50(undefined4 param_1,char *param_2);
 CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_0053cf50(CPod *this_ptr,SFoundFileInfo *found_file_info);
 void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0(CPod *this_ptr);
@@ -244,7 +246,7 @@ int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_0053d3f0(CPod *this_pt
 void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_0053d490(CPod *this_ptr,int index);
 int __cdecl engine_pod_cpp_findFileInPod_FUN_0053d520(SFoundFileInfo *info);
 void __cdecl core_podmain_cpp_staticInit_FUN_0053d550(void);
-void core_podmain_cpp_FUN_0053d580(int param_1);
+void __cdecl core_podmain_cpp_CDemonPod_load_FUN_0053d580(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_0053d710(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0053d730(CDemonPod *this_ptr,uint flags);
 void core_podmain_cpp_FUN_0053d790(void);

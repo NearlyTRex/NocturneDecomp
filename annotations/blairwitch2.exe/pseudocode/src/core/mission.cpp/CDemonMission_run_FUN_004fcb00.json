@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 123,
+    "complexity_score": 122,
     "cross_reference_count": 4,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 57,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -73,12 +73,17 @@
     {
       "addr": "004e1480",
       "is_variadic": false,
-      "name": "core_level.cpp_FUN_004e1480"
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
       "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "004fc820",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820"
     },
     {
       "addr": "004fb450",
@@ -114,11 +119,6 @@
       "addr": "004fce00",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_startMission_FUN_004fce00"
-    },
-    {
-      "addr": "004fc820",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc820"
     },
     {
       "addr": "005bada0",
@@ -181,9 +181,9 @@
     },
     {
       "addr": "00617e10",
-      "name": "DAT_00617e10",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d03000"
     },
     {
       "addr": "0061b5a8",
@@ -364,7 +364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_01d1c630",
       "severity": "mild",
       "text": "DAT_01d1c630 = '\\0';",
@@ -372,7 +372,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 28,
+      "line": 27,
       "match": "*(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
@@ -380,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_01d1c630",
       "severity": "mild",
       "text": "if ((iVar1 == 0) || (DAT_01d1c630 == '\\0')) break;",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_01d1c630",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_load_FUN_004fb490(this_ptr,&DAT_01d1c630,0);",

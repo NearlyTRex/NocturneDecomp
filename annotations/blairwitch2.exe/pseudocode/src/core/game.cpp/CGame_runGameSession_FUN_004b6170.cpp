@@ -119,7 +119,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
     core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(g_CDemonSetPtr,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
   _DAT_01cb80e0 = 0;
   core_game_cpp_CGame_loadAssets_FUN_004bb050(this_ptr);
@@ -130,7 +131,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
     core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(g_CNetGamePtr);
-    core_level_cpp_CLevelLoader_cleanup_FUN_004e1b80(0x01D03000);
+    core_level_cpp_CLevelLoader_cleanup_FUN_004e1b80(g_CLevelLoaderPtr);
     *(EAimMode *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) = this_ptr->aim_mode;
     this_ptr->act_completion_state = 0;
     iVar4 = 0;
@@ -157,7 +158,7 @@ LAB_004b6569:
     if (g_CDemonSetPtr->selected_camera_index < 0) {
       g_CScriptPtr->focus_actor_changed = 2;
 LAB_004b6635:
-      iVar5 = core_setdir_cpp_FUN_00538d10
+      iVar5 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
                         (g_CDemonSetPtr,g_CScriptPtr->focus_actor,g_CScriptPtr->focus_actor_changed)
       ;
       if (iVar5 != 0) {
@@ -169,7 +170,7 @@ LAB_004b6635:
              (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0))
     goto LAB_004b6635;
     iVar5 = 0;
-    core_game_cpp_FUN_004b5190(this_ptr);
+    core_game_cpp_CGame_processFrame_FUN_004b5190(this_ptr);
     if (_DAT_01cb7788 == 0) {
       iVar6 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_ESCAPE);
       if (iVar6 != 0) {

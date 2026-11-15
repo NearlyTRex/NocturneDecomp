@@ -32,7 +32,8 @@ The prototype goes on first, all or nothing (apply_sibling_annotations'
 build_signature): a type the program lacks leaves the function untouched,
 name included, because a class name without its `this_ptr` aborts the next
 export. A row whose name is already in place but carries a prototype is
-"retype".
+"retype". `"varargs": true` (or false) in the sig sets or clears the
+trailing `...`; left out, the function's own setting stands.
 
 The report checks the rows against the exported annotations. --apply checks
 them again against the live program, then renames the thunks that showed the
@@ -133,8 +134,10 @@ def keep_changes(program, kinds, write=False):
 
 def sig_text(sig):
     """`void (CThing * this_ptr, float volume)`, for the report."""
-    params = ", ".join(("%s %s" % (p["type"], p.get("name") or "")).strip() for p in sig.get("params") or [])
-    return "%s %s(%s)" % (sig.get("ret"), sig.get("conv") or "", params)
+    params = [("%s %s" % (p["type"], p.get("name") or "")).strip() for p in sig.get("params") or []]
+    if sig.get("varargs"):
+        params.append("...")
+    return "%s %s(%s)" % (sig.get("ret"), sig.get("conv") or "", ", ".join(params))
 
 
 def current_names(program):
@@ -221,6 +224,9 @@ def apply_to_program(program, kinds):
         for row in [r for r in kinds["labels"] if r["status"] == "rename"]:
             at = space.getAddress(int(row["addr"], 16))
             primary = symbols.getPrimarySymbol(at)
+            if primary is not None and primary.isDynamic():
+                # Ghidra's own DAT_ name; the export lists no label there either
+                primary = None
             live = primary.getName() if primary is not None else None
             if live != row["current"]:
                 done["changed since export"] += 1
@@ -272,7 +278,9 @@ def apply_prototype(program, func, sig, cache):
     """
     named = all(p.getName() == w["name"] for p, w in zip(func.getParameters(), sig.get("params") or [])
                 if w.get("name"))
-    if named and asa.prototype_matches(func, sig.get("conv"), sig):
+    varargs = sig.get("varargs")
+    if named and asa.prototype_matches(func, sig.get("conv"), sig) and \
+            (varargs is None or func.hasVarArgs() == bool(varargs)):
         return "prototype already matches"
     built = asa.build_signature(program.getDataTypeManager(), func, sig, cache)
     if built is None:
@@ -290,6 +298,8 @@ def apply_prototype(program, func, sig, cache):
     if not asa.signature_readable(func):
         asa.make_readable(func)
         return "prototype rejected"
+    if varargs is not None:
+        func.setVarArgs(bool(varargs))
     return "prototypes"
 
 

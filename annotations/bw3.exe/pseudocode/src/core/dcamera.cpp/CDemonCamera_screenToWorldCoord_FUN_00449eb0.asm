@@ -13,10 +13,10 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
+;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00450e10 at 00450f56
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044b070 at 0044b12b
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_0044f6a0 at 0044f6be
-;   core_dcamera.cpp_FUN_00450e10 at 00450f56
-;   core_game.cpp_FUN_004b6f30 at 004b7146
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7146
 ;   core_game.cpp_FUN_004c07b0 at 004c0f83
 ;   core_sound.cpp_updateListeners_FUN_0055e8b0 at 0055ec5a
 ;

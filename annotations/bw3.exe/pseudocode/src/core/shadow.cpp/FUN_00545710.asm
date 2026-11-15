@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
@@ -123,8 +123,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 00545821
     PUSH EAX                            ; 00545825
     MOVSD.REP ES:EDI,ESI                ; 00545826
-    CALL core_box.cpp_FUN_0041daf0      ; 00545828
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 00545828
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0054582d
     TEST EAX,EAX                        ; 00545830
     JZ 0x005458d7                       ; 00545832

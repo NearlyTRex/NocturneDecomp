@@ -13,7 +13,7 @@ void core_doc_cpp_FUN_00470750(int param_1)
   
   if (*(int *)(param_1 + 0x1ff78) != 0) {
     if (*(int *)(param_1 + 0x1ff5c) != 4) {
-      shape_edittool_cpp_FUN_00494340
+      shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                 (g_CEditorToolsPtr,"?actionPending = %d\ndoc.cpp line %d" + 1,
                  *(int *)(param_1 + 0x1ff5c),0xe77);
     }

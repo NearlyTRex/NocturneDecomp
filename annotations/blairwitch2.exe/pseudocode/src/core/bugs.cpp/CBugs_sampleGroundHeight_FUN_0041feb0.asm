@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00420840 at 00420915
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840 at 00420915
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f3e28

@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 182,
+    "complexity_score": 227,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 9,
+    "pseudocode_lines": 82,
+    "suspect_count": 12,
     "suspect_types": [
+      "bitcast_double_pair",
+      "stack_param",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 277
+    "total_lines": 282
   },
   "cross_references": [],
   "function": {
@@ -44,7 +46,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "0042e960",
@@ -236,8 +238,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffb4;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 21,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);",
@@ -245,15 +255,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 26,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
       "type": "undefined_data"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_3c,in_stack_ffffffb4);",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 58,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -261,15 +279,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 60,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,fStack_48);",
+      "text": "(DAT_00612560,fStack_40);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 61,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);",
@@ -277,7 +295,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 70,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);",
@@ -285,15 +303,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 74,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
       "type": "undefined_data"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 81,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dStack_48 = __BITCAST_DOUBLE(CONCAT44(uStack_44,this_ptr));",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -12,14 +12,14 @@
 ; XREF[56]:
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 0059706a
 ;   core_baal.cpp_FUN_00597700 at 0059776c
-;   core_bugs.cpp_FUN_00422a00 at 00422c43
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 at 00422c43
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042743b
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042f9a0
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 004302fc
+;   core_charactr.cpp_CCharacter_followActor_FUN_004310e0 at 00431268
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 0043429a
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 004317ef
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042ba2f
-;   core_charactr.cpp_FUN_004310e0 at 00431268
-;   core_charactr.cpp_FUN_00432330 at 00432894
 ;   ... and 46 more
 ;
 ; Called Functions:

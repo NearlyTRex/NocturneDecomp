@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,undefined4 param_2)
+; undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)
 ;
 ;
 ; XREF[2]:
@@ -16,11 +16,11 @@
 ; Called Functions:
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004d2cf0
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040
 ;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004d32d0
 ;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0
-;   core_hero.cpp_FUN_004d3040
 ;   core_hero.cpp_FUN_004d3210
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004d49d1
     PUSH EAX                            ; 004d49d5
     PUSH EBX                            ; 004d49d6
-    CALL core_hero.cpp_FUN_004d3040     ; 004d49d7
-        ;   XREF to: 004d3040 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3040()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040 ; 004d49d7
+        ;   XREF to: 004d3040 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 004d49dc
     TEST EAX,EAX                        ; 004d49df
     JNZ 0x004d4a7f                      ; 004d49e1

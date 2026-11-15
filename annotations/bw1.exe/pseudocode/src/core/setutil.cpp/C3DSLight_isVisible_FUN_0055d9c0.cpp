@@ -10,24 +10,19 @@ int __cdecl core_setutil_cpp_C3DSLight_isVisible_FUN_0055d9c0(C3DSLight *this_pt
 
 {
   int iVar1;
-  float fStack_18;
-  float fStack_14;
-  float fStack_10;
-  float fStack_c;
-  float fStack_8;
-  float fStack_4;
+  CBoundingBox3D CStack_18;
   
   if (ABS(this_ptr->atten_end) == 0.0) {
     return 1;
   }
-  fStack_18 = -this_ptr->atten_end;
-  fStack_14 = -this_ptr->atten_end;
-  fStack_10 = -this_ptr->atten_end;
-  fStack_c = this_ptr->atten_end;
-  fStack_8 = fStack_c;
-  fStack_4 = fStack_c;
+  CStack_18.min.x = -this_ptr->atten_end;
+  CStack_18.min.y = -this_ptr->atten_end;
+  CStack_18.min.z = -this_ptr->atten_end;
+  CStack_18.max.x = this_ptr->atten_end;
+  CStack_18.max.y = CStack_18.max.x;
+  CStack_18.max.z = CStack_18.max.x;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
             (DAT_00612560,&this_ptr->pos);
-  iVar1 = core_box_cpp_FUN_004207b0(&fStack_18,0);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_18,0);
   return iVar1;
 }

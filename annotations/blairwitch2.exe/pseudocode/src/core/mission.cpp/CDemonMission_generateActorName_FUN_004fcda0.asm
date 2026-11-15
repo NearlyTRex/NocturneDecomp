@@ -16,9 +16,9 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba0c4
 ;   core_game.cpp_FUN_004b8e10 at 004b8fb8
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9003
-;   core_gore.cpp_FUN_004c9bd0 at 004c9c8d
+;   core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0 at 004c9c8d
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40 at 004d0a99
-;   core_inv.cpp_FUN_004dadb0 at 004db51a
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004db51a
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f22
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 at 004fc23a
 ;   ... and 3 more

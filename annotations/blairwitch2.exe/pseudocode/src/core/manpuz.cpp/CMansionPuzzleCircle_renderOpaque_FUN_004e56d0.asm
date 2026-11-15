@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
 ;   core_manpuz.cpp_FUN_004e6820
@@ -47,8 +47,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 004e5703
     PUSH EAX                            ; 004e5707
     MOVSD.REP ES:EDI,ESI                ; 004e5708
-    CALL core_box.cpp_FUN_0041a840      ; 004e570a
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 004e570a
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004e570f
     MOV ESI,EAX                         ; 004e5712
     TEST EAX,EAX                        ; 004e5714

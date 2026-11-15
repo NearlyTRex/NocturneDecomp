@@ -5355,8 +5355,8 @@ section .text
         ;   Label: LAB_004a4c46
     PUSH EAX                            ; 004a4c49 | DAT_01d2c900
     MOV dword ptr [EAX],ECX             ; 004a4c4a | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b7b0  ; 004a4c4c
-        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b7b0()
+    CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0 ; 004a4c4c
+        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004a4c51
     JMP 0x004a21fb                      ; 004a4c54
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -6772,8 +6772,8 @@ section .text
     FLD double ptr [EBP + 0xffffff7a]   ; 004a597e
     FSTP float ptr [ESP]                ; 004a5984
     PUSH EBX                            ; 004a5987
-    CALL core_lever.cpp_FUN_004ff3f0    ; 004a5988
-        ;   XREF to: 004ff3f0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_004ff3f0()
+    CALL core_lever.cpp_CLever_setState_FUN_004ff3f0 ; 004a5988
+        ;   XREF to: 004ff3f0 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_004ff3f0(CLever * this_ptr, float new_state, int silent)
     ADD ESP,0xc                         ; 004a598d
     JMP 0x004a21fb                      ; 004a5990
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6

@@ -324,7 +324,8 @@ LAB_0051ef62:
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar18 = this_ptr->head_blend_weight;
     iVar6 = _DAT_01e62068;
-    core_xform_cpp_FUN_00594380(&this_ptr->head_euler_angles);
+    core_xform_cpp_eulerToQuaternion_FUN_00594380
+              (&this_ptr->head_euler_angles,(CQuaternion4f *)&stack0xffffff60);
     source_quaternions = (CQuaternion4f *)auStack_90;
     auStack_90._0_4_ = in_stack_ffffff60;
     *(uint *)(auStack_90 + (uint)bVar14 * -8 + 4) =

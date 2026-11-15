@@ -1,18 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener)
+; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   opener
+; int              Stack[0xc]:4   ignore_lock
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x1c]:1  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004cf030 at 004cf19b
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030 at 004cf19b
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0046061c = 00460679

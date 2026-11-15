@@ -39,7 +39,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b7319
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7319
 ;
 ; Referenced Globals:
 ;   undefined4 s_GCHolycross_005c6602+1

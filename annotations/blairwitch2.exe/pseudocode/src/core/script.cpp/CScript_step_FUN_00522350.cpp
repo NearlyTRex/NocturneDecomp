@@ -266,7 +266,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   int local_8c;
   int local_88;
   int local_84;
-  uint local_80;
+  int local_80;
   int local_7c;
   uint local_78;
   uint local_74;
@@ -495,7 +495,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
                                      &g_CDemonActorClassInfo), pCVar13 == (CDemonActor *)0x0))
             goto joined_r0x0052419d;
             if (_DAT_01e650f8 == 0) {
-              core_inv_cpp_FUN_004dadb0(&pCVar15[0xd6].process_disabled,pCVar13,0,0);
+              core_inv_cpp_CInventory_addItem_FUN_004dadb0
+                        ((CInventory *)&pCVar15[0xd6].process_disabled,pCVar13,0,0);
             }
           }
           else {
@@ -1458,7 +1459,7 @@ LAB_00525147:
                                                     local_1b0 = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_00491510
                                                             (0x01C38BC0,local_2534);
-                                                  engine_ini_cpp_FUN_004d8b20
+                                                  engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20
                                                             (&local_4dac,local_214c,&local_1b0);
                                                   core_event_cpp_CEventList_setCounter_FUN_00491400
                                                             (0x01C38BC0,local_2534,local_1b0);
@@ -1820,14 +1821,15 @@ LAB_00525afd:
                                                        (pCVar3->letterbox_mode != 0)) {
                                                       pCVar3->goggles_active = 0;
                                                       iVar5 = core_event_cpp_FUN_00492630(pCVar4);
-                                                      core_setdir_cpp_FUN_00538d10
-                                                                (g_CDemonSetPtr,
-                                                                 g_CScriptPtr->focus_actor,1);
-                                                      pCVar4 = g_CDemonSetPtr;
-                                                      g_CScriptPtr->focus_actor_changed = 0;
-                                                      iVar12 = core_event_cpp_FUN_00492630(pCVar4);
-                                                      if (iVar5 == iVar12) {
-                                                                                                                
+                                                                                                            
+                                                  core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
+                                                            (g_CDemonSetPtr,
+                                                             g_CScriptPtr->focus_actor,1);
+                                                  pCVar4 = g_CDemonSetPtr;
+                                                  g_CScriptPtr->focus_actor_changed = 0;
+                                                  iVar12 = core_event_cpp_FUN_00492630(pCVar4);
+                                                  if (iVar5 == iVar12) {
+                                                                                                        
                                                   core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0
                                                             (g_CDemonSetPtr,iVar12);
                                                   }
@@ -3418,7 +3420,7 @@ LAB_005281fe:
                                                               (&local_4ba8,
                                                                "system\\nocturne.ini",
                                                                &DAT_005e48e1);
-                                                    engine_ini_cpp_FUN_004d8b80
+                                                    engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
                                                               (&local_4ba8,local_372c,local_80);
                                                     engine_ini_cpp_CIniFile_dtor_FUN_004d8940
                                                               (&local_4ba8,0);

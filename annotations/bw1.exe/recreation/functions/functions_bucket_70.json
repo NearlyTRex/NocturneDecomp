@@ -4800,14 +4800,41 @@
       "00425ee0",
       "005a7520"
     ],
-    "conv":"unknown",
+    "cls":"CBugs",
+    "conv":"__cdecl",
     "instructions":428,
-    "method":"FUN_00426870",
-    "name":"core_bugs.cpp_FUN_00426870",
-    "receiver":false,
+    "method":"updateBugPathfinding",
+    "name":"core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426870",
+    "params":[
+      {
+        "name":"bug_data",
+        "type":{
+          "kind":"struct",
+          "name":"SBug",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_vertex",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/bugs.cpp",
@@ -5137,7 +5164,8 @@
   },
   {
     "addr":"00431470",
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbbbc",
       "005fbbc0",
@@ -5181,12 +5209,12 @@
       "00606810"
     ],
     "instructions":1,
-    "method":"FUN_00431470",
-    "name":"core_charactr.cpp_FUN_00431470",
-    "receiver":false,
+    "method":"doNothing",
+    "name":"core_charactr.cpp_CCharacter_doNothing_FUN_00431470",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -10238,14 +10266,15 @@
       "004c3f50",
       "00517d50"
     ],
-    "conv":"unknown",
+    "cls":"CEdCheck",
+    "conv":"__cdecl",
     "instructions":121,
-    "method":"FUN_0049dc70",
-    "name":"shape_edittool.cpp_FUN_0049dc70",
-    "receiver":false,
+    "method":"render",
+    "name":"shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -14940,14 +14969,40 @@
     "calls":[
       "005bfb40"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
     "method":"FUN_004f4d70",
     "name":"engine_ini.cpp_FUN_004f4d70",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CIniFile",
+          "ptr":1
+        }
+      },
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -15024,14 +15079,25 @@
       "005030e0",
       "005c0f32"
     ],
-    "conv":"unknown",
+    "cls":"CInventory",
+    "conv":"__cdecl",
     "instructions":68,
-    "method":"FUN_004f8b70",
-    "name":"core_inv.cpp_FUN_004f8b70",
-    "receiver":false,
+    "method":"createAmmoFromWeapon",
+    "name":"core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
+    "params":[
+      {
+        "name":"weapon",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/inv.cpp",
@@ -15381,14 +15447,33 @@
       "004a1b70",
       "004ff3f0"
     ],
-    "conv":"unknown",
+    "cls":"CLever",
+    "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_004ff3f0",
-    "name":"core_lever.cpp_FUN_004ff3f0",
-    "receiver":false,
+    "method":"setState",
+    "name":"core_lever.cpp_CLever_setState_FUN_004ff3f0",
+    "params":[
+      {
+        "name":"new_state",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"silent",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/lever.cpp",
@@ -17072,14 +17157,15 @@
       "00543e00",
       "005c232c"
     ],
-    "conv":"unknown",
+    "cls":"CDemonMission",
+    "conv":"__cdecl",
     "instructions":19,
-    "method":"FUN_0051abf0",
-    "name":"core_mission.cpp_FUN_0051abf0",
-    "receiver":false,
+    "method":"loadScript",
+    "name":"core_mission.cpp_CDemonMission_loadScript_FUN_0051abf0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/mission.cpp",

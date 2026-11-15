@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4929
 Clean: 2583 (52.4%)
 With suspects: 2346
-Total suspects: 19598
+Total suspects: 19590
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042d100 (2 suspects)
@@ -29295,7 +29295,7 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 (7 suspects)
   Line 69 [undefined_data]: *(int *)(&DAT_02dc9244 + iVar5 * 4) = 0;
 
 ====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 (16 suspects)
+sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 (15 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -29308,8 +29308,7 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 (16 suspects)
   Line 71 [unresolved_funcptr]: uVar5 = (**(code **)(*_DAT_02dc9214 + 0x14))
   Line 72 [undefined_data]: (_DAT_02dc9214,*(uint *)(&DAT_02dc9244 + sample_buffer_id * 4),
   Line 75 [raw_address_pointer_store]: puVar3 = *(uint **)(iVar1 + 0x2dc92a8);
-  Line 77 [unresolved_funcptr]: uVar5 = (**(code **)*puVar3)(puVar3,&DAT_005c3918,iVar1 + 0x2dc9324);
-  Line 77 [undefined_data]: uVar5 = (**(code **)*puVar3)(puVar3,&DAT_005c3918,iVar1 + 0x2dc9324);
+  Line 77 [unresolved_funcptr]: uVar5 = (**(code **)*puVar3)(puVar3,&g_IID_IDirectSound3DBuffer,iVar1 + 0x2dc9324);
   Line 97 [raw_address_pointer_store]: piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);
   Line 98 [unresolved_funcptr]: if ((piVar2 != (int *)0x0) && (uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2), uVar5 != 0)) {
   Line 108 [unresolved_funcptr]: (**(code **)(*piVar2 + 8))(piVar2);
@@ -29329,12 +29328,11 @@ sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90 (8 suspects)
   Line 40 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9214 + 8))(_DAT_02dc9214);
 
 ====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052bdf0 (3 suspects)
+sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052bdf0 (2 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 13 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed30,0,0,0,local_10,0x10);
-  Line 13 [undefined_data]: (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed30,0,0,0,local_10,0x10);
+  Line 13 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 0x10))
 
 ====================================================================================================
 sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_0052ad50 (4 suspects)
@@ -29361,18 +29359,16 @@ sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_0052aa40 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280 (11 suspects)
+sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280 (9 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 25 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 8))();
   Line 45 [unresolved_funcptr]: error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();
-  Line 47 [unresolved_funcptr]: (**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);
-  Line 47 [undefined_data]: (**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);
+  Line 47 [unresolved_funcptr]: (**(code **)*puStack_28)(puStack_28,&g_IID_IDirectSound3DBuffer,&uStack_24);
   Line 50 [unresolved_funcptr]: (**(code **)(*piStack_34 + 8))(piStack_34);
-  Line 54 [unresolved_funcptr]: (**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);
-  Line 54 [undefined_data]: (**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);
-  Line 54 [undefined_data]: (**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);
+  Line 54 [unresolved_funcptr]: (**(code **)*puStack_30)(puStack_30,&g_IID_IKsPropertySet,&DAT_02dc9224);
+  Line 54 [undefined_data]: (**(code **)*puStack_30)(puStack_30,&g_IID_IKsPropertySet,&DAT_02dc9224);
   Line 56 [unresolved_funcptr]: (**(code **)(*piStack_40 + 8))(piStack_40);
   Line 60 [unresolved_funcptr]: (**(code **)(*piStack_3c + 8))(piStack_3c);
 
@@ -29455,7 +29451,7 @@ sound_snddx.cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_0052aaf0 (2 suspect
   Line 10 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9220 + 0x40))
 
 ====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 (21 suspects)
+sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 (18 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -29464,21 +29460,18 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 (21 suspects)
   Line 53 [unresolved_funcptr]: uVar1 = (**(code **)(*_DAT_02dc9218 + 0x14))(_DAT_02dc9218,&local_48,0x12,0);
   Line 59 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 8))(_DAT_02dc9224);
   Line 75 [unresolved_funcptr]: uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_5c,&uStack_20,0);
-  Line 77 [unresolved_funcptr]: (**(code **)*piStack_30)(piStack_30,&DAT_005c3918,&piStack_2c);
-  Line 77 [undefined_data]: (**(code **)*piStack_30)(piStack_30,&DAT_005c3918,&piStack_2c);
+  Line 77 [unresolved_funcptr]: (**(code **)*piStack_30)(piStack_30,&g_IID_IDirectSound3DBuffer,&piStack_2c);
   Line 80 [unresolved_funcptr]: (**(code **)(*piStack_30 + 8))(piStack_30);
-  Line 85 [unresolved_funcptr]: (**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);
-  Line 85 [undefined_data]: (**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);
-  Line 85 [undefined_data]: (**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);
+  Line 85 [unresolved_funcptr]: (**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_02dc9224);
+  Line 85 [undefined_data]: (**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_02dc9224);
   Line 87 [unresolved_funcptr]: (**(code **)(*piStack_30 + 8))(piStack_30);
   Line 91 [unresolved_funcptr]: (**(code **)(*piStack_2c + 8))(piStack_2c);
-  Line 104 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed20,0,0,0,&uStack_28,4);
-  Line 104 [undefined_data]: (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed20,0,0,0,&uStack_28,4);
-  Line 112 [raw_address_constant]: uVar4 = 0x52a73b;
-  Line 127 [unresolved_funcptr]: (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c,uVar4);
-  Line 130 [unresolved_funcptr]: uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);
-  Line 130 [undefined_data]: uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);
-  Line 155 [unresolved_funcptr]: (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c);
+  Line 104 [unresolved_funcptr]: (**(code **)(*_DAT_02dc9224 + 0x10))
+  Line 113 [raw_address_constant]: uVar4 = 0x52a73b;
+  Line 128 [unresolved_funcptr]: (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c,uVar4);
+  Line 131 [unresolved_funcptr]: uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);
+  Line 131 [undefined_data]: uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);
+  Line 156 [unresolved_funcptr]: (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c);
 
 ====================================================================================================
 sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 (18 suspects)
@@ -29566,7 +29559,7 @@ sound_snddx.cpp_fillStreamBuffer_FUN_00529c10 (4 suspects)
   Line 67 [unresolved_funcptr]: uVar1 = (**(code **)(*_DAT_02dc921c + 0x4c))
 
 ====================================================================================================
-sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0 (13 suspects)
+sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0 (12 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -29577,9 +29570,8 @@ sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0 (13 suspects)
   Line 35 [undefined_data]: uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);
   Line 42 [unresolved_funcptr]: uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);
   Line 42 [undefined_data]: uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);
-  Line 53 [unresolved_funcptr]: (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);
-  Line 53 [undefined_data]: (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);
-  Line 53 [undefined_data]: (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);
+  Line 53 [unresolved_funcptr]: (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&g_IID_IDirectSound3DListener,&DAT_02dc9220);
+  Line 53 [undefined_data]: (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&g_IID_IDirectSound3DListener,&DAT_02dc9220);
   Line 55 [undefined_data]: return (CDirectSoundDevice *)&DAT_02dc93a0;
   Line 70 [undefined_data]: sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0);
 

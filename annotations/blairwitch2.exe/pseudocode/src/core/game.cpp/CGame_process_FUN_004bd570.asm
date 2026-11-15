@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5208
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5208
 ;
 ; Referenced Globals:
 ;   undefined4 s_G_s_3_2f_ms_005d884e+1
@@ -462,8 +462,8 @@ section .text
     PUSH ECX                            ; 004bda93
     MOV EDI,dword ptr [0x0061b5a8]      ; 004bda94 | g_CDemonSetPtr
     PUSH EDI                            ; 004bda9a | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00538d10   ; 004bda9b
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 004bda9b
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004bdaa0
     PUSH EBX                            ; 004bdaa3
     CALL core_game.cpp_CGame_saveClockTime_FUN_004b3000 ; 004bdaa4

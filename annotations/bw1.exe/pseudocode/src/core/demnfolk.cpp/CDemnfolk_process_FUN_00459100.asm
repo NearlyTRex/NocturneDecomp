@@ -1107,8 +1107,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc328]    ; 00459dee
     PUSH EAX                            ; 00459df4
     PUSH EBX                            ; 00459df5
-    CALL core_charactr.cpp_FUN_00430a90 ; 00459df6
-        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430a90()
+    CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 ; 00459df6
+        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xc328]    ; 00459dfb
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00459e01
     ADD ESP,0x10                        ; 00459e08
@@ -1121,8 +1121,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0xc32c]    ; 00459e1b
     PUSH ESI                            ; 00459e21
     PUSH EBX                            ; 00459e22
-    CALL core_charactr.cpp_FUN_00430a90 ; 00459e23
-        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430a90()
+    CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 ; 00459e23
+        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 00459e28
     MOV EDI,dword ptr [EBX + 0xc314]    ; 00459e2b
         ;   Label: LAB_00459e2b
@@ -1131,8 +1131,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc330]    ; 00459e37
     PUSH EAX                            ; 00459e3d
     PUSH EBX                            ; 00459e3e
-    CALL core_charactr.cpp_FUN_00430a90 ; 00459e3f
-        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430a90()
+    CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 ; 00459e3f
+        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xc330]    ; 00459e44
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00459e4a
     ADD ESP,0x10                        ; 00459e51
@@ -1145,8 +1145,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0xc334]    ; 00459e64
     PUSH ESI                            ; 00459e6a
     PUSH EBX                            ; 00459e6b
-    CALL core_charactr.cpp_FUN_00430a90 ; 00459e6c
-        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430a90()
+    CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 ; 00459e6c
+        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 00459e71
     MOV EDI,dword ptr [EBX + 0xc2fc]    ; 00459e74
         ;   Label: LAB_00459e74
@@ -2711,8 +2711,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0xc33c]    ; 0045b0eb
     PUSH EDI                            ; 0045b0f1
     PUSH EBX                            ; 0045b0f2
-    CALL core_charactr.cpp_FUN_00430a90 ; 0045b0f3
-        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00430a90()
+    CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 ; 0045b0f3
+        ;   XREF to: 00430a90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xc33c]    ; 0045b0f8
     ADD ESP,0x10                        ; 0045b0fe
     MOV dword ptr [EBX + EAX*0x4 + 0x2298],0x1 ; 0045b101

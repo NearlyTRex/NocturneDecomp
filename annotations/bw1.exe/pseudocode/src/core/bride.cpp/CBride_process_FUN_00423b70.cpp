@@ -470,13 +470,17 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
               (&(this_ptr->base).base.model);
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
-      core_charactr_cpp_FUN_00430a90(this_ptr,this_ptr->part_indices[0],DAT_007c539c,0x3e4ccccd);
+      core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_007c539c,0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
-        core_charactr_cpp_FUN_00430a90(this_ptr,this_ptr->part_indices[1],DAT_007c5394,0x3e4ccccd);
+        core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_007c5394,0.2);
       }
-      core_charactr_cpp_FUN_00430a90(this_ptr,this_ptr->part_indices[2],DAT_007c53a0,0x3e4ccccd);
+      core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_007c53a0,0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
-        core_charactr_cpp_FUN_00430a90(this_ptr,this_ptr->part_indices[3],DAT_007c5398,0x3e4ccccd);
+        core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_007c5398,0.2);
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
                 ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_007c5388,0.7);

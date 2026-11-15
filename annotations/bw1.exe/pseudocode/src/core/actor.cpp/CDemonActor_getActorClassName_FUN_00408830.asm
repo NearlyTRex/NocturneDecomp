@@ -15,8 +15,8 @@
 ;   core_event.cpp_CEventList_setActorVariable_FUN_004a9ff0 at 004aa024
 ;   core_event.cpp_resolveActorByName_FUN_004a1370 at 004a1473
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f865c
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8be0
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0 at 004f906e
-;   core_inv.cpp_CInventory_saveItems_FUN_004f9750 at 004f976c
 ;   ... and 5 more
 ;
 ; *****************************************************************************

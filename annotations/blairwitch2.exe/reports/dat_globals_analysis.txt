@@ -2,18 +2,18 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 6363
-Filtered out (inside named data): 2721
-Immediate constants (not real globals): 98
-Real globals remaining: 3544
+Total DAT_ globals found: 6357
+Filtered out (inside named data): 2732
+Immediate constants (not real globals): 93
+Real globals remaining: 3532
 
 Current type breakdown:
-  undefined4                     3472
+  undefined4                     3460
   undefined1                     50
   undefined8                     19
   undefined2                     3
 
-DAT_ globals with type hints: 1395 / 3544
+DAT_ globals with type hints: 1395 / 3532
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (1145)
@@ -1094,14 +1094,6 @@ HIGH CONFIDENCE INFERENCES (1145)
     nearby: g_CMP3DecoderDestructorNode2 (WatcomStaticDestructorNode) at offset +48
   DAT_0061bcb8                    addr=0061bcb8    current=undefined4      likely=float           refs=4
     nearby: g_CMP3DecoderDestructorNode2 (WatcomStaticDestructorNode) at offset +52
-  DAT_0061bf8c                    addr=0061bf8c    current=undefined4      likely=int             refs=1
-    nearby: PTR_DAT_0061c060 (void*) at offset -212
-  DAT_0061bf90                    addr=0061bf90    current=undefined4      likely=int             refs=1
-    nearby: PTR_DAT_0061c060 (void*) at offset -208
-  DAT_0061bf94                    addr=0061bf94    current=undefined4      likely=int             refs=1
-    nearby: PTR_DAT_0061c060 (void*) at offset -204
-  DAT_0061bf98                    addr=0061bf98    current=undefined4      likely=int             refs=1
-    nearby: PTR_DAT_0061c060 (void*) at offset -200
   DAT_0061c37c                    addr=0061c37c    current=undefined4      likely=int             refs=6
   DAT_0061c78c                    addr=0061c78c    current=undefined8      likely=double          refs=7
   DAT_0061c794                    addr=0061c794    current=undefined4      likely=double          refs=3
@@ -1537,6 +1529,8 @@ HIGH CONFIDENCE INFERENCES (1145)
   DAT_01cdde4c                    addr=01cdde4c    current=undefined4      likely=float           refs=1
   DAT_01cdde70                    addr=01cdde70    current=undefined4      likely=float           refs=1
   DAT_01cdde78                    addr=01cdde78    current=undefined4      likely=float           refs=1
+  DAT_01cee1a8                    addr=01cee1a8    current=undefined4      likely=int *           refs=3
+    nearby: g_CImpClassInfo.name_hash (undefined4) at offset +8
   DAT_01d03510                    addr=01d03510    current=undefined4      likely=CVector3i *     refs=1
     nearby: g_CLeverClassInfo.name_hash (undefined4) at offset +16
   DAT_01d04fb8                    addr=01d04fb8    current=undefined4      likely=float           refs=12
@@ -1549,6 +1543,7 @@ HIGH CONFIDENCE INFERENCES (1145)
   DAT_01d04fd4                    addr=01d04fd4    current=undefined4      likely=float           refs=12
   DAT_01d04fd8                    addr=01d04fd8    current=undefined4      likely=float           refs=12
   DAT_01d06450                    addr=01d06450    current=undefined4      likely=char *          refs=1
+  DAT_01d06a74                    addr=01d06a74    current=undefined4      likely=int *           refs=4
   DAT_01d06a78                    addr=01d06a78    current=undefined4      likely=int *           refs=1
   DAT_01d06abc                    addr=01d06abc    current=undefined4      likely=char **         refs=1
   DAT_01d074a8                    addr=01d074a8    current=undefined4      likely=char *          refs=1
@@ -1778,6 +1773,8 @@ HIGH CONFIDENCE INFERENCES (1145)
   DAT_0264bb88                    addr=0264bb88    current=undefined4      likely=float           refs=4
   DAT_0264bb8c                    addr=0264bb8c    current=undefined4      likely=float           refs=4
   DAT_0264bb90                    addr=0264bb90    current=undefined4      likely=float           refs=2
+  DAT_0264bba0                    addr=0264bba0    current=undefined4      likely=int *           refs=14
+  DAT_0264bbac                    addr=0264bbac    current=undefined4      likely=int *           refs=6
   DAT_0264bd80                    addr=0264bd80    current=undefined4      likely=float           refs=1
     nearby: g_CSpikeClassInfo.name_hash (undefined4) at offset +64
   DAT_0264bd84                    addr=0264bd84    current=undefined4      likely=float           refs=1
@@ -2196,7 +2193,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (2149)
+NO TYPE HINTS (2137)
 --------------------------------------------------------------------------------
   DAT_005d79ff                    addr=005d79ff    type=undefined1      refs=1  nearby: s_CBoxActor_005d7a01 at -2
   DAT_005d7a00                    addr=005d7a00    type=undefined1      refs=1  nearby: s_CBoxActor_005d7a01 at -1
@@ -2427,7 +2424,6 @@ NO TYPE HINTS (2149)
   DAT_00617d40                    addr=00617d40    type=undefined4      refs=1  nearby: g_CKeyActorClassVersion at -124
   DAT_00617d44                    addr=00617d44    type=undefined4      refs=1  nearby: g_CKeyActorClassVersion at -120
   DAT_00617dd4                    addr=00617dd4    type=undefined4      refs=37  nearby: g_CLadderClassVersion at -4
-  DAT_00617e10                    addr=00617e10    type=undefined4      refs=9  nearby: g_CLeverClassVersion at -28
   DAT_00617e40                    addr=00617e40    type=undefined4      refs=4  nearby: g_CLeverClassVersion at +20
   DAT_00617e44                    addr=00617e44    type=undefined4      refs=2  nearby: g_CLeverClassVersion at +24
   DAT_00618170                    addr=00618170    type=undefined4      refs=66  nearby: s_corrupt_00618178 at -8
@@ -2527,13 +2523,6 @@ NO TYPE HINTS (2149)
   DAT_0061bce4                    addr=0061bce4    type=undefined4      refs=1  nearby: g_CMP3DecoderDestructorNode2 at +96
   DAT_0061bde0                    addr=0061bde0    type=undefined4      refs=1
   DAT_0061bde4                    addr=0061bde4    type=undefined4      refs=1
-  DAT_0061bf80                    addr=0061bf80    type=undefined4      refs=2  nearby: PTR_DAT_0061c060 at -224
-  DAT_0061bf84                    addr=0061bf84    type=undefined4      refs=3  nearby: PTR_DAT_0061c060 at -220
-  DAT_0061bf88                    addr=0061bf88    type=undefined4      refs=2  nearby: PTR_DAT_0061c060 at -216
-  DAT_0061bf9c                    addr=0061bf9c    type=undefined4      refs=1  nearby: PTR_DAT_0061c060 at -196
-  DAT_0061bfa0                    addr=0061bfa0    type=undefined4      refs=1  nearby: PTR_DAT_0061c060 at -192
-  DAT_0061bfa4                    addr=0061bfa4    type=undefined4      refs=1  nearby: PTR_DAT_0061c060 at -188
-  DAT_0061bfa8                    addr=0061bfa8    type=undefined4      refs=1  nearby: PTR_DAT_0061c060 at -184
   DAT_0061c068                    addr=0061c068    type=undefined4      refs=70  nearby: PTR_DAT_0061c064 at +4
   DAT_0061c220                    addr=0061c220    type=undefined4      refs=1
   DAT_0061c224                    addr=0061c224    type=undefined4      refs=1
@@ -3496,7 +3485,6 @@ NO TYPE HINTS (2149)
   DAT_01cee15c                    addr=01cee15c    type=undefined4      refs=2  nearby: g_CImpClassInfo.name_hash at -68
   DAT_01cee160                    addr=01cee160    type=undefined4      refs=1  nearby: g_CImpClassInfo.name_hash at -64
   DAT_01cee164                    addr=01cee164    type=undefined4      refs=2  nearby: g_CImpClassInfo.name_hash at -60
-  DAT_01cee1a8                    addr=01cee1a8    type=undefined4      refs=3  nearby: g_CImpClassInfo.name_hash at +8
   DAT_01cf0200                    addr=01cf0200    type=undefined4      refs=3
   DAT_01d02eee                    addr=01d02eee    type=undefined4      refs=1  nearby: CAlphaBitmap_01d02ed0.height at +14
   DAT_01d02eef                    addr=01d02eef    type=undefined4      refs=1  nearby: CAlphaBitmap_01d02ed0.height at +15
@@ -3542,7 +3530,6 @@ NO TYPE HINTS (2149)
   DAT_01d06853                    addr=01d06853    type=undefined4      refs=1
   DAT_01d06952                    addr=01d06952    type=undefined4      refs=1
   DAT_01d06953                    addr=01d06953    type=undefined4      refs=1
-  DAT_01d06a74                    addr=01d06a74    type=undefined4      refs=4
   DAT_01d074aa                    addr=01d074aa    type=undefined4      refs=1
   DAT_01d074ab                    addr=01d074ab    type=undefined4      refs=1
   DAT_01d082e2                    addr=01d082e2    type=undefined4      refs=1
@@ -4061,9 +4048,7 @@ NO TYPE HINTS (2149)
   DAT_0264bb94                    addr=0264bb94    type=undefined4      refs=4
   DAT_0264bb98                    addr=0264bb98    type=undefined4      refs=3
   DAT_0264bb9c                    addr=0264bb9c    type=undefined4      refs=3
-  DAT_0264bba0                    addr=0264bba0    type=undefined4      refs=14
   DAT_0264bba4                    addr=0264bba4    type=undefined4      refs=4
-  DAT_0264bbac                    addr=0264bbac    type=undefined4      refs=6
   DAT_0264bbb0                    addr=0264bbb0    type=undefined4      refs=1
   DAT_0264bbb8                    addr=0264bbb8    type=undefined4      refs=2
   DAT_0264bbbc                    addr=0264bbbc    type=undefined4      refs=3
@@ -4403,7 +4388,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01d09918                    addr=01d09918    refs=23    type=undefined4      likely=array
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (98)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (93)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
@@ -4430,7 +4415,6 @@ They appear only as inline constant values.
   DAT_0061b8c4                    value=0x61B8C4        refs=2
   DAT_0061ef54                    value=0x61EF54        refs=2
   DAT_0061f15c                    value=0x61F15C        refs=2
-  DAT_00621070                    value=0x621070        refs=2
   DAT_005cab4e                    value=0x5CAB4E        refs=1
   DAT_005cab3e                    value=0x5CAB3E        refs=1
   DAT_005cab41                    value=0x5CAB41        refs=1
@@ -4498,17 +4482,13 @@ They appear only as inline constant values.
   DAT_0061f264                    value=0x61F264        refs=1
   DAT_006180f0                    value=0x6180F0        refs=1
   DAT_00618100                    value=0x618100        refs=1
-  DAT_0061bf50                    value=0x61BF50        refs=1
-  DAT_0061bf60                    value=0x61BF60        refs=1
-  DAT_0061bf70                    value=0x61BF70        refs=1
-  DAT_00621060                    value=0x621060        refs=1
   DAT_02662df0                    value=0x2662DF0       refs=1
   DAT_00000065                    value=0x65            refs=1
   DAT_00007f00                    value=0x7F00          refs=1
   DAT_026650b8                    value=0x26650B8       refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2721)
+FILTERED OUT - INSIDE NAMED DATA (2732)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -7216,6 +7196,17 @@ string, array, or struct and are not standalone globals.
   DAT_006164dd                    inside s_save_SAVE_TMP_006164c8
   DAT_0061b470                    inside s_none_0061b468
   DAT_0061b474                    inside s_none_0061b468
+  DAT_0061bf80                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf84                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf88                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf8c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf90                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf94                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf98                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf9c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa0                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa4                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa8                    inside g_DSPROPSETID_EAX_ReverbProperties
   DAT_0061e280                    inside s_d3d_dll_0061e183
   DAT_0061f1a0                    inside s_s_0123456789abcdefghijkl_0061f178
   DAT_0061f1a4                    inside s_s_0123456789abcdefghijkl_0061f178

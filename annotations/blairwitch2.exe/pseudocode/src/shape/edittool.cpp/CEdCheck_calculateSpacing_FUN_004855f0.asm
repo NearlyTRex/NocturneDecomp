@@ -7,8 +7,8 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEdCheck_render_FUN_00485610 at 0048568b
 ;   shape_edittool.cpp_FUN_00485470 at 00485506
-;   shape_edittool.cpp_FUN_00485610 at 0048568b
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580

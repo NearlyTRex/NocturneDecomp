@@ -162,6 +162,18 @@ def test_applying_renames_types_and_checks_the_live_names():
     assert program.transactions == [["Rename by address", True]]
 
 
+def test_a_dynamic_dat_name_counts_as_no_label():
+    program = program_for()
+    symbols = program.getSymbolTable()
+    dynamic = gp.Symbol("DAT_00402030", Address(0x402030), source = "DEFAULT", dynamic = True)
+    dynamic.table = symbols
+    symbols.symbols.append(dynamic)
+    kinds = rows_for(labels = [{"addr": "00402030", "name": "g_Instance", "current": None}])
+    assert rba.apply_to_program(program, kinds) == {"labels": 1, "thunks": 0}
+    assert symbols.getPrimarySymbol(Address(0x402030)).getName() == "g_Instance"
+    assert dynamic.getName() == "DAT_00402030"
+
+
 def test_a_failed_apply_rolls_back():
     program = program_for()
     with pytest.raises(ValueError):
@@ -238,6 +250,24 @@ def test_a_prototype_whose_types_match_but_whose_names_do_not_is_rewritten():
     func.parameters = [ghidra_fake.Variable("n", INT)]
     unnamed = {"conv": "__cdecl", "ret": "int", "params": [{"type": "int"}]}
     assert rba.apply_prototype(program, func, unnamed, {}) == "prototype already matches"
+
+
+def test_varargs_count_towards_a_match_and_are_set_only_when_the_row_says(capsys):
+    program = program_for()
+    program.getDataTypeManager().add(INT)
+    func = Proto("FUN_00401400", 0x401400)
+    func.parameters, func.return_type = [ghidra_fake.Variable("n", INT)], INT
+    func.varargs = False
+    variadic = dict(IN_PLACE, varargs = True)
+    assert rba.apply_prototype(program, func, variadic, {}) == "prototypes"
+    assert func.hasVarArgs()
+    func.parameters = [ghidra_fake.Variable("n", INT)]
+    assert rba.apply_prototype(program, func, variadic, {}) == "prototype already matches"
+    # Left out, the function's own setting stands
+    assert rba.apply_prototype(program, func, IN_PLACE, {}) == "prototype already matches"
+    assert func.hasVarArgs()
+    print(rba.sig_text(variadic))
+    assert capsys.readouterr().out == "int __cdecl(int n, ...)\n"
 
 
 def test_a_name_in_place_with_a_prototype_is_a_retype_and_the_report_shows_it(capsys):

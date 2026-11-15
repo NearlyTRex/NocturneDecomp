@@ -42,6 +42,7 @@
 ;   core_game.cpp_CGame_clearOverlay_FUN_004b3200
 ;   core_game.cpp_CGame_loadAssets_FUN_004bb050
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050
+;   core_game.cpp_CGame_processFrame_FUN_004b5190
 ;   core_game.cpp_CGame_processFudge_FUN_004b39d0
 ;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
@@ -49,7 +50,6 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_saveGame_FUN_004bb9b0
 ;   core_game.cpp_CGame_setGameRes_FUN_004b5fd0
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -269,8 +269,8 @@ section .text
     PUSH ESI                            ; 004b64b0
     MOV EDI,dword ptr [0x0061b5a8]      ; 004b64b1 | g_CDemonSetPtr
     PUSH EDI                            ; 004b64b7
-    CALL core_setdir.cpp_FUN_00538d10   ; 004b64b8
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 004b64b8
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004b64bd
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b64c0
         ;   Label: LAB_004b64c0
@@ -314,7 +314,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0 ; 004b652c
         ;   XREF to: 0050ecb0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004b6531
-    MOV EDX,dword ptr [0x00617e10]      ; 004b6534 | DAT_00617e10
+    MOV EDX,dword ptr [0x00617e10]      ; 004b6534 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004b653a
     CALL core_level.cpp_CLevelLoader_cleanup_FUN_004e1b80 ; 004b653b
         ;   XREF to: 004e1b80 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_cleanup_FUN_004e1b80(CLevelLoader * this_ptr)
@@ -413,8 +413,8 @@ section .text
     PUSH ESI                            ; 004b6641
     MOV EAX,[0x0061b5a8]                ; 004b6642 | g_CDemonSetPtr
     PUSH EAX                            ; 004b6647
-    CALL core_setdir.cpp_FUN_00538d10   ; 004b6648
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 004b6648
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004b664d
     TEST EAX,EAX                        ; 004b6650
     JZ 0x004b6660                       ; 004b6652
@@ -431,8 +431,8 @@ section .text
         ;   Label: LAB_004b6668
     PUSH ECX                            ; 004b666b
     MOV EBX,EDI                         ; 004b666c
-    CALL core_game.cpp_FUN_004b5190     ; 004b666e
-        ;   XREF to: 004b5190 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b5190()
+    CALL core_game.cpp_CGame_processFrame_FUN_004b5190 ; 004b666e
+        ;   XREF to: 004b5190 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processFrame_FUN_004b5190(CGame * this_ptr)
     MOV ESI,dword ptr [0x01cb7788]      ; 004b6673 | DAT_01cb7788
     ADD ESP,0x4                         ; 004b6679
     CMP EDI,ESI                         ; 004b667c

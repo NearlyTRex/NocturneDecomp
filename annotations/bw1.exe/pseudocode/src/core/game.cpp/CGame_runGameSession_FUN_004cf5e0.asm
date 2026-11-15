@@ -47,10 +47,10 @@
 ;   core_game.cpp_CGame_fadeIn_FUN_004d62e0
 ;   core_game.cpp_CGame_loadAssets_FUN_004d5e40
 ;   core_game.cpp_CGame_playerControls_FUN_004d0860
+;   core_game.cpp_CGame_processFrame_FUN_004ce580
 ;   core_game.cpp_CGame_processFudge_FUN_004cc9c0
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0
-;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;   ... and 48 more
 ;
 ; *****************************************************************************
@@ -316,7 +316,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0 ; 004cf99a
         ;   XREF to: 0052fee0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004cf99f
-    MOV EDX,dword ptr [0x0061f2e0]      ; 004cf9a2 | DAT_0061f2e0
+    MOV EDX,dword ptr [0x0061f2e0]      ; 004cf9a2 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004cf9a8
     CALL core_level.cpp_CLevelLoader_cleanup_FUN_004fefa0 ; 004cf9a9
         ;   XREF to: 004fefa0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_cleanup_FUN_004fefa0(CLevelLoader * this_ptr)
@@ -479,8 +479,8 @@ section .text
         ;   Label: LAB_004cfb5a
     PUSH EAX                            ; 004cfb5d
     XOR EBX,EBX                         ; 004cfb5e
-    CALL core_game.cpp_FUN_004ce580     ; 004cfb60
-        ;   XREF to: 004ce580 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ce580()
+    CALL core_game.cpp_CGame_processFrame_FUN_004ce580 ; 004cfb60
+        ;   XREF to: 004ce580 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processFrame_FUN_004ce580(CGame * this_ptr)
     MOV EDX,dword ptr [0x01cd01f8]      ; 004cfb65 | DAT_01cd01f8
     ADD ESP,0x4                         ; 004cfb6b
     TEST EDX,EDX                        ; 004cfb6e

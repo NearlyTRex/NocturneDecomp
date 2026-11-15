@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 81,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 3,
+    "pseudocode_lines": 43,
+    "suspect_count": 5,
     "suspect_types": [
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 148
+    "total_lines": 150
   },
   "cross_references": [],
   "function": {
@@ -32,7 +33,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "004625a0",
@@ -161,8 +162,16 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar2 == 0",
@@ -170,15 +179,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar2 != 0)",
       "type": "undefined_data"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",

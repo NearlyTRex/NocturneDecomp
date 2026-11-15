@@ -17,11 +17,12 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00410670(CBaron *this_pt
   SMotion *pSVar4;
   int iVar5;
   float *pfVar6;
-  float *pfVar7;
+  CBoundingBox3D *pCVar7;
   byte bVar8;
   double dVar9;
+  int skip_shadow_test;
   float afStack_5c [6];
-  float afStack_44 [6];
+  CBoundingBox3D CStack_44;
   CVector3f CStack_2c;
   float fStack_1c;
   uint uStack_18;
@@ -67,16 +68,17 @@ LAB_004106e9:
     engine_drender_cpp_pop_FUN_0046b4a0();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
+  skip_shadow_test = 0;
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
   pfVar6 = afStack_5c;
-  pfVar7 = afStack_44;
+  pCVar7 = &CStack_44;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pfVar7 = *pfVar6;
+    (pCVar7->min).x = *pfVar6;
     pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
-    pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
+    pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
   }
-  iVar5 = core_box_cpp_FUN_0041a840(afStack_44);
+  iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_44,skip_shadow_test);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)fStack_1c);

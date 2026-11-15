@@ -22,7 +22,7 @@
 ;   core_svetlana.cpp_CSvetlana_processDamage_FUN_00571870 at 0057198f
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004c9bd0
+;   core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004c9cd7
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004c9cd8
     PUSH ESI                            ; 004c9cdc
-    CALL core_gore.cpp_FUN_004c9bd0     ; 004c9cdd
-        ;   XREF to: 004c9bd0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004c9bd0()
+    CALL core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0 ; 004c9cdd
+        ;   XREF to: 004c9bd0 (UNCONDITIONAL_CALL)  ; CFlies * core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0(CGore * this_ptr, CVector3f * position, int gather_count, float spawn_rate, ...)
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004c9ce2
     MOV dword ptr [EAX + 0x2c],EDX      ; 004c9ce5
     ADD ESP,0x14                        ; 004c9ce8

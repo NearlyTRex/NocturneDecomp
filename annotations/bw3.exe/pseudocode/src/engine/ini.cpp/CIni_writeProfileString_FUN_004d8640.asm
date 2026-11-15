@@ -43,7 +43,7 @@
 ;   crt_unknown.c_FUN_005a3140
 ;   crt_unknown.c_FUN_005a54b0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_ini.cpp_FUN_004d8470
+;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8470
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     XOR EDX,EDX                         ; 004d8671
     PUSH EBX                            ; 004d8673
     MOV dword ptr [ESP + 0x314],EDX     ; 004d8674
-    CALL engine_ini.cpp_FUN_004d8470    ; 004d867b
-        ;   XREF to: 004d8470 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8470()
+    CALL engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8470 ; 004d867b
+        ;   XREF to: 004d8470 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8470(CIni * this_ptr, char * section, char * key, char * filename, ...)
     MOV EBP,EAX                         ; 004d8680
     MOV EAX,dword ptr [EBX]             ; 004d8682
     ADD ESP,0x14                        ; 004d8684

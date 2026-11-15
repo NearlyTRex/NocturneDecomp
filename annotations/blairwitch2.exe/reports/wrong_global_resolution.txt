@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6227
   Functions with suspicious globals: 802
-  Total suspicious global references: 1437
+  Total suspicious global references: 1438
 
   Most commonly misresolved globals:
     g_CDemonActorClassInfo                             46 functions
@@ -1884,11 +1884,11 @@ core_cross.cpp_CCross_process_FUN_005a6ed0  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
   DAT_02653710
-    Used at lines: 185, 420
+    Used at lines: 185, 421
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 187, 422
+    Used at lines: 187, 423
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2296,15 +2296,15 @@ core_game.cpp_FUN_004be8a0  [.cpp]  (3 suspicious globals)
   File: core/game.cpp
 
   DAT_01c37790
-    Used at lines: 139, 143, 145, 149, 151, ...
+    Used at lines: 135, 139, 141, 145, 147, ...
     NOT found in function reference list
 
   DAT_01cb7528
-    Used at lines: 139, 145, 151, 157
+    Used at lines: 135, 141, 147, 153
     NOT found in function reference list
 
   g_CDemonLightInstance
-    Used at lines: 390, 424
+    Used at lines: 388, 422
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2736,6 +2736,22 @@ core_larva.cpp_staticInit_FUN_004e0520  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
   g_CLarvaClassVersion
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_level.cpp_staticInit_FUN_004e1440  [.cpp]  (3 suspicious globals)
+  File: core/level.cpp
+
+  g_CLevelLoaderInstance
+    Used at lines: 12
+    NOT found in function reference list
+
+  g_LoadingMoonModel
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_LoadingMoonModelDestructorNode
     Used at lines: 14
     NOT found in function reference list
 
@@ -3912,11 +3928,11 @@ core_ammo.cpp_CAmmo_process_FUN_0040ded0  [.cpp]  (2 suspicious globals)
   File: core/ammo.cpp
 
   DAT_02653710
-    Used at lines: 144
+    Used at lines: 143
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 146
+    Used at lines: 145
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4056,11 +4072,11 @@ core_doc.cpp_FUN_004568e0  [.cpp]  (2 suspicious globals)
   File: core/doc.cpp
 
   DAT_01b4d23c
-    Used at lines: 676
+    Used at lines: 674
     NOT found in function reference list
 
   DAT_01b4d248
-    Used at lines: 635
+    Used at lines: 633
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4260,11 +4276,11 @@ core_health.cpp_CHealthItem_process_FUN_004cdb60  [.cpp]  (2 suspicious globals)
   File: core/health.cpp
 
   DAT_02653710
-    Used at lines: 129
+    Used at lines: 135
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 131
+    Used at lines: 137
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4292,27 +4308,15 @@ core_lantern.cpp_CLantern_ctor_FUN_0059cbd0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_level.cpp_staticInit_FUN_004e1440  [.cpp]  (2 suspicious globals)
-  File: core/level.cpp
-
-  g_LoadingMoonModel
-    Used at lines: 13
-    NOT found in function reference list
-
-  g_LoadingMoonModelDestructorNode
-    Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_necklace.cpp_CNecklace_process_FUN_005adad0  [.cpp]  (2 suspicious globals)
   File: core/necklace.cpp
 
   DAT_02653710
-    Used at lines: 138
+    Used at lines: 142
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 140
+    Used at lines: 144
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4328,7 +4332,7 @@ core_podmain.cpp_staticInit_FUN_0051bfd0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_FUN_00521ff0  [.cpp]  (2 suspicious globals)
+core_script.cpp_CScript_validateSyntax_FUN_00521ff0  [.cpp]  (2 suspicious globals)
   File: core/script.cpp
 
   DAT_01e65100
@@ -4364,6 +4368,18 @@ core_set.cpp_CDemonSet_clearLights_FUN_005308e0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0  [.cpp]  (2 suspicious globals)
+  File: core/set.cpp
+
+  DAT_01fc8d04
+    Used at lines: 127, 138
+    NOT found in function reference list
+
+  g_CDemonCameraInstance
+    Used at lines: 75, 76, 79, 80, 82, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0  [.cpp]  (2 suspicious globals)
   File: core/set.cpp
 
@@ -4373,18 +4389,6 @@ core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0  [.cpp]  (2 suspicious globals)
 
   g_CDemonLightInstance
     Used at lines: 59
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_FUN_0052d3c0  [.cpp]  (2 suspicious globals)
-  File: core/set.cpp
-
-  DAT_01fc8d04
-    Used at lines: 130, 141
-    NOT found in function reference list
-
-  g_CDemonCameraInstance
-    Used at lines: 79, 80, 83, 84, 144, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4472,15 +4476,15 @@ core_stairs.cpp_CStairs_ctor_FUN_00561ef0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_stranger.cpp_FUN_00568500  [.cpp]  (2 suspicious globals)
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500  [.cpp]  (2 suspicious globals)
   File: core/stranger.cpp
 
   DAT_0264be14
-    Used at lines: 421
+    Used at lines: 437
     NOT found in function reference list
 
   DAT_0264be20
-    Used at lines: 381
+    Used at lines: 396
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4820,7 +4824,7 @@ core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0  [.cpp]  (1 suspicious glob
   File: core/actor.cpp
 
   g_DeformableModelPool
-    Used at lines: 178
+    Used at lines: 185
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4992,7 +4996,7 @@ core_bmppuzzl.cpp_CExamplePuzzle_dtor_FUN_0059bf70  [.cpp]  (1 suspicious global
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_box.cpp_FUN_0041a840  [.cpp]  (1 suspicious globals)
+core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840  [.cpp]  (1 suspicious globals)
   File: core/box.cpp
 
   g_CDemonCameraInstance
@@ -5356,7 +5360,7 @@ core_doc.cpp_FUN_00453d80  [.cpp]  (1 suspicious globals)
   File: core/doc.cpp
 
   g_CDocClassInfo
-    Used at lines: 307
+    Used at lines: 306
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6132,7 +6136,15 @@ core_game.cpp_CGame_processCheatCodes_FUN_004b90d0  [.cpp]  (1 suspicious global
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 1073, 1104
+    Used at lines: 1075, 1106
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processFrame_FUN_004b5190  [.cpp]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 108, 116
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6141,14 +6153,6 @@ core_game.cpp_CGame_setGameRes_FUN_004b5fd0  [.cpp]  (1 suspicious globals)
 
   g_CDemonCameraInstance
     Used at lines: 33
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_FUN_004b5190  [.cpp]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 108, 116
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6624,7 +6628,7 @@ core_level.cpp_CLevelLoader_cleanup_FUN_004e1b80  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_level.cpp_FUN_004e1480  [.cpp]  (1 suspicious globals)
+core_level.cpp_CLevelLoader_show_FUN_004e1480  [.cpp]  (1 suspicious globals)
   File: core/level.cpp
 
   g_LoadingMoonModel
@@ -6660,7 +6664,7 @@ core_lightgun.cpp_CLightGun_fire_FUN_004e2e70  [.cpp]  (1 suspicious globals)
   File: core/lightgun.cpp
 
   g_CDemonLightInstance
-    Used at lines: 238
+    Used at lines: 241
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6796,7 +6800,7 @@ core_menu.cpp_calibrateGamepad_FUN_004eb490  [.cpp]  (1 suspicious globals)
   File: core/menu.cpp
 
   g_CMoonInstance
-    Used at lines: 34, 57
+    Used at lines: 34, 58
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7172,7 +7176,7 @@ core_script.cpp_CScript_step_FUN_00522350  [.cpp]  (1 suspicious globals)
   File: core/script.cpp
 
   g_ScriptPickList
-    Used at lines: 823, 883
+    Used at lines: 824, 884
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7204,7 +7208,7 @@ core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0  [.cpp]  (1 suspici
   File: core/set.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 67, 79, 135
+    Used at lines: 67, 80, 140
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7320,6 +7324,14 @@ core_setcolid.cpp_staticInit_FUN_00534da0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10  [.cpp]  (1 suspicious globals)
+  File: core/setdir.cpp
+
+  g_CZThumbPool
+    Used at lines: 326, 342
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0  [.cpp]  (1 suspicious globals)
   File: core/setdir.cpp
 
@@ -7349,14 +7361,6 @@ core_setdir.cpp_CZThumb_arrdtor1500_FUN_0053a7c0  [.cpp]  (1 suspicious globals)
 
   g_CZThumbTypeInfo
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_setdir.cpp_FUN_00538d10  [.cpp]  (1 suspicious globals)
-  File: core/setdir.cpp
-
-  g_CZThumbPool
-    Used at lines: 326, 342
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7764,7 +7768,7 @@ core_trash.cpp_CTrash_renderOpaque_FUN_00577480  [.cpp]  (1 suspicious globals)
   File: core/trash.cpp
 
   DAT_0265370c
-    Used at lines: 49
+    Used at lines: 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7796,7 +7800,7 @@ core_turret.cpp_CTurret_fire_FUN_0057fc20  [.cpp]  (1 suspicious globals)
   File: core/turret.cpp
 
   DAT_00000065
-    Used at lines: 190
+    Used at lines: 193
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7924,7 +7928,7 @@ core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400  [.cpp]  (1 suspici
   File: core/wateract.cpp
 
   DAT_0265370c
-    Used at lines: 68
+    Used at lines: 70
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8232,19 +8236,19 @@ engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_00469a90  [.cp
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40  [.cpp]  (1 suspicious globals)
+  File: engine/drender.cpp
+
+  DAT_01ba5c84
+    Used at lines: 29, 50, 65
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_drender.cpp_FUN_0046a580  [.cpp]  (1 suspicious globals)
   File: engine/drender.cpp
 
   DAT_01ba5c84
     Used at lines: 33, 56, 71
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_drender.cpp_FUN_0046ae40  [.cpp]  (1 suspicious globals)
-  File: engine/drender.cpp
-
-  DAT_01ba5c84
-    Used at lines: 29, 50, 65
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8256,19 +8260,19 @@ engine_drender.cpp_staticInit_FUN_00469500  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_font.cpp_CBitFont_wrapText_FUN_004ab360  [.cpp]  (1 suspicious globals)
+  File: engine/font.cpp
+
+  DAT_0061ed94
+    Used at lines: 35, 48, 79
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_font.cpp_FUN_004a9870  [.cpp]  (1 suspicious globals)
   File: engine/font.cpp
 
   DAT_01c34910
     Used at lines: 350
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_font.cpp_FUN_004ab360  [.cpp]  (1 suspicious globals)
-  File: engine/font.cpp
-
-  DAT_0061ed94
-    Used at lines: 45, 58, 91
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

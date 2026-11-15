@@ -13,10 +13,9 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004ace60(CStake *this_ptr)
   int iVar2;
   CVector3f *orientation;
   CBoundingBox3D *pCVar3;
-  CVector3f *pCVar4;
+  CBoundingBox3D *pCVar4;
   byte bVar5;
-  CVector3f local_28;
-  CVector3f local_1c;
+  CBoundingBox3D local_28;
   
   bVar5 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
@@ -29,15 +28,15 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004ace60(CStake *this_ptr)
   pCVar3 = &pCVar1->bounds;
   pCVar4 = &local_28;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4->x = (pCVar3->min).x;
+    *(float *)pCVar4 = (pCVar3->min).x;
     pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-    pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CBoundingBox3D *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  iVar2 = core_box_cpp_FUN_004207b0(&local_28,0);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&local_28,0);
   if (iVar2 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_00551c30
               (g_CDemonSetPtr,&(this_ptr->physics_box).position,(UOrientationVector *)orientation,
-               &local_28,&local_1c,&(this_ptr->physics_box).rotation_matrix);
+               &local_28.min,&local_28.max,&(this_ptr->physics_box).rotation_matrix);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               ((CKeyFramedModelInstance *)0x1c570b8,0.0,-1);
   }

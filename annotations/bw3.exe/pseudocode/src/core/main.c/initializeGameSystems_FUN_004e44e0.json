@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 775,
-    "complexity_score": 1329,
+    "complexity_score": 1339,
     "cross_reference_count": 1,
     "function_call_count": 38,
     "global_count": 85,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 499,
-    "suspect_count": 79,
+    "suspect_count": 80,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -190,8 +190,8 @@
     },
     {
       "addr": "0047cee0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047cee0"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0"
     },
     {
       "addr": "00508960",
@@ -1067,6 +1067,14 @@
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
       "text": "pcVar5 = &stack0xfffff8d8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 439,
+      "match": "&stack0xfffff8d8",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CEditorTools_showWarning_FUN_0047cee0(g_CEditorToolsPtr,&stack0xfffff8d8);",
       "type": "stack_ref"
     },
     {

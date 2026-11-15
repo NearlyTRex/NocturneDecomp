@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   y2
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049dc70 at 0049dd4d
+;   shape_edittool.cpp_CEdCheck_render_FUN_0049dc70 at 0049dd4d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c4f008

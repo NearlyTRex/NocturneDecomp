@@ -31,7 +31,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
   int local_2c;
   int local_28;
   int local_24;
-  uint local_20;
+  int local_20;
   int local_1c;
   int local_18;
   int *local_14;
@@ -103,8 +103,8 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
             *pcVar12 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
             engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
-            engine_font_cpp_FUN_004c1dd0(_DAT_01c3eb50,local_164,iVar6,local_1c,local_20,0xffffffff)
-            ;
+            engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+                      (_DAT_01c3eb50,local_164,iVar6,local_1c,local_20,-1);
             piVar1 = local_14 + 1;
             iVar6 = iVar6 + local_14[4];
             local_18 = local_18 + 1;

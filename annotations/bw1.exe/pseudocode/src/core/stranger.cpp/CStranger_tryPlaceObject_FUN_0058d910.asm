@@ -90,11 +90,11 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
-;   core_setcolid.cpp_FUN_005562c0
 ;   core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00585170
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
-;   shape_edittool.cpp_FUN_00494340
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340
 ;
 ; *****************************************************************************
 
@@ -370,8 +370,8 @@ section .text
     PUSH 0x5f6da9                       ; 0058dc8f | s_actionPending_d_stranger_005f6da8+1
     MOV ECX,dword ptr [0x0061abc0]      ; 0058dc94 | g_CEditorToolsPtr
     PUSH ECX                            ; 0058dc9a
-    CALL shape_edittool.cpp_FUN_00494340 ; 0058dc9b
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 0058dc9b
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0058dca0
     MOV ESI,dword ptr [ESP + 0x158]     ; 0058dca3
         ;   Label: LAB_0058dca3
@@ -673,8 +673,8 @@ section .text
     PUSH EAX                            ; 0058e08b
     MOV EDI,dword ptr [0x00622c18]      ; 0058e08c | g_CDemonSetPtr
     PUSH EDI                            ; 0058e092 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_005562c0 ; 0058e093
-        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005562c0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 ; 0058e093
+        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x190],EAX     ; 0058e098
     FLD float ptr [ESP + 0x190]         ; 0058e09f
     ADD ESP,0xc                         ; 0058e0a6

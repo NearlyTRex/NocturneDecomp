@@ -137,7 +137,7 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *thi
 void __cdecl core_mission_cpp_CDemonMission_save_FUN_004f5c60(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004f6330(CDemonMission *this_ptr,char *actor_name);
-void core_mission_cpp_FUN_004f63c0(int param_1);
+int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004f63c0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004f6410(CDemonMission *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004f6770(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004f68d0(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
@@ -153,7 +153,7 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004f6de0(CDemonMission *
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0(CDemonMission *this_ptr,CLocation *teleport_target);
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
-void core_mission_cpp_FUN_004f6f80(int *param_1);
+void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004f7230(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this_ptr);

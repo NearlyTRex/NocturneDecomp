@@ -47,9 +47,9 @@
 ;
 ; XREF[4]:
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110 at 005571de
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 at 005573b3
+;   core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005574c0 at 00557528
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00557230 at 00557277
-;   core_setcolid.cpp_FUN_00557300 at 005573b3
-;   core_setcolid.cpp_FUN_005574c0 at 00557528
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170

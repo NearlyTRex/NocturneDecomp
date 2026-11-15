@@ -114,7 +114,7 @@ LAB_004be478:
       } while (cVar1 != '\0');
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_00494880(0x01C6E360);
-    core_level_cpp_FUN_004dfc50(0x01D70AB8,9,0,0xffffffff);
+    core_level_cpp_CLevelLoader_show_FUN_004dfc50(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005c368d,local_578,&DAT_005c368a);
     local_18 = _ftell(file_handle);
     iVar5 = 1;
@@ -183,8 +183,8 @@ LAB_004be22a:
       }
       support_codec_cpp_CLZWDecompress_ctor_FUN_00441310(&local_a8,0x8000,8);
       support_codec_cpp_CLZWDecompress_init_FUN_00441350(&local_a8);
-      support_codec_cpp_FUN_00441390(&local_a8,&local_74,&local_48);
-      support_codec_cpp_FUN_004413f0(&local_a8,&local_48);
+      support_codec_cpp_CLZWDecompress_process_FUN_00441390(&local_a8,&local_74,&local_48);
+      support_codec_cpp_CLZWDecompress_finalize_FUN_004413f0(&local_a8,&local_48);
       support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_74);
       support_trstream_cpp_COutStreamFile_close_FUN_005749a0(&local_48);
       file_handle = _fopen("save\\$$SAVE$$.TMP",&DAT_005c36f0);

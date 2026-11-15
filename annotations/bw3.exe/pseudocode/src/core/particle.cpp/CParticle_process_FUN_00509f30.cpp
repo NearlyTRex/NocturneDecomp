@@ -96,8 +96,9 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00509f30(CParticle *this_pt
     this_ptr->is_in_solid = iVar2;
     if ((iVar2 != 0) || (this_ptr->was_in_solid != 0)) {
       local_20 = &this_ptr->previous_position;
-      fVar3 = (float)core_dtrace_cpp_FUN_00473cd0
-                               (&g_CDemonRaytraceInstance,local_20,this_ptr,local_b4 + 2,0);
+      fVar3 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0
+                        (&g_CDemonRaytraceInstance,local_20,&this_ptr->position,&local_ac,(int *)0x0
+                        );
       pCVar1 = local_20;
       local_18 = fVar3;
       if ((0.0 <= fVar3) && (fVar3 < 1.0)) {
@@ -134,7 +135,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00509f30(CParticle *this_pt
           (this_ptr->position).y = local_88.position.y;
           (this_ptr->position).z = local_88.position.z;
         }
-        iVar2 = (*this_ptr->vtable->onCollision)(this_ptr,(CVector3f *)(local_b4 + 2));
+        iVar2 = (*this_ptr->vtable->onCollision)(this_ptr,&local_ac);
         if (iVar2 == 0) {
           pCVar1 = &this_ptr->velocity;
           fStack_24 = (local_ac.z * (this_ptr->velocity).z +

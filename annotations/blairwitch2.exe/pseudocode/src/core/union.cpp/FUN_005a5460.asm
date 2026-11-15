@@ -63,8 +63,8 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
-;   core_setcolid.cpp_FUN_00535ee0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
@@ -299,8 +299,8 @@ section .text
     PUSH EAX                            ; 005a579b
     MOV EDX,dword ptr [0x0061b5a8]      ; 005a579c | g_CDemonSetPtr
     PUSH EDX                            ; 005a57a2 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 005a57a3
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 005a57a3
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x160],EAX     ; 005a57a8
     FLD float ptr [ESP + 0x160]         ; 005a57af
     ADD ESP,0xc                         ; 005a57b6

@@ -29,9 +29,9 @@ void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr
 // Address: 00510810
 void FUN_00510810(void);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00510a90
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00510a90
 // Address: 00510a90
-void FUN_00510a90(CPackedBitmapSet *param_1,int param_2,int param_3);
+void __cdecl CPackedBitmapSet::reload(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 
 // Original: cockpit_pkbmpset.cpp_FUN_00510de0
 // Address: 00510de0

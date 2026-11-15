@@ -16,7 +16,7 @@
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0 at 004ec2ec
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eb037
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004edbf1
-;   core_inv.cpp_FUN_004f8b70 at 004f8c27
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8c27
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50 at 00540d9a
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00545d04
 ;

@@ -41,10 +41,10 @@
 ;   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c1dd0
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00509f0d
     PUSH EAX                            ; 00509f11
     INC EBX                             ; 00509f12
-    CALL engine_font.cpp_FUN_004c1dd0   ; 00509f13
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00509f13
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00509f18
     CMP EBX,0x5                         ; 00509f1b
     JL 0x00509ec8                       ; 00509f1e
@@ -162,8 +162,8 @@ section .text
     PUSH EBX                            ; 00509f40
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00509f41
     PUSH ESI                            ; 00509f45
-    CALL engine_font.cpp_FUN_004c1dd0   ; 00509f46
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00509f46
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00509f4b
     MOV EDI,dword ptr [ESP + 0x4]       ; 00509f4e
     MOV EAX,dword ptr [ESP + 0x40]      ; 00509f52
@@ -216,8 +216,8 @@ section .text
     PUSH 0x5e7a0a                       ; 00509fda | = "Blair Witch Volume I: Rustin Parr (c)..."
     MOV EBX,dword ptr [0x0152d248]      ; 00509fdf | DAT_0152d248
     PUSH EBX                            ; 00509fe5
-    CALL engine_font.cpp_FUN_004c1dd0   ; 00509fe6
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 00509fe6
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
         ;   Label: LAB_00509fe6
     ADD ESP,0x18                        ; 00509feb
     PUSH 0x8000                         ; 00509fee
@@ -231,8 +231,8 @@ section .text
     PUSH 0x5e7aac                       ; 0050a00c | DAT_005e7aac
     MOV ESI,dword ptr [0x0152d248]      ; 0050a011 | DAT_0152d248
     PUSH ESI                            ; 0050a017
-    CALL engine_font.cpp_FUN_004c1dd0   ; 0050a018
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0050a018
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0050a01d
     PUSH 0xffff                         ; 0050a020
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 0050a025
@@ -362,8 +362,8 @@ section .text
     PUSH EDX                            ; 0050a138
     PUSH EAX                            ; 0050a139
     MOV EBX,EAX                         ; 0050a13a
-    CALL engine_font.cpp_FUN_004c1dd0   ; 0050a13c
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 0050a13c
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0050a141
     PUSH 0x58                           ; 0050a144
     MOV ESI,EBX                         ; 0050a146

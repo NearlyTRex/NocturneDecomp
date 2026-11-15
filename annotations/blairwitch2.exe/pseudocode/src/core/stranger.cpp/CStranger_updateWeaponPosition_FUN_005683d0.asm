@@ -23,7 +23,7 @@
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770 at 0056b9c7
 ;
 ; Called Functions:
-;   core_stranger.cpp_FUN_00568500
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_getTranslation_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
@@ -63,8 +63,8 @@ section .text
     PUSH EBX                            ; 00568421
     LEA ESI,[ESP + 0x14]                ; 00568422
     LEA EDI,[ESP + 0x74]                ; 00568426
-    CALL core_stranger.cpp_FUN_00568500 ; 0056842a
-        ;   XREF to: 00568500 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_00568500()
+    CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500 ; 0056842a
+        ;   XREF to: 00568500 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     MOV ECX,0xc                         ; 0056842f
     LEA ESI,[ESP + 0x14]                ; 00568434
     ADD ESP,0xc                         ; 00568438

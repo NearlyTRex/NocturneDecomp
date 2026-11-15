@@ -14,9 +14,9 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8bd3
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6e12
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d280c
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cef37
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d2225
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0 at 004d8695
-;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfc20
 ;   ... and 31 more
 ;
 ; Referenced Globals:

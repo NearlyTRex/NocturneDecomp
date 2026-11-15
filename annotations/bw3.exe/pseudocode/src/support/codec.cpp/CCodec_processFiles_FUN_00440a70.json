@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 106,
+    "complexity_score": 219,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 15,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "pointer_cast",
+      "undefined_data",
+      "undefined_type",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 145
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00440a70",
+    "address_range": [
+      [
+        "00440a70",
+        "00440b52"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_processFiles_FUN_00440a70",
+    "signature": "int __cdecl support_codec_cpp_CCodec_processFiles_FUN_00440a70(CCodec *this_ptr,char *input_file_path,char *output_file_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "00573920",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60"
+    },
+    {
+      "addr": "005747e0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0"
+    },
+    {
+      "addr": "00574850",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_00574850"
+    },
+    {
+      "addr": "00574980",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b92c5",
+      "name": "DAT_005b92c5",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.241379310344827,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CALLIND": 3,
+      "CBRANCH": 4,
+      "COPY": 65,
+      "INT_ADD": 34,
+      "INT_AND": 44,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 42,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 21,
+      "INT_SUB": 39,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 369
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004340f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9942
+    },
+    "bw1.exe": {
+      "addr": "00442e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043ec30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6136
+    },
+    "nocturne.exe": {
+      "addr": "004391b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6136
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      },
+      {
+        "is_param": true,
+        "name": "input_file_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_file_path",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 6,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 7,
+      "match": "undefined3 extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005b92c5",
+      "severity": "mild",
+      "text": "(&CStack_c,output_file_path,&DAT_005b92c5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 4))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,&CStack_38,&CStack_c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)((int)this_ptr->vtable + 8))(this_ptr,&CStack_38,&CStack_c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)((int)this_ptr->vtable + 0xc))(this_ptr,&CStack_c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)((int)this_ptr->vtable + 0xc))(this_ptr,&CStack_c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 15,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 22,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "concat_reconstruction"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCheesyCipher",
+        "offset": 28,
+        "vtable_addr": "005dd524"
+      },
+      {
+        "class_name": "CCodec",
+        "offset": 28,
+        "vtable_addr": "005dd434"
+      },
+      {
+        "class_name": "CLZWCompress",
+        "offset": 28,
+        "vtable_addr": "005dd464"
+      },
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 28,
+        "vtable_addr": "005dd494"
+      },
+      {
+        "class_name": "CAsciiArmor",
+        "offset": 28,
+        "vtable_addr": "005dd4c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 6
+  }
+}

@@ -17,6 +17,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052b
     return;
   }
   local_10[0] = 0;
-  (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed30,0,0,0,local_10,0x10);
+  (**(code **)(*_DAT_02dc9224 + 0x10))
+            (_DAT_02dc9224,&g_DSPROPSETID_EAX_ReverbProperties,0,0,0,local_10,0x10);
   return;
 }

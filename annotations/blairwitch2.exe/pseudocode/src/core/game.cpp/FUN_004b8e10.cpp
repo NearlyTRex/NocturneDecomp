@@ -79,6 +79,6 @@ void core_game_cpp_FUN_004b8e10(char *param_1,char *param_2)
   iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   this_ptr = actor_ptr;
 LAB_004b8edb:
-  core_inv_cpp_FUN_004dadb0(iVar2 + 0x2437c,this_ptr,1,0);
+  core_inv_cpp_CInventory_addItem_FUN_004dadb0((CInventory *)(iVar2 + 0x2437c),this_ptr,1,0);
   return;
 }

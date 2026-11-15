@@ -33,8 +33,8 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930
+;   core_gore.cpp_CGore_createFootstep_FUN_004cee70
 ;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0
-;   core_gore.cpp_FUN_004cee70
 ;   core_ground.cpp_getGroundTypeCode_FUN_004cf9a0
 ;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
@@ -136,8 +136,8 @@ section .text
     PUSH EBX                            ; 0040cba6
     MOV EAX,[0x005fed24]                ; 0040cba7 | g_CGorePtr
     PUSH EAX                            ; 0040cbac
-    CALL core_gore.cpp_FUN_004cee70     ; 0040cbad
-        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cee70()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004cee70 ; 0040cbad
+        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004cee70(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     MOV EDX,dword ptr [EBP + 0x114]     ; 0040cbb2
     SUB EDX,0x2000                      ; 0040cbb8
     ADD ESP,0x18                        ; 0040cbbe
@@ -288,8 +288,8 @@ section .text
     PUSH EBX                            ; 0040cd77
     MOV ECX,dword ptr [0x005fed24]      ; 0040cd78 | g_CGorePtr
     PUSH ECX                            ; 0040cd7e
-    CALL core_gore.cpp_FUN_004cee70     ; 0040cd7f
-        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cee70()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004cee70 ; 0040cd7f
+        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004cee70(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     ADD ESP,0x18                        ; 0040cd84
     JMP 0x0040cbcf                      ; 0040cd87
         ;   XREF to: 0040cbcf (UNCONDITIONAL_JUMP)  ; LAB_0040cbcf

@@ -37,7 +37,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00530750
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
@@ -109,8 +109,8 @@ section .text
     LEA ESI,[ESP + 0x54]                ; 0049f8cb
     PUSH EAX                            ; 0049f8cf
     MOVSD.REP ES:EDI,ESI                ; 0049f8d0
-    CALL core_box.cpp_FUN_0041a840      ; 0049f8d2
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 0049f8d2
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0049f8d7
     MOV EDX,dword ptr [EBP + 0x14]      ; 0049f8da
     MOV dword ptr [EDX + 0x3ec],EAX     ; 0049f8dd

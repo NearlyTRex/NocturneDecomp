@@ -63,7 +63,7 @@
 ;   undefined4 DAT_005e5db9
 ;
 ; Called Functions:
-;   core_setcolid.cpp_FUN_00535ee0
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;
 ; *****************************************************************************
 
@@ -170,8 +170,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00536363
     MOVSD ES:EDI,ESI                    ; 00536364
     MOVSD ES:EDI,ESI                    ; 00536365
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 00536366
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 00536366
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0xc0],EAX      ; 0053636b
     FLD float ptr [ESP + 0xc0]          ; 00536372
     ADD ESP,0xc                         ; 00536379

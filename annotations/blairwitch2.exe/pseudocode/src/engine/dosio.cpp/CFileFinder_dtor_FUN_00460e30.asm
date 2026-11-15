@@ -12,8 +12,8 @@
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20 at 0047cdff
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870 at 00481a2a
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70 at 00481c29
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20 at 00481f2f
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481d54
-;   shape_edittool.cpp_FUN_00481e20 at 00481f2f
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00460f50

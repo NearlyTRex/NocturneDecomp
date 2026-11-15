@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 208,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 11,
+    "pseudocode_lines": 85,
+    "suspect_count": 13,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 284
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -44,7 +46,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004688a0",
@@ -268,7 +270,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&(this_ptr->base).base.base.location.position);",
@@ -276,7 +278,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_007c34dc",
       "severity": "mild",
       "text": "CStack_2c.y = DAT_007c34dc;",
@@ -284,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&CStack_2c,(CVector3f *)0x0);",
@@ -292,15 +294,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_007c351c",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_007c351c,0.0,0x23);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(CBoundingBox3D *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 76,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
@@ -308,7 +318,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 77,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,(int)fStack_1c);",
@@ -316,7 +326,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 78,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);",
@@ -324,7 +334,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 81,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);",
@@ -332,15 +342,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 85,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
+      "line": 69,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",

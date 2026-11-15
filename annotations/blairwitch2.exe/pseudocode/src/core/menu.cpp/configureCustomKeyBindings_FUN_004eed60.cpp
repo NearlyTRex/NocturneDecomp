@@ -680,7 +680,8 @@ LAB_004eed8e:
           pcVar31[1] = cVar1;
           pcVar31 = pcVar31 + 2;
         } while (cVar1 != '\0');
-        shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,local_2d4);
+        shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+                  (g_CEditorToolsPtr,local_2d4);
         break;
       case 0x255:
       case 0x256:
@@ -736,7 +737,8 @@ LAB_004eed8e:
 LAB_004efc41:
           pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                              ("OK - you can release the key now...");
-          shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,pcVar2);
+          shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+                    (g_CEditorToolsPtr,pcVar2);
           iVar29 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_ESCAPE);
           if (iVar29 != 0) break;
           wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
@@ -780,7 +782,8 @@ LAB_004efc41:
           pcVar31[1] = cVar1;
           pcVar31 = pcVar31 + 2;
         } while (cVar1 != '\0');
-        shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,acStack_4d4);
+        shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+                  (g_CEditorToolsPtr,acStack_4d4);
         engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(0x01D02F84,1);
 LAB_004efd32:
         do {
@@ -800,7 +803,8 @@ LAB_004efd32:
         **(EInputCodeType **)(&DAT_01d086f4 + iVar27 * 4) = EVar30;
         pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                            ("OK - you can release the key now...");
-        shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,pcVar2);
+        shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+                  (g_CEditorToolsPtr,pcVar2);
         while( true ) {
           if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
             core_game_cpp_CGame_resetKeyState_FUN_004b7140(g_CGamePtr);

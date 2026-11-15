@@ -97,9 +97,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
   void *pvStack_80;
   float fStack_7c;
   void *apvStack_78 [2];
-  CDemonActor *pCStack_70;
-  float fStack_6c;
-  CVector3f CStack_68;
+  byte auStack_70 [20];
   CVector3f CStack_5c;
   float afStack_50 [3];
   void *pvStack_44;
@@ -191,8 +189,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
          (float)(&pCStack_3c)[(uint)bVar10 * -2 + (uint)bVar10 * -2];
     if (apvStack_78 + 1 != &pvStack_a4) {
       apvStack_78[1] = pvStack_a4;
-      pCStack_70 = pCStack_a0;
-      fStack_6c = afStack_9c[0];
+      auStack_70._0_4_ = pCStack_a0;
+      auStack_70._4_4_ = afStack_9c[0];
     }
   }
   auStack_124._8_4_ = 0.0;
@@ -321,8 +319,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a050(CDemonActor 
                       (this_ptr,hit_type,(SDamageInfo *)auStack_2f4,(CDemonActor *)pCVar2);
           }
           iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
-                            (pCVar2,&CStack_68,in_stack_00000014,(SDamageInfo *)(auStack_2f4 + 0x10)
-                            );
+                            (pCVar2,(CVector3f *)(auStack_70 + 8),in_stack_00000014,
+                             (SDamageInfo *)(auStack_2f4 + 0x10));
           if ((iVar4 != 0) && (dStack_390 = (double)fStack_2d0, 0.0 < dStack_390)) {
             pvStack_3a4 = (void *)pCVar2->blood_type;
             fVar12 = 5.936801e-39;
@@ -346,7 +344,8 @@ LAB_0040a3a9:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,pCStack_14);
     }
     iStack_28 = 0;
-    while ((fVar12 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,&pCStack_70,auStack_124),
+    while ((fVar12 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                               (g_CDemonSetPtr,(CVector3f *)auStack_70,(CVector3f *)auStack_124),
            0.0 <= fVar12 && (fVar12 <= 1.0))) {
       pCVar2 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c8f0

@@ -109,8 +109,8 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_0053ea20
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 ;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
-;   core_setcolid.cpp_FUN_0053ccc0
 ;   crt_math.c_acos_FUN_005a4b74
 ;
 ; *****************************************************************************
@@ -176,8 +176,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004a2ed5
     MOVSD ES:EDI,ESI                    ; 004a2ed6
     MOVSD ES:EDI,ESI                    ; 004a2ed7
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 004a2ed8
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 004a2ed8
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x170],EAX     ; 004a2edd
     FLD float ptr [ESP + 0x170]         ; 004a2ee4
     ADD ESP,0xc                         ; 004a2eeb

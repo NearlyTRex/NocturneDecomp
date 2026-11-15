@@ -61,9 +61,9 @@ CDemonCube * __cdecl CDemonRaytrace::getCubeAt(CDemonRaytrace *this_ptr,int grid
 // Address: 00472b50
 CVector3f * __stack3_esi CDemonRaytrace::rayIntersection(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);
 
-// Original: core_dtrace.cpp_FUN_00472c60
+// Original: core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
 // Address: 00472c60
-float FUN_00472c60(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl CDemonRaytrace::rayVoxelIntersection(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390
 // Address: 00473390

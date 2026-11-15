@@ -21,7 +21,7 @@
 ; undefined2       Stack[-0x40]:2  local_40
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b72ff
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b72ff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cba90

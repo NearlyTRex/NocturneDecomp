@@ -98,8 +98,8 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004191c0
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520 at 00419814
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041df4b
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428260 at 0042858c
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042ac62
-;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 004288d5
 ;   ... and 23 more
 ;
 ; Referenced Globals:

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 475,
+    "complexity_score": 477,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 52,
     "suspect_count": 40,
     "suspect_types": [
       "concat_reconstruction",
@@ -16,7 +16,7 @@
       "undefined_type",
       "unnamed_param"
     ],
-    "total_lines": 236
+    "total_lines": 238
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "unknown",
     "name": "core_hero.cpp_FUN_004d4900",
-    "signature": "undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,undefined4 param_2)"
+    "signature": "undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -54,6 +54,11 @@
       "addr": "004d2cf0",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryInteract_FUN_004d2cf0"
+    },
+    {
+      "addr": "004d3040",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040"
     },
     {
       "addr": "004d3e20",
@@ -74,11 +79,6 @@
       "addr": "004d2ea0",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0"
-    },
-    {
-      "addr": "004d3040",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d3040"
     },
     {
       "addr": "004d3210",
@@ -178,7 +178,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)",
+      "text": "uint core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -186,7 +186,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)",
+      "text": "uint core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -367,31 +367,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 == 0 || (iVar5 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar5 == 0)) &&",
+      "text": "(iVar5 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(param_1,param_2),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 == 0 || (iVar5 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar5 == 0)) &&",
+      "text": "(iVar5 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(param_1,param_2),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),",
@@ -402,20 +394,20 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
+      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(iVar5 = core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(param_1), iVar5 == 0)))) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),",
@@ -426,20 +418,20 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
+      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(iVar5 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004d3500(param_1), iVar5 == 0)))))) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),",
@@ -450,12 +442,20 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
+      "text": "((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(iVar5 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(param_1), iVar5 == 0))))",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
+      "line": 45,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "(param_1,\"CBodyPart\"), CONCAT31(extraout_var_00,bVar2) != 0))",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,\"CBodyPart\"), CONCAT31(extraout_var_00,bVar2) != 0))",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 43,
+      "line": 45,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "(param_1,\"CBodyPart\"), CONCAT31(extraout_var_00,bVar2) != 0))",

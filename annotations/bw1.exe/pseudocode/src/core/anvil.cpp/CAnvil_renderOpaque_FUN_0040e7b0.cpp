@@ -11,10 +11,12 @@ int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040e7b0(CAnvil *this_ptr)
 {
   int iVar1;
   uint *puVar2;
+  int unaff_EDI;
   uint *puVar3;
   byte bVar4;
-  uint auStack_34 [6];
-  uint auStack_1c [6];
+  uint auStack_34 [2];
+  CBoundingBox3D CStack_2c;
+  uint auStack_14 [4];
   
   bVar4 = 0;
   if (this_ptr->triggered == 0) {
@@ -25,14 +27,14 @@ int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040e7b0(CAnvil *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_1c;
+  puVar2 = auStack_14;
   puVar3 = auStack_34;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_004207b0(auStack_34);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_2c,unaff_EDI);
   if (iVar1 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,-1);

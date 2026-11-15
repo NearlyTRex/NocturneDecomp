@@ -31,7 +31,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-;   core_dtrace.cpp_FUN_0048b150
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
@@ -645,8 +645,8 @@ section .text
     FADD float ptr [EBX + 0x38]         ; 005a4ab0
     PUSH 0x1fe5c1c                      ; 005a4ab3 | g_CDemonRaytraceInstance
     FSTP float ptr [EBX + 0x38]         ; 005a4ab8
-    CALL core_dtrace.cpp_FUN_0048b150   ; 005a4abb
-        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048b150()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150 ; 005a4abb
+        ;   XREF to: 0048b150 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x1f4],EAX     ; 005a4ac0
     FLD float ptr [ESP + 0x1f4]         ; 005a4ac7
     ADD ESP,0x14                        ; 005a4ace

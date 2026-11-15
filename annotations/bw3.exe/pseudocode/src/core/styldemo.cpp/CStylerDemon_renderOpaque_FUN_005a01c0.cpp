@@ -12,9 +12,10 @@ int __cdecl core_styldemo_cpp_CStylerDemon_renderOpaque_FUN_005a01c0(CStylerDemo
   CMorph *this_ptr_00;
   int iVar1;
   uint *puVar2;
+  int unaff_EDI;
   uint *puVar3;
   byte bVar4;
-  uint auStack_34 [6];
+  uint auStack_2c [4];
   uint auStack_1c [6];
   
   bVar4 = 0;
@@ -22,14 +23,15 @@ int __cdecl core_styldemo_cpp_CStylerDemon_renderOpaque_FUN_005a01c0(CStylerDemo
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-    puVar2 = auStack_34;
+    puVar2 = auStack_2c;
     puVar3 = auStack_1c;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    iVar1 = core_box_cpp_FUN_0041daf0(auStack_1c);
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+                      ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
     if (iVar1 != 0) {
       if (ABS(this_ptr->morph_time) != 0.0) {
         this_ptr_00 = &this_ptr->morph;

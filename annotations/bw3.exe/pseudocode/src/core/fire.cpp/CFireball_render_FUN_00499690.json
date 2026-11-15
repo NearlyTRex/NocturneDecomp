@@ -39,7 +39,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "004625a0",
@@ -474,9 +474,9 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(CVector3f *)((int)pCVar7",
+      "match": "(CBoundingBox3D *)((int)pCVar7",
       "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -484,7 +484,7 @@
       "line": 80,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02cfd900,&CStack_100,",
+      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02cfd900,",
       "type": "undefined_data"
     },
     {
@@ -724,7 +724,7 @@
       "line": 202,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,pCVar7);",
+      "text": "(DAT_005f2afc,world_position);",
       "type": "undefined_data"
     },
     {
@@ -924,7 +924,7 @@
       "line": 75,
       "match": "(int)pCVar7",
       "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_004031c0
-;   engine_font.cpp_FUN_004a8df0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH 0x1caf4a0                      ; 004a1718
     MOV EBX,dword ptr [0x01511cbc]      ; 004a171d | DAT_01511cbc
     PUSH EBX                            ; 004a1723
-    CALL engine_font.cpp_FUN_004a8df0   ; 004a1724
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004a1724
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a1729
     POP EBX                             ; 004a172c
     POP EBP                             ; 004a172d

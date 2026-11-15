@@ -14,6 +14,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CIniFile.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
@@ -96,7 +97,7 @@ float wincore_winrun_cpp_FUN_005b43a0(void);
 void wincore_winrun_cpp_FUN_005b4400(int param_1);
 void wincore_winrun_cpp_FUN_005b4450(undefined4 param_1);
 undefined4 wincore_winrun_cpp_FUN_005b4460(undefined4 param_1);
-void wincore_winrun_cpp_FUN_005b44a0(undefined4 param_1);
+void wincore_winrun_cpp_FUN_005b44a0(CIniFile *param_1);
 void wincore_winrun_cpp_FUN_005b4650(void);
 void wincore_winrun_cpp_FUN_005b48c0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005b4980(HWND window_handle);
@@ -128,7 +129,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_005b6e10(float angle
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_005b7030(float x_offset,CMatrix3x4f *matrix_out);
 void core_xform_cpp_FUN_005b7090(void);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005b70f0(float z_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(undefined4 *param_1,undefined4 *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out);
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005b7410(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005b7560(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 void core_xform_cpp_matrixToQuaternion_FUN_005b75a0(float *param_1);

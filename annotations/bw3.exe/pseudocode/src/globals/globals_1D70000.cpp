@@ -33,6 +33,9 @@ CDemonActorType g_CLightStaffClassInfo = {};
 CDemonActorType g_CLightConeClassInfo = {};
 CDemonActorType g_CMeleeClassInfo = {};
 
+// CLevelLoader
+CLevelLoader g_CLevelLoaderInstance = {};
+
 // CMini3D
 CMini3D g_CMini3DInstance = {};
 

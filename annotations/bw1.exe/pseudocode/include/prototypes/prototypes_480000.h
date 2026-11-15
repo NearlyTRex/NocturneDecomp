@@ -86,7 +86,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(C
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00482390(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_004824b0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_004826a0(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_00482680(CDemonRenderer *this_ptr,SInputFace *face);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_004828b0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_004829b0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
@@ -224,7 +224,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytra
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 CVector3f * __stack3_esi core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_0048b040(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);
-float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_0048b880(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);

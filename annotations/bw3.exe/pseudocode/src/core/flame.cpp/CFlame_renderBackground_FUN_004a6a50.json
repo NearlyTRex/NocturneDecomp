@@ -2,22 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 176,
+    "complexity_score": 192,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 7,
+    "pseudocode_lines": 77,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 245
+    "total_lines": 246
   },
   "cross_references": [],
   "function": {
@@ -52,7 +53,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "0046d540",
@@ -229,16 +230,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -247,38 +240,54 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 17,
-      "match": "auStackY_1020",
+      "match": "afStackY_1018",
       "severity": "moderate",
-      "text": "uint auStackY_1020 [1004];",
+      "text": "float afStackY_1018 [1002];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffff9c",
+      "severity": "moderate",
+      "text": "int in_stack_ffffff9c;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_005f2afc;",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "description": "Direct stack address reference",
+      "line": 38,
+      "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),",
-      "type": "pointer_cast"
+      "text": "puVar8 = (uint *)&stack0xffffff98;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffff9c",
+      "severity": "moderate",
+      "text": "iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_01,in_stack_ffffff9c);",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(float *)((int)afStack_34",
+      "line": 56,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "*(float *)((int)afStack_34 + (uint)bVar8 * 0xfffffff8) =",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar6),",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
+      "line": 39,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",

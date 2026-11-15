@@ -2,19 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 156,
+    "complexity_score": 248,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 16,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_param",
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 190
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -34,7 +38,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044fcc0",
@@ -216,8 +220,24 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "CVector3f *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffb4;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 21,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&(this_ptr->base).location.position);",
@@ -225,23 +245,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 24,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,pCStack_14,(CVector3f *)0x0);",
+      "text": "(DAT_0060b280,&pUStack_14->vec,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(double *)((int)pdVar3",
+      "severity": "moderate",
+      "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_40,in_stack_ffffffb4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,unaff_EDI,(CVector3f *)0x0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,unaff_EDI,(CVector3f *)0x0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,pCStack_14,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
+      "line": 41,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
@@ -249,15 +293,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 49,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,iStack_1c);",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)pUStack_14);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540(DAT_0060b280,0);",
@@ -265,15 +309,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 53,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900(DAT_0060b280);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `pdVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)pdVar3",
+      "severity": "moderate",
+      "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pUStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)pUStack_14",
+      "severity": "moderate",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)pUStack_14);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 26,
+      "line": 28,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

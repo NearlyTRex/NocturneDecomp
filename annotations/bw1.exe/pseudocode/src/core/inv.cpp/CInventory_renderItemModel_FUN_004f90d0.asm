@@ -160,7 +160,7 @@ section .text
     PUSH EDX                            ; 004f91bf
     MOV EDI,EAX                         ; 004f91c0
     CALL engine_matrix.c_FUN_00507390   ; 004f91c2
-        ;   XREF to: 00507390 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00507390()
+        ;   XREF to: 00507390 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_00507390(int angle)
     MOV EDX,0x482b                      ; 004f91c7
     ADD ESP,0x4                         ; 004f91cc
     MOV ECX,EAX                         ; 004f91cf

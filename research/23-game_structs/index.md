@@ -230,7 +230,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CLava](structs/CLava.md) | — | — | — | — | 176700 ✓ |
 | [CLeaf](structs/CLeaf.md) | — | — | 84 ✓ | 84 ✓ | 84 ✓ |
 | [CLeakChecker](structs/CLeakChecker.md) | 1 ✓ | — | — | — | — |
-| [CLevelLoader](structs/CLevelLoader.md) | 304 | 304 | 304 | 304 | — |
+| [CLevelLoader](structs/CLevelLoader.md) | 304 | 304 | 304 | 304 | 304 |
 | [CLever](structs/CLever.md) | 2068 ✓ | 2060 ✓ | 2068 ✓ | 2416 ✓ | 2068 ✓ |
 | [CLightActor](structs/CLightActor.md) | 13944 ✓ | 13936 ✓ | 13956 ✓ | 14308 ✓ | 14068 ✓ |
 | [CLightCone](structs/CLightCone.md) | 556 ✓ | 548 ✓ | 556 ✓ | 904 ✓ | 556 ✓ |
@@ -298,8 +298,8 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CPickList](structs/CPickList.md) | 936 ✓ | 368 ✓ | 960 ✓ | 960 ✓ | 960 ✓ |
 | [CPlatform](structs/CPlatform.md) | 1836 ✓ | 1824 ✓ | 1832 ✓ | 2180 ✓ | 1832 ✓ |
 | [CPod](structs/CPod.md) | 408 ✓ | 408 ✓ | 408 ✓ | 408 ✓ | 408 ✓ |
-| [CPodAuditRecord](structs/CPodAuditRecord.md) | 312 | 312 | — | — | — |
-| [CPodDependencyRecord](structs/CPodDependencyRecord.md) | 264 | — | — | — | — |
+| [CPodAuditRecord](structs/CPodAuditRecord.md) | 312 | 312 | 312 | 312 | 312 |
+| [CPodDependencyRecord](structs/CPodDependencyRecord.md) | 264 | — | 264 | 264 | 264 |
 | [CPodDirectoryEntry](structs/CPodDirectoryEntry.md) | 20 | 20 | 20 | 20 | 20 |
 | [CPodFile](structs/CPodFile.md) | 1068 ✓ | 540 ✓ | 1068 ✓ | 1068 ✓ | 1068 ✓ |
 | [CPodSearchContext](structs/CPodSearchContext.md) | 796 | 796 | 796 | 796 | 796 |
@@ -399,7 +399,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CVector3i](structs/CVector3i.md) | 12 | 12 | 12 | 12 | 12 |
 | [CVector4d](structs/CVector4d.md) | 32 | — | — | — | — |
 | [CVector4f](structs/CVector4f.md) | 16 | — | — | — | — |
-| [CVector4i](structs/CVector4i.md) | 16 | — | — | — | — |
+| [CVector4i](structs/CVector4i.md) | 16 | — | 16 | 16 | 16 |
 | [CVehicle](structs/CVehicle.md) | 4216 ✓ | 4208 ✓ | 4216 ✓ | 4564 ✓ | — |
 | [CVert](structs/CVert.md) | 56 | 56 | — | — | — |
 | [CWater](structs/CWater.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
@@ -616,7 +616,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SProjectedVertex](structs/SProjectedVertex.md) | 24 | 24 | 24 | 24 | 24 |
 | [SProjectionParams](structs/SProjectionParams.md) | 16 | 16 | 16 | 16 | 16 |
 | [SPropertyFlag](structs/SPropertyFlag.md) | 8 | 8 | — | — | — |
-| [SQuadVertices](structs/SQuadVertices.md) | 48 | 48 | — | — | — |
+| [SQuadVertices](structs/SQuadVertices.md) | 48 | 48 | 48 | 48 | 48 |
 | [SRA4HQPoint](structs/SRA4HQPoint.md) | 12 | 12 | — | — | — |
 | [SRGBColor](structs/SRGBColor.md) | 3 | 3 | 3 | 3 | 3 |
 | [SRGBColorPalette](structs/SRGBColorPalette.md) | 768 | 768 | 768 | 768 | 768 |

@@ -32,6 +32,9 @@ CGore* g_CGorePtr = (CGore*)&g_CGoreInstance;
 // CGround*
 CGround* g_CGroundPtr = (CGround*)&g_CGroundInstance;
 
+// CLevelLoader*
+CLevelLoader* g_CLevelLoaderPtr = (CLevelLoader*)&g_CLevelLoaderInstance;
+
 // CMini3D*
 CMini3D* g_CMini3DPtr = (CMini3D*)&g_CMini3DInstance;
 

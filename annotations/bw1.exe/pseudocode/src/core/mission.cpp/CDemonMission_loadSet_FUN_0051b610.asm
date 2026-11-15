@@ -24,9 +24,9 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004dc000
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0
-;   core_mission.cpp_FUN_0051b7b0
 ;   core_set.cpp_CDemonSet_load_FUN_0054d3c0
 ;   sound_sndmain.cpp_killAllSfx_FUN_00573b00
 ;
@@ -89,8 +89,8 @@ section .text
         ;   XREF to: 0051b65d (UNCONDITIONAL_JUMP)  ; LAB_0051b65d
     PUSH EBX                            ; 0051b684
         ;   Label: LAB_0051b684
-    CALL core_mission.cpp_FUN_0051b7b0  ; 0051b685
-        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b7b0()
+    CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0 ; 0051b685
+        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0(CDemonMission * this_ptr)
     JMP 0x0051b64a                      ; 0051b68a
         ;   XREF to: 0051b64a (UNCONDITIONAL_JUMP)  ; LAB_0051b64a
     PUSH EBX                            ; 0051b68c

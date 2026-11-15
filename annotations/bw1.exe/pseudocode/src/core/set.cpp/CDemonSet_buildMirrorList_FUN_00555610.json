@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 96,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 3,
+    "pseudocode_lines": 55,
+    "suspect_count": 8,
     "suspect_types": [
       "shadow_pointer_walk",
+      "stack_param",
+      "stack_ref",
+      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 144
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -50,7 +53,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "005030e0",
@@ -238,8 +241,48 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffbc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffffb8",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffb8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_01,in_stack_ffffffbc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_ffffffbc",
+      "severity": "moderate",
+      "text": "in_stack_ffffffbc = DAT_00612560;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "in_stack_ffffffbc = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 35,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -247,7 +290,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 50,
+      "line": 54,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",

@@ -93,12 +93,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 6
     - [stack_alignment] at 00408d6c: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_00408ec0
-    File: core/actor.cpp, Suspects: 65
+  core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
+    File: core/actor.cpp, Suspects: 40
     - [alt_frame_pointer] at 0040904a: MOV ESI,ESP
 
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
-    File: core/actor.cpp, Suspects: 30
+    File: core/actor.cpp, Suspects: 38
     - [stack_alignment] at 0040917c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940
@@ -136,7 +136,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040c6b9: MOV ESI,ESP
 
   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750
-    File: core/actor.cpp, Suspects: 14
+    File: core/actor.cpp, Suspects: 18
     - [alt_frame_pointer] at 0040c783: MOV EDI,ESP
 
   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -172,7 +172,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00410115: AND ESP,0xfffffff8
 
   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0
-    File: core/baron.cpp, Suspects: 11
+    File: core/baron.cpp, Suspects: 13
     - [stack_alignment] at 004101f9: AND ESP,0xfffffff8
 
   core_barrier.cpp_CBarrier_getBoundingBox_FUN_004108c0
@@ -193,7 +193,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00411067: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_renderOpaque_FUN_00413970
-    File: core/batman.cpp, Suspects: 9
+    File: core/batman.cpp, Suspects: 12
     - [stack_alignment] at 00413979: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 26.9 suspects/function
-  Without stack patterns: avg 6.7 suspects/function
+  With stack patterns:    avg 26.3 suspects/function
+  Without stack patterns: avg 6.6 suspects/function

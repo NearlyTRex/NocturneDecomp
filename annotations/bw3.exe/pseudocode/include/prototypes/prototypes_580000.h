@@ -12,6 +12,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CIniFile.h"
 #include "types/classes/CKedward.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
@@ -86,7 +87,7 @@ float wincore_winrun_cpp_FUN_00582580(void);
 void wincore_winrun_cpp_FUN_005825e0(int param_1);
 void wincore_winrun_cpp_FUN_00582630(undefined4 param_1);
 undefined4 wincore_winrun_cpp_FUN_00582640(undefined4 param_1);
-void wincore_winrun_cpp_FUN_00582680(undefined4 param_1);
+void wincore_winrun_cpp_FUN_00582680(CIniFile *param_1);
 void wincore_winrun_cpp_FUN_00582830(void);
 void wincore_winrun_cpp_FUN_00582aa0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00582b60(HWND window_handle);

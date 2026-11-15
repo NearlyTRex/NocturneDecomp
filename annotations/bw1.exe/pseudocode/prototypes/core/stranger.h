@@ -77,9 +77,9 @@ void __cdecl CStranger::applyArmAimRotation(CStranger *this_ptr,int arm_side);
 // Address: 0058aeb0
 void __cdecl CStranger::updateWeaponPosition(CStranger *this_ptr,int hand_index);
 
-// Original: core_stranger.cpp_FUN_0058afe0
+// Original: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0
 // Address: 0058afe0
-float * FUN_0058afe0(CCharacter *param_1,CDemonActor *param_2,int param_3);
+CMatrix3x4f * __stack3_esi CStranger::computeWeaponAttachXForm(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260
 // Address: 0058c260

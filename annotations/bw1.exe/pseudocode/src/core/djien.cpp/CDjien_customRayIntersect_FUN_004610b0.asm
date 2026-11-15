@@ -14,7 +14,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_00420ee0
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
 ;   core_djien.cpp_FUN_004615b0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
@@ -48,8 +48,8 @@ section .text
     LEA ESI,[ESP + 0xb8]                ; 004610f6
     PUSH EAX                            ; 004610fd
     MOVSD.REP ES:EDI,ESI                ; 004610fe
-    CALL core_box.cpp_FUN_00420ee0      ; 00461100
-        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420ee0()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0 ; 00461100
+        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x130],EAX     ; 00461105
     FLD float ptr [ESP + 0x130]         ; 0046110c
     ADD ESP,0x10                        ; 00461113

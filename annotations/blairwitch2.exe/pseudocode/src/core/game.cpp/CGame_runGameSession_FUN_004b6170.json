@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1071,
-    "complexity_score": 541,
+    "complexity_score": 542,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 74,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 376,
+    "pseudocode_lines": 377,
     "suspect_count": 14,
     "suspect_types": [
       "raw_address_constant",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1447
+    "total_lines": 1448
   },
   "cross_references": [
     {
@@ -76,6 +76,11 @@
       "name": "core_game.cpp_CGame_playerControls_FUN_004b7050"
     },
     {
+      "addr": "004b5190",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190"
+    },
+    {
       "addr": "004b39d0",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_processFudge_FUN_004b39d0"
@@ -119,11 +124,6 @@
       "addr": "004b3820",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_updateStatusDisplays_FUN_004b3820"
-    },
-    {
-      "addr": "004b5190",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b5190"
     },
     {
       "addr": "004bb090",
@@ -208,7 +208,7 @@
     {
       "addr": "00538d10",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00538d10"
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10"
     },
     {
       "addr": "0055a1d0",
@@ -551,9 +551,9 @@
     },
     {
       "addr": "00617e10",
-      "name": "DAT_00617e10",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d03000"
     },
     {
       "addr": "00618170",
@@ -945,7 +945,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
+      "line": 143,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5), pCVar2 = g_CFieldNotesPtr,",
@@ -953,7 +953,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 174,
+      "line": 175,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x114))(iVar6);",
@@ -961,7 +961,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 218,
       "match": "DAT_005d7845",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7845);",
@@ -969,7 +969,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 242,
+      "line": 243,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (0xf0 < DAT_006141bc) {",
@@ -977,7 +977,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 253,
+      "line": 254,
       "match": "DAT_005d7866",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7866);",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 324,
+      "line": 325,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5);",
@@ -993,7 +993,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 347,
+      "line": 348,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);",
@@ -1001,7 +1001,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 352,
+      "line": 353,
       "match": "DAT_005d7875",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7875);",
@@ -1009,7 +1009,7 @@
     },
     {
       "description": "Raw hex address 0x1d02f84 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 368,
+      "line": 369,
       "match": "0x1d02f84",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01D02F84;",

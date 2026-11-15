@@ -20,12 +20,14 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDe
   float fVar6;
   uint uVar7;
   float fVar8;
-  ECollisionType EVar9;
+  ECollisionType bounding_box_type;
   CKeyFramedModel *this_ptr_00;
-  int iVar10;
+  int iVar9;
+  CBoundingBox3D *pCVar10;
   uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
+  float *pfVar12;
+  uint *puVar13;
+  byte bVar14;
   float afStackY_108c [859];
   CDemonActor *in_stack_fffffd08;
   float *in_stack_fffffd0c;
@@ -37,19 +39,13 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDe
   float local_19c;
   byte local_198 [80];
   float local_148;
-  float local_144;
-  float local_140;
-  int local_13c;
-  float fStack_130;
-  float local_12c;
-  float local_128;
-  CKeyFramedModelInstance *pCStack_120;
+  SCollisionInfo local_144;
   uint auStack_114 [6];
   byte auStack_fc [32];
   float local_dc;
   float local_d8;
   CBoundingBox3D local_d4;
-  uint auStack_bc [6];
+  CBoundingBox3D CStack_bc;
   float fStack_a4;
   float afStack_a0 [2];
   CVector3f CStack_98;
@@ -62,7 +58,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDe
   int local_1c;
   CDemonSet *local_18;
   
-  bVar13 = 0;
+  bVar14 = 0;
   core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40
             ((SIntersectXZCylinder *)(auStack_1fc + 0x54),start_x,start_z,dir_x,dir_z,radius,
              bottom_y,top_y);
@@ -96,9 +92,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDe
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00537fa0((SCollisionInfo *)(local_198 + 0x4c));
     local_198._76_4_ = (this_ptr->ray_query).ray_type;
     local_148 = (float)(this_ptr->ray_query).laser_type;
-    local_144 = (float)(this_ptr->ray_query).laser_color.r;
-    local_140 = (float)(this_ptr->ray_query).laser_color.g;
-    local_13c = (this_ptr->ray_query).laser_color.b;
+    local_144.ray_query.ray_type = (this_ptr->ray_query).laser_color.r;
+    local_144.ray_query.laser_type = (this_ptr->ray_query).laser_color.g;
+    local_144.ray_query.laser_color.r = (this_ptr->ray_query).laser_color.b;
     local_1c = 0;
     if (0 < this_ptr->collidable_actor_count) {
       local_18 = this_ptr;
@@ -106,38 +102,40 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00537030(CDe
         actor = local_18->collidable_actors[0];
         fVar8 = (float)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00536990(this_ptr,actor);
         if ((fVar8 == 0.0) &&
-           (local_12c = fVar8, local_128 = fVar8,
-           EVar9 = (*((actor->vtable)._ub)->getCollisionType)
-                             (actor,(SCollisionInfo *)(local_198 + 0x4c)),
-           EVar9 != COLLISION_TYPE_NONE)) {
-          core_actor_cpp_FUN_004090f0(actor,&local_144);
-          puVar11 = auStack_bc;
-          puVar12 = (uint *)(auStack_fc + 0x10);
-          for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar12 = *puVar11;
-            puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
-            puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
+           (local_144.cylinder_top_y = fVar8, local_144.cylinder_radius = fVar8,
+           bounding_box_type =
+                (*((actor->vtable)._ub)->getCollisionType)
+                          (actor,(SCollisionInfo *)(local_198 + 0x4c)),
+           bounding_box_type != COLLISION_TYPE_NONE)) {
+          core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
+                    (actor,&local_144,bounding_box_type,&CStack_bc);
+          pCVar10 = &CStack_bc;
+          pfVar12 = (float *)(auStack_fc + 0x10);
+          for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+            *pfVar12 = (pCVar10->min).x;
+            pCVar10 = (CBoundingBox3D *)((int)pCVar10 + ((uint)bVar14 * -2 + 1) * 4);
+            pfVar12 = pfVar12 + (uint)bVar14 * -2 + 1;
           }
-          iVar10 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
-                             (&local_d4,(CBoundingBox3D *)(auStack_fc + 0x10));
-          if (iVar10 != 0) {
-            if (pCStack_120 == (CKeyFramedModelInstance *)0x0) {
-              if (EVar9 < COLLISION_TYPE_CYLINDER) {
-                if (EVar9 == COLLISION_TYPE_MESH) {
+          iVar9 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
+                            (&local_d4,(CBoundingBox3D *)(auStack_fc + 0x10));
+          if (iVar9 != 0) {
+            if (local_144.keyframed_model == (CKeyFramedModelInstance *)0x0) {
+              if (bounding_box_type < COLLISION_TYPE_CYLINDER) {
+                if (bounding_box_type == COLLISION_TYPE_MESH) {
                   (*((actor->vtable)._ub)->getBoundingBox)(actor,(CBoundingBox3D *)&actor->location)
                   ;
                   puVar11 = auStack_114;
-                  puVar12 = (uint *)auStack_fc;
-                  for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
-                    *puVar12 = *puVar11;
-                    puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
-                    puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
+                  puVar13 = (uint *)auStack_fc;
+                  for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+                    *puVar13 = *puVar11;
+                    puVar11 = puVar11 + (uint)bVar14 * -2 + 1;
+                    puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
                   }
-                  iVar10 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00536cb0
-                                     (this_ptr,(SIntersectXZCylinder *)local_198,
-                                      (CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,
-                                      (CMatrix3x3f *)in_stack_fffffd0c);
-                  if (iVar10 != 0) {
+                  iVar9 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00536cb0
+                                    (this_ptr,(SIntersectXZCylinder *)local_198,
+                                     (CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,
+                                     (CMatrix3x3f *)in_stack_fffffd0c);
+                  if (iVar9 != 0) {
                     this_ptr->collision_actor = actor;
                   }
                 }
@@ -148,16 +146,17 @@ LAB_005379f7:
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid collision type!");
                 }
               }
-              else if (EVar9 < COLLISION_TYPE_CUSTOM) {
-                fStack_130 = fStack_130 + (actor->location).position.y;
-                local_12c = local_12c + (actor->location).position.y;
+              else if (bounding_box_type < COLLISION_TYPE_CUSTOM) {
+                local_144.cylinder_bottom_y =
+                     local_144.cylinder_bottom_y + (actor->location).position.y;
+                local_144.cylinder_top_y = local_144.cylinder_top_y + (actor->location).position.y;
                 fVar8 = (actor->location).position.x;
                 fVar1 = (actor->location).position.z;
-                if ((fStack_130 < (float)local_198._28_4_) && ((float)local_198._32_4_ < local_12c))
-                {
+                if ((local_144.cylinder_bottom_y < (float)local_198._28_4_) &&
+                   ((float)local_198._32_4_ < local_144.cylinder_top_y)) {
                   fVar2 = fVar8 - (float)local_198._8_4_;
                   fVar4 = fVar1 - (float)local_198._12_4_;
-                  fVar5 = local_128 + (float)local_198._24_4_;
+                  fVar5 = local_144.cylinder_radius + (float)local_198._24_4_;
                   fVar6 = fVar5 * fVar5;
                   fVar3 = fVar4 * fVar4 + fVar2 * fVar2;
                   if (fVar6 <= fVar3) {
@@ -204,27 +203,27 @@ LAB_005379f7:
                 }
               }
               else {
-                if (EVar9 != COLLISION_TYPE_CUSTOM) goto LAB_005379f7;
+                if (bounding_box_type != COLLISION_TYPE_CUSTOM) goto LAB_005379f7;
                 CStack_98.x = (float)local_198._8_4_;
                 CStack_98.z = (float)local_198._12_4_;
-                CStack_98.y = (float)pCStack_120;
+                CStack_98.y = (float)local_144.keyframed_model;
                 core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                           (actor,&CStack_98,(CVector3f *)(auStack_84 + 4));
                 uVar7 = local_198._20_4_;
                 aCStack_50[0].x = (float)local_198._16_4_;
                 fStack_a4 = (float)auStack_84._4_4_;
-                afStack_a0[(uint)bVar13 * -2] = afStack_7c[(uint)bVar13 * -2];
-                afStack_a0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-                     afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
+                afStack_a0[(uint)bVar14 * -2] = afStack_7c[(uint)bVar14 * -2];
+                afStack_a0[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
+                     afStack_7c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
                 aCStack_50[0].z = (float)uVar7;
                 aCStack_50[0].y = 0.0;
                 core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30
                           (actor,aCStack_50,&CStack_68);
                 afStack_7c[2] = CStack_68.x;
-                afStack_7c[(uint)bVar13 * -2 + 3] =
-                     *(float *)((int)&CStack_68 + (uint)bVar13 * -8 + 4);
-                afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
-                     *(float *)((int)&CStack_68 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+                afStack_7c[(uint)bVar14 * -2 + 3] =
+                     *(float *)((int)&CStack_68 + (uint)bVar14 * -8 + 4);
+                afStack_7c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
+                     *(float *)((int)&CStack_68 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
                 core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40
                           (&SStack_258,fStack_a4,afStack_a0[1],afStack_7c[2],fStack_6c,radius,
                            bottom_y - (actor->location).position.y,
@@ -238,10 +237,10 @@ LAB_005379f7:
                   core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
                             (actor,(CVector3f *)in_stack_fffffd0c,(CVector3f *)auStack_84);
                   fStack_54 = (float)auStack_84._0_4_;
-                  *(float *)((int)aCStack_50 + (uint)bVar13 * -8) =
-                       afStack_7c[(uint)bVar13 * -2 + -1];
-                  *(float *)((int)aCStack_50 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 4) =
-                       afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2];
+                  *(float *)((int)aCStack_50 + (uint)bVar14 * -8) =
+                       afStack_7c[(uint)bVar14 * -2 + -1];
+                  *(float *)((int)aCStack_50 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 4) =
+                       afStack_7c[(uint)bVar14 * -2 + (uint)bVar14 * -2];
                   if ((float *)(local_198 + 4) != &fStack_54) {
                     local_198._4_4_ = fStack_54;
                     local_198._8_4_ = aCStack_50[0].x;
@@ -253,7 +252,7 @@ LAB_005379f7:
             }
             else {
               this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-                                      (pCStack_120);
+                                      (local_144.keyframed_model);
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                 _DAT_01d046a0 = "..\\core\\setcolid.cpp";
                 _DAT_01d046a4 = 0x389;

@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 54,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 1,
+    "pseudocode_lines": 44,
+    "suspect_count": 7,
     "suspect_types": [
-      "raw_address_constant"
+      "raw_address_constant",
+      "stack_param"
     ],
-    "total_lines": 168
+    "total_lines": 173
   },
   "cross_references": [],
   "function": {
@@ -36,7 +37,7 @@
     {
       "addr": "004d8b20",
       "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8b20"
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20"
     },
     {
       "addr": "00590680",
@@ -106,8 +107,56 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CIniFile *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(in_stack_00000004,acStack_124,&iStack_24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(in_stack_00000004,acStack_124,&iStack_20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,acStack_124,(int *)(iVar1 * 0xc + iStack_18));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(in_stack_00000004,acStack_124,value_ptr);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(in_stack_00000004,acStack_124,piStack_14);",
+      "type": "stack_param"
+    },
+    {
       "description": "Raw hex address 0x2665984 assigned to bare local `iStack_1c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_1c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
+      "line": 19,
       "match": "0x2665984",
       "severity": "moderate",
       "text": "iStack_1c = 0x2665984;",

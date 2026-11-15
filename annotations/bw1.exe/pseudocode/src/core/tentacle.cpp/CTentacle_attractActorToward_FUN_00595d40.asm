@@ -43,7 +43,7 @@ section .text
     PUSH EAX                            ; 00595d7c
     LEA ESI,[ESP + 0x134]               ; 00595d7d
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005b72c0 ; 00595d84
-        ;   XREF to: 005b72c0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_lerpMatrix3x4_FUN_005b72c0()
+        ;   XREF to: 005b72c0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005b72c0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     ADD ESP,0xc                         ; 00595d89
     LEA EAX,[EBX + 0x30]                ; 00595d8c
     LEA EDI,[ESP + 0x68]                ; 00595d8f

@@ -20,9 +20,11 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
   SMRGLPrimitivePoly *poly;
   uint *puVar6;
   byte bVar7;
+  CBoundingBox3D *this_ptr_01;
+  int in_stack_ffffffc8;
   SMRGLTextureBasic *texture;
-  uint auStack_3c [6];
-  uint auStack_24 [6];
+  CBoundingBox3D CStack_34;
+  uint auStack_1c [4];
   
   bVar7 = 0;
   if (this_ptr->background_flag == 0) {
@@ -35,14 +37,15 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
     this_ptr->pending_background_render = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-    puVar5 = auStack_24;
-    puVar6 = auStack_3c;
+    this_ptr_01 = &CStack_34;
+    puVar5 = auStack_1c;
+    puVar6 = (uint *)&stack0xffffffc4;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
-    core_box_cpp_FUN_0041a840(auStack_3c);
+    core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_01,in_stack_ffffffc8);
     if (this_ptr->shattered == 0) {
       texture = &this_ptr->glass_texture;
     }

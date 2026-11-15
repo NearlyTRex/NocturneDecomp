@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
+; undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10c]:4  local_10c
@@ -46,7 +46,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
@@ -524,8 +524,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 0042d332
     PUSH EAX                            ; 0042d336
     MOVSD.REP ES:EDI,ESI                ; 0042d337
-    CALL core_box.cpp_FUN_0041daf0      ; 0042d339
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 0042d339
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0042d33e
     TEST EAX,EAX                        ; 0042d341
     JNZ 0x0042d238                      ; 0042d343

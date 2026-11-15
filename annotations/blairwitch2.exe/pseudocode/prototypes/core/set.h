@@ -37,9 +37,9 @@ void __cdecl CDemonSet::load(CDemonSet *this_ptr,char *filename);
 // Address: 0052d0e0
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_0052d3c0
+// Original: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0
 // Address: 0052d3c0
-void FUN_0052d3c0(void);
+void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int light_index);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0052d980
 // Address: 0052d980

@@ -16,11 +16,11 @@
 ;   core_baal.cpp_FUN_00597700 at 00597788
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0 at 0041247b
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f513
-;   core_bugs.cpp_FUN_00422a00 at 00422db4
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 at 00422db4
+;   core_charactr.cpp_CCharacter_followActor_FUN_004310e0 at 004312c5
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431845
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042bcd4
 ;   core_charactr.cpp_FUN_0042b970 at 0042b977
-;   core_charactr.cpp_FUN_004310e0 at 004312c5
 ;   ... and 30 more
 ;
 ; Referenced Globals:

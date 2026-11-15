@@ -5167,14 +5167,24 @@
     "callers":[
       "00550580"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1,
     "method":"FUN_00463850",
     "name":"core_dlight.cpp_FUN_00463850",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonLight",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dlight.cpp",
@@ -6768,14 +6778,49 @@
       "005c03a0",
       "005c0880"
     ],
-    "conv":"unknown",
+    "cls":"CDemonRaytrace",
+    "conv":"__cdecl",
     "instructions":480,
-    "method":"FUN_0048b150",
-    "name":"core_dtrace.cpp_FUN_0048b150",
-    "receiver":false,
+    "method":"rayVoxelIntersection",
+    "name":"core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150",
+    "params":[
+      {
+        "name":"ray_start",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_end",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_intersection_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_intersection_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/dtrace.cpp",
@@ -7893,14 +7938,64 @@
       "005182e0",
       "00518300"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":202,
-    "method":"FUN_0049c750",
-    "name":"shape_edittool.cpp_FUN_0049c750",
+    "method":"draw3DInsetBorder",
+    "name":"shape_edittool.cpp_draw3DInsetBorder_FUN_0049c750",
+    "params":[
+      {
+        "name":"left",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"top",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bottom",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pressed_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"direction",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10103,14 +10198,57 @@
       "005320b0",
       "005c03a0"
     ],
-    "conv":"unknown",
+    "cls":"CBitFont",
+    "conv":"__cdecl",
     "instructions":209,
-    "method":"FUN_004c1dd0",
-    "name":"engine_font.cpp_FUN_004c1dd0",
-    "receiver":false,
+    "method":"drawText",
+    "name":"engine_font.cpp_CBitFont_drawText_FUN_004c1dd0",
+    "params":[
+      {
+        "name":"text",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"color_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"color_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/font.cpp",
@@ -12065,14 +12203,49 @@
       "005c1180",
       "005c157c"
     ],
-    "conv":"unknown",
+    "cls":"CIni",
+    "conv":"__cdecl",
     "instructions":149,
-    "method":"FUN_004f4550",
-    "name":"engine_ini.cpp_FUN_004f4550",
-    "receiver":false,
+    "method":"findLineNumberOfVariable",
+    "name":"engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004f4550",
+    "params":[
+      {
+        "name":"section",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -16230,14 +16403,33 @@
       "005c08d0",
       "005c10d0"
     ],
-    "conv":"unknown",
+    "cls":"CPodFile",
+    "conv":"__cdecl",
     "instructions":805,
-    "method":"FUN_0053b250",
-    "name":"engine_pod.cpp_FUN_0053b250",
-    "receiver":false,
+    "method":"mountFromFile",
+    "name":"engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250",
+    "params":[
+      {
+        "name":"pod_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_error_message",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -16310,18 +16502,19 @@
       "005030e0",
       "0053b250"
     ],
-    "conv":"unknown",
+    "cls":"CPod",
+    "conv":"__cdecl",
     "data_refs":[
       "00604a48",
       "00604ab8"
     ],
     "instructions":59,
-    "method":"FUN_0053c750",
-    "name":"engine_pod.cpp_FUN_0053c750",
-    "receiver":false,
+    "method":"remount",
+    "name":"engine_pod.cpp_CPod_remount_FUN_0053c750",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/pod.cpp",

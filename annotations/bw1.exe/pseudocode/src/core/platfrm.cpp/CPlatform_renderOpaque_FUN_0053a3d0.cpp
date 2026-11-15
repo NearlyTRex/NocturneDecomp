@@ -14,9 +14,10 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
+  int in_stack_ffffff94;
   CBoundingBox3D *in_stack_ffffff98;
   uint auStack_58 [2];
-  byte auStack_50 [32];
+  CBoundingBox3D CStack_50;
   uint auStack_30 [4];
   uint auStack_20 [4];
   
@@ -45,7 +46,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar1 = core_box_cpp_FUN_004207b0(auStack_50);
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_50,in_stack_ffffff94);
     if (iVar1 != 0) {
       if ((this_ptr->plot_as_box_in_shadow == 0) ||
          (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),

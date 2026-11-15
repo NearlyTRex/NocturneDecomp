@@ -34,8 +34,8 @@
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0
-;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -301,8 +301,8 @@ section .text
     PUSH dword ptr [EBX + 0x2565c]      ; 004d4fa1
     PUSH EAX                            ; 004d4fa7
     LEA ESI,[ESP + 0x10]                ; 004d4fa8
-    CALL core_xform.cpp_FUN_00594380    ; 004d4fac
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 004d4fac
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004d4fb1
     LEA EAX,[ESP + 0x1c]                ; 004d4fb4
     PUSH EAX                            ; 004d4fb8
@@ -528,8 +528,8 @@ section .text
         ;   XREF to: 004d50f7 (CONDITIONAL_JUMP)  ; LAB_004d50f7
     PUSH EAX                            ; 004d5200
     PUSH EBX                            ; 004d5201
-    CALL core_hero.cpp_FUN_004cf030     ; 004d5202
-        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf030()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030 ; 004d5202
+        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 004d5207
     MOV EDI,EAX                         ; 004d520a
     TEST EAX,EAX                        ; 004d520c

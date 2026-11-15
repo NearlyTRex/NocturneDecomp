@@ -38,7 +38,7 @@
 // =============================================================================
 
 void core_cloth_cpp_FUN_005b0c90(void);
-void core_cloth_cpp_FUN_005b0ce0(int param_1,int param_2,int param_3);
+void __cdecl core_cloth_cpp_FUN_005b0ce0(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_005b0ef0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_005b0fe0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_005b1440(CClothList *this_ptr);

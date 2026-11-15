@@ -66,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f579d
     PUSH EAX                            ; 004f57a1
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f57a2
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f57a7 | g_CGamePtr
     ADD ESP,0xc                         ; 004f57ac
     MOV ECX,dword ptr [EAX + 0x4]       ; 004f57af | g_CGameInstance.game_pixy
@@ -75,7 +75,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f57b8
     PUSH EAX                            ; 004f57bc
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f57bd
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f57c2 | g_CGamePtr
     ADD ESP,0xc                         ; 004f57c7
     MOV EBX,dword ptr [EAX + 0x8]       ; 004f57ca | g_CGameInstance.game_bpp
@@ -84,7 +84,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f57d3
     PUSH EAX                            ; 004f57d7
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f57d8
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f57dd
     MOV ESI,dword ptr [0x02c83370]      ; 004f57e0 | DAT_02c83370
     PUSH ESI                            ; 004f57e6
@@ -92,7 +92,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f57ec
     PUSH EAX                            ; 004f57f0
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f57f1
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f57f6
     MOV EDI,dword ptr [0x02c8337c]      ; 004f57f9 | DAT_02c8337c
     PUSH EDI                            ; 004f57ff
@@ -100,7 +100,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5805
     PUSH EAX                            ; 004f5809
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f580a
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f580f
     PUSH 0x6257d0                       ; 004f5812 | DAT_006257d0
     PUSH 0x5e5c6d                       ; 004f5817 | = "rendererDLLPath"
@@ -116,7 +116,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f583a
     PUSH EAX                            ; 004f583e
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f583f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5844 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5849
     MOV EDX,dword ptr [EAX + 0xd4]      ; 004f584c | g_CGameInstance.hero_number
@@ -125,7 +125,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5858
     PUSH EAX                            ; 004f585c
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f585d
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5862
     MOV EAX,[0x0061d95c]                ; 004f5865 | g_CGamePtr
     MOV ECX,dword ptr [EAX + 0xc]       ; 004f586a | g_CGameInstance.halo_mode
@@ -134,7 +134,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5873
     PUSH EAX                            ; 004f5877
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5878
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f587d
     MOV EBX,dword ptr [0x01d06d68]      ; 004f5880 | DAT_01d06d68
     PUSH EBX                            ; 004f5886
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f588c
     PUSH EAX                            ; 004f5890
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5891
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5896 | g_CGamePtr
     ADD ESP,0xc                         ; 004f589b
     MOV ESI,dword ptr [EAX + 0x10]      ; 004f589e | g_CGameInstance.subtitle_mode
@@ -151,7 +151,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f58a7
     PUSH EAX                            ; 004f58ab
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f58ac
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f58b1 | g_CGamePtr
     ADD ESP,0xc                         ; 004f58b6
     MOV EDI,dword ptr [EAX + 0x14]      ; 004f58b9 | g_CGameInstance.blood_flag
@@ -160,7 +160,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f58c2
     PUSH EAX                            ; 004f58c6
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f58c7
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f58cc | g_CGamePtr
     ADD ESP,0xc                         ; 004f58d1
     MOV EBP,dword ptr [EAX + 0x20]      ; 004f58d4 | g_CGameInstance.quimby_flag
@@ -169,7 +169,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f58dd
     PUSH EAX                            ; 004f58e1
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f58e2
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f58e7
     MOV EAX,[0x01d1f5d4]                ; 004f58ea | DAT_01d1f5d4
     PUSH EAX                            ; 004f58ef
@@ -177,7 +177,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f58f5
     PUSH EAX                            ; 004f58f9
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f58fa
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f58ff | g_CGamePtr
     ADD ESP,0xc                         ; 004f5904
     MOV EDX,dword ptr [EAX + 0xe4]      ; 004f5907 | g_CGameInstance.puzzle_difficulty_mode
@@ -186,7 +186,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5913
     PUSH EAX                            ; 004f5917
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5918
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f591d | g_CGamePtr
     ADD ESP,0xc                         ; 004f5922
     MOV ECX,dword ptr [EAX + 0xe8]      ; 004f5925 | g_CGameInstance.combat_difficulty_mode
@@ -195,7 +195,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5931
     PUSH EAX                            ; 004f5935
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5936
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f593b
     PUSH 0x61f030                       ; 004f593e | = "Sound"
     LEA EAX,[ESP + 0x4]                 ; 004f5943
@@ -221,7 +221,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f597e
     PUSH EAX                            ; 004f5982
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5983
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5988 | g_CGamePtr
     ADD ESP,0xc                         ; 004f598d
     MOV ESI,dword ptr [EAX + 0x28]      ; 004f5990 | g_CGameInstance.key_walk
@@ -230,7 +230,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5999
     PUSH EAX                            ; 004f599d
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f599e
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f59a3 | g_CGamePtr
     ADD ESP,0xc                         ; 004f59a8
     MOV EDI,dword ptr [EAX + 0x2c]      ; 004f59ab | g_CGameInstance.key_backup
@@ -239,7 +239,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f59b4
     PUSH EAX                            ; 004f59b8
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f59b9
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f59be | g_CGamePtr
     ADD ESP,0xc                         ; 004f59c3
     MOV EBP,dword ptr [EAX + 0x30]      ; 004f59c6 | g_CGameInstance.key_run
@@ -248,7 +248,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f59cf
     PUSH EAX                            ; 004f59d3
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f59d4
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f59d9 | g_CGamePtr
     ADD ESP,0xc                         ; 004f59de
     MOV EDX,dword ptr [EAX + 0x34]      ; 004f59e1 | g_CGameInstance.key_strafe
@@ -257,7 +257,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f59ea
     PUSH EAX                            ; 004f59ee
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f59ef
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f59f4 | g_CGamePtr
     ADD ESP,0xc                         ; 004f59f9
     MOV ECX,dword ptr [EAX + 0x38]      ; 004f59fc | g_CGameInstance.key_strafe_left
@@ -266,7 +266,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a05
     PUSH EAX                            ; 004f5a09
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a0a
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5a0f | g_CGamePtr
     ADD ESP,0xc                         ; 004f5a14
     MOV EBX,dword ptr [EAX + 0x3c]      ; 004f5a17 | g_CGameInstance.key_strafe_right
@@ -275,7 +275,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a20
     PUSH EAX                            ; 004f5a24
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a25
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5a2a | g_CGamePtr
     ADD ESP,0xc                         ; 004f5a2f
     MOV ESI,dword ptr [EAX + 0x40]      ; 004f5a32 | g_CGameInstance.key_right
@@ -284,7 +284,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a3b
     PUSH EAX                            ; 004f5a3f
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a40
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5a45 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5a4a
     MOV EDI,dword ptr [EAX + 0x44]      ; 004f5a4d | g_CGameInstance.key_left
@@ -293,7 +293,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a56
     PUSH EAX                            ; 004f5a5a
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a5b
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5a60 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5a65
     MOV EBP,dword ptr [EAX + 0x48]      ; 004f5a68 | g_CGameInstance.key_fire
@@ -302,7 +302,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a71
     PUSH EAX                            ; 004f5a75
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a76
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5a7b
     MOV EAX,[0x0061d95c]                ; 004f5a7e | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0x4c]      ; 004f5a83 | g_CGameInstance.key_use_item
@@ -311,7 +311,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5a8c
     PUSH EAX                            ; 004f5a90
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5a91
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5a96 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5a9b
     MOV ECX,dword ptr [EAX + 0x50]      ; 004f5a9e | g_CGameInstance.key_light
@@ -320,7 +320,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5aa7
     PUSH EAX                            ; 004f5aab
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5aac
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5ab1 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5ab6
     MOV EBX,dword ptr [EAX + 0x54]      ; 004f5ab9 | g_CGameInstance.key_infrared
@@ -329,7 +329,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5ac2
     PUSH EAX                            ; 004f5ac6
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5ac7
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5acc | g_CGamePtr
     ADD ESP,0xc                         ; 004f5ad1
     MOV ESI,dword ptr [EAX + 0x58]      ; 004f5ad4 | g_CGameInstance.key_field_notes
@@ -338,7 +338,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5add
     PUSH EAX                            ; 004f5ae1
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5ae2
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5ae7 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5aec
     MOV EDI,dword ptr [EAX + 0x5c]      ; 004f5aef | g_CGameInstance.key_map
@@ -347,7 +347,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5af8
     PUSH EAX                            ; 004f5afc
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5afd
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5b02 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5b07
     MOV EBP,dword ptr [EAX + 0x60]      ; 004f5b0a | g_CGameInstance.key_compass
@@ -356,7 +356,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b13
     PUSH EAX                            ; 004f5b17
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b18
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5b1d | g_CGamePtr
     ADD ESP,0xc                         ; 004f5b22
     MOV EDX,dword ptr [EAX + 0x64]      ; 004f5b25 | g_CGameInstance.key_sps
@@ -365,7 +365,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b2e
     PUSH EAX                            ; 004f5b32
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b33
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5b38 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5b3d
     MOV ECX,dword ptr [EAX + 0x68]      ; 004f5b40 | g_CGameInstance.key_draw
@@ -374,7 +374,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b49
     PUSH EAX                            ; 004f5b4d
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b4e
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5b53 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5b58
     MOV EBX,dword ptr [EAX + 0x6c]      ; 004f5b5b | g_CGameInstance.key_jump
@@ -383,7 +383,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b64
     PUSH EAX                            ; 004f5b68
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b69
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5b6e | g_CGamePtr
     ADD ESP,0xc                         ; 004f5b73
     MOV ESI,dword ptr [EAX + 0x70]      ; 004f5b76 | g_CGameInstance.key_quick_turn
@@ -392,7 +392,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b7f
     PUSH EAX                            ; 004f5b83
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b84
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5b89
     MOV EAX,[0x0061d95c]                ; 004f5b8c | g_CGamePtr
     MOV EDI,dword ptr [EAX + 0x74]      ; 004f5b91 | g_CGameInstance.key_point_up
@@ -401,7 +401,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5b9a
     PUSH EAX                            ; 004f5b9e
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5b9f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5ba4 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5ba9
     MOV EBP,dword ptr [EAX + 0x78]      ; 004f5bac | g_CGameInstance.key_point_down
@@ -410,7 +410,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5bb5
     PUSH EAX                            ; 004f5bb9
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5bba
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5bbf | g_CGamePtr
     ADD ESP,0xc                         ; 004f5bc4
     MOV EDX,dword ptr [EAX + 0x7c]      ; 004f5bc7 | g_CGameInstance.key_weapon_1
@@ -419,7 +419,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5bd0
     PUSH EAX                            ; 004f5bd4
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5bd5
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5bda | g_CGamePtr
     ADD ESP,0xc                         ; 004f5bdf
     MOV ECX,dword ptr [EAX + 0x80]      ; 004f5be2 | g_CGameInstance.key_weapon_2
@@ -428,7 +428,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5bee
     PUSH EAX                            ; 004f5bf2
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5bf3
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5bf8 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5bfd
     MOV EBX,dword ptr [EAX + 0x84]      ; 004f5c00 | g_CGameInstance.key_weapon_3
@@ -437,7 +437,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5c0c
     PUSH EAX                            ; 004f5c10
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5c11
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5c16 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5c1b
     MOV ESI,dword ptr [EAX + 0x88]      ; 004f5c1e | g_CGameInstance.key_weapon_4
@@ -446,7 +446,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5c2a
     PUSH EAX                            ; 004f5c2e
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5c2f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5c34 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5c39
     MOV EDI,dword ptr [EAX + 0x8c]      ; 004f5c3c | g_CGameInstance.key_weapon_5
@@ -455,7 +455,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5c48
     PUSH EAX                            ; 004f5c4c
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5c4d
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5c52 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5c57
     MOV EBP,dword ptr [EAX + 0x90]      ; 004f5c5a | g_CGameInstance.key_next_weapon
@@ -464,7 +464,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5c66
     PUSH EAX                            ; 004f5c6a
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5c6b
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5c70 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5c75
     MOV EDX,dword ptr [EAX + 0x94]      ; 004f5c78 | g_CGameInstance.key_prev_weapon
@@ -473,7 +473,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5c84
     PUSH EAX                            ; 004f5c88
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5c89
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5c8e | g_CGamePtr
     ADD ESP,0xc                         ; 004f5c93
     MOV ECX,dword ptr [EAX + 0x98]      ; 004f5c96 | g_CGameInstance.key_next_item
@@ -482,7 +482,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5ca2
     PUSH EAX                            ; 004f5ca6
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5ca7
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5cac
     MOV EAX,[0x0061d95c]                ; 004f5caf | g_CGamePtr
     MOV EBX,dword ptr [EAX + 0x9c]      ; 004f5cb4 | g_CGameInstance.key_prev_item
@@ -491,7 +491,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5cc0
     PUSH EAX                            ; 004f5cc4
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5cc5
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5cca | g_CGamePtr
     ADD ESP,0xc                         ; 004f5ccf
     MOV ESI,dword ptr [EAX + 0xa0]      ; 004f5cd2 | g_CGameInstance.key_item_desc
@@ -500,7 +500,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5cde
     PUSH EAX                            ; 004f5ce2
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5ce3
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5ce8 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5ced
     MOV EDI,dword ptr [EAX + 0xa4]      ; 004f5cf0 | g_CGameInstance.key_next_ammo
@@ -509,7 +509,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5cfc
     PUSH EAX                            ; 004f5d00
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d01
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d06 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5d0b
     MOV EBP,dword ptr [EAX + 0xa8]      ; 004f5d0e | g_CGameInstance.invert_mouse_y_axis
@@ -518,7 +518,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5d1a
     PUSH EAX                            ; 004f5d1e
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d1f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d24 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5d29
     MOV EDX,dword ptr [EAX + 0xac]      ; 004f5d2c | g_CGameInstance.always_run
@@ -527,7 +527,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5d38
     PUSH EAX                            ; 004f5d3c
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d3d
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d42 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5d47
     MOV ECX,dword ptr [EAX + 0xb0]      ; 004f5d4a | g_CGameInstance.x_mouse_sensitivity
@@ -536,7 +536,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5d56
     PUSH EAX                            ; 004f5d5a
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d5b
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d60 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5d65
     MOV EBX,dword ptr [EAX + 0xb4]      ; 004f5d68 | g_CGameInstance.y_mouse_sensitivity
@@ -545,7 +545,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5d74
     PUSH EAX                            ; 004f5d78
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d79
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d7e | g_CGamePtr
     ADD ESP,0xc                         ; 004f5d83
     MOV ESI,dword ptr [EAX + 0xb8]      ; 004f5d86 | g_CGameInstance.x_center
@@ -554,7 +554,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5d92
     PUSH EAX                            ; 004f5d96
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5d97
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5d9c | g_CGamePtr
     ADD ESP,0xc                         ; 004f5da1
     MOV EDI,dword ptr [EAX + 0xbc]      ; 004f5da4 | g_CGameInstance.y_center
@@ -563,7 +563,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5db0
     PUSH EAX                            ; 004f5db4
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5db5
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5dba | g_CGamePtr
     ADD ESP,0xc                         ; 004f5dbf
     MOV EBP,dword ptr [EAX + 0xc0]      ; 004f5dc2 | g_CGameInstance.x_stick_min
@@ -572,7 +572,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5dce
     PUSH EAX                            ; 004f5dd2
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5dd3
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5dd8
     MOV EAX,[0x0061d95c]                ; 004f5ddb | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0xc4]      ; 004f5de0 | g_CGameInstance.x_stick_max
@@ -581,7 +581,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5dec
     PUSH EAX                            ; 004f5df0
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5df1
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5df6 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5dfb
     MOV ECX,dword ptr [EAX + 0xc8]      ; 004f5dfe | g_CGameInstance.y_stick_min
@@ -590,7 +590,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5e0a
     PUSH EAX                            ; 004f5e0e
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5e0f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5e14 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5e19
     MOV EBX,dword ptr [EAX + 0xcc]      ; 004f5e1c | g_CGameInstance.y_stick_max
@@ -599,7 +599,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5e28
     PUSH EAX                            ; 004f5e2c
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5e2d
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5e32 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5e37
     MOV ESI,dword ptr [EAX + 0xd8]      ; 004f5e3a | g_CGameInstance.aim_mode
@@ -608,7 +608,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5e46
     PUSH EAX                            ; 004f5e4a
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5e4b
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5e50 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5e55
     MOV EDI,dword ptr [EAX + 0xdc]      ; 004f5e58 | g_CGameInstance.auto_use_health
@@ -617,7 +617,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5e64
     PUSH EAX                            ; 004f5e68
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5e69
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5e6e
     PUSH 0x61f080                       ; 004f5e71 | = "Debug"
     LEA EAX,[ESP + 0x4]                 ; 004f5e76
@@ -632,7 +632,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5e90
     PUSH EAX                            ; 004f5e94
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5e95
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004f5e9a | g_CGamePtr
     ADD ESP,0xc                         ; 004f5e9f
     MOV EDX,dword ptr [EAX + 0x230]     ; 004f5ea2 | g_CGameInstance.head_of_horror_cheat
@@ -641,7 +641,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5eae
     PUSH EAX                            ; 004f5eb2
     CALL engine_ini.cpp_FUN_004f4d70    ; 004f5eb3
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004f5eb8
     PUSH 0x61f088                       ; 004f5ebb | = "Editor"
     LEA EAX,[ESP + 0x4]                 ; 004f5ec0

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 212,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
@@ -111,9 +111,9 @@
     },
     {
       "addr": "00608bc8",
-      "name": "DAT_00608bc8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IID_IDirectSound3DListener",
+      "type": "GUID",
+      "value": "IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560"
     },
     {
       "addr": "02cf49c4",
@@ -311,23 +311,15 @@
       "line": 51,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
+      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&g_IID_IDirectSound3DListener,&DAT_02cf49d0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00608bc8",
-      "severity": "mild",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_02cf49d0",
       "severity": "mild",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
+      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&g_IID_IDirectSound3DListener,&DAT_02cf49d0);",
       "type": "undefined_data"
     },
     {

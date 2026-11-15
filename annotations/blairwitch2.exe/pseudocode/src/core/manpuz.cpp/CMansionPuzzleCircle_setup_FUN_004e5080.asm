@@ -23,8 +23,8 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_004779e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50
+;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004e7600
-;   core_manpuz.cpp_FUN_004e6240
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_getTranslation_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
@@ -176,8 +176,8 @@ section .text
     PUSH ESI                            ; 004e525b
     MOV EDI,dword ptr [EBP + 0x92]      ; 004e525c
     PUSH EDI                            ; 004e5262
-    CALL core_manpuz.cpp_FUN_004e6240   ; 004e5263
-        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004e6240()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240 ; 004e5263
+        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDI,ESI                         ; 004e5268
     IMUL EAX,ESI,0xb8                   ; 004e526a
     MOV EBX,dword ptr [EBP + 0x56]      ; 004e5270

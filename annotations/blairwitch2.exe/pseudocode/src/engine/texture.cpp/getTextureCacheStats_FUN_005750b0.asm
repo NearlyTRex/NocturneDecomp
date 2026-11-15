@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   output_buffer
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b596e
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b596e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02652eb0

@@ -21,7 +21,7 @@
 ; undefined2       Stack[-0x40]:2  local_40
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004ce94f
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce94f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_005ecc28

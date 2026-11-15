@@ -27,33 +27,28 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
   CVector3f local_10c;
   CVector3f local_100;
   float local_f4;
-  float local_f0 [4];
-  float local_e0;
+  float local_f0 [2];
+  CVector3f local_e8;
   CVector3f local_dc;
   CVector3f local_d0;
   CVector3f local_c4;
   float local_b8;
   float local_b4;
   float local_b0;
-  float local_ac;
-  float local_a8 [2];
+  CVector3f local_ac;
   CVector3f local_a0;
   float local_94;
-  float local_90 [4];
-  uint local_80;
+  float local_90 [2];
+  CVector3f local_88;
   float local_7c;
   float local_78;
   float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  float local_60;
-  uint local_5c;
+  CVector3f local_70;
+  CVector3f local_64;
   CVector3f local_58;
-  float local_4c;
-  float local_48 [4];
-  float local_38;
+  CVector3f local_4c;
+  float local_40;
+  float local_3c [5];
   float local_28;
   float local_24;
   int local_20;
@@ -104,14 +99,14 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
     local_10c.z = 3.5;
     core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
               ((CDemonActor *)this_ptr,&local_10c,&local_58);
-    local_48[2] = local_58.x;
-    local_48[(uint)bVar4 * -2 + 3] = *(float *)((int)&local_58 + (uint)bVar4 * -8 + 4);
-    local_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+    local_40 = local_58.x;
+    local_3c[(uint)bVar4 * -2] = *(float *)((int)&local_58 + (uint)bVar4 * -8 + 4);
+    local_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(float *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    if (&local_b8 != local_48 + 2) {
-      local_b8 = local_48[2];
-      local_b4 = local_48[3];
-      local_b0 = local_38;
+    if (&local_b8 != &local_40) {
+      local_b8 = local_40;
+      local_b4 = local_3c[0];
+      local_b0 = local_3c[1];
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
               (&(this_ptr->base).base.model,_DAT_0264be34,&local_c4);
@@ -122,28 +117,28 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
          *(uint *)((int)&local_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
               ((CDemonActor *)this_ptr,&local_a0,&local_118);
-    local_f0[2] = local_118.x;
+    local_e8.x = local_118.x;
     local_f0[(uint)bVar4 * -2 + 3] = *(float *)((int)&local_118 + (uint)bVar4 * -8 + 4);
     local_f0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          *(float *)((int)&local_118 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    if (local_90 + 8 != local_f0 + 2) {
-      local_70 = local_f0[2];
-      local_6c = local_f0[3];
-      local_68 = local_e0;
+    if (&local_70 != (CVector3f *)(local_f0 + 2)) {
+      local_70.x = local_e8.x;
+      local_70.y = local_e8.y;
+      local_70.z = local_e8.z;
     }
-    local_90[0] = local_6c + local_b4;
-    local_90[1] = local_68 + local_b0;
-    local_94 = local_70 + local_b8;
-    local_ac = local_70 + local_b8;
-    local_a8[(uint)bVar4 * -2] = local_90[(uint)bVar4 * -2];
-    local_a8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+    local_90[0] = local_70.y + local_b4;
+    local_90[1] = local_70.z + local_b0;
+    local_94 = local_70.x + local_b8;
+    local_ac.x = local_70.x + local_b8;
+    *(float *)((int)&local_ac + (uint)bVar4 * -8 + 4) = local_90[(uint)bVar4 * -2];
+    *(float *)((int)&local_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          local_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     if (&local_64 != &local_ac) {
-      local_64 = local_ac;
-      local_60 = local_a8[0];
-      local_5c = local_a8[1];
+      local_64.x = local_ac.x;
+      local_64.y = local_ac.y;
+      local_64.z = local_ac.z;
     }
-    local_18 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,local_90 + 8,&local_64);
+    local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0(g_CDemonSetPtr,&local_70,&local_64);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar1 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar1))
     {
@@ -159,28 +154,29 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
          *(uint *)((int)&local_d0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
               ((CDemonActor *)this_ptr,input_local_point,&local_124);
-    local_4c = local_124.x;
-    local_48[(uint)bVar4 * -2] = *(float *)((int)&local_124 + (uint)bVar4 * -8 + 4);
-    local_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         *(float *)((int)&local_124 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    if (local_90 + 8 != &local_4c) {
-      local_70 = local_4c;
-      local_6c = local_48[0];
-      local_68 = local_48[1];
+    local_4c.x = local_124.x;
+    *(uint *)((int)&local_4c + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_124 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&local_124 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    if (&local_70 != &local_4c) {
+      local_70.x = local_4c.x;
+      local_70.y = local_4c.y;
+      local_70.z = local_4c.z;
     }
-    local_f0[0] = local_6c + local_b4;
-    local_f0[1] = local_68 + local_b0;
-    local_f4 = local_70 + local_b8;
-    local_90[2] = local_70 + local_b8;
+    local_f0[0] = local_70.y + local_b4;
+    local_f0[1] = local_70.z + local_b0;
+    local_f4 = local_70.x + local_b8;
+    local_88.x = local_70.x + local_b8;
     local_90[(uint)bVar4 * -2 + 3] = local_f0[(uint)bVar4 * -2];
     local_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          local_f0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&local_64 != local_90 + 2) {
-      local_64 = local_90[2];
-      local_60 = local_90[3];
-      local_5c = local_80;
+    if (&local_64 != (CVector3f *)(local_90 + 2)) {
+      local_64.x = local_88.x;
+      local_64.y = local_88.y;
+      local_64.z = local_88.z;
     }
-    local_18 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,local_90 + 8,&local_64);
+    local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0(g_CDemonSetPtr,&local_70,&local_64);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar1 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar1))
     {

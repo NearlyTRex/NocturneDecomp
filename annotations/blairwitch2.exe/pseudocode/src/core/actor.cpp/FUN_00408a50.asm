@@ -12,9 +12,9 @@
 ;   core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0 at 00488ac0
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00491680 at 004916b4
 ;   core_event.cpp_resolveActorByName_FUN_00488d00 at 00488e03
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004db4e4
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760 at 004db7d0
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 at 004dbd00
-;   core_inv.cpp_CInventory_saveItems_FUN_004dc460 at 004dc47c
-;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020 at 004dd07e
 ;   ... and 5 more
 ;
 ; Referenced Globals:

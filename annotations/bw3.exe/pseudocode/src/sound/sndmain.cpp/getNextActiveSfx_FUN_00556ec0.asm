@@ -7,7 +7,7 @@
 ; uint             Stack[0x4]:4   current_sfx_handle
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b7822
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7822
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ce7280

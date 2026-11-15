@@ -46,7 +46,7 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00525e6f
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910 at 0052e92e
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_00534490 at 005344a4
-;   core_setdir.cpp_FUN_00538d10 at 00538d49
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 at 00538d49
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e57a8

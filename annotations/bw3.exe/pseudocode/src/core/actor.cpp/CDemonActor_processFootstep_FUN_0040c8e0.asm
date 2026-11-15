@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_FUN_0053bc80
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH EBX                            ; 0040c948
     MOV ECX,dword ptr [0x00603b28]      ; 0040c949 | g_CDemonSetPtr
     PUSH ECX                            ; 0040c94f | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0040c950
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0040c950
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0040c955
     MOV ESI,dword ptr [0x00603b28]      ; 0040c958 | g_CDemonSetPtr
     PUSH ESI                            ; 0040c95e | g_CDemonSetInstance

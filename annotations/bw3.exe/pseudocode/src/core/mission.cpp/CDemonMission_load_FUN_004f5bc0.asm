@@ -19,12 +19,12 @@
 ;   TerminatedCString s_core_mission_cpp_005c8384
 ;   TerminatedCString s_CDemonMission_load_Unabl_005c8398
 ;   TerminatedCString s_Loading_mission_005c83c2
-;   undefined4 DAT_006002ac
+;   CLevelLoader* g_CLevelLoaderPtr = 01d70ab8
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_level.cpp_FUN_004e0000
+;   core_level.cpp_CLevelLoader_update_FUN_004e0000
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0
@@ -58,10 +58,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f5bec
     PUSH EAX                            ; 004f5bef
-    MOV EDI,dword ptr [0x006002ac]      ; 004f5bf0 | DAT_006002ac
+    MOV EDI,dword ptr [0x006002ac]      ; 004f5bf0 | g_CLevelLoaderPtr
     PUSH EDI                            ; 004f5bf6
-    CALL core_level.cpp_FUN_004e0000    ; 004f5bf7
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f5bf7
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f5bfc
     MOV EBP,dword ptr [ESP + 0x18]      ; 004f5bff
     PUSH EBP                            ; 004f5c03

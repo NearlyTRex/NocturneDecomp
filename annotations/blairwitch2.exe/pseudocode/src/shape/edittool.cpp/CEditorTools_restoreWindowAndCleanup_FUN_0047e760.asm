@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780
-;   shape_edittool.cpp_FUN_0047bbd0
 ;   shape_edittool.cpp_paintWindowBackground_FUN_0047bca0
+;   shape_edittool.cpp_restoreScreen_FUN_0047bbd0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     CALL shape_edittool.cpp_paintWindowBackground_FUN_0047bca0 ; 0047e760
         ;   XREF to: 0047bca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_paintWindowBackground_FUN_0047bca0()
         ;   Label: shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
-    CALL shape_edittool.cpp_FUN_0047bbd0 ; 0047e765
-        ;   XREF to: 0047bbd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bbd0()
+    CALL shape_edittool.cpp_restoreScreen_FUN_0047bbd0 ; 0047e765
+        ;   XREF to: 0047bbd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_restoreScreen_FUN_0047bbd0()
     MOV EDX,dword ptr [ESP + 0x4]       ; 0047e76a
     PUSH EDX                            ; 0047e76e
     CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780 ; 0047e76f

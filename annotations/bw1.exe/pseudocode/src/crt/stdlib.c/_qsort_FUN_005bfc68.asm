@@ -33,7 +33,7 @@
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005546ae
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10 at 00406f63
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00 at 00484e5d
-;   engine_pod.cpp_FUN_0053b250 at 0053b6e2
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b6e2
 ;   shape_edittool.cpp_CStrList_sort_FUN_00499830 at 00499889
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   texture_size
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b7764
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7764
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

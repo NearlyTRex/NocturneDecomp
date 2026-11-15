@@ -14,7 +14,7 @@
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407a70 at 00407ad5
 ;   engine_3d.c_drawLineStrip2D_FUN_00404440 at 004044c6
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360 at 00498458
-;   shape_edittool.cpp_FUN_004987b0 at 00498a2c
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0 at 00498a2c
 ;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660 at 00498792
 ;
 ; Referenced Globals:

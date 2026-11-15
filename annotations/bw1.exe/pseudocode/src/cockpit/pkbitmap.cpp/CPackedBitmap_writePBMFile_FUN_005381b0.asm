@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_00538130 at 00538153
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00538130 at 00538153
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400

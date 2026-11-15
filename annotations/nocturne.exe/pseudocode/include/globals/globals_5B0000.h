@@ -77,6 +77,11 @@ extern CSound* g_CSound_PTR_005bed68;
 // CVector3f
 extern CVector3f CVector3f_005b0678;
 
+// GUID
+extern GUID g_IID_IKsPropertySet;
+extern GUID g_DSPROPSETID_VoiceManager;
+extern GUID g_DSPROPSETID_EAX_ReverbProperties;
+
 // SAlphaEntry[256]
 extern SAlphaEntry g_AlphaTable[256];
 

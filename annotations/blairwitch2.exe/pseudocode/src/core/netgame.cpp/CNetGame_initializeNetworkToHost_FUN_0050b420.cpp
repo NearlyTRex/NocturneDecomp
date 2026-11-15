@@ -19,7 +19,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0050b420(CNetG
   EAimMode aim_mode;
   SNetworkAddr SStack_14;
   
-  shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Initializing network to host game");
+  shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+            (g_CEditorToolsPtr,"Initializing network to host game");
   core_netgame_cpp_CNetGame_disconnect_FUN_0050b8d0(this_ptr,0);
   pCVar1 = g_CGamePtr;
   this_ptr->player_count = 0;

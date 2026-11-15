@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b566c
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b566c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e2eb3
@@ -38,9 +38,9 @@
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00521840
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_font.cpp_FUN_004ab2b0
 ;
 ; *****************************************************************************
@@ -238,8 +238,8 @@ section .text
     PUSH EBX                            ; 00521a8e
     PUSH EBP                            ; 00521a8f
     INC EDI                             ; 00521a90
-    CALL engine_font.cpp_FUN_004a8df0   ; 00521a91
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 00521a91
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00521a96
     ADD EBX,0x400                       ; 00521a99
     MOV EAX,dword ptr [ESP + 0xc]       ; 00521a9f

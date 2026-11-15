@@ -18,9 +18,9 @@
 ;   undefined4 g_CScriptInstance.focus_actor_changed
 ;
 ; Called Functions:
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
-;   core_mission.cpp_FUN_0051b7b0
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00551b90
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_0051b920
     PUSH EDI                            ; 0051b92a
         ;   Label: LAB_0051b92a
-    CALL core_mission.cpp_FUN_0051b7b0  ; 0051b92b
-        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b7b0()
+    CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0 ; 0051b92b
+        ;   XREF to: 0051b7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0(CDemonMission * this_ptr)
     MOV ECX,dword ptr [EDI + 0x112c]    ; 0051b930
     ADD ESP,0x4                         ; 0051b936
     TEST ECX,ECX                        ; 0051b939

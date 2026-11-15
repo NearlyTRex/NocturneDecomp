@@ -24,8 +24,9 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   float fVar8;
   CDemonActor *unaff_EDI;
   byte bVar9;
-  int unaff_retaddr;
-  float afStackY_1128 [995];
+  CCharacter *unaff_retaddr;
+  CBurncross *apCStackY_1128 [3];
+  float afStackY_111c [992];
   CVector3f *input_local_point;
   CBurncross *this_ptr_03;
   CDemonSet *this_ptr_04;
@@ -33,11 +34,9 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   byte auStack_16c [28];
   float fStack_150;
   float fStack_14c;
-  CDemonActor *pCStack_148;
-  CDemonActor *pCStack_144;
-  CVector3f CStack_140;
-  CDemonActor *pCStack_134;
-  float afStack_130 [5];
+  byte auStack_148 [12];
+  CBurncross *apCStack_13c [2];
+  CVector3f aCStack_134 [2];
   CDemonActor *pCStack_11c;
   float afStack_118 [2];
   CVector3f aCStack_110 [2];
@@ -59,8 +58,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   float fStack_68;
   float afStack_64 [4];
   float fStack_54;
-  float fStack_44;
-  float afStack_40 [2];
+  CVector3f CStack_44;
   CVector3f CStack_38;
   CTrigger *pCStack_28;
   float fStack_20;
@@ -111,16 +109,16 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   fVar2 = CStack_c8.z;
   fVar1 = CStack_c8.y;
   fVar8 = CStack_c8.x;
-  fStack_a4 = CStack_140.x;
-  afStack_a0[(uint)bVar9 * -2] = *(float *)((int)&CStack_140 + (uint)bVar9 * -8 + 4);
+  fStack_a4 = (float)auStack_148._8_4_;
+  afStack_a0[(uint)bVar9 * -2] = (float)apCStack_13c[(uint)bVar9 * -2];
   afStack_a0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       *(float *)((int)&CStack_140 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+       (float)apCStack_13c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
   fStack_f8 = fVar8 + fStack_a4;
   afStack_f4[0] = fVar1 + afStack_a0[0];
   afStack_f4[1] = fVar2 + afStack_a0[1];
-  fStack_44 = fVar8 + fStack_a4;
-  afStack_40[(uint)bVar9 * -2] = afStack_f4[(uint)bVar9 * -2];
-  afStack_40[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+  CStack_44.x = fVar8 + fStack_a4;
+  *(float *)((int)&CStack_44 + (uint)bVar9 * -8 + 4) = afStack_f4[(uint)bVar9 * -2];
+  *(float *)((int)&CStack_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
   fVar2 = CStack_c8.z;
   fVar1 = CStack_c8.y;
@@ -136,10 +134,10 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   pCStack_11c = (CDemonActor *)(fVar8 - afStack_64[2]);
   afStack_118[0] = fVar1 - afStack_64[3];
   afStack_118[1] = fVar2 - fStack_54;
-  pCStack_134 = (CDemonActor *)(fVar8 - afStack_64[2]);
-  afStack_130[(uint)bVar9 * -2] = afStack_118[(uint)bVar9 * -2];
+  aCStack_134[0].x = fVar8 - afStack_64[2];
+  *(float *)((int)aCStack_134 + (uint)bVar9 * -8 + 4) = afStack_118[(uint)bVar9 * -2];
   this_ptr_04 = g_CDemonSetPtr;
-  afStack_130[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+  *(float *)((int)aCStack_134 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_118[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(this_ptr_04);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(g_CDemonSetPtr,1);
@@ -151,7 +149,8 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
   }
   iVar3 = 0;
   do {
-    fStack_14 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&pCStack_134,&fStack_44);
+    fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                          (g_CDemonSetPtr,aCStack_134,&CStack_44);
     dVar10 = (double)fStack_14;
     if ((dVar10 < 0.0) || (1.0 < dVar10)) break;
     pCStack_18 = (CCharacter *)
@@ -216,11 +215,12 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
           fStack_150 = CStack_c8.y;
           fStack_14c = CStack_c8.z;
         }
-        pCStack_148 = (CDemonActor *)(this_ptr->base).ammo_type;
-        pCStack_144 = (CDemonActor *)0x3e19999a;
-        CStack_140.x = 1.42932e-43;
-        CStack_140.y = (float)this_ptr;
-        pCStack_134 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+        auStack_148._0_4_ = (this_ptr->base).ammo_type;
+        auStack_148._4_4_ = (CDemonActor *)0x3e19999a;
+        auStack_148._8_4_ = 1.42932e-43;
+        apCStack_13c[0] = this_ptr;
+        aCStack_134[0].x =
+             (float)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
         (*(((this_ptr_02->base).vtable._uc)->_uc).processDamage)
                   (this_ptr_02,(SDamageInfo *)auStack_16c);
         if (&CStack_ec != &g_CDemonSetPtr->collision_impact_position) {
@@ -235,7 +235,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
           CStack_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-5.0,5.0);
           CStack_38.y = fStack_1c;
           CStack_38.z = fStack_20;
-          if (aCStack_110 != (CVector3f *)(afStack_40 + 2)) {
+          if (aCStack_110 != &CStack_38) {
             aCStack_110[0].y = fStack_1c;
             aCStack_110[0].z = fStack_20;
             aCStack_110[0].x = CStack_38.x;
@@ -244,8 +244,9 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
                     (0x01C73654,&CStack_ec,aCStack_110,0x20000,0x10000,4,0xffff);
         } while (iVar3 < 0x10);
-        if (*(int *)(unaff_retaddr + 0x27c0) != 0) {
-          core_charactr_cpp_FUN_0042fbd0(unaff_retaddr,auStack_16c + 0x24,0);
+        if (unaff_retaddr->gun_flame_ignitable != 0) {
+          core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
+                    (unaff_retaddr,(CVector3f *)(auStack_16c + 0x24),0,0,1.0,1,2.0);
         }
       }
       break;

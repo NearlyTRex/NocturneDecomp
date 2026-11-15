@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector3f *location)
@@ -17,32 +16,12 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
   char *pcVar3;
   byte bVar4;
   float afStackY_10c4 [993];
-  float local_12c;
-  float local_128;
-  uint local_124;
-  float local_120;
-  float local_11c;
-  uint local_118;
-  float local_114;
-  float local_110;
-  uint local_10c;
-  float local_108;
-  uint local_104;
-  uint local_100;
-  uint local_fc;
-  uint local_f8;
-  uint local_f4;
-  uint local_f0;
-  uint local_ec;
-  uint local_e8;
-  uint local_e4;
-  uint local_e0;
+  SQuadVertices local_12c;
+  CVector4i local_fc;
+  CVector4i local_ec;
   float local_dc;
-  float local_d8;
-  float local_d4;
-  float local_d0;
-  float local_cc;
-  uint local_c8;
+  float local_d8 [4];
+  float local_c8;
   float local_c4;
   float local_c0;
   float local_bc;
@@ -54,7 +33,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
   float local_a4;
   float local_a0;
   float local_9c;
-  uint local_98;
+  float local_98;
   CVector3f local_94;
   CVector3f local_88;
   float local_7c;
@@ -69,7 +48,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
   CVector3f local_40;
   float local_34;
   float local_30 [4];
-  uint local_20;
+  float local_20;
   CVector3f local_1c;
   
   bVar4 = 0;
@@ -90,28 +69,27 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
       } while (cVar1 != '\0');
       core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00534480(g_CDemonSetPtr);
     }
-    __arrinit(&stack0xfffffed4,4,&g_CVectorTypeInfo);
+    __arrinit(&local_12c,4,&g_CVectorTypeInfo);
     local_70.x = (this_ptr->glass_size).x * (float)_DAT_005d941a;
     local_70.y = 0.0;
     local_70.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               (&(this_ptr->base).orient_matrix,&local_70,&local_94);
     local_c4 = local_94.x;
-    *(uint *)((int)&stack0xffffff40 + (uint)bVar4 * -8) =
-         *(uint *)((int)&local_94 + (uint)bVar4 * -8 + 4);
-    *(uint *)((int)&stack0xffffff44 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&local_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    local_d8[(uint)bVar4 * -2 + 6] = *(float *)((int)&local_94 + (uint)bVar4 * -8 + 4);
+    local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
+         *(float *)((int)&local_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     local_ac = (this_ptr->base).location.position.x + local_c4;
     local_a8 = (this_ptr->base).location.position.y + local_c0;
     local_a4 = (this_ptr->base).location.position.z + local_bc;
     local_34 = local_ac;
-    local_30[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffff58 + (uint)bVar4 * -8);
+    local_30[(uint)bVar4 * -2] = local_d8[(uint)bVar4 * -2 + 0xc];
     local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         *(float *)((int)&stack0xffffff5c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    if (&stack0xfffffed4 != &local_34) {
-      local_12c = local_34;
-      local_128 = local_30[0];
-      local_124 = local_30[1];
+         local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd];
+    if (&local_12c != (SQuadVertices *)&local_34) {
+      local_12c.vertices[0].x = local_34;
+      local_12c.vertices[0].y = local_30[0];
+      local_12c.vertices[0].z = local_30[1];
     }
     local_70.y = local_70.y + (this_ptr->glass_size).y;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
@@ -123,35 +101,33 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
     local_64 = (this_ptr->base).location.position.x + local_60[2];
     local_60[0] = (this_ptr->base).location.position.y + local_60[3];
     local_60[1] = (this_ptr->base).location.position.z + local_50;
-    local_d0 = local_64;
-    (&stack0xffffff34)[(uint)bVar4 * 0xfffffffe] = local_60[(uint)bVar4 * -2];
-    *(float *)((int)&stack0xffffff38 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+    local_d8[2] = local_64;
+    local_d8[(uint)bVar4 * -2 + 3] = local_60[(uint)bVar4 * -2];
+    local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&stack0xfffffee0 != &stack0xffffff30) {
-      local_120 = local_d0;
-      local_11c = local_cc;
-      local_118 = local_c8;
+    if (local_12c.vertices + 1 != (CVector3f *)(local_d8 + 2)) {
+      local_12c.vertices[1].x = local_d8[2];
+      local_12c.vertices[1].y = local_d8[3];
+      local_12c.vertices[1].z = local_c8;
     }
     local_70.x = -local_70.x;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               (&(this_ptr->base).orient_matrix,&local_70,&local_40);
     local_dc = local_40.x;
-    (&stack0xffffff28)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)((int)&local_40 + (uint)bVar4 * -8 + 4);
-    *(uint *)((int)&stack0xffffff2c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    local_d8[(uint)bVar4 * -2] = *(float *)((int)&local_40 + (uint)bVar4 * -8 + 4);
+    local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(float *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     local_b8 = (this_ptr->base).location.position.x + local_dc;
-    local_b4 = (this_ptr->base).location.position.y + local_d8;
-    local_b0 = (this_ptr->base).location.position.z + local_d4;
+    local_b4 = (this_ptr->base).location.position.y + local_d8[0];
+    local_b0 = (this_ptr->base).location.position.z + local_d8[1];
     local_a0 = local_b8;
-    (&stack0xffffff64)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)((int)&stack0xffffff4c + (uint)bVar4 * -8);
-    local_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8] =
-         *(float *)((int)&stack0xffffff50 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    if (&stack0xfffffeec != &stack0xffffff60) {
-      local_114 = local_a0;
-      local_110 = local_9c;
-      local_10c = local_98;
+    local_d8[(uint)bVar4 * -2 + 0xf] = local_d8[(uint)bVar4 * -2 + 9];
+    local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =
+         local_d8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+    if (local_12c.vertices + 2 != (CVector3f *)(local_d8 + 0xe)) {
+      local_12c.vertices[2].x = local_a0;
+      local_12c.vertices[2].y = local_9c;
+      local_12c.vertices[2].z = local_98;
     }
     local_70.y = 0.0;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
@@ -167,34 +143,35 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004c6d40(CGlass *this_ptr,CVector
     local_30[(uint)bVar4 * -2 + 3] = local_78[(uint)bVar4 * -2];
     local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          local_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&stack0xfffffef8 != local_30 + 2) {
-      local_108 = local_30[2];
-      local_104 = local_30[3];
-      local_100 = local_20;
+    if (local_12c.vertices + 3 != (CVector3f *)(local_30 + 2)) {
+      local_12c.vertices[3].x = local_30[2];
+      local_12c.vertices[3].y = local_30[3];
+      local_12c.vertices[3].z = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (DAT_0060b280,&this_ptr->glass_texture);
     if (DAT_006141c8 == 0x40) {
-      local_fc = 0xf80000;
-      local_e8 = 0x80000;
-      local_f8 = 0x80000;
-      local_e4 = 0xf80000;
-      local_f4 = 0x80000;
-      local_e0 = 0xf80000;
-      local_f0 = 0xf80000;
-      local_ec = 0x80000;
+      local_fc.x = 0xf80000;
+      local_ec.y = 0x80000;
+      local_fc.y = 0x80000;
+      local_ec.z = 0xf80000;
+      local_fc.z = 0x80000;
+      local_ec.w = 0xf80000;
+      local_fc.w = 0xf80000;
+      local_ec.x = 0x80000;
     }
     else {
-      local_fc = 0xfe0000;
-      local_e8 = 0x20000;
-      local_f8 = 0x20000;
-      local_e4 = 0xfe0000;
-      local_f4 = 0x20000;
-      local_e0 = 0xfe0000;
-      local_f0 = 0xfe0000;
-      local_ec = 0x20000;
+      local_fc.x = 0xfe0000;
+      local_ec.y = 0x20000;
+      local_fc.y = 0x20000;
+      local_ec.z = 0xfe0000;
+      local_fc.z = 0x20000;
+      local_ec.w = 0xfe0000;
+      local_fc.w = 0xfe0000;
+      local_ec.x = 0x20000;
     }
-    core_glass_cpp_FUN_004c5bb0(this_ptr,&stack0xfffffed4,&stack0xffffff14,&stack0xffffff04,0);
+    core_glass_cpp_CGlass_createShatterParticles_FUN_004c5bb0
+              (this_ptr,&local_12c,&local_ec,&local_fc,0);
     (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,"glass-1.wav@2.0");
     if (this_ptr->background_flag != 0) {
       core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80

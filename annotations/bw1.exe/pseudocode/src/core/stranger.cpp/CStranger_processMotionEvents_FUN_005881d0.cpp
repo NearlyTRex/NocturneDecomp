@@ -156,12 +156,12 @@ LAB_0058899d:
             (this_ptr->base).action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x7e2);
           }
           pCVar10 = (this_ptr->base).object_to_pick_up;
           if (pCVar10 == (CDemonActor *)0x0) {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"Object to pick up is now NULL\nstranger.cpp line %d",0x7e8);
           }
           else {
@@ -180,7 +180,7 @@ LAB_0058899d:
               if (iVar2 == 2) {
                 if ((this_ptr->base).action_pending != 0) {
                   in_stack_fffffee8 = &g_CEditorToolsPtr->unused;
-                  shape_edittool_cpp_FUN_00494340
+                  shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                             (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
                 }
                 (this_ptr->base).action_pending = 1;
@@ -204,7 +204,7 @@ LAB_0058833e:
           }
           else {
             if (iVar2 == 6) goto LAB_0058833e;
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"<actionPending = %d\nstranger.cpp line %d" + 1,iVar2,0x7c4);
           }
           iVar2 = (this_ptr->base).base.layer_action_index;
@@ -312,7 +312,7 @@ LAB_0058833e:
             (this_ptr->base).action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x826);
           }
         }
@@ -322,11 +322,11 @@ LAB_0058833e:
             (this_ptr->base).action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x879);
           }
           if ((this_ptr->base).door_to_open == (CDoor *)0x0) {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"doorToOpen == NULL\nstranger.cpp line %d",0x87f);
           }
           iVar2 = core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);

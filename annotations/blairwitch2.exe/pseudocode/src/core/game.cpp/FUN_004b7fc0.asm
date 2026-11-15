@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0
-;   core_setdir.cpp_FUN_00538d10
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004b7feb | g_CDemonSetPtr
     PUSH EAX                            ; 004b7ff0
     MOV EBX,dword ptr [EAX + 0x15aeb8]  ; 004b7ff1
-    CALL core_setdir.cpp_FUN_00538d10   ; 004b7ff7
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 004b7ff7
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     MOV EAX,[0x0061b460]                ; 004b7ffc | g_CScriptPtr
     MOV dword ptr [EAX + 0x10],0x0      ; 004b8001
     MOV EAX,[0x0061b5a8]                ; 004b8008 | g_CDemonSetPtr

@@ -12,7 +12,7 @@
 ;   core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0 at 0040e0f6
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040de30 at 0040de43
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720 at 0040e775
-;   core_inv.cpp_FUN_004db8d0 at 004db8f4
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0 at 004db8f4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_005b60b7

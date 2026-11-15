@@ -47,9 +47,10 @@ int __cdecl core_flintlck_cpp_CFlintlock_fire_FUN_004ae850(CFlintlock *this_ptr)
   float fStack_174;
   float afStack_170 [5];
   float fStack_15c;
-  float afStack_158 [4];
-  float fStack_148;
+  float afStack_158 [2];
+  CVector3f CStack_150;
   float fStack_144;
+  uint auStack_140 [2];
   CVector3f CStack_138;
   CCharacter *pCStack_12c;
   CVector3f CStack_128;
@@ -129,9 +130,9 @@ int __cdecl core_flintlck_cpp_CFlintlock_fire_FUN_004ae850(CFlintlock *this_ptr)
   fStack_174 = fVar2 - aCStack_fc[0].x;
   afStack_170[0] = CStack_1d4.y - aCStack_fc[0].y;
   afStack_170[1] = CStack_1d4.z - aCStack_fc[0].z;
-  afStack_158[2] = fVar2 - aCStack_fc[0].x;
-  afStack_158[(uint)bVar7 * -2 + 3] = afStack_170[(uint)bVar7 * -2];
-  afStack_158[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+  CStack_150.x = fVar2 - aCStack_fc[0].x;
+  *(float *)((int)&CStack_150 + (uint)bVar7 * -8 + 4) = afStack_170[(uint)bVar7 * -2];
+  *(float *)((int)&CStack_150 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
        afStack_170[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(g_CDemonSetPtr,1);
@@ -144,7 +145,8 @@ int __cdecl core_flintlck_cpp_CFlintlock_fire_FUN_004ae850(CFlintlock *this_ptr)
   fStack_1c = 0.0;
   do {
     pCStack_14 = (CTrigger *)
-                 core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,afStack_158 + 2,&CStack_180);
+                 core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                           (g_CDemonSetPtr,&CStack_150,&CStack_180);
     dVar10 = (double)(float)pCStack_14;
     if ((dVar10 < 0.0) || (1.0 < dVar10)) break;
     pCStack_18 = (CCharacter *)
@@ -225,10 +227,9 @@ int __cdecl core_flintlck_cpp_CFlintlock_fire_FUN_004ae850(CFlintlock *this_ptr)
                   (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                    &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                    g_CDemonSetPtr->collision_actor,0);
-        pCStack_12c = (CCharacter *)((g_CDemonSetPtr->collision_impact_position).x - afStack_158[2])
-        ;
-        CStack_128.x = (g_CDemonSetPtr->collision_impact_position).y - afStack_158[3];
-        CStack_128.y = (g_CDemonSetPtr->collision_impact_position).z - fStack_148;
+        pCStack_12c = (CCharacter *)((g_CDemonSetPtr->collision_impact_position).x - CStack_150.x);
+        CStack_128.x = (g_CDemonSetPtr->collision_impact_position).y - CStack_150.y;
+        CStack_128.y = (g_CDemonSetPtr->collision_impact_position).z - CStack_150.z;
         CStack_60.x = (float)pCStack_12c;
         afStack_54[(uint)bVar7 * -2 + -2] = *(float *)((int)&CStack_128 + (uint)bVar7 * -8);
         afStack_54[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -1] =
@@ -314,9 +315,9 @@ LAB_004af530:
   } while ((int)fStack_1c < 4);
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
   fStack_144 = CStack_1d4.x;
-  afStack_158[(uint)bVar7 * -2 + 6] = *(float *)((int)&CStack_1d4 + (uint)bVar7 * -8 + 4);
-  afStack_158[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       *(float *)((int)&CStack_1d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  auStack_140[(uint)bVar7 * -2] = *(uint *)((int)&CStack_1d4 + (uint)bVar7 * -8 + 4);
+  auStack_140[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+       *(uint *)((int)&CStack_1d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   CStack_1e0.x = CStack_e4.y;
   *(float *)((int)&CStack_1e0 + (uint)bVar7 * -8 + 4) = afStack_d8[(uint)bVar7 * -2 + -1];

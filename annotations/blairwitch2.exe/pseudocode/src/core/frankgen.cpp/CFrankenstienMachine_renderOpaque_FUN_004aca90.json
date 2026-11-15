@@ -2,26 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 272,
+    "complexity_score": 185,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 15,
+    "pseudocode_lines": 70,
+    "suspect_count": 9,
     "suspect_types": [
-      "bare_stack_ref",
       "bit_int_float_compare",
-      "bitcast_double_pair",
-      "concat_reconstruction",
       "derived_field_index_pun",
       "stack_param",
-      "unaffected_reg",
-      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 223
+    "total_lines": 221
   },
   "cross_references": [],
   "function": {
@@ -51,7 +46,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044fcc0",
@@ -242,16 +237,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
       "text": "ulonglong in_stack_ffffffb0;",
@@ -262,60 +249,20 @@
       "line": 22,
       "match": "in_stack_ffffffb0",
       "severity": "moderate",
-      "text": "uVar8 = (uint)((ulonglong)in_stack_ffffffb0 >> 0x20);",
+      "text": "iVar3 = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "stack0xffffffec = __BITCAST_DOUBLE(CONCAT44(unaff_EBP,auStack_2c._24_4_));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "stack0xffffffec = __BITCAST_DOUBLE(CONCAT44(unaff_EBP,auStack_2c._24_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 24,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "stack0xffffffec = __BITCAST_DOUBLE(CONCAT44(unaff_EBP,auStack_2c._24_4_));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Bare stack address reference (hidden stack variable)",
-      "line": 24,
-      "match": "stack0xffffffec",
-      "severity": "moderate",
-      "text": "stack0xffffffec = __BITCAST_DOUBLE(CONCAT44(unaff_EBP,auStack_2c._24_4_));",
-      "type": "bare_stack_ref"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 33,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 39,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "iVar3 = core_box_cpp_FUN_0041a840(CONCAT44(uVar8,auStack_2c));",
-      "type": "concat_reconstruction"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
-      "line": 45,
+      "line": 44,
       "match": "(int)fVar1 < 0x4400c000",
       "severity": "moderate",
       "text": "if ((int)fVar1 < 0x4400c000) {",
@@ -323,7 +270,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
-      "line": 48,
+      "line": 47,
       "match": "(int)fVar1 < 0x44e10000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44e10000) {",
@@ -331,7 +278,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ed8000 is the IEEE 754 bit pattern of 1900f. Rewrite in a .keep as a plain float compare against 1900f.",
-      "line": 51,
+      "line": 50,
       "match": "(int)fVar1 < 0x44ed8000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44ed8000) {",
@@ -339,7 +286,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44fa0000 is the IEEE 754 bit pattern of 2000f. Rewrite in a .keep as a plain float compare against 2000f.",
-      "line": 54,
+      "line": 53,
       "match": "(int)fVar1 < 0x44fa0000",
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44fa0000) {",
@@ -347,7 +294,7 @@
     },
     {
       "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x4 = 0x2b8, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBackgroundActor::model, CBat::course_filename[4], CBodyPart::bounding_box also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 27,
+      "line": 26,
       "severity": "moderate",
       "text": "this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
       "type": "derived_field_index_pun"

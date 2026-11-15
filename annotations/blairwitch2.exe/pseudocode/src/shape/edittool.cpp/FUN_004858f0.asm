@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_buildParsedLines_FUN_00521ec0 at 00521ee0
+;   core_script.cpp_CScript_loadScript_FUN_00521cf0 at 00521e7a
 ;   core_script.cpp_CScript_renderEditor_FUN_00521af0 at 00521bdb
-;   core_script.cpp_FUN_00521cf0 at 00521e7a
 ;
 ; *****************************************************************************
 

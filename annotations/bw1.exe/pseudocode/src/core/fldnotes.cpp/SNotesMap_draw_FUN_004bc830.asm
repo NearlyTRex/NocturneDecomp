@@ -23,7 +23,7 @@
 ;   core_fldnotes.cpp_SNotesMap_applyReveal_FUN_004bc9b0
 ;   core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004bc6f0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
-;   engine_font.cpp_FUN_004c1dd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;
 ; *****************************************************************************
 
@@ -167,8 +167,8 @@ section .text
     PUSH EAX                            ; 004bc990
     MOV EAX,[0x0152d250]                ; 004bc991 | DAT_0152d250
     PUSH EAX                            ; 004bc996
-    CALL engine_font.cpp_FUN_004c1dd0   ; 004bc997
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004bc997
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004bc99c
     JMP 0x004bc8ee                      ; 004bc99f
         ;   XREF to: 004bc8ee (UNCONDITIONAL_JUMP)  ; LAB_004bc8ee

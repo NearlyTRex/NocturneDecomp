@@ -38,7 +38,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
@@ -216,8 +216,8 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0049e11e
     PUSH EAX                            ; 0049e122
     PUSH ESI                            ; 0049e123
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 0049e124
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 0049e124
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 0049e129
     JMP 0x0049dfbd                      ; 0049e12c
         ;   XREF to: 0049dfbd (UNCONDITIONAL_JUMP)  ; LAB_0049dfbd

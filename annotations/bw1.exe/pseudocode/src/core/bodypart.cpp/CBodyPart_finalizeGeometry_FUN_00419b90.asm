@@ -67,7 +67,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a700
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
-;   core_bodypart.cpp_FUN_0041ad40
+;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -502,8 +502,8 @@ section .text
         ;   XREF to: 0041a06b (CONDITIONAL_JUMP)  ; LAB_0041a06b
     PUSH EBX                            ; 0041a0fe
         ;   Label: LAB_0041a0fe
-    CALL core_bodypart.cpp_FUN_0041ad40 ; 0041a0ff
-        ;   XREF to: 0041ad40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041ad40()
+    CALL core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40 ; 0041a0ff
+        ;   XREF to: 0041ad40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart * this_ptr)
     LEA EDX,[EBX + 0xd10]               ; 0041a104
     LEA EAX,[EBX + 0x280]               ; 0041a10a
     ADD ESP,0x4                         ; 0041a110

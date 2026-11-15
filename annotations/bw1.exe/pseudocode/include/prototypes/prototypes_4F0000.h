@@ -27,6 +27,7 @@
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
@@ -92,7 +93,7 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004f42b0(CImp *thi
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004f42d0(CImp *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_staticInit_FUN_004f4360(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004f4370(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int engine_ini_cpp_FUN_004f4550(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004f4550(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004f49f0(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004f4a30(char *section,char *key,int default_value,char *filename);
@@ -103,10 +104,10 @@ void __cdecl engine_ini_cpp_initIniFile_FUN_004f4b80(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(CIniFile *this_ptr,char *section);
 void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004f4c00(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004f4c90(CIniFile *this_ptr,char *key,char *value);
-void engine_ini_cpp_FUN_004f4d10(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004f4d70(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile *this_ptr,char *key_name,int *value_ptr);
+void __cdecl engine_ini_cpp_FUN_004f4d70(CIniFile *this_ptr,char *key,int value);
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004f4db0(CIniFile *this_ptr,char *key,float *output);
-void engine_ini_cpp_FUN_004f4e20(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004f4e20(CIniFile *this_ptr,char *key,float value);
 void engine_ini_cpp_FUN_004f4e70(void);
 void engine_ini_cpp_FUN_004f4ee0(int param_1,undefined4 param_2);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004f4f30(CIni *this_ptr);
@@ -131,7 +132,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void);
 void __cdecl core_inv_cpp_freeInventory_FUN_004f75a0(void);
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004f7660(CDemonActor *actor_ptr);
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
-void core_inv_cpp_FUN_004f8b70(CInventory *param_1,CDemonActor *param_2);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70(CInventory *this_ptr,CWeapon *weapon);
 CDemonActor * __cdecl core_inv_cpp_FUN_004f8c40(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_FUN_004f8c90(CInventory *this_ptr,char *class_name);
 bool core_inv_cpp_FUN_004f8ce0(CInventory *param_1,char *param_2);
@@ -218,7 +219,7 @@ int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_004fe710(CLarva *this_ptr,
 CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004fe770(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_004fe800(void);
 void __cdecl core_level_cpp_CLevelLoader_reset_FUN_004fe830(CLevelLoader *this_ptr);
-void core_level_cpp_FUN_004fe840(undefined4 *param_1,undefined4 param_2,int param_3);
+void __cdecl core_level_cpp_CLevelLoader_show_FUN_004fe840(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004fefa0(CLevelLoader *this_ptr);
 void __cdecl core_lever_cpp_staticInit_FUN_004fefe0(void);
@@ -227,7 +228,7 @@ CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_004ff030(CLever
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004ff040(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004ff110(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_process_FUN_004ff190(CLever *this_ptr,float delta_time);
-void core_lever_cpp_FUN_004ff3f0(int param_1,float param_2,int param_3);
+void __cdecl core_lever_cpp_CLever_setState_FUN_004ff3f0(CLever *this_ptr,float new_state,int silent);
 void __cdecl core_lever_cpp_CLever_activate_FUN_004ff570(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_004ff5d0(CLever *this_ptr);
 CBoundingBox3D * __stack_esi core_lever_cpp_CLever_getBoundingBox_FUN_004ff670(CLever *this_ptr,CBoundingBox3D *out_box);

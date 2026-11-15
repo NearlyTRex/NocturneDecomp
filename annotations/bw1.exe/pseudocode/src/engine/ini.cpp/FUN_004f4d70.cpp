@@ -1,17 +1,17 @@
 // Name: engine_ini.cpp_FUN_004f4d70
 // Address: 004f4d70
 // Address Range: [[004f4d70, 004f4dac]]
-// Convention: unknown
-// Signature: void engine_ini_cpp_FUN_004f4d70(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_ini_cpp_FUN_004f4d70(CIniFile *this_ptr,char *key,int value)
 
 #include "nocturne.h"
 
-void engine_ini_cpp_FUN_004f4d70(int param_1,uint param_2)
+void __cdecl engine_ini_cpp_FUN_004f4d70(CIniFile *this_ptr,char *key,int value)
 
 {
   char local_68 [100];
   
   _sprintf(local_68,&DAT_005e58ee);
-  (**(code **)(*(int *)(param_1 + 0x200) + 8))(param_1,param_2,local_68);
+  (**(code **)((int)this_ptr->vtable + 8))(this_ptr,key,local_68);
   return;
 }

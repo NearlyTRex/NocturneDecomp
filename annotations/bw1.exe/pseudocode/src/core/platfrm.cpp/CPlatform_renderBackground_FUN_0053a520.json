@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 179,
+    "complexity_score": 202,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 8,
+    "pseudocode_lines": 77,
+    "suspect_count": 10,
     "suspect_types": [
+      "unaffected_reg",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 251
+    "total_lines": 249
   },
   "cross_references": [],
   "function": {
@@ -44,7 +45,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004688a0",
@@ -212,6 +213,14 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_00612560",
@@ -228,6 +237,14 @@
       "type": "undefined_data"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_24,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 65,
       "match": "DAT_00612560",
@@ -237,26 +254,26 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
-      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_14,0);",
+      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_c,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 74,
       "match": "DAT_007c6120",
       "severity": "mild",
-      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_14,0);",
+      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_c,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 74,
       "match": "DAT_007c6120",
       "severity": "mild",
-      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_14,0);",
+      "text": "_DAT_0152a950 = (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 8))(DAT_007c6120,&iStack_c,0);",
       "type": "undefined_data"
     },
     {

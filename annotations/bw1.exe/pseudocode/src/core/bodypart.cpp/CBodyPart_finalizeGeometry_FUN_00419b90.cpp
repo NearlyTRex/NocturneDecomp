@@ -186,7 +186,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(CBodyPart
         iVar11 = iVar11 + 0xc;
       } while (iVar8 < this_ptr->vertex_count);
     }
-    core_bodypart_cpp_FUN_0041ad40(this_ptr);
+    core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(this_ptr);
     pCVar5 = &(this_ptr->physics_box).linear_velocity;
     if (pCVar5 != &this_ptr->initial_velocity) {
       pCVar5->x = (this_ptr->initial_velocity).x;

@@ -14,7 +14,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0050b790(CNetGame *t
   CSocket *this_ptr_00;
   int iVar1;
   
-  shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"?Initializing network..." + 1);
+  shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+            (g_CEditorToolsPtr,"?Initializing network..." + 1);
   this_ptr_00 = &this_ptr->socket;
   support_trisock_cpp_CSocket_closeSocket_FUN_00579360(this_ptr_00);
   iVar1 = support_trisock_cpp_CSocket_createUDPSocket_FUN_00579060(this_ptr_00);
@@ -42,7 +43,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0050b790(CNetGame *t
     _DAT_01d34e38 = 1;
     _DAT_01d34e34 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
     _DAT_01d34e34 = _DAT_01d34e34 / 0x12;
-    shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+              (g_CEditorToolsPtr,"Initializing network...OK");
     return 1;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0047be40

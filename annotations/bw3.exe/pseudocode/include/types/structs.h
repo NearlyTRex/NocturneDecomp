@@ -130,6 +130,7 @@
 #include "types/structs/SPoseData.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SProjectionParams.h"
+#include "types/structs/SQuadVertices.h"
 #include "types/structs/SRGBColor.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRayQueryState.h"

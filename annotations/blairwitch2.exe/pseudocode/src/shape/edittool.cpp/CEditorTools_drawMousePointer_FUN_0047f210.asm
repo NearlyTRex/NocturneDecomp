@@ -14,7 +14,7 @@
 ;
 ; XREF[6]:
 ;   core_bmppuzzl.cpp_CExamplePuzzle_render_FUN_0059ada0 at 0059add8
-;   core_game.cpp_FUN_004b5190 at 004b5c3f
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5c3f
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004837d2
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba6e
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c6f6

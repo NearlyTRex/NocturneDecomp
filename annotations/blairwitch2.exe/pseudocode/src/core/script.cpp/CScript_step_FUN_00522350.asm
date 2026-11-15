@@ -284,7 +284,7 @@
 ;   core_script.cpp_CScript_executeInitSection_FUN_00522200 at 00522276
 ;   core_script.cpp_CScript_process_FUN_005216e0 at 00521791
 ;   core_script.cpp_CScript_skipCinematic_FUN_00529b30 at 00529b8d
-;   core_script.cpp_FUN_00521ff0 at 0052203d
+;   core_script.cpp_CScript_validateSyntax_FUN_00521ff0 at 0052203d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005e30b9
@@ -2880,8 +2880,8 @@ section .text
     PUSH EAX                            ; 00523e47
     ADD ESI,0x2437c                     ; 00523e48
     PUSH ESI                            ; 00523e4e
-    CALL core_inv.cpp_FUN_004dadb0      ; 00523e4f
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 00523e4f
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     ADD ESP,0x10                        ; 00523e54
     JMP 0x005223fb                      ; 00523e57
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -4878,8 +4878,8 @@ section .text
     PUSH EAX                            ; 00525663
     LEA EAX,[ESP + 0x3c]                ; 00525664
     PUSH EAX                            ; 00525668
-    CALL engine_ini.cpp_FUN_004d8b20    ; 00525669
-        ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b20()
+    CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20 ; 00525669
+        ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 0052566e
     MOV EDX,dword ptr [ESP + 0x4c30]    ; 00525671
     PUSH EDX                            ; 00525678
@@ -5503,8 +5503,8 @@ section .text
     PUSH EDI                            ; 00525e35
     MOV EAX,[0x0061b5a8]                ; 00525e36 | g_CDemonSetPtr
     PUSH EAX                            ; 00525e3b | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00538d10   ; 00525e3c
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 00525e3c
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 00525e41
     MOV EDX,dword ptr [0x0061b5a8]      ; 00525e44 | g_CDemonSetPtr
     MOV EAX,[0x0061b460]                ; 00525e4a | g_CScriptPtr
@@ -8710,8 +8710,8 @@ section .text
     PUSH EAX                            ; 005285c7
     LEA EAX,[ESP + 0x240]               ; 005285c8
     PUSH EAX                            ; 005285cf
-    CALL engine_ini.cpp_FUN_004d8b80    ; 005285d0
-        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80 ; 005285d0
+        ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 005285d5
     PUSH 0x0                            ; 005285d8
     LEA EAX,[ESP + 0x23c]               ; 005285da

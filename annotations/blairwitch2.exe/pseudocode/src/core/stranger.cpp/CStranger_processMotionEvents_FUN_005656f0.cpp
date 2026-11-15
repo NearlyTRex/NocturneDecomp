@@ -156,12 +156,13 @@ LAB_00565ebd:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
+                       this_ptr->action_pending,0x778);
           }
           pCVar11 = (this_ptr->base).object_to_pick_up;
           if (pCVar11 == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"Object to pick up is now NULL\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"Object to pick up is now NULL\nstranger.cpp line %d",0x77e);
           }
           else {
             iVar2 = (*((pCVar11->vtable)._ub)->canPickup)(pCVar11,(CDemonActor *)this_ptr);
@@ -192,7 +193,8 @@ LAB_00565ebd:
           if (bone_index != 3) goto LAB_00565ebd;
           this_ptr_00 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
           core_stranger_cpp_CStranger_dropRightHandObject_FUN_0056a1e0(this_ptr);
-          if (this_ptr->action_pending == 2) {
+          iVar2 = this_ptr->action_pending;
+          if (iVar2 == 2) {
             if (this_ptr_00 != (CWeapon *)0x0) {
               (*((this_ptr_00->base).vtable._ub)->setPositionAndOrientation)
                         ((CDemonActor *)this_ptr_00,local_2c,local_28);
@@ -201,9 +203,9 @@ LAB_00565858:
             this_ptr->action_pending = 0;
           }
           else {
-            if (this_ptr->action_pending == 6) goto LAB_00565858;
+            if (iVar2 == 6) goto LAB_00565858;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x75a);
           }
           iVar2 = (this_ptr->base).base.layer_action_index;
           (this_ptr->base).target_actor = (CDemonActor *)0x0;
@@ -311,7 +313,8 @@ LAB_00565858:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
+                       this_ptr->action_pending,0x7bc);
           }
         }
         else {
@@ -320,11 +323,12 @@ LAB_00565858:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
+                       this_ptr->action_pending,0x80f);
           }
           if ((this_ptr->base).door_to_open == (CDoor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"doorToOpen == NULL\nstranger.cpp line %d");
+                      (g_CEditorToolsPtr,"doorToOpen == NULL\nstranger.cpp line %d",0x815);
           }
           iVar2 = core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(&this_ptr->base);
           if (iVar2 == 0) {

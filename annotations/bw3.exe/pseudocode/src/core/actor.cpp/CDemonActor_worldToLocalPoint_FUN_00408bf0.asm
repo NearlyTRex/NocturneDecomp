@@ -22,7 +22,7 @@
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00427417
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_0042a860 at 0042a930
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a0 at 004309ca
-;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 004317d5
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 00434275
 ;   ... and 55 more
 ;
 ; Called Functions:

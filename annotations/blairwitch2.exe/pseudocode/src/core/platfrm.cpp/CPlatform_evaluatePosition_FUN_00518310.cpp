@@ -14,10 +14,11 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   CLocation *out_pos;
   UOrientationVector *out_euler;
   float *pfVar1;
-  byte bVar2;
+  uint *puVar2;
+  byte bVar3;
   float afStackY_1874 [1523];
-  uint local_98;
-  uint local_88;
+  float local_98;
+  CQuaternion4f local_88;
   CVector3f local_78;
   float local_6c;
   float local_68;
@@ -40,7 +41,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   float local_18;
   int local_14;
   
-  bVar2 = 0;
+  bVar3 = 0;
   if (this_ptr->param < 0.0) {
     this_ptr->param = 0.0;
   }
@@ -74,22 +75,20 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
     local_20 = local_44;
     local_1c = local_40;
     core_xform_cpp_slerpQuaternion_FUN_00593df0
-              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param);
-    local_98 = local_88;
-    *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * 0xfffffffe * 4) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar2 * -8);
-    *(uint *)(&stack0xffffff70 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_88);
+    local_98 = local_88.w;
+    puVar2 = (uint *)((int)&local_88 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    *(uint *)((int)&stack0xffffff6c + (uint)bVar3 * 0xfffffffe * 4) =
+         *(uint *)((int)&local_88 + (uint)bVar3 * -8 + 4);
+    *(uint *)(&stack0xffffff70 + (uint)bVar3 * -8 + (uint)bVar3 * -8) = *puVar2;
     *(uint *)
-     ((int)(&stack0xffffff70 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =
-         *(uint *)
-          ((int)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
-          ((uint)bVar2 * -2 + 1) * 4);
+     ((int)(&stack0xffffff70 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4) =
+         puVar2[(uint)bVar3 * -2 + 1];
     core_xform_cpp_FUN_005940b0(&stack0xffffff68);
     local_78.x = local_3c;
-    *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];
-    *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-         afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+    *(float *)((int)&local_78 + (uint)bVar3 * -8 + 4) = afStack_38[(uint)bVar3 * -2];
+    *(float *)((int)&local_78 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         afStack_38[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
     if ((CVector3f *)out_euler != &local_78) {
       (out_euler->vec).x = local_78.x;
       (this_ptr->base).orient.vec.y = local_78.y;

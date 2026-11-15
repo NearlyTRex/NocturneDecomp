@@ -18,14 +18,14 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr)
   CBoundingBox3D *pCVar4;
   uint *puVar5;
   float *pfVar6;
-  CVector3f *pCVar7;
+  CBoundingBox3D *pCVar7;
   byte bVar8;
   float afStackY_10d0 [1004];
   SMRGLTextureBasic *texture;
+  CVector3f *world_position;
   float fStack_108;
   float fStack_104;
-  CVector3f CStack_100;
-  CVector3f CStack_f4;
+  CBoundingBox3D CStack_100;
   float fStack_e8;
   float afStack_e4 [2];
   CVector3i CStack_dc;
@@ -77,15 +77,15 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr)
   pCVar4 = pCVar2->frame_bounds;
   pCVar7 = &CStack_100;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar7->x = (pCVar4->min).x;
+    (pCVar7->min).x = (pCVar4->min).x;
     pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
-    pCVar7 = (CVector3f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+    pCVar7 = (CBoundingBox3D *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
   }
-  iVar3 = core_box_cpp_FUN_004207b0(&CStack_100,0);
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_100,0);
   if (iVar3 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_00551c30
-              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02c8af28,&CStack_100,
-               &CStack_f4,(CMatrix3x3f *)0x0);
+              (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02c8af28,
+               &CStack_100.min,&CStack_100.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0(this_ptr_00,0.0,-1);
   }
   engine_drender_cpp_pop_FUN_004839a0();
@@ -195,7 +195,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr)
         afStack_e4[0] = afStack_e4[0] - afStack_60[3];
         afStack_e4[1] = afStack_e4[1] - fStack_50;
         fStack_104 = fStack_104 * (float)_DAT_005df244;
-        pCVar7 = &CStack_d0;
+        world_position = &CStack_d0;
         fStack_48 = afStack_e4[0] * fStack_108;
         fStack_44 = afStack_e4[1] * fStack_108;
         fStack_b8 = fStack_4c;
@@ -206,7 +206,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr)
         CStack_d0.y = CStack_d0.y - afStack_b4[0];
         CStack_d0.z = CStack_d0.z - afStack_b4[1];
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (DAT_00612560,pCVar7);
+                  (DAT_00612560,world_position);
         engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
                   (DAT_00612560,(CVector3i *)&DAT_01c57078,(CVector3i *)0x0);
         afStack_b4[2] = -fStack_24 * fStack_104;

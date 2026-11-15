@@ -249,8 +249,9 @@ LAB_0053c6de:
       fVar24 = this_ptr->walk_timeout - param_2;
       this_ptr->walk_timeout = fVar24;
       if (0.0 < fVar24) {
-        core_charactr_cpp_FUN_00428260
-                  (this_ptr,this_ptr->walk_target,0x3f800000,0x3f800000,&this_ptr->walk_status);
+        core_charactr_cpp_CCharacter_followActor_FUN_00428260
+                  ((CCharacter *)this_ptr,(CDemonActor *)this_ptr->walk_target,1.0,1.0,
+                   &this_ptr->walk_status);
         uVar2 = this_ptr->walk_status;
         if (uVar2 == 0) {
 LAB_0053d90f:
@@ -672,8 +673,9 @@ switchD_0053dec8_caseD_0:
       fVar24 = this_ptr->walk_timeout - param_2;
       this_ptr->walk_timeout = fVar24;
       if (0.0 < fVar24) {
-        core_charactr_cpp_FUN_00428260
-                  (this_ptr,this_ptr->walk_target,0x3f800000,0x3f800000,&this_ptr->walk_status);
+        core_charactr_cpp_CCharacter_followActor_FUN_00428260
+                  ((CCharacter *)this_ptr,(CDemonActor *)this_ptr->walk_target,1.0,1.0,
+                   &this_ptr->walk_status);
         uVar2 = this_ptr->walk_status;
         if (uVar2 == 0) {
 LAB_0053d2f5:

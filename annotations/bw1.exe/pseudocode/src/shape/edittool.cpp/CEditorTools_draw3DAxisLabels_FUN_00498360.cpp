@@ -211,10 +211,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(CEdit
   iVar1 = 0;
   do {
     if ((*(byte *)((int)puVar2 + 0x13) & 0x80) == 0) {
+      iVar17 = puVar2[4];
+      iVar18 = puVar2[5];
       _sprintf((char *)aiStack_18,(char *)0x5dc26e);
       engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
       engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
-      engine_font_cpp_FUN_004c1dd0();
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+                (_DAT_01c3eb50,(char *)aiStack_18,iVar17 >> 0x10,iVar18 >> 0x10,_DAT_01c3f594,-1);
     }
     iVar1 = iVar1 + 1;
     puVar2 = puVar2 + 0xc;

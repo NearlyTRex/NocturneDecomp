@@ -67,8 +67,8 @@
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
-;   core_setcolid.cpp_FUN_00535ee0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
@@ -521,8 +521,8 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004af17b | g_CDemonSetPtr
     PUSH EAX                            ; 004af180 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x14d144],0x0  ; 004af181 | g_CDemonSetInstance.collision_actor
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 004af18b
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 004af18b
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     ADD ESP,0xc                         ; 004af190
     MOV EDI,dword ptr [0x0061b5a8]      ; 004af193 | g_CDemonSetPtr
     PUSH EDI                            ; 004af199 | g_CDemonSetInstance

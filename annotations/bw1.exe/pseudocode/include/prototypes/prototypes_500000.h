@@ -88,7 +88,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_00504b90(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0(CMansionPuzzleCircle *this_ptr);
-void core_manpuz_cpp_FUN_00504ee0(CDemonActor *param_1,int param_2);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index);
@@ -141,7 +141,7 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_pt
 undefined8 core_marquee_cpp_FUN_005072c0(void);
 void core_marquee_cpp_FUN_00507340(void);
 int __cdecl engine_matrix_c_FUN_00507350(int angle);
-int engine_matrix_c_FUN_00507390(uint param_1);
+int __cdecl engine_matrix_c_FUN_00507390(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_005076b0(int pitch,int yaw,int roll);
 CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVector3i *input_coords,CVector3i *output_coords);

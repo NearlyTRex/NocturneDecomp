@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_box.cpp_FUN_004207b0 at 0042092f
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 at 0042092f
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 0055089d
 ;
 ; Referenced Globals:

@@ -30,13 +30,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_followActor_FUN_004310e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_004310e0
 ;   core_charactr.cpp_FUN_00433c60
 ;   ... and 25 more
 ;
@@ -1117,8 +1117,8 @@ section .text
     PUSH EBX                            ; 00544738
     PUSH EAX                            ; 00544739
     MOV EDI,EAX                         ; 0054473a
-    CALL core_charactr.cpp_FUN_004310e0 ; 0054473c
-        ;   XREF to: 004310e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004310e0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_004310e0 ; 0054473c
+        ;   XREF to: 004310e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_004310e0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,EDI                         ; 00544741
     MOV EAX,dword ptr [EAX + 0xd0c0]    ; 00544743
     ADD ESP,0x14                        ; 00544749
@@ -1460,8 +1460,8 @@ section .text
     PUSH ECX                            ; 00544b57
     PUSH EAX                            ; 00544b58
     MOV ESI,EAX                         ; 00544b59
-    CALL core_charactr.cpp_FUN_004310e0 ; 00544b5b
-        ;   XREF to: 004310e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004310e0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_004310e0 ; 00544b5b
+        ;   XREF to: 004310e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_004310e0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,ESI                         ; 00544b60
     MOV EAX,dword ptr [EAX + 0xd0c0]    ; 00544b62
     ADD ESP,0x14                        ; 00544b68

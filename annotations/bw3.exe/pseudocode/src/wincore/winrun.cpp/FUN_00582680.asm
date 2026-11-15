@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_FUN_00582680(undefined4 param_1)
+; void wincore_winrun_cpp_FUN_00582680(CIniFile *param_1)
 ;
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_ini.cpp_FUN_004d8c90
+;   engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005826c9
     PUSH EAX                            ; 005826cd
     PUSH EBP                            ; 005826ce
-    CALL engine_ini.cpp_FUN_004d8c90    ; 005826cf
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 005826cf
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 005826d4
     MOV EAX,dword ptr [ESP + 0x108]     ; 005826d7
     CMP dword ptr [EAX + 0x2d22c24],0x0 ; 005826de
@@ -78,8 +78,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0058274f
     PUSH EAX                            ; 00582753
     PUSH EBP                            ; 00582754
-    CALL engine_ini.cpp_FUN_004d8c90    ; 00582755
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 00582755
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 0058275a
     XOR EBX,EBX                         ; 0058275d
     MOV EAX,dword ptr [ESP + 0x108]     ; 0058275f
@@ -116,8 +116,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005827b4
     PUSH EAX                            ; 005827b8
     PUSH EBP                            ; 005827b9
-    CALL engine_ini.cpp_FUN_004d8c90    ; 005827ba
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 005827ba
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 005827bf
     PUSH EBX                            ; 005827c2
     PUSH EDI                            ; 005827c3
@@ -132,8 +132,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005827dd
     PUSH EAX                            ; 005827e1
     PUSH EBP                            ; 005827e2
-    CALL engine_ini.cpp_FUN_004d8c90    ; 005827e3
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 005827e3
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 005827e8
     PUSH EBX                            ; 005827eb
     PUSH EDI                            ; 005827ec
@@ -148,8 +148,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00582806
     PUSH EAX                            ; 0058280a
     PUSH EBP                            ; 0058280b
-    CALL engine_ini.cpp_FUN_004d8c90    ; 0058280c
-        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c90()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90 ; 0058280c
+        ;   XREF to: 004d8c90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004d8c90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00582811
     INC EBX                             ; 00582814
     ADD ESI,0xc                         ; 00582815

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   path
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_004340f0 at 00434102
+;   support_codec.cpp_CCodec_processFiles_FUN_004340f0 at 00434102
 ;
 ; Referenced Globals:
 ;   undefined1* g_CInStreamFileVTable = 0057cec0

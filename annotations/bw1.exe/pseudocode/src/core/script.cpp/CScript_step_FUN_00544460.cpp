@@ -219,7 +219,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   uint local_8c;
   int local_88;
   int local_84;
-  uint local_80;
+  int local_80;
   int local_7c;
   uint local_78;
   uint local_74;
@@ -1430,7 +1430,7 @@ LAB_00546ffc:
                                                     local_10c = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_004a9e80
                                                             (0x01C51D80,local_1d64);
-                                                  engine_ini_cpp_FUN_004f4d10
+                                                  engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10
                                                             (&local_4924,local_327c,&local_10c);
                                                   core_event_cpp_CEventList_setCounter_FUN_004a9d70
                                                             (0x01C51D80,local_1d64,local_10c);

@@ -227,8 +227,9 @@ LAB_00543ab8:
       fVar25 = (float)param_1[1].base.base.lifecycle_state - param_2;
       param_1[1].base.base.lifecycle_state = (EActorLifecycleState)fVar25;
       if (0.0 < fVar25) {
-        core_charactr_cpp_FUN_004310e0
-                  (param_1,param_1[1].base.base.validation_magic,0x3f800000,0x3f800000);
+        core_charactr_cpp_CCharacter_followActor_FUN_004310e0
+                  (&param_1->base,(CDemonActor *)param_1[1].base.base.validation_magic,1.0,1.0,
+                   &param_1[1].base.base.direction_hint);
         uVar4 = param_1[1].base.base.direction_hint;
         if (uVar4 == 0) {
 LAB_00544b88:
@@ -587,8 +588,9 @@ switchD_00544f80_caseD_0:
       fVar25 = (float)param_1[1].base.base.lifecycle_state - param_2;
       param_1[1].base.base.lifecycle_state = (EActorLifecycleState)fVar25;
       if (0.0 < fVar25) {
-        core_charactr_cpp_FUN_004310e0
-                  (param_1,param_1[1].base.base.validation_magic,0x3f800000,0x3f800000);
+        core_charactr_cpp_CCharacter_followActor_FUN_004310e0
+                  (&param_1->base,(CDemonActor *)param_1[1].base.base.validation_magic,1.0,1.0,
+                   &param_1[1].base.base.direction_hint);
         uVar4 = param_1[1].base.base.direction_hint;
         if (uVar4 == 0) {
 LAB_00544758:

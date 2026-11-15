@@ -129,7 +129,7 @@ CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_0058699
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005870a0(CWaterActor *this_ptr);
-void core_wateract_cpp_FUN_00587180(int param_1);
+void __cdecl core_wateract_cpp_CWaterActor_updateLocalPositions_FUN_00587180(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00587280(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00587650(CWaterActor *this_ptr,CBoundingBox3D *out_box);
@@ -142,14 +142,14 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActo
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_00587be0(SWaterVertex *this_ptr);
 SCollisionInfo * __cdecl core_wateract_cpp_SCollisionInfo_dtor_FUN_00587bf0(SCollisionInfo *this_ptr,uint flags);
 void __cdecl core_waypoint_cpp_staticInit_FUN_00587c00(void);
-bool core_waypoint_cpp_FUN_00587c30(float *param_1,CLocation *param_2,int param_3,int param_4);
+int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_00587c30(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds,int skip_path_check );
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00587d40(void);
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_00587d60(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_00587d70(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_00587dc0(CWayPoint *this_ptr);
 int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_00588230(CWayPoint *this_ptr);
-int core_waypoint_cpp_FUN_005882d0(undefined4 param_1,int param_2,undefined4 param_3);
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005882d0(CWayPoint *this_ptr,CWayPoint *start_waypoint,int skip_path_check);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00588480(CWayPoint *this_ptr,uint flags);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00588530(void);
 void wincore_wddvmem_cpp_FUN_00588670(void);

@@ -47,7 +47,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *
   
   iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading set");
-  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar11);
+  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar4,iVar11);
   core_set_cpp_CDemonSet_clear_FUN_0054d370(this_ptr);
   p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("models",filename,&DAT_005f0490);
   if (p_Var5 == (_FILE *)0x0) {
@@ -364,7 +364,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *
   _fclose(p_Var5);
   iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading set geometry");
-  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar11);
+  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar4,iVar11);
   pcVar4 = this_ptr->geometry_filename;
   iVar11 = _stricmp(pcVar4,local_130);
   if (iVar11 == 0) {
@@ -399,7 +399,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *
   }
   iVar11 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading thumbs");
-  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar11);
+  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar4,iVar11);
   pcVar4 = local_cc;
   pcVar9 = this_ptr->geometry_filename;
   do {

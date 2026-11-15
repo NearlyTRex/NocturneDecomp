@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90 at 00491b6e
-;   core_game.cpp_FUN_004b5190 at 004b5a86
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5a86
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 005762a8
 ;
 ; Called Functions:

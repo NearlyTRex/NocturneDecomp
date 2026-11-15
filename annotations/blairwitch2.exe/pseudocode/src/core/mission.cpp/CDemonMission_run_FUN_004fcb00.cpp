@@ -14,7 +14,6 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
   CHero *this_ptr_00;
   int iVar1;
   bool bVar2;
-  uint uVar3;
   
   while( true ) {
     if (_DAT_01cedee0 < 1) {
@@ -30,7 +29,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
     core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0
               (this_ptr,*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2c));
     DAT_01d1c630 = '\0';
-    core_mission_cpp_FUN_004fc820(this_ptr);
+    core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004b6170(g_CGamePtr);
     this_ptr_00 = *(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4);
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_004fc270
@@ -41,12 +40,12 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
     if (bVar2) {
-      uVar3 = 0xffffffff;
+      iVar1 = -1;
     }
     else {
-      uVar3 = 1;
+      iVar1 = 1;
     }
-    core_level_cpp_FUN_004e1480(0x01D03000,9,bVar2,uVar3);
+    core_level_cpp_CLevelLoader_show_FUN_004e1480(g_CLevelLoaderPtr,9,(uint)bVar2,iVar1);
     core_mission_cpp_CDemonMission_load_FUN_004fb490(this_ptr,&DAT_01d1c630,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(this_ptr,&this_ptr_00->base);
     if (iVar1 == 0) goto LAB_004fcbce;

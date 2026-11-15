@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 118,
+    "complexity_score": 119,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 54,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 222
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -72,12 +72,17 @@
     {
       "addr": "004fe840",
       "is_variadic": false,
-      "name": "core_level.cpp_FUN_004fe840"
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004fe840"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
       "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "0051b7b0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0"
     },
     {
       "addr": "0051a3b0",
@@ -113,11 +118,6 @@
       "addr": "0051bdc0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0"
-    },
-    {
-      "addr": "0051b7b0",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051b7b0"
     },
     {
       "addr": "005c3160",
@@ -170,9 +170,9 @@
     },
     {
       "addr": "0061f2e0",
-      "name": "DAT_0061f2e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d1bd1c"
     },
     {
       "addr": "00622c18",
@@ -366,7 +366,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_01d33b20",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_load_FUN_0051a3f0(this_ptr,&DAT_01d33b20,0);",

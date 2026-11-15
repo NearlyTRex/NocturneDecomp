@@ -1207,13 +1207,17 @@ LAB_004c7010:
       iVar9 = _DAT_01d22dc8;
     }
     else {
-      core_charactr_cpp_FUN_0042fdc0(this_ptr,this_ptr->part_indices[0],_DAT_01d22db4);
+      core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],_DAT_01d22db4,0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
-        core_charactr_cpp_FUN_0042fdc0(this_ptr,this_ptr->part_indices[1],_DAT_01d22dac);
+        core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],_DAT_01d22dac,0.2);
       }
-      core_charactr_cpp_FUN_0042fdc0(this_ptr,this_ptr->part_indices[2],_DAT_01d22db8);
+      core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],_DAT_01d22db8,0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
-        core_charactr_cpp_FUN_0042fdc0(this_ptr,this_ptr->part_indices[3],_DAT_01d22db0);
+        core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],_DAT_01d22db0,0.2);
       }
       fVar27 = 0.7;
       iVar5 = this_ptr->part_indices[10];

@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6417
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca5a
-;   core_set.cpp_FUN_0052d3c0 at 0052d68c
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d68c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Initializing_scene_005e5708
@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_set_cpp_005e576c
 ;   TerminatedCString s_CDemonSet_initScene_Too_005e577c
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
-;   undefined4 DAT_00617e10
+;   CLevelLoader* g_CLevelLoaderPtr = 01d03000
 ;   undefined4 DAT_0061e8f4
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 0052d997
     PUSH EAX                            ; 0052d99a
-    MOV EDX,dword ptr [0x00617e10]      ; 0052d99b | DAT_00617e10
+    MOV EDX,dword ptr [0x00617e10]      ; 0052d99b | g_CLevelLoaderPtr
     PUSH EDX                            ; 0052d9a1
     CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052d9a2
         ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)

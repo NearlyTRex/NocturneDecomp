@@ -133,7 +133,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
     core_game_cpp_CGame_saveClockTime_FUN_004b4430(this_ptr);
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00507790(g_CNetGamePtr);
-    core_level_cpp_FUN_004dfc40(0x01D70AB8);
+    core_level_cpp_CLevelLoader_reset_FUN_004dfc40(g_CLevelLoaderPtr);
     *(EAimMode *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e4) = this_ptr->aim_mode;
     _DAT_01d22c68 = 0;
     this_ptr->act_completion_state = 0;
@@ -195,7 +195,7 @@ LAB_004b84e1:
              (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0))
     goto LAB_004b84e1;
     bVar2 = false;
-    core_game_cpp_FUN_004b6f30(this_ptr);
+    core_game_cpp_CGame_processFrame_FUN_004b6f30(this_ptr);
     if (_DAT_01d22200 == 0) {
       iVar5 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_ESCAPE);
       if (iVar5 == 0) goto LAB_004b8719;

@@ -4617,17 +4617,28 @@
   },
   {
     "addr":"00425530",
-    "conv":"unknown",
+    "cls":"CCameraView",
+    "conv":"__cdecl",
     "data_refs":[
       "005dcf00"
     ],
     "instructions":5,
-    "method":"FUN_00425530",
-    "name":"core_camview.cpp_FUN_00425530",
-    "receiver":false,
+    "method":"testVisibility",
+    "name":"core_camview.cpp_CCameraView_testVisibility_FUN_00425530",
+    "params":[
+      {
+        "name":"corners",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/camview.cpp",
@@ -5148,7 +5159,8 @@
   },
   {
     "addr":"004307b0",
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "data_refs":[
       "005dbbf8",
       "005dbbfc",
@@ -5322,12 +5334,22 @@
       "005e8798"
     ],
     "instructions":2,
-    "method":"FUN_004307b0",
-    "name":"core_charactr.cpp_FUN_004307b0",
-    "receiver":false,
+    "method":"returnZero",
+    "name":"core_charactr.cpp_CCharacter_returnZero_FUN_004307b0",
+    "params":[
+      {
+        "name":"grabber",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -9369,14 +9391,14 @@
       "00565820",
       "00565870"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_0047ccb0",
-    "name":"shape_edittool.cpp_FUN_0047ccb0",
+    "method":"restoreScreen",
+    "name":"shape_edittool.cpp_restoreScreen_FUN_0047ccb0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -13022,14 +13044,15 @@
       "005a5d70",
       "005a5ec0"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":984,
-    "method":"FUN_004b6f30",
-    "name":"core_game.cpp_FUN_004b6f30",
-    "receiver":false,
+    "method":"processFrame",
+    "name":"core_game.cpp_CGame_processFrame_FUN_004b6f30",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -13719,14 +13742,49 @@
       "004caeb0",
       "005a30d7"
     ],
-    "conv":"unknown",
+    "cls":"CGlass",
+    "conv":"__cdecl",
     "instructions":1226,
-    "method":"FUN_004caeb0",
-    "name":"core_glass.cpp_FUN_004caeb0",
-    "receiver":false,
+    "method":"createShatterParticles",
+    "name":"core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
+    "params":[
+      {
+        "name":"quad_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SQuadVertices",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_u",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_v",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"subdivision_level",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/glass.cpp",
@@ -13825,14 +13883,25 @@
       "005632a3",
       "005a3120"
     ],
-    "conv":"unknown",
+    "cls":"CBloodPool",
+    "conv":"__cdecl",
     "instructions":183,
-    "method":"FUN_004cdd30",
-    "name":"core_gore.cpp_FUN_004cdd30",
-    "receiver":false,
+    "method":"render",
+    "name":"core_gore.cpp_CBloodPool_render_FUN_004cdd30",
+    "params":[
+      {
+        "name":"expire_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gore.cpp",
@@ -14712,14 +14781,33 @@
       "005a28c0",
       "005a5b9c"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_004d8c30",
-    "name":"engine_ini.cpp_FUN_004d8c30",
-    "receiver":false,
+    "method":"getInteger",
+    "name":"engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30",
+    "params":[
+      {
+        "name":"key_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -15127,14 +15215,33 @@
       "0048c150",
       "004e04b0"
     ],
-    "conv":"unknown",
+    "cls":"CLever",
+    "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_004e04b0",
-    "name":"core_lever.cpp_FUN_004e04b0",
-    "receiver":false,
+    "method":"setState",
+    "name":"core_lever.cpp_CLever_setState_FUN_004e04b0",
+    "params":[
+      {
+        "name":"new_state",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"silent",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/lever.cpp",
@@ -18551,14 +18658,33 @@
       "005a3650",
       "005a3e50"
     ],
-    "conv":"unknown",
+    "cls":"CPodFile",
+    "conv":"__cdecl",
     "instructions":805,
-    "method":"FUN_00512fb0",
-    "name":"engine_pod.cpp_FUN_00512fb0",
-    "receiver":false,
+    "method":"mountFromFile",
+    "name":"engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0",
+    "params":[
+      {
+        "name":"pod_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_error_message",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -18631,18 +18757,19 @@
       "004e4330",
       "00512fb0"
     ],
-    "conv":"unknown",
+    "cls":"CPod",
+    "conv":"__cdecl",
     "data_refs":[
       "005e3438",
       "005e34a8"
     ],
     "instructions":59,
-    "method":"FUN_005144b0",
-    "name":"engine_pod.cpp_FUN_005144b0",
-    "receiver":false,
+    "method":"remount",
+    "name":"engine_pod.cpp_CPod_remount_FUN_005144b0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -22747,14 +22874,33 @@
       "0056aab0",
       "0056ab70"
     ],
-    "conv":"unknown",
+    "cls":"CTextureCache",
+    "conv":"__cdecl",
     "instructions":322,
-    "method":"FUN_0056a130",
-    "name":"engine_texture.cpp_FUN_0056a130",
-    "receiver":false,
+    "method":"setupTexture",
+    "name":"engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130",
+    "params":[
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"upload_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/texture.cpp",
@@ -24057,14 +24203,41 @@
       "0050c680",
       "0050ced0"
     ],
-    "conv":"unknown",
+    "cls":"CWayPoint",
+    "conv":"__cdecl",
     "instructions":105,
-    "method":"FUN_00579130",
-    "name":"core_waypoint.cpp_FUN_00579130",
-    "receiver":false,
+    "method":"isReachable",
+    "name":"core_waypoint.cpp_CWayPoint_isReachable_FUN_00579130",
+    "params":[
+      {
+        "name":"from_location",
+        "type":{
+          "kind":"class",
+          "name":"CLocation",
+          "ptr":1
+        }
+      },
+      {
+        "name":"use_tight_bounds",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_path_check",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/waypoint.cpp",
@@ -24103,15 +24276,34 @@
       "00579130",
       "005a54c0"
     ],
-    "conv":"unknown",
+    "cls":"CWayPoint",
+    "conv":"__cdecl",
     "instructions":137,
-    "method":"FUN_00579430",
-    "name":"core_waypoint.cpp_FUN_00579430",
-    "receiver":false,
+    "method":"findNearestReachable",
+    "name":"core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00579430",
+    "params":[
+      {
+        "name":"start_waypoint",
+        "type":{
+          "kind":"class",
+          "name":"CWayPoint",
+          "ptr":1
+        }
+      },
+      {
+        "name":"skip_path_check",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CWayPoint",
+      "ptr":1
     },
     "tu":"core/waypoint.cpp",
     "variadic":false

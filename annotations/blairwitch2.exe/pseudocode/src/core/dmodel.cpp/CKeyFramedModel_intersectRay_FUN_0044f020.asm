@@ -67,7 +67,7 @@
 ;   undefined4 DAT_005f50c4
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041af70
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0
@@ -111,8 +111,8 @@ section .text
     MOV ESI,dword ptr [ESI + 0x350]     ; 0044f061
     ADD EAX,ESI                         ; 0044f067
     PUSH EAX                            ; 0044f069
-    CALL core_box.cpp_FUN_0041af70      ; 0044f06a
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0044f06a
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x130],EAX     ; 0044f06f
     FLD float ptr [ESP + 0x130]         ; 0044f076
     ADD ESP,0x10                        ; 0044f07d

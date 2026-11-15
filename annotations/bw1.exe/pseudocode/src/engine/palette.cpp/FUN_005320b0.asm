@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   engine_font.cpp_FUN_004c1dd0 at 004c1ea2
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 at 004c1ea2
 ;   engine_font.cpp_FUN_004c2750 at 004c278f
 ;
 ; Called Functions:

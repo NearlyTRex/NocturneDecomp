@@ -16,9 +16,9 @@
 ;   TerminatedCString s_Set_Primary_buffer_forma_005d465a
 ;   TerminatedCString s_Get_Primary_buffer_forma_005d4674
 ;   TerminatedCString s_Create_the_secondary_buf_005d468e
-;   undefined4 DAT_006044e0
-;   undefined4 DAT_006044f0
-;   undefined4 DAT_00608bb8
+;   GUID g_IID_IKsPropertySet = IKsPropertySet 31efac30-515c-11d0-a9aa-00aa0061be93
+;   GUID g_DSPROPSETID_VoiceManager = 62a69bae-df9d-11d1-99a6-00c04fc99d46
+;   GUID g_IID_IDirectSound3DBuffer = IDirectSound3DBuffer 279afa86-4981-11ce-a521-0020af0be560
 ;   undefined4 DAT_02cf49c4
 ;   undefined4 DAT_02cf49c8
 ;   undefined4 DAT_02cf49cc
@@ -201,7 +201,7 @@ section .text
     LEA EDX,[ESP + 0x6b4]               ; 0055b32e
     PUSH EDX                            ; 0055b335
     MOV EAX,dword ptr [ESP + 0x6b4]     ; 0055b336
-    PUSH 0x608bb8                       ; 0055b33d | DAT_00608bb8
+    PUSH 0x608bb8                       ; 0055b33d | g_IID_IDirectSound3DBuffer
     MOV EDX,dword ptr [ESP + 0x6b8]     ; 0055b342
     MOV EAX,dword ptr [EAX]             ; 0055b349
     PUSH EDX                            ; 0055b34b
@@ -232,7 +232,7 @@ section .text
     MOV EAX,0x1                         ; 0055b38f
     PUSH 0x0                            ; 0055b394
     MOV dword ptr [ESP + 0x6cc],EAX     ; 0055b396
-    PUSH 0x6044f0                       ; 0055b39d | DAT_006044f0
+    PUSH 0x6044f0                       ; 0055b39d | g_DSPROPSETID_VoiceManager
     MOV EDX,dword ptr [EBP]             ; 0055b3a2
     PUSH EBP                            ; 0055b3a5
     CALL dword ptr [EDX + 0x10]         ; 0055b3a6
@@ -378,7 +378,7 @@ section .text
         ;   XREF to: 0055b377 (UNCONDITIONAL_JUMP)  ; LAB_0055b377
     PUSH 0x2cf49d4                      ; 0055b574 | DAT_02cf49d4
         ;   Label: LAB_0055b574
-    PUSH 0x6044e0                       ; 0055b579 | DAT_006044e0
+    PUSH 0x6044e0                       ; 0055b579 | g_IID_IKsPropertySet
     MOV EAX,dword ptr [ECX]             ; 0055b57e
     PUSH ECX                            ; 0055b580
     CALL dword ptr [EAX]                ; 0055b581

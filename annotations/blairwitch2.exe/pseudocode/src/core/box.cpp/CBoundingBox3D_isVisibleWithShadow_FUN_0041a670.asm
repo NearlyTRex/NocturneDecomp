@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_box.cpp_FUN_0041a840 at 0041aa01
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 at 0041aa01
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

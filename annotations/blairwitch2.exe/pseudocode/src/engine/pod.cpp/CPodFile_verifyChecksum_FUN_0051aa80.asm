@@ -24,12 +24,12 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   engine_pod.cpp_crc32UpdateByte_FUN_00519cb0
 ;   engine_pod.cpp_FUN_0051af80
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00481fc0
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250
-;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     PUSH 0x5e2557                       ; 0051aaca
     MOV EBP,dword ptr [0x006138e0]      ; 0051aacf | g_CEditorToolsPtr
     PUSH EBP                            ; 0051aad5
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0051aad6
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0051aad6
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051aadb
     PUSH 0x5e256f                       ; 0051aade
     PUSH EDI                            ; 0051aae3

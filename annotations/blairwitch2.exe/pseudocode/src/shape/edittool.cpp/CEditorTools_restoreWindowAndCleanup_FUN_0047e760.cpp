@@ -10,7 +10,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e76
 
 {
   shape_edittool_cpp_paintWindowBackground_FUN_0047bca0();
-  shape_edittool_cpp_FUN_0047bbd0();
+  shape_edittool_cpp_restoreScreen_FUN_0047bbd0();
   shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(this_ptr);
   return;
 }

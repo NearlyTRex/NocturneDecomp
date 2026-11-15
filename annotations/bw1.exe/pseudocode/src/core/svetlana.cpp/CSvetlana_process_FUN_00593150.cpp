@@ -130,7 +130,7 @@ switchD_005935af_caseD_9:
             iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004eb090(&this_ptr->base);
             bVar3 = false;
             if (iVar8 != 0) goto LAB_00593649;
-            iVar8 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
+            iVar8 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(&this_ptr->base,0);
             if ((iVar8 != 0) && (iVar8 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);
             }

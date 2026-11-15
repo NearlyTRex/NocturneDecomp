@@ -28,7 +28,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004cf080
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cf080
 ;
 ; Referenced Globals:
 ;   undefined4 s_comp_3_2f_3_2f_actren_3_005f08dd+1
@@ -855,7 +855,7 @@ section .text
     PUSH EAX                            ; 00550d26
     XOR ESI,ESI                         ; 00550d27
     CALL core_dlight.cpp_FUN_00463850   ; 00550d29
-        ;   XREF to: 00463850 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_00463850()
+        ;   XREF to: 00463850 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_00463850(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x15acc8]  ; 00550d2e
     ADD ESP,0x4                         ; 00550d34
     TEST EDX,EDX                        ; 00550d37
@@ -871,7 +871,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0xc]      ; 00550d4b
     PUSH EDX                            ; 00550d4e
     CALL core_dlight.cpp_FUN_00463850   ; 00550d4f
-        ;   XREF to: 00463850 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_00463850()
+        ;   XREF to: 00463850 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_00463850(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00550d54
     PUSH EBX                            ; 00550d57
     INC ESI                             ; 00550d58

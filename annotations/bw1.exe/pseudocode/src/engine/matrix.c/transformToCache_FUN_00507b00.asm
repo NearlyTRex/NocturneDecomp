@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360 at 0049840f
-;   shape_edittool.cpp_FUN_004987b0 at 004988ed
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0 at 004988ed
 ;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660 at 0049869e
 ;
 ; Called Functions:

@@ -3728,17 +3728,28 @@
   },
   {
     "addr":"004282a0",
-    "conv":"unknown",
+    "cls":"CCameraView",
+    "conv":"__cdecl",
     "data_refs":[
       "005fd420"
     ],
     "instructions":5,
-    "method":"FUN_004282a0",
-    "name":"core_camview.cpp_FUN_004282a0",
-    "receiver":false,
+    "method":"testVisibility",
+    "name":"core_camview.cpp_CCameraView_testVisibility_FUN_004282a0",
+    "params":[
+      {
+        "name":"corners",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/camview.cpp",
@@ -8853,7 +8864,7 @@
       "00482390",
       "004824b0",
       "00482540",
-      "004826a0",
+      "00482680",
       "00482780",
       "004828b0",
       "004829b0",
@@ -8933,24 +8944,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"engine/drender.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004826a0",
-    "calls":[
-      "00481aa0"
-    ],
-    "conv":"unknown",
-    "instructions":37,
-    "method":"FUN_004826a0",
-    "name":"engine_drender.cpp_FUN_004826a0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/drender.cpp",
@@ -9872,18 +9865,29 @@
       "004994d0",
       "005bfb18"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":81,
-    "method":"FUN_00494ea0",
-    "name":"shape_edittool.cpp_FUN_00494ea0",
-    "receiver":false,
+    "method":"showYesAllNoCancelDialog",
+    "name":"shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_00494ea0",
+    "params":[
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"00495da0",
@@ -12945,14 +12949,49 @@
       "004e2320",
       "005c0357"
     ],
-    "conv":"unknown",
+    "cls":"CGlass",
+    "conv":"__cdecl",
     "instructions":1226,
-    "method":"FUN_004e2320",
-    "name":"core_glass.cpp_FUN_004e2320",
-    "receiver":false,
+    "method":"createShatterParticles",
+    "name":"core_glass.cpp_CGlass_createShatterParticles_FUN_004e2320",
+    "params":[
+      {
+        "name":"quad_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SQuadVertices",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_u",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_v",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"subdivision_level",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/glass.cpp",
@@ -14039,14 +14078,33 @@
     "calls":[
       "005bfb40"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_004f4e20",
-    "name":"engine_ini.cpp_FUN_004f4e20",
-    "receiver":false,
+    "method":"setFloatValue",
+    "name":"engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",

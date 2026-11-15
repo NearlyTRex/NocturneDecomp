@@ -248,7 +248,9 @@ LAB_0055e58a:
       fVar22 = this_ptr->walk_timeout - delta_time;
       this_ptr->walk_timeout = fVar22;
       if (0.0 < fVar22) {
-        core_charactr_cpp_FUN_00431cc0(this_ptr,this_ptr->walk_target);
+        core_charactr_cpp_CCharacter_followActor_FUN_00431cc0
+                  ((CCharacter *)this_ptr,(CDemonActor *)this_ptr->walk_target,1.0,1.0,
+                   &this_ptr->walk_status);
         uVar4 = this_ptr->walk_status;
         if (uVar4 == 0) {
 LAB_0055f251:
@@ -583,8 +585,9 @@ switchD_0055f381_caseD_0:
       fVar22 = this_ptr->walk_timeout - delta_time;
       this_ptr->walk_timeout = fVar22;
       if (0.0 < fVar22) {
-        core_charactr_cpp_FUN_00431cc0
-                  (this_ptr,this_ptr->walk_target,0x3f800000,0x3f800000,&this_ptr->walk_status);
+        core_charactr_cpp_CCharacter_followActor_FUN_00431cc0
+                  ((CCharacter *)this_ptr,(CDemonActor *)this_ptr->walk_target,1.0,1.0,
+                   &this_ptr->walk_status);
         uVar4 = this_ptr->walk_status;
         if (uVar4 == 0) {
 LAB_0055ed64:

@@ -53,26 +53,26 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_00553680(CIniFile *ini_file)
     if (iVar1 <= iVar2) {
 LAB_0055377a:
       iStack_30 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00552b40();
-      engine_ini_cpp_FUN_004d8b20(ini_file,"AccelEnabled",&iStack_30);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,"AccelEnabled",&iStack_30);
       sound_sndmain_cpp_enableHwSoundMixing_FUN_00552b50(iStack_30);
       fStack_2c = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
       fStack_14 = fStack_2c;
       engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(ini_file,"MaxSwLatency",&fStack_2c);
       sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00553610(fStack_2c);
       sound_sndmain_cpp_getAudioFormat_FUN_00552790(&iStack_28,&iStack_24,&iStack_20);
-      engine_ini_cpp_FUN_004d8b20(ini_file,&DAT_005e9307,&iStack_28);
-      engine_ini_cpp_FUN_004d8b20(ini_file,"Channels",&iStack_24);
-      engine_ini_cpp_FUN_004d8b20(ini_file,&DAT_005e9315,&iStack_20);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,&DAT_005e9307,&iStack_28);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,"Channels",&iStack_24);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,&DAT_005e9315,&iStack_20);
       sound_sndmain_cpp_setSoundOutputMode_FUN_005526f0(iStack_28,iStack_24,iStack_20);
       iStack_30 = sound_sndmain_cpp_isSoundMuted_FUN_00550bc0();
-      engine_ini_cpp_FUN_004d8b20(ini_file,&DAT_005e9318,&iStack_30);
+      engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,&DAT_005e9318,&iStack_30);
       iVar2 = 0;
       sound_sndmain_cpp_setSoundMuted_FUN_00550bd0(iStack_30);
       if (0 < DAT_0061bc94) {
         do {
           _sprintf(acStack_94,"SfxChannel%dEnabled");
           iStack_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(iVar2);
-          engine_ini_cpp_FUN_004d8b20(ini_file,acStack_94,&iStack_1c);
+          engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(ini_file,acStack_94,&iStack_1c);
           sound_sndmain_cpp_enableSfxChannel_FUN_00551220(iVar2,iStack_1c);
           _sprintf(acStack_94,"SfxChannel%dVol");
           fStack_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(iVar2);

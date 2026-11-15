@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_setdir.cpp_FUN_00538d10 at 0053973f
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 at 0053973f
 ;   core_setdir.cpp_testCameraVisibility_FUN_00538be0 at 00538ca4
 ;
 ; Referenced Globals:

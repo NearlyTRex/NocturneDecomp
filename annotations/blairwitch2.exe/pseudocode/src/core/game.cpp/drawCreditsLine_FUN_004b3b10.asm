@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01cb80f0
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004a8df0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EBX                            ; 004b3b29
     MOV ESI,dword ptr [0x01511cc0]      ; 004b3b2a | DAT_01511cc0
     PUSH ESI                            ; 004b3b30
-    CALL engine_font.cpp_FUN_004a8df0   ; 004b3b31
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004b3b31
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01cb80f0]                ; 004b3b36 | DAT_01cb80f0
     MOV EDI,dword ptr [0x01cb80ec]      ; 004b3b3b | DAT_01cb80ec
     MOV EDX,dword ptr [0x006141bc]      ; 004b3b41 | DAT_006141bc

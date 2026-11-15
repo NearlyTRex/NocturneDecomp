@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 131,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 30,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 101
+    "total_lines": 100
   },
   "cross_references": [],
   "function": {
@@ -34,7 +34,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044e6a0",
@@ -175,7 +175,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3f *)this_ptr);",
@@ -183,7 +183,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&this_ptr->rotation,(CVector3i *)0x0);",
@@ -191,7 +191,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(CBoundingBox3D *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
@@ -199,23 +199,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(CVector3f *)((int)pCVar3",
+      "line": 21,
+      "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_0265370c,&CStack_28,",
+      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_0265370c,",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
@@ -223,15 +223,15 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 21,
       "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

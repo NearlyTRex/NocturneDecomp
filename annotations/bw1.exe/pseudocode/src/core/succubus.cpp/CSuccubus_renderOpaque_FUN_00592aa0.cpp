@@ -15,10 +15,12 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
   CMorph *this_ptr_00;
   int iVar1;
   int iVar2;
+  int unaff_EBX;
   uint *puVar3;
+  int unaff_EDI;
   uint *puVar4;
   byte bVar5;
-  uint auStack_3c [6];
+  uint auStack_34 [4];
   uint auStack_24 [6];
   int iStack_c;
   
@@ -31,18 +33,19 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-    puVar3 = auStack_3c;
+    puVar3 = auStack_34;
     puVar4 = auStack_24;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = *puVar3;
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar2 = core_box_cpp_FUN_004207b0(auStack_24);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0
+                      ((CBoundingBox3D *)(auStack_24 + 2),unaff_EDI);
     if (iVar2 != 0) {
       model_ptr = &this_ptr->hotdemon_model;
       (this_ptr->base).base.was_rendered_opaque = 1;
-      if (iStack_c == 0) {
+      if (unaff_EBX == 0) {
         if (this_ptr->morph_started == 0) {
           core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960((CCharacter *)this_ptr);
         }

@@ -77,8 +77,8 @@
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_game.cpp_FUN_004b8e10
 ;   core_game.cpp_scaleBoneRecursive_FUN_004b9060
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004db830
-;   core_inv.cpp_FUN_004dadb0
 ;   ... and 21 more
 ;
 ; *****************************************************************************
@@ -1002,8 +1002,8 @@ section .text
     PUSH EBX                            ; 004b9aef
     ADD EAX,0x2437c                     ; 004b9af0
     PUSH EAX                            ; 004b9af5
-    CALL core_inv.cpp_FUN_004dadb0      ; 004b9af6
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 004b9af6
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     ADD ESP,0x10                        ; 004b9afb
     PUSH 0x40a00000                     ; 004b9afe
     PUSH 0x5d7dcf                       ; 004b9b03 | = "You have the skeleton key"
@@ -1551,8 +1551,8 @@ section .text
     PUSH EBX                            ; 004ba103
     ADD EAX,0x2437c                     ; 004ba104
     PUSH EAX                            ; 004ba109
-    CALL core_inv.cpp_FUN_004dadb0      ; 004ba10a
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 004ba10a
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     ADD ESP,0x10                        ; 004ba10f
     JMP 0x004b9db1                      ; 004ba112
         ;   XREF to: 004b9db1 (UNCONDITIONAL_JUMP)  ; LAB_004b9db1

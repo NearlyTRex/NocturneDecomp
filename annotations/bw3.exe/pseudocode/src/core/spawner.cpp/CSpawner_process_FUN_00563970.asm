@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
@@ -217,8 +217,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 00563b7c
     PUSH EAX                            ; 00563b80
     MOVSD.REP ES:EDI,ESI                ; 00563b81
-    CALL core_box.cpp_FUN_0041daf0      ; 00563b83
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 00563b83
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00563b88
     TEST EAX,EAX                        ; 00563b8b
     JNZ 0x005639b3                      ; 00563b8d

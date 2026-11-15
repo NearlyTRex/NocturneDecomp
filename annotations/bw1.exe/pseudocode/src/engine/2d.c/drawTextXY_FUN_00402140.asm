@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   text
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004cee66
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cee66
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fe0

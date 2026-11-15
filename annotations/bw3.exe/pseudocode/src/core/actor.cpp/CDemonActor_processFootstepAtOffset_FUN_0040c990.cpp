@@ -29,9 +29,10 @@ uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990(CDe
   bVar2 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80(this_ptr,location,&CStack_48);
   CStack_30.x = CStack_48.x;
-  afStack_38[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_48 + (uint)bVar2 * -8 + 4);
-  afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-       *(float *)((int)&CStack_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  *(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_48 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   fStack_3c = g_CDemonCameraInstance.base.position.f.x;
   afStack_38[(uint)bVar2 * -2] = *(float *)((int)&g_CDemonCameraInstance + (uint)bVar2 * -8 + 8);
   afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -47,16 +48,17 @@ uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990(CDe
     return 0;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,this_ptr);
-  fStack_24 = (float)core_setcolid_cpp_FUN_0053bc80(g_CDemonSetPtr,afStack_38 + 2,0);
+  fStack_24 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
+                        (g_CDemonSetPtr,&CStack_30,0.0);
   ground_type = g_CDemonSetPtr->ground_type;
   fStack_10 = fStack_24;
-  fStack_20 = (float)core_setcolid_cpp_FUN_0053bc80(g_CDemonSetPtr,&this_ptr->location,0);
+  fStack_20 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
+                        (g_CDemonSetPtr,&(this_ptr->location).position,0.0);
   fStack_10 = fStack_20;
   core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
   if (fStack_24 < fStack_20 + (float)_DAT_005b5e91) {
     ground_type = g_CDemonSetPtr->ground_type;
   }
-  uVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)
-                    (this_ptr,(CVector3f *)(afStack_38 + 2),ground_type,volume);
+  uVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&CStack_30,ground_type,volume);
   return uVar1;
 }

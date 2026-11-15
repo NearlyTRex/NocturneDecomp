@@ -49,9 +49,9 @@ void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 // Address: 0043a130
 int __cdecl CCrate::renderOpaque(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_0043a1b0
+// Original: core_crate.cpp_CCrate_renderBackground_FUN_0043a1b0
 // Address: 0043a1b0
-void FUN_0043a1b0(void);
+void __cdecl CCrate::renderBackground(CCrate *this_ptr,int layer_flag);
 
 // Original: core_crate.cpp_CCrate_archive_FUN_0043a1d0
 // Address: 0043a1d0

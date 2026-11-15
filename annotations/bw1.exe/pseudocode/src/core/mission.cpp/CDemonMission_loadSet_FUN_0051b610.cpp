@@ -19,7 +19,7 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission *
   this_ptr->current_set_index = set_index;
   core_set_cpp_CDemonSet_load_FUN_0054d3c0(g_CDemonSetPtr,this_ptr->set_names[set_index]);
   if (this_ptr->is_in_editor == 0) {
-    core_mission_cpp_FUN_0051b7b0(this_ptr);
+    core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0(this_ptr);
   }
   else {
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_0051b420(this_ptr);

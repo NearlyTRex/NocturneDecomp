@@ -385,7 +385,7 @@ section .text
     PUSH EAX                            ; 00455920
     LEA ESI,[EBP + 0xffffff66]          ; 00455921
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00455927
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     MOV EAX,[0x01b4d28c]                ; 0045592c | DAT_01b4d28c
     SHL EAX,0x4                         ; 00455931
     LEA ESI,[EBP + 0xffffff66]          ; 00455934

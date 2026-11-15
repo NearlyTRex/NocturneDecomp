@@ -20,7 +20,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_muzzle.cpp_FUN_0059d8e0
-;   core_waypoint.cpp_FUN_005882d0
+;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     PUSH ECX                            ; 0059eebc
     LEA EAX,[EBX + 0x20]                ; 0059eebd
     PUSH EAX                            ; 0059eec0
-    CALL core_waypoint.cpp_FUN_005882d0 ; 0059eec1
-        ;   XREF to: 005882d0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005882d0()
+    CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0 ; 0059eec1
+        ;   XREF to: 005882d0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0(CWayPoint * this_ptr, CWayPoint * start_waypoint, int skip_path_check)
     ADD ESP,0xc                         ; 0059eec6
     MOV ESI,dword ptr [0x02668164]      ; 0059eec9 | g_CPatrolPointClassInfo.name_hash
     PUSH ESI                            ; 0059eecf

@@ -30,7 +30,7 @@
 ;   TerminatedCString s_Get_Primary_buffer_forma_00651bab
 ;   TerminatedCString s_Create_the_secondary_buf_00651bc5
 ;   GUID g_IID_IKsPropertySet
-;   GUID g_KSPROPSETID_DirectSound3DListener
+;   GUID g_DSPROPSETID_VoiceManager
 ;   GUID g_IID_IDirectSound3DBuffer
 ;   IDirectSound* g_DirectSound
 ;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
@@ -245,7 +245,7 @@ section .text
     MOV EAX,0x1                         ; 005aeac2
     PUSH 0x0                            ; 005aeac7
     MOV dword ptr [ESP + 0x6ac],EAX     ; 005aeac9
-    PUSH 0x681de0                       ; 005aead0 | g_KSPROPSETID_DirectSound3DListener
+    PUSH 0x681de0                       ; 005aead0 | g_DSPROPSETID_VoiceManager
     MOV EDX,dword ptr [EBP]             ; 005aead5
     PUSH EBP                            ; 005aead8
     CALL dword ptr [EDX + 0x10]         ; 005aead9

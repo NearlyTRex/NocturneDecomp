@@ -45,9 +45,9 @@ CBoundingBox3D * __stack_esi CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBo
 // Address: 005760d0
 ECollisionType __cdecl CTVBat::getCollisionType(CTVBat *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_tvbat.cpp_FUN_005760f0
+// Original: core_tvbat.cpp_CTVBat_getTargetPoints_FUN_005760f0
 // Address: 005760f0
-undefined4 FUN_005760f0(void);
+int __cdecl CTVBat::getTargetPoints(CTVBat *this_ptr,CVector3f *out_points_array);
 
 // Original: core_tvbat.cpp_CTVBat_getDeathState_FUN_00576100
 // Address: 00576100

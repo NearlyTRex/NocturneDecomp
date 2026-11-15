@@ -71,10 +71,10 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
   CVector3f CStack_31c;
   CVector3f CStack_310;
   uint uStack_304;
-  float afStack_300 [4];
-  float fStack_2f0;
+  float afStack_300 [2];
+  CVector3f CStack_2f8;
   uint uStack_2ec;
-  float fStack_2e4;
+  float afStack_2e8 [2];
   CVector3f CStack_2e0;
   CVector3f CStack_2d4;
   float fStack_2c8;
@@ -122,7 +122,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
   float fStack_160;
   float fStack_15c;
   float fStack_158;
-  float afStack_154 [3];
+  CVector3f CStack_154;
   CVector3f CStack_148;
   uint uStack_13c;
   float afStack_138 [4];
@@ -215,12 +215,12 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
       fStack_478 = CStack_7c.x + CStack_364.x;
       afStack_474[0] = CStack_7c.y + CStack_364.y;
       afStack_474[1] = CStack_7c.z + CStack_364.z;
-      afStack_154[0] = CStack_7c.x + CStack_364.x;
-      afStack_174[(uint)bVar7 * -2 + 9] = afStack_474[(uint)bVar7 * -2];
+      CStack_154.x = CStack_7c.x + CStack_364.x;
+      *(float *)((int)&CStack_154 + (uint)bVar7 * -8 + 4) = afStack_474[(uint)bVar7 * -2];
       fVar4 = CStack_7c.z;
       fVar3 = CStack_7c.y;
       fVar2 = CStack_7c.x;
-      afStack_174[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
+      *(float *)((int)&CStack_154 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            afStack_474[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
       fStack_20 = (float)_DAT_005b651a / (this_ptr->base).bolt_velocity;
       fStack_220 = CStack_364.x * fStack_20;
@@ -233,10 +233,10 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
       afStack_138[2] = fVar2 - fStack_3d0;
       afStack_138[3] = fVar3 - afStack_3cc[0];
       fStack_128 = fVar4 - afStack_3cc[1];
-      afStack_300[2] = fVar2 - fStack_3d0;
-      afStack_300[(uint)bVar7 * -2 + 3] = afStack_138[(uint)bVar7 * -2 + 3];
+      CStack_2f8.x = fVar2 - fStack_3d0;
+      *(float *)((int)&CStack_2f8 + (uint)bVar7 * -8 + 4) = afStack_138[(uint)bVar7 * -2 + 3];
       this_ptr_04 = g_CDemonSetPtr;
-      afStack_300[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+      *(float *)((int)&CStack_2f8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            afStack_138[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(this_ptr_04);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(g_CDemonSetPtr,1);
@@ -248,8 +248,8 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
       }
       iStack_18 = 0;
       do {
-        fStack_14 = (float)core_setcolid_cpp_FUN_0053ccc0
-                                     (g_CDemonSetPtr,afStack_300 + 2,afStack_174 + 8);
+        fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                              (g_CDemonSetPtr,&CStack_2f8,&CStack_154);
         if ((fStack_14 < 0.0) || (1.0 < fStack_14)) break;
         this_ptr_00 = (CCharacter *)
                       core_actor_cpp_castToClassHash_FUN_0040c840
@@ -325,9 +325,9 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
                       (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor,0);
-            fStack_1fc = (g_CDemonSetPtr->collision_impact_position).x - afStack_300[2];
-            fStack_1f8 = (g_CDemonSetPtr->collision_impact_position).y - afStack_300[3];
-            fStack_1f4 = (g_CDemonSetPtr->collision_impact_position).z - fStack_2f0;
+            fStack_1fc = (g_CDemonSetPtr->collision_impact_position).x - CStack_2f8.x;
+            fStack_1f8 = (g_CDemonSetPtr->collision_impact_position).y - CStack_2f8.y;
+            fStack_1f4 = (g_CDemonSetPtr->collision_impact_position).z - CStack_2f8.z;
             fStack_160 = fStack_1fc;
             afStack_174[(uint)bVar7 * -2 + 6] = afStack_21c[(uint)bVar7 * -2 + 9];
             afStack_174[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
@@ -552,10 +552,10 @@ LAB_004116f9:
   CStack_34c.y = fStack_fc;
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   uStack_2ec = uStack_a0;
-  afStack_300[(uint)bVar7 * -2 + 6] = afStack_cc[(uint)bVar7 * -2 + 0xc];
-  afStack_300[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+  afStack_2e8[(uint)bVar7 * -2] = afStack_cc[(uint)bVar7 * -2 + 0xc];
+  afStack_2e8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
-  CStack_34c.z = fStack_2e4 + _DAT_005b650e;
+  CStack_34c.z = afStack_2e8[1] + _DAT_005b650e;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
             ((CDemonActor *)this_ptr,&CStack_34c,&CStack_148);
   CStack_1a8.x = CStack_148.x;

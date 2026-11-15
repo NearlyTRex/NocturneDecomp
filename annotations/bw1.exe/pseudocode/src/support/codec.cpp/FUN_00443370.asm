@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00443790 at 004437ae
+;   support_codec.cpp_CLZWDecompress_finalize_FUN_00443790 at 004437ae
 ;
 ; *****************************************************************************
 

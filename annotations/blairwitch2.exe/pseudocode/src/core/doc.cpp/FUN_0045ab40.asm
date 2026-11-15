@@ -21,8 +21,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00537ef0
-;   core_setcolid.cpp_FUN_00535ee0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_math.c_acos_FUN_005b9924
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 0045acc9
     MOV EAX,[0x0061b5a8]                ; 0045acca | g_CDemonSetPtr
     PUSH EAX                            ; 0045accf
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 0045acd0
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 0045acd0
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x16c],EAX     ; 0045acd5
     FLD float ptr [ESP + 0x16c]         ; 0045acdc
     ADD ESP,0xc                         ; 0045ace3

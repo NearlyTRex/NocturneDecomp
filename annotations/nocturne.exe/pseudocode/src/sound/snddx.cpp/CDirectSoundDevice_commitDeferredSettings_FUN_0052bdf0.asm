@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed30
+;   GUID g_DSPROPSETID_EAX_ReverbProperties
 ;   undefined4 DAT_02dc9224
 ;
 ; *****************************************************************************
@@ -44,7 +44,7 @@ section .text
     PUSH 0x0                            ; 0052be2a
     PUSH 0x0                            ; 0052be2c
     PUSH 0x0                            ; 0052be2e
-    PUSH 0x5bed30                       ; 0052be30 | DAT_005bed30
+    PUSH 0x5bed30                       ; 0052be30 | g_DSPROPSETID_EAX_ReverbProperties
     PUSH EAX                            ; 0052be35
     CALL dword ptr [ECX + 0x10]         ; 0052be36
     ADD ESP,0x10                        ; 0052be39

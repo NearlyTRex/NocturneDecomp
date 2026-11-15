@@ -15,7 +15,6 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
   int iVar2;
   float fVar3;
   float fVar4;
-  uint uVar5;
   
   if (((((this_ptr->base).player_input.action_state.fire != 0) && (this_ptr->action_pending == 0))
       && (iVar2 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0056e7c0(this_ptr), iVar2 == 0))
@@ -24,8 +23,8 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
     fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0);
     fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,1);
     if ((float)_DAT_005ebe3d < fVar4 + fVar3) {
-      uVar5 = core_hero_cpp_FUN_004cf030(this_ptr,0);
-      switch(uVar5) {
+      iVar2 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);
+      switch(iVar2) {
       case 0:
         if ((this_ptr->base).door_to_open != (CDoor *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0047be40

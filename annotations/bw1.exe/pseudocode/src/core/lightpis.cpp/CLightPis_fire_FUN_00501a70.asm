@@ -39,7 +39,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00558eb0
-;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00559310
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00557300
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -214,8 +214,8 @@ section .text
     PUSH EAX                            ; 00501ca1
     MOV EAX,[0x00622c18]                ; 00501ca2 | g_CDemonSetPtr
     PUSH EAX                            ; 00501ca7 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 00501ca8
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 00501ca8
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x210],EAX     ; 00501cad
     FLD float ptr [ESP + 0x210]         ; 00501cb4
     ADD ESP,0xc                         ; 00501cbb
@@ -603,8 +603,8 @@ section .text
     PUSH EDX                            ; 005021c7
     MOV ECX,dword ptr [0x00622c18]      ; 005021c8 | g_CDemonSetPtr
     PUSH ECX                            ; 005021ce | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 005021cf
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 005021cf
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV EAX,[0x00622c18]                ; 005021d4 | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 005021d9 | g_CDemonSetInstance.collision_actor
     ADD ESP,0xc                         ; 005021df

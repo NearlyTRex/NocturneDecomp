@@ -110,6 +110,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bd0"
     },
     {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
+    },
+    {
       "addr": "004c4510",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
@@ -123,11 +128,6 @@
       "addr": "004c3ea0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
-    },
-    {
-      "addr": "004c1dd0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
     },
     {
       "addr": "00509210",
@@ -616,7 +616,7 @@
       "line": 67,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar2] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar8] |",
       "type": "undefined_data"
     },
     {
@@ -624,7 +624,7 @@
       "line": 68,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar2] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar8] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -632,7 +632,7 @@
       "line": 69,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar2] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar8] << 8);",
       "type": "undefined_data"
     },
     {
@@ -640,7 +640,7 @@
       "line": 77,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -648,7 +648,7 @@
       "line": 78,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -656,7 +656,7 @@
       "line": 79,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);",
       "type": "undefined_data"
     },
     {
@@ -664,7 +664,7 @@
       "line": 89,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -672,7 +672,7 @@
       "line": 90,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -680,7 +680,7 @@
       "line": 91,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);",
       "type": "undefined_data"
     },
     {
@@ -688,7 +688,7 @@
       "line": 124,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -696,7 +696,7 @@
       "line": 125,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -704,7 +704,7 @@
       "line": 126,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);",
       "type": "undefined_data"
     },
     {
@@ -712,7 +712,7 @@
       "line": 137,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -720,7 +720,7 @@
       "line": 138,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8 |",
       "type": "undefined_data"
     },
     {
@@ -728,7 +728,7 @@
       "line": 139,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10);",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10);",
       "type": "undefined_data"
     },
     {
@@ -736,7 +736,7 @@
       "line": 150,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -744,7 +744,7 @@
       "line": 151,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -752,7 +752,7 @@
       "line": 152,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);",
       "type": "undefined_data"
     },
     {
@@ -760,7 +760,7 @@
       "line": 180,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar3] |",
       "type": "undefined_data"
     },
     {
@@ -768,7 +768,7 @@
       "line": 181,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -776,7 +776,7 @@
       "line": 182,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar3] << 8);",
       "type": "undefined_data"
     },
     {
@@ -784,7 +784,7 @@
       "line": 201,
       "match": "DAT_005dc1cb",
       "severity": "mild",
-      "text": "iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(_DAT_01c3eb50,&DAT_005dc1cb);",
+      "text": "iVar6 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(_DAT_01c3eb50,&DAT_005dc1cb);",
       "type": "undefined_data"
     },
     {
@@ -792,7 +792,7 @@
       "line": 210,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar7] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar6] |",
       "type": "undefined_data"
     },
     {
@@ -800,7 +800,7 @@
       "line": 211,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar7] << 8 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar6] << 8 |",
       "type": "undefined_data"
     },
     {
@@ -808,7 +808,7 @@
       "line": 212,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar7] << 0x10);",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar6] << 0x10);",
       "type": "undefined_data"
     },
     {
@@ -816,7 +816,7 @@
       "line": 228,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar7] |",
+      "text": "((uint)(byte)(&DAT_01c4e9fa)[iVar6] |",
       "type": "undefined_data"
     },
     {
@@ -824,7 +824,7 @@
       "line": 229,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar7] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c4e9f8)[iVar6] << 0x10 |",
       "type": "undefined_data"
     },
     {
@@ -832,7 +832,7 @@
       "line": 230,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar7] << 8);",
+      "text": "(uint)(byte)(&DAT_01c4e9f9)[iVar6] << 8);",
       "type": "undefined_data"
     },
     {

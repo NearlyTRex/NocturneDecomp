@@ -14,9 +14,9 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e5ec
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c8c0
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c27d
+;   core_script.cpp_CScript_loadScript_FUN_00543e00 at 00543f10
 ;   core_script.cpp_CScript_startDialogLine_FUN_0054aa60 at 0054ab2c
 ;   core_script.cpp_CScript_step_FUN_00544460 at 0054666b
-;   core_script.cpp_FUN_00543e00 at 00543f10
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057db83
 ;   ... and 9 more
 ;

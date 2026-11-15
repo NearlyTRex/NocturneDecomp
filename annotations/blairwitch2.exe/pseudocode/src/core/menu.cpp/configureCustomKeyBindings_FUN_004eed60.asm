@@ -45,11 +45,11 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_004dfee0
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00481fc0
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0
-;   shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004821c0
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -1343,8 +1343,8 @@ section .text
     PUSH EAX                            ; 004efbff
     MOV EBX,dword ptr [0x006138e0]      ; 004efc00 | g_CEditorToolsPtr
     PUSH EBX                            ; 004efc06
-    CALL shape_edittool.cpp_FUN_0047be90 ; 004efc07
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efc07
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     JMP 0x004efb7f                      ; 004efc0c
         ;   XREF to: 004efb7f (UNCONDITIONAL_JUMP)  ; LAB_004efb7f
     MOV EAX,[0x00616494]                ; 004efc11 | g_CGamePtr
@@ -1376,8 +1376,8 @@ section .text
     PUSH EAX                            ; 004efc4e
     MOV ECX,dword ptr [0x006138e0]      ; 004efc4f | g_CEditorToolsPtr
     PUSH ECX                            ; 004efc55
-    CALL shape_edittool.cpp_FUN_0047be90 ; 004efc56
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efc56
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efc5b
     MOV EAX,[0x00617dd4]                ; 004efc5e | DAT_00617dd4
     PUSH 0x1                            ; 004efc63
@@ -1467,8 +1467,8 @@ section .text
     PUSH EAX                            ; 004efd11
     MOV EBX,dword ptr [0x006138e0]      ; 004efd12 | g_CEditorToolsPtr
     PUSH EBX                            ; 004efd18
-    CALL shape_edittool.cpp_FUN_0047be90 ; 004efd19
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efd19
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efd1e
     PUSH 0x1                            ; 004efd21
     MOV ESI,dword ptr [0x00617dd4]      ; 004efd23 | DAT_00617dd4
@@ -1517,8 +1517,8 @@ section .text
     PUSH EAX                            ; 004efd8c
     MOV EAX,[0x006138e0]                ; 004efd8d | g_CEditorToolsPtr
     PUSH EAX                            ; 004efd92
-    CALL shape_edittool.cpp_FUN_0047be90 ; 004efd93
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 004efd93
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004efd98
     MOV EAX,[0x00616494]                ; 004efd9b | g_CGamePtr
         ;   Label: LAB_004efd9b

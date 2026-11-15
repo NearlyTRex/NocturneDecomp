@@ -13,12 +13,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform 
 {
   int iVar1;
   uint *puVar2;
+  int unaff_EDI;
   uint *puVar3;
   byte bVar4;
-  uint auStack_44 [6];
-  uint auStack_2c [6];
-  int iStack_14;
-  int iStack_10;
+  uint auStack_3c [4];
+  uint auStack_2c [2];
+  CBoundingBox3D CStack_24;
   int iStack_c;
   
   bVar4 = 0;
@@ -59,14 +59,14 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform 
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_44;
+  puVar2 = auStack_3c;
   puVar3 = auStack_2c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041daf0(auStack_2c);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_24,unaff_EDI);
   if (iVar1 != 0) {
     if ((this_ptr->recompute_fog == 0) ||
        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc),
@@ -77,10 +77,8 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform 
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    iStack_14 = (int)ROUND((this_ptr->base).location.position.x * _DAT_005e32e0);
-    iStack_10 = (int)ROUND((this_ptr->base).location.position.y * _DAT_005e32e0);
-    iStack_c = (int)ROUND((this_ptr->base).location.position.z * _DAT_005e32e0);
-    _DAT_01547200 = (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 8))(DAT_007e2a54,&iStack_14,0);
+    iStack_c = (int)ROUND((this_ptr->base).location.position.x * _DAT_005e32e0);
+    _DAT_01547200 = (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 8))(DAT_007e2a54,&iStack_c,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

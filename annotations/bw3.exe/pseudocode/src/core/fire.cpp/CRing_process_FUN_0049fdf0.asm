@@ -90,7 +90,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -508,8 +508,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004a0266
     MOVSD ES:EDI,ESI                    ; 004a0267
     MOVSD ES:EDI,ESI                    ; 004a0268
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 004a0269
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 004a0269
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 004a026e
     MOV EAX,dword ptr [EBP + 0x92]      ; 004a0271
         ;   Label: LAB_004a0271

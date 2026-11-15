@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
-;   core_manpuz.cpp_FUN_00504ee0
+;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
@@ -148,8 +148,8 @@ section .text
     MOV dword ptr [ESI + 0x4],0x3f800000 ; 00505ff7
     PUSH EBP                            ; 00505ffe
     MOV dword ptr [ESI + 0x8],0xbf800000 ; 00505fff
-    CALL core_manpuz.cpp_FUN_00504ee0   ; 00506006
-        ;   XREF to: 00504ee0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_00504ee0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0 ; 00506006
+        ;   XREF to: 00504ee0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 0050600b
     ADD ESI,0x58                        ; 0050600e
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 00506011

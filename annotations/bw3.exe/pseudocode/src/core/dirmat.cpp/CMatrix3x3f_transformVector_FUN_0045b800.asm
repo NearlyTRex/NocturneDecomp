@@ -20,7 +20,7 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 00422925
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 004223a3
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 004303d1
-;   core_charactr.cpp_FUN_00434190 at 0043446d
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 0043446d
 ;   core_cloth.cpp_CCloth_applyConstraints_FUN_0043d9b0 at 0043e074
 ;   ... and 34 more
 ;

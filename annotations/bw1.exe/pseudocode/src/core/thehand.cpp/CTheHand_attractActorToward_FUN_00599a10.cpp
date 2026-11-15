@@ -26,7 +26,7 @@ int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *
   CMatrix3x4f CStack_154;
   CMatrix3x4f CStack_124;
   CMatrix3x4f CStack_f4;
-  float afStack_c4 [12];
+  CMatrix3x4f CStack_c4;
   CMatrix3x4f CStack_94;
   CMatrix3x4f CStack_64;
   UOrientationVector UStack_34;
@@ -39,13 +39,14 @@ int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_005b72c0
-            (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend);
-  pfVar3 = afStack_c4;
-  pCVar5 = &CStack_184;
+            (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend,
+             &CStack_c4);
+  pCVar5 = &CStack_c4;
+  pCVar4 = &CStack_184;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar5->m[0].w = *pfVar3;
-    pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
+    pCVar4->m[0].w = pCVar5->m[0].w;
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
             (&CStack_154,&(this_ptr->base).base.base.location.position,

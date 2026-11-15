@@ -61,7 +61,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0
 ;   core_gore.cpp_CGore_load_FUN_004c9e70
 ;   core_gore.cpp_CGore_reset_FUN_004c93f0
-;   core_level.cpp_FUN_004e1480
+;   core_level.cpp_CLevelLoader_show_FUN_004e1480
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590
@@ -193,10 +193,10 @@ section .text
     PUSH -0x1                           ; 004bc0d4
     PUSH 0x0                            ; 004bc0d6
     PUSH 0x9                            ; 004bc0d8
-    MOV EBP,dword ptr [0x00617e10]      ; 004bc0da | DAT_00617e10
+    MOV EBP,dword ptr [0x00617e10]      ; 004bc0da | g_CLevelLoaderPtr
     PUSH EBP                            ; 004bc0e0
-    CALL core_level.cpp_FUN_004e1480    ; 004bc0e1
-        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e1480()
+    CALL core_level.cpp_CLevelLoader_show_FUN_004e1480 ; 004bc0e1
+        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004e1480(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
     ADD ESP,0x10                        ; 004bc0e6
     PUSH 0x5d8552                       ; 004bc0e9 | DAT_005d8552
     LEA EAX,[ESP + 0x4]                 ; 004bc0ee
@@ -356,15 +356,15 @@ section .text
     PUSH EAX                            ; 004bc29b
     LEA EAX,[ESP + 0x4d8]               ; 004bc29c
     PUSH EAX                            ; 004bc2a3
-    CALL support_codec.cpp_FUN_00434a10 ; 004bc2a4
-        ;   XREF to: 00434a10 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434a10()
+    CALL support_codec.cpp_CLZWDecompress_process_FUN_00434a10 ; 004bc2a4
+        ;   XREF to: 00434a10 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_process_FUN_00434a10(CLZWDecompress * this_ptr, void * istream, void * ostream)
     ADD ESP,0xc                         ; 004bc2a9
     LEA EAX,[ESP + 0x52c]               ; 004bc2ac
     PUSH EAX                            ; 004bc2b3
     LEA EAX,[ESP + 0x4d4]               ; 004bc2b4
     PUSH EAX                            ; 004bc2bb
-    CALL support_codec.cpp_FUN_00434a70 ; 004bc2bc
-        ;   XREF to: 00434a70 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434a70()
+    CALL support_codec.cpp_CLZWDecompress_finalize_FUN_00434a70 ; 004bc2bc
+        ;   XREF to: 00434a70 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_finalize_FUN_00434a70(CLZWDecompress * this_ptr, void * ostream)
     ADD ESP,0x8                         ; 004bc2c1
     LEA EAX,[ESP + 0x504]               ; 004bc2c4
     PUSH EAX                            ; 004bc2cb

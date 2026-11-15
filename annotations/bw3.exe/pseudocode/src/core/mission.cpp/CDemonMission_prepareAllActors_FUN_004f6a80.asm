@@ -18,10 +18,10 @@
 ;   TerminatedCString s_Setting_up_actors_005c89c3
 ;   TerminatedCString s_Setting_up_actors_005c89d5
 ;   TerminatedCString s_Setting_up_actors_005c89e7
-;   undefined4 DAT_006002ac
+;   CLevelLoader* g_CLevelLoaderPtr = 01d70ab8
 ;
 ; Called Functions:
-;   core_level.cpp_FUN_004e0000
+;   core_level.cpp_CLevelLoader_update_FUN_004e0000
 ;   core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_005503c0
 ;   core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
@@ -42,10 +42,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f6a93
     PUSH EAX                            ; 004f6a96
-    MOV EDX,dword ptr [0x006002ac]      ; 004f6a97 | DAT_006002ac
+    MOV EDX,dword ptr [0x006002ac]      ; 004f6a97 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004f6a9d
-    CALL core_level.cpp_FUN_004e0000    ; 004f6a9e
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f6a9e
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f6aa3
     MOV EBX,dword ptr [ESP + 0x18]      ; 004f6aa6
     CALL core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_005503c0 ; 004f6aaa
@@ -120,10 +120,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f6b61
     PUSH EAX                            ; 004f6b64
-    MOV EDX,dword ptr [0x006002ac]      ; 004f6b65 | DAT_006002ac
+    MOV EDX,dword ptr [0x006002ac]      ; 004f6b65 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004f6b6b
-    CALL core_level.cpp_FUN_004e0000    ; 004f6b6c
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f6b6c
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f6b71
     CMP ESI,dword ptr [ESP]             ; 004f6b74
         ;   Label: LAB_004f6b74
@@ -135,10 +135,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f6b85
     PUSH EAX                            ; 004f6b88
-    MOV EAX,[0x006002ac]                ; 004f6b89 | DAT_006002ac
+    MOV EAX,[0x006002ac]                ; 004f6b89 | g_CLevelLoaderPtr
     PUSH EAX                            ; 004f6b8e
-    CALL core_level.cpp_FUN_004e0000    ; 004f6b8f
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f6b8f
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f6b94
     MOV EBX,dword ptr [EBX + 0x14c]     ; 004f6b97
         ;   Label: LAB_004f6b97
@@ -168,10 +168,10 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f6bcf
     PUSH EAX                            ; 004f6bd2
-    MOV EAX,[0x006002ac]                ; 004f6bd3 | DAT_006002ac
+    MOV EAX,[0x006002ac]                ; 004f6bd3 | g_CLevelLoaderPtr
     PUSH EAX                            ; 004f6bd8
-    CALL core_level.cpp_FUN_004e0000    ; 004f6bd9
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f6bd9
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f6bde
     JMP 0x004f6b51                      ; 004f6be1
         ;   XREF to: 004f6b51 (UNCONDITIONAL_JUMP)  ; LAB_004f6b51

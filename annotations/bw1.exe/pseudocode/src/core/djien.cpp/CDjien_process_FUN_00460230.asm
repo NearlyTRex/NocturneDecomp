@@ -27,6 +27,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
@@ -35,7 +36,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00431cc0
 ;   core_charactr.cpp_FUN_00435320
 ;   core_charactr.cpp_FUN_00435380
 ;   core_djien.cpp_FUN_00460960
@@ -376,8 +376,8 @@ section .text
     PUSH 0x3f800000                     ; 004605cc
     PUSH ECX                            ; 004605d1
     PUSH EBX                            ; 004605d2
-    CALL core_charactr.cpp_FUN_00431cc0 ; 004605d3
-        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431cc0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 ; 004605d3
+        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00431cc0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBX + 0xc2f4]    ; 004605d8
     ADD ESP,0x14                        ; 004605de
     CMP EAX,0x1                         ; 004605e1

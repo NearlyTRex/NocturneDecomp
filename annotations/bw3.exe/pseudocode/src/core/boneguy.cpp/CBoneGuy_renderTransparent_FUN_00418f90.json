@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 90,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 4,
+    "pseudocode_lines": 42,
+    "suspect_count": 6,
     "suspect_types": [
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 127
+    "total_lines": 129
   },
   "cross_references": [],
   "function": {
@@ -42,7 +43,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "0042d8e0",
@@ -187,8 +188,24 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 29,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_30,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,0);",
@@ -196,7 +213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 32,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar1 = DAT_005f2afc;",
@@ -204,7 +221,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 36,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar1 = DAT_005f2afc;",
@@ -212,7 +229,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 22,
+      "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",

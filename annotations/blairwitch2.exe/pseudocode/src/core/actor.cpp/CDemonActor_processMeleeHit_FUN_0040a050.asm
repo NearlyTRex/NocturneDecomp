@@ -39,8 +39,8 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004c6d40
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
-;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00537df0
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -630,8 +630,8 @@ section .text
     PUSH EAX                            ; 0040a88a
     MOV EDI,dword ptr [0x0061b5a8]      ; 0040a88b | g_CDemonSetPtr
     PUSH EDI                            ; 0040a891 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00535ee0 ; 0040a892
-        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 ; 0040a892
+        ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x3e4],EAX     ; 0040a897
     FLD float ptr [ESP + 0x3e4]         ; 0040a89e
     ADD ESP,0xc                         ; 0040a8a5

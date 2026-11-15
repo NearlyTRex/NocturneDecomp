@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_flies.cpp_drawFlyPixel_FUN_004a6fe0
 ;   core_spline.cpp_computeSplineBasis_FUN_00561310
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_00561540
@@ -83,8 +83,8 @@ section .text
     LEA ESI,[ESP + 0x4c]                ; 004a7117
     PUSH EAX                            ; 004a711b
     MOVSD.REP ES:EDI,ESI                ; 004a711c
-    CALL core_box.cpp_FUN_0041a840      ; 004a711e
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 004a711e
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004a7123
     MOV dword ptr [ESP + 0x9c],EAX      ; 004a7126
     TEST EAX,EAX                        ; 004a712d

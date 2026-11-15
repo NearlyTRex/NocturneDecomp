@@ -24,7 +24,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00574e0
     }
     (texture->base).count = iVar1;
     _DAT_02652eac = iVar1;
-    engine_texture_cpp_FUN_00574520(_DAT_02652eb0,texture,bVar2);
+    engine_texture_cpp_CTextureCache_setupTexture_FUN_00574520(_DAT_02652eb0,texture,(uint)bVar2);
     return (SMRGLHeaderExtended *)(texture + 1);
   }
   return (SMRGLHeaderExtended *)(texture + 1);

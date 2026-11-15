@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   drop_position
 ;
 ; Called Functions:
-;   core_bodypart.cpp_FUN_0041ad40
+;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420450
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00419b14
     PUSH EBX                            ; 00419b18
     MOV dword ptr [EBX + 0xf2c],0x0     ; 00419b19
-    CALL core_bodypart.cpp_FUN_0041ad40 ; 00419b23
-        ;   XREF to: 0041ad40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041ad40()
+    CALL core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40 ; 00419b23
+        ;   XREF to: 0041ad40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00419b28
     MOV EDX,dword ptr [ESP + 0x18]      ; 00419b2b
     TEST EDX,EDX                        ; 00419b2f

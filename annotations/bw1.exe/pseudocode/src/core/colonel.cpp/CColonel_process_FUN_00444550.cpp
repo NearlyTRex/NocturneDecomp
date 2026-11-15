@@ -117,7 +117,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
             iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004eb090(&this_ptr->base);
             bVar4 = false;
             if (iVar8 != 0) goto LAB_00444948;
-            iVar8 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
+            iVar8 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(&this_ptr->base,0);
             if ((iVar8 != 0) && (iVar8 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);
             }

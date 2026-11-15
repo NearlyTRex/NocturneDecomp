@@ -2,11 +2,11 @@
 // Address: 004d4900
 // Address Range: [[004d4900, 004d4aa4]]
 // Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,undefined4 param_2)
+// Signature: undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)
 
 #include "nocturne.h"
 
-uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)
+uint core_hero_cpp_FUN_004d4900(CHero *param_1,int param_2)
 
 {
   CHero_full_vtable *pCVar1;
@@ -34,7 +34,9 @@ uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)
            (bVar2 = core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004d3e20
                               (param_1,"!CBodyPart"), CONCAT31(extraout_var,bVar2) == 0)) &&
           ((((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3),
-             iVar5 == 0 || (iVar5 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar5 == 0)) &&
+             iVar5 == 0 ||
+             (iVar5 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(param_1,param_2),
+             iVar5 == 0)) &&
             ((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),
              iVar5 == 0 ||
              (iVar5 = core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(param_1), iVar5 == 0)))) &&

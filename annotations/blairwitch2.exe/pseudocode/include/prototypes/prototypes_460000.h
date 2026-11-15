@@ -56,7 +56,7 @@ int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00460320(CDoor *
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00460330(CDoor *this_ptr);
 CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_004605e0(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener);
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener,int ignore_lock);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00460800(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00460860(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_004608b0(char *dest_path,char *directory,char *filename);
@@ -138,7 +138,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_00466770(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00466820(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00466960(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void cockpit_drawsurf_cpp_FUN_00466a50(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00466c60(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00466ca0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90(CDrawSurface *this_ptr,int start_x,int y,int end_x);
@@ -146,7 +146,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_00467350(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0(CDrawSurface *this_ptr);
-void cockpit_drawsurf_cpp_FUN_004674b0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_FUN_004677e0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_004678e0(void);
@@ -211,7 +211,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046aa0
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_0046ad70(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
-void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ae40(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046af90(CDemonRenderer *this_ptr,CVector3i *origin);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030(CDemonRenderer *this_ptr,CVector3f *euler_angles);

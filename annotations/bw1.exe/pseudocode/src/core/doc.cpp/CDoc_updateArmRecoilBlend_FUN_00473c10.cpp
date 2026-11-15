@@ -23,33 +23,27 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
   float local_158;
   float fStack_150;
   SCollisionInfo SStack_14c;
-  float local_124;
-  float local_120;
-  float local_11c;
-  float local_118;
-  float local_114 [4];
-  float local_104;
-  float local_100;
-  float local_fc;
+  CVector3f local_124;
+  CVector3f local_118;
+  float local_10c;
+  float local_108 [4];
   float local_f8;
   CVector3f local_f4;
-  float local_e8;
-  float local_e4 [4];
-  float local_d4;
+  CVector3f local_e8;
+  float local_dc;
+  float local_d8 [2];
   CVector3f local_d0;
   CVector3f local_c4;
   CVector3f local_b8;
   CVector3f local_ac;
-  float local_a0;
-  float local_9c [4];
-  uint local_8c;
+  CVector3f local_a0;
+  CVector3f local_94;
   CVector3f local_88;
   float local_7c;
   float local_78;
   float local_74;
   CVector3f local_70;
-  float local_64;
-  float local_60 [2];
+  CVector3f local_64;
   CVector3f local_58;
   float local_4c;
   float local_48 [2];
@@ -78,11 +72,12 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                 ((CDemonActor *)this_ptr,&(this_ptr_00->base).base.base.location.position,&local_70)
       ;
-      local_100 = local_70.x;
-      local_114[(uint)bVar5 * -2 + 6] = *(float *)((int)&local_70 + (uint)bVar5 * -8 + 4);
-      local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
+      local_108[2] = local_70.x;
+      local_108[(uint)bVar5 * -2 + 3] = *(float *)((int)&local_70 + (uint)bVar5 * -8 + 4);
+      local_108[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
            *(float *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      if (((ABS(local_100) <= (float)_DAT_005da3dc) && (ABS(local_fc) <= (float)_DAT_005da3e4)) &&
+      if (((ABS(local_108[2]) <= (float)_DAT_005da3dc) &&
+          (ABS(local_108[3]) <= (float)_DAT_005da3e4)) &&
          ((0.0 <= local_f8 &&
           ((((int)local_f8 < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
            (EVar3 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
@@ -129,28 +124,30 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
          *(uint *)((int)&local_d0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
               ((CDemonActor *)this_ptr,pCVar6,local_40);
-    local_118 = local_40[0].x;
-    local_114[(uint)bVar5 * -2] = *(float *)((int)local_40 + (uint)bVar5 * -8 + 4);
-    local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         *(float *)((int)local_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    local_118.x = local_40[0].x;
+    *(uint *)((int)&local_118 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)local_40 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&local_118 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)local_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     if (&local_124 != &local_118) {
-      local_124 = local_118;
-      local_120 = local_114[0];
-      local_11c = local_114[1];
+      local_124.x = local_118.x;
+      local_124.y = local_118.y;
+      local_124.z = local_118.z;
     }
-    local_e4[3] = local_120 + local_78;
-    local_d4 = local_11c + local_74;
-    local_e4[2] = local_124 + local_7c;
-    local_64 = local_124 + local_7c;
-    local_60[(uint)bVar5 * -2] = local_e4[(uint)bVar5 * -2 + 3];
-    local_60[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         local_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-    if (local_9c + 2 != &local_64) {
-      local_9c[2] = local_64;
-      local_9c[3] = local_60[0];
-      local_8c = local_60[1];
+    local_d8[0] = local_124.y + local_78;
+    local_d8[1] = local_124.z + local_74;
+    local_dc = local_124.x + local_7c;
+    local_64.x = local_124.x + local_7c;
+    *(float *)((int)&local_64 + (uint)bVar5 * -8 + 4) = local_d8[(uint)bVar5 * -2];
+    *(float *)((int)&local_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         local_d8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    if (&local_94 != &local_64) {
+      local_94.x = local_64.x;
+      local_94.y = local_64.y;
+      local_94.z = local_64.z;
     }
-    local_18 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,&local_124,local_9c + 2);
+    local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300(g_CDemonSetPtr,&local_124,&local_94)
+    ;
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_158 < fVar2))
     {
@@ -166,28 +163,30 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
          *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
               ((CDemonActor *)this_ptr,pCVar6,&local_c4);
-    local_a0 = local_c4.x;
-    local_9c[(uint)bVar5 * -2] = *(float *)((int)&local_c4 + (uint)bVar5 * -8 + 4);
-    local_9c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         *(float *)((int)&local_c4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    local_a0.x = local_c4.x;
+    *(uint *)((int)&local_a0 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_c4 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&local_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&local_c4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     if (&local_124 != &local_a0) {
-      local_124 = local_a0;
-      local_120 = local_9c[0];
-      local_11c = local_9c[1];
+      local_124.x = local_a0.x;
+      local_124.y = local_a0.y;
+      local_124.z = local_a0.z;
     }
-    local_114[3] = local_120 + local_78;
-    local_104 = local_11c + local_74;
-    local_114[2] = local_124 + local_7c;
-    local_e8 = local_124 + local_7c;
-    local_e4[(uint)bVar5 * -2] = local_114[(uint)bVar5 * -2 + 3];
-    local_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-    if (local_9c + 2 != &local_e8) {
-      local_9c[2] = local_e8;
-      local_9c[3] = local_e4[0];
-      local_8c = local_e4[1];
+    local_108[0] = local_124.y + local_78;
+    local_108[1] = local_124.z + local_74;
+    local_10c = local_124.x + local_7c;
+    local_e8.x = local_124.x + local_7c;
+    *(float *)((int)&local_e8 + (uint)bVar5 * -8 + 4) = local_108[(uint)bVar5 * -2];
+    *(float *)((int)&local_e8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         local_108[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    if (&local_94 != &local_e8) {
+      local_94.x = local_e8.x;
+      local_94.y = local_e8.y;
+      local_94.z = local_e8.z;
     }
-    local_18 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,&local_124,local_9c + 2);
+    local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300(g_CDemonSetPtr,&local_124,&local_94)
+    ;
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_158 < fVar2))
     {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_004354a0(int param_1,undefined4 param_2)
+; void core_charactr_cpp_FUN_004354a0(int param_1,CWayPoint *param_2)
 ;
 ;
 ; XREF[3]:
@@ -10,7 +10,7 @@
 ;   core_charactr.cpp_FUN_00435380 at 0043547d
 ;
 ; Called Functions:
-;   core_waypoint.cpp_FUN_005abb80
+;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005abb80
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH ECX                            ; 004354af
     ADD EAX,0x20                        ; 004354b0
     PUSH EAX                            ; 004354b3
-    CALL core_waypoint.cpp_FUN_005abb80 ; 004354b4
-        ;   XREF to: 005abb80 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005abb80()
+    CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005abb80 ; 004354b4
+        ;   XREF to: 005abb80 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005abb80(CWayPoint * this_ptr, CWayPoint * start_waypoint, int skip_path_check)
     ADD ESP,0xc                         ; 004354b9
     RET                                 ; 004354bc
 

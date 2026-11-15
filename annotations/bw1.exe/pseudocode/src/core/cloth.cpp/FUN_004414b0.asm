@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 004414d9
     PUSH ESI                            ; 004414da
     CALL core_cloth.cpp_FUN_00441500    ; 004414db
-        ;   XREF to: 00441500 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00441500()
+        ;   XREF to: 00441500 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00441500(CCloth * this_ptr, int bone_index, int show_labels)
     INC EBX                             ; 004414e0
     MOV EDI,dword ptr [ESI + 0x37b4c]   ; 004414e1
     ADD ESP,0xc                         ; 004414e7

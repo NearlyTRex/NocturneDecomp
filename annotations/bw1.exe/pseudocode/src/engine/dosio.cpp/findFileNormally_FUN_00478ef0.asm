@@ -15,8 +15,8 @@
 ; XREF[4]:
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050332e
 ;   engine_dosio.cpp_findFile_FUN_00478e90 at 00478ed1
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b2b0
 ;   engine_pod.cpp_CPod_dismount_FUN_0053c800 at 0053c837
-;   engine_pod.cpp_FUN_0053b250 at 0053b2b0
 ;
 ; Called Functions:
 ;   crt_io.c_FUN_005c1da8

@@ -26,10 +26,10 @@
 ;   core_menu.cpp_FUN_004eba50 at 004ebaef
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9f1
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb85f
+;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80 at 0047bfdc
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d35a
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047dceb
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004831e1
-;   shape_edittool.cpp_FUN_0047bf80 at 0047bfdc
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b9d5
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c6b4
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b3bc
@@ -59,10 +59,10 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_matrix.c_popViewport_FUN_004ea570
 ;   engine_matrix.c_pushViewport_FUN_004ea410
 ;   engine_mini3d.cpp_drawHLine_FUN_004f9390
@@ -392,8 +392,8 @@ section .text
     PUSH ESI                            ; 0047ebf8
     MOV EAX,[0x01c25590]                ; 0047ebf9 | DAT_01c25590
     PUSH EAX                            ; 0047ebfe
-    CALL engine_font.cpp_FUN_004a8df0   ; 0047ebff
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047ebff
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047ec04
     PUSH ESI                            ; 0047ec07
     MOV EDX,dword ptr [0x01c25590]      ; 0047ec08 | DAT_01c25590

@@ -2,23 +2,23 @@
 // Address: 0042cd70
 // Address Range: [[0042cd70, 0042d381]]
 // Convention: unknown
-// Signature: undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
+// Signature: undefined4 core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
+uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2,uint param_3,uint param_4,float param_5)
 
 {
   float fVar1;
-  float fVar2;
-  CPlatform *pCVar3;
-  bool bVar4;
+  CPlatform *pCVar2;
+  bool bVar3;
   CScript *this_ptr;
-  int iVar5;
-  CSkeleton *pCVar6;
-  uint uVar7;
+  int iVar4;
+  CSkeleton *pCVar5;
+  uint uVar6;
+  float fVar7;
   CCharacter *pCVar8;
   uint *puVar9;
   float *pfVar10;
@@ -28,8 +28,10 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
   float afStackY_18b0 [1511];
   CQuaternion4f *quat2_in;
   CQuaternion4f *quat2_in_00;
-  uint auStack_104 [6];
-  uint auStack_ec [6];
+  CBoundingBox3D *this_ptr_00;
+  int in_stack_ffffff0c;
+  CBoundingBox3D CStack_f0;
+  uint uStack_d8;
   CQuaternion4f local_d4;
   CQuaternion4f local_c4;
   CQuaternion4f local_b4;
@@ -51,29 +53,29 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
   float local_14;
   
   bVar13 = 0;
-  fVar1 = param_1->sound_cooldown - param_2;
-  bVar4 = false;
-  param_1->sound_cooldown = fVar1;
-  if (fVar1 < 0.0) {
+  fVar7 = param_1->sound_cooldown - param_2;
+  bVar3 = false;
+  param_1->sound_cooldown = fVar7;
+  if (fVar7 < 0.0) {
     param_1->sound_cooldown = 0.0;
   }
   if (0.0 < param_1->bind_time) {
     if ((param_1->bind_type == 0) &&
-       (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(param_1->bind_sound_handle), iVar5 == 0)
+       (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(param_1->bind_sound_handle), iVar4 == 0)
        ) {
-      uVar7 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
+      uVar6 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                         (0x02CF5680,&param_1->base,"wp_bindevil_loop.wav",
                          &(param_1->base).location.position);
-      param_1->bind_sound_handle = uVar7;
+      param_1->bind_sound_handle = uVar6;
     }
     if ((param_1->bind_type == 1) || (param_1->bind_type == 2)) {
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&param_1->model);
       local_1c = (param_1->model).bone_transform.pose_data.bone_rotations;
       local_18 = param_1;
       local_20 = &param_1->model;
-      for (iVar5 = 0;
-          pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(local_20),
-          iVar5 < pCVar6->bone_count; iVar5 = iVar5 + 1) {
+      for (iVar4 = 0;
+          pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(local_20),
+          iVar4 < pCVar5->bone_count; iVar4 = iVar4 + 1) {
         core_xform_cpp_FUN_00585de0(local_1c);
         local_2c = afStack_50[3];
         local_28[(uint)bVar13 * -2] = afStack_50[(uint)bVar13 * -2 + 4];
@@ -136,10 +138,10 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
       }
     }
     if ((param_1->bind_type == 3) || (param_1->bind_type == 4)) {
-      bVar4 = false;
+      bVar3 = false;
     }
     else {
-      bVar4 = true;
+      bVar3 = true;
     }
     param_1->bind_time = param_1->bind_time - param_2;
     if (0.0 <= param_1->bind_time) {
@@ -159,14 +161,14 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
   }
   core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(param_1,param_2);
   core_charactr_cpp_CCharacter_advanceGesture_FUN_00432220(param_1,param_2);
-  fVar1 = param_1->stagger_amount - param_2;
-  param_1->stagger_amount = fVar1;
-  if (fVar1 < 0.0) {
+  fVar7 = param_1->stagger_amount - param_2;
+  param_1->stagger_amount = fVar7;
+  if (fVar7 < 0.0) {
     param_1->stagger_amount = 0.0;
   }
   if ((0.0 < param_1->speech_timer) &&
-     (fVar1 = param_1->speech_timer - param_2, param_1->speech_timer = fVar1,
-     this_ptr = g_CScriptPtr, fVar1 < 0.0)) {
+     (param_2 = param_1->speech_timer - param_2, param_1->speech_timer = param_2,
+     this_ptr = g_CScriptPtr, param_2 < 0.0)) {
     param_1->speech_timer = 0.0;
     core_script_cpp_CScript_setSpeaker_FUN_00530390(this_ptr,&param_1->base);
   }
@@ -179,29 +181,29 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
     return 0;
   }
   if (param_1->closest_distance_threshold == _DAT_005dd234) {
-    iVar5 = 0;
+    iVar4 = 0;
     pCVar8 = param_1;
     do {
       while ((pCVar8->carry_hands[0].carry_actor != (CDemonActor *)0x0 &&
              (pCVar8->carry_hands[0].has_carry_offset == 0))) {
-        core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(param_1,iVar5,0.0,(int *)0x0);
-        iVar5 = iVar5 + 1;
+        core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(param_1,iVar4,0.0,(int *)0x0);
+        iVar4 = iVar4 + 1;
         pCVar8 = (CCharacter *)(pCVar8->base).create_event;
-        if (1 < iVar5) goto LAB_0042d163;
+        if (1 < iVar4) goto LAB_0042d163;
       }
-      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 1;
       pCVar8 = (CCharacter *)(pCVar8->base).create_event;
-    } while (iVar5 < 2);
+    } while (iVar4 < 2);
   }
 LAB_0042d163:
-  fVar1 = (param_1->base).platform_position_delta.y;
+  fVar7 = (param_1->base).platform_position_delta.y;
   (param_1->base).platform_position_delta.y = 0.0;
-  fVar2 = param_1->closest_distance_threshold;
-  (param_1->base).location.position.y = fVar1 + (param_1->base).location.position.y;
-  if ((fVar2 == _DAT_005dd234) || ((param_1->base).standing_platform != (CPlatform *)0x0)) {
-    local_14 = (*((param_1->base).vtable._ub)->cylinderGroundCheck)
-                         (&param_1->base,param_1->collision_cylinder_height,(CVector3f *)0x0);
-    param_1->closest_distance_threshold = local_14;
+  fVar1 = param_1->closest_distance_threshold;
+  (param_1->base).location.position.y = fVar7 + (param_1->base).location.position.y;
+  if ((fVar1 == _DAT_005dd234) || ((param_1->base).standing_platform != (CPlatform *)0x0)) {
+    fVar7 = (*((param_1->base).vtable._ub)->cylinderGroundCheck)
+                      (&param_1->base,param_1->collision_cylinder_height,(CVector3f *)0x0);
+    param_1->closest_distance_threshold = fVar7;
   }
   param_1->is_on_ground =
        (uint)((param_1->base).location.position.y <
@@ -209,29 +211,30 @@ LAB_0042d163:
   (param_1->position_delta).z = 0.0;
   (param_1->position_delta).y = (param_1->position_delta).z;
   (param_1->position_delta).x = (param_1->position_delta).y;
-  pCVar3 = (param_1->base).standing_platform;
+  pCVar2 = (param_1->base).standing_platform;
   param_1->turn_angle_accumulator = 0.0;
-  if (((pCVar3 == (CPlatform *)0x0) && (param_1->walk_to_target == (CDemonActor *)0x0)) &&
-     (iVar5 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004d23f0
+  if (((pCVar2 == (CPlatform *)0x0) && (param_1->walk_to_target == (CDemonActor *)0x0)) &&
+     (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004d23f0
                         (&(param_1->base).location.position,param_1->ai_detection_range_max,
-                         param_1->ai_detection_range_min), iVar5 == 0)) {
+                         param_1->ai_detection_range_min), iVar4 == 0)) {
     (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,(CBoundingBox3D *)0x0);
-    puVar9 = auStack_ec;
-    puVar11 = auStack_104;
-    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+    this_ptr_00 = &CStack_f0;
+    puVar9 = &uStack_d8;
+    puVar11 = (uint *)&stack0xffffff08;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar11 = *puVar9;
       puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
       puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
     }
-    iVar5 = core_box_cpp_FUN_0041daf0(auStack_104);
-    if (iVar5 == 0) {
+    iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_00,in_stack_ffffff0c);
+    if (iVar4 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00556be0(param_1->sfx_handle);
       return 0;
     }
   }
-  if (!bVar4) {
+  if (!bVar3) {
     return 1;
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(param_1,param_2);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(param_1,param_5);
   return 0;
 }

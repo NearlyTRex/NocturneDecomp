@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004b5190 at 004b5ced
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5ced
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f2e8
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052dfec
 ;

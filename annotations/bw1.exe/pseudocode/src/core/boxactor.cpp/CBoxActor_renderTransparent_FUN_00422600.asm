@@ -12,7 +12,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -73,8 +73,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 00422675
     PUSH EAX                            ; 00422679
     MOVSD.REP ES:EDI,ESI                ; 0042267a
-    CALL core_box.cpp_FUN_004207b0      ; 0042267c
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 0042267c
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00422681
     PUSH 0xffff                         ; 00422684
     MOV EDI,dword ptr [0x00612560]      ; 00422689 | DAT_00612560

@@ -1,0 +1,803 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 567,
+    "complexity_score": 498,
+    "cross_reference_count": 7,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 248,
+    "suspect_count": 22,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_ref",
+      "sub84_truncation",
+      "suspect_float",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 815
+  },
+  "cross_references": [
+    {
+      "addr": "0041b470",
+      "from_addr": "0041b50f",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473bc0",
+      "from_addr": "00473bdd",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ce170",
+      "from_addr": "004ce249",
+      "name": "core_gore.cpp_CFootstep_init_FUN_004ce170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509f30",
+      "from_addr": "0050a0a7",
+      "name": "core_particle.cpp_CParticle_process_FUN_00509f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053cad0",
+      "from_addr": "0053cb47",
+      "name": "core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ccc0",
+      "from_addr": "0053cd10",
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575380",
+      "from_addr": "00575bdb",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_00575380",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00473cd0",
+    "address_range": [
+      [
+        "00473cd0",
+        "004743f6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
+    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00454360",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360"
+    },
+    {
+      "addr": "00473b60",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00473b60"
+    },
+    {
+      "addr": "005a3600",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005a3600"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bca09",
+      "name": "DAT_005bca09",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0041b50f",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0041d355",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053cb47",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053cd10",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ce249",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CFootstep_init_FUN_004ce170",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050a0a7",
+        "call_type": "direct",
+        "caller": "core_particle.cpp_CParticle_process_FUN_00509f30",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00575bdb",
+        "call_type": "direct",
+        "caller": "core_tvbat.cpp_CTVBat_process_FUN_00575380",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00473bdd",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.977083333333334,
+    "instruction_count": 480,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 13,
+      "BRANCH": 7,
+      "CALL": 20,
+      "CBRANCH": 30,
+      "COPY": 1271,
+      "FLOAT2FLOAT": 83,
+      "FLOAT_ABS": 3,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 7,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 12,
+      "FLOAT_NAN": 12,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 21,
+      "INT2FLOAT": 14,
+      "INT_ADD": 286,
+      "INT_AND": 163,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 127,
+      "INT_LEFT": 24,
+      "INT_LESS": 32,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 43,
+      "INT_OR": 30,
+      "INT_SBORROW": 33,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 62,
+      "INT_SUB": 72,
+      "INT_ZEXT": 30,
+      "LOAD": 194,
+      "POPCOUNT": 62,
+      "RETURN": 5,
+      "ROUND": 12,
+      "STORE": 117,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 2869
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00472c60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048b150",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00495b70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9527
+    },
+    "nocturne.exe": {
+      "addr": "00467a00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9527
+    }
+  },
+  "stack_frame": {
+    "frame_size": 224,
+    "local_size": 204,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_start",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_end",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_intersection_point",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_intersection_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00473cdc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "afStackY_1094",
+      "severity": "moderate",
+      "text": "float afStackY_1094 [996];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 65,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_7c = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 67,
+      "match": "6.542295e-39",
+      "severity": "mild",
+      "text": "fVar16 = 6.542295e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 71,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_80 = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 76,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_84 = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 85,
+      "match": "6.542462e-39",
+      "severity": "mild",
+      "text": "fVar14 = 6.542462e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 91,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_88 = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 93,
+      "match": "6.54254e-39",
+      "severity": "mild",
+      "text": "fVar13 = 6.54254e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 97,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_8c = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 99,
+      "match": "6.542598e-39",
+      "severity": "mild",
+      "text": "fVar12 = 6.542598e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 104,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_90 = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 135,
+      "match": "6.543082e-39",
+      "severity": "mild",
+      "text": "fVar10 = 6.543082e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 153,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "fStack_78 = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 204,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "(this_ptr_00,ray_start,&local_b8,(CVector3f *)&stack0xffffff30,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 208,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "(out_intersection_point != (CVector3f *)&stack0xffffff30)) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Raw hex address 0x473e32 assigned to bare local `uStack_e0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 102,
+      "match": "0x473e32",
+      "severity": "moderate",
+      "text": "uStack_e0 = 0x473e32;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x473f82 assigned to bare local `uStack_e0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 139,
+      "match": "0x473f82",
+      "severity": "moderate",
+      "text": "uStack_e0 = 0x473f82;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x473f92 assigned to bare local `uStack_e4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 142,
+      "match": "0x473f92",
+      "severity": "moderate",
+      "text": "uStack_e4 = 0x473f92;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4740c8 assigned to bare local `uStack_e8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 180,
+      "match": "0x4740c8",
+      "severity": "moderate",
+      "text": "uStack_e8 = 0x4740c8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4740da assigned to bare local `uStack_ec`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_ec` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 185,
+      "match": "0x4740da",
+      "severity": "moderate",
+      "text": "uStack_ec = 0x4740da;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4740ea assigned to bare local `uStack_f0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_f0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 188,
+      "match": "0x4740ea",
+      "severity": "moderate",
+      "text": "uStack_f0 = 0x4740ea;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

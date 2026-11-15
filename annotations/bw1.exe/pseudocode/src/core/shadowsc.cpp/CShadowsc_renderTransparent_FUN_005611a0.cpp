@@ -16,10 +16,12 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
   CEventList *this_ptr_02;
   int iVar1;
   uint *puVar2;
+  int unaff_EDI;
   uint *puVar3;
   byte bVar4;
-  uint auStack_38 [6];
-  uint auStack_20 [6];
+  uint auStack_38 [2];
+  CBoundingBox3D CStack_30;
+  uint auStack_18 [4];
   
   bVar4 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -33,14 +35,14 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-    puVar2 = auStack_20;
+    puVar2 = auStack_18;
     puVar3 = auStack_38;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    iVar1 = core_box_cpp_FUN_004207b0(auStack_38);
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_30,unaff_EDI);
     this_ptr_01 = DAT_00612560;
     if (iVar1 != 0) {
       iVar1 = this_ptr->fade_alpha;

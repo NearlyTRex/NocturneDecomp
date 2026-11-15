@@ -18,7 +18,7 @@
 
 void engine_font_cpp_FUN_004b0170(int param_1,float param_2);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004b0190(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004b01d0(void);
+void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004b01d0(CBitFont *this_ptr,char *font_path);
 void __cdecl engine_font_cpp_CBitFont_free_FUN_004b0480(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004b0500(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004b0510(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char);
@@ -48,7 +48,7 @@ int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont *this_pt
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004b2c10(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
 int engine_font_cpp_FUN_004b2e40(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
-int engine_font_cpp_FUN_004b2ef0(void);
+int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004b2ef0(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width,int indent_chars,int indent_first_line);
 int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(CBitFont *this_ptr,int char_code);
@@ -77,7 +77,7 @@ void __cdecl core_game_cpp_CGame_processFudge_FUN_004b4f00(CGame *this_ptr);
 void core_game_cpp_FUN_004b5040(void);
 void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b51e0(CGame *this_ptr);
-void core_game_cpp_FUN_004b6f30(CGame *param_1);
+void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(CGame *this_ptr);
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr);

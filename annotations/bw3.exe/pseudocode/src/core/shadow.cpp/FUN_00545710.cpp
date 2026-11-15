@@ -20,12 +20,13 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
   uint *puVar5;
   byte bVar6;
   double dVar7;
-  float afStackY_101c [1000];
+  float afStackY_101c [1002];
+  CBoundingBox3D *this_ptr_00;
+  int in_stack_ffffff9c;
+  CBoundingBox3D CStack_60;
+  uint auStack_48 [5];
   float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  float afStack_30 [4];
   float fStack_20;
   float fStack_1c;
   float fStack_18;
@@ -38,14 +39,14 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
   iVar3 = *(int *)(iVar2 + 0x1d5ba04);
   if (iVar3 != 0) {
     fStack_34 = (param_1->base).location.position.x - *(float *)(iVar3 + 0x20);
-    fStack_30 = (param_1->base).location.position.y - *(float *)(iVar3 + 0x24);
-    fStack_2c = (param_1->base).location.position.z - *(float *)(iVar3 + 0x28);
-    fStack_28 = fStack_34;
-    *(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8);
-    *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-    fStack_14 = fStack_20 * fStack_20 + fStack_28 * fStack_28 + fStack_24 * fStack_24;
+    afStack_30[0] = (param_1->base).location.position.y - *(float *)(iVar3 + 0x24);
+    afStack_30[1] = (param_1->base).location.position.z - *(float *)(iVar3 + 0x28);
+    afStack_30[2] = fStack_34;
+    afStack_30[(uint)bVar6 * -2 + 3] = afStack_30[(uint)bVar6 * -2];
+    afStack_30[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+         afStack_30[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    fStack_14 = fStack_20 * fStack_20 +
+                afStack_30[2] * afStack_30[2] + afStack_30[3] * afStack_30[3];
     param_1->was_rendered_opaque = 0;
     fStack_1c = (float)(((int)fStack_14 >> 1) + iVar1);
     fStack_18 = *(float *)(*(int *)(iVar2 + 0x1d5ba04) + 0x20b88);
@@ -60,14 +61,15 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
     if (*(int *)(param_1[1].base.actor_name + 4) == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&param_1->base);
       (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,(CBoundingBox3D *)0x0);
-      puVar4 = (uint *)&stack0xffffffb0;
+      this_ptr_00 = &CStack_60;
+      puVar4 = auStack_48;
       puVar5 = (uint *)&stack0xffffff98;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar5 = *puVar4;
         puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
         puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      iVar3 = core_box_cpp_FUN_0041daf0(&stack0xffffff98);
+      iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_00,in_stack_ffffff9c);
       this_ptr = DAT_005f2afc;
       if (iVar3 != 0) {
         render_alpha = param_1[1].model.bone_origins[0x1d].x;

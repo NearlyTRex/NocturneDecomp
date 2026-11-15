@@ -67,8 +67,25 @@ def caller_pop_ecx():
     return b"\x50" + call_rel32(at(CALLER_POP_ECX) + 1, at(RET_BARE)) + b"\x59\xc3"
 
 
+# Callers whose cleanup comes later: after a load (ADD ESP or POP ECX), or never
+# (a RET or a PUSH reaches ESP first).
+CALLER_LATE_ADD, CALLER_LATE_POP, CALLER_THEN_RET, CALLER_THEN_PUSH = 0x160, 0x170, 0x180, 0x190
+LOAD = b"\xa1\x34\x12\x00\x00"      # mov eax, [0x1234]
+
+
+def caller_late_add():
+    return b"\x50\x51" + call_rel32(at(CALLER_LATE_ADD) + 2, at(RET_BARE)) + LOAD + b"\x83\xc4\x08\xc3"
+
+
+def caller_then(offset, tail):
+    return call_rel32(at(offset), at(RET_BARE)) + tail
+
+
 BODIES = {RET8: b"\xc2\x08\x00", RET_MIXED: b"\xc2\x04\x00\xc2\x08\x00", RET_BARE: b"\xc3", NO_RET: b"\x90",
-          CALLER_PUSH_POP: caller_push_pop(), CALLER_STORE: caller_store(), CALLER_POP_ECX: caller_pop_ecx()}
+          CALLER_PUSH_POP: caller_push_pop(), CALLER_STORE: caller_store(), CALLER_POP_ECX: caller_pop_ecx(),
+          CALLER_LATE_ADD: caller_late_add(), CALLER_LATE_POP: caller_then(CALLER_LATE_POP, LOAD + b"\x59\xc3"),
+          CALLER_THEN_RET: caller_then(CALLER_THEN_RET, b"\xc3"),
+          CALLER_THEN_PUSH: caller_then(CALLER_THEN_PUSH, b"\x50\xc3")}
 
 
 def program(bodies):
@@ -125,6 +142,34 @@ def test_an_unparseable_cleanup_counts_as_none(monkeypatch, image):
     assert vss.observed_arg_bytes(image, [0x11], {}) == (4, None, None)
 
 
+def test_a_later_cleanup_is_found_past_work_that_leaves_esp_alone(image):
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_ADD) + 2], {}) == 8
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_POP)], {}) == 4
+    # The immediate measurement sees no cleanup at either
+    assert vss.observed_arg_bytes(image, [at(CALLER_LATE_ADD) + 2], {})[1] == 0
+
+
+def test_control_flow_or_another_esp_use_first_means_no_cleanup(image):
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_THEN_RET)], {}) == 0
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_THEN_PUSH)], {}) == 0
+
+
+def test_a_later_cleanup_needs_a_majority_and_a_readable_call(image):
+    cache = {}
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_ADD) + 2, at(CALLER_LATE_POP)], cache) is None
+    assert vss.delayed_cleanup_bytes(image, [0x00300000, at(CALLER_LATE_ADD) + 3], cache) is None
+
+
+def test_an_unparseable_later_cleanup_is_no_vote_and_a_scan_that_runs_out_is_none_found(monkeypatch, image):
+    insns = {"bad": [(0x11, "call", "x"), (0x16, "mov", "eax, ebx"), (0x18, "add", "esp, nonsense")],
+             "short": [(0x11, "call", "x"), (0x16, "mov", "eax, ebx")]}
+    monkeypatch.setattr(vss, "_function_insns", lambda image, cache, addr: insns[addr])
+    monkeypatch.setattr(image, "func_containing", lambda va: "bad")
+    assert vss.delayed_cleanup_bytes(image, [0x11], {}) is None
+    monkeypatch.setattr(image, "func_containing", lambda va: "short")
+    assert vss.delayed_cleanup_bytes(image, [0x11], {}) == 0
+
+
 def test_an_unreadable_body_has_no_instructions(image):
     image.by_addr["00300000"] = {"body": [{"start": "00300000", "end": "00300004"}]}
     assert vss._function_insns(image, {}, "00300000") == []
@@ -132,9 +177,10 @@ def test_an_unreadable_body_has_no_instructions(image):
 
 @pytest.fixture(name = "measured")
 def fixture_measured(monkeypatch):
-    def set_measurements(ret = None, args = (None, None, None)):
+    def set_measurements(ret = None, args = (None, None, None), delayed = None):
         monkeypatch.setattr(vss, "observed_ret_imm", lambda image, f: ret)
         monkeypatch.setattr(vss, "observed_arg_bytes", lambda image, sites, cache: args)
+        monkeypatch.setattr(vss, "delayed_cleanup_bytes", lambda image, sites, cache: delayed)
     return set_measurements
 
 
@@ -155,6 +201,14 @@ def fixture_measured(monkeypatch):
 def test_a_pair_is_judged_by_what_the_targets_bytes_measure(measured, a_func, ret, args, verdict, detail):
     measured(ret, args)
     assert vss.verify_pair(a_func, {}, None, (), {}) == (verdict, detail)
+
+
+def test_a_later_cleanup_confirms_but_never_convicts(measured):
+    measured(delayed = 4)
+    assert vss.verify_pair(func([param(4)]), {}, None, (), {}) == (
+        "agree", "callers' later cleanup 4 == 4 stack bytes")
+    measured(delayed = 8)
+    assert vss.verify_pair(func([param(4)]), {}, None, (), {})[0] == "unverifiable"
 
 
 # CBase's table and two derived tables that inherit slot 0 and override slot 1; an unrelated

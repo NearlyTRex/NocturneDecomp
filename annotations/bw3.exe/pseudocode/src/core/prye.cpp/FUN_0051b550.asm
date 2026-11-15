@@ -231,8 +231,8 @@ section .text
     PUSH EAX                            ; 0051b717 | s_actionPending_d_prye_cpp_005cd1e6+1
     MOV ECX,dword ptr [0x005fb140]      ; 0051b718 | g_CEditorToolsPtr
     PUSH ECX                            ; 0051b71e
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051b71f
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051b71f
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0051b724
     JMP 0x0051b6c3                      ; 0051b727
         ;   XREF to: 0051b6c3 (UNCONDITIONAL_JUMP)  ; LAB_0051b6c3
@@ -266,8 +266,8 @@ section .text
     PUSH EAX                            ; 0051b775 | = "actionPending = %d\nprye.cpp line %d"
     MOV ECX,dword ptr [0x005fb140]      ; 0051b776 | g_CEditorToolsPtr
     PUSH ECX                            ; 0051b77c
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051b77d
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051b77d
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0051b782
     JMP 0x0051b73e                      ; 0051b785
         ;   XREF to: 0051b73e (UNCONDITIONAL_JUMP)  ; LAB_0051b73e
@@ -276,8 +276,8 @@ section .text
     PUSH 0x5cd22f                       ; 0051b78c | = "Object to pick up is now NULL\nprye.c..."
     MOV ECX,dword ptr [0x005fb140]      ; 0051b791 | g_CEditorToolsPtr
     PUSH ECX                            ; 0051b797
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051b798
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051b798
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051b79d
     JMP 0x0051b667                      ; 0051b7a0
         ;   XREF to: 0051b667 (UNCONDITIONAL_JUMP)  ; LAB_0051b667
@@ -299,8 +299,8 @@ section .text
     PUSH 0x5cd25e                       ; 0051b7c4 | = "actionPending = %d\nprye.cpp line %d"
     MOV EDX,dword ptr [0x005fb140]      ; 0051b7c9 | g_CEditorToolsPtr
     PUSH EDX                            ; 0051b7cf
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051b7d0
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051b7d0
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0051b7d5
     MOV dword ptr [EBX + 0x20b64],0x1   ; 0051b7d8
         ;   Label: LAB_0051b7d8
@@ -352,8 +352,8 @@ section .text
     PUSH 0x5cd282                       ; 0051b869 | = "actionPending = %d\nprye.cpp line %d"
     MOV EDX,dword ptr [0x005fb140]      ; 0051b86e | g_CEditorToolsPtr
     PUSH EDX                            ; 0051b874
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051b875
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051b875
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     JMP 0x0051b664                      ; 0051b87a
         ;   XREF to: 0051b664 (UNCONDITIONAL_JUMP)  ; LAB_0051b664
     MOV EAX,[0x01ed36f8]                ; 0051b87f | DAT_01ed36f8
@@ -872,8 +872,8 @@ section .text
     PUSH 0x5cd2b1                       ; 0051bf4c | = "actionPending = %d\nprye.cpp line %d"
     MOV EDI,dword ptr [0x005fb140]      ; 0051bf51 | g_CEditorToolsPtr
     PUSH EDI                            ; 0051bf57
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051bf58
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051bf58
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0051bf5d
     JMP 0x0051bff1                      ; 0051bf60
         ;   XREF to: 0051bff1 (UNCONDITIONAL_JUMP)  ; LAB_0051bff1
@@ -943,8 +943,8 @@ section .text
     PUSH 0x5cd2d5                       ; 0051bfff | = "doorToOpen == NULL\nprye.cpp line %d"
     MOV EDX,dword ptr [0x005fb140]      ; 0051c004 | g_CEditorToolsPtr
     PUSH EDX                            ; 0051c00a
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 0051c00b
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 0051c00b
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051c010
     PUSH EBX                            ; 0051c013
         ;   Label: LAB_0051c013

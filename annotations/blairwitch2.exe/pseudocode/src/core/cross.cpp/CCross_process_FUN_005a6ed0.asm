@@ -32,7 +32,7 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_melee.cpp_CMelee_process_FUN_004eacf0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
@@ -528,8 +528,8 @@ section .text
     PUSH EAX                            ; 005a754f
     LEA ESI,[EBP + 0xfffffe62]          ; 005a7550
     LEA EDI,[EBP + 0xfffffe72]          ; 005a7556
-    CALL core_xform.cpp_FUN_00594380    ; 005a755c
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 005a755c
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[EBP + 0xfffffe62]          ; 005a7561
     LEA EAX,[EBP + 0xfffffe72]          ; 005a7567
     ADD ESP,0x4                         ; 005a756d

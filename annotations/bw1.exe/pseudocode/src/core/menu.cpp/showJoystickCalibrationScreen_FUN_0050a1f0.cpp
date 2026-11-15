@@ -17,7 +17,7 @@ void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_0050a1f0(char *inst
   
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d23c,instruction_text);
   iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_0152d23c,0x58);
-  engine_font_cpp_FUN_004c1dd0
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
             (_DAT_0152d23c,instruction_text,0x140 - iVar1 / 2,0xf0 - iVar2 / 2,7,0);
   _sprintf(acStack_110,"%d,%d,%x");
   engine_2d_c_drawText_FUN_00401fe0(acStack_110,0,0);

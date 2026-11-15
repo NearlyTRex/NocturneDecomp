@@ -16,7 +16,7 @@
 ;   core_enemy.cpp_CEnemy_updateVictim_FUN_00489730 at 00489994
 ;   core_game.cpp_FUN_004c07b0 at 004c19bc
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c6c80 at 004c6dcc
-;   core_waypoint.cpp_FUN_00579130 at 00579217
+;   core_waypoint.cpp_CWayPoint_isReachable_FUN_00579130 at 00579217
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01ec1514

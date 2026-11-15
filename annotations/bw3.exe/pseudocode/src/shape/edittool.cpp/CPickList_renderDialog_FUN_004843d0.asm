@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b6f30 at 004b794f
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b794f
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450 at 004834e1
 ;
 ; Referenced Globals:

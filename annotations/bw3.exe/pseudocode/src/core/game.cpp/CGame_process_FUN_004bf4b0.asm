@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b6f9c
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b6f9c
 ;
 ; Referenced Globals:
 ;   undefined4 s_G_s_3_2f_ms_005c39af+1

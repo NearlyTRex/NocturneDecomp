@@ -133,7 +133,7 @@ LAB_004d5052:
                 iVar9 = core_hero_cpp_FUN_004cec50(this_ptr);
                 bVar2 = false;
                 if (iVar9 != 0) goto LAB_004d50f7;
-                iVar9 = core_hero_cpp_FUN_004cf030(this_ptr,0);
+                iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);
                 if ((iVar9 != 0) && (iVar9 != 1)) {
                   core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(&this_ptr->base);
                 }
@@ -339,7 +339,8 @@ LAB_004d4f1a:
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar14 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cee0b4;
-    core_xform_cpp_FUN_00594380(&this_ptr->head_look_euler);
+    core_xform_cpp_eulerToQuaternion_FUN_00594380
+              (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff44);
     source_quaternions = &CStack_ac;
     CStack_ac.w = in_stack_ffffff44;
     afStack_9c[(uint)bVar12 * -2 + -3] = *(float *)(&stack0xffffff48 + (uint)bVar12 * -8);

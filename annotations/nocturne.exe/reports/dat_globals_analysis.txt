@@ -2,18 +2,18 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2499
-Filtered out (inside named data): 111
-Immediate constants (not real globals): 72
-Real globals remaining: 2316
+Total DAT_ globals found: 2494
+Filtered out (inside named data): 113
+Immediate constants (not real globals): 67
+Real globals remaining: 2314
 
 Current type breakdown:
-  undefined4                     2257
+  undefined4                     2255
   undefined1                     36
   undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 683 / 2316
+DAT_ globals with type hints: 683 / 2314
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (484)
@@ -1094,7 +1094,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1633)
+NO TYPE HINTS (1631)
 --------------------------------------------------------------------------------
   DAT_0057c8be                    addr=0057c8be    type=undefined4      refs=1  nearby: DOUBLE_0057c8c6 at -8
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  nearby: g_CEnemyVTable at -12
@@ -1367,8 +1367,6 @@ NO TYPE HINTS (1633)
   DAT_005beaa4                    addr=005beaa4    type=undefined4      refs=1  nearby: g_CMP3DecoderDestructorNode2 at +96
   DAT_005beba0                    addr=005beba0    type=undefined4      refs=1
   DAT_005beba4                    addr=005beba4    type=undefined4      refs=1
-  DAT_005bed40                    addr=005bed40    type=undefined4      refs=2  nearby: PTR_s_int_005bed60 at -32
-  DAT_005bed44                    addr=005bed44    type=undefined4      refs=2  nearby: PTR_s_int_005bed60 at -28
   DAT_005bed70                    addr=005bed70    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +4
   DAT_005bed74                    addr=005bed74    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +8
   DAT_005bed78                    addr=005bed78    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +12
@@ -2785,7 +2783,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01c039e4                    addr=01c039e4    refs=12    type=undefined4      nearby: g_TransformMatrix(-4)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (72)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (67)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
@@ -2799,7 +2797,6 @@ They appear only as inline constant values.
   DAT_007658e4                    value=0x7658E4        refs=3
   DAT_005ae470                    value=0x5AE470        refs=3
   DAT_005b84cc                    value=0x5B84CC        refs=3
-  DAT_005c3918                    value=0x5C3918        refs=3
   DAT_005acf40                    value=0x5ACF40        refs=2
   DAT_0077d250                    value=0x77D250        refs=2
   DAT_005ae458                    value=0x5AE458        refs=2
@@ -2817,7 +2814,6 @@ They appear only as inline constant values.
   DAT_005a4810                    value=0x5A4810        refs=2
   DAT_005a4818                    value=0x5A4818        refs=2
   DAT_005c1894                    value=0x5C1894        refs=2
-  DAT_005bed10                    value=0x5BED10        refs=2
   DAT_0076595c                    value=0x76595C        refs=1
   DAT_005ad1fc                    value=0x5AD1FC        refs=1
   DAT_007658c4                    value=0x7658C4        refs=1
@@ -2858,13 +2854,10 @@ They appear only as inline constant values.
   DAT_005c1830                    value=0x5C1830        refs=1
   DAT_005b9250                    value=0x5B9250        refs=1
   DAT_005a44a0                    value=0x5A44A0        refs=1
-  DAT_005bed30                    value=0x5BED30        refs=1
-  DAT_005bed20                    value=0x5BED20        refs=1
-  DAT_005c3908                    value=0x5C3908        refs=1
   DAT_80000002                    value=0x80000002      refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (111)
+FILTERED OUT - INSIDE NAMED DATA (113)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -2967,6 +2960,8 @@ string, array, or struct and are not standalone globals.
   DAT_005b9385                    inside s_save_SAVE_TMP_005b9370
   DAT_005be230                    inside s_none_005be228
   DAT_005be234                    inside s_none_005be228
+  DAT_005bed40                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_005bed44                    inside g_DSPROPSETID_EAX_ReverbProperties
   DAT_005c1794                    inside g_CharacterClassificationTable
   DAT_005c1795                    inside g_CharacterClassificationTable
   DAT_005c1ab8                    inside s_Stack_Overflow_005c1aa4

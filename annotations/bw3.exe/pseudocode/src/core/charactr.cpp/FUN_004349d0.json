@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 60,
+    "complexity_score": 61,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 5,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [
     {
@@ -44,13 +44,13 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_FUN_004349d0",
-    "signature": "void core_charactr_cpp_FUN_004349d0(int param_1,undefined4 param_2)"
+    "signature": "void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2)"
   },
   "function_calls": [
     {
       "addr": "00579430",
       "is_variadic": false,
-      "name": "core_waypoint.cpp_FUN_00579430"
+      "name": "core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00579430"
     }
   ],
   "globals": [],
@@ -96,7 +96,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_004349d0(int param_1,uint param_2)",
+      "text": "void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -104,31 +104,31 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_004349d0(int param_1,uint param_2)",
+      "text": "void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_waypoint_cpp_FUN_00579430(param_1 + 0x20,param_2,*(uint *)(param_1 + 0x27a8));",
+      "text": "((CWayPoint *)(param_1 + 0x20),param_2,*(int *)(param_1 + 0x27a8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_waypoint_cpp_FUN_00579430(param_1 + 0x20,param_2,*(uint *)(param_1 + 0x27a8));",
+      "text": "((CWayPoint *)(param_1 + 0x20),param_2,*(int *)(param_1 + 0x27a8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_waypoint_cpp_FUN_00579430(param_1 + 0x20,param_2,*(uint *)(param_1 + 0x27a8));",
+      "text": "((CWayPoint *)(param_1 + 0x20),param_2,*(int *)(param_1 + 0x27a8));",
       "type": "unnamed_param"
     }
   ]

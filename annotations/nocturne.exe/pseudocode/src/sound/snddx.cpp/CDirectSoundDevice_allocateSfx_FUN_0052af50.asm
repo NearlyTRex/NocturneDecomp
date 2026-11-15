@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Duplicate_sound_buffer_00594435
 ;   TerminatedCString s_get_DirectSound3DBuffer_0059444c
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005c3918
+;   GUID g_IID_IDirectSound3DBuffer
 ;   CConsole g_CConsoleInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -276,7 +276,7 @@ section .text
         ;   Label: LAB_0052b1cc
     ADD EDX,ESI                         ; 0052b1d1
     PUSH EDX                            ; 0052b1d3 | DAT_02dc932c
-    PUSH 0x5c3918                       ; 0052b1d4 | DAT_005c3918
+    PUSH 0x5c3918                       ; 0052b1d4 | g_IID_IDirectSound3DBuffer
     MOV EAX,EDI                         ; 0052b1d9
     MOV EDI,dword ptr [EDI]             ; 0052b1db
     PUSH EAX                            ; 0052b1dd

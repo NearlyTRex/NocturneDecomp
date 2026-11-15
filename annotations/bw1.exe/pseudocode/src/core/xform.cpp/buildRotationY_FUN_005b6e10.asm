@@ -26,7 +26,7 @@
 ;   core_doc.cpp_FUN_0046f740 at 0046f861
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0 at 004cb539
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0 at 004c92a0
-;   core_stranger.cpp_FUN_0058afe0 at 0058b105
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0 at 0058b105
 ;
 ; *****************************************************************************
 

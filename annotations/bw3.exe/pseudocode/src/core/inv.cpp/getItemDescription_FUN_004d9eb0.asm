@@ -34,7 +34,7 @@ section .text
     MOV EBX,0x1d5dc90                   ; 004d9eba
     XOR ESI,ESI                         ; 004d9ebf
     CALL core_inv.cpp_getItemModel_FUN_004d9d20 ; 004d9ec1
-        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemModel_FUN_004d9d20()
+        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004d9d20(CDemonActor * actor_ptr)
     MOV ECX,dword ptr [0x01d5dc88]      ; 004d9ec6 | DAT_01d5dc88
     ADD ESP,0x4                         ; 004d9ecc
     LEA EDI,[EAX + 0x78]                ; 004d9ecf

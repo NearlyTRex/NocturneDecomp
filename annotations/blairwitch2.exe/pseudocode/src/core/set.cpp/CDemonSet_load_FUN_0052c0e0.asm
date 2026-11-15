@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 0052c0fe
     PUSH EAX                            ; 0052c101
-    MOV EDX,dword ptr [0x00617e10]      ; 0052c102 | DAT_00617e10
+    MOV EDX,dword ptr [0x00617e10]      ; 0052c102 | g_CLevelLoaderPtr
     PUSH EDX                            ; 0052c108
     CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052c109
         ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -921,7 +921,7 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 0052cae5
     PUSH EAX                            ; 0052cae8
-    MOV ECX,dword ptr [0x00617e10]      ; 0052cae9 | DAT_00617e10
+    MOV ECX,dword ptr [0x00617e10]      ; 0052cae9 | g_CLevelLoaderPtr
     PUSH ECX                            ; 0052caef
     CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052caf0
         ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -983,7 +983,7 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 0052cb80
     PUSH EAX                            ; 0052cb83
-    MOV ESI,dword ptr [0x00617e10]      ; 0052cb84 | DAT_00617e10
+    MOV ESI,dword ptr [0x00617e10]      ; 0052cb84 | g_CLevelLoaderPtr
     PUSH ESI                            ; 0052cb8a
     CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052cb8b
         ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)

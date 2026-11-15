@@ -13,6 +13,7 @@
 #include "types/classes/CDoor.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWayPoint.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/funcdefs/ColorConversionFunc.h"
@@ -36,9 +37,9 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_0043043
 void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_004304e0(CCharacter *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
-undefined4 core_charactr_cpp_FUN_004307b0(void);
+int __cdecl core_charactr_cpp_CCharacter_returnZero_FUN_004307b0(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004307c0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_004307f0(void);
+void __cdecl core_charactr_cpp_CCharacter_doNothing_FUN_004307f0(CCharacter *this_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_00430800(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00430810(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00430870(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
@@ -46,7 +47,7 @@ int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a
 int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(CCharacter *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00431610(CCharacter *this_ptr,float timeout);
@@ -83,11 +84,11 @@ float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a6
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0(CCharacter *this_ptr,int layer_action_index);
 void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2);
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(CCharacter *this_ptr,int bone_index);
-undefined4 core_charactr_cpp_FUN_00434190(CCharacter *param_1,float param_2);
+int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810(CCharacter *this_ptr,char *sound_name);
 void core_charactr_cpp_FUN_00434850(int param_1,float param_2);
 int core_charactr_cpp_FUN_004348b0(int param_1,char *param_2);
-void core_charactr_cpp_FUN_004349d0(int param_1,undefined4 param_2);
+void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_00434a30(CDemonActor *actor,float x);
 undefined4 core_charactr_cpp_FUN_00434b00(int param_1);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_00434b10(SFire *this_ptr);
@@ -167,14 +168,14 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_0043c300(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filename);
 void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *this_ptr);
-void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
+void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043cb00(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043d830(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043d9b0(CCloth *this_ptr,SClothVertex *vertex);
 void __cdecl core_cloth_cpp_CCloth_process_FUN_0043e270(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void core_cloth_cpp_FUN_0043f110(void);
-void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3);
+void __cdecl core_cloth_cpp_FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043f370(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_0043f8c0(CClothList *this_ptr);

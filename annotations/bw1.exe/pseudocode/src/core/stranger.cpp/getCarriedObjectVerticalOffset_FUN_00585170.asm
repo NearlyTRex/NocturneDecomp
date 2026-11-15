@@ -11,9 +11,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0 at 0058bfb2
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058dc56
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 005899eb
-;   core_stranger.cpp_FUN_0058afe0 at 0058bfb2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f63b9

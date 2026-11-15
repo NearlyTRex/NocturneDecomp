@@ -16,7 +16,7 @@
 ;   TerminatedCString s_boneguy_comeback_wav_005cc3e5
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     ADD EAX,0x30                        ; 0041a30d
     PUSH EAX                            ; 0041a310
     LEA ESI,[ESP + 0x4]                 ; 0041a311
-    CALL core_xform.cpp_FUN_00594380    ; 0041a315
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 0041a315
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x4]                 ; 0041a31a
     LEA EDI,[EBX + 0x10b90]             ; 0041a31e
     ADD ESP,0x4                         ; 0041a324

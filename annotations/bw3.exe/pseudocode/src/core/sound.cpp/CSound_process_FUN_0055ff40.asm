@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6f30 at 004b7a4c
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7a4c
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0055ff2c = 0056045a

@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_set_cpp_005f0790
 ;   TerminatedCString s_CDemonSet_initScene_Too_005f07a0
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
-;   undefined4 DAT_0061f2e0
+;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
 ;   undefined4 DAT_0062604c
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 0054ec77
     PUSH EAX                            ; 0054ec7a
-    MOV EDX,dword ptr [0x0061f2e0]      ; 0054ec7b | DAT_0061f2e0
+    MOV EDX,dword ptr [0x0061f2e0]      ; 0054ec7b | g_CLevelLoaderPtr
     PUSH EDX                            ; 0054ec81
     CALL core_level.cpp_CLevelLoader_update_FUN_004fe9c0 ; 0054ec82
         ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)

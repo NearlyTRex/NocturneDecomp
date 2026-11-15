@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e1db0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -61,8 +61,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 004e200f
     PUSH EDX                            ; 004e2013
     MOVSD.REP ES:EDI,ESI                ; 004e2014
-    CALL core_box.cpp_FUN_004207b0      ; 004e2016
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 004e2016
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     MOV EDI,dword ptr [EBP + 0x180]     ; 004e201b
     ADD ESP,0x8                         ; 004e2021
     TEST EDI,EDI                        ; 004e2024

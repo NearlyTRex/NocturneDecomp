@@ -14,6 +14,7 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 
 // =============================================================================
@@ -47,6 +48,9 @@ extern CGore* g_CGorePtr;
 
 // CGround*
 extern CGround* g_CGroundPtr;
+
+// CLevelLoader*
+extern CLevelLoader* g_CLevelLoaderPtr;
 
 // CMini3D*
 extern CMini3D* g_CMini3DPtr;

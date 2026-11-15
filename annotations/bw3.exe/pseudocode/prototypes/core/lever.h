@@ -29,9 +29,9 @@ void __cdecl CLever::setup(CLever *this_ptr);
 // Address: 004e0250
 void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
-// Original: core_lever.cpp_FUN_004e04b0
+// Original: core_lever.cpp_CLever_setState_FUN_004e04b0
 // Address: 004e04b0
-void FUN_004e04b0(int param_1,float param_2,int param_3);
+void __cdecl CLever::setState(CLever *this_ptr,float new_state,int silent);
 
 // Original: core_lever.cpp_CLever_activate_FUN_004e0630
 // Address: 004e0630

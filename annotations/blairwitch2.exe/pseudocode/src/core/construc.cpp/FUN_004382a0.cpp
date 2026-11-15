@@ -14,27 +14,27 @@ void core_construc_cpp_FUN_004382a0(int param_1)
   uint *puVar3;
   uint *puVar4;
   uint *puVar5;
-  byte bVar6;
-  int aiStackY_1800 [1525];
-  uint local_24;
+  uint *puVar6;
+  byte bVar7;
+  float afStackY_1800 [1525];
+  CQuaternion4f local_24;
   int local_14;
   
-  bVar6 = 0;
+  bVar7 = 0;
   local_14 = 0;
   if (0 < *(int *)(param_1 + 0x10c14)) {
     puVar3 = (uint *)(param_1 + 0x10c50);
     iVar2 = param_1;
     do {
-      core_xform_cpp_FUN_00594380(*(int *)(iVar2 + 0x10c5c) + 0x30);
-      puVar4 = (uint *)(iVar2 + 0x10c34 + (uint)bVar6 * -8);
-      *(uint *)(iVar2 + 0x10c30) = local_24;
-      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-      *puVar4 = *(uint *)(&stack0xffffffe0 + (uint)bVar6 * -8);
-      *puVar5 = *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      puVar5[(uint)bVar6 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
-            ((uint)bVar6 * -2 + 1) * 4);
+      core_xform_cpp_eulerToQuaternion_FUN_00594380
+                ((CVector3f *)(*(int *)(iVar2 + 0x10c5c) + 0x30),&local_24);
+      puVar5 = (uint *)(iVar2 + 0x10c34 + (uint)bVar7 * -8);
+      *(float *)(iVar2 + 0x10c30) = local_24.w;
+      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
+      puVar4 = (uint *)((int)&local_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      *puVar5 = *(uint *)((int)&local_24 + (uint)bVar7 * -8 + 4);
+      *puVar6 = *puVar4;
+      puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
       *(uint *)(*(int *)(iVar2 + 0x10c5c) + 0x1334) = 0;
       iVar1 = *(int *)(iVar2 + 0x10c5c);
       if (puVar3 != (uint *)(iVar1 + 0x20)) {

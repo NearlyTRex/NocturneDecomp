@@ -12,7 +12,7 @@
 ; CVector3f *      Stack[0x18]:4   transform_vector
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_00534ea0 at 00535b0b
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 at 00535b0b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cf9ba

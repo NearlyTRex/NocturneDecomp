@@ -13,7 +13,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
 {
   CHero *this_ptr_00;
   int iVar1;
-  uint uVar2;
+  int image_variant;
   
   while( true ) {
     if (_DAT_01d06aa0 < 1) {
@@ -29,7 +29,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
     core_mission_cpp_CDemonMission_loadSet_FUN_0051b610
               (this_ptr,*(int *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
     DAT_01d33b20 = '\0';
-    core_mission_cpp_FUN_0051b7b0(this_ptr);
+    core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004cf5e0(g_CGamePtr);
     this_ptr_00 = *(CHero **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_0051b1d0
@@ -40,12 +40,13 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     if (iVar1 != 0) {
       core_game_cpp_CGame_displayActStats_FUN_004d8700(g_CGamePtr);
-      uVar2 = 0xffffffff;
+      image_variant = -1;
     }
     else {
-      uVar2 = 1;
+      image_variant = 1;
     }
-    core_level_cpp_FUN_004fe840(0x01D1BD1C,9,iVar1 != 0,uVar2);
+    core_level_cpp_CLevelLoader_show_FUN_004fe840
+              (g_CLevelLoaderPtr,9,(uint)(iVar1 != 0),image_variant);
     core_mission_cpp_CDemonMission_load_FUN_0051a3f0(this_ptr,&DAT_01d33b20,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(this_ptr,&this_ptr_00->base);
     if ((iVar1 == 0) ||

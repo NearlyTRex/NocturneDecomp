@@ -61,9 +61,9 @@ CVector3f * __stack2_esi CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,uint
 // Address: 0041d920
 int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041daf0
+// Original: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 // Address: 0041daf0
-undefined4 FUN_0041daf0(CBoundingBox3D *param_1,int param_2);
+int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr,int skip_shadow_test);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0
 // Address: 0041dcd0
@@ -73,9 +73,9 @@ int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 // Address: 0041e100
 float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041e220
+// Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041e220
 // Address: 0041e220
-float FUN_0041e220(float *param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041e8b0
 // Address: 0041e8b0

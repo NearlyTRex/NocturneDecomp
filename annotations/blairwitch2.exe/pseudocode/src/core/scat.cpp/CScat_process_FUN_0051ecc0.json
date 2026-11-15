@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 684,
-    "complexity_score": 853,
+    "complexity_score": 864,
     "cross_reference_count": 0,
     "function_call_count": 27,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 333,
-    "suspect_count": 47,
+    "pseudocode_lines": 334,
+    "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,7 +21,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1017
+    "total_lines": 1018
   },
   "cross_references": [],
   "function": {
@@ -165,7 +165,7 @@
     {
       "addr": "00594380",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00594380"
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_00594380"
     },
     {
       "addr": "00436710",
@@ -518,8 +518,16 @@
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 321,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "(&this_ptr->head_euler_angles,(CQuaternion4f *)&stack0xffffff60);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 322,
+      "line": 323,
       "match": "in_stack_ffffff60",
       "severity": "moderate",
       "text": "auStack_90._0_4_ = in_stack_ffffff60;",
@@ -527,7 +535,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 322,
+      "line": 323,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_90._0_4_ = in_stack_ffffff60;",
@@ -535,7 +543,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 324,
+      "line": 325,
       "match": "&stack0xffffff64",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff64 + (uint)bVar14 * -8);",
@@ -543,7 +551,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 326,
+      "line": 327,
       "match": "&stack0xffffff68",
       "severity": "moderate",
       "text": "*(float *)(&stack0xffffff68 + (uint)bVar14 * -8 + (uint)bVar14 * -8);",
@@ -551,7 +559,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 328,
+      "line": 329,
       "match": "&stack0xffffff68",
       "severity": "moderate",
       "text": "*(float *)((int)(&stack0xffffff68 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +",
@@ -559,7 +567,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 334,
+      "line": 335,
       "match": "in_stack_00000024",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000024);",
@@ -615,7 +623,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff68 + (uint)bVar14 * -8 + (uint)bVar14 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 328,
+      "line": 329,
       "match": "(int)(&stack0xffffff68 + (uint)bVar14 * -8 + (uint)bVar14 * -8)",
       "severity": "moderate",
       "text": "*(float *)((int)(&stack0xffffff68 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +",

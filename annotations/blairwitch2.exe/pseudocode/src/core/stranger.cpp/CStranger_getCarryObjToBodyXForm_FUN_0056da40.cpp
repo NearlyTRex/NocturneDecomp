@@ -10,19 +10,20 @@ CMatrix3x4f * __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FU
 
 {
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  float afStack_38 [12];
+  CMatrix3x4f CStack_38;
   
   bVar4 = 0;
-  core_stranger_cpp_FUN_00568500
-            (this_ptr,(this_ptr->base).base.carry_hands[hand_index].carry_actor,hand_index);
-  pfVar2 = afStack_38;
+  core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_00568500
+            (this_ptr,(this_ptr->base).base.carry_hands[hand_index].carry_actor,hand_index,
+             &CStack_38);
+  pCVar2 = &CStack_38;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return out_matrix;

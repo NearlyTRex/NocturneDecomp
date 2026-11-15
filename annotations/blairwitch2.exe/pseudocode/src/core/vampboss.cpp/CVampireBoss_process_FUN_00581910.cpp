@@ -567,9 +567,10 @@ LAB_00582508:
     if (pCVar5->letterbox_mode == 0) {
       iVar6 = this_ptr->waypoint_index;
       (this_ptr->base).base.walk_step_speed = _DAT_005fd830 * delta_time;
-      core_charactr_cpp_FUN_00428260
-                (this_ptr,*(float *)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0x3e4ccccd,
-                 0x497423f0,&this_ptr->follow_result);
+      core_charactr_cpp_CCharacter_followActor_FUN_00428260
+                ((CCharacter *)this_ptr,
+                 *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar6 + 7) * 4),0.2,999999.0,
+                 &this_ptr->follow_result);
       switch(this_ptr->follow_result) {
       default:
         fVar21 = ((this_ptr->base).base.max_hit_points * delta_time) / _DAT_005fd838 +

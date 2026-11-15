@@ -5552,7 +5552,8 @@
   },
   {
     "addr":"00447350",
-    "conv":"unknown",
+    "cls":"CActorDestination",
+    "conv":"__cdecl",
     "data_refs":[
       "005f4eb0",
       "005f4ed8",
@@ -5560,12 +5561,22 @@
       "005f6378"
     ],
     "instructions":2,
-    "method":"FUN_00447350",
-    "name":"core_dest.cpp_FUN_00447350",
-    "receiver":false,
+    "method":"getCollisionType",
+    "name":"core_dest.cpp_CActorDestination_getCollisionType_FUN_00447350",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"enum",
+      "name":"ECollisionType",
       "ptr":0
     },
     "tu":"core/dest.cpp",
@@ -6626,14 +6637,49 @@
       "00466360",
       "005b7ff0"
     ],
-    "conv":"unknown",
+    "cls":"CDrawSurface",
+    "conv":"__cdecl",
     "instructions":165,
-    "method":"FUN_00466a50",
-    "name":"cockpit_drawsurf.cpp_FUN_00466a50",
-    "receiver":false,
+    "method":"drawDashedLine",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00466a50",
+    "params":[
+      {
+        "name":"x1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
@@ -7981,14 +8027,14 @@
       "0055f500",
       "0055f550"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_0047bbd0",
-    "name":"shape_edittool.cpp_FUN_0047bbd0",
+    "method":"restoreScreen",
+    "name":"shape_edittool.cpp_restoreScreen_FUN_0047bbd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -12020,15 +12066,50 @@
       "004fcda0",
       "005b8be2"
     ],
-    "conv":"unknown",
+    "cls":"CGore",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_004c9bd0",
-    "name":"core_gore.cpp_FUN_004c9bd0",
-    "receiver":false,
+    "method":"spawnFlies",
+    "name":"core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"gather_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"spawn_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"box_size",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CFlies",
+      "ptr":1
     },
     "tu":"core/gore.cpp",
     "variadic":false
@@ -16484,15 +16565,34 @@
       "005b910c",
       "005b929c"
     ],
-    "conv":"unknown",
+    "cls":"CPodFile",
+    "conv":"__stack2_esi",
     "instructions":80,
-    "method":"FUN_0051ad50",
-    "name":"engine_pod.cpp_FUN_0051ad50",
-    "receiver":false,
+    "method":"getAuditRecord",
+    "name":"engine_pod.cpp_CPodFile_getAuditRecord_FUN_0051ad50",
+    "params":[
+      {
+        "name":"record_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_record",
+        "type":{
+          "kind":"class",
+          "name":"CPodAuditRecord",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CPodAuditRecord",
+      "ptr":1
     },
     "tu":"engine/pod.cpp",
     "variadic":false
@@ -21961,15 +22061,34 @@
       "00587c30",
       "005ba1f0"
     ],
-    "conv":"unknown",
+    "cls":"CWayPoint",
+    "conv":"__cdecl",
     "instructions":137,
-    "method":"FUN_005882d0",
-    "name":"core_waypoint.cpp_FUN_005882d0",
-    "receiver":false,
+    "method":"findNearestReachable",
+    "name":"core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005882d0",
+    "params":[
+      {
+        "name":"start_waypoint",
+        "type":{
+          "kind":"class",
+          "name":"CWayPoint",
+          "ptr":1
+        }
+      },
+      {
+        "name":"skip_path_check",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CWayPoint",
+      "ptr":1
     },
     "tu":"core/waypoint.cpp",
     "variadic":false

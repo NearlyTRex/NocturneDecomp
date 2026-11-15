@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0 at 005adf80
 ;   core_dmodel.cpp_loadModel_FUN_0044fba0 at 0044fc2a
-;   core_level.cpp_FUN_004e1480 at 004e1505
+;   core_level.cpp_CLevelLoader_show_FUN_004e1480 at 004e1505
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052cc50
 ;
 ; Referenced Globals:

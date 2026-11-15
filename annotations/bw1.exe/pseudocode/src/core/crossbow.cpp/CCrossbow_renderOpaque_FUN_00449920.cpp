@@ -14,28 +14,31 @@ int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00449920(CCrossbow *thi
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  int in_stack_ffffffc0;
-  uint auStack_28 [7];
+  CBoundingBox3D *this_ptr_00;
+  int in_stack_ffffffc4;
+  float in_stack_ffffffc8;
+  uint auStack_20 [5];
   
   bVar4 = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_28;
+  this_ptr_00 = (CBoundingBox3D *)&stack0xffffffc8;
+  puVar2 = auStack_20;
   puVar3 = (uint *)&stack0xffffffc0;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_004207b0(&stack0xffffffc0);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_00,in_stack_ffffffc4);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     return 0;
   }
   animation_frame = core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0044a0c0(this_ptr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-            (&(this_ptr->base).model,animation_frame,in_stack_ffffffc0);
+            (&(this_ptr->base).model,animation_frame,(int)in_stack_ffffffc8);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   return iVar1;
 }

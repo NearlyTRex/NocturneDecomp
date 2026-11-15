@@ -4,10 +4,15 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x620000
 // =============================================================================
+
+// GUID
+extern GUID g_IID_IDirectSound3DListener;
+extern GUID g_IID_IDirectSound3DBuffer;
 
 // undefined4
 extern undefined4 DAT_00622010;

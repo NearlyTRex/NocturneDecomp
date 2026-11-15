@@ -77,9 +77,9 @@ void __cdecl clampWeaponAmmoCount(CDemonActor *actor_ptr);
 // Address: 004f7690
 int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 
-// Original: core_inv.cpp_FUN_004f8b70
+// Original: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70
 // Address: 004f8b70
-void FUN_004f8b70(CInventory *param_1,CDemonActor *param_2);
+void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weapon);
 
 // Original: core_inv.cpp_FUN_004f8c40
 // Address: 004f8c40

@@ -18,9 +18,9 @@
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0 at 0041fbb2
 ;   core_course.cpp_CCourse_interpolate_FUN_00438cf0 at 00438ee8
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390 at 00473414
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60 at 00472cb9
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0 at 004769bd
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50 at 00476a6d
-;   core_dtrace.cpp_FUN_00472c60 at 00472cb9
 ;   ... and 18 more
 ;
 ; Referenced Globals:

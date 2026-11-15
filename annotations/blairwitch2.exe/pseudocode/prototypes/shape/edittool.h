@@ -117,9 +117,9 @@ void __cdecl drawSingleButtonPrompt(char *title,char *message,int color);
 // Address: 0047baf0
 void __cdecl CEditorTools::backupScreen(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0047bbd0
+// Original: shape_edittool.cpp_restoreScreen_FUN_0047bbd0
 // Address: 0047bbd0
-void FUN_0047bbd0(void);
+void __cdecl restoreScreen(void);
 
 // Original: shape_edittool.cpp_paintWindowBackground_FUN_0047bca0
 // Address: 0047bca0
@@ -131,19 +131,19 @@ void __cdecl CEditorTools::showMessage(CEditorTools *this_ptr,char *format);
 
 // Original: shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 // Address: 0047bdf0
-void __cdecl CEditorTools::showWarning(CEditorTools *this_ptr,char *format);
+void __cdecl CEditorTools::showWarning(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 // Address: 0047be40
 void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format);
 
-// Original: shape_edittool.cpp_FUN_0047be90
+// Original: shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 // Address: 0047be90
-void FUN_0047be90(undefined4 param_1,char *param_2);
+void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_FUN_0047bf80
+// Original: shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80
 // Address: 0047bf80
-void FUN_0047bf80(void);
+void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0
 // Address: 0047c0f0
@@ -389,9 +389,9 @@ void FUN_00481ca0(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *
 // Address: 00481e00
 void FUN_00481e00(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: shape_edittool.cpp_FUN_00481e20
+// Original: shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20
 // Address: 00481e20
-void FUN_00481e20(CStrList *param_1,char *param_2,char *param_3);
+void __cdecl CStrList::populateWithFullPaths(CStrList *this_ptr,char *base_path,char *search_path);
 
 // Original: shape_edittool.cpp_CPickList_ctor_FUN_00481fc0
 // Address: 00481fc0
@@ -485,9 +485,9 @@ void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 // Address: 00483ea0
 void __cdecl draw3DBorder(int left,int top,int right,int bottom,int pressed);
 
-// Original: shape_edittool.cpp_FUN_004840f0
+// Original: shape_edittool.cpp_draw3DInsetBorder_FUN_004840f0
 // Address: 004840f0
-void FUN_004840f0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int pressed_offset,int direction);
 
 // Original: shape_edittool.cpp_CEdScrollBar_ctor_FUN_00484310
 // Address: 00484310
@@ -581,9 +581,9 @@ int __cdecl CEdCheck::calculateBaseWidth(CEdCheck *this_ptr);
 // Address: 004855f0
 int __cdecl CEdCheck::calculateSpacing(CEdCheck *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00485610
+// Original: shape_edittool.cpp_CEdCheck_render_FUN_00485610
 // Address: 00485610
-void FUN_00485610(CEdCheck *param_1);
+void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_wildcardStringMatch_FUN_00485840
 // Address: 00485840

@@ -68,9 +68,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
   CVector3f CStack_12c;
   byte auStack_120 [24];
   float fStack_108;
-  float fStack_104;
-  float fStack_100;
-  float fStack_fc;
+  CVector3f CStack_104;
   byte auStack_f8 [16];
   float fStack_e8;
   CVector3f CStack_e4;
@@ -143,8 +141,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
          *(float *)(auStack_a0 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
     if (&fStack_108 != &fStack_168) {
       fStack_108 = fStack_168;
-      fStack_104 = afStack_164[0];
-      fStack_100 = afStack_164[1];
+      CStack_104.x = afStack_164[0];
+      CStack_104.y = afStack_164[1];
     }
   }
   iVar6 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"@CHolycross" + 1);
@@ -152,8 +150,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
     iStack_40 = 1;
     if ((CLocation *)&fStack_108 != &this_ptr->location) {
       fStack_108 = (this_ptr->location).position.x;
-      fStack_104 = (this_ptr->location).position.y;
-      fStack_100 = (this_ptr->location).position.z;
+      CStack_104.x = (this_ptr->location).position.y;
+      CStack_104.y = (this_ptr->location).position.z;
     }
     auStack_120._0_4_ = 0.0;
     auStack_120._4_4_ = 2.0;
@@ -323,16 +321,18 @@ LAB_0040a2aa:
     iStack_28 = 0;
     pCStack_1c = (CGlass *)&this_ptr->location;
     while( true ) {
-      fVar3 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&fStack_104,&CStack_b0);
+      fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                        (g_CDemonSetPtr,&CStack_104,&CStack_b0);
       iVar6 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"CHolycross");
       if ((iVar6 != 0) && ((fVar3 < 0.0 || (1.0 < fVar3)))) {
-        if ((CGlass *)&fStack_104 != pCStack_1c) {
-          fStack_104 = ((CVector3f *)&pCStack_1c->base)->x;
-          fStack_100 = ((CVector3f *)&pCStack_1c->base)->y;
-          fStack_fc = ((CVector3f *)&pCStack_1c->base)->z;
+        if ((CGlass *)&CStack_104 != pCStack_1c) {
+          CStack_104.x = *(float *)&pCStack_1c->base;
+          CStack_104.y = *(float *)((int)pCStack_1c + 4);
+          CStack_104.z = *(float *)((int)pCStack_1c + 8);
         }
-        fStack_100 = fStack_100 + _DAT_005b5689;
-        fVar3 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&fStack_104,&CStack_b0);
+        CStack_104.y = CStack_104.y + _DAT_005b5689;
+        fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_0053ccc0
+                          (g_CDemonSetPtr,&CStack_104,&CStack_b0);
       }
       if ((fVar3 < 0.0) || (1.0 < fVar3)) break;
       pCStack_14 = (CCharacter *)
@@ -437,13 +437,14 @@ LAB_0040a2aa:
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                   (&unaff_EBX->base,&g_CDemonSetPtr->collision_impact_position,
                    (CVector3f *)auStack_58);
-        fStack_100 = (float)auStack_58._0_4_;
-        (&fStack_fc)[(uint)bVar11 * -2] = *(float *)(auStack_58 + (uint)bVar11 * -8 + 4);
+        CStack_104.y = (float)auStack_58._0_4_;
+        *(uint *)(auStack_f8 + (uint)bVar11 * -8 + -4) =
+             *(uint *)(auStack_58 + (uint)bVar11 * -8 + 4);
         *(uint *)(auStack_f8 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
              *(uint *)(auStack_58 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-        if (&fStack_264 != &fStack_100) {
-          fStack_264 = fStack_100;
-          fStack_260 = fStack_fc;
+        if (&fStack_264 != &CStack_104.y) {
+          fStack_264 = CStack_104.y;
+          fStack_260 = CStack_104.z;
           fStack_25c = (float)auStack_f8._0_4_;
         }
         (*(((unaff_EBX->base).vtable._uc)->_uc).processDamage)(unaff_EBX,(SDamageInfo *)auStack_280)

@@ -58,7 +58,8 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004b1fb0(CCrater *this_ptr,CVect
   pCVar3 = g_CDemonSetPtr;
   this_ptr->has_smoke = 0;
   this_ptr->smoke_delay = 0.1;
-  local_14 = (float)core_setcolid_cpp_FUN_005562c0(pCVar3,&this_ptr->center_position,0);
+  local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+                       (pCVar3,&this_ptr->center_position,0.0);
   (this_ptr->center_position).y = local_14;
   pCVar5 = this_ptr;
   do {
@@ -123,16 +124,20 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004b1fb0(CCrater *this_ptr,CVect
     this_ptr->corner_positions[3].y = local_44;
     this_ptr->corner_positions[3].z = local_40;
   }
-  local_14 = (float)core_setcolid_cpp_FUN_005562c0(g_CDemonSetPtr,this_ptr->corner_positions,0);
+  local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+                       (g_CDemonSetPtr,this_ptr->corner_positions,0.0);
   pCVar3 = g_CDemonSetPtr;
   this_ptr->corner_positions[0].y = local_14 + (float)_DAT_005df3ec;
-  local_14 = (float)core_setcolid_cpp_FUN_005562c0(pCVar3,this_ptr->corner_positions + 1,0);
+  local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+                       (pCVar3,this_ptr->corner_positions + 1,0.0);
   pCVar3 = g_CDemonSetPtr;
   this_ptr->corner_positions[1].y = local_14 + (float)_DAT_005df3ec;
-  local_14 = (float)core_setcolid_cpp_FUN_005562c0(pCVar3,this_ptr->corner_positions + 2,0);
+  local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+                       (pCVar3,this_ptr->corner_positions + 2,0.0);
   pCVar3 = g_CDemonSetPtr;
   this_ptr->corner_positions[2].y = local_14 + (float)_DAT_005df3ec;
-  fVar4 = (float)core_setcolid_cpp_FUN_005562c0(pCVar3,this_ptr->corner_positions + 3,0);
+  fVar4 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+                    (pCVar3,this_ptr->corner_positions + 3,0.0);
   fVar1 = this_ptr->corner_positions[0].y;
   fVar2 = (this_ptr->center_position).y;
   this_ptr->corner_positions[3].y = fVar4 + (float)_DAT_005df3ec;

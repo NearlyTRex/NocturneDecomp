@@ -8,8 +8,8 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be058
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5252
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be84a
-;   core_game.cpp_FUN_004b5190 at 004b5252
 ;   core_menu.cpp_FUN_004ebf10 at 004ebfcf
 ;   core_menu.cpp_configureCustomKeys_FUN_004ecc70 at 004eccb4
 ;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed2a9

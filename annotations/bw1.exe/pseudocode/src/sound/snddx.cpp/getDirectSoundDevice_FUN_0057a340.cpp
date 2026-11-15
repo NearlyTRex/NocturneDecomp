@@ -55,7 +55,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0057a340(U
           }
           iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00575570();
           if ((1 < iVar1) && (1 < *(int *)(device_id * 0x11c + 0x2c8115c))) {
-            (**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);
+            (**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&g_IID_IDirectSound3DListener,&DAT_02c81da0);
           }
           return (CDirectSoundDevice *)&DAT_02c8283c;
         }

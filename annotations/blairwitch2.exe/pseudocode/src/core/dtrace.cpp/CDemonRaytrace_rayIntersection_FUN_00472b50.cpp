@@ -31,7 +31,8 @@ CVector3f * __stack3_esi core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_0047
   float fStack_14;
   
   bVar3 = 0;
-  fVar1 = (float)core_dtrace_cpp_FUN_00472c60(this_ptr,ray_start,ray_end,0,0);
+  fVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
+                    (this_ptr,ray_start,ray_end,(CVector3f *)0x0,(int *)0x0);
   fStack_14 = fVar1;
   if ((0.0 <= fVar1) && (fVar1 < 1.0)) {
     fStack_38 = ray_end->x - ray_start->x;

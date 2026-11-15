@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   volume
 ;
 ; XREF[7]:
-;   core_bodypart.cpp_FUN_00416970 at 00416b05
+;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00416970 at 00416b05
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d57b
 ;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0 at 0041f346
 ;   core_fire.cpp_CStake_spawn_FUN_00497ac0 at 00497d12

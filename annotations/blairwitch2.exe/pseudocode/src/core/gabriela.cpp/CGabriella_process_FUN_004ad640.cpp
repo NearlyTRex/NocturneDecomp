@@ -716,7 +716,7 @@ LAB_004adc3d:
     if (this_ptr->weapon_state_flags == 0) {
       if ((this_ptr->draw_blend <= 0.0) &&
          (iVar9 = core_hero_cpp_FUN_004cec50(this_ptr), iVar9 == 0)) {
-        iVar9 = core_hero_cpp_FUN_004cf030(this_ptr,0);
+        iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);
         switch(iVar9) {
         case 0:
         case 1:

@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_inv.cpp_getItemModel_FUN_004d9d20
 // Address: 004d9d20
-CDemonActor * getItemModel(CDemonActor *param_1);
+CKeyFramedModelInstance * __cdecl getItemModel(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_getItemDisplayName_FUN_004d9e40
 // Address: 004d9e40
@@ -61,9 +61,9 @@ void FUN_004da840(void);
 // Address: 004da880
 int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 
-// Original: core_inv.cpp_FUN_004db8d0
+// Original: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0
 // Address: 004db8d0
-void FUN_004db8d0(CInventory *param_1,int param_2);
+void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weapon);
 
 // Original: core_inv.cpp_FUN_004db990
 // Address: 004db990

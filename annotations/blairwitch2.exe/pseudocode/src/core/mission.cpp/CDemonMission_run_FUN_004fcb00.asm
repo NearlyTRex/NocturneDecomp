@@ -20,7 +20,7 @@
 ;   TerminatedCString s_hq_geo_005de8e4
 ;   CFieldNotes* g_CFieldNotesPtr = 01caf56c
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_00617e10
+;   CLevelLoader* g_CLevelLoaderPtr = 01d03000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CGameInstance.act_completion_state
 ;   undefined4 DAT_01cedee0
@@ -33,8 +33,9 @@
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170
-;   core_level.cpp_FUN_004e1480
+;   core_level.cpp_CLevelLoader_show_FUN_004e1480
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490
@@ -42,7 +43,6 @@
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004fc570
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00
-;   core_mission.cpp_FUN_004fc820
 ;   crt_string.c__stricmp_FUN_005bada0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   ... and 1 more
@@ -87,8 +87,8 @@ section .text
     XOR AH,AH                           ; 004fcb63
     PUSH EBX                            ; 004fcb65
     MOV byte ptr [0x01d1c630],AH        ; 004fcb66 | DAT_01d1c630
-    CALL core_mission.cpp_FUN_004fc820  ; 004fcb6c
-        ;   XREF to: 004fc820 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc820()
+    CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820 ; 004fcb6c
+        ;   XREF to: 004fc820 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fcb71
     MOV ESI,dword ptr [0x00616494]      ; 004fcb74 | g_CGamePtr
     PUSH ESI                            ; 004fcb7a
@@ -165,11 +165,11 @@ section .text
     PUSH EBP                            ; 004fcc3a
     PUSH EAX                            ; 004fcc3b
     PUSH 0x9                            ; 004fcc3c
-    MOV EDX,dword ptr [0x00617e10]      ; 004fcc3e | DAT_00617e10
+    MOV EDX,dword ptr [0x00617e10]      ; 004fcc3e | g_CLevelLoaderPtr
     PUSH EDX                            ; 004fcc44
     MOV EDI,EBP                         ; 004fcc45
-    CALL core_level.cpp_FUN_004e1480    ; 004fcc47
-        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e1480()
+    CALL core_level.cpp_CLevelLoader_show_FUN_004e1480 ; 004fcc47
+        ;   XREF to: 004e1480 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004e1480(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
         ;   Label: LAB_004fcc47
     ADD ESP,0x10                        ; 004fcc4c
     PUSH 0x0                            ; 004fcc4f
@@ -206,7 +206,7 @@ section .text
         ;   Label: LAB_004fcc99
     PUSH EBP                            ; 004fcc9b
     PUSH 0x9                            ; 004fcc9c
-    MOV EAX,[0x00617e10]                ; 004fcc9e | DAT_00617e10
+    MOV EAX,[0x00617e10]                ; 004fcc9e | g_CLevelLoaderPtr
     PUSH EAX                            ; 004fcca3
     JMP 0x004fcc47                      ; 004fcca4
         ;   XREF to: 004fcc47 (UNCONDITIONAL_JUMP)  ; LAB_004fcc47

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   mode
 ;
 ; XREF[26]:
-;   cockpit_pkbitmap.cpp_FUN_00538130 at 0053813f
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00538130 at 0053813f
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60 at 004a9b44
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870 at 004a9954
 ;   core_event.cpp_FUN_004a1d00 at 004a1e87
@@ -16,7 +16,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d64ff
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d72d9
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 005032d7
-;   core_podmain.cpp_FUN_0053d580 at 0053d59b
+;   core_podmain.cpp_CDemonPod_load_FUN_0053d580 at 0053d59b
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005477b4
 ;   ... and 16 more
 ;

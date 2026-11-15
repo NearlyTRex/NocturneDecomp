@@ -18,7 +18,7 @@
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790
-;   shape_edittool.cpp_FUN_0047be90
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   support_trisock.cpp_createNetworkAddr_FUN_00578e60
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH 0x5e0464                       ; 0050b42a
     MOV EDX,dword ptr [0x006138e0]      ; 0050b42f | g_CEditorToolsPtr
     PUSH EDX                            ; 0050b435
-    CALL shape_edittool.cpp_FUN_0047be90 ; 0050b436
-        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be90()
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 ; 0050b436
+        ;   XREF to: 0047be90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b43b
     PUSH 0x0                            ; 0050b43e
     PUSH EBX                            ; 0050b440

@@ -116,7 +116,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_pt
             iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004eb090(&this_ptr->base);
             bVar4 = false;
             if (iVar9 != 0) goto LAB_004e965f;
-            iVar9 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
+            iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(&this_ptr->base,0);
             if ((iVar9 != 0) && (iVar9 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);
             }

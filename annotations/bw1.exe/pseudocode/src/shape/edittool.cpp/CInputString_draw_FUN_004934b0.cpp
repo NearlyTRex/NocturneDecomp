@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
   int iVar2;
   int iVar3;
   int y2;
-  CInputString *pCVar4;
+  CInputString *text;
   CInputString local_420 [3];
   int local_20;
   int local_1c;
@@ -50,7 +50,7 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
   }
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
-  pCVar4 = this_ptr;
+  text = this_ptr;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
       _DAT_01d1d400 = "..\\shape\\edittool.cpp";
@@ -59,9 +59,10 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_004934b0(CInputString *thi
     }
     memset(local_420,0x2a,this_ptr->current_length);
     local_420[0].string_data[this_ptr->current_length] = '\0';
-    pCVar4 = local_420;
+    text = local_420;
   }
-  engine_font_cpp_FUN_004c1dd0(_DAT_01c3eb50,pCVar4,x_pos,y_pos,_DAT_01c3f56c,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (_DAT_01c3eb50,text->string_data,x_pos,y_pos,_DAT_01c3f56c,-1);
   uVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
   if ((uVar1 & 0x40000) != 0) {
     if (_DAT_01c3f544 == 0) {

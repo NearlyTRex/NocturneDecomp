@@ -11,7 +11,7 @@
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 at 0040e265
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3c61
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d261b
-;   core_inv.cpp_FUN_004f8b70 at 004f8b94
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8b94
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_005d303f

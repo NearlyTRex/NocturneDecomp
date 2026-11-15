@@ -19,7 +19,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   undefined4 DAT_005fba60
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_006002ac
+;   CLevelLoader* g_CLevelLoaderPtr = 01d70ab8
 ;   CScript* g_CScriptPtr = 01ed73e0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CGameInstance.letterbox_mode
@@ -31,10 +31,10 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0048bfd0
-;   core_level.cpp_FUN_004e0000
+;   core_level.cpp_CLevelLoader_update_FUN_004e0000
+;   core_mission.cpp_CDemonMission_loadScript_FUN_004f63c0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
-;   core_mission.cpp_FUN_004f63c0
 ;   core_script.cpp_CScript_executeInitSection_FUN_00529920
 ;   core_script.cpp_CScript_initRuntime_FUN_005297a0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0
@@ -110,14 +110,14 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004f7650
     PUSH EAX                            ; 004f7653
-    MOV EBP,dword ptr [0x006002ac]      ; 004f7654 | DAT_006002ac
+    MOV EBP,dword ptr [0x006002ac]      ; 004f7654 | g_CLevelLoaderPtr
     PUSH EBP                            ; 004f765a
-    CALL core_level.cpp_FUN_004e0000    ; 004f765b
-        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004e0000()
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e0000 ; 004f765b
+        ;   XREF to: 004e0000 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004f7660
     PUSH EBX                            ; 004f7663
-    CALL core_mission.cpp_FUN_004f63c0  ; 004f7664
-        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f63c0()
+    CALL core_mission.cpp_CDemonMission_loadScript_FUN_004f63c0 ; 004f7664
+        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_loadScript_FUN_004f63c0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004f7669
     MOV EAX,[0x006039e0]                ; 004f766c | g_CScriptPtr
     PUSH EAX                            ; 004f7671 | g_CScriptInstance

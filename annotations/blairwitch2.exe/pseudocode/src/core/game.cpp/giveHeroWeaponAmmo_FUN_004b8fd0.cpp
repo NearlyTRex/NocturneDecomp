@@ -24,7 +24,8 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fd0(char *class_name,EAmm
     pCVar1->ammo_type = ammo_type;
     core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(pCVar1,class_name);
     pCVar1->ammo_count = 500;
-    core_inv_cpp_FUN_004dadb0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,pCVar1,1,0);
+    core_inv_cpp_CInventory_addItem_FUN_004dadb0
+              ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),&pCVar1->base,1,0);
     return;
   }
   return;

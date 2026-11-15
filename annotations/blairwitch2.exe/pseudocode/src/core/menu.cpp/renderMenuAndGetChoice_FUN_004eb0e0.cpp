@@ -18,14 +18,14 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  uint local_14;
+  int local_14;
   
   this_ptr = _DAT_01511cc0;
   if (title != (char *)0x0) {
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc0,title);
     iVar4 = (0x280 - iVar4) / 2;
-    engine_font_cpp_FUN_004a8df0(this_ptr,title,iVar4 + 1,y_position + 1,2,0);
-    engine_font_cpp_FUN_004a8df0(this_ptr,title,iVar4,y_position,0xfa,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,title,iVar4 + 1,y_position + 1,2,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,title,iVar4,y_position,0xfa,0);
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr,0x58);
     y_position = y_position + iVar4;
   }
@@ -36,13 +36,14 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
       iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(this_ptr,*ppcVar3);
       iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr,0x58);
       iVar1 = (0x280 - iVar1) / 2;
-      engine_font_cpp_FUN_004a8df0(this_ptr,*ppcVar3,iVar1,y_position + 1,4,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,*ppcVar3,iVar1,y_position + 1,4,-1);
       local_14 = 0xfc;
       if (iVar4 == *selected_index_ptr) {
         local_14 = 0xff;
       }
       engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-      engine_font_cpp_FUN_004a8df0(this_ptr,*ppcVar3,iVar1,y_position,local_14,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr,*ppcVar3,iVar1,y_position,local_14,-1)
+      ;
       y_position = y_position + iVar2;
       if (title == (char *)0x0) {
         y_position = y_position + iVar2;
@@ -54,7 +55,8 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cc4,&DAT_005dcacd);
   engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01511cc4,&DAT_005dcacd);
-  engine_font_cpp_FUN_004a8df0(_DAT_01511cc4,&DAT_005dcacd,0x280 - iVar4,0,0xfa,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004a8df0(_DAT_01511cc4,&DAT_005dcacd,0x280 - iVar4,0,0xfa,0)
+  ;
   engine_3d_c_setRenderAlpha_FUN_00406da0(0x8000);
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   pcVar6 = menu_text_array[*selected_index_ptr];

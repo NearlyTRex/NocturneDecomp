@@ -21,8 +21,9 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
-  uint auStack_3c [6];
-  uint auStack_24 [6];
+  int in_stack_ffffffc4;
+  CBoundingBox3D CStack_34;
+  uint auStack_1c [4];
   
   bVar7 = 0;
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -45,14 +46,14 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-    puVar5 = auStack_24;
-    puVar6 = auStack_3c;
+    puVar5 = auStack_1c;
+    puVar6 = (uint *)&stack0xffffffc4;
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
-    iVar4 = core_box_cpp_FUN_004207b0(auStack_3c);
+    iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_34,in_stack_ffffffc4);
     this_ptr_01 = DAT_00612560;
     if (iVar4 != 0) {
       iVar4 = this_ptr->fade_alpha;
@@ -71,7 +72,7 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     if (this_ptr->corona_added != 0) {
-      core_set_cpp_FUN_00551990(g_CDemonSetPtr,0x269cbb0);
+      core_set_cpp_FUN_00551990(g_CDemonSetPtr);
     }
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,65000);
     iVar3 = (this_ptr->base).base.was_rendered_opaque;

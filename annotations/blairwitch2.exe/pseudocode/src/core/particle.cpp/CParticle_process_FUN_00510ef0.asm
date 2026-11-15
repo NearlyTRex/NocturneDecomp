@@ -70,9 +70,9 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
 ;   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00476b50
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
-;   core_dtrace.cpp_FUN_00472c60
 ;
 ; *****************************************************************************
 
@@ -196,8 +196,8 @@ section .text
     PUSH EAX                            ; 0051105a
     PUSH 0x1fc9c68                      ; 0051105b | g_CDemonRaytraceInstance
     MOV dword ptr [ESP + 0x124],EAX     ; 00511060
-    CALL core_dtrace.cpp_FUN_00472c60   ; 00511067
-        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00472c60()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60 ; 00511067
+        ;   XREF to: 00472c60 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x12c],EAX     ; 0051106c
     FLD float ptr [ESP + 0x12c]         ; 00511073
     ADD ESP,0x14                        ; 0051107a

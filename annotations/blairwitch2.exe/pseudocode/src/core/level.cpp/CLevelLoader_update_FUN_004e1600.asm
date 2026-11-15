@@ -65,8 +65,8 @@
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
 ;   engine_drender.cpp_popViewport_FUN_0046b740
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_matrix.c_FUN_004e86b0
 ;   engine_matrix.c_FUN_004e86f0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -503,8 +503,8 @@ section .text
     PUSH ESI                            ; 004e1b32
     MOV ECX,dword ptr [ESP + 0x6c]      ; 004e1b33
     PUSH ECX                            ; 004e1b37
-    CALL engine_font.cpp_FUN_004a8df0   ; 004e1b38
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004e1b38
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004e1b3d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004e1b40
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()

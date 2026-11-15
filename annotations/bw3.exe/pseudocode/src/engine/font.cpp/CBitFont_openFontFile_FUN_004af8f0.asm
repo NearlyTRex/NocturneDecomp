@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_dfont.cpp_initFonts_FUN_00459f50 at 00459f8e
-;   engine_font.cpp_FUN_004b01d0 at 004b0474
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004b01d0 at 004b0474
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004b0190

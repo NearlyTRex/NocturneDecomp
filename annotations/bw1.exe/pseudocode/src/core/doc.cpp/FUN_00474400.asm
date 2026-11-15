@@ -993,8 +993,8 @@ section .text
     PUSH 0x5da40a                       ; 00474dde | = "actionPending = %d\ndoc.cpp line %d"
     MOV EDI,dword ptr [0x0061abc0]      ; 00474de3 | g_CEditorToolsPtr
     PUSH EDI                            ; 00474de9
-    CALL shape_edittool.cpp_FUN_00494340 ; 00474dea
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 00474dea
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00474def
     MOV dword ptr [EBX + 0x1ff5c],0x2   ; 00474df2
         ;   Label: LAB_00474df2

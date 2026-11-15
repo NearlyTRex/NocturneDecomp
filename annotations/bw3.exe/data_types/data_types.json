@@ -621,6 +621,10 @@
       "type":"struct"
     },
     {
+      "name":"CLevelLoader",
+      "type":"struct"
+    },
+    {
       "name":"CMemoryBitStream",
       "type":"struct"
     },
@@ -706,6 +710,14 @@
     },
     {
       "name":"CPickList_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CPodAuditRecord",
+      "type":"struct"
+    },
+    {
+      "name":"CPodDependencyRecord",
       "type":"struct"
     },
     {
@@ -1074,6 +1086,10 @@
     },
     {
       "name":"CRock",
+      "type":"struct"
+    },
+    {
+      "name":"CVector4i",
       "type":"struct"
     },
     {
@@ -2706,6 +2722,10 @@
     },
     {
       "name":"SProjectionParams",
+      "type":"struct"
+    },
+    {
+      "name":"SQuadVertices",
       "type":"struct"
     },
     {
@@ -26842,6 +26862,85 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"current_frame",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"total_frames",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"version",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"enabled",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":256,
+          "name":"dead",
+          "offset":16,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"use_custom_viewport",
+          "offset":272,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"viewport_x",
+          "offset":276,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"viewport_y",
+          "offset":280,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"viewport_width",
+          "offset":284,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"viewport_height",
+          "offset":288,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"color",
+          "offset":292,
+          "type":"CColor3i"
+        }
+      ],
+      "importable":true,
+      "len":304,
+      "min_alig":1,
+      "name":"CLevelLoader",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":344,
           "name":"base",
           "offset":0,
@@ -29728,6 +29827,98 @@
       "importable":true,
       "len":24,
       "name":"CPod_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":32,
+          "name":"user_path",
+          "offset":0,
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":32,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"operation_type",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":256,
+          "name":"filename",
+          "offset":40,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"original_timestamp",
+          "offset":296,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"original_file_size",
+          "offset":300,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"new_timestamp",
+          "offset":304,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"new_file_size",
+          "offset":308,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":312,
+      "min_alig":1,
+      "name":"CPodAuditRecord",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"filename",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"mount_order",
+          "offset":256,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_required",
+          "offset":260,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":264,
+      "min_alig":1,
+      "name":"CPodDependencyRecord",
       "pack":false,
       "type":"struct"
     },
@@ -34111,6 +34302,43 @@
       "importable":true,
       "len":12,
       "name":"CVector3i",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"x",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"y",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"z",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"w",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "min_alig":1,
+      "name":"CVector4i",
       "pack":false,
       "type":"struct"
     },
@@ -43950,6 +44178,25 @@
       "len":16,
       "min_alig":1,
       "name":"SProjectionParams",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":48,
+          "name":"vertices",
+          "offset":0,
+          "type":"CVector3f[4]"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "min_alig":1,
+      "name":"SQuadVertices",
       "pack":false,
       "type":"struct"
     },

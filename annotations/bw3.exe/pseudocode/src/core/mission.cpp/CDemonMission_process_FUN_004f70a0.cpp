@@ -28,7 +28,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *
     }
     this_ptr->delete_queue_count = 0;
   }
-  core_mission_cpp_FUN_004f6f80(this_ptr);
+  core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(this_ptr);
   if (-1 < (this_ptr->pending_teleport).area_id) {
     iVar2 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
     *(float *)(iVar2 + 0x20) = (this_ptr->pending_teleport).position.x;

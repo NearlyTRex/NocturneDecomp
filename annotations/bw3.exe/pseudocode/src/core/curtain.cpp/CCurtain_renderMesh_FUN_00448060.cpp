@@ -22,9 +22,10 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_00448060(CCurtain *this_ptr
   uint *puVar7;
   uint *puVar8;
   byte bVar9;
+  int in_stack_ffffff94;
   CBoundingBox3D *in_stack_ffffff98;
   uint auStack_58 [2];
-  byte auStack_50 [32];
+  CBoundingBox3D CStack_50;
   uint auStack_30 [4];
   uint auStack_20 [5];
   
@@ -38,7 +39,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_00448060(CCurtain *this_ptr
     puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
     puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
   }
-  iVar3 = core_box_cpp_FUN_0041daf0(auStack_50);
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_50,in_stack_ffffff94);
   this_ptr_00 = DAT_005f2afc;
   if (iVar3 == 0) goto LAB_0044834a;
   this_ptr->is_visible = 1;

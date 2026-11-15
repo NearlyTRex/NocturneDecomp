@@ -34,13 +34,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428260
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   ... and 28 more
 ;
 ; *****************************************************************************
@@ -1091,8 +1091,8 @@ section .text
     PUSH 0x3f800000                     ; 0053d2ce
     PUSH EDI                            ; 0053d2d3
     PUSH EAX                            ; 0053d2d4
-    CALL core_charactr.cpp_FUN_00428260 ; 0053d2d5
-        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428260()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00428260 ; 0053d2d5
+        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00428260(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0053d2da
     MOV EAX,dword ptr [EAX + 0x10b60]   ; 0053d2e0
     ADD ESP,0x14                        ; 0053d2e6
@@ -1574,8 +1574,8 @@ section .text
     PUSH 0x3f800000                     ; 0053d8d1
     PUSH EDI                            ; 0053d8d6
     PUSH EAX                            ; 0053d8d7
-    CALL core_charactr.cpp_FUN_00428260 ; 0053d8d8
-        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428260()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00428260 ; 0053d8d8
+        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00428260(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0053d8dd
     MOV EAX,dword ptr [EAX + 0x10b60]   ; 0053d8e3
     ADD ESP,0x14                        ; 0053d8e9

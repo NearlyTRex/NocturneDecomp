@@ -148,9 +148,9 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
                 (iVar3 + -1,local_14 + -1,iVar6 + 1 + iVar3,local_14 + iVar7 + 1,0);
       if (this_ptr != (CLevelLoader *)0x0) {
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_18,(char *)this_ptr);
-        engine_font_cpp_FUN_004a8df0
-                  (local_18,this_ptr,(iVar3 + iVar6 / 2) - iVar4 / 2,
-                   (local_14 + iVar7 / 2) - local_18->max_char_height / 2,0xf8,0xffffffff);
+        engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+                  (local_18,(char *)this_ptr,(iVar3 + iVar6 / 2) - iVar4 / 2,
+                   (local_14 + iVar7 / 2) - local_18->max_char_height / 2,0xf8,-1);
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

@@ -25,9 +25,9 @@ CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 // Address: 00512f90
 int __cdecl qsortByFilename(char **filename1_ptr,char **filename2_ptr);
 
-// Original: engine_pod.cpp_FUN_00512fb0
+// Original: engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0
 // Address: 00512fb0
-undefined4 FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3);
+int __cdecl CPodFile::mountFromFile(CPodFile *this_ptr,char *pod_filename,char *out_error_message);
 
 // Original: engine_pod.cpp_CPodFile_cleanup_FUN_00513b90
 // Address: 00513b90
@@ -45,13 +45,13 @@ void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFound
 // Address: 00513d20
 int __cdecl FUN_00513d20(CPodFile *this_ptr);
 
-// Original: engine_pod.cpp_FUN_00513ff0
+// Original: engine_pod.cpp_CPodFile_getAuditRecord_FUN_00513ff0
 // Address: 00513ff0
-void FUN_00513ff0(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi CPodFile::getAuditRecord(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
 
-// Original: engine_pod.cpp_FUN_00514110
+// Original: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_00514110
 // Address: 00514110
-void FUN_00514110(int param_1,int param_2);
+CPodDependencyRecord * __stack2_esi CPodFile::getDependencyRecord(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
 
 // Original: engine_pod.cpp_FUN_00514220
 // Address: 00514220
@@ -67,11 +67,11 @@ CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 
 // Original: engine_pod.cpp_FUN_005143b0
 // Address: 005143b0
-undefined4 FUN_005143b0(int *param_1,undefined4 param_2,char *param_3);
+undefined4 FUN_005143b0(int *param_1,char *param_2,char *param_3);
 
-// Original: engine_pod.cpp_FUN_005144b0
+// Original: engine_pod.cpp_CPod_remount_FUN_005144b0
 // Address: 005144b0
-void FUN_005144b0(int *param_1);
+void __cdecl CPod::remount(CPod *this_ptr);
 
 // Original: engine_pod.cpp_CPod_dismount_FUN_00514560
 // Address: 00514560
@@ -103,7 +103,7 @@ void FUN_005149c0(void);
 
 // Original: engine_pod.cpp_FUN_00514bb0
 // Address: 00514bb0
-int FUN_00514bb0(undefined4 param_1,undefined4 param_2);
+int FUN_00514bb0(undefined4 param_1,char *param_2);
 
 // Original: engine_pod.cpp_CPod_locateFile_FUN_00514c20
 // Address: 00514c20

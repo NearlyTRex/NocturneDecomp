@@ -2,11 +2,11 @@
 // Address: 005143b0
 // Address Range: [[005143b0, 005144ac]]
 // Convention: unknown
-// Signature: undefined4 engine_pod_cpp_FUN_005143b0(int *param_1,undefined4 param_2,char *param_3)
+// Signature: undefined4 engine_pod_cpp_FUN_005143b0(int *param_1,char *param_2,char *param_3)
 
 #include "nocturne.h"
 
-uint engine_pod_cpp_FUN_005143b0(int *param_1,uint param_2,char *param_3)
+uint engine_pod_cpp_FUN_005143b0(int *param_1,char *param_2,char *param_3)
 
 {
   char cVar1;
@@ -35,7 +35,7 @@ uint engine_pod_cpp_FUN_005143b0(int *param_1,uint param_2,char *param_3)
     } while (cVar1 != '\0');
   }
   else {
-    iVar2 = engine_pod_cpp_FUN_00512fb0(pCVar3,param_2,param_3);
+    iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00512fb0(pCVar3,param_2,param_3);
     if (iVar2 != 0) {
       (**(code **)(param_1[0x65] + 0x10))(param_1,param_2);
       if (*param_1 < 100) {

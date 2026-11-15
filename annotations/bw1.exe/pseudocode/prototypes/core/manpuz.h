@@ -61,9 +61,9 @@ void __cdecl CMansionPuzzleCircle::onLaserHit(CMansionPuzzleCircle *this_ptr,SLa
 // Address: 00504cb0
 void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_00504ee0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00504ee0
 // Address: 00504ee0
-void FUN_00504ee0(CDemonActor *param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::updatePanelTransform(CMansionPuzzleCircle *this_ptr,int panel_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0
 // Address: 00504fe0

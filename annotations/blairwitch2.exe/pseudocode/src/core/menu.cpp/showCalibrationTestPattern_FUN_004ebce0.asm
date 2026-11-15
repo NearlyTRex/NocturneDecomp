@@ -20,9 +20,9 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 004ebdb3
     MOV EBX,dword ptr [0x01511cc4]      ; 004ebdb4 | DAT_01511cc4
     PUSH EBX                            ; 004ebdba
-    CALL engine_font.cpp_FUN_004a8df0   ; 004ebdbb
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004ebdbb
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004ebdc0
     PUSH 0x5dcb62                       ; 004ebdc3 | = "Monitor calibration"
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004ebdc8
@@ -155,8 +155,8 @@ section .text
     PUSH ESI                            ; 004ebdfd
     MOV EAX,[0x01511cc4]                ; 004ebdfe | DAT_01511cc4
     PUSH EAX                            ; 004ebe03
-    CALL engine_font.cpp_FUN_004a8df0   ; 004ebe04
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004ebe04
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004ebe09
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004ebe0c
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()

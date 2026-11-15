@@ -39,7 +39,8 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00484f20(CEdButton *this_ptr
   iVar5 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(_DAT_01c25590,0x41);
   iVar3 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar3) / 2;
   local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar4 + iVar5)) / 2;
-  engine_font_cpp_FUN_004a8df0(_DAT_01c25590,pcVar8,iVar3,local_14,_DAT_01c263f8,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004a8df0
+            (_DAT_01c25590,pcVar8,iVar3,local_14,_DAT_01c263f8,-1);
   if (_DAT_01c25f84 == 0) {
     _DAT_01c35e60 = _DAT_01c263f8;
   }

@@ -20,7 +20,7 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20 at 0054b0a5
 ;   core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0 at 0054b2c6
 ;   core_script.cpp_CScript_initRuntime_FUN_00544190 at 0054423a
-;   core_script.cpp_FUN_00543e00 at 00543e5b
+;   core_script.cpp_CScript_loadScript_FUN_00543e00 at 00543e5b
 ;   engine_dosio.cpp_splitPath_FUN_00479580 at 0047959c
 ;
 ; Called Functions:

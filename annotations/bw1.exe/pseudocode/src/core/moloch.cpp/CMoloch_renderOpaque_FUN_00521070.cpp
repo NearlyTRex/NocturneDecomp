@@ -15,9 +15,10 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00521070(CMoloch *this_ptr)
   int iVar1;
   int iVar2;
   uint *puVar3;
+  int unaff_EDI;
   uint *puVar4;
   byte bVar5;
-  uint auStack_34 [6];
+  uint auStack_2c [4];
   uint auStack_1c [6];
   
   bVar5 = 0;
@@ -29,14 +30,15 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00521070(CMoloch *this_ptr)
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-    puVar3 = auStack_34;
+    puVar3 = auStack_2c;
     puVar4 = auStack_1c;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar4 = *puVar3;
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar1 = core_box_cpp_FUN_004207b0(auStack_1c);
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0
+                      ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
     if (iVar1 != 0) {
       iVar2 = this_ptr->morphing;
       (this_ptr->base).base.was_rendered_opaque = 1;

@@ -11,7 +11,8 @@
 void __cdecl core_game_cpp_drawCreditsLine_FUN_004ccb00(char *text_string)
 
 {
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d244,text_string,_DAT_01cd0c4c,_DAT_01cd0c50,7,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (_DAT_0152d244,text_string,_DAT_01cd0c4c,_DAT_01cd0c50,7,-1);
   _DAT_01cd0c50 = _DAT_01cd0c50 + _DAT_01cd0c54;
   if (_DAT_01cd0c50 <= DAT_0061b49c + _DAT_01cd0c54 * -4) {
     return;

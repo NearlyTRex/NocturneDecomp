@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   binary_mode
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00440a70 at 00440a84
+;   support_codec.cpp_CCodec_processFiles_FUN_00440a70 at 00440a84
 ;
 ; Referenced Globals:
 ;   undefined1* g_CInStreamFileVTable = 00573a40

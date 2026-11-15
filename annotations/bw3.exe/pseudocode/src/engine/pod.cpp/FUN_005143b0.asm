@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_pod_cpp_FUN_005143b0(int *param_1,undefined4 param_2,char *param_3)
+; undefined4 engine_pod_cpp_FUN_005143b0(int *param_1,char *param_2,char *param_3)
 ;
 ;
 ; Referenced Globals:
@@ -13,7 +13,7 @@
 ;   crt_unknown.c_FUN_005a30c4
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00512f00
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00512f70
-;   engine_pod.cpp_FUN_00512fb0
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005143d4
     PUSH EDX                            ; 005143d8
     PUSH EBX                            ; 005143d9
-    CALL engine_pod.cpp_FUN_00512fb0    ; 005143da
-        ;   XREF to: 00512fb0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_00512fb0()
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0 ; 005143da
+        ;   XREF to: 00512fb0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0(CPodFile * this_ptr, char * pod_filename, char * out_error_message)
     ADD ESP,0xc                         ; 005143df
     TEST EAX,EAX                        ; 005143e2
     JNZ 0x0051443a                      ; 005143e4

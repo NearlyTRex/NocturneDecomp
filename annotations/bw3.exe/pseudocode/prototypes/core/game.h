@@ -73,9 +73,9 @@ void drawKeyBindingEntry(void);
 // Address: 004b51e0
 void __cdecl CGame::showCustomizableKeys(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004b6f30
+// Original: core_game.cpp_CGame_processFrame_FUN_004b6f30
 // Address: 004b6f30
-void FUN_004b6f30(CGame *param_1);
+void __cdecl CGame::processFrame(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_setGameRes_FUN_004b7de0
 // Address: 004b7de0

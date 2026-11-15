@@ -15,8 +15,8 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029d8
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015ad
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e9a
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a8603
 ;   engine_font.cpp_FUN_004a7fd0 at 004a813b
-;   engine_font.cpp_FUN_004a85a0 at 004a8603
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e76
 ;   engine_texture.cpp_FUN_00575150 at 00575249
 ;   ... and 5 more

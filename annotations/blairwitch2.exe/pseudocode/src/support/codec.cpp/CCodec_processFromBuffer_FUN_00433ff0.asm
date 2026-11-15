@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_00433ff0(CCodec *this_ptr,char *input,int *input_length,COutStream *ostream)
+; int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_00433ff0(CCodec *this_ptr,char *input,int *input_length,void *ostream)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   input
 ; int *            Stack[0xc]:4   input_length
-; COutStream *     Stack[0x10]:4   ostream
+; void *           Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

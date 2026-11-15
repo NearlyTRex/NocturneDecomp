@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004ce990
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce990
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

@@ -4983,17 +4983,28 @@
   },
   {
     "addr":"0043a1b0",
-    "conv":"unknown",
+    "cls":"CCrate",
+    "conv":"__cdecl",
     "data_refs":[
       "005f4b84"
     ],
     "instructions":1,
-    "method":"FUN_0043a1b0",
-    "name":"core_crate.cpp_FUN_0043a1b0",
-    "receiver":false,
+    "method":"renderBackground",
+    "name":"core_crate.cpp_CCrate_renderBackground_FUN_0043a1b0",
+    "params":[
+      {
+        "name":"layer_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/crate.cpp",
@@ -6290,6 +6301,14 @@
           "name":"CDemonActor",
           "ptr":1
         }
+      },
+      {
+        "name":"ignore_lock",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
       }
     ],
     "receiver":true,
@@ -6866,14 +6885,49 @@
     "calls":[
       "00467610"
     ],
-    "conv":"unknown",
+    "cls":"CDrawSurface",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_004674b0",
-    "name":"cockpit_drawsurf.cpp_FUN_004674b0",
-    "receiver":false,
+    "method":"drawSolidRectangle",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0",
+    "params":[
+      {
+        "name":"x1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
@@ -11904,14 +11958,49 @@
       "004c5bb0",
       "005b7f5f"
     ],
-    "conv":"unknown",
+    "cls":"CGlass",
+    "conv":"__cdecl",
     "instructions":1226,
-    "method":"FUN_004c5bb0",
-    "name":"core_glass.cpp_FUN_004c5bb0",
-    "receiver":false,
+    "method":"createShatterParticles",
+    "name":"core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0",
+    "params":[
+      {
+        "name":"quad_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SQuadVertices",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_u",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quad_uv_v",
+        "type":{
+          "kind":"class",
+          "name":"CVector4i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"subdivision_level",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/glass.cpp",
@@ -12211,14 +12300,25 @@
       "00460630",
       "005838f0"
     ],
-    "conv":"unknown",
+    "cls":"CHero",
+    "conv":"__cdecl",
     "instructions":140,
-    "method":"FUN_004cf030",
-    "name":"core_hero.cpp_FUN_004cf030",
-    "receiver":false,
+    "method":"tryOpenNearbyDoor",
+    "name":"core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030",
+    "params":[
+      {
+        "name":"ignore_lock",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/hero.cpp",
@@ -12733,14 +12833,33 @@
     "calls":[
       "005b7790"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_004d8c30",
-    "name":"engine_ini.cpp_FUN_004d8c30",
-    "receiver":false,
+    "method":"setFloatValue",
+    "name":"engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -12846,14 +12965,41 @@
       "005b8130",
       "005b8c30"
     ],
-    "conv":"unknown",
+    "cls":"CInventory",
+    "conv":"__cdecl",
     "instructions":782,
-    "method":"FUN_004dadb0",
-    "name":"core_inv.cpp_FUN_004dadb0",
-    "receiver":false,
+    "method":"addItem",
+    "name":"core_inv.cpp_CInventory_addItem_FUN_004dadb0",
+    "params":[
+      {
+        "name":"item_actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"show_tutorial_message",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"unused_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/inv.cpp",
@@ -21127,14 +21273,41 @@
       "00513650",
       "00513ea0"
     ],
-    "conv":"unknown",
+    "cls":"CWayPoint",
+    "conv":"__cdecl",
     "instructions":105,
-    "method":"FUN_00587c30",
-    "name":"core_waypoint.cpp_FUN_00587c30",
-    "receiver":false,
+    "method":"isReachable",
+    "name":"core_waypoint.cpp_CWayPoint_isReachable_FUN_00587c30",
+    "params":[
+      {
+        "name":"from_location",
+        "type":{
+          "kind":"class",
+          "name":"CLocation",
+          "ptr":1
+        }
+      },
+      {
+        "name":"use_tight_bounds",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_path_check",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/waypoint.cpp",

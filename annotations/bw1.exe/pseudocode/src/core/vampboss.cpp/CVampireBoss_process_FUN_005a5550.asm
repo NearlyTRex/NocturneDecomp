@@ -35,10 +35,10 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90
+;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
-;   core_charactr.cpp_FUN_00431cc0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_cloth.cpp_CCloth_process_FUN_00440610
 ;   ... and 20 more
@@ -1538,8 +1538,8 @@ section .text
     PUSH 0x3e4ccccd                     ; 005a684a
     PUSH ECX                            ; 005a684f
     PUSH EBX                            ; 005a6850
-    CALL core_charactr.cpp_FUN_00431cc0 ; 005a6851
-        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431cc0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 ; 005a6851
+        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00431cc0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBX + 0xbf3f8]   ; 005a6856
     ADD ESP,0x14                        ; 005a685c
     CMP EAX,0x3                         ; 005a685f

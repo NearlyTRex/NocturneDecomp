@@ -13,13 +13,13 @@
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 004101dc
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411f19
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 0041344e
-;   core_bugs.cpp_FUN_00420840 at 00420a83
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840 at 00420a83
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 at 00426c40
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 00427533
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 004297e9
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428260 at 004283e8
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acea
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 0042891a
-;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 at 00423884
 ;   ... and 78 more
 ;
 ; Called Functions:

@@ -208,8 +208,8 @@ section .text
     PUSH EAX                            ; 0056b66e
     MOV EDX,dword ptr [0x00603b28]      ; 0056b66f | g_CDemonSetPtr
     PUSH EDX                            ; 0056b675 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0056b676
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0056b676
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x1c8],EAX     ; 0056b67b
     FLD float ptr [ESP + 0x1c8]         ; 0056b682
     ADD ESP,0xc                         ; 0056b689

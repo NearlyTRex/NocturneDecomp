@@ -26,11 +26,11 @@
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0
 ;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
 ;   core_hero.cpp_FUN_004cec50
-;   core_hero.cpp_FUN_004cf030
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0056a240
@@ -95,8 +95,8 @@ section .text
         ;   XREF to: 0056e578 (CONDITIONAL_JUMP)  ; LAB_0056e578
     PUSH 0x0                            ; 0056e53e
     PUSH EBX                            ; 0056e540
-    CALL core_hero.cpp_FUN_004cf030     ; 0056e541
-        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf030()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030 ; 0056e541
+        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 0056e546
     CMP EAX,0x5                         ; 0056e549
     JA 0x0056e658                       ; 0056e54c

@@ -10,6 +10,9 @@ CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
 // CDemonSet*
 CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 
+// CLevelLoader*
+CLevelLoader* g_CLevelLoaderPtr = (CLevelLoader*)&g_CLevelLoaderInstance;
+
 // CMini3D*
 CMini3D* g_CMini3DPtr = (CMini3D*)&g_CMini3DInstance;
 
@@ -27,6 +30,13 @@ CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
 
 // CWater*
 CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
+
+// GUID
+GUID g_IID_IKsPropertySet = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
+GUID g_DSPROPSETID_VoiceManager = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00, 0xC0, 0x4F, 0xC9, 0x9D, 0x46}};
+GUID g_DSPROPSETID_EAX_ReverbProperties = {0x4A4E6FC1, 0xC341, 0x11D1, {0xB7, 0x3A, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00}};
+GUID g_IID_IDirectSound3DBuffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+GUID g_IID_IDirectSound3DListener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
 
 // RuntimeHandlerEntry[172]
 RuntimeHandlerEntry g_InitHandlers[172] = {

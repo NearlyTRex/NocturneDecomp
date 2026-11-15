@@ -7,13 +7,13 @@
 ; CFileFinder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_podmain.cpp_FUN_005152e0 at 00515362
+;   core_podmain.cpp_CDemonPod_load_FUN_005152e0 at 00515362
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80 at 00465b86
 ;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0 at 00465baf
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482c18
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482e17
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020 at 00483120
 ;   shape_edittool.cpp_FUN_00482ea0 at 00482f45
-;   shape_edittool.cpp_FUN_00483020 at 00483120
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005b3554 = 001b3d64

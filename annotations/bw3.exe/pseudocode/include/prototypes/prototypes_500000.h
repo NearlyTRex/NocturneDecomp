@@ -164,7 +164,7 @@ void core_passngr_cpp_FUN_0050abc0(void);
 void __cdecl core_path_cpp_queuePop_FUN_0050ac40(int *out_x,int *out_cost,int *out_z);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_0050acc0(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_0050ad40(CPathMap *this_ptr,uint flags);
-float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5);
+float __cdecl core_path_cpp_CPathMap_getDirection_FUN_0050ae20(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position);
 void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_0050b1d0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320(CPathMap *this_ptr,int grid_z,int grid_x,int current_height);
 int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_0050b3c0(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height);
@@ -222,7 +222,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_0050fce0(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0050fd30(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_0050fd90(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,char *param_2);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_0050fe10(CPackedBitmap *this_ptr,char *filename);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0050fe90(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0050ff60(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 

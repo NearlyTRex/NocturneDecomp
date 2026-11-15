@@ -2,16 +2,16 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 3642
-Filtered out (inside named data): 2721
-Immediate constants (not real globals): 98
-Real globals remaining: 3544
-Clusters detected: 336
-DAT_ globals in clusters: 3448
+Total DAT_ globals found: 3625
+Filtered out (inside named data): 2732
+Immediate constants (not real globals): 93
+Real globals remaining: 3532
+Clusters detected: 335
+DAT_ globals in clusters: 3435
 
 Classification summary:
   unknown              93 clusters
-  vector_groups        80 clusters
+  vector_groups        79 clusters
   struct               70 clusters
   array                61 clusters
   struct_array         18 clusters
@@ -19,7 +19,7 @@ Classification summary:
   byte_blob            5 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (98)
+LIKELY IMMEDIATE CONSTANTS (93)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -86,7 +86,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61510c                       ; 00494819 | DAT_0061510c
 
   DAT_0061b97c  value=0x61B97C (6404476)  refs=3
-    FUN_00538d10
+    CDemonSet_evaluateVirtualDirector
       MOV EAX,0x61b97c                    ; 00538f58 | DAT_0061b97c
 
   DAT_0061fe4c  value=0x61FE4C (6422092)  refs=3
@@ -136,10 +136,10 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x6167f0                       ; 004c9b04 | DAT_006167f0
 
   DAT_00617968  value=0x617968 (6388072)  refs=2
+    CFootstep_render
+      PUSH 0x617968                       ; 004c9099 | DAT_00617968
     CGore_loadAssets
       PUSH 0x617968                       ; 004c9bb2 | DAT_00617968
-    FUN_004c9000
-      PUSH 0x617968                       ; 004c9099 | DAT_00617968
 
   DAT_00617da4  value=0x617DA4 (6389156)  refs=2
     drawItemIconBackground
@@ -162,12 +162,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0061f15c  value=0x61F15C (6418780)  refs=2
     FUN_005be750
       CMP EBX,0x61f15c                    ; 005be781 | DAT_0061f15c
-
-  DAT_00621070  value=0x621070 (6426736)  refs=2
-    CDirectSoundDevice_allocateSfx
-      PUSH 0x621070                       ; 005564ba | DAT_00621070
-    CDirectSoundDevice_setMode
-      PUSH 0x621070                       ; 0055579d | DAT_00621070
 
   DAT_005cab4e  value=0x5CAB4E (6073166)  refs=1
     archiveActor
@@ -354,7 +348,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5db516                       ; 004dac35 | DAT_005db516
 
   DAT_00617e14  value=0x617E14 (6389268)  refs=1
-    FUN_004e1480
+    CLevelLoader_show
       PUSH 0x617e14                       ; 004e150d | DAT_00617e14
 
   DAT_0061ef88  value=0x61EF88 (6418312)  refs=1
@@ -436,22 +430,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00618100  value=0x618100 (6390016)  refs=1
     fillRect
       PUSH 0x618100                       ; 004f92e4 | DAT_00618100
-
-  DAT_0061bf50  value=0x61BF50 (6405968)  refs=1
-    CDirectSoundDevice_setMode
-      PUSH 0x61bf50                       ; 005559d9 | DAT_0061bf50
-
-  DAT_0061bf60  value=0x61BF60 (6405984)  refs=1
-    CDirectSoundDevice_setMode
-      PUSH 0x61bf60                       ; 005557fd | DAT_0061bf60
-
-  DAT_0061bf70  value=0x61BF70 (6406000)  refs=1
-    CDirectSoundDevice_setReverb
-      PUSH 0x61bf70                       ; 005577f0 | DAT_0061bf70
-
-  DAT_00621060  value=0x621060 (6426720)  refs=1
-    getDirectSoundDevice
-      PUSH 0x621060                       ; 00557a64 | DAT_00621060
 
   DAT_02662df0  value=0x2662DF0  refs=1
     displayMessageBoxAndQuit
@@ -874,7 +852,7 @@ HIGH CONFIDENCE (32 clusters)
       0x01326fa1  DAT_01326fa1  undefined4
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (139 clusters)
+MEDIUM CONFIDENCE (138 clusters)
 --------------------------------------------------------------------------------
 
   0x0264baa8 - 0x0264bf80  (175 items, 1240 bytes span)
@@ -1571,34 +1549,6 @@ MEDIUM CONFIDENCE (139 clusters)
       0x005fb3fc  DAT_005fb3fc  undefined4 [float]
       ... +6 more
 
-  0x00617cd0 - 0x00617e4c  (12 items, 380 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 55 functions
-     near: g_CKeyActorClassVersion (int) at -236
-      0x00617cd0  DAT_00617cd0  undefined4
-      0x00617cd4  DAT_00617cd4  undefined4
-      0x00617cd8  DAT_00617cd8  undefined4
-      0x00617cdc  DAT_00617cdc  undefined4
-      0x00617d40  DAT_00617d40  undefined4
-      0x00617d44  DAT_00617d44  undefined4
-      ... +6 more
-
-  0x0061bf80 - 0x0061c068  (12 items, 232 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 76 functions
-     near: PTR_DAT_0061c060 (void*) at -224
-      0x0061bf80  DAT_0061bf80  undefined4
-      0x0061bf84  DAT_0061bf84  undefined4
-      0x0061bf88  DAT_0061bf88  undefined4
-      0x0061bf8c  DAT_0061bf8c  undefined4
-      0x0061bf90  DAT_0061bf90  undefined4
-      0x0061bf94  DAT_0061bf94  undefined4
-      ... +6 more
-
   0x0070c5b4 - 0x0070c638  (12 items, 132 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -1678,6 +1628,20 @@ MEDIUM CONFIDENCE (139 clusters)
       0x0060d23c  DAT_0060d23c  undefined4
       0x0060d244  DAT_0060d244  undefined4
       0x0060d254  DAT_0060d254  undefined4
+      ... +5 more
+
+  0x00617cd0 - 0x00617e4c  (11 items, 380 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 47 functions
+     near: g_CKeyActorClassVersion (int) at -236
+      0x00617cd0  DAT_00617cd0  undefined4
+      0x00617cd4  DAT_00617cd4  undefined4
+      0x00617cd8  DAT_00617cd8  undefined4
+      0x00617cdc  DAT_00617cdc  undefined4
+      0x00617d40  DAT_00617d40  undefined4
+      0x00617d44  DAT_00617d44  undefined4
       ... +5 more
 
   0x01326d00 - 0x01326d22  (11 items, 34 bytes span)
@@ -4394,8 +4358,9 @@ LOW CONFIDENCE (165 clusters)
       0x026656c0  DAT_026656c0  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (96 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (97 - not part of any cluster)
 --------------------------------------------------------------------------------
+  DAT_0061c068                    addr=0061c068    type=undefined4      refs=70  near: PTR_DAT_0061c064(+4)
   DAT_0061ed94                    addr=0061ed94    type=undefined4      refs=39 [likely byte]  near: g_CChainClassVersion(+60)
   DAT_0264161c                    addr=0264161c    type=undefined4      refs=20
   DAT_01cab9f0                    addr=01cab9f0    type=undefined4      refs=16
@@ -4445,11 +4410,10 @@ ISOLATED DAT_ GLOBALS (96 - not part of any cluster)
   DAT_005ff71c                    addr=005ff71c    type=undefined4      refs=1 [likely float]  near: g_CUnionZombieTypeInfo(+60)
   DAT_006002bc                    addr=006002bc    type=undefined4      refs=1 [likely float]  near: g_CGrandmaTypeInfo(+44)
   DAT_005f44a8                    addr=005f44a8    type=undefined4      refs=1  near: g_CLZWCompressTypeInfo(+56)
-  DAT_005efccf                    addr=005efccf    type=undefined4      refs=1 [likely double]  near: s_Death_005efcd7(-8)
-  ... +46 more
+  ... +47 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2721)
+FILTERED OUT - INSIDE NAMED DATA (2732)
 --------------------------------------------------------------------------------
   DAT_005ca030                    inside s_default_act_005ca024
   DAT_005ca034                    inside s_default_act_005ca024
@@ -7154,6 +7118,17 @@ FILTERED OUT - INSIDE NAMED DATA (2721)
   DAT_006164dd                    inside s_save_SAVE_TMP_006164c8
   DAT_0061b470                    inside s_none_0061b468
   DAT_0061b474                    inside s_none_0061b468
+  DAT_0061bf80                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf84                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf88                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf8c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf90                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf94                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf98                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bf9c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa0                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa4                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0061bfa8                    inside g_DSPROPSETID_EAX_ReverbProperties
   DAT_0061e280                    inside s_d3d_dll_0061e183
   DAT_0061f1a0                    inside s_s_0123456789abcdefghijkl_0061f178
   DAT_0061f1a4                    inside s_s_0123456789abcdefghijkl_0061f178

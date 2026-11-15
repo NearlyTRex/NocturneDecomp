@@ -29,9 +29,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110(CDemo
   }
   local_20.y = local_20.y + _DAT_005f0e1d;
   local_2c.y = local_2c.y + _DAT_005f0e21;
-  local_10 = (float)core_dtrace_cpp_FUN_0048b150
-                              (&g_CDemonRaytraceInstance,&local_20,&local_2c,
-                               &this_ptr->collision_normal,&this_ptr->ground_type);
+  local_10 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150
+                       (&g_CDemonRaytraceInstance,&local_20,&local_2c,&this_ptr->collision_normal,
+                        &this_ptr->ground_type);
   local_30 = local_10;
   if (local_10 < 0.0) {
     local_30 = 1.01;

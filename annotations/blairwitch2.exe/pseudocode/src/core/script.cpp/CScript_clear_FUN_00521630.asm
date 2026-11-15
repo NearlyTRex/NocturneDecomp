@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90 at 004fcad5
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521606
-;   core_script.cpp_FUN_00521cf0 at 00521d02
+;   core_script.cpp_CScript_loadScript_FUN_00521cf0 at 00521d02
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_freeParsedLines_FUN_00521680

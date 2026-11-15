@@ -106,9 +106,9 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
                   (g_CConsolePtr,"pB%s can't figure out next waypoint trying to reach %s\n" + 2);
         return 1;
       }
-      core_charactr_cpp_FUN_004310e0
+      core_charactr_cpp_CCharacter_followActor_FUN_004310e0
                 (this_ptr,pCVar5,this_ptr->walk_min_distance,this_ptr->walk_max_distance,
-                 &this_ptr->walk_state);
+                 (int *)&this_ptr->walk_state);
       return 1;
     }
     this_ptr->walk_state = WALK_STATE_IDLE;

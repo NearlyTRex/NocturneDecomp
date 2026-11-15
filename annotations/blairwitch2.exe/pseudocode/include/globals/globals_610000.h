@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/stdlib.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CEditorTools.h"
@@ -14,6 +15,7 @@
 #include "types/classes/CGameHook.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMouse.h"
 #include "types/classes/CNetGame.h"
@@ -51,6 +53,9 @@ extern CGore* g_CGorePtr;
 // CGround*
 extern CGround* g_CGroundPtr;
 
+// CLevelLoader*
+extern CLevelLoader* g_CLevelLoaderPtr;
+
 // CMini3D*
 extern CMini3D* g_CMini3DPtr;
 
@@ -71,6 +76,11 @@ extern CTextureList* g_CTextureListPtr;
 
 // CWater*
 extern CWater* g_CWaterPtr;
+
+// GUID
+extern GUID g_IID_IKsPropertySet;
+extern GUID g_DSPROPSETID_VoiceManager;
+extern GUID g_DSPROPSETID_EAX_ReverbProperties;
 
 // RuntimeHandlerEntry[203]
 extern RuntimeHandlerEntry g_InitHandlers[203];

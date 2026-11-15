@@ -38,7 +38,7 @@
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00534640
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00534580
-;   core_setdir.cpp_FUN_00538d10
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10
 ;   core_sound.cpp_CSound_init_FUN_0055a1d0
 ;   core_sound.cpp_CSound_shutdown_FUN_0055a360
 ;   crt_env.c_getenv_FUN_005bac90
@@ -694,8 +694,8 @@ section .text
     PUSH ESI                            ; 004b89ac
     MOV EDI,dword ptr [0x0061b5a8]      ; 004b89ad | g_CDemonSetPtr
     PUSH EDI                            ; 004b89b3 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00538d10   ; 004b89b4
-        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00538d10()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 ; 004b89b4
+        ;   XREF to: 00538d10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     MOV EAX,[0x0061b460]                ; 004b89b9 | g_CScriptPtr
     ADD ESP,0xc                         ; 004b89be
     MOV dword ptr [EAX + 0x10],0x0      ; 004b89c1 | g_CScriptInstance.focus_actor_changed

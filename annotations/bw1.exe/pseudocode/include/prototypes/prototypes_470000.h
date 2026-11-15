@@ -104,7 +104,7 @@ int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00478830(CDoor *
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00478840(CDoor *this_ptr);
 CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00478af0(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener);
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener,int ignore_lock);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00478d10(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00478d70(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00478dc0(char *dest_path,char *directory,char *filename);
@@ -185,7 +185,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0047ed30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void cockpit_drawsurf_cpp_FUN_0047ef60(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0047ef60(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_0047f170(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0047f1b0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0047f4a0(CDrawSurface *this_ptr,int start_x,int y,int end_x);
@@ -193,7 +193,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0047f5c0(CDr
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0047f7a0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0047f860(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_0047f8c0(CDrawSurface *this_ptr);
-void cockpit_drawsurf_cpp_FUN_0047f9c0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_0047f9c0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_FUN_0047fcf0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_0047fdf0(void);

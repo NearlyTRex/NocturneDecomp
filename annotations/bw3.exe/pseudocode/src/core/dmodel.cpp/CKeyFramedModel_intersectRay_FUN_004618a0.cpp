@@ -51,8 +51,9 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004618a0(CKeyFram
   if (frame_index < 0) {
     frame_index = 0;
   }
-  local_18 = (float)core_box_cpp_FUN_0041e220
-                              (this_ptr->frame_bounds + frame_index,ray_origin,ray_direction,0);
+  local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041e220
+                       (this_ptr->frame_bounds + frame_index,ray_origin,ray_direction,
+                        (CVector3f *)0x0);
   if ((0.0 <= local_18) && (local_18 <= 1.0)) {
     local_4c[2] = 2.0;
     if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {

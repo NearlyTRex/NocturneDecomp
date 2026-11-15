@@ -42,7 +42,7 @@
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990
-;   core_level.cpp_FUN_004fe840
+;   core_level.cpp_CLevelLoader_show_FUN_004fe840
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
 ;   core_mission.cpp_CDemonMission_load_FUN_0051a3f0
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0
@@ -53,7 +53,7 @@
 ;   engine_dosio.cpp_getFile_FUN_00479180
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004f4b00
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
-;   engine_ini.cpp_FUN_004f4d10
+;   engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -123,8 +123,8 @@ section .text
     XOR ECX,ECX                         ; 004d7331
     PUSH EAX                            ; 004d7333
     MOV dword ptr [ESP + 0x6e8],ECX     ; 004d7334
-    CALL engine_ini.cpp_FUN_004f4d10    ; 004d733b
-        ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d10()
+    CALL engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10 ; 004d733b
+        ;   XREF to: 004f4d10 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004d7340
     PUSH 0x5e3143                       ; 004d7343 | = "The Rustin Parr Investigation"
     MOV ESI,0xffffffff                  ; 004d7348
@@ -271,10 +271,10 @@ section .text
     PUSH EDI                            ; 004d74ee
     PUSH 0x0                            ; 004d74ef
     PUSH 0xa                            ; 004d74f1
-    MOV EBP,dword ptr [0x0061f2e0]      ; 004d74f3 | DAT_0061f2e0
+    MOV EBP,dword ptr [0x0061f2e0]      ; 004d74f3 | g_CLevelLoaderPtr
     PUSH EBP                            ; 004d74f9
-    CALL core_level.cpp_FUN_004fe840    ; 004d74fa
-        ;   XREF to: 004fe840 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004fe840()
+    CALL core_level.cpp_CLevelLoader_show_FUN_004fe840 ; 004d74fa
+        ;   XREF to: 004fe840 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004fe840(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
     ADD ESP,0x10                        ; 004d74ff
     PUSH ESI                            ; 004d7502
     LEA EAX,[ESP + 0x5c8]               ; 004d7503

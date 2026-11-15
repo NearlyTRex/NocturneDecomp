@@ -81,9 +81,9 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
-;   core_setcolid.cpp_FUN_005562c0
-;   shape_edittool.cpp_FUN_00494340
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340
 ;
 ; *****************************************************************************
 
@@ -293,8 +293,8 @@ section .text
     PUSH 0x5da1ac                       ; 004714f8 | s_actionPending_d_doc_cpp_005da1ab+1
     MOV EAX,[0x0061abc0]                ; 004714fd | g_CEditorToolsPtr
     PUSH EAX                            ; 00471502
-    CALL shape_edittool.cpp_FUN_00494340 ; 00471503
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 00471503
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00471508
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047150b
         ;   Label: LAB_0047150b
@@ -514,8 +514,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004717dc
     MOVSD ES:EDI,ESI                    ; 004717dd
     MOVSD ES:EDI,ESI                    ; 004717de
-    CALL core_setcolid.cpp_FUN_005562c0 ; 004717df
-        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005562c0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 ; 004717df
+        ;   XREF to: 005562c0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x110],EAX     ; 004717e4
     FLD float ptr [ESP + 0x110]         ; 004717eb
     ADD ESP,0xc                         ; 004717f2

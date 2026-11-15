@@ -699,8 +699,8 @@ section .text
     PUSH EAX                            ; 004d9a56
     MOV EDI,dword ptr [0x00622c18]      ; 004d9a57 | g_CDemonSetPtr
     PUSH EDI                            ; 004d9a5d | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 004d9a5e
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 004d9a5e
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x6b4],EAX     ; 004d9a63
     FLD float ptr [ESP + 0x6b4]         ; 004d9a6a
     ADD ESP,0xc                         ; 004d9a71
@@ -820,8 +820,8 @@ section .text
     PUSH EAX                            ; 004d9c0e
     MOV EDI,dword ptr [0x00622c18]      ; 004d9c0f | g_CDemonSetPtr
     PUSH EDI                            ; 004d9c15 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 004d9c16
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 004d9c16
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x6b4],EAX     ; 004d9c1b
     FLD float ptr [ESP + 0x6b4]         ; 004d9c22
     ADD ESP,0xc                         ; 004d9c29
@@ -919,8 +919,8 @@ section .text
     PUSH EAX                            ; 004d9d69
     MOV EDI,dword ptr [0x00622c18]      ; 004d9d6a | g_CDemonSetPtr
     PUSH EDI                            ; 004d9d70 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 004d9d71
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 004d9d71
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x6b4],EAX     ; 004d9d76
     FLD float ptr [ESP + 0x6b4]         ; 004d9d7d
     ADD ESP,0xc                         ; 004d9d84

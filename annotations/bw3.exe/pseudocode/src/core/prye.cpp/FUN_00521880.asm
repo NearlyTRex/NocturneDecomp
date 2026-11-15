@@ -81,9 +81,9 @@
 ;   core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
-;   core_setcolid.cpp_FUN_0053bc80
-;   shape_edittool.cpp_FUN_0047cee0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0
 ;
 ; *****************************************************************************
 
@@ -293,8 +293,8 @@ section .text
     PUSH 0x5cd58f                       ; 00521ac8 | s_actionPending_d_prye_cpp_005cd58e+1
     MOV EAX,[0x005fb140]                ; 00521acd | g_CEditorToolsPtr
     PUSH EAX                            ; 00521ad2
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 00521ad3
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 00521ad3
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00521ad8
     MOV EAX,dword ptr [EBP + 0x14]      ; 00521adb
         ;   Label: LAB_00521adb
@@ -514,8 +514,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00521dac
     MOVSD ES:EDI,ESI                    ; 00521dad
     MOVSD ES:EDI,ESI                    ; 00521dae
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 00521daf
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 00521daf
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x110],EAX     ; 00521db4
     FLD float ptr [ESP + 0x110]         ; 00521dbb
     ADD ESP,0xc                         ; 00521dc2

@@ -44,14 +44,13 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   float afStack_98 [4];
   CVector3f CStack_88;
   CVector3f CStack_7c;
-  float fStack_70;
-  float afStack_6c [5];
+  CVector3f aCStack_70 [2];
   float fStack_58;
   float afStack_54 [4];
   float fStack_44;
-  CDemonActor *pCStack_40;
-  float afStack_3c [4];
-  float fStack_2c;
+  CVector3f CStack_40;
+  float fStack_34;
+  float afStack_30 [2];
   int iStack_28;
   float fStack_24;
   CTrigger *pCStack_20;
@@ -68,10 +67,10 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
             ((CDemonActor *)this_ptr,input_local_point,&CStack_7c);
   auStack_134._40_4_ = CStack_7c.x;
-  (&fStack_108)[(uint)bVar5 * -2] = *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + 4);
+  (&fStack_108)[(uint)bVar5 * -2] = *(float *)((int)aCStack_70 + (uint)bVar5 * -8 + -8);
   this_ptr_04 = this_ptr;
   (&pCStack_104)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-       *(CCrossbow **)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+       *(CCrossbow **)((int)aCStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -4);
   iVar2 = core_weapon_cpp_CWeapon_fire_FUN_005adde0(&this_ptr_04->base);
   if (iVar2 == 0) {
     return 0;
@@ -87,13 +86,13 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   afStack_54[(uint)bVar5 * -2] = *(float *)((int)&CStack_88 + (uint)bVar5 * -8 + 4);
   afStack_54[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        *(float *)((int)&CStack_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  afStack_3c[2] = (float)uVar1 + fStack_58;
-  afStack_3c[3] = fVar3 + afStack_54[0];
-  fStack_2c = (float)pCStack_104 + afStack_54[1];
-  fStack_70 = (float)uVar1 + fStack_58;
-  afStack_6c[(uint)bVar5 * -2] = afStack_3c[(uint)bVar5 * -2 + 3];
-  afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+  fStack_34 = (float)uVar1 + fStack_58;
+  afStack_30[0] = fVar3 + afStack_54[0];
+  afStack_30[1] = (float)pCStack_104 + afStack_54[1];
+  aCStack_70[0].x = (float)uVar1 + fStack_58;
+  *(float *)((int)aCStack_70 + (uint)bVar5 * -8 + 4) = afStack_30[(uint)bVar5 * -2];
+  *(float *)((int)aCStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   fVar3 = fStack_108;
   uVar1 = auStack_134._40_4_;
   fStack_24 = (float)_DAT_005d739a / (this_ptr->base).bolt_velocity;
@@ -107,9 +106,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   pCStack_100 = (CDemonActor *)((float)uVar1 - afStack_54[2]);
   pCStack_fc = (CDemonActor *)(fVar3 - afStack_54[3]);
   afStack_f8[0] = (float)pCStack_104 - fStack_44;
-  pCStack_40 = (CDemonActor *)((float)uVar1 - afStack_54[2]);
-  afStack_3c[(uint)bVar5 * -2] = afStack_f8[(uint)bVar5 * -2 + -1];
-  afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+  CStack_40.x = (float)uVar1 - afStack_54[2];
+  *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) = afStack_f8[(uint)bVar5 * -2 + -1];
+  *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_f8[(uint)bVar5 * -2 + (uint)bVar5 * -2];
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(g_CDemonSetPtr,1);
@@ -120,7 +119,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
   }
   iStack_28 = 0;
   do {
-    fVar3 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,&pCStack_40,&fStack_70);
+    fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300(g_CDemonSetPtr,&CStack_40,aCStack_70);
     dVar6 = (double)fVar3;
     fStack_14 = fVar3;
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
@@ -191,7 +190,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00449a50(CCrossbow *this_ptr)
       fStack_9c = CStack_88.y;
       afStack_98[(uint)bVar5 * -2] = *(float *)((int)&CStack_88 + (uint)bVar5 * -8 + 8);
       afStack_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+           *(float *)((int)aCStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0xc);
       fVar3 = (float)_DAT_005d73a2 /
               SQRT(CStack_88.x * CStack_88.x +
                    afStack_98[2] * afStack_98[2] + afStack_98[3] * afStack_98[3]);

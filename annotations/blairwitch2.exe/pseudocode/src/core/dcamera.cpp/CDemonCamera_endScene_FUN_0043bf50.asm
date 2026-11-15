@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_zbuffer_copy
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d6ec
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f810
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e56d
-;   core_set.cpp_FUN_0052d3c0 at 0052d6ec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005ce33f

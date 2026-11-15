@@ -11,10 +11,10 @@
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0d4
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40 at 00438f8f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480 at 005384fe
-;   cockpit_pkbitmap.cpp_FUN_00538130 at 0053815c
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00538130 at 0053815c
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750 at 005387b1
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00538db0 at 00538e94
 ;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538d23
-;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538e94
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0 at 0043eb5a
 ;   core_course.cpp_CCourse_load_FUN_00447db0 at 00447ea1
 ;   ... and 57 more

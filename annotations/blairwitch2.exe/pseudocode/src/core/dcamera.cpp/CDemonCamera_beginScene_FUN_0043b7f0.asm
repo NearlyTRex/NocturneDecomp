@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_clear_buffers
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d6bd
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f321
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e459
-;   core_set.cpp_FUN_0052d3c0 at 0052d6bd
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_3_0043b7ec = 0043b876

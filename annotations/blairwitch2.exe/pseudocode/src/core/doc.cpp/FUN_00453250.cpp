@@ -148,18 +148,19 @@ LAB_00453c4c:
           }
         }
         else if (uVar2 < 3) {
-          if (param_1[1].base.base.health == 4) {
+          iVar3 = param_1[1].base.base.health;
+          if (iVar3 == 4) {
             param_1[1].base.base.health = 0;
           }
           else {
             in_stack_fffffe74 = 6.355504e-39;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",iVar3,0x899);
           }
           pCVar7 = param_1->object_to_pick_up;
           if (pCVar7 == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"Object to pick up is now NULL\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"Object to pick up is now NULL\ndoc.cpp line %d",0x89f);
           }
           else {
             iVar3 = (*((pCVar7->vtable)._ub)->canPickup)(pCVar7,(CDemonActor *)param_1);
@@ -237,7 +238,7 @@ LAB_004533c6:
             if (iVar3 == 6) goto LAB_004533c6;
             in_stack_fffffe74 = 6.355372e-39;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",iVar3,0x87a);
           }
           iVar3 = (param_1->base).layer_action_index;
           param_1->target_actor = (CDemonActor *)0x0;
@@ -355,27 +356,29 @@ LAB_004533c6:
             param_1[1].base.base.orient_matrix.m[2].y = 0.0;
           }
           core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(param_1,1);
-          if (param_1[1].base.base.health == 1) {
+          iVar3 = param_1[1].base.base.health;
+          if (iVar3 == 1) {
             param_1[1].base.base.health = 0;
           }
           else {
             in_stack_fffffe74 = 6.356153e-39;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",iVar3,0x912);
           }
         }
         else {
-          if (param_1[1].base.base.health == 5) {
+          iVar3 = param_1[1].base.base.health;
+          if (iVar3 == 5) {
             param_1[1].base.base.health = 0;
           }
           else {
             in_stack_fffffe74 = 6.357855e-39;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",iVar3,0x971);
           }
           if (param_1->door_to_open == (CDoor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"doorToOpen == NULL\ndoc.cpp line %d");
+                      (g_CEditorToolsPtr,"doorToOpen == NULL\ndoc.cpp line %d",0x977);
           }
           iVar3 = core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(param_1);
           if (iVar3 == 0) {

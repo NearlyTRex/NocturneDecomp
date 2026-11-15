@@ -1,0 +1,261 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 156,
+    "complexity_score": 67,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "pointer_cast"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "0048c2e0",
+      "from_addr": "004902ad",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e0250",
+      "from_addr": "004e045c",
+      "name": "core_lever.cpp_CLever_process_FUN_004e0250",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e04b0",
+    "address_range": [
+      [
+        "004e04b0",
+        "004e0620"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lever.cpp_CLever_setState_FUN_004e04b0",
+    "signature": "void __cdecl core_lever_cpp_CLever_setState_FUN_004e04b0(CLever *this_ptr,float new_state,int silent)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_0048c150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d70c34",
+      "name": "g_CLeverClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d82088",
+      "name": "DAT_01d82088",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004902ad",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e045c",
+        "call_type": "direct",
+        "caller": "core_lever.cpp_CLever_process_FUN_004e0250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e0480",
+        "call_type": "direct",
+        "caller": "core_lever.cpp_CLever_process_FUN_004e0250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.11864406779661,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 11,
+      "BRANCH": 4,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 15,
+      "COPY": 311,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_NAN": 16,
+      "INT2FLOAT": 7,
+      "INT_ADD": 40,
+      "INT_AND": 77,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 32,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 41,
+      "INT_OR": 40,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 17,
+      "INT_SUB": 28,
+      "INT_XOR": 2,
+      "INT_ZEXT": 32,
+      "LOAD": 27,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 840
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e1f70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8139
+    },
+    "bw1.exe": {
+      "addr": "004ff3f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00504b20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8139
+    },
+    "nocturne.exe": {
+      "addr": "004c6390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8139
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLever *"
+      },
+      {
+        "is_param": true,
+        "name": "new_state",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "silent",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 20,
+      "match": "(int)new_state < 0x3f800000",
+      "severity": "moderate",
+      "text": "(((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))))) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

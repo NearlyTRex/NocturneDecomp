@@ -29,6 +29,7 @@
 #include "types/classes/CNPC.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EHeroType.h"
@@ -53,7 +54,7 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004d02e0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int action_type);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004d0750(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,undefined4 param_2);
+undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,int param_2);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d0910(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d0930(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr);
@@ -144,7 +145,7 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004d80b0(CImp *thi
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_staticInit_FUN_004d8170(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int engine_ini_cpp_FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004d8360(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004d8800(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8840(char *section,char *key,int default_value,char *filename);
@@ -155,10 +156,10 @@ void __cdecl engine_ini_cpp_initIniFile_FUN_004d8990(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004d89d0(CIniFile *this_ptr,char *section);
 void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004d8a10(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004d8aa0(CIniFile *this_ptr,char *key,char *value);
-void engine_ini_cpp_FUN_004d8b20(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8b80(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile *this_ptr,char *key_name,int *value_ptr);
+void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile *this_ptr,char *key,int value);
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile *this_ptr,char *key,float *output);
-void engine_ini_cpp_FUN_004d8c30(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile *this_ptr,char *key,float value);
 void engine_ini_cpp_FUN_004d8c80(void);
 void engine_ini_cpp_FUN_004d8cf0(int param_1,undefined4 param_2);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004d8d40(CIni *this_ptr);
@@ -179,8 +180,8 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da900(CInventory *this_pt
 void __cdecl core_inv_cpp_loadAssets_FUN_004da990(void);
 void __cdecl core_inv_cpp_freeInventory_FUN_004dacc0(void);
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004dad80(CDemonActor *actor_ptr);
-undefined4 core_inv_cpp_FUN_004dadb0(CInventory *param_1,CDemonActor *param_2,int param_3);
-void core_inv_cpp_FUN_004db760(undefined4 param_1,int param_2);
+int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message,int unused_flag);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db760(CInventory *this_ptr,CWeapon *weapon);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004db830(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880(CInventory *this_ptr,char *class_name);
 void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004db8e0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);

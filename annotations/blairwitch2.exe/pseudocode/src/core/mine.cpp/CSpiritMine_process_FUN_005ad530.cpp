@@ -30,8 +30,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   SDamageInfo SStack_16c;
   CMatrix3x4f CStack_130;
   CMatrix3x4f CStack_100;
-  float fStack_d0;
-  float afStack_cc [3];
+  CQuaternion4f CStack_d0;
   CQuaternion4f CStack_c0;
   float afStack_b0 [3];
   CVector3f CStack_a4;
@@ -43,8 +42,8 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   uint uStack_78;
   CVector3f CStack_74;
   float fStack_68;
-  float afStack_64 [4];
-  float fStack_54;
+  float afStack_64 [2];
+  CVector3f aCStack_5c [2];
   float fStack_3c;
   float fStack_38;
   float fStack_34;
@@ -113,18 +112,18 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
       fStack_14 = fStack_34;
       fStack_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(3.1415927,6.2831855);
       fStack_14 = fStack_38;
-      fStack_54 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(3.1415927,6.2831855);
-      afStack_64[2] = fStack_34;
-      afStack_64[3] = fStack_38;
-      fStack_3c = fStack_54;
-      fStack_14 = fStack_54;
-      core_xform_cpp_FUN_00594380();
-      CStack_c0.w = fStack_d0;
-      afStack_b0[(uint)bVar5 * -2 + -3] = afStack_cc[(uint)bVar5 * -2];
-      afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -2] =
-           afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      aCStack_5c[0].z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(3.1415927,6.2831855);
+      aCStack_5c[0].x = fStack_34;
+      aCStack_5c[0].y = fStack_38;
+      fStack_3c = aCStack_5c[0].z;
+      fStack_14 = aCStack_5c[0].z;
+      core_xform_cpp_eulerToQuaternion_FUN_00594380(aCStack_5c,&CStack_d0);
+      CStack_c0.w = CStack_d0.w;
+      pfVar12 = (float *)((int)&CStack_d0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+      afStack_b0[(uint)bVar5 * -2 + -3] = *(float *)((int)&CStack_d0 + (uint)bVar5 * -8 + 4);
+      afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -2] = *pfVar12;
       (afStack_b0 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + -2)[(uint)bVar5 * -2 + 1] =
-           (afStack_cc + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
+           pfVar12[(uint)bVar5 * -2 + 1];
       core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&CStack_c0,&CStack_130);
       pCVar3 = &CStack_130;
       pCVar4 = &CStack_100;

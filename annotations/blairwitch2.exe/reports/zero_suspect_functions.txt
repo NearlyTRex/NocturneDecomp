@@ -147,7 +147,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/CBaron_dtor_FUN_00410c
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/CBaron_getActorType_FUN_0040f680.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/CBaron_getCollisionType_FUN_00410ba0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/CBaron_processDamage_FUN_00410880.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/FUN_00410660.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/CBaron_renderOpaque_FUN_00410660.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/factoryFuncBaronWeapon_FUN_004108b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/factoryFuncBaron_FUN_0040f660.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/barrier.cpp/CBarrier_ctor_FUN_00410cb0.cpp
@@ -338,8 +338,8 @@ annotations/blairwitch2.exe/pseudocode/src/core/bwspart.cpp/CSimpleParticleSyste
 annotations/blairwitch2.exe/pseudocode/src/core/bwspart.cpp/CSimpleParticleSystem_updateFade_FUN_005a8250.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/CCameraView_ctor_FUN_00422200.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/CCameraView_dtor_FUN_00422220.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/FUN_00422270.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/FUN_00422280.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/CCameraView_getFogValueAtPosition_FUN_00422270.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/camview.cpp/CCameraView_testVisibility_FUN_00422280.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/chain.cpp/CChain_archive_FUN_005b5e10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/chain.cpp/CChain_dtor_FUN_005b5f50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/chain.cpp/CChain_getActorType_FUN_005b4710.cpp
@@ -353,6 +353,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_applyGes
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_calculateChecksum_FUN_00429c70.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_clearDoorTarget_FUN_00428ac0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_detachBodyPart_FUN_00427770.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_doNothing_FUN_00427a40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_dropAllCarriedObjects_FUN_00428e00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_drop_FUN_00427a60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_getCollisionType_FUN_00427680.cpp
@@ -376,7 +377,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkT
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTimeout_FUN_004287a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_shatter_FUN_00427210.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_spawnFlies_FUN_00429e60.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/FUN_00427a40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/SFire_ctor_FUN_0042c0a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_0042bf20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CClothList_ctor_FUN_005b1440.cpp
@@ -446,7 +446,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/CCrate_getCarrier_FUN_
 annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/CCrate_getCollisionType_FUN_0043a220.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/CCrate_onDropped_FUN_00439ed0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/CCrate_pickup_FUN_00439ec0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/FUN_0043a1b0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/CCrate_renderBackground_FUN_0043a1b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/factoryFuncCrate_FUN_00439d30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/crate.cpp/staticInit_FUN_00439d00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cross.cpp/CCross_dtor_FUN_005a6b30.cpp
@@ -489,7 +489,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/CActorDestination_accep
 annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/CActorDestination_archive_FUN_00447450.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/CActorDestination_dtor_FUN_00447510.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/CActorDestination_getActorType_FUN_00447080.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/FUN_00447350.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/CActorDestination_getCollisionType_FUN_00447350.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/factoryFuncActorDestination_FUN_00447060.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dest.cpp/staticInit_FUN_00447030.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dfilter.cpp/CDemonFilter_arrdtor4_FUN_00447e80.cpp
@@ -1892,6 +1892,7 @@ annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_findByFir
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_findString_FUN_00481300.cpp
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_getFieldAt_FUN_00481250.cpp
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_getStringAt_FUN_00481240.cpp
+annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateWithFullPaths_FUN_00481e20.cpp
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CStrList_sortAll_FUN_00481190.cpp
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/FUN_004858f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/qsortByString_FUN_004811b0.cpp

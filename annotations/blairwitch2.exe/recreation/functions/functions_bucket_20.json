@@ -8678,14 +8678,33 @@
       "00461210",
       "00480e70"
     ],
-    "conv":"unknown",
+    "cls":"CStrList",
+    "conv":"__cdecl",
     "instructions":114,
-    "method":"FUN_00481e20",
-    "name":"shape_edittool.cpp_FUN_00481e20",
-    "receiver":false,
+    "method":"populateWithFullPaths",
+    "name":"shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20",
+    "params":[
+      {
+        "name":"base_path",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"search_path",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10523,14 +10542,25 @@
       "0057d390",
       "005ba840"
     ],
-    "conv":"unknown",
+    "cls":"CBitFont",
+    "conv":"__cdecl",
     "instructions":180,
-    "method":"FUN_004a85a0",
-    "name":"engine_font.cpp_FUN_004a85a0",
-    "receiver":false,
+    "method":"loadFromFile",
+    "name":"engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
+    "params":[
+      {
+        "name":"font_path",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/font.cpp",
@@ -11592,14 +11622,25 @@
       "0055d723",
       "005b7ff0"
     ],
-    "conv":"unknown",
+    "cls":"CBloodPool",
+    "conv":"__cdecl",
     "instructions":271,
-    "method":"FUN_004c88a0",
-    "name":"core_gore.cpp_FUN_004c88a0",
-    "receiver":false,
+    "method":"render",
+    "name":"core_gore.cpp_CBloodPool_render_FUN_004c88a0",
+    "params":[
+      {
+        "name":"expire_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gore.cpp",
@@ -12288,14 +12329,33 @@
       "005b7790",
       "005ba8cc"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_004d8b20",
-    "name":"engine_ini.cpp_FUN_004d8b20",
-    "receiver":false,
+    "method":"getInteger",
+    "name":"engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20",
+    "params":[
+      {
+        "name":"key_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"value_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -14397,14 +14457,15 @@
       "00537fc0",
       "005b8130"
     ],
-    "conv":"unknown",
+    "cls":"CDemonMission",
+    "conv":"__cdecl",
     "instructions":71,
-    "method":"FUN_004fc820",
-    "name":"core_mission.cpp_FUN_004fc820",
-    "receiver":false,
+    "method":"buildActiveSetActorList",
+    "name":"core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/mission.cpp",
@@ -17103,14 +17164,33 @@
       "00537fa0",
       "005b7f5f"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":855,
-    "method":"FUN_00534ea0",
-    "name":"core_setcolid.cpp_FUN_00534ea0",
-    "receiver":false,
+    "method":"processCollisionTypes",
+    "name":"core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/setcolid.cpp",
@@ -17121,14 +17201,15 @@
     "calls":[
       "00536490"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":116,
-    "method":"FUN_005360a0",
-    "name":"core_setcolid.cpp_FUN_005360a0",
-    "receiver":false,
+    "method":"refinedRaycast",
+    "name":"core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005360a0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/setcolid.cpp",
@@ -19818,14 +19899,33 @@
       "00574ea0",
       "00574f60"
     ],
-    "conv":"unknown",
+    "cls":"CTextureCache",
+    "conv":"__cdecl",
     "instructions":322,
-    "method":"FUN_00574520",
-    "name":"engine_texture.cpp_FUN_00574520",
-    "receiver":false,
+    "method":"setupTexture",
+    "name":"engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520",
+    "params":[
+      {
+        "name":"texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"upload_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/texture.cpp",

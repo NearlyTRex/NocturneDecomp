@@ -268,8 +268,8 @@ annotations/bw3.exe/pseudocode/src/core/burncrss.cpp/factoryFuncBurncross_FUN_00
 annotations/bw3.exe/pseudocode/src/core/burncrss.cpp/staticInit_FUN_004243d0.cpp
 annotations/bw3.exe/pseudocode/src/core/camview.cpp/CCameraView_ctor_FUN_004254b0.cpp
 annotations/bw3.exe/pseudocode/src/core/camview.cpp/CCameraView_dtor_FUN_004254d0.cpp
-annotations/bw3.exe/pseudocode/src/core/camview.cpp/FUN_00425520.cpp
-annotations/bw3.exe/pseudocode/src/core/camview.cpp/FUN_00425530.cpp
+annotations/bw3.exe/pseudocode/src/core/camview.cpp/CCameraView_getFogValueAtPosition_FUN_00425520.cpp
+annotations/bw3.exe/pseudocode/src/core/camview.cpp/CCameraView_testVisibility_FUN_00425530.cpp
 annotations/bw3.exe/pseudocode/src/core/carved.cpp/CCarved_archive_FUN_00428650.cpp
 annotations/bw3.exe/pseudocode/src/core/carved.cpp/CCarved_canBeGrabbed_FUN_00429000.cpp
 annotations/bw3.exe/pseudocode/src/core/carved.cpp/CCarved_getActorType_FUN_00425950.cpp
@@ -292,6 +292,7 @@ annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_applyGestureLook
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_calculateChecksum_FUN_00433130.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_clearDoorTarget_FUN_00431980.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_detachBodyPart_FUN_00430520.cpp
+annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_doNothing_FUN_004307f0.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_dropAllCarriedObjects_FUN_00431ce0.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_drop_FUN_00430810.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_getCollisionType_FUN_00430430.cpp
@@ -308,14 +309,13 @@ annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_markResourcesInU
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_playSoundWithCooldown_FUN_00434810.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_preProcess_FUN_0042cd30.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_releaseFromGrab_FUN_004307c0.cpp
+annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_returnZero_FUN_004307b0.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_setDoorTarget_FUN_00431970.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_setLookAtTarget_FUN_00433120.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTargetImmediate_FUN_004315c0.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTimeout_FUN_00431610.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_shatter_FUN_0042ff70.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/CCharacter_spawnFlies_FUN_00433320.cpp
-annotations/bw3.exe/pseudocode/src/core/charactr.cpp/FUN_004307b0.cpp
-annotations/bw3.exe/pseudocode/src/core/charactr.cpp/FUN_004307f0.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/SFire_ctor_FUN_00434b10.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/clampFloat_FUN_0042b920.cpp
 annotations/bw3.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_00434a30.cpp
@@ -410,7 +410,7 @@ annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_acceptsActor_
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_archive_FUN_00459500.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_dtor_FUN_004595c0.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_getActorType_FUN_00459130.cpp
-annotations/bw3.exe/pseudocode/src/core/dest.cpp/FUN_00459400.cpp
+annotations/bw3.exe/pseudocode/src/core/dest.cpp/CActorDestination_getCollisionType_FUN_00459400.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/factoryFuncActorDestination_FUN_00459110.cpp
 annotations/bw3.exe/pseudocode/src/core/dest.cpp/staticInit_FUN_004590e0.cpp
 annotations/bw3.exe/pseudocode/src/core/dfilter.cpp/CDemonFilter_arrdtor4_FUN_00459f30.cpp
@@ -440,6 +440,7 @@ annotations/bw3.exe/pseudocode/src/core/dlight.cpp/CDemonLight_freeMasterZBuffer
 annotations/bw3.exe/pseudocode/src/core/dlight.cpp/CDemonLight_free_FUN_0045c380.cpp
 annotations/bw3.exe/pseudocode/src/core/dlight.cpp/CDemonLight_initializeVisibilityBuffer_FUN_0045f490.cpp
 annotations/bw3.exe/pseudocode/src/core/dlight.cpp/CDemonLight_testShadowMapRegion_FUN_0045f4d0.cpp
+annotations/bw3.exe/pseudocode/src/core/dlight.cpp/FUN_0045d560.cpp
 annotations/bw3.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_ctor_FUN_00462500.cpp
 annotations/bw3.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_preCache_FUN_00462580.cpp
 annotations/bw3.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_arrdtor256_FUN_00462630.cpp
@@ -919,6 +920,8 @@ annotations/bw3.exe/pseudocode/src/core/ladder.cpp/CLadder_process_FUN_004df720.
 annotations/bw3.exe/pseudocode/src/core/ladder.cpp/CLadder_setup_FUN_004df700.cpp
 annotations/bw3.exe/pseudocode/src/core/ladder.cpp/factoryFuncLadder_FUN_004df620.cpp
 annotations/bw3.exe/pseudocode/src/core/ladder.cpp/staticInit_FUN_004df5f0.cpp
+annotations/bw3.exe/pseudocode/src/core/level.cpp/CLevelLoader_reset_FUN_004dfc40.cpp
+annotations/bw3.exe/pseudocode/src/core/level.cpp/CLevelLoader_show_FUN_004dfc50.cpp
 annotations/bw3.exe/pseudocode/src/core/level.cpp/staticInit_FUN_004dfc10.cpp
 annotations/bw3.exe/pseudocode/src/core/lever.cpp/CLever_dtor_FUN_004e0ab0.cpp
 annotations/bw3.exe/pseudocode/src/core/lever.cpp/CLever_getActorType_FUN_004e00f0.cpp
@@ -1375,9 +1378,9 @@ annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_archive_FUN_00575230.cp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getActorType_FUN_00575020.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getCollisionType_FUN_005760d0.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getDeathState_FUN_00576100.cpp
+annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getTargetPoints_FUN_005760f0.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_processDamage_FUN_00576130.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/CTVBat_setup_FUN_005751c0.cpp
-annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/FUN_005760f0.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/factoryFuncTVBat_FUN_00575000.cpp
 annotations/bw3.exe/pseudocode/src/core/tvbat.cpp/staticInit_FUN_00574fd0.cpp
 annotations/bw3.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_canPickup_FUN_00576610.cpp
@@ -1656,6 +1659,7 @@ annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_findByFirstField_
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_findString_FUN_00482500.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_getFieldAt_FUN_00482450.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_getStringAt_FUN_00482440.cpp
+annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateWithFullPaths_FUN_00483020.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CStrList_sortAll_FUN_00482390.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/FUN_00486af0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/qsortByString_FUN_004823b0.cpp

@@ -44,9 +44,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
   float afStack_14c [4];
   float fStack_13c;
   CVector3f aCStack_12c [2];
-  CDemonActor *pCStack_114;
-  float afStack_110 [4];
-  float fStack_100;
+  CVector3f CStack_114;
+  float fStack_108;
+  float afStack_104 [5];
   CVector3f CStack_f0;
   CVector3f CStack_e4;
   CVector3f CStack_d8;
@@ -55,8 +55,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
   float fStack_b4;
   float afStack_b0 [2];
   CVector3f CStack_a8;
-  float fStack_9c;
-  float afStack_98 [2];
+  CVector3f CStack_9c;
   CVector3f CStack_90;
   CVector3f CStack_84;
   CDemonActor *pCStack_78;
@@ -128,9 +127,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
       fStack_60 = CStack_a8.x + CStack_90.x;
       afStack_5c[0] = CStack_a8.y + CStack_90.y;
       afStack_5c[1] = CStack_a8.z + CStack_90.z;
-      fStack_9c = CStack_a8.x + CStack_90.x;
-      afStack_98[(uint)bVar6 * -2] = afStack_5c[(uint)bVar6 * -2];
-      afStack_98[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+      CStack_9c.x = CStack_a8.x + CStack_90.x;
+      *(float *)((int)&CStack_9c + (uint)bVar6 * -8 + 4) = afStack_5c[(uint)bVar6 * -2];
+      *(float *)((int)&CStack_9c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       fVar2 = CStack_a8.z;
       fVar1 = CStack_a8.y;
@@ -146,10 +145,10 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
       pCStack_cc = (CDemonActor *)(fVar4 - aCStack_12c[0].x);
       afStack_c8[0] = fVar1 - aCStack_12c[0].y;
       afStack_c8[1] = fVar2 - aCStack_12c[0].z;
-      pCStack_114 = (CDemonActor *)(fVar4 - aCStack_12c[0].x);
-      afStack_110[(uint)bVar6 * -2] = afStack_c8[(uint)bVar6 * -2];
+      CStack_114.x = fVar4 - aCStack_12c[0].x;
+      *(float *)((int)&CStack_114 + (uint)bVar6 * -8 + 4) = afStack_c8[(uint)bVar6 * -2];
       pCVar5 = g_CDemonSetPtr;
-      afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+      *(float *)((int)&CStack_114 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(pCVar5);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00537eb0(g_CDemonSetPtr,1);
@@ -162,7 +161,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
       }
       pCStack_1c = (CCharacter *)0x0;
       do {
-        fStack_184 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,&pCStack_114,&fStack_9c);
+        fStack_184 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                               (g_CDemonSetPtr,&CStack_114,&CStack_9c);
         auStack_18c = (byte  [8])(double)fStack_184;
         in_stack_fffffe5c = pCVar5;
         if (((double)auStack_18c < 0.0) || (1.0 < (double)auStack_18c)) break;
@@ -244,21 +244,21 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
           afStack_14c[2] = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
           afStack_14c[3] = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
           fStack_13c = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
-          afStack_110[2] = afStack_14c[2];
-          afStack_110[(uint)bVar6 * -2 + 3] = afStack_14c[(uint)bVar6 * -2 + 3];
-          afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+          fStack_108 = afStack_14c[2];
+          afStack_104[(uint)bVar6 * -2] = afStack_14c[(uint)bVar6 * -2 + 3];
+          afStack_104[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                afStack_14c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
           pCStack_24 = (CCharacter *)
                        ((float)_DAT_005d2b66 /
-                       SQRT(fStack_100 * fStack_100 +
-                            afStack_110[2] * afStack_110[2] + afStack_110[3] * afStack_110[3]));
-          pCStack_114 = (CDemonActor *)(afStack_110[2] * (float)pCStack_24);
-          afStack_110[0] = afStack_110[3] * (float)pCStack_24;
-          afStack_110[1] = fStack_100 * (float)pCStack_24;
-          pCStack_150 = (CDemonActor *)(afStack_110[2] * (float)pCStack_24);
-          afStack_14c[(uint)bVar6 * -2] = afStack_110[(uint)bVar6 * -2];
+                       SQRT(afStack_104[1] * afStack_104[1] +
+                            fStack_108 * fStack_108 + afStack_104[0] * afStack_104[0]));
+          CStack_114.x = fStack_108 * (float)pCStack_24;
+          CStack_114.y = afStack_104[0] * (float)pCStack_24;
+          CStack_114.z = afStack_104[1] * (float)pCStack_24;
+          pCStack_150 = (CDemonActor *)(fStack_108 * (float)pCStack_24);
+          afStack_14c[(uint)bVar6 * -2] = *(float *)((int)&CStack_114 + (uint)bVar6 * -8 + 4);
           afStack_14c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-               afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+               *(float *)((int)&CStack_114 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           if (&pCStack_180 != &pCStack_150) {
             pCStack_180 = pCStack_150;
             fStack_17c = afStack_14c[0];

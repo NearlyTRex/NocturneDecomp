@@ -1416,8 +1416,8 @@ section .text
     PUSH 0x5cd7af                       ; 005258fe | = "actionPending = %d\nprye.cpp line %d"
     MOV EAX,[0x005fb140]                ; 00525903 | g_CEditorToolsPtr
     PUSH EAX                            ; 00525908
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 00525909
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 00525909
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0052590e
     MOV dword ptr [EBX + 0x20b64],0x2   ; 00525911
         ;   Label: LAB_00525911

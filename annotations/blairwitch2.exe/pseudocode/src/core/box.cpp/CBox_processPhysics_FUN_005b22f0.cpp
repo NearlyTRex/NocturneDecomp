@@ -73,7 +73,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   float local_584;
   float local_580;
   float local_57c;
-  byte local_578 [12];
+  CVector3f local_578;
   float local_56c;
   float local_568 [4];
   float local_558;
@@ -268,8 +268,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
   local_548._4_4_ = (float)local_548._4_4_ + 1.0;
   local_2d8._4_4_ = (float)local_2d8._4_4_ + _DAT_005f12e8;
   local_2c = (SScrape *)
-             core_dtrace_cpp_FUN_00472c60(&g_CDemonRaytraceInstance,local_548,local_2d8,local_578,0)
-  ;
+             core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
+                       (&g_CDemonRaytraceInstance,(CVector3f *)local_548,(CVector3f *)local_2d8,
+                        &local_578,(int *)0x0);
   if (((float)local_2c <= 0.0) || (1.0 <= (float)local_2c)) {
     this_ptr[1].position.x = -9999.0;
   }
@@ -494,9 +495,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
         if ((float)_DAT_005f1328 <
             SQRT(local_234 * local_234 + local_23c * local_23c + local_238 * local_238)) {
           local_2c = (SScrape *)
-                     core_dtrace_cpp_FUN_00472c60
+                     core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60
                                (&g_CDemonRaytraceInstance,local_50,local_4c,
-                                &local_44->raytrace_normal,0);
+                                &local_44->raytrace_normal,(int *)0x0);
           local_48->scrape_points[0].raytrace_intersection = (float)local_2c;
           fVar1 = local_48->scrape_points[0].raytrace_intersection;
           if ((0.0 < fVar1) && (fVar1 < 1.0)) {
@@ -525,8 +526,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
         local_7c = local_7c + 1;
       }
       local_38 = local_38 + 1;
-      local_50 = (CVector3f *)((int)(local_50 + 4) + 4);
-      local_4c = (CVector3f *)((int)(local_4c + 4) + 4);
+      local_50 = (CVector3f *)&local_50[4].y;
+      local_4c = (CVector3f *)&local_4c[4].y;
       local_48 = (CBox *)&(local_48->rotation_matrix).m[2].y;
       local_44 = local_44 + 1;
     } while (local_38 < this_ptr->scrape_point_count);
@@ -543,8 +544,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
     local_2d8._48_4_ = local_584;
     *(float *)(local_2d8 + (uint)bVar15 * -8 + 0x34) = local_598[(uint)bVar15 * -2 + 6];
     iVar13 = local_20;
-    *(uint *)(local_2d8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x38) =
-         *(uint *)(local_578 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + -4);
+    *(float *)(local_2d8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 0x38) =
+         local_598[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
     local_60 = (1.0 - this_ptr->scrape_points[iVar7].raytrace_intersection) * (float)_DAT_005f1300;
     local_254 = (float)local_2d8._48_4_ * local_60;
     local_250 = (float)local_2d8._52_4_ * local_60;

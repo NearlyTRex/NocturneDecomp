@@ -93,7 +93,8 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00420e90(CBugs *this
     local_160.y = (float)pCVar6->y * _DAT_005f3e18;
     local_160.z = (float)pCVar6->z * _DAT_005f3e18;
     core_xform_cpp_transformVector3x4InPlace_FUN_005915b0(&local_160,&this_ptr->model_world_matrix);
-    iVar9 = core_bugs_cpp_FUN_00420840(this_ptr,bug_data,local_1a0,&local_160);
+    iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00420840
+                      (this_ptr,bug_data,local_1a0,&local_160);
     if (iVar9 != 0) {
       core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(this_ptr,bug_data);
       bug_data->interp_t = 0.0;

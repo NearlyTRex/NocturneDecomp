@@ -44,8 +44,8 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
   float afStack_f0 [6];
   float fStack_d8;
   float fStack_d4;
-  float fStack_d0;
-  float afStack_cc [5];
+  CVector3f CStack_d0;
+  CVector3f CStack_c4;
   CVector3f CStack_b8;
   CVector3f CStack_ac;
   CVector3f CStack_a0;
@@ -101,9 +101,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
   fStack_160 = fVar3 + fStack_94;
   afStack_15c[0] = fVar1 + afStack_90[0];
   afStack_15c[1] = CStack_118.z + afStack_90[1];
-  fStack_d0 = fVar3 + fStack_94;
-  afStack_cc[(uint)bVar4 * -2] = afStack_15c[(uint)bVar4 * -2];
-  afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+  CStack_d0.x = fVar3 + fStack_94;
+  *(float *)((int)&CStack_d0 + (uint)bVar4 * -8 + 4) = afStack_15c[(uint)bVar4 * -2];
+  *(float *)((int)&CStack_d0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_15c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   fVar1 = CStack_118.y;
   fVar3 = CStack_118.x;
@@ -118,9 +118,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
   fStack_7c = fVar3 - afStack_54[2];
   afStack_78[0] = fVar1 - afStack_54[3];
   afStack_78[1] = CStack_118.z - fStack_44;
-  afStack_cc[2] = fVar3 - afStack_54[2];
-  afStack_cc[(uint)bVar4 * -2 + 3] = afStack_78[(uint)bVar4 * -2];
-  afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+  CStack_c4.x = fVar3 - afStack_54[2];
+  *(float *)((int)&CStack_c4 + (uint)bVar4 * -8 + 4) = afStack_78[(uint)bVar4 * -2];
+  *(float *)((int)&CStack_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(g_CDemonSetPtr,1);
@@ -131,7 +131,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
   }
   iStack_1c = 0;
   do {
-    fVar3 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,afStack_cc + 2,afStack_f0 + 8);
+    fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300(g_CDemonSetPtr,&CStack_c4,&CStack_d0);
     dVar6 = (double)fVar3;
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
     pCStack_14 = (CCharacter *)
@@ -218,10 +218,10 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
       afStack_f0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 5] =
            *(float *)((int)aCStack_130 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4);
       fVar3 = (float)_DAT_005e43e3 /
-              SQRT(fStack_d0 * fStack_d0 + fStack_d8 * fStack_d8 + fStack_d4 * fStack_d4);
+              SQRT(CStack_d0.x * CStack_d0.x + fStack_d8 * fStack_d8 + fStack_d4 * fStack_d4);
       CStack_118.y = fStack_d8 * fVar3;
       CStack_118.z = fStack_d4 * fVar3;
-      CStack_10c.x = fStack_d0 * fVar3;
+      CStack_10c.x = CStack_d0.x * fVar3;
       afStack_54[0] = fStack_d8 * fVar3;
       afStack_54[(uint)bVar4 * -2 + 1] = *(float *)((int)&CStack_118 + (uint)bVar4 * -8 + 8);
       afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 2] =
@@ -233,14 +233,15 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr)
       }
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                 (unaff_EBX,&g_CDemonSetPtr->collision_impact_position,(CVector3f *)auStack_60);
-      afStack_cc[0] = (float)auStack_60._0_4_;
-      afStack_cc[(uint)bVar4 * -2 + 1] = *(float *)(auStack_60 + (uint)bVar4 * -8 + 4);
-      afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 2] =
-           *(float *)(auStack_60 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-      if ((float *)(auStack_1b0 + 0x18) != afStack_cc) {
-        auStack_1b0._24_4_ = afStack_cc[0];
-        auStack_1b0._28_4_ = afStack_cc[1];
-        auStack_1b0._32_4_ = afStack_cc[2];
+      CStack_d0.y = (float)auStack_60._0_4_;
+      *(uint *)((int)&CStack_d0 + (uint)bVar4 * -8 + 8) =
+           *(uint *)(auStack_60 + (uint)bVar4 * -8 + 4);
+      *(uint *)((int)&CStack_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+           *(uint *)(auStack_60 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      if ((float *)(auStack_1b0 + 0x18) != &CStack_d0.y) {
+        auStack_1b0._24_4_ = CStack_d0.y;
+        auStack_1b0._28_4_ = CStack_d0.z;
+        auStack_1b0._32_4_ = CStack_c4.x;
       }
       auStack_1b0._36_4_ = (this_ptr->base).ammo_type;
       fStack_184 = 1.41531e-43;

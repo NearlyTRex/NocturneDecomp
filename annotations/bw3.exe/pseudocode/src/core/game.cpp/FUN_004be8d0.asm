@@ -37,7 +37,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0
 ;   core_game.cpp_FUN_004c4d10
-;   core_level.cpp_FUN_004dfc50
+;   core_level.cpp_CLevelLoader_show_FUN_004dfc50
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004f7880
 ;   core_mission.cpp_CDemonMission_load_FUN_004f5bc0
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0
@@ -121,8 +121,8 @@ section .text
     XOR ECX,ECX                         ; 004be9b8
     PUSH EAX                            ; 004be9ba
     MOV dword ptr [ESP + 0x314],ECX     ; 004be9bb
-    CALL engine_ini.cpp_FUN_004d8c30    ; 004be9c2
-        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8c30()
+    CALL engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30 ; 004be9c2
+        ;   XREF to: 004d8c30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004be9c7
     PUSH 0x5c3807                       ; 004be9ca | = "The Rustin Parr Investigation"
     MOV EDI,0xffffffff                  ; 004be9cf
@@ -197,10 +197,10 @@ section .text
     PUSH EAX                            ; 004bea9b
     PUSH 0x0                            ; 004bea9c
     PUSH 0xa                            ; 004bea9e
-    MOV EDX,dword ptr [0x006002ac]      ; 004beaa0 | DAT_006002ac
+    MOV EDX,dword ptr [0x006002ac]      ; 004beaa0 | g_CLevelLoaderPtr
     PUSH EDX                            ; 004beaa6
-    CALL core_level.cpp_FUN_004dfc50    ; 004beaa7
-        ;   XREF to: 004dfc50 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004dfc50()
+    CALL core_level.cpp_CLevelLoader_show_FUN_004dfc50 ; 004beaa7
+        ;   XREF to: 004dfc50 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004dfc50(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
     ADD ESP,0x10                        ; 004beaac
     PUSH ESI                            ; 004beaaf
     LEA EAX,[ESP + 0x208]               ; 004beab0

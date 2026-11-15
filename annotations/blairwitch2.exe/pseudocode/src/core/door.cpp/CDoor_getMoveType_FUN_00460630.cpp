@@ -2,18 +2,17 @@
 // Address: 00460630
 // Address Range: [[00460630, 004607fe]]
 // Convention: __cdecl
-// Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener)
+// Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener)
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)
 
 {
   char *message;
   byte bVar1;
-  int in_stack_0000000c;
   float afStackY_1010 [1015];
   CVector3f local_28;
   float local_1c;
@@ -26,7 +25,7 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonA
   afStack_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);
   afStack_18[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        *(float *)((int)&local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-  if (in_stack_0000000c == 0) {
+  if (ignore_lock == 0) {
     message = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("You cannot enter here.");
     if (afStack_18[1] <= 0.0) {
       if ((this_ptr->allowed_sides & DOOR_OPEN_SIDES_NEG_Z) == DOOR_OPEN_SIDES_NEITHER) {

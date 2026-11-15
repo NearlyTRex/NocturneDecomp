@@ -13,26 +13,26 @@ void engine_texture_cpp_FUN_0056ab70(void)
 
 {
   int iVar1;
-  int in_stack_00000004;
+  SMRGLTextureBasic *in_stack_00000004;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
-  if ((DAT_007303f4 == 0) && (*(char *)(in_stack_00000004 + 8) != '\0')) {
+  if ((DAT_007303f4 == 0) && (in_stack_00000004->texture_name[0] != '\0')) {
     iVar1 = engine_texture_cpp_CTextureCache_findTexture_FUN_0056a0a0
-                      (_DAT_02cfd0d0,*(uint *)(in_stack_00000004 + 4) & 0xffff,
-                       (char *)(in_stack_00000004 + 8));
+                      (_DAT_02cfd0d0,(in_stack_00000004->base).count & 0xffff,
+                       in_stack_00000004->texture_name);
     if (iVar1 == -1) {
       iVar1 = engine_texture_cpp_FUN_00569ec0
-                        (_DAT_02cfd0d0,(char *)(in_stack_00000004 + 8),in_stack_00000008,
+                        (_DAT_02cfd0d0,in_stack_00000004->texture_name,in_stack_00000008,
                          in_stack_0000000c);
-      *(int *)(in_stack_00000004 + 4) = iVar1;
+      (in_stack_00000004->base).count = iVar1;
     }
     else {
-      *(int *)(in_stack_00000004 + 4) = iVar1;
+      (in_stack_00000004->base).count = iVar1;
       engine_texture_cpp_FUN_00569ff0(_DAT_02cfd0d0);
     }
     _DAT_02cfd0cc = iVar1;
-    engine_texture_cpp_FUN_0056a130(_DAT_02cfd0d0);
+    engine_texture_cpp_CTextureCache_setupTexture_FUN_0056a130(_DAT_02cfd0d0,in_stack_00000004,2);
     return;
   }
   return;

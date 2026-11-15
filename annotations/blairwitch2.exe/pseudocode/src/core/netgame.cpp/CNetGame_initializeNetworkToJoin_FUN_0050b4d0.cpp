@@ -59,7 +59,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0(CNetG
   this_ptr->server_player_index = iVar4;
   _DAT_01d34e3c = 0;
   iVar3 = iVar3 + -0x50000;
-  shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Contacting server.  Press ESC to give up...");
+  shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+            (g_CEditorToolsPtr,"Contacting server.  Press ESC to give up...");
   uStack_1c = DAT_0061e990;
   DAT_0061e990 = 0;
   if (-1 < this_ptr->server_player_index) {

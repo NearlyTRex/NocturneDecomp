@@ -63,9 +63,9 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047b800(char *title,
     shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
-    engine_font_cpp_FUN_004a8df0
+    engine_font_cpp_CBitFont_drawText_FUN_004a8df0
               (_DAT_01c25590,message,((_DAT_01c35e48 + _DAT_01c35e50) - iVar3) / 2,
-               (((_DAT_01c35e4c + _DAT_01c35e54) - iVar1) - iVar2) / 2,color,0xffffffff);
+               (((_DAT_01c35e4c + _DAT_01c35e54) - iVar1) - iVar2) / 2,color,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_00484f20(&local_108,1);
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

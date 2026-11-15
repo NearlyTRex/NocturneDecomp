@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 490,
+    "complexity_score": 491,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 281,
     "suspect_count": 18,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1115
+    "total_lines": 1116
   },
   "cross_references": [
     {
@@ -148,6 +148,11 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
+      "addr": "0047be90",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90"
+    },
+    {
       "addr": "0047bda0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
@@ -156,11 +161,6 @@
       "addr": "0047dae0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0"
-    },
-    {
-      "addr": "0047be90",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be90"
     },
     {
       "addr": "00578cb0",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 238,
       "match": "DAT_0061b124",
       "severity": "mild",
       "text": "if ((this_ptr->connection_type == CONNECTION_CLIENT) && (DAT_0061b124 != 0)) {",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 251,
+      "line": 252,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 251,
+      "line": 252,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 253,
+      "line": 254,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 253,
+      "line": 254,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 264,
+      "line": 265,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1f);",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 264,
+      "line": 265,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1f);",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 281,
+      "line": 282,
       "match": "DAT_0061e990",
       "severity": "mild",
       "text": "DAT_0061e990 = uStack_30;",

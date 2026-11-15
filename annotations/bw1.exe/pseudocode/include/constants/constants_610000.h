@@ -579,7 +579,6 @@ static undefined4 DAT_0061ef24 = 0x00000002;
 static undefined4 DAT_0061f1a0 = 0x000000D0;
 static undefined4 DAT_0061f1a4 = 0x00000060;
 static undefined4 DAT_0061f2a4 = 0x01D1BCA0;
-static undefined4 DAT_0061f2e0 = 0x01D1BD1C;
 static undefined4 DAT_0061f650 = 0x01D2C900;
 
 // undefined8 constants

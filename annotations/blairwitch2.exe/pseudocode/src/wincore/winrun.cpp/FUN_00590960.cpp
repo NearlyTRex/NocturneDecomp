@@ -2,11 +2,11 @@
 // Address: 00590960
 // Address Range: [[00590960, 00590b05]]
 // Convention: unknown
-// Signature: void wincore_winrun_cpp_FUN_00590960(undefined4 param_1)
+// Signature: void wincore_winrun_cpp_FUN_00590960(CIniFile *param_1)
 
 #include "nocturne.h"
 
-void wincore_winrun_cpp_FUN_00590960(uint param_1)
+void wincore_winrun_cpp_FUN_00590960(CIniFile *param_1)
 
 {
   int iVar1;
@@ -24,10 +24,12 @@ void wincore_winrun_cpp_FUN_00590960(uint param_1)
   iStack_1c = 0;
   do {
     _sprintf(acStack_120,"7Controller_%d_type" + 1);
-    engine_ini_cpp_FUN_004d8b80(param_1,acStack_120,*(uint *)(iStack_18 + 0x26656c4));
+    engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
+              (param_1,acStack_120,*(int *)(iStack_18 + 0x26656c4));
     if (*(int *)(iStack_18 + 0x26656c4) != 0) {
       _sprintf(acStack_120,"Controller_%d_pc_stick");
-      engine_ini_cpp_FUN_004d8b80(param_1,acStack_120,*(uint *)(iStack_1c + 0x2665974));
+      engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
+                (param_1,acStack_120,*(int *)(iStack_1c + 0x2665974));
       iVar1 = 0;
       iStack_14 = iStack_18;
       iVar2 = iStack_20;
@@ -38,11 +40,14 @@ void wincore_winrun_cpp_FUN_00590960(uint param_1)
           if (3 < iVar1) goto LAB_005909c7;
         }
         _sprintf(acStack_120,"Controller_%d_axis_%d_min");
-        engine_ini_cpp_FUN_004d8b80(param_1,acStack_120,*(uint *)(iVar2 + 0x2665984));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x2665984));
         _sprintf(acStack_120,"Controller_%d_axis_%d_max");
-        engine_ini_cpp_FUN_004d8b80(param_1,acStack_120,*(uint *)(iVar2 + 0x2665988));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x2665988));
         _sprintf(acStack_120,"Controller_%d_axis_%d_center");
-        engine_ini_cpp_FUN_004d8b80(param_1,acStack_120,*(uint *)(iVar2 + 0x266598c));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x266598c));
         iVar1 = iVar1 + 1;
         iVar2 = iVar2 + 0xc;
       } while (iVar1 < 4);

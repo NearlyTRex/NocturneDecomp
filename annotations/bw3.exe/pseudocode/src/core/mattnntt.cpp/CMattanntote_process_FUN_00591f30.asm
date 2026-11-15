@@ -33,12 +33,12 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_FUN_00434850
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0
 ;   ... and 14 more
@@ -1930,8 +1930,8 @@ section .text
     MOV dword ptr [EBX + 0xd068],0x1    ; 005935f0
     PUSH EBX                            ; 005935fa
     MOV dword ptr [EBX + 0xd064],EAX    ; 005935fb
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 00593601
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 00593601
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 00593606
     JMP 0x005923f9                      ; 00593609
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1950,8 +1950,8 @@ section .text
     MOV dword ptr [EBX + 0xd064],EAX    ; 0059362e
     PUSH EBX                            ; 00593634
     MOV dword ptr [EBX + 0xd068],EAX    ; 00593635
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 0059363b
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 0059363b
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     MOV dword ptr [EBX + 0xd090],0x40800000 ; 00593640
     ADD ESP,0x1c                        ; 0059364a
     MOV dword ptr [EBX + 0xd08c],ESI    ; 0059364d

@@ -55,7 +55,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0
-;   shape_edittool.cpp_FUN_0047cee0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0
 ;
 ; *****************************************************************************
 
@@ -228,8 +228,8 @@ section .text
     PUSH 0x5c1854                       ; 004acaf7 | = "Ignoring saved game reference to fiel..."
     MOV ECX,dword ptr [0x005fb140]      ; 004acafc | g_CEditorToolsPtr
     PUSH ECX                            ; 004acb02
-    CALL shape_edittool.cpp_FUN_0047cee0 ; 004acb03
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0 ; 004acb03
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004acb08
     MOV EAX,dword ptr [ESP + 0x42c]     ; 004acb0b
         ;   Label: LAB_004acb0b

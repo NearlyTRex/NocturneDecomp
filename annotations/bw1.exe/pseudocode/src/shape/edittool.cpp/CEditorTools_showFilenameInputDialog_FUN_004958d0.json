@@ -63,6 +63,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bd0"
     },
     {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
+    },
+    {
       "addr": "004c4510",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
@@ -71,11 +76,6 @@
       "addr": "004c3ea0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
-    },
-    {
-      "addr": "004c1dd0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
     },
     {
       "addr": "004fd260",
@@ -549,47 +549,47 @@
       "line": 126,
       "match": "DAT_005dbed2",
       "severity": "mild",
-      "text": "pcVar9 = &DAT_005dbed2;",
+      "text": "pcVar8 = &DAT_005dbed2;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 133,
-      "match": "(CInputString *)((int)pCVar7",
+      "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 137,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
       "line": 154,
-      "match": "(CInputString *)((int)pCVar7",
+      "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 158,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
       "line": 175,
-      "match": "(CInputString *)((int)pCVar7",
+      "match": "(CInputString *)((int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar7 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -597,7 +597,7 @@
       "line": 187,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "else if ((((((&DAT_00626114)[(byte)((char)iVar4 + 1)] & 8) != 0) && (iVar4 != 0x5c)) &&",
+      "text": "else if ((((((&DAT_00626114)[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&",
       "type": "undefined_data"
     },
     {
@@ -605,7 +605,7 @@
       "line": 188,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(iVar4 != 0x3a)) && (((&DAT_00626114)[(byte)((char)iVar4 + 1)] & 2) == 0)) {",
+      "text": "(iVar3 != 0x3a)) && (((&DAT_00626114)[(byte)((char)iVar3 + 1)] & 2) == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -617,43 +617,43 @@
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 133,
-      "match": "(int)pCVar7",
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&pCVar8[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pCVar7[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 137,
-      "match": "(int)&pCVar8[-1].mask_mode",
+      "match": "(int)&pCVar7[-1].mask_mode",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 154,
-      "match": "(int)pCVar7",
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&pCVar8[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pCVar7[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 158,
-      "match": "(int)&pCVar8[-1].mask_mode",
+      "match": "(int)&pCVar7[-1].mask_mode",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 175,
-      "match": "(int)pCVar7",
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar7 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
@@ -701,7 +701,7 @@
       "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
@@ -709,7 +709,7 @@
       "line": 158,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {

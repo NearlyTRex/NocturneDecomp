@@ -60,7 +60,7 @@ void __cdecl core_game_cpp_CGame_processFudge_FUN_004b39d0(CGame *this_ptr);
 void __cdecl core_game_cpp_drawCreditsLine_FUN_004b3b10(char *text_string);
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b3b90(EInputCodeType key_code,char *action_name);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_ptr);
-void core_game_cpp_FUN_004b5190(CGame *param_1);
+void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b5fd0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(CGame *this_ptr);
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr);

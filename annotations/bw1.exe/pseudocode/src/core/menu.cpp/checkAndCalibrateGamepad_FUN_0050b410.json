@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 197,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 94,
     "suspect_count": 9,
     "suspect_types": [
       "raw_address_pointer_store",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 103
+    "total_lines": 105
   },
   "cross_references": [],
   "function": {
@@ -94,7 +94,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 41,
+      "line": 42,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
@@ -102,7 +102,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
@@ -110,7 +110,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 43,
+      "line": 44,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
@@ -118,7 +118,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
@@ -126,7 +126,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 65,
+      "line": 67,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
@@ -134,7 +134,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
@@ -142,7 +142,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 76,
+      "line": 78,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
@@ -150,7 +150,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
+      "line": 78,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",

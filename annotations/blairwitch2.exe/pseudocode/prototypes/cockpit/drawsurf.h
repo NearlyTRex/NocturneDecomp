@@ -65,9 +65,9 @@ void __cdecl CDrawSurface::drawClippedLine(CDrawSurface *this_ptr,int x1,int y1,
 // Address: 00466960
 void __cdecl CDrawSurface::drawLineBresenham(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_00466a50
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00466a50
 // Address: 00466a50
-void FUN_00466a50(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDrawSurface::drawDashedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_computeCohenSutherlandOutcode_FUN_00466c60
 // Address: 00466c60
@@ -97,9 +97,9 @@ void __cdecl CDrawSurface::drawRectangleOutline(CDrawSurface *this_ptr,int x,int
 // Address: 004673b0
 void __cdecl CDrawSurface::drawSurfaceBorder(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_FUN_004674b0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0
 // Address: 004674b0
-void FUN_004674b0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDrawSurface::drawSolidRectangle(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610
 // Address: 00467610

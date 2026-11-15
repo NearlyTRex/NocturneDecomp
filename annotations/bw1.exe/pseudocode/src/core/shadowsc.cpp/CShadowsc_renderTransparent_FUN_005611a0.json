@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 142,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 7,
+    "pseudocode_lines": 54,
+    "suspect_count": 9,
     "suspect_types": [
       "raw_address_constant",
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 164
+    "total_lines": 166
   },
   "cross_references": [],
   "function": {
@@ -44,7 +45,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004a6c30",
@@ -182,8 +183,24 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_30,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 39,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "this_ptr_01 = DAT_00612560;",
@@ -191,7 +208,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 44,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -199,7 +216,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);",
@@ -207,7 +224,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 48,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);",
@@ -215,7 +232,7 @@
     },
     {
       "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_02`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_02` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 21,
+      "line": 23,
       "match": "0x1c51d80",
       "severity": "moderate",
       "text": "this_ptr_02 = 0x01C51D80;",
@@ -223,7 +240,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 33,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -26,15 +26,14 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   float10 fVar13;
   float10 fVar14;
   float afStackY_1150 [995];
-  CFireEffect *this_ptr_00;
-  ulonglong uVar15;
+  CCharacter *this_ptr_00;
+  CFireEffect *this_ptr_01;
   CVector3f *position;
-  CVector3f *euler_angles;
-  ulonglong uVar16;
-  ulonglong uVar17;
-  float fVar18;
+  CVector3f *pCVar16;
+  ulonglong uVar15;
+  float fVar17;
   int flame_style;
-  uint uVar19;
+  float on_fire_time;
   CBoundingBox3D *in_stack_fffffe60;
   float fStack_180;
   float fStack_17c;
@@ -56,8 +55,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   uint uStack_10c;
   uint uStack_108;
   CVector3f CStack_104;
-  float fStack_f8;
-  float afStack_f4 [2];
+  CVector3f CStack_f8;
   CVector3f CStack_ec;
   CVector3f CStack_d8;
   float fStack_cc;
@@ -118,9 +116,9 @@ LAB_00487f67:
     sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
     goto LAB_0048806b;
   }
-  fVar18 = this_ptr->emit_timer + delta_time;
-  this_ptr->emit_timer = fVar18;
-  if ((fVar18 < this_ptr->emit_period) ||
+  fVar17 = this_ptr->emit_timer + delta_time;
+  this_ptr->emit_timer = fVar17;
+  if ((fVar17 < this_ptr->emit_period) ||
      (this_ptr->emit_timer = this_ptr->emit_timer - this_ptr->emit_period, iVar7 == 0))
   goto LAB_0048806b;
   switch(this_ptr->emitter_type) {
@@ -171,15 +169,15 @@ LAB_00487f67:
     flame_style = 0;
     iVar7 = 2;
     iVar4 = 1;
-    euler_angles = (CVector3f *)&(this_ptr->base).orient;
+    pCVar16 = (CVector3f *)&(this_ptr->base).orient;
     position = &CStack_b0;
     CStack_b0.x = afStack_74[0];
     *(float *)((int)&CStack_b0 + (uint)bVar10 * -8 + 4) = afStack_74[(uint)bVar10 * -2 + 1];
-    this_ptr_00 = 0x01C73654;
+    this_ptr_01 = 0x01C73654;
     *(float *)((int)&CStack_b0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
          afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-              (this_ptr_00,position,euler_angles,iVar7,iVar4,flame_style);
+              (this_ptr_01,position,pCVar16,iVar7,iVar4,flame_style);
     pCVar2 = *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
     pCVar1 = &(this_ptr->base).location;
     afStack_c8[3] = (pCVar2->location).position.x - (pCVar1->position).x;
@@ -193,15 +191,20 @@ LAB_00487f67:
         < (float)_DAT_005bda4c) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(pCVar2,&pCVar1->position,&CStack_ec)
       ;
-      uVar19 = 0x40000000;
-      uVar17 = 0x13f800000;
-      uVar16 = 0;
-      uVar15 = CONCAT44(&fStack_f8,*(uint *)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
-      fStack_f8 = CStack_ec.x;
-      afStack_f4[(uint)bVar10 * -2] = *(float *)((int)&CStack_ec + (uint)bVar10 * -8 + 4);
-      afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-           *(float *)((int)&CStack_ec + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      core_charactr_cpp_FUN_0042fbd0(uVar15,uVar16,uVar17,uVar19);
+      on_fire_time = 2.0;
+      fVar17 = 1.0;
+      iVar7 = 1;
+      uVar15 = 0;
+      pCVar16 = &CStack_f8;
+      this_ptr_00 = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
+      CStack_f8.x = CStack_ec.x;
+      *(uint *)((int)&CStack_f8 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&CStack_ec + (uint)bVar10 * -8 + 4);
+      *(uint *)((int)&CStack_f8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           *(uint *)((int)&CStack_ec + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
+                (this_ptr_00,pCVar16,(int)uVar15,(int)((ulonglong)uVar15 >> 0x20),fVar17,iVar7,
+                 on_fire_time);
     }
     break;
   case EMITTER_TYPE_POPCORN:
@@ -233,7 +236,7 @@ LAB_00487f67:
     iVar4 = iVar7 >> 0x1f;
     (this_ptr->globe).intensity.bytes[0] =
          (uchar)((int)(((iVar7 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
-    fVar18 = (this_ptr->emitter_size).y;
+    fVar17 = (this_ptr->emitter_size).y;
     goto LAB_0048802d;
   case EMITTER_TYPE_BLUE_SPARK:
     core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -302,10 +305,10 @@ LAB_00487f67:
     fStack_11c = (this_ptr->base).location.position.x + fStack_20;
     fStack_118 = (this_ptr->base).location.position.y;
     fStack_114 = (fStack_18 - this_ptr->emit_radius) + (this_ptr->base).location.position.z;
-    fVar18 = this_ptr->wind_resist;
+    fVar17 = this_ptr->wind_resist;
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
     core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930
-              (0x01C73654,&fStack_11c,&CStack_168.y,pCVar5,fVar18);
+              (0x01C73654,&fStack_11c,&CStack_168.y,pCVar5,fVar17);
     fStack_11c = (this_ptr->base).location.position.x;
     fStack_118 = (this_ptr->base).location.position.z;
     fStack_114 = fStack_118;
@@ -324,11 +327,11 @@ LAB_00487fe8:
     (this_ptr->globe).intensity_multiplier = iVar7;
     iVar7 = (iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0);
     iVar4 = iVar7 >> 0x1f;
-    fVar18 = 10.0;
+    fVar17 = 10.0;
     (this_ptr->globe).intensity.bytes[0] =
          (uchar)((int)(((iVar7 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
 LAB_0048802d:
-    core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(&this_ptr->globe,fVar18);
+    core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(&this_ptr->globe,fVar17);
     pCVar3 = g_CDemonSetPtr;
     (this_ptr->globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(pCVar3,&this_ptr->globe);
@@ -362,7 +365,7 @@ LAB_0048806b:
   if (this_ptr->is_active != 0) {
     if (this_ptr->periodic_flag == 0) {
       if ((0.0 < this_ptr->max_emit_time) &&
-         (fVar18 = this_ptr->state_timer - delta_time, this_ptr->state_timer = fVar18, fVar18 <= 0.0
+         (fVar17 = this_ptr->state_timer - delta_time, this_ptr->state_timer = fVar17, fVar17 <= 0.0
          )) {
         this_ptr->state_timer = 0.0;
         this_ptr->emitter_state = 0;
@@ -370,18 +373,18 @@ LAB_0048806b:
       }
     }
     else if (this_ptr->emitter_state == 0) {
-      fVar18 = this_ptr->state_timer - delta_time;
-      this_ptr->state_timer = fVar18;
-      if (fVar18 <= 0.0) {
+      fVar17 = this_ptr->state_timer - delta_time;
+      this_ptr->state_timer = fVar17;
+      if (fVar17 <= 0.0) {
         this_ptr->emitter_state = 1;
         this_ptr->state_timer = this_ptr->max_emit_time;
         return;
       }
     }
     else {
-      fVar18 = this_ptr->state_timer - delta_time;
-      this_ptr->state_timer = fVar18;
-      if (fVar18 <= 0.0) {
+      fVar17 = this_ptr->state_timer - delta_time;
+      this_ptr->state_timer = fVar17;
+      if (fVar17 <= 0.0) {
         this_ptr->emitter_state = 0;
         this_ptr->state_timer = this_ptr->max_wait_time;
         return;

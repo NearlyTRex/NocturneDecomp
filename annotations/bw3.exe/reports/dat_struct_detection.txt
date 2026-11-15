@@ -2,16 +2,16 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 3307
-Filtered out (inside named data): 2576
-Immediate constants (not real globals): 114
-Real globals remaining: 3193
-Clusters detected: 307
-DAT_ globals in clusters: 3092
+Total DAT_ globals found: 3290
+Filtered out (inside named data): 2587
+Immediate constants (not real globals): 109
+Real globals remaining: 3181
+Clusters detected: 306
+DAT_ globals in clusters: 3079
 
 Classification summary:
   unknown              90 clusters
-  vector_groups        77 clusters
+  vector_groups        76 clusters
   struct               70 clusters
   array                43 clusters
   struct_array         15 clusters
@@ -19,7 +19,7 @@ Classification summary:
   byte_blob            6 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (114)
+LIKELY IMMEDIATE CONSTANTS (109)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -234,12 +234,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00607880  value=0x607880 (6322304)  refs=2
     FUN_005a9890
       CMP EBX,0x607880                    ; 005a98c1 | DAT_00607880
-
-  DAT_00608bb8  value=0x608BB8 (6327224)  refs=2
-    CDirectSoundDevice_allocateSfx
-      PUSH 0x608bb8                       ; 0055c05a | DAT_00608bb8
-    CDirectSoundDevice_setMode
-      PUSH 0x608bb8                       ; 0055b33d | DAT_00608bb8
 
   DAT_005b5afd  value=0x5B5AFD (5987069)  refs=1
     archiveActor
@@ -516,22 +510,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_006004c8  value=0x6004C8 (6292680)  refs=1
     fillRect
       PUSH 0x6004c8                       ; 004f3a08 | DAT_006004c8
-
-  DAT_006044e0  value=0x6044E0 (6309088)  refs=1
-    CDirectSoundDevice_setMode
-      PUSH 0x6044e0                       ; 0055b579 | DAT_006044e0
-
-  DAT_006044f0  value=0x6044F0 (6309104)  refs=1
-    CDirectSoundDevice_setMode
-      PUSH 0x6044f0                       ; 0055b39d | DAT_006044f0
-
-  DAT_00604500  value=0x604500 (6309120)  refs=1
-    CDirectSoundDevice_setReverb
-      PUSH 0x604500                       ; 0055d350 | DAT_00604500
-
-  DAT_00608bc8  value=0x608BC8 (6327240)  refs=1
-    getDirectSoundDevice
-      PUSH 0x608bc8                       ; 0055d5c4 | DAT_00608bc8
 
   DAT_02d20340  value=0x2D20340  refs=1
     displayMessageBoxAndQuit
@@ -854,7 +832,7 @@ HIGH CONFIDENCE (24 clusters)
       0x0135ed51  DAT_0135ed51  undefined4
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (121 clusters)
+MEDIUM CONFIDENCE (120 clusters)
 --------------------------------------------------------------------------------
 
   0x01d75c98 - 0x01d76220  (136 items, 1416 bytes span)
@@ -1481,20 +1459,6 @@ MEDIUM CONFIDENCE (121 clusters)
       0x00603efc  DAT_00603efc  undefined4
       0x00603f00  DAT_00603f00  undefined4
       0x00603f04  DAT_00603f04  undefined4
-      ... +6 more
-
-  0x00604510 - 0x006045f8  (12 items, 232 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 80 functions
-     near: PTR_DAT_006045f0 (void*) at -224
-      0x00604510  DAT_00604510  undefined4
-      0x00604514  DAT_00604514  undefined4
-      0x00604518  DAT_00604518  undefined4
-      0x0060451c  DAT_0060451c  undefined4
-      0x00604520  DAT_00604520  undefined4
-      0x00604524  DAT_00604524  undefined4
       ... +6 more
 
   0x0072ff34 - 0x0072ffb8  (12 items, 132 bytes span)
@@ -2936,19 +2900,6 @@ LOW CONFIDENCE (162 clusters)
       0x005fc5a4  DAT_005fc5a4  undefined4
       0x005fc5bc  DAT_005fc5bc  undefined4
 
-  0x00600284 - 0x006002d0  (6 items, 76 bytes span)
-    Classification: struct
-    Likely type: struct (76 bytes span, 6 fields)
-    Reason: mixed strides, shared by 48 functions
-    Referenced by: 48 functions
-     near: g_CLadderClassVersion (int) at -4
-      0x00600284  DAT_00600284  undefined4
-      0x006002ac  DAT_006002ac  undefined4
-      0x006002c4  DAT_006002c4  undefined4
-      0x006002c8  DAT_006002c8  undefined4
-      0x006002cc  DAT_006002cc  undefined4
-      0x006002d0  DAT_006002d0  undefined4
-
   0x00606834 - 0x00606860  (6 items, 44 bytes span)
     Classification: struct
     Likely type: struct (44 bytes span, 6 fields)
@@ -3069,6 +3020,18 @@ LOW CONFIDENCE (162 clusters)
       0x005fe9e8  DAT_005fe9e8  undefined4 [float]
       0x005fe9ec  DAT_005fe9ec  undefined4
       0x005fe9f0  DAT_005fe9f0  undefined4
+
+  0x00600284 - 0x006002d0  (5 items, 76 bytes span)
+    Classification: struct
+    Likely type: struct (76 bytes span, 5 fields)
+    Reason: mixed strides, shared by 40 functions
+    Referenced by: 40 functions
+     near: g_CLadderClassVersion (int) at -4
+      0x00600284  DAT_00600284  undefined4
+      0x006002c4  DAT_006002c4  undefined4
+      0x006002c8  DAT_006002c8  undefined4
+      0x006002cc  DAT_006002cc  undefined4
+      0x006002d0  DAT_006002d0  undefined4
 
   0x006071f0 - 0x00607290  (5 items, 160 bytes span)
     Classification: struct
@@ -4116,8 +4079,9 @@ LOW CONFIDENCE (162 clusters)
       0x02d22c20  DAT_02d22c20  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (101 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (102 - not part of any cluster)
 --------------------------------------------------------------------------------
+  DAT_006045f8                    addr=006045f8    type=undefined4      refs=74  near: PTR_DAT_006045f4(+4)
   DAT_006074b8                    addr=006074b8    type=undefined4      refs=39 [likely byte]  near: g_CStylerClassVersion(+64)
   DAT_02ceb91c                    addr=02ceb91c    type=undefined4      refs=20
   DAT_01d0d210                    addr=01d0d210    type=undefined4      refs=16
@@ -4167,11 +4131,10 @@ ISOLATED DAT_ GLOBALS (101 - not part of any cluster)
   DAT_02d01980                    addr=02d01980    type=undefined4      refs=2
   DAT_007dd9f0                    addr=007dd9f0    type=undefined4      refs=2
   DAT_007e4b10                    addr=007e4b10    type=undefined4      refs=2
-  DAT_01d728fc                    addr=01d728fc    type=undefined4      refs=2
-  ... +51 more
+  ... +52 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2576)
+FILTERED OUT - INSIDE NAMED DATA (2587)
 --------------------------------------------------------------------------------
   DAT_005b5030                    inside s_default_act_005b5024
   DAT_005b5034                    inside s_default_act_005b5024
@@ -6733,6 +6696,17 @@ FILTERED OUT - INSIDE NAMED DATA (2576)
   DAT_006001f4                    inside s_Editor_00600128
   DAT_006039f0                    inside s_none_006039e8
   DAT_006039f4                    inside s_none_006039e8
+  DAT_00604510                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604514                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604518                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0060451c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604520                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604524                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604528                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_0060452c                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604530                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604534                    inside g_DSPROPSETID_EAX_ReverbProperties
+  DAT_00604538                    inside g_DSPROPSETID_EAX_ReverbProperties
   DAT_00606830                    inside s_d3d_dll_00606733
   DAT_00607d74                    inside s_s_0123456789abcdefghijkl_00607d4c
   DAT_00607dd8                    inside s_s_0123456789abcdefghijkl_00607db0

@@ -6,8 +6,10 @@
 #include "system/basetypes.h"
 #include "system/stdlib.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
+#include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMouse.h"
 #include "types/classes/CNetGame.h"
@@ -26,6 +28,9 @@ extern CDemonPod* g_CDemonPodPtr;
 // CDemonSet*
 extern CDemonSet* g_CDemonSetPtr;
 
+// CLevelLoader*
+extern CLevelLoader* g_CLevelLoaderPtr;
+
 // CMini3D*
 extern CMini3D* g_CMini3DPtr;
 
@@ -43,6 +48,13 @@ extern CTextureList* g_CTextureListPtr;
 
 // CWater*
 extern CWater* g_CWaterPtr;
+
+// GUID
+extern GUID g_IID_IKsPropertySet;
+extern GUID g_DSPROPSETID_VoiceManager;
+extern GUID g_DSPROPSETID_EAX_ReverbProperties;
+extern GUID g_IID_IDirectSound3DBuffer;
+extern GUID g_IID_IDirectSound3DListener;
 
 // RuntimeHandlerEntry[172]
 extern RuntimeHandlerEntry g_InitHandlers[172];

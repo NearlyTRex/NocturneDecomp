@@ -87,7 +87,7 @@ void __cdecl FUN_0045d530(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_FUN_0045d560
 // Address: 0045d560
-void FUN_0045d560(void);
+void __cdecl FUN_0045d560(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_allocateFilter_FUN_0045daf0
 // Address: 0045daf0

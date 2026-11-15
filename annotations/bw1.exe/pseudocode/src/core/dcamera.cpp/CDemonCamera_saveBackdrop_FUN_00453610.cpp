@@ -179,7 +179,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamer
             } while (local_40 < unaff_ESI->display_height);
           }
           local_5c.base.vtable = (void *)0x12c00;
-          iVar11 = support_codec_cpp_FUN_00442d10(auStack_b4,&DAT_01342220,&local_5c,&local_68);
+          iVar11 = support_codec_cpp_CCodec_processFromBuffer_FUN_00442d10
+                             ((CCodec *)auStack_b4,&DAT_01342220,(int *)&local_5c,&local_68);
           if (iVar11 == 0) {
             _DAT_01d1d400 = "..\\core\\dcamera.cpp";
             _DAT_01d1d404 = 0x1396;

@@ -16,8 +16,8 @@
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004a8df0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EAX                            ; 004a2076
     MOV EBX,dword ptr [ESI + 0x11c]     ; 004a2077
     PUSH EBX                            ; 004a207d
-    CALL engine_font.cpp_FUN_004a8df0   ; 004a207e
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004a207e
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EDI,dword ptr [ESI + 0x18]      ; 004a2083
     ADD ESP,0x18                        ; 004a2086
     TEST EDI,EDI                        ; 004a2089

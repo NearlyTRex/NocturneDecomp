@@ -18,8 +18,8 @@
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcc15
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 at 004d780b
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20 at 0054af43
+;   core_script.cpp_CScript_loadScript_FUN_00543e00 at 00543e27
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00545dee
-;   core_script.cpp_FUN_00543e00 at 00543e27
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0d5c
 ;   ... and 12 more
 ;

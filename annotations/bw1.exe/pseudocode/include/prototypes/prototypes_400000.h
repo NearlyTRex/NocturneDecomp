@@ -228,7 +228,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408c90(C
 void core_actor_cpp_FUN_00408cc0(void);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408cd0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408d60(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
-undefined4 * core_actor_cpp_FUN_00408ec0(CDemonActor *param_1,int param_2,uint param_3);
+CBoundingBox3D * __stack3_esi core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0(CDemonActor *this_ptr,SCollisionInfo *collision_info,int bounding_box_type,CBoundingBox3D *output_bbox);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0(CDemonActor *this_ptr);

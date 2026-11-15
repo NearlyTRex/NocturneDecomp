@@ -46,9 +46,9 @@
 ;   crt_string.c_strupr_FUN_005ba840
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004a8df0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
@@ -209,8 +209,8 @@ section .text
     PUSH EAX                            ; 0047d40d
     MOV ESI,dword ptr [0x01c25590]      ; 0047d40e | DAT_01c25590
     PUSH ESI                            ; 0047d414
-    CALL engine_font.cpp_FUN_004a8df0   ; 0047d415
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047d415
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047d41a
     CMP dword ptr [ESP + 0x34c],0x0     ; 0047d41d
         ;   Label: LAB_0047d41d
@@ -241,8 +241,8 @@ section .text
     PUSH EAX                            ; 0047d470
     MOV EBX,dword ptr [0x01c25590]      ; 0047d471 | DAT_01c25590
     PUSH EBX                            ; 0047d477
-    CALL engine_font.cpp_FUN_004a8df0   ; 0047d478
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 0047d478
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0047d47d
     PUSH 0x5d2129                       ; 0047d480 | = "Filename: "
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 0047d485

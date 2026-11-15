@@ -21,18 +21,19 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   byte bVar6;
   float afStackY_1084 [977];
   CVector3f *pCVar7;
-  byte *puVar8;
+  CVector3f *in_stack_fffffed0;
   CDeformableModelInstance *frame_index;
+  CVector3f *in_stack_fffffed4;
   CVector3f *ray_origin_00;
   CVector3f *ray_direction_00;
   int triangle_index;
-  ulonglong local_118;
+  byte local_118 [8];
   double dStack_110;
   float fStack_108;
   CBoundingBox3D local_fc;
   CBoundingBox3D local_e4;
   uint local_cc [2];
-  byte auStack_c4 [24];
+  CBoundingBox3D CStack_c4;
   uint auStack_ac [4];
   float local_9c;
   float local_98 [6];
@@ -41,7 +42,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   byte auStack_68 [12];
   float afStack_5c [2];
   CVector3f local_54;
-  byte local_48 [12];
+  CVector3f local_48;
   byte local_3c [8];
   float afStack_34 [2];
   byte auStack_2c [12];
@@ -51,8 +52,9 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   if (bbox_type == 0) {
     return 2.0;
   }
-  core_actor_cpp_FUN_00408ec0(this_ptr,collision_info,bbox_type);
-  pfVar2 = (float *)((int)&local_118 + 4);
+  core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
+            (this_ptr,collision_info,bbox_type,(CBoundingBox3D *)(local_118 + 4));
+  pfVar2 = (float *)(local_118 + 4);
   pCVar4 = &local_fc;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     (pCVar4->min).x = *pfVar2;
@@ -91,9 +93,9 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(this_ptr,ray_origin,&local_54);
   auStack_80._8_4_ = local_54.x;
   *(uint *)(auStack_68 + (uint)bVar6 * -8 + -0xc) =
-       *(uint *)(local_48 + (uint)bVar6 * -8 + -8);
+       *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
   *(uint *)(auStack_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -8) =
-       *(uint *)(local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -4);
+       *(uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00
             (this_ptr,ray_direction,(CVector3f *)(auStack_68 + 8));
   local_3c._0_4_ = auStack_68._8_4_;
@@ -106,7 +108,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   out_hit->bone_index = -1;
   if ((uint)bbox_type < 2) {
     if (bbox_type == 1) {
-      puVar8 = local_48;
+      pCVar7 = &local_48;
       (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)(auStack_80 + 8));
       puVar3 = auStack_ac;
       puVar5 = local_cc;
@@ -115,14 +117,15 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
         puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
         puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      fStack_108 = (float)core_box_cpp_FUN_00420ee0(auStack_c4,puVar8);
+      fStack_108 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
+                             (&CStack_c4,pCVar7,in_stack_fffffed0,in_stack_fffffed4);
       goto LAB_0040936d;
     }
   }
   else {
     if ((uint)bbox_type < 3) {
       fStack_108 = (float)core_actor_cpp_rayCylinderIntersect_FUN_004080c0
-                                    (collision_info,auStack_80 + 8,local_3c,local_48);
+                                    (collision_info,auStack_80 + 8,local_3c,&local_48);
       goto LAB_0040936d;
     }
     if (bbox_type == 3) {
@@ -133,7 +136,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
                 (this_ptr,&out_hit->normal,&CStack_20);
       afStack_5c[0] = CStack_20.x;
       afStack_5c[(uint)bVar6 * -2 + 1] = *(float *)((int)&CStack_20 + (uint)bVar6 * -8 + 4);
-      *(uint *)(local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -0xc) =
+      *(uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
            *(uint *)((int)&CStack_20 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       if ((float *)(local_3c + 4) != afStack_5c) {
         local_3c._4_4_ = afStack_5c[0];
@@ -162,11 +165,11 @@ LAB_0040936d:
                                 (collision_info->keyframed_model);
         fStack_108 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00467c00
                                (this_ptr_00,(int)frame_index,ray_origin_00,ray_direction_00,pCVar7);
-        local_118 = (double)fStack_108;
-        if (local_118 < 0.0) {
+        local_118 = (byte  [8])(double)fStack_108;
+        if ((double)local_118 < 0.0) {
           return 2.0;
         }
-        if (1.0 < local_118) {
+        if (1.0 < (double)local_118) {
           return 2.0;
         }
       }

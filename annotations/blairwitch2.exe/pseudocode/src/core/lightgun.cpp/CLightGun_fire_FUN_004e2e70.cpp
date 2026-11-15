@@ -28,6 +28,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   byte bVar12;
   float *unaff_retaddr;
   CDemonActor *in_stack_0000000c;
+  CVector3f *in_stack_00000010;
   float afStackY_110c [953];
   CDemonSet *pCVar13;
   CBoundingBox3D *out_box;
@@ -51,18 +52,17 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   uint uStack_124;
   float afStack_120 [2];
   CVector3f CStack_118;
-  float fStack_10c;
-  uint auStack_108 [5];
-  float fStack_f4;
-  float afStack_f0 [2];
+  CVector3f aCStack_10c [2];
+  CVector3f CStack_f4;
   CVector3f CStack_e8;
   CVector3f CStack_d8;
   CVector3f CStack_c4;
   float fStack_b4;
   float afStack_b0 [4];
   float afStack_a0 [3];
-  CVector3f CStack_94;
-  float afStack_88 [4];
+  byte auStack_94 [8];
+  float afStack_8c [4];
+  float fStack_7c;
   byte auStack_78 [12];
   float afStack_6c [4];
   float fStack_5c;
@@ -85,17 +85,17 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   this_ptr->beam_length = fVar6;
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   afStack_a0[2] = (float)uStack_124;
-  *(float *)((int)&CStack_94 + (uint)bVar12 * -8) = afStack_120[(uint)bVar12 * -2];
-  afStack_88[(uint)bVar12 * -2 + (uint)bVar12 * -2 + -2] =
+  *(float *)(auStack_94 + (uint)bVar12 * -8) = afStack_120[(uint)bVar12 * -2];
+  *(float *)(auStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4) =
        afStack_120[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-  CStack_94.z = CStack_94.z + _DAT_005dc0a6;
+  afStack_8c[0] = afStack_8c[0] + _DAT_005dc0a6;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-            ((CDemonActor *)this_ptr,&CStack_94,&CStack_118);
+            ((CDemonActor *)this_ptr,(CVector3f *)auStack_94,&CStack_118);
   CStack_e8.x = CStack_118.x;
   *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + 4) =
-       *(uint *)((int)&CStack_118 + (uint)bVar12 * -8 + 4);
+       *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + -8);
   *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-       *(uint *)((int)&CStack_118 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+       *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + -4);
   CStack_130.z = (this_ptr->base).bolt_velocity;
   CStack_130.x = 0.0;
   CStack_130.y = 0.0;
@@ -106,18 +106,20 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   afStack_6c[(uint)bVar12 * -2 + 3] = afStack_6c[(uint)bVar12 * -2];
   afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
        afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-  afStack_88[3] = fVar6 + afStack_6c[2];
+  fStack_7c = fVar6 + afStack_6c[2];
   auStack_78._0_4_ = CStack_e8.y + afStack_6c[3];
   auStack_78._4_4_ = CStack_e8.z + fStack_5c;
-  fStack_10c = fVar6 + afStack_6c[2];
-  auStack_108[(uint)bVar12 * -2] = *(uint *)(auStack_78 + (uint)bVar12 * -8);
-  auStack_108[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+  aCStack_10c[0].x = fVar6 + afStack_6c[2];
+  *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + 4) =
+       *(uint *)(auStack_78 + (uint)bVar12 * -8);
+  *(uint *)((int)aCStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
        *(uint *)(auStack_78 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4);
-  fStack_f4 = CStack_e8.x;
-  afStack_f0[(uint)bVar12 * -2] = *(float *)((int)&CStack_e8 + (uint)bVar12 * -8 + 4);
+  CStack_f4.x = CStack_e8.x;
+  *(uint *)((int)&CStack_f4 + (uint)bVar12 * -8 + 4) =
+       *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + 4);
   pCVar13 = g_CDemonSetPtr;
-  afStack_f0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-       *(float *)((int)&CStack_e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  *(uint *)((int)&CStack_f4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+       *(uint *)((int)&CStack_e8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(pCVar13);
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00537ef0(g_CDemonSetPtr,1,0xff,0xff,0xff);
   core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00537df0(g_CDemonSetPtr);
@@ -129,8 +131,9 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   iVar9 = 0;
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00537a90(g_CDemonSetPtr);
   do {
-    pCStack_14 = (CCharacter *)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,&fStack_f4,&fStack_10c)
-    ;
+    pCStack_14 = (CCharacter *)
+                 core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                           (g_CDemonSetPtr,&CStack_f4,aCStack_10c);
     dVar14 = (double)(float)pCStack_14;
     if ((dVar14 < 0.0) || (1.0 < dVar14)) break;
     this_ptr->beam_length = (this_ptr->base).bolt_velocity * (float)pCStack_14;
@@ -241,10 +244,10 @@ LAB_004e312d:
         dVar14 = __BITCAST_DOUBLE(CONCAT44("?%s in volume\n" + 1,g_CConsolePtr));
         engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"?%s in volume\n" + 1);
         pCVar4 = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        afStack_88[3] = (pCVar4->location).position.x - (position->position).x;
+        fStack_7c = (pCVar4->location).position.x - (position->position).x;
         auStack_78._0_4_ = (pCVar4->location).position.y - (pCVar5->base).location.position.y;
         auStack_78._4_4_ = (pCVar4->location).position.z - (pCVar5->base).location.position.z;
-        fStack_4c = afStack_88[3];
+        fStack_4c = fStack_7c;
         afStack_48[(uint)bVar12 * -2] = *(float *)(auStack_78 + (uint)bVar12 * -8);
         afStack_48[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
              *(float *)(auStack_78 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4);
@@ -254,8 +257,8 @@ LAB_004e312d:
                     (pCVar4,&position->position,&CStack_c4);
           afStack_a0[0] = CStack_c4.x;
           afStack_a0[(uint)bVar12 * -2 + 1] = *(float *)((int)&CStack_c4 + (uint)bVar12 * -8 + 4);
-          afStack_a0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 2] =
-               *(float *)((int)&CStack_c4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+          *(uint *)(auStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + -4) =
+               *(uint *)((int)&CStack_c4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
           afStack_a0[1] = 0.0;
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 4);
           core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffe04);
@@ -303,15 +306,16 @@ LAB_004e312d:
              afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + -1];
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
                   (unaff_EDI,&CStack_d8,(CVector3f *)&fStack_18);
-        CStack_94.y = fStack_18;
-        afStack_88[(uint)bVar12 * -2 + -1] = (float)(&pCStack_14)[(uint)bVar12 * -2];
-        afStack_88[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
+        auStack_94._4_4_ = fStack_18;
+        afStack_8c[(uint)bVar12 * -2] = (float)(&pCStack_14)[(uint)bVar12 * -2];
+        afStack_8c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
              *(float *)(&stack0xfffffff0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
         iVar9 = 0;
         bVar2 = false;
         do {
           iStack_1fc = 0x4e3630;
-          core_setcolid_cpp_FUN_00535ee0();
+          core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                    (g_CDemonSetPtr,in_stack_00000010,(CVector3f *)(auStack_94 + 4));
           pCVar4 = g_CDemonSetPtr->collision_actor;
           if (pCVar4 == (CDemonActor *)0x0) break;
           if (pCVar4 == in_stack_0000000c) {

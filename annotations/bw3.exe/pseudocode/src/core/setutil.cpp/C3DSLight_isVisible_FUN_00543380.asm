@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 005433e9
     LEA EAX,[ESP + 0x8]                 ; 005433eb
     PUSH EAX                            ; 005433ef
-    CALL core_box.cpp_FUN_0041daf0      ; 005433f0
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 005433f0
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005433f5
     POP EBX                             ; 005433f8
     ADD ESP,0x18                        ; 005433f9

@@ -194,7 +194,8 @@ LAB_0050d17c:
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(this_ptr,1);
           pcVar8 = pcStack_2c;
           if (iVar4 != 0) {
-            shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Loading %s",pcStack_2c);
+            shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
+                      (g_CEditorToolsPtr,"Loading %s",pcStack_2c);
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040cee0(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_004fb490(0x01D182F0,pcVar8,0);
@@ -213,7 +214,7 @@ LAB_0050d17c:
       }
       if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
          (this_ptr->network_mode == NET_MODE_SYNCING)) {
-        shape_edittool_cpp_FUN_0047be90
+        shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
                   (g_CEditorToolsPtr,"Loading %s",this_ptr->mission_name);
         srand(this_ptr->random_seed);
         core_actor_cpp_setRandomSeed_FUN_0040cee0(this_ptr->random_seed);

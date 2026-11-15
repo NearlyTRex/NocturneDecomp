@@ -80,7 +80,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00555560(CDirectSound
         uStack_54 = 0x400;
         uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_5c,&uStack_20,0);
         if (uVar1 == 0) {
-          (**(code **)*piStack_30)(piStack_30,&DAT_00621070,&piStack_2c);
+          (**(code **)*piStack_30)(piStack_30,&g_IID_IDirectSound3DBuffer,&piStack_2c);
           if (piStack_2c == (int *)0x0) {
             if (piStack_30 != (int *)0x0) {
               (**(code **)(*piStack_30 + 8))(piStack_30);
@@ -88,7 +88,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00555560(CDirectSound
             }
           }
           else {
-            (**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);
+            (**(code **)*piStack_2c)(piStack_2c,&g_IID_IKsPropertySet,&DAT_0264a5d4);
             if (piStack_30 != (int *)0x0) {
               (**(code **)(*piStack_30 + 8))(piStack_30);
               piStack_30 = (int *)0x0;
@@ -106,7 +106,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00555560(CDirectSound
         }
         if (_DAT_0264a5d4 != (int *)0x0) {
           uStack_28 = 1;
-          (**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf60,0,0,0,&uStack_28,4);
+          (**(code **)(*_DAT_0264a5d4 + 0x10))
+                    (_DAT_0264a5d4,&g_DSPROPSETID_VoiceManager,0,0,0,&uStack_28,4);
         }
         uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_00552b30();
         if (0 < (int)uVar1) {

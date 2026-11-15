@@ -19,7 +19,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   undefined4 DAT_0061b4d0
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_0061f2e0
+;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CGameInstance.letterbox_mode
@@ -30,9 +30,9 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_004a19f0
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
+;   core_mission.cpp_CDemonMission_loadScript_FUN_0051abf0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0
-;   core_mission.cpp_FUN_0051abf0
 ;   core_script.cpp_CScript_executeInitSection_FUN_00544310
 ;   core_script.cpp_CScript_initRuntime_FUN_00544190
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200
@@ -107,14 +107,14 @@ section .text
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 0051be76
     PUSH EAX                            ; 0051be79
-    MOV EBP,dword ptr [0x0061f2e0]      ; 0051be7a | DAT_0061f2e0
+    MOV EBP,dword ptr [0x0061f2e0]      ; 0051be7a | g_CLevelLoaderPtr
     PUSH EBP                            ; 0051be80
     CALL core_level.cpp_CLevelLoader_update_FUN_004fe9c0 ; 0051be81
         ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0051be86
     PUSH EBX                            ; 0051be89
-    CALL core_mission.cpp_FUN_0051abf0  ; 0051be8a
-        ;   XREF to: 0051abf0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051abf0()
+    CALL core_mission.cpp_CDemonMission_loadScript_FUN_0051abf0 ; 0051be8a
+        ;   XREF to: 0051abf0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_loadScript_FUN_0051abf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0051be8f
     MOV EAX,[0x00622ad0]                ; 0051be92 | g_CScriptPtr
     PUSH EAX                            ; 0051be97

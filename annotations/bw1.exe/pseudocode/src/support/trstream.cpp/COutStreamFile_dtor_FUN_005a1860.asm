@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6d6f
 ;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d681c
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a77
-;   support_codec.cpp_FUN_00442e10 at 00442ea6
+;   support_codec.cpp_CCodec_processFiles_FUN_00442e10 at 00442ea6
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamFileTypeInfo

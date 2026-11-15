@@ -34,8 +34,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428260
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_charactr.cpp_FUN_00428260
 ;   core_charactr.cpp_FUN_0042b420
 ;   core_door.cpp_CDoor_getOpenStandPos_FUN_00460350
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
@@ -261,8 +261,8 @@ section .text
     PUSH dword ptr [EBX + 0x2778]       ; 00428a3b
     PUSH ESI                            ; 00428a41
     PUSH EBX                            ; 00428a42
-    CALL core_charactr.cpp_FUN_00428260 ; 00428a43
-        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428260()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00428260 ; 00428a43
+        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00428260(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     ADD ESP,0x14                        ; 00428a48
     MOV EAX,0x1                         ; 00428a4b
     ADD ESP,0x5c                        ; 00428a50

@@ -17,9 +17,8 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047afb0(CInputString *thi
   int iVar2;
   int iVar3;
   int x2;
-  uint uVar4;
-  CInputString *pCVar5;
-  uint uVar6;
+  CBitFont *this_ptr_00;
+  CInputString *text;
   
   y2 = _DAT_01c25f7c + y_pos;
   if (this_ptr->selection_start != this_ptr->cursor_position) {
@@ -46,9 +45,9 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047afb0(CInputString *thi
   }
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
-  uVar4 = _DAT_01c25590;
-  pCVar5 = this_ptr;
-  uVar6 = _DAT_01c263ac;
+  this_ptr_00 = _DAT_01c25590;
+  text = this_ptr;
+  iVar2 = _DAT_01c263ac;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
       _DAT_01d046a0 = "..\\shape\\edittool.cpp";
@@ -56,12 +55,13 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0047afb0(CInputString *thi
       core_main_c_displayErrorAndQuit_FUN_004e4500("CInputString::draw - string too big for hidden text!");
     }
     memset((void *)0x1c25f88,0x2a,this_ptr->current_length);
-    uVar6 = _DAT_01c263ac;
-    uVar4 = _DAT_01c25590;
+    iVar2 = _DAT_01c263ac;
+    this_ptr_00 = _DAT_01c25590;
     *(byte *)(this_ptr->current_length + 0x1c25f88) = 0;
-    pCVar5 = (CInputString *)0x1c25f88;
+    text = (CInputString *)0x1c25f88;
   }
-  engine_font_cpp_FUN_004a8df0(uVar4,pCVar5,x_pos,y_pos,uVar6,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004a8df0(this_ptr_00,text->string_data,x_pos,y_pos,iVar2,-1)
+  ;
   uVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   if ((uVar1 & 0x40000) != 0) {
     if (_DAT_01c25f84 == 0) {

@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 112,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy"
     ],
@@ -43,7 +44,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "00462540",
@@ -178,8 +179,24 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_20 + 2),unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc),",
@@ -190,7 +207,7 @@
       "line": 42,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,euler_angles,&pSStack_8[iVar2].position_offset);",
+      "text": "(DAT_005f2afc,euler_angles,&this_ptr->attached_models[iVar2].position_offset);",
       "type": "undefined_data"
     },
     {

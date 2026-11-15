@@ -64,11 +64,11 @@
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   support_codec.cpp_CCodec_dtor_FUN_00440810
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00440970
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_004410f0
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_00441290
 ;   support_codec.cpp_CLZWCompress_init_FUN_00441140
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00440bf0
-;   support_codec.cpp_FUN_00440970
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -402,8 +402,8 @@ section .text
     MOV EBP,0x12c00                     ; 0044fc32
     PUSH EAX                            ; 0044fc37
     MOV dword ptr [ESP + 0x1cc],EBP     ; 0044fc38
-    CALL support_codec.cpp_FUN_00440970 ; 0044fc3f
-        ;   XREF to: 00440970 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440970()
+    CALL support_codec.cpp_CCodec_processFromBuffer_FUN_00440970 ; 0044fc3f
+        ;   XREF to: 00440970 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_00440970(CCodec * this_ptr, char * input, int * input_length, void * ostream)
     ADD ESP,0x10                        ; 0044fc44
     TEST EAX,EAX                        ; 0044fc47
     JZ 0x0044fd6b                       ; 0044fc49

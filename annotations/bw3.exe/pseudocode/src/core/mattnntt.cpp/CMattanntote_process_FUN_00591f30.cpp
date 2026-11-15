@@ -153,7 +153,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
   CVector3f *pCStack_30;
   CVector3f *pCStack_2c;
   CVector3f *pCStack_28;
-  CLocation *pCStack_24;
+  CVector3f *pCStack_24;
   CMattanntote *pCStack_20;
   CVector3f *pCStack_1c;
   float fStack_18;
@@ -328,7 +328,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
     pCStack_2c = &(this_ptr->base).base.position_delta;
     pCStack_28 = &(this_ptr->base).base.model.accumulated_root_motion;
     pCStack_20 = (CMattanntote *)&(this_ptr->base).base.model;
-    pCStack_24 = &(this_ptr->base).base.base.location;
+    pCStack_24 = &(this_ptr->base).base.base.location.position;
     pCStack_1c = &this_ptr->wander_target;
     while (0.0 < fStack_50) {
       uVar6 = core_motion_cpp_CMotionController_advance_FUN_004fbb70
@@ -505,10 +505,10 @@ LAB_00592354:
         switch(iVar5) {
         case 0:
           iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-          fVar15 = *(float *)(iVar5 + 0x20) - (pCStack_24->position).x;
+          fVar15 = *(float *)(iVar5 + 0x20) - pCStack_24->x;
           fStack_270 = fVar15;
-          afStack_26c[0] = *(float *)(iVar5 + 0x24) - (pCStack_24->position).y;
-          afStack_26c[1] = *(float *)(iVar5 + 0x28) - (pCStack_24->position).z;
+          afStack_26c[0] = *(float *)(iVar5 + 0x24) - pCStack_24->y;
+          afStack_26c[1] = *(float *)(iVar5 + 0x28) - pCStack_24->z;
           *(float *)(&stack0xfffffcec + (uint)bVar13 * -8) = afStack_26c[(uint)bVar13 * -2];
           *(float *)(&stack0xfffffcf0 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
                afStack_26c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
@@ -580,9 +580,9 @@ LAB_00592354:
         case 1:
         case 2:
           iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-          afStack_26c[2] = *(float *)(iVar5 + 0x20) - (pCStack_24->position).x;
-          afStack_26c[3] = *(float *)(iVar5 + 0x24) - (pCStack_24->position).y;
-          fStack_25c = *(float *)(iVar5 + 0x28) - (pCStack_24->position).z;
+          afStack_26c[2] = *(float *)(iVar5 + 0x20) - pCStack_24->x;
+          afStack_26c[3] = *(float *)(iVar5 + 0x24) - pCStack_24->y;
+          fStack_25c = *(float *)(iVar5 + 0x28) - pCStack_24->z;
           afStack_d4[2] = afStack_26c[2];
           afStack_d4[(uint)bVar13 * -2 + 3] = afStack_26c[(uint)bVar13 * -2 + 3];
           afStack_d4[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
@@ -656,9 +656,9 @@ LAB_00592354:
               }
               else if (0 < iVar5) {
                 pCVar8 = (this_ptr->base).victim;
-                fStack_18c = (pCVar8->base).location.position.x - (pCStack_24->position).x;
-                fStack_188 = (pCVar8->base).location.position.y - (pCStack_24->position).y;
-                fStack_184 = (pCVar8->base).location.position.z - (pCStack_24->position).z;
+                fStack_18c = (pCVar8->base).location.position.x - ((CVector3f *)&pCStack_24->x)->x;
+                fStack_188 = (pCVar8->base).location.position.y - pCStack_24->y;
+                fStack_184 = (pCVar8->base).location.position.z - pCStack_24->z;
                 afStack_1dc[2] = fStack_18c;
                 afStack_1dc[(uint)bVar13 * -2 + 3] = afStack_1ac[(uint)bVar13 * -2 + 9];
                 afStack_1dc[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
@@ -748,9 +748,9 @@ LAB_00592354:
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-            fStack_2f4 = (pCStack_24->position).x - *(float *)(iVar5 + 0x20);
-            fStack_2f0 = (pCStack_24->position).y - *(float *)(iVar5 + 0x24);
-            fStack_2ec = (pCStack_24->position).z - *(float *)(iVar5 + 0x28);
+            fStack_2f4 = ((CVector3f *)&pCStack_24->x)->x - *(float *)(iVar5 + 0x20);
+            fStack_2f0 = pCStack_24->y - *(float *)(iVar5 + 0x24);
+            fStack_2ec = pCStack_24->z - *(float *)(iVar5 + 0x28);
             fStack_198 = fStack_2f4;
             afStack_1ac[(uint)bVar13 * -2 + 6] =
                  *(float *)((int)&stack0xfffffd10 + (uint)bVar13 * -8);
@@ -785,9 +785,9 @@ LAB_00592354:
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-            afStack_248[2] = (pCStack_24->position).x - *(float *)(iVar5 + 0x20);
-            afStack_248[3] = (pCStack_24->position).y - *(float *)(iVar5 + 0x24);
-            fStack_238 = (pCStack_24->position).z - *(float *)(iVar5 + 0x28);
+            afStack_248[2] = ((CVector3f *)&pCStack_24->x)->x - *(float *)(iVar5 + 0x20);
+            afStack_248[3] = pCStack_24->y - *(float *)(iVar5 + 0x24);
+            fStack_238 = pCStack_24->z - *(float *)(iVar5 + 0x28);
             fStack_1f8 = afStack_248[2];
             afStack_1f4[(uint)bVar13 * -2] = afStack_248[(uint)bVar13 * -2 + 3];
             afStack_1f4[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
@@ -821,9 +821,9 @@ LAB_00592354:
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-            fStack_30c = (pCStack_24->position).x - *(float *)(iVar5 + 0x20);
-            fStack_308 = (pCStack_24->position).y - *(float *)(iVar5 + 0x24);
-            fStack_304 = (pCStack_24->position).z - *(float *)(iVar5 + 0x28);
+            fStack_30c = ((CVector3f *)&pCStack_24->x)->x - *(float *)(iVar5 + 0x20);
+            fStack_308 = pCStack_24->y - *(float *)(iVar5 + 0x24);
+            fStack_304 = pCStack_24->z - *(float *)(iVar5 + 0x28);
             fStack_120 = fStack_30c;
             afStack_11c[(uint)bVar13 * -2] = *(float *)((int)&stack0xfffffcf8 + (uint)bVar13 * -8);
             afStack_11c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
@@ -898,14 +898,16 @@ switchD_00593661_caseD_e:
           if (this_ptr->fading_out == 0) {
             this_ptr->fading_out = 1;
             this_ptr->fade_timer = 0.0;
-            core_charactr_cpp_FUN_0042fbd0(this_ptr,pCStack_24,0,0,0x42480000,0,0x40000000);
+            core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
+                      ((CCharacter *)this_ptr,pCStack_24,0,0,50.0,0,2.0);
           }
           break;
         case 0xf:
           if (this_ptr->fading_out == 1) {
             this_ptr->fade_timer = 0.0;
             this_ptr->fading_out = 0;
-            core_charactr_cpp_FUN_0042fbd0(this_ptr,pCStack_24,0,0,0x42480000,0,0x40000000);
+            core_charactr_cpp_CCharacter_igniteBone_FUN_0042fbd0
+                      ((CCharacter *)this_ptr,pCStack_24,0,0,50.0,0,2.0);
             this_ptr->wander_timer = 4.0;
             this_ptr->wander_mode = 1;
           }

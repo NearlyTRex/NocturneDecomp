@@ -57,9 +57,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f20(CDemonActor 
   CVector3f CStack_13c;
   CVector3f CStack_130;
   float fStack_124;
-  float fStack_120;
-  float fStack_11c;
-  float fStack_118;
+  CVector3f CStack_120;
   CVector3f CStack_114;
   float fStack_108;
   CVector3f CStack_104;
@@ -101,7 +99,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f20(CDemonActor 
   }
   CStack_130.z = fStack_14c;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(this_ptr,&CStack_130,&CStack_13c);
-  fStack_118 = CStack_13c.x;
+  CStack_120.z = CStack_13c.x;
   *(uint *)((int)&CStack_114 + (uint)bVar10 * -8) =
        *(uint *)((int)&CStack_13c + (uint)bVar10 * -8 + 4);
   *(uint *)((int)&CStack_114 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =
@@ -112,7 +110,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f20(CDemonActor 
     afStack_90[1] = -3.0;
     core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0
               (this_ptr,(CVector3f *)(auStack_98 + 4),(CVector3f *)(auStack_78 + 8));
-    fVar3 = fStack_118;
+    fVar3 = CStack_120.z;
     CStack_114.z = (float)auStack_78._8_4_;
     (&fStack_108)[(uint)bVar10 * -2] = (&fStack_6c)[(uint)bVar10 * -2];
     *(uint *)((int)&CStack_104 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
@@ -126,8 +124,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f20(CDemonActor 
          afStack_144[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
     if (&fStack_124 != &CStack_c0.z) {
       fStack_124 = CStack_c0.z;
-      fStack_120 = afStack_b4[0];
-      fStack_11c = afStack_b4[1];
+      CStack_120.x = afStack_b4[0];
+      CStack_120.y = afStack_b4[1];
     }
   }
   pCStack_28 = (CDemonActor *)0x40000000;
@@ -271,8 +269,9 @@ LAB_0040a14a:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,pCStack_3c);
     }
     fStack_20 = 0.0;
-    while ((fVar3 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,&fStack_120,&CStack_114),
-           0.0 <= fVar3 && (fVar3 <= 1.0))) {
+    while ((fVar3 = core_setcolid_cpp_CDemonSet_raycast_FUN_00557300
+                              (g_CDemonSetPtr,&CStack_120,&CStack_114), 0.0 <= fVar3 &&
+           (fVar3 <= 1.0))) {
       pCVar2 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c600
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);

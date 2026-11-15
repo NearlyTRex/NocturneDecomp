@@ -37,9 +37,9 @@ void __cdecl CDemonMission::readMissionFile(CDemonMission *this_ptr,_FILE *file_
 // Address: 004fbc00
 CDemonActor * __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *this_ptr,char *actor_name);
 
-// Original: core_mission.cpp_FUN_004fbc90
+// Original: core_mission.cpp_CDemonMission_loadScript_FUN_004fbc90
 // Address: 004fbc90
-void FUN_004fbc90(int param_1);
+int __cdecl CDemonMission::loadScript(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0
 // Address: 004fbce0
@@ -101,9 +101,9 @@ void __cdecl CDemonMission::setTeleportTarget(CDemonMission *this_ptr,CLocation 
 // Address: 004fc7b0
 void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 
-// Original: core_mission.cpp_FUN_004fc820
+// Original: core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820
 // Address: 004fc820
-void FUN_004fc820(int *param_1);
+void __cdecl CDemonMission::buildActiveSetActorList(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_process_FUN_004fc940
 // Address: 004fc940

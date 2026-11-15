@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -277,8 +277,8 @@ section .text
     PUSH 0x0                            ; 004a5e05
     PUSH EBX                            ; 004a5e07
     PUSH EDX                            ; 004a5e08
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 004a5e09
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 004a5e09
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 004a5e0e
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a5e11
         ;   Label: LAB_004a5e11
@@ -461,8 +461,8 @@ section .text
     PUSH 0x0                            ; 004a6068
     PUSH EDX                            ; 004a606a
     PUSH EBX                            ; 004a606b
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 004a606c
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 004a606c
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 004a6071
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a6074
         ;   Label: LAB_004a6074

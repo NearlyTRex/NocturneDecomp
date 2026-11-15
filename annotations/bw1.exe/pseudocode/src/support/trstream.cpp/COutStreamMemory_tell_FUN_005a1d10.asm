@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   support_codec.cpp_CCodec_finalizeBuffer_FUN_00442f00 at 00442f39
+;   support_codec.cpp_CCodec_processToBuffer_FUN_00442c80 at 00442cc5
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 at 0044409c
-;   support_codec.cpp_FUN_00442c80 at 00442cc5
 ;
 ; *****************************************************************************
 

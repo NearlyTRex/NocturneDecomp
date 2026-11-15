@@ -2,11 +2,11 @@
 // Address: 004d0780
 // Address Range: [[004d0780, 004d08d4]]
 // Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,undefined4 param_2)
+// Signature: undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,int param_2)
 
 #include "nocturne.h"
 
-uint core_hero_cpp_FUN_004d0780(CHero *param_1,uint param_2)
+uint core_hero_cpp_FUN_004d0780(CHero *param_1,int param_2)
 
 {
   CHero_full_vtable *pCVar1;
@@ -35,7 +35,8 @@ uint core_hero_cpp_FUN_004d0780(CHero *param_1,uint param_2)
     return 1;
   }
   iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3);
-  if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004cf030(param_1,param_2), iVar4 != 0)) {
+  if ((iVar4 != 0) &&
+     (iVar4 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(param_1,param_2), iVar4 != 0)) {
     return 1;
   }
   iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);
