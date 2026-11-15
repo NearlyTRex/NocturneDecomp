@@ -18,7 +18,7 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_0053b8d0(C3DSLight *this_ptr
   if (light == (CDemonLight *)0x0) {
     _DAT_01d046a0 = "..\\core\\setutil.cpp";
     _DAT_01d046a4 = 0x351;
-    core_main_c_FUN_004e4500("C3DSLight::process - NULL CDemonLight pointer!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("C3DSLight::process - NULL CDemonLight pointer!");
   }
   if (this_ptr->filter_count != 0) {
     if (0.0 < this_ptr->filter_durations[this_ptr->current_filter_frame]) {

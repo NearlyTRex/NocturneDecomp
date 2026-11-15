@@ -1,52 +1,50 @@
 // Name: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00435210
 // Address: 00435210
 // Address Range: [[00435210, 00435309]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(void)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPalette *rgb_palette_data)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0043527d) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(void)
+void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPalette *rgb_palette_data)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
-  byte bVar3;
+  uchar *puVar1;
+  uchar *puVar2;
+  SRGBColor *pSVar3;
   int iVar4;
   int iVar5;
-  byte *in_stack_00000004;
   
-  _DAT_01c6a970 = in_stack_00000004;
+  _DAT_01c6a970 = rgb_palette_data;
   if (DAT_005fba20 != 0x20) {
     iVar4 = 0;
     do {
-      bVar3 = *in_stack_00000004;
-      pbVar1 = in_stack_00000004 + 1;
-      pbVar2 = in_stack_00000004 + 2;
+      pSVar3 = (SRGBColor *)&rgb_palette_data->colors[0].r;
+      puVar1 = &rgb_palette_data->colors[0].g;
+      puVar2 = &rgb_palette_data->colors[0].b;
       iVar5 = iVar4 + 2;
-      in_stack_00000004 = in_stack_00000004 + 3;
+      rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
       *(ushort *)(iVar4 + 0x1c6ad74) =
-           (ushort)(*pbVar1 / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) |
-           (ushort)(bVar3 / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f)) |
-           (ushort)(*pbVar2 / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f));
+           (ushort)(*puVar1 / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) |
+           (ushort)(pSVar3->r / _DAT_01c6af78 << (DAT_01c6af74 & 0x1f)) |
+           (ushort)(*puVar2 / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f));
       iVar4 = iVar5;
     } while (iVar5 != 0x200);
     return;
   }
   iVar4 = 0;
   do {
-    pbVar1 = in_stack_00000004 + 1;
-    bVar3 = *in_stack_00000004;
-    pbVar2 = in_stack_00000004 + 2;
+    puVar1 = &rgb_palette_data->colors[0].g;
+    pSVar3 = (SRGBColor *)&rgb_palette_data->colors[0].r;
+    puVar2 = &rgb_palette_data->colors[0].b;
     iVar5 = iVar4 + 4;
-    in_stack_00000004 = in_stack_00000004 + 3;
+    rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
     *(uint *)(&DAT_01c6a974 + iVar4) =
-         (uint)*pbVar2 << (DAT_01c6af8c & 0x1f) |
-         (uint)bVar3 << (DAT_01c6af74 & 0x1f) | (uint)*pbVar1 << (DAT_01c6af80 & 0x1f);
+         (uint)*puVar2 << (DAT_01c6af8c & 0x1f) |
+         (uint)pSVar3->r << (DAT_01c6af74 & 0x1f) | (uint)*puVar1 << (DAT_01c6af80 & 0x1f);
     iVar4 = iVar5;
   } while (iVar5 != 0x400);
   return;

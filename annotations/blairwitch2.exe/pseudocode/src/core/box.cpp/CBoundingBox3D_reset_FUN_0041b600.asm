@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0 at 005487ff
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930 at 00544961
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0 at 00560d52
-;   core_turret.cpp_FUN_0057f0b0 at 0057f102
+;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 at 0057f102
 ;
 ; *****************************************************************************
 

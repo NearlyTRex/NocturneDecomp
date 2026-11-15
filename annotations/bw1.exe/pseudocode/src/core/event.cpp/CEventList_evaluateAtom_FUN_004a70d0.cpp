@@ -66,11 +66,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
   uint local_14c;
   float local_148 [2];
   CVector3f local_140;
-  uint local_134;
-  float local_130 [2];
+  float local_134 [3];
   CVector3f local_128;
-  uint local_11c;
-  float afStack_118 [5];
+  CVector3f local_11c;
+  uint local_110;
+  float afStack_10c [2];
   uint local_104;
   int local_100;
   int local_fc;
@@ -1036,18 +1036,21 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         local_104 = 0;
                       }
                       else {
-                        core_actor_cpp_FUN_00408bb0(pCVar10,&(pCVar13->base).base.location);
-                        local_134 = local_11c;
-                        local_130[(uint)bVar18 * -2] = afStack_118[(uint)bVar18 * -2];
-                        local_130[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
-                             afStack_118[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1];
-                        local_130[0] = 0.0;
-                        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_134)
+                        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                                  ((CDemonActor *)pCVar10,&(pCVar13->base).base.location.position,
+                                   &local_11c);
+                        local_134[0] = local_11c.x;
+                        local_134[(uint)bVar18 * -2 + 1] =
+                             *(float *)((int)&local_11c + (uint)bVar18 * -8 + 4);
+                        local_134[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 2] =
+                             *(float *)((int)&local_11c + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
                         ;
-                        local_14c = afStack_118[2];
-                        local_148[(uint)bVar18 * -2] = afStack_118[(uint)bVar18 * -2 + 3];
+                        local_134[1] = 0.0;
+                        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(local_134);
+                        local_14c = local_110;
+                        local_148[(uint)bVar18 * -2] = afStack_10c[(uint)bVar18 * -2];
                         local_148[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
-                             afStack_118[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 4];
+                             afStack_10c[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1];
                         if (local_10b8 * _DAT_005dea9c * (float)_DAT_005deaa4 < ABS(local_148[0])) {
                           local_104 = 0;
                         }
@@ -1798,7 +1801,7 @@ switchD_004a7564_caseD_5:
 switchD_004a7564_default:
       _DAT_01d1d400 = "..\\core\\event.cpp";
       _DAT_01d1d404 = 0xa27;
-      core_main_c_FUN_005030e0("Hell froze.");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze.");
     }
 LAB_004a757f:
     while (((&DAT_00626114)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {

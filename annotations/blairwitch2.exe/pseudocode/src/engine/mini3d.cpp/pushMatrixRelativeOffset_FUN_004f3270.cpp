@@ -23,7 +23,7 @@ void __cdecl engine_mini3d_cpp_pushMatrixRelativeOffset_FUN_004f3270(CVector3f *
   if (9 < _DAT_01d0991c) {
     _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
     _DAT_01d046a4 = 0x4d3;
-    core_main_c_FUN_004e4500("Matrix unbalance");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance");
   }
   iVar2 = _DAT_01d0991c * 0x3c;
   puVar4 = _DAT_01d09918;

@@ -38,7 +38,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 0049a2d4
     MOV dword ptr [ESP + 0x3c],EDX      ; 0049a2d5
     MOV dword ptr [ESP + 0x40],EDX      ; 0049a2d9
-    CALL core_dirmat.cpp_FUN_00449530   ; 0049a2dd
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0049a2dd
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x54]                ; 0049a2e2
     LEA EAX,[ESP + 0x30]                ; 0049a2e6
     ADD ESP,0x8                         ; 0049a2ea

@@ -96,7 +96,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0050ff60(CPacked
 LAB_0050ffee:
         _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
         _DAT_01d71de4 = 0x4b1;
-        core_main_c_FUN_004e4330("IO error reading PBM (possibly corrupt file).");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("IO error reading PBM (possibly corrupt file).");
         goto LAB_0050ffaa;
       }
     }
@@ -104,11 +104,11 @@ LAB_0050ffee:
 LAB_0050ffaa:
       _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
       _DAT_01d71de4 = 0x4b2;
-      core_main_c_FUN_004e4330("Corrupt data detected reading PBM.");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Corrupt data detected reading PBM.");
     }
 LAB_0050ffcd:
     _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
     _DAT_01d71de4 = 0x4b3;
-    core_main_c_FUN_004e4330("Out of memory reading PBM");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory reading PBM");
   } while( true );
 }

@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bd33
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433be9
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446073
@@ -29,7 +29,7 @@
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660 at 00539776
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005423e9
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60 at 00568e12
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fa178
@@ -192,7 +192,7 @@ section .text
     FLD ST2                             ; 005b7ab7
     FXCH                                ; 005b7ab9
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005b7abb
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FSTP ST2                            ; 005b7ac0
     FLD float ptr [ESP + 0x48]          ; 005b7ac2
     FMUL ST2                            ; 005b7ac6

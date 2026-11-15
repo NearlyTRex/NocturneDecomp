@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
 ;
 ; *****************************************************************************
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5b519d                       ; 0040301c | = "hLine - invalid bitsPerPixel"
     MOV [0x01d71de0],EAX                ; 00403021 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00403026 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040302c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040302c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00403031
     POP EBP                             ; 00403034
     POP EDI                             ; 00403035

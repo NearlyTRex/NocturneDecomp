@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_free_FUN_004e72e0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_texlist.cpp_CTextureList_ctor_FUN_005960b0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_operator_new_FUN_005c0f32
@@ -73,8 +73,8 @@ section .text
     PUSH 0x5e433b                       ; 004e7296 | = "CGround::init - Out of memory"
     MOV dword ptr [0x01d1d400],ESI      ; 004e729b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004e72a1 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004e72a7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004e72a7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004e72ac
     POP ESI                             ; 004e72af
     POP EDI                             ; 004e72b0
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5e436c                       ; 004e72bd | = "CGround::init - Out of memory2"
     MOV [0x01d1d400],EAX                ; 004e72c2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 004e72c7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004e72cd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004e72cd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004e72d2
     POP EBX                             ; 004e72d5
     RET                                 ; 004e72d6

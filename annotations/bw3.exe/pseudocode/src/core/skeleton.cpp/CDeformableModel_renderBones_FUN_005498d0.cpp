@@ -17,7 +17,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_005498d0(CDeform
   float afStackY_101c [1012];
   CVector3i CStack_40;
   float fStack_34;
-  float afStack_30 [5];
+  float afStack_30 [2];
+  CVector3f CStack_28;
   CSkeleton *pCStack_1c;
   int iStack_18;
   CMatrix3x4f *pCStack_14;
@@ -29,11 +30,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_005498d0(CDeform
     text = pCStack_1c->bone_list;
     pCStack_14 = bone_matrices;
     do {
-      core_xform_cpp_FUN_00584450(pCStack_14);
-      fStack_34 = afStack_30[2];
-      afStack_30[(uint)bVar2 * -2] = afStack_30[(uint)bVar2 * -2 + 3];
+      core_xform_cpp_getTranslation_FUN_00584450(pCStack_14,&CStack_28);
+      fStack_34 = CStack_28.x;
+      afStack_30[(uint)bVar2 * -2] = *(float *)((int)&CStack_28 + (uint)bVar2 * -8 + 4);
       afStack_30[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-           afStack_30[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+           *(float *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
       CStack_40.x = (int)ROUND(fStack_34 * _DAT_005e4758);
       CStack_40.y = (int)ROUND(afStack_30[0] * _DAT_005e4758);
       CStack_40.z = (int)ROUND(afStack_30[1] * _DAT_005e4758);

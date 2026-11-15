@@ -15,10 +15,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_005380a0 at 00538248
-;   core_set.cpp_FUN_005365c0 at 00536840
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536840
 ;   core_shadow.cpp_FUN_005438d0 at 00543ee5
+;   core_trigger.cpp_CTrigger_process_FUN_0056e230 at 0056e55a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0203ad1c
@@ -37,9 +38,9 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_FUN_0044bb00
-;   core_dglobe.cpp_FUN_0045b070
-;   core_mirror.cpp_FUN_004f57c0
-;   core_mirror.cpp_FUN_004f5870
+;   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045b070
+;   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870
+;   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0
 ;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0
 ;
 ; *****************************************************************************
@@ -142,8 +143,8 @@ section .text
     PUSH EDX                            ; 00537efa
     ADD EDI,0x4                         ; 00537efb
     INC ESI                             ; 00537efe
-    CALL core_dglobe.cpp_FUN_0045b070   ; 00537eff
-        ;   XREF to: 0045b070 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_FUN_0045b070()
+    CALL core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045b070 ; 00537eff
+        ;   XREF to: 0045b070 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045b070(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
     MOV ECX,dword ptr [0x0207faf0]      ; 00537f04 | DAT_0207faf0
     ADD ESP,0xc                         ; 00537f0a
     ADD EBX,EAX                         ; 00537f0d
@@ -197,8 +198,8 @@ section .text
     PUSH EAX                            ; 00537f9c
     LEA ESI,[ESP + 0x8]                 ; 00537f9d
     LEA EDI,[ESP + 0x14]                ; 00537fa1
-    CALL core_mirror.cpp_FUN_004f57c0   ; 00537fa5
-        ;   XREF to: 004f57c0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004f57c0()
+    CALL core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0 ; 00537fa5
+        ;   XREF to: 004f57c0 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0(CMirrorReflection * this_ptr, CVector3i * input_vertex, CVector3i * output_vertex)
     LEA ESI,[ESP + 0x8]                 ; 00537faa
     ADD ESP,0x8                         ; 00537fae
     MOVSD ES:EDI,ESI                    ; 00537fb1
@@ -280,8 +281,8 @@ section .text
     PUSH EAX                            ; 0053806e
     LEA ESI,[ESP + 0x30]                ; 0053806f
     LEA EDI,[ESP + 0x24]                ; 00538073
-    CALL core_mirror.cpp_FUN_004f5870   ; 00538077
-        ;   XREF to: 004f5870 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004f5870()
+    CALL core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870 ; 00538077
+        ;   XREF to: 004f5870 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870(CMirrorReflection * this_ptr, CVector3i * point_a, CVector3i * point_b, CVector3i * output)
     LEA ESI,[ESP + 0x30]                ; 0053807c
     ADD ESP,0xc                         ; 00538080
     MOVSD ES:EDI,ESI                    ; 00538083

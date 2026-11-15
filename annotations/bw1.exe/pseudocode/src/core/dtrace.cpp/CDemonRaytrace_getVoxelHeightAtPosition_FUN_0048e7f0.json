@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 191,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 80,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -172,86 +170,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "float *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "int extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_02",
-      "severity": "moderate",
-      "text": "int extraout_EDX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar7 = ((float10)*extraout_EDX -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "fVar4 = ((float10)*(float *)(extraout_EDX_00 + 4) -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "fVar6 = ((float10)*(float *)(extraout_EDX_01 + 8) -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
-      "match": "extraout_EDX_02",
-      "severity": "moderate",
-      "text": "if (((((extraout_EDX_02 < 0) || (iStack_18 < 0)) || (iVar1 < 0)) ||",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
-      "match": "extraout_EDX_02",
-      "severity": "moderate",
-      "text": "((7 < extraout_EDX_02 || (7 < iStack_18)))) || (7 < iVar1)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_0061ab68",
-      "severity": "mild",
-      "text": "((pCVar2->voxel_buffer1->voxels[iVar1][iStack_18] & (&DAT_0061ab68)[(int)ROUND(fVar7)]) !=",
-      "type": "undefined_data"
     }
   ]
 }

@@ -22,6 +22,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
   float afStackY_1020 [1009];
   CMotionController *this_ptr_01;
   float fStack_30;
+  CVector3f CStack_2c;
   CMotionController *pCStack_18;
   float fStack_14;
   
@@ -125,11 +126,12 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
     if (pCVar5 == (CDemonActor *)0x0) {
       if (damage_info->damage_type == DAMAGE_TYPE_SHADOW) {
-        core_actor_cpp_FUN_00408bb0(this_ptr);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                  ((CDemonActor *)this_ptr,&(damage_info->wielder->location).position,&CStack_2c);
         *(uint *)(&stack0xffffffcc + (uint)bVar6 * -8) =
-             *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8);
+             *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + 4);
         *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-             *(uint *)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+             *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         if (fStack_30 <= 0.0) {
           iVar2 = 0x83;
         }

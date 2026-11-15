@@ -28,7 +28,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160
@@ -116,8 +116,8 @@ section .text
     PUSH EAX                            ; 004d2b9b
     LEA ESI,[ESP + 0x8]                 ; 004d2b9c
     LEA EDI,[ESP + 0x14]                ; 004d2ba0
-    CALL core_actor.cpp_FUN_00408bf0    ; 004d2ba4
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 004d2ba4
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x8]                 ; 004d2ba9
     ADD ESP,0x8                         ; 004d2bad
     MOVSD ES:EDI,ESI                    ; 004d2bb0

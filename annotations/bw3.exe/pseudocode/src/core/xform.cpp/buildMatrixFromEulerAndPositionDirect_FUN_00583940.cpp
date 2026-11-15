@@ -1,12 +1,12 @@
 // Name: core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 // Address: 00583940
 // Address Range: [[00583940, 00583a3f]]
-// Convention: unknown
-// Signature: void core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(float *param_1,float *param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 
 #include "nocturne.h"
 
-void core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(float *param_1,float *param_2,int param_3)
+void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 
 {
   float local_24;
@@ -16,20 +16,20 @@ void core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(float *pa
   float local_14;
   float local_10;
   
-  core_dirmat_cpp_FUN_0045bef0(&local_24,&local_20,param_3);
-  core_dirmat_cpp_FUN_0045bef0(&local_1c,&local_14,param_3 + 8);
-  core_dirmat_cpp_FUN_0045bef0(&local_10,&local_18,param_3 + 4);
-  *param_1 = local_18 * local_14 + local_10 * local_24 * local_1c;
-  param_1[1] = -local_18 * local_1c + local_10 * local_24 * local_14;
-  param_1[2] = local_10 * local_20;
-  param_1[4] = local_1c * local_20;
-  param_1[5] = local_14 * local_20;
-  param_1[6] = -local_24;
-  param_1[8] = -local_10 * local_14 + local_18 * local_24 * local_1c;
-  param_1[9] = local_1c * local_10 + local_18 * local_24 * local_14;
-  param_1[10] = local_18 * local_20;
-  param_1[3] = *param_2;
-  param_1[7] = param_2[1];
-  param_1[0xb] = param_2[2];
+  core_dirmat_cpp_FUN_0045bef0(&local_24,&local_20,euler_angles);
+  core_dirmat_cpp_FUN_0045bef0(&local_1c,&local_14,&euler_angles->z);
+  core_dirmat_cpp_FUN_0045bef0(&local_10,&local_18,&euler_angles->y);
+  output_matrix->m[0].w = local_18 * local_14 + local_10 * local_24 * local_1c;
+  output_matrix->m[0].x = -local_18 * local_1c + local_10 * local_24 * local_14;
+  output_matrix->m[0].y = local_10 * local_20;
+  output_matrix->m[1].w = local_1c * local_20;
+  output_matrix->m[1].x = local_14 * local_20;
+  output_matrix->m[1].y = -local_24;
+  output_matrix->m[2].w = -local_10 * local_14 + local_18 * local_24 * local_1c;
+  output_matrix->m[2].x = local_1c * local_10 + local_18 * local_24 * local_14;
+  output_matrix->m[2].y = local_18 * local_20;
+  output_matrix->m[0].z = position->x;
+  output_matrix->m[1].z = position->y;
+  output_matrix->m[2].z = position->z;
   return;
 }

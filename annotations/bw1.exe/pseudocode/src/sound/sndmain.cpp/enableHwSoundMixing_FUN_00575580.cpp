@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_00575580(int enable)
   }
   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
   _DAT_01d1d404 = 0x158f;
-  core_main_c_FUN_005030e0("enableHwSoundMixing - Can't do this while the device is open.");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("enableHwSoundMixing - Can't do this while the device is open.");
   DAT_00623300 = enable;
   return;
 }

@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50 at 00483b5b
-;   engine_drender.cpp_FUN_00483b70 at 00483b7f
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70 at 00483b7f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c51d44

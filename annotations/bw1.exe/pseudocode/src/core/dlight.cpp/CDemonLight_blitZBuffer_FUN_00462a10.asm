@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_004886f1
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5d900f                       ; 00462aaf | = "CDemonLight::blitZBuffer - No master ..."
     MOV dword ptr [0x01d1d400],ECX      ; 00462ab4 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00462aba | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00462ac0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462ac0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462ac5
     JMP 0x00462a29                      ; 00462ac8
         ;   XREF to: 00462a29 (UNCONDITIONAL_JUMP)  ; LAB_00462a29

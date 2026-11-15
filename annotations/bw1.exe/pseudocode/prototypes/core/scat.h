@@ -79,7 +79,7 @@ void __cdecl CScat::blendAimBones(CScat *this_ptr,int hand_index);
 
 // Original: core_scat.cpp_FUN_005424f0
 // Address: 005424f0
-void FUN_005424f0(int param_1,float param_2,int param_3);
+void FUN_005424f0(CDemonActor *param_1,float param_2,float param_3);
 
 // Original: core_scat.cpp_FUN_00542b90
 // Address: 00542b90

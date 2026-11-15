@@ -44,13 +44,13 @@
 ;   undefined4 DAT_007e2cf8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
@@ -245,8 +245,8 @@ section .text
     PUSH EAX                            ; 0042eb36
     LEA ESI,[ESP + 0x68]                ; 0042eb37
     LEA EDI,[ESP + 0x50]                ; 0042eb3b
-    CALL core_xform.cpp_FUN_00583260    ; 0042eb3f
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0042eb3f
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 0042eb44
     LEA EAX,[ESP + 0x48]                ; 0042eb47
     LEA ESI,[ESP + 0x60]                ; 0042eb4b
@@ -256,8 +256,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042eb52
     PUSH EBX                            ; 0042eb53
     LEA ESI,[ESP + 0x5c]                ; 0042eb54
-    CALL core_actor.cpp_FUN_00408b80    ; 0042eb58
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0042eb58
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0042eb5d
     IMUL EDX,dword ptr [ESP + 0x94],0x2a4 ; 0042eb60
     LEA EDI,[ESP + 0x3c]                ; 0042eb6b

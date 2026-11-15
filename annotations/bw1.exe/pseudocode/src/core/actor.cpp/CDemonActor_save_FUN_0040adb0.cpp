@@ -21,7 +21,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040adb0(CDemonActor *this_ptr,
   if (this_ptr->actor_name[0] == '\0') {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 1999;
-    core_main_c_FUN_005030e0("CDemonActor::save - tried to save actor of class %s with no name",pcVar4);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonActor::save - tried to save actor of class %s with no name");
   }
   FUN_005c03c0(file_handle,"%s{ %s \"%s\"\n",&DAT_006106c0,pcVar4,this_ptr);
   uVar3 = DAT_007c303c;
@@ -37,7 +37,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040adb0(CDemonActor *this_ptr,
   if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x7f1;
-    core_main_c_FUN_005030e0("IO Error after writing actor of type %s",pcVar4);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("IO Error after writing actor of type %s");
   }
   DAT_007c3034 = (_FILE *)uVar1;
   DAT_007c303c = (CDemonActor *)uVar3;

@@ -30,8 +30,7 @@ void core_doc_cpp_FUN_0045bdc0(CHero *param_1,float param_2)
   float local_68;
   float local_64;
   CVector3f local_60;
-  float local_54;
-  float afStack_50 [4];
+  CVector3f local_54;
   CVector3f *local_40;
   int local_3c;
   CCharacter *local_38;
@@ -101,7 +100,7 @@ LAB_0045be11:
     }
     iVar5 = param_1[1].base.base.health;
     if (iVar5 == 1) {
-      local_14 = (float)core_motion_cpp_FUN_005038a0(local_30,0x13);
+      local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(local_30,0x13);
       if ((float)_DAT_005d065f <= local_14) {
         local_18 = 0;
         iVar5 = local_18;
@@ -404,11 +403,13 @@ switchD_0045c465_caseD_3:
                               g_CDynamiteClassInfo.name_hash);
         local_2c = local_38;
         if (local_38 != (CCharacter *)0x0) {
-          core_actor_cpp_FUN_00408cf0(param_1,&local_60);
-          local_6c = local_54;
-          (&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] = afStack_50[(uint)bVar10 * -2];
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)param_1,&local_60,&local_54);
+          local_6c = local_54.x;
+          (&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] =
+               (float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);
           (&stack0xffffff98)[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-               afStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+               (float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           pCVar9 = (local_2c->model).bone_origins + 0x51;
           if (pCVar9 != (CVector3f *)&stack0xffffff94) {
             pCVar9->x = local_6c;

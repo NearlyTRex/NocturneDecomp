@@ -2,16 +2,16 @@
 // Address: 00404440
 // Address Range: [[00404440, 004044cf]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip)
 
 #include "nocturne.h"
 
-int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip)
 
 {
   SRenderVertex vertex2;
   int iVar1;
-  int *piVar2;
+  SLineStrip *pSVar2;
   int iVar3;
   uint *puVar4;
   uint *puVar5;
@@ -27,16 +27,16 @@ int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
   iVar8 = 0x40444c;
   engine_3d_c_setActiveRenderColor_FUN_00404410();
   iVar3 = 0;
-  piVar2 = (int *)(param_1 + 8);
-  while (iVar3 < *(int *)(param_1 + 4) + -1) {
-    puVar4 = &DAT_0060b014 + *piVar2 * 0xc;
+  pSVar2 = line_strip + 1;
+  while (iVar3 < line_strip->vertex_count + -1) {
+    puVar4 = &DAT_0060b014 + pSVar2->primitive_type * 0xc;
     puVar5 = auStack_40;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar5 = *puVar4;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    puVar4 = &DAT_0060b014 + piVar2[1] * 0xc;
+    puVar4 = &DAT_0060b014 + pSVar2->vertex_count * 0xc;
     puVar5 = auStack_70;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar5 = *puVar4;
@@ -50,7 +50,7 @@ int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    piVar2 = piVar2 + 1;
+    pSVar2 = (SLineStrip *)&pSVar2->vertex_count;
     iVar3 = iVar3 + 1;
     puVar4 = auStack_40;
     puVar5 = (uint *)&stack0xffffff30;
@@ -74,5 +74,5 @@ int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
     vertex2.b = in_stack_ffffff60._40_4_;
     engine_3d_c_clipAndDrawLine2D_FUN_00407b30(in_stack_ffffff30,vertex2);
   }
-  return *(int *)(param_1 + 4) * 4 + param_1 + 8;
+  return (SMRGLHeaderExtended *)(&line_strip[1].primitive_type + line_strip->vertex_count);
 }

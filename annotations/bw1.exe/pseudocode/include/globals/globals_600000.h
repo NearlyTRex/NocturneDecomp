@@ -11,6 +11,8 @@
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CMobster_full_vtable.h"
 #include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
@@ -95,6 +97,13 @@ extern CMobster_full_vtable g_CMobsterVTable;
 
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
 
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CFlameThrowerVTable;

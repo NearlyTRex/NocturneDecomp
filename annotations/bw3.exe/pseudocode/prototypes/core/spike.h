@@ -35,7 +35,7 @@ int __cdecl CSpike::renderOpaque(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_getBoundingBox_FUN_00566e30
 // Address: 00566e30
-CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_spike.cpp_CSpike_archive_FUN_00566e70
 // Address: 00566e70

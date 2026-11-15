@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00547b90
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5d1609                       ; 00547aa3 | = "Too bony!"
     MOV dword ptr [0x01d71de0],ECX      ; 00547aa8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00547aae | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00547ab4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547ab4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00547ab9
     MOV EAX,dword ptr [ESP + 0x14]      ; 00547abc
         ;   Label: LAB_00547abc
@@ -105,8 +105,8 @@ section .text
     PUSH 0x5d1628                       ; 00547b6a | = "Out of hunk in CSkeleton::allocMemory..."
     MOV dword ptr [0x01d71de0],ECX      ; 00547b6f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00547b75 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00547b7b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547b7b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00547b80
     POP EDI                             ; 00547b83
     POP EBP                             ; 00547b84

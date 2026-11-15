@@ -59,7 +59,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
   if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\engine\\pcx.c";
     _DAT_01d046a4 = 0xed;
-    core_main_c_FUN_004e4500("Cannot write .PCX");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Cannot write .PCX");
   }
   iVar2 = 0;
   _fwrite(&local_88,1,0x80,file);

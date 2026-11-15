@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004a03e0(CFlame *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_flame_cpp_CFlame_getBoundingBox_FUN_004a03e0(CFlame *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d58a5

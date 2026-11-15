@@ -46,18 +46,19 @@ void core_dimage_cpp_FUN_0045b300(void)
     puVar10[1] = uVar1;
     puVar10 = puVar10 + 2;
   } while (uVar1 != '\0');
-  p_Var5 = engine_dosio_cpp_FUN_004659c0((char *)0x5bb039,&stack0xfffffee4,(char *)0x5bb036);
+  p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0((char *)0x5bb039,&stack0xfffffee4,(char *)0x5bb036)
+  ;
   if (p_Var5 == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\dimage.cpp";
     _DAT_01d71de4 = 0x68;
-    core_main_c_FUN_004e4330("CDemonImage::load - Unable to load image!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonImage::load - Unable to load image!");
   }
   in_stack_00000004->width = in_stack_0000000c;
   in_stack_00000004->height = in_stack_00000010;
   core_dimage_cpp_CDemonImage_allocMemory_FUN_0045b210(in_stack_00000004);
   _fread(in_stack_00000004->data,in_stack_0000000c,in_stack_00000014,p_Var5)
   ;
-  _fclose();
+  _fclose(p_Var5);
   pcVar8 = acStack_118;
   do {
     pcVar7 = pcVar8;
@@ -72,7 +73,7 @@ LAB_0045b3bd:
   if (pcVar7 == (char *)0x0) {
     _DAT_01d71de0 = "..\\core\\dimage.cpp";
     _DAT_01d71de4 = 0x7b;
-    core_main_c_FUN_004e4330();
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonImage::load - Unable to find extention!");
   }
   pcVar8 = (char *)0x5bb0bb;
   do {
@@ -84,14 +85,14 @@ LAB_0045b3bd:
     pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
   } while (cVar2 != '\0');
-  p_Var5 = engine_dosio_cpp_FUN_004659c0((char *)0x5bb0c3,acStack_118,(char *)0x5bb0c0);
+  p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0((char *)0x5bb0c3,acStack_118,(char *)0x5bb0c0);
   if (p_Var5 == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\dimage.cpp";
     _DAT_01d71de4 = 0x7f;
-    core_main_c_FUN_004e4330();
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonImage::load - Unable to load palette!");
   }
   _fread(&in_stack_00000008->palette,0x100,3,p_Var5);
-  _fclose();
+  _fclose(p_Var5);
   pCVar6 = in_stack_00000008;
   pCVar9 = in_stack_00000008;
   pCVar11 = in_stack_00000008;

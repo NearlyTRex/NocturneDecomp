@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5e89f3                       ; 0054fbfb | = "SfxSlot::seek - no sample?!"
     MOV dword ptr [0x01d046a0],ECX      ; 0054fc00 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0054fc06 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054fc0c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054fc0c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054fc11
     PUSH 0x0                            ; 0054fc14
         ;   Label: LAB_0054fc14
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_0054fc92
     PUSH 0x0                            ; 0054fc95
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054fc97
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0054fc9c
     MOV ECX,dword ptr [ESP + 0xc]       ; 0054fca0
     PUSH ECX                            ; 0054fca4

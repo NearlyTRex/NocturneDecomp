@@ -11,15 +11,16 @@
 ; undefined        Stack[-0x80]:1  local_80
 ; undefined        Stack[-0x68]:1  local_68
 ;
-; XREF[1]:
-;   core_turret.cpp_FUN_0057f0b0 at 0057f6ef
+; XREF[2]:
+;   core_turret.cpp_CTurret_process_FUN_0057e760 at 0057ea13
+;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 at 0057f6ef
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ed81c
 ;   undefined4 DAT_005ed824
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_turret.cpp_CTurret_aimAtTarget_FUN_0057f700
 ;
@@ -137,8 +138,8 @@ section .text
     FADDP                               ; 0057fb34
     LEA ESI,[ESP + 0x44]                ; 0057fb36
     FSTP float ptr [EBP + 0x9b0]        ; 0057fb3a
-    CALL core_actor.cpp_FUN_00408d70    ; 0057fb40
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0057fb40
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x44]                ; 0057fb45
     ADD ESP,0x8                         ; 0057fb49
     LEA EAX,[ESP + 0x30]                ; 0057fb4c

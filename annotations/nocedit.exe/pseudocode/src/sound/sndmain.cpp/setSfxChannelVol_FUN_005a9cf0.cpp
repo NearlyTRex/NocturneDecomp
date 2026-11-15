@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
       do {
         if (((slot->playback_state != 0) && (slot->hardware_buffer_handle != 0)) &&
            (channel_index == (slot->options).channel_index)) {
-          (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
+          (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,slot,8);
         }
         slot = slot + 1;
       } while (slot != g_SfxSlots + sizeof(g_SfxSlots) / sizeof(g_SfxSlots[0]));

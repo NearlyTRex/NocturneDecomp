@@ -12,10 +12,10 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_0051ac40
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0051a497
     PUSH EDX                            ; 0051a49b
     PUSH 0x5e90d3                       ; 0051a49c
-    CALL engine_dosio.cpp_FUN_00479180  ; 0051a4a1
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0051a4a1
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0051a4a6
     MOV EBX,EAX                         ; 0051a4a9
     TEST EAX,EAX                        ; 0051a4ab
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x8                         ; 0051a4ba
     PUSH EBX                            ; 0051a4bd
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0051a4be
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051a4c3
     POP EDI                             ; 0051a4c6
     POP EBX                             ; 0051a4c7
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5e90ed                       ; 0051a4d4
     MOV dword ptr [0x01d1d400],ECX      ; 0051a4d9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0051a4df | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051a4e5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a4e5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a4ea
     POP ESI                             ; 0051a4ed
     JMP 0x0051a4af                      ; 0051a4ee

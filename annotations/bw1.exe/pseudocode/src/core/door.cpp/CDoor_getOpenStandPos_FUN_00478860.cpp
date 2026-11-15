@@ -1,137 +1,119 @@
 // Name: core_door.cpp_CDoor_getOpenStandPos_FUN_00478860
 // Address: 00478860
 // Address Range: [[00478860, 00478ae3]]
-// Convention: __cdecl
-// Signature: float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,float *param_2,undefined4 param_3)
+// Convention: __stack3_esi
+// Signature: CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,float *param_2,uint param_3)
+CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos)
 
 {
-  float *unaff_ESI;
-  byte bVar1;
+  float *pfVar1;
+  byte bVar2;
   float afStackY_10a0 [1016];
-  float local_b8;
+  CVector3f local_b8;
   float local_ac;
-  uint local_a4;
-  float local_a0;
-  float local_9c;
+  float local_a8 [4];
   float local_98;
   float local_94;
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
+  float local_90 [4];
   float local_80;
-  float local_7c;
-  uint local_70;
+  CVector3f local_7c;
+  CVector3f local_70;
   float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  uint local_4c;
-  float local_44;
-  float local_40;
-  float local_3c;
+  float local_60 [2];
+  CVector3f local_58;
+  float local_4c;
+  float afStack_48 [4];
   float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34;
   float local_28;
-  float local_24;
-  float local_20;
-  float local_1c;
+  float local_24 [4];
   uint local_14;
+  CVector3f *local_10;
   
-  bVar1 = 0;
-  local_58 = *param_2;
-  local_54 = param_2[1];
-  local_50 = param_2[2];
-  if (local_50 < 0.0) {
-    local_a0 = -*param_2;
-    local_9c = -param_2[1];
-    local_98 = -local_50;
-    local_34 = local_a0;
-    local_30 = local_9c;
-    local_2c = local_98;
-    if (&stack0xffffffa8 != &stack0xffffffcc) {
-      local_58 = local_a0;
-      local_54 = local_9c;
-      local_50 = local_98;
+  bVar2 = 0;
+  local_10 = out_pos;
+  local_58.x = direction->x;
+  local_58.y = direction->y;
+  local_58.z = direction->z;
+  if (local_58.z < 0.0) {
+    local_a8[2] = -direction->x;
+    local_a8[3] = -direction->y;
+    local_98 = -local_58.z;
+    local_34.x = local_a8[2];
+    local_34.y = local_a8[3];
+    local_34.z = local_98;
+    if (&local_58 != (CVector3f *)(afStack_48 + 5)) {
+      local_58.x = local_a8[2];
+      local_58.y = local_a8[3];
+      local_58.z = local_98;
     }
   }
   switch(this_ptr->door_type) {
   case DOOR_TYPE_SWING:
   case DOOR_TYPE_VERTICAL:
   case DOOR_TYPE_SLIDE:
-    core_actor_cpp_FUN_00408bb0(this_ptr,param_3);
-    local_4c = local_70;
-    *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * 0xfffffffe * 4) =
-         *(uint *)(&stack0xffffff94 + (uint)bVar1 * -8);
-    *(uint *)((int)&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffff98 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    if (local_44 <= 0.0) {
-      core_actor_cpp_FUN_00408ac0(this_ptr,&stack0xffffffa8);
-      local_64 = local_7c;
-      *(uint *)((int)&stack0xffffffa0 + (uint)bVar1 * -8) =
-           *(uint *)(&stack0xffffff88 + (uint)bVar1 * -8);
-      *(uint *)((int)&stack0xffffffa4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-           *(uint *)(&stack0xffffff8c + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(&this_ptr->base,actor_pos,&local_70);
+    local_4c = local_70.x;
+    afStack_48[(uint)bVar2 * -2] = *(float *)((int)&local_70 + (uint)bVar2 * -8 + 4);
+    afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+         *(float *)((int)&local_70 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    if (afStack_48[1] <= 0.0) {
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,&local_58,&local_7c);
+      local_64 = local_7c.x;
+      local_60[(uint)bVar2 * -2] = *(float *)((int)&local_7c + (uint)bVar2 * -8 + 4);
+      local_60[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+           *(float *)((int)&local_7c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
       local_94 = (this_ptr->open_position).x - local_64;
-      local_90 = (this_ptr->open_position).y - local_60;
-      local_8c = (this_ptr->open_position).z - local_5c;
-      local_1c = local_94;
-      *(float *)((int)&stack0xffffffe8 + (uint)bVar1 * 0xfffffffe * 4) =
-           (&stack0xffffff70)[(uint)bVar1 * 0xfffffffe];
-      *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-           *(uint *)((int)&stack0xffffff74 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-      if (&stack0xffffff78 != &stack0xffffffe4) {
-        local_88 = local_1c;
+      local_90[0] = (this_ptr->open_position).y - local_60[0];
+      local_90[1] = (this_ptr->open_position).z - local_60[1];
+      local_24[2] = local_94;
+      local_24[(uint)bVar2 * -2 + 3] = local_90[(uint)bVar2 * -2];
+      local_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+           local_90[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+      if (local_90 + 2 != local_24 + 2) {
+        local_90[2] = local_24[2];
         local_80 = (float)local_14;
       }
     }
     else {
-      core_actor_cpp_FUN_00408ac0(this_ptr,&stack0xffffffa8);
-      local_28 = local_b8;
-      (&stack0xffffffdc)[(uint)bVar1 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffff4c + (uint)bVar1 * -8);
-      *(uint *)((int)&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-           *(uint *)(&stack0xffffff50 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-      local_40 = (this_ptr->open_position).x + local_28;
-      local_3c = (this_ptr->open_position).y + local_24;
-      local_38 = (this_ptr->open_position).z + local_20;
-      local_ac = local_40;
-      *(uint *)((int)&stack0xffffff58 + (uint)bVar1 * 0xfffffffe * 4) =
-           *(uint *)((int)&stack0xffffffc4 + (uint)bVar1 * -8);
-      *(uint *)((int)&stack0xffffff5c + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-           *(uint *)((int)&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-      if (&stack0xffffff78 != &stack0xffffff54) {
-        local_88 = local_ac;
-        local_80 = (float)local_a4;
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,&local_58,&local_b8);
+      local_28 = local_b8.x;
+      local_24[(uint)bVar2 * -2] = *(float *)((int)&local_b8 + (uint)bVar2 * -8 + 4);
+      local_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+           *(float *)((int)&local_b8 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+      afStack_48[2] = (this_ptr->open_position).x + local_28;
+      afStack_48[3] = (this_ptr->open_position).y + local_24[0];
+      local_38 = (this_ptr->open_position).z + local_24[1];
+      local_ac = afStack_48[2];
+      local_a8[(uint)bVar2 * -2] = afStack_48[(uint)bVar2 * -2 + 3];
+      local_a8[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+           afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+      if (local_90 + 2 != &local_ac) {
+        local_90[2] = local_ac;
+        local_80 = local_a8[1];
       }
     }
     break;
   case DOOR_TYPE_TILT:
-    if ((CVector3f *)&stack0xffffff78 != &this_ptr->open_position) {
-      local_88 = (this_ptr->open_position).x;
+    if ((CVector3f *)(local_90 + 2) != &this_ptr->open_position) {
+      local_90[2] = (this_ptr->open_position).x;
       local_80 = (this_ptr->open_position).z;
     }
     break;
   default:
     _DAT_01d1d400 = "..\\core\\door.cpp";
     _DAT_01d1d404 = 0x37e;
-    core_main_c_FUN_005030e0("CDoor::getOpenStandPos - invalid doorType");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDoor::getOpenStandPos - invalid doorType");
   }
-  local_84 = (this_ptr->base).location.position.y;
-  *unaff_ESI = local_88;
-  unaff_ESI[(uint)bVar1 * -2 + 1] = (&stack0xffffff7c)[(uint)bVar1 * 0xfffffffe];
-  (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       *(float *)((int)&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  return unaff_ESI;
+  local_90[3] = (this_ptr->base).location.position.y;
+  pfVar1 = (float *)((int)local_10 + (uint)bVar2 * -8 + 4);
+  local_10->x = local_90[2];
+  *pfVar1 = local_90[(uint)bVar2 * -2 + 3];
+  pfVar1[(uint)bVar2 * -2 + 1] = local_90[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+  return local_10;
 }

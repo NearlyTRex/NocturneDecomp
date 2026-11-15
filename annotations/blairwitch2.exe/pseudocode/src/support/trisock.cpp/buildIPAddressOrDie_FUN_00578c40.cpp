@@ -12,7 +12,6 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00578c40(uchar *de
 
 {
   int iVar1;
-  uint in_stack_00000024;
   
   iVar1 = support_trisock_cpp_buildIPAddress_FUN_00578d60(dest_ip,octet1,octet2,octet3,octet4);
   if (iVar1 != 0) {
@@ -20,6 +19,6 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00578c40(uchar *de
   }
   _DAT_01d046a0 = "..\\support\\trisock.cpp";
   _DAT_01d046a4 = 0x60;
-  core_main_c_FUN_004e4500("Invalid IP values: %d, %d, %d, %d",octet1,octet2,in_stack_00000024);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid IP values: %d, %d, %d, %d");
   return dest_ip;
 }

@@ -119,7 +119,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_0052ed80(CNetGame *this
         if ((local_38 < 0) || (_DAT_01d6dfb8 <= local_38)) {
           _DAT_01d1d400 = "..\\core\\netgame.cpp";
           _DAT_01d1d404 = 0x107;
-          core_main_c_FUN_005030e0("removeChatOut - invalid index");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("removeChatOut - invalid index");
         }
         _DAT_01d6dfb8 = _DAT_01d6dfb8 + -1;
         memmove

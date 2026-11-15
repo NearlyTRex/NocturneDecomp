@@ -19,7 +19,7 @@ int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_h
   (this_ptr->options).position_source_ptr = position_source_ptr;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
-    (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,2);
+    (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,this_ptr,2);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;

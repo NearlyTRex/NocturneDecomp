@@ -26,7 +26,7 @@ void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00530630(CDemonSet *this
     if (3 < _DAT_01fc9608) {
       _DAT_01d046a0 = "..\\core\\set.cpp";
       _DAT_01d046a4 = 0x9b1;
-      core_main_c_FUN_004e4500("Too many dynamic lights!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many dynamic lights!");
     }
     _DAT_01fc9608 = _DAT_01fc9608 + 1;
     *(CDemonLight **)(&DAT_01fc9608 + _DAT_01fc9608 * 4) = light;

@@ -21,6 +21,6 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_005ade20(CCloth *this_ptr)
   }
   _DAT_01d046a0 = "..\\core\\cloth.cpp";
   _DAT_01d046a4 = 0x77;
-  core_main_c_FUN_004e4500("CCloth::allocMemory - Out of memory");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CCloth::allocMemory - Out of memory");
   return;
 }

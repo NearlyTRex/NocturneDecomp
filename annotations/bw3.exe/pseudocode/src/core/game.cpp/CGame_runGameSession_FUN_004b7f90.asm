@@ -269,8 +269,8 @@ section .text
     PUSH ESI                            ; 004b82c9
     MOV EDI,dword ptr [0x00603b28]      ; 004b82ca | g_CDemonSetPtr
     PUSH EDI                            ; 004b82d0 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_0053f940   ; 004b82d1
-        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053f940()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 ; 004b82d1
+        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004b82d6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b82d9
         ;   Label: LAB_004b82d9
@@ -467,8 +467,8 @@ section .text
     PUSH ESI                            ; 004b84ed
     MOV EAX,[0x00603b28]                ; 004b84ee | g_CDemonSetPtr
     PUSH EAX                            ; 004b84f3 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_0053f940   ; 004b84f4
-        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053f940()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 ; 004b84f4
+        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004b84f9
     TEST EAX,EAX                        ; 004b84fc
     JZ 0x004b850c                       ; 004b84fe
@@ -693,7 +693,7 @@ section .text
     FSTP float ptr [EAX + 0x294]        ; 004b877b
     FADD float ptr [EAX + 0x294]        ; 004b8781
     CALL crt_math.c_round_FUN_005a3120  ; 004b8787
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP + -0x10]       ; 004b878c
     MOV ECX,dword ptr [EBP + -0x10]     ; 004b878f
     PUSH ECX                            ; 004b8792

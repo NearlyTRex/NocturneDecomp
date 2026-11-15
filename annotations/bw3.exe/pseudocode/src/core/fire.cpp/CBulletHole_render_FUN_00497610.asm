@@ -59,7 +59,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_00538400
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -345,8 +345,8 @@ section .text
     PUSH EBX                            ; 0049797f
     LEA ESI,[ESP + 0x14]                ; 00497980
     LEA EDI,[ESP + 0x5c]                ; 00497984
-    CALL core_actor.cpp_FUN_00408b00    ; 00497988
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00497988
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 0049798d
     LEA EBX,[ESP + 0x68]                ; 00497991
     ADD ESP,0x8                         ; 00497995

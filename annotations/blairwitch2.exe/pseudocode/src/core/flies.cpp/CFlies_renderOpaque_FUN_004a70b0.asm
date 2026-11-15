@@ -26,7 +26,7 @@
 ;   core_box.cpp_FUN_0041a840
 ;   core_flies.cpp_drawFlyPixel_FUN_004a6fe0
 ;   core_spline.cpp_computeSplineBasis_FUN_00561310
-;   core_spline.cpp_FUN_00561540
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_00561540
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
@@ -186,7 +186,7 @@ section .text
     FLD float ptr [EAX]                 ; 004a72a1
     FMUL float ptr [0x005d66f1]         ; 004a72a3 | DAT_005d66f1
     CALL crt_math.c_round_FUN_005b7ff0  ; 004a72a9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xa8]        ; 004a72ae
     MOV EDI,dword ptr [ESP + 0xa8]      ; 004a72b5
     TEST EDI,EDI                        ; 004a72bc
@@ -212,8 +212,8 @@ section .text
     PUSH EDI                            ; 004a72f5
     LEA ESI,[ESP + 0xa4]                ; 004a72f6
     LEA EBX,[ESP + 0x8c]                ; 004a72fd
-    CALL core_spline.cpp_FUN_00561540   ; 004a7304
-        ;   XREF to: 00561540 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_00561540()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00561540 ; 004a7304
+        ;   XREF to: 00561540 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00561540(float * basis, CVector3f * p0, CVector3f * p1, CVector3f * p2, ...)
     LEA EDI,[ESP + 0x98]                ; 004a7309
     LEA ESI,[ESP + 0xa4]                ; 004a7310
     LEA EAX,[ESP + 0x98]                ; 004a7317

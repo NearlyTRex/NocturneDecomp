@@ -21,7 +21,7 @@ void __cdecl engine_mini3d_cpp_matrixPushLoad_FUN_004f3120(float *frame)
   if (9 < _DAT_01d0991c) {
     _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
     _DAT_01d046a4 = 0x488;
-    core_main_c_FUN_004e4500("Matrix unbalance");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance");
   }
   iVar1 = _DAT_01d0991c * 0x3c;
   pfVar3 = (float *)(&DAT_01d09920 + iVar1);

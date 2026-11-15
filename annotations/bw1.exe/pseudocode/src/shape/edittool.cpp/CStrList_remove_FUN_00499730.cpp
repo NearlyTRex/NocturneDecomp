@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00499730(CStrList *this_ptr,
   if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xc74;
-    core_main_c_FUN_005030e0("CStrList::remove - invalid range");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::remove - invalid range");
   }
   if (start_index <= end_index) {
     iVar2 = start_index * 4;

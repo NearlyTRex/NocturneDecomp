@@ -24,7 +24,7 @@ int __cdecl engine_mini3d_cpp_polyListSurface_FUN_004f7e00(float *vertices,int v
   if (10000 < vertex_count) {
     _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
     _DAT_01d046a4 = 0x12e4;
-    core_main_c_FUN_004e4500("CMini3D::polyList - Too many verticies : %d",vertex_count);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::polyList - Too many verticies : %d");
   }
   iVar3 = 0;
   local_14 = 0;

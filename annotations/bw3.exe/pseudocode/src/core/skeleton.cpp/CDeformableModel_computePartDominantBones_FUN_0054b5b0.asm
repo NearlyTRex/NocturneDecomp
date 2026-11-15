@@ -64,7 +64,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0
@@ -140,8 +140,8 @@ section .text
     PUSH 0x5d1f33                       ; 0054b648 | = "CDeformableModel::computePartDominant..."
     MOV dword ptr [0x01d71de0],ESI      ; 0054b64d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0054b653 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054b659
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054b659
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054b65e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054b661
         ;   Label: LAB_0054b661

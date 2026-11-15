@@ -16,7 +16,7 @@ void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_00462770(CDemonL
   if ((this_ptr->base).zbuffer_raw != (void *)0x0) {
     _DAT_01d1d400 = "..\\core\\dlight.cpp";
     _DAT_01d1d404 = 0xcd;
-    core_main_c_FUN_005030e0("CDemonLight::allocMasterZBuffer - We already have one!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonLight::allocMasterZBuffer - We already have one!");
   }
   pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_004626f0
                      (this_ptr->shadow_map_width * this_ptr->shadow_map_height);

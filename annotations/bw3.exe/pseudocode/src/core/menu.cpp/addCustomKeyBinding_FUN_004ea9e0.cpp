@@ -18,7 +18,7 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004ea9e0(int *key_code_ptr,ch
   if (0x1f < _DAT_01d75c98) {
     _DAT_01d71de0 = "..\\core\\menu.cpp";
     _DAT_01d71de4 = 0x8f5;
-    core_main_c_FUN_004e4330("Too many custom keys!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Too many custom keys!");
   }
   iVar2 = _DAT_01d75c98;
   *(int **)(&DAT_01d75c9c + _DAT_01d75c98 * 4) = key_code_ptr;

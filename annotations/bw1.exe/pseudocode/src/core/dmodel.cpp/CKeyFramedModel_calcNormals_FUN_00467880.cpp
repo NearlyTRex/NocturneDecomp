@@ -12,19 +12,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00467880(CKeyFramed
 
 {
   double dVar1;
-  double dVar2;
-  double dVar3;
-  CVector3i *pCVar4;
-  SMRGLPrimitiveTriangle *pSVar5;
-  int iVar6;
-  int extraout_ECX;
-  int iVar7;
-  int *piVar8;
-  int *extraout_EDX;
+  CVector3i *pCVar2;
+  SMRGLPrimitiveTriangle *pSVar3;
+  int iVar4;
+  int iVar5;
+  int *piVar6;
   SMRGLPrimitiveTriangle *texture;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
+  double dVar7;
+  double dVar8;
+  double dVar9;
   int local_18;
   int local_14;
   
@@ -32,7 +28,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00467880(CKeyFramed
     if (this_ptr->vertex_normal_list == (CVector3i *)0x0) {
       _DAT_01d1d400 = "..\\core\\dmodel.cpp";
       _DAT_01d1d404 = 0x2f1;
-      core_main_c_FUN_005030e0("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
     memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
     local_14 = 0;
@@ -43,52 +39,48 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00467880(CKeyFramed
                   ((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
                          base.type + local_18);
         engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(this_ptr->vertex_list,texture);
-        iVar7 = 0;
-        pSVar5 = texture;
+        iVar5 = 0;
+        pSVar3 = texture;
         if (0 < (texture->base).base.count) {
           do {
-            pCVar4 = this_ptr->vertex_normal_list + pSVar5->vertices[0].vertex_index;
-            pCVar4->x = pCVar4->x + (texture->base).surface_normal.A.i;
-            pCVar4->y = pCVar4->y + (texture->base).surface_normal.B.i;
-            pCVar4->z = pCVar4->z + (texture->base).surface_normal.C.i;
-            iVar7 = iVar7 + 1;
-            pSVar5 = (SMRGLPrimitiveTriangle *)&(pSVar5->base).surface_normal.B;
-          } while (iVar7 < (texture->base).base.count);
+            pCVar2 = this_ptr->vertex_normal_list + pSVar3->vertices[0].vertex_index;
+            pCVar2->x = pCVar2->x + (texture->base).surface_normal.A.i;
+            pCVar2->y = pCVar2->y + (texture->base).surface_normal.B.i;
+            pCVar2->z = pCVar2->z + (texture->base).surface_normal.C.i;
+            iVar5 = iVar5 + 1;
+            pSVar3 = (SMRGLPrimitiveTriangle *)&(pSVar3->base).surface_normal.B;
+          } while (iVar5 < (texture->base).base.count);
         }
         local_18 = local_18 + 0x48;
         local_14 = local_14 + 1;
       } while (local_14 < this_ptr->poly_count);
     }
-    iVar7 = 0;
+    iVar5 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar6 = 0;
+      iVar4 = 0;
       do {
-        piVar8 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar6);
-        dVar1 = (double)*piVar8;
-        dVar3 = (double)piVar8[1];
-        dVar2 = (double)piVar8[2];
-        dVar1 = SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1);
-        if (0.0 < dVar1) {
-          fVar9 = (float10)_DAT_005d963c / (float10)dVar1;
-          fVar10 = (float10)*piVar8 * fVar9;
-          fVar11 = (float10)piVar8[1] * fVar9;
-          fVar9 = (float10)piVar8[2] * fVar9;
-          round();
-          round();
-          round();
-          *extraout_EDX = (int)ROUND(fVar10);
-          extraout_EDX[1] = (int)ROUND(fVar11);
-          extraout_EDX[2] = (int)ROUND(fVar9);
-          iVar6 = extraout_ECX;
+        piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar4);
+        dVar7 = (double)*piVar6;
+        dVar8 = (double)piVar6[1];
+        dVar1 = (double)piVar6[2];
+        dVar9 = SQRT(dVar1 * dVar1 + dVar8 * dVar8 + dVar7 * dVar7);
+        if (0.0 < dVar9) {
+          dVar9 = _DAT_005d963c / dVar9;
+          dVar7 = round(dVar7 * dVar9);
+          dVar8 = round(dVar8 * dVar9);
+          dVar9 = round(dVar1 * dVar9);
+          *piVar6 = (int)ROUND(dVar7);
+          piVar6[1] = (int)ROUND(dVar8);
+          piVar6[2] = (int)ROUND(dVar9);
         }
         else {
-          piVar8[2] = 0;
-          piVar8[1] = piVar8[2];
-          *piVar8 = piVar8[2];
+          piVar6[2] = 0;
+          piVar6[1] = piVar6[2];
+          *piVar6 = piVar6[2];
         }
-        iVar7 = iVar7 + 1;
-        iVar6 = iVar6 + 0xc;
-      } while (iVar7 < this_ptr->vertex_count);
+        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 0xc;
+      } while (iVar5 < this_ptr->vertex_count);
     }
   }
   return;

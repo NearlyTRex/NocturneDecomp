@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fopen_FUN_005c157c
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x10                        ; 0053c057
     PUSH EBX                            ; 0053c05a
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0053c05b
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0053c060
     PUSH EDI                            ; 0053c063
     PUSH 0x5ed65e                       ; 0053c064
@@ -144,7 +144,7 @@ section .text
         ;   Label: LAB_0053c0d0
     PUSH EDX                            ; 0053c0d7
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0053c0d8
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0053c0dd
     CMP ESI,dword ptr [ESP + 0x3c0]     ; 0053c0e0
     SETZ AL                             ; 0053c0e7
@@ -305,8 +305,8 @@ section .text
     PUSH 0x5ed77f                       ; 0053c26b
     MOV dword ptr [0x01d1d400],EDX      ; 0053c270 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0053c276 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053c27c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c27c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0053c281
     JMP 0x0053c006                      ; 0053c284
         ;   XREF to: 0053c006 (UNCONDITIONAL_JUMP)  ; LAB_0053c006

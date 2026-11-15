@@ -36,7 +36,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
   local_1c = 0;
   iVar3 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005cb309,message_file);
   if ((iVar3 < 1) ||
-     (file_handle = engine_dosio_cpp_FUN_004659c0(&DAT_005cb30d,message_file,&DAT_005cb30a),
+     (file_handle = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005cb30d,message_file,&DAT_005cb30a),
      file_handle == (_FILE *)0x0)) {
     return;
   }
@@ -49,7 +49,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
   if (local_1c != 0) {
     _DAT_01d71de0 = "..\\support\\newmsg.cpp";
     _DAT_01d71de4 = 0x5b;
-    core_main_c_FUN_004e4330("Unknown message file version");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown message file version");
   }
   _fgets(local_21c,0xff,file_handle);
   _fscanf(file_handle,"\"%[^\"]\"\n");
@@ -97,12 +97,12 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     if (iVar3 != 2) {
       _DAT_01d71de0 = "..\\support\\newmsg.cpp";
       _DAT_01d71de4 = 0x6f;
-      core_main_c_FUN_004e4330("Error reading %s",message_file);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Error reading %s");
     }
     if (499 < _DAT_01dd4898) {
       _DAT_01d71de0 = "..\\support\\newmsg.cpp";
       _DAT_01d71de4 = 0x74;
-      core_main_c_FUN_004e4330("Too many messages in %s",message_file);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Too many messages in %s");
     }
     uVar9 = 0xffffffff;
     pcVar11 = local_11c;
@@ -117,7 +117,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     if (pvVar8 == (void *)0x0) {
       _DAT_01d71de0 = "..\\support\\newmsg.cpp";
       _DAT_01d71de4 = 0x77;
-      core_main_c_FUN_004e4330("Out of memory mallocing message tag : %s",local_11c);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory mallocing message tag : %s");
     }
     uVar9 = 0xffffffff;
     pcVar11 = local_31c;
@@ -132,7 +132,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     if (pvVar8 == (void *)0x0) {
       _DAT_01d71de0 = "..\\support\\newmsg.cpp";
       _DAT_01d71de4 = 0x7a;
-      core_main_c_FUN_004e4330("Out of memory mallocing message tag : %s",local_31c);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory mallocing message tag : %s");
     }
     pcVar11 = local_11c;
     pcVar12 = *(char **)(_DAT_01dd4898 * 4 + 0x1dd583c);

@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02802f5c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_005499d0
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -118,8 +118,8 @@ section .text
     PUSH 0x5d2251                       ; 00550180 | = "Can't load %s because deformable mode..."
     MOV dword ptr [0x01d71de0],EBX      ; 00550185 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0055018b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00550191
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00550191
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00550196
     XOR EAX,EAX                         ; 00550199
     POP EBP                             ; 0055019b

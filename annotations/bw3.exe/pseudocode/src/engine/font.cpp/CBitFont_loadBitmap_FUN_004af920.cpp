@@ -26,7 +26,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   if (3 < this_ptr->bitmap_count) {
     _DAT_01d71de0 = "..\\engine\\font.cpp";
     _DAT_01d71de4 = 0xfa;
-    core_main_c_FUN_004e4330("Too many bitmaps");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Too many bitmaps");
   }
   pacVar6 = this_ptr->bitmap_files + this_ptr->bitmap_count;
   pcVar4 = filename;
@@ -47,7 +47,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
     _sprintf(local_468,"Invalid font file size (%s).");
     _DAT_01d71de0 = "..\\engine\\font.cpp";
     _DAT_01d71de4 = 0x10f;
-    core_main_c_FUN_004e4330(local_468);
+    core_main_c_displayErrorAndQuit_FUN_004e4330(local_468);
   }
   pvVar3 = (void *)operator_new_array(iVar5);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
@@ -55,7 +55,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
     _sprintf(local_468,"Unable to allocate memory for font bitmap (%s).");
     _DAT_01d71de4 = 0x117;
     _DAT_01d71de0 = "..\\engine\\font.cpp";
-    core_main_c_FUN_004e4330(local_468);
+    core_main_c_displayErrorAndQuit_FUN_004e4330(local_468);
   }
   cockpit_ckptutil_c_FUN_00438ef0(filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
   engine_dosio_cpp_splitPath_FUN_00465e50(filename,(char *)0x0,local_23c,local_13c,(char *)0x0);
@@ -66,7 +66,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   if (iVar2 == 0) {
     _DAT_01d71de0 = "..\\engine\\font.cpp";
     _DAT_01d71de4 = 0x128;
-    core_main_c_FUN_004e4330("CBitFont::addBitmap - File not found : %s",local_33c);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::addBitmap - File not found : %s");
   }
   else {
     iVar2 = 0;

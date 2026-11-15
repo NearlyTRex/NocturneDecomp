@@ -15,7 +15,7 @@
 ;   undefined4 DAT_02c8a680
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_texlist.cpp_FUN_00596560
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5f7c6b                       ; 005979a8 | = "initTexture - out of memory!"
     MOV dword ptr [0x01d1d400],EDX      ; 005979ad | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005979b3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005979b9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005979b9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005979be
     RET                                 ; 005979c1
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_hsvToRgb_FUN_00417240(float *param_1)
+; CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00417240(CColor3f *in_hsv,CColor3f *out_rgb)
 ;
+; Parameters:
+; CColor3f *       Stack[0x4]:4   in_hsv
 ; Local Variables:
 ; undefined8       Stack[-0x68]:8  local_68
 ; undefined8       Stack[-0x60]:8  local_60
@@ -154,7 +156,7 @@ section .text
     FLD double ptr [ESP + 0x28]         ; 00417375
     ADD ESP,0x8                         ; 00417379
     CALL crt_math.c_round_FUN_005a3120  ; 0041737c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x2c]        ; 00417381
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00417385
     MOV dword ptr [ESP + 0x48],EAX      ; 00417389

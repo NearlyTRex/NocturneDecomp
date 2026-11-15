@@ -153,7 +153,7 @@
 ;   ... and 249 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0
@@ -858,8 +858,8 @@ section .text
     PUSH 0x5de296                       ; 004a7701 | = "Hell froze."
     MOV dword ptr [0x01d1d400],EDX      ; 004a7706 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004a770c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004a7712
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a7712
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a7717
     JMP 0x004a757c                      ; 004a771a
         ;   XREF to: 004a757c (UNCONDITIONAL_JUMP)  ; LAB_004a757c
@@ -2788,8 +2788,8 @@ section .text
     PUSH ESI                            ; 004a8a2b
     PUSH EDI                            ; 004a8a2c
     LEA ESI,[ESP + 0xfac]               ; 004a8a2d
-    CALL core_actor.cpp_FUN_00408bb0    ; 004a8a34
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004a8a34
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA EDI,[ESP + 0xf94]               ; 004a8a39
     LEA ESI,[ESP + 0xfac]               ; 004a8a40
     ADD ESP,0x8                         ; 004a8a47

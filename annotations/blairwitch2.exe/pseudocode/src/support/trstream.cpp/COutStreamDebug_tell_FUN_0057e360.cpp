@@ -13,6 +13,6 @@ int __cdecl support_trstream_cpp_COutStreamDebug_tell_FUN_0057e360(COutStreamDeb
 {
   _DAT_01d046a0 = "..\\support\\trstream.cpp";
   _DAT_01d046a4 = 0xa8d;
-  core_main_c_FUN_004e4500("COutStreamDebug::tell - invalid operation");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("COutStreamDebug::tell - invalid operation");
   return -1;
 }

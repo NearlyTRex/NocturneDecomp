@@ -16,10 +16,10 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float d
   byte bVar3;
   float in_stack_00000010;
   float afStackY_101c [1012];
-  uint uStack_34;
+  float fStack_34;
   CVector3f CStack_28;
-  uint uStack_1c;
-  float afStack_18 [5];
+  CVector3f CStack_1c;
+  CVector3f CStack_10;
   
   bVar3 = 0;
   core_weapon_cpp_CWeapon_process_FUN_0057b160(&this_ptr->base,delta_time);
@@ -32,15 +32,18 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float d
     this_ptr->blood_spurt_interval = fVar2;
     this_ptr->blood_spurt_timer = fVar2;
     (*(pCVar1->_uc).isInvulnerable)((CCharacter *)this_ptr);
-    uStack_1c = uStack_34;
-    afStack_18[(uint)bVar3 * -2] = *(float *)(&stack0xffffffd0 + (uint)bVar3 * -8);
-    afStack_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-         *(float *)(&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    core_actor_cpp_FUN_00408b80(this_ptr,&uStack_1c);
-    CStack_28.x = afStack_18[2];
-    *(float *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) = afStack_18[(uint)bVar3 * -2 + 3];
-    *(float *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         afStack_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+    CStack_1c.x = fStack_34;
+    *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + 4) =
+         *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8);
+    *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)(&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,&CStack_1c,&CStack_10);
+    CStack_28.x = CStack_10.x;
+    *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_10 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_10 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004ce8a0
               (g_CGorePtr,&CStack_28,(CVector3f *)&DAT_02cfd900,this_ptr->blood_gore_type);
     return;

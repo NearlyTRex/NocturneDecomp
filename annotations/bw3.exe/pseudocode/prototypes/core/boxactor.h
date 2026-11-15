@@ -43,7 +43,7 @@ int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041fb30
 // Address: 0041fb30
-CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90
 // Address: 0041fb90

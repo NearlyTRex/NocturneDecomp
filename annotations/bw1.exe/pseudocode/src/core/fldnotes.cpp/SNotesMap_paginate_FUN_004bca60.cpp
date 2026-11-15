@@ -23,7 +23,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004bca60(SNotesMap *this_pt
   if (resource == (SPageResourceMap *)0x0) {
     _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
     _DAT_01d1d404 = 0x894;
-    core_main_c_FUN_005030e0("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
   }
   iVar1 = core_fldnotes_cpp_STextView_placeResource_FUN_004bb510(view,&resource->base);
   if (iVar1 == 0) {
@@ -32,7 +32,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004bca60(SNotesMap *this_pt
     if (iVar1 == 0) {
       _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
       _DAT_01d1d404 = 0x89b;
-      core_main_c_FUN_005030e0("NotesMap::paginate - unable to add resource?!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("NotesMap::paginate - unable to add resource?!");
       return 1;
     }
   }

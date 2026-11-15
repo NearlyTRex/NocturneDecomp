@@ -12,10 +12,10 @@
 ;   undefined4 DAT_00614d30
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_dmodel.cpp_loadModel_FUN_0044fba0
 ;   core_fire.cpp_CFireEffect_createShell_FUN_0049e970
 ;
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 0053fa31
     LEA ESI,[ESP + 0x38]                ; 0053fa32
     LEA EDI,[ESP + 0x74]                ; 0053fa36
-    CALL core_dirmat.cpp_FUN_00449530   ; 0053fa3a
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0053fa3a
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0053fa3f
     LEA EAX,[ESP + 0x6c]                ; 0053fa42
     LEA ESI,[ESP + 0x30]                ; 0053fa46
@@ -87,8 +87,8 @@ section .text
     PUSH EBX                            ; 0053fa4e
     LEA ESI,[ESP + 0x5c]                ; 0053fa4f
     LEA EDI,[ESP + 0x68]                ; 0053fa53
-    CALL core_actor.cpp_FUN_00408cf0    ; 0053fa57
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 0053fa57
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x5c]                ; 0053fa5c
     ADD ESP,0x8                         ; 0053fa60
     MOVSD ES:EDI,ESI                    ; 0053fa63

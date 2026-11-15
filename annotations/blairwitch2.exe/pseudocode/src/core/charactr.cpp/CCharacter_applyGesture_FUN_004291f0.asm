@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -126,8 +126,8 @@ section .text
     PUSH 0x5cd018                       ; 004292fe | = "CCharacter::applyGesture - never set ..."
     MOV dword ptr [0x01d046a0],ESI      ; 00429303 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00429309 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042930f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042930f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00429314
     JMP 0x00429215                      ; 00429317
         ;   XREF to: 00429215 (UNCONDITIONAL_JUMP)  ; LAB_00429215

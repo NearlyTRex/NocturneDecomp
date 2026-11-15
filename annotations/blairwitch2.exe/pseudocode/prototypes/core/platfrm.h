@@ -47,7 +47,7 @@ void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
 // Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_005193b0
 // Address: 005193b0
-CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_005193f0
 // Address: 005193f0

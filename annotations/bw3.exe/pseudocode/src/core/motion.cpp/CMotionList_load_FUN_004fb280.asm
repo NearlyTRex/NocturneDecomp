@@ -36,7 +36,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_morph.cpp_FUN_004fb210
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fgetc_FUN_005a32b0
@@ -326,8 +326,8 @@ section .text
     PUSH 0x5c985e                       ; 004fb4c4 | = "Out of memory"
     MOV dword ptr [0x01d71de0],EDX      ; 004fb4c9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004fb4cf | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fb4d5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fb4d5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fb4da
     XOR EBX,EBX                         ; 004fb4dd
         ;   Label: LAB_004fb4dd
@@ -493,8 +493,8 @@ section .text
     PUSH 0x5c9763                       ; 004fb644 | = "Error reading motion list."
     MOV dword ptr [0x01d71de0],ESI      ; 004fb649 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004fb64f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fb655
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fb655
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fb65a
     JMP 0x004fb2d3                      ; 004fb65d
         ;   XREF to: 004fb2d3 (UNCONDITIONAL_JUMP)  ; LAB_004fb2d3
@@ -506,8 +506,8 @@ section .text
     PUSH 0x5c9791                       ; 004fb66f | = "Can't read motion list - it's version..."
     MOV dword ptr [0x01d71de0],EDX      ; 004fb674 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004fb67a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fb680
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fb680
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004fb685
     JMP 0x004fb2e0                      ; 004fb688
         ;   XREF to: 004fb2e0 (UNCONDITIONAL_JUMP)  ; LAB_004fb2e0

@@ -19,7 +19,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   core_dtrace.cpp_FUN_00473bc0
+;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0
 ;   core_fire.cpp_CFireEffect_createRock_FUN_004a28e0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_0053b440
@@ -77,8 +77,8 @@ section .text
     FADD float ptr [0x005bc791]         ; 0046ed7c | DAT_005bc791
     PUSH 0x203b37c                      ; 0046ed82
     FSTP float ptr [ESP + 0x94]         ; 0046ed87
-    CALL core_dtrace.cpp_FUN_00473bc0   ; 0046ed8e
-        ;   XREF to: 00473bc0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473bc0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0 ; 0046ed8e
+        ;   XREF to: 00473bc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * output_point)
     LEA ESI,[ESP + 0x78]                ; 0046ed93
     ADD ESP,0xc                         ; 0046ed97
     MOVSD ES:EDI,ESI                    ; 0046ed9a

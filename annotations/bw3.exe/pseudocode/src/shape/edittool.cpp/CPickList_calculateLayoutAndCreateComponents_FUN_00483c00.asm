@@ -41,7 +41,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
@@ -152,8 +152,8 @@ section .text
     PUSH 0x5bd76b                       ; 00483cf5 | = "Too many picklist columns!"
     MOV [0x01d71de0],EAX                ; 00483cfa | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00483cff | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00483d05
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00483d05
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00483d0a
     JMP 0x00483c9f                      ; 00483d0d
         ;   XREF to: 00483c9f (UNCONDITIONAL_JUMP)  ; LAB_00483c9f
@@ -163,8 +163,8 @@ section .text
     PUSH 0x5bcd3b                       ; 00483d19 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d71de0],ECX      ; 00483d1e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00483d24 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00483d2a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00483d2a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00483d2f
     JMP 0x00483c17                      ; 00483d32
         ;   XREF to: 00483c17 (UNCONDITIONAL_JUMP)  ; LAB_00483c17

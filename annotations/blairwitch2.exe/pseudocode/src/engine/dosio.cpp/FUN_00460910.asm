@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[6]:
-;   engine_dosio.cpp_FUN_00460c70 at 00460c97
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0 at 00460abb
+;   engine_dosio.cpp_getFile_FUN_00460c70 at 00460c97
 ;   engine_dosio.cpp_reopenFileStream_FUN_00460d30 at 00460d70
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 00519f32
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573c09

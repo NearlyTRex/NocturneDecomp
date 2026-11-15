@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
@@ -22,11 +21,10 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_
   float in_stack_00000014;
   float afStackY_1034 [1001];
   CFireEffect *this_ptr_00;
-  CVector3f *position;
+  CVector3f *pCVar5;
   float scale;
   CBoundingBox3D *in_stack_ffffff7c;
   float gore_multiplier;
-  float *pfVar5;
   float radius;
   float fStack_64;
   float fStack_60;
@@ -34,13 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_
   float fStack_58;
   float fStack_54;
   float fStack_50;
-  float fStack_4c;
+  CVector3f CStack_4c;
   CVector3f CStack_40;
-  float fStack_34;
-  float afStack_30 [4];
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  CVector3f CStack_34;
+  float fStack_28;
+  float afStack_24 [4];
   float fStack_14;
   float fStack_10;
   
@@ -53,34 +49,34 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427260(CCharacter *this_
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  afStack_30[2] = fStack_64 + fStack_58;
-  afStack_30[3] = fStack_60 + fStack_54;
-  fStack_20 = fStack_5c + fStack_50;
+  fStack_28 = fStack_64 + fStack_58;
+  afStack_24[0] = fStack_60 + fStack_54;
+  afStack_24[1] = fStack_5c + fStack_50;
   fStack_10 = fStack_64 + fStack_58;
-  *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8) = afStack_30[(uint)bVar4 * -2 + 3];
+  *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8) = afStack_24[(uint)bVar4 * -2];
   *(float *)(&stack0xfffffff8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-  pfVar5 = &stack0xffffffb4;
-  fStack_1c = fStack_10 * _DAT_005ccdc2;
-  fStack_18 = unaff_EDI * _DAT_005ccdc2;
+       afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  pCVar5 = &CStack_4c;
+  afStack_24[2] = fStack_10 * _DAT_005ccdc2;
+  afStack_24[3] = unaff_EDI * _DAT_005ccdc2;
   fStack_14 = unaff_ESI * _DAT_005ccdc2;
-  fStack_4c = fStack_10 * _DAT_005ccdc2;
-  *(float *)((int)&stack0xffffffb8 + (uint)bVar4 * 0xfffffffe * 4) =
-       afStack_30[(uint)bVar4 * -2 + 6];
-  *(float *)((int)&stack0xffffffb8 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4) =
-       afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-  core_actor_cpp_FUN_00408d70(this_ptr,pfVar5);
+  CStack_4c.x = fStack_10 * _DAT_005ccdc2;
+  *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) = afStack_24[(uint)bVar4 * -2 + 3];
+  *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(&this_ptr->base,pCVar5,&CStack_34);
   radius = 4.0;
   gore_multiplier = 1500.0;
-  position = &CStack_40;
+  pCVar5 = &CStack_40;
   scale = 2.0;
-  CStack_40.x = fStack_34;
-  *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];
+  CStack_40.x = CStack_34.x;
+  *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
   this_ptr_00 = 0x01C3DEB4;
-  *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360
-            (this_ptr_00,position,scale,gore_multiplier,radius);
+            (this_ptr_00,pCVar5,scale,gore_multiplier,radius);
   core_charactr_cpp_CCharacter_dismember_FUN_00427360
             (this_ptr,in_stack_00000010,in_stack_00000014,0);
   return;

@@ -19,7 +19,7 @@ void FUN_00425620(int param_1);
 
 // Original: core_carved.cpp_FUN_004256e0
 // Address: 004256e0
-void FUN_004256e0(int param_1);
+void FUN_004256e0(CDemonActor *param_1);
 
 // Original: core_carved.cpp_FUN_004257e0
 // Address: 004257e0

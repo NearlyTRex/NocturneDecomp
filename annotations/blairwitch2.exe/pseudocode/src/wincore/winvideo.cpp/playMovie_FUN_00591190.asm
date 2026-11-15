@@ -97,7 +97,7 @@ section .text
     PUSH EBX                            ; 005911df
     PUSH EAX                            ; 005911e0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005911e1
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005911e6
     LEA ESI,[ESP + 0x190]               ; 005911e9
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 005911f0

@@ -12,39 +12,31 @@ float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2)
 
 {
   float10 fVar1;
-  uint uStack_4;
+  double dVar2;
+  float unaff_retaddr;
+  float fStack_8;
   
   if ((_DAT_005eecde <= param_1) || (param_1 <= _DAT_005eece2)) {
-    if (_DAT_005eece6 < param_2) {
-      if ((int)param_2 < 0x3f800000) {
-        fVar1 = (float10)param_2;
-        acos();
-        uStack_4 = (float)fVar1;
-      }
-      else {
-        uStack_4 = 0.0;
-      }
+    if ((_DAT_005eece6 < param_2) && ((int)param_2 < 0x3f800000)) {
+      dVar2 = acos((double)param_2);
+      fStack_8 = (float)dVar2;
     }
-    else {
-      uStack_4 = 3.1415927;
-    }
-    if (param_1 < 0.0) {
-      uStack_4 = -uStack_4;
+    if (unaff_retaddr < 0.0) {
+      fStack_8 = -fStack_8;
     }
   }
   else {
-    fVar1 = (float10)param_1;
-    asin();
-    uStack_4 = (float)fVar1;
-    if (param_2 < 0.0) {
-      uStack_4 = _DAT_005eecea - uStack_4;
+    fVar1 = asin((float10)param_1);
+    fStack_8 = (float)fVar1;
+    if (param_1 < 0.0) {
+      fStack_8 = _DAT_005eecea - fStack_8;
     }
   }
-  if (uStack_4 < _DAT_005eecee) {
-    uStack_4 = uStack_4 + _DAT_005eecf2;
+  if (fStack_8 < _DAT_005eecee) {
+    fStack_8 = fStack_8 + _DAT_005eecf2;
   }
-  if (uStack_4 <= _DAT_005eecea) {
-    return uStack_4;
+  if (_DAT_005eecea < fStack_8) {
+    return fStack_8 + _DAT_005eecf6;
   }
-  return uStack_4 + _DAT_005eecf6;
+  return fStack_8;
 }

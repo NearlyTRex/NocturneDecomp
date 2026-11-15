@@ -26,7 +26,8 @@ int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00433cd0(CCharacter *this
                               (&(this_ptr->model).base);
       iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(this_ptr_00,state_name,iVar2);
       if (-1 < iVar2) {
-        fVar3 = (float)core_motion_cpp_FUN_00524a40(&this_ptr->model,iVar2);
+        fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
+                          (&(this_ptr->model).base,iVar2);
         if ((float)_DAT_005d5df7 < fVar3) {
           return 0;
         }

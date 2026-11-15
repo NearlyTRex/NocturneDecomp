@@ -22,7 +22,7 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_00494bf0(CEventList *this_
       if (9 < (this_ptr->counters).count) {
         _DAT_01d71de0 = "..\\core\\event.cpp";
         _DAT_01d71de4 = 0xebb;
-        core_main_c_FUN_004e4330("CEventList::setCounter - too many counters!");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CEventList::setCounter - too many counters!");
       }
       pacVar4 = (this_ptr->counters).names + (this_ptr->counters).count;
       do {

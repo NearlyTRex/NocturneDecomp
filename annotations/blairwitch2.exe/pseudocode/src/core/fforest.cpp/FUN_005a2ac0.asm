@@ -17,9 +17,9 @@
 ;   undefined4 DAT_0265370c
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_actor.cpp_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
@@ -28,7 +28,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_muzzle.cpp_FUN_0059dcb0
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
     PUSH 0x265370c                      ; 005a2bbd | DAT_0265370c
     LEA ESI,[ESP + 0x98]                ; 005a2bc2
     LEA EDI,[ESP + 0x8c]                ; 005a2bc9
-    CALL core_xform.cpp_FUN_00591530    ; 005a2bd0
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a2bd0
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x98]                ; 005a2bd5
     ADD ESP,0x8                         ; 005a2bdc
     MOVSD ES:EDI,ESI                    ; 005a2bdf
@@ -136,8 +136,8 @@ section .text
     PUSH 0x265370c                      ; 005a2bfe | DAT_0265370c
     LEA ESI,[ESP + 0x74]                ; 005a2c03
     LEA EDI,[ESP + 0x80]                ; 005a2c07
-    CALL core_xform.cpp_FUN_00591530    ; 005a2c0e
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a2c0e
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x74]                ; 005a2c13
     ADD ESP,0x8                         ; 005a2c17
     MOVSD ES:EDI,ESI                    ; 005a2c1a
@@ -198,8 +198,8 @@ section .text
     LEA EDI,[ESP + 0x64]                ; 005a2cd4
     PUSH EBX                            ; 005a2cd8
     FSTP float ptr [ESP + 0xac]         ; 005a2cd9
-    CALL core_actor.cpp_FUN_00408d70    ; 005a2ce0
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005a2ce0
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 005a2ce5
     ADD ESP,0x8                         ; 005a2ce9
     MOVSD ES:EDI,ESI                    ; 005a2cec

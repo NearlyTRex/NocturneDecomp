@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 166,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 64,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 238
+    "total_lines": 236
   },
   "cross_references": [],
   "function": {
@@ -212,7 +212,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&(this_ptr->base).location.position);",
@@ -220,7 +220,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 23,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
@@ -228,7 +228,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&CStack_20,&CStack_2c);",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,48000);",
@@ -252,7 +252,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
@@ -260,7 +260,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0x4000);",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 63,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -276,7 +276,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

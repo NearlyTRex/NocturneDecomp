@@ -20,7 +20,7 @@ void support_trisock_cpp_FUN_0057a840(int param_1)
   {
     _DAT_01d046a0 = "..\\support\\trisock.cpp";
     _DAT_01d046a4 = 0x70a;
-    core_main_c_FUN_004e4500("Can't create mutex");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't create mutex");
   }
   wincore_winrun_cpp_waitForMutex_FUN_0058fca0(_DAT_0265363c);
   *(uint *)(param_1 + 0x3bc) = 1;

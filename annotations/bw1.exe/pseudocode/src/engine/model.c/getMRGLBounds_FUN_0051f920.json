@@ -2,21 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 429,
+    "complexity_score": 467,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 184,
-    "suspect_count": 22,
+    "pseudocode_lines": 197,
+    "suspect_count": 25,
     "suspect_types": [
-      "extra_output",
-      "unaffected_reg",
-      "unnamed_param",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 523
+    "total_lines": 536
   },
   "cross_references": [],
   "function": {
@@ -27,15 +26,15 @@
         "0051fdca"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "engine_model.c_getMRGLBounds_FUN_0051f920",
-    "signature": "uint * engine_model_c_getMRGLBounds_FUN_0051f920(int *param_1)"
+    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_0051f920(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c03a0",
@@ -50,7 +49,7 @@
     {
       "addr": "0041d980",
       "is_variadic": false,
-      "name": "engine_boss.c_FUN_0041d980"
+      "name": "engine_boss.c_modelStructNotSupported4_FUN_0041d980"
     },
     {
       "addr": "0051f8a0",
@@ -81,9 +80,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -159,12 +158,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mrgl_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderBasic *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -176,163 +183,187 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint * engine_model_c_getMRGLBounds_FUN_0051f920(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_ECX",
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(SMRGLModelBounds *)((int)pSVar11",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "text": "pSVar11 = (SMRGLModelBounds *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(SMRGLModelBounds *)((int)pSVar11",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "pSVar11 = (SMRGLModelBounds *)((int)pSVar11 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == 0x20) {",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMRGLModelBounds *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar4 = engine_model_c_loadModelFile_FUN_0051f6d0((char *)(param_1 + 6));",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "uVar3 = (uint)((longlong)(int)pSStack_2c * (longlong)iVar8) >> 0x10 |",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if (*param_1 == 0x26) {",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)iVar8) >> 0x20) << 0x10;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_boss_c_FUN_0041d980(param_1);",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 130,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "uStack_98 = (uint)((longlong)(int)pSStack_2c * (longlong)iVar12) >> 0x10 |",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piStack_34 = param_1 + 5;",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)iVar12) >> 0x20) << 0x10;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 != 0x14) {",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "uStack_94 = (uint)((longlong)(int)pSStack_2c * (longlong)(int)fStack_24) >> 0x10 |",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = (int)(0x7fffffff / (longlong)param_1[1]) * 2;",
-      "type": "unnamed_param"
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)(int)fStack_24) >> 0x20) <<",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[2] != 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1[4]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar7 < param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 135,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar15 = (float10)1 / (float10)param_1[4];",
-      "type": "unnamed_param"
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)((longlong)(int)pSStack_2c * (longlong)iVar7) >> 0x10 |",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 171,
-      "match": "extraout_ECX",
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 136,
+      "match": "(int)pSStack_2c",
       "severity": "moderate",
-      "text": "iVar6 = extraout_ECX;",
-      "type": "extra_output"
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)iVar7) >> 0x20) << 0x10;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 181,
-      "match": "unaff_ESI",
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 137,
+      "match": "(int)pSStack_2c",
       "severity": "moderate",
-      "text": "puVar10 = unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "uStack_a4 = (uint)((longlong)(int)pSStack_2c * (longlong)iVar5) >> 0x10 |",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 187,
-      "match": "unaff_ESI",
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 138,
+      "match": "(int)pSStack_2c",
       "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)iVar5) >> 0x20) << 0x10;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 139,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "uStack_a0 = (uint)((longlong)(int)pSStack_2c * (longlong)(int)fStack_20) >> 0x10 |",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 140,
+      "match": "(int)pSStack_2c",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)pSStack_2c * (longlong)(int)fStack_20) >> 0x20) <<",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "uStack_94 = (uint)((longlong)(int)pSVar11 * (longlong)(int)fStack_14) >> 0x10 |",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 151,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)pSVar11 * (longlong)(int)fStack_14) >> 0x20) <<",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 156,
+      "match": "(int)piStack_34",
+      "severity": "moderate",
+      "text": "uStack_94 = (uint)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x10 |",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 157,
+      "match": "(int)piStack_34",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x20) <<",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 198,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMRGLModelBounds *)((int)pSVar11 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 55,
+      "line": 58,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 175,
+      "line": 188,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 182,
+      "line": 195,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

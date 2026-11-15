@@ -19,26 +19,24 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
   uint *puVar4;
   float *pfVar5;
   byte bVar6;
-  int aiStackY_1058 [12];
-  float afStackY_1028 [6];
-  int aiStackY_1010 [947];
+  float afStackY_1058 [965];
   CDemonRenderer *this_ptr_01;
-  int *piVar7;
-  CVector3f *euler_angles;
-  CVector3f *translation;
-  float local_130 [12];
+  CVector3f *pCVar7;
+  CVector3f *pCVar8;
+  CVector3f *in_stack_fffffed0;
   CMatrix3x4f local_100;
   CMatrix3x4f local_d0;
   uint local_a0 [6];
   uint local_88 [6];
   float local_70;
-  int aiStack_6c [8];
+  float afStack_6c [5];
+  CVector3f local_58;
   CVector3f local_4c;
-  float local_40;
-  float afStack_3c [2];
+  CVector3f local_40;
   CVector3f local_34;
-  uint local_28;
-  int aiStack_24 [4];
+  CVector3f local_28;
+  int local_1c;
+  int local_18;
   CDemonActor *local_14;
   
   bVar6 = 0;
@@ -53,12 +51,12 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
       puVar2 = puVar2 + (uint)bVar6 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     }
-    aiStack_24[3] = core_box_cpp_FUN_0041a840(local_a0);
-    if (aiStack_24[3] != 0) {
+    local_18 = core_box_cpp_FUN_0041a840(local_a0);
+    if (local_18 != 0) {
       if (this_ptr->morph_blend < 0.0) {
-        aiStack_24[2] = DAT_0060b280->advanced_culling_enabled;
+        local_1c = DAT_0060b280->advanced_culling_enabled;
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90
-                  (DAT_0060b280,(uint)(aiStack_24[2] == 0));
+                  (DAT_0060b280,(uint)(local_1c == 0));
         engine_matrix_c_matrixPush_FUN_004e9710();
         _DAT_01c38b6c = -_DAT_01c38b6c;
         _DAT_01c38b90 = -_DAT_01c38b90;
@@ -72,46 +70,48 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
                              (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
                               g_CStrangerClassInfo.name_hash);
         if (local_14 != (CDemonActor *)0x0) {
-          puVar2 = &local_28;
-          aiStack_6c[2] = 0;
-          aiStack_6c[4] = 0;
-          aiStack_6c[3] = 0x40490fdb;
-          aiStack_6c[5] = 0;
-          aiStack_6c[6] = 0x3f38263b;
-          piVar7 = aiStack_6c + 5;
+          pCVar8 = &local_28;
+          afStack_6c[2] = 0.0;
+          afStack_6c[4] = 0.0;
+          afStack_6c[3] = 3.1415927;
+          local_58.x = 0.0;
+          local_58.y = 0.71933335;
+          pCVar7 = &local_58;
           pCVar3 = &local_d0;
-          aiStack_6c[7] = 0x3e3d70a4;
-          local_28 = 0;
-          aiStack_24[(uint)bVar6 * -2] = aiStack_6c[(uint)bVar6 * -2 + 3];
-          aiStack_24[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-               aiStack_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-          core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar3,piVar7,puVar2);
+          local_58.z = 0.185;
+          local_28.x = 0.0;
+          *(float *)((int)&local_28 + (uint)bVar6 * -8 + 4) = afStack_6c[(uint)bVar6 * -2 + 3];
+          *(float *)((int)&local_28 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               afStack_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+          core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar3,pCVar7,pCVar8);
           core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                     (&local_d0,
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d097c4,
                      &local_100);
           pCVar3 = &local_100;
-          pfVar5 = local_130;
+          pfVar5 = (float *)&stack0xfffffed0;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
             *pfVar5 = pCVar3->m[0].w;
             pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
             pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
           }
-          core_xform_cpp_FUN_00592720(local_130);
-          local_34.x = local_40;
-          *(float *)((int)&local_34 + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2];
-          *(float *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_130);
-          translation = &local_34;
-          euler_angles = &local_4c;
+          core_xform_cpp_getTranslation_FUN_00592720((CMatrix3x4f *)&stack0xfffffed0,&local_40);
+          local_34.x = local_40.x;
+          *(uint *)((int)&local_34 + (uint)bVar6 * -8 + 4) =
+               *(uint *)((int)&local_40 + (uint)bVar6 * -8 + 4);
+          *(uint *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               *(uint *)((int)&local_40 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+          core_xform_cpp_matrixToEulerAngles_FUN_00591de0
+                    ((CMatrix3x4f *)&stack0xfffffed0,in_stack_fffffed0);
+          pCVar8 = &local_34;
+          pCVar7 = &local_4c;
           local_4c.x = local_70;
-          *(int *)((int)&local_4c + (uint)bVar6 * -8 + 4) = aiStack_6c[(uint)bVar6 * -2];
+          *(float *)((int)&local_4c + (uint)bVar6 * -8 + 4) = afStack_6c[(uint)bVar6 * -2];
           this_ptr_01 = DAT_0060b280;
-          *(int *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               aiStack_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+          *(float *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               afStack_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                    (this_ptr_01,euler_angles,translation);
+                    (this_ptr_01,pCVar7,pCVar8);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                     ((CKeyFramedModelInstance *)&local_14[0xdd].particle_systems[2].position.y,0.0,
                      -1);
@@ -127,15 +127,14 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
           core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
         }
         engine_drender_cpp_pop_FUN_0046b4a0();
-        engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90
-                  (DAT_0060b280,aiStack_24[2]);
+        engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90(DAT_0060b280,local_1c);
       }
       else {
         core_morph_cpp_CMorph_render_FUN_005b76a0(&this_ptr->morph,this_ptr->morph_blend);
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
-    return aiStack_24[3];
+    return local_18;
   }
   return 0;
 }

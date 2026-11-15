@@ -15,7 +15,6 @@
 #include "prototypes/prototypes_4C0000.h"
 #include "prototypes/prototypes_4D0000.h"
 #include "prototypes/prototypes_510000.h"
-#include "prototypes/prototypes_550000.h"
 #include "prototypes/prototypes_570000.h"
 #include "prototypes/prototypes_580000.h"
 #include "prototypes/prototypes_590000.h"
@@ -655,55 +654,6 @@ static undefined1* DAT_005FADDC = (undefined1*)engine_pod_cpp_CPod_findFile_FUN_
 static undefined1* DAT_005FADE0 = (undefined1*)engine_pod_cpp_FUN_0051b110;
 static undefined1* DAT_005FADE4 = (undefined1*)engine_pod_cpp_CPod_dismount_FUN_0051b280;
 static undefined1* DAT_005FADE8 = (undefined1*)engine_pod_cpp_CPod_remount_FUN_0051b1e0;
-static undefined1* DAT_005FBCBC = (undefined1*)sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060;
-static undefined1* DAT_005FBCC0 = (undefined1*)sound_snddx_cpp_FUN_00555130;
-static undefined1* DAT_005FBCC4 = (undefined1*)sound_snddx_cpp_FUN_005552a0;
-static undefined1* DAT_005FBCC8 = (undefined1*)sound_snddx_cpp_FUN_00555560;
-static undefined1* DAT_005FBCCC = (undefined1*)sound_snddx_cpp_FUN_00555a80;
-static undefined1* DAT_005FBCD0 = (undefined1*)sound_snddx_cpp_FUN_00555b60;
-static undefined1* DAT_005FBCD4 = (undefined1*)sound_snddx_cpp_FUN_00557800;
-static undefined1* DAT_005FBCD8 = (undefined1*)sound_snddx_cpp_FUN_00555c10;
-static undefined1* DAT_005FBCDC = (undefined1*)sound_snddx_cpp_FUN_00555c50;
-static undefined1* DAT_005FBCE0 = (undefined1*)sound_snddx_cpp_FUN_00555c80;
-static undefined1* DAT_005FBCE4 = (undefined1*)sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0;
-static undefined1* DAT_005FBCE8 = (undefined1*)sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005577b0;
-static undefined1* DAT_005FBCEC = (undefined1*)sound_snddx_cpp_FUN_00555ce0;
-static undefined1* DAT_005FBCF0 = (undefined1*)sound_snddx_cpp_FUN_00555ff0;
-static undefined1* DAT_005FBCF4 = (undefined1*)sound_snddx_cpp_FUN_00556050;
-static undefined1* DAT_005FBCF8 = (undefined1*)sound_snddx_cpp_FUN_005561b0;
-static undefined1* DAT_005FBCFC = (undefined1*)sound_snddx_cpp_FUN_00556290;
-static undefined1* DAT_005FBD00 = (undefined1*)sound_snddx_cpp_FUN_00556550;
-static undefined1* DAT_005FBD04 = (undefined1*)sound_snddx_cpp_FUN_00556f80;
-static undefined1* DAT_005FBD08 = (undefined1*)sound_snddx_cpp_FUN_005570a0;
-static undefined1* DAT_005FBD0C = (undefined1*)sound_snddx_cpp_FUN_00557500;
-static undefined1* DAT_005FBD10 = (undefined1*)sound_snddx_cpp_FUN_00556ed0;
-static undefined1* DAT_005FBD18 = (undefined1*)sound_sndwav_cpp_CWavInDevice_close_FUN_00558240;
-static undefined1* DAT_005FBD1C = (undefined1*)sound_sndwav_cpp_CWavInDevice_start_FUN_005582f0;
-static undefined1* DAT_005FBD20 = (undefined1*)sound_sndwav_cpp_CWavInDevice_reset_FUN_005583e0;
-static undefined1* DAT_005FBD24 = (undefined1*)sound_sndwav_cpp_CWavInDevice_setMode_FUN_00558440;
-static undefined1* DAT_005FBD28 = (undefined1*)sound_sndwav_cpp_CWavInDevice_poll_FUN_005587b0;
-static undefined1* DAT_005FBD30 = (undefined1*)sound_sndwav_cpp_CWavOutDevice_close_FUN_00557d10;
-static undefined1* DAT_005FBD34 = (undefined1*)sound_sndwav_cpp_CWavOutDevice_start_FUN_00557dc0;
-static undefined1* DAT_005FBD38 = (undefined1*)sound_sndwav_cpp_CWavOutDevice_reset_FUN_00557e90;
-static undefined1* DAT_005FBD3C = (undefined1*)sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00;
-static undefined1* DAT_005FBD40 = (undefined1*)sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0;
-static undefined1* DAT_005FBD44 = (undefined1*)sound_sndwav_cpp_FUN_00558b20;
-static undefined1* DAT_005FBD48 = (undefined1*)sound_sndwav_cpp_FUN_00558b30;
-static undefined1* DAT_005FBD4C = (undefined1*)sound_sndwav_cpp_FUN_00558b40;
-static undefined1* DAT_005FBD50 = (undefined1*)sound_sndwav_cpp_FUN_00558b50;
-static undefined1* DAT_005FBD54 = (undefined1*)sound_sndwav_cpp_FUN_00558b60;
-static undefined1* DAT_005FBD58 = (undefined1*)sound_sndwav_cpp_FUN_00558b70;
-static undefined1* DAT_005FBD5C = (undefined1*)sound_sndwav_cpp_FUN_00558b80;
-static undefined1* DAT_005FBD60 = (undefined1*)sound_sndwav_cpp_FUN_00558b90;
-static undefined1* DAT_005FBD64 = (undefined1*)sound_sndwav_cpp_FUN_00558ba0;
-static undefined1* DAT_005FBD68 = (undefined1*)sound_sndwav_cpp_FUN_00558bb0;
-static undefined1* DAT_005FBD6C = (undefined1*)sound_sndwav_cpp_FUN_00558bc0;
-static undefined1* DAT_005FBD70 = (undefined1*)sound_sndwav_cpp_FUN_00558bd0;
-static undefined1* DAT_005FBD74 = (undefined1*)sound_sndwav_cpp_FUN_00558be0;
-static undefined1* DAT_005FBD78 = (undefined1*)sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_00558bf0;
-static undefined1* DAT_005FBD7C = (undefined1*)sound_sndwav_cpp_FUN_00558c10;
-static undefined1* DAT_005FBD80 = (undefined1*)sound_sndwav_cpp_FUN_00558c20;
-static undefined1* DAT_005FBD84 = (undefined1*)sound_sndwav_cpp_FUN_00558c30;
 static undefined1* DAT_005FD3B8 = (undefined1*)crt_unknown_c_FUN_005bab17;
 static undefined1* DAT_005FD3BC = (undefined1*)support_trstream_cpp_CInStream_ungetChar_FUN_0057ba00;
 static undefined1* DAT_005FD3C0 = (undefined1*)crt_unknown_c_FUN_005bab17;

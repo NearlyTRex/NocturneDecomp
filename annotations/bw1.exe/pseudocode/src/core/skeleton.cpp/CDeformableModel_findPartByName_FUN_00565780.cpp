@@ -32,6 +32,6 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780(CDefo
   }
   _DAT_01d1d400 = "..\\core\\skeleton.cpp";
   _DAT_01d1d404 = 0x5e1;
-  core_main_c_FUN_005030e0("Can't find part %s in model %s",part_name,this_ptr->model_filename);
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Can't find part %s in model %s");
   return -1;
 }

@@ -17,7 +17,7 @@
 ;   undefined4 DAT_005e23c8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -109,8 +109,8 @@ section .text
     PUSH EBX                            ; 00519888
     LEA ESI,[ESP + 0x68]                ; 00519889
     LEA EDI,[ESP + 0x98]                ; 0051988d
-    CALL core_actor.cpp_FUN_00408de0    ; 00519894
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00519894
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x68]                ; 00519899
     ADD ESP,0x8                         ; 0051989d
     MOVSD ES:EDI,ESI                    ; 005198a0

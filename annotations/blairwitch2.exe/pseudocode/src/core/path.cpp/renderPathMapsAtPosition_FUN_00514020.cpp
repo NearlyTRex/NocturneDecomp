@@ -36,7 +36,7 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00514020(CVector3f *posi
       if (*(int *)(iVar1 + 0x1e4fedc) == 0) {
         _DAT_01d046a0 = "..\\core\\path.cpp";
         _DAT_01d046a4 = 0x6b5;
-        core_main_c_FUN_004e4500("Global pathmap list corruption");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Global pathmap list corruption");
       }
       this_ptr = *(CPathMap **)(iVar1 + 0x1e4fedc);
       if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&

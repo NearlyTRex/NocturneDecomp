@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -270,8 +270,8 @@ section .text
     PUSH 0x5f108e                       ; 005ae65d | = "Too many connecting verticies"
     MOV dword ptr [0x01d046a0],EDI      ; 005ae662 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 005ae668 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005ae66d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005ae66d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005ae672
     JMP 0x005ae588                      ; 005ae675
         ;   XREF to: 005ae588 (UNCONDITIONAL_JUMP)  ; LAB_005ae588

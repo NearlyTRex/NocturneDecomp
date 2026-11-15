@@ -58,11 +58,11 @@
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;   support_codec.cpp_CCodec_dtor_FUN_00442bb0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00443490
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_00443630
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0045368e
     PUSH EAX                            ; 00453692
     PUSH 0x5d7919                       ; 00453693 | = "backdrop"
-    CALL engine_dosio.cpp_FUN_00479180  ; 00453698
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 00453698
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045369d
     TEST EAX,EAX                        ; 004536a0
     JNZ 0x00453bf9                      ; 004536a2
@@ -151,8 +151,8 @@ section .text
     PUSH 0x5d7945                       ; 00453703 | = "Can't create %s"
     MOV dword ptr [0x01d1d400],EDX      ; 00453708 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0045370e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00453714
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00453714
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00453719
     PUSH 0x1000                         ; 0045371c
         ;   Label: LAB_0045371c
@@ -181,19 +181,19 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00453777
     FMUL ST1                            ; 0045377a
     CALL crt_math.c_round_FUN_005c03a0  ; 0045377c
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1a4]       ; 00453781
     FLD float ptr [EAX + 0x8]           ; 00453788
     FMUL ST1                            ; 0045378b
     PUSH 0x6                            ; 0045378d
     CALL crt_math.c_round_FUN_005c03a0  ; 0045378f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1ac]       ; 00453794
     FMUL float ptr [EAX + 0xc]          ; 0045379b
     PUSH 0x10000                        ; 0045379e
     LEA EAX,[ESP + 0x16c]               ; 004537a3
     CALL crt_math.c_round_FUN_005c03a0  ; 004537aa
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EAX                            ; 004537af
     FISTP dword ptr [ESP + 0x1b8]       ; 004537b0
     CALL support_codec.cpp_CLZWCompress_ctor_FUN_00443490 ; 004537b7
@@ -419,8 +419,8 @@ section .text
     PUSH 0x5d7992                       ; 00453b2b | = "Not all bytes consumed compressing %s"
     MOV dword ptr [0x01d1d400],EBX      ; 00453b30 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00453b36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00453b3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00453b3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00453b41
     LEA EAX,[ESP + 0x1b0]               ; 00453b44
         ;   Label: LAB_00453b44
@@ -482,7 +482,7 @@ section .text
     PUSH EAX                            ; 00453bf9
         ;   Label: LAB_00453bf9
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 00453bfa
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 00453bff
     ADD ESP,0x1fc                       ; 00453c02
     POP EBP                             ; 00453c08
@@ -512,8 +512,8 @@ section .text
     MOV EDX,0x1396                      ; 00453c3d
     PUSH 0x5d7969                       ; 00453c42 | = "Error compressing %s"
     MOV dword ptr [0x01d1d404],EDX      ; 00453c47 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00453c4d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00453c4d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00453c52
     JMP 0x00453b0f                      ; 00453c55
         ;   XREF to: 00453b0f (UNCONDITIONAL_JUMP)  ; LAB_00453b0f
@@ -525,8 +525,8 @@ section .text
     PUSH 0x5d79cc                       ; 00453c6c | = "Error writing compressed file %s"
     MOV dword ptr [0x01d1d400],EDI      ; 00453c71 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00453c77 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00453c7d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00453c7d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00453c82
     JMP 0x00453b5c                      ; 00453c85
         ;   XREF to: 00453b5c (UNCONDITIONAL_JUMP)  ; LAB_00453b5c

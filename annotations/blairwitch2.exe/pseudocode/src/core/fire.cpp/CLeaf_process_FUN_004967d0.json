@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 182,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 13,
+    "pseudocode_lines": 47,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
+      "bitcast_double_pair",
+      "sub84_truncation",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 143
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -181,100 +183,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_ECX",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 26,
+      "match": "SUB84(",
       "severity": "moderate",
-      "text": "float *extraout_ECX;",
-      "type": "extra_output"
+      "text": "uStack_20 = SUB84(__BITCAST_UINT64((double)fVar2),0);",
+      "type": "sub84_truncation"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
-      "match": "extraout_ECX",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 35,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "*extraout_ECX = *extraout_ECX * fVar3;",
-      "type": "extra_output"
+      "text": "if (0.0 < __BITCAST_DOUBLE(CONCAT44(uStack_20,fVar2))) {",
+      "type": "bitcast_double_pair"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
-      "match": "extraout_ECX",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 46,
+      "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*extraout_ECX = *extraout_ECX * fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[1] = extraout_ECX[1] * fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[1] = extraout_ECX[1] * fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[2] = extraout_ECX[2] * fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[2] = extraout_ECX[2] * fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 41,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[2] = 0.0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[1] = extraout_ECX[2];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[1] = extraout_ECX[2];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*extraout_ECX = extraout_ECX[1];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*extraout_ECX = extraout_ECX[1];",
-      "type": "extra_output"
+      "text": "(this_ptr->base).velocity.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "vtable_info": {

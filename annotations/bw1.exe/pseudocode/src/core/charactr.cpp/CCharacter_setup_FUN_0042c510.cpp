@@ -39,8 +39,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042c510(CCharacter *this_pt
        pCVar5 != this_ptr)) {
       _DAT_01d1d400 = "..\\core\\charactr.cpp";
       _DAT_01d1d404 = 0x13c;
-      core_main_c_FUN_005030e0
-                ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00,this_ptr_00,pCVar5);
+      core_main_c_displayErrorAndQuit_FUN_005030e0("%s is carrying %s, but %s thinks it is being carried by %s");
     }
     pCVar4 = (CCharacter *)(pCVar4->base).create_event;
   } while (pCVar4 != (CCharacter *)&(this_ptr->base).platform_orientation_delta.y);

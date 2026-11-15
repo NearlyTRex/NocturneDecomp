@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_00417e20(int param_1)
+; CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_00417e20(CDemonActor *actor,CVector3f *out)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cbfda
 ;   undefined4 DAT_005cbfe2
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d340
-;   core_actor.cpp_FUN_00408d70
 ;
 ; *****************************************************************************
 
@@ -95,8 +97,8 @@ section .text
     PUSH ECX                            ; 00417ef8
     LEA ESI,[ESP + 0x5c]                ; 00417ef9
     MOV EDI,EBX                         ; 00417efd
-    CALL core_actor.cpp_FUN_00408d70    ; 00417eff
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00417eff
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 00417f04
     ADD ESP,0x8                         ; 00417f08
     MOVSD ES:EDI,ESI                    ; 00417f0b

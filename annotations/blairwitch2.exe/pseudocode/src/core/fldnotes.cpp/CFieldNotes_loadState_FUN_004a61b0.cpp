@@ -35,7 +35,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004a61b0(CFieldNotes *t
   if ((local_20 < 1) || (1 < local_20)) {
     _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
     _DAT_01d046a4 = 0xb30;
-    core_main_c_FUN_004e4500("Invalid field notes file version: %d, latest this .exe supports is %d",local_20,1);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid field notes file version: %d, latest this .exe supports is %d");
   }
   puVar4 = &DAT_00616048;
   pcVar5 = local_120;

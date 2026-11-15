@@ -22,8 +22,8 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
       (iVar2 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_00591410(this_ptr), iVar2 == 0)) &&
      (this_ptr->guns_drawn == 0)) {
     pCVar1 = &(this_ptr->base).base.model;
-    fVar3 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0);
-    fVar4 = (float)core_motion_cpp_FUN_00524a40(pCVar1,1);
+    fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(&pCVar1->base,0);
+    fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(&pCVar1->base,1);
     if ((float)_DAT_005f70b1 < fVar4 + fVar3) {
       uVar5 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
       switch(uVar5) {

@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d546b8
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190
 ;   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0
@@ -181,8 +181,8 @@ section .text
     PUSH 0x5e1074                       ; 0050f2a7 | = "CNetGame::processClientFrame - I'm no..."
     MOV [0x01d046a0],EAX                ; 0050f2ac | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050f2b1 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050f2b7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f2b7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f2bc
     JMP 0x0050f15c                      ; 0050f2bf
         ;   XREF to: 0050f15c (UNCONDITIONAL_JUMP)  ; LAB_0050f15c

@@ -31,7 +31,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a38e0(SNotesMap *this_ptr)
   if (pvVar1 == (void *)0x0) {
     _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
     _DAT_01d046a4 = 0x71e;
-    core_main_c_FUN_004e4500("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
   }
   uVar4 = (this_ptr->image).height * (this_ptr->image).width;
   pcVar7 = (this_ptr->image).opa;

@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
+; XREF[1]:
+;   support_trisock.cpp_FUN_0057ad10 at 0057b202
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_receiving_s_from_s_005ed51e
 ;

@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_flies.cpp_FUN_004ae380
+;   core_flies.cpp_CFlies_generateRandomPoint_FUN_004ae380
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     ADD EAX,EBX                         ; 004ae2b0
     LEA EDI,[ESP + 0x8]                 ; 004ae2b2
     MOV dword ptr [ESP + 0x38],EAX      ; 004ae2b6
-    CALL core_flies.cpp_FUN_004ae380    ; 004ae2ba
-        ;   XREF to: 004ae380 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004ae380()
+    CALL core_flies.cpp_CFlies_generateRandomPoint_FUN_004ae380 ; 004ae2ba
+        ;   XREF to: 004ae380 (UNCONDITIONAL_CALL)  ; CVector3f * core_flies.cpp_CFlies_generateRandomPoint_FUN_004ae380(CFlies * this_ptr, CVector3f * reference_point, CVector3f * out_point)
     ADD ESP,0x8                         ; 004ae2bf
     LEA ESI,[ESP + 0x24]                ; 004ae2c2
     MOV EBX,dword ptr [ESP + 0x30]      ; 004ae2c6
@@ -79,8 +79,8 @@ section .text
     PUSH ECX                            ; 004ae2f6
     LEA ESI,[ESP + 0x20]                ; 004ae2f7
     LEA EDI,[ESP + 0x14]                ; 004ae2fb
-    CALL core_flies.cpp_FUN_004ae380    ; 004ae2ff
-        ;   XREF to: 004ae380 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004ae380()
+    CALL core_flies.cpp_CFlies_generateRandomPoint_FUN_004ae380 ; 004ae2ff
+        ;   XREF to: 004ae380 (UNCONDITIONAL_CALL)  ; CVector3f * core_flies.cpp_CFlies_generateRandomPoint_FUN_004ae380(CFlies * this_ptr, CVector3f * reference_point, CVector3f * out_point)
     LEA ESI,[ESP + 0x20]                ; 004ae304
     ADD ESP,0x8                         ; 004ae308
     LEA EAX,[ESP + 0xc]                 ; 004ae30b

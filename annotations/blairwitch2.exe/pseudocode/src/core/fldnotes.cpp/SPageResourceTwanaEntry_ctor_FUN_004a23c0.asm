@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a1e60
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5d5a7c                       ; 004a243d | = "Can't have more than one twana entry ..."
     MOV dword ptr [0x01d046a0],ECX      ; 004a2442 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a2448 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a244e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a244e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2453
     POP ESI                             ; 004a2456
     MOV EAX,EBX                         ; 004a2457

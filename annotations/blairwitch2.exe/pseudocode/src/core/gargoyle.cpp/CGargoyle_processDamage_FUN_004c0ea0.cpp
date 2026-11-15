@@ -17,16 +17,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
   byte bVar5;
   float afStackY_1010 [1011];
   CVector3f CStack_28;
-  float fStack_1c;
-  uint auStack_18 [2];
+  CVector3f CStack_1c;
   
   bVar5 = 0;
-  core_actor_cpp_FUN_00408d70(this_ptr,&damage_info->impact_direction);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_1c);
   iVar4 = 0;
-  CStack_28.x = fStack_1c;
-  *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4) = auStack_18[(uint)bVar5 * -2];
+  CStack_28.x = CStack_1c.x;
+  *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4);
   *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       auStack_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+       *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   do {
     iVar4 = iVar4 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_0049d090

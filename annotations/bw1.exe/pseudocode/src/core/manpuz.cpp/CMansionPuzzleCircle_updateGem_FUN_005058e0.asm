@@ -17,7 +17,7 @@
 ;   undefined4 DAT_00603448
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
@@ -54,8 +54,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 00505920
     PUSH EBP                            ; 00505924
     FSTP float ptr [ESP + 0x3c]         ; 00505925
-    CALL core_actor.cpp_FUN_00408b40    ; 00505929
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00505929
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0050592e
     LEA EAX,[ESP + 0xc]                 ; 00505931
     PUSH EAX                            ; 00505935

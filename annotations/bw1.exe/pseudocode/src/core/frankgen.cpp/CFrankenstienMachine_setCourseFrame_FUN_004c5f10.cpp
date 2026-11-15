@@ -18,7 +18,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004c5f10(
   if (iVar1 < 1) {
     _DAT_01d1d400 = "..\\core\\frankgen.cpp";
     _DAT_01d1d404 = 0x1dc;
-    core_main_c_FUN_005030e0("CFrankenstienMachine::setCourseFrame - no course!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CFrankenstienMachine::setCourseFrame - no course!");
   }
   local_20 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);
   if (local_20 < 0.0) {

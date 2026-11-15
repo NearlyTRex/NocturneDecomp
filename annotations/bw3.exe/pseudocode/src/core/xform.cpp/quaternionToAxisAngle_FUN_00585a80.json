@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 129,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 7,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
       "bit_int_float_compare",
-      "extra_output",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -207,40 +206,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "CQuaternion4f *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "CVector3f *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "quat_in = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "axis_out = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 38,
+      "line": 33,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "axis_out->z = 0.0;",
@@ -248,7 +215,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 14,
+      "line": 12,
       "match": "(int)quat_in->w < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)quat_in->w < 0x3f800000) {",

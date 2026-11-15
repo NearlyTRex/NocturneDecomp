@@ -23,7 +23,7 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_s
 LAB_0056f9dd:
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x617;
-    core_main_c_FUN_005030e0("convertMixBufToOutput - invalid bits: %d",bits_per_sample);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("convertMixBufToOutput - invalid bits: %d");
     return;
   }
   if ((uint)bits_per_sample < 9) {

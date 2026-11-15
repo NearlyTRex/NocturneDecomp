@@ -87,7 +87,7 @@ section .text
     FMUL double ptr [0x005d945a]        ; 004c802b | DAT_005d945a
     FADD double ptr [0x005d9462]        ; 004c8031 | DAT_005d9462
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c8037
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x88]        ; 004c803c
     MOV EDX,dword ptr [ESP + 0x88]      ; 004c8043
     TEST EDX,EDX                        ; 004c804a

@@ -27,7 +27,7 @@
 ;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5d31f0                       ; 0040e27f | = "Out of memory"
     MOV dword ptr [0x01d1d400],ESI      ; 0040e284 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0040e28a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0040e290
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040e290
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040e295
     LEA ESI,[EBP + 0x2d4]               ; 0040e298
         ;   Label: LAB_0040e298

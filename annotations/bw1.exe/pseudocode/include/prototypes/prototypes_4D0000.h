@@ -58,7 +58,7 @@ void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004d6320(CGame *
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004d6340(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004d6420(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *save_filename,int load_mode);
-void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2);
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004d7250(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004d77d0(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004d7e90(void);
@@ -100,7 +100,7 @@ void __cdecl core_gasmask_cpp_CGasMask_process_FUN_004ddb50(CGasMask *this_ptr,f
 int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004ddb60(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004ddc00(CGasMask *this_ptr);
 ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004ddc30(CGasMask *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004ddc40(CGasMask *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004ddc40(CGasMask *this_ptr,CBoundingBox3D *out_box);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004ddc80(CGasMask *this_ptr,uint flags);
 void __cdecl core_ghoul_cpp_staticInit_FUN_004ddcd0(void);
 CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void);

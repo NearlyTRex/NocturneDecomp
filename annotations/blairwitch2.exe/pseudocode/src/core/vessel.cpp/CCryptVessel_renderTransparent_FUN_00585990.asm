@@ -181,7 +181,7 @@ section .text
     FLD float ptr [EBX + 0xaa4]         ; 00585b13
         ;   Label: LAB_00585b13
     CALL crt_math.c_round_FUN_005b7ff0  ; 00585b19
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 00585b1e
     FISTP dword ptr [EBP + -0x4]        ; 00585b1f
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20 ; 00585b22

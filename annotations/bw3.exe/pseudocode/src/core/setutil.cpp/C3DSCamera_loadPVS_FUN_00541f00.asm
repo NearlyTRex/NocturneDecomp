@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;
@@ -92,8 +92,8 @@ section .text
     PUSH 0x5d0dd6                       ; 00541f91 | = "Out of memory for pvsList - %d"
     MOV dword ptr [0x01d71de0],ESI      ; 00541f96 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00541f9c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00541fa1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00541fa1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00541fa6
     JMP 0x00541f4d                      ; 00541fa9
         ;   XREF to: 00541f4d (UNCONDITIONAL_JUMP)  ; LAB_00541f4d

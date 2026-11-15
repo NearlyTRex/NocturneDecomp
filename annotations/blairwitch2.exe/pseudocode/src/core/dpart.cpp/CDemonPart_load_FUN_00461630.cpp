@@ -13,6 +13,6 @@ void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00461630(CDemonPart *this_ptr)
 {
   _DAT_01d046a0 = "..\\core\\dpart.cpp";
   _DAT_01d046a4 = 0x128;
-  core_main_c_FUN_004e4500("CDemonPart::load is no longer needed");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonPart::load is no longer needed");
   return;
 }

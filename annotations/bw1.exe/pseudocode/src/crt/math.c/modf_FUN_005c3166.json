@@ -2,15 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 10,
+    "complexity_score": 22,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 27
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -195,5 +197,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*value._4_4_ = dVar1;",
+      "type": "unknown_field"
+    }
+  ]
 }

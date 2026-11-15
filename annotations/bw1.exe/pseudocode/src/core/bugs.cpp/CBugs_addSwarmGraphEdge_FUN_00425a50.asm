@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5d50c0                       ; 00425a7e | = "CBugs::addSwarmGraphEdge - Too many v..."
     MOV dword ptr [0x01d1d400],EBP      ; 00425a83 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00425a89 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00425a8e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00425a8e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00425a93
     LEA EAX,[EDI*0x4 + 0x0]             ; 00425a96
         ;   Label: LAB_00425a96

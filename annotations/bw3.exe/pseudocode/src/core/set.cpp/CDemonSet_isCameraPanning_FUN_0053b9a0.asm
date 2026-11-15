@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH 0x5d09fe                       ; 0053b9cc | = "CDemonSet::isCameraPanning - no camer..."
     MOV dword ptr [0x01d71de0],ECX      ; 0053b9d1 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0053b9d7 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053b9dd
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053b9dd
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0053b9e2
     POP ESI                             ; 0053b9e5
     IMUL EAX,dword ptr [EBX + 0x15aeb8],0x1a4 ; 0053b9e6

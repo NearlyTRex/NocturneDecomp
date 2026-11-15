@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   spark_type
 ; int              Stack[0x1c]:4   fade_rate
 ;
-; XREF[20]:
+; XREF[21]:
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 0041256d
 ;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 0041412d
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424cd2
@@ -23,7 +23,7 @@
 ;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aeeb0
 ;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae411
 ;   core_fire.cpp_CToss_process_FUN_004b1d90 at 004b1ee0
-;   ... and 10 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c986b0

@@ -112,17 +112,17 @@
 ;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f690
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_drender.cpp_FUN_00483ae0
-;   engine_drender.cpp_FUN_00483b70
 ;   engine_drender.cpp_pop_FUN_004839a0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
@@ -158,8 +158,8 @@ section .text
     PUSH EBX                            ; 004641c3 | DAT_01bc120c
     LEA ESI,[ESP + 0x158]               ; 004641c4
     LEA EDI,[ESP + 0xb0]                ; 004641cb
-    CALL engine_drender.cpp_FUN_00483ae0 ; 004641d2
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0 ; 004641d2
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x158]               ; 004641d7
     ADD ESP,0x4                         ; 004641de
     MOVSD ES:EDI,ESI                    ; 004641e1
@@ -184,8 +184,8 @@ section .text
     LEA EDI,[ESP + 0x68]                ; 0046422c
     PUSH EAX                            ; 00464230
     FSTP float ptr [ESP + 0xbc]         ; 00464231
-    CALL core_dirmat.cpp_FUN_0045f700   ; 00464238
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 00464238
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xd8]                ; 0046423d
     LEA EAX,[ESP + 0x6c]                ; 00464244
     ADD ESP,0x8                         ; 00464248
@@ -325,8 +325,8 @@ section .text
     FSTP float ptr [ESP + 0xa8]         ; 0046445e
     FSTP float ptr [ESP + 0xac]         ; 00464465
     FSTP float ptr [ESP + 0xb0]         ; 0046446c
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00464473
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00464473
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x120]               ; 00464478
     ADD ESP,0x8                         ; 0046447f
     MOVSD ES:EDI,ESI                    ; 00464482
@@ -435,8 +435,8 @@ section .text
     MOV EDX,dword ptr [0x00612560]      ; 00464606 | DAT_00612560
     PUSH EDX                            ; 0046460c | DAT_01bc120c
     LEA ESI,[ESP + 0xf8]                ; 0046460d
-    CALL engine_drender.cpp_FUN_00483b70 ; 00464614
-        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b70()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70 ; 00464614
+        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 00464619
     PUSH 0x0                            ; 0046461c
     LEA EAX,[ESP + 0x50]                ; 0046461e
@@ -567,7 +567,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 00464812
     MOV EBX,dword ptr [EDX]             ; 00464816 | DAT_01bc120c
     CALL crt_math.c_round_FUN_005c03a0  ; 00464818
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x160]       ; 0046481d
     MOV EAX,dword ptr [ESP + 0x160]     ; 00464824
     MOV dword ptr [EBX + 0x2c],EAX      ; 0046482b

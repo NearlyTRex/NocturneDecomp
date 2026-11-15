@@ -34,7 +34,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170
 ;   core_level.cpp_FUN_004e1480
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5de8c1                       ; 004fcb32 | = "CDemonMission::run - no gLocalHero"
     MOV [0x01d046a0],EAX                ; 004fcb37 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004fcb3c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fcb42
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fcb42
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fcb47
     MOV EAX,[0x01cedef4]                ; 004fcb4a | DAT_01cedef4
         ;   Label: LAB_004fcb4a
@@ -145,8 +145,8 @@ section .text
     PUSH 0x5de888                       ; 004fcbfe | = "CDemonMission::run - hero list empty"
     MOV dword ptr [0x01d046a0],ECX      ; 004fcc03 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004fcc09 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fcc0f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fcc0f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fcc14
     JMP 0x004fcb19                      ; 004fcc17
         ;   XREF to: 004fcb19 (UNCONDITIONAL_JUMP)  ; LAB_004fcb19

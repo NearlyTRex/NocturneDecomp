@@ -107,7 +107,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FIL
     if (this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)0x0) {
       _DAT_01d046a0 = "..\\core\\inv.cpp";
       _DAT_01d046a4 = 0x62b;
-      core_main_c_FUN_004e4500("CInventory::load - Can't find your weapon");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CInventory::load - Can't find your weapon");
     }
   }
   core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020(this_ptr,999);

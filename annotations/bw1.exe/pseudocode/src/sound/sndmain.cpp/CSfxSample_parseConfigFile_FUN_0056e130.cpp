@@ -105,16 +105,13 @@ joined_r0x0056e359:
           if (local_1c != 0) {
             _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
             _DAT_01d1d404 = 0x2e5;
-            core_main_c_FUN_005030e0
-                      ("Reference distance specified in %s on line %d, then again on line %d",local_358,local_1c,local_14);
+            core_main_c_displayErrorAndQuit_FUN_005030e0("Reference distance specified in %s on line %d, then again on line %d");
           }
           local_1c = local_14;
           if ((int)(this_ptr->sample_info).reference_distance < 0x3dcccccd) {
             _DAT_01d1d404 = 0x2e7;
             _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-            core_main_c_FUN_005030e0
-                      ("Reference volume distance %g is too small in %s line %d!",
-                       (double)(this_ptr->sample_info).reference_distance,local_358,local_14);
+            core_main_c_displayErrorAndQuit_FUN_005030e0("Reference volume distance %g is too small in %s line %d!");
           }
           if (local_18 == 0) {
             (this_ptr->sample_info).reference_volume_distance =
@@ -127,17 +124,13 @@ joined_r0x0056e359:
             if (local_18 != 0) {
               _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
               _DAT_01d1d404 = 0x2ed;
-              core_main_c_FUN_005030e0
-                        ("Minimum distance specified in %s on line %d, then again on line %d",local_358,local_18,local_14);
+              core_main_c_displayErrorAndQuit_FUN_005030e0("Minimum distance specified in %s on line %d, then again on line %d");
             }
             local_18 = local_14;
             if ((int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd) {
               _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
               _DAT_01d1d404 = 0x2ef;
-              core_main_c_FUN_005030e0
-                        ("Reference volume distance %g is too small in %s line %d!",
-                         (double)(this_ptr->sample_info).reference_volume_distance,local_358,
-                         local_14);
+              core_main_c_displayErrorAndQuit_FUN_005030e0("Reference volume distance %g is too small in %s line %d!");
             }
           }
           else {
@@ -148,21 +141,18 @@ joined_r0x0056e359:
                 if (local_1c == 0) {
                   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                   _DAT_01d1d404 = 0x2f9;
-                  core_main_c_FUN_005030e0();
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("%s specified maxVol on line %d without first specifying reference distance");
                 }
                 if (local_18 != 0) {
                   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                   _DAT_01d1d404 = 0x2fa;
-                  core_main_c_FUN_005030e0
-                            ("Minimum distance specified in %s on line %d, then again on line %d",local_358,local_18,local_14);
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("Minimum distance specified in %s on line %d, then again on line %d");
                 }
                 local_18 = local_14;
                 if ((int)local_488 < 0x3a83126f) {
                   _DAT_01d1d404 = 0x2fc;
                   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-                  core_main_c_FUN_005030e0
-                            ("maxVol %g is too small in %s line %d!",(double)local_488,local_358,
-                             local_14);
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("maxVol %g is too small in %s line %d!");
                 }
                 (this_ptr->sample_info).reference_volume_distance =
                      (this_ptr->sample_info).reference_distance / local_488;
@@ -173,14 +163,14 @@ joined_r0x0056e359:
                   if (-1 < (this_ptr->sample_info).sample_count) {
                     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                     _DAT_01d1d404 = 0x303;
-                    core_main_c_FUN_005030e0
-                              ("Length for %s already known, then specified again in %s line %d",this_ptr,local_358,local_14);
+                    core_main_c_displayErrorAndQuit_FUN_005030e0
+                              ("Length for %s already known, then specified again in %s line %d");
                   }
                   if (local_2c < 1) {
                     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                     _DAT_01d1d404 = 0x304;
-                    core_main_c_FUN_005030e0
-                              ("Invalid length %d in %s line %d",local_2c,local_358,local_14);
+                    core_main_c_displayErrorAndQuit_FUN_005030e0
+                              ("Invalid length %d in %s line %d");
                   }
                   (this_ptr->sample_info).sample_count = local_2c;
                 }
@@ -195,8 +185,8 @@ joined_r0x0056e359:
                   else {
                     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                     _DAT_01d1d404 = 0x311;
-                    core_main_c_FUN_005030e0
-                              ("Error parsing %s line %d: %s",local_358,local_14,local_484);
+                    core_main_c_displayErrorAndQuit_FUN_005030e0
+                              ("Error parsing %s line %d: %s");
                   }
                 }
               }

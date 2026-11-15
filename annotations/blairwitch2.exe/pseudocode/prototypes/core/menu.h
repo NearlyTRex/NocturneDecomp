@@ -19,7 +19,7 @@ int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *se
 
 // Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0
 // Address: 004eb3d0
-void showJoystickCalibrationScreen(void);
+void __cdecl showJoystickCalibrationScreen(char *instruction_text,char *message_text);
 
 // Original: core_menu.cpp_calibrateGamepad_FUN_004eb490
 // Address: 004eb490

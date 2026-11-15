@@ -57,13 +57,13 @@ section .text
     FMULP ST3                           ; 00532722
     FXCH                                ; 00532724
     CALL crt_math.c_round_FUN_005a3120  ; 00532726
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0053272b
     CALL crt_math.c_round_FUN_005a3120  ; 0053272f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00532734
     CALL crt_math.c_round_FUN_005a3120  ; 00532736
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0053273b
     FISTP dword ptr [ESP + 0x8]         ; 0053273d
     FISTP dword ptr [ESP]               ; 00532741

@@ -10,7 +10,7 @@
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00449750 at 004497e7
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0045c7e0 at 0045c862
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dc3b1
-;   core_setdir.cpp_FUN_0053f940 at 0053fec0
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 0053fec0
 ;   core_setdir.cpp_FUN_00540cf0 at 00540e54
 ;
 ; Called Functions:

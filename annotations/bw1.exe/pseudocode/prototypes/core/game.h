@@ -225,9 +225,9 @@ void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 // Address: 004d6990
 void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
-// Original: core_game.cpp_FUN_004d7250
+// Original: core_game.cpp_CGame_showChapterSelect_FUN_004d7250
 // Address: 004d7250
-void FUN_004d7250(CGame *param_1,int param_2);
+void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004d7730
 // Address: 004d7730

@@ -44,8 +44,8 @@
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     PUSH EBX                            ; 004eb268
     LEA ESI,[ESP + 0x50]                ; 004eb269
     MOV dword ptr [ESP + 0x30],EDX      ; 004eb26d
-    CALL core_actor.cpp_FUN_00408b40    ; 004eb271
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004eb271
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004eb276
     XOR EAX,EAX                         ; 004eb279
     XOR EDX,EDX                         ; 004eb27b
@@ -153,8 +153,8 @@ section .text
     PUSH EBX                            ; 004eb34a
     LEA ESI,[ESP + 0x38]                ; 004eb34b
     LEA EDI,[ESP + 0x44]                ; 004eb34f
-    CALL core_actor.cpp_FUN_00408b00    ; 004eb353
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004eb353
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x38]                ; 004eb358
     ADD ESP,0x8                         ; 004eb35c
     LEA EAX,[ESP + 0x3c]                ; 004eb35f

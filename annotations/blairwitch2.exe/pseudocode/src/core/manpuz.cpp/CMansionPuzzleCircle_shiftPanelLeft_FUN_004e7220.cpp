@@ -22,7 +22,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220(CM
      (ABS(pSVar1->anim_speed) != 0.0)) {
     _DAT_01d046a0 = "..\\core\\manpuz.cpp";
     _DAT_01d046a4 = 0x554;
-    core_main_c_FUN_004e4500("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
   }
   pSVar3->exists = pSVar1->exists;
   pSVar3->anim_progress = pSVar1->anim_progress;

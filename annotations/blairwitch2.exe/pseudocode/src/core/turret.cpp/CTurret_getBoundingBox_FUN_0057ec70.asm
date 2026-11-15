@@ -12,13 +12,13 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
-;   core_box.cpp_FUN_0041a600
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_turret.cpp_CTurret_getCurFrame_FUN_0057ee90
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x134]     ; 0057ec9b
     ADD EAX,0x2b4                       ; 0057eca2
     CALL crt_math.c_round_FUN_005b7ff0  ; 0057eca7
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 0057ecac
     FISTP dword ptr [ESP + 0x124]       ; 0057ecad
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20 ; 0057ecb4
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0057ed3e
     PUSH EAX                            ; 0057ed42
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0057ed43
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0057ed48
     MOV EAX,dword ptr [ESP + 0x134]     ; 0057ed4b
     ADD EAX,0x30                        ; 0057ed52
@@ -120,7 +120,7 @@ section .text
     FLD float ptr [ESP + 0x128]         ; 0057eda6
     ADD ESP,0x8                         ; 0057edad
     CALL crt_math.c_round_FUN_005b7ff0  ; 0057edb0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EBX                            ; 0057edb5
     FISTP dword ptr [ESP + 0x124]       ; 0057edb6
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20 ; 0057edbd
@@ -145,8 +145,8 @@ section .text
     PUSH ESI                            ; 0057ee02
     LEA ESI,[ESP + 0x114]               ; 0057ee03
     LEA EDI,[ESP + 0xfc]                ; 0057ee0a
-    CALL core_box.cpp_FUN_0041a600      ; 0057ee11
-        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a600()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600 ; 0057ee11
+        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x114]               ; 0057ee16
     ADD ESP,0x8                         ; 0057ee1d
     MOVSD ES:EDI,ESI                    ; 0057ee20
@@ -156,8 +156,8 @@ section .text
     PUSH ESI                            ; 0057ee2a
     LEA ESI,[ESP + 0x104]               ; 0057ee2b
     LEA EDI,[ESP + 0x11c]               ; 0057ee32
-    CALL core_xform.cpp_FUN_00591530    ; 0057ee39
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0057ee39
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x104]               ; 0057ee3e
     ADD ESP,0x8                         ; 0057ee45
     MOVSD ES:EDI,ESI                    ; 0057ee48

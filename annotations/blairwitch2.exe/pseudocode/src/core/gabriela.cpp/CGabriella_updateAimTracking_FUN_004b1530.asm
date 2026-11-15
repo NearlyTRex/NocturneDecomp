@@ -40,8 +40,8 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
@@ -288,8 +288,8 @@ section .text
     PUSH EAX                            ; 004b1847
     LEA ESI,[ESP + 0x108]               ; 004b1848
     LEA EDI,[ESP + 0xd8]                ; 004b184f
-    CALL core_actor.cpp_FUN_00408d70    ; 004b1856
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004b1856
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004b185b
     LEA EAX,[ESP + 0xd0]                ; 004b185e
     LEA ESI,[ESP + 0x100]               ; 004b1865
@@ -300,8 +300,8 @@ section .text
     PUSH EBX                            ; 004b1870
     LEA ESI,[ESP + 0x114]               ; 004b1871
     LEA EDI,[ESP + 0x144]               ; 004b1878
-    CALL core_actor.cpp_FUN_00408de0    ; 004b187f
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 004b187f
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x114]               ; 004b1884
     ADD ESP,0x8                         ; 004b188b
     MOV EDX,dword ptr [0x01cb0690]      ; 004b188e | DAT_01cb0690

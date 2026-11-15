@@ -35,7 +35,7 @@
 ;   core_asgaya.cpp_FUN_005a1ea0
 ;   core_dpart.cpp_FUN_00466d50
 ;   core_dpart.cpp_FUN_004673d0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_clipper.c_clipAndRasterize_FUN_0043a840
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5bc476                       ; 0046b1ad | = "CDemonRenderer::clipAndFillPoly - Bad..."
     MOV dword ptr [0x01d71de0],ECX      ; 0046b1b2 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 0046b1b8 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0046b1be
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046b1be
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046b1c3
     JMP 0x0046b176                      ; 0046b1c6
         ;   XREF to: 0046b176 (UNCONDITIONAL_JUMP)  ; LAB_0046b176

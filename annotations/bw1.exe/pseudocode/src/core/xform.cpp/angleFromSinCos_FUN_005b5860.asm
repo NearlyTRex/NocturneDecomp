@@ -37,7 +37,7 @@ section .text
         ;   XREF to: 005b58d5 (CONDITIONAL_JUMP)  ; LAB_005b58d5
     FLD float ptr [ESP + 0x8]           ; 005b5881
     CALL crt_math.c_asin_FUN_005c1cd6   ; 005b5885
-        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_asin_FUN_005c1cd6()
+        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_005c1cd6(float10 sine_value)
     FLDZ                                ; 005b588a
     FXCH                                ; 005b588c
     FSTP float ptr [ESP]                ; 005b588e
@@ -98,7 +98,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 005b590e
         ;   Label: LAB_005b590e
     CALL crt_math.c_acos_FUN_005c1d04   ; 005b5912
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FSTP float ptr [ESP]                ; 005b5917
     JMP 0x005b58eb                      ; 005b591a
         ;   XREF to: 005b58eb (UNCONDITIONAL_JUMP)  ; LAB_005b58eb

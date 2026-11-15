@@ -38,7 +38,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -108,8 +108,8 @@ section .text
     PUSH EAX                            ; 004c1981
     MOV dword ptr [0x01d1d404],EBX      ; 004c1982 | DAT_01d1d404
     MOV dword ptr [0x01d1d400],ECX      ; 004c1988 | DAT_01d1d400
-    CALL core_main.c_FUN_005030e0       ; 004c198e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c198e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c1993
     MOV EAX,dword ptr [ESP + 0x174]     ; 004c1996
         ;   Label: LAB_004c1996
@@ -224,8 +224,8 @@ section .text
     PUSH 0x5e09cc                       ; 004c1b3b | = "Out of memory"
     MOV dword ptr [0x01d1d400],ECX      ; 004c1b40 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004c1b46 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004c1b4c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c1b4c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c1b51
     JMP 0x004c1901                      ; 004c1b54
         ;   XREF to: 004c1901 (UNCONDITIONAL_JUMP)  ; LAB_004c1901
@@ -268,8 +268,8 @@ section .text
     MOV ECX,0x5e0a41                    ; 004c1bc0 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004c1bc5
     MOV dword ptr [0x01d1d400],ECX      ; 004c1bc6 | DAT_01d1d400
-    CALL core_main.c_FUN_005030e0       ; 004c1bcc
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c1bcc
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c1bd1
     MOV EAX,dword ptr [ESP + 0x150]     ; 004c1bd4
         ;   Label: LAB_004c1bd4

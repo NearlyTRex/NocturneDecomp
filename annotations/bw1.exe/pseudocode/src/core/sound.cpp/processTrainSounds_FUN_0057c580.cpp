@@ -1,6 +1,6 @@
 // Name: core_sound.cpp_processTrainSounds_FUN_0057c580
 // Address: 0057c580
-// Address Range: [[0057c580, 0057c930] [0057c963, 0057ca1e] [0057ca60, 0057cacb]]
+// Address Range: [[0057c580, 0057cacb]]
 // Convention: unknown
 // Signature: uint core_sound_cpp_processTrainSounds_FUN_0057c580(void)
 
@@ -161,13 +161,13 @@ uint core_sound_cpp_processTrainSounds_FUN_0057c580(void)
     switch(iVar3 % 5) {
     case 0:
     case 1:
-      fStack_134 = fStack_138 * (float)dRam005f5a7e;
+      fStack_134 = fStack_138 * (float)_DAT_005f5a7e;
       fStack_2c = 25.0;
       _sprintf(acStack_cc,"rail?%s.wav");
       break;
     case 2:
     case 3:
-      fStack_134 = fStack_138 * (float)dRam005f5a76;
+      fStack_134 = fStack_138 * (float)_DAT_005f5a76;
       pcVar7 = &DAT_005f5a55;
       pcVar9 = acStack_cc;
       fStack_2c = 20.0;
@@ -182,7 +182,7 @@ uint core_sound_cpp_processTrainSounds_FUN_0057c580(void)
       } while (cVar1 != '\0');
       break;
     case 4:
-      goto LAB_0057c84d;
+      goto switchD_0057cac5_caseD_4;
     }
     pCStack_28->x = 0.0;
     fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-3.0,2.0);
@@ -199,6 +199,6 @@ uint core_sound_cpp_processTrainSounds_FUN_0057c580(void)
     sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
     return extraout_EAX;
   }
-LAB_0057c84d:
+switchD_0057cac5_caseD_4:
   return uVar5;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void)
+; CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(UINT device_id)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bf88

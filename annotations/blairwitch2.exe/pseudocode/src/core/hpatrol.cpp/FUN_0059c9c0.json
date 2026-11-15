@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 375,
+    "complexity_score": 419,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 110,
-    "suspect_count": 24,
+    "pseudocode_lines": 109,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_truncation",
       "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 310
+    "total_lines": 309
   },
   "cross_references": [
     {
@@ -225,31 +226,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "count = strtok(param_1,\"0123456789\");",
+      "text": "pcVar2 = strtok(param_1,\"0123456789\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "_strncpy(local_34,param_1,count);",
+      "text": "_strncpy(local_34,param_1,(SIZE_T)pcVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar6 = param_1 + count;",
+      "text": "pcVar7 = param_1 + (int)pcVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar8 = param_1;",
@@ -257,7 +258,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((int)*param_2 < 0) {",
@@ -265,7 +266,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 58,
       "match": "param_2",
       "severity": "mild",
       "text": "if (0 < (int)*param_2) {",
@@ -273,18 +274,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar4 = (int)*param_2 >> 0x1f;",
+      "text": "uVar5 = (int)*param_2 >> 0x1f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*param_2 ^ uVar4) - uVar4 == 1) {",
+      "text": "if ((*param_2 ^ uVar5) - uVar5 == 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar5 = (int)*param_2 >> 0x1f;",
       "type": "unnamed_param"
     },
     {
@@ -292,7 +301,7 @@
       "line": 67,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar4 = (int)*param_2 >> 0x1f;",
+      "text": "if ((*param_2 ^ uVar5) - uVar5 != 2) goto LAB_0059ca8e;",
       "type": "unnamed_param"
     },
     {
@@ -300,23 +309,23 @@
       "line": 68,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*param_2 ^ uVar4) - uVar4 != 2) goto LAB_0059ca8e;",
+      "text": "uVar5 = *param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 71,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar4 = *param_2;",
+      "text": "*param_2 = -uVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = -uVar4;",
+      "text": "uVar5 = (int)*param_2 >> 0x1f;",
       "type": "unnamed_param"
     },
     {
@@ -324,15 +333,15 @@
       "line": 77,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar4 = (int)*param_2 >> 0x1f;",
+      "text": "if ((*param_2 ^ uVar5) - uVar5 == 1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 80,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*param_2 ^ uVar4) - uVar4 == 1) {",
+      "text": "uVar5 = (int)*param_2 >> 0x1f;",
       "type": "unnamed_param"
     },
     {
@@ -340,7 +349,7 @@
       "line": 81,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar4 = (int)*param_2 >> 0x1f;",
+      "text": "if ((*param_2 ^ uVar5) - uVar5 == 2) {",
       "type": "unnamed_param"
     },
     {
@@ -348,20 +357,44 @@
       "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*param_2 ^ uVar4) - uVar4 == 2) {",
+      "text": "uVar5 = *param_2;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar4 = *param_2;",
-      "type": "unnamed_param"
+      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)pcVar2",
+      "severity": "moderate",
+      "text": "if ((int)pcVar2 < 1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pcVar2",
+      "severity": "moderate",
+      "text": "local_34[(int)pcVar2] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pcVar2",
+      "severity": "moderate",
+      "text": "pcVar7 = param_1 + (int)pcVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)local_10",
+      "severity": "moderate",
+      "text": "local_34[(int)local_10] = '\\0';",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -369,7 +402,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 34,
+      "line": 33,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -377,7 +410,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 93,
+      "line": 92,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -385,7 +418,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 93,
+      "line": 92,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

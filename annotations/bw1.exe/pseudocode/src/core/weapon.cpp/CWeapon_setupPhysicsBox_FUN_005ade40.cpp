@@ -27,9 +27,9 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_
   float fStack_58;
   float fStack_54;
   CVector3f CStack_50;
-  float fStack_44;
-  float afStack_40 [4];
-  float fStack_30;
+  CVector3f CStack_44;
+  float fStack_38;
+  float afStack_34 [2];
   CVector3f CStack_2c;
   float fStack_20;
   float afStack_1c [4];
@@ -47,13 +47,13 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    afStack_40[2] = fStack_74 + fStack_68;
-    afStack_40[3] = fStack_70 + fStack_64;
-    fStack_30 = fStack_6c + fStack_60;
+    fStack_38 = fStack_74 + fStack_68;
+    afStack_34[0] = fStack_70 + fStack_64;
+    afStack_34[1] = fStack_6c + fStack_60;
     afStack_1c[2] = fStack_74 + fStack_68;
-    afStack_1c[(uint)bVar4 * -2 + 3] = afStack_40[(uint)bVar4 * -2 + 3];
+    afStack_1c[(uint)bVar4 * -2 + 3] = afStack_34[(uint)bVar4 * -2];
     afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+         afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     fStack_20 = afStack_1c[2] * _DAT_005f9916;
     afStack_1c[0] = afStack_1c[3] * _DAT_005f9916;
     afStack_1c[1] = fStack_c * _DAT_005f9916;
@@ -61,11 +61,13 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ade40(CWeapon *this_
     *(float *)(&stack0xfffffffc + (uint)bVar4 * -8) = afStack_1c[(uint)bVar4 * -2];
     *(float *)(&stack0x00000000 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
          afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b40(this_ptr,afStack_1c + 5);
-    CStack_2c.x = fStack_44;
-    *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4) = afStack_40[(uint)bVar4 * -2];
-    *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (&this_ptr->base,(CVector3f *)(afStack_1c + 5),&CStack_44);
+    CStack_2c.x = CStack_44.x;
+    *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     fStack_5c = fStack_68 - fStack_74;
     fStack_58 = fStack_64 - fStack_70;
     fStack_54 = fStack_60 - fStack_6c;

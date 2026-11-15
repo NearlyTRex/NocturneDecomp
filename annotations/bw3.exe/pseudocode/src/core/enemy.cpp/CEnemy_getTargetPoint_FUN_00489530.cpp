@@ -1,19 +1,18 @@
 // Name: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00489530
 // Address: 00489530
 // Address Range: [[00489530, 004895f4]]
-// Convention: __cdecl
-// Signature: CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
+CVector3f * __stack_esi core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
 
 {
   float fVar1;
   int iVar2;
-  CVector3f *unaff_ESI;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
@@ -60,10 +59,10 @@ CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *th
   *(uint *)(&stack0xffffffd0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
        *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   fStack_34 = fStack_40 - fVar1 * (float)_DAT_005bdc77;
-  puVar4 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
-  unaff_ESI->x = fStack_38;
+  puVar4 = (uint *)((int)out_point + (uint)bVar5 * -8 + 4);
+  out_point->x = fStack_38;
   *puVar4 = *(uint *)((int)&stack0xffffffcc + (uint)bVar5 * -8);
   puVar4[(uint)bVar5 * -2 + 1] =
        *(uint *)(&stack0xffffffd0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  return unaff_ESI;
+  return out_point;
 }

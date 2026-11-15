@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 547,
-    "cross_reference_count": 18,
+    "complexity_score": 585,
+    "cross_reference_count": 19,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 44,
+    "pseudocode_lines": 85,
+    "suspect_count": 47,
     "suspect_types": [
       "bit_int_float_compare",
       "extra_output",
@@ -17,7 +17,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 248
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -123,6 +123,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0057e760",
+      "from_addr": "0057eb2c",
+      "name": "core_turret.cpp_CTurret_process_FUN_0057e760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00593770",
       "from_addr": "0059383c",
       "name": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
@@ -158,7 +164,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 30,
+    "call_site_count": 31,
     "call_sites": [
       {
         "call_addr": "00429bf9",
@@ -523,7 +529,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "float *extraout_ECX;",
@@ -531,7 +537,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 8,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "float *extraout_EDX;",
@@ -539,7 +545,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
@@ -547,42 +553,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar2 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((0.0 < param_3) && (pfVar2 = param_2, (int)param_3 < 0x3f800000)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((0.0 < param_3) && (pfVar2 = param_2, (int)param_3 < 0x3f800000)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((0.0 < param_3) && (pfVar2 = param_2, (int)param_3 < 0x3f800000)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_28 = *param_2;",
+      "text": "if (param_3 <= 0.0) {",
       "type": "unnamed_param"
     },
     {
@@ -590,79 +564,39 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "else if ((int)param_3 < 0x3f800000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_28 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
       "text": "local_10 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 * *param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_1 * *param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -670,7 +604,15 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_14 = param_2[3];",
+      "text": "local_24 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 * *param_2 +",
       "type": "unnamed_param"
     },
     {
@@ -678,7 +620,15 @@
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_28 = -*param_2;",
+      "text": "*param_1 * *param_2 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -686,7 +636,39 @@
       "line": 41,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_10 = -param_2[1];",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -694,12 +676,36 @@
       "line": 42,
       "match": "param_2",
       "severity": "mild",
+      "text": "local_14 = param_2[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_28 = -*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_10 = -param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
       "text": "local_14 = -param_2[3];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 47,
       "match": "param_2",
       "severity": "mild",
       "text": "local_24 = -param_2[2];",
@@ -707,7 +713,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 50,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = 1.0 - param_3;",
@@ -715,15 +721,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 55,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar6 = (float10)fsin((float10)param_3 * fVar6);",
+      "text": "fVar5 = (float10)fsin((float10)param_3 * fVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
+      "line": 58,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "unaff_ESI = extraout_ECX;",
@@ -731,7 +737,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 58,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = extraout_ECX;",
@@ -739,7 +745,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
+      "line": 59,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "param_1 = extraout_EDX;",
@@ -747,7 +753,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = extraout_EDX;",
@@ -755,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 62,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = 1.0 - param_3;",
@@ -763,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 63,
       "match": "param_3",
       "severity": "mild",
       "text": "local_1c = param_3;",
@@ -771,39 +777,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
+      "line": 66,
+      "match": "param_2",
       "severity": "mild",
-      "text": "local_44 = local_1c * local_24 + local_20 * param_1[2];",
+      "text": "param_2 = afStack_183c + 0x5fb;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_40 = local_1c * local_14 + local_20 * param_1[3];",
+      "text": "local_48 = local_20 * local_28 + local_24 * param_1[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "afStack_1838[0x5fb] = local_1c * local_28 + local_20 * *param_1;",
+      "text": "local_44 = local_20 * local_18 + local_24 * param_1[3];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_48 = local_1c * local_10 + local_20 * param_1[1];",
+      "text": "afStack_183c[0x5fb] = local_20 * fStack_2c + local_24 * *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_4c = local_20 * local_14 + local_24 * param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pfVar1 = param_2 + (uint)bVar4 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*pfVar2 = *param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 74,
+      "line": 82,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar2 = unaff_ESI + (uint)bVar4 * -2 + 1;",
@@ -811,15 +841,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 83,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = fVar1;",
+      "text": "*unaff_ESI = afStack_183c[0x5f7];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 80,
+      "line": 88,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -827,14 +857,14 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 31,
+      "line": 35,
       "match": "(int)param_3 < 0x3f800000",
       "severity": "moderate",
-      "text": "if ((0.0 < param_3) && (pfVar2 = param_2, (int)param_3 < 0x3f800000)) {",
+      "text": "else if ((int)param_3 < 0x3f800000) {",
       "type": "bit_int_float_compare"
     },
     {
-      "call_site_count": 30,
+      "call_site_count": 31,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

@@ -15,11 +15,12 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission *thi
   char *text;
   int clear_screen;
   
-  file_handle = engine_dosio_cpp_FUN_00479180("world",mission_filename,"rt");
+  file_handle = engine_dosio_cpp_getFile_FUN_00479180
+                          ("world",mission_filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     _DAT_01d1d400 = "..\\core\\mission.cpp";
     _DAT_01d1d404 = 0xa3;
-    core_main_c_FUN_005030e0("CDemonMission::load - Unable to open file");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::load - Unable to open file");
   }
   clear_screen = 0;
   text = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading mission");

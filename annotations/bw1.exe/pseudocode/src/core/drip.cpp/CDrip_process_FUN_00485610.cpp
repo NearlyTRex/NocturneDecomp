@@ -31,26 +31,26 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00485610(CDrip *this_ptr,float delt
   SDamageInfo SStack_c8;
   uint auStack_84 [3];
   float fStack_78;
-  float fStack_6c;
-  float afStack_68 [5];
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
+  CVector3f CStack_6c;
+  float fStack_60;
+  float afStack_5c [2];
+  CVector3f aCStack_54 [2];
   CVector3f CStack_38;
   CVector3f aCStack_2c [2];
   
   bVar9 = 0;
   if (this_ptr->is_ground_cached == 0) {
-    fStack_54 = (this_ptr->home_pos).x;
-    fStack_4c = (this_ptr->home_pos).z;
-    fStack_50 = (this_ptr->home_pos).y + _DAT_005db5fa;
-    core_dtrace_cpp_FUN_0048b040(&g_CDemonRaytraceInstance,&this_ptr->home_pos,afStack_68 + 5);
-    afStack_68[2] = fStack_6c;
-    afStack_68[(uint)bVar9 * -2 + 3] = afStack_68[(uint)bVar9 * -2];
-    afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-         afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    aCStack_54[0].x = (this_ptr->home_pos).x;
+    aCStack_54[0].z = (this_ptr->home_pos).z;
+    aCStack_54[0].y = (this_ptr->home_pos).y + _DAT_005db5fa;
+    core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_0048b040
+              (&g_CDemonRaytraceInstance,&this_ptr->home_pos,aCStack_54,&CStack_6c);
+    fStack_60 = CStack_6c.x;
+    afStack_5c[(uint)bVar9 * -2] = *(float *)((int)&CStack_6c + (uint)bVar9 * -8 + 4);
+    afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+         *(float *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     this_ptr->is_ground_cached = 1;
-    this_ptr->ground_y = afStack_68[3];
+    this_ptr->ground_y = afStack_5c[0];
   }
   if (ABS(this_ptr->drip_timer) == 0.0) {
     fVar3 = (this_ptr->vel).y - delta_time * (float)_DAT_005db5fe;
@@ -67,7 +67,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00485610(CDrip *this_ptr,float delt
       puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
     }
     if ((this_ptr->base).location.position.y <
-        this_ptr->ground_y - (fStack_6c - fStack_78) * (float)_DAT_005db606) {
+        this_ptr->ground_y - (CStack_6c.x - fStack_78) * (float)_DAT_005db606) {
       if (this_ptr->is_visible != 0) {
         core_set_cpp_CDemonSet_initCameraShake_FUN_00555ab0(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);

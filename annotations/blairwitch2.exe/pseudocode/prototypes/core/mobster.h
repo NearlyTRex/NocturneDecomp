@@ -15,7 +15,7 @@ void FUN_004fd620(int param_1);
 
 // Original: core_mobster.cpp_getObjectGrabPointWorld_FUN_004fd6e0
 // Address: 004fd6e0
-void getObjectGrabPointWorld(int param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out);
 
 // Original: core_mobster.cpp_factoryFuncMobster_FUN_004fd7e0
 // Address: 004fd7e0

@@ -17,7 +17,7 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_00558b20(int bits_per_sampl
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x1700;
-    core_main_c_FUN_004e4330("setRecordingFormat - can't do this while recording active!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("setRecordingFormat - can't do this while recording active!");
   }
   _DAT_0060425c = bits_per_sample;
   _DAT_00604260 = channels;

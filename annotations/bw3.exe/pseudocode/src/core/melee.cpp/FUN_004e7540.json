@@ -1,11 +1,11 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 59,
+    "assembly_lines": 114,
     "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 2,
-    "global_count": 0,
+    "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
     "suspect_count": 9,
@@ -13,7 +13,7 @@
       "raw_address_constant",
       "unnamed_param"
     ],
-    "total_lines": 99
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -21,11 +21,7 @@
     "address_range": [
       [
         "004e7540",
-        "004e7573"
-      ],
-      [
-        "004e7582",
-        "004e75bb"
+        "004e760f"
       ]
     ],
     "convention": "unknown",
@@ -45,7 +41,38 @@
       "name": "support_trstream.cpp_COutStream_printf_FUN_005744b0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "005c7181",
+      "name": "s_OK_empty_heap_005c7181",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7192",
+      "name": "s_OK_end_of_heap_005c7192",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c71a4",
+      "name": "s_ERROR_bad_pointer_to_hea_005c71a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c71c1",
+      "name": "s_ERROR_bad_start_of_heap_005c71c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c71dc",
+      "name": "s_ERROR_bad_node_in_heap_005c71dc",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -56,33 +83,33 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.043478260869565,
-    "instruction_count": 46,
+    "avg_pcode_per_instr": 3.9555555555555557,
+    "instruction_count": 90,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 1,
       "BRANCH": 2,
       "BRANCHIND": 1,
-      "CALL": 2,
+      "CALL": 7,
       "CBRANCH": 3,
-      "COPY": 42,
-      "INT_ADD": 16,
-      "INT_AND": 22,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 20,
+      "COPY": 88,
+      "INT_ADD": 41,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
       "INT_LESS": 2,
       "INT_MULT": 1,
       "INT_SBORROW": 3,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 10,
-      "INT_SUB": 16,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 31,
       "INT_XOR": 3,
-      "LOAD": 11,
-      "POPCOUNT": 10,
-      "RETURN": 1,
-      "STORE": 15
+      "LOAD": 31,
+      "POPCOUNT": 15,
+      "RETURN": 5,
+      "STORE": 30
     },
-    "pcode_op_count": 186
+    "pcode_op_count": 356
   },
   "siblings": {
     "blairwitch2.exe": {

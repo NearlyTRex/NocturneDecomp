@@ -37,7 +37,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340(
     if (pCVar2 == (CDemonTriangle *)0x0) {
       _DAT_01d1d400 = "..\\core\\dmodel.cpp";
       _DAT_01d1d404 = 0x470;
-      core_main_c_FUN_005030e0("CKeyFramedModel::buildCollisionTriList - out of memory");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CKeyFramedModel::buildCollisionTriList - out of memory");
     }
     core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
               (this_ptr,(CVector3f *)&DAT_02c8af28);

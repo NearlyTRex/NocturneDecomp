@@ -222,13 +222,13 @@ section .text
     XOR ESI,ESI                         ; 00479e5d
     FXCH                                ; 00479e5f
     CALL crt_math.c_round_FUN_005c03a0  ; 00479e61
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 00479e66
     CALL crt_math.c_round_FUN_005c03a0  ; 00479e68
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00479e6d
     CALL crt_math.c_round_FUN_005c03a0  ; 00479e6f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00479e74
     FISTP dword ptr [ESP + 0x4]         ; 00479e76
     FXCH                                ; 00479e7a

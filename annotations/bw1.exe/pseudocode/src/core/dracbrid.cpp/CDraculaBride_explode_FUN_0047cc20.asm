@@ -35,10 +35,10 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0047cf20
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -167,8 +167,8 @@ section .text
     PUSH ECX                            ; 0047cd91
     LEA ESI,[ESP + 0x64]                ; 0047cd92
     LEA EDI,[ESP + 0x70]                ; 0047cd96
-    CALL core_actor.cpp_FUN_00408b40    ; 0047cd9a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0047cd9a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0047cd9f
     LEA ESI,[ESP + 0x5c]                ; 0047cda2
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047cda6
@@ -252,8 +252,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xe8]      ; 0047ceb2
     MOV dword ptr [ESP + 0xb0],ECX      ; 0047ceb9
     MOV dword ptr [ESP + 0xb4],EAX      ; 0047cec0
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0047cec7
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0047cec7
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xdc]                ; 0047cecc
     ADD ESP,0x8                         ; 0047ced3
     MOVSD ES:EDI,ESI                    ; 0047ced6

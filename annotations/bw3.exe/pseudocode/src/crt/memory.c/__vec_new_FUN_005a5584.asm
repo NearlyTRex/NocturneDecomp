@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_memory_c___vec_new_FUN_005a5584(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___vec_new_FUN_005a5584(void *array_memory,int element_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   array_memory
+; int              Stack[0x8]:4   element_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ;
 ; XREF[4]:
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005102b0 at 00510389

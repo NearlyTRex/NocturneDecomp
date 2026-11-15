@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2)
+; int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *pod_filename)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   pod_filename
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00519e50

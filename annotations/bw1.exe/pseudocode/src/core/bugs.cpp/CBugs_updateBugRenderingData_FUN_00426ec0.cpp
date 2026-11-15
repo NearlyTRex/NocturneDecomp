@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this_ptr,SBug *bug_data,float delta_time)
@@ -23,22 +22,13 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
   int iVar9;
   byte bVar10;
   float afStackY_1154 [1001];
-  CMatrix3x4f *pCVar11;
+  CMatrix3x4f *matrix;
   float local_1a0;
   float local_19c;
   float local_198;
-  float local_194;
-  float local_190;
-  float local_18c;
-  float local_188;
-  float local_184;
-  float local_180;
-  float local_17c;
-  float local_178;
-  float local_174;
+  CMatrix3x3f local_194;
   float local_16c;
-  float local_168;
-  float local_164;
+  float local_168 [2];
   CVector3f local_160;
   float local_154;
   float local_150 [4];
@@ -58,7 +48,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
   float local_100;
   float local_fc;
   float local_f8;
-  float local_f4;
+  CVector3f local_f4;
   float local_e8;
   float local_e4;
   float local_e0;
@@ -69,12 +59,10 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
   float local_c0;
   float local_bc;
   float local_b8;
-  float local_b4 [8];
+  float local_b4 [5];
+  CVector3f local_a0;
   float local_94;
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
+  float local_90 [4];
   float local_80;
   float local_7c;
   float local_78;
@@ -91,7 +79,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
   float local_4c;
   float local_48;
   float local_44;
-  float local_40;
+  CVector3f local_40 [2];
   float local_24;
   float local_20;
   float local_1c;
@@ -153,26 +141,26 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
     local_d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
          local_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
     local_18 = 1.0 - bug_data->interp_t;
-    pCVar11 = &this_ptr->model_world_matrix;
+    matrix = &this_ptr->model_world_matrix;
     local_100 = local_13c * local_18;
     local_fc = local_138 * local_18;
     local_f8 = local_134 * local_18;
-    local_88 = local_13c * local_18;
-    local_b4[(uint)bVar10 * -2 + 0xc] = local_12c[(uint)bVar10 * -2 + 0xc];
-    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
+    local_90[2] = local_13c * local_18;
+    local_90[(uint)bVar10 * -2 + 3] = local_12c[(uint)bVar10 * -2 + 0xc];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
          local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
-    local_4c = local_88 + local_dc;
-    local_48 = local_84 + local_d8[0];
+    local_4c = local_90[2] + local_dc;
+    local_48 = local_90[3] + local_d8[0];
     local_44 = local_80 + local_d8[1];
-    local_b4[5] = local_88 + local_dc;
-    local_b4[(uint)bVar10 * -2 + 6] = local_b4[(uint)bVar10 * -2 + 0x1b];
-    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-         local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1c];
-    core_xform_cpp_FUN_005b5080(local_b4 + 5,pCVar11);
-    local_10c = local_40;
-    local_12c[(uint)bVar10 * -2 + 9] = local_b4[(uint)bVar10 * -2 + 0x1e];
+    local_a0.x = local_90[2] + local_dc;
+    *(float *)((int)&local_a0 + (uint)bVar10 * -8 + 4) = local_90[(uint)bVar10 * -2 + 0x12];
+    *(float *)((int)&local_a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
+    core_xform_cpp_transformVector3x4_FUN_005b5080(&local_a0,matrix,local_40);
+    local_10c = local_40[0].x;
+    local_12c[(uint)bVar10 * -2 + 9] = *(float *)((int)local_40 + (uint)bVar10 * -8 + 4);
     local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
-         local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1f];
+         *(float *)((int)local_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&bug_data->position != (CVector3f *)(local_12c + 8)) {
       (bug_data->position).x = local_10c;
       (bug_data->position).y = local_108;
@@ -182,9 +170,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
     local_54 = local_e4 - local_138;
     local_50 = local_e0 - local_134;
     local_16c = local_e8 - local_13c;
-    (&stack0xfffffe98)[(uint)bVar10 * 0xfffffffe] = local_b4[(uint)bVar10 * -2 + 0x18];
-    local_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -5] =
-         local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x19];
+    local_168[(uint)bVar10 * -2] = local_90[(uint)bVar10 * -2 + 0xf];
+    local_168[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
     iVar9 = this_ptr->swarm_vertices[bug_data->current_vertex].first_edge_data;
     iVar1 = this_ptr->lod_index;
     pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -214,9 +202,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
     local_5c = fVar3 - local_134;
     local_150[2] = local_c4 - local_e8;
     local_7c = local_64;
-    local_b4[(uint)bVar10 * -2 + 0xf] = local_b4[(uint)bVar10 * -2 + 0x15];
-    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-         local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16];
+    local_90[(uint)bVar10 * -2 + 6] = local_90[(uint)bVar10 * -2 + 0xc];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
     local_150[3] = fVar4 - fVar2;
     local_140 = fVar5 - fVar3;
     local_b8 = local_150[2];
@@ -230,21 +218,21 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
     local_b4[(uint)bVar10 * -2 + 3] = local_d8[(uint)bVar10 * -2 + 3];
     local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
          local_d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-    local_94 = local_b4[3] * local_164 - local_b4[4] * local_168;
-    local_90 = local_b4[4] * local_16c - local_b4[2] * local_164;
-    local_8c = local_b4[2] * local_168 - local_b4[3] * local_16c;
+    local_94 = local_b4[3] * local_168[1] - local_b4[4] * local_168[0];
+    local_90[0] = local_b4[4] * local_16c - local_b4[2] * local_168[1];
+    local_90[1] = local_b4[2] * local_168[0] - local_b4[3] * local_16c;
     local_130 = local_94;
-    local_12c[(uint)bVar10 * -2] = local_b4[(uint)bVar10 * -2 + 9];
+    local_12c[(uint)bVar10 * -2] = local_90[(uint)bVar10 * -2];
     local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-    local_118 = local_168 * local_12c[1] - local_164 * local_12c[0];
-    local_114 = local_164 * local_130 - local_16c * local_12c[1];
-    local_110 = local_16c * local_12c[0] - local_168 * local_130;
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    local_118 = local_168[0] * local_12c[1] - local_168[1] * local_12c[0];
+    local_114 = local_168[1] * local_130 - local_16c * local_12c[1];
+    local_110 = local_16c * local_12c[0] - local_168[0] * local_130;
     local_70 = local_118;
-    local_b4[(uint)bVar10 * -2 + 0x12] = local_12c[(uint)bVar10 * -2 + 6];
-    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
+    local_90[(uint)bVar10 * -2 + 9] = local_12c[(uint)bVar10 * -2 + 6];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
          local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
-    if (local_b4 + 2 != local_b4 + 0x11) {
+    if (local_b4 + 2 != local_90 + 8) {
       local_b4[2] = local_70;
       local_b4[3] = local_6c;
       local_b4[4] = local_68;
@@ -275,32 +263,33 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this
       local_12c[0] = local_12c[0] * fVar2;
       local_12c[1] = local_12c[1] * fVar2;
     }
-    local_20 = SQRT(local_164 * local_164 + local_16c * local_16c + local_168 * local_168);
+    local_20 = SQRT(local_168[1] * local_168[1] +
+                    local_16c * local_16c + local_168[0] * local_168[0]);
     if (local_20 <= 0.0) {
-      local_168 = 0.0;
+      local_168[0] = 0.0;
       local_16c = 0.0;
-      local_164 = 0.0;
+      local_168[1] = 0.0;
     }
     else {
       fVar2 = 1.0 / local_20;
       local_16c = local_16c * fVar2;
-      local_168 = local_168 * fVar2;
-      local_164 = local_164 * fVar2;
+      local_168[0] = local_168[0] * fVar2;
+      local_168[1] = local_168[1] * fVar2;
     }
-    local_194 = local_130;
-    local_190 = local_b4[2];
-    local_18c = local_16c;
-    local_188 = local_12c[0];
-    local_184 = local_b4[3];
-    local_180 = local_168;
-    local_17c = local_12c[1];
-    local_178 = local_b4[4];
-    local_174 = local_164;
-    core_dirmat_cpp_FUN_0045f840(&stack0xfffffe6c);
-    local_12c[2] = local_f4;
-    local_12c[(uint)bVar10 * -2 + 3] = local_12c[(uint)bVar10 * -2 + 0xf];
+    local_194.m[0].x = local_130;
+    local_194.m[0].y = local_b4[2];
+    local_194.m[0].z = local_16c;
+    local_194.m[1].x = local_12c[0];
+    local_194.m[1].y = local_b4[3];
+    local_194.m[1].z = local_168[0];
+    local_194.m[2].x = local_12c[1];
+    local_194.m[2].y = local_b4[4];
+    local_194.m[2].z = local_168[1];
+    core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(&local_194,&local_f4);
+    local_12c[2] = local_f4.x;
+    local_12c[(uint)bVar10 * -2 + 3] = *(float *)((int)&local_f4 + (uint)bVar10 * -8 + 4);
     local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-         local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
+         *(float *)((int)&local_f4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&bug_data->orientation != (CVector3f *)(local_12c + 2)) {
       (bug_data->orientation).x = local_12c[2];
       (bug_data->orientation).y = local_12c[3];

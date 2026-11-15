@@ -22,7 +22,7 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_00530340(CNetGame 
     if (this_ptr->local_player_index < 0) {
       _DAT_01d1d400 = "..\\core\\netgame.cpp";
       _DAT_01d1d404 = 0x97c;
-      core_main_c_FUN_005030e0("CNetGame::processClientFrame - I'm not in player list!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processClientFrame - I'm not in player list!");
     }
     core_netgame_cpp_CNetGame_updatePing_FUN_0052ea10(this_ptr,this_ptr->server_player_index,10.0);
     core_netgame_cpp_CNetGame_receivePackets_FUN_0052d360(this_ptr);

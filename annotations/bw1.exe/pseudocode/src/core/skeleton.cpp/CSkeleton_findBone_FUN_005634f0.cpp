@@ -32,6 +32,6 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton *this_pt
   }
   _DAT_01d1d400 = "..\\core\\skeleton.cpp";
   _DAT_01d1d404 = 0x182;
-  core_main_c_FUN_005030e0("Can't find bone %s in skeleton %s!",bone_name,this_ptr->loaded_filename);
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Can't find bone %s in skeleton %s!");
   return -1;
 }

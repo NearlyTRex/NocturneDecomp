@@ -44,7 +44,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_string.c_memmove_FUN_005a54c0
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005526d0
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5d2ab5                       ; 00559e78 | = "nextMixingBuffer - shouldn't have any..."
     MOV dword ptr [0x01d71de0],ESI      ; 00559e7d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00559e83 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00559e89
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00559e89
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00559e8e
     MOV ESI,dword ptr [0x02cf329c]      ; 00559e91 | DAT_02cf329c
         ;   Label: LAB_00559e91
@@ -298,8 +298,8 @@ section .text
     PUSH 0x5d3ebb                       ; 0055a055 | = "pollSfx - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 0055a05a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0055a060 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055a066
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055a066
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055a06b
     JMP 0x00559da4                      ; 0055a06e
         ;   XREF to: 00559da4 (UNCONDITIONAL_JUMP)  ; LAB_00559da4
@@ -309,8 +309,8 @@ section .text
     PUSH 0x5d2a80                       ; 0055a07d | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d71de0],EDX      ; 0055a082 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0055a088 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055a08e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055a08e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055a093
     JMP 0x00559e65                      ; 0055a096
         ;   XREF to: 00559e65 (UNCONDITIONAL_JUMP)  ; LAB_00559e65

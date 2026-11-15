@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5c6297                       ; 004db90e
     MOV dword ptr [0x01d71de0],ECX      ; 004db913 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004db919 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004db91f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004db91f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004db924
     MOV EAX,dword ptr [ESI + 0x568]     ; 004db927
         ;   Label: LAB_004db927

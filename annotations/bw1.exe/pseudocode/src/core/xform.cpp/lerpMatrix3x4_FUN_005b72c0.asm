@@ -21,7 +21,7 @@
 ;   core_doc.cpp_FUN_0046f740 at 0046fa08
 ;   core_stranger.cpp_FUN_0058afe0 at 0058b2b5
 ;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00595d40 at 00595d84
-;   core_tentacle.cpp_FUN_00595f10 at 00595f62
+;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00595f10 at 00595f62
 ;   core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10 at 00599a54
 ;
 ; Called Functions:

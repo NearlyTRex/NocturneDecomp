@@ -324,7 +324,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x60]      ; 004676be
     MOV EBX,dword ptr [ESP + 0x58]      ; 004676c2
     CALL engine_special.cpp_FUN_00563257 ; 004676c6
-        ;   XREF to: 00563257 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00563257()
+        ;   XREF to: 00563257 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00563257(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x01bdd814],0x0      ; 004676cb | DAT_01bdd814
     JNZ 0x00467455                      ; 004676d2
         ;   XREF to: 00467455 (CONDITIONAL_JUMP)  ; LAB_00467455

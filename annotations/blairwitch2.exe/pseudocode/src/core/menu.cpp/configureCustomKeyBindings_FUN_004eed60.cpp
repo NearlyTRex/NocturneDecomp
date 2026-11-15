@@ -66,7 +66,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -85,7 +85,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -110,7 +110,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -129,7 +129,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -148,7 +148,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -167,7 +167,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -186,7 +186,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -205,7 +205,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -224,7 +224,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -243,7 +243,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -262,7 +262,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -281,7 +281,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -300,7 +300,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -319,7 +319,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -338,7 +338,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -357,7 +357,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -376,7 +376,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -395,7 +395,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -414,7 +414,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -433,7 +433,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -452,7 +452,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -471,7 +471,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -490,7 +490,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;
@@ -509,7 +509,7 @@ LAB_004eed8e:
     if (0x25 < _DAT_01d086f0) {
       _DAT_01d046a0 = "..\\core\\menu.cpp";
       _DAT_01d046a4 = 0x907;
-      core_main_c_FUN_004e4500("Too many custom keys!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = (char *)(_DAT_01d086f0 * 0x28 + 0x1d08790);
     *(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;

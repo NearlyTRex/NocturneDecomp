@@ -49,18 +49,16 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,
   float local_80;
   float local_7c;
   CVector3f CStack_78;
-  uint uStack_6c;
-  uint uStack_68;
-  float fStack_64;
+  CVector3f CStack_6c;
   CVector3f CStack_60;
   CVector3f CStack_54;
   CVector3f CStack_48;
   float local_3c;
   float local_38;
   float local_34;
-  float fStack_30;
-  float afStack_2c [4];
-  float fStack_1c;
+  CVector3f CStack_30;
+  float fStack_24;
+  float afStack_20 [2];
   CLocation *pCStack_18;
   float local_14;
   
@@ -101,30 +99,31 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&CStack_e8,&CStack_54);
-        fStack_64 = _DAT_005fd234 * delta_time;
-        uStack_6c = 0;
-        uStack_68 = 0;
-        local_14 = fStack_64;
-        core_dirmat_cpp_FUN_0045f690(&CStack_e8,&uStack_6c);
+        CStack_6c.z = _DAT_005fd234 * delta_time;
+        CStack_6c.x = 0.0;
+        CStack_6c.y = 0.0;
+        local_14 = CStack_6c.z;
+        core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(&CStack_e8,&CStack_6c,&CStack_30);
         pCVar10 = &CStack_60;
-        CStack_60.x = fStack_30;
-        *(float *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = afStack_2c[(uint)bVar9 * -2];
-        *(float *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-             afStack_2c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+        CStack_60.x = CStack_30.x;
+        *(uint *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) =
+             *(uint *)((int)&CStack_30 + (uint)bVar9 * -8 + 4);
+        *(uint *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+             *(uint *)((int)&CStack_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
         pfVar6 = (float *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);
-        afStack_2c[2] = (this_ptr->base).base.base.location.position.x;
-        afStack_2c[(uint)bVar9 * -2 + 3] = *pfVar6;
+        fStack_24 = (this_ptr->base).base.base.location.position.x;
+        afStack_20[(uint)bVar9 * -2] = *pfVar6;
         pCVar3 = this_ptr;
-        afStack_2c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] = pfVar6[(uint)bVar9 * -2 + 1];
+        afStack_20[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] = pfVar6[(uint)bVar9 * -2 + 1];
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)pCVar3,pCVar10);
         puVar7 = (uint *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);
         CStack_48.x = (this_ptr->base).base.base.location.position.x;
         *(uint *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) = *puVar7;
         *(uint *)((int)&CStack_48 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              puVar7[(uint)bVar9 * -2 + 1];
-        (pCStack_18->position).x = afStack_2c[2];
-        (pCStack_18->position).y = afStack_2c[3];
-        (pCStack_18->position).z = fStack_1c;
+        (pCStack_18->position).x = fStack_24;
+        (pCStack_18->position).y = afStack_20[0];
+        (pCStack_18->position).z = afStack_20[1];
         core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00427e00(this_ptr,&CStack_48);
       }
       core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00425b00(this_ptr);

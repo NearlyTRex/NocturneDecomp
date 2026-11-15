@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5cf942                       ; 0044f5da | = "Tried to call CKeyFramedModel::inters..."
     MOV [0x01d046a0],EAX                ; 0044f5df | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0044f5e4 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044f5ea
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044f5ea
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044f5ef
     MOV ESI,dword ptr [EDI + 0x354]     ; 0044f5f2
         ;   Label: LAB_0044f5f2

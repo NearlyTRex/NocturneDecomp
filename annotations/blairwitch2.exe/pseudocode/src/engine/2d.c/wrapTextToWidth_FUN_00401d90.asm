@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_wrapTextToWidth_FUN_00401d90(void)
+; void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d90(char *input_text,int max_width,char *output_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   input_text
+; int              Stack[0x8]:4   max_width
+; char *           Stack[0xc]:4   output_buffer
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_004018b0

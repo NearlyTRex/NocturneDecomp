@@ -210,7 +210,7 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004e56b0(int rot_x,int r
   if (9 < _DAT_01d726a0) {
     _DAT_01d71de0 = "..\\engine\\matrix.c";
     _DAT_01d71de4 = 799;
-    core_main_c_FUN_004e4330("Matrix unbalance");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance");
     return;
   }
   return;

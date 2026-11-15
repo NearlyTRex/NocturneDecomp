@@ -303,7 +303,7 @@ section .text
     ADD ESP,0x8                         ; 004bbc35
     PUSH EBP                            ; 004bbc38
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004bbc39
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bbc3e
     XOR ECX,ECX                         ; 004bbc41
     MOV EBX,dword ptr [ESP + 0x47c]     ; 004bbc43

@@ -20,31 +20,31 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
   int iVar7;
   byte bVar8;
   float afStackY_10c8 [1013];
-  float *pfVar9;
+  CVector3f *input;
   float local_e0;
   float local_dc;
   float local_d8;
   int local_d4;
   int local_d0;
   int local_cc;
-  float local_c8;
-  float local_c4 [8];
+  CVector3f local_c8;
+  float local_bc;
+  float local_b8;
+  float local_b4;
   float local_a4;
-  float local_a0 [5];
+  float local_a0 [2];
+  CVector3f local_98;
   float local_8c;
   float local_88;
   float local_84;
   float local_80;
   float local_7c [4];
   float local_6c;
-  float local_68;
-  float local_64;
-  float local_60;
+  CVector3f local_68;
   float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_44;
+  float local_58 [2];
+  CVector3f local_50;
+  CVector3f local_44 [3];
   int local_18;
   int local_14;
   
@@ -145,30 +145,32 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
       local_18 = 0;
       do {
         iVar7 = *(int *)(&DAT_0203b3ec + local_18);
-        pfVar9 = local_7c + 5;
+        input = &local_68;
         local_5c = *(float *)(iVar7 + 0x104) - position->x;
-        local_58 = *(float *)(iVar7 + 0x108) - position->y;
-        local_54 = *(float *)(iVar7 + 0x10c) - position->z;
-        local_68 = local_5c;
-        local_7c[(uint)bVar8 * -2 + 6] = local_7c[(uint)bVar8 * -2 + 9];
-        local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
-             local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
-        core_dirmat_cpp_FUN_0045b870(rotation_matrix,pfVar9);
-        local_c8 = local_50;
-        local_c4[(uint)bVar8 * -2] = local_7c[(uint)bVar8 * -2 + 0xc];
-        local_c4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd];
-        if (local_7c + 5 != &local_c8) {
-          local_68 = local_c8;
-          local_64 = local_c4[0];
-          local_60 = local_c4[1];
+        local_58[0] = *(float *)(iVar7 + 0x108) - position->y;
+        local_58[1] = *(float *)(iVar7 + 0x10c) - position->z;
+        local_68.x = local_5c;
+        *(float *)((int)&local_68 + (uint)bVar8 * -8 + 4) = local_58[(uint)bVar8 * -2];
+        *(float *)((int)&local_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+             local_58[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+        core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
+                  (rotation_matrix,input,&local_50);
+        local_c8.x = local_50.x;
+        *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + 4) =
+             *(uint *)((int)local_44 + (uint)bVar8 * -8 + -8);
+        *(uint *)((int)&local_c8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+             *(uint *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + -4);
+        if (&local_68 != &local_c8) {
+          local_68.x = local_c8.x;
+          local_68.y = local_c8.y;
+          local_68.z = local_c8.z;
         }
-        if ((((aabb_min->x <= local_68 + *(float *)(iVar7 + 0x11d4)) &&
-             (aabb_min->y <= local_64 + *(float *)(iVar7 + 0x11d4))) &&
-            (aabb_min->z <= local_60 + *(float *)(iVar7 + 0x11d4))) &&
-           (((local_68 - *(float *)(iVar7 + 0x11d4) <= aabb_max->x &&
-             (local_64 - *(float *)(iVar7 + 0x11d4) <= aabb_max->y)) &&
-            (local_60 - *(float *)(iVar7 + 0x11d4) <= aabb_max->z)))) {
+        if ((((aabb_min->x <= local_68.x + *(float *)(iVar7 + 0x11d4)) &&
+             (aabb_min->y <= local_68.y + *(float *)(iVar7 + 0x11d4))) &&
+            (aabb_min->z <= local_68.z + *(float *)(iVar7 + 0x11d4))) &&
+           (((local_68.x - *(float *)(iVar7 + 0x11d4) <= aabb_max->x &&
+             (local_68.y - *(float *)(iVar7 + 0x11d4) <= aabb_max->y)) &&
+            (local_68.z - *(float *)(iVar7 + 0x11d4) <= aabb_max->z)))) {
           *(int *)(&DAT_0207fc88 + _DAT_0207fc84 * 4) = iVar7;
           _DAT_0207fc84 = _DAT_0207fc84 + 1;
         }
@@ -214,21 +216,22 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
       local_e0 = aabb_max->x - aabb_min->x;
       local_dc = aabb_max->y - aabb_min->y;
       local_d8 = aabb_max->z - aabb_min->z;
-      local_a0[2] = local_e0;
-      local_a0[(uint)bVar8 * -2 + 3] = *(float *)((int)&stack0xffffff24 + (uint)bVar8 * -8);
-      local_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-           *(float *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-      core_dirmat_cpp_FUN_0045b800(rotation_matrix,local_a0 + 2);
-      local_a4 = local_44;
-      local_a0[(uint)bVar8 * -2] = local_7c[(uint)bVar8 * -2 + 0xf];
+      local_98.x = local_e0;
+      *(uint *)((int)&local_98 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&stack0xffffff24 + (uint)bVar8 * -8);
+      *(uint *)((int)&local_98 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&stack0xffffff28 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(rotation_matrix,&local_98,local_44);
+      local_a4 = local_44[0].x;
+      local_a0[(uint)bVar8 * -2] = *(float *)((int)local_44 + (uint)bVar8 * -8 + 4);
       local_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-           local_7c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
+           *(float *)((int)local_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       local_80 = position->x + local_a4;
       local_7c[0] = position->y + local_a0[0];
       local_7c[1] = position->z + local_a0[1];
-      local_c4[4] = 0.0;
-      local_c4[3] = 0.0;
-      local_c4[2] = 0.0;
+      local_b4 = 0.0;
+      local_b8 = 0.0;
+      local_bc = 0.0;
       local_84 = 0.0;
       local_88 = 0.0;
       local_8c = 0.0;
@@ -256,9 +259,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
               fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01d1a0a4) * *(float *)(iVar4 + 0x11dc)
                       ) * _DAT_005d063f;
               fVar2 = (float)_DAT_005d0647;
-              local_c4[2] = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_c4[2];
-              local_c4[3] = fVar1 * *(float *)(iVar4 + 0x11c8) * fVar2 + local_c4[3];
-              local_c4[4] = fVar1 * *(float *)(iVar4 + 0x11cc) * fVar2 + local_c4[4];
+              local_bc = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_bc;
+              local_b8 = fVar1 * *(float *)(iVar4 + 0x11c8) * fVar2 + local_b8;
+              local_b4 = fVar1 * *(float *)(iVar4 + 0x11cc) * fVar2 + local_b4;
             }
           }
           iVar5 = iVar5 + 4;
@@ -274,9 +277,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet *t
         local_d0 = (int)ROUND(local_88 * _DAT_005e3bc0);
         local_cc = (int)ROUND(local_84 * _DAT_005e3bc0);
       }
-      _DAT_02080004 = (int)ROUND(local_c4[2] * _DAT_005e3bc0) + local_d4;
-      _DAT_02080008 = (int)ROUND(local_c4[3] * _DAT_005e3bc0) + local_d0;
-      local_cc = (int)ROUND(local_c4[4] * _DAT_005e3bc0) + local_cc;
+      _DAT_02080004 = (int)ROUND(local_bc * _DAT_005e3bc0) + local_d4;
+      _DAT_02080008 = (int)ROUND(local_b8 * _DAT_005e3bc0) + local_d0;
+      local_cc = (int)ROUND(local_b4 * _DAT_005e3bc0) + local_cc;
       if (0xffff < _DAT_02080004) {
         _DAT_02080004 = 0xffff;
       }

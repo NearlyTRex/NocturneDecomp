@@ -20,13 +20,13 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00588790(int width,
   if (DAT_00622010 == (void *)0x0) {
     _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d046a4 = 0xea;
-    core_main_c_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
   }
   _DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);
   if (_DAT_02661af0 == (void *)0x0) {
     _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d046a4 = 0xef;
-    core_main_c_FUN_004e4500("WDDVMEM: Fatal - out of Z buffer memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of Z buffer memory");
   }
   DAT_0070c62c = (int)_DAT_02661af0 + 0x10U & 0xfffffff0;
   if (_DAT_02661aec != (int *)0x0) {

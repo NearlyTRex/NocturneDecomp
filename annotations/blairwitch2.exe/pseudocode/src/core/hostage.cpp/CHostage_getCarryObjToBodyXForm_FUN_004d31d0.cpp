@@ -20,7 +20,7 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
   CMatrix3x4f *pCVar2;
   float *pfVar3;
   byte bVar4;
-  uint auStackY_10b4 [892];
+  float afStackY_10b4 [892];
   CMatrix3x4f aCStack_2b8 [3];
   CMatrix3x4f CStack_228;
   CMatrix3x4f CStack_1f8;
@@ -29,37 +29,34 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
   CMatrix3x4f CStack_168;
   CMatrix3x4f CStack_138;
   float afStack_108 [12];
-  uint uStack_d8;
-  uint uStack_d4;
-  uint uStack_d0;
+  CVector3f CStack_d8;
   uint uStack_cc;
-  uint auStack_c8 [6];
-  uint uStack_b0;
-  uint uStack_ac;
-  uint uStack_a8;
-  uint uStack_a4;
-  uint uStack_a0;
-  uint uStack_90;
-  uint uStack_8c;
-  uint uStack_88;
-  uint uStack_84;
-  uint auStack_80 [8];
-  uint uStack_60;
-  uint auStack_5c [20];
+  float afStack_c8 [2];
+  CVector3f CStack_c0;
+  CVector3f CStack_b4;
+  CVector3f aCStack_a8 [2];
+  CVector3f CStack_90;
+  CVector3f CStack_84;
+  uint uStack_78;
+  float afStack_74 [5];
+  CVector3f CStack_60;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
+  CVector3f aCStack_3c [4];
   
   bVar4 = 0;
   if ((this_ptr->hostage_type == 1) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
                         ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                          "CShotgun"), iVar1 != 0)) {
-    auStack_5c[6] = 0xbc449ba6;
-    uStack_a4 = 0x3ecf5c29;
-    auStack_5c[5] = 0x3e89ba5e;
-    auStack_5c[7] = 0x3dbc6a7f;
-    uStack_a8 = 0xbe92f1aa;
-    uStack_a0 = 0x3f9ac083;
+    CStack_48.y = -0.012;
+    aCStack_a8[0].y = 0.405;
+    CStack_48.x = 0.269;
+    CStack_48.z = 0.092;
+    aCStack_a8[0].x = -0.287;
+    aCStack_a8[0].z = 1.209;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_228,auStack_5c + 5,&uStack_a8);
+              (&CStack_228,&CStack_48,aCStack_a8);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&CStack_228,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
@@ -67,28 +64,28 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     pCVar2 = &CStack_138;
   }
   else if (this_ptr->hostage_type == 3) {
-    auStack_5c[9] = 0xbe4d1e54;
-    auStack_5c[10] = 0x3d04bb36;
-    auStack_5c[8] = 0x3e882d5a;
-    if (auStack_c8 + 2 != auStack_5c + 8) {
-      auStack_c8[2] = 0x3e882d5a;
-      auStack_c8[3] = 0xbe4d1e54;
-      auStack_c8[4] = 0x3d04bb36;
+    aCStack_3c[0].y = -0.200311;
+    aCStack_3c[0].z = 0.0324051;
+    aCStack_3c[0].x = 0.265971;
+    if (&CStack_c0 != aCStack_3c) {
+      CStack_c0.x = 0.265971;
+      CStack_c0.y = -0.200311;
+      CStack_c0.z = 0.0324051;
     }
     uStack_cc = 0xbef6147b;
-    auStack_c8[1] = 0x3e0c27a6;
-    auStack_c8[0] = 0x3e0c27a6;
-    uStack_60 = 0xbef6147b;
-    auStack_5c[(uint)bVar4 * -2] = auStack_c8[(uint)bVar4 * -2];
-    auStack_5c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         auStack_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (auStack_c8 + 5 != &uStack_60) {
-      auStack_c8[5] = uStack_60;
-      uStack_b0 = auStack_5c[0];
-      uStack_ac = auStack_5c[1];
+    afStack_c8[1] = 0.13687;
+    afStack_c8[0] = 0.13687;
+    CStack_60.x = -0.480625;
+    *(float *)((int)&CStack_60 + (uint)bVar4 * -8 + 4) = afStack_c8[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_60 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         afStack_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    if (&CStack_b4 != &CStack_60) {
+      CStack_b4.x = CStack_60.x;
+      CStack_b4.y = CStack_60.y;
+      CStack_b4.z = CStack_60.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (aCStack_2b8,auStack_c8 + 2,auStack_c8 + 5);
+              (aCStack_2b8,&CStack_c0,&CStack_b4);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (aCStack_2b8,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
@@ -96,28 +93,28 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     pCVar2 = &CStack_198;
   }
   else if (this_ptr->hostage_type == 5) {
-    uStack_d8 = 0x3e882d5a;
-    uStack_d4 = 0xbe4d1e54;
-    uStack_d0 = 0x3d04bb36;
-    if (auStack_5c + 2 != &uStack_d8) {
-      auStack_5c[4] = 0x3d04bb36;
-      auStack_5c[3] = 0xbe4d1e54;
-      auStack_5c[2] = 0x3e882d5a;
+    CStack_d8.x = 0.265971;
+    CStack_d8.y = -0.200311;
+    CStack_d8.z = 0.0324051;
+    if (&CStack_54 != &CStack_d8) {
+      CStack_54.z = 0.0324051;
+      CStack_54.y = -0.200311;
+      CStack_54.x = 0.265971;
     }
-    auStack_80[2] = 0xbef6147b;
-    auStack_80[4] = 0x3e0c27a6;
-    auStack_80[3] = 0x3e0c27a6;
-    uStack_84 = 0xbef6147b;
-    auStack_80[(uint)bVar4 * -2] = auStack_80[(uint)bVar4 * -2 + 3];
-    auStack_80[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         auStack_80[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    if (&uStack_90 != &uStack_84) {
-      uStack_90 = uStack_84;
-      uStack_8c = auStack_80[0];
-      uStack_88 = auStack_80[1];
+    uStack_78 = 0xbef6147b;
+    afStack_74[1] = 0.13687;
+    afStack_74[0] = 0.13687;
+    CStack_84.x = -0.480625;
+    *(float *)((int)&CStack_84 + (uint)bVar4 * -8 + 4) = afStack_74[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_84 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         afStack_74[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    if (&CStack_90 != &CStack_84) {
+      CStack_90.x = CStack_84.x;
+      CStack_90.y = CStack_84.y;
+      CStack_90.z = CStack_84.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&CStack_168,auStack_5c + 2,&uStack_90);
+              (&CStack_168,&CStack_54,&CStack_90);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&CStack_168,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +

@@ -48,7 +48,7 @@ section .text
     FLD double ptr [ESP]                ; 00496c4c
         ;   Label: LAB_00496c4c
     CALL crt_math.c_acos_FUN_005a4b74   ; 00496c4f
-        ;   XREF to: 005a4b74 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005a4b74()
+        ;   XREF to: 005a4b74 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005a4b74(double x)
     FSTP float ptr [ESP + 0x8]          ; 00496c54
     MOV EAX,dword ptr [ESP + 0x8]       ; 00496c58
     MOV ESP,EBP                         ; 00496c5c

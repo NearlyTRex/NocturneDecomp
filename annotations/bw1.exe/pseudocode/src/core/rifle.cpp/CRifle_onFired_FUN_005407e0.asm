@@ -14,10 +14,10 @@
 ;   undefined4 DAT_01d06ab4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_loadModel_FUN_00468780
 ;   core_fire.cpp_CFireEffect_createShell_FUN_004b7270
 ;   core_sound.cpp_CSound_playActorSound_FUN_0057d8a0
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 00540881
     LEA ESI,[ESP + 0x50]                ; 00540882
     LEA EDI,[ESP + 0x5c]                ; 00540886
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0054088a
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0054088a
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0054088f
     LEA EAX,[ESP + 0x54]                ; 00540892
     LEA ESI,[ESP + 0x48]                ; 00540896
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 0054089e
     LEA ESI,[ESP + 0x38]                ; 0054089f
     LEA EDI,[ESP + 0x74]                ; 005408a3
-    CALL core_actor.cpp_FUN_00408ac0    ; 005408a7
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 005408a7
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 005408ac
     ADD ESP,0x8                         ; 005408b0
     MOVSD ES:EDI,ESI                    ; 005408b3

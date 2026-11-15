@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30b6
 ;
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5bba88                       ; 00462094 | = "CKeyFramedModel::buildCollisionTriLis..."
     MOV dword ptr [0x01d71de0],EBP      ; 00462099 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0046209f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004620a4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004620a4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004620a9
     PUSH 0x2cfd900                      ; 004620ac | DAT_02cfd900
         ;   Label: LAB_004620ac

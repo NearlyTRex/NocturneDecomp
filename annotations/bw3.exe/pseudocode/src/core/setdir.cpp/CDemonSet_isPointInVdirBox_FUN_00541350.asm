@@ -22,7 +22,7 @@
 ;   core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410 at 00541459
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b870
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 005413ac
     LEA ESI,[ESP + 0x8]                 ; 005413ad
     LEA EDI,[ESP + 0x20]                ; 005413b1
-    CALL core_dirmat.cpp_FUN_0045b870   ; 005413b5
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 005413b5
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x8]                 ; 005413ba
     ADD ESP,0x8                         ; 005413be
     MOVSD ES:EDI,ESI                    ; 005413c1

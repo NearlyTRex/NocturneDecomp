@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_00491540
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;   crt_string.c_strupr_FUN_005ba840
 ;
@@ -83,8 +83,8 @@ section .text
     PUSH 0x5d4cfb                       ; 00490fdb | = "Event name %s too long!"
     MOV dword ptr [0x01d046a0],EDX      ; 00490fe0 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00490fe6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00490fec
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00490fec
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00490ff1
     MOV EDI,dword ptr [EBX + 0x258c]    ; 00490ff4
         ;   Label: LAB_00490ff4
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5d4ccd                       ; 0049104f | = "Too many persistent events!"
     MOV dword ptr [0x01d046a0],EBP      ; 00491054 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0049105a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0049105f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0049105f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00491064
     JMP 0x00490fbe                      ; 00491067
         ;   XREF to: 00490fbe (UNCONDITIONAL_JUMP)  ; LAB_00490fbe

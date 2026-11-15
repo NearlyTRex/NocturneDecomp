@@ -26,15 +26,15 @@ void * cockpit_ckptutil_c_FUN_0042f330(char *param_1,void *param_2,uint param_3,
       _sprintf(acStack_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).");
       _DAT_01d046a4 = 0x7e5;
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-      core_main_c_FUN_004e4500(acStack_6c);
+      core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
     }
   }
-  file = engine_dosio_cpp_FUN_00460c70((char *)0x5cd754,param_1,(char *)0x5cd751);
+  file = engine_dosio_cpp_getFile_FUN_00460c70((char *)0x5cd754,param_1,(char *)0x5cd751);
   if (file == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Unable to open bitmap file (%s).");
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d046a4 = 0x7ee;
-    core_main_c_FUN_004e4500(acStack_6c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
   }
   uStack_18 = 0;
   if (param_4 != 0) {
@@ -49,7 +49,7 @@ void * cockpit_ckptutil_c_FUN_0042f330(char *param_1,void *param_2,uint param_3,
             _fclose(file);
             _DAT_01d046a4 = 0x7fb;
             _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-            core_main_c_FUN_004e4500(acStack_6c);
+            core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_6c);
           }
           uVar1 = uVar1 + 1;
           *puVar2 = (byte)iStack_14;

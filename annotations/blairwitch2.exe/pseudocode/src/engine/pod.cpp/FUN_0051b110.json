@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 219,
+    "complexity_score": 209,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_truncation",
       "unnamed_param",
@@ -33,7 +33,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8be2",
@@ -247,14 +247,6 @@
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"Can't mount %s\",param_2);",
       "type": "unnamed_param"
     },
     {

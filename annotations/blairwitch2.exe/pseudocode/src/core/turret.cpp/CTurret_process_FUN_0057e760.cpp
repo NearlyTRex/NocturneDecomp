@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_process_FUN_0057e760
 // Address: 0057e760
-// Address Range: [[0057e760, 0057e791] [0057e80a, 0057e8b5] [0057eba4, 0057ec60]]
+// Address Range: [[0057e760, 0057ec60]]
 // Convention: __cdecl
 // Signature: void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,float delta_time)
 
@@ -81,7 +81,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,floa
       this_ptr->timer = this_ptr->patrol_time;
     }
     else {
-      core_turret_cpp_FUN_0057f0b0(this_ptr);
+      core_turret_cpp_CTurret_updateTargeting_FUN_0057f0b0(this_ptr,delta_time);
       this_ptr->timer = 0.0;
     }
     break;
@@ -165,7 +165,7 @@ LAB_0057e7f7:
   default:
     _DAT_01d046a0 = "..\\core\\turret.cpp";
     _DAT_01d046a4 = 0x15a;
-    core_main_c_FUN_004e4500();
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {
     (*(((this_ptr->base).base.vtable._uc)->_uc).releaseFromGrab)((CCharacter *)this_ptr);

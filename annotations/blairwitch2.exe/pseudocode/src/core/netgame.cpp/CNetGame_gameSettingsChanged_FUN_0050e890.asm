@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d34e44
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5e0dbf                       ; 0050e942 | = "CNetGame::gameSettingsChanged - shoul..."
     MOV dword ptr [0x01d046a0],ECX      ; 0050e947 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0050e94d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050e953
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050e953
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050e958
     JMP 0x0050e8ad                      ; 0050e95b
         ;   XREF to: 0050e8ad (UNCONDITIONAL_JUMP)  ; LAB_0050e8ad

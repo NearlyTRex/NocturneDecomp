@@ -45,11 +45,11 @@
 ;   undefined4 DAT_005df1c8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;   crt_math.c_atan2_FUN_005c1d69
@@ -125,14 +125,14 @@ section .text
     FSQRT                               ; 004ac4c5
     FLD float ptr [EBP + 0x4]           ; 004ac4c7
     CALL crt_math.c_atan2_FUN_005c1d69  ; 004ac4ca
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     MOV dword ptr [EBX + 0x1c],0x0      ; 004ac4cf
     FCHS                                ; 004ac4d6
     FSTP float ptr [EBX + 0x14]         ; 004ac4d8
     FLD float ptr [EBP + 0x8]           ; 004ac4db
     FLD float ptr [EBP]                 ; 004ac4de
     CALL crt_math.c_atan2_FUN_005c1d69  ; 004ac4e1
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     PUSH 0x3                            ; 004ac4e6
     PUSH 0x0                            ; 004ac4e8
     FSTP float ptr [EBX + 0x18]         ; 004ac4ea
@@ -197,8 +197,8 @@ section .text
     PUSH EAX                            ; 004ac586
     LEA ESI,[ESP + 0xdc]                ; 004ac587
     LEA EDI,[ESP + 0xf4]                ; 004ac58e
-    CALL core_xform.cpp_FUN_005b6270    ; 004ac595
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 004ac595
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0xdc]                ; 004ac59a
     LEA EAX,[ESP + 0xf4]                ; 004ac5a1
     ADD ESP,0x4                         ; 004ac5a8
@@ -221,7 +221,7 @@ section .text
     LEA ESI,[ESP + 0x124]               ; 004ac5da
     LEA EDI,[ESP + 0xd0]                ; 004ac5e1
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 004ac5e8
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x124]               ; 004ac5ed
     LEA EAX,[ESP + 0xd0]                ; 004ac5f4
     ADD ESP,0x4                         ; 004ac5fb
@@ -245,8 +245,8 @@ section .text
     PUSH ECX                            ; 004ac630
     LEA EDI,[ESP + 0x134]               ; 004ac631
     ADD EBX,0x30                        ; 004ac638
-    CALL core_actor.cpp_FUN_00408b00    ; 004ac63b
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004ac63b
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0xc8]                ; 004ac640
     ADD ESP,0x8                         ; 004ac647
     LEA EAX,[ESP + 0x12c]               ; 004ac64a

@@ -18,7 +18,7 @@
 ;   undefined4 DAT_02c78cec
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH 0x5f3da8                       ; 00572958 | = "setNextSfxUserData - invalid user dat..."
     MOV dword ptr [0x01d1d400],EDX      ; 0057295d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00572963 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00572969
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572969
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057296e
     JMP 0x0057292e                      ; 00572971
         ;   XREF to: 0057292e (UNCONDITIONAL_JUMP)  ; LAB_0057292e

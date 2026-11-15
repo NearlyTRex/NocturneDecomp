@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_loadCameraFog_FUN_00450c00
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_setutil.cpp_C3DSCamera_reset_FUN_00541b00
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fscanf_FUN_005a3230
@@ -338,8 +338,8 @@ section .text
     PUSH 0x5d0d98                       ; 00541ece | = "Panning cameras not supported, bucko!"
     MOV [0x01d71de0],EAX                ; 00541ed3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00541ed8 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00541ede
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00541ede
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00541ee3
     ADD ESP,0x100                       ; 00541ee6
     POP EBP                             ; 00541eec

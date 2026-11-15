@@ -55,7 +55,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_005af200(CCloth *this_p
   if (local_18 < 0) {
     _DAT_01d046a0 = "..\\core\\cloth.cpp";
     _DAT_01d046a4 = 0x2bf;
-    core_main_c_FUN_004e4500("Can't orient bone with no children!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
             (model_ptr->bone_origins + local_18);

@@ -4,7 +4,8 @@
 ; void crt_unknown_c_FUN_005a7360(undefined4 param_1,int param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   crt_unknown.c_FUN_005a73c8 at 005a75c8
 ;   crt_unknown.c_FUN_005acf30 at 005ad09e
 ;
 ; Called Functions:

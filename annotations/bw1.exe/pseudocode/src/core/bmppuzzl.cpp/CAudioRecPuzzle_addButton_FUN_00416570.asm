@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5d3f27                       ; 004165f9 | = "Too damn many buttons"
     MOV [0x01d1d400],EAX                ; 004165fe | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00416603 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00416609
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00416609
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041660e
     POP EDI                             ; 00416611
     POP ESI                             ; 00416612

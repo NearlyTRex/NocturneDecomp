@@ -22,7 +22,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   CVector3f *translation;
   byte bVar8;
   CDemonActor *in_stack_0000000c;
-  float afStackY_1040 [990];
+  uint auStackY_1040 [990];
   CVector3f *pCVar9;
   float fov;
   float falloff;
@@ -30,14 +30,11 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   CBoundingBox3D aCStack_98 [2];
   uint auStack_68 [4];
   CVector3f CStack_58;
-  float fStack_4c;
-  float afStack_48 [5];
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
   CVector3f CStack_34;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  float fStack_1c;
-  uint auStack_18 [2];
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   
   bVar8 = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
@@ -96,27 +93,31 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   if ((in_stack_0000000c[0xc].orient_matrix.m[1].y != 0.0) &&
      (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar2 == 0)
      ) {
-    afStack_48[4] = 6.0;
-    uStack_20 = 0x40c00000;
-    afStack_48[2] = 1.14;
-    afStack_48[3] = -0.164;
-    uStack_28 = 0xbf91eb85;
-    uStack_24 = 0xbe27ef9e;
-    core_actor_cpp_FUN_00408b40();
+    CStack_40.z = 6.0;
+    CStack_28.z = 6.0;
+    CStack_40.x = 1.14;
+    CStack_40.y = -0.164;
+    CStack_28.x = -1.14;
+    CStack_28.y = -0.164;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (in_stack_0000000c,&CStack_40,&CStack_1c);
     falloff = 10.0;
     fov = 56.0;
     pCVar9 = (CVector3f *)&in_stack_0000000c->orient;
     pCVar3 = &CStack_34;
-    CStack_34.x = fStack_1c;
-    *(uint *)((int)&CStack_34 + (uint)bVar8 * -8 + 4) = auStack_18[(uint)bVar8 * -2];
+    CStack_34.x = CStack_1c.x;
+    *(uint *)((int)&CStack_34 + (uint)bVar8 * -8 + 4) =
+         *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + 4);
     *(uint *)((int)&CStack_34 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-         auStack_18[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+         *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     core_dlight_cpp_renderConeLightGeometry_FUN_00465890(pCVar3,pCVar9,fov,falloff);
-    core_actor_cpp_FUN_00408b40();
-    CStack_58.x = fStack_4c;
-    *(float *)((int)&CStack_58 + (uint)bVar8 * -8 + 4) = afStack_48[(uint)bVar8 * -2];
-    *(float *)((int)&CStack_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-         afStack_48[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (in_stack_0000000c,&CStack_28,&CStack_4c);
+    CStack_58.x = CStack_4c.x;
+    *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + 4) =
+         *(uint *)((int)&CStack_4c + (uint)bVar8 * -8 + 4);
+    *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+         *(uint *)((int)&CStack_4c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     if (&CStack_34 != &CStack_58) {
       CStack_34.x = CStack_58.x;
       CStack_34.y = CStack_58.y;

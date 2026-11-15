@@ -23,7 +23,7 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_0050ce70(CNetGame *this_ptr,
   if (1 < this_ptr->player_count) {
     _DAT_01d046a0 = "..\\core\\netgame.cpp";
     _DAT_01d046a4 = 0x5ff;
-    core_main_c_FUN_004e4500("CNetGame::addPlayer - too many players!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::addPlayer - too many players!");
   }
   iVar2 = this_ptr->player_count;
   this_ptr->player_count = iVar2 + 1;

@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5cb145                       ; 00507ee3 | = "CNetGame::applySimFrameHistory - I'm ..."
     MOV dword ptr [0x01d71de0],ECX      ; 00507ee8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00507eee | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00507ef4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507ef4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00507ef9
     JMP 0x00507e65                      ; 00507efc
         ;   XREF to: 00507e65 (UNCONDITIONAL_JUMP)  ; LAB_00507e65

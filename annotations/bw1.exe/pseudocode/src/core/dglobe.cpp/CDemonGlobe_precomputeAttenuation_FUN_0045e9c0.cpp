@@ -11,27 +11,28 @@
 void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(CDemonGlobe *this_ptr,float radius)
 
 {
-  int extraout_EDX;
-  int extraout_EDX_00;
-  float10 fVar1;
-  float10 fVar2;
+  float fVar1;
+  float fVar2;
+  double dVar3;
+  double dVar4;
+  float unaff_retaddr;
   
-  fVar1 = (float10)radius * (float10)_DAT_005d88fb;
-  fVar2 = (float10)radius * (float10)radius * (float10)_DAT_005d8903;
+  fVar2 = radius * _DAT_005d88fb;
+  fVar1 = (float)_DAT_005d8903;
   this_ptr->radius = radius;
-  round();
-  round();
-  *(int *)(extraout_EDX + 0x10) = (int)ROUND(fVar2);
-  *(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar1);
-  if (*(int *)(extraout_EDX + 0x10) < 0x10000) {
-    *(uint *)(extraout_EDX + 0x10) = 0x10000;
+  dVar3 = round((double)fVar2);
+  dVar4 = round((double)(radius * radius * fVar1));
+  this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);
+  this_ptr->linear_radius_scaled = (int)ROUND(dVar3);
+  if (this_ptr->quadratic_radius_scaled < 0x10000) {
+    this_ptr->quadratic_radius_scaled = 0x10000;
   }
-  *(float *)(extraout_EDX + 0x18) = radius * radius;
-  fVar1 = ((float10)*(byte *)(extraout_EDX + 0x1c) * (float10)_DAT_005d8903) /
-          (float10)(*(int *)(extraout_EDX + 0x10) >> 0x10);
-  *(float *)(extraout_EDX + 0x34) = 1.0 / radius;
-  *(float *)(extraout_EDX + 0x38) = 1.0 / (radius * radius);
-  round();
-  *(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(fVar1);
+  this_ptr->radius_squared = unaff_retaddr * unaff_retaddr;
+  dVar3 = (double)(this_ptr->intensity).bytes[0] * _DAT_005d8903;
+  this_ptr->inverse_radius = 1.0 / unaff_retaddr;
+  this_ptr->inverse_radius_squared = 1.0 / (unaff_retaddr * unaff_retaddr);
+  dVar3 = round(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
+  ;
+  this_ptr->falloff_value = (int)ROUND(dVar3);
   return;
 }

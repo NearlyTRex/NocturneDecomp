@@ -23,7 +23,7 @@
 ;   undefined4 DAT_02c74708
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   sound_sndmain.cpp_unlockSound_FUN_00573e70
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5f4042                       ; 00573c6e | = "enableSfxChannel - invalid channel in..."
     MOV dword ptr [0x01d1d400],EDX      ; 00573c73 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00573c79 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00573c7f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00573c7f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00573c84
     MOV dword ptr [ESI*0x4 + 0x2c7fd10],EBX ; 00573c87
         ;   Label: LAB_00573c87

@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01c2a38c
 ;
 ; Called Functions:
-;   engine_alphabit.cpp_FUN_0040dca0
+;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0
 ;   engine_special.cpp_renderAlphaRow16_FUN_0055d5be
 ;   engine_special.cpp_renderAlphaRow32_FUN_0055d523
 ;
@@ -54,8 +54,8 @@ section .text
     INC EAX                             ; 0040daca
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0040dacb
     MOV dword ptr [ESP + 0x14],EAX      ; 0040dacf
-    CALL engine_alphabit.cpp_FUN_0040dca0 ; 0040dad3
-        ;   XREF to: 0040dca0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dca0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0 ; 0040dad3
+        ;   XREF to: 0040dca0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0(CAlphaBitmap * this_ptr)
     MOV EDX,dword ptr [EBP + 0xc]       ; 0040dad8
     SUB EBX,ESI                         ; 0040dadb
     IMUL ESI,EDX                        ; 0040dadd

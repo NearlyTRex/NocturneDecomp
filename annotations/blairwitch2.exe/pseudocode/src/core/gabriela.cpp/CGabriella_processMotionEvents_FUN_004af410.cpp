@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabriella *this_ptr,float delta_time)
@@ -17,36 +16,34 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
   int bone_index;
   EGroundType ground_type;
   CDemonActor *pCVar2;
-  CGabriella *unaff_EBP;
+  CMotionController *unaff_EBP;
   byte bVar3;
-  float10 fVar4;
-  float afStackY_109c [998];
+  double dVar4;
+  float afStackY_109c [997];
   CGabriella *this_ptr_01;
-  CVector3f *position;
-  float *pfVar5;
+  CVector3f *pCVar5;
   SDamageInfo *this_ptr_02;
-  CGabriella *in_stack_ffffff08;
+  char *in_stack_ffffff08;
   float fStack_e4;
   float local_d4;
   float local_d0;
   float local_cc;
   CGabriella *local_bc;
   CGabriella *local_b8;
-  float local_b4;
-  float fStack_b0;
-  CVector3f CStack_ac;
-  float afStack_a0 [4];
+  byte local_b4 [8];
+  float fStack_ac;
+  CVector3f local_a8;
+  CVector3f local_9c;
   CVector3f local_90;
-  float fStack_80;
-  float afStack_7c [4];
-  float local_6c;
-  float local_68;
+  byte auStack_80 [12];
+  float afStack_74 [4];
   float local_64;
-  CVector3f CStack_5c;
+  byte auStack_5c [12];
   float afStack_50 [2];
-  CVector3f local_48;
+  byte local_48 [8];
+  float fStack_40;
   CVector3f local_3c;
-  uint local_30;
+  float local_30;
   float afStack_2c [2];
   CCharacter *local_24;
   CCharacter *local_20;
@@ -67,31 +64,37 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                 (local_1c,bone_index,&local_90);
-      local_48.x = local_90.x;
-      *(uint *)((int)&local_48 + (uint)bVar3 * -8 + 4) =
+      local_48._0_4_ = local_90.x;
+      *(uint *)(local_48 + (uint)bVar3 * -8 + 4) =
            *(uint *)((int)&local_90 + (uint)bVar3 * -8 + 4);
-      *(uint *)((int)&local_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-           *(uint *)((int)&local_90 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      (&fStack_40)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+           *(float *)((int)&local_90 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       this_ptr_00 = (this_ptr->base).ladder_to_climb;
       if (this_ptr_00 == (CLadder *)0x0) {
         if ((this_ptr->base).base.is_on_ground != 0) {
-          local_18._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_005038a0(local_1c,2);
+          local_18 = (UActorVTable)
+                     core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
+                               (&local_1c->base,2);
           if ((float)_DAT_005d702b < (float)local_18) {
             (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                      ((CDemonActor *)this_ptr,&local_48,1.7);
+                      ((CDemonActor *)this_ptr,(CVector3f *)local_48,1.7);
           }
           else {
-            local_18._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_005038a0(local_1c,1);
+            local_18 = (UActorVTable)
+                       core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
+                                 (&local_1c->base,1);
             if ((float)local_18 <= (float)_DAT_005d702b) {
-              local_18._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_005038a0(local_1c,3);
+              local_18 = (UActorVTable)
+                         core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
+                                   (&local_1c->base,3);
               if ((float)_DAT_005d702b < (float)local_18) {
                 (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                          ((CDemonActor *)this_ptr,&local_48,1.0);
+                          ((CDemonActor *)this_ptr,(CVector3f *)local_48,1.0);
               }
             }
             else {
               (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                        ((CDemonActor *)this_ptr,&local_48,1.0);
+                        ((CDemonActor *)this_ptr,(CVector3f *)local_48,1.0);
             }
           }
         }
@@ -99,16 +102,18 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       else {
         local_18 = (this_ptr->base).base.base.vtable;
         ground_type = (*((this_ptr_00->base).vtable._ub)->getGroundType)(&this_ptr_00->base);
-        core_actor_cpp_FUN_00408d70(this_ptr,&local_48.y);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                  ((CDemonActor *)this_ptr,(CVector3f *)(local_48 + 4),(CVector3f *)auStack_80);
         iVar1 = iStack_14;
-        position = &CStack_5c;
-        CStack_5c.x = fStack_80;
-        afStack_50[(uint)bVar3 * -2 + -2] = afStack_7c[(uint)bVar3 * -2];
+        pCVar5 = (CVector3f *)auStack_5c;
+        auStack_5c._0_4_ = auStack_80._0_4_;
+        *(uint *)(auStack_5c + (uint)bVar3 * -8 + 4) =
+             *(uint *)(auStack_80 + (uint)bVar3 * -8 + 4);
         this_ptr_01 = this_ptr;
         afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -1] =
-             afStack_7c[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 1];
+             afStack_74[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -1];
         (**(code **)(iVar1 + 0x30))
-                  ((CDemonActor *)this_ptr_01,position,ground_type,(float)in_stack_ffffff08);
+                  ((CDemonActor *)this_ptr_01,pCVar5,ground_type,(float)in_stack_ffffff08);
       }
       break;
     case 2:
@@ -128,9 +133,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
-      in_stack_ffffff08 = unaff_EBP;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)unaff_EBP,0,1);
+      in_stack_ffffff08 = (char *)unaff_EBP;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(unaff_EBP,0,1);
       break;
     default:
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar1);
@@ -143,42 +147,42 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       if (local_24 != (CCharacter *)0x0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                   (local_1c,_DAT_01cb06a8,&local_3c);
-        pfVar5 = afStack_7c + 1;
-        afStack_7c[1] = local_3c.x;
-        afStack_7c[(uint)bVar3 * 0xfffffffe + 2] =
-             (float)*(uint *)((int)&local_3c + (uint)bVar3 * -8 + 4);
-        afStack_7c[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 3] =
-             (float)*(uint *)((int)&local_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-        core_actor_cpp_FUN_00408d70(this_ptr,pfVar5);
+        pCVar5 = (CVector3f *)(auStack_80 + 8);
+        auStack_80._8_4_ = local_3c.x;
+        afStack_74[(uint)bVar3 * -2] = *(float *)((int)&local_3c + (uint)bVar3 * -8 + 4);
+        afStack_74[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+             *(float *)((int)&local_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                  ((CDemonActor *)this_ptr,pCVar5,(CVector3f *)(auStack_5c + 8));
         this_ptr_02 = (SDamageInfo *)&stack0xffffff10;
-        local_b4 = CStack_5c.z;
-        (&fStack_b0)[(uint)bVar3 * -2] = afStack_50[(uint)bVar3 * -2];
-        *(float *)((int)&CStack_ac + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+        local_b4._0_4_ = auStack_5c._8_4_;
+        *(float *)(local_b4 + (uint)bVar3 * -8 + 4) = afStack_50[(uint)bVar3 * -2];
+        (&fStack_ac)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
              afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
         core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(this_ptr_02);
         local_18 = (UActorVTable)core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,15.0);
-        core_actor_cpp_FUN_00408de0(local_20,&local_b4);
-        local_6c = CStack_ac.y;
-        afStack_7c[(uint)bVar3 * 0xfffffffe + 5] = afStack_a0[(uint)bVar3 * -2 + -1];
-        afStack_7c[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 6] =
-             afStack_a0[(uint)bVar3 * -2 + (uint)bVar3 * -2];
-        if (&stack0xffffff2c != afStack_7c + 4) {
-          local_d4 = local_6c;
-          local_d0 = local_68;
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  (&local_20->base,(CVector3f *)local_b4,&local_a8);
+        afStack_74[2] = local_a8.x;
+        afStack_74[(uint)bVar3 * -2 + 3] = *(float *)((int)&local_a8 + (uint)bVar3 * -8 + 4);
+        afStack_74[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+             *(float *)((int)&local_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+        if (&stack0xffffff2c != afStack_74 + 2) {
+          local_d4 = afStack_74[2];
+          local_d0 = afStack_74[3];
           local_cc = local_64;
         }
         local_bc = this_ptr;
         local_b8 = this_ptr;
         (*(((local_24->base).vtable._uc)->_uc).processDamage)
                   (local_24,(SDamageInfo *)&stack0xffffff10);
-        if (0.0 < fStack_e4) {
-          fVar4 = (float10)fStack_e4 * (float10)_DAT_005d7023;
-          round();
-          unaff_EBP = (CGabriella *)(int)ROUND(fVar4);
+        if (0.0 < (double)fStack_e4) {
+          dVar4 = round((double)fStack_e4 * _DAT_005d7023);
+          iStack_14 = (int)ROUND(dVar4);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
-                    (g_CGorePtr,&CStack_ac,(CVector3f *)0x0,
-                     (int)((unaff_EBP->base).base.base.actor_name + 1),BLOOD_TYPE_RED);
-          in_stack_ffffff08 = this_ptr;
+                    (g_CGorePtr,(CVector3f *)(local_b4 + 4),(CVector3f *)0x0,iStack_14 + 1,
+                     BLOOD_TYPE_RED);
+          in_stack_ffffff08 = "kick1.wav";
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");
           (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -190,11 +194,12 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
     case 0xf:
       pCVar2 = (this_ptr->base).base.grabbed_by;
       if (pCVar2 != (CDemonActor *)0x0) {
-        core_actor_cpp_FUN_00408de0(this_ptr,&pCVar2->location);
-        local_30 = afStack_a0[1];
-        afStack_2c[(uint)bVar3 * -2] = afStack_a0[(uint)bVar3 * -2 + 2];
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  ((CDemonActor *)this_ptr,&(pCVar2->location).position,&local_9c);
+        local_30 = local_9c.x;
+        afStack_2c[(uint)bVar3 * -2] = *(float *)((int)&local_9c + (uint)bVar3 * -8 + 4);
         afStack_2c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-             afStack_a0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 3];
+             *(float *)((int)&local_9c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         if (0.0 < afStack_2c[1]) {
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"hit-gh[4,7].wav");

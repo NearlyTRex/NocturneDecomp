@@ -33,17 +33,17 @@ void __cdecl CDemonRaytrace::allocNewCubeList(CDemonRaytrace *this_ptr);
 // Address: 00473630
 void __cdecl CDemonRaytrace::freeNewCubeList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_FUN_00473670
+// Original: core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670
 // Address: 00473670
-void FUN_00473670(void);
+void __cdecl CDemonRaytrace::consolidateTriList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_FUN_004737f0
+// Original: core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_004737f0
 // Address: 004737f0
-void FUN_004737f0(int param_1);
+void __cdecl CDemonRaytrace::allocTriList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_FUN_00473860
+// Original: core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00473860
 // Address: 00473860
-void FUN_00473860(int param_1);
+void __cdecl CDemonRaytrace::freeTriList(CDemonRaytrace *this_ptr);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
 // Address: 00473940
@@ -57,13 +57,13 @@ int __cdecl CDemonRaytrace::loadAndSyncWithGeoFile(CDemonRaytrace *this_ptr,char
 // Address: 00473b60
 CDemonCube * __cdecl CDemonRaytrace::getCubeAt(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 
-// Original: core_dtrace.cpp_FUN_00473bc0
+// Original: core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00473bc0
 // Address: 00473bc0
-void FUN_00473bc0(undefined4 param_1,float *param_2,float *param_3);
+CVector3f * __stack3_esi CDemonRaytrace::rayIntersection(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *output_point);
 
 // Original: core_dtrace.cpp_FUN_00473cd0
 // Address: 00473cd0
-float FUN_00473cd0(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
+float FUN_00473cd0(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,float *param_4,float *param_5);
 
 // Original: core_dtrace.cpp_FUN_00474400
 // Address: 00474400
@@ -137,13 +137,13 @@ int __cdecl CDemonRaytrace::testVoxelAtCoords(CDemonRaytrace *this_ptr,CVector3i
 // Address: 00477ca0
 int __cdecl CDemonRaytrace::getVoxelHeightAtVoxelCoords(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 
-// Original: core_dtrace.cpp_FUN_00477d90
+// Original: core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90
 // Address: 00477d90
-void FUN_00477d90(int param_1);
+CVector3f * __stack_esi CDemonRaytrace::getBBoxMin(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 
-// Original: core_dtrace.cpp_FUN_00477db0
+// Original: core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0
 // Address: 00477db0
-void FUN_00477db0(int param_1);
+CVector3f * __stack_esi CDemonRaytrace::getBBoxMax(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 
 // Original: core_dtrace.cpp_FUN_00477dd0
 // Address: 00477dd0

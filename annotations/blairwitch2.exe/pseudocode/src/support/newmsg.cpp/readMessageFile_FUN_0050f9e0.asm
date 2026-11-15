@@ -37,14 +37,14 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_string.c__strcmp_FUN_005b8c30
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_0050fa19
     PUSH EBP                            ; 0050fa1e
     PUSH 0x5e12a1                       ; 0050fa1f | DAT_005e12a1
-    CALL engine_dosio.cpp_FUN_00460c70  ; 0050fa24
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 0050fa24
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 0050fa29
     ADD ESP,0xc                         ; 0050fa2b
     MOV EBX,EAX                         ; 0050fa2e
@@ -153,7 +153,7 @@ section .text
         ;   XREF to: 0050fc08 (CONDITIONAL_JUMP)  ; LAB_0050fc08
     PUSH EBX                            ; 0050faf6
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0050faf7
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     MOV EDI,dword ptr [0x01d63258]      ; 0050fafc | DAT_01d63258
     ADD ESP,0x4                         ; 0050fb02
     TEST EDI,EDI                        ; 0050fb05
@@ -228,8 +228,8 @@ section .text
     PUSH 0x5e12c0                       ; 0050fbea | = "Unknown message file version"
     MOV dword ptr [0x01d046a0],ESI      ; 0050fbef | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0050fbf5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050fbfb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fbfb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050fc00
     JMP 0x0050faa9                      ; 0050fc03
         ;   XREF to: 0050faa9 (UNCONDITIONAL_JUMP)  ; LAB_0050faa9
@@ -252,8 +252,8 @@ section .text
     PUSH 0x5e1310                       ; 0050fc31 | = "Error reading %s"
     MOV dword ptr [0x01d046a0],ECX      ; 0050fc36 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0050fc3c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050fc42
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fc42
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fc47
     CMP dword ptr [0x01d63258],0x1f4    ; 0050fc4a | DAT_01d63258
         ;   Label: LAB_0050fc4a
@@ -265,8 +265,8 @@ section .text
     PUSH 0x5e1337                       ; 0050fc61 | = "Too many messages in %s"
     MOV [0x01d046a0],EAX                ; 0050fc66 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050fc6b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050fc71
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fc71
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fc76
     LEA EDI,[ESP + 0x200]               ; 0050fc79
         ;   Label: LAB_0050fc79
@@ -295,8 +295,8 @@ section .text
     PUSH 0x5e1365                       ; 0050fcba | = "Out of memory mallocing message tag : %s"
     MOV dword ptr [0x01d046a0],ESI      ; 0050fcbf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0050fcc5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050fccb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fccb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fcd0
     MOV EDI,ESP                         ; 0050fcd3
         ;   Label: LAB_0050fcd3
@@ -366,8 +366,8 @@ section .text
     PUSH 0x5e13a4                       ; 0050fd69 | = "Out of memory mallocing message tag : %s"
     MOV dword ptr [0x01d046a0],EDX      ; 0050fd6e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050fd74 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050fd7a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fd7a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fd7f
     JMP 0x0050fcfa                      ; 0050fd82
         ;   XREF to: 0050fcfa (UNCONDITIONAL_JUMP)  ; LAB_0050fcfa

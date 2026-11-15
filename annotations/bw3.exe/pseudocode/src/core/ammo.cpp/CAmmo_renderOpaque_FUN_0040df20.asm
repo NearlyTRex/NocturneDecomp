@@ -59,7 +59,7 @@ section .text
     FLD float ptr [EBX + 0x31c]         ; 0040df7a
         ;   Label: LAB_0040df7a
     CALL crt_math.c_round_FUN_005a3120  ; 0040df80
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0040df85
     MOV EAX,dword ptr [ESP + 0x30]      ; 0040df89
     MOV dword ptr [ESP + 0x30],EAX      ; 0040df8d

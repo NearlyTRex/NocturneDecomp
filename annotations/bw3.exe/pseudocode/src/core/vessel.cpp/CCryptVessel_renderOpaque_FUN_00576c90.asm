@@ -115,7 +115,7 @@ section .text
     FMUL ST1                            ; 00576d7b
     FSUBP                               ; 00576d7d
     CALL crt_math.c_round_FUN_005a3120  ; 00576d7f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x38]        ; 00576d84
     MOV EAX,dword ptr [ESP + 0x38]      ; 00576d88
     PUSH EAX                            ; 00576d8c

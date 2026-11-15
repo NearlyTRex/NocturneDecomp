@@ -14,12 +14,14 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   CDemonActor_vtable *pCVar1;
   float fVar2;
   int iVar3;
-  uint *puVar4;
+  float *pfVar4;
   float *pfVar5;
-  uint *puVar6;
+  CMatrix3x4f *pCVar6;
   byte bVar7;
   float afStackY_18ac [1480];
   CBoundingBox3D *in_stack_fffffea0;
+  CMatrix3x4f CStack_130;
+  float afStack_100 [6];
   float fStack_e8;
   float fStack_e4;
   float fStack_e0;
@@ -29,20 +31,16 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   CQuaternion4f CStack_d0;
   float fStack_c0;
   float afStack_bc [7];
-  float afStack_a0 [5];
+  float afStack_a0 [2];
+  CVector3f CStack_98;
   float fStack_8c;
-  float fStack_88;
-  float fStack_84;
-  float fStack_80;
-  float fStack_7c;
+  float afStack_88 [4];
   float fStack_78;
   float fStack_74;
   float fStack_70;
   float fStack_6c;
-  uint uStack_68;
-  uint uStack_64;
-  uint uStack_60;
-  float fStack_5c;
+  CVector3f CStack_68;
+  uint uStack_5c;
   float afStack_58 [4];
   float fStack_48;
   float fStack_44;
@@ -67,12 +65,12 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   pCVar1 = (this_ptr->base).vtable._ub;
   this_ptr->check_timer = 0.2;
   (*pCVar1->getBoundingBox)(&this_ptr->base,in_stack_fffffea0);
-  puVar4 = (uint *)&stack0xffffff00;
-  puVar6 = &stack0xffffff18;
+  pfVar4 = afStack_100;
+  pfVar5 = &fStack_e8;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *pfVar5 = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
+    pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
   }
   fStack_44 = fStack_e8 + fStack_dc;
   afStack_40[0] = fStack_e4 + fStack_d8;
@@ -93,41 +91,41 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_20 = fStack_14;
   afStack_58[3] = fStack_18;
   fStack_48 = fStack_14;
-  fStack_80 = fStack_2c;
-  afStack_a0[(uint)bVar7 * -2 + 9] = afStack_40[(uint)bVar7 * -2 + 6];
-  afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
+  afStack_88[2] = fStack_2c;
+  afStack_88[(uint)bVar7 * -2 + 3] = afStack_40[(uint)bVar7 * -2 + 6];
+  afStack_88[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
   core_xform_cpp_FUN_00594380();
   CStack_d0.w = fStack_c0;
-  pfVar5 = (float *)((int)&CStack_d0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  pfVar4 = (float *)((int)&CStack_d0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   *(float *)((int)&CStack_d0 + (uint)bVar7 * -8 + 4) = afStack_bc[(uint)bVar7 * -2];
-  *pfVar5 = afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  pfVar5[(uint)bVar7 * -2 + 1] =
+  *pfVar4 = afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  pfVar4[(uint)bVar7 * -2 + 1] =
        (afStack_bc + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
   core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&CStack_d0,(CMatrix3x4f *)&stack0xfffffea0);
-  uStack_68 = 0;
-  puVar4 = (uint *)&stack0xfffffea0;
-  puVar6 = (uint *)&stack0xfffffed0;
+  CStack_68.x = 0.0;
+  pfVar4 = (float *)&stack0xfffffea0;
+  pCVar6 = &CStack_130;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    pCVar6->m[0].w = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  uStack_64 = 0;
-  uStack_60 = 0x3f000000;
-  core_xform_cpp_FUN_00591530();
-  fStack_8c = afStack_a0[2];
-  afStack_a0[(uint)bVar7 * -2 + 6] = afStack_a0[(uint)bVar7 * -2 + 3];
-  afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-  afStack_40[2] = fStack_8c + fStack_80;
-  afStack_40[3] = fStack_88 + fStack_7c;
-  fStack_30 = fStack_84 + fStack_78;
-  fStack_74 = fStack_8c + fStack_80;
-  afStack_a0[(uint)bVar7 * -2 + 0xc] = afStack_40[(uint)bVar7 * -2 + 3];
-  afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
+  CStack_68.y = 0.0;
+  CStack_68.z = 0.5;
+  core_xform_cpp_transformVector3x4_FUN_00591530(&CStack_68,&CStack_130,&CStack_98);
+  fStack_8c = CStack_98.x;
+  afStack_88[(uint)bVar7 * -2] = *(float *)((int)&CStack_98 + (uint)bVar7 * -8 + 4);
+  afStack_88[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+       *(float *)((int)&CStack_98 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  afStack_40[2] = fStack_8c + afStack_88[2];
+  afStack_40[3] = afStack_88[0] + afStack_88[3];
+  fStack_30 = afStack_88[1] + fStack_78;
+  fStack_74 = fStack_8c + afStack_88[2];
+  afStack_88[(uint)bVar7 * -2 + 6] = afStack_40[(uint)bVar7 * -2 + 3];
+  afStack_88[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
        afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-  fStack_5c = (float)_DAT_0265370c;
+  uStack_5c = _DAT_0265370c;
   afStack_58[(uint)bVar7 * -2] = *(float *)(&DAT_02653710 + (uint)bVar7 * -8);
   afStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        *(float *)(&DAT_02653714 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
@@ -139,6 +137,6 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_6c = fStack_6c + (this_ptr->base).location.position.z;
   core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3f800000,0,0,
-             afStack_a0 + 0xb,afStack_a0 + 0x11,afStack_bc + 3,0);
+             afStack_88 + 5,&uStack_5c,afStack_bc + 3,0);
   return;
 }

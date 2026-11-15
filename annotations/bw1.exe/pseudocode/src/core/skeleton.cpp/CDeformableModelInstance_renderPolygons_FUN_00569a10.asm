@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_005640d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5f254e                       ; 00569a60 | = "CDeformableModelInstance::renderPolyg..."
     MOV dword ptr [0x01d1d400],ECX      ; 00569a65 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00569a6b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00569a71
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00569a71
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00569a76
     POP ESI                             ; 00569a79
     JMP 0x00569a20                      ; 00569a7a

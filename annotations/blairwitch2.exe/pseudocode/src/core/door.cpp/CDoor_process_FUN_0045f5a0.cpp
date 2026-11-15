@@ -10,16 +10,16 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
 
 {
   float fVar1;
-  CMatrix3x3f *pCVar2;
+  CMatrix3x3f *this_ptr_00;
+  int iVar2;
   int iVar3;
-  int iVar4;
+  uint *puVar4;
   uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
+  byte bVar6;
   float afStackY_1084 [989];
   char *commands;
   CBoundingBox3D *in_stack_fffffef8;
-  float *pfVar8;
+  CVector3f *input;
   SCollisionInfo SStack_100;
   uint auStack_d8 [4];
   uint auStack_c8 [2];
@@ -33,13 +33,14 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
-  float afStack_98 [4];
-  float fStack_88;
+  float afStack_98 [2];
+  CVector3f CStack_90;
   float fStack_84;
   float fStack_80;
   float fStack_7c;
   float fStack_78;
-  float afStack_74 [7];
+  float afStack_74 [2];
+  CVector3f CStack_6c;
   float fStack_58;
   int iStack_54;
   float fStack_50;
@@ -59,9 +60,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
   int iStack_18;
   CLocation *pCStack_14;
   
-  bVar7 = 0;
-  afStack_98[3] = (this_ptr->base).location.position.x;
-  fStack_88 = (this_ptr->base).location.position.y;
+  bVar6 = 0;
+  CStack_90.y = (this_ptr->base).location.position.x;
+  CStack_90.z = (this_ptr->base).location.position.y;
   fStack_84 = (this_ptr->base).location.position.z;
   fStack_58 = this_ptr->param;
   if (1 < (int)this_ptr->one_shot) {
@@ -69,9 +70,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
   }
   switch(this_ptr->door_state) {
   case DOOR_STATE_CLOSED:
-    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                       (0x01C38BC0,this_ptr->open_condition);
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       this_ptr->door_state = DOOR_STATE_OPENING;
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
@@ -100,9 +101,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delt
     }
     break;
   case DOOR_STATE_OPEN:
-    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                       (0x01C38BC0,this_ptr->close_condition);
-    if ((iVar4 != 0) &&
+    if ((iVar3 != 0) &&
        (this_ptr->door_state = DOOR_STATE_CLOSING, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
@@ -144,12 +145,12 @@ LAB_0045f677:
   if ((this_ptr->param != fStack_58) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffef8);
     pCStack_14 = &(this_ptr->base).location;
-    puVar5 = auStack_d8;
-    puVar6 = auStack_c8;
-    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = *puVar5;
-      puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    puVar4 = auStack_d8;
+    puVar5 = auStack_c8;
+    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *puVar5 = *puVar4;
+      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
     pCStack_4c = &(this_ptr->base).orient_matrix;
     iStack_54 = 0;
@@ -157,28 +158,29 @@ LAB_0045f677:
     iStack_18 = 0;
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iStack_1c) break;
-      iVar4 = *(int *)((int)g_CDemonSetPtr->characters + iStack_18);
+      iVar3 = *(int *)((int)g_CDemonSetPtr->characters + iStack_18);
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00537fa0(&SStack_100);
-      iVar3 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x44))(iVar4,&SStack_100);
-      pCVar2 = pCStack_4c;
-      if (((iVar3 == 2) &&
-          (SStack_100.cylinder_bottom_y + *(float *)(iVar4 + 0x24) <=
+      iVar2 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x44))(iVar3,&SStack_100);
+      this_ptr_00 = pCStack_4c;
+      if (((iVar2 == 2) &&
+          (SStack_100.cylinder_bottom_y + *(float *)(iVar3 + 0x24) <=
            (this_ptr->base).location.position.y + fStack_b0)) &&
          ((this_ptr->base).location.position.y + fStack_bc <=
-          SStack_100.cylinder_top_y + *(float *)(iVar4 + 0x24))) {
-        fStack_9c = *(float *)(iVar4 + 0x20) - (pCStack_14->position).x;
-        afStack_98[0] = *(float *)(iVar4 + 0x24) - (pCStack_14->position).y;
-        pfVar8 = afStack_74 + 2;
-        afStack_98[1] = *(float *)(iVar4 + 0x28) - (pCStack_14->position).z;
-        afStack_74[2] = fStack_9c;
-        afStack_74[(uint)bVar7 * -2 + 3] = afStack_98[(uint)bVar7 * -2];
-        afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-             afStack_98[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-        core_dirmat_cpp_FUN_004495a0(pCVar2,pfVar8);
-        fStack_78 = afStack_98[2];
-        afStack_74[(uint)bVar7 * -2] = afStack_98[(uint)bVar7 * -2 + 3];
-        afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             afStack_98[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+          SStack_100.cylinder_top_y + *(float *)(iVar3 + 0x24))) {
+        fStack_9c = *(float *)(iVar3 + 0x20) - (pCStack_14->position).x;
+        afStack_98[0] = *(float *)(iVar3 + 0x24) - (pCStack_14->position).y;
+        input = &CStack_6c;
+        afStack_98[1] = *(float *)(iVar3 + 0x28) - (pCStack_14->position).z;
+        CStack_6c.x = fStack_9c;
+        *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) = afStack_98[(uint)bVar6 * -2];
+        *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+             afStack_98[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+        core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
+                  (this_ptr_00,input,&CStack_90);
+        fStack_78 = CStack_90.x;
+        afStack_74[(uint)bVar6 * -2] = *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + 4);
+        afStack_74[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+             *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         if (&fStack_a8 != &fStack_78) {
           fStack_a8 = fStack_78;
           fStack_a4 = afStack_74[0];

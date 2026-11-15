@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b891e
-;   core_setdir.cpp_FUN_00559f80 at 0055aaef
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055aaef
 ;   engine_matrix.c_projectCachedPoint_FUN_00507b30 at 00507b46
 ;
 ; Referenced Globals:

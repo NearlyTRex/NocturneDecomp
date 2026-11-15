@@ -29,101 +29,101 @@ int FUN_00577a50(float param_1);
 // Address: 00577a90
 int __cdecl CDirectSoundDevice::close(CDirectSoundDevice *this_ptr);
 
-// Original: sound_snddx.cpp_FUN_00577b60
+// Original: sound_snddx.cpp_CDirectSoundDevice_start_FUN_00577b60
 // Address: 00577b60
-undefined4 FUN_00577b60(int *param_1);
+int __cdecl CDirectSoundDevice::start(CDirectSoundDevice *this_ptr);
 
-// Original: sound_snddx.cpp_FUN_00577cd0
+// Original: sound_snddx.cpp_CDirectSoundDevice_reset_FUN_00577cd0
 // Address: 00577cd0
-undefined4 FUN_00577cd0(void);
+int __cdecl CDirectSoundDevice::reset(CDirectSoundDevice *this_ptr);
 
-// Original: sound_snddx.cpp_FUN_00577f90
+// Original: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00577f90
 // Address: 00577f90
-undefined4 FUN_00577f90(undefined4 *param_1,int param_2,ushort param_3,int param_4,uint *param_5);
+int __cdecl CDirectSoundDevice::setMode(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
 
-// Original: sound_snddx.cpp_FUN_005784b0
+// Original: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0
 // Address: 005784b0
-undefined4 FUN_005784b0(void);
+int __cdecl CDirectSoundDevice::poll(CDirectSoundDevice *this_ptr);
 
-// Original: sound_snddx.cpp_FUN_00578590
+// Original: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590
 // Address: 00578590
-undefined4 FUN_00578590(void);
+int __cdecl CDirectSoundDevice::hasHardware3D(CDirectSoundDevice *this_ptr);
 
-// Original: sound_snddx.cpp_FUN_00578640
+// Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_00578640
 // Address: 00578640
-void FUN_00578640(undefined4 param_1,double param_2,double param_3,double param_4);
+void __cdecl CDirectSoundDevice::set3DListenerPos(CDirectSoundDevice *this_ptr,double x,double y,double z);
 
-// Original: sound_snddx.cpp_FUN_00578680
+// Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_00578680
 // Address: 00578680
-void FUN_00578680(void);
+void __cdecl CDirectSoundDevice::set3DListenerOrient(CDirectSoundDevice *this_ptr,float x_front,float y_front,float z_front,float x_top,float y_top,float z_top,float x_right,float y_right,float z_right);
 
-// Original: sound_snddx.cpp_FUN_005786b0
+// Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005786b0
 // Address: 005786b0
-void FUN_005786b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CDirectSoundDevice::set3DListenerVelocity(CDirectSoundDevice *this_ptr,float x_velocity,float y_velocity,float z_velocity);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005786e0
 // Address: 005786e0
-void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice *this_ptr,double distance_in_feet);
+void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice *this_ptr,float distance_in_feet);
 
-// Original: sound_snddx.cpp_FUN_00578710
+// Original: sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710
 // Address: 00578710
-int FUN_00578710(undefined4 param_1,int param_2);
+int __cdecl CDirectSoundDevice::allocateSample(CDirectSoundDevice *this_ptr,CSampleInfo *sample_info);
 
 // Original: sound_snddx.cpp_isValidSampleBuffer_FUN_005789e0
 // Address: 005789e0
 int __cdecl isValidSampleBuffer(int buffer_id);
 
-// Original: sound_snddx.cpp_FUN_00578a20
+// Original: sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_00578a20
 // Address: 00578a20
-void FUN_00578a20(undefined4 param_1,int param_2);
+void __cdecl CDirectSoundDevice::freeSample(CDirectSoundDevice *this_ptr,int buffer_id);
 
-// Original: sound_snddx.cpp_FUN_00578a80
+// Original: sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80
 // Address: 00578a80
-int FUN_00578a80(undefined4 param_1,int param_2,int param_3,int param_4);
+void * __cdecl CDirectSoundDevice::lockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 
-// Original: sound_snddx.cpp_FUN_00578be0
+// Original: sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_00578be0
 // Address: 00578be0
-void FUN_00578be0(undefined4 param_1,int param_2);
+void __cdecl CDirectSoundDevice::unlockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 
-// Original: sound_snddx.cpp_FUN_00578cc0
+// Original: sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0
 // Address: 00578cc0
-int FUN_00578cc0(undefined4 param_1,int param_2);
+int __cdecl CDirectSoundDevice::allocateSfx(CDirectSoundDevice *this_ptr,int sample_buffer_id);
 
 // Original: sound_snddx.cpp_isValidSfxHandle_FUN_00578f50
 // Address: 00578f50
 int __cdecl isValidSfxHandle(int sfx_handle);
 
-// Original: sound_snddx.cpp_FUN_00578f80
+// Original: sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80
 // Address: 00578f80
-int FUN_00578f80(undefined4 param_1,int *param_2,uint param_3);
+int __cdecl CDirectSoundDevice::applySfxChanges(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags);
 
-// Original: sound_snddx.cpp_FUN_00579900
+// Original: sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900
 // Address: 00579900
-undefined4 FUN_00579900(undefined4 param_1,int param_2);
+int __cdecl CDirectSoundDevice::isSfxPlaying(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 
-// Original: sound_snddx.cpp_FUN_005799b0
+// Original: sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0
 // Address: 005799b0
-double FUN_005799b0(undefined4 param_1,int param_2);
+double __cdecl CDirectSoundDevice::getSfxPlaybackPos(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 
-// Original: sound_snddx.cpp_FUN_00579ad0
+// Original: sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00579ad0
 // Address: 00579ad0
-undefined4 FUN_00579ad0(int *param_1,int param_2);
+int __cdecl CDirectSoundDevice::startSfx(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 
-// Original: sound_snddx.cpp_FUN_00579f30
+// Original: sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_00579f30
 // Address: 00579f30
-void FUN_00579f30(undefined4 param_1,int param_2);
+void __cdecl CDirectSoundDevice::killSfx(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 
 // Original: sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70
 // Address: 00579f70
 int __cdecl directSoundEnumerationCallback(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
 
-// Original: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a1e0
+// Original: sound_snddx.cpp_CDirectSoundDevice_setReverb_FUN_0057a1e0
 // Address: 0057a1e0
-void __cdecl CDirectSoundDevice::commitDeferredSettings(CDirectSoundDevice *this_ptr);
+void __cdecl CDirectSoundDevice::setReverb(CDirectSoundDevice *this_ptr,float volume,float decay_time,float damping);
 
-// Original: sound_snddx.cpp_FUN_0057a230
+// Original: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a230
 // Address: 0057a230
-void FUN_0057a230(void);
+void __cdecl CDirectSoundDevice::commitDeferredSettings(CDirectSoundDevice *this_ptr);
 
 // Original: sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290
 // Address: 0057a290

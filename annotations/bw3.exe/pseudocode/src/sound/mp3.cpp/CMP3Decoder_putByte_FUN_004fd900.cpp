@@ -14,7 +14,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004fd900(CMP3Decoder *this_pt
   if (bits_per_byte != 8) {
     _DAT_01d71de0 = "..\\sound\\mp3.cpp";
     _DAT_01d71de4 = 800;
-    core_main_c_FUN_004e4330("hputbuf - Not Supported yet!!  File: %s",&DAT_01d94b98);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("hputbuf - Not Supported yet!!  File: %s");
   }
   (this_ptr->memory_bitstream).frame_buffer[(this_ptr->memory_bitstream).buffer_size_limit & 0xfff]
        = byte_value;

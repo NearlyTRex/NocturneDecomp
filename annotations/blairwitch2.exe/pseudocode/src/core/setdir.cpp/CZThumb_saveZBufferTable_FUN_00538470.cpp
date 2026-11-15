@@ -36,7 +36,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   if (pvVar2 == (void *)0x0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x9f;
-    core_main_c_FUN_004e4500("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   if (file_handle != (_FILE *)0x0) {
     _fread(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
@@ -48,7 +48,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   if (_DAT_020b0258 != 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x67;
-    core_main_c_FUN_004e4500("saveZBufferTable - already saved!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - already saved!");
   }
   if (0 < iVar1) {
     iVar4 = 0;
@@ -69,7 +69,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   if (_DAT_020b0258 == 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x70;
-    core_main_c_FUN_004e4500("saveZBufferTable - not saved!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < iVar1) {
     iVar4 = 0;

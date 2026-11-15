@@ -2,67 +2,71 @@
 // Address: 00504ee0
 // Address Range: [[00504ee0, 00504fd4]]
 // Convention: unknown
-// Signature: void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2)
+// Signature: void core_manpuz_cpp_FUN_00504ee0(CDemonActor *param_1,int param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2)
+void core_manpuz_cpp_FUN_00504ee0(CDemonActor *param_1,int param_2)
 
 {
-  float fVar1;
-  int iVar2;
-  byte bVar3;
-  int aiStackY_1038 [1016];
-  uint uStack_50;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
+  char *pcVar1;
+  float fVar2;
+  int iVar3;
+  byte bVar4;
+  float afStackY_1038 [1016];
+  CVector3f CStack_50;
+  float fStack_44;
+  float afStack_40 [4];
   uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
   int iStack_14;
   
-  bVar3 = 0;
+  bVar4 = 0;
+  iVar3 = param_2 * 100;
   iStack_14 = param_2;
-  iVar2 = param_1 + 0x5f0 + param_2 * 100;
-  fVar1 = ((float)param_2 + *(float *)(iVar2 + 4)) * _DAT_0060343c;
-  *(uint *)(iVar2 + 0x18) = 0;
-  *(uint *)(iVar2 + 0x20) = 0;
-  *(float *)(iVar2 + 0x1c) = fVar1;
+  fVar2 = ((float)param_2 + *(float *)(param_1[4].create_event + iVar3 + 0x1c)) * _DAT_0060343c;
+  pcVar1 = param_1[4].create_event + iVar3 + 0x30;
+  pcVar1[0] = '\0';
+  pcVar1[1] = '\0';
+  pcVar1[2] = '\0';
+  pcVar1[3] = '\0';
+  pcVar1 = param_1[4].create_event + iVar3 + 0x38;
+  pcVar1[0] = '\0';
+  pcVar1[1] = '\0';
+  pcVar1[2] = '\0';
+  pcVar1[3] = '\0';
+  *(float *)(param_1[4].create_event + iVar3 + 0x34) = fVar2;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-            ((CMatrix3x3f *)(iVar2 + 0x24),(CVector3f *)(iVar2 + 0x18));
-  uStack_24 = *(uint *)(param_1 + 0x150c);
-  uStack_2c = 0;
-  uStack_28 = 0;
-  core_dirmat_cpp_FUN_0045f690((CMatrix3x3f *)(iVar2 + 0x24),&stack0xffffffd4);
-  uStack_44 = uStack_20;
-  *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * -8) =
-       *(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * 0xfffffffe * 4);
-  *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  if ((uint *)(iVar2 + 0xc) != &stack0xffffffbc) {
-    *(uint *)(iVar2 + 0xc) = uStack_44;
-    *(uint *)(iVar2 + 0x10) = uStack_40;
-    *(uint *)(iVar2 + 0x14) = uStack_3c;
+            ((CMatrix3x3f *)(param_1[4].create_event + iVar3 + 0x3c),
+             (CVector3f *)(param_1[4].create_event + iVar3 + 0x30));
+  CStack_2c.z = param_1[0xf].platform_position_delta.y;
+  CStack_2c.x = 0.0;
+  CStack_2c.y = 0.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+            ((CMatrix3x3f *)(param_1[4].create_event + iVar3 + 0x3c),&CStack_2c,&CStack_20);
+  fStack_44 = CStack_20.x;
+  afStack_40[(uint)bVar4 * -2] = *(float *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
+  afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(float *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  if ((float *)(param_1[4].create_event + iVar3 + 0x24) != &fStack_44) {
+    *(float *)(param_1[4].create_event + iVar3 + 0x24) = fStack_44;
+    *(float *)(param_1[4].create_event + iVar3 + 0x28) = afStack_40[0];
+    *(float *)(param_1[4].create_event + iVar3 + 0x2c) = afStack_40[1];
   }
-  core_actor_cpp_FUN_00408b40(param_1,iVar2 + 0xc);
-  uStack_38 = uStack_50;
-  *(uint *)((int)&stack0xffffffcc + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffb4 + (uint)bVar3 * -8);
-  *(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  if ((uint *)(iVar2 + 0x58) == &stack0xffffffc8) {
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            (param_1,(CVector3f *)(param_1[4].create_event + iVar3 + 0x24),&CStack_50);
+  afStack_40[2] = CStack_50.x;
+  afStack_40[(uint)bVar4 * -2 + 3] = *(float *)((int)&CStack_50 + (uint)bVar4 * -8 + 4);
+  afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+       *(float *)((int)&CStack_50 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  if ((float *)(param_1[4].footstep_sound_code + iVar3 + -0x38) == afStack_40 + 2) {
     return;
   }
-  *(uint *)(iVar2 + 0x58) = uStack_38;
-  *(uint *)(iVar2 + 0x5c) = uStack_34;
-  *(uint *)(iVar2 + 0x60) = uStack_30;
+  *(float *)(param_1[4].footstep_sound_code + iVar3 + -0x38) = afStack_40[2];
+  *(float *)(param_1[4].footstep_sound_code + iVar3 + -0x34) = afStack_40[3];
+  *(uint *)(param_1[4].footstep_sound_code + iVar3 + -0x30) = uStack_30;
   return;
 }

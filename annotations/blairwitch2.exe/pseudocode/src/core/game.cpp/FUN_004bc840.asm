@@ -45,7 +45,7 @@
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
 ;   crt_string.c__stricmp_FUN_005b8130
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8940
 ;   engine_ini.cpp_FUN_004d8b20
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5d867f                       ; 004bc851 | DAT_005d867f
     PUSH 0x5d8682                       ; 004bc856 | = "blairhero.pod"
     PUSH 0x5d8690                       ; 004bc85b | DAT_005d8690
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004bc860
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004bc860
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004bc865
     TEST EAX,EAX                        ; 004bc868
     JNZ 0x004bcaa3                      ; 004bc86a
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 004bc8cf
     MOV ESI,0x1                         ; 004bc8d0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004bc8d5
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bc8da
     MOV EDX,dword ptr [ESP + 0x32c]     ; 004bc8dd
         ;   Label: LAB_004bc8dd
@@ -256,7 +256,7 @@ section .text
     PUSH EAX                            ; 004bcaa3
         ;   Label: LAB_004bcaa3
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004bcaa4
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     XOR EDI,EDI                         ; 004bcaa9
     ADD ESP,0x4                         ; 004bcaab
     JMP 0x004bc875                      ; 004bcaae
@@ -285,8 +285,8 @@ section .text
     LEA EAX,[ESP + 0x208]               ; 004bcae6
     PUSH EAX                            ; 004bcaed
     PUSH 0x5d86cd                       ; 004bcaee | = "world"
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004bcaf3
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004bcaf3
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004bcaf8
     TEST EAX,EAX                        ; 004bcafb
     JZ 0x004bcb45                       ; 004bcafd
@@ -294,7 +294,7 @@ section .text
     PUSH EAX                            ; 004bcaff
     MOV EDI,0x1cb7f78                   ; 004bcb00
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004bcb05
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     MOV EAX,[0x006166ac]                ; 004bcb0a | DAT_006166ac
     ADD ESP,0x4                         ; 004bcb0f
     XOR EDX,EDX                         ; 004bcb12

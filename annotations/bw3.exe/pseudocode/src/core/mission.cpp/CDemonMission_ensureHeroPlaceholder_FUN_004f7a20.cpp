@@ -37,7 +37,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20(C
           if (pCVar3 == (CDemonActor *)0x0) {
             _DAT_01d71de0 = "..\\core\\mission.cpp";
             _DAT_01d71de4 = 0x6e6;
-            core_main_c_FUN_004e4330("Hell froze finding hero.");
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze finding hero.");
           }
           this_ptr_00 = (CHeroPlaceholder *)operator_new(0x17c);
           actor = (CHeroPlaceholder *)0x0;

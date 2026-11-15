@@ -130,7 +130,7 @@ section .text
     PUSH EAX                            ; 00418458
     FSTP float ptr [ESP + 0x18]         ; 00418459
     CALL core_boneguy.cpp_hsvToRgb_FUN_00418110 ; 0041845d
-        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00418110()
+        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_00418110(CColor3f * in_hsv, CColor3f * out_rgb)
     LEA ESI,[ESP + 0x1c]                ; 00418462
     ADD ESP,0x4                         ; 00418466
     MOVSD ES:EDI,ESI                    ; 00418469
@@ -146,13 +146,13 @@ section .text
     MOV EAX,EBX                         ; 00418483
     FXCH                                ; 00418485
     CALL crt_math.c_round_FUN_005b7ff0  ; 00418487
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0041848c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041848e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 00418493
     CALL crt_math.c_round_FUN_005b7ff0  ; 00418495
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0041849a
     FISTP dword ptr [EBX + 0x108]       ; 0041849c
     FXCH                                ; 004184a2

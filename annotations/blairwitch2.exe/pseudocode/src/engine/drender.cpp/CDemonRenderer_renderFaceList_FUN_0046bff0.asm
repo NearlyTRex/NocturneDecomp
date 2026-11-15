@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_dpart.cpp_FUN_00461f70
 ;   core_dpart.cpp_FUN_004625f0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0046c720
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_00469e80
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00
@@ -282,8 +282,8 @@ section .text
     PUSH 0x5d166e                       ; 0046c235 | = "CDemonRenderer::demonGZFacetList - To..."
     MOV dword ptr [0x01d046a0],ECX      ; 0046c23a | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0046c240 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0046c245
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046c245
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0046c24a
     MOV ECX,dword ptr [ESP + 0x10]      ; 0046c24d
         ;   Label: LAB_0046c24d

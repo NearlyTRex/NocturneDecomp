@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_0049a820(CPick
   if (99 < ~uVar2 - 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xec4;
-    core_main_c_FUN_005030e0("CPickList::setCancelButtonText - too long!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPickList::setCancelButtonText - too long!");
   }
   pcVar3 = this_ptr->cancel_button_text;
   do {

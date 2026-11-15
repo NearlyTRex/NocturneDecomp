@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041b410
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 00547459
     LEA ESI,[ESP + 0x14]                ; 0054745a
     LEA EDI,[ESP + 0x8]                 ; 0054745e
-    CALL core_dirmat.cpp_FUN_0045b800   ; 00547462
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 00547462
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 00547467
     ADD ESP,0x8                         ; 0054746b
     MOVSD ES:EDI,ESI                    ; 0054746e

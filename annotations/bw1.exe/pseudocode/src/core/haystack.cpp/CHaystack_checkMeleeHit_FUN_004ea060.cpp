@@ -13,27 +13,30 @@ void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004ea060(CHaystack *t
   int iVar1;
   int iVar2;
   byte bVar3;
-  float afStackY_1028 [999];
-  float *pfVar4;
+  uint auStackY_1028 [999];
+  CVector3f *input_local_point;
   SDamageInfo SStack_7c;
-  float local_40;
-  float afStack_3c [5];
+  CVector3f local_40;
+  CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
   
   bVar3 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
             (&(this_ptr->base).base.model,bone_index,&local_28);
-  pfVar4 = afStack_3c + 2;
-  afStack_3c[2] = local_28.x;
-  afStack_3c[(uint)bVar3 * -2 + 3] = *(float *)((int)&local_28 + (uint)bVar3 * -8 + 4);
-  afStack_3c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-       *(float *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-  core_actor_cpp_FUN_00408b40(this_ptr,pfVar4);
-  local_1c.x = local_40;
-  *(float *)((int)&local_1c + (uint)bVar3 * -8 + 4) = afStack_3c[(uint)bVar3 * -2];
-  *(float *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       afStack_3c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  input_local_point = &local_34;
+  local_34.x = local_28.x;
+  *(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_28 + (uint)bVar3 * -8 + 4);
+  *(uint *)((int)&local_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            ((CDemonActor *)this_ptr,input_local_point,&local_40);
+  local_1c.x = local_40.x;
+  *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_40 + (uint)bVar3 * -8 + 4);
+  *(uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)&local_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   iVar2 = 0;
   iVar1 = 0;
   while( true ) {

@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c840
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004fc4c0
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004fc570
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5dea09                       ; 004fd24d | = "CDemonMission::createHeros - too many..."
     MOV dword ptr [0x01d046a0],ESI      ; 004fd252 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004fd258 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fd25e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fd25e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fd263
     JMP 0x004fd11a                      ; 004fd266
         ;   XREF to: 004fd11a (UNCONDITIONAL_JUMP)  ; LAB_004fd11a

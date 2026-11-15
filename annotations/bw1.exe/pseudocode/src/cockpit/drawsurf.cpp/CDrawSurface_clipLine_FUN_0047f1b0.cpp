@@ -138,7 +138,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0047f1b0(CDrawSurface
   if (iStack_20 == 100) {
     _DAT_01d1d400 = "..\\cockpit\\drawsurf.cpp";
     _DAT_01d1d404 = 0x36a;
-    core_main_c_FUN_005030e0("2d line clipping exceeded max iterations");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("2d line clipping exceeded max iterations");
     return iStack_40;
   }
   return iStack_40;

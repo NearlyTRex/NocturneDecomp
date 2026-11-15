@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void)
+; void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   span_data
+; int              Stack[0xc]:4   dest_x
+; int              Stack[0x10]:4   dest_y
+; int              Stack[0x14]:4   width
+; int              Stack[0x18]:4   height
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -45,7 +52,7 @@ section .text
     POP EBX                             ; 0043594a
     RET                                 ; 0043594b
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 0043594c
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
         ;   Label: LAB_0043594c
     MOV EDX,dword ptr [ESP + 0x54]      ; 00435951
     MOV EBP,dword ptr [ESP + 0x4c]      ; 00435955

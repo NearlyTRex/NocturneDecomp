@@ -11,7 +11,7 @@
 uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyCipher *this_ptr,byte param_2)
 
 {
-  uint uVar1;
+  uint extraout_EAX;
   
   support_codec_cpp_CCheesyCipher_advanceKey_FUN_00443b70(this_ptr);
   if (this_ptr->mode == 0) {
@@ -22,6 +22,6 @@ uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyC
   }
   _DAT_01d1d400 = "..\\support\\codec.cpp";
   _DAT_01d1d404 = 0x70b;
-  uVar1 = core_main_c_FUN_005030e0("Invalid mode.");
-  return uVar1 & 0xffffff00;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid mode.");
+  return extraout_EAX & 0xffffff00;
 }

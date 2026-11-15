@@ -24,7 +24,8 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   char *local_18;
   uint local_14;
   
-  p_Var3 = engine_dosio_cpp_FUN_00460c70(&DAT_005d8690,"blairhero.pod",&DAT_005d867f);
+  p_Var3 = engine_dosio_cpp_getFile_FUN_00460c70
+                     (&DAT_005d8690,"blairhero.pod",&DAT_005d867f);
   if (p_Var3 != (_FILE *)0x0) {
     _fclose(p_Var3);
   }
@@ -66,7 +67,7 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    p_Var3 = engine_dosio_cpp_FUN_00460c70("world",local_120,&DAT_005d86ca);
+    p_Var3 = engine_dosio_cpp_getFile_FUN_00460c70("world",local_120,&DAT_005d86ca);
     if (p_Var3 == (_FILE *)0x0) goto LAB_004bca85;
     pcVar6 = &DAT_01cb7f78;
     _fclose(p_Var3);

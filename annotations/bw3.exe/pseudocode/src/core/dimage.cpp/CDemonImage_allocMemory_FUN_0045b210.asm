@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_freeMemory_FUN_0045b270
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5bb00c                       ; 0045b24b
     MOV dword ptr [0x01d71de0],EBX      ; 0045b250 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0045b256 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045b25c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045b25c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045b261
     POP ESI                             ; 0045b264
     POP EBX                             ; 0045b265

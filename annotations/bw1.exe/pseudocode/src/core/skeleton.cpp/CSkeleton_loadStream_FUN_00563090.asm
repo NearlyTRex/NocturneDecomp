@@ -35,7 +35,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_motion.cpp_CMotionList_load_FUN_00523980
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00562e60
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00562f70
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5f1b97                       ; 005630e9 | = "Invalid skeleton version"
     MOV dword ptr [0x01d1d400],EDI      ; 005630ee | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 005630f4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005630fa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005630fa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005630ff
     MOV EAX,dword ptr [ESP]             ; 00563102
         ;   Label: LAB_00563102
@@ -104,8 +104,8 @@ section .text
     PUSH 0x5f1bc5                       ; 00563115 | = "Old skeleton version %d not supported"
     MOV dword ptr [0x01d1d400],EDX      ; 0056311a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00563120 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563126
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563126
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056312b
     MOV EAX,dword ptr [ESP]             ; 0056312e
         ;   Label: LAB_0056312e
@@ -335,8 +335,8 @@ section .text
     PUSH 0x5f1cc4                       ; 00563344 | = "CSkeleton::loadStream - error reading..."
     MOV dword ptr [0x01d1d400],EBP      ; 00563349 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0056334f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563354
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563354
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00563359
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0056335c
         ;   Label: LAB_0056335c
@@ -405,8 +405,8 @@ section .text
     PUSH 0x5f1c00                       ; 005633df | = "Skeleton version %d is newer than .EX..."
     MOV dword ptr [0x01d1d400],EDI      ; 005633e4 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 005633ea | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005633f0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005633f0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 005633f5
     JMP 0x0056313f                      ; 005633f8
         ;   XREF to: 0056313f (UNCONDITIONAL_JUMP)  ; LAB_0056313f
@@ -416,8 +416,8 @@ section .text
     PUSH 0x5f1c78                       ; 00563407 | = "Skeleton file corrupt"
     MOV dword ptr [0x01d1d400],EBX      ; 0056340c | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00563412 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563418
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563418
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056341d
     JMP 0x00563248                      ; 00563420
         ;   XREF to: 00563248 (UNCONDITIONAL_JUMP)  ; LAB_00563248
@@ -483,8 +483,8 @@ section .text
     PUSH 0x5f1d05                       ; 005634c8 | = "CSkeleton::loadStream - error reading..."
     MOV [0x01d1d400],EAX                ; 005634cd | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005634d2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005634d8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005634d8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005634dd
     ADD ESP,0x14                        ; 005634e0
     POP EBP                             ; 005634e3

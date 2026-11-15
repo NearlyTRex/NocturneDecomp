@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 499,
-    "complexity_score": 521,
+    "complexity_score": 520,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
+    "pseudocode_lines": 185,
     "suspect_count": 30,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 685
+    "total_lines": 684
   },
   "cross_references": [
     {
@@ -52,14 +52,14 @@
       "name": "core_game.cpp_CGame_saveClockTime_FUN_004cbf10"
     },
     {
+      "addr": "004d7250",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250"
+    },
+    {
       "addr": "004cbf20",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_updateDT_FUN_004cbf20"
-    },
-    {
-      "addr": "004d7250",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004d7250"
     },
     {
       "addr": "005031c0",
@@ -524,7 +524,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "if (DAT_0061b49c < 0x1e0) {",
@@ -532,7 +532,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 58,
       "match": "DAT_01d21048",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01d21048;",
@@ -540,7 +540,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_01d21148",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01d21148;",
@@ -548,7 +548,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_01d21248",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01d21248;",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 90,
       "match": "DAT_01d21348",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01d21348;",
@@ -564,7 +564,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 92,
       "match": "DAT_01d21048",
       "severity": "mild",
       "text": "puVar5 = &DAT_01d21048;",
@@ -572,7 +572,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 105,
+      "line": 104,
       "match": "*(byte **)(iVar4 + 0x1d21448",
       "severity": "moderate",
       "text": "*(byte **)(iVar4 + 0x1d21448) = puVar5;",
@@ -580,7 +580,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
+      "line": 118,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x2a);",
@@ -588,7 +588,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
+      "line": 119,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((iVar4 == 0) || (iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d), iVar4 == 0)) {",
@@ -596,7 +596,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 121,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
@@ -604,7 +604,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 153,
+      "line": 152,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
@@ -612,39 +612,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 152,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 156,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 157,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar4 != 0)) {",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 157,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 158,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar4 != 0)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 158,
-      "match": "code *",
-      "severity": "moderate",
       "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar4 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 163,
+      "line": 162,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 165,
+      "line": 164,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "((iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x20), iVar4 != 0 ||",
@@ -660,7 +660,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 165,
+      "line": 164,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x20), iVar4 != 0 ||",
@@ -668,7 +668,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 166,
+      "line": 165,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar4 != 0)))) {",
@@ -676,7 +676,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 166,
+      "line": 165,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar4 != 0)))) {",
@@ -684,7 +684,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 175,
+      "line": 174,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
@@ -692,7 +692,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 177,
+      "line": 176,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x21);",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 177,
+      "line": 176,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x21);",
@@ -708,7 +708,7 @@
     },
     {
       "description": "Pointer value `&PTR_s_f0100_0061f570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&PTR_s_f0100_0061f570",
       "severity": "moderate",
       "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_0061f570 + iVar6),0x40,0x40);",
@@ -716,7 +716,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -724,7 +724,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -732,7 +732,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 82,
+      "line": 81,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -740,7 +740,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 94,
+      "line": 93,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -748,7 +748,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_0061f570 + iVar6),0x40,0x40);",

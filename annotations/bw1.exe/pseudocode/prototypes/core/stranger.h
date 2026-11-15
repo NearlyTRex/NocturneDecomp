@@ -45,9 +45,9 @@ void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 // Address: 005881d0
 void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_00588a10
+// Original: core_stranger.cpp_CStranger_getHandsMidpoint_FUN_00588a10
 // Address: 00588a10
-void FUN_00588a10(int param_1);
+CVector3f * __stack_esi CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *out_position);
 
 // Original: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0
 // Address: 00588ad0
@@ -123,7 +123,7 @@ void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
 // Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0
 // Address: 0058e9a0
-float * calculateAimAnglesWithOffset(void);
+undefined4 * calculateAimAnglesWithOffset(void);
 
 // Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50
 // Address: 0058eb50
@@ -145,9 +145,9 @@ void __cdecl CStranger::updateArmRecoilBlend(CStranger *this_ptr,float delta_tim
 // Address: 00590690
 CMatrix3x4f * __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_stranger.cpp_FUN_005906e0
+// Original: core_stranger.cpp_CStranger_getThrowDirection_FUN_005906e0
 // Address: 005906e0
-void FUN_005906e0(int param_1);
+CVector3f * __stack_esi CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *out_direction);
 
 // Original: core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0
 // Address: 005907a0

@@ -70,7 +70,7 @@ section .text
     FMUL double ptr [0x005c0c7c]        ; 004a6e3a | DAT_005c0c7c
     ADD ESP,0x8                         ; 004a6e40
     CALL crt_math.c_round_FUN_005a3120  ; 004a6e43
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x14]        ; 004a6e48
     MOV EAX,dword ptr [ESP + 0x14]      ; 004a6e4c
     MOV EDX,EAX                         ; 004a6e50

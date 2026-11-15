@@ -39,7 +39,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 0044fccb
     PUSH EDX                            ; 0044fccf
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044fcd0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 0044fcd5
     FISTP dword ptr [ESP + 0x8]         ; 0044fcd6
     MOV ECX,dword ptr [ESP + 0x8]       ; 0044fcda

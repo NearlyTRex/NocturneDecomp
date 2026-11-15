@@ -33,9 +33,9 @@ void __cdecl drawLine3D(int x1,int y1,uint z1,int x2,int y2,uint z2);
 // Address: 00401450
 int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int end_index);
 
-// Original: engine_2d.c_FUN_00401590
+// Original: engine_2d.c_loadPaletteFile_FUN_00401590
 // Address: 00401590
-void FUN_00401590(char *param_1);
+void __cdecl loadPaletteFile(char *filename);
 
 // Original: engine_2d.c_drawCharacter_FUN_00401620
 // Address: 00401620
@@ -55,7 +55,7 @@ int __cdecl getStringWidth(char *text);
 
 // Original: engine_2d.c_drawCharacterMasked_FUN_00401910
 // Address: 00401910
-int drawCharacterMasked(void);
+int __cdecl drawCharacterMasked(int char_code,int x_pos,int y_pos);
 
 // Original: engine_2d.c_drawCharacterMaskedColor_FUN_00401a20
 // Address: 00401a20
@@ -75,7 +75,7 @@ void __cdecl drawTextMultiline(char *text,int x_start,int y_start,int x_max,int 
 
 // Original: engine_2d.c_wrapTextToWidth_FUN_00401d90
 // Address: 00401d90
-void wrapTextToWidth(void);
+void __cdecl wrapTextToWidth(char *input_text,int max_width,char *output_buffer);
 
 // Original: engine_2d.c_drawTextWrappedColor_FUN_00401ec0
 // Address: 00401ec0
@@ -171,7 +171,7 @@ int __cdecl computeOutcode(int x,int y,int x_min,int y_min,int x_max,int y_max);
 
 // Original: engine_2d.c_clipLineGlobal_FUN_00402ca0
 // Address: 00402ca0
-void clipLineGlobal(void);
+void __cdecl clipLineGlobal(int x1,int y1,int x2,int y2);
 
 // Original: engine_2d.c_clipAndDrawLine_FUN_00402cf0
 // Address: 00402cf0
@@ -203,7 +203,7 @@ void __cdecl clearInputAndWait(void);
 
 // Original: engine_2d.c_getInputWithPrompt_FUN_00403310
 // Address: 00403310
-uint getInputWithPrompt(void);
+int __cdecl getInputWithPrompt(char *buffer,int max_length,int x,int y,char *prompt);
 
 // Original: engine_2d.c_setSolidColor_FUN_004033f0
 // Address: 004033f0

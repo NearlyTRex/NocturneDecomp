@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 242,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 18,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "unaffected_reg",
@@ -42,7 +42,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3a90",
@@ -232,14 +232,6 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"CPodFile::getDependencyRecord - can't open %s\",(char *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_2",
       "severity": "mild",
@@ -252,14 +244,6 @@
       "match": "param_1",
       "severity": "mild",
       "text": "_fseek(file,param_2 * 0x108 + *(int *)(param_1 + 0x428),0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"CPodFile::getDependencyRecord - error reading %s\",param_1 + 4);",
       "type": "unnamed_param"
     },
     {

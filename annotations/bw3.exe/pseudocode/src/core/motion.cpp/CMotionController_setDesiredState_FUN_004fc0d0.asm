@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004fbf20
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_004fc010
 ;
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5c9cc7                       ; 004fc125 | = "CMotionController::setDesiredState - ..."
     MOV dword ptr [0x01d71de0],ECX      ; 004fc12a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004fc130 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fc136
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fc136
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fc13b
     POP EDI                             ; 004fc13e
     JMP 0x004fc0e4                      ; 004fc13f

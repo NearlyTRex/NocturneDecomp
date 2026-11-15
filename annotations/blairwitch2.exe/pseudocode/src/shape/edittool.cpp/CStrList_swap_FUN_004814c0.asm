@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5d27ac                       ; 004814e4 | = "CStrList::swap - invalid indices"
     MOV dword ptr [0x01d046a0],EBP      ; 004814e9 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004814ef | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004814f4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004814f4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004814f9
     CMP EDI,ESI                         ; 004814fc
     JNZ 0x00481516                      ; 004814fe

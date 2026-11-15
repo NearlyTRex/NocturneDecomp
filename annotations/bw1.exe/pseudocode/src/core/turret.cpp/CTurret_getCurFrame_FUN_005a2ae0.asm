@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5f8a83                       ; 005a2b64 | = "CTurret::getCurFrame - invalid state"
     MOV dword ptr [0x01d1d400],ECX      ; 005a2b69 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005a2b6f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005a2b75
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a2b75
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a2b7a
     FLD float ptr [ESP + 0x8]           ; 005a2b7d
         ;   Label: caseD_0

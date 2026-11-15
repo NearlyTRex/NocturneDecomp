@@ -2,13 +2,13 @@
 // Address: 0042c410
 // Address Range: [[0042c410, 0042c425] [0042c430, 0042c444] [0042c450, 0042c455]]
 // Convention: __cdecl
-// Signature: code * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
+// Signature: ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-code * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
 
 {
   if (DAT_006141c0 == 8) {

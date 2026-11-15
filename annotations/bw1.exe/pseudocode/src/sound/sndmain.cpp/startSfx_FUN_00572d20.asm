@@ -50,7 +50,7 @@
 ;   ... and 20 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -296,8 +296,8 @@ section .text
     PUSH 0x5f2c32                       ; 00572fc3 | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d1d400],EDI      ; 00572fc8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00572fce | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00572fd4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572fd4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572fd9
     JMP 0x00572de4                      ; 00572fdc
         ;   XREF to: 00572de4 (UNCONDITIONAL_JUMP)  ; LAB_00572de4
@@ -458,8 +458,8 @@ section .text
     PUSH 0x5f3110                       ; 005731a1 | = "Out of memory."
     MOV dword ptr [0x01d1d400],ECX      ; 005731a6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005731ac | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005731b2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005731b2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005731b7
     MOV EAX,dword ptr [ESP + 0x374]     ; 005731ba
         ;   Label: LAB_005731ba
@@ -507,7 +507,7 @@ section .text
     ADD ESP,0x4                         ; 00573266
     MOV dword ptr [EDI + 0x15c],0x0     ; 00573269
     CALL crt_math.c_round_FUN_005c03a0  ; 00573273
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EDI + 0x164]       ; 00573278
     MOV ESI,dword ptr [EDI + 0x164]     ; 0057327e
     MOV dword ptr [EDI + 0x16c],0x0     ; 00573284
@@ -611,7 +611,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x370]     ; 005733c9
     MOV dword ptr [EAX + 0x15c],0x0     ; 005733d0
     CALL crt_math.c_round_FUN_005c03a0  ; 005733da
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EAX + 0x164]       ; 005733df
     MOV dword ptr [EDX + 0x16c],0x0     ; 005733e5
     MOV EAX,dword ptr [ESP + 0x360]     ; 005733ef

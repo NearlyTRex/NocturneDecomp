@@ -18,7 +18,7 @@ int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_005513f0(void)
   if (_DAT_02cf341c < 1) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x24b;
-    core_main_c_FUN_004e4330("SfxSlot::kill - must be locked!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::kill - must be locked!");
   }
   iVar3 = 0;
   iVar2 = 0;

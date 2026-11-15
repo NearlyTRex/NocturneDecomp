@@ -299,6 +299,7 @@
 #include "types/classes/CSocket.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CSoundDevice.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CSpark.h"
 #include "types/classes/CSpike.h"

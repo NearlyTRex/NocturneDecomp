@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3d0(void)
+; void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3d0(char *instruction_text,char *message_text)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   instruction_text
+; char *           Stack[0x8]:4   message_text
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01511cb8

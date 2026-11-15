@@ -25,16 +25,16 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
   int local_58;
   UIntegerFloat local_54;
   UIntegerFloat local_50;
-  float local_4c;
-  float afStack_48 [4];
-  float local_38;
+  CVector3f local_4c;
+  float local_40;
+  float local_3c [2];
   int local_34;
   int local_30;
   int local_2c;
   CVector3i local_28;
   int local_1c;
   uint local_18;
-  int local_14;
+  uint local_14;
   
   bVar5 = 0;
   iVar3 = 0;
@@ -42,14 +42,14 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
   local_14 = 0;
   local_18 = 0xff;
   do {
-    core_box_cpp_FUN_00420570(this_ptr,local_14);
-    afStack_48[2] = local_4c;
-    afStack_48[(uint)bVar5 * -2 + 3] = afStack_48[(uint)bVar5 * -2];
-    afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    local_28.x = (int)ROUND(afStack_48[2] * _DAT_005fce08);
-    local_28.y = (int)ROUND(afStack_48[3] * _DAT_005fce08);
-    local_28.z = (int)ROUND(local_38 * _DAT_005fce08);
+    core_box_cpp_CBoundingBox3D_getCorner_FUN_00420570(this_ptr,local_14,&local_4c);
+    local_40 = local_4c.x;
+    local_3c[(uint)bVar5 * -2] = *(float *)((int)&local_4c + (uint)bVar5 * -8 + 4);
+    local_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         *(float *)((int)&local_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    local_28.x = (int)ROUND(local_40 * _DAT_005fce08);
+    local_28.y = (int)ROUND(local_3c[0] * _DAT_005fce08);
+    local_28.z = (int)ROUND(local_3c[1] * _DAT_005fce08);
     engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)(*0x01BC120C + iVar3),&local_28);
     if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar3 + 3) &
@@ -63,7 +63,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990(CBoundi
     uVar1 = local_18;
     local_14 = local_14 + 1;
     iVar3 = iVar3 + 0x30;
-  } while (local_14 < 8);
+  } while ((int)local_14 < 8);
   if (local_18 != 0) {
     return 0;
   }

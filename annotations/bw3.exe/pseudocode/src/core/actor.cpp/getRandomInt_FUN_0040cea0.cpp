@@ -11,26 +11,24 @@
 int __cdecl core_actor_cpp_getRandomInt_FUN_0040cea0(int min_value,int max_value)
 
 {
-  double dVar1;
-  float fVar2;
-  int iVar3;
-  uint uVar4;
-  float10 fVar5;
+  float fVar1;
+  int iVar2;
+  uint uVar3;
+  double dVar4;
   
-  dVar1 = (double)(max_value - min_value) + _DAT_005b5ef1;
+  dVar4 = (double)(max_value - min_value) + _DAT_005b5ef1;
   if (g_CGamePtr->is_processing == 0) {
-    iVar3 = rand();
-    fVar2 = (float)iVar3 * _DAT_005b5ef9;
+    iVar2 = rand();
+    fVar1 = (float)iVar2 * _DAT_005b5ef9;
   }
   else {
-    uVar4 = core_actor_cpp_generateRandomValue_FUN_0040cdd0();
-    fVar2 = (float)(int)uVar4 * _DAT_005b5efd;
+    uVar3 = core_actor_cpp_generateRandomValue_FUN_0040cdd0();
+    fVar1 = (float)(int)uVar3 * _DAT_005b5efd;
   }
-  fVar5 = (float10)min_value + (float10)fVar2 * (float10)dVar1;
-  round();
-  iVar3 = (int)ROUND(fVar5);
-  if ((min_value <= iVar3) && (min_value = max_value, iVar3 <= max_value)) {
-    return iVar3;
+  dVar4 = round((double)((float)min_value + fVar1 * (float)dVar4));
+  iVar2 = (int)ROUND(dVar4);
+  if ((min_value <= iVar2) && (min_value = max_value, iVar2 <= max_value)) {
+    return iVar2;
   }
   return min_value;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005870a0(CWaterActor *this_ptr)
 
 {
@@ -15,12 +13,9 @@ void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005870a0(CWa
   int iVar2;
   byte bVar3;
   float afStackY_1034 [1016];
-  float fStack_4c;
+  CVector3f CStack_4c;
   float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
+  float afStack_3c [4];
   float fStack_2c;
   float fStack_28;
   float fStack_24;
@@ -37,24 +32,23 @@ void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005870a0(CWa
     pCStack_18 = &(this_ptr->base).location;
     pCVar1 = &this_ptr->vertices[0].world_position;
     do {
-      core_dirmat_cpp_FUN_00449530(pCStack_1c,pSStack_14 + iVar2);
-      fStack_28 = fStack_4c;
-      *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffb8 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      fStack_34 = fStack_28 + (pCStack_18->position).x;
-      fStack_30 = fStack_24 + (pCStack_18->position).y;
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
+                (pCStack_1c,&pSStack_14[iVar2].local_position,&CStack_4c);
+      fStack_28 = CStack_4c.x;
+      afStack_3c[(uint)bVar3 * -2 + 6] = *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4);
+      afStack_3c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
+           *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      afStack_3c[2] = fStack_28 + (pCStack_18->position).x;
+      afStack_3c[3] = fStack_24 + (pCStack_18->position).y;
       fStack_2c = fStack_20 + (pCStack_18->position).z;
-      fStack_40 = fStack_34;
-      (&stack0xffffffc4)[(uint)bVar3 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      if (pCVar1 != (CVector3f *)&stack0xffffffc0) {
+      fStack_40 = afStack_3c[2];
+      afStack_3c[(uint)bVar3 * -2] = afStack_3c[(uint)bVar3 * -2 + 3];
+      afStack_3c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+           afStack_3c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+      if (pCVar1 != (CVector3f *)&fStack_40) {
         pCVar1->x = fStack_40;
-        pCVar1->y = fStack_3c;
-        pCVar1->z = fStack_38;
+        pCVar1->y = afStack_3c[0];
+        pCVar1->z = afStack_3c[1];
       }
       iVar2 = iVar2 + 1;
       pCVar1 = (CVector3f *)((int)(pCVar1 + 2) + 8);

@@ -49,7 +49,7 @@
 ;   ... and 38 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_clipper.c_interpolateVertexBottomClip_FUN_00430950
 ;   engine_clipper.c_interpolateVertexFarClip_FUN_00430a50
 ;   engine_clipper.c_interpolateVertexLeftClip_FUN_00430750
@@ -602,8 +602,8 @@ section .text
     PUSH 0x5cd976                       ; 0043188f | = "Ran out of clipped verts!"
     MOV [0x01d046a0],EAX                ; 00431894 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00431899 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043189f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043189f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004318a4
     MOV EAX,[0x007bfcf8]                ; 004318a7 | DAT_007bfcf8
         ;   Label: LAB_004318a7
@@ -639,8 +639,8 @@ section .text
     PUSH 0x5cd976                       ; 00431906 | = "Ran out of clipped verts!"
     MOV [0x01d046a0],EAX                ; 0043190b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00431910 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431916
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431916
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043191b
     MOV EAX,[0x007bfcf8]                ; 0043191e | DAT_007bfcf8
         ;   Label: LAB_0043191e
@@ -670,8 +670,8 @@ section .text
     PUSH 0x5cd976                       ; 00431968 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],ECX      ; 0043196d | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00431973 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431978
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431978
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043197d
     MOV EAX,[0x007bfcf8]                ; 00431980 | DAT_007bfcf8
         ;   Label: LAB_00431980
@@ -701,8 +701,8 @@ section .text
     PUSH 0x5cd976                       ; 004319c2 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],EDX      ; 004319c7 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004319cd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004319d3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004319d3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004319d8
     MOV EAX,[0x007bfcf8]                ; 004319db | DAT_007bfcf8
         ;   Label: LAB_004319db
@@ -729,8 +729,8 @@ section .text
     PUSH 0x5cd976                       ; 00431a17 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],ECX      ; 00431a1c | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00431a22 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431a27
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a27
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a2c
     MOV EAX,[0x007bfcf8]                ; 00431a2f | DAT_007bfcf8
         ;   Label: LAB_00431a2f
@@ -760,8 +760,8 @@ section .text
     PUSH 0x5cd976                       ; 00431a71 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],EDX      ; 00431a76 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00431a7c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431a82
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a82
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a87
     MOV EAX,[0x007bfcf8]                ; 00431a8a | DAT_007bfcf8
         ;   Label: LAB_00431a8a
@@ -788,8 +788,8 @@ section .text
     PUSH 0x5cd976                       ; 00431ac6 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],ECX      ; 00431acb | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00431ad1 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431ad6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431ad6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431adb
     MOV EAX,[0x007bfcf8]                ; 00431ade | DAT_007bfcf8
         ;   Label: LAB_00431ade
@@ -819,8 +819,8 @@ section .text
     PUSH 0x5cd976                       ; 00431b20 | = "Ran out of clipped verts!"
     MOV dword ptr [0x01d046a0],EDX      ; 00431b25 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00431b2b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00431b31
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431b31
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431b36
     MOV EAX,[0x007bfcf8]                ; 00431b39 | DAT_007bfcf8
         ;   Label: LAB_00431b39

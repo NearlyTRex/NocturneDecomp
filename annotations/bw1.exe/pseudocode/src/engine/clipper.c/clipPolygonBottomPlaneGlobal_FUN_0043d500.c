@@ -1,6 +1,6 @@
 // Name: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
 // Address: 0043d500
-// Address Range: [[0043d500, 0043d567] [0043d592, 0043d5b1]]
+// Address Range: [[0043d500, 0043d5d7]]
 // Convention: unknown
 // Signature: byte engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043d500(void)
 

@@ -1,0 +1,483 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 393,
+    "complexity_score": 381,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 151,
+    "suspect_count": 21,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 544
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00555560",
+    "address_range": [
+      [
+        "00555560",
+        "00555a74"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00555560",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00555560(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "00553600",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00553600"
+    },
+    {
+      "addr": "00552b30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9b2f",
+      "name": "s_Create_temp_secondary_bu_005e9b2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9b66",
+      "name": "s_Set_Primary_buffer_forma_005e9b66",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9b80",
+      "name": "s_Get_Primary_buffer_forma_005e9b80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9b9a",
+      "name": "s_Create_the_secondary_buf_005e9b9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061bf50",
+      "name": "DAT_0061bf50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061bf60",
+      "name": "DAT_0061bf60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00621070",
+      "name": "DAT_00621070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5c4",
+      "name": "DAT_0264a5c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5c8",
+      "name": "DAT_0264a5c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5cc",
+      "name": "DAT_0264a5cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5d4",
+      "name": "DAT_0264a5d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5d8",
+      "name": "DAT_0264a5d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5dc",
+      "name": "DAT_0264a5dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5e0",
+      "name": "DAT_0264a5e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5e4",
+      "name": "DAT_0264a5e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5e8",
+      "name": "DAT_0264a5e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5ec",
+      "name": "DAT_0264a5ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 336,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 37,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 6,
+      "CALL": 19,
+      "CALLIND": 14,
+      "CBRANCH": 15,
+      "COPY": 356,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 113,
+      "INT_AND": 194,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 121,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 26,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 20,
+      "INT_SEXT": 15,
+      "INT_SLESS": 61,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 120,
+      "INT_XOR": 14,
+      "INT_ZEXT": 2,
+      "LOAD": 62,
+      "POPCOUNT": 57,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 136,
+      "SUBPIECE": 10,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1484
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00577f90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055b100",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ae830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8763
+    },
+    "nocturne.exe": {
+      "addr": "0052a450",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8763
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channels",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_samples_per_block",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c8 + 0x38))(_DAT_0264a5c8,&uStack_48);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 52,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c8 + 0x14))(_DAT_0264a5c8,&uStack_48,0x12,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 58,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 74,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_5c,&uStack_20,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 76,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00621070,&piStack_2c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_00621070",
+      "severity": "mild",
+      "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00621070,&piStack_2c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 79,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 84,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_0061bf50",
+      "severity": "mild",
+      "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_0264a5d4",
+      "severity": "mild",
+      "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 86,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 90,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_2c + 8))(piStack_2c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf60,0,0,0,&uStack_28,4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_0061bf60",
+      "severity": "mild",
+      "text": "(**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf60,0,0,0,&uStack_28,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 126,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc,uVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 129,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_84,&DAT_0264a5cc,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_0264a5cc",
+      "severity": "mild",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_84,&DAT_0264a5cc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 151,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x555849 assigned to bare local `uVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 111,
+      "match": "0x555849",
+      "severity": "moderate",
+      "text": "uVar3 = 0x555849;",
+      "type": "raw_address_constant"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 12,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,18 +1,18 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 50,
+    "assembly_lines": 215,
     "complexity_score": 149,
     "cross_reference_count": 0,
-    "function_call_count": 4,
-    "global_count": 0,
+    "function_call_count": 5,
+    "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
     "suspect_count": 4,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 154
+    "total_lines": 319
   },
   "cross_references": [],
   "function": {
@@ -20,14 +20,6 @@
     "address_range": [
       [
         "004c51e0",
-        "004c5212"
-      ],
-      [
-        "004c5269",
-        "004c5292"
-      ],
-      [
-        "004c53e2",
         "004c5404"
       ]
     ],
@@ -52,12 +44,174 @@
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0"
     },
     {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    },
+    {
       "addr": "004c5c60",
       "is_variadic": false,
       "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "005e0aff",
+      "name": "s_frankxbed_kfm_005e0aff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b0d",
+      "name": "s_frankxbed_pth_005e0b0d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b0e",
+      "name": "s_frankxbed_pth_005e0b0d+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b0f",
+      "name": "s_frankxbed_pth_005e0b0d+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b10",
+      "name": "s_frankxbed_pth_005e0b0d+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b1b",
+      "name": "s_frankxbody_kfm_005e0b1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b2a",
+      "name": "s_frankxcrn1_kfm_005e0b2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b39",
+      "name": "s_frankxcrn2_kfm_005e0b39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b48",
+      "name": "s_frankxcrn3_kfm_005e0b48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b57",
+      "name": "s_frankxstch_kfm_005e0b57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b66",
+      "name": "s_frankxarm_kfm_005e0b66",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b74",
+      "name": "s_frankxflap1_kfm_005e0b74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b84",
+      "name": "s_frankxflap1_pth_005e0b84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0b85",
+      "name": "s_frankxflap1_pth_005e0b84+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b86",
+      "name": "s_frankxflap1_pth_005e0b84+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b87",
+      "name": "s_frankxflap1_pth_005e0b84+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0b94",
+      "name": "s_frankxflap2_kfm_005e0b94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0ba4",
+      "name": "s_frankxflap2_pth_005e0ba4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0ba5",
+      "name": "s_frankxflap2_pth_005e0ba4+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0ba6",
+      "name": "s_frankxflap2_pth_005e0ba4+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0ba7",
+      "name": "s_frankxflap2_pth_005e0ba4+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0bb4",
+      "name": "s_frankxramp_kfm_005e0bb4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0bc3",
+      "name": "s_frankxramp_pth_005e0bc3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0bc4",
+      "name": "s_frankxramp_pth_005e0bc3+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0bc5",
+      "name": "s_frankxramp_pth_005e0bc3+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0bc6",
+      "name": "s_frankxramp_pth_005e0bc3+3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -68,38 +222,39 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.15,
-    "instruction_count": 40,
+    "avg_pcode_per_instr": 3.9625,
+    "instruction_count": 160,
     "opcode_distribution": {
-      "BOOL_NEGATE": 2,
+      "BOOL_NEGATE": 6,
       "BOOL_OR": 1,
+      "BRANCH": 8,
       "BRANCHIND": 1,
-      "CALL": 5,
-      "CBRANCH": 2,
-      "COPY": 32,
-      "INT_ADD": 22,
-      "INT_AND": 15,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 14,
-      "INT_LESS": 1,
+      "CALL": 16,
+      "CBRANCH": 10,
+      "COPY": 102,
+      "INT_ADD": 70,
+      "INT_AND": 69,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 68,
+      "INT_LESS": 9,
       "INT_MULT": 1,
-      "INT_SBORROW": 1,
-      "INT_SCARRY": 5,
-      "INT_SLESS": 7,
-      "INT_SUB": 15,
-      "LOAD": 12,
-      "POPCOUNT": 7,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 34,
+      "INT_SUB": 59,
+      "LOAD": 24,
+      "POPCOUNT": 34,
       "RETURN": 2,
-      "STORE": 16
+      "STORE": 63
     },
-    "pcode_op_count": 166
+    "pcode_op_count": 634
   },
   "siblings": {
     "blairwitch2.exe": {
       "addr": "004ac230",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.4
+      "class": "layout-drift",
+      "ratio": 1.0
     },
     "nocedit.exe": {
       "addr": "004d17b0",

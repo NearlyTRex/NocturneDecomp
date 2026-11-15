@@ -120,7 +120,7 @@ section .text
     ADD ESP,0xc                         ; 004454e3
     PUSH EBX                            ; 004454e6
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004454e7
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004454ec
     ADD ESP,0x1004                      ; 004454ef
     POP EBP                             ; 004454f5

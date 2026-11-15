@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
   float afStackY_1050 [1015];
   CVector3f *vector_ptr;
   char *property_name;
-  float local_68;
+  CVector3f *in_stack_ffffff98;
   float local_5c;
   CVector3f local_50;
   COrientation local_44;
@@ -71,14 +71,17 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
           core_actor_cpp_archiveInteger_FUN_0040b670(&local_14,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b6f0
                     (&this_ptr->carry_hands[local_14].carry_actor,"carry actor");
-          core_xform_cpp_FUN_005b6270(&this_ptr->carry_hands[local_14].initial_carry_transform);
+          core_xform_cpp_getTranslation_FUN_005b6270
+                    (&this_ptr->carry_hands[local_14].initial_carry_transform,
+                     (CVector3f *)&stack0xffffff98);
           pSVar1 = this_ptr->carry_hands + local_14;
-          local_2c.x = local_68;
+          local_2c.x = (float)in_stack_ffffff98;
           *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4) =
                *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
           *(uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-          core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&pSVar1->initial_carry_transform);
+          core_xform_cpp_matrixToEulerAngles_FUN_005b5930
+                    (&pSVar1->initial_carry_transform,in_stack_ffffff98);
           property_name = "carry pos";
           vector_ptr = &local_2c;
           local_38.pitch = local_5c;

@@ -32,7 +32,7 @@ void __cdecl engine_2d_c_drawVLine_FUN_00403040(int x,int y1,int y2)
 LAB_0040313e:
           _DAT_01d1d400 = "..\\engine\\2d.c";
           _DAT_01d1d404 = 0x8d3;
-          core_main_c_FUN_005030e0("vLine - invalid bitsPerPixel");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("vLine - invalid bitsPerPixel");
           return;
         }
         for (; iVar5 <= iVar2; iVar5 = iVar5 + 4) {

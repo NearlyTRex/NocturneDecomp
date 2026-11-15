@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5dbcc2                       ; 00493426 | = "CInputString::calcX - string too big ..."
     MOV dword ptr [0x01d1d400],EDI      ; 0049342b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00493431 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00493437
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493437
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049343c
     PUSH EBX                            ; 0049343f
         ;   Label: LAB_0049343f

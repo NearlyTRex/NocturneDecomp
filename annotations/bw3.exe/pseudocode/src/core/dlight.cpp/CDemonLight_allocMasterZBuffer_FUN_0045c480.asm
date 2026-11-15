@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_getRestoreMemory_FUN_0045c400
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_watcom.c__memcpy_FUN_00495f68
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5bb29d                       ; 0045c4dc | = "CDemonLight::allocMasterZBuffer - We ..."
     MOV dword ptr [0x01d71de0],ECX      ; 0045c4e1 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0045c4e7 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c4ed
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c4ed
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c4f2
     POP ESI                             ; 0045c4f5
     JMP 0x0045c48f                      ; 0045c4f6

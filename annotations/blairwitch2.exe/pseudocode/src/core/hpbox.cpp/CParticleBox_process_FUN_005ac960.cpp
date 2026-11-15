@@ -53,7 +53,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
   uint uStack_128;
   uint uStack_124;
   uint uStack_120;
-  float fStack_11c;
+  CVector3f CStack_11c;
   uint uStack_110;
   uint uStack_10c;
   uint uStack_108;
@@ -61,9 +61,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
   uint uStack_f8;
   uint uStack_f4;
   uint uStack_f0;
-  float fStack_ec;
-  float fStack_e8;
-  float fStack_e4;
+  CVector3f CStack_ec;
   float afStack_e0 [3];
   uint uStack_d4;
   uint uStack_d0;
@@ -71,18 +69,14 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
   uint uStack_c8;
   uint uStack_c4;
   uint uStack_c0;
-  float fStack_bc;
-  float afStack_b8 [5];
-  float fStack_a4;
-  float fStack_a0;
-  float fStack_9c;
+  CVector3f CStack_bc;
+  CVector3f CStack_b0;
+  CVector3f CStack_a4;
   float fStack_98;
-  float afStack_94 [5];
-  uint uStack_80;
-  float fStack_7c;
-  float fStack_78;
-  float fStack_74;
-  uint auStack_70 [2];
+  float afStack_94 [2];
+  CVector3f CStack_8c;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
   uint uStack_68;
   uint uStack_64;
   uint uStack_60;
@@ -167,19 +161,20 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       do {
         iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
         if (iVar2 != 0) {
-          afStack_94[4] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
-          afStack_94[4] = afStack_94[4] * _DAT_005f0eab;
-          afStack_94[2] = 0.0;
-          afStack_94[3] = 0.0;
-          fStack_3c = afStack_94[4];
-          core_actor_cpp_FUN_00408cf0();
+          CStack_8c.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
+          CStack_8c.z = CStack_8c.z * _DAT_005f0eab;
+          CStack_8c.x = 0.0;
+          CStack_8c.y = 0.0;
+          fStack_3c = CStack_8c.z;
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)this_ptr,&CStack_8c,&CStack_b0);
           fVar5 = 1.0;
           fVar4 = 0.0;
-          fStack_170 = afStack_b8[2];
-          *(float *)(&stack0xfffffe94 + (uint)bVar6 * -8) = afStack_b8[(uint)bVar6 * 0xfffffffe + 3]
-          ;
-          *(float *)(&stack0xfffffe98 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-               afStack_b8[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 4];
+          fStack_170 = CStack_b0.x;
+          *(uint *)(&stack0xfffffe94 + (uint)bVar6 * -8) =
+               *(uint *)((int)&CStack_b0 + (uint)bVar6 * -8 + 4);
+          *(uint *)(&stack0xfffffe98 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+               *(uint *)((int)&CStack_b0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar4,fVar5);
           if (fVar4 <= (float)_DAT_005f0ec3) {
             if (&stack0x00000000 != (byte *)0x26537e0) {
@@ -219,20 +214,21 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
           fStack_54 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
           fStack_3c = fStack_54 * _DAT_005f0eaf;
           fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.2);
-          fStack_a4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.2);
+          CStack_a4.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.2);
           fStack_50 = fStack_20;
-          fStack_a0 = fStack_20;
-          fStack_9c = fStack_3c;
-          fStack_48 = fStack_a4;
-          core_actor_cpp_FUN_00408cf0();
+          CStack_a4.y = fStack_20;
+          CStack_a4.z = fStack_3c;
+          fStack_48 = CStack_a4.x;
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)this_ptr,&CStack_a4,&CStack_bc);
           fVar4 = fStack_54 * (float)_DAT_005f0eb3;
           max_value = -0.5;
           fVar5 = 0.3;
-          fStack_134 = fStack_bc;
-          *(float *)((int)&stack0xfffffed0 + (uint)bVar6 * 0xfffffffe * 4) =
-               afStack_b8[(uint)bVar6 * 0xfffffffe];
-          *(float *)(&stack0xfffffed4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-               afStack_b8[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 1];
+          fStack_134 = CStack_bc.x;
+          *(uint *)((int)&stack0xfffffed0 + (uint)bVar6 * 0xfffffffe * 4) =
+               *(uint *)((int)&CStack_bc + (uint)bVar6 * -8 + 4);
+          *(uint *)(&stack0xfffffed4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+               *(uint *)((int)&CStack_bc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           fStack_3c = fVar4;
           afStack_104[0] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar5,max_value);
           afStack_104[1] = 0.0;
@@ -258,12 +254,13 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       this_ptr->emit_timer = 0.05;
       core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
       fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-4.5,4.5);
-      fStack_7c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,-10.0);
+      CStack_80.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,-10.0);
       fStack_40 = fStack_20;
-      uStack_80 = 0;
-      fStack_78 = fStack_20;
-      fStack_44 = fStack_7c;
-      core_actor_cpp_FUN_00408cf0();
+      CStack_80.x = 0.0;
+      CStack_80.z = fStack_20;
+      fStack_44 = CStack_80.y;
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                ((CDemonActor *)this_ptr,&CStack_80,&CStack_11c);
       uVar18 = 0;
       puVar17 = (uint *)0x0;
       pfVar16 = &stack0xfffffeb4;
@@ -274,12 +271,11 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       uVar11 = 0;
       uVar10 = 0x3f000000;
       uVar9 = 0;
-      fStack_98 = fStack_11c;
-      afStack_94[(uint)bVar6 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xfffffee8 + (uint)bVar6 * 0xfffffffe * 4);
+      fStack_98 = CStack_11c.x;
+      afStack_94[(uint)bVar6 * -2] = *(float *)((int)&CStack_11c + (uint)bVar6 * -8 + 4);
       pCVar1 = pCStack_2c;
-      afStack_94[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 1] =
-           (float)*(uint *)(&stack0xfffffeec + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           *(float *)((int)&CStack_11c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       fStack_14c = 0.0;
       fStack_148 = -0.1;
       fStack_144 = 0.0;
@@ -293,18 +289,19 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
         if (iVar3 != 0) {
           fStack_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-4.0,4.0);
           fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-5.8,-6.2);
-          fStack_ec = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.6,0.8);
+          CStack_ec.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.6,0.8);
           fStack_34 = fStack_20;
           fStack_30 = fStack_3c;
-          fStack_e8 = fStack_20;
-          fStack_e4 = fStack_3c;
-          fStack_38 = fStack_ec;
-          core_actor_cpp_FUN_00408cf0();
-          fStack_158 = fStack_74;
-          (&stack0xfffffeac)[(uint)bVar6 * 0xfffffffe] = (float)auStack_70[(uint)bVar6 * 0xfffffffe]
-          ;
+          CStack_ec.y = fStack_20;
+          CStack_ec.z = fStack_3c;
+          fStack_38 = CStack_ec.x;
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)this_ptr,&CStack_ec,&CStack_74);
+          fStack_158 = CStack_74.x;
+          (&stack0xfffffeac)[(uint)bVar6 * 0xfffffffe] =
+               (float)*(uint *)((int)&CStack_74 + (uint)bVar6 * -8 + 4);
           *(uint *)((int)&stack0xfffffeb0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-               auStack_70[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 1];
+               *(uint *)((int)&CStack_74 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           if (&fStack_98 != &stack0xfffffea8) {
             fStack_98 = fStack_158;
             afStack_94[0] = fStack_154;

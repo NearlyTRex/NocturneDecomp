@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5e703a                       ; 00543164 | = "Can't find part %s in model %s"
     MOV dword ptr [0x01d046a0],ESI      ; 00543169 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0054316f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00543174
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00543174
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00543179
     MOV EAX,0xffffffff                  ; 0054317c
     POP EBP                             ; 00543181

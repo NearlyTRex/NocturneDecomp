@@ -26,7 +26,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
@@ -420,7 +420,7 @@ section .text
     PUSH EDX                            ; 004372af | DAT_01d182f0
     ADD ESI,0x48                        ; 004372b0
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004372b3
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     MOV dword ptr [ESI + 0x10c14],0x0   ; 004372b8
     INC EDI                             ; 004372c2
     MOV ECX,dword ptr [EBX + 0x10c14]   ; 004372c3
@@ -745,8 +745,8 @@ section .text
     PUSH 0x265370c                      ; 0043766e | DAT_0265370c
     FSTP float ptr [EBP + 0xfffffe7a]   ; 00437673
     MOV dword ptr [EBP + 0x76],EDX      ; 00437679
-    CALL core_xform.cpp_FUN_00591530    ; 0043767c
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0043767c
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00437681
     LEA EAX,[EBP + 0xffffff02]          ; 00437684
     LEA ESI,[EBP + 0xffffff32]          ; 0043768a
@@ -756,8 +756,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00437693
     PUSH EBX                            ; 00437694
     LEA ESI,[EBP + 0xfffffede]          ; 00437695
-    CALL core_actor.cpp_FUN_00408d70    ; 0043769b
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0043769b
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004376a0
     LEA EAX,[EBP + -0x1a]               ; 004376a3
     PUSH EAX                            ; 004376a6
@@ -783,8 +783,8 @@ section .text
     PUSH 0x265370c                      ; 004376e0 | DAT_0265370c
     LEA ESI,[EBP + 0xffffff62]          ; 004376e5
     LEA EDI,[EBP + 0xa]                 ; 004376eb
-    CALL core_xform.cpp_FUN_00591530    ; 004376ee
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004376ee
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004376f3
     LEA EAX,[EBP + 0xa]                 ; 004376f6
     LEA ESI,[EBP + 0xffffff62]          ; 004376f9
@@ -794,8 +794,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00437702
     PUSH EBX                            ; 00437703
     LEA ESI,[EBP + -0xe]                ; 00437704
-    CALL core_actor.cpp_FUN_00408d70    ; 00437707
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00437707
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0043770c
     LEA EAX,[EBP + -0x32]               ; 0043770f
     PUSH EAX                            ; 00437712

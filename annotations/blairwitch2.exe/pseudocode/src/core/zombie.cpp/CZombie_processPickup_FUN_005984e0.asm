@@ -38,14 +38,14 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_bodypart.cpp_FUN_00417b20
 ;   core_bodypart.cpp_FUN_00417ba0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_zombie.cpp_classifyObjectShape_FUN_00595910
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_00598ee0
@@ -307,8 +307,8 @@ section .text
     LEA EBX,[ESP + 0x15c]               ; 0059880f
     LEA ESI,[ESP + 0x12c]               ; 00598816
     LEA EDI,[ESP + 0x1a4]               ; 0059881d
-    CALL core_actor.cpp_FUN_00408d70    ; 00598824
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00598824
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x12c]               ; 00598829
     ADD ESP,0x8                         ; 00598830
     LEA EAX,[ESP + 0x19c]               ; 00598833
@@ -472,8 +472,8 @@ section .text
     LEA EBX,[ESP + 0x168]               ; 00598a69
     LEA ESI,[ESP + 0x108]               ; 00598a70
     LEA EDI,[ESP + 0x168]               ; 00598a77
-    CALL core_actor.cpp_FUN_00408d70    ; 00598a7e
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00598a7e
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x108]               ; 00598a83
     ADD ESP,0x8                         ; 00598a8a
     LEA EAX,[ESP + 0x154]               ; 00598a8d
@@ -594,8 +594,8 @@ section .text
     PUSH 0x5ef252                       ; 00598bc4 | = "Invalid zombie object shape!"
     MOV [0x01d046a0],EAX                ; 00598bc9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00598bce | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00598bd4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00598bd4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00598bd9
     MOV EAX,0x1                         ; 00598bdc
     MOV ESP,EBP                         ; 00598be1

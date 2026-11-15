@@ -45,12 +45,11 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,f
   float fStack_74;
   CVector3f CStack_70;
   CVector3f CStack_64;
-  uint uStack_58;
+  float fStack_58;
   float afStack_54 [5];
-  uint uStack_40;
+  CVector3f CStack_40;
   float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_30 [2];
   CVector3f CStack_28;
   CCharacter_full_vtable *pCStack_1c;
   float fStack_18;
@@ -251,12 +250,12 @@ LAB_004f0f65:
     afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10] =
          afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
     fStack_34 = fStack_7c + (this_ptr->base).base.position_delta.x;
-    fStack_30 = fStack_78 + (this_ptr->base).base.position_delta.y;
-    fStack_2c = fStack_74 + (this_ptr->base).base.position_delta.z;
+    afStack_30[0] = fStack_78 + (this_ptr->base).base.position_delta.y;
+    afStack_30[1] = fStack_74 + (this_ptr->base).base.position_delta.z;
     afStack_9c[2] = fStack_34;
-    afStack_9c[(uint)bVar12 * -2 + 3] = afStack_54[(uint)bVar12 * -2 + 9];
+    afStack_9c[(uint)bVar12 * -2 + 3] = afStack_30[(uint)bVar12 * -2];
     afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
-         afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10];
+         afStack_30[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
     CStack_64.x = CStack_64.x + afStack_9c[2];
     CStack_64.y = CStack_64.y + afStack_9c[3];
     CStack_64.z = CStack_64.z + fStack_8c;
@@ -264,12 +263,13 @@ LAB_004f0f65:
     goto LAB_004f111a;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {
-    core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar6->location);
-    uStack_58 = uStack_40;
-    afStack_54[(uint)bVar12 * -2] = afStack_54[(uint)bVar12 * -2 + 6];
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+              ((CDemonActor *)this_ptr,&(pCVar6->location).position,&CStack_40);
+    fStack_58 = CStack_40.x;
+    afStack_54[(uint)bVar12 * -2] = *(float *)((int)&CStack_40 + (uint)bVar12 * -8 + 4);
     afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-         afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&uStack_58);
+         *(float *)((int)&CStack_40 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&fStack_58);
     afStack_54[2] = (float)uStack_88;
     afStack_54[(uint)bVar12 * -2 + 3] = afStack_9c[(uint)bVar12 * -2 + 6];
     afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =

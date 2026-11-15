@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 360,
+    "complexity_score": 391,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
-    "suspect_count": 18,
+    "pseudocode_lines": 161,
+    "suspect_count": 20,
     "suspect_types": [
-      "extra_output",
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
       "stack_alignment_array",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 470
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -407,72 +409,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "int *extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "int *extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
-      "match": "aiStackY_105c",
+      "line": 17,
+      "match": "afStackY_105c",
       "severity": "moderate",
-      "text": "int aiStackY_105c [3];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
-      "match": "afStackY_1050",
-      "severity": "moderate",
-      "text": "float afStackY_1050 [3];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
-      "match": "aiStackY_1044",
-      "severity": "moderate",
-      "text": "int aiStackY_1044 [6];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
-      "match": "afStackY_102c",
-      "severity": "moderate",
-      "text": "float afStackY_102c [1001];",
+      "text": "float afStackY_105c [1007];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 40,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "text": "iVar7 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&CStack_80);",
@@ -480,7 +434,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLTextureBasic *)0x622730);",
@@ -495,35 +449,43 @@
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "((SProjectedVertex *)*extraout_EDX,pCVar9);",
-      "type": "extra_output"
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar6 = DAT_00612560;",
+      "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 121,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar9);",
-      "type": "extra_output"
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar6 = DAT_00612560;",
+      "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 128,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar9);",
-      "type": "extra_output"
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar6 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 130,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar6 = DAT_00612560;",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 136,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "this_ptr_00 = DAT_00612560;",
+      "text": "pCVar6 = DAT_00612560;",
       "type": "undefined_data"
     },
     {
@@ -531,16 +493,72 @@
       "line": 137,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "DAT_00612560->vertex_buffer_ptr->r = iStack_28;",
+      "text": "DAT_00612560->vertex_buffer_ptr->r = (int)afStack_40[0];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 163,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&CStack_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)&CStack_64",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_64 + (uint)bVar8 * -8) = afStack_40[(uint)bVar8 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x534d03 assigned to bare local `uStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 49,
+      "match": "0x534d03",
+      "severity": "moderate",
+      "text": "uStack_8c = 0x534d03;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x534d1c assigned to bare local `uStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 52,
+      "match": "0x534d1c",
+      "severity": "moderate",
+      "text": "uStack_8c = 0x534d1c;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x534da3 assigned to bare local `uStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 72,
+      "match": "0x534da3",
+      "severity": "moderate",
+      "text": "uStack_8c = 0x534da3;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x534efa assigned to bare local `uStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 108,
+      "match": "0x534efa",
+      "severity": "moderate",
+      "text": "uStack_8c = 0x534efa;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x534e40 assigned to bare local `uStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 162,
+      "match": "0x534e40",
+      "severity": "moderate",
+      "text": "uStack_8c = 0x534e40;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 98,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_64 + (uint)bVar8 * -8) = afStack_40[(uint)bVar8 * -2];",
+      "type": "pointer_cast"
     }
   ]
 }

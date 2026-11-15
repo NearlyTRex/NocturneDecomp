@@ -51,7 +51,7 @@ section .text
     FDIV double ptr [EDX + EAX*0x8 + 0x6011b8] ; 005021de | DAT_006011b8
     MOV EAX,dword ptr [ESP + 0x14]      ; 005021e5
     CALL crt_math.c_round_FUN_005a3120  ; 005021e9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     MOV EDX,dword ptr [EAX]             ; 005021ee
     FISTP dword ptr [ESP]               ; 005021f0
     TEST EDX,EDX                        ; 005021f3

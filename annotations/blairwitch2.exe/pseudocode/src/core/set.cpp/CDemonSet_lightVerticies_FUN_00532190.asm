@@ -106,7 +106,7 @@
 ;   ... and 44 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_00531460
 ;   core_set.cpp_transformToWorldSpace_FUN_00531f60
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -135,8 +135,8 @@ section .text
     PUSH 0x5e5a61                       ; 005321ba | = "CDemonSet::lightVerticies - tried to ..."
     MOV dword ptr [0x01d046a0],ECX      ; 005321bf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 005321c5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005321cb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005321cb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005321d0
     MOV EDI,dword ptr [0x0060b280]      ; 005321d3 | DAT_0060b280
         ;   Label: LAB_005321d3
@@ -957,8 +957,8 @@ section .text
     PUSH 0x5e5ac6                       ; 00532b83 | = "Too many normals on this packed tri list"
     MOV dword ptr [0x01d046a0],EDI      ; 00532b88 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00532b8e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00532b93
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00532b93
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00532b98
     CMP dword ptr [EBP + 0x1c],0xfa0    ; 00532b9b
         ;   Label: LAB_00532b9b
@@ -969,8 +969,8 @@ section .text
     PUSH 0x5e5aff                       ; 00532bae | = "Need more normals for packed models"
     MOV dword ptr [0x01d046a0],ECX      ; 00532bb3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00532bb9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00532bbf
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00532bbf
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00532bc4
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00532bc7
         ;   Label: LAB_00532bc7

@@ -32,7 +32,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     PUSH 0x5dc889                       ; 004ea54d | = "Too many 3D windows"
     MOV dword ptr [0x01d046a0],EBX      ; 004ea552 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004ea558 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004ea55e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ea55e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ea563
     POP EBX                             ; 004ea566
     POP ESI                             ; 004ea567

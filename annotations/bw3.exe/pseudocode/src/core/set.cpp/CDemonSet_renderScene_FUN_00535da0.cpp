@@ -302,7 +302,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
               (g_CConsolePtr,"@comp: %3.2f/%3.2f actren : %3.2f\n" + 1);
   }
   if (g_CGamePtr->debug_toggle_flag != 0) {
-    core_setdir_cpp_FUN_00540eb0();
+    core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0(this_ptr);
   }
   iVar5 = 0;
   pCVar4 = this_ptr;

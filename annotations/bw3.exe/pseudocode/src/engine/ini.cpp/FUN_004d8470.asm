@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fopen_FUN_005a43ec
@@ -172,7 +172,7 @@ section .text
     PUSH EDI                            ; 004d85a0
         ;   Label: LAB_004d85a0
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004d85a1
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004d85a6
     TEST EBP,EBP                        ; 004d85a9
     JZ 0x004d8630                       ; 004d85ab
@@ -190,8 +190,8 @@ section .text
     PUSH 0x5c56c6                       ; 004d85c8 | = "cIni::FindLineNumberOfVariable: Unabl..."
     MOV dword ptr [0x01d71de0],ECX      ; 004d85cd | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004d85d3 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004d85d9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d85d9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d85de
     JMP 0x004d84aa                      ; 004d85e1
         ;   XREF to: 004d84aa (UNCONDITIONAL_JUMP)  ; LAB_004d84aa

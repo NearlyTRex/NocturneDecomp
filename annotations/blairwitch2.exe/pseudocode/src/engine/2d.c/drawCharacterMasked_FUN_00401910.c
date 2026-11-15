@@ -1,15 +1,14 @@
 // Name: engine_2d.c_drawCharacterMasked_FUN_00401910
 // Address: 00401910
 // Address Range: [[00401910, 00401a1c]]
-// Convention: unknown
-// Signature: int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
+// Convention: __cdecl
+// Signature: int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
+int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 {
   char *pcVar1;
@@ -20,25 +19,21 @@ int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
   ushort uVar6;
   uint uVar7;
   int iVar8;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
-  iVar3 = (in_stack_00000004 + -0x20) * 0x91;
+  iVar3 = (char_code + -0x20) * 0x91;
   uVar7 = (uint)(byte)(&DAT_00601440)[iVar3];
-  if ((((in_stack_00000008 < _DAT_01c35e48) || (in_stack_0000000c < _DAT_01c35e4c)) ||
-      ((int)((_DAT_01c35e50 + 1) - uVar7) < in_stack_00000008)) ||
-     (_DAT_01c35e54 + -10 < in_stack_0000000c)) {
+  if ((((x_pos < _DAT_01c35e48) || (y_pos < _DAT_01c35e4c)) ||
+      ((int)((_DAT_01c35e50 + 1) - uVar7) < x_pos)) || (_DAT_01c35e54 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
-    iVar8 = in_stack_0000000c * 4;
+    iVar8 = y_pos * 4;
     pcVar1 = &DAT_00601441 + iVar3;
     iVar3 = iVar8 + 0x2c;
     if (DAT_006141c0 == 8) {
       do {
         iVar2 = 0;
-        puVar5 = (byte *)(*(int *)(&DAT_01c2a38c + iVar8) + in_stack_00000008);
+        puVar5 = (byte *)(*(int *)(&DAT_01c2a38c + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
             if (*pcVar1 == '\0') {
@@ -58,7 +53,7 @@ int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
     }
     else {
       do {
-        puVar4 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar8) + in_stack_00000008 * 2);
+        puVar4 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar8) + x_pos * 2);
         iVar2 = 0;
         if (uVar7 != 0) {
           do {

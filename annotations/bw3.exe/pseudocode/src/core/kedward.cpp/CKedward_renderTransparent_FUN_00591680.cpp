@@ -15,17 +15,16 @@ int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *t
   float fVar2;
   CDemonRenderer *this_ptr_00;
   int unaff_ESI;
-  float10 fVar3;
-  ulonglong uVar4;
+  double dVar3;
   
   fVar2 = (float)this_ptr->fade_out_opacity * (float)_DAT_005d8ebc * (float)_DAT_005d8ec4;
   if (this_ptr->fading_in == 0) {
-    fVar3 = ((float10)fVar2 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time;
-    uVar4 = round();
-    this_ptr->render_alpha = (int)uVar4 - (int)ROUND(fVar3);
+    dVar3 = round
+                      ((double)((fVar2 * this_ptr->fade_timer) / this_ptr->max_fade_time));
+    this_ptr->render_alpha = 0x10000 - (int)ROUND(dVar3);
     if (this_ptr->cini_flag == 0) {
       if (this_ptr->fade_timer == this_ptr->max_fade_time) {
-        this_ptr->fade_state = (int)((ulonglong)uVar4 >> 0x20);
+        this_ptr->fade_state = 0;
       }
       else {
         this_ptr->fade_state = -1;
@@ -33,12 +32,12 @@ int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *t
     }
   }
   else {
-    fVar3 = ((float10)fVar2 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time +
-            (float10)(((float)_DAT_005d8eb4 - (float)this_ptr->fade_out_opacity) *
-                      (float)_DAT_005d8ebc * (float)_DAT_005d8ec4);
     iVar1 = this_ptr->cini_flag;
-    round();
-    this_ptr->render_alpha = (int)ROUND(fVar3);
+    dVar3 = round
+                      ((double)((fVar2 * this_ptr->fade_timer) / this_ptr->max_fade_time +
+                               ((float)_DAT_005d8eb4 - (float)this_ptr->fade_out_opacity) *
+                               (float)_DAT_005d8ebc * (float)_DAT_005d8ec4));
+    this_ptr->render_alpha = (int)ROUND(dVar3);
     if (iVar1 == 0) {
       if (this_ptr->fade_timer == this_ptr->max_fade_time) {
         this_ptr->fade_state = 1;

@@ -65,7 +65,9 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00558050(void)
                *(uint *)(_DAT_02cf28b8 * 4 + 0x2cf2860),
                *(uint *)(_DAT_02cf28b8 * 4 + 0x2cf2868));
     (**(code **)(*_DAT_02cf3280 + 0x28))(_DAT_02cf3280,DAT_00604240);
-    (**(code **)(*_DAT_02cf3280 + 0x2c))(_DAT_02cf3280,_DAT_02cf3400,_DAT_02cf3404,_DAT_02cf3408);
+    (**(code **)(*_DAT_02cf3280 + 0x2c))
+              (_DAT_02cf3280,g_CachedReverb.volume,g_CachedReverb.decay_time,g_CachedReverb.damping)
+    ;
     _DAT_02cf3420 = wincore_winrun_cpp_getTime_FUN_005806a0();
     iVar3 = (**(code **)(*_DAT_02cf3280 + 4))(_DAT_02cf3280);
     if (iVar3 != 0) {

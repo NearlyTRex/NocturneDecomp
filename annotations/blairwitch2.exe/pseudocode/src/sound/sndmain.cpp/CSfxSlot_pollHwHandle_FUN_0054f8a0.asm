@@ -18,7 +18,7 @@
 ;   undefined4 DAT_02648e80
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00550010
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5e8881                       ; 0054f8ca | = "SfxSlot::pollHwHandle - no sample?"
     MOV dword ptr [0x01d046a0],EDI      ; 0054f8cf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0054f8d5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054f8db
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054f8db
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054f8e0
     POP EDI                             ; 0054f8e3
     PUSH EBX                            ; 0054f8e4

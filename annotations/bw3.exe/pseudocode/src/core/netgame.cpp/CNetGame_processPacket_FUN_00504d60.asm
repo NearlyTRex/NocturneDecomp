@@ -64,7 +64,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_00505950
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00506b00
@@ -1041,8 +1041,8 @@ section .text
     PUSH 0x5caaa1                       ; 00505702 | = "Player list mismatch!"
     MOV dword ptr [0x01d71de0],EDX      ; 00505707 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0050570d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00505713
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00505713
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505718
     IMUL ESI,ESI,0x34                   ; 0050571b
         ;   Label: LAB_0050571b
@@ -1078,8 +1078,8 @@ section .text
     PUSH 0x5ca44f                       ; 0050577d | = "allocSimFrame - sim history list full"
     MOV dword ptr [0x01d71de0],EDX      ; 00505782 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00505788 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0050578e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050578e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505793
     MOV EDX,dword ptr [0x01dc5c80]      ; 00505796 | DAT_01dc5c80
         ;   Label: LAB_00505796
@@ -1109,8 +1109,8 @@ section .text
     PUSH 0x5caa55                       ; 005057e4 | = "Player list mismatch processing SimFr..."
     MOV dword ptr [0x01d71de0],EDI      ; 005057e9 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 005057ef | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005057f4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005057f4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005057f9
     JMP 0x005056f4                      ; 005057fc
         ;   XREF to: 005056f4 (UNCONDITIONAL_JUMP)  ; LAB_005056f4

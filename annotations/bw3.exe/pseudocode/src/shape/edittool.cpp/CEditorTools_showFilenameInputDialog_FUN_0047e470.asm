@@ -42,7 +42,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c_strupr_FUN_005a5b10
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047e4a2 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d71de0],ESI      ; 0047e4a7 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0047e4ad | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047e4b3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047e4b3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047e4b8
     MOV EAX,[0x01c5b0e0]                ; 0047e4bb | DAT_01c5b0e0
         ;   Label: LAB_0047e4bb

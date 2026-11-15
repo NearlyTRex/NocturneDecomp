@@ -43,7 +43,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40(CMansio
   bVar10 = 0;
   fVar11 = (delta_time * _DAT_005dc5e9) / _DAT_005f98c4;
   pSVar9 = this_ptr->gems + gem_index;
-  core_actor_cpp_FUN_00408d70(this_ptr,&pSVar9->position);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            (&this_ptr->base,&pSVar9->position,(CVector3f *)&stack0xffffffb8);
   world_position = (CVector3f *)&stack0xffffffc4;
   wav_filename = "p?manpuz-chargegemloop-red.wav" + 2;
   sfx_handle = pSVar9->sfx_handles;

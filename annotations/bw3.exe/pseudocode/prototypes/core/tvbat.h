@@ -39,7 +39,7 @@ int __cdecl CTVBat::renderOpaque(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_getBoundingBox_FUN_00576070
 // Address: 00576070
-CBoundingBox3D * __cdecl CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_tvbat.cpp_CTVBat_getCollisionType_FUN_005760d0
 // Address: 005760d0

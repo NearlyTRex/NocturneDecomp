@@ -22,7 +22,7 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_0041fa20(CBugs *this_ptr,
   if (700 < this_ptr->swarm_vertex_count) {
     _DAT_01d046a0 = "..\\core\\bugs.cpp";
     _DAT_01d046a4 = 0x1bd;
-    core_main_c_FUN_004e4500("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
   pSVar3 = this_ptr->swarm_vertices + vertex_index;
   iVar1 = pSVar3->edge_count;

@@ -11,4 +11,4 @@ void __cdecl staticInit(void);
 
 // Original: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 // Address: 005838f0
-float * convertDirectionVectorToEulerAngles(uint *param_1);
+float * convertDirectionVectorToEulerAngles(float *param_1);

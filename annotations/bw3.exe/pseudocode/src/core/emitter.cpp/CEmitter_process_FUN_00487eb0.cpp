@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,float delta_time)
@@ -43,9 +42,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   float fStack_174;
   float fStack_170;
   float fStack_16c;
-  float fStack_168;
-  float fStack_164;
-  uint uStack_160;
+  CVector3f CStack_168;
   uint uStack_15c;
   CVector3f CStack_158;
   CVector3f CStack_14c;
@@ -59,8 +56,9 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   uint uStack_10c;
   uint uStack_108;
   CVector3f CStack_104;
-  uint uStack_f8;
-  float afStack_f4 [7];
+  float fStack_f8;
+  float afStack_f4 [2];
+  CVector3f CStack_ec;
   CVector3f CStack_d8;
   float fStack_cc;
   float afStack_c8 [4];
@@ -72,7 +70,8 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   float afStack_84 [4];
   float afStack_74 [5];
   float fStack_60;
-  float afStack_5c [8];
+  float afStack_5c [2];
+  CVector3f aCStack_54 [2];
   float fStack_3c;
   float fStack_38;
   float fStack_24;
@@ -181,25 +180,27 @@ LAB_00487f67:
          afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
               (this_ptr_00,position,euler_angles,iVar7,iVar4,flame_style);
-    iVar7 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-    afStack_c8[3] = *(float *)(iVar7 + 0x20) - (this_ptr->base).location.position.x;
-    fStack_b8 = *(float *)(iVar7 + 0x24) - (this_ptr->base).location.position.y;
-    fStack_b4 = *(float *)(iVar7 + 0x28) - (this_ptr->base).location.position.z;
+    pCVar2 = *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
+    pCVar1 = &(this_ptr->base).location;
+    afStack_c8[3] = (pCVar2->location).position.x - (pCVar1->position).x;
+    fStack_b8 = (pCVar2->location).position.y - (this_ptr->base).location.position.y;
+    fStack_b4 = (pCVar2->location).position.z - (this_ptr->base).location.position.z;
     CStack_90.y = afStack_c8[3];
     afStack_84[(uint)bVar10 * -2 + -1] = afStack_c8[(uint)bVar10 * -2 + 4];
     afStack_84[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
          afStack_c8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
     if (SQRT(afStack_84[0] * afStack_84[0] + CStack_90.y * CStack_90.y + CStack_90.z * CStack_90.z)
         < (float)_DAT_005bda4c) {
-      core_actor_cpp_FUN_00408bf0();
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(pCVar2,&pCVar1->position,&CStack_ec)
+      ;
       uVar19 = 0x40000000;
       uVar17 = 0x13f800000;
       uVar16 = 0;
-      uVar15 = CONCAT44(&uStack_f8,*(uint *)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
-      uStack_f8 = afStack_f4[2];
-      afStack_f4[(uint)bVar10 * -2] = afStack_f4[(uint)bVar10 * -2 + 3];
+      uVar15 = CONCAT44(&fStack_f8,*(uint *)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
+      fStack_f8 = CStack_ec.x;
+      afStack_f4[(uint)bVar10 * -2] = *(float *)((int)&CStack_ec + (uint)bVar10 * -8 + 4);
       afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-           afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+           *(float *)((int)&CStack_ec + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       core_charactr_cpp_FUN_0042fbd0(uVar15,uVar16,uVar17,uVar19);
     }
     break;
@@ -260,16 +261,17 @@ LAB_00487f67:
       fStack_60 = afStack_84[3] * _DAT_005bda3c;
       afStack_5c[0] = afStack_74[0] * _DAT_005bda3c;
       afStack_5c[1] = afStack_74[1] * _DAT_005bda3c;
-      afStack_5c[2] = afStack_84[3] * _DAT_005bda3c;
-      afStack_5c[(uint)bVar10 * -2 + 3] = afStack_5c[(uint)bVar10 * -2];
-      afStack_5c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+      aCStack_54[0].x = afStack_84[3] * _DAT_005bda3c;
+      *(float *)((int)aCStack_54 + (uint)bVar10 * -8 + 4) = afStack_5c[(uint)bVar10 * -2];
+      *(float *)((int)aCStack_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
            afStack_5c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-      core_actor_cpp_FUN_00408b00(this_ptr->dest_actor,afStack_5c + 2);
-      fStack_138 = fStack_168;
-      *(float *)((int)&CStack_134 + (uint)bVar10 * -8) =
-           (&stack0xfffffe9c)[(uint)bVar10 * 0xfffffffe];
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                (this_ptr->dest_actor,aCStack_54,&CStack_168);
+      fStack_138 = CStack_168.x;
+      *(uint *)((int)&CStack_134 + (uint)bVar10 * -8) =
+           *(uint *)((int)&CStack_168 + (uint)bVar10 * -8 + 4);
       *(uint *)((int)&CStack_134 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&stack0xfffffea0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+           *(uint *)((int)&CStack_168 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       pCVar2 = this_ptr->dest_actor;
       afStack_c8[2] = (pCVar2->location).position.x + fStack_138;
       afStack_c8[3] = (pCVar2->location).position.y + CStack_134.x;
@@ -290,8 +292,8 @@ LAB_00487f67:
     break;
   case EMITTER_TYPE_LEAF:
     uStack_15c = 0;
-    uStack_160 = 0;
-    fStack_164 = 0.0;
+    CStack_168.z = 0.0;
+    CStack_168.y = 0.0;
     fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
                           (0.0,this_ptr->emit_radius * _DAT_005bda38);
     fStack_20 = fStack_18 - this_ptr->emit_radius;
@@ -303,7 +305,7 @@ LAB_00487f67:
     fVar18 = this_ptr->wind_resist;
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
     core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930
-              (0x01C73654,&fStack_11c,&stack0xfffffe9c,pCVar5,fVar18);
+              (0x01C73654,&fStack_11c,&CStack_168.y,pCVar5,fVar18);
     fStack_11c = (this_ptr->base).location.position.x;
     fStack_118 = (this_ptr->base).location.position.z;
     fStack_114 = fStack_118;

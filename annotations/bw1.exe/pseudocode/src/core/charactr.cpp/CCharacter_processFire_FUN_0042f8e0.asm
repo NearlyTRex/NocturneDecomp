@@ -47,12 +47,12 @@
 ;   undefined4 DAT_007c6388
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_xform.cpp_FUN_005b5080
+;   core_xform.cpp_transformVector3x4_FUN_005b5080
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
@@ -243,8 +243,8 @@ section .text
     PUSH EAX                            ; 0042fb07
     LEA ESI,[ESP + 0x14]                ; 0042fb08
     LEA EDI,[ESP + 0x2c]                ; 0042fb0c
-    CALL core_xform.cpp_FUN_005b5080    ; 0042fb10
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0042fb10
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 0042fb15
     LEA EAX,[ESP + 0x24]                ; 0042fb18
     LEA ESI,[ESP + 0xc]                 ; 0042fb1c
@@ -254,8 +254,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042fb23
     PUSH EBX                            ; 0042fb24
     LEA ESI,[ESP + 0x8]                 ; 0042fb25
-    CALL core_actor.cpp_FUN_00408b40    ; 0042fb29
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0042fb29
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0042fb2e
     IMUL EDX,dword ptr [ESP + 0x58],0x2a4 ; 0042fb31
     LEA EDI,[ESP + 0x18]                ; 0042fb39

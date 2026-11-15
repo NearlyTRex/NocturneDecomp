@@ -20,6 +20,7 @@
 #include "types/classes/CMirrorReflection.h"
 #include "types/classes/CMobster.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/structs/SCPUInfo.h"
@@ -200,15 +201,15 @@ CMirror * __cdecl core_mirror_cpp_FUN_004f98c0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f98d0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f9950(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
-void core_mirror_cpp_FUN_004fa9d0(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004fa9d0(CMirrorReflection *this_ptr,CVector3f *input_vector,CVector3f *output_buffer);
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac50(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004fac90(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004facd0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004fad60(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0(CMirror *this_ptr);
-void core_mirror_cpp_FUN_004fb0a0(undefined4 param_1,int *param_2);
-void core_mirror_cpp_FUN_004fb150(undefined4 param_1,int *param_2,int *param_3);
+CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004fb0a0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
+CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004fb150(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_004fb340(SClipPlane *this_ptr);
 void __cdecl core_mission_cpp_staticInit_FUN_004fb350(void);
 void __cdecl core_mission_cpp_CDemonMission_reset_FUN_004fb380(CDemonMission *this_ptr);
@@ -233,7 +234,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004fc640(CDemonM
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004fc780(CDemonMission *this_ptr,CLocation *teleport_target);
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void core_mission_cpp_FUN_004fc820(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004fc940(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004fca90(CDemonMission *this_ptr,char *set_name);
@@ -254,7 +255,7 @@ void __cdecl core_mmx_c_detectMMXSupport_FUN_004fd579(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_004fd58f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_004fd5f0(void);
 void core_mobster_cpp_FUN_004fd620(int param_1);
-void core_mobster_cpp_getObjectGrabPointWorld_FUN_004fd6e0(int param_1);
+CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointWorld_FUN_004fd6e0(CDemonActor *actor,CVector3f *out);
 CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_004fd800(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_ptr);

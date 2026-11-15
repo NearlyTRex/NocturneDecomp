@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 55,
-    "cross_reference_count": 36,
+    "complexity_score": 53,
+    "cross_reference_count": 37,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 92
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -224,6 +224,12 @@
       "addr": "00576f40",
       "from_addr": "00576f54",
       "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e350",
+      "from_addr": "0059eaa2",
+      "name": "support_trisock.cpp_FUN_0059e350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -473,7 +479,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_02c9a5a8",
       "severity": "mild",
       "text": "QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02c9a5a8);",

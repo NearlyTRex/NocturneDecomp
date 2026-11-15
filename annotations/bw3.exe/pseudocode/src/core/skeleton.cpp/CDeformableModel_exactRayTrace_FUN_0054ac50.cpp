@@ -38,7 +38,7 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDef
   if (5000 < this_ptr->vertex_count[lod_index]) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x6e2;
-    core_main_c_FUN_004e4330();
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::exactRayTrace - too many vertices!");
   }
   pfVar2 = (float *)&DAT_0271383c;
   iVar4 = 0;

@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00518054 (CONDITIONAL_JUMP)  ; LAB_00518054
     FLD float ptr [0x01d224d4]          ; 00518045 | DAT_01d224d4
     CALL crt_math.c_round_FUN_005c03a0  ; 0051804b
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 00518050
     MOV EAX,dword ptr [ESP + 0x18]      ; 00518054
         ;   Label: LAB_00518054
@@ -90,7 +90,7 @@ section .text
         ;   XREF to: 00518084 (CONDITIONAL_JUMP)  ; LAB_00518084
     FLD float ptr [0x01d224d0]          ; 00518075 | DAT_01d224d0
     CALL crt_math.c_round_FUN_005c03a0  ; 0051807b
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 00518080
     MOV EAX,dword ptr [ESP + 0x24]      ; 00518084
         ;   Label: LAB_00518084
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 005180aa (CONDITIONAL_JUMP)  ; LAB_005180aa
     FLD float ptr [0x01d224d8]          ; 0051809b | DAT_01d224d8
     CALL crt_math.c_round_FUN_005c03a0  ; 005180a1
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x24]        ; 005180a6
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005180aa
         ;   Label: LAB_005180aa
@@ -116,7 +116,7 @@ section .text
     FLD float ptr [0x01d224cc]          ; 005180b8 | DAT_01d224cc
         ;   Label: LAB_005180b8
     CALL crt_math.c_round_FUN_005c03a0  ; 005180be
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 005180c3
     JMP 0x0051802e                      ; 005180c7
         ;   XREF to: 0051802e (UNCONDITIONAL_JUMP)  ; LAB_0051802e

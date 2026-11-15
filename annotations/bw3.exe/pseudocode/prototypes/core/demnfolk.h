@@ -19,7 +19,7 @@ void FUN_00454820(int param_1);
 
 // Original: core_demnfolk.cpp_FUN_004548e0
 // Address: 004548e0
-void FUN_004548e0(int param_1);
+void FUN_004548e0(CDemonActor *param_1);
 
 // Original: core_demnfolk.cpp_FUN_004549e0
 // Address: 004549e0

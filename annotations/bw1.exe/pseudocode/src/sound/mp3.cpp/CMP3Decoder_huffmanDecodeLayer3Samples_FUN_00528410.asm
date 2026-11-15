@@ -49,7 +49,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_sscanf_FUN_005c2cac
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_00525ef0
@@ -305,8 +305,8 @@ section .text
     PUSH 0x5eb369                       ; 00528711 | = "wrong table number %u.  File: %s"
     MOV dword ptr [0x01d1d400],ECX      ; 00528716 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0052871c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00528722
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00528722
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00528727
     MOV EAX,dword ptr [ESP + 0x30]      ; 0052872a
         ;   Label: LAB_0052872a
@@ -346,8 +346,8 @@ section .text
     MOV dword ptr [0x01d1d400],EDI      ; 005287a4 | DAT_01d1d400
         ;   Label: LAB_005287a4
     MOV [0x01d1d404],EAX                ; 005287aa | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005287af
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005287af
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 005287b4
     MOV ESI,dword ptr [ESP + 0x30]      ; 005287b7
         ;   Label: LAB_005287b7
@@ -369,8 +369,8 @@ section .text
     PUSH 0x5eb449                       ; 005287f1 | = "decoder table read error.  File: %s"
     MOV dword ptr [0x01d1d400],EDI      ; 005287f6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 005287fc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00528802
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00528802
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00528807
     MOV dword ptr [0x01d3bd40],0x1      ; 0052880a | DAT_01d3bd40
         ;   Label: LAB_0052880a
@@ -398,8 +398,8 @@ section .text
     PUSH 0x5eb3d0                       ; 00528859 | = "MP3 Huffman tree overflow!  File: %s"
     MOV dword ptr [0x01d1d400],ESI      ; 0052885e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00528864 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052886a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052886a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052886f
     MOV EAX,dword ptr [ESP + 0x30]      ; 00528872
         ;   Label: LAB_00528872

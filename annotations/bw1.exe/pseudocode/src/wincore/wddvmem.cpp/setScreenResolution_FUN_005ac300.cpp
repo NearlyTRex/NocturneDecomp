@@ -77,7 +77,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
     _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d1d404 = 0xed;
     iStack_f8 = 0x5ac43a;
-    core_main_c_FUN_005030e0();
+    core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of frame buffer memory");
   }
   iStack_f8 = 0x5ac455;
   _DAT_02c99310 = malloc(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);
@@ -85,7 +85,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
     _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d1d404 = 0xf2;
     iStack_f8 = 0x5ac481;
-    core_main_c_FUN_005030e0();
+    core_main_c_displayErrorAndQuit_FUN_005030e0("WDDVMEM: Fatal - out of Z buffer memory");
   }
   iStack_f8 = height;
   DAT_0071362c = (int)_DAT_02c99310 + 0x10U & 0xfffffff0;
@@ -161,7 +161,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
       if (iVar2 != 0) {
         _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
         _DAT_01d1d404 = 0x1ec;
-        core_main_c_FUN_005030e0("Clear of back buffer failed");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Clear of back buffer failed");
       }
       iVar2 = 0;
       dest = pvStack_a0;
@@ -179,7 +179,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
       if (iVar2 != 0) {
         _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
         _DAT_01d1d404 = 0x1f6;
-        core_main_c_FUN_005030e0("Unlock of back buffer clear failed");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Unlock of back buffer clear failed");
       }
       _DAT_02c99314 = 1;
       iVar1 = iVar1 + 1;
@@ -189,6 +189,6 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300(int width,int h
   }
   _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
   _DAT_01d1d404 = 0x1d1;
-  core_main_c_FUN_005030e0("setScreenResolution - Create back buffer failed!");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("setScreenResolution - Create back buffer failed!");
   return 0;
 }

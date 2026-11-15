@@ -59,7 +59,7 @@ void __cdecl CTrap::archive(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_getBoundingBox_FUN_0059a100
 // Address: 0059a100
-CBoundingBox3D * __cdecl CTrap::getBoundingBox(CTrap *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTrap::getBoundingBox(CTrap *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trap.cpp_CTrap_dtor_FUN_0059a140
 // Address: 0059a140

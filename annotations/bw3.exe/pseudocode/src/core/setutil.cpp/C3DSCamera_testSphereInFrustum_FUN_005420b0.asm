@@ -18,10 +18,10 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_0053f940 at 00540318
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 00540318
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b870
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 005420f9
     LEA ESI,[ESP + 0x20]                ; 005420fa
     LEA EDI,[ESP + 0x14]                ; 005420fe
-    CALL core_dirmat.cpp_FUN_0045b870   ; 00542102
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 00542102
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x20]                ; 00542107
     ADD ESP,0x8                         ; 0054210b
     MOVSD ES:EDI,ESI                    ; 0054210e

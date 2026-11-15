@@ -26,7 +26,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
@@ -426,7 +426,7 @@ section .text
     PUSH EBX                            ; 00560a35
     MOV dword ptr [EBX + 0xc28c],0x3    ; 00560a36
     CALL crt_math.c_round_FUN_005c03a0  ; 00560a40
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0xc294]      ; 00560a45
     CALL core_shadowsc.cpp_FUN_005610e0 ; 00560a4b
         ;   XREF to: 005610e0 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_005610e0()
@@ -462,8 +462,8 @@ section .text
     PUSH 0x2c8af28                      ; 00560ab8 | DAT_02c8af28
     LEA ESI,[EBP + 0xe]                 ; 00560abd
     LEA EDI,[EBP + -0x2e]               ; 00560ac0
-    CALL core_xform.cpp_FUN_005b5080    ; 00560ac3
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00560ac3
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00560ac8
     LEA EAX,[EBP + -0x2e]               ; 00560acb
     LEA ESI,[EBP + 0xe]                 ; 00560ace
@@ -473,8 +473,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00560ad4
     PUSH EBX                            ; 00560ad5
     LEA ESI,[EBP + -0x16]               ; 00560ad6
-    CALL core_actor.cpp_FUN_00408b40    ; 00560ad9
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00560ad9
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00560ade
     LEA EAX,[EBP + -0x22]               ; 00560ae1
     PUSH EAX                            ; 00560ae4
@@ -523,7 +523,7 @@ section .text
     ADD ESP,0x8                         ; 00560b57
     MOV dword ptr [EBX + 0xc28c],0x3    ; 00560b5a
     CALL crt_math.c_round_FUN_005c03a0  ; 00560b64
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0xc294]      ; 00560b69
     JMP 0x005607c1                      ; 00560b6f
         ;   XREF to: 005607c1 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -551,8 +551,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00560bae
     PUSH EBX                            ; 00560baf
     LEA ESI,[EBP + 0x3e]                ; 00560bb0
-    CALL core_actor.cpp_FUN_00408b40    ; 00560bb3
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00560bb3
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     MOV dword ptr [EBX + 0xc1d4],0x1    ; 00560bb8
     MOV dword ptr [EBX + 0xc294],0x0    ; 00560bc2
     ADD ESP,0x8                         ; 00560bcc
@@ -916,7 +916,7 @@ section .text
     FSTP ST1                            ; 00560f8d
     FMUL float ptr [0x005f18cd]         ; 00560f8f | DAT_005f18cd
     CALL crt_math.c_round_FUN_005c03a0  ; 00560f95
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0xc294]      ; 00560f9a
     MOV ECX,dword ptr [EBX + 0xc294]    ; 00560fa0
     MOV dword ptr [EBX + 0xc28c],0x0    ; 00560fa6

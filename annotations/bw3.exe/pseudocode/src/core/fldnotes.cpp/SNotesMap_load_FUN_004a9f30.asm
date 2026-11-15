@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
 ;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0
@@ -164,8 +164,8 @@ section .text
     PUSH 0x5c1140                       ; 004aa092 | = "Out of memory!"
     MOV [0x01d71de0],EAX                ; 004aa097 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004aa09c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004aa0a2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa0a2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa0a7
     JMP 0x004a9f7b                      ; 004aa0aa
         ;   XREF to: 004a9f7b (UNCONDITIONAL_JUMP)  ; LAB_004a9f7b

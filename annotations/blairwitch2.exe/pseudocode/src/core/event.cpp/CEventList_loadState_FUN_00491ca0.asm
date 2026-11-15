@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_00489380
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;
@@ -336,8 +336,8 @@ section .text
     PUSH 0x5d4fa9                       ; 00491fd8 | = "CEventList::loadState - file version ..."
     MOV dword ptr [0x01d046a0],ECX      ; 00491fdd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00491fe3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00491fe9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00491fe9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00491fee
     JMP 0x00491cfa                      ; 00491ff1
         ;   XREF to: 00491cfa (UNCONDITIONAL_JUMP)  ; LAB_00491cfa

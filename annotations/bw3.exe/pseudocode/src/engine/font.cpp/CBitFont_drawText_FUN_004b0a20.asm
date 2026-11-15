@@ -230,7 +230,7 @@ section .text
         ;   Label: LAB_004b0b9d
     FMUL double ptr [0x005c2074]        ; 004b0ba3 | DAT_005c2074
     CALL crt_math.c_round_FUN_005a3120  ; 004b0ba9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x4]         ; 004b0bae
     MOV EAX,dword ptr [ESP + 0x4]       ; 004b0bb2
     SHL EAX,0x18                        ; 004b0bb6

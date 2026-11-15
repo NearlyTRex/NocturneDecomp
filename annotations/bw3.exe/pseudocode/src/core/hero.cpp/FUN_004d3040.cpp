@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 bool core_hero_cpp_FUN_004d3040(CDemonActor *param_1)
@@ -16,12 +15,9 @@ bool core_hero_cpp_FUN_004d3040(CDemonActor *param_1)
   int iVar1;
   byte bVar2;
   float afStackY_1038 [1015];
-  float local_50;
+  CVector3f local_50;
   float local_44;
-  float local_40;
-  float local_3c;
-  uint local_38;
-  float local_34;
+  float local_40 [5];
   uint local_2c;
   float local_20;
   float local_1c;
@@ -42,22 +38,21 @@ bool core_hero_cpp_FUN_004d3040(CDemonActor *param_1)
          (float)_DAT_005c4d15)) &&
        ((ABS((this_ptr->base).location.position.z - (param_1->location).position.z) <=
          (float)_DAT_005c4d15 && (this_ptr->door_state == DOOR_STATE_CLOSED)))) {
-      core_actor_cpp_FUN_00408bf0(param_1,&this_ptr->open_position);
-      local_44 = local_50;
-      (&stack0xffffffc0)[(uint)bVar2 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
-      *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-           *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-      if (0.0 < local_3c) {
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffbc);
-        local_38 = local_2c;
-        *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =
-             *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
-        *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-             *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-        if ((ABS(local_34) <= _DAT_005c4d1d) && (ABS(local_40) <= (float)_DAT_005c4d25)) {
-          local_40 = 0.0;
-          local_1c = SQRT(local_3c * local_3c + local_44 * local_44);
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                (param_1,&this_ptr->open_position,&local_50);
+      local_44 = local_50.x;
+      local_40[(uint)bVar2 * -2] = *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4);
+      local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+           *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+      if (0.0 < local_40[1]) {
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_44);
+        local_40[2] = (float)local_2c;
+        local_40[(uint)bVar2 * -2 + 3] = local_40[(uint)bVar2 * -2 + 6];
+        local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+             local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
+        if ((ABS(local_40[3]) <= _DAT_005c4d1d) && (ABS(local_40[0]) <= (float)_DAT_005c4d25)) {
+          local_40[0] = 0.0;
+          local_1c = SQRT(local_40[1] * local_40[1] + local_44 * local_44);
           if (local_1c < local_20) {
             iVar1 = core_door_cpp_CDoor_getMoveType_FUN_00465380(this_ptr,param_1);
             if ((iVar1 != 0) && (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER)) {

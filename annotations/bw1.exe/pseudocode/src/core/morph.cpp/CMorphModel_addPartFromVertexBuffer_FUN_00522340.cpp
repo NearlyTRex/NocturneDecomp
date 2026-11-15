@@ -17,7 +17,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_00522340(CMo
   if (4 < this_ptr->part_count) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0xac;
-    core_main_c_FUN_005030e0("CMorphModel::addPart - too many parts!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::addPart - too many parts!");
   }
   this_ptr->parts[this_ptr->part_count].start_vertex = this_ptr->num_points;
   this_ptr->parts[this_ptr->part_count].vertex_count = vertex_count;
@@ -34,7 +34,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_00522340(CMo
      ) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0xc5;
-    core_main_c_FUN_005030e0("CMorphModel::setup - out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::setup - out of memory!");
   }
   if (skinned_vertices != (CVector3i *)0x0) {
     core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_00522540

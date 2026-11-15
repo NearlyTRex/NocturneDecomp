@@ -178,7 +178,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 004c429c
     PUSH 0x32                           ; 004c42a2
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c42a4
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EBX                            ; 004c42a9
     FISTP dword ptr [EBX + 0x10b00]     ; 004c42aa
     CALL dword ptr [EAX + 0xb0]         ; 004c42b0

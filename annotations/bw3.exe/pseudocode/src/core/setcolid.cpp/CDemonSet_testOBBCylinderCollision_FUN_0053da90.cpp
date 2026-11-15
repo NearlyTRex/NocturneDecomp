@@ -10,10 +10,10 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90(CD
 
 {
   CVector3f *pCVar1;
-  int iVar2;
-  byte bVar3;
+  uint corner_index;
+  byte bVar2;
   float afStackY_1044 [906];
-  float *pfVar4;
+  CVector3f *input;
   CVector3f local_20c;
   CVector3f local_200;
   CVector3f local_1f4;
@@ -28,51 +28,48 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90(CD
   CDemonTriangle local_104;
   CDemonTriangle local_cc;
   CDemonTriangle local_94;
-  float local_5c;
-  float afStack_58 [2];
+  CVector3f local_5c;
   CVector3f local_50;
   float local_44;
-  float local_40;
-  float local_3c;
-  uint local_38;
-  float local_2c [3];
+  float local_40 [2];
+  CVector3f local_38;
+  CVector3f local_2c;
   float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
+  float local_1c [3];
   
-  bVar3 = 0;
+  bVar2 = 0;
   pCVar1 = &local_20c;
-  iVar2 = 0;
+  corner_index = 0;
   __arrinit(&local_20c,8,&g_CVectorTypeInfo);
   do {
-    core_box_cpp_FUN_0041d8b0(bounding_box,iVar2);
-    pfVar4 = afStack_58 + 0xb;
-    local_2c[0] = (float)local_38;
-    afStack_58[(uint)bVar3 * -2 + 0xc] = afStack_58[(uint)bVar3 * -2 + 9];
-    afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =
-         afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
-    core_dirmat_cpp_FUN_0045b800(orientation_matrix,pfVar4);
-    local_44 = local_5c;
-    afStack_58[(uint)bVar3 * -2 + 6] = afStack_58[(uint)bVar3 * -2];
-    afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
-         afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+    core_box_cpp_CBoundingBox3D_getCorner_FUN_0041d8b0(bounding_box,corner_index,&local_38);
+    input = &local_2c;
+    local_2c.x = local_38.x;
+    *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4) =
+         *(uint *)((int)&local_38 + (uint)bVar2 * -8 + 4);
+    *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+         *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(orientation_matrix,input,&local_5c);
+    local_44 = local_5c.x;
+    local_40[(uint)bVar2 * -2] = *(float *)((int)&local_5c + (uint)bVar2 * -8 + 4);
+    local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+         *(float *)((int)&local_5c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_20 = local_44 + position->x;
-    local_1c = local_40 + position->y;
-    local_18 = local_3c + position->z;
+    local_1c[0] = local_40[0] + position->y;
+    local_1c[1] = local_40[1] + position->z;
     local_50.x = local_20;
-    afStack_58[(uint)bVar3 * -2 + 3] = afStack_58[(uint)bVar3 * -2 + 0xf];
-    afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-         afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10];
-    if (pCVar1 != (CVector3f *)(afStack_58 + 2)) {
+    *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4) = local_1c[(uint)bVar2 * -2];
+    *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+         local_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+    if (pCVar1 != &local_50) {
       pCVar1->x = local_50.x;
       pCVar1->y = local_50.y;
       pCVar1->z = local_50.z;
     }
-    iVar2 = iVar2 + 1;
+    corner_index = corner_index + 1;
     pCVar1 = pCVar1 + 1;
-  } while (iVar2 < 8);
-  local_14 = cylinder->closest_t;
+  } while ((int)corner_index < 8);
+  local_1c[2] = cylinder->closest_t;
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
             (&local_cc,&local_20c,&local_1dc,&local_1c4);
   core_dtri_cpp_cylinderTriangleTest_FUN_00479050(&local_cc,cylinder);
@@ -109,5 +106,5 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90(CD
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
             (&local_94,&local_1dc,&local_1b8,&local_1c4);
   core_dtri_cpp_cylinderTriangleTest_FUN_00479050(&local_94,cylinder);
-  return (uint)(cylinder->closest_t < local_14);
+  return (uint)(cylinder->closest_t < local_1c[2]);
 }

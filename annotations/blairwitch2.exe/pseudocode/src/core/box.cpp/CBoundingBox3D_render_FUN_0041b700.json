@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 290,
-    "complexity_score": 280,
+    "complexity_score": 330,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 135,
-    "suspect_count": 13,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
       "warning_overlapping_globals"
@@ -52,7 +54,7 @@
     {
       "addr": "0041a600",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a600"
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600"
     },
     {
       "addr": "00531e90",
@@ -428,7 +430,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 11,
       "match": "afStackY_1020",
       "severity": "moderate",
       "text": "float afStackY_1020 [978];",
@@ -521,6 +523,38 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60(DAT_0060b280,&local_6c,0x2c4);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)&local_38",
+      "severity": "moderate",
+      "text": "local_1c[(uint)bVar3 * -2] = *(float *)((int)&local_38 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&local_38",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 35,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_1c[(uint)bVar3 * -2] = *(float *)((int)&local_38 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

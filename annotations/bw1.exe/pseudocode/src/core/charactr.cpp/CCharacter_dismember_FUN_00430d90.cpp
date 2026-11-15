@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
   uint *puVar4;
   byte bVar5;
   float afStackY_108c [989];
-  CVector3f *initial_velocity;
+  CVector3f *pCVar6;
   float min_value;
   CBoundingBox3D *max_value;
   float fStack_d4;
@@ -31,13 +31,13 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
   float fStack_9c;
   float fStack_8c;
   CVector3f local_88;
-  float fStack_74;
-  float afStack_70 [2];
+  CVector3f CStack_74;
   CVector3f CStack_68;
-  float fStack_5c;
-  CVector3f local_58;
+  byte auStack_5c [8];
+  float local_54 [4];
   float fStack_44;
-  float local_40 [6];
+  CVector3f local_40;
+  CVector3f local_34;
   float local_28;
   float local_24;
   int local_20;
@@ -56,40 +56,41 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
       local_1c = 0;
       if (0 < local_20) {
         do {
-          initial_velocity = impact_point;
+          pCVar6 = impact_point;
           if ((impact_point != (CVector3f *)0x0) && (0.0 < impact_force)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(impact_point);
             min_value = -impact_force;
             local_24 = min_value;
-            local_58.x = local_a0;
-            *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =
-                 *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8);
+            auStack_5c._4_4_ = local_a0;
+            local_54[(uint)bVar5 * -2] = *(float *)((int)&stack0xffffff64 + (uint)bVar5 * -8);
             max_value = (CBoundingBox3D *)impact_force;
-            *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 *(uint *)(&stack0xffffff68 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+            local_54[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+                 *(float *)(&stack0xffffff68 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(min_value,impact_force);
-            local_58.y = local_18 + local_58.y;
+            local_54[0] = local_18 + local_54[0];
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00
                                  (local_24,(float)max_value);
-            local_58.x = local_18 + local_58.x;
+            auStack_5c._4_4_ = local_18 + (float)auStack_5c._4_4_;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-                      ((CMatrix3x3f *)&stack0xfffffefc,&local_58);
-            local_40[2] = SQRT(impact_point->z * impact_point->z +
-                               impact_point->x * impact_point->x + impact_point->y * impact_point->y
-                              );
-            local_40[0] = 0.0;
-            local_40[1] = 0.0;
-            local_28 = local_40[2];
-            core_dirmat_cpp_FUN_0045f690(&stack0xfffffefc,local_40);
-            local_88.x = local_40[3];
-            *(float *)((int)&local_88 + (uint)bVar5 * -8 + 4) = local_40[(uint)bVar5 * -2 + 4];
-            *(float *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 local_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
-            initial_velocity = &local_88;
+                      ((CMatrix3x3f *)&stack0xfffffefc,(CVector3f *)(auStack_5c + 4));
+            local_40.z = SQRT(impact_point->z * impact_point->z +
+                              impact_point->x * impact_point->x + impact_point->y * impact_point->y)
+            ;
+            local_40.x = 0.0;
+            local_40.y = 0.0;
+            local_28 = local_40.z;
+            core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+                      ((CMatrix3x3f *)&stack0xfffffefc,&local_40,&local_34);
+            local_88.x = local_34.x;
+            *(uint *)((int)&local_88 + (uint)bVar5 * -8 + 4) =
+                 *(uint *)((int)&local_34 + (uint)bVar5 * -8 + 4);
+            *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+                 *(uint *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+            pCVar6 = &local_88;
             impact_force = (float)max_value;
           }
           core_charactr_cpp_CCharacter_detachBodyPart_FUN_004311a0
-                    (this_ptr,local_1c,initial_velocity,render_in_background);
+                    (this_ptr,local_1c,pCVar6,render_in_background);
           local_1c = local_1c + 1;
         } while (local_1c < local_20);
       }
@@ -111,19 +112,22 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
        *(uint *)((int)&stack0xffffff60 + (uint)bVar5 * -8);
   *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
        *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+  pCVar6 = &CStack_74;
   fStack_44 = fStack_8c * _DAT_005d5a57;
-  local_40[0] = local_88.x * _DAT_005d5a57;
-  local_40[1] = local_88.y * _DAT_005d5a57;
-  fStack_74 = fStack_8c * _DAT_005d5a57;
-  afStack_70[(uint)bVar5 * -2] = local_40[(uint)bVar5 * -2];
-  afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       local_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_actor_cpp_FUN_00408b40(this_ptr);
-  CStack_68.x = fStack_5c;
-  *(uint *)((int)&CStack_68 + (uint)bVar5 * -8 + 4) =
-       *(uint *)((int)&local_58 + (uint)bVar5 * -8);
-  *(uint *)((int)&CStack_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
+  local_40.x = local_88.x * _DAT_005d5a57;
+  local_40.y = local_88.y * _DAT_005d5a57;
+  CStack_74.x = fStack_8c * _DAT_005d5a57;
+  *(uint *)((int)&CStack_74 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&local_40 + (uint)bVar5 * -8);
+  *(uint *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)&local_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            (&this_ptr->base,pCVar6,(CVector3f *)auStack_5c);
+  CStack_68.x = (float)auStack_5c._0_4_;
+  *(uint *)(auStack_5c + (uint)bVar5 * -8 + -8) =
+       *(uint *)(auStack_5c + (uint)bVar5 * -8 + 4);
+  *(float *)(auStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -4) =
+       local_54[(uint)bVar5 * -2 + (uint)bVar5 * -2];
   if (this_ptr->is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
               (g_CGorePtr,&CStack_68,impact_point,100,this_ptr->blood_type);

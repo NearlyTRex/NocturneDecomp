@@ -43,6 +43,6 @@ CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_00548fc0(char *filename)
   }
   _DAT_01d046a0 = "..\\core\\skeleton.cpp";
   _DAT_01d046a4 = 0x10a5;
-  core_main_c_FUN_004e4500("Can't load %s because skeleton manager is full.  (Size is %d)",filename,0x28);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Can't load %s because skeleton manager is full.  (Size is %d)");
   return (CSkeleton *)0x0;
 }

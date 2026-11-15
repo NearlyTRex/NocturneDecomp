@@ -43,7 +43,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005541f0(LPVOID *channel_buffer
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0x19a3;
-    core_main_c_FUN_004e4500();
+    core_main_c_displayErrorAndQuit_FUN_004e4500("pollSfx - must be locked!");
   }
   if (0 < num_channels) {
     iVar2 = 0;
@@ -73,12 +73,12 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005541f0(LPVOID *channel_buffer
         if (_DAT_0264901c < 1) {
           _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
           _DAT_01d046a4 = 0x593;
-          core_main_c_FUN_004e4500();
+          core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::kill - must be locked!");
         }
         if (0 < _DAT_02648e90) {
           _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
           _DAT_01d046a4 = 0x597;
-          core_main_c_FUN_004e4500();
+          core_main_c_displayErrorAndQuit_FUN_004e4500("nextMixingBuffer - shouldn't have any data pending!");
         }
         iVar2 = 0;
         count = _DAT_02648e98 * 4;

@@ -157,7 +157,7 @@ LAB_005398e9:
       if (uVar2 < 6) break;
       _DAT_01d046a0 = "..\\core\\setdir.cpp";
       _DAT_01d046a4 = 0x3aa;
-      core_main_c_FUN_004e4500("Hell froze");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
     }
   } while( true );
 }

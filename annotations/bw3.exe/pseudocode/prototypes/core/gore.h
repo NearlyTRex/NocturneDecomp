@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_gore.cpp_FUN_004cc970
 // Address: 004cc970
-void FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4);
+void FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4);
 
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004ccac0
 // Address: 004ccac0
@@ -63,7 +63,7 @@ int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_FUN_004cdd30
 // Address: 004cdd30
-void FUN_004cdd30(undefined4 *param_1,int param_2);
+void FUN_004cdd30(undefined4 *param_1);
 
 // Original: core_gore.cpp_CBloodPool_processAge_FUN_004cdfc0
 // Address: 004cdfc0

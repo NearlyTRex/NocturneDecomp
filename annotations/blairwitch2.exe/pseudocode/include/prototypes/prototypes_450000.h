@@ -102,7 +102,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0045f030(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_0045fd10(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_0045fdf0(CDoor *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_0045fe80(CDoor *this_ptr,CBoundingBox3D *out_box);
-void core_door_cpp_FUN_0045fec0(int param_1);
+CBoundingBox3D * __stack_esi core_door_cpp_CDoor_getBoundingBox_FUN_0045fe80(CDoor *this_ptr,CBoundingBox3D *out_box);
+void core_door_cpp_FUN_0045fec0(CDemonActor *param_1);
 void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr);
 

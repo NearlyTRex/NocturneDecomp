@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(int param_1)
+; CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(CDemonActor *actor,CVector3f *out_point)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fa3ec
 ;   undefined4 DAT_005fa3f4
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040cfe0
-;   core_actor.cpp_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -95,8 +97,8 @@ section .text
     PUSH ECX                            ; 005ba968
     LEA ESI,[ESP + 0x5c]                ; 005ba969
     MOV EDI,EBX                         ; 005ba96d
-    CALL core_actor.cpp_FUN_00408b40    ; 005ba96f
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005ba96f
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 005ba974
     ADD ESP,0x8                         ; 005ba978
     MOVSD ES:EDI,ESI                    ; 005ba97b

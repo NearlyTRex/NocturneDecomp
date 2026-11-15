@@ -59,7 +59,7 @@ section .text
     SAR EAX,0x3                         ; 0050f480
     MOV dword ptr [ESP],EAX             ; 0050f483
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 0050f486
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
     MOV dword ptr [ESP + 0x14],EAX      ; 0050f48b
     MOV EAX,dword ptr [ESP + 0x38]      ; 0050f48f
     SHL EAX,0x2                         ; 0050f493

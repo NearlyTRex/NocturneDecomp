@@ -52,7 +52,7 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
   else {
     _DAT_01d1d400 = "..\\core\\icepick.cpp";
     _DAT_01d1d404 = 0x289;
-    core_main_c_FUN_005030e0("CIcePick::getCarryObjToBodyXForm - wrong hand");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
             (&CStack_78,&CStack_3c,&CStack_24);

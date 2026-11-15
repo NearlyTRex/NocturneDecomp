@@ -191,7 +191,7 @@ void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_FUN_004b33d0
 // Address: 004b33d0
-int FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+int FUN_004b33d0(byte *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5);
 
 // Original: engine_font.cpp_packPixelNative_FUN_004b3780
 // Address: 004b3780

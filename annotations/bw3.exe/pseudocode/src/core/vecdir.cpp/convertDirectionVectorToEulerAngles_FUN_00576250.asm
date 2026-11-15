@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(uint *param_1)
+; float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(float *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_005762aa
     FLD float ptr [EDX]                 ; 005762ad
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 005762af
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FLD float ptr [EDX + 0x8]           ; 005762b4
     FMUL ST0                            ; 005762b7
     FLD float ptr [EDX]                 ; 005762b9
@@ -82,7 +82,7 @@ section .text
     FSQRT                               ; 005762bf
     FLD float ptr [EDX + 0x4]           ; 005762c1
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 005762c4
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FXCH                                ; 005762c9
     FSTP float ptr [ESP + 0x4]          ; 005762cb
     FCHS                                ; 005762cf

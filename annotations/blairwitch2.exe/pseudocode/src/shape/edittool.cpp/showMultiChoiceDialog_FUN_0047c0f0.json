@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 578,
-    "complexity_score": 375,
+    "complexity_score": 377,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 245,
+    "pseudocode_lines": 247,
     "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 823
+    "total_lines": 825
   },
   "cross_references": [
     {
@@ -53,7 +53,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8e40",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 109,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "iVar8 = (int)((DAT_006141b8 + (DAT_006141b8 >> 0x1f) * -0x80) -",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 109,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "iVar8 = (int)((DAT_006141b8 + (DAT_006141b8 >> 0x1f) * -0x80) -",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 110,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "(uint)((DAT_006141b8 >> 0x1f) << 6 < 0)) >> 7;",
@@ -602,7 +602,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 111,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_40 = DAT_006141bc / 0x60;",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 170,
+      "line": 172,
       "match": "DAT_006141cc",
       "severity": "mild",
       "text": "local_50 = DAT_006141cc;",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 173,
       "match": "DAT_006141cc",
       "severity": "mild",
       "text": "DAT_006141cc = 0x7f;",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 247,
       "match": "DAT_006141cc",
       "severity": "mild",
       "text": "DAT_006141cc = local_50;",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 61,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 82,
+      "line": 84,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '^' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '^') in a .keep.",
-      "line": 69,
+      "line": 71,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

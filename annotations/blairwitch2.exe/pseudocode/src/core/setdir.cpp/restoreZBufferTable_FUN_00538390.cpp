@@ -17,7 +17,7 @@ void __cdecl core_setdir_cpp_restoreZBufferTable_FUN_00538390(int count)
   if (_DAT_020b0258 == 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x70;
-    core_main_c_FUN_004e4500("saveZBufferTable - not saved!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < count) {
     iVar2 = 0;

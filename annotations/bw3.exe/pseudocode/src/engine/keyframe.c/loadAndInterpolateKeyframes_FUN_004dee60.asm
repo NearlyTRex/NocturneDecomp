@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_model.c_getMRGLSize_FUN_004f8730
 ;   engine_model.c_loadModelChunk_FUN_004f89a0
 ;   engine_model.c_loadModelFile_FUN_004f7f20
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5c670a                       ; 004def0c | = "Bad key frame"
     MOV dword ptr [0x01d71de0],EDX      ; 004def11 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004def17 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004def1d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004def1d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004def22
     MOV EDX,dword ptr [EDI + 0x8]       ; 004def25
         ;   Label: LAB_004def25
@@ -119,8 +119,8 @@ section .text
     PUSH 0x5c672d                       ; 004def37 | = "Key frame vertex mismatch"
     MOV dword ptr [0x01d71de0],ECX      ; 004def3c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004def42 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004def48
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004def48
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004def4d
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004def50
         ;   Label: LAB_004def50

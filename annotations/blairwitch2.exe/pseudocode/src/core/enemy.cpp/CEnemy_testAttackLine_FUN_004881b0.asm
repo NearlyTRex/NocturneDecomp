@@ -76,7 +76,7 @@ section .text
     FMUL double ptr [0x005d2dc1]        ; 00488211 | DAT_005d2dc1
     PUSH 0x0                            ; 00488217
     CALL crt_math.c_round_FUN_005b7ff0  ; 00488219
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 0048821e
     MOV EDI,dword ptr [ESP + 0x18]      ; 00488222
     PUSH EDI                            ; 00488226

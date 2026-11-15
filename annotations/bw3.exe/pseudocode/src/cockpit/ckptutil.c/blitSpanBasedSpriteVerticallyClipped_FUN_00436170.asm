@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x30                        ; 00436174
     MOV EBP,dword ptr [ESP + 0x48]      ; 00436177
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 0043617b
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
     MOV EDX,dword ptr [0x005fba20]      ; 00436180 | DAT_005fba20
     MOV EDI,EAX                         ; 00436186
     CMP EDX,0x8                         ; 00436188

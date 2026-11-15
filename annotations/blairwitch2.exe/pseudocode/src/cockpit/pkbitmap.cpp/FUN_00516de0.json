@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 94,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 17,
     "suspect_count": 6,
     "suspect_types": [
       "builtin_function",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 72
+    "total_lines": 70
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
@@ -138,7 +138,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "file_handle = _fopen(param_2,(char *)0x5e1c4b);",
@@ -146,7 +146,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(param_1,file_handle);",
@@ -154,7 +154,7 @@
     },
     {
       "description": "Ghidra builtin function",
-      "line": 19,
+      "line": 18,
       "match": "builtin_strncpy",
       "severity": "mild",
       "text": "builtin_strncpy(acStack_6c,\"\\x11nQ\",4);",

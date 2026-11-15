@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[92]:
+; XREF[93]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 0040995d
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fe9f
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00415d90 at 00415db4
@@ -23,7 +23,7 @@
 ;   core_box.cpp_CBox_ctor_FUN_0041da00 at 0041da11
 ;   core_boxactor.cpp_staticInit_FUN_00421c00 at 00421c2f
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424f80 at 00424fa0
-;   ... and 82 more
+;   ... and 83 more
 ;
 ; *****************************************************************************
 

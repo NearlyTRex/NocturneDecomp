@@ -16,16 +16,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   int iVar2;
   CDeformableModel *this_ptr_01;
   int iVar3;
-  float10 fVar4;
+  double dVar4;
   CBoundingBox3D *bounding_box;
-  SPose local_1aac;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xc000);
   if (this_ptr == *(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4)) {
-    fVar4 = (float10)DAT_007bda90 + (float10)g_CGamePtr->delta_time_float * (float10)_DAT_005ccda6;
-    round();
-    DAT_007bda90 = (int)ROUND(fVar4);
+    dVar4 = round
+                      ((double)((float)DAT_007bda90 + g_CGamePtr->delta_time_float * _DAT_005ccda6))
+    ;
+    DAT_007bda90 = (int)ROUND(dVar4);
   }
   iVar2 = rand();
   _DAT_007bda94 = iVar2 % 6;
@@ -33,7 +33,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   engine_texture_cpp_ensureTextureLoaded_FUN_00574e00
             ((SMRGLTextureBasic *)(&DAT_00609a10 + (iVar2 % 6) * 0x18));
   this_ptr_00 = &this_ptr->model;
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(this_ptr_00,&local_1aac);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620
+            (this_ptr_00,(SPose *)&stack0xffffe550);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_00547110
             (this_ptr_00,1.1,-1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0(this_ptr_00);
@@ -55,7 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_00547370(&this_ptr->model,0x267,1);
   DAT_0060b280->skip_uv_extraction = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0
-            (&this_ptr->model,&local_1aac);
+            (&this_ptr->model,(SPose *)&stack0xffffe550);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   return;
 }

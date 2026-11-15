@@ -12,7 +12,7 @@
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_2d.c_drawText_FUN_00401fe0
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;   wincore_winrun.cpp_getNextKeypress_FUN_0058ead0
@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 00446f71
     MOV EAX,0x5cea3d                    ; 00446f72
     PUSH EAX                            ; 00446f77
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00446f78
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00446f78
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00446f7d
     MOV dword ptr [EBP + -0x8],EAX      ; 00446f80
     CMP dword ptr [EBP + -0x8],0x0      ; 00446f83
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_00446fe4
     PUSH EAX                            ; 00446fe7
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00446fe8
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00446fed
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 00446ff0
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()

@@ -130,7 +130,7 @@ section .text
     MOV EDI,0x1d70c50                   ; 004e0cc5
     MOV [0x01d70c4c],EAX                ; 004e0cca | DAT_01d70c4c
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0 ; 004e0ccf
-        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0()
+        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x4]                 ; 004e0cd4
     ADD ESP,0x4                         ; 004e0cd8
     MOVSD ES:EDI,ESI                    ; 004e0cdb | DAT_01d70c50

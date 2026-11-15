@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip)
 ;
+; Parameters:
+; SLineStrip *     Stack[0x4]:4   line_strip
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b014

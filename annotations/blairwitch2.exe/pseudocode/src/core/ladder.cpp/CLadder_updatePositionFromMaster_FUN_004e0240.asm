@@ -39,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 004e026f
     PUSH EAX                            ; 004e0273
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004e0274
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x43c]     ; 004e0279
     ADD ESP,0xc                         ; 004e027f
     LEA EDX,[EAX + 0x30]                ; 004e0282
@@ -49,7 +49,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 004e028a
     PUSH EAX                            ; 004e028e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004e028f
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004e0294
     LEA EAX,[ESP + 0x68]                ; 004e0297
     PUSH EAX                            ; 004e029b
@@ -86,7 +86,7 @@ section .text
     LEA ESI,[ESP + 0xe4]                ; 004e0319
     LEA EDI,[ESP + 0xd8]                ; 004e0320
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 004e0327
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0xe4]                ; 004e032c
     LEA EAX,[ESP + 0xd8]                ; 004e0333
     ADD ESP,0x4                         ; 004e033a

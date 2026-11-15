@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d71b3
-;   core_game.cpp_FUN_004d7250 at 004d7544
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d7544
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7f14
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0
 ;   core_level.cpp_FUN_004fe840
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
 ;   core_mission.cpp_CDemonMission_load_FUN_0051a3f0
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5e990e                       ; 0051bafe | = "CDemonMission::run - no gLocalHero"
     MOV dword ptr [0x01d1d400],EBP      ; 0051bb03 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0051bb09 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051bb0e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051bb0e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051bb13
     MOV EAX,[0x01d06ab4]                ; 0051bb16 | DAT_01d06ab4
         ;   Label: LAB_0051bb16
@@ -142,8 +142,8 @@ section .text
     PUSH 0x5e98d5                       ; 0051bbca | = "CDemonMission::run - hero list empty"
     MOV dword ptr [0x01d1d400],ECX      ; 0051bbcf | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0051bbd5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051bbdb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051bbdb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051bbe0
     JMP 0x0051bae5                      ; 0051bbe3
         ;   XREF to: 0051bae5 (UNCONDITIONAL_JUMP)  ; LAB_0051bae5

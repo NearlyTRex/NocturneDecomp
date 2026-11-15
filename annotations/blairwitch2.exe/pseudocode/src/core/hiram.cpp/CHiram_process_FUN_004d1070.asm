@@ -98,7 +98,7 @@ section .text
     MOV EDI,dword ptr [0x00618170]      ; 004d10fb | DAT_00618170
     PUSH EDI                            ; 004d1101 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004d1102
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004d1107
     JMP 0x004d10d1                      ; 004d110a
         ;   XREF to: 004d10d1 (UNCONDITIONAL_JUMP)  ; LAB_004d10d1

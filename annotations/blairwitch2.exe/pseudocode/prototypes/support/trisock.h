@@ -51,7 +51,7 @@ SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_00578ef0
 // Address: 00578ef0
-void buildSockaddrIn(SNetworkAddr *param_1);
+SOCKADDR_IN * __stack_esi buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_00578f50
 // Address: 00578f50

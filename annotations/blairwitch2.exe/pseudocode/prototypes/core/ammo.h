@@ -39,7 +39,7 @@ int __cdecl CAmmo::renderOpaque(CAmmo *this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170
 // Address: 0040e170
-CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ammo.cpp_CAmmo_archive_FUN_0040e1b0
 // Address: 0040e1b0

@@ -42,12 +42,12 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_texlist.cpp_CTextureList_load_FUN_005690c0
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fread_FUN_005a3890
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 004cfd70
     MOV ECX,dword ptr [ESP + 0xb0]      ; 004cfd71
     PUSH ECX                            ; 004cfd78 | DAT_005c49b6
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004cfd79
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004cfd79
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004cfd7e
     MOV ESI,EAX                         ; 004cfd81
     TEST EAX,EAX                        ; 004cfd83
@@ -146,8 +146,8 @@ section .text
     PUSH 0x5c4853                       ; 004cfd91 | = "eopen - Cannot open file"
     MOV dword ptr [0x01d71de0],EDI      ; 004cfd96 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004cfd9c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cfda2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cfda2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cfda7
     XOR EAX,EAX                         ; 004cfdaa
         ;   Label: LAB_004cfdaa
@@ -205,7 +205,7 @@ section .text
     MOV EBP,0x5c49c2                    ; 004cfe1f | DAT_005c49c2
     LEA EDI,[ESP + 0x54]                ; 004cfe24
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004cfe28
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     MOV EAX,0x5c49bb                    ; 004cfe2d | DAT_005c49bb
     ADD ESP,0x4                         ; 004cfe32
     MOV DL,0x2e                         ; 004cfe35
@@ -259,8 +259,8 @@ section .text
     PUSH 0x5c4829                       ; 004cfe97 | = "eopen - ext not found!"
     MOV dword ptr [0x01d71de0],EDX      ; 004cfe9c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004cfea2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cfea8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cfea8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cfead
     INC EDI                             ; 004cfeb0
         ;   Label: LAB_004cfeb0
@@ -287,8 +287,8 @@ section .text
     PUSH EAX                            ; 004cfed9
     MOV EDI,dword ptr [ESP + 0xac]      ; 004cfeda
     PUSH EDI                            ; 004cfee1 | DAT_005c49c2
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004cfee2
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004cfee2
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004cfee7
     MOV ESI,EAX                         ; 004cfeea
     TEST EAX,EAX                        ; 004cfeec
@@ -299,8 +299,8 @@ section .text
     PUSH 0x5c4853                       ; 004cfefa | = "eopen - Cannot open file"
     MOV dword ptr [0x01d71de0],EBP      ; 004cfeff | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004cff05 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cff0a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cff0a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cff0f
     MOV dword ptr [ESP + 0xb0],ESI      ; 004cff12
         ;   Label: LAB_004cff12
@@ -351,7 +351,7 @@ section .text
         ;   Label: LAB_004cff80
     PUSH ESI                            ; 004cff87
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004cff88
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004cff8d
     MOV EDI,dword ptr [ESP + 0xd4]      ; 004cff90
     PUSH EDI                            ; 004cff97
@@ -373,8 +373,8 @@ section .text
     PUSH 0x5c4829                       ; 004cffbb | = "eopen - ext not found!"
     MOV dword ptr [0x01d71de0],ESI      ; 004cffc0 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004cffc6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cffcb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cffcb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cffd0
     JMP 0x004cfd47                      ; 004cffd3
         ;   XREF to: 004cfd47 (UNCONDITIONAL_JUMP)  ; LAB_004cfd47

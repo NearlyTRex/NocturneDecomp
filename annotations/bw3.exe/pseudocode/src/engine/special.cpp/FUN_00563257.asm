@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_FUN_00563257(void)
+; void __edi_esi_ebx engine_special_cpp_FUN_00563257(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)
 ;
 ;
 ; XREF[8]:

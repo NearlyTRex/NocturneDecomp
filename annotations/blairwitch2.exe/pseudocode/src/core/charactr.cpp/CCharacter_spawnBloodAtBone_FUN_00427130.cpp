@@ -12,14 +12,12 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharact
   int iVar1;
   byte bVar2;
   float afStackY_1028 [1012];
-  float *pfVar3;
+  CVector3f *input_local_point;
   CVector3f local_40;
   CVector3f local_34;
-  float local_28;
-  float afStack_24 [2];
+  CVector3f local_28;
   CVector3f local_1c;
-  float local_10;
-  uint auStack_c [2];
+  CVector3f local_10;
   
   bVar2 = 0;
   if ((this_ptr->model).part_data.visibility_flags[part_index] == 0) {
@@ -27,16 +25,19 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharact
     if (iVar1 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
                 (&this_ptr->model,bone_index,&local_34);
-      pfVar3 = &local_10;
-      local_10 = local_34.x;
-      auStack_c[(uint)bVar2 * -2] = *(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
-      auStack_c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+      input_local_point = &local_10;
+      local_10.x = local_34.x;
+      *(uint *)((int)&local_10 + (uint)bVar2 * -8 + 4) =
+           *(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
+      *(uint *)((int)&local_10 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-      core_actor_cpp_FUN_00408d70(this_ptr,pfVar3);
-      local_40.x = local_28;
-      *(float *)((int)&local_40 + (uint)bVar2 * -8 + 4) = afStack_24[(uint)bVar2 * -2];
-      *(float *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-           afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                (&this_ptr->base,input_local_point,&local_28);
+      local_40.x = local_28.x;
+      *(uint *)((int)&local_40 + (uint)bVar2 * -8 + 4) =
+           *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);
+      *(uint *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
       local_1c.x = 0.0;
       local_1c.y = 7.0;
       local_1c.z = 0.0;

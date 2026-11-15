@@ -38,7 +38,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
       if (pSVar4 == (SScriptLine *)0x0) {
         _DAT_01d046a0 = "..\\core\\script.cpp";
         _DAT_01d046a4 = 0x3a6;
-        core_main_c_FUN_004e4500("Out of memory loading script at line %d",index + 1);
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory loading script at line %d");
       }
       this_ptr->parsed_lines[this_ptr->parsed_line_count].line_number = index + 1;
       uVar5 = 0xffffffff;
@@ -54,7 +54,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this
       if (this_ptr->parsed_lines == (SScriptLine *)0x0) {
         _DAT_01d046a0 = "..\\core\\script.cpp";
         _DAT_01d046a4 = 0x3a9;
-        core_main_c_FUN_004e4500("Out of memory loading script at line %d",index + 1);
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory loading script at line %d");
       }
       pcVar7 = &DAT_01e648f8;
       pcVar3 = this_ptr->parsed_lines[this_ptr->parsed_line_count].text;

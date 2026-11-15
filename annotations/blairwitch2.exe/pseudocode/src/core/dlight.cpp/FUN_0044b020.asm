@@ -74,10 +74,10 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0
-;   engine_drender.cpp_FUN_0046b670
 ;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
@@ -117,8 +117,8 @@ section .text
     PUSH ESI                            ; 0044b06a | DAT_01ba5c50
     LEA ESI,[ESP + 0x98]                ; 0044b06b
     LEA EDI,[ESP + 0x8c]                ; 0044b072
-    CALL engine_drender.cpp_FUN_0046b670 ; 0044b079
-        ;   XREF to: 0046b670 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b670()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670 ; 0044b079
+        ;   XREF to: 0046b670 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 0044b07e
     LEA ESI,[ESP + 0x94]                ; 0044b081
     LEA EAX,[ESP + 0x88]                ; 0044b088
@@ -256,7 +256,7 @@ section .text
     FMUL double ptr [0x005cf46f]        ; 0044b25d | DAT_005cf46f
     MOV EDX,0xffff                      ; 0044b263
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044b268
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     SUB EDX,EAX                         ; 0044b26d
     FISTP dword ptr [ESP + 0xd4]        ; 0044b26f
     MOV EAX,EDX                         ; 0044b276

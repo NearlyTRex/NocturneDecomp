@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d51db0
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5ec424                       ; 00530734 | = "CNetGame::sendSimFrameAck - should on..."
     MOV dword ptr [0x01d1d400],EBP      ; 00530739 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0053073f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00530744
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00530744
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530749
     CMP dword ptr [EBX + 0x118],0x0     ; 0053074c
         ;   Label: LAB_0053074c
@@ -110,8 +110,8 @@ section .text
     PUSH 0x5ec3cf                       ; 005307dc | = "CNetGame::sendSimFrameAck - should on..."
     MOV dword ptr [0x01d1d400],ECX      ; 005307e1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005307e7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005307ed
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005307ed
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005307f2
     JMP 0x00530724                      ; 005307f5
         ;   XREF to: 00530724 (UNCONDITIONAL_JUMP)  ; LAB_00530724
@@ -121,8 +121,8 @@ section .text
     PUSH 0x5ec47b                       ; 00530804 | = "CNetGame::sendSimFrameAck - server no..."
     MOV dword ptr [0x01d1d400],ECX      ; 00530809 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0053080f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00530815
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00530815
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053081a
     JMP 0x00530759                      ; 0053081d
         ;   XREF to: 00530759 (UNCONDITIONAL_JUMP)  ; LAB_00530759
@@ -132,8 +132,8 @@ section .text
     PUSH 0x5ec4c5                       ; 0053082c | = "CNetGame::sendSimFrameAck - I'm not i..."
     MOV dword ptr [0x01d1d400],EBP      ; 00530831 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00530837 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053083c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053083c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530841
     JMP 0x00530766                      ; 00530844
         ;   XREF to: 00530766 (UNCONDITIONAL_JUMP)  ; LAB_00530766

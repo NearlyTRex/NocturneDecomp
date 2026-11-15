@@ -192,7 +192,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0053e650(int *vertex
             return;
           }
         }
-        engine_special_cpp_FUN_00580127();
+        local_64[0] = (SRenderVertex *)0x53e8cb;
+        engine_special_cpp_FUN_00580127(local_14,edge_ptr,local_18);
         piVar6 = &(edge_ptr->base).x_current;
         *piVar6 = *piVar6 + (edge_ptr->base).x_gradient;
         (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
@@ -202,17 +203,15 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0053e650(int *vertex
              (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
         (edge_ptr->base).alpha_current =
              (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
-        (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
-        (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
-        (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
-        (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
-        (local_14->base).depth_current =
-             (local_14->base).depth_current + (local_14->base).depth_gradient;
-        local_18 = local_18 + 1;
-        (local_14->base).alpha_current =
-             (local_14->base).alpha_current + (local_14->base).alpha_gradient;
-        iVar3 = local_18 - DAT_00622a84;
-        bVar13 = SBORROW4(local_18,DAT_00622a84);
+        *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
+        *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
+        *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);
+        *(int *)(local_18 + 0x10) = *(int *)(local_18 + 0x10) + *(int *)(local_18 + 0x14);
+        *(int *)(local_18 + 0x28) = *(int *)(local_18 + 0x28) + *(int *)(local_18 + 0x2c);
+        local_1c = local_1c + 1;
+        *(int *)(local_18 + 0x30) = *(int *)(local_18 + 0x30) + *(int *)(local_18 + 0x34);
+        iVar3 = local_1c - DAT_00622a84;
+        bVar13 = SBORROW4(local_1c,DAT_00622a84);
       }
     }
   }

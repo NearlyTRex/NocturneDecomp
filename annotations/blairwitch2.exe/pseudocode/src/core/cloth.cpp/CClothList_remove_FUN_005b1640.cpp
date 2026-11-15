@@ -23,7 +23,7 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_005b1640(CClothList *this_ptr,
   if ((index < 0) || (this_ptr->count <= index)) {
     _DAT_01d046a0 = "..\\core\\cloth.cpp";
     _DAT_01d046a4 = 0x5f1;
-    core_main_c_FUN_004e4500("CClothList::remove - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CClothList::remove - invalid index");
   }
   if (this_ptr->cloths[index] != (CCloth *)0x0) {
     uVar2 = core_necklace_cpp_FUN_005ade00(this_ptr->cloths[index],0);

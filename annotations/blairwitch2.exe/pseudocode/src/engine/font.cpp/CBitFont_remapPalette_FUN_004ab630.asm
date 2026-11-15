@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -188,8 +188,8 @@ section .text
     PUSH 0x5d6a3b                       ; 004ab7e5 | = "CBitFont::remapPalette - Invalid bits..."
     MOV [0x01d046a0],EAX                ; 004ab7ea | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004ab7ef | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004ab7f5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ab7f5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ab7fa
     JMP 0x004ab6a5                      ; 004ab7fd
         ;   XREF to: 004ab6a5 (UNCONDITIONAL_JUMP)  ; LAB_004ab6a5

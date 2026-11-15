@@ -57,7 +57,7 @@ LAB_004cfd3d:
   if (pcVar5 == (char *)0x0) {
     _DAT_01d71de0 = "..\\core\\ground.cpp";
     _DAT_01d71de4 = 0x40;
-    core_main_c_FUN_004e4330("eopen - ext not found!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("eopen - ext not found!");
   }
   pcVar7 = local_20;
   pcVar5 = pcVar5 + 1;
@@ -71,11 +71,11 @@ LAB_004cfd3d:
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  file = engine_dosio_cpp_FUN_004659c0(local_24,local_cc,pcVar7);
+  file = engine_dosio_cpp_getFile_FUN_004659c0(local_24,local_cc,pcVar7);
   if (file == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\ground.cpp";
     _DAT_01d71de4 = 0x44;
-    core_main_c_FUN_004e4330("eopen - Cannot open file");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("eopen - Cannot open file");
   }
   local_18 = 0;
   if (0 < this_ptr->height) {
@@ -127,7 +127,7 @@ LAB_004cfe87:
   if (pcVar7 == (char *)0x0) {
     _DAT_01d71de0 = "..\\core\\ground.cpp";
     _DAT_01d71de4 = 0x40;
-    core_main_c_FUN_004e4330("eopen - ext not found!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("eopen - ext not found!");
   }
   pcVar7 = pcVar7 + 1;
   pcVar5 = &DAT_005c49be;
@@ -140,11 +140,11 @@ LAB_004cfe87:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  local_1c = engine_dosio_cpp_FUN_004659c0(local_28,local_7c,local_2c);
+  local_1c = engine_dosio_cpp_getFile_FUN_004659c0(local_28,local_7c,local_2c);
   if (local_1c == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\ground.cpp";
     _DAT_01d71de4 = 0x44;
-    core_main_c_FUN_004e4330("eopen - Cannot open file");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("eopen - Cannot open file");
   }
   local_14 = 0;
   if (0 < this_ptr->height) {

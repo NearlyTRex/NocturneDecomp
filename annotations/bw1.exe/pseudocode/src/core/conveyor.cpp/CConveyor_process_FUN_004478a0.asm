@@ -15,7 +15,7 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;
@@ -102,8 +102,8 @@ section .text
     PUSH EBP                            ; 0044796f
     LEA ESI,[ESP + 0x2c]                ; 00447970
     LEA EDI,[ESP + 0x8]                 ; 00447974
-    CALL core_actor.cpp_FUN_00408ac0    ; 00447978
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00447978
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x2c]                ; 0044797d
     ADD ESP,0x8                         ; 00447981
     MOVSD ES:EDI,ESI                    ; 00447984

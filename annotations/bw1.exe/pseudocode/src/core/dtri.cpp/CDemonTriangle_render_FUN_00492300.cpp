@@ -11,18 +11,9 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_00492300(CDemonTriangle *this_ptr)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  double dVar1;
   CDemonRenderer *this_ptr_00;
   SMRGLPrimitivePoly *poly;
-  int iStack_74;
-  UIntegerFloat UStack_70;
-  UIntegerFloat UStack_6c;
-  UIntegerFloat UStack_68;
-  UIntegerFloat UStack_64;
-  int iStack_60;
-  int iStack_54;
-  int iStack_48;
   CVector3i CStack_30;
   CVector3i CStack_24;
   CVector3i CStack_18;
@@ -31,36 +22,25 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_00492300(CDemonTriangle *th
   CStack_30.y = (int)ROUND((this_ptr->vertex1).y * _DAT_005ff660);
   CStack_30.z = (int)ROUND((this_ptr->vertex1).z * _DAT_005ff660);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_0061255c->vertex_buffer_ptr->projected_vertex,&CStack_30);
+            ((SProjectedVertex *)(0x01BC120C->base).base.type,&CStack_30);
   CStack_18.x = (int)ROUND((this_ptr->vertex2).x * _DAT_005ff660);
   CStack_18.y = (int)ROUND((this_ptr->vertex2).y * _DAT_005ff660);
   CStack_18.z = (int)ROUND((this_ptr->vertex2).z * _DAT_005ff660);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_0061255c->vertex_buffer_ptr[1].projected_vertex,&CStack_18);
+            ((SProjectedVertex *)((0x01BC120C->base).base.type + 0x30),&CStack_18);
   CStack_24.x = (int)ROUND((this_ptr->vertex3).x * _DAT_005ff660);
   CStack_24.y = (int)ROUND((this_ptr->vertex3).y * _DAT_005ff660);
   CStack_24.z = (int)ROUND((this_ptr->vertex3).z * _DAT_005ff660);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_0061255c->vertex_buffer_ptr[2].projected_vertex,&CStack_24);
-  poly = (SMRGLPrimitivePoly *)&stack0xffffff88;
-  iStack_74 = 3;
-  fVar1 = (float10)_DAT_005dbc1c;
-  fVar2 = (float10)(this_ptr->normal).x * fVar1;
-  round();
-  UStack_70.i = (int)ROUND(fVar2);
-  fVar2 = (float10)(this_ptr->normal).y * fVar1;
-  round();
-  UStack_6c.i = (int)ROUND(fVar2);
-  fVar1 = fVar1 * (float10)(this_ptr->normal).z;
-  round();
-  UStack_68.i = (int)ROUND(fVar1);
-  fVar2 = (float10)this_ptr->plane_distance * (float10)_DAT_005dbc24 * (float10)_DAT_005dbc2c;
-  iStack_60 = 0;
-  iStack_54 = 1;
-  iStack_48 = 2;
-  this_ptr_00 = 0x01BC120C;
-  round();
-  UStack_64.i = (int)ROUND(fVar2);
+            ((SProjectedVertex *)((0x01BC120C->base).base.type + 0x60),&CStack_24);
+  dVar1 = _DAT_005dbc1c;
+  round((double)(this_ptr->normal).x * _DAT_005dbc1c);
+  round((double)(this_ptr->normal).y * dVar1);
+  round(dVar1 * (double)(this_ptr->normal).z);
+  this_ptr_00 = (CDemonRenderer *)0x492439;
+  poly = 0x01BC120C;
+  round
+            ((double)(this_ptr->plane_distance * (float)_DAT_005dbc24 * (float)_DAT_005dbc2c));
   engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(this_ptr_00,poly);
   return;
 }

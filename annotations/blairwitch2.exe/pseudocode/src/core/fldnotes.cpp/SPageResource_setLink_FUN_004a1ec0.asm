@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
 ;
@@ -73,8 +73,8 @@ section .text
     PUSH 0x5d5a54                       ; 004a1f1a
     MOV dword ptr [0x01d046a0],EBP      ; 004a1f1f | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004a1f25 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a1f2a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a1f2a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a1f2f
     MOV EDI,dword ptr [EBX + 0x10]      ; 004a1f32
         ;   Label: LAB_004a1f32

@@ -41,7 +41,7 @@
 ;   core_inv.cpp_CInventory_clear_FUN_004da860
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004fbc00
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
@@ -324,8 +324,8 @@ section .text
     PUSH 0x5db8af                       ; 004dc7ee | = "CInventory::load - Can't find your we..."
     MOV dword ptr [0x01d046a0],EDI      ; 004dc7f3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 004dc7f9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dc7ff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dc7ff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dc804
     JMP 0x004dc706                      ; 004dc807
         ;   XREF to: 004dc706 (UNCONDITIONAL_JUMP)  ; LAB_004dc706

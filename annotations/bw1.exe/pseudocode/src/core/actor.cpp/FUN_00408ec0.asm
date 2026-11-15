@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_actor_cpp_FUN_00408ec0(int param_1,int param_2,uint param_3)
+; undefined4 * core_actor_cpp_FUN_00408ec0(CDemonActor *param_1,int param_2,uint param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xb8]:4  local_b8
@@ -20,9 +20,9 @@
 ;   core_setcolid.cpp_FUN_005562c0 at 005565f7
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
-;   core_box.cpp_FUN_00420570
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 00408f1d
     LEA ESI,[ESP + 0x50]                ; 00408f1e
     LEA EDI,[ESP + 0x8c]                ; 00408f22
-    CALL core_box.cpp_FUN_00420570      ; 00408f29
-        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420570()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570 ; 00408f29
+        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x50]                ; 00408f2e
     ADD ESP,0x8                         ; 00408f32
     LEA EAX,[ESP + 0x84]                ; 00408f35
@@ -71,8 +71,8 @@ section .text
     PUSH EBP                            ; 00408f47
     LEA ESI,[ESP + 0xa4]                ; 00408f48
     LEA EDI,[ESP + 0x98]                ; 00408f4f
-    CALL core_actor.cpp_FUN_00408ac0    ; 00408f56
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00408f56
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xa4]                ; 00408f5b
     ADD ESP,0x8                         ; 00408f62
     MOV EAX,ESP                         ; 00408f65
@@ -101,8 +101,8 @@ section .text
     PUSH EAX                            ; 00408fa4
     LEA ESI,[ESP + 0x74]                ; 00408fa5
     LEA EDI,[ESP + 0x5c]                ; 00408fa9
-    CALL core_box.cpp_FUN_00420570      ; 00408fad
-        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420570()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570 ; 00408fad
+        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     ADD ESP,0x8                         ; 00408fb2
     LEA EAX,[ESP + 0x54]                ; 00408fb5
     LEA ESI,[ESP + 0x6c]                ; 00408fb9
@@ -113,8 +113,8 @@ section .text
     PUSH EBP                            ; 00408fc1
     LEA ESI,[ESP + 0x80]                ; 00408fc2
     LEA EDI,[ESP + 0x68]                ; 00408fc9
-    CALL core_actor.cpp_FUN_00408ac0    ; 00408fcd
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00408fcd
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00408fd2
     LEA EAX,[ESP + 0x60]                ; 00408fd5
     LEA ESI,[ESP + 0x78]                ; 00408fd9

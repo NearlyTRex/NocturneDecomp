@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   str2
 ; int              Stack[0xc]:4   count
 ;
-; XREF[18]:
+; XREF[19]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0 at 004281f8
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 at 00424035
 ;   core_charactr.cpp_FUN_0042b2a0 at 0042b2d2
@@ -19,7 +19,7 @@
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00 at 004fcd2f
 ;   core_script.cpp_CScript_skipCommands_FUN_00529a10 at 00529a8f
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00522576
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; *****************************************************************************
 

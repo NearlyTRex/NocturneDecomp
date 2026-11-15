@@ -24,7 +24,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00570f30(CSfxSlot *this_ptr,f
   if (_DAT_02c807ec < 1) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xade;
-    core_main_c_FUN_005030e0();
+    core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::compute - must be locked!");
   }
   if (this_ptr->sample == (CSfxSample *)0x0) {
     return 0;

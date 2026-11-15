@@ -14,8 +14,7 @@ void engine_texture_cpp_FUN_0056a610(int param_1,int param_2)
   if ((*(int *)(param_2 + 4) < 0) || (*(int *)(param_1 + 0x18004) <= *(int *)(param_2 + 4))) {
     _DAT_01d71de0 = "..\\engine\\texture.cpp";
     _DAT_01d71de4 = 0x2e9;
-    core_main_c_FUN_004e4330
-              ("CTextureCache::selectTextureByHandle - Out of range : %d,%s",*(uint *)(param_2 + 4),param_2 + 8);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::selectTextureByHandle - Out of range : %d,%s");
   }
   (*_DAT_02cf60e4)(*(uint *)(*(int *)(param_2 + 4) * 0x60 + 0x60 + param_1),0);
   return;

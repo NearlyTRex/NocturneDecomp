@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_00447e34
     MOV ECX,0x2000                      ; 00447e37
     CALL crt_math.c_round_FUN_005b7ff0  ; 00447e3c
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EDI,dword ptr [EDI + 0x48]      ; 00447e41
     FISTP dword ptr [ESP + 0xc]         ; 00447e44
     MOV EAX,dword ptr [ESP + 0xc]       ; 00447e48

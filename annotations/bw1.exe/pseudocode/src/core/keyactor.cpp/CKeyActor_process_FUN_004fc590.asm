@@ -44,7 +44,7 @@ section .text
     FADD double ptr [0x005e69d3]        ; 004fc5cd | DAT_005e69d3
     ADD ESP,0x8                         ; 004fc5d3
     CALL crt_math.c_round_FUN_005c03a0  ; 004fc5d6
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 004fc5db
     MOV EAX,dword ptr [ESP]             ; 004fc5de
     MOV EDX,EAX                         ; 004fc5e1

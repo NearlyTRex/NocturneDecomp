@@ -215,7 +215,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004b7b90(CFlame *this_ptr,float d
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_hide_FUN_004b8ab0(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004b8ac0(CFlame *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004b8c90(CFlame *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_flame_cpp_CFlame_getBoundingBox_FUN_004b8c90(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_004b8d10(CFlame *this_ptr);
 ECollisionType __cdecl core_flame_cpp_CFlame_getCollisionType_FUN_004b8e30(CFlame *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004b8e40(CFlame *this_ptr);
@@ -231,7 +231,7 @@ int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004b9340(CFlameCan
 int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004b9370(CFlameCan *this_ptr,CVector3f *out_points_array);
 void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004b9440(CFlameCan *this_ptr);
 ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_004b94a0(CFlameCan *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004b94b0(CFlameCan *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004b94b0(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004b94f0(CFlameCan *this_ptr,uint flags);
 void __cdecl core_flamegun_cpp_staticInit_FUN_004b9560(void);
 CFlameThrower * __cdecl core_flamegun_cpp_factoryFuncFlameThrower_FUN_004b9590(void);

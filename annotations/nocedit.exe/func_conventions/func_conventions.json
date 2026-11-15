@@ -1263,11 +1263,11 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
-  "CSoundDevice_close":{
+  "CSoundDevice_applySfxChanges":{
     "convention":"__cdecl",
-    "param_bytes":4
+    "param_bytes":12
   },
-  "CSoundDevice_commitDeferredSettings":{
+  "CSoundDevice_close":{
     "convention":"__cdecl",
     "param_bytes":4
   },
@@ -1299,6 +1299,10 @@
     "convention":"__cdecl",
     "param_bytes":12
   },
+  "CSoundDevice_pollPlayback":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
   "CSoundDevice_reset":{
     "convention":"__cdecl",
     "param_bytes":4
@@ -1323,9 +1327,9 @@
     "convention":"__cdecl",
     "param_bytes":20
   },
-  "CSoundDevice_setSfxPos":{
+  "CSoundDevice_setReverb":{
     "convention":"__cdecl",
-    "param_bytes":12
+    "param_bytes":16
   },
   "CSoundDevice_start":{
     "convention":"__cdecl",
@@ -1337,7 +1341,7 @@
   },
   "CSoundDevice_unlockSample":{
     "convention":"__cdecl",
-    "param_bytes":8
+    "param_bytes":16
   },
   "CSound_releaseBuffer":{
     "convention":"__cdecl",

@@ -35,8 +35,7 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
   float fStack_4c;
   float fStack_48;
   float fStack_44;
-  float fStack_40;
-  uint auStack_3c [2];
+  CVector3f CStack_40;
   CVector3f CStack_34;
   CVector3f CStack_28;
   CVector3f CStack_1c;
@@ -63,11 +62,13 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
           pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
           pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
         }
-        core_actor_cpp_FUN_00408de0();
-        *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) = auStack_3c[(uint)bVar8 * -2];
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  (&this_ptr->base,&(actor->location).position,&CStack_40);
+        *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) =
+             *(uint *)((int)&CStack_40 + (uint)bVar8 * -8 + 4);
         *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-             auStack_3c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-        if ((((fStack_58 <= fStack_40 + fStack_7c) && (fStack_40 - fStack_7c <= fStack_4c)) &&
+             *(uint *)((int)&CStack_40 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+        if ((((fStack_58 <= CStack_40.x + fStack_7c) && (CStack_40.x - fStack_7c <= fStack_4c)) &&
             (fStack_50 <= unaff_ESI + fStack_7c)) &&
            (((unaff_ESI - fStack_7c <= fStack_44 && (fStack_54 <= fVar2 + fStack_80)) &&
             (fVar2 + (float)pCStack_84 <= fStack_48)))) {
@@ -79,7 +80,7 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform 
             ray_direction = &CStack_28;
             CStack_28.z = 0.0;
             ray_origin = &CStack_1c;
-            CStack_1c.x = fStack_40;
+            CStack_1c.x = CStack_40.x;
             *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + 4) =
                  *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);
             *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =

@@ -23,7 +23,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005897e0(void)
         if (iVar1 != 0) {
           _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
           _DAT_01d046a4 = 0x3cf;
-          core_main_c_FUN_004e4500("videoRestore - Unable to set front buffer palette");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("videoRestore - Unable to set front buffer palette");
           return;
         }
       }

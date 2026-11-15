@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5daa36                       ; 00478e70 | = "addGetFileInfoHook - too many!"
     MOV dword ptr [0x01d1d400],ECX      ; 00478e75 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00478e7b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00478e81
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00478e81
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00478e86
     POP EBX                             ; 00478e89
     JMP 0x00478e4a                      ; 00478e8a

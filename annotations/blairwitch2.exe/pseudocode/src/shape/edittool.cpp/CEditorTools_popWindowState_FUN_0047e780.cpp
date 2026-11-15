@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(CEditor
   if (_DAT_01c2559c < 1) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0x8b5;
-    core_main_c_FUN_004e4500("CEditorTools::popWindow() called but no window was opened!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CEditorTools::popWindow() called but no window was opened!");
   }
   _DAT_01c2559c = _DAT_01c2559c + -1;
   iVar1 = _DAT_01c2559c * 0x1f8;

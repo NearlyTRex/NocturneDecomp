@@ -21,7 +21,7 @@ void __cdecl core_path_cpp_renderAllPathMaps_FUN_0050cfc0(int depth,int red,int 
       if (*(int *)(iVar1 + 0x1ec151c) == 0) {
         _DAT_01d71de0 = "..\\core\\path.cpp";
         _DAT_01d71de4 = 0x6a9;
-        core_main_c_FUN_004e4330("Global pathmap list corruption");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Global pathmap list corruption");
       }
       if ((int)((*(CPathMap **)(iVar1 + 0x1ec151c))->cached_world_position).x < 0x461c3c01) {
         core_path_cpp_CPathMap_renderPathMap_FUN_0050c980

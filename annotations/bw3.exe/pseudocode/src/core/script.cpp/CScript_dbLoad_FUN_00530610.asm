@@ -39,7 +39,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_script.cpp_CScript_findDialogEntry_FUN_00530990
 ;   core_script.cpp_trimString_FUN_00528830
 ;   crt_memory.c_realloc_FUN_005a3e50
@@ -50,7 +50,7 @@
 ;   crt_stdio.c_ungetc_FUN_005a3480
 ;   crt_string.c_splitpath_FUN_005a5128
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
@@ -85,8 +85,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x348]     ; 00530656
     PUSH ECX                            ; 0053065d
     PUSH 0x5cfb5b                       ; 0053065e | = "world"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 00530663
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00530663
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00530668
     MOV EBP,EAX                         ; 0053066b
     TEST EAX,EAX                        ; 0053066d
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5cfba5                       ; 005306d7 | = "SCScipt::dbLoad - error parsing %s re..."
     MOV dword ptr [0x01d71de0],ESI      ; 005306dc | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 005306e2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005306e8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005306e8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005306ed
     PUSH EBP                            ; 005306f0
         ;   Label: LAB_005306f0
@@ -163,8 +163,8 @@ section .text
     PUSH 0x5cfc34                       ; 0053073c | = "SCScipt::dbLoad - error parsing %s re..."
     MOV dword ptr [0x01d71de0],EDX      ; 00530741 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00530747 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053074d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053074d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00530752
     LEA EAX,[ESP + 0x8]                 ; 00530755
         ;   Label: LAB_00530755
@@ -282,8 +282,8 @@ section .text
     PUSH 0x5cfb74                       ; 0053087e | = "Can't open world\\%s"
     MOV dword ptr [0x01d71de0],ESI      ; 00530883 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00530889 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053088f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053088f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00530894
     JMP 0x00530675                      ; 00530897
         ;   XREF to: 00530675 (UNCONDITIONAL_JUMP)  ; LAB_00530675
@@ -312,8 +312,8 @@ section .text
     PUSH 0x5cfbec                       ; 005308db | = "SCScipt::dbLoad - error parsing %s re..."
     MOV dword ptr [0x01d71de0],ECX      ; 005308e0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005308e6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005308ec
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005308ec
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005308f1
     JMP 0x0053070b                      ; 005308f4
         ;   XREF to: 0053070b (UNCONDITIONAL_JUMP)  ; LAB_0053070b
@@ -361,15 +361,15 @@ section .text
     PUSH 0x5cfcbe                       ; 0053095b | = "SCScipt::dbLoad - out of memory"
     MOV dword ptr [0x01d71de0],EDX      ; 00530960 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00530966 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053096c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053096c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00530971
     JMP 0x0053084b                      ; 00530974
         ;   XREF to: 0053084b (UNCONDITIONAL_JUMP)  ; LAB_0053084b
     PUSH EBP                            ; 00530979
         ;   Label: LAB_00530979
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 0053097a
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 0053097f
     POP ESI                             ; 00530982
     POP EDI                             ; 00530983

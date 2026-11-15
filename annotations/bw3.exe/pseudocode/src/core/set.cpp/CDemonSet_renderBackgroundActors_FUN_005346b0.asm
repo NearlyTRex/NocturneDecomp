@@ -14,9 +14,9 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_0053ba40 at 0053ba58
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 0053676c
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535bc6
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f4a
-;   core_set.cpp_FUN_005365c0 at 0053676c
 ;   core_set.cpp_FUN_00536990 at 00536b28
 ;
 ; Referenced Globals:

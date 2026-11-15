@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lantern_cpp_FUN_0059ced0(int param_1)
+; void core_lantern_cpp_FUN_0059ced0(CDemonActor *param_1)
 ;
 ;
 ; XREF[2]:
@@ -9,9 +9,9 @@
 ;   core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000 at 0059d020
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EBX                            ; 0059cf00
     MOV dword ptr [EBX + 0x6e4],0x3ec90fdb ; 0059cf01
     LEA EDI,[ESP + 0x3c]                ; 0059cf0b
-    CALL core_actor.cpp_FUN_00408d70    ; 0059cf0f
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0059cf0f
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x60]                ; 0059cf14
     LEA EAX,[ESP + 0x3c]                ; 0059cf18
     ADD ESP,0x8                         ; 0059cf1c
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 0059cf78
     LEA ESI,[ESP + 0x30]                ; 0059cf79
     MOV dword ptr [ESP + 0x4c],ECX      ; 0059cf7d
-    CALL core_dirmat.cpp_FUN_00449530   ; 0059cf81
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0059cf81
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30]                ; 0059cf86
     ADD ESP,0x8                         ; 0059cf8a
     LEA EAX,[EBX + 0x6d8]               ; 0059cf8d

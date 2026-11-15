@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 393,
+    "complexity_score": 391,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 111,
     "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 398
+    "total_lines": 396
   },
   "cross_references": [],
   "function": {
@@ -197,26 +197,26 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "dVar9 = (double)in_stack_00000010[1] * _DAT_005bc174;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "fVar9 = (float10)*in_stack_00000010 * fVar8;",
+      "text": "dVar10 = (double)in_stack_00000010[2] * _DAT_005bc174;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 84,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "fVar10 = (float10)in_stack_00000010[1] * fVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "fVar8 = (float10)in_stack_00000010[2] * fVar8;",
+      "text": "dVar8 = round((double)*in_stack_00000010 * _DAT_005bc174);",
       "type": "stack_param"
     },
     {
@@ -261,7 +261,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "(int)&this_ptr->vertex_positions->x",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
@@ -269,7 +269,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
+      "line": 92,
       "match": "(int)&this_ptr->vertex_positions->y",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
@@ -277,7 +277,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->vertex_positions->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
+      "line": 94,
       "match": "(int)&this_ptr->vertex_positions->z",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
@@ -357,7 +357,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
@@ -365,7 +365,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 94,
+      "line": 92,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
@@ -373,7 +373,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 96,
+      "line": 94,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",

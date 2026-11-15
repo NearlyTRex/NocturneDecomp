@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 91,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "extra_output",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
@@ -40,7 +41,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00443b70",
@@ -188,6 +189,14 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "uint extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_2",
@@ -218,6 +227,14 @@
       "severity": "mild",
       "text": "return (uint)(byte)((&DAT_00610eb8)[param_2] - (char)this_ptr->key_state);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX & 0xffffff00;",
+      "type": "extra_output"
     }
   ]
 }

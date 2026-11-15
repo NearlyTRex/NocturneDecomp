@@ -51,7 +51,7 @@
 ;   undefined4 DAT_0267a394
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00532190
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
@@ -216,8 +216,8 @@ section .text
     PUSH 0x5f1791                       ; 005b6c03 | = "CMorphModel::rotatePoints - too many ..."
     MOV dword ptr [0x01d046a0],ECX      ; 005b6c08 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 005b6c0e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b6c14
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6c14
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b6c19
     JMP 0x005b6a68                      ; 005b6c1c
         ;   XREF to: 005b6a68 (UNCONDITIONAL_JUMP)  ; LAB_005b6a68

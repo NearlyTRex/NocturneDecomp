@@ -10,12 +10,12 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_00444ac0(CCourse *this_ptr,flo
 
 {
   int iVar1;
-  CMatrix3x4f *pCVar2;
-  float *pfVar3;
+  float *pfVar2;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
   float afStackY_100c [986];
-  CMatrix3x4f local_94;
-  float local_64 [12];
+  CVector3f *in_stack_ffffff6c;
+  CMatrix3x4f local_64;
   CQuaternion4f local_34;
   float local_24;
   float afStack_20 [2];
@@ -23,15 +23,15 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_00444ac0(CCourse *this_ptr,flo
   
   bVar4 = 0;
   core_course_cpp_CCourse_interpolate_FUN_00444b70(this_ptr,time,out_pos,&local_34);
-  core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(&local_34,&local_94);
-  pCVar2 = &local_94;
-  pfVar3 = local_64;
+  core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(&local_34,(CMatrix3x4f *)&stack0xffffff6c);
+  pfVar2 = (float *)&stack0xffffff6c;
+  pCVar3 = &local_64;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = pCVar2->m[0].w;
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = *pfVar2;
+    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  core_xform_cpp_matrixToEulerAngles_FUN_00583b10(local_64);
+  core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&local_64,in_stack_ffffff6c);
   local_18.x = local_24;
   *(float *)((int)&local_18 + (uint)bVar4 * -8 + 4) = afStack_20[(uint)bVar4 * -2];
   *(float *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

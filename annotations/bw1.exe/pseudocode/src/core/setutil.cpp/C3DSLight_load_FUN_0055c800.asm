@@ -45,7 +45,7 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdio.c_fgets_FUN_005c1180
 ;   crt_stdio.c_fscanf_FUN_005c04b0
@@ -626,8 +626,8 @@ section .text
     PUSH 0x5f12a3                       ; 0055cf5e | = "Invalid camera number in visiblilty l..."
     MOV dword ptr [0x01d1d400],EDX      ; 0055cf63 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0055cf69 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055cf6f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055cf6f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055cf74
     JMP 0x0055cecc                      ; 0055cf77
         ;   XREF to: 0055cecc (UNCONDITIONAL_JUMP)  ; LAB_0055cecc

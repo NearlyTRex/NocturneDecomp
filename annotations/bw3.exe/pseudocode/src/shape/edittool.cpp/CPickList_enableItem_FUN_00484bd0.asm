@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH 0x5bd7a3                       ; 00484bee | = "CPickList::enableItem - invalid index"
     MOV dword ptr [0x01d71de0],ECX      ; 00484bf3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00484bf9 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00484bff
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00484bff
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00484c04
     CMP ESI,dword ptr [EBX + 0x1ac]     ; 00484c07
         ;   Label: LAB_00484c07
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5bd7df                       ; 00484c68 | = "Out of memory"
     MOV dword ptr [0x01d71de0],EDI      ; 00484c6d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 00484c73 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00484c79
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00484c79
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00484c7e
     JMP 0x00484c3d                      ; 00484c81
         ;   XREF to: 00484c3d (UNCONDITIONAL_JUMP)  ; LAB_00484c3d

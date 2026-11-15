@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0044aa10(CCurtain *this_ptr)
 
 {
@@ -21,13 +19,12 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0044aa10(CCurtai
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  float fStack_38;
+  CVector3f CStack_38;
   float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  float afStack_28 [2];
   CMatrix3x3f *pCStack_20;
   CLocation *pCStack_1c;
-  SCurtainVertex *pSStack_18;
+  CVector3f *pCStack_18;
   SCurtainVertex *pSStack_14;
   
   bVar3 = 0;
@@ -38,30 +35,29 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0044aa10(CCurtai
     pCStack_1c = &(this_ptr->base).location;
     pCVar1 = &this_ptr->vertices[0].world_position;
     do {
-      pSStack_18 = pSStack_14 + iVar2;
-      core_dirmat_cpp_FUN_0045f690(pCStack_20,pSStack_18);
-      fStack_44 = fStack_38;
+      pCStack_18 = &pSStack_14[iVar2].local_position;
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(pCStack_20,pCStack_18,&CStack_38);
+      fStack_44 = CStack_38.x;
       *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8);
+           *(uint *)((int)&CStack_38 + (uint)bVar3 * -8 + 4);
       *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+           *(uint *)((int)&CStack_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       fStack_50 = fStack_44 + (pCStack_1c->position).x;
       fStack_4c = fStack_40 + (pCStack_1c->position).y;
       fStack_48 = fStack_3c + (pCStack_1c->position).z;
       fStack_2c = fStack_50;
-      (&stack0xffffffd8)[(uint)bVar3 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xffffffb4 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      if (pCVar1 != (CVector3f *)&stack0xffffffd4) {
+      afStack_28[(uint)bVar3 * -2] = *(float *)((int)&stack0xffffffb4 + (uint)bVar3 * -8);
+      afStack_28[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+           *(float *)((int)&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+      if (pCVar1 != (CVector3f *)&fStack_2c) {
         pCVar1->x = fStack_2c;
-        pCVar1->y = fStack_28;
-        pCVar1->z = fStack_24;
+        pCVar1->y = afStack_28[0];
+        pCVar1->z = afStack_28[1];
       }
-      if (&pSStack_18->last_world_position != &pSStack_18->world_position) {
-        (pSStack_18->last_world_position).x = (pSStack_18->world_position).x;
-        (pSStack_18->last_world_position).y = (pSStack_18->world_position).y;
-        (pSStack_18->last_world_position).z = (pSStack_18->world_position).z;
+      if (&pCStack_18[4].z != &pCStack_18[2].z) {
+        pCStack_18[4].z = pCStack_18[2].z;
+        pCStack_18[5].x = pCStack_18[3].x;
+        pCStack_18[5].y = pCStack_18[3].y;
       }
       iVar2 = iVar2 + 1;
       pCVar1 = (CVector3f *)((int)(pCVar1 + 9) + 8);

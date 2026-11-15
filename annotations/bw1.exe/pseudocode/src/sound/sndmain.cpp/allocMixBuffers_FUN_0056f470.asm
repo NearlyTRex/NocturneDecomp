@@ -30,7 +30,7 @@
 ;   undefined4 DAT_02c806b8
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;
 ; *****************************************************************************
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5f3161                       ; 0056f537 | = "allocMixBuffers - out of memory"
     MOV dword ptr [0x01d1d400],EBP      ; 0056f53c | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0056f542 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056f547
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056f547
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056f54c
     MOV ECX,dword ptr [0x006232ec]      ; 0056f54f | DAT_006232ec
         ;   Label: LAB_0056f54f

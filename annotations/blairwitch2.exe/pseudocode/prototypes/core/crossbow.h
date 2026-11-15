@@ -35,7 +35,7 @@ int __cdecl CCrossbow::renderTransparent(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043a740
 // Address: 0043a740
-void __cdecl CCrossbow::getMuzzlePoint(CCrossbow *this_ptr);
+CVector3f * __stack_esi CCrossbow::getMuzzlePoint(CCrossbow *this_ptr,CVector3f *out_point);
 
 // Original: core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0
 // Address: 0043a7a0

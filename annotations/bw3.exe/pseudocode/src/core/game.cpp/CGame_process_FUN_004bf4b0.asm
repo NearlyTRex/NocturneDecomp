@@ -45,7 +45,7 @@
 ;   core_script.cpp_CScript_process_FUN_00528e00
 ;   core_set.cpp_CDemonSet_process_FUN_00539c50
 ;   core_set.cpp_CDemonSet_processActors_FUN_005353e0
-;   core_setdir.cpp_FUN_0053f940
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -448,8 +448,8 @@ section .text
     PUSH ECX                            ; 004bf9aa
     MOV EDI,dword ptr [0x00603b28]      ; 004bf9ab | g_CDemonSetPtr
     PUSH EDI                            ; 004bf9b1 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_0053f940   ; 004bf9b2
-        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053f940()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 ; 004bf9b2
+        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004bf9b7
     PUSH EBX                            ; 004bf9ba
     CALL core_game.cpp_CGame_saveClockTime_FUN_004b4430 ; 004bf9bb

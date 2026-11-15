@@ -74,7 +74,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 0040d017
     FADDP                               ; 0040d01b
     CALL crt_math.c_round_FUN_005b7ff0  ; 0040d01d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0040d022
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040d026
     CMP EBX,ECX                         ; 0040d02a

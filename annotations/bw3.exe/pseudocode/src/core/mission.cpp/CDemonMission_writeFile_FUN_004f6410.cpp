@@ -73,7 +73,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004f6410(CDemonMission
     if (5999 < this_ptr->actor_lookup_count) {
       _DAT_01d71de0 = "..\\core\\mission.cpp";
       _DAT_01d71de4 = 0x1f0;
-      core_main_c_FUN_004e4330("Too many actors");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Too many actors");
     }
     this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar2;
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
@@ -87,7 +87,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004f6410(CDemonMission
         if (5999 < this_ptr->actor_lookup_count) {
           _DAT_01d71de0 = "..\\core\\mission.cpp";
           _DAT_01d71de4 = 0x1fb;
-          core_main_c_FUN_004e4330("Too many actors");
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Too many actors");
         }
         this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar6->items[0];
         pCVar6 = (CInventory *)&pCVar6->owner;

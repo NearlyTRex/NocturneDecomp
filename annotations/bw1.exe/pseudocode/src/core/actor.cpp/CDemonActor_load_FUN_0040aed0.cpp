@@ -30,7 +30,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040aed0(CDemonActor *this_ptr,
   if (iVar4 != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x80e;
-    core_main_c_FUN_005030e0("Start of actor file tag mismatch for class %s",str1);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Start of actor file tag mismatch for class %s");
   }
   pcVar5 = local_78;
   pCVar6 = this_ptr;
@@ -58,12 +58,12 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040aed0(CDemonActor *this_ptr,
      (iVar4 = _stricmp(this_ptr->actor_name,local_78), iVar4 != 0)) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x82b;
-    core_main_c_FUN_005030e0("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("End of actor file tag mismatch for class %s name \"%s\"");
   }
   if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x830;
-    core_main_c_FUN_005030e0("IO Error after reading %s \"%s\"",str1,this_ptr);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("IO Error after reading %s \"%s\"");
   }
   DAT_007c303c = (CDemonActor *)uVar3;
   DAT_007c3038 = uVar2;

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[156]:
+; XREF[158]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c9fe
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6df
 ;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410f52
@@ -23,7 +23,7 @@
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20 at 0041ac3a
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50 at 0041af7b
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 0041a178
-;   ... and 146 more
+;   ... and 148 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2e95

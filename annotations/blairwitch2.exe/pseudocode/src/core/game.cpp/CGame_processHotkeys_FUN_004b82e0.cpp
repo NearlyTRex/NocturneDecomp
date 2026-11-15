@@ -19,11 +19,11 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
   CDemonSet *pCVar6;
   int iVar7;
   int iVar8;
-  _FILE *p_Var9;
+  _FILE *file_handle;
+  char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
   uint clear_enabled;
-  float fVar12;
+  float fVar11;
   float fStack_228;
   char acStack_224 [256];
   char acStack_124 [268];
@@ -50,10 +50,10 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
           iVar2 = *(int *)((int)g_CDemonSetPtr->enemies + iVar7);
           iVar3 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
           if ((*(int *)(iVar2 + 0x10a78) == iVar3) &&
-             (fVar12 = *(float *)(iVar2 + 0x20) - *(float *)(iVar3 + 0x20),
+             (fVar11 = *(float *)(iVar2 + 0x20) - *(float *)(iVar3 + 0x20),
              fVar5 = *(float *)(iVar2 + 0x24) - *(float *)(iVar3 + 0x24),
              fVar4 = *(float *)(iVar2 + 0x28) - *(float *)(iVar3 + 0x28),
-             SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar12 * fVar12) < (float)_DAT_005d79eb)) {
+             SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar11 * fVar11) < (float)_DAT_005d79eb)) {
             g_CFieldNotesPtr->is_displayed = 0;
           }
           iVar7 = iVar7 + 4;
@@ -102,8 +102,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
       }
     }
     if ((((this_ptr->developer_mode_enabled != 0) ||
-         (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))
-        && (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) &&
+         (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
+        (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) &&
        (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) {
       this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
     }
@@ -160,38 +160,38 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if ((iVar7 != 0) && (this_ptr->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004bb9b0(this_ptr,"quicksavedgame.noc");
-      fVar12 = 2.0;
-      pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Quick Save");
-      core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar10,fVar12);
+      fVar11 = 2.0;
+      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Quick Save");
+      core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar9,fVar11);
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) {
-      p_Var9 = engine_dosio_cpp_FUN_00460c70
-                         (&DAT_005d7965,"quicksavedgame.noc",&DAT_005d794f);
-      if (p_Var9 == (_FILE *)0x0) {
-        fVar12 = 2.0;
-        pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
-                            ("No quicked saved game to load");
-        core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar10,fVar12);
+      file_handle = engine_dosio_cpp_getFile_FUN_00460c70
+                              (&DAT_005d7965,"quicksavedgame.noc",&DAT_005d794f);
+      if (file_handle == (_FILE *)0x0) {
+        fVar11 = 2.0;
+        pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
+                           ("No quicked saved game to load");
+        core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar9,fVar11);
       }
       else {
-        _fclose();
-        pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
-                            ("Restore quick saved game?");
+        _fclose(file_handle);
+        pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
+                           ("Restore quick saved game?");
         iVar7 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760
-                          (g_CEditorToolsPtr,pcVar10);
+                          (g_CEditorToolsPtr,pcVar9);
         if (iVar7 != 0) {
-          pcVar11 = "quicksavedgame.noc";
-          pcVar10 = this_ptr->chapter_reload_filename;
+          pcVar10 = "quicksavedgame.noc";
+          pcVar9 = this_ptr->chapter_reload_filename;
           this_ptr->need_chapter_reload = 1;
           do {
-            cVar1 = *pcVar11;
-            *pcVar10 = cVar1;
+            cVar1 = *pcVar10;
+            *pcVar9 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar11[1];
-            pcVar11 = pcVar11 + 2;
-            pcVar10[1] = cVar1;
+            cVar1 = pcVar10[1];
             pcVar10 = pcVar10 + 2;
+            pcVar9[1] = cVar1;
+            pcVar9 = pcVar9 + 2;
           } while (cVar1 != '\0');
         }
       }
@@ -201,7 +201,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
       this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
     }
     if (((this_ptr->developer_mode_enabled != 0) ||
-        (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0)) &&
+        (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
        (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) {
       this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
     }

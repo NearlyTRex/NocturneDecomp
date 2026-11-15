@@ -25,7 +25,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046de70(
   if (this_ptr->texture_capture_enabled != 0) {
     _DAT_01d71de0 = "..\\engine\\drender.cpp";
     _DAT_01d71de4 = 0xa6a;
-    core_main_c_FUN_004e4330("Can't capture this type of face!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Can't capture this type of face!");
   }
   if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {

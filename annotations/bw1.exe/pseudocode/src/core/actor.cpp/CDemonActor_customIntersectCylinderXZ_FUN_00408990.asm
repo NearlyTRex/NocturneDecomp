@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x5d2473                       ; 0040899a | = "CDemonActor::customIntersectCylinderX..."
     MOV dword ptr [0x01d1d400],EDX      ; 0040899f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004089a5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004089ab
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004089ab
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004089b0
     RET                                 ; 004089b3
 

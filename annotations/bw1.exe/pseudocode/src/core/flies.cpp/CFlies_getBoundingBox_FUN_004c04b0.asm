@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e077a

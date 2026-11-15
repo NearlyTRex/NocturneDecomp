@@ -30,7 +30,7 @@
 ;   undefined4 DAT_0264be84
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005038a0
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV dword ptr [EAX],EDX             ; 00567557
     LEA EAX,[EBX + 0x2b4]               ; 00567559
     PUSH EAX                            ; 0056755f
-    CALL core_motion.cpp_FUN_005038a0   ; 00567560
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 00567560
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x38],EAX      ; 00567565
     FLD float ptr [ESP + 0x38]          ; 00567569
     ADD ESP,0x8                         ; 0056756d

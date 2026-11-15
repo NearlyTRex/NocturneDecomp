@@ -192,7 +192,7 @@ section .text
     FLD ST2                             ; 00585c97
     FXCH                                ; 00585c99
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 00585c9b
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FSTP ST2                            ; 00585ca0
     FLD float ptr [ESP + 0x48]          ; 00585ca2
     FMUL ST2                            ; 00585ca6

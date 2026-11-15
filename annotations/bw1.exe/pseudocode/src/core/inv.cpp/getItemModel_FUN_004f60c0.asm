@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_isOfClass_FUN_0040c550
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -260,8 +260,8 @@ section .text
     PUSH 0x5e5f79                       ; 004f62b1 | = "getModel - Can't classify : %s"
     MOV dword ptr [0x01d1d400],EDX      ; 004f62b6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004f62bc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f62c2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f62c2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004f62c7
     XOR EAX,EAX                         ; 004f62ca
     POP EBP                             ; 004f62cc

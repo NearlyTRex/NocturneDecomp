@@ -11,26 +11,30 @@
 void __cdecl core_water_cpp_CWater_render_FUN_005a9f10(CWater *this_ptr,int render_mode)
 
 {
-  byte bVar1;
-  float10 fVar2;
-  float10 fVar3;
-  int aiStackY_1064 [1011];
-  CVector3i local_88;
-  CVector3f local_7c;
-  CVector3i local_70;
-  CVector3i local_64;
-  CVector3i local_58;
-  CVector3f local_4c [2];
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  byte bVar4;
+  float10 fVar5;
+  double dVar6;
+  double dVar7;
+  int unaff_retaddr;
+  int aiStackY_106c [1011];
+  CVector3i CStack_90;
+  CVector3f local_84;
+  CVector3i local_78;
+  CVector3i local_6c;
+  CVector3i local_60;
+  CVector3f local_54 [2];
+  float fStack_34;
   float local_30;
-  float local_2c;
-  float local_28;
+  int local_2c;
+  int local_28;
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  int local_14;
   
-  bVar1 = 0;
+  bVar4 = 0;
   if (ABS(this_ptr->water_level_y) != 0.0) {
     _DAT_02c8afd4 = _DAT_02c8afd4 + _DAT_01c43530;
     if (DAT_00625c98 < _DAT_02c8afd4) {
@@ -41,14 +45,16 @@ void __cdecl core_water_cpp_CWater_render_FUN_005a9f10(CWater *this_ptr,int rend
       }
     }
     local_30 = g_CGamePtr->delta_time_float;
-    fVar2 = (float10)_DAT_02c8afc0 * (float10)local_30 * (float10)_DAT_005f9252 +
-            (float10)_DAT_02c9300c;
-    fVar3 = (float10)_DAT_02c8afc4 * (float10)local_30 * (float10)_DAT_005f9252 +
-            (float10)_DAT_02c93010;
-    round();
-    round();
-    _DAT_02c9300c = (int)ROUND(fVar2);
-    _DAT_02c93010 = (int)ROUND(fVar3);
+    fVar3 = _DAT_02c8afc4 * local_30;
+    fVar1 = (float)_DAT_005f9252;
+    fVar2 = (float)_DAT_02c93010;
+    CStack_90.y = 0x5a9f9f;
+    dVar6 = round
+                      ((double)(_DAT_02c8afc0 * local_30 * fVar1 + (float)_DAT_02c9300c));
+    CStack_90.x = 0x5a9fa6;
+    dVar7 = round((double)(fVar3 * fVar1 + fVar2));
+    _DAT_02c9300c = (int)ROUND(dVar6);
+    _DAT_02c93010 = (int)ROUND(dVar7);
     if (0xffffff < _DAT_02c9300c) {
       _DAT_02c9300c = _DAT_02c9300c + -0x1000000;
     }
@@ -84,89 +90,89 @@ void __cdecl core_water_cpp_CWater_render_FUN_005a9f10(CWater *this_ptr,int rend
     _DAT_02c93008 =
          g_CGamePtr->delta_time_float * _DAT_005f925a * (float)_DAT_005f9262 * (float)_DAT_005f926a
          + _DAT_02c93008;
-    local_24 = 0;
+    local_2c = 0;
     if (0 < _DAT_02c8afdc) {
-      local_20 = 0;
+      local_28 = 0;
       do {
-        local_1c = *(int *)(&DAT_02c8afe0 + local_20);
-        local_18 = *(int *)(&DAT_02c8efe0 + local_20);
-        local_2c = (float)local_1c;
-        local_28 = (float)local_18;
-        local_7c.x = local_2c * this_ptr->tile_size + _DAT_02c8afc8;
-        local_7c.y = this_ptr->water_level_y + _DAT_02c8afcc;
-        local_7c.z = local_28 * this_ptr->tile_size + _DAT_02c8afd0;
-        local_14 = local_18;
+        local_24 = *(int *)(&DAT_02c8afe0 + local_28);
+        local_20 = *(int *)(&DAT_02c8efe0 + local_28);
+        fStack_34 = (float)local_24;
+        local_30 = (float)local_20;
+        local_84.x = fStack_34 * this_ptr->tile_size + _DAT_02c8afc8;
+        local_84.y = this_ptr->water_level_y + _DAT_02c8afcc;
+        local_84.z = local_30 * this_ptr->tile_size + _DAT_02c8afd0;
+        local_1c = local_20;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (DAT_00612560,&local_7c);
-        local_4c[0].x = local_7c.x;
-        *(uint *)((int)local_4c + (uint)bVar1 * -8 + 4) =
-             *(uint *)((int)&local_7c + (uint)bVar1 * -8 + 4);
-        *(uint *)((int)local_4c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-             *(uint *)((int)&local_7c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-        local_7c.x = 0.0;
-        local_7c.y = 0.0;
-        local_7c.z = 0.0;
+                  (DAT_00612560,&local_84);
+        local_54[0].x = local_84.x;
+        *(uint *)((int)local_54 + (uint)bVar4 * -8 + 4) =
+             *(uint *)((int)&local_84 + (uint)bVar4 * -8 + 4);
+        *(uint *)((int)local_54 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             *(uint *)((int)&local_84 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+        local_84.x = 0.0;
+        local_84.y = 0.0;
+        local_84.z = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
-          fVar2 = (float10)fsin((float10)local_28 * (float10)_DAT_005f925a * (float10)_DAT_005f9262
-                                + (float10)local_2c * (float10)_DAT_005f925a +
+          fVar5 = (float10)fsin((float10)local_30 * (float10)_DAT_005f925a * (float10)_DAT_005f9262
+                                + (float10)fStack_34 * (float10)_DAT_005f925a +
                                 (float10)_DAT_02c93008);
-          local_7c.y = (float)(fVar2 * (float10)_DAT_00625c94);
+          local_84.y = (float)(fVar5 * (float10)_DAT_00625c94);
         }
-        local_64.x = (int)ROUND(_DAT_00607bac * 0.0);
-        local_64.y = (int)ROUND(local_7c.y * _DAT_00607bac);
-        local_64.z = (int)ROUND(_DAT_00607bac * 0.0);
+        local_6c.x = (int)ROUND(_DAT_00607bac * 0.0);
+        local_6c.y = (int)ROUND(local_84.y * _DAT_00607bac);
+        local_6c.z = (int)ROUND(_DAT_00607bac * 0.0);
         engine_special_cpp_transformAndProjectPoint_FUN_00580173
-                  (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_64);
+                  (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_6c);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
-                  (g_CDemonSetPtr,&local_7c,local_4c,0);
-        local_7c.x = this_ptr->tile_size;
+                  (g_CDemonSetPtr,&local_84,local_54,0);
+        local_84.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
-          local_14 = local_1c + 1;
-          fVar2 = (float10)fsin((float10)local_18 * (float10)_DAT_005f925a * (float10)_DAT_005f9262
-                                + (float10)local_14 * (float10)_DAT_005f925a +
+          local_1c = local_24 + 1;
+          fVar5 = (float10)fsin((float10)local_20 * (float10)_DAT_005f925a * (float10)_DAT_005f9262
+                                + (float10)local_1c * (float10)_DAT_005f925a +
                                 (float10)_DAT_02c93008);
-          local_7c.y = (float)(fVar2 * (float10)_DAT_00625c94);
+          local_84.y = (float)(fVar5 * (float10)_DAT_00625c94);
         }
-        local_70.x = (int)ROUND(local_7c.x * _DAT_00607bac);
-        local_70.y = (int)ROUND(local_7c.y * _DAT_00607bac);
-        local_70.z = (int)ROUND(local_7c.z * _DAT_00607bac);
+        local_78.x = (int)ROUND(local_84.x * _DAT_00607bac);
+        local_78.y = (int)ROUND(local_84.y * _DAT_00607bac);
+        local_78.z = (int)ROUND(local_84.z * _DAT_00607bac);
         engine_special_cpp_transformAndProjectPoint_FUN_00580173
-                  (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_70);
+                  (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_78);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
-                  (g_CDemonSetPtr,&local_7c,local_4c,1);
-        local_7c.z = this_ptr->tile_size;
+                  (g_CDemonSetPtr,&local_84,local_54,1);
+        local_84.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
-          local_14 = local_1c + 1;
-          fVar2 = (float10)fsin((float10)(local_18 + 1) * (float10)_DAT_005f925a *
-                                (float10)_DAT_005f9262 + (float10)local_14 * (float10)_DAT_005f925a
-                                + (float10)_DAT_02c93008);
-          local_7c.y = (float)(fVar2 * (float10)_DAT_00625c94);
-        }
-        local_58.x = (int)ROUND(local_7c.x * _DAT_00607bac);
-        local_58.y = (int)ROUND(local_7c.y * _DAT_00607bac);
-        local_58.z = (int)ROUND(local_7c.z * _DAT_00607bac);
-        engine_special_cpp_transformAndProjectPoint_FUN_00580173
-                  (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_58);
-        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
-                  (g_CDemonSetPtr,&local_7c,local_4c,2);
-        local_7c.x = 0.0;
-        if (this_ptr->wave_animation_enabled != 0) {
-          local_14 = local_1c;
-          fVar2 = (float10)fsin((float10)(local_18 + 1) * (float10)_DAT_005f925a *
+          local_1c = local_24 + 1;
+          fVar5 = (float10)fsin((float10)(local_20 + 1) * (float10)_DAT_005f925a *
                                 (float10)_DAT_005f9262 + (float10)local_1c * (float10)_DAT_005f925a
                                 + (float10)_DAT_02c93008);
-          local_7c.y = (float)(fVar2 * (float10)_DAT_00625c94);
+          local_84.y = (float)(fVar5 * (float10)_DAT_00625c94);
         }
-        local_88.x = (int)ROUND(_DAT_00607bac * 0.0);
-        local_88.y = (int)ROUND(local_7c.y * _DAT_00607bac);
-        local_88.z = (int)ROUND(local_7c.z * _DAT_00607bac);
+        local_60.x = (int)ROUND(local_84.x * _DAT_00607bac);
+        local_60.y = (int)ROUND(local_84.y * _DAT_00607bac);
+        local_60.z = (int)ROUND(local_84.z * _DAT_00607bac);
         engine_special_cpp_transformAndProjectPoint_FUN_00580173
-                  (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_88);
+                  (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_60);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
-                  (g_CDemonSetPtr,&local_7c,local_4c,3);
+                  (g_CDemonSetPtr,&local_84,local_54,2);
+        local_84.x = 0.0;
+        if (this_ptr->wave_animation_enabled != 0) {
+          local_1c = local_24;
+          fVar5 = (float10)fsin((float10)(local_20 + 1) * (float10)_DAT_005f925a *
+                                (float10)_DAT_005f9262 + (float10)local_24 * (float10)_DAT_005f925a
+                                + (float10)_DAT_02c93008);
+          local_84.y = (float)(fVar5 * (float10)_DAT_00625c94);
+        }
+        CStack_90.x = (int)ROUND(_DAT_00607bac * 0.0);
+        CStack_90.y = (int)ROUND(local_84.y * _DAT_00607bac);
+        CStack_90.z = (int)ROUND(local_84.z * _DAT_00607bac);
+        engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                  (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_90);
+        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
+                  (g_CDemonSetPtr,&local_84,local_54,3);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c50948 == 0) {
-            if (render_mode == 0) {
+            if (unaff_retaddr == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780
                         (DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);
             }
@@ -186,9 +192,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005a9f10(CWater *this_ptr,int rend
           engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120
                     (DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);
         }
-        local_20 = local_20 + 4;
-        local_24 = local_24 + 1;
-      } while (local_24 < _DAT_02c8afdc);
+        local_28 = local_28 + 4;
+        local_2c = local_2c + 1;
+      } while (local_2c < _DAT_02c8afdc);
     }
   }
   return;

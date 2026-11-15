@@ -56,14 +56,14 @@ section .text
     FLD ST0                             ; 005a6c04
     FMUL double ptr [0x005f071d]        ; 005a6c06 | DAT_005f071d
     CALL crt_math.c_round_FUN_005b7ff0  ; 005a6c0c
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x14]        ; 005a6c11
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a6c15
     MOV dword ptr [ESP + 0x14],EAX      ; 005a6c19
     FILD dword ptr [ESP + 0x14]         ; 005a6c1d
     FMUL float ptr [EBX + 0x830]        ; 005a6c21
     CALL crt_math.c_round_FUN_005b7ff0  ; 005a6c27
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x14]        ; 005a6c2c
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a6c30
     MOV EDX,EAX                         ; 005a6c34

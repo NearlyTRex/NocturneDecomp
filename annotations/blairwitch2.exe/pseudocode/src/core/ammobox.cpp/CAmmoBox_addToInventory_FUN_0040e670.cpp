@@ -33,7 +33,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
   if (this_ptr_00 == (CAmmo *)0x0) {
     _DAT_01d046a0 = "..\\core\\ammobox.cpp";
     _DAT_01d046a4 = 0xa2;
-    core_main_c_FUN_004e4500("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,this_ptr->weapon_class_name);
   core_ammo_cpp_FUN_0040e440(this_ptr_00,this_ptr->ammo_count);

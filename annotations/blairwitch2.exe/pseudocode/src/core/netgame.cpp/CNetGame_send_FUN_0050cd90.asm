@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5e0a79                       ; 0050cdcf | = "CNetGame::send - invalid player index"
     MOV dword ptr [0x01d046a0],ECX      ; 0050cdd4 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0050cdda | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050cde0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cde0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cde5
     POP EDI                             ; 0050cde8
     JMP 0x0050cda4                      ; 0050cde9

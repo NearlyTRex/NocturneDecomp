@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01ec1518
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_path.cpp_CPathMap_reset_FUN_0050cee0
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5cb77f                       ; 0050ad1e
     MOV dword ptr [0x01d71de0],ECX      ; 0050ad23 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0050ad29 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0050ad2f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050ad2f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050ad34
     POP ESI                             ; 0050ad37
     JMP 0x0050acf9                      ; 0050ad38

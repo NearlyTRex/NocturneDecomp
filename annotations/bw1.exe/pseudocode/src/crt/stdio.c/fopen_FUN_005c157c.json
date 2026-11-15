@@ -52,7 +52,7 @@
     {
       "addr": "004d7250",
       "from_addr": "004d72d9",
-      "name": "core_game.cpp_FUN_004d7250",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,7 +82,7 @@
     {
       "addr": "00479180",
       "from_addr": "004791da",
-      "name": "engine_dosio.cpp_FUN_00479180",
+      "name": "engine_dosio.cpp_getFile_FUN_00479180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -122,12 +122,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053b110",
-      "from_addr": "0053b139",
-      "name": "engine_pod.cpp_FUN_0053b110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053bfc0",
       "from_addr": "0053c024",
       "name": "engine_pod.cpp_FUN_0053bfc0",
@@ -155,6 +149,12 @@
       "addr": "0053cc60",
       "from_addr": "0053cd2a",
       "name": "engine_pod.cpp_FUN_0053cc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b110",
+      "from_addr": "0053b139",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0053b110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,7 +196,7 @@
       {
         "call_addr": "004791da",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00479180",
+        "caller": "engine_dosio.cpp_getFile_FUN_00479180",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,7 +207,7 @@
       {
         "call_addr": "0047920c",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00479180",
+        "caller": "engine_dosio.cpp_getFile_FUN_00479180",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +218,7 @@
       {
         "call_addr": "004d72d9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d7250",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

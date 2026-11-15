@@ -34,7 +34,7 @@ void core_box_cpp_FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param
   if (8 < param_4) {
     _DAT_01d046a0 = "..\\core\\box.cpp";
     _DAT_01d046a4 = 0x80;
-    core_main_c_FUN_004e4500("CBox::setupN - Too many scrape points");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CBox::setupN - Too many scrape points");
   }
   fStack_30 = 999.0;
   fStack_2c = 999.0;

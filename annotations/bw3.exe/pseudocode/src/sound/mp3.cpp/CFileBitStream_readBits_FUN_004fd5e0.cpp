@@ -20,7 +20,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream *
   if (0x20 < num_bits) {
     _DAT_01d71de0 = "..\\sound\\mp3.cpp";
     _DAT_01d71de4 = 0x2ab;
-    core_main_c_FUN_004e4330("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01d94b98);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Cannot read or write more than %d bits at a time.  File: %s");
   }
   this_ptr->total_bits_read = this_ptr->total_bits_read + num_bits;
   do {

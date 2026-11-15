@@ -15,9 +15,9 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dc0ee
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004f4070 at 004f4092
 ;   core_moon.cpp_CMoon_render_FUN_004f9670 at 004f9710
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536902
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20 at 0053af44
-;   core_set.cpp_FUN_005365c0 at 00536902
-;   core_setdir.cpp_FUN_0053f940 at 00540345
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 00540345
 ;   ... and 2 more
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@ section .text
     FDIVR double ptr [0x005bc533]       ; 0046d094 | DAT_005bc533
     FMUL double ptr [0x005bc53b]        ; 0046d09a | DAT_005bc53b
     CALL crt_math.c_round_FUN_005a3120  ; 0046d0a0
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [0x005fba44]        ; 0046d0a5 | DAT_005fba44
     RET                                 ; 0046d0ab
 

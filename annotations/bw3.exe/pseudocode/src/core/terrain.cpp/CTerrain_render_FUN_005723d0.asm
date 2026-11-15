@@ -31,9 +31,9 @@
 ;   core_ground.cpp_CGround_getHeightAtPosition_FUN_004d09b0
 ;   core_ground.cpp_CGround_render_FUN_004d0910
 ;   crt_math.c_round_FUN_005a3120
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
-;   engine_drender.cpp_FUN_0046d1c0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH ECX                            ; 005723f2 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x10]                ; 005723f3
     LEA EDI,[ESP + 0x4]                 ; 005723f7
-    CALL engine_drender.cpp_FUN_0046d1c0 ; 005723fb
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0 ; 005723fb
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x10]                ; 00572400
     ADD ESP,0x4                         ; 00572404
     MOV EBX,0x40800                     ; 00572407
@@ -92,10 +92,10 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 0057244b
     FXCH                                ; 0057244f
     CALL crt_math.c_round_FUN_005a3120  ; 00572451
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00572456
     CALL crt_math.c_round_FUN_005a3120  ; 00572458
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0057245d
     FISTP dword ptr [ESP + 0x24]        ; 0057245f
     MOV EAX,dword ptr [ESP + 0x24]      ; 00572463
@@ -103,7 +103,7 @@ section .text
     ADD ECX,EAX                         ; 0057246b
     MOV EAX,dword ptr [ESP + 0x24]      ; 0057246d
     CALL crt_math.c_round_FUN_005a3120  ; 00572471
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     ADD EAX,EDX                         ; 00572476
     FISTP dword ptr [ESP + 0x24]        ; 00572478
     MOV dword ptr [ESP + 0x1c],EAX      ; 0057247c

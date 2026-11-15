@@ -15,13 +15,11 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0049d2c0(CFireEffect *thi
   byte bVar2;
   float afStackY_1034 [1003];
   CMatrix3x3f local_74;
-  float local_4c;
-  float afStack_48 [4];
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_4c;
+  float local_40;
+  float local_3c [4];
   float local_2c;
-  float local_28 [3];
+  CVector3f local_28;
   CVector3f local_1c;
   
   bVar2 = 0;
@@ -45,21 +43,21 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0049d2c0(CFireEffect *thi
     goto switchD_0049d2d9_caseD_6;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&local_74,orientation_angles);
-  local_28[0] = 0.0;
-  local_28[1] = 0.0;
-  local_28[2] = 0.7;
-  core_dirmat_cpp_FUN_00449530(&local_74,afStack_48 + 8);
-  local_34 = local_4c;
-  afStack_48[(uint)bVar2 * -2 + 6] = afStack_48[(uint)bVar2 * -2];
-  afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7] =
-       afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  afStack_48[2] = impact_position->x - local_34;
-  afStack_48[3] = impact_position->y - local_30;
-  local_38 = impact_position->z - local_2c;
-  local_1c.x = afStack_48[2];
-  *(float *)((int)&local_1c + (uint)bVar2 * -8 + 4) = afStack_48[(uint)bVar2 * -2 + 3];
+  local_28.x = 0.0;
+  local_28.y = 0.0;
+  local_28.z = 0.7;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530(&local_74,&local_28,&local_4c);
+  local_3c[2] = local_4c.x;
+  local_3c[(uint)bVar2 * -2 + 3] = *(float *)((int)&local_4c + (uint)bVar2 * -8 + 4);
+  local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+       *(float *)((int)&local_4c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  local_40 = impact_position->x - local_3c[2];
+  local_3c[0] = impact_position->y - local_3c[3];
+  local_3c[1] = impact_position->z - local_2c;
+  local_1c.x = local_40;
+  *(float *)((int)&local_1c + (uint)bVar2 * -8 + 4) = local_3c[(uint)bVar2 * -2];
   *(float *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+       local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_004941c0
               (g_StakePool + _DAT_01c594ec,&local_1c,orientation_angles,surface_normal);

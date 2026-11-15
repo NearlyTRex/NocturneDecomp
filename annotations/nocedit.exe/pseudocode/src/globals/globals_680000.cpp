@@ -3353,222 +3353,222 @@ SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr = nullptr;
 // SRenderVertex[20000]
 SRenderVertex g_RenderVertexBuffer[20000] = {};
 
-// SSoundModeEntry[27]
-SSoundModeEntry g_SoundModeTable[27] = {
+// SReverbPreset[27]
+SReverbPreset g_ReverbPresetTable[27] = {
     {
         .name = (char *)s_OFF_00652855,
-        .listener_orient = {
-            .x = 0.0f,
-            .y = 0.0f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.0f,
+            .decay_time = 0.0f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_GENERIC_00652859,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 1.493f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 1.493f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_PADDEDCELL_00652861,
-        .listener_orient = {
-            .x = 0.25f,
-            .y = 0.1f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 0.1f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_ROOM_0065286c,
-        .listener_orient = {
-            .x = 0.417f,
-            .y = 0.40000001f,
-            .z = 0.66600001f
+        .reverb = {
+            .volume = 0.417f,
+            .decay_time = 0.40000001f,
+            .damping = 0.66600001f
         }
     },
     {
         .name = (char *)s_BATHROOM_00652871,
-        .listener_orient = {
-            .x = 0.653f,
-            .y = 1.499f,
-            .z = 0.16599999f
+        .reverb = {
+            .volume = 0.653f,
+            .decay_time = 1.499f,
+            .damping = 0.16599999f
         }
     },
     {
         .name = (char *)s_LIVINGROOM_0065287a,
-        .listener_orient = {
-            .x = 0.208f,
-            .y = 0.47799999f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 0.47799999f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_STONEROOM_00652885,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 2.309f,
-            .z = 0.88800001f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.309f,
+            .damping = 0.88800001f
         }
     },
     {
         .name = (char *)s_AUDITORIUM_0065288f,
-        .listener_orient = {
-            .x = 0.403f,
-            .y = 4.2789998f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.403f,
+            .decay_time = 4.2789998f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_CONCERTHALL_0065289a,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 3.961f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 3.961f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_CAVE_006528a6,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 2.8859999f,
-            .z = 1.304f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.8859999f,
+            .damping = 1.304f
         }
     },
     {
         .name = (char *)s_ARENA_006528ab,
-        .listener_orient = {
-            .x = 0.361f,
-            .y = 7.2839999f,
-            .z = 0.33199999f
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 7.2839999f,
+            .damping = 0.33199999f
         }
     },
     {
         .name = (char *)s_HANGAR_006528b1,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 10.0f,
-            .z = 0.30000001f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 10.0f,
+            .damping = 0.30000001f
         }
     },
     {
         .name = (char *)s_CARPETEDHALLWAY_006528b8,
-        .listener_orient = {
-            .x = 0.153f,
-            .y = 0.259f,
-            .z = 2.0f
+        .reverb = {
+            .volume = 0.153f,
+            .decay_time = 0.259f,
+            .damping = 2.0f
         }
     },
     {
         .name = (char *)s_HALLWAY_006528c8,
-        .listener_orient = {
-            .x = 0.361f,
-            .y = 1.493f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 1.493f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_STONECORRIDOR_006528d0,
-        .listener_orient = {
-            .x = 0.44400001f,
-            .y = 2.697f,
-            .z = 0.63800001f
+        .reverb = {
+            .volume = 0.44400001f,
+            .decay_time = 2.697f,
+            .damping = 0.63800001f
         }
     },
     {
         .name = (char *)s_ALLEY_006528de,
-        .listener_orient = {
-            .x = 0.25f,
-            .y = 1.752f,
-            .z = 0.77600002f
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 1.752f,
+            .damping = 0.77600002f
         }
     },
     {
         .name = (char *)s_FOREST_006528e4,
-        .listener_orient = {
-            .x = 0.111f,
-            .y = 3.145f,
-            .z = 0.472f
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 3.145f,
+            .damping = 0.472f
         }
     },
     {
         .name = (char *)s_CITY_006528eb,
-        .listener_orient = {
-            .x = 0.111f,
-            .y = 2.767f,
-            .z = 0.22400001f
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
         }
     },
     {
         .name = (char *)s_MOUNTAINS_006528f0,
-        .listener_orient = {
-            .x = 0.19400001f,
-            .y = 7.8410001f,
-            .z = 0.472f
+        .reverb = {
+            .volume = 0.19400001f,
+            .decay_time = 7.8410001f,
+            .damping = 0.472f
         }
     },
     {
         .name = (char *)s_QUARRY_006528fa,
-        .listener_orient = {
-            .x = 1.0f,
-            .y = 1.499f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_PLAIN_00652901,
-        .listener_orient = {
-            .x = 0.097000003f,
-            .y = 2.767f,
-            .z = 0.22400001f
+        .reverb = {
+            .volume = 0.097000003f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
         }
     },
     {
         .name = (char *)s_PARKINGLOT_00652907,
-        .listener_orient = {
-            .x = 0.208f,
-            .y = 1.652f,
-            .z = 1.5f
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 1.652f,
+            .damping = 1.5f
         }
     },
     {
         .name = (char *)s_SEWERPIPE_00652912,
-        .listener_orient = {
-            .x = 0.65200001f,
-            .y = 2.8859999f,
-            .z = 0.25f
+        .reverb = {
+            .volume = 0.65200001f,
+            .decay_time = 2.8859999f,
+            .damping = 0.25f
         }
     },
     {
         .name = (char *)s_UNDERWATER_0065291c,
-        .listener_orient = {
-            .x = 1.0f,
-            .y = 1.499f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_DRUGGED_00652927,
-        .listener_orient = {
-            .x = 0.875f,
-            .y = 8.3920002f,
-            .z = 1.388f
+        .reverb = {
+            .volume = 0.875f,
+            .decay_time = 8.3920002f,
+            .damping = 1.388f
         }
     },
     {
         .name = (char *)s_DIZZY_0065292f,
-        .listener_orient = {
-            .x = 0.139f,
-            .y = 17.233999f,
-            .z = 0.66600001f
+        .reverb = {
+            .volume = 0.139f,
+            .decay_time = 17.233999f,
+            .damping = 0.66600001f
         }
     },
     {
         .name = (char *)s_PSYCHOTIC_00652935,
-        .listener_orient = {
-            .x = 0.486f,
-            .y = 7.5630002f,
-            .z = 0.80599999f
+        .reverb = {
+            .volume = 0.486f,
+            .decay_time = 7.5630002f,
+            .damping = 0.80599999f
         }
     }
 };

@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[42]:
-;   sound_snddx.cpp_FUN_00577b60 at 00577c57
-;   sound_snddx.cpp_FUN_00577cd0 at 00577d5e
-;   sound_snddx.cpp_FUN_00577f90 at 00578385
-;   sound_snddx.cpp_FUN_005784b0 at 0057855c
-;   sound_snddx.cpp_FUN_00578590 at 0057862c
-;   sound_snddx.cpp_FUN_00578710 at 005789bb
-;   sound_snddx.cpp_FUN_00578a80 at 00578bbd
-;   sound_snddx.cpp_FUN_00578be0 at 00578c77
-;   sound_snddx.cpp_FUN_00578cc0 at 00578ecf
-;   sound_snddx.cpp_FUN_00578f80 at 005791d8
+;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710 at 005789bb
+;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0 at 00578ecf
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80 at 005791d8
+;   sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a230 at 0057a277
+;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0 at 00579aaa
+;   sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590 at 0057862c
+;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900 at 00579991
+;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_00579f30 at 00579f45
+;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80 at 00578bbd
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0 at 0057855c
 ;   ... and 32 more
 ;
 ; Referenced Globals:

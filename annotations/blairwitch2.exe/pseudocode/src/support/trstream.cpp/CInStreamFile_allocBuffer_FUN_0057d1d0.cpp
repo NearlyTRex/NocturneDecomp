@@ -20,7 +20,7 @@ void __cdecl support_trstream_cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStre
   if (pvVar1 == (void *)0x0) {
     _DAT_01d046a0 = "..\\support\\trstream.cpp";
     _DAT_01d046a4 = 0x605;
-    core_main_c_FUN_004e4500("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   this_ptr->buffer_start = 0;
   this_ptr->buffer_length = 0;

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e4330 at 004e43a9
 ;   core_main.c_FUN_004e4c70 at 004e4ccd
+;   core_main.c_displayErrorAndQuit_FUN_004e4330 at 004e43a9
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_00579a60

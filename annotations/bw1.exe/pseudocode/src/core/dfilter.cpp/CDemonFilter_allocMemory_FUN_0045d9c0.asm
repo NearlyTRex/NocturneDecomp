@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0045da10
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     PUSH 0x5d8438                       ; 0045d9f1 | = "CDemonFilter::allocMemory - Out of me..."
     MOV dword ptr [0x01d1d400],EBX      ; 0045d9f6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0045d9fc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0045da02
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045da02
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0045da07
     POP ESI                             ; 0045da0a
     POP EBX                             ; 0045da0b

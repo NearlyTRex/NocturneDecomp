@@ -31,7 +31,8 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407860(SMRGLHeaderExtended
               puVar1 = (uint *)(iVar4 + 0x7dd9f4);
               iVar4 = iVar4 + 4;
               iVar5 = iVar5 + 1;
-              engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(*puVar1);
+              engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
+                        ((SMRGLHeaderPrimitive *)*puVar1);
             } while (iVar5 < _DAT_007dd9f0);
           }
         }
@@ -61,7 +62,7 @@ LAB_00407a42:
           _sprintf((char *)apSStack_110,"Unknown primitive : %d");
           _DAT_01d71de4 = 0xd16;
           _DAT_01d71de0 = "..\\engine\\3d.c";
-          core_main_c_FUN_004e4330(apSStack_110);
+          core_main_c_displayErrorAndQuit_FUN_004e4330((char *)apSStack_110);
         }
       }
       else if (bVar3 < 4) {
@@ -78,7 +79,8 @@ LAB_00407a42:
                 puVar1 = (uint *)(iVar5 + 0x7dd9f4);
                 iVar5 = iVar5 + 4;
                 iVar4 = iVar4 + 1;
-                engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(*puVar1);
+                engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
+                          ((SMRGLHeaderPrimitive *)*puVar1);
               } while (iVar4 < _DAT_007dd9f0);
             }
           }
@@ -105,7 +107,7 @@ LAB_00407a42:
           if (1999 < _DAT_007dd9f0) {
             _DAT_01d71de0 = "..\\engine\\3d.c";
             _DAT_01d71de4 = 0xccc;
-            core_main_c_FUN_004e4330("renderFaceList - too many faces");
+            core_main_c_displayErrorAndQuit_FUN_004e4330("renderFaceList - too many faces");
           }
           *(SMRGLHeaderExtended **)(_DAT_007dd9f0 * 4 + 0x7dd9f4) = mrgl;
           _DAT_007dd9f0 = _DAT_007dd9f0 + 1;

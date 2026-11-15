@@ -193,7 +193,7 @@ void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004dc460(CInventory *this_ptr
 void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004dc810(CInventory *this_ptr);
 void core_inv_cpp_setupItems_FUN_004dc850(int param_1);
-undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2);
+int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *this_ptr);
 float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(CInventory *this_ptr,float max_charge);
@@ -217,7 +217,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(CKeyActor *thi
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004df1a0(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004df1c0(CKeyActor *this_ptr,float delta_time);
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004df260(CKeyActor *this_ptr);
-CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004df2e0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004df2e0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004df320(CKeyActor *this_ptr);
 ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004df390(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004df3a0(CKeyActor *this_ptr,CDemonActor *picker);

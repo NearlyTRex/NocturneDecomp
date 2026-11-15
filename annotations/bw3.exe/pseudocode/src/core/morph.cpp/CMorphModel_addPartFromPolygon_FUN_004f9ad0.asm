@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004f9e40
 ;   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004f9fe0
 ;   crt_memory.c_realloc_FUN_005a3e50
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5c9446                       ; 004f9ba7 | = "CMorphModel::setup - out of memory!"
     MOV dword ptr [0x01d71de0],ECX      ; 004f9bac | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004f9bb2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f9bb8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9bb8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9bbd
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004f9bc0
         ;   Label: LAB_004f9bc0
@@ -159,8 +159,8 @@ section .text
     PUSH 0x5c940d                       ; 004f9bf0 | = "CMorphModel::addPart - too many parts!"
     MOV dword ptr [0x01d71de0],ECX      ; 004f9bf5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004f9bfb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f9c01
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9c01
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9c06
     JMP 0x004f9ae5                      ; 004f9c09
         ;   XREF to: 004f9ae5 (UNCONDITIONAL_JUMP)  ; LAB_004f9ae5

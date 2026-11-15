@@ -11,17 +11,15 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00487560(CElephantGun *t
 {
   CKeyFramedModel *model_ptr;
   byte bVar1;
-  float afStackY_1044 [1003];
-  float *pfVar2;
+  uint auStackY_1044 [1003];
+  CVector3f *input;
   CMatrix3x3f CStack_84;
-  uint uStack_5c;
-  float afStack_58 [2];
+  CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f CStack_44;
-  float fStack_38;
-  float afStack_34 [2];
+  CVector3f CStack_38;
   CVector3f CStack_2c;
-  float afStack_20 [3];
+  CVector3f CStack_20;
   float fStack_14;
   
   bVar1 = 0;
@@ -34,18 +32,20 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00487560(CElephantGun *t
   CStack_44.z = 0.0;
   fStack_14 = CStack_44.y;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&CStack_84,&CStack_44);
-  core_dirmat_cpp_FUN_0045b800(&CStack_84,&CStack_50);
-  pfVar2 = afStack_34 + 5;
-  afStack_20[0] = (float)uStack_5c;
-  afStack_34[(uint)bVar1 * -2 + 6] = afStack_58[(uint)bVar1 * -2];
-  afStack_34[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7] =
-       afStack_58[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-  core_actor_cpp_FUN_00408b00(this_ptr,pfVar2);
-  CStack_2c.x = fStack_38;
-  afStack_34[(uint)bVar1 * -2 + 3] = afStack_34[(uint)bVar1 * -2];
-  afStack_34[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
-       afStack_34[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-  if (&CStack_50 != (CVector3f *)(afStack_34 + 2)) {
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(&CStack_84,&CStack_50,&CStack_5c);
+  input = &CStack_20;
+  CStack_20.x = CStack_5c.x;
+  *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + 4) =
+       *(uint *)((int)&CStack_5c + (uint)bVar1 * -8 + 4);
+  *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+       *(uint *)((int)&CStack_5c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408b00((CDemonActor *)this_ptr,input,&CStack_38);
+  CStack_2c.x = CStack_38.x;
+  *(uint *)((int)&CStack_2c + (uint)bVar1 * -8 + 4) =
+       *(uint *)((int)&CStack_38 + (uint)bVar1 * -8 + 4);
+  *(uint *)((int)&CStack_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+       *(uint *)((int)&CStack_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if (&CStack_50 != &CStack_2c) {
     CStack_50.x = CStack_2c.x;
     CStack_50.y = CStack_2c.y;
     CStack_50.z = CStack_2c.z;

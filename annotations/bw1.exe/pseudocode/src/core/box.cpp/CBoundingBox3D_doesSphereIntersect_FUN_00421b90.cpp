@@ -14,15 +14,15 @@ int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90(CBoundi
   float local_34;
   float local_30;
   float local_2c;
-  float local_28;
+  CVector3f local_28 [2];
   
   bVar1 = 0;
-  core_box_cpp_FUN_00421af0(this_ptr,sphere_center);
-  local_34 = local_28;
+  core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421af0(this_ptr,sphere_center,local_28);
+  local_34 = local_28[0].x;
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
+       *(uint *)((int)local_28 + (uint)bVar1 * -8 + 4);
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+       *(uint *)((int)local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   local_34 = local_34 - sphere_center->x;
   local_30 = local_30 - sphere_center->y;
   local_2c = local_2c - sphere_center->z;

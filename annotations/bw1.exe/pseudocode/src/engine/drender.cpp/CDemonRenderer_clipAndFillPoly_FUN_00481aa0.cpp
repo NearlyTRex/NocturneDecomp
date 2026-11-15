@@ -14,7 +14,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(CDem
   if (this_ptr->projection_mode != 0) {
     _DAT_01d1d400 = "..\\engine\\drender.cpp";
     _DAT_01d1d404 = 0xad;
-    core_main_c_FUN_005030e0("CDemonRenderer::clipAndFillPoly - Bad projection mode");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRenderer::clipAndFillPoly - Bad projection mode");
   }
   if (this_ptr->face_capture_enabled == 0) {
     if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&

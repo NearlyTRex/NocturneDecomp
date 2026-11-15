@@ -43,11 +43,11 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
@@ -182,8 +182,8 @@ section .text
     PUSH ECX                            ; 00430efb
     LEA ESI,[ESP + 0xac]                ; 00430efc
     LEA EDI,[ESP + 0xa0]                ; 00430f03
-    CALL core_actor.cpp_FUN_00408b40    ; 00430f0a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00430f0a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00430f0f
     LEA ESI,[ESP + 0xa4]                ; 00430f12
     MOV EAX,dword ptr [EBP + 0x14]      ; 00430f19
@@ -269,8 +269,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xe8]      ; 0043102f
     MOV dword ptr [ESP + 0xd4],ECX      ; 00431036
     MOV dword ptr [ESP + 0xd8],EAX      ; 0043103d
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00431044
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00431044
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xdc]                ; 00431049
     ADD ESP,0x8                         ; 00431050
     MOVSD ES:EDI,ESI                    ; 00431053

@@ -50,7 +50,8 @@ void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
     if (this_ptr->letterbox_mode == 0) {
       this_ptr->cinematic_skip_in_progress = 0;
       core_sound_cpp_CSound_init_FUN_0057cc00(this_ptr_00);
-      core_setdir_cpp_FUN_00559f80(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
+      core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
+                (g_CDemonSetPtr,g_CScriptPtr->focus_actor,2);
       core_game_cpp_CGame_saveClockTime_FUN_004cbf10(this_ptr);
       g_CScriptPtr->focus_actor_changed = 0;
     }

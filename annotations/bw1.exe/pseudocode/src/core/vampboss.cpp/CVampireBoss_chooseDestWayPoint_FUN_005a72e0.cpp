@@ -32,7 +32,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0(CVam
     if (pCVar10->way_point_0 == (CDemonActor *)0x0) {
       _DAT_01d1d400 = "..\\core\\vampboss.cpp";
       _DAT_01d1d404 = 0x428;
-      core_main_c_FUN_005030e0("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL",iVar9);
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL");
     }
     iVar1 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
     pCVar2 = pCVar10->way_point_0;

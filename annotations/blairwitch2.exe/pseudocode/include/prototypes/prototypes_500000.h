@@ -24,7 +24,9 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SHuffmanTable.h"
 #include "types/structs/SIpAddr.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/structs/SMotion.h"
 #include "types/structs/SMotionTransition.h"
 #include "types/structs/SMpegFrame.h"
@@ -56,8 +58,8 @@ ECollisionType __cdecl core_mobster_cpp_CMobster_getCollisionType_FUN_00500350(C
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr,int taunt_category);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00500720(char *filename);
-void engine_model_c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended *param_1);
-uint * engine_model_c_getMRGLBounds_FUN_00500970(int *param_1);
+void __cdecl engine_model_c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended *mrgl_data);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00500970(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended *header);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_005011a0(char *filename,int model_size);
 void __cdecl core_moloch_cpp_staticInit_FUN_005012e0(void);
@@ -103,13 +105,13 @@ void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_005037d0(CMotio
 void core_motion_cpp_FUN_00503810(CMotionController *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_00503860(CMotionController *this_ptr);
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(CMotionController *this_ptr);
-float core_motion_cpp_FUN_005038a0(int *param_1,int param_2);
+float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController *this_ptr,int desired_state_index);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950(CMotionController *this_ptr,char *motion_name,float frame_number);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980(CMotionController *this_ptr,int target_motion_index,float target_frame_number);
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_005039e0(CMotionController *this_ptr);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00503bd0(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
-void core_motion_cpp_FUN_00503d80(int *param_1,int param_2,float param_3,float *param_4);
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
 float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00504080(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
@@ -117,7 +119,7 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_005041b0(CMotionControll
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00504250(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_005042e0(CMotionController *this_ptr,CDemonActor *actor);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00504670(SMpegFrame *frame);
-void sound_mp3_cpp_FUN_005048e0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_005048e0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00504a10(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_00504ca0(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);

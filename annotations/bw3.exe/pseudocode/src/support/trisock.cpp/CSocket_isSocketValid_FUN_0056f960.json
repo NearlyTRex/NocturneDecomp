@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 6,
     "complexity_score": 4,
-    "cross_reference_count": 5,
+    "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -38,6 +38,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00571340",
+      "from_addr": "005714ea",
+      "name": "support_trisock.cpp_FUN_00571340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00571d80",
       "from_addr": "00571dad",
       "name": "support_trisock.cpp_FUN_00571d80",
@@ -59,7 +65,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 5,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "00504cb2",
@@ -84,9 +90,31 @@
         "stack_params": 1
       },
       {
+        "call_addr": "005714ea",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00571340",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "0056fa2f",
         "call_type": "direct",
         "caller": "support_trisock.cpp_FUN_0056fa20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057172f",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00571340",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

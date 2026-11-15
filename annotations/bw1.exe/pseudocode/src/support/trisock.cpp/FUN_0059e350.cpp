@@ -1,6 +1,6 @@
 // Name: support_trisock.cpp_FUN_0059e350
 // Address: 0059e350
-// Address Range: [[0059e350, 0059e379] [0059e43b, 0059e496] [0059ebc9, 0059ed1d]]
+// Address Range: [[0059e350, 0059ed1d]]
 // Convention: unknown
 // Signature: undefined4 support_trisock_cpp_FUN_0059e350(int param_1,char *param_2)
 
@@ -219,7 +219,7 @@ LAB_0059e87b:
           do {
             *(byte *)(iVar5 + 0x810) = 0;
             iVar4 = support_trisock_cpp_FUN_0059ee60(param_1,0);
-            if (iVar4 < 0) goto LAB_0059e43b;
+            if (iVar4 < 0) goto switchD_0059e373_default;
           } while (iVar4 == 0xd);
           if (iVar4 == 10) break;
           if (uVar7 < 0x1ff) {
@@ -282,7 +282,7 @@ LAB_0059e970:
       } while (iVar5 == 4);
     }
   }
-LAB_0059e43b:
+switchD_0059e373_default:
   switch(*(uint *)(param_1 + 0xd28)) {
   case 0:
     *param_2 = '\0';
@@ -339,7 +339,7 @@ LAB_0059eab8:
       if (iVar6 != iVar8) {
         *(uint *)(param_1 + 0xd28) = 0xfffffffa;
         support_trisock_cpp_CSocket_closeSocket_FUN_0059cc40((CSocket *)(param_1 + 0xd2c));
-        goto LAB_0059e43b;
+        goto switchD_0059e373_default;
       }
       *(int *)(param_1 + 0x608) = *(int *)(param_1 + 0x608) + iVar8;
       *(int *)(param_1 + 0xa10) = *(int *)(param_1 + 0xa10) + iVar8;
@@ -350,12 +350,13 @@ LAB_0059eab8:
         iVar8 == -2)) {
     *(uint *)(param_1 + 0xd28) = 5;
     support_trisock_cpp_CSocket_closeSocket_FUN_0059cc40((CSocket *)(param_1 + 0xd2c));
-    goto LAB_0059e43b;
+    goto switchD_0059e373_default;
   }
   iVar6 = wincore_winrun_cpp_getTime_FUN_005b2420();
   if (0 < iVar6 - iVar5) {
     iVar4 = iVar4 + (iVar6 - iVar5);
   }
-  if ((0x1cccc < iVar4) || ((iVar5 = iVar6, iVar8 < 0 && (iVar8 != -4)))) goto LAB_0059e43b;
+  if ((0x1cccc < iVar4) || ((iVar5 = iVar6, iVar8 < 0 && (iVar8 != -4))))
+  goto switchD_0059e373_default;
   goto LAB_0059eab8;
 }

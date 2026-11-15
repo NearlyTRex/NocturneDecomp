@@ -26,8 +26,8 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   engine_dosio.cpp_FUN_00479180
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80
 ;
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_0052aec0
     PUSH ESI                            ; 0052aec5
     PUSH 0x5eb536                       ; 0052aec6 | = "sound"
-    CALL engine_dosio.cpp_FUN_00479180  ; 0052aecb
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0052aecb
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0052aed0
     MOV EBX,EAX                         ; 0052aed3
     TEST EAX,EAX                        ; 0052aed5
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5eb54d                       ; 0052aee4 | = "Can't open %s"
     MOV [0x01d1d400],EAX                ; 0052aee9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0052aeee | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052aef4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052aef4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052aef9
     PUSH EBP                            ; 0052aefc
         ;   Label: LAB_0052aefc
@@ -110,8 +110,8 @@ section .text
     PUSH 0x5eb525                       ; 0052af35 | = "Can't open %s"
     MOV dword ptr [0x01d1d400],EDX      ; 0052af3a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0052af40 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052af46
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052af46
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052af4b
     JMP 0x0052aec0                      ; 0052af4e
         ;   XREF to: 0052aec0 (UNCONDITIONAL_JUMP)  ; LAB_0052aec0
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5eb56c                       ; 0052af5e | = "Error preparing to decode %s"
     MOV dword ptr [0x01d1d400],ECX      ; 0052af63 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0052af69 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052af6f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052af6f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052af74
     JMP 0x0052af0b                      ; 0052af77
         ;   XREF to: 0052af0b (UNCONDITIONAL_JUMP)  ; LAB_0052af0b

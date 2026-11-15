@@ -68,12 +68,12 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00
 ;   core_spline.cpp_computeSplineBasis_FUN_00583d60
-;   core_spline.cpp_FUN_00583f90
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
@@ -154,8 +154,8 @@ section .text
     PUSH ESI                            ; 0047d9d4
     LEA ESI,[ESP + 0x130]               ; 0047d9d5
     LEA EDI,[ESP + 0x16c]               ; 0047d9dc
-    CALL core_actor.cpp_FUN_00408b40    ; 0047d9e3
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0047d9e3
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x130]               ; 0047d9e8
     ADD ESP,0x8                         ; 0047d9ef
     LEA EAX,[ESP + 0x164]               ; 0047d9f2
@@ -344,8 +344,8 @@ section .text
     PUSH EAX                            ; 0047dcdc
     LEA ESI,[ESP + 0x16c]               ; 0047dcdd
     LEA EBX,[EBP + 0x4]                 ; 0047dce4
-    CALL core_spline.cpp_FUN_00583f90   ; 0047dce7
-        ;   XREF to: 00583f90 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_00583f90()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00583f90 ; 0047dce7
+        ;   XREF to: 00583f90 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00583f90(float * basis, CVector3f * p0, CVector3f * p1, CVector3f * p2, ...)
     LEA ESI,[ESP + 0x16c]               ; 0047dcec
     ADD ESP,0x14                        ; 0047dcf3
     LEA EAX,[ESP + 0x194]               ; 0047dcf6

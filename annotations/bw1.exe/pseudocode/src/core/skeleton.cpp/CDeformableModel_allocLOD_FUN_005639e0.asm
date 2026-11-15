@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_005637d0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5f1f07                       ; 005639ff | = "CDeformableModel::allocLOD - invalid ..."
     MOV dword ptr [0x01d1d400],ECX      ; 00563a04 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00563a0a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563a10
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563a10
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00563a15
     LEA EBX,[EDI*0x4 + 0x0]             ; 00563a18
         ;   Label: LAB_00563a18
@@ -175,8 +175,8 @@ section .text
     PUSH 0x5f1f4f                       ; 00563b4c | = "Out of hunk in CDeformableModel::allo..."
     MOV dword ptr [0x01d1d400],EBX      ; 00563b51 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00563b57 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563b5d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563b5d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 00563b62
     POP EBP                             ; 00563b65
     POP EDI                             ; 00563b66

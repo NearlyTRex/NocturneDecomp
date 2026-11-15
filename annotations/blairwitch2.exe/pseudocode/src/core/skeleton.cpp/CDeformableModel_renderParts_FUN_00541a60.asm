@@ -561,10 +561,10 @@ section .text
     FADDP                               ; 0054216a
     FXCH                                ; 0054216c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054216e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 00542173
     CALL crt_math.c_round_FUN_005b7ff0  ; 00542175
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 0054217a
     FISTP dword ptr [ESP + 0x104]       ; 0054217c
     FXCH                                ; 00542183
@@ -573,7 +573,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x100]     ; 00542193
     PUSH EAX                            ; 0054219a
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054219b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EDX                            ; 005421a0
     FISTP dword ptr [ESP + 0x108]       ; 005421a1
     MOV ECX,dword ptr [ESP + 0x108]     ; 005421a8

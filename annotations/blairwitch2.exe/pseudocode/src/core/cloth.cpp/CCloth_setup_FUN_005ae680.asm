@@ -111,7 +111,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -489,8 +489,8 @@ section .text
     PUSH ECX                            ; 005aebda
     LEA ESI,[ESP + 0x2c]                ; 005aebdb
     LEA EDI,[ESP + 0xb0]                ; 005aebdf
-    CALL core_xform.cpp_FUN_00591530    ; 005aebe6
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005aebe6
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x2c]                ; 005aebeb
     ADD ESP,0x8                         ; 005aebef
     MOVSD ES:EDI,ESI                    ; 005aebf2
@@ -651,8 +651,8 @@ section .text
     PUSH ECX                            ; 005aee57
     LEA ESI,[ESP + 0x98]                ; 005aee58
     LEA EDI,[ESP + 0x5c]                ; 005aee5f
-    CALL core_xform.cpp_FUN_00591530    ; 005aee63
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005aee63
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x98]                ; 005aee68
     ADD ESP,0x8                         ; 005aee6f
     MOVSD ES:EDI,ESI                    ; 005aee72

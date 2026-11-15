@@ -71,7 +71,7 @@ int __cdecl CDjien::getTargetPoints(CDjien *this_ptr,CVector3f *out_points_array
 
 // Original: core_djien.cpp_FUN_004615b0
 // Address: 004615b0
-int FUN_004615b0(int param_1,int param_2,int param_3);
+int FUN_004615b0(CCharacter *param_1,CVector3f *param_2,int param_3);
 
 // Original: core_djien.cpp_CDjien_dtor_FUN_004623b0
 // Address: 004623b0

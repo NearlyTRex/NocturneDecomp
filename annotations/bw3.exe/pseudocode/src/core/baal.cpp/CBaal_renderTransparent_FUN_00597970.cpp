@@ -17,10 +17,10 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float10 fVar5;
-  uint auStack_54 [6];
-  uint auStack_3c [8];
-  int iStack_1c;
+  double dVar5;
+  uint auStack_58 [6];
+  uint auStack_40 [8];
+  int iStack_20;
   float fStack_18;
   float fStack_14;
   
@@ -29,28 +29,30 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
   fStack_18 = ((float)_DAT_005d9691 - (float)this_ptr->fade_out_opacity) * (float)_DAT_005d9699 *
               (float)_DAT_005d96a1;
   if (this_ptr->fading_in == 0) {
-    fVar5 = ((float10)fStack_14 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time;
-    iVar1 = round();
-    iStack_1c = (int)ROUND(fVar5);
-    this_ptr->render_alpha = iVar1 - iStack_1c;
+    auStack_58[0] = 0x5979db;
+    dVar5 = round
+                      ((double)((fStack_14 * this_ptr->fade_timer) / this_ptr->max_fade_time));
+    iStack_20 = (int)ROUND(dVar5);
+    this_ptr->render_alpha = 0x10000 - iStack_20;
   }
   else {
-    fVar5 = ((float10)fStack_14 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time
-            + (float10)fStack_18;
-    round();
-    this_ptr->render_alpha = (int)ROUND(fVar5);
+    auStack_58[0] = 0x597a57;
+    dVar5 = round
+                      ((double)((fStack_14 * this_ptr->fade_timer) / this_ptr->max_fade_time +
+                               fStack_18));
+    this_ptr->render_alpha = (int)ROUND(dVar5);
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_3c;
-  puVar3 = auStack_54;
+  puVar2 = auStack_40;
+  puVar3 = auStack_58;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041daf0(auStack_54);
+  iVar1 = core_box_cpp_FUN_0041daf0(auStack_58);
   this_ptr_01 = DAT_005f2afc;
   if (iVar1 != 0) {
     iVar1 = this_ptr->render_alpha;

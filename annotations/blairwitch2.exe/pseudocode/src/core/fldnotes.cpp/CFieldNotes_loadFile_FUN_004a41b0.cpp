@@ -62,11 +62,12 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004a41b0(CFieldNotes *thi
   _DAT_01cab7e8 = (uint)(error_text != (char *)0x0);
   local_4c = engine_dosio_cpp_getFileSize_FUN_00460aa0("world",this_ptr->file_name);
   if (-1 < local_4c) {
-    local_50 = engine_dosio_cpp_FUN_00460c70("world",this_ptr->file_name,&DAT_005d5ea3);
+    local_50 = engine_dosio_cpp_getFile_FUN_00460c70
+                         ("world",this_ptr->file_name,&DAT_005d5ea3);
     if (local_50 == (_FILE *)0x0) {
       _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
       _DAT_01d046a4 = 0x889;
-      core_main_c_FUN_004e4500("Can't open field notes file %s",this_ptr);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open field notes file %s");
     }
     lVar4 = _ftell(local_50);
     local_48 = (SNotesSection *)0x0;
@@ -427,7 +428,7 @@ LAB_004a49e9:
                     if (_DAT_01cacb4c < 1) {
                       _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
                       _DAT_01d046a4 = 0x904;
-                      core_main_c_FUN_004e4500("Hell froze!");
+                      core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze!");
                     }
                     iVar12 = _DAT_01cacb4c + -1;
                     iVar6 = sscanf((char *)local_1b4,"%s %d %d");
@@ -486,7 +487,7 @@ LAB_004a4b13:
                       if (_DAT_01cacb4c < 1) {
                         _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
                         _DAT_01d046a4 = 0x928;
-                        core_main_c_FUN_004e4500("Hell froze!");
+                        core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze!");
                       }
                       iVar6 = _DAT_01cacb4c + -1;
                       iVar12 = SNotesMap_ARRAY_01cacb50[iVar6].set_count;
@@ -547,7 +548,7 @@ LAB_004a4c91:
                         if (_DAT_01cacb4c < 1) {
                           _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
                           _DAT_01d046a4 = 0x954;
-                          core_main_c_FUN_004e4500("Hell froze!");
+                          core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze!");
                         }
                         iVar6 = _DAT_01cacb4c + -1;
                         iVar12 = SNotesMap_ARRAY_01cacb50[iVar6].annotation_count;

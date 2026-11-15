@@ -14,7 +14,7 @@ void __cdecl engine_pod_cpp_CPod_init_FUN_0053c8a0(CPod *this_ptr)
   if (this_ptr == (CPod *)0x0) {
     _DAT_01d1d400 = "..\\engine\\pod.cpp";
     _DAT_01d1d404 = 0x4a2;
-    core_main_c_FUN_005030e0("CPod::init - No .POD to init!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPod::init - No .POD to init!");
     if (iRam00000000 != 0) {
       return;
     }

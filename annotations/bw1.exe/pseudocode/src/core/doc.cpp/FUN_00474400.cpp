@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2)
@@ -25,14 +26,14 @@ void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2)
   CDemonActor *pCVar10;
   CVector3f *pCVar11;
   byte bVar12;
-  float afStackY_1064 [6];
-  CDemonActor *apCStackY_104c [1007];
+  CDemonActor *apCStackY_1064 [1013];
   CDemonActor *in_stack_ffffff84;
   float in_stack_ffffff88;
   float local_74;
   CVector3f CStack_70;
   float fStack_64;
-  CDemonActor *apCStack_60 [7];
+  CDemonActor *apCStack_60 [2];
+  CVector3f CStack_58;
   int local_44;
   int local_40;
   CCharacter *local_3c;
@@ -275,14 +276,15 @@ LAB_0047454e:
                               g_CDynamiteClassInfo.name_hash);
         local_30 = local_3c;
         if (local_3c != (CCharacter *)0x0) {
-          core_actor_cpp_FUN_00408ac0(param_1,&CStack_70);
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0
+                    ((CDemonActor *)param_1,&CStack_70,&CStack_58);
           pCVar2 = local_30;
-          in_stack_ffffff84 = apCStack_60[2];
+          in_stack_ffffff84 = (CDemonActor *)CStack_58.x;
           pCVar11 = (local_30->model).bone_origins + 0x51;
-          *(CDemonActor **)(&stack0xffffff88 + (uint)bVar12 * -8) =
-               apCStack_60[(uint)bVar12 * -2 + 3];
+          *(uint *)(&stack0xffffff88 + (uint)bVar12 * -8) =
+               *(uint *)((int)&CStack_58 + (uint)bVar12 * -8 + 4);
           (&local_74)[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
-               (float)apCStack_60[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
+               (float)*(uint *)((int)&CStack_58 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
           if (pCVar11 != (CVector3f *)&stack0xffffff84) {
             pCVar11->x = (float)in_stack_ffffff84;
             (pCVar2->model).bone_origins[0x51].y = in_stack_ffffff88;

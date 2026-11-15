@@ -13,24 +13,19 @@ void core_mine_cpp_FUN_005ad940(int param_1)
 {
   int iVar1;
   int iVar2;
-  float10 fVar3;
+  double dVar3;
   CDemonGlobe *this_ptr;
-  CVector3f *position;
-  CVector3f CStack_1c;
-  int iStack_10;
+  CDemonGlobe *position;
   
-  CStack_1c.x = *(float *)(param_1 + 0x20);
-  CStack_1c.z = *(float *)(param_1 + 0x28);
-  CStack_1c.y = *(float *)(param_1 + 0x24) + _DAT_005f0eef;
-  position = &CStack_1c;
-  fVar3 = ((float10)1 - (float10)*(float *)(param_1 + 0x7e8) / (float10)*(float *)(param_1 + 0x7dc))
-          * (float10)_DAT_005f0ef3;
-  this_ptr = (CDemonGlobe *)(param_1 + 0x7f4);
-  round();
-  iStack_10 = (int)ROUND(fVar3);
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(this_ptr,position);
-  *(int *)(param_1 + 0x830) = iStack_10;
-  iVar1 = (iStack_10 + (iStack_10 >> 0x1f) * -0x100) - (uint)((iStack_10 >> 0x1f) << 7 < 0);
+  this_ptr = (CDemonGlobe *)0x5ad996;
+  position = (CDemonGlobe *)(param_1 + 0x7f4);
+  dVar3 = round
+                    ((double)((1.0 - *(float *)(param_1 + 0x7e8) / *(float *)(param_1 + 0x7dc)) *
+                             (float)_DAT_005f0ef3));
+  iVar1 = (int)ROUND(dVar3);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(this_ptr,(CVector3f *)position);
+  *(int *)(param_1 + 0x830) = iVar1;
+  iVar1 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;
   *(char *)(param_1 + 0x810) =
        (char)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);

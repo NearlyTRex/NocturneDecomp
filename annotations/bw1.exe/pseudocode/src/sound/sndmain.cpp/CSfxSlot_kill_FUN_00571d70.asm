@@ -38,7 +38,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
 ;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5f3a05                       ; 00571e2d | = "refCount for streaming Sfx %s > 1"
     MOV [0x01d1d400],EAX                ; 00571e32 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00571e37 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00571e3d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571e3d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00571e42
     MOV EDX,EBX                         ; 00571e45
         ;   Label: LAB_00571e45
@@ -135,8 +135,8 @@ section .text
     PUSH 0x5f3a3c                       ; 00571e6d | = "streaming sample sfx index mismatch o..."
     MOV dword ptr [0x01d1d400],EDI      ; 00571e72 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00571e78 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00571e7e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571e7e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00571e83
     POP EDI                             ; 00571e86
     PUSH ESI                            ; 00571e87
@@ -162,8 +162,8 @@ section .text
     PUSH 0x5f3971                       ; 00571ebc | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d1d400],ECX      ; 00571ec1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00571ec7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00571ecd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571ecd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00571ed2
     JMP 0x00571d84                      ; 00571ed5
         ;   XREF to: 00571d84 (UNCONDITIONAL_JUMP)  ; LAB_00571d84
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5f39c6                       ; 00571ee4 | = "SfxSlot::kill - ref count out of bala..."
     MOV dword ptr [0x01d1d400],EBP      ; 00571ee9 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00571eef | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00571ef4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571ef4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00571ef9
     JMP 0x00571df9                      ; 00571efc
         ;   XREF to: 00571df9 (UNCONDITIONAL_JUMP)  ; LAB_00571df9

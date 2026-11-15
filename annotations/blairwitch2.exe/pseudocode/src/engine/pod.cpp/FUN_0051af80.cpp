@@ -20,13 +20,13 @@ uint engine_pod_cpp_FUN_0051af80(int param_1,int param_2)
   if ((param_2 < 0) || (*(int *)(param_1 + 0x410) <= param_2)) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x3a5;
-    core_main_c_FUN_004e4500("CPodFile::computeOneFileCRC - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CPodFile::computeOneFileCRC - invalid index");
   }
   file = _fopen((char *)(param_1 + 4),(char *)0x5e2753);
   if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x3aa;
-    core_main_c_FUN_004e4500("CPodFile::computeOneFileCRC - can't open %s",(char *)(param_1 + 4));
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CPodFile::computeOneFileCRC - can't open %s");
   }
   _fseek(file,*(long *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x414)),0);
   iVar1 = *(int *)(param_2 * 0x14 + 4 + *(int *)(param_1 + 0x414));

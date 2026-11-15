@@ -36,7 +36,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00496560(CFilmProjecto
       if (pCVar3 == (CDemonActor *)0x0) {
         _DAT_01d71de0 = "..\\core\\filmreel.cpp";
         _DAT_01d71de4 = 0x11d;
-        core_main_c_FUN_004e4330("CFilmProjector::Need to put CFilmReel in place");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CFilmProjector::Need to put CFilmReel in place");
       }
       core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00
                 (g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);

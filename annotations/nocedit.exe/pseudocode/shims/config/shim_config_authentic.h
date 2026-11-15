@@ -1719,7 +1719,7 @@
 //
 //   The software mixer (CSfxSlot::computeChannelVolumes) plays a positional
 //   sound at chvol * ref / clamp(d, min_distance, max_distance). Under hardware
-//   mixing, CDirectSoundDevice::setSfxPos loads reference_distance (+0x100) and
+//   mixing, CDirectSoundDevice::applySfxChanges loads reference_distance (+0x100) and
 //   max_distance (+0x108) but never min_distance (+0x104) (005af7cd..005af7e0),
 //   passes ref * chvol as DirectSound's min distance, and divides the channel
 //   volume out of SetVolume (FDIV ST0,ST0 at 005afa20). A sound whose

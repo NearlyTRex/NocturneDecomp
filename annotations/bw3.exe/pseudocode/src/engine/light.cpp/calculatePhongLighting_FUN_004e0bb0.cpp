@@ -18,7 +18,7 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int
   uint uVar5;
   byte bVar6;
   int aiStackY_100c [1017];
-  int local_24;
+  CVector3i local_24;
   int local_18;
   int local_14;
   
@@ -63,12 +63,12 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int
     _DAT_01d70c44 = _DAT_01c6e2cc;
     _DAT_01d70c48 = _DAT_01c6e2d0;
     _DAT_01d70c4c = _DAT_01c6e2d4;
-    engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(&DAT_01d70c44);
-    _DAT_01d70c50 = local_24;
+    engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0((CVector3i *)&DAT_01d70c44,&local_24);
+    _DAT_01d70c50 = local_24.x;
     *(uint *)(&DAT_01d70c54 + (uint)bVar6 * -8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar6 * -8);
+         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);
     *(uint *)(&DAT_01d70c58 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   }
   lVar1 = (longlong)iVar4 * (longlong)_DAT_01d70c50;
   iVar3 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +

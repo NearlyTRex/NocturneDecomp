@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   wind_influence
 ; int              Stack[0x14]:4   alpha_value
 ;
-; XREF[15]:
+; XREF[16]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fbe5
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004132df
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0 at 0042a91e
@@ -21,7 +21,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 004870f8
 ;   core_fire.cpp_CCrater_process_FUN_00499930 at 004999b1
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0 at 0049cce8
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c3f8dc

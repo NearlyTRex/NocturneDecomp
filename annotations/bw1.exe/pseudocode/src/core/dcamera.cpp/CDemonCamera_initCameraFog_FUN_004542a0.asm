@@ -70,19 +70,19 @@ section .text
     ADD ESP,0xc                         ; 00454312
     FXCH ST3                            ; 00454315
     CALL crt_math.c_round_FUN_005c03a0  ; 00454317
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 0045431c
     CALL crt_math.c_round_FUN_005c03a0  ; 0045431e
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 00454323
     CALL crt_math.c_round_FUN_005c03a0  ; 00454325
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST3                            ; 0045432a
     CALL crt_math.c_round_FUN_005c03a0  ; 0045432c
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST4                            ; 00454331
     CALL crt_math.c_round_FUN_005c03a0  ; 00454333
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00454338
     FISTP dword ptr [0x01481e38]        ; 0045433a | DAT_01481e38
     FISTP dword ptr [0x01481e3c]        ; 00454340 | DAT_01481e3c

@@ -20,7 +20,7 @@
 ;   crt_stdio.c_fputc_FUN_005c2f00
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_drawText_FUN_00401fe0
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     LEA EAX,[ESP + 0xcc]                ; 004cba05
     PUSH EAX                            ; 004cba0c
     PUSH 0x5e1360                       ; 004cba0d
-    CALL engine_dosio.cpp_FUN_00479180  ; 004cba12
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004cba12
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004cba17
     MOV dword ptr [ESP + 0x134],EAX     ; 004cba1a
     TEST EAX,EAX                        ; 004cba21
@@ -255,7 +255,7 @@ section .text
         ;   Label: LAB_004cbc14
     PUSH ECX                            ; 004cbc1b
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004cbc1c
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004cbc21
     PUSH 0x0                            ; 004cbc24
     PUSH 0x0                            ; 004cbc26

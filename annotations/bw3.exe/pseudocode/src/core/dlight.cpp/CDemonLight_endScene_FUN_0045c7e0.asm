@@ -11,9 +11,9 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 005345a3
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 005367f3
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535c81
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005351b3
-;   core_set.cpp_FUN_005365c0 at 005367f3
 ;   core_set.cpp_FUN_00536990 at 00536bb4
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520
 ;   engine_drender.cpp_popViewport_FUN_0046d320
 ;
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5bb368                       ; 0045c8c4 | = "CDemonLight::endScene - Scene not open"
     MOV dword ptr [0x01d71de0],ECX      ; 0045c8c9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0045c8cf | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c8d5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c8d5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c8da
     JMP 0x0045c7fc                      ; 0045c8dd
         ;   XREF to: 0045c7fc (UNCONDITIONAL_JUMP)  ; LAB_0045c7fc

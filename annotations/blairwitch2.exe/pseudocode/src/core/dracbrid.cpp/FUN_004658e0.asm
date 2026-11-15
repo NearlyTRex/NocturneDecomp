@@ -58,7 +58,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_spline.cpp_computeSplineBasis_FUN_00561310
-;   core_spline.cpp_FUN_00561540
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_00561540
 ;   core_spline.cpp_FUN_00561780
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
@@ -276,8 +276,8 @@ section .text
     PUSH EAX                            ; 00465b49
     LEA ESI,[ESP + 0x58]                ; 00465b4a
     LEA EDI,[ESP + 0x70]                ; 00465b4e
-    CALL core_spline.cpp_FUN_00561540   ; 00465b52
-        ;   XREF to: 00561540 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_00561540()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00561540 ; 00465b52
+        ;   XREF to: 00561540 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00561540(float * basis, CVector3f * p0, CVector3f * p1, CVector3f * p2, ...)
     ADD ESP,0x14                        ; 00465b57
     LEA ESI,[ESP + 0x44]                ; 00465b5a
     MOV EBX,dword ptr [ESP + 0x7c]      ; 00465b5e

@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 287,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
-    "suspect_count": 11,
+    "pseudocode_lines": 167,
+    "suspect_count": 5,
     "suspect_types": [
-      "extra_output",
       "pointer_cast",
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 518
+    "total_lines": 528
   },
   "cross_references": [],
   "function": {
@@ -35,7 +34,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3120",
@@ -285,83 +284,35 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 98,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "piVar12 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 99,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "piVar13 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 100,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "if (0 < extraout_EDX) {",
-      "type": "extra_output"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 156,
+      "line": 166,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar19` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar19->owner`). Replace `pSVar19->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 120,
-      "match": "pSVar19 = (T *)&pSVar19->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar27` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar27->owner`). Replace `pSVar27->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 129,
+      "match": "pSVar27 = (T *)&pSVar27->FIELD",
       "severity": "moderate",
-      "text": "pSVar19 = (SMRGLKeyframe *)&pSVar19->vertex_header;",
+      "text": "pSVar27 = (SMRGLKeyframe *)&pSVar27->vertex_header;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar16` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar16->owner`). Replace `pSVar16->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 122,
-      "match": "pSVar16 = (T *)&pSVar16->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar25` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar25->owner`). Replace `pSVar25->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 130,
+      "match": "pSVar25 = (T *)&pSVar25->FIELD",
       "severity": "moderate",
-      "text": "pSVar16 = (SMRGLKeyframe *)&pSVar16->vertex_header;",
+      "text": "pSVar25 = (SMRGLKeyframe *)&pSVar25->vertex_header;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar18->owner`). Replace `pSVar18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 124,
-      "match": "pSVar18 = (T *)&pSVar18->FIELD",
-      "severity": "moderate",
-      "text": "pSVar18 = (SMRGLKeyframe *)&pSVar18->vertex_header;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSStack_18->owner`). Replace `pSStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar26` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar26->owner`). Replace `pSVar26->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 132,
-      "match": "pSStack_18 = (T *)&pSStack_18->FIELD",
+      "match": "pSVar26 = (T *)&pSVar26->FIELD",
       "severity": "moderate",
-      "text": "pSStack_18 = (SMRGLKeyframe *)&pSStack_18->vertex_header;",
+      "text": "pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;",
       "type": "shadow_pointer_walk"
     }
   ],

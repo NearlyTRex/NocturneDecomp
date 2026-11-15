@@ -41,7 +41,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00414750
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
 ;   crt_memory.c_operator_new_FUN_005a3cb2
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5b6a3f                       ; 00414588 | = "Can't create body part!"
     MOV dword ptr [0x01d71de0],EDX      ; 0041458d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00414593 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00414599
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00414599
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0041459e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 004145a1
         ;   Label: LAB_004145a1

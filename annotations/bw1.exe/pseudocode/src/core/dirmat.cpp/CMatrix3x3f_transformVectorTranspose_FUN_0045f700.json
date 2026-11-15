@@ -1,0 +1,441 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 32,
+    "cross_reference_count": 26,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "00408b00",
+      "from_addr": "00408b1a",
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408bb0",
+      "from_addr": "00408bfa",
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041a200",
+      "from_addr": "0041a51f",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00419b90",
+      "from_addr": "0041a13d",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041e130",
+      "from_addr": "0041e2a2",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420450",
+      "from_addr": "0042048e",
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_00420450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004421d0",
+      "from_addr": "00442282",
+      "name": "core_cloth.cpp_CCloth_applyRotation_FUN_004421d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00440640",
+      "from_addr": "00440b98",
+      "name": "core_cloth.cpp_CCloth_step_FUN_00440640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044ab20",
+      "from_addr": "0044abba",
+      "name": "core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0044ab20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00454cc0",
+      "from_addr": "00454f42",
+      "name": "core_dcamera.cpp_FUN_00454cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045edf0",
+      "from_addr": "0045ee45",
+      "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045edf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00463460",
+      "from_addr": "00463654",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_00463460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465060",
+      "from_addr": "004651e2",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464190",
+      "from_addr": "00464238",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00467c00",
+      "from_addr": "00467faf",
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00467c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477ab0",
+      "from_addr": "00477f08",
+      "name": "core_door.cpp_CDoor_process_FUN_00477ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b01a0",
+      "from_addr": "004b0dd7",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004b01a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00504580",
+      "from_addr": "00504841",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00536290",
+      "from_addr": "00536480",
+      "name": "core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551d50",
+      "from_addr": "00551fba",
+      "name": "core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00554440",
+      "from_addr": "005544c7",
+      "name": "core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00554440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055b990",
+      "from_addr": "0055b9f5",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_0055b990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055bab0",
+      "from_addr": "0055bc46",
+      "name": "core_setdir.cpp_testOBBIntersection_FUN_0055bab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055c6f0",
+      "from_addr": "0055c742",
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0055c6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aadb0",
+      "from_addr": "005aae4c",
+      "name": "core_wateract.cpp_FUN_005aadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ada60",
+      "from_addr": "005adaba",
+      "name": "core_weapon.cpp_CWeapon_onDropped_FUN_005ada60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045f700",
+    "address_range": [
+      [
+        "0045f700",
+        "0045f76e"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700",
+    "signature": "CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 41,
+    "call_sites": [
+      {
+        "call_addr": "00408bfa",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041e2a2",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041e467",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041eb47",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041ef28",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041f294",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041f7d9",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041fc24",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004200da",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041a13d",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.413043478260869,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "COPY": 209,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 6,
+      "FLOAT_MULT": 9,
+      "INT_ADD": 27,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "INT_ZEXT": 6,
+      "LOAD": 25,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 341
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004495a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045b870",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00472030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5128
+    },
+    "nocturne.exe": {
+      "addr": "0044daa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5128
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0045f74e",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

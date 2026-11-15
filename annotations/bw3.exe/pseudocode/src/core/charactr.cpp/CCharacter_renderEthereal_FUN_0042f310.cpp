@@ -15,16 +15,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter
   int iVar1;
   int iVar2;
   CDeformableModel *this_ptr_01;
-  float10 fVar3;
+  double dVar3;
   CBoundingBox3D *bounding_box;
-  SPose SStack_1ab0;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xc000);
   if (this_ptr == *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {
-    fVar3 = (float10)DAT_007e2ae8 + (float10)g_CGamePtr->delta_time_float * (float10)_DAT_005b8376;
-    round();
-    DAT_007e2ae8 = (int)ROUND(fVar3);
+    dVar3 = round
+                      ((double)((float)DAT_007e2ae8 + g_CGamePtr->delta_time_float * _DAT_005b8376))
+    ;
+    DAT_007e2ae8 = (int)ROUND(dVar3);
   }
   iVar2 = rand();
   _DAT_007e2aec = iVar2 % 6;
@@ -58,8 +58,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter
     }
   }
   this_ptr_00 = &this_ptr->model;
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr_00,&SStack_1ab0)
-  ;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850
+            (this_ptr_00,(SPose *)&stack0xffffe54c);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0054e340
             (this_ptr_00,1.1,-1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(this_ptr_00);
@@ -71,8 +71,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter
             (this_ptr_00,DAT_007e2ae8,0);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0054e5a0(this_ptr_00,0x267,1);
   DAT_005f2afc->skip_uv_extraction = 0;
-  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(this_ptr_00,&SStack_1ab0)
-  ;
+  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920
+            (this_ptr_00,(SPose *)&stack0xffffe54c);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   return;
 }

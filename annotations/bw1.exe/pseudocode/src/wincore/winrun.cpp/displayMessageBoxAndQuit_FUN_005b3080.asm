@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   message
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005030e0 at 00503168
+;   core_main.c_displayErrorAndQuit_FUN_005030e0 at 00503168
 ;
 ; Referenced Globals:
 ;   void* PTR_MessageBoxA_005d04dc = 001d0b66

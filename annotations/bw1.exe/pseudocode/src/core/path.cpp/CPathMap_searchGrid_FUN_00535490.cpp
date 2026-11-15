@@ -36,7 +36,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_00535490(CPathMap *this_ptr,i
     if (_DAT_01e7abdc == _DAT_01e7abe0) {
       _DAT_01d1d400 = "..\\core\\path.cpp";
       _DAT_01d1d404 = 0xdf;
-      core_main_c_FUN_005030e0("queuePop - empty queue?!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("queuePop - empty queue?!");
     }
     iVar1 = _DAT_01e7abdc * 0xc;
     grid_x = *(int *)(&DAT_01e6c17c + iVar1);

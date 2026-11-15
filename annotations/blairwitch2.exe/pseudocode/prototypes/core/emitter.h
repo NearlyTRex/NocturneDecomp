@@ -43,7 +43,7 @@ void __cdecl CEmitter::renderBackground(CEmitter *this_ptr,int layer_flag);
 
 // Original: core_emitter.cpp_CEmitter_getBoundingBox_FUN_00487910
 // Address: 00487910
-CBoundingBox3D * __cdecl CEmitter::getBoundingBox(CEmitter *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CEmitter::getBoundingBox(CEmitter *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_emitter.cpp_CEmitter_archive_FUN_00487990
 // Address: 00487990
@@ -55,7 +55,7 @@ ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionI
 
 // Original: core_emitter.cpp_FUN_00487c80
 // Address: 00487c80
-void FUN_00487c80(int param_1);
+void FUN_00487c80(CDemonActor *param_1);
 
 // Original: core_emitter.cpp_CEmitter_dtor_FUN_00487d30
 // Address: 00487d30

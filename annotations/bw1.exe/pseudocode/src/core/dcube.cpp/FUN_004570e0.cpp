@@ -1,6 +1,6 @@
 // Name: core_dcube.cpp_FUN_004570e0
 // Address: 004570e0
-// Address Range: [[004570e0, 00457344] [0045736c, 004573e6] [0045740e, 00457489] [004574b1, 0045752c] [00457554, 004575d2] [004575fa, 00457678] [004576a0, 004576c5]]
+// Address Range: [[004570e0, 00457aeb]]
 // Convention: unknown
 // Signature: undefined4 core_dcube_cpp_FUN_004570e0(void)
 

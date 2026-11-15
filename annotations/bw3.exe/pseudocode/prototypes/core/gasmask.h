@@ -47,7 +47,7 @@ ECollisionType __cdecl CGasMask::getCollisionType(CGasMask *this_ptr,SCollisionI
 
 // Original: core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004c67c0
 // Address: 004c67c0
-CBoundingBox3D * __cdecl CGasMask::getBoundingBox(CGasMask *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CGasMask::getBoundingBox(CGasMask *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_gasmask.cpp_CGasMask_dtor_FUN_004c6800
 // Address: 004c6800

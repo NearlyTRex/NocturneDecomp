@@ -36,7 +36,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_unknown.c_FUN_005b86a0
@@ -143,8 +143,8 @@ section .text
     PUSH 0x5ee138                       ; 00588b4a | = "WDDVMEM: Fatal - out of frame buffer ..."
     MOV dword ptr [0x01d046a0],ESI      ; 00588b4f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00588b55 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00588b5b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588b5b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588b60
     MOV EAX,[0x006141b8]                ; 00588b63 | DAT_006141b8
         ;   Label: LAB_00588b63
@@ -164,8 +164,8 @@ section .text
     PUSH 0x5ee17b                       ; 00588b91 | = "WDDVMEM: Fatal - out of Z buffer memory"
     MOV [0x01d046a0],EAX                ; 00588b96 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00588b9b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00588ba1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588ba1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588ba6
     MOV EAX,[0x02661af0]                ; 00588ba9 | DAT_02661af0
         ;   Label: LAB_00588ba9
@@ -364,8 +364,8 @@ section .text
     PUSH 0x5ee1ba                       ; 00588dbc | = "setScreenResolution - Create back buf..."
     MOV dword ptr [0x01d046a0],ECX      ; 00588dc1 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00588dc7 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00588dcd
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588dcd
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588dd2
     XOR EAX,EAX                         ; 00588dd5
     ADD ESP,0x74                        ; 00588dd7

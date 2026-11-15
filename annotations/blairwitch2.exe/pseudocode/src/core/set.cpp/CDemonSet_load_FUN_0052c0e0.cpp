@@ -49,11 +49,11 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0052c0e0(CDemonSet *this_ptr,char *
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Loading set");
   core_level_cpp_CLevelLoader_update_FUN_004e1600(0x01D03000,pcVar4,iVar11);
   core_set_cpp_CDemonSet_clear_FUN_0052c090(this_ptr);
-  p_Var5 = engine_dosio_cpp_FUN_00460c70("models",filename,&DAT_005e546c);
+  p_Var5 = engine_dosio_cpp_getFile_FUN_00460c70("models",filename,&DAT_005e546c);
   if (p_Var5 == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\core\\set.cpp";
     _DAT_01d046a4 = 0x15c;
-    core_main_c_FUN_004e4500("CDemonSet::Unable to open %s",filename);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::Unable to open %s");
   }
   _fscanf(p_Var5,&DAT_005e54a3);
   _fscanf(p_Var5,&DAT_005e54a7);
@@ -382,7 +382,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0052c0e0(CDemonSet *this_ptr,char *
       pcVar10[1] = cVar3;
       pcVar10 = pcVar10 + 2;
     } while (cVar3 != '\0');
-    p_Var5 = engine_dosio_cpp_FUN_00460c70(&DAT_005e55f2,pcVar4,&DAT_005e55ef);
+    p_Var5 = engine_dosio_cpp_getFile_FUN_00460c70(&DAT_005e55f2,pcVar4,&DAT_005e55ef);
     if (p_Var5 == (_FILE *)0x0) {
       engine_special_cpp_clearScreen_FUN_0055b1f0();
       engine_2d_c_drawText_FUN_00401fe0("Warning!  No .GEO file.  Press any key",0,0);

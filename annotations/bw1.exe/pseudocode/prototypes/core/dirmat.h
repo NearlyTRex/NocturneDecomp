@@ -13,21 +13,21 @@ void __cdecl CMatrix3x3f::buildRotationMatrix(CMatrix3x3f *this_ptr,CVector3f *e
 // Address: 0045f4d0
 void __cdecl CMatrix3x3f::invert(CMatrix3x3f *this_ptr);
 
-// Original: core_dirmat.cpp_FUN_0045f690
+// Original: core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 // Address: 0045f690
-void FUN_0045f690(float *param_1,float *param_2);
+CVector3f * __stack2_esi CMatrix3x3f::transformVector(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 
-// Original: core_dirmat.cpp_FUN_0045f700
+// Original: core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 // Address: 0045f700
-void FUN_0045f700(float *param_1,float *param_2);
+CVector3f * __stack2_esi CMatrix3x3f::transformVectorTranspose(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 
 // Original: core_dirmat.cpp_angleFromSinCos_FUN_0045f770
 // Address: 0045f770
 float __cdecl angleFromSinCos(double y,double x);
 
-// Original: core_dirmat.cpp_FUN_0045f840
+// Original: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840
 // Address: 0045f840
-float * FUN_0045f840(float *param_1);
+CVector3f * __stack_esi CMatrix3x3f::getEulerAngles(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 
 // Original: core_dirmat.cpp_FUN_0045fd80
 // Address: 0045fd80

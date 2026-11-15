@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_0054e820(CSfx
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0xab6;
-    core_main_c_FUN_004e4500("SfxSlot::autoCalcDelayRemaining - must be locked!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::autoCalcDelayRemaining - must be locked!");
   }
   if (((this_ptr->options).flags & 1) != 0) {
     (this_ptr->options).delay_remaining = 0.0;

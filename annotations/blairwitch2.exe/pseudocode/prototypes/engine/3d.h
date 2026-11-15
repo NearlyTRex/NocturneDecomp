@@ -115,7 +115,7 @@ void __cdecl setActiveRenderColor(void);
 
 // Original: engine_3d.c_drawLineStrip2D_FUN_00404590
 // Address: 00404590
-int __cdecl drawLineStrip2D(int param_1);
+SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_abortOldFuncOp23_FUN_004046b0
 // Address: 004046b0
@@ -151,7 +151,7 @@ SMRGLHeaderExtended * __cdecl abortOldFuncOp28(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60
 // Address: 00404e60
-int renderPolygonAlphaTexturedNearPlane(void);
+void * __cdecl renderPolygonAlphaTexturedNearPlane(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonTexturedNearPlane_FUN_00404f00
 // Address: 00404f00

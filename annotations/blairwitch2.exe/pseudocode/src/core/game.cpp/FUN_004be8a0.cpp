@@ -21,15 +21,7 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   CPathMap *this_ptr;
   EDeathState EVar8;
   byte bVar9;
-  float afStackY_1200 [39];
-  int aiStackY_1164 [6];
-  float afStackY_114c [3];
-  int aiStackY_1140 [6];
-  float afStackY_1128 [36];
-  int aiStackY_1098 [6];
-  float afStackY_1080 [9];
-  int aiStackY_105c [6];
-  float afStackY_1044 [903];
+  float afStackY_1200 [1014];
   CDemonSet *this_ptr_00;
   CVector3i *pCVar10;
   float fStack_218;
@@ -51,8 +43,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   float fStack_1d8;
   float fStack_1d4;
   CVector3i CStack_1d0;
-  float fStack_1c4;
-  float afStack_1c0 [4];
+  CVector3f CStack_1c4;
+  float fStack_1b8;
+  float fStack_1b4;
   float fStack_1b0;
   float fStack_1ac;
   float afStack_1a8 [4];
@@ -65,8 +58,7 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   CVector3i CStack_170;
   float fStack_164;
   float afStack_160 [2];
-  int iStack_158;
-  int aiStack_154 [2];
+  CVector3i CStack_158;
   CVector3i CStack_14c;
   float fStack_140;
   float afStack_13c [2];
@@ -76,12 +68,9 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   CVector3f CStack_11c;
   float fStack_110;
   float afStack_10c [5];
-  int iStack_f8;
-  float afStack_f4 [5];
-  float fStack_e0;
-  float fStack_dc;
-  float fStack_d8;
-  float fStack_d4;
+  CVector3i CStack_f8;
+  float fStack_ec;
+  float afStack_e8 [6];
   float fStack_d0;
   float fStack_cc;
   float fStack_c8;
@@ -97,8 +86,7 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   float afStack_94 [4];
   float fStack_84;
   float fStack_80;
-  int iStack_74;
-  int aiStack_70 [2];
+  CVector3i CStack_74;
   CVector3i CStack_68;
   float fStack_5c;
   float afStack_58 [4];
@@ -255,12 +243,14 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   pCStack_34 = (CDemonActor *)0x0;
   if ((_DAT_01cb3920 == 0) && (_DAT_01c2a384 == 1)) {
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-    core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance);
+    core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
+              (&g_CDemonCameraInstance,local_24,local_28,&CStack_74);
     pCVar10 = &CStack_17c;
-    CStack_17c.x = iStack_74;
-    *(int *)((int)&CStack_17c + (uint)bVar9 * -8 + 4) = aiStack_70[(uint)bVar9 * -2];
-    *(int *)((int)&CStack_17c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-         aiStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    CStack_17c.x = CStack_74.x;
+    *(uint *)((int)&CStack_17c + (uint)bVar9 * -8 + 4) =
+         *(uint *)((int)&CStack_74 + (uint)bVar9 * -8 + 4);
+    *(uint *)((int)&CStack_17c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         *(uint *)((int)&CStack_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
               (&g_CDemonCameraInstance,pCVar10,&CStack_14c);
     CStack_17c.x = CStack_14c.x;
@@ -298,12 +288,14 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   }
   else {
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-    core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance);
+    core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
+              (&g_CDemonCameraInstance,local_24,local_28,&CStack_f8);
     pCVar10 = &CStack_1d0;
-    CStack_1d0.x = iStack_f8;
-    *(float *)((int)&CStack_1d0 + (uint)bVar9 * -8 + 4) = afStack_f4[(uint)bVar9 * -2];
-    *(float *)((int)&CStack_1d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-         afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    CStack_1d0.x = CStack_f8.x;
+    *(uint *)((int)&CStack_1d0 + (uint)bVar9 * -8 + 4) =
+         *(uint *)((int)&CStack_f8 + (uint)bVar9 * -8 + 4);
+    *(uint *)((int)&CStack_1d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         *(uint *)((int)&CStack_f8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
               (&g_CDemonCameraInstance,pCVar10,&CStack_68);
     CStack_1d0.x = CStack_68.x;
@@ -311,18 +303,17 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
          *(uint *)((int)&CStack_68 + (uint)bVar9 * -8 + 4);
     *(uint *)((int)&CStack_1d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          *(uint *)((int)&CStack_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-    afStack_1c0[2] = (float)CStack_1d0.x * _DAT_005f7558;
-    afStack_1c0[3] = (float)CStack_1d0.y * _DAT_005f7558;
+    fStack_1b8 = (float)CStack_1d0.x * _DAT_005f7558;
+    fStack_1b4 = (float)CStack_1d0.y * _DAT_005f7558;
     fStack_1b0 = (float)CStack_1d0.z * _DAT_005f7558;
-    afStack_f4[2] = g_CDemonCameraInstance.base.position.f.x;
-    afStack_f4[(uint)bVar9 * -2 + 3] =
-         *(float *)((int)&g_CDemonCameraInstance + (uint)bVar9 * -8 + 8);
-    afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+    fStack_ec = g_CDemonCameraInstance.base.position.f.x;
+    afStack_e8[(uint)bVar9 * -2] = *(float *)((int)&g_CDemonCameraInstance + (uint)bVar9 * -8 + 8);
+    afStack_e8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
          *(float *)((uint)bVar9 * -8 + 0x1fc7844 + (uint)bVar9 * -8);
-    afStack_10c[2] = afStack_f4[2];
-    afStack_10c[(uint)bVar9 * -2 + 3] = afStack_f4[(uint)bVar9 * -2 + 3];
+    afStack_10c[2] = fStack_ec;
+    afStack_10c[(uint)bVar9 * -2 + 3] = afStack_e8[(uint)bVar9 * -2];
     afStack_10c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-         afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+         afStack_e8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00537eb0(g_CDemonSetPtr,1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
               (g_CDemonSetPtr,*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4));
@@ -338,12 +329,14 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
     param_2[3] = 1;
   }
   if ((_DAT_01cb3920 == 0) && (_DAT_01c2a384 == 1)) {
-    core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance);
+    core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
+              (&g_CDemonCameraInstance,local_24,local_28,&CStack_158);
     pCVar6 = pCStack_34;
-    CStack_b0.x = iStack_158;
-    *(int *)((int)&CStack_b0 + (uint)bVar9 * -8 + 4) = aiStack_154[(uint)bVar9 * -2];
-    *(int *)((int)&CStack_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-         aiStack_154[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    CStack_b0.x = CStack_158.x;
+    *(uint *)((int)&CStack_b0 + (uint)bVar9 * -8 + 4) =
+         *(uint *)((int)&CStack_158 + (uint)bVar9 * -8 + 4);
+    *(uint *)((int)&CStack_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         *(uint *)((int)&CStack_158 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     if (pCVar6 == (CDemonActor *)0x0) {
       if (((local_24 < 0x20) || (local_20 + -0x20 < local_24)) ||
          ((local_28 < 0x20 || (local_30 + -0x20 < local_28)))) {
@@ -361,29 +354,29 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
         fStack_1f4 = (float)CStack_b0.x * _DAT_005f7558 - *(float *)(iVar5 + 0x20);
         fStack_1f0 = (float)CStack_b0.y * _DAT_005f7558 - *(float *)(iVar5 + 0x24);
         fStack_1ec = (float)CStack_b0.z * _DAT_005f7558 - *(float *)(iVar5 + 0x28);
-        fStack_e0 = fStack_1f4;
-        afStack_f4[(uint)bVar9 * -2 + 6] = *(float *)((int)&stack0xfffffe10 + (uint)bVar9 * -8);
+        afStack_e8[2] = fStack_1f4;
+        afStack_e8[(uint)bVar9 * -2 + 3] = *(float *)((int)&stack0xfffffe10 + (uint)bVar9 * -8);
         fVar4 = fStack_9c;
         fVar3 = fStack_a0;
         fVar2 = fStack_a4;
-        afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+        afStack_e8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              *(float *)((int)&stack0xfffffe14 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-        fStack_48 = SQRT(fStack_d8 * fStack_d8 + fStack_e0 * fStack_e0);
-        fStack_dc = 0.0;
+        fStack_48 = SQRT(afStack_e8[4] * afStack_e8[4] + afStack_e8[2] * afStack_e8[2]);
+        afStack_e8[3] = 0.0;
         if (fStack_48 <= 0.0) {
-          fStack_e0 = 0.0;
-          fStack_d8 = 0.0;
+          afStack_e8[2] = 0.0;
+          afStack_e8[4] = 0.0;
         }
         else {
           fVar1 = 1.0 / fStack_48;
-          fStack_e0 = fStack_e0 * fVar1;
-          fStack_dc = fVar1 * 0.0;
-          fStack_d8 = fStack_d8 * fVar1;
+          afStack_e8[2] = afStack_e8[2] * fVar1;
+          afStack_e8[3] = fVar1 * 0.0;
+          afStack_e8[4] = afStack_e8[4] * fVar1;
         }
-        afStack_1a8[2] = fStack_e0 * local_3c;
-        afStack_1a8[3] = fStack_dc * local_3c;
-        fStack_198 = fStack_d8 * local_3c;
-        fStack_194 = fStack_e0 * local_3c;
+        afStack_1a8[2] = afStack_e8[2] * local_3c;
+        afStack_1a8[3] = afStack_e8[3] * local_3c;
+        fStack_198 = afStack_e8[4] * local_3c;
+        fStack_194 = afStack_e8[2] * local_3c;
         afStack_1a8[(uint)bVar9 * -2 + 6] = afStack_1a8[(uint)bVar9 * -2 + 3];
         afStack_1a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
              afStack_1a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
@@ -454,13 +447,13 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
     }
   }
   iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  fStack_d4 = *(float *)(iVar5 + 0x20) - _DAT_01cb3924;
+  afStack_e8[5] = *(float *)(iVar5 + 0x20) - _DAT_01cb3924;
   fStack_d0 = *(float *)(iVar5 + 0x24) - _DAT_01cb3928;
   fStack_cc = *(float *)(iVar5 + 0x28) - _DAT_01cb392c;
-  fStack_1ac = fStack_d4;
-  afStack_1a8[(uint)bVar9 * -2] = afStack_f4[(uint)bVar9 * -2 + 9];
+  fStack_1ac = afStack_e8[5];
+  afStack_1a8[(uint)bVar9 * -2] = afStack_e8[(uint)bVar9 * -2 + 6];
   afStack_1a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+       afStack_e8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
   afStack_58[2] =
        SQRT(afStack_1a8[1] * afStack_1a8[1] +
             fStack_1ac * fStack_1ac + afStack_1a8[0] * afStack_1a8[0]);
@@ -543,11 +536,13 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
       param_2[10] = local_2c;
     }
     if (_DAT_01cb3930 != (CCharacter *)0x0) {
-      core_actor_cpp_FUN_00408de0();
-      fStack_140 = fStack_1c4;
-      afStack_13c[(uint)bVar9 * -2] = afStack_1c0[(uint)bVar9 * -2];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),(CVector3f *)&DAT_01cb3924,
+                 &CStack_1c4);
+      fStack_140 = CStack_1c4.x;
+      afStack_13c[(uint)bVar9 * -2] = *(float *)((int)&CStack_1c4 + (uint)bVar9 * -8 + 4);
       afStack_13c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-           afStack_1c0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+           *(float *)((int)&CStack_1c4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       if (0x40000000 < (int)fStack_140) {
         param_2[2] = 1;
         param_2[9] = 0x3f800000;

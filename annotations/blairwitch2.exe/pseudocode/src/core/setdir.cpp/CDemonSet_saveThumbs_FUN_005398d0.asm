@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470
 ;
@@ -120,8 +120,8 @@ section .text
     PUSH 0x5e6038                       ; 005399ce | = "Hell froze"
     MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005399df
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005399df
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005399e4
     JMP 0x00539968                      ; 005399e7
         ;   XREF to: 00539968 (UNCONDITIONAL_JUMP)  ; LAB_00539968

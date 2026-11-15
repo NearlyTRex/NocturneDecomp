@@ -476,7 +476,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SDynamicLight](structs/SDynamicLight.md) | — | — | 76 ✓ | 76 ✓ | 76 ✓ |
 | [SEdge](structs/SEdge.md) | 8 | 8 | 8 | 8 | 8 |
 | [SEdgeChainEntry](structs/SEdgeChainEntry.md) | 8 | 8 | — | — | — |
-| [SEdgeList](structs/SEdgeList.md) | 8 | 8 | — | — | — |
+| [SEdgeList](structs/SEdgeList.md) | 8 | 8 | 8 | 8 | 8 |
 | [SEdgeTableEntry](structs/SEdgeTableEntry.md) | 16 | 16 | — | — | — |
 | [SEnumPair](structs/SEnumPair.md) | 8 | 8 | — | — | — |
 | [SEpdDirEntry](structs/SEpdDirEntry.md) | 80 | 80 | — | — | — |
@@ -627,6 +627,8 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SRenderBufferEntry](structs/SRenderBufferEntry.md) | 280 | 280 | — | — | — |
 | [SRenderVertex](structs/SRenderVertex.md) | 48 | 48 | 48 | 48 | 48 |
 | [SResolutionEntry](structs/SResolutionEntry.md) | 8 | 8 | — | — | — |
+| [SReverbPreset](structs/SReverbPreset.md) | 16 | — | 16 | 16 | 16 |
+| [SReverbSettings](structs/SReverbSettings.md) | 12 | — | 12 | 12 | 12 |
 | [SRoom](structs/SRoom.md) | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ |
 | [SS3DFaceMatch](structs/SS3DFaceMatch.md) | 60 | 60 | — | — | — |
 | [SScanlineSpans](structs/SScanlineSpans.md) | 132 | 132 | — | — | — |
@@ -642,7 +644,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SSocket](structs/SSocket.md) | — | — | 4 | 4 | 4 |
 | [SSoftwareEdge](structs/SSoftwareEdge.md) | 72 | 72 | 80 | 80 | 80 |
 | [SSoundDeviceInfo](structs/SSoundDeviceInfo.md) | 280 | 280 | 280 | 280 | 280 |
-| [SSoundModeEntry](structs/SSoundModeEntry.md) | 16 | 16 | — | — | — |
+| [SSoundModeEntry](structs/SSoundModeEntry.md) | — | 16 | — | — | — |
 | [SSpatialGrid](structs/SSpatialGrid.md) | 16388 | 16388 | — | — | — |
 | [SSpatialTreeNode](structs/SSpatialTreeNode.md) | 32 | 32 | — | — | — |
 | [SStateMachine](structs/SStateMachine.md) | — | — | — | 2124 | — |

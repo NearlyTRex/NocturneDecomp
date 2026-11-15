@@ -15,7 +15,7 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004459c0(CConstruct *this_pt
   int iVar1;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
-  float10 fVar2;
+  double dVar2;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                     (0x01C51D80,"COMBATMODEHARD");
@@ -28,9 +28,8 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004459c0(CConstruct *this_pt
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_00);
-  fVar2 = (float10)(this_ptr->base).base.hit_points;
-  round();
-  this_ptr->initial_hit_points = (int)ROUND(fVar2);
+  dVar2 = round((double)(this_ptr->base).base.hit_points);
+  this_ptr->initial_hit_points = (int)ROUND(dVar2);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
   DAT_007dc5b0 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0
                            (this_ptr_01,"Bip01 Head",1);

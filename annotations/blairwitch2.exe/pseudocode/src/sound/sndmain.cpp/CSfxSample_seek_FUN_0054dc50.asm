@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0
 ;   sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_0054fd90
@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EDX      ; 0054dc8a
     FLD double ptr [ESP + 0x10]         ; 0054dc8e
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054dc92
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBX + 0x16c]       ; 0054dc97
     MOV EBP,dword ptr [EBX + 0x16c]     ; 0054dc9d
     ADD ESP,0x10                        ; 0054dca3
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5e8216                       ; 0054dcc4 | = "SfxSample::seek - invalid destPtr"
     MOV dword ptr [0x01d046a0],EDX      ; 0054dcc9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0054dccf | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054dcd5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054dcd5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054dcda
     MOV dword ptr [EBX + 0x170],ESI     ; 0054dcdd
         ;   Label: LAB_0054dcdd
@@ -118,8 +118,8 @@ section .text
     PUSH 0x5e81da                       ; 0054dd18 | = "SfxSample::seek - '%s' isn't streamed!"
     MOV dword ptr [0x01d046a0],ECX      ; 0054dd1d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0054dd23 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054dd29
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054dd29
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054dd2e
     JMP 0x0054dc6c                      ; 0054dd31
         ;   XREF to: 0054dc6c (UNCONDITIONAL_JUMP)  ; LAB_0054dc6c
@@ -136,8 +136,8 @@ section .text
     PUSH 0x5e824d                       ; 0054dd57 | = "Error seeking %s to %d"
     MOV dword ptr [0x01d046a0],EDI      ; 0054dd5c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0054dd62 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054dd68
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054dd68
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054dd6d
     ADD ESP,0xc                         ; 0054dd70
     POP EBP                             ; 0054dd73
@@ -181,8 +181,8 @@ section .text
     PUSH 0x5e8279                       ; 0054ddc2 | = "SfxSample::seek - no MP3 and no wavFi..."
     MOV dword ptr [0x01d046a0],EDI      ; 0054ddc7 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0054ddcd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054ddd3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054ddd3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054ddd8
     ADD ESP,0xc                         ; 0054dddb
     POP EBP                             ; 0054ddde

@@ -26,7 +26,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   float afStackY_1124 [951];
   float fVar10;
   CZombie *in_stack_fffffdd4;
-  CVector3f *dimensions;
+  CVector3f *pCVar11;
   float fStack_224;
   int aiStack_208 [5];
   int aiStack_1f4 [8];
@@ -43,16 +43,15 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   float fStack_14c;
   uint uStack_13c;
   float afStack_138 [5];
-  float fStack_124;
-  uint uStack_118;
+  CVector3f CStack_124;
+  CVector3f CStack_118;
   CVector3f CStack_10c;
-  float fStack_100;
-  float afStack_fc [4];
-  float fStack_ec;
-  uint uStack_e8;
+  CVector3f CStack_100;
+  float fStack_f4;
+  float afStack_f0 [2];
+  CVector3f CStack_e8;
   float fStack_dc;
-  float fStack_d8;
-  float fStack_d4;
+  float afStack_d8 [2];
   CVector3f CStack_d0;
   CVector3f CStack_c4;
   uint uStack_b8;
@@ -68,7 +67,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   float fStack_58;
   float afStack_54 [4];
   float fStack_44;
-  uint uStack_40;
+  float fStack_40;
   int iStack_34;
   int local_30;
   CLocation *local_2c;
@@ -128,16 +127,16 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
           puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
           puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
         }
-        dimensions = &CStack_64;
+        pCVar11 = &CStack_64;
         fStack_dc = *unaff_EBP - fStack_154;
-        fStack_d8 = unaff_EBP[1] - fStack_150;
-        fStack_d4 = unaff_EBP[2] - fStack_14c;
+        afStack_d8[0] = unaff_EBP[1] - fStack_150;
+        afStack_d8[1] = unaff_EBP[2] - fStack_14c;
         CStack_64.x = *unaff_EBP - fStack_154;
-        *(float *)((int)&CStack_64 + (uint)bVar9 * -8 + 4) = afStack_fc[(uint)bVar9 * -2 + 9];
+        *(float *)((int)&CStack_64 + (uint)bVar9 * -8 + 4) = afStack_d8[(uint)bVar9 * -2];
         *(float *)((int)&CStack_64 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-             afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+             afStack_d8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         in_stack_fffffdd4 = (CZombie *)0x598c85;
-        local_20 = core_zombie_cpp_classifyObjectShape_FUN_00595910(dimensions);
+        local_20 = core_zombie_cpp_classifyObjectShape_FUN_00595910(pCVar11);
         if (((local_20 != 0) &&
             (in_stack_fffffdd4 = this_ptr,
             iVar5 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00598ee0(this_ptr,local_20),
@@ -147,13 +146,13 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
                               ((CDemonActor *)this_ptr_00,"CBodyPart"), iVar5 == 0 ||
             (((this_ptr_00->base).base.base.direction_hint & 3U) == (this_ptr->pickup_seed & 3U)))))
         {
-          afStack_fc[2] = (this_ptr_00->base).base.base.location.position.x - *local_18;
-          afStack_fc[3] = (this_ptr_00->base).base.base.location.position.y - local_18[1];
-          fStack_ec = (this_ptr_00->base).base.base.location.position.z - local_18[2];
-          fStack_58 = afStack_fc[2];
-          afStack_54[(uint)bVar9 * -2] = afStack_fc[(uint)bVar9 * -2 + 3];
+          fStack_f4 = (this_ptr_00->base).base.base.location.position.x - *local_18;
+          afStack_f0[0] = (this_ptr_00->base).base.base.location.position.y - local_18[1];
+          afStack_f0[1] = (this_ptr_00->base).base.base.location.position.z - local_18[2];
+          fStack_58 = fStack_f4;
+          afStack_54[(uint)bVar9 * -2] = afStack_f0[(uint)bVar9 * -2];
           afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-               afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+               afStack_f0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
           afStack_54[0] = afStack_54[0] * afStack_54[0] * afStack_54[0] * afStack_54[0];
           fStack_224 = SQRT(afStack_54[1] * afStack_54[1] +
                             fStack_58 * fStack_58 + afStack_54[0] * afStack_54[0]);
@@ -211,8 +210,8 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
     if (uVar1 < 2) {
       if (uVar1 == 1) {
 LAB_0059874f:
-        (*((this_ptr->pickup_target->vtable)._ub)->getBoundingBox)
-                  (this_ptr->pickup_target,(CBoundingBox3D *)in_stack_fffffdd4);
+        pCVar3 = this_ptr->pickup_target;
+        (*((pCVar3->vtable)._ub)->getBoundingBox)(pCVar3,(CBoundingBox3D *)in_stack_fffffdd4);
         puVar7 = auStack_184;
         puVar8 = auStack_1d4;
         for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -227,20 +226,21 @@ LAB_0059874f:
         afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
              afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         core_bodypart_cpp_FUN_00417b20();
-        afStack_54[2] = (float)uStack_40;
+        pCVar11 = &CStack_e8;
+        afStack_54[2] = fStack_40;
         afStack_54[(uint)bVar9 * -2 + 3] = afStack_54[(uint)bVar9 * -2 + 6];
         afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
              afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
         fStack_44 = fStack_1c4 + (float)_DAT_005ef2b2;
-        uStack_e8 = afStack_54[2];
-        afStack_fc[(uint)bVar9 * -2 + 6] = afStack_54[(uint)bVar9 * -2 + 3];
-        afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+        CStack_e8.x = afStack_54[2];
+        *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + 4) = afStack_54[(uint)bVar9 * -2 + 3];
+        *(float *)((int)&CStack_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-        core_actor_cpp_FUN_00408d70();
-        CStack_88.x = fStack_100;
-        afStack_9c[(uint)bVar9 * -2 + 6] = afStack_fc[(uint)bVar9 * -2];
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(pCVar3,pCVar11,&CStack_100);
+        CStack_88.x = CStack_100.x;
+        afStack_9c[(uint)bVar9 * -2 + 6] = *(float *)((int)&CStack_100 + (uint)bVar9 * -8 + 4);
         afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-             afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+             *(float *)((int)&CStack_100 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
         if (&CStack_d0 != (CVector3f *)(afStack_9c + 5)) {
           CStack_d0.x = CStack_88.x;
           CStack_d0.y = CStack_88.y;
@@ -250,9 +250,9 @@ LAB_0059874f:
       else {
 LAB_00598ad6:
         pCVar3 = this_ptr->pickup_target;
-        if ((CLocation *)(afStack_fc + 9) != &pCVar3->location) {
-          fStack_d8 = (pCVar3->location).position.x;
-          fStack_d4 = (pCVar3->location).position.y;
+        if ((CLocation *)afStack_d8 != &pCVar3->location) {
+          afStack_d8[0] = (pCVar3->location).position.x;
+          afStack_d8[1] = (pCVar3->location).position.y;
           CStack_d0.z = (pCVar3->location).position.z;
         }
       }
@@ -262,8 +262,8 @@ LAB_00598ad6:
         if (uVar1 != 3) goto LAB_00598ad6;
         goto LAB_0059874f;
       }
-      (*((this_ptr->pickup_target->vtable)._ub)->getBoundingBox)
-                (this_ptr->pickup_target,(CBoundingBox3D *)in_stack_fffffdd4);
+      pCVar3 = this_ptr->pickup_target;
+      (*((pCVar3->vtable)._ub)->getBoundingBox)(pCVar3,(CBoundingBox3D *)in_stack_fffffdd4);
       puVar7 = auStack_16c;
       puVar8 = auStack_1a4;
       for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -278,20 +278,22 @@ LAB_00598ad6:
       afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
            *(float *)((int)&CStack_c4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2 + 4) * 4 + 4);
       core_bodypart_cpp_FUN_00417b20();
+      pCVar11 = &CStack_118;
       afStack_9c[2] = afStack_138[2];
       afStack_9c[(uint)bVar9 * -2 + 3] = afStack_138[(uint)bVar9 * -2 + 3];
       afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
            afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
       fStack_8c = fStack_194 + (float)_DAT_005ef2b2;
-      uStack_118 = afStack_9c[2];
-      afStack_138[(uint)bVar9 * -2 + 9] = afStack_9c[(uint)bVar9 * -2 + 3];
-      afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
+      CStack_118.x = afStack_9c[2];
+      *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + 4) = afStack_9c[(uint)bVar9 * -2 + 3];
+      *(float *)((int)&CStack_118 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
            afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-      core_actor_cpp_FUN_00408d70();
-      CStack_c4.x = fStack_124;
-      *(float *)((int)&CStack_c4 + (uint)bVar9 * -8 + 4) = afStack_138[(uint)bVar9 * -2 + 6];
-      *(float *)((int)&CStack_c4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2 + 1) * 4 + 4) =
-           afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(pCVar3,pCVar11,&CStack_124);
+      CStack_c4.x = CStack_124.x;
+      *(uint *)((int)&CStack_c4 + (uint)bVar9 * -8 + 4) =
+           *(uint *)((int)&CStack_124 + (uint)bVar9 * -8 + 4);
+      *(uint *)((int)&CStack_c4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2 + 1) * 4 + 4) =
+           *(uint *)((int)&CStack_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       if (&CStack_d0 != &CStack_c4) {
         CStack_d0.x = CStack_c4.x;
         CStack_d0.y = CStack_c4.y;
@@ -308,7 +310,7 @@ LAB_00598ad6:
       CStack_10c.y = (float)puVar7;
       CStack_10c.z = (float)puVar7;
       CStack_10c.x = -1.5;
-      if (&CStack_ac != (CVector3f *)(afStack_138 + 0xb)) {
+      if (&CStack_ac != &CStack_10c) {
         CStack_ac.x = -1.5;
         CStack_ac.y = 0.0;
         CStack_ac.z = 0.0;
@@ -345,7 +347,7 @@ LAB_00598ad6:
 LAB_00598bba:
       _DAT_01d046a0 = "..\\core\\zombie.cpp";
       _DAT_01d046a4 = 0x5d1;
-      core_main_c_FUN_004e4500();
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid zombie object shape!");
       return 1;
     }
   }

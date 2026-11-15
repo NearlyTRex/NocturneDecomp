@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 94,
+    "complexity_score": 138,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "unnamed_param"
     ],
-    "total_lines": 48
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -93,7 +94,7 @@
     ],
     "convention": "unknown",
     "name": "core_enemy.cpp_FUN_0048a1b0",
-    "signature": "undefined4 core_enemy_cpp_FUN_0048a1b0(int param_1,float param_2)"
+    "signature": "undefined4 core_enemy_cpp_FUN_0048a1b0(float param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -303,7 +304,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_enemy_cpp_FUN_0048a1b0(int param_1,float param_2)",
+      "text": "uint core_enemy_cpp_FUN_0048a1b0(float param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -311,15 +312,23 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_enemy_cpp_FUN_0048a1b0(int param_1,float param_2)",
+      "text": "uint core_enemy_cpp_FUN_0048a1b0(float param_1,float param_2)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "if (param_2 <= *(float *)((int)param_1 + 0xce60)) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 <= *(float *)(param_1 + 0xce60)) {",
+      "text": "if (param_2 <= *(float *)((int)param_1 + 0xce60)) {",
       "type": "unnamed_param"
     },
     {
@@ -327,24 +336,48 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_2 <= *(float *)(param_1 + 0xce60)) {",
+      "text": "if (param_2 <= *(float *)((int)param_1 + 0xce60)) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "dVar2 = round((double)*(float *)((int)param_1 + 0xce60));",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = (float10)*(float *)(param_1 + 0xce60);",
+      "text": "dVar2 = round((double)*(float *)((int)param_1 + 0xce60));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
+      "line": 11,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (param_2 <= (float)iVar1) {",
+      "text": "if (param_1 <= (float)iVar1) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 8,
+      "match": "(float *)((int)param_1 + 0xce60)",
+      "severity": "moderate",
+      "text": "if (param_2 <= *(float *)((int)param_1 + 0xce60)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 9,
+      "match": "(float *)((int)param_1 + 0xce60)",
+      "severity": "moderate",
+      "text": "dVar2 = round((double)*(float *)((int)param_1 + 0xce60));",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 11,

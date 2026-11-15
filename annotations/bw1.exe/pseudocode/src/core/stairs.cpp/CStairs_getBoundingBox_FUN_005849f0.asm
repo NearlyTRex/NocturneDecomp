@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_005849f0(CStairs *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_stairs_cpp_CStairs_getBoundingBox_FUN_005849f0(CStairs *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f634c

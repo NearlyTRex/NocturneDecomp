@@ -35,7 +35,7 @@ int __cdecl CTrigger::renderTransparent(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_getBoundingBox_FUN_0059b8d0
 // Address: 0059b8d0
-CBoundingBox3D * __cdecl CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trigger.cpp_CTrigger_archive_FUN_0059b950
 // Address: 0059b950
@@ -77,9 +77,9 @@ void __cdecl CTrigger::calculateTestRadius(CTrigger *this_ptr);
 // Address: 0059bfb0
 int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_array);
 
-// Original: core_trigger.cpp_FUN_0059c090
+// Original: core_trigger.cpp_CTrigger_containsActor_FUN_0059c090
 // Address: 0059c090
-undefined4 FUN_0059c090(int param_1,CDemonActor *param_2);
+int __cdecl CTrigger::containsActor(CTrigger *this_ptr,CDemonActor *actor);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_0059c420
 // Address: 0059c420

@@ -56,10 +56,10 @@ section .text
     FLD ST2                             ; 004431b4
     FXCH                                ; 004431b6
     CALL crt_math.c_pow_FUN_005b9484    ; 004431b8
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     FMUL ST3                            ; 004431bd
     CALL crt_math.c_round_FUN_005b7ff0  ; 004431bf
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBP + -0xc]        ; 004431c4
     MOV EAX,dword ptr [EBP + -0xc]      ; 004431c7
     MOV EBX,dword ptr [EBP + -0xc]      ; 004431ca

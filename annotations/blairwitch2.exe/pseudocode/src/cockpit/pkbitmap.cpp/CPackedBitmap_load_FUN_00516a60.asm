@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_memory.c_realloc_FUN_005b8ce0
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -150,8 +150,8 @@ section .text
     PUSH EAX                            ; 00516bc1
     MOV dword ptr [0x01d046a0],EDX      ; 00516bc2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00516bc8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00516bce
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00516bce
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00516bd3
     MOV EAX,dword ptr [EBP + 0x14]      ; 00516bd6
         ;   Label: LAB_00516bd6
@@ -199,8 +199,8 @@ section .text
     PUSH 0x5e1ba3                       ; 00516c67
     MOV dword ptr [0x01d046a0],EBX      ; 00516c6c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00516c72 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00516c78
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00516c78
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00516c7d
     JMP 0x00516abe                      ; 00516c80
         ;   XREF to: 00516abe (UNCONDITIONAL_JUMP)  ; LAB_00516abe

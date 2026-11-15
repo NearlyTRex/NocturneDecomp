@@ -42,8 +42,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_pt
       else if (pCVar5 != this_ptr) {
         _DAT_01d046a0 = "..\\core\\charactr.cpp";
         _DAT_01d046a4 = 0x151;
-        core_main_c_FUN_004e4500
-                  ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00,this_ptr_00,pCVar5);
+        core_main_c_displayErrorAndQuit_FUN_004e4500("%s is carrying %s, but %s thinks it is being carried by %s");
       }
     }
     pCVar4 = (CCharacter *)(pCVar4->base).create_event;

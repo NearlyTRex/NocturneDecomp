@@ -19,10 +19,10 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00549a60
 ;   crt_stdio.c_fclose_FUN_005a3a90
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH 0x5d1b14                       ; 005499db | DAT_005d1b14
     PUSH ESI                            ; 005499e0
     PUSH 0x5d1b17                       ; 005499e1 | = "models"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 005499e6
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 005499e6
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005499eb
     MOV EBX,EAX                         ; 005499ee
     TEST EAX,EAX                        ; 005499f0
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_00549a1d
     PUSH EBX                            ; 00549a1e
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00549a1f
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 00549a24
     POP EDI                             ; 00549a27
     POP ESI                             ; 00549a28
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5d1b33                       ; 00549a36 | = "CDeformableModel::load - Can't open %s"
     MOV dword ptr [0x01d71de0],EDX      ; 00549a3b | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00549a41 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00549a47
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00549a47
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00549a4c
     JMP 0x005499f4                      ; 00549a4f
         ;   XREF to: 005499f4 (UNCONDITIONAL_JUMP)  ; LAB_005499f4

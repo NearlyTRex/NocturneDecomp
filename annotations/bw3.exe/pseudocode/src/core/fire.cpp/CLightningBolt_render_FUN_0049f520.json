@@ -2,22 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 764,
+    "complexity_score": 911,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 234,
-    "suspect_count": 50,
+    "pseudocode_lines": 241,
+    "suspect_count": 63,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
+      "stack_ref",
       "undefined_data",
+      "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 811
+    "total_lines": 818
   },
   "cross_references": [
     {
@@ -61,6 +63,11 @@
       "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
     },
     {
+      "addr": "0046d250",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250"
+    },
+    {
       "addr": "0046ce90",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
@@ -79,11 +86,6 @@
       "addr": "0046d4c0",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
-    },
-    {
-      "addr": "0046d250",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d250"
     },
     {
       "addr": "0046d080",
@@ -773,55 +775,55 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "aiStackY_103c",
+      "line": 19,
+      "match": "afStackY_103c",
       "severity": "moderate",
-      "text": "int aiStackY_103c [975];",
+      "text": "float afStackY_103c [974];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 54,
       "match": "DAT_005fd984",
       "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fd984 + (iVar4 % 6) * 0x18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_005fda14",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fda14 + (iVar4 % 6) * 0x18);",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fd984 + (iVar7 % 6) * 0x18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 58,
-      "match": "DAT_005fdaa4",
+      "match": "DAT_005fda14",
       "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fdaa4 + (iVar4 % 6) * 0x18);",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fda14 + (iVar7 % 6) * 0x18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 62,
-      "match": "DAT_005fdb34",
+      "match": "DAT_005fdaa4",
       "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fdb34 + (iVar4 % 6) * 0x18);",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fdaa4 + (iVar7 % 6) * 0x18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 66,
-      "match": "DAT_005fd8f4",
+      "match": "DAT_005fdb34",
       "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fd8f4 + (iVar4 % 6) * 0x18);",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fdb34 + (iVar7 % 6) * 0x18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 70,
+      "match": "DAT_005fd8f4",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_005fd8f4 + (iVar7 % 6) * 0x18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);",
@@ -829,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 87,
       "match": "DAT_0060b02c",
       "severity": "mild",
       "text": "DAT_0060b02c = 0xf80000;",
@@ -837,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 93,
       "match": "DAT_0060b02c",
       "severity": "mild",
       "text": "DAT_0060b02c = 0x80000;",
@@ -845,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 96,
       "match": "DAT_0060b090",
       "severity": "mild",
       "text": "DAT_0060b090 = 0xf80000;",
@@ -853,7 +855,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 99,
       "match": "DAT_0060b034",
       "severity": "mild",
       "text": "DAT_0060b034 = 0xffff;",
@@ -861,7 +863,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 100,
       "match": "DAT_0060b038",
       "severity": "mild",
       "text": "DAT_0060b038 = 0xffff;",
@@ -869,7 +871,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 101,
       "match": "DAT_0060b03c",
       "severity": "mild",
       "text": "DAT_0060b03c = 0xffff;",
@@ -877,7 +879,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 102,
       "match": "DAT_0060b064",
       "severity": "mild",
       "text": "DAT_0060b064 = 0xffff;",
@@ -885,7 +887,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 103,
       "match": "DAT_0060b068",
       "severity": "mild",
       "text": "DAT_0060b068 = 0xffff;",
@@ -893,7 +895,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 104,
       "match": "DAT_0060b06c",
       "severity": "mild",
       "text": "DAT_0060b06c = 0xffff;",
@@ -901,7 +903,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 112,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,this_ptr->render_alpha);",
@@ -909,7 +911,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 114,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
@@ -917,7 +919,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 117,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,world_position);",
@@ -925,15 +927,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 119,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d250(DAT_005f2afc);",
+      "text": "(DAT_005f2afc,(CVector3f *)local_24);",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_54.x = (float)local_24._0_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 127,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_54,(CVector3f *)0x0);",
@@ -941,26 +951,34 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 140,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_30);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_005f2afc",
+      "description": "Unknown/mangled field access",
+      "line": 142,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_c0);",
-      "type": "undefined_data"
+      "text": "local_c0._0_4_ = (uint)ROUND(local_84 * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 143,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_c0._4_4_ = (uint)ROUND(local_80 * _DAT_005df8e4);",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 146,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_90);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_c0);",
       "type": "undefined_data"
     },
     {
@@ -968,12 +986,36 @@
       "line": 152,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_78);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 154,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_78._0_4_ = (uint)ROUND(local_84 * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 155,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_78._4_4_ = (uint)ROUND(local_80 * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_78);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 159,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(DAT_005f2afc,&local_e8);",
@@ -981,7 +1023,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 167,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_60);",
@@ -989,23 +1031,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 173,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_48);",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 174,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_a8._0_4_ = (uint)ROUND(pCVar1->x * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 175,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_a8._4_4_ = (uint)ROUND((this_ptr->end_position).y * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 172,
+      "line": 178,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_a8);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_a8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 183,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_3c);",
@@ -1013,71 +1071,119 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 178,
+      "line": 184,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "pCVar3 = DAT_005f2afc;",
+      "text": "pCVar6 = DAT_005f2afc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 188,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 204,
-      "match": "DAT_005f2afc",
+      "description": "Direct stack address reference",
+      "line": 205,
+      "match": "&stack0xffffff10",
+      "severity": "moderate",
+      "text": "(pCVar6,(SMRGLHeaderPrimitive *)&stack0xffffff10);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 206,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_18);",
-      "type": "undefined_data"
+      "text": "local_24._4_4_ = (uint)ROUND(world_position->x * _DAT_005df8e4);",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 209,
+      "line": 210,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_b4);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_24 + 4));",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 214,
-      "match": "DAT_005f2afc",
+      "description": "Unknown/mangled field access",
+      "line": 211,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_9c);",
-      "type": "undefined_data"
+      "text": "local_c0._4_4_ = (uint)ROUND(world_position->x * _DAT_005df8e4);",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 215,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_6c);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)(local_c0 + 4));",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 216,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_a8._4_4_ = (uint)ROUND(pCVar1->x * _DAT_005df8e4);",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 220,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "pCVar3 = DAT_005f2afc;",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)(local_a8 + 4));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 221,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_78._4_4_ = (uint)ROUND(pCVar1->x * _DAT_005df8e4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 225,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)(local_78 + 4));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 221,
+      "line": 226,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "pCVar6 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 227,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;",
       "type": "undefined_data"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 240,
+      "match": "&stack0xffffff10",
+      "severity": "moderate",
+      "text": "(pCVar6,(SMRGLHeaderPrimitive *)&stack0xffffff10);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 242,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
@@ -1085,23 +1191,23 @@
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
+      "line": 121,
       "match": "(int)&local_54",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_54 + (uint)bVar6 * -8 + 4) = aiStack_20[(uint)bVar6 * -2];",
+      "text": "*(uint *)((int)&local_54 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 123,
       "match": "(int)&local_54",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b0bc`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b0bc` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 86,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0060b0bc = 0xf80000;",
@@ -1109,7 +1215,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `DAT_0060b02c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `DAT_0060b02c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 83,
+      "line": 87,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "DAT_0060b02c = 0xf80000;",
@@ -1117,7 +1223,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b05c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b05c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 86,
+      "line": 90,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0060b05c = 0xf80000;",
@@ -1125,7 +1231,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b08c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b08c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 87,
+      "line": 91,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0060b08c = 0xf80000;",
@@ -1133,7 +1239,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b0c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b0c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 91,
+      "line": 95,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0060b0c0 = 0xf80000;",
@@ -1141,7 +1247,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `DAT_0060b090`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `DAT_0060b090` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 92,
+      "line": 96,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "DAT_0060b090 = 0xf80000;",
@@ -1149,18 +1255,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 116,
+      "line": 121,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_54 + (uint)bVar6 * -8 + 4) = aiStack_20[(uint)bVar6 * -2];",
+      "text": "*(uint *)((int)&local_54 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 117,
+      "line": 123,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(float *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

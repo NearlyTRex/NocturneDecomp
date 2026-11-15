@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5c64fe                       ; 004dcb1f | = "CInventory::setupItems - we should ow..."
     MOV dword ptr [0x01d71de0],ECX      ; 004dcb24 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004dcb2a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcb30
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcb30
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcb35
     JMP 0x004dcae1                      ; 004dcb38
         ;   XREF to: 004dcae1 (UNCONDITIONAL_JUMP)  ; LAB_004dcae1

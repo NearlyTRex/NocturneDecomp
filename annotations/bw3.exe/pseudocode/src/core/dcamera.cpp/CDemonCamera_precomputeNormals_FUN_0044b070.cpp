@@ -24,7 +24,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
   byte bVar11;
   int aiStackY_106c [1014];
   int local_88;
-  int local_84;
+  CVector3i local_84;
   CVector3i local_78;
   int local_6c;
   int aiStack_68 [2];
@@ -58,13 +58,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
         iVar7 = local_30;
         do {
           local_24 = local_24 + this_ptr->scale_factor;
-          core_dcamera_cpp_FUN_00449eb0
-                    (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor);
-          local_60.x = local_84;
+          core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
+                    (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor,
+                     &local_84);
+          local_60.x = local_84.x;
           *(uint *)((int)&local_60 + (uint)bVar11 * -8 + 4) =
-               *(uint *)(&stack0xffffff80 + (uint)bVar11 * -8);
+               *(uint *)((int)&local_84 + (uint)bVar11 * -8 + 4);
           *(uint *)((int)&local_60 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-               *(uint *)(&stack0xffffff84 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+               *(uint *)((int)&local_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
           if ((local_60.z != 0x7fffffff) && (local_88 < local_60.z)) {
             local_88 = local_60.z;
           }

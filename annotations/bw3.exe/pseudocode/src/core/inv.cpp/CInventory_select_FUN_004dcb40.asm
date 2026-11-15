@@ -42,7 +42,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
 ;   core_inv.cpp_FUN_004dd2d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5c6554                       ; 004dcb8a | = "CInventory::select - Catch 22"
     MOV [0x01d71de0],EAX                ; 004dcb8f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004dcb94 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcb9a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcb9a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcb9f
     MOV ECX,dword ptr [EBX + 0x318]     ; 004dcba2
         ;   Label: LAB_004dcba2
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5c6596                       ; 004dcc10 | = "CInventory::select - Catch 22"
     MOV dword ptr [0x01d71de0],EDI      ; 004dcc15 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004dcc1b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcc20
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcc20
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcc25
     MOV EAX,[0x01d5ba14]                ; 004dcc28 | DAT_01d5ba14
         ;   Label: LAB_004dcc28

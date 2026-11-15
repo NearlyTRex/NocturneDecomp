@@ -68,7 +68,7 @@ section .text
     MOV EDX,dword ptr [0x0061b49c]      ; 004d6242 | DAT_0061b49c
     XOR ESI,ESI                         ; 004d6248
     CALL crt_math.c_round_FUN_005c03a0  ; 004d624a
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 004d624f
     TEST EDX,EDX                        ; 004d6252
     JLE 0x004d62a3                      ; 004d6254

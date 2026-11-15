@@ -25,7 +25,7 @@
 ;   undefined4 DAT_0264bc94
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_mini3d.cpp_allocVertexList_FUN_004f38c0
 ;   engine_mini3d.cpp_buildLightMatrix_FUN_004f5900
 ;   engine_mini3d.cpp_computeVertexFog_FUN_004f5370
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5ddca0                       ; 004f39b0
     MOV dword ptr [0x01d046a0],EBP      ; 004f39b5 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004f39bb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004f39c0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f39c0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004f39c5
     CALL engine_mini3d.cpp_buildLightMatrix_FUN_004f5900 ; 004f39c8
         ;   XREF to: 004f5900 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_buildLightMatrix_FUN_004f5900()

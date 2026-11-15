@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findCounter_FUN_00494e20
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c_memmove_FUN_005a54c0
 ;
 ; *****************************************************************************
@@ -103,8 +103,8 @@ section .text
     PUSH 0x5bff9b                       ; 00494c95 | = "CEventList::setCounter - too many cou..."
     MOV dword ptr [0x01d71de0],ESI      ; 00494c9a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00494ca0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00494ca6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00494ca6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00494cab
     MOV EAX,dword ptr [EBX + 0x337c]    ; 00494cae
         ;   Label: LAB_00494cae

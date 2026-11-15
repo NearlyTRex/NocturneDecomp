@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_enemy_cpp_FUN_0048a1b0(int param_1,float param_2)
+; undefined4 core_enemy_cpp_FUN_0048a1b0(float param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
@@ -43,7 +43,7 @@ section .text
     FLD float ptr [EDX + 0xce60]        ; 0048a1cf
         ;   Label: LAB_0048a1cf
     CALL crt_math.c_round_FUN_005a3120  ; 0048a1d5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 0048a1da
     MOV EDX,dword ptr [ESP]             ; 0048a1dd
     PUSH EDX                            ; 0048a1e0

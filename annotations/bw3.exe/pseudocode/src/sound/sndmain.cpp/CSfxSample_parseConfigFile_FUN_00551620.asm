@@ -48,7 +48,7 @@
 ;   ... and 24 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   crt_string.c_memmove_FUN_005a54c0
@@ -332,8 +332,8 @@ section .text
     MOV EDI,0x5d25b9                    ; 0055191a | = "..\\sound\\sndmain.cpp"
     PUSH 0x5d25ce                       ; 0055191f | = "Reference volume distance %g is too s..."
     MOV dword ptr [0x01d71de0],EDI      ; 00551924 | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 0055192a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055192a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 0055192f
     CMP dword ptr [ESP + 0x470],0x0     ; 00551932
         ;   Label: LAB_00551932
@@ -356,8 +356,8 @@ section .text
     MOV EDX,0x2e7                       ; 00551975
     PUSH 0x5d2574                       ; 0055197a | = "Reference distance specified in %s on..."
     MOV dword ptr [0x01d71de4],EDX      ; 0055197f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551985
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551985
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 0055198a
     JMP 0x005518d4                      ; 0055198d
         ;   XREF to: 005518d4 (UNCONDITIONAL_JUMP)  ; LAB_005518d4
@@ -387,8 +387,8 @@ section .text
     PUSH 0x5d2628                       ; 005519db | = "Minimum distance specified in %s on l..."
     MOV dword ptr [0x01d71de0],EBX      ; 005519e0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005519e6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005519ec
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005519ec
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 005519f1
     MOV EAX,dword ptr [ESP + 0x474]     ; 005519f4
         ;   Label: LAB_005519f4
@@ -410,8 +410,8 @@ section .text
     PUSH 0x5d2680                       ; 00551a3e | = "Reference volume distance %g is too s..."
     MOV dword ptr [0x01d71de0],ECX      ; 00551a43 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00551a49 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551a4f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551a4f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 00551a54
     JMP 0x0055179a                      ; 00551a57
         ;   XREF to: 0055179a (UNCONDITIONAL_JUMP)  ; LAB_0055179a
@@ -456,8 +456,8 @@ section .text
     MOV EDX,0x2fc                       ; 00551acd
     PUSH 0x5d2745                       ; 00551ad2 | = "Minimum distance specified in %s on l..."
     MOV dword ptr [0x01d71de4],EDX      ; 00551ad7 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551add
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551add
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00551ae2
     MOV EAX,dword ptr [ESP + 0x474]     ; 00551ae5
         ;   Label: LAB_00551ae5
@@ -483,8 +483,8 @@ section .text
     PUSH 0x5d26e5                       ; 00551b2f | = "%s specified maxVol on line %d withou..."
     MOV dword ptr [0x01d71de0],ECX      ; 00551b34 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00551b3a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551b40
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551b40
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00551b45
     JMP 0x00551aa7                      ; 00551b48
         ;   XREF to: 00551aa7 (UNCONDITIONAL_JUMP)  ; LAB_00551aa7
@@ -501,8 +501,8 @@ section .text
     MOV EDI,0x5d2788                    ; 00551b71 | = "..\\sound\\sndmain.cpp"
     PUSH 0x5d279d                       ; 00551b76 | = "maxVol %g is too small in %s line %d!"
     MOV dword ptr [0x01d71de0],EDI      ; 00551b7b | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 00551b81
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551b81
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 00551b86
     JMP 0x00551afe                      ; 00551b89
         ;   XREF to: 00551afe (UNCONDITIONAL_JUMP)  ; LAB_00551afe
@@ -533,8 +533,8 @@ section .text
     PUSH 0x5d27e3                       ; 00551bdb | = "Length for %s already known, then spe..."
     MOV dword ptr [0x01d71de0],ESI      ; 00551be0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00551be6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551bec
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551bec
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00551bf1
     MOV ECX,dword ptr [ESP + 0x45c]     ; 00551bf4
         ;   Label: LAB_00551bf4
@@ -558,8 +558,8 @@ section .text
     PUSH 0x5d2838                       ; 00551c2f | = "Invalid length %d in %s line %d"
     MOV dword ptr [0x01d71de0],EBX      ; 00551c34 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00551c3a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551c40
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551c40
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00551c45
     JMP 0x00551bff                      ; 00551c48
         ;   XREF to: 00551bff (UNCONDITIONAL_JUMP)  ; LAB_00551bff
@@ -592,8 +592,8 @@ section .text
     MOV EDX,0x313                       ; 00551caa
     PUSH 0x5d2872                       ; 00551caf | = "Error parsing %s line %d: %s"
     MOV dword ptr [0x01d71de4],EDX      ; 00551cb4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00551cba
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00551cba
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00551cbf
     JMP 0x0055179a                      ; 00551cc2
         ;   XREF to: 0055179a (UNCONDITIONAL_JUMP)  ; LAB_0055179a

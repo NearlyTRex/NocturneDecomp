@@ -73,7 +73,7 @@ void __cdecl core_gasmask_cpp_CGasMask_process_FUN_004c66d0(CGasMask *this_ptr,f
 int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004c66e0(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004c6780(CGasMask *this_ptr);
 ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004c67b0(CGasMask *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004c67c0(CGasMask *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004c67c0(CGasMask *this_ptr,CBoundingBox3D *out_box);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c6800(CGasMask *this_ptr,uint flags);
 void __cdecl core_ghoul_cpp_staticInit_FUN_004c6850(void);
 CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void);
@@ -85,7 +85,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004c6eb0(CGhoul *this_ptr,float d
 void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004c8c90(CGhoul *this_ptr,int layer_flag);
 void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004c8cc0(CGhoul *this_ptr);
 int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004c8dd0(CGhoul *this_ptr,CVector3f *out_attract_position);
-CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c90b0(CGhoul *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c90b0(CGhoul *this_ptr,CVector3f *out_point);
 void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004c9140(CGhoul *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c97e0(CGhoul *this_ptr,CVector3f *out_points_array);
@@ -100,7 +100,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ca770(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004ca940(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004cab40(CGlass *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004cad00(CGlass *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_glass_cpp_CGlass_getBoundingBox_FUN_004cad00(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004cad80(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004cae80(CGlass *this_ptr,SCollisionInfo *collision_info);
 void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
@@ -122,7 +122,7 @@ ECollisionType __cdecl core_goggles_cpp_CGoggles_getCollisionType_FUN_004cc830(C
 CBoundingBox3D * __cdecl core_goggles_cpp_CGoggles_getBoundingBox_FUN_004cc840(CGoggles *this_ptr,CBoundingBox3D *out_box);
 CGoggles * __cdecl core_goggles_cpp_CGoggles_dtor_FUN_004cc880(CGoggles *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004cc8d0(void);
-void core_gore_cpp_FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4);
+void core_gore_cpp_FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ccac0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *this_ptr);
@@ -135,7 +135,7 @@ void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004cdb20(CBloodSplat *this
 int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004cdb50(CBloodSplat *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004cdbe0(CBloodSplat *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004cdc90(CBloodPool *this_ptr);
-void core_gore_cpp_FUN_004cdd30(undefined4 *param_1,int param_2);
+void core_gore_cpp_FUN_004cdd30(undefined4 *param_1);
 void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004cdfc0(CBloodPool *this_ptr);
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004cdff0(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
 int __cdecl core_gore_cpp_CBloodPool_load_FUN_004ce090(CBloodPool *this_ptr,_FILE *file_handle);

@@ -45,7 +45,7 @@ LAB_00402994:
   if (pcVar4 == (char *)0x0) {
     _DAT_01d046a0 = "..\\engine\\2d.c";
     _DAT_01d046a4 = 0x74f;
-    core_main_c_FUN_004e4500("hose!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("hose!");
   }
   _sprintf(pcVar4,&DAT_005ca0a9);
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
@@ -58,7 +58,7 @@ LAB_00402994:
     if (iVar2 == 0) {
       _DAT_01d046a0 = "..\\engine\\2d.c";
       _DAT_01d046a4 = 0x756;
-      core_main_c_FUN_004e4500("Unable to write quick map!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to write quick map!");
     }
     support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_10,&DAT_01c2c910,0x8000);
     support_trstream_cpp_COutStreamFile_close_FUN_0057dd60(&local_10);

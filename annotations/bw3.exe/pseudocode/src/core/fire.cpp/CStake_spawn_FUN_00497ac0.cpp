@@ -38,22 +38,24 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00497ac0(CStake *this_ptr,CVector3f 
   float local_6c;
   float local_68 [2];
   CVector3f local_60;
-  float local_54;
+  CVector3f local_54;
   CVector3f local_48;
   CVector3f local_3c;
-  float local_30 [4];
+  CVector3f local_30;
+  float local_24;
   float local_20 [4];
   
   bVar5 = 0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&local_f4,orientation_angles);
-  local_30[0] = 0.0;
-  local_30[1] = 0.0;
-  local_30[2] = 10.0;
-  core_dirmat_cpp_FUN_0045b800(&local_f4,local_30);
-  local_84.x = local_54;
-  *(float *)((int)&local_84 + (uint)bVar5 * -8 + 4) = local_68[(uint)bVar5 * -2 + 6];
-  *(float *)((int)&local_84 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       local_68[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+  local_30.x = 0.0;
+  local_30.y = 0.0;
+  local_30.z = 10.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(&local_f4,&local_30,&local_54);
+  local_84.x = local_54.x;
+  *(uint *)((int)&local_84 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&local_54 + (uint)bVar5 * -8 + 4);
+  *(uint *)((int)&local_84 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)&local_54 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   local_20[2] = (surface_normal->z * local_84.z +
                 surface_normal->x * local_84.x + surface_normal->y * local_84.y) * _DAT_005c0514;
   local_90 = surface_normal->x * local_20[2];
@@ -97,7 +99,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00497ac0(CStake *this_ptr,CVector3f 
     pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
-  local_30[3] = local_c0 - local_cc;
+  local_24 = local_c0 - local_cc;
   local_20[0] = local_bc - local_c8;
   local_20[1] = local_b8 - local_c4;
   local_3c.x = local_c0 - local_cc;

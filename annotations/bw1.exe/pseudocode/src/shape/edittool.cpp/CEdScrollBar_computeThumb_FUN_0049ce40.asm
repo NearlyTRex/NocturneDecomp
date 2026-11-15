@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5dc86d                       ; 0049cf14 | = "CEdScrollBar::computeThumb - invalid ..."
     MOV dword ptr [0x01d1d400],EBP      ; 0049cf19 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0049cf1f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049cf24
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049cf24
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049cf29
     JMP 0x0049ce6e                      ; 0049cf2c
         ;   XREF to: 0049ce6e (UNCONDITIONAL_JUMP)  ; LAB_0049ce6e

@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5d10ef                       ; 00542f16 | = "C3DSLight::addFilter - too many filte..."
     MOV dword ptr [0x01d71de0],ECX      ; 00542f1b | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00542f21 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00542f27
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00542f27
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00542f2c
     JMP 0x00542e65                      ; 00542f2f
         ;   XREF to: 00542e65 (UNCONDITIONAL_JUMP)  ; LAB_00542e65

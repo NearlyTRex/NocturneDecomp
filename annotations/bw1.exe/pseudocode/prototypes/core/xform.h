@@ -5,9 +5,9 @@
 // Function prototypes for core/xform.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_xform.cpp_FUN_005b5080
+// Original: core_xform.cpp_transformVector3x4_FUN_005b5080
 // Address: 005b5080
-void FUN_005b5080(float *param_1,float *param_2);
+CVector3f * __stack2_esi transformVector3x4(CVector3f *input_vector,CMatrix3x4f *matrix,CVector3f *output_vector);
 
 // Original: core_xform.cpp_transformVector3x4InPlace_FUN_005b5100
 // Address: 005b5100
@@ -33,9 +33,9 @@ void __cdecl somebodyWriteMe(void);
 // Address: 005b5480
 void __cdecl setRotationScaleIdentity(CMatrix3x4f *matrix);
 
-// Original: core_xform.cpp_FUN_005b54d0
+// Original: core_xform.cpp_normalizeMatrix_FUN_005b54d0
 // Address: 005b54d0
-void FUN_005b54d0(float *param_1);
+void __cdecl normalizeMatrix(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_clearTranslation_FUN_005b5600
 // Address: 005b5600
@@ -55,19 +55,19 @@ float angleFromSinCos(float param_1,float param_2);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 // Address: 005b5930
-float * matrixToEulerAngles(float *param_1);
+CVector3f * __cdecl matrixToEulerAngles(CMatrix3x4f *matrix_in,CVector3f *euler_out);
 
 // Original: core_xform.cpp_matrixToEulerAnglesZYX_FUN_005b5dd0
 // Address: 005b5dd0
-float * matrixToEulerAnglesZYX(float *param_1);
+CVector3f * __cdecl matrixToEulerAnglesZYX(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
 
-// Original: core_xform.cpp_FUN_005b6270
+// Original: core_xform.cpp_getTranslation_FUN_005b6270
 // Address: 005b6270
-void FUN_005b6270(int param_1);
+CVector3f * __stack_esi getTranslation(CMatrix3x4f *matrix_in,CVector3f *vector_out);
 
 // Original: core_xform.cpp_invertAndGetTranslation_FUN_005b62b0
 // Address: 005b62b0
-void invertAndGetTranslation(undefined4 param_1);
+CVector3f * __stack_esi invertAndGetTranslation(CMatrix3x4f *matrix_in,CVector3f *vector_out);
 
 // Original: core_xform.cpp_determinant_FUN_005b6330
 // Address: 005b6330
@@ -75,7 +75,7 @@ double __cdecl determinant(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_inverse_FUN_005b6380
 // Address: 005b6380
-void inverse(CMatrix3x4f *param_1);
+CMatrix3x4f * __stack_esi inverse(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_computeOrthogonalityError_FUN_005b65b0
 // Address: 005b65b0
@@ -123,7 +123,7 @@ void matrixToQuaternion(float *param_1);
 
 // Original: core_xform.cpp_negateFirstComponent_FUN_005b7750
 // Address: 005b7750
-void negateFirstComponent(float *param_1);
+CQuaternion4f * __stack_esi negateFirstComponent(CQuaternion4f *vector_in,CQuaternion4f *vector_out);
 
 // Original: core_xform.cpp_setIdentityQuaternion_FUN_005b7790
 // Address: 005b7790
@@ -131,7 +131,7 @@ void __cdecl setIdentityQuaternion(CQuaternion4f *quaternion);
 
 // Original: core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 // Address: 005b77b0
-void multiplyQuaternion(float *param_1,float *param_2);
+CQuaternion4f * __stack2_esi multiplyQuaternion(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0
 // Address: 005b78a0
@@ -143,11 +143,11 @@ float * slerpQuaternion(float *param_1,float *param_2,float param_3);
 
 // Original: core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
 // Address: 005b7af0
-void quaternionFromAngleX(float param_1);
+CQuaternion4f * __stack_esi quaternionFromAngleX(float angle_radians,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_quaternionFromAngleY_FUN_005b7b30
 // Address: 005b7b30
-void quaternionFromAngleY(float param_1);
+CQuaternion4f * __stack_esi quaternionFromAngleY(float angle_radians,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70
 // Address: 005b7b70
@@ -159,11 +159,11 @@ void quaternionFromAxisAngle(float param_1,float *param_2);
 
 // Original: core_xform.cpp_FUN_005b7c00
 // Address: 005b7c00
-float * FUN_005b7c00(float *param_1);
+undefined4 * FUN_005b7c00(float *param_1);
 
 // Original: core_xform.cpp_FUN_005b7d60
 // Address: 005b7d60
-float * FUN_005b7d60(float *param_1);
+undefined4 * FUN_005b7d60(float *param_1);
 
 // Original: core_xform.cpp_FUN_005b7ed0
 // Address: 005b7ed0

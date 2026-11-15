@@ -14,7 +14,7 @@ int __cdecl shape_edittool_cpp_CPickList_getItemHotKey_FUN_0049c230(CPickList *t
   if ((index < 0) || ((this_ptr->base).item_count <= index)) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x11af;
-    core_main_c_FUN_005030e0("CPickList::getItemHotKey - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPickList::getItemHotKey - invalid index");
   }
   if (this_ptr->hotkey_capacity <= index) {
     return -1;

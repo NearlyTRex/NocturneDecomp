@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01c3f678
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
@@ -150,8 +150,8 @@ section .text
     PUSH EBX                            ; 0049a0fe
     LEA ESI,[ESP + 0x14]                ; 0049a0ff
     LEA EDI,[ESP + 0x8]                 ; 0049a103
-    CALL core_actor.cpp_FUN_00408de0    ; 0049a107
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0049a107
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0049a10c
     LEA ESI,[ESP + 0xc]                 ; 0049a10f
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049a113

@@ -12,12 +12,11 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0045df40(CFilterFX *this_ptr
 
 {
   CDemonFilter *pCVar1;
-  uint extraout_ECX;
-  uint uVar2;
+  int iVar2;
   SMovieFrame *pSVar3;
   uchar *puVar4;
   byte bVar5;
-  float10 fVar6;
+  double dVar6;
   
   bVar5 = 0;
   pCVar1 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0045d900
@@ -28,16 +27,15 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0045df40(CFilterFX *this_ptr
     if ((float)this_ptr->frame_count <= this_ptr->current_frame) {
       this_ptr->current_frame = 0.0;
     }
-    fVar6 = (float10)this_ptr->current_frame;
-    round();
-    pSVar3 = this_ptr->movie_data + (int)ROUND(fVar6);
+    dVar6 = round((double)this_ptr->current_frame);
+    pSVar3 = this_ptr->movie_data + (int)ROUND(dVar6);
     puVar4 = pCVar1->data_buffer + 0x1000;
-    for (uVar2 = extraout_ECX >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
+    for (iVar2 = 0x800; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)puVar4 = *(uint *)pSVar3->pixels;
       pSVar3 = (SMovieFrame *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
       puVar4 = puVar4 + (uint)bVar5 * -8 + 4;
     }
-    for (uVar2 = extraout_ECX & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
+    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = pSVar3->pixels[0];
       pSVar3 = (SMovieFrame *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;

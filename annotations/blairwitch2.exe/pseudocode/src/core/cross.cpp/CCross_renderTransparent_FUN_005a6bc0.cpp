@@ -12,12 +12,13 @@
 int __cdecl core_cross_cpp_CCross_renderTransparent_FUN_005a6bc0(CCross *this_ptr)
 
 {
-  int iVar1;
+  float fVar1;
   int iVar2;
-  float10 fVar3;
-  float10 fVar4;
+  int iVar3;
+  double dVar4;
   CVector3f CStack_24;
-  int iStack_10;
+  int iStack_18;
+  int iStack_14;
   
   if ((DAT_026686f8 & 1) == 0) {
     DAT_026686f8 = DAT_026686f8 | 1;
@@ -30,23 +31,21 @@ int __cdecl core_cross_cpp_CCross_renderTransparent_FUN_005a6bc0(CCross *this_pt
     this_ptr->corona_queued = 0;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810((CDemonGlobe *)0x26686b8,&CStack_24);
-  fVar3 = (float10)this_ptr->charge;
-  fVar4 = fVar3 * (float10)_DAT_005f071d;
-  round();
-  iStack_10 = (int)ROUND(fVar4);
-  fVar4 = (float10)iStack_10 * (float10)this_ptr->glow_intensity;
-  round();
-  _DAT_026686f4 = (int)ROUND(fVar4);
-  iVar1 = (_DAT_026686f4 + (_DAT_026686f4 >> 0x1f) * -0x100) -
+  fVar1 = this_ptr->charge;
+  dVar4 = round((double)(fVar1 * (float)_DAT_005f071d));
+  iStack_14 = (int)ROUND(dVar4);
+  dVar4 = round((double)((float)iStack_14 * this_ptr->glow_intensity));
+  _DAT_026686f4 = (int)ROUND(dVar4);
+  iVar2 = (_DAT_026686f4 + (_DAT_026686f4 >> 0x1f) * -0x100) -
           (uint)((_DAT_026686f4 >> 0x1f) << 7 < 0);
-  iVar2 = iVar1 >> 0x1f;
-  DAT_026686d4 = (byte)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
-  iStack_10 = _DAT_026686f4;
+  iVar3 = iVar2 >> 0x1f;
+  DAT_026686d4 = (byte)((int)(((iVar2 >> 8) + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2);
+  iStack_18 = _DAT_026686f4;
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860
-            ((CDemonGlobe *)0x26686b8,(float)(fVar3 * (float10)_DAT_005f0725));
+            ((CDemonGlobe *)0x26686b8,fVar1 * (float)_DAT_005f0725);
   _DAT_026686d8 = 1;
   core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00530750(g_CDemonSetPtr,(CDemonGlobe *)0x26686b8);
-  iVar1 = (this_ptr->base).base.is_rendered;
+  iVar2 = (this_ptr->base).base.is_rendered;
   this_ptr->corona_queued = 1;
-  return iVar1;
+  return iVar2;
 }

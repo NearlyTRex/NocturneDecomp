@@ -25,11 +25,11 @@
 ;
 ; Called Functions:
 ;   core_level.cpp_FUN_004e0000
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0
 ;   crt_stdio.c_fclose_FUN_005a3a90
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 004f5bc8
     PUSH EDX                            ; 004f5bcc
     PUSH 0x5c837e                       ; 004f5bcd | = "world"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004f5bd2
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004f5bd2
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004f5bd7
     MOV EBX,EAX                         ; 004f5bda
     TEST EAX,EAX                        ; 004f5bdc
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0xc                         ; 004f5c0f
     PUSH EBX                            ; 004f5c12
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004f5c13
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f5c18
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f5c1b
     PUSH EDX                            ; 004f5c1f
@@ -91,8 +91,8 @@ section .text
     PUSH 0x5c8398                       ; 004f5c37 | = "CDemonMission::load - Unable to open ..."
     MOV dword ptr [0x01d71de0],ECX      ; 004f5c3c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004f5c42 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f5c48
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f5c48
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f5c4d
     POP ESI                             ; 004f5c50
     JMP 0x004f5be0                      ; 004f5c51

@@ -2,22 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 421,
-    "complexity_score": 278,
+    "complexity_score": 247,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
-    "suspect_count": 9,
+    "pseudocode_lines": 157,
+    "suspect_count": 6,
     "suspect_types": [
       "bit_int_float_compare",
-      "extra_output",
+      "raw_address_constant",
       "stack_alignment_array",
       "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 579
+    "total_lines": 578
   },
   "cross_references": [
     {
@@ -404,56 +404,32 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uint extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
-      "match": "afStackY_1044",
+      "line": 15,
+      "match": "afStackY_1040",
       "severity": "moderate",
-      "text": "float afStackY_1044 [962];",
+      "text": "float afStackY_1040 [960];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
+      "line": 91,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x3c))(iVar1,&local_ac);",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x3c))(iVar2,&local_ac);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 113,
-      "match": "extraout_EDX",
+      "description": "Raw hex address 0x4a5d9e assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 102,
+      "match": "0x4a5d9e",
       "severity": "moderate",
-      "text": "(extraout_EDX,&(this_ptr->base).location,0,0,0x40000000,1,0x40000000);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 152,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "(this_ptr_00,extraout_EDX_00,0,0,0x40000000,0,0x40000000);",
-      "type": "extra_output"
+      "text": "uVar7 = 0x4a5d9e;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40ffffff is the IEEE 754 bit pattern of 8f. Rewrite in a .keep as a plain float compare against 8f.",
-      "line": 63,
+      "line": 61,
       "match": "0x40ffffff < (int)this_ptr->animation_time)",
       "severity": "moderate",
       "text": "if (0x40ffffff < (int)this_ptr->animation_time) {",

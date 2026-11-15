@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_unknown.c_FUN_005a30c4
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00512f70
 ;
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5cc9de                       ; 0051520e | = "CPod::dismountPod - invalid index"
     MOV dword ptr [0x01d71de0],ECX      ; 00515213 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00515219 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0051521f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051521f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00515224
     POP EDI                             ; 00515227
     MOV EAX,dword ptr [EBX + ESI*0x4 + 0x4] ; 00515228

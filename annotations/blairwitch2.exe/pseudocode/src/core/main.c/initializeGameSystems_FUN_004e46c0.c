@@ -15,15 +15,15 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   char cVar2;
   float fVar3;
   CGame *pCVar4;
-  _FILE *p_Var5;
+  _FILE *file_handle;
+  char *pcVar5;
   int iVar6;
   char *pcVar7;
   int iVar8;
   int iVar9;
   char *pcVar10;
   char *pcVar11;
-  char *pcVar12;
-  byte bVar13;
+  byte bVar12;
   char acStack_528 [512];
   char acStack_328 [256];
   char acStack_228 [256];
@@ -31,18 +31,18 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   CAlphaBitmap CStack_28;
   int iStack_14;
   
-  bVar13 = 0;
+  bVar12 = 0;
   _DAT_01c38b50 = 0;
   _DAT_0061e28c = 0x10000;
   _DAT_0061e280 = 1;
-  p_Var5 = _fopen("stderr.txt",&DAT_005dc18a);
-  if (p_Var5 != (_FILE *)0x0) {
-    _fclose();
+  file_handle = _fopen("stderr.txt",&DAT_005dc18a);
+  if (file_handle != (_FILE *)0x0) {
+    _fclose(file_handle);
     iVar6 = _chmod("stderr.txt",0x1c0);
     if (iVar6 != 0) {
       _DAT_01d046a0 = "..\\core\\main.c";
       _DAT_01d046a4 = 0x3b5;
-      core_main_c_FUN_004e4500();
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Please copy Nocturne to your hard drive");
     }
   }
   _freopen("stderr.txt",&DAT_005dc1da,(_FILE *)&DAT_0061ef88);
@@ -57,10 +57,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   if (_DAT_01c38b40 == 0) {
     _DAT_01d046a0 = "..\\core\\main.c";
     _DAT_01d046a4 = 0x3da;
-    support_newmsg_cpp_getLocalizedString_FUN_0050fe80("This CPU does not have an MMX unit.");
-    core_main_c_FUN_004e4500();
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("This CPU does not have an MMX unit.")
+    ;
+    core_main_c_displayErrorAndQuit_FUN_004e4500(pcVar5);
   }
-  pcVar12 = &stack0xfffff8d8;
+  pcVar5 = &stack0xfffff8d8;
   core_marquee_cpp_FUN_004e8620();
   engine_3d_c_initTextureCache_FUN_004037e0();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
@@ -70,7 +71,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   if (iVar6 == 0) {
     _DAT_01d046a0 = "..\\core\\main.c";
     _DAT_01d046a4 = 0x3f2;
-    core_main_c_FUN_004e4500();
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_00447ea0();
   if (_DAT_02664638 < 0x3c00000) {
@@ -93,7 +94,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar7;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar7 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar7 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar7;
       pcVar7 = pcVar11;
     } while (cVar2 != '\0');
@@ -114,7 +115,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -135,7 +136,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -157,7 +158,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -178,7 +179,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -200,7 +201,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -221,7 +222,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -243,7 +244,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -264,7 +265,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -285,7 +286,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
       pcVar11 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar11;
     } while (cVar2 != '\0');
@@ -305,46 +306,46 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Windows is reporting ");
     do {
       cVar2 = *pcVar10;
-      *pcVar12 = cVar2;
+      *pcVar5 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar10[1];
       pcVar10 = pcVar10 + 2;
-      pcVar12[1] = cVar2;
-      pcVar12 = pcVar12 + 2;
+      pcVar5[1] = cVar2;
+      pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
     _sprintf(acStack_128,&DAT_005dc3b2);
-    pcVar12 = acStack_128;
+    pcVar5 = acStack_128;
     iVar6 = -1;
     pcVar10 = &stack0xfffff8d8;
     do {
       pcVar7 = pcVar10;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar10 + (uint)bVar13 * -2 + 1;
+      pcVar7 = pcVar10 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar10;
       pcVar10 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
-      cVar2 = *pcVar12;
+      cVar2 = *pcVar5;
       *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar12[1];
-      pcVar12 = pcVar12 + 2;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                         ("MB of free swap disk space.");
     iVar6 = -1;
-    pcVar12 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar12;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar12 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
@@ -358,14 +359,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     } while (cVar2 != '\0');
     pcVar10 = &DAT_005dc3d3;
     iVar6 = -1;
-    pcVar12 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar12;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar12 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
@@ -380,14 +381,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Nocturne runs best with at least 200MB free.")
     ;
     iVar6 = -1;
-    pcVar12 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar12;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar12 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
@@ -401,14 +402,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     } while (cVar2 != '\0');
     pcVar10 = &DAT_005dc402;
     iVar6 = -1;
-    pcVar12 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar12;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar12 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
@@ -423,14 +424,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("See README.TXT for more information.")
     ;
     iVar6 = -1;
-    pcVar12 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar12;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar12 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {

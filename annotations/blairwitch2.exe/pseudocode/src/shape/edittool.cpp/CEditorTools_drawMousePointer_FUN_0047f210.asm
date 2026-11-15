@@ -39,7 +39,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_2d.c_plotPixel_FUN_00401130
 ;   engine_mini3d.cpp_drawPixel_FUN_004f8fe0
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
@@ -978,8 +978,8 @@ section .text
     PUSH 0x5d249d                       ; 0047fb88 | = "CEditorTools::setMousePointerType - i..."
     MOV [0x01d046a0],EAX                ; 0047fb8d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0047fb92 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047fb98
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047fb98
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047fb9d
     ADD ESP,0x10                        ; 0047fba0
         ;   Label: LAB_0047fba0

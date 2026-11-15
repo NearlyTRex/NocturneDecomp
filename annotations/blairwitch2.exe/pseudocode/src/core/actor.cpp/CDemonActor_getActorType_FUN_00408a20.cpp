@@ -13,6 +13,6 @@ CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00408a20(C
 {
   _DAT_01d046a0 = "..\\core\\actor.cpp";
   _DAT_01d046a4 = 0x231;
-  core_main_c_FUN_004e4500("CDemonActor::getActorType called.  Should never be called for this base class!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::getActorType called.  Should never be called for this base class!");
   return (CDemonActorType *)0x0;
 }

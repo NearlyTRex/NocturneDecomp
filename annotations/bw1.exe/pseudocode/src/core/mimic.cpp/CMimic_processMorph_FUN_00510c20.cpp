@@ -20,7 +20,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00510c20(CMimic *this_ptr,fl
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     _DAT_01d1d400 = "..\\core\\mimic.cpp";
     _DAT_01d1d404 = 0x4c9;
-    core_main_c_FUN_005030e0("CMimic::processMorph - can't process morph unless we've started morph!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMimic::processMorph - can't process morph unless we've started morph!");
   }
   fVar2 = delta_time / _DAT_006039d4 + this_ptr->morph_blend;
   this_ptr->morph_blend = fVar2;
@@ -30,7 +30,8 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00510c20(CMimic *this_ptr,fl
     core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
               (0x01D2C900,this_ptr->morph_target_actor);
     this_ptr->morph_target_actor = (CDemonActor *)0x0;
-    core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,this_ptr,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
+              (0x01D2C900,(CDemonActor *)this_ptr,1);
   }
   else {
     local_18[0] = delta_time;

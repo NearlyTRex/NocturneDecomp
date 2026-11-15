@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_005030e0 at 00503151
 ;   core_main.c_FUN_00503a30 at 00503a6c
+;   core_main.c_displayErrorAndQuit_FUN_005030e0 at 00503151
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0

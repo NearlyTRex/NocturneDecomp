@@ -53,7 +53,7 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void)
     if (_DAT_01d22c44 != 0) {
       _sprintf(acStack_98,"noc%05d.raw");
       _sprintf(acStack_160,"Movie recording active: movie\\%s");
-      p_Stack_2c = engine_dosio_cpp_FUN_004659c0("movie",acStack_98,&DAT_005c21d9);
+      p_Stack_2c = engine_dosio_cpp_getFile_FUN_004659c0("movie",acStack_98,&DAT_005c21d9);
       if (p_Stack_2c != (_FILE *)0x0) {
         iStack_30 = 0;
         if (0 < 0x00000040) {

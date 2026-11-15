@@ -26,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0050eb80(CNetGame 
      ) {
     _DAT_01d046a0 = "..\\core\\netgame.cpp";
     _DAT_01d046a4 = 0x8d0;
-    core_main_c_FUN_004e4500("CNetGame::sendMyStateChanged - should only call this in client lobby mode");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::sendMyStateChanged - should only call this in client lobby mode");
   }
   iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   _DAT_01d34e34 = iVar2 / 0x12 - _DAT_01d34e34;

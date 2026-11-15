@@ -13,6 +13,6 @@ int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0(CDemonA
 {
   _DAT_01d1d400 = "..\\core\\actor.cpp";
   _DAT_01d1d404 = 0x2e7;
-  core_main_c_FUN_005030e0("CDemonActor::customGetFloorHeight should not be called for this base class");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonActor::customGetFloorHeight should not be called for this base class");
   return 0;
 }

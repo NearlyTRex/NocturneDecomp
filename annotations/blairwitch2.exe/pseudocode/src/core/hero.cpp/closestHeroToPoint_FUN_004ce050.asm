@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5d9a24                       ; 004ce0dc | = "closestHeroToPoint - no heros!"
     MOV dword ptr [0x01d046a0],EBX      ; 004ce0e1 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004ce0e7 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004ce0ed
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ce0ed
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ce0f2
     MOV EAX,ESI                         ; 004ce0f5
     ADD ESP,0x14                        ; 004ce0f7

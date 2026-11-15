@@ -31,7 +31,7 @@ undefined4 FUN_00501750(CCharacter *param_1);
 
 // Original: core_lightpis.cpp_FUN_005017f0
 // Address: 005017f0
-void FUN_005017f0(int param_1);
+void FUN_005017f0(CCharacter *param_1);
 
 // Original: core_lightpis.cpp_CLightPis_getMuzzlePoint_FUN_005018c0
 // Address: 005018c0

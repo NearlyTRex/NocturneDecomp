@@ -1,0 +1,147 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "004662b0",
+      "from_addr": "004662c1",
+      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_004662b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00466290",
+      "from_addr": "00466296",
+      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00466290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004663b0",
+    "address_range": [
+      [
+        "004663b0",
+        "004663f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dpart.cpp_CDemonPart_free_FUN_004663b0",
+    "signature": "void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004663b0(CDemonPart *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00466296",
+        "call_type": "direct",
+        "caller": "core_dpart.cpp_CDemonPart_dtor_FUN_00466290",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004662c1",
+        "call_type": "direct",
+        "caller": "core_dpart.cpp_CDemonPart_alloc_FUN_004662b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.038461538461538,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 23,
+      "INT_ADD": 12,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 105
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004615d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00479ae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004822b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7879
+    },
+    "nocturne.exe": {
+      "addr": "00457060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8667
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPart *"
+      }
+    ]
+  },
+  "suspects": []
+}

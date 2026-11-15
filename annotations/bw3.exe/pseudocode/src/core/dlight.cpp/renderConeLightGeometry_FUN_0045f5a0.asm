@@ -227,10 +227,10 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 0045f768
     LEA EAX,[ESP + 0x30]                ; 0045f76c
     CALL crt_math.c_round_FUN_005a3120  ; 0045f770
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x8c]        ; 0045f775
     CALL crt_math.c_round_FUN_005a3120  ; 0045f77c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x88]        ; 0045f781
     FLD float ptr [EAX]                 ; 0045f788
     FMUL float ptr [0x005de4f0]         ; 0045f78a | DAT_005de4f0

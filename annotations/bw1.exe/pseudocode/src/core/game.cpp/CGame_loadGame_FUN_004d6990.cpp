@@ -111,7 +111,7 @@ LAB_004d6e32:
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(0x01C51D80);
     core_level_cpp_FUN_004fe840(0x01D1BD1C,9,0,0xffffffff);
-    file_handle = engine_dosio_cpp_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);
+    file_handle = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);
     local_18 = _ftell(file_handle);
     iVar5 = 1;
     iVar2 = _stricmp(&DAT_01cd05c0,local_570);
@@ -187,7 +187,7 @@ LAB_004d6be4:
       if (file_handle == (_FILE *)0x0) {
         _DAT_01d1d400 = "..\\core\\game.cpp";
         _DAT_01d1d404 = 0x1050;
-        core_main_c_FUN_005030e0("Can't reopen %s","save\\$$SAVE$$.TMP");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Can't reopen %s");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90(&local_a0.lzw_dict,0);
       support_codec_cpp_CCodec_dtor_FUN_00442bb0(&local_a0.base,1);

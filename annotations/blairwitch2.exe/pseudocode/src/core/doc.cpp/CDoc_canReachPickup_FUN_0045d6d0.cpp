@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance)
@@ -19,55 +18,35 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   byte bVar5;
   float afStackY_10ec [1001];
   CBoundingBox3D *in_stack_fffffec0;
-  float *pfVar6;
+  CVector3f *input_local_point;
   float fStack_11c;
   float fStack_118;
   float fStack_114;
   float fStack_110;
   float fStack_10c;
   float fStack_108;
-  float fStack_104;
+  CVector3f CStack_104;
   uint uStack_f8;
-  float fStack_f4;
-  uint uStack_f0;
-  uint uStack_ec;
+  CVector3f CStack_f4;
   float fStack_e0;
-  float fStack_dc;
-  float fStack_d8;
-  float fStack_d4;
-  float fStack_d0;
+  float afStack_dc [4];
   float fStack_cc;
-  float fStack_c8;
-  float fStack_c4;
-  uint uStack_b8;
+  byte auStack_c8 [8];
+  float afStack_c0 [4];
   float fStack_b0;
-  float fStack_ac;
-  float fStack_a8;
-  uint uStack_a4;
-  float fStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
+  CVector3f CStack_ac;
+  CVector3f CStack_a0;
   float fStack_8c;
-  float fStack_88;
-  float fStack_84;
-  uint uStack_80;
-  float fStack_74;
-  uint uStack_70;
-  uint uStack_6c;
-  uint uStack_68;
+  float afStack_88 [5];
+  byte auStack_74 [8];
+  float afStack_6c [4];
   float fStack_5c;
-  float fStack_58;
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
-  float fStack_48;
+  float afStack_58 [3];
+  CVector3f CStack_4c;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_34 [5];
   float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  float afStack_1c [3];
   
   bVar5 = 0;
   switch(pickup_type) {
@@ -75,46 +54,49 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
-    core_actor_cpp_FUN_00408de0(item,&(this_ptr->base).base.base.location);
-    fStack_34 = fStack_c4;
-    (&stack0xffffffcc)[(uint)bVar5 * -2 + 1] = (&stack0xffffff3c)[(uint)bVar5 * -2 + 1];
-    (&stack0xffffffcc)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2] =
-         (&stack0xffffff3c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2];
-    fStack_1c = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-    if (fStack_1c <= 0.0) {
-      fStack_30 = 0.0;
-      fStack_34 = 0.0;
-      fStack_2c = 0.0;
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+              (item,&(this_ptr->base).base.base.location.position,(CVector3f *)(auStack_c8 + 4));
+    afStack_34[0] = (float)auStack_c8._4_4_;
+    afStack_34[(uint)bVar5 * -2 + 1] = afStack_c0[(uint)bVar5 * -2];
+    afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2] =
+         afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    afStack_1c[0] =
+         SQRT(afStack_34[2] * afStack_34[2] +
+              afStack_34[0] * afStack_34[0] + afStack_34[1] * afStack_34[1]);
+    if (afStack_1c[0] <= 0.0) {
+      afStack_34[1] = 0.0;
+      afStack_34[0] = 0.0;
+      afStack_34[2] = 0.0;
     }
     else {
-      fVar1 = 1.0 / fStack_1c;
-      fStack_34 = fStack_34 * fVar1;
-      fStack_30 = fStack_30 * fVar1;
-      fStack_2c = fStack_2c * fVar1;
+      fVar1 = 1.0 / afStack_1c[0];
+      afStack_34[0] = afStack_34[0] * fVar1;
+      afStack_34[1] = afStack_34[1] * fVar1;
+      afStack_34[2] = afStack_34[2] * fVar1;
     }
-    if (0.0 < fStack_2c) {
+    if (0.0 < afStack_34[2]) {
       return 0;
     }
-    fStack_f4 = 0.0;
-    uStack_f0 = 0x40400000;
-    uStack_ec = 0x40000000;
-    if (&stack0xffffff60 != &stack0xffffff0c) {
-      uStack_9c = 0x40400000;
-      uStack_98 = 0x40000000;
-      fStack_a0 = 0.0;
+    CStack_f4.x = 0.0;
+    CStack_f4.y = 3.0;
+    CStack_f4.z = 2.0;
+    if (&CStack_a0 != &CStack_f4) {
+      CStack_a0.y = 3.0;
+      CStack_a0.z = 2.0;
+      CStack_a0.x = 0.0;
     }
     break;
   case 2:
     if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
-    fStack_a8 = 3.0;
-    uStack_a4 = 0x40000000;
-    fStack_ac = 0.0;
-    if (&stack0xffffff60 != &stack0xffffff54) {
-      uStack_9c = 0x40400000;
-      uStack_98 = 0x40000000;
-      fStack_a0 = 0.0;
+    CStack_ac.y = 3.0;
+    CStack_ac.z = 2.0;
+    CStack_ac.x = 0.0;
+    if (&CStack_a0 != (CVector3f *)(afStack_c0 + 5)) {
+      CStack_a0.y = 3.0;
+      CStack_a0.z = 2.0;
+      CStack_a0.x = 0.0;
     }
     break;
   case 3:
@@ -124,42 +106,43 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     }
     if ((item != (CDemonActor *)0x0) &&
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
-      core_actor_cpp_FUN_00408de0(item,&(this_ptr->base).base.base.location);
-      fStack_38 = fStack_74;
-      (&stack0xffffffcc)[(uint)bVar5 * 0xfffffffe] =
-           (float)(&stack0xffffff90)[(uint)bVar5 * 0xfffffffe];
-      (&stack0xffffffcc)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           (float)(&stack0xffffff90)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                (item,&(this_ptr->base).base.base.location.position,(CVector3f *)auStack_74);
+      fStack_38 = (float)auStack_74._0_4_;
+      afStack_34[(uint)bVar5 * -2] = *(float *)(auStack_74 + (uint)bVar5 * -8 + 4);
+      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+           *(float *)(auStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       if (1.0 < ABS(fStack_38)) {
         return 0;
       }
       in_stack_fffffec0 = (CBoundingBox3D *)0x45d9dc;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffc8);
-      uStack_f8 = uStack_80;
-      (&stack0xffffff0c)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * -2 + 3];
-      (&stack0xffffff0c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           (&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-      if ((float)_DAT_005d0807 < ABS(fStack_f4)) {
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_38);
+      uStack_f8 = afStack_88[2];
+      *(float *)((int)&CStack_f4 + (uint)bVar5 * -8) = afStack_88[(uint)bVar5 * -2 + 3];
+      *(float *)((int)&CStack_f4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
+           afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+      if ((float)_DAT_005d0807 < ABS(CStack_f4.x)) {
         return 0;
       }
     }
-    uStack_70 = 0;
-    uStack_68 = 0x40000000;
-    uStack_6c = 0x40400000;
-    if (&stack0xffffff60 != (float *)&stack0xffffff90) {
-      uStack_9c = 0x40400000;
-      uStack_98 = 0x40000000;
-      fStack_a0 = 0.0;
+    auStack_74._4_4_ = 0.0;
+    afStack_6c[1] = 2.0;
+    afStack_6c[0] = 3.0;
+    if (&CStack_a0 != (CVector3f *)(auStack_74 + 4)) {
+      CStack_a0.y = 3.0;
+      CStack_a0.z = 2.0;
+      CStack_a0.x = 0.0;
     }
     break;
   default:
     goto switchD_0045d6eb_default;
   }
-  core_actor_cpp_FUN_00408d70(this_ptr,&stack0xffffff60);
-  uStack_b8 = fStack_4c;
-  (&stack0xffffff3c)[(uint)bVar5 * -2 + 4] = (&stack0xffffffa8)[(uint)bVar5 * -2 + 4];
-  (&stack0xffffff3c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5] =
-       (&stack0xffffffa8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,&CStack_a0,&CStack_4c);
+  afStack_c0[2] = CStack_4c.x;
+  afStack_c0[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + 4);
+  afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
+       *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   (*((item->vtable)._ub)->getBoundingBox)(item,in_stack_fffffec0);
   puVar3 = (uint *)&stack0xfffffecc;
   puVar4 = (uint *)&stack0xfffffedc;
@@ -168,36 +151,36 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  fStack_50 = fStack_11c + fStack_110;
-  fStack_4c = fStack_118 + fStack_10c;
-  fStack_48 = fStack_114 + fStack_108;
+  afStack_58[2] = fStack_11c + fStack_110;
+  CStack_4c.x = fStack_118 + fStack_10c;
+  CStack_4c.y = fStack_114 + fStack_108;
   fStack_5c = fStack_11c + fStack_110;
-  (&stack0xffffffa8)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffffa8)[(uint)bVar5 * -2 + 3];
-  (&stack0xffffffa8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       (&stack0xffffffa8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  pfVar6 = &stack0xffffff38;
+  afStack_58[(uint)bVar5 * -2] = *(float *)((int)&CStack_4c + (uint)bVar5 * -8);
+  afStack_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
+  input_local_point = (CVector3f *)auStack_c8;
   fStack_8c = fStack_5c * _DAT_005d080f;
-  fStack_88 = fStack_58 * _DAT_005d080f;
-  fStack_84 = fStack_54 * _DAT_005d080f;
-  fStack_c8 = fStack_5c * _DAT_005d080f;
-  (&stack0xffffff3c)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * 0xfffffffe];
-  (&stack0xffffff3c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       (&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_actor_cpp_FUN_00408d70(item,pfVar6);
-  fStack_20 = fStack_104;
-  (&stack0xffffffe8)[(uint)bVar5 * -2 + -1] =
-       (float)*(uint *)(&stack0xffffff00 + (uint)bVar5 * -8);
-  (&stack0xffffffe8)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-       (float)*(uint *)(&stack0xffffff04 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  fStack_d4 = fStack_20 - fStack_b0;
-  fStack_d0 = fStack_1c - fStack_ac;
-  fStack_cc = fStack_18 - fStack_a8;
+  afStack_88[0] = afStack_58[0] * _DAT_005d080f;
+  afStack_88[1] = afStack_58[1] * _DAT_005d080f;
+  auStack_c8._0_4_ = fStack_5c * _DAT_005d080f;
+  afStack_c0[(uint)bVar5 * -2 + -1] = afStack_88[(uint)bVar5 * -2];
+  afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
+       afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(item,input_local_point,&CStack_104);
+  fStack_20 = CStack_104.x;
+  afStack_1c[(uint)bVar5 * -2] = *(float *)((int)&CStack_104 + (uint)bVar5 * -8 + 4);
+  afStack_1c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       *(float *)((int)&CStack_104 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  afStack_dc[2] = fStack_20 - fStack_b0;
+  afStack_dc[3] = afStack_1c[0] - CStack_ac.x;
+  fStack_cc = afStack_1c[1] - CStack_ac.y;
   fStack_e0 = fStack_20 - fStack_b0;
-  (&stack0xffffff24)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff24)[(uint)bVar5 * -2 + 3];
-  (&stack0xffffff24)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       (&stack0xffffff24)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  if ((ABS(fStack_dc) <= (float)_DAT_005d0817) &&
-     (fVar1 = SQRT(fStack_e0 * fStack_e0 + fStack_d8 * fStack_d8), fVar1 <= (float)_DAT_005d081f)) {
+  afStack_dc[(uint)bVar5 * -2] = afStack_dc[(uint)bVar5 * -2 + 3];
+  afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+  if ((ABS(afStack_dc[0]) <= (float)_DAT_005d0817) &&
+     (fVar1 = SQRT(fStack_e0 * fStack_e0 + afStack_dc[1] * afStack_dc[1]),
+     fVar1 <= (float)_DAT_005d081f)) {
     if (*best_distance < fVar1) {
       return 0;
     }

@@ -14,7 +14,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
   int iVar1;
   int iVar2;
   int iVar3;
-  code *pcVar4;
+  ColorConversionFunc *pCVar4;
   int iVar5;
   int *piVar6;
   int iVar7;
@@ -26,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
   int iStack_30;
   int iStack_2c;
   
-  pcVar4 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
+  pCVar4 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
   if (DAT_0061b4a0 == 8) {
     iStack_2c = _DAT_01c4f00c;
     if (_DAT_01c4f00c <= _DAT_01c4f014) {
@@ -41,8 +41,8 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
           iVar1 = iVar8 + 0x44;
           iVar3 = *(int *)(iVar8 + 4 + (int)piVar6);
           iVar8 = iVar8 + 4;
-          (*pcVar4)(iVar2 + iVar3,(int)sprite_data + iVar3 + iVar5,
-                    *(uint *)(iVar1 + (int)piVar6));
+          (*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),
+                    *(int *)(iVar1 + (int)piVar6));
         }
         iStack_34 = iStack_34 + 0x84;
         iStack_38 = iStack_38 + 4;
@@ -64,8 +64,8 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0043856
           iVar1 = iVar7 + 0x44;
           iVar3 = *(int *)(iVar7 + 4 + (int)piVar6);
           iVar7 = iVar7 + 4;
-          (*pcVar4)(iVar3 * 2 + iVar2,(int)sprite_data + iVar3 + iVar5,
-                    *(uint *)(iVar1 + (int)piVar6));
+          (*pCVar4)((void *)(iVar3 * 2 + iVar2),(void *)((int)sprite_data + iVar3 + iVar5),
+                    *(int *)(iVar1 + (int)piVar6));
         }
         iStack_3c = iStack_3c + 0x84;
         iStack_40 = iStack_40 + 4;

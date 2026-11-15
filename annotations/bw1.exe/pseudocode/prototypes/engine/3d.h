@@ -99,7 +99,7 @@ void __cdecl setActiveRenderColor(void);
 
 // Original: engine_3d.c_drawLineStrip2D_FUN_00404440
 // Address: 00404440
-int __cdecl drawLineStrip2D(int param_1);
+SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 // Address: 00404560

@@ -93,17 +93,17 @@ void __cdecl CDemonCamera::calculateInverseTransform(CDemonCamera *this_ptr);
 // Address: 0043c5d0
 void __cdecl CDemonCamera::updateTransformMatrices(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_FUN_0043c6b0
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
 // Address: 0043c6b0
-void FUN_0043c6b0(undefined4 param_1,int param_2,int param_3);
+int __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
 // Address: 0043c780
 CVector3i * __stack2_esi CDemonCamera::screenToWorldTransform(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
 
-// Original: core_dcamera.cpp_FUN_0043c890
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0043c890
 // Address: 0043c890
-float * FUN_0043c890(int param_1,int param_2,int param_3);
+CVector3f * __stack3_esi CDemonCamera::screenToWorldDirection(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0043ca10
 // Address: 0043ca10
@@ -117,9 +117,9 @@ CVector3i * __stack2_esi CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera
 // Address: 0043cea0
 CVector3i * __stack2_esi CDemonCamera::worldToCameraSpace(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 
-// Original: core_dcamera.cpp_FUN_0043cfe0
+// Original: core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0043cfe0
 // Address: 0043cfe0
-void FUN_0043cfe0(void);
+CVector3i * __stack2_esi CDemonCamera::transformVectorWithAlpha(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: core_dcamera.cpp_CDemonCamera_allocLight_FUN_0043d1f0
 // Address: 0043d1f0
@@ -241,9 +241,9 @@ int __cdecl CDemonCamera::isSphereVisible(CDemonCamera *this_ptr,CVector3f *posi
 // Address: 00441e80
 void __cdecl CDemonCamera::setEffectIntensity(CDemonCamera *this_ptr,float intensity);
 
-// Original: core_dcamera.cpp_FUN_00441ea0
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0
 // Address: 00441ea0
-void FUN_00441ea0(CDemonCamera *param_1,undefined4 param_2,undefined4 param_3);
+void __stack3_esi CDemonCamera::screenToWorldRay(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ray);
 
 // Original: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40
 // Address: 00441f40

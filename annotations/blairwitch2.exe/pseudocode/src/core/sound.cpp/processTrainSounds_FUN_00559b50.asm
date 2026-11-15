@@ -7,6 +7,8 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005ea870
 ;   undefined4 DAT_005ea874
+;   undefined4 DAT_005ea87c
+;   undefined4 DAT_005ea884
 ;   undefined4 DAT_005ea88c
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
@@ -18,9 +20,7 @@
 ;   undefined4 DAT_0264bb88
 ;   undefined4 DAT_0264bb8c
 ;   undefined4 DAT_0264bb90
-;   undefined4 DAT_0264bb94
-;   undefined4 DAT_0264bb98
-;   ... and 1 more
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -243,12 +243,12 @@ section .text
     FNSTSW AX                           ; 00559e0a
     SAHF                                ; 00559e0c
     JC 0x00559e1d                       ; 00559e0d
-        ;   XREF to: 00559e1d (CONDITIONAL_JUMP)  ; LAB_00559e1d
+        ;   XREF to: 00559e1d (CONDITIONAL_JUMP)  ; caseD_4
     CMP dword ptr [ESP + 0x110],0x0     ; 00559e0f
     JNZ 0x0055a030                      ; 00559e17
         ;   XREF to: 0055a030 (CONDITIONAL_JUMP)  ; LAB_0055a030
     MOV ESP,EBP                         ; 00559e1d
-        ;   Label: LAB_00559e1d
+        ;   Label: caseD_4
     POP EBP                             ; 00559e1f
     POP EDI                             ; 00559e20
     POP ESI                             ; 00559e21
@@ -326,8 +326,22 @@ section .text
         ;   Label: LAB_00559ef5
     JMP 0x00559dd8                      ; 00559efc
         ;   XREF to: 00559dd8 (UNCONDITIONAL_JUMP)  ; LAB_00559dd8
+    FLD float ptr [ESP]                 ; 00559f01
+        ;   Label: caseD_0
+    MOV EDI,dword ptr [0x0061c060]      ; 00559f04 | PTR_DAT_0061c060
+    FMUL double ptr [0x005ea884]        ; 00559f0a | DAT_005ea884
+    PUSH EDI                            ; 00559f10
+    MOV ESI,0x41c80000                  ; 00559f11
+    PUSH 0x5ea84f                       ; 00559f16
+    LEA EAX,[ESP + 0x74]                ; 00559f1b
+    MOV dword ptr [ESP + 0x114],ESI     ; 00559f1f
+    PUSH EAX                            ; 00559f26
+    FSTP float ptr [ESP + 0x10]         ; 00559f27
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00559f2b
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
+    ADD ESP,0xc                         ; 00559f30
     PUSH 0x40000000                     ; 00559f33
-        ;   Label: LAB_00559f33
+        ;   Label: default
     MOV EAX,dword ptr [ESP + 0x114]     ; 00559f38
     PUSH 0xc0400000                     ; 00559f3f
     MOV dword ptr [EAX],0x0             ; 00559f44
@@ -382,6 +396,32 @@ section .text
     POP ESI                             ; 00559fec
     POP EBX                             ; 00559fed
     RET                                 ; 00559fee
+    FLD float ptr [ESP]                 ; 00559fef
+        ;   Label: caseD_2
+    FMUL double ptr [0x005ea87c]        ; 00559ff2 | DAT_005ea87c
+    MOV EBX,0x41a00000                  ; 00559ff8
+    MOV ESI,0x5ea85b                    ; 00559ffd
+    LEA EDI,[ESP + 0x6c]                ; 0055a002
+    MOV dword ptr [ESP + 0x10c],EBX     ; 0055a006
+    FSTP float ptr [ESP + 0x4]          ; 0055a00d
+    PUSH EDI                            ; 0055a011
+    MOV AL,byte ptr [ESI]               ; 0055a012
+        ;   Label: LAB_0055a012
+    MOV byte ptr [EDI],AL               ; 0055a014
+    CMP AL,0x0                          ; 0055a016
+    JZ 0x0055a02a                       ; 0055a018
+        ;   XREF to: 0055a02a (CONDITIONAL_JUMP)  ; LAB_0055a02a
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a01a
+    ADD ESI,0x2                         ; 0055a01d
+    MOV byte ptr [EDI + 0x1],AL         ; 0055a020
+    ADD EDI,0x2                         ; 0055a023
+    CMP AL,0x0                          ; 0055a026
+    JNZ 0x0055a012                      ; 0055a028
+        ;   XREF to: 0055a012 (CONDITIONAL_JUMP)  ; LAB_0055a012
+    POP EDI                             ; 0055a02a
+        ;   Label: LAB_0055a02a
+    JMP 0x00559f33                      ; 0055a02b
+        ;   XREF to: 00559f33 (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x40a00000                     ; 0055a030
         ;   Label: LAB_0055a030
     PUSH 0x3f800000                     ; 0055a035
@@ -407,6 +447,7 @@ section .text
     IDIV EBX                            ; 0055a08a
     CMP EDX,0x4                         ; 0055a08c
     JA 0x00559f33                       ; 0055a08f
-        ;   XREF to: 00559f33 (CONDITIONAL_JUMP)  ; LAB_00559f33
-    JMP dword ptr [EDX*0x4 + 0x559b34]  ; 0055a095
+        ;   XREF to: 00559f33 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EDX*0x4 + 0x559b34]  ; 0055a095 | caseD_1 | caseD_3 | caseD_4
+        ;   Label: switchD
 

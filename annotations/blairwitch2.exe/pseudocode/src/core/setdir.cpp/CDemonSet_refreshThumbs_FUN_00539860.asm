@@ -19,7 +19,7 @@
 ;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0053986b
     PUSH EDX                            ; 0053986f
     PUSH 0x5e6020                       ; 00539870 | DAT_005e6020
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00539875
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00539875
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 0053987a
     ADD ESP,0xc                         ; 0053987c
     TEST EAX,EAX                        ; 0053987f
@@ -61,7 +61,7 @@ section .text
     ADD ESP,0x8                         ; 005398a4
     PUSH EBX                            ; 005398a7
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005398a8
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005398ad
     POP ESI                             ; 005398b0
     POP EBX                             ; 005398b1

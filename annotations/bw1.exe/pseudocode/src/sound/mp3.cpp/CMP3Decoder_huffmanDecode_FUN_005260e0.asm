@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d40dec
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_00525fe0
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00525f00
 ;
@@ -215,8 +215,8 @@ section .text
     PUSH 0x5eb22b                       ; 0052628c | = "Illegal Huffman code in data.  File: %s"
     MOV dword ptr [0x01d1d400],ECX      ; 00526291 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00526297 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052629d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052629d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005262a2
     JMP 0x00526149                      ; 005262a5
         ;   XREF to: 00526149 (UNCONDITIONAL_JUMP)  ; LAB_00526149

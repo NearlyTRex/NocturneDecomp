@@ -13,6 +13,6 @@ float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408960(CDemonA
 {
   _DAT_01d1d400 = "..\\core\\actor.cpp";
   _DAT_01d1d404 = 0x2dc;
-  core_main_c_FUN_005030e0("CDemonActor::customRayIntersect should not be called for this base class");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonActor::customRayIntersect should not be called for this base class");
   return 2.0;
 }

@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_0049a7b0(CPickList
   if (99 < ~uVar2 - 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xeb5;
-    core_main_c_FUN_005030e0("CPickList::setOkButtonText - too long!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPickList::setOkButtonText - too long!");
   }
   pcVar3 = this_ptr->ok_button_text;
   do {

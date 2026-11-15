@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   out_normal
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_box.cpp_FUN_0041e220
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50
 ;   core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 00578e7f
     LEA ESI,[ESP + 0xac]                ; 00578e80
     LEA EDI,[ESP + 0x94]                ; 00578e87
-    CALL core_actor.cpp_FUN_00408b00    ; 00578e8e
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00578e8e
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xac]                ; 00578e93
     ADD ESP,0x8                         ; 00578e9a
     LEA EAX,[ESP + 0x8c]                ; 00578e9d

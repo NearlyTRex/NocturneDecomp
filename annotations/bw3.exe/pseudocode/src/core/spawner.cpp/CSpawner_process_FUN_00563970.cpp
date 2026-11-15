@@ -27,13 +27,11 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
   byte bVar12;
   uint auStack_b0 [6];
   uint auStack_98 [6];
-  uint uStack_80;
-  uint uStack_7c;
-  uint uStack_78;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
+  CVector3f CStack_68;
   CVector3f CStack_5c;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
+  CVector3f CStack_50;
   CVector3f CStack_44;
   CVector3f CStack_38;
   float fStack_2c;
@@ -95,14 +93,14 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
   if (this_ptr->spawn_timer <= 0.0) {
     this_ptr->reset_timer = 0.5;
     this_ptr->spawn_timer = 0.0;
-    uStack_80 = 0;
-    uStack_7c = 0;
-    uStack_78 = 0x3f800000;
-    core_actor_cpp_FUN_00408b00(this_ptr,&uStack_80);
-    uStack_50 = 0;
-    uStack_4c = 0;
-    uStack_48 = 0x3fc00000;
-    core_actor_cpp_FUN_00408b00(this_ptr,&uStack_50);
+    CStack_80.x = 0.0;
+    CStack_80.y = 0.0;
+    CStack_80.z = 1.0;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00(&this_ptr->base,&CStack_80,&CStack_74);
+    CStack_50.x = 0.0;
+    CStack_50.y = 0.0;
+    CStack_50.z = 1.5;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00(&this_ptr->base,&CStack_50,&CStack_68);
     fStack_2c = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
                           (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                            (this_ptr->base).location.position.z,0.0,0.0,1.0,

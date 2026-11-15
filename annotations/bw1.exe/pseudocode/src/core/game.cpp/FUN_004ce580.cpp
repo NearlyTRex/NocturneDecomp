@@ -37,8 +37,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
   float fStack_74;
   float fStack_70;
   float fStack_6c;
-  int iStack_68;
-  int aiStack_64 [4];
+  CVector3i CStack_68;
   int iStack_54;
   int iStack_50;
   int iStack_4c;
@@ -101,12 +100,14 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
       iVar2 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
       (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&CStack_a8,&CStack_a8.orientation);
       if ((DAT_01c43544 & 1) != 0) {
-        core_dcamera_cpp_FUN_0044dd70(&g_CDemonCameraInstance,_DAT_01c4353c,_DAT_01c43540);
+        core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70
+                  (&g_CDemonCameraInstance,_DAT_01c4353c,_DAT_01c43540,&CStack_68);
         input_ptr = &CStack_8c;
-        CStack_8c.x = iStack_68;
-        *(int *)((int)&CStack_8c + (uint)bVar10 * -8 + 4) = aiStack_64[(uint)bVar10 * -2];
-        *(int *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-             aiStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        CStack_8c.x = CStack_68.x;
+        *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4) =
+             *(uint *)((int)&CStack_68 + (uint)bVar10 * -8 + 4);
+        *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             *(uint *)((int)&CStack_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044de40
                   (&g_CDemonCameraInstance,input_ptr,&CStack_80);
         CStack_8c.x = CStack_80.x;
@@ -184,7 +185,8 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
           if (_DAT_01cd0c3c != 0) {
             _sprintf(acStack_10c,"noc%05d.raw");
             _sprintf(acStack_1d4,"Movie recording active: movie\\%s");
-            p_Stack_38 = engine_dosio_cpp_FUN_00479180("movie",acStack_10c,&DAT_005e135d);
+            p_Stack_38 = engine_dosio_cpp_getFile_FUN_00479180
+                                   ("movie",acStack_10c,&DAT_005e135d);
             if (p_Stack_38 != (_FILE *)0x0) {
               iStack_3c = 0;
               if (0 < 0x00000040) {
@@ -269,7 +271,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
           engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005746e0
-                  (aiStack_64 + 4,&stack0xfffff8d8,&iStack_50,(int *)&stack0xfffff8d4,&iStack_4c,
+                  (&iStack_54,&stack0xfffff8d8,&iStack_50,(int *)&stack0xfffff8d4,&iStack_4c,
                    (int *)&stack0xfffff8d0);
         iStack_18 = iStack_728;
         sound_sndmain_cpp_countActiveSfx_FUN_00573e20();

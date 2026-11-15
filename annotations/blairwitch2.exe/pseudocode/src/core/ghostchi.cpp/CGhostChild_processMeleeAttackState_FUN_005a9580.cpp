@@ -21,13 +21,13 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
   SMotion *pSVar6;
   SStateMachine *pSVar7;
   byte bVar8;
-  float afStackY_1030 [998];
-  float *pfVar9;
+  uint auStackY_1030 [998];
+  CVector3f *input_local_point;
   SDamageInfo *this_ptr_01;
   SDamageInfo SStack_84;
-  uint uStack_48;
-  float afStack_44 [5];
-  float afStack_30 [3];
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
   CVector3f CStack_24;
   float fStack_10;
   float fStack_c;
@@ -58,21 +58,24 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     }
     else {
       this_ptr->hit_count = this_ptr->hit_count + 1;
-      core_xform_cpp_FUN_00591530
-                (&DAT_0265370c,
+      core_xform_cpp_transformVector3x4_FUN_00591530
+                ((CVector3f *)&DAT_0265370c,
                  (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
-                 this_ptr->hand_bone);
-      pfVar9 = afStack_44 + 5;
-      afStack_30[0] = (float)uStack_48;
-      afStack_44[(uint)bVar8 * -2 + 6] = afStack_44[(uint)bVar8 * -2];
-      afStack_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
-           afStack_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-      core_actor_cpp_FUN_00408d70(this_ptr,pfVar9);
+                 this_ptr->hand_bone,&CStack_48);
+      input_local_point = &CStack_30;
+      CStack_30.x = CStack_48.x;
+      *(uint *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_48 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                ((CDemonActor *)this_ptr,input_local_point,&CStack_3c);
       this_ptr_01 = &SStack_84;
-      CStack_24.x = afStack_44[2];
-      *(float *)((int)&CStack_24 + (uint)bVar8 * -8 + 4) = afStack_44[(uint)bVar8 * -2 + 3];
-      *(float *)((int)&CStack_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           afStack_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+      CStack_24.x = CStack_3c.x;
+      *(uint *)((int)&CStack_24 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(this_ptr_01);
       SStack_84.damage_amount = 0x41200000;
       SStack_84.attacker = (CDemonActor *)this_ptr;

@@ -20,7 +20,7 @@
 ;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
 ;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;   crt_unknown.c_FUN_005c0344
 ;
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5d6982                       ; 00441d12 | = "CClothList::load - out of memory for ..."
     MOV dword ptr [0x01d1d400],ECX      ; 00441d17 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00441d1d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00441d22
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00441d22
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00441d27
     PUSH ESI                            ; 00441d2a
         ;   Label: LAB_00441d2a

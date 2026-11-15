@@ -7,7 +7,7 @@
 
 // Original: core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360
 // Address: 0059d360
-void __cdecl CMuzzleEffect::init(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl CMuzzleEffect::init(CMuzzleEffect *this_ptr,CVector3f *param_2,CMatrix3x3f *param_3);
 
 // Original: core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420
 // Address: 0059d420

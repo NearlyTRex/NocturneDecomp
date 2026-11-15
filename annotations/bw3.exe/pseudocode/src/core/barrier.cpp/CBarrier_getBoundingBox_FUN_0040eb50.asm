@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_0040eb50(CBarrier *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_barrier_cpp_CBarrier_getBoundingBox_FUN_0040eb50(CBarrier *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b61e7

@@ -12,8 +12,8 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_00530610 at 00530676
 ;   core_script.cpp_FUN_00529410 at 005294de
 ;   crt_stdio.c_fclose_FUN_005a3bc0 at 005a3c04
+;   sound_mp3.cpp_CFileBitStream_init_FUN_004fd3c0 at 004fd3f2
 ;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890 at 005028ef
-;   sound_mp3.cpp_FUN_004fd3c0 at 004fd3f2
 ;   support_newmsg.cpp_readMessageFile_FUN_005084c0 at 00508515
 ;   support_trstream.cpp_COutStreamFile_tell_FUN_00574960 at 00574972
 ;

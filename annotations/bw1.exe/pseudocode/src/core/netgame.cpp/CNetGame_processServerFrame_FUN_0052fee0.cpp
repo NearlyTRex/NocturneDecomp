@@ -60,12 +60,12 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
     if (this_ptr->local_player_index < 0) {
       _DAT_01d1d400 = "..\\core\\netgame.cpp";
       _DAT_01d1d404 = 0x8f6;
-      core_main_c_FUN_005030e0("CNetGame::processServerFrame - I'm not in player list!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - I'm not in player list!");
     }
     if (this_ptr->local_player_index != this_ptr->server_player_index) {
       _DAT_01d1d400 = "..\\core\\netgame.cpp";
       _DAT_01d1d404 = 0x8f7;
-      core_main_c_FUN_005030e0("CNetGame::processServerFrame - I'm not the server in the player list!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - I'm not the server in the player list!");
     }
     iVar2 = 0;
     if (0 < this_ptr->player_count) {
@@ -124,7 +124,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
     if (0x1ff < _DAT_01d715a8) {
       _DAT_01d1d400 = "..\\core\\netgame.cpp";
       _DAT_01d1d404 = 299;
-      core_main_c_FUN_005030e0("allocSimFrame - sim history list full");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
     }
     sim_frame = (SSimFrame *)(_DAT_01d715a8 * 0x6c + 0x1d715ac);
     _DAT_01d715a8 = _DAT_01d715a8 + 1;
@@ -164,7 +164,7 @@ LAB_0053008d:
           if (iVar2 < 1) {
             _DAT_01d1d400 = "..\\core\\netgame.cpp";
             _DAT_01d1d404 = 0x93b;
-            core_main_c_FUN_005030e0("CNetGame::processServerFrame - player is ahead of the server!?!!");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - player is ahead of the server!?!!");
           }
           if (5 < iVar2) {
             iVar2 = 5;
@@ -185,7 +185,7 @@ LAB_00530282:
             if (iVar6 < 0) {
               _DAT_01d1d400 = "..\\core\\netgame.cpp";
               _DAT_01d1d404 = 0x94d;
-              core_main_c_FUN_005030e0("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
+              core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
             }
             iVar6 = iVar6 * 0x6c;
             puVar5 = (uint *)(iVar6 + 0x1d715ac);

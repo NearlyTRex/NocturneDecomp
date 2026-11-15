@@ -892,15 +892,34 @@
     "calls":[
       "004495a0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonActor",
+    "conv":"__stack2_esi",
     "instructions":22,
-    "method":"FUN_00408d30",
-    "name":"core_actor.cpp_FUN_00408d30",
-    "receiver":false,
+    "method":"inverseTransformVector",
+    "name":"core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/actor.cpp",
     "variadic":false
@@ -3820,14 +3839,80 @@
     "calls":[
       "0042c410"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":198,
     "method":"blitSpanBasedSpriteClipped",
     "name":"cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042cc30",
+    "params":[
+      {
+        "name":"sprite_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"span_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"screen_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"screen_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -3966,14 +4051,40 @@
       "005b8010",
       "005b89c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":110,
-    "method":"FUN_0042e130",
-    "name":"cockpit_ckptutil.c_FUN_0042e130",
+    "method":"saveEdgeListFile",
+    "name":"cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"edge_lists",
+        "type":{
+          "kind":"struct",
+          "name":"SEdgeList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"edge_list_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -4142,14 +4253,44 @@
   },
   {
     "addr":"00430cb0",
-    "conv":"unknown",
-    "instructions":49,
+    "calls":[
+      "00430750",
+      "004e4500"
+    ],
+    "conv":"__cdecl",
+    "instructions":98,
     "method":"clipPolygonLeftPlane",
     "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00430cb0",
+    "params":[
+      {
+        "name":"input_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":2
+        }
+      },
+      {
+        "name":"output_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":2
+        }
+      },
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4157,14 +4298,44 @@
   },
   {
     "addr":"00430f30",
-    "conv":"unknown",
-    "instructions":49,
+    "calls":[
+      "00430950",
+      "004e4500"
+    ],
+    "conv":"__cdecl",
+    "instructions":98,
     "method":"clipPolygonBottomPlane",
     "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_00430f30",
+    "params":[
+      {
+        "name":"input_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":2
+        }
+      },
+      {
+        "name":"output_vertices",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":2
+        }
+      },
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4927,14 +5098,41 @@
       "004be8a0",
       "00558d50"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__stack3_esi",
     "instructions":44,
-    "method":"FUN_0043c6b0",
-    "name":"core_dcamera.cpp_FUN_0043c6b0",
-    "receiver":false,
+    "method":"screenToWorldCoord",
+    "name":"core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0",
+    "params":[
+      {
+        "name":"screen_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"screen_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"output_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -5067,7 +5265,8 @@
     "addr":"00443db0",
     "callers":[
       "00444220",
-      "00444650"
+      "00444650",
+      "00445a30"
     ],
     "calls":[
       "004e4500"
@@ -5206,19 +5405,20 @@
     "name":"core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00444830",
     "params":[
       {
-        "name":"param_2",
+        "name":"file_handle",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"vertex_buffer_base",
         "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       }
     ],
@@ -5285,8 +5485,11 @@
   },
   {
     "addr":"00445a30",
+    "calls":[
+      "00443db0"
+    ],
     "conv":"unknown",
-    "instructions":398,
+    "instructions":786,
     "method":"FUN_00445a30",
     "name":"core_dcube.cpp_FUN_00445a30",
     "receiver":false,
@@ -5466,15 +5669,34 @@
       "005b22f0",
       "005b4300"
     ],
-    "conv":"unknown",
+    "cls":"CMatrix3x3f",
+    "conv":"__stack2_esi",
     "instructions":46,
-    "method":"FUN_00449530",
-    "name":"core_dirmat.cpp_FUN_00449530",
-    "receiver":false,
+    "method":"transformVector",
+    "name":"core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530",
+    "params":[
+      {
+        "name":"input",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/dirmat.cpp",
     "variadic":false
@@ -9084,6 +9306,7 @@
       "0049a3a0",
       "0049ccd0",
       "0049f2e0",
+      "004ac4c0",
       "005a14e0",
       "005a3560",
       "005a5460"
@@ -9093,9 +9316,6 @@
     ],
     "cls":"CFireEffect",
     "conv":"__cdecl",
-    "data_refs":[
-      "004ac6fb"
-    ],
     "instructions":32,
     "method":"createSmokeParticle",
     "name":"core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230",
@@ -10872,6 +11092,7 @@
       "00408a80",
       "00438af0",
       "0044fd00",
+      "0044fd70",
       "004accb0"
     ],
     "cls":"CFrankenstienMachine",
@@ -10879,7 +11100,7 @@
     "data_refs":[
       "005f720c"
     ],
-    "instructions":40,
+    "instructions":160,
     "method":"setup",
     "name":"core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004ac230",
     "receiver":true,
@@ -13293,15 +13514,33 @@
   },
   {
     "addr":"004e8d30",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":74,
     "method":"transformWorldToView",
     "name":"engine_matrix.c_transformWorldToView_FUN_004e8d30",
+    "params":[
+      {
+        "name":"input_coords",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_coords",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"engine/matrix.c",
     "variadic":false
@@ -14219,18 +14458,18 @@
     "name":"core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0",
     "params":[
       {
-        "name":"param_2",
+        "name":"actor",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"flags",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"uint",
           "ptr":0
         }
       }
@@ -15702,7 +15941,7 @@
       "0044fd20"
     ],
     "cls":"CPlatform",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005fa058",
       "005fac78"
@@ -18570,17 +18809,18 @@
       "00554c80",
       "005b7790"
     ],
-    "conv":"unknown",
+    "cls":"CDirectSoundDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbcc0"
     ],
     "instructions":102,
-    "method":"FUN_00555130",
-    "name":"sound_snddx.cpp_FUN_00555130",
-    "receiver":false,
+    "method":"start",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_start_FUN_00555130",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -18601,7 +18841,7 @@
         "name":"distance_in_feet",
         "type":{
           "kind":"builtin",
-          "name":"double",
+          "name":"float",
           "ptr":0
         }
       }
@@ -18648,17 +18888,44 @@
       "00554ad0",
       "005b7790"
     ],
-    "conv":"unknown",
+    "cls":"CDirectSoundDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbcf8"
     ],
     "instructions":66,
-    "method":"FUN_005561b0",
-    "name":"sound_snddx.cpp_FUN_005561b0",
-    "receiver":false,
+    "method":"unlockSample",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005561b0",
+    "params":[
+      {
+        "name":"buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -18672,8 +18939,34 @@
       "005fbce8"
     ],
     "instructions":27,
-    "method":"commitDeferredSettings",
-    "name":"sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005577b0",
+    "method":"setReverb",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_setReverb_FUN_005577b0",
+    "params":[
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"decay_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damping",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -18768,17 +19061,18 @@
   },
   {
     "addr":"00558b30",
-    "conv":"unknown",
+    "cls":"CWavOutDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbd48"
     ],
     "instructions":1,
-    "method":"FUN_00558b30",
-    "name":"sound_sndwav.cpp_FUN_00558b30",
-    "receiver":false,
+    "method":"commitDeferredSettings",
+    "name":"sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_00558b30",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndwav.cpp",
@@ -18786,35 +19080,73 @@
   },
   {
     "addr":"00558bb0",
-    "conv":"unknown",
+    "cls":"CWavOutDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbd68"
     ],
     "instructions":2,
-    "method":"FUN_00558bb0",
-    "name":"sound_sndwav.cpp_FUN_00558bb0",
-    "receiver":false,
+    "method":"lockSample",
+    "name":"sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_00558bb0",
+    "params":[
+      {
+        "name":"buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"void",
+      "ptr":1
     },
     "tu":"sound/sndwav.cpp",
     "variadic":false
   },
   {
     "addr":"00558c30",
-    "conv":"unknown",
+    "cls":"CWavOutDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005fbd84"
     ],
     "instructions":2,
-    "method":"FUN_00558c30",
-    "name":"sound_sndwav.cpp_FUN_00558c30",
-    "receiver":false,
+    "method":"isSfxPlaying",
+    "name":"sound_sndwav.cpp_CWavOutDevice_isSfxPlaying_FUN_00558c30",
+    "params":[
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndwav.cpp",
@@ -19317,15 +19649,26 @@
     "calls":[
       "005469a0"
     ],
-    "conv":"unknown",
+    "cls":"CStranger",
+    "conv":"__stack_esi",
     "instructions":70,
-    "method":"FUN_00565f30",
-    "name":"core_stranger.cpp_FUN_00565f30",
-    "receiver":false,
+    "method":"getHandsMidpoint",
+    "name":"core_stranger.cpp_CStranger_getHandsMidpoint_FUN_00565f30",
+    "params":[
+      {
+        "name":"out_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/stranger.cpp",
     "variadic":false
@@ -20188,7 +20531,8 @@
   {
     "addr":"00579030",
     "callers":[
-      "00579890"
+      "00579890",
+      "0057ad10"
     ],
     "calls":[
       "00579360",
@@ -20196,9 +20540,6 @@
     ],
     "cls":"CSocket",
     "conv":"__cdecl",
-    "data_refs":[
-      "0057adc9"
-    ],
     "instructions":15,
     "method":"createSocket",
     "name":"support_trisock.cpp_CSocket_createSocket_FUN_00579030",
@@ -20516,6 +20857,9 @@
   },
   {
     "addr":"0057f0b0",
+    "callers":[
+      "0057e760"
+    ],
     "calls":[
       "00408d70",
       "00408de0",
@@ -20529,17 +20873,25 @@
       "005838f0",
       "005b7f5f"
     ],
-    "conv":"unknown",
-    "data_refs":[
-      "0057e956"
-    ],
+    "cls":"CTurret",
+    "conv":"__cdecl",
     "instructions":413,
-    "method":"FUN_0057f0b0",
-    "name":"core_turret.cpp_FUN_0057f0b0",
-    "receiver":false,
+    "method":"updateTargeting",
+    "name":"core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/turret.cpp",
@@ -20883,7 +21235,7 @@
       "0044fd20"
     ],
     "cls":"CWeapon",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005f2bfc",
       "005f5c9c",
@@ -21194,15 +21546,41 @@
       "005afe20",
       "005b4860"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":53,
-    "method":"FUN_00591530",
-    "name":"core_xform.cpp_FUN_00591530",
+    "method":"transformVector3x4",
+    "name":"core_xform.cpp_transformVector3x4_FUN_00591530",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -21409,15 +21787,33 @@
       "004e4500",
       "005927e0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":189,
     "method":"inverse",
     "name":"core_xform.cpp_inverse_FUN_00592830",
+    "params":[
+      {
+        "name":"matrix_in",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix_out",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -21429,16 +21825,14 @@
       "00436e80",
       "00455170",
       "00518310",
-      "00567430"
+      "00567430",
+      "0057e760"
     ],
     "calls":[
       "005b98f6",
       "005b9989"
     ],
     "conv":"unknown",
-    "data_refs":[
-      "0057eb55"
-    ],
     "instructions":130,
     "method":"FUN_005940b0",
     "name":"core_xform.cpp_FUN_005940b0",

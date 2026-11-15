@@ -42,6 +42,7 @@
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SLineStrip.h"
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -59,17 +60,17 @@ void __cdecl engine_2d_c_drawLine_FUN_004011a0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401280(int x_coord,int y_coord,uint depth_value);
 void __cdecl engine_2d_c_drawLine3D_FUN_00401310(int x1,int y1,uint z1,int x2,int y2,uint z2);
 int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int blue,int start_index,int end_index);
-void engine_2d_c_FUN_00401590(char *param_1);
+void __cdecl engine_2d_c_loadPaletteFile_FUN_00401590(char *filename);
 int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401780(int x_3d,int y_3d,int z_depth);
 void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401810(int left,int top,int right,int bottom);
 int __cdecl engine_2d_c_getStringWidth_FUN_004018b0(char *text);
-int engine_2d_c_drawCharacterMasked_FUN_00401910(void);
+int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos);
 int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int x_pos,int y_pos,int color);
 int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_drawTextWrapped_FUN_00401c70(char *text,int x_start,int y_start,int x_max,int y_max);
 void __cdecl engine_2d_c_drawTextMultiline_FUN_00401d00(char *text,int x_start,int y_start,int x_max,int y_max);
-void engine_2d_c_wrapTextToWidth_FUN_00401d90(void);
+void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d90(char *input_text,int max_width,char *output_buffer);
 void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401ec0(char *text,int x_start,int y_start,int x_max,int y_max,int color);
 void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f50(char *text,int x_start,int y_start,int x_max,int y_max,int color);
 void __cdecl engine_2d_c_drawText_FUN_00401fe0(char *text,int x,int y);
@@ -101,7 +102,7 @@ void __cdecl engine_2d_c_drawRect_FUN_00403170(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_fillRectColor_FUN_004031c0(int x1,int y1,int x2,int y2,int color);
 void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403250(int x1,int y1,int x2,int y2,int fill_color,int border_color);
 void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void);
-uint engine_2d_c_getInputWithPrompt_FUN_00403310(void);
+int __cdecl engine_2d_c_getInputWithPrompt_FUN_00403310(char *buffer,int max_length,int x,int y,char *prompt);
 void __cdecl engine_2d_c_setSolidColor_FUN_004033f0(int red_component,int green_component,int blue_component);
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void);
@@ -129,7 +130,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_0
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404320(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_00404370(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404410(void);
-int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1);
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_004048e0(SMRGLHeaderPrimitive *prim);
@@ -209,17 +210,17 @@ char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(CDemonA
 void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408850(CDemonActor *this_ptr);
 void core_actor_cpp_FUN_00408890(void);
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(CDemonActor *this_ptr);
-CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408910(CDemonActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408910(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408950(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408960(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408990(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height );
 undefined4 core_actor_cpp_FUN_004089f0(void);
 float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
-void core_actor_cpp_FUN_00408ac0(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408b00(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408b40(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408bb0(int param_1,float *param_2);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor *this_ptr,CVector3f *input,CVector3f *output);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor *this_ptr,CVector3f *input_vector,CVector3f *output_vector);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor *this_ptr,CVector3f *input_local_point,CVector3f *output_world_point);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor *this_ptr,CVector3f *input_world_point,CVector3f *output_local_point);
 uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408c20(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408c40(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408c60(CDemonActor *this_ptr,char *sound_name,float delay);
@@ -227,7 +228,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408c90(C
 void core_actor_cpp_FUN_00408cc0(void);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408cd0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408d60(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
-undefined4 * core_actor_cpp_FUN_00408ec0(int param_1,int param_2,uint param_3);
+undefined4 * core_actor_cpp_FUN_00408ec0(CDemonActor *param_1,int param_2,uint param_3);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0(CDemonActor *this_ptr);
@@ -325,7 +326,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(CAmmo *this_ptr);
 void __cdecl core_ammo_cpp_CAmmo_setup_FUN_0040dc50(CAmmo *this_ptr);
 void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040dc70(CAmmo *this_ptr,float delta_time);
 int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_0040dc80(CAmmo *this_ptr);
-CBoundingBox3D * __cdecl core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040dd00(CAmmo *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040dd00(CAmmo *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammo_cpp_CAmmo_archive_FUN_0040dd40(CAmmo *this_ptr);
 ECollisionType __cdecl core_ammo_cpp_CAmmo_getCollisionType_FUN_0040dda0(CAmmo *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(CAmmo *this_ptr,char *weapon_class_name);
@@ -341,7 +342,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040e190(CAmmoBox *this_ptr,f
 void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e1a0(CAmmoBox *this_ptr,float open_pct);
 void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory);
 int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040e320(CAmmoBox *this_ptr);
-CBoundingBox3D * __cdecl core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040e400(CAmmoBox *this_ptr);
 ECollisionType __cdecl core_ammobox_cpp_CAmmoBox_getCollisionType_FUN_0040e4d0(CAmmoBox *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_0040e4f0(CAmmoBox *this_ptr,CDemonActor *carrier);
@@ -355,7 +356,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040e680(CAnvil *this_ptr,float d
 int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040e7b0(CAnvil *this_ptr);
 void __cdecl core_anvil_cpp_CAnvil_archive_FUN_0040e860(CAnvil *this_ptr);
 ECollisionType __cdecl core_anvil_cpp_CAnvil_getCollisionType_FUN_0040e8e0(CAnvil *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040e8f0(CAnvil *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040e8f0(CAnvil *this_ptr,CBoundingBox3D *out_box);
 CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_0040e930(CAnvil *this_ptr,uint flags);
 void __cdecl core_armour_cpp_staticInit_FUN_0040e980(void);
 CArmour * __cdecl core_armour_cpp_factoryFuncArmour_FUN_0040e9b0(void);
@@ -379,7 +380,7 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ef20(CBackgroundAct
 void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_0040ef60(CBackgroundActor *this_ptr,float delta_time);
 void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ef70(CBackgroundActor *this_ptr,int layer_flag);
 int __cdecl core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_0040f000(CBackgroundActor *this_ptr);
-CBoundingBox3D * __cdecl core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040f010(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040f010(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_backgnd_cpp_CBackgroundActor_archive_FUN_0040f050(CBackgroundActor *this_ptr);
 ECollisionType __cdecl core_backgnd_cpp_CBackgroundActor_getCollisionType_FUN_0040f0e0(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_backgnd_cpp_CBackgroundActor_getGroundType_FUN_0040f120(CBackgroundActor *this_ptr);

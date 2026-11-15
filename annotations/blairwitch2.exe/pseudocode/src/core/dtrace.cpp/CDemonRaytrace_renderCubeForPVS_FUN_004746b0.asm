@@ -83,7 +83,7 @@
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0
@@ -544,8 +544,8 @@ section .text
     PUSH 0x5d1b86                       ; 00474d16 | = "Too many drawn cubes.  Need to recomp..."
     MOV dword ptr [0x01d046a0],ESI      ; 00474d1b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00474d21 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00474d27
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00474d27
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00474d2c
     ADD ESP,0xc4                        ; 00474d2f
     POP EBP                             ; 00474d35
@@ -575,7 +575,7 @@ section .text
     MOV ECX,dword ptr [0x0060b27c]      ; 00474d88 | DAT_0060b27c
     PUSH EAX                            ; 00474d8e
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474d8f
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474d94
     FISTP dword ptr [ESP + 0x1c]        ; 00474d95
     MOV dword ptr [ESP + 0x24],EBX      ; 00474d99
@@ -606,7 +606,7 @@ section .text
     MOV ECX,dword ptr [0x0060b27c]      ; 00474dfc | DAT_0060b27c
     PUSH EAX                            ; 00474e02
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474e03
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474e08
     FISTP dword ptr [ESP + 0x1c]        ; 00474e09
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 ; 00474e0d
@@ -635,7 +635,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EDX      ; 00474e6b
     PUSH EAX                            ; 00474e6f
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474e70
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474e75
     FISTP dword ptr [ESP + 0x1c]        ; 00474e76
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 ; 00474e7a
@@ -664,7 +664,7 @@ section .text
     MOV EBX,0x2                         ; 00474ed6
     PUSH EAX                            ; 00474edb
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474edc
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474ee1
     FISTP dword ptr [ESP + 0x1c]        ; 00474ee2
     MOV dword ptr [ESP + 0x24],EBX      ; 00474ee6
@@ -697,7 +697,7 @@ section .text
     MOV ECX,dword ptr [0x0060b27c]      ; 00474f54 | DAT_0060b27c
     PUSH EAX                            ; 00474f5a
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474f5b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474f60
     FISTP dword ptr [ESP + 0x1c]        ; 00474f61
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 ; 00474f65
@@ -727,7 +727,7 @@ section .text
     MOV EBX,0x1                         ; 00474fc8
     PUSH EAX                            ; 00474fcd
     CALL crt_math.c_round_FUN_005b7ff0  ; 00474fce
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 00474fd3
     FISTP dword ptr [ESP + 0x1c]        ; 00474fd4
     MOV dword ptr [ESP + 0x24],EBX      ; 00474fd8

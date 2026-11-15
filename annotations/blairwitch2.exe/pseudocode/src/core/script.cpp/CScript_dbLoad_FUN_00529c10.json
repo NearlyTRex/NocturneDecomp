@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 259,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 121,
     "suspect_count": 10,
     "suspect_types": [
       "alloc_magic_size",
@@ -18,7 +18,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 443
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "00529f90",
@@ -99,7 +99,7 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     },
     {
       "addr": "00460aa0",
@@ -444,7 +444,7 @@
       "line": 28,
       "match": "DAT_005e4ea3",
       "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(\"world\",filename,&DAT_005e4ea3);",
+      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00460c70(\"world\",filename,&DAT_005e4ea3);",
       "type": "undefined_data"
     },
     {
@@ -457,7 +457,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 121,
       "match": "(SDialogEntry *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
+      "line": 121,
       "match": "(int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -473,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 77,
+      "line": 74,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -481,7 +481,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 99,
+      "line": 96,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -489,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 121,
+      "line": 118,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x226 == sizeof(SDialogEntry). Replace the magic with sizeof(SDialogEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 112,
+      "line": 109,
       "match": "(SDialogEntry*) alloc stride 0x226",
       "severity": "moderate",
       "text": "(SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226)",

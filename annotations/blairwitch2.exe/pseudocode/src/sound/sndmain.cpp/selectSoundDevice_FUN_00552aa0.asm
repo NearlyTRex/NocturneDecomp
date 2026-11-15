@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_00552980
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00552b10
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5e9053                       ; 00552ada | = "selectSoundDevice - device already open."
     MOV dword ptr [0x01d046a0],EDX      ; 00552adf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00552ae5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00552aeb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00552aeb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00552af0
     JMP 0x00552aae                      ; 00552af3
         ;   XREF to: 00552aae (UNCONDITIONAL_JUMP)  ; LAB_00552aae

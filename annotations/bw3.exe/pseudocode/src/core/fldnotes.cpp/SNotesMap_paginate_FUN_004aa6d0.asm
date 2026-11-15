@@ -23,7 +23,7 @@
 ;   core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004aa780
 ;   core_fldnotes.cpp_STextView_addText_FUN_004a8ed0
 ;   core_fldnotes.cpp_STextView_placeResource_FUN_004a9150
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5c117f                       ; 004aa6f6 | = "Out of memory"
     MOV dword ptr [0x01d71de0],ECX      ; 004aa6fb | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004aa701 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004aa707
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa707
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa70c
     POP EDI                             ; 004aa70f
     PUSH EBX                            ; 004aa710
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5c11a7                       ; 004aa75d | = "NotesMap::paginate - unable to add re..."
     MOV dword ptr [0x01d71de0],EBP      ; 004aa762 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004aa768 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004aa76d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa76d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa772
     MOV EAX,0x1                         ; 004aa775
     POP EBP                             ; 004aa77a

@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01d94b98
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fread_FUN_005a3890
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5c9f89                       ; 004fd66a | = "Cannot read or write more than %d bit..."
     MOV dword ptr [0x01d71de0],ECX      ; 004fd66f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004fd675 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fd67b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd67b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004fd680
     JMP 0x004fd5fb                      ; 004fd683
         ;   XREF to: 004fd5fb (UNCONDITIONAL_JUMP)  ; LAB_004fd5fb

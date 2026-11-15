@@ -59,11 +59,11 @@ int __cdecl integerSquareRoot(int value);
 
 // Original: engine_matrix.c_normalizeVector3DFixed_FUN_004e6140
 // Address: 004e6140
-void normalizeVector3DFixed(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFixed(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0
 // Address: 004e61c0
-int * normalizeVector3DFloat(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFloat(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_vectorLength3DToInt_FUN_004e62a0
 // Address: 004e62a0

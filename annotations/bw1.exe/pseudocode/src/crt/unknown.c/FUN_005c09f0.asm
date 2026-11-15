@@ -13,7 +13,7 @@
 ;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538d13
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538e84
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044cdf0 at 0044ce40
-;   core_dcube.cpp_FUN_00457d70 at 00457d9d
+;   core_dcube.cpp_CDemonCube_freeMemory_FUN_00457d70 at 00457d9d
 ;   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0045da10 at 0045da1f
 ;   ... and 66 more
 ;

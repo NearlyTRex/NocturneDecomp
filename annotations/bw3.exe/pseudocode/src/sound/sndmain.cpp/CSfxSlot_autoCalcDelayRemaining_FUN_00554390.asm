@@ -23,7 +23,7 @@
 ;   undefined4 DAT_02cf341c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x5d309f                       ; 005543be | = "SfxSlot::autoCalcDelayRemaining - mus..."
     MOV dword ptr [0x01d71de0],ECX      ; 005543c3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005543c9 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005543cf
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005543cf
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005543d4
     POP ESI                             ; 005543d7
     JMP 0x005543a1                      ; 005543d8

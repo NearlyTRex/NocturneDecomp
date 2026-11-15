@@ -27,7 +27,7 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
+  CVector3f CStack_20;
   
   bVar8 = 0;
   if (1.0 <= this_ptr->morph_time) {
@@ -44,7 +44,8 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
                 (0x01D81080,this_ptr->target_actor);
       this_ptr_01 = 0x01D81080;
       this_ptr->target_actor = (CDemonActor *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_01,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_01,(CDemonActor *)this_ptr,1);
     }
   }
   else {
@@ -71,13 +72,15 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar7);
   }
   if (iVar4 != 0) {
-    core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              ((CDemonActor *)this_ptr,&(this_ptr->base).base.model.accumulated_root_motion,
+               &CStack_20);
     pCVar1 = &(this_ptr->base).base.base.location;
-    fStack_2c = fStack_20;
+    fStack_2c = CStack_20.x;
     *(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8);
+         *(uint *)((int)&CStack_20 + (uint)bVar8 * -8 + 4);
     *(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+         *(uint *)((int)&CStack_20 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     fVar2 = (this_ptr->base).base.base.location.position.y;
     fVar3 = (this_ptr->base).base.base.location.position.z;
     (pCVar1->position).x = (pCVar1->position).x + fStack_2c;

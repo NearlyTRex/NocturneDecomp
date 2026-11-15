@@ -140,7 +140,7 @@ CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00509ae0(CNPC *this_ptr);
 CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags);
 CFont * __cdecl core_npc_cpp_FUN_00509b90(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_FUN_00509bb0(CFont *this_ptr,uint flags);
-undefined4 engine_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+undefined4 engine_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5);
 void engine_palette_cpp_FUN_00509d90(int *param_1);
 undefined4 engine_palette_cpp_FUN_00509e00(void);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00509e10(CParticle *this_ptr);
@@ -197,7 +197,7 @@ int __cdecl core_pendulum_cpp_didPhaseCross_FUN_0050e610(float threshold,float o
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_0050e700(CPendulum *this_ptr,float delta_time);
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0050ed00(CPendulum *this_ptr,float delta_time);
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_0050ee70(CPendulum *this_ptr);
-CBoundingBox3D * __cdecl core_pendulum_cpp_CPendulum_getBoundingBox_FUN_0050eef0(CPendulum *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_pendulum_cpp_CPendulum_getBoundingBox_FUN_0050eef0(CPendulum *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_0050ef30(CPendulum *this_ptr);
 ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_0050f0d0(CPendulum *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0050f110(CPendulum *this_ptr);

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; XREF[3]:
-;   core_dtrace.cpp_FUN_00473670 at 00473687
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670 at 00473687
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0 at 00504431
 ;   engine_pod.cpp_FUN_00513d20 at 00513e75
 ;
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
@@ -49,8 +49,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047ed6b | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d71de0],ECX      ; 0047ed70 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0047ed76 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047ed7c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047ed7c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047ed81
     MOV EAX,[0x01c5b0e0]                ; 0047ed84 | DAT_01c5b0e0
         ;   Label: LAB_0047ed84

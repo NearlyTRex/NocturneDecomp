@@ -12,7 +12,7 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004e5f40
 ;   core_weapon.cpp_CWeapon_process_FUN_005ad770
 ;
@@ -73,8 +73,8 @@ section .text
     PUSH EBX                            ; 00509a2c
     LEA ESI,[ESP + 0x34]                ; 00509a2d
     LEA EDI,[ESP + 0x1c]                ; 00509a31
-    CALL core_actor.cpp_FUN_00408b40    ; 00509a35
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00509a35
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x34]                ; 00509a3a
     ADD ESP,0x8                         ; 00509a3e
     MOVSD ES:EDI,ESI                    ; 00509a41

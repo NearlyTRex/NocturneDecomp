@@ -22,7 +22,7 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004515b0(CVector3f *vertex1,CVec
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x6e;
-    core_main_c_FUN_004e4330("Bad clip!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
   fVar2 = -(vertex1->z * (float)plane_nz +
            vertex1->y * (float)plane_ny + (float)plane_nx * vertex1->x + (float)plane_d) / fVar2;

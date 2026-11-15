@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_free_FUN_0043e6a0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH 0x5d671a                       ; 0043e676 | = "CCloth::allocMemory - Out of memory"
     MOV dword ptr [0x01d1d400],ECX      ; 0043e67b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0043e681 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043e687
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043e687
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043e68c
     POP EBX                             ; 0043e68f
     RET                                 ; 0043e690

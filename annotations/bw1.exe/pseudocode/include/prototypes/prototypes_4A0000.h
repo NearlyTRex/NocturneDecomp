@@ -41,7 +41,7 @@
 // =============================================================================
 
 ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_004a02d0(CEmitter *this_ptr,SCollisionInfo *collision_info);
-void core_emitter_cpp_FUN_004a02e0(int param_1);
+void core_emitter_cpp_FUN_004a02e0(CDemonActor *param_1);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a0390(CEmitter *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a03e0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr);
@@ -137,7 +137,7 @@ int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004ab440(CFilmReel *thi
 void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004ab4c0(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004ab4e0(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004ab530(CFilmReel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004ab5b0(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004ab5c0(CFilmProjector *this_ptr);

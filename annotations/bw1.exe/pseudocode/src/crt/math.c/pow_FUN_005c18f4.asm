@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_pow_FUN_005c18f4(void)
+; float10 __fpustack_safe crt_math_c_pow_FUN_005c18f4(float10 base,float10 exp)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c

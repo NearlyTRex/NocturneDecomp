@@ -7,8 +7,8 @@
 ; SFoundFileInfo * Stack[0x4]:4   context
 ;
 ; XREF[5]:
-;   engine_dosio.cpp_FUN_00479180 at 004791f7
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0 at 00478fd6
+;   engine_dosio.cpp_getFile_FUN_00479180 at 004791f7
 ;   engine_dosio.cpp_reopenFileStream_FUN_00479240 at 004792c8
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 00596836
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 at 005a100e

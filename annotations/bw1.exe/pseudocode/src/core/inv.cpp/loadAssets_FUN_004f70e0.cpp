@@ -18,7 +18,8 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
   char *pcVar5;
   
   _DAT_01d1bc5c = DAT_0061b49c;
-  p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005e6087,"invsize.txt",&DAT_005e6078);
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005e6087,"invsize.txt",&DAT_005e6078)
+  ;
   if (p_Var2 != (_FILE *)0x0) {
     _fscanf(p_Var2,"%d,%d\n");
     _fclose(p_Var2);
@@ -116,7 +117,8 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1baf4,2,2);
   }
   _DAT_01d08dc8 = 0;
-  p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005e61d6,"itemlist.txt",&DAT_005e61c6);
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00479180
+                     (&DAT_005e61d6,"itemlist.txt",&DAT_005e61c6);
   if (p_Var2 != (_FILE *)0x0) {
     while ((p_Var2->_flag & 0x10) == 0) {
       iVar3 = core_inv_cpp_loadItem_FUN_004f6e90

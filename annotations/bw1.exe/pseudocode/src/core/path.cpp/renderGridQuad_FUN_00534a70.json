@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 238,
+    "complexity_score": 255,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 14,
+    "pseudocode_lines": 65,
+    "suspect_count": 17,
     "suspect_types": [
-      "extra_output",
+      "suspect_float",
+      "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 260
+    "total_lines": 242
   },
   "cross_references": [],
   "function": {
@@ -229,108 +230,132 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "text": "float unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
       "line": 13,
-      "match": "extraout_EDX",
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "int *extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
       "line": 15,
-      "match": "extraout_EDX_01",
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "int *extraout_EDX_01;",
-      "type": "extra_output"
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar5 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar5 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "round((double)((float)(int)fVar1 + unaff_EBX));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar5 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "round((double)((float)(int)ROUND(dVar7) + unaff_ESI));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar5 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 45,
+      "match": "7.649255e-39",
+      "severity": "mild",
+      "text": "round((double)((float)(int)fVar2 - 7.649255e-39));",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar5 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "DAT_00612560->vertex_buffer_ptr->r = iStack_8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 51,
-      "match": "extraout_EDX",
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);",
-      "type": "extra_output"
+      "text": "pCVar5->vertex_buffer_ptr->g = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_EDX_00",
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);",
-      "type": "extra_output"
+      "text": "pCVar5->vertex_buffer_ptr[1].g = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 66,
-      "match": "extraout_EDX_01",
+      "description": "Unaffected register variable",
+      "line": 59,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);",
-      "type": "extra_output"
+      "text": "pCVar5->vertex_buffer_ptr[2].g = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "this_ptr = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "DAT_00612560->vertex_buffer_ptr->r = iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
-      "match": "extraout_ECX",
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr->g = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr[1].g = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr[2].g = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr[3].g = extraout_ECX;",
-      "type": "extra_output"
+      "text": "pCVar5->vertex_buffer_ptr[3].g = unaff_EBP;",
+      "type": "unaffected_reg"
     }
   ]
 }

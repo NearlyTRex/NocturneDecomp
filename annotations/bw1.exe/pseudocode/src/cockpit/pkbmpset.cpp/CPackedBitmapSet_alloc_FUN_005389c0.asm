@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00538990
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c___vec_new_FUN_005c2694
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -57,7 +57,7 @@ section .text
     ADD ESP,0x4                         ; 00538a08
     PUSH EAX                            ; 00538a0b
     CALL crt_memory.c___vec_new_FUN_005c2694 ; 00538a0c
-        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_005c2694()
+        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_005c2694(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00538a11
     MOV dword ptr [ESI + 0x4],EAX       ; 00538a14
     TEST EAX,EAX                        ; 00538a17
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 00538a3d
     MOV dword ptr [0x01d1d404],EDI      ; 00538a3e | DAT_01d1d404
     MOV dword ptr [0x01d1d400],ECX      ; 00538a44 | DAT_01d1d400
-    CALL core_main.c_FUN_005030e0       ; 00538a4a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538a4a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00538a4f
     MOV dword ptr [ESI],EBX             ; 00538a52
         ;   Label: LAB_00538a52

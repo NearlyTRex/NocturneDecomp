@@ -19,7 +19,7 @@
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_FUN_00534ea0
@@ -39,8 +39,8 @@ section .text
     PUSH EBX                            ; 0040ca4f
     LEA ESI,[ESP + 0x14]                ; 0040ca50
     LEA EDI,[ESP + 0x2c]                ; 0040ca54
-    CALL core_actor.cpp_FUN_00408d70    ; 0040ca58
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0040ca58
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 0040ca5d
     ADD ESP,0x8                         ; 0040ca61
     MOVSD ES:EDI,ESI                    ; 0040ca64

@@ -31,7 +31,7 @@ void cockpit_ckptutil_c_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int
     _sprintf(acStack_130,"Invalid transparent color index: %d");
     _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
     _DAT_01d1d404 = 0x939;
-    core_main_c_FUN_005030e0(acStack_130);
+    core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_130);
   }
   iStack_20 = 0;
   if (0 < param_5) {
@@ -73,7 +73,7 @@ void cockpit_ckptutil_c_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int
         _sprintf(acStack_130,"Too many spans: bitmap %s, spans %d, scanline %d");
         _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
         _DAT_01d1d404 = 0x969;
-        core_main_c_FUN_005030e0(acStack_130);
+        core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_130);
       }
       if (bVar1) {
         piStack_1c[iStack_14 + 0x11] = (iStack_30 - piStack_1c[iStack_14 + 1]) + 1;

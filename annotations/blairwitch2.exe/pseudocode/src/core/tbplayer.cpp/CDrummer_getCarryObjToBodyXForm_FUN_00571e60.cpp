@@ -17,73 +17,61 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN
   byte bVar4;
   CMatrix3x4f CStack_cc;
   CMatrix3x4f CStack_9c;
-  uint uStack_6c;
-  uint uStack_68;
-  uint uStack_64;
+  CVector3f CStack_6c;
   uint uStack_60;
   uint uStack_5c;
   uint uStack_58;
-  uint uStack_54;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
   uint uStack_24;
   uint uStack_20;
   uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
-  uint uStack_10;
+  CVector3f CStack_18;
   
   bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
-    uStack_48 = 0x3f228f5c;
-    uStack_44 = 0xbde353f8;
-    uStack_40 = 0xbe322d0e;
-    if (&uStack_18 != &uStack_48) {
-      uStack_14 = 0xbde353f8;
-      uStack_10 = 0xbe322d0e;
-      uStack_18 = 0x3f228f5c;
+    CStack_48.x = 0.635;
+    CStack_48.y = -0.111;
+    CStack_48.z = -0.174;
+    if (&CStack_18 != &CStack_48) {
+      CStack_18.y = -0.111;
+      CStack_18.z = -0.174;
+      CStack_18.x = 0.635;
     }
     uStack_1c = 0;
     uStack_20 = 0;
     uStack_24 = 0;
-    uStack_3c = 0;
-    uStack_38 = 0;
-    uStack_34 = 0;
-    if (&uStack_54 == &uStack_3c) goto LAB_00571f40;
+    CStack_3c.x = 0.0;
+    CStack_3c.y = 0.0;
+    CStack_3c.z = 0.0;
+    if (&CStack_54 == &CStack_3c) goto LAB_00571f40;
   }
   else {
-    uStack_68 = 0xbde353f8;
-    uStack_64 = 0xbe322d0e;
-    uStack_6c = 0xbf228f5c;
-    if (&uStack_18 != &uStack_6c) {
-      uStack_14 = 0xbde353f8;
-      uStack_10 = 0xbe322d0e;
-      uStack_18 = 0xbf228f5c;
+    CStack_6c.y = -0.111;
+    CStack_6c.z = -0.174;
+    CStack_6c.x = -0.635;
+    if (&CStack_18 != &CStack_6c) {
+      CStack_18.y = -0.111;
+      CStack_18.z = -0.174;
+      CStack_18.x = -0.635;
     }
     uStack_58 = 0;
     uStack_5c = 0;
     uStack_60 = 0;
-    uStack_30 = 0;
-    uStack_2c = 0;
-    uStack_28 = 0;
-    if (&uStack_54 == &uStack_30) goto LAB_00571f40;
+    CStack_30.x = 0.0;
+    CStack_30.y = 0.0;
+    CStack_30.z = 0.0;
+    if (&CStack_54 == &CStack_30) goto LAB_00571f40;
   }
-  uStack_50 = 0;
-  uStack_54 = 0;
-  uStack_4c = 0;
+  CStack_54.y = 0.0;
+  CStack_54.x = 0.0;
+  CStack_54.z = 0.0;
 LAB_00571f40:
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-            (&CStack_cc,&uStack_18,&uStack_54);
+            (&CStack_cc,&CStack_18,&CStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_9c);

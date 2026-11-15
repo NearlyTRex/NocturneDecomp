@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(float *param_1,float *param_2,int param_3)
+; void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   output_matrix
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler_angles
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

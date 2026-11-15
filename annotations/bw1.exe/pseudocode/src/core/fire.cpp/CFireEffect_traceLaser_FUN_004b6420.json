@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 1345,
+    "complexity_score": 1464,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 365,
-    "suspect_count": 93,
+    "pseudocode_lines": 364,
+    "suspect_count": 105,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1005
+    "total_lines": 1004
   },
   "cross_references": [
     {
@@ -65,12 +65,12 @@
     {
       "addr": "00408b00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b00"
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00"
     },
     {
       "addr": "00408bb0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408bb0"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0"
     },
     {
       "addr": "004b6070",
@@ -809,7 +809,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 88,
       "match": "(uint *)((int)origin",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)origin + (uint)bVar6 * -8 + 4);",
@@ -817,7 +817,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 206,
       "match": "(float *)((int)direction",
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)direction + (uint)bVar6 * -8 + 4);",
@@ -825,7 +825,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 276,
+      "line": 275,
       "match": "6.925584e-39",
       "severity": "mild",
       "text": "fVar15 = 6.925584e-39;",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 279,
+      "line": 278,
       "match": "&stack0xfffffe30",
       "severity": "moderate",
       "text": "pfVar4 = (float *)&stack0xfffffe30;",
@@ -841,7 +841,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 282,
       "match": "(SLaserInfo *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SLaserInfo *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -849,7 +849,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 286,
+      "line": 285,
       "match": "in_stack_fffffe5c",
       "severity": "moderate",
       "text": "laser_info_00.local_hit_position.x = (float)in_stack_fffffe5c;",
@@ -857,7 +857,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 287,
+      "line": 286,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "auVar8 = in_stack_fffffe30._12_12_;",
@@ -865,7 +865,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 287,
+      "line": 286,
       "match": "._12_12_",
       "severity": "mild",
       "text": "auVar8 = in_stack_fffffe30._12_12_;",
@@ -873,7 +873,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 288,
+      "line": 287,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "auVar9 = in_stack_fffffe30._32_12_;",
@@ -881,7 +881,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 288,
+      "line": 287,
       "match": "._32_12_",
       "severity": "mild",
       "text": "auVar9 = in_stack_fffffe30._32_12_;",
@@ -889,7 +889,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 289,
+      "line": 288,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_00.intensity = (float)in_stack_fffffe30._0_4_;",
@@ -897,7 +897,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 289,
+      "line": 288,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_00.intensity = (float)in_stack_fffffe30._0_4_;",
@@ -905,7 +905,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 290,
+      "line": 289,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_00.beam_width = (float)in_stack_fffffe30._4_4_;",
@@ -913,7 +913,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 290,
+      "line": 289,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_00.beam_width = (float)in_stack_fffffe30._4_4_;",
@@ -921,7 +921,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 291,
+      "line": 290,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_00.laser_type = in_stack_fffffe30._8_4_;",
@@ -929,7 +929,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 291,
+      "line": 290,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_00.laser_type = in_stack_fffffe30._8_4_;",
@@ -937,7 +937,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 292,
+      "line": 291,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_00.color.r = auVar8._0_4_;",
@@ -945,7 +945,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 293,
+      "line": 292,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_00.color.g = auVar8._4_4_;",
@@ -953,7 +953,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 294,
+      "line": 293,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_00.color.b = auVar8._8_4_;",
@@ -961,7 +961,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 295,
+      "line": 294,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_00.is_hero_weapon = in_stack_fffffe30._24_4_;",
@@ -969,7 +969,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 295,
+      "line": 294,
       "match": "._24_4_",
       "severity": "mild",
       "text": "laser_info_00.is_hero_weapon = in_stack_fffffe30._24_4_;",
@@ -977,7 +977,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 296,
+      "line": 295,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_00.is_damaging = in_stack_fffffe30._28_4_;",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 296,
+      "line": 295,
       "match": "._28_4_",
       "severity": "mild",
       "text": "laser_info_00.is_damaging = in_stack_fffffe30._28_4_;",
@@ -993,7 +993,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 297,
+      "line": 296,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_00.local_origin.x = (float)auVar9._0_4_;",
@@ -1001,7 +1001,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 298,
+      "line": 297,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_00.local_origin.y = (float)auVar9._4_4_;",
@@ -1009,7 +1009,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 299,
+      "line": 298,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_00.local_origin.z = (float)auVar9._8_4_;",
@@ -1017,7 +1017,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 300,
+      "line": 299,
       "match": "in_stack_fffffe60",
       "severity": "moderate",
       "text": "laser_info_00.local_hit_position.y = (float)in_stack_fffffe60;",
@@ -1025,7 +1025,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 301,
+      "line": 300,
       "match": "in_stack_fffffe64",
       "severity": "moderate",
       "text": "laser_info_00.local_hit_position.z = (float)in_stack_fffffe64;",
@@ -1033,7 +1033,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 302,
+      "line": 301,
       "match": "in_stack_fffffe68",
       "severity": "moderate",
       "text": "laser_info_00.local_normal.x = (float)in_stack_fffffe68;",
@@ -1041,7 +1041,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 303,
+      "line": 302,
       "match": "in_stack_fffffe6c",
       "severity": "moderate",
       "text": "laser_info_00.local_normal.y = (float)in_stack_fffffe6c;",
@@ -1049,7 +1049,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 318,
       "match": "(uint *)((int)direction",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)direction + (uint)bVar6 * -8 + 4);",
@@ -1057,7 +1057,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 331,
+      "line": 330,
       "match": "&stack0xfffffe30",
       "severity": "moderate",
       "text": "pfVar4 = (float *)&stack0xfffffe30;",
@@ -1065,7 +1065,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 334,
+      "line": 333,
       "match": "(SLaserInfo *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SLaserInfo *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -1073,7 +1073,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 337,
+      "line": 336,
       "match": "in_stack_fffffe5c",
       "severity": "moderate",
       "text": "laser_info_01.local_hit_position.x = (float)in_stack_fffffe5c;",
@@ -1081,7 +1081,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 338,
+      "line": 337,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "auVar8 = in_stack_fffffe30._12_12_;",
@@ -1089,7 +1089,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 338,
+      "line": 337,
       "match": "._12_12_",
       "severity": "mild",
       "text": "auVar8 = in_stack_fffffe30._12_12_;",
@@ -1097,7 +1097,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 339,
+      "line": 338,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "auVar9 = in_stack_fffffe30._32_12_;",
@@ -1105,7 +1105,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 339,
+      "line": 338,
       "match": "._32_12_",
       "severity": "mild",
       "text": "auVar9 = in_stack_fffffe30._32_12_;",
@@ -1113,7 +1113,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 339,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_01.intensity = (float)in_stack_fffffe30._0_4_;",
@@ -1121,7 +1121,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 340,
+      "line": 339,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_01.intensity = (float)in_stack_fffffe30._0_4_;",
@@ -1129,7 +1129,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 340,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_01.beam_width = (float)in_stack_fffffe30._4_4_;",
@@ -1137,7 +1137,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 341,
+      "line": 340,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_01.beam_width = (float)in_stack_fffffe30._4_4_;",
@@ -1145,7 +1145,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 342,
+      "line": 341,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_01.laser_type = in_stack_fffffe30._8_4_;",
@@ -1153,7 +1153,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 342,
+      "line": 341,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_01.laser_type = in_stack_fffffe30._8_4_;",
@@ -1161,7 +1161,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 343,
+      "line": 342,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_01.color.r = auVar8._0_4_;",
@@ -1169,7 +1169,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 344,
+      "line": 343,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_01.color.g = auVar8._4_4_;",
@@ -1177,7 +1177,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 345,
+      "line": 344,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_01.color.b = auVar8._8_4_;",
@@ -1185,7 +1185,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 346,
+      "line": 345,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_01.is_hero_weapon = in_stack_fffffe30._24_4_;",
@@ -1193,7 +1193,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 346,
+      "line": 345,
       "match": "._24_4_",
       "severity": "mild",
       "text": "laser_info_01.is_hero_weapon = in_stack_fffffe30._24_4_;",
@@ -1201,7 +1201,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 347,
+      "line": 346,
       "match": "in_stack_fffffe30",
       "severity": "moderate",
       "text": "laser_info_01.is_damaging = in_stack_fffffe30._28_4_;",
@@ -1209,7 +1209,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 347,
+      "line": 346,
       "match": "._28_4_",
       "severity": "mild",
       "text": "laser_info_01.is_damaging = in_stack_fffffe30._28_4_;",
@@ -1217,7 +1217,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 348,
+      "line": 347,
       "match": "._0_4_",
       "severity": "mild",
       "text": "laser_info_01.local_origin.x = (float)auVar9._0_4_;",
@@ -1225,7 +1225,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 349,
+      "line": 348,
       "match": "._4_4_",
       "severity": "mild",
       "text": "laser_info_01.local_origin.y = (float)auVar9._4_4_;",
@@ -1233,7 +1233,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 350,
+      "line": 349,
       "match": "._8_4_",
       "severity": "mild",
       "text": "laser_info_01.local_origin.z = (float)auVar9._8_4_;",
@@ -1241,7 +1241,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 351,
+      "line": 350,
       "match": "in_stack_fffffe60",
       "severity": "moderate",
       "text": "laser_info_01.local_hit_position.y = (float)in_stack_fffffe60;",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 352,
+      "line": 351,
       "match": "in_stack_fffffe64",
       "severity": "moderate",
       "text": "laser_info_01.local_hit_position.z = (float)in_stack_fffffe64;",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 353,
+      "line": 352,
       "match": "in_stack_fffffe68",
       "severity": "moderate",
       "text": "laser_info_01.local_normal.x = (float)in_stack_fffffe68;",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 354,
+      "line": 353,
       "match": "in_stack_fffffe6c",
       "severity": "moderate",
       "text": "laser_info_01.local_normal.y = (float)in_stack_fffffe6c;",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Pointer value `&local_100` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
+      "line": 90,
       "match": "(int)&local_100",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_100 + (uint)bVar6 * -8 + 4) = *puVar3;",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Pointer value `&local_100` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
+      "line": 91,
       "match": "(int)&local_100",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_100 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1289,23 +1289,71 @@
     },
     {
       "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 97,
       "match": "(int)&local_64",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) = local_150[(uint)bVar6 * -2 + 0xf];",
+      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) = local_114[(uint)bVar6 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 102,
+      "line": 99,
       "match": "(int)&local_64",
       "severity": "moderate",
       "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&local_7c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)&local_7c",
+      "severity": "moderate",
+      "text": "local_f0[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_7c + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 165,
+      "match": "(int)&local_7c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 174,
+      "match": "(int)&local_124",
+      "severity": "moderate",
+      "text": "local_150[(uint)bVar6 * -2] = *(float *)((int)&local_124 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 176,
+      "match": "(int)&local_124",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_124 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_130` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)&local_130",
+      "severity": "moderate",
+      "text": "local_114[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_130 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_130` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 187,
+      "match": "(int)&local_130",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_130 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&CStack_160` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 260,
+      "line": 259,
       "match": "(int)&CStack_160",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_160 + (uint)bVar6 * -8 + 4) = afStack_48[(uint)bVar6 * -2];",
@@ -1313,7 +1361,7 @@
     },
     {
       "description": "Pointer value `&CStack_160` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 261,
+      "line": 260,
       "match": "(int)&CStack_160",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_160 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1321,7 +1369,7 @@
     },
     {
       "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 283,
+      "line": 282,
       "match": "(int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SLaserInfo *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -1329,7 +1377,7 @@
     },
     {
       "description": "Pointer value `&CStack_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 321,
+      "line": 320,
       "match": "(int)&CStack_94",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar6 * -8 + 4) = *puVar3;",
@@ -1337,7 +1385,7 @@
     },
     {
       "description": "Pointer value `&CStack_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 323,
+      "line": 322,
       "match": "(int)&CStack_94",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1345,7 +1393,7 @@
     },
     {
       "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 334,
+      "line": 333,
       "match": "(int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SLaserInfo *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -1353,7 +1401,7 @@
     },
     {
       "description": "Raw hex address 0x4b646b assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 86,
+      "line": 83,
       "match": "0x4b646b",
       "severity": "moderate",
       "text": "uVar10 = 0x4b646b;",
@@ -1361,7 +1409,7 @@
     },
     {
       "description": "Raw hex address 0x4b64cb assigned to bare local `uVar12`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar12` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 104,
+      "line": 101,
       "match": "0x4b64cb",
       "severity": "moderate",
       "text": "uVar12 = 0x4b64cb;",
@@ -1369,7 +1417,7 @@
     },
     {
       "description": "Raw hex address 0x4b6a64 assigned to bare local `uVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 326,
+      "line": 325,
       "match": "0x4b6a64",
       "severity": "moderate",
       "text": "uVar14 = 0x4b6a64;",
@@ -1377,7 +1425,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 281,
+      "line": 280,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1385,7 +1433,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 332,
+      "line": 331,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1393,7 +1441,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 115,
+      "line": 112,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_58.x = local_d0.x;",
@@ -1401,7 +1449,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 149,
+      "line": 146,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_64.x = local_ac.x;",
@@ -1409,7 +1457,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 154,
+      "line": 151,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_58.x = (g_CDemonSetPtr->collision_normal).x;",
@@ -1417,7 +1465,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 271,
+      "line": 270,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_160.x = CStack_a0.x;",
@@ -1425,7 +1473,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 93,
+      "line": 90,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_100 + (uint)bVar6 * -8 + 4) = *puVar3;",
@@ -1433,7 +1481,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 94,
+      "line": 91,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_100 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1441,15 +1489,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
+      "line": 97,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) = local_150[(uint)bVar6 * -2 + 0xf];",
+      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) = local_114[(uint)bVar6 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 99,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1457,7 +1505,55 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 260,
+      "line": 163,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_f0[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_7c + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 165,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 174,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_150[(uint)bVar6 * -2] = *(float *)((int)&local_124 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 176,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_124 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 185,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_114[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_130 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 187,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_130 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 259,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_160 + (uint)bVar6 * -8 + 4) = afStack_48[(uint)bVar6 * -2];",
@@ -1465,7 +1561,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 261,
+      "line": 260,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_160 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -1473,7 +1569,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 321,
+      "line": 320,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar6 * -8 + 4) = *puVar3;",
@@ -1481,7 +1577,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 323,
+      "line": 322,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",

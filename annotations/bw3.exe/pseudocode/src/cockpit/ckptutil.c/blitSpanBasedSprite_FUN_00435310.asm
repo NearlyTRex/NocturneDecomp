@@ -64,7 +64,7 @@ section .text
     MOV EBP,EDI                         ; 00435361
     MOV dword ptr [ESP + 0x48],EDX      ; 00435363
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 00435367
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
     SHL EBP,0x5                         ; 0043536c
     MOV EDX,dword ptr [ESP + 0x64]      ; 0043536f
     MOV dword ptr [ESP + 0x30],EAX      ; 00435373

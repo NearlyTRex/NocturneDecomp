@@ -22,7 +22,7 @@
 ;   undefined4 DAT_02c83460
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_mini3d.cpp_allocVertexList_FUN_00512670
 ;   engine_mini3d.cpp_computeVertexFog_FUN_005140c0
 ;   engine_mini3d.cpp_drawTransformedList_FUN_00515ae0
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5e8e0b                       ; 00512cd5
     MOV dword ptr [0x01d1d400],EDX      ; 00512cda | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00512ce0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00512ce6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00512ce6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00512ceb
     MOV EAX,dword ptr [ESP + 0x18]      ; 00512cee
         ;   Label: LAB_00512cee

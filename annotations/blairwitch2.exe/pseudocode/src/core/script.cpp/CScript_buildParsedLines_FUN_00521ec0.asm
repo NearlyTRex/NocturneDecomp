@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01e648fb
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_script.cpp_CScript_freeParsedLines_FUN_00521680
 ;   core_script.cpp_trimLine_FUN_00521070
 ;   crt_memory.c_malloc_FUN_005b8580
@@ -100,8 +100,8 @@ section .text
     MOV EDX,0x3a6                       ; 00521f47
     PUSH 0x5e2f3a                       ; 00521f4c | = "Out of memory loading script at line %d"
     MOV dword ptr [0x01d046a4],EDX      ; 00521f51 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00521f57
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00521f57
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00521f5c
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00521f5f
         ;   Label: LAB_00521f5f
@@ -133,8 +133,8 @@ section .text
     PUSH 0x5e2f75                       ; 00521fa0 | = "Out of memory loading script at line %d"
     MOV dword ptr [0x01d046a0],EDI      ; 00521fa5 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00521fab | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00521fb0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00521fb0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00521fb5
     MOV EDI,dword ptr [EBX + 0x2c]      ; 00521fb8
         ;   Label: LAB_00521fb8

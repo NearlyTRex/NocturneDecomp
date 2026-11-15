@@ -28,7 +28,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70
 ;
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5f974d                       ; 005acd5c | = "setColorTable16 - Unable to unlock ba..."
     MOV dword ptr [0x01d1d400],ESI      ; 005acd61 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 005acd67 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005acd6d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acd6d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acd72
     POP ESI                             ; 005acd75
     POP EDI                             ; 005acd76
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5f9708                       ; 005acdca | = "setColorTable16 - Unable to lock back..."
     MOV dword ptr [0x01d1d400],ECX      ; 005acdcf | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005acdd5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005acddb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acddb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acde0
     JMP 0x005acd3c                      ; 005acde3
         ;   XREF to: 005acd3c (UNCONDITIONAL_JUMP)  ; LAB_005acd3c

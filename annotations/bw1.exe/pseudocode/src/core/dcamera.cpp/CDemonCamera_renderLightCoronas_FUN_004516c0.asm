@@ -117,11 +117,11 @@ section .text
     FMUL double ptr [0x005d788f]        ; 00451760 | DAT_005d788f
     FXCH                                ; 00451766
     CALL crt_math.c_round_FUN_005c03a0  ; 00451768
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     XOR EAX,EAX                         ; 0045176d
     FXCH                                ; 0045176f
     CALL crt_math.c_round_FUN_005c03a0  ; 00451771
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV dword ptr [ESP + 0x30],EAX      ; 00451776
     FISTP dword ptr [0x00b81ca0]        ; 0045177a | DAT_00b81ca0
     MOV EAX,dword ptr [EBP + 0x14]      ; 00451780

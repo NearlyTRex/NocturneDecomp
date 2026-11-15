@@ -25,7 +25,7 @@
 // =============================================================================
 
 void __cdecl core_scat_cpp_FUN_00520140(CScat *this_ptr,int hand_index);
-void core_scat_cpp_FUN_005203c0(int param_1,float param_2,int param_3);
+void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3);
 undefined4 core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 void core_scat_cpp_FUN_00520df0(int param_1);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00520f40(CScat *this_ptr,uint flags);

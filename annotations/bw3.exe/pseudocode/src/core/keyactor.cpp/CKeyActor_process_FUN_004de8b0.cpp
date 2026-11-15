@@ -16,15 +16,16 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004de8b0(CKeyActor *this_pt
   int iVar1;
   int iVar2;
   float10 fVar3;
+  double dVar4;
   
   this_ptr_00 = &this_ptr->globe;
   this_ptr->rotation_angle = delta_time * _DAT_005c66a9 + this_ptr->rotation_angle;
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0
             (this_ptr_00,&(this_ptr->base).location.position);
   fVar3 = (float10)fsin((float10)this_ptr->rotation_angle);
-  fVar3 = fVar3 * (float10)_DAT_005c66ad + (float10)_DAT_005c66b5;
-  round();
-  iVar1 = (int)ROUND(fVar3);
+  dVar4 = round
+                    ((double)(fVar3 * (float10)_DAT_005c66ad + (float10)_DAT_005c66b5));
+  iVar1 = (int)ROUND(dVar4);
   (this_ptr->globe).intensity_multiplier = iVar1;
   iVar1 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;

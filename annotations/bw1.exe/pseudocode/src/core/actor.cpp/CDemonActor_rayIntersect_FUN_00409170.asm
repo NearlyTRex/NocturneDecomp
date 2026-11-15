@@ -55,9 +55,9 @@
 ;   undefined4 DAT_026b82b8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_FUN_00408ec0
 ;   core_actor.cpp_rayCylinderIntersect_FUN_004080c0
 ;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0
@@ -65,7 +65,7 @@
 ;   core_box.cpp_FUN_00420ee0
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00467c00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_00567250
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0056a870
@@ -184,8 +184,8 @@ section .text
     PUSH EDX                            ; 00409290
     LEA ESI,[ESP + 0xe4]                ; 00409291
     LEA EDI,[ESP + 0xc0]                ; 00409298
-    CALL core_actor.cpp_FUN_00408bb0    ; 0040929f
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0040929f
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 004092a4
     LEA ESI,[ESP + 0xdc]                ; 004092a7
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004092ae
@@ -197,8 +197,8 @@ section .text
     PUSH ESI                            ; 004092b8
     LEA ESI,[ESP + 0xd8]                ; 004092b9
     LEA EDI,[ESP + 0xfc]                ; 004092c0
-    CALL core_actor.cpp_FUN_00408b00    ; 004092c7
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004092c7
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0xd8]                ; 004092cc
     ADD ESP,0x8                         ; 004092d3
     MOVSD ES:EDI,ESI                    ; 004092d6
@@ -268,8 +268,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004093b0
     PUSH EDI                            ; 004093b3
     LEA ESI,[ESP + 0xb4]                ; 004093b4
-    CALL core_actor.cpp_FUN_00408ac0    ; 004093bb
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 004093bb
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA EDI,[ESP + 0xa8]                ; 004093c0
     LEA ESI,[ESP + 0xb4]                ; 004093c7
     ADD ESP,0x8                         ; 004093ce
@@ -342,8 +342,8 @@ section .text
     PUSH ESI                            ; 00409499
     LEA ESI,[ESP + 0x108]               ; 0040949a
     FSTP float ptr [ESP + 0x20]         ; 004094a1
-    CALL core_actor.cpp_FUN_00408b00    ; 004094a5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004094a5
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x108]               ; 004094aa
     LEA EAX,[ESP + 0xcc]                ; 004094b1
     ADD ESP,0x8                         ; 004094b8
@@ -374,8 +374,8 @@ section .text
     PUSH 0x5d2532                       ; 00409515 | = "CDemonActor::rayIntersect - Invalid c..."
     MOV dword ptr [0x01d1d400],EDX      ; 0040951a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00409520 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00409526
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00409526
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040952b
     JMP 0x0040936d                      ; 0040952e
         ;   XREF to: 0040936d (UNCONDITIONAL_JUMP)  ; LAB_0040936d

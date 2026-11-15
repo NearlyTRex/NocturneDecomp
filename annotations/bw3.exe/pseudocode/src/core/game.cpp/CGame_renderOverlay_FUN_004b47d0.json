@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 430,
-    "complexity_score": 312,
+    "complexity_score": 366,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 162,
-    "suspect_count": 13,
+    "pseudocode_lines": 161,
+    "suspect_count": 18,
     "suspect_types": [
-      "shadow_pointer_walk",
+      "pointer_truncation",
+      "raw_address_constant",
       "undefined_data",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 592
+    "total_lines": 591
   },
   "cross_references": [
     {
@@ -529,7 +530,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 74,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar6 = DAT_005fba1c - iVar6 * iVar4;",
@@ -537,7 +538,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 84,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "local_4c = DAT_005fba18 + -1;",
@@ -545,7 +546,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
@@ -553,7 +554,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
@@ -561,7 +562,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 104,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar4 = DAT_005fba1c - iVar4;",
@@ -569,7 +570,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 115,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (0x280 < DAT_005fba18) {",
@@ -577,19 +578,59 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 118,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (800 < DAT_005fba18) {",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 159,
-      "match": "local_1c = (T *)&local_1c->FIELD",
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 122,
+      "match": "(int)local_44",
       "severity": "moderate",
-      "text": "local_1c = (CGame *)&local_1c->game_pixy;",
-      "type": "shadow_pointer_walk"
+      "text": "if ((int)local_44 < iVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_58 = ((int)local_44 * 3) / 2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 135,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_34 = iVar6 - (int)local_44;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 156,
+      "match": "(int)local_40",
+      "severity": "moderate",
+      "text": "(local_44,(char *)local_1c,(int)local_40,(int)local_38,0xf8,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 156,
+      "match": "(int)local_38",
+      "severity": "moderate",
+      "text": "(local_44,(char *)local_1c,(int)local_40,(int)local_38,0xf8,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x4b4853 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
+      "match": "0x4b4853",
+      "severity": "moderate",
+      "text": "iVar6 = 0x4b4853;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

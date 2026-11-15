@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_io.c__chmod_FUN_005b99e0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8940
@@ -651,8 +651,8 @@ section .text
     PUSH 0x5dadb8                       ; 004d94b1 | = "Please copy Nocturne to your hard drive"
     MOV dword ptr [0x01d046a0],EDX      ; 004d94b6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004d94bc | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004d94c2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d94c2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d94c7
     JMP 0x004d8d83                      ; 004d94ca
         ;   XREF to: 004d8d83 (UNCONDITIONAL_JUMP)  ; LAB_004d8d83

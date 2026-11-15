@@ -163,9 +163,9 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   uint local_258;
   float local_254;
   float local_24c [3];
-  uint local_240;
-  float local_234 [3];
-  float local_228;
+  CVector3f local_240;
+  float local_234;
+  float afStack_230 [5];
   CVector3f local_21c;
   uint local_210;
   int local_20c;
@@ -299,7 +299,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
     _DAT_01d046a0 = "..\\core\\script.cpp";
     _DAT_01d046a4 = 0x47e;
-    core_main_c_FUN_004e4500("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
   pcVar18 = "(no error message provided)";
   pcVar20 = &DAT_01e65100;
@@ -339,7 +339,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
       if (iVar5 < 0) {
         _DAT_01d046a0 = "..\\core\\script.cpp";
         _DAT_01d046a4 = 0x4b0;
-        core_main_c_FUN_004e4500("Internal script error checking for duplicate label.");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Internal script error checking for duplicate label.");
       }
       if (iVar5 != local_208) {
         _sprintf(&DAT_01e65100,"Duplicate label %s on lines %d and %d");
@@ -1043,29 +1043,29 @@ joined_r0x00528f4d:
                                                             (-fVar7,fVar7);
                                                   core_charactr_cpp_FUN_0042bef0
                                                             (local_14,uVar22,fVar6);
-                                                  local_21c.x = local_228;
+                                                  local_21c.x = afStack_230[2];
                                                   *(float *)((int)&local_21c + (uint)bVar21 * -8 + 4
-                                                            ) = afStack_26c
-                                                                [(uint)bVar21 * -2 + 0x12];
+                                                            ) = afStack_230[(uint)bVar21 * -2 + 3];
                                                   *(float *)((int)&local_21c +
                                                             (uint)bVar21 * -8 + (uint)bVar21 * -8 +
-                                                            8) = afStack_26c
+                                                            8) = afStack_230
                                                                  [(uint)bVar21 * -2 +
-                                                                  (uint)bVar21 * -2 + 0x13];
+                                                                  (uint)bVar21 * -2 + 4];
                                                   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
                                                             (&local_2a4,&local_21c);
-                                                  core_dirmat_cpp_FUN_00449530
-                                                            (&local_2a4,&local_27c);
-                                                  local_234[0] = (float)local_240;
-                                                  afStack_26c[(uint)bVar21 * -2 + 0xf] =
-                                                       afStack_26c[(uint)bVar21 * -2 + 0xc];
-                                                  afStack_26c
-                                                  [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 0x10] =
-                                                       afStack_26c
-                                                       [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 0xd]
+                                                  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
+                                                            (&local_2a4,&local_27c,&local_240);
+                                                  local_234 = local_240.x;
+                                                  afStack_230[(uint)bVar21 * -2] =
+                                                       *(float *)((int)&local_240 +
+                                                                 (uint)bVar21 * -8 + 4);
+                                                  afStack_230
+                                                  [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1] =
+                                                       *(float *)((int)&local_240 +
+                                                                 (uint)bVar21 * -8 +
+                                                                 (uint)bVar21 * -8 + 8);
+                                                  core_actor_cpp_FUN_0040d350(&local_27c,&local_234)
                                                   ;
-                                                  core_actor_cpp_FUN_0040d350
-                                                            (&local_27c,afStack_26c + 0xe);
                                                 }
                                                 initial_velocity = &local_27c;
                                               }
@@ -2540,9 +2540,9 @@ LAB_00526d4a:
                                                           _DAT_01d046a0 = "..\\core\\script.cpp"
                                                           ;
                                                           _DAT_01d046a4 = 0xbae;
-                                                          core_main_c_FUN_004e4500
-                                                                    (
-                                                  "script selectWeapon() command - hell froze.");
+                                                                                                                    
+                                                  core_main_c_displayErrorAndQuit_FUN_004e4500
+                                                            ("script selectWeapon() command - hell froze.");
                                                   }
                                                   iVar5 = core_actor_cpp_isOfClass_FUN_0040c840
                                                                     (pCVar15,local_838);

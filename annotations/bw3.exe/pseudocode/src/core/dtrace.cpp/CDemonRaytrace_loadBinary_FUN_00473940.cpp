@@ -31,12 +31,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   if (local_14 < 1) {
     _DAT_01d71de0 = "..\\core\\dtrace.cpp";
     _DAT_01d71de4 = 0x148;
-    core_main_c_FUN_004e4330("CDemonRaytrace::loadBinary - invalid version");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - invalid version");
   }
   if (0x00000004 < local_14) {
     _DAT_01d71de0 = "..\\core\\dtrace.cpp";
     _DAT_01d71de4 = 0x14b;
-    core_main_c_FUN_004e4330("CDemonRaytrace::loadBinary - file is newer than .exe!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
   _fread(&this_ptr->grid_coord,4,1,param_2);
   _fread(&(this_ptr->grid_coord).y,4,1,param_2);
@@ -60,7 +60,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   if (local_14 < 4) {
     _DAT_01d71de0 = "..\\core\\dtrace.cpp";
     _DAT_01d71de4 = 0x1e2;
-    core_main_c_FUN_004e4330("Release build doesn't support old geometry");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Release build doesn't support old geometry");
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_004735c0(this_ptr);
@@ -78,6 +78,6 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   }
   _DAT_01d71de0 = "..\\core\\dtrace.cpp";
   _DAT_01d71de4 = 0x1ff;
-  core_main_c_FUN_004e4330("CDemonRaytrace::loadBinary - error reading file");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - error reading file");
   return;
 }

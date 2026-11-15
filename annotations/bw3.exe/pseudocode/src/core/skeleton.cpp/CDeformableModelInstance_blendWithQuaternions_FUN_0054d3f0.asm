@@ -41,7 +41,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00585990
@@ -323,7 +323,7 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 0054d7e6
     LEA EDI,[ESP + 0x44]                ; 0054d7ea
     CALL core_xform.cpp_negateFirstComponent_FUN_00585930 ; 0054d7ee
-        ;   XREF to: 00585930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_negateFirstComponent_FUN_00585930()
+        ;   XREF to: 00585930 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_negateFirstComponent_FUN_00585930(CQuaternion4f * vector_in, CQuaternion4f * vector_out)
     ADD ESP,0x4                         ; 0054d7f3
     LEA EAX,[ESP + 0x40]                ; 0054d7f6
     LEA ESI,[ESP + 0x20]                ; 0054d7fa
@@ -335,7 +335,7 @@ section .text
     PUSH EBX                            ; 0054d803
     LEA ESI,[ESP + 0x78]                ; 0054d804
     CALL core_xform.cpp_multiplyQuaternion_FUN_00585990 ; 0054d808
-        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00585990()
+        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00585990(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 0054d80d
     MOV EAX,dword ptr [ESP + 0xd8]      ; 0054d810
     MOV EDX,dword ptr [ESP + 0xf4]      ; 0054d817
@@ -352,7 +352,7 @@ section .text
     LEA ESI,[ESP + 0x58]                ; 0054d832
     LEA EDI,[ESP + 0x18]                ; 0054d836
     CALL core_xform.cpp_multiplyQuaternion_FUN_00585990 ; 0054d83a
-        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00585990()
+        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00585990(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x58]                ; 0054d83f
     ADD ESP,0x8                         ; 0054d843
     JMP 0x0054d743                      ; 0054d846
@@ -363,8 +363,8 @@ section .text
     PUSH 0x5d2011                       ; 0054d855 | = "Write me!"
     MOV dword ptr [0x01d71de0],EBP      ; 0054d85a | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0054d860 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054d865
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054d865
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054d86a
     JMP 0x0054d533                      ; 0054d86d
         ;   XREF to: 0054d533 (UNCONDITIONAL_JUMP)  ; LAB_0054d533

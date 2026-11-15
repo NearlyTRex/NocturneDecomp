@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_stdio_c_fclose_FUN_005b89c0(int param_1)
+; int __cdecl crt_stdio_c_fclose_FUN_005b89c0(_FILE *file_handle)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[65]:
-;   cockpit_ckptutil.c_FUN_0042e130 at 0042e27f
 ;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3c4
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0 at 0042e0aa
+;   cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130 at 0042e27f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 005171ae
 ;   cockpit_pkbitmap.cpp_FUN_00516de0 at 00516e0c
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400 at 00517461

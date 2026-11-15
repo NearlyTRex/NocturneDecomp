@@ -20,19 +20,20 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
   byte bVar5;
   float afStackY_1018 [1011];
   CVector3f CStack_30;
-  float fStack_24;
-  uint auStack_20 [4];
+  CVector3f CStack_24;
   
   bVar5 = 0;
   if ((this_ptr->base).base.is_invulnerable == 0) {
     if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
       damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f8ec8;
-      core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_24);
       iVar2 = 0;
-      CStack_30.x = fStack_24;
-      *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];
+      CStack_30.x = CStack_24.x;
+      *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4);
       *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           auStack_20[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+           *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       do {
         iVar2 = iVar2 + 1;
         core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0

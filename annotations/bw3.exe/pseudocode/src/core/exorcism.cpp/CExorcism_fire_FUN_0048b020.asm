@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_crate.cpp_FUN_004461c0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
@@ -72,8 +72,8 @@ section .text
     PUSH ECX                            ; 0048b062
     LEA ESI,[ESP + 0x88]                ; 0048b063
     LEA EDI,[ESP + 0x34]                ; 0048b06a
-    CALL core_actor.cpp_FUN_00408b80    ; 0048b06e
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0048b06e
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0048b073
     LEA ESI,[ESP + 0x80]                ; 0048b076
     MOV EAX,dword ptr [EBP + 0x14]      ; 0048b07d
@@ -135,8 +135,8 @@ section .text
     PUSH ESI                            ; 0048b126
     LEA ESI,[ESP + 0x40]                ; 0048b127
     MOV dword ptr [ESP + 0x60],ECX      ; 0048b12b
-    CALL core_actor.cpp_FUN_00408b00    ; 0048b12f
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0048b12f
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0048b134
     LEA ESI,[ESP + 0x38]                ; 0048b137
     FLD float ptr [ESP + 0x2c]          ; 0048b13b

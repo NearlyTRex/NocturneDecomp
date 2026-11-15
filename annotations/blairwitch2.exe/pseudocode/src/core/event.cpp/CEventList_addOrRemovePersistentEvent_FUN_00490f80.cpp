@@ -36,7 +36,7 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(C
       if (99 < (this_ptr->persistent_events).count) {
         _DAT_01d046a0 = "..\\core\\event.cpp";
         _DAT_01d046a4 = 0xcee;
-        core_main_c_FUN_004e4500("Too many persistent events!");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Too many persistent events!");
       }
       uVar3 = 0xffffffff;
       pcVar5 = name;
@@ -49,7 +49,7 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(C
       if (0x1f < ~uVar3 - 1) {
         _DAT_01d046a0 = "..\\core\\event.cpp";
         _DAT_01d046a4 = 0xcf4;
-        core_main_c_FUN_004e4500("Event name %s too long!",name);
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Event name %s too long!");
       }
       pacVar6 = (this_ptr->persistent_events).names + (this_ptr->persistent_events).count;
       do {

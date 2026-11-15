@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_string.c_strupr_FUN_005ba840
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -126,8 +126,8 @@ section .text
     MOV EDX,0x10f                       ; 004a7db7
     PUSH EAX                            ; 004a7dbc
     MOV dword ptr [0x01d046a4],EDX      ; 004a7dbd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a7dc3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7dc3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7dc8
     PUSH ESI                            ; 004a7dcb
         ;   Label: LAB_004a7dcb
@@ -154,8 +154,8 @@ section .text
     MOV EDI,0x5d67b5                    ; 004a7e09 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a7e0e
     MOV dword ptr [0x01d046a0],EDI      ; 004a7e0f | DAT_01d046a0
-    CALL core_main.c_FUN_004e4500       ; 004a7e15
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7e15
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7e1a
     MOV EAX,dword ptr [EBX]             ; 004a7e1d
         ;   Label: LAB_004a7e1d
@@ -276,8 +276,8 @@ section .text
     PUSH 0x5d6740                       ; 004a7f7d | = "Too many bitmaps"
     MOV dword ptr [0x01d046a0],ECX      ; 004a7f82 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a7f88 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a7f8e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7f8e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a7f93
     JMP 0x004a7d21                      ; 004a7f96
         ;   XREF to: 004a7d21 (UNCONDITIONAL_JUMP)  ; LAB_004a7d21
@@ -289,8 +289,8 @@ section .text
     PUSH 0x5d67e3                       ; 004a7fad | = "CBitFont::addBitmap - File not found ..."
     MOV dword ptr [0x01d046a0],ECX      ; 004a7fb2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a7fb8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a7fbe
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a7fbe
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004a7fc3
     JMP 0x004a7f24                      ; 004a7fc6
         ;   XREF to: 004a7f24 (UNCONDITIONAL_JUMP)  ; LAB_004a7f24

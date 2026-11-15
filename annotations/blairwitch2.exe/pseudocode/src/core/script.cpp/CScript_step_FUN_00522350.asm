@@ -348,8 +348,8 @@ section .text
     PUSH 0x5e30cc                       ; 00522378 | = "CScript::step - Invalid instruction p..."
     MOV dword ptr [0x01d046a0],ESI      ; 0052237d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00522383 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00522389
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00522389
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052238e
     MOV ESI,0x5e3166                    ; 00522391 | = "(no error message provided)"
         ;   Label: LAB_00522391
@@ -506,8 +506,8 @@ section .text
     PUSH 0x5e31b1                       ; 00522526 | = "Internal script error checking for du..."
     MOV dword ptr [0x01d046a0],EDI      ; 0052252b | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00522531 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00522536
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00522536
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052253b
     JMP 0x00522503                      ; 0052253e
         ;   XREF to: 00522503 (UNCONDITIONAL_JUMP)  ; LAB_00522503
@@ -4185,8 +4185,8 @@ section .text
     LEA EAX,[ESP + 0x4b40]              ; 00524e34
     PUSH EAX                            ; 00524e3b
     LEA ESI,[ESP + 0x4ba8]              ; 00524e3c
-    CALL core_dirmat.cpp_FUN_00449530   ; 00524e43
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 00524e43
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00524e48
     LEA EAX,[ESP + 0x4bac]              ; 00524e4b
     LEA EDI,[ESP + 0x4bac]              ; 00524e52
@@ -6936,8 +6936,8 @@ section .text
     PUSH 0x5e42de                       ; 00526f97 | = "script selectWeapon() command - hell ..."
     MOV [0x01d046a0],EAX                ; 00526f9c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00526fa1 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00526fa7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00526fa7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00526fac
     LEA EAX,[ESP + 0x45a8]              ; 00526faf
         ;   Label: LAB_00526faf

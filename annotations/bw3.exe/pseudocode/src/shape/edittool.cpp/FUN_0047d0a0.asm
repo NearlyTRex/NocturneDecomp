@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_vsprintf_FUN_005a2898
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
@@ -101,8 +101,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047d17a
     MOV dword ptr [0x01d71de0],ECX      ; 0047d17f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0047d185 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047d18b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d18b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d190
     JMP 0x0047d0b7                      ; 0047d193
         ;   XREF to: 0047d0b7 (UNCONDITIONAL_JUMP)  ; LAB_0047d0b7

@@ -12,6 +12,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr
 
 {
   CVector3f *target_pos;
+  CDemonActor *this_ptr_00;
   float fVar1;
   float fVar2;
   float fVar3;
@@ -28,10 +29,9 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr
   float fStack_6c;
   float fStack_64;
   CVector3f CStack_48;
-  float fStack_3c;
-  float afStack_38 [4];
-  float fStack_28;
-  float fStack_24;
+  CVector3f CStack_3c;
+  float fStack_30;
+  float afStack_2c [6];
   CVector3f *pCStack_14;
   
   bVar8 = 0;
@@ -52,29 +52,34 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr
         }
         iVar4 = 0;
         pfVar6 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x850);
-        afStack_38[2] = (this_ptr->patrol_target).x;
+        fStack_30 = (this_ptr->patrol_target).x;
         pCStack_14 = target_pos;
-        afStack_38[(uint)bVar8 * -2 + 3] = *pfVar6;
-        afStack_38[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] = pfVar6[(uint)bVar8 * -2 + 1];
+        afStack_2c[(uint)bVar8 * -2] = *pfVar6;
+        afStack_2c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] = pfVar6[(uint)bVar8 * -2 + 1];
         while( true ) {
-          fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
-          (this_ptr->patrol_target).x = fStack_78 * fStack_24 + (1.0 - fStack_24) * fStack_6c;
-          fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
+          afStack_2c[2] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
+          (this_ptr->patrol_target).x =
+               fStack_78 * afStack_2c[2] + (1.0 - afStack_2c[2]) * fStack_6c;
+          afStack_2c[2] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
+          this_ptr_00 = this_ptr->guard_zone_box_trigger;
           (this_ptr->patrol_target).y = fStack_74;
-          (this_ptr->patrol_target).z = fStack_70 * fStack_24 + (1.0 - fStack_24) * fStack_64;
-          core_actor_cpp_FUN_00408b40();
-          CStack_48.x = fStack_3c;
-          *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + 4) = afStack_38[(uint)bVar8 * -2];
-          *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-               afStack_38[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+          (this_ptr->patrol_target).z =
+               fStack_70 * afStack_2c[2] + (1.0 - afStack_2c[2]) * fStack_64;
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                    (this_ptr_00,target_pos,&CStack_3c);
+          CStack_48.x = CStack_3c.x;
+          *(uint *)((int)&CStack_48 + (uint)bVar8 * -8 + 4) =
+               *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + 4);
+          *(uint *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+               *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           if (target_pos != &CStack_48) {
             target_pos->x = CStack_48.x;
             (this_ptr->patrol_target).y = CStack_48.y;
             (this_ptr->patrol_target).z = CStack_48.z;
           }
-          fVar1 = pCStack_14->x - afStack_38[2];
-          fVar3 = pCStack_14->y - afStack_38[3];
-          fVar2 = pCStack_14->z - fStack_28;
+          fVar1 = pCStack_14->x - fStack_30;
+          fVar3 = pCStack_14->y - afStack_2c[0];
+          fVar2 = pCStack_14->z - afStack_2c[1];
           if (_DAT_005f8b80 < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) break;
           iVar4 = iVar4 + 1;
           if (4 < iVar4) {

@@ -11,7 +11,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_00422000
@@ -144,8 +144,8 @@ section .text
     PUSH EBX                            ; 004230ce
     LEA ESI,[ESP + 0xf4]                ; 004230cf
     LEA EDI,[ESP + 0xe8]                ; 004230d6
-    CALL core_actor.cpp_FUN_00408b40    ; 004230dd
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004230dd
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xf4]                ; 004230e2
     LEA EAX,[ESP + 0xe8]                ; 004230e9
     ADD ESP,0x8                         ; 004230f0
@@ -196,7 +196,7 @@ section .text
     LEA ESI,[ESP + 0xcc]                ; 0042317c
     LEA EDI,[ESP + 0xd8]                ; 00423183
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0042318a
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0xcc]                ; 0042318f
     ADD ESP,0x4                         ; 00423196
     MOVSD ES:EDI,ESI                    ; 00423199

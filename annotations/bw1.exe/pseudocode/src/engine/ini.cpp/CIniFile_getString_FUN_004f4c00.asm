@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_ini.cpp_getProfileString_FUN_004f49f0
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5e5814                       ; 004f4c41 | = "CIniFile::getString - filename not set!"
     MOV dword ptr [0x01d1d400],EDX      ; 004f4c46 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004f4c4c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f4c52
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4c52
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f4c57
     JMP 0x004f4c0b                      ; 004f4c5a
         ;   XREF to: 004f4c0b (UNCONDITIONAL_JUMP)  ; LAB_004f4c0b
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5e584e                       ; 004f4c68 | = "CIniFile::getString - section not set!"
     MOV dword ptr [0x01d1d400],ESI      ; 004f4c6d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004f4c73 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f4c79
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4c79
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f4c7e
     POP ESI                             ; 004f4c81
     POP EDI                             ; 004f4c82

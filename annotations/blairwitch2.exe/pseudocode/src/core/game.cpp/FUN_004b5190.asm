@@ -70,8 +70,8 @@
 ;   ... and 57 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
-;   core_dcamera.cpp_FUN_0043c6b0
 ;   core_event.cpp_CEventList_findTimer_FUN_004915e0
 ;   core_event.cpp_CEventList_render_FUN_0048e490
 ;   core_event.cpp_FUN_00491240
@@ -266,8 +266,8 @@ section .text
     PUSH 0x1fc7838                      ; 004b5373
     LEA ESI,[EBP + -0xa]                ; 004b5378
     LEA EDI,[EBP + 0xe]                 ; 004b537b
-    CALL core_dcamera.cpp_FUN_0043c6b0  ; 004b537e
-        ;   XREF to: 0043c6b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c6b0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0 ; 004b537e
+        ;   XREF to: 0043c6b0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[EBP + -0xa]                ; 004b5383
     ADD ESP,0xc                         ; 004b5386
     LEA EAX,[EBP + 0xe]                 ; 004b5389
@@ -1171,8 +1171,8 @@ section .text
     LEA EAX,[EBP + 0xffffff76]          ; 004b5dc5
     PUSH EAX                            ; 004b5dcb
     PUSH 0x5d72e7                       ; 004b5dcc | = "movie"
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004b5dd1
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004b5dd1
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b5dd6
     MOV dword ptr [EBP + 0x5a],EAX      ; 004b5dd9
     TEST EAX,EAX                        ; 004b5ddc
@@ -1332,7 +1332,7 @@ section .text
         ;   Label: LAB_004b5f74
     PUSH EBX                            ; 004b5f77
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004b5f78
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004b5f7d
     PUSH 0x0                            ; 004b5f80
     PUSH 0x0                            ; 004b5f82

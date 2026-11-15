@@ -18,7 +18,7 @@ void __cdecl engine_2d_c_unmapFrameBuffer_FUN_004036c0(void)
   if (_DAT_007303b8 == 0) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x9e5;
-    core_main_c_FUN_004e4330("unmapFrameBuffer - frame buffer was not mapped!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("unmapFrameBuffer - frame buffer was not mapped!");
   }
   DAT_005fba18 = _DAT_007303b8;
   DAT_005fba1c = _DAT_007303bc;

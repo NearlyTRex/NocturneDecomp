@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_dosio.cpp_FUN_00479180 at 004791cc
+;   engine_dosio.cpp_getFile_FUN_00479180 at 004791cc
 ;
 ; Called Functions:
 ;   crt_watcom.c__mkdir_FUN_005c2000

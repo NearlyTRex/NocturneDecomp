@@ -111,10 +111,10 @@ section .text
     FXCH                                ; 005777e3
     FSTP ST2                            ; 005777e5
     CALL crt_math.c_round_FUN_005a3120  ; 005777e7
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 005777ec
     CALL crt_math.c_round_FUN_005a3120  ; 005777ee
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 005777f3
     FISTP dword ptr [0x02d059ac]        ; 005777f5 | DAT_02d059ac
     MOV ECX,dword ptr [0x02d059ac]      ; 005777fb | DAT_02d059ac

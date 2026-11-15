@@ -44,7 +44,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00582990
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00
@@ -268,8 +268,8 @@ section .text
     PUSH 0x5f9817                       ; 005ad220 | = "Unable to unlock front buffer"
     MOV dword ptr [0x01d1d400],ECX      ; 005ad225 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005ad22b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ad231
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ad231
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ad236
     XOR EDI,EDI                         ; 005ad239
     MOV dword ptr [0x02c99314],EDI      ; 005ad23b | DAT_02c99314

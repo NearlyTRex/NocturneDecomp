@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findTimer_FUN_004915e0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5d4d94                       ; 004912b9 | = "CEventList::setTimerEvent - invalid d..."
     MOV dword ptr [0x01d046a0],EDX      ; 004912be | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004912c4 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004912ca
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004912ca
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 004912cf
     MOV EDX,dword ptr [EBP + 0x18]      ; 004912d2
         ;   Label: LAB_004912d2
@@ -147,8 +147,8 @@ section .text
     PUSH 0x5d4dde                       ; 0049138f | = "CEventList::setTimerEvent - too many ..."
     MOV dword ptr [0x01d046a0],ESI      ; 00491394 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0049139a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004913a0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004913a0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004913a5
     MOV EDI,dword ptr [EBX + 0x3210]    ; 004913a8
         ;   Label: LAB_004913a8

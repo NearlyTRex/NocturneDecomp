@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_necklace.cpp_FUN_005ade00
 ;   crt_unknown.c_FUN_005b7fdc
 ;
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5f122c                       ; 005b165d | = "CClothList::remove - invalid index"
     MOV dword ptr [0x01d046a0],ECX      ; 005b1662 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 005b1668 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b166e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b166e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b1673
     MOV ESI,dword ptr [ESP + 0x10]      ; 005b1676
         ;   Label: LAB_005b1676

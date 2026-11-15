@@ -12,22 +12,16 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
 
 {
   SRenderVertex *pSVar1;
-  int iVar2;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  SRenderVertex *pSVar7;
-  int *piVar8;
-  SRenderVertex *pSVar9;
-  int green_component;
-  int iVar10;
-  ushort *puVar11;
-  int iVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float local_130;
+  SRenderVertex *pSVar4;
+  float *pfVar5;
+  SRenderVertex *pSVar6;
+  int iVar7;
+  ushort *puVar8;
+  int iVar9;
+  double dVar10;
+  double dVar11;
   SMRGLPrimitivePoly local_12c;
   int local_b4;
   int local_b0;
@@ -43,28 +37,20 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
   int local_88;
   int local_84;
   int local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
   float local_70;
   SInputFace *local_6c;
-  int local_68;
-  int local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
+  float local_68;
+  float local_64;
   float local_54;
   float local_50;
-  int local_4c;
-  int local_48;
-  int local_44;
+  float local_4c;
+  float local_48;
+  float local_44;
   int local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
+  int local_38;
+  float local_30;
+  float local_2c;
+  float local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -89,92 +75,87 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
     local_a0 = local_ac;
     local_90 = local_ac;
     do {
-      iVar12 = local_b0 + *(int *)(local_12c.vertices[6].texture_u + 0xc24);
+      iVar9 = local_b0 + *(int *)(local_12c.vertices[6].texture_u + 0xc24);
       if ((*(byte *)local_12c.vertices[6].texture_v & 1) != 0) {
         if ((local_84 == 0) && (local_80 != 0)) {
           engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
-          if (local_b0 < iVar12) {
-            local_44 = local_b0 * 0x12;
-            local_8c = iVar12 * 0x12;
+          if (local_b0 < iVar9) {
+            local_8c = iVar9 * 0x12;
             do {
-              puVar11 = (ushort *)(*(int *)(local_a8 + 0x7c) + local_44);
-              pSVar7 = DAT_0060b280->vertex_buffer_ptr;
-              pSVar9 = pSVar7 + *puVar11;
-              pSVar1 = pSVar7 + puVar11[1];
-              pSVar7 = pSVar7 + puVar11[2];
-              local_30 = (pSVar9->projected_vertex).transformed_x * _DAT_01d04fb8 +
-                         (pSVar9->projected_vertex).transformed_y * _DAT_01d04fc4 +
-                         (pSVar9->projected_vertex).transformed_z * _DAT_01d04fd0;
-              local_2c = (pSVar9->projected_vertex).transformed_x * _DAT_01d04fbc +
-                         (pSVar9->projected_vertex).transformed_y * _DAT_01d04fc8 +
-                         (pSVar9->projected_vertex).transformed_z * _DAT_01d04fd4;
-              local_28 = (pSVar9->projected_vertex).transformed_z * _DAT_01d04fd8 +
-                         (pSVar9->projected_vertex).transformed_x * _DAT_01d04fc0 +
-                         (pSVar9->projected_vertex).transformed_y * _DAT_01d04fcc;
-              local_24 = (pSVar1->projected_vertex).transformed_z * _DAT_01d04fd0 +
+              puVar8 = (ushort *)(local_9c[0x1f] + local_38);
+              pSVar4 = DAT_0060b280->vertex_buffer_ptr;
+              pSVar6 = pSVar4 + *puVar8;
+              pSVar1 = pSVar4 + puVar8[1];
+              pSVar4 = pSVar4 + puVar8[2];
+              local_24 = (pSVar6->projected_vertex).transformed_x * _DAT_01d04fb8 +
+                         (pSVar6->projected_vertex).transformed_y * _DAT_01d04fc4 +
+                         (pSVar6->projected_vertex).transformed_z * _DAT_01d04fd0;
+              local_20 = (pSVar6->projected_vertex).transformed_x * _DAT_01d04fbc +
+                         (pSVar6->projected_vertex).transformed_y * _DAT_01d04fc8 +
+                         (pSVar6->projected_vertex).transformed_z * _DAT_01d04fd4;
+              local_1c = (pSVar6->projected_vertex).transformed_z * _DAT_01d04fd8 +
+                         (pSVar6->projected_vertex).transformed_x * _DAT_01d04fc0 +
+                         (pSVar6->projected_vertex).transformed_y * _DAT_01d04fcc;
+              local_18 = (pSVar1->projected_vertex).transformed_z * _DAT_01d04fd0 +
                          (pSVar1->projected_vertex).transformed_x * _DAT_01d04fb8 +
                          _DAT_01d04fc4 * (pSVar1->projected_vertex).transformed_y;
-              local_20 = (pSVar1->projected_vertex).transformed_y * _DAT_01d04fc8 +
+              local_14 = (pSVar1->projected_vertex).transformed_y * _DAT_01d04fc8 +
                          (pSVar1->projected_vertex).transformed_x * _DAT_01d04fbc +
                          (pSVar1->projected_vertex).transformed_z * _DAT_01d04fd4;
-              local_1c = (pSVar1->projected_vertex).transformed_z * _DAT_01d04fd8 +
-                         (pSVar1->projected_vertex).transformed_x * _DAT_01d04fc0 +
-                         (pSVar1->projected_vertex).transformed_y * _DAT_01d04fcc;
-              local_18 = (pSVar7->projected_vertex).transformed_z * _DAT_01d04fd0 +
-                         (pSVar7->projected_vertex).transformed_x * _DAT_01d04fb8 +
-                         (pSVar7->projected_vertex).transformed_y * _DAT_01d04fc4;
-              local_78 = (float)local_28;
-              local_54 = (float)local_24;
-              local_50 = local_54 - (float)local_30;
-              local_60 = (float)local_20;
-              local_58 = local_60 - (float)local_2c;
-              local_5c = (float)local_1c;
-              local_7c = (float)local_18;
-              local_14 = (pSVar7->projected_vertex).transformed_y * _DAT_01d04fcc +
-                         (pSVar7->projected_vertex).transformed_x * _DAT_01d04fc0 +
-                         (pSVar7->projected_vertex).transformed_z * _DAT_01d04fd8;
-              local_74 = (float)((pSVar7->projected_vertex).transformed_y * _DAT_01d04fc8 +
-                                 (pSVar7->projected_vertex).transformed_x * _DAT_01d04fbc +
-                                (pSVar7->projected_vertex).transformed_z * _DAT_01d04fd4);
-              local_70 = (float)local_14;
-              local_12c.vertices[5].texture_v = (int)(local_70 - local_5c);
-              fVar3 = local_58 * (float)local_12c.vertices[5].texture_v -
-                      (local_74 - local_60) * (local_5c - local_78);
-              fVar4 = (local_7c - local_54) * (local_5c - local_78) -
-                      local_50 * (float)local_12c.vertices[5].texture_v;
-              fVar6 = local_50 * (local_74 - local_60) - (local_7c - local_54) * local_58;
-              fVar5 = fVar6 * fVar6 + fVar3 * fVar3 + fVar4 * fVar4;
-              if (fVar5 <= 0.0) {
-                local_130 = 127.0;
+              local_6c = (SInputFace *)(float)local_1c;
+              local_48 = (float)local_18;
+              local_44 = local_48 - (float)local_24;
+              local_54 = (float)local_14;
+              local_4c = local_54 - (float)local_20;
+              local_50 = (float)((pSVar1->projected_vertex).transformed_z * _DAT_01d04fd8 +
+                                (pSVar1->projected_vertex).transformed_x * _DAT_01d04fc0 +
+                                (pSVar1->projected_vertex).transformed_y * _DAT_01d04fcc);
+              local_70 = (float)((pSVar4->projected_vertex).transformed_z * _DAT_01d04fd0 +
+                                (pSVar4->projected_vertex).transformed_x * _DAT_01d04fb8 +
+                                (pSVar4->projected_vertex).transformed_y * _DAT_01d04fc4);
+              local_68 = (float)((pSVar4->projected_vertex).transformed_y * _DAT_01d04fc8 +
+                                 (pSVar4->projected_vertex).transformed_x * _DAT_01d04fbc +
+                                (pSVar4->projected_vertex).transformed_z * _DAT_01d04fd4);
+              local_64 = (float)((pSVar4->projected_vertex).transformed_y * _DAT_01d04fcc +
+                                 (pSVar4->projected_vertex).transformed_x * _DAT_01d04fc0 +
+                                (pSVar4->projected_vertex).transformed_z * _DAT_01d04fd8);
+              local_12c.vertices[6].texture_v = (int)(local_64 - local_50);
+              local_28 = local_4c * (float)local_12c.vertices[6].texture_v -
+                         (local_68 - local_54) * (local_50 - (float)local_6c);
+              local_30 = (local_70 - local_48) * (local_50 - (float)local_6c) -
+                         local_44 * (float)local_12c.vertices[6].texture_v;
+              local_2c = local_44 * (local_68 - local_54) - (local_70 - local_48) * local_4c;
+              fVar2 = local_2c * local_2c + local_28 * local_28 + local_30 * local_30;
+              if (fVar2 <= 0.0) {
+                local_12c.base.surface_normal.A.i = 0x42fe0000;
               }
               else {
-                local_130 = (float)_DAT_005e6e0f / SQRT(fVar5);
+                local_12c.base.surface_normal.A.f = (float)_DAT_005e6e0f / SQRT(fVar2);
               }
-              fVar13 = (float10)local_130;
-              local_34 = (float)((float10)fVar3 * fVar13);
-              local_3c = (float)((float10)fVar4 * fVar13);
-              local_38 = (float)((float10)fVar6 * fVar13);
-              fVar14 = (float10)_DAT_005e6e07;
-              fVar13 = (float10)fVar6 * fVar13 + fVar14;
-              fVar15 = (float10)local_3c + fVar14;
-              fVar14 = (float10)local_34 + fVar14;
-              round();
-              round();
-              iVar10 = (int)ROUND(fVar13);
-              local_30 = (int)ROUND(fVar15);
-              local_2c = iVar10;
-              round();
-              local_30 = (int)ROUND(fVar14);
+              local_28 = local_28 * local_12c.base.surface_normal.A.f;
+              local_30 = local_30 * local_12c.base.surface_normal.A.f;
+              local_2c = local_2c * local_12c.base.surface_normal.A.f;
+              fVar2 = local_30 + _DAT_005e6e07;
+              fVar3 = local_28 + _DAT_005e6e07;
+              local_12c.base.base.count = 0x542173;
+              dVar10 = round((double)(local_2c + _DAT_005e6e07));
+              local_12c.base.base.type = 0x54217a;
+              dVar11 = round((double)fVar2);
+              local_28 = (float)(int)ROUND(dVar10);
+              iVar7 = 0x5421a0;
+              local_2c = (float)(int)ROUND(dVar11);
+              dVar10 = round((double)fVar3);
+              local_30 = (float)(int)ROUND(dVar10);
               engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0
-                        (DAT_0060b280,local_30,green_component,iVar10);
+                        (DAT_0060b280,(int)local_30,(int)ROUND(dVar11),iVar7);
               local_12c.base.base.count = 3;
-              local_12c.vertices[0].vertex_index = (int)*puVar11;
-              local_12c.vertices[1].vertex_index = (int)puVar11[1];
-              local_12c.vertices[2].vertex_index = (int)puVar11[2];
+              local_12c.vertices[0].vertex_index = (int)*puVar8;
+              local_12c.vertices[1].vertex_index = (int)puVar8[1];
+              local_12c.vertices[2].vertex_index = (int)puVar8[2];
               engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
                         (DAT_0060b280,&local_12c);
-              local_44 = local_44 + 0x12;
-            } while (local_44 < local_8c);
+              local_44 = (float)((int)local_44 + 0x12);
+            } while ((int)local_44 < local_8c);
           }
         }
         else if ((this_ptr->num_textures == 1) ||
@@ -186,35 +167,35 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
           }
           core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040
                     (g_CDemonSetPtr,(SInputFace *)(local_b0 * 0x12 + *(int *)(local_90 + 0x7c)),
-                     iVar12 - local_b0,render_flags);
+                     iVar9 - local_b0,render_flags);
         }
         else {
-          local_68 = -1;
+          local_68 = -NAN;
           local_40 = local_b0;
-          if (local_b0 < iVar12) {
+          if (local_b0 < iVar9) {
             local_98 = (int *)local_12c.vertices[7].texture_v;
             do {
-              iVar10 = local_40 + 1;
-              iVar2 = *(int *)(*(int *)(local_ac + 0x90) + local_40 * 4);
-              if (iVar10 < iVar12) {
-                piVar8 = (int *)(iVar10 * 4 + *(int *)(local_a0 + 0x90));
+              iVar7 = local_40 + 1;
+              fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);
+              if (iVar7 < iVar9) {
+                pfVar5 = (float *)(iVar7 * 4 + *(int *)(local_a0 + 0x90));
                 do {
-                  if (iVar2 != *piVar8) break;
-                  iVar10 = iVar10 + 1;
-                  piVar8 = piVar8 + 1;
-                } while (iVar10 < iVar12);
+                  if (fVar2 != *pfVar5) break;
+                  iVar7 = iVar7 + 1;
+                  pfVar5 = pfVar5 + 1;
+                } while (iVar7 < iVar9);
               }
-              if (iVar2 != local_68) {
+              if (fVar2 != local_68) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                          (DAT_0060b280,(SMRGLTextureBasic *)(local_94[*local_98].textures + iVar2))
-                ;
-                local_68 = iVar2;
+                          (DAT_0060b280,
+                           (SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));
+                local_68 = fVar2;
               }
               core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040
                         (g_CDemonSetPtr,(SInputFace *)(local_40 * 0x12 + *(int *)(local_90 + 0x7c)),
-                         iVar10 - local_40,render_flags);
-              local_40 = iVar10;
-            } while (iVar10 < iVar12);
+                         iVar7 - local_40,render_flags);
+              local_40 = iVar7;
+            } while (iVar7 < iVar9);
           }
         }
       }
@@ -222,7 +203,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
       local_12c.vertices[6].texture_u = local_12c.vertices[6].texture_u + 0x60;
       local_12c.vertices[7].texture_v = local_12c.vertices[7].texture_v + 4;
       local_12c.vertices[7].texture_u = local_12c.vertices[7].texture_u + 1;
-      local_b0 = iVar12;
+      local_b0 = iVar9;
     } while (local_12c.vertices[7].texture_u < this_ptr->num_parts);
   }
   local_b4 = 0;
@@ -232,33 +213,34 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeform
     local_12c.vertices[6].vertex_index = (int)part_visibility_flags;
     do {
       local_88 = local_b0 + *(int *)(local_12c.vertices[7].vertex_index + 0xc38);
-      local_64 = -1;
+      local_64 = -NAN;
       if (((*(byte *)local_12c.vertices[6].vertex_index & 1) != 0) && (local_b0 < local_88)) {
         local_9c = texture_set_indices + local_b4;
-        local_48 = local_b0 * 0x12;
-        local_4c = local_b0 * 4;
-        iVar12 = local_b0;
+        local_48 = (float)(local_b0 * 0x12);
+        local_4c = (float)(local_b0 * 4);
+        iVar9 = local_b0;
         do {
           local_6c = (SInputFace *)
                      ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-                     local_48);
+                     (int)local_48);
           if ((*(byte *)(part_visibility_flags +
-                        this_ptr->cap_index_ptr[lod_index][iVar12 - this_ptr->tri_count[lod_index]])
+                        this_ptr->cap_index_ptr[lod_index][iVar9 - this_ptr->tri_count[lod_index]])
               & 1) == 0) {
             if ((((local_84 == 0) && (skip_texture_capture == 0)) && (local_80 == 0)) &&
-               (iVar10 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),
-               iVar10 != local_64)) {
+               (fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),
+               fVar2 != local_64)) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                        (DAT_0060b280,(SMRGLTextureBasic *)(local_a4[*local_9c].textures + iVar10));
-              local_64 = iVar10;
+                        (DAT_0060b280,
+                         (SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));
+              local_64 = fVar2;
             }
             core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040
                       (g_CDemonSetPtr,local_6c,1,render_flags);
           }
-          iVar12 = iVar12 + 1;
-          local_48 = local_48 + 0x12;
-          local_4c = local_4c + 4;
-        } while (iVar12 < local_88);
+          iVar9 = iVar9 + 1;
+          local_48 = (float)((int)local_48 + 0x12);
+          local_4c = (float)((int)local_4c + 4);
+        } while (iVar9 < local_88);
       }
       local_b0 = local_88;
       local_12c.vertices[6].vertex_index = local_12c.vertices[6].vertex_index + 4;

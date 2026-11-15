@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 221,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 14,
+    "pseudocode_lines": 64,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 218
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -176,32 +175,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar1;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 22,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "iVar4 = (dest_x - clip_left) * DAT_0061b4a0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar1 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270(iVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 28,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);",
@@ -209,7 +192,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 29,
       "match": "(ushort *)(*piVar6 + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);",
@@ -217,7 +200,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(ushort *)(piVar6[1] + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);",
@@ -225,66 +208,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_01c4354c",
       "severity": "mild",
-      "text": "iVar5 = iVar4 + *(int *)(&DAT_01c4354c + iStack_24);",
+      "text": "iVar1 = *(int *)(&DAT_01c4354c + iStack_24);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(ushort *)((int)puVar10",
+      "line": 39,
+      "match": "(ushort *)((int)src_buffer",
       "severity": "moderate",
-      "text": "puVar9 = (ushort *)((int)puVar10 + (uVar3 + 3 & 0xfffffffc));",
+      "text": "puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(ushort *)((int)puVar10",
+      "line": 42,
+      "match": "(ushort *)((int)src_buffer",
       "severity": "moderate",
-      "text": "puVar10 = (ushort *)((int)puVar10 + (clip_left - uVar2));",
+      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "while (iVar8 = (int)(DAT_0061b4a0 * uVar2) >> 0x1f,",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_0061b4a0",
       "severity": "mild",
-      "text": "iVar8 = ((int)((DAT_0061b4a0 * uVar2 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3) +",
+      "text": "while (iVar8 = (int)(DAT_0061b4a0 * uVar3) >> 0x1f,",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)puVar10",
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)(((int)((DAT_0061b4a0 * uVar3 + iVar8 * -8) -",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar9 = (ushort *)((int)puVar10 + (uVar3 + 3 & 0xfffffffc));",
+      "text": "puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
-      "match": "(int)puVar10",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar10 = (ushort *)((int)puVar10 + (clip_left - uVar2));",
+      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
-      "match": "(int)puVar10",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar9 = (ushort *)((uVar3 + 3 & 0xfffffffc) + (int)puVar10);",
+      "text": "puVar9 = (ushort *)((count + 3 & 0xfffffffc) + (int)src_buffer);",
       "type": "pointer_truncation"
     }
   ]

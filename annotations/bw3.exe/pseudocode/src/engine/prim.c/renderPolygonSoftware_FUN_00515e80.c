@@ -25,7 +25,6 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00515e80(SRenderVertex *ver
   SRenderVertex *pSVar11;
   bool bVar12;
   int local_1c;
-  int local_18;
   SSoftwareEdge *local_14;
   
   if ((DAT_005fba40 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
@@ -187,26 +186,25 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00515e80(SRenderVertex *ver
   edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_005158e0(_DAT_01ed318c,(SSoftwareEdge *)0x0);
   if ((edge_ptr != (SSoftwareEdge *)0x0) &&
      (local_14 = engine_prim_c_findEdgeInBuffer_FUN_005158e0(_DAT_01ed318c,edge_ptr),
-     local_14 != (SSoftwareEdge *)0x0)) {
-    local_18 = _DAT_01ed318c;
-    iVar9 = _DAT_01ed318c - DAT_00603974;
+     iVar9 = _DAT_01ed318c, local_14 != (SSoftwareEdge *)0x0)) {
+    iVar6 = _DAT_01ed318c - DAT_00603974;
     bVar12 = SBORROW4(_DAT_01ed318c,DAT_00603974);
-    while (bVar12 != iVar9 < 0) {
-      if ((edge_ptr->base).y_max <= local_18) {
+    while (bVar12 != iVar6 < 0) {
+      if ((edge_ptr->base).y_max <= iVar9) {
         (edge_ptr->base).y_min = -1;
-        edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_005158e0(local_18,local_14);
+        edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_005158e0(iVar9,local_14);
         if (edge_ptr == (SSoftwareEdge *)0x0) {
           return;
         }
       }
-      if ((local_14->base).y_max <= local_18) {
+      if ((local_14->base).y_max <= iVar9) {
         (local_14->base).y_min = -1;
-        local_14 = engine_prim_c_findEdgeInBuffer_FUN_005158e0(local_18,edge_ptr);
+        local_14 = engine_prim_c_findEdgeInBuffer_FUN_005158e0(iVar9,edge_ptr);
         if (local_14 == (SSoftwareEdge *)0x0) {
           return;
         }
       }
-      engine_special_cpp_FUN_00563257();
+      engine_special_cpp_FUN_00563257(local_14,edge_ptr,iVar9);
       piVar1 = &(edge_ptr->base).x_current;
       *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
       (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
@@ -216,18 +214,16 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00515e80(SRenderVertex *ver
            (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
       (edge_ptr->base).alpha_current =
            (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
-      (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
-      (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
-      (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
-      local_18 = local_18 + 1;
-      (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
-      iVar6 = DAT_00603974;
-      (local_14->base).depth_current =
-           (local_14->base).depth_current + (local_14->base).depth_gradient;
-      (local_14->base).alpha_current =
-           (local_14->base).alpha_current + (local_14->base).alpha_gradient;
-      iVar9 = local_18 - iVar6;
-      bVar12 = SBORROW4(local_18,iVar6);
+      *(int *)(iVar9 + 8) = *(int *)(iVar9 + 8) + *(int *)(iVar9 + 0xc);
+      *(int *)(iVar9 + 0x18) = *(int *)(iVar9 + 0x18) + *(int *)(iVar9 + 0x1c);
+      *(int *)(iVar9 + 0x20) = *(int *)(iVar9 + 0x20) + *(int *)(iVar9 + 0x24);
+      local_1c = local_1c + 1;
+      *(int *)(iVar9 + 0x10) = *(int *)(iVar9 + 0x10) + *(int *)(iVar9 + 0x14);
+      iVar8 = DAT_00603974;
+      *(int *)(iVar9 + 0x28) = *(int *)(iVar9 + 0x28) + *(int *)(iVar9 + 0x2c);
+      *(int *)(iVar9 + 0x30) = *(int *)(iVar9 + 0x30) + *(int *)(iVar9 + 0x34);
+      iVar6 = local_1c - iVar8;
+      bVar12 = SBORROW4(local_1c,iVar8);
     }
   }
   return;

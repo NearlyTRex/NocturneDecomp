@@ -46,12 +46,12 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_00534b80
 ;   crt_stdlib.c__qsort_FUN_005b78b8
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0
-;   engine_drender.cpp_FUN_0046b5e0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     PUSH ESI                            ; 0053332d | DAT_01ba5c50
     LEA ESI,[ESP + 0x70]                ; 0053332e
     LEA EDI,[ESP + 0x34]                ; 00533332
-    CALL engine_drender.cpp_FUN_0046b5e0 ; 00533336
-        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b5e0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0 ; 00533336
+        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x70]                ; 0053333b
     ADD ESP,0x4                         ; 0053333f
     MOVSD ES:EDI,ESI                    ; 00533342
@@ -270,8 +270,8 @@ section .text
     PUSH EBX                            ; 005335aa
     LEA ESI,[ESP + 0x5c]                ; 005335ab
     LEA EDI,[ESP + 0x44]                ; 005335af
-    CALL core_actor.cpp_FUN_00408d70    ; 005335b3
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005335b3
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 005335b8
     ADD ESP,0x8                         ; 005335bc
     MOVSD ES:EDI,ESI                    ; 005335bf

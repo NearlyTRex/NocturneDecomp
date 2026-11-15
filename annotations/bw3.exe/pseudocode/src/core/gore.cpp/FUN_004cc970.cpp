@@ -2,31 +2,24 @@
 // Address: 004cc970
 // Address Range: [[004cc970, 004ccab1]]
 // Convention: unknown
-// Signature: void core_gore_cpp_FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4)
+// Signature: void core_gore_cpp_FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_gore_cpp_FUN_004cc970(uint param_1,uint *param_2,int *param_3,int *param_4)
+void core_gore_cpp_FUN_004cc970(uint param_1,int *param_2,int *param_3,int *param_4)
 
 {
-  int *piVar1;
+  float fVar1;
   byte bVar2;
-  float10 fVar3;
-  float10 fVar4;
+  double dVar3;
   float afStackY_1018 [1011];
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
+  CColor3f local_3c;
+  CColor3f local_30;
   float local_24;
-  float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
-  float local_10;
+  float local_20 [4];
+  uint local_10;
   float local_c;
   
   bVar2 = 0;
@@ -49,32 +42,28 @@ void core_gore_cpp_FUN_004cc970(uint param_1,uint *param_2,int *param_3,int *par
   case 3:
     break;
   }
-  local_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,255.0);
-  local_c = local_3c;
-  local_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,40.0);
-  local_c = local_38;
-  local_34 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(106.0,256.0);
-  local_c = local_34;
-  core_boneguy_cpp_hsvToRgb_FUN_00417240(&stack0xffffffc4);
-  local_24 = local_30;
-  (&stack0xffffffe0)[(uint)bVar2 * 0xfffffffe] =
-       (float)*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * 0xfffffffe * 4);
-  *(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  if (&stack0xffffffe8 != &stack0xffffffdc) {
-    local_18 = local_24;
-    local_14 = local_20;
-    local_10 = local_1c;
+  local_3c.r = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,255.0);
+  local_c = local_3c.r;
+  local_3c.g = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,40.0);
+  local_c = local_3c.g;
+  local_3c.b = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(106.0,256.0);
+  local_c = local_3c.b;
+  core_boneguy_cpp_hsvToRgb_FUN_00417240(&local_3c,&local_30);
+  fVar1 = _DAT_005c4621;
+  local_24 = local_30.r;
+  local_20[(uint)bVar2 * -2] = *(float *)((int)&local_30 + (uint)bVar2 * -8 + 4);
+  local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&local_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  if (local_20 + 2 != &local_24) {
+    local_20[2] = local_24;
+    local_20[3] = local_20[0];
+    local_10 = local_20[1];
   }
-  fVar3 = (float10)_DAT_005c4621;
-  fVar4 = (float10)local_18 * fVar3;
-  piVar1 = (int *)round();
-  *piVar1 = (int)ROUND(fVar4);
-  fVar4 = (float10)local_14 * fVar3;
-  round();
-  *param_3 = (int)ROUND(fVar4);
-  fVar3 = fVar3 * (float10)local_10;
-  round();
-  *param_4 = (int)ROUND(fVar3);
+  dVar3 = round((double)(local_20[2] * _DAT_005c4621));
+  *param_2 = (int)ROUND(dVar3);
+  dVar3 = round((double)(local_20[2] * fVar1));
+  *param_3 = (int)ROUND(dVar3);
+  dVar3 = round((double)(fVar1 * local_20[2]));
+  *param_4 = (int)ROUND(dVar3);
   return;
 }

@@ -68,7 +68,7 @@ void engine_font_cpp_FUN_004a7fd0(void)
          (puStack_20 == (byte *)0x0)) {
         _DAT_01d046a0 = "..\\engine\\font.cpp";
         _DAT_01d046a4 = 0x17f;
-        core_main_c_FUN_004e4500("CBitFont::setAcceleration - Out of memory");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("CBitFont::setAcceleration - Out of memory");
       }
       engine_dosio_cpp_splitPath_FUN_00461070
                 ((char *)(in_stack_00000004 + 4),(char *)0x0,(char *)0x0,acStack_154,(char *)0x0);
@@ -80,7 +80,7 @@ void engine_font_cpp_FUN_004a7fd0(void)
       if (iVar5 == 0) {
         _DAT_01d046a4 = 0x19e;
         _DAT_01d046a0 = "..\\engine\\font.cpp";
-        core_main_c_FUN_004e4500("CBitFont::setAcceleration - No opacity file found: %s",acStack_254);
+        core_main_c_displayErrorAndQuit_FUN_004e4500("CBitFont::setAcceleration - No opacity file found: %s");
       }
       else {
         if (_DAT_0264bbac == 0) {
@@ -156,7 +156,7 @@ void engine_font_cpp_FUN_004a7fd0(void)
         _DAT_01d046a0 = "..\\engine\\font.cpp";
         _DAT_01d046a4 = 0x1e0;
         uStack_454 = 0x4a826d;
-        core_main_c_FUN_004e4500();
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory loading opacity mapped font : ");
       }
       *(uint *)(in_stack_00000018 + 0x1dd0) =
            *(int *)(in_stack_00000018 + 0x1dcc) + 0x1fU & 0xffffffe0;
@@ -166,7 +166,7 @@ void engine_font_cpp_FUN_004a7fd0(void)
         _DAT_01d046a0 = "..\\engine\\font.cpp";
         _DAT_01d046a4 = 0x1e8;
         uStack_454 = 0x4a845e;
-        core_main_c_FUN_004e4500();
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory loading opacity mapped font : ");
       }
       iVar8 = in_stack_00000018 + 0x80;
       iVar5 = in_stack_00000018 + 0x200;

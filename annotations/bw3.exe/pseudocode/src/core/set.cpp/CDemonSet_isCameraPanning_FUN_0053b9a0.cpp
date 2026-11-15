@@ -16,6 +16,6 @@ int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_
   }
   _DAT_01d71de0 = "..\\core\\set.cpp";
   _DAT_01d71de4 = 0x14ef;
-  core_main_c_FUN_004e4330("CDemonSet::isCameraPanning - no camera selected");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::isCameraPanning - no camera selected");
   return this_ptr->cameras[this_ptr->selected_camera_index].is_panning;
 }

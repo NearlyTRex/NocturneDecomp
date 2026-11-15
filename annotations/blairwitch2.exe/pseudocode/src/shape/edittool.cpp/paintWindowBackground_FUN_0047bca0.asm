@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5d1f82                       ; 0047bd41 | = "paintWindowBackground called but no w..."
     MOV dword ptr [0x01d046a0],ECX      ; 0047bd46 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0047bd4c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047bd52
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047bd52
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047bd57
     JMP 0x0047bcb4                      ; 0047bd5a
         ;   XREF to: 0047bcb4 (UNCONDITIONAL_JUMP)  ; LAB_0047bcb4

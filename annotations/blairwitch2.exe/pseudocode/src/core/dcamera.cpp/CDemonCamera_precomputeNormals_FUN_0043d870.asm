@@ -53,8 +53,8 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00443020
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
-;   core_dcamera.cpp_FUN_0043c6b0
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
     PUSH EDX                            ; 0043d922
     LEA ESI,[ESP + 0x10]                ; 0043d923
     LEA EDI,[ESP + 0x34]                ; 0043d927
-    CALL core_dcamera.cpp_FUN_0043c6b0  ; 0043d92b
-        ;   XREF to: 0043c6b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c6b0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0 ; 0043d92b
+        ;   XREF to: 0043c6b0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x10]                ; 0043d930
     ADD ESP,0xc                         ; 0043d934
     MOVSD ES:EDI,ESI                    ; 0043d937

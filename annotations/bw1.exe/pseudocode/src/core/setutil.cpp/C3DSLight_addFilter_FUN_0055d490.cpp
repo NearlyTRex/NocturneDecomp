@@ -18,7 +18,7 @@ void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0055d490(C3DSLight *this_p
   if (0x1f < this_ptr->filter_count) {
     _DAT_01d1d400 = "..\\core\\setutil.cpp";
     _DAT_01d1d404 = 0x3b6;
-    core_main_c_FUN_005030e0("C3DSLight::addFilter - too many filters (max is %d)",0x20);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("C3DSLight::addFilter - too many filters (max is %d)");
   }
   pacVar3 = this_ptr->filter_names + this_ptr->filter_count;
   do {

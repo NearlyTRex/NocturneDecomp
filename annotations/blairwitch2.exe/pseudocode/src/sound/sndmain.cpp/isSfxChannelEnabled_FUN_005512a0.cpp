@@ -16,6 +16,6 @@ int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(int channel_index
   }
   _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
   _DAT_01d046a4 = 0x113f;
-  core_main_c_FUN_004e4500("isSfxChannelEnabled - invalid channel index: %d",channel_index);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("isSfxChannelEnabled - invalid channel index: %d");
   return *(int *)(channel_index * 4 + 0x2648540);
 }

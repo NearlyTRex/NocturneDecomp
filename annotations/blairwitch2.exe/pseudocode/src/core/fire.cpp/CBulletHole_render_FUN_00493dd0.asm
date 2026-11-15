@@ -57,7 +57,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_005317c0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
@@ -273,8 +273,8 @@ section .text
     PUSH EDX                            ; 00494079
     LEA EDI,[ESP + 0x44]                ; 0049407a
     LEA EBX,[ESP + 0x14]                ; 0049407e
-    CALL core_actor.cpp_FUN_00408cf0    ; 00494082
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 00494082
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x5c]                ; 00494087
     ADD ESP,0x8                         ; 0049408b
     MOV EAX,EBP                         ; 0049408e

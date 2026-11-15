@@ -18,7 +18,7 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(int bits_per_sampl
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x148c;
-    core_main_c_FUN_004e4330("setSoundOutputMode - can't do this while sound active!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("setSoundOutputMode - can't do this while sound active!");
   }
   DAT_00604228 = bits_per_sample;
   DAT_0060422c = channels;

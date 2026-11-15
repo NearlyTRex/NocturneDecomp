@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5cf3c0                       ; 0044a441 | = "CDemonLight::beginBackgroundScene - N..."
     MOV dword ptr [0x01d046a0],EDX      ; 0044a446 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0044a44c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044a452
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a452
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a457
     MOV ESI,dword ptr [EBX + 0x1cc4]    ; 0044a45a
         ;   Label: LAB_0044a45a
@@ -113,8 +113,8 @@ section .text
     PUSH 0x5cf37a                       ; 0044a4b0 | = "CDemonLight::beginBackgroundScene - S..."
     MOV dword ptr [0x01d046a0],ECX      ; 0044a4b5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044a4bb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044a4c1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a4c1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a4c6
     JMP 0x0044a3f5                      ; 0044a4c9
         ;   XREF to: 0044a3f5 (UNCONDITIONAL_JUMP)  ; LAB_0044a3f5

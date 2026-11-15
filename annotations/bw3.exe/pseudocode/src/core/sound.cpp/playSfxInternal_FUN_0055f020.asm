@@ -62,7 +62,7 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00539dd0
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
@@ -366,8 +366,8 @@ section .text
     PUSH 0x5d51b7                       ; 0055f2ed | = "Invalid sfx string: %s"
     MOV dword ptr [0x01d71de0],ECX      ; 0055f2f2 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0055f2f8 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055f2fe
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055f2fe
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055f303
     PUSH 0x5d51ce                       ; 0055f306 | DAT_005d51ce
         ;   Label: LAB_0055f306
@@ -534,8 +534,8 @@ section .text
     PUSH 0x5d5203                       ; 0055f4d2 | = "Invalid sfx string: %s"
     MOV dword ptr [0x01d71de0],EDX      ; 0055f4d7 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0055f4dd | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055f4e3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055f4e3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055f4e8
     MOV EAX,dword ptr [ESP + 0x154]     ; 0055f4eb
     ADD dword ptr [ESP + 0x164],EAX     ; 0055f4f2
@@ -579,8 +579,8 @@ section .text
     PUSH 0x5d5232                       ; 0055f566 | = "Invalid sfx string: %s"
     MOV dword ptr [0x01d71de0],EDI      ; 0055f56b | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0055f571 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055f576
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055f576
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055f57b
     MOV EAX,dword ptr [ESP + 0x158]     ; 0055f57e
     ADD dword ptr [ESP + 0x164],EAX     ; 0055f585
@@ -606,8 +606,8 @@ section .text
     PUSH 0x5d525b                       ; 0055f5bf | = "Invalid sfx string: %s"
     MOV dword ptr [0x01d71de0],ECX      ; 0055f5c4 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0055f5ca | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055f5d0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055f5d0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055f5d5
     JMP 0x0055f1f9                      ; 0055f5d8
         ;   XREF to: 0055f1f9 (UNCONDITIONAL_JUMP)  ; LAB_0055f1f9

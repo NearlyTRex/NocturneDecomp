@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 99,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 48,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
       "warning_overlapping_globals"
     ],
-    "total_lines": 178
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -260,30 +259,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "this_ptr->data_buffer[this_ptr->size * iVar5 + extraout_ECX] = local_1c;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "iVar4 = extraout_ECX + 1;",
-      "type": "extra_output"
     }
   ]
 }

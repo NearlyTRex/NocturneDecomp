@@ -33,7 +33,7 @@ SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor
   }
   _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
   _DAT_01d1d404 = 0x40b;
-  core_main_c_FUN_005030e0("Can't have more than one twana entry right now");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Can't have more than one twana entry right now");
   _DAT_01cc4200 = pSVar1;
   return pSVar1;
 }

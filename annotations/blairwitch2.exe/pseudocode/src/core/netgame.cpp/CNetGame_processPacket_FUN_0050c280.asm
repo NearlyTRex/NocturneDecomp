@@ -64,7 +64,7 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020
@@ -1041,8 +1041,8 @@ section .text
     PUSH 0x5e0a35                       ; 0050cc22 | = "Player list mismatch!"
     MOV dword ptr [0x01d046a0],EDX      ; 0050cc27 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050cc2d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050cc33
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cc33
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cc38
     IMUL ESI,ESI,0x34                   ; 0050cc3b
         ;   Label: LAB_0050cc3b
@@ -1078,8 +1078,8 @@ section .text
     PUSH 0x5e03e3                       ; 0050cc9d | = "allocSimFrame - sim history list full"
     MOV dword ptr [0x01d046a0],EDX      ; 0050cca2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050cca8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050ccae
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050ccae
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050ccb3
     MOV EDX,dword ptr [0x01d54640]      ; 0050ccb6 | DAT_01d54640
         ;   Label: LAB_0050ccb6
@@ -1109,8 +1109,8 @@ section .text
     PUSH 0x5e09e9                       ; 0050cd04 | = "Player list mismatch processing SimFr..."
     MOV dword ptr [0x01d046a0],EDI      ; 0050cd09 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0050cd0f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050cd14
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cd14
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cd19
     JMP 0x0050cc14                      ; 0050cd1c
         ;   XREF to: 0050cc14 (UNCONDITIONAL_JUMP)  ; LAB_0050cc14

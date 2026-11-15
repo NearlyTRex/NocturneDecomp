@@ -23,7 +23,7 @@
 ;   undefined4 DAT_02ceb91c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5d36d8                       ; 00555ec3 | = "setNextSfxChannel - invalid channel i..."
     MOV dword ptr [0x01d71de0],EDX      ; 00555ec8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00555ece | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555ed4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555ed4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555ed9
     JMP 0x00555e9e                      ; 00555edc
         ;   XREF to: 00555e9e (UNCONDITIONAL_JUMP)  ; LAB_00555e9e

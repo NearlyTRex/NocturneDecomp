@@ -27,11 +27,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d340
-;   core_actor.cpp_FUN_00408cf0
-;   core_actor.cpp_FUN_00408d30
-;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_00408de0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
@@ -211,8 +211,8 @@ section .text
     PUSH EBX                            ; 005960e0
     MOV dword ptr [EBP + 0xfffffc92],EDX ; 005960e1
     MOV dword ptr [EBP + 0xfffffc96],EDX ; 005960e7
-    CALL core_actor.cpp_FUN_00408d70    ; 005960ed
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005960ed
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffc26]          ; 005960f2
     MOVSD ES:EDI,ESI                    ; 005960f8
     MOVSD ES:EDI,ESI                    ; 005960f9
@@ -262,8 +262,8 @@ section .text
     PUSH EBX                            ; 0059618b
     LEA ESI,[EBP + 0xfffffe8a]          ; 0059618c
     MOV dword ptr [EBP + 0xfffffdb6],EDX ; 00596192
-    CALL core_actor.cpp_FUN_00408d70    ; 00596198
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00596198
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffe8a]          ; 0059619d
     MOVSD ES:EDI,ESI                    ; 005961a3
     MOVSD ES:EDI,ESI                    ; 005961a4
@@ -368,8 +368,8 @@ section .text
     PUSH EBX                            ; 005962b6
     LEA ESI,[EBP + 0xfffffcc2]          ; 005962b7
     LEA EDI,[EBP + 0xfffffed2]          ; 005962bd
-    CALL core_actor.cpp_FUN_00408d70    ; 005962c3
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005962c3
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffcc2]          ; 005962c8
     MOVSD ES:EDI,ESI                    ; 005962ce
     MOVSD ES:EDI,ESI                    ; 005962cf
@@ -451,7 +451,7 @@ section .text
     FMUL double ptr [0x005ef18a]        ; 005963b3 | DAT_005ef18a
     PUSH 0x0                            ; 005963b9
     CALL crt_math.c_round_FUN_005b7ff0  ; 005963bb
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBP + 0x4e]        ; 005963c0
     MOV ECX,dword ptr [EBP + 0x4e]      ; 005963c3
     PUSH ECX                            ; 005963c6
@@ -577,8 +577,8 @@ section .text
     PUSH 0x5eefb4                       ; 00596523 | DAT_005eefb4
     MOV dword ptr [0x01d046a0],ECX      ; 00596528 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0059652e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00596534
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00596534
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00596539
     JMP 0x005964a3                      ; 0059653c
         ;   XREF to: 005964a3 (UNCONDITIONAL_JUMP)  ; LAB_005964a3
@@ -653,8 +653,8 @@ section .text
     PUSH 0x5eefe7                       ; 0059662c | DAT_005eefe7
     MOV dword ptr [0x01d046a0],ESI      ; 00596631 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00596637 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0059663d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0059663d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00596642
     JMP 0x00596557                      ; 00596645
         ;   XREF to: 00596557 (UNCONDITIONAL_JUMP)  ; LAB_00596557
@@ -709,8 +709,8 @@ section .text
     PUSH EDI                            ; 00596712
     LEA ESI,[EBP + 0xfffffc9e]          ; 00596713
     LEA EDI,[EBP + 0xfffffe4e]          ; 00596719
-    CALL core_actor.cpp_FUN_00408d70    ; 0059671f
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0059671f
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffc9e]          ; 00596724
     MOVSD ES:EDI,ESI                    ; 0059672a
     MOVSD ES:EDI,ESI                    ; 0059672b
@@ -764,8 +764,8 @@ section .text
     PUSH EAX                            ; 005967f2
     LEA ESI,[EBP + 0xfffffd52]          ; 005967f3
     LEA EDI,[EBP + 0xfffffcfe]          ; 005967f9
-    CALL core_actor.cpp_FUN_00408d70    ; 005967ff
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005967ff
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffd52]          ; 00596804
     MOVSD ES:EDI,ESI                    ; 0059680a
     MOVSD ES:EDI,ESI                    ; 0059680b
@@ -811,8 +811,8 @@ section .text
     PUSH EBX                            ; 00596894
     LEA ESI,[EBP + 0xfffffc1a]          ; 00596895
     LEA EDI,[EBP + 0xfffffbea]          ; 0059689b
-    CALL core_actor.cpp_FUN_00408d30    ; 005968a1
-        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d30()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30 ; 005968a1
+        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[EBP + 0xfffffc1a]          ; 005968a6
     MOVSD ES:EDI,ESI                    ; 005968ac
     MOVSD ES:EDI,ESI                    ; 005968ad
@@ -887,8 +887,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005969a4
     PUSH EBX                            ; 005969a5
     LEA ESI,[EBP + 0xfffffc6e]          ; 005969a6
-    CALL core_actor.cpp_FUN_00408d70    ; 005969ac
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005969ac
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005969b1
     PUSH 0x0                            ; 005969b4
     PUSH 0x3                            ; 005969b6
@@ -1681,8 +1681,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005972e8
     PUSH EBX                            ; 005972e9
     LEA ESI,[EBP + 0xffffff02]          ; 005972ea
-    CALL core_actor.cpp_FUN_00408d70    ; 005972f0
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005972f0
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005972f5
     PUSH 0x0                            ; 005972f8
     LEA EAX,[EBP + 0xffffff4a]          ; 005972fa
@@ -2160,8 +2160,8 @@ section .text
     PUSH EBX                            ; 005978a8
     LEA ESI,[EBP + 0xfffffc32]          ; 005978a9
     LEA EDI,[EBP + 0xfffffc4a]          ; 005978af
-    CALL core_actor.cpp_FUN_00408de0    ; 005978b5
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 005978b5
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[EBP + 0xfffffc32]          ; 005978ba
     LEA EAX,[EBP + 0xfffffc4a]          ; 005978c0
     ADD ESP,0x8                         ; 005978c6
@@ -2538,8 +2538,8 @@ section .text
     PUSH EBX                            ; 00597ceb
     LEA ESI,[EBP + 0xfffffd5e]          ; 00597cec
     LEA EDI,[EBP + 0xfffffe96]          ; 00597cf2
-    CALL core_actor.cpp_FUN_00408cf0    ; 00597cf8
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 00597cf8
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + 0xfffffd5e]          ; 00597cfd
     LEA EAX,[EBX + 0x20]                ; 00597d03
     MOVSD ES:EDI,ESI                    ; 00597d06
@@ -2726,8 +2726,8 @@ section .text
     PUSH ECX                            ; 00597f7a
     LEA ESI,[EBP + 0xfffffeae]          ; 00597f7b
     LEA EDI,[EBP + 0xffffff7a]          ; 00597f81
-    CALL core_actor.cpp_FUN_00408d70    ; 00597f87
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00597f87
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00597f8c
     LEA EAX,[EBP + 0xffffff7a]          ; 00597f8f
     LEA ESI,[EBP + 0xfffffeae]          ; 00597f95
@@ -2738,8 +2738,8 @@ section .text
     PUSH EBX                            ; 00597f9f
     LEA ESI,[EBP + 0xfffffea2]          ; 00597fa0
     LEA EDI,[EBP + 0xffffff32]          ; 00597fa6
-    CALL core_actor.cpp_FUN_00408de0    ; 00597fac
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00597fac
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[EBP + 0xfffffea2]          ; 00597fb1
     LEA EAX,[EBP + 0xffffff32]          ; 00597fb7
     ADD ESP,0x8                         ; 00597fbd

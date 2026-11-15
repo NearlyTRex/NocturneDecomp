@@ -43,7 +43,7 @@ ECollisionType __cdecl CAnvil::getCollisionType(CAnvil *this_ptr,SCollisionInfo 
 
 // Original: core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040ed50
 // Address: 0040ed50
-CBoundingBox3D * __cdecl CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_0040ed90
 // Address: 0040ed90

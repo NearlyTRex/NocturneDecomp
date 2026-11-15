@@ -36,7 +36,7 @@ void cockpit_ckptutil_c_FUN_0042f4f0(uint *param_1,int param_2,uint param_3,uint
     _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.");
     _DAT_01d046a4 = 0x82f;
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-    core_main_c_FUN_004e4500(acStack_78);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_78);
   }
   if (param_4 == 1) {
     uVar6 = 0;

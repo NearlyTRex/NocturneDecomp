@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH 0x5f4084                       ; 00573cf2 | = "isSfxChannelEnabled - invalid channel..."
     MOV dword ptr [0x01d1d400],EDX      ; 00573cf7 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00573cfd | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00573d03
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00573d03
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00573d08
     MOV EAX,dword ptr [EBX*0x4 + 0x2c7fd10] ; 00573d0b
     POP EBX                             ; 00573d12

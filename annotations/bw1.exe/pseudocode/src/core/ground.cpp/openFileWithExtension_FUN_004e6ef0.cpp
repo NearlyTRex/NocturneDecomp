@@ -42,7 +42,7 @@ LAB_004e6f33:
   if (pcVar4 == (char *)0x0) {
     _DAT_01d1d400 = "..\\core\\ground.cpp";
     _DAT_01d1d404 = 0x40;
-    core_main_c_FUN_005030e0("eopen - ext not found!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("eopen - ext not found!");
   }
   pcVar4 = pcVar4 + 1;
   do {
@@ -54,11 +54,11 @@ LAB_004e6f33:
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  p_Var2 = engine_dosio_cpp_FUN_00479180(directory,acStack_60,open_mode);
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(directory,acStack_60,open_mode);
   if (p_Var2 == (_FILE *)0x0) {
     _DAT_01d1d400 = "..\\core\\ground.cpp";
     _DAT_01d1d404 = 0x44;
-    core_main_c_FUN_005030e0("eopen - Cannot open file");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("eopen - Cannot open file");
     return (_FILE *)0x0;
   }
   return p_Var2;

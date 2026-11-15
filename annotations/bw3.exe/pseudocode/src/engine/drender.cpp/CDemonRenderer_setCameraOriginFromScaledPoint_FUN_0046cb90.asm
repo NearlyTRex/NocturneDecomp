@@ -18,9 +18,9 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dc0da
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004f4070 at 004f4080
 ;   core_moon.cpp_CMoon_render_FUN_004f9670 at 004f96fc
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 005368ee
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20 at 0053af2f
-;   core_set.cpp_FUN_005365c0 at 005368ee
-;   core_setdir.cpp_FUN_0053f940 at 00540330
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 00540330
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -47,10 +47,10 @@ section .text
     FMULP ST3                           ; 0046cbaa
     FXCH                                ; 0046cbac
     CALL crt_math.c_round_FUN_005a3120  ; 0046cbae
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0046cbb3
     CALL crt_math.c_round_FUN_005a3120  ; 0046cbb5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0046cbba
     FISTP dword ptr [ESP]               ; 0046cbbc
     FISTP dword ptr [ESP + 0x4]         ; 0046cbbf
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0046cbc6
     PUSH EDX                            ; 0046cbca
     CALL crt_math.c_round_FUN_005a3120  ; 0046cbcb
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     PUSH ECX                            ; 0046cbd0
     FISTP dword ptr [ESP + 0xc]         ; 0046cbd1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0046cbd5

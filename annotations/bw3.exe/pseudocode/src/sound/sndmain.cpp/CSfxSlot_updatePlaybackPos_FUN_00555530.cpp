@@ -15,18 +15,18 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(CSfxSlot 
   double dVar1;
   int iVar2;
   double dVar3;
-  ulonglong local_28;
+  double local_28;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd36;
-    core_main_c_FUN_004e4330();
+    core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::updatePlaybackPos - no samplePtr");
   }
   if ((hardware_playback_pos < 0.0) ||
      ((double)this_ptr->sample->streaming_buffer_size < hardware_playback_pos)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd3c;
-    core_main_c_FUN_004e4330();
+    core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
   local_28 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
   if (local_28 < 0.0) {
@@ -36,11 +36,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(CSfxSlot 
      ((double)this_ptr->sample->streaming_buffer_size + _DAT_005d34ba < local_28)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd4a;
-    core_main_c_FUN_004e4330
-              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos,
-               *(uint *)&this_ptr->prev_hardware_playback_pos,
-               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
-               local_28._4_4_,this_ptr->sample->streaming_buffer_size);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)");
   }
   if (((this_ptr->options).playback_position != this_ptr->prev_hardware_playback_pos) ||
      (hardware_playback_pos < (this_ptr->options).playback_position)) {

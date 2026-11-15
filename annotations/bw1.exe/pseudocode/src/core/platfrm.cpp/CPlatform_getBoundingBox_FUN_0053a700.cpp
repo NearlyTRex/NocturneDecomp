@@ -1,17 +1,16 @@
 // Name: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_0053a700
 // Address: 0053a700
 // Address Range: [[0053a700, 0053a73c]]
-// Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box)
+// Convention: __stack_esi
+// Signature: CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box)
 
 {
   CKeyFramedModel *pCVar1;
   int iVar2;
-  CBoundingBox3D *unaff_ESI;
   CBoundingBox3D *pCVar3;
   float *pfVar4;
   byte bVar5;
@@ -27,11 +26,11 @@ CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
   pfVar4 = afStack_20;
-  pCVar3 = unaff_ESI;
+  pCVar3 = out_box;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     (pCVar3->min).x = *pfVar4;
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
     pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
   }
-  return unaff_ESI;
+  return out_box;
 }

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00652816
-;   SSoundModeEntry[27] g_SoundModeTable
+;   SReverbPreset[27] g_ReverbPresetTable
 ;
 ; *****************************************************************************
 
@@ -31,6 +31,6 @@ section .text
     RET                                 ; 005b3c82
     SHL EAX,0x4                         ; 005b3c83
         ;   Label: LAB_005b3c83
-    MOV EAX,dword ptr [EAX + 0x681efc]  ; 005b3c86 | g_SoundModeTable
+    MOV EAX,dword ptr [EAX + 0x681efc]  ; 005b3c86 | g_ReverbPresetTable
     RET                                 ; 005b3c8c
 

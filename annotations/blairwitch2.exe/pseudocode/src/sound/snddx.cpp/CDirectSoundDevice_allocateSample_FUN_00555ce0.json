@@ -1,0 +1,260 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 203,
+    "complexity_score": 141,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 96,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 299
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00555ce0",
+    "address_range": [
+      [
+        "00555ce0",
+        "00555fac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00555ce0",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_00555ce0(CDirectSoundDevice *this_ptr,CSampleInfo *sample_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9bfd",
+      "name": "s_Create_secondary_buffer_005e9bfc+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e9c15",
+      "name": "s_DirectSoundDevice_alloca_005e9c15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0264a5c4",
+      "name": "DAT_0264a5c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a5d0",
+      "name": "DAT_0264a5d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a60c",
+      "name": "DAT_0264a60c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a624",
+      "name": "DAT_0264a624",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a62c",
+      "name": "DAT_0264a62c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a630",
+      "name": "DAT_0264a630",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a634",
+      "name": "DAT_0264a634",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264a63c",
+      "name": "DAT_0264a63c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264ac0c",
+      "name": "DAT_0264ac0c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.741379310344827,
+    "instruction_count": 174,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 64,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 3,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 10,
+      "COPY": 158,
+      "INT_ADD": 78,
+      "INT_AND": 236,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 114,
+      "INT_LEFT": 10,
+      "INT_LESS": 16,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 39,
+      "INT_OR": 55,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 21,
+      "INT_SLESS": 60,
+      "INT_SRIGHT": 15,
+      "INT_SUB": 56,
+      "INT_XOR": 12,
+      "INT_ZEXT": 3,
+      "LOAD": 47,
+      "POPCOUNT": 50,
+      "RETURN": 3,
+      "STORE": 50,
+      "SUBPIECE": 14
+    },
+    "pcode_op_count": 1173
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00578710",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055b880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9681
+    },
+    "nocedit.exe": {
+      "addr": "005aef40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5587
+    },
+    "nocturne.exe": {
+      "addr": "0052ab60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5066
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "sample_info",
+        "offset": 8,
+        "size": 4,
+        "type": "CSampleInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0264a60c",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(&DAT_0264a60c + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 79,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))();",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 48,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

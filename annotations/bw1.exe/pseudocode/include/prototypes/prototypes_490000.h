@@ -218,6 +218,6 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0(CEmitte
 void __cdecl core_emitter_cpp_CEmitter_process_FUN_0049f310(CEmitter *this_ptr,float delta_time);
 int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_0049fdf0(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_0049ff00(CEmitter *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_0049ff70(CEmitter *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_emitter_cpp_CEmitter_getBoundingBox_FUN_0049ff70(CEmitter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_emitter_cpp_CEmitter_archive_FUN_0049fff0(CEmitter *this_ptr);
 

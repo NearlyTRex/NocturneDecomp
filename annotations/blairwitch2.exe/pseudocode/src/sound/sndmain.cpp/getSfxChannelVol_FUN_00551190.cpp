@@ -16,6 +16,6 @@ float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(int channel_index)
   }
   _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
   _DAT_01d046a4 = 0x1123;
-  core_main_c_FUN_004e4500("getSfxChannelVol - invalid channel index: %d",channel_index);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("getSfxChannelVol - invalid channel index: %d");
   return *(float *)(channel_index * 4 + 0x26484c0);
 }

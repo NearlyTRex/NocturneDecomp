@@ -43,4 +43,4 @@ void calloc(int param_1,int param_2);
 
 // Original: crt_memory.c___vec_new_FUN_005c2694
 // Address: 005c2694
-void __cdecl ::_vec_new(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);

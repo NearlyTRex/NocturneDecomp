@@ -33,7 +33,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_script.cpp_CScript_computeChecksum_FUN_00531030
 ;   core_script.cpp_readActorReference_FUN_00530a10
 ;   crt_stdio.c_fgets_FUN_005a3f00
@@ -298,8 +298,8 @@ section .text
     PUSH 0x5cfd0a                       ; 00530d7f | = "CScript::loadState - file version is ..."
     MOV dword ptr [0x01d71de0],ECX      ; 00530d84 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00530d8a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00530d90
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00530d90
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00530d95
     JMP 0x00530b1f                      ; 00530d98
         ;   XREF to: 00530b1f (UNCONDITIONAL_JUMP)  ; LAB_00530b1f

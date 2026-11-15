@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5f13b1                       ; 0055d445 | = "C3DSLight::advanceFilter - NULL CDemo..."
     MOV dword ptr [0x01d1d400],ECX      ; 0055d44a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0055d450 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055d456
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055d456
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055d45b
     JMP 0x0055d403                      ; 0055d45e
         ;   XREF to: 0055d403 (UNCONDITIONAL_JUMP)  ; LAB_0055d403
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5f13fa                       ; 0055d46a | = "C3DSLight::setFilterFrame - invalid f..."
     MOV [0x01d1d400],EAX                ; 0055d46f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0055d474 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055d47a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055d47a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055d47f
     JMP 0x0055d40f                      ; 0055d482
         ;   XREF to: 0055d40f (UNCONDITIONAL_JUMP)  ; LAB_0055d40f

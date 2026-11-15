@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     MOV EDX,0x578                       ; 0042e40c
     PUSH EAX                            ; 0042e411
     MOV dword ptr [0x01d046a4],EDX      ; 0042e412 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042e418
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042e418
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042e41d
     ADD EBX,dword ptr [ESP + 0x118]     ; 0042e420
         ;   Label: LAB_0042e420
@@ -100,8 +100,8 @@ section .text
     MOV EDX,0x581                       ; 0042e474
     PUSH EAX                            ; 0042e479
     MOV dword ptr [0x01d046a4],EDX      ; 0042e47a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042e480
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042e480
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042e485
     MOV EAX,dword ptr [ESP + 0x118]     ; 0042e488
         ;   Label: LAB_0042e488

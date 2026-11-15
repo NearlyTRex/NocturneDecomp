@@ -73,9 +73,9 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5d1eef                       ; 0054b010 | = "CDeformableModel::shatter - too many ..."
     MOV dword ptr [0x01d71de0],EDI      ; 0054b015 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 0054b01b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054b021
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054b021
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054b026
     XOR EAX,EAX                         ; 0054b029
         ;   Label: LAB_0054b029
@@ -149,8 +149,8 @@ section .text
     PUSH EAX                            ; 0054b09a
     LEA ESI,[ESP + 0x78]                ; 0054b09b
     LEA EDI,[ESP + 0x60]                ; 0054b09f
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0054b0a3
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0054b0a3
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0054b0a8
     LEA ESI,[ESP + 0x70]                ; 0054b0ab
     MOV EAX,dword ptr [ESP + 0x108]     ; 0054b0af

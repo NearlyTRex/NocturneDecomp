@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4)
+; CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   base_path
+; char *           Stack[0xc]:4   filename
+; int *            Stack[0x10]:4   file_index_out
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_FUN_00478e20

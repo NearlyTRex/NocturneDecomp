@@ -22,7 +22,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace 
   if (_DAT_01bd3c60 == 0) {
     _DAT_01d046a0 = "..\\core\\dtrace.cpp";
     _DAT_01d046a4 = 0x8ea;
-    core_main_c_FUN_004e4500("CDemonRenderer::getPVS - PVS is not valid!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRenderer::getPVS - PVS is not valid!");
   }
   iVar5 = _DAT_01bd3c5c;
   *output_count = _DAT_01bd3c5c;
@@ -31,12 +31,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace 
   if (*output_count < 1) {
     _DAT_01d046a0 = "..\\core\\dtrace.cpp";
     _DAT_01d046a4 = 0x8f6;
-    core_main_c_FUN_004e4500("CDemonRaytrace::getPVS - no cubes rendered???");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRaytrace::getPVS - no cubes rendered???");
   }
   if (*input_indices_array == (int *)0x0) {
     _DAT_01d046a0 = "..\\core\\dtrace.cpp";
     _DAT_01d046a4 = 0x8fa;
-    core_main_c_FUN_004e4500("CDemonRaytrace::getPVS - out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRaytrace::getPVS - out of memory");
   }
   iVar6 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
   iVar5 = 0;
@@ -55,7 +55,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace 
       if (iVar6 <= iVar4) {
         _DAT_01d046a0 = "..\\core\\dtrace.cpp";
         _DAT_01d046a4 = 0x907;
-        core_main_c_FUN_004e4500("CDemonRenderer::savePVS - can't find drawn cube!");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRenderer::savePVS - can't find drawn cube!");
       }
       iVar1 = _DAT_01bd3c5c;
       iVar5 = iVar5 + 1;

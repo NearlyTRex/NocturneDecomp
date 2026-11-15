@@ -21,7 +21,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00440760(CDe
     if (iVar1 == 0) {
       _DAT_01d046a0 = "..\\core\\dcamera.cpp";
       _DAT_01d046a4 = 0xe80;
-      core_main_c_FUN_004e4500("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
     }
   }
   core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820(this_ptr);

@@ -20,7 +20,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSe
   if (5 < _DAT_021221f0) {
     _DAT_01d71de0 = "..\\core\\setcolid.cpp";
     _DAT_01d71de4 = 0x406;
-    core_main_c_FUN_004e4330("CDemonSet::pushRaytraceState - stack full");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::pushRaytraceState - stack full");
   }
   iVar2 = _DAT_021221f0 * 0xa0;
   piVar5 = (int *)(iVar2 + 0x21221f4);

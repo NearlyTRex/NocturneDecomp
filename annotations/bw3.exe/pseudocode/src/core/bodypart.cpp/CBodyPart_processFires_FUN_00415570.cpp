@@ -12,19 +12,19 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *th
 
 {
   float fVar1;
-  SBodyPartFire *pSVar2;
-  byte bVar3;
+  CVector3f *input_local_point;
+  byte bVar2;
   float afStackY_102c [1013];
   float local_48;
   float local_40;
   float local_3c;
-  float local_38;
+  CVector3f local_38;
   float local_24;
   SBodyPartFire *local_20;
   int local_1c;
   CLocation *local_18;
   
-  bVar3 = 0;
+  bVar2 = 0;
   if (this_ptr->fire_count != 0) {
     fVar1 = (float)this_ptr->fire_time_remaining - delta_time;
     this_ptr->fire_time_remaining = (int)fVar1;
@@ -38,13 +38,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *th
       local_20 = this_ptr->fires;
       local_18 = &this_ptr->fires[0].flame.base.location;
       do {
-        pSVar2 = local_20 + local_1c;
-        core_actor_cpp_FUN_00408b80(this_ptr,pSVar2);
-        fVar1 = local_38;
-        *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * -8) =
-             *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8);
-        *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-             *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+        input_local_point = &local_20[local_1c].local_position;
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+                  (&this_ptr->base,input_local_point,&local_38);
+        fVar1 = local_38.x;
+        *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =
+             *(uint *)((int)&local_38 + (uint)bVar2 * -8 + 4);
+        *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+             *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
         (local_18->position).x = fVar1;
         (local_18->position).y = local_40;
         (local_18->position).z = local_3c;
@@ -54,10 +55,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *th
         }
         local_24 = local_48 * (float)_DAT_005b6c5a;
         fVar1 = (float)_DAT_005b6c62;
-        (pSVar2->flame).flame_size.x = local_24;
-        (pSVar2->flame).flame_size.y = local_48 * fVar1;
-        (pSVar2->flame).flame_size.z = local_24;
-        core_flame_cpp_CFlame_process_FUN_004a5b10(&pSVar2->flame,delta_time);
+        input_local_point[0x1d].z = local_24;
+        input_local_point[0x1e].x = local_48 * fVar1;
+        input_local_point[0x1e].y = local_24;
+        core_flame_cpp_CFlame_process_FUN_004a5b10((CFlame *)(input_local_point + 1),delta_time);
         local_18 = local_18 + 0x2b;
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->fire_count);

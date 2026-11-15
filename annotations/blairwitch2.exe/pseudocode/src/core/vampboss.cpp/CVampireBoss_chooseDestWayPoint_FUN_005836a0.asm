@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5edbe7                       ; 00583760 | = "CVampireBoss::chooseDestWayPoint - wa..."
     MOV [0x01d046a0],EAX                ; 00583765 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0058376a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00583770
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00583770
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00583775
     JMP 0x005836d2                      ; 00583778
         ;   XREF to: 005836d2 (UNCONDITIONAL_JUMP)  ; LAB_005836d2

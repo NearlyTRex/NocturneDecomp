@@ -41,9 +41,9 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0
 ;   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0046d850
-;   engine_drender.cpp_FUN_0046d1c0
-;   engine_drender.cpp_FUN_0046d250
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 0053ae01 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x4]                 ; 0053ae02
     LEA EDI,[ESP + 0x28]                ; 0053ae06
-    CALL engine_drender.cpp_FUN_0046d1c0 ; 0053ae0a
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0 ; 0053ae0a
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x4]                 ; 0053ae0f
     ADD ESP,0x4                         ; 0053ae13
     LEA EAX,[ESP + 0x24]                ; 0053ae16
@@ -82,8 +82,8 @@ section .text
     PUSH ECX                            ; 0053ae45 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x10]                ; 0053ae46
     LEA EDI,[ESP + 0x1c]                ; 0053ae4a
-    CALL engine_drender.cpp_FUN_0046d250 ; 0053ae4e
-        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d250()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250 ; 0053ae4e
+        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x10]                ; 0053ae53
     ADD ESP,0x4                         ; 0053ae57
     LEA EAX,[ESP + 0x18]                ; 0053ae5a

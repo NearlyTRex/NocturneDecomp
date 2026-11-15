@@ -3920,8 +3920,8 @@ annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_playTrackedActorSou
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_process_FUN_005b2fd0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_reset_FUN_005b39a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_selectReverbPreset_FUN_005b3d20.keep.cpp
-annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_set3DListenerOrientRight_FUN_005b3c90.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_setReverbPreset_FUN_005b3cc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_setReverb_FUN_005b3c90.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_setVolumeFade_FUN_005b3dc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_shutdown_FUN_005b2f70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/STrainNoise_ctor_FUN_005b3e00.cpp
@@ -6053,8 +6053,8 @@ annotations/nocedit.exe/pseudocode/src/sound/mp3.cpp/testMP3DecoderBenchmark_FUN
 annotations/nocedit.exe/pseudocode/src/sound/mp3.cpp/validateLayer2AllocationTable_FUN_0052e8d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_allocateSample_FUN_005aef40.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_allocateSfx_FUN_005af410.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_applySfxChanges_FUN_005af750.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_close_FUN_005ae270.keep.cpp
-annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_commitDeferredSettings_FUN_005b0340.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_freeSample_FUN_005af190.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_hasHardware3D_FUN_005aee20.cpp
@@ -6069,7 +6069,7 @@ annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_set3DL
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_set3DListenerPos_FUN_005aee30.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_setMode_FUN_005ae830.keep.cpp
-annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_setSfxPos_FUN_005af750.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_setReverb_FUN_005b0340.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_startSfx_FUN_005afe80.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_start_FUN_005ae340.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_unlockSample_FUN_005af320.cpp
@@ -6222,7 +6222,6 @@ annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/returnZero_FUN_005a8cf0
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/selectRecordingDevice_FUN_005ab860.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/selectSoundDevice_FUN_005ab4c0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerDistanceFactor_FUN_005aa240.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerOrientRight_FUN_005ab6e0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerOrient_FUN_005aa0a0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerPos_FUN_005aa020.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerVelocity_FUN_005aa1c0.cpp
@@ -6247,6 +6246,7 @@ annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxUserData_FUN_
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxVolume_FUN_005a8a60.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setNumberOfSfxChannels_FUN_005a9de0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setRecordingFormat_FUN_005ab9a0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setReverb_FUN_005ab6e0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxBaseFrequency_FUN_005a9b40.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxChannelVol_FUN_005a9cf0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxFade_FUN_005a9c70.cpp
@@ -6283,8 +6283,8 @@ annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_setMode_FUN
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_start_FUN_005b0e20.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_allocateSample_FUN_005b16b0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_allocateSfx_FUN_005b16f0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_applySfxChanges_FUN_005b1700.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_close_FUN_005b0840.keep.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_commitDeferredSettings_FUN_005b16a0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_freeSample_FUN_005b16c0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_getSfxPlaybackPos_FUN_005b1710.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_hasHardware3D_FUN_005b1650.cpp
@@ -6298,7 +6298,7 @@ annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_set3DListe
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_set3DListenerPos_FUN_005b1660.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_set3DListenerVelocity_FUN_005b1680.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_setMode_FUN_005b0a30.keep.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_setSfxPos_FUN_005b1700.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_setReverb_FUN_005b16a0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_startSfx_FUN_005b1730.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_start_FUN_005b08f0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_unlockSample_FUN_005b16e0.cpp

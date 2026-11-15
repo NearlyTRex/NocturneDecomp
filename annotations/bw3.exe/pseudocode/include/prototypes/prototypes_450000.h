@@ -60,8 +60,8 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004515b0(CVector3f *vertex1,CVec
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00451a20(float max_x_plane);
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00451e50(float max_z_plane);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00451fb0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
-void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3);
-float core_dcube_cpp_FUN_00452240(undefined4 *param_1,float *param_2,float *param_3);
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
+float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00452490(SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00452770(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
@@ -73,7 +73,7 @@ CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00453cb0(CDemonCube *thi
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00453cf0(CDemonCube *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00453d10(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCube *this_ptr);
-void core_dcube_cpp_FUN_00453ec0(int *param_1);
+void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_00453ec0(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00453fa0(CDemonCube *this_ptr,_FILE *file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004540c0(CDemonCube *this_ptr,uint rendering_mode);
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00454360(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
@@ -82,7 +82,7 @@ int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0(C
 void __cdecl core_demnfolk_cpp_staticInit_FUN_00454750(void);
 float core_demnfolk_cpp_FUN_00454780(int param_1);
 void core_demnfolk_cpp_FUN_00454820(int param_1);
-void core_demnfolk_cpp_FUN_004548e0(int param_1);
+void core_demnfolk_cpp_FUN_004548e0(CDemonActor *param_1);
 undefined4 core_demnfolk_cpp_FUN_004549e0(float *param_1);
 void core_demnfolk_cpp_FUN_00454b30(void);
 CDemonActorType * __cdecl core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00454b50(CDemnfolk *this_ptr);
@@ -144,7 +144,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(CDem
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(CDemonGlobe *this_ptr);
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045add0(CDemonGlobe *this_ptr);
 int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045af60(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max);
-int core_dglobe_cpp_FUN_0045b070(int param_1,int *param_2,int *param_3);
+int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045b070(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal);
 CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_0045b1f0(CDemonImage *this_ptr,uint flags);
 void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045b210(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_0045b270(CDemonImage *this_ptr);
@@ -152,10 +152,10 @@ ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_0045b2a0(CDemonImage *t
 void core_dimage_cpp_FUN_0045b300(void);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_0045b640(CMatrix3x3f *this_ptr);
-void core_dirmat_cpp_FUN_0045b800(float *param_1,float *param_2);
-void core_dirmat_cpp_FUN_0045b870(float *param_1,float *param_2);
+CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
+CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_0045b8e0(double y,double x);
-float * core_dirmat_cpp_FUN_0045b9b0(float *param_1);
+CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void core_dirmat_cpp_FUN_0045bef0(float *param_1,float *param_2,float *param_3);
 void __cdecl core_disease_cpp_staticInit_FUN_0045bf20(void);
 CDisease * __cdecl core_disease_cpp_factoryFuncDisease_FUN_0045bf50(void);

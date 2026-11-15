@@ -9,29 +9,29 @@
 void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_00502a10(CMP3Decoder *this_ptr)
 
 {
-  _FILE *p_Var1;
-  char *pcVar2;
+  _FILE *file_handle;
+  char *pcVar1;
   
   this_ptr->decode_buffer_pos = (short *)0x0;
   this_ptr->available_samples = 0;
-  p_Var1 = (this_ptr->file_bitstream).file_handle;
-  if (p_Var1 == (_FILE *)0x0) {
-    pcVar2 = (this_ptr->file_bitstream).buffer;
-    if (pcVar2 == (char *)0x0) {
+  file_handle = (this_ptr->file_bitstream).file_handle;
+  if (file_handle == (_FILE *)0x0) {
+    pcVar1 = (this_ptr->file_bitstream).buffer;
+    if (pcVar1 == (char *)0x0) {
       this_ptr->filename[0] = '\0';
       return;
     }
   }
   else {
-    _fclose(p_Var1);
+    _fclose(file_handle);
     (this_ptr->file_bitstream).file_handle = (_FILE *)0x0;
-    pcVar2 = (this_ptr->file_bitstream).buffer;
-    if (pcVar2 == (char *)0x0) {
+    pcVar1 = (this_ptr->file_bitstream).buffer;
+    if (pcVar1 == (char *)0x0) {
       this_ptr->filename[0] = '\0';
       return;
     }
   }
-  FUN_005a3770(pcVar2);
+  FUN_005a3770(pcVar1);
   (this_ptr->file_bitstream).buffer = (char *)0x0;
   this_ptr->filename[0] = '\0';
   return;

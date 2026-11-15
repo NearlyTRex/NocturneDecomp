@@ -13,11 +13,10 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00521e40(CMoon *this_ptr)
 {
   int frame_index;
   CDemonSet *this_ptr_00;
-  float10 fVar1;
+  double dVar1;
   CMatrix3x3f local_54;
   CVector3f local_2c;
   CVector3f local_20;
-  int local_14;
   
   sound_sndmain_cpp_processAudio_FUN_00575fb0();
   engine_special_cpp_clearScreen_FUN_0057dc40();
@@ -71,14 +70,13 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00521e40(CMoon *this_ptr)
     DAT_0061f8b4 = 0;
   }
   engine_3d_c_setBlendMode_FUN_00406c20(1);
-  fVar1 = (float10)_DAT_01d33f6c;
-  round();
-  local_14 = (int)ROUND(fVar1);
-  if (0x1d < local_14) {
-    local_14 = 0;
+  dVar1 = round((double)_DAT_01d33f6c);
+  local_20.z = (float)(int)ROUND(dVar1);
+  if (0x1d < (int)local_20.z) {
+    local_20.z = 0.0;
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
-            (g_MoonAnimTextures + local_14,0,0x13b,0xffff);
+            (g_MoonAnimTextures + (int)local_20.z,0,0x13b,0xffff);
   engine_3d_c_setBlendMode_FUN_00406c20(0);
   return;
 }

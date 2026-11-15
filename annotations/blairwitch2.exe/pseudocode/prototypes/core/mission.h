@@ -99,7 +99,7 @@ void __cdecl CDemonMission::setTeleportTarget(CDemonMission *this_ptr,CLocation 
 
 // Original: core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 // Address: 004fc7b0
-void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 
 // Original: core_mission.cpp_FUN_004fc820
 // Address: 004fc820

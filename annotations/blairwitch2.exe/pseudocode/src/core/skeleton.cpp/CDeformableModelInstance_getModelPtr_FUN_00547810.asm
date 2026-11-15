@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5e740c                       ; 00547833 | = "CDeformableModelInstance::getModelPtr..."
     MOV dword ptr [0x01d046a0],EDI      ; 00547838 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0054783e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00547844
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547844
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00547849
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 0054784c
         ;   Label: LAB_0054784c
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5e746f                       ; 00547868 | = "Tried to do something with model %s, ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0054786d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00547873 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00547879
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547879
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054787e
     POP ESI                             ; 00547881
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 00547882

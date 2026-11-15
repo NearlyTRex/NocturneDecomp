@@ -28,7 +28,7 @@
 ;   undefined4 DAT_005b6c72
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10
 ;
 ; *****************************************************************************
@@ -75,8 +75,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004155e1
     PUSH EDI                            ; 004155e4
     LEA ESI,[ESP + 0x20]                ; 004155e5
-    CALL core_actor.cpp_FUN_00408b80    ; 004155e9
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004155e9
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0x14]                ; 004155ee
     LEA ESI,[ESP + 0x20]                ; 004155f2
     ADD ESP,0x8                         ; 004155f6

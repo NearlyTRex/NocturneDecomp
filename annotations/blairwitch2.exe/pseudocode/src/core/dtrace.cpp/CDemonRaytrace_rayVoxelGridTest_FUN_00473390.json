@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 269,
+    "complexity_score": 347,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
-    "suspect_count": 6,
+    "pseudocode_lines": 192,
+    "suspect_count": 13,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
+      "stack_ref",
+      "sub84_truncation",
+      "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 611
+    "total_lines": 614
   },
   "cross_references": [
     {
@@ -457,42 +458,98 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 19,
-      "match": "afStackY_1080",
+      "match": "afStackY_1094",
       "severity": "moderate",
-      "text": "float afStackY_1080 [1007];",
+      "text": "float afStackY_1094 [1000];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Pointer value `&local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
-      "match": "(int)&local_8c",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + 4) = local_94[(uint)bVar6 * -2];",
-      "type": "pointer_truncation"
+      "description": "Likely misinterpreted integer as float",
+      "line": 57,
+      "match": "6.53894e-39",
+      "severity": "mild",
+      "text": "CStack_bc.z = 6.53894e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Pointer value `&local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
-      "match": "(int)&local_8c",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
-      "type": "pointer_truncation"
+      "description": "Likely misinterpreted integer as float",
+      "line": 60,
+      "match": "6.538959e-39",
+      "severity": "mild",
+      "text": "CStack_bc.y = 6.538959e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 92,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + 4) = local_94[(uint)bVar6 * -2];",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 64,
+      "match": "6.538984e-39",
+      "severity": "mild",
+      "text": "CStack_bc.x = 6.538984e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 93,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 69,
+      "match": "SUB84(",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
-      "type": "pointer_cast"
+      "text": "local_8c = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 77,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_90 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 85,
+      "match": "6.539159e-39",
+      "severity": "mild",
+      "text": "fStack_d0 = 6.539159e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 89,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_94 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 112,
+      "match": "6.539445e-39",
+      "severity": "mild",
+      "text": "fStack_d0 = 6.539445e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 114,
+      "match": "6.539455e-39",
+      "severity": "mild",
+      "text": "fStack_d4 = 6.539455e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 126,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "local_6c = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 169,
+      "match": "&stack0xffffff2c",
+      "severity": "moderate",
+      "text": "(this_ptr_00,start_pos,&CStack_bc,(CVector3f *)&stack0xffffff2c,",
+      "type": "stack_ref"
     }
   ]
 }

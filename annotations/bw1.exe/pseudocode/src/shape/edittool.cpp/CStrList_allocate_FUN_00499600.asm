@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5dc3fa                       ; 00499620 | = "CStrList::allocate - invalid count: %d"
     MOV dword ptr [0x01d1d400],EBP      ; 00499625 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0049962b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499630
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499630
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00499635
     CMP ESI,dword ptr [EBX + 0x4]       ; 00499638
         ;   Label: LAB_00499638
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5dc3bc                       ; 0049964c | = "CStrList::allocate - Can't shrink list!"
     MOV dword ptr [0x01d1d400],ECX      ; 00499651 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00499657 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049965d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049965d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00499662
     JMP 0x00499610                      ; 00499665
         ;   XREF to: 00499610 (UNCONDITIONAL_JUMP)  ; LAB_00499610
@@ -92,8 +92,8 @@ section .text
     PUSH 0x5dc437                       ; 0049968f | = "CStrList::insert - out of memory"
     MOV dword ptr [0x01d1d400],EDI      ; 00499694 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0049969a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004996a0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004996a0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004996a5
     POP EBP                             ; 004996a8
     POP EDI                             ; 004996a9

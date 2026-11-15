@@ -28,7 +28,7 @@
 ;   undefined4 DAT_02c807ec
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   wincore_winrun.cpp_createMutex_FUN_005b3740
 ;   wincore_winrun.cpp_waitForMutex_FUN_005b3750
 ;
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5f43d0                       ; 00575d44 | = "lockSound - unable to create mutex ob..."
     MOV dword ptr [0x01d1d400],ECX      ; 00575d49 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00575d4f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575d55
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575d55
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575d5a
     POP EBX                             ; 00575d5d
     MOV ESI,dword ptr [0x02c807e8]      ; 00575d5e | DAT_02c807e8
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5f440f                       ; 00575d8c | = "lockSound - lock imbalance?"
     MOV [0x01d1d400],EAX                ; 00575d91 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00575d96 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575d9c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575d9c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575da1
     POP EDI                             ; 00575da4
     POP ESI                             ; 00575da5

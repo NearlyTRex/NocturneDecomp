@@ -59,7 +59,7 @@ ECollisionType __cdecl CBattery::getCollisionType(CBattery *this_ptr,SCollisionI
 
 // Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00414910
 // Address: 00414910
-CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00414950
 // Address: 00414950

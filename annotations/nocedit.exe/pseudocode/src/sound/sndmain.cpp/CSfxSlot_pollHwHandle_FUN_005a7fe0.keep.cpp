@@ -52,7 +52,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     return;
   }
 LAB_005a809a:
-  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,update_flags);
+  iVar1 = (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,this_ptr,update_flags);
   if (iVar1 != 0) {
     return;
   }

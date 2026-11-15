@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x5dc6e5                       ; 004e770f
     MOV dword ptr [0x01d046a0],EDX      ; 004e7714 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004e771a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e7720
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e7720
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004e7725
     LEA EAX,[EBX*0x4 + 0x0]             ; 004e7728
         ;   Label: LAB_004e7728

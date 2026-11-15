@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5dfb41                       ; 00502ff2 | = "Can't find state \"%s\" in motion list"
     MOV dword ptr [0x01d046a0],ESI      ; 00502ff7 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00502ffd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00503003
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00503003
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503008
     MOV EAX,0xffffffff                  ; 0050300b
     POP EBP                             ; 00503010

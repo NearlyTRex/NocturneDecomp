@@ -294,8 +294,8 @@ section .text
     PUSH 0x5ee3d0                       ; 00544488 | = "CScript::step - Invalid instruction p..."
     MOV dword ptr [0x01d1d400],ESI      ; 0054448d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00544493 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00544499
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00544499
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054449e
     MOV ESI,0x5ee46a                    ; 005444a1 | = "(no error message provided)"
         ;   Label: LAB_005444a1
@@ -452,8 +452,8 @@ section .text
     PUSH 0x5ee4b5                       ; 00544636 | = "Internal script error checking for du..."
     MOV dword ptr [0x01d1d400],EDI      ; 0054463b | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00544641 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00544646
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00544646
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054464b
     JMP 0x00544613                      ; 0054464e
         ;   XREF to: 00544613 (UNCONDITIONAL_JUMP)  ; LAB_00544613
@@ -3906,8 +3906,8 @@ section .text
     LEA EAX,[ESP + 0x4750]              ; 00546ce9
     PUSH EAX                            ; 00546cf0
     LEA ESI,[ESP + 0x4788]              ; 00546cf1
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00546cf8
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00546cf8
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00546cfd
     LEA EAX,[ESP + 0x47a4]              ; 00546d00
     LEA EDI,[ESP + 0x47a4]              ; 00546d07
@@ -4844,7 +4844,7 @@ section .text
         ;   Label: LAB_00547820
     PUSH EDX                            ; 00547827
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 00547828
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0054782d
     MOV ECX,dword ptr [ESP + 0x47f0]    ; 00547830
     PUSH ECX                            ; 00547837
@@ -5336,8 +5336,8 @@ section .text
     PUSH EDX                            ; 00547e4c
     MOV ECX,dword ptr [0x00622c18]      ; 00547e4d | g_CDemonSetPtr
     PUSH ECX                            ; 00547e53 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00559f80   ; 00547e54
-        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00559f80()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 ; 00547e54
+        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 00547e59
     MOV EDI,dword ptr [0x00622c18]      ; 00547e5c | g_CDemonSetPtr
     MOV EAX,[0x00622ad0]                ; 00547e62 | g_CScriptPtr
@@ -6771,8 +6771,8 @@ section .text
     PUSH 0x5ef693                       ; 00548fb7 | = "script selectWeapon() command - hell ..."
     MOV [0x01d1d400],EAX                ; 00548fbc | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00548fc1 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00548fc7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00548fc7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00548fcc
     LEA EAX,[ESP + 0x41d4]              ; 00548fcf
         ;   Label: LAB_00548fcf

@@ -13,6 +13,6 @@ uint __cdecl support_codec_cpp_CInStreamPipe_seek_FUN_00435120(CInStreamPipe *th
 {
   _DAT_01d046a0 = "..\\support\\codec.cpp";
   _DAT_01d046a4 = 0x823;
-  core_main_c_FUN_004e4500("CInStreamPipe::seek - not allowed");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CInStreamPipe::seek - not allowed");
   return 0;
 }

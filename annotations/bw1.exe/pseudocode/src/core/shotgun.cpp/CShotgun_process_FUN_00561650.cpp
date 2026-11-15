@@ -12,30 +12,31 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00561650(CShotgun *this_ptr,f
   byte bVar1;
   float in_stack_0000000c;
   float afStackY_1020 [1015];
+  CVector3f *input_local_point;
+  CVector3f CStack_34;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
+  float afStack_24 [5];
   float fStack_10;
   
   bVar1 = 0;
   if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-    *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8);
-    *(uint *)(&stack0xffffffd0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    core_actor_cpp_FUN_00408b40();
+    input_local_point = &CStack_34;
+    *(float *)((int)&CStack_34 + (uint)bVar1 * -8) = afStack_24[(uint)bVar1 * -2 + 3];
+    *(float *)((int)&CStack_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 4) =
+         afStack_24[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,input_local_point,(CVector3f *)(afStack_24 + 5));
     fStack_28 = fStack_10;
-    *(uint *)((int)&stack0xffffffdc + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xfffffff4 + (uint)bVar1 * -8);
-    *(uint *)((int)&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xfffffff8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+    afStack_24[(uint)bVar1 * -2] = afStack_24[(uint)bVar1 * -2 + 6];
+    afStack_24[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+         *(float *)(&stack0xfffffff8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
     g_CDemonLightInstance.volumetric_enabled = 0;
     if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].y) {
       g_CDemonLightInstance.base.base.position.f.x = fStack_28;
-      g_CDemonLightInstance.base.base.position.f.y = fStack_24;
-      g_CDemonLightInstance.base.base.position.f.z = fStack_20;
+      g_CDemonLightInstance.base.base.position.f.y = afStack_24[0];
+      g_CDemonLightInstance.base.base.position.f.z = afStack_24[1];
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);

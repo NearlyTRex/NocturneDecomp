@@ -109,9 +109,9 @@ float __cdecl CSound::getSoundDuration(CSound *this_ptr,char *sound_name);
 // Address: 00560be0
 char * __cdecl CSound::getSoundModeName(CSound *this_ptr,int sound_mode_index);
 
-// Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_00560c00
+// Original: core_sound.cpp_CSound_setReverb_FUN_00560c00
 // Address: 00560c00
-void __cdecl CSound::set3DListenerOrientRight(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
+void __cdecl CSound::setReverb(CSound *this_ptr,float volume,float decay_time,float damping);
 
 // Original: core_sound.cpp_CSound_setReverbPreset_FUN_00560c30
 // Address: 00560c30

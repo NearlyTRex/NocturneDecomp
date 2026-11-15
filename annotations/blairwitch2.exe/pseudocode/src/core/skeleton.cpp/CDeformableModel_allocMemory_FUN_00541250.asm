@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00541160
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5e6be8                       ; 0054128c | = "Too many textures in CDeformableModel..."
     MOV dword ptr [0x01d046a0],ECX      ; 00541291 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00541297 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054129c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054129c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005412a1
     CMP EBP,0x1e                        ; 005412a4
         ;   Label: LAB_005412a4
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5e6c4b                       ; 005412b6 | = "Too many parts in CDeformableModel::a..."
     MOV dword ptr [0x01d046a0],EDX      ; 005412bb | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005412c1 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005412c7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005412c7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005412cc
     CMP EDI,0x5                         ; 005412cf
         ;   Label: LAB_005412cf
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5e6cab                       ; 005412e1 | = "Too many LODs in CDeformableModel::al..."
     MOV [0x01d046a0],EAX                ; 005412e6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 005412eb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005412f1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005412f1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005412f6
     MOV dword ptr [EBX + 0xbc],ESI      ; 005412f9
         ;   Label: LAB_005412f9
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5e6b81                       ; 00541352 | = "Too many texture sets in CDeformableM..."
     MOV dword ptr [0x01d046a0],ECX      ; 00541357 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0054135d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00541362
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00541362
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00541367
     JMP 0x0054127a                      ; 0054136a
         ;   XREF to: 0054127a (UNCONDITIONAL_JUMP)  ; LAB_0054127a

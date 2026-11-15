@@ -78,7 +78,7 @@ section .text
     FMUL double ptr [0x005d350a]        ; 00410257 | DAT_005d350a
     FDIV float ptr [ESP]                ; 0041025d
     CALL crt_math.c_round_FUN_005c03a0  ; 00410260
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
         ;   Label: LAB_00410260
     FISTP dword ptr [ESP + 0x48]        ; 00410265
     CMP dword ptr [EBX + 0x200a8],0x0   ; 00410269

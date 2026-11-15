@@ -42,7 +42,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   sound_mp3.cpp_CMP3Decoder_read_FUN_00509fa0
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5e8301                       ; 0054de47 | = "SfxSample::pollStream - my sfx isn't ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0054de4c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0054de52 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054de58
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054de58
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054de5d
     CMP dword ptr [0x02648e80],0x0      ; 0054de60 | DAT_02648e80
         ;   Label: LAB_0054de60
@@ -112,8 +112,8 @@ section .text
     PUSH 0x5e8375                       ; 0054de81 | = "SfxSample::pollStream - cannot stream..."
     MOV [0x01d046a0],EAX                ; 0054de86 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054de8b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054de91
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054de91
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054de96
     MOV EAX,dword ptr [ESP + 0x24]      ; 0054de99
         ;   Label: LAB_0054de99
@@ -149,7 +149,7 @@ section .text
     FMUL float ptr [ESP + 0x40]         ; 0054dee6
     MOV EDI,dword ptr [EBP + 0x164]     ; 0054deea
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054def0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 0054def5
     CMP EDI,dword ptr [ESP]             ; 0054def8
     JGE 0x0054df00                      ; 0054defb
@@ -160,7 +160,7 @@ section .text
     FILD dword ptr [EBP + 0x170]        ; 0054df04
     FSUB double ptr [EAX + 0x10c]       ; 0054df0a
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054df10
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0054df15
     CMP dword ptr [ESP + 0x8],0x0       ; 0054df19
     JL 0x0054e127                       ; 0054df1e
@@ -188,7 +188,7 @@ section .text
     FMUL float ptr [ESP + 0x44]         ; 0054df62
     DEC EAX                             ; 0054df66
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054df67
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0054df6c
     CMP EAX,dword ptr [ESP + 0x4]       ; 0054df70
     JGE 0x0054df7a                      ; 0054df74
@@ -222,8 +222,8 @@ section .text
     PUSH 0x5e8411                       ; 0054dfc4 | = "nextLoadSampleDest = %d, allocLength ..."
     MOV [0x01d046a0],EAX                ; 0054dfc9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054dfce | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054dfd4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054dfd4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054dfd9
     MOV ESI,dword ptr [EBP + 0x170]     ; 0054dfdc
         ;   Label: LAB_0054dfdc
@@ -321,8 +321,8 @@ section .text
     PUSH 0x5e82c6                       ; 0054e0cd | = "SfxSlot::pollStream - must be locked!"
     MOV dword ptr [0x01d046a0],ECX      ; 0054e0d2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0054e0d8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054e0de
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e0de
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e0e3
     JMP 0x0054de08                      ; 0054e0e6
         ;   XREF to: 0054de08 (UNCONDITIONAL_JUMP)  ; LAB_0054de08
@@ -400,8 +400,8 @@ section .text
     PUSH 0x5e806f                       ; 0054e1aa | = "generateSilence - invalid bit depth!"
     MOV dword ptr [0x01d046a0],EDI      ; 0054e1af | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0054e1b5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054e1ba
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e1ba
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e1bf
     MOV dword ptr [ESP + 0x20],EBX      ; 0054e1c2
         ;   Label: LAB_0054e1c2
@@ -457,8 +457,8 @@ section .text
     PUSH 0x5e8505                       ; 0054e23a | = "MP3 decoded more than batch: r = %d, ..."
     MOV dword ptr [0x01d046a0],ESI      ; 0054e23f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0054e245 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054e24b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e24b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054e250
     MOV EDX,dword ptr [ESP + 0x20]      ; 0054e253
         ;   Label: LAB_0054e253
@@ -578,8 +578,8 @@ section .text
     PUSH 0x5e8472                       ; 0054e371 | = "Can't stream unless we have mp3 decod..."
     MOV [0x01d046a0],EAX                ; 0054e376 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054e37b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054e381
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e381
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e386
     JMP 0x0054e311                      ; 0054e389
         ;   XREF to: 0054e311 (UNCONDITIONAL_JUMP)  ; LAB_0054e311

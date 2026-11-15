@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00472ab6
     PUSH EDX                            ; 00472aba
     PUSH 0x5d1b4e                       ; 00472abb | DAT_005d1b4e
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00472ac0
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00472ac0
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00472ac5
     ADD ESP,0xc                         ; 00472ac7
     TEST EAX,EAX                        ; 00472aca
@@ -47,7 +47,7 @@ section .text
     ADD ESP,0x8                         ; 00472adb
     PUSH EBX                            ; 00472ade
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00472adf
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     MOV EAX,0x1                         ; 00472ae4
     ADD ESP,0x4                         ; 00472ae9
     POP EBX                             ; 00472aec

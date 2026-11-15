@@ -29,7 +29,7 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_0050e700(CPendulum *thi
   float fStack_40;
   float fStack_3c;
   float fStack_38;
-  float fStack_34;
+  CVector3f CStack_34;
   double dStack_28;
   double dStack_20;
   
@@ -54,11 +54,13 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_0050e700(CPendulum *thi
   fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);
   (this_ptr->base).orient.vec.z = (float)(fVar2 * fVar3 * (float10)this_ptr->max_angle);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(&this_ptr->base);
-  core_actor_cpp_FUN_00408b80(this_ptr);
-  fStack_40 = fStack_34;
-  (&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar1 * -2 + 3];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+            (&this_ptr->base,&this_ptr->swing_tip_local,&CStack_34);
+  fStack_40 = CStack_34.x;
+  (&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] =
+       (float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + 4);
   (&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
-       (&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];
+       (float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (&this_ptr->swing_tip_world != (CVector3f *)&stack0xffffffc0) {
     (this_ptr->swing_tip_world).x = fStack_40;
     (this_ptr->swing_tip_world).y = fStack_3c;

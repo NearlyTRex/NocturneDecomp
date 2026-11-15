@@ -85,7 +85,8 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0047b270(CDynamite *this_pt
           puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
         }
         CStack_34.z = fStack_5c;
-        core_actor_cpp_FUN_00408b80(this_ptr_01,&CStack_34);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+                  ((CDemonActor *)this_ptr_01,&CStack_34,(CVector3f *)&stack0xfffffffc);
         afStack_18[(uint)bVar5 * -2] = *(float *)(&stack0x00000000 + (uint)bVar5 * -8);
         afStack_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
              (float)(&this_ptr)[(uint)bVar5 * -2 + (uint)bVar5 * -2];

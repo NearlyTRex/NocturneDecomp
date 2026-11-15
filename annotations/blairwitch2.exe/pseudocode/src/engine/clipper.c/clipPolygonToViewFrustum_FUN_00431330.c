@@ -191,7 +191,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           if (0xb < DAT_007bfcf8) {
             _DAT_01d046a0 = "..\\engine\\clipper.c";
             _DAT_01d046a4 = 0x5e;
-            core_main_c_FUN_004e4500();
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
           }
           iVar6 = DAT_007bfcf8 * 0x30;
           DAT_007bfcf8 = DAT_007bfcf8 + 1;
@@ -207,7 +207,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
           if (0xb < iVar6) {
             _DAT_01d046a0 = "..\\engine\\clipper.c";
             _DAT_01d046a4 = 0x5e;
-            core_main_c_FUN_004e4500();
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
           }
           iVar6 = DAT_007bfcf8 * 0x30;
           DAT_007bfcf8 = DAT_007bfcf8 + 1;
@@ -249,7 +249,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
             if (0xb < DAT_007bfcf8) {
               _DAT_01d046a0 = "..\\engine\\clipper.c";
               _DAT_01d046a4 = 0x5e;
-              core_main_c_FUN_004e4500();
+              core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
             }
             iVar6 = DAT_007bfcf8 * 0x30;
             uVar16 = uVar13 + 1;
@@ -263,7 +263,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
             if (0xb < DAT_007bfcf8) {
               _DAT_01d046a0 = "..\\engine\\clipper.c";
               _DAT_01d046a4 = 0x5e;
-              core_main_c_FUN_004e4500();
+              core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
             }
             iVar6 = DAT_007bfcf8 * 0x30;
             uVar16 = uVar13 + 2;
@@ -305,7 +305,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
               if (0xb < DAT_007bfcf8) {
                 _DAT_01d046a0 = "..\\engine\\clipper.c";
                 _DAT_01d046a4 = 0x5e;
-                core_main_c_FUN_004e4500();
+                core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
               }
               iVar6 = DAT_007bfcf8 * 0x30;
               uVar10 = uVar10 + 1;
@@ -319,7 +319,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
               if (0xb < DAT_007bfcf8) {
                 _DAT_01d046a0 = "..\\engine\\clipper.c";
                 _DAT_01d046a4 = 0x5e;
-                core_main_c_FUN_004e4500();
+                core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
               }
               iVar6 = DAT_007bfcf8 * 0x30;
               uVar10 = uVar10 + 2;
@@ -362,7 +362,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
                 if (0xb < DAT_007bfcf8) {
                   _DAT_01d046a0 = "..\\engine\\clipper.c";
                   _DAT_01d046a4 = 0x5e;
-                  core_main_c_FUN_004e4500();
+                  core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
                 }
                 iVar6 = DAT_007bfcf8 * 0x30;
                 uVar16 = uVar13 + 1;
@@ -376,7 +376,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_co
                 if (0xb < DAT_007bfcf8) {
                   _DAT_01d046a0 = "..\\engine\\clipper.c";
                   _DAT_01d046a4 = 0x5e;
-                  core_main_c_FUN_004e4500();
+                  core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
                 }
                 iVar6 = DAT_007bfcf8 * 0x30;
                 uVar16 = uVar13 + 2;

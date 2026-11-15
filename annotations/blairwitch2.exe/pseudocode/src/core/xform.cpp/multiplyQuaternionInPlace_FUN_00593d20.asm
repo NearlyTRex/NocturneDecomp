@@ -31,7 +31,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 00593d30
     MOV EDI,EBX                         ; 00593d34
     CALL core_xform.cpp_multiplyQuaternion_FUN_00593c60 ; 00593d36
-        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00593c60()
+        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x8]                 ; 00593d3b
     ADD ESP,0x8                         ; 00593d3f
     MOV EAX,EBX                         ; 00593d42

@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
@@ -142,7 +142,7 @@ section .text
     FMUL double ptr [0x005ca39f]        ; 005029a0 | DAT_005ca39f
     PUSH 0x0                            ; 005029a6
     CALL crt_math.c_round_FUN_005a3120  ; 005029a8
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EDI + 0x100]       ; 005029ad
     MOV EAX,dword ptr [ESP + 0x44]      ; 005029b3
     PUSH EDI                            ; 005029b7
@@ -159,7 +159,7 @@ section .text
     PUSH ECX                            ; 005029ce
         ;   Label: LAB_005029ce
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 005029cf
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 005029d4
     MOV dword ptr [ESI],0x0             ; 005029d7
     JMP 0x005028d1                      ; 005029dd
@@ -171,8 +171,8 @@ section .text
     PUSH 0x5c9f5f                       ; 005029f1 | = "Out of memory.  File: %s"
     MOV dword ptr [0x01d71de0],EDX      ; 005029f6 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 005029fc | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00502a02
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00502a02
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00502a07
     JMP 0x0050291c                      ; 00502a0a
         ;   XREF to: 0050291c (UNCONDITIONAL_JUMP)  ; LAB_0050291c

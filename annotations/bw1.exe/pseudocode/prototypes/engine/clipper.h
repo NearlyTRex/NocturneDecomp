@@ -39,11 +39,11 @@ int __cdecl clipPolygonRightPlane(SRenderVertex **input_vertices,SRenderVertex *
 
 // Original: engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10
 // Address: 0043bb10
-int clipPolygonLeftPlane(void);
+int __cdecl clipPolygonLeftPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
 // Original: engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd90
 // Address: 0043bd90
-int clipPolygonBottomPlane(void);
+int __cdecl clipPolygonBottomPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_0043c0d0
 // Address: 0043c0d0
@@ -75,7 +75,7 @@ void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex
 
 // Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
 // Address: 0043d140
-void clipPolygonRightPlaneGlobal(void);
+void __cdecl clipPolygonRightPlaneGlobal(void);
 
 // Original: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
 // Address: 0043d280

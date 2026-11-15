@@ -27,7 +27,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFr
     if ((local_2c < 3) || (4 < local_2c)) {
       _DAT_01d046a0 = "..\\core\\dmodel.cpp";
       _DAT_01d046a4 = 0xed;
-      core_main_c_FUN_004e4500("KFM file is invalid version %d",local_2c);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("KFM file is invalid version %d");
     }
     local_14 = 0;
     if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
@@ -63,6 +63,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFr
 LAB_0044de99:
     _DAT_01d046a0 = "..\\core\\dmodel.cpp";
     _DAT_01d046a4 = 0xe7;
-    core_main_c_FUN_004e4500("Error reading keyframed model file");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Error reading keyframed model file");
   } while( true );
 }

@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5e3263                       ; 004d77ad | = "CGame::displayBitmap - tried to queue..."
     MOV dword ptr [0x01d1d400],EDX      ; 004d77b2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004d77b8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004d77be
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d77be
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004d77c3
     JMP 0x004d7744                      ; 004d77c6
         ;   XREF to: 004d7744 (UNCONDITIONAL_JUMP)  ; LAB_004d7744

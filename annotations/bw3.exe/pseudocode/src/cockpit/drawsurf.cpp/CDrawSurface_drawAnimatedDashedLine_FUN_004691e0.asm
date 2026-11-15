@@ -48,7 +48,7 @@ section .text
     FLD float ptr [0x01bdd534]          ; 00469205 | DAT_01bdd534
         ;   Label: LAB_00469205
     CALL crt_math.c_round_FUN_005a3120  ; 0046920b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 00469210
     CMP EBP,EDI                         ; 00469213
     JLE 0x0046921d                      ; 00469215

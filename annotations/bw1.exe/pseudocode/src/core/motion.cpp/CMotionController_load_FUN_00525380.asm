@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5eafb3                       ; 005253f9 | = "CMotionController::load - error parsi..."
     MOV dword ptr [0x01d1d400],EDX      ; 005253fe | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00525404 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052540a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052540a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052540f
     JMP 0x005253bf                      ; 00525412
         ;   XREF to: 005253bf (UNCONDITIONAL_JUMP)  ; LAB_005253bf

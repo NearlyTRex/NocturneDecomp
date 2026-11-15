@@ -112,7 +112,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00533930
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00533640
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0
@@ -408,11 +408,11 @@ section .text
         ;   Label: LAB_0053413f
     MOV EAX,dword ptr [ESP + 0x1ec]     ; 00534142
     CALL crt_math.c_round_FUN_005c03a0  ; 00534149
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1d0]       ; 0053414e
     FLD float ptr [EAX]                 ; 00534155
     CALL crt_math.c_round_FUN_005c03a0  ; 00534157
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV EAX,dword ptr [ESP + 0x1d0]     ; 0053415c
     FISTP dword ptr [ESP + 0x1d0]       ; 00534163
     SUB EAX,dword ptr [ESP + 0x1d0]     ; 0053416a
@@ -422,11 +422,11 @@ section .text
     FLD float ptr [EBP + 0x8]           ; 00534176
     MOV EAX,dword ptr [ESP + 0x1ec]     ; 00534179
     CALL crt_math.c_round_FUN_005c03a0  ; 00534180
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1d0]       ; 00534185
     FLD float ptr [EAX + 0x8]           ; 0053418c
     CALL crt_math.c_round_FUN_005c03a0  ; 0053418f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV EAX,dword ptr [ESP + 0x1d0]     ; 00534194
     FISTP dword ptr [ESP + 0x1d0]       ; 0053419b
     SUB EAX,dword ptr [ESP + 0x1d0]     ; 005341a2
@@ -810,8 +810,8 @@ section .text
     PUSH 0x5eca4f                       ; 0053465b | = "Out of bounds3!"
     MOV [0x01d1d400],EAX                ; 00534660 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00534665 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053466b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053466b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534670
     CMP ESI,0x64                        ; 00534673
         ;   Label: LAB_00534673
@@ -822,8 +822,8 @@ section .text
     PUSH 0x5eca70                       ; 00534682 | = "Out of bounds4!"
     MOV dword ptr [0x01d1d400],ECX      ; 00534687 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0053468d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00534692
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00534692
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534697
     CMP EDI,dword ptr [0x01e6c16c]      ; 0053469a | DAT_01e6c16c
         ;   Label: LAB_0053469a
@@ -963,8 +963,8 @@ section .text
     PUSH 0x5eca0d                       ; 00534853 | = "Out of bounds1!"
     MOV dword ptr [0x01d1d400],ECX      ; 00534858 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0053485e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00534863
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00534863
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534868
     JMP 0x00534644                      ; 0053486b
         ;   XREF to: 00534644 (UNCONDITIONAL_JUMP)  ; LAB_00534644
@@ -974,8 +974,8 @@ section .text
     PUSH 0x5eca2e                       ; 0053487a | = "Out of bounds2!"
     MOV dword ptr [0x01d1d400],EDX      ; 0053487f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00534885 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053488b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053488b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534890
     JMP 0x0053464c                      ; 00534893
         ;   XREF to: 0053464c (UNCONDITIONAL_JUMP)  ; LAB_0053464c

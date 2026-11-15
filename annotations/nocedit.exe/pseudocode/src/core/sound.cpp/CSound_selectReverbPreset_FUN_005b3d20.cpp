@@ -17,7 +17,7 @@ int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_p
   iVar2 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3ac);
   do {
-    puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);
+    puVar1 = (uint *)((int)&g_ReverbPresetTable[0].name + iVar2);
     iVar2 = iVar2 + 0x10;
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3ac.base,(char *)*puVar1);
   } while (iVar2 != 0x1b0);

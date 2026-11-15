@@ -97,7 +97,8 @@ void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *th
                   if (0xf < iVar3) {
                     _DAT_01d71de0 = "..\\core\\cloth.cpp";
                     _DAT_01d71de4 = 0x1c3;
-                    core_main_c_FUN_004e4330("Too many connecting verticies");
+                    core_main_c_displayErrorAndQuit_FUN_004e4330
+                              ("Too many connecting verticies");
                   }
                 }
               }

@@ -155,7 +155,7 @@ section .text
     PUSH EBX                            ; 004f4479
         ;   Label: LAB_004f4479
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004f447a
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f447f
     JMP 0x004f43a5                      ; 004f4482
         ;   XREF to: 004f43a5 (UNCONDITIONAL_JUMP)  ; LAB_004f43a5

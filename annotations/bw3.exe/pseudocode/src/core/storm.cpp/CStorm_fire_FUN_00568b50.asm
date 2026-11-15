@@ -12,7 +12,7 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
@@ -75,8 +75,8 @@ section .text
     PUSH EDX                            ; 00568bd2
     LEA ESI,[ESP + 0x10]                ; 00568bd3
     LEA EDI,[ESP + 0x1c]                ; 00568bd7
-    CALL core_actor.cpp_FUN_00408b00    ; 00568bdb
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00568bdb
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x10]                ; 00568be0
     ADD ESP,0x8                         ; 00568be4
     LEA EAX,[ESP + 0x14]                ; 00568be7

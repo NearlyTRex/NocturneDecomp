@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   load_flags
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d7250 at 004d7511
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d7511
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bc1f
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e740
 ;
@@ -25,11 +25,11 @@
 ;
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 0051a3f8
     PUSH EDX                            ; 0051a3fc
     PUSH 0x5e907c                       ; 0051a3fd | = "world"
-    CALL engine_dosio.cpp_FUN_00479180  ; 0051a402
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0051a402
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0051a407
     MOV EBX,EAX                         ; 0051a40a
     TEST EAX,EAX                        ; 0051a40c
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0xc                         ; 0051a43f
     PUSH EBX                            ; 0051a442
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0051a443
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051a448
     MOV EDX,dword ptr [ESP + 0x10]      ; 0051a44b
     PUSH EDX                            ; 0051a44f
@@ -91,8 +91,8 @@ section .text
     PUSH 0x5e9096                       ; 0051a467 | = "CDemonMission::load - Unable to open ..."
     MOV dword ptr [0x01d1d400],ECX      ; 0051a46c | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0051a472 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051a478
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a478
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a47d
     POP ESI                             ; 0051a480
     JMP 0x0051a410                      ; 0051a481

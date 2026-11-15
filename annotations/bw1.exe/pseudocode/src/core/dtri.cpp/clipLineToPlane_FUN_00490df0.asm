@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -192,8 +192,8 @@ section .text
     PUSH 0x5dbc0d                       ; 00490f50 | = "Bad clip!"
     MOV [0x01d1d400],EAX                ; 00490f55 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00490f5a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00490f60
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00490f60
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00490f65
     JMP 0x00490e3c                      ; 00490f68
         ;   XREF to: 00490e3c (UNCONDITIONAL_JUMP)  ; LAB_00490e3c

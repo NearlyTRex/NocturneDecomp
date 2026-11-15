@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_00447ee0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5d7161                       ; 00447d8a | = "CCourse::allocMemory - out of hunk!"
     MOV dword ptr [0x01d1d400],ECX      ; 00447d8f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00447d95 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00447d9b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447d9b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00447da0
     POP EBX                             ; 00447da3
     RET                                 ; 00447da4

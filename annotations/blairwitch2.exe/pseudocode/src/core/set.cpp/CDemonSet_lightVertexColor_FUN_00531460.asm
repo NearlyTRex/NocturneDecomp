@@ -38,7 +38,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5e5992                       ; 0053148b | = "CDemonSet::lightVertexColor - Quick l..."
     MOV dword ptr [0x01d046a0],ESI      ; 00531490 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 00531496 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0053149c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053149c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005314a1
     MOV EAX,dword ptr [EBX + 0x15ae88]  ; 005314a4
         ;   Label: LAB_005314a4

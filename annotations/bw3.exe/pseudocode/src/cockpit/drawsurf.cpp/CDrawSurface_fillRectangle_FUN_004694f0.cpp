@@ -53,7 +53,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_004694f0(CDrawS
 LAB_0046965e:
           _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
           _DAT_01d71de4 = 0x525;
-          core_main_c_FUN_004e4330("Invalid bitsPerPixel!");
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
           return;
         }
         if (DAT_005fba20 < 0x11) {

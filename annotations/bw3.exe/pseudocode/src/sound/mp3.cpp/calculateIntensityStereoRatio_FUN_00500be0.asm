@@ -49,7 +49,7 @@ section .text
     FILD dword ptr [ESP]                ; 00500c19
     FLD double ptr [ESP + 0x14]         ; 00500c1c
     CALL crt_math.c_pow_FUN_005a4764    ; 00500c20
-        ;   XREF to: 005a4764 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005a4764()
+        ;   XREF to: 005a4764 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005a4764(float10 base, float10 exp)
     MOV dword ptr [EBX + 0x900],0x3f800000 ; 00500c25
     FSTP float ptr [EBX]                ; 00500c2f
     ADD ESP,0x4                         ; 00500c31
@@ -71,7 +71,7 @@ section .text
     FILD dword ptr [ESP]                ; 00500c55
     FLD double ptr [ESP + 0x14]         ; 00500c58
     CALL crt_math.c_pow_FUN_005a4764    ; 00500c5c
-        ;   XREF to: 005a4764 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005a4764()
+        ;   XREF to: 005a4764 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005a4764(float10 base, float10 exp)
     MOV dword ptr [EBX],0x3f800000      ; 00500c61
     FSTP float ptr [EBX + 0x900]        ; 00500c67
     ADD ESP,0x4                         ; 00500c6d

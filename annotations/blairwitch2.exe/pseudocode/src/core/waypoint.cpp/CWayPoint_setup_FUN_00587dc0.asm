@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_trigger.cpp_CTrigger_setup_FUN_005778a0
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
@@ -97,8 +97,8 @@ section .text
     PUSH 0x5ee0de                       ; 00587e67
     MOV dword ptr [0x01d046a0],EBP      ; 00587e6c | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00587e72 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00587e77
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00587e77
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00587e7c
     ADD ESP,0xc                         ; 00587e7f
     POP EBP                             ; 00587e82

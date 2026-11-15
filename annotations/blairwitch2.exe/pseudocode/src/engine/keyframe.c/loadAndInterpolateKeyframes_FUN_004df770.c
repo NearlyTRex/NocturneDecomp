@@ -59,12 +59,12 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(SMRGLKey
       if ((pSVar1->header).child_count != 2) {
         _DAT_01d046a0 = "..\\engine\\keyframe.c";
         _DAT_01d046a4 = 0xfd;
-        core_main_c_FUN_004e4500("Bad key frame");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Bad key frame");
       }
       if ((pSVar1->vertex_header).count != (pSVar6->vertex_header).count) {
         _DAT_01d046a0 = "..\\engine\\keyframe.c";
         _DAT_01d046a4 = 0xfe;
-        core_main_c_FUN_004e4500("Key frame vertex mismatch");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Key frame vertex mismatch");
       }
       iVar4 = iVar4 + 1;
       pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;

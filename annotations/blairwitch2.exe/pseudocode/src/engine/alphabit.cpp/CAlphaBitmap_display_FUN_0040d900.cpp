@@ -22,7 +22,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap 
   
   if ((((-1 < this_ptr->width + x) && (x < DAT_006141b8)) && (-1 < y + this_ptr->height)) &&
      (y < DAT_006141bc)) {
-    engine_alphabit_cpp_FUN_0040dca0(this_ptr);
+    engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040dca0(this_ptr);
     local_14 = this_ptr->raw;
     pcVar3 = this_ptr->opa;
     if (DAT_006141c0 == 0x20) {

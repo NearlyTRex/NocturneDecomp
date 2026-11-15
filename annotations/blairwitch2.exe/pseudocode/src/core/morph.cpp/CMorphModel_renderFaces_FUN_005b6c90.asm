@@ -64,7 +64,7 @@ section .text
     FMULP                               ; 005b6cdc
     SUB EAX,EBX                         ; 005b6cde
     CALL crt_math.c_round_FUN_005b7ff0  ; 005b6ce0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 005b6ce5
     MOV EDX,dword ptr [ESP]             ; 005b6ce8
     IMUL EDX                            ; 005b6ceb

@@ -5367,6 +5367,65 @@ CHero_full_vtable g_CPryeVTable = {
     }
 };
 
+// CSoundDeviceBasic_vtable
+CSoundDeviceBasic_vtable g_CWavInDeviceVTable = {
+    .close = (CSoundDevice_close *)sound_sndwav_cpp_CWavInDevice_close_FUN_0055dda0,
+    .start = (CSoundDevice_start *)sound_sndwav_cpp_CWavInDevice_start_FUN_0055de50,
+    .reset = (CSoundDevice_reset *)sound_sndwav_cpp_CWavInDevice_reset_FUN_0055df40,
+    .setMode = (CSoundDevice_setMode *)sound_sndwav_cpp_CWavInDevice_setMode_FUN_0055dfa0,
+    .poll = (CSoundDevice_poll *)sound_sndwav_cpp_CWavInDevice_poll_FUN_0055e310
+};
+
+// CSoundDeviceFull_vtable
+CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable = {
+    .close = (CSoundDevice_close *)sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00,
+    .start = (CSoundDevice_start *)sound_snddx_cpp_CDirectSoundDevice_start_FUN_0055acd0,
+    .reset = (CSoundDevice_reset *)sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0055ae40,
+    .setMode = (CSoundDevice_setMode *)sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100,
+    .poll = (CSoundDevice_pollPlayback *)sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0055b620,
+    .hasHardware3D = (CSoundDevice_hasHardware3D *)sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0055b700,
+    .commitDeferredSettings = (CSoundDevice_commitDeferredSettings *)sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0055d360,
+    .set3DListenerPos = (CSoundDevice_set3DListenerPos *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_0055b7b0,
+    .set3DListenerOrient = (CSoundDevice_set3DListenerOrient *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_0055b7f0,
+    .set3DListenerVelocity = (CSoundDevice_set3DListenerVelocity *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_0055b820,
+    .set3DListenerDistanceFactor = (CSoundDevice_set3DListenerDistanceFactor *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0055b850,
+    .setReverb = (CSoundDevice_setReverb *)sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_0055d310,
+    .allocateSample = (CSoundDevice_allocateSample *)sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880,
+    .freeSample = (CSoundDevice_freeSample *)sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_0055bb90,
+    .lockSample = (CSoundDevice_lockSample *)sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0055bbf0,
+    .unlockSample = (CSoundDevice_unlockSample *)sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0055bd50,
+    .allocateSfx = (CSoundDevice_allocateSfx *)sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0055be30,
+    .applySfxChanges = (CSoundDevice_applySfxChanges *)sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0,
+    .getSfxPlaybackPos = (CSoundDevice_getSfxPlaybackPos *)sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0055cb20,
+    .startSfx = (CSoundDevice_startSfx *)sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0055cc40,
+    .killSfx = (CSoundDevice_killSfx *)sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0055d0a0,
+    .isSfxPlaying = (CSoundDevice_isSfxPlaying *)sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0055ca70
+};
+CSoundDeviceFull_vtable g_CWavOutDeviceVTable = {
+    .close = (CSoundDevice_close *)sound_sndwav_cpp_CWavOutDevice_close_FUN_0055d870,
+    .start = (CSoundDevice_start *)sound_sndwav_cpp_CWavOutDevice_start_FUN_0055d920,
+    .reset = (CSoundDevice_reset *)sound_sndwav_cpp_CWavOutDevice_reset_FUN_0055d9f0,
+    .setMode = (CSoundDevice_setMode *)sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0055da60,
+    .poll = (CSoundDevice_pollPlayback *)sound_sndwav_cpp_CWavOutDevice_poll_FUN_0055dc40,
+    .hasHardware3D = (CSoundDevice_hasHardware3D *)sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_0055e680,
+    .commitDeferredSettings = (CSoundDevice_commitDeferredSettings *)sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_0055e690,
+    .set3DListenerPos = (CSoundDevice_set3DListenerPos *)sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_0055e6a0,
+    .set3DListenerOrient = (CSoundDevice_set3DListenerOrient *)sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_0055e6b0,
+    .set3DListenerVelocity = (CSoundDevice_set3DListenerVelocity *)sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_0055e6c0,
+    .set3DListenerDistanceFactor = (CSoundDevice_set3DListenerDistanceFactor *)sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_0055e6d0,
+    .setReverb = (CSoundDevice_setReverb *)sound_sndwav_cpp_CWavOutDevice_setReverb_FUN_0055e6e0,
+    .allocateSample = (CSoundDevice_allocateSample *)sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_0055e6f0,
+    .freeSample = (CSoundDevice_freeSample *)sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_0055e700,
+    .lockSample = (CSoundDevice_lockSample *)sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0055e710,
+    .unlockSample = (CSoundDevice_unlockSample *)sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_0055e720,
+    .allocateSfx = (CSoundDevice_allocateSfx *)sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_0055e730,
+    .applySfxChanges = (CSoundDevice_applySfxChanges *)sound_sndwav_cpp_CWavOutDevice_applySfxChanges_FUN_0055e740,
+    .getSfxPlaybackPos = (CSoundDevice_getSfxPlaybackPos *)sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0055e750,
+    .startSfx = (CSoundDevice_startSfx *)sound_sndwav_cpp_CWavOutDevice_startSfx_FUN_0055e770,
+    .killSfx = (CSoundDevice_killSfx *)sound_sndwav_cpp_CWavOutDevice_killSfx_FUN_0055e780,
+    .isSfxPlaying = (CSoundDevice_isSfxPlaying *)sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_0055e790
+};
+
 // CWeapon_full_vtable
 CWeapon_full_vtable g_CFlashlightVTable = {
     ._ub = {

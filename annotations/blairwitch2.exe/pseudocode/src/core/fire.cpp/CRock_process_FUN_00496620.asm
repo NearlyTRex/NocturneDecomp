@@ -47,7 +47,7 @@ section .text
     SAR EAX,0x2                         ; 0049665c
     FMUL double ptr [0x005d5422]        ; 0049665f | DAT_005d5422
     CALL crt_math.c_round_FUN_005b7ff0  ; 00496665
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 0049666a
     MOV EDX,dword ptr [ESP]             ; 0049666d
     IMUL EDX                            ; 00496670

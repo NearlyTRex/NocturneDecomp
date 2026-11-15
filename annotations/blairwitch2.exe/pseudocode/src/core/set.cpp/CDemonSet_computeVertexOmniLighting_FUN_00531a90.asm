@@ -139,17 +139,17 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 00531b83
     FXCH ST2                            ; 00531b87
     CALL crt_math.c_round_FUN_005b7ff0  ; 00531b89
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x40]        ; 00531b8e
     MOV EAX,dword ptr [ESP + 0x40]      ; 00531b92
     CALL crt_math.c_round_FUN_005b7ff0  ; 00531b96
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     SHL EAX,0x8                         ; 00531b9b
     FISTP dword ptr [ESP + 0x40]        ; 00531b9e
     MOV dword ptr [EBX + 0x20],EAX      ; 00531ba2 | DAT_00622034
     MOV EAX,dword ptr [ESP + 0x40]      ; 00531ba5
     CALL crt_math.c_round_FUN_005b7ff0  ; 00531ba9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     SHL EAX,0x8                         ; 00531bae
     FISTP dword ptr [ESP + 0x40]        ; 00531bb1
     MOV dword ptr [EBX + 0x24],EAX      ; 00531bb5 | DAT_00622038

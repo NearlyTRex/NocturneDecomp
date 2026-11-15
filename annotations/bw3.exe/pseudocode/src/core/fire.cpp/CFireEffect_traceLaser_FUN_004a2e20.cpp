@@ -21,7 +21,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
   SLaserInfo *pSVar5;
   float *pfVar6;
   byte bVar7;
-  float10 fVar8;
+  double dVar8;
   float afStackY_1148 [987];
   byte auVar9 [12];
   byte in_stack_fffffe30 [44];
@@ -49,14 +49,13 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
   float local_13c;
   float local_138;
   float local_134;
-  float local_130;
+  CVector3f local_130;
   float local_124;
-  float local_120;
-  float local_11c;
+  float local_120 [2];
   CVector3f local_118;
-  float local_10c;
-  float afStack_108 [4];
-  float local_f8;
+  CVector3f local_10c;
+  float local_100;
+  float local_fc [2];
   CVector3f local_f4;
   CVector3f local_e8;
   CVector3f local_dc;
@@ -70,11 +69,9 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
   float local_98;
   CVector3f local_94;
   CVector3f local_88;
-  float local_7c;
-  float afStack_78 [4];
-  float local_68;
-  float local_64;
-  float local_60;
+  CVector3f local_7c;
+  float local_70;
+  float local_6c [4];
   float local_5c;
   float local_58;
   float local_54;
@@ -105,14 +102,14 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
       *(uint *)((int)&local_e8 + (uint)bVar7 * -8 + 4) = *puVar4;
       *(uint *)((int)&local_e8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8) =
            puVar4[(uint)bVar7 * -2 + 1];
-      afStack_108[2] = local_e8.x + direction->x;
-      afStack_108[3] = local_e8.y + direction->y;
-      local_f8 = local_e8.z + direction->z;
-      local_c4.x = afStack_108[2];
-      *(float *)((int)&local_c4 + (uint)bVar7 * -8 + 4) = afStack_108[(uint)bVar7 * -2 + 3];
+      local_100 = local_e8.x + direction->x;
+      local_fc[0] = local_e8.y + direction->y;
+      local_fc[1] = local_e8.z + direction->z;
+      local_c4.x = local_100;
+      *(float *)((int)&local_c4 + (uint)bVar7 * -8 + 4) = local_fc[(uint)bVar7 * -2];
       pCVar15 = g_CDemonSetPtr;
       *(float *)((int)&local_c4 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8) =
-           afStack_108[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+           local_fc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
       uVar13 = 0x4a2edd;
       local_14 = (float)core_setcolid_cpp_FUN_0053ccc0();
       if ((local_14 < 0.0) || (1.0 <= local_14)) {
@@ -120,9 +117,9 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         local_50 = -direction->z;
         local_58 = -direction->x;
         local_d0.x = -direction->x;
-        *(float *)((int)&local_d0 + (uint)bVar7 * -8 + 4) = afStack_78[(uint)bVar7 * -2 + 9];
+        *(float *)((int)&local_d0 + (uint)bVar7 * -8 + 4) = local_6c[(uint)bVar7 * -2 + 6];
         *(float *)((int)&local_d0 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4 + 4) =
-             afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
+             local_6c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
         if (&local_f4 != &local_d0) {
           local_f4.x = local_d0.x;
           local_f4.y = local_d0.y;
@@ -146,18 +143,18 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         local_a0 = direction->x * local_14;
         local_9c = direction->y * local_14;
         local_98 = direction->z * local_14;
-        local_64 = local_a0;
-        afStack_78[(uint)bVar7 * -2 + 6] = local_b4[(uint)bVar7 * -2 + 6];
-        afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+        local_6c[2] = local_a0;
+        local_6c[(uint)bVar7 * -2 + 3] = local_b4[(uint)bVar7 * -2 + 6];
+        local_6c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
              local_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-        afStack_78[2] = origin->x + local_64;
-        afStack_78[3] = origin->y + local_60;
-        local_68 = origin->z + local_5c;
-        local_118.x = afStack_78[2];
-        *(float *)((int)&local_118 + (uint)bVar7 * -8 + 4) = afStack_78[(uint)bVar7 * -2 + 3];
-        *(float *)((int)&local_118 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8) =
-             afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-        if (&local_c4 != &local_118) {
+        local_70 = origin->x + local_6c[2];
+        local_6c[0] = origin->y + local_6c[3];
+        local_6c[1] = origin->z + local_5c;
+        local_118.x = local_70;
+        local_120[(uint)bVar7 * -2 + 3] = local_6c[(uint)bVar7 * -2];
+        local_120[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+             local_6c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        if (&local_c4 != (CVector3f *)(local_120 + 2)) {
           local_c4.x = local_118.x;
           local_c4.y = local_118.y;
           local_c4.z = local_118.z;
@@ -176,31 +173,35 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
       laser_info.stored_angle = 0.0;
       laser_info.transparency = 0.0;
       if (local_18 != (CDemonActor *)0x0) {
-        core_actor_cpp_FUN_00408bf0();
-        local_124 = local_7c;
-        (&stack0xfffffee0)[(uint)bVar7 * 0xfffffffe] = afStack_78[(uint)bVar7 * -2];
-        (&stack0xfffffee0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-        if (&laser_info.local_origin != (CVector3f *)&stack0xfffffedc) {
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(local_18,origin,&local_7c);
+        local_124 = local_7c.x;
+        local_120[(uint)bVar7 * -2] = *(float *)((int)&local_7c + (uint)bVar7 * -8 + 4);
+        local_120[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+             *(float *)((int)&local_7c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+        if (&laser_info.local_origin != (CVector3f *)&local_124) {
           laser_info.local_origin.x = local_124;
-          laser_info.local_origin.y = local_120;
-          laser_info.local_origin.z = local_11c;
+          laser_info.local_origin.y = local_120[0];
+          laser_info.local_origin.z = local_120[1];
         }
-        core_actor_cpp_FUN_00408bf0();
-        local_154 = local_130;
-        (&stack0xfffffeb0)[(uint)bVar7 * 0xfffffffe] = (&stack0xfffffec8)[(uint)bVar7 * -2 + 3];
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                  (local_18,&g_CDemonSetPtr->collision_impact_position,&local_130);
+        local_154 = local_130.x;
+        (&stack0xfffffeb0)[(uint)bVar7 * 0xfffffffe] =
+             (float)*(uint *)((int)&local_130 + (uint)bVar7 * -8 + 4);
         (&stack0xfffffeb0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             (&stack0xfffffec8)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+             (float)*(uint *)((int)&local_130 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         if (&laser_info.local_hit_position != (CVector3f *)&stack0xfffffeac) {
           laser_info.local_hit_position.x = local_154;
           laser_info.local_hit_position.y = local_150;
           laser_info.local_hit_position.z = local_14c;
         }
-        core_actor_cpp_FUN_00408b40();
-        local_13c = local_10c;
-        (&stack0xfffffec8)[(uint)bVar7 * 0xfffffffe] = afStack_108[(uint)bVar7 * -2];
+        core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b40
+                  (local_18,&g_CDemonSetPtr->collision_normal,&local_10c);
+        local_13c = local_10c.x;
+        (&stack0xfffffec8)[(uint)bVar7 * 0xfffffffe] =
+             (float)*(uint *)((int)&local_10c + (uint)bVar7 * -8 + 4);
         (&stack0xfffffec8)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             afStack_108[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+             (float)*(uint *)((int)&local_10c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         if (&laser_info.local_normal != (CVector3f *)&stack0xfffffec4) {
           laser_info.local_normal.x = local_13c;
           laser_info.local_normal.y = local_138;
@@ -248,11 +249,11 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
           fStack_140 = fStack_140 * fVar16;
         }
         fVar16 = fStack_140 * direction->z + fStack_148 * direction->x + fStack_144 * direction->y;
+        dVar8 = (double)fVar16;
         if ((float)_DAT_005c09f0 < fVar16) {
-          if (fVar16 < 1.0) {
-            fVar8 = (float10)fVar16;
-            acos();
-            fStack_1c = (float)fVar8;
+          if (dVar8 < 1.0) {
+            dVar8 = acos(dVar8);
+            local_20 = (float)dVar8;
           }
           else {
             fStack_1c = 0.0;
@@ -290,9 +291,9 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect *this
         local_48 = -local_dc.y;
         local_44 = -local_dc.z;
         local_94.x = -local_dc.x;
-        local_b4[(uint)bVar7 * -2 + 9] = afStack_78[(uint)bVar7 * -2 + 0xc];
+        local_b4[(uint)bVar7 * -2 + 9] = local_6c[(uint)bVar7 * -2 + 9];
         local_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
-             afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+             local_6c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
         if (&local_dc != (CVector3f *)(local_b4 + 8)) {
           local_dc.x = local_94.x;
           local_dc.y = local_94.y;

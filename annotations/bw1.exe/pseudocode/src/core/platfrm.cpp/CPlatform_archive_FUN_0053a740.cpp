@@ -73,7 +73,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0053a740(CPlatform *this_ptr
       if (10 < local_1c) {
         _DAT_01d1d400 = "..\\core\\platfrm.cpp";
         _DAT_01d1d404 = 0x316;
-        core_main_c_FUN_005030e0("CPlatform::archive - too many attached actors.");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CPlatform::archive - too many attached actors.");
       }
       iVar2 = 0;
       pCVar1 = this_ptr;

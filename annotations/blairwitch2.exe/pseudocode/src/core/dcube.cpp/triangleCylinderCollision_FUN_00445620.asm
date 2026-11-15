@@ -47,7 +47,7 @@
 ;   undefined4 DAT_01510838
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00444a40
+;   core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40
 ;   core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0
 ;
 ; *****************************************************************************
@@ -271,8 +271,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0044585a
     PUSH EDI                            ; 0044585d
     PUSH EBX                            ; 0044585e
-    CALL core_dcube.cpp_FUN_00444a40    ; 0044585f
-        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00444a40()
+    CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40 ; 0044585f
+        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x80],EAX      ; 00445864
     FLD float ptr [ESP + 0x80]          ; 0044586b
     FLDZ                                ; 00445872
@@ -373,8 +373,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 00445962
     PUSH EAX                            ; 00445966
     PUSH EBX                            ; 00445967
-    CALL core_dcube.cpp_FUN_00444a40    ; 00445968
-        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00444a40()
+    CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40 ; 00445968
+        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x80],EAX      ; 0044596d
     FLD float ptr [ESP + 0x80]          ; 00445974
     ADD ESP,0xc                         ; 0044597b

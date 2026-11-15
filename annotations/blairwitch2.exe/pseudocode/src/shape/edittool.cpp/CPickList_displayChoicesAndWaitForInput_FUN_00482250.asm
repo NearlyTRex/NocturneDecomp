@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5d1e85                       ; 0048226b | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d046a0],ECX      ; 00482270 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00482276 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0048227c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0048227c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00482281
     MOV EAX,[0x01c25590]                ; 00482284 | DAT_01c25590
         ;   Label: LAB_00482284

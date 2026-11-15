@@ -32,7 +32,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
@@ -51,8 +51,8 @@ section .text
     PUSH EBX                            ; 0042385f
     LEA ESI,[ESP + 0x2c]                ; 00423860
     LEA EDI,[ESP + 0x20]                ; 00423864
-    CALL core_actor.cpp_FUN_00408de0    ; 00423868
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00423868
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x2c]                ; 0042386d
     ADD ESP,0x8                         ; 00423871
     MOVSD ES:EDI,ESI                    ; 00423874

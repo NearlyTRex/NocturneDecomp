@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[45]:
-;   cockpit_ckptutil.c_FUN_00438e40 at 00438ead
+;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40 at 00438ead
 ;   core_actor.cpp_CDemonActor_save_FUN_0040adb0 at 0040ae06
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0 at 0040b73a
 ;   core_actor.cpp_archiveBox_FUN_0040bbf0 at 0040bc89

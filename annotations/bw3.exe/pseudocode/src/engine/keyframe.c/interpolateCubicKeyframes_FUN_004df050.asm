@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004deb20
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5c675c                       ; 004df10b | = "Bad keyframe 1"
     MOV dword ptr [0x01d71de0],ECX      ; 004df110 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004df116 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004df11b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004df11b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004df120
     MOV EDX,dword ptr [EBP + 0x14]      ; 004df123
         ;   Label: LAB_004df123
@@ -195,17 +195,17 @@ section .text
     MOV EDX,dword ptr [EAX + 0x8]       ; 004df217
     FXCH                                ; 004df21a
     CALL crt_math.c_round_FUN_005a3120  ; 004df21c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 004df221
     FXCH                                ; 004df225
     CALL crt_math.c_round_FUN_005a3120  ; 004df227
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 004df22c
     CALL crt_math.c_round_FUN_005a3120  ; 004df22e
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004df233
     CALL crt_math.c_round_FUN_005a3120  ; 004df235
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 004df23a
     FISTP dword ptr [ESP + 0x18]        ; 004df23c
     FISTP dword ptr [ESP + 0x14]        ; 004df240
@@ -379,8 +379,8 @@ section .text
     PUSH 0x5c6780                       ; 004df40c | = "ZBP not found!"
     MOV dword ptr [0x01d71de0],EDI      ; 004df411 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004df417 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004df41c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004df41c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004df421
     JMP 0x004df390                      ; 004df424
         ;   XREF to: 004df390 (UNCONDITIONAL_JUMP)  ; LAB_004df390

@@ -29,7 +29,7 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046cca0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
@@ -168,8 +168,8 @@ section .text
     PUSH 0x5ce390                       ; 0043c1d9 | = "CDemonCamera::beginBackgroundScene - ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0043c1de | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0043c1e4 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043c1ea
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043c1ea
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043c1ef
     JMP 0x0043c055                      ; 0043c1f2
         ;   XREF to: 0043c055 (UNCONDITIONAL_JUMP)  ; LAB_0043c055

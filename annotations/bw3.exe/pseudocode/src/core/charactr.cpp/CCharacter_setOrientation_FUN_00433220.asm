@@ -27,9 +27,9 @@
 ;   core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056cb77
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH EBX                            ; 00433236
     LEA ESI,[ESP + 0x5c]                ; 00433237
     LEA EDI,[ESP + 0x20]                ; 0043323b
-    CALL core_actor.cpp_FUN_00408b00    ; 0043323f
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0043323f
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00433244
     LEA EAX,[EBX + 0x250c]              ; 00433247
     LEA ESI,[ESP + 0x54]                ; 0043324d
@@ -60,8 +60,8 @@ section .text
     PUSH EBX                            ; 00433255
     LEA ESI,[ESP + 0x38]                ; 00433256
     LEA EDI,[ESP + 0x2c]                ; 0043325a
-    CALL core_actor.cpp_FUN_00408b00    ; 0043325e
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0043325e
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 00433263
     ADD ESP,0x8                         ; 00433267
     LEA EAX,[EBX + 0x30]                ; 0043326a
@@ -87,8 +87,8 @@ section .text
     PUSH EBX                            ; 00433293
     LEA ESI,[ESP + 0x8]                 ; 00433294
     LEA EDI,[ESP + 0x14]                ; 00433298
-    CALL core_actor.cpp_FUN_00408b40    ; 0043329c
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40 ; 0043329c
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x8]                 ; 004332a1
     LEA EAX,[ESP + 0x14]                ; 004332a5
     ADD ESP,0x8                         ; 004332a9
@@ -111,8 +111,8 @@ section .text
     PUSH EBX                            ; 004332d2
     LEA ESI,[ESP + 0x50]                ; 004332d3
     LEA EDI,[ESP + 0x44]                ; 004332d7
-    CALL core_actor.cpp_FUN_00408b40    ; 004332db
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40 ; 004332db
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x50]                ; 004332e0
     LEA EAX,[ESP + 0x44]                ; 004332e4
     ADD ESP,0x8                         ; 004332e8

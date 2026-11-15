@@ -42,7 +42,7 @@
 ;   undefined4 DAT_01d23558
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_mp3.cpp_CFileBitStream_readBit_FUN_00504a10
 ;   sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00
 ;
@@ -231,8 +231,8 @@ section .text
     PUSH 0x5e0074                       ; 00506532 | = "Side info bad: block_type == 0 in spl..."
     MOV dword ptr [0x01d046a0],EBP      ; 00506537 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0050653d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00506542
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00506542
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00506547
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0050654a
         ;   Label: LAB_0050654a
@@ -542,8 +542,8 @@ section .text
     PUSH 0x5e00be                       ; 00506885 | = "Side info bad: block_type == 0 in spl..."
     MOV dword ptr [0x01d046a0],EBP      ; 0050688a | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00506890 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00506895
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00506895
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050689a
     MOV EAX,dword ptr [ESP + 0x20]      ; 0050689d
         ;   Label: LAB_0050689d

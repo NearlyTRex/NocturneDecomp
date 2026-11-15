@@ -12,43 +12,43 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
 
 {
   CDeformableModelInstance *this_ptr_00;
+  float fVar1;
   CDemonRenderer *this_ptr_01;
   CCharacter *this_ptr_02;
-  int iVar1;
+  int iVar2;
   CDemonActor *this_ptr_03;
-  uint *puVar2;
   uint *puVar3;
-  byte bVar4;
-  float10 fVar5;
-  float10 fVar6;
-  ulonglong uVar7;
-  uint auStack_54 [6];
-  uint auStack_3c [8];
+  uint *puVar4;
+  byte bVar5;
+  double dVar6;
+  uint auStack_58 [6];
+  uint auStack_40 [9];
   float fStack_1c;
   float fStack_18;
-  int iStack_14;
   
-  bVar4 = 0;
+  bVar5 = 0;
   fStack_18 = (float)this_ptr->fade_out_opacity * (float)_DAT_005d91f3 * (float)_DAT_005d91fb;
   fStack_1c = ((float)_DAT_005d91eb - (float)this_ptr->fade_out_opacity) * (float)_DAT_005d91f3 *
               (float)_DAT_005d91fb;
   if (this_ptr->fading_out == 0) {
-    fVar5 = ((float10)fStack_18 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time;
-    uVar7 = round();
-    iStack_14 = (int)ROUND(fVar5);
-    this_ptr->opacity = (int)uVar7 - iStack_14;
+    auStack_58[0] = 0x59377b;
+    dVar6 = round
+                      ((double)((fStack_18 * this_ptr->fade_timer) / this_ptr->max_fade_time));
+    fStack_18 = (float)(int)ROUND(dVar6);
+    this_ptr->opacity = 0x10000 - (int)fStack_18;
     if (this_ptr->fade_timer == this_ptr->max_fade_time) {
-      this_ptr->fade_done = (int)((ulonglong)uVar7 >> 0x20);
+      this_ptr->fade_done = 0;
       goto LAB_005937aa;
     }
   }
   else {
-    fVar6 = ((float10)fStack_18 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time
-            + (float10)fStack_1c;
-    fVar5 = (float10)this_ptr->fade_timer;
-    round();
-    this_ptr->opacity = (int)ROUND(fVar6);
-    if (fVar5 == (float10)this_ptr->max_fade_time) {
+    fVar1 = this_ptr->fade_timer;
+    auStack_58[0] = 0x59395f;
+    dVar6 = round
+                      ((double)((fStack_18 * this_ptr->fade_timer) / this_ptr->max_fade_time +
+                               fStack_1c));
+    this_ptr->opacity = (int)ROUND(dVar6);
+    if (fVar1 == this_ptr->max_fade_time) {
       this_ptr->fade_done = 1;
       goto LAB_005937aa;
     }
@@ -73,19 +73,19 @@ LAB_005937aa:
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_54;
-  puVar3 = auStack_3c;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  puVar3 = auStack_58;
+  puVar4 = auStack_40;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_0041daf0(auStack_3c);
+  iVar2 = core_box_cpp_FUN_0041daf0(auStack_40);
   this_ptr_01 = DAT_005f2afc;
-  if (iVar1 != 0) {
-    iVar1 = this_ptr->opacity;
+  if (iVar2 != 0) {
+    iVar2 = this_ptr->opacity;
     (this_ptr->base).base.was_rendered_opaque = 1;
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar1);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar2);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
     this_ptr_00 = &(this_ptr->base).base.model;

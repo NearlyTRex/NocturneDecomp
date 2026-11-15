@@ -25,10 +25,10 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_door.cpp_CDoor_onLocked_FUN_00460800
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH EBX                            ; 00460646
     LEA ESI,[ESP + 0x8]                 ; 00460647
     LEA EDI,[ESP + 0x14]                ; 0046064b
-    CALL core_actor.cpp_FUN_00408de0    ; 0046064f
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0046064f
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 00460654
     MOV ESI,ESP                         ; 00460657
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00460659
@@ -247,8 +247,8 @@ section .text
     PUSH 0x5d0c02                       ; 004607dd | = "CDoor::getMoveType - invalid door!"
     MOV dword ptr [0x01d046a0],EDX      ; 004607e2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004607e8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004607ee
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004607ee
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004607f3
     XOR EAX,EAX                         ; 004607f6
     MOV ESP,EBP                         ; 004607f8

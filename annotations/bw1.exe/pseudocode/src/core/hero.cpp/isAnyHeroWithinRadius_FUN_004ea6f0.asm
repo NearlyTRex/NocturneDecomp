@@ -7,10 +7,11 @@
 ; CVector3f *      Stack[0x4]:4   point
 ; float            Stack[0x8]:4   radius
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_fire.cpp_initProcess_FUN_004b2880 at 004b28e2
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 0050440e
 ;   core_trash.cpp_CTrash_process_FUN_0059a370 at 0059a38b
+;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b284
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6634
 ;
 ; Referenced Globals:

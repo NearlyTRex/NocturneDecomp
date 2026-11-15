@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
@@ -121,8 +121,8 @@ section .text
     PUSH EBP                            ; 005a6e74
     FSTP ST1                            ; 005a6e75
     FSTP float ptr [EAX + -0x18]        ; 005a6e77
-    CALL core_actor.cpp_FUN_00408b40    ; 005a6e7a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005a6e7a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 005a6e7f
     ADD ESP,0x8                         ; 005a6e83
     XOR EBX,EBX                         ; 005a6e86

@@ -15,7 +15,7 @@ void __cdecl engine_mini3d_cpp_popMatrixRelativeOffset_FUN_00512140(void)
   if (_DAT_01d22580 < 0) {
     _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
     _DAT_01d1d404 = 0x505;
-    core_main_c_FUN_005030e0("Matrix unbalance2");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance2");
   }
   _DAT_01d24ffc = 1;
   _DAT_01d2257c = &DAT_01d22584 + _DAT_01d22580 * 0x3c;

@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5cd163                       ; 0042a0eb | = "CCharacter::advanceLayerAction - inva..."
     MOV dword ptr [0x01d046a0],EDI      ; 0042a0f0 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0042a0f6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042a0fc
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a0fc
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a101
     MOV EAX,dword ptr [EBX + 0x2d04]    ; 0042a104
         ;   Label: LAB_0042a104

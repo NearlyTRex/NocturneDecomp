@@ -73,13 +73,13 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f8750(float *vertices,int 
     if (_DAT_01d0d2cc == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
       _DAT_01d046a4 = 0x14e7;
-      core_main_c_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
     }
     _DAT_01d0d2d0 = malloc(60000);
     if (_DAT_01d0d2d0 == (ushort *)0x0) {
       _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
       _DAT_01d046a4 = 0x14eb;
-      core_main_c_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
     }
   }
   iVar17 = 0;

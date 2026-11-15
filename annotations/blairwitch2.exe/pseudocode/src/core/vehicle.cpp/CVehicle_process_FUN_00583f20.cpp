@@ -62,10 +62,12 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_00583f20(CVehicle *this_ptr,f
   float fStack_98;
   float fStack_94;
   float afStack_90 [4];
-  CVector3f CStack_80;
-  float afStack_74 [4];
+  byte auStack_80 [8];
+  float fStack_78;
+  CVector3f CStack_74;
+  float fStack_68;
   float fStack_64;
-  float fStack_60;
+  float afStack_60 [4];
   float fStack_50;
   float afStack_4c [4];
   float fStack_3c;
@@ -81,7 +83,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_00583f20(CVehicle *this_ptr,f
   bVar18 = 0;
   iStack_18 = (this_ptr->course).len;
   fStack_38 = (this_ptr->cur_time / this_ptr->total_time) * (float)iStack_18;
-  core_course_cpp_CCourse_evaluate_FUN_00438c40(&this_ptr->course,fStack_38,&CStack_80,&CStack_a4);
+  core_course_cpp_CCourse_evaluate_FUN_00438c40
+            (&this_ptr->course,fStack_38,(CVector3f *)auStack_80,&CStack_a4);
   fVar4 = this_ptr->cur_time + delta_time;
   this_ptr->cur_time = fVar4;
   if (this_ptr->total_time < fVar4) {
@@ -93,9 +96,9 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_00583f20(CVehicle *this_ptr,f
   core_course_cpp_CCourse_evaluate_FUN_00438c40
             (&this_ptr->course,fStack_38,&out_pos->position,&(this_ptr->base).orient.vec);
   fStack_30 = 0.0;
-  fStack_bc = (out_pos->position).x - CStack_80.x;
-  fStack_b8 = (this_ptr->base).location.position.y - CStack_80.y;
-  fStack_b4 = (this_ptr->base).location.position.z - CStack_80.z;
+  fStack_bc = (out_pos->position).x - (float)auStack_80._0_4_;
+  fStack_b8 = (this_ptr->base).location.position.y - (float)auStack_80._4_4_;
+  fStack_b4 = (this_ptr->base).location.position.z - fStack_78;
   pCVar3 = &this_ptr->world_velocity;
   fStack_98 = fStack_bc;
   afStack_90[(uint)bVar18 * -2 + -1] = afStack_dc[(uint)bVar18 * -2 + 9];
@@ -130,20 +133,21 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_00583f20(CVehicle *this_ptr,f
   fStack_c8 = (this_ptr->world_velocity).x * _DAT_005edd0f;
   fStack_c4 = (this_ptr->world_velocity).y * _DAT_005edd0f;
   fStack_c0 = (this_ptr->world_velocity).z * _DAT_005edd0f;
-  afStack_74[3] = fStack_c8;
-  afStack_74[(uint)bVar18 * -2 + 4] = afStack_dc[(uint)bVar18 * -2 + 6];
-  afStack_74[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 5] =
+  fStack_68 = fStack_c8;
+  afStack_60[(uint)bVar18 * -2 + -1] = afStack_dc[(uint)bVar18 * -2 + 6];
+  afStack_60[(uint)bVar18 * -2 + (uint)bVar18 * -2] =
        afStack_dc[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 7];
-  if (&this_ptr->sound_velocity != (CVector3f *)(afStack_74 + 3)) {
-    (this_ptr->sound_velocity).x = afStack_74[3];
+  if (&this_ptr->sound_velocity != (CVector3f *)&fStack_68) {
+    (this_ptr->sound_velocity).x = fStack_68;
     (this_ptr->sound_velocity).y = fStack_64;
-    (this_ptr->sound_velocity).z = fStack_60;
+    (this_ptr->sound_velocity).z = afStack_60[0];
   }
-  core_actor_cpp_FUN_00408d30(this_ptr,&this_ptr->world_velocity);
-  fStack_e0 = afStack_74[0];
-  afStack_dc[(uint)bVar18 * -2] = afStack_74[(uint)bVar18 * -2 + 1];
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+            (&this_ptr->base,&this_ptr->world_velocity,&CStack_74);
+  fStack_e0 = CStack_74.x;
+  afStack_dc[(uint)bVar18 * -2] = *(float *)((int)&CStack_74 + (uint)bVar18 * -8 + 4);
   afStack_dc[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
-       afStack_74[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 2];
+       *(float *)((int)&CStack_74 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
   if (&this_ptr->local_velocity != (CVector3f *)&fStack_e0) {
     (this_ptr->local_velocity).x = fStack_e0;
     (this_ptr->local_velocity).y = afStack_dc[0];
@@ -188,11 +192,13 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_00583f20(CVehicle *this_ptr,f
          (((unaff_EDI->base).location.position.y <= (this_ptr->base).location.position.y + fStack_f0
           && ((this_ptr->base).location.position.y + fStack_fc <=
               (unaff_EDI->base).location.position.y + (float)pCStack_110)))) {
-        core_actor_cpp_FUN_00408de0(this_ptr,&(unaff_EDI->base).location);
-        afStack_4c[0] = CStack_80.y;
-        afStack_4c[(uint)bVar18 * -2 + 1] = afStack_74[(uint)bVar18 * -2 + -1];
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  (&this_ptr->base,&(unaff_EDI->base).location.position,
+                   (CVector3f *)(auStack_80 + 4));
+        afStack_4c[0] = (float)auStack_80._4_4_;
+        afStack_4c[(uint)bVar18 * -2 + 1] = (&fStack_78)[(uint)bVar18 * -2];
         afStack_4c[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 2] =
-             afStack_74[(uint)bVar18 * -2 + (uint)bVar18 * -2];
+             *(float *)((int)&CStack_74 + (uint)bVar18 * -8 + (uint)bVar18 * -8);
         if ((fStack_100 <= afStack_4c[0] + fStack_10c) &&
            ((afStack_4c[0] - fStack_10c <= fStack_f4 && (fStack_f8 <= afStack_4c[2] + fStack_10c))))
         {
@@ -275,7 +281,7 @@ joined_r0x005847f3:
   if ((this_ptr_01 == (CMobster *)0x0) || (actor == (CTommyGun *)0x0)) {
     _DAT_01d046a0 = "..\\core\\vehicle.cpp";
     _DAT_01d046a4 = 0x161;
-    core_main_c_FUN_004e4500("CMobster::process - Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMobster::process - Out of memory!");
   }
   iVar13 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
   if (iVar13 == 0) {

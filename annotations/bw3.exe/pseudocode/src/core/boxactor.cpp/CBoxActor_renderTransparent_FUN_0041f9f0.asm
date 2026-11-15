@@ -51,7 +51,7 @@ section .text
     FDIV float ptr [EBX + 0x6e0]        ; 0041fa2c
     FMUL float ptr [0x005b7505]         ; 0041fa32 | DAT_005b7505
     CALL crt_math.c_round_FUN_005a3120  ; 0041fa38
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0x6e4]       ; 0041fa3d
     PUSH EDI                            ; 0041fa43
         ;   Label: LAB_0041fa43

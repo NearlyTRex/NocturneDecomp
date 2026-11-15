@@ -7,9 +7,10 @@
 ; CVector3f *      Stack[0x4]:4   point
 ; float            Stack[0x8]:4   radius
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_fire.cpp_initProcess_FUN_0049de60 at 0049dec2
 ;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056d37b
+;   core_trigger.cpp_CTrigger_process_FUN_0056e230 at 0056e274
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d5ba00

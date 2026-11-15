@@ -36,7 +36,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -186,8 +186,8 @@ section .text
     PUSH 0x5e801a                       ; 0054d378 | = "convertMixBufToOutput - invalid bits: %d"
     MOV dword ptr [0x01d046a0],EDI      ; 0054d37d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054d383 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054d389
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054d389
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054d38e
     MOV ESP,EBP                         ; 0054d391
     POP EBP                             ; 0054d393

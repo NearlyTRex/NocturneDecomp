@@ -12,37 +12,39 @@ void core_dcamera_cpp_FUN_0043d770(int param_1,float *param_2,float param_3)
 
 {
   float fVar1;
-  byte *extraout_ECX;
-  float *pfVar2;
-  float *extraout_EDX;
-  int iVar3;
-  float10 fVar4;
+  byte *puVar2;
+  float *pfVar3;
+  int iVar4;
+  double dVar5;
   int local_24;
   int local_20;
-  byte local_18;
+  int local_1c;
   
   memset((void *)0xae24d8,0,0x12d40);
   if ((param_2 != (float *)0x0) && (local_20 = 0, 0 < *(int *)(param_1 + 0x154))) {
     local_24 = 0;
+    local_1c = 0;
     do {
-      pfVar2 = (float *)(local_24 + 0xa005d4);
-      iVar3 = 0;
+      puVar2 = (byte *)(local_1c + 0xae24d8);
+      pfVar3 = (float *)(local_24 + 0xa005d4);
+      iVar4 = 0;
       if (0 < *(int *)(param_1 + 0x150)) {
         do {
-          fVar1 = param_2[2] * pfVar2[2] + *param_2 * *pfVar2 + param_2[1] * pfVar2[1];
+          fVar1 = param_2[2] * pfVar3[2] + *param_2 * *pfVar3 + param_2[1] * pfVar3[1];
           if (0.0 < fVar1) {
-            fVar4 = (float10)fVar1 * (float10)param_3 * (float10)_DAT_005ce43e *
-                    (float10)_DAT_005ce446;
-            round();
-            local_18 = (byte)(int)ROUND(fVar4);
-            *extraout_ECX = local_18;
-            pfVar2 = extraout_EDX;
+            dVar5 = round
+                              ((double)(fVar1 * param_3 * (float)_DAT_005ce43e *
+                                       (float)_DAT_005ce446));
+            local_1c = (int)ROUND(dVar5);
+            *puVar2 = (byte)local_1c;
           }
-          pfVar2 = pfVar2 + 3;
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < *(int *)(param_1 + 0x150));
+          pfVar3 = pfVar3 + 3;
+          iVar4 = iVar4 + 1;
+          puVar2 = puVar2 + 1;
+        } while (iVar4 < *(int *)(param_1 + 0x150));
       }
       local_24 = local_24 + 0xf00;
+      local_1c = local_1c + 0x140;
       local_20 = local_20 + 1;
     } while (local_20 < *(int *)(param_1 + 0x154));
   }

@@ -1,16 +1,16 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 10,
+    "assembly_lines": 50,
     "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 0,
-    "global_count": 1,
+    "global_count": 14,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 43
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -18,10 +18,6 @@
     "address_range": [
       [
         "004e70c0",
-        "004e70d0"
-      ],
-      [
-        "004e711f",
         "004e7124"
       ]
     ],
@@ -31,6 +27,84 @@
   },
   "function_calls": [],
   "globals": [
+    {
+      "addr": "005e427c",
+      "name": "s_GROUND_NONE_005e4275+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4288",
+      "name": "s_GROUND_CONCRETE_005e4281+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4298",
+      "name": "s_GROUND_DIRT_005e4291+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42a4",
+      "name": "s_GROUND_GRASS_005e429d+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42b1",
+      "name": "s_GROUND_METAL_005e42aa+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42be",
+      "name": "s_GROUND_WATER_005e42b7+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42cb",
+      "name": "s_GROUND_WOOD_005e42c4+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42d7",
+      "name": "s_GROUND_MARBLE_005e42d0+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42e5",
+      "name": "s_GROUND_MUD_005e42de+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42f0",
+      "name": "s_GROUND_CARPET_005e42e9+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e42fe",
+      "name": "s_GROUND_GLASS_005e42f7+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e430b",
+      "name": "s_GROUND_GRAVEL_005e4304+7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4319",
+      "name": "s_GROUND_LEAVES_005e4312+7",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "005e4320",
       "name": "s_DEFAULT_005e4320",
@@ -48,15 +122,15 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.571428571428571,
-    "instruction_count": 7,
+    "avg_pcode_per_instr": 2.5454545454545454,
+    "instruction_count": 33,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 1,
       "BRANCHIND": 1,
       "CBRANCH": 1,
-      "COPY": 3,
-      "INT_ADD": 3,
+      "COPY": 16,
+      "INT_ADD": 16,
       "INT_AND": 4,
       "INT_EQUAL": 4,
       "INT_LESS": 1,
@@ -64,24 +138,24 @@
       "INT_SBORROW": 2,
       "INT_SLESS": 2,
       "INT_SUB": 2,
-      "LOAD": 3,
+      "LOAD": 16,
       "POPCOUNT": 2,
-      "RETURN": 1
+      "RETURN": 14
     },
-    "pcode_op_count": 32
+    "pcode_op_count": 84
   },
   "siblings": {
     "blairwitch2.exe": {
       "addr": "004ca840",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.35
+      "class": "identical",
+      "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "004cfa50",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.35
+      "class": "identical",
+      "ratio": 1.0
     },
     "nocedit.exe": {
       "addr": "004eed80",

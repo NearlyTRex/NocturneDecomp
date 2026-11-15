@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_dest.cpp_CActorDestination_process_FUN_004591f0 at 004592bb
-;   core_hero.cpp_FUN_004d3b20 at 004d3ba0
+;   core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20 at 004d3ba0
 ;   core_prye.cpp_FUN_00521880 at 00521991
 ;
 ; Called Functions:

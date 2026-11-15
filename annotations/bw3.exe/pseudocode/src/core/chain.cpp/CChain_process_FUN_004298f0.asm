@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_chain.cpp_CChain_constrainSegmentDistance_FUN_00429660
-;   core_chain.cpp_FUN_00429420
+;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_00560a00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -116,8 +116,8 @@ section .text
     PUSH EBX                            ; 00429a00
     LEA ESI,[ESP + 0xd8]                ; 00429a01
     LEA EDI,[ESP + 0x48]                ; 00429a08
-    CALL core_chain.cpp_FUN_00429420    ; 00429a0c
-        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_00429420()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420 ; 00429a0c
+        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0xd8]                ; 00429a11
     ADD ESP,0x4                         ; 00429a18
     MOVSD ES:EDI,ESI                    ; 00429a1b
@@ -201,8 +201,8 @@ section .text
         ;   Label: LAB_00429b61
     LEA ESI,[ESP + 0x54]                ; 00429b62
     LEA EDI,[ESP + 0xa8]                ; 00429b66
-    CALL core_chain.cpp_FUN_00429420    ; 00429b6d
-        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_00429420()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420 ; 00429b6d
+        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0x54]                ; 00429b72
     ADD ESP,0x4                         ; 00429b76
     MOVSD ES:EDI,ESI                    ; 00429b79
@@ -450,8 +450,8 @@ section .text
         ;   Label: LAB_00429ebe
     LEA ESI,[ESP + 0x84]                ; 00429ebf
     LEA EDI,[ESP + 0xc0]                ; 00429ec6
-    CALL core_chain.cpp_FUN_00429420    ; 00429ecd
-        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_00429420()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420 ; 00429ecd
+        ;   XREF to: 00429420 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_00429420(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0x84]                ; 00429ed2
     ADD ESP,0x4                         ; 00429ed9
     MOVSD ES:EDI,ESI                    ; 00429edc

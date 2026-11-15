@@ -16,16 +16,12 @@ void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_005847e0(CSpotView *th
   CMatrix3x3f CStack_88;
   CVector3f CStack_60;
   CVector3f CStack_54;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
+  CVector3f CStack_48;
   float fStack_3c;
-  float afStack_38 [5];
+  float afStack_38 [2];
+  CVector3f CStack_30;
   float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  float afStack_20 [4];
   float fStack_10;
   
   bVar1 = 0;
@@ -34,26 +30,26 @@ void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_005847e0(CSpotView *th
   CStack_54.z = 0.0;
   CStack_54.y = this_ptr->yaw;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&CStack_88,&CStack_54);
-  fStack_48 = this_ptr->pan_x;
-  fStack_44 = this_ptr->pan_y;
-  fStack_40 = -this_ptr->distance;
-  fStack_18 = fStack_40;
-  fStack_14 = fStack_48;
-  fStack_10 = fStack_44;
-  core_dirmat_cpp_FUN_0045f690(&CStack_88,&fStack_48);
+  CStack_48.x = this_ptr->pan_x;
+  CStack_48.y = this_ptr->pan_y;
+  CStack_48.z = -this_ptr->distance;
+  afStack_20[2] = CStack_48.z;
+  afStack_20[3] = CStack_48.x;
+  fStack_10 = CStack_48.y;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(&CStack_88,&CStack_48,&CStack_30);
   point_ptr = &CStack_60;
-  fStack_3c = afStack_38[2];
-  afStack_38[(uint)bVar1 * -2] = afStack_38[(uint)bVar1 * -2 + 3];
+  fStack_3c = CStack_30.x;
+  afStack_38[(uint)bVar1 * -2] = *(float *)((int)&CStack_30 + (uint)bVar1 * -8 + 4);
   afStack_38[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
-       afStack_38[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];
+       *(float *)((int)&CStack_30 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   fStack_24 = (this_ptr->loat_at).x + fStack_3c;
-  fStack_20 = (this_ptr->loat_at).y + afStack_38[0];
-  fStack_1c = (this_ptr->loat_at).z + afStack_38[1];
+  afStack_20[0] = (this_ptr->loat_at).y + afStack_38[0];
+  afStack_20[1] = (this_ptr->loat_at).z + afStack_38[1];
   CStack_60.x = fStack_24;
-  *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + 4) = afStack_38[(uint)bVar1 * -2 + 6];
+  *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + 4) = afStack_20[(uint)bVar1 * -2];
   this_ptr_00 = DAT_00612560;
   *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-       afStack_38[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7];
+       afStack_20[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
             (this_ptr_00,point_ptr);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(DAT_00612560,&CStack_54);

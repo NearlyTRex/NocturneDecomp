@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00510c20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
@@ -103,8 +103,8 @@ section .text
     PUSH 0x5e8a9e                       ; 00510bf5 | = "CMimic::beginMorph() - can't do this ..."
     MOV dword ptr [0x01d1d400],ECX      ; 00510bfa | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00510c00 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00510c06
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00510c06
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00510c0b
     POP ESI                             ; 00510c0e
     JMP 0x00510b13                      ; 00510c0f

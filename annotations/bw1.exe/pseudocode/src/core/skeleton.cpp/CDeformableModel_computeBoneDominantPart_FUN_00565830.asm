@@ -41,7 +41,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00567370
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
@@ -99,8 +99,8 @@ section .text
     PUSH 0x5f2268                       ; 00565898 | = "Out of memory"
     MOV [0x01d1d400],EAX                ; 0056589d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005658a2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005658a8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005658a8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005658ad
     PUSH ESI                            ; 005658b0
         ;   Label: LAB_005658b0

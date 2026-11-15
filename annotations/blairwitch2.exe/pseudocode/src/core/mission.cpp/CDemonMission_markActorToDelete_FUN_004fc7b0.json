@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 76,
+    "complexity_score": 31,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 45
@@ -87,13 +86,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -308,17 +307,17 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "actor",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "flags",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       }
     ]
   },
@@ -330,38 +329,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->delete_queue_actors[this_ptr->delete_queue_count] = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->delete_queue_flags[this_ptr->delete_queue_count] = param_3;",
-      "type": "unnamed_param"
     }
   ]
 }

@@ -9,9 +9,9 @@
 // Address: 00512d60
 uint __cdecl crc32UpdateByte(uint current_crc,uchar data_byte);
 
-// Original: engine_pod.cpp_FUN_00512e70
+// Original: engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70
 // Address: 00512e70
-uint FUN_00512e70(char *param_1,int param_2);
+uint crc32ComputeFileRange(char *param_1,int param_2);
 
 // Original: engine_pod.cpp_CPodFile_ctor_FUN_00512f00
 // Address: 00512f00
@@ -107,7 +107,7 @@ int FUN_00514bb0(undefined4 param_1,undefined4 param_2);
 
 // Original: engine_pod.cpp_CPod_locateFile_FUN_00514c20
 // Address: 00514c20
-int __cdecl CPod::locateFile(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4);
+CPodFile * __cdecl CPod::locateFile(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_00514cb0
 // Address: 00514cb0

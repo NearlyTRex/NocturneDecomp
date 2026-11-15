@@ -52,14 +52,14 @@ section .text
     FSQRT                               ; 004c7eda
     FLD float ptr [EDI + 0x4]           ; 004c7edc
     CALL crt_math.c_atan2_FUN_005b9989  ; 004c7edf
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     MOV dword ptr [ESI + 0x20],0x0      ; 004c7ee4
     FCHS                                ; 004c7eeb
     FSTP float ptr [ESI + 0x18]         ; 004c7eed
     FLD float ptr [EDI + 0x8]           ; 004c7ef0
     FLD float ptr [EDI]                 ; 004c7ef3
     CALL crt_math.c_atan2_FUN_005b9989  ; 004c7ef5
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     PUSH 0x3                            ; 004c7efa
     LEA EBX,[ESI + 0x2c]                ; 004c7efc
     PUSH 0x0                            ; 004c7eff

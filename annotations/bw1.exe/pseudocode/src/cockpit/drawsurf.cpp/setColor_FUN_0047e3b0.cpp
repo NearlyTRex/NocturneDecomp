@@ -56,6 +56,6 @@ void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0047e3b0(int color_value)
   }
   _DAT_01d1d400 = "..\\cockpit\\drawsurf.cpp";
   _DAT_01d1d404 = 0xf8;
-  core_main_c_FUN_005030e0("Invalid bitsPerPixel in CDrawSurface::setColor");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

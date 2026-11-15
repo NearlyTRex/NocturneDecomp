@@ -40,16 +40,16 @@ section .text
     FLD float ptr [EAX]                 ; 0045e985
     FMUL ST1                            ; 0045e987
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e989
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX]               ; 0045e98e
     FLD float ptr [EAX + 0x4]           ; 0045e990
     FMUL ST1                            ; 0045e993
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e995
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX + 0x4]         ; 0045e99a
     FMUL float ptr [EAX + 0x8]          ; 0045e99d
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e9a0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX + 0x8]         ; 0045e9a5
     RET                                 ; 0045e9a8
     PUSH EBX                            ; 0045e9a9

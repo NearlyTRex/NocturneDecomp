@@ -23,7 +23,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00507e50(CNetGam
   if (this_ptr->local_player_index < 0) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x9cd;
-    core_main_c_FUN_004e4330("CNetGame::applySimFrameHistory - I'm not in the player list!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   this_ptr->random_seed = sim_frame->random_seed;
   core_game_cpp_CGame_slamDT_FUN_004bf3a0(g_CGamePtr,sim_frame->delta_time);

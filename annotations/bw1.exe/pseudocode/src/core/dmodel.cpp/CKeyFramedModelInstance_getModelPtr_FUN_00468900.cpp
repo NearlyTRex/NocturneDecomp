@@ -16,6 +16,6 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FU
   }
   _DAT_01d1d400 = "..\\core\\dmodel.cpp";
   _DAT_01d1d404 = 0x52d;
-  core_main_c_FUN_005030e0("Tried to do something with model %s, but modelPtr not set.  (CKeyFramedModelInstance::preCache not called.",this_ptr->model_name);
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Tried to do something with model %s, but modelPtr not set.  (CKeyFramedModelInstance::preCache not called.");
   return this_ptr->model_ptr;
 }

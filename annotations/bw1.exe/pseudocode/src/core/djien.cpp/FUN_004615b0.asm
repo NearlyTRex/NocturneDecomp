@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_djien_cpp_FUN_004615b0(int param_1,int param_2,int param_3)
+; int core_djien_cpp_FUN_004615b0(CCharacter *param_1,CVector3f *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
@@ -14,7 +14,7 @@
 ;   undefined4 DAT_0061c010
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_fire.cpp_CFireEffect_createTrailSegment_FUN_004b70f0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;
@@ -753,8 +753,8 @@ section .text
         ;   Label: LAB_0046212f
     PUSH EBX                            ; 00462130
     LEA ESI,[ESP + 0x274]               ; 00462131
-    CALL core_actor.cpp_FUN_00408b40    ; 00462138
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00462138
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046213d
     PUSH 0x612258                       ; 00462140 | DAT_00612258
     LEA EDI,[ESP + 0x264]               ; 00462145

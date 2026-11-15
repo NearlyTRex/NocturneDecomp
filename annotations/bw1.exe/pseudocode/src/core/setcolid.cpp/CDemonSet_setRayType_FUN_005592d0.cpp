@@ -17,6 +17,6 @@ void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(CDemonSet *this
   }
   _DAT_01d1d400 = "..\\core\\setcolid.cpp";
   _DAT_01d1d404 = 0x49a;
-  core_main_c_FUN_005030e0("CDemonSet::setRayType - use setRayTypeLaser");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::setRayType - use setRayTypeLaser");
   return;
 }

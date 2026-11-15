@@ -38,9 +38,9 @@
 ;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;
@@ -101,8 +101,8 @@ section .text
     PUSH EBP                            ; 00571593
     LEA ESI,[ESP + 0x98]                ; 00571594
     LEA EDI,[ESP + 0x74]                ; 0057159b
-    CALL core_actor.cpp_FUN_00408d70    ; 0057159f
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0057159f
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x98]                ; 005715a4
     ADD ESP,0x8                         ; 005715ab
     MOVSD ES:EDI,ESI                    ; 005715ae
@@ -125,8 +125,8 @@ section .text
     PUSH EBP                            ; 005715d9
     LEA ESI,[ESP + 0x5c]                ; 005715da
     LEA EDI,[ESP + 0x68]                ; 005715de
-    CALL core_actor.cpp_FUN_00408d70    ; 005715e2
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005715e2
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 005715e7
     ADD ESP,0x8                         ; 005715eb
     MOVSD ES:EDI,ESI                    ; 005715ee
@@ -159,8 +159,8 @@ section .text
     PUSH 0x5ec368                       ; 00571634 | = "Can't find svetlana's parent bone"
     MOV dword ptr [0x01d046a0],EDX      ; 00571639 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0057163f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00571645
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00571645
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057164a
     JMP 0x00571569                      ; 0057164d
         ;   XREF to: 00571569 (UNCONDITIONAL_JUMP)  ; LAB_00571569

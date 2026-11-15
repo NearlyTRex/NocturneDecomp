@@ -82,7 +82,7 @@ section .text
     FADD double ptr [0x005c1157]        ; 004aa12b | DAT_005c1157
     ADD ESP,0x8                         ; 004aa131
     CALL crt_math.c_round_FUN_005a3120  ; 004aa134
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004aa139
     CMP dword ptr [ESP + 0x10],0x1      ; 004aa13d
     JGE 0x004aa14c                      ; 004aa142

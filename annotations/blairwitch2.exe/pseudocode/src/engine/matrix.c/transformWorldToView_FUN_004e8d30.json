@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 147,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 38,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 117
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -25,9 +23,9 @@
         "004e8dfc"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "engine_matrix.c_transformWorldToView_FUN_004e8d30",
-    "signature": "void engine_matrix_c_transformWorldToView_FUN_004e8d30(void)"
+    "signature": "CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004e8d30(CVector3i *input_coords,CVector3i *output_coords)"
   },
   "function_calls": [],
   "globals": [
@@ -108,9 +106,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -165,12 +163,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_coords",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -197,70 +203,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar9 = *in_stack_00000004 - _DAT_01c38b6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar8 = in_stack_00000004[2] - _DAT_01c38b74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar7 = in_stack_00000004[1] - _DAT_01c38b70;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = ((uint)((longlong)_DAT_01c38b9c * (longlong)iVar9) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = ((uint)(lVar4 * iVar9) >> 0x10 | (int)((ulonglong)(lVar4 * iVar9) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
     }
   ]
 }

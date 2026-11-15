@@ -56,7 +56,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this
         }
         _DAT_01d1d400 = "..\\core\\platfrm.cpp";
         _DAT_01d1d404 = 0x3d0;
-        core_main_c_FUN_005030e0("CPlatform::attachActor - too many!");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CPlatform::attachActor - too many!");
         return;
       }
       pCVar1 = pCVar2->attach_actors[1].actor;

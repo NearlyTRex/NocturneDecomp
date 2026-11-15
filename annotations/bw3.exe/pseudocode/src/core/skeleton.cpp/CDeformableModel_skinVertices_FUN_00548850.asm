@@ -42,7 +42,7 @@
 ;   undefined4 DAT_005e4758
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -106,8 +106,8 @@ section .text
     PUSH ESI                            ; 005488fa
     LEA ESI,[ESP + 0x50]                ; 005488fb
     LEA EDI,[ESP + 0x8]                 ; 005488ff
-    CALL core_xform.cpp_FUN_00583260    ; 00548903
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00548903
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x50]                ; 00548908
     ADD ESP,0x8                         ; 0054890c
     MOVSD ES:EDI,ESI                    ; 0054890f
@@ -163,8 +163,8 @@ section .text
     PUSH EBX                            ; 0054899d
     LEA ESI,[ESP + 0x2c]                ; 0054899e
     LEA EDI,[ESP + 0x38]                ; 005489a2
-    CALL core_xform.cpp_FUN_00583260    ; 005489a6
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 005489a6
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x2c]                ; 005489ab
     LEA EBX,[ESP + 0x38]                ; 005489af
     ADD ESP,0x8                         ; 005489b3

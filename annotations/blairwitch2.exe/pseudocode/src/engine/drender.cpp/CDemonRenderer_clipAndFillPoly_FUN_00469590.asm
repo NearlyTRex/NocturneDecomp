@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_dpart.cpp_FUN_00461f70
 ;   core_dpart.cpp_FUN_004625f0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40
 ;   core_zombie.cpp_FUN_0059a0b0
 ;   engine_clipper.c_clipAndRasterize_FUN_00431d90
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5d14e6                       ; 004695dd | = "CDemonRenderer::clipAndFillPoly - Bad..."
     MOV dword ptr [0x01d046a0],ECX      ; 004695e2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 004695e8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004695ee
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004695ee
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004695f3
     JMP 0x004695a6                      ; 004695f6
         ;   XREF to: 004695a6 (UNCONDITIONAL_JUMP)  ; LAB_004695a6

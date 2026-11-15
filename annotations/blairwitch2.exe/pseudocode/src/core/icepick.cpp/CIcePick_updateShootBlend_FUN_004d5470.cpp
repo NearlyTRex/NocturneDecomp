@@ -15,15 +15,16 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
   float fVar1;
   CMotionList *this_ptr_01;
   uint *puVar2;
-  byte bVar3;
+  uint *puVar3;
+  byte bVar4;
   float afStackY_1808 [1519];
   char *motion_name;
-  int iVar4;
+  int iVar5;
   code *blend_callback;
-  float local_2c;
+  CQuaternion4f local_2c;
   CQuaternion4f local_1c;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (this_ptr->is_armed != 0) {
     if (this_ptr->guns_drawn == 0) {
       fVar1 = this_ptr->shoot_blend_weight - delta_time * (float)_DAT_005da856;
@@ -39,13 +40,13 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
         this_ptr->shoot_blend_weight = 1.0;
       }
     }
-    iVar4 = 1;
+    iVar5 = 1;
     motion_name = "shoot";
     this_ptr_00 = &(this_ptr->base).base.model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
-    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_01,motion_name,iVar4);
+    iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-              (this_ptr_00,iVar4,0.0,this_ptr->shoot_blend_weight,_DAT_01cee0f4,
+              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,_DAT_01cee0f4,
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     this_ptr->aim_pitch =
          (this_ptr->base).player_input.look_up_down_speed * _DAT_005da85e * (float)_DAT_005da856 *
@@ -58,20 +59,18 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *t
     else {
       this_ptr->aim_pitch = 0.7853982;
     }
-    core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(this_ptr->aim_pitch);
+    core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(this_ptr->aim_pitch,&local_2c);
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
-    local_1c.w = local_2c;
-    puVar2 = (uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-    *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4) =
-         *(uint *)(&stack0xffffffd8 + (uint)bVar3 * -8);
-    iVar4 = _DAT_01cee0f4;
-    *puVar2 = *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    puVar2[(uint)bVar3 * -2 + 1] =
-         *(uint *)
-          ((int)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
-          ((uint)bVar3 * -2 + 1) * 4);
+    local_1c.w = local_2c.w;
+    puVar3 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
+    iVar5 = _DAT_01cee0f4;
+    *puVar3 = *puVar2;
+    puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
-              (&(this_ptr->base).base.model,&local_1c,this_ptr->shoot_blend_weight,iVar4,
+              (&(this_ptr->base).base.model,&local_1c,this_ptr->shoot_blend_weight,iVar5,
                blend_callback);
   }
   return;

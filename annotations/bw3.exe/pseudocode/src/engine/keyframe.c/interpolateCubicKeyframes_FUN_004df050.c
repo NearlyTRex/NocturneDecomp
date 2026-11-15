@@ -11,157 +11,167 @@
 SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df050(SMRGLKeyframeModel *keyframe_model)
 
 {
-  SMRGLKeyframe **ppSVar1;
+  int iVar1;
   int iVar2;
-  SMRGLKeyframe *pSVar3;
+  longlong lVar3;
   longlong lVar4;
   longlong lVar5;
-  longlong lVar6;
-  longlong lVar7;
-  SMRGLHeaderExtended *pSVar8;
-  uint uVar9;
-  uint uVar10;
-  uint uVar11;
-  int *extraout_ECX;
-  int *piVar12;
-  int *piVar13;
-  uint uVar14;
-  int extraout_EDX;
-  int iVar15;
-  SMRGLKeyframe *pSVar16;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  SMRGLHeaderExtended *pSVar17;
+  uint uVar18;
+  uint uVar19;
+  uint uVar20;
+  SMRGLKeyframe *pSVar21;
+  SMRGLKeyframe *pSVar22;
+  uint uVar23;
+  int iVar24;
+  SMRGLKeyframe *pSVar25;
   SMRGLPrimitiveTriangle *texture;
-  int iVar17;
-  SMRGLKeyframe *pSVar18;
-  SMRGLKeyframe *pSVar19;
-  int iVar20;
-  float10 fVar21;
-  float10 fVar22;
-  float10 fVar23;
-  float10 fVar24;
-  float10 fVar25;
-  float10 fVar26;
+  SMRGLKeyframe *pSVar26;
+  SMRGLKeyframe *pSVar27;
+  int iVar28;
+  double dVar29;
+  double dVar30;
+  double dVar31;
+  int iStack_34;
+  int iStack_2c;
+  int *piStack_28;
   int iStack_1c;
-  SMRGLKeyframe *pSStack_18;
   
   if (keyframe_model->base_keyframes == (SMRGLKeyframe *)0x0) {
     engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004dee60(keyframe_model);
   }
-  uVar11 = keyframe_model->cycle_length;
-  uVar14 = keyframe_model->current_position >> 0x1f;
-  uVar9 = keyframe_model->current_position ^ uVar14;
-  uVar10 = uVar9 / uVar11;
-  if (0x7ffe < uVar10) {
-    uVar10 = 0x7fff;
+  uVar20 = keyframe_model->cycle_length;
+  uVar23 = keyframe_model->current_position >> 0x1f;
+  uVar18 = keyframe_model->current_position ^ uVar23;
+  uVar19 = uVar18 / uVar20;
+  if (0x7ffe < uVar19) {
+    uVar19 = 0x7fff;
   }
-  uVar14 = ((uint)(((ulonglong)uVar9 % (ulonglong)uVar11 << 0x20) / (ulonglong)uVar11) >> 0x10 |
-           uVar10 << 0x10) ^ uVar14;
-  iVar15 = (int)uVar14 >> 0x10;
-  iVar17 = iVar15 + 1;
-  iVar20 = (keyframe_model->header).child_count;
+  uVar23 = ((uint)(((ulonglong)uVar18 % (ulonglong)uVar20 << 0x20) / (ulonglong)uVar20) >> 0x10 |
+           uVar19 << 0x10) ^ uVar23;
+  iVar24 = (int)uVar23 >> 0x10;
+  uVar23 = uVar23 & 0xffff;
+  iStack_1c = iVar24 + 1;
+  iVar28 = (keyframe_model->header).child_count;
   keyframe_model->current_position =
-       _DAT_01c5fad4 % (int)((keyframe_model->header).child_count * uVar11);
-  if (iVar20 <= iVar17) {
-    iVar17 = 0;
+       _DAT_01c5fad4 % (int)((keyframe_model->header).child_count * uVar20);
+  if (iVar28 <= iStack_1c) {
+    iStack_1c = 0;
   }
-  iStack_1c = iVar17 + 1;
+  iStack_1c = iStack_1c + 1;
   if ((keyframe_model->header).child_count <= iStack_1c) {
     iStack_1c = 0;
   }
-  iVar20 = iVar15 + -1;
-  if (iVar20 < 0) {
-    iVar20 = (keyframe_model->header).child_count + -1;
+  iVar28 = iVar24 + -1;
+  if (iVar28 < 0) {
+    iVar28 = (keyframe_model->header).child_count + -1;
   }
-  pSVar3 = keyframe_model->base_keyframes;
-  if ((pSVar3->header).child_count != 2) {
+  pSVar21 = keyframe_model->base_keyframes;
+  if ((pSVar21->header).child_count != 2) {
     _DAT_01d71de0 = "..\\engine\\keyframe.c";
     _DAT_01d71de4 = 0x16b;
-    core_main_c_FUN_004e4330("Bad keyframe 1");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Bad keyframe 1");
   }
-  pSStack_18 = keyframe_model->loaded_frames[iVar17] + 1;
-  ppSVar1 = keyframe_model->loaded_frames + iStack_1c;
-  fVar21 = (float10)(uVar14 & 0xffff) * (float10)_DAT_005c6795;
-  fVar22 = fVar21 * fVar21;
-  fVar23 = fVar22 * fVar21;
-  fVar24 = ((fVar23 * (float10)_DAT_005c679d + fVar22) -
-           (float10)(float)(fVar21 * (float10)_DAT_005c67a1)) * (float10)_DAT_005c67a5;
-  fVar25 = (fVar23 * (float10)_DAT_005c67a1 - fVar22 * (float10)_DAT_005c67a1) *
-           (float10)_DAT_005c67a5;
-  fVar26 = ((float10)1 + fVar22 * (float10)_DAT_005c67b1 + fVar23 * (float10)_DAT_005c67ad) *
-           (float10)_DAT_005c67a5;
-  fVar21 = (fVar23 * (float10)_DAT_005c67b9 + fVar22 * (float10)_DAT_005c67b5 +
-           (float10)(float)(fVar21 * (float10)_DAT_005c67a1)) * (float10)_DAT_005c67a5;
-  pSVar16 = keyframe_model->loaded_frames[iVar15] + 1;
-  iStack_1c = 0;
-  pSVar18 = *ppSVar1 + 1;
-  pSVar19 = keyframe_model->loaded_frames[iVar20] + 1;
-  round();
-  iVar17 = (int)ROUND(fVar25);
-  round();
-  round();
-  round();
-  iVar20 = (int)ROUND(fVar24);
-  iVar15 = (int)ROUND(fVar26);
-  iVar2 = (int)ROUND(fVar21);
-  piVar12 = extraout_ECX;
-  piVar13 = extraout_ECX;
-  if (0 < extraout_EDX) {
+  fVar15 = (float)uVar23 * (float)_DAT_005c6795;
+  fVar16 = fVar15 * fVar15;
+  fVar9 = fVar16 * fVar15;
+  fVar6 = fVar16 * _DAT_005c67b5;
+  fVar10 = fVar9 * _DAT_005c679d;
+  fVar11 = fVar9 * _DAT_005c67ad;
+  fVar8 = fVar9 * _DAT_005c67b9;
+  fVar15 = fVar15 * _DAT_005c67a1;
+  fVar14 = (float)_DAT_005c67a5;
+  fVar13 = fVar16 * _DAT_005c67b1;
+  fVar12 = (float)_DAT_005c67a5;
+  fVar7 = (float)_DAT_005c67a5;
+  pSVar22 = keyframe_model->base_keyframes + 1;
+  pSVar25 = keyframe_model->loaded_frames[iVar24] + 1;
+  pSVar26 = keyframe_model->loaded_frames[iStack_1c] + 1;
+  pSVar27 = keyframe_model->loaded_frames[iVar28] + 1;
+  iVar2 = (pSVar21->vertex_header).count;
+  dVar29 = round
+                     ((double)((fVar9 * _DAT_005c67a1 - fVar16 * _DAT_005c67a1) *
+                              (float)_DAT_005c67a5));
+  piStack_28 = (int *)(int)ROUND(dVar29);
+  dVar29 = round((double)(((fVar10 + fVar16) - fVar15) * fVar14));
+  dVar30 = round((double)((fVar13 + fVar11 + 1.0) * fVar12));
+  dVar31 = round((double)((fVar8 + fVar6 + fVar15) * fVar7));
+  iVar28 = (int)ROUND(dVar29);
+  iVar24 = (int)ROUND(dVar30);
+  iVar1 = (int)ROUND(dVar31);
+  pSVar21 = pSVar22;
+  if (0 < iVar2) {
     do {
-      lVar4 = (longlong)iVar20 * (longlong)(pSVar19->header).base.type;
-      lVar5 = (longlong)iVar15 * (longlong)(pSVar16->header).base.type;
-      lVar6 = (longlong)iVar2 * (longlong)(pSStack_18->header).base.type;
-      lVar7 = (longlong)iVar17 * (longlong)(pSVar18->header).base.type;
-      *piVar12 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
-                 ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
-                 ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
-                 ((uint)lVar7 >> 0x10 | (int)((ulonglong)lVar7 >> 0x20) << 0x10);
-      lVar4 = (longlong)iVar20 * (longlong)(pSVar19->header).base.count;
-      lVar5 = (longlong)iVar15 * (longlong)(pSVar16->header).base.count;
-      lVar6 = (longlong)iVar2 * (longlong)(pSStack_18->header).base.count;
-      lVar7 = (longlong)iVar17 * (longlong)(pSVar18->header).base.count;
-      piVar12[1] = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
-                   ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
-                   ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
-                   ((uint)lVar7 >> 0x10 | (int)((ulonglong)lVar7 >> 0x20) << 0x10);
-      lVar4 = (longlong)iVar20 * (longlong)(pSVar19->header).child_count;
-      lVar5 = (longlong)iVar15 * (longlong)(pSVar16->header).child_count;
-      pSVar19 = (SMRGLKeyframe *)&pSVar19->vertex_header;
-      lVar6 = (longlong)iVar2 * (longlong)(pSStack_18->header).child_count;
-      pSVar16 = (SMRGLKeyframe *)&pSVar16->vertex_header;
-      pSVar8 = &pSVar18->header;
-      pSVar18 = (SMRGLKeyframe *)&pSVar18->vertex_header;
-      lVar7 = (longlong)iVar17 * (longlong)pSVar8->child_count;
-      piVar13 = piVar12 + 3;
-      piVar12[2] = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
-                   ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
-                   ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
-                   ((uint)lVar7 >> 0x10 | (int)((ulonglong)lVar7 >> 0x20) << 0x10);
-      iStack_1c = iStack_1c + 1;
-      pSStack_18 = (SMRGLKeyframe *)&pSStack_18->vertex_header;
-      piVar12 = piVar13;
-    } while (iStack_1c < (pSVar3->vertex_header).count);
+      lVar3 = (longlong)iVar28 * (longlong)(pSVar27->header).base.type;
+      lVar4 = (longlong)iVar24 * (longlong)(pSVar25->header).base.type;
+      lVar5 = (longlong)iStack_34 * (longlong)(pSVar26->header).base.type;
+      (pSVar21->header).base.type =
+           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+           ((uint)((longlong)iVar1 * (longlong)*piStack_28) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar1 * (longlong)*piStack_28) >> 0x20) << 0x10) +
+           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+      lVar3 = (longlong)iVar28 * (longlong)(pSVar27->header).base.count;
+      lVar4 = (longlong)iVar24 * (longlong)(pSVar25->header).base.count;
+      lVar5 = (longlong)iStack_34 * (longlong)(pSVar26->header).base.count;
+      (pSVar21->header).base.count =
+           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+           ((uint)((longlong)iVar1 * (longlong)piStack_28[1]) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar1 * (longlong)piStack_28[1]) >> 0x20) << 0x10) +
+           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+      lVar3 = (longlong)iVar28 * (longlong)(pSVar27->header).child_count;
+      lVar4 = (longlong)iVar24 * (longlong)(pSVar25->header).child_count;
+      pSVar27 = (SMRGLKeyframe *)&pSVar27->vertex_header;
+      pSVar25 = (SMRGLKeyframe *)&pSVar25->vertex_header;
+      pSVar17 = &pSVar26->header;
+      pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;
+      lVar5 = (longlong)iStack_34 * (longlong)pSVar17->child_count;
+      pSVar22 = (SMRGLKeyframe *)&pSVar21->vertex_header;
+      (pSVar21->header).child_count =
+           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+           ((uint)((longlong)iVar1 * (longlong)piStack_28[2]) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar1 * (longlong)piStack_28[2]) >> 0x20) << 0x10) +
+           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+      iStack_2c = iStack_2c + 1;
+      piStack_28 = piStack_28 + 3;
+      pSVar21 = pSVar22;
+    } while (iStack_2c < *(int *)(uVar23 + 8));
   }
-  if (*piVar13 != 0x17) {
+  if ((pSVar22->header).base.type != 0x17) {
     _DAT_01d71de0 = "..\\engine\\keyframe.c";
     _DAT_01d71de4 = 0x1a6;
-    core_main_c_FUN_004e4330("ZBP not found!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("ZBP not found!");
   }
-  pSVar3 = keyframe_model->base_keyframes;
-  texture = (SMRGLPrimitiveTriangle *)(piVar13 + 3);
+  pSVar21 = keyframe_model->base_keyframes;
+  texture = (SMRGLPrimitiveTriangle *)&pSVar22->vertex_header;
   do {
-    uVar11 = (texture->base).base.type;
-    if (0x17 < uVar11) {
-      if (uVar11 < 0x19) {
-        engine_keyframe_c_calculateSurfaceNormal_FUN_004dece0((CVector3i *)(pSVar3 + 1),texture);
+    uVar20 = (texture->base).base.type;
+    if (0x17 < uVar20) {
+      if (uVar20 < 0x19) {
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004dece0((CVector3i *)(pSVar21 + 1),texture);
       }
-      else if (uVar11 == 0x19) {
+      else if (uVar20 == 0x19) {
         engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20
-                  ((CVector3i *)(pSVar3 + 1),(SMRGLPrimitiveTriangleIndex *)texture);
+                  ((CVector3i *)(pSVar21 + 1),(SMRGLPrimitiveTriangleIndex *)texture);
       }
     }
-    uVar11 = engine_model_c_getMRGLSize_FUN_004f8730((SMRGLHeaderExtended *)texture);
+    uVar20 = engine_model_c_getMRGLSize_FUN_004f8730((SMRGLHeaderExtended *)texture);
     texture = (SMRGLPrimitiveTriangle *)
               ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
-              (uVar11 & 0xfffffffc));
+              (uVar20 & 0xfffffffc));
   } while ((texture->base).base.type != 0);
   engine_3d_c_dispatchMRGLBlockChain_FUN_00407720(keyframe_model->base_keyframes);
   return &keyframe_model[1].header;

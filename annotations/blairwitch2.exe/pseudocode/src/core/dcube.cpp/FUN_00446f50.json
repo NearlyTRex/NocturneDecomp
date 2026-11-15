@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 72,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 114
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -53,7 +53,7 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     },
     {
       "addr": "0055b1f0",
@@ -139,15 +139,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "p_Stack_18 = engine_dosio_cpp_FUN_00460c70((char *)0x5cea3d,in_stack_00000004,(char *)0x5cea3a);",
+      "text": "((char *)0x5cea3d,in_stack_00000004,(char *)0x5cea3a);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (DAT_006141bc + -0xb < iStack_14) {",

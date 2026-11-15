@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findGameFlag_FUN_004a9f00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -92,8 +92,8 @@ section .text
     PUSH 0x5debac                       ; 004a9acd | = "Event name %s too long!"
     MOV dword ptr [0x01d1d400],EDI      ; 004a9ad2 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004a9ad8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004a9add
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a9add
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004a9ae2
     MOV EDI,dword ptr [EBP + 0x1908]    ; 004a9ae5
         ;   Label: LAB_004a9ae5
@@ -165,7 +165,7 @@ section .text
     PUSH EDI                            ; 004a9b80
         ;   Label: LAB_004a9b80
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004a9b81
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004a9b86
     MOV EBX,0x5deb60                    ; 004a9b89 | = "..\\core\\event.cpp"
         ;   Label: LAB_004a9b89
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5deb72                       ; 004a9b93 | = "Too many game flags - check events.txt!"
     MOV dword ptr [0x01d1d400],EBX      ; 004a9b98 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004a9b9e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004a9ba4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a9ba4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a9ba9
     JMP 0x004a9aab                      ; 004a9bac
         ;   XREF to: 004a9aab (UNCONDITIONAL_JUMP)  ; LAB_004a9aab

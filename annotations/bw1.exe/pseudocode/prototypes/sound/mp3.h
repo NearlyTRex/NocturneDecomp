@@ -9,9 +9,9 @@
 // Address: 00525840
 void __cdecl calculateMpegFrame(SMpegFrame *frame);
 
-// Original: sound_mp3.cpp_FUN_00525ab0
+// Original: sound_mp3.cpp_CFileBitStream_init_FUN_00525ab0
 // Address: 00525ab0
-void FUN_00525ab0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 
 // Original: sound_mp3.cpp_CFileBitStream_readBit_FUN_00525be0
 // Address: 00525be0

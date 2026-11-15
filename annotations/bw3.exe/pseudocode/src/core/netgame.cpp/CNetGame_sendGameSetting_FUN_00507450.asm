@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01da6484
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5cae84                       ; 00507477
     MOV dword ptr [0x01d71de0],EBX      ; 0050747c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00507482 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00507488
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507488
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050748d
     MOV EDI,dword ptr [ESP + 0xd0]      ; 00507490
         ;   Label: LAB_00507490
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5caee6                       ; 005074b1
     MOV [0x01d71de0],EAX                ; 005074b6 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 005074bb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005074c1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005074c1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005074c6
     PUSH 0x5e2d40                       ; 005074c9
         ;   Label: LAB_005074c9

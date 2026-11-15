@@ -31,7 +31,7 @@
 ;   undefined4 DAT_02c745b8
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdlib.c__atexit_FUN_005c1093
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -275,8 +275,8 @@ section .text
     PUSH 0x5f4148                       ; 00574650 | = "Unknown sample file format extension: %s"
     MOV dword ptr [0x01d1d400],ECX      ; 00574655 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0057465b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00574661
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00574661
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     JMP 0x00574565                      ; 00574666
         ;   XREF to: 00574565 (UNCONDITIONAL_JUMP)  ; LAB_00574565
     PUSH EBP                            ; 0057466b
@@ -286,8 +286,8 @@ section .text
     PUSH 0x5f4186                       ; 00574676 | = "getSampleInfo - can't determine lengt..."
     MOV dword ptr [0x01d1d400],EDI      ; 0057467b | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00574681 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00574686
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00574686
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057468b
     MOV EBP,0x1                         ; 0057468e
     MOV EAX,EBP                         ; 00574693

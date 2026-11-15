@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
@@ -64,7 +64,7 @@ section .text
     MOV EDI,dword ptr [0x01c3f544]      ; 0049839e | DAT_01c3f544
     MOV [0x01c3f53c],EAX                ; 004983a4 | DAT_01c3f53c
     CALL crt_math.c_round_FUN_005c03a0  ; 004983a9
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 004983ae
     TEST EDI,EDI                        ; 004983b2
     JZ 0x0049853b                       ; 004983b4
@@ -193,8 +193,8 @@ section .text
     PUSH 0x5dbc7e                       ; 0049851d
     MOV dword ptr [0x01d1d400],ECX      ; 00498522 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00498528 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049852e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049852e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00498533
     JMP 0x00498378                      ; 00498536
         ;   XREF to: 00498378 (UNCONDITIONAL_JUMP)  ; LAB_00498378

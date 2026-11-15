@@ -20,7 +20,7 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
   float local_40;
   float local_3c;
   float local_34;
-  float local_2c;
+  CVector3f local_2c;
   CDemonActor *local_20;
   int local_1c;
   int local_18;
@@ -37,12 +37,13 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0(this_ptr_00,local_20),
          iVar1 != 0)) {
-        core_actor_cpp_FUN_00408de0(this_ptr,&(this_ptr_00->base).location);
-        local_44 = local_2c;
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  ((CDemonActor *)this_ptr,&(this_ptr_00->base).location.position,&local_2c);
+        local_44 = local_2c.x;
         (&stack0xffffffc0)[(uint)bVar2 * 0xfffffffe] =
-             (float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
+             (float)*(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4);
         *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-             *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+             *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
         if (((1.0 <= (double)local_40) &&
             ((((double)local_40 <= _DAT_005d9d34 && ((float)_DAT_005d9d3c <= local_3c)) &&
              ((double)local_3c <= _DAT_005d9d44)))) && (ABS(local_44) <= (float)_DAT_005d9d44)) {

@@ -88,7 +88,7 @@ section .text
     ADD ESI,0x2437c                     ; 004cfd1b
     PUSH ESI                            ; 004cfd21
     CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004cfd22
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004cfd27
     POP EBP                             ; 004cfd2a
     POP ESI                             ; 004cfd2b
@@ -113,7 +113,7 @@ section .text
     PUSH EAX                            ; 004cfd4e
     PUSH EBX                            ; 004cfd4f
     CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004cfd50
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004cfd55
     POP EBP                             ; 004cfd58
     POP ESI                             ; 004cfd59

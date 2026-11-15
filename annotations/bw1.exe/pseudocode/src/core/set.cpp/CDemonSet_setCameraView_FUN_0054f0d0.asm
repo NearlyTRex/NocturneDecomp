@@ -46,7 +46,7 @@
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547e86
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0 at 0054fc0e
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_00555740 at 00555754
-;   core_setdir.cpp_FUN_00559f80 at 00559fb9
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 00559fb9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005f07cc
@@ -67,8 +67,8 @@
 ;   ... and 23 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
-;   core_box.cpp_FUN_00420570
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0
@@ -80,7 +80,7 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00455150
 ;   core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00455100
 ;   core_dcamera.cpp_FUN_0044ee30
-;   core_dirmat.cpp_FUN_0045f840
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_00462770
 ;   ... and 22 more
 ;
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5f07dc                       ; 0054f104 | = "CDemonSet::setCameraView - invalid in..."
     MOV dword ptr [0x01d1d400],EBX      ; 0054f109 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0054f10f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0054f115
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054f115
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0054f11a
     MOV EBP,dword ptr [0x01fe55bc]      ; 0054f11d | DAT_01fe55bc
         ;   Label: LAB_0054f11d
@@ -291,8 +291,8 @@ section .text
     PUSH EAX                            ; 0054f395
     LEA ESI,[ESP + 0x158]               ; 0054f396
     LEA EDI,[ESP + 0x1ac]               ; 0054f39d
-    CALL core_dirmat.cpp_FUN_0045f840   ; 0054f3a4
-        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f840()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840 ; 0054f3a4
+        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x158]               ; 0054f3a9
     LEA EAX,[ESP + 0x1ac]               ; 0054f3b0
     ADD ESP,0x4                         ; 0054f3b7
@@ -380,8 +380,8 @@ section .text
     PUSH EAX                            ; 0054f4e3
     LEA ESI,[ESP + 0x18c]               ; 0054f4e4
     LEA EDI,[ESP + 0x138]               ; 0054f4eb
-    CALL core_box.cpp_FUN_00420570      ; 0054f4f2
-        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420570()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570 ; 0054f4f2
+        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x18c]               ; 0054f4f7
     ADD ESP,0x8                         ; 0054f4fe
     LEA EAX,[ESP + 0x130]               ; 0054f501
@@ -393,8 +393,8 @@ section .text
     PUSH ESI                            ; 0054f513
     LEA ESI,[ESP + 0x144]               ; 0054f514
     LEA EDI,[ESP + 0x174]               ; 0054f51b
-    CALL core_actor.cpp_FUN_00408b40    ; 0054f522
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0054f522
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x144]               ; 0054f527
     ADD ESP,0x8                         ; 0054f52e
     LEA EAX,[ESP + 0x16c]               ; 0054f531
@@ -700,8 +700,8 @@ section .text
     PUSH 0x5f0820                       ; 0054f92f | = "CDemonSet::setCameraView - Too many o..."
     MOV dword ptr [0x01d1d400],EDX      ; 0054f934 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0054f93a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0054f940
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054f940
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054f945
     CMP dword ptr [EBP + 0x19a30],0x0   ; 0054f948
         ;   Label: LAB_0054f948

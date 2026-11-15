@@ -37,7 +37,7 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_isOfClass_FUN_0040c550
@@ -253,8 +253,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041cc3d
     PUSH EBX                            ; 0041cc3e
     LEA ESI,[ESP + 0x114]               ; 0041cc3f
-    CALL core_actor.cpp_FUN_00408b40    ; 0041cc46
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0041cc46
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0041cc4b
     LEA EDI,[ESP + 0xc4]                ; 0041cc4e
     LEA ESI,[ESP + 0x10c]               ; 0041cc55

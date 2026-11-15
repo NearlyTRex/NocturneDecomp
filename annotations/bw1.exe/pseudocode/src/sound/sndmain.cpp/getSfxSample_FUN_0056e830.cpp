@@ -99,7 +99,7 @@ LAB_0056e898:
         if (iVar5 == 0) {
           _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
           _DAT_01d1d404 = 0x36b;
-          core_main_c_FUN_005030e0("Can't open %s",filename);
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open %s");
         }
         pCVar4->file_offset = 0;
         iVar5 = sound_sndmain_cpp_parseWavFile_FUN_0056db10
@@ -153,7 +153,7 @@ LAB_0056e898:
         if (iVar5 != 0) {
           _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
           _DAT_01d1d404 = 0x40d;
-          core_main_c_FUN_005030e0("Unknown sample file format extension: %s",filename);
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Unknown sample file format extension: %s");
 LAB_0056ebeb:
           _sprintf(&local_23c,"SOUND: Loaded sample %s\n");
           wincore_winrun_cpp_FUN_005b3a90(&local_23c);
@@ -169,7 +169,7 @@ LAB_0056ebeb:
         if ((pCVar4->sample_info).sample_count < 0) {
           _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
           _DAT_01d1d404 = 0x3dd;
-          core_main_c_FUN_005030e0("Don't know length of sample %s",filename);
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Don't know length of sample %s");
         }
         pCVar4->taken = 0;
         pCVar4->ref_count = 0;

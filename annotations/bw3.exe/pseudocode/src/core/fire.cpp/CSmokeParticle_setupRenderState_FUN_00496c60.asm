@@ -91,13 +91,13 @@ section .text
     FMULP ST3                           ; 00496d0f
     FXCH                                ; 00496d11
     CALL crt_math.c_round_FUN_005a3120  ; 00496d13
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00496d18
     CALL crt_math.c_round_FUN_005a3120  ; 00496d1a
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 00496d1f
     CALL crt_math.c_round_FUN_005a3120  ; 00496d21
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00496d26
     FISTP dword ptr [0x01c73664]        ; 00496d28 | DAT_01c73664
     FXCH                                ; 00496d2e

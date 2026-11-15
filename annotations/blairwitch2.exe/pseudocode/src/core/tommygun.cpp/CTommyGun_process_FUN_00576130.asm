@@ -164,7 +164,7 @@ section .text
     FMUL float ptr [ESP + 0x10]         ; 005762cd
     FMUL float ptr [0x005eccd4]         ; 005762d1 | DAT_005eccd4
     CALL crt_math.c_round_FUN_005b7ff0  ; 005762d7
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 005762dc
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00550450 ; 005762e0
         ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00550450()

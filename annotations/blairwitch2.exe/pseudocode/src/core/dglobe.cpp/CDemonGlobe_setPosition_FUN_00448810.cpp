@@ -11,27 +11,20 @@
 void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(CDemonGlobe *this_ptr,CVector3f *position)
 
 {
-  int iVar1;
-  int *extraout_ECX;
-  int extraout_ECX_00;
-  int extraout_ECX_01;
-  float10 fVar2;
-  float10 fVar3;
+  double dVar1;
+  double dVar2;
   
   if (&this_ptr->position != position) {
     (this_ptr->position).x = position->x;
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  fVar2 = (float10)_DAT_005ceffa;
-  fVar3 = (float10)position->x * fVar2;
-  iVar1 = round();
-  *extraout_ECX = (int)ROUND(fVar3);
-  fVar3 = (float10)*(float *)(iVar1 + 4) * fVar2;
-  iVar1 = round();
-  *(int *)(extraout_ECX_00 + 4) = (int)ROUND(fVar3);
-  fVar2 = fVar2 * (float10)*(float *)(iVar1 + 8);
-  round();
-  *(int *)(extraout_ECX_01 + 8) = (int)ROUND(fVar2);
+  dVar2 = _DAT_005ceffa;
+  dVar1 = round((double)position->x * _DAT_005ceffa);
+  (this_ptr->position_scaled).x = (int)ROUND(dVar1);
+  dVar1 = round((double)position->y * dVar2);
+  (this_ptr->position_scaled).y = (int)ROUND(dVar1);
+  dVar2 = round(dVar2 * (double)position->z);
+  (this_ptr->position_scaled).z = (int)ROUND(dVar2);
   return;
 }

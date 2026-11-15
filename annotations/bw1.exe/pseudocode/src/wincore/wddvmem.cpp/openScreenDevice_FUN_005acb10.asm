@@ -28,7 +28,7 @@
 ;   undefined4 DAT_02c99330
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     PUSH 0x5f968b                       ; 005acb75 | = "openScreenDevice - Unable to lock scr..."
     MOV dword ptr [0x01d1d400],ESI      ; 005acb7a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 005acb80 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005acb86
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acb86
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acb8b
     MOV EBP,dword ptr [0x02c9931c]      ; 005acb8e | DAT_02c9931c
         ;   Label: LAB_005acb8e

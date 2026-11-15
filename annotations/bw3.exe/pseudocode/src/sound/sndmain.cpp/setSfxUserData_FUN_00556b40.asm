@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10
 ;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5d382e                       ; 00556b5a
     MOV dword ptr [0x01d71de0],EDX      ; 00556b5f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00556b65 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00556b6b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556b6b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00556b70
     PUSH 0x1                            ; 00556b73
         ;   Label: LAB_00556b73

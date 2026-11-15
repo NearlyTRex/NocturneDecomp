@@ -8,7 +8,6 @@
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -131,7 +130,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005a23b0(CTurret *this_ptr,floa
 CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005a28c0(CTurret *this_ptr,CBoundingBox3D *out_box);
 float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr,int model_index);
 void __cdecl core_turret_cpp_CTurret_archive_FUN_005a2bf0(CTurret *this_ptr);
-void core_turret_cpp_FUN_005a2d00(CCharacter *param_1,float param_2);
+void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005a2d00(CTurret *this_ptr,float delta_time);
 int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005a3530(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005a35a0(CTurret *this_ptr,CDemonActor *user);
@@ -139,7 +138,7 @@ int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005a35c0(CTurret *this
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005a3630(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr,float delta_time);
 float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005a3810(CTurret *this_ptr);
-CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_005a3840(CTurret *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi core_turret_cpp_CTurret_getMuzzlePoint_FUN_005a3840(CTurret *this_ptr,CVector3f *out_point);
 int __cdecl core_turret_cpp_CTurret_fire_FUN_005a3870(CTurret *this_ptr);
 int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005a3e30(CTurret *this_ptr,CDemonActor *picker);
 CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005a3e60(CTurret *this_ptr,uint flags);
@@ -152,7 +151,7 @@ void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005a4110(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005a4260(CTVBat *this_ptr,float delta_time);
 void __cdecl core_tvbat_cpp_CTVBat_orderAttack_FUN_005a4eb0(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005a4ec0(CTVBat *this_ptr);
-CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005a4f50(CTVBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005a4f50(CTVBat *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_005a4fb0(CTVBat *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005a4fd0(CTVBat *this_ptr,CVector3f *out_points_array);
 EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005a4fe0(CTVBat *this_ptr);
@@ -180,14 +179,14 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0(CVam
 ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_005a73c0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampireBoss *this_ptr,uint flags);
 void __cdecl core_vecdir_cpp_staticInit_FUN_005a7500(void);
-float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(uint *param_1);
+float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(float *param_1);
 void __cdecl core_vehicle_cpp_staticInit_FUN_005a75c0(void);
 CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void);
 CDemonActorType * __cdecl core_vehicle_cpp_CVehicle_getActorType_FUN_005a7610(CVehicle *this_ptr);
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005a7620(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005a7870(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,float delta_time);
-CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005a8490(CVehicle *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005a8490(CVehicle *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005a84d0(CVehicle *this_ptr);
 ECollisionType __cdecl core_vehicle_cpp_CVehicle_getCollisionType_FUN_005a8660(CVehicle *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_ptr);
@@ -212,7 +211,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVe
 void __cdecl core_vessel_cpp_CCryptVessel_renderBackground_FUN_005a9710(CCryptVessel *this_ptr,int layer_flag);
 void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005a9790(CCryptVessel *this_ptr);
 ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_005a98a0(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005a98c0(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005a98c0(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005a9900(CCryptVessel *this_ptr,uint flags);
 void __cdecl core_water_cpp_staticInit_FUN_005a9970(void);
 float __cdecl core_water_cpp_calculateWaveHeight_FUN_005a9990(int x,int y);
@@ -275,7 +274,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ad4c0(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(CWeapon *this_ptr,uint flags);
 void __cdecl core_weapon_cpp_CWeapon_setup_FUN_005ad640(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_005ad680(CWeapon *this_ptr);
-CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ad730(CWeapon *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ad730(CWeapon *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ad770(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(CWeapon *this_ptr);
 ECollisionType __cdecl core_weapon_cpp_CWeapon_getCollisionType_FUN_005ad990(CWeapon *this_ptr,SCollisionInfo *collision_info);
@@ -286,7 +285,7 @@ CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_005adb10(CWeapon *t
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005add50(CWeapon *this_ptr,int weapon_state);
 void __cdecl core_weapon_cpp_CWeapon_onPickup_FUN_005add60(CWeapon *this_ptr,CDemonActor *owner);
-CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005add80(CWeapon *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005add80(CWeapon *this_ptr,CVector3f *out_point);
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005adde0(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ade10(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ade30(CWeapon *this_ptr);

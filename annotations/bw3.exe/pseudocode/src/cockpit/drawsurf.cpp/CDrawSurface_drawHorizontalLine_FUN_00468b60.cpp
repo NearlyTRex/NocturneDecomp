@@ -63,7 +63,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00468b60(C
       }
       _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
       _DAT_01d71de4 = 0x3a6;
-      core_main_c_FUN_004e4330("Invalid bitsPerPixel!");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
       return;
     }
   }

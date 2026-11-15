@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_bodypart_cpp_FUN_004178c0(CBodyPart *param_1)
@@ -22,7 +21,6 @@ void core_bodypart_cpp_FUN_004178c0(CBodyPart *param_1)
   CVector3f *position;
   CVector3f *pCVar5;
   CVector3f *extents;
-  float *pfVar6;
   float volume;
   float fStack_74;
   float fStack_70;
@@ -30,9 +28,10 @@ void core_bodypart_cpp_FUN_004178c0(CBodyPart *param_1)
   float fStack_68;
   float fStack_64;
   float fStack_60;
-  float fStack_5c;
-  float fStack_50;
+  CVector3f CStack_5c;
+  CVector3f CStack_50;
   float fStack_44;
+  float afStack_40 [2];
   CVector3f CStack_38;
   float fStack_2c;
   float afStack_28 [2];
@@ -54,24 +53,24 @@ void core_bodypart_cpp_FUN_004178c0(CBodyPart *param_1)
     afStack_28[0] = fStack_70 + fStack_64;
     afStack_28[1] = fStack_6c + fStack_60;
     fStack_44 = fStack_74 + fStack_68;
-    *(float *)((int)&stack0xffffffb4 + ((uint)bVar4 * -2 + 3) * 4) = afStack_28[(uint)bVar4 * -2];
-    *(float *)((int)&stack0xffffffb4 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 4) * 4) =
+    afStack_40[(uint)bVar4 * -2] = afStack_28[(uint)bVar4 * -2];
+    afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          afStack_28[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    pfVar6 = &stack0xffffffb0;
+    pCVar5 = &CStack_50;
     afStack_10[2] = fStack_44 * _DAT_005cbfb6;
-    fStack_50 = fStack_44 * _DAT_005cbfb6;
-    *(uint *)((int)&stack0xffffffb4 + (uint)bVar4 * 0xfffffffe * 4) =
+    CStack_50.x = fStack_44 * _DAT_005cbfb6;
+    *(uint *)((int)&CStack_50 + (uint)bVar4 * -8 + 4) =
          *(uint *)(&stack0xfffffffc + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffb4 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4) =
+    *(uint *)((int)&CStack_50 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          *(uint *)(&stack0x00000000 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    core_actor_cpp_FUN_00408d70(param_1,pfVar6);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(&param_1->base,pCVar5,&CStack_5c);
     extents = &CStack_20;
     volume = 5.0;
-    CStack_38.x = fStack_5c;
+    CStack_38.x = CStack_5c.x;
     *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) =
-         *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8);
+         *(uint *)((int)&CStack_5c + (uint)bVar4 * -8 + 4);
     *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         *(uint *)(&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+         *(uint *)((int)&CStack_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     fStack_14 = fStack_68 - fStack_74;
     pCVar5 = (CVector3f *)&(param_1->base).orient;
     afStack_10[0] = fStack_64 - fStack_70;

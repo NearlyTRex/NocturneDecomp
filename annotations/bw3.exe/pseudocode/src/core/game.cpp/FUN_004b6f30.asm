@@ -29,8 +29,8 @@
 ;   ... and 57 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
-;   core_dcamera.cpp_FUN_00449eb0
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_event.cpp_CEventList_render_FUN_00491bf0
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00
@@ -223,8 +223,8 @@ section .text
     PUSH 0x2038f4c                      ; 004b7133
     LEA ESI,[ESP + 0x6d4]               ; 004b7138
     LEA EDI,[ESP + 0x6b0]               ; 004b713f
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 004b7146
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 004b7146
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x6d4]               ; 004b714b
     ADD ESP,0xc                         ; 004b7152
     LEA EAX,[ESP + 0x6a4]               ; 004b7155
@@ -1043,8 +1043,8 @@ section .text
     MOV ESI,dword ptr [0x00603b28]      ; 004b7ac6 | g_CDemonSetPtr
         ;   Label: LAB_004b7ac6
     PUSH ESI                            ; 004b7acc | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005365c0      ; 004b7acd
-        ;   XREF to: 005365c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005365c0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 ; 004b7acd
+        ;   XREF to: 005365c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0(CDemonSet * this_ptr)
     JMP 0x004b72b5                      ; 004b7ad2
         ;   XREF to: 004b72b5 (UNCONDITIONAL_JUMP)  ; LAB_004b72b5
     PUSH 0x5c241d                       ; 004b7ad7 | = "SPOOKHOUSE"
@@ -1087,8 +1087,8 @@ section .text
     LEA EAX,[ESP + 0x628]               ; 004b7b51
     PUSH EAX                            ; 004b7b58
     PUSH 0x5c21dc                       ; 004b7b59 | = "movie"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004b7b5e
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004b7b5e
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b7b63
     MOV dword ptr [ESP + 0x6f8],EAX     ; 004b7b66
     TEST EAX,EAX                        ; 004b7b6d
@@ -1246,7 +1246,7 @@ section .text
         ;   Label: LAB_004b7d8d
     PUSH ECX                            ; 004b7d94
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004b7d95
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004b7d9a
     PUSH 0x0                            ; 004b7d9d
     PUSH 0x0                            ; 004b7d9f

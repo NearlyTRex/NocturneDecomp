@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0
 ;   engine_model.c_getMRGLSize_FUN_00500f30
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5dbce3                       ; 004dfd83
     MOV dword ptr [0x01d046a0],EBP      ; 004dfd88 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004dfd8e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dfd93
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dfd93
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dfd98
     TEST EDI,EDI                        ; 004dfd9b
         ;   Label: LAB_004dfd9b
@@ -119,8 +119,8 @@ section .text
     PUSH 0x5dbd23                       ; 004dfe09
     MOV dword ptr [0x01d046a0],EDX      ; 004dfe0e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004dfe14 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dfe1a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dfe1a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dfe1f
     JMP 0x004dfd9f                      ; 004dfe22
         ;   XREF to: 004dfd9f (UNCONDITIONAL_JUMP)  ; LAB_004dfd9f

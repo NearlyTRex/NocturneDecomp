@@ -32,7 +32,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
@@ -294,8 +294,8 @@ section .text
     PUSH 0x5f2c12                       ; 0056dd92 | = "Hell froze"
     MOV dword ptr [0x01d1d400],EDI      ; 0056dd97 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0056dd9d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056dda3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056dda3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056dda8
     MOV EDX,dword ptr [ESP + 0x94]      ; 0056ddab
         ;   Label: LAB_0056ddab
@@ -393,8 +393,8 @@ section .text
     PUSH 0x5f2bdc                       ; 0056decb | = "Hell froze"
     MOV [0x01d1d400],EAX                ; 0056ded0 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0056ded5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056dedb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056dedb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056dee0
     JMP 0x0056dcfd                      ; 0056dee3
         ;   XREF to: 0056dcfd (UNCONDITIONAL_JUMP)  ; LAB_0056dcfd

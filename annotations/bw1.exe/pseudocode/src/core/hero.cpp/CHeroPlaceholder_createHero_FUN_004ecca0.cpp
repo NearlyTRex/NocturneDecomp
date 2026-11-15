@@ -23,7 +23,7 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004ecca0(CHeroPlac
   if (actor == (CHero *)0x0) {
     _DAT_01d1d400 = "..\\core\\hero.cpp";
     _DAT_01d1d404 = 0x6cf;
-    core_main_c_FUN_005030e0("CHeroPlaceholder::createHero - failed.");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(0x01D2C900,(CDemonActor *)actor);
   (actor->base).base.location.position.x = (this_ptr->base).location.position.x;

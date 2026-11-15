@@ -16,7 +16,7 @@
 ;   core_texlist.cpp_CTextureList_load_FUN_005690c0 at 00569288
 ;   crt_unknown.c_FUN_005a70dc at 005a70ec
 ;   crt_unknown.c_FUN_005b1610 at 005b1631
-;   engine_dosio.cpp_FUN_004659c0 at 004659fa
+;   engine_dosio.cpp_getFile_FUN_004659c0 at 004659fa
 ;   ... and 6 more
 ;
 ; *****************************************************************************

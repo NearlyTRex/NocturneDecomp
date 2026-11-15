@@ -331,7 +331,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 004c5077
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c507b
     CALL engine_special.cpp_FUN_00580127 ; 004c507f
-        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00580127()
+        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580127(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c5084
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c5088
     MOV EAX,dword ptr [EAX + 0xc]       ; 004c508c

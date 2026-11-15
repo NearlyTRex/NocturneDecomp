@@ -273,7 +273,7 @@ section .text
     FLD ST0                             ; 00507b95
     FILD dword ptr [ESP + 0x64]         ; 00507b97
     CALL crt_math.c_pow_FUN_005b9484    ; 00507b9b
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     ADD EBX,0x8                         ; 00507ba0
     INC EDX                             ; 00507ba3
     FSTP double ptr [EBX + 0x1d1edd0]   ; 00507ba4
@@ -293,7 +293,7 @@ section .text
     FMUL ST1                            ; 00507bd0
     FLD ST2                             ; 00507bd2
     CALL crt_math.c_pow_FUN_005b9484    ; 00507bd4
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     ADD EBX,0x8                         ; 00507bd9
     INC EDX                             ; 00507bdc
     FSTP double ptr [EBX + 0x1d1f410]   ; 00507bdd
@@ -379,7 +379,7 @@ section .text
     FMUL double ptr [0x005e0213]        ; 00507cd0 | DAT_005e0213
     FLD double ptr [0x005e0223]         ; 00507cd6 | DAT_005e0223
     CALL crt_math.c_pow_FUN_005b9484    ; 00507cdc
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     MOV EAX,dword ptr [ESP + 0x44]      ; 00507ce1
     FSTP float ptr [EAX]                ; 00507ce5
         ;   Label: LAB_00507ce5
@@ -395,7 +395,7 @@ section .text
     FLD double ptr [0x005e021b]         ; 00507d01 | DAT_005e021b
     FILD dword ptr [ESP + 0x64]         ; 00507d07
     CALL crt_math.c_pow_FUN_005b9484    ; 00507d0b
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     MOV EAX,dword ptr [ESP + 0x60]      ; 00507d10
     FMUL float ptr [EAX]                ; 00507d14
     FSTP float ptr [EAX]                ; 00507d16

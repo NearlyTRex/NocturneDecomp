@@ -10,9 +10,9 @@
 ;   undefined4 DAT_00612560
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_actor.cpp_FUN_00408b00
 ;   core_box.cpp_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -74,8 +74,8 @@ section .text
     PUSH EBX                            ; 0059adb5
     MOV dword ptr [ESP + 0x38],EDX      ; 0059adb6
     MOV dword ptr [ESP + 0x40],EDX      ; 0059adba
-    CALL core_actor.cpp_FUN_00408b00    ; 0059adbe
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 0059adbe
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     ADD ESP,0x8                         ; 0059adc3
     LEA EAX,[ESP + 0x48]                ; 0059adc6
     LEA ESI,[ESP + 0x3c]                ; 0059adca

@@ -32,8 +32,8 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr)
   sound_sndmain_cpp_set3DListenerVelocity_FUN_00551570(0.0,0.0,0.0);
   core_sound_cpp_updateListeners_FUN_00558d50();
   _DAT_0264b2ac = 0;
-  sound_sndmain_cpp_set3DListenerOrientRight_FUN_00552cc0(_DAT_0264b2b4,_DAT_0264b2b8,_DAT_0264b2bc)
-  ;
+  sound_sndmain_cpp_setReverb_FUN_00552cc0
+            (g_SoundReverb.volume,g_SoundReverb.decay_time,g_SoundReverb.damping);
   sound_sndmain_cpp_enableSoundSystem_FUN_005524b0();
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00552b20();
   if (iVar1 == 0) {

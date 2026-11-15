@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   crt_unknown.c_FUN_005a3140
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5c9e04                       ; 004fcd4d | = "Tried to save motion controller state..."
     MOV dword ptr [0x01d71de0],EDI      ; 004fcd52 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004fcd58 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fcd5d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fcd5d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fcd62
     SUB ESP,0x8                         ; 004fcd65
         ;   Label: LAB_004fcd65

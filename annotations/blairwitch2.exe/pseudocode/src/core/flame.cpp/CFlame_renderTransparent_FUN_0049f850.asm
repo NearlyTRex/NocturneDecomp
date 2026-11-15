@@ -44,11 +44,11 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0
-;   engine_drender.cpp_FUN_0046b670
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -384,7 +384,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049fcc7
     FLD float ptr [EAX + 0x2c0]         ; 0049fcca
     CALL crt_math.c_round_FUN_005b7ff0  ; 0049fcd0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x158]       ; 0049fcd5
     MOV EAX,dword ptr [ESP + 0x158]     ; 0049fcdc
     MOV EDX,EAX                         ; 0049fce3
@@ -476,8 +476,8 @@ section .text
     PUSH ECX                            ; 0049fe0a | DAT_01ba5c50
     LEA ESI,[ESP + 0x108]               ; 0049fe0b
     LEA EDI,[ESP + 0x144]               ; 0049fe12
-    CALL engine_drender.cpp_FUN_0046b670 ; 0049fe19
-        ;   XREF to: 0046b670 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b670()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670 ; 0049fe19
+        ;   XREF to: 0046b670 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 0049fe1e
     LEA ESI,[ESP + 0x104]               ; 0049fe21
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049fe28

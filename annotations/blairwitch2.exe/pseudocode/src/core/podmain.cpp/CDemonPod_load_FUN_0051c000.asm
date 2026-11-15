@@ -123,7 +123,7 @@ section .text
     PUSH EDI                            ; 0051c0f0
         ;   Label: LAB_0051c0f0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0051c0f1
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051c0f6
     POP ESI                             ; 0051c0f9
     ADD ESP,0x168                       ; 0051c0fa

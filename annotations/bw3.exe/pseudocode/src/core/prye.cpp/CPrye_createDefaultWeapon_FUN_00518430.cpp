@@ -25,7 +25,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d71de0 = "..\\core\\prye.cpp";
     _DAT_01d71de4 = 0x39f;
-    core_main_c_FUN_004e4330("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's flintlock";
   pCVar4 = pCVar2;
@@ -47,7 +47,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d71de0 = "..\\core\\prye.cpp";
     _DAT_01d71de4 = 0x3ab;
-    core_main_c_FUN_004e4330("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's holy cross";
   pCVar4 = pCVar2;
@@ -67,7 +67,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d71de0 = "..\\core\\prye.cpp";
     _DAT_01d71de4 = 0x3b3;
-    core_main_c_FUN_004e4330("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   pcVar3 = "Prye's lantern";
   pCVar2[5].orient.vec.x = 2.8026e-45;
@@ -89,7 +89,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
   if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d71de0 = "..\\core\\prye.cpp";
     _DAT_01d71de4 = 0x3bd;
-    core_main_c_FUN_004e4330("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory!");
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)(pCVar2 + 1),"journal.kfm");

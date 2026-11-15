@@ -38,7 +38,7 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_0050c680
 ;   core_path.cpp_getPathMap_FUN_0050ced0
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420
@@ -137,7 +137,7 @@ section .text
     LEA EAX,[ESP + 0x74]                ; 0042265d
     PUSH EAX                            ; 00422661
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 00422662
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00422667
     LEA EAX,[EBX + 0x30]                ; 0042266a
     PUSH EAX                            ; 0042266d
@@ -350,8 +350,8 @@ section .text
     PUSH EAX                            ; 00422916
     MOV dword ptr [ESP + 0x114],EDX     ; 00422917
     MOV dword ptr [ESP + 0x118],EDX     ; 0042291e
-    CALL core_dirmat.cpp_FUN_0045b800   ; 00422925
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 00422925
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x12c]               ; 0042292a
     ADD ESP,0x8                         ; 00422931
     LEA EAX,[ESP + 0x16c]               ; 00422934

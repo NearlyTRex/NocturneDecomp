@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_buildHardwarePalettes_FUN_00437600(void)
+; void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00437600(SRGBColorPalette *rgb_palette_data)
 ;
+; Parameters:
+; SRGBColorPalette * Stack[0x4]:4   rgb_palette_data
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

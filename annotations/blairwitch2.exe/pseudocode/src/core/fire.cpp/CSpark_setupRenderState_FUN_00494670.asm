@@ -101,13 +101,13 @@ section .text
     FMULP ST3                           ; 00494759
     FXCH                                ; 0049475b
     CALL crt_math.c_round_FUN_005b7ff0  ; 0049475d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 00494762
     CALL crt_math.c_round_FUN_005b7ff0  ; 00494764
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 00494769
     CALL crt_math.c_round_FUN_005b7ff0  ; 0049476b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 00494770
     FISTP dword ptr [0x01c3dec4]        ; 00494772 | DAT_01c3dec4
     FXCH                                ; 00494778

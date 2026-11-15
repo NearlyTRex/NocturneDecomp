@@ -19,7 +19,7 @@
 ;   undefined4 DAT_02c8a684
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_unknown.c_FUN_005c09f0
 ;
@@ -118,8 +118,8 @@ section .text
     PUSH 0x5f78e4                       ; 00596752 | = "CTextureCache::findFreeSlot - Cache h..."
     MOV dword ptr [0x01d1d400],EBP      ; 00596757 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0059675d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00596762
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596762
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596767
     JMP 0x005966b4                      ; 0059676a
         ;   XREF to: 005966b4 (UNCONDITIONAL_JUMP)  ; LAB_005966b4

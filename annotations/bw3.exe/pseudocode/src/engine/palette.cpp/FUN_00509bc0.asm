@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6)
+; undefined4 engine_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -82,7 +82,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 00509c21
     SHL EAX,0x2                         ; 00509c25
     CALL crt_math.c_round_FUN_005a3120  ; 00509c28
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     LEA ECX,[EBX + EAX*0x1]             ; 00509c2d
     FISTP dword ptr [ESP + 0x10]        ; 00509c30
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509c34
@@ -94,7 +94,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 00509c49
     SHL EAX,0x2                         ; 00509c4d
     CALL crt_math.c_round_FUN_005a3120  ; 00509c50
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     LEA ECX,[EBX + EAX*0x1]             ; 00509c55
     FISTP dword ptr [ESP + 0x10]        ; 00509c58
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509c5c

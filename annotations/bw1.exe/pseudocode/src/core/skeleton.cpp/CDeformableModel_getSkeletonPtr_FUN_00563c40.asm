@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5f1fbf                       ; 00563c63 | = "Tried to do something with the skelet..."
     MOV dword ptr [0x01d1d400],ECX      ; 00563c68 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00563c6e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563c74
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563c74
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00563c79
     POP EBX                             ; 00563c7c
     MOV EAX,dword ptr [ESP + 0x4]       ; 00563c7d

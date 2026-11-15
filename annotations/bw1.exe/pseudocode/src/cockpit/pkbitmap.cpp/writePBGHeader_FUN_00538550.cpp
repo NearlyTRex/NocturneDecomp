@@ -35,6 +35,6 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00538550(int total_entries,
   }
   _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
   _DAT_01d1d404 = 0x558;
-  core_main_c_FUN_005030e0("Error writing PBG header");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Error writing PBG header");
   return;
 }

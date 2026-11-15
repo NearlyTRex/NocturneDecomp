@@ -19,7 +19,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0050f630(CMimic *this_ptr,float d
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     _DAT_01d1d400 = "..\\core\\mimic.cpp";
     _DAT_01d1d404 = 0x130;
-    core_main_c_FUN_005030e0("CMimic::setup - can't use mimic in multi-player!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = _DAT_01d06ab4;
   (this_ptr->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x108);

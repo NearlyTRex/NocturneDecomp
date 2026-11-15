@@ -43,7 +43,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
 ;   core_inv.cpp_getItemDisplayName_FUN_004f62e0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     PUSH 0x5e675d                       ; 004f9c1a | = "CInventory::select - Catch 22"
     MOV dword ptr [0x01d1d400],EDI      ; 004f9c1f | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004f9c25 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f9c2a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f9c2a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f9c2f
     MOV EDX,dword ptr [EBX + 0x318]     ; 004f9c32
         ;   Label: LAB_004f9c32
@@ -131,8 +131,8 @@ section .text
     PUSH 0x5e679f                       ; 004f9ca0 | = "CInventory::select - Catch 22"
     MOV dword ptr [0x01d1d400],ESI      ; 004f9ca5 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004f9cab | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f9cb1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f9cb1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f9cb6
     MOV EAX,[0x01d06ab4]                ; 004f9cb9 | DAT_01d06ab4
         ;   Label: LAB_004f9cb9

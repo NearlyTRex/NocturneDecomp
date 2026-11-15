@@ -15,11 +15,11 @@
 ;   undefined4 DAT_005d0cc1
 ;
 ; Called Functions:
-;   core_setdir.cpp_FUN_00540c40
+;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
 ;   core_setdir.cpp_FUN_00540cf0
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00540beb
     PUSH EDX                            ; 00540bef
     PUSH 0x5d0cc1                       ; 00540bf0 | DAT_005d0cc1
-    CALL engine_dosio.cpp_FUN_004659c0  ; 00540bf5
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00540bf5
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00540bfa
     ADD ESP,0xc                         ; 00540bfc
     TEST EAX,EAX                        ; 00540bff
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00540c0c
     PUSH EBX                            ; 00540c10
     PUSH ESI                            ; 00540c11
-    CALL core_setdir.cpp_FUN_00540c40   ; 00540c12
-        ;   XREF to: 00540c40 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00540c40()
+    CALL core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40 ; 00540c12
+        ;   XREF to: 00540c40 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00540c17
     POP ESI                             ; 00540c1a
     POP EBX                             ; 00540c1b
@@ -64,7 +64,7 @@ section .text
     ADD ESP,0x10                        ; 00540c30
     PUSH EBX                            ; 00540c33
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00540c34
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 00540c39
     POP ESI                             ; 00540c3c
     POP EBX                             ; 00540c3d

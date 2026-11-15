@@ -15,14 +15,13 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_00436be0(CConstruct *this_pt
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
-  float10 fVar2;
+  double dVar2;
   
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
-  fVar2 = (float10)(this_ptr->base).base.hit_points;
-  round();
-  this_ptr->initial_hit_points = (int)ROUND(fVar2);
+  dVar2 = round((double)(this_ptr->base).base.hit_points);
+  this_ptr->initial_hit_points = (int)ROUND(dVar2);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   DAT_007c254c = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
                            (this_ptr_01,"Bip01 Head",1);

@@ -43,11 +43,11 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-;   engine_drender.cpp_FUN_0046d250
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -383,7 +383,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a6507
     FLD float ptr [EAX + 0x164]         ; 004a650a
     CALL crt_math.c_round_FUN_005a3120  ; 004a6510
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x158]       ; 004a6515
     MOV EAX,dword ptr [ESP + 0x158]     ; 004a651c
     MOV EDX,EAX                         ; 004a6523
@@ -475,8 +475,8 @@ section .text
     PUSH ECX                            ; 004a664a | DAT_01bdd7e4
     LEA ESI,[ESP + 0x108]               ; 004a664b
     LEA EDI,[ESP + 0x144]               ; 004a6652
-    CALL engine_drender.cpp_FUN_0046d250 ; 004a6659
-        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d250()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250 ; 004a6659
+        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 004a665e
     LEA ESI,[ESP + 0x104]               ; 004a6661
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a6668

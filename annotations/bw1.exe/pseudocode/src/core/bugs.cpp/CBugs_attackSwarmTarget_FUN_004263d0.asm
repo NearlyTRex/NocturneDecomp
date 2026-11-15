@@ -41,7 +41,7 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_path.cpp_getPathMap_FUN_005351f0
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
@@ -357,8 +357,8 @@ section .text
     PUSH EAX                            ; 00426786
     MOV dword ptr [ESP + 0x154],EDX     ; 00426787
     MOV dword ptr [ESP + 0x158],EDX     ; 0042678e
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00426795
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00426795
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x190]               ; 0042679a
     ADD ESP,0x8                         ; 004267a1
     LEA EAX,[ESP + 0x158]               ; 004267a4

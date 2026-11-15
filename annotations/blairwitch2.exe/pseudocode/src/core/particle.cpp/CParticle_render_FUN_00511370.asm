@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5e15bb                       ; 0051137a | = "Base class shouldn't render"
     MOV dword ptr [0x01d046a0],EDX      ; 0051137f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00511385 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051138b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051138b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00511390
     RET                                 ; 00511393
 

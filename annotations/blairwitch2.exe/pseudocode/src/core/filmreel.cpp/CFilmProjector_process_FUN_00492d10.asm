@@ -20,7 +20,7 @@
 ;   core_dest.cpp_CActorDestination_process_FUN_00447140
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5d52d4                       ; 00492dfc
     MOV dword ptr [0x01d046a0],ECX      ; 00492e01 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00492e07 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00492e0d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00492e0d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00492e12
     LEA EAX,[ESI + 0x434]               ; 00492e15
         ;   Label: LAB_00492e15

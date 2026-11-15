@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00467bc0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     PUSH 0x5d97ba                       ; 004687d5 | = "Can't load %s because keyFrame model ..."
     MOV dword ptr [0x01d1d400],ESI      ; 004687da | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004687e0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004687e5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004687e5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004687ea
     MOV EDX,dword ptr [0x01b2efdc]      ; 004687ed | DAT_01b2efdc
         ;   Label: LAB_004687ed

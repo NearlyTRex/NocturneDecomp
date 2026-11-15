@@ -96,7 +96,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
           if (iVar12 != 0) {
             _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
             _DAT_01d046a4 = 0x356;
-            core_main_c_FUN_004e4500("Unable to unlock front buffer");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to unlock front buffer");
             _DAT_02661af4 = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
             return;

@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045e970
-;   core_dirmat.cpp_FUN_0045f840
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH ECX                            ; 004af3a9
     LEA EDI,[ESP + 0x10]                ; 004af3aa
     LEA EBX,[EBP + 0x10]                ; 004af3ae
-    CALL core_dirmat.cpp_FUN_0045f840   ; 004af3b1
-        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f840()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840 ; 004af3b1
+        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4]                 ; 004af3b6
     ADD ESP,0x4                         ; 004af3ba
     LEA EAX,[ESP + 0xc]                 ; 004af3bd

@@ -84,7 +84,7 @@ switchD_0043b808_caseD_3:
   else {
     _DAT_01d046a0 = "..\\core\\dcamera.cpp";
     _DAT_01d046a4 = 0x2e7;
-    core_main_c_FUN_004e4500("CDemonCamera::beginScene - Scene already open!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0043b7a0(this_ptr,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710

@@ -23,7 +23,8 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   uint local_18;
   uint local_14;
   
-  p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c37de,"blairhero.pod",&DAT_005c37cd);
+  p_Var3 = engine_dosio_cpp_getFile_FUN_004659c0
+                     (&DAT_005c37de,"blairhero.pod",&DAT_005c37cd);
   if (p_Var3 != (_FILE *)0x0) {
     _fclose(p_Var3);
   }

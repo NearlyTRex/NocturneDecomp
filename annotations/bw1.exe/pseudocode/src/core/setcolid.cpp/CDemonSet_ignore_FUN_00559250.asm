@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5f0f60                       ; 00559291 | = "CDemonSet::ignore - ignore list is full"
     MOV dword ptr [0x01d1d400],EDI      ; 00559296 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0055929c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005592a2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005592a2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005592a7
     POP EDI                             ; 005592aa
     JMP 0x0055926c                      ; 005592ab

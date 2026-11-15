@@ -14,7 +14,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this
   CFileBitStream *pCVar1;
   long lVar2;
   char *pcVar3;
-  float10 fVar4;
+  double dVar4;
   int iVar5;
   SMpegFrameHeader local_68;
   SMpegFrame local_38;
@@ -46,7 +46,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this
   if (pcVar3 == (char *)0x0) {
     _DAT_01d1d400 = "..\\sound\\mp3.cpp";
     _DAT_01d1d404 = 0x23d;
-    core_main_c_FUN_005030e0("Out of memory.  File: %s",&DAT_01d404c8);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory.  File: %s");
   }
   _fseek(pCVar1->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
   (this_ptr->file_bitstream).current_byte_index = 0;
@@ -60,13 +60,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this
   sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_00526340
             (&this_ptr->file_bitstream,&local_38.header);
   sound_mp3_cpp_calculateMpegFrame_FUN_00525840(&local_38);
-  fVar4 = (float10)*(double *)
-                    (&DAT_006202e8 + local_68.sampling_rate_index * 8 + local_68.mpeg_version * 0x20
-                    ) * (float10)_DAT_005eb58e;
-  iVar5 = 0;
-  round();
-  this_ptr->sample_rate = (int)ROUND(fVar4);
-  this_ptr->num_channels = local_38.channel_count;
+  iVar5 = 0x52b09d;
+  dVar4 = round
+                    (*(double *)
+                      (&DAT_006202e8 +
+                      local_68.sampling_rate_index * 8 + local_68.mpeg_version * 0x20) *
+                     _DAT_005eb58e);
+  this_ptr->sample_rate = (int)ROUND(dVar4);
+  this_ptr->num_channels = local_38.table_index;
   iVar5 = sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0(this_ptr,iVar5);
   return iVar5;
 }

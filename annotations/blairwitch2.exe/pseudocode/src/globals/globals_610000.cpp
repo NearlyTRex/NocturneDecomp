@@ -1068,6 +1068,226 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     }
 };
 
+// SReverbPreset[27]
+SReverbPreset g_ReverbPresetTable[27] = {
+    {
+        .name = (char *)0x005EA961,
+        .reverb = {
+            .volume = 0.0f,
+            .decay_time = 0.0f,
+            .damping = 0.0f
+        }
+    },
+    {
+        .name = (char *)s_GENERIC_005ea965,
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 1.493f,
+            .damping = 0.5f
+        }
+    },
+    {
+        .name = (char *)s_PADDEDCELL_005ea96d,
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 0.1f,
+            .damping = 0.0f
+        }
+    },
+    {
+        .name = (char *)0x005EA978,
+        .reverb = {
+            .volume = 0.417f,
+            .decay_time = 0.40000001f,
+            .damping = 0.66600001f
+        }
+    },
+    {
+        .name = (char *)s_BATHROOM_005ea97d,
+        .reverb = {
+            .volume = 0.653f,
+            .decay_time = 1.499f,
+            .damping = 0.16599999f
+        }
+    },
+    {
+        .name = (char *)s_LIVINGROOM_005ea986,
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 0.47799999f,
+            .damping = 0.0f
+        }
+    },
+    {
+        .name = (char *)s_STONEROOM_005ea991,
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.309f,
+            .damping = 0.88800001f
+        }
+    },
+    {
+        .name = (char *)s_AUDITORIUM_005ea99b,
+        .reverb = {
+            .volume = 0.403f,
+            .decay_time = 4.2789998f,
+            .damping = 0.5f
+        }
+    },
+    {
+        .name = (char *)s_CONCERTHALL_005ea9a6,
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 3.961f,
+            .damping = 0.5f
+        }
+    },
+    {
+        .name = (char *)0x005EA9B2,
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.8859999f,
+            .damping = 1.304f
+        }
+    },
+    {
+        .name = (char *)s_ARENA_005ea9b7,
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 7.2839999f,
+            .damping = 0.33199999f
+        }
+    },
+    {
+        .name = (char *)s_HANGAR_005ea9bd,
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 10.0f,
+            .damping = 0.30000001f
+        }
+    },
+    {
+        .name = (char *)s_CARPETEDHALLWAY_005ea9c4,
+        .reverb = {
+            .volume = 0.153f,
+            .decay_time = 0.259f,
+            .damping = 2.0f
+        }
+    },
+    {
+        .name = (char *)s_HALLWAY_005ea9d4,
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 1.493f,
+            .damping = 0.0f
+        }
+    },
+    {
+        .name = (char *)s_STONECORRIDOR_005ea9dc,
+        .reverb = {
+            .volume = 0.44400001f,
+            .decay_time = 2.697f,
+            .damping = 0.63800001f
+        }
+    },
+    {
+        .name = (char *)s_ALLEY_005ea9ea,
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 1.752f,
+            .damping = 0.77600002f
+        }
+    },
+    {
+        .name = (char *)s_FOREST_005ea9f0,
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 3.145f,
+            .damping = 0.472f
+        }
+    },
+    {
+        .name = (char *)0x005EA9F7,
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
+        }
+    },
+    {
+        .name = (char *)s_MOUNTAINS_005ea9fc,
+        .reverb = {
+            .volume = 0.19400001f,
+            .decay_time = 7.8410001f,
+            .damping = 0.472f
+        }
+    },
+    {
+        .name = (char *)s_QUARRY_005eaa06,
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.5f
+        }
+    },
+    {
+        .name = (char *)s_PLAIN_005eaa0d,
+        .reverb = {
+            .volume = 0.097000003f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
+        }
+    },
+    {
+        .name = (char *)s_PARKINGLOT_005eaa13,
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 1.652f,
+            .damping = 1.5f
+        }
+    },
+    {
+        .name = (char *)s_SEWERPIPE_005eaa1e,
+        .reverb = {
+            .volume = 0.65200001f,
+            .decay_time = 2.8859999f,
+            .damping = 0.25f
+        }
+    },
+    {
+        .name = (char *)s_UNDERWATER_005eaa28,
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.0f
+        }
+    },
+    {
+        .name = (char *)s_DRUGGED_005eaa33,
+        .reverb = {
+            .volume = 0.875f,
+            .decay_time = 8.3920002f,
+            .damping = 1.388f
+        }
+    },
+    {
+        .name = (char *)0x005EAA3B,
+        .reverb = {
+            .volume = 0.139f,
+            .decay_time = 17.233999f,
+            .damping = 0.66600001f
+        }
+    },
+    {
+        .name = (char *)s_PSYCHOTIC_005eaa41,
+        .reverb = {
+            .volume = 0.486f,
+            .decay_time = 7.5630002f,
+            .damping = 0.80599999f
+        }
+    }
+};
+
 // TerminatedCString
 TerminatedCString s_d3d_dll_0061e183 = "d3d.dll";
 

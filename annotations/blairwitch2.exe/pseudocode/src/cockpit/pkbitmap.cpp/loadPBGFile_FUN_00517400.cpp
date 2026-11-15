@@ -18,12 +18,13 @@ CPackedBitmap * cockpit_pkbitmap_cpp_loadPBGFile_FUN_00517400(CPackedBitmapSet *
   uchar auStack_15c [228];
   char acStack_78 [104];
   
-  file_handle = engine_dosio_cpp_FUN_00460c70((char *)0x5e1e81,param_2->filename,(char *)0x5e1e7e);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70
+                          ((char *)0x5e1e81,param_2->filename,(char *)0x5e1e7e);
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_78,"Unable to open PBG file %s");
     _DAT_01d046a4 = 0x5b4;
     _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
-    core_main_c_FUN_004e4500(acStack_78);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_78);
   }
   pCVar1 = cockpit_pkbitmap_cpp_parsePBGFile_FUN_00517280
                      (param_1,file_handle,param_4,param_5,param_6);

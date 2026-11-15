@@ -15,7 +15,7 @@ void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(C3DSLight *this_ptr,C
   char cVar2;
   char *pcVar3;
   char *pcVar4;
-  float10 fVar5;
+  double dVar5;
   
   pUVar1 = &(light->base).base.position;
   if ((CVector3f *)pUVar1 != &this_ptr->pos) {
@@ -26,9 +26,8 @@ void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(C3DSLight *this_ptr,C
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
             (&(light->base).base.rotation_matrix,&this_ptr->orient);
   (light->base).base.focal_length = this_ptr->fov;
-  fVar5 = (float10)this_ptr->aspect * (float10)_DAT_005f1309;
-  round();
-  light->transform_scale_factor = (int)ROUND(fVar5);
+  dVar5 = round((double)(this_ptr->aspect * (float)_DAT_005f1309));
+  light->transform_scale_factor = (int)ROUND(dVar5);
   pcVar3 = this_ptr->name;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(light,this_ptr->intensity);
   this_ptr->cycle_elapsed = 0.0;

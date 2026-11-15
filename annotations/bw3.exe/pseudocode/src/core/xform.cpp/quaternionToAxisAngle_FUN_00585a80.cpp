@@ -12,18 +12,13 @@ void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_00585a80(CQuaternion4f *qu
 
 {
   float fVar1;
-  CQuaternion4f *extraout_ECX;
-  CVector3f *extraout_EDX;
-  float10 fVar2;
+  double dVar2;
   
   if (angle_out != (float *)0x0) {
     if (_DAT_005d8197 < quat_in->w) {
       if ((int)quat_in->w < 0x3f800000) {
-        fVar2 = (float10)quat_in->w;
-        acos();
-        *angle_out = (float)(fVar2 * (float10)_DAT_005d819b);
-        quat_in = extraout_ECX;
-        axis_out = extraout_EDX;
+        dVar2 = acos((double)quat_in->w);
+        *angle_out = (float)((float10)dVar2 * (float10)_DAT_005d819b);
       }
       else {
         *angle_out = 0.0;

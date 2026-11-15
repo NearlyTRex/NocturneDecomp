@@ -10,7 +10,7 @@
 ; XREF[13]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409980 at 00409b5a
 ;   core_actor.cpp_plotPixelWithBoundsCheck_FUN_004096f0 at 00409713
-;   core_setdir.cpp_FUN_00540eb0 at 00541099
+;   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0 at 00541099
 ;   engine_2d.c_draw320x200SizeDot_FUN_00402ae0 at 00402b81
 ;   engine_2d.c_drawLine_FUN_004011a0 at 004011f6
 ;   engine_2d.c_project3DPointToScreen_FUN_00401780 at 004017bc

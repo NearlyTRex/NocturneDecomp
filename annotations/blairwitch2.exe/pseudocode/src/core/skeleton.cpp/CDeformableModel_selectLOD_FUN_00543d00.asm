@@ -63,7 +63,7 @@ section .text
     MOV ECX,dword ptr [EBX]             ; 00543d3b
     FLD float ptr [ESP + 0xc]           ; 00543d3d
     CALL crt_math.c_round_FUN_005b7ff0  ; 00543d41
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     ADD ESP,0x4                         ; 00543d46
     DEC ECX                             ; 00543d49
     FISTP dword ptr [ESP + 0x4]         ; 00543d4a

@@ -2,21 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 178,
+    "complexity_score": 62,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 12,
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "sub84_truncation",
-      "unaffected_reg",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 120
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -46,10 +43,10 @@
         "00508850"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "engine_matrix.c_normalizeVector3DFloat_FUN_00508780",
-    "signature": "int * engine_matrix_c_normalizeVector3DFloat_FUN_00508780(int *param_1)"
+    "signature": "CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_00508780(CVector3i *input_vector,CVector3i *output_vector)"
   },
   "function_calls": [],
   "globals": [
@@ -67,13 +64,11 @@
         "call_addr": "00554f38",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -82,12 +77,11 @@
         "call_addr": "004ffc0f",
         "call_type": "direct",
         "caller": "engine_light.cpp_calculatePhongLighting_FUN_004ffaf0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -96,13 +90,11 @@
         "call_addr": "004e83a1",
         "call_type": "direct",
         "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004e82a0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -111,14 +103,11 @@
         "call_addr": "004e843c",
         "call_type": "direct",
         "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004e82a0",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 30,
         "method": "push_count",
         "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -127,13 +116,11 @@
         "call_addr": "004e84e2",
         "call_type": "direct",
         "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004e82a0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 30,
         "method": "push_count",
         "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -142,23 +129,21 @@
         "call_addr": "004e8562",
         "call_type": "direct",
         "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004e82a0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 30,
         "method": "push_count",
         "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.8625,
@@ -220,10 +205,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 84,
+    "frame_size": 88,
     "local_size": 84,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -288,6 +273,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input_vector",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
@@ -301,95 +293,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * engine_matrix_c_normalizeVector3DFloat_FUN_00508780(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar1 = (double)*param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar2 = (double)param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar3 = (double)param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 21,
+      "line": 20,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(local_30);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = (int)ROUND(local_28);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = (int)ROUND(local_20);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 6,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d34e44
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5e0ab3                       ; 0050cf2a | = "CNetGame::addPlayer - too many players!"
     MOV dword ptr [0x01d046a0],ECX      ; 0050cf2f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0050cf35 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050cf3b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cf3b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cf40
     JMP 0x0050ce82                      ; 0050cf43
         ;   XREF to: 0050ce82 (UNCONDITIONAL_JUMP)  ; LAB_0050ce82

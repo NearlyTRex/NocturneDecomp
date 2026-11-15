@@ -13,29 +13,29 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
 {
   CGhoul *pCVar1;
   float fVar2;
-  float10 fVar3;
+  double dVar3;
   float fVar4;
   int iVar5;
+  float max_value;
   
   pCVar1 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CGhoulVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar1->base).base.model,(char *)0x5d8e8e);
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(20.0,35.0);
-  fVar3 = (float10)fVar2 * (float10)_DAT_005d8e97;
-  fVar4 = 10.0;
-  fVar2 = 4.0;
-  round();
-  pCVar1->burp_timer = (int)ROUND(fVar3);
-  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar2,fVar4);
+  max_value = 4.0;
+  fVar4 = 6.987474e-39;
+  dVar3 = round((double)(fVar2 * (float)_DAT_005d8e97));
+  pCVar1->burp_timer = (int)ROUND(dVar3);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar4,max_value);
   pCVar1->arise_timer = 0xa0000;
   pCVar1->pending_eat_state = -1;
-  fVar3 = (float10)fVar2 * (float10)_DAT_005d8e97;
+  fVar2 = (float)_DAT_005d8e97;
   pCVar1->flinch_blend_weight = 0.0;
   pCVar1->spasm_count = 2;
-  iVar5 = 3;
-  round();
-  pCVar1->spasm_timer = (int)ROUND(fVar3);
+  iVar5 = 0x4c1687;
+  dVar3 = round((double)(fVar4 * fVar2));
+  pCVar1->spasm_timer = (int)ROUND(dVar3);
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(1,iVar5);
   (pCVar1->base).base.collision_cylinder_height = 0.75;
   (pCVar1->base).base.collision_cylinder_radius = 1.5;

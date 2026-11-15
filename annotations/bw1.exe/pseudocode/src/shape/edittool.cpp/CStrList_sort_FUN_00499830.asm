@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdlib.c__qsort_FUN_005bfc68
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5dc4a5                       ; 00499855 | = "CStrList::sort - invalid range!"
     MOV dword ptr [0x01d1d400],ECX      ; 0049985a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00499860 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499866
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499866
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049986b
     POP EDI                             ; 0049986e
     MOV EAX,ESI                         ; 0049986f

@@ -3260,15 +3260,33 @@
       "00408b40",
       "0040cfe0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":88,
     "method":"getWorldBoundingBoxCenter",
     "name":"core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b2a0",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/boneguy.cpp",
     "variadic":false
@@ -3575,7 +3593,7 @@
       "005b5080"
     ],
     "cls":"CBride",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005fd1e4"
     ],
@@ -4756,15 +4774,26 @@
       "00408b40",
       "005b5080"
     ],
-    "conv":"unknown",
+    "cls":"CChain",
+    "conv":"__stack_esi",
     "instructions":41,
-    "method":"FUN_004357a0",
-    "name":"core_chain.cpp_FUN_004357a0",
-    "receiver":false,
+    "method":"getTargetBoneWorldPosition",
+    "name":"core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_004357a0",
+    "params":[
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/chain.cpp",
     "variadic":false
@@ -6305,15 +6334,34 @@
     "calls":[
       "00484180"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__stack2_esi",
     "instructions":183,
-    "method":"FUN_0044e6a0",
-    "name":"core_dcamera.cpp_FUN_0044e6a0",
-    "receiver":false,
+    "method":"transformVectorWithAlpha",
+    "name":"core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044e6a0",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/dcamera.cpp",
     "variadic":false
@@ -10418,6 +10466,7 @@
       "00544460",
       "0057b6e0",
       "0057be00",
+      "0059b240",
       "0059bdf0"
     ],
     "calls":[
@@ -10425,9 +10474,6 @@
       "005c0820"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0059b7ee"
-    ],
     "instructions":81,
     "method":"wildcardStringMatch",
     "name":"shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0",
@@ -12822,7 +12868,7 @@
       "005b5080"
     ],
     "cls":"CGhoul",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "00601424"
     ],
@@ -14454,7 +14500,7 @@
   {
     "addr":"00502f20",
     "cls":"CLightCone",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "006032f0"
     ],
@@ -14739,7 +14785,7 @@
       "00468900"
     ],
     "cls":"CMirrorHack",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "00603550"
     ],
@@ -15884,15 +15930,34 @@
     "calls":[
       "005b5080"
     ],
-    "conv":"unknown",
+    "cls":"CMirrorReflection",
+    "conv":"__stack2_esi",
     "instructions":22,
-    "method":"FUN_00519920",
-    "name":"core_mirror.cpp_FUN_00519920",
-    "receiver":false,
+    "method":"applyMirrorTransform",
+    "name":"core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_00519920",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/mirror.cpp",
     "variadic":false
@@ -15971,15 +16036,42 @@
     "calls":[
       "00519920"
     ],
-    "conv":"unknown",
+    "cls":"CMirrorReflection",
+    "conv":"__stack3_esi",
     "instructions":152,
-    "method":"FUN_0051a0a0",
-    "name":"core_mirror.cpp_FUN_0051a0a0",
-    "receiver":false,
+    "method":"transformMirrorEdgeToIntegerSpace",
+    "name":"core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_0051a0a0",
+    "params":[
+      {
+        "name":"point_a",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"point_b",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/mirror.cpp",
     "variadic":false
@@ -16204,15 +16296,33 @@
       "00408b40",
       "0040cfe0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":88,
     "method":"getObjectGrabPointWorld",
     "name":"core_mobster.cpp_getObjectGrabPointWorld_FUN_0051c6a0",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/mobster.cpp",
     "variadic":false
@@ -16269,14 +16379,24 @@
       "0051f8a0",
       "005c09f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":53,
     "method":"freeMRGLData",
     "name":"engine_model.c_freeMRGLData_FUN_0051f8a0",
+    "params":[
+      {
+        "name":"mrgl_data",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderExtended",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/model.c",
@@ -16296,15 +16416,33 @@
       "005bfb40",
       "005c03a0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":292,
     "method":"getMRGLBounds",
     "name":"engine_model.c_getMRGLBounds_FUN_0051f920",
+    "params":[
+      {
+        "name":"mrgl_data",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_bounds",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLModelBounds",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLModelBounds",
+      "ptr":1
     },
     "tu":"engine/model.c",
     "variadic":false
@@ -16528,12 +16666,6 @@
     ],
     "cls":"CMotionController",
     "conv":"__cdecl",
-    "data_refs":[
-      "005b89a9",
-      "005b8bd2",
-      "005b8da0",
-      "005b8e14"
-    ],
     "instructions":86,
     "method":"frameToMarkerPosition",
     "name":"core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020",
@@ -20685,17 +20817,28 @@
   },
   {
     "addr":"00578a20",
-    "conv":"unknown",
+    "cls":"CDirectSoundDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "00605bd0"
     ],
     "instructions":26,
-    "method":"FUN_00578a20",
-    "name":"sound_snddx.cpp_FUN_00578a20",
-    "receiver":false,
+    "method":"freeSample",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_00578a20",
+    "params":[
+      {
+        "name":"buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -20728,17 +20871,28 @@
   },
   {
     "addr":"0057b5a0",
-    "conv":"unknown",
+    "cls":"CWavOutDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "00605c38"
     ],
     "instructions":1,
-    "method":"FUN_0057b5a0",
-    "name":"sound_sndwav.cpp_FUN_0057b5a0",
-    "receiver":false,
+    "method":"set3DListenerDistanceFactor",
+    "name":"sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_0057b5a0",
+    "params":[
+      {
+        "name":"distance_in_feet",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndwav.cpp",
@@ -22156,7 +22310,7 @@
       "00468900"
     ],
     "cls":"CTrash",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "006070d0"
     ],
@@ -23523,6 +23677,7 @@
       "005545a0",
       "00574ee0",
       "00576f40",
+      "0059e350",
       "005b21e0"
     ],
     "calls":[
@@ -23531,10 +23686,6 @@
       "EXTERNAL:00000087"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0059eaa2",
-      "0059eb5a"
-    ],
     "instructions":61,
     "method":"getTime",
     "name":"wincore_winrun.cpp_getTime_FUN_005b2420",
@@ -24166,14 +24317,24 @@
       "005bafb0",
       "005c3166"
     ],
-    "conv":"unknown",
+    "conv":"__fpureg_safe",
     "instructions":11,
     "method":"round",
     "name":"crt_math.c_round_FUN_005c03a0",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"double",
       "ptr":0
     },
     "tu":"crt/math.c",

@@ -28,7 +28,7 @@ void core_podmain_cpp_FUN_005152e0(int param_1)
       if (iVar1 == 0) {
         _DAT_01d71de0 = "..\\core\\podmain.cpp";
         _DAT_01d71de4 = 0x39;
-        core_main_c_FUN_004e4330("Can't mount %s: %s",&CStack_328,auStack_114);
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Can't mount %s: %s");
       }
       engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(&CStack_328);
     }
@@ -45,7 +45,7 @@ void core_podmain_cpp_FUN_005152e0(int param_1)
       if (iVar2 == 0) {
         _DAT_01d71de4 = 0x45;
         _DAT_01d71de0 = "..\\core\\podmain.cpp";
-        core_main_c_FUN_004e4330("Can't mount %s: %s",auStack_214,auStack_114);
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Can't mount %s: %s");
       }
       iVar1 = iVar1 + 1;
     } while (iVar1 < iStack_14);

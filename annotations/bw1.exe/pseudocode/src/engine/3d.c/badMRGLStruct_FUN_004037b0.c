@@ -13,6 +13,6 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeader
 {
   _DAT_01d1d400 = "..\\engine\\3d.c";
   _DAT_01d1d404 = 0x11b;
-  core_main_c_FUN_005030e0("Bad MRGL struct");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Bad MRGL struct");
   return prim;
 }

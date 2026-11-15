@@ -31,7 +31,7 @@ undefined4 FUN_004ffff0(CCharacter *param_1);
 
 // Original: core_lightgun.cpp_FUN_00500090
 // Address: 00500090
-void FUN_00500090(int param_1);
+void FUN_00500090(CCharacter *param_1);
 
 // Original: core_lightgun.cpp_CLightGun_getMuzzlePoint_FUN_00500160
 // Address: 00500160

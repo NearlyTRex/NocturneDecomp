@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1128,
-    "complexity_score": 1025,
+    "complexity_score": 1265,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 28,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 530,
-    "suspect_count": 43,
+    "suspect_count": 67,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
@@ -44,7 +44,7 @@
     {
       "addr": "00408b80",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b80"
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80"
     },
     {
       "addr": "0040ce40",
@@ -182,11 +182,6 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130"
     },
     {
-      "addr": "00583260",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00583260"
-    },
-    {
       "addr": "00585de0",
       "is_variadic": false,
       "name": "core_xform.cpp_FUN_00585de0"
@@ -195,6 +190,11 @@
       "addr": "00585b20",
       "is_variadic": false,
       "name": "core_xform.cpp_slerpQuaternion_FUN_00585b20"
+    },
+    {
+      "addr": "00583260",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_00583260"
     },
     {
       "addr": "00441ff0",
@@ -526,7 +526,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_stack_fffffdc8",
       "severity": "moderate",
       "text": "float in_stack_fffffdc8;",
@@ -534,7 +534,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 208,
+      "line": 199,
       "match": "(CQuaternion4f *)((int)(pCStack_28 + 4) +",
       "severity": "moderate",
       "text": "pCStack_28 = (CQuaternion4f *)((int)(pCStack_28 + 4) + 8);",
@@ -542,7 +542,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 209,
+      "line": 200,
       "match": "(CQuaternion4f *)((int)(pCStack_20 + 4) +",
       "severity": "moderate",
       "text": "pCStack_20 = (CQuaternion4f *)((int)(pCStack_20 + 4) + 8);",
@@ -550,39 +550,39 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 333,
+      "line": 325,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uVar19._0_4_ = 0.1;",
+      "text": "uVar17._0_4_ = 0.1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 334,
+      "line": 326,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uVar19._4_4_ = 0.17453292;",
+      "text": "uVar17._4_4_ = 0.17453292;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 343,
+      "line": 335,
       "match": "in_stack_fffffdc8",
       "severity": "moderate",
-      "text": "(CVector3f *)uVar19,SUB84(uVar19,4),in_stack_fffffdc8);",
+      "text": "(CVector3f *)uVar17,SUB84(uVar17,4),in_stack_fffffdc8);",
       "type": "stack_param"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 343,
+      "line": 335,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(CVector3f *)uVar19,SUB84(uVar19,4),in_stack_fffffdc8);",
+      "text": "(CVector3f *)uVar17,SUB84(uVar17,4),in_stack_fffffdc8);",
       "type": "sub84_truncation"
     },
     {
       "description": "Direct stack address reference",
-      "line": 369,
+      "line": 361,
       "match": "&stack0xfffffdbc",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffffdbc);",
@@ -590,42 +590,42 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 370,
+      "line": 362,
       "match": "&stack0xfffffdbc",
       "severity": "moderate",
-      "text": "pSVar18 = (SDamageInfo *)&stack0xfffffdbc;",
+      "text": "pSVar16 = (SDamageInfo *)&stack0xfffffdbc;",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 373,
+      "line": 365,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "(&DAT_02cfd900,",
+      "text": "((CVector3f *)&DAT_02cfd900,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 374,
+      "line": 367,
       "match": "DAT_007e1620",
       "severity": "mild",
-      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[DAT_007e1620].m);",
+      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[DAT_007e1620].m,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 408,
+      "line": 405,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "(&DAT_02cfd900,",
+      "text": "((CVector3f *)&DAT_02cfd900,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 409,
+      "line": 407,
       "match": "DAT_007e1628",
       "severity": "mild",
-      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[DAT_007e1628].m)",
+      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[DAT_007e1628].m,",
       "type": "undefined_data"
     },
     {
@@ -633,7 +633,7 @@
       "line": 522,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "fVar20 = 2.8026e-45;",
+      "text": "fVar18 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
@@ -646,7 +646,7 @@
     },
     {
       "description": "Pointer value `(pCStack_28 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 208,
+      "line": 199,
       "match": "(int)(pCStack_28 + 4)",
       "severity": "moderate",
       "text": "pCStack_28 = (CQuaternion4f *)((int)(pCStack_28 + 4) + 8);",
@@ -654,7 +654,7 @@
     },
     {
       "description": "Pointer value `(pCStack_20 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 209,
+      "line": 200,
       "match": "(int)(pCStack_20 + 4)",
       "severity": "moderate",
       "text": "pCStack_20 = (CQuaternion4f *)((int)(pCStack_20 + 4) + 8);",
@@ -662,26 +662,106 @@
     },
     {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 251,
+      "line": 241,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,1,(int)pCVar4,0x3e4ccccd,0);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&CStack_11c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 383,
-      "match": "(int)&CStack_11c",
+      "description": "Pointer value `&CStack_17c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 371,
+      "match": "(int)&CStack_17c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_11c + (uint)bVar14 * -8 + 4) = afStack_178[(uint)bVar14 * -2 + 0x12];",
+      "text": "*(uint *)((int)&CStack_17c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_14c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 372,
+      "match": "(int)&CStack_14c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14c + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_17c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 373,
+      "match": "(int)&CStack_17c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_17c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_14c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 374,
+      "match": "(int)&CStack_14c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_11c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 385,
+      "line": 379,
       "match": "(int)&CStack_11c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_11c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_11c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_134` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 380,
+      "match": "(int)&CStack_134",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_134 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_11c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 382,
+      "match": "(int)&CStack_11c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_11c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_134` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 383,
+      "match": "(int)&CStack_134",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_134 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_bc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 411,
+      "match": "(int)&CStack_bc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_bc + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 412,
+      "match": "(int)&CStack_128",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_128 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_bc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 413,
+      "match": "(int)&CStack_bc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_bc + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 414,
+      "match": "(int)&CStack_128",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_128 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -689,7 +769,15 @@
       "line": 419,
       "match": "(int)&CStack_1a0",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_1a0 + (uint)bVar14 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_1a0 + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 420,
+      "match": "(int)&CStack_80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -697,7 +785,15 @@
       "line": 422,
       "match": "(int)&CStack_1a0",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_1a0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_1a0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 423,
+      "match": "(int)&CStack_80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -718,7 +814,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 235,
+      "line": 226,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -750,18 +846,98 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 383,
+      "line": 371,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_11c + (uint)bVar14 * -8 + 4) = afStack_178[(uint)bVar14 * -2 + 0x12];",
+      "text": "*(uint *)((int)&CStack_17c + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 385,
+      "line": 372,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_11c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_14c + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 373,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_17c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 374,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 379,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_11c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 380,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_134 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 382,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_11c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 383,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_134 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 411,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_bc + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 412,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_128 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 413,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_bc + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 414,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_128 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -769,7 +945,15 @@
       "line": 419,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_1a0 + (uint)bVar14 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_1a0 + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 420,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -777,7 +961,15 @@
       "line": 422,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_1a0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_1a0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 423,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -798,7 +990,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_28` self-updates via element-arithmetic `(int)(pCStack_28 + N) + M`, where `N*sizeof(*pCStack_28) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCStack_28->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 208,
+      "line": 199,
       "match": "pCStack_28 = (T *)((int)(pCStack_28 + N) + M)",
       "severity": "moderate",
       "text": "pCStack_28 = (CQuaternion4f *)((int)(pCStack_28 + 4) + 8);",
@@ -806,7 +998,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via element-arithmetic `(int)(pCStack_20 + N) + M`, where `N*sizeof(*pCStack_20) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCStack_20->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 209,
+      "line": 200,
       "match": "pCStack_20 = (T *)((int)(pCStack_20 + N) + M)",
       "severity": "moderate",
       "text": "pCStack_20 = (CQuaternion4f *)((int)(pCStack_20 + 4) + 8);",
@@ -814,7 +1006,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` was initialized to the address of an array element's subfield (`pCStack_18 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCStack_18)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCStack_18->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 210,
+      "line": 201,
       "match": "pCStack_18 = pCStack_18 + N",
       "severity": "moderate",
       "text": "pCStack_18 = pCStack_18 + 6;",
@@ -822,7 +1014,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 224,
+      "line": 215,
       "match": "pCVar12 = (T *)((pCVar12->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar12 = (CBoneGuy *)((pCVar12->base).base.base.orient_matrix.m + 1);",
@@ -830,7 +1022,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 279,
+      "line": 270,
       "match": "fStack_3c = (float)(((int)fStack_5c >> 1) + _DAT_01d1a0a4);",
       "severity": "moderate",
       "text": "fStack_3c = (float)(((int)fStack_5c >> 1) + _DAT_01d1a0a4);",
@@ -838,7 +1030,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 283,
+      "line": 275,
       "match": "fStack_44 = (float)(((int)fStack_58 >> 1) + _DAT_01d1a0a4);",
       "severity": "moderate",
       "text": "fStack_44 = (float)(((int)fStack_58 >> 1) + _DAT_01d1a0a4);",
@@ -846,7 +1038,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 316,
+      "line": 308,
       "match": "fStack_50 = (float)(((int)fStack_40 >> 1) + _DAT_01d1a0a4);",
       "severity": "moderate",
       "text": "fStack_50 = (float)(((int)fStack_40 >> 1) + _DAT_01d1a0a4);",

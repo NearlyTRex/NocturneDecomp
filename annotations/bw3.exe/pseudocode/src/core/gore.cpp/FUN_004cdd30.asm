@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_FUN_004cdd30(undefined4 *param_1,int param_2)
+; void core_gore_cpp_FUN_004cdd30(undefined4 *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
@@ -69,7 +69,7 @@ section .text
     FLD float ptr [ESI + 0x1c]          ; 004cdd52
     FMUL double ptr [0x005c46d9]        ; 004cdd55 | DAT_005c46d9
     CALL crt_math.c_round_FUN_005a3120  ; 004cdd5b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x40]        ; 004cdd60
     MOV EBX,dword ptr [ESP + 0x40]      ; 004cdd64
     TEST EBX,EBX                        ; 004cdd68

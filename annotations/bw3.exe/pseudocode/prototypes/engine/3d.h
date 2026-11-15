@@ -99,7 +99,7 @@ void __cdecl setActiveRenderColor(void);
 
 // Original: engine_3d.c_drawLineStrip2D_FUN_00404440
 // Address: 00404440
-int __cdecl drawLineStrip2D(int param_1);
+SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 // Address: 00404560
@@ -195,7 +195,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedHardwareOp53(SMRGLHeader
 
 // Original: engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
 // Address: 004059a0
-int renderPolygonFogTexturedPlaneMaskedOp41(int param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedPlaneMaskedOp41(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405b30
 // Address: 00405b30
@@ -235,7 +235,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedOp50(SMRGLHeaderPri
 
 // Original: engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0
 // Address: 004060e0
-int renderPolygonSolidTexturedClampedOp51(int param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedClampedOp51(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_004062a0
 // Address: 004062a0
@@ -311,7 +311,7 @@ void __cdecl renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive,int re
 
 // Original: engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0
 // Address: 004075b0
-void renderPolygonWithRenderFlagsUV(int param_1,uint param_2,int param_3);
+void __cdecl renderPolygonWithRenderFlagsUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
 // Original: engine_3d.c_FUN_00407700
 // Address: 00407700

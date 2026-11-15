@@ -59,7 +59,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550(CDemo
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00453390(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00453540(CDemonCamera *this_ptr,float intensity);
-void core_dcamera_cpp_FUN_00453560(CDemonCamera *param_1,undefined4 param_2,undefined4 param_3);
+void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00453560(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ray);
 void __cdecl core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_00453600(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90(CDemonCamera *this_ptr,int plane_index);
@@ -87,8 +87,8 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_00455460(CVector3f *vertex1,CVec
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_004558d0(float max_x_plane);
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plane);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00455e60(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
-void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3);
-float core_dcube_cpp_FUN_004560f0(undefined4 *param_1,float *param_2,float *param_3);
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
+float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_004566c0(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
@@ -100,7 +100,7 @@ CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00457b60(CDemonCube *thi
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00457ba0(CDemonCube *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00457c40(CDemonCube *this_ptr);
-void core_dcube_cpp_FUN_00457d70(int *param_1);
+void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_00457d70(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457e50(CDemonCube *this_ptr,_FILE *file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457f70(CDemonCube *this_ptr,uint rendering_mode);
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00458210(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
@@ -109,7 +109,7 @@ int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0(C
 void __cdecl core_demnfolk_cpp_staticInit_FUN_00458600(void);
 float core_demnfolk_cpp_FUN_00458630(int param_1);
 void core_demnfolk_cpp_FUN_004586d0(int param_1);
-void core_demnfolk_cpp_FUN_00458790(int param_1);
+void core_demnfolk_cpp_FUN_00458790(CDemonActor *param_1);
 undefined4 core_demnfolk_cpp_FUN_00458890(float *param_1);
 CDemnfolk * __cdecl core_demnfolk_cpp_factoryFuncDemnfolk_FUN_004589e0(void);
 CDemonActorType * __cdecl core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00458a00(CDemnfolk *this_ptr);
@@ -175,7 +175,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(CDem
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045ea60(CDemonGlobe *this_ptr);
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemonGlobe *this_ptr);
 int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0045edf0(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max);
-int core_dglobe_cpp_FUN_0045ef00(int param_1,int *param_2,int *param_3);
+int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045ef00(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal);
 CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_0045f080(CDemonImage *this_ptr,uint flags);
 void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045f0a0(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_0045f100(CDemonImage *this_ptr);
@@ -183,10 +183,10 @@ ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_0045f130(CDemonImage *t
 void core_dimage_cpp_FUN_0045f190(void);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_0045f4d0(CMatrix3x3f *this_ptr);
-void core_dirmat_cpp_FUN_0045f690(float *param_1,float *param_2);
-void core_dirmat_cpp_FUN_0045f700(float *param_1,float *param_2);
+CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
+CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_0045f770(double y,double x);
-float * core_dirmat_cpp_FUN_0045f840(float *param_1);
+CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void core_dirmat_cpp_FUN_0045fd80(float *param_1,float *param_2,float *param_3);
 void __cdecl core_djien_cpp_staticInit_FUN_0045fdb0(void);
 CDjien * __cdecl core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void);

@@ -22,7 +22,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00497660(CE
   if (_DAT_01c3eb5c < 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x99c;
-    core_main_c_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
   }
   uVar2 = _DAT_01c4f020;
   uVar1 = _DAT_01c4f00c;

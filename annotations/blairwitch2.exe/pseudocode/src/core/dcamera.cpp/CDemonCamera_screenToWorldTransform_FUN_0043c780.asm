@@ -17,7 +17,7 @@
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870 at 0043d95f
-;   core_dcamera.cpp_FUN_00441ea0 at 00441edb
+;   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0 at 00441edb
 ;   core_dcamera.cpp_FUN_00443610 at 004437f5
 ;   core_game.cpp_FUN_004b5190 at 004b539e
 ;   core_game.cpp_FUN_004be8a0 at 004bedcd

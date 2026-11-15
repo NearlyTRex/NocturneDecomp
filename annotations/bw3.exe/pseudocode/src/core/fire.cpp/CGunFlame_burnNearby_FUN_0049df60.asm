@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
@@ -147,8 +147,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x70]      ; 0049e044
     PUSH EDI                            ; 0049e048
     LEA ESI,[ESP + 0x50]                ; 0049e049
-    CALL core_actor.cpp_FUN_00408bf0    ; 0049e04d
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 0049e04d
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0049e052
     MOV EAX,[0x01d5ba70]                ; 0049e055 | g_CHeroClassInfo.name_hash
     LEA EDI,[ESP + 0x3c]                ; 0049e05a

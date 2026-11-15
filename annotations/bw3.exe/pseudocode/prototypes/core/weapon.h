@@ -35,7 +35,7 @@ int __cdecl CWeapon::renderTransparent(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_0057b120
 // Address: 0057b120
-CBoundingBox3D * __cdecl CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_0057b160
 // Address: 0057b160
@@ -79,7 +79,7 @@ void __cdecl CWeapon::onPickup(CWeapon *this_ptr,CDemonActor *owner);
 
 // Original: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820
 // Address: 0057b820
-CVector3f * __cdecl CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
 
 // Original: core_weapon.cpp_CWeapon_fire_FUN_0057b880
 // Address: 0057b880

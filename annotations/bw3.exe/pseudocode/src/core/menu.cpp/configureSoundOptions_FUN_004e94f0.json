@@ -2,7 +2,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1391,
-    "complexity_score": 1323,
+    "complexity_score": 1333,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
@@ -10,6 +10,8 @@
     "pseudocode_lines": 703,
     "suspect_count": 58,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
@@ -871,7 +873,7 @@
       "line": 111,
       "match": "DAT_005c776f",
       "severity": "mild",
-      "text": "pcVar3 = &DAT_005c776f;",
+      "text": "pcVar4 = &DAT_005c776f;",
       "type": "undefined_data"
     },
     {
@@ -879,15 +881,31 @@
       "line": 152,
       "match": "DAT_005c778a",
       "severity": "mild",
-      "text": "_sprintf(local_42c,&DAT_005c778a);",
+      "text": "_sprintf((char *)&local_544.is_emulated,&DAT_005c778a);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(char *)((int)pDVar9",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pDVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(DWORD *)((int)pDVar9",
+      "severity": "moderate",
+      "text": "pDVar9 = (DWORD *)((int)pDVar9 + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
       "line": 175,
       "match": "DAT_005c778d",
       "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c778d);",
+      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c778d);",
       "type": "undefined_data"
     },
     {
@@ -895,7 +913,7 @@
       "line": 220,
       "match": "DAT_005c77bc",
       "severity": "mild",
-      "text": "_sprintf(local_12c,&DAT_005c77bc);",
+      "text": "_sprintf(acStack_130,&DAT_005c77bc);",
       "type": "undefined_data"
     },
     {
@@ -903,7 +921,7 @@
       "line": 242,
       "match": "DAT_005c77bf",
       "severity": "mild",
-      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c77bf);",
+      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c77bf);",
       "type": "undefined_data"
     },
     {
@@ -911,7 +929,7 @@
       "line": 288,
       "match": "DAT_005c77e6",
       "severity": "mild",
-      "text": "_sprintf(local_32c,&DAT_005c77e6);",
+      "text": "_sprintf(acStack_330,&DAT_005c77e6);",
       "type": "undefined_data"
     },
     {
@@ -919,7 +937,7 @@
       "line": 311,
       "match": "DAT_005c77e9",
       "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c77e9);",
+      "text": "pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c77e9);",
       "type": "undefined_data"
     },
     {
@@ -935,7 +953,7 @@
       "line": 368,
       "match": "DAT_005c7811",
       "severity": "mild",
-      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c7811);",
+      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c7811);",
       "type": "undefined_data"
     },
     {
@@ -951,7 +969,7 @@
       "line": 424,
       "match": "DAT_005c7829",
       "severity": "mild",
-      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c7829);",
+      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c7829);",
       "type": "undefined_data"
     },
     {
@@ -959,7 +977,7 @@
       "line": 702,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "text": "iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -967,23 +985,31 @@
       "line": 702,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "text": "iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Raw hex address 0x1d74a50 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 170,
+      "match": "(int)pDVar9",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pDVar9 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pDVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 171,
+      "match": "(int)pDVar9",
+      "severity": "moderate",
+      "text": "pDVar9 = (DWORD *)((int)pDVar9 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x1d74a50 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 41,
       "match": "0x1d74a50",
       "severity": "moderate",
-      "text": "iVar6 = 0x1d74a50;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d74b50 assigned to bare local `local_24`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_24` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 98,
-      "match": "0x1d74b50",
-      "severity": "moderate",
-      "text": "local_24 = 0x1d74b50;",
+      "text": "iVar7 = 0x1d74a50;",
       "type": "raw_address_constant"
     },
     {
@@ -1020,14 +1046,6 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 166,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 186,
       "match": "do {",
       "severity": "moderate",
@@ -1045,14 +1063,6 @@
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 233,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 254,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1245,14 +1255,6 @@
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
       "line": 119,
-      "match": "strlen + <p> + -1 + strcpy",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcat"
-    },
-    {
-      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 157,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

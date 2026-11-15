@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 27,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -14,7 +14,14 @@
     ],
     "total_lines": 44
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "004c5470",
+      "from_addr": "004c57d3",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "004c59f0",
     "address_range": [
@@ -58,9 +65,120 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "004c57d3",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c57e6",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c57f9",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c580c",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c581f",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c5832",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c58ac",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c58c7",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c58e2",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c58fd",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3,

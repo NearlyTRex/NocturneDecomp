@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5d96ea                       ; 00468289 | = "Tried to call CKeyFramedModel::getFlo..."
     MOV dword ptr [0x01d1d400],EBX      ; 0046828e | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00468294 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00468299
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00468299
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0046829e
     LEA EBX,[EDI + 0x364]               ; 004682a1
         ;   Label: LAB_004682a1

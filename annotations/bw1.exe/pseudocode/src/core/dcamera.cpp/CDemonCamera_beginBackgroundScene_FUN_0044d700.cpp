@@ -23,7 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700(CDe
   if (this_ptr->scene_open_flag == 0) {
     _DAT_01d1d400 = "..\\core\\dcamera.cpp";
     _DAT_01d1d404 = 0x436;
-    core_main_c_FUN_005030e0("CDemonCamera::beginBackgroundScene - Scene not open");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::beginBackgroundScene - Scene not open");
   }
   _DAT_01482658 = _DAT_01482658 + 1;
   if (_DAT_01482658 == 1) {

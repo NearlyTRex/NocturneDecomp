@@ -37,9 +37,9 @@ void FUN_00574310(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 // Address: 005743e0
 void FUN_005743e0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
 
-// Original: engine_texture.cpp_FUN_00574490
+// Original: engine_texture.cpp_CTextureCache_findTexture_FUN_00574490
 // Address: 00574490
-int FUN_00574490(int param_1,int param_2,char *param_3);
+int __cdecl CTextureCache::findTexture(CTextureCache *this_ptr,int hint_index,char *texture_name);
 
 // Original: engine_texture.cpp_FUN_00574520
 // Address: 00574520

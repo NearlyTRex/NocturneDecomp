@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   support_codec.cpp_CLZWDictionary_initTable_FUN_00443070
 ;
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5d6a6d                       ; 0044303c | = "CLZWDictionary::init - out of memory"
     MOV dword ptr [0x01d1d400],EBP      ; 00443041 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00443047 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0044304c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044304c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00443051
     MOV EAX,dword ptr [ESP + 0x18]      ; 00443054
     PUSH EBX                            ; 00443058

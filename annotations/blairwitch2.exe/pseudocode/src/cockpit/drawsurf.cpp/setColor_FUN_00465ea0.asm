@@ -31,7 +31,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -204,8 +204,8 @@ section .text
     PUSH 0x5d120c                       ; 00466089 | = "Invalid bitsPerPixel in CDrawSurface:..."
     MOV [0x01d046a0],EAX                ; 0046608e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00466093 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00466099
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00466099
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0046609e
     ADD ESP,0x4                         ; 004660a1
     POP EBP                             ; 004660a4

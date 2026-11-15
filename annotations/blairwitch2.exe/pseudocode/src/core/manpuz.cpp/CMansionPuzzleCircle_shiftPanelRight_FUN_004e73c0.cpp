@@ -20,7 +20,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0(C
       (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
     _DAT_01d046a0 = "..\\core\\manpuz.cpp";
     _DAT_01d046a4 = 0x57d;
-    core_main_c_FUN_004e4500("CMansionPuzzleCircle::shiftPanelRight - fubared.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMansionPuzzleCircle::shiftPanelRight - fubared.");
   }
   pSVar1->anim_speed = 1.0;
   sound_sndmain_cpp_pushSfxOptions_FUN_00550450();

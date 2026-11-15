@@ -19,7 +19,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
   int iVar5;
   int iVar6;
   char *pcVar7;
-  float10 fVar8;
+  double dVar8;
   uint uVar9;
   CPickList local_8a4;
   CPickList local_4e4;
@@ -121,7 +121,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
     core_set_cpp_CDemonSet_setCameraView_FUN_00534890(g_CDemonSetPtr,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_FUN_0053f940(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004bd620(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004bd430(this_ptr);
@@ -182,7 +183,7 @@ LAB_004b8391:
     if (g_CDemonSetPtr->selected_camera_index < 0) {
       g_CScriptPtr->focus_actor_changed = 2;
 LAB_004b84e1:
-      iVar5 = core_setdir_cpp_FUN_0053f940
+      iVar5 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
                         (g_CDemonSetPtr,g_CScriptPtr->focus_actor,g_CScriptPtr->focus_actor_changed)
       ;
       if (iVar5 != 0) {
@@ -357,9 +358,8 @@ LAB_004b8719:
     }
     else {
       this_ptr->end_timer = this_ptr->end_timer - this_ptr->delta_time_float;
-      fVar8 = (float10)1 + (float10)this_ptr->end_timer;
-      round();
-      local_20 = (int)ROUND(fVar8);
+      dVar8 = round((double)(this_ptr->end_timer + 1.0));
+      local_20 = (int)ROUND(dVar8);
       _sprintf(this_ptr->end_timer_text,&DAT_005c2792);
       if (this_ptr->end_timer <= 0.0) {
         this_ptr->end_timer = 0.0;

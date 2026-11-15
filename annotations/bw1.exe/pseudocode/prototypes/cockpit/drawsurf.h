@@ -67,7 +67,7 @@ void __cdecl CDrawSurface::drawLineBresenham(CDrawSurface *this_ptr,int x1,int y
 
 // Original: cockpit_drawsurf.cpp_FUN_0047ef60
 // Address: 0047ef60
-void FUN_0047ef60(CDrawSurface *param_1,int param_2,int param_3,int param_4);
+void FUN_0047ef60(int param_1,int param_2,int param_3,int param_4,int param_5);
 
 // Original: cockpit_drawsurf.cpp_computeCohenSutherlandOutcode_FUN_0047f170
 // Address: 0047f170

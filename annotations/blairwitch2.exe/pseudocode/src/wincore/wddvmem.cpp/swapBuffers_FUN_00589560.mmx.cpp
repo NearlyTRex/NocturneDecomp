@@ -181,7 +181,7 @@ __asm {
         push 0x5ee453
         mov dword ptr [DAT_01d046a0],EDI
         mov [DAT_01d046a4],EAX
-        call core_main_c_FUN_004e4500
+        call core_main_c_displayErrorAndQuit_FUN_004e4500
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02661af4],EDI

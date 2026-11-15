@@ -42,7 +42,7 @@
 ;   undefined4 DAT_02cfd900
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
@@ -197,8 +197,8 @@ section .text
     PUSH EBX                            ; 00431243
     LEA ESI,[ESP + 0x8]                 ; 00431244
     LEA EDI,[ESP + 0x44]                ; 00431248
-    CALL core_actor.cpp_FUN_00408b40    ; 0043124c
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40 ; 0043124c
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x8]                 ; 00431251
     ADD ESP,0x8                         ; 00431255
     LEA EAX,[ESP + 0x3c]                ; 00431258

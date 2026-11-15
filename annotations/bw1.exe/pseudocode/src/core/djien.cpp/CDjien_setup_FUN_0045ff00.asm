@@ -264,7 +264,7 @@ section .text
     FLD float ptr [EBX + 0x2538]        ; 004601af
         ;   Label: LAB_004601af
     CALL crt_math.c_round_FUN_005c03a0  ; 004601b5
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EBX                            ; 004601ba
     MOV dword ptr [EBX + 0xc9c4],0x0    ; 004601bb
     FISTP dword ptr [0x00612270]        ; 004601c5 | DAT_00612270

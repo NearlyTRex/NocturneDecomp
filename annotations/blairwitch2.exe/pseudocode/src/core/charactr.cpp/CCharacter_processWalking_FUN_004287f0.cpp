@@ -21,12 +21,12 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
   CVector3f *direction;
   float fVar5;
   float fVar6;
-  uint uStack_6c;
+  float fStack_6c;
   uint uStack_60;
   float fStack_5c;
   uint uStack_54;
-  float local_48;
-  uint uStack_3c;
+  CVector3f local_48;
+  CVector3f CStack_3c;
   CVector3f local_30;
   float fStack_1c;
   float fStack_18;
@@ -56,14 +56,15 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
         return 1;
       }
       core_door_cpp_CDoor_getOpenStandPos_FUN_00460350
-                (this_ptr->door_target,&(this_ptr->look_offset).x,&(this_ptr->base).location);
+                (this_ptr->door_target,&this_ptr->look_offset,&(this_ptr->base).location.position,
+                 &local_48);
       fVar6 = 0.0;
       fVar5 = 0.0;
-      local_30.x = local_48;
+      local_30.x = local_48.x;
       *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4) =
-           *(uint *)(&stack0xffffffbc + (uint)bVar4 * -8);
+           *(uint *)((int)&local_48 + (uint)bVar4 * -8 + 4);
       *(uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-           *(uint *)(&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+           *(uint *)((int)&local_48 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       direction = (CVector3f *)&DAT_0265370c;
       path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)
                            (&this_ptr->door_target->base);
@@ -77,12 +78,13 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
         this_ptr->walk_state = WALK_STATE_WALKING;
         return 1;
       }
-      core_actor_cpp_FUN_00408de0(this_ptr,&this_ptr->door_target->open_position);
-      uStack_6c = uStack_3c;
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                (&this_ptr->base,&this_ptr->door_target->open_position,&CStack_3c);
+      fStack_6c = CStack_3c.x;
       *(uint *)((int)&stack0xffffff98 + (uint)bVar4 * 0xfffffffe * 4) =
-           *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
+           *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + 4);
       *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+           *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff94);
       uStack_60 = uStack_54;
       *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8) =

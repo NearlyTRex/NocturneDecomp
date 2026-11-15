@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0
 ;   engine_dosio.cpp_CFileFinder_reset_FUN_00460f90
 ;   FindNextFileA
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5d0c6e                       ; 00460ef3 | = "CFileFinder::open - search not opened!"
     MOV dword ptr [0x01d046a0],ECX      ; 00460ef8 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00460efe | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00460f04
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00460f04
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00460f09
     POP ESI                             ; 00460f0c
     MOV EAX,ESP                         ; 00460f0d

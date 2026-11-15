@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d34e38
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_send_FUN_0050cd90
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5e0eb4                       ; 0050eba0 | = "CNetGame::sendMyStateChanged - should..."
     MOV dword ptr [0x01d046a0],ESI      ; 0050eba5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0050ebab | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050ebb1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050ebb1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050ebb6
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050ebb9
         ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()

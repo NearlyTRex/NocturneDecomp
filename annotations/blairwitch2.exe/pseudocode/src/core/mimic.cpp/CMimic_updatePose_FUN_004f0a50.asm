@@ -187,7 +187,7 @@ section .text
     LEA EAX,[ESP + 0x1e8]               ; 004f0c06
     PUSH EAX                            ; 004f0c0d
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004f0c0e
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,[0x01cedef4]                ; 004f0c13 | DAT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f0c18
     ADD ESP,0xc                         ; 004f0c1f
@@ -198,7 +198,7 @@ section .text
     LEA EAX,[ESP + 0xf8]                ; 004f0c2a
     PUSH EAX                            ; 004f0c31
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004f0c32
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004f0c37
     LEA EAX,[ESP + 0x1e0]               ; 004f0c3a
     PUSH EAX                            ; 004f0c41
@@ -289,7 +289,7 @@ section .text
     LEA ESI,[ESP + 0x2bc]               ; 004f0dac
     LEA EDI,[ESP + 0x2a4]               ; 004f0db3
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 004f0dba
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 004f0dbf
     LEA ESI,[ESP + 0x2b8]               ; 004f0dc2
     MOV EDX,dword ptr [ESP + 0x2ec]     ; 004f0dc9

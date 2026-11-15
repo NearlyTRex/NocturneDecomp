@@ -18,7 +18,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\core\\inivar.cpp";
     _DAT_01d71de4 = 0x57;
-    core_main_c_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Graphics");

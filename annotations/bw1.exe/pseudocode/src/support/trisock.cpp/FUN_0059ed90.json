@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 74,
     "complexity_score": 169,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -16,6 +16,12 @@
     "total_lines": 103
   },
   "cross_references": [
+    {
+      "addr": "0059e350",
+      "from_addr": "0059eb4b",
+      "name": "support_trisock.cpp_FUN_0059e350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0059ee60",
       "from_addr": "0059ee9a",
@@ -66,8 +72,23 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
+      {
+        "call_addr": "0059eb4b",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059e350",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
       {
         "call_addr": "0059ee9a",
         "call_type": "direct",
@@ -85,7 +106,7 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 3,
+    "estimated_params": 5,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -236,14 +257,14 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 5,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
       "type": "param_count_too_few"
     }
   ]

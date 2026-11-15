@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5c0827                       ; 0049deff | = "CGunFlame::initProcess - too many cha..."
     MOV [0x01d71de0],EAX                ; 0049df04 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0049df09 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0049df0f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049df0f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0049df14
     JMP 0x0049ded7                      ; 0049df17
         ;   XREF to: 0049ded7 (UNCONDITIONAL_JUMP)  ; LAB_0049ded7

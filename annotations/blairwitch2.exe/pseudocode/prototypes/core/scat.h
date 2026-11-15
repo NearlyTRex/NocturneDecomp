@@ -79,7 +79,7 @@ void __cdecl FUN_00520140(CScat *this_ptr,int hand_index);
 
 // Original: core_scat.cpp_FUN_005203c0
 // Address: 005203c0
-void FUN_005203c0(int param_1,float param_2,int param_3);
+void FUN_005203c0(CDemonActor *param_1,float param_2,int param_3);
 
 // Original: core_scat.cpp_FUN_00520a60
 // Address: 00520a60

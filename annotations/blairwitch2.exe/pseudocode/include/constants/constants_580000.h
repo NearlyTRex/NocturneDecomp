@@ -22,8 +22,7 @@ static undefined1* DAT_005818FC = (undefined1*)0x0058260E; // caseD_1
 static undefined1* DAT_00581900 = (undefined1*)0x0058260E; // caseD_1
 static undefined1* DAT_00581904 = (undefined1*)0x0058260E; // caseD_1
 static undefined1* DAT_00581908 = (undefined1*)0x0058260E; // caseD_1
-static undefined1* DAT_00587270 = (undefined1*)0x005873AC; // LAB_005873ac
-static undefined1* DAT_00587274 = (undefined1*)0x0058734E; // LAB_0058734e
-static undefined1* DAT_00587278 = (undefined1*)0x00587377; // LAB_00587377
-static undefined1* DAT_0058727C = (undefined1*)0x00587383; // LAB_00587383
+static undefined1* DAT_00587274 = (undefined1*)0x0058734E; // caseD_1
+static undefined1* DAT_00587278 = (undefined1*)0x00587377; // caseD_2
+static undefined1* DAT_0058727C = (undefined1*)0x00587383; // caseD_3
 

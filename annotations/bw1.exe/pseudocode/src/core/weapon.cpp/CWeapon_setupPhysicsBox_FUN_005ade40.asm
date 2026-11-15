@@ -18,7 +18,7 @@
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
 ;
 ; *****************************************************************************
@@ -92,8 +92,8 @@ section .text
     PUSH EBX                            ; 005adf11
     LEA ESI,[ESP + 0x58]                ; 005adf12
     LEA EDI,[ESP + 0x70]                ; 005adf16
-    CALL core_actor.cpp_FUN_00408b40    ; 005adf1a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005adf1a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005adf1f
     LEA ESI,[ESP + 0x50]                ; 005adf22
     FLD float ptr [ESP + 0x2c]          ; 005adf26

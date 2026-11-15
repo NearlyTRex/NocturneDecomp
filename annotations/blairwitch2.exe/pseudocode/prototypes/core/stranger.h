@@ -45,9 +45,9 @@ void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 // Address: 005656f0
 void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_00565f30
+// Original: core_stranger.cpp_CStranger_getHandsMidpoint_FUN_00565f30
 // Address: 00565f30
-void FUN_00565f30(int param_1);
+CVector3f * __stack_esi CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *out_position);
 
 // Original: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0
 // Address: 00565ff0
@@ -79,7 +79,7 @@ void __cdecl CStranger::updateWeaponPosition(CStranger *this_ptr,int hand_index)
 
 // Original: core_stranger.cpp_FUN_00568500
 // Address: 00568500
-float * FUN_00568500(CCharacter *param_1,CDemonActor *param_2,int param_3);
+float * FUN_00568500(CCharacter *param_1,CDemonActor *param_2,float param_3);
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_00569620
 // Address: 00569620
@@ -123,7 +123,7 @@ void FUN_0056bcc0(void);
 
 // Original: core_stranger.cpp_FUN_0056bd50
 // Address: 0056bd50
-float * FUN_0056bd50(void);
+undefined4 * FUN_0056bd50(void);
 
 // Original: core_stranger.cpp_FUN_0056bf00
 // Address: 0056bf00
@@ -145,9 +145,9 @@ void __cdecl CStranger::updateArmRecoilBlend(CStranger *this_ptr,float delta_tim
 // Address: 0056da40
 CMatrix3x4f * __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_stranger.cpp_FUN_0056da90
+// Original: core_stranger.cpp_CStranger_getThrowDirection_FUN_0056da90
 // Address: 0056da90
-void FUN_0056da90(int param_1);
+CVector3f * __stack_esi CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *out_direction);
 
 // Original: core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50
 // Address: 0056db50

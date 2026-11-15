@@ -52,7 +52,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810
 ;   core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004aa1a0
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0
 ;   shape_edittool.cpp_FUN_0047cee0
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5c17e2                       ; 004ac981 | = "Invalid field notes file version: %d,..."
     MOV dword ptr [0x01d71de0],EDI      ; 004ac986 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ac98c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ac991
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ac991
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004ac996
     MOV ECX,0x40                        ; 004ac999
         ;   Label: LAB_004ac999
@@ -357,8 +357,8 @@ section .text
     MOV EDI,0x5c18c8                    ; 004acc92 | = "..\\core\\fldnotes.cpp"
     PUSH 0x5c18dd                       ; 004acc97 | = "CFieldNotes::loadState - No such map ..."
     MOV dword ptr [0x01d71de0],EDI      ; 004acc9c | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 004acca2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004acca2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004acca7
     CMP dword ptr [EBX + 0x140],0x6     ; 004accaa
         ;   Label: LAB_004accaa
@@ -372,8 +372,8 @@ section .text
     PUSH 0x5c191c                       ; 004accc9 | = "CFieldNotes::loadState - Entry '%s' i..."
     MOV dword ptr [0x01d71de0],ESI      ; 004accce | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004accd4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004accda
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004accda
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004accdf
     IMUL EDI,dword ptr [EBX + 0x158],0x126c ; 004acce2
         ;   Label: LAB_004acce2
@@ -390,8 +390,8 @@ section .text
     PUSH 0x5c196b                       ; 004acd17 | = "CFieldNotes::loadState - Map '%s' has..."
     MOV dword ptr [0x01d71de0],EBX      ; 004acd1c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004acd22 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004acd28
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004acd28
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004acd2d
     PUSH 0x5c199e                       ; 004acd30 | = "%*[^\n]\n"
         ;   Label: LAB_004acd30

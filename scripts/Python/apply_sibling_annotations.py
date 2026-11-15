@@ -80,6 +80,11 @@ def needs_custom_storage(conv, spec):
     """Would this prototype have to be placed by hand rather than by rule?"""
     if conv and conv.startswith(FPU_CONV_PREFIX):
         return True
+    # The source says so itself where its export records it. A register a
+    # convention places by rule (`__stack3_esi`'s output pointer in ESI) shows
+    # as register storage too, without the function having custom storage.
+    if "custom_storage" in (spec or {}):
+        return bool(spec["custom_storage"])
     for p in (spec or {}).get("params") or []:
         # A source parameter pinned to a register was pinned deliberately,
         # because allocating it from the convention was wrong.
@@ -166,6 +171,21 @@ def signature_supported(shape, sig_verdict, confidence, min_confidence):
     return (sig_verdict == "unverifiable"
             and shape in PROVEN_SHAPES
             and confidence >= min_confidence)
+
+
+def signature_evidence(p, pairing_ok, min_confidence, trust_measured=False, trust_structural=False):
+    """Is the source's prototype supported for this pair, by any admissible proof?
+
+    `pairing_ok` is whether the pairing passes the name gate. The one gate every
+    tool that carries a prototype across uses, so they cannot drift apart.
+    """
+    shape = p.get("shape_agreement", "unshaped")
+    verdict = p.get("sig_verdict", "unverifiable")
+    return bool(not p.get("ambiguous")
+                and (measured_despite_shape(shape, verdict, pairing_ok, trust_measured)
+                     or structural_supported(verdict, p.get("sig_structural"), pairing_ok,
+                                             trust_structural)
+                     or signature_supported(shape, verdict, p["confidence"], min_confidence)))
 
 
 def target_name(nocedit_name, nocturne_name, nocturne_addr):
@@ -289,15 +309,13 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         # gate below decides -- including the confidence test that the name
         # gate rejects on.
         pairing_ok = ledger_ok or p["confidence"] >= min_confidence
+        # A measurement that outweighs a weak shape also lets the name past it, below.
         measured = (measured_despite_shape(row["shape"], row["sig_verdict"], pairing_ok,
                                            trust_measured)
                     or structural_supported(row["sig_verdict"], p.get("sig_structural"),
                                             pairing_ok, trust_structural))
-        sig_ok = (want_signatures
-                  and not p.get("ambiguous")
-                  and (measured
-                       or signature_supported(row["shape"], row["sig_verdict"],
-                                              p["confidence"], min_confidence)))
+        sig_ok = want_signatures and signature_evidence(p, pairing_ok, min_confidence,
+                                                        trust_measured, trust_structural)
 
         if b in interior:
             row["action"] = "SKIP_CRT"
@@ -319,6 +337,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["action"] = ("NAME_SIG"
                              if (refresh_signatures and sig_ok)
                              else "ALREADY")
+            row["refresh"] = row["action"] == "NAME_SIG"
         elif cur_core is not None and not class_only_upgrade:
             # A core already present is either hand-written or from an earlier
             # transfer; either way it is not this run's to overwrite.
@@ -516,6 +535,69 @@ def make_readable(func):
     return signature_readable(func)
 
 
+def _undefined(data_type):
+    return data_type is None or str(data_type.getName()).startswith("undefined")
+
+
+def prototype_typed(func):
+    """Does the function declare parameters, every one typed, and a typed return?"""
+    params = list(func.getParameters())
+    return bool(params) and not _undefined(func.getReturnType()) \
+        and not any(_undefined(p.getDataType()) for p in params)
+
+
+def _type_text(text):
+    return (text or "").replace(" ", "")
+
+
+def prototype_matches(func, conv, spec):
+    """Does the function already carry this convention, return and parameter types?"""
+    if not spec or (conv and func.getCallingConventionName() != conv):
+        return False
+    params = list(func.getParameters())
+    want = spec.get("params") or []
+    ret = func.getReturnType()
+    return (len(params) == len(want)
+            and ret is not None and _type_text(ret.getName()) == _type_text(spec.get("ret"))
+            and all(_type_text(p.getDataType().getName()) == _type_text(w.get("type"))
+                    for p, w in zip(params, want)))
+
+
+def keep_typed_prototypes(rows, funcs, rewritten):
+    """Turn back to ALREADY the prototype rows with nothing to add or that would overwrite a typed prototype.
+
+    These are the refreshes and the SIG_ONLY rows, which carry a prototype on
+    every run. One already in place is no work, and counting it hides what a
+    run changes; a SIG_ONLY row turned back is marked `withheld`, since its
+    name was never the source's to give. A target whose
+    parameters and return are all typed already has one, often a deliberate
+    divergence from the source (its own stream class where the source has
+    _ostream*), and one whose parameter count differs from the source's has
+    changed shape between the builds. Neither is the source's to overwrite.
+    A measured rewrite (`rewritten`, the sig_rewrite sources) is the exception:
+    it corrects exactly the prototype the source got wrong for this target.
+    """
+    def keep(r, detail):
+        r["withheld"] = r["action"] == "SIG_ONLY"
+        r["action"] = "ALREADY"
+        r["detail"] = detail
+
+    for r in rows:
+        if not (r.get("refresh") or r["action"] == "SIG_ONLY") or r["b"] not in funcs:
+            continue
+        func = funcs[r["b"]]
+        if prototype_matches(func, r.get("conv"), r.get("sig")):
+            keep(r, "prototype already matches")
+            continue
+        params = list(func.getParameters())
+        if r["a"] in rewritten or not params:
+            continue
+        typed = prototype_typed(func)
+        reshaped = len((r.get("sig") or {}).get("params") or []) != len(params)
+        if typed or reshaped:
+            keep(r, "prototype already typed" if typed else "parameter count differs from the source's")
+
+
 def defer_unbuildable_receivers(rows, funcs, dtm, cache):
     """Plan as SKIP_NO_RECEIVER the names apply_row would refuse.
 
@@ -653,7 +735,9 @@ def main(argv=None):
                          "read) carry the prototype, for pairs that pass the name gate")
     ap.add_argument("--refresh-signatures", action="store_true",
                     help="also (re)apply signatures to already-named functions, "
-                         "for prototypes blocked earlier by a missing type")
+                         "for prototypes blocked earlier by a missing type; a typed "
+                         "or reshaped target prototype is kept unless verify measured "
+                         "a rewrite for it")
     ap.add_argument("--ignore-tu", action="store_true",
                     help="do not block on nocturne/nocedit translation-unit disagreement")
     ap.add_argument("--ledger",
@@ -710,7 +794,10 @@ def main(argv=None):
                 continue
             params = (p.get("sig_rewrite") or {}).get("params") \
                 or (rec.get("vars") or {}).get("params") or []
-            sig_by_a[p["a"]] = {"ret": rec.get("ret"), "params": params}
+            sig_by_a[p["a"]] = {"ret": rec.get("ret"), "params": params,
+                                # A rewrite's convention places its storage by rule.
+                                "custom_storage": bool(rec.get("custom_storage"))
+                                and not p.get("sig_rewrite")}
         print("Loaded prototypes for %d source functions" % len(sig_by_a))
 
     import pyghidra
@@ -757,6 +844,7 @@ def main(argv=None):
             for r in missing:
                 r["action"] = "SKIP_NAMED"
                 r["detail"] = "no function at this address in the program"
+            keep_typed_prototypes(rows, funcs, {p["a"] for p in mapping["pairs"] if p.get("sig_rewrite")})
             defer_unbuildable_receivers(rows, funcs, program.getDataTypeManager(), {})
 
             counts = Counter(r["action"] for r in rows)
@@ -778,7 +866,7 @@ def main(argv=None):
                     extra = ("  <- %s" % r["detail"]) if r["detail"] else ""
                     # SIG_ONLY keeps nocturne's name, so showing the name it
                     # declined to apply would read as though it had applied it.
-                    shown = (r["current"] if action == "SIG_ONLY" else r["want"])
+                    shown = (r["current"] if action == "SIG_ONLY" or r.get("withheld") else r["want"])
                     lines.append("  %s <- %s  %.2f  %-14s %s%s"
                                  % (r["b"], r["a"], r["confidence"], r["shape"],
                                     shown, extra))

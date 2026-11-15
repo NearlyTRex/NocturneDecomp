@@ -39,7 +39,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     if (this_ptr->lod_info[lod_index].shadow_only_flag != 0) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x64d;
-      core_main_c_FUN_004e4330("CDeformableModel::dismember - can't dismember shadow LOD.");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
     iVar8 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_30 = *(int *)(iVar8 + 0x54);
@@ -58,7 +58,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     if (4000 < this_ptr->vertex_count[lod_index]) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x662;
-      core_main_c_FUN_004e4330("CDeformableModel::dismember - too many vertices!");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::dismember - too many vertices!");
     }
     memset((void *)0x270f9bc,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
@@ -132,7 +132,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     if (iVar3 != body_part_ptr->vertex_count) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x698;
-      core_main_c_FUN_004e4330("CDeformableModel::dismember - Hell froze 1!");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
       local_20 = local_2c * 0x12;
@@ -205,7 +205,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformab
     if (local_14 != body_part_ptr->tri_count) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x6cf;
-      core_main_c_FUN_004e4330("CDeformableModel::dismember - Hell froze 2!");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::dismember - Hell froze 2!");
       return;
     }
   }

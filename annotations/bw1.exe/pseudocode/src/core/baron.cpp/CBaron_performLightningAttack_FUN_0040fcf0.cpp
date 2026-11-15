@@ -17,39 +17,39 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
   int iVar2;
   byte bVar3;
   float afStackY_10d4 [36];
-  CMatrix3x4f *apCStackY_1044 [929];
+  CMatrix3x4f *apCStackY_1044 [9];
+  float afStackY_1020 [920];
   CFireEffect *this_ptr_01;
   CVector3f *start_position_00;
-  CVector3f *end_position;
+  CVector3f *pCVar4;
   float end_width;
-  uint *puVar4;
   float end_spread;
   CVector3f local_1a0 [10];
   SDamageInfo local_128;
-  uint uStack_ec;
-  float afStack_e8 [5];
+  CVector3f CStack_ec;
+  CVector3f CStack_e0;
   float fStack_d4;
-  uint uStack_d0;
-  uint uStack_cc;
-  uint uStack_c8;
+  float afStack_d0 [2];
+  CVector3f CStack_c8;
   CVector3f CStack_bc;
   CVector3f CStack_b0;
-  uint local_a4;
-  float afStack_a0 [2];
+  CVector3f local_a4;
   CVector3f CStack_98;
-  uint uStack_8c;
-  float afStack_88 [5];
-  float fStack_74;
+  CVector3f CStack_8c;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
   float fStack_68;
-  uint uStack_64;
+  float fStack_64;
   uint uStack_60;
-  uint local_5c;
+  float local_5c;
   CMatrix3x4f *local_58 [2];
   CVector3f CStack_50;
-  uint local_44;
-  CMatrix3x4f *local_40 [5];
-  uint uStack_2c;
-  uint uStack_20;
+  float local_44;
+  CMatrix3x4f *local_40 [2];
+  float local_38;
+  float afStack_34 [2];
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
   float local_14;
   int iStack_10;
   CMatrix3x4f *local_c;
@@ -59,16 +59,17 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
   if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }
-  core_actor_cpp_FUN_00408bb0(this_ptr,&(this_ptr_00->base).base.location);
-  local_44 = local_a4;
-  local_40[(uint)bVar3 * -2] = (CMatrix3x4f *)afStack_a0[(uint)bVar3 * -2];
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+            ((CDemonActor *)this_ptr,&(this_ptr_00->base).base.location.position,&local_a4);
+  local_44 = local_a4.x;
+  local_40[(uint)bVar3 * -2] = *(CMatrix3x4f **)((int)&local_a4 + (uint)bVar3 * -8 + 4);
   local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       (CMatrix3x4f *)afStack_a0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+       *(CMatrix3x4f **)((int)&local_a4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_44);
-  local_5c = local_40[2];
-  local_58[(uint)bVar3 * -2] = local_40[(uint)bVar3 * -2 + 3];
+  local_5c = local_38;
+  local_58[(uint)bVar3 * -2] = (CMatrix3x4f *)afStack_34[(uint)bVar3 * -2];
   local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+       (CMatrix3x4f *)afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   if (&local_44 != &local_5c) {
     local_44 = local_5c;
     local_40[0] = local_58[0];
@@ -88,58 +89,69 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_0040fcf0(CBaron *t
                       ((CDemonActor *)this_ptr_00,local_1a0);
     iStack_10 = iVar1;
     iVar2 = rand();
-    core_actor_cpp_FUN_00408b40(this_ptr_00,local_1a0 + iVar2 % iVar1);
-    CStack_bc.x = afStack_88[2];
-    afStack_e8[(uint)bVar3 * -2 + 0xc] = afStack_88[(uint)bVar3 * -2 + 3];
-    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =
-         afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-    if (&CStack_50 != (CVector3f *)(afStack_e8 + 0xb)) {
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr_00,local_1a0 + iVar2 % iVar1,&CStack_80);
+    CStack_bc.x = CStack_80.x;
+    *(uint *)((int)&CStack_bc + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_80 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_80 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    if (&CStack_50 != &CStack_bc) {
       CStack_50.x = CStack_bc.x;
       CStack_50.y = CStack_bc.y;
       CStack_50.z = CStack_bc.z;
     }
     iVar1 = rand();
-    core_actor_cpp_FUN_00408b40(this_ptr_00,local_1a0 + iVar1 % iStack_10);
-    fStack_d4 = (float)uStack_20;
-    afStack_e8[(uint)bVar3 * -2 + 6] = (float)local_40[(uint)bVar3 * -2 + 9];
-    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
-         (float)local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
-    if (afStack_88 + 8 != afStack_e8 + 5) {
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr_00,local_1a0 + iVar1 % iStack_10,&CStack_20);
+    fStack_d4 = CStack_20.x;
+    afStack_d0[(uint)bVar3 * -2] = *(float *)((int)&CStack_20 + (uint)bVar3 * -8 + 4);
+    afStack_d0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         *(float *)((int)&CStack_20 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    if (&fStack_68 != &fStack_d4) {
       fStack_68 = fStack_d4;
-      uStack_64 = uStack_d0;
-      uStack_60 = uStack_cc;
+      fStack_64 = afStack_d0[0];
+      uStack_60 = afStack_d0[1];
     }
     local_c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
-    core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc);
-    puVar4 = &uStack_ec;
-    uStack_ec = uStack_2c;
-    afStack_e8[(uint)bVar3 * -2] = (float)local_40[(uint)bVar3 * -2 + 6];
-    afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-         (float)local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar4);
-    CStack_b0.x = fStack_74;
-    *(float *)((int)&CStack_b0 + (uint)bVar3 * -8 + 4) = afStack_88[(uint)bVar3 * -2 + 6];
-    *(float *)((int)&CStack_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
-    core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0);
-    puVar4 = &uStack_8c;
-    uStack_8c = uStack_c8;
-    afStack_88[(uint)bVar3 * -2] = afStack_e8[(uint)bVar3 * -2 + 9];
-    afStack_88[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-         afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar4);
+    core_xform_cpp_transformVector3x4_FUN_005b5080
+              ((CVector3f *)&DAT_02c8af28,local_c + DAT_007c34cc,&CStack_2c);
+    pCVar4 = &CStack_ec;
+    CStack_ec.x = CStack_2c.x;
+    *(uint *)((int)&CStack_ec + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_2c + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_2c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,pCVar4,&CStack_74);
+    CStack_b0.x = CStack_74.x;
+    *(uint *)((int)&CStack_b0 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_74 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_xform_cpp_transformVector3x4_FUN_005b5080
+              ((CVector3f *)&DAT_02c8af28,local_c + DAT_007c34d0,&CStack_c8);
+    pCVar4 = &CStack_8c;
+    CStack_8c.x = CStack_c8.x;
+    *(uint *)((int)&CStack_8c + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_c8 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_c8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,pCVar4,&CStack_e0);
     end_spread = 4.0;
     end_width = 0.5;
     iVar1 = 1;
-    end_position = &CStack_50;
+    pCVar4 = &CStack_50;
     start_position_00 = &CStack_b0;
-    CStack_98.x = afStack_e8[2];
-    *(float *)((int)&CStack_98 + (uint)bVar3 * -8 + 4) = afStack_e8[(uint)bVar3 * -2 + 3];
+    CStack_98.x = CStack_e0.x;
+    *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + 4);
     this_ptr_01 = 0x01C57074;
-    *(float *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         afStack_e8[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+    *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004b7060
-              (this_ptr_01,start_position_00,end_position,iVar1,end_width,end_spread);
+              (this_ptr_01,start_position_00,pCVar4,iVar1,end_width,end_spread);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004b7060
               (0x01C57074,&CStack_98,&CStack_50,1,0.5,4.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)

@@ -227,7 +227,7 @@ section .text
     FADD double ptr [0x005dd1fd]        ; 004ed404 | DAT_005dd1fd
     ADD ESP,0x4                         ; 004ed40a
     CALL crt_math.c_round_FUN_005b7ff0  ; 004ed40d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xa4c]       ; 004ed412
     MOV EAX,dword ptr [ESP + 0xa4c]     ; 004ed419
     PUSH EAX                            ; 004ed420
@@ -332,7 +332,7 @@ section .text
     FADD double ptr [0x005dd1fd]        ; 004ed50a | DAT_005dd1fd
     ADD ESP,0x4                         ; 004ed510
     CALL crt_math.c_round_FUN_005b7ff0  ; 004ed513
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xa4c]       ; 004ed518
     MOV EDX,dword ptr [ESP + 0xa4c]     ; 004ed51f
     PUSH EDX                            ; 004ed526
@@ -436,7 +436,7 @@ section .text
     FADD double ptr [0x005dd1fd]        ; 004ed60e | DAT_005dd1fd
     ADD ESP,0x4                         ; 004ed614
     CALL crt_math.c_round_FUN_005b7ff0  ; 004ed617
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xa4c]       ; 004ed61c
     MOV ECX,dword ptr [ESP + 0xa4c]     ; 004ed623
     PUSH ECX                            ; 004ed62a
@@ -833,7 +833,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004ed9e2
     FLD double ptr [0x005dd205]         ; 004ed9e6 | DAT_005dd205
     CALL crt_math.c_pow_FUN_005b9484    ; 004ed9ec
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
     XOR ESI,ESI                         ; 004ed9f1
     FSTP double ptr [ESP]               ; 004ed9f3
     TEST EBX,EBX                        ; 004ed9f6
@@ -878,7 +878,7 @@ section .text
     FSUBP                               ; 004eda80
     MOV EDX,EAX                         ; 004eda82
     CALL crt_math.c_round_FUN_005b7ff0  ; 004eda84
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xa4c]       ; 004eda89
     SUB EDX,dword ptr [ESP + 0xa4c]     ; 004eda90
     INC EDX                             ; 004eda97

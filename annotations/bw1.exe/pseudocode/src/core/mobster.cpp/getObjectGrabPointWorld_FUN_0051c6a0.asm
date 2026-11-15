@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_getObjectGrabPointWorld_FUN_0051c6a0(int param_1)
+; CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointWorld_FUN_0051c6a0(CDemonActor *actor,CVector3f *out)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e9c4a
 ;   undefined4 DAT_005e9c52
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040cfe0
-;   core_actor.cpp_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -95,8 +97,8 @@ section .text
     PUSH ECX                            ; 0051c778
     LEA ESI,[ESP + 0x5c]                ; 0051c779
     MOV EDI,EBX                         ; 0051c77d
-    CALL core_actor.cpp_FUN_00408b40    ; 0051c77f
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0051c77f
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 0051c784
     ADD ESP,0x8                         ; 0051c788
     MOVSD ES:EDI,ESI                    ; 0051c78b

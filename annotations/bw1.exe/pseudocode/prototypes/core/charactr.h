@@ -163,7 +163,7 @@ void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_00430a90
 // Address: 00430a90
-void FUN_00430a90(int param_1,int param_2,int param_3,float param_4);
+void FUN_00430a90(CDemonActor *param_1,int param_2,int param_3,float param_4);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 // Address: 00430b60
@@ -171,7 +171,7 @@ void __cdecl CCharacter::spawnBloodAtBone(CCharacter *this_ptr,int part_index,in
 
 // Original: core_charactr.cpp_CCharacter_getBoundingBox_FUN_00430c10
 // Address: 00430c10
-CBoundingBox3D * __cdecl CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_charactr.cpp_CCharacter_shatter_FUN_00430c40
 // Address: 00430c40

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
@@ -20,12 +19,13 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
-  float10 fVar7;
-  uint auStackY_101c [1001];
-  uint auStack_64 [6];
-  uint auStack_4c [6];
+  double dVar7;
+  float afStackY_101c [1000];
   float fStack_34;
-  float afStack_30 [4];
+  float fStack_30;
+  float fStack_2c;
+  float fStack_28;
+  float fStack_24;
   float fStack_20;
   float fStack_1c;
   float fStack_18;
@@ -38,15 +38,14 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
   iVar3 = *(int *)(iVar2 + 0x1d5ba04);
   if (iVar3 != 0) {
     fStack_34 = (param_1->base).location.position.x - *(float *)(iVar3 + 0x20);
-    afStack_30[0] = (param_1->base).location.position.y - *(float *)(iVar3 + 0x24);
-    afStack_30[1] = (param_1->base).location.position.z - *(float *)(iVar3 + 0x28);
-    afStack_30[2] = fStack_34;
-    afStack_30[(uint)bVar6 * 0xfffffffe + 3] =
-         (float)*(uint *)((int)afStack_30 + (uint)bVar6 * 0xfffffff8);
-    afStack_30[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 4] =
-         afStack_30[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 1];
-    fStack_14 = fStack_20 * fStack_20 +
-                afStack_30[2] * afStack_30[2] + afStack_30[3] * afStack_30[3];
+    fStack_30 = (param_1->base).location.position.y - *(float *)(iVar3 + 0x24);
+    fStack_2c = (param_1->base).location.position.z - *(float *)(iVar3 + 0x28);
+    fStack_28 = fStack_34;
+    *(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8) =
+         *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8);
+    *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+         *(uint *)((int)&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    fStack_14 = fStack_20 * fStack_20 + fStack_28 * fStack_28 + fStack_24 * fStack_24;
     param_1->was_rendered_opaque = 0;
     fStack_1c = (float)(((int)fStack_14 >> 1) + iVar1);
     fStack_18 = *(float *)(*(int *)(iVar2 + 0x1d5ba04) + 0x20b88);
@@ -54,22 +53,21 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
       param_1[1].model.bone_origins[0x1d].x = 0.0;
     }
     else {
-      fVar7 = (((float10)fStack_18 - (float10)fStack_1c) / (float10)fStack_18) *
-              (float10)_DAT_005d1366;
-      round();
-      param_1[1].model.bone_origins[0x1d].x = (float)(int)ROUND(fVar7);
+      dVar7 = round
+                        ((double)(((fStack_18 - fStack_1c) / fStack_18) * (float)_DAT_005d1366));
+      param_1[1].model.bone_origins[0x1d].x = (float)(int)ROUND(dVar7);
     }
     if (*(int *)(param_1[1].base.actor_name + 4) == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&param_1->base);
       (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,(CBoundingBox3D *)0x0);
-      puVar4 = auStack_4c;
-      puVar5 = auStack_64;
+      puVar4 = (uint *)&stack0xffffffb0;
+      puVar5 = (uint *)&stack0xffffff98;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar5 = *puVar4;
         puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
         puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      iVar3 = core_box_cpp_FUN_0041daf0(auStack_64);
+      iVar3 = core_box_cpp_FUN_0041daf0(&stack0xffffff98);
       this_ptr = DAT_005f2afc;
       if (iVar3 != 0) {
         render_alpha = param_1[1].model.bone_origins[0x1d].x;

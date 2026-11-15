@@ -24,7 +24,7 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0(CCharac
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     _DAT_01d1d400 = "..\\core\\charactr.cpp";
     _DAT_01d1d404 = 0x1124;
-    core_main_c_FUN_005030e0("CCharacter::advanceLayerAction - invalid layerActionIndex");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
   pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index;
   if (this_ptr->layer_action_t < 0.0) {

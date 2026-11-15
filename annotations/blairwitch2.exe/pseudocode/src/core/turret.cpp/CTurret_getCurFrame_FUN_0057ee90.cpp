@@ -37,7 +37,7 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_0057ee90(CTurret *this_ptr
   default:
     _DAT_01d046a0 = "..\\core\\turret.cpp";
     _DAT_01d046a4 = 0x1c1;
-    core_main_c_FUN_004e4500("CTurret::getCurFrame - invalid state");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CTurret::getCurFrame - invalid state");
   }
   if (local_18 < 0.0) {
     local_14 = 0.0;

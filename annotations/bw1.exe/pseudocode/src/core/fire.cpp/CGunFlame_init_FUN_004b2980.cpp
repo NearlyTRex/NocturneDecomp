@@ -20,8 +20,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004b2980(CGunFlame *this_ptr)
   byte bVar5;
   float afStackY_1038 [1012];
   CVector3f local_50;
-  float local_44;
-  uint auStack_40 [7];
+  CVector3f local_44 [2];
   int local_24;
   int local_20;
   int local_1c;
@@ -40,11 +39,13 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004b2980(CGunFlame *this_ptr)
          fVar2 = (this_ptr_00->base).location.position.z - local_18->z,
          fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= _DAT_005df4d4)) {
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(&this_ptr_00->model);
-        core_actor_cpp_FUN_00408bb0(this_ptr_00,local_18);
-        local_50.x = local_44;
-        *(uint *)((int)&local_50 + (uint)bVar5 * -8 + 4) = auStack_40[(uint)bVar5 * -2];
-        *(uint *)((int)&local_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-             auStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                  (&this_ptr_00->base,local_18,local_44);
+        local_50.x = local_44[0].x;
+        *(uint *)((int)local_44 + (uint)bVar5 * -8 + -8) =
+             *(uint *)((int)local_44 + (uint)bVar5 * -8 + 4);
+        *(uint *)((int)local_44 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -4) =
+             *(uint *)((int)local_44 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
         core_charactr_cpp_CCharacter_igniteBone_FUN_004308a0
                   (this_ptr_00,&local_50,0,0,1.0,(uint)(this_ptr->flame_type == 2));
       }

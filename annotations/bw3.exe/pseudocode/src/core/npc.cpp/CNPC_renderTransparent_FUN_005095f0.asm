@@ -80,7 +80,7 @@ section .text
     FSUBRP                              ; 00509659
     FMUL double ptr [0x005cb5d8]        ; 0050965b | DAT_005cb5d8
     CALL crt_math.c_round_FUN_005a3120  ; 00509661
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
         ;   Label: LAB_00509661
     FISTP dword ptr [EBX + 0x206b4]     ; 00509666
     MOV ESI,dword ptr [EBX + 0x2f08]    ; 0050966c

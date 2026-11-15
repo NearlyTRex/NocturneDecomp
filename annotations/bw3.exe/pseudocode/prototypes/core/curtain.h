@@ -59,7 +59,7 @@ ECollisionType __cdecl CCurtain::getCollisionType(CCurtain *this_ptr,SCollisionI
 
 // Original: core_curtain.cpp_CCurtain_getBoundingBox_FUN_004483a0
 // Address: 004483a0
-CBoundingBox3D * __cdecl CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_curtain.cpp_CCurtain_archive_FUN_00448420
 // Address: 00448420

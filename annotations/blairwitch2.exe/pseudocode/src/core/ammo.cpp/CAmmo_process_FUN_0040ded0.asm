@@ -14,9 +14,9 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     PUSH EAX                            ; 0040e03b
     LEA ESI,[EBP + 0x46]                ; 0040e03c
     LEA EDI,[EBP + 0x52]                ; 0040e03f
-    CALL core_xform.cpp_FUN_00591530    ; 0040e042
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0040e042
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x46]                ; 0040e047
     LEA EAX,[EBP + -0xe]                ; 0040e04a
     ADD ESP,0x8                         ; 0040e04d

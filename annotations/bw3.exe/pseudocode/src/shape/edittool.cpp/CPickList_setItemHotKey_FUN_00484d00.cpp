@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(CPickList *
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
     _DAT_01d71de0 = "..\\shape\\edittool.cpp";
     _DAT_01d71de4 = 0x1199;
-    core_main_c_FUN_004e4330("CPickList::setItemHotKey - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CPickList::setItemHotKey - invalid index");
   }
   if (this_ptr->hotkey_capacity <= item_index) {
     if (hotkey_code == -1) {
@@ -28,7 +28,7 @@ void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(CPickList *
     if (piVar1 == (int *)0x0) {
       _DAT_01d71de0 = "..\\shape\\edittool.cpp";
       _DAT_01d71de4 = 0x11a1;
-      core_main_c_FUN_004e4330("Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
     }
     while (this_ptr->hotkey_capacity < (this_ptr->base).item_count) {
       this_ptr->hotkey_array[this_ptr->hotkey_capacity] = -1;

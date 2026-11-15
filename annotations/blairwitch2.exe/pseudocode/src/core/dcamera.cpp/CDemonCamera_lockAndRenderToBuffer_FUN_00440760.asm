@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_special.cpp_beginScene_FUN_0055f590
 ;   engine_special.cpp_FUN_00560120
 ;   engine_special.cpp_FUN_00560140
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5ce5e2                       ; 004407b5 | = "Unable to lock hold buffer.   Please ..."
     MOV dword ptr [0x01d046a0],ECX      ; 004407ba | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 004407c0 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004407c6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004407c6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004407cb
     POP EBX                             ; 004407ce
     JMP 0x00440773                      ; 004407cf

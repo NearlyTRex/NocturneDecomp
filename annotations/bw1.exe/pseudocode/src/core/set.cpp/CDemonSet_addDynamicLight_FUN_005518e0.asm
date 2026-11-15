@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01fe55bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5f095e                       ; 0055193e | = "Too many dynamic lights!"
     MOV dword ptr [0x01d1d400],ECX      ; 00551943 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00551949 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055194f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055194f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00551954
     POP EDI                             ; 00551957
     JMP 0x0055191c                      ; 00551958

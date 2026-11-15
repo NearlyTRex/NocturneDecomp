@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 112,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -137,7 +138,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_1c = *(int *)(param_1 + 0x108);",
@@ -145,7 +146,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_18 = *(int *)(param_1 + 0x10c);",
@@ -153,7 +154,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_20 = *(int *)(param_1 + 0x110);",
@@ -161,7 +162,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 == _DAT_0207bab8) {",
@@ -169,11 +170,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 == _DAT_0207babc) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x532734 assigned to bare local `uStack_28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 28,
+      "match": "0x532734",
+      "severity": "moderate",
+      "text": "uStack_28 = 0x532734;",
+      "type": "raw_address_constant"
     }
   ]
 }

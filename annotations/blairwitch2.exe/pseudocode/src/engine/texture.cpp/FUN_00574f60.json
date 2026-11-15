@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 172,
+    "complexity_score": 173,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 13,
     "suspect_types": [
       "stack_param",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 100
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -31,6 +31,11 @@
   },
   "function_calls": [
     {
+      "addr": "00574490",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00574490"
+    },
+    {
       "addr": "005742b0",
       "is_variadic": false,
       "name": "engine_texture.cpp_FUN_005742b0"
@@ -39,11 +44,6 @@
       "addr": "005743e0",
       "is_variadic": false,
       "name": "engine_texture.cpp_FUN_005743e0"
-    },
-    {
-      "addr": "00574490",
-      "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00574490"
     },
     {
       "addr": "00574520",
@@ -181,15 +181,15 @@
       "line": 15,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(_DAT_02652eb0,*(uint *)(in_stack_00000004 + 4) & 0xffff,in_stack_00000004 + 8",
+      "text": "(_DAT_02652eb0,*(uint *)(in_stack_00000004 + 4) & 0xffff,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(_DAT_02652eb0,*(uint *)(in_stack_00000004 + 4) & 0xffff,in_stack_00000004 + 8",
+      "text": "(char *)(in_stack_00000004 + 8));",
       "type": "stack_param"
     },
     {
@@ -197,7 +197,7 @@
       "line": 19,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(_DAT_02652eb0,in_stack_00000004 + 8,in_stack_00000008,in_stack_0000000c);",
+      "text": "(_DAT_02652eb0,(char *)(in_stack_00000004 + 8),in_stack_00000008,",
       "type": "stack_param"
     },
     {
@@ -205,20 +205,20 @@
       "line": 19,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(_DAT_02652eb0,in_stack_00000004 + 8,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(_DAT_02652eb0,in_stack_00000004 + 8,in_stack_00000008,in_stack_0000000c);",
+      "text": "(_DAT_02652eb0,(char *)(in_stack_00000004 + 8),in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 4) = iVar1;",
@@ -226,7 +226,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 24,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 4) = iVar1;",

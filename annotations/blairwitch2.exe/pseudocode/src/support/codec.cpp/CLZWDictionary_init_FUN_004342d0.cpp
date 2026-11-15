@@ -21,7 +21,7 @@ void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004342d0(CLZWDictionary *
     if (pCVar1 == (CLZWDictionaryNode *)0x0) {
       _DAT_01d046a0 = "..\\support\\codec.cpp";
       _DAT_01d046a4 = 0x342;
-      core_main_c_FUN_004e4500("CLZWDictionary::init - out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CLZWDictionary::init - out of memory");
       this_ptr->num_bits = new_num_bits;
       support_codec_cpp_CLZWDictionary_initTable_FUN_00434350(this_ptr);
       return;

@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_stdio.c_fscanf_FUN_005c04b0
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5edbbd                       ; 0053d63b | = "Can't mount %s: %s"
     MOV dword ptr [0x01d1d400],EDX      ; 0053d640 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0053d646 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053d64c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053d64c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0053d651
     JMP 0x0053d5ee                      ; 0053d654
         ;   XREF to: 0053d5ee (UNCONDITIONAL_JUMP)  ; LAB_0053d5ee
@@ -158,7 +158,7 @@ section .text
     PUSH EDI                            ; 0053d6c1
         ;   Label: LAB_0053d6c1
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0053d6c2
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0053d6c7
     ADD ESP,0x318                       ; 0053d6ca
     POP EBP                             ; 0053d6d0
@@ -174,8 +174,8 @@ section .text
     PUSH EAX                            ; 0053d6ee
     PUSH 0x5edbec                       ; 0053d6ef | = "Can't mount %s: %s"
     MOV dword ptr [0x01d1d400],EBP      ; 0053d6f4 | DAT_01d1d400
-    CALL core_main.c_FUN_005030e0       ; 0053d6fa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053d6fa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0053d6ff
     JMP 0x0053d6b5                      ; 0053d702
         ;   XREF to: 0053d6b5 (UNCONDITIONAL_JUMP)  ; LAB_0053d6b5

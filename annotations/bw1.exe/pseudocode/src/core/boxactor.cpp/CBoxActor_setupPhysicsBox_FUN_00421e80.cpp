@@ -29,14 +29,12 @@ void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor 
   float fStack_54;
   CVector3f CStack_50;
   CVector3f CStack_44;
-  float fStack_38;
-  float afStack_34 [4];
-  float fStack_24;
-  float afStack_20 [3];
+  CVector3f CStack_38;
+  float fStack_2c;
+  float afStack_28 [2];
+  CVector3f CStack_20;
   float fStack_14;
-  float fStack_10;
-  float fStack_c;
-  float fStack_8;
+  float afStack_10 [3];
   
   bVar5 = 0;
   fVar1 = this_ptr->weight_in_pounds;
@@ -51,23 +49,25 @@ void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor 
         puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
-      fStack_8 = fStack_74 + fStack_68;
+      afStack_10[2] = fStack_74 + fStack_68;
       fStack_14 = fStack_74 + fStack_68;
-      afStack_34[(uint)bVar5 * -2 + 9] = *(float *)(&stack0xfffffffc + (uint)bVar5 * -8);
-      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
+      afStack_10[(uint)bVar5 * -2] = *(float *)(&stack0xfffffffc + (uint)bVar5 * -8);
+      afStack_10[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            *(float *)(&stack0x00000000 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      afStack_34[2] = fStack_14 * _DAT_005d4c04;
-      afStack_34[3] = fStack_10 * _DAT_005d4c04;
-      fStack_24 = fStack_c * _DAT_005d4c04;
-      afStack_20[0] = fStack_14 * _DAT_005d4c04;
-      afStack_34[(uint)bVar5 * -2 + 6] = afStack_34[(uint)bVar5 * -2 + 3];
-      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
-           afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-      core_actor_cpp_FUN_00408b40(this_ptr,afStack_34 + 5);
-      CStack_44.x = fStack_38;
-      *(float *)((int)&CStack_44 + (uint)bVar5 * -8 + 4) = afStack_34[(uint)bVar5 * -2];
-      *(float *)((int)&CStack_44 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      fStack_2c = fStack_14 * _DAT_005d4c04;
+      afStack_28[0] = afStack_10[0] * _DAT_005d4c04;
+      afStack_28[1] = afStack_10[1] * _DAT_005d4c04;
+      CStack_20.x = fStack_14 * _DAT_005d4c04;
+      *(float *)((int)&CStack_20 + (uint)bVar5 * -8 + 4) = afStack_28[(uint)bVar5 * -2];
+      *(float *)((int)&CStack_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           afStack_28[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                (&this_ptr->base,&CStack_20,&CStack_38);
+      CStack_44.x = CStack_38.x;
+      *(uint *)((int)&CStack_44 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_38 + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_44 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           *(uint *)((int)&CStack_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       fStack_5c = fStack_68 - fStack_74;
       fStack_58 = fStack_64 - fStack_70;
       fStack_54 = fStack_60 - fStack_6c;

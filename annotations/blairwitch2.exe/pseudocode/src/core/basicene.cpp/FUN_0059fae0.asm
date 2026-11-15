@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059db70
-;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_getTranslation_FUN_00592720
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 0059fb28
     LEA EDI,[EBP + -0xc]                ; 0059fb29
     LEA EBX,[EBP + -0x24]               ; 0059fb2c
-    CALL core_xform.cpp_FUN_00592720    ; 0059fb2f
-        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00592720()
+    CALL core_xform.cpp_getTranslation_FUN_00592720 ; 0059fb2f
+        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_00592720(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[EBP + -0x18]               ; 0059fb34
     FLD1                                ; 0059fb37
     LEA EAX,[EBP + -0xc]                ; 0059fb39

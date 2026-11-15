@@ -74,6 +74,7 @@
 #include "types/funcdefs/APIDLL_updateTextureBGRA.h"
 #include "types/structs/SDirectSoundDeviceInfo.h"
 #include "types/structs/SRecordingDeviceInfo.h"
+#include "types/structs/SReverbSettings.h"
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/STrainNoise.h"
 
@@ -289,10 +290,8 @@ extern CVector3d g_Cached3DListenerOrientUp;
 extern CVector3d g_Cached3DListenerOrientRight;
 
 // CVector3f
-extern CVector3f g_DeferredOrientRight;
 extern CVector3f g_SoundListenerPrev;
 extern CVector3f CVector3f_03f6af7c;
-extern CVector3f g_SoundListenerOrient;
 extern CVector3f g_TrainVelocityVector;
 extern CVector3f CVector3f_03f6ba9c;
 extern CVector3f CVector3f_03f6bab0;
@@ -369,6 +368,10 @@ extern SDirectSoundDeviceInfo g_DirectSoundDevices[8];
 
 // SRecordingDeviceInfo[8]
 extern SRecordingDeviceInfo g_RecordingDevices[8];
+
+// SReverbSettings
+extern SReverbSettings g_CachedReverb;
+extern SReverbSettings g_SoundReverb;
 
 // SSoundDeviceInfo[8]
 extern SSoundDeviceInfo g_SoundDevices[8];

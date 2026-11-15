@@ -24,9 +24,9 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_muzzle.cpp_FUN_0059daa0
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
@@ -382,8 +382,8 @@ section .text
     PUSH EAX                            ; 005ab667
     MOV dword ptr [EBP + -0x3e],EDI     ; 005ab668
     LEA EDI,[EBP + 0x3e]                ; 005ab66b
-    CALL core_xform.cpp_FUN_00591530    ; 005ab66e
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005ab66e
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0xe]                 ; 005ab673
     MOVSD ES:EDI,ESI                    ; 005ab676
     MOVSD ES:EDI,ESI                    ; 005ab677

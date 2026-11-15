@@ -55,7 +55,7 @@ int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(CBitFont *this_
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004b3150(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
 void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004b31b0(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004b31c0(CBitFont *this_ptr);
-int engine_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+int engine_font_cpp_FUN_004b33d0(byte *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5);
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004b3780(int red,int green,int blue);
 undefined4 engine_font_cpp_FUN_004b37d0(void);
 int * engine_font_cpp_FUN_004b3920(void);

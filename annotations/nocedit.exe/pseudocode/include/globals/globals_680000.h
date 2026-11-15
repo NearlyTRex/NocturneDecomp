@@ -35,7 +35,7 @@
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRenderVertex.h"
-#include "types/structs/SSoundModeEntry.h"
+#include "types/structs/SReverbPreset.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x680000
@@ -209,8 +209,8 @@ extern SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr;
 // SRenderVertex[20000]
 extern SRenderVertex g_RenderVertexBuffer[20000];
 
-// SSoundModeEntry[27]
-extern SSoundModeEntry g_SoundModeTable[27];
+// SReverbPreset[27]
+extern SReverbPreset g_ReverbPresetTable[27];
 
 // TerminatedCString
 extern TerminatedCString s_EST_006850bc;

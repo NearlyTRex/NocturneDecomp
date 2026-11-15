@@ -16,9 +16,10 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
   int iVar3;
   byte bVar4;
   float afStackY_102c [1015];
-  uint uStack_44;
-  uint uStack_38;
-  float fStack_30;
+  CVector3f CStack_44;
+  float fStack_38;
+  float afStack_34 [2];
+  CVector3f CStack_2c;
   CMotionController *pCStack_18;
   float fStack_14;
   
@@ -29,7 +30,8 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
     core_shadow_cpp_FUN_0053df40(this_ptr);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(15.0,30.0);
     param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;
-    core_actor_cpp_FUN_00408d70(this_ptr,&param_2->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr,&param_2->impact_direction,&CStack_2c);
   }
   pCStack_18 = &(this_ptr->base).base.model.base;
   fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
@@ -39,13 +41,14 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_pt
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(pCStack_18);
     iVar3 = pSVar2->state_index;
     if ((((iVar3 != 0xf) && (iVar3 != 0xd)) && (iVar3 != 0x10)) && (iVar3 != 0xe)) {
-      core_actor_cpp_FUN_00408de0(this_ptr,*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x20);
-      uStack_38 = uStack_44;
-      *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffc0 + (uint)bVar4 * -8);
-      *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      if (0.0 < fStack_30) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                ((CDemonActor *)this_ptr,
+                 (CVector3f *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x20),&CStack_44);
+      fStack_38 = CStack_44.x;
+      afStack_34[(uint)bVar4 * -2] = *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4);
+      afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+           *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      if (0.0 < afStack_34[1]) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,0xd,1);
         core_shadow_cpp_FUN_0053e040(this_ptr);
       }

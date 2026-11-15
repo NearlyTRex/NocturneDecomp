@@ -21,7 +21,7 @@ CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004c5e10(void)
     if (g_CDemonSetPtr->actor_count <= iVar2) {
       _DAT_01d1d400 = "..\\core\\frankgen.cpp";
       _DAT_01d1d404 = 0x1cf;
-      core_main_c_FUN_005030e0("CFrankenstienMachine::findLeader - no leader found!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CFrankenstienMachine::findLeader - no leader found!");
       return (CDemonActor *)0x0;
     }
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600

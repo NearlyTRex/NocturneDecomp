@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d715a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_0052f100
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_string.c__strncpy_FUN_005c20d0
@@ -145,8 +145,8 @@ section .text
     PUSH 0x5ebe8c                       ; 0052ed19
     MOV dword ptr [0x01d1d400],ECX      ; 0052ed1e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0052ed24 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052ed2a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052ed2a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052ed2f
     JMP 0x0052ebef                      ; 0052ed32
         ;   XREF to: 0052ebef (UNCONDITIONAL_JUMP)  ; LAB_0052ebef

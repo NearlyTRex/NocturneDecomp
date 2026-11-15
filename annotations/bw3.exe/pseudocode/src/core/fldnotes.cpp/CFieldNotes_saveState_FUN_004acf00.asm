@@ -41,7 +41,7 @@
 ;   ... and 31 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_unknown.c_FUN_005a3140
 ;
 ; *****************************************************************************
@@ -186,8 +186,8 @@ section .text
     PUSH 0x5c1ad2                       ; 004ad064 | = "Hell froze"
     MOV dword ptr [0x01d71de0],ESI      ; 004ad069 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004ad06f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad075
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad075
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad07a
     XOR EAX,EAX                         ; 004ad07d
         ;   Label: LAB_004ad07d
@@ -279,8 +279,8 @@ section .text
     PUSH 0x5c1a46                       ; 004ad15d | = "Invalid entry item type"
     MOV [0x01d71de0],EAX                ; 004ad162 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004ad167 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad16d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad16d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad172
     JMP 0x004acf9d                      ; 004ad175
         ;   XREF to: 004acf9d (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -303,8 +303,8 @@ section .text
     PUSH 0x5c1aa5                       ; 004ad1a6 | = "Invalid entry item type"
     MOV [0x01d71de0],EAX                ; 004ad1ab | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004ad1b0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad1b6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad1b6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad1bb
     JMP 0x004ad031                      ; 004ad1be
         ;   XREF to: 004ad031 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -458,8 +458,8 @@ section .text
     PUSH 0x5c1ba6                       ; 004ad342 | = "Hell froze."
     MOV dword ptr [0x01d71de0],EDX      ; 004ad347 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004ad34d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad353
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad353
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad358
     JMP 0x004ad10b                      ; 004ad35b
         ;   XREF to: 004ad10b (UNCONDITIONAL_JUMP)  ; LAB_004ad10b
@@ -469,8 +469,8 @@ section .text
     PUSH 0x5c1b0d                       ; 004ad36a | = "Hell froze"
     MOV dword ptr [0x01d71de0],EDX      ; 004ad36f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004ad375 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad37b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad37b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad380
     JMP 0x004ad1ce                      ; 004ad383
         ;   XREF to: 004ad1ce (UNCONDITIONAL_JUMP)  ; LAB_004ad1ce
@@ -480,8 +480,8 @@ section .text
     PUSH 0x5c1bc7                       ; 004ad392 | = "Hell froze"
     MOV dword ptr [0x01d71de0],EDX      ; 004ad397 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004ad39d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ad3a3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad3a3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad3a8
     JMP 0x004ad137                      ; 004ad3ab
         ;   XREF to: 004ad137 (UNCONDITIONAL_JUMP)  ; LAB_004ad137

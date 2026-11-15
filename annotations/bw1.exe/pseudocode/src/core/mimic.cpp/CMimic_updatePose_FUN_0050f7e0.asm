@@ -289,7 +289,7 @@ section .text
     LEA ESI,[ESP + 0x2bc]               ; 0050fb3c
     LEA EDI,[ESP + 0x2a4]               ; 0050fb43
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0050fb4a
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 0050fb4f
     LEA ESI,[ESP + 0x2b8]               ; 0050fb52
     MOV EDX,dword ptr [ESP + 0x2ec]     ; 0050fb59

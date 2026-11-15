@@ -19,19 +19,19 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_00509cd0(CMP3Decoder *this_p
   if (iVar2 < 1) {
     _DAT_01d046a0 = "..\\sound\\mp3.cpp";
     _DAT_01d046a4 = 0xea3;
-    core_main_c_FUN_004e4500("Can't open %s",filename);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open %s");
   }
-  file_handle = engine_dosio_cpp_FUN_00460c70("sound",filename,&DAT_005e02d8);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70("sound",filename,&DAT_005e02d8);
   if (file_handle == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\sound\\mp3.cpp";
     _DAT_01d046a4 = 0xea8;
-    core_main_c_FUN_004e4500("Can't open %s",filename);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open %s");
   }
   iVar2 = sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00509db0(this_ptr,file_handle,iVar2);
   if (iVar2 == 0) {
     _DAT_01d046a0 = "..\\sound\\mp3.cpp";
     _DAT_01d046a4 = 0xead;
-    core_main_c_FUN_004e4500("Error preparing to decode %s",filename);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Error preparing to decode %s");
   }
   do {
     cVar1 = *filename;

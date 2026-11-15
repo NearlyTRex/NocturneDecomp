@@ -10,7 +10,7 @@
 ;   core_curtain.cpp_CCurtain_setup_FUN_004464c0 at 00446ac2
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH EDI                            ; 00446ba2
     LEA ESI,[ESP + 0x20]                ; 00446ba3
     MOV dword ptr [ESP + 0x40],EDX      ; 00446ba7
-    CALL core_dirmat.cpp_FUN_0045b800   ; 00446bab
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 00446bab
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA EDI,[ESP + 0x14]                ; 00446bb0
     LEA ESI,[ESP + 0x20]                ; 00446bb4
     ADD ESP,0x8                         ; 00446bb8

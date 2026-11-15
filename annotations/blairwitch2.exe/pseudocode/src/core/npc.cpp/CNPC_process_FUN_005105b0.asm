@@ -24,7 +24,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
@@ -140,8 +140,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00510684
     PUSH EBX                            ; 00510685
     LEA ESI,[ESP + 0x30]                ; 00510686
-    CALL core_actor.cpp_FUN_00408d70    ; 0051068a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0051068a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0051068f
     PUSH 0x0                            ; 00510692
     LEA EAX,[ESP + 0x38]                ; 00510694

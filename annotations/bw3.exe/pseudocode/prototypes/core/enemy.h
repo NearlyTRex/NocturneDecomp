@@ -39,11 +39,11 @@ int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00489530
 // Address: 00489530
-CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
 // Original: core_enemy.cpp_FUN_00489600
 // Address: 00489600
-bool FUN_00489600(int param_1,int param_2);
+bool FUN_00489600(CEnemy *param_1,CDemonActor *param_2);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_00489730
 // Address: 00489730
@@ -83,7 +83,7 @@ int __cdecl CEnemy::countSameClassAttackingHero(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_FUN_0048a1b0
 // Address: 0048a1b0
-undefined4 FUN_0048a1b0(int param_1,float param_2);
+undefined4 FUN_0048a1b0(float param_1,float param_2);
 
 // Original: core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200
 // Address: 0048a200

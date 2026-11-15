@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint sfx_handle,int in
   if ((index < 0) || (1 < index)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x10c4;
-    core_main_c_FUN_005030e0("setSfxUserData - invalid user data index: %d",index);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("setSfxUserData - invalid user data index: %d");
   }
   pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0056fa10(sfx_handle,1);
   if (pCVar1 == (CSfxSlot *)0x0) {

@@ -34,7 +34,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgets_FUN_005c1180
 ;   crt_stdio.c_fopen_FUN_005c157c
@@ -97,8 +97,8 @@ section .text
     PUSH 0x5e5750                       ; 004f4799 | = "cIni::writeProfileString: Unable to o..."
     MOV dword ptr [0x01d1d400],ECX      ; 004f479e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004f47a4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f47aa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f47aa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f47af
     MOV ESI,dword ptr [ESP + 0x328]     ; 004f47b2
         ;   Label: LAB_004f47b2
@@ -143,8 +143,8 @@ section .text
     PUSH 0x5e5794                       ; 004f4819 | = "cIni::writeProfileString: Unable to o..."
     MOV dword ptr [0x01d1d400],EDI      ; 004f481e | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004f4824 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f4829
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4829
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f482e
     TEST EBP,EBP                        ; 004f4831
         ;   Label: LAB_004f4831
@@ -217,11 +217,11 @@ section .text
     PUSH EBX                            ; 004f48df
         ;   Label: LAB_004f48df
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004f48e0
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f48e5
     PUSH ESI                            ; 004f48e8
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004f48e9
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f48ee
     MOV EAX,dword ptr [ESP + 0x328]     ; 004f48f1
     PUSH EAX                            ; 004f48f8

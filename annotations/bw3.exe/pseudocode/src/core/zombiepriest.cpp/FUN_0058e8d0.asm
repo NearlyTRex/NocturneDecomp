@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombiepriest_cpp_FUN_0058e8d0(int param_1,float param_2)
+; void core_zombiepriest_cpp_FUN_0058e8d0(CDemonActor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xbc]:4  local_bc
@@ -49,16 +49,16 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_enemy.cpp_FUN_00489600
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   core_xform.cpp_FUN_00583260
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00585cd0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00585d10
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -118,8 +118,8 @@ section .text
     PUSH 0x5d8bd1                       ; 0058e940 | = "CZombiePriest::Aim Burning Cross - I'..."
     MOV dword ptr [0x01d71de0],ECX      ; 0058e945 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0058e94b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0058e951
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0058e951
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0058e956
     MOV ESI,dword ptr [0x02d24978]      ; 0058e959 | DAT_02d24978
         ;   Label: LAB_0058e959
@@ -135,8 +135,8 @@ section .text
     PUSH 0x2cfd900                      ; 0058e97f | DAT_02cfd900
     LEA ESI,[ESP + 0x58]                ; 0058e984
     LEA EDI,[ESP + 0x64]                ; 0058e988
-    CALL core_xform.cpp_FUN_00583260    ; 0058e98c
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058e98c
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 0058e991
     LEA EAX,[ESP + 0x5c]                ; 0058e994
     LEA ESI,[ESP + 0x50]                ; 0058e998
@@ -147,8 +147,8 @@ section .text
     PUSH EBX                            ; 0058e9a0
     LEA ESI,[ESP + 0x94]                ; 0058e9a1
     LEA EDI,[ESP + 0x70]                ; 0058e9a8
-    CALL core_actor.cpp_FUN_00408b80    ; 0058e9ac
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0058e9ac
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x94]                ; 0058e9b1
     ADD ESP,0x8                         ; 0058e9b8
     MOVSD ES:EDI,ESI                    ; 0058e9bb
@@ -303,7 +303,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0058eb82
     PUSH dword ptr [ESP + 0x38]         ; 0058eb86
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00585cd0 ; 0058eb8a
-        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00585cd0()
+        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00585cd0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0058eb8f
     LEA EDI,[ESP + 0x18]                ; 0058eb92
     PUSH 0x54bef0                       ; 0058eb96

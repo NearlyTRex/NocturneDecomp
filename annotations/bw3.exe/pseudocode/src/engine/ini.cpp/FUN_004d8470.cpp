@@ -29,7 +29,7 @@ int engine_ini_cpp_FUN_004d8470(uint *param_1,uint param_2,char *param_3,char *p
   if (stream == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\engine\\ini.cpp";
     _DAT_01d71de4 = 0xfd;
-    core_main_c_FUN_004e4330("cIni::FindLineNumberOfVariable: Unable to open input");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   _sprintf(local_114,"[%s]\n");
   while (((stream->_flag & 0x10) == 0 &&

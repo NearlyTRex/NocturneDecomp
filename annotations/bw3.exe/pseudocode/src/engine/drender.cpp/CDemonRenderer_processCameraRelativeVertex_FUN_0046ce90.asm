@@ -42,17 +42,17 @@ section .text
     FLD float ptr [EAX]                 ; 0046ce9d
     FMUL ST1                            ; 0046ce9f
     CALL crt_math.c_round_FUN_005a3120  ; 0046cea1
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0046cea6
     FLD float ptr [EAX + 0x4]           ; 0046ceaa
     FMUL ST1                            ; 0046cead
     CALL crt_math.c_round_FUN_005a3120  ; 0046ceaf
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0046ceb4
     FMUL float ptr [EAX + 0x8]          ; 0046ceb8
     MOV EAX,ESP                         ; 0046cebb
     CALL crt_math.c_round_FUN_005a3120  ; 0046cebd
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     PUSH EAX                            ; 0046cec2
     FISTP dword ptr [ESP + 0x10]        ; 0046cec3
     CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0046cec7

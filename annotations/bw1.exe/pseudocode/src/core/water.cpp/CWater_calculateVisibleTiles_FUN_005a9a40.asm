@@ -73,9 +73,9 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048f210
-;   core_dtrace.cpp_FUN_0048f230
-;   core_main.c_FUN_005030e0
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0048f230
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0048f210
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
@@ -119,8 +119,8 @@ section .text
     PUSH 0x1fe5c1c                      ; 005a9a92 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0x9c]                ; 005a9a97
     LEA EDI,[ESP + 0x60]                ; 005a9a9e
-    CALL core_dtrace.cpp_FUN_0048f210   ; 005a9aa2
-        ;   XREF to: 0048f210 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048f210()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0048f210 ; 005a9aa2
+        ;   XREF to: 0048f210 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0048f210(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0x9c]                ; 005a9aa7
     ADD ESP,0x4                         ; 005a9aae
     MOVSD ES:EDI,ESI                    ; 005a9ab1
@@ -129,8 +129,8 @@ section .text
     PUSH 0x1fe5c1c                      ; 005a9ab4 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0x84]                ; 005a9ab9
     LEA EDI,[ESP + 0x78]                ; 005a9ac0
-    CALL core_dtrace.cpp_FUN_0048f230   ; 005a9ac4
-        ;   XREF to: 0048f230 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048f230()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0048f230 ; 005a9ac4
+        ;   XREF to: 0048f230 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0048f230(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0x84]                ; 005a9ac9
     ADD ESP,0x4                         ; 005a9ad0
     MOVSD ES:EDI,ESI                    ; 005a9ad3
@@ -198,7 +198,7 @@ section .text
     FLD1                                ; 005a9bb4
     FADDP                               ; 005a9bb6
     CALL crt_math.c_round_FUN_005c03a0  ; 005a9bb8
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0xb8]        ; 005a9bbd
     MOV EAX,dword ptr [ESP + 0xb8]      ; 005a9bc4
     XOR ESI,ESI                         ; 005a9bcb
@@ -427,8 +427,8 @@ section .text
     PUSH 0x5f9204                       ; 005a9ec6 | = "Too many visible water tiles!"
     MOV [0x01d1d400],EAX                ; 005a9ecb | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005a9ed0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005a9ed6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a9ed6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a9edb
     MOV EAX,[0x02c8afdc]                ; 005a9ede | DAT_02c8afdc
         ;   Label: LAB_005a9ede

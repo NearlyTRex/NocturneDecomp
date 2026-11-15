@@ -14,7 +14,7 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00509020(CNPC *this_ptr)
   int iVar1;
   int iVar2;
   CSkeleton *this_ptr_00;
-  float10 fVar3;
+  double dVar3;
   
   core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(&this_ptr->base);
   iVar2 = _stricmp
@@ -35,15 +35,15 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00509020(CNPC *this_ptr)
   if (iVar2 != 0) {
     (this_ptr->base).base.is_transparent = 1;
   }
-  fVar3 = (float10)this_ptr->start_opcode * (float10)_DAT_005cb558 * (float10)_DAT_005cb560;
-  round();
-  if ((int)ROUND(fVar3) == 0x10000) {
+  dVar3 = round
+                    ((double)this_ptr->start_opcode * _DAT_005cb558 * _DAT_005cb560);
+  if ((int)ROUND(dVar3) == 0x10000) {
     return;
   }
   (this_ptr->base).base.is_renderable = 0;
   this_ptr->fade_state = -2;
   this_ptr->fade_timer = 0.0;
   (this_ptr->base).base.is_transparent = 1;
-  this_ptr->fade_alpha = (int)ROUND(fVar3);
+  this_ptr->fade_alpha = (int)ROUND(dVar3);
   return;
 }

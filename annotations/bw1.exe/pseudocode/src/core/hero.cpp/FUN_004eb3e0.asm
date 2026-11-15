@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_door.cpp_CDoor_getMoveType_FUN_00478b40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
@@ -122,8 +122,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004eb4b1
     PUSH EDI                            ; 004eb4b4
     LEA ESI,[ESP + 0x8]                 ; 004eb4b5
-    CALL core_actor.cpp_FUN_00408bb0    ; 004eb4b9
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004eb4b9
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA EDI,[ESP + 0x14]                ; 004eb4be
     LEA ESI,[ESP + 0x8]                 ; 004eb4c2
     ADD ESP,0x8                         ; 004eb4c6

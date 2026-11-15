@@ -10,7 +10,7 @@
 ;   core_wateract.cpp_CWaterActor_setup_FUN_00586af0 at 00586dc1
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 005870f0
     PUSH EDI                            ; 005870f4
     LEA ESI,[ESP + 0x8]                 ; 005870f5
-    CALL core_dirmat.cpp_FUN_00449530   ; 005870f9
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 005870f9
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA EDI,[ESP + 0x2c]                ; 005870fe
     LEA ESI,[ESP + 0x8]                 ; 00587102
     ADD ESP,0x8                         ; 00587106

@@ -56,10 +56,10 @@ section .text
     FLD float ptr [ESP]                 ; 00555876
     FXCH                                ; 00555879
     CALL crt_math.c_pow_FUN_005c18f4    ; 0055587b
-        ;   XREF to: 005c18f4 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005c18f4()
+        ;   XREF to: 005c18f4 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005c18f4(float10 base, float10 exp)
     FMUL double ptr [0x005f0bf6]        ; 00555880 | DAT_005f0bf6
     CALL crt_math.c_round_FUN_005c03a0  ; 00555886
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0055588b
     CMP dword ptr [ESP + 0x4],0x100     ; 0055588f
     JL 0x005558b4                       ; 00555897

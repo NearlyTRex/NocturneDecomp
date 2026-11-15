@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fopen_FUN_005a43ec
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5cc7d6                       ; 00514245
     MOV dword ptr [0x01d71de0],ECX      ; 0051424a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00514250 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00514256
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00514256
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051425b
     PUSH 0x5cc802                       ; 0051425e
         ;   Label: LAB_0051425e
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5cc817                       ; 00514281
     MOV dword ptr [0x01d71de0],EBP      ; 00514286 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0051428c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00514291
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00514291
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00514296
     LEA EAX,[EDI*0x4 + 0x0]             ; 00514299
         ;   Label: LAB_00514299
@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_00514300
     PUSH EBX                            ; 00514303
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00514304
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 00514309
     MOV EAX,ESI                         ; 0051430c
     ADD ESP,0x4                         ; 0051430e

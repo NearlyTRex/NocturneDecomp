@@ -34,7 +34,7 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_004154f0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_xform.cpp_FUN_00594380
 ;
@@ -219,8 +219,8 @@ section .text
     PUSH 0x5cdf2b                       ; 00438265 | = "CConstruct::explode - Not enough cont..."
     MOV dword ptr [0x01d046a0],EBX      ; 0043826a | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00438270 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00438276
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00438276
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043827b
     JMP 0x004380b7                      ; 0043827e
         ;   XREF to: 004380b7 (UNCONDITIONAL_JUMP)  ; LAB_004380b7

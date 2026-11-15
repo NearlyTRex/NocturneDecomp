@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5d2578                       ; 00409c9a | = "CDemonActor::processActionButton - sh..."
     MOV dword ptr [0x01d1d400],EDX      ; 00409c9f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00409ca5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00409cab
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00409cab
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     MOV EAX,0x1                         ; 00409cb0
     ADD ESP,0x4                         ; 00409cb5
     RET                                 ; 00409cb8

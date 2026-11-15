@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   name
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_event.cpp_resolveActorByName_FUN_004a1370 at 004a1445
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6fc9
 ;   core_hiram.cpp_CHiram_process_FUN_004ed2b0 at 004ed386
@@ -16,6 +16,7 @@
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_0051afa0 at 0051b09f
 ;   core_script.cpp_getActor_FUN_005433c0 at 005434e9
 ;   core_script.cpp_readActorReference_FUN_0054b320 at 0054b386
+;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b384
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0

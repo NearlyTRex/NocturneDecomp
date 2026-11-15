@@ -18,7 +18,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0
 ;   core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005b0c00
-;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;
@@ -73,7 +73,7 @@ section .text
     LEA ESI,[ESP + 0x54]                ; 005b124c
     LEA EDI,[ESP + 0x48]                ; 005b1250
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 005b1254
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x54]                ; 005b1259
     ADD ESP,0x4                         ; 005b125d
     LEA EAX,[ESP + 0x8]                 ; 005b1260
@@ -83,8 +83,8 @@ section .text
     PUSH EAX                            ; 005b1267
     LEA ESI,[ESP + 0x60]                ; 005b1268
     LEA EDI,[ESP + 0x3c]                ; 005b126c
-    CALL core_xform.cpp_FUN_005b6270    ; 005b1270
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 005b1270
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x4                         ; 005b1275
     LEA EAX,[ESP + 0x38]                ; 005b1278
     LEA ESI,[ESP + 0x5c]                ; 005b127c

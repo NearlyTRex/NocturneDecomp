@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_findSfxEntry_FUN_00491a40
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5d4f0a                       ; 00491998 | = "CEventList::setSfxHandle - too many sfx!"
     MOV dword ptr [0x01d046a0],ECX      ; 0049199d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004919a3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004919a9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004919a9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004919ae
     MOV EDX,dword ptr [EBX + 0x3ac8]    ; 004919b1
         ;   Label: LAB_004919b1
@@ -116,8 +116,8 @@ section .text
     PUSH 0x5d4f45                       ; 00491a24 | = "CEventList::setSfxHandle - sfx handle..."
     MOV [0x01d046a0],EAX                ; 00491a29 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00491a2e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00491a34
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00491a34
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00491a39
     JMP 0x004919e5                      ; 00491a3c
         ;   XREF to: 004919e5 (UNCONDITIONAL_JUMP)  ; LAB_004919e5

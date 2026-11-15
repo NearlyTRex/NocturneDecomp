@@ -26,7 +26,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a2e0
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0
@@ -340,7 +340,7 @@ section .text
     PUSH EDX                            ; 004189e8 | DAT_01d182f0
     ADD ESI,0x48                        ; 004189e9
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004189ec
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     MOV dword ptr [ESI + 0x10b74],0x0   ; 004189f1
     INC EDI                             ; 004189fb
     MOV ECX,dword ptr [EBX + 0x10b74]   ; 004189fc
@@ -708,8 +708,8 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 00418e2c
     PUSH 0x265370c                      ; 00418e2f | DAT_0265370c
     FSTP float ptr [EBP + 0xfffffe1e]   ; 00418e34
-    CALL core_xform.cpp_FUN_00591530    ; 00418e3a
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00418e3a
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00418e3f
     LEA EAX,[EBP + -0x52]               ; 00418e42
     LEA ESI,[EBP + 0xffffff42]          ; 00418e45
@@ -719,8 +719,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00418e4e
     PUSH EBX                            ; 00418e4f
     LEA ESI,[EBP + 0xffffff72]          ; 00418e50
-    CALL core_actor.cpp_FUN_00408d70    ; 00418e56
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00418e56
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00418e5b
     LEA EAX,[EBP + -0x6a]               ; 00418e5e
     PUSH EAX                            ; 00418e61
@@ -811,8 +811,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2698]    ; 00418f71
     PUSH EDI                            ; 00418f77
     LEA ESI,[EBP + 0xffffff1e]          ; 00418f78
-    CALL core_actor.cpp_FUN_00408d70    ; 00418f7e
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00418f7e
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[EBP + 0xffffff4e]          ; 00418f83
     LEA ESI,[EBP + 0xffffff1e]          ; 00418f89
     LEA EAX,[EBP + 0xffffff4e]          ; 00418f8f
@@ -837,8 +837,8 @@ section .text
     PUSH EAX                            ; 00418fc7
     LEA ESI,[EBP + 0xfffffee2]          ; 00418fc8
     LEA EDI,[EBP + 0xffffff7e]          ; 00418fce
-    CALL core_actor.cpp_FUN_00408d70    ; 00418fd4
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00418fd4
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + 0xfffffee2]          ; 00418fd9
     LEA EAX,[EBP + 0xffffff7e]          ; 00418fdf
     LEA EDX,[EBP + 0x2]                 ; 00418fe5

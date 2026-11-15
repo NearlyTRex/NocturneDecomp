@@ -17,18 +17,10 @@ CMatrix3x4f * __stack2_esi core_hino_cpp_CHino_getCarryObjToBodyXForm_FUN_0059d5
   byte bVar4;
   CMatrix3x4f CStack_a8;
   CMatrix3x4f CStack_78;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   uint uStack_18;
   uint uStack_14;
   uint uStack_10;
@@ -36,28 +28,28 @@ CMatrix3x4f * __stack2_esi core_hino_cpp_CHino_getCarryObjToBodyXForm_FUN_0059d5
   bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
-    uStack_2c = 0xbe0d6063;
-    uStack_28 = 0xbcff05cf;
-    uStack_30 = 0x3e0f5276;
-    if (&uStack_3c != &uStack_30) {
-      uStack_38 = 0xbe0d6063;
-      uStack_34 = 0xbcff05cf;
-      uStack_3c = 0x3e0f5276;
+    CStack_30.y = -0.138063;
+    CStack_30.z = -0.0311307;
+    CStack_30.x = 0.139963;
+    if (&CStack_3c != &CStack_30) {
+      CStack_3c.y = -0.138063;
+      CStack_3c.z = -0.0311307;
+      CStack_3c.x = 0.139963;
     }
     uStack_10 = 0xbfc9f40a;
     uStack_18 = 0x3e92f512;
     uStack_14 = 0xbfd2646f;
-    uStack_48 = 0x3e92f512;
-    uStack_44 = 0xbfd2646f;
-    uStack_40 = 0xbfc9f40a;
-    if (&uStack_24 != &uStack_48) {
-      uStack_24 = 0x3e92f512;
-      uStack_20 = 0xbfd2646f;
-      uStack_1c = 0xbfc9f40a;
+    CStack_48.x = 0.287026;
+    CStack_48.y = -1.64369;
+    CStack_48.z = -1.57776;
+    if (&CStack_24 != &CStack_48) {
+      CStack_24.x = 0.287026;
+      CStack_24.y = -1.64369;
+      CStack_24.z = -1.57776;
     }
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-            (&CStack_78,&uStack_3c,&uStack_24);
+            (&CStack_78,&CStack_3c,&CStack_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

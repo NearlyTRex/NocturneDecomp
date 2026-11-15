@@ -67,7 +67,7 @@
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420450
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;
 ; *****************************************************************************
@@ -99,8 +99,8 @@ section .text
     PUSH EAX                            ; 004acbae
     MOV dword ptr [ESP + 0xd4],EDI      ; 004acbaf
     LEA EDI,[ESP + 0x78]                ; 004acbb6
-    CALL core_dirmat.cpp_FUN_0045f690   ; 004acbba
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 004acbba
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xa8]                ; 004acbbf
     ADD ESP,0x8                         ; 004acbc6
     MOVSD ES:EDI,ESI                    ; 004acbc9

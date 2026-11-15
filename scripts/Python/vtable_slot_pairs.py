@@ -428,7 +428,7 @@ def main(argv=None):
     if not table_class:
         print("(no class_hierarchy.json for %s: the class check was skipped)" % dst)
     with open(args.out_ledger, "w", encoding="utf-8") as fh:
-        json.dump({"schema": 1, "from": src, "to": dst, "pairs": [list(p) for p in accepted]}, fh, indent=1)
+        json.dump({"schema": 1, "from": src, "to": dst, "pairs": [{"a": a, "b": b, "note": note} for a, b, note in accepted]}, fh, indent=1)
     print("wrote %s" % args.out_ledger)
     if args.report:
         with open(args.report, "w", encoding="utf-8") as fh:

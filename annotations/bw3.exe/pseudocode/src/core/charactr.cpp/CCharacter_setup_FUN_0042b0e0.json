@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 199,
+    "complexity_score": 198,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 118,
     "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 393
+    "total_lines": 392
   },
   "cross_references": [
     {
@@ -127,7 +127,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "0054eac0",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 99,
+      "line": 98,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 80,
+      "line": 79,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CCharacter *)&(pCVar4->model).bone_origins[0x14].y;",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 81,
+      "line": 80,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 0x18);",

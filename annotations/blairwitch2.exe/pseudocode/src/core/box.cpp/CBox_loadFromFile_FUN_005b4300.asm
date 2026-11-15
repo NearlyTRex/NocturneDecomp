@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_005b1c80
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;
@@ -161,8 +161,8 @@ section .text
     PUSH EAX                            ; 005b4457
     ADD EBX,0x40                        ; 005b4458
     LEA EDI,[ESP + 0x12c]               ; 005b445b
-    CALL core_dirmat.cpp_FUN_00449530   ; 005b4462
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 005b4462
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x108]               ; 005b4467
     ADD ESP,0x8                         ; 005b446e
     LEA EAX,[ESP + 0x124]               ; 005b4471

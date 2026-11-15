@@ -47,7 +47,7 @@ int __cdecl CFrankenstienMachine::renderOpaque(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_004acc20
 // Address: 004acc20
-CBoundingBox3D * __cdecl CFrankenstienMachine::getBoundingBox(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CFrankenstienMachine::getBoundingBox(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0
 // Address: 004accb0

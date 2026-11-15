@@ -23,7 +23,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
   int iVar8;
   char *pcVar9;
   byte bVar10;
-  float afStackY_1080 [518];
+  uint auStackY_1080 [518];
   CVector3i *input_ptr;
   CSfxSample local_830;
   char local_5e0 [256];
@@ -33,8 +33,9 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
   char local_1e0 [200];
   char local_118 [100];
   CSlew local_b4;
-  int local_98;
-  float afStack_94 [4];
+  CVector3i local_98;
+  float local_8c;
+  float local_88;
   float local_84;
   CVector3i local_80;
   CVector3i local_74 [2];
@@ -103,12 +104,14 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,&local_b4,&local_b4.orientation);
       if ((DAT_01c2a384 & 1) != 0) {
-        core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance,_DAT_01c2a37c,_DAT_01c2a380);
+        core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
+                  (&g_CDemonCameraInstance,_DAT_01c2a37c,_DAT_01c2a380,&local_98);
         input_ptr = &local_80;
-        local_80.x = local_98;
-        *(float *)((int)local_74 + (uint)bVar10 * -8 + -8) = afStack_94[(uint)bVar10 * -2];
-        *(float *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4) =
-             afStack_94[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        local_80.x = local_98.x;
+        *(uint *)((int)local_74 + (uint)bVar10 * -8 + -8) =
+             *(uint *)((int)&local_98 + (uint)bVar10 * -8 + 4);
+        *(uint *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4) =
+             *(uint *)((int)&local_98 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
                   (&g_CDemonCameraInstance,input_ptr,local_74);
         local_80.x = local_74[0].x;
@@ -116,11 +119,11 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
              *(uint *)((int)local_74 + (uint)bVar10 * -8 + 4);
         *(uint *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4) =
              *(uint *)((int)local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-        afStack_94[2] = (float)local_80.x * _DAT_005f7558;
-        afStack_94[3] = (float)local_80.y * _DAT_005f7558;
+        local_8c = (float)local_80.x * _DAT_005f7558;
+        local_88 = (float)local_80.y * _DAT_005f7558;
         local_84 = (float)local_80.z * _DAT_005f7558;
         iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,afStack_94 + 2,iVar2 + 0x30);
+        (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,&local_8c,iVar2 + 0x30);
         DAT_01c2a384 = DAT_01c2a384 & 0xfe;
       }
     }
@@ -195,7 +198,8 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
           if (_DAT_01cb80d4 != 0) {
             _sprintf(local_118,"noc%05d.raw");
             _sprintf(local_1e0,"Movie recording active: movie\\%s");
-            local_34 = engine_dosio_cpp_FUN_00460c70("movie",local_118,&DAT_005d72e4);
+            local_34 = engine_dosio_cpp_getFile_FUN_00460c70
+                                 ("movie",local_118,&DAT_005d72e4);
             if (local_34 != (_FILE *)0x0) {
               local_38 = 0;
               if (0 < 0x00000040) {

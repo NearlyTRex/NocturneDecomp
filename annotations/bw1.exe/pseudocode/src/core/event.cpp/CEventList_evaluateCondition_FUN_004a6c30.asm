@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   condition_expression
 ;
-; XREF[75]:
+; XREF[76]:
 ;   core_anvil.cpp_CAnvil_process_FUN_0040e680 at 0040e696
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb7b
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f4ff
@@ -18,7 +18,7 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0 at 00416407
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198cc
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bb63
-;   ... and 65 more
+;   ... and 66 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005de189

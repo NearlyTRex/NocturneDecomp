@@ -43,7 +43,7 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_
   if (0x18 < iVar5) {
     _DAT_01d046a0 = "..\\core\\construc.cpp";
     _DAT_01d046a4 = 0x294;
-    core_main_c_FUN_004e4500("CConstruct::explode - Not enough containers");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CConstruct::explode - Not enough containers");
   }
   iVar5 = 0;
   if (0 < local_20->num_parts) {

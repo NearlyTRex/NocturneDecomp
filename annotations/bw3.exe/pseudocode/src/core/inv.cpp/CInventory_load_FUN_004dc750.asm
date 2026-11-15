@@ -41,7 +41,7 @@
 ;   core_inv.cpp_CInventory_clear_FUN_004da440
 ;   core_inv.cpp_CInventory_initialize_FUN_004da4e0
 ;   core_inv.cpp_FUN_004dd2d0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004f6330
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fscanf_FUN_005a3230
@@ -314,8 +314,8 @@ section .text
     PUSH 0x5c64c4                       ; 004dca6b | = "CInventory::load - Can't find your we..."
     MOV dword ptr [0x01d71de0],ECX      ; 004dca70 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004dca76 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dca7c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dca7c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dca81
     JMP 0x004dc99b                      ; 004dca84
         ;   XREF to: 004dc99b (UNCONDITIONAL_JUMP)  ; LAB_004dc99b

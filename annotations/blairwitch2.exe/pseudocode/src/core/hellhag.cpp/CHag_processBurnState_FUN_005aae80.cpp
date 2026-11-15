@@ -26,7 +26,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
   uint uVar10;
   uint uVar11;
   uint uVar12;
-  float *pfVar13;
+  CVector3f *pCVar13;
   float *pfVar14;
   uint *puVar15;
   uint uVar16;
@@ -41,15 +41,15 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
   float fStack_a8;
   float fStack_a4;
   CVector3f CStack_a0;
-  uint uStack_94;
-  float afStack_90 [5];
-  float afStack_7c [3];
-  float afStack_70 [3];
-  float afStack_64 [3];
-  uint uStack_58;
+  CVector3f CStack_94;
+  CVector3f CStack_88;
+  float fStack_7c;
+  float afStack_78 [2];
+  CVector3f CStack_70;
+  CVector3f CStack_64;
+  CVector3f CStack_58;
   float fStack_4c;
-  float fStack_48;
-  uint uStack_44;
+  float afStack_48 [2];
   CVector3f CStack_40;
   float fStack_34;
   float afStack_30 [3];
@@ -80,16 +80,20 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
                            (((this_ptr->base).skeleton)->bone_list[0].bone_name + iStack_1c,
                             "Bip01");
         if (pcVar2 != (char *)0x0) {
-          core_xform_cpp_FUN_00591530(&DAT_0265370c,pCStack_24);
-          afStack_64[0] = (float)uStack_94;
-          afStack_90[(uint)bVar5 * -2 + 0xc] = afStack_90[(uint)bVar5 * -2];
-          afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
-               afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-          core_actor_cpp_FUN_00408cf0(this_ptr,afStack_90 + 0xb);
-          afStack_70[0] = (float)uStack_58;
-          afStack_90[(uint)bVar5 * -2 + 9] = afStack_90[(uint)bVar5 * -2 + 0xf];
-          afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-               afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10];
+          core_xform_cpp_transformVector3x4_FUN_00591530
+                    ((CVector3f *)&DAT_0265370c,pCStack_24,&CStack_94);
+          CStack_64.x = CStack_94.x;
+          *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + 4) =
+               *(uint *)((int)&CStack_94 + (uint)bVar5 * -8 + 4);
+          *(uint *)((int)&CStack_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+               *(uint *)((int)&CStack_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)this_ptr,&CStack_64,&CStack_58);
+          CStack_70.x = CStack_58.x;
+          *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + 4) =
+               *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + 4);
+          *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+               *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
           afStack_cc[2] = pCVar4->x * *pfVar3;
           afStack_cc[3] = (this_ptr->base).burn_direction.y * *pfVar3;
           fStack_bc = (this_ptr->base).burn_direction.z * *pfVar3;
@@ -102,25 +106,25 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
           fStack_a4 = fStack_b0 * _DAT_005f0c3e;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.5);
           fStack_4c = fStack_ac;
-          afStack_90[(uint)bVar5 * -2 + 0x12] = afStack_cc[(uint)bVar5 * -2 + 9];
-          afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13] =
+          afStack_48[(uint)bVar5 * -2] = afStack_cc[(uint)bVar5 * -2 + 9];
+          afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
           uVar16 = 2;
           fStack_34 = fStack_4c;
           puVar15 = (uint *)&DAT_0265370c;
-          afStack_30[1] = (float)uStack_44;
-          pfVar14 = afStack_90 + 5;
-          pfVar13 = afStack_90 + 8;
+          afStack_30[1] = afStack_48[1];
+          pfVar14 = &fStack_7c;
+          pCVar13 = &CStack_70;
           uVar12 = 0x3f800000;
           uVar11 = 0x3f800000;
           uVar10 = 0x3f800000;
           uVar9 = 0;
           max_value = 1.0;
-          afStack_30[0] = fStack_14 + fStack_48;
+          afStack_30[0] = fStack_14 + afStack_48[0];
           fVar7 = 0.5;
-          afStack_7c[0] = fStack_4c;
-          afStack_90[(uint)bVar5 * -2 + 6] = afStack_30[(uint)bVar5 * -2];
-          afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
+          fStack_7c = fStack_4c;
+          afStack_78[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2];
+          afStack_78[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
           fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar7,max_value);
           uVar8 = 0;
@@ -128,23 +132,25 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
           fStack_14 = fVar7;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,1.5);
           core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-                    (pCStack_18,fStack_14,uVar6,uVar8,fVar7,uVar9,uVar10,uVar11,uVar12,pfVar13,
+                    (pCStack_18,fStack_14,uVar6,uVar8,fVar7,uVar9,uVar10,uVar11,uVar12,&pCVar13->x,
                      pfVar14,puVar15,uVar16);
           iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0x32);
           if (iVar1 == 0) {
             fStack_d0 = pCVar4->x * *pfVar3;
-            pfVar14 = afStack_90 + 8;
+            pCVar13 = &CStack_70;
             afStack_cc[0] = (this_ptr->base).burn_direction.y * *pfVar3;
             afStack_cc[1] = (this_ptr->base).burn_direction.z * *pfVar3;
             CStack_a0.x = fStack_d0;
             *(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + 4) = afStack_cc[(uint)bVar5 * -2];
             *(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                  afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-            core_actor_cpp_FUN_00408d70(this_ptr,pfVar14);
-            CStack_40.x = afStack_90[2];
-            *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) = afStack_90[(uint)bVar5 * -2 + 3];
-            *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                      ((CDemonActor *)this_ptr,pCVar13,&CStack_88);
+            CStack_40.x = CStack_88.x;
+            *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) =
+                 *(uint *)((int)&CStack_88 + (uint)bVar5 * -8 + 4);
+            *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+                 *(uint *)((int)&CStack_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
                       (g_CGorePtr,&CStack_40,&CStack_a0,1,(this_ptr->base).base.base.blood_type);
           }

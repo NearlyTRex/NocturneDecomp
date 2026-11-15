@@ -14,6 +14,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
   int iVar3;
   int iVar4;
   int local_res84;
+  uint uStack00000090;
   
   uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530();
   if (uVar2 == 0) {
@@ -57,15 +58,19 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
                g_Cached3DListenerVelocity.z);
     (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)
               (g_CSoundDevicePtr,g_Cached3DDistanceFactor);
-    (*g_CSoundDevicePtr->vtable->commitDeferredSettings)(g_CSoundDevicePtr);
+    (*g_CSoundDevicePtr->vtable->setReverb)
+              (g_CSoundDevicePtr,g_CachedReverb.volume,g_CachedReverb.decay_time,
+               g_CachedReverb.damping);
     g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);
     if (iVar3 != 0) {
       g_SoundBusyFlag = 1;
+      uStack00000090 = 0x5ab112;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 1;
     }
   }
+  uStack00000090 = 0x5ab11e;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 0;
 }

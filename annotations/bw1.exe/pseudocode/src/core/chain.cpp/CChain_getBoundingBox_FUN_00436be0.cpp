@@ -21,74 +21,68 @@ CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00436be0(CChai
   float fStack_6c;
   uint uStack_68;
   uint uStack_64;
-  uint uStack_60;
-  uint uStack_5c;
+  float fStack_60;
+  float fStack_5c;
   uint uStack_58;
-  uint uStack_54;
-  uint uStack_50;
+  float fStack_54;
+  float fStack_50;
   uint uStack_4c;
-  uint uStack_48;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   float fStack_18;
-  uint uStack_14;
-  uint uStack_10;
+  uint auStack_14 [2];
   
   bVar5 = 0;
-  fStack_2c = 9999.0;
-  fStack_28 = 9999.0;
-  fStack_3c = -9999.0;
-  fStack_38 = -9999.0;
-  fStack_34 = -9999.0;
-  fStack_30 = 9999.0;
+  CStack_30.y = 9999.0;
+  CStack_30.z = 9999.0;
+  CStack_3c.x = -9999.0;
+  CStack_3c.y = -9999.0;
+  CStack_3c.z = -9999.0;
+  CStack_30.x = 9999.0;
   iVar3 = 0;
   if (0 < this_ptr->vertex_count) {
     pSVar1 = this_ptr->vertices;
     do {
-      if ((pSVar1->position).x < fStack_30) {
-        fStack_30 = (pSVar1->position).x;
+      if ((pSVar1->position).x < CStack_30.x) {
+        CStack_30.x = (pSVar1->position).x;
       }
-      if ((pSVar1->position).y < fStack_2c) {
-        fStack_2c = (pSVar1->position).y;
+      if ((pSVar1->position).y < CStack_30.y) {
+        CStack_30.y = (pSVar1->position).y;
       }
-      if ((pSVar1->position).z < fStack_28) {
-        fStack_28 = (pSVar1->position).z;
+      if ((pSVar1->position).z < CStack_30.z) {
+        CStack_30.z = (pSVar1->position).z;
       }
-      if (fStack_3c < (pSVar1->position).x) {
-        fStack_3c = (pSVar1->position).x;
+      if (CStack_3c.x < (pSVar1->position).x) {
+        CStack_3c.x = (pSVar1->position).x;
       }
-      if (fStack_38 < (pSVar1->position).y) {
-        fStack_38 = (pSVar1->position).y;
+      if (CStack_3c.y < (pSVar1->position).y) {
+        CStack_3c.y = (pSVar1->position).y;
       }
-      if (fStack_34 < (pSVar1->position).z) {
-        fStack_34 = (pSVar1->position).z;
+      if (CStack_3c.z < (pSVar1->position).z) {
+        CStack_3c.z = (pSVar1->position).z;
       }
       iVar3 = iVar3 + 1;
       pSVar1 = pSVar1 + 1;
     } while (iVar3 < this_ptr->vertex_count);
   }
-  core_actor_cpp_FUN_00408bb0(this_ptr,&stack0xffffffd0);
-  fStack_18 = fStack_24;
-  (&stack0xffffffec)[(uint)bVar5 * 0xfffffffe] =
-       *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4);
-  *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       *(uint *)(&stack0xffffffe4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  if (&stack0xffffff94 != &stack0xffffffe8) {
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(&this_ptr->base,&CStack_30,&CStack_24);
+  fStack_18 = CStack_24.x;
+  auStack_14[(uint)bVar5 * -2] = *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4);
+  auStack_14[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  if (&stack0xffffff94 != &fStack_18) {
     fStack_6c = fStack_18;
-    uStack_68 = uStack_14;
-    uStack_64 = uStack_10;
+    uStack_68 = auStack_14[0];
+    uStack_64 = auStack_14[1];
   }
-  core_actor_cpp_FUN_00408bb0(this_ptr,&stack0xffffffc4);
-  uStack_54 = uStack_48;
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(&this_ptr->base,&CStack_3c,&CStack_48);
+  fStack_54 = CStack_48.x;
   (&stack0xffffffb0)[(uint)bVar5 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffbc + (uint)bVar5 * -8);
+       (float)*(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + 4);
   *(uint *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   if (&stack0xffffffa0 == &stack0xffffffac) {
     pfVar2 = &stack0xffffff94;
     pCVar4 = unaff_ESI;
@@ -99,8 +93,8 @@ CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00436be0(CChai
     }
     return unaff_ESI;
   }
-  uStack_60 = uStack_54;
-  uStack_5c = uStack_50;
+  fStack_60 = fStack_54;
+  fStack_5c = fStack_50;
   uStack_58 = uStack_4c;
   pfVar2 = &stack0xffffff94;
   pCVar4 = unaff_ESI;

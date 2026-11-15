@@ -62,7 +62,7 @@ section .text
     FSQRT                               ; 00450528
     FMUL double ptr [0x005ba06e]        ; 0045052a | DAT_005ba06e
     CALL crt_math.c_round_FUN_005a3120  ; 00450530
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x18]        ; 00450535
     MOV EAX,dword ptr [ESP + 0x18]      ; 00450539
     PUSH EAX                            ; 0045053d

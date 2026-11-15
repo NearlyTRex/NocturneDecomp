@@ -21,7 +21,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCu
   if (pCVar1 == (CVector3f *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x600;
-    core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of vertex memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCube::allocMemory - Out of vertex memory");
   }
   pCVar2 = (CDemonCubeTriangle *)
            operator_new_array(this_ptr->triangle_count << 5);
@@ -29,21 +29,21 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCu
   if (pCVar2 == (CDemonCubeTriangle *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x602;
-    core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of tri memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCube::allocMemory - Out of tri memory");
   }
   pvVar3 = malloc(this_ptr->triangle_count);
   this_ptr->ground_type_memory = pvVar3;
   if (pvVar3 == (void *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x604;
-    core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of ground type memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCube::allocMemory - Out of ground type memory");
   }
   pSVar4 = (SVoxelGrid *)malloc(0x40);
   this_ptr->voxel_buffer1 = pSVar4;
   if (pSVar4 == (SVoxelGrid *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x606;
-    core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
   }
   pSVar4 = (SVoxelGrid *)malloc(0x40);
   this_ptr->voxel_buffer2 = pSVar4;
@@ -52,6 +52,6 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCu
   }
   _DAT_01d71de0 = "..\\core\\dcube.cpp";
   _DAT_01d71de4 = 0x608;
-  core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
   return;
 }

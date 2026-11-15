@@ -33,7 +33,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0050f7e0(CMimic *this_ptr)
   CMatrix3x4f *pCVar19;
   byte bVar20;
   float afStackY_1030 [846];
-  CMatrix3x4f local_2e8;
+  CVector3f *in_stack_fffffd18;
   CMatrix3x4f local_2b8;
   CMatrix3x4f local_288;
   CMatrix3x4f local_258;
@@ -143,13 +143,14 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0050f7e0(CMimic *this_ptr)
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_1c8,pCVar15,&local_78);
     pCVar15 = &local_78;
-    pCVar14 = &local_2e8;
+    pfVar7 = (float *)&stack0xfffffd18;
     for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *(float *)pCVar14 = pCVar15->m[0].w;
+      *pfVar7 = pCVar15->m[0].w;
       pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar20 * -2 + 1) * 4);
-      pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar20 * -2 + 1) * 4);
+      pfVar7 = pfVar7 + (uint)bVar20 * -2 + 1;
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_2e8,pCVar16,&local_288);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
+              ((CMatrix3x4f *)&stack0xfffffd18,pCVar16,&local_288);
     pCVar16 = &local_138;
     pCVar15 = &local_288;
     pCVar14 = &local_138;
@@ -184,7 +185,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0050f7e0(CMimic *this_ptr)
     (this_ptr->base).base.base.location.position.x = local_24;
     (this_ptr->base).base.base.location.position.y = local_20;
     (this_ptr->base).base.base.location.position.z = local_1c;
-    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_138);
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_138,in_stack_fffffd18);
     pUVar9 = &(this_ptr->base).base.base.orient;
     local_48 = local_30;
     local_44[(uint)bVar20 * -2] = local_44[(uint)bVar20 * -2 + 6];

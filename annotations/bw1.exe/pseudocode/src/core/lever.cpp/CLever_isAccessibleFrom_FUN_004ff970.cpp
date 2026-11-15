@@ -11,18 +11,19 @@ int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004ff970(CLever *this_ptr
 {
   byte bVar1;
   float afStackY_1010 [1016];
-  uint local_28;
+  float local_28;
   float local_20;
-  uint local_1c;
+  CVector3f local_1c;
   
   bVar1 = 0;
   if (this_ptr->allowed_sides != LEVER_OPEN_SIDES_BOTH) {
-    core_actor_cpp_FUN_00408bb0(this_ptr,world_position);
-    local_28 = local_1c;
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+              (&this_ptr->base,world_position,&local_1c);
+    local_28 = local_1c.x;
     *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8);
+         *(uint *)((int)&local_1c + (uint)bVar1 * -8 + 4);
     *(uint *)((int)&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+         *(uint *)((int)&local_1c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
     if ((this_ptr->allowed_sides != LEVER_OPEN_SIDES_POS_Z) || (local_20 <= 0.0)) {
       if ((this_ptr->allowed_sides == LEVER_OPEN_SIDES_NEG_Z) && (local_20 < 0.0)) {
         return 1;

@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[36]:
+; XREF[37]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d2a00
 ;   core_game.cpp_CGame_process_FUN_004d8060 at 004d8523
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10 at 004cbf10
@@ -20,7 +20,7 @@
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cb39
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0052fa80 at 0052faaa
 ;   core_netgame.cpp_CNetGame_init_FUN_0052c520 at 0052c53a
-;   ... and 26 more
+;   ... and 27 more
 ;
 ; Referenced Globals:
 ;   void* PTR_timeGetTime_005d0458 = 001d0934
@@ -92,7 +92,7 @@ section .text
     FLD double ptr [ESP]                ; 005b24b1
     MOV ESI,dword ptr [0x02c9a5c0]      ; 005b24b4 | DAT_02c9a5c0
     CALL crt_math.c_round_FUN_005c03a0  ; 005b24ba
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 005b24bf
     MOV EAX,dword ptr [ESP + 0x20]      ; 005b24c3
     ADD ESI,EAX                         ; 005b24c7

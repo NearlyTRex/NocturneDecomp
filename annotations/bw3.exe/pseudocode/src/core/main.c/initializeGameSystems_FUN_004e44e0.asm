@@ -34,7 +34,7 @@
 ;   core_dfont.cpp_initFonts_FUN_00459f50
 ;   core_flattn.cpp_FUN_004ad4c0
 ;   core_inivar.cpp_readIniData_FUN_004d8e70
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_main.c_FUN_004e4d00
 ;   core_menu.cpp_showCalibrationTest_FUN_004e84d0
 ;   core_mission.cpp_FUN_004f5aa0
@@ -116,8 +116,8 @@ section .text
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004e45b6
     PUSH EAX                            ; 004e45b9
-    CALL core_main.c_FUN_004e4330       ; 004e45ba
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e45ba
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e45bf
     CALL core_main.c_FUN_004e4d00       ; 004e45c2
         ;   XREF to: 004e4d00 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4d00()
@@ -144,8 +144,8 @@ section .text
     PUSH 0x5c6c4a                       ; 004e45fd | = "Unable to set 640x480x32bpp.  Please ..."
     MOV dword ptr [0x01d71de0],EDI      ; 004e4602 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004e4608 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004e460d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e460d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e4612
     CALL core_dfont.cpp_initFonts_FUN_00459f50 ; 004e4615
         ;   XREF to: 00459f50 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00459f50()
@@ -792,7 +792,7 @@ section .text
     PUSH EAX                            ; 004e4bf1
         ;   Label: LAB_004e4bf1
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004e4bf2
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004e4bf7
     PUSH 0x1c0                          ; 004e4bfa
     PUSH 0x5c6ba7                       ; 004e4bff | = "stderr.txt"
@@ -807,8 +807,8 @@ section .text
     PUSH 0x5c6bc1                       ; 004e4c1e | = "Please copy Blair Witch 3 to your har..."
     MOV dword ptr [0x01d71de0],ESI      ; 004e4c23 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004e4c29 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004e4c2f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e4c2f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e4c34
     JMP 0x004e4527                      ; 004e4c37
         ;   XREF to: 004e4527 (UNCONDITIONAL_JUMP)  ; LAB_004e4527

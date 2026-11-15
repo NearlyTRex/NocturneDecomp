@@ -13,7 +13,7 @@
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_00579060 at 00579066
 ;   support_trisock.cpp_CSocket_dtor_FUN_00579010 at 00579016
 ;   support_trisock.cpp_FUN_00579890 at 005799bc
-;   support_trisock.cpp_FUN_0057ad10 at 0057ae17
+;   support_trisock.cpp_FUN_0057ad10 at 0057adc0
 ;
 ; Called Functions:
 ;   crt_wsock32.c_closesocket

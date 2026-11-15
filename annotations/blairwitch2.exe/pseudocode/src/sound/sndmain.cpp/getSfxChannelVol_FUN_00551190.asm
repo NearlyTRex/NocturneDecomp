@@ -12,7 +12,7 @@
 ;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a280
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a62b
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055a170 at 0055a18f
-;   sound_snddx.cpp_FUN_00556550 at 00556a48
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550 at 00556a48
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_0054e6e0 at 0054e6fc
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553915
 ;   sound_sndmain.cpp_writeIni_FUN_00553980 at 00553b0f
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5e8dce                       ; 005511b4 | = "getSfxChannelVol - invalid channel in..."
     MOV dword ptr [0x01d046a0],EDX      ; 005511b9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005511bf | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005511c5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005511c5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005511ca
     MOV EBX,dword ptr [EBX*0x4 + 0x26484c0] ; 005511cd
     MOV EAX,EBX                         ; 005511d4

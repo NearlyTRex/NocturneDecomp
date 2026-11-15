@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_teleport_cpp_CTeleport_getBoundingBox_FUN_00568f20(CTeleport *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_teleport_cpp_CTeleport_getBoundingBox_FUN_00568f20(CTeleport *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5d1a

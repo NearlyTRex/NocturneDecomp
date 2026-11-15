@@ -16,7 +16,7 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width
   if (_DAT_007303b8 != 0) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x995;
-    core_main_c_FUN_004e4330("mapFrameBuffer - already mapped!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - already mapped!");
   }
   if (stride == 0) {
     iVar1 = width * bits_per_pixel >> 0x1f;
@@ -25,29 +25,29 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width
   if (((bits_per_pixel != 8) && (bits_per_pixel != 0x10)) && (bits_per_pixel != 0x20)) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x99d;
-    core_main_c_FUN_004e4330("mapFrameBuffer - invalid bits/pixel");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - invalid bits/pixel");
   }
   iVar1 = width * bits_per_pixel >> 0x1f;
   if ((stride ^ stride >> 0x1f) - (stride >> 0x1f) <
       (int)((width * bits_per_pixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x99e;
-    core_main_c_FUN_004e4330("mapFrameBuffer - invalid stride");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - invalid stride");
   }
   if ((width < 1) || (height < 1)) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x99f;
-    core_main_c_FUN_004e4330("mapFrameBuffer - invalid size");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - invalid size");
   }
   if (0x4b0 < height) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x9a0;
-    core_main_c_FUN_004e4330("mapFrameBuffer - ySize too big!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - ySize too big!");
   }
   if (frame_buffer == (void *)0x0) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x9a1;
-    core_main_c_FUN_004e4330("mapFrameBuffer - invalid buffer!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("mapFrameBuffer - invalid buffer!");
   }
   _DAT_007303b8 = DAT_005fba18;
   _DAT_007303bc = DAT_005fba1c;

@@ -43,7 +43,7 @@ void __cdecl CFlame::renderBackground(CFlame *this_ptr,int layer_flag);
 
 // Original: core_flame.cpp_CFlame_getBoundingBox_FUN_004a6c20
 // Address: 004a6c20
-CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flame.cpp_CFlame_archive_FUN_004a6ca0
 // Address: 004a6ca0

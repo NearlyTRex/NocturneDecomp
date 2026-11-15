@@ -31,7 +31,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -132,8 +132,8 @@ section .text
     PUSH 0x5dbb5f                       ; 0048f9ed | = "Parity Check 999"
     MOV dword ptr [0x01d1d400],EDX      ; 0048f9f2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0048f9f8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048f9fe
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048f9fe
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048fa03
     CMP dword ptr [EBX],0x0             ; 0048fa06
         ;   Label: LAB_0048fa06

@@ -57,7 +57,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
           default:
             _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
             _DAT_01d71de4 = 0xc38;
-            core_main_c_FUN_004e4330("Invalid entry item type");
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
           iVar5 = iVar5 + 1;
           iVar8 = iVar8 + 4;
@@ -93,7 +93,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
           default:
             _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
             _DAT_01d71de4 = 0xc50;
-            core_main_c_FUN_004e4330("Invalid entry item type");
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
           iVar5 = iVar5 + 1;
           iVar8 = iVar8 + 4;
@@ -105,7 +105,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
   if (iVar7 != 0) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0xc54;
-    core_main_c_FUN_004e4330("Hell froze");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
   iVar7 = 0;
   local_28 = 0;
@@ -128,7 +128,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
         if (local_28 < 1) {
           _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
           _DAT_01d71de4 = 0xc67;
-          core_main_c_FUN_004e4330("Hell froze");
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
         }
         local_28 = local_28 + -1;
         FUN_005a3140(file,"// map entry name, xSize, ySize\n");
@@ -183,7 +183,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
         if (iVar8 != 0) {
           _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
           _DAT_01d71de4 = 0xc85;
-          core_main_c_FUN_004e4330("Hell froze.");
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze.");
         }
       }
       local_34 = local_34 + 1;
@@ -193,7 +193,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
   if (local_28 != 0) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0xc89;
-    core_main_c_FUN_004e4330("Hell froze");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
   FUN_005a3140(file,"//-- END FIELD NOTES --------------------------------\n");
   return;

@@ -19,6 +19,7 @@
 #include "types/classes/CGameHook.h"
 #include "types/classes/CGoggles.h"
 #include "types/classes/CLantern.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMeleeAxe.h"
 #include "types/classes/CMuzzleEffect.h"
@@ -60,24 +61,24 @@ void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00590e40(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char *movie_filename);
 void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00591120(HWND notify_window,int play_state);
 int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,char *movie_filename);
-void core_xform_cpp_FUN_00591530(float *param_1,float *param_2);
+CVector3f * __stack2_esi core_xform_cpp_transformVector3x4_FUN_00591530(CVector3f *input_vector,CMatrix3x4f *matrix,CVector3f *output_vector);
 CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005915b0(CVector3f *input_output_vector,CMatrix3x4f *matrix);
 CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00591860(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b);
 void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005918a0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_somebodyWriteMe_FUN_00591900(void);
 void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00591930(CMatrix3x4f *matrix);
-void core_xform_cpp_FUN_00591980(float *param_1);
+void __cdecl core_xform_cpp_normalizeMatrix_FUN_00591980(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_clearTranslation_FUN_00591ab0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-void core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(float *param_1,float *param_2,int param_3);
+void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2);
-float * core_xform_cpp_matrixToEulerAngles_FUN_00591de0(float *param_1);
-float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(float *param_1);
-void core_xform_cpp_FUN_00592720(int param_1);
-void core_xform_cpp_invertAndGetTranslation_FUN_00592760(undefined4 param_1);
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f *matrix_in,CVector3f *euler_out);
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
+CVector3f * __stack_esi core_xform_cpp_getTranslation_FUN_00592720(CMatrix3x4f *matrix_in,CVector3f *vector_out);
+CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_00592760(CMatrix3x4f *matrix_in,CVector3f *vector_out);
 double __cdecl core_xform_cpp_determinant_FUN_005927e0(CMatrix3x4f *matrix);
-void core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *param_1);
+CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out);
 float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_00592a60(CMatrix3x4f *matrix);
 void core_xform_cpp_FUN_00592dd0(void);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_00593240(float angle_radians,CMatrix3x4f *matrix_out);
@@ -89,18 +90,18 @@ void core_xform_cpp_lerpMatrix3x4_FUN_00593770(undefined4 *param_1,undefined4 *p
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 void core_xform_cpp_matrixToQuaternion_FUN_00593a50(float *param_1);
-void core_xform_cpp_negateFirstComponent_FUN_00593c00(float *param_1);
+CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_00593c00(CQuaternion4f *vector_in,CQuaternion4f *vector_out);
 void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00593c40(CQuaternion4f *quaternion);
-void core_xform_cpp_multiplyQuaternion_FUN_00593c60(float *param_1,float *param_2);
+CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out);
 CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr);
 void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_00593d50(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
 float * core_xform_cpp_slerpQuaternion_FUN_00593df0(float *param_1,float *param_2,float param_3);
-void core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(float param_1);
-void core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float param_1);
-void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float angle_radians,CQuaternion4f *quat_out);
 void core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float param_1,float *param_2);
-float * core_xform_cpp_FUN_005940b0(float *param_1);
-float * core_xform_cpp_FUN_00594210(float *param_1);
+undefined4 * core_xform_cpp_FUN_005940b0(float *param_1);
+undefined4 * core_xform_cpp_FUN_00594210(float *param_1);
 void core_xform_cpp_FUN_00594380(float *param_1);
 void core_xform_cpp_FUN_005944a0(float *param_1);
 void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005945b0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
@@ -113,7 +114,7 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00594f40(int vertex_cou
 void __cdecl core_zombie_cpp_staticInit_FUN_00595680(void);
 float core_zombie_cpp_FUN_005956b0(int param_1);
 void core_zombie_cpp_FUN_00595750(int param_1);
-void core_zombie_cpp_getObjectGrabPointWorld_FUN_00595810(int param_1);
+CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_00595810(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(CVector3f *dimensions);
 CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_00595a80(CZombie *this_ptr);
@@ -221,7 +222,7 @@ CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_pt
 void __cdecl core_lantern_cpp_CLantern_setup_FUN_0059ccc0(CLantern *this_ptr);
 int __cdecl core_lantern_cpp_CLantern_fire_FUN_0059cce0(CLantern *this_ptr);
 void __cdecl core_lantern_cpp_CLantern_process_FUN_0059ccf0(CLantern *this_ptr,float delta_time);
-void core_lantern_cpp_FUN_0059ced0(int param_1);
+void core_lantern_cpp_FUN_0059ced0(CDemonActor *param_1);
 int __cdecl core_lantern_cpp_CLantern_renderOpaque_FUN_0059d000(CLantern *this_ptr);
 int __cdecl core_lantern_cpp_CLantern_renderTransparent_FUN_0059d040(CLantern *this_ptr);
 void __cdecl core_lantern_cpp_CLantern_renderAimBeam_FUN_0059d0a0(CLantern *this_ptr);
@@ -235,7 +236,7 @@ CDemonActorType * __cdecl core_meleeaxe_cpp_CMeleeAxe_getActorType_FUN_0059d210(
 CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr);
 CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags);
 void core_meleeaxe_cpp_FUN_0059d350(void);
-void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,CMatrix3x3f *param_3);
 void __cdecl core_muzzle_cpp_CMuzzleEffect_process_FUN_0059d420(CMuzzleEffect *this_ptr);
 void __cdecl core_muzzle_cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect *this_ptr);
 void core_muzzle_cpp_FUN_0059d5f0(void);

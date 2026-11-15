@@ -18,10 +18,10 @@
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_hero.cpp_closestHeroToPoint_FUN_004d22c0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 0043426b
     MOV EBX,EAX                         ; 0043426c
     MOV dword ptr [ESP + 0x16c],EAX     ; 0043426e
-    CALL core_actor.cpp_FUN_00408bf0    ; 00434275
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00434275
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xcc]                ; 0043427a
     ADD ESP,0x8                         ; 00434281
     LEA EAX,[ESP + 0x10c]               ; 00434284
@@ -255,8 +255,8 @@ section .text
     PUSH EAX                            ; 0043445e
     LEA ESI,[ESP + 0x138]               ; 0043445f
     LEA EDI,[ESP + 0x108]               ; 00434466
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0043446d
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0043446d
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00434472
     LEA ESI,[ESP + 0x130]               ; 00434475
     MOV EAX,dword ptr [ESP + 0x17c]     ; 0043447c
@@ -469,8 +469,8 @@ section .text
     PUSH EAX                            ; 00434730
     MOV dword ptr [ESP + 0x130],EDI     ; 00434731
     LEA EDI,[ESP + 0x120]               ; 00434738
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0043473f
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0043473f
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00434744
     LEA ESI,[ESP + 0x94]                ; 00434747
     MOV EAX,dword ptr [ESP + 0x180]     ; 0043474e

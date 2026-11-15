@@ -16,15 +16,16 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemo
   float fVar3;
   float fVar4;
   int iVar5;
-  float10 fVar6;
-  float fVar7;
-  float fVar8;
+  double dVar6;
+  double dVar7;
+  float local_60;
+  float local_5c;
   float local_58;
   
   iVar5 = 0;
-  fVar7 = 0.0;
+  local_60 = 0.0;
   local_58 = 0.0;
-  fVar8 = 0.0;
+  local_5c = 0.0;
   if (0 < _DAT_01fc9cd4) {
     do {
       iVar1 = *(int *)(&DAT_01fc9cd8 + iVar5);
@@ -36,8 +37,8 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemo
         ;
         if (fVar4 <= *(float *)(iVar1 + 0x11d4)) {
           fVar4 = 1.0 - fVar4 / *(float *)(iVar1 + 0x11d4);
-          fVar8 = *(float *)(iVar1 + 0x11c4) * fVar4 + fVar8;
-          fVar7 = *(float *)(iVar1 + 0x11c8) * fVar4 + fVar7;
+          local_5c = *(float *)(iVar1 + 0x11c4) * fVar4 + local_5c;
+          local_60 = *(float *)(iVar1 + 0x11c8) * fVar4 + local_60;
           local_58 = *(float *)(iVar1 + 0x11cc) * fVar4 + local_58;
         }
       }
@@ -45,25 +46,24 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemo
     } while (iVar5 < _DAT_01fc9cd4 * 4);
   }
   if (_DAT_01fc9cd4 == 0) {
-    fVar7 = 128.0;
+    local_60 = 128.0;
     local_58 = 128.0;
-    fVar8 = 128.0;
+    local_5c = 128.0;
   }
-  if ((float)_DAT_005e59e2 < fVar8) {
-    fVar8 = 255.0;
+  if ((float)_DAT_005e59e2 < local_5c) {
+    local_5c = 255.0;
   }
-  if ((float)_DAT_005e59e2 < fVar7) {
-    fVar7 = 255.0;
+  if ((float)_DAT_005e59e2 < local_60) {
+    local_60 = 255.0;
   }
   if ((float)_DAT_005e59e2 < local_58) {
     local_58 = 255.0;
   }
-  fVar6 = (float10)local_58;
-  round(fVar7,fVar8);
-  iVar5 = round();
-  (&DAT_00622034)[vertex_index * 0xc] = iVar5 << 8;
-  iVar5 = round();
-  (&DAT_00622038)[vertex_index * 0xc] = iVar5 << 8;
-  (&DAT_0062203c)[vertex_index * 0xc] = (int)ROUND(fVar6) << 8;
+  dVar6 = round((double)local_5c);
+  dVar7 = round((double)local_60);
+  (&DAT_00622034)[vertex_index * 0xc] = (int)ROUND(dVar6) << 8;
+  dVar6 = round((double)local_58);
+  (&DAT_00622038)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;
+  (&DAT_0062203c)[vertex_index * 0xc] = (int)ROUND(dVar6) << 8;
   return;
 }

@@ -21,7 +21,6 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
   CGore *this_ptr_01;
   CVector3f *pCVar8;
   char *pcVar9;
-  float *pfVar10;
   EBloodType blood_type;
   float local_90;
   float fStack_8c;
@@ -31,8 +30,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
   float fStack_7c;
   float fStack_78;
   CVector3f CStack_74;
-  float fStack_68;
-  float afStack_64 [2];
+  CVector3f CStack_68;
   CVector3f CStack_5c;
   float fStack_50;
   float afStack_4c [2];
@@ -40,7 +38,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
   float fStack_38;
   float afStack_34 [4];
   float fStack_24;
-  float afStack_20 [3];
+  CVector3f CStack_20;
   uint local_14;
   
   bVar7 = 0;
@@ -66,19 +64,22 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
               (pCVar1,0,&CStack_44);
-    pfVar10 = afStack_34 + 5;
-    afStack_20[0] = CStack_44.x;
-    afStack_34[(uint)bVar7 * -2 + 6] = *(float *)((int)&CStack_44 + (uint)bVar7 * -8 + 4);
-    afStack_34[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         *(float *)((int)&CStack_44 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-    core_actor_cpp_FUN_00408b40(this_ptr,pfVar10);
+    pCVar8 = &CStack_20;
+    CStack_20.x = CStack_44.x;
+    *(uint *)((int)&CStack_20 + (uint)bVar7 * -8 + 4) =
+         *(uint *)((int)&CStack_44 + (uint)bVar7 * -8 + 4);
+    *(uint *)((int)&CStack_20 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+         *(uint *)((int)&CStack_44 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,pCVar8,&CStack_68);
     blood_type = BLOOD_TYPE_RED;
     pCVar8 = &CStack_5c;
-    CStack_5c.x = fStack_68;
-    *(float *)((int)&CStack_5c + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2];
+    CStack_5c.x = CStack_68.x;
+    *(uint *)((int)&CStack_5c + (uint)bVar7 * -8 + 4) =
+         *(uint *)((int)&CStack_68 + (uint)bVar7 * -8 + 4);
     this_ptr_01 = g_CGorePtr;
-    *(float *)((int)&CStack_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+    *(uint *)((int)&CStack_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+         *(uint *)((int)&CStack_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(this_ptr_01,pCVar8,blood_type);
     this_ptr->pool_me = 1;
     local_14 = 1;

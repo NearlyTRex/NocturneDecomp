@@ -20,12 +20,11 @@ void core_cloth_cpp_FUN_005b0ce0(int param_1,int param_2,int param_3)
   byte bVar3;
   float10 fVar4;
   float10 fVar5;
-  float afStackY_1034 [1006];
+  int aiStackY_1034 [1006];
   CVector3f *euler_angles;
   CVector3f *translation;
   CVector3i CStack_58;
-  float fStack_4c;
-  float afStack_48 [2];
+  CVector3f CStack_4c;
   CVector3f aCStack_40 [2];
   int iStack_28;
   int iStack_24;
@@ -36,13 +35,14 @@ void core_cloth_cpp_FUN_005b0ce0(int param_1,int param_2,int param_3)
   
   bVar3 = 0;
   iVar1 = param_1 + 0x37b50 + param_2 * 0xac;
-  core_dirmat_cpp_FUN_004496e0(iVar1 + 0x78);
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0((CMatrix3x3f *)(iVar1 + 0x78),&CStack_4c);
   translation = (CVector3f *)(iVar1 + 0xa0);
   euler_angles = aCStack_40;
-  aCStack_40[0].x = fStack_4c;
-  *(float *)((int)aCStack_40 + (uint)bVar3 * -8 + 4) = afStack_48[(uint)bVar3 * -2];
-  *(float *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       afStack_48[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  aCStack_40[0].x = CStack_4c.x;
+  *(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + -8);
+  *(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + -4);
   vertex_index1 = 0;
   iVar2 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350

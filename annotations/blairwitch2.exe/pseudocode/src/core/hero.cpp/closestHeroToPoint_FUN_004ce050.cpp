@@ -41,6 +41,6 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ce050(CLocation *locatio
   }
   _DAT_01d046a0 = "..\\core\\hero.cpp";
   _DAT_01d046a4 = 0x3a;
-  core_main_c_FUN_004e4500("closestHeroToPoint - no heros!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("closestHeroToPoint - no heros!");
   return (CHero *)0x0;
 }

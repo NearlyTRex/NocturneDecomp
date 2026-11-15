@@ -47,7 +47,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
       if (local_14 == (CHealthItem *)0x0) {
         _DAT_01d71de0 = "..\\core\\inv.cpp";
         _DAT_01d71de4 = 0x7c2;
-        core_main_c_FUN_004e4330("CInventory::select - Catch 22");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::select - Catch 22");
       }
       if ((float)_DAT_005c65d7 < *(float *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2538)) {
         return 1;
@@ -119,7 +119,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
     if (pCVar3 == (CDemonActor *)0x0) {
       _DAT_01d71de0 = "..\\core\\inv.cpp";
       _DAT_01d71de4 = 0x7bc;
-      core_main_c_FUN_004e4330("CInventory::select - Catch 22");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::select - Catch 22");
     }
     core_inv_cpp_FUN_004dd2d0(this_ptr,pCVar3[2].validation_magic);
   }

@@ -82,7 +82,7 @@ section .text
     FLD1                                ; 004b71b6
     FADDP                               ; 004b71b8
     CALL crt_math.c_round_FUN_005c03a0  ; 004b71ba
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 004b71bf
     MOV EAX,dword ptr [ESP]             ; 004b71c2
     MOV dword ptr [ESP + 0x2c],EAX      ; 004b71c5

@@ -2,30 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 55,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 14,
     "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 41
+    "total_lines": 40
   },
   "cross_references": [
     {
       "addr": "00556550",
       "from_addr": "00556717",
-      "name": "sound_snddx.cpp_FUN_00556550",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005570a0",
       "from_addr": "005572bb",
-      "name": "sound_snddx.cpp_FUN_005570a0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005570a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +55,7 @@
       {
         "call_addr": "00556717",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00556550",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,7 +69,7 @@
       {
         "call_addr": "00556b2b",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00556550",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +83,7 @@
       {
         "call_addr": "005572bb",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_005570a0",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005570a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float10)param_1;",
+      "text": "dVar1 = round((double)param_1);",
       "type": "unnamed_param"
     },
     {

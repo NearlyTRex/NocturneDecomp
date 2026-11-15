@@ -211,7 +211,7 @@ section .text
     FLD float ptr [0x01d33f6c]          ; 0052203a | DAT_01d33f6c
     ADD ESP,0x4                         ; 00522040
     CALL crt_math.c_round_FUN_005c03a0  ; 00522043
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x40]        ; 00522048
     CMP dword ptr [ESP + 0x40],0x1d     ; 0052204c
     JLE 0x00522059                      ; 00522051

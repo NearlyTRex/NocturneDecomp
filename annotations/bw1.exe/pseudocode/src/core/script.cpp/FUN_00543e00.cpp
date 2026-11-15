@@ -52,7 +52,7 @@ uint core_script_cpp_FUN_00543e00(CScript *param_1,char *param_2)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_0054af20(param_1,local_118);
-    file_handle = engine_dosio_cpp_FUN_00479180("world",param_2,&DAT_005ee1dd);
+    file_handle = engine_dosio_cpp_getFile_FUN_00479180("world",param_2,&DAT_005ee1dd);
     if (file_handle != (_FILE *)0x0) {
       lVar4 = _ftell(file_handle);
       local_14 = &param_1->script_text;

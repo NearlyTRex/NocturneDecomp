@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 197,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 55,
     "suspect_count": 12,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 209
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -40,7 +40,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "0051b6c0",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 15,
       "match": "DAT_00626114",
       "severity": "mild",
       "text": "} while (((&DAT_00626114)[(byte)((char)iVar2 + 1)] & 2) != 0);",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 24,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = (CDemonActor *)0x0;",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 27,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0(this_ptr,local_dc)",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 29,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (unaff_ESI == (CDemonActor *)0x0) {",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 35,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
@@ -330,7 +330,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 42,
       "match": "DAT_005e9697",
       "severity": "mild",
       "text": "iVar2 = _fscanf(file,&DAT_005e9697);",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 50,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 52,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
@@ -354,7 +354,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 53,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
@@ -362,7 +362,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 55,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",

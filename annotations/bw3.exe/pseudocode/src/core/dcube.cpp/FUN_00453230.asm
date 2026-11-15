@@ -22,6 +22,9 @@
 ;   undefined4 DAT_015489d0
 ;   ... and 10 more
 ;
+; Called Functions:
+;   core_dcube.cpp_clipEdgeToPlane_FUN_004515b0
+;
 ; *****************************************************************************
 
 section .text
@@ -251,8 +254,22 @@ section .text
         ;   Label: LAB_00453489
     JA 0x004534bc                       ; 0045348c
         ;   XREF to: 004534bc (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x4531c8]  ; 0045348e
+    JMP dword ptr [ECX*0x4 + 0x4531c8]  ; 0045348e | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x015486c0],0xc ; 00453495 | DAT_015486c0
+        ;   Label: caseD_0
+    ADD ECX,0x15486c4                   ; 0045349c
+    CMP ECX,EDX                         ; 004534a2
+    JZ 0x004534b6                       ; 004534a4
+        ;   XREF to: 004534b6 (CONDITIONAL_JUMP)  ; LAB_004534b6
+    MOV EAX,dword ptr [EDX]             ; 004534a6
+    MOV dword ptr [ECX],EAX             ; 004534a8
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004534aa
+    MOV dword ptr [ECX + 0x4],EAX       ; 004534ad
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004534b0
+    MOV dword ptr [ECX + 0x8],EAX       ; 004534b3
+    INC dword ptr [0x015486c0]          ; 004534b6 | DAT_015486c0
+        ;   Label: LAB_004534b6
     MOV EDI,dword ptr [0x015485fc]      ; 004534bc | DAT_015485fc
         ;   Label: caseD_3
     INC ESI                             ; 004534c2
@@ -305,8 +322,22 @@ section .text
         ;   Label: LAB_0045352b
     JA 0x0045355e                       ; 0045352e
         ;   XREF to: 0045355e (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x4531d8]  ; 00453530
+    JMP dword ptr [ECX*0x4 + 0x4531d8]  ; 00453530 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x01548784],0xc ; 00453537 | DAT_01548784
+        ;   Label: caseD_0
+    ADD ECX,0x1548788                   ; 0045353e
+    CMP ECX,EDX                         ; 00453544
+    JZ 0x00453558                       ; 00453546
+        ;   XREF to: 00453558 (CONDITIONAL_JUMP)  ; LAB_00453558
+    MOV EAX,dword ptr [EDX]             ; 00453548
+    MOV dword ptr [ECX],EAX             ; 0045354a
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0045354c
+    MOV dword ptr [ECX + 0x4],EAX       ; 0045354f
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453552
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453555
+    INC dword ptr [0x01548784]          ; 00453558 | DAT_01548784
+        ;   Label: LAB_00453558
     MOV EDX,dword ptr [0x015486c0]      ; 0045355e | DAT_015486c0
         ;   Label: caseD_3
     INC ESI                             ; 00453564
@@ -359,8 +390,22 @@ section .text
         ;   Label: LAB_004535ce
     JA 0x00453601                       ; 004535d1
         ;   XREF to: 00453601 (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x4531e8]  ; 004535d3
+    JMP dword ptr [ECX*0x4 + 0x4531e8]  ; 004535d3 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x01548848],0xc ; 004535da | DAT_01548848
+        ;   Label: caseD_0
+    ADD ECX,0x154884c                   ; 004535e1
+    CMP ECX,EDX                         ; 004535e7
+    JZ 0x004535fb                       ; 004535e9
+        ;   XREF to: 004535fb (CONDITIONAL_JUMP)  ; LAB_004535fb
+    MOV EAX,dword ptr [EDX]             ; 004535eb
+    MOV dword ptr [ECX],EAX             ; 004535ed
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004535ef
+    MOV dword ptr [ECX + 0x4],EAX       ; 004535f2
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004535f5
+    MOV dword ptr [ECX + 0x8],EAX       ; 004535f8
+    INC dword ptr [0x01548848]          ; 004535fb | DAT_01548848
+        ;   Label: LAB_004535fb
     MOV EDX,dword ptr [0x01548784]      ; 00453601 | DAT_01548784
         ;   Label: caseD_3
     INC EBX                             ; 00453607
@@ -413,8 +458,22 @@ section .text
         ;   Label: LAB_00453671
     JA 0x004536a4                       ; 00453674
         ;   XREF to: 004536a4 (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x4531f8]  ; 00453676
+    JMP dword ptr [ECX*0x4 + 0x4531f8]  ; 00453676 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x0154890c],0xc ; 0045367d | DAT_0154890c
+        ;   Label: caseD_0
+    ADD ECX,0x1548910                   ; 00453684
+    CMP ECX,EDX                         ; 0045368a
+    JZ 0x0045369e                       ; 0045368c
+        ;   XREF to: 0045369e (CONDITIONAL_JUMP)  ; LAB_0045369e
+    MOV EAX,dword ptr [EDX]             ; 0045368e
+    MOV dword ptr [ECX],EAX             ; 00453690
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453692
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453695
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453698
+    MOV dword ptr [ECX + 0x8],EAX       ; 0045369b
+    INC dword ptr [0x0154890c]          ; 0045369e | DAT_0154890c
+        ;   Label: LAB_0045369e
     MOV EDX,dword ptr [0x01548848]      ; 004536a4 | DAT_01548848
         ;   Label: caseD_3
     INC EBX                             ; 004536aa
@@ -467,8 +526,22 @@ section .text
         ;   Label: LAB_00453717
     JA 0x0045374a                       ; 0045371a
         ;   XREF to: 0045374a (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x453208]  ; 0045371c
+    JMP dword ptr [ECX*0x4 + 0x453208]  ; 0045371c | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x015489d0],0xc ; 00453723 | DAT_015489d0
+        ;   Label: caseD_0
+    ADD ECX,0x15489d4                   ; 0045372a
+    CMP ECX,EDX                         ; 00453730
+    JZ 0x00453744                       ; 00453732
+        ;   XREF to: 00453744 (CONDITIONAL_JUMP)  ; LAB_00453744
+    MOV EAX,dword ptr [EDX]             ; 00453734
+    MOV dword ptr [ECX],EAX             ; 00453736
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453738
+    MOV dword ptr [ECX + 0x4],EAX       ; 0045373b
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0045373e
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453741
+    INC dword ptr [0x015489d0]          ; 00453744 | DAT_015489d0
+        ;   Label: LAB_00453744
     MOV EDX,dword ptr [0x0154890c]      ; 0045374a | DAT_0154890c
         ;   Label: caseD_3
     INC EBX                             ; 00453750
@@ -521,8 +594,22 @@ section .text
         ;   Label: LAB_004537bd
     JA 0x004537f0                       ; 004537c0
         ;   XREF to: 004537f0 (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [ECX*0x4 + 0x453218]  ; 004537c2
+    JMP dword ptr [ECX*0x4 + 0x453218]  ; 004537c2 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    IMUL ECX,dword ptr [0x01548a94],0xc ; 004537c9 | DAT_01548a94
+        ;   Label: caseD_0
+    ADD ECX,0x1548a98                   ; 004537d0
+    CMP ECX,EDX                         ; 004537d6
+    JZ 0x004537ea                       ; 004537d8
+        ;   XREF to: 004537ea (CONDITIONAL_JUMP)  ; LAB_004537ea
+    MOV EAX,dword ptr [EDX]             ; 004537da
+    MOV dword ptr [ECX],EAX             ; 004537dc
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004537de
+    MOV dword ptr [ECX + 0x4],EAX       ; 004537e1
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004537e4
+    MOV dword ptr [ECX + 0x8],EAX       ; 004537e7
+    INC dword ptr [0x01548a94]          ; 004537ea | DAT_01548a94
+        ;   Label: LAB_004537ea
     MOV EDX,dword ptr [0x015489d0]      ; 004537f0 | DAT_015489d0
         ;   Label: caseD_3
     INC ESI                             ; 004537f6
@@ -543,4 +630,374 @@ section .text
     POP ESI                             ; 00453813
     POP EBX                             ; 00453814
     RET                                 ; 00453815
+    IMUL ECX,dword ptr [0x015486c0],0xc ; 00453816 | DAT_015486c0
+        ;   Label: caseD_1
+    FLD float ptr [ESP + 0x14]          ; 0045381d
+    SUB ESP,0x8                         ; 00453821
+    FCHS                                ; 00453824
+    FSTP double ptr [ESP]               ; 00453826
+    PUSH 0x0                            ; 00453829
+    PUSH 0x0                            ; 0045382b
+    PUSH 0x3ff00000                     ; 0045382d
+    PUSH 0x0                            ; 00453832
+    PUSH 0x0                            ; 00453834
+    PUSH 0x0                            ; 00453836
+    ADD ECX,0x15486c4                   ; 00453838
+    PUSH ECX                            ; 0045383e
+    PUSH EDX                            ; 0045383f
+    PUSH EDI                            ; 00453840
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453841
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x015486c0]      ; 00453846 | DAT_015486c0
+    INC EDX                             ; 0045384c
+    ADD ESP,0x2c                        ; 0045384d
+    MOV dword ptr [0x015486c0],EDX      ; 00453850 | DAT_015486c0
+    JMP 0x004534bc                      ; 00453856
+        ;   XREF to: 004534bc (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x015486c0],0xc ; 0045385b | DAT_015486c0
+        ;   Label: caseD_2
+    ADD ECX,0x15486c4                   ; 00453862
+    CMP ECX,EDX                         ; 00453868
+    JZ 0x0045387c                       ; 0045386a
+        ;   XREF to: 0045387c (CONDITIONAL_JUMP)  ; LAB_0045387c
+    MOV EAX,dword ptr [EDX]             ; 0045386c
+    MOV dword ptr [ECX],EAX             ; 0045386e
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453870
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453873
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453876
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453879
+    MOV ECX,dword ptr [0x015486c0]      ; 0045387c | DAT_015486c0
+        ;   Label: LAB_0045387c
+    INC ECX                             ; 00453882
+    MOV dword ptr [0x015486c0],ECX      ; 00453883 | DAT_015486c0
+    IMUL ECX,ECX,0xc                    ; 00453889
+    FLD float ptr [ESP + 0x14]          ; 0045388c
+    SUB ESP,0x8                         ; 00453890
+    FCHS                                ; 00453893
+    FSTP double ptr [ESP]               ; 00453895
+    PUSH 0x0                            ; 00453898
+    PUSH 0x0                            ; 0045389a
+    PUSH 0x3ff00000                     ; 0045389c
+    PUSH 0x0                            ; 004538a1
+    PUSH 0x0                            ; 004538a3
+    PUSH 0x0                            ; 004538a5
+    ADD ECX,0x15486c4                   ; 004538a7
+    PUSH ECX                            ; 004538ad
+    PUSH EDI                            ; 004538ae
+    PUSH EDX                            ; 004538af
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 004538b0
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x015486c0]      ; 004538b5 | DAT_015486c0
+    INC EDX                             ; 004538bb
+    ADD ESP,0x2c                        ; 004538bc
+    MOV dword ptr [0x015486c0],EDX      ; 004538bf | DAT_015486c0
+    JMP 0x004534bc                      ; 004538c5
+        ;   XREF to: 004534bc (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548784],0xc ; 004538ca | DAT_01548784
+        ;   Label: caseD_1
+    FLD float ptr [ESP]                 ; 004538d1
+    SUB ESP,0x8                         ; 004538d4
+    FSTP double ptr [ESP]               ; 004538d7
+    PUSH 0x0                            ; 004538da
+    PUSH 0x0                            ; 004538dc
+    PUSH 0xbff00000                     ; 004538de
+    PUSH 0x0                            ; 004538e3
+    PUSH 0x0                            ; 004538e5
+    PUSH 0x0                            ; 004538e7
+    ADD ECX,0x1548788                   ; 004538e9
+    PUSH ECX                            ; 004538ef
+    PUSH EDX                            ; 004538f0
+    PUSH EDI                            ; 004538f1
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 004538f2
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548784]      ; 004538f7 | DAT_01548784
+    INC EDX                             ; 004538fd
+    ADD ESP,0x2c                        ; 004538fe
+    MOV dword ptr [0x01548784],EDX      ; 00453901 | DAT_01548784
+    JMP 0x0045355e                      ; 00453907
+        ;   XREF to: 0045355e (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548784],0xc ; 0045390c | DAT_01548784
+        ;   Label: caseD_2
+    ADD ECX,0x1548788                   ; 00453913
+    CMP ECX,EDX                         ; 00453919
+    JZ 0x0045392d                       ; 0045391b
+        ;   XREF to: 0045392d (CONDITIONAL_JUMP)  ; LAB_0045392d
+    MOV EAX,dword ptr [EDX]             ; 0045391d
+    MOV dword ptr [ECX],EAX             ; 0045391f
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453921
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453924
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453927
+    MOV dword ptr [ECX + 0x8],EAX       ; 0045392a
+    MOV ECX,dword ptr [0x01548784]      ; 0045392d | DAT_01548784
+        ;   Label: LAB_0045392d
+    INC ECX                             ; 00453933
+    MOV dword ptr [0x01548784],ECX      ; 00453934 | DAT_01548784
+    IMUL ECX,ECX,0xc                    ; 0045393a
+    FLD float ptr [ESP]                 ; 0045393d
+    SUB ESP,0x8                         ; 00453940
+    FSTP double ptr [ESP]               ; 00453943
+    PUSH 0x0                            ; 00453946
+    PUSH 0x0                            ; 00453948
+    PUSH 0xbff00000                     ; 0045394a
+    PUSH 0x0                            ; 0045394f
+    PUSH 0x0                            ; 00453951
+    PUSH 0x0                            ; 00453953
+    ADD ECX,0x1548788                   ; 00453955
+    PUSH ECX                            ; 0045395b
+    PUSH EDI                            ; 0045395c
+    PUSH EDX                            ; 0045395d
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 0045395e
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548784]      ; 00453963 | DAT_01548784
+    INC EDX                             ; 00453969
+    ADD ESP,0x2c                        ; 0045396a
+    MOV dword ptr [0x01548784],EDX      ; 0045396d | DAT_01548784
+    JMP 0x0045355e                      ; 00453973
+        ;   XREF to: 0045355e (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548848],0xc ; 00453978 | DAT_01548848
+        ;   Label: caseD_1
+    FLD float ptr [ESP + 0x18]          ; 0045397f
+    SUB ESP,0x8                         ; 00453983
+    FCHS                                ; 00453986
+    FSTP double ptr [ESP]               ; 00453988
+    PUSH 0x0                            ; 0045398b
+    PUSH 0x0                            ; 0045398d
+    PUSH 0x0                            ; 0045398f
+    PUSH 0x0                            ; 00453991
+    PUSH 0x3ff00000                     ; 00453993
+    PUSH 0x0                            ; 00453998
+    ADD ECX,0x154884c                   ; 0045399a
+    PUSH ECX                            ; 004539a0
+    PUSH EDX                            ; 004539a1
+    PUSH EDI                            ; 004539a2
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 004539a3
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548848]      ; 004539a8 | DAT_01548848
+    INC EDX                             ; 004539ae
+    ADD ESP,0x2c                        ; 004539af
+    MOV dword ptr [0x01548848],EDX      ; 004539b2 | DAT_01548848
+    JMP 0x00453601                      ; 004539b8
+        ;   XREF to: 00453601 (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548848],0xc ; 004539bd | DAT_01548848
+        ;   Label: caseD_2
+    ADD ECX,0x154884c                   ; 004539c4
+    CMP ECX,EDX                         ; 004539ca
+    JZ 0x004539de                       ; 004539cc
+        ;   XREF to: 004539de (CONDITIONAL_JUMP)  ; LAB_004539de
+    MOV EAX,dword ptr [EDX]             ; 004539ce
+    MOV dword ptr [ECX],EAX             ; 004539d0
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004539d2
+    MOV dword ptr [ECX + 0x4],EAX       ; 004539d5
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004539d8
+    MOV dword ptr [ECX + 0x8],EAX       ; 004539db
+    MOV ECX,dword ptr [0x01548848]      ; 004539de | DAT_01548848
+        ;   Label: LAB_004539de
+    INC ECX                             ; 004539e4
+    MOV dword ptr [0x01548848],ECX      ; 004539e5 | DAT_01548848
+    IMUL ECX,ECX,0xc                    ; 004539eb
+    FLD float ptr [ESP + 0x18]          ; 004539ee
+    SUB ESP,0x8                         ; 004539f2
+    FCHS                                ; 004539f5
+    FSTP double ptr [ESP]               ; 004539f7
+    PUSH 0x0                            ; 004539fa
+    PUSH 0x0                            ; 004539fc
+    PUSH 0x0                            ; 004539fe
+    PUSH 0x0                            ; 00453a00
+    PUSH 0x3ff00000                     ; 00453a02
+    PUSH 0x0                            ; 00453a07
+    ADD ECX,0x154884c                   ; 00453a09
+    PUSH ECX                            ; 00453a0f
+    PUSH EDI                            ; 00453a10
+    PUSH EDX                            ; 00453a11
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453a12
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548848]      ; 00453a17 | DAT_01548848
+    INC EDX                             ; 00453a1d
+    ADD ESP,0x2c                        ; 00453a1e
+    MOV dword ptr [0x01548848],EDX      ; 00453a21 | DAT_01548848
+    JMP 0x00453601                      ; 00453a27
+        ;   XREF to: 00453601 (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x0154890c],0xc ; 00453a2c | DAT_0154890c
+        ;   Label: caseD_1
+    FLD float ptr [ESP + 0x4]           ; 00453a33
+    SUB ESP,0x8                         ; 00453a37
+    FSTP double ptr [ESP]               ; 00453a3a
+    PUSH 0x0                            ; 00453a3d
+    PUSH 0x0                            ; 00453a3f
+    PUSH 0x0                            ; 00453a41
+    PUSH 0x0                            ; 00453a43
+    PUSH 0xbff00000                     ; 00453a45
+    PUSH 0x0                            ; 00453a4a
+    ADD ECX,0x1548910                   ; 00453a4c
+    PUSH ECX                            ; 00453a52
+    PUSH EDX                            ; 00453a53
+    PUSH EDI                            ; 00453a54
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453a55
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x0154890c]      ; 00453a5a | DAT_0154890c
+    INC EDX                             ; 00453a60
+    ADD ESP,0x2c                        ; 00453a61
+    MOV dword ptr [0x0154890c],EDX      ; 00453a64 | DAT_0154890c
+    JMP 0x004536a4                      ; 00453a6a
+        ;   XREF to: 004536a4 (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x0154890c],0xc ; 00453a6f | DAT_0154890c
+        ;   Label: caseD_2
+    ADD ECX,0x1548910                   ; 00453a76
+    CMP ECX,EDX                         ; 00453a7c
+    JZ 0x00453a90                       ; 00453a7e
+        ;   XREF to: 00453a90 (CONDITIONAL_JUMP)  ; LAB_00453a90
+    MOV EAX,dword ptr [EDX]             ; 00453a80
+    MOV dword ptr [ECX],EAX             ; 00453a82
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453a84
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453a87
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453a8a
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453a8d
+    MOV ECX,dword ptr [0x0154890c]      ; 00453a90 | DAT_0154890c
+        ;   Label: LAB_00453a90
+    INC ECX                             ; 00453a96
+    MOV dword ptr [0x0154890c],ECX      ; 00453a97 | DAT_0154890c
+    IMUL ECX,ECX,0xc                    ; 00453a9d
+    FLD float ptr [ESP + 0x4]           ; 00453aa0
+    SUB ESP,0x8                         ; 00453aa4
+    FSTP double ptr [ESP]               ; 00453aa7
+    PUSH 0x0                            ; 00453aaa
+    PUSH 0x0                            ; 00453aac
+    PUSH 0x0                            ; 00453aae
+    PUSH 0x0                            ; 00453ab0
+    PUSH 0xbff00000                     ; 00453ab2
+    PUSH 0x0                            ; 00453ab7
+    ADD ECX,0x1548910                   ; 00453ab9
+    PUSH ECX                            ; 00453abf
+    PUSH EDI                            ; 00453ac0
+    PUSH EDX                            ; 00453ac1
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453ac2
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x0154890c]      ; 00453ac7 | DAT_0154890c
+    INC EDX                             ; 00453acd
+    ADD ESP,0x2c                        ; 00453ace
+    MOV dword ptr [0x0154890c],EDX      ; 00453ad1 | DAT_0154890c
+    JMP 0x004536a4                      ; 00453ad7
+        ;   XREF to: 004536a4 (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x015489d0],0xc ; 00453adc | DAT_015489d0
+        ;   Label: caseD_1
+    FLD float ptr [ESP + 0x8]           ; 00453ae3
+    SUB ESP,0x8                         ; 00453ae7
+    FSTP double ptr [ESP]               ; 00453aea
+    PUSH 0xbff00000                     ; 00453aed
+    PUSH 0x0                            ; 00453af2
+    PUSH 0x0                            ; 00453af4
+    PUSH 0x0                            ; 00453af6
+    PUSH 0x0                            ; 00453af8
+    PUSH 0x0                            ; 00453afa
+    ADD ECX,0x15489d4                   ; 00453afc
+    PUSH ECX                            ; 00453b02
+    PUSH EDX                            ; 00453b03
+    PUSH EDI                            ; 00453b04
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453b05
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x015489d0]      ; 00453b0a | DAT_015489d0
+    INC EDX                             ; 00453b10
+    ADD ESP,0x2c                        ; 00453b11
+    MOV dword ptr [0x015489d0],EDX      ; 00453b14 | DAT_015489d0
+    JMP 0x0045374a                      ; 00453b1a
+        ;   XREF to: 0045374a (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x015489d0],0xc ; 00453b1f | DAT_015489d0
+        ;   Label: caseD_2
+    ADD ECX,0x15489d4                   ; 00453b26
+    CMP ECX,EDX                         ; 00453b2c
+    JZ 0x00453b40                       ; 00453b2e
+        ;   XREF to: 00453b40 (CONDITIONAL_JUMP)  ; LAB_00453b40
+    MOV EAX,dword ptr [EDX]             ; 00453b30
+    MOV dword ptr [ECX],EAX             ; 00453b32
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453b34
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453b37
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453b3a
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453b3d
+    MOV ECX,dword ptr [0x015489d0]      ; 00453b40 | DAT_015489d0
+        ;   Label: LAB_00453b40
+    INC ECX                             ; 00453b46
+    MOV dword ptr [0x015489d0],ECX      ; 00453b47 | DAT_015489d0
+    IMUL ECX,ECX,0xc                    ; 00453b4d
+    FLD float ptr [ESP + 0x8]           ; 00453b50
+    SUB ESP,0x8                         ; 00453b54
+    FSTP double ptr [ESP]               ; 00453b57
+    PUSH 0xbff00000                     ; 00453b5a
+    PUSH 0x0                            ; 00453b5f
+    PUSH 0x0                            ; 00453b61
+    PUSH 0x0                            ; 00453b63
+    PUSH 0x0                            ; 00453b65
+    PUSH 0x0                            ; 00453b67
+    ADD ECX,0x15489d4                   ; 00453b69
+    PUSH ECX                            ; 00453b6f
+    PUSH EDI                            ; 00453b70
+    PUSH EDX                            ; 00453b71
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453b72
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x015489d0]      ; 00453b77 | DAT_015489d0
+    INC EDX                             ; 00453b7d
+    ADD ESP,0x2c                        ; 00453b7e
+    MOV dword ptr [0x015489d0],EDX      ; 00453b81 | DAT_015489d0
+    JMP 0x0045374a                      ; 00453b87
+        ;   XREF to: 0045374a (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548a94],0xc ; 00453b8c | DAT_01548a94
+        ;   Label: caseD_1
+    FLD float ptr [ESP + 0xc]           ; 00453b93
+    SUB ESP,0x8                         ; 00453b97
+    FSTP double ptr [ESP]               ; 00453b9a
+    PUSH 0xbff00000                     ; 00453b9d
+    PUSH 0x0                            ; 00453ba2
+    PUSH 0x0                            ; 00453ba4
+    PUSH 0x0                            ; 00453ba6
+    PUSH 0x0                            ; 00453ba8
+    PUSH 0x0                            ; 00453baa
+    ADD ECX,0x1548a98                   ; 00453bac
+    PUSH ECX                            ; 00453bb2
+    PUSH EDX                            ; 00453bb3
+    PUSH EDI                            ; 00453bb4
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453bb5
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548a94]      ; 00453bba | DAT_01548a94
+    INC EDX                             ; 00453bc0
+    ADD ESP,0x2c                        ; 00453bc1
+    MOV dword ptr [0x01548a94],EDX      ; 00453bc4 | DAT_01548a94
+    JMP 0x004537f0                      ; 00453bca
+        ;   XREF to: 004537f0 (UNCONDITIONAL_JUMP)  ; caseD_3
+    IMUL ECX,dword ptr [0x01548a94],0xc ; 00453bcf | DAT_01548a94
+        ;   Label: caseD_2
+    ADD ECX,0x1548a98                   ; 00453bd6
+    CMP ECX,EDX                         ; 00453bdc
+    JZ 0x00453bf0                       ; 00453bde
+        ;   XREF to: 00453bf0 (CONDITIONAL_JUMP)  ; LAB_00453bf0
+    MOV EAX,dword ptr [EDX]             ; 00453be0
+    MOV dword ptr [ECX],EAX             ; 00453be2
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00453be4
+    MOV dword ptr [ECX + 0x4],EAX       ; 00453be7
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00453bea
+    MOV dword ptr [ECX + 0x8],EAX       ; 00453bed
+    MOV ECX,dword ptr [0x01548a94]      ; 00453bf0 | DAT_01548a94
+        ;   Label: LAB_00453bf0
+    INC ECX                             ; 00453bf6
+    MOV dword ptr [0x01548a94],ECX      ; 00453bf7 | DAT_01548a94
+    IMUL ECX,ECX,0xc                    ; 00453bfd
+    FLD float ptr [ESP + 0xc]           ; 00453c00
+    SUB ESP,0x8                         ; 00453c04
+    FSTP double ptr [ESP]               ; 00453c07
+    PUSH 0xbff00000                     ; 00453c0a
+    PUSH 0x0                            ; 00453c0f
+    PUSH 0x0                            ; 00453c11
+    PUSH 0x0                            ; 00453c13
+    PUSH 0x0                            ; 00453c15
+    PUSH 0x0                            ; 00453c17
+    ADD ECX,0x1548a98                   ; 00453c19
+    PUSH ECX                            ; 00453c1f
+    PUSH EDI                            ; 00453c20
+    PUSH EDX                            ; 00453c21
+    CALL core_dcube.cpp_clipEdgeToPlane_FUN_004515b0 ; 00453c22
+        ;   XREF to: 004515b0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004515b0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
+    MOV EDX,dword ptr [0x01548a94]      ; 00453c27 | DAT_01548a94
+    INC EDX                             ; 00453c2d
+    ADD ESP,0x2c                        ; 00453c2e
+    MOV dword ptr [0x01548a94],EDX      ; 00453c31 | DAT_01548a94
+    JMP 0x004537f0                      ; 00453c37
+        ;   XREF to: 004537f0 (UNCONDITIONAL_JUMP)  ; caseD_3
 

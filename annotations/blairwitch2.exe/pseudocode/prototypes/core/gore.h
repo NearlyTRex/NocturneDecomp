@@ -59,7 +59,7 @@ int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_FUN_004c88a0
 // Address: 004c88a0
-void FUN_004c88a0(undefined4 *param_1,int param_2);
+void FUN_004c88a0(undefined4 *param_1);
 
 // Original: core_gore.cpp_CBloodPool_processAge_FUN_004c8ce0
 // Address: 004c8ce0

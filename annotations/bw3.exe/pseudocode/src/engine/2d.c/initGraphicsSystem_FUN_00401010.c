@@ -19,7 +19,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   DAT_005fba20 = 0x20;
   wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005798f0(0x280,0x1e0);
   wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(0x280,0x1e0,0x20);
-  engine_2d_c_FUN_00401590("vga.act");
+  engine_2d_c_loadPaletteFile_FUN_00401590("vga.act");
   engine_2d_c_loadOrBuildColorMap_FUN_00402940("vga.map");
   wincore_wddvmem_cpp_setupColorPalette_FUN_0057a770();
   _DAT_01c6b5d0 = 0xffffffff;

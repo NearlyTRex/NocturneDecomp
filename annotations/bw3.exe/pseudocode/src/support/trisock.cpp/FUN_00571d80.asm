@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[1]:
+; XREF[2]:
+;   support_trisock.cpp_FUN_00571340 at 00571b3b
 ;   support_trisock.cpp_FUN_00571e50 at 00571e8a
 ;
 ; Referenced Globals:

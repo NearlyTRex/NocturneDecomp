@@ -9,12 +9,9 @@
 double __crtmath modf(double value,double *integer_part)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  double dVar1;
   
-  fVar1 = (float10)value;
-  fVar2 = fVar1;
-  round();
-  *integer_part = (double)fVar1;
-  return (double)(fVar2 - fVar1);
+  dVar1 = round(value);
+  *value._4_4_ = dVar1;
+  return value - dVar1;
 }

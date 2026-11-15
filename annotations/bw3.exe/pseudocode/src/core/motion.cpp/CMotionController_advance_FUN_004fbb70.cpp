@@ -61,7 +61,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004fbb70(CMotionContro
       default:
         _DAT_01d71de0 = "..\\core\\motion.cpp";
         _DAT_01d71de4 = 0x1f6;
-        core_main_c_FUN_004e4330("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_44.cmd);
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid transition command returned by CMotionControler::advanceComplex: %d");
       }
       goto LAB_004fbd11;
     }
@@ -85,25 +85,25 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004fbb70(CMotionContro
     case MOTION_CMD_TWEEN:
       break;
     case MOTION_CMD_TWEEN_ADVANCE:
-      core_motion_cpp_FUN_004fc850
+      core_motion_cpp_CMotionController_advanceTween_FUN_004fc850
                 (this_ptr,this_ptr->tween_target_motion,this_ptr->tween_target_frame,&local_b0);
       local_14 = 1;
       break;
     case MOTION_CMD_TWEEN_ADVANCE_BOTH:
-      core_motion_cpp_FUN_004fc850
+      core_motion_cpp_CMotionController_advanceTween_FUN_004fc850
                 (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,&local_b0);
       goto LAB_004fbc8a;
     case MOTION_CMD_TWEEN_BIDIR:
-      core_motion_cpp_FUN_004fc850
+      core_motion_cpp_CMotionController_advanceTween_FUN_004fc850
                 (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,&local_b0);
-      core_motion_cpp_FUN_004fc850
+      core_motion_cpp_CMotionController_advanceTween_FUN_004fc850
                 (this_ptr,this_ptr->tween_target_motion,this_ptr->tween_target_frame,&local_b0);
       local_14 = 1;
       goto LAB_004fbc8a;
     default:
       _DAT_01d71de0 = "..\\core\\motion.cpp";
       _DAT_01d71de4 = 0x1bd;
-      core_main_c_FUN_004e4330("CMotionController::advance: Tweening active but invalid tweenType: %d",this_ptr->tween_type);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CMotionController::advance: Tweening active but invalid tweenType: %d");
     }
 switchD_004fbc79_caseD_3:
     if (local_1c != 0) {

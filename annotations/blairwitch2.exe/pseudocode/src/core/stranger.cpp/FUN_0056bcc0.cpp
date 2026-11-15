@@ -13,21 +13,21 @@ void core_stranger_cpp_FUN_0056bcc0(void)
 
 {
   float fVar1;
-  float10 fVar2;
+  double dVar2;
   float *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
   
   if ((((float)_DAT_005ebc55 <= in_stack_00000008) &&
-      (fVar1 = SQRT(in_stack_00000008 * in_stack_00000008 - in_stack_0000000c * in_stack_0000000c) /
-               in_stack_00000008, fVar1 < 1.0)) && (0.0 <= fVar1)) {
-    fVar2 = (float10)fVar1;
-    acos();
+      (dVar2 = (double)(SQRT(in_stack_00000008 * in_stack_00000008 -
+                             in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),
+      dVar2 < 1.0)) && (0.0 <= dVar2)) {
+    dVar2 = acos(dVar2);
     if (in_stack_0000000c < 0.0) {
-      fVar1 = *in_stack_00000004 - (float)fVar2;
+      fVar1 = *in_stack_00000004 - (float)dVar2;
     }
     else {
-      fVar1 = *in_stack_00000004 + (float)fVar2;
+      fVar1 = *in_stack_00000004 + (float)dVar2;
     }
     *in_stack_00000004 = fVar1;
     fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(*in_stack_00000004);

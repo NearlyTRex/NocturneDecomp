@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5dc662                       ; 0049a852 | = "CPickList::setCancelButtonText - too ..."
     MOV dword ptr [0x01d1d400],EDX      ; 0049a857 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0049a85d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049a863
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049a863
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049a868
     MOV EDI,dword ptr [ESP + 0xc]       ; 0049a86b
         ;   Label: LAB_0049a86b

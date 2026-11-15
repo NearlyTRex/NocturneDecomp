@@ -24,3 +24,7 @@ CStrList g_CStrListInstance = {};
 // CTextureList
 CTextureList g_CTextureListInstance = {};
 
+// SReverbSettings
+SReverbSettings g_CachedReverb = {};
+SReverbSettings g_SoundReverb = {};
+

@@ -9,9 +9,9 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 0053457b
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536725
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535b82
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00535184
-;   core_set.cpp_FUN_005365c0 at 00536725
 ;   core_set.cpp_FUN_00536990 at 00536aea
 ;
 ; Referenced Globals:
@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00448fa0
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00449dd0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_watcom.c__memset_FUN_00495ec0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5bb2e7                       ; 0045c6cb | = "CDemonLight::beginScene - Scene alrea..."
     MOV dword ptr [0x01d71de0],ECX      ; 0045c6d0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0045c6d6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c6dc
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c6dc
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c6e1
     JMP 0x0045c545                      ; 0045c6e4
         ;   XREF to: 0045c545 (UNCONDITIONAL_JUMP)  ; LAB_0045c545

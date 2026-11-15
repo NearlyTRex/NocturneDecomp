@@ -54,7 +54,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0057bef0(void *user_data,char *s
         if ((local_34 < 5) || (local_2c < local_30)) {
           _DAT_01d1d400 = "..\\core\\sound.cpp";
           _DAT_01d1d404 = 0x137;
-          core_main_c_FUN_005030e0("Invalid sfx string: %s");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid sfx string: %s");
         }
         iVar1 = _sprintf(pcVar6,&DAT_005f5975);
         pcVar5 = pcVar6 + iVar1;
@@ -189,7 +189,7 @@ LAB_0057bfd2:
           if (local_24 < 2) {
             _DAT_01d1d400 = "..\\core\\sound.cpp";
             _DAT_01d1d404 = 0x1a4;
-            core_main_c_FUN_005030e0("Invalid sfx string: %s");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid sfx string: %s");
             local_14 = local_14 + local_24;
           }
           else {
@@ -202,7 +202,7 @@ LAB_0057bfd2:
           if (local_20 < 2) {
             _DAT_01d1d400 = "..\\core\\sound.cpp";
             _DAT_01d1d404 = 0x1aa;
-            core_main_c_FUN_005030e0("Invalid sfx string: %s");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid sfx string: %s");
             local_14 = local_14 + local_20;
           }
           else {
@@ -212,7 +212,7 @@ LAB_0057bfd2:
         else {
           _DAT_01d1d400 = "..\\core\\sound.cpp";
           _DAT_01d1d404 = 0x1ad;
-          core_main_c_FUN_005030e0("Invalid sfx string: %s");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid sfx string: %s");
         }
       }
       else {

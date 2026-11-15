@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined2 crt_math_c_acos_FUN_005b9924(void)
+; double __fpustack_safe crt_math_c_acos_FUN_005b9924(double x)
 ;
 ;
 ; XREF[15]:
-;   core_dirmat.cpp_FUN_004496e0 at 00449a2c
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 at 00449a2c
 ;   core_dirmat.cpp_angleFromSinCos_FUN_00449610 at 004496c1
 ;   core_doc.cpp_FUN_00453d80 at 00454368
 ;   core_doc.cpp_FUN_0045ab40 at 0045b06a
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 005b995e (CONDITIONAL_JUMP)  ; LAB_005b995e
     FXCH                                ; 005b994f
     CALL crt_math.c_atan2_FUN_005b9989  ; 005b9951
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FLD extended double ptr [0x0061eeac] ; 005b9956 | DAT_0061eeac
     FSUBRP                              ; 005b995c
     POP AX                              ; 005b995e

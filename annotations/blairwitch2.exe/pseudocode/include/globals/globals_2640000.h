@@ -8,6 +8,7 @@
 #include "types/classes/CSfxSample.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CTextureList.h"
+#include "types/structs/SReverbSettings.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2640000
@@ -32,4 +33,8 @@ extern CStrList g_CStrListInstance;
 
 // CTextureList
 extern CTextureList g_CTextureListInstance;
+
+// SReverbSettings
+extern SReverbSettings g_CachedReverb;
+extern SReverbSettings g_SoundReverb;
 

@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   condition_expression
 ;
-; XREF[56]:
+; XREF[57]:
 ;   core_anvil.cpp_CAnvil_process_FUN_0040eae0 at 0040eaf6
 ;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040efdb
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040f97f
@@ -18,7 +18,7 @@
 ;   core_bugs.cpp_CBugs_process_FUN_0041f390 at 0041f3e9
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437ae3
 ;   core_conveyor.cpp_CConveyor_process_FUN_004385e0 at 004385f9
-;   ... and 46 more
+;   ... and 47 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d4390

@@ -45,7 +45,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db
     else {
       _DAT_01d1d400 = "..\\engine\\drender.cpp";
       _DAT_01d1d404 = 0x29d;
-      core_main_c_FUN_005030e0("Can't use demonZFacetCount in shadow mode!");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
               (this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);

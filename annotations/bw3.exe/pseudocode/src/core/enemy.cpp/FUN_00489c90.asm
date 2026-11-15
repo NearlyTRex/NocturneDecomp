@@ -306,7 +306,7 @@ section .text
     FLD float ptr [ESP + 0x54]          ; 00489f47
     ADD ESP,0x8                         ; 00489f4b
     CALL crt_math.c_round_FUN_005a3120  ; 00489f4e
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x2c]        ; 00489f53
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00489f57
     MOV dword ptr [ESP + 0x4c],EAX      ; 00489f5b

@@ -28,8 +28,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432c40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
@@ -187,8 +187,8 @@ section .text
     PUSH EBX                            ; 004eba54
     LEA ESI,[ESP + 0x70]                ; 004eba55
     LEA EDI,[ESP + 0x58]                ; 004eba59
-    CALL core_actor.cpp_FUN_00408b40    ; 004eba5d
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004eba5d
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004eba62
     LEA EAX,[ESP + 0x50]                ; 004eba65
     LEA ESI,[ESP + 0x68]                ; 004eba69
@@ -200,8 +200,8 @@ section .text
     PUSH EAX                            ; 004eba74
     LEA ESI,[ESP + 0xd0]                ; 004eba75
     LEA EDI,[ESP + 0x64]                ; 004eba7c
-    CALL core_actor.cpp_FUN_00408bb0    ; 004eba80
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004eba80
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 004eba85
     LEA ESI,[ESP + 0xc8]                ; 004eba88
     FLD float ptr [ESP + 0x14]          ; 004eba8f

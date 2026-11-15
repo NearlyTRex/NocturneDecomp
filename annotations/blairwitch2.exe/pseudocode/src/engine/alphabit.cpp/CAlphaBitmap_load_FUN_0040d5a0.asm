@@ -48,13 +48,13 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fread_FUN_005b87c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040d5e9
     PUSH EAX                            ; 0040d5ed
     PUSH 0x5cb02a                       ; 0040d5ee | DAT_005cb02a
-    CALL engine_dosio.cpp_FUN_00460c70  ; 0040d5f3
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 0040d5f3
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0040d5f8
     MOV dword ptr [ESP + 0x110],EAX     ; 0040d5fb
     TEST EAX,EAX                        ; 0040d602
@@ -109,7 +109,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x110]     ; 0040d62e
     PUSH ESI                            ; 0040d635
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0040d636
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040d63b
     MOV EDI,dword ptr [ESP + 0x12c]     ; 0040d63e
     PUSH EDI                            ; 0040d645
@@ -123,8 +123,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040d65d
     PUSH EAX                            ; 0040d661
     PUSH 0x5cb072                       ; 0040d662 | DAT_005cb072
-    CALL engine_dosio.cpp_FUN_00460c70  ; 0040d667
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 0040d667
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0040d66c
     MOV dword ptr [ESP + 0x110],EAX     ; 0040d66f
     TEST EAX,EAX                        ; 0040d676
@@ -201,7 +201,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x110]     ; 0040d779
     PUSH ECX                            ; 0040d780
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0040d781
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040d786
     MOV EBX,dword ptr [ESP + 0x12c]     ; 0040d789
     PUSH EBX                            ; 0040d790
@@ -215,8 +215,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040d7a8
     PUSH EAX                            ; 0040d7ac
     PUSH 0x5cb0ba                       ; 0040d7ad | DAT_005cb0ba
-    CALL engine_dosio.cpp_FUN_00460c70  ; 0040d7b2
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 0040d7b2
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 0040d7b7
     ADD ESP,0xc                         ; 0040d7b9
     TEST EAX,EAX                        ; 0040d7bc
@@ -256,8 +256,8 @@ section .text
     PUSH 0x5cb045                       ; 0040d814 | = "CAlphaBitmap::load - Can't open %s"
     MOV dword ptr [0x01d046a0],ESI      ; 0040d819 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0040d81f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040d825
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d825
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040d82a
     JMP 0x0040d60a                      ; 0040d82d
         ;   XREF to: 0040d60a (UNCONDITIONAL_JUMP)  ; LAB_0040d60a
@@ -268,8 +268,8 @@ section .text
     MOV EDX,0xe7                        ; 0040d83f
     PUSH 0x5cb08d                       ; 0040d844 | = "CAlphaBitmap::load - Can't open %s"
     MOV dword ptr [0x01d046a4],EDX      ; 0040d849 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040d84f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d84f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040d854
     JMP 0x0040d67e                      ; 0040d857
         ;   XREF to: 0040d67e (UNCONDITIONAL_JUMP)  ; LAB_0040d67e
@@ -315,7 +315,7 @@ section .text
     ADD ESP,0x10                        ; 0040d8c7
     PUSH ESI                            ; 0040d8ca
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0040d8cb
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040d8d0
     ADD ESP,0x114                       ; 0040d8d3
     POP EBP                             ; 0040d8d9

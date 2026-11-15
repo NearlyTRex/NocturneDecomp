@@ -1,14 +1,12 @@
 // Name: sound_sndwav.cpp_getWavInDevice_FUN_00558ad0
 // Address: 00558ad0
 // Address Range: [[00558ad0, 00558b16]]
-// Convention: unknown
-// Signature: undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void)
+// Convention: __cdecl
+// Signature: CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(UINT device_id)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-byte * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void)
+CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(UINT device_id)
 
 {
   int iVar1;
@@ -17,12 +15,12 @@ byte * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void)
   
   iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_00558240((CWavInDevice *)&DAT_0264b280);
   if (iVar1 == 0) {
-    return (byte *)0x0;
+    return (CWavInDevice *)0x0;
   }
   MVar2 = waveInGetDevCapsA(in_stack_00000008,(LPWAVEINCAPSA)&stack0xffffffd4,0x30);
   if (MVar2 != 0) {
-    return (byte *)0x0;
+    return (CWavInDevice *)0x0;
   }
   DAT_0061bf88 = in_stack_00000008;
-  return &DAT_0264b280;
+  return (CWavInDevice *)&DAT_0264b280;
 }

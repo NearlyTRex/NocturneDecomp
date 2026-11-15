@@ -170,7 +170,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
         if (0xf9 < local_3c) {
           _DAT_01d046a0 = "..\\core\\setutil.cpp";
           _DAT_01d046a4 = 0x2d8;
-          core_main_c_FUN_004e4500("Invalid camera number in visiblilty list!");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';
         this_ptr->camera_light_bounds[local_3c].x_min = local_38;

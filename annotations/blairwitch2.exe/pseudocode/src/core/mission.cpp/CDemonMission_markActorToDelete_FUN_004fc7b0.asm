@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)
+; void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CDemonActor *    Stack[0x8]:4   actor
+; uint             Stack[0xc]:4   flags
 ;
 ; XREF[10]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004189ec
@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5de7dd                       ; 004fc7f5 | = "CDemonMission::markActorToDelete - To..."
     MOV dword ptr [0x01d046a0],EBX      ; 004fc7fa | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004fc800 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fc806
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc806
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc80b
     POP EBX                             ; 004fc80e
     POP ESI                             ; 004fc80f

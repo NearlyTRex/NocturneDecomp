@@ -21,7 +21,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0043d220
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870
 ;   core_dcamera.cpp_FUN_00443610
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_clearLights_FUN_005308e0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0052d980
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
@@ -146,8 +146,8 @@ section .text
     PUSH 0x5e567b                       ; 0052d582
     MOV dword ptr [0x01d046a0],EDX      ; 0052d587 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0052d58d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0052d593
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052d593
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052d598
     MOV EAX,dword ptr [ESP + 0x164]     ; 0052d59b
         ;   Label: LAB_0052d59b

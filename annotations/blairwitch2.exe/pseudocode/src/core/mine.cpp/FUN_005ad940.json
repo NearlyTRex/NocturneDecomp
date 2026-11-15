@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 160,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 12,
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 88
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -171,10 +171,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "CStack_1c.x = *(float *)(param_1 + 0x20);",
+      "text": "position = (CDemonGlobe *)(param_1 + 0x7f4);",
       "type": "unnamed_param"
     },
     {
@@ -182,52 +182,28 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "CStack_1c.z = *(float *)(param_1 + 0x28);",
+      "text": "((double)((1.0 - *(float *)(param_1 + 0x7e8) / *(float *)(param_1 + 0x7dc)) *",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "CStack_1c.y = *(float *)(param_1 + 0x24) + _DAT_005f0eef;",
+      "text": "((double)((1.0 - *(float *)(param_1 + 0x7e8) / *(float *)(param_1 + 0x7dc)) *",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = ((float10)1 - (float10)*(float *)(param_1 + 0x7e8) / (float10)*(float *)(param_1 + 0x7dc))",
+      "text": "*(int *)(param_1 + 0x830) = iVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = ((float10)1 - (float10)*(float *)(param_1 + 0x7e8) / (float10)*(float *)(param_1 + 0x7dc))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CDemonGlobe *)(param_1 + 0x7f4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x830) = iStack_10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "*(char *)(param_1 + 0x810) =",
@@ -235,7 +211,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonGlobe *)(param_1 + 0x7f4),5.0);",
@@ -243,7 +219,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x814) = 2;",

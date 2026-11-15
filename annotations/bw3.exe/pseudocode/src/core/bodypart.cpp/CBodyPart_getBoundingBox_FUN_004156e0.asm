@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_004156e0(CBodyPart *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_004156e0(CBodyPart *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; *****************************************************************************
 

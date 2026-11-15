@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -34,7 +34,7 @@ section .text
     FMUL double ptr [0x005d727b]        ; 00578684 | DAT_005d727b
     MOV EDX,dword ptr [EBX + 0x2b230]   ; 0057868a
     CALL crt_math.c_round_FUN_005a3120  ; 00578690
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 00578695
     MOV EAX,dword ptr [ESP]             ; 00578698
     ADD EDX,EAX                         ; 0057869b
@@ -83,8 +83,39 @@ section .text
         ;   Label: LAB_00578728
     CMP EAX,0x3                         ; 0057872e
     JA 0x005787c2                       ; 00578731
-        ;   XREF to: 005787c2 (CONDITIONAL_JUMP)  ; LAB_005787c2
-    JMP dword ptr [EAX*0x4 + 0x578660]  ; 00578737
+        ;   XREF to: 005787c2 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x578660]  ; 00578737 | caseD_0 | caseD_1 | caseD_2
+        ;   Label: switchD
+    FLD float ptr [ESP + 0x18]          ; 0057873e
+        ;   Label: caseD_1
+    FDIV float ptr [EBX + 0x16c]        ; 00578742
+    FADD float ptr [EBX + 0x27c]        ; 00578748
+    FST float ptr [EBX + 0x27c]         ; 0057874e
+    FLD1                                ; 00578754
+    FCOMPP                              ; 00578756
+    FNSTSW AX                           ; 00578758
+    SAHF                                ; 0057875a
+    JNC 0x005787a6                      ; 0057875b
+        ;   XREF to: 005787a6 (CONDITIONAL_JUMP)  ; LAB_005787a6
+    MOV dword ptr [EBX + 0x280],0x2     ; 0057875d
+    MOV dword ptr [EBX + 0x27c],0x3f800000 ; 00578767
+        ;   Label: caseD_2
+    JMP 0x005787a6                      ; 00578771
+        ;   XREF to: 005787a6 (UNCONDITIONAL_JUMP)  ; LAB_005787a6
+    FLD float ptr [ESP + 0x18]          ; 00578773
+        ;   Label: caseD_3
+    FDIV float ptr [EBX + 0x170]        ; 00578777
+    FSUBR float ptr [EBX + 0x27c]       ; 0057877d
+    FST float ptr [EBX + 0x27c]         ; 00578783
+    FLDZ                                ; 00578789
+    FCOMPP                              ; 0057878b
+    FNSTSW AX                           ; 0057878d
+    SAHF                                ; 0057878f
+    JBE 0x005787a6                      ; 00578790
+        ;   XREF to: 005787a6 (CONDITIONAL_JUMP)  ; LAB_005787a6
+    MOV dword ptr [EBX + 0x280],0x0     ; 00578792
+    MOV dword ptr [EBX + 0x27c],0x0     ; 0057879c
+        ;   Label: caseD_0
     FLD float ptr [EBX + 0x168]         ; 005787a6
         ;   Label: LAB_005787a6
     FMUL float ptr [EBX + 0x27c]        ; 005787ac
@@ -96,13 +127,13 @@ section .text
     POP EBX                             ; 005787c0
     RET                                 ; 005787c1
     MOV ECX,0x5d723b                    ; 005787c2
-        ;   Label: LAB_005787c2
+        ;   Label: default
     MOV ESI,0x1b9                       ; 005787c7
     PUSH 0x5d7250                       ; 005787cc
     MOV dword ptr [0x01d71de0],ECX      ; 005787d1 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005787d7 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005787dd
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005787dd
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005787e2
     JMP 0x005787a6                      ; 005787e5
         ;   XREF to: 005787a6 (UNCONDITIONAL_JUMP)  ; LAB_005787a6

@@ -41,7 +41,7 @@ section .text
     MOV EAX,EBX                         ; 004445ac
     FLD float ptr [EBX + 0x2538]        ; 004445ae
     CALL crt_math.c_round_FUN_005a3120  ; 004445b4
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0xd17c]      ; 004445b9
     POP EBX                             ; 004445bf
     RET                                 ; 004445c0

@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_setCurrentListener_FUN_00551480(int listener_inde
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0x1845;
-    core_main_c_FUN_004e4500("unlockSound - sound was not locked!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("unlockSound - sound was not locked!");
   }
   if (_DAT_0264901c == 1) {
     sound_sndmain_cpp_flushSoundChanges_FUN_00553380();

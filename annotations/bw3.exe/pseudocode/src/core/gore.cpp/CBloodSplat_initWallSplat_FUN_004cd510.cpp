@@ -20,12 +20,13 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004cd510(CBloodSplat *t
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  fVar2 = (float10)normal->y;
-  atan2();
+  fVar2 = atan2
+                    ((float10)normal->y,
+                     SQRT((float10)normal->x * (float10)normal->x +
+                          (float10)normal->z * (float10)normal->z));
   (this_ptr->rotation).z = 0.0;
   (this_ptr->rotation).x = (float)-fVar2;
-  fVar2 = (float10)normal->x;
-  atan2();
+  fVar2 = atan2((float10)normal->x,(float10)normal->z);
   (this_ptr->rotation).y = (float)fVar2;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
   this_ptr->texture_variant = iVar1;
@@ -36,7 +37,7 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004cd510(CBloodSplat *t
   (this_ptr->normal_fixed).x = (int)ROUND(normal->x * _DAT_005e0e1c);
   (this_ptr->normal_fixed).y = (int)ROUND(normal->y * _DAT_005e0e1c);
   (this_ptr->normal_fixed).z = (int)ROUND(normal->z * _DAT_005e0e1c);
-  this_ptr->blood_type = blood_type;
+  this_ptr->blood_type = (EBloodType)position;
   iVar1 = _DAT_01d5ba14;
   this_ptr->expired = 0;
   this_ptr->area_id = *(int *)(*(int *)(iVar1 * 4 + 0x1d5ba04) + 0x2c);

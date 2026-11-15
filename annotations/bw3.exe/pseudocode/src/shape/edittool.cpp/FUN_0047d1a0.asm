@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047d205
     MOV dword ptr [0x01d71de0],ECX      ; 0047d20a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0047d210 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047d216
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d216
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d21b
     POP EBX                             ; 0047d21e
     JMP 0x0047d1ab                      ; 0047d21f

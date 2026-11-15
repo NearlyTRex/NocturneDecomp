@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408a50
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5caa56                       ; 0040b3cd | = "Error %sing actor property.\nActor na..."
     MOV dword ptr [0x01d046a0],EDI      ; 0040b3d2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0040b3d8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040b3de
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040b3de
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x18                        ; 0040b3e3
     POP EBP                             ; 0040b3e6
     POP EDI                             ; 0040b3e7

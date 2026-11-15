@@ -50,7 +50,7 @@ section .text
     FILD dword ptr [ESP + 0x4]          ; 0054398e
     FMUL float ptr [0x01e818b0]         ; 00543992 | DAT_01e818b0
     CALL crt_math.c_round_FUN_005c03a0  ; 00543998
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 0054399d
     MOV EAX,dword ptr [ESP]             ; 005439a0
     ADD ESP,0x8                         ; 005439a3

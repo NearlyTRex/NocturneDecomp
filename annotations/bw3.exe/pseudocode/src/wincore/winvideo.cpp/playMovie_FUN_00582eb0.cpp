@@ -13,15 +13,15 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,cha
 {
   byte *pbVar1;
   byte bVar2;
-  _FILE *p_Var3;
-  MCIERROR MVar4;
-  byte *pbVar5;
+  _FILE *file_handle;
+  MCIERROR MVar3;
+  byte *pbVar4;
   HANDLE hThread;
   int nPriority;
-  int iVar6;
-  bool bVar7;
+  int iVar5;
+  bool bVar6;
   char *lpstrCommand;
-  HWND pHVar8;
+  HWND pHVar7;
   char local_1f8 [260];
   byte local_f4;
   byte local_f3 [127];
@@ -30,53 +30,53 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,cha
   tagRECT local_14;
   
   _sprintf(local_74,"%s\\%s");
-  p_Var3 = _fopen(local_74,&DAT_005d80b0);
-  if (p_Var3 == (_FILE *)0x0) {
+  file_handle = _fopen(local_74,&DAT_005d80b0);
+  if (file_handle == (_FILE *)0x0) {
     return 0;
   }
-  _fclose(p_Var3);
+  _fclose(file_handle);
   engine_special_cpp_clearScreen_FUN_00560d70();
   wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
-  pHVar8 = _DAT_02d21b78;
+  pHVar7 = _DAT_02d21b78;
   if (_DAT_02d22fb0 != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_00582b60(_DAT_02d21b78);
   }
   _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d");
-  MVar4 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
-  if (MVar4 == 0) {
+  MVar3 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
+  if (MVar3 == 0) {
     _DAT_02d22fb0 = 1;
-    MVar4 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
-    if (MVar4 == 0) {
+    MVar3 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    if (MVar3 == 0) {
       _DAT_02d22fa8 = (HWND)atoi(local_1f8);
     }
     else {
-      mciGetErrorStringA(MVar4,local_1f8,0x104);
-      MessageBoxA(pHVar8,local_1f8,(LPCSTR)0x0,0x30);
+      mciGetErrorStringA(MVar3,local_1f8,0x104);
+      MessageBoxA(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
     }
     if ((_DAT_02d22fb8 == 0) && (_DAT_02d22fb0 != 0)) {
-      GetClientRect(pHVar8,&local_14);
+      GetClientRect(pHVar7,&local_14);
       mciSendStringA("where mov source",(LPSTR)&local_f4,0x80,(HWND)0x0);
       SetRectEmpty(&local_24);
-      pbVar5 = &local_f4;
+      pbVar4 = &local_f4;
       while (local_f4 == 0x20) {
-        pbVar1 = pbVar5 + 1;
-        pbVar5 = pbVar5 + 1;
+        pbVar1 = pbVar4 + 1;
+        pbVar4 = pbVar4 + 1;
         local_f4 = *pbVar1;
       }
-      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 != 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 != 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; (0x2f < *pbVar5 && (*pbVar5 < 0x3a)); pbVar5 = pbVar5 + 1) {
-        local_24.right = local_24.right * 10 + (*pbVar5 - 0x30);
+      for (; (0x2f < *pbVar4 && (*pbVar4 < 0x3a)); pbVar4 = pbVar4 + 1) {
+        local_24.right = local_24.right * 10 + (*pbVar4 - 0x30);
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; (bVar2 = *pbVar5, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar5 = pbVar5 + 1) {
+      for (; (bVar2 = *pbVar4, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar4 = pbVar4 + 1) {
         local_24.bottom = local_24.bottom * 10 + (bVar2 - 0x30);
       }
       if ((400 < local_14.right) || (300 < local_14.bottom)) {
@@ -88,13 +88,13 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,cha
     }
   }
   else {
-    MessageBoxA(pHVar8,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    MessageBoxA(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
     _DAT_02d22fb0 = 0;
   }
-  bVar7 = _DAT_02d22fac == 0;
-  _DAT_02d22fac = (uint)bVar7;
-  if (bVar7) {
-    pHVar8 = _DAT_02d21b78;
+  bVar6 = _DAT_02d22fac == 0;
+  _DAT_02d22fac = (uint)bVar6;
+  if (bVar6) {
+    pHVar7 = _DAT_02d21b78;
     if (_DAT_02d22fb8 == 0) {
       lpstrCommand = "play mov window notify";
     }
@@ -103,15 +103,15 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,cha
     }
   }
   else {
-    pHVar8 = (HWND)0x0;
+    pHVar7 = (HWND)0x0;
     lpstrCommand = "pause mov";
   }
-  mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar8);
+  mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar7);
   hThread = GetCurrentProcess();
   nPriority = GetThreadPriority(hThread);
   SetThreadPriority(hThread,-0xf);
   while (((wincore_winrun_cpp_processWindowMessages_FUN_00580f70(), _DAT_02d22fac != 0 &&
-          (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar6 == 0)) &&
+          (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar5 == 0)) &&
          (_DAT_02d22fb0 != 0))) {
     Sleep(0x14);
   }

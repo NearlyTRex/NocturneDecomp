@@ -26,7 +26,7 @@
 ;   CVector3f CVector3f_03f6af7c
 ;   undefined4 CVector3f_03f6af7c.y
 ;   undefined4 CVector3f_03f6af7c.z
-;   CVector3f g_SoundListenerOrient
+;   SReverbSettings g_SoundReverb
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -40,9 +40,9 @@
 ;   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 ;   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
+;   sound_sndmain.cpp_setReverb_FUN_005ab6e0
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 ;
 ; *****************************************************************************
@@ -71,13 +71,13 @@ section .text
     ADD ESP,0x18                        ; 005b2e0a
     CALL core_sound.cpp_updateListeners_FUN_005b1870 ; 005b2e0d
         ;   XREF to: 005b1870 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_updateListeners_FUN_005b1870()
-    PUSH dword ptr [0x03f6af90]         ; 005b2e12 | g_SoundListenerOrient.z
-    PUSH dword ptr [0x03f6af8c]         ; 005b2e18 | g_SoundListenerOrient.y
+    PUSH dword ptr [0x03f6af90]         ; 005b2e12 | g_SoundReverb.damping
+    PUSH dword ptr [0x03f6af8c]         ; 005b2e18 | g_SoundReverb.decay_time
     XOR EAX,EAX                         ; 005b2e1e
-    PUSH dword ptr [0x03f6af88]         ; 005b2e20 | g_SoundListenerOrient
+    PUSH dword ptr [0x03f6af88]         ; 005b2e20 | g_SoundReverb
     MOV [0x03f6af80],EAX                ; 005b2e26 | CVector3f_03f6af7c.y
-    CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0 ; 005b2e2b
-        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
+    CALL sound_sndmain.cpp_setReverb_FUN_005ab6e0 ; 005b2e2b
+        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setReverb_FUN_005ab6e0(float volume, float decay_time, float damping)
     ADD ESP,0xc                         ; 005b2e30
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 ; 005b2e33
         ;   XREF to: 005aaef0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0()

@@ -82,7 +82,7 @@ section .text
     FILD dword ptr [0x007e2ae8]         ; 0042f367 | DAT_007e2ae8
     FADDP                               ; 0042f36d
     CALL crt_math.c_round_FUN_005a3120  ; 0042f36f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [0x007e2ae8]        ; 0042f374 | DAT_007e2ae8
     CALL crt_stdlib.c_rand_FUN_005a35cc ; 0042f37a
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()

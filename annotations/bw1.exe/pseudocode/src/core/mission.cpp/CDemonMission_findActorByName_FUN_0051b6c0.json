@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 15,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -60,6 +60,12 @@
       "from_addr": "0054b386",
       "name": "core_script.cpp_readActorReference_FUN_0054b320",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b240",
+      "from_addr": "0059b384",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_0059b240",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -83,7 +89,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004d6fc9",
@@ -144,6 +150,17 @@
         "call_addr": "0054b386",
         "call_type": "direct",
         "caller": "core_script.cpp_readActorReference_FUN_0054b320",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059b384",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0059b240",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

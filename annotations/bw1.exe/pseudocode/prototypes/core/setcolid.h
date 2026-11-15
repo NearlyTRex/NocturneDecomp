@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_setcolid.cpp_FUN_005562c0
 // Address: 005562c0
-float * FUN_005562c0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
+CDemonSet * FUN_005562c0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CDemonActor *param_7);
 
 // Original: core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110
 // Address: 00557110

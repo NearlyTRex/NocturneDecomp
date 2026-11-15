@@ -27,11 +27,11 @@ void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0
 // Address: 00455ee0
-void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3);
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
-// Original: core_dcube.cpp_FUN_004560f0
+// Original: core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0
 // Address: 004560f0
-float FUN_004560f0(undefined4 *param_1,float *param_2,float *param_3);
+float __cdecl CDemonCubeTriangle::rayTriangleIntersection(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
 // Original: core_dcube.cpp_intersectXZCylinder_FUN_00456340
 // Address: 00456340
@@ -77,9 +77,9 @@ void __cdecl CDemonCube::allocVoxelMemory(CDemonCube *this_ptr);
 // Address: 00457c40
 void __cdecl CDemonCube::allocGeometryMemory(CDemonCube *this_ptr);
 
-// Original: core_dcube.cpp_FUN_00457d70
+// Original: core_dcube.cpp_CDemonCube_freeMemory_FUN_00457d70
 // Address: 00457d70
-void FUN_00457d70(int *param_1);
+void __cdecl CDemonCube::freeMemory(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_load_FUN_00457e50
 // Address: 00457e50

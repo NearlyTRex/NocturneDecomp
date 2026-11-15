@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005588a0
 ;   sound_sndmain.cpp_isRecordingSystemActive_FUN_00558af0
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5d3c10                       ; 00558a1a | = "selectRecordingDevice - device alread..."
     MOV dword ptr [0x01d71de0],EDX      ; 00558a1f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00558a25 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00558a2b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00558a2b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558a30
     JMP 0x005589ee                      ; 00558a33
         ;   XREF to: 005589ee (UNCONDITIONAL_JUMP)  ; LAB_005589ee

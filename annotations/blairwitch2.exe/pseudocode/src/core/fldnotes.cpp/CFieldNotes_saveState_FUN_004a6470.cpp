@@ -48,7 +48,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
           default:
             _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
             _DAT_01d046a4 = 0xb83;
-            core_main_c_FUN_004e4500("Invalid entry item type");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid entry item type");
           }
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 4;
@@ -84,7 +84,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
           default:
             _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
             _DAT_01d046a4 = 0xb9b;
-            core_main_c_FUN_004e4500("Invalid entry item type");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid entry item type");
           }
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 4;
@@ -96,7 +96,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
   if (iVar3 != 0) {
     _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
     _DAT_01d046a4 = 0xb9f;
-    core_main_c_FUN_004e4500("Hell froze");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
   }
   FUN_005b8010(file,"//-- END FIELD NOTES --------------------------------\n");
   return;

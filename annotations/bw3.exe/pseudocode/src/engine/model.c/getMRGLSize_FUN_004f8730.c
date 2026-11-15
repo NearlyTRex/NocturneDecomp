@@ -70,7 +70,7 @@ int __cdecl engine_model_c_getMRGLSize_FUN_004f8730(SMRGLHeaderExtended *header)
     _sprintf(local_100,"MRGLSize: Bad type : %d");
     _DAT_01d71de0 = "..\\engine\\model.c";
     _DAT_01d71de4 = 0x25c;
-    core_main_c_FUN_004e4330(local_100);
+    core_main_c_displayErrorAndQuit_FUN_004e4330(local_100);
     return 4;
   case 0x16:
     return (header->base).count * 4 + 8;

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   str2
 ; int              Stack[0xc]:4   count
 ;
-; XREF[22]:
+; XREF[23]:
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0 at 0042a54f
 ;   core_carved.cpp_FUN_0042b290 at 0042b2c6
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30 at 00431c58
@@ -19,7 +19,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f57e
 ;   core_event.cpp_FUN_004a1d00 at 004a1f58
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0 at 004bb7c4
-;   ... and 12 more
+;   ... and 13 more
 ;
 ; *****************************************************************************
 

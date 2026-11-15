@@ -1,6 +1,6 @@
 // Name: core_doc.cpp_FUN_0044fec0
 // Address: 0044fec0
-// Address Range: [[0044fec0, 0044fed9] [0044fee0, 0044fee2] [0044ff06, 0044ff0b]]
+// Address Range: [[0044fec0, 0044ff0b]]
 // Convention: unknown
 // Signature: undefined4 core_doc_cpp_FUN_0044fec0(void)
 

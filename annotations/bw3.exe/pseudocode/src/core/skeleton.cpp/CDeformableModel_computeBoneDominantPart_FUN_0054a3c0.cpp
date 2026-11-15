@@ -57,7 +57,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a
     if (local_24 == (CDeformableModelInstance *)0x0) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x600;
-      core_main_c_FUN_004e4330("Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
     }
     pCVar1 = local_24;
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0054e6e0(local_24,this_ptr);

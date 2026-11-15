@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00519ace
     PUSH EAX                            ; 00519ad2
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 00519ad3
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00519ad8
     LEA EAX,[ESI + 0x30]                ; 00519adb
     PUSH EAX                            ; 00519ade
@@ -124,8 +124,8 @@ section .text
     PUSH 0x5e23e0                       ; 00519b32 | = "CPlatform::attachActor - too many!"
     MOV dword ptr [0x01d046a0],ECX      ; 00519b37 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00519b3d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00519b43
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00519b43
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00519b48
     ADD ESP,0x90                        ; 00519b4b
     POP EBP                             ; 00519b51

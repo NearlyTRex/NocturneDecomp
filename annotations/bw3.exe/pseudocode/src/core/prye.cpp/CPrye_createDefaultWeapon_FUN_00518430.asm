@@ -34,7 +34,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;   core_inv.cpp_CInventory_initialize_FUN_004da4e0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5ccd4f                       ; 00518474 | = "Out of memory!"
     MOV dword ptr [0x01d71de0],ECX      ; 00518479 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0051847f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00518485
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518485
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051848a
     MOV ESI,0x5ccd5e                    ; 0051848d | = "Prye's flintlock"
         ;   Label: LAB_0051848d
@@ -165,8 +165,8 @@ section .text
     PUSH 0x5ccdc9                       ; 00518556 | = "Out of memory!"
     MOV dword ptr [0x01d71de0],ESI      ; 0051855b | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00518561 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00518567
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518567
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051856c
     MOV ESI,0x5ccdd8                    ; 0051856f | = "Prye's lantern"
         ;   Label: LAB_0051856f
@@ -256,8 +256,8 @@ section .text
     PUSH 0x5ccd8b                       ; 00518630 | = "Out of memory!"
     MOV [0x01d71de0],EAX                ; 00518635 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0051863a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00518640
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518640
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00518645
     JMP 0x005184f6                      ; 00518648
         ;   XREF to: 005184f6 (UNCONDITIONAL_JUMP)  ; LAB_005184f6
@@ -267,8 +267,8 @@ section .text
     PUSH 0x5cce02                       ; 00518657 | = "Out of memory!"
     MOV dword ptr [0x01d71de0],EDX      ; 0051865c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00518662 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00518668
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518668
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051866d
     JMP 0x005185da                      ; 00518670
         ;   XREF to: 005185da (UNCONDITIONAL_JUMP)  ; LAB_005185da

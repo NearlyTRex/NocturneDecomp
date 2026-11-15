@@ -43,7 +43,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0(void)
     if (iVar2 != 0) {
       _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d71de4 = 0x28f;
-      core_main_c_FUN_004e4330("closeScreenDevice - Unable to unlock");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("closeScreenDevice - Unable to unlock");
     }
     _DAT_02d0bcf4 = 1;
   }

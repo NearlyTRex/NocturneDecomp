@@ -38,7 +38,7 @@
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c920
 ;   core_gore.cpp_CGore_save_FUN_004c9f20
 ;   core_inv.cpp_CInventory_saveItems_FUN_004dc460
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_countActors_FUN_004fc320
 ;   crt_unknown.c_FUN_005b8010
 ;
@@ -244,8 +244,8 @@ section .text
     PUSH 0x5de54c                       ; 004fbeec | = "Too many actors"
     MOV dword ptr [0x01d046a0],ECX      ; 004fbef1 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004fbef7 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fbefd
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fbefd
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fbf02
     MOV EAX,dword ptr [EBX + 0x1458]    ; 004fbf05
         ;   Label: LAB_004fbf05
@@ -347,8 +347,8 @@ section .text
     PUSH 0x5de570                       ; 004fc010 | = "Too many actors"
     MOV dword ptr [0x01d046a0],ECX      ; 004fc015 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004fc01b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fc020
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc020
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc025
     JMP 0x004fbf6c                      ; 004fc028
         ;   XREF to: 004fbf6c (UNCONDITIONAL_JUMP)  ; LAB_004fbf6c

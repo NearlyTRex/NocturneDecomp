@@ -53,7 +53,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
@@ -305,8 +305,8 @@ section .text
     PUSH 0x5ec93b                       ; 005333e9 | = "CPathMap::getDirection - Should never..."
     MOV dword ptr [0x01d1d400],EDI      ; 005333ee | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005333f4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005333f9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005333f9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005333fe
     MOV EAX,dword ptr [EBP + 0x18]      ; 00533401
         ;   Label: LAB_00533401

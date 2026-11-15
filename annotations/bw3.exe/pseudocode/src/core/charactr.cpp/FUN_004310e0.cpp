@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5)
@@ -19,18 +18,15 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
   CVector3f *direction;
   float fVar3;
   float fVar4;
-  uint local_78;
-  float local_6c;
-  float local_68;
-  float local_64;
+  CVector3f local_78;
+  CVector3f local_6c;
   uint local_60;
-  uint local_54;
-  float local_50;
+  float afStack_5c [5];
   float local_48;
   float local_44;
   float local_40;
-  uint local_3c;
-  float local_30;
+  float local_3c;
+  float afStack_38 [4];
   float local_28;
   float local_20;
   float local_1c;
@@ -42,23 +38,23 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
     *param_5 = 3;
     return;
   }
-  local_6c = *(float *)(param_2 + 0x20) - (param_1->base).location.position.x;
+  local_6c.x = *(float *)(param_2 + 0x20) - (param_1->base).location.position.x;
   local_44 = *(float *)(param_2 + 0x24) - (param_1->base).location.position.y;
-  local_64 = *(float *)(param_2 + 0x28) - (param_1->base).location.position.z;
-  local_48 = local_6c;
-  local_40 = local_64;
+  local_6c.z = *(float *)(param_2 + 0x28) - (param_1->base).location.position.z;
+  local_48 = local_6c.x;
+  local_40 = local_6c.z;
   if (0.0 <= param_3) {
     if ((param_1->is_spectral == 0) &&
-       ((((float)_DAT_005b8466 < ABS(local_44) || ((float)_DAT_005b846e < ABS(local_6c))) ||
-        ((float)_DAT_005b846e < ABS(local_64))))) {
-      local_68 = local_44;
+       ((((float)_DAT_005b8466 < ABS(local_44) || ((float)_DAT_005b846e < ABS(local_6c.x))) ||
+        ((float)_DAT_005b846e < ABS(local_6c.z))))) {
+      local_6c.y = local_44;
       engine_console_cpp_CConsole_printf_FUN_00441ff0
                 (g_CConsolePtr,"%s confused while following %s\n");
       *param_5 = 3;
       return;
     }
-    local_68 = 0.0;
-    local_30 = SQRT(local_64 * local_64 + local_6c * local_6c);
+    local_6c.y = 0.0;
+    afStack_38[2] = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x);
     if (param_4 < 0.0) {
       param_4 = 1e+30;
     }
@@ -77,7 +73,7 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
     if (param_3 < (float)_DAT_005b847e) {
       param_3 = 0.01;
     }
-    if (param_3 <= local_30) {
+    if (param_3 <= afStack_38[2]) {
       fVar4 = 0.0;
       fVar3 = 0.0;
       direction = (CVector3f *)&DAT_02cfd900;
@@ -90,7 +86,7 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
         *param_5 = 3;
         return;
       }
-      if (local_30 <= param_4) {
+      if (afStack_38[2] <= param_4) {
         *param_5 = 1;
         return;
       }
@@ -100,20 +96,19 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
     *param_5 = 0;
     return;
   }
-  local_68 = 0.0;
-  core_actor_cpp_FUN_00408b40(param_1,&stack0xffffff94);
-  local_3c = local_78;
-  *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffff8c + (uint)bVar2 * -8);
-  *(uint *)(&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffff90 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc4);
-  local_54 = local_60;
-  *(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =
-       *(uint *)((int)&stack0xffffffa4 + (uint)bVar2 * 0xfffffffe * 4);
-  *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffa8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  param_1->turn_angle_accumulator = local_50;
+  local_6c.y = 0.0;
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b40(&param_1->base,&local_6c,&local_78)
+  ;
+  local_3c = local_78.x;
+  afStack_38[(uint)bVar2 * -2] = *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4);
+  afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_3c);
+  afStack_5c[2] = (float)local_60;
+  afStack_5c[(uint)bVar2 * -2 + 3] = afStack_5c[(uint)bVar2 * -2];
+  afStack_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+       afStack_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  param_1->turn_angle_accumulator = afStack_5c[3];
   if (*param_5 == 0) {
     if ((float)_DAT_005b848e < ABS(param_1->turn_angle_accumulator)) goto LAB_004312a4;
     if (*param_5 != 1) goto LAB_0043134b;

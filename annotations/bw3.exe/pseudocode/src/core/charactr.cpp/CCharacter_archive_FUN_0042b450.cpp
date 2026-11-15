@@ -15,9 +15,8 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
   int aiStackY_1050 [1015];
   CVector3f *vector_ptr;
   char *property_name;
-  CVector3f local_68;
-  float local_5c;
-  uint auStack_58 [2];
+  CVector3f *euler_out;
+  CVector3f local_5c;
   COrientation local_50;
   COrientation local_44;
   CVector3f local_38;
@@ -46,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
             core_actor_cpp_archiveOrientation_FUN_0040b4a0(&local_50,"carry orient");
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                       (&this_ptr->carry_hands[aiStack_28[3]].initial_carry_transform,&local_38,
-                       &local_50);
+                       (CVector3f *)&local_50);
           }
           local_14 = local_14 + 1;
         } while (local_14 < aiStack_28[2]);
@@ -65,19 +64,22 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
       core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 4,"numCarryHands");
       local_14 = 0;
       do {
-        vector_ptr = &local_68;
+        vector_ptr = (CVector3f *)&stack0xffffff98;
         if (this_ptr->carry_hands[local_14].carry_actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 5,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b930
                     (&this_ptr->carry_hands[local_14].carry_actor,"carry actor");
           if (0xc < g_CCharacterClassVersion) {
-            core_xform_cpp_FUN_00584450(&this_ptr->carry_hands[local_14].initial_carry_transform);
+            core_xform_cpp_getTranslation_FUN_00584450
+                      (&this_ptr->carry_hands[local_14].initial_carry_transform,&local_5c);
+            euler_out = (CVector3f *)local_5c.x;
             pSVar1 = this_ptr->carry_hands + local_14;
-            local_68.x = local_5c;
-            *(uint *)((int)&local_68 + (uint)bVar3 * -8 + 4) = auStack_58[(uint)bVar3 * -2];
-            *(uint *)((int)&local_68 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-                 auStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-            core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&pSVar1->initial_carry_transform);
+            *(uint *)(&stack0xffffff9c + (uint)bVar3 * -8) =
+                 *(uint *)((int)&local_5c + (uint)bVar3 * -8 + 4);
+            *(uint *)(&stack0xffffffa0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+                 *(uint *)((int)&local_5c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+            core_xform_cpp_matrixToEulerAngles_FUN_00583b10
+                      (&pSVar1->initial_carry_transform,euler_out);
             property_name = "carry pos";
             local_44.pitch = local_2c;
             *(int *)((int)&local_44 + (uint)bVar3 * -8 + 4) = aiStack_28[(uint)bVar3 * -2];

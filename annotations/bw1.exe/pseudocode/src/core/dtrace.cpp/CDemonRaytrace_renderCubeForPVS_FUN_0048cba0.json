@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 650,
-    "complexity_score": 448,
+    "complexity_score": 628,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 263,
-    "suspect_count": 17,
+    "pseudocode_lines": 208,
+    "suspect_count": 39,
     "suspect_types": [
+      "raw_address_constant",
       "raw_address_pointer_store",
+      "unaffected_reg",
       "undefined_data",
+      "vector_type_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 913
+    "total_lines": 858
   },
   "cross_references": [
     {
@@ -50,7 +53,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c03a0",
@@ -792,48 +795,136 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 53,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[1].projected_vertex,&local_7c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[2].projected_vertex,&local_40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[3].projected_vertex,&local_58);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[4].projected_vertex,&local_a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[5].projected_vertex,&local_94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[6].projected_vertex,&local_70);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_0061255c",
+      "severity": "mild",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr[7].projected_vertex,&local_88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
       "match": "DAT_00629024",
       "severity": "mild",
-      "text": "uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
+      "text": "uVar2 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 117,
       "match": "DAT_00629054",
       "severity": "mild",
-      "text": "uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
+      "text": "uVar2 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 117,
       "match": "DAT_00629084",
       "severity": "mild",
-      "text": "uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
+      "text": "uVar2 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 117,
       "match": "DAT_006290b4",
       "severity": "mild",
-      "text": "uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
+      "text": "uVar2 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 117,
       "match": "DAT_006290e4",
       "severity": "mild",
-      "text": "uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
+      "text": "uVar2 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 118,
       "match": "DAT_00629114",
       "severity": "mild",
       "text": "DAT_00629114 & DAT_00629144 & DAT_00629174;",
@@ -841,7 +932,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 118,
       "match": "DAT_00629144",
       "severity": "mild",
       "text": "DAT_00629114 & DAT_00629144 & DAT_00629174;",
@@ -849,23 +940,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 118,
       "match": "DAT_00629174",
       "severity": "mild",
       "text": "DAT_00629114 & DAT_00629144 & DAT_00629174;",
       "type": "undefined_data"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 158,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_24 = (float)(unaff_EBX + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 168,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "local_28 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 170,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 185,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "local_64.y = (float)unaff_EDI * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 244,
+      "line": 189,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,&local_4c);",
+      "text": "(DAT_00612560,&local_64);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 247,
+      "line": 192,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28);",
@@ -873,7 +996,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 247,
+      "line": 192,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28);",
@@ -881,43 +1004,99 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 249,
+      "line": 194,
       "match": "*(CDemonCube **)(_DAT_01bef218 * 4 + 0x1bef220",
       "severity": "moderate",
-      "text": "*(CDemonCube **)(_DAT_01bef218 * 4 + 0x1bef220) = local_34;",
+      "text": "*(CDemonCube **)(_DAT_01bef218 * 4 + 0x1bef220) = local_4c;",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 251,
+      "line": 196,
       "match": "DAT_01c02aa0",
       "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c02aa0 + iVar2) != &local_4c) {",
+      "text": "if ((CVector3f *)(&DAT_01c02aa0 + iVar3) != &local_64) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 197,
       "match": "DAT_01c02aa0",
       "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c02aa0 + iVar2))->x = local_4c.x;",
+      "text": "((CVector3f *)(&DAT_01c02aa0 + iVar3))->x = local_64.x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 253,
+      "line": 198,
       "match": "DAT_01c02aa4",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c02aa4 + iVar2) = local_4c.y;",
+      "text": "*(float *)(&DAT_01c02aa4 + iVar3) = local_64.y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 199,
       "match": "DAT_01c02aa8",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01c02aa8 + iVar2) = local_4c.z;",
+      "text": "*(float *)(&DAT_01c02aa8 + iVar3) = local_64.z;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 116,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 129,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 138,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 147,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 156,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1bc120c assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 165,
+      "match": "0x1bc120c",
+      "severity": "moderate",
+      "text": "pCVar1 = 0x01BC120C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Vector type-pun \u2014 `local_64` is declared `CVector3f` but its address is cast to `(CVector3i *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
+      "line": 53,
+      "match": "(CVector3i *)&local_64",
+      "severity": "moderate",
+      "text": "(&DAT_0061255c->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);",
+      "type": "vector_type_pun"
     }
   ]
 }

@@ -40,8 +40,8 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -288,8 +288,8 @@ section .text
     PUSH EAX                            ; 004ca767
     LEA ESI,[ESP + 0x108]               ; 004ca768
     LEA EDI,[ESP + 0xd8]                ; 004ca76f
-    CALL core_actor.cpp_FUN_00408b40    ; 004ca776
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004ca776
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004ca77b
     LEA EAX,[ESP + 0xd0]                ; 004ca77e
     LEA ESI,[ESP + 0x100]               ; 004ca785
@@ -300,8 +300,8 @@ section .text
     PUSH EBX                            ; 004ca790
     LEA ESI,[ESP + 0x114]               ; 004ca791
     LEA EDI,[ESP + 0x144]               ; 004ca798
-    CALL core_actor.cpp_FUN_00408bb0    ; 004ca79f
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004ca79f
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x114]               ; 004ca7a4
     ADD ESP,0x8                         ; 004ca7ab
     MOV EDX,dword ptr [0x01cc9120]      ; 004ca7ae | DAT_01cc9120

@@ -82,8 +82,8 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_actor.cpp_FUN_00408b00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
@@ -136,8 +136,8 @@ section .text
     PUSH EBX                            ; 0042c28c
     LEA ESI,[ESP + 0xa8]                ; 0042c28d
     LEA EDI,[ESP + 0x24]                ; 0042c294
-    CALL core_actor.cpp_FUN_00408b00    ; 0042c298
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0042c298
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xa8]                ; 0042c29d
     ADD ESP,0x8                         ; 0042c2a4
     MOVSD ES:EDI,ESI                    ; 0042c2a7

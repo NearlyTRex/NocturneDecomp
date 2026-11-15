@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH 0x5d23b0                       ; 00408810 | = "CDemonActor::getActorType called for ..."
     MOV dword ptr [0x01d1d400],EDX      ; 00408815 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0040881b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00408821
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00408821
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00408826
     XOR EAX,EAX                         ; 00408829
     POP EBX                             ; 0040882b

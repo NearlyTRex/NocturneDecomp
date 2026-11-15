@@ -24,7 +24,7 @@
 ;   undefined4 DAT_02648e94
 ;   undefined4 DAT_02648e98
 ;   undefined4 DAT_02648e9c
-;   undefined4 DAT_02649000
+;   SReverbSettings g_CachedReverb
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -177,11 +177,11 @@ section .text
     PUSH EAX                            ; 0055263b
     CALL dword ptr [EBX + 0x28]         ; 0055263c
     ADD ESP,0x8                         ; 0055263f
-    PUSH dword ptr [0x02649008]         ; 00552642 | DAT_02649008
+    PUSH dword ptr [0x02649008]         ; 00552642 | g_CachedReverb.damping
     MOV EAX,[0x02648e80]                ; 00552648 | DAT_02648e80
-    PUSH dword ptr [0x02649004]         ; 0055264d | DAT_02649004
+    PUSH dword ptr [0x02649004]         ; 0055264d | g_CachedReverb.decay_time
     MOV EBX,dword ptr [EAX]             ; 00552653
-    PUSH dword ptr [0x02649000]         ; 00552655 | DAT_02649000
+    PUSH dword ptr [0x02649000]         ; 00552655 | g_CachedReverb
     PUSH EAX                            ; 0055265b
     CALL dword ptr [EBX + 0x2c]         ; 0055265c
     ADD ESP,0x10                        ; 0055265f

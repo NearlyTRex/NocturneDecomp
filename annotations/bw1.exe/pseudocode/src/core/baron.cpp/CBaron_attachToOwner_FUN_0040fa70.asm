@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;
@@ -85,8 +85,8 @@ section .text
     PUSH ECX                            ; 0040fad2
     LEA ESI,[ESP + 0x20]                ; 0040fad3
     LEA EDI,[ESP + 0x14]                ; 0040fad7
-    CALL core_actor.cpp_FUN_00408ac0    ; 0040fadb
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 0040fadb
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x20]                ; 0040fae0
     ADD ESP,0x8                         ; 0040fae4
     MOVSD ES:EDI,ESI                    ; 0040fae7

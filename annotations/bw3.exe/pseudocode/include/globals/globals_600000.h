@@ -14,6 +14,7 @@
 #include "types/classes/CScript.h"
 #include "types/classes/CTextureList.h"
 #include "types/classes/CWater.h"
+#include "types/structs/SReverbPreset.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
@@ -45,6 +46,9 @@ extern CWater* g_CWaterPtr;
 
 // RuntimeHandlerEntry[172]
 extern RuntimeHandlerEntry g_InitHandlers[172];
+
+// SReverbPreset[27]
+extern SReverbPreset g_ReverbPresetTable[27];
 
 // TerminatedCString
 extern TerminatedCString s_d3d_dll_00606733;

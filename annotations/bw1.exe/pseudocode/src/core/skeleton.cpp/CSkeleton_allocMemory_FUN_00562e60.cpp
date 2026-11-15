@@ -18,7 +18,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *thi
   if (100 < bone_count) {
     _DAT_01d1d400 = "..\\core\\skeleton.cpp";
     _DAT_01d1d404 = 200;
-    core_main_c_FUN_005030e0("Too bony!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too bony!");
   }
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
@@ -37,7 +37,6 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *thi
   }
   _DAT_01d1d400 = "..\\core\\skeleton.cpp";
   _DAT_01d1d404 = 0xdc;
-  core_main_c_FUN_005030e0
-            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d");
   return;
 }

@@ -81,6 +81,6 @@ void __cdecl CTrigger::calculateTestRadius(CTrigger *this_ptr);
 // Address: 00578720
 int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_array);
 
-// Original: core_trigger.cpp_FUN_00578800
+// Original: core_trigger.cpp_CTrigger_containsActor_FUN_00578800
 // Address: 00578800
-undefined4 FUN_00578800(int param_1,CDemonActor *param_2);
+int __cdecl CTrigger::containsActor(CTrigger *this_ptr,CDemonActor *actor);

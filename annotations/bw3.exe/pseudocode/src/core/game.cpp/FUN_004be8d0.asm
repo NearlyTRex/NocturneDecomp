@@ -45,7 +45,7 @@
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_string.c__stricmp_FUN_005a3260
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
 ;   ... and 3 more
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5c37cd                       ; 004be8e1 | DAT_005c37cd
     PUSH 0x5c37d0                       ; 004be8e6 | = "blairhero.pod"
     PUSH 0x5c37de                       ; 004be8eb | DAT_005c37de
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004be8f0
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004be8f0
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004be8f5
     TEST EAX,EAX                        ; 004be8f8
     JNZ 0x004beb3f                      ; 004be8fa
@@ -97,7 +97,7 @@ section .text
     PUSH EAX                            ; 004be972
     MOV ESI,0x1                         ; 004be973
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004be978
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004be97d
     MOV EDX,dword ptr [ESP + 0x328]     ; 004be980
         ;   Label: LAB_004be980
@@ -259,7 +259,7 @@ section .text
     PUSH EAX                            ; 004beb3f
         ;   Label: LAB_004beb3f
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004beb40
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     XOR EDI,EDI                         ; 004beb45
     ADD ESP,0x4                         ; 004beb47
     JMP 0x004be905                      ; 004beb4a

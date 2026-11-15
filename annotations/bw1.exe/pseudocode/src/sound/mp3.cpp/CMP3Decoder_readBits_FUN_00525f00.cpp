@@ -27,7 +27,7 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00(CMP3Decoder *this_p
       if ((this_ptr->memory_bitstream).buffer_size_limit < uVar2) {
         _DAT_01d1d400 = "..\\sound\\mp3.cpp";
         _DAT_01d1d404 = 0x30a;
-        core_main_c_FUN_005030e0("Buffer overflow!!  File: %s",&DAT_01d404c8);
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Buffer overflow!!  File: %s");
       }
     }
     uVar2 = (this_ptr->memory_bitstream).bits_available;

@@ -26,9 +26,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr)
     if (iVar1 == 0) {
       _DAT_01d71de0 = "..\\core\\game.cpp";
       _DAT_01d71de4 = 0x526;
-      core_main_c_FUN_004e4330
-                ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",this_ptr->game_pixx,this_ptr->game_pixy,
-                 this_ptr->game_bpp);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CGame::setGameRes - Unable to set the video mode to %dx%dx%d");
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00402ac0();

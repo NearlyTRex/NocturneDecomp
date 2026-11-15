@@ -32,6 +32,6 @@ int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList
   }
   _DAT_01d046a0 = "..\\core\\motion.cpp";
   _DAT_01d046a4 = 299;
-  core_main_c_FUN_004e4500("Can't find motion \"%s\" in motion list",motion_name);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Can't find motion \"%s\" in motion list");
   return -1;
 }

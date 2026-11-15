@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_path.cpp_getPathMap_FUN_005351f0
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0
@@ -152,8 +152,8 @@ section .text
     PUSH 0x5e3b7a                       ; 004de218 | = "CGhoul::findDarkWayPoint - Can't get ..."
     MOV dword ptr [0x01d1d400],ESI      ; 004de21d | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004de223 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004de228
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004de228
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004de22d
     XOR EDX,EDX                         ; 004de230
         ;   Label: LAB_004de230

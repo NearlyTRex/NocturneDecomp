@@ -33,7 +33,7 @@
 ;   ... and 21 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   engine_mini3d.cpp_clipToUserPlane_FUN_004f8610
 ;   engine_mini3d.cpp_drawTransformedList_FUN_004f6d00
@@ -218,8 +218,8 @@ section .text
     PUSH 0x5ddf79                       ; 004f897d
     MOV dword ptr [0x01d046a0],ECX      ; 004f8982 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 004f8988 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004f898e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f898e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f8993
     PUSH 0xea60                         ; 004f8996
         ;   Label: LAB_004f8996
@@ -235,8 +235,8 @@ section .text
     PUSH 0x5ddfb8                       ; 004f89ba
     MOV dword ptr [0x01d046a0],ESI      ; 004f89bf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004f89c5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004f89cb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f89cb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f89d0
     JMP 0x004f8836                      ; 004f89d3
         ;   XREF to: 004f8836 (UNCONDITIONAL_JUMP)  ; LAB_004f8836

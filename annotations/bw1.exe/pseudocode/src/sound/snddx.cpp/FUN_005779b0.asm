@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   sound_snddx.cpp_FUN_00578f80 at 00579047
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80 at 00579047
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f4cab
@@ -70,7 +70,7 @@ section .text
     FLD double ptr [ESP + 0x10]         ; 00577a09
     ADD ESP,0x8                         ; 00577a0d
     CALL crt_math.c_round_FUN_005c03a0  ; 00577a10
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 00577a15
     MOV EDX,dword ptr [ESP + 0x10]      ; 00577a19
     TEST EDX,EDX                        ; 00577a1d

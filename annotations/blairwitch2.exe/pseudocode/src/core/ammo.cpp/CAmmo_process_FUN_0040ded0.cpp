@@ -25,7 +25,7 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   uint uVar11;
   CBoundingBox3D *in_stack_fffffeac;
   uint *puVar12;
-  uint uVar13;
+  CMatrix3x4f *matrix;
   CMatrix3x4f CStack_124;
   float fStack_f4;
   float fStack_f0;
@@ -45,21 +45,16 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   float fStack_80;
   float fStack_7c;
   float fStack_78;
-  uint uStack_74;
-  uint uStack_70;
-  uint uStack_6c;
+  CVector3f CStack_74;
   float fStack_68;
   float afStack_64 [4];
   float fStack_54;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
-  float fStack_44;
+  CVector3f CStack_44;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
+  float afStack_34 [4];
   float fStack_24;
   float fStack_20;
   float fStack_1c;
@@ -95,9 +90,9 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
   fStack_14 = fStack_1c;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
-  fStack_2c = fStack_8c;
-  afStack_64[(uint)bVar7 * -2 + 0xf] = afStack_a0[(uint)bVar7 * -2 + 6];
-  afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10] =
+  afStack_34[2] = fStack_8c;
+  afStack_34[(uint)bVar7 * -2 + 3] = afStack_a0[(uint)bVar7 * -2 + 6];
+  afStack_34[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
   fStack_20 = fVar2;
   fStack_14 = fVar2;
@@ -114,7 +109,8 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   pfVar4[(uint)bVar7 * -2 + 1] =
        (afStack_c0 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
   core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&CStack_b4,&CStack_124);
-  uStack_74 = 0;
+  matrix = (CMatrix3x4f *)&stack0xfffffeac;
+  CStack_74.x = 0.0;
   pCVar5 = &CStack_124;
   pfVar4 = (float *)&stack0xfffffeac;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -122,20 +118,20 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
     pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
   }
-  uStack_70 = 0;
-  uStack_6c = 0x3e800000;
-  core_xform_cpp_FUN_00591530();
+  CStack_74.y = 0.0;
+  CStack_74.z = 0.25;
+  core_xform_cpp_transformVector3x4_FUN_00591530(&CStack_74,matrix,&CStack_44);
   pfVar4 = afStack_a0 + 2;
-  fStack_38 = fStack_44;
-  afStack_64[(uint)bVar7 * -2 + 0xc] = afStack_64[(uint)bVar7 * -2 + 9];
-  afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
-       afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-  uVar13 = 0;
+  fStack_38 = CStack_44.x;
+  afStack_34[(uint)bVar7 * -2] = *(float *)((int)&CStack_44 + (uint)bVar7 * -8 + 4);
+  afStack_34[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+       *(float *)((int)&CStack_44 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  fVar2 = 0.0;
   puVar12 = (uint *)0x0;
-  afStack_64[2] = fStack_38 + fStack_2c;
-  afStack_64[3] = fStack_34 + fStack_28;
-  fStack_54 = fStack_30 + fStack_24;
-  fStack_68 = fStack_38 + fStack_2c;
+  afStack_64[2] = fStack_38 + afStack_34[2];
+  afStack_64[3] = afStack_34[0] + afStack_34[3];
+  fStack_54 = afStack_34[1] + fStack_24;
+  fStack_68 = fStack_38 + afStack_34[2];
   afStack_64[(uint)bVar7 * -2] = afStack_64[(uint)bVar7 * -2 + 3];
   afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
        afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
@@ -153,6 +149,6 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   afStack_64[1] = afStack_64[1] + (this_ptr->base).location.position.z;
   core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f000000,0x3f800000,0,0x3e4ccccd,uVar8,uVar9,uVar10,uVar11
-             ,pfVar6,pfVar4,puVar12,uVar13);
+             ,pfVar6,pfVar4,puVar12,fVar2);
   return;
 }

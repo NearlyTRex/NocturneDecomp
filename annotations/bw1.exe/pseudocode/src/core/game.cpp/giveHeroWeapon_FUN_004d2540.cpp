@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004d2540(char *class_name)
   if (pCVar1 == (CDemonActor *)0x0) {
     _DAT_01d1d400 = "..\\core\\game.cpp";
     _DAT_01d1d404 = 0xbf9;
-    core_main_c_FUN_005030e0("giveHeroWeapon - This is not a weapon");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("giveHeroWeapon - This is not a weapon");
   }
   pCVar1[4].actor_name[8] = -0xc;
   pCVar1[4].actor_name[9] = '\x01';

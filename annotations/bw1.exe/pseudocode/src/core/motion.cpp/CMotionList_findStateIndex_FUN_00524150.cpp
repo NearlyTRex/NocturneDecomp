@@ -32,6 +32,6 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(CMotionList 
   }
   _DAT_01d1d400 = "..\\core\\motion.cpp";
   _DAT_01d1d404 = 0x152;
-  core_main_c_FUN_005030e0("Can't find state \"%s\" in motion list",state_name);
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Can't find state \"%s\" in motion list");
   return -1;
 }

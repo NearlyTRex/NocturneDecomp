@@ -18,7 +18,7 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0056f750(SNetworkA
   if (src_addr->sin_family != 2) {
     _DAT_01d71de0 = "..\\support\\trisock.cpp";
     _DAT_01d71de4 = 0xd8;
-    core_main_c_FUN_004e4330("sockaddr is not of AF_INET family!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("sockaddr is not of AF_INET family!");
   }
   uVar1 = ntohs(src_addr->sin_port);
   dest_addr->port = uVar1;

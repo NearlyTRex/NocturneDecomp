@@ -12,18 +12,17 @@ void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e910(float *angle
 
 {
   float fVar1;
-  float10 fVar2;
+  double dVar2;
   
   if ((((float)_DAT_005f6ec9 <= distance) &&
-      (fVar1 = SQRT(distance * distance - offset * offset) / distance, fVar1 < 1.0)) &&
-     (0.0 <= fVar1)) {
-    fVar2 = (float10)fVar1;
-    acos();
+      (dVar2 = (double)(SQRT(distance * distance - offset * offset) / distance), dVar2 < 1.0)) &&
+     (0.0 <= dVar2)) {
+    dVar2 = acos(dVar2);
     if (offset < 0.0) {
-      fVar1 = *angle - (float)fVar2;
+      fVar1 = *angle - (float)dVar2;
     }
     else {
-      fVar1 = *angle + (float)fVar2;
+      fVar1 = *angle + (float)dVar2;
     }
     *angle = fVar1;
     fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(*angle);

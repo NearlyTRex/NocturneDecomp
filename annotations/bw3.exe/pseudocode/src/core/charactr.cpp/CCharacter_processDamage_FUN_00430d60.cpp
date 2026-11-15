@@ -18,17 +18,17 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(CCharacter 
   EDamageType EVar4;
   CVector3f *impact_point;
   byte bVar5;
-  float10 fVar6;
+  double dVar6;
   float afStackY_1040 [1011];
   uint uVar7;
   uint uVar8;
   uint uVar9;
-  uint local_58;
-  uint local_4c;
-  float local_40;
-  CVector3f local_34 [2];
+  float local_58;
+  byte local_4c [12];
+  float local_40 [2];
+  CVector3f CStack_38;
+  CVector3f local_28;
   int local_1c;
-  int local_18;
   
   bVar5 = 0;
   if (this_ptr->is_invulnerable != 0) {
@@ -80,35 +80,38 @@ LAB_00430f85:
   }
 LAB_00430dee:
   if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              (&this_ptr->base,&damage_info->impact_direction,(CVector3f *)local_4c);
     uVar9 = 0x40000000;
     uVar8 = 0;
     uVar7 = 0x3f800000;
-    local_58 = local_4c;
+    local_58 = (float)local_4c._0_4_;
     *(uint *)((int)&stack0xffffffac + (uint)bVar5 * 0xfffffffe * 4) =
-         *(uint *)((int)local_34 + (uint)bVar5 * -8 + -0x14);
-    *(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x1c) =
-         *(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x10);
+         *(uint *)(local_4c + (uint)bVar5 * -8 + 4);
+    *(float *)(&stack0xffffffb0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         local_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1];
     core_charactr_cpp_FUN_0042fbd0
               (this_ptr,&stack0xffffffa8,damage_info->hit_part_index,0,uVar7,uVar8,uVar9);
   }
   if (damage_info->ammo_type == AMMO_TYPE_STAGGER) {
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              (&this_ptr->base,&damage_info->impact_direction,&local_28);
     this_ptr->stagger_amount = 0.5;
   }
   if (0.0 < damage_info->gore_multiplier) {
-    fVar6 = (float10)damage_info->damage_amount * (float10)damage_info->gore_multiplier;
-    round();
-    local_18 = (int)ROUND(fVar6);
-    local_1c = local_18 + 1;
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
-    local_34[0].x = local_40;
-    *(uint *)((int)local_34 + (uint)bVar5 * -8 + 4) =
-         *(uint *)(&stack0xffffffc4 + (uint)bVar5 * -8);
-    *(uint *)((int)local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         *(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    dVar6 = round
+                      ((double)(damage_info->damage_amount * damage_info->gore_multiplier));
+    local_1c = (int)ROUND(dVar6);
+    local_28.z = (float)(local_1c + 1);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              (&this_ptr->base,&damage_info->impact_direction,(CVector3f *)(local_4c + 8));
+    CStack_38.x = (float)local_4c._8_4_;
+    *(float *)((int)&CStack_38 + (uint)bVar5 * -8 + 4) = local_40[(uint)bVar5 * -2];
+    *(float *)((int)&CStack_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         local_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
-              (g_CGorePtr,local_34,&damage_info->impact_point,local_1c,this_ptr->blood_type);
+              (g_CGorePtr,&CStack_38,&damage_info->impact_point,(int)local_28.z,this_ptr->blood_type
+              );
   }
   if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
      (this_ptr != *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04))) {

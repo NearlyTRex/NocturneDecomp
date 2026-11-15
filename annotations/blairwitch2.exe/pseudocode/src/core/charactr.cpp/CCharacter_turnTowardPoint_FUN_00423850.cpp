@@ -19,19 +19,19 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacte
   uint local_50;
   uint local_44;
   float local_40;
-  uint local_38;
-  uint local_2c;
+  float local_38;
+  CVector3f local_2c [2];
   
   bVar4 = 0;
-  core_actor_cpp_FUN_00408de0(this_ptr,target);
-  local_38 = local_2c;
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(&this_ptr->base,target,local_2c);
+  local_38 = local_2c[0].x;
   *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);
+       *(uint *)((int)local_2c + (uint)bVar4 * -8 + 4);
   *(uint *)(&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffc8);
   local_44 = local_50;
-  *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8) =
+  *(uint *)((int)local_2c + (uint)bVar4 * -8 + -0x14) =
        *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8);
   *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffb8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);

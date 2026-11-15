@@ -93,16 +93,16 @@ section .text
     FLD float ptr [ESI + 0x24]          ; 00479eeb
     FMUL ST1                            ; 00479eee
     CALL crt_math.c_round_FUN_005b7ff0  ; 00479ef0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00479ef5
     FLD float ptr [ESI + 0x28]          ; 00479ef9
     FMUL ST1                            ; 00479efc
     CALL crt_math.c_round_FUN_005b7ff0  ; 00479efe
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 00479f03
     FMUL float ptr [ESI + 0x2c]         ; 00479f07
     CALL crt_math.c_round_FUN_005b7ff0  ; 00479f0a
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 00479f0f
     FLD float ptr [ESI + 0x30]          ; 00479f13
     FMUL double ptr [0x005d1e2b]        ; 00479f16 | DAT_005d1e2b
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EBX      ; 00479f3c
     MOV dword ptr [ESP + 0x38],ESI      ; 00479f40
     CALL crt_math.c_round_FUN_005b7ff0  ; 00479f44
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 00479f49
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0 ; 00479f4d
         ;   XREF to: 004696f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)

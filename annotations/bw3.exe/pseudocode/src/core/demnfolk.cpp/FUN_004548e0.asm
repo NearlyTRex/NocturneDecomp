@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_demnfolk_cpp_FUN_004548e0(int param_1)
+; void core_demnfolk_cpp_FUN_004548e0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -9,8 +9,8 @@
 ;   undefined4 DAT_005ba39a
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d220
-;   core_actor.cpp_FUN_00408b80
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH ECX                            ; 004549b8
     LEA ESI,[ESP + 0x5c]                ; 004549b9
     MOV EDI,EBX                         ; 004549bd
-    CALL core_actor.cpp_FUN_00408b80    ; 004549bf
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004549bf
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 004549c4
     ADD ESP,0x8                         ; 004549c8
     MOVSD ES:EDI,ESI                    ; 004549cb

@@ -63,7 +63,7 @@ int __cdecl CBitFont::calculateCharacterHeight(CBitFont *this_ptr,uchar *char_bi
 
 // Original: engine_font.cpp_FUN_004a8df0
 // Address: 004a8df0
-int FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
+int FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,undefined4 param_6);
 
 // Original: engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
 // Address: 004a90b0
@@ -191,7 +191,7 @@ void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_FUN_004ab840
 // Address: 004ab840
-int FUN_004ab840(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+int FUN_004ab840(byte *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5);
 
 // Original: engine_font.cpp_packPixelNative_FUN_004abbf0
 // Address: 004abbf0

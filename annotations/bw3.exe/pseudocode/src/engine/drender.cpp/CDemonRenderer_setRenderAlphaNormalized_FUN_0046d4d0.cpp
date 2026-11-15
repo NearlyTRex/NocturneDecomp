@@ -11,10 +11,9 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0046d4d0(CDemonRenderer *this_ptr,float render_alpha)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)render_alpha * (float10)_DAT_005bc583;
-  round();
-  engine_3d_c_setRenderAlpha_FUN_00406bf0((int)ROUND(fVar1));
+  dVar1 = round((double)(render_alpha * (float)_DAT_005bc583));
+  engine_3d_c_setRenderAlpha_FUN_00406bf0((int)ROUND(dVar1));
   return;
 }

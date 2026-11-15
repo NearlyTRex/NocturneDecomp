@@ -537,7 +537,7 @@ section .text
         ;   Label: LAB_0048c4b0
     PUSH ECX                            ; 0048c4b3
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 0048c4b4
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 0048c4b9
     MOV ESI,0x5bdfb8                    ; 0048c4bc | = "..\\core\\event.cpp"
         ;   Label: LAB_0048c4bc
@@ -545,8 +545,8 @@ section .text
     PUSH 0x5bdfca                       ; 0048c4c6 | = "Too many events - check events.txt"
     MOV dword ptr [0x01d71de0],ESI      ; 0048c4cb | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0048c4d1 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0048c4d7
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0048c4d7
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0048c4dc
     JMP 0x0048c3c3                      ; 0048c4df
         ;   XREF to: 0048c3c3 (UNCONDITIONAL_JUMP)  ; LAB_0048c3c3
@@ -1349,8 +1349,8 @@ section .text
     PUSH 0x5be18f                       ; 0048cc11 | = "Can't find CDemonLight for light %s i..."
     MOV dword ptr [0x01d71de0],EBX      ; 0048cc16 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0048cc1c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0048cc22
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0048cc22
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0048cc27
     MOV EDI,dword ptr [EBP + -0x4a]     ; 0048cc2a
         ;   Label: LAB_0048cc2a
@@ -1639,7 +1639,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe4e]          ; 0048cedb
     PUSH EAX                            ; 0048cee1
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0048cee2
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0048cee7
     LEA EAX,[EBP + 0xfffffe4e]          ; 0048ceea
     PUSH EAX                            ; 0048cef0
@@ -6824,8 +6824,8 @@ section .text
     PUSH 0x5bef45                       ; 00490006 | = "Can't find CDemonLight for light %s i..."
     MOV dword ptr [0x01d71de0],ESI      ; 0049000b | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00490011 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00490017
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00490017
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0049001c
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0049001f
         ;   Label: LAB_0049001f

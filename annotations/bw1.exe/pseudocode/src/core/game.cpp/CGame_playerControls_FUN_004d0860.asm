@@ -33,7 +33,7 @@
 ;   core_game.cpp_CGame_processMouseControls_FUN_004d1820
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;   core_game.cpp_FUN_004d9260
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00530660
 ;
 ; *****************************************************************************
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5e1995                       ; 004d091b | = "CGame::playerControls - unknown contr..."
     MOV dword ptr [0x01d1d400],EDX      ; 004d0920 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004d0926 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004d092c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d092c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004d0931
     JMP 0x004d08b9                      ; 004d0934
         ;   XREF to: 004d08b9 (UNCONDITIONAL_JUMP)  ; LAB_004d08b9

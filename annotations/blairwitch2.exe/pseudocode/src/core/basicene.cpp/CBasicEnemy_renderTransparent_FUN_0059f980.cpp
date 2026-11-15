@@ -15,12 +15,11 @@ int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicE
   float fVar2;
   int iVar3;
   CClothList *pCVar4;
-  float10 fVar5;
+  double dVar5;
   
   if ((this_ptr->base).base.base.is_transparent != 0) {
-    fVar5 = (float10)this_ptr->fade_val * (float10)_DAT_005ef9c7;
-    round();
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)ROUND(fVar5));
+    dVar5 = round((double)(this_ptr->fade_val * (float)_DAT_005ef9c7));
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,(int)ROUND(dVar5));
     pCVar1 = &(this_ptr->base).base.cloth_list;
     fVar2 = this_ptr->fade_val;
     iVar3 = 0;

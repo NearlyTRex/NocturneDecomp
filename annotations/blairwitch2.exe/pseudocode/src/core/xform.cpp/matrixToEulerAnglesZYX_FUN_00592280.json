@@ -2,22 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 444,
-    "complexity_score": 828,
+    "complexity_score": 369,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 60,
+    "pseudocode_lines": 179,
+    "suspect_count": 16,
     "suspect_types": [
       "bit_int_float_compare",
-      "extra_output",
-      "param_count_too_few",
+      "param_count_too_many",
+      "pointer_cast",
+      "pointer_truncation",
       "unaffected_reg",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 642
+    "total_lines": 623
   },
   "cross_references": [
     {
@@ -35,10 +35,10 @@
         "00592717"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_00592280",
-    "signature": "float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(float *param_1)"
+    "signature": "CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(CMatrix3x4f *matrix_ptr,CVector3f *euler_out)"
   },
   "function_calls": [
     {
@@ -121,22 +121,18 @@
         "call_addr": "00417011",
         "call_type": "direct",
         "caller": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_00416d70",
-        "estimated_params": 4,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -207,10 +203,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 116,
+    "frame_size": 124,
     "local_size": 116,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -380,6 +376,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "matrix_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_out",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -410,479 +420,127 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(float *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "float *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
       "line": 10,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX_02",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_ECX_03",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_ECX_04",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_ECX_05",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "float *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "float *extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "float *extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = -param_1[9] * local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX_00;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "param_1 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = extraout_EDX;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "afStack_103c[0x3fd] = extraout_EDX[8] * local_24 * local_2c;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "local_3c = extraout_EDX[10] * local_24 * local_2c;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "pfVar3 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_ECX_04",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_ECX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 78,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "pfVar3 = extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 95,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "pfVar3 = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 116,
-      "match": "extraout_ECX_05",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_ECX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 133,
-      "match": "extraout_ECX_02",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_ECX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_34 = *param_1 * local_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_44 = -param_1[2] * local_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 168,
-      "match": "extraout_ECX_03",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 168,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX_03;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 185,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 185,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX;",
+      "text": "CVector3f *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 197,
+      "line": 130,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = afStack_103c[0x3fa];",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(float *)((int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI->x = afStack_1044[0x3fa];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 198,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_103c[(uint)bVar4 * -2 + 0x3fb];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 199,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 201,
+      "line": 134,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 73,
-      "match": "(int)local_3c < 0x3f800000",
+      "description": "Unaffected register variable",
+      "line": 178,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "if ((int)local_3c < 0x3f800000) {",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(float *)((int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 179,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI->x = afStack_1044[0x3fb];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 182,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 130,
+      "match": "(int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 178,
+      "match": "(int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 68,
+      "match": "(int)local_40 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_40 < 0x3f800000) {",
       "type": "bit_int_float_compare"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 112,
+      "line": 101,
+      "match": "(int)local_40 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_40 < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 149,
       "match": "(int)local_38 < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)local_38 < 0x3f800000) {",
       "type": "bit_int_float_compare"
     },
     {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 164,
-      "match": "(int)local_34 < 0x3f800000",
-      "severity": "moderate",
-      "text": "if ((int)local_34 < 0x3f800000) {",
-      "type": "bit_int_float_compare"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

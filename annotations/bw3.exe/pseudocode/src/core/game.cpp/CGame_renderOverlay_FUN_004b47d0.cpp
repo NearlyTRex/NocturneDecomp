@@ -13,13 +13,13 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
 {
   char cVar1;
   float fVar2;
-  char (*pacVar3) [256];
+  CGame *pCVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   char *pcVar7;
   CBitFont *pCVar8;
-  float10 fVar9;
+  double dVar9;
   char local_164 [256];
   int local_64;
   int local_60;
@@ -29,7 +29,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
   int local_50;
   int local_4c;
   int local_48;
-  int local_44;
+  CBitFont *local_44;
   CBitFont *local_40;
   int local_3c;
   CBitFont *local_38;
@@ -59,14 +59,13 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
               (_DAT_01549aa0,0,0x27f,10,0xf8,0,this_ptr->end_timer_text);
   }
   if (ABS(this_ptr->message_timer) != 0.0) {
-    if (1.0 <= this_ptr->message_timer) {
+    if (1.0 <= (double)this_ptr->message_timer) {
       iVar6 = 0xffff;
     }
     else {
-      fVar9 = (float10)this_ptr->message_timer * (float10)_DAT_005c2220;
-      round();
-      iVar6 = (int)ROUND(fVar9);
-      local_14 = iVar6;
+      iVar6 = 0x4b4853;
+      dVar9 = round((double)this_ptr->message_timer * _DAT_005c2220);
+      local_18 = (char (*) [256])(int)ROUND(dVar9);
     }
     engine_3d_c_setRenderAlpha_FUN_00406bf0(iVar6);
     local_38 = _DAT_01549aa8;
@@ -118,7 +117,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
   if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     iVar5 = local_60 >> 0x1f;
     iVar6 = local_60 + iVar5 * -4;
-    local_44 = local_5c / 0x28;
+    local_44 = (CBitFont *)(local_5c / 0x28);
     local_40 = _DAT_01549ab4;
     if (0x280 < DAT_005fba18) {
       local_40 = _DAT_01549aa4;
@@ -127,8 +126,8 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
       local_40 = _DAT_01549aa0;
     }
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_40,0x58);
-    if (local_44 < iVar4) {
-      local_44 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_40,0x58);
+    if ((int)local_44 < iVar4) {
+      local_44 = (CBitFont *)engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_40,0x58);
     }
     local_3c = local_60 / 0x50;
     local_50 = local_3c + ((int)(iVar6 - (uint)(iVar5 << 1 < 0)) >> 2);
@@ -136,11 +135,11 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
     local_20 = 0;
     if (0 < this_ptr->status_display_count) {
       local_18 = this_ptr->status_bar_names;
-      local_58 = (local_44 * 3) / 2;
+      local_58 = ((int)local_44 * 3) / 2;
       local_1c = this_ptr;
       do {
         iVar5 = local_3c;
-        local_34 = iVar6 - local_44;
+        local_34 = iVar6 - (int)local_44;
         local_30 = local_50;
         iVar4 = 2;
         fVar2 = local_1c->status_bar_values[0];
@@ -154,19 +153,19 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
         local_28 = iVar6;
         engine_2d_c_fillRectWithBorder_FUN_00403250(local_3c,local_34,local_50,iVar6,0,0);
         local_14 = (local_30 - iVar5) + 1;
-        fVar9 = (float10)local_14 * (float10)fVar2;
-        round();
-        local_24 = (int)ROUND(fVar9);
-        if (0 < local_24) {
-          engine_2d_c_fillRectColor_FUN_004031c0(iVar5,local_2c,local_24 + iVar5,local_28,iVar4);
+        dVar9 = round((double)((float)local_14 * fVar2));
+        local_28 = (int)ROUND(dVar9);
+        if (0 < local_28) {
+          engine_2d_c_fillRectColor_FUN_004031c0(iVar5,local_30,local_28 + iVar5,local_2c,iVar4);
         }
-        pacVar3 = local_18;
-        engine_font_cpp_CBitFont_drawText_FUN_004b0a20(local_40,*local_18,local_3c,local_34,0xf8,0);
-        local_18 = pacVar3 + 1;
-        local_1c = (CGame *)&local_1c->game_pixy;
-        iVar6 = iVar6 - local_58;
-        local_20 = local_20 + 1;
-      } while (local_20 < this_ptr->status_display_count);
+        pCVar3 = local_1c;
+        engine_font_cpp_CBitFont_drawText_FUN_004b0a20
+                  (local_44,(char *)local_1c,(int)local_40,(int)local_38,0xf8,0);
+        local_1c = (CGame *)(pCVar3->debug_info_string + 0xc);
+        local_20 = local_20 + 4;
+        iVar6 = iVar6 - local_5c;
+        local_24 = local_24 + 1;
+      } while (local_24 < this_ptr->status_display_count);
     }
   }
   return;

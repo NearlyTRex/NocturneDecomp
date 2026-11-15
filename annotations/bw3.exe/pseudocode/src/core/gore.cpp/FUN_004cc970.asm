@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4)
+; void core_gore_cpp_FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -97,7 +97,7 @@ section .text
     PUSH EAX                            ; 004cca25
     FSTP float ptr [ESP + 0x14]         ; 004cca26
     CALL core_boneguy.cpp_hsvToRgb_FUN_00417240 ; 004cca2a
-        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00417240()
+        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_00417240(CColor3f * in_hsv, CColor3f * out_rgb)
     LEA ESI,[ESP + 0x18]                ; 004cca2f
     ADD ESP,0x4                         ; 004cca33
     MOVSD ES:EDI,ESI                    ; 004cca36
@@ -120,16 +120,16 @@ section .text
     FMUL ST1                            ; 004cca67
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004cca69
     CALL crt_math.c_round_FUN_005a3120  ; 004cca6d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EAX]               ; 004cca72
     FLD float ptr [ESP + 0x30]          ; 004cca74
     FMUL ST1                            ; 004cca78
     CALL crt_math.c_round_FUN_005a3120  ; 004cca7a
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP]               ; 004cca7f
     FMUL float ptr [ESP + 0x34]         ; 004cca82
     CALL crt_math.c_round_FUN_005a3120  ; 004cca86
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX]               ; 004cca8b
     POP ESI                             ; 004cca8d
     POP EDI                             ; 004cca8e

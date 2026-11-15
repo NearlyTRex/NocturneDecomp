@@ -9,17 +9,16 @@
 int sound_snddx_cpp_FUN_00555020(float param_1)
 
 {
-  float10 fVar1;
-  uint local_4;
+  double dVar1;
+  uint uStack_8;
   
-  fVar1 = (float10)param_1;
-  round();
-  local_4 = (int)ROUND(fVar1);
-  if (local_4 < 100) {
-    local_4 = 100;
+  dVar1 = round((double)param_1);
+  uStack_8 = (int)ROUND(dVar1);
+  if (uStack_8 < 100) {
+    uStack_8 = 100;
   }
-  else if (100000 < local_4) {
+  else if (100000 < uStack_8) {
     return 100000;
   }
-  return local_4;
+  return uStack_8;
 }

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fopen_FUN_005c157c
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5ed96e                       ; 0053c4e5
     MOV dword ptr [0x01d1d400],ECX      ; 0053c4ea | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0053c4f0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053c4f6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c4f6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053c4fb
     PUSH 0x5ed99a                       ; 0053c4fe
         ;   Label: LAB_0053c4fe
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5ed9af                       ; 0053c521
     MOV dword ptr [0x01d1d400],EBP      ; 0053c526 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0053c52c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053c531
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c531
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0053c536
     LEA EAX,[EDI*0x4 + 0x0]             ; 0053c539
         ;   Label: LAB_0053c539
@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_0053c5a0
     PUSH EBX                            ; 0053c5a3
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0053c5a4
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0053c5a9
     MOV EAX,ESI                         ; 0053c5ac
     ADD ESP,0x4                         ; 0053c5ae

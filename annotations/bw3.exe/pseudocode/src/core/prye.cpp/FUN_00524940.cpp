@@ -25,17 +25,20 @@ void core_prye_cpp_FUN_00524940(CHero *param_1,float param_2)
   float *pfVar10;
   CInventory *pCVar11;
   byte bVar12;
-  float afStackY_1094 [18];
-  CInventory *apCStackY_104c [995];
+  float afStackY_1094 [1013];
   CDemonActor *in_stack_ffffff54;
-  float afStack_a8 [4];
+  float fStack_a8;
+  float local_a4;
+  float local_a0;
+  float local_9c;
   float fStack_98;
-  CDemonActor *pCStack_94;
-  float afStack_90 [5];
-  float fStack_7c;
+  CVector3f CStack_94;
+  float fStack_88;
+  float afStack_84 [5];
   CVector3f CStack_70;
-  float fStack_64;
-  CInventory *apCStack_60 [4];
+  CVector3f CStack_64;
+  CInventory *local_58;
+  CInventory *local_54;
   uint local_50;
   uint local_4c;
   uint local_48;
@@ -94,8 +97,8 @@ LAB_00524997:
   core_inv_cpp_FUN_004dcda0(pCVar11);
   local_38 = 0;
   pCStack_34 = &(param_1->base).model.base;
-  apCStack_60[2] = pCVar11;
-  apCStack_60[3] = pCVar11;
+  local_58 = pCVar11;
+  local_54 = pCVar11;
   pCStack_18 = pCVar11;
   do {
     pCVar4 = local_24;
@@ -252,28 +255,31 @@ switchD_00524f8d_caseD_1:
              ((float)(int)(0xb / (longlong)pCVar2->motions[iVar5].frame_count) <=
               (param_1->base).layer_action_t)) {
             core_prye_cpp_FUN_00524800(param_1);
-            fStack_7c = afStack_90[2];
-            afStack_90[(uint)bVar12 * -2 + 6] = afStack_90[(uint)bVar12 * -2 + 3];
-            afStack_90[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7] =
-                 afStack_90[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
-            CStack_70.x = fStack_7c;
-            *(float *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) = afStack_90[(uint)bVar12 * -2 + 6];
+            afStack_84[2] = fStack_88;
+            afStack_84[(uint)bVar12 * -2 + 3] = afStack_84[(uint)bVar12 * -2];
+            afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
+                 afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+            CStack_70.x = afStack_84[2];
+            *(float *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) = afStack_84[(uint)bVar12 * -2 + 3];
             *(float *)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-                 afStack_90[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7];
+                 afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
             local_2c = (CCharacter *)
                        core_actor_cpp_castToClassHash_FUN_0040c840
                                  ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
                                   g_CBindEvilClassInfo.name_hash);
             if (local_2c != (CCharacter *)0x0) {
-              core_actor_cpp_FUN_00408b00(param_1,&CStack_70);
-              afStack_a8[2] = fStack_64;
-              afStack_a8[(uint)bVar12 * -2 + 3] = (float)apCStack_60[(uint)bVar12 * -2];
-              afStack_a8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
-                   (float)apCStack_60[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+              core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                        ((CDemonActor *)param_1,&CStack_70,&CStack_64);
+              local_a0 = CStack_64.x;
+              (&stack0xffffff64)[(uint)bVar12 * 0xfffffffe] =
+                   (float)*(uint *)((int)&CStack_64 + (uint)bVar12 * -8 + 4);
+              (&stack0xffffff64)[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+                   (float)*(uint *)
+                           ((int)&CStack_64 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
               pCVar9 = (local_2c->model).bone_origins + 0x53;
-              if (pCVar9 != (CVector3f *)(afStack_a8 + 2)) {
-                pCVar9->x = afStack_a8[2];
-                (local_2c->model).bone_origins[0x53].y = afStack_a8[3];
+              if (pCVar9 != (CVector3f *)&stack0xffffff60) {
+                pCVar9->x = local_a0;
+                (local_2c->model).bone_origins[0x53].y = local_9c;
                 (local_2c->model).bone_origins[0x53].z = fStack_98;
               }
               (*(((local_2c->base).vtable._uc)->_uc).isGrabbable)(local_2c,in_stack_ffffff54);
@@ -284,16 +290,18 @@ switchD_00524f8d_caseD_1:
                                   g_CDiseaseClassInfo.name_hash);
             local_30 = local_3c;
             if (local_3c != (CCharacter *)0x0) {
-              core_actor_cpp_FUN_00408b00(param_1,&CStack_70);
-              in_stack_ffffff54 = pCStack_94;
-              afStack_a8[(uint)bVar12 * -2] = afStack_90[(uint)bVar12 * -2];
-              afStack_a8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-                   afStack_90[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+              core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                        ((CDemonActor *)param_1,&CStack_70,&CStack_94);
+              in_stack_ffffff54 = (CDemonActor *)CStack_94.x;
+              *(uint *)((int)&stack0xffffff58 + (uint)bVar12 * -8) =
+                   *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
+              *(uint *)((int)&stack0xffffff5c + ((uint)bVar12 * -2 + (uint)bVar12 * -2) * 4) =
+                   *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
               pfVar10 = &(local_30->model).bone_origins[0x53].y;
               if (pfVar10 != (float *)&stack0xffffff54) {
                 *pfVar10 = (float)in_stack_ffffff54;
-                (local_30->model).bone_origins[0x53].z = afStack_a8[0];
-                (local_30->model).bone_origins[0x54].x = afStack_a8[1];
+                (local_30->model).bone_origins[0x53].z = fStack_a8;
+                (local_30->model).bone_origins[0x54].x = local_a4;
               }
               (*(((local_3c->base).vtable._uc)->_uc).isGrabbable)(local_3c,in_stack_ffffff54);
             }
@@ -559,8 +567,7 @@ LAB_00524bde:
         if ((param_1->action_pending == 8) && (local_20 == 3)) {
           fVar7 = param_1[1].base.base.orient_matrix.m[2].y;
           if (((fVar7 == 0.0) || (*(int *)((int)fVar7 + 0x578) == 1)) &&
-             (iVar5 = core_inv_cpp_FUN_004dba80(apCStack_60[3],"CLightActor"), iVar5 != 0))
-          {
+             (iVar5 = core_inv_cpp_FUN_004dba80(local_54,"CLightActor"), iVar5 != 0)) {
             pCVar11 = pCStack_18;
             for (local_14 = 0; local_14 < pCStack_18->item_count; local_14 = local_14 + 1) {
               pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);
@@ -596,7 +603,7 @@ LAB_00524bde:
         }
       }
       if ((param_1->target_actor != (CDemonActor *)0x0) && (local_20 == 3)) {
-        core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(apCStack_60[2],param_1->target_actor,0);
+        core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(local_58,param_1->target_actor,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
                   (0x01D81080,param_1->target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0

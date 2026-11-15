@@ -7,7 +7,7 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_dtrace.cpp_FUN_0048aaf0 at 0048ac58
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0 at 0048ac58
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfba3
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0 at 0050a81c
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cc2b

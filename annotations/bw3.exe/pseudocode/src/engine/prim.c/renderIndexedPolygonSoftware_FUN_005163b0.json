@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 488,
+    "complexity_score": 487,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 223,
+    "pseudocode_lines": 222,
     "suspect_count": 25,
     "suspect_types": [
       "sign_compare_idiom",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 712
+    "total_lines": 711
   },
   "cross_references": [
     {
@@ -507,31 +507,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 206,
       "match": "DAT_00603974",
       "severity": "mild",
-      "text": "iVar3 = local_18 - DAT_00603974;",
+      "text": "iVar3 = local_1c - DAT_00603974;",
       "type": "undefined_data"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 208,
+      "line": 207,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar13 = SBORROW4(local_18,DAT_00603974);",
+      "text": "bVar13 = SBORROW4(local_1c,DAT_00603974);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 207,
       "match": "DAT_00603974",
       "severity": "mild",
-      "text": "bVar13 = SBORROW4(local_18,DAT_00603974);",
+      "text": "bVar13 = SBORROW4(local_1c,DAT_00603974);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 218,
       "match": "DAT_0060b014",
       "severity": "mild",
       "text": "local_64[iVar3] = (SRenderVertex *)(&DAT_0060b014 + iVar9 * 0xc);",

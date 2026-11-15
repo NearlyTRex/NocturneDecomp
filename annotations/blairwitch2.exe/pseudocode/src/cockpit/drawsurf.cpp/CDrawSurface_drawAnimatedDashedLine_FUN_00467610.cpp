@@ -11,13 +11,13 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
-  int x;
   int iVar1;
   int iVar2;
-  int x_00;
-  float10 fVar3;
+  int iVar3;
+  double dVar4;
   
-  iVar1 = y1;
+  iVar2 = x2;
+  iVar1 = x1;
   if (_DAT_01c2a374 != _DAT_01ba59a4) {
     _DAT_01ba599c = (float)_DAT_01c2a370 * _DAT_005d13b0 + _DAT_01ba599c;
     _DAT_01ba59a4 = _DAT_01c2a374;
@@ -29,42 +29,36 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004676
       _DAT_01ba599c = 0.0;
     }
   }
-  fVar3 = (float10)_DAT_01ba59a0;
-  round();
-  iVar2 = (int)ROUND(fVar3);
-  x_00 = x1;
+  dVar4 = round((double)_DAT_01ba59a0);
+  iVar3 = (int)ROUND(dVar4);
   if (x2 < x1) {
-    x_00 = x2;
-    x2 = x1;
+    x1 = x2;
+    x2 = iVar1;
+    iVar1 = iVar2;
   }
-  x = x_00;
-  if (y2 < y1) {
-    y1 = y2;
-    y2 = iVar1;
-  }
-  for (; iVar1 = y1, x < x2; x = x + 1) {
-    if (iVar2 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x,y1);
+  for (; iVar2 = x1, iVar1 < x2; iVar1 = iVar1 + 1) {
+    if (iVar3 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,iVar1,x1);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; iVar1 < y2; iVar1 = iVar1 + 1) {
-    if (iVar2 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x2,iVar1);
+  for (; iVar1 = x2, iVar2 < x2; iVar2 = iVar2 + 1) {
+    if (iVar3 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x2,iVar2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; x_00 < x2; x2 = x2 + -1) {
-    if (iVar2 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x2,y2);
+  for (; x1 < iVar1; iVar1 = iVar1 + -1) {
+    if (iVar3 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,iVar1,x2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; y1 < y2; y2 = y2 + -1) {
-    if (iVar2 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x_00,y2);
+  for (; x1 < x2; x2 = x2 + -1) {
+    if (iVar3 % (_DAT_0060b270 * 2) < _DAT_0060b270) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(this_ptr,x1,x2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
   return;
 }

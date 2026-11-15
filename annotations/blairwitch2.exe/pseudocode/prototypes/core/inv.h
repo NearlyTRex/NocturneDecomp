@@ -119,7 +119,7 @@ void setupItems(int param_1);
 
 // Original: core_inv.cpp_CInventory_select_FUN_004dc8c0
 // Address: 004dc8c0
-undefined4 __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *param_2);
+int __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
 // Address: 004dccb0

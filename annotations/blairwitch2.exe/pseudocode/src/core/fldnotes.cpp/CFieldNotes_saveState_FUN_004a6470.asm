@@ -33,7 +33,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_FUN_005b8010
 ;
 ; *****************************************************************************
@@ -197,8 +197,8 @@ section .text
     PUSH 0x5d65d3                       ; 004a65f8 | = "Invalid entry item type"
     MOV [0x01d046a0],EAX                ; 004a65fd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004a6602 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a6608
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a6608
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a660d
     JMP 0x004a6515                      ; 004a6610
         ;   XREF to: 004a6515 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -222,8 +222,8 @@ section .text
     PUSH 0x5d6632                       ; 004a6645 | = "Invalid entry item type"
     MOV [0x01d046a0],EAX                ; 004a664a | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004a664f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a6655
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a6655
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a665a
     JMP 0x004a65a5                      ; 004a665d
         ;   XREF to: 004a65a5 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -233,8 +233,8 @@ section .text
     PUSH 0x5d665f                       ; 004a666c | = "Hell froze"
     MOV dword ptr [0x01d046a0],ESI      ; 004a6671 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004a6677 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a667d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a667d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a6682
     JMP 0x004a65ce                      ; 004a6685
         ;   XREF to: 004a65ce (UNCONDITIONAL_JUMP)  ; LAB_004a65ce

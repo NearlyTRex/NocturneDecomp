@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bits_per_sample
 ; int              Stack[0xc]:4   channels
 ; int              Stack[0x10]:4   sample_rate
-; int *            Stack[0x14]:4   out_buffer_size
+; int *            Stack[0x14]:4   out_samples_per_block
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutOpen_005c8478 = 001c89dc
@@ -73,7 +73,7 @@ section .text
     FILD dword ptr [0x0264b104]         ; 00557f5a | DAT_0264b104
     FDIVP                               ; 00557f60
     CALL crt_math.c_round_FUN_005b7ff0  ; 00557f62
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [0x0264b100]        ; 00557f67 | DAT_0264b100
     MOV EAX,[0x0264b100]                ; 00557f6d | DAT_0264b100
     ADD EAX,0xf                         ; 00557f72

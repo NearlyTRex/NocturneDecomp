@@ -14,12 +14,12 @@ void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004f4c00(CIniFile *this_ptr,c
   if (this_ptr->filename[0] == '\0') {
     _DAT_01d1d400 = "..\\engine\\ini.cpp";
     _DAT_01d1d404 = 0x27a;
-    core_main_c_FUN_005030e0("CIniFile::getString - filename not set!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CIniFile::getString - filename not set!");
   }
   if (this_ptr->section[0] == '\0') {
     _DAT_01d1d400 = "..\\engine\\ini.cpp";
     _DAT_01d1d404 = 0x27b;
-    core_main_c_FUN_005030e0("CIniFile::getString - section not set!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CIniFile::getString - section not set!");
   }
   engine_ini_cpp_getProfileString_FUN_004f49f0
             (this_ptr->section,key,output_buffer,output_buffer,buffer_size,this_ptr->filename);

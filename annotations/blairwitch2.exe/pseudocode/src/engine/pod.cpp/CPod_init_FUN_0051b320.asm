@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x5e283b                       ; 0051b33a | = "CPod::init - No .POD to init!"
     MOV dword ptr [0x01d046a0],EDX      ; 0051b33f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0051b345 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051b34b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b34b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b350
     CMP dword ptr [EBX],0x0             ; 0051b353
     JZ 0x0051b35a                       ; 0051b356

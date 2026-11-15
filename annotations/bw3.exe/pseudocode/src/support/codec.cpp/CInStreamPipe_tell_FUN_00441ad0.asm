@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5b9371                       ; 00441ada | = "CInStreamPipe::tell - not allowed"
     MOV dword ptr [0x01d71de0],EDX      ; 00441adf | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00441ae5 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00441aeb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00441aeb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     MOV EAX,0xffffffff                  ; 00441af0
     ADD ESP,0x4                         ; 00441af5
     RET                                 ; 00441af8

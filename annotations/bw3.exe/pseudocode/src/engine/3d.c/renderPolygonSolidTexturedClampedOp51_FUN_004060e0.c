@@ -1,25 +1,25 @@
 // Name: engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0
 // Address: 004060e0
 // Address Range: [[004060e0, 00406291]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  SMRGLHeaderPrimitive *pSVar4;
   int iVar5;
   int iStack_c;
   
-  piVar4 = (int *)(param_1 + 0x18);
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920((SClipPlane *)(param_1 + 8));
+  pSVar4 = prim + 1;
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {
@@ -40,10 +40,10 @@ int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(int param_1)
     _DAT_01c6e2b8 = 1;
     iVar1 = 0;
     iStack_c = 0;
-    for (iVar5 = 0; iVar5 < *(int *)(param_1 + 4) * 3; iVar5 = iVar5 + 3) {
-      *(int *)((int)&DAT_00730418 + iVar1) = *piVar4;
-      iVar3 = piVar4[1];
-      iVar2 = piVar4[2];
+    for (iVar5 = 0; iVar5 < (prim->base).count * 3; iVar5 = iVar5 + 3) {
+      *(int *)((int)&DAT_00730418 + iVar1) = (pSVar4->base).type;
+      iVar3 = (pSVar4->base).count;
+      iVar2 = (pSVar4->surface_normal).A.i;
       if (DAT_005fba28 < 0x41) {
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;
@@ -72,13 +72,13 @@ int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(int param_1)
           iVar2 = 0xfeffff;
         }
       }
-      (&DAT_0060b02c)[*piVar4 * 0xc] = iVar3;
+      (&DAT_0060b02c)[(pSVar4->base).type * 0xc] = iVar3;
       iVar1 = iVar1 + 4;
-      *(int *)(&DAT_0060b030 + *piVar4 * 0x30) = iVar2;
-      piVar4 = piVar4 + 3;
+      *(int *)(&DAT_0060b030 + (pSVar4->base).type * 0x30) = iVar2;
+      pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
       iStack_c = iStack_c + 1;
     }
     engine_clipper_c_clipAndRasterize_FUN_0043a840(iStack_c,&DAT_00730418);
   }
-  return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

@@ -64,7 +64,7 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonA
     }
     _DAT_01d1d400 = "..\\core\\inv.cpp";
     _DAT_01d1d404 = 0xaf;
-    core_main_c_FUN_005030e0("getModel - Can't classify : %s",actor_ptr);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("getModel - Can't classify : %s");
     return (CKeyFramedModelInstance *)0x0;
   }
   pCVar2 = (CFilmReel *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CFilmReelClassInfo.name_hash);

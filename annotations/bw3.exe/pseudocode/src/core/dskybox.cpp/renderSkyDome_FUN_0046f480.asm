@@ -70,8 +70,8 @@
 ;
 ; Called Functions:
 ;   core_dskybox.cpp_generateSkyDomeVertex_FUN_0046f340
-;   core_dtrace.cpp_FUN_00477d90
-;   core_dtrace.cpp_FUN_00477db0
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
@@ -112,8 +112,8 @@ section .text
     LEA ESI,[ESP + 0x4c]                ; 0046f4c1
     MOV dword ptr [EBP],EAX             ; 0046f4c5
     LEA EDI,[ESP + 0x7c]                ; 0046f4c8
-    CALL core_dtrace.cpp_FUN_00477d90   ; 0046f4cc
-        ;   XREF to: 00477d90 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477d90()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90 ; 0046f4cc
+        ;   XREF to: 00477d90 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0x4c]                ; 0046f4d1
     ADD ESP,0x4                         ; 0046f4d5
     MOVSD ES:EDI,ESI                    ; 0046f4d8
@@ -122,8 +122,8 @@ section .text
     PUSH 0x203b37c                      ; 0046f4db | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0x58]                ; 0046f4e0
     LEA EDI,[ESP + 0x64]                ; 0046f4e4
-    CALL core_dtrace.cpp_FUN_00477db0   ; 0046f4e8
-        ;   XREF to: 00477db0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477db0()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0 ; 0046f4e8
+        ;   XREF to: 00477db0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0x58]                ; 0046f4ed
     ADD ESP,0x4                         ; 0046f4f1
     MOVSD ES:EDI,ESI                    ; 0046f4f4
@@ -218,14 +218,14 @@ section .text
     FMULP                               ; 0046f629
     FXCH                                ; 0046f62b
     CALL crt_math.c_round_FUN_005a3120  ; 0046f62d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x6c]        ; 0046f632
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0046f636
     MOV ECX,dword ptr [0x005f2afc]      ; 0046f63a | DAT_005f2afc
     MOV dword ptr [ESP + 0x74],EAX      ; 0046f640
     LEA EAX,[ESP + 0x6c]                ; 0046f644
     CALL crt_math.c_round_FUN_005a3120  ; 0046f648
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     PUSH EAX                            ; 0046f64d
     FISTP dword ptr [ESP + 0x74]        ; 0046f64e
     MOV EAX,dword ptr [ECX]             ; 0046f652

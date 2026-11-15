@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_inverse_FUN_00592830
@@ -78,7 +78,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 00428c2c
     PUSH EAX                            ; 00428c33
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 00428c34
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00428c39
     LEA EAX,[ESP + 0x98]                ; 00428c3c
     PUSH EAX                            ; 00428c43
@@ -114,7 +114,7 @@ section .text
     PUSH EAX                            ; 00428cab
     LEA ESI,[ESP + 0x12c]               ; 00428cac
     CALL core_xform.cpp_inverse_FUN_00592830 ; 00428cb3
-        ;   XREF to: 00592830 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_00592830()
+        ;   XREF to: 00592830 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_00592830(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     FLDZ                                ; 00428cb8
     MOV ECX,0xc                         ; 00428cba
     LEA ESI,[ESP + 0x12c]               ; 00428cbf
@@ -153,8 +153,8 @@ section .text
     PUSH 0x5ccfbc                       ; 00428d0b | = "CCharacter::computePickup - invalid h..."
     MOV dword ptr [0x01d046a0],ECX      ; 00428d10 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00428d16 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00428d1c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00428d1c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00428d21
     JMP 0x00428c03                      ; 00428d24
         ;   XREF to: 00428c03 (UNCONDITIONAL_JUMP)  ; LAB_00428c03

@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 484,
+    "complexity_score": 638,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 41,
+    "pseudocode_lines": 68,
+    "suspect_count": 55,
     "suspect_types": [
       "extra_output",
+      "suspect_float",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 202
+    "total_lines": 211
   },
   "cross_references": [],
   "function": {
@@ -28,7 +29,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_FUN_005b7d60",
-    "signature": "float * core_xform_cpp_FUN_005b7d60(float *param_1)"
+    "signature": "undefined4 * core_xform_cpp_FUN_005b7d60(float *param_1)"
   },
   "function_calls": [
     {
@@ -179,79 +180,87 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "float * core_xform_cpp_FUN_005b7d60(float *param_1)",
+      "text": "uint * core_xform_cpp_FUN_005b7d60(float *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "float *extraout_ECX;",
+      "text": "uint *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "uint *extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
-      "match": "extraout_ECX_00",
+      "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "float *extraout_ECX_00;",
+      "text": "uint *extraout_ECX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "float *extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "float *extraout_EDX_00;",
+      "text": "float *extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
+      "text": "afStack_1010[0x3fc] = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
+      "text": "afStack_1010[0x3fc] = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
+      "text": "afStack_1010[0x3fc] = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
+      "text": "afStack_1010[0x3fc] = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005fa1a4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "8.402348e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.402348e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(-(float10)param_1[1] * (float10)param_1[3] -",
       "type": "unnamed_param"
     },
     {
@@ -259,55 +268,63 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
+      "text": "(-(float10)param_1[1] * (float10)param_1[3] -",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
+      "text": "(float10)*param_1 * (float10)param_1[2],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
+      "text": "(float10)*param_1 * (float10)param_1[2],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
+      "text": "((float10)_DAT_005fa1b8 - (float10)param_1[2] * (float10)param_1[2]) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)_DAT_005fa1b8 - (float10)param_1[2] * (float10)param_1[2]) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[3] * (float10)param_1[3]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[3] * (float10)param_1[3]);",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 28,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "*extraout_ECX_00 = -1.5707964;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "extraout_ECX_00[(uint)bVar2 * -2 + 1] = afStack_1004[(uint)bVar2 * -2 + 0x3fb];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "(extraout_ECX_00 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
+      "text": "*extraout_ECX_00 = 0xbfc90fdb;",
       "type": "extra_output"
     },
     {
@@ -315,111 +332,143 @@
       "line": 29,
       "match": "extraout_ECX_00",
       "severity": "moderate",
+      "text": "extraout_ECX_00[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "(extraout_ECX_00 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
       "text": "return extraout_ECX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(float10)*(float *)(extraout_EDX + 4) * (float10)*(float *)(extraout_EDX + 4)) -",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 35,
+      "match": "8.40212e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.40212e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(float10)*(float *)(extraout_EDX + 4) * (float10)*(float *)(extraout_EDX + 4)) -",
-      "type": "extra_output"
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = ((float10)_DAT_005fa1b8 - (float10)param_1[1] * (float10)param_1[1]) -",
+      "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(float10)*(float *)(extraout_EDX + 8) * (float10)*(float *)(extraout_EDX + 8);",
-      "type": "extra_output"
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = ((float10)_DAT_005fa1b8 - (float10)param_1[1] * (float10)param_1[1]) -",
+      "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(float10)*(float *)(extraout_EDX + 8) * (float10)*(float *)(extraout_EDX + 8);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unnamed function parameter",
       "line": 42,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "fVar3 = fVar3 - (float10)extraout_EDX_00[3] * (float10)extraout_EDX_00[3];",
-      "type": "extra_output"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[2] * (float10)param_1[2];",
+      "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unnamed function parameter",
       "line": 42,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "fVar3 = fVar3 - (float10)extraout_EDX_00[3] * (float10)extraout_EDX_00[3];",
-      "type": "extra_output"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[2] * (float10)param_1[2];",
+      "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "fVar4 = (float10)extraout_EDX_00[1] * (float10)extraout_EDX_00[2] -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "fVar4 = (float10)extraout_EDX_00[1] * (float10)extraout_EDX_00[2] -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unnamed function parameter",
       "line": 44,
-      "match": "extraout_EDX_00",
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(float10)*extraout_EDX_00 * (float10)extraout_EDX_00[3];",
+      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
-      "match": "extraout_EDX_00",
+      "line": 46,
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(float10)*extraout_EDX_00 * (float10)extraout_EDX_00[3];",
+      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 48,
-      "match": "extraout_ECX",
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "*extraout_ECX = afStack_1004[0x3fa];",
+      "text": "((float10)extraout_EDX[1] * (float10)extraout_EDX[2] -",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 48,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "((float10)extraout_EDX[1] * (float10)extraout_EDX[2] -",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 49,
-      "match": "extraout_ECX",
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "extraout_ECX[(uint)bVar2 * -2 + 1] = afStack_1004[(uint)bVar2 * -2 + 0x3fb];",
+      "text": "(float10)*extraout_EDX * (float10)extraout_EDX[3],fVar2);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
-      "match": "extraout_ECX",
+      "line": 49,
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(extraout_ECX + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
+      "text": "(float10)*extraout_EDX * (float10)extraout_EDX[3],fVar2);",
       "type": "extra_output"
     },
     {
@@ -427,68 +476,132 @@
       "line": 52,
       "match": "extraout_ECX",
       "severity": "moderate",
+      "text": "*extraout_ECX = 0x5b7df6;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fb];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 54,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "(extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 56,
+      "match": "extraout_ECX",
+      "severity": "moderate",
       "text": "return extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = -(float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Likely misinterpreted integer as float",
       "line": 58,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "*extraout_ECX_01 = 1.5707964;",
-      "type": "extra_output"
+      "match": "8.40245e-39",
+      "severity": "mild",
+      "text": "afStack_1010[0x3fb] = 8.40245e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "extraout_ECX_01[(uint)bVar2 * -2 + 1] = afStack_1004[(uint)bVar2 * -2 + 0x3fb];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unnamed function parameter",
       "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(-(float10)param_1[1] * (float10)param_1[3] -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(-(float10)param_1[1] * (float10)param_1[3] -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)*param_1 * (float10)param_1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)_DAT_005fa1b8 - (float10)param_1[2] * (float10)param_1[2]) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float10)_DAT_005fa1b8 - (float10)param_1[2] * (float10)param_1[2]) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[3] * (float10)param_1[3]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float10)param_1[3] * (float10)param_1[3]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
       "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "(extraout_ECX_01 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
+      "text": "*extraout_ECX_01 = 0x3fc90fdb;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 62,
+      "line": 68,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "extraout_ECX_01[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 69,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "(extraout_ECX_01 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 71,
       "match": "extraout_ECX_01",
       "severity": "moderate",
       "text": "return extraout_ECX_01;",

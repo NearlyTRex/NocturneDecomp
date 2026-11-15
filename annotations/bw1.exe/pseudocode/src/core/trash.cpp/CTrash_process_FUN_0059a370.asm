@@ -19,8 +19,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
-;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
@@ -320,8 +320,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x17c]     ; 0059a7e0
     FSTP float ptr [ESP + 0x19c]        ; 0059a7e7
     MOV dword ptr [ESP + 0x1a0],EDX     ; 0059a7ee
-    CALL core_actor.cpp_FUN_00408b00    ; 0059a7f5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 0059a7f5
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x240]               ; 0059a7fa
     ADD ESP,0x8                         ; 0059a801
     MOVSD ES:EDI,ESI                    ; 0059a804
@@ -660,7 +660,7 @@ section .text
     LEA ESI,[ESP + 0x20c]               ; 0059ac98
     LEA EDI,[ESP + 0x158]               ; 0059ac9f
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0059aca6
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x20c]               ; 0059acab
     ADD ESP,0x4                         ; 0059acb2
     LEA EAX,[ESP + 0x154]               ; 0059acb5

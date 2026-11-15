@@ -35,7 +35,7 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041b1d0(CBox *this_ptr,CVect
   float local_34;
   float local_30;
   float local_2c;
-  float local_28;
+  CVector3f local_28;
   SScrape *local_1c;
   CMatrix3x3f *local_18;
   int local_14;
@@ -95,12 +95,13 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041b1d0(CBox *this_ptr,CVect
     pCVar12 = &this_ptr->scrape_points[0].transformed_position;
     local_18 = &this_ptr->rotation_matrix;
     do {
-      core_dirmat_cpp_FUN_0045b800(local_18,local_1c + local_14);
-      local_34 = local_28;
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
+                (local_18,&local_1c[local_14].local_position,&local_28);
+      local_34 = local_28.x;
       *(uint *)((int)&stack0xffffffd0 + (uint)bVar13 * -8) =
-           *(uint *)(&stack0xffffffdc + (uint)bVar13 * -8);
+           *(uint *)((int)&local_28 + (uint)bVar13 * -8 + 4);
       *(uint *)((int)&stack0xffffffd4 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
-           *(uint *)(&stack0xffffffe0 + (uint)bVar13 * -8 + (uint)bVar13 * -8);
+           *(uint *)((int)&local_28 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
       local_40 = (this_ptr->position).x + local_34;
       local_3c = (this_ptr->position).y + local_30;
       local_38 = (this_ptr->position).z + local_2c;

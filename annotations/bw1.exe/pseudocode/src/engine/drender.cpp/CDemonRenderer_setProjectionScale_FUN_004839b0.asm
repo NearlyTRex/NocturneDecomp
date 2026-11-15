@@ -37,7 +37,7 @@ section .text
     FDIVR double ptr [0x005db39c]       ; 004839b4 | DAT_005db39c
     FMUL double ptr [0x005db3a4]        ; 004839ba | DAT_005db3a4
     CALL crt_math.c_round_FUN_005c03a0  ; 004839c0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [0x0061b4c4]        ; 004839c5 | DAT_0061b4c4
     RET                                 ; 004839cb
 

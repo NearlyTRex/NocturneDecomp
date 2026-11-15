@@ -7,4 +7,4 @@
 
 // Original: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 // Address: 00576250
-float * convertDirectionVectorToEulerAngles(uint *param_1);
+float * convertDirectionVectorToEulerAngles(float *param_1);

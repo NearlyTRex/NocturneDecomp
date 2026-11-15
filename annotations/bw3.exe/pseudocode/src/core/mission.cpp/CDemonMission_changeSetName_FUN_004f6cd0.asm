@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5c8a64                       ; 004f6cf4 | = "CDemonMission::changeSetName - invali..."
     MOV dword ptr [0x01d71de0],ECX      ; 004f6cf9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004f6cff | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f6d05
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6d05
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004f6d0a
     MOV EAX,EBX                         ; 004f6d0d
         ;   Label: LAB_004f6d0d
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5c8ab5                       ; 004f6d49 | = "Tried to change the set file for the ..."
     MOV dword ptr [0x01d71de0],EDX      ; 004f6d4e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004f6d54 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f6d5a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6d5a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6d5f
     POP EBP                             ; 004f6d62
     POP EDI                             ; 004f6d63

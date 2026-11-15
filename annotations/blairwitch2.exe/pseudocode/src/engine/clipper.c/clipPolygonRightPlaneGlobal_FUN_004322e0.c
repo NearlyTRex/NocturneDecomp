@@ -1,14 +1,12 @@
 // Name: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_004322e0
 // Address: 004322e0
-// Address Range: [[004322e0, 00432340] [0043236b, 00432386]]
-// Convention: unknown
-// Signature: void engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_004322e0(void)
+// Address Range: [[004322e0, 00432402]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_004322e0(void)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_004322e0(void)
+void __cdecl engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_004322e0(void)
 
 {
   byte bVar1;

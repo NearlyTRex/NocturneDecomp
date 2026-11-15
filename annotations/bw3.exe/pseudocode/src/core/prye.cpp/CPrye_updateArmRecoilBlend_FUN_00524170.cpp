@@ -18,7 +18,7 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
   ECollisionType EVar4;
   byte bVar5;
   float afStackY_1100 [991];
-  float *pfVar6;
+  CVector3f *pCVar6;
   float local_15c;
   float local_158;
   float fStack_150;
@@ -32,30 +32,28 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
   float local_100;
   float local_fc;
   float local_f8;
-  float local_f4 [3];
+  CVector3f local_f4;
   float local_e8;
-  uint local_e4;
-  uint local_e0;
-  float local_dc;
-  float local_d8;
+  float local_e4 [4];
   float local_d4;
   CVector3f local_d0;
-  float local_c4;
-  float afStack_c0 [6];
-  float afStack_a8 [4];
-  float local_98;
-  float local_94;
-  uint local_90;
+  CVector3f local_c4;
+  CVector3f local_b8;
+  CVector3f local_ac;
+  float local_a0;
+  float local_9c [4];
   uint local_8c;
-  float local_88;
-  float afStack_84 [4];
+  CVector3f local_88;
+  float local_7c;
+  float local_78;
   float local_74;
-  float local_70;
-  float afStack_6c [4];
-  uint local_5c;
+  CVector3f local_70;
+  float local_64;
+  float local_60 [2];
   CVector3f local_58;
   float local_4c;
-  float local_48 [8];
+  float local_48 [2];
+  CVector3f local_40 [2];
   float local_28;
   float local_24;
   int local_20;
@@ -77,11 +75,13 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
     local_1c = 0;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->character_count; local_20 = local_20 + 1) {
       this_ptr_00 = *(CPrye **)((int)g_CDemonSetPtr->characters + local_1c);
-      core_actor_cpp_FUN_00408bf0(this_ptr,&(this_ptr_00->base).base.base.location);
-      local_100 = local_70;
-      local_114[(uint)bVar5 * -2 + 6] = afStack_6c[(uint)bVar5 * -2];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                ((CDemonActor *)this_ptr,&(this_ptr_00->base).base.base.location.position,&local_70)
+      ;
+      local_100 = local_70.x;
+      local_114[(uint)bVar5 * -2 + 6] = *(float *)((int)&local_70 + (uint)bVar5 * -8 + 4);
       local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
-           afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+           *(float *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       if (((ABS(local_100) <= (float)_DAT_005cd767) && (ABS(local_fc) <= (float)_DAT_005cd76f)) &&
          ((0.0 <= local_f8 &&
           ((((int)local_f8 < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
@@ -105,49 +105,52 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
     core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,(CDemonActor *)this_ptr);
     local_28 = 1.5;
     local_24 = 3.5;
-    afStack_c0[2] = 0.0;
-    afStack_c0[3] = 0.0;
-    afStack_c0[4] = 3.5;
-    core_actor_cpp_FUN_00408b00(this_ptr,afStack_c0 + 2);
-    local_4c = afStack_c0[5];
-    local_48[(uint)bVar5 * -2] = afStack_a8[(uint)bVar5 * -2];
+    local_b8.x = 0.0;
+    local_b8.y = 0.0;
+    local_b8.z = 3.5;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              ((CDemonActor *)this_ptr,&local_b8,&local_ac);
+    local_4c = local_ac.x;
+    local_48[(uint)bVar5 * -2] = *(float *)((int)&local_ac + (uint)bVar5 * -8 + 4);
     local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         afStack_a8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    if (afStack_84 + 2 != &local_4c) {
-      afStack_84[2] = local_4c;
-      afStack_84[3] = local_48[0];
+         *(float *)((int)&local_ac + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    if (&local_7c != &local_4c) {
+      local_7c = local_4c;
+      local_78 = local_48[0];
       local_74 = local_48[1];
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
               (&(this_ptr->base).base.model,_DAT_01ed36e0,&local_d0);
-    pfVar6 = local_114 + 8;
-    local_f4[0] = local_d0.x;
-    local_114[(uint)bVar5 * -2 + 9] = *(float *)((int)&local_d0 + (uint)bVar5 * -8 + 4);
-    local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-         *(float *)((int)&local_d0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar6);
-    local_118 = local_48[2];
-    local_114[(uint)bVar5 * -2] = local_48[(uint)bVar5 * -2 + 3];
+    pCVar6 = &local_f4;
+    local_f4.x = local_d0.x;
+    *(uint *)((int)&local_f4 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_d0 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&local_f4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&local_d0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,pCVar6,local_40);
+    local_118 = local_40[0].x;
+    local_114[(uint)bVar5 * -2] = *(float *)((int)local_40 + (uint)bVar5 * -8 + 4);
     local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+         *(float *)((int)local_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     if (&local_124 != &local_118) {
       local_124 = local_118;
       local_120 = local_114[0];
       local_11c = local_114[1];
     }
-    local_d8 = local_120 + afStack_84[3];
+    local_e4[3] = local_120 + local_78;
     local_d4 = local_11c + local_74;
-    local_dc = local_124 + afStack_84[2];
-    afStack_6c[2] = local_124 + afStack_84[2];
-    afStack_6c[(uint)bVar5 * -2 + 3] = local_114[(uint)bVar5 * -2 + 0xf];
-    afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10];
-    if (afStack_a8 + 5 != afStack_6c + 2) {
-      local_94 = afStack_6c[2];
-      local_90 = afStack_6c[3];
-      local_8c = local_5c;
+    local_e4[2] = local_124 + local_7c;
+    local_64 = local_124 + local_7c;
+    local_60[(uint)bVar5 * -2] = local_e4[(uint)bVar5 * -2 + 3];
+    local_60[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         local_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+    if (local_9c + 2 != &local_64) {
+      local_9c[2] = local_64;
+      local_9c[3] = local_60[0];
+      local_8c = local_60[1];
     }
-    local_18 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&local_124,afStack_a8 + 5);
+    local_18 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&local_124,local_9c + 2);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_158 < fVar2))
     {
@@ -155,34 +158,36 @@ void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_p
     }
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
               (&(this_ptr->base).base.model,_DAT_01ed36e4,&local_58);
-    pfVar6 = &local_88;
-    local_88 = local_58.x;
-    afStack_84[(uint)bVar5 * -2] = *(float *)((int)&local_58 + (uint)bVar5 * -8 + 4);
-    afStack_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         *(float *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar6);
-    afStack_a8[2] = local_c4;
-    afStack_a8[(uint)bVar5 * -2 + 3] = afStack_c0[(uint)bVar5 * -2];
-    afStack_a8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    if (&local_124 != afStack_a8 + 2) {
-      local_124 = afStack_a8[2];
-      local_120 = afStack_a8[3];
-      local_11c = local_98;
+    pCVar6 = &local_88;
+    local_88.x = local_58.x;
+    *(uint *)((int)&local_88 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,pCVar6,&local_c4);
+    local_a0 = local_c4.x;
+    local_9c[(uint)bVar5 * -2] = *(float *)((int)&local_c4 + (uint)bVar5 * -8 + 4);
+    local_9c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         *(float *)((int)&local_c4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    if (&local_124 != &local_a0) {
+      local_124 = local_a0;
+      local_120 = local_9c[0];
+      local_11c = local_9c[1];
     }
-    local_114[3] = local_120 + afStack_84[3];
+    local_114[3] = local_120 + local_78;
     local_104 = local_11c + local_74;
-    local_114[2] = local_124 + afStack_84[2];
-    local_e8 = local_124 + afStack_84[2];
-    local_114[(uint)bVar5 * -2 + 0xc] = local_114[(uint)bVar5 * -2 + 3];
-    local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
+    local_114[2] = local_124 + local_7c;
+    local_e8 = local_124 + local_7c;
+    local_e4[(uint)bVar5 * -2] = local_114[(uint)bVar5 * -2 + 3];
+    local_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-    if (afStack_a8 + 5 != local_114 + 0xb) {
-      local_94 = local_e8;
-      local_90 = local_e4;
-      local_8c = local_e0;
+    if (local_9c + 2 != &local_e8) {
+      local_9c[2] = local_e8;
+      local_9c[3] = local_e4[0];
+      local_8c = local_e4[1];
     }
-    local_18 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&local_124,afStack_a8 + 5);
+    local_18 = (float)core_setcolid_cpp_FUN_0053ccc0(g_CDemonSetPtr,&local_124,local_9c + 2);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
        (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_158 < fVar2))
     {

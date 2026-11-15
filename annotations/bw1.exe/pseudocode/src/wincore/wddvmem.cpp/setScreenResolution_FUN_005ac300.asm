@@ -36,7 +36,7 @@
 ;   ... and 18 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_unknown.c_FUN_005c09f0
@@ -148,8 +148,8 @@ section .text
     PUSH 0x5f948f                       ; 005ac425 | = "WDDVMEM: Fatal - out of frame buffer ..."
     MOV dword ptr [0x01d1d400],EBP      ; 005ac42a | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005ac430 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ac435
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac435
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac43a
     MOV EAX,[0x0061b498]                ; 005ac43d | DAT_0061b498
         ;   Label: LAB_005ac43d
@@ -169,8 +169,8 @@ section .text
     PUSH 0x5f94d2                       ; 005ac46b | = "WDDVMEM: Fatal - out of Z buffer memory"
     MOV dword ptr [0x01d1d400],ECX      ; 005ac470 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005ac476 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ac47c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac47c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac481
     MOV EAX,[0x02c99310]                ; 005ac484 | DAT_02c99310
         ;   Label: LAB_005ac484
@@ -414,8 +414,8 @@ section .text
     PUSH 0x5f9559                       ; 005ac732 | = "Clear of back buffer failed"
     MOV dword ptr [0x01d1d400],EDX      ; 005ac737 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005ac73d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ac743
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac743
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac748
     MOV EBX,dword ptr [ESP + 0x90]      ; 005ac74b
         ;   Label: LAB_005ac74b
@@ -460,8 +460,8 @@ section .text
     PUSH 0x5f958c                       ; 005ac7b2 | = "Unlock of back buffer clear failed"
     MOV dword ptr [0x01d1d400],ECX      ; 005ac7b7 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005ac7bd | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ac7c3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac7c3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac7c8
     MOV ESI,0x1                         ; 005ac7cb
         ;   Label: LAB_005ac7cb
@@ -485,8 +485,8 @@ section .text
     PUSH 0x5f9511                       ; 005ac7fd | = "setScreenResolution - Create back buf..."
     MOV dword ptr [0x01d1d400],EBP      ; 005ac802 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005ac808 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005ac80d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ac80d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ac812
     XOR EAX,EAX                         ; 005ac815
     ADD ESP,0xe0                        ; 005ac817

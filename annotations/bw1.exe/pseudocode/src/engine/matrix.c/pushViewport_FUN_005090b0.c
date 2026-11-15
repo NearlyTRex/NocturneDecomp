@@ -33,7 +33,7 @@ void __cdecl engine_matrix_c_pushViewport_FUN_005090b0(int x,int y,int width,int
   if (9 < _DAT_01d1dfd0) {
     _DAT_01d1d400 = "..\\engine\\matrix.c";
     _DAT_01d1d404 = 0x540;
-    core_main_c_FUN_005030e0("Too many 3D windows");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many 3D windows");
   }
   engine_2d_c_setupViewportAndClipping_FUN_00401810(x,y,x + width,y + height);
   DAT_0061b4c4 = 0x10000;

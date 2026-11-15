@@ -1,18 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c90b0(CGhoul *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c90b0(CGhoul *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d22da0
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -50,8 +49,8 @@ section .text
     PUSH ESI                            ; 004c90ff
     LEA ESI,[EBP + -0xc]                ; 004c9100
     MOV EDI,EBX                         ; 004c9103
-    CALL core_xform.cpp_FUN_00583260    ; 004c9105
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 004c9105
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + -0xc]                ; 004c910a
     ADD ESP,0x8                         ; 004c910d
     MOVSD ES:EDI,ESI                    ; 004c9110

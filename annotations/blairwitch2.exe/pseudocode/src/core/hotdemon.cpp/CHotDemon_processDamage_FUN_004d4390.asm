@@ -14,7 +14,7 @@
 ;   undefined4 DAT_00614d30
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
@@ -101,8 +101,8 @@ section .text
     PUSH EBP                            ; 004d4444
     FSTP ST1                            ; 004d4445
     FSTP float ptr [EAX + -0x18]        ; 004d4447
-    CALL core_actor.cpp_FUN_00408d70    ; 004d444a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004d444a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x1c]                ; 004d444f
     ADD ESP,0x8                         ; 004d4453
     XOR EBX,EBX                         ; 004d4456

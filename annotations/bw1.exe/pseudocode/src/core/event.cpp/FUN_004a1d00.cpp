@@ -245,11 +245,11 @@ LAB_004a1d87:
               iVar5 = iVar5 + 1;
             } while (iVar5 < (param_1->events).count);
           }
-          _fclose();
+          _fclose(local_154);
         }
         _DAT_01d1d400 = "..\\core\\event.cpp";
         _DAT_01d1d404 = 0x286;
-        core_main_c_FUN_005030e0();
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Too many events - check events.txt");
       }
       pcVar19 = (param_1->events).names[(param_1->events).count];
       pcVar20 = pcVar19;
@@ -550,7 +550,7 @@ LAB_004a1d87:
               if (local_140 == (CDemonLight *)0x0) {
                 _DAT_01d1d400 = "..\\core\\event.cpp";
                 _DAT_01d1d404 = 0x337;
-                core_main_c_FUN_005030e0("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
+                core_main_c_displayErrorAndQuit_FUN_005030e0("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
               }
               core_setutil_cpp_C3DSLight_advanceFilter_FUN_0055d360(local_64,local_140);
             }
@@ -2591,7 +2591,7 @@ LAB_004a2140:
                                                     if (local_6c == (CDemonLight *)0x0) {
                                                       _DAT_01d1d400 = "..\\core\\event.cpp";
                                                       _DAT_01d1d404 = 0x75a;
-                                                      core_main_c_FUN_005030e0
+                                                      core_main_c_displayErrorAndQuit_FUN_005030e0
                                                                 ("Can't find CDemonLight for light %s in setLightFilterFrame meta-command"
                                                                 );
                                                     }

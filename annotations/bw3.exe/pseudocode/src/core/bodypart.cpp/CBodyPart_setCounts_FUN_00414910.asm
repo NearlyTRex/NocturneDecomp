@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
@@ -103,8 +103,8 @@ section .text
     PUSH 0x5b6a73                       ; 004149ee | = "CBodyPart::setCounts - out of memory ..."
     MOV dword ptr [0x01d71de0],ECX      ; 004149f3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004149f9 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004149ff
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004149ff
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00414a04
     CMP dword ptr [EBX + 0x180],0x0     ; 00414a07
         ;   Label: LAB_00414a07
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5b6acd                       ; 00414a38 | = "CBodyPart::setCounts - out of memory ..."
     MOV dword ptr [0x01d71de0],ECX      ; 00414a3d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00414a43 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00414a49
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00414a49
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00414a4e
     POP EBP                             ; 00414a51
     POP EDI                             ; 00414a52

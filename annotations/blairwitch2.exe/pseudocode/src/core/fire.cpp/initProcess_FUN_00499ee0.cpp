@@ -28,7 +28,7 @@ void __cdecl core_fire_cpp_initProcess_FUN_00499ee0(void)
         if (0x31 < _DAT_01c3f5a8) {
           _DAT_01d046a0 = "..\\core\\fire.cpp";
           _DAT_01d046a4 = 0xee3;
-          core_main_c_FUN_004e4500("CGunFlame::initProcess - too many characters!");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("CGunFlame::initProcess - too many characters!");
         }
         *(int *)(&DAT_01c3f5ac + _DAT_01c3f5a8 * 4) = iVar1;
         _DAT_01c3f5a8 = _DAT_01c3f5a8 + 1;

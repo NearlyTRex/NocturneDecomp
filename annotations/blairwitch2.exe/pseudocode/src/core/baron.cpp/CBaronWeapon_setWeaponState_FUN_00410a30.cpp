@@ -19,7 +19,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00410a30(CBaronWeapo
     if (target == (CDemonActor *)0x0) {
       _DAT_01d046a0 = "..\\core\\baron.cpp";
       _DAT_01d046a4 = 800;
-      core_main_c_FUN_004e4500("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
     }
     core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0(this_ptr);
     core_baron_cpp_CBaron_attachToOwner_FUN_0040fef0(this_ptr->baron,target);

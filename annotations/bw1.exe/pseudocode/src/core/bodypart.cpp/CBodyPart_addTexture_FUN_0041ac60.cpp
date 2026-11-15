@@ -31,7 +31,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041ac60(CBodyPart *this_
   if (9 < this_ptr->texture_count) {
     _DAT_01d1d400 = "..\\core\\bodypart.cpp";
     _DAT_01d1d404 = 0x48d;
-    core_main_c_FUN_005030e0("Too many body part textures!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many body part textures!");
   }
   memset(this_ptr->textures + this_ptr->texture_count,0,0x18);
   pcVar4 = this_ptr->textures[this_ptr->texture_count].texture_name;

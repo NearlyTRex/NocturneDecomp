@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5eb1f2                       ; 0052602a | = "hputbuf - Not Supported yet!!  File: %s"
     MOV dword ptr [0x01d1d400],ECX      ; 0052602f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00526035 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052603b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052603b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00526040
     POP ESI                             ; 00526043
     JMP 0x00525ffc                      ; 00526044

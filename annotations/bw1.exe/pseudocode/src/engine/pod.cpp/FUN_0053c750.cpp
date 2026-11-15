@@ -39,7 +39,7 @@ void engine_pod_cpp_FUN_0053c750(int *param_1)
       if (iVar2 == 0) {
         _DAT_01d1d404 = 0x474;
         _DAT_01d1d400 = "..\\engine\\pod.cpp";
-        core_main_c_FUN_005030e0("Can't re-mount %s: %s",acStack_110,auStack_310);
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Can't re-mount %s: %s");
       }
       iVar4 = iVar4 + 1;
       piVar3 = piVar3 + 1;

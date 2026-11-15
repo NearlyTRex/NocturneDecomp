@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_pod.cpp_CPod_dismountPod_FUN_0051bf10
 ;   engine_pod.cpp_CPod_getPodIndexByFilename_FUN_0051be70
 ;   engine_pod.cpp_FUN_0051ae70
@@ -215,8 +215,8 @@ section .text
     PUSH 0x5e2930                       ; 0051bc83
     MOV [0x01d046a0],EAX                ; 0051bc88 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0051bc8d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051bc93
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051bc93
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051bc98
     MOV EAX,dword ptr [ESP + 0xa7c]     ; 0051bc9b
         ;   Label: LAB_0051bc9b
@@ -271,8 +271,8 @@ section .text
     PUSH 0x5e28f7                       ; 0051bd20
     MOV dword ptr [0x01d046a0],EDI      ; 0051bd25 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0051bd2b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051bd30
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051bd30
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051bd35
     LEA EAX,[ESI*0x4 + 0x0]             ; 0051bd38
         ;   Label: LAB_0051bd38

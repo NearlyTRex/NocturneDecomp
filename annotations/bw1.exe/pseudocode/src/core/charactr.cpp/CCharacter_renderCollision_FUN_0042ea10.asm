@@ -88,7 +88,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
@@ -215,8 +215,8 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 0042eb6e
     MOV dword ptr [EAX + 0x28],0x0      ; 0042eb72
     LEA EBX,[ESP + 0xb0]                ; 0042eb79
-    CALL core_actor.cpp_FUN_00408bb0    ; 0042eb80
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0042eb80
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x38]                ; 0042eb85
     ADD ESP,0x8                         ; 0042eb89
     LEA EAX,[ESP + 0x60]                ; 0042eb8c
@@ -322,8 +322,8 @@ section .text
     LEA ESI,[ESP + 0xa4]                ; 0042ed0b
     MOV dword ptr [EAX + 0x28],0xffff   ; 0042ed12
     LEA EBX,[ESP + 0x68]                ; 0042ed19
-    CALL core_actor.cpp_FUN_00408bb0    ; 0042ed1d
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0042ed1d
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xa4]                ; 0042ed22
     ADD ESP,0x8                         ; 0042ed29
     LEA EAX,[ESP + 0x3c]                ; 0042ed2c

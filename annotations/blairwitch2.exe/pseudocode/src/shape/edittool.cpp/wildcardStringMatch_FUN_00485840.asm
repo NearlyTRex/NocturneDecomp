@@ -8,13 +8,14 @@
 ; char *           Stack[0x8]:4   target_string
 ; int              Stack[0xc]:4   case_sensitive
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_charactr.cpp_FUN_0042b300 at 0042b38f
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c1980 at 004c1a3f
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00527222
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0 at 00559416
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_00558cb0 at 00558ce2
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_00578570 at 005785a5
+;   core_trigger.cpp_CTrigger_process_FUN_005779d0 at 00577f7e
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_0051b5d0 at 0051b678
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481dbd
 ;

@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5d4510                       ; 0041acb1 | = "Too many body part textures!"
     MOV dword ptr [0x01d1d400],EDI      ; 0041acb6 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0041acbc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0041acc1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0041acc1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041acc6
     MOV ESI,dword ptr [EBX + 0x18c]     ; 0041acc9
         ;   Label: LAB_0041acc9

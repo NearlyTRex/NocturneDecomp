@@ -149,13 +149,13 @@
    "note": "APPROVE below the confidence gate: the bodies share their resolved callees or strings and nothing conflicts (match_function_bodies.py --verify), size_mismatch shape."
   },
   {
-   "a": "0043f510",
+   "a": "0043f590",
    "b": "00443790",
-   "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510",
-   "confidence": 0.75,
+   "name": "support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590",
+   "confidence": 1.0,
    "verdict": "CONFIRMED",
    "status": "approve",
-   "note": "APPROVE below the confidence gate: the bodies share their resolved callees or strings and nothing conflicts (match_function_bodies.py --verify), size_mismatch shape."
+   "note": "APPROVE despite size_mismatch: vtable slot 0xc (finalize) of CLZWDecompress; writes the pending current_code to the output stream. BW makes the write resumable and the process loop calls this slot per code."
   },
   {
    "a": "0040ee30",
@@ -903,6 +903,24 @@
    "verdict": "CONFIRMED",
    "status": "approve",
    "note": "APPROVE below the confidence gate: the bodies share their resolved callees or strings and nothing conflicts (match_function_bodies.py --verify), size_mismatch shape."
+  },
+  {
+   "a": "0041dbe0",
+   "b": "0041d980",
+   "name": "engine_boss.c_modelStructNotSupported4_FUN_0041dbe0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: same 'modelStruct not supported' error path in the same unit with the output in ESI; BW's body adds a memset."
+  },
+  {
+   "a": "0054f490",
+   "b": "0053b110",
+   "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: same getFileSize, seek to the start offset and crc32UpdateByte loop from 0xffffffff; BW reads with fgetc where nocedit reads 64 KiB blocks."
   }
  ]
 }

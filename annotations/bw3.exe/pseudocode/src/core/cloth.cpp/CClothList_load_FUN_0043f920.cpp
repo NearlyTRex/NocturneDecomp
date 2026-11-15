@@ -36,7 +36,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr)
       if (pCVar2 == (CCloth *)0x0) {
         _DAT_01d71de0 = "..\\core\\cloth.cpp";
         _DAT_01d71de4 = 0x5b6;
-        core_main_c_FUN_004e4330("CClothList::load - out of memory for CCloth object.");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CClothList::load - out of memory for CCloth object.");
       }
       ppCVar1 = pCVar3->cloths;
       pCVar3 = (CClothList *)pCVar3->filenames;

@@ -450,18 +450,28 @@
       "00406bf0",
       "0043a840"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "005f0890"
     ],
     "instructions":109,
     "method":"renderPolygonSolidTexturedClampedOp51",
     "name":"engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/3d.c",
     "variadic":false
@@ -2653,7 +2663,7 @@
   {
     "addr":"004156e0",
     "cls":"CBodyPart",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005dc000"
     ],
@@ -4272,10 +4282,36 @@
     "instructions":171,
     "method":"loadEdgeListFile",
     "name":"cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"edge_lists",
+        "type":{
+          "kind":"struct",
+          "name":"SEdgeList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"expected_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5179,15 +5215,34 @@
     "calls":[
       "0046d860"
     ],
-    "conv":"unknown",
+    "cls":"CDemonCamera",
+    "conv":"__stack2_esi",
     "instructions":183,
-    "method":"FUN_0044a7e0",
-    "name":"core_dcamera.cpp_FUN_0044a7e0",
-    "receiver":false,
+    "method":"transformVectorWithAlpha",
+    "name":"core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044a7e0",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/dcamera.cpp",
     "variadic":false
@@ -7346,14 +7401,15 @@
     "calls":[
       "005a30b6"
     ],
-    "conv":"unknown",
+    "cls":"CDemonRaytrace",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_00473860",
-    "name":"core_dtrace.cpp_FUN_00473860",
-    "receiver":false,
+    "method":"freeTriList",
+    "name":"core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00473860",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dtrace.cpp",
@@ -14204,7 +14260,7 @@
       "004625a0"
     ],
     "cls":"CPlatform",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005e3320"
     ],
@@ -16811,11 +16867,11 @@
     ],
     "conv":"__cdecl",
     "instructions":19,
-    "method":"set3DListenerOrientRight",
-    "name":"sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860",
+    "method":"setReverb",
+    "name":"sound_sndmain.cpp_setReverb_FUN_00558860",
     "params":[
       {
-        "name":"orient_right_x",
+        "name":"volume",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -16823,7 +16879,7 @@
         }
       },
       {
-        "name":"orient_right_y",
+        "name":"decay_time",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -16831,7 +16887,7 @@
         }
       },
       {
-        "name":"orient_right_z",
+        "name":"damping",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -17091,17 +17147,18 @@
       "0055a670",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "cls":"CDirectSoundDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005e48f4"
     ],
     "instructions":28,
-    "method":"FUN_0055d360",
-    "name":"sound_snddx.cpp_FUN_0055d360",
-    "receiver":false,
+    "method":"commitDeferredSettings",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0055d360",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -17151,7 +17208,7 @@
         }
       },
       {
-        "name":"out_buffer_size",
+        "name":"out_samples_per_block",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -17170,17 +17227,44 @@
   },
   {
     "addr":"0055e6e0",
-    "conv":"unknown",
+    "cls":"CWavOutDevice",
+    "conv":"__cdecl",
     "data_refs":[
       "005e497c"
     ],
     "instructions":1,
-    "method":"FUN_0055e6e0",
-    "name":"sound_sndwav.cpp_FUN_0055e6e0",
-    "receiver":false,
+    "method":"setReverb",
+    "name":"sound_sndwav.cpp_CWavOutDevice_setReverb_FUN_0055e6e0",
+    "params":[
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"decay_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damping",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndwav.cpp",
@@ -17635,15 +17719,65 @@
     "callers":[
       "004addd0"
     ],
-    "conv":"unknown",
+    "conv":"__stack5_esi",
     "instructions":135,
-    "method":"FUN_00567860",
-    "name":"core_spline.cpp_FUN_00567860",
+    "method":"evaluateSplinePoint3D",
+    "name":"core_spline.cpp_evaluateSplinePoint3D_FUN_00567860",
+    "params":[
+      {
+        "name":"basis",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"p0",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"p1",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"p2",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"p3",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/spline.cpp",
     "variadic":false
@@ -17692,7 +17826,7 @@
   {
     "addr":"00568460",
     "cls":"CStairs",
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "data_refs":[
       "005e4df0"
     ],
@@ -18224,14 +18358,11 @@
       "00504c70",
       "0056fa20",
       "0056fc30",
+      "00571340",
       "00571d80"
     ],
     "cls":"CSocket",
     "conv":"__cdecl",
-    "data_refs":[
-      "005714ea",
-      "0057172f"
-    ],
     "instructions":5,
     "method":"isSocketValid",
     "name":"support_trisock.cpp_CSocket_isSocketValid_FUN_0056f960",
@@ -18248,16 +18379,14 @@
     "addr":"0056fd60",
     "callers":[
       "00504270",
-      "0056fef0"
+      "0056fef0",
+      "00571340"
     ],
     "calls":[
       "005b257a"
     ],
     "cls":"CSocket",
     "conv":"__cdecl",
-    "data_refs":[
-      "00571404"
-    ],
     "instructions":17,
     "method":"setSocketBlocking",
     "name":"support_trisock.cpp_CSocket_setSocketBlocking_FUN_0056fd60",
@@ -19428,15 +19557,41 @@
       "005968a0",
       "0059e600"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":53,
-    "method":"FUN_00583260",
-    "name":"core_xform.cpp_FUN_00583260",
+    "method":"transformVector3x4",
+    "name":"core_xform.cpp_transformVector3x4_FUN_00583260",
+    "params":[
+      {
+        "name":"input_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -19629,15 +19784,33 @@
       "004e4330",
       "00584510"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":189,
     "method":"inverse",
     "name":"core_xform.cpp_inverse_FUN_00584560",
+    "params":[
+      {
+        "name":"matrix_in",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix_out",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -21178,6 +21351,7 @@
       "0056a0a0",
       "0056cb90",
       "0056e0f0",
+      "00571340",
       "005792b0",
       "0057ab20",
       "0057ab70",
@@ -21190,8 +21364,6 @@
     ],
     "conv":"__cdecl",
     "data_refs":[
-      "005715cf",
-      "005716e3",
       "005a5fd0"
     ],
     "instructions":30,
@@ -21455,15 +21627,13 @@
   {
     "addr":"005a7360",
     "callers":[
+      "005a73c8",
       "005acf30"
     ],
     "calls":[
       "005a72cc"
     ],
     "conv":"unknown",
-    "data_refs":[
-      "005a75c8"
-    ],
     "instructions":29,
     "method":"FUN_005a7360",
     "name":"crt_unknown.c_FUN_005a7360",

@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005fba60
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
@@ -129,8 +129,8 @@ section .text
     PUSH EDI                            ; 00546eb5
     FSTP ST1                            ; 00546eb6
     FSTP float ptr [EBX + 0x4]          ; 00546eb8
-    CALL core_actor.cpp_FUN_00408b80    ; 00546ebb
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00546ebb
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00546ec0
     JMP 0x00546e0a                      ; 00546ec3
         ;   XREF to: 00546e0a (UNCONDITIONAL_JUMP)  ; LAB_00546e0a

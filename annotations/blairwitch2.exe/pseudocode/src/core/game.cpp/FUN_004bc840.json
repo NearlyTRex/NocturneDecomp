@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 393,
+    "complexity_score": 394,
     "cross_reference_count": 2,
     "function_call_count": 17,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
+    "pseudocode_lines": 109,
     "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 376
+    "total_lines": 377
   },
   "cross_references": [
     {
@@ -103,7 +103,7 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     },
     {
       "addr": "004d8910",
@@ -493,23 +493,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_005d8690",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_00460c70(&DAT_005d8690,\"blairhero.pod\",&DAT_005d867f);",
+      "text": "(&DAT_005d8690,\"blairhero.pod\",&DAT_005d867f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_005d867f",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_00460c70(&DAT_005d8690,\"blairhero.pod\",&DAT_005d867f);",
+      "text": "(&DAT_005d8690,\"blairhero.pod\",&DAT_005d867f);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->damageable_enemy_count = 0;",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->total_kill_count = 0;",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->total_game_time = 0.0;",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->total_play_time = 0.0;",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_loading = 0;",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005d8691",
       "severity": "mild",
       "text": "p_Var3 = _fopen(\"pod.ini\",&DAT_005d8691);",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_005d869c",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_ctor_FUN_004d8910(&local_324,\"system\\\\nocturne.ini\",&DAT_005d869c)",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1 || p_Var3 != (_FILE *)0x0) {",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_01cb7f78",
       "severity": "mild",
       "text": "DAT_01cb7f78 = 0;",
@@ -581,15 +581,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 63,
       "match": "DAT_005d86ca",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_00460c70(\"world\",local_120,&DAT_005d86ca);",
+      "text": "p_Var3 = engine_dosio_cpp_getFile_FUN_00460c70(\"world\",local_120,&DAT_005d86ca);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_01cb7f78",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01cb7f78;",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_01cb7b50",
       "severity": "mild",
       "text": "iVar4 = _stricmp(&DAT_01cb7b50,local_120);",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01cb7b50",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01cb7b50;",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->need_chapter_reload != 0) {",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->need_chapter_reload = 0;",
@@ -629,7 +629,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_loadGame_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);",
@@ -637,7 +637,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_loadGame_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 68,
+      "line": 69,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 86,
+      "line": 87,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

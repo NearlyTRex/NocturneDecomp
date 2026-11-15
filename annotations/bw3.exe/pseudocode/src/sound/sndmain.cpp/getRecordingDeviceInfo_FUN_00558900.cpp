@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00558900(int index,SRe
   if ((index < 0) || (iVar1 <= index)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x1668;
-    core_main_c_FUN_004e4330("getRecordingDeviceInfo - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("getRecordingDeviceInfo - invalid index");
   }
   puVar2 = (uint *)(index * 0x108 + 0x2cf3428);
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {

@@ -85,7 +85,7 @@ CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004d1d80(CHealthItem 
 void __cdecl core_health_cpp_CHealthItem_setup_FUN_004d1df0(CHealthItem *this_ptr);
 void __cdecl core_health_cpp_CHealthItem_process_FUN_004d1e10(CHealthItem *this_ptr,float delta_time);
 int __cdecl core_health_cpp_CHealthItem_renderOpaque_FUN_004d1f10(CHealthItem *this_ptr);
-CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004d1fa0(CHealthItem *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_health_cpp_CHealthItem_getBoundingBox_FUN_004d1fa0(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_health_cpp_CHealthItem_archive_FUN_004d1fe0(CHealthItem *this_ptr);
 ECollisionType __cdecl core_health_cpp_CHealthItem_getCollisionType_FUN_004d2080(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004d2090(CHealthItem *this_ptr,CDemonActor *picker);
@@ -125,7 +125,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004d3500(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004d3850(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004d3af0(CHero *this_ptr);
-int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004d3b20(CHero *this_ptr);
 int core_hero_cpp_FUN_004d3c90(CHero *param_1);
 bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero *this_ptr,char *class_name);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004d4090(CHero *this_ptr);
@@ -273,7 +273,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004de830(CKeyActor *thi
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004de890(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004de8b0(CKeyActor *this_ptr,float delta_time);
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004de950(CKeyActor *this_ptr);
-CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004de9d0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004de9d0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004dea10(CKeyActor *this_ptr);
 ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004dea80(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004dea90(CKeyActor *this_ptr,CDemonActor *picker);

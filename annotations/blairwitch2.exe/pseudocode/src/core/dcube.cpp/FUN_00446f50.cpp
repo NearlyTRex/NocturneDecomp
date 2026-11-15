@@ -19,7 +19,8 @@ void core_dcube_cpp_FUN_00446f50(void)
   
   iStack_14 = 0;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  p_Stack_18 = engine_dosio_cpp_FUN_00460c70((char *)0x5cea3d,in_stack_00000004,(char *)0x5cea3a);
+  p_Stack_18 = engine_dosio_cpp_getFile_FUN_00460c70
+                         ((char *)0x5cea3d,in_stack_00000004,(char *)0x5cea3a);
   if (p_Stack_18 != (_FILE *)0x0) {
     engine_special_cpp_clearScreen_FUN_0055b1f0();
     while (pcVar1 = _fgets(acStack_68,0x4f,p_Stack_18),

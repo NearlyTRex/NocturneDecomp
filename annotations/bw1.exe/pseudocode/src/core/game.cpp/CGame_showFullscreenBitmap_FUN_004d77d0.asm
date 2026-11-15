@@ -43,14 +43,14 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004d0960
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   core_game.cpp_CGame_updateDT_FUN_004cbf20
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_string.c_splitpath_FUN_005c2238
 ;   crt_unknown.c_FUN_005c09f0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   engine_special.cpp_lockFrame_FUN_00581f50
@@ -132,8 +132,8 @@ section .text
     LEA EAX,[ESP + 0x904]               ; 004d788c
     PUSH EAX                            ; 004d7893
     PUSH 0x5e32ee                       ; 004d7894 | = "art"
-    CALL engine_dosio.cpp_FUN_00479180  ; 004d7899
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004d7899
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004d789e
     ADD ESP,0xc                         ; 004d78a0
     TEST EAX,EAX                        ; 004d78a3
@@ -149,7 +149,7 @@ section .text
     ADD ESP,0x10                        ; 004d78c0
     PUSH EBX                            ; 004d78c3
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004d78c4
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004d78c9
     XOR EBX,EBX                         ; 004d78cc
     XOR ESI,ESI                         ; 004d78ce
@@ -228,8 +228,8 @@ section .text
     ADD EBX,0x8e8                       ; 004d79f1
     PUSH EBX                            ; 004d79f7
     PUSH 0x5e3303                       ; 004d79f8 | DAT_005e3303
-    CALL engine_dosio.cpp_FUN_00479180  ; 004d79fd
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 004d79fd
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004d7a02
     MOV ESI,EAX                         ; 004d7a05
     TEST EAX,EAX                        ; 004d7a07
@@ -241,8 +241,8 @@ section .text
     PUSH 0x5e3318                       ; 004d7a16 | = "Can't open %s"
     MOV dword ptr [0x01d1d400],EDI      ; 004d7a1b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 004d7a21 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004d7a27
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d7a27
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004d7a2c
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d7a2f
         ;   Label: LAB_004d7a2f
@@ -258,7 +258,7 @@ section .text
     ADD ESP,0x10                        ; 004d7a52
     PUSH ESI                            ; 004d7a55
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004d7a56
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004d7a5b
     XOR ESI,ESI                         ; 004d7a5e
     MOV EDI,dword ptr [0x0061b49c]      ; 004d7a60 | DAT_0061b49c

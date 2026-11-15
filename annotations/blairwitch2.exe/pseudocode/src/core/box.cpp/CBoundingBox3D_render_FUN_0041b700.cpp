@@ -13,6 +13,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041b700(CBoundingBox3D *thi
 {
   CDemonRenderer *pCVar1;
   int iVar2;
+  uint corner_index;
   byte bVar3;
   float afStackY_1020 [978];
   CVector3i local_cc [8];
@@ -24,8 +25,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041b700(CBoundingBox3D *thi
   int local_44;
   int local_40;
   int local_3c;
-  float local_38;
-  float afStack_34 [2];
+  CVector3f local_38;
   int local_2c;
   int local_28;
   UIntegerFloat local_24;
@@ -35,19 +35,19 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041b700(CBoundingBox3D *thi
   
   bVar3 = 0;
   local_14 = &local_cc[0].x;
-  iVar2 = 0;
+  corner_index = 0;
   do {
-    core_box_cpp_FUN_0041a600(this_ptr,iVar2);
-    local_20 = local_38;
-    local_1c[(uint)bVar3 * -2] = afStack_34[(uint)bVar3 * -2];
+    core_box_cpp_CBoundingBox3D_getCorner_FUN_0041a600(this_ptr,corner_index,&local_38);
+    local_20 = local_38.x;
+    local_1c[(uint)bVar3 * -2] = *(float *)((int)&local_38 + (uint)bVar3 * -8 + 4);
     local_1c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-         afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+         *(float *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     *local_14 = (int)ROUND(local_20 * _DAT_005f39d8);
     local_14[1] = (int)ROUND(local_1c[0] * _DAT_005f39d8);
     local_14[2] = (int)ROUND(local_1c[1] * _DAT_005f39d8);
     local_14 = local_14 + 3;
-    iVar2 = iVar2 + 1;
-  } while (iVar2 < 8);
+    corner_index = corner_index + 1;
+  } while ((int)corner_index < 8);
   core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90(g_CDemonSetPtr,8,local_cc);
   local_6c.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);

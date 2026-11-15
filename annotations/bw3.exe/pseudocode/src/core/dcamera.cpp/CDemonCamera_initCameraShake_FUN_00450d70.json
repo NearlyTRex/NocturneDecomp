@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 149,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 86
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -225,56 +224,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 22,
       "match": "DAT_005f17dc",
       "severity": "mild",
-      "text": "DAT_005f17dc = (int)ROUND(fVar3);",
+      "text": "DAT_005f17dc = (int)ROUND(dVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_005f17d8",
       "severity": "mild",
-      "text": "DAT_005f17d8 = (int)ROUND(fVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "DAT_005f17e0 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005f17e0",
-      "severity": "mild",
-      "text": "DAT_005f17e0 = extraout_EDX;",
+      "text": "DAT_005f17d8 = (int)ROUND(dVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005f17e0",
-      "severity": "mild",
-      "text": "DAT_005f17e0 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_005f17dc",
       "severity": "mild",
       "text": "_DAT_0135eab0 = DAT_005f17dc;",
@@ -282,7 +249,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_005f17dc",
       "severity": "mild",
       "text": "if (DAT_005f17dc == 0) {",
@@ -290,10 +257,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_005f17e0",
       "severity": "mild",
       "text": "DAT_005f17e0 = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005f17e0",
+      "severity": "mild",
+      "text": "DAT_005f17e0 = uVar1;",
       "type": "undefined_data"
     }
   ]

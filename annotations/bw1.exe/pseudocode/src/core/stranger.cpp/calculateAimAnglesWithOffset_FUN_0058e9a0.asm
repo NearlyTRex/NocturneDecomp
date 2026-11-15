@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
+; undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
 ;
 ;
 ; Referenced Globals:
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 0058ea9e (CONDITIONAL_JUMP)  ; LAB_0058ea9e
     FLD double ptr [ESP + 0x8]          ; 0058ea5c
     CALL crt_math.c_acos_FUN_005c1d04   ; 0058ea60
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FLDZ                                ; 0058ea65
     FXCH                                ; 0058ea67
     FSTP float ptr [ESP + 0x50]         ; 0058ea69
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 0058ea0e (CONDITIONAL_JUMP)  ; LAB_0058ea0e
     FLD double ptr [ESP + 0x10]         ; 0058eaeb
     CALL crt_math.c_acos_FUN_005c1d04   ; 0058eaef
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FLDZ                                ; 0058eaf4
     FXCH                                ; 0058eaf6
     FSTP float ptr [ESP + 0x44]         ; 0058eaf8

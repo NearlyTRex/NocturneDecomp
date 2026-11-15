@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3)
+; void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; _FILE *          Stack[0x8]:4   file_handle
+; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01548b7c

@@ -1,13 +1,13 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 176,
-    "complexity_score": 1801,
+    "assembly_lines": 858,
+    "complexity_score": 1802,
     "cross_reference_count": 0,
-    "function_call_count": 3,
-    "global_count": 13,
+    "function_call_count": 19,
+    "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 351,
+    "pseudocode_lines": 352,
     "suspect_count": 142,
     "suspect_types": [
       "undefined_data",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 527
+    "total_lines": 1210
   },
   "cross_references": [],
   "function": {
@@ -25,14 +25,6 @@
     "address_range": [
       [
         "0059e350",
-        "0059e379"
-      ],
-      [
-        "0059e43b",
-        "0059e496"
-      ],
-      [
-        "0059ebc9",
         "0059ed1d"
       ]
     ],
@@ -42,9 +34,39 @@
   },
   "function_calls": [
     {
+      "addr": "005c0357",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005c0357"
+    },
+    {
+      "addr": "005c2cac",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005c2cac"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "005c1210",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005c1210"
+    },
+    {
       "addr": "005bfb40",
       "is_variadic": false,
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
+    },
+    {
+      "addr": "0059c980",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_bindSocket_FUN_0059c980"
     },
     {
       "addr": "0059cc40",
@@ -52,9 +74,59 @@
       "name": "support_trisock.cpp_CSocket_closeSocket_FUN_0059cc40"
     },
     {
+      "addr": "0059c9d0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_connectSocket_FUN_0059c9d0"
+    },
+    {
+      "addr": "0059c910",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_createSocket_FUN_0059c910"
+    },
+    {
+      "addr": "0059c970",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_0059c970"
+    },
+    {
+      "addr": "0059cbc0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_0059cbc0"
+    },
+    {
+      "addr": "0059cd70",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_setSocketBlocking_FUN_0059cd70"
+    },
+    {
       "addr": "0059c830",
       "is_variadic": false,
       "name": "support_trisock.cpp_formatSocketAddress_FUN_0059c830"
+    },
+    {
+      "addr": "0059ca30",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059ca30"
+    },
+    {
+      "addr": "0059de30",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059de30"
+    },
+    {
+      "addr": "0059ed90",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059ed90"
+    },
+    {
+      "addr": "0059ee60",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059ee60"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [
@@ -81,6 +153,150 @@
       "name": "PTR_caseD_2_0059e334",
       "type": "undefined1*",
       "value": "0059ec11"
+    },
+    {
+      "addr": "005f8646",
+      "name": "s_Error_connecting_socket_005f8646",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8664",
+      "name": "s_DNS_error_resolving_s_005f8664",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f867b",
+      "name": "s_Error_contacting_s_005f867b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f868f",
+      "name": "DAT_005f868f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f8694",
+      "name": "DAT_005f8694",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f8699",
+      "name": "s_Cache_Control_no_cache_005f8699",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f869a",
+      "name": "s_Cache_Control_no_cache_005f8699+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f869b",
+      "name": "s_Cache_Control_no_cache_005f8699+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f869c",
+      "name": "s_Cache_Control_no_cache_005f8699+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f86b3",
+      "name": "s_POST_s_HTTP_1_0_Host_s_d_005f86b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f86eb",
+      "name": "s_GET_s_HTTP_1_0_Host_s_d_005f86eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8721",
+      "name": "s_Error_requesting_s_005f8721",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8735",
+      "name": "s_Error_requesting_s_005f8735",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8749",
+      "name": "s_Error_requesting_s_005f8749",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f875d",
+      "name": "s_Unknown_error_005f875d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f875e",
+      "name": "s_nknown_error_005f875d+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f875f",
+      "name": "s_known_error_005f875d+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f8760",
+      "name": "s_nown_error_005f875d+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f876b",
+      "name": "s_d_255_005f876b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f877d",
+      "name": "s_Invalid_HTTP_header_retu_005f877d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f87a4",
+      "name": "s_d_s_005f87a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f87ab",
+      "name": "s_Not_implemented_d_s_005f87ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f87c3",
+      "name": "s_Content_length_005f87c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f87d3",
+      "name": "DAT_005f87d3",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "005f87d6",
@@ -135,6 +351,24 @@
       "name": "DAT_005f8834",
       "type": "undefined1",
       "value": null
+    },
+    {
+      "addr": "00607310",
+      "name": "g_IpAddrTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "00625aa0",
+      "name": "DAT_00625aa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00625aa4",
+      "name": "DAT_00625aa4",
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -147,42 +381,53 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.890410958904109,
-    "instruction_count": 146,
+    "avg_pcode_per_instr": 4.4122938530734634,
+    "instruction_count": 667,
     "opcode_distribution": {
-      "BOOL_NEGATE": 18,
-      "BOOL_OR": 4,
-      "BRANCH": 1,
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 39,
+      "BOOL_OR": 11,
+      "BRANCH": 23,
       "BRANCHIND": 2,
-      "CALL": 7,
-      "CBRANCH": 7,
-      "COPY": 130,
-      "INT_ADD": 88,
-      "INT_AND": 95,
-      "INT_CARRY": 18,
-      "INT_EQUAL": 64,
+      "CALL": 43,
+      "CALLIND": 6,
+      "CBRANCH": 69,
+      "COPY": 502,
+      "INT_ADD": 286,
+      "INT_AND": 379,
+      "INT_CARRY": 68,
+      "INT_EQUAL": 331,
       "INT_LEFT": 5,
-      "INT_LESS": 7,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 9,
+      "INT_LESS": 49,
+      "INT_MULT": 8,
+      "INT_NEGATE": 2,
+      "INT_NOTEQUAL": 23,
       "INT_OR": 15,
-      "INT_SBORROW": 7,
-      "INT_SCARRY": 18,
+      "INT_SBORROW": 53,
+      "INT_SCARRY": 70,
       "INT_SDIV": 1,
       "INT_SEXT": 1,
-      "INT_SLESS": 34,
+      "INT_SLESS": 163,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 41,
-      "INT_XOR": 2,
-      "INT_ZEXT": 2,
-      "LOAD": 59,
-      "POPCOUNT": 30,
+      "INT_SUB": 244,
+      "INT_XOR": 7,
+      "INT_ZEXT": 6,
+      "LOAD": 136,
+      "POPCOUNT": 159,
       "RETURN": 7,
-      "STORE": 34,
+      "STORE": 229,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 714
+    "pcode_op_count": 2943
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00571340",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

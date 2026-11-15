@@ -13,38 +13,33 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet 
 {
   byte bVar1;
   float afStackY_102c [1014];
-  uint local_44;
-  uint local_38;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
+  CVector3f local_44;
+  CVector3f local_38;
+  float local_2c;
+  float local_28 [4];
   uint local_18;
   float local_14;
   
   bVar1 = 0;
-  engine_drender_cpp_FUN_0046d1c0();
-  local_20 = local_44;
-  *(uint *)((int)&stack0xffffffe4 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffe8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(DAT_005f2afc,&local_44);
+  local_28[2] = local_44.x;
+  local_28[(uint)bVar1 * -2 + 3] = *(float *)((int)&local_44 + (uint)bVar1 * -8 + 4);
+  local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
+       *(float *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (&stack0x00000000 != (byte *)0x21221f4) {
-    _DAT_021221d4 = local_20;
-    _DAT_021221d8 = local_1c;
+    _DAT_021221d4 = local_28[2];
+    _DAT_021221d8 = local_28[3];
     _DAT_021221dc = local_18;
   }
-  engine_drender_cpp_FUN_0046d250();
-  local_2c = local_38;
-  *(uint *)((int)&stack0xffffffd8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffdc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(DAT_005f2afc,&local_38);
+  local_2c = local_38.x;
+  local_28[(uint)bVar1 * -2] = *(float *)((int)&local_38 + (uint)bVar1 * -8 + 4);
+  local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+       *(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (&stack0x00000000 != (byte *)0x212220c) {
     _DAT_021221e0 = local_2c;
-    _DAT_021221e4 = local_28;
-    _DAT_021221e8 = local_24;
+    _DAT_021221e4 = local_28[0];
+    _DAT_021221e8 = local_28[1];
   }
   _DAT_021221ec =
        engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0(DAT_005f2afc);

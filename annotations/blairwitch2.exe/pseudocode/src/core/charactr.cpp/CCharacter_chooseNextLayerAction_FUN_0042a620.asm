@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5cd1ed                       ; 0042a64e | = "CCharacter::chooseNextLayerAction - i..."
     MOV dword ptr [0x01d046a0],EDI      ; 0042a653 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0042a659 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042a65e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a65e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a663
     FLD float ptr [EBX + 0x2d08]        ; 0042a666
         ;   Label: LAB_0042a666

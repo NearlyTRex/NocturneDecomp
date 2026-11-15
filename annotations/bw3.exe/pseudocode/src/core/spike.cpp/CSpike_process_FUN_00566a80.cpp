@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_spike_cpp_CSpike_process_FUN_00566a80(CSpike *this_ptr,float delta_time)
@@ -28,13 +27,10 @@ void __cdecl core_spike_cpp_CSpike_process_FUN_00566a80(CSpike *this_ptr,float d
   float fStack_50;
   float fStack_4c;
   float fStack_48;
-  float fStack_44;
-  uint uStack_38;
-  uint uStack_34;
-  float fStack_30;
+  CVector3f CStack_44;
+  CVector3f CStack_38;
   float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  float afStack_28 [5];
   float fStack_14;
   
   bVar6 = 0;
@@ -126,24 +122,23 @@ LAB_00566b4b:
   *(uint *)((int)&stack0xffffffb4 + (uint)bVar6 * -8) = *puVar5;
   *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        puVar5[(uint)bVar6 * -2 + 1];
-  fStack_30 = this_ptr->extend_distance * this_ptr->param;
-  uStack_38 = 0;
-  uStack_34 = 0;
-  fStack_14 = fStack_30;
-  core_actor_cpp_FUN_00408b00(this_ptr,&stack0xffffffc8);
-  fStack_68 = fStack_44;
+  CStack_38.z = this_ptr->extend_distance * this_ptr->param;
+  CStack_38.x = 0.0;
+  CStack_38.y = 0.0;
+  fStack_14 = CStack_38.z;
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408b00(&this_ptr->base,&CStack_38,&CStack_44);
+  fStack_68 = CStack_44.x;
   *(uint *)((int)&stack0xffffff9c + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar6 * -8);
+       *(uint *)((int)&CStack_44 + (uint)bVar6 * -8 + 4);
   *(uint *)((int)&stack0xffffffa0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(uint *)((int)&CStack_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   fStack_2c = (this_ptr->base_position).x + fStack_68;
-  fStack_28 = (this_ptr->base_position).y + fStack_64;
-  fStack_24 = (this_ptr->base_position).z + fStack_60;
+  afStack_28[0] = (this_ptr->base_position).y + fStack_64;
+  afStack_28[1] = (this_ptr->base_position).z + fStack_60;
   fStack_5c = fStack_2c;
-  *(float *)((int)&stack0xffffffa8 + (uint)bVar6 * -8) =
-       (&stack0xffffffd8)[(uint)bVar6 * 0xfffffffe];
-  *(uint *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  *(float *)((int)&stack0xffffffa8 + (uint)bVar6 * -8) = afStack_28[(uint)bVar6 * -2];
+  *(float *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+       afStack_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   pCVar1 = &(this_ptr->base).location;
   (pCVar1->position).x = fStack_5c;
   fVar4 = fStack_50 - (pCVar1->position).x;

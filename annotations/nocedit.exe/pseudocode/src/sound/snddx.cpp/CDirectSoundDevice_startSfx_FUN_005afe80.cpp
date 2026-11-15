@@ -25,7 +25,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoun
     g_CurrentLineNumber = 1000;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",iVar1);
   }
-  iVar2 = (*((this_ptr->base).vtable)->setSfxPos)(&this_ptr->base,slot,-1);
+  iVar2 = (*((this_ptr->base).vtable)->applySfxChanges)(&this_ptr->base,slot,-1);
   iVar3 = 0;
   if (iVar2 != 0) {
     dwFlags = 0;

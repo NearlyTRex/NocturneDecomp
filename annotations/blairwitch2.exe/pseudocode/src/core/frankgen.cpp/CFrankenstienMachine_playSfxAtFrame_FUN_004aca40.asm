@@ -8,6 +8,9 @@
 ; float            Stack[0x8]:4   trigger_frame
 ; char *           Stack[0xc]:4   sfx_filename
 ;
+; XREF[1]:
+;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0 at 004ac823
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01cb0620
 ;

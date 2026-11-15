@@ -29,7 +29,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5d7645                       ; 0057a555 | = "closeScreenDevice - Unable to unlock"
     MOV dword ptr [0x01d71de0],ESI      ; 0057a55a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0057a560 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0057a566
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a566
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a56b
     MOV dword ptr [0x02d0bcf4],0x1      ; 0057a56e | DAT_02d0bcf4
         ;   Label: LAB_0057a56e

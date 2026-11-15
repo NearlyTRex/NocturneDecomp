@@ -23,7 +23,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_00462470
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5f12e1                       ; 0055cfb1 | = "C3DSLight::create - Out of memory!"
     MOV dword ptr [0x01d1d400],EBX      ; 0055cfb6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0055cfbc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055cfc2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055cfc2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055cfc7
     MOV EDI,dword ptr [ESP]             ; 0055cfca
         ;   Label: LAB_0055cfca

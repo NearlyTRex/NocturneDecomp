@@ -20,7 +20,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
         if (this_ptr->sample_count < 1) {
           _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
           _DAT_01d1d404 = 0xdbc;
-          core_main_c_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
+          core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
           position = (double)this_ptr->sample_count * position;
         }
         else {
@@ -30,7 +30,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
       else {
         _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
         _DAT_01d1d404 = 0xdc1;
-        core_main_c_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
     if (output_type != 0) {
@@ -41,7 +41,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
         if (this_ptr->sample_count < 1) {
           _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
           _DAT_01d1d404 = 0xdcf;
-          core_main_c_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
+          core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
           position = position / (double)this_ptr->sample_count;
         }
         else {
@@ -51,7 +51,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430(CSample
       else {
         _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
         _DAT_01d1d404 = 0xdd4;
-        core_main_c_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
   }

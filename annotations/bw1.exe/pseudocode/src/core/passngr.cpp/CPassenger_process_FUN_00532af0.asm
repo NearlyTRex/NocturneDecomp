@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
@@ -156,7 +156,7 @@ section .text
     PUSH EAX                            ; 00532c26 | DAT_01d2c900
     MOV dword ptr [EBX + 0x1fbc0],0x0   ; 00532c27
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 00532c31
-        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 00532c36
     JMP 0x00532b55                      ; 00532c39
         ;   XREF to: 00532b55 (UNCONDITIONAL_JUMP)  ; LAB_00532b55
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 00532c49
     LEA ESI,[ESP + 0x18]                ; 00532c4a
     LEA EDI,[ESP + 0xc]                 ; 00532c4e
-    CALL core_actor.cpp_FUN_00408ac0    ; 00532c52
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00532c52
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x18]                ; 00532c57
     ADD ESP,0x8                         ; 00532c5b
     LEA EAX,[EBX + 0x20]                ; 00532c5e

@@ -35,11 +35,12 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
   float local_6c;
   float local_68 [2];
   CVector3f local_60;
-  float local_54;
-  float afStack_50 [2];
+  CVector3f local_54;
   CVector3f local_48;
-  SActorRayHit SStack_3c;
-  float afStack_20 [4];
+  byte auStack_3c [16];
+  float afStack_2c [2];
+  CVector3f CStack_24;
+  float local_14;
   
   bVar7 = 0;
   if (bbox_type == 0) {
@@ -82,16 +83,18 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
   if (iVar2 == 0) {
     return 2.0;
   }
-  core_actor_cpp_FUN_00408de0();
-  local_84.min.x = (float)SStack_3c.part_index;
-  *(float *)((int)&local_84 + (uint)bVar7 * -8 + 4) = afStack_20[(uint)bVar7 * -2 + -3];
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+            (this_ptr,ray_origin,(CVector3f *)(auStack_3c + 0xc));
+  local_84.min.x = (float)auStack_3c._12_4_;
+  *(float *)((int)&local_84 + (uint)bVar7 * -8 + 4) = afStack_2c[(uint)bVar7 * -2];
   *(float *)((int)&local_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       afStack_20[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -2];
-  core_actor_cpp_FUN_00408d30();
-  local_48.x = local_54;
-  *(float *)((int)&local_48 + (uint)bVar7 * -8 + 4) = afStack_50[(uint)bVar7 * -2];
-  *(float *)((int)&local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       afStack_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+       afStack_2c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30(this_ptr,ray_direction,&local_54);
+  local_48.x = local_54.x;
+  *(uint *)(auStack_3c + (uint)bVar7 * -8 + -8) =
+       *(uint *)((int)&local_54 + (uint)bVar7 * -8 + 4);
+  *(uint *)(auStack_3c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -4) =
+       *(uint *)((int)&local_54 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   if ((uint)bbox_type < 2) {
     if (bbox_type == 1) {
       (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_84);
@@ -103,26 +106,26 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
         puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
       }
       local_100 = (float)core_box_cpp_FUN_0041af70();
-      afStack_20[3] = local_100;
+      local_14 = local_100;
       goto LAB_0040957e;
     }
   }
   else {
     if ((uint)bbox_type < 3) {
       local_100 = (float)core_actor_cpp_rayCylinderIntersect_FUN_00408290(collision_info);
-      afStack_20[3] = local_100;
+      local_14 = local_100;
       goto LAB_0040957e;
     }
     if (bbox_type == 3) {
       local_100 = (*((this_ptr->vtable)._ub)->customRayIntersect)
                             (this_ptr,&local_84.min,&local_48,&local_60);
-      afStack_20[3] = local_100;
+      local_14 = local_100;
       goto LAB_0040957e;
     }
   }
   _DAT_01d046a0 = "..\\core\\actor.cpp";
   _DAT_01d046a4 = 0x4ab;
-  core_main_c_FUN_004e4500();
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::rayIntersect - Invalid collision type!");
 LAB_0040957e:
   if ((local_100 < 0.0) || (1.0 < local_100)) {
     return 2.0;
@@ -146,7 +149,7 @@ LAB_0040957e:
         if (local_100 < 0.0) {
           return 2.0;
         }
-        afStack_20[3] = local_100;
+        local_14 = local_100;
         if (1.0 < local_100) {
           return 2.0;
         }
@@ -166,7 +169,7 @@ LAB_0040957e:
       iVar2 = _DAT_020ccff0;
       out_hit->triangle_index = _DAT_020ccff0;
       lod_level = _DAT_020ccfec;
-      afStack_20[3] = local_100;
+      local_14 = local_100;
       this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
                               (collision_info->deformable_model);
       iVar2 = core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_00544bb0
@@ -179,15 +182,16 @@ LAB_0040957e:
       }
     }
   }
-  core_actor_cpp_FUN_00408cf0();
-  SStack_3c.normal.x = (float)SStack_3c.bone_index;
-  afStack_20[(uint)bVar7 * -2 + -6] = afStack_20[(uint)bVar7 * -2];
-  afStack_20[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -5] =
-       afStack_20[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  if (out_hit != &SStack_3c) {
-    (out_hit->normal).x = SStack_3c.normal.x;
-    (out_hit->normal).y = SStack_3c.normal.y;
-    (out_hit->normal).z = SStack_3c.normal.z;
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0(this_ptr,&local_60,&CStack_24);
+  auStack_3c._0_4_ = CStack_24.x;
+  *(uint *)(auStack_3c + (uint)bVar7 * -8 + 4) =
+       *(uint *)((int)&CStack_24 + (uint)bVar7 * -8 + 4);
+  *(uint *)(auStack_3c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+       *(uint *)((int)&CStack_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  if (out_hit != (SActorRayHit *)auStack_3c) {
+    (out_hit->normal).x = (float)auStack_3c._0_4_;
+    (out_hit->normal).y = (float)auStack_3c._4_4_;
+    (out_hit->normal).z = (float)auStack_3c._8_4_;
   }
   return local_100;
 }

@@ -16,19 +16,20 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   CDeformableModel *pCVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
   int extraout_ECX;
-  int *piVar7;
+  int *piVar6;
+  int *extraout_EDX;
+  char *pcVar7;
   int iVar8;
   int iVar9;
   int iVar10;
   float10 fVar11;
-  ulonglong uVar12;
+  double dVar12;
   
   if (this_ptr->cached_skinned_lod_index < 0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0xfbd;
-    core_main_c_FUN_004e4330("CDeformableModelInstance::computeCylindricalUVs - points not generated");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);
   iVar1 = pCVar3->vertex_count[this_ptr->cached_skinned_lod_index];
@@ -36,16 +37,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   iVar10 = 1;
   iVar8 = pCVar2->y;
   iVar9 = iVar8;
-  iVar5 = iVar8;
+  iVar4 = iVar8;
   if (1 < iVar1) {
     do {
-      iVar6 = pCVar2[1].y;
-      iVar9 = iVar6;
-      if ((iVar5 <= iVar6) && (iVar9 = iVar5, iVar8 < iVar6)) {
-        iVar8 = iVar6;
+      iVar5 = pCVar2[1].y;
+      iVar9 = iVar5;
+      if ((iVar4 <= iVar5) && (iVar9 = iVar4, iVar8 < iVar5)) {
+        iVar8 = iVar5;
       }
       iVar10 = iVar10 + 1;
-      iVar5 = iVar9;
+      iVar4 = iVar9;
       pCVar2 = pCVar2 + 1;
     } while (iVar10 < iVar1);
   }
@@ -55,33 +56,31 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   }
   if (0 < iVar1) {
     iVar10 = 0;
-    iVar5 = 0;
+    iVar4 = 0;
     do {
-      piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
-      if ((*piVar7 == 0) && (piVar7[2] == 0)) {
-        iVar6 = *DAT_005f2afc;
-        iVar4 = u_offset;
+      piVar6 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
+      if ((*piVar6 == 0) && (piVar6[2] == 0)) {
+        iVar5 = *DAT_005f2afc;
+        pcVar7 = (char *)u_offset;
       }
       else {
-        fVar11 = (float10)*piVar7;
-        atan2();
-        fVar11 = fVar11 * (float10)_DAT_005d2234;
-        uVar12 = round();
-        piVar7 = (int *)((ulonglong)uVar12 >> 0x20);
-        iVar4 = (int)uVar12 + (int)ROUND(fVar11);
-        iVar6 = *DAT_005f2afc;
-        iVar5 = extraout_ECX;
+        fVar11 = atan2((float10)*piVar6,(float10)piVar6[2]);
+        dVar12 = round((double)(fVar11 * (float10)_DAT_005d2234));
+        pcVar7 = (this_ptr->base).current_motion_name + (int)ROUND(dVar12) + -0x30;
+        iVar5 = *DAT_005f2afc;
+        iVar4 = extraout_ECX;
+        piVar6 = extraout_EDX;
       }
-      *(int *)(iVar5 + 0x18 + iVar6) = iVar4;
-      iVar6 = iVar5 + 0x30;
-      *(int *)(iVar5 + 0x1c + *DAT_005f2afc) =
+      *(char **)(iVar4 + 0x18 + iVar5) = pcVar7;
+      iVar5 = iVar4 + 0x30;
+      *(int *)(iVar4 + 0x1c + *DAT_005f2afc) =
            v_offset +
            (int)((longlong)
-                 ((((longlong)(piVar7[1] - iVar9) & 0xffffffffffU) >> 8) << 0x20 |
-                 (longlong)(piVar7[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
+                 ((((longlong)(piVar6[1] - iVar9) & 0xffffffffffU) >> 8) << 0x20 |
+                 (longlong)(piVar6[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
       iVar10 = iVar10 + 0xc;
-      iVar5 = iVar6;
-    } while (iVar6 < iVar1 * 0x30);
+      iVar4 = iVar5;
+    } while (iVar5 < iVar1 * 0x30);
   }
   return;
 }

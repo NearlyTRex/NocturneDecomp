@@ -212,10 +212,8 @@ CVector3d g_Cached3DListenerOrientUp = {};
 CVector3d g_Cached3DListenerOrientRight = {};
 
 // CVector3f
-CVector3f g_DeferredOrientRight = {};
 CVector3f g_SoundListenerPrev = {};
 CVector3f CVector3f_03f6af7c = {};
-CVector3f g_SoundListenerOrient = {};
 CVector3f g_TrainVelocityVector = {};
 CVector3f CVector3f_03f6ba9c = {};
 CVector3f CVector3f_03f6bab0 = {};
@@ -292,6 +290,10 @@ SDirectSoundDeviceInfo g_DirectSoundDevices[8] = {};
 
 // SRecordingDeviceInfo[8]
 SRecordingDeviceInfo g_RecordingDevices[8] = {};
+
+// SReverbSettings
+SReverbSettings g_CachedReverb = {};
+SReverbSettings g_SoundReverb = {};
 
 // SSoundDeviceInfo[8]
 SSoundDeviceInfo g_SoundDevices[8] = {};

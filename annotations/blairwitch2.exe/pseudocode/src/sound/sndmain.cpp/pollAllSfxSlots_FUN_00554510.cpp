@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00554510(void)
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0x19ec;
-    core_main_c_FUN_004e4500("SfxSlot::pollSfx - must be locked!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::pollSfx - must be locked!");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar3 = iVar1 - _DAT_02649020;

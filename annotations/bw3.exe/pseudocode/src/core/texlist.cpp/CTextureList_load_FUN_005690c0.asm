@@ -38,12 +38,12 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_ctype.c_toupper_FUN_005a4120
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   crt_stdlib.c_atoi_FUN_005a5f50
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -122,8 +122,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0056913e
     PUSH EAX                            ; 00569142
     PUSH 0x5d5d6e                       ; 00569143 | DAT_005d5d6e
-    CALL engine_dosio.cpp_FUN_004659c0  ; 00569148
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00569148
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0056914d
     MOV dword ptr [ESP + 0x100],EAX     ; 00569150
     TEST EAX,EAX                        ; 00569157
@@ -134,8 +134,8 @@ section .text
     PUSH 0x5d5d87                       ; 00569165 | = "CTextureList::load - Bad filename!"
     MOV dword ptr [0x01d71de0],EBX      ; 0056916a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00569170 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569176
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569176
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0056917b
     PUSH EBP                            ; 0056917e
         ;   Label: LAB_0056917e
@@ -254,8 +254,8 @@ section .text
     PUSH 0x5d5d3e                       ; 005692a0 | = "CTextureList::load - No extension found"
     MOV dword ptr [0x01d71de0],EDX      ; 005692a5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 005692ab | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005692b1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005692b1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005692b6
     JMP 0x0056911a                      ; 005692b9
         ;   XREF to: 0056911a (UNCONDITIONAL_JUMP)  ; LAB_0056911a
@@ -299,7 +299,7 @@ section .text
         ;   Label: LAB_00569350
     PUSH ESI                            ; 00569357
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00569358
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 0056935d
     ADD ESP,0x11c                       ; 00569360
     POP EBP                             ; 00569366

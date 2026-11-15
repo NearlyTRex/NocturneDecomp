@@ -26,13 +26,13 @@ void cockpit_ckptutil_c_FUN_004387f0(int param_1,int param_2,int param_3,int par
     if (param_6 < (param_2 - param_4) + 1) {
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x3d7;
-      core_main_c_FUN_005030e0("Invalid height array size.");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid height array size.");
     }
     piVar1 = (int *)operator_new_array(param_4 * 4);
     if (piVar1 == (int *)0x0) {
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x3dd;
-      core_main_c_FUN_005030e0("No room for scroll bitmap height table.");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("No room for scroll bitmap height table.");
     }
     iVar6 = 0;
     iStack_24 = 0;

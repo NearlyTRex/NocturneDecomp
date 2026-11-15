@@ -2,26 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 293,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
-    "suspect_count": 20,
+    "pseudocode_lines": 38,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
+      "stack_param",
       "stack_ref",
       "unaffected_reg",
       "unnamed_param",
-      "unresolved_funcptr",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "unrolled_memcpy"
     ],
-    "total_lines": 101
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -41,13 +38,13 @@
     ],
     "convention": "unknown",
     "name": "core_emitter.cpp_FUN_00488ea0",
-    "signature": "void core_emitter_cpp_FUN_00488ea0(int param_1)"
+    "signature": "void core_emitter_cpp_FUN_00488ea0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
       "addr": "00408b80",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b80"
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80"
     },
     {
       "addr": "0040ce40",
@@ -138,120 +135,104 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_emitter_cpp_FUN_00488ea0(int param_1)",
+      "text": "void core_emitter_cpp_FUN_00488ea0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
-      "match": "afStackY_1004",
+      "line": 10,
+      "match": "afStackY_ffc",
       "severity": "moderate",
-      "text": "float afStackY_1004 [1001];",
+      "text": "float afStackY_ffc [1000];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffa8",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1);",
-      "type": "unresolved_funcptr"
+      "text": "CBoundingBox3D *in_stack_ffffffa8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffffa8",
+      "severity": "moderate",
+      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,in_stack_ffffffa8);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1);",
+      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,in_stack_ffffffa8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1);",
+      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,in_stack_ffffffa8);",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffc0",
+      "line": 24,
+      "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)&stack0xffffffc0;",
+      "text": "puVar2 = (uint *)&stack0xffffffc8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 25,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "puVar3 = &stack0xffffffa8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "core_actor_cpp_FUN_00408b80(param_1,&stack0xffffffd8);",
+      "text": "puVar3 = (uint *)&stack0xffffffa8;",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b80(param_1,&stack0xffffffd8);",
+      "text": "(param_1,&CStack_20,(CVector3f *)&fStack_14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 36,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = uStack_1c;",
+      "text": "*unaff_ESI = fStack_14;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 37,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] =",
+      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = (&fStack_10)[(uint)bVar4 * -2];",
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar4 * 0xfffffffe * 4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 44,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
@@ -259,35 +240,19 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffec",
+      "line": 39,
+      "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "text": "*(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `&stack0xffffffe8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar4 * 0xfffffffe * 4);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 26,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar4 * 0xfffffffe * 4);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

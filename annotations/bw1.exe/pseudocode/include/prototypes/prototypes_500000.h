@@ -37,7 +37,7 @@
 // FUNCTION PROTOTYPES - Range 0x500000
 // =============================================================================
 
-void core_lightgun_cpp_FUN_00500090(int param_1);
+void core_lightgun_cpp_FUN_00500090(CCharacter *param_1);
 CVector3f * __cdecl core_lightgun_cpp_CLightGun_getMuzzlePoint_FUN_00500160(CLightGun *this_ptr,CVector3f *out_point);
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00500310(CLightGun *this_ptr);
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_ptr,float delta_time);
@@ -50,7 +50,7 @@ CDemonActorType * __cdecl core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(
 CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr);
 undefined4 core_lightpis_cpp_FUN_005016d0(CDemonActor *param_1);
 undefined4 core_lightpis_cpp_FUN_00501750(CCharacter *param_1);
-void core_lightpis_cpp_FUN_005017f0(int param_1);
+void core_lightpis_cpp_FUN_005017f0(CCharacter *param_1);
 CVector3f * __cdecl core_lightpis_cpp_CLightPis_getMuzzlePoint_FUN_005018c0(CLightPis *this_ptr,CVector3f *out_point);
 int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr);
 void __cdecl core_lightpis_cpp_CLightPis_process_FUN_00502480(CLightPis *this_ptr,float delta_time);
@@ -64,12 +64,12 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_00502d70(CLightCone *
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_00502e10(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_process_FUN_00502e20(CLightCone *this_ptr,float delta_time);
 int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00502e80(CLightCone *this_ptr);
-CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00502f20(CLightCone *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_00502f20(CLightCone *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00502f80(CLightCone *this_ptr);
 ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_00503010(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00503020(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_00503070(void);
-void core_main_c_FUN_005030e0(char *param_1);
+void __cdecl core_main_c_displayErrorAndQuit_FUN_005030e0(char *format);
 void core_main_c_FUN_005031c0(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_00503290(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv);
@@ -81,14 +81,14 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuzzleCircle *this_ptr);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_00504400(CMansionPuzzleCircle *this_ptr,float delta_time);
-CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_00504510(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_00504510(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getCollisionType_FUN_00504570(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00504b10(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_00504b90(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0(CMansionPuzzleCircle *this_ptr);
-void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2);
+void core_manpuz_cpp_FUN_00504ee0(CDemonActor *param_1,int param_2);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index);
@@ -112,7 +112,7 @@ CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_00506450(CMirrorHack 
 void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_005064a0(CMirrorHack *this_ptr);
 int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_005064c0(CMirrorHack *this_ptr);
 void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_00506510(CMirrorHack *this_ptr,float delta_time);
-CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_005065a0(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_005065a0(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_manpuz_cpp_CMirrorHack_getCollisionType_FUN_005065e0(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_005065f0(CMirrorHack *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_00506620(CMirrorHack *this_ptr,SInteractionInfo *out_info);
@@ -144,7 +144,7 @@ int __cdecl engine_matrix_c_FUN_00507350(int angle);
 int engine_matrix_c_FUN_00507390(uint param_1);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_005076b0(int pitch,int yaw,int roll);
-void engine_matrix_c_transformWorldToView_FUN_005079d0(void);
+CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVector3i *input_coords,CVector3i *output_coords);
 int __cdecl engine_matrix_c_calculateTransformedZ_FUN_00507aa0(int *input_coords);
 void __cdecl engine_matrix_c_transformToCache_FUN_00507b00(int cacheIndex,CVector3i *inputPoint);
 void __cdecl engine_matrix_c_projectCachedPoint_FUN_00507b30(int cacheIndex);
@@ -155,8 +155,8 @@ void __cdecl engine_matrix_c_matrixPush_FUN_005083b0(void);
 void __cdecl engine_matrix_c_pop_FUN_005084b0(void);
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_005085c0(int x1,int y1,int z1,int x2,int y2,int z2);
 int __cdecl engine_matrix_c_integerSquareRoot_FUN_00508620(int value);
-void engine_matrix_c_normalizeVector3DFixed_FUN_00508700(int *param_1);
-int * engine_matrix_c_normalizeVector3DFloat_FUN_00508780(int *param_1);
+CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_00508700(CVector3i *input_vector,CVector3i *output_vector);
+CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_00508780(CVector3i *input_vector,CVector3i *output_vector);
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_00508860(CVector3i *vector_ptr);
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_00509000(int x,int y,int z);
 void __esi engine_matrix_c_getCameraOrigin_FUN_00509050(CVector3i *output);

@@ -19,8 +19,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
   byte bVar5;
   float afStackY_1018 [1009];
   CVector3f CStack_30;
-  float fStack_24;
-  uint auStack_20 [4];
+  CVector3f CStack_24;
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
@@ -33,12 +32,14 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
   }
   if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
     damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d9451;
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_24);
     iVar4 = 0;
-    CStack_30.x = fStack_24;
-    *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];
+    CStack_30.x = CStack_24.x;
+    *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         auStack_20[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+         *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0

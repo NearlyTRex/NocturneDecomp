@@ -41,9 +41,9 @@ void __cdecl CMirrorReflection::setupMirrorCamera(CMirrorReflection *this_ptr);
 // Address: 004f40b0
 void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
 
-// Original: core_mirror.cpp_FUN_004f50f0
+// Original: core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004f50f0
 // Address: 004f50f0
-void FUN_004f50f0(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CMirrorReflection::applyMirrorTransform(CMirrorReflection *this_ptr,CVector3f *input_vector,CVector3f *output_buffer);
 
 // Original: core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130
 // Address: 004f5130
@@ -69,13 +69,13 @@ int __cdecl CMirror::renderMirrorQuad(CMirror *this_ptr);
 // Address: 004f5610
 void __cdecl CMirror::renderMirrorQuadDepth(CMirror *this_ptr);
 
-// Original: core_mirror.cpp_FUN_004f57c0
+// Original: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0
 // Address: 004f57c0
-void FUN_004f57c0(undefined4 param_1,int *param_2);
+CVector3i * __stack2_esi CMirrorReflection::transformMirrorVertex(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
 
-// Original: core_mirror.cpp_FUN_004f5870
+// Original: core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870
 // Address: 004f5870
-void FUN_004f5870(undefined4 param_1,int *param_2,int *param_3);
+CVector3i * __stack3_esi CMirrorReflection::transformMirrorEdgeToIntegerSpace(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 
 // Original: core_mirror.cpp_SClipPlane_ctor_FUN_004f5a60
 // Address: 004f5a60

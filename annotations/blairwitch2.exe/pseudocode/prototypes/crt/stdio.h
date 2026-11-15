@@ -27,7 +27,7 @@ SIZE_T __cdecl fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_fclose_FUN_005b89c0
 // Address: 005b89c0
-undefined4 __cdecl fclose(int param_1);
+int __cdecl fclose(_FILE *file_handle);
 
 // Original: crt_stdio.c_fclose_FUN_005b8af0
 // Address: 005b8af0

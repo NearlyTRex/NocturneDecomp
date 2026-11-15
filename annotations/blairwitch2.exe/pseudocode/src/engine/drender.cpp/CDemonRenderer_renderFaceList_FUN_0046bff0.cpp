@@ -67,7 +67,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
                 if (1999 < iVar4) {
                   _DAT_01d046a0 = "..\\engine\\drender.cpp";
                   _DAT_01d046a4 = 0xa30;
-                  core_main_c_FUN_004e4500("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar4);
+                  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d");
                 }
               }
               local_14 = local_14 + 1;

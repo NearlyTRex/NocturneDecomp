@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_00431cc0
@@ -137,7 +137,7 @@ section .text
     PUSH ESI                            ; 00432339
     LEA ESI,[ESP + 0x30]                ; 0043233a
     CALL core_door.cpp_CDoor_getOpenStandPos_FUN_00478860 ; 0043233e
-        ;   XREF to: 00478860 (UNCONDITIONAL_CALL)  ; float * core_door.cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor * this_ptr, float * param_2, undefined4 param_3)
+        ;   XREF to: 00478860 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor * this_ptr, CVector3f * direction, CVector3f * actor_pos, CVector3f * out_pos)
     ADD ESP,0xc                         ; 00432343
     LEA EDI,[ESP + 0x3c]                ; 00432346
     PUSH 0x0                            ; 0043234a
@@ -170,8 +170,8 @@ section .text
     PUSH EBX                            ; 00432399
     LEA ESI,[ESP + 0x20]                ; 0043239a
     LEA EDI,[ESP + 0x8]                 ; 0043239e
-    CALL core_actor.cpp_FUN_00408bb0    ; 004323a2
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004323a2
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x20]                ; 004323a7
     ADD ESP,0x8                         ; 004323ab
     MOV EAX,ESP                         ; 004323ae

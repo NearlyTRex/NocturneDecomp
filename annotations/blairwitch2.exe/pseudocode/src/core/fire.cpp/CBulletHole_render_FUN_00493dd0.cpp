@@ -25,8 +25,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00493dd0(CBulletHole *this_ptr
   float local_40;
   float local_3c [2];
   CVector3i local_34;
-  float local_28;
-  float afStack_24 [2];
+  CVector3f local_28;
   CVector3i local_1c;
   
   bVar2 = 0;
@@ -98,11 +97,12 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00493dd0(CBulletHole *this_ptr
     DAT_00622034 = 0xffff;
   }
   else {
-    core_actor_cpp_FUN_00408cf0(this_ptr->actor_ptr,&this_ptr->actor_local_space);
-    local_40 = local_28;
-    local_3c[(uint)bVar2 * -2] = afStack_24[(uint)bVar2 * -2];
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+              (this_ptr->actor_ptr,&this_ptr->actor_local_space,&local_28);
+    local_40 = local_28.x;
+    local_3c[(uint)bVar2 * -2] = *(float *)((int)&local_28 + (uint)bVar2 * -8 + 4);
     local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-         afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+         *(float *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_70.x = (int)ROUND((this_ptr->position).x * _DAT_005f64e4);
     local_70.y = (int)ROUND((this_ptr->position).y * _DAT_005f64e4);
     local_70.z = (int)ROUND((this_ptr->position).z * _DAT_005f64e4);

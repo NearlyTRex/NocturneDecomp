@@ -17,12 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "00438e40",
-      "from_addr": "00438e7e",
-      "name": "cockpit_ckptutil.c_FUN_00438e40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00439090",
       "from_addr": "00439108",
       "name": "cockpit_ckptutil.c_FUN_00439090",
@@ -62,6 +56,12 @@
       "addr": "0043a040",
       "from_addr": "0043a0cb",
       "name": "cockpit_ckptutil.c_rotateBitmap_FUN_0043a040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438e40",
+      "from_addr": "00438e7e",
+      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,7 +139,7 @@
     {
       "addr": "004232c0",
       "from_addr": "004236a9",
-      "name": "core_boxactor.cpp_FUN_004232c0",
+      "name": "core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -565,7 +565,7 @@
     {
       "addr": "0055b4f0",
       "from_addr": "0055b749",
-      "name": "core_setdir.cpp_FUN_0055b4f0",
+      "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -845,87 +845,87 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00577b60",
-      "from_addr": "00577c47",
-      "name": "sound_snddx.cpp_FUN_00577b60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00577cd0",
-      "from_addr": "00577d4c",
-      "name": "sound_snddx.cpp_FUN_00577cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00577f90",
-      "from_addr": "00578375",
-      "name": "sound_snddx.cpp_FUN_00577f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005784b0",
-      "from_addr": "00578551",
-      "name": "sound_snddx.cpp_FUN_005784b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00578590",
-      "from_addr": "00578621",
-      "name": "sound_snddx.cpp_FUN_00578590",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00578710",
       "from_addr": "005789b0",
-      "name": "sound_snddx.cpp_FUN_00578710",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00578a80",
-      "from_addr": "00578bb2",
-      "name": "sound_snddx.cpp_FUN_00578a80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00578be0",
-      "from_addr": "00578c6c",
-      "name": "sound_snddx.cpp_FUN_00578be0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00578cc0",
       "from_addr": "00578ebf",
-      "name": "sound_snddx.cpp_FUN_00578cc0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00578f80",
       "from_addr": "00579343",
-      "name": "sound_snddx.cpp_FUN_00578f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00579900",
-      "from_addr": "00579986",
-      "name": "sound_snddx.cpp_FUN_00579900",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005799b0",
-      "from_addr": "00579a9d",
-      "name": "sound_snddx.cpp_FUN_005799b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00579ad0",
-      "from_addr": "00579d90",
-      "name": "sound_snddx.cpp_FUN_00579ad0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057a230",
       "from_addr": "0057a26c",
-      "name": "sound_snddx.cpp_FUN_0057a230",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005799b0",
+      "from_addr": "00579a9d",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578590",
+      "from_addr": "00578621",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579900",
+      "from_addr": "00579986",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578a80",
+      "from_addr": "00578bb2",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005784b0",
+      "from_addr": "00578551",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00577cd0",
+      "from_addr": "00577d4c",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_00577cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00577f90",
+      "from_addr": "00578375",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00577f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579ad0",
+      "from_addr": "00579d90",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00579ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00577b60",
+      "from_addr": "00577c47",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_00577b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578be0",
+      "from_addr": "00578c6c",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_00578be0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1020,7 +1020,7 @@
     },
     {
       "addr": "0059e350",
-      "from_addr": "0059ebf8",
+      "from_addr": "0059e4b4",
       "name": "support_trisock.cpp_FUN_0059e350",
       "type": "UNCONDITIONAL_CALL"
     },

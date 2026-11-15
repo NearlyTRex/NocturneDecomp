@@ -51,7 +51,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_2d.c_drawVLine_FUN_00403040
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5dc18e                       ; 00496f2a | = "CEditorTools::paintWindow() called bu..."
     MOV dword ptr [0x01d1d400],EDI      ; 00496f2f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00496f35 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00496f3b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00496f3b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496f40
     MOV EBX,dword ptr [0x01c3eb5c]      ; 00496f43 | DAT_01c3eb5c
         ;   Label: LAB_00496f43
@@ -517,8 +517,8 @@ section .text
     PUSH 0x5dbc7e                       ; 004973c4 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d1d400],ECX      ; 004973c9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 004973cf | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004973d5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004973d5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004973da
     JMP 0x00496ef4                      ; 004973dd
         ;   XREF to: 00496ef4 (UNCONDITIONAL_JUMP)  ; LAB_00496ef4

@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01e6be48
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_CPathMap_reset_FUN_00535200
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5ecab5                       ; 005352a4 | = "Global pathmap list corruption"
     MOV [0x01d1d400],EAX                ; 005352a9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005352ae | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005352b4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005352b4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005352b9
     MOV ECX,dword ptr [EBX + 0x1e6be4c] ; 005352bc
         ;   Label: LAB_005352bc

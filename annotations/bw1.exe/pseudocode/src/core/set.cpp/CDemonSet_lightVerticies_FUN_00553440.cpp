@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00553440(CDemonSet *this_
   if (20000 < vertex_count) {
     _DAT_01d1d400 = "..\\core\\set.cpp";
     _DAT_01d1d404 = 0xee5;
-    core_main_c_FUN_005030e0("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d",vertex_count,20000);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d");
   }
   iVar9 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar9 == 0) {
@@ -148,10 +148,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00553440(CDemonSet *this_
                 if (4000 < tri_count) {
                   _DAT_01d1d400 = "..\\core\\set.cpp";
                   _DAT_01d1d404 = 0xfac;
-                  core_main_c_FUN_005030e0("Too many normals on this packed tri list");
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("Too many normals on this packed tri list");
                   _DAT_01d1d400 = "..\\core\\set.cpp";
                   _DAT_01d1d404 = 0xfae;
-                  core_main_c_FUN_005030e0("Need more normals for packed models");
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("Need more normals for packed models");
                 }
                 iVar9 = 0;
                 if (0 < tri_count) {

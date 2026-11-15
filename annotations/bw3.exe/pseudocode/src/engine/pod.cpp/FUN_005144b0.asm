@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_pod.cpp_FUN_00512fb0
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     MOV EDI,0x5cc86f                    ; 0051453e | = "..\\engine\\pod.cpp"
     PUSH 0x5cc881                       ; 00514543 | = "Can't re-mount %s: %s"
     MOV dword ptr [0x01d71de0],EDI      ; 00514548 | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 0051454e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051454e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00514553
     JMP 0x0051450d                      ; 00514556
         ;   XREF to: 0051450d (UNCONDITIONAL_JUMP)  ; LAB_0051450d

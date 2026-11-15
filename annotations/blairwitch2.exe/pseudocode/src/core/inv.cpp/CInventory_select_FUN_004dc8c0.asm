@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2)
+; int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *actor_ptr)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   actor_ptr
 ; Local Variables:
 ; undefined        Stack[-0x218]:1  local_218
 ; undefined1       Stack[-0x217]:1  local_217
@@ -47,7 +47,7 @@
 ;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5db93f                       ; 004dc906 | = "CInventory::select - Catch 22"
     MOV dword ptr [0x01d046a0],EDI      ; 004dc90b | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004dc911 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dc916
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dc916
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dc91b
     MOV EAX,[0x01cedef4]                ; 004dc91e | DAT_01cedef4
         ;   Label: LAB_004dc91e
@@ -272,8 +272,8 @@ section .text
     PUSH 0x5db99b                       ; 004dcae0 | = "CInventory::select - Catch 22"
     MOV dword ptr [0x01d046a0],EDX      ; 004dcae5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004dcaeb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dcaf1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dcaf1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dcaf6
     MOV EAX,[0x01cedef4]                ; 004dcaf9 | DAT_01cedef4
         ;   Label: LAB_004dcaf9

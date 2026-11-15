@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *this_ptr,float delta_time)
@@ -23,13 +22,12 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
   CCharacter *pCVar8;
   byte bVar9;
   float afStackY_1070 [1014];
-  uint *puVar10;
-  float local_88;
-  uint local_7c;
+  CVector3f *input_local_point;
+  CVector3f local_88;
+  CVector3f local_7c;
   float local_70;
-  float local_6c;
-  float local_68;
-  uint local_64;
+  float local_6c [2];
+  CVector3f local_64;
   float local_54;
   float local_50;
   CMatrix3x4f *local_4c;
@@ -137,23 +135,24 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
     do {
       if ((this_ptr->model).part_data.visibility_flags[local_24->bone_part] != 0) {
         (this_ptr->base).is_transparent = 1;
-        core_xform_cpp_FUN_005b5080(&local_24->offset,local_4c + local_24->bone_index);
-        puVar10 = &stack0xffffff9c;
-        local_64 = local_7c;
-        *(uint *)((int)&stack0xffffffa0 + (uint)bVar9 * 0xfffffffe * 4) =
-             *(uint *)(&stack0xffffff88 + (uint)bVar9 * -8);
-        *(uint *)(&stack0xffffffa4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-             *(uint *)(&stack0xffffff8c + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-        core_actor_cpp_FUN_00408b40(this_ptr,puVar10);
+        core_xform_cpp_transformVector3x4_FUN_005b5080
+                  (&local_24->offset,local_4c + local_24->bone_index,&local_7c);
+        input_local_point = &local_64;
+        local_64.x = local_7c.x;
+        *(uint *)((int)&local_64 + (uint)bVar9 * -8 + 4) =
+             *(uint *)((int)&local_7c + (uint)bVar9 * -8 + 4);
+        *(uint *)((int)&local_64 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+             *(uint *)((int)&local_7c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                  (&this_ptr->base,input_local_point,&local_88);
         iVar7 = local_30;
-        local_70 = local_88;
-        *(uint *)((int)&stack0xffffff94 + (uint)bVar9 * -8) =
-             *(uint *)(&stack0xffffff7c + (uint)bVar9 * -8);
-        *(uint *)((int)&stack0xffffff98 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-             *(uint *)(&stack0xffffff80 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+        local_70 = local_88.x;
+        local_6c[(uint)bVar9 * -2] = *(float *)((int)&local_88 + (uint)bVar9 * -8 + 4);
+        local_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+             *(float *)((int)&local_88 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
         (local_2c->position).x = local_70;
-        (local_2c->position).y = local_6c;
-        (local_2c->position).z = local_68;
+        (local_2c->position).y = local_6c[0];
+        (local_2c->position).z = local_6c[1];
         fVar1 = (float)_DAT_005d5a1f;
         local_28->flames[0].flame_size.x = local_24->size * fVar1;
         local_28->flames[0].flame_size.y = local_24->size;

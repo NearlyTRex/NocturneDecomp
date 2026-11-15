@@ -2,19 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 365,
+    "complexity_score": 280,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 27,
+    "suspect_count": 20,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
@@ -32,7 +29,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_FUN_0056bd50",
-    "signature": "float * core_stranger_cpp_FUN_0056bd50(void)"
+    "signature": "undefined4 * core_stranger_cpp_FUN_0056bd50(void)"
   },
   "function_calls": [
     {
@@ -154,15 +151,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "float *unaff_ESI;",
+      "text": "float unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "float *in_stack_00000004;",
@@ -170,7 +167,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "float *in_stack_00000008;",
@@ -178,50 +175,26 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "afStackY_1028",
       "severity": "moderate",
-      "text": "float afStackY_1028 [1007];",
+      "text": "float afStackY_1028 [3];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffffd0",
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "apuStackY_101c",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffffd4",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
+      "text": "uint *apuStackY_101c [1002];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "fVar2 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "text": "fVar1 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
       "type": "stack_param"
     },
     {
@@ -229,7 +202,7 @@
       "line": 28,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "fVar2 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "text": "fVar1 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
       "type": "stack_param"
     },
     {
@@ -266,99 +239,67 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 33,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar1 = -*in_stack_00000008;",
+      "text": "(dVar3 = (double)(SQRT(fVar1 * fVar1 - -*in_stack_00000008 * -*in_stack_00000008) / fVar1),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 33,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar1 = in_stack_00000008[1];",
+      "text": "(dVar3 = (double)(SQRT(fVar1 * fVar1 - -*in_stack_00000008 * -*in_stack_00000008) / fVar1),",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 36,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = fStack_34;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xffffffd0",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(float *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(float *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);",
+      "text": "unaff_ESI = (float)dVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
+      "text": "afStack_3c[2] = afStack_3c[2] + unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffffd4",
-      "severity": "moderate",
-      "text": "*(float *)(&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 41,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "return unaff_ESI;",
+      "text": "afStack_3c[2] = afStack_3c[2] - unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Pointer value `&stack0xffffffd0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)&stack0xffffffd0",
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8) =",
-      "type": "pointer_truncation"
+      "text": "(dVar3 = (double)(SQRT(fStack_4c * fStack_4c - in_stack_00000008[1] * in_stack_00000008[1])",
+      "type": "stack_param"
     },
     {
-      "description": "Pointer value `&stack0xffffffd0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
-      "match": "(int)&stack0xffffffd0",
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(float *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);",
-      "type": "pointer_truncation"
+      "text": "(dVar3 = (double)(SQRT(fStack_4c * fStack_4c - in_stack_00000008[1] * in_stack_00000008[1])",
+      "type": "stack_param"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 24,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(float *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);",
-      "type": "pointer_cast"
+      "text": "if (0.0 <= unaff_ESI) {",
+      "type": "unaffected_reg"
     }
   ]
 }

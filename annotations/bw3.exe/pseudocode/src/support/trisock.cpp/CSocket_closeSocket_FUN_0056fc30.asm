@@ -13,7 +13,7 @@
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_0056f930 at 0056f936
 ;   support_trisock.cpp_CSocket_dtor_FUN_0056f8e0 at 0056f8e6
 ;   support_trisock.cpp_FUN_0056fef0 at 0057001c
-;   support_trisock.cpp_FUN_00571340 at 00571447
+;   support_trisock.cpp_FUN_00571340 at 005713f0
 ;   support_trisock.cpp_FUN_00571d10 at 00571d62
 ;
 ; Called Functions:

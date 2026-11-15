@@ -17,7 +17,7 @@ void core_inv_cpp_setupItems_FUN_004dc850(int param_1)
   if (*(int *)(param_1 + 0x460) != 0) {
     _DAT_01d046a0 = "..\\core\\inv.cpp";
     _DAT_01d046a4 = 0x64e;
-    core_main_c_FUN_004e4500("CInventory::setupItems - we should own the items at this point!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CInventory::setupItems - we should own the items at this point!");
   }
   iVar1 = 0;
   iVar2 = param_1;

@@ -14,7 +14,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH EBX                            ; 004308aa
     LEA ESI,[EBP + -0x30]               ; 004308ab
     LEA EDI,[EBP + -0x3c]               ; 004308ae
-    CALL core_actor.cpp_FUN_00408b80    ; 004308b1
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004308b1
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     FLD float ptr [EBP + -0x60]         ; 004308b6
     LEA ESI,[EBP + -0x30]               ; 004308b9
     FLD float ptr [EBP + -0x5c]         ; 004308bc

@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00447f00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     PUSH 0x5e0dc2                       ; 004c5fa7 | = "CFrankenstienMachine::setCourseFrame ..."
     MOV dword ptr [0x01d1d400],EDX      ; 004c5fac | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004c5fb2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004c5fb8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c5fb8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c5fbd
     JMP 0x004c5f2e                      ; 004c5fc0
         ;   XREF to: 004c5f2e (UNCONDITIONAL_JUMP)  ; LAB_004c5f2e

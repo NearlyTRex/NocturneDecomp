@@ -35,7 +35,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00512aa0(CPlatform *this
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-                      (&local_a0,&actor->location,&actor->orient);
+                      (&local_a0,&(actor->location).position,&(actor->orient).vec);
             core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00583800
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar2->attach_actors[0].actor = actor;
@@ -56,7 +56,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00512aa0(CPlatform *this
         }
         _DAT_01d71de0 = "..\\core\\platfrm.cpp";
         _DAT_01d71de4 = 0x3d0;
-        core_main_c_FUN_004e4330("CPlatform::attachActor - too many!");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CPlatform::attachActor - too many!");
         return;
       }
       pCVar1 = pCVar2->attach_actors[1].actor;

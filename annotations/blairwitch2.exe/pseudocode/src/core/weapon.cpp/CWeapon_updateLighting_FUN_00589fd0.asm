@@ -26,11 +26,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0
 ;
@@ -61,8 +61,8 @@ section .text
     PUSH EBX                            ; 0058a00a
     LEA ESI,[ESP + 0x54]                ; 0058a00b
     LEA EDI,[ESP + 0x3c]                ; 0058a00f
-    CALL core_actor.cpp_FUN_00408d70    ; 0058a013
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0058a013
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x54]                ; 0058a018
     MOV EDX,0x1                         ; 0058a01c
     LEA EAX,[ESP + 0x60]                ; 0058a021
@@ -96,8 +96,8 @@ section .text
     PUSH EAX                            ; 0058a077
     LEA ESI,[ESP + 0x6c]                ; 0058a078
     MOV dword ptr [ESP + 0x8c],EBP      ; 0058a07c
-    CALL core_dirmat.cpp_FUN_00449530   ; 0058a083
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0058a083
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x6c]                ; 0058a088
     ADD ESP,0x8                         ; 0058a08c
     LEA EAX,[ESP + 0x34]                ; 0058a08f

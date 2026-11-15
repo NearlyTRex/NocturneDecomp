@@ -41,7 +41,7 @@ section .text
     LEA ESI,[ESP + 0x10]                ; 00405392
     LEA EDI,[ESP + 0x4]                 ; 00405396
     CALL engine_matrix.c_normalizeVector3DFixed_FUN_004e9a60 ; 0040539a
-        ;   XREF to: 004e9a60 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFixed_FUN_004e9a60()
+        ;   XREF to: 004e9a60 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFixed_FUN_004e9a60(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x10]                ; 0040539f
     ADD ESP,0x4                         ; 004053a3
     MOVSD ES:EDI,ESI                    ; 004053a6

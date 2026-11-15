@@ -27,7 +27,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5c6fec                       ; 004e6d60 | = "3D Window unbalance"
     MOV dword ptr [0x01d71de0],EBX      ; 004e6d65 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004e6d6b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004e6d71
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e6d71
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e6d76
     POP EBX                             ; 004e6d79
     POP ESI                             ; 004e6d7a

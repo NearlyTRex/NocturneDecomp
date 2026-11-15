@@ -46,7 +46,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
@@ -99,8 +99,8 @@ section .text
     PUSH 0x5cf684                       ; 0044e069 | = "KFM file is invalid version %d"
     MOV dword ptr [0x01d046a0],EBX      ; 0044e06e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044e074 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044e07a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044e07a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044e07f
     MOV EAX,dword ptr [ESP + 0x4]       ; 0044e082
         ;   Label: LAB_0044e082
@@ -326,8 +326,8 @@ section .text
     PUSH 0x5cf6b6                       ; 0044e25a | = "KFM file is version %d, this .exe can..."
     MOV dword ptr [0x01d046a0],EDX      ; 0044e25f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0044e265 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044e26b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044e26b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0044e270
     JMP 0x0044e08f                      ; 0044e273
         ;   XREF to: 0044e08f (UNCONDITIONAL_JUMP)  ; LAB_0044e08f
@@ -544,8 +544,8 @@ section .text
     PUSH 0x5cf78f                       ; 0044e490 | = "Error reading KFM model"
     MOV dword ptr [0x01d046a0],EBX      ; 0044e495 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044e49b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044e4a1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044e4a1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044e4a6
     CMP dword ptr [ESP],0x0             ; 0044e4a9
         ;   Label: LAB_0044e4a9
@@ -620,8 +620,8 @@ section .text
     PUSH 0x5cf749                       ; 0044e550 | = "Out of memory for envMapOpacList"
     MOV [0x01d046a0],EAX                ; 0044e555 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0044e55a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044e560
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044e560
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044e565
     JMP 0x0044e4dc                      ; 0044e568
         ;   XREF to: 0044e4dc (UNCONDITIONAL_JUMP)  ; LAB_0044e4dc

@@ -23,7 +23,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
 ;
 ; *****************************************************************************
@@ -91,8 +91,8 @@ section .text
     PUSH 0x5c2939                       ; 004bb06b | = "giveHeroWeapon - This is not a weapon"
     MOV dword ptr [0x01d71de0],EBP      ; 004bb070 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004bb076 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004bb07b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004bb07b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004bb080
     JMP 0x004bb017                      ; 004bb083
         ;   XREF to: 004bb017 (UNCONDITIONAL_JUMP)  ; LAB_004bb017

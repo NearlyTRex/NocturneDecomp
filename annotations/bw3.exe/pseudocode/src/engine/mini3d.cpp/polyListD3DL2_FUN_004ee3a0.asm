@@ -19,7 +19,7 @@
 ;   undefined4 DAT_02cf60c4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_mini3d.cpp_updateRenderState_FUN_004f2430
 ;   engine_mini3d.cpp_updateTransform_FUN_004edcc0
 ;
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5c80be                       ; 004ee414
     MOV dword ptr [0x01d71de0],EDI      ; 004ee419 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004ee41f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ee425
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ee425
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ee42a
     POP EBP                             ; 004ee42d
     POP EDI                             ; 004ee42e

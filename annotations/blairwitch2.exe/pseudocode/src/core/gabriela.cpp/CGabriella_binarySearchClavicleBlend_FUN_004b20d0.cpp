@@ -15,21 +15,21 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
   CDeformableModelInstance *pCVar2;
   int iVar3;
   CMatrix3x4f *pCVar4;
-  float *pfVar5;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
   float local_1b78;
   SPose local_1b74;
-  float local_d8 [12];
+  CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
   CVector3f local_78;
-  uint local_6c;
-  float afStack_68 [5];
-  float local_54;
-  float local_48;
+  CVector3f local_6c;
+  CVector3f local_60;
+  CVector3f local_54;
+  CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
-  float local_24;
-  float local_20 [3];
+  CVector3f local_24;
+  float local_18;
   CDeformableModelInstance *local_14;
   
   bVar6 = 0;
@@ -37,18 +37,21 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(pCVar2,&local_1b74);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
             (pCVar2,blend_bone_index,&local_3c);
-  local_24 = local_3c.x;
-  local_20[(uint)bVar6 * -2] = *(float *)((int)&local_3c + (uint)bVar6 * -8 + 4);
-  local_20[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       *(float *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  local_20[0] = local_20[0] + _DAT_005d71b7;
-  core_actor_cpp_FUN_00408d70(this_ptr,&local_24);
-  local_30.x = local_48;
-  *(float *)((int)&local_30 + (uint)bVar6 * -8 + 4) = afStack_68[(uint)bVar6 * -2 + 9];
-  *(float *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-       afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
-  local_20[2] = *clavicle_blend;
-  local_1b78 = delta_time / _DAT_005f7348 + local_20[2];
+  local_24.x = local_3c.x;
+  *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4) =
+       *(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);
+  *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       *(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  local_24.y = local_24.y + _DAT_005d71b7;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,&local_24,&local_48);
+  local_30.x = local_48.x;
+  *(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) =
+       *(uint *)((int)&local_48 + (uint)bVar6 * -8 + 4);
+  *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       *(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  local_18 = *clavicle_blend;
+  local_1b78 = delta_time / _DAT_005f7348 + local_18;
   if (1.0 < local_1b78) {
     local_1b78 = 1.0;
   }
@@ -63,32 +66,35 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
               (pCVar2,probe_bone_index,&local_a8);
     pCVar4 = &local_a8;
-    pfVar5 = local_d8;
+    pCVar5 = &local_d8;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *pfVar5 = pCVar4->m[0].w;
+      pCVar5->m[0].w = pCVar4->m[0].w;
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_00591530(probe_offset,local_d8);
-    local_6c = afStack_68[2];
-    afStack_68[(uint)bVar6 * -2] = afStack_68[(uint)bVar6 * -2 + 3];
-    afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-    core_actor_cpp_FUN_00408d70(this_ptr,&local_6c);
-    local_78.x = local_54;
-    *(float *)((int)&local_78 + (uint)bVar6 * -8 + 4) = afStack_68[(uint)bVar6 * -2 + 6];
-    *(float *)((int)&local_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-         afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+    core_xform_cpp_transformVector3x4_FUN_00591530(probe_offset,&local_d8,&local_60);
+    local_6c.x = local_60.x;
+    *(uint *)((int)&local_6c + (uint)bVar6 * -8 + 4) =
+         *(uint *)((int)&local_60 + (uint)bVar6 * -8 + 4);
+    *(uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         *(uint *)((int)&local_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr,&local_6c,&local_54);
+    local_78.x = local_54.x;
+    *(uint *)((int)&local_78 + (uint)bVar6 * -8 + 4) =
+         *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
+    *(uint *)((int)&local_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         *(uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     iVar1 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10
                       (g_CDemonSetPtr,&local_30,&local_78);
     if (iVar1 == 0) {
       local_1b78 = *clavicle_blend;
     }
     else if (iVar3 != 0) {
-      local_20[2] = *clavicle_blend;
+      local_18 = *clavicle_blend;
     }
     iVar3 = iVar3 + 1;
-    *clavicle_blend = (local_20[2] + local_1b78) * (float)_DAT_005d71bb;
+    *clavicle_blend = (local_18 + local_1b78) * (float)_DAT_005d71bb;
   } while (iVar3 < 7);
   return;
 }

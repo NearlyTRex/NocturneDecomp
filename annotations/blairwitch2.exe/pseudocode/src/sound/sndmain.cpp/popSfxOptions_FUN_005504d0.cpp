@@ -17,6 +17,6 @@ void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005504d0(void)
   }
   _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
   _DAT_01d046a4 = 0xea7;
-  core_main_c_FUN_004e4500("popSfxOptions - stack empty");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("popSfxOptions - stack empty");
   return;
 }

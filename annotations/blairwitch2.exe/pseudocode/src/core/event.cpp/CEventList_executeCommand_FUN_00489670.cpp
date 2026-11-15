@@ -92,19 +92,20 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_00489670(CEventList *th
   char local_389 [100];
   char local_325 [101];
   char local_2c0 [100];
-  byte local_25c [48];
+  CMatrix3x4f local_25c;
   char local_22c [32];
   char local_20c [32];
   char local_1ec [32];
   char local_1cc [32];
   CLocation local_1ac;
   CVector3f local_19c;
-  byte local_190 [12];
+  CVector3f local_190;
   CVector3f local_184;
   float local_178;
   float local_174;
   float local_170;
-  CVector3f local_16c [2];
+  CVector3f local_16c;
+  CVector3f local_160;
   uint local_154;
   uint uStack_150;
   char *local_14c;
@@ -234,7 +235,7 @@ LAB_004896f7:
       if (99 < (this_ptr->events).count) {
         _DAT_01d046a0 = "..\\core\\event.cpp";
         _DAT_01d046a4 = 0x26b;
-        core_main_c_FUN_004e4500();
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Too many events");
       }
       pcVar22 = (this_ptr->events).names[(this_ptr->events).count];
       local_14 = 0;
@@ -537,7 +538,7 @@ LAB_004896f7:
               if (local_134 == (CDemonLight *)0x0) {
                 _DAT_01d046a0 = "..\\core\\event.cpp";
                 _DAT_01d046a4 = 0x31c;
-                core_main_c_FUN_004e4500("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
+                core_main_c_displayErrorAndQuit_FUN_004e4500("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
               }
               core_setutil_cpp_C3DSLight_advanceFilter_FUN_0053ba90(local_5c,local_134);
             }
@@ -631,9 +632,9 @@ LAB_004896f7:
               }
               if ((pCVar10 != 0x0FFFFFFF) && (local_148 != 0)) {
                 core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-                          (local_25c,local_190);
+                          (&local_25c,&local_190,&local_160);
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
-                          (pCVar7,local_130,(int)pCVar10,0,local_25c);
+                          (pCVar7,local_130,(int)pCVar10,0,&local_25c);
               }
             }
             else {
@@ -2519,7 +2520,7 @@ LAB_00489a3d:
                                                     if (local_64 == (CDemonLight *)0x0) {
                                                       _DAT_01d046a0 = "..\\core\\event.cpp";
                                                       _DAT_01d046a4 = 0x718;
-                                                      core_main_c_FUN_004e4500
+                                                      core_main_c_displayErrorAndQuit_FUN_004e4500
                                                                 ("Can't find CDemonLight for light %s in setLightFilterFrame meta-command"
                                                                 );
                                                     }
@@ -3336,10 +3337,10 @@ LAB_00489a3d:
                                                   if (local_18 < 0) {
                                                     if ((local_148 != 0) &&
                                                        (pUVar25 = &(pCVar7->base).orient,
-                                                       local_16c != (CVector3f *)pUVar25)) {
-                                                      local_16c[0].x = (pUVar25->vec).x;
-                                                      local_16c[0].y = (pCVar7->base).orient.vec.y;
-                                                      local_16c[0].z = (pCVar7->base).orient.vec.z;
+                                                       &local_16c != (CVector3f *)pUVar25)) {
+                                                      local_16c.x = (pUVar25->vec).x;
+                                                      local_16c.y = (pCVar7->base).orient.vec.y;
+                                                      local_16c.z = (pCVar7->base).orient.vec.z;
                                                     }
                                                     sscanf
                                                               (local_15e5 + 1,"%f,%f,%f,%f%n");
@@ -3347,10 +3348,10 @@ LAB_00489a3d:
                                                   if (local_18 < 0) {
                                                     if ((local_148 != 0) &&
                                                        (pUVar25 = &(pCVar7->base).orient,
-                                                       local_16c != (CVector3f *)pUVar25)) {
-                                                      local_16c[0].x = (pUVar25->vec).x;
-                                                      local_16c[0].y = (pCVar7->base).orient.vec.y;
-                                                      local_16c[0].z = (pCVar7->base).orient.vec.z;
+                                                       &local_16c != (CVector3f *)pUVar25)) {
+                                                      local_16c.x = (pUVar25->vec).x;
+                                                      local_16c.y = (pCVar7->base).orient.vec.y;
+                                                      local_16c.z = (pCVar7->base).orient.vec.z;
                                                     }
                                                     sscanf
                                                               (local_15e5 + 1,"%f,%f,%f%n");
@@ -3378,10 +3379,10 @@ LAB_00489a3d:
                                                     pUVar25 = &(pCVar10->base).orient;
                                                     local_1ac.area_id =
                                                          (pCVar10->base).location.area_id;
-                                                    if (local_16c != (CVector3f *)pUVar25) {
-                                                      local_16c[0].x = (pUVar25->vec).x;
-                                                      local_16c[0].y = (pCVar10->base).orient.vec.y;
-                                                      local_16c[0].z = (pCVar10->base).orient.vec.z;
+                                                    if (&local_16c != (CVector3f *)pUVar25) {
+                                                      local_16c.x = (pUVar25->vec).x;
+                                                      local_16c.y = (pCVar10->base).orient.vec.y;
+                                                      local_16c.z = (pCVar10->base).orient.vec.z;
                                                     }
                                                   }
                                                   uVar18 = 0xffffffff;
@@ -3423,7 +3424,7 @@ LAB_00489a3d:
                                                   (*((pCVar7->base).vtable._ub)->
                                                     setPositionAndOrientation)
                                                             ((CDemonActor *)pCVar7,
-                                                             &local_1ac.position,local_16c);
+                                                             &local_1ac.position,&local_16c);
                                                   if (pCVar7 == *(CCharacter **)
                                                                  (_DAT_01cedef4 * 4 + 0x1cedee4)) {
                                                                                                         

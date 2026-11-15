@@ -13,6 +13,6 @@ int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_00409cd0(CDemonAc
 {
   _DAT_01d71de0 = "..\\core\\actor.cpp";
   _DAT_01d71de4 = 0x5ac;
-  core_main_c_FUN_004e4330("CDemonActor::processActionButton - should never be called for this base class!");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::processActionButton - should never be called for this base class!");
   return 1;
 }

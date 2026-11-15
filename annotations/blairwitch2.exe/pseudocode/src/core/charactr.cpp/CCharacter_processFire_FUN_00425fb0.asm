@@ -47,12 +47,12 @@
 ;   undefined4 DAT_007bdca0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_00425bb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
@@ -243,8 +243,8 @@ section .text
     PUSH EAX                            ; 004261d7
     LEA ESI,[ESP + 0x14]                ; 004261d8
     LEA EDI,[ESP + 0x2c]                ; 004261dc
-    CALL core_xform.cpp_FUN_00591530    ; 004261e0
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004261e0
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004261e5
     LEA EAX,[ESP + 0x24]                ; 004261e8
     LEA ESI,[ESP + 0xc]                 ; 004261ec
@@ -255,8 +255,8 @@ section .text
     PUSH EBX                            ; 004261f4
     LEA ESI,[ESP + 0x8]                 ; 004261f5
     LEA EDI,[ESP + 0x20]                ; 004261f9
-    CALL core_actor.cpp_FUN_00408d70    ; 004261fd
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004261fd
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00426202
     MOV ESI,ESP                         ; 00426205
     MOV EDX,dword ptr [ESP + 0x58]      ; 00426207

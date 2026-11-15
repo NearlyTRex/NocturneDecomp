@@ -86,7 +86,7 @@ section .text
     LEA ESI,[ESP + 0xe4]                ; 004fd6e9
     LEA EDI,[ESP + 0xd8]                ; 004fd6f0
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 004fd6f7
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0xe4]                ; 004fd6fc
     LEA EAX,[ESP + 0xd8]                ; 004fd703
     ADD ESP,0x4                         ; 004fd70a

@@ -21,7 +21,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   int iVar6;
   uint *puVar7;
   byte bVar8;
-  float10 fVar9;
+  double dVar9;
   int aiStackY_10b4 [974];
   CVector3i *rotation;
   SMRGLHeaderPrimitive SStack_170;
@@ -49,8 +49,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   CVector3i CStack_90;
   CVector3i CStack_84;
   CVector3i CStack_78;
-  float fStack_6c;
-  int aiStack_68 [2];
+  CVector3f CStack_6c;
   CVector3i CStack_60;
   CVector3i CStack_54;
   float fStack_48;
@@ -147,7 +146,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))
                     (DAT_007e2a54,&(this_ptr->base).location,0);
           DAT_0060b040 = 0xffff - _DAT_01c6e24c;
-          if (iStack_20 == 3) {
+          if (iStack_1c == 3) {
             DAT_0060b040 = DAT_0060b040 / 2;
           }
           if (this_ptr->which_flame == FLAME_TYPE_BODY) {
@@ -184,12 +183,12 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           DAT_0060b090 = 0x80000;
           _DAT_0060b060 = 0x80000;
           _DAT_0060b030 = 0xf80000;
-          fVar9 = (float10)this_ptr->animation_time;
+          SStack_170.base.type = 0x4a6515;
           DAT_0060b070 = DAT_0060b040;
           _DAT_0060b0a0 = DAT_0060b040;
           _DAT_0060b0d0 = DAT_0060b040;
-          round();
-          fStack_18 = (float)(int)ROUND(fVar9);
+          dVar9 = round((double)this_ptr->animation_time);
+          fStack_18 = (float)(int)ROUND(dVar9);
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                     (DAT_005f2afc,
                      (SMRGLTextureBasic *)
@@ -217,11 +216,13 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
     if ((this_ptr->which_flame == FLAME_TYPE_CANDLE) &&
        (fStack_24 = (this_ptr->flame_size).y * (float)_DAT_005c0be4, this_ptr->is_visible != 0)) {
-      engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
-      CStack_30.x = fStack_6c;
-      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) = aiStack_68[(uint)bVar8 * -2];
-      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           aiStack_68[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+      engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
+                (DAT_005f2afc,&CStack_6c);
+      CStack_30.x = CStack_6c.x;
+      *(uint *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_6c + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       CStack_d8.y = (this_ptr->flame_size).y * (float)_DAT_005c0bec;
       CStack_d8.x = 0.0;
       CStack_d8.z = 0.0;

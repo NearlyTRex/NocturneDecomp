@@ -52,7 +52,7 @@ section .text
     PUSH 0x41200000                     ; 004c692d
     PUSH 0x40800000                     ; 004c6932
     CALL crt_math.c_round_FUN_005a3120  ; 004c6937
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0xd058]      ; 004c693c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004c6942
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [EBX + 0xd074],0x2    ; 004c6976
     PUSH 0x3                            ; 004c6980
     CALL crt_math.c_round_FUN_005a3120  ; 004c6982
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     PUSH 0x1                            ; 004c6987
     FISTP dword ptr [EBX + 0xd05c]      ; 004c6989
     CALL core_actor.cpp_getRandomInt_FUN_0040cea0 ; 004c698f

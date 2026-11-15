@@ -38,7 +38,7 @@ section .text
         ;   Label: LAB_00581961
     FMUL double ptr [0x005d7e93]        ; 00581965 | DAT_005d7e93
     CALL crt_math.c_round_FUN_005a3120  ; 0058196b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00581970
     MOV EAX,dword ptr [ESP]             ; 00581973
     PUSH EAX                            ; 00581976

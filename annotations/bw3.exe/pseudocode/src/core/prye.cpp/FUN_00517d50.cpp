@@ -1,6 +1,6 @@
 // Name: core_prye.cpp_FUN_00517d50
 // Address: 00517d50
-// Address Range: [[00517d50, 00517d6b] [00517d74, 00517d78] [00517db2, 00517db9]]
+// Address Range: [[00517d50, 00517db9]]
 // Convention: unknown
 // Signature: undefined4 core_prye_cpp_FUN_00517d50(CDemonActor *param_1)
 

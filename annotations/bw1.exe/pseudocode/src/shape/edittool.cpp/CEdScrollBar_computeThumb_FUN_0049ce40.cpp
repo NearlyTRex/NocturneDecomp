@@ -24,7 +24,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_0049ce40(CEdScroll
   if (iVar3 < 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x12cb;
-    core_main_c_FUN_005030e0("CEdScrollBar::computeThumb - invalid dimensions");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CEdScrollBar::computeThumb - invalid dimensions");
   }
   iVar1 = (this_ptr->page_size * iVar3) / this_ptr->item_count;
   if (this_ptr->orientation == 0) {

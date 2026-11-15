@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0043b7d0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
 ;   engine_drender.cpp_popViewport_FUN_0046b740
 ;
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5cf333                       ; 0044a3b4 | = "CDemonLight::endScene - Scene not open"
     MOV dword ptr [0x01d046a0],ECX      ; 0044a3b9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0044a3bf | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044a3c5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a3c5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a3ca
     JMP 0x0044a2ec                      ; 0044a3cd
         ;   XREF to: 0044a2ec (UNCONDITIONAL_JUMP)  ; LAB_0044a2ec

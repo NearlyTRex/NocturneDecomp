@@ -1,40 +1,38 @@
 // Name: core_xform.cpp_invertAndGetTranslation_FUN_00584490
 // Address: 00584490
 // Address Range: [[00584490, 005844d6]]
-// Convention: unknown
-// Signature: void core_xform_cpp_invertAndGetTranslation_FUN_00584490(undefined4 param_1)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_00584490(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
-void core_xform_cpp_invertAndGetTranslation_FUN_00584490(uint param_1)
+CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_00584490(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 
 {
   int iVar1;
-  uint *unaff_ESI;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
+  CMatrix3x4f *pCVar2;
+  CMatrix3x4f *pCVar3;
+  uint *puVar4;
+  byte bVar5;
   uint auStackY_ffc [993];
-  uint auStack_74 [12];
-  uint auStack_44 [12];
-  uint uStack_14;
-  uint auStack_10 [2];
+  CMatrix3x4f CStack_74;
+  CMatrix3x4f CStack_44;
+  CVector3f CStack_14;
   
-  bVar4 = 0;
-  core_xform_cpp_inverse_FUN_00584560(param_1);
-  puVar2 = auStack_44;
-  puVar3 = auStack_74;
+  bVar5 = 0;
+  core_xform_cpp_inverse_FUN_00584560(matrix_in,&CStack_44);
+  pCVar2 = &CStack_44;
+  pCVar3 = &CStack_74;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *(float *)pCVar3 = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_00584450(auStack_74);
-  *unaff_ESI = uStack_14;
-  unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)((int)auStack_10 + (uint)bVar4 * 0xfffffff8);
-  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       auStack_10[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 1];
-  return;
+  core_xform_cpp_getTranslation_FUN_00584450(&CStack_74,&CStack_14);
+  puVar4 = (uint *)((int)vector_out + (uint)bVar5 * -8 + 4);
+  vector_out->x = CStack_14.x;
+  *puVar4 = *(uint *)((int)&CStack_14 + (uint)bVar5 * -8 + 4);
+  puVar4[(uint)bVar5 * -2 + 1] =
+       *(uint *)((int)&CStack_14 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  return vector_out;
 }

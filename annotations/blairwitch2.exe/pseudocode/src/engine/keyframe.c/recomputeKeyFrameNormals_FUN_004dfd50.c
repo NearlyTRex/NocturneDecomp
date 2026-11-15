@@ -35,12 +35,12 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004dfd50(SMRGLPrimit
   if (vertex_data == (CVector3i *)0x0) {
     _DAT_01d046a0 = "..\\engine\\keyframe.c";
     _DAT_01d046a4 = 0x1f5;
-    core_main_c_FUN_004e4500("recomputeKeyFrameNormals: Cannot find vptr");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
     _DAT_01d046a0 = "..\\engine\\keyframe.c";
     _DAT_01d046a4 = 0x1f6;
-    core_main_c_FUN_004e4500("recomputeKeyFrameNormals: Cannot find fptr");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {
     uVar2 = (primitive_list->base).base.type;

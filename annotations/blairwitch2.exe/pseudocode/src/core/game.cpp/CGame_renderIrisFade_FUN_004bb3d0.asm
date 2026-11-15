@@ -91,7 +91,7 @@ section .text
     MOV EAX,[0x006141bc]                ; 004bb454 | DAT_006141bc
     XOR ESI,ESI                         ; 004bb459
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bb45b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 004bb460
     TEST EAX,EAX                        ; 004bb464
     JLE 0x004bb40f                      ; 004bb466

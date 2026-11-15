@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 153,
+    "complexity_score": 132,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 8,
+    "pseudocode_lines": 62,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 231
   },
   "cross_references": [],
   "function": {
@@ -32,7 +32,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
@@ -187,23 +187,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_main_c_FUN_004e4500(\"Can't mount %s to check version\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(\"Invalid pod version for %s: %d\",in_stack_00000008,CStack_44c.pod_format_version);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e2403,in_stack_00000008);",
@@ -211,7 +195,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "p_Var2 = _fopen(in_stack_00000008,(char *)0x5e2404);",
@@ -219,7 +203,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "p_Var2 = _fopen(in_stack_00000008,(char *)0x5e28e1);",

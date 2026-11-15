@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5d1743                       ; 0046ca36 | = "CDR::texture - Too many captured text..."
     MOV dword ptr [0x01d046a0],EDI      ; 0046ca3b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0046ca41 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0046ca47
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046ca47
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0046ca4c
     MOV EDX,dword ptr [0x01ba5cc8]      ; 0046ca4f | DAT_01ba5cc8
         ;   Label: LAB_0046ca4f

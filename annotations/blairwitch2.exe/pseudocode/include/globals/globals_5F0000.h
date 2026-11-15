@@ -16,6 +16,8 @@
 #include "types/classes/CRobin_full_vtable.h"
 #include "types/classes/CSchnellGeist_full_vtable.h"
 #include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CUnionZombie_full_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
@@ -153,6 +155,13 @@ extern CSchnellGeist_full_vtable g_CSchnellGeistVTable;
 
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
 
 // CUnionZombie_full_vtable
 extern CUnionZombie_full_vtable g_CUnionZombieVTable;

@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b93e0
 ;   core_game.cpp_FUN_004b8e60
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 ;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60
 ;   core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5c7966                       ; 004eaef7 | = "Too many custom keys!"
     MOV [0x01d71de0],EAX                ; 004eaefc | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004eaf01 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eaf07
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eaf07
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eaf0c
     MOV EAX,[0x01d75c98]                ; 004eaf0f | DAT_01d75c98
         ;   Label: LAB_004eaf0f
@@ -139,8 +139,8 @@ section .text
     PUSH 0x5c7966                       ; 004eaf78 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eaf7d | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eaf83 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eaf88
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eaf88
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eaf8d
     MOV EAX,[0x01d75c98]                ; 004eaf90 | DAT_01d75c98
         ;   Label: LAB_004eaf90
@@ -182,8 +182,8 @@ section .text
     PUSH 0x5c7966                       ; 004eaff9 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eaffe | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb004 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb009
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb009
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb00e
     MOV EAX,[0x01d75c98]                ; 004eb011 | DAT_01d75c98
         ;   Label: LAB_004eb011
@@ -225,8 +225,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb07a | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb07f | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb085 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb08a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb08a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb08f
     MOV EAX,[0x01d75c98]                ; 004eb092 | DAT_01d75c98
         ;   Label: LAB_004eb092
@@ -268,8 +268,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb0fb | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb100 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb106 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb10b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb10b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb110
     MOV EAX,[0x01d75c98]                ; 004eb113 | DAT_01d75c98
         ;   Label: LAB_004eb113
@@ -311,8 +311,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb17c | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb181 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb187 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb18c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb18c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb191
     MOV EAX,[0x01d75c98]                ; 004eb194 | DAT_01d75c98
         ;   Label: LAB_004eb194
@@ -354,8 +354,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb1fd | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb202 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb208 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb20d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb20d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb212
     MOV EAX,[0x01d75c98]                ; 004eb215 | DAT_01d75c98
         ;   Label: LAB_004eb215
@@ -397,8 +397,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb27e | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb283 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb289 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb28e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb28e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb293
     MOV EAX,[0x01d75c98]                ; 004eb296 | DAT_01d75c98
         ;   Label: LAB_004eb296
@@ -440,8 +440,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb2ff | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb304 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb30a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb30f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb30f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb314
     MOV EAX,[0x01d75c98]                ; 004eb317 | DAT_01d75c98
         ;   Label: LAB_004eb317
@@ -483,8 +483,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb380 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb385 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb38b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb390
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb390
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb395
     MOV EAX,[0x01d75c98]                ; 004eb398 | DAT_01d75c98
         ;   Label: LAB_004eb398
@@ -526,8 +526,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb401 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb406 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb40c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb411
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb411
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb416
     MOV EAX,[0x01d75c98]                ; 004eb419 | DAT_01d75c98
         ;   Label: LAB_004eb419
@@ -569,8 +569,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb482 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb487 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb48d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb492
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb492
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb497
     MOV EAX,[0x01d75c98]                ; 004eb49a | DAT_01d75c98
         ;   Label: LAB_004eb49a
@@ -616,8 +616,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb50e | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb513 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb519 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb51e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb51e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb523
     MOV EAX,[0x01d75c98]                ; 004eb526 | DAT_01d75c98
         ;   Label: LAB_004eb526
@@ -657,8 +657,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb588 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb58d | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb593 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb598
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb598
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb59d
     MOV EAX,[0x01d75c98]                ; 004eb5a0 | DAT_01d75c98
         ;   Label: LAB_004eb5a0
@@ -700,8 +700,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb609 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb60e | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb614 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb619
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb619
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb61e
     MOV EAX,[0x01d75c98]                ; 004eb621 | DAT_01d75c98
         ;   Label: LAB_004eb621
@@ -743,8 +743,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb68a | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb68f | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb695 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb69a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb69a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb69f
     MOV EAX,[0x01d75c98]                ; 004eb6a2 | DAT_01d75c98
         ;   Label: LAB_004eb6a2
@@ -786,8 +786,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb70b | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb710 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb716 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb71b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb71b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb720
     MOV EAX,[0x01d75c98]                ; 004eb723 | DAT_01d75c98
         ;   Label: LAB_004eb723
@@ -829,8 +829,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb78c | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb791 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb797 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb79c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb79c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb7a1
     MOV EAX,[0x01d75c98]                ; 004eb7a4 | DAT_01d75c98
         ;   Label: LAB_004eb7a4
@@ -872,8 +872,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb80d | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb812 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb818 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb81d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb81d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb822
     MOV EAX,[0x01d75c98]                ; 004eb825 | DAT_01d75c98
         ;   Label: LAB_004eb825
@@ -915,8 +915,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb891 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb896 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb89c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb8a1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb8a1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb8a6
     MOV EAX,[0x01d75c98]                ; 004eb8a9 | DAT_01d75c98
         ;   Label: LAB_004eb8a9
@@ -958,8 +958,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb915 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb91a | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb920 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb925
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb925
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb92a
     MOV EAX,[0x01d75c98]                ; 004eb92d | DAT_01d75c98
         ;   Label: LAB_004eb92d
@@ -1001,8 +1001,8 @@ section .text
     PUSH 0x5c7966                       ; 004eb999 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eb99e | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eb9a4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eb9a9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eb9a9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eb9ae
     MOV EAX,[0x01d75c98]                ; 004eb9b1 | DAT_01d75c98
         ;   Label: LAB_004eb9b1
@@ -1044,8 +1044,8 @@ section .text
     PUSH 0x5c7966                       ; 004eba1d | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004eba22 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004eba28 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eba2d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eba2d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eba32
     MOV EAX,[0x01d75c98]                ; 004eba35 | DAT_01d75c98
         ;   Label: LAB_004eba35
@@ -1087,8 +1087,8 @@ section .text
     PUSH 0x5c7966                       ; 004ebaa1 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004ebaa6 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ebaac | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ebab1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ebab1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ebab6
     MOV EAX,[0x01d75c98]                ; 004ebab9 | DAT_01d75c98
         ;   Label: LAB_004ebab9
@@ -1130,8 +1130,8 @@ section .text
     PUSH 0x5c7966                       ; 004ebb25 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004ebb2a | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ebb30 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ebb35
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ebb35
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ebb3a
     MOV EAX,[0x01d75c98]                ; 004ebb3d | DAT_01d75c98
         ;   Label: LAB_004ebb3d
@@ -1173,8 +1173,8 @@ section .text
     PUSH 0x5c7966                       ; 004ebba9 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004ebbae | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ebbb4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ebbb9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ebbb9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ebbbe
     MOV EAX,[0x01d75c98]                ; 004ebbc1 | DAT_01d75c98
         ;   Label: LAB_004ebbc1
@@ -1216,8 +1216,8 @@ section .text
     PUSH 0x5c7966                       ; 004ebc2d | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004ebc32 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ebc38 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ebc3d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ebc3d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ebc42
     MOV EAX,[0x01d75c98]                ; 004ebc45 | DAT_01d75c98
         ;   Label: LAB_004ebc45
@@ -1259,8 +1259,8 @@ section .text
     PUSH 0x5c7966                       ; 004ebcb1 | = "Too many custom keys!"
     MOV dword ptr [0x01d71de0],EBP      ; 004ebcb6 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ebcbc | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ebcc1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ebcc1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ebcc6
     MOV EAX,[0x01d75c98]                ; 004ebcc9 | DAT_01d75c98
         ;   Label: LAB_004ebcc9

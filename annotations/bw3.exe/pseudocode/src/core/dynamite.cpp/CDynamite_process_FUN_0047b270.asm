@@ -15,7 +15,7 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_sound.cpp_CSound_killSound_FUN_00560b00
@@ -150,8 +150,8 @@ section .text
     PUSH EBX                            ; 0047b3e2
     LEA ESI,[ESP + 0xac]                ; 0047b3e3
     LEA EDI,[ESP + 0x94]                ; 0047b3ea
-    CALL core_actor.cpp_FUN_00408b80    ; 0047b3f1
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0047b3f1
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xac]                ; 0047b3f6
     LEA EAX,[ESP + 0x94]                ; 0047b3fd
     ADD ESP,0x8                         ; 0047b404

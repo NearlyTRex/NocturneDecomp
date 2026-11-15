@@ -11,10 +11,10 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer *this_ptr,float field_of_view)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = ((float10)_DAT_005bc533 / (float10)field_of_view) * (float10)_DAT_005bc53b;
-  round();
-  DAT_005fba44 = (int)ROUND(fVar1);
+  dVar1 = round
+                    ((double)(((float)_DAT_005bc533 / field_of_view) * (float)_DAT_005bc53b));
+  DAT_005fba44 = (int)ROUND(dVar1);
   return;
 }

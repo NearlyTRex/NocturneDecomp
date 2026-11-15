@@ -20,7 +20,7 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     PUSH EBX                            ; 004d2da9
     LEA ESI,[ESP + 0x78]                ; 004d2daa
     LEA EDI,[ESP + 0x84]                ; 004d2dae
-    CALL core_actor.cpp_FUN_00408b80    ; 004d2db5
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004d2db5
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x78]                ; 004d2dba
     ADD ESP,0x8                         ; 004d2dbe
     MOVSD ES:EDI,ESI                    ; 004d2dc1

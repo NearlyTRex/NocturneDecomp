@@ -420,7 +420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_01fc9cd8",
       "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_01fc9cd8 + iVar5);",
@@ -431,7 +431,7 @@
       "line": 57,
       "match": "DAT_00622034",
       "severity": "mild",
-      "text": "(&DAT_00622034)[vertex_index * 0xc] = iVar5 << 8;",
+      "text": "(&DAT_00622034)[vertex_index * 0xc] = (int)ROUND(dVar6) << 8;",
       "type": "undefined_data"
     },
     {
@@ -439,7 +439,7 @@
       "line": 59,
       "match": "DAT_00622038",
       "severity": "mild",
-      "text": "(&DAT_00622038)[vertex_index * 0xc] = iVar5 << 8;",
+      "text": "(&DAT_00622038)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;",
       "type": "undefined_data"
     },
     {
@@ -447,12 +447,12 @@
       "line": 60,
       "match": "DAT_0062203c",
       "severity": "mild",
-      "text": "(&DAT_0062203c)[vertex_index * 0xc] = (int)ROUND(fVar6) << 8;",
+      "text": "(&DAT_0062203c)[vertex_index * 0xc] = (int)ROUND(dVar6) << 8;",
       "type": "undefined_data"
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 28,
+      "line": 29,
       "match": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + _D",
       "severity": "moderate",
       "text": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + _DAT_01caf5b4) ;",

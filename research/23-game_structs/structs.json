@@ -53385,6 +53385,24 @@
      "state": "laid",
      "rtti": null,
      "gaps": []
+    },
+    "bw1.exe": {
+     "size": 8,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 8,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 8,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
     }
    },
    "fields": [
@@ -53393,7 +53411,10 @@
      "type": "SEdge*",
      "offsets": {
       "nocedit.exe": 0,
-      "nocturne.exe": 0
+      "nocturne.exe": 0,
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
      }
     },
     {
@@ -53401,7 +53422,10 @@
      "type": "int",
      "offsets": {
       "nocedit.exe": 4,
-      "nocturne.exe": 4
+      "nocturne.exe": 4,
+      "bw1.exe": 4,
+      "blairwitch2.exe": 4,
+      "bw3.exe": 4
      }
     }
    ]
@@ -64753,6 +64777,118 @@
     }
    ]
   },
+  "SReverbPreset": {
+   "category": "/Nocturne/Struct/Game",
+   "builds": {
+    "nocedit.exe": {
+     "size": 16,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw1.exe": {
+     "size": 16,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 16,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 16,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "name",
+     "type": "char*",
+     "offsets": {
+      "nocedit.exe": 0,
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
+     }
+    },
+    {
+     "name": "reverb",
+     "type": "SReverbSettings",
+     "offsets": {
+      "nocedit.exe": 4,
+      "bw1.exe": 4,
+      "blairwitch2.exe": 4,
+      "bw3.exe": 4
+     }
+    }
+   ]
+  },
+  "SReverbSettings": {
+   "category": "/Nocturne/Struct/Game",
+   "builds": {
+    "nocedit.exe": {
+     "size": 12,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw1.exe": {
+     "size": 12,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "blairwitch2.exe": {
+     "size": 12,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    },
+    "bw3.exe": {
+     "size": 12,
+     "state": "laid",
+     "rtti": null,
+     "gaps": []
+    }
+   },
+   "fields": [
+    {
+     "name": "volume",
+     "type": "float",
+     "offsets": {
+      "nocedit.exe": 0,
+      "bw1.exe": 0,
+      "blairwitch2.exe": 0,
+      "bw3.exe": 0
+     }
+    },
+    {
+     "name": "decay_time",
+     "type": "float",
+     "offsets": {
+      "nocedit.exe": 4,
+      "bw1.exe": 4,
+      "blairwitch2.exe": 4,
+      "bw3.exe": 4
+     }
+    },
+    {
+     "name": "damping",
+     "type": "float",
+     "offsets": {
+      "nocedit.exe": 8,
+      "bw1.exe": 8,
+      "blairwitch2.exe": 8,
+      "bw3.exe": 8
+     }
+    }
+   ]
+  },
   "SRoom": {
    "category": "/Nocturne/Struct/Game",
    "builds": {
@@ -65861,12 +65997,6 @@
   "SSoundModeEntry": {
    "category": "/Nocturne/Struct/Game",
    "builds": {
-    "nocedit.exe": {
-     "size": 16,
-     "state": "laid",
-     "rtti": null,
-     "gaps": []
-    },
     "nocturne.exe": {
      "size": 16,
      "state": "laid",
@@ -65879,7 +66009,6 @@
      "name": "name",
      "type": "char*",
      "offsets": {
-      "nocedit.exe": 0,
       "nocturne.exe": 0
      }
     },
@@ -65887,7 +66016,6 @@
      "name": "listener_orient",
      "type": "CVector3f",
      "offsets": {
-      "nocedit.exe": 4,
       "nocturne.exe": 4
      }
     }

@@ -41,7 +41,7 @@
 ;   ... and 18 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -121,8 +121,8 @@ section .text
     PUSH 0x5d5eee                       ; 0056983d | = "CTextureCache::load - Can't get file ..."
     MOV dword ptr [0x01d71de0],EBP      ; 00569842 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00569848 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0056984d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056984d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00569852
     PUSH EBX                            ; 00569855
         ;   Label: LAB_00569855
@@ -243,8 +243,8 @@ section .text
     PUSH 0x5d5f46                       ; 00569991 | = "CTextureCache::load - Out of memory"
     MOV dword ptr [0x01d71de0],EDI      ; 00569996 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0056999c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005699a1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005699a1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005699a6
     CMP EBP,0x4000                      ; 005699a9
         ;   Label: LAB_005699a9
@@ -269,8 +269,8 @@ section .text
     MOV EDX,0x14a                       ; 005699f0
     PUSH EAX                            ; 005699f5
     MOV dword ptr [0x01d71de4],EDX      ; 005699f6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005699fc
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005699fc
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569a01
     MOV EAX,dword ptr [ESP + 0x1c4]     ; 00569a04
         ;   Label: LAB_00569a04
@@ -288,8 +288,8 @@ section .text
     PUSH 0x5d5fc7                       ; 00569a27 | = "CTextureCache::load - Out of memory"
     MOV dword ptr [0x01d71de0],EDI      ; 00569a2c | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00569a32 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569a37
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569a37
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569a3c
     TEST ESI,ESI                        ; 00569a3f
         ;   Label: LAB_00569a3f
@@ -308,8 +308,8 @@ section .text
     PUSH 0x5d6001                       ; 00569a5d | = "CTextureCache::load - Out of memory"
     MOV dword ptr [0x01d71de0],ECX      ; 00569a62 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00569a68 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569a6e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569a6e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569a73
     PUSH 0x1                            ; 00569a76
         ;   Label: LAB_00569a76
@@ -414,7 +414,7 @@ section .text
     FMUL ST4                            ; 00569bc0
     FADDP                               ; 00569bc2
     CALL crt_math.c_round_FUN_005a3120  ; 00569bc4
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1bc]       ; 00569bc9
     MOV AL,byte ptr [ESP + 0x1bc]       ; 00569bd0
     MOV byte ptr [ECX + EDX*0x1],AL     ; 00569bd7
@@ -451,8 +451,8 @@ section .text
     PUSH 0x5d5eb7                       ; 00569c2f | = "Texture name is too big : %s"
     MOV dword ptr [0x01d71de0],EDX      ; 00569c34 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00569c3a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569c40
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569c40
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00569c45
     JMP 0x005697cb                      ; 00569c48
         ;   XREF to: 005697cb (UNCONDITIONAL_JUMP)  ; LAB_005697cb
@@ -525,8 +525,8 @@ section .text
     PUSH 0x5d608e                       ; 00569d18 | = "CTextureCache::load - Out of memory"
     MOV dword ptr [0x01d71de0],ESI      ; 00569d1d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00569d23 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569d29
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569d29
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569d2e
     PUSH 0x1                            ; 00569d31
         ;   Label: LAB_00569d31
@@ -620,8 +620,8 @@ section .text
     MOV EDX,0x194                       ; 00569e37
     PUSH EAX                            ; 00569e3c
     MOV dword ptr [0x01d71de4],EDX      ; 00569e3d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569e43
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569e43
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569e48
     JMP 0x00569cf5                      ; 00569e4b
         ;   XREF to: 00569cf5 (UNCONDITIONAL_JUMP)  ; LAB_00569cf5

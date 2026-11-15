@@ -14,42 +14,38 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
   int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
   float local_14;
   int local_10;
   
   _DAT_01ed6808 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
-    iVar2 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0(this_ptr,"initSection");
-    if (-1 < iVar2) {
-      iVar3 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0
+    iVar1 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0(this_ptr,"initSection");
+    if (-1 < iVar1) {
+      iVar2 = core_script_cpp_CScript_findLabelIndex_FUN_005303b0
                         (this_ptr,"initSectionEnd");
-      if (iVar3 < 0) {
+      if (iVar2 < 0) {
         _DAT_01d71de0 = "..\\core\\script.cpp";
         _DAT_01d71de4 = 0x42b;
-        core_main_c_FUN_004e4330("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
       }
       local_10 = this_ptr->next_cmd;
       _DAT_01ed7014 = 0;
-      this_ptr->next_cmd = iVar2;
-      iVar2 = 0;
+      this_ptr->next_cmd = iVar1;
+      iVar1 = 0;
       while( true ) {
-        iVar1 = this_ptr->next_cmd;
         local_14 = 0.25;
-        iVar4 = core_script_cpp_CScript_step_FUN_00529a70(this_ptr,&local_14);
-        if (iVar4 < 0) {
+        iVar3 = core_script_cpp_CScript_step_FUN_00529a70(this_ptr,&local_14);
+        if (iVar3 < 0) {
           _DAT_01d71de0 = "..\\core\\script.cpp";
           _DAT_01d71de4 = 0x447;
-          core_main_c_FUN_004e4330
-                    ("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",this_ptr->parsed_lines[iVar1].line_number,
-                     this_ptr->parsed_lines[iVar1].text,&DAT_01ed6810);
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n");
         }
-        if (iVar3 == this_ptr->next_cmd) break;
-        iVar2 = iVar2 + 1;
-        if (10000 < iVar2) {
+        if (iVar2 == this_ptr->next_cmd) break;
+        iVar1 = iVar1 + 1;
+        if (10000 < iVar1) {
           _DAT_01d71de0 = "..\\core\\script.cpp";
           _DAT_01d71de4 = 0x459;
-          core_main_c_FUN_004e4330("Infinite loop detected in initSection.\n");
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Infinite loop detected in initSection.\n");
         }
       }
       if (_DAT_01ed7014 != 0) {

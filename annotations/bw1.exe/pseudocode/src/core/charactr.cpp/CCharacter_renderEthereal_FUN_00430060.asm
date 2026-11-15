@@ -72,7 +72,7 @@ section .text
     FILD dword ptr [0x007c6178]         ; 004300b6 | DAT_007c6178
     FADDP                               ; 004300bc
     CALL crt_math.c_round_FUN_005c03a0  ; 004300be
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [0x007c6178]        ; 004300c3 | DAT_007c6178
     PUSH EDI                            ; 004300c9
         ;   Label: LAB_004300c9

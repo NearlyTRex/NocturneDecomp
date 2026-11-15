@@ -22,7 +22,7 @@
 ;   undefined4 DAT_02c81040
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00575990
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5f435c                       ; 00575a09
     MOV dword ptr [0x01d1d400],EDX      ; 00575a0e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00575a14 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575a1a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575a1a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575a1f
     JMP 0x005759bd                      ; 00575a22
         ;   XREF to: 005759bd (UNCONDITIONAL_JUMP)  ; LAB_005759bd

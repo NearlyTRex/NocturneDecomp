@@ -17,7 +17,7 @@
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004fa6d0 at 004fa7d1
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004fa490 at 004fa6b3
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 at 005347c0
-;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535c3e
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 005367a8
 ;   ... and 9 more
 ;
 ; Referenced Globals:

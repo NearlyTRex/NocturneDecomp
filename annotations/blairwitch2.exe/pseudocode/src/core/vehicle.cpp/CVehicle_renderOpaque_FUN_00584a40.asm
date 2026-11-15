@@ -13,9 +13,9 @@
 ;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_actor.cpp_FUN_00408d70
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041b700
 ;   core_box.cpp_FUN_0041a840
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
@@ -202,8 +202,8 @@ section .text
     PUSH ESI                            ; 00584c93
     LEA ESI,[ESP + 0xa4]                ; 00584c94
     MOV dword ptr [ESP + 0x9c],EBP      ; 00584c9b
-    CALL core_actor.cpp_FUN_00408d70    ; 00584ca2
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00584ca2
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00584ca7
     PUSH 0x41200000                     ; 00584caa
     MOV EAX,dword ptr [ESP + 0xc8]      ; 00584caf
@@ -226,8 +226,8 @@ section .text
     PUSH EDI                            ; 00584cef
     LEA ESI,[ESP + 0x74]                ; 00584cf0
     LEA EBX,[ESP + 0x68]                ; 00584cf4
-    CALL core_actor.cpp_FUN_00408d70    ; 00584cf8
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00584cf8
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0x68]                ; 00584cfd
     LEA ESI,[ESP + 0x74]                ; 00584d01
     ADD ESP,0x8                         ; 00584d05

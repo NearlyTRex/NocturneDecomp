@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_004340b0
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_00434610
@@ -677,8 +677,8 @@ section .text
     PUSH EBX                            ; 00590dcb
     LEA ESI,[ESP + 0x10]                ; 00590dcc
     LEA EDI,[ESP + 0x28]                ; 00590dd0
-    CALL core_stranger.cpp_FUN_005906e0 ; 00590dd4
-        ;   XREF to: 005906e0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005906e0()
+    CALL core_stranger.cpp_CStranger_getThrowDirection_FUN_005906e0 ; 00590dd4
+        ;   XREF to: 005906e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_getThrowDirection_FUN_005906e0(CStranger * this_ptr, CVector3f * out_direction)
     LEA ESI,[ESP + 0x10]                ; 00590dd9
     ADD ESP,0x4                         ; 00590ddd
     MOVSD ES:EDI,ESI                    ; 00590de0
@@ -701,8 +701,8 @@ section .text
     PUSH EBX                            ; 00590e0a
     LEA ESI,[ESP + 0x20]                ; 00590e0b
     LEA EDI,[ESP + 0x8]                 ; 00590e0f
-    CALL core_actor.cpp_FUN_00408ac0    ; 00590e13
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00590e13
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00590e18
     LEA ESI,[ESP + 0x18]                ; 00590e1b
     MOV EDX,dword ptr [ESP + 0x48]      ; 00590e1f

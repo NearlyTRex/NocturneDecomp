@@ -47,7 +47,7 @@ void __cdecl CGlass::renderBackground(CGlass *this_ptr,int layer_flag);
 
 // Original: core_glass.cpp_CGlass_getBoundingBox_FUN_004e2170
 // Address: 004e2170
-CBoundingBox3D * __cdecl CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_glass.cpp_CGlass_archive_FUN_004e21f0
 // Address: 004e21f0

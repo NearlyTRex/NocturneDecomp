@@ -48,7 +48,7 @@ LAB_00535c13:
   if (pcVar6 == (char *)0x0) {
     _DAT_01d1d400 = "..\\engine\\pcx.c";
     _DAT_01d1d404 = 0x98;
-    core_main_c_FUN_005030e0("saveScreenRaw32 - No ext found");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("saveScreenRaw32 - No ext found");
   }
   pcVar4 = ".RAW";
   do {
@@ -64,7 +64,7 @@ LAB_00535c13:
   if (file == (_FILE *)0x0) {
     _DAT_01d1d400 = "..\\engine\\pcx.c";
     _DAT_01d1d404 = 0x9e;
-    core_main_c_FUN_005030e0("saveScreenRaw32 - Unable to open output");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("saveScreenRaw32 - Unable to open output");
   }
   local_14 = 0;
   if (0 < DAT_0061b49c) {

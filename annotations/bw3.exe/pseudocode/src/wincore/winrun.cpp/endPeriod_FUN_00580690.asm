@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e4330 at 004e43ae
 ;   core_main.c_FUN_004e4c70 at 004e4cc8
+;   core_main.c_displayErrorAndQuit_FUN_004e4330 at 004e43ae
 ;
 ; Referenced Globals:
 ;   void* PTR_timeEndPeriod_005b3454 = 001b3924

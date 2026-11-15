@@ -6,24 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1)
 
 {
   int iVar1;
+  CVector3f *unaff_ESI;
   int *piVar2;
-  uint *puVar3;
+  float *pfVar3;
   byte bVar4;
   float afStackY_1020 [1001];
   CDemonRenderer *this_ptr;
   CVector3f *euler_angles;
   CVector3f *translation;
+  CMatrix3x4f local_68;
   float local_38;
+  float afStack_34 [2];
   CVector3f local_2c;
   CVector3f local_20;
-  float local_14;
-  uint auStack_10 [2];
+  CVector3f local_14;
   
   bVar4 = 0;
   if (param_1[0x62].previous_transform_state.orientation.vec.z == 0.0) {
@@ -32,26 +32,26 @@ void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1)
   piVar2 = (int *)(param_1[6].footstep_sound_code +
                   *(int *)((int)&param_1[0x62].previous_transform_state.orientation + 4) * 0x30 +
                   -0x24);
-  puVar3 = (uint *)&stack0xffffff98;
+  pfVar3 = (float *)&local_68;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *piVar2;
+    *pfVar3 = (float)*piVar2;
     piVar2 = piVar2 + 1;
-    puVar3 = puVar3 + 1;
+    pfVar3 = pfVar3 + 1;
   }
-  core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&stack0xffffff98);
+  core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_68,unaff_ESI);
   local_2c.x = local_38;
-  *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4) =
-       *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * 0xfffffffe * 4);
-  *(uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       auStack_10[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8];
-  core_xform_cpp_FUN_00592720(&stack0xffffff98);
+  *(float *)((int)&local_2c + (uint)bVar4 * -8 + 4) = afStack_34[(uint)bVar4 * -2];
+  *(float *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  core_xform_cpp_getTranslation_FUN_00592720(&local_68,&local_14);
   translation = &local_20;
   euler_angles = (CVector3f *)&DAT_0265370c;
-  local_20.x = local_14;
-  *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) = auStack_10[(uint)bVar4 * -2];
+  local_20.x = local_14.x;
+  *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_14 + (uint)bVar4 * -8 + 4);
   this_ptr = DAT_0060b280;
   *(uint *)((int)&local_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       auStack_10[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+       *(uint *)((int)&local_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (this_ptr,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350

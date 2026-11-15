@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5d3642                       ; 00555971 | = "SampleInfo::cvtPlaybackPos - Invalid ..."
     MOV [0x01d71de0],EAX                ; 00555976 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0055597b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555981
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555981
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00555986
     MOV EAX,dword ptr [EBP + 0x18]      ; 00555989
         ;   Label: LAB_00555989
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5d3508                       ; 005559d4 | = "SampleInfo::cvtPlaybackPos - can't us..."
     MOV dword ptr [0x01d71de0],ECX      ; 005559d9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 005559df | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005559e5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005559e5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005559ea
     FILD dword ptr [EBX + 0x110]        ; 005559ed
     FMUL double ptr [EBP + 0x18]        ; 005559f3
@@ -127,8 +127,8 @@ section .text
     PUSH 0x5d357d                       ; 00555a0f | = "SampleInfo::cvtPlaybackPos - Invalid ..."
     MOV [0x01d71de0],EAX                ; 00555a14 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00555a19 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555a1f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555a1f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00555a24
     JMP 0x0055595a                      ; 00555a27
         ;   XREF to: 0055595a (UNCONDITIONAL_JUMP)  ; LAB_0055595a
@@ -154,8 +154,8 @@ section .text
     PUSH 0x5d35cd                       ; 00555a62 | = "SampleInfo::cvtPlaybackPos - can't us..."
     MOV dword ptr [0x01d71de0],ESI      ; 00555a67 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00555a6d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555a73
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555a73
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555a78
     FILD dword ptr [EBX + 0x110]        ; 00555a7b
     FDIVR double ptr [EBP + 0x18]       ; 00555a81

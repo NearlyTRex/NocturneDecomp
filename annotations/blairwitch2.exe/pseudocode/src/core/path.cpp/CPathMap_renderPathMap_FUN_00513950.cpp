@@ -11,44 +11,41 @@
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap *this_ptr,int depth,int red,int green,int fog)
 
 {
-  CDemonRenderer *this_ptr_00;
-  int iVar1;
-  uint *extraout_EDX;
-  int *extraout_EDX_00;
-  int *extraout_EDX_01;
-  byte bVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
-  ulonglong uVar8;
-  int aiStackY_105c [3];
-  float afStackY_1050 [3];
-  int aiStackY_1044 [6];
-  float afStackY_102c [1001];
-  CVector3i *pCVar9;
+  float fVar1;
+  float fVar2;
+  double dVar3;
+  double dVar4;
+  double dVar5;
+  CDemonRenderer *pCVar6;
+  int iVar7;
+  byte bVar8;
+  double dVar9;
+  double dVar10;
+  float afStackY_105c [1007];
+  CVector3i *pCVar11;
+  uint uStack_8c;
   CVector3f CStack_80;
-  int iStack_74;
-  int aiStack_70 [2];
-  float fStack_68;
-  float afStack_64 [2];
-  int iStack_5c;
-  int aiStack_58 [2];
-  CVector3i CStack_50;
+  float fStack_74;
+  float fStack_70;
+  float afStack_6c [2];
+  CVector3i CStack_64;
+  float fStack_58;
+  int iStack_54;
+  int iStack_50;
   float fStack_44;
-  float afStack_40 [4];
+  float afStack_40 [2];
+  int iStack_38;
   int iStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
+  float fStack_2c;
+  float fStack_28;
+  float fStack_24;
   int iStack_20;
   int iStack_1c;
-  int iStack_18;
+  float fStack_18;
   
-  bVar2 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if (iVar1 != 0) {
+  bVar8 = 0;
+  iVar7 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  if (iVar7 != 0) {
     return;
   }
   CStack_80.x = (float)(this_ptr->grid_origin).x * g_CDemonRaytraceInstance.adjusted_size.x +
@@ -56,8 +53,10 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap *this_pt
   CStack_80.y = 0.0;
   CStack_80.z = (float)(this_ptr->grid_origin).z * g_CDemonRaytraceInstance.adjusted_size.z +
                 g_CDemonRaytraceInstance.bbox_min.z;
+  uStack_8c = 0x5139b3;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (DAT_0060b280,&CStack_80);
+  uStack_8c = 0x5139cc;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (DAT_0060b280,(SMRGLTextureBasic *)0x61b2d0);
   _DAT_01e613f4 = 4;
@@ -77,95 +76,97 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap *this_pt
   _DAT_01e61430 = 0x800000;
   _DAT_01e61434 = 0x800000;
   _DAT_01e6142c = 3;
+  uStack_8c = 0x513a53;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,0);
-  iStack_28 = depth << 8;
-  iStack_24 = red << 8;
+  fStack_28 = (float)(depth << 8);
+  fStack_24 = (float)(red << 8);
   iStack_20 = green << 8;
-  iStack_74 = 0;
+  fStack_74 = 0.0;
   iStack_30 = 0;
-  iStack_2c = fog << 8;
+  fStack_2c = (float)(fog << 8);
   do {
-    aiStack_70[1] = 0;
+    afStack_6c[0] = 0.0;
     iStack_1c = (int)(this_ptr->height_cache + -1) + 0x160 + iStack_30;
     do {
+      pCVar6 = DAT_0060b280;
+      dVar10 = _DAT_005e1841;
       if ((-1000 < *(int *)(iStack_1c + 0x9c70)) && (*(int *)(iStack_1c + 0x9c70) < 1000)) {
-        fVar3 = (float10)_DAT_005e1841;
-        fVar4 = (float10)g_CDemonRaytraceInstance.bbox_min.y * fVar3;
-        aiStack_70[0] = *(int *)(iStack_1c + 0x30);
+        dVar3 = (double)g_CDemonRaytraceInstance.bbox_min.y * _DAT_005e1841;
+        fStack_70 = *(float *)(iStack_1c + 0x30);
         fStack_44 = g_CDemonRaytraceInstance.adjusted_size.x * _DAT_005e1839;
-        iStack_5c = iStack_74;
-        aiStack_58[(uint)bVar2 * -2] = aiStack_70[(uint)bVar2 * -2];
-        aiStack_58[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-             aiStack_70[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+        CStack_64.z = (int)fStack_74;
+        (&fStack_58)[(uint)bVar8 * -2] = (&fStack_70)[(uint)bVar8 * -2];
+        (&fStack_58)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+             afStack_6c[(uint)bVar8 * -2 + (uint)bVar8 * -2];
         afStack_40[0] = g_CDemonRaytraceInstance.adjusted_size.y * _DAT_005e1839;
         afStack_40[1] = g_CDemonRaytraceInstance.adjusted_size.z * _DAT_005e1839;
-        iStack_18 = iStack_5c;
-        fStack_68 = fStack_44;
-        afStack_64[(uint)bVar2 * -2] = afStack_40[(uint)bVar2 * -2];
-        afStack_64[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-             afStack_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-        fVar5 = (float10)iStack_18 * (float10)fStack_68;
-        fVar6 = (float10)aiStack_58[0] * (float10)afStack_64[0];
-        iStack_18 = aiStack_58[1];
-        fVar7 = (float10)aiStack_58[1] * (float10)afStack_64[1];
-        round();
-        CStack_50.x = (int)ROUND(fVar5);
-        pCVar9 = &CStack_50;
-        fVar6 = fVar6 + fVar4;
-        round();
-        fVar6 = fVar6 + fVar3;
-        CStack_50.z = (int)ROUND(fVar7);
-        round();
-        CStack_50.y = (int)ROUND(fVar6);
+        fStack_18 = (float)CStack_64.z;
+        afStack_6c[1] = fStack_44;
+        *(float *)((int)&CStack_64 + (uint)bVar8 * -8) = afStack_40[(uint)bVar8 * -2];
+        (&fStack_58)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -2] =
+             afStack_40[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+        fVar1 = (float)(int)fStack_18;
+        dVar5 = (double)(int)fStack_58;
+        dVar4 = (double)(float)CStack_64.x;
+        fStack_18 = (float)iStack_54;
+        fVar2 = (float)iStack_54 * (float)CStack_64.y;
+        dVar9 = round((double)(fVar1 * afStack_6c[1]));
+        iStack_54 = (int)ROUND(dVar9);
+        uStack_8c = 0x513baa;
+        dVar9 = round((double)fVar2);
+        iStack_50 = (int)ROUND(dVar9);
+        pCVar11 = (CVector3i *)0x513bb7;
+        dVar10 = round(dVar5 * dVar4 + dVar3 + dVar10);
+        fStack_58 = (float)(int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                  ((SProjectedVertex *)*extraout_EDX,pCVar9);
-        iStack_18 = CStack_50.x;
-        pCVar9 = &CStack_50;
-        fVar3 = (float10)CStack_50.x + (float10)fStack_68;
-        round();
-        CStack_50.x = (int)ROUND(fVar3);
+                  (&pCVar6->vertex_buffer_ptr->projected_vertex,pCVar11);
+        pCVar6 = DAT_0060b280;
+        fStack_24 = (float)CStack_64.z;
+        pCVar11 = (CVector3i *)0x513bea;
+        dVar10 = round((double)((float)CStack_64.z + fStack_74));
+        CStack_64.y = (int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                  ((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar9);
-        iStack_18 = CStack_50.z;
-        pCVar9 = &CStack_50;
-        fVar3 = (float10)CStack_50.z + (float10)afStack_64[1];
-        round();
-        CStack_50.z = (int)ROUND(fVar3);
+                  (&pCVar6->vertex_buffer_ptr[1].projected_vertex,pCVar11);
+        pCVar6 = DAT_0060b280;
+        fStack_28 = fStack_58;
+        pCVar11 = (CVector3i *)0x513c20;
+        dVar10 = round((double)((float)(int)fStack_58 + fStack_70));
+        CStack_64.z = (int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                  ((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar9);
-        iStack_18 = CStack_50.x;
-        fVar3 = (float10)CStack_50.x - (float10)fStack_68;
-        uVar8 = round();
-        CStack_50.x = (int)ROUND(fVar3);
+                  (&pCVar6->vertex_buffer_ptr[2].projected_vertex,pCVar11);
+        pCVar6 = DAT_0060b280;
+        fStack_2c = (float)CStack_64.x;
+        dVar10 = round((double)((float)CStack_64.x - CStack_80.y));
+        afStack_6c[1] = (float)(int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0055d723
-                  ((SProjectedVertex *)(*(int *)uVar8 + 0x90),
-                   (CVector3i *)((ulonglong)uVar8 >> 0x20));
-        this_ptr_00 = DAT_0060b280;
-        DAT_0060b280->vertex_buffer_ptr->r = iStack_28;
-        this_ptr_00->vertex_buffer_ptr->g = iStack_24;
-        this_ptr_00->vertex_buffer_ptr->b = iStack_20;
-        this_ptr_00->vertex_buffer_ptr->a = iStack_2c;
-        this_ptr_00->vertex_buffer_ptr[1].r = iStack_28;
-        this_ptr_00->vertex_buffer_ptr[1].g = iStack_24;
-        this_ptr_00->vertex_buffer_ptr[1].b = iStack_20;
-        this_ptr_00->vertex_buffer_ptr[1].a = iStack_2c;
-        this_ptr_00->vertex_buffer_ptr[2].r = iStack_28;
-        this_ptr_00->vertex_buffer_ptr[2].g = iStack_24;
-        this_ptr_00->vertex_buffer_ptr[2].b = iStack_20;
-        this_ptr_00->vertex_buffer_ptr[2].a = iStack_2c;
-        this_ptr_00->vertex_buffer_ptr[3].r = iStack_28;
-        this_ptr_00->vertex_buffer_ptr[3].g = iStack_24;
-        this_ptr_00->vertex_buffer_ptr[3].b = iStack_20;
-        this_ptr_00->vertex_buffer_ptr[3].a = iStack_2c;
+                  (&pCVar6->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
+        pCVar6 = DAT_0060b280;
+        DAT_0060b280->vertex_buffer_ptr->r = (int)afStack_40[0];
+        pCVar6->vertex_buffer_ptr->g = (int)afStack_40[1];
+        pCVar6->vertex_buffer_ptr->b = iStack_38;
+        pCVar6->vertex_buffer_ptr->a = (int)fStack_44;
+        pCVar6->vertex_buffer_ptr[1].r = (int)afStack_40[0];
+        pCVar6->vertex_buffer_ptr[1].g = (int)afStack_40[1];
+        pCVar6->vertex_buffer_ptr[1].b = iStack_38;
+        pCVar6->vertex_buffer_ptr[1].a = (int)fStack_44;
+        pCVar6->vertex_buffer_ptr[2].r = (int)afStack_40[0];
+        pCVar6->vertex_buffer_ptr[2].g = (int)afStack_40[1];
+        pCVar6->vertex_buffer_ptr[2].b = iStack_38;
+        pCVar6->vertex_buffer_ptr[2].a = (int)fStack_44;
+        pCVar6->vertex_buffer_ptr[3].r = (int)afStack_40[0];
+        pCVar6->vertex_buffer_ptr[3].g = (int)afStack_40[1];
+        pCVar6->vertex_buffer_ptr[3].b = iStack_38;
+        pCVar6->vertex_buffer_ptr[3].a = (int)fStack_44;
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046aa00
-                  (this_ptr_00,(SMRGLPrimitivePoly *)0x1e613f0);
+                  (pCVar6,(SMRGLPrimitivePoly *)0x1e613f0);
       }
-      aiStack_70[1] = aiStack_70[1] + 1;
+      afStack_6c[0] = (float)((int)afStack_6c[0] + 1);
       iStack_1c = iStack_1c + 400;
-    } while (aiStack_70[1] < 100);
-    iStack_74 = iStack_74 + 1;
+    } while ((int)afStack_6c[0] < 100);
+    fStack_74 = (float)((int)fStack_74 + 1);
     iStack_30 = iStack_30 + 4;
-  } while (iStack_74 < 100);
+  } while ((int)fStack_74 < 100);
+  uStack_8c = 0x513af0;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);
   return;
 }

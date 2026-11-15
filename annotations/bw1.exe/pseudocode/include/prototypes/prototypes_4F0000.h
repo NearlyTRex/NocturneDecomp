@@ -171,7 +171,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004fc510(CKeyActor *thi
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004fc570(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004fc590(CKeyActor *this_ptr,float delta_time);
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004fc630(CKeyActor *this_ptr);
-CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004fc6b0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004fc6b0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004fc6f0(CKeyActor *this_ptr);
 ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004fc760(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004fc770(CKeyActor *this_ptr,CDemonActor *picker);
@@ -230,8 +230,8 @@ void __cdecl core_lever_cpp_CLever_process_FUN_004ff190(CLever *this_ptr,float d
 void core_lever_cpp_FUN_004ff3f0(int param_1,float param_2,int param_3);
 void __cdecl core_lever_cpp_CLever_activate_FUN_004ff570(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_004ff5d0(CLever *this_ptr);
-CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_004ff670(CLever *this_ptr,CBoundingBox3D *out_box);
-void core_lever_cpp_FUN_004ff6b0(int param_1);
+CBoundingBox3D * __stack_esi core_lever_cpp_CLever_getBoundingBox_FUN_004ff670(CLever *this_ptr,CBoundingBox3D *out_box);
+CVector3f * __stack_esi core_lever_cpp_CLever_getHandlePosition_FUN_004ff6b0(CLever *this_ptr,CVector3f *out_position);
 void __cdecl core_lever_cpp_CLever_archive_FUN_004ff770(CLever *this_ptr);
 ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004ff950(CLever *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004ff970(CLever *this_ptr,CVector3f *world_position);

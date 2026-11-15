@@ -22,7 +22,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_F
   if (6 < local_18) {
     _DAT_01d046a0 = "..\\core\\script.cpp";
     _DAT_01d046a4 = 0x124e;
-    core_main_c_FUN_004e4500("CScript::loadState - file version is newer than .EXE");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,&DAT_005e508a);

@@ -28,7 +28,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_0044f580(CKey
   if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
     _DAT_01d046a0 = "..\\core\\dmodel.cpp";
     _DAT_01d046a4 = 0x40e;
-    core_main_c_FUN_004e4500("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",this_ptr);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!");
   }
   triangle = this_ptr->collision_triangle_list + frame_index * this_ptr->collision_triangle_count;
   iVar1 = 0;

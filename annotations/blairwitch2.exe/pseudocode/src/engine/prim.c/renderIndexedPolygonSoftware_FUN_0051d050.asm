@@ -283,7 +283,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0051d2c0
     MOV ESI,EBP                         ; 0051d2c4
     CALL engine_special.cpp_FUN_0055d6d7 ; 0051d2c6
-        ;   XREF to: 0055d6d7 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055d6d7()
+        ;   XREF to: 0055d6d7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d6d7(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 0051d2cb
     ADD dword ptr [EBP + 0x8],EAX       ; 0051d2ce
     MOV EBX,dword ptr [EBP + 0x18]      ; 0051d2d1

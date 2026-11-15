@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_unknown.c_FUN_005c0344
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5d69f9                       ; 00441e7d
     MOV dword ptr [0x01d1d400],ECX      ; 00441e82 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00441e88 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00441e8e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00441e8e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00441e93
     MOV ESI,dword ptr [ESP + 0x10]      ; 00441e96
         ;   Label: LAB_00441e96

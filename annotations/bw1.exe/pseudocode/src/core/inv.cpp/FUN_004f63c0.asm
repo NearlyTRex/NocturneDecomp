@@ -53,11 +53,11 @@ section .text
     MOV EBX,dword ptr [0x01c4eff8]      ; 004f63da | DAT_01c4eff8
     MOV EDX,dword ptr [0x01c4f000]      ; 004f63e0 | DAT_01c4f000
     CALL crt_math.c_round_FUN_005c03a0  ; 004f63e6
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004f63eb
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f63ef
     CALL crt_math.c_round_FUN_005c03a0  ; 004f63f3
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     SUB EAX,EDX                         ; 004f63f8
     MOV EDX,0x10000                     ; 004f63fa
     FISTP dword ptr [ESP + 0x14]        ; 004f63ff

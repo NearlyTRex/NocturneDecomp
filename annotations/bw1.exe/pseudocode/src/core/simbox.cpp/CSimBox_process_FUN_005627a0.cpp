@@ -21,7 +21,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005627a0(CSimBox *this_ptr,floa
   float fStack_28;
   float fStack_24;
   float fStack_20;
-  float fStack_1c;
+  CVector3f CStack_1c;
   int iStack_10;
   
   bVar5 = 0;
@@ -42,14 +42,14 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005627a0(CSimBox *this_ptr,floa
         (this_ptr->physics_box).angular_velocity.y = (this_ptr->init_rot_vel).y;
         (this_ptr->physics_box).angular_velocity.z = (this_ptr->init_rot_vel).z;
       }
-      core_dirmat_cpp_FUN_0045f690
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
                 (&(this_ptr->physics_box).rotation_matrix,
-                 &(this_ptr->physics_box).linear_velocity_local);
-      fStack_28 = fStack_1c;
+                 &(this_ptr->physics_box).linear_velocity_local,&CStack_1c);
+      fStack_28 = CStack_1c.x;
       (&stack0xffffffdc)[(uint)bVar5 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);
+           (float)*(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4);
       *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+           *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       pCVar4 = &(this_ptr->physics_box).linear_velocity;
       if (pCVar4 != (CVector3f *)&stack0xffffffd8) {
         pCVar4->x = fStack_28;

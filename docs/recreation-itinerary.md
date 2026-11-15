@@ -18,40 +18,40 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 
 | Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done | BW variants | BW done |
 |---|---|---|---|---|---|---|---|---|---|
-| 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% | 2 | 0 |
-| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% | 10 | 0 |
-| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% | 13 | 0 |
-| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% | 55 | 0 |
-| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% | 9 | 0 |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 3 | 64.0% | 22 | 0 |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% | 9 | 0 |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 69 | 30 | 57.5% | 25 | 0 |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 25 | 0 |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 19 | 0 |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 18 | 0 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% | 192 | 0 |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% | 11 | 0 |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 5 | 0 |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 12 | 0 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 10 | 5 | 5.2% | 62 | 0 |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 10 | 3 | 40.0% | 7 | 0 |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 6 | 0 |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 2 | 0 |
-| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 24 | 2 | 8.6% | 46 | 0 |
-| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 3 | 0 |
-| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 19 | 0 |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 5 | 0 |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 295 | 16062 | 69 | 13 | 23.3% | 155 | 0 |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 36 | 8 | 12.9% | 139 | 0 |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% | 92 | 0 |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 17 | 289 | 19797 | 52 | 7 | 17.9% | 123 | 0 |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 63 | 11 | 24.1% | 132 | 0 |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 118 | 0 |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 130 | 0 |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% | 151 | 0 |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 57 | 0 |
+| 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% | 5 | 0 |
+| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% | 13 | 0 |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% | 20 | 0 |
+| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 124 | 8365 | 121 | 2 | 97.5% | 84 | 0 |
+| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% | 16 | 0 |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 3 | 64.0% | 27 | 0 |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% | 14 | 0 |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 69 | 30 | 57.5% | 36 | 0 |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 34 | 0 |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 29 | 0 |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 23 | 0 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% | 266 | 0 |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% | 13 | 0 |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 0 |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 18 | 0 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 10 | 5 | 5.2% | 72 | 0 |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 13 | 0 |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 8 | 0 |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
+| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 26 | 2 | 9.3% | 48 | 0 |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 4 | 0 |
+| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 23 | 0 |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 13 | 0 |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 295 | 16062 | 69 | 13 | 23.3% | 158 | 0 |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 36 | 8 | 12.9% | 160 | 0 |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% | 107 | 0 |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 17 | 289 | 19797 | 52 | 7 | 17.9% | 134 | 0 |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 63 | 11 | 24.1% | 143 | 0 |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 131 | 0 |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 157 | 0 |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% | 160 | 0 |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 62 | 0 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 1 | 0 |
-| | **All** | | **4486** | **402606** | **1205** | **233** | **26.8%** | **1675** | **0** |
+| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2004** | **0** |
 
 ## Step 0: Math value types
 
@@ -71,8 +71,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `invert` 0x00471e10 (156)
     - BW: [ ] bw1 0x0045f4d0 = bw2 0x00449370 = bw3 0x0045b640 (const-change)
   - [x] `transformVector` 0x00471fd0 (32)
+    - BW: [ ] bw1 0x0045f690 = bw2 0x00449530 = bw3 0x0045b800 (logic-change)
   - [x] `transformVectorTranspose` 0x00472030 (32)
+    - BW: [ ] bw1 0x0045f700 = bw2 0x004495a0 = bw3 0x0045b870 (logic-change)
   - [x] `getEulerAngles` 0x00472160 (297)
+    - BW: [ ] bw1 0x0045f840 = bw2 0x004496e0 = bw3 0x0045b9b0 (logic-change)
   - [x] `multiply` 0x00472540 (120)
 
 ### `core/set.cpp` (1 functions, 21 instructions, 1 done, 0 partial)
@@ -84,6 +87,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/main.c` (1 functions, 147 instructions, 1 done, 0 partial)
 - free functions
   - [x] `displayErrorAndQuit` 0x00506f10 (147)
+    - BW: [ ] bw1 0x005030e0 = bw2 0x004e4500 = bw3 0x004e4330 (logic-change)
 
 ### `engine/dosio.cpp` (18 functions, 649 instructions, 18 done, 0 partial)
 - free functions
@@ -98,6 +102,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getFileAttributes` 0x00481960 (42)
   - [x] `setFileAttributes` 0x004819f0 (14)
   - [x] `getFile` 0x00481a50 (92)
+    - BW: [ ] bw1 0x00479180 = bw2 0x00460c70 = bw3 0x004659c0 (logic-change)
   - [x] `reopenFileStream` 0x00481b50 (72)
 - class `CFileFinder`
   - [x] `reset` 0x00481db0 (3)
@@ -105,7 +110,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `closeSearch` 0x00481d70 (18)
   - [x] `dtor` 0x00481c50 (8)
   - [x] `convertStruct` 0x00481dc0 (102)
-    - BW: [ ] bw3 0x00465cf0 (logic-change)
+    - BW: [ ] bw1 0x004794b0 = bw2 0x00460fa0 (logic-change); [ ] bw3 0x00465cf0 (logic-change)
   - [x] `openSearch` 0x00481c70 (34)
   - [x] `findNext` 0x00481cf0 (40)
     - BW: [ ] bw1 0x004793e0 = bw2 0x00460ed0 = bw3 0x00465c20 (const-change)
@@ -151,6 +156,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `staticInit` 0x00551990 (9)
 - class `CDemonPod`
   - [x] `load` 0x005519c0 (97)
+    - BW: [ ] bw2 0x0051c000 (logic-change)
   - [x] `ctor` 0x00551b00 (6)
   - [x] `dtor` 0x00551b20 (31)
 
@@ -177,6 +183,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 - free functions
   - [x] `initTextureCache` 0x005dd760 (15)
+    - BW: [ ] bw1 0x00597970 = bw2 0x00574d50 = bw3 0x0056a960 (logic-change)
 
 ### `engine/special.cpp` (8 functions, 864 instructions, 7 done, 1 partial)
 - free functions
@@ -185,12 +192,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [~] `loadExternalRenderer` 0x005b6750 (639)
     - deferred: sharing the light level, with the scene camera's fog setup
     - deferred: sharing the rendering quality, with 3d.c's setRenderingQuality
-    - BW: [ ] bw3 0x00564be0 (logic-change)
+    - BW: [ ] bw1 0x00581310 = bw2 0x0055e8c0 = bw3 0x00564be0 (logic-change)
   - [x] `clear` 0x005b7a30 (6)
   - [x] `clearScreen` 0x005b3e70 (35)
   - [x] `lockFrame` 0x005b7210 (15)
+    - BW: [ ] bw1 0x00581f50 = bw2 0x0055f500 = bw3 0x00565820 (logic-change)
   - [x] `unlockFrame` 0x005b7250 (13)
-    - BW: [ ] bw1 0x00581fa0 = bw3 0x00565870 (logic-change)
+    - BW: [ ] bw1 0x00581fa0 = bw2 0x0055f550 = bw3 0x00565870 (logic-change)
   - [x] `presentToExternalRenderer` 0x005b7c30 (66)
     - BW: [ ] bw1 0x00582990 = bw2 0x0055ff40 = bw3 0x00566260 (logic-change)
   - [x] `setResolutionAndColorTable` 0x005b7460 (81)
@@ -199,10 +207,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `wincore/winrun.cpp` (1 functions, 51 instructions, 1 done, 0 partial)
 - free functions
   - [x] `processWindowMessages` 0x005f35e0 (51)
+    - BW: [ ] bw1 0x005b2cf0 = bw3 0x00580f70 (logic-change)
 
 ### `wincore/wddvmem.cpp` (8 functions, 1035 instructions, 8 done, 0 partial)
 - free functions
   - [x] `initializeGraphicsSystem` 0x005ecc10 (112)
+    - BW: [ ] bw1 0x005ac040 = bw3 0x005798f0 (logic-change); [ ] bw2 0x00588790 (logic-change)
   - [x] `convertPaletteToDirectColor` 0x004f41c0 (120)
   - [x] `analyzePixelFormat` 0x005ed730 (145)
     - BW: [ ] bw1 0x005acd00 = bw3 0x0057a5b0 (const-change); [ ] bw2 0x00589270 (const-change)
@@ -215,11 +225,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `swapBuffers` 0x005eda20 (174)
     - BW: [ ] bw1 0x005acff0 = bw3 0x0057a8a0 (logic-change); [ ] bw2 0x00589560 (logic-change)
   - [x] `setScreenResolution` 0x005ecef0 (280)
+    - BW: [ ] bw1 0x005ac300 = bw3 0x00579bb0 (logic-change); [ ] bw2 0x00588a50 (logic-change)
 
 ### `engine/2d.c` (6 functions, 437 instructions, 6 done, 0 partial)
 - free functions
   - [x] `loadPaletteFile` 0x004015a0 (33)
+    - BW: [ ] bw1 0x00401590 = bw3 0x00401590 (logic-change); [ ] bw2 0x00401590 (logic-change)
   - [x] `findBestPaletteMatch` 0x00401460 (107)
+    - BW: [ ] bw1 0x00401450 = bw2 0x00401450 = bw3 0x00401450 (logic-change)
   - [x] `buildColorLookupTable` 0x00402870 (65)
   - [x] `loadOrBuildColorMap` 0x00402930 (105)
     - BW: [ ] bw1 0x00402940 = bw3 0x00402940 (logic-change); [ ] bw2 0x00402940 (logic-change)
@@ -232,7 +245,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/game.cpp` (1 functions, 64 instructions, 1 done, 0 partial)
 - class `CGame`
   - [x] `restoreDefaultControls` 0x004dbbc0 (64)
-    - BW: [ ] bw2 0x004b6e10 (logic-change)
+    - BW: [ ] bw1 0x004d0400 (logic-change); [ ] bw2 0x004b6e10 (logic-change)
 
 ### `engine/console.cpp` (3 functions, 188 instructions, 3 done, 0 partial)
 - class `CConsole`
@@ -240,6 +253,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00445610 = bw2 0x004368f0 = bw3 0x004421d0 (operand-change)
   - [x] `writeChar` 0x00441970 (60)
   - [x] `printf` 0x00441890 (79)
+    - BW: [ ] bw1 0x00445430 = bw2 0x00436710 = bw3 0x00441ff0 (logic-change)
 
 ### `engine/ini.cpp` (14 functions, 846 instructions, 14 done, 0 partial)
 - free functions
@@ -249,17 +263,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CIniFile`
   - [x] `readIniHeader` 0x004fbae0 (26)
   - [x] `ctor` 0x004fba70 (15)
+    - BW: [ ] bw1 0x004f4b00 = bw2 0x004d8910 = bw3 0x004d8a20 (logic-change)
   - [x] `getString` 0x004fbb20 (42)
     - BW: [ ] bw1 0x004f4c00 = bw2 0x004d8a10 = bw3 0x004d8b20 (const-change)
   - [x] `getInteger` 0x004fbc30 (31)
   - [x] `getFloat` 0x004fbcd0 (30)
+    - BW: [ ] bw1 0x004f4db0 = bw2 0x004d8bc0 = bw3 0x004d8cd0 (logic-change)
   - [x] `setString` 0x004fbbb0 (39)
     - BW: [ ] bw1 0x004f4c90 = bw2 0x004d8aa0 = bw3 0x004d8bb0 (const-change)
   - [x] `setInteger` 0x004fbc90 (20)
   - [x] `setFloatValue` 0x004fbd30 (19)
 - class `CIni`
   - [x] `getProfileString` 0x004fb250 (181)
-    - BW: [ ] bw1 0x004f4370 = bw2 0x004d8180 (logic-change)
+    - BW: [ ] bw1 0x004f4370 = bw2 0x004d8180 = bw3 0x004d8290 (logic-change)
   - [x] `findLineNumberOfVariable` 0x004fb470 (154)
   - [x] `writeProfileString` 0x004fb660 (224)
     - BW: [ ] bw1 0x004f4720 = bw2 0x004d8530 = bw3 0x004d8640 (logic-change)
@@ -276,10 +292,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getTime` 0x005f2dc0 (48)
     - BW: [ ] bw1 0x005b2420 = bw2 0x0058e9e0 = bw3 0x005806a0 (logic-change)
 
-### `sound/sndmain.cpp` (100 functions, 6122 instructions, 99 done, 1 partial)
+### `sound/sndmain.cpp` (101 functions, 6141 instructions, 98 done, 2 partial)
 - free functions
   - [x] `isSoundMuted` 0x005a96b0 (2)
   - [x] `ensureSoundMemoryAvailable` 0x005a4450 (75)
+    - BW: [ ] bw1 0x0056dfd0 = bw3 0x005514c0 (logic-change); [ ] bw2 0x0054b960 (logic-change)
   - [x] `killAllSfx` 0x005a9cc0 (15)
     - BW: [ ] bw1 0x00573b00 = bw2 0x005510d0 = bw3 0x00556c60 (operand-change)
   - [x] `setSoundMuted` 0x005a96c0 (5)
@@ -298,12 +315,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00575120 (const-change); [ ] bw2 0x005526f0 (const-change); [ ] bw3 0x00558290 (const-change)
   - [x] `getAudioFormat` 0x005ab210 (21)
   - [x] `getAudioBitDepth` 0x005ab250 (2)
+    - BW: [ ] bw1 0x00575200 = bw2 0x005527d0 = bw3 0x00558370 (logic-change)
   - [x] `getAudioSampleRate` 0x005ab260 (2)
+    - BW: [ ] bw1 0x00575220 = bw2 0x005527f0 = bw3 0x00558390 (logic-change)
   - [x] `getAudioChannelCount` 0x005ab270 (2)
+    - BW: [ ] bw1 0x00575240 = bw2 0x00552810 = bw3 0x005583b0 (logic-change)
   - [x] `getSoundDeviceInfo` 0x005ab370 (29)
     - BW: [ ] bw1 0x00575350 (const-change); [ ] bw2 0x00552920 (const-change); [ ] bw3 0x005584c0 (const-change)
   - [x] `getCurrentSoundDevice` 0x005ab6c0 (2)
   - [x] `logSoundError` 0x005adba0 (136)
+    - BW: [ ] bw1 0x005773f0 = bw2 0x005549c0 = bw3 0x0055a560 (logic-change)
   - [x] `getSoundDeviceCount` 0x005ab2e0 (49)
   - [x] `findBestSoundDevice` 0x005ab3d0 (77)
     - BW: [ ] bw1 0x005753b0 = bw2 0x00552980 = bw3 0x00558520 (logic-change)
@@ -315,49 +336,61 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `readIni` 0x005abf20 (206)
     - BW: [ ] bw1 0x005760b0 = bw2 0x00553680 = bw3 0x00559220 (logic-change)
   - [x] `writeIni` 0x005ac220 (139)
-    - BW: [ ] bw1 0x005763b0 = bw2 0x00553980 (logic-change)
+    - BW: [ ] bw1 0x005763b0 = bw2 0x00553980 = bw3 0x00559520 (logic-change)
   - [x] `staticInit` 0x005a3940 (22)
   - [x] `parseWavFile` 0x005a3fe0 (285)
+    - BW: [ ] bw1 0x0056db10 = bw2 0x0054b4a0 (logic-change); [ ] bw3 0x00551000 (logic-change)
   - [x] `findFreeSfxSample` 0x005a4400 (21)
+    - BW: [ ] bw1 0x0056df60 = bw3 0x00551450 (logic-change); [ ] bw2 0x0054b8f0 (logic-change)
   - [x] `trimLineAndRemoveComments` 0x005a4530 (62)
   - [x] `getSfxSample` 0x005a4c80 (336)
+    - BW: [ ] bw1 0x0056e830 (logic-change); [ ] bw2 0x0054c1c0 (logic-change); [ ] bw3 0x00551d20 (logic-change)
   - [x] `calculateVirtualSpeakerPositions` 0x005a5530 (62)
+    - BW: [ ] bw1 0x0056f1e0 = bw2 0x0054cb70 = bw3 0x005526d0 (logic-change)
   - [x] `calculateDistanceGain` 0x005a56c0 (33)
-    - BW: [ ] bw1 0x0056f3fe = bw2 0x0054cd8e (logic-change)
+    - BW: [ ] bw1 0x0056f400 = bw2 0x0054cd90 = bw3 0x00552900 (logic-change)
   - [x] `getSfxSlotFromHandle` 0x005a5d00 (67)
+    - BW: [ ] bw1 0x0056fa10 = bw2 0x0054d3a0 = bw3 0x00552f10 (logic-change)
   - [x] `setNextSfxStaticPosition` 0x005a88e0 (21)
+    - BW: [ ] bw1 0x00572780 = bw2 0x00550110 = bw3 0x00555c90 (logic-change)
   - [x] `setNextSfxTrackedFloatPosition` 0x005a8940 (9)
-    - BW: [ ] bw2 0x00550170 (logic-change)
+    - BW: [ ] bw1 0x005727e0 = bw2 0x00550170 = bw3 0x00555cf0 (logic-change)
   - [x] `setNextSfxTrackedVelocity1` 0x005a8a00 (9)
-    - BW: [ ] bw2 0x00550210 (logic-change)
+    - BW: [ ] bw1 0x00572880 = bw2 0x00550210 = bw3 0x00555d90 (logic-change)
   - [x] `setNextSfxVolume` 0x005a8a60 (8)
-    - BW: [ ] bw2 0x00550270 (logic-change)
+    - BW: [ ] bw1 0x005728e0 = bw2 0x00550270 = bw3 0x00555df0 (logic-change)
   - [x] `setNextSfxBaseFrequency` 0x005a8a80 (8)
-    - BW: [ ] bw2 0x00550290 (logic-change)
+    - BW: [ ] bw1 0x00572900 = bw2 0x00550290 = bw3 0x00555e10 (logic-change)
   - [x] `setNextSfxChannel` 0x005a8af0 (23)
-    - BW: [ ] bw2 0x00550310 (logic-change); [ ] bw3 0x00555e90 (logic-change)
+    - BW: [ ] bw1 0x00572980 = bw2 0x00550310 (logic-change); [ ] bw3 0x00555e90 (logic-change)
   - [x] `setNextSfxDelay` 0x005a8b40 (10)
-    - BW: [ ] bw2 0x00550360 = bw3 0x00555ee0 (logic-change)
+    - BW: [ ] bw1 0x005729d0 = bw2 0x00550360 = bw3 0x00555ee0 (logic-change)
   - [x] `setNextSfxFlags` 0x005a8b70 (8)
-    - BW: [ ] bw2 0x00550380 = bw3 0x00555f00 (logic-change)
+    - BW: [ ] bw1 0x005729f0 = bw2 0x00550380 = bw3 0x00555f00 (logic-change)
   - [x] `setNextSfxFlagBits` 0x005a8b90 (8)
-    - BW: [ ] bw2 0x005503a0 = bw3 0x00555f20 (logic-change)
+    - BW: [ ] bw1 0x00572a10 = bw2 0x005503a0 = bw3 0x00555f20 (logic-change)
   - [x] `setNextSfxTriggerTime` 0x005a8be0 (12)
-    - BW: [ ] bw2 0x005503e0 = bw3 0x00555f60 (logic-change)
+    - BW: [ ] bw1 0x00572a50 = bw2 0x005503e0 = bw3 0x00555f60 (logic-change)
   - [x] `pushSfxOptions` 0x005a8c30 (34)
     - BW: [ ] bw1 0x00572ac0 = bw2 0x00550450 (logic-change); [ ] bw3 0x00555fd0 (logic-change)
   - [x] `popSfxOptions` 0x005a8cb0 (18)
     - BW: [ ] bw1 0x00572b40 = bw2 0x005504d0 (const-change); [ ] bw3 0x00556050 (const-change)
   - [x] `startSfx` 0x005a8e90 (437)
-    - BW: [ ] bw1 0x00572d20 (logic-change)
+    - BW: [ ] bw1 0x00572d20 (logic-change); [ ] bw2 0x005506b0 (logic-change); [ ] bw3 0x00556240 (logic-change)
   - [x] `isSfxPlaying` 0x005a9660 (23)
+    - BW: [ ] bw1 0x005735a0 = bw2 0x00550b70 = bw3 0x00556700 (logic-change)
   - [x] `getSfxSampleInfo` 0x005a96e0 (19)
   - [x] `getSfxPlaybackPosition` 0x005a9720 (68)
   - [x] `setSfxPosition` 0x005a9820 (51)
+    - BW: [ ] bw1 0x00573760 = bw2 0x00550d30 (logic-change)
   - [x] `setSfxTrackedFloatPosition` 0x005a98b0 (36)
+    - BW: [ ] bw1 0x005737d0 = bw2 0x00550da0 = bw3 0x00556930 (logic-change)
   - [x] `setSfxTrackedFloatVelocity` 0x005a9a00 (40)
+    - BW: [ ] bw1 0x005738d0 = bw2 0x00550ea0 = bw3 0x00556a30 (logic-change)
   - [x] `setSfxVolume` 0x005a9ae0 (39)
+    - BW: [ ] bw1 0x00573950 = bw2 0x00550f20 = bw3 0x00556ab0 (logic-change)
   - [x] `setSfxBaseFrequency` 0x005a9b40 (35)
+    - BW: [ ] bw1 0x00573980 = bw2 0x00550f50 = bw3 0x00556ae0 (logic-change)
   - [x] `killSfx` 0x005a9c40 (14)
   - [x] `setSfxFade` 0x005a9c70 (22)
   - [x] `setNumberOfSfxChannels` 0x005a9de0 (17)
@@ -365,13 +398,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getFirstActiveSfx` 0x005a9ef0 (21)
     - BW: [ ] bw1 0x00573d20 = bw2 0x005512f0 = bw3 0x00556e80 (const-change)
   - [x] `getNextActiveSfx` 0x005a9f30 (28)
+    - BW: [ ] bw1 0x00573d60 = bw2 0x00551330 = bw3 0x00556ec0 (logic-change)
   - [x] `countActiveSfx` 0x005a9ff0 (13)
     - BW: [ ] bw1 0x00573e20 = bw2 0x005513f0 = bw3 0x00556f80 (operand-change)
   - [x] `set3DListenerPos` 0x005aa020 (43)
+    - BW: [ ] bw1 0x00573ec0 = bw2 0x00551490 = bw3 0x00557020 (logic-change)
   - [x] `set3DListenerOrient` 0x005aa0a0 (91)
+    - BW: [ ] bw1 0x00573f20 = bw2 0x005514f0 = bw3 0x00557080 (logic-change)
   - [x] `set3DListenerVelocity` 0x005aa1c0 (43)
+    - BW: [ ] bw1 0x00573fa0 = bw2 0x00551570 = bw3 0x00557100 (logic-change)
   - [x] `isWithinListenerRadius` 0x005aa290 (26)
+    - BW: [ ] bw1 0x00574010 = bw2 0x005515e0 = bw3 0x00557170 (logic-change)
   - [x] `getSampleInfo` 0x005aa3f0 (183)
+    - BW: [ ] bw1 0x00574410 (logic-change); [ ] bw2 0x005519e0 (logic-change); [ ] bw3 0x00557570 (logic-change)
   - [x] `freeAllSamples` 0x005aa660 (16)
     - BW: [ ] bw1 0x005746a0 = bw3 0x00557800 (operand-change); [ ] bw2 0x00551c70 (operand-change)
   - [x] `getSoundMemoryStats` 0x005aa6a0 (90)
@@ -387,6 +426,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `pollAllSfxSlots` 0x005acdb0 (63)
     - BW: [ ] bw1 0x00576f40 (logic-change); [ ] bw2 0x00554510 (logic-change); [ ] bw3 0x0055a0b0 (logic-change)
   - [x] `initializeSoundDevice` 0x005ab5b0 (56)
+  - [ ] `setReverb` 0x005ab6e0 (19)
   - [~] `analyzeFrequencyBand` 0x005ac400 (370)
     - unverified: the band's bin bounds and sums, by running nocedit's own code on spectra poked into its transform buffers
     - unverified: the transform's float stores and its pi of 3.1415926535, which the double-precision transform doesn't keep, by running nocedit's transform on the same window
@@ -398,7 +438,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00570020 = bw2 0x0054d9b0 (logic-change); [ ] bw3 0x00553520 (logic-change)
   - [x] `getBytesPerFrame` 0x005a8550 (10)
   - [x] `parseConfigFile` 0x005a45c0 (442)
-    - BW: [ ] bw1 0x0056e130 (logic-change)
+    - BW: [ ] bw1 0x0056e130 (logic-change); [ ] bw2 0x0054bac0 (logic-change); [ ] bw3 0x00551620 (logic-change)
   - [x] `init` 0x005a8480 (21)
   - [x] `ctor` 0x005a60f0 (13)
     - BW: [ ] bw1 0x0056fe10 = bw2 0x0054d7a0 = bw3 0x00553310 (logic-change)
@@ -409,12 +449,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `kill` 0x005a7e60 (97)
     - BW: [ ] bw1 0x00571d70 = bw2 0x0054f700 (logic-change); [ ] bw3 0x00555270 (logic-change)
   - [x] `updateBoundPositionAndVelocity` 0x005a6ce0 (59)
+    - BW: [ ] bw1 0x00570a40 = bw2 0x0054e3d0 = bw3 0x00553f40 (logic-change)
   - [x] `computeDistancesToSpeakers` 0x005a6d80 (39)
   - [x] `computeChannelVolumes` 0x005a6f00 (108)
     - BW: [ ] bw1 0x00570d50 = bw2 0x0054e6e0 (logic-change); [ ] bw3 0x00554250 (logic-change)
-  - [x] `compute` 0x005a7100 (378)
+  - [~] `compute` 0x005a7100 (378)
+    - deferred: a slot the pause menu holds left as it is, its voice stopped on its frame and nothing counted down (the decomp's PAUSE_SOUND), with the pause menu
     - BW: [ ] bw1 0x00570f30 = bw2 0x0054e8c0 (logic-change); [ ] bw3 0x00554430 (logic-change)
   - [x] `pollHwHandle` 0x005a7fe0 (95)
+    - BW: [ ] bw1 0x00571f10 = bw2 0x0054f8a0 (logic-change); [ ] bw3 0x00555410 (logic-change)
   - [x] `updatePlaybackPos` 0x005a8170 (154)
     - BW: [ ] bw1 0x00572030 = bw2 0x0054f9c0 (operand-change); [ ] bw3 0x00555530 (operand-change)
   - [x] `pollHwPlaybackPos` 0x005a80e0 (59)
@@ -428,6 +471,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getSampleDuration` 0x005a84d0 (24)
 - class `CSfxOptions`
   - [x] `reset` 0x005a8830 (37)
+    - BW: [ ] bw1 0x005726e0 = bw2 0x00550070 = bw3 0x00555bf0 (logic-change)
   - [x] `ctor` 0x005add70 (8)
   - [x] `dtor` 0x005ade30 (2, compiler-generated)
 
@@ -441,6 +485,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `cockpit/ckptutil.c` (1 functions, 96 instructions, 1 done, 0 partial)
 - free functions
   - [x] `readBitmapFile` 0x00431870 (96)
+    - BW: [ ] bw2 0x0042c520 (logic-change)
 
 ### `engine/winfont.cpp` (1 functions, 42 instructions, 1 done, 0 partial)
 - class `CWinFont`
@@ -449,6 +494,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/dfont.cpp` (1 functions, 438 instructions, 1 done, 0 partial)
 - free functions
   - [x] `initFonts` 0x004709a0 (438)
+    - BW: [ ] bw1 0x0045e000 = bw2 0x00447ea0 (logic-change); [ ] bw3 0x00459f50 (logic-change)
 
 ### `engine/3d.c` (1 functions, 22 instructions, 1 done, 0 partial)
 - free functions
@@ -477,11 +523,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `ctor` 0x004cce90 (8)
   - [x] `calculateCharacterHeight` 0x004cda20 (42)
   - [x] `parseCharacterMetrics` 0x004cd550 (291)
+    - BW: [ ] bw1 0x004c18c0 = bw3 0x004b0510 (logic-change); [ ] bw2 0x004a88e0 (logic-change)
   - [x] `remapPalette` 0x004d02a0 (129)
     - BW: [ ] bw1 0x004c45e0 = bw3 0x004b31c0 (operand-change); [ ] bw2 0x004ab630 (operand-change)
   - [x] `loadBitmap` 0x004ccff0 (192)
     - BW: [ ] bw1 0x004c0cd0 = bw3 0x004af920 (logic-change); [ ] bw2 0x004a7d00 (logic-change)
   - [x] `free` 0x004cd4e0 (27)
+    - BW: [ ] bw1 0x004c1830 = bw2 0x004a8850 = bw3 0x004b0480 (logic-change)
   - [x] `loadNewBitmap` 0x004cd280 (24)
   - [x] `openFontFile` 0x004ccfc0 (21)
   - [x] `setInitializedFlag` 0x004cd540 (3)
@@ -491,10 +539,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getTextHeight` 0x004cff40 (92)
   - [x] `getCharWidth` 0x004d01a0 (12)
   - [x] `getTextWidth` 0x004cfe80 (79)
-    - BW: [ ] bw1 0x004c3ea0 = bw3 0x004b2a80 (logic-change)
+    - BW: [ ] bw1 0x004c3ea0 = bw2 0x004aaf00 = bw3 0x004b2a80 (logic-change)
   - [x] `wrapText` 0x004d0010 (138)
   - [x] `drawCharacter` 0x004ce7a0 (1542)
   - [x] `drawText` 0x004cda80 (125)
+    - BW: [ ] bw3 0x004b0a20 (logic-change)
 - free functions
   - [x] `clipCharacter` 0x004ccdd0 (65)
   - [x] `drawAlphaBlendedPixels` 0x004ce240 (48)
@@ -526,7 +575,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `popWindowState` 0x004a0ea0 (57)
     - BW: [ ] bw1 0x00496df0 (logic-change); [ ] bw2 0x0047e780 (logic-change); [ ] bw3 0x0047f990 (logic-change)
   - [x] `restoreWindowAndCleanup` 0x004a0dd0 (63)
+    - BW: [ ] bw1 0x00496dd0 = bw2 0x0047e760 = bw3 0x0047f970 (logic-change)
   - [x] `paintCurrentWindow` 0x004a0f80 (229)
+    - BW: [ ] bw3 0x0047fa80 (logic-change)
   - [x] `showWarning` 0x0049e6f0 (22)
 
 ## Step 5: `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
@@ -553,9 +604,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/alphabit.cpp` (6 functions, 456 instructions, 6 done, 0 partial)
 - class `CAlphaBitmap`
   - [x] `free` 0x00410560 (40)
+    - BW: [ ] bw1 0x0040d1c0 = bw2 0x0040d540 = bw3 0x0040d400 (logic-change)
   - [x] `load` 0x004105d0 (241)
     - BW: [ ] bw1 0x0040d220 = bw3 0x0040d460 (logic-change); [ ] bw2 0x0040d5a0 (logic-change)
   - [x] `initPalette` 0x00410cf0 (17)
+    - BW: [ ] bw2 0x0040dca0 (logic-change)
   - [x] `display` 0x00410950 (145)
   - [x] `ctor` 0x00410520 (5)
   - [x] `dtor` 0x00410540 (8)
@@ -563,6 +616,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/sound.cpp` (1 functions, 24 instructions, 1 done, 0 partial)
 - class `CSound`
   - [x] `findAllSoundFiles` 0x005b2d00 (24)
+    - BW: [ ] bw1 0x0057cb30 = bw2 0x0055a100 = bw3 0x0055fc60 (logic-change)
 
 ### `core/mission.cpp` (1 functions, 23 instructions, 0 done, 1 partial)
 - class `CDemonMission`
@@ -570,6 +624,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
     - deferred: emptying the queue of actors to delete, with markActorToDelete and process
     - deferred: clearing actor_lookup_count, with saveActor
+    - BW: [ ] bw2 0x004fb380 (logic-change)
 
 ### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done, 0 partial)
 - class `CDemonFilter`
@@ -601,6 +656,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004942e0 = bw3 0x0047ce80 (logic-change)
   - [~] `updatePercentage` 0x004a0530 (264)
     - unverified: the percentage's rounding and the time-remaining estimate, by running updatePercentage against nocedit's own code with getSeconds stubbed
+    - BW: [ ] bw1 0x004962b0 (logic-change); [ ] bw2 0x0047dc40 (logic-change); [ ] bw3 0x0047ee50 (logic-change)
   - [x] `showCenteredProgressDialog` 0x004a0430 (79)
     - BW: [ ] bw1 0x004961b0 (logic-change); [ ] bw2 0x0047db40 (logic-change); [ ] bw3 0x0047ed50 (logic-change)
 
@@ -660,7 +716,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [~] `initializeGameSystems` 0x00507a60 (642)
     - deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so the save and load pickers open with nothing left to read (the decomp's save_slots.h nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
-    - BW: [ ] bw2 0x004e46c0 (logic-change)
+    - BW: [ ] bw1 0x005032a0 (logic-change); [ ] bw2 0x004e46c0 (logic-change); [ ] bw3 0x004e44e0 (logic-change)
 
 ### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done, 0 partial)
 - class `CAlphaBitmap`
@@ -681,9 +737,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/course.cpp` (3 functions, 178 instructions, 3 done, 0 partial)
 - class `CCourse`
   - [x] `free` 0x004426c0 (21)
+    - BW: [ ] bw1 0x00447ee0 = bw2 0x00438c20 = bw3 0x00444aa0 (logic-change)
   - [x] `allocMemory` 0x00442500 (45)
+    - BW: [ ] bw1 0x00447d50 = bw2 0x00438a90 = bw3 0x00444910 (logic-change)
   - [x] `load` 0x00442580 (112)
-    - BW: [ ] bw1 0x00447db0 = bw2 0x00438af0 (logic-change)
+    - BW: [ ] bw1 0x00447db0 = bw2 0x00438af0 = bw3 0x00444970 (logic-change)
 
 ### `core/dtri.cpp` (2 functions, 164 instructions, 2 done, 0 partial)
 - class `CDemonTriangle`
@@ -701,7 +759,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/dmodel.cpp` (9 functions, 1490 instructions, 7 done, 2 partial)
 - class `CKeyFramedModel`
   - [x] `free` 0x00477690 (89)
+    - BW: [ ] bw1 0x00467160 = bw2 0x0044e590 = bw3 0x00460e10 (logic-change)
   - [x] `allocate` 0x00477bf0 (152)
+    - BW: [ ] bw1 0x00467650 = bw2 0x0044ea80 = bw3 0x00461300 (logic-change)
   - [~] `populateCollisionList` 0x00478950 (203)
     - deferred: keeping the angles and their rotation in the model, which getFloorHeight and intersectCylinder compare to rebuild the list and intersectRay turns its ray by, with CKeyFramedModel::getFloorHeight, intersectCylinder and intersectRay
     - BW: [ ] bw1 0x00468420 = bw2 0x0044f840 = bw3 0x004620c0 (logic-change)
@@ -731,24 +791,30 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
     - deferred: the death banner a quarter of the way down, clear of the message line and the Game Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
     - deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
+    - BW: [ ] bw1 0x004cbf20 = bw3 0x004b4440 (logic-change)
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
 ### `core/course.cpp` (2 functions, 342 instructions, 2 done, 0 partial)
 - class `CCourse`
   - [x] `interpolate` 0x004427a0 (267)
+    - BW: [ ] bw1 0x00447fb0 = bw2 0x00438cf0 = bw3 0x00444b70 (logic-change)
   - [x] `evaluate` 0x00442710 (75)
-    - BW: [ ] bw1 0x00447f00 = bw3 0x00444ac0 (logic-change)
+    - BW: [ ] bw1 0x00447f00 = bw2 0x00438c40 = bw3 0x00444ac0 (logic-change)
 
 ### `core/mirror.cpp` (3 functions, 216 instructions, 0 done, 0 partial)
 - class `CMirrorReflection`
   - [ ] `applyMirrorTransform` 0x005222f0 (13)
+    - BW: [ ] bw1 0x00519920 = bw2 0x004fa9d0 = bw3 0x004f50f0 (logic-change)
   - [ ] `transformMirrorVertex` 0x005229b0 (63)
+    - BW: [ ] bw1 0x00519ff0 = bw2 0x004fb0a0 = bw3 0x004f57c0 (logic-change)
   - [ ] `transformMirrorEdgeToIntegerSpace` 0x00522a50 (140)
+    - BW: [ ] bw1 0x0051a0a0 = bw2 0x004fb150 = bw3 0x004f5870 (logic-change)
 
 ### `core/dglobe.cpp` (2 functions, 209 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
   - [ ] `getAttenuationAtVertex` 0x00471850 (124)
+    - BW: [ ] bw1 0x0045ef00 = bw2 0x00448da0 = bw3 0x0045b070 (logic-change)
   - [ ] `intersectAABB` 0x00471770 (85)
     - BW: [ ] bw1 0x0045edf0 = bw2 0x00448c90 = bw3 0x0045af60 (logic-change)
 
@@ -758,10 +824,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: setting the cache's has-wrapped flag when the next slot goes back to the first, with getTextureCacheStats
     - BW: [ ] bw1 0x005967a0 = bw3 0x00569790 (logic-change); [ ] bw2 0x00573b80 (logic-change)
   - [x] `findTexture` 0x005dd180 (49)
+    - BW: [ ] bw1 0x005970b0 = bw2 0x00574490 = bw3 0x0056a0a0 (logic-change)
   - [x] `setupTexture` 0x005dd200 (245)
 - free functions
   - [~] `ensureTextureLoaded` 0x005dd800 (73)
     - deferred: recording the slot as the current texture index, with getCurrentTexture and its callers renderPolygonFullEffectsBufferedOp65 and renderPolygonFullEffectsDirectOp66
+    - BW: [ ] bw1 0x00597a20 = bw2 0x00574e00 = bw3 0x0056aa10 (logic-change)
 
 ### `core/dcamera.cpp` (5 functions, 1076 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
@@ -782,9 +850,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005b5930 = bw2 0x00591de0 = bw3 0x00583b10 (logic-change)
   - [x] `clearTranslation` 0x005f5370 (7)
   - [x] `quaternionToMatrix3x3` 0x005f7280 (115)
-    - BW: [ ] bw3 0x005855f0 (logic-change)
+    - BW: [ ] bw1 0x005b7410 = bw2 0x005938c0 = bw3 0x005855f0 (logic-change)
   - [x] `quaternionToMatrix3x4` 0x005f73e0 (51)
   - [x] `transformVector3x4` 0x005f4dc0 (35)
+    - BW: [ ] bw1 0x005b5080 = bw2 0x00591530 = bw3 0x00583260 (logic-change)
   - [x] `clipInterpolateRightPlane` 0x005f7bc0 (81)
   - [x] `clipInterpolateLeftPlane` 0x005f7c80 (79)
   - [x] `clipInterpolateTopPlane` 0x005f7d40 (81)
@@ -814,9 +883,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [~] `rasterizePolygonCustom` 0x005fd4e0 (365)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
-    - BW: [ ] bw1 0x005bf640 (const-change)
+    - BW: [ ] bw1 0x005bf640 = bw2 0x0059a5d0 = bw3 0x005a23c0 (const-change)
   - [~] `rasterizeTriangle` 0x005fcfc0 (373)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+    - BW: [ ] bw1 0x00516060 = bw3 0x004f1830 (logic-change); [ ] bw2 0x004f7280 (logic-change)
 
 ### `engine/prim.c` (13 functions, 2410 instructions, 8 done, 4 partial)
 - free functions
@@ -836,7 +906,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0053e650 = bw2 0x0051d050 = bw3 0x005163b0 (const-change)
   - [~] `renderScanlinePolygon` 0x00553470 (538)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
-    - BW: [ ] bw1 0x0053f080 = bw3 0x00516de0 (const-change)
+    - BW: [ ] bw1 0x0053f080 = bw3 0x00516de0 (const-change); [ ] bw2 0x0051da80 (logic-change)
   - [~] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
     - BW: [ ] bw1 0x0053f720 = bw2 0x0051e130 = bw3 0x00517480 (const-change)
@@ -916,6 +986,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [x] `getCameraOriginFixed` 0x0048c760 (23)
+    - BW: [ ] bw1 0x00483ac0 = bw2 0x0046b5c0 = bw3 0x0046d1a0 (logic-change)
   - [x] `setBlendMode` 0x0048ca50 (5)
   - [x] `setRenderAlpha` 0x0048ca60 (5)
   - [x] `setCameraOriginFromScaledPoint` 0x0048c150 (30)
@@ -970,6 +1041,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `drawPolygon2` 0x005b7610 (17)
   - [x] `drawPolygon` 0x005b75e0 (17)
   - [x] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
+    - BW: [ ] bw1 0x0057de01 = bw2 0x0055b3b1 = bw3 0x00560f31 (logic-change)
   - [x] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
   - [~] `drawPolyList` 0x005b7640 (106)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
@@ -988,7 +1060,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/menu.cpp` (1 functions, 333 instructions, 1 done, 0 partial)
 - free functions
   - [x] `renderMenuAndGetChoice` 0x00510000 (333)
-    - BW: [ ] bw1 0x00509e20 (logic-change)
+    - BW: [ ] bw1 0x00509e20 (logic-change); [ ] bw2 0x004eb0e0 (logic-change); [ ] bw3 0x004e7860 (logic-change)
 
 ### `core/moon.cpp` (2 functions, 47 instructions, 2 done, 0 partial)
 - class `CMoon`
@@ -1020,12 +1092,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `shape/edittool.cpp` (54 functions, 4786 instructions, 51 done, 3 partial)
 - class `CEditorTools`
   - [x] `showError` 0x0049e740 (22)
-    - BW: [ ] bw3 0x0047cf40 (logic-change)
+    - BW: [ ] bw1 0x004943a0 = bw3 0x0047cf40 (logic-change)
   - [~] `setClipboardText` 0x004a1bc0 (81)
     - deferred: the copy of the text getClipboardText falls back on when the clipboard holds none, with getClipboardText
+    - BW: [ ] bw1 0x00498290 = bw2 0x0047fc30 = bw3 0x00480e30 (logic-change)
   - [x] `getTimeCycledColorByte` 0x004a1330 (25)
-    - BW: [ ] bw1 0x00497830 (logic-change)
+    - BW: [ ] bw1 0x00497830 = bw3 0x004803d0 (logic-change)
   - [x] `drawMousePointer` 0x004a1380 (501)
+    - BW: [ ] bw1 0x00497870 (logic-change); [ ] bw2 0x0047f210 (logic-change); [ ] bw3 0x00480410 (logic-change)
   - [x] `showFileSelectionDialog` 0x0049f270 (138)
     - BW: [ ] bw1 0x00494fd0 = bw2 0x0047c970 = bw3 0x0047db70 (operand-change)
 - class `CStrList`
@@ -1061,6 +1135,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `clampScrollPosition` 0x004a6380 (20)
   - [x] `handleInput` 0x004a5fc0 (291)
   - [x] `render` 0x004a5c10 (230)
+    - BW: [ ] bw1 0x0049caa0 = bw2 0x00484440 = bw3 0x00485640 (logic-change)
 - class `CPickList`
   - [x] `ctor` 0x004a3b90 (68)
     - BW: [ ] bw1 0x0049a620 = bw2 0x00481fc0 = bw3 0x004831c0 (operand-change)
@@ -1068,11 +1143,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0049c100 (operand-change); [ ] bw2 0x00483aa0 (operand-change); [ ] bw3 0x00484ca0 (operand-change)
   - [x] `handleInput` 0x004a3f20 (329)
   - [x] `insert` 0x004a5670 (35)
+    - BW: [ ] bw1 0x0049c290 = bw2 0x00483c30 = bw3 0x00484e30 (logic-change)
   - [x] `remove` 0x004a56f0 (35)
+    - BW: [ ] bw1 0x0049c310 = bw2 0x00483cb0 = bw3 0x00484eb0 (logic-change)
   - [x] `clear` 0x004a5770 (31)
     - BW: [ ] bw1 0x0049c370 = bw2 0x00483d10 = bw3 0x00484f10 (logic-change)
   - [x] `sort` 0x004a57f0 (35)
+    - BW: [ ] bw1 0x0049c3e0 = bw2 0x00483d80 = bw3 0x00484f80 (logic-change)
   - [x] `swap` 0x004a5870 (35)
+    - BW: [ ] bw1 0x0049c470 = bw2 0x00483e10 = bw3 0x00485010 (logic-change)
   - [x] `dtor` 0x004a3c80 (51)
     - BW: [ ] bw1 0x0049a710 = bw2 0x004820b0 = bw3 0x004832b0 (operand-change)
   - [x] `calculateLayoutAndCreateComponents` 0x004a45d0 (464)
@@ -1095,8 +1174,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `calculateButtonWidth` 0x004a68e0 (40)
     - BW: [ ] bw1 0x0049d950 (operand-change); [ ] bw2 0x004852f0 (operand-change); [ ] bw3 0x004864f0 (operand-change)
   - [x] `calculateButtonHeight` 0x004a6970 (42)
-    - BW: [ ] bw2 0x00485380 (operand-change)
+    - BW: [ ] bw1 0x0049d9e0 (operand-change); [ ] bw2 0x00485380 (operand-change); [ ] bw3 0x00486580 (operand-change)
   - [x] `draw3DBorder` 0x004a58f0 (66)
+    - BW: [ ] bw1 0x0049c500 = bw2 0x00483ea0 = bw3 0x004850a0 (logic-change)
   - [x] `draw3DInsetBorder` 0x004a59a0 (141)
 - class `CEdButton`
   - [x] `clearActiveButtonIfMatch` 0x004a6530 (4)
@@ -1104,6 +1184,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `setBoundsAndText` 0x004a6590 (30)
   - [x] `wasClicked` 0x004a6830 (52)
   - [x] `paint` 0x004a65e0 (220)
+    - BW: [ ] bw1 0x0049d580 = bw2 0x00484f20 = bw3 0x00486120 (logic-change)
 
 ## Step 9: `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load`
 
@@ -1115,6 +1196,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/event.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `resetGameFlags` 0x004b0460 (3)
+    - BW: [ ] bw1 0x004a9a00 = bw2 0x004910b0 = bw3 0x00494880 (logic-change)
 
 ### `engine/drender.cpp` (3 functions, 63 instructions, 2 done, 1 partial)
 - class `CDemonRenderer`
@@ -1139,8 +1221,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw3 0x004cf010 (const-change)
 - class `CBloodSplat`
   - [ ] `load` 0x004ecb00 (54)
+    - BW: [ ] bw3 0x004cdb50 (logic-change)
 - class `CBloodPool`
   - [ ] `load` 0x004ed160 (38)
+    - BW: [ ] bw3 0x004ce090 (logic-change)
 
 ### `core/inv.cpp` (1 functions, 27 instructions, 1 done, 0 partial)
 - class `CInventory`
@@ -1149,7 +1233,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/set.cpp` (1 functions, 88 instructions, 1 done, 0 partial)
 - class `CDemonSet`
   - [x] `buildActorTypeLists` 0x00570fc0 (88)
-    - BW: [ ] bw1 0x00555ad0 (logic-change)
+    - BW: [ ] bw1 0x00555ad0 (logic-change); [ ] bw3 0x0053b460 (logic-change)
 
 ### `core/dtrace.cpp` (2 functions, 110 instructions, 1 done, 0 partial)
 - class `CDemonRaytrace`
@@ -1179,9 +1263,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005637d0 = bw2 0x00541160 = bw3 0x00548370 (logic-change)
 - free functions
   - [x] `freeAllModels` 0x005a1dc0 (15)
+    - BW: [ ] bw1 0x0056b610 = bw3 0x005501a0 (logic-change); [ ] bw2 0x00548f80 (logic-change)
   - [x] `freeAllSkeletons` 0x005a1ea0 (16)
+    - BW: [ ] bw1 0x0056b740 = bw3 0x005502d0 (logic-change); [ ] bw2 0x00549090 (logic-change)
 - class `CSkeleton`
   - [x] `free` 0x00599a50 (47)
+    - BW: [ ] bw1 0x00562f70 = bw2 0x00540980 = bw3 0x00547b90 (logic-change)
 
 ### `core/actor.cpp` (18 functions, 918 instructions, 16 done, 1 partial)
 - class `CDemonActor`
@@ -1220,6 +1307,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/mission.cpp` (13 functions, 995 instructions, 7 done, 6 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
+    - BW: [ ] bw1 0x0051b1d0 = bw2 0x004fc270 = bw3 0x004f69a0 (logic-change)
   - [x] `buildSetActorList` 0x00523e60 (50)
     - BW: [ ] bw1 0x0051b420 = bw3 0x004f6bf0 (logic-change); [ ] bw2 0x004fc4c0 (logic-change)
   - [~] `removeActor` 0x00523f20 (18)
@@ -1232,6 +1320,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0051b5a0 = bw2 0x004fc640 = bw3 0x004f6d70 (logic-change)
   - [~] `clearMissionData` 0x00522d30 (20)
     - deferred: clearing actor_lookup_count, with saveActor
+    - BW: [ ] bw1 0x0051a3b0 = bw2 0x004fb450 = bw3 0x004f5b80 (logic-change)
   - [x] `findActorByName` 0x00524030 (24)
   - [~] `generateUniqueActorName` 0x00524660 (65)
     - deferred: counting the names of the items in every hero's inventory too, which the original's lookup of the mission's actors misses, so a save holds no two actors of one name (the decomp's item_names.h, ITEM_NAMES), with CInventory's items
@@ -1239,11 +1328,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `addActorToList` 0x00523b70 (31)
   - [~] `freeAllAssets` 0x005248e0 (13)
     - deferred: freeing the keyframed models, deformable models and skeletons the mission's actors loaded, with their pools
+    - BW: [ ] bw1 0x0051bf10 = bw2 0x004fcf50 = bw3 0x004f76f0 (logic-change)
   - [~] `readMissionFile` 0x00522eb0 (432)
     - deferred: recording each actor in the table save files refer to actors by, with saveActor
     - deferred: reading the blood pools and splats the file ends with, with CGore's renderers
     - BW: [ ] bw1 0x0051a4f0 (logic-change); [ ] bw2 0x004fb590 (logic-change); [ ] bw3 0x004f5cc0 (logic-change)
   - [x] `ensureHeroPlaceholder` 0x00524c20 (153)
+    - BW: [ ] bw1 0x0051c240 (logic-change); [ ] bw2 0x004fd280 (logic-change); [ ] bw3 0x004f7a20 (logic-change)
   - [x] `load` 0x00522d90 (51)
     - BW: [ ] bw1 0x0051a3f0 = bw3 0x004f5bc0 (logic-change); [ ] bw2 0x004fb490 (logic-change)
 
@@ -1252,6 +1343,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/hero.cpp` (1 functions, 102 instructions, 1 done, 0 partial)
 - class `CHeroPlaceholder`
   - [x] `createHero` 0x004f3d80 (102)
+    - BW: [ ] bw1 0x004ecca0 (logic-change); [ ] bw2 0x004d0a40 (logic-change); [ ] bw3 0x004d4be0 (logic-change)
 
 ### `core/motion.cpp` (2 functions, 36 instructions, 2 done, 0 partial)
 - class `CMotionController`
@@ -1287,8 +1379,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `allocNewCubeList` 0x00494380 (38)
     - BW: [ ] bw1 0x0048aa40 = bw2 0x00472550 = bw3 0x004735c0 (logic-change)
   - [x] `freeNewCubeList` 0x00494400 (23)
+    - BW: [ ] bw1 0x0048aab0 = bw2 0x004725c0 = bw3 0x00473630 (logic-change)
   - [x] `loadBinary` 0x004947a0 (518)
+    - BW: [ ] bw1 0x0048adc0 = bw2 0x004728d0 = bw3 0x00473940 (logic-change)
   - [x] `loadAndSyncWithGeoFile` 0x00494de0 (108)
+    - BW: [ ] bw1 0x0048afa0 = bw2 0x00472ab0 = bw3 0x00473b20 (logic-change)
 
 ### `core/box.cpp` (1 functions, 366 instructions, 1 done, 0 partial)
 - class `CBoundingBox3D`
@@ -1297,9 +1392,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/setdir.cpp` (6 functions, 598 instructions, 4 done, 1 partial)
 - class `CDemonSet`
   - [ ] `writeThumbs` 0x00575e40 (87)
-    - BW: [ ] bw2 0x00539c30 (logic-change)
+    - BW: [ ] bw1 0x0055b280 = bw3 0x00540c40 (logic-change); [ ] bw2 0x00539c30 (logic-change)
   - [~] `refreshThumbs` 0x00575b40 (35)
     - deferred: rendering every camera's thumb and writing the file when there is none, with renderSceneGeometry
+    - BW: [ ] bw1 0x0055b220 = bw3 0x00540be0 (logic-change); [ ] bw2 0x00539860 (logic-change)
   - [x] `skipDeprecatedVirtualDirectorData` 0x00576200 (51)
   - [x] `findVdirBoxRoot` 0x00576820 (25)
     - BW: [ ] bw1 0x0055c020 = bw2 0x0053a720 = bw3 0x005419e0 (logic-change)
@@ -1351,7 +1447,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: committing the voxel buffer when the geometry is the last set's, with commitVoxelBuffer and the voxel shadows it commits
     - deferred: resetting every path map after new geometry, with resetAllPathMaps and the path maps
     - deferred: resetting the automap after new geometry, with the automap
-    - BW: [ ] bw2 0x0052c0e0 (logic-change)
+    - BW: [ ] bw1 0x0054d3c0 (logic-change); [ ] bw2 0x0052c0e0 (logic-change); [ ] bw3 0x00532b80 (logic-change)
 
 ### `core/mission.cpp` (4 functions, 375 instructions, 1 done, 3 partial)
 - class `CDemonMission`
@@ -1369,7 +1465,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: setting a hero up as the local hero in a network game, with CNetGame's sessions
     - BW: [ ] bw1 0x0051b2b0 = bw2 0x004fc350 = bw3 0x004f6a80 (logic-change)
   - [x] `loadSet` 0x00523fb0 (42)
-    - BW: [ ] bw2 0x004fc6b0 (logic-change)
+    - BW: [ ] bw1 0x0051b610 = bw3 0x004f6de0 (logic-change); [ ] bw2 0x004fc6b0 (logic-change)
 
 ## Step 11: `CScript::loadScript`
 
@@ -1387,6 +1483,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0048ff40 = bw2 0x00477a50 = bw3 0x00478ac0 (logic-change)
   - [ ] `rayEdgeHeightTest` 0x0049b180 (138)
   - [ ] `rayTriangleFloorTest` 0x0049b2f0 (298)
+    - BW: [ ] bw1 0x00490a40 = bw2 0x00478550 = bw3 0x004795c0 (logic-change)
 
 ### `core/flies.cpp` (2 functions, 71 instructions, 0 done, 0 partial)
 - free functions
@@ -1398,6 +1495,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/particle.cpp` (4 functions, 332 instructions, 0 done, 0 partial)
 - class `CParticle`
   - [ ] `process` 0x00545760 (248)
+    - BW: [ ] bw1 0x00532250 = bw2 0x00510ef0 = bw3 0x00509f30 (logic-change)
   - [ ] `render` 0x00545a80 (8)
     - BW: [ ] bw1 0x005326d0 = bw2 0x00511370 = bw3 0x0050a3b0 (const-change)
   - [ ] `onCollision` 0x00545ab0 (2)
@@ -1422,6 +1520,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
   - [ ] `intersectRay` 0x004781d0 (313)
+    - BW: [ ] bw1 0x00467c00 = bw2 0x0044f020 = bw3 0x004618a0 (logic-change)
 - free functions
   - [x] `loadModel` 0x00478c00 (51)
     - BW: [ ] bw1 0x00468780 = bw2 0x0044fba0 = bw3 0x00462420 (const-change)
@@ -1464,6 +1563,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
+    - BW: [ ] bw1 0x004080c0 = bw2 0x00408290 = bw3 0x00408100 (logic-change)
   - [ ] `crc32ProcessByte` 0x0040ce30 (71)
   - [ ] `crc32ProcessBuffer` 0x0040cf10 (24)
   - [ ] `crc32ProcessInt` 0x0040cf50 (8)
@@ -1493,7 +1593,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: writing the actor's name to a save file, with CDemonMission::saveActor
 - class `CDemonActor`
   - [x] `transformVector` 0x00408e80 (13)
+    - BW: [ ] bw1 0x00408ac0 = bw2 0x00408cf0 = bw3 0x00408b00 (logic-change)
   - [x] `localToWorldPoint` 0x00408ec0 (26)
+    - BW: [ ] bw1 0x00408b40 = bw2 0x00408d70 = bw3 0x00408b80 (logic-change)
   - [x] `dtor` 0x00408a30 (28)
     - BW: [ ] bw1 0x00408730 = bw3 0x00408770 (logic-change); [ ] bw2 0x00408930 (logic-change)
   - [ ] `process` 0x00408a80 (7)
@@ -1514,6 +1616,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `customGetFloorHeight` 0x00408d50 (17)
     - BW: [ ] bw1 0x004089c0 = bw3 0x00408a00 (logic-change); [ ] bw2 0x00408bf0 (logic-change)
   - [ ] `worldToLocalPoint` 0x00408f10 (26)
+    - BW: [ ] bw1 0x00408bb0 = bw2 0x00408de0 = bw3 0x00408bf0 (logic-change)
   - [ ] `getWorldBoundingBox` 0x00409270 (144)
   - [ ] `cylinderGroundCheck` 0x00408db0 (66)
     - BW: [ ] bw1 0x00408a00 = bw2 0x00408c30 = bw3 0x00408a40 (logic-change)
@@ -1552,7 +1655,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `getAllowedMeleeAttackTypes` 0x0040a0f0 (107)
     - BW: [ ] bw1 0x00409d70 = bw3 0x00409db0 (logic-change); [ ] bw2 0x00409f20 (logic-change)
   - [ ] `inverseTransformVector` 0x00408ea0 (13)
+    - BW: [ ] bw1 0x00408b00 = bw2 0x00408d30 = bw3 0x00408b40 (logic-change)
   - [ ] `rayIntersect` 0x00409470 (414)
+    - BW: [ ] bw1 0x00409170 = bw3 0x004091b0 (logic-change); [ ] bw2 0x004093a0 (logic-change)
   - [ ] `processMeleeHit` 0x0040a210 (651)
     - BW: [ ] bw1 0x00409f20 (logic-change); [ ] bw2 0x0040a050 (logic-change); [ ] bw3 0x00409f60 (logic-change)
   - [ ] `fillAttackDamageInfo` 0x0040abc0 (21)
@@ -1587,6 +1692,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CFlame`
   - [x] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
+    - BW: [ ] bw1 0x004b8e40 = bw2 0x004a0590 = bw3 0x004a6dd0 (logic-change)
   - [ ] `process` 0x004c9c00 (313)
     - BW: [ ] bw1 0x004b7b90 (logic-change); [ ] bw2 0x0049f2e0 (logic-change); [ ] bw3 0x004a5b10 (logic-change)
   - [ ] `renderTransparent` 0x004ca110 (597)
@@ -1609,6 +1715,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `ctor` 0x00419010 (46)
     - BW: [ ] bw1 0x00418b40 = bw3 0x00414750 (logic-change); [ ] bw2 0x004156e0 (operand-change)
   - [ ] `setCounts` 0x004191d0 (97)
+    - BW: [ ] bw1 0x00418d00 = bw3 0x00414910 (logic-change); [ ] bw2 0x00415890 (logic-change)
   - [ ] `applyRotation` 0x0041a630 (297)
     - BW: [ ] bw1 0x0041a200 = bw3 0x00415e30 (logic-change); [ ] bw2 0x00416d70 (logic-change)
   - [ ] `optimizeBoundingBoxRotation` 0x0041aa40 (277)
@@ -1653,7 +1760,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CMotionController`
   - [x] `getMotionList` 0x0052dce0 (3)
   - [x] `getCurrentMotion` 0x0052dab0 (6)
-    - BW: [ ] bw1 0x00524770 = bw3 0x004fc070 (logic-change)
+    - BW: [ ] bw1 0x00524770 = bw3 0x004fc070 (logic-change); [ ] bw2 0x005035c0 (logic-change)
   - [x] `startTransition` 0x0052dbc0 (73)
   - [x] `findAndStartTransition` 0x0052d950 (101)
     - BW: [ ] bw1 0x00524620 = bw2 0x00503470 = bw3 0x004fbf20 (logic-change)
@@ -1684,7 +1791,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `evaluateCondition` 0x004adca0 (33)
   - [x] `validateCondition` 0x004add00 (21)
   - [ ] `addOrRemovePersistentEvent` 0x004b0330 (101)
+    - BW: [ ] bw1 0x004a9870 (logic-change); [ ] bw2 0x00490f80 (const-change); [ ] bw3 0x004946f0 (logic-change)
   - [ ] `addOrRemoveGameFlag` 0x004b0470 (101)
+    - BW: [ ] bw1 0x004a9a60 (logic-change); [ ] bw2 0x00491110 (const-change); [ ] bw3 0x004948e0 (logic-change)
   - [ ] `setTimerEvent` 0x004b05a0 (131)
     - BW: [ ] bw1 0x004a9bf0 (const-change); [ ] bw2 0x00491280 (const-change); [ ] bw3 0x00494a70 (const-change)
   - [ ] `setCounter` 0x004b0720 (92)
@@ -1696,6 +1805,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: each function's work: the flags, counters, timers and sounds, the actors, the set's lights, cameras and shake, the weather and the fire effects, with executeCommands
     - deferred: playSfx not starting a cue again while it plays, killHero killing the hero who set the trigger off or every hero in a network game, with CNetGame's sessions and the cue sounds
     - deferred: the commands after a setLeverState in the same string running while checking, and their errors only printed, as the original's condition check ends the dry run, with executeCommands
+    - BW: [ ] bw2 0x00489670 (logic-change)
   - [x] `executeCommandString` 0x004aac00 (69)
     - BW: [ ] bw1 0x004a1b90 = bw3 0x0048c170 (operand-change)
   - [ ] `executeCommands` 0x004aabe0 (11)
@@ -1730,15 +1840,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `slamDT` 0x004e3080 (26)
     - BW: [ ] bw1 0x004d7f50 (operand-change); [ ] bw2 0x004bd460 (operand-change); [ ] bw3 0x004bf3a0 (operand-change)
   - [ ] `fadeIn` 0x004e0b90 (9)
+    - BW: [ ] bw2 0x004bb4e0 (logic-change)
   - [ ] `displayBitmap` 0x004e2890 (39)
+    - BW: [ ] bw1 0x004d7730 (logic-change); [ ] bw2 0x004bcb50 (logic-change); [ ] bw3 0x004beb80 (logic-change)
   - [~] `resetInputAndCenterCursor` 0x004dce70 (34)
     - deferred: leaving the cursor where it is while a modal dialog is up (the decomp's UI_CURSOR_WARP), with the pause menu's network dialogs
-    - BW: [ ] bw2 0x004b8250 (logic-change)
+    - BW: [ ] bw1 0x004d19d0 (logic-change); [ ] bw2 0x004b8250 (logic-change); [ ] bw3 0x004ba490 (logic-change)
   - [ ] `beginFadeIn` 0x004e0920 (117)
+    - BW: [ ] bw1 0x004d6030 = bw2 0x004bb240 = bw3 0x004bd620 (logic-change)
   - [ ] `beginFadeOut` 0x004e0960 (16)
 - free functions
   - [ ] `calculateIrisFadeCenter` 0x004e09a0 (13)
-    - BW: [ ] bw1 0x004d60b0 = bw3 0x004bd6a0 (logic-change)
+    - BW: [ ] bw1 0x004d60b0 = bw2 0x004bb2c0 = bw3 0x004bd6a0 (logic-change)
 
 ### `core/hero.cpp` (7 functions, 121 instructions, 3 done, 0 partial)
 - class `CHeroPlaceholder`
@@ -1763,6 +1876,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `wincore/winrun.cpp` (1 functions, 520 instructions, 1 done, 0 partial)
 - free functions
   - [x] `getKeyName` 0x005f3980 (520)
+    - BW: [ ] bw3 0x00581360 (logic-change)
 
 ### `core/menu.cpp` (1 functions, 161 instructions, 1 done, 0 partial)
 - free functions
@@ -1777,7 +1891,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x004db880 (logic-change)
   - [ ] `checkHasMatchingKey` 0x005013d0 (70)
   - [ ] `removeItem` 0x004fea70 (57)
-    - BW: [ ] bw3 0x004dbaa0 (operand-change)
+    - BW: [ ] bw1 0x004f8d00 (logic-change); [ ] bw2 0x004db8e0 (logic-change); [ ] bw3 0x004dbaa0 (operand-change)
   - [ ] `removeMatchingKeys` 0x005014a0 (43)
   - [~] `clear` 0x004fd0e0 (46)
     - deferred: destroying the ammo counter, with CAmmo
@@ -1789,18 +1903,22 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updateSelectedWeaponAmmoDisplay` 0x004ffe10 (28)
     - BW: [ ] bw2 0x004dd020 (logic-change)
   - [ ] `isWeaponInCategory` 0x004ffe70 (114)
+    - BW: [ ] bw1 0x004fa540 (logic-change); [ ] bw2 0x004dd0a0 (logic-change)
   - [ ] `resetWeaponSwitchTimers` 0x004fffa0 (16)
   - [ ] `selectWeapon` 0x004feb10 (99)
+    - BW: [ ] bw2 0x004db9d0 (logic-change)
   - [ ] `addItem` 0x004fd600 (1627)
+    - BW: [ ] bw1 0x004f7690 (logic-change); [ ] bw3 0x004da880 (logic-change)
 - free functions
   - [ ] `getItemModel` 0x004fcda0 (107)
-    - BW: [ ] bw2 0x004d9db0 (const-change)
+    - BW: [ ] bw1 0x004f60c0 (logic-change); [ ] bw2 0x004d9db0 (const-change); [ ] bw3 0x004d9d20 (logic-change)
   - [ ] `getItemDisplayName` 0x004fcf00 (43)
   - [ ] `getItemDescription` 0x004fcf70 (43)
 
 ### `core/mission.cpp` (5 functions, 217 instructions, 1 done, 1 partial)
 - class `CDemonMission`
   - [ ] `markActorToDelete` 0x005240a0 (35)
+    - BW: [ ] bw1 0x0051b740 = bw3 0x004f6f10 (logic-change); [ ] bw2 0x004fc7b0 (logic-change)
   - [ ] `setTeleportTarget` 0x00524070 (11)
     - BW: [ ] bw1 0x0051b700 = bw3 0x004f6ed0 (logic-change)
   - [~] `loadActor` 0x00523990 (111)
@@ -1820,7 +1938,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
+    - BW: [ ] bw1 0x005660c0 (logic-change); [ ] bw2 0x00543a40 (logic-change); [ ] bw3 0x0054ac50 (logic-change)
   - [x] `skinVertices` 0x0059a880 (122)
+    - BW: [ ] bw1 0x00563cb0 = bw2 0x00541640 = bw3 0x00548850 (logic-change)
   - [ ] `getBonePart` 0x0059c2d0 (8)
   - [x] `getSkeletonPtr` 0x0059a810 (18)
     - BW: [ ] bw1 0x00563c40 (operand-change); [ ] bw2 0x005415d0 (operand-change); [ ] bw3 0x005487e0 (operand-change)
@@ -1845,10 +1965,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `process` 0x0043ea10 (44)
   - [ ] `processToBuffer` 0x0043ea80 (58)
   - [ ] `processFromBuffer` 0x0043eb30 (37)
+    - BW: [ ] bw2 0x00433ff0 (logic-change)
   - [ ] `processBuffer` 0x0043eba0 (44)
-    - BW: [ ] bw2 0x00434070 (logic-change)
+    - BW: [ ] bw1 0x00442d90 = bw2 0x00434070 = bw3 0x004409f0 (logic-change)
   - [ ] `processFiles` 0x0043ec30 (89)
   - [ ] `finalizeBuffer` 0x0043ed50 (42)
+    - BW: [ ] bw1 0x00442f00 = bw2 0x004341e0 = bw3 0x00440b60 (logic-change)
   - [ ] `dtor` 0x0043e9b0 (27)
     - BW: [ ] bw1 0x00442bb0 = bw3 0x00440810 (logic-change)
   - [ ] `ctor` 0x0043e9a0 (3)
@@ -1870,9 +1992,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `init` 0x0043f320 (20)
     - BW: [ ] bw1 0x004434e0 = bw2 0x004347c0 = bw3 0x00441140 (logic-change)
   - [ ] `finalize` 0x0043f440 (27)
+    - BW: [ ] bw1 0x00443630 = bw2 0x00434910 = bw3 0x00441290 (logic-change)
 - free functions
   - [x] `resetBitBuffer` 0x0043e510 (4)
   - [ ] `flushBitBuffer` 0x0043e7e0 (39)
+    - BW: [ ] bw2 0x00433ad0 (logic-change)
   - [ ] `writeBitsToStream` 0x0043e6c0 (104)
     - BW: [ ] bw1 0x00442490 = bw2 0x00433780 = bw3 0x004400f0 (logic-change)
   - [x] `extractBitsFromBuffer` 0x0043e840 (130)
@@ -1892,6 +2016,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `initCameraShake` 0x00453fc0 (43)
   - [x] `setEffectIntensity` 0x004528e0 (6)
   - [ ] `worldToScreenWithFrustumCull` 0x0044d7d0 (243)
+    - BW: [ ] bw1 0x0044e2a0 = bw2 0x0043cbe0 = bw3 0x0044a3e0 (logic-change)
   - [~] `setSceneCamera` 0x0044c3e0 (10)
     - deferred: the camera whose buffers are kept while skip_clear_buffers is set, with pushScreenBoundsToCamera
   - [ ] `calculateInverseTransform` 0x0044cf20 (186)
@@ -1914,6 +2039,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `precomputeLight` 0x0044de10 (380)
     - BW: [ ] bw1 0x0044e8e0 = bw3 0x0044aa20 (logic-change); [ ] bw2 0x0043d220 (logic-change)
   - [ ] `screenToWorldCoord` 0x0044d2a0 (58)
+    - BW: [ ] bw1 0x0044dd70 = bw2 0x0043c6b0 = bw3 0x00449eb0 (logic-change)
   - [ ] `screenToWorldTransform` 0x0044d370 (90)
   - [ ] `copyFogPlaneToBuffer` 0x00453020 (85)
     - BW: [ ] bw1 0x00453c90 (logic-change)
@@ -1953,9 +2079,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/dcube.cpp` (7 functions, 1140 instructions, 1 done, 1 partial)
 - class `CDemonCubeTriangle`
   - [ ] `rayTriangleIntersection` 0x00455460 (205)
+    - BW: [ ] bw1 0x004560f0 = bw2 0x00444a40 = bw3 0x00452240 (logic-change)
 - class `CDemonCube`
   - [ ] `rayIntersectTriangles` 0x004578f0 (137)
+    - BW: [ ] bw1 0x00458210 = bw2 0x00446b60 = bw3 0x00454360 (logic-change)
   - [ ] `testCylinderGroundCollision` 0x00457b60 (108)
+    - BW: [ ] bw1 0x004584a0 = bw2 0x00446df0 = bw3 0x004545f0 (logic-change)
   - [~] `rotateVertices` 0x00457650 (206)
     - deferred: keeping every corner clipped while advanced culling is on, with enableAdvancedCulling's callers
     - BW: [ ] bw1 0x00457f70 = bw2 0x004468c0 (logic-change); [ ] bw3 0x004540c0 (logic-change)
@@ -1978,12 +2107,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/dtrace.cpp` (11 functions, 2901 instructions, 6 done, 2 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
+    - BW: [ ] bw1 0x0048bdc0 = bw2 0x004738d0 = bw3 0x00474940 (logic-change)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
     - BW: [ ] bw1 0x0048c010 = bw2 0x00473b20 = bw3 0x00474b90 (logic-change)
   - [ ] `rayVoxelIntersection` 0x00495b70 (471)
   - [x] `worldPositionToVoxelCoords` 0x00499880 (59)
+    - BW: [ ] bw1 0x0048ef40 = bw2 0x00476a50 = bw3 0x00477ac0 (logic-change)
   - [x] `getBBoxMin` 0x00499b40 (15)
+    - BW: [ ] bw1 0x0048f210 = bw2 0x00476d20 = bw3 0x00477d90 (logic-change)
   - [x] `getBBoxMax` 0x00499b70 (15)
+    - BW: [ ] bw1 0x0048f230 = bw2 0x00476d40 = bw3 0x00477db0 (logic-change)
   - [~] `renderCubeForPVS` 0x00497500 (599)
     - deferred: counting the cubes tested, holding voxels, in view and drawn, with CGame's frame stats display
     - unverified: the corners' and the faces' planes' rounding against the original's code, by running both over cubes at fractional cell sizes
@@ -2001,6 +2134,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CGlass`
   - [ ] `createShatterParticles` 0x004ea1c0 (949)
   - [ ] `shatter` 0x004eaef0 (223)
+    - BW: [ ] bw1 0x004e34b0 = bw2 0x004c6d40 = bw3 0x004cc040 (logic-change)
   - [ ] `checkBreakableCondition` 0x004eb3a0 (8)
     - BW: [ ] bw2 0x004c72d0 (const-change); [ ] bw3 0x004cc5d0 (const-change)
   - [ ] `renderBrokenGlass` 0x004e9ca0 (141)
@@ -2010,7 +2144,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `multiplyMatrix3x4` 0x005f4f10 (165)
   - [x] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
+    - BW: [ ] bw1 0x005b5620 = bw2 0x00591ad0 = bw3 0x00583800 (logic-change)
   - [ ] `buildMatrixFromEulerAndPositionDirect` 0x005f54c0 (88)
+    - BW: [ ] bw1 0x005b5760 = bw2 0x00591c10 = bw3 0x00583940 (logic-change)
   - [ ] `matrixToEulerAnglesZYX` 0x005f5bd0 (376)
     - BW: [ ] bw1 0x005b5dd0 = bw2 0x00592280 = bw3 0x00583fb0 (logic-change)
   - [ ] `setIdentityMatrix3x4` 0x005f5100 (14)
@@ -2042,7 +2178,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/ground.cpp` (11 functions, 1109 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getGroundTypeCode` 0x004eece0 (33)
-    - BW: [ ] bw1 0x004e7010 = bw3 0x004cf9a0 (logic-change)
+    - BW: [ ] bw1 0x004e7010 = bw3 0x004cf9a0 (logic-change); [ ] bw2 0x004ca7c0 (logic-change)
   - [ ] `getGroundTypeColor` 0x004eee20 (29)
 - class `CGround`
   - [ ] `getVertexIndex` 0x004ef380 (10)
@@ -2110,7 +2246,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `depthTest` 0x0048dc50 (43)
   - [ ] `renderBlendedDirect` 0x0048bcf0 (64)
   - [ ] `getCameraRotationFixed` 0x0048c7e0 (23)
+    - BW: [ ] bw1 0x00483b50 = bw2 0x0046b650 = bw3 0x0046d230 (logic-change)
   - [ ] `getCameraRotationRadians` 0x0048c800 (36)
+    - BW: [ ] bw1 0x00483b70 = bw2 0x0046b670 = bw3 0x0046d250 (logic-change)
   - [ ] `getAlphaMask` 0x0048ce00 (4)
   - [x] `updateTexture` 0x0048dc30 (7)
   - [ ] `setShadowPass` 0x0048cac0 (5)
@@ -2130,6 +2268,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
   - [x] `getCameraOriginWorld` 0x0048c780 (31)
+    - BW: [ ] bw1 0x00483ae0 = bw2 0x0046b5e0 = bw3 0x0046d1c0 (logic-change)
   - [ ] `calculateProjectionFactor` 0x0048c870 (8)
   - [ ] `setAlphaMask` 0x0048cdf0 (5)
   - [ ] `enableAdvancedCulling` 0x0048ce10 (4)
@@ -2144,6 +2283,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CSpark`
   - [ ] `process` 0x004c0240 (54)
   - [ ] `render` 0x004c0420 (457)
+    - BW: [ ] bw1 0x004ad140 = bw2 0x004947a0 (logic-change); [ ] bw3 0x004980b0 (logic-change)
   - [ ] `onCollision` 0x004c0ac0 (2)
   - [ ] `setupRenderState` 0x004c0300 (127)
     - BW: [ ] bw1 0x004ad010 = bw2 0x00494670 = bw3 0x00497f70 (logic-change)
@@ -2157,9 +2297,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004b5eb0 = bw2 0x0049d5b0 = bw3 0x004a28e0 (const-change)
   - [ ] `createCrater` 0x004c8ea0 (23)
   - [ ] `createExplosion` 0x004c8c10 (42)
+    - BW: [ ] bw3 0x004a36e0 (logic-change)
   - [ ] `createGlassParticle` 0x004c7d00 (35)
     - BW: [ ] bw1 0x004b5d50 = bw2 0x0049d450 (logic-change); [ ] bw3 0x004a2780 (logic-change)
   - [ ] `createLightningBolt` 0x004c8f50 (42)
+    - BW: [ ] bw3 0x004a3bd0 (logic-change)
   - [ ] `renderDecals` 0x004c74a0 (111)
     - BW: [ ] bw3 0x004a1e90 (const-change)
   - [ ] `render` 0x004c7180 (261)
@@ -2174,21 +2316,26 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `process` 0x004c0b30 (178)
     - BW: [ ] bw3 0x00499350 (operand-change)
   - [ ] `render` 0x004c0e70 (519)
+    - BW: [ ] bw1 0x004ae640 = bw2 0x00495ca0 = bw3 0x00499690 (logic-change)
   - [ ] `onCollision` 0x004c1690 (105)
   - [ ] `setupRenderState` 0x004c0d80 (117)
     - BW: [ ] bw1 0x004ae550 = bw2 0x00495bb0 = bw3 0x004995a0 (logic-change)
 - class `CRock`
   - [ ] `process` 0x004c17f0 (43)
+    - BW: [ ] bw1 0x004aefc0 = bw2 0x00496620 = bw3 0x0049a010 (logic-change)
   - [ ] `render` 0x004c1870 (72)
+    - BW: [ ] bw1 0x004af040 = bw2 0x004966a0 = bw3 0x0049a090 (logic-change)
   - [ ] `setup` 0x004c17c0 (11)
 - class `CGlassParticle`
   - [ ] `render` 0x004c1ef0 (151)
   - [ ] `process` 0x004c20f0 (36)
   - [ ] `onCollision` 0x004c2160 (2)
   - [ ] `init` 0x004c1c00 (211)
+    - BW: [ ] bw1 0x004af600 = bw2 0x00496c60 (logic-change); [ ] bw3 0x0049a650 (logic-change)
 - class `CShell`
   - [ ] `render` 0x004c6200 (94)
   - [ ] `process` 0x004c6300 (43)
+    - BW: [ ] bw1 0x004b4190 = bw2 0x0049b7f0 = bw3 0x004a0af0 (logic-change)
   - [ ] `onCollision` 0x004c6380 (109)
 - class `CRainDrop`
   - [ ] `onCollision` 0x004c64b0 (2)
@@ -2199,18 +2346,22 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004b4370 = bw2 0x0049b9d0 = bw3 0x004a0cd0 (logic-change)
 - class `CExplosion`
   - [ ] `activate` 0x004c3970 (107)
+    - BW: [ ] bw1 0x004b16d0 = bw2 0x00498d30 (logic-change); [ ] bw3 0x0049c730 (logic-change)
   - [ ] `render` 0x004c3b10 (237)
-    - BW: [ ] bw1 0x004b1870 = bw2 0x00498ed0 (logic-change)
+    - BW: [ ] bw1 0x004b1870 = bw2 0x00498ed0 (logic-change); [ ] bw3 0x0049c8e0 (logic-change)
 - class `CCrater`
   - [ ] `render` 0x004c4620 (160)
     - BW: [ ] bw1 0x004b23a0 = bw2 0x00499a00 = bw3 0x0049d980 (operand-change)
   - [ ] `activate` 0x004c4200 (260)
+    - BW: [ ] bw1 0x004b1fb0 = bw2 0x00499610 = bw3 0x0049d590 (logic-change)
 - class `CLightningBolt`
   - [ ] `activate` 0x004c5640 (21)
+    - BW: [ ] bw3 0x0049f420 (logic-change)
   - [ ] `render` 0x004c5720 (453)
-    - BW: [ ] bw1 0x004b3570 = bw2 0x0049abd0 (logic-change)
+    - BW: [ ] bw1 0x004b3570 = bw2 0x0049abd0 (logic-change); [ ] bw3 0x0049f520 (logic-change)
 - class `CBulletHole`
   - [ ] `setupRenderState` 0x004bfa40 (32)
+    - BW: [ ] bw3 0x004975a0 (logic-change)
   - [ ] `render` 0x004bfac0 (232)
     - BW: [ ] bw1 0x004ac770 = bw2 0x00493dd0 (logic-change); [ ] bw3 0x00497610 (logic-change)
 - class `CStake`
@@ -2228,6 +2379,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004b01a0 = bw2 0x00497800 (logic-change); [ ] bw3 0x0049b1d0 (logic-change)
 - class `CToss`
   - [ ] `render` 0x004c4160 (35)
+    - BW: [ ] bw3 0x0049d500 (logic-change)
 - class `CGunFlame`
   - [ ] `render` 0x004c50b0 (381)
     - BW: [ ] bw1 0x004b2ea0 = bw2 0x0049a500 (logic-change); [ ] bw3 0x0049e500 (logic-change)
@@ -2256,6 +2408,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004e5c50 = bw2 0x004c9440 = bw3 0x004ce5b0 (operand-change)
 - class `CBloodParticle`
   - [ ] `render` 0x004ebac0 (503)
+    - BW: [ ] bw1 0x004e3f40 (logic-change); [ ] bw2 0x004c7580 (logic-change); [ ] bw3 0x004ccbe0 (logic-change)
   - [ ] `onCollision` 0x004ec290 (36)
   - [ ] `setup` 0x004eb9a0 (18)
   - [ ] `setupRenderState` 0x004eb9d0 (117)
@@ -2279,6 +2432,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/sound.cpp` (14 functions, 825 instructions, 2 done, 1 partial)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
+    - BW: [ ] bw1 0x0057be00 = bw2 0x005593d0 = bw3 0x0055ef30 (logic-change)
   - [ ] `playSound` 0x005b3a20 (12)
   - [x] `killSound` 0x005b3b90 (5)
   - [~] `playAmbientSound` 0x005b39b0 (38)
@@ -2291,7 +2445,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `isSoundPlaying` 0x005b3b80 (5)
   - [ ] `setVolumeFade` 0x005b3dc0 (5)
   - [x] `getSoundDuration` 0x005b3ba0 (53)
-  - [ ] `set3DListenerOrientRight` 0x005b3c90 (12)
+  - [ ] `setReverb` 0x005b3c90 (12)
   - [ ] `setReverbPreset` 0x005b3cc0 (25)
     - BW: [ ] bw2 0x0055b0b0 (const-change); [ ] bw3 0x00560c30 (const-change)
 - free functions
@@ -2307,6 +2461,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `ignore` 0x005741b0 (27)
   - [ ] `enableCollision` 0x00574220 (3)
   - [ ] `raycastAgainstActors` 0x00572a10 (290)
+    - BW: [ ] bw1 0x005578b0 = bw2 0x00536490 = bw3 0x0053d270 (logic-change)
   - [ ] `raycast` 0x00572530 (128)
   - [ ] `skipExactCollisions` 0x00574170 (3)
   - [ ] `setRayType` 0x00574230 (16)
@@ -2318,13 +2473,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/weather.cpp` (3 functions, 372 instructions, 1 done, 0 partial)
 - class `CWeather`
   - [ ] `createLightningStrike` 0x005eeeb0 (188)
-    - BW: [ ] bw1 0x005ae580 (logic-change); [ ] bw2 0x0058aa30 (logic-change)
+    - BW: [ ] bw1 0x005ae580 (logic-change); [ ] bw2 0x0058aa30 (logic-change); [ ] bw3 0x0057c2e0 (logic-change)
   - [x] `setWeatherType` 0x005ef8c0 (30)
+    - BW: [ ] bw3 0x0057d050 (logic-change)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
+    - BW: [ ] bw3 0x0057d1a0 (logic-change)
 
 ### `core/set.cpp` (27 functions, 2403 instructions, 6 done, 5 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
+    - BW: [ ] bw1 0x00554440 = bw3 0x00539dd0 (logic-change); [ ] bw2 0x00533190 (logic-change)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
   - [ ] `setLightingParameters` 0x0056d380 (72)
   - [ ] `initCameraShake` 0x00570fa0 (8)
@@ -2344,6 +2502,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `buildMirrorList` 0x00570b70 (66)
     - BW: [ ] bw1 0x00555610 (logic-change); [ ] bw2 0x00534360 (logic-change); [ ] bw3 0x0053afa0 (logic-change)
   - [ ] `computeVertexOmniLighting` 0x0056e3e0 (137)
+    - BW: [ ] bw1 0x00552d40 = bw2 0x00531a90 (logic-change)
   - [~] `renderSceneGeometry` 0x0056a190 (204)
     - deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
     - deferred: drawing in software the mirror list, the environment model, the sky dome, the water and, on the train, the terrain, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and CTerrain::render
@@ -2373,7 +2532,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights' shadow maps and their light over the backdrop, then the scene's static lights' shadow maps, with their reader renderScene, CDemonSet::process, the CDemonLight scene functions, CDemonCamera::precomputeLight and renderStaticLights
     - deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio off for the lit frame, with lightVerticies' quality modes and renderScene
     - deferred: the gore and fire decals in the lit frame, with CGore::renderDecals, CFireEffect::renderDecals and their decal pools' writers
-    - deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the preset's listener vector went only to DirectSound)
+    - deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the preset's EAX volume, decay time and damping went only to DirectSound)
     - deferred: the weather's origin and turn at the camera, with CWeather::setOriginAndRotation's readers
     - BW: [ ] bw1 0x0054f0d0 (logic-change); [ ] bw2 0x0052ddf0 (logic-change); [ ] bw3 0x00534890 (logic-change)
   - [x] `setCameraEnabled` 0x00570ea0 (5)
@@ -2387,15 +2546,21 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
   - [~] `updateTransform` 0x0041e0e0 (158)
     - deferred: the turn, the mass from the volume, how hard it is to spin and the scrape points' places, with CBox::processPhysics
+    - BW: [ ] bw1 0x0041de90 = bw2 0x005b2050 = bw3 0x0041b1d0 (logic-change)
   - [~] `setupCorners` 0x0041dd20 (127)
     - deferred: the eight scrape points at the corners, with CBox::processPhysics
 - class `CBoundingBox3D`
   - [x] `getCorner` 0x004202b0 (39)
+    - BW: [ ] bw1 0x00420570 = bw2 0x0041a600 = bw3 0x0041d8b0 (logic-change)
   - [ ] `doesBoxIntersect` 0x00421010 (34)
+    - BW: [ ] bw1 0x004215d0 = bw2 0x0041b660 = bw3 0x0041e910 (logic-change)
   - [ ] `clampPoint` 0x00421550 (66)
+    - BW: [ ] bw1 0x00421af0 = bw2 0x0041bb80 = bw3 0x0041ee30 (logic-change)
   - [ ] `doesSphereIntersect` 0x004215f0 (35)
+    - BW: [ ] bw1 0x00421b90 = bw2 0x0041bc20 = bw3 0x0041eed0 (logic-change)
   - [ ] `isVisibleWithShadow` 0x00420320 (147)
   - [x] `isVisibleWithCamera` 0x00420680 (136)
+    - BW: [ ] bw1 0x00420990 = bw2 0x0041aa20 = bw3 0x0041dcd0 (logic-change)
   - [~] `isVisible` 0x004204f0 (128)
     - deferred: the light's shadow-map test in place of the fog test while the renderer draws the shadow pass, with setShadowPass's callers and isVisibleWithShadow
   - [x] `getMaximumBound` 0x00421060 (29)
@@ -2404,9 +2569,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDemonSet`
   - [x] `setPendingCamera` 0x00575b00 (6)
   - [x] `isPointInVdirBox` 0x005762a0 (62)
+    - BW: [ ] bw1 0x0055b990 = bw3 0x00541350 (logic-change); [ ] bw2 0x0053a090 (logic-change)
   - [x] `findVdirBoxAtPosition` 0x00576870 (32)
+    - BW: [ ] bw1 0x0055c060 = bw3 0x00541a20 (logic-change)
   - [~] `evaluateVirtualDirector` 0x005751d0 (619)
     - deferred: scoring with the shadow pass off, with setShadowPass's callers
+    - BW: [ ] bw1 0x00559f80 = bw3 0x0053f940 (logic-change)
   - [x] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
 ### `core/dfilter.cpp` (3 functions, 286 instructions, 3 done, 0 partial)
@@ -2416,6 +2584,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0045da30 = bw2 0x004478d0 = bw3 0x00459980 (logic-change)
 - class `CFilterCache`
   - [x] `getFilter` 0x00470060 (103)
+    - BW: [ ] bw1 0x0045d7c0 = bw2 0x00447660 = bw3 0x00459710 (logic-change)
 
 ### `core/setutil.cpp` (6 functions, 437 instructions, 1 done, 1 partial)
 - class `C3DSLight`
@@ -2427,7 +2596,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [~] `apply` 0x00585870 (106)
     - deferred: the console's notes on an ambient level below the set's least or above a quarter, with the console among the set's owners
   - [x] `testSphereInFrustum` 0x00585970 (66)
-    - BW: [ ] bw2 0x0053ae20 (logic-change)
+    - BW: [ ] bw1 0x0055c6f0 = bw2 0x0053ae20 = bw3 0x005420b0 (logic-change)
 
 ### `core/script.cpp` (25 functions, 7596 instructions, 11 done, 9 partial)
 - class `CScript`
@@ -2435,6 +2604,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00543790 = bw2 0x00521680 = bw3 0x00528da0 (logic-change)
   - [~] `clear` 0x00559870 (38)
     - deferred: clearing the notes of dialogue missing from the database, with the dbSay commands and startDialogLine
+    - BW: [ ] bw1 0x00543740 = bw2 0x00521630 = bw3 0x00528d50 (logic-change)
   - [x] `buildParsedLines` 0x0055a370 (107)
     - BW: [ ] bw1 0x00543fd0 (logic-change); [ ] bw2 0x00521ec0 (logic-change); [ ] bw3 0x005295e0 (logic-change)
   - [~] `initRuntime` 0x0055a540 (120)
@@ -2522,7 +2692,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: running setTimeFactor, setting the game's speed, with CGame's time scale
     - deferred: running timedDisplay, showing the message for its time, with renderSubtitles and processTimer
     - deferred: running wait, holding the script for its time, with processTimer
-    - BW: [ ] bw1 0x00544460 (logic-change); [ ] bw3 0x00529a70 (logic-change)
+    - BW: [ ] bw1 0x00544460 (logic-change); [ ] bw2 0x00522350 (logic-change); [ ] bw3 0x00529a70 (logic-change)
   - [~] `validateSyntax` 0x0055a4b0 (53)
     - deferred: clearing the notes of dialogue missing from the database first, with the dbSay commands and startDialogLine
   - [x] `dbLoad` 0x005603c0 (232)
@@ -2562,6 +2732,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the local hero being the one netplay gives this machine, and the set loaded being the area netplay respawns it in (the decomp's nocturne_net_respawn_world_area), with CNetGame's sessions
     - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
     - deferred: clearing the letterbox, with CGame's readers of it
+    - BW: [ ] bw1 0x0051bdc0 = bw2 0x004fce00 (logic-change); [ ] bw3 0x004f7590 (logic-change)
   - [x] `buildActiveSetActorList` 0x00524120 (77)
 
 ### `engine/console.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
@@ -2613,6 +2784,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDemonLight`
   - [~] `free` 0x004728b0 (44)
     - deferred: letting go of the master z-buffer, with allocMasterZBuffer
+    - BW: [ ] bw1 0x00462670 = bw2 0x00449e70 = bw3 0x0045c380 (logic-change)
   - [x] `init` 0x004727c0 (64)
     - BW: [ ] bw1 0x00462590 = bw3 0x0045c2a0 (logic-change); [ ] bw2 0x00449d90 (logic-change)
   - [~] `ctor` 0x004726a0 (24)
@@ -2658,9 +2830,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `reset` 0x004c5de0 (3)
 - class `CFireEffect`
   - [ ] `init` 0x004c6c80 (153)
-    - BW: [ ] bw1 0x004b4b30 (logic-change); [ ] bw2 0x0049c190 (logic-change)
+    - BW: [ ] bw1 0x004b4b30 (logic-change); [ ] bw2 0x0049c190 (logic-change); [ ] bw3 0x004a1480 (logic-change)
   - [x] `loadAssets` 0x004c7ab0 (26)
-    - BW: [ ] bw1 0x004b5ac0 = bw2 0x0049d1c0 (logic-change)
+    - BW: [ ] bw1 0x004b5ac0 = bw2 0x0049d1c0 (logic-change); [ ] bw3 0x004a24a0 (logic-change)
 - free functions
   - [x] `loadStakeAssets` 0x004bfe00 (8)
   - [x] `loadFireBallAssets` 0x004c0ad0 (22)
@@ -2670,7 +2842,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw3 0x0049c680 (logic-change)
   - [x] `loadDynamiteAssets` 0x004c41d0 (4)
   - [x] `loadGunFlameAssets` 0x004c4d50 (31)
+    - BW: [ ] bw3 0x0049e170 (logic-change)
   - [x] `loadLightningBoltAssets` 0x004c5600 (15)
+    - BW: [ ] bw3 0x0049f380 (logic-change)
 
 ### `core/gore.cpp` (1 functions, 65 instructions, 1 done, 0 partial)
 - class `CGore`
@@ -2680,7 +2854,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `loadItem` 0x004fcfe0 (15)
   - [x] `loadAssets` 0x004fd220 (205)
-    - BW: [ ] bw2 0x004da990 (logic-change); [ ] bw3 0x004da570 (logic-change)
+    - BW: [ ] bw1 0x004f70e0 (logic-change); [ ] bw2 0x004da990 (logic-change); [ ] bw3 0x004da570 (logic-change)
 
 ### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 1 partial)
 - free functions
@@ -2767,8 +2941,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `calcX` 0x0049d8f0 (61)
     - BW: [ ] bw1 0x004933e0 (logic-change); [ ] bw2 0x0047aef0 (const-change); [ ] bw3 0x0047bf80 (logic-change)
   - [ ] `draw` 0x0049d9b0 (114)
+    - BW: [ ] bw1 0x004934b0 (logic-change); [ ] bw2 0x0047afb0 (logic-change); [ ] bw3 0x0047c050 (logic-change)
 - class `CEditorTools`
   - [ ] `getClipboardText` 0x004a1b30 (54)
+    - BW: [ ] bw1 0x00498210 = bw2 0x0047fbb0 = bw3 0x00480db0 (logic-change)
   - [ ] `showFilenameInputDialog` 0x0049fb70 (341)
     - BW: [ ] bw1 0x004958d0 (logic-change); [ ] bw2 0x0047d270 (logic-change); [ ] bw3 0x0047e470 (logic-change)
   - [x] `displayCenteredStatusMessage` 0x0049e790 (65)
@@ -2777,8 +2953,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/gore.cpp` (3 functions, 169 instructions, 0 done, 0 partial)
 - class `CBloodSplat`
   - [ ] `save` 0x004ecb90 (65)
+    - BW: [ ] bw3 0x004cdbe0 (logic-change)
 - class `CBloodPool`
   - [ ] `save` 0x004ed1c0 (47)
+    - BW: [ ] bw3 0x004ce0f0 (logic-change)
 - class `CGore`
   - [ ] `save` 0x004ee290 (57)
     - BW: [ ] bw3 0x004cf0c0 (const-change)
@@ -2822,11 +3000,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0057b780 = bw2 0x00558d50 = bw3 0x0055e8b0 (logic-change)
 - class `CSound`
   - [ ] `init` 0x005b2dd0 (110)
+    - BW: [ ] bw1 0x0057cc00 = bw3 0x0055fd30 (logic-change); [ ] bw2 0x0055a1d0 (logic-change)
   - [ ] `shutdown` 0x005b2f70 (24)
 
 ### `core/game.cpp` (3 functions, 1222 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `saveGame` 0x004e0cd0 (441)
+    - BW: [ ] bw1 0x004d6420 (logic-change); [ ] bw2 0x004bb9b0 (logic-change); [ ] bw3 0x004bda10 (logic-change)
   - [ ] `promptLoadGame` 0x004e36f0 (86)
   - [~] `processHotkeys` 0x004dcee0 (695)
     - deferred: nothing while a modal dialog is up, with the pause menu's network dialogs
@@ -2842,7 +3022,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the console, also with SPOOKHOUSE set, with processFrame's console
     - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
     - deferred: the camera on or off, with CDemonSet's camera flag's reader
-    - BW: [ ] bw1 0x004d1a80 (logic-change); [ ] bw3 0x004ba540 (logic-change)
+    - BW: [ ] bw1 0x004d1a80 (logic-change); [ ] bw2 0x004b82e0 (logic-change); [ ] bw3 0x004ba540 (logic-change)
 
 ## Step 15: `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame`
 
@@ -2943,13 +3123,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/alphabit.cpp` (1 functions, 103 instructions, 0 done, 0 partial)
 - class `CAlphaBitmap`
   - [ ] `render` 0x00410b00 (103)
+    - BW: [ ] bw1 0x0040d660 = bw3 0x0040d8a0 (logic-change)
 
 ### `core/netgame.cpp` (2 functions, 282 instructions, 0 done, 0 partial)
 - class `CNetGame`
   - [ ] `sendSimFrameAck` 0x00543970 (107)
     - BW: [ ] bw1 0x00530710 (operand-change); [ ] bw2 0x0050f4f0 = bw3 0x00507fd0 (logic-change)
   - [ ] `processClientFrame` 0x005435a0 (175)
-    - BW: [ ] bw1 0x00530340 (logic-change); [ ] bw3 0x00507c00 (logic-change)
+    - BW: [ ] bw1 0x00530340 (logic-change); [ ] bw2 0x0050f120 = bw3 0x00507c00 (logic-change)
 
 ### `engine/pcx.c` (4 functions, 559 instructions, 0 done, 0 partial)
 - free functions
@@ -3050,7 +3231,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `initializeCoronaBuffers` 0x004502e0 (14)
   - [ ] `renderCoronaDepthScanline` 0x00450320 (88)
   - [ ] `renderVolumetricLightScanline` 0x00450440 (133)
-    - BW: [ ] bw1 0x0045103e = bw2 0x0043f97e = bw3 0x0044d17e (logic-change)
   - [ ] `blendCoronaTextureSpan` 0x004517f0 (86)
 
 ### `engine/drender.cpp` (6 functions, 285 instructions, 0 done, 0 partial)
@@ -3074,7 +3254,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderAllItems` 0x00500690 (890)
     - BW: [ ] bw3 0x004dda90 (logic-change)
   - [ ] `renderItemModel` 0x004fee00 (319)
-    - BW: [ ] bw1 0x004f90d0 (logic-change); [ ] bw2 0x004dbd80 (logic-change)
+    - BW: [ ] bw1 0x004f90d0 (logic-change); [ ] bw2 0x004dbd80 (logic-change); [ ] bw3 0x004dbe70 (logic-change)
   - [ ] `renderSelectedItems` 0x00500370 (234)
     - BW: [ ] bw2 0x004dd670 (logic-change)
 - free functions
@@ -3086,32 +3266,36 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/setdir.cpp` (1 functions, 187 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `renderVirtualDirectors` 0x00575f70 (187)
+    - BW: [ ] bw1 0x0055b4f0 = bw3 0x00540eb0 (logic-change)
 
 ### `core/weather.cpp` (3 functions, 778 instructions, 0 done, 0 partial)
 - class `CWeather`
   - [ ] `createThunder` 0x005ef140 (21)
   - [ ] `update` 0x005eeaf0 (286)
-    - BW: [ ] bw2 0x0058a660 (logic-change)
+    - BW: [ ] bw1 0x005ae190 = bw2 0x0058a660 (logic-change); [ ] bw3 0x0057bda0 (logic-change)
   - [ ] `renderParticles` 0x005ef190 (471)
-    - BW: [ ] bw1 0x005ae890 = bw2 0x0058ad40 (logic-change)
+    - BW: [ ] bw1 0x005ae890 = bw2 0x0058ad40 (logic-change); [ ] bw3 0x0057c890 (logic-change)
 
 ### `core/fire.cpp` (19 functions, 1128 instructions, 0 done, 0 partial)
 - class `CSmokeParticle`
   - [ ] `process` 0x004bf390 (85)
+    - BW: [ ] bw1 0x004abf50 = bw2 0x004935b0 = bw3 0x00496e00 (logic-change)
 - class `CBulletHole`
   - [ ] `process` 0x004bfa00 (27)
+    - BW: [ ] bw1 0x004ac690 = bw2 0x00493cf0 = bw3 0x00497540 (logic-change)
 - class `CStake`
   - [ ] `process` 0x004c0210 (10)
 - class `CFireEffect`
   - [ ] `createDefaultSmoke` 0x004c7620 (10)
     - BW: [ ] bw3 0x004a2010 (const-change)
   - [ ] `process` 0x004c6ec0 (234)
-    - BW: [ ] bw1 0x004b4dd0 (logic-change); [ ] bw2 0x0049c430 (logic-change)
+    - BW: [ ] bw1 0x004b4dd0 (logic-change); [ ] bw2 0x0049c430 (logic-change); [ ] bw3 0x004a1760 (logic-change)
   - [ ] `getExplosionEffect` 0x004c8c90 (116)
-    - BW: [ ] bw1 0x004b6ce0 = bw2 0x0049e3e0 (logic-change)
+    - BW: [ ] bw1 0x004b6ce0 = bw2 0x0049e3e0 (logic-change); [ ] bw3 0x004a3790 (logic-change)
   - [ ] `createRainDrop` 0x004c9290 (31)
-    - BW: [ ] bw1 0x004b7320 (logic-change); [ ] bw2 0x0049ea20 (logic-change)
+    - BW: [ ] bw1 0x004b7320 = bw3 0x004a3f20 (logic-change); [ ] bw2 0x0049ea20 (logic-change)
   - [ ] `hasActiveMuzzleFlash` 0x004c93d0 (11)
+    - BW: [ ] bw2 0x0049eb50 (logic-change)
 - class `CMuzzleFlash`
   - [ ] `process` 0x004c1a00 (20)
 - class `CBulletTrail`
@@ -3124,7 +3308,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `process` 0x004c3ac0 (28)
 - class `CToss`
   - [ ] `process` 0x004c4000 (111)
-    - BW: [ ] bw1 0x004b1d90 = bw2 0x004993f0 (logic-change)
+    - BW: [ ] bw1 0x004b1d90 = bw2 0x004993f0 (logic-change); [ ] bw3 0x0049d090 (logic-change)
 - class `CCrater`
   - [ ] `process` 0x004c4550 (65)
     - BW: [ ] bw3 0x0049d8b0 (operand-change)
@@ -3182,7 +3366,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005518e0 (const-change); [ ] bw2 0x00530630 (const-change); [ ] bw3 0x00537270 (const-change)
   - [ ] `restoreCameraView` 0x00570c70 (14)
   - [ ] `renderScene` 0x0056c1a0 (620)
+    - BW: [ ] bw1 0x00550580 = bw3 0x00535da0 (logic-change); [ ] bw2 0x0052f2a0 (logic-change)
   - [ ] `renderGogglesView` 0x0056c990 (308)
+    - BW: [ ] bw1 0x00551170 (logic-change); [ ] bw3 0x005365c0 (logic-change)
   - [ ] `renderLightDebugView` 0x0056d190 (91)
 
 ### `core/skeleton.cpp` (4 functions, 144 instructions, 1 done, 0 partial)
@@ -3195,14 +3381,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw3 0x0054bea0 (logic-change)
 - free functions
   - [ ] `getMemoryStats` 0x005a1ed0 (54)
+    - BW: [ ] bw1 0x0056b780 = bw3 0x00550310 (logic-change); [ ] bw2 0x005490d0 (logic-change)
 
 ### `core/slew.cpp` (1 functions, 301 instructions, 0 done, 0 partial)
 - class `CSlew`
   - [ ] `processInput` 0x005a20b0 (301)
+    - BW: [ ] bw1 0x0056ba50 = bw2 0x005493d0 = bw3 0x005505e0 (logic-change)
 
 ### `core/dtrace.cpp` (1 functions, 348 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `rayVoxelGridTest` 0x00496220 (348)
+    - BW: [ ] bw1 0x0048b880 = bw2 0x00473390 (logic-change)
 
 ### `core/setcolid.cpp` (1 functions, 54 instructions, 0 done, 0 partial)
 - class `CDemonSet`
@@ -3231,6 +3420,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the item description key, with CInventory::toggleDetailView
     - deferred: the infrared key turning the goggles on or off, refused to a dead hero and to an unplaced client, the look reset (the decomp's GOGGLE_LOOK) and the camera chosen again, with CDemonSet::renderGogglesView
     - unverified: the strafe, turn and look steps, not run against nocedit's own code
+    - BW: [ ] bw1 0x004d0ee0 (logic-change); [ ] bw2 0x004b76c0 (logic-change); [ ] bw3 0x004b9960 (logic-change)
   - [~] `processJoystickControls` 0x004dc230 (16)
     - deferred: the sticks left alone while the automap has the controls (the decomp's AUTOMAP), with the automap
   - [~] `processMouseControls` 0x004dccc0 (149)
@@ -3248,11 +3438,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: a hero's bar as long as its health can go, max_hit_points / 100 of the width and clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with CCharacter::processCharacter and processDamage, which record it
     - BW: [ ] bw1 0x004cc2b0 (operand-change); [ ] bw2 0x004b32c0 (operand-change); [ ] bw3 0x004b47d0 (logic-change)
   - [ ] `showCustomizableKeys` 0x004d89d0 (1621)
-    - BW: [ ] bw1 0x004ccc40 (logic-change); [ ] bw2 0x004b3c50 (logic-change)
+    - BW: [ ] bw1 0x004ccc40 (logic-change); [ ] bw2 0x004b3c50 (logic-change); [ ] bw3 0x004b51e0 (logic-change)
   - [ ] `renderIrisFade` 0x004e0aa0 (73)
-    - BW: [ ] bw1 0x004d61e0 = bw3 0x004bd7d0 (logic-change)
+    - BW: [ ] bw1 0x004d61e0 = bw3 0x004bd7d0 (logic-change); [ ] bw2 0x004bb3d0 (logic-change)
   - [ ] `processCheatCodes` 0x004ddaf0 (3192)
-    - BW: [ ] bw1 0x004d27b0 (logic-change); [ ] bw3 0x004bb100 (logic-change)
+    - BW: [ ] bw1 0x004d27b0 (logic-change); [ ] bw2 0x004b90d0 (logic-change); [ ] bw3 0x004bb100 (logic-change)
   - [ ] `updateFadeTransition` 0x004e09c0 (65)
     - BW: [ ] bw1 0x004d60e0 = bw3 0x004bd6d0 (logic-change)
   - [ ] `process` 0x004e3190 (335)
@@ -3262,7 +3452,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `giveHeroWeapon` 0x004dd870 (56)
     - BW: [ ] bw1 0x004d2540 (operand-change); [ ] bw3 0x004bafd0 (operand-change)
   - [ ] `giveHeroWeaponAmmo` 0x004dd930 (48)
-    - BW: [ ] bw1 0x004d25fe (logic-change); [ ] bw2 0x004b8fce (logic-change)
+    - BW: [ ] bw1 0x004d2600 (logic-change); [ ] bw2 0x004b8fd0 (logic-change)
   - [ ] `scaleBoneRecursive` 0x004dda80 (37)
 
 ## Step 16: `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`
@@ -3292,22 +3482,29 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `configure` 0x005b3830 (112)
     - BW: [ ] bw1 0x0057d6a0 = bw2 0x0055ac50 = bw3 0x005607d0 (logic-change)
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 6 done, 2 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 5 done, 3 partial)
 - free functions
   - [x] `configureGraphicsOptions` 0x00510c80 (770)
-    - BW: [ ] bw1 0x0050aa90 (logic-change)
+    - BW: [ ] bw1 0x0050aa90 (logic-change); [ ] bw3 0x004e85a0 (logic-change)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
-    - BW: [ ] bw1 0x0050a2b0 (logic-change)
+    - BW: [ ] bw1 0x0050a2b0 = bw2 0x004eb490 = bw3 0x004e7dc0 (logic-change)
   - [x] `adjustMouseSensitivity` 0x005107c0 (200)
   - [x] `isKeyCodeValidForMode` 0x00513720 (87)
   - [x] `configureCustomKeyBindings` 0x005138e0 (1634)
+    - BW: [ ] bw1 0x0050d640 (logic-change); [ ] bw2 0x004eed60 (logic-change); [ ] bw3 0x004eae80 (logic-change)
   - [~] `configureCustomKeys` 0x00511890 (375)
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
     - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with the hero's turn rate from its frame and CDemonCamera::updateTransformMatrices
+    - BW: [ ] bw1 0x0050b470 (logic-change); [ ] bw2 0x004ecc70 (logic-change); [ ] bw3 0x004e8f80 (logic-change)
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
-  - [x] `configureSoundOptions` 0x00511e50 (1124)
+    - BW: [ ] bw2 0x004eaf30 (logic-change)
+  - [~] `configureSoundOptions` 0x00511e50 (1124)
+    - deferred: over the sound the pause menu holds, the music started again (channel back on, unmuted) without configure's reset; a change that reopens the output still loses the held sounds, which the pause menu starts again where they were (the decomp's PAUSE_SOUND), with the pause menu
+    - BW: [ ] bw1 0x0050ba70 (logic-change); [ ] bw2 0x004ed260 (logic-change); [ ] bw3 0x004e94f0 (logic-change)
   - [~] `showOptionsScreen` 0x00512d30 (138)
     - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
+    - deferred: over the sound the pause menu holds, the menu music started without configure's reset, and only the menu's own sounds stopped after it in place of reset (the decomp's PAUSE_SOUND), with the pause menu
+    - BW: [ ] bw1 0x0050c990 (logic-change); [ ] bw2 0x004ee1a0 (logic-change); [ ] bw3 0x004ea280 (logic-change)
 
 ### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)
 - class `CScript`
@@ -3328,6 +3525,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `rollCredits` 0x004e4010 (280)
     - BW: [ ] bw1 0x004d8e50 (logic-change); [ ] bw2 0x004be430 (logic-change); [ ] bw3 0x004c02a0 (logic-change)
   - [ ] `showFullscreenBitmap` 0x004e2910 (387)
+    - BW: [ ] bw1 0x004d77d0 (logic-change); [ ] bw3 0x004bec20 (logic-change)
   - [~] `runGameSession` 0x004daf80 (791)
     - deferred: the console's system memory, swap file and heap lines, with a platform memory report and CEditorTools::displayMemoryDiagnostics
     - deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode, overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal dialog, with processHotkeys, processFrame and CScript::step's allowHeroControls
@@ -3348,7 +3546,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the camera held while the goggles are on (the decomp's goggles_camera_hold), with processHotkeys' goggles
     - deferred: each frame processed, with processFrame
     - deferred: a client leaving a game whose host stopped answering or ended it (the decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
-    - deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, the sound stopped while it shows, with showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+    - deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, with showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+    - deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), not CSound::shutdown and init, which lost a dialogue line and restarted the music. The slots playing as it opens are held, neither computed nor heard, and written down with their sample, options, position and serial; the menu's own sounds play. Return, Save or Options lets them go from the same sample, after stopping the menu's sounds; one lost meanwhile (an output reopened, muting, its channel off and on) starts again where it was, in its own slot under its own serial, so the game's handle still finds it. Load, Warps, Skip cinematic and Quit shut the sound down and start it again as shipped. With CSound::init and shutdown, and a stop on CSfxVoice that keeps its frame
     - deferred: Escape closing the automap first, and ignored while the hero dies (the decomp's AUTOMAP and DEATH_FADE_SKIP), with the automap and getDeathState
     - deferred: the host's abort and the client's leave dialogs, with respawn and skip votes (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
     - deferred: each frame presented and counted, or only the window's messages while a cinematic skips or a sim frame is pending, with processFrame
@@ -3404,17 +3603,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/set.cpp` (1 functions, 75 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `loadStateInfo` 0x00571230 (75)
-    - BW: [ ] bw2 0x00534a90 (const-change)
+    - BW: [ ] bw1 0x00555e30 (logic-change); [ ] bw2 0x00534a90 (const-change); [ ] bw3 0x0053b7f0 (logic-change)
 
 ### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `finishAct` 0x004e3b90 (349)
     - BW: [ ] bw1 0x004d8a90 = bw3 0x004bfee0 (logic-change); [ ] bw2 0x004bdfb0 (logic-change)
   - [ ] `loadGame` 0x004e12b0 (645)
+    - BW: [ ] bw1 0x004d6990 (logic-change); [ ] bw2 0x004bbf70 (logic-change); [ ] bw3 0x004bdfb0 (logic-change)
   - [~] `showChapterSelect` 0x004e1cb0 (845)
     - deferred: zeroing the act's enemy and kill counts and its game and play times, with CGame::displayActStats
     - deferred: clearing the events' game flags, with CEventList::resetGameFlags
     - deferred: loading the save a run asks to reload, then the editor's font as it was, with CGame::loadGame and the play loop
+    - BW: [ ] bw1 0x004d7250 (logic-change)
 
 ### `core/course.cpp` (2 functions, 13 instructions, 2 done, 0 partial)
 - class `CCourse`
@@ -3448,6 +3649,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `wincore/wddvmem.cpp` (1 functions, 71 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `cleanupGraphicsSystem` 0x005ecd90 (71)
+    - BW: [ ] bw1 0x005ac1b0 = bw2 0x00588900 = bw3 0x00579a60 (logic-change)
 
 ### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
@@ -3467,6 +3669,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/dfont.cpp` (1 functions, 168 instructions, 1 done, 0 partial)
 - free functions
   - [x] `freeFonts` 0x004710a0 (168)
+    - BW: [ ] bw1 0x0045e7a0 = bw2 0x00448640 (logic-change); [ ] bw3 0x0045a8d0 (logic-change)
 
 ### `engine/matrix.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
@@ -3493,6 +3696,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `enterMainGameMenu` 0x00507a50 (1)
   - [ ] `finalizeGameSystems` 0x00508570 (216)
+    - BW: [ ] bw2 0x004e4e20 (logic-change)
 
 ## Step 19: Not reached from startup: `engine/`
 
@@ -3503,10 +3707,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `project3DPointToScreen` 0x00401770 (25)
   - [ ] `project3DPointClipped` 0x004017c0 (25)
   - [ ] `drawCharacterMasked` 0x00401900 (94)
-    - BW: [ ] bw1 0x0040190e = bw2 0x0040190e = bw3 0x0040190e (logic-change)
   - [ ] `drawCharacterHighlighted` 0x00401b70 (87)
   - [ ] `wrapTextToWidth` 0x00401d80 (103)
-    - BW: [ ] bw1 0x00401d8e = bw2 0x00401d8e = bw3 0x00401d8e (logic-change)
   - [ ] `drawStringMasked` 0x00402030 (39)
   - [ ] `drawStringHighlighted` 0x004020e0 (39)
   - [ ] `drawTextFormatted` 0x00402150 (27)
@@ -3528,14 +3730,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `drawTextCenteredColorFormatted` 0x00402730 (31)
   - [x] `loadLightTable` 0x00402860 (1)
   - [ ] `draw320x200SizeDot` 0x00402a90 (132)
-    - BW: [ ] bw1 0x00402ade = bw3 0x00402ade (logic-change); [ ] bw2 0x00402ade (logic-change)
+    - BW: [ ] bw1 0x00402ae0 = bw3 0x00402ae0 (const-change); [ ] bw2 0x00402ae0 (const-change)
   - [ ] `computeOutcode` 0x00402c10 (19)
   - [ ] `clipAndDrawLine` 0x00402ca0 (197)
     - BW: [ ] bw1 0x00402cf0 = bw3 0x00402cf0 (const-change); [ ] bw2 0x00402cf0 (const-change)
   - [ ] `clipLineGlobal` 0x00402c50 (27)
-    - BW: [ ] bw2 0x00402c9e (logic-change)
   - [ ] `getInputWithPrompt` 0x004032c0 (64)
-    - BW: [ ] bw1 0x0040330e = bw2 0x0040330e = bw3 0x0040330e (logic-change)
   - [ ] `setSolidColor` 0x004033a0 (47)
   - [ ] `mapFrameBuffer` 0x00403430 (138)
     - BW: [ ] bw1 0x00403480 = bw3 0x00403480 (const-change); [ ] bw2 0x00403480 (const-change)
@@ -3640,12 +3840,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderPolygonWithRenderFlagsUV` 0x00407720 (90)
     - BW: [ ] bw3 0x004075b0 (logic-change)
   - [ ] `dispatchMRGLBlockChain` 0x00407890 (40)
+    - BW: [ ] bw1 0x004076e0 = bw3 0x00407720 (logic-change); [ ] bw2 0x004078b0 (logic-change)
   - [ ] `flushRenderQueue` 0x00407a30 (40)
   - [ ] `dispatchMRGLToRenderer` 0x00407aa0 (170)
     - BW: [ ] bw1 0x00407820 = bw3 0x00407860 (const-change); [ ] bw2 0x004079f0 (const-change)
   - [ ] `drawLine2DFromIndices` 0x00407cf0 (87)
     - BW: [ ] bw1 0x00407a70 = bw2 0x00407c40 = bw3 0x00407ab0 (logic-change)
   - [ ] `drawLine3DFromIndices` 0x00407ff0 (87)
+    - BW: [ ] bw1 0x00407d70 = bw2 0x00407f40 = bw3 0x00407db0 (logic-change)
 
 ### `engine/alphabit.cpp` (1 functions, 18 instructions, 0 done, 0 partial)
 - class `CAlphaBitmap`
@@ -3657,6 +3859,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `modelStructNotSupported2` 0x0041db80 (9)
   - [ ] `modelStructNotSupported3` 0x0041dbb0 (8)
   - [ ] `modelStructNotSupported4` 0x0041dbe0 (50)
+    - BW: [ ] bw1 0x0041d980 = bw2 0x0041a510 = bw3 0x0041acc0 (logic-change)
   - [ ] `modelStructNotSupported5` 0x0041dc20 (8)
 
 ### `engine/clipper.c` (16 functions, 1664 instructions, 0 done, 0 partial)
@@ -3666,19 +3869,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `getFarPlaneDistance` 0x004359f0 (2)
   - [ ] `clipPolygonRightPlane` 0x00435f20 (95)
   - [ ] `clipPolygonLeftPlane` 0x00436060 (98)
-    - BW: [ ] bw1 0x0043bb0e = bw2 0x00430cae = bw3 0x0043971e (logic-change)
   - [ ] `clipPolygonTopPlane` 0x004361a0 (95)
   - [ ] `clipPolygonBottomPlane` 0x004362e0 (98)
-    - BW: [ ] bw1 0x0043bd8e = bw2 0x00430f2e = bw3 0x0043999e (logic-change)
   - [ ] `clipPolygonFarPlane` 0x00436420 (165)
   - [ ] `normalizeClippedVertices` 0x00436620 (47)
   - [ ] `copyMemory` 0x00437200 (16)
   - [ ] `clipPolygonRightPlaneGlobal` 0x00437700 (97)
-    - BW: [ ] bw1 0x0043d13e = bw2 0x004322de (logic-change)
+    - BW: [ ] bw3 0x0043ad90 (logic-change)
   - [ ] `clipPolygonLeftPlaneGlobal` 0x00437840 (100)
   - [ ] `clipPolygonTopPlaneGlobal` 0x00437980 (97)
   - [ ] `clipPolygonBottomPlaneGlobal` 0x00437ac0 (100)
-    - BW: [ ] bw3 0x0043b14e (logic-change)
+    - BW: [ ] bw1 0x0043d500 (logic-change)
   - [ ] `perspectiveDivideVertices` 0x00437bf0 (47)
   - [ ] `clipPolygonToViewFrustumAdvanced` 0x00437ca0 (581)
 
@@ -3698,6 +3899,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: refusing to count in the shadow pass, with setShadowPass's callers
     - BW: [ ] bw3 0x0046b470 (logic-change)
   - [ ] `renderNearPlaneTexturedPoly` 0x0048ac40 (102)
+    - BW: [ ] bw3 0x0046b670 (logic-change)
   - [ ] `renderAlphaBlendedDirect` 0x0048b150 (44)
   - [ ] `renderAlphaBlendedFace` 0x0048b320 (69)
   - [ ] `renderFullEffectsDirect` 0x0048b650 (65)
@@ -3771,7 +3973,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004ffaf0 = bw2 0x004e2660 = bw3 0x004e0bb0 (logic-change)
   - [ ] `calculateAndStoreVertexLight` 0x00505850 (18)
   - [ ] `getAmbientLightLevel` 0x005054c0 (2)
-    - BW: [ ] bw1 0x004ffa7e = bw2 0x004e25ee = bw3 0x004e0b3e (logic-change)
   - [ ] `setSpecularEnabled` 0x00505500 (3)
   - [ ] `setLightingMultipliers` 0x00505510 (5)
   - [ ] `calculateVertexLighting` 0x00505830 (12)
@@ -3785,7 +3986,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `buildRotationMatrix` 0x0050c920 (237)
   - [ ] `setCameraRotation` 0x0050e290 (12)
   - [ ] `transformWorldToView` 0x0050cc40 (74)
-    - BW: [ ] bw1 0x005079ce = bw2 0x004e8d2e (logic-change)
   - [ ] `calculateTransformedZ` 0x0050cd10 (31)
   - [ ] `transformToCache` 0x0050cd70 (13)
   - [ ] `calculate3DDistance` 0x0050d830 (31)
@@ -3798,12 +3998,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/model.c` (8 functions, 903 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getMRGLSize` 0x00528700 (95)
+    - BW: [ ] bw1 0x0051fee0 = bw2 0x00500f30 = bw3 0x004f8730 (const-change)
   - [ ] `loadModelFile` 0x00527ec0 (156)
     - BW: [ ] bw1 0x0051f6d0 = bw2 0x00500720 = bw3 0x004f7f20 (logic-change)
   - [ ] `loadModelChunk` 0x00528970 (101)
+    - BW: [ ] bw1 0x00520150 = bw2 0x005011a0 = bw3 0x004f89a0 (logic-change)
   - [ ] `byteswapMRGLData` 0x00527e40 (46)
   - [ ] `freeMRGLData` 0x005280b0 (57)
+    - BW: [ ] bw1 0x0051f8a0 = bw2 0x005008f0 = bw3 0x004f80f0 (logic-change)
   - [ ] `getMRGLBounds` 0x00528140 (352)
+    - BW: [ ] bw1 0x0051f920 = bw2 0x00500970 = bw3 0x004f8170 (const-change)
   - [ ] `loadMRGLTextures` 0x00528870 (78)
   - [ ] `initializeMRGLModel` 0x00528940 (18)
 
@@ -3823,15 +4027,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CFont`
   - [x] `dtor` 0x00544ec0 (3)
 
-### `engine/pod.cpp` (9 functions, 930 instructions, 0 done, 0 partial)
+### `engine/pod.cpp` (9 functions, 930 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `crc32UpdateByte` 0x0054f2e0 (59)
-  - [ ] `crc32UpdateBuffer` 0x0054f3a0 (25)
+  - [x] `crc32UpdateByte` 0x0054f2e0 (59)
+  - [x] `crc32UpdateBuffer` 0x0054f3a0 (25)
   - [ ] `crc32ComputeFromFile` 0x0054f3e0 (64)
   - [ ] `crc32ComputeFileRange` 0x0054f490 (92)
+    - BW: [ ] bw1 0x0053b110 = bw2 0x00519dc0 = bw3 0x00512e70 (logic-change)
 - class `CPodFile`
   - [ ] `computeFileCRC` 0x005507f0 (120)
   - [ ] `verifyChecksum` 0x00550230 (267)
+    - BW: [ ] bw2 0x0051aa80 (logic-change)
   - [ ] `getAuditRecord` 0x00550590 (85)
 - class `CPod`
   - [ ] `computeAndStoreCRC` 0x00551000 (180)
@@ -3842,6 +4048,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setMaxViewportScanline1200` 0x00551b70 (2)
   - [ ] `setMaxViewportScanline` 0x00551b80 (3)
   - [ ] `setupBasicSoftwareEdge` 0x00551ba0 (157)
+    - BW: [ ] bw1 0x0053d7b0 = bw2 0x0051c1b0 = bw3 0x00515510 (const-change)
   - [ ] `setupSoftwareEdgeWithZMode` 0x00551d60 (189)
   - [ ] `getTriangleWindingFromIndices2` 0x00552300 (78)
   - [ ] `setupAdvancedSoftwareEdge` 0x00552f70 (191)
@@ -3864,9 +4071,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setMipMapLevel` 0x005b7440 (9)
   - [ ] `setColorTable16` 0x005b7580 (16)
   - [ ] `addParticle` 0x005b7990 (13)
-    - BW: [ ] bw1 0x005826ee = bw2 0x0055fc9e = bw3 0x00565fbe (logic-change)
+    - BW: [ ] bw2 0x0055fc9e (logic-change)
   - [ ] `flushParticleList` 0x005b79c0 (6)
-    - BW: [ ] bw1 0x0058271e = bw2 0x0055fcce = bw3 0x00565fee (logic-change)
   - [ ] `add3dLine` 0x005b79e0 (17)
   - [ ] `flushLineList` 0x005b7a10 (6)
   - [ ] `setFogColorFromPalette` 0x005b7b10 (29)
@@ -3885,7 +4091,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/winfont.cpp` (8 functions, 638 instructions, 8 done, 0 partial)
 - class `CWinFont`
   - [x] `setColorAndDrawText` 0x005f2440 (315)
-    - BW: [ ] bw2 0x0058e110 (logic-change)
+    - BW: [ ] bw1 0x005b1c50 = bw3 0x0057fed0 (logic-change); [ ] bw2 0x0058e110 (logic-change)
   - [x] `reset` 0x005f2a30 (25)
   - [x] `createTextBackground` 0x005f2860 (143)
   - [x] `drawText` 0x005f23f0 (36)
@@ -3933,6 +4139,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `createUDPSocket` 0x005e1b40 (15)
   - [ ] `bindSocket` 0x005e1b80 (22)
   - [ ] `connectSocket` 0x005e1bd0 (36)
+    - BW: [ ] bw1 0x0059c9d0 = bw2 0x005790f0 = bw3 0x0056f9c0 (logic-change)
   - [ ] `listenSocket` 0x005e1d60 (9)
   - [ ] `acceptConnection` 0x005e1d80 (48)
   - [ ] `getSocketName` 0x005e1df0 (39)
@@ -3950,6 +4157,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `get16BitConversionFunction` 0x004317a0 (2)
   - [ ] `basicIndexedTo16Bit` 0x00431730 (20)
   - [ ] `getColorConversionFunction` 0x00431760 (5)
+    - BW: [ ] bw1 0x00437270 = bw2 0x0042c410 = bw3 0x00434e80 (logic-change)
   - [ ] `getOptimizedMemcpyFunction` 0x00431780 (6)
   - [ ] `loadACTPaletteFile` 0x00431ac0 (124)
     - BW: [ ] bw1 0x00437490 = bw3 0x004350a0 (logic-change); [ ] bw2 0x0042c780 (logic-change)
@@ -3959,14 +4167,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `loadBitmapWithPalette` 0x004317b0 (56)
   - [ ] `applyColorPalette` 0x00431830 (31)
   - [ ] `buildHardwarePalettes` 0x00431c00 (85)
-    - BW: [ ] bw1 0x004375fe = bw3 0x0043520e (logic-change)
   - [ ] `blitSpanBasedSprite` 0x00431d00 (199)
   - [ ] `blitSpanBasedSpriteClipped` 0x00431f40 (198)
-    - BW: [ ] bw1 0x0043793e = bw2 0x0042cc2e = bw3 0x0043554e (logic-change)
   - [ ] `blitRectangleClipped` 0x00432190 (136)
-    - BW: [ ] bw1 0x00437b8c = bw2 0x0042ce7c = bw3 0x0043579c (logic-change)
   - [ ] `blitUnifiedSprite` 0x00432300 (193)
-    - BW: [ ] bw1 0x00437cfc = bw2 0x0042cfec = bw3 0x0043590c (logic-change)
   - [ ] `blitSimpleSprite` 0x00432540 (129)
   - [ ] `blitDualModeSprite` 0x004326a0 (150)
   - [ ] `copyBitmapRegion` 0x00432860 (49)
@@ -3974,7 +4178,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `blitVerticalColumn` 0x00432a10 (86)
   - [ ] `blitSolidSprite` 0x00432af0 (26)
   - [ ] `blitFullScreen` 0x00432b30 (17)
-    - BW: [ ] bw1 0x0043852c = bw2 0x0042d81c = bw3 0x0043613c (logic-change)
   - [ ] `blitSpanBasedSpriteVerticallyClipped` 0x00432b60 (130)
   - [ ] `blitWithTransparencyFallback` 0x00432d00 (56)
   - [ ] `copyScreenRegion` 0x00432d90 (41)
@@ -3982,8 +4185,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `rotateCircularBitmap` 0x00433030 (120)
   - [ ] `mirrorBitmapHorizontally` 0x00433160 (61)
   - [ ] `loadEdgeListFile` 0x004331f0 (177)
+    - BW: [ ] bw1 0x00438bd0 = bw3 0x004367e0 (logic-change); [ ] bw2 0x0042dec0 (logic-change)
   - [ ] `loadSingleEdgeList` 0x00433440 (18)
   - [ ] `saveEdgeListFile` 0x00433480 (112)
+    - BW: [ ] bw1 0x00438e40 = bw3 0x00436a50 (logic-change); [ ] bw2 0x0042e130 (logic-change)
   - [ ] `drawClippedEdges` 0x004335f0 (81)
   - [ ] `rasterizeEdgeEndpoints` 0x004336e0 (87)
   - [ ] `blendPixelWithHardwarePalette` 0x00433f50 (254)
@@ -3994,23 +4199,22 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `blendPixelWithSourcePalette` 0x004342f0 (205)
   - [ ] `drawLineAA` 0x00433c90 (252)
   - [ ] `isLineBlendingDisabled` 0x00434650 (2)
-    - BW: [ ] bw1 0x00439ffe = bw3 0x00437c0e (logic-change)
   - [ ] `isLineClippingDisabled` 0x00434660 (2)
   - [ ] `setLineBlendingDisabled` 0x00434670 (3)
-    - BW: [ ] bw1 0x0043a010 = bw3 0x00437c20 (logic-change)
+    - BW: [ ] bw1 0x0043a010 = bw2 0x0042f300 = bw3 0x00437c20 (logic-change)
   - [ ] `setLineClippingDisabled` 0x00434680 (3)
-    - BW: [ ] bw1 0x0043a01c = bw3 0x00437c2c (logic-change)
   - [ ] `loadRotatedBitmapFile` 0x00434690 (146)
   - [ ] `rotateBitmap` 0x00434870 (145)
     - BW: [ ] bw1 0x0043a040 = bw3 0x00437c50 (logic-change)
   - [ ] `setEdgeData` 0x00434a50 (50)
   - [ ] `traceConnectedEdges` 0x00434af0 (618)
-    - BW: [ ] bw1 0x0043a45e = bw3 0x0043806e (logic-change)
+    - BW: [ ] bw1 0x0043a460 = bw3 0x00438070 (logic-change)
   - [ ] `flipEdgeArrayHorizontally` 0x004355c0 (113)
 
 ### `cockpit/drawsurf.cpp` (75 functions, 3467 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `setColorRGB` 0x00487220 (117)
+    - BW: [ ] bw1 0x0047e5c0 = bw3 0x00467c80 (const-change)
   - [ ] `setColorBlack` 0x00487380 (6)
   - [ ] `setColorWhite` 0x00487390 (6)
   - [ ] `setColorRed` 0x004873b0 (6)
@@ -4047,6 +4251,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `drawCenteredRectangleOutline` 0x00488550 (52)
   - [ ] `drawRectangleBetweenPoints` 0x004885d0 (38)
   - [ ] `drawAnimatedDashedLine` 0x004887a0 (156)
+    - BW: [ ] bw1 0x0047fb20 = bw2 0x00467610 = bw3 0x004691e0 (logic-change)
   - [ ] `drawSolidRectangle` 0x00488630 (36)
   - [ ] `drawFullSurface` 0x004886a0 (13)
   - [ ] `drawCenteredSolidRectangle` 0x004886c0 (52)
@@ -4094,7 +4299,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `ctor` 0x0054bcd0 (12)
   - [ ] `init` 0x0054bd00 (34)
   - [ ] `reset` 0x0054bd60 (20)
+    - BW: [ ] bw1 0x00538990 = bw2 0x00517640 = bw3 0x00510670 (logic-change)
   - [ ] `alloc` 0x0054bdb0 (56)
+    - BW: [ ] bw1 0x005389c0 = bw3 0x005106a0 (logic-change); [ ] bw2 0x00517670 (logic-change)
   - [ ] `loadBitmapSetFromRange` 0x0054be70 (68)
   - [ ] `setFilename` 0x0054c6f0 (11)
   - [ ] `applyPaletteToAllBitmaps` 0x0054c620 (27)
@@ -4119,6 +4326,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `reset` 0x0054a8b0 (6)
   - [ ] `ctor` 0x0054a820 (13)
   - [ ] `free` 0x0054a8e0 (30)
+    - BW: [ ] bw1 0x00537550 = bw2 0x00516200 = bw3 0x0050f230 (logic-change)
   - [ ] `setFilename` 0x0054a990 (10)
   - [ ] `load` 0x0054b190 (165)
     - BW: [ ] bw1 0x00537db0 = bw3 0x0050fa90 (logic-change); [ ] bw2 0x00516a60 (logic-change)
@@ -4126,6 +4334,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `applyACTPalette` 0x0054b3f0 (18)
   - [ ] `applyPalette` 0x0054b4a0 (6)
   - [ ] `reloadFromBitmapFile` 0x0054b000 (52)
+    - BW: [ ] bw1 0x00537c30 = bw2 0x005168e0 = bw3 0x0050f910 (logic-change)
   - [ ] `init` 0x0054a840 (32)
   - [ ] `dtor` 0x0054a890 (8)
   - [ ] `freePackedData` 0x0054a940 (15)
@@ -4135,6 +4344,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `copyToBufferAtPosition` 0x0054afb0 (31)
   - [ ] `copyRawDataToCompressedRuns` 0x0054b0e0 (64)
   - [ ] `loadAndCompressBitmap` 0x0054b080 (35)
+    - BW: [ ] bw1 0x00537cb0 = bw2 0x00516960 = bw3 0x0050f990 (logic-change)
   - [ ] `readPBMFile` 0x0054b690 (148)
     - BW: [ ] bw1 0x00538280 = bw3 0x0050ff60 (logic-change); [ ] bw2 0x00516f30 (logic-change)
   - [ ] `openPBMFile` 0x0054b860 (59)
@@ -4151,6 +4361,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `parsePBGFile` 0x0054b9b0 (124)
     - BW: [ ] bw1 0x005385d0 = bw3 0x005102b0 (logic-change); [ ] bw2 0x00517280 (logic-change)
   - [ ] `loadPBGFile` 0x0054bb40 (105)
+    - BW: [ ] bw1 0x00538750 = bw3 0x00510430 (logic-change); [ ] bw2 0x00517400 (logic-change)
 
 ## Step 22: Not reached from startup: `shape/`
 
@@ -4164,12 +4375,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `drawWindowStatusMessage` 0x0049e870 (60)
   - [ ] `createCenteredDialog` 0x0049e940 (40)
   - [ ] `showDirectoryBrowser` 0x0049f420 (501)
+    - BW: [ ] bw1 0x00495180 = bw2 0x0047cb20 = bw3 0x0047dd20 (operand-change)
   - [ ] `promptForValidVector` 0x004a0300 (74)
   - [ ] `draw3DAxisLabels` 0x004a1ca0 (302)
+    - BW: [ ] bw1 0x00498360 (logic-change); [ ] bw2 0x0047fd00 (logic-change); [ ] bw3 0x00480f00 (logic-change)
   - [ ] `draw3DAxisLabelsAt` 0x004a1e90 (49)
+    - BW: [ ] bw1 0x004985b0 = bw2 0x0047ff50 = bw3 0x00481150 (logic-change)
   - [ ] `draw3DWireframeCube` 0x004a2050 (451)
+    - BW: [ ] bw2 0x00480150 = bw3 0x00481350 (logic-change)
   - [ ] `drawCenteredWireframeCube` 0x004a2510 (43)
   - [ ] `drawPixelLine` 0x004a2660 (142)
+    - BW: [ ] bw1 0x00498f10 = bw2 0x004808b0 = bw3 0x00481ab0 (logic-change)
   - [ ] `draw3DProjectedLine` 0x004a28a0 (39)
   - [x] `setMousePointerType` 0x004a2920 (75)
     - BW: [ ] bw1 0x00499250 (const-change); [ ] bw2 0x00480bf0 (const-change); [ ] bw3 0x00481df0 (const-change)
@@ -4177,9 +4393,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [~] `staticInit` 0x0049d170 (7)
     - deferred: the six colours retail's init sets for CInputString::draw, showFilenameInputDialog and draw3DAxisLabels, with those functions
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
+    - BW: [ ] bw1 0x00492970 = bw2 0x0047a480 = bw3 0x0047b510 (logic-change)
   - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
+    - BW: [ ] bw1 0x004929e0 (operand-change); [ ] bw2 0x0047a4f0 (operand-change); [ ] bw3 0x0047b580 (operand-change)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)
   - [ ] `draw3DInterpolatedLine` 0x004a1f40 (136)
+    - BW: [ ] bw1 0x00498660 = bw2 0x00480000 = bw3 0x00481200 (logic-change)
   - [ ] `getFontMaxCharHeight` 0x004a6ee0 (3)
 - class `CStrList`
   - [ ] `copyFrom` 0x004a2ac0 (38)
@@ -4636,7 +4855,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/boneguy.cpp` (22 functions, 2680 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `hsvToRgb` 0x0041ba10 (128)
-    - BW: [ ] bw1 0x0041b590 = bw2 0x00418110 (logic-change); [ ] bw3 0x00417240 (logic-change)
+    - BW: [ ] bw1 0x0041b590 = bw2 0x00418110 = bw3 0x00417240 (logic-change)
   - [ ] `factoryFuncBoneGuy` 0x0041b820 (12)
     - BW: [ ] bw1 0x0041b3a0 (logic-change); [ ] bw2 0x00417f20 (logic-change); [ ] bw3 0x00417050 (logic-change)
   - [x] `staticInit` 0x0041b6d0 (9)
@@ -4645,7 +4864,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `getWorldBoundingBoxCenter` 0x0041b770 (60)
     - BW: [ ] bw1 0x0041b2a0 = bw2 0x00417e20 = bw3 0x00416f50 (logic-change)
   - [ ] `rgbToHsv` 0x0041b860 (128)
-    - BW: [ ] bw1 0x0041b3cc = bw2 0x00417f4c = bw3 0x0041707c (logic-change)
+    - BW: [ ] bw1 0x0041b3d0 = bw2 0x00417f50 = bw3 0x00417080 (logic-change)
 - class `CBoneGuy`
   - [ ] `ctor` 0x0041bbc0 (107)
     - BW: [ ] bw1 0x0041b750 (logic-change); [ ] bw2 0x004182d0 (logic-change); [ ] bw3 0x00417400 (logic-change)
@@ -4690,12 +4909,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CBoundingBox3D`
   - [x] `reset` 0x00420fb0 (11)
   - [ ] `getBoundingBoxScreenSize` 0x00420840 (82)
+    - BW: [ ] bw1 0x00420dc0 = bw2 0x0041ae50 (logic-change); [ ] bw3 0x0041e100 (logic-change)
   - [ ] `normalize` 0x00420d70 (37)
   - [ ] `computeFromPoints` 0x00420dc0 (90)
   - [ ] `computeFromVertices` 0x00420e90 (92)
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
-    - BW: [ ] bw2 0x0041b700 = bw3 0x0041e9b0 (logic-change)
+    - BW: [ ] bw1 0x00421670 = bw2 0x0041b700 = bw3 0x0041e9b0 (logic-change)
 
 ### `core/boxactor.cpp` (33 functions, 1770 instructions, 13 done, 2 partial)
 - class `CBoxActor`
@@ -4704,6 +4924,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00421ca0 (logic-change); [ ] bw2 0x0041bd30 (logic-change); [ ] bw3 0x0041efe0 (logic-change)
   - [x] `getActorType` 0x004216f0 (2)
   - [x] `setupPhysicsBox` 0x004218d0 (82)
+    - BW: [ ] bw1 0x00421e80 = bw3 0x0041f1e0 (logic-change); [ ] bw2 0x0041bf10 (logic-change)
   - [ ] `process` 0x004219e0 (289)
     - BW: [ ] bw1 0x00422000 = bw2 0x0041c090 (logic-change); [ ] bw3 0x0041f360 (logic-change)
   - [ ] `renderOpaque` 0x00421e00 (79)
@@ -4732,6 +4953,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: no looping sound playing yet, with CBoxActor::process
     - BW: [ ] bw3 0x0041f130 (logic-change)
   - [ ] `constrainToExtents` 0x00422590 (59)
+    - BW: [ ] bw1 0x00422d10 = bw2 0x0041cda0 = bw3 0x004201a0 (logic-change)
   - [ ] `resolveRayPush` 0x00422390 (105)
     - BW: [ ] bw1 0x00422ab0 = bw2 0x0041cb40 = bw3 0x0041ff20 (logic-change)
 - free functions
@@ -4750,7 +4972,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `archive` 0x00422c80 (65)
     - BW: [ ] bw1 0x004231e0 (operand-change); [ ] bw2 0x0041d270 (operand-change); [ ] bw3 0x004207f0 (operand-change)
   - [ ] `setupLightModel` 0x00422d60 (205)
-    - BW: [ ] bw2 0x0041d350 (logic-change)
+    - BW: [ ] bw1 0x004232c0 (logic-change); [ ] bw2 0x0041d350 (logic-change); [ ] bw3 0x004208d0 (logic-change)
   - [ ] `dtor` 0x004235f0 (42)
     - BW: [ ] bw1 0x00423720 (const-change); [ ] bw2 0x0041d7b0 (operand-change); [ ] bw3 0x00420d30 (const-change)
   - [ ] `setup` 0x00422a20 (14)
@@ -4795,8 +5017,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `findNextSwarmVertex` 0x004270f0 (166)
     - BW: [ ] bw1 0x00427830 (logic-change); [ ] bw2 0x00421800 (logic-change); [ ] bw3 0x004239c0 (logic-change)
   - [ ] `updateBugRenderingData` 0x004268e0 (545)
+    - BW: [ ] bw1 0x00426ec0 (logic-change); [ ] bw2 0x00420e90 (logic-change); [ ] bw3 0x00423050 (logic-change)
   - [ ] `recalculateBoundingBox` 0x004272f0 (80)
   - [ ] `applySwarmTranslation` 0x004276c0 (98)
+    - BW: [ ] bw1 0x00427e00 = bw2 0x00421dd0 = bw3 0x00423fb0 (logic-change)
   - [ ] `attackSwarmTarget` 0x00425fe0 (317)
     - BW: [ ] bw1 0x004263d0 = bw2 0x004203a0 (logic-change); [ ] bw3 0x00422570 (logic-change)
   - [ ] `addSwarmGraphEdge` 0x00425740 (60)
@@ -4836,6 +5060,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `subtractVector` 0x004279f0 (12)
   - [ ] `crossVector` 0x00427a20 (23)
   - [ ] `normalizeVector` 0x00427a60 (45)
+    - BW: [ ] bw1 0x00428010 = bw2 0x00421fe0 = bw3 0x004241c0 (logic-change)
   - [ ] `convertVector` 0x00427ad0 (14)
   - [ ] `copyVectorToPair` 0x00427b00 (25)
   - [ ] `getBugVertex` 0x00427b40 (6)
@@ -4851,12 +5076,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0042c080 (logic-change); [ ] bw2 0x00422340 (logic-change); [ ] bw3 0x0042ac20 (logic-change)
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
   - [ ] `dismember` 0x0042b9e0 (178)
-    - BW: [ ] bw1 0x00430d90 (logic-change); [ ] bw2 0x00427360 (logic-change)
+    - BW: [ ] bw1 0x00430d90 (logic-change); [ ] bw2 0x00427360 (logic-change); [ ] bw3 0x004300e0 (logic-change)
   - [ ] `processFire` 0x0042a830 (336)
-    - BW: [ ] bw1 0x0042f8e0 (logic-change); [ ] bw2 0x00425fb0 (logic-change)
+    - BW: [ ] bw1 0x0042f8e0 (logic-change); [ ] bw2 0x00425fb0 (logic-change); [ ] bw3 0x0042e8c0 (logic-change)
   - [ ] `computePickup` 0x0042ce80 (190)
+    - BW: [ ] bw1 0x00432690 (logic-change); [ ] bw2 0x00428bd0 (logic-change); [ ] bw3 0x00431ab0 (logic-change)
   - [ ] `advanceGesture` 0x0042d4d0 (27)
-    - BW: [ ] bw2 0x00429320 (logic-change)
+    - BW: [ ] bw1 0x00432e00 = bw3 0x00432220 (logic-change); [ ] bw2 0x00429320 (logic-change)
   - [ ] `processCharacter` 0x00429870 (156)
     - BW: [ ] bw1 0x0042e1a0 (logic-change); [ ] bw2 0x004244b0 (logic-change)
   - [ ] `walkToPoint` 0x004286e0 (450)
@@ -4867,7 +5093,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updateCarriedObjects` 0x0042d090 (335)
     - BW: [ ] bw1 0x004328f0 = bw3 0x00431d10 (logic-change); [ ] bw2 0x00428e30 (logic-change)
   - [ ] `applyGesture` 0x0042d3d0 (66)
-    - BW: [ ] bw2 0x004291f0 (logic-change)
+    - BW: [ ] bw1 0x00432cb0 (logic-change); [ ] bw2 0x004291f0 (logic-change); [ ] bw3 0x004320d0 (logic-change)
   - [x] `computeBoundingBox` 0x0042d530 (41)
     - BW: [ ] bw1 0x00432e80 = bw2 0x00429390 = bw3 0x004322a0 (logic-change)
   - [ ] `applyLookAt` 0x0042dcd0 (111)
@@ -4879,7 +5105,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `addDamageDecal` 0x0042b190 (236)
     - BW: [ ] bw1 0x00430440 = bw3 0x0042f770 (logic-change); [ ] bw2 0x00426a10 (logic-change)
   - [ ] `shatter` 0x0042b8e0 (26)
+    - BW: [ ] bw3 0x0042ff70 (logic-change)
   - [ ] `explode` 0x0042b930 (57)
+    - BW: [ ] bw1 0x00430c90 = bw2 0x00427260 (logic-change); [ ] bw3 0x0042ffe0 (logic-change)
   - [ ] `dropAllCarriedObjects` 0x0042d060 (16)
   - [ ] `processDamage` 0x0042c3c0 (155)
     - BW: [ ] bw1 0x004319e0 (logic-change); [ ] bw2 0x00427fb0 (logic-change); [ ] bw3 0x00430d60 (logic-change)
@@ -4890,14 +5118,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `kill` 0x00428e30 (59)
   - [ ] `applyDamage` 0x00428ee0 (29)
   - [ ] `renderCollision` 0x00429b40 (493)
-    - BW: [ ] bw1 0x0042ea10 (logic-change)
+    - BW: [ ] bw1 0x0042ea10 (logic-change); [ ] bw2 0x00424c80 (logic-change); [ ] bw3 0x0042d9f0 (logic-change)
   - [ ] `renderAttachedModels` 0x0042a420 (102)
     - BW: [ ] bw1 0x0042f3c0 (logic-change); [ ] bw2 0x00425aa0 (logic-change); [ ] bw3 0x0042e3a0 (logic-change)
   - [ ] `renderBurn` 0x0042ad00 (190)
-    - BW: [ ] bw2 0x004264d0 (operand-change)
+    - BW: [ ] bw2 0x004264d0 (operand-change); [ ] bw3 0x0042f010 (logic-change)
   - [ ] `renderEthereal` 0x0042af60 (110)
+    - BW: [ ] bw3 0x0042f310 (logic-change)
   - [ ] `renderCharacter` 0x00429aa0 (57)
-    - BW: [ ] bw1 0x0042e960 = bw2 0x00424bd0 (logic-change)
+    - BW: [ ] bw1 0x0042e960 = bw2 0x00424bd0 (logic-change); [ ] bw3 0x0042d8e0 (logic-change)
   - [ ] `renderOpaque` 0x0042a2c0 (68)
     - BW: [ ] bw1 0x0042f240 = bw3 0x0042e220 (logic-change); [ ] bw2 0x004254b0 (logic-change)
   - [ ] `getPartDominantBone` 0x0042a3f0 (12)
@@ -4958,16 +5187,21 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the set's active fog drifting as the wind the cloth settles in, with CDemonSet::initScene and setCameraView, which set it
     - BW: [ ] bw1 0x0042c510 (logic-change); [ ] bw2 0x00422930 (logic-change); [ ] bw3 0x0042b0e0 (logic-change)
   - [ ] `moveAndCollide` 0x00428f40 (585)
+    - BW: [ ] bw1 0x0042d750 = bw2 0x00423a60 (logic-change); [ ] bw3 0x0042c230 (logic-change)
   - [ ] `setOrientation` 0x0042ded0 (71)
+    - BW: [ ] bw1 0x00433d50 = bw3 0x00433220 (logic-change); [ ] bw2 0x00429d60 (logic-change)
   - [ ] `preProcess` 0x00429820 (22)
-    - BW: [ ] bw1 0x0042e160 = bw2 0x00424470 (logic-change)
+    - BW: [ ] bw1 0x0042e160 = bw2 0x00424470 = bw3 0x0042cd30 (logic-change)
   - [ ] `isOnGround` 0x004297e0 (19)
   - [ ] `processMotion` 0x0042ec40 (143)
     - BW: [ ] bw1 0x00434a80 (logic-change); [ ] bw2 0x0042aa00 = bw3 0x00433fb0 (logic-change)
   - [ ] `updateWanderToWaypoint` 0x0042e050 (216)
+    - BW: [ ] bw1 0x00433f10 = bw2 0x00429f20 = bw3 0x004333e0 (logic-change)
   - [ ] `playSoundWithCooldown` 0x0042f300 (16)
   - [ ] `pickupObjectNow` 0x0042cdb0 (67)
+    - BW: [ ] bw1 0x004325b0 (logic-change); [ ] bw2 0x00428b10 (logic-change); [ ] bw3 0x004319d0 (logic-change)
   - [ ] `processDamageDecals` 0x0042b670 (84)
+    - BW: [ ] bw1 0x00430960 = bw2 0x00426f30 = bw3 0x0042fc90 (logic-change)
   - [ ] `spawnGoreAtBone` 0x0042b760 (57)
   - [ ] `spawnBloodAtBone` 0x0042b810 (50)
     - BW: [ ] bw1 0x00430b60 = bw2 0x00427130 = bw3 0x0042fe90 (logic-change)
@@ -4986,8 +5220,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `chooseNextLayerAction` 0x0042e8c0 (108)
     - BW: [ ] bw1 0x00434610 (operand-change); [ ] bw2 0x0042a620 (operand-change); [ ] bw3 0x00433ae0 (operand-change)
   - [ ] `processSmoking` 0x0042ea40 (165)
-    - BW: [ ] bw2 0x0042a7a0 (logic-change)
+    - BW: [ ] bw1 0x00434790 (logic-change); [ ] bw2 0x0042a7a0 (logic-change)
   - [ ] `moveOutOfHeroWay` 0x0042ede0 (345)
+    - BW: [ ] bw1 0x00434c60 (logic-change); [ ] bw2 0x0042abe0 (logic-change)
 - free functions
   - [x] `staticInit` 0x00427d80 (12)
     - BW: [ ] bw1 0x0042bfe0 (const-change); [ ] bw2 0x004222a0 (const-change); [ ] bw3 0x0042ab80 (const-change)
@@ -5005,20 +5240,21 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `ctor` 0x0042fb80 (74)
   - [ ] `getActorType` 0x0042fb70 (2)
   - [ ] `getTargetBoneWorldPosition` 0x0042fcc0 (29)
+    - BW: [ ] bw1 0x004357a0 = bw2 0x005b4860 = bw3 0x00429420 (logic-change)
   - [ ] `constrainSegmentDistance` 0x0042fed0 (166)
     - BW: [ ] bw1 0x004359e0 = bw2 0x005b4aa0 = bw3 0x00429660 (logic-change)
   - [ ] `process` 0x004300d0 (578)
-    - BW: [ ] bw1 0x00435c70 = bw3 0x004298f0 (logic-change)
+    - BW: [ ] bw1 0x00435c70 = bw2 0x005b4d30 = bw3 0x004298f0 (logic-change)
   - [ ] `renderTransparent` 0x004308f0 (404)
-    - BW: [ ] bw1 0x00436600 = bw3 0x0042a280 (logic-change)
+    - BW: [ ] bw1 0x00436600 = bw2 0x005b56c0 = bw3 0x0042a280 (logic-change)
   - [ ] `getBoundingBox` 0x00430eb0 (114)
-    - BW: [ ] bw1 0x00436be0 = bw3 0x0042a860 (logic-change)
+    - BW: [ ] bw1 0x00436be0 = bw2 0x005b5ca0 = bw3 0x0042a860 (logic-change)
   - [ ] `archive` 0x00430fe0 (77)
   - [ ] `getCollisionType` 0x00431110 (2)
   - [ ] `dtor` 0x00431360 (37)
     - BW: [ ] bw1 0x00436ec0 = bw2 0x005b5f50 = bw3 0x0042ab20 (logic-change)
   - [ ] `setup` 0x0042fd20 (126)
-    - BW: [ ] bw1 0x00435820 = bw3 0x004294a0 (logic-change)
+    - BW: [ ] bw1 0x00435820 = bw2 0x005b48e0 = bw3 0x004294a0 (logic-change)
 - free functions
   - [ ] `factoryFuncChain` 0x0042fb40 (12)
     - BW: [ ] bw1 0x00435630 = bw2 0x005b46f0 = bw3 0x004292b0 (logic-change)
@@ -5041,10 +5277,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `add` 0x0043c0f0 (40)
     - BW: [ ] bw1 0x00441de0 = bw2 0x005b15c0 = bw3 0x0043fa40 (const-change)
   - [ ] `remove` 0x0043c170 (91)
-    - BW: [ ] bw2 0x005b1640 (logic-change)
+    - BW: [ ] bw1 0x00441e60 = bw2 0x005b1640 = bw3 0x0043fac0 (logic-change)
   - [ ] `applyRotation` 0x0043c3a0 (26)
   - [ ] `setWindVelocity` 0x0043c3e0 (38)
-    - BW: [ ] bw2 0x005b1890 (const-change)
+    - BW: [ ] bw2 0x005b1890 = bw3 0x0043fd10 (const-change)
 - class `CCloth`
   - [x] `computeBoneTransform` 0x0043a2b0 (172)
     - BW: [ ] bw1 0x0043fbd0 = bw2 0x005af3b0 = bw3 0x0043d830 (logic-change)
@@ -5058,7 +5294,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00440640 = bw2 0x005afe20 (logic-change); [ ] bw3 0x0043e2a0 (logic-change)
   - [x] `process` 0x0043ab80 (17)
   - [ ] `free` 0x00438cb0 (19)
+    - BW: [ ] bw1 0x0043e6a0 = bw2 0x005ade80 = bw3 0x0043c300 (logic-change)
   - [x] `dtor` 0x00438c00 (22)
+    - BW: [ ] bw1 0x0043e620 = bw3 0x0043c280 (logic-change)
   - [ ] `saveJoinedLight` 0x0043b9f0 (63)
     - BW: [ ] bw1 0x00441710 = bw2 0x005b0ef0 = bw3 0x0043f370 (operand-change)
   - [ ] `render` 0x0043bae0 (340)
@@ -5068,8 +5306,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `allocMemory` 0x00438c50 (26)
     - BW: [ ] bw1 0x0043e640 = bw2 0x005ade20 = bw3 0x0043c2a0 (logic-change)
   - [x] `initializeConnections` 0x004394e0 (171)
+    - BW: [ ] bw1 0x0043ec40 = bw2 0x005ae420 = bw3 0x0043c8a0 (logic-change)
   - [x] `load` 0x00438cf0 (335)
-    - BW: [ ] bw1 0x0043e6d0 = bw2 0x005adeb0 (logic-change)
+    - BW: [ ] bw1 0x0043e6d0 = bw2 0x005adeb0 = bw3 0x0043c330 (logic-change)
   - [~] `orientBoneToChild` 0x0043a110 (171)
     - unverified: the children's lengths and the radii's reciprocals, worked in double here, not run against the original with a model
     - BW: [ ] bw1 0x0043fa20 = bw2 0x005af200 = bw3 0x0043d680 (logic-change)
@@ -5078,11 +5317,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: no point held by a bone's end, with CCloth::grabCloth
     - deferred: each pin's nearest vertex at each of the model's levels, with CCloth::render
     - unverified: the pins' skinned sums and distances, worked in double here, not run against the original with a model
+    - BW: [ ] bw1 0x0043eea0 (logic-change); [ ] bw2 0x005ae680 (logic-change)
   - [ ] `renderBone` 0x0043b7e0 (163)
   - [ ] `renderCollisionBones` 0x0043b790 (26)
   - [ ] `applyRotation` 0x0043e1a0 (84)
+    - BW: [ ] bw1 0x004421d0 = bw2 0x005b19b0 (logic-change)
   - [ ] `grabCloth` 0x0043e0d0 (46)
-    - BW: [ ] bw1 0x00442100 = bw2 0x005b18e0 (operand-change)
+    - BW: [ ] bw1 0x00442100 = bw2 0x005b18e0 = bw3 0x0043fd60 (operand-change)
   - [ ] `resetState` 0x0043e170 (11)
 - free functions
   - [x] `fastInvSqrt` 0x0043e2a0 (6)
@@ -5130,7 +5371,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00447a40 (operand-change); [ ] bw2 0x00438780 (operand-change)
   - [ ] `getCollisionType` 0x004420c0 (2)
   - [ ] `getBoundingBox` 0x004420d0 (22)
-    - BW: [ ] bw1 0x00447af0 (logic-change)
+    - BW: [ ] bw1 0x00447af0 = bw2 0x00438830 (logic-change)
   - [ ] `dtor` 0x00442310 (37)
     - BW: [ ] bw2 0x004388b0 (operand-change)
   - [ ] `setup` 0x00441d60 (68)
@@ -5156,7 +5397,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw3 0x00445730 (operand-change)
   - [ ] `processDamage` 0x00444b40 (65)
   - [ ] `getTargetPoints` 0x00444c00 (28)
-    - BW: [ ] bw1 0x00448eb0 = bw3 0x00445a70 (logic-change)
+    - BW: [ ] bw1 0x00448eb0 = bw3 0x00445a70 (logic-change); [ ] bw2 0x00439bf0 (logic-change)
   - [ ] `dtor` 0x00444cd0 (62)
     - BW: [ ] bw1 0x00448f20 (logic-change); [ ] bw2 0x00439c60 (logic-change); [ ] bw3 0x00445ae0 (logic-change)
   - [ ] `setup` 0x004441b0 (95)
@@ -5175,19 +5416,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `onDropped` 0x00448630 (5)
   - [ ] `getCarrier` 0x00448650 (3)
   - [ ] `process` 0x00448660 (167)
-    - BW: [ ] bw1 0x004491b0 = bw3 0x00445d70 (logic-change)
+    - BW: [ ] bw1 0x004491b0 = bw2 0x00439f00 = bw3 0x00445d70 (logic-change)
   - [ ] `renderOpaque` 0x00448880 (39)
-    - BW: [ ] bw1 0x004493e0 = bw3 0x00445fa0 (logic-change)
+    - BW: [ ] bw1 0x004493e0 = bw3 0x00445fa0 (logic-change); [ ] bw2 0x0043a130 (logic-change)
   - [ ] `renderBackground` 0x004488f0 (1)
   - [ ] `archive` 0x00448910 (22)
   - [ ] `getCollisionType` 0x00448960 (10)
   - [ ] `getBoundingBox` 0x00448980 (28)
-    - BW: [ ] bw1 0x004494f0 = bw3 0x004460b0 (logic-change)
+    - BW: [ ] bw1 0x004494f0 = bw3 0x004460b0 (logic-change); [ ] bw2 0x0043a240 (logic-change)
   - [ ] `getTargetPoints` 0x004489d0 (51)
-    - BW: [ ] bw1 0x00449530 = bw3 0x004460f0 (logic-change)
+    - BW: [ ] bw1 0x00449530 = bw2 0x0043a280 = bw3 0x004460f0 (logic-change)
   - [ ] `dtor` 0x00448bb0 (31)
   - [ ] `setup` 0x00448530 (49)
-    - BW: [ ] bw1 0x00449070 = bw3 0x00445c30 (logic-change)
+    - BW: [ ] bw1 0x00449070 = bw2 0x00439dc0 = bw3 0x00445c30 (logic-change)
 - free functions
   - [ ] `factoryFuncCrate` 0x00448490 (12)
     - BW: [ ] bw1 0x00448fe0 = bw3 0x00445ba0 (logic-change); [ ] bw2 0x00439d30 (logic-change)
@@ -5204,7 +5445,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderTransparent` 0x00448e80 (11)
     - BW: [ ] bw2 0x0043a710 (operand-change)
   - [ ] `getMuzzlePoint` 0x00448eb0 (35)
-    - BW: [ ] bw1 0x004499f0 (logic-change)
+    - BW: [ ] bw1 0x004499f0 (logic-change); [ ] bw2 0x0043a740 (logic-change)
   - [ ] `fire` 0x00448f20 (413)
     - BW: [ ] bw1 0x00449a50 = bw2 0x0043a7a0 (logic-change)
   - [ ] `getDamage` 0x00449570 (11)
@@ -5222,7 +5463,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `ctor` 0x004496a0 (68)
   - [ ] `getActorType` 0x00449690 (2)
   - [ ] `updateWorldPositions` 0x00449e40 (69)
+    - BW: [ ] bw1 0x0044aa10 = bw3 0x00446b50 (logic-change)
   - [ ] `updateLocalPositions` 0x00449f10 (60)
+    - BW: [ ] bw1 0x0044ab20 = bw3 0x00446c60 (logic-change)
   - [ ] `solveConstraints` 0x00449fc0 (602)
     - BW: [ ] bw1 0x0044ac10 = bw3 0x00446d50 (logic-change)
   - [ ] `process` 0x0044a920 (542)
@@ -5251,14 +5494,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDemonCamera`
   - [ ] `isSphereVisible` 0x00452730 (144)
   - [ ] `getFogValueAtPosition` 0x00453700 (69)
+    - BW: [ ] bw1 0x00454360 = bw2 0x00442cb0 = bw3 0x004504b0 (logic-change)
   - [ ] `saveAlphaTransform` 0x00453950 (66)
     - BW: [ ] bw1 0x004545b0 = bw2 0x00442f00 = bw3 0x00450700 (logic-change)
   - [x] `dtor` 0x0044c090 (35)
   - [ ] `worldToScreenCoord` 0x0044d310 (34)
   - [ ] `screenToWorldDirection` 0x0044d480 (137)
+    - BW: [ ] bw1 0x0044df50 = bw2 0x0043c890 = bw3 0x0044a090 (logic-change)
   - [ ] `screenToWorldWithAlpha` 0x0044d600 (152)
+    - BW: [ ] bw1 0x0044e0d0 = bw2 0x0043ca10 = bw3 0x0044a210 (logic-change)
   - [ ] `worldToCameraSpace` 0x0044da90 (113)
+    - BW: [ ] bw1 0x0044e560 = bw2 0x0043cea0 = bw3 0x0044a6a0 (logic-change)
   - [ ] `transformVectorWithAlpha` 0x0044dbd0 (197)
+    - BW: [ ] bw1 0x0044e6a0 = bw2 0x0043cfe0 = bw3 0x0044a7e0 (logic-change)
   - [ ] `allocLight` 0x0044dde0 (14)
   - [ ] `saveCameraTransform` 0x0044ef30 (182)
   - [ ] `restoreTransform` 0x0044f1e0 (42)
@@ -5266,7 +5514,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `uploadBackdropTexture` 0x0044f310 (69)
   - [ ] `isCoronaSufficientlyVisible` 0x00450fc0 (69)
   - [ ] `computeLightExtentBounds` 0x00451090 (60)
+    - BW: [ ] bw1 0x00451cf0 = bw2 0x00440630 = bw3 0x0044de30 (logic-change)
   - [ ] `screenToWorldRay` 0x00452900 (69)
+    - BW: [ ] bw1 0x00453560 = bw2 0x00441ea0 = bw3 0x0044f6a0 (logic-change)
   - [ ] `sampleFramebufferPixel` 0x004538c0 (41)
   - [ ] `computeVisibleFrustumBounds` 0x00454060 (284)
 - free functions
@@ -5275,13 +5525,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderCoronaProjectedTextureScanline` 0x004507a0 (162)
     - BW: [ ] bw1 0x004513a0 = bw2 0x0043fce0 = bw3 0x0044d4e0 (logic-change)
   - [ ] `log2Custom` 0x00450a90 (11)
-    - BW: [ ] bw1 0x0045168c = bw2 0x0043ffcc = bw3 0x0044d7cc (logic-change)
   - [ ] `testCoronaVisibility` 0x00451250 (77)
   - [ ] `renderCoronaScanlineSegment` 0x00451340 (121)
   - [ ] `processCoronaScanline` 0x004514b0 (257)
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
-    - BW: [ ] bw1 0x00454b6e = bw2 0x004434be = bw3 0x00450cbe (logic-change)
 
 ### `core/dcube.cpp` (21 functions, 2237 instructions, 3 done, 1 partial)
 - free functions
@@ -5305,6 +5553,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00457bc0 = bw2 0x00446510 = bw3 0x00453d10 (logic-change)
   - [x] `ctor` 0x00456750 (9)
   - [ ] `freeMemory` 0x004569b0 (67)
+    - BW: [ ] bw1 0x00457d70 = bw2 0x004466c0 = bw3 0x00453ec0 (logic-change)
   - [x] `dtor` 0x00456790 (8)
 - class `CDemonCubeTriangle`
   - [ ] `writeToFile` 0x00455250 (38)
@@ -5353,8 +5602,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDemonImage`
   - [ ] `ctor` 0x004719b0 (3)
   - [ ] `freeMemory` 0x00471a40 (15)
+    - BW: [ ] bw1 0x0045f100 = bw2 0x00448fa0 = bw3 0x0045b270 (logic-change)
   - [ ] `dtor` 0x004719c0 (8)
   - [ ] `allocMemory` 0x004719e0 (28)
+    - BW: [ ] bw1 0x0045f0a0 = bw2 0x00448f40 = bw3 0x0045b210 (logic-change)
   - [ ] `packColor` 0x00471a70 (31)
   - [ ] `load` 0x00471ad0 (169)
 
@@ -5407,7 +5658,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/door.cpp` (23 functions, 1740 instructions, 15 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
+    - BW: [ ] bw1 0x00478860 = bw3 0x004650a0 (logic-change); [ ] bw2 0x00460350 (logic-change)
   - [ ] `onOpened` 0x0047fcf0 (8)
+    - BW: [ ] bw2 0x0045efc0 (const-change)
   - [ ] `onLocked` 0x00481210 (19)
   - [ ] `getMoveType` 0x00481070 (150)
     - BW: [ ] bw1 0x00478b40 = bw2 0x00460630 = bw3 0x00465380 (logic-change)
@@ -5415,6 +5668,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00477270 = bw3 0x00463ab0 (logic-change); [ ] bw2 0x0045ed60 (logic-change)
   - [x] `getActorType` 0x0047fac0 (2)
   - [x] `reposition` 0x0047fd20 (241)
+    - BW: [ ] bw1 0x00477540 = bw2 0x0045f030 = bw3 0x00463d80 (logic-change)
   - [ ] `process` 0x004800c0 (472)
     - BW: [ ] bw1 0x00477ab0 = bw2 0x0045f5a0 = bw3 0x004642f0 (logic-change)
   - [ ] `renderOpaque` 0x004807d0 (166)
@@ -5452,8 +5706,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderFaces` 0x004828b0 (115)
 - free functions
   - [ ] `setupTriangleEdgeInterpolation` 0x00482fb0 (210)
+    - BW: [ ] bw2 0x00461c02 (logic-change)
   - [ ] `setupDepthOnlyEdgeInterpolation` 0x00483210 (92)
-    - BW: [ ] bw3 0x00466bf0 (const-change)
+    - BW: [ ] bw1 0x0047a320 = bw2 0x00461e10 = bw3 0x00466bf0 (const-change)
 
 ### `core/dracbrid.cpp` (18 functions, 3231 instructions, 1 done, 0 partial)
 - class `CDraculaBride`
@@ -5551,20 +5806,23 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0048e9b0 = bw2 0x004764c0 = bw3 0x00477530 (logic-change)
   - [ ] `testCylinderCollision` 0x00496c60 (163)
   - [x] `worldPositionToGridCoords` 0x004997d0 (59)
+    - BW: [ ] bw1 0x0048ee90 = bw2 0x004769a0 = bw3 0x00477a10 (logic-change)
   - [x] `setVoxelShadowBit` 0x0049a160 (120)
     - BW: [ ] bw1 0x0048f920 = bw2 0x00477430 = bw3 0x004784a0 (logic-change)
   - [~] `markShadowVoxels` 0x00499c20 (178)
     - unverified: each sample's sums, the index's stride, then the corner, then the half stride, as read from the asm, not run against the original's code
-    - BW: [ ] bw2 0x00476df0 (logic-change)
+    - BW: [ ] bw1 0x0048f2e0 = bw2 0x00476df0 = bw3 0x00477e60 (logic-change)
   - [ ] `restoreShadowBitFromBuffer` 0x0049a280 (125)
     - BW: [ ] bw1 0x0048fa40 = bw2 0x00477550 = bw3 0x004785c0 (logic-change)
   - [ ] `transferShadowVoxels` 0x00499f10 (178)
     - BW: [ ] bw1 0x0048f650 = bw2 0x00477160 = bw3 0x004781d0 (logic-change)
   - [ ] `rayIntersection` 0x00495aa0 (87)
+    - BW: [ ] bw1 0x0048b040 = bw2 0x00472b50 = bw3 0x00473bc0 (logic-change)
   - [x] `ctor` 0x00494200 (10)
   - [x] `dtor` 0x00494240 (14)
   - [ ] `renderGridCube` 0x00496e70 (346)
   - [ ] `renderVoxelGrid` 0x004973b0 (107)
+    - BW: [ ] bw1 0x0048ca40 (logic-change)
   - [ ] `getVoxelHeightAtPosition` 0x00499170 (140)
   - [ ] `voxelCoordsToWorldPosition` 0x00499930 (17)
   - [ ] `testVoxelAtCoords` 0x00499970 (82)
@@ -5660,7 +5918,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setup` 0x004a7e00 (27)
     - BW: [ ] bw1 0x0049f010 = bw2 0x004869b0 = bw3 0x00487bb0 (logic-change)
   - [ ] `launchFireballAtHero` 0x004a7e80 (144)
-    - BW: [ ] bw1 0x0049f0e0 = bw2 0x00486a80 (logic-change)
+    - BW: [ ] bw1 0x0049f0e0 = bw2 0x00486a80 = bw3 0x00487c80 (logic-change)
 - free functions
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
     - BW: [ ] bw1 0x0049ee10 = bw3 0x004879b0 (logic-change); [ ] bw2 0x004867b0 (logic-change)
@@ -5683,6 +5941,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `getTargetPoint` 0x004a99d0 (43)
     - BW: [ ] bw1 0x004a08b0 = bw2 0x00488250 = bw3 0x00489530 (logic-change)
   - [ ] `canSeeTarget` 0x004a9a50 (65)
+    - BW: [ ] bw1 0x004a0980 = bw2 0x00488320 (logic-change)
   - [ ] `updateVictim` 0x004a9b00 (275)
     - BW: [ ] bw1 0x004a0ab0 (logic-change); [ ] bw2 0x00488450 (logic-change); [ ] bw3 0x00489730 (logic-change)
   - [x] `renderBackground` 0x004a9fa0 (12)
@@ -5691,7 +5950,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `onVictimLost` 0x004aa0c0 (10)
   - [x] `setup` 0x004a9650 (5)
   - [ ] `testAttackRadius` 0x004a9880 (63)
-    - BW: [ ] bw1 0x004a0770 = bw2 0x00488110 (logic-change)
+    - BW: [ ] bw1 0x004a0770 = bw2 0x00488110 = bw3 0x004893f0 (logic-change)
   - [ ] `updatePatrol` 0x004a9fd0 (27)
   - [ ] `testAttackLine` 0x004a9930 (61)
   - [ ] `countSameClassAttackingHero` 0x004aa0f0 (45)
@@ -5716,7 +5975,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `skipWhitespace` 0x004aa2d0 (8)
   - [ ] `skipWhitespaceIndexed` 0x004aa2f0 (10)
   - [x] `parseComparisonOp` 0x004aa320 (58)
-    - BW: [ ] bw1 0x004a128e = bw2 0x00488c1e = bw3 0x0048b86e (logic-change)
   - [ ] `parseIntOrCounter` 0x004aa3c0 (23)
   - [x] `trimWhitespace` 0x004aa650 (44)
   - [ ] `getVectorDistance` 0x004b1930 (20)
@@ -5771,19 +6029,23 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/fire.cpp` (73 functions, 3068 instructions, 19 done, 1 partial)
 - class `CLightningBolt`
   - [ ] `activateDirectional` 0x004c5680 (34)
+    - BW: [ ] bw3 0x0049f470 (logic-change)
   - [x] `ctor` 0x004c9540 (2, compiler-generated)
   - [x] `dtor` 0x004c9550 (2, compiler-generated)
 - class `CFireEffect`
   - [ ] `createLightningBoltDirectional` 0x004c8fd0 (44)
+    - BW: [ ] bw3 0x004a3c50 (logic-change)
   - [ ] `createTrailSegment` 0x004c9060 (29)
   - [ ] `createTrailFromPoints` 0x004c90c0 (98)
-    - BW: [ ] bw1 0x004b7150 = bw2 0x0049e850 (logic-change)
+    - BW: [ ] bw1 0x004b7150 = bw2 0x0049e850 = bw3 0x004a3d50 (logic-change)
   - [ ] `createStake` 0x004c7bb0 (107)
-    - BW: [ ] bw1 0x004b5bc0 = bw2 0x0049d2c0 (logic-change)
+    - BW: [ ] bw1 0x004b5bc0 = bw2 0x0049d2c0 = bw3 0x004a25f0 (logic-change)
   - [ ] `allocateToss` 0x004c8e40 (38)
+    - BW: [ ] bw3 0x004a3a30 (logic-change)
   - [ ] `createToss` 0x004c8dd0 (38)
+    - BW: [ ] bw3 0x004a3920 (logic-change)
   - [ ] `createBulletImpact` 0x004c76a0 (254)
-    - BW: [ ] bw1 0x004b56a0 = bw2 0x0049cd50 (logic-change)
+    - BW: [ ] bw1 0x004b56a0 = bw2 0x0049cd50 (logic-change); [ ] bw3 0x004a2090 (logic-change)
   - [ ] `createMuzzleFlash` 0x004c7a60 (27)
   - [ ] `createShell` 0x004c91e0 (36)
     - BW: [ ] bw1 0x004b7270 = bw2 0x0049e970 = bw3 0x004a3e70 (logic-change)
@@ -5792,8 +6054,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw3 0x004a3af0 (logic-change)
   - [ ] `createLaserSegment` 0x004c7eb0 (39)
   - [ ] `traceLaser` 0x004c8230 (746)
+    - BW: [ ] bw1 0x004b6420 = bw2 0x0049db20 (logic-change); [ ] bw3 0x004a2e20 (logic-change)
   - [ ] `createPopcorn` 0x004c9240 (32)
-    - BW: [ ] bw1 0x004b72d0 = bw2 0x0049e9d0 (logic-change)
+    - BW: [ ] bw1 0x004b72d0 = bw2 0x0049e9d0 = bw3 0x004a3ed0 (logic-change)
   - [x] `ctor` 0x004c6c60 (8)
   - [ ] `createBulletTrail` 0x004c7d60 (30)
   - [ ] `createLaserPath` 0x004c7f80 (201)
@@ -5810,11 +6073,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `dtor` 0x004c9760 (8)
 - class `CToss`
   - [ ] `create` 0x004c3ee0 (83)
+    - BW: [ ] bw1 0x004b1c50 = bw2 0x004992b0 (logic-change); [ ] bw3 0x0049cee0 (logic-change)
   - [ ] `ctor` 0x004c3ea0 (12)
   - [ ] `dtor` 0x004c95c0 (8)
 - class `CBulletHole`
   - [ ] `init` 0x004bf7f0 (184)
-    - BW: [ ] bw1 0x004ac3e0 = bw2 0x00493a40 (logic-change)
+    - BW: [ ] bw1 0x004ac3e0 = bw2 0x00493a40 (logic-change); [ ] bw3 0x00497290 (logic-change)
   - [x] `ctor` 0x004c9780 (2, compiler-generated)
   - [x] `dtor` 0x004c9790 (2, compiler-generated)
 - free functions
@@ -5824,10 +6088,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the particle pools, with the particles' process and render steps
     - BW: [ ] bw1 0x004aba90 (logic-change); [ ] bw2 0x004930e0 (logic-change); [ ] bw3 0x00496930 (logic-change)
   - [ ] `safeAcos` 0x004bf1a0 (30)
-    - BW: [ ] bw1 0x004abd5e (logic-change); [ ] bw2 0x004933bc = bw3 0x00496c0c (logic-change)
   - [ ] `transformWorldToScreen` 0x004c9400 (22)
 - class `CMuzzleFlash`
   - [ ] `init` 0x004c1940 (63)
+    - BW: [ ] bw1 0x004af340 = bw2 0x004969a0 = bw3 0x0049a390 (logic-change)
   - [x] `ctor` 0x004c9690 (2, compiler-generated)
   - [x] `dtor` 0x004c96a0 (2, compiler-generated)
 - class `CShell`
@@ -5840,7 +6104,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `dtor` 0x004c9600 (2, compiler-generated)
 - class `CGunFlame`
   - [ ] `activate` 0x004c4db0 (126)
-    - BW: [ ] bw3 0x0049e1a0 (logic-change)
+    - BW: [ ] bw1 0x004b2b50 = bw2 0x0049a1b0 (logic-change); [ ] bw3 0x0049e1a0 (logic-change)
   - [x] `ctor` 0x004c9560 (2, compiler-generated)
   - [x] `dtor` 0x004c9570 (2, compiler-generated)
 - class `CBulletTrail`
@@ -5968,6 +6232,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `archive` 0x004cbe60 (43)
     - BW: [ ] bw2 0x004a6b90 (operand-change)
   - [ ] `generateRandomPoint` 0x004cc820 (187)
+    - BW: [ ] bw1 0x004c0630 = bw2 0x004a7660 = bw3 0x004ae380 (logic-change)
   - [ ] `initFly` 0x004cc760 (69)
     - BW: [ ] bw1 0x004c0530 = bw3 0x004ae280 (logic-change); [ ] bw2 0x004a7560 (logic-change)
   - [ ] `process` 0x004cbf00 (256)
@@ -6005,7 +6270,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `dtor` 0x004d28a0 (37)
     - BW: [ ] bw2 0x004ad050 (operand-change)
   - [ ] `setup` 0x004d17b0 (160)
-    - BW: [ ] bw1 0x004c51e0 = bw2 0x004ac230 (logic-change)
 - free functions
   - [ ] `factoryFuncFrankenstienMachine` 0x004d16e0 (12)
     - BW: [ ] bw1 0x004c5120 (logic-change); [ ] bw2 0x004ac170 (logic-change)
@@ -6034,11 +6298,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004c6270 (operand-change); [ ] bw2 0x004ad2c0 (logic-change)
   - [x] `getActorType` 0x004d2b10 (2)
   - [ ] `processAI` 0x004d4190 (431)
+    - BW: [ ] bw1 0x004c7aa0 (logic-change); [ ] bw2 0x004aeb00 (logic-change)
   - [ ] `collectAmmo` 0x004d5c10 (22)
   - [ ] `processMotionEvents` 0x004d4890 (297)
+    - BW: [ ] bw1 0x004c83b0 = bw2 0x004af410 (logic-change)
   - [ ] `getFlashlightMinAngle` 0x004d4c90 (26)
   - [ ] `getFlashlightMaxAngle` 0x004d4ce0 (3)
   - [ ] `getTorsoCenterPosition` 0x004d4cf0 (51)
+    - BW: [ ] bw1 0x004c8900 (logic-change); [ ] bw2 0x004af960 (logic-change)
   - [ ] `updateWeaponAndAimAnimation` 0x004d4d80 (707)
     - BW: [ ] bw1 0x004c89c0 (logic-change); [ ] bw2 0x004afa20 (logic-change)
   - [ ] `updateWeaponPosition` 0x004d5550 (416)
@@ -6050,6 +6317,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `canFireWeapon` 0x004d5f70 (33)
     - BW: [ ] bw2 0x004b0e80 (logic-change)
   - [ ] `tryFireWeapon` 0x004d5fe0 (28)
+    - BW: [ ] bw2 0x004b0ef0 (logic-change)
   - [ ] `tryThrowObject` 0x004d6050 (15)
     - BW: [ ] bw2 0x004b0f70 (operand-change)
   - [ ] `scoreTargetVisibility` 0x004d6260 (204)
@@ -6057,6 +6325,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updateAimTracking` 0x004d6540 (348)
     - BW: [ ] bw1 0x004ca450 = bw2 0x004b1530 (logic-change)
   - [ ] `binarySearchClavicleBlend` 0x004d6f80 (152)
+    - BW: [ ] bw1 0x004caff0 (logic-change); [ ] bw2 0x004b20d0 (logic-change)
   - [ ] `updateClavicleCollisionAvoidance` 0x004d6d40 (170)
     - BW: [ ] bw1 0x004cad20 = bw2 0x004b1e00 (logic-change)
   - [ ] `process` 0x004d2ea0 (1307)
@@ -6101,12 +6370,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004cb7d0 = bw3 0x004b3cd0 (logic-change); [ ] bw2 0x004b28b0 (logic-change)
   - [ ] `setupMovieRecording` 0x004d7730 (72)
   - [ ] `captureDebugMovieFrame` 0x004d7810 (224)
-    - BW: [ ] bw1 0x004cb950 = bw3 0x004b3e50 (logic-change)
+    - BW: [ ] bw1 0x004cb950 = bw2 0x004b2a50 = bw3 0x004b3e50 (logic-change)
   - [ ] `drawHealthBar` 0x004d7fa0 (62)
   - [ ] `drawCreditsLine` 0x004d8890 (43)
-    - BW: [ ] bw1 0x004ccafe = bw2 0x004b3b0e (logic-change)
   - [ ] `drawKeyBindingEntry` 0x004d8910 (61)
-    - BW: [ ] bw3 0x004b50ee (logic-change)
+    - BW: [ ] bw3 0x004b50f0 (logic-change)
   - [ ] `pollKeyStateOnChange` 0x004dc270 (10)
   - [ ] `pollKeyEdgeTrigger` 0x004dc2a0 (11)
   - [ ] `rampControlAxis` 0x004dc2d0 (52)
@@ -6121,6 +6389,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x004bfae0 (operand-change)
   - [ ] `getActorType` 0x004e44d0 (2)
   - [ ] `shouldMove` 0x004e48a0 (110)
+    - BW: [ ] bw1 0x004dc630 = bw2 0x004bfea0 = bw3 0x004c51a0 (logic-change)
   - [ ] `process` 0x004e4a00 (715)
     - BW: [ ] bw1 0x004dc7e0 = bw2 0x004c0050 (logic-change); [ ] bw3 0x004c5350 (logic-change)
   - [ ] `renderOpaque` 0x004e53f0 (28)
@@ -6285,10 +6554,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the 30 by 30 grid render draws and the scales it draws at, with render
   - [x] `dtor` 0x004eeee0 (8)
   - [ ] `getNormalAtPosition` 0x004effb0 (248)
+    - BW: [ ] bw1 0x004e82a0 = bw2 0x004cba20 = bw3 0x004d0c30 (logic-change)
 - free functions
   - [x] `staticInit` 0x004eeb90 (9)
   - [x] `openFileWithExtension` 0x004eebc0 (90)
-    - BW: [ ] bw1 0x004e6eee = bw2 0x004ca6de = bw3 0x004cf87e (logic-change)
 
 ### `core/gun.cpp` (7 functions, 583 instructions, 4 done, 1 partial)
 - class `CGun`
@@ -6356,6 +6625,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `setup` 0x004f1e30 (8)
     - BW: [ ] bw1 0x004ea390 (logic-change); [ ] bw2 0x004cdae0 (logic-change); [ ] bw3 0x004d1df0 (logic-change)
   - [ ] `useItem` 0x004f1fd0 (15)
+    - BW: [ ] bw3 0x004d20c0 (logic-change)
 - free functions
   - [x] `factoryFuncHealthItem` 0x004f1d90 (12)
     - BW: [ ] bw1 0x004ea300 (logic-change); [ ] bw2 0x004cda40 (logic-change); [ ] bw3 0x004d1d50 (logic-change)
@@ -6388,53 +6658,57 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: what a player hero may hold by class (the Stranger anything, Gabriella guns, ammo, dynamite and the Baron, the rest health items, keys and plain items for all), the slot text of a hero's own item, weapons not in hand put back in the inventory each frame, and no ammo shown for the Baron weapon or a melee hero's shovel (the decomp's hero_weapon.h), with CInventory's items and display
     - deferred: each network player's own flashlight switch, beam, lens glow, goggles flag and battery drain, another hero's beam giving way when the dynamic lights are full (the decomp's hero_light.h), with CNetGame and the weapons' lights
     - deferred: the light button toggling a player Gabriella's, Scat's or the Colonel's gun light by the Stranger's rules: only while the selected weapon takes a light, drawing it when switched on with the weapon away, and off with a click on holstering (the decomp's gun_flashlight.h), with CNetGame::applySimFrameHistory
-    - BW: [ ] bw1 0x004ea830 (logic-change); [ ] bw3 0x004d24b0 (logic-change)
+    - BW: [ ] bw1 0x004ea830 (logic-change); [ ] bw2 0x004ce240 (logic-change); [ ] bw3 0x004d24b0 (logic-change)
   - [ ] `closestEnemy` 0x004f3960 (120)
+    - BW: [ ] bw1 0x004ec350 = bw2 0x004d00c0 (logic-change)
   - [x] `archive` 0x004f2610 (162)
-    - BW: [ ] bw1 0x004eab00 (logic-change); [ ] bw3 0x004d27b0 (logic-change)
+    - BW: [ ] bw1 0x004eab00 (logic-change); [ ] bw2 0x004ce590 (logic-change); [ ] bw3 0x004d27b0 (logic-change)
   - [x] `dtor` 0x004f2470 (59)
-    - BW: [ ] bw2 0x004ce3d0 (operand-change)
+    - BW: [ ] bw1 0x004ea980 (logic-change); [ ] bw2 0x004ce3d0 (operand-change); [ ] bw3 0x004d2620 (logic-change)
   - [ ] `testCylinderCollision` 0x004f2580 (17)
   - [ ] `testLineIntersection` 0x004f25c0 (25)
   - [ ] `getPathMap` 0x004f2870 (3)
     - BW: [ ] bw1 0x004ead80 (const-change); [ ] bw2 0x004ce9c0 (const-change); [ ] bw3 0x004d2a70 (const-change)
   - [ ] `isGrabbable` 0x004f2880 (2)
-    - BW: [ ] bw2 0x004ce9d0 (logic-change)
+    - BW: [ ] bw2 0x004ce9d0 (logic-change); [ ] bw3 0x004d2a80 (logic-change)
   - [ ] `canBeGrabbed` 0x004f2890 (19)
-    - BW: [ ] bw1 0x004eada0 (logic-change); [ ] bw2 0x004cea00 (logic-change)
+    - BW: [ ] bw1 0x004eada0 = bw3 0x004d2aa0 (logic-change); [ ] bw2 0x004cea00 (logic-change)
   - [ ] `isInvulnerable` 0x004f28a0 (2)
   - [ ] `getGrabbed` 0x004f28d0 (73)
-    - BW: [ ] bw1 0x004eadf0 (logic-change); [ ] bw2 0x004cea50 (logic-change)
+    - BW: [ ] bw1 0x004eadf0 = bw3 0x004d2af0 (logic-change); [ ] bw2 0x004cea50 (logic-change)
   - [ ] `releaseFromGrab` 0x004f29b0 (43)
-    - BW: [ ] bw1 0x004eaf20 = bw2 0x004ceb80 (logic-change)
+    - BW: [ ] bw1 0x004eaf20 = bw2 0x004ceb80 = bw3 0x004d2c20 (logic-change)
   - [ ] `canLookAt` 0x004f37d0 (49)
-    - BW: [ ] bw1 0x004ec1b0 = bw2 0x004cfe80 (logic-change)
+    - BW: [ ] bw1 0x004ec1b0 = bw2 0x004cfe80 = bw3 0x004d4090 (logic-change)
   - [ ] `kill` 0x004f3af0 (11)
   - [ ] `reset` 0x004f3b20 (28)
-    - BW: [ ] bw1 0x004ec570 = bw2 0x004d02e0 (operand-change)
+    - BW: [ ] bw1 0x004ec570 = bw2 0x004d02e0 (operand-change); [ ] bw3 0x004d4410 (logic-change)
   - [~] `setup` 0x004f2540 (16)
     - deferred: no invincibility left, with CHero::kill and the heroes' process
-    - BW: [ ] bw1 0x004eaa10 = bw2 0x004ce4a0 (logic-change)
+    - BW: [ ] bw1 0x004eaa10 = bw2 0x004ce4a0 (logic-change); [ ] bw3 0x004d26b0 (logic-change)
   - [ ] `tryInteract` 0x004f2af0 (113)
-    - BW: [ ] bw1 0x004eb090 (logic-change)
+    - BW: [ ] bw1 0x004eb090 = bw3 0x004d2cf0 (logic-change)
   - [ ] `tryTalkToNearbyCharacter` 0x004f2c40 (105)
-    - BW: [ ] bw1 0x004eb240 = bw2 0x004cee90 (logic-change)
+    - BW: [ ] bw1 0x004eb240 = bw2 0x004cee90 = bw3 0x004d2ea0 (logic-change)
   - [ ] `tryOpenNearbyDoor` 0x004f2d70 (124)
   - [ ] `tryOpenDoor` 0x004f2ed0 (45)
   - [ ] `tryPullLever` 0x004f2f50 (131)
-    - BW: [ ] bw3 0x004d32d0 (logic-change)
+    - BW: [ ] bw1 0x004eb660 = bw2 0x004cf2b0 (logic-change); [ ] bw3 0x004d32d0 (logic-change)
   - [ ] `executeLeverPull` 0x004f30f0 (15)
   - [ ] `executeObjectPickup` 0x004f3890 (19)
+    - BW: [ ] bw1 0x004ec280 = bw2 0x004cff50 = bw3 0x004d4160 (logic-change)
   - [ ] `addCarriedItemToInventory` 0x004f38d0 (22)
-    - BW: [ ] bw1 0x004ec2c0 = bw3 0x004d41a0 (logic-change)
+    - BW: [ ] bw1 0x004ec2c0 = bw3 0x004d41a0 (logic-change); [ ] bw2 0x004cff90 (logic-change)
   - [ ] `tryPushNearbyBox` 0x004f3120 (170)
+    - BW: [ ] bw1 0x004eb890 = bw2 0x004cf4e0 = bw3 0x004d3500 (logic-change)
   - [ ] `stopPushingBox` 0x004f3350 (28)
   - [ ] `tryApproachNearbyActor` 0x004f33b0 (151)
     - BW: [ ] bw1 0x004ebc40 = bw2 0x004cf890 (logic-change); [ ] bw3 0x004d38b0 (logic-change)
   - [ ] `stopNearbyInteraction` 0x004f3580 (16)
   - [ ] `findItemUseTarget` 0x004f35b0 (143)
-    - BW: [ ] bw1 0x004ebeb0 (logic-change); [ ] bw2 0x004cfb00 (logic-change)
+    - BW: [ ] bw1 0x004ebeb0 (logic-change); [ ] bw2 0x004cfb00 (logic-change); [ ] bw3 0x004d3b20 (logic-change)
   - [ ] `tryUseSelectedItem` 0x004f3760 (49)
+    - BW: [ ] bw2 0x004cfc80 (logic-change)
 
 ### `core/hiram.cpp` (8 functions, 247 instructions, 1 done, 0 partial)
 - class `CHiram`
@@ -6525,14 +6799,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x004d4990 (operand-change)
   - [x] `getActorType` 0x004f7de0 (2)
   - [ ] `updateShootBlend` 0x004f8810 (101)
+    - BW: [ ] bw2 0x004d5470 (logic-change)
   - [ ] `findAndPickupGun` 0x004f8970 (112)
+    - BW: [ ] bw2 0x004d55e0 (logic-change)
   - [ ] `startThrowAttack` 0x004f8ad0 (13)
   - [ ] `processAI` 0x004f8c70 (436)
     - BW: [ ] bw2 0x004d5950 (logic-change)
   - [ ] `performMeleeAttack` 0x004f9490 (84)
-    - BW: [ ] bw2 0x004d6230 (logic-change)
+    - BW: [ ] bw1 0x004f2430 = bw2 0x004d6230 (logic-change)
   - [ ] `processMotionEvents` 0x004f93a0 (80)
-    - BW: [ ] bw2 0x004d6140 (logic-change)
+    - BW: [ ] bw1 0x004f2340 = bw2 0x004d6140 (logic-change)
   - [ ] `process` 0x004f80b0 (514)
     - BW: [ ] bw1 0x004f0e50 = bw2 0x004d4c50 (logic-change)
   - [ ] `getCarryObjToBodyXForm` 0x004f8b20 (110)
@@ -6579,7 +6855,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/inv.cpp` (13 functions, 1155 instructions, 3 done, 2 partial)
 - class `CInventory`
   - [x] `ctor` 0x004fd020 (18)
-    - BW: [ ] bw1 0x004f6ed0 (logic-change); [ ] bw3 0x004da360 (logic-change)
+    - BW: [ ] bw1 0x004f6ed0 (logic-change); [ ] bw2 0x004da760 (logic-change); [ ] bw3 0x004da360 (logic-change)
   - [ ] `save` 0x004ff210 (133)
     - BW: [ ] bw2 0x004dc2c0 (logic-change)
   - [~] `load` 0x004ff400 (221)
@@ -6590,7 +6866,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `calculateTotalBatteryCharge` 0x004ffda0 (47)
   - [ ] `resetInventoryDisplayTimer` 0x00500020 (8)
   - [ ] `select` 0x004ff800 (232)
-    - BW: [ ] bw1 0x004f9bd0 (logic-change); [ ] bw3 0x004dcb40 (logic-change)
+    - BW: [ ] bw1 0x004f9bd0 (logic-change); [ ] bw2 0x004dc8c0 (logic-change); [ ] bw3 0x004dcb40 (logic-change)
   - [ ] `updateInventory` 0x004ffad0 (213)
     - BW: [ ] bw2 0x004dccd0 (logic-change)
   - [ ] `createAmmoFromWeapon` 0x004fe900 (70)
@@ -6683,6 +6959,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/lever.cpp` (14 functions, 639 instructions, 9 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
+    - BW: [ ] bw1 0x004ff970 = bw2 0x004e24e0 = bw3 0x004e0a30 (logic-change)
   - [ ] `activate` 0x00504c90 (34)
   - [x] `ctor` 0x005047d0 (35)
     - BW: [ ] bw2 0x004e1c20 (operand-change)
@@ -6699,6 +6976,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `dtor` 0x00505430 (31)
   - [x] `setup` 0x005048a0 (47)
   - [ ] `getHandlePosition` 0x00504dd0 (56)
+    - BW: [ ] bw1 0x004ff6b0 = bw2 0x004e2220 = bw3 0x004e0770 (logic-change)
 - free functions
   - [x] `factoryFuncLever` 0x00504790 (12)
     - BW: [ ] bw1 0x004ff010 = bw3 0x004e00d0 (logic-change); [ ] bw2 0x004e1bf0 (logic-change)
@@ -6708,6 +6986,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CLightGun`
   - [x] `getActorType` 0x005058f0 (2)
   - [ ] `updateBeamLight` 0x00505ac0 (48)
+    - BW: [ ] bw2 0x004e2bf0 (logic-change)
   - [ ] `fire` 0x00505c70 (520)
     - BW: [ ] bw1 0x00500310 (logic-change); [ ] bw2 0x004e2e70 (logic-change)
   - [ ] `process` 0x00506450 (136)
@@ -6723,6 +7002,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: charging from the batteries of the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CLightGun::process
     - BW: [ ] bw1 0x004ffeb0 (logic-change); [ ] bw2 0x004e2a20 (logic-change)
   - [ ] `isVampireType` 0x005059c0 (31)
+    - BW: [ ] bw2 0x004e2ae0 (logic-change)
   - [ ] `isLightVulnerable` 0x00505a20 (56)
   - [ ] `canSeeTarget` 0x00505b70 (91)
 - free functions
@@ -6766,7 +7046,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x004e4f30 (operand-change)
   - [ ] `getActorType` 0x00508910 (2)
   - [ ] `renderPanel` 0x00509bf0 (34)
+    - BW: [ ] bw1 0x00504fe0 (logic-change); [ ] bw2 0x004e6340 (logic-change)
   - [ ] `renderGem` 0x00509d50 (316)
+    - BW: [ ] bw1 0x00505060 = bw2 0x004e63c0 (logic-change)
   - [ ] `renderReflector` 0x0050a1f0 (58)
   - [ ] `renderOpaque` 0x005090d0 (94)
     - BW: [ ] bw1 0x005042e0 = bw2 0x004e56d0 (logic-change)
@@ -6785,6 +7067,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updateReflector` 0x0050af00 (38)
     - BW: [ ] bw2 0x004e7580 (operand-change)
   - [ ] `updateReflectorPosition` 0x0050af80 (59)
+    - BW: [ ] bw1 0x005062a0 (logic-change); [ ] bw2 0x004e7600 (logic-change)
   - [ ] `process` 0x005091d0 (96)
     - BW: [ ] bw2 0x004e57f0 (operand-change)
   - [ ] `getBoundingBox` 0x005092e0 (16)
@@ -6886,7 +7169,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `staticInit` 0x0050fdb0 (39)
   - [ ] `showJoystickCalibrationScreen` 0x00510410 (61)
-    - BW: [ ] bw2 0x004eb3ce (logic-change)
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
   - [~] `showMainGameMenu` 0x00512f40 (394)
     - deferred: loading the flame and blur bitmaps, with their readers
@@ -6900,6 +7182,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
     - BW: [ ] bw1 0x0050d1a0 (const-change); [ ] bw2 0x004ee8e0 (const-change); [ ] bw3 0x004ea9e0 (const-change)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
+    - BW: [ ] bw1 0x0050d5b0 = bw3 0x004eadf0 (logic-change)
 
 ### `core/mimic.cpp` (20 functions, 2300 instructions, 1 done, 0 partial)
 - class `CMimic`
@@ -6967,6 +7250,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getNextLoadedInventoryActor` 0x00523520 (41)
     - BW: [ ] bw1 0x0051ab60 = bw3 0x004f6330 (operand-change); [ ] bw2 0x004fbc00 (operand-change)
   - [ ] `save` 0x00522e30 (38)
+    - BW: [ ] bw1 0x0051a490 = bw3 0x004f5c60 (logic-change); [ ] bw2 0x004fb530 (logic-change)
   - [ ] `createFromSingleSet` 0x005243a0 (39)
   - [ ] `calculateAllActorChecksums` 0x005248a0 (19)
   - [x] `ctor` 0x00524ef0 (2, compiler-generated)
@@ -6990,7 +7274,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `aimTommyGun` 0x005267a0 (275)
     - BW: [ ] bw1 0x0051def0 = bw2 0x004fef30 (logic-change)
   - [ ] `processWeaponPickup` 0x00526d90 (305)
-    - BW: [ ] bw2 0x004ff610 (logic-change)
+    - BW: [ ] bw1 0x0051e5d0 (logic-change); [ ] bw2 0x004ff610 (logic-change)
   - [ ] `startFiringAttack` 0x005271c0 (39)
   - [ ] `playTaunt` 0x005279f0 (128)
   - [ ] `process` 0x00525840 (1094)
@@ -7112,10 +7396,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `reset` 0x0052dad0 (9)
   - [x] `ctor` 0x0052d570 (11)
   - [x] `getFramesForInterpolation` 0x0052e4c0 (97)
+    - BW: [x] bw1 0x00525240 = bw3 0x004fcb50 (logic-change); [ ] bw2 0x00504080 (logic-change)
   - [x] `advanceFrameAndCheckSignals` 0x0052de70 (154)
-    - BW: [ ] bw2 0x00503bd0 (logic-change)
+    - BW: [x] bw1 0x00524ba0 = bw3 0x004fc4b0 (logic-change); [ ] bw2 0x00503a10 (logic-change)
   - [x] `advanceFrameToExitPoint` 0x0052e020 (153)
+    - BW: [x] bw1 0x00524d70 = bw3 0x004fc680 (logic-change); [ ] bw2 0x00503bd0 (logic-change)
   - [x] `advanceTween` 0x0052e1d0 (79)
+    - BW: [ ] bw1 0x00524f40 = bw3 0x004fc850 (logic-change); [ ] bw2 0x00503d80 (logic-change)
   - [x] `advance` 0x0052d610 (266)
     - BW: [ ] bw1 0x00524270 = bw3 0x004fbb70 (logic-change); [ ] bw2 0x005030c0 (logic-change)
   - [x] `findPatchToFrame` 0x0052dc80 (9)
@@ -7124,14 +7411,20 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `dtor` 0x0052d5a0 (27)
   - [x] `getCurrentStateName` 0x0052dcf0 (14)
   - [ ] `render` 0x0052e700 (155)
+    - BW: [ ] bw1 0x005254b0 = bw2 0x005042e0 (logic-change); [ ] bw3 0x004fcdc0 (logic-change)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
   - [ ] `getStateBlendWeight` 0x0052dd20 (45)
+    - BW: [ ] bw1 0x00524a40 = bw3 0x004fc350 (logic-change); [ ] bw2 0x005038a0 (logic-change)
   - [x] `setMotionList` 0x0052dcb0 (19)
+    - BW: [ ] bw1 0x00524970 = bw2 0x005037d0 = bw3 0x004fc280 (logic-change)
   - [ ] `frameToMarkerPosition` 0x0052e2b0 (83)
+    - BW: [ ] bw1 0x00525020 = bw3 0x004fc930 (logic-change); [ ] bw2 0x00503e60 (logic-change)
   - [ ] `jumpToMotionByName` 0x0052ddb0 (17)
   - [ ] `markerPositionToFrame` 0x0052e3a0 (98)
+    - BW: [ ] bw1 0x00525110 = bw3 0x004fca20 (logic-change); [ ] bw2 0x00503f50 (logic-change)
 - class `CMotionList`
   - [x] `load` 0x0052cd70 (332)
+    - BW: [x] bw1 0x00523980 = bw3 0x004fb280 (logic-change); [ ] bw2 0x00502820 (logic-change)
   - [x] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
@@ -7140,9 +7433,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `flushIncomingPackets` 0x00540550 (35)
     - BW: [ ] bw1 0x0052d300 (const-change); [ ] bw2 0x0050c130 = bw3 0x00504c10 (const-change)
   - [ ] `initializeNetwork` 0x0053fbc0 (107)
-    - BW: [ ] bw1 0x0052c970 (operand-change); [ ] bw3 0x00504270 (logic-change)
+    - BW: [ ] bw1 0x0052c970 (operand-change); [ ] bw2 0x0050b790 = bw3 0x00504270 (logic-change)
   - [ ] `initializeNetworkToJoin` 0x0053f900 (236)
-    - BW: [ ] bw1 0x0052c6b0 (logic-change); [ ] bw3 0x00503fb0 (logic-change)
+    - BW: [ ] bw1 0x0052c6b0 (logic-change); [ ] bw2 0x0050b4d0 = bw3 0x00503fb0 (logic-change)
   - [ ] `processChatOut` 0x00541e40 (123)
     - BW: [ ] bw1 0x0052ebd0 (operand-change); [ ] bw2 0x0050d9f0 = bw3 0x005064d0 (logic-change)
   - [ ] `sendGameSetting` 0x00542dd0 (156)
@@ -7157,6 +7450,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: destroying the CSocket, which closes it, with CNetGame::initializeNetworkToHost
     - BW: [ ] bw1 0x0052c500 (const-change); [ ] bw2 0x0050b320 = bw3 0x00503e00 (const-change)
   - [ ] `initializeNetworkToHost` 0x0053f860 (49)
+    - BW: [ ] bw2 0x0050b420 (logic-change)
   - [ ] `setModeSyncing` 0x00543b20 (4)
   - [ ] `setModePlaying` 0x00543b30 (4)
   - [ ] `setMode5` 0x00543b40 (4)
@@ -7171,7 +7465,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the 400 chat history entries, with CNetGame::addChatHistory
     - deferred: the receive packet's header, size 0x405 and PACKET_NONE, with CNetGame::receivePackets
   - [ ] `resetGameTime` 0x0053f360 (8)
-    - BW: [ ] bw1 0x0052c0ee = bw2 0x0050af1e (logic-change)
   - [ ] `updateGameTime` 0x0053f390 (19)
   - [ ] `computeTimeDelta` 0x0053f3e0 (31)
   - [ ] `getElapsedSeconds` 0x0053f440 (33)
@@ -7179,11 +7472,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0052c230 = bw2 0x0050b060 (logic-change)
   - [ ] `removeChatOut` 0x0053f4b0 (51)
   - [ ] `findSimFrame` 0x0053f550 (29)
-    - BW: [ ] bw1 0x0052c2de (logic-change)
+    - BW: [ ] bw1 0x0052c2e0 (logic-change)
   - [ ] `allocSimFrame` 0x0053f5a0 (58)
-    - BW: [ ] bw1 0x0052c32e (logic-change); [ ] bw2 0x0050b160 = bw3 0x00503c40 (const-change)
+    - BW: [ ] bw1 0x0052c330 (logic-change); [ ] bw2 0x0050b160 = bw3 0x00503c40 (const-change)
   - [ ] `purgeOldSimFrames` 0x0053f650 (46)
-    - BW: [ ] bw1 0x0052c3ec (logic-change)
+    - BW: [ ] bw1 0x0052c3f0 (const-change)
   - [ ] `matchPacketSize` 0x00543ab0 (8)
   - [ ] `matchPacketHeader` 0x00543ad0 (15)
   - [ ] `initNetPacket` 0x00543b00 (6)
@@ -7298,7 +7591,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00535ff0 = bw3 0x0050dcd0 (logic-change); [ ] bw2 0x00514ca0 (logic-change)
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
-    - BW: [ ] bw1 0x0053692e = bw2 0x005155de = bw3 0x0050e60e (logic-change)
 
 ### `core/platfrm.cpp` (18 functions, 1935 instructions, 10 done, 2 partial)
 - class `CPlatform`
@@ -7313,6 +7605,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `isActorOnPlatform` 0x0054df80 (169)
     - BW: [ ] bw1 0x0053ab00 = bw3 0x005127f0 (logic-change); [ ] bw2 0x005197b0 (logic-change)
   - [ ] `updateAttachedActors` 0x0054e320 (91)
+    - BW: [ ] bw1 0x0053aef0 = bw2 0x00519ba0 = bw3 0x00512be0 (logic-change)
   - [ ] `process` 0x0054cc30 (709)
     - BW: [ ] bw1 0x00539810 = bw3 0x005114f0 (logic-change); [ ] bw2 0x005184c0 (logic-change)
   - [ ] `renderOpaque` 0x0054d720 (202)
@@ -7442,17 +7735,21 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CDemonSet`
   - [ ] `testVoxelRaycast` 0x00572510 (8)
   - [ ] `testOBBCylinderCollision` 0x00573140 (248)
+    - BW: [ ] bw1 0x005580d0 = bw2 0x00536cb0 = bw3 0x0053da90 (logic-change)
   - [ ] `testCylinderCollision` 0x00573470 (580)
+    - BW: [ ] bw1 0x00558450 = bw2 0x00537030 = bw3 0x0053de10 (logic-change)
   - [ ] `setRayTypeLaser` 0x00574270 (11)
   - [~] `castVoxelShadow` 0x00574440 (46)
     - deferred: resetting every path map around the new shadow, with resetAllPathMaps and the path maps
     - BW: [ ] bw1 0x00559440 = bw2 0x00538020 = bw3 0x0053ee00 (logic-change)
   - [ ] `notifyDamageListeners` 0x005742b0 (82)
+    - BW: [ ] bw1 0x00559350 = bw2 0x00537f30 (logic-change)
   - [ ] `transferVoxelShadow` 0x005744d0 (46)
     - BW: [ ] bw1 0x005594e0 = bw2 0x005380c0 = bw3 0x0053eea0 (logic-change)
   - [ ] `getVoxelHeight` 0x005724e0 (12)
   - [ ] `refinedRaycast` 0x005726c0 (94)
   - [ ] `iterativeRaycast` 0x00572800 (167)
+    - BW: [ ] bw1 0x00557630 = bw2 0x00536210 = bw3 0x0053cff0 (logic-change)
 - free functions
   - [~] `staticInit` 0x005715b0 (6)
     - deferred: the five-deep raytrace state stack, with this
@@ -7475,10 +7772,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/setutil.cpp` (8 functions, 335 instructions, 3 done, 0 partial)
 - class `C3DSLight`
   - [ ] `isVisible` 0x00587df0 (34)
+    - BW: [ ] bw1 0x0055d9c0 = bw2 0x0053c0f0 = bw3 0x00543380 (logic-change)
   - [ ] `reset` 0x005879b0 (15)
   - [x] `ctor` 0x005862f0 (8)
   - [ ] `renderVolumetricSphere` 0x00587b50 (185)
-    - BW: [ ] bw1 0x0055d71c = bw2 0x0053be4c (logic-change)
 - class `C3DSCamera`
   - [x] `ctor` 0x00585310 (5)
   - [x] `dtor` 0x00585340 (8)
@@ -7547,22 +7844,31 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/skeleton.cpp` (88 functions, 8882 instructions, 47 done, 2 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
+    - BW: [ ] bw1 0x00569ae0 = bw3 0x0054e670 (const-change)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
+    - BW: [ ] bw1 0x00569b00 = bw3 0x0054e690 (operand-change)
   - [x] `init` 0x005a0840 (30)
   - [x] `ctor` 0x0059ddc0 (25)
   - [x] `blendMotion` 0x0059eb50 (479)
-    - BW: [ ] bw3 0x0054cc90 (logic-change)
+    - BW: [ ] bw1 0x00568100 (logic-change); [ ] bw2 0x00545a60 (logic-change); [ ] bw3 0x0054cc90 (logic-change)
   - [x] `computeBoundingBoxFromBones` 0x005a16c0 (76)
+    - BW: [ ] bw1 0x0056ae70 = bw2 0x005487d0 = bw3 0x0054fa00 (logic-change)
   - [x] `computeBoneTransforms` 0x0059fb40 (124)
     - BW: [ ] bw1 0x00569180 = bw2 0x00546ae0 = bw3 0x0054dd10 (logic-change)
   - [x] `updateMotion` 0x0059e0a0 (855)
+    - BW: [ ] bw1 0x00567620 = bw3 0x0054c1b0 (logic-change); [ ] bw2 0x00544f80 (logic-change)
   - [x] `updateAnimation` 0x0059e020 (27)
   - [ ] `shatter` 0x005a14b0 (36)
   - [x] `free` 0x0059df40 (19)
+    - BW: [ ] bw1 0x005674d0 = bw2 0x00544e30 = bw3 0x0054c060 (logic-change)
   - [x] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
+    - BW: [ ] bw1 0x0056a220 = bw2 0x00547b80 = bw3 0x0054edb0 (logic-change)
   - [x] `findPatchToFrame` 0x005a08a0 (124)
+    - BW: [ ] bw1 0x00569fb0 = bw3 0x0054eb40 (logic-change); [ ] bw2 0x00547910 (logic-change)
   - [x] `getRootMotionDelta` 0x005a0d10 (166)
+    - BW: [ ] bw1 0x0056a4b0 = bw2 0x00547e10 = bw3 0x0054f040 (logic-change)
   - [x] `accumulateScaledRootMotion` 0x005a0c90 (32)
+    - BW: [ ] bw1 0x0056a410 = bw2 0x00547d70 = bw3 0x0054efa0 (logic-change)
   - [x] `dtor` 0x0059de40 (41)
     - BW: [ ] bw1 0x005673f0 = bw2 0x00544d50 = bw3 0x0054bf80 (logic-change)
   - [ ] `skinAndRotateVertices` 0x005a0250 (24)
@@ -7588,12 +7894,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `initializeFromModel` 0x005a0480 (110)
     - BW: [ ] bw1 0x00569b50 = bw2 0x005474b0 = bw3 0x0054e6e0 (logic-change)
   - [x] `getBoneModelMatrix` 0x0059f820 (184)
+    - BW: [ ] bw1 0x00568e30 = bw2 0x00546790 = bw3 0x0054d9c0 (logic-change)
   - [x] `getBoneModelPosition` 0x0059fa20 (112)
+    - BW: [ ] bw1 0x00569040 = bw2 0x005469a0 = bw3 0x0054dbd0 (logic-change)
   - [x] `preCache` 0x005a0450 (11)
     - BW: [ ] bw1 0x00569b20 = bw3 0x0054e6b0 (const-change)
   - [ ] `blendBoneRotations` 0x0059f750 (83)
     - BW: [ ] bw1 0x00568d60 = bw2 0x005466c0 = bw3 0x0054d8f0 (logic-change)
   - [ ] `getBoneCachedModelPosition` 0x0059fb00 (15)
+    - BW: [ ] bw1 0x00569130 = bw2 0x00546a90 = bw3 0x0054dcc0 (logic-change)
   - [ ] `applyRotationToHierarchy` 0x0059ff20 (191)
     - BW: [ ] bw1 0x005695e0 = bw2 0x00546f40 = bw3 0x0054e170 (logic-change)
   - [ ] `blendWithQuaternions` 0x0059f260 (311)
@@ -7603,7 +7912,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00568cf0 = bw2 0x00546650 = bw3 0x0054d880 (logic-change)
   - [ ] `offsetAllBonePositions` 0x0059fd60 (36)
   - [ ] `aimBoneAtTarget` 0x0059fdd0 (133)
+    - BW: [ ] bw1 0x00569440 = bw2 0x00546da0 = bw3 0x0054dfd0 (logic-change)
   - [ ] `skinSingleVertex` 0x005a0210 (21)
+    - BW: [ ] bw1 0x005698d0 = bw2 0x00547230 = bw3 0x0054e460 (logic-change)
   - [ ] `outlinePolygons` 0x005a03b0 (26)
   - [ ] `spawnDismemberedBodyPart` 0x005a0fe0 (43)
   - [ ] `renderSkeleton` 0x005a17b0 (16)
@@ -7615,15 +7926,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `loadSkeleton` 0x005a1df0 (57)
     - BW: [ ] bw1 0x0056b650 (logic-change); [ ] bw2 0x00548fc0 (logic-change); [ ] bw3 0x005501e0 (logic-change)
   - [x] `getDeformableModel` 0x005a1cf0 (67)
+    - BW: [ ] bw1 0x0056b520 (logic-change); [ ] bw2 0x00548e80 (logic-change); [ ] bw3 0x005500b0 (logic-change)
   - [x] `staticInit` 0x00599670 (17)
   - [ ] `skipToEndOfLine` 0x005996c0 (11)
   - [ ] `distancePointToLineSegment` 0x005996e0 (149)
     - BW: [ ] bw1 0x00562be0 = bw2 0x005405f0 = bw3 0x00547800 (logic-change)
   - [ ] `getRootMotionDeltaForMotion` 0x005a0f50 (51)
   - [ ] `blendBoneTransformData` 0x005a1b70 (131)
+    - BW: [ ] bw1 0x0056b360 = bw2 0x00548cc0 = bw3 0x0054fef0 (logic-change)
 - class `CSkeleton`
   - [x] `getBoneAngleAtFrame` 0x0059a050 (8)
   - [x] `getBoneAngleInterpolated` 0x0059a070 (78)
+    - BW: [ ] bw1 0x005635a0 = bw2 0x00540f30 = bw3 0x00548140 (logic-change)
   - [x] `getHierarchyDistance` 0x0059a100 (23)
   - [x] `allocMemory` 0x00599910 (86)
     - BW: [ ] bw1 0x00562e60 = bw3 0x00547a80 (logic-change); [ ] bw2 0x00540870 (logic-change)
@@ -7660,6 +7974,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `allocMemory` 0x0059a3f0 (81)
     - BW: [ ] bw1 0x005638c0 (operand-change); [ ] bw2 0x00541250 (operand-change); [ ] bw3 0x00548460 (operand-change)
   - [x] `allocLOD` 0x0059a510 (152)
+    - BW: [ ] bw1 0x005639e0 (logic-change); [ ] bw2 0x00541370 (logic-change); [ ] bw3 0x00548580 (logic-change)
   - [ ] `computeBoneDominantPart` 0x0059c2f0 (224)
     - BW: [ ] bw1 0x00565830 (logic-change); [ ] bw2 0x005431b0 (logic-change); [ ] bw3 0x0054a3c0 (logic-change)
   - [~] `computePartDominantBones` 0x0059d460 (330)
@@ -7674,9 +7989,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `dtor` 0x0059a270 (18)
     - BW: [ ] bw1 0x005637b0 = bw2 0x00541140 = bw3 0x00548350 (logic-change)
   - [ ] `skinSingleVertex` 0x0059aa00 (99)
+    - BW: [ ] bw1 0x00563e90 = bw2 0x00541820 = bw3 0x00548a30 (logic-change)
   - [ ] `renderWireframe` 0x0059b5a0 (56)
   - [ ] `renderSkeleton` 0x0059b640 (189)
+    - BW: [ ] bw1 0x00564b20 (logic-change); [ ] bw2 0x005424b0 = bw3 0x005496c0 (logic-change)
   - [ ] `renderBones` 0x0059b800 (69)
+    - BW: [ ] bw1 0x00564d40 = bw2 0x005426c0 (logic-change); [ ] bw3 0x005498d0 (logic-change)
 
 ### `core/slew.cpp` (1 functions, 1 instructions, 1 done, 0 partial)
 - free functions
@@ -7714,9 +8032,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `filterSoundFilesByPattern` 0x005b17d0 (60)
   - [ ] `resetTrainSounds` 0x005b26f0 (26)
   - [ ] `processTrainSounds` 0x005b2770 (316)
+    - BW: [ ] bw1 0x0057c580 = bw2 0x00559b50 = bw3 0x0055f6b0 (logic-change)
   - [ ] `stopTrainSounds` 0x005b2ca0 (19)
   - [ ] `syncChannel3WithChannel0` 0x005b2d70 (29)
-    - BW: [ ] bw1 0x0057cb9e = bw2 0x0055a16e = bw3 0x0055fcce (logic-change)
 - class `CSound`
   - [ ] `playActorNonPositionalSoundWithDelay` 0x005b3aa0 (23)
     - BW: [ ] bw1 0x0057d940 = bw2 0x0055aef0 = bw3 0x00560a70 (logic-change)
@@ -7731,7 +8049,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x00560540 (operand-change)
   - [ ] `getActorType` 0x005b8210 (2)
   - [ ] `testCollisionWithCharacters` 0x005b8950 (327)
-    - BW: [ ] bw2 0x00560cb0 (logic-change)
+    - BW: [ ] bw1 0x00583700 = bw2 0x00560cb0 = bw3 0x00566fd0 (logic-change)
   - [ ] `process` 0x005b8410 (200)
     - BW: [ ] bw1 0x005831b0 = bw2 0x00560760 = bw3 0x00566a80 (logic-change)
   - [ ] `renderOpaque` 0x005b8730 (41)
@@ -7752,7 +8070,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/spline.cpp` (7 functions, 424 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `computeSplineBasis` 0x005b90a0 (125)
+    - BW: [ ] bw1 0x00583d60 = bw2 0x00561310 = bw3 0x00567630 (logic-change)
   - [ ] `evaluateSplinePoint3D` 0x005b92d0 (92)
+    - BW: [ ] bw1 0x00583f90 = bw2 0x00561540 = bw3 0x00567860 (logic-change)
   - [ ] `evaluateSplineTangent3D` 0x005b9490 (93)
   - [ ] `evaluateSplineScalar` 0x005b9230 (21)
   - [ ] `evaluateSplintInt` 0x005b9270 (36)
@@ -7814,15 +8134,19 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `processPickupComplete` 0x005c1f00 (36)
     - BW: [ ] bw1 0x0058cda0 (operand-change)
   - [ ] `dropRightHandObject` 0x005c1f80 (22)
+    - BW: [ ] bw2 0x0056a1e0 (operand-change)
   - [ ] `processMotionEvents` 0x005bdd20 (482)
+    - BW: [ ] bw1 0x005881d0 (logic-change); [ ] bw2 0x005656f0 (logic-change)
   - [ ] `getHandsMidpoint` 0x005be490 (51)
+    - BW: [ ] bw1 0x00588a10 (logic-change); [ ] bw2 0x00565f30 (logic-change)
   - [ ] `extractTurnPose` 0x005bf720 (74)
+    - BW: [ ] bw2 0x00567430 (logic-change)
   - [ ] `applyArmAimRotation` 0x005c02b0 (398)
     - BW: [ ] bw1 0x0058aab0 = bw2 0x00567fd0 (logic-change)
   - [ ] `makeDrawDecision` 0x005bfb60 (573)
     - BW: [ ] bw1 0x0058a360 (logic-change); [ ] bw2 0x00567880 (logic-change)
   - [ ] `updateProceduralAnimation` 0x005be520 (1297)
-    - BW: [ ] bw1 0x00588ad0 (logic-change)
+    - BW: [ ] bw1 0x00588ad0 (logic-change); [ ] bw2 0x00565ff0 (logic-change)
   - [ ] `updateTurnBlending` 0x005bf800 (211)
   - [ ] `computeWeaponAttachXForm` 0x005c07b0 (1497)
   - [ ] `updateWeaponPosition` 0x005c06b0 (129)
@@ -7834,6 +8158,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updateArmRecoilBlend` 0x005c4c20 (378)
     - BW: [ ] bw1 0x00590020 (logic-change); [ ] bw2 0x0056d3d0 (logic-change)
   - [ ] `getThrowDirection` 0x005c51c0 (34)
+    - BW: [ ] bw1 0x005906e0 = bw2 0x0056da90 (logic-change)
   - [ ] `updateWeaponLayerActions` 0x005c5270 (594)
     - BW: [ ] bw1 0x005907a0 (logic-change); [ ] bw2 0x0056db50 (logic-change)
   - [ ] `tryPickupObject` 0x005c1680 (591)
@@ -7892,9 +8217,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `getCarriedObjectVerticalOffset` 0x005bb010 (78)
     - BW: [ ] bw2 0x005626f0 (const-change)
   - [ ] `adjustAimAngleForOffset` 0x005c3750 (56)
-    - BW: [ ] bw1 0x0058e90e (logic-change)
   - [ ] `calculateAimAnglesWithOffset` 0x005c37e0 (136)
-    - BW: [ ] bw1 0x0058e99e (logic-change)
+    - BW: [ ] bw1 0x0058e9a0 (logic-change)
   - [ ] `setMatrixTranslation` 0x005c6930 (9)
   - [ ] `isProcessDisabled` 0x005c6950 (3)
   - [ ] `getScaleY` 0x005c6960 (3)
@@ -8005,6 +8329,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `findNearbyTarget` 0x005db900 (76)
     - BW: [ ] bw1 0x00595c40 = bw2 0x00573010 (logic-change)
   - [ ] `computeGripBoneMatrix` 0x005dbb70 (149)
+    - BW: [ ] bw2 0x005732e0 (const-change)
   - [ ] `process` 0x005db050 (645)
     - BW: [ ] bw1 0x005952f0 = bw2 0x005726c0 (logic-change)
   - [ ] `renderOpaque` 0x005db840 (23)
@@ -8029,6 +8354,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `staticInit` 0x005dbdb0 (7)
 - class `CTextureList`
   - [ ] `save` 0x005dc0d0 (114)
+    - BW: [ ] bw1 0x00596390 = bw2 0x00573770 = bw3 0x00569380 (logic-change)
   - [ ] `captureAllTextures` 0x005dc230 (25)
 
 ### `core/tommygun.cpp` (9 functions, 786 instructions, 1 done, 0 partial)
@@ -8099,14 +8425,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0059afb0 = bw2 0x005776f0 = bw3 0x0056dfa0 (logic-change)
   - [x] `getActorType` 0x005df830 (2)
   - [ ] `containsActor` 0x005e0cd0 (207)
+    - BW: [ ] bw1 0x0059c090 = bw3 0x0056f080 (logic-change); [ ] bw2 0x00578800 (logic-change)
   - [ ] `process` 0x005dfac0 (408)
-    - BW: [ ] bw1 0x0059b240 = bw2 0x005779d0 = bw3 0x0056e230 (logic-change)
+    - BW: [ ] bw1 0x0059b240 (logic-change); [ ] bw2 0x005779d0 (logic-change); [ ] bw3 0x0056e230 (logic-change)
   - [ ] `renderTransparent` 0x005e00d0 (461)
     - BW: [ ] bw1 0x0059b8c0 = bw2 0x00578050 = bw3 0x0056e8b0 (logic-change)
   - [x] `getBoundingBox` 0x005e0630 (22)
     - BW: [ ] bw1 0x0059b8d0 = bw2 0x00578060 = bw3 0x0056e8c0 (logic-change)
   - [~] `calculateTestRadius` 0x005e0ba0 (43)
     - unverified: the diagonal's x87 sum and square root, worked in double here, not run against nocedit's own code
+    - BW: [ ] bw1 0x0059bee0 = bw3 0x0056eed0 (logic-change); [ ] bw2 0x00578650 (logic-change)
   - [x] `archive` 0x005e0690 (171)
     - BW: [ ] bw1 0x0059b950 = bw3 0x0056e940 (logic-change); [ ] bw2 0x005780e0 (logic-change)
   - [ ] `getCollisionType` 0x005e0930 (27)
@@ -8143,6 +8471,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `updatePatrol` 0x005e3560 (132)
     - BW: [ ] bw1 0x005a3650 = bw2 0x0057fa00 (logic-change)
   - [ ] `updateTargeting` 0x005e2d50 (352)
+    - BW: [ ] bw1 0x005a2d00 (logic-change); [ ] bw2 0x0057f0b0 (logic-change)
   - [ ] `process` 0x005e2430 (338)
     - BW: [ ] bw1 0x005a23b0 = bw2 0x0057e760 (logic-change)
   - [ ] `getBoundingBox` 0x005e2910 (174)
@@ -8302,7 +8631,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `staticInit` 0x005e9da0 (7)
   - [ ] `calculateWaveHeight` 0x005e9dc0 (19)
-    - BW: [ ] bw1 0x005a998e = bw2 0x00585d5e = bw3 0x005771de (logic-change)
 
 ### `core/wateract.cpp` (16 functions, 1207 instructions, 1 done, 0 partial)
 - class `CWaterActor`
@@ -8310,8 +8638,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x005869a0 (operand-change); [ ] bw3 0x00577d90 (logic-change)
   - [ ] `getActorType` 0x005ea890 (2)
   - [ ] `updateWorldPositions` 0x005eafa0 (57)
+    - BW: [ ] bw1 0x005aacd0 (logic-change); [ ] bw2 0x005870a0 (logic-change); [ ] bw3 0x00578490 (logic-change)
   - [ ] `process` 0x005eb100 (90)
-    - BW: [ ] bw1 0x005aaeb0 = bw2 0x00587280 (logic-change); [ ] bw3 0x00578670 (logic-change)
+    - BW: [ ] bw3 0x00578670 (operand-change)
   - [ ] `renderTransparent` 0x005eb280 (168)
     - BW: [ ] bw1 0x005ab030 = bw2 0x00587400 (logic-change); [ ] bw3 0x005787f0 (logic-change)
   - [ ] `getBoundingBox` 0x005eb4b0 (22)
@@ -8378,6 +8707,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005ad9a0 = bw2 0x00589e50 = bw3 0x0057b440 (logic-change)
   - [ ] `pickup` 0x005ee3e0 (4)
   - [x] `setupPhysicsBox` 0x005ee740 (74)
+    - BW: [ ] bw1 0x005ade40 = bw3 0x0057ba10 (logic-change); [ ] bw2 0x0058a2f0 (logic-change)
   - [ ] `onDropped` 0x005ee3f0 (47)
     - BW: [ ] bw1 0x005ada60 = bw2 0x00589f10 = bw3 0x0057b500 (logic-change)
   - [x] `getCarrier` 0x005ee490 (3)
@@ -8404,6 +8734,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/weather.cpp` (3 functions, 20 instructions, 2 done, 1 partial)
 - class `CWeather`
   - [x] `ctor` 0x005eead0 (9)
+    - BW: [ ] bw3 0x0057bd80 (logic-change)
   - [x] `dtor` 0x005efb40 (2, compiler-generated)
 - free functions
   - [~] `staticInit` 0x005eeaa0 (9)
@@ -8448,6 +8779,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/xform.cpp` (42 functions, 2952 instructions, 6 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
+    - BW: [ ] bw1 0x005b6270 = bw2 0x00592720 = bw3 0x00584450 (logic-change)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
     - BW: [ ] bw1 0x005b75a0 = bw2 0x00593a50 = bw3 0x00585780 (logic-change)
   - [ ] `lerpMatrix3x4` 0x005f7140 (188)
@@ -8478,9 +8810,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `transformVector3x3` 0x005f4eb0 (32)
   - [ ] `multiplyMatrix3x4InPlace` 0x005f50c0 (49)
   - [ ] `normalizeMatrix` 0x005f51e0 (164)
+    - BW: [ ] bw1 0x005b54d0 = bw2 0x00591980 = bw3 0x005836b0 (logic-change)
   - [x] `angleFromSinCos` 0x005f55c0 (75)
     - BW: [ ] bw1 0x005b5860 = bw2 0x00591d10 = bw3 0x00583a40 (logic-change)
   - [ ] `invertAndGetTranslation` 0x005f6140 (53)
+    - BW: [ ] bw1 0x005b62b0 = bw2 0x00592760 = bw3 0x00584490 (logic-change)
   - [ ] `inverseInPlace` 0x005f6190 (15)
   - [ ] `computeOrthogonalityError` 0x005f6460 (184)
   - [ ] `orthonormalizeMatrix3x3` 0x005f6690 (399)
@@ -8515,7 +8849,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `canPickupWithHand` 0x005fbda0 (21)
     - BW: [ ] bw1 0x005bdf60 = bw2 0x00598ee0 = bw3 0x0058bdf0 (logic-change)
   - [ ] `resetChaseState` 0x005fca10 (39)
-    - BW: [ ] bw2 0x00599d00 (operand-change)
+    - BW: [ ] bw2 0x00599d00 (operand-change); [ ] bw3 0x0058cc20 (logic-change)
   - [ ] `processPickup` 0x005fb530 (514)
     - BW: [ ] bw1 0x005bd560 (logic-change); [ ] bw2 0x005984e0 (logic-change); [ ] bw3 0x0058b3f0 (logic-change)
   - [ ] `process` 0x005f9470 (2056)
@@ -8575,7 +8909,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `plotClippedPixel` 0x005f2f90 (16)
   - [ ] `drawCrosshair` 0x005f2fd0 (77)
   - [x] `displayMessageBoxAndQuit` 0x005f3920 (26)
-    - BW: [ ] bw2 0x0058f5d0 (logic-change)
+    - BW: [ ] bw1 0x005b3080 = bw2 0x0058f5d0 = bw3 0x00581300 (logic-change)
 
 ## Blair Witch only
 
@@ -8587,330 +8921,250 @@ the retail game has it too. Sizes are in instructions.
 
 | Unit | Functions | Named | Instructions | Done |
 |---|---|---|---|---|
-| `cockpit/ckptutil.c` | 31 | 0 | 2514 | 0 |
-| `cockpit/drawsurf.cpp` | 40 | 0 | 1248 | 0 |
-| `cockpit/pkbitmap.cpp` | 10 | 0 | 496 | 0 |
-| `cockpit/pkbmpset.cpp` | 7 | 0 | 735 | 0 |
-| `core/actor.cpp` | 35 | 0 | 1728 | 0 |
+| `cockpit/ckptutil.c` | 17 | 0 | 1818 | 0 |
+| `cockpit/drawsurf.cpp` | 15 | 0 | 241 | 0 |
+| `cockpit/pkbitmap.cpp` | 3 | 0 | 98 | 0 |
+| `cockpit/pkbmpset.cpp` | 5 | 0 | 631 | 0 |
+| `core/actor.cpp` | 24 | 0 | 465 | 0 |
 | `core/ammo.cpp` | 16 | 11 | 349 | 0 |
-| `core/armour.cpp` | 3 | 0 | 21 | 0 |
+| `core/armour.cpp` | 2 | 0 | 14 | 0 |
 | `core/asgaya.cpp` | 15 | 15 | 1218 | 0 |
 | `core/baal.cpp` | 14 | 12 | 1676 | 0 |
 | `core/baron.cpp` | 2 | 0 | 4 | 0 |
-| `core/basicene.cpp` | 37 | 17 | 2623 | 0 |
+| `core/basicene.cpp` | 37 | 20 | 2623 | 0 |
 | `core/basicnpc.cpp` | 14 | 13 | 193 | 0 |
 | `core/belling.cpp` | 13 | 12 | 181 | 0 |
 | `core/bindevil.cpp` | 8 | 8 | 160 | 0 |
 | `core/bird.cpp` | 16 | 14 | 778 | 0 |
 | `core/blundrbs.cpp` | 8 | 8 | 1304 | 0 |
-| `core/bmppuzzl.cpp` | 56 | 39 | 3540 | 0 |
-| `core/bodypart.cpp` | 11 | 0 | 559 | 0 |
+| `core/bmppuzzl.cpp` | 56 | 53 | 3645 | 0 |
+| `core/bodypart.cpp` | 7 | 0 | 367 | 0 |
 | `core/boneguy.cpp` | 22 | 15 | 1527 | 0 |
-| `core/box.cpp` | 11 | 0 | 1541 | 0 |
-| `core/boxactor.cpp` | 6 | 0 | 889 | 0 |
-| `core/bugs.cpp` | 10 | 0 | 2727 | 0 |
+| `core/box.cpp` | 3 | 0 | 665 | 0 |
+| `core/bugs.cpp` | 3 | 0 | 434 | 0 |
 | `core/burncrss.cpp` | 12 | 11 | 1059 | 0 |
 | `core/bwgrndma.cpp` | 16 | 13 | 298 | 0 |
 | `core/bwsearch.cpp` | 13 | 12 | 176 | 0 |
 | `core/bwspart.cpp` | 18 | 15 | 1039 | 0 |
 | `core/camview.cpp` | 4 | 0 | 11 | 0 |
 | `core/carved.cpp` | 37 | 17 | 5705 | 0 |
-| `core/chain.cpp` | 3 | 0 | 49 | 0 |
-| `core/charactr.cpp` | 86 | 4 | 12755 | 0 |
-| `core/cloth.cpp` | 14 | 0 | 2350 | 0 |
+| `core/chain.cpp` | 1 | 0 | 2 | 0 |
+| `core/charactr.cpp` | 50 | 4 | 5576 | 0 |
+| `core/cloth.cpp` | 2 | 0 | 188 | 0 |
 | `core/colonel.cpp` | 1 | 0 | 386 | 0 |
 | `core/confedrt.cpp` | 20 | 15 | 1422 | 0 |
 | `core/confzomb.cpp` | 16 | 15 | 883 | 0 |
-| `core/construc.cpp` | 31 | 15 | 2922 | 0 |
-| `core/conveyor.cpp` | 3 | 0 | 37 | 0 |
-| `core/course.cpp` | 3 | 0 | 304 | 0 |
-| `core/cow.cpp` | 1 | 0 | 39 | 0 |
-| `core/crate.cpp` | 9 | 0 | 554 | 0 |
+| `core/construc.cpp` | 27 | 18 | 2582 | 0 |
+| `core/crate.cpp` | 4 | 0 | 182 | 0 |
 | `core/cross.cpp` | 14 | 12 | 1216 | 0 |
-| `core/crossbow.cpp` | 1 | 0 | 29 | 0 |
-| `core/curtain.cpp` | 2 | 0 | 170 | 0 |
 | `core/darkwolf.cpp` | 15 | 14 | 791 | 0 |
-| `core/dcamera.cpp` | 18 | 0 | 1788 | 0 |
-| `core/dcube.cpp` | 6 | 0 | 1369 | 0 |
-| `core/demnfolk.cpp` | 45 | 21 | 9541 | 0 |
+| `core/dcamera.cpp` | 4 | 0 | 489 | 0 |
+| `core/dcube.cpp` | 2 | 0 | 846 | 0 |
+| `core/demnfolk.cpp` | 42 | 21 | 6673 | 0 |
 | `core/dest.cpp` | 3 | 0 | 6 | 0 |
-| `core/dfilter.cpp` | 1 | 0 | 101 | 0 |
-| `core/dfont.cpp` | 4 | 0 | 1379 | 0 |
-| `core/dglobe.cpp` | 7 | 0 | 158 | 0 |
-| `core/dimage.cpp` | 6 | 0 | 208 | 0 |
-| `core/dirmat.cpp` | 4 | 0 | 418 | 0 |
+| `core/dimage.cpp` | 1 | 0 | 165 | 0 |
+| `core/dirmat.cpp` | 1 | 0 | 18 | 0 |
 | `core/disease.cpp` | 8 | 7 | 154 | 0 |
 | `core/djien.cpp` | 20 | 15 | 2534 | 0 |
-| `core/dlight.cpp` | 9 | 0 | 1726 | 0 |
-| `core/dmodel.cpp` | 3 | 0 | 556 | 0 |
-| `core/doc.cpp` | 96 | 24 | 25668 | 0 |
+| `core/dlight.cpp` | 8 | 0 | 1687 | 0 |
+| `core/doc.cpp` | 95 | 31 | 25118 | 0 |
 | `core/dog.cpp` | 12 | 9 | 237 | 0 |
-| `core/door.cpp` | 9 | 0 | 1206 | 0 |
-| `core/dpart.cpp` | 9 | 0 | 1453 | 0 |
-| `core/dracbrid.cpp` | 6 | 0 | 1159 | 0 |
-| `core/dtrace.cpp` | 24 | 0 | 2219 | 0 |
-| `core/dtri.cpp` | 8 | 0 | 414 | 0 |
+| `core/door.cpp` | 4 | 0 | 148 | 0 |
+| `core/dpart.cpp` | 3 | 0 | 876 | 0 |
+| `core/dracbrid.cpp` | 5 | 0 | 1141 | 0 |
+| `core/dtrace.cpp` | 3 | 0 | 890 | 0 |
+| `core/dtri.cpp` | 6 | 0 | 12 | 0 |
 | `core/dynamite.cpp` | 1 | 0 | 11 | 0 |
 | `core/emitter.cpp` | 2 | 0 | 106 | 0 |
-| `core/enemy.cpp` | 11 | 1 | 743 | 0 |
-| `core/event.cpp` | 21 | 0 | 21349 | 0 |
+| `core/enemy.cpp` | 4 | 1 | 292 | 0 |
+| `core/event.cpp` | 12 | 0 | 14219 | 0 |
 | `core/exorcism.cpp` | 11 | 11 | 1284 | 0 |
 | `core/fforest.cpp` | 13 | 11 | 665 | 0 |
-| `core/fire.cpp` | 99 | 27 | 10906 | 0 |
+| `core/fire.cpp` | 40 | 40 | 2519 | 0 |
 | `core/firestff.cpp` | 12 | 11 | 947 | 0 |
-| `core/flame.cpp` | 3 | 0 | 155 | 0 |
-| `core/flashlit.cpp` | 25 | 2 | 1505 | 0 |
+| `core/flame.cpp` | 1 | 0 | 21 | 0 |
+| `core/flashlit.cpp` | 24 | 2 | 1472 | 0 |
 | `core/flattn.cpp` | 12 | 0 | 275 | 0 |
-| `core/fldnotes.cpp` | 89 | 75 | 8263 | 0 |
-| `core/flies.cpp` | 2 | 0 | 454 | 0 |
+| `core/fldnotes.cpp` | 82 | 82 | 6190 | 0 |
 | `core/flintlck.cpp` | 8 | 8 | 911 | 0 |
-| `core/gabriela.cpp` | 11 | 0 | 2246 | 0 |
-| `core/game.cpp` | 74 | 0 | 25440 | 0 |
-| `core/gargoyle.cpp` | 3 | 0 | 432 | 0 |
+| `core/gabriela.cpp` | 2 | 0 | 40 | 0 |
+| `core/game.cpp` | 44 | 3 | 12954 | 0 |
 | `core/ghostchi.cpp` | 16 | 15 | 720 | 0 |
-| `core/glass.cpp` | 6 | 0 | 4530 | 0 |
+| `core/glass.cpp` | 3 | 0 | 3678 | 0 |
 | `core/gmehook.cpp` | 5 | 5 | 210 | 0 |
 | `core/goggles.cpp` | 12 | 11 | 167 | 0 |
-| `core/gore.cpp` | 19 | 0 | 3748 | 0 |
-| `core/ground.cpp` | 2 | 0 | 255 | 0 |
+| `core/gore.cpp` | 12 | 0 | 1932 | 0 |
 | `core/hand.cpp` | 18 | 17 | 772 | 0 |
 | `core/heal.cpp` | 8 | 8 | 262 | 0 |
-| `core/health.cpp` | 6 | 4 | 134 | 0 |
+| `core/health.cpp` | 5 | 4 | 109 | 0 |
 | `core/hecaitmx.cpp` | 10 | 10 | 696 | 0 |
 | `core/helldog.cpp` | 16 | 15 | 1039 | 0 |
 | `core/hellhag.cpp` | 19 | 18 | 1491 | 0 |
-| `core/hero.cpp` | 56 | 5 | 5001 | 0 |
+| `core/hero.cpp` | 22 | 7 | 1745 | 0 |
 | `core/hino.cpp` | 15 | 13 | 2262 | 0 |
 | `core/holycrss.cpp` | 11 | 11 | 210 | 0 |
 | `core/hotdemon.cpp` | 12 | 9 | 231 | 0 |
 | `core/hpatrol.cpp` | 10 | 9 | 494 | 0 |
 | `core/hpbox.cpp` | 8 | 8 | 747 | 0 |
-| `core/icepick.cpp` | 8 | 0 | 1105 | 0 |
+| `core/icepick.cpp` | 4 | 0 | 710 | 0 |
 | `core/imp.cpp` | 1 | 0 | 1 | 0 |
-| `core/inv.cpp` | 42 | 0 | 11394 | 0 |
+| `core/inv.cpp` | 25 | 1 | 5600 | 0 |
 | `core/kedward.cpp` | 11 | 10 | 2008 | 0 |
 | `core/lantern.cpp` | 15 | 14 | 398 | 0 |
 | `core/level.cpp` | 5 | 0 | 382 | 0 |
-| `core/lever.cpp` | 5 | 0 | 354 | 0 |
-| `core/lightgun.cpp` | 6 | 1 | 282 | 0 |
+| `core/lever.cpp` | 1 | 0 | 118 | 0 |
+| `core/lightgun.cpp` | 4 | 1 | 187 | 0 |
 | `core/lightpis.cpp` | 13 | 10 | 1457 | 0 |
-| `core/lightsta.cpp` | 11 | 10 | 2206 | 0 |
-| `core/main.c` | 10 | 0 | 1498 | 0 |
-| `core/manpuz.cpp` | 9 | 0 | 1056 | 0 |
+| `core/lightsta.cpp` | 11 | 11 | 2687 | 0 |
+| `core/main.c` | 3 | 0 | 140 | 0 |
+| `core/manpuz.cpp` | 3 | 0 | 230 | 0 |
 | `core/marquee.cpp` | 3 | 0 | 40 | 0 |
 | `core/mattnntt.cpp` | 13 | 12 | 2292 | 0 |
-| `core/melee.cpp` | 1 | 0 | 46 | 0 |
+| `core/melee.cpp` | 1 | 0 | 90 | 0 |
 | `core/meleeaxe.cpp` | 6 | 5 | 122 | 0 |
-| `core/menu.cpp` | 24 | 0 | 12569 | 0 |
+| `core/menu.cpp` | 3 | 0 | 1062 | 0 |
 | `core/mine.cpp` | 11 | 10 | 507 | 0 |
-| `core/mirror.cpp` | 8 | 0 | 359 | 0 |
-| `core/mission.cpp` | 35 | 0 | 1668 | 0 |
-| `core/mobster.cpp` | 3 | 0 | 480 | 0 |
+| `core/mirror.cpp` | 4 | 0 | 7 | 0 |
+| `core/mission.cpp` | 12 | 1 | 412 | 0 |
+| `core/mobster.cpp` | 2 | 0 | 134 | 0 |
 | `core/moocow.cpp` | 12 | 10 | 816 | 0 |
 | `core/moon.cpp` | 4 | 1 | 62 | 0 |
-| `core/morph.cpp` | 7 | 0 | 84 | 0 |
-| `core/motion.cpp` | 25 | 0 | 3135 | 4 |
+| `core/morph.cpp` | 3 | 0 | 55 | 0 |
+| `core/motion.cpp` | 4 | 0 | 554 | 0 |
 | `core/muzzle.cpp` | 33 | 4 | 1231 | 0 |
 | `core/necklace.cpp` | 6 | 6 | 272 | 0 |
-| `core/netgame.cpp` | 7 | 1 | 432 | 0 |
+| `core/netgame.cpp` | 4 | 1 | 141 | 0 |
 | `core/npc.cpp` | 3 | 2 | 81 | 0 |
-| `core/particle.cpp` | 6 | 0 | 966 | 0 |
-| `core/passngr.cpp` | 4 | 0 | 48 | 0 |
-| `core/path.cpp` | 4 | 0 | 404 | 0 |
-| `core/platfrm.cpp` | 2 | 0 | 154 | 0 |
-| `core/podmain.cpp` | 5 | 0 | 212 | 0 |
-| `core/prye.cpp` | 54 | 25 | 15402 | 0 |
+| `core/particle.cpp` | 3 | 0 | 6 | 0 |
+| `core/passngr.cpp` | 2 | 0 | 10 | 0 |
+| `core/path.cpp` | 1 | 0 | 278 | 0 |
+| `core/podmain.cpp` | 4 | 0 | 126 | 0 |
+| `core/prye.cpp` | 54 | 30 | 15425 | 0 |
 | `core/pryemorp.cpp` | 10 | 10 | 651 | 0 |
 | `core/rifle.cpp` | 11 | 11 | 765 | 0 |
 | `core/scat.cpp` | 7 | 0 | 1702 | 0 |
 | `core/schngeis.cpp` | 15 | 14 | 1032 | 0 |
-| `core/script.cpp` | 5 | 0 | 7789 | 0 |
-| `core/set.cpp` | 36 | 0 | 8933 | 0 |
-| `core/setcolid.cpp` | 14 | 0 | 4699 | 0 |
-| `core/setdir.cpp` | 16 | 0 | 3966 | 0 |
-| `core/setutil.cpp` | 1 | 0 | 35 | 0 |
-| `core/shadow.cpp` | 67 | 20 | 8523 | 0 |
+| `core/script.cpp` | 3 | 0 | 213 | 0 |
+| `core/set.cpp` | 21 | 0 | 3312 | 0 |
+| `core/setcolid.cpp` | 6 | 0 | 2240 | 0 |
+| `core/setdir.cpp` | 6 | 0 | 1017 | 0 |
+| `core/shadow.cpp` | 58 | 20 | 6192 | 0 |
 | `core/shadowsc.cpp` | 17 | 12 | 1269 | 0 |
-| `core/skeleton.cpp` | 67 | 0 | 7154 | 0 |
-| `core/slew.cpp` | 4 | 0 | 1040 | 0 |
+| `core/skeleton.cpp` | 4 | 3 | 96 | 0 |
 | `core/smiley.cpp` | 1 | 1 | 10 | 0 |
-| `core/sound.cpp` | 10 | 1 | 1288 | 0 |
-| `core/spawner.cpp` | 9 | 5 | 541 | 0 |
-| `core/spike.cpp` | 1 | 0 | 372 | 0 |
+| `core/sound.cpp` | 2 | 1 | 44 | 0 |
+| `core/spawner.cpp` | 9 | 7 | 541 | 0 |
 | `core/spirbear.cpp` | 14 | 14 | 861 | 0 |
 | `core/spireagl.cpp` | 15 | 14 | 1018 | 0 |
 | `core/spirindi.cpp` | 14 | 14 | 823 | 0 |
-| `core/spline.cpp` | 3 | 0 | 397 | 0 |
+| `core/spline.cpp` | 1 | 0 | 136 | 0 |
 | `core/sps.cpp` | 7 | 7 | 104 | 0 |
 | `core/storm.cpp` | 8 | 8 | 170 | 0 |
-| `core/stranger.cpp` | 19 | 0 | 6210 | 0 |
+| `core/stranger.cpp` | 10 | 0 | 3584 | 0 |
 | `core/styldemo.cpp` | 16 | 15 | 2911 | 0 |
 | `core/styler.cpp` | 11 | 11 | 690 | 0 |
-| `core/tawiscara.cpp` | 16 | 11 | 2886 | 0 |
-| `core/teleport.cpp` | 1 | 0 | 2 | 0 |
-| `core/tentacle.cpp` | 1 | 0 | 65 | 0 |
-| `core/terrain.cpp` | 6 | 0 | 34 | 0 |
-| `core/texlist.cpp` | 2 | 0 | 126 | 0 |
+| `core/tawiscara.cpp` | 16 | 13 | 2886 | 0 |
+| `core/terrain.cpp` | 1 | 0 | 3 | 0 |
+| `core/texlist.cpp` | 1 | 0 | 14 | 0 |
 | `core/thehand.cpp` | 12 | 10 | 919 | 0 |
-| `core/toxhand.cpp` | 2 | 1 | 99 | 0 |
-| `core/trigger.cpp` | 4 | 0 | 612 | 0 |
-| `core/turret.cpp` | 2 | 0 | 826 | 0 |
+| `core/toxhand.cpp` | 2 | 2 | 99 | 0 |
 | `core/tvbat.cpp` | 2 | 0 | 7 | 0 |
 | `core/union.cpp` | 18 | 13 | 1252 | 0 |
 | `core/unionzom.cpp` | 16 | 15 | 785 | 0 |
 | `core/villain.cpp` | 13 | 12 | 222 | 0 |
-| `core/wateract.cpp` | 10 | 3 | 527 | 0 |
+| `core/wateract.cpp` | 7 | 3 | 296 | 0 |
 | `core/waypoint.cpp` | 3 | 0 | 379 | 0 |
-| `core/weapon.cpp` | 5 | 1 | 292 | 0 |
-| `core/weather.cpp` | 9 | 0 | 1833 | 0 |
+| `core/weapon.cpp` | 3 | 1 | 86 | 0 |
+| `core/weather.cpp` | 2 | 0 | 46 | 0 |
 | `core/weaver.cpp` | 14 | 13 | 861 | 0 |
 | `core/werewolf.cpp` | 3 | 0 | 552 | 0 |
-| `core/xform.cpp` | 12 | 0 | 1172 | 0 |
-| `core/yow.cpp` | 16 | 5 | 2180 | 0 |
-| `core/zombie.cpp` | 35 | 16 | 1394 | 0 |
-| `core/zombiepriest.cpp` | 18 | 10 | 2980 | 0 |
-| `engine/2d.c` | 24 | 0 | 271 | 0 |
-| `engine/3d.c` | 13 | 0 | 116 | 0 |
-| `engine/alphabit.cpp` | 17 | 3 | 628 | 0 |
-| `engine/boss.c` | 4 | 0 | 29 | 0 |
-| `engine/clipper.c` | 5 | 0 | 259 | 0 |
-| `engine/console.cpp` | 1 | 0 | 74 | 0 |
-| `engine/dosio.cpp` | 10 | 0 | 385 | 0 |
-| `engine/drender.cpp` | 22 | 3 | 1086 | 0 |
-| `engine/font.cpp` | 25 | 0 | 6146 | 0 |
-| `engine/ini.cpp` | 9 | 1 | 367 | 0 |
+| `core/xform.cpp` | 5 | 0 | 733 | 0 |
+| `core/yow.cpp` | 11 | 10 | 1554 | 0 |
+| `core/zombie.cpp` | 30 | 16 | 1247 | 0 |
+| `core/zombiepriest.cpp` | 18 | 12 | 2980 | 0 |
+| `engine/2d.c` | 18 | 0 | 51 | 0 |
+| `engine/3d.c` | 9 | 0 | 33 | 0 |
+| `engine/alphabit.cpp` | 4 | 3 | 211 | 0 |
+| `engine/clipper.c` | 3 | 0 | 137 | 0 |
+| `engine/dosio.cpp` | 7 | 0 | 183 | 0 |
+| `engine/drender.cpp` | 6 | 3 | 254 | 0 |
+| `engine/font.cpp` | 19 | 0 | 5278 | 0 |
+| `engine/ini.cpp` | 7 | 1 | 316 | 0 |
 | `engine/light.cpp` | 1 | 0 | 3 | 0 |
-| `engine/matrix.c` | 10 | 0 | 154 | 0 |
-| `engine/mini3d.cpp` | 212 | 7 | 12647 | 0 |
-| `engine/model.c` | 4 | 0 | 538 | 0 |
+| `engine/matrix.c` | 6 | 0 | 108 | 0 |
+| `engine/mini3d.cpp` | 130 | 129 | 8000 | 0 |
 | `engine/palette.cpp` | 9 | 0 | 233 | 0 |
-| `engine/pod.cpp` | 19 | 0 | 2320 | 0 |
-| `engine/prim.c` | 6 | 0 | 769 | 0 |
-| `engine/special.cpp` | 44 | 1 | 2726 | 0 |
-| `engine/texture.cpp` | 27 | 0 | 1941 | 0 |
-| `engine/winfont.cpp` | 4 | 0 | 187 | 0 |
-| `shape/edittool.cpp` | 94 | 0 | 11740 | 0 |
-| `shape/spotview.cpp` | 4 | 0 | 864 | 0 |
-| `sound/mp3.cpp` | 2 | 0 | 173 | 0 |
-| `sound/snddx.cpp` | 32 | 0 | 4737 | 0 |
-| `sound/sndmain.cpp` | 107 | 0 | 9006 | 0 |
-| `sound/sndwav.cpp` | 50 | 0 | 71 | 0 |
-| `support/codec.cpp` | 52 | 27 | 2132 | 0 |
-| `support/trisock.cpp` | 45 | 2 | 2413 | 0 |
-| `support/trstream.cpp` | 98 | 66 | 3285 | 0 |
-| `wincore/wddvmem.cpp` | 10 | 0 | 1150 | 0 |
-| `wincore/winrun.cpp` | 27 | 0 | 2361 | 0 |
-| **All** | **3665** | **1185** | **424453** | **4** |
+| `engine/pod.cpp` | 14 | 0 | 2041 | 0 |
+| `engine/prim.c` | 4 | 0 | 67 | 0 |
+| `engine/special.cpp` | 40 | 0 | 1150 | 0 |
+| `engine/texture.cpp` | 20 | 1 | 1799 | 0 |
+| `engine/winfont.cpp` | 3 | 0 | 6 | 0 |
+| `shape/edittool.cpp` | 45 | 0 | 2959 | 0 |
+| `sound/snddx.cpp` | 3 | 1 | 106 | 0 |
+| `sound/sndmain.cpp` | 16 | 16 | 647 | 0 |
+| `sound/sndwav.cpp` | 1 | 1 | 1 | 0 |
+| `support/codec.cpp` | 45 | 27 | 1917 | 0 |
+| `support/trisock.cpp` | 37 | 2 | 3337 | 0 |
+| `support/trstream.cpp` | 81 | 79 | 3090 | 0 |
+| `wincore/wddvmem.cpp` | 3 | 0 | 146 | 0 |
+| `wincore/winrun.cpp` | 23 | 0 | 1225 | 0 |
+| **All** | **2518** | **1413** | **254813** | **0** |
 
 ### `cockpit/ckptutil.c`
-- [ ] unnamed bw1 0x00437270, bw2 0x0042c410, bw3 0x00434e80 (15)
-- [ ] unnamed bw1 0x0043827e, bw2 0x0042d56e, bw3 0x00435e8e (7)
+- [ ] unnamed bw1 0x00438280, bw2 0x0042d570, bw3 0x00435e90 (6)
 - [ ] unnamed bw1 0x00438310, bw2 0x0042d600, bw3 0x00435f20 (6)
-- [ ] unnamed bw1 0x0043843c, bw2 0x0042d72c, bw3 0x0043604c (7)
+- [ ] unnamed bw1 0x00438440, bw2 0x0042d730, bw3 0x00436050 (6)
 - [ ] unnamed bw1 0x004387f0, bw3 0x00436400 (168)
-- [ ] unnamed bw1 0x00438bd0, bw3 0x004367e0 (171)
-- [ ] unnamed bw1 0x00438e40, bw3 0x00436a50 (110)
-- [ ] unnamed bw1 0x0043908e, bw3 0x00436c9e (88)
-- [ ] unnamed bw1 0x004398fe (1)
-- [ ] unnamed bw1 0x0043a00c (1)
+- [ ] unnamed bw1 0x00439090, bw3 0x00436ca0 (87)
 - [ ] unnamed bw1 0x0043a030 (3)
 - [ ] unnamed bw1 0x0043a200, bw3 0x00437e10 (141)
 - [ ] unnamed bw1 0x0043b090, bw3 0x00438ca0 (139)
 - [ ] unnamed bw1 0x0043b2e0, bw3 0x00438ef0 (102)
-- [ ] unnamed bw2 0x0042c520 (101)
 - [ ] unnamed bw2 0x0042dae0 (168)
-- [ ] unnamed bw2 0x0042dec0 (171)
-- [ ] unnamed bw2 0x0042e130 (110)
-- [ ] unnamed bw2 0x0042e37e (88)
-- [ ] unnamed bw2 0x0042ebee (1)
-- [ ] unnamed bw2 0x0042f2ee (3)
-- [ ] unnamed bw2 0x0042f2fc (1)
-- [ ] unnamed bw2 0x0042f300 (2)
-- [ ] unnamed bw2 0x0042f30c (4)
-- [ ] unnamed bw2 0x0042f320 (3)
+- [ ] unnamed bw2 0x0042e380 (87)
+- [ ] unnamed bw2 0x0042f2f0 (2)
+- [ ] unnamed bw2 0x0042f310 (3)
 - [ ] unnamed bw2 0x0042f330 (140)
 - [ ] unnamed bw2 0x0042f4f0 (141)
-- [ ] unnamed bw2 0x0042f74e (617)
-- [ ] unnamed bw3 0x0043750e (1)
-- [ ] unnamed bw3 0x00437c1c (1)
+- [ ] unnamed bw2 0x0042f750 (616)
 - [ ] unnamed bw3 0x00437c40 (3)
 
 ### `cockpit/drawsurf.cpp`
-- [ ] unnamed bw1 0x0047e5c0, bw3 0x00467c80 (117)
 - [ ] unnamed bw1 0x0047ef60, bw2 0x00466a50, bw3 0x00468620 (165)
 - [ ] unnamed bw1 0x0047f9c0, bw2 0x004674b0, bw3 0x00469080 (33)
-- [ ] unnamed bw1 0x0047fb20, bw2 0x00467610, bw3 0x004691e0 (153)
 - [ ] unnamed bw1 0x0047fcf0, bw2 0x004677e0, bw3 0x004693b0 (13)
 - [ ] unnamed bw1 0x0047fdf0 (2)
-- [ ] unnamed bw1 0x0047fdfc (3)
-- [ ] unnamed bw1 0x0047fe0c, bw3 0x004694cc (4)
+- [ ] unnamed bw1 0x0047fe00 (2)
+- [ ] unnamed bw1 0x0047fe10 (3)
 - [ ] unnamed bw1 0x0047fe20 (3)
-- [ ] unnamed bw1 0x004807b0 (31)
-- [ ] unnamed bw1 0x00480880 (31)
-- [ ] unnamed bw1 0x00480950 (31)
-- [ ] unnamed bw1 0x00480a20 (31)
-- [ ] unnamed bw1 0x00480af0 (31)
-- [ ] unnamed bw1 0x00480bc0 (35)
-- [ ] unnamed bw1 0x00480ca0 (35)
-- [ ] unnamed bw1 0x00480e30, bw2 0x00468920, bw3 0x0046a4f0 (11)
-- [ ] unnamed bw1 0x00480e50, bw2 0x00468940, bw3 0x0046a510 (27)
-- [ ] unnamed bw1 0x00480ffc, bw2 0x00468aec, bw3 0x0046a6bc (22)
 - [ ] unnamed bw2 0x004678e0 (2)
-- [ ] unnamed bw2 0x004678ec (3)
-- [ ] unnamed bw2 0x004678fc (4)
+- [ ] unnamed bw2 0x004678f0 (2)
+- [ ] unnamed bw2 0x00467900 (3)
 - [ ] unnamed bw2 0x00467910 (3)
-- [ ] unnamed bw2 0x004682a0 (31)
-- [ ] unnamed bw2 0x00468370 (31)
-- [ ] unnamed bw2 0x00468440 (31)
-- [ ] unnamed bw2 0x00468510 (31)
-- [ ] unnamed bw2 0x004685e0 (31)
-- [ ] unnamed bw2 0x004686b0 (35)
-- [ ] unnamed bw2 0x00468790 (35)
 - [ ] unnamed bw3 0x004694b0 (2)
-- [ ] unnamed bw3 0x004694bc (3)
+- [ ] unnamed bw3 0x004694c0 (2)
+- [ ] unnamed bw3 0x004694d0 (3)
 - [ ] unnamed bw3 0x004694e0 (3)
-- [ ] unnamed bw3 0x00469e70 (31)
-- [ ] unnamed bw3 0x00469f40 (31)
-- [ ] unnamed bw3 0x0046a010 (31)
-- [ ] unnamed bw3 0x0046a0e0 (31)
-- [ ] unnamed bw3 0x0046a1b0 (31)
-- [ ] unnamed bw3 0x0046a280 (35)
-- [ ] unnamed bw3 0x0046a360 (35)
 
 ### `cockpit/pkbitmap.cpp`
-- [ ] unnamed bw1 0x00537550, bw2 0x00516200, bw3 0x0050f230 (20, in nocturne)
-- [ ] unnamed bw1 0x005379de, bw2 0x0051668e, bw3 0x0050f6be (77)
-- [ ] unnamed bw1 0x00537c30, bw2 0x005168e0, bw3 0x0050f910 (50, in nocturne)
-- [ ] unnamed bw1 0x00537cb0, bw2 0x00516960, bw3 0x0050f990 (33, in nocturne)
 - [ ] unnamed bw1 0x00537fd8, bw2 0x00516c88, bw3 0x0050fcb8 (12)
 - [ ] unnamed bw1 0x00538130, bw3 0x0050fe10 (43)
-- [ ] unnamed bw1 0x00538750, bw3 0x00510430 (102)
-- [ ] unnamed bw1 0x00538990, bw2 0x00517640, bw3 0x00510670 (14, in nocturne)
 - [ ] unnamed bw2 0x00516de0 (43)
-- [ ] unnamed bw2 0x00517400 (102)
 
 ### `cockpit/pkbmpset.cpp`
-- [ ] unnamed bw1 0x005389c0, bw3 0x005106a0 (51)
-- [ ] unnamed bw1 0x00538b2e, bw3 0x0051080e (180)
+- [ ] unnamed bw1 0x00538b30, bw3 0x00510810 (179)
 - [ ] unnamed bw1 0x00538db0, bw3 0x00510a90 (134)
 - [ ] unnamed bw1 0x00539100, bw2 0x00517db0, bw3 0x00510de0 (5)
-- [ ] unnamed bw2 0x00517670 (51)
-- [ ] unnamed bw2 0x005177de (180)
+- [ ] unnamed bw2 0x005177e0 (179)
 - [ ] unnamed bw2 0x00517a60 (134)
 
 ### `core/actor.cpp`
-- [ ] unnamed bw1 0x004080c0, bw2 0x00408290, bw3 0x00408100 (374)
 - [ ] unnamed bw1 0x00408560, bw3 0x004085a0 (11)
 - [ ] unnamed bw1 0x00408790 (4, in nocturne)
 - [ ] unnamed bw1 0x00408890 (1)
 - [ ] unnamed bw1 0x004089f0 (2)
-- [ ] unnamed bw1 0x00408ac0 (22)
-- [ ] unnamed bw1 0x00408b00 (22)
-- [ ] unnamed bw1 0x00408b40, bw2 0x00408d70, bw3 0x00408b80 (42)
-- [ ] unnamed bw1 0x00408bb0, bw2 0x00408de0, bw3 0x00408bf0 (41)
 - [ ] unnamed bw1 0x00408cc0 (1)
 - [ ] unnamed bw1 0x00408ec0, bw3 0x00408f00 (161)
-- [ ] unnamed bw1 0x00409170, bw3 0x004091b0 (349)
 - [ ] unnamed bw1 0x0040cfc0, bw2 0x0040d320, bw3 0x0040d200 (8)
 - [ ] unnamed bw1 0x0040cff0, bw2 0x0040d350, bw3 0x0040d230 (12)
 - [ ] unnamed bw1 0x0040d010, bw2 0x0040d370, bw3 0x0040d250 (19)
@@ -8919,11 +9173,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x00408a50 (14)
 - [ ] unnamed bw2 0x00408ac0 (1)
 - [ ] unnamed bw2 0x00408c20 (2)
-- [ ] unnamed bw2 0x00408cf0 (22)
-- [ ] unnamed bw2 0x00408d30 (22)
 - [ ] unnamed bw2 0x00408ef0 (1)
 - [ ] unnamed bw2 0x004090f0 (161)
-- [ ] unnamed bw2 0x004093a0 (325)
 - [ ] unnamed bw2 0x0040ce40 (14)
 - [ ] unnamed bw2 0x0040ce70 (14)
 - [ ] unnamed bw2 0x0040cea0 (15)
@@ -8931,8 +9182,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x004087d0 (4)
 - [ ] unnamed bw3 0x004088d0 (1)
 - [ ] unnamed bw3 0x00408a30 (2)
-- [ ] unnamed bw3 0x00408b00 (22)
-- [ ] unnamed bw3 0x00408b40 (22)
 - [ ] unnamed bw3 0x00408d00 (1)
 
 ### `core/ammo.cpp`
@@ -8954,9 +9203,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x0040e3a0 (10)
 
 ### `core/armour.cpp`
-- [ ] unnamed bw1 0x0040ee30 (7)
+- [ ] unnamed bw1 0x0040ee30, bw3 0x00410370 (7)
 - [ ] unnamed bw2 0x0040f2b0 (7)
-- [ ] unnamed bw3 0x00410370 (7)
 
 ### `core/asgaya.cpp`
 - [ ] `staticInit` bw3 0x005a09b0 (9)
@@ -9000,6 +9248,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBasicEnemy::ctor` bw2 0x0059e3b0 (149)
 - [ ] `CBasicEnemy::setup` bw2 0x0059e6a0 (69)
 - [ ] `CBasicEnemy::advanceMotion` bw2 0x0059e7d0 (60)
+- [ ] `CBasicEnemy::processMotionEvent` bw2 0x0059e880 (16)
+- [ ] `CBasicEnemy::processStates` bw2 0x0059e8c0 (219)
 - [ ] `CBasicEnemy::processAnimationState` bw2 0x0059ebe0 (12)
 - [ ] `CBasicEnemy::processChasingState` bw2 0x0059ef90 (109)
 - [ ] `CBasicEnemy::process` bw2 0x0059f420 (99)
@@ -9013,10 +9263,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBasicEnemy::archive` bw2 0x0059fc10 (385)
 - [ ] `CBasicEnemy::startBurn` bw2 0x005a0270 (98)
 - [ ] `CBasicEnemy::processBurnState` bw2 0x005a0380 (261)
+- [ ] `CBasicEnemy::dtor` bw2 0x005a0780 (27)
 - [ ] unnamed bw2 0x0059e7a0 (8)
 - [ ] unnamed bw2 0x0059e7c0 (4)
-- [ ] unnamed bw2 0x0059e880 (16)
-- [ ] unnamed bw2 0x0059e8c0 (219)
 - [ ] unnamed bw2 0x0059ebc0 (8)
 - [ ] unnamed bw2 0x0059ec10 (94)
 - [ ] unnamed bw2 0x0059ed50 (51)
@@ -9032,7 +9281,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x005a01a0 (8)
 - [ ] unnamed bw2 0x005a01d0 (36)
 - [ ] unnamed bw2 0x005a0240 (11)
-- [ ] unnamed bw2 0x005a0780 (27)
 
 ### `core/basicnpc.cpp`
 - [ ] `staticInit` bw2 0x005a4750 (9)
@@ -9104,9 +9352,19 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBlunderbus::dtor` bw3 0x00411890 (31)
 
 ### `core/bmppuzzl.cpp`
+- [ ] `staticInit` bw1 0x00415b20, bw2 0x0059aa80, bw3 0x004118e0 (29, differs)
+- [ ] `CPuzzle::ctor` bw1 0x00415ba0, bw2 0x0059ab30, bw3 0x00411960 (7)
+- [ ] `CPuzzle::dtor` bw1 0x00415bc0, bw2 0x0059ab50, bw3 0x00411980 (3)
+- [ ] `CPuzzle::reset` bw1 0x00415bd0, bw2 0x0059ab60, bw3 0x00411990 (1)
+- [ ] `activatePuzzle` bw1 0x00415be0, bw2 0x0059ab70, bw3 0x004119a0 (21)
+- [ ] `resetAllPuzzles` bw1 0x00415c20, bw2 0x0059abb0, bw3 0x004119e0 (20)
+- [ ] `restorePuzzleGraphics` bw1 0x00415c50, bw2 0x0059abe0, bw3 0x00411a10 (20)
+- [ ] `releasePuzzleGraphics` bw1 0x00415c80, bw2 0x0059ac10, bw3 0x00411a40 (30)
+- [ ] `processActivePuzzle` bw1 0x00415cd0, bw2 0x0059ac60, bw3 0x00411a90 (63)
 - [ ] `CAudioRecPuzzle::ctor` bw1 0x00415d90, bw2 0x0059be60, bw3 0x00411b50 (25, differs)
 - [ ] `CAudioRecPuzzle::dtor` bw1 0x00415df0, bw2 0x0059bec0, bw3 0x00411bb0 (43, differs)
 - [ ] `CAudioRecPuzzle::reset` bw1 0x00415e70, bw2 0x0059ae40, bw3 0x00411c30 (47, differs)
+- [ ] `CAudioRecPuzzle::restoreGraphics` bw1 0x00415fb0, bw2 0x0059af20, bw3 0x00411d60 (1)
 - [ ] `CAudioRecPuzzle::load` bw1 0x00415fc0, bw2 0x0059af30, bw3 0x00411d70 (457, differs)
 - [ ] `CAudioRecPuzzle::addButton` bw1 0x00416570, bw2 0x0059b3c0, bw3 0x00412320 (54, differs)
 - [ ] `CAudioRecPuzzle::render` bw1 0x00416620, bw2 0x0059b430, bw3 0x004123c0 (124, differs)
@@ -9126,6 +9384,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CChemPuzzle::ctor` bw1 0x004175f0, bw3 0x00413200 (17)
 - [ ] `CChemPuzzle::dtor` bw1 0x00417630, bw3 0x00413240 (43)
 - [ ] `CChemPuzzle::reset` bw1 0x004176b0, bw3 0x004132c0 (64)
+- [ ] `CChemPuzzle::restoreGraphics` bw1 0x004177a0, bw3 0x004133b0 (1)
 - [ ] `CChemPuzzle::load` bw1 0x004177b0, bw3 0x004133c0 (737)
 - [ ] `CChemPuzzle::addButton` bw1 0x004180c0, bw3 0x00413cd0 (37)
 - [ ] `CChemPuzzle::render` bw1 0x00418140, bw3 0x00413d50 (73)
@@ -9135,44 +9394,29 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CChemPuzzle::onMouse` bw1 0x00418810, bw3 0x00414420 (7)
 - [ ] `CAudioRecPuzzle::getName` bw1 0x00418830, bw2 0x0059be50, bw3 0x00414440 (2)
 - [ ] `CChemPuzzle::getName` bw1 0x00418840, bw3 0x00414450 (2)
+- [ ] `SButtonStruct::ctorChem` bw1 0x00418850, bw3 0x00414460 (5)
 - [ ] `SButtonStruct::ctor` bw1 0x00418870, bw2 0x0059bf30, bw3 0x00414480 (5)
 - [ ] `SButtonStruct::dtor` bw1 0x00418880, bw2 0x0059bf40, bw3 0x00414490 (6)
+- [ ] `SButtonStruct::arrdtor50Chem` bw1 0x00418890, bw3 0x004144a0 (7)
+- [ ] `SButtonStruct::arrdtor50` bw1 0x004188b0, bw3 0x004144c0 (7)
 - [ ] `CExamplePuzzle::load` bw2 0x0059ad20 (40)
 - [ ] `CExamplePuzzle::render` bw2 0x0059ada0 (28)
 - [ ] `CExamplePuzzle::onMouse` bw2 0x0059adf0 (25)
 - [ ] `CExamplePuzzle::getName` bw2 0x0059be40 (2)
 - [ ] `CExamplePuzzle::ctor` bw2 0x0059bf50 (6)
 - [ ] `CExamplePuzzle::dtor` bw2 0x0059bf70 (31)
-- [ ] unnamed bw1 0x00415fb0 (1)
 - [ ] unnamed bw1 0x00416d50 (1)
-- [ ] unnamed bw1 0x004177a0 (1)
-- [ ] unnamed bw1 0x00418850 (5)
-- [ ] unnamed bw1 0x00418890 (7)
-- [ ] unnamed bw1 0x004188b0 (7)
-- [ ] unnamed bw2 0x0059af20 (1)
 - [ ] unnamed bw2 0x0059b960 (1)
-- [ ] unnamed bw3 0x00411980 (3)
-- [ ] unnamed bw3 0x00411990 (1)
-- [ ] unnamed bw3 0x00411a90 (63)
-- [ ] unnamed bw3 0x00411d60 (1)
 - [ ] unnamed bw3 0x00412a50 (1)
-- [ ] unnamed bw3 0x004133b0 (1)
-- [ ] unnamed bw3 0x00414460 (5)
-- [ ] unnamed bw3 0x004144a0 (7)
-- [ ] unnamed bw3 0x004144c0 (7)
 
 ### `core/bodypart.cpp`
-- [ ] unnamed bw1 0x00418d00, bw3 0x00414910 (89)
 - [ ] unnamed bw1 0x0041ad40, bw3 0x00416970 (128)
 - [ ] unnamed bw1 0x0041afa0, bw2 0x00417b20, bw3 0x00416bd0 (23)
 - [ ] unnamed bw1 0x0041afe0, bw2 0x00417b60, bw3 0x00416c10 (27)
 - [ ] unnamed bw1 0x0041b020, bw2 0x00417ba0, bw3 0x00416c50 (27)
 - [ ] unnamed bw1 0x0041b080, bw2 0x00417c00, bw3 0x00416cb0 (27)
-- [ ] unnamed bw1 0x0041b190 (7)
-- [ ] unnamed bw2 0x00415890 (89)
+- [ ] unnamed bw1 0x0041b190, bw2 0x00417d10, bw3 0x00416dc0 (7)
 - [ ] unnamed bw2 0x004178c0 (128)
-- [ ] unnamed bw2 0x00417d10 (7)
-- [ ] unnamed bw3 0x00416dc0 (7)
 
 ### `core/boneguy.cpp`
 - [ ] `CBoneGuy::getDeathState` bw3 0x00419880 (14)
@@ -9200,35 +9444,12 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/box.cpp`
 - [ ] unnamed bw1 0x0041dcf0, bw2 0x005b1eb0, bw3 0x0041b030 (137)
-- [ ] unnamed bw1 0x0041de90, bw2 0x005b2050, bw3 0x0041b1d0 (177)
-- [ ] unnamed bw1 0x00420570, bw2 0x0041a600, bw3 0x0041d8b0 (39)
 - [ ] unnamed bw1 0x004207b0, bw2 0x0041a840, bw3 0x0041daf0 (151)
-- [ ] unnamed bw1 0x00420990, bw2 0x0041aa20, bw3 0x0041dcd0 (314)
-- [ ] unnamed bw1 0x00420dc0, bw2 0x0041ae50 (98)
 - [ ] unnamed bw1 0x00420ee0, bw2 0x0041af70, bw3 0x0041e220 (377)
-- [ ] unnamed bw1 0x004215d0, bw2 0x0041b660, bw3 0x0041e910 (36)
-- [ ] unnamed bw1 0x00421af0, bw2 0x0041bb80, bw3 0x0041ee30 (70)
-- [ ] unnamed bw1 0x00421b90, bw2 0x0041bc20, bw3 0x0041eed0 (44)
-- [ ] unnamed bw3 0x0041e100 (98)
-
-### `core/boxactor.cpp`
-- [ ] unnamed bw1 0x00421e80, bw3 0x0041f1e0 (111)
-- [ ] unnamed bw1 0x00422d10, bw3 0x004201a0 (77)
-- [ ] unnamed bw1 0x004232c0 (256)
-- [ ] unnamed bw2 0x0041bf10 (111)
-- [ ] unnamed bw2 0x0041cda0 (77)
-- [ ] unnamed bw3 0x004208d0 (257)
 
 ### `core/bugs.cpp`
 - [ ] unnamed bw1 0x00426870, bw2 0x00420840, bw3 0x00422a00 (428)
-- [ ] unnamed bw1 0x00426ec0 (625)
-- [ ] unnamed bw1 0x00427e00 (124)
-- [ ] unnamed bw1 0x00428010, bw2 0x00421fe0, bw3 0x004241c0 (46)
 - [ ] unnamed bw1 0x00428120 (3)
-- [ ] unnamed bw2 0x00420e90 (625)
-- [ ] unnamed bw2 0x00421dd0 (124)
-- [ ] unnamed bw3 0x00423050 (625)
-- [ ] unnamed bw3 0x00423fb0 (124)
 - [ ] unnamed bw3 0x004242d0 (3)
 
 ### `core/burncrss.cpp`
@@ -9344,62 +9565,38 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00429090 (123)
 
 ### `core/chain.cpp`
-- [ ] unnamed bw1 0x004357a0, bw2 0x005b4860, bw3 0x00429420 (41)
-- [ ] unnamed bw1 0x00436eae (6)
 - [ ] unnamed bw2 0x005b5f40 (2)
 
 ### `core/charactr.cpp`
-- [ ] `CCharacter::markResourcesInUse` bw1 0x0042c7a0, bw3 0x0042b400 (14)
+- [ ] `CCharacter::markResourcesInUse` bw1 0x0042c7a0, bw2 0x00422be0, bw3 0x0042b400 (14, differs)
 - [ ] `CCharacter::onLaserHit` bw1 0x00431160, bw2 0x00427730, bw3 0x004304e0 (19)
 - [ ] `CCharacter::isGrabbable` bw1 0x00431430, bw2 0x00427a00 (2)
 - [ ] `CCharacter::setCharacterModel` bw2 0x0042b440 (78)
 - [ ] unnamed bw1 0x0042c7d0 (10)
 - [ ] unnamed bw1 0x0042cc80, bw3 0x0042b970 (33)
 - [ ] unnamed bw1 0x0042d700, bw3 0x0042c1e0 (14)
-- [ ] unnamed bw1 0x0042d750 (640)
 - [ ] unnamed bw1 0x0042e410, bw3 0x0042d390 (124)
 - [ ] unnamed bw1 0x0042e580 (229)
 - [ ] unnamed bw1 0x0042e8e0 (12)
 - [ ] unnamed bw1 0x0042e920 (6)
-- [ ] unnamed bw1 0x00430960 (111)
 - [ ] unnamed bw1 0x00430a90, bw3 0x0042fdc0 (70)
-- [ ] unnamed bw1 0x00430c90 (82)
 - [ ] unnamed bw1 0x00431470 (1)
 - [ ] unnamed bw1 0x00431cc0, bw3 0x004310e0 (300)
-- [ ] unnamed bw1 0x004325b0 (69)
-- [ ] unnamed bw1 0x00432690 (119)
-- [ ] unnamed bw1 0x00432cb0 (89)
-- [ ] unnamed bw1 0x00432e00, bw3 0x00432220 (35)
 - [ ] unnamed bw1 0x00432f10 (758)
-- [ ] unnamed bw1 0x00433d50, bw3 0x00433220 (95)
-- [ ] unnamed bw1 0x00433f10, bw3 0x004333e0 (114)
-- [ ] unnamed bw1 0x004342c0 (27)
-- [ ] unnamed bw1 0x00434790 (228)
-- [ ] unnamed bw1 0x00434c60 (437)
 - [ ] unnamed bw1 0x00435320 (29)
 - [ ] unnamed bw1 0x00435380, bw3 0x004348b0 (86)
 - [ ] unnamed bw1 0x004354a0, bw3 0x004349d0 (10)
 - [ ] unnamed bw1 0x004355d0 (3)
-- [ ] unnamed bw2 0x00422be0 (14)
 - [ ] unnamed bw2 0x00422c10 (10)
 - [ ] unnamed bw2 0x00423a10 (16)
-- [ ] unnamed bw2 0x00423a60 (640)
 - [ ] unnamed bw2 0x004246e0 (95)
 - [ ] unnamed bw2 0x004247f0 (229)
 - [ ] unnamed bw2 0x00424b50 (12)
 - [ ] unnamed bw2 0x00424b90 (6)
-- [ ] unnamed bw2 0x00424c80 (523)
-- [ ] unnamed bw2 0x00426f30 (111)
 - [ ] unnamed bw2 0x00427060 (70)
-- [ ] unnamed bw2 0x00427260 (82)
 - [ ] unnamed bw2 0x00427a40 (1)
 - [ ] unnamed bw2 0x00428260 (300)
-- [ ] unnamed bw2 0x00428b10 (58)
-- [ ] unnamed bw2 0x00428bd0 (119)
-- [ ] unnamed bw2 0x00429d60 (95)
-- [ ] unnamed bw2 0x00429f20 (114)
 - [ ] unnamed bw2 0x0042a2d0 (27)
-- [ ] unnamed bw2 0x0042abe0 (437)
 - [ ] unnamed bw2 0x0042b2a0 (29)
 - [ ] unnamed bw2 0x0042b300 (86)
 - [ ] unnamed bw2 0x0042b420 (10)
@@ -9408,28 +9605,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x0042b620 (99)
 - [ ] unnamed bw2 0x0042b760 (439)
 - [ ] unnamed bw2 0x0042bff0 (3)
-- [ ] unnamed bw2 0x0042c0be, bw3 0x00434b2e (84)
-- [ ] unnamed bw3 0x0042c230 (720)
 - [ ] unnamed bw3 0x0042cd70 (392)
 - [ ] unnamed bw3 0x0042d500 (229)
 - [ ] unnamed bw3 0x0042d860 (12)
 - [ ] unnamed bw3 0x0042d8a0 (6)
-- [ ] unnamed bw3 0x0042d8e0 (90)
-- [ ] unnamed bw3 0x0042d9f0 (523)
-- [ ] unnamed bw3 0x0042e8c0 (451)
-- [ ] unnamed bw3 0x0042f010 (192)
 - [ ] unnamed bw3 0x0042f280 (55)
-- [ ] unnamed bw3 0x0042f310 (137)
 - [ ] unnamed bw3 0x0042fbd0 (64)
-- [ ] unnamed bw3 0x0042fc90 (111)
-- [ ] unnamed bw3 0x0042ff70 (36)
-- [ ] unnamed bw3 0x0042ffe0 (83)
-- [ ] unnamed bw3 0x004300e0 (236)
 - [ ] unnamed bw3 0x004307b0 (2)
 - [ ] unnamed bw3 0x004307f0 (1)
-- [ ] unnamed bw3 0x004319d0 (69)
-- [ ] unnamed bw3 0x00431ab0 (119)
-- [ ] unnamed bw3 0x004320d0 (89)
 - [ ] unnamed bw3 0x00432330 (814)
 - [ ] unnamed bw3 0x00433c60 (254)
 - [ ] unnamed bw3 0x00434190 (437)
@@ -9437,20 +9620,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00434b00 (3)
 
 ### `core/cloth.cpp`
-- [ ] unnamed bw1 0x0043e620, bw2 0x005ade00, bw3 0x0043c280 (10)
-- [ ] unnamed bw1 0x0043e6a0, bw2 0x005ade80, bw3 0x0043c300 (13, in nocturne)
-- [ ] unnamed bw1 0x0043ec40, bw2 0x005ae420, bw3 0x0043c8a0 (192)
-- [ ] unnamed bw1 0x0043eea0, bw3 0x0043cb00 (687)
-- [ ] unnamed bw1 0x004414ac, bw2 0x005b0c8c, bw3 0x0043f10c (27)
-- [ ] unnamed bw1 0x004414fe (1)
+- [ ] unnamed bw1 0x004414b0, bw2 0x005b0c90, bw3 0x0043f110 (26, in nocturne)
 - [ ] unnamed bw1 0x00441500, bw2 0x005b0ce0, bw3 0x0043f160 (162)
-- [ ] unnamed bw1 0x00441e5e, bw3 0x0043fabe (87)
-- [ ] unnamed bw1 0x004421d0, bw2 0x005b19b0 (109)
-- [ ] unnamed bw2 0x005ae680 (687)
-- [ ] unnamed bw2 0x005b0cde (1)
-- [ ] unnamed bw3 0x0043c330 (334)
-- [ ] unnamed bw3 0x0043f15e (1)
-- [ ] unnamed bw3 0x0043fd0e (39)
 
 ### `core/colonel.cpp`
 - [ ] unnamed bw1 0x00444b50 (386)
@@ -9506,49 +9677,27 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConstruct::archive` bw1 0x00446e30, bw2 0x00437b80, bw3 0x00443ca0 (171, differs)
 - [ ] `CConstruct::processDamage` bw1 0x00447090, bw2 0x00437de0, bw3 0x00443f00 (86, differs)
 - [ ] `CConstruct::getTargetPoints` bw1 0x004471a0, bw2 0x00437ee0, bw3 0x00444010 (86, differs)
+- [ ] `CConstruct::explode` bw1 0x004472a0, bw2 0x00438060, bw3 0x00444110 (153, differs)
+- [ ] `CConstruct::getCollisionType` bw1 0x00447630, bw2 0x00438370, bw3 0x004444c0 (15, differs)
 - [ ] `CConstruct::dtor` bw1 0x00447660, bw2 0x00438390, bw3 0x00444780 (47, differs)
+- [ ] `CConstruct::getDeathState` bw3 0x004444f0 (14)
 - [ ] `CConstructBone::ctor` bw3 0x00444550 (23)
 - [ ] `CConstructRed::ctor` bw3 0x00444600 (14)
 - [ ] `CConstructRed::dtor` bw3 0x00444660 (47)
 - [ ] `CConstructBone::dtor` bw3 0x004446f0 (47)
-- [ ] unnamed bw1 0x004472a0 (153)
 - [ ] unnamed bw1 0x004474d0 (56)
 - [ ] unnamed bw1 0x00447560 (62)
-- [ ] unnamed bw1 0x00447630 (15)
-- [ ] unnamed bw2 0x00438060 (159)
 - [ ] unnamed bw2 0x004382a0 (62)
-- [ ] unnamed bw2 0x00438370 (11)
-- [ ] unnamed bw3 0x00444110 (155)
 - [ ] unnamed bw3 0x00444340 (56)
 - [ ] unnamed bw3 0x004443d0 (64)
-- [ ] unnamed bw3 0x004444c0 (15)
-- [ ] unnamed bw3 0x004444f0 (14)
 - [ ] unnamed bw3 0x00444520 (10)
 - [ ] unnamed bw3 0x00444540 (2)
 - [ ] unnamed bw3 0x004445d0 (10)
 - [ ] unnamed bw3 0x004445f0 (2)
 
-### `core/conveyor.cpp`
-- [ ] unnamed bw2 0x00438770 (1)
-- [ ] unnamed bw2 0x00438820 (2)
-- [ ] unnamed bw2 0x00438830 (34)
-
-### `core/course.cpp`
-- [ ] unnamed bw1 0x00447d50, bw2 0x00438a90, bw3 0x00444910 (28)
-- [ ] unnamed bw1 0x00447ee0, bw2 0x00438c20, bw3 0x00444aa0 (10)
-- [ ] unnamed bw1 0x00447fb0, bw2 0x00438cf0, bw3 0x00444b70 (266)
-
-### `core/cow.cpp`
-- [ ] unnamed bw2 0x00439bf0 (39)
-
 ### `core/crate.cpp`
 - [ ] unnamed bw1 0x00449600 (60)
-- [ ] unnamed bw2 0x00439dc0 (56)
-- [ ] unnamed bw2 0x00439f00 (170)
-- [ ] unnamed bw2 0x0043a130 (52)
 - [ ] unnamed bw2 0x0043a1b0 (1)
-- [ ] unnamed bw2 0x0043a240 (22)
-- [ ] unnamed bw2 0x0043a280 (72)
 - [ ] unnamed bw2 0x0043a350 (60)
 - [ ] unnamed bw3 0x004461c0 (61)
 
@@ -9568,13 +9717,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x005a6cf0 (140)
 - [ ] unnamed bw2 0x005a7950 (10)
 
-### `core/crossbow.cpp`
-- [ ] unnamed bw2 0x0043a740 (29)
-
-### `core/curtain.cpp`
-- [ ] unnamed bw1 0x0044aa10, bw3 0x00446b50 (89)
-- [ ] unnamed bw1 0x0044ab20, bw3 0x00446c60 (81)
-
 ### `core/darkwolf.cpp`
 - [ ] `staticInit` bw3 0x00598700 (17)
 - [ ] `factoryFuncDarkwolf` bw3 0x00598750 (10)
@@ -9593,40 +9735,22 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00598fb0 (10)
 
 ### `core/dcamera.cpp`
-- [ ] unnamed bw1 0x0044dd70, bw2 0x0043c6b0, bw3 0x00449eb0 (44)
-- [ ] unnamed bw1 0x0044df50, bw2 0x0043c890, bw3 0x0044a090 (130)
-- [ ] unnamed bw1 0x0044e0d0, bw2 0x0043ca10, bw3 0x0044a210 (145, in nocturne)
-- [ ] unnamed bw1 0x0044e2a0, bw2 0x0043cbe0, bw3 0x0044a3e0 (215, in nocturne)
-- [ ] unnamed bw1 0x0044e560, bw2 0x0043cea0, bw3 0x0044a6a0 (99, in nocturne)
-- [ ] unnamed bw1 0x0044e69e, bw2 0x0043cfde, bw3 0x0044a7de (184)
 - [ ] unnamed bw1 0x0044ee30, bw2 0x0043d770, bw3 0x0044af70 (81)
 - [ ] unnamed bw1 0x0044f9c0, bw2 0x0043e300, bw3 0x0044bb00 (116)
-- [ ] unnamed bw1 0x0044fe9e, bw2 0x0043e7de, bw3 0x0044bfde (40)
 - [ ] unnamed bw1 0x00451bc0, bw2 0x00440500, bw3 0x0044dd00 (36)
-- [ ] unnamed bw1 0x00451cf0, bw2 0x00440630, bw3 0x0044de30 (52, in nocturne)
-- [ ] unnamed bw1 0x0045210e, bw2 0x00440a4e, bw3 0x0044e24e (258)
-- [ ] unnamed bw1 0x00453560, bw2 0x00441ea0, bw3 0x0044f6a0 (58)
-- [ ] unnamed bw1 0x00454360, bw2 0x00442cb0, bw3 0x004504b0 (71)
-- [ ] unnamed bw1 0x00454cbe (1)
 - [ ] unnamed bw1 0x00454cc0, bw2 0x00443610, bw3 0x00450e10 (256)
-- [ ] unnamed bw2 0x0044360e (1)
-- [ ] unnamed bw3 0x00450e0e (1)
 
 ### `core/dcube.cpp`
-- [ ] unnamed bw1 0x004560f0, bw2 0x00444a40, bw3 0x00452240 (208)
-- [ ] unnamed bw1 0x004570de, bw2 0x00445a2e, bw3 0x0045322e (787)
-- [ ] unnamed bw1 0x00457d70, bw2 0x004466c0, bw3 0x00453ec0 (48)
-- [ ] unnamed bw1 0x00458210, bw2 0x00446b60, bw3 0x00454360 (147)
-- [ ] unnamed bw1 0x004584a0, bw2 0x00446df0, bw3 0x004545f0 (118)
-- [ ] unnamed bw2 0x00446f4e (61)
+- [ ] unnamed bw1 0x004570e0, bw2 0x00445a30, bw3 0x00453230 (786, in nocturne)
+- [ ] unnamed bw2 0x00446f50 (60, in nocturne)
 
 ### `core/demnfolk.cpp`
 - [ ] `factoryFuncDemnfolk` bw1 0x004589e0 (10)
 - [ ] `CDemnfolk::getActorType` bw1 0x00458a00, bw3 0x00454b50 (2)
 - [ ] `CDemnfolk::ctor` bw1 0x00458a10, bw3 0x00454b60 (77, differs)
-- [ ] `CDemnfolk::setup` bw1 0x00458bc0 (294)
-- [ ] `CDemnfolk::process` bw1 0x00459100 (2216)
-- [ ] `CDemnfolk::getCarryObjToBodyXForm` bw1 0x0045b120 (327)
+- [ ] `CDemnfolk::setup` bw1 0x00458bc0, bw3 0x00454d20 (294, differs)
+- [ ] `CDemnfolk::process` bw1 0x00459100, bw3 0x00455080 (2216, differs)
+- [ ] `CDemnfolk::getCarryObjToBodyXForm` bw1 0x0045b120, bw3 0x00457300 (327)
 - [ ] `CDemnfolk::renderOpaque` bw1 0x0045bfe0, bw3 0x004581c0 (18, differs)
 - [ ] `CDemnfolk::renderTransparent` bw1 0x0045c020, bw3 0x00458200 (162)
 - [ ] `CDemnfolk::archive` bw1 0x0045c1e0, bw3 0x004583c0 (97, differs)
@@ -9657,9 +9781,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x004548e0 (88)
 - [ ] unnamed bw3 0x004549e0 (117)
 - [ ] unnamed bw3 0x00454b30 (10)
-- [ ] unnamed bw3 0x00454d20 (175)
-- [ ] unnamed bw3 0x00455080 (2366)
-- [ ] unnamed bw3 0x00457300 (327)
 - [ ] unnamed bw3 0x00457740 (619)
 - [ ] unnamed bw3 0x004580a0 (67)
 - [ ] unnamed bw3 0x00458140 (22)
@@ -9672,36 +9793,10 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x00447350 (2)
 - [ ] unnamed bw3 0x00459400 (2)
 
-### `core/dfilter.cpp`
-- [ ] unnamed bw1 0x0045d7c0, bw2 0x00447660, bw3 0x00459710 (101, in nocturne)
-
-### `core/dfont.cpp`
-- [ ] unnamed bw1 0x0045e000, bw2 0x00447ea0 (478)
-- [ ] unnamed bw1 0x0045e7a0, bw2 0x00448640 (139)
-- [ ] unnamed bw3 0x00459f50 (598)
-- [ ] unnamed bw3 0x0045a8d0 (164)
-
-### `core/dglobe.cpp`
-- [ ] unnamed bw1 0x0045ef00, bw2 0x00448da0, bw3 0x0045b070 (131)
-- [ ] unnamed bw1 0x0045f080 (8)
-- [ ] unnamed bw1 0x0045f09e (1)
-- [ ] unnamed bw2 0x00448f20 (8)
-- [ ] unnamed bw2 0x00448f3e (1)
-- [ ] unnamed bw3 0x0045b1f0 (8)
-- [ ] unnamed bw3 0x0045b20e (1)
-
 ### `core/dimage.cpp`
-- [ ] unnamed bw1 0x0045f0a0, bw2 0x00448f40, bw3 0x0045b210 (26, in nocturne)
-- [ ] unnamed bw1 0x0045f100, bw2 0x00448fa0, bw3 0x0045b270 (13, in nocturne)
-- [ ] unnamed bw1 0x0045f12c (1)
-- [ ] unnamed bw1 0x0045f18e, bw2 0x0044902e, bw3 0x0045b2fe (166)
-- [ ] unnamed bw2 0x00448fcc (1)
-- [ ] unnamed bw3 0x0045b29c (1)
+- [ ] unnamed bw1 0x0045f190, bw2 0x00449030, bw3 0x0045b300 (165, in nocturne)
 
 ### `core/dirmat.cpp`
-- [ ] unnamed bw1 0x0045f690, bw2 0x00449530, bw3 0x0045b800 (46)
-- [ ] unnamed bw1 0x0045f700, bw2 0x004495a0, bw3 0x0045b870 (46)
-- [ ] unnamed bw1 0x0045f840, bw2 0x004496e0, bw3 0x0045b9b0 (308)
 - [ ] unnamed bw1 0x0045fd80, bw2 0x00449c20, bw3 0x0045bef0 (18)
 
 ### `core/disease.cpp`
@@ -9737,20 +9832,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x00462450 (5)
 
 ### `core/dlight.cpp`
-- [ ] unnamed bw1 0x00462670, bw2 0x00449e70, bw3 0x0045c380 (38, in nocturne)
 - [ ] unnamed bw1 0x00463820, bw3 0x0045d530 (369)
 - [ ] unnamed bw1 0x00463850 (1)
-- [ ] unnamed bw1 0x0046498e, bw2 0x0044c15e, bw3 0x0045e69e (435)
+- [ ] unnamed bw1 0x00464990, bw2 0x0044c160, bw3 0x0045e6a0 (434)
 - [ ] unnamed bw1 0x00466220 (268)
 - [ ] unnamed bw2 0x0044b020 (370)
 - [ ] unnamed bw2 0x0044b050 (1)
 - [ ] unnamed bw3 0x0045d560 (1)
 - [ ] unnamed bw3 0x0045ff30 (243)
-
-### `core/dmodel.cpp`
-- [ ] unnamed bw1 0x00467160, bw2 0x0044e590, bw3 0x00460e10 (53)
-- [ ] unnamed bw1 0x00467650, bw2 0x0044ea80, bw3 0x00461300 (137)
-- [ ] unnamed bw1 0x00467c00, bw2 0x0044f020, bw3 0x004618a0 (366)
 
 ### `core/doc.cpp`
 - [ ] `staticInit` bw1 0x004689b0, bw2 0x0044fdd0 (29, differs)
@@ -9759,11 +9848,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::ctor` bw1 0x00468c80, bw2 0x004500d0 (236, differs)
 - [ ] `CDoc::setup` bw1 0x00469060, bw2 0x00450620 (236, differs)
 - [ ] `CDoc::process` bw1 0x004693e0, bw2 0x00450b20 (99, differs)
+- [ ] `CDoc::getCarryLightIntensity` bw1 0x0046c980 (26)
 - [ ] `CDoc::setPositionAndOrientation` bw1 0x0046ea40, bw2 0x00455580 (25)
+- [ ] `CDoc::makeDrawDecision` bw1 0x0046ea80, bw2 0x004555c0 (501, differs)
 - [ ] `CDoc::archive` bw1 0x00471970, bw2 0x004597a0 (86, differs)
 - [ ] `CDoc::renderOpaque` bw1 0x00471af0, bw2 0x004599a0 (516, differs)
 - [ ] `CDoc::renderTransparent` bw1 0x00472220, bw2 0x00459d40 (19, differs)
+- [ ] `CDoc::aimLeftPistol` bw1 0x00473160 (395)
 - [ ] `CDoc::processDamage` bw1 0x004737b0, bw2 0x0045b190 (326, differs)
+- [ ] `CDoc::updateArmRecoilBlend` bw1 0x00473c10 (424)
 - [ ] `CDoc::getCarryObjToBodyXForm` bw1 0x00474250, bw2 0x0045bb50 (26)
 - [ ] `CDoc::doHeroAction` bw1 0x00474fc0, bw2 0x0045ca30 (483, differs)
 - [ ] `CDoc::canDoHeroAction` bw1 0x00475650, bw2 0x0045d0c0 (191, differs)
@@ -9775,31 +9868,30 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::toggleGoggles` bw1 0x00476510 (45)
 - [ ] `CDoc::dtor` bw1 0x00476700, bw2 0x00450580 (31, differs)
 - [ ] `CDoc::setCharacterModel` bw2 0x00450a60 (44)
+- [ ] `CDoc::isWeaponDrawn` bw2 0x0045dc20 (3)
+- [ ] `CDoc::drawWeapon` bw2 0x0045dc30 (4)
+- [ ] `CDoc::reset` bw2 0x0045dd30 (23)
 - [ ] `CDoc::getTargetPoints` bw2 0x0045de80 (39)
 - [ ] `CDoc::setInventoryIndex` bw2 0x0045def0 (12)
 - [ ] unnamed bw1 0x00468a20 (20)
-- [ ] unnamed bw1 0x00468a90 (11)
+- [ ] unnamed bw1 0x00468a90 (22)
 - [ ] unnamed bw1 0x00468b80 (78)
 - [ ] unnamed bw1 0x00469550 (2519)
 - [ ] unnamed bw1 0x0046bde0 (742)
-- [ ] unnamed bw1 0x0046c980 (26)
 - [ ] unnamed bw1 0x0046c9e0 (70)
 - [ ] unnamed bw1 0x0046caa0 (1717)
 - [ ] unnamed bw1 0x0046e630 (70)
 - [ ] unnamed bw1 0x0046e730 (211)
-- [ ] unnamed bw1 0x0046ea80 (501)
 - [ ] unnamed bw1 0x0046f200 (295)
 - [ ] unnamed bw1 0x0046f610 (83)
 - [ ] unnamed bw1 0x0046f740 (1011)
 - [ ] unnamed bw1 0x00470750 (36)
 - [ ] unnamed bw1 0x004707d0 (20)
-- [ ] unnamed bw1 0x0047081c (346)
+- [ ] unnamed bw1 0x00470820 (345)
 - [ ] unnamed bw1 0x004712b0 (494)
-- [ ] unnamed bw1 0x0047225e, bw2 0x0056bcbe, bw3 0x005228be (57, differs)
-- [ ] unnamed bw1 0x004722ee (142)
+- [ ] unnamed bw1 0x00472260, bw2 0x0056bcc0 (56)
+- [ ] unnamed bw1 0x004722f0 (141)
 - [ ] unnamed bw1 0x004724a0 (763)
-- [ ] unnamed bw1 0x00473160 (395)
-- [ ] unnamed bw1 0x00473c10 (424)
 - [ ] unnamed bw1 0x004742a0 (38)
 - [ ] unnamed bw1 0x00474400 (711)
 - [ ] unnamed bw1 0x00474ef0 (44)
@@ -9814,23 +9906,22 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x00476620, bw2 0x0042bef0, bw3 0x00527200 (17)
 - [ ] unnamed bw1 0x004766f0 (3)
 - [ ] unnamed bw2 0x0044fe40 (20)
-- [ ] unnamed bw2 0x0044febe (12)
+- [ ] unnamed bw2 0x0044fec0 (24)
 - [ ] unnamed bw2 0x0044ffd0 (78)
 - [ ] unnamed bw2 0x00450c60 (2609)
 - [ ] unnamed bw2 0x00453250 (634)
-- [ ] unnamed bw2 0x00453c5e (27)
+- [ ] unnamed bw2 0x00453c60 (26)
 - [ ] unnamed bw2 0x00453cc0 (70)
 - [ ] unnamed bw2 0x00453d80 (1257)
 - [ ] unnamed bw2 0x00455170 (70)
 - [ ] unnamed bw2 0x00455270 (211)
-- [ ] unnamed bw2 0x004555c0 (568)
 - [ ] unnamed bw2 0x00455d10 (413)
 - [ ] unnamed bw2 0x004562a0 (360)
 - [ ] unnamed bw2 0x004567c0 (81)
 - [ ] unnamed bw2 0x004568e0 (1658)
 - [ ] unnamed bw2 0x00458320 (36)
 - [ ] unnamed bw2 0x004583a0 (20)
-- [ ] unnamed bw2 0x004583ec (346)
+- [ ] unnamed bw2 0x004583f0 (345)
 - [ ] unnamed bw2 0x00459555 (158)
 - [ ] unnamed bw2 0x00459ff0 (665)
 - [ ] unnamed bw2 0x0045ab40 (395)
@@ -9843,9 +9934,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x0045d2c0 (279)
 - [ ] unnamed bw2 0x0045db40 (61)
 - [ ] unnamed bw2 0x0045dbf0 (12)
-- [ ] unnamed bw2 0x0045dc20 (3)
-- [ ] unnamed bw2 0x0045dc30 (4)
-- [ ] unnamed bw2 0x0045dd30 (23)
 - [ ] unnamed bw2 0x0045df30 (71)
 - [ ] unnamed bw2 0x0045e010 (15)
 - [ ] unnamed bw2 0x0045e1b0 (4)
@@ -9866,69 +9954,34 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/door.cpp`
 - [ ] unnamed bw1 0x004774f0, bw3 0x00463d30 (15)
-- [ ] unnamed bw1 0x00477540, bw3 0x00463d80 (339)
 - [ ] unnamed bw1 0x004783d0, bw3 0x00464c10 (59)
-- [ ] unnamed bw1 0x00478860, bw3 0x004650a0 (186)
-- [ ] unnamed bw2 0x0045efc0 (8)
 - [ ] unnamed bw2 0x0045efe0 (15)
-- [ ] unnamed bw2 0x0045f030 (339)
 - [ ] unnamed bw2 0x0045fec0 (59)
-- [ ] unnamed bw2 0x00460350 (186)
 
 ### `core/dpart.cpp`
-- [ ] unnamed bw1 0x00479ae0, bw2 0x004615d0, bw3 0x004663b0 (26)
 - [ ] unnamed bw1 0x00479b22, bw2 0x00461612, bw3 0x004663f2 (8)
-- [ ] unnamed bw1 0x00479b3c, bw2 0x0046162c, bw3 0x0046640c (9)
-- [ ] unnamed bw1 0x00479c70, bw2 0x00461760, bw3 0x00466540 (214)
-- [ ] unnamed bw1 0x00479ec0, bw2 0x004619b0, bw3 0x00466790 (30)
-- [ ] unnamed bw1 0x00479f5e, bw2 0x00461a4e, bw3 0x0046682e (116)
 - [ ] unnamed bw1 0x0047a480, bw2 0x00461f70, bw3 0x00466d50 (502)
 - [ ] unnamed bw1 0x0047ab00, bw2 0x004625f0, bw3 0x004673d0 (366)
-- [ ] unnamed bw2 0x00461c02 (182)
 
 ### `core/dracbrid.cpp`
 - [ ] unnamed bw1 0x0047d890, bw2 0x00465370 (43)
 - [ ] unnamed bw1 0x0047d920 (303)
 - [ ] unnamed bw1 0x0047de00 (246)
-- [ ] unnamed bw1 0x0047e20e, bw2 0x00465cfe (18)
 - [ ] unnamed bw2 0x00465400 (303)
 - [ ] unnamed bw2 0x004658e0 (246)
 
 ### `core/dtrace.cpp`
-- [ ] unnamed bw1 0x0048a960, bw2 0x00472470, bw3 0x004734e0 (28, in nocturne)
-- [ ] unnamed bw1 0x0048aab0, bw2 0x004725c0, bw3 0x00473630 (17, in nocturne)
-- [ ] unnamed bw1 0x0048aaee, bw2 0x004725fe, bw3 0x0047366e (131)
-- [ ] unnamed bw1 0x0048ac6e (1)
-- [ ] unnamed bw1 0x0048ac70, bw2 0x00472780, bw3 0x004737f0 (37)
-- [ ] unnamed bw1 0x0048ace0, bw2 0x004727f0, bw3 0x00473860 (23)
-- [ ] unnamed bw1 0x0048adc0, bw2 0x004728d0, bw3 0x00473940 (157)
-- [ ] unnamed bw1 0x0048afa0, bw2 0x00472ab0, bw3 0x00473b20 (23, in nocturne)
-- [ ] unnamed bw1 0x0048b040, bw2 0x00472b50, bw3 0x00473bc0 (111)
 - [ ] unnamed bw1 0x0048b150, bw2 0x00472c60, bw3 0x00473cd0 (480)
-- [ ] unnamed bw1 0x0048b880, bw2 0x00473390, bw3 0x00474400 (368)
-- [ ] unnamed bw1 0x0048bdc0, bw2 0x004738d0, bw3 0x00474940 (182)
-- [ ] unnamed bw1 0x0048c50c (1)
 - [ ] unnamed bw1 0x0048c510, bw2 0x00474020, bw3 0x00475090 (353)
-- [ ] unnamed bw1 0x0048ca40, bw2 0x00474550, bw3 0x004755c0 (108)
-- [ ] unnamed bw1 0x0048ee90, bw2 0x004769a0, bw3 0x00477a10 (52, in nocturne)
-- [ ] unnamed bw1 0x0048ef40, bw2 0x00476a50, bw3 0x00477ac0 (52, in nocturne)
-- [ ] unnamed bw1 0x0048f210, bw2 0x00476d20, bw3 0x00477d90 (17)
-- [ ] unnamed bw1 0x0048f230, bw2 0x00476d40, bw3 0x00477db0 (17)
 - [ ] unnamed bw1 0x0048f250, bw2 0x00476d60, bw3 0x00477dd0 (57)
-- [ ] unnamed bw2 0x0047277e (1)
-- [ ] unnamed bw2 0x0047401c (1)
-- [ ] unnamed bw3 0x004737ee (1)
-- [ ] unnamed bw3 0x0047508c (1)
 
 ### `core/dtri.cpp`
-- [ ] unnamed bw1 0x00490a40, bw2 0x00478550, bw3 0x004795c0 (301)
 - [ ] unnamed bw1 0x004922e0 (2)
-- [ ] unnamed bw1 0x004922ec (3)
-- [ ] unnamed bw1 0x004922fc, bw2 0x00479e0c, bw3 0x0047ae9c (98)
+- [ ] unnamed bw1 0x004922f0 (2)
 - [ ] unnamed bw2 0x00479df0 (2)
-- [ ] unnamed bw2 0x00479dfc (3)
+- [ ] unnamed bw2 0x00479e00 (2)
 - [ ] unnamed bw3 0x0047ae80 (2)
-- [ ] unnamed bw3 0x0047ae8c (3)
+- [ ] unnamed bw3 0x0047ae90 (2)
 
 ### `core/dynamite.cpp`
 - [ ] unnamed bw3 0x0047b230 (11)
@@ -9939,38 +9992,22 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/enemy.cpp`
 - [ ] `CEnemy::isGrabbable` bw3 0x0048a200 (9)
-- [ ] unnamed bw1 0x004a0980, bw3 0x00489600 (95)
-- [ ] unnamed bw1 0x004a111e (46)
-- [ ] unnamed bw2 0x00488320 (95)
 - [ ] unnamed bw2 0x00488850 (11)
-- [ ] unnamed bw2 0x00488aae (46)
-- [ ] unnamed bw3 0x004893f0 (62)
-- [ ] unnamed bw3 0x00489490 (61)
 - [ ] unnamed bw3 0x00489c90 (245)
-- [ ] unnamed bw3 0x0048a12e (46)
 - [ ] unnamed bw3 0x0048a1b0 (27)
 
 ### `core/event.cpp`
 - [ ] unnamed bw1 0x004a1d00 (6511)
-- [ ] unnamed bw1 0x004a9870 (133)
-- [ ] unnamed bw1 0x004a9a00, bw2 0x004910b0 (26)
-- [ ] unnamed bw1 0x004a9a60 (133)
-- [ ] unnamed bw1 0x004aacce (110)
-- [ ] unnamed bw1 0x004aae0e (68)
+- [ ] unnamed bw1 0x004aacd0 (109)
+- [ ] unnamed bw1 0x004aae10 (67)
 - [ ] unnamed bw1 0x004aafe0 (3)
-- [ ] unnamed bw2 0x00489670 (6338)
-- [ ] unnamed bw2 0x00490f80 (101)
-- [ ] unnamed bw2 0x00491110 (101)
 - [ ] unnamed bw2 0x00491240 (16)
-- [ ] unnamed bw2 0x0049235e (110)
-- [ ] unnamed bw2 0x0049249e (68)
+- [ ] unnamed bw2 0x00492360 (109)
+- [ ] unnamed bw2 0x004924a0 (67)
 - [ ] unnamed bw2 0x00492630 (3)
 - [ ] unnamed bw3 0x0048c2e0 (7155)
-- [ ] unnamed bw3 0x004946f0 (133)
-- [ ] unnamed bw3 0x00494880 (26)
-- [ ] unnamed bw3 0x004948e0 (133)
-- [ ] unnamed bw3 0x00495b4e (110)
-- [ ] unnamed bw3 0x00495c8e (68)
+- [ ] unnamed bw3 0x00495b50 (109)
+- [ ] unnamed bw3 0x00495c90 (67)
 - [ ] unnamed bw3 0x00495e60 (3)
 
 ### `core/exorcism.cpp`
@@ -10006,7 +10043,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFirefly::setupRenderState` bw1 0x004ad9c0, bw2 0x00495020, bw3 0x00498a10 (72)
 - [ ] `CFirefly::render` bw1 0x004adaf0, bw2 0x00495150, bw3 0x00498b40 (490)
 - [ ] `CLeaf::init` bw1 0x004af0f0, bw2 0x00496750, bw3 0x0049a140 (15)
-- [ ] `loadLeafAssets` bw1 0x004af120, bw3 0x0049a170 (27)
+- [ ] `loadLeafAssets` bw1 0x004af120, bw2 0x00496780, bw3 0x0049a170 (27)
 - [ ] `CLeaf::process` bw1 0x004af170, bw2 0x004967d0, bw3 0x0049a1c0 (94)
 - [ ] `CLeaf::render` bw1 0x004af270, bw2 0x004968d0, bw3 0x0049a2c0 (64)
 - [ ] `CLeaf::onCollision` bw1 0x004af330, bw2 0x00496990, bw3 0x0049a380 (2)
@@ -10021,86 +10058,27 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFireEffect::createMuzzleEffect` bw2 0x0049d170 (27)
 - [ ] `CMuzzleEffect::ctor` bw2 0x0049efa0 (2)
 - [ ] `CMuzzleEffect::dtor` bw2 0x0049efb0 (2)
+- [ ] `spawnDiseaseBugs` bw3 0x0049cca0 (161)
 - [ ] `CGunFlame::burnNearby` bw3 0x0049df60 (163)
 - [ ] `CRing::activate` bw3 0x0049fce0 (85)
 - [ ] `CRing::process` bw3 0x0049fdf0 (502)
+- [ ] `CStormEffect::reset` bw3 0x004a0470 (3)
+- [ ] `CStormEffect::activate` bw3 0x004a0480 (74)
+- [ ] `CStormEffect::process` bw3 0x004a0570 (37)
+- [ ] `CFireEffect::createBindEvilToss` bw3 0x004a39a0 (17)
+- [ ] `CFireEffect::createDiseaseToss` bw3 0x004a39d0 (17)
+- [ ] `CFireEffect::createStormToss` bw3 0x004a3a00 (17)
 - [ ] `CFireEffect::setGunFlamePosition` bw3 0x004a3b60 (22)
 - [ ] `CFireEffect::createRing` bw3 0x004a3f70 (35)
+- [ ] `CFireEffect::createStormEffect` bw3 0x004a3fd0 (32)
+- [ ] `CFireEffect::preloadLightningBoltStyle` bw3 0x004a4130 (57)
+- [ ] `CFireEffect::preloadGunFlameStyle` bw3 0x004a41d0 (83)
+- [ ] `CFireEffect::preloadRingAssets` bw3 0x004a42c0 (13)
+- [ ] `CFireEffect::preloadExplosionStyle` bw3 0x004a42f0 (32)
+- [ ] `CFireEffect::preloadTossAssets` bw3 0x004a4340 (98)
 - [ ] `CRing::ctor` bw3 0x004a4600 (15)
 - [ ] `CRing::dtor` bw3 0x004a4640 (2)
 - [ ] `CGlassParticle::arrdtor1000` bw3 0x004a49f0 (7)
-- [ ] unnamed bw1 0x004abf50 (107)
-- [ ] unnamed bw1 0x004ac690, bw2 0x00493cf0, bw3 0x00497540 (38)
-- [ ] unnamed bw1 0x004ad140, bw2 0x004947a0 (483)
-- [ ] unnamed bw1 0x004ad850 (2)
-- [ ] unnamed bw1 0x004ae640, bw2 0x00495ca0, bw3 0x00499690 (544)
-- [ ] unnamed bw1 0x004aefc0, bw2 0x00496620, bw3 0x0049a010 (47)
-- [ ] unnamed bw1 0x004af040, bw2 0x004966a0, bw3 0x0049a090 (59)
-- [ ] unnamed bw1 0x004af340, bw3 0x0049a390 (67)
-- [ ] unnamed bw1 0x004af600, bw2 0x00496c60 (284)
-- [ ] unnamed bw1 0x004afc60 (2)
-- [ ] unnamed bw1 0x004b16d0, bw2 0x00498d30 (107)
-- [ ] unnamed bw1 0x004b1c50, bw2 0x004992b0 (93)
-- [ ] unnamed bw1 0x004b1fb0, bw2 0x00499610, bw3 0x0049d590 (271)
-- [ ] unnamed bw1 0x004b2b50, bw2 0x0049a1b0 (138)
-- [ ] unnamed bw1 0x004b4190 (56)
-- [ ] unnamed bw1 0x004b4360 (2)
-- [ ] unnamed bw1 0x004b6420 (570)
-- [ ] unnamed bw2 0x004935b0 (107)
-- [ ] unnamed bw2 0x00494eb0 (2)
-- [ ] unnamed bw2 0x0049677e (28)
-- [ ] unnamed bw2 0x004969a0 (67)
-- [ ] unnamed bw2 0x004972c0 (2)
-- [ ] unnamed bw2 0x0049b7f0 (56)
-- [ ] unnamed bw2 0x0049b9c0 (2)
-- [ ] unnamed bw2 0x0049d120 (27)
-- [ ] unnamed bw2 0x0049db20 (570)
-- [ ] unnamed bw2 0x0049eb50 (22)
-- [ ] unnamed bw2 0x0049eb8e (23)
-- [ ] unnamed bw3 0x00496e00 (107)
-- [ ] unnamed bw3 0x00497290 (188)
-- [ ] unnamed bw3 0x004975a0 (27)
-- [ ] unnamed bw3 0x004980b0 (503)
-- [ ] unnamed bw3 0x004988a0 (2)
-- [ ] unnamed bw3 0x0049a650 (275)
-- [ ] unnamed bw3 0x0049ac90 (2)
-- [ ] unnamed bw3 0x0049c730 (110)
-- [ ] unnamed bw3 0x0049c8e0 (243)
-- [ ] unnamed bw3 0x0049cca0 (161)
-- [ ] unnamed bw3 0x0049cee0 (118)
-- [ ] unnamed bw3 0x0049d090 (356)
-- [ ] unnamed bw3 0x0049d500 (38)
-- [ ] unnamed bw3 0x0049f380 (53)
-- [ ] unnamed bw3 0x0049f420 (22)
-- [ ] unnamed bw3 0x0049f470 (38)
-- [ ] unnamed bw3 0x0049f520 (518)
-- [ ] unnamed bw3 0x004a0470 (3)
-- [ ] unnamed bw3 0x004a0480 (74)
-- [ ] unnamed bw3 0x004a0570 (37)
-- [ ] unnamed bw3 0x004a0af0 (56)
-- [ ] unnamed bw3 0x004a0cc0 (2)
-- [ ] unnamed bw3 0x004a1480 (194)
-- [ ] unnamed bw3 0x004a1760 (294)
-- [ ] unnamed bw3 0x004a2090 (259)
-- [ ] unnamed bw3 0x004a24a0 (54)
-- [ ] unnamed bw3 0x004a25f0 (120)
-- [ ] unnamed bw3 0x004a27de (31)
-- [ ] unnamed bw3 0x004a2e20 (607)
-- [ ] unnamed bw3 0x004a36e0 (67)
-- [ ] unnamed bw3 0x004a3790 (143)
-- [ ] unnamed bw3 0x004a3920 (46)
-- [ ] unnamed bw3 0x004a39a0 (17)
-- [ ] unnamed bw3 0x004a39d0 (17)
-- [ ] unnamed bw3 0x004a3a00 (17)
-- [ ] unnamed bw3 0x004a3a30 (45)
-- [ ] unnamed bw3 0x004a3bd0 (40)
-- [ ] unnamed bw3 0x004a3c50 (53)
-- [ ] unnamed bw3 0x004a3fd0 (32)
-- [ ] unnamed bw3 0x004a4130 (57)
-- [ ] unnamed bw3 0x004a41d0 (83)
-- [ ] unnamed bw3 0x004a42c0 (13)
-- [ ] unnamed bw3 0x004a42f0 (32)
-- [ ] unnamed bw3 0x004a4340 (98)
 
 ### `core/firestff.cpp`
 - [ ] `staticInit` bw3 0x004a4a70 (9)
@@ -10117,8 +10095,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x004a5930 (7)
 
 ### `core/flame.cpp`
-- [ ] unnamed bw1 0x004b8e40, bw3 0x004a6dd0 (67)
-- [ ] unnamed bw2 0x004a0590 (67)
 - [ ] unnamed bw3 0x004a5ad0 (21)
 
 ### `core/flashlit.cpp`
@@ -10135,17 +10111,16 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x004b9ff0, bw2 0x004a1730, bw3 0x004a7c30 (49)
 - [ ] unnamed bw1 0x004ba0b0, bw2 0x004a17f0, bw3 0x004a7cf0 (34)
 - [ ] unnamed bw1 0x004ba130, bw3 0x004a7d70 (197)
-- [ ] unnamed bw1 0x004ba440, bw3 0x004a8080 (28)
+- [ ] unnamed bw1 0x004ba440, bw2 0x004a1b60, bw3 0x004a8080 (28)
 - [ ] unnamed bw1 0x004ba490, bw2 0x004a1bb0, bw3 0x004a80d0 (59)
 - [ ] unnamed bw1 0x004ba540, bw2 0x004a1c60, bw3 0x004a8180 (59)
 - [ ] unnamed bw1 0x004ba5e0, bw2 0x004a1d00, bw3 0x004a8220 (32)
-- [ ] unnamed bw1 0x004ba62e, bw3 0x004a826e (39)
-- [ ] unnamed bw1 0x004ba6ae, bw3 0x004a82ee (44)
+- [ ] unnamed bw1 0x004ba630, bw3 0x004a8270 (38)
+- [ ] unnamed bw1 0x004ba6b0, bw3 0x004a82f0 (43)
 - [ ] unnamed bw2 0x004a1200 (91)
 - [ ] unnamed bw2 0x004a1870 (191)
-- [ ] unnamed bw2 0x004a1b5e (29)
-- [ ] unnamed bw2 0x004a1d4e (37)
-- [ ] unnamed bw2 0x004a1dcc (47)
+- [ ] unnamed bw2 0x004a1d50 (36)
+- [ ] unnamed bw2 0x004a1dd0 (46)
 - [ ] unnamed bw3 0x004a76f0 (97)
 
 ### `core/flattn.cpp`
@@ -10165,7 +10140,7 @@ the retail game has it too. Sizes are in instructions.
 ### `core/fldnotes.cpp`
 - [ ] `SPageResource::ctor` bw1 0x004ba730, bw2 0x004a1e60, bw3 0x004a8370 (10)
 - [ ] `SPageResource::dtor` bw1 0x004ba760, bw2 0x004a1e90, bw3 0x004a83a0 (16)
-- [ ] `SPageResource::setLink` bw1 0x004ba78e, bw2 0x004a1ebe, bw3 0x004a83ce (65, differs)
+- [ ] `SPageResource::setLink` bw1 0x004ba790, bw2 0x004a1ec0, bw3 0x004a83d0 (64, differs)
 - [ ] `SPageResource::onMouse` bw1 0x004ba830, bw2 0x004a1f60, bw3 0x004a8470 (5)
 - [ ] `SPageResourceText::ctor` bw1 0x004ba850, bw2 0x004a1f80, bw3 0x004a8490 (44)
 - [ ] `SPageResourceText::dtor` bw1 0x004ba8d0, bw2 0x004a2000, bw3 0x004a8510 (32)
@@ -10229,33 +10204,22 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFieldNotes::dtor` bw1 0x004bcb70, bw2 0x004a4180, bw3 0x004aa7e0 (12)
 - [ ] `CFieldNotes::loadFile` bw1 0x004bcba0, bw2 0x004a41b0, bw3 0x004aa810 (1162, differs)
 - [ ] `CFieldNotes::clear` bw1 0x004bdaa0, bw2 0x004a50b0, bw3 0x004ab7a0 (91, differs)
+- [ ] `CFieldNotes::showMapAnnotation` bw1 0x004bdbf0, bw2 0x004a5200, bw3 0x004ab8f0 (92, differs)
 - [ ] `CFieldNotes::enableEntry` bw1 0x004bdd00, bw2 0x004a5310, bw3 0x004aba10 (87, differs)
+- [ ] `CFieldNotes::getEntryKind` bw1 0x004bde20, bw2 0x004a5430, bw3 0x004abb30 (41)
 - [ ] `CFieldNotes::turnToEntry` bw1 0x004bde80, bw2 0x004a5490, bw3 0x004abb90 (82, differs)
 - [ ] `CFieldNotes::completeTask` bw1 0x004bdfa0, bw2 0x004a55b0, bw3 0x004abcb0 (86, differs)
-- [ ] `CFieldNotes::loadState` bw1 0x004bebc0, bw3 0x004ac900 (362, differs)
+- [ ] `CFieldNotes::setImageSuffix` bw1 0x004be0b0, bw2 0x004a56c0, bw3 0x004abdc0 (21)
+- [ ] `CFieldNotes::draw` bw1 0x004be0f0, bw2 0x004a5700, bw3 0x004abe00 (567, differs)
+- [ ] `CFieldNotes::process` bw1 0x004be970, bw2 0x004a5f60, bw3 0x004ac6b0 (166, differs)
+- [ ] `CFieldNotes::loadState` bw1 0x004bebc0, bw2 0x004a61b0, bw3 0x004ac900 (362, differs)
+- [ ] `CFieldNotes::saveState` bw1 0x004bf1c0, bw2 0x004a6470, bw3 0x004acf00 (327, differs)
 - [ ] `SPageResourceMap::dtor` bw1 0x004bf670, bw2 0x004a66a0, bw3 0x004ad3c0 (31)
+- [ ] `CAlphaBitmap::arrdtor3` bw1 0x004bf6c0, bw2 0x004a66f0, bw3 0x004ad410 (7)
 - [ ] `CAlphaBitmap::arrdtor6` bw1 0x004bf6e0, bw2 0x004a6710, bw3 0x004ad430 (7)
 - [ ] `SNotesMap::arrdtor4` bw1 0x004bf700, bw2 0x004a6730 (7)
 - [ ] `SNotesSection::arrdtor6` bw1 0x004bf720, bw2 0x004a6750, bw3 0x004ad470 (7)
 - [ ] `SNotesMap::arrdtor10` bw3 0x004ad450 (7)
-- [ ] unnamed bw1 0x004bdbf0, bw2 0x004a5200 (92)
-- [ ] unnamed bw1 0x004bde20, bw2 0x004a5430, bw3 0x004abb30 (41)
-- [ ] unnamed bw1 0x004be0b0, bw2 0x004a56c0, bw3 0x004abdc0 (21)
-- [ ] unnamed bw1 0x004be0f0 (567)
-- [ ] unnamed bw1 0x004be970, bw2 0x004a5f60 (166)
-- [ ] unnamed bw1 0x004bf1c0 (327)
-- [ ] unnamed bw1 0x004bf6c0, bw2 0x004a66f0, bw3 0x004ad410 (7)
-- [ ] unnamed bw2 0x004a5700 (561)
-- [ ] unnamed bw2 0x004a61b0 (173)
-- [ ] unnamed bw2 0x004a6470 (151)
-- [ ] unnamed bw3 0x004ab8f0 (101)
-- [ ] unnamed bw3 0x004abe00 (585)
-- [ ] unnamed bw3 0x004ac6b0 (166)
-- [ ] unnamed bw3 0x004acf00 (335)
-
-### `core/flies.cpp`
-- [ ] unnamed bw1 0x004c0630, bw3 0x004ae380 (227)
-- [ ] unnamed bw2 0x004a7660 (227)
 
 ### `core/flintlck.cpp`
 - [ ] `staticInit` bw3 0x004ae780 (9)
@@ -10269,85 +10233,46 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/gabriela.cpp`
 - [ ] unnamed bw1 0x004c6150 (20)
-- [ ] unnamed bw1 0x004c7aa0 (541)
-- [ ] unnamed bw1 0x004c83b0 (336)
-- [ ] unnamed bw1 0x004c8900 (70)
-- [ ] unnamed bw1 0x004caff0 (141)
 - [ ] unnamed bw2 0x004ad1a0 (20)
-- [ ] unnamed bw2 0x004aeb00 (541)
-- [ ] unnamed bw2 0x004af410 (336)
-- [ ] unnamed bw2 0x004af960 (70)
-- [ ] unnamed bw2 0x004b0ef0 (30)
-- [ ] unnamed bw2 0x004b20d0 (141)
 
 ### `core/game.cpp`
-- [ ] unnamed bw1 0x004cbf20 (95)
+- [ ] `loadCursorBitmaps` bw1 0x004dc040, bw3 0x004c48b0 (82)
+- [ ] `freeCursorBitmaps` bw1 0x004dc180, bw3 0x004c49f0 (13)
+- [ ] `drawCursor` bw1 0x004dc1a0, bw3 0x004c4a10 (20)
 - [ ] unnamed bw1 0x004ce580 (984)
-- [ ] unnamed bw1 0x004d0400 (146)
-- [ ] unnamed bw1 0x004d0d9e, bw2 0x004b757e, bw3 0x004b981e (12)
-- [ ] unnamed bw1 0x004d0dce (53)
-- [ ] unnamed bw1 0x004d0e6e (40)
-- [ ] unnamed bw1 0x004d0ee0 (591)
+- [ ] unnamed bw1 0x004d0dd0 (52)
+- [ ] unnamed bw1 0x004d0e70 (39)
 - [ ] unnamed bw1 0x004d1760 (28)
 - [ ] unnamed bw1 0x004d17c0 (28)
-- [ ] unnamed bw1 0x004d19d0 (48)
 - [ ] unnamed bw1 0x004d5e80 (3)
-- [ ] unnamed bw1 0x004d6030, bw3 0x004bd620 (136)
-- [ ] unnamed bw1 0x004d6420 (412)
-- [ ] unnamed bw1 0x004d6990 (598)
-- [ ] unnamed bw1 0x004d7250 (330)
-- [ ] unnamed bw1 0x004d7730 (45)
-- [ ] unnamed bw1 0x004d77d0 (395)
 - [ ] unnamed bw1 0x004d9260 (2763)
 - [ ] unnamed bw1 0x004dc000 (17)
-- [ ] unnamed bw1 0x004dc040, bw3 0x004c48b0 (82)
-- [ ] unnamed bw1 0x004dc180, bw3 0x004c49f0 (13)
-- [ ] unnamed bw1 0x004dc1a0, bw3 0x004c4a10 (20)
 - [ ] unnamed bw2 0x004b2930 (19)
-- [ ] unnamed bw2 0x004b296e (73)
 - [ ] unnamed bw2 0x004b5190 (1031)
-- [ ] unnamed bw2 0x004b764e (40)
-- [ ] unnamed bw2 0x004b76c0 (619)
+- [ ] unnamed bw2 0x004b7650 (39)
 - [ ] unnamed bw2 0x004b7fc0 (34)
 - [ ] unnamed bw2 0x004b8030 (34)
-- [ ] unnamed bw2 0x004b82e0 (803)
 - [ ] unnamed bw2 0x004b8e10 (136)
-- [ ] unnamed bw2 0x004b90d0 (2260)
 - [ ] unnamed bw2 0x004bb090 (3)
-- [ ] unnamed bw2 0x004bb240 (136)
-- [ ] unnamed bw2 0x004bb3d0 (81)
-- [ ] unnamed bw2 0x004bb4e0 (7)
 - [ ] unnamed bw2 0x004bb500 (16)
 - [ ] unnamed bw2 0x004bb550 (7)
 - [ ] unnamed bw2 0x004bb580 (5)
 - [ ] unnamed bw2 0x004bb5b0 (25)
 - [ ] unnamed bw2 0x004bb620 (166)
-- [ ] unnamed bw2 0x004bb9b0 (430)
-- [ ] unnamed bw2 0x004bbf70 (598)
 - [ ] unnamed bw2 0x004bc840 (213)
-- [ ] unnamed bw2 0x004bcb50 (45)
 - [ ] unnamed bw2 0x004bcbf0 (444)
-- [ ] unnamed bw2 0x004bdc1e (273)
 - [ ] unnamed bw2 0x004be8a0 (1143)
 - [ ] unnamed bw2 0x004bfa70 (2)
-- [ ] unnamed bw3 0x004b4440 (95)
-- [ ] unnamed bw3 0x004b503e (60)
-- [ ] unnamed bw3 0x004b51e0 (2123)
+- [ ] unnamed bw3 0x004b5040 (59)
 - [ ] unnamed bw3 0x004b6f30 (984)
 - [ ] unnamed bw3 0x004b8e60 (150)
-- [ ] unnamed bw3 0x004b984e (53)
-- [ ] unnamed bw3 0x004b98ee (40)
-- [ ] unnamed bw3 0x004b9960 (601)
+- [ ] unnamed bw3 0x004b9850 (52)
+- [ ] unnamed bw3 0x004b98f0 (39)
 - [ ] unnamed bw3 0x004ba220 (28)
 - [ ] unnamed bw3 0x004ba280 (28)
-- [ ] unnamed bw3 0x004ba490 (48)
 - [ ] unnamed bw3 0x004bd470 (3)
-- [ ] unnamed bw3 0x004bd8ee (9)
-- [ ] unnamed bw3 0x004bda10 (422)
-- [ ] unnamed bw3 0x004bdfb0 (617)
+- [ ] unnamed bw3 0x004bd8f0 (8)
 - [ ] unnamed bw3 0x004be8d0 (186)
-- [ ] unnamed bw3 0x004beb80 (45)
-- [ ] unnamed bw3 0x004bec20 (395)
 - [ ] unnamed bw3 0x004c07b0 (3833)
 - [ ] unnamed bw3 0x004c4870 (17)
 - [ ] unnamed bw3 0x004c4a60 (110)
@@ -10355,11 +10280,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x004c4cc0 (22)
 - [ ] unnamed bw3 0x004c4d10 (7)
 - [ ] unnamed bw3 0x004c4d50 (3)
-
-### `core/gargoyle.cpp`
-- [ ] unnamed bw1 0x004dc630 (144)
-- [ ] unnamed bw2 0x004bfea0 (144)
-- [ ] unnamed bw3 0x004c51a0 (144)
 
 ### `core/ghostchi.cpp`
 - [ ] `staticInit` bw2 0x005a91d0 (9)
@@ -10381,11 +10301,8 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/glass.cpp`
 - [ ] unnamed bw1 0x004e2320 (1226)
-- [ ] unnamed bw1 0x004e34b0 (284)
 - [ ] unnamed bw2 0x004c5bb0 (1226)
-- [ ] unnamed bw2 0x004c6d40 (284)
 - [ ] unnamed bw3 0x004caeb0 (1226)
-- [ ] unnamed bw3 0x004cc040 (284)
 
 ### `core/gmehook.cpp`
 - [ ] `CGameHook::ctor` bw2 0x0059c290 (6)
@@ -10409,29 +10326,18 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x0059c270 (7)
 
 ### `core/gore.cpp`
-- [ ] unnamed bw1 0x004e3f40 (537)
 - [ ] unnamed bw1 0x004e63e0 (70)
-- [ ] unnamed bw2 0x004c7580 (544)
 - [ ] unnamed bw2 0x004c8010 (413)
 - [ ] unnamed bw2 0x004c88a0 (271)
 - [ ] unnamed bw2 0x004c9000 (222)
 - [ ] unnamed bw2 0x004c9bd0 (70)
 - [ ] unnamed bw3 0x004cc970 (95)
-- [ ] unnamed bw3 0x004ccbe0 (523)
 - [ ] unnamed bw3 0x004cd3f0 (32)
 - [ ] unnamed bw3 0x004cd690 (320)
-- [ ] unnamed bw3 0x004cdb50 (56)
-- [ ] unnamed bw3 0x004cdbe0 (67)
 - [ ] unnamed bw3 0x004cdd30 (183)
-- [ ] unnamed bw3 0x004ce090 (40)
-- [ ] unnamed bw3 0x004ce0f0 (49)
 - [ ] unnamed bw3 0x004ce310 (140)
 - [ ] unnamed bw3 0x004ced40 (70)
 - [ ] unnamed bw3 0x004cee70 (46)
-
-### `core/ground.cpp`
-- [ ] unnamed bw1 0x004e82a0, bw2 0x004cba20, bw3 0x004d0c30 (234, in nocturne)
-- [ ] unnamed bw2 0x004ca7c0 (21)
 
 ### `core/hand.cpp`
 - [ ] `staticInit` bw2 0x005a9ba0 (9)
@@ -10468,7 +10374,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHealthItemSmall::getActorType` bw3 0x004d2170 (2)
 - [ ] `CHealthItemSmall::ctor` bw3 0x004d2180 (17)
 - [ ] `CHealthItemSmall::dtor` bw3 0x004d21d0 (31)
-- [ ] unnamed bw3 0x004d20c0 (25)
 - [ ] unnamed bw3 0x004d2150 (10)
 
 ### `core/hecaitmx.cpp`
@@ -10524,61 +10429,27 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/hero.cpp`
 - [ ] `CHero::canReachPickup` bw1 0x004eade0, bw2 0x004cea40 (2)
-- [ ] `CHero::doHeroAction` bw1 0x004ec640, bw2 0x004d03b0 (265, differs)
+- [ ] `CHero::toggleLeverNow` bw1 0x004eb7f0, bw2 0x004cf440, bw3 0x004d3460 (53)
+- [ ] `CHero::tryPickupActorOfClass` bw1 0x004ec090, bw2 0x004cfd60, bw3 0x004d3e20 (93, differs)
+- [ ] `CHero::doHeroAction` bw1 0x004ec640, bw2 0x004d03b0, bw3 0x004d4520 (265, differs)
 - [ ] `CHero::canDoHeroAction` bw1 0x004ec950, bw2 0x004d06c0 (33, differs)
-- [ ] `CHero::toggleGoggles` bw1 0x004ec9e0 (15)
+- [ ] `CHero::toggleGoggles` bw1 0x004ec9e0, bw2 0x004d0750, bw3 0x004d48d0 (15)
 - [ ] `CHero::setInventoryIndex` bw2 0x004ce3b0 (5)
-- [ ] unnamed bw1 0x004ea980 (44)
 - [ ] unnamed bw1 0x004eb3e0 (142)
 - [ ] unnamed bw1 0x004eb5b0 (6)
-- [ ] unnamed bw1 0x004eb660 (120)
-- [ ] unnamed bw1 0x004eb7f0 (53)
-- [ ] unnamed bw1 0x004eb890 (231)
-- [ ] unnamed bw1 0x004ec090 (93)
-- [ ] unnamed bw1 0x004ec280 (20)
-- [ ] unnamed bw1 0x004ec350 (136)
 - [ ] unnamed bw1 0x004eca10 (115)
-- [ ] unnamed bw1 0x004ecca0 (58)
-- [ ] unnamed bw1 0x004ecd9e, bw2 0x004d0b3e, bw3 0x004d4cde (91)
-- [ ] unnamed bw2 0x004ce240 (61)
-- [ ] unnamed bw2 0x004ce590 (287)
 - [ ] unnamed bw2 0x004cec50 (159)
 - [ ] unnamed bw2 0x004cf030 (140)
 - [ ] unnamed bw2 0x004cf200 (6)
-- [ ] unnamed bw2 0x004cf2b0 (120)
-- [ ] unnamed bw2 0x004cf440 (53)
-- [ ] unnamed bw2 0x004cf4e0 (231)
-- [ ] unnamed bw2 0x004cfc80 (78)
-- [ ] unnamed bw2 0x004cfd60 (93)
-- [ ] unnamed bw2 0x004cff50 (20)
-- [ ] unnamed bw2 0x004cff90 (69)
-- [ ] unnamed bw2 0x004d00c0 (136)
-- [ ] unnamed bw2 0x004d0750 (15)
 - [ ] unnamed bw2 0x004d0780 (115)
-- [ ] unnamed bw2 0x004d0a40 (58)
-- [ ] unnamed bw3 0x004d2620 (44)
-- [ ] unnamed bw3 0x004d26b0 (21)
-- [ ] unnamed bw3 0x004d2a80 (9)
 - [ ] unnamed bw3 0x004d2ae0 (2)
 - [ ] unnamed bw3 0x004d2cd0 (6)
-- [ ] unnamed bw3 0x004d2cf0 (123)
-- [ ] unnamed bw3 0x004d2ea0 (129)
 - [ ] unnamed bw3 0x004d3040 (142)
 - [ ] unnamed bw3 0x004d3210 (7)
-- [ ] unnamed bw3 0x004d3460 (53)
-- [ ] unnamed bw3 0x004d3500 (231)
-- [ ] unnamed bw3 0x004d3b20 (120)
 - [ ] unnamed bw3 0x004d3c90 (143)
-- [ ] unnamed bw3 0x004d3e20 (162)
-- [ ] unnamed bw3 0x004d4090 (51)
-- [ ] unnamed bw3 0x004d4160 (20)
 - [ ] unnamed bw3 0x004d4230 (119)
-- [ ] unnamed bw3 0x004d4410 (34)
-- [ ] unnamed bw3 0x004d4520 (265)
 - [ ] unnamed bw3 0x004d4840 (35)
-- [ ] unnamed bw3 0x004d48d0 (15)
 - [ ] unnamed bw3 0x004d4900 (142)
-- [ ] unnamed bw3 0x004d4be0 (58)
 
 ### `core/hino.cpp`
 - [ ] `staticInit` bw3 0x0059b610 (9)
@@ -10650,54 +10521,33 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x004f1670 (90)
 - [ ] unnamed bw1 0x004f17e0 (131)
 - [ ] unnamed bw1 0x004f1b50 (476)
-- [ ] unnamed bw1 0x004f2340 (81)
-- [ ] unnamed bw1 0x004f2430 (93)
-- [ ] unnamed bw2 0x004d5470 (90)
-- [ ] unnamed bw2 0x004d55e0 (131)
 - [ ] unnamed bw2 0x004d5780 (13)
 
 ### `core/imp.cpp`
 - [ ] unnamed bw3 0x004d8280 (1)
 
 ### `core/inv.cpp`
-- [ ] unnamed bw1 0x004f60c0 (189)
+- [ ] `setupItems` bw1 0x004f9b20, bw2 0x004dc850, bw3 0x004dcad0 (53, differs)
 - [ ] unnamed bw1 0x004f63c0 (95)
 - [ ] unnamed bw1 0x004f64f0 (33)
-- [ ] unnamed bw1 0x004f655e (349)
+- [ ] unnamed bw1 0x004f6560, bw2 0x004da130 (348)
 - [ ] unnamed bw1 0x004f6b50, bw3 0x004d9fc0 (33)
 - [ ] unnamed bw1 0x004f6bb0 (236)
-- [ ] unnamed bw1 0x004f70e0 (340)
-- [ ] unnamed bw1 0x004f7690 (1802)
 - [ ] unnamed bw1 0x004f8b70 (68)
 - [ ] unnamed bw1 0x004f8c40, bw3 0x004db990 (35)
 - [ ] unnamed bw1 0x004f8c90, bw3 0x004db9e0 (35)
 - [ ] unnamed bw1 0x004f8ce0, bw3 0x004dba80 (10)
-- [ ] unnamed bw1 0x004f8d00 (63)
-- [ ] unnamed bw1 0x004f9b20 (53)
 - [ ] unnamed bw1 0x004f9ef0 (9)
 - [ ] unnamed bw1 0x004f9f10 (391)
-- [ ] unnamed bw1 0x004fa540 (144)
 - [ ] unnamed bw1 0x004fae10 (1290)
 - [ ] unnamed bw2 0x004d9ff0 (97)
-- [ ] unnamed bw2 0x004da130 (348)
-- [ ] unnamed bw2 0x004da760 (33)
 - [ ] unnamed bw2 0x004dadb0 (782)
 - [ ] unnamed bw2 0x004db760 (69)
-- [ ] unnamed bw2 0x004db8e0 (82)
-- [ ] unnamed bw2 0x004db9d0 (125)
-- [ ] unnamed bw2 0x004dc850 (37)
-- [ ] unnamed bw2 0x004dc8c0 (335)
-- [ ] unnamed bw2 0x004dd0a0 (168)
 - [ ] unnamed bw2 0x004dd9b0 (1271)
-- [ ] unnamed bw3 0x004d9d20 (99)
 - [ ] unnamed bw3 0x004da020 (246)
 - [ ] unnamed bw3 0x004da840 (12)
-- [ ] unnamed bw3 0x004da880 (1377)
 - [ ] unnamed bw3 0x004db8d0 (61)
 - [ ] unnamed bw3 0x004dba30 (38)
-- [ ] unnamed bw3 0x004dbd7e (94)
-- [ ] unnamed bw3 0x004dbe70 (520)
-- [ ] unnamed bw3 0x004dcad0 (37)
 - [ ] unnamed bw3 0x004dcda0 (2)
 - [ ] unnamed bw3 0x004dcdb0 (363)
 - [ ] unnamed bw3 0x004dd2d0 (13)
@@ -10742,18 +10592,12 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/lever.cpp`
 - [ ] unnamed bw1 0x004ff3f0, bw3 0x004e04b0 (118)
-- [ ] unnamed bw1 0x004ff6b0, bw3 0x004e0770 (59)
-- [ ] unnamed bw1 0x004ff970, bw3 0x004e0a30 (59)
-- [ ] unnamed bw2 0x004e2220 (59)
-- [ ] unnamed bw2 0x004e24e0 (59)
 
 ### `core/lightgun.cpp`
 - [ ] `CLightGun::getMuzzlePoint` bw1 0x00500160, bw2 0x004e2cc0 (30, differs)
 - [ ] unnamed bw1 0x004fff70 (43)
 - [ ] unnamed bw1 0x004ffff0 (56)
 - [ ] unnamed bw1 0x00500090 (58)
-- [ ] unnamed bw2 0x004e2ae0 (37)
-- [ ] unnamed bw2 0x004e2bf0 (58)
 
 ### `core/lightpis.cpp`
 - [ ] `staticInit` bw1 0x005015b0 (9)
@@ -10775,36 +10619,23 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncLightStaff` bw3 0x004e0f40 (10)
 - [ ] `CLightStaff::getActorType` bw3 0x004e0f60 (2)
 - [ ] `CLightStaff::ctor` bw3 0x004e0f70 (42)
-- [ ] `CLightStaff::process` bw3 0x004e2050 (1100)
+- [ ] `CLightStaff::fire` bw3 0x004e1070 (910)
+- [ ] `CLightStaff::process` bw3 0x004e2050 (1581)
 - [ ] `CLightStaff::getDamage` bw3 0x004e3db0 (11)
 - [ ] `CLightStaff::getMuzzlePoint` bw3 0x004e3de0 (43)
 - [ ] `CLightStaff::setWeaponState` bw3 0x004e3e60 (23)
 - [ ] `CLightStaff::setup` bw3 0x004e3eb0 (25)
 - [ ] `CLightStaff::dtor` bw3 0x004e3f10 (31)
-- [ ] unnamed bw3 0x004e1070 (910)
 
 ### `core/main.c`
-- [ ] unnamed bw1 0x005030e0, bw2 0x004e4500, bw3 0x004e4330 (70)
 - [ ] unnamed bw1 0x005031c0, bw2 0x004e45e0 (70)
-- [ ] unnamed bw1 0x00503290 (2)
-- [ ] unnamed bw1 0x005032a0 (622)
-- [ ] unnamed bw1 0x00503a30, bw2 0x004e4e20, bw3 0x004e4c70 (38)
-- [ ] unnamed bw2 0x004e46b0 (2)
 - [ ] unnamed bw3 0x004e4400 (69, in nocturne)
-- [ ] unnamed bw3 0x004e44d0 (2)
-- [ ] unnamed bw3 0x004e44e0 (622)
 - [ ] unnamed bw3 0x004e4d80 (1)
 
 ### `core/manpuz.cpp`
 - [ ] unnamed bw1 0x00504ee0 (86)
-- [ ] unnamed bw1 0x00504fe0 (36)
-- [ ] unnamed bw1 0x00505060 (292)
-- [ ] unnamed bw1 0x005062a0 (85)
 - [ ] unnamed bw2 0x004e6240 (86)
-- [ ] unnamed bw2 0x004e6340 (36)
-- [ ] unnamed bw2 0x004e63c0 (292)
 - [ ] unnamed bw2 0x004e6820 (58)
-- [ ] unnamed bw2 0x004e7600 (85)
 
 ### `core/marquee.cpp`
 - [ ] unnamed bw1 0x005072c0, bw2 0x004e8620, bw3 0x004e4d00 (38)
@@ -10827,7 +10658,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00593a90 (27)
 
 ### `core/melee.cpp`
-- [ ] unnamed bw1 0x00509b00, bw2 0x004eada0, bw3 0x004e7540 (46)
+- [ ] unnamed bw1 0x00509b00, bw2 0x004eada0, bw3 0x004e7540 (90)
 
 ### `core/meleeaxe.cpp`
 - [ ] `staticInit` bw2 0x0059d1c0 (9)
@@ -10838,30 +10669,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x0059d350 (4)
 
 ### `core/menu.cpp`
-- [ ] unnamed bw1 0x0050b470 (381)
-- [ ] unnamed bw1 0x0050ba70 (1133)
-- [ ] unnamed bw1 0x0050c990 (190)
-- [ ] unnamed bw1 0x0050d5b0 (45)
-- [ ] unnamed bw1 0x0050d640 (1851)
-- [ ] unnamed bw2 0x004eaf30 (122)
-- [ ] unnamed bw2 0x004eb0e0 (261)
-- [ ] unnamed bw2 0x004ebbf8 (2)
-- [ ] unnamed bw2 0x004ebc2a (2)
+- [ ] unnamed bw2 0x004eba50 (200)
 - [ ] unnamed bw2 0x004ebf10 (855)
-- [ ] unnamed bw2 0x004ecc70 (379)
-- [ ] unnamed bw2 0x004ed260 (1140)
-- [ ] unnamed bw2 0x004ee1a0 (150)
-- [ ] unnamed bw2 0x004eece0 (40)
-- [ ] unnamed bw2 0x004eed60 (1509)
-- [ ] unnamed bw3 0x004e7860 (333)
-- [ ] unnamed bw3 0x004e7dc0 (227)
-- [ ] unnamed bw3 0x004e85a0 (590)
-- [ ] unnamed bw3 0x004e8f2e (8)
-- [ ] unnamed bw3 0x004e8f80 (357)
-- [ ] unnamed bw3 0x004e94f0 (1042)
-- [ ] unnamed bw3 0x004ea280 (146)
-- [ ] unnamed bw3 0x004eadf0 (45)
-- [ ] unnamed bw3 0x004eae80 (1761)
+- [ ] unnamed bw3 0x004e8f30 (7)
 
 ### `core/mine.cpp`
 - [ ] `staticInit` bw2 0x005ad360 (9)
@@ -10878,54 +10688,26 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/mirror.cpp`
 - [ ] unnamed bw1 0x00518810 (2)
-- [ ] unnamed bw1 0x00519920, bw2 0x004fa9d0, bw3 0x004f50f0 (22)
-- [ ] unnamed bw1 0x00519cae, bw2 0x004fad5e, bw3 0x004f547e (118)
-- [ ] unnamed bw1 0x00519ff0, bw2 0x004fb0a0, bw3 0x004f57c0 (60)
-- [ ] unnamed bw1 0x0051a0a0, bw2 0x004fb150, bw3 0x004f5870 (152)
 - [ ] unnamed bw2 0x004f98c0 (2)
 - [ ] unnamed bw3 0x004f3fe0 (2)
 - [ ] unnamed bw3 0x004f5a70 (1)
 
 ### `core/mission.cpp`
+- [ ] `CDemonMission::changeSetName` bw1 0x0051b500, bw2 0x004fc5a0, bw3 0x004f6cd0 (56, differs)
 - [ ] unnamed bw1 0x0051a2d0 (40)
-- [ ] unnamed bw1 0x0051a3b0 (12)
-- [ ] unnamed bw1 0x0051a490, bw3 0x004f5c60 (32)
 - [ ] unnamed bw1 0x0051abf0 (19)
-- [ ] unnamed bw1 0x0051b1d0 (47)
-- [ ] unnamed bw1 0x0051b500, bw3 0x004f6cd0 (56)
-- [ ] unnamed bw1 0x0051b610 (58)
-- [ ] unnamed bw1 0x0051b740 (25)
 - [ ] unnamed bw1 0x0051b7b0 (71)
-- [ ] unnamed bw1 0x0051ba5c, bw3 0x004f722c (40)
-- [ ] unnamed bw1 0x0051bdc0 (77)
-- [ ] unnamed bw1 0x0051bf10, bw2 0x004fcf50, bw3 0x004f76f0 (4, in nocturne)
-- [ ] unnamed bw1 0x0051c240 (151)
 - [ ] unnamed bw1 0x0051c410 (2)
-- [ ] unnamed bw2 0x004fb380 (39)
-- [ ] unnamed bw2 0x004fb450 (12)
-- [ ] unnamed bw2 0x004fb530 (32)
 - [ ] unnamed bw2 0x004fbc90 (19)
-- [ ] unnamed bw2 0x004fc270 (47)
-- [ ] unnamed bw2 0x004fc5a0 (56)
-- [ ] unnamed bw2 0x004fc7b0 (25)
 - [ ] unnamed bw2 0x004fc820 (71)
-- [ ] unnamed bw2 0x004fce00 (77)
-- [ ] unnamed bw2 0x004fd280 (151)
 - [ ] unnamed bw2 0x004fd450 (2)
 - [ ] unnamed bw3 0x004f5aa0 (40)
-- [ ] unnamed bw3 0x004f5b80 (12)
 - [ ] unnamed bw3 0x004f63c0 (19)
-- [ ] unnamed bw3 0x004f69a0 (47)
-- [ ] unnamed bw3 0x004f6de0 (58)
-- [ ] unnamed bw3 0x004f6f10 (25)
 - [ ] unnamed bw3 0x004f6f80 (71)
-- [ ] unnamed bw3 0x004f7590 (78)
-- [ ] unnamed bw3 0x004f7a20 (151)
 - [ ] unnamed bw3 0x004f7bf0 (2)
 
 ### `core/mobster.cpp`
 - [ ] unnamed bw1 0x0051c5e0 (67)
-- [ ] unnamed bw1 0x0051e5d0 (346)
 - [ ] unnamed bw2 0x004fd620 (67)
 
 ### `core/moocow.cpp`
@@ -10949,40 +10731,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x005027b0 (34)
 
 ### `core/morph.cpp`
-- [ ] unnamed bw1 0x00523880 (7)
 - [ ] unnamed bw1 0x005238c0, bw3 0x004fb1c0 (13)
-- [ ] unnamed bw1 0x005238f0 (8)
+- [ ] unnamed bw1 0x005238f0, bw3 0x004fb1f0 (8)
 - [ ] unnamed bw1 0x00523910, bw3 0x004fb210 (34)
-- [ ] unnamed bw2 0x005b7720 (7)
-- [ ] unnamed bw3 0x004fb180 (7)
-- [ ] unnamed bw3 0x004fb1f0 (8)
 
 ### `core/motion.cpp`
-- [x] unnamed bw1 0x00523980, bw3 0x004fb280 (356)
-- [ ] unnamed bw1 0x00523db0, bw3 0x004fb6b0 (44)
-- [ ] unnamed bw1 0x00523e2e, bw3 0x004fb72e (222)
-- [ ] unnamed bw1 0x00524970, bw2 0x005037d0, bw3 0x004fc280 (25)
+- [ ] unnamed bw1 0x00523db0, bw3 0x004fb6b0 (266)
 - [ ] unnamed bw1 0x005249b0, bw2 0x00503810, bw3 0x004fc2c0 (33)
-- [ ] unnamed bw1 0x00524a40, bw3 0x004fc350 (54)
-- [x] unnamed bw1 0x00524ba0, bw3 0x004fc4b0 (167)
-- [x] unnamed bw1 0x00524d70, bw3 0x004fc680 (155)
-- [ ] unnamed bw1 0x00524f40, bw3 0x004fc850 (79)
-- [ ] unnamed bw1 0x00525020, bw3 0x004fc930 (86)
-- [ ] unnamed bw1 0x00525110, bw3 0x004fca20 (104)
-- [x] unnamed bw1 0x00525240, bw3 0x004fcb50 (118)
-- [ ] unnamed bw1 0x005254b0 (161)
-- [ ] unnamed bw2 0x00502820 (337)
-- [ ] unnamed bw2 0x00502c1e (253)
-- [ ] unnamed bw2 0x005035c0 (11)
-- [ ] unnamed bw2 0x005038a0 (58)
-- [ ] unnamed bw2 0x00503a10 (159)
-- [ ] unnamed bw2 0x00503d80 (81)
-- [ ] unnamed bw2 0x00503e60 (88)
-- [ ] unnamed bw2 0x00503f50 (106)
-- [ ] unnamed bw2 0x00504080 (113)
-- [ ] unnamed bw2 0x005042e0 (161)
+- [ ] unnamed bw2 0x00502c20 (252)
 - [ ] unnamed bw3 0x004fc0c0 (3)
-- [ ] unnamed bw3 0x004fcdc0 (161)
 
 ### `core/muzzle.cpp`
 - [ ] `CMuzzleEffect::init` bw2 0x0059d360 (67)
@@ -11029,12 +10786,9 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/netgame.cpp`
 - [ ] `IpAddr_copy` bw1 0x00530bd0, bw2 0x0050f9c0, bw3 0x005084a0 (6)
-- [ ] unnamed bw1 0x0052c5fc (54)
-- [ ] unnamed bw2 0x0050b10e, bw3 0x00503bee (30)
-- [ ] unnamed bw2 0x0050b41c (1)
-- [ ] unnamed bw2 0x0050b420 (53)
-- [ ] unnamed bw2 0x0050b4d0 (234)
-- [ ] unnamed bw3 0x00503efc (54)
+- [ ] unnamed bw1 0x0052c600 (53)
+- [ ] unnamed bw2 0x0050b110, bw3 0x00503bf0 (29)
+- [ ] unnamed bw3 0x00503f00 (53)
 
 ### `core/npc.cpp`
 - [ ] `CNPC::renderOpaque` bw1 0x00531b10, bw2 0x00510900, bw3 0x00509560 (55)
@@ -11042,35 +10796,22 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x00531eb0, bw2 0x00510ca0, bw3 0x00509b90 (4)
 
 ### `core/particle.cpp`
-- [ ] unnamed bw1 0x00532250 (320)
 - [ ] unnamed bw1 0x00532700 (2)
-- [ ] unnamed bw2 0x00510ef0 (320)
 - [ ] unnamed bw2 0x005113a0 (2)
-- [ ] unnamed bw3 0x00509f30 (320)
 - [ ] unnamed bw3 0x0050a3e0 (2)
 
 ### `core/passngr.cpp`
 - [ ] unnamed bw1 0x00532ea0 (5)
-- [ ] unnamed bw1 0x00532ebe, bw2 0x00511b6e, bw3 0x0050ab9e (7)
-- [ ] unnamed bw1 0x00532edc, bw2 0x00511b8c, bw3 0x0050abbc (31)
 - [ ] unnamed bw3 0x0050ab80 (5)
 
 ### `core/path.cpp`
-- [ ] unnamed bw1 0x00532f5c, bw2 0x00511c0c, bw3 0x0050ac3c (34)
 - [ ] unnamed bw1 0x00533140, bw2 0x00511df0, bw3 0x0050ae20 (278)
-- [ ] unnamed bw1 0x0053489e, bw2 0x0051354e, bw3 0x0050c57e (69)
-- [ ] unnamed bw1 0x0053543e, bw2 0x005140ee, bw3 0x0050d11e (23)
-
-### `core/platfrm.cpp`
-- [ ] unnamed bw1 0x0053aef0, bw3 0x00512be0 (77)
-- [ ] unnamed bw2 0x00519ba0 (77)
 
 ### `core/podmain.cpp`
 - [ ] unnamed bw1 0x0053d580, bw3 0x005152e0 (117)
-- [ ] unnamed bw1 0x0053d78e (4)
-- [ ] unnamed bw2 0x0051c000 (83, in nocturne)
-- [ ] unnamed bw2 0x0051c18e (4)
-- [ ] unnamed bw3 0x005154ee (4)
+- [ ] unnamed bw1 0x0053d790 (3)
+- [ ] unnamed bw2 0x0051c190 (3)
+- [ ] unnamed bw3 0x005154f0 (3)
 
 ### `core/prye.cpp`
 - [ ] `staticInit` bw3 0x00517c20 (29)
@@ -11080,10 +10821,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::createDefaultWeapon` bw3 0x00518430 (184)
 - [ ] `CPrye::setup` bw3 0x00518680 (281)
 - [ ] `CPrye::process` bw3 0x00518ab0 (145)
+- [ ] `CPrye::getFlashlightMinAngle` bw3 0x0051c0a0 (26)
+- [ ] `CPrye::updateTurnBlending` bw3 0x0051e380 (211)
 - [ ] `CPrye::setPositionAndOrientation` bw3 0x0051e690 (25)
+- [ ] `CPrye::makeDrawDecision` bw3 0x0051e6d0 (495)
+- [ ] `CPrye::updateWeaponPosition` bw3 0x0051f360 (83)
 - [ ] `CPrye::archive` bw3 0x00521f40 (86)
 - [ ] `CPrye::renderOpaque` bw3 0x005220d0 (549)
 - [ ] `CPrye::renderTransparent` bw3 0x00522880 (19)
+- [ ] `CPrye::aimLeftPistol` bw3 0x00523800 (395)
 - [ ] `CPrye::processDamage` bw3 0x00523e50 (230)
 - [ ] `CPrye::updateArmRecoilBlend` bw3 0x00524170 (424)
 - [ ] `CPrye::getCarryObjToBodyXForm` bw3 0x005247b0 (26)
@@ -11100,25 +10846,20 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::dtor` bw3 0x00527300 (31)
 - [ ] unnamed bw3 0x00517c90 (28)
 - [ ] unnamed bw3 0x00517ce0 (20)
-- [ ] unnamed bw3 0x00517d50 (17)
+- [ ] unnamed bw3 0x00517d50 (41)
 - [ ] unnamed bw3 0x00518cd0 (2520)
 - [ ] unnamed bw3 0x0051b550 (718)
-- [ ] unnamed bw3 0x0051c0a0 (26)
 - [ ] unnamed bw3 0x0051c0f0 (3)
 - [ ] unnamed bw3 0x0051c100 (70)
 - [ ] unnamed bw3 0x0051c1c0 (2062)
 - [ ] unnamed bw3 0x0051e280 (70)
-- [ ] unnamed bw3 0x0051e380 (211)
-- [ ] unnamed bw3 0x0051e6d0 (495)
 - [ ] unnamed bw3 0x0051ee10 (373)
-- [ ] unnamed bw3 0x0051f360 (83)
 - [ ] unnamed bw3 0x0051f490 (1557)
 - [ ] unnamed bw3 0x00520d20 (36)
 - [ ] unnamed bw3 0x00520da0 (20)
-- [ ] unnamed bw3 0x00520dec (346)
+- [ ] unnamed bw3 0x00520df0 (345)
 - [ ] unnamed bw3 0x00521880 (494)
 - [ ] unnamed bw3 0x00522b00 (771)
-- [ ] unnamed bw3 0x00523800 (395)
 - [ ] unnamed bw3 0x00524800 (38)
 - [ ] unnamed bw3 0x00524940 (999)
 - [ ] unnamed bw3 0x00525930 (44)
@@ -11180,101 +10921,63 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x005a3560 (450)
 
 ### `core/script.cpp`
-- [ ] unnamed bw1 0x00543740, bw2 0x00521630, bw3 0x00528d50 (23)
 - [ ] unnamed bw1 0x00543e00, bw2 0x00521cf0, bw3 0x00529410 (152)
 - [ ] unnamed bw1 0x00544100, bw2 0x00521ff0, bw3 0x00529710 (57)
-- [ ] unnamed bw2 0x00522350 (7553)
 - [ ] unnamed bw2 0x0052a6a0 (4)
 
 ### `core/set.cpp`
 - [ ] unnamed bw1 0x0054cf40 (21)
 - [ ] unnamed bw1 0x0054cf80, bw2 0x0052bca0 (40)
-- [ ] unnamed bw1 0x0054d3c0 (1122)
-- [ ] unnamed bw1 0x0054e69e, bw2 0x0052d3be (334)
-- [ ] unnamed bw1 0x00550580 (649)
+- [ ] unnamed bw1 0x0054e6a0, bw2 0x0052d3c0 (333)
 - [ ] unnamed bw1 0x00550da0 (310)
-- [ ] unnamed bw1 0x00551170 (263)
 - [ ] unnamed bw1 0x00551480 (177)
 - [ ] unnamed bw1 0x005516c0 (172)
 - [ ] unnamed bw1 0x00551990, bw2 0x005306e0, bw3 0x00537320 (42)
-- [ ] unnamed bw1 0x00552d40, bw2 0x00531a90, bw3 0x005386d0 (159)
-- [ ] unnamed bw1 0x00554440, bw3 0x00539dd0 (99)
-- [ ] unnamed bw1 0x0055517e, bw2 0x00533ece (43)
 - [ ] unnamed bw1 0x00555930, bw2 0x00534680, bw3 0x0053b2c0 (17)
 - [ ] unnamed bw1 0x00555d20, bw3 0x0053b6e0 (92)
-- [ ] unnamed bw1 0x00555e30 (143)
 - [ ] unnamed bw1 0x005561a0, bw2 0x00534d80, bw3 0x0053bb60 (7)
 - [ ] unnamed bw2 0x0052bc60 (21)
-- [ ] unnamed bw2 0x0052f2a0 (653)
 - [ ] unnamed bw2 0x0052fad0 (310)
 - [ ] unnamed bw2 0x0052fea0 (276)
 - [ ] unnamed bw2 0x005301d0 (177)
 - [ ] unnamed bw2 0x00530410 (172)
-- [ ] unnamed bw2 0x00533190 (99)
 - [ ] unnamed bw3 0x00532630 (32)
 - [ ] unnamed bw3 0x005326b0 (82)
-- [ ] unnamed bw3 0x00532b80 (1122)
-- [ ] unnamed bw3 0x00533e5e (334)
-- [ ] unnamed bw3 0x00535da0 (649)
-- [ ] unnamed bw3 0x005365c0 (310)
+- [ ] unnamed bw3 0x00533e60 (333)
 - [ ] unnamed bw3 0x00536990 (255)
 - [ ] unnamed bw3 0x00536c90 (224)
 - [ ] unnamed bw3 0x00536f90 (219)
-- [ ] unnamed bw3 0x0053ab0e (43)
-- [ ] unnamed bw3 0x0053b460 (122)
-- [ ] unnamed bw3 0x0053b7f0 (143)
 
 ### `core/setcolid.cpp`
 - [ ] unnamed bw1 0x005562c0, bw3 0x0053bc80 (855)
 - [ ] unnamed bw1 0x00557300, bw3 0x0053ccc0 (149)
 - [ ] unnamed bw1 0x005574c0, bw3 0x0053ce80 (116)
-- [ ] unnamed bw1 0x00557630, bw2 0x00536210, bw3 0x0053cff0 (183)
-- [ ] unnamed bw1 0x005578b0, bw3 0x0053d270 (349)
-- [ ] unnamed bw1 0x005580d0, bw2 0x00536cb0, bw3 0x0053da90 (266)
-- [ ] unnamed bw1 0x00558450, bw3 0x0053de10 (617)
-- [ ] unnamed bw1 0x00559350, bw3 0x0053ed10 (39)
 - [ ] unnamed bw2 0x00534ea0 (855)
 - [ ] unnamed bw2 0x00535ee0 (149)
 - [ ] unnamed bw2 0x005360a0 (116)
-- [ ] unnamed bw2 0x00536490 (349)
-- [ ] unnamed bw2 0x00537030 (617)
-- [ ] unnamed bw2 0x00537f30 (39)
 
 ### `core/setdir.cpp`
 - [ ] unnamed bw1 0x00559c10 (98)
-- [ ] unnamed bw1 0x00559f80 (1135)
-- [ ] unnamed bw1 0x0055b220, bw3 0x00540be0 (36, in nocturne)
-- [ ] unnamed bw1 0x0055b280, bw3 0x00540c40 (56)
 - [ ] unnamed bw1 0x0055b330, bw3 0x00540cf0 (117)
-- [ ] unnamed bw1 0x0055b4f0, bw3 0x00540eb0 (248)
-- [ ] unnamed bw1 0x0055b990, bw3 0x00541350 (80)
-- [ ] unnamed bw1 0x0055c060, bw3 0x00541a20 (33)
 - [ ] unnamed bw1 0x0055c0a0 (1)
 - [ ] unnamed bw2 0x00538d10 (702)
-- [ ] unnamed bw2 0x00539860 (33)
-- [ ] unnamed bw2 0x005398d0 (113)
-- [ ] unnamed bw2 0x0053a090 (80)
 - [ ] unnamed bw3 0x0053f5d0 (98)
-- [ ] unnamed bw3 0x0053f940 (1135)
 - [ ] unnamed bw3 0x00541a60 (1)
-
-### `core/setutil.cpp`
-- [ ] unnamed bw1 0x0055d9c0, bw2 0x0053c0f0, bw3 0x00543380 (35, in nocturne)
 
 ### `core/shadow.cpp`
 - [ ] `staticInit` bw1 0x0055da40, bw2 0x0053c170, bw3 0x00543400 (23, differs)
 - [ ] `factoryFuncShadow` bw1 0x0055daa0, bw2 0x0053c1d0, bw3 0x005434d0 (10, differs)
 - [ ] `CShadow::getActorType` bw1 0x0055dac0, bw2 0x0053c1f0, bw3 0x005434f0 (2)
 - [ ] `CShadow::ctor` bw1 0x0055dad0, bw2 0x0053c200, bw3 0x00543500 (41, differs)
-- [ ] `CShadow::setup` bw1 0x0055dbf0 (122)
-- [ ] `CShadow::process` bw1 0x0055de50 (1411)
-- [ ] `CShadow::setWalkTarget` bw1 0x0055f3d0, bw3 0x00544fd0 (14)
-- [ ] `CShadow::renderOpaque` bw1 0x0055fbf0 (39)
-- [ ] `CShadow::renderTransparent` bw1 0x0055fc60 (124)
-- [ ] `CShadow::archive` bw1 0x0055fe00 (46)
-- [ ] `CShadow::processDamage` bw1 0x0055fea0 (195)
-- [ ] `CShadow::getDeathState` bw1 0x00560110 (21)
-- [ ] `CShadow::getTargetPoints` bw1 0x00560150 (39)
+- [ ] `CShadow::setup` bw1 0x0055dbf0, bw2 0x0053c310 (122, differs)
+- [ ] `CShadow::process` bw1 0x0055de50, bw2 0x0053c500 (1411, differs)
+- [ ] `CShadow::setWalkTarget` bw1 0x0055f3d0, bw2 0x0053df10, bw3 0x00544fd0 (14, differs)
+- [ ] `CShadow::renderOpaque` bw1 0x0055fbf0, bw2 0x0053e640 (39, differs)
+- [ ] `CShadow::renderTransparent` bw1 0x0055fc60, bw2 0x0053e6c0 (124, differs)
+- [ ] `CShadow::archive` bw1 0x0055fe00, bw2 0x0053e860 (46, differs)
+- [ ] `CShadow::processDamage` bw1 0x0055fea0, bw2 0x0053ea00 (195, differs)
+- [ ] `CShadow::getDeathState` bw1 0x00560110, bw2 0x0053ec30 (21, differs)
+- [ ] `CShadow::getTargetPoints` bw1 0x00560150, bw2 0x0053ec70 (39, differs)
 - [ ] `CShadow::dtor` bw1 0x005603b0, bw2 0x0053eed0, bw3 0x005461d0 (47, differs)
 - [ ] `CShadowForest::ctor` bw3 0x00545ea0 (19)
 - [ ] `CSpiritShadow::ctor` bw3 0x00545f30 (19)
@@ -11290,23 +10993,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x0055f590 (21)
 - [ ] unnamed bw1 0x0055f5e0 (21)
 - [ ] unnamed bw1 0x0055f9c0 (132)
-- [ ] unnamed bw1 0x005601bc (185)
-- [ ] unnamed bw2 0x0053c310 (98)
-- [ ] unnamed bw2 0x0053c500 (1742)
-- [ ] unnamed bw2 0x0053df10 (14)
+- [ ] unnamed bw1 0x005601c0 (184)
 - [ ] unnamed bw2 0x0053df40 (19)
 - [ ] unnamed bw2 0x0053df80 (19)
 - [ ] unnamed bw2 0x0053dfc0 (19)
 - [ ] unnamed bw2 0x0053e000 (19)
 - [ ] unnamed bw2 0x0053e040 (19)
 - [ ] unnamed bw2 0x0053e080 (350)
-- [ ] unnamed bw2 0x0053e640 (46)
-- [ ] unnamed bw2 0x0053e6c0 (124)
-- [ ] unnamed bw2 0x0053e860 (82)
 - [ ] unnamed bw2 0x0053e9a0 (33)
-- [ ] unnamed bw2 0x0053ea00 (164)
-- [ ] unnamed bw2 0x0053ec30 (21)
-- [ ] unnamed bw2 0x0053ec70 (39)
 - [ ] unnamed bw2 0x0053ece0 (184)
 - [ ] unnamed bw3 0x00543680 (115)
 - [ ] unnamed bw3 0x005438d0 (1523)
@@ -11350,108 +11044,28 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x005610e0 (19)
 
 ### `core/skeleton.cpp`
-- [ ] unnamed bw1 0x00562f70, bw3 0x00547b90 (32)
-- [ ] unnamed bw1 0x005635a0, bw2 0x00540f30, bw3 0x00548140 (68, in nocturne)
-- [ ] unnamed bw1 0x005639e0 (122)
-- [ ] unnamed bw1 0x00563b70, bw3 0x00548710 (21)
-- [ ] unnamed bw1 0x00563cb0, bw2 0x00541640, bw3 0x00548850 (148)
-- [ ] unnamed bw1 0x00563e90, bw2 0x00541820, bw3 0x00548a30 (120)
-- [ ] unnamed bw1 0x00564b1c (1)
-- [ ] unnamed bw1 0x00564b20 (160)
-- [ ] unnamed bw1 0x00564d3e (81)
-- [ ] unnamed bw1 0x005660c0 (206)
-- [ ] unnamed bw1 0x00567360 (2)
-- [ ] unnamed bw1 0x005674d0, bw3 0x0054c060 (13)
-- [ ] unnamed bw1 0x00567620, bw3 0x0054c1b0 (683)
-- [ ] unnamed bw1 0x00568100 (444)
-- [ ] unnamed bw1 0x00568e30, bw3 0x0054d9c0 (132)
-- [ ] unnamed bw1 0x00569040, bw3 0x0054dbd0 (74)
-- [ ] unnamed bw1 0x00569130, bw2 0x00546a90, bw3 0x0054dcc0 (24)
-- [ ] unnamed bw1 0x00569440, bw2 0x00546da0, bw3 0x0054dfd0 (121)
-- [ ] unnamed bw1 0x005698d0, bw2 0x00547230, bw3 0x0054e460 (28)
-- [ ] unnamed bw1 0x00569ae0, bw3 0x0054e670 (8)
-- [ ] unnamed bw1 0x00569b00, bw3 0x0054e690 (8)
-- [ ] unnamed bw1 0x00569fb0, bw3 0x0054eb40 (142)
-- [ ] unnamed bw1 0x0056a220, bw3 0x0054edb0 (159)
-- [ ] unnamed bw1 0x0056a410, bw3 0x0054efa0 (50)
-- [ ] unnamed bw1 0x0056a4b0, bw3 0x0054f040 (161)
-- [ ] unnamed bw1 0x0056ae70, bw3 0x0054fa00 (93)
-- [ ] unnamed bw1 0x0056b360, bw3 0x0054fef0 (141)
-- [ ] unnamed bw1 0x0056b520 (85)
-- [ ] unnamed bw1 0x0056b610, bw3 0x005501a0 (18)
-- [ ] unnamed bw1 0x0056b740, bw3 0x005502d0 (20)
-- [ ] unnamed bw1 0x0056b780, bw3 0x00550310 (59)
-- [ ] unnamed bw1 0x0056b830, bw2 0x00549180, bw3 0x005503c0 (11)
-- [ ] unnamed bw1 0x0056b860, bw3 0x005503f0 (30)
-- [ ] unnamed bw1 0x0056b8c0, bw3 0x00550450 (54)
-- [ ] unnamed bw2 0x00540980 (32)
-- [ ] unnamed bw2 0x00541370 (122)
-- [ ] unnamed bw2 0x00541500 (21)
-- [ ] unnamed bw2 0x005424ac (1)
-- [ ] unnamed bw2 0x005424b0 (155)
-- [ ] unnamed bw2 0x005426be (81)
-- [ ] unnamed bw2 0x00543a40 (206)
-- [ ] unnamed bw2 0x00544cc0 (2)
-- [ ] unnamed bw2 0x00544e30 (13, in nocturne)
-- [ ] unnamed bw2 0x00544f80 (684)
-- [ ] unnamed bw2 0x00545a60 (444)
-- [ ] unnamed bw2 0x00546790 (132)
-- [ ] unnamed bw2 0x005469a0 (74)
-- [ ] unnamed bw2 0x00547910 (143)
-- [ ] unnamed bw2 0x00547b80 (159)
-- [ ] unnamed bw2 0x00547d70 (50)
-- [ ] unnamed bw2 0x00547e10 (161)
-- [ ] unnamed bw2 0x005487d0 (93)
-- [ ] unnamed bw2 0x00548cc0 (141)
-- [ ] unnamed bw2 0x00548e80 (87)
-- [ ] unnamed bw2 0x00548f80 (18)
-- [ ] unnamed bw2 0x00549090 (20)
-- [ ] unnamed bw2 0x005490d0 (59)
-- [ ] unnamed bw2 0x005491b0 (30)
-- [ ] unnamed bw2 0x00549210 (54)
-- [ ] unnamed bw3 0x00548580 (122)
-- [ ] unnamed bw3 0x005496bc (1)
-- [ ] unnamed bw3 0x005496c0 (155)
-- [ ] unnamed bw3 0x005498ce (81)
-- [ ] unnamed bw3 0x0054ac50 (206)
-- [ ] unnamed bw3 0x0054bef0 (2)
-- [ ] unnamed bw3 0x005500b0 (85)
+- [ ] `clearModelAndSkeletonInUseFlags` bw1 0x0056b830, bw2 0x00549180, bw3 0x005503c0 (11)
+- [ ] `freeUnusedModelsAndSkeletons` bw1 0x0056b860, bw2 0x005491b0, bw3 0x005503f0 (30, differs)
+- [ ] `markModelInUse` bw1 0x0056b8c0, bw2 0x00549210, bw3 0x00550450 (54, differs)
 - [ ] unnamed bw3 0x00550580 (1)
-
-### `core/slew.cpp`
-- [ ] unnamed bw1 0x0056ba00, bw2 0x00549380, bw3 0x00550590 (17, in nocturne)
-- [ ] unnamed bw1 0x0056ba50 (341)
-- [ ] unnamed bw2 0x005493d0 (341)
-- [ ] unnamed bw3 0x005505e0 (341)
 
 ### `core/smiley.cpp`
 - [ ] `factoryFuncSmiley` bw1 0x0056be20, bw2 0x005497a0 (10, differs, in nocturne)
 
 ### `core/sound.cpp`
 - [ ] `shutdownSoundSystem` bw1 0x0057cb90, bw2 0x0055a160, bw3 0x0055fcc0 (2)
-- [ ] unnamed bw1 0x0057be00, bw2 0x005593d0, bw3 0x0055ef30 (85, in nocturne)
-- [ ] unnamed bw1 0x0057c4de, bw2 0x00559aae, bw3 0x0055f60e (43)
-- [ ] unnamed bw1 0x0057c57e (298)
-- [ ] unnamed bw1 0x0057cb30, bw2 0x0055a100, bw3 0x0055fc60 (24)
-- [ ] unnamed bw1 0x0057cc00, bw3 0x0055fd30 (117)
-- [ ] unnamed bw1 0x0057daac, bw2 0x0055b05c, bw3 0x00560bdc (11)
-- [ ] unnamed bw2 0x00559b4e (298)
-- [ ] unnamed bw2 0x0055a1d0 (112)
-- [ ] unnamed bw3 0x0055f6ae (298)
+- [ ] unnamed bw1 0x0057c4e0, bw2 0x00559ab0, bw3 0x0055f610 (42)
 
 ### `core/spawner.cpp`
 - [ ] `staticInit` bw3 0x00563840 (9)
 - [ ] `factoryFuncSpawner` bw3 0x00563870 (10)
 - [ ] `CSpawner::getActorType` bw3 0x00563890 (2)
 - [ ] `CSpawner::ctor` bw3 0x005638a0 (21)
+- [ ] `CSpawner::setup` bw3 0x00563910 (40)
+- [ ] `CSpawner::process` bw3 0x00563970 (346)
 - [ ] `CSpawner::dtor` bw3 0x00563f70 (37)
-- [ ] unnamed bw3 0x00563910 (40)
-- [ ] unnamed bw3 0x00563970 (346)
 - [ ] unnamed bw3 0x00563e40 (2)
 - [ ] unnamed bw3 0x00563e50 (74)
-
-### `core/spike.cpp`
-- [ ] unnamed bw1 0x00583700, bw3 0x00566fd0 (372)
 
 ### `core/spirbear.cpp`
 - [ ] `staticInit` bw3 0x0059aa40 (9)
@@ -11503,8 +11117,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSpiritIndian::dtor` bw3 0x0059a970 (67)
 
 ### `core/spline.cpp`
-- [ ] unnamed bw1 0x00583d60, bw2 0x00561310, bw3 0x00567630 (126)
-- [ ] unnamed bw1 0x00583f90, bw2 0x00561540, bw3 0x00567860 (135)
 - [ ] unnamed bw1 0x005841d0, bw2 0x00561780 (136)
 
 ### `core/sps.cpp`
@@ -11528,24 +11140,15 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/stranger.cpp`
 - [ ] unnamed bw1 0x00585040 (20)
-- [ ] unnamed bw1 0x005881d0 (516)
-- [ ] unnamed bw1 0x00588a10 (70)
 - [ ] unnamed bw1 0x00589f10 (70)
 - [ ] unnamed bw1 0x0058a010 (211)
 - [ ] unnamed bw1 0x0058afe0 (1158)
-- [ ] unnamed bw1 0x005906e0 (38)
 - [ ] unnamed bw2 0x005625c0 (20)
-- [ ] unnamed bw2 0x005656f0 (516)
-- [ ] unnamed bw2 0x00565f30 (70)
-- [ ] unnamed bw2 0x00565ff0 (1285)
-- [ ] unnamed bw2 0x00567430 (70)
 - [ ] unnamed bw2 0x00567530 (211)
 - [ ] unnamed bw2 0x00568500 (1075)
 - [ ] unnamed bw2 0x0056a160 (36)
-- [ ] unnamed bw2 0x0056a1e0 (22)
-- [ ] unnamed bw2 0x0056bd4e, bw3 0x0052294e (142)
+- [ ] unnamed bw2 0x0056bd50, bw3 0x00522950 (141)
 - [ ] unnamed bw2 0x0056bf00 (642)
-- [ ] unnamed bw2 0x0056da90 (38)
 
 ### `core/styldemo.cpp`
 - [ ] `staticInit` bw3 0x0059e010 (9)
@@ -11583,6 +11186,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncTawiscara` bw3 0x00593da0 (10)
 - [ ] `CTawiscara::getActorType` bw3 0x00593dc0 (2)
 - [ ] `CTawiscara::ctor` bw3 0x00593dd0 (31)
+- [ ] `CTawiscara::setup` bw3 0x00593e80 (90)
+- [ ] `CTawiscara::process` bw3 0x00594000 (1613)
 - [ ] `CTawiscara::setWalkTarget` bw3 0x005956d0 (18)
 - [ ] `CTawiscara::renderTransparent` bw3 0x00595d20 (111)
 - [ ] `CTawiscara::archive` bw3 0x00595e90 (68)
@@ -11590,28 +11195,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CTawiscara::getDeathState` bw3 0x005962d0 (22)
 - [ ] `CTawiscara::getTargetPoints` bw3 0x00596310 (39)
 - [ ] `CTawiscara::dtor` bw3 0x00596570 (47)
-- [ ] unnamed bw3 0x00593e80 (90)
-- [ ] unnamed bw3 0x00594000 (1613)
 - [ ] unnamed bw3 0x00595710 (20)
 - [ ] unnamed bw3 0x00595760 (350)
 - [ ] unnamed bw3 0x00596380 (184)
 
-### `core/teleport.cpp`
-- [ ] unnamed bw2 0x005722b0 (2)
-
-### `core/tentacle.cpp`
-- [ ] unnamed bw2 0x005732e0 (65)
-
 ### `core/terrain.cpp`
-- [ ] unnamed bw2 0x0057b9a0 (7)
-- [ ] unnamed bw2 0x0057b9c0 (3)
-- [ ] unnamed bw2 0x0057b9d0 (3)
-- [ ] unnamed bw2 0x0057ba00 (2)
-- [ ] unnamed bw2 0x0057ba10 (2)
-- [ ] unnamed bw2 0x0057ba20 (17)
+- [ ] unnamed bw2 0x0057b9e0 (3)
 
 ### `core/texlist.cpp`
-- [ ] unnamed bw1 0x00596390, bw2 0x00573770, bw3 0x00569380 (112, in nocturne)
 - [ ] unnamed bw1 0x00596560, bw2 0x00573940, bw3 0x00569550 (14)
 
 ### `core/thehand.cpp`
@@ -11630,17 +11221,7 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/toxhand.cpp`
 - [ ] `staticInit` bw3 0x0056c000 (9)
-- [ ] unnamed bw3 0x0056c900 (90)
-
-### `core/trigger.cpp`
-- [ ] unnamed bw1 0x0059bee0, bw3 0x0056eed0 (65)
-- [ ] unnamed bw1 0x0059c090, bw3 0x0056f080 (241)
-- [ ] unnamed bw2 0x00578650 (65)
-- [ ] unnamed bw2 0x00578800 (241)
-
-### `core/turret.cpp`
-- [ ] unnamed bw1 0x005a2d00 (413)
-- [ ] unnamed bw2 0x0057f0b0 (413)
+- [ ] `CTheHand::findNearbyTarget` bw3 0x0056c900 (90)
 
 ### `core/tvbat.cpp`
 - [ ] unnamed bw3 0x005760f0 (2)
@@ -11703,11 +11284,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLava::getActorType` bw3 0x00579010 (2)
 - [ ] `CLava::ctor` bw3 0x00579020 (7)
 - [ ] `CLava::dtor` bw3 0x00579050 (31)
-- [ ] unnamed bw1 0x005aacd0 (77)
 - [ ] unnamed bw1 0x005aadb0 (82)
-- [ ] unnamed bw2 0x005870a0 (77)
 - [ ] unnamed bw2 0x00587180 (82)
-- [ ] unnamed bw3 0x00578490 (77)
 - [ ] unnamed bw3 0x00578570 (82)
 - [ ] unnamed bw3 0x00578ff0 (10)
 
@@ -11718,20 +11296,11 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/weapon.cpp`
 - [ ] `CWeapon::renderTransparent` bw3 0x0057b040 (73)
-- [ ] unnamed bw1 0x005ade40, bw3 0x0057ba10 (103)
-- [ ] unnamed bw2 0x0058a2f0 (103)
 - [ ] unnamed bw2 0x0058a5f0 (9)
 - [ ] unnamed bw3 0x0057b030 (4)
 
 ### `core/weather.cpp`
-- [ ] unnamed bw1 0x005ae190 (289)
 - [ ] unnamed bw1 0x005ae560, bw3 0x0057c2c0 (5)
-- [ ] unnamed bw3 0x0057bd80 (10)
-- [ ] unnamed bw3 0x0057bda0 (380)
-- [ ] unnamed bw3 0x0057c2e0 (339)
-- [ ] unnamed bw3 0x0057c890 (496)
-- [ ] unnamed bw3 0x0057d050 (81)
-- [ ] unnamed bw3 0x0057d1a0 (192)
 - [ ] unnamed bw3 0x0057d420 (41)
 
 ### `core/weaver.cpp`
@@ -11756,14 +11325,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x0057fad0 (184)
 
 ### `core/xform.cpp`
-- [ ] unnamed bw1 0x005b5080, bw2 0x00591530, bw3 0x00583260 (53)
-- [ ] unnamed bw1 0x005b54d0, bw2 0x00591980, bw3 0x005836b0 (110)
-- [ ] unnamed bw1 0x005b5620, bw2 0x00591ad0, bw3 0x00583800 (110)
-- [ ] unnamed bw1 0x005b5760, bw2 0x00591c10, bw3 0x00583940 (86)
-- [ ] unnamed bw1 0x005b6270, bw2 0x00592720, bw3 0x00584450 (22)
-- [ ] unnamed bw1 0x005b62b0, bw2 0x00592760, bw3 0x00584490 (28)
 - [ ] unnamed bw1 0x005b6920, bw2 0x00592dd0, bw3 0x00584b00 (288)
-- [ ] unnamed bw1 0x005b708e, bw2 0x0059353e, bw3 0x0058526e (30)
 - [ ] unnamed bw1 0x005b7c00, bw2 0x005940b0, bw3 0x00585de0 (130)
 - [ ] unnamed bw1 0x005b7d60, bw2 0x00594210, bw3 0x00585f40 (131)
 - [ ] unnamed bw1 0x005b7ed0, bw2 0x00594380, bw3 0x005860b0 (94)
@@ -11774,18 +11336,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncYow` bw1 0x005b8130, bw3 0x00586310 (10, differs)
 - [ ] `CYow::getActorType` bw1 0x005b8150, bw3 0x00586330 (2)
 - [ ] `CYow::ctor` bw1 0x005b8160, bw3 0x00586340 (23, differs)
+- [ ] `CYow::setup` bw1 0x005b81d0, bw3 0x005863e0 (143, differs)
+- [ ] `CYow::process` bw1 0x005b8440, bw3 0x00586500 (792, differs)
+- [ ] `CYow::archive` bw1 0x005b9110, bw3 0x00586e50 (28, differs)
+- [ ] `CYow::processDamage` bw1 0x005b9170, bw3 0x00586eb0 (90, differs)
+- [ ] `CYow::getTargetPoints` bw1 0x005b9290, bw3 0x00586fa0 (217)
 - [ ] `CYow::dtor` bw1 0x005b95a0, bw3 0x005872b0 (47, differs)
-- [ ] unnamed bw1 0x005b81d0 (143)
-- [ ] unnamed bw1 0x005b8440 (305)
 - [ ] unnamed bw1 0x005b8eb0 (193)
-- [ ] unnamed bw1 0x005b9110 (28)
-- [ ] unnamed bw1 0x005b9170 (90)
-- [ ] unnamed bw1 0x005b9290 (217)
-- [ ] unnamed bw3 0x005863e0 (59)
-- [ ] unnamed bw3 0x00586500 (732)
-- [ ] unnamed bw3 0x00586e50 (28)
-- [ ] unnamed bw3 0x00586eb0 (77)
-- [ ] unnamed bw3 0x00586fa0 (217)
 
 ### `core/zombie.cpp`
 - [ ] `CZombie::isInvulnerable` bw3 0x0058cbe0 (16)
@@ -11806,18 +11363,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CZombieCemetery::dtor` bw3 0x0058d1a0 (47)
 - [ ] unnamed bw1 0x005ba730 (50)
 - [ ] unnamed bw1 0x005ba7d0 (67)
-- [ ] unnamed bw1 0x005bee7e, bw2 0x00599e0e, bw3 0x005a1bfe (95)
-- [ ] unnamed bw1 0x005bf0de, bw2 0x0059a06e, bw3 0x005a1e5e (23)
+- [ ] unnamed bw1 0x005bee80, bw2 0x00599e10, bw3 0x005a1c00 (94)
+- [ ] unnamed bw1 0x005bf0e0, bw2 0x0059a070, bw3 0x005a1e60 (22)
 - [ ] unnamed bw1 0x005bf120, bw2 0x0059a0b0, bw3 0x005a1ea0 (373)
 - [ ] unnamed bw2 0x005956b0 (50)
 - [ ] unnamed bw2 0x00595750 (67)
-- [ ] unnamed bw2 0x0059aa80 (39)
-- [ ] unnamed bw2 0x0059ab50 (3)
-- [ ] unnamed bw2 0x0059ab60 (1)
-- [ ] unnamed bw2 0x0059ac60 (63)
 - [ ] unnamed bw3 0x005884f0 (50)
 - [ ] unnamed bw3 0x00588590 (67)
-- [ ] unnamed bw3 0x0058cc20 (39)
 - [ ] unnamed bw3 0x0058cc90 (10)
 - [ ] unnamed bw3 0x0058cd20 (10)
 - [ ] unnamed bw3 0x0058cdb0 (10)
@@ -11828,6 +11380,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncZombiePriest` bw3 0x0058d4b0 (10)
 - [ ] `CZombiePriest::getActorType` bw3 0x0058d4d0 (2)
 - [ ] `CZombiePriest::ctor` bw3 0x0058d4e0 (55)
+- [ ] `CZombiePriest::setup` bw3 0x0058d5e0 (223)
+- [ ] `CZombiePriest::process` bw3 0x0058d960 (1108)
 - [ ] `CZombiePriest::getCarryObjToBodyXForm` bw3 0x0058ecd0 (156)
 - [ ] `CZombiePriest::startFiringAttack` bw3 0x0058f4a0 (39)
 - [ ] `CZombiePriest::archive` bw3 0x0058f510 (65)
@@ -11837,25 +11391,18 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CZombiePriest::dtor` bw3 0x0058fc80 (47)
 - [ ] unnamed bw3 0x0058d2f0 (67)
 - [ ] unnamed bw3 0x0058d3b0 (88)
-- [ ] unnamed bw3 0x0058d5e0 (223)
-- [ ] unnamed bw3 0x0058d960 (1108)
 - [ ] unnamed bw3 0x0058e8d0 (279)
 - [ ] unnamed bw3 0x0058efb0 (346)
 - [ ] unnamed bw3 0x0058f610 (2)
 - [ ] unnamed bw3 0x0058f630 (259)
 
 ### `engine/2d.c`
-- [ ] unnamed bw1 0x00401450, bw2 0x00401450, bw3 0x00401450 (108)
-- [ ] unnamed bw1 0x00401590, bw3 0x00401590 (42)
-- [ ] unnamed bw1 0x00402160, bw2 0x00402160, bw3 0x00402160 (27)
 - [ ] unnamed bw1 0x00402800 (2)
 - [ ] unnamed bw1 0x00402810 (3)
 - [ ] unnamed bw1 0x00402830 (4)
 - [ ] unnamed bw1 0x00402840 (2)
 - [ ] unnamed bw1 0x00402850 (3)
 - [ ] unnamed bw1 0x00402860 (3)
-- [ ] unnamed bw1 0x00402c9e (1)
-- [ ] unnamed bw2 0x00401590 (41)
 - [ ] unnamed bw2 0x00402800 (2)
 - [ ] unnamed bw2 0x00402810 (3)
 - [ ] unnamed bw2 0x00402830 (4)
@@ -11868,64 +11415,32 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00402840 (2)
 - [ ] unnamed bw3 0x00402850 (3)
 - [ ] unnamed bw3 0x00402860 (3)
-- [ ] unnamed bw3 0x00402c9e (1)
 
 ### `engine/3d.c`
 - [ ] unnamed bw1 0x00403dd0 (2)
 - [ ] unnamed bw1 0x004076c0 (3)
 - [ ] unnamed bw1 0x004076d0 (3)
-- [ ] unnamed bw1 0x004076e0, bw3 0x00407720 (19)
-- [ ] unnamed bw1 0x0040771e, bw3 0x0040775e (12)
-- [ ] unnamed bw1 0x00407d70, bw2 0x00407f40, bw3 0x00407db0 (35, in nocturne)
+- [ ] unnamed bw1 0x00407720, bw2 0x004078f0, bw3 0x00407760 (11)
 - [ ] unnamed bw2 0x00407890 (3)
 - [ ] unnamed bw2 0x004078a0 (3)
-- [ ] unnamed bw2 0x004078b0 (17, in nocturne)
-- [ ] unnamed bw2 0x004078f0 (11)
 - [ ] unnamed bw3 0x00403dd0 (2)
 - [ ] unnamed bw3 0x00407700 (3)
 - [ ] unnamed bw3 0x00407710 (3)
 
 ### `engine/alphabit.cpp`
-- [ ] `staticInit` bw1 0x00415b20, bw3 0x004118e0 (29)
-- [ ] `CAlphaBitmap::arrdtor5` bw1 0x004188d0, bw2 0x0040d400, bw3 0x004144e0 (7, in nocturne)
+- [ ] `CAlphaBitmap::allocate` bw1 0x0040d0e0, bw2 0x0040d460, bw3 0x0040d320 (66)
+- [ ] `CAlphaBitmap::fillOpa` bw1 0x0040d970, bw2 0x0040dd20, bw3 0x0040dbb0 (15)
 - [ ] `CAlphaBitmap::arrdtor4` bw1 0x004188f0, bw2 0x0059bfe0, bw3 0x00414500 (7)
-- [ ] unnamed bw1 0x0040d0e0, bw2 0x0040d460, bw3 0x0040d320 (66)
-- [ ] unnamed bw1 0x0040d1c0, bw2 0x0040d540, bw3 0x0040d400 (34, in nocturne)
-- [ ] unnamed bw1 0x0040d660, bw3 0x0040d8a0 (152)
-- [ ] unnamed bw1 0x0040d970, bw2 0x0040dd20, bw3 0x0040dbb0 (15)
 - [ ] unnamed bw1 0x0040d9a0, bw3 0x0040dbe0 (123)
-- [ ] unnamed bw1 0x00415ba0, bw2 0x0059ab30, bw3 0x00411960 (7)
-- [ ] unnamed bw1 0x00415bc0 (3)
-- [ ] unnamed bw1 0x00415bd0 (1)
-- [ ] unnamed bw1 0x00415be0, bw2 0x0059ab70, bw3 0x004119a0 (21)
-- [ ] unnamed bw1 0x00415c20, bw2 0x0059abb0, bw3 0x004119e0 (20)
-- [ ] unnamed bw1 0x00415c50, bw2 0x0059abe0, bw3 0x00411a10 (20)
-- [ ] unnamed bw1 0x00415c80, bw2 0x0059ac10, bw3 0x00411a40 (30)
-- [ ] unnamed bw1 0x00415cd0 (63)
-- [ ] unnamed bw2 0x0040dca0 (30)
-
-### `engine/boss.c`
-- [ ] unnamed bw1 0x0041d94c (1)
-- [ ] unnamed bw1 0x0041d980, bw2 0x0041a510, bw3 0x0041acc0 (26)
-- [ ] unnamed bw2 0x0041a4dc (1)
-- [ ] unnamed bw3 0x0041ac8c (1)
 
 ### `engine/clipper.c`
-- [ ] unnamed bw1 0x0043d4fe (62)
 - [ ] unnamed bw1 0x0043d880, bw2 0x00432a20, bw3 0x0043b4e0 (7)
-- [ ] unnamed bw3 0x0043ad8e (59)
 - [ ] unnamed bw3 0x0043aed0 (61)
-- [ ] unnamed bw3 0x0043b3bc (70)
-
-### `engine/console.cpp`
-- [ ] unnamed bw1 0x00445430, bw2 0x00436710, bw3 0x00441ff0 (74, in nocturne)
+- [ ] unnamed bw3 0x0043b3c0 (69)
 
 ### `engine/dosio.cpp`
 - [ ] unnamed bw1 0x00478e10 (3)
 - [ ] unnamed bw1 0x00478e20, bw2 0x00460910, bw3 0x00465660 (11)
-- [ ] unnamed bw1 0x00479180, bw2 0x00460c70, bw3 0x004659c0 (71, in nocturne)
-- [ ] unnamed bw1 0x004794b0, bw2 0x00460fa0 (59)
-- [ ] unnamed bw1 0x004795e0, bw2 0x004610d0, bw3 0x00465eb0 (72)
 - [ ] unnamed bw1 0x00479770, bw2 0x00461260, bw3 0x00466040 (100)
 - [ ] unnamed bw1 0x004798c0, bw2 0x004613b0, bw3 0x00466190 (55)
 - [ ] unnamed bw1 0x00479950, bw2 0x00461440, bw3 0x00466220 (8)
@@ -11936,46 +11451,24 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `matrixPush` bw1 0x00483990, bw2 0x0046b490, bw3 0x0046d070 (2)
 - [ ] `pop` bw1 0x004839a0, bw2 0x0046b4a0, bw3 0x0046d080 (2)
 - [ ] `popViewport` bw1 0x00483c40, bw2 0x0046b740, bw3 0x0046d320 (2)
-- [ ] unnamed bw1 0x004820ec, bw2 0x00469bdc (42)
-- [ ] unnamed bw1 0x004824ac, bw2 0x00469f9c, bw3 0x0046bb8c (45)
-- [ ] unnamed bw1 0x0048269e, bw2 0x0046a18e, bw3 0x0046bd7e (38)
-- [ ] unnamed bw1 0x00482a8e, bw3 0x0046c16e (105)
-- [ ] unnamed bw1 0x00482bee, bw3 0x0046c2ce (66)
-- [ ] unnamed bw1 0x0048326e, bw3 0x0046c94e (65)
-- [ ] unnamed bw1 0x00483a20, bw2 0x0046b520, bw3 0x0046d100 (12)
-- [ ] unnamed bw1 0x00483ac0 (16)
-- [ ] unnamed bw1 0x00483ae0, bw2 0x0046b5e0, bw3 0x0046d1c0 (38)
-- [ ] unnamed bw1 0x00483b50 (16)
-- [ ] unnamed bw1 0x00483b70, bw2 0x0046b670, bw3 0x0046d250 (43)
-- [ ] unnamed bw1 0x0048478e, bw2 0x0046c28e, bw3 0x0046de6e (211)
-- [ ] unnamed bw2 0x0046a57e (108)
+- [ ] unnamed bw1 0x004826a0, bw2 0x0046a190, bw3 0x0046bd80 (37)
+- [ ] unnamed bw2 0x0046a580 (107)
 - [ ] unnamed bw2 0x0046ae40 (104)
-- [ ] unnamed bw2 0x0046b5c0 (16)
-- [ ] unnamed bw2 0x0046b650 (16)
-- [ ] unnamed bw3 0x0046b670 (107)
-- [ ] unnamed bw3 0x0046d1a0 (16)
-- [ ] unnamed bw3 0x0046d230 (16)
 
 ### `engine/font.cpp`
 - [ ] unnamed bw1 0x004c0fa0, bw3 0x004afbf0 (346)
 - [ ] unnamed bw1 0x004c1520, bw2 0x004a8540, bw3 0x004b0170 (7)
-- [ ] unnamed bw1 0x004c157e, bw3 0x004b01ce (182)
-- [ ] unnamed bw1 0x004c1830, bw2 0x004a8850, bw3 0x004b0480 (42)
-- [ ] unnamed bw1 0x004c18c0, bw3 0x004b0510 (284)
-- [ ] unnamed bw1 0x004c1dd0, bw3 0x004b0a20 (209)
+- [ ] unnamed bw1 0x004c1580, bw3 0x004b01d0 (181)
 - [ ] unnamed bw1 0x004c2750, bw3 0x004b13a0 (52)
 - [ ] unnamed bw1 0x004c2810, bw2 0x004a9870 (1516)
 - [ ] unnamed bw1 0x004c4030, bw3 0x004b2c10 (168)
 - [ ] unnamed bw1 0x004c4260, bw2 0x004ab2b0, bw3 0x004b2e40 (76)
-- [ ] unnamed bw1 0x004c430e, bw2 0x004ab35e, bw3 0x004b2eee (156)
+- [ ] unnamed bw1 0x004c4310, bw2 0x004ab360, bw3 0x004b2ef0 (155)
 - [ ] unnamed bw1 0x004c47f0, bw2 0x004ab840, bw3 0x004b33d0 (219)
-- [ ] unnamed bw1 0x004c4b9e, bw2 0x004abbee, bw3 0x004b377e (28)
 - [ ] unnamed bw1 0x004c4bf0 (2)
 - [ ] unnamed bw1 0x004c4c51 (77)
-- [ ] unnamed bw1 0x004c4d3e, bw2 0x004abd8e, bw3 0x004b391e (23)
-- [ ] unnamed bw2 0x004a7fe2 (338)
-- [ ] unnamed bw2 0x004a859e (181)
-- [ ] unnamed bw2 0x004a88e0 (284)
+- [ ] unnamed bw2 0x004a7fd0 (343)
+- [ ] unnamed bw2 0x004a85a0 (180)
 - [ ] unnamed bw2 0x004a8df0 (224)
 - [ ] unnamed bw2 0x004a97a0 (58)
 - [ ] unnamed bw2 0x004ab090 (167)
@@ -11986,12 +11479,10 @@ the retail game has it too. Sizes are in instructions.
 ### `engine/ini.cpp`
 - [ ] `CIniFile::dtor` bw1 0x004f4b30, bw2 0x004d8940, bw3 0x004d8a50 (27)
 - [ ] unnamed bw1 0x004f4550, bw2 0x004d8360, bw3 0x004d8470 (149)
-- [ ] unnamed bw1 0x004f4b00, bw2 0x004d8910, bw3 0x004d8a20 (16)
 - [ ] unnamed bw1 0x004f4d10, bw2 0x004d8b20, bw3 0x004d8c30 (33)
 - [ ] unnamed bw1 0x004f4d70, bw2 0x004d8b80, bw3 0x004d8c90 (22)
-- [ ] unnamed bw1 0x004f4db0, bw2 0x004d8bc0, bw3 0x004d8cd0 (34)
 - [ ] unnamed bw1 0x004f4e20, bw2 0x004d8c30, bw3 0x004d8d40 (23)
-- [ ] unnamed bw1 0x004f4e6e, bw2 0x004d8c7e, bw3 0x004d8d8e (37)
+- [ ] unnamed bw1 0x004f4e70, bw2 0x004d8c80, bw3 0x004d8d90 (36)
 - [ ] unnamed bw1 0x004f4ee0, bw2 0x004d8cf0, bw3 0x004d8e00 (26)
 
 ### `engine/light.cpp`
@@ -12000,234 +11491,142 @@ the retail game has it too. Sizes are in instructions.
 ### `engine/matrix.c`
 - [ ] unnamed bw1 0x00507350 (18)
 - [ ] unnamed bw1 0x00507390 (18)
-- [ ] unnamed bw1 0x00507afe (1)
-- [ ] unnamed bw1 0x005093ce, bw2 0x004ea72e, bw3 0x004e6e0e (43)
 - [ ] unnamed bw2 0x004e86b0 (18)
 - [ ] unnamed bw2 0x004e86f0 (18)
-- [ ] unnamed bw2 0x004e8e5e (1)
 - [ ] unnamed bw3 0x004e4d90 (18)
 - [ ] unnamed bw3 0x004e4dd0 (18)
-- [ ] unnamed bw3 0x004e553e (1)
 
 ### `engine/mini3d.cpp`
 - [ ] `staticInit` bw1 0x00510f20, bw2 0x004f2190, bw3 0x004ec6f0 (14)
 - [ ] `CMini3D::ctor` bw1 0x00510f60, bw2 0x004f21d0, bw3 0x004ec730 (39, differs)
 - [ ] `CMini3D::dtor` bw1 0x00511020, bw2 0x004f2290, bw3 0x004ec7f0 (2)
+- [ ] `init` bw1 0x00511030, bw2 0x004f22a0, bw3 0x004ec800 (6)
+- [ ] `kill` bw1 0x00511050, bw2 0x004f22c0, bw3 0x004ec820 (43)
+- [ ] `swapBuffers` bw1 0x00511100, bw2 0x004f2370, bw3 0x004ec8d0 (13)
+- [ ] `lockFrame` bw1 0x00511160, bw2 0x004f23d0, bw3 0x004ec930 (2)
+- [ ] `unlockFrame` bw1 0x00511170, bw2 0x004f23e0, bw3 0x004ec940 (4)
+- [ ] `clear` bw1 0x00511180, bw2 0x004f23f0, bw3 0x004ec950 (6)
+- [ ] `clearZBuffer` bw1 0x005111a0, bw2 0x004f2410, bw3 0x004ec970 (6)
+- [ ] `setCameraOrigin` bw1 0x005111c0, bw2 0x004f2430, bw3 0x004ec990 (8)
+- [ ] `setProjectionScale` bw1 0x005111e0, bw2 0x004f2450, bw3 0x004ec9b0 (3)
+- [ ] `setZoom` bw1 0x005111f0, bw2 0x004f2460, bw3 0x004ec9c0 (4)
+- [ ] `setCameraMatrix` bw1 0x00511240, bw2 0x004f24b0, bw3 0x004eca10 (328)
+- [ ] `setFrameTranslation` bw1 0x005116e0, bw2 0x004f2950, bw3 0x004eceb0 (16)
+- [ ] `getCameraOrigin` bw1 0x00511740, bw2 0x004f29b0 (23)
+- [ ] `getCameraRotation` bw1 0x00511790, bw2 0x004f2a00, bw3 0x004ecf60 (17)
+- [ ] `getZoom` bw1 0x005117c0, bw2 0x004f2a30, bw3 0x004ecf90 (7)
+- [ ] `setFrameTranslation2` bw1 0x005117e0, bw2 0x004f2a50 (16)
+- [ ] `setRenderViewport` bw1 0x00511850, bw2 0x004f2ac0, bw3 0x004ed020 (80, differs)
+- [ ] `getRenderViewport` bw1 0x00511980, bw2 0x004f2ba0, bw3 0x004ed150 (39, differs)
+- [ ] `matrixPushAndTransform` bw1 0x00511a10, bw2 0x004f2be0, bw3 0x004ed1e0 (280, differs)
+- [ ] `matrixPushAndTransformMatrix` bw1 0x00511d50, bw2 0x004f2f20, bw3 0x004ed520 (179, differs)
+- [ ] `matrixPushLoad` bw1 0x00511f50, bw2 0x004f3120, bw3 0x004ed720 (33, differs)
+- [ ] `matrixPush` bw1 0x00511fc0, bw2 0x004f3190, bw3 0x004ed790 (31, differs)
+- [ ] `pop` bw1 0x00512030, bw2 0x004f3200, bw3 0x004ed800 (30, differs)
+- [ ] `pushMatrixRelativeOffset` bw1 0x005120a0, bw2 0x004f3270, bw3 0x004ed870 (46, differs)
+- [ ] `popMatrixRelativeOffset` bw1 0x00512140, bw2 0x004f3310, bw3 0x004ed910 (30, differs)
+- [ ] `useTexture` bw1 0x005121b0, bw2 0x004f3380, bw3 0x004ed980 (8)
+- [ ] `loadTexture` bw1 0x00512200, bw2 0x004f33d0, bw3 0x004ed9d0 (19)
+- [ ] `resetTextureCache` bw1 0x00512250, bw2 0x004f3420, bw3 0x004eda20 (8)
+- [ ] `setTextureClamp` bw1 0x00512270, bw2 0x004f3440, bw3 0x004eda40 (16)
+- [ ] `setRendererOption` bw1 0x005122a0, bw2 0x004f3470, bw3 0x004eda70 (3)
+- [ ] `getTextureHandle` bw1 0x005122b0, bw2 0x004f3480, bw3 0x004eda80 (8)
+- [ ] `setRenderFlags` bw1 0x00512300, bw2 0x004f3550, bw3 0x004edad0 (3)
+- [ ] `setExtraRenderFlags` bw1 0x00512310, bw2 0x004f3560, bw3 0x004edae0 (3)
+- [ ] `setAlpha` bw1 0x00512320, bw2 0x004f3570, bw3 0x004edaf0 (33)
+- [ ] `setFog` bw1 0x005123b0, bw2 0x004f3600, bw3 0x004edb80 (65)
+- [ ] `disableFog` bw1 0x005124c0, bw2 0x004f3710, bw3 0x004edc90 (3)
+- [ ] `enableExtraRenderState` bw1 0x005124d0, bw2 0x004f3720, bw3 0x004edca0 (2)
+- [ ] `disableExtraRenderState` bw1 0x005124e0, bw2 0x004f3730, bw3 0x004edcb0 (3)
+- [ ] `updateTransform` bw1 0x005124f0, bw2 0x004f3740, bw3 0x004edcc0 (105)
+- [ ] `allocVertexList` bw1 0x00512670, bw2 0x004f38c0, bw3 0x004ede40 (24, differs)
+- [ ] `polyList` bw1 0x005126d0, bw2 0x004f3920, bw3 0x004edea0 (209, differs)
+- [ ] `polyList2` bw1 0x00512940, bw2 0x004f3bb0, bw3 0x004ee110 (44, differs)
+- [ ] `polyListD3DL` bw1 0x005129d0, bw2 0x004f3c40, bw3 0x004ee1a0 (154, differs)
+- [ ] `polyListD3DL2` bw1 0x00512bd0, bw2 0x004f3e60, bw3 0x004ee3a0 (44, differs)
+- [ ] `polyListL` bw1 0x00512c60, bw2 0x004f3ef0, bw3 0x004ee430 (127, differs)
+- [ ] `polyListD3DTL` bw1 0x00512de0, bw2 0x004f40a0, bw3 0x004ee5b0 (248, differs)
+- [ ] `lineListD3DTL` bw1 0x00513220, bw2 0x004f44d0, bw3 0x004ee9f0 (22)
+- [ ] `transformVertex` bw1 0x00513260, bw2 0x004f4510, bw3 0x004eea30 (100)
+- [ ] `transformVertexSurface` bw1 0x00513370, bw2 0x004f4620, bw3 0x004eeb40 (100)
+- [ ] `transformVertexOrtho` bw1 0x00513480, bw2 0x004f4730, bw3 0x004eec50 (53)
+- [ ] `getClipFlags` bw1 0x00513600, bw2 0x004f48b0, bw3 0x004eedd0 (86)
+- [ ] `getBehindClipFlag` bw1 0x005136e0, bw2 0x004f4990, bw3 0x004eeeb0 (26)
+- [ ] `rotateByView` bw1 0x00513730, bw2 0x004f49e0, bw3 0x004eef00 (35)
+- [ ] `getTransformMatrix` bw1 0x005137b0, bw2 0x004f4a60, bw3 0x004eef80 (3)
+- [ ] `getProjectedSize` bw1 0x005137c0, bw2 0x004f4a70, bw3 0x004eef90 (44)
+- [ ] `screenToWorldRay` bw1 0x00513850, bw2 0x004f4b00, bw3 0x004ef020 (44)
+- [ ] `getViewDepth` bw1 0x00513900, bw2 0x004f4bb0, bw3 0x004ef0d0 (18)
+- [ ] `isSphereVisible` bw1 0x00513940, bw2 0x004f4bf0, bw3 0x004ef110 (91)
+- [ ] `rotateByInverseCamera` bw1 0x00513a60, bw2 0x004f4d10, bw3 0x004ef230 (30)
+- [ ] `unprojectPoint` bw1 0x00513ad0, bw2 0x004f4d80, bw3 0x004ef2a0 (54)
+- [ ] `setAmbientLight` bw1 0x00513b90, bw2 0x004f4e40, bw3 0x004ef360 (12)
+- [ ] `setLightVector` bw1 0x00513bc0, bw2 0x004f4e70, bw3 0x004ef390 (48, differs)
+- [ ] `lightVertex` bw1 0x00513ca0, bw2 0x004f4f50, bw3 0x004ef470 (311)
+- [ ] `computeVertexFog` bw1 0x005140c0, bw2 0x004f5370, bw3 0x004ef890 (30)
+- [ ] `resetDynamicLight` bw1 0x00514120, bw2 0x004f53d0, bw3 0x004ef8f0 (10)
+- [ ] `addDynamicLight` bw1 0x00514150, bw2 0x004f5400, bw3 0x004ef920 (116)
+- [ ] `dynamicLightHint` bw1 0x005142c0, bw2 0x004f5570, bw3 0x004efa90 (235)
+- [ ] `projectVertex` bw1 0x005145b0, bw2 0x004f5860, bw3 0x004efd80 (59)
+- [ ] `buildLightMatrix` bw1 0x00514650, bw2 0x004f5900, bw3 0x004efe20 (236)
+- [ ] `convertVertexD3DL` bw1 0x005149a0, bw2 0x004f5c50, bw3 0x004f0170 (77)
+- [ ] `convertVertexL` bw1 0x00514aa0, bw2 0x004f5d50, bw3 0x004f0270 (22)
+- [ ] `disableClipping` bw1 0x00514ae0, bw2 0x004f5d90, bw3 0x004f02b0 (12)
+- [ ] `enableClipping` bw1 0x00514b10, bw2 0x004f5dc0, bw3 0x004f02e0 (8)
+- [ ] `isClippingEnabled` bw1 0x00514b30, bw2 0x004f5de0, bw3 0x004f0300 (2)
+- [ ] `setRenderSurface` bw1 0x00514b70, bw2 0x004f5df0, bw3 0x004f0340 (46)
+- [ ] `setClipPlane` bw1 0x00514c40, bw2 0x004f5ec0, bw3 0x004f0410 (9)
+- [ ] `enableUserClip` bw1 0x00514c70, bw2 0x004f5ef0, bw3 0x004f0440 (2)
+- [ ] `disableUserClip` bw1 0x00514c80, bw2 0x004f5f00, bw3 0x004f0450 (3)
+- [ ] `allocVertexBuffer` bw1 0x00514c90, bw2 0x004f5f10, bw3 0x004f0460 (35, differs)
+- [ ] `free32` bw1 0x00514cf0, bw2 0x004f5f70, bw3 0x004f04c0 (20, differs)
+- [ ] `intersectClipPlane0` bw1 0x00514d40, bw2 0x004f5fc0, bw3 0x004f0510 (72)
+- [ ] `intersectClipPlane1` bw1 0x00514e10, bw2 0x004f6090, bw3 0x004f05e0 (71)
+- [ ] `intersectClipPlane2` bw1 0x00514ed0, bw2 0x004f6150, bw3 0x004f06a0 (72)
+- [ ] `intersectClipPlane3` bw1 0x00514fa0, bw2 0x004f6220, bw3 0x004f0770 (73)
+- [ ] `clipAgainstPlane0` bw1 0x00515080, bw2 0x004f6300, bw3 0x004f0850 (94)
+- [ ] `clipAgainstPlane1` bw1 0x005151b0, bw2 0x004f6430, bw3 0x004f0980 (96)
+- [ ] `clipAgainstPlane2` bw1 0x005152e0, bw2 0x004f6560, bw3 0x004f0ab0 (94)
+- [ ] `clipAgainstPlane3` bw1 0x00515410, bw2 0x004f6690, bw3 0x004f0be0 (96)
+- [ ] `clampClippedPolygon` bw1 0x00515530, bw2 0x004f67b0, bw3 0x004f0d00 (54)
+- [ ] `beginTriangleBatch` bw1 0x005155d0, bw2 0x004f6850, bw3 0x004f0da0 (6)
+- [ ] `addBatchTriangle` bw1 0x005155f0, bw2 0x004f6870, bw3 0x004f0dc0 (95, differs)
+- [ ] `flushTriangleBatch` bw1 0x00515750, bw2 0x004f6970, bw3 0x004f0f20 (77)
+- [ ] `clipBatchTriangle` bw1 0x00515850, bw2 0x004f6a70, bw3 0x004f1020 (116)
+- [ ] `clipAndFillPolygon` bw1 0x005159c0, bw2 0x004f6be0, bw3 0x004f1190 (90)
+- [ ] `drawTransformedList` bw1 0x00515ae0, bw2 0x004f6d00, bw3 0x004f12b0 (91)
+- [ ] `setupScanEdge` bw1 0x00515bd0, bw2 0x004f6df0, bw3 0x004f13a0 (315)
+- [ ] `findScanEdge` bw1 0x00516000, bw2 0x004f7220, bw3 0x004f17d0 (22)
+- [ ] `roundFloat` bw1 0x00516040, bw2 0x004f7260, bw3 0x004f1810 (15)
+- [ ] `fillPolygon` bw1 0x005168c0, bw2 0x004f7a50, bw3 0x004f2090 (271, differs)
+- [ ] `updateRenderState` bw1 0x00516c60, bw2 0x004f7da0, bw3 0x004f2430 (19)
+- [ ] `polyListSurface` bw1 0x00516cc0, bw2 0x004f7e00, bw3 0x004f2490 (127, differs)
+- [ ] `setupSurfaceEdge` bw1 0x00516e40, bw2 0x004f7f80, bw3 0x004f2610 (101)
+- [ ] `fillSurfaceSpan` bw1 0x00516f80, bw2 0x004f80c0, bw3 0x004f2750 (24)
+- [ ] `fillSurfaceTriangle` bw1 0x00516fd0, bw2 0x004f8110, bw3 0x004f27a0 (188, differs)
+- [ ] `drawSurfaceTriangle` bw1 0x00517240, bw2 0x004f8330, bw3 0x004f2a10 (125)
+- [ ] `intersectUserClipPlane` bw1 0x005173e0, bw2 0x004f84d0, bw3 0x004f2bb0 (95, differs)
+- [ ] `clipToUserPlane` bw1 0x00517520, bw2 0x004f8610, bw3 0x004f2cf0 (112)
+- [ ] `userClipPolyList` bw1 0x00517660, bw2 0x004f8750, bw3 0x004f2e30 (368, differs)
+- [ ] `setColor3f` bw1 0x00517bd0, bw2 0x004f8ca0, bw3 0x004f33a0 (42)
+- [ ] `setColor4f` bw1 0x00517c70, bw2 0x004f8d40, bw3 0x004f3440 (61)
+- [ ] `setColor` bw1 0x00517d50, bw2 0x004f8e20, bw3 0x004f3520 (37)
+- [ ] `setColorARGB` bw1 0x00517de0, bw2 0x004f8eb0, bw3 0x004f35b0 (61)
+- [ ] `getColor` bw1 0x00517ec0, bw2 0x004f8f90, bw3 0x004f3690 (2)
+- [ ] `getColor4f` bw1 0x00517ed0, bw2 0x004f8fa0, bw3 0x004f36a0 (13)
+- [ ] `drawPixel` bw1 0x00517f10, bw2 0x004f8fe0, bw3 0x004f36e0 (9)
+- [ ] `drawLine` bw1 0x00517f30, bw2 0x004f9000, bw3 0x004f3700 (60, differs)
+- [ ] `fillRect` bw1 0x00518010, bw2 0x004f90d0, bw3 0x004f37e0 (161, differs)
+- [ ] `useDefaultTexture` bw1 0x00518280, bw2 0x004f9330, bw3 0x004f3a50 (4)
+- [ ] `drawRect` bw1 0x00518290, bw2 0x004f9340, bw3 0x004f3a60 (33)
+- [ ] `drawHLine` bw1 0x005182e0, bw2 0x004f9390, bw3 0x004f3ab0 (10)
+- [ ] `drawVLine` bw1 0x00518300, bw2 0x004f93b0, bw3 0x004f3ad0 (13)
+- [ ] `nextDepth2D` bw1 0x00518320, bw2 0x004f93d0, bw3 0x004f3af0 (13)
 - [ ] `SDynamicLight::ctor` bw1 0x00518360, bw2 0x004f9410, bw3 0x004f3b30 (2)
 - [ ] `SDynamicLight::dtor` bw1 0x00518370, bw2 0x004f9420, bw3 0x004f3b40 (2)
-- [ ] `setRenderViewport` bw2 0x004f2ac0 (62)
-- [ ] `getRenderViewport` bw2 0x004f2ba0 (13)
-- [ ] unnamed bw1 0x0051102e, bw2 0x004f229e, bw3 0x004ec7fe (7)
-- [ ] unnamed bw1 0x0051104e, bw2 0x004f22be, bw3 0x004ec81e (44)
-- [ ] unnamed bw1 0x005110fe, bw2 0x004f236e, bw3 0x004ec8ce (14)
-- [ ] unnamed bw1 0x00511160 (2)
-- [ ] unnamed bw1 0x00511170 (4)
-- [ ] unnamed bw1 0x0051117e, bw2 0x004f23ee, bw3 0x004ec94e (7)
-- [ ] unnamed bw1 0x0051119e, bw2 0x004f240e, bw3 0x004ec96e (7)
-- [ ] unnamed bw1 0x005111be, bw2 0x004f242e, bw3 0x004ec98e (9)
-- [ ] unnamed bw1 0x005111e0 (3)
-- [ ] unnamed bw1 0x005111f0, bw2 0x004f2460, bw3 0x004ec9c0 (4)
-- [ ] unnamed bw1 0x00511240, bw2 0x004f24b0, bw3 0x004eca10 (328)
-- [ ] unnamed bw1 0x005116e0 (16)
-- [ ] unnamed bw1 0x00511740, bw2 0x004f29b0 (23)
-- [ ] unnamed bw1 0x00511790, bw2 0x004f2a00, bw3 0x004ecf60 (17)
-- [ ] unnamed bw1 0x005117c0, bw2 0x004f2a30, bw3 0x004ecf90 (7)
-- [ ] unnamed bw1 0x005117e0 (16)
-- [ ] unnamed bw1 0x00511850, bw3 0x004ed020 (80)
-- [ ] unnamed bw1 0x00511980, bw3 0x004ed150 (39)
-- [ ] unnamed bw1 0x00511a0e, bw3 0x004ed1de (281)
-- [ ] unnamed bw1 0x00511d50, bw3 0x004ed520 (179)
-- [ ] unnamed bw1 0x00511f4e, bw3 0x004ed71e (34)
-- [ ] unnamed bw1 0x00511fc0, bw3 0x004ed790 (31)
-- [ ] unnamed bw1 0x0051202c, bw3 0x004ed7fc (31)
-- [ ] unnamed bw1 0x005120a0, bw3 0x004ed870 (46)
-- [ ] unnamed bw1 0x00512140, bw3 0x004ed910 (30)
-- [ ] unnamed bw1 0x005121b0, bw2 0x004f3380, bw3 0x004ed980 (8)
-- [ ] unnamed bw1 0x00512200, bw2 0x004f33d0, bw3 0x004ed9d0 (19)
-- [ ] unnamed bw1 0x00512250, bw2 0x004f3420, bw3 0x004eda20 (8)
-- [ ] unnamed bw1 0x00512270, bw2 0x004f3440, bw3 0x004eda40 (16)
-- [ ] unnamed bw1 0x0051229e (4)
-- [ ] unnamed bw1 0x005122b0, bw2 0x004f3480, bw3 0x004eda80 (8)
-- [ ] unnamed bw1 0x00512300 (3)
-- [ ] unnamed bw1 0x00512310 (3)
-- [ ] unnamed bw1 0x00512320, bw2 0x004f3570, bw3 0x004edaf0 (33)
-- [ ] unnamed bw1 0x005123b0, bw2 0x004f3600, bw3 0x004edb80 (65)
-- [ ] unnamed bw1 0x005124c0 (3)
-- [ ] unnamed bw1 0x005124d0 (2)
-- [ ] unnamed bw1 0x005124e0 (3)
-- [ ] unnamed bw1 0x005124f0, bw2 0x004f3740, bw3 0x004edcc0 (105)
-- [ ] unnamed bw1 0x00512670, bw3 0x004ede40 (24)
-- [ ] unnamed bw1 0x005126d0, bw3 0x004edea0 (209)
-- [ ] unnamed bw1 0x00512940, bw3 0x004ee110 (44)
-- [ ] unnamed bw1 0x005129d0, bw3 0x004ee1a0 (154)
-- [ ] unnamed bw1 0x00512bce, bw3 0x004ee39e (45)
-- [ ] unnamed bw1 0x00512c60, bw3 0x004ee430 (93)
-- [ ] unnamed bw1 0x00512d4e, bw3 0x004ee51e (34)
-- [ ] unnamed bw1 0x00512de0, bw3 0x004ee5b0 (248)
-- [ ] unnamed bw1 0x00513220, bw2 0x004f44d0, bw3 0x004ee9f0 (22)
-- [ ] unnamed bw1 0x00513260 (100)
-- [ ] unnamed bw1 0x00513370 (100)
-- [ ] unnamed bw1 0x00513480, bw2 0x004f4730, bw3 0x004eec50 (53)
-- [ ] unnamed bw1 0x00513600, bw2 0x004f48b0, bw3 0x004eedd0 (86)
-- [ ] unnamed bw1 0x005136e0, bw2 0x004f4990, bw3 0x004eeeb0 (26)
-- [ ] unnamed bw1 0x00513730, bw2 0x004f49e0, bw3 0x004eef00 (35)
-- [ ] unnamed bw1 0x005137b0 (3)
-- [ ] unnamed bw1 0x005137be, bw2 0x004f4a6e, bw3 0x004eef8e (45)
-- [ ] unnamed bw1 0x00513850, bw2 0x004f4b00, bw3 0x004ef020 (44)
-- [ ] unnamed bw1 0x005138fe, bw2 0x004f4bae, bw3 0x004ef0ce (19)
-- [ ] unnamed bw1 0x00513940, bw2 0x004f4bf0, bw3 0x004ef110 (91)
-- [ ] unnamed bw1 0x00513a5e, bw2 0x004f4d0e, bw3 0x004ef22e (31)
-- [ ] unnamed bw1 0x00513ace, bw2 0x004f4d7e, bw3 0x004ef29e (55)
-- [ ] unnamed bw1 0x00513b90, bw2 0x004f4e40, bw3 0x004ef360 (12)
-- [ ] unnamed bw1 0x00513bbe, bw3 0x004ef38e (49)
-- [ ] unnamed bw1 0x00513c9e (1)
-- [ ] unnamed bw1 0x00513ca0, bw2 0x004f4f50, bw3 0x004ef470 (311)
-- [ ] unnamed bw1 0x005140c0, bw2 0x004f5370, bw3 0x004ef890 (30)
-- [ ] unnamed bw1 0x00514120, bw2 0x004f53d0, bw3 0x004ef8f0 (10)
-- [ ] unnamed bw1 0x00514150, bw2 0x004f5400, bw3 0x004ef920 (116)
-- [ ] unnamed bw1 0x005142c0, bw2 0x004f5570, bw3 0x004efa90 (235)
-- [ ] unnamed bw1 0x005145ac (1)
-- [ ] unnamed bw1 0x005145b0, bw2 0x004f5860, bw3 0x004efd80 (59)
-- [ ] unnamed bw1 0x00514650, bw2 0x004f5900, bw3 0x004efe20 (236)
-- [ ] unnamed bw1 0x0051499e (1)
-- [ ] unnamed bw1 0x005149a0, bw2 0x004f5c50, bw3 0x004f0170 (77)
-- [ ] unnamed bw1 0x00514aa0, bw2 0x004f5d50, bw3 0x004f0270 (22)
-- [ ] unnamed bw1 0x00514ae0, bw2 0x004f5d90, bw3 0x004f02b0 (12)
-- [ ] unnamed bw1 0x00514b10, bw2 0x004f5dc0, bw3 0x004f02e0 (8)
-- [ ] unnamed bw1 0x00514b30 (2)
-- [ ] unnamed bw1 0x00514b6e, bw3 0x004f033e (47)
-- [ ] unnamed bw1 0x00514c40, bw2 0x004f5ec0, bw3 0x004f0410 (9)
-- [ ] unnamed bw1 0x00514c6e (3)
-- [ ] unnamed bw1 0x00514c7e, bw2 0x004f5efe, bw3 0x004f044e (4)
-- [ ] unnamed bw1 0x00514c90, bw3 0x004f0460 (35)
-- [ ] unnamed bw1 0x00514cf0, bw3 0x004f04c0 (20)
-- [ ] unnamed bw1 0x00514d40, bw2 0x004f5fc0, bw3 0x004f0510 (72)
-- [ ] unnamed bw1 0x00514e10, bw2 0x004f6090, bw3 0x004f05e0 (71)
-- [ ] unnamed bw1 0x00514ed0, bw2 0x004f6150, bw3 0x004f06a0 (72)
-- [ ] unnamed bw1 0x00514fa0, bw2 0x004f6220, bw3 0x004f0770 (73)
-- [ ] unnamed bw1 0x00515080, bw2 0x004f6300, bw3 0x004f0850 (94)
-- [ ] unnamed bw1 0x005151b0, bw2 0x004f6430, bw3 0x004f0980 (96)
-- [ ] unnamed bw1 0x005152e0, bw2 0x004f6560, bw3 0x004f0ab0 (94)
-- [ ] unnamed bw1 0x00515410, bw2 0x004f6690, bw3 0x004f0be0 (96)
-- [ ] unnamed bw1 0x00515530, bw2 0x004f67b0, bw3 0x004f0d00 (54)
-- [ ] unnamed bw1 0x005155d0, bw2 0x004f6850, bw3 0x004f0da0 (6)
-- [ ] unnamed bw1 0x005155f0, bw3 0x004f0dc0 (95)
-- [ ] unnamed bw1 0x00515750, bw2 0x004f6970, bw3 0x004f0f20 (77)
-- [ ] unnamed bw1 0x00515850, bw2 0x004f6a70, bw3 0x004f1020 (116)
-- [ ] unnamed bw1 0x005159c0, bw2 0x004f6be0, bw3 0x004f1190 (90)
-- [ ] unnamed bw1 0x00515ae0, bw2 0x004f6d00, bw3 0x004f12b0 (91)
-- [ ] unnamed bw1 0x00515bd0, bw2 0x004f6df0, bw3 0x004f13a0 (315)
-- [ ] unnamed bw1 0x00515ffc, bw2 0x004f721c, bw3 0x004f17cc (23)
-- [ ] unnamed bw1 0x00516040, bw2 0x004f7260, bw3 0x004f1810 (15)
-- [ ] unnamed bw1 0x00516060, bw3 0x004f1830 (551)
-- [ ] unnamed bw1 0x005168c0, bw3 0x004f2090 (271)
-- [ ] unnamed bw1 0x00516c60, bw2 0x004f7da0, bw3 0x004f2430 (19)
-- [ ] unnamed bw1 0x00516cc0, bw3 0x004f2490 (127)
-- [ ] unnamed bw1 0x00516e40, bw2 0x004f7f80, bw3 0x004f2610 (101)
-- [ ] unnamed bw1 0x00516f80, bw2 0x004f80c0, bw3 0x004f2750 (24)
-- [ ] unnamed bw1 0x00516fd0, bw3 0x004f27a0 (188)
-- [ ] unnamed bw1 0x00517240, bw2 0x004f8330, bw3 0x004f2a10 (125)
-- [ ] unnamed bw1 0x005173e0, bw3 0x004f2bb0 (95)
-- [ ] unnamed bw1 0x0051751e (1)
-- [ ] unnamed bw1 0x00517520, bw2 0x004f8610, bw3 0x004f2cf0 (112)
-- [ ] unnamed bw1 0x0051765e (1)
-- [ ] unnamed bw1 0x00517660, bw3 0x004f2e30 (368)
-- [ ] unnamed bw1 0x00517bd0, bw2 0x004f8ca0, bw3 0x004f33a0 (42)
-- [ ] unnamed bw1 0x00517c70, bw2 0x004f8d40, bw3 0x004f3440 (61)
-- [ ] unnamed bw1 0x00517d50, bw2 0x004f8e20, bw3 0x004f3520 (37)
-- [ ] unnamed bw1 0x00517dde, bw2 0x004f8eae, bw3 0x004f35ae (62)
-- [ ] unnamed bw1 0x00517ec0 (2)
-- [ ] unnamed bw1 0x00517ecc, bw2 0x004f8f9c, bw3 0x004f369c (14)
-- [ ] unnamed bw1 0x00517f10, bw2 0x004f8fe0, bw3 0x004f36e0 (9)
-- [ ] unnamed bw1 0x00517f2e, bw3 0x004f36fe (61)
-- [ ] unnamed bw1 0x00518010, bw3 0x004f37e0 (161)
-- [ ] unnamed bw1 0x0051827e, bw3 0x004f3a4e (5)
-- [ ] unnamed bw1 0x00518290, bw2 0x004f9340, bw3 0x004f3a60 (33)
-- [ ] unnamed bw1 0x005182e0, bw2 0x004f9390, bw3 0x004f3ab0 (10)
-- [ ] unnamed bw1 0x00518300, bw2 0x004f93b0, bw3 0x004f3ad0 (13)
-- [ ] unnamed bw1 0x00518320, bw2 0x004f93d0, bw3 0x004f3af0 (13)
-- [ ] unnamed bw2 0x004f23d0 (2)
-- [ ] unnamed bw2 0x004f23e0 (4)
-- [ ] unnamed bw2 0x004f2450 (3)
-- [ ] unnamed bw2 0x004f2950 (16)
-- [ ] unnamed bw2 0x004f2a50 (16)
-- [ ] unnamed bw2 0x004f2be0 (280)
-- [ ] unnamed bw2 0x004f2f20 (179)
-- [ ] unnamed bw2 0x004f311e (34)
-- [ ] unnamed bw2 0x004f3190 (31)
-- [ ] unnamed bw2 0x004f31fc (31)
-- [ ] unnamed bw2 0x004f3270 (46)
-- [ ] unnamed bw2 0x004f3310 (30)
-- [ ] unnamed bw2 0x004f3470 (3)
-- [ ] unnamed bw2 0x004f34d0 (30)
-- [ ] unnamed bw2 0x004f3520 (4)
-- [ ] unnamed bw2 0x004f3550 (3)
-- [ ] unnamed bw2 0x004f3560 (3)
-- [ ] unnamed bw2 0x004f3710 (3)
-- [ ] unnamed bw2 0x004f3720 (2)
-- [ ] unnamed bw2 0x004f3730 (3)
-- [ ] unnamed bw2 0x004f38c0 (24)
-- [ ] unnamed bw2 0x004f3920 (218)
-- [ ] unnamed bw2 0x004f3bb0 (44)
-- [ ] unnamed bw2 0x004f3c40 (164)
-- [ ] unnamed bw2 0x004f3e60 (44)
-- [ ] unnamed bw2 0x004f3ef0 (104)
-- [ ] unnamed bw2 0x004f3ff0 (33)
-- [ ] unnamed bw2 0x004f40a0 (244)
-- [ ] unnamed bw2 0x004f4510 (100)
-- [ ] unnamed bw2 0x004f4620 (100)
-- [ ] unnamed bw2 0x004f4a60 (3)
-- [ ] unnamed bw2 0x004f4e6e (47)
-- [ ] unnamed bw2 0x004f4f00 (19)
-- [ ] unnamed bw2 0x004f4f4e (1)
-- [ ] unnamed bw2 0x004f585c (1)
-- [ ] unnamed bw2 0x004f5c4e (1)
-- [ ] unnamed bw2 0x004f5de0 (2)
-- [ ] unnamed bw2 0x004f5dec (47)
-- [ ] unnamed bw2 0x004f5eee (3)
-- [ ] unnamed bw2 0x004f5f10 (35)
-- [ ] unnamed bw2 0x004f5f70 (20)
-- [ ] unnamed bw2 0x004f6870 (72)
-- [ ] unnamed bw2 0x004f7280 (523)
-- [ ] unnamed bw2 0x004f7a50 (252)
-- [ ] unnamed bw2 0x004f7e00 (127)
-- [ ] unnamed bw2 0x004f8110 (167)
-- [ ] unnamed bw2 0x004f84d0 (95)
-- [ ] unnamed bw2 0x004f860e (1)
-- [ ] unnamed bw2 0x004f874e (1)
-- [ ] unnamed bw2 0x004f8750 (359)
-- [ ] unnamed bw2 0x004f8f90 (2)
-- [ ] unnamed bw2 0x004f8ffe (53)
-- [ ] unnamed bw2 0x004f90d0 (153)
-- [ ] unnamed bw2 0x004f9330 (4)
-- [ ] unnamed bw3 0x004ec930 (2)
-- [ ] unnamed bw3 0x004ec940 (4)
-- [ ] unnamed bw3 0x004ec9b0 (3)
-- [ ] unnamed bw3 0x004eceb0 (16)
-- [ ] unnamed bw3 0x004eda6e (4)
-- [ ] unnamed bw3 0x004edad0 (3)
-- [ ] unnamed bw3 0x004edae0 (3)
-- [ ] unnamed bw3 0x004edc90 (3)
-- [ ] unnamed bw3 0x004edca0 (2)
-- [ ] unnamed bw3 0x004edcb0 (3)
-- [ ] unnamed bw3 0x004eea30 (100)
-- [ ] unnamed bw3 0x004eeb40 (100)
-- [ ] unnamed bw3 0x004eef80 (3)
-- [ ] unnamed bw3 0x004ef46e (1)
-- [ ] unnamed bw3 0x004efd7c (1)
-- [ ] unnamed bw3 0x004f016e (1)
-- [ ] unnamed bw3 0x004f0300 (2)
-- [ ] unnamed bw3 0x004f030c (13)
-- [ ] unnamed bw3 0x004f043e (3)
-- [ ] unnamed bw3 0x004f2cee (1)
-- [ ] unnamed bw3 0x004f2e2e (1)
-- [ ] unnamed bw3 0x004f3690 (2)
-
-### `engine/model.c`
-- [ ] unnamed bw1 0x0051f8a0, bw2 0x005008f0, bw3 0x004f80f0 (53, in nocturne)
-- [ ] unnamed bw1 0x0051f920, bw2 0x00500970, bw3 0x004f8170 (292)
-- [ ] unnamed bw1 0x0051fee0, bw2 0x00500f30, bw3 0x004f8730 (95)
-- [ ] unnamed bw1 0x00520150, bw2 0x005011a0, bw3 0x004f89a0 (98)
+- [ ] `mirrorFaces` bw2 0x004f34d0 (34)
+- [ ] `setLightConstants` bw2 0x004f4f00 (19)
+- [ ] unnamed bw3 0x004f0310 (12)
 
 ### `engine/palette.cpp`
 - [ ] unnamed bw1 0x00531ed0 (3)
@@ -12241,415 +11640,168 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw3 0x00509e00 (2)
 
 ### `engine/pod.cpp`
-- [ ] unnamed bw1 0x0053b110, bw2 0x00519dc0, bw3 0x00512e70 (52)
 - [ ] unnamed bw1 0x0053b250, bw3 0x00512fb0 (805)
-- [ ] unnamed bw1 0x0053bfbe (1)
 - [ ] unnamed bw1 0x0053bfc0, bw3 0x00513d20 (222)
 - [ ] unnamed bw1 0x0053c290, bw3 0x00513ff0 (80)
 - [ ] unnamed bw1 0x0053c3b0, bw3 0x00514110 (79)
 - [ ] unnamed bw1 0x0053c4c0, bw3 0x00514220 (77)
 - [ ] unnamed bw1 0x0053c650, bw3 0x005143b0 (107)
 - [ ] unnamed bw1 0x0053c750, bw3 0x005144b0 (59)
-- [ ] unnamed bw1 0x0053cc5c, bw3 0x005149bc (138)
+- [ ] unnamed bw1 0x0053cc60, bw3 0x005149c0 (137)
 - [ ] unnamed bw1 0x0053ce50, bw3 0x00514bb0 (39)
-- [ ] unnamed bw2 0x0051aa7e (1)
-- [ ] unnamed bw2 0x0051aa80 (222)
 - [ ] unnamed bw2 0x0051ad50 (80)
 - [ ] unnamed bw2 0x0051ae70 (79)
 - [ ] unnamed bw2 0x0051af80 (77)
 - [ ] unnamed bw2 0x0051b110 (64)
-- [ ] unnamed bw2 0x0051b6dc (137)
-- [ ] unnamed bw3 0x00513d1e (1)
+- [ ] unnamed bw2 0x0051b6e0 (136)
 
 ### `engine/prim.c`
 - [ ] unnamed bw1 0x0053d7a0 (3)
-- [ ] unnamed bw1 0x0053d7b0, bw2 0x0051c1b0, bw3 0x00515510 (157)
 - [ ] unnamed bw1 0x0053df50 (58)
 - [ ] unnamed bw2 0x0051c1a0 (3)
-- [ ] unnamed bw2 0x0051da80 (545)
 - [ ] unnamed bw3 0x00515500 (3)
 
 ### `engine/special.cpp`
-- [ ] `switchRenderer` bw1 0x00582ebe, bw2 0x0056046e, bw3 0x0056678e (27)
-- [ ] unnamed bw1 0x0057de01, bw2 0x0055b3b1, bw3 0x00560f31 (435)
 - [ ] unnamed bw1 0x0057e570, bw2 0x0055bb20, bw3 0x005616a0 (5)
 - [ ] unnamed bw1 0x0057eeac, bw2 0x0055c45c, bw3 0x00561fdc (322)
 - [ ] unnamed bw1 0x0057f473, bw2 0x0055ca23, bw3 0x005625a3 (358)
 - [ ] unnamed bw1 0x00580127 (1)
-- [ ] unnamed bw1 0x00580173 (205)
-- [ ] unnamed bw1 0x0058043c (205)
-- [ ] unnamed bw1 0x00581f50, bw2 0x0055f500, bw3 0x00565820 (21)
-- [ ] unnamed bw1 0x00581fe0 (6)
-- [ ] unnamed bw1 0x00582000 (6)
-- [ ] unnamed bw1 0x00582020, bw2 0x0055f5d0, bw3 0x005658f0 (22)
-- [ ] unnamed bw1 0x0058205e, bw2 0x0055f60e, bw3 0x0056592e (23)
-- [ ] unnamed bw1 0x0058209e, bw2 0x0055f64e, bw3 0x0056596e (27)
-- [ ] unnamed bw1 0x005820e0, bw2 0x0055f690, bw3 0x005659b0 (26)
-- [ ] unnamed bw1 0x0058215c, bw2 0x0055f70c, bw3 0x00565a2c (22)
-- [ ] unnamed bw1 0x0058219c, bw2 0x0055f74c, bw3 0x00565a6c (10)
+- [ ] unnamed bw1 0x00582020 (22)
+- [ ] unnamed bw1 0x00582060 (22)
+- [ ] unnamed bw1 0x005820a0 (26)
+- [ ] unnamed bw1 0x005820e0 (26)
+- [ ] unnamed bw1 0x00582160, bw2 0x0055f710, bw3 0x00565a30 (21)
+- [ ] unnamed bw1 0x005821a0 (9)
 - [ ] unnamed bw1 0x00582b70 (6)
 - [ ] unnamed bw1 0x00582b90 (6)
 - [ ] unnamed bw1 0x00582bb0 (9)
-- [ ] unnamed bw1 0x00582bce, bw2 0x0056017e, bw3 0x0056649e (7)
+- [ ] unnamed bw1 0x00582bd0 (6)
 - [ ] unnamed bw1 0x00582bf0 (9)
-- [ ] unnamed bw1 0x00582c0e, bw2 0x005601be, bw3 0x005664de (35)
-- [ ] unnamed bw1 0x00582c8e, bw2 0x0056023e, bw3 0x0056655e (14)
-- [ ] unnamed bw1 0x00582cec, bw2 0x0056029c, bw3 0x005665bc (7)
-- [ ] unnamed bw1 0x00582f0e, bw2 0x005604be, bw3 0x005667de (6)
+- [ ] unnamed bw1 0x00582cf0 (6)
 - [ ] unnamed bw2 0x0055d6d7 (1)
-- [ ] unnamed bw2 0x0055d723 (205)
-- [ ] unnamed bw2 0x0055d9ec (205)
-- [ ] unnamed bw2 0x0055f590 (6)
-- [ ] unnamed bw2 0x0055f5b0 (6)
+- [ ] unnamed bw2 0x0055f5d0 (22)
+- [ ] unnamed bw2 0x0055f610 (22)
+- [ ] unnamed bw2 0x0055f650 (26)
+- [ ] unnamed bw2 0x0055f690 (26)
+- [ ] unnamed bw2 0x0055f750 (9)
 - [ ] unnamed bw2 0x00560120 (6)
 - [ ] unnamed bw2 0x00560140 (6)
 - [ ] unnamed bw2 0x00560160 (9)
+- [ ] unnamed bw2 0x00560180 (6)
 - [ ] unnamed bw2 0x005601a0 (9)
+- [ ] unnamed bw2 0x005602a0 (6)
 - [ ] unnamed bw3 0x00563257 (1)
-- [ ] unnamed bw3 0x005632a3 (205)
-- [ ] unnamed bw3 0x0056356c (205)
-- [ ] unnamed bw3 0x005658b0 (6)
-- [ ] unnamed bw3 0x005658d0 (6)
+- [ ] unnamed bw3 0x005658f0 (22)
+- [ ] unnamed bw3 0x00565930 (22)
+- [ ] unnamed bw3 0x00565970 (26)
+- [ ] unnamed bw3 0x005659b0 (26)
+- [ ] unnamed bw3 0x00565a70 (9)
 - [ ] unnamed bw3 0x00566440 (6)
 - [ ] unnamed bw3 0x00566460 (6)
 - [ ] unnamed bw3 0x00566480 (9)
+- [ ] unnamed bw3 0x005664a0 (6)
 - [ ] unnamed bw3 0x005664c0 (9)
+- [ ] unnamed bw3 0x005665c0 (6)
 
 ### `engine/texture.cpp`
+- [ ] `CTextureCache::findFreeSlot` bw1 0x00596680, bw2 0x00573a60, bw3 0x00569670 (93)
 - [ ] unnamed bw1 0x005965d0, bw2 0x005739b0, bw3 0x005695c0 (60)
-- [ ] unnamed bw1 0x00596680, bw2 0x00573a60, bw3 0x00569670 (93)
 - [ ] unnamed bw1 0x00596e60, bw2 0x00574240, bw3 0x00569e50 (39)
 - [ ] unnamed bw1 0x00596ed0, bw2 0x005742b0, bw3 0x00569ec0 (35)
 - [ ] unnamed bw1 0x00596f30, bw2 0x00574310, bw3 0x00569f20 (73)
 - [ ] unnamed bw1 0x00597000, bw2 0x005743e0, bw3 0x00569ff0 (67)
-- [ ] unnamed bw1 0x005970b0, bw2 0x00574490, bw3 0x0056a0a0 (57)
 - [ ] unnamed bw1 0x00597140, bw2 0x00574520, bw3 0x0056a130 (322)
 - [ ] unnamed bw1 0x00597620, bw2 0x00574a00, bw3 0x0056a610 (40)
 - [ ] unnamed bw1 0x005976a0, bw2 0x00574a80, bw3 0x0056a690 (43)
-- [ ] unnamed bw1 0x005977de, bw2 0x00574bbe, bw3 0x0056a7ce (107)
+- [ ] unnamed bw1 0x005977e0, bw2 0x00574bc0, bw3 0x0056a7d0 (106)
 - [ ] unnamed bw1 0x00597900, bw2 0x00574ce0, bw3 0x0056a8f0 (42)
-- [ ] unnamed bw1 0x00597970, bw2 0x00574d50, bw3 0x0056a960 (24)
-- [ ] unnamed bw1 0x00597a20, bw2 0x00574e00, bw3 0x0056aa10 (45)
-- [ ] unnamed bw1 0x00597abe (1)
 - [ ] unnamed bw1 0x00597ac0, bw2 0x00574ea0, bw3 0x0056aab0 (68)
-- [ ] unnamed bw1 0x00597b7c, bw2 0x00574f5c, bw3 0x0056ab6c (61)
+- [ ] unnamed bw1 0x00597b80, bw2 0x00574f60, bw3 0x0056ab70 (60)
 - [ ] unnamed bw1 0x00597c30, bw2 0x00575010, bw3 0x0056ac20 (9)
 - [ ] unnamed bw1 0x00597c90, bw2 0x00575070, bw3 0x0056ac80 (13)
-- [ ] unnamed bw1 0x00597cee, bw2 0x005750ce, bw3 0x0056acde (6)
-- [ ] unnamed bw1 0x00597d5c (3)
-- [ ] unnamed bw1 0x00597d6e, bw3 0x0056ad5e (364)
-- [ ] unnamed bw2 0x00574e9e (1)
-- [ ] unnamed bw2 0x0057513c (3)
-- [ ] unnamed bw2 0x0057514e (361)
-- [ ] unnamed bw3 0x0056aaae (1)
-- [ ] unnamed bw3 0x0056ad4c (3)
+- [ ] unnamed bw1 0x00597d60 (2)
+- [ ] unnamed bw1 0x00597d70, bw3 0x0056ad60 (363)
+- [ ] unnamed bw2 0x00575140 (2)
+- [ ] unnamed bw2 0x00575150 (360)
+- [ ] unnamed bw3 0x0056ad50 (2)
 
 ### `engine/winfont.cpp`
-- [ ] unnamed bw1 0x005b1c50, bw3 0x0057fed0 (181)
 - [ ] unnamed bw1 0x005b21d0 (2)
 - [ ] unnamed bw2 0x0058e790 (2)
 - [ ] unnamed bw3 0x00580450 (2)
 
 ### `shape/edittool.cpp`
-- [ ] unnamed bw1 0x0049293e, bw2 0x0047a44e, bw3 0x0047b4de (15)
-- [ ] unnamed bw1 0x00492970, bw2 0x0047a480, bw3 0x0047b510 (32)
-- [ ] unnamed bw1 0x004929dc (22)
-- [ ] unnamed bw1 0x00492a40, bw2 0x0047a590, bw3 0x0047b5e0 (140)
-- [ ] unnamed bw1 0x00492bce, bw2 0x0047a71e, bw3 0x0047b76e (25)
+- [ ] unnamed bw1 0x00492940, bw2 0x0047a450, bw3 0x0047b4e0 (14)
+- [ ] unnamed bw1 0x00492bd0, bw2 0x0047a720, bw3 0x0047b770 (24)
 - [ ] unnamed bw1 0x00492c20, bw2 0x0047a770, bw3 0x0047b7c0 (102)
 - [ ] unnamed bw1 0x00492d40, bw2 0x0047a890, bw3 0x0047b8e0 (55)
-- [ ] unnamed bw1 0x00492dde, bw2 0x0047a92e, bw3 0x0047b97e (18)
-- [ ] unnamed bw1 0x00492e10, bw2 0x0047a960, bw3 0x0047b9b0 (17)
+- [ ] unnamed bw1 0x00492de0 (17)
+- [ ] unnamed bw1 0x00492e10 (17)
 - [ ] unnamed bw1 0x00492e40, bw2 0x0047a990, bw3 0x0047b9e0 (15)
-- [ ] unnamed bw1 0x004934b0 (173)
 - [ ] unnamed bw1 0x00494110, bw2 0x0047bbd0, bw3 0x0047ccb0 (67)
-- [ ] unnamed bw1 0x00494340 (24)
-- [ ] unnamed bw1 0x004943a0 (24)
-- [ ] unnamed bw1 0x004944fe (66)
-- [ ] unnamed bw1 0x004945fe (41)
+- [ ] unnamed bw1 0x00494340, bw3 0x0047cee0 (24)
+- [ ] unnamed bw1 0x00494500 (65)
+- [ ] unnamed bw1 0x00494600 (40)
 - [ ] unnamed bw1 0x00494de0, bw3 0x0047d980 (48)
 - [ ] unnamed bw1 0x00494ea0, bw3 0x0047da40 (81)
-- [ ] unnamed bw1 0x0049517e, bw2 0x0047cb1e, bw3 0x0047dd1e (502)
-- [ ] unnamed bw1 0x004962b0 (417)
-- [ ] unnamed bw1 0x00496dd0, bw2 0x0047e760, bw3 0x0047f970 (7)
 - [ ] unnamed bw1 0x00496ee0 (592)
-- [ ] unnamed bw1 0x00497660 (139)
-- [ ] unnamed bw1 0x00497870 (637)
-- [ ] unnamed bw1 0x00498210, bw2 0x0047fbb0, bw3 0x00480db0 (52, in nocturne)
-- [ ] unnamed bw1 0x00498290, bw2 0x0047fc30, bw3 0x00480e30 (79, in nocturne)
-- [ ] unnamed bw1 0x0049835e (1)
-- [ ] unnamed bw1 0x00498360 (168)
-- [ ] unnamed bw1 0x004985ae, bw2 0x0047ff4e, bw3 0x0048114e (55)
-- [ ] unnamed bw1 0x00498660, bw2 0x00480000, bw3 0x00481200 (108)
-- [ ] unnamed bw1 0x004987ae (378)
-- [ ] unnamed bw1 0x00498f10, bw2 0x004808b0, bw3 0x00481ab0 (185)
-- [ ] unnamed bw1 0x004991ce, bw2 0x00480b6e, bw3 0x00481d6e (40)
 - [ ] unnamed bw1 0x00499350 (2)
-- [ ] unnamed bw1 0x0049935c, bw3 0x00481efc (12)
+- [ ] unnamed bw1 0x00499360, bw2 0x00480d00, bw3 0x00481f00 (11)
 - [ ] unnamed bw1 0x0049a300, bw2 0x00481ca0, bw3 0x00482ea0 (107)
 - [ ] unnamed bw1 0x0049a460, bw2 0x00481e00, bw3 0x00483000 (12)
 - [ ] unnamed bw1 0x0049a480, bw2 0x00481e20, bw3 0x00483020 (114)
-- [ ] unnamed bw1 0x0049c290, bw2 0x00483c30, bw3 0x00484e30 (53)
-- [ ] unnamed bw1 0x0049c310, bw2 0x00483cb0, bw3 0x00484eb0 (42)
-- [ ] unnamed bw1 0x0049c3e0, bw2 0x00483d80, bw3 0x00484f80 (58)
-- [ ] unnamed bw1 0x0049c470, bw2 0x00483e10, bw3 0x00485010 (64)
-- [ ] unnamed bw1 0x0049c500, bw2 0x00483ea0, bw3 0x004850a0 (181)
 - [ ] unnamed bw1 0x0049c750, bw2 0x004840f0, bw3 0x004852f0 (202)
-- [ ] unnamed bw1 0x0049caa0, bw2 0x00484440, bw3 0x00485640 (306)
-- [ ] unnamed bw1 0x0049d4d0, bw2 0x00484e70, bw3 0x00486070 (4)
-- [ ] unnamed bw1 0x0049d580, bw2 0x00484f20, bw3 0x00486120 (276)
-- [ ] unnamed bw1 0x0049d9e0 (42)
-- [ ] unnamed bw1 0x0049dace (76)
-- [ ] unnamed bw1 0x0049dbbe, bw2 0x0048555e, bw3 0x0048675e (5)
-- [ ] unnamed bw1 0x0049dc70, bw3 0x00486810 (121)
+- [ ] unnamed bw1 0x0049d4d0 (4)
+- [ ] unnamed bw1 0x0049dad0 (75)
+- [ ] unnamed bw1 0x0049dbc0 (4)
+- [ ] unnamed bw1 0x0049dc70, bw2 0x00485610, bw3 0x00486810 (121)
 - [ ] unnamed bw1 0x0049df50 (3)
-- [ ] unnamed bw2 0x0047a4f3 (2)
-- [ ] unnamed bw2 0x0047a4fb (2)
-- [ ] unnamed bw2 0x0047afb0 (172)
+- [ ] unnamed bw2 0x0047a930 (17)
+- [ ] unnamed bw2 0x0047a960 (17)
 - [ ] unnamed bw2 0x0047be90 (68)
-- [ ] unnamed bw2 0x0047bf8a (2)
-- [ ] unnamed bw2 0x0047bf96 (2)
-- [ ] unnamed bw2 0x0047c01c (2)
-- [ ] unnamed bw2 0x0047c065 (2)
-- [ ] unnamed bw2 0x0047c06d (2)
-- [ ] unnamed bw2 0x0047c0f0 (461)
-- [ ] unnamed bw2 0x0047c7ee (47)
-- [ ] unnamed bw2 0x0047c87e (80)
-- [ ] unnamed bw2 0x0047dc40 (417)
+- [ ] unnamed bw2 0x0047bf80 (63)
 - [ ] unnamed bw2 0x0047e870 (592)
-- [ ] unnamed bw2 0x0047eff0 (139)
-- [ ] unnamed bw2 0x0047f210 (637)
-- [ ] unnamed bw2 0x0047fd00 (168)
-- [ ] unnamed bw2 0x0048014e (1)
-- [ ] unnamed bw2 0x00480150, bw3 0x00481350 (377)
 - [ ] unnamed bw2 0x00480720, bw3 0x00481920 (71)
 - [ ] unnamed bw2 0x00480cf0 (2)
-- [ ] unnamed bw2 0x00480d07 (2)
-- [ ] unnamed bw2 0x0048546e (76)
-- [ ] unnamed bw2 0x00485662 (2)
-- [ ] unnamed bw2 0x0048569e (2)
+- [ ] unnamed bw2 0x00484e70 (4)
+- [ ] unnamed bw2 0x00485470 (75)
+- [ ] unnamed bw2 0x00485560 (4)
 - [ ] unnamed bw2 0x004858f0 (3)
-- [ ] unnamed bw3 0x0047b57c (22)
-- [ ] unnamed bw3 0x0047c050 (173)
-- [ ] unnamed bw3 0x0047cee0 (24)
-- [ ] unnamed bw3 0x0047d09e (66)
-- [ ] unnamed bw3 0x0047d19e (41)
-- [ ] unnamed bw3 0x0047ee50 (417)
-- [ ] unnamed bw3 0x0047fa80 (592)
-- [ ] unnamed bw3 0x00480200 (139)
-- [ ] unnamed bw3 0x00480410 (637)
-- [ ] unnamed bw3 0x00480efe (1)
-- [ ] unnamed bw3 0x00480f00 (168)
-- [ ] unnamed bw3 0x0048134e (1)
+- [ ] unnamed bw3 0x0047b980 (17)
+- [ ] unnamed bw3 0x0047b9b0 (17)
+- [ ] unnamed bw3 0x0047d0a0 (65)
+- [ ] unnamed bw3 0x0047d1a0 (40)
 - [ ] unnamed bw3 0x00481ef0 (2)
-- [ ] unnamed bw3 0x00486580 (42)
-- [ ] unnamed bw3 0x0048666e (76)
+- [ ] unnamed bw3 0x00486070 (4)
+- [ ] unnamed bw3 0x00486670 (75)
+- [ ] unnamed bw3 0x00486760 (4)
 - [ ] unnamed bw3 0x00486af0 (3)
 
-### `shape/spotview.cpp`
-- [ ] unnamed bw1 0x0058443e (261)
-- [ ] unnamed bw1 0x005847e0, bw2 0x00561d90, bw3 0x005680b0 (81)
-- [ ] unnamed bw2 0x005619ee (261)
-- [ ] unnamed bw3 0x00567d0e (261)
-
-### `sound/mp3.cpp`
-- [ ] unnamed bw1 0x00525ab0, bw2 0x005048e0, bw3 0x004fd3c0 (65)
-- [ ] unnamed bw1 0x0052af80, bw2 0x00509db0, bw3 0x00502890 (108)
-
 ### `sound/snddx.cpp`
-- [ ] unnamed bw1 0x00577500, bw2 0x00554ad0, bw3 0x0055a670 (91)
-- [ ] unnamed bw1 0x00577880, bw2 0x00554e50, bw3 0x0055a9f0 (91)
+- [ ] `CDirectSoundDevice::commitDeferredSettings` bw1 0x0057a230, bw2 0x00557800, bw3 0x0055d360 (28, in nocturne)
 - [ ] unnamed bw1 0x005779b0, bw2 0x00554f80, bw3 0x0055ab20 (60)
 - [ ] unnamed bw1 0x00577a50, bw2 0x00555020, bw3 0x0055abc0 (18)
-- [ ] unnamed bw1 0x00577b60, bw2 0x00555130, bw3 0x0055acd0 (102)
-- [ ] unnamed bw1 0x00577cd0, bw2 0x005552a0, bw3 0x0055ae40 (77)
-- [ ] unnamed bw1 0x00577f90, bw3 0x0055b100 (336)
-- [ ] unnamed bw1 0x005784b0, bw2 0x00555a80, bw3 0x0055b620 (70)
-- [ ] unnamed bw1 0x00578590, bw2 0x00555b60, bw3 0x0055b700 (53)
-- [ ] unnamed bw1 0x00578640, bw2 0x00555c10, bw3 0x0055b7b0 (19)
-- [ ] unnamed bw1 0x00578680, bw2 0x00555c50, bw3 0x0055b7f0 (16)
-- [ ] unnamed bw1 0x005786b0, bw2 0x00555c80, bw3 0x0055b820 (13)
-- [ ] unnamed bw1 0x00578710 (174)
-- [ ] unnamed bw1 0x00578a20, bw2 0x00555ff0, bw3 0x0055bb90 (26)
-- [ ] unnamed bw1 0x00578a80, bw2 0x00556050 (117)
-- [ ] unnamed bw1 0x00578be0, bw2 0x005561b0 (66)
-- [ ] unnamed bw1 0x00578cc0, bw2 0x00556290 (186)
-- [ ] unnamed bw1 0x00578f80, bw2 0x00556550 (631)
-- [ ] unnamed bw1 0x00579900, bw2 0x00556ed0, bw3 0x0055ca70 (46)
-- [ ] unnamed bw1 0x005799b0, bw2 0x00556f80 (94)
-- [ ] unnamed bw1 0x00579ad0, bw2 0x005570a0 (315)
-- [ ] unnamed bw1 0x00579f30, bw2 0x00557500, bw3 0x0055d0a0 (18)
-- [ ] unnamed bw1 0x0057a230, bw2 0x00557800, bw3 0x0055d360 (28)
-- [ ] unnamed bw2 0x00555560 (336)
-- [ ] unnamed bw2 0x00555ce0 (174)
-- [ ] unnamed bw3 0x0055b880 (171)
-- [ ] unnamed bw3 0x0055bbf0 (117)
-- [ ] unnamed bw3 0x0055bd50 (66)
-- [ ] unnamed bw3 0x0055be30 (186)
-- [ ] unnamed bw3 0x0055c0f0 (631)
-- [ ] unnamed bw3 0x0055cb20 (94)
-- [ ] unnamed bw3 0x0055cc40 (315)
 
 ### `sound/sndmain.cpp`
-- [ ] unnamed bw1 0x0056d7ce, bw2 0x0054b15e, bw3 0x00550cbe (236)
-- [ ] unnamed bw1 0x0056db10, bw2 0x0054b4a0 (285)
-- [ ] unnamed bw1 0x0056df00, bw2 0x0054b890 (30)
-- [ ] unnamed bw1 0x0056df60, bw3 0x00551450 (40)
-- [ ] unnamed bw1 0x0056dfd0, bw3 0x005514c0 (65)
-- [ ] unnamed bw1 0x0056e7ee, bw3 0x00551cde (27)
-- [ ] unnamed bw1 0x0056e830 (380)
-- [ ] unnamed bw1 0x0056f1e0, bw2 0x0054cb70, bw3 0x005526d0 (95)
-- [ ] unnamed bw1 0x0056fa10, bw2 0x0054d3a0, bw3 0x00552f10 (77)
-- [ ] unnamed bw1 0x00570160 (75)
-- [ ] unnamed bw1 0x00570460, bw2 0x0054ddf0 (409)
-- [ ] unnamed bw1 0x00570a40, bw2 0x0054e3d0, bw3 0x00553f40 (142)
-- [ ] unnamed bw1 0x00571420, bw2 0x0054edb0 (596)
-- [ ] unnamed bw1 0x00571f10, bw2 0x0054f8a0 (43)
-- [ ] unnamed bw1 0x005723e0, bw2 0x0054fd70, bw3 0x005558e0 (9)
-- [ ] unnamed bw1 0x00572400, bw2 0x0054fd90, bw3 0x00555900 (11)
-- [ ] unnamed bw1 0x005726e0, bw2 0x00550070, bw3 0x00555bf0 (36)
-- [ ] unnamed bw1 0x00572780, bw2 0x00550110, bw3 0x00555c90 (20)
-- [ ] unnamed bw1 0x005727e0 (8)
-- [ ] unnamed bw1 0x00572810 (8)
-- [ ] unnamed bw1 0x00572840, bw2 0x005501d0, bw3 0x00555d50 (14)
-- [ ] unnamed bw1 0x00572880 (8)
-- [ ] unnamed bw1 0x005728b0 (8)
-- [ ] unnamed bw1 0x005728e0 (7)
-- [ ] unnamed bw1 0x00572900 (7)
-- [ ] unnamed bw1 0x005729d0 (7)
-- [ ] unnamed bw1 0x005729f0 (7)
-- [ ] unnamed bw1 0x00572b90, bw2 0x00550520, bw3 0x005560a0 (141)
-- [ ] unnamed bw1 0x005735a0, bw2 0x00550b70, bw3 0x00556700 (23)
-- [ ] unnamed bw1 0x00573760, bw2 0x00550d30 (28)
-- [ ] unnamed bw1 0x005737d0, bw2 0x00550da0, bw3 0x00556930 (17)
-- [ ] unnamed bw1 0x005738d0, bw2 0x00550ea0, bw3 0x00556a30 (17)
-- [ ] unnamed bw1 0x00573950, bw2 0x00550f20, bw3 0x00556ab0 (14)
-- [ ] unnamed bw1 0x00573980, bw2 0x00550f50, bw3 0x00556ae0 (29)
-- [ ] unnamed bw1 0x00573d60, bw2 0x00551330, bw3 0x00556ec0 (28)
-- [ ] unnamed bw1 0x00573e4c, bw2 0x0055141c, bw3 0x00556fac (9)
-- [ ] unnamed bw1 0x00573e70 (28)
-- [ ] unnamed bw1 0x00573eae, bw2 0x0055147e, bw3 0x0055700e (5)
-- [ ] unnamed bw1 0x00573ec0, bw2 0x00551490, bw3 0x00557020 (16)
-- [ ] unnamed bw1 0x00573f20, bw2 0x005514f0, bw3 0x00557080 (22)
-- [ ] unnamed bw1 0x00573fa0, bw2 0x00551570, bw3 0x00557100 (10)
-- [ ] unnamed bw1 0x00573fe0, bw2 0x005515b0, bw3 0x00557140 (16)
-- [ ] unnamed bw1 0x00574010, bw2 0x005515e0, bw3 0x00557170 (30)
-- [ ] unnamed bw1 0x00574080, bw2 0x00551650, bw3 0x005571e0 (41)
-- [ ] unnamed bw1 0x005740fe, bw3 0x0055725e (87)
-- [ ] unnamed bw1 0x00574230, bw3 0x00557390 (57)
-- [ ] unnamed bw1 0x005742c0, bw3 0x00557420 (33)
-- [ ] unnamed bw1 0x00574410 (194)
-- [ ] unnamed bw1 0x00575200 (7)
-- [ ] unnamed bw1 0x00575220 (7)
-- [ ] unnamed bw1 0x00575240 (7)
-- [ ] unnamed bw1 0x00575560 (2)
-- [ ] unnamed bw1 0x00575580 (16)
-- [ ] unnamed bw1 0x00575db0, bw2 0x00553380, bw3 0x00558f20 (119)
-- [ ] unnamed bw1 0x005770d0, bw2 0x005546a0, bw3 0x0055a240 (81)
-- [ ] unnamed bw1 0x005771b0, bw2 0x00554780, bw3 0x0055a320 (161)
-- [ ] unnamed bw1 0x005773f0, bw2 0x005549c0, bw3 0x0055a560 (25)
-- [ ] unnamed bw1 0x005774f0 (2)
-- [ ] unnamed bw2 0x0054b8f0 (40)
-- [ ] unnamed bw2 0x0054b960 (65)
-- [ ] unnamed bw2 0x0054bac0 (429)
-- [ ] unnamed bw2 0x0054c180 (26)
-- [ ] unnamed bw2 0x0054c1c0 (379)
-- [ ] unnamed bw2 0x0054c7f0 (231)
-- [ ] unnamed bw2 0x0054daf0 (75)
-- [ ] unnamed bw2 0x005506b0 (248)
-- [ ] unnamed bw2 0x00551440 (28)
-- [ ] unnamed bw2 0x005516ce (87)
-- [ ] unnamed bw2 0x00551800 (57)
-- [ ] unnamed bw2 0x00551890 (33)
-- [ ] unnamed bw2 0x005519e0 (193)
-- [ ] unnamed bw2 0x005527d0 (7)
-- [ ] unnamed bw2 0x005527f0 (7)
-- [ ] unnamed bw2 0x00552810 (7)
-- [ ] unnamed bw2 0x00552b30 (2)
-- [ ] unnamed bw2 0x00552b50 (16)
-- [ ] unnamed bw2 0x00552e40 (29)
-- [ ] unnamed bw2 0x00554ac0 (2)
-- [ ] unnamed bw3 0x00551000 (285)
-- [ ] unnamed bw3 0x005513f0 (30)
-- [ ] unnamed bw3 0x00551620 (430)
-- [ ] unnamed bw3 0x00551d20 (380)
-- [ ] unnamed bw3 0x00552350 (232)
-- [ ] unnamed bw3 0x00552900 (32)
-- [ ] unnamed bw3 0x00553660 (75)
-- [ ] unnamed bw3 0x00553960 (409)
-- [ ] unnamed bw3 0x00554920 (596)
-- [ ] unnamed bw3 0x00555410 (43)
-- [ ] unnamed bw3 0x00555b80 (24)
-- [ ] unnamed bw3 0x00555cf0 (8)
-- [ ] unnamed bw3 0x00555d20 (8)
-- [ ] unnamed bw3 0x00555d90 (8)
-- [ ] unnamed bw3 0x00555dc0 (8)
-- [ ] unnamed bw3 0x00555df0 (7)
-- [ ] unnamed bw3 0x00555e10 (7)
-- [ ] unnamed bw3 0x00555e30 (23)
-- [ ] unnamed bw3 0x00556230 (5)
-- [ ] unnamed bw3 0x00556240 (248)
-- [ ] unnamed bw3 0x00556fd0 (28)
-- [ ] unnamed bw3 0x00557570 (194)
-- [ ] unnamed bw3 0x00558370 (7)
-- [ ] unnamed bw3 0x00558390 (7)
-- [ ] unnamed bw3 0x005583b0 (7)
-- [ ] unnamed bw3 0x005586d0 (2)
-- [ ] unnamed bw3 0x005586f0 (16)
-- [ ] unnamed bw3 0x00558840 (2)
-- [ ] unnamed bw3 0x0055a660 (2)
+- [ ] `findSfxSampleByName` bw1 0x0056e7f0, bw2 0x0054c180, bw3 0x00551ce0 (26, differs)
+- [ ] `CSfxSample::bytesToFrames` bw1 0x005723e0, bw2 0x0054fd70, bw3 0x005558e0 (9)
+- [ ] `CSfxSample::framesToBytes` bw1 0x00572400, bw2 0x0054fd90, bw3 0x00555900 (11)
+- [ ] `setDualListenerEnabled` bw1 0x00573e50, bw2 0x00551420, bw3 0x00556fb0 (8)
+- [ ] `setCurrentListener` bw1 0x00573eb0, bw2 0x00551480, bw3 0x00557010 (4)
+- [ ] `getNearestListener` bw1 0x00574080, bw2 0x00551650, bw3 0x005571e0 (41)
+- [ ] `createUserSample` bw1 0x00574100, bw2 0x005516d0, bw3 0x00557260 (86, differs)
+- [ ] `lockSample` bw1 0x00574230, bw2 0x00551800, bw3 0x00557390 (57, differs)
+- [ ] `unlockSample` bw1 0x005742c0, bw2 0x00551890, bw3 0x00557420 (33, differs)
+- [ ] `flushSoundChanges` bw1 0x00575db0, bw2 0x00553380, bw3 0x00558f20 (119)
+- [ ] `openCdAudio` bw1 0x005770d0, bw2 0x005546a0, bw3 0x0055a240 (81)
+- [ ] `playCdTrack` bw1 0x005771b0, bw2 0x00554780, bw3 0x0055a320 (161)
+- [ ] `staticInit` bw1 0x005774f0 (2)
+- [ ] `staticInit` bw2 0x00554ac0 (2)
+- [ ] `preloadSfx` bw3 0x00556230 (5)
+- [ ] `staticInit` bw3 0x0055a660 (2)
 
 ### `sound/sndwav.cpp`
-- [ ] unnamed bw1 0x0057b4fe (1)
-- [ ] unnamed bw1 0x0057b550 (2)
-- [ ] unnamed bw1 0x0057b560 (1)
-- [ ] unnamed bw1 0x0057b570 (1)
-- [ ] unnamed bw1 0x0057b580 (1)
-- [ ] unnamed bw1 0x0057b590 (1)
-- [ ] unnamed bw1 0x0057b5a0 (1)
-- [ ] unnamed bw1 0x0057b5b0 (1)
-- [ ] unnamed bw1 0x0057b5c0 (2)
-- [ ] unnamed bw1 0x0057b5d0 (1)
-- [ ] unnamed bw1 0x0057b5e0 (2)
-- [ ] unnamed bw1 0x0057b5f0 (1)
-- [ ] unnamed bw1 0x0057b600 (2)
-- [ ] unnamed bw1 0x0057b610 (2)
-- [ ] unnamed bw1 0x0057b640 (2)
-- [ ] unnamed bw1 0x0057b650 (1)
-- [ ] unnamed bw1 0x0057b660 (2)
-- [ ] unnamed bw2 0x00558b20 (2)
-- [ ] unnamed bw2 0x00558b30 (1)
-- [ ] unnamed bw2 0x00558b40 (1)
-- [ ] unnamed bw2 0x00558b50 (1)
-- [ ] unnamed bw2 0x00558b60 (1)
-- [ ] unnamed bw2 0x00558b70 (1)
-- [ ] unnamed bw2 0x00558b80 (1)
-- [ ] unnamed bw2 0x00558b90 (2)
-- [ ] unnamed bw2 0x00558ba0 (1)
-- [ ] unnamed bw2 0x00558bb0 (2)
-- [ ] unnamed bw2 0x00558bc0 (1)
-- [ ] unnamed bw2 0x00558bd0 (2)
-- [ ] unnamed bw2 0x00558be0 (2)
-- [ ] unnamed bw2 0x00558c10 (2)
-- [ ] unnamed bw2 0x00558c20 (1)
-- [ ] unnamed bw2 0x00558c30 (2)
-- [ ] unnamed bw3 0x0055e62e (1)
-- [ ] unnamed bw3 0x0055e680 (2)
-- [ ] unnamed bw3 0x0055e690 (1)
-- [ ] unnamed bw3 0x0055e6a0 (1)
-- [ ] unnamed bw3 0x0055e6b0 (1)
-- [ ] unnamed bw3 0x0055e6c0 (1)
-- [ ] unnamed bw3 0x0055e6d0 (1)
-- [ ] unnamed bw3 0x0055e6e0 (1)
-- [ ] unnamed bw3 0x0055e6f0 (2)
-- [ ] unnamed bw3 0x0055e700 (1)
-- [ ] unnamed bw3 0x0055e710 (2)
-- [ ] unnamed bw3 0x0055e720 (1)
-- [ ] unnamed bw3 0x0055e730 (2)
-- [ ] unnamed bw3 0x0055e740 (2)
-- [ ] unnamed bw3 0x0055e770 (2)
-- [ ] unnamed bw3 0x0055e780 (1)
-- [ ] unnamed bw3 0x0055e790 (2)
+- [ ] `CWavOutDevice::commitDeferredSettings` bw1 0x0057b560, bw2 0x00558b30, bw3 0x0055e690 (1, in nocturne)
 
 ### `support/codec.cpp`
 - [ ] `CAsciiArmor::ctor` bw1 0x00443890, bw2 0x00434b70, bw3 0x004414f0 (6)
@@ -12660,7 +11812,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CCheesyCipher::ctor` bw1 0x00443a00, bw2 0x00434ce0, bw3 0x00441660 (22)
 - [ ] `CCheesyCipher::setMode` bw1 0x00443a40, bw2 0x00434d20, bw3 0x004416a0 (4)
 - [ ] `CCheesyCipher::setKey` bw1 0x00443a50, bw2 0x00434d30, bw3 0x004416b0 (13)
-- [ ] `CCheesyCipher::transformByte` bw1 0x00443a80, bw3 0x004416e0 (34)
+- [ ] `CCheesyCipher::transformByte` bw1 0x00443a80, bw2 0x00434d60, bw3 0x004416e0 (34, differs)
 - [ ] `CCheesyCipher::process` bw1 0x00443af0, bw2 0x00434dd0, bw3 0x00441750 (61)
 - [ ] `CCheesyCipher::advanceKey` bw1 0x00443b70, bw2 0x00434e50, bw3 0x004417d0 (6)
 - [ ] `CInStreamPipe::ctor` bw1 0x00443b90, bw2 0x00434e70, bw3 0x004417f0 (14)
@@ -12683,55 +11835,45 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x004425e0, bw2 0x004338d0, bw3 0x00440240 (10)
 - [ ] unnamed bw1 0x00442600, bw2 0x004338f0, bw3 0x00440260 (166)
 - [ ] unnamed bw1 0x004427a0, bw2 0x00433a90, bw3 0x00440400 (30)
-- [ ] unnamed bw1 0x004427e0, bw2 0x00433ad0, bw3 0x00440440 (31)
 - [ ] unnamed bw1 0x00442a80, bw3 0x004406e0 (43)
 - [ ] unnamed bw1 0x00442c00, bw2 0x00433ee0, bw3 0x00440860 (52)
-- [ ] unnamed bw1 0x00442c70 (2)
 - [ ] unnamed bw1 0x00442c80, bw2 0x00433f60, bw3 0x004408e0 (56)
-- [ ] unnamed bw1 0x00442d10, bw2 0x00433ff0, bw3 0x00440970 (48)
 - [ ] unnamed bw1 0x00442e10, bw3 0x00440a70 (87)
-- [ ] unnamed bw1 0x00442f00, bw2 0x004341e0, bw3 0x00440b60 (46)
 - [ ] unnamed bw1 0x004431b0, bw2 0x00434490, bw3 0x00440e10 (98)
 - [ ] unnamed bw1 0x00443290, bw2 0x00434570, bw3 0x00440ef0 (103)
 - [ ] unnamed bw1 0x00443370, bw2 0x00434650, bw3 0x00440fd0 (61)
 - [ ] unnamed bw1 0x004433f0, bw2 0x004346d0, bw3 0x00441050 (74)
 - [ ] unnamed bw1 0x00443530, bw2 0x00434810, bw3 0x00441190 (97)
-- [ ] unnamed bw1 0x00443630, bw2 0x00434910, bw3 0x00441290 (52)
 - [ ] unnamed bw1 0x00443730, bw2 0x00434a10, bw3 0x00441390 (46)
 - [ ] unnamed bw1 0x00443790, bw2 0x00434a70, bw3 0x004413f0 (59)
 - [ ] unnamed bw1 0x00443830, bw2 0x00434b10, bw3 0x00441490 (39)
 - [ ] unnamed bw2 0x00433f50 (2)
 - [ ] unnamed bw2 0x004340f0 (86)
-- [ ] unnamed bw2 0x00434d60 (34)
-- [ ] unnamed bw3 0x004408d0 (2)
 
 ### `support/trisock.cpp`
 - [ ] `Socket_copy` bw1 0x0059c8b0, bw2 0x00578fd0, bw3 0x0056f8a0 (9, differs)
 - [ ] `IpAddr_ctor` bw1 0x0059f300, bw2 0x0057b780, bw3 0x005722f0 (2)
-- [ ] unnamed bw1 0x0059c9d0, bw2 0x005790f0, bw3 0x0056f9c0 (36)
 - [ ] unnamed bw1 0x0059ca30, bw2 0x00579150, bw3 0x0056fa20 (71)
-- [ ] unnamed bw1 0x0059cef0, bw3 0x0056fee0 (4)
+- [ ] unnamed bw1 0x0059cef0, bw2 0x00579880, bw3 0x0056fee0 (4)
 - [ ] unnamed bw1 0x0059cf00, bw2 0x00579890, bw3 0x0056fef0 (212)
 - [ ] unnamed bw1 0x0059d330, bw2 0x00579cc0, bw3 0x00570320 (8)
 - [ ] unnamed bw1 0x0059d360, bw2 0x00579cf0, bw3 0x00570350 (75)
 - [ ] unnamed bw1 0x0059d430, bw2 0x00579dc0, bw3 0x00570420 (50)
 - [ ] unnamed bw1 0x0059d4b0, bw2 0x00579e40, bw3 0x005704a0 (203)
-- [ ] unnamed bw1 0x0059d75c, bw2 0x0057a0ec, bw3 0x0057074c (86)
+- [ ] unnamed bw1 0x0059d760, bw2 0x0057a0f0, bw3 0x00570750 (85)
 - [ ] unnamed bw1 0x0059d850, bw2 0x0057a1e0, bw3 0x00570840 (146)
-- [ ] unnamed bw1 0x0059d9cc (1)
 - [ ] unnamed bw1 0x0059d9d0, bw2 0x0057a360, bw3 0x005709c0 (108)
-- [ ] unnamed bw1 0x0059daec, bw2 0x0057a47c, bw3 0x00570adc (163)
+- [ ] unnamed bw1 0x0059daf0, bw2 0x0057a480, bw3 0x00570ae0 (162)
 - [ ] unnamed bw1 0x0059dd40, bw2 0x0057a6d0, bw3 0x00570d30 (21)
 - [ ] unnamed bw1 0x0059ddc0, bw2 0x0057a750, bw3 0x00570db0 (28)
 - [ ] unnamed bw1 0x0059de00, bw2 0x0057a790, bw3 0x00570df0 (13)
 - [ ] unnamed bw1 0x0059de30, bw2 0x0057a7c0, bw3 0x00570e20 (31)
 - [ ] unnamed bw1 0x0059de90, bw2 0x0057a820, bw3 0x00570e80 (8)
-- [ ] unnamed bw1 0x0059deb0, bw3 0x00570ea0 (27)
-- [ ] unnamed bw1 0x0059df10, bw3 0x00570f00 (51)
+- [ ] unnamed bw1 0x0059deb0, bw3 0x00570ea0 (78)
 - [ ] unnamed bw1 0x0059dfc0, bw2 0x0057a980, bw3 0x00570fb0 (44)
 - [ ] unnamed bw1 0x0059e040, bw2 0x0057aa00, bw3 0x00571030 (51)
-- [ ] unnamed bw1 0x0059e26e, bw2 0x0057ac2e, bw3 0x0057125e (56)
-- [ ] unnamed bw1 0x0059e350, bw3 0x00571340 (146)
+- [ ] unnamed bw1 0x0059e270, bw2 0x0057ac30, bw3 0x00571260 (55)
+- [ ] unnamed bw1 0x0059e350, bw3 0x00571340 (667)
 - [ ] unnamed bw1 0x0059ed20, bw3 0x00571d10 (19)
 - [ ] unnamed bw1 0x0059ed90, bw3 0x00571d80 (57)
 - [ ] unnamed bw1 0x0059ee60, bw3 0x00571e50 (25)
@@ -12743,19 +11885,23 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x0059f2a0, bw2 0x00579820, bw3 0x00572290 (24)
 - [ ] unnamed bw1 0x0059f320, bw2 0x0057b7a0, bw3 0x00572310 (9)
 - [ ] unnamed bw1 0x0059f340, bw2 0x0057b7c0, bw3 0x00572330 (10)
-- [ ] unnamed bw2 0x0057987e (5)
-- [ ] unnamed bw2 0x0057a35c (1)
-- [ ] unnamed bw2 0x0057a81e (1)
-- [ ] unnamed bw2 0x0057a840 (44)
-- [ ] unnamed bw2 0x0057a8b0 (40)
-- [ ] unnamed bw2 0x0057ad10 (146)
+- [ ] unnamed bw2 0x0057a840 (84)
+- [ ] unnamed bw2 0x0057ad10 (597)
 - [ ] unnamed bw2 0x0057b680 (70)
-- [ ] unnamed bw3 0x005709bc (1)
 
 ### `support/trstream.cpp`
-- [ ] `staticInit` bw1 0x0059f520, bw3 0x00572510 (7)
+- [ ] `staticInit` bw1 0x0059f520, bw2 0x0057b9a0, bw3 0x00572510 (7)
+- [ ] `CInStream::ctor` bw1 0x0059f540, bw2 0x0057b9c0, bw3 0x00572530 (3)
+- [ ] `CInStream::dtor` bw1 0x0059f550, bw2 0x0057b9d0, bw3 0x00572540 (3)
+- [ ] `CInStream::ungetChar` bw1 0x0059f580, bw2 0x0057ba00, bw3 0x00572570 (2)
+- [ ] `CInStream::tell` bw1 0x0059f590, bw2 0x0057ba10, bw3 0x00572580 (2)
+- [ ] `CInStream::scanf` bw1 0x0059f5a0, bw2 0x0057ba20, bw3 0x00572590 (17)
+- [ ] `CInStream::vscanf` bw1 0x0059f700, bw2 0x0057bb80, bw3 0x005726f0 (1122)
+- [ ] `CInStream::readLine` bw1 0x005a07a0, bw2 0x0057cc20, bw3 0x00573790 (42)
+- [ ] `CInStream::skipWhitespace` bw1 0x005a0840, bw2 0x0057ccc0, bw3 0x00573830 (47)
 - [ ] `CInStreamFile::ctor` bw1 0x005a08d0, bw2 0x0057cd50, bw3 0x005738c0 (15)
 - [ ] `CInStreamFile::ctorOpen` bw1 0x005a0930, bw2 0x0057cdb0, bw3 0x00573920 (28, differs)
+- [ ] `CInStreamFile::ctorOpenInDirectory` bw1 0x005a09a0, bw2 0x0057ce20, bw3 0x00573990 (32, differs)
 - [ ] `CInStreamFile::copy` bw1 0x005a0a20, bw2 0x0057ce90, bw3 0x00573a10 (6)
 - [ ] `CInStreamFile::dtor` bw1 0x005a0a50, bw2 0x0057cec0, bw3 0x00573a40 (35)
 - [ ] `CInStreamFile::getChar` bw1 0x005a0ab0, bw2 0x0057cf20, bw3 0x00573aa0 (38, differs)
@@ -12768,9 +11914,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CInStreamFile::isOpen` bw1 0x005a0d70, bw2 0x0057d130, bw3 0x00573d60 (5)
 - [ ] `CInStreamFile::isEof` bw1 0x005a0d90, bw2 0x0057d150, bw3 0x00573d80 (16)
 - [ ] `CInStreamFile::close` bw1 0x005a0dc0, bw2 0x0057d180, bw3 0x00573db0 (18)
-- [ ] `CInStreamFile::allocBuffer` bw1 0x005a0e10, bw3 0x00573e00 (32)
+- [ ] `CInStreamFile::allocBuffer` bw1 0x005a0e10, bw2 0x0057d1d0, bw3 0x00573e00 (32, differs)
 - [ ] `CInStreamFile::freeBuffer` bw1 0x005a0e80, bw2 0x0057d240, bw3 0x00573e70 (16)
-- [ ] `CInStreamFile::fillBuffer` bw1 0x005a0ec0, bw3 0x00573eb0 (60)
+- [ ] `CInStreamFile::fillBuffer` bw1 0x005a0ec0, bw2 0x0057d280, bw3 0x00573eb0 (60, differs)
 - [ ] `CInStreamFile::open` bw1 0x005a0f60, bw2 0x0057d320, bw3 0x00573f50 (42, differs)
 - [ ] `CInStreamFile::openInDirectory` bw1 0x005a0fd0, bw2 0x0057d390, bw3 0x00573fc0 (59, differs)
 - [ ] `CInStreamFile::openHandle` bw1 0x005a1090, bw2 0x0057d450, bw3 0x00574080 (53, differs)
@@ -12783,11 +11929,16 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CInStreamMemory::peekChar` bw1 0x005a12d0, bw2 0x0057d680, bw3 0x005742c0 (15)
 - [ ] `CInStreamMemory::read` bw1 0x005a1300, bw2 0x0057d6b0, bw3 0x005742f0 (46)
 - [ ] `CInStreamMemory::seek` bw1 0x005a1360, bw2 0x0057d710, bw3 0x00574350 (27)
+- [ ] `COutStream::seek` bw1 0x005a1390, bw2 0x0057d740, bw3 0x00574380 (2)
 - [ ] `CInStreamMemory::tell` bw1 0x005a13b0, bw2 0x0057d760, bw3 0x005743a0 (6)
+- [ ] `COutStream::tell` bw1 0x005a13c0, bw2 0x0057d770, bw3 0x005743b0 (2)
 - [ ] `CInStreamMemory::isEof` bw1 0x005a13d0, bw2 0x0057d780, bw3 0x005743c0 (16)
 - [ ] `CInStreamMemory::close` bw1 0x005a1400, bw2 0x0057d7b0, bw3 0x005743f0 (18)
 - [ ] `CInStreamMemory::open` bw1 0x005a1450, bw2 0x0057d800, bw3 0x00574440 (14)
 - [ ] `CInStreamMemory::openOwned` bw1 0x005a1480, bw2 0x0057d830, bw3 0x00574470 (14)
+- [ ] `COutStream::dtor` bw1 0x005a14b0, bw2 0x0057d860, bw3 0x005744a0 (3)
+- [ ] `COutStream::printf` bw1 0x005a14c0, bw2 0x0057d870, bw3 0x005744b0 (17)
+- [ ] `COutStream::vprintf` bw1 0x005a14f0, bw2 0x0057d8a0, bw3 0x005744e0 (192)
 - [ ] `COutStreamFile::ctor` bw1 0x005a17d0, bw2 0x0057db80, bw3 0x005747c0 (7)
 - [ ] `COutStreamFile::ctorOpen` bw1 0x005a17f0, bw2 0x0057dba0, bw3 0x005747e0 (20)
 - [ ] `COutStreamFile::copy` bw1 0x005a1830, bw2 0x0057dbe0, bw3 0x00574820 (6)
@@ -12818,77 +11969,35 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `COutStreamDebug::write` bw1 0x005a1ec0, bw2 0x0057e270, bw3 0x00574eb0 (66)
 - [ ] `COutStreamDebug::seek` bw1 0x005a1f80, bw2 0x0057e330, bw3 0x00574f70 (9, differs)
 - [ ] `COutStreamDebug::tell` bw1 0x005a1fb0, bw2 0x0057e360, bw3 0x00574fa0 (9, differs)
-- [ ] `CInStreamFile::ctorOpenInDirectory` bw2 0x0057ce20 (28)
-- [ ] unnamed bw1 0x0059f540 (3)
-- [ ] unnamed bw1 0x0059f550 (3)
-- [ ] unnamed bw1 0x0059f55e, bw2 0x0057b9de, bw3 0x0057254e (4)
-- [ ] unnamed bw1 0x0059f580 (2)
-- [ ] unnamed bw1 0x0059f590 (2)
-- [ ] unnamed bw1 0x0059f59c (1)
-- [ ] unnamed bw1 0x0059f5a0 (17)
-- [ ] unnamed bw1 0x0059f700, bw2 0x0057bb80, bw3 0x005726f0 (1122)
-- [ ] unnamed bw1 0x005a07a0, bw2 0x0057cc20, bw3 0x00573790 (42)
-- [ ] unnamed bw1 0x005a0840, bw2 0x0057ccc0, bw3 0x00573830 (47)
-- [ ] unnamed bw1 0x005a09a0, bw3 0x00573990 (32)
-- [ ] unnamed bw1 0x005a1390 (2)
-- [ ] unnamed bw1 0x005a13c0 (2)
-- [ ] unnamed bw1 0x005a14b0 (3)
-- [ ] unnamed bw1 0x005a14c0 (17)
-- [ ] unnamed bw1 0x005a14f0, bw2 0x0057d8a0, bw3 0x005744e0 (192)
-- [ ] unnamed bw2 0x0057d1d0 (32)
-- [ ] unnamed bw2 0x0057d280 (60)
-- [ ] unnamed bw2 0x0057d740 (2)
-- [ ] unnamed bw2 0x0057d770 (2)
-- [ ] unnamed bw2 0x0057d860 (3)
-- [ ] unnamed bw2 0x0057d870 (17)
-- [ ] unnamed bw3 0x00572530 (3)
-- [ ] unnamed bw3 0x00572540 (3)
-- [ ] unnamed bw3 0x00572570 (2)
-- [ ] unnamed bw3 0x00572580 (2)
-- [ ] unnamed bw3 0x0057258c (1)
-- [ ] unnamed bw3 0x00572590 (17)
-- [ ] unnamed bw3 0x00574380 (2)
-- [ ] unnamed bw3 0x005743b0 (2)
-- [ ] unnamed bw3 0x005744a0 (3)
-- [ ] unnamed bw3 0x005744b0 (17)
+- [ ] unnamed bw1 0x0059f560 (3)
+- [ ] unnamed bw3 0x00572550 (3)
 
 ### `wincore/wddvmem.cpp`
-- [ ] unnamed bw1 0x005abf1e, bw3 0x005797ce (58)
-- [ ] unnamed bw1 0x005abfec, bw2 0x0058873c, bw3 0x0057989c (33)
-- [ ] unnamed bw1 0x005ac040, bw3 0x005798f0 (108)
-- [ ] unnamed bw1 0x005ac1b0, bw2 0x00588900, bw3 0x00579a60 (67, in nocturne)
-- [ ] unnamed bw1 0x005ac26e, bw2 0x005889be, bw3 0x00579b1e (45)
-- [ ] unnamed bw1 0x005ac300, bw3 0x00579bb0 (381)
-- [ ] unnamed bw1 0x005ad270, bw3 0x0057ab20 (19)
-- [ ] unnamed bw2 0x0058866e (58)
-- [ ] unnamed bw2 0x00588790 (108, in nocturne)
-- [ ] unnamed bw2 0x00588a50 (273)
+- [ ] unnamed bw1 0x005abf20, bw3 0x005797d0 (57)
+- [ ] unnamed bw1 0x005abff0, bw2 0x00588740, bw3 0x005798a0 (32, in nocturne)
+- [ ] unnamed bw2 0x00588670 (57, in nocturne)
 
 ### `wincore/winrun.cpp`
 - [ ] unnamed bw1 0x005b25f0 (3)
-- [ ] unnamed bw1 0x005b27d0, bw3 0x00580a50 (344)
-- [ ] unnamed bw1 0x005b2cf0, bw3 0x00580f70 (57)
 - [ ] unnamed bw1 0x005b2d90, bw3 0x00581010 (24)
-- [ ] unnamed bw1 0x005b2dde, bw3 0x0058105e (7)
+- [ ] unnamed bw1 0x005b2de0, bw3 0x00581060 (6)
 - [ ] unnamed bw1 0x005b3840, bw3 0x00581a20 (7)
 - [ ] unnamed bw1 0x005b3c90, bw2 0x005901c0, bw3 0x00581e70 (79)
 - [ ] unnamed bw1 0x005b3d70, bw3 0x00581f50 (305)
-- [ ] unnamed bw1 0x005b418e, bw2 0x0059064e, bw3 0x0058236e (17)
+- [ ] unnamed bw1 0x005b4190, bw2 0x00590650, bw3 0x00582370 (16)
 - [ ] unnamed bw1 0x005b41c0, bw2 0x00590680, bw3 0x005823a0 (75)
 - [ ] unnamed bw1 0x005b42d0, bw2 0x00590790, bw3 0x005824b0 (8)
 - [ ] unnamed bw1 0x005b42f0, bw2 0x005907b0, bw3 0x005824d0 (12)
 - [ ] unnamed bw1 0x005b4320, bw2 0x005907e0, bw3 0x00582500 (34)
-- [ ] unnamed bw1 0x005b439c, bw2 0x0059085c, bw3 0x0058257c (30)
+- [ ] unnamed bw1 0x005b43a0, bw2 0x00590860, bw3 0x00582580 (29)
 - [ ] unnamed bw1 0x005b4400, bw2 0x005908c0, bw3 0x005825e0 (26)
 - [ ] unnamed bw1 0x005b4450 (5)
 - [ ] unnamed bw1 0x005b4460, bw2 0x00590920, bw3 0x00582640 (14)
 - [ ] unnamed bw1 0x005b44a0, bw2 0x00590960, bw3 0x00582680 (121)
-- [ ] unnamed bw1 0x005b464c, bw2 0x00590b0c, bw3 0x0058282c (114)
+- [ ] unnamed bw1 0x005b4650, bw2 0x00590b10, bw3 0x00582830 (113)
 - [ ] unnamed bw1 0x005b48c0, bw2 0x00590d80, bw3 0x00582aa0 (51)
 - [ ] unnamed bw2 0x0058ebb0 (3)
-- [ ] unnamed bw2 0x0058ed90 (333)
 - [ ] unnamed bw2 0x005902a0 (281)
 - [ ] unnamed bw2 0x00590910 (5)
 - [ ] unnamed bw3 0x00580870 (3)
-- [ ] unnamed bw3 0x00581360 (398)
 - [ ] unnamed bw3 0x00582630 (5)

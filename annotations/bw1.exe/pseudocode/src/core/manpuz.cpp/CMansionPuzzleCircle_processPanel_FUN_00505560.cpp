@@ -31,7 +31,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(CMan
       if (pSVar4->exists != 0) {
         _DAT_01d1d400 = "..\\core\\manpuz.cpp";
         _DAT_01d1d404 = 0x45d;
-        core_main_c_FUN_005030e0("CMansionPuzzleCircle::processPanel - Panel collision!");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
       pSVar4->exists = pSVar3->exists;
       pSVar4->anim_progress = pSVar3->anim_progress;

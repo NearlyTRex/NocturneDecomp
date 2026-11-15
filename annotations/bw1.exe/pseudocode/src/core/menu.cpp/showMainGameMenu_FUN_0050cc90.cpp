@@ -20,7 +20,6 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
   int iVar6;
   CAlphaBitmap *this_ptr_00;
   char *pcVar7;
-  uint uVar8;
   int local_10;
   float local_c;
   int local_8;
@@ -127,16 +126,16 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
       if ((iVar4 == 0) || (iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d), iVar4 == 0)) {
         iVar4 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
         if (iVar4 == 0) {
-          uVar8 = 0;
+          iVar4 = 0;
         }
         else {
-          uVar8 = 1;
+          iVar4 = 1;
         }
       }
       else {
-        uVar8 = 2;
+        iVar4 = 2;
       }
-      core_game_cpp_FUN_004d7250(g_CGamePtr,uVar8);
+      core_game_cpp_CGame_showChapterSelect_FUN_004d7250(g_CGamePtr,iVar4);
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       engine_texture_cpp_FUN_00597c30();
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);

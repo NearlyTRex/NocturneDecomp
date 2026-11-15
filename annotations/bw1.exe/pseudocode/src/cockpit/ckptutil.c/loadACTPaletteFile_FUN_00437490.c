@@ -90,7 +90,7 @@ LAB_00437513:
       _sprintf(acStack_88,"Error reading %s.");
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x119;
-      core_main_c_FUN_005030e0(acStack_88);
+      core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_88);
     }
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&CStack_38);
   }

@@ -92,11 +92,11 @@ void core_muzzle_cpp_FUN_0059dd00(int *param_1,int *param_2)
          *(int *)(&stack0xffffff98 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     param_2[8] = local_24[0];
     param_2[10] = *(int *)(*param_2 + 0x3434);
-    fVar6 = (float10)(float)param_2[10] /
-            SQRT((float10)(float)param_2[4] * (float10)(float)param_2[4] +
-                 (float10)(float)param_2[2] * (float10)(float)param_2[2] +
-                 (float10)(float)param_2[3] * (float10)(float)param_2[3]);
-    asin();
+    fVar6 = asin
+                      ((float10)(float)param_2[10] /
+                       SQRT((float10)(float)param_2[4] * (float10)(float)param_2[4] +
+                            (float10)(float)param_2[2] * (float10)(float)param_2[2] +
+                            (float10)(float)param_2[3] * (float10)(float)param_2[3]));
     param_2[9] = (int)(float)(fVar6 * (float10)_DAT_005ef84f);
   }
   return;

@@ -17,24 +17,27 @@ void core_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   float afStackY_1010 [1008];
   double dVar4;
   CVector3i local_34;
-  float local_28;
-  float afStack_24 [4];
-  float local_14;
+  CVector3f local_28;
+  float local_1c;
+  float local_18 [2];
   
   bVar3 = 0;
   if (param_1[0x65].particle_systems[4].owner == (CDemonActor *)0xffffffff) {
     return;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(param_1);
-  core_xform_cpp_FUN_00592720();
-  afStack_24[2] = local_28;
-  afStack_24[(uint)bVar3 * -2 + 3] = afStack_24[(uint)bVar3 * -2];
-  afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-       afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-  afStack_24[3] = afStack_24[3] + 1.0;
-  local_34.x = (int)ROUND(afStack_24[2] * _DAT_005febc0);
-  local_34.y = (int)ROUND(afStack_24[3] * _DAT_005febc0);
-  local_34.z = (int)ROUND(local_14 * _DAT_005febc0);
+  core_xform_cpp_getTranslation_FUN_00592720
+            ((CMatrix3x4f *)
+             (param_1[6].footstep_sound_code +
+             (int)param_1[0x65].particle_systems[4].owner * 0x30 + -0x24),&local_28);
+  local_1c = local_28.x;
+  local_18[(uint)bVar3 * -2] = *(float *)((int)&local_28 + (uint)bVar3 * -8 + 4);
+  local_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       *(float *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  local_18[0] = local_18[0] + 1.0;
+  local_34.x = (int)ROUND(local_1c * _DAT_005febc0);
+  local_34.y = (int)ROUND(local_18[0] * _DAT_005febc0);
+  local_34.z = (int)ROUND(local_18[1] * _DAT_005febc0);
   engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             ((SProjectedVertex *)*DAT_0060b280,&local_34);
   iVar1 = *DAT_0060b280;

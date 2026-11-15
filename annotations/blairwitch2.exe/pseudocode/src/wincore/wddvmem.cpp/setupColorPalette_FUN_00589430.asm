@@ -26,7 +26,7 @@
 ;   undefined4 DAT_02661aec
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   wincore_wddvmem.cpp_analyzePixelFormat_FUN_00589270
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10
 ;
@@ -81,8 +81,8 @@ section .text
     PUSH 0x5ee3d0                       ; 005894bf | = "setpal - Unable to create palette object"
     MOV dword ptr [0x01d046a0],EDI      ; 005894c4 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 005894ca | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005894d0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005894d0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005894d5
     MOV ECX,dword ptr [0x02661aec]      ; 005894d8 | DAT_02661aec
         ;   Label: LAB_005894d8
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5ee410                       ; 005894f9 | = "setpal - Unable to set front buffer p..."
     MOV dword ptr [0x01d046a0],EBX      ; 005894fe | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00589504 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0058950a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058950a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058950f
     POP ESI                             ; 00589512
     CMP dword ptr [0x006141c0],0x8      ; 00589513 | DAT_006141c0

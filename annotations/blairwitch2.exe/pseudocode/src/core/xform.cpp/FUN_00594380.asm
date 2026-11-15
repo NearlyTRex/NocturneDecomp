@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[21]:
+; XREF[22]:
 ;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040dfed
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fb1e
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a2e0 at 0041a315
@@ -30,7 +30,7 @@
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00438550 at 0043858b
 ;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a755c
 ;   core_doc.cpp_FUN_00453d80 at 004540a1
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eedea

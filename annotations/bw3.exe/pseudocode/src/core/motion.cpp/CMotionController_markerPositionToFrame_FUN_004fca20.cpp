@@ -10,45 +10,39 @@ float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004fca
 
 {
   int iVar1;
-  float fVar2;
-  int iVar3;
-  int extraout_EDX;
+  CMotionList *pCVar2;
+  float fVar3;
   int iVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float local_1c;
+  int iVar5;
+  double dVar6;
+  float local_20;
   
+  pCVar2 = this_ptr->motion_list_ptr;
   if (marker_position <= 0.0) {
-    local_1c = 0.0;
+    local_20 = 0.0;
   }
-  else if ((float)(this_ptr->motion_list_ptr->motions[motion_index].marker_count + 1) <=
-           marker_position) {
-    local_1c = (float)(this_ptr->motion_list_ptr->motions[motion_index].frame_count + -1);
-  }
-  else {
-    fVar5 = (float10)marker_position;
-    fVar6 = fVar5;
-    round();
-    iVar1 = (int)ROUND(fVar5);
-    iVar4 = 0;
+  else if (marker_position < (float)(pCVar2->motions[motion_index].marker_count + 1)) {
+    dVar6 = round((double)marker_position);
+    iVar1 = (int)ROUND(dVar6);
+    iVar5 = 0;
     if (0 < iVar1) {
-      iVar4 = *(int *)(extraout_EDX + 0xf4 + iVar1 * 4);
+      iVar5 = pCVar2->motions[motion_index].markers[iVar1 + -1];
     }
-    iVar3 = *(int *)(extraout_EDX + 100);
-    if (iVar1 < *(int *)(extraout_EDX + 0xf4)) {
-      iVar3 = *(int *)(extraout_EDX + 0xf8 + iVar1 * 4);
+    iVar4 = pCVar2->motions[motion_index].frame_count;
+    if (iVar1 < pCVar2->motions[motion_index].marker_count) {
+      iVar4 = pCVar2->motions[motion_index].markers[iVar1];
     }
-    fVar2 = (float)iVar4 * (1.0 - (float)(fVar6 - (float10)iVar1)) +
-            (float)iVar3 * (float)(fVar6 - (float10)iVar1);
-    if (fVar2 < 0.0) {
-      local_1c = 0.0;
+    fVar3 = (float)iVar5 * (1.0 - (marker_position - (float)iVar1)) +
+            (float)iVar4 * (marker_position - (float)iVar1);
+    if (fVar3 < 0.0) {
+      local_20 = 0.0;
     }
     else {
-      local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);
-      if (fVar2 <= local_1c) {
-        return fVar2;
+      local_20 = (float)(pCVar2->motions[motion_index].frame_count + -1);
+      if (fVar3 <= local_20) {
+        return fVar3;
       }
     }
   }
-  return local_1c;
+  return local_20;
 }

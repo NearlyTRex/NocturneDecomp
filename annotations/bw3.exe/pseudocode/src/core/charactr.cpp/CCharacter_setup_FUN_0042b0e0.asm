@@ -39,7 +39,7 @@
 ;   core_cloth.cpp_CClothList_setup_FUN_0043fbc0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
@@ -309,8 +309,8 @@ section .text
     PUSH 0x5b7fcf                       ; 0042b3c7 | = "%s is carrying %s, but %s thinks it i..."
     MOV dword ptr [0x01d71de0],EDX      ; 0042b3cc | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0042b3d2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0042b3d8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0042b3d8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 0042b3dd
     JMP 0x0042b144                      ; 0042b3e0
         ;   XREF to: 0042b144 (UNCONDITIONAL_JUMP)  ; LAB_0042b144

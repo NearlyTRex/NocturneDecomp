@@ -39,14 +39,14 @@ void shape_edittool_cpp_FUN_00496ee0(void)
   if (_DAT_01c3eb50 == (CBitFont *)0x0) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xa4;
-    core_main_c_FUN_005030e0("gEdFont must be set by the application.");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
   _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   if (_DAT_01c3eb5c < 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x949;
-    core_main_c_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
   }
   local_28 = _DAT_01c4f020;
   iVar5 = (_DAT_01c3eb5c + -1) * 0x1f8;

@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   crt_memory.c_operator_new_array_FUN_005a40df
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5d1f84                       ; 0054c033 | = "CDeformableModelInstance::allocPointL..."
     MOV dword ptr [0x01d71de0],ECX      ; 0054c038 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0054c03e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054c044
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054c044
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0054c049
     POP EDI                             ; 0054c04c
     MOV dword ptr [EBX + 0x2320],0xffffffff ; 0054c04d

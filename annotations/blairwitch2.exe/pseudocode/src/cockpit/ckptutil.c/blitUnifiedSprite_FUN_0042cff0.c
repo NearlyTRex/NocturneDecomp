@@ -1,19 +1,18 @@
 // Name: cockpit_ckptutil.c_blitUnifiedSprite_FUN_0042cff0
 // Address: 0042cff0
 // Address Range: [[0042cff0, 0042d220]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void)
+void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
   int iVar1;
-  code *pcVar2;
+  ColorConversionFunc *pCVar2;
   int iVar3;
   int *piVar4;
   int iVar5;
@@ -21,34 +20,28 @@ void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void)
   int iVar7;
   int iVar8;
   int iVar9;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  int in_stack_00000014;
-  int in_stack_00000018;
   int iStack_2c;
   int iStack_28;
-  int iStack_1c;
-  int iStack_18;
+  void *pvStack_1c;
+  void *pvStack_18;
   
-  iVar6 = _DAT_01c35e50 - in_stack_0000000c;
+  iVar6 = _DAT_01c35e50 - dest_x;
   iVar1 = _DAT_01c2a390 - _DAT_01c2a38c;
-  iVar8 = _DAT_01c35e48 - in_stack_0000000c;
-  if (in_stack_00000004 != 0) {
-    pcVar2 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
+  iVar8 = _DAT_01c35e48 - dest_x;
+  if (sprite_data != (void *)0x0) {
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     if (DAT_006141c0 == 8) {
-      iStack_18 = in_stack_0000000c + *(int *)(&DAT_01c2a38c + in_stack_00000010 * 4);
-      if (0 < in_stack_00000018) {
+      pvStack_18 = (void *)(dest_x + *(int *)(&DAT_01c2a38c + dest_y * 4));
+      if (0 < height) {
         iStack_28 = 0;
         do {
-          if (in_stack_00000008 == 0) {
-            (*pcVar2)(iStack_18,in_stack_00000004,in_stack_00000014);
+          if (span_data == (void *)0x0) {
+            (*pCVar2)(pvStack_18,sprite_data,width);
           }
           else {
             iVar7 = 0;
             iVar9 = 0;
-            while (piVar4 = (int *)(in_stack_00000008 + iStack_28), iVar9 < *piVar4) {
+            while (piVar4 = (int *)((int)span_data + iStack_28), iVar9 < *piVar4) {
               iVar3 = *(int *)((int)piVar4 + iVar7 + 4);
               iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;
               if (((iVar3 < iVar8) && (iVar3 = iVar8, iVar5 < iVar8)) ||
@@ -57,30 +50,31 @@ void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void)
                 iVar7 = iVar7 + 4;
               }
               else {
-                (*pcVar2)(iVar3 + iStack_18,in_stack_00000004 + iVar3,(iVar5 - iVar3) + 1);
+                (*pCVar2)((void *)(iVar3 + (int)pvStack_18),(void *)((int)sprite_data + iVar3),
+                          (iVar5 - iVar3) + 1);
                 iVar9 = iVar9 + 1;
                 iVar7 = iVar7 + 4;
               }
             }
           }
           iStack_28 = iStack_28 + 0x84;
-          iStack_18 = iStack_18 + iVar1;
-          in_stack_00000004 = in_stack_00000004 + in_stack_00000014;
-        } while (iStack_28 < in_stack_00000018 * 0x84);
+          pvStack_18 = (void *)((int)pvStack_18 + iVar1);
+          sprite_data = (void *)((int)sprite_data + width);
+        } while (iStack_28 < height * 0x84);
       }
     }
     else {
-      iStack_1c = *(int *)(&DAT_01c2a38c + in_stack_00000010 * 4) + in_stack_0000000c * 2;
-      if (0 < in_stack_00000018) {
+      pvStack_1c = (void *)(*(int *)(&DAT_01c2a38c + dest_y * 4) + dest_x * 2);
+      if (0 < height) {
         iStack_2c = 0;
         do {
-          if (in_stack_00000008 == 0) {
-            (*pcVar2)(iStack_1c,in_stack_00000004,in_stack_00000014);
+          if (span_data == (void *)0x0) {
+            (*pCVar2)(pvStack_1c,sprite_data,width);
           }
           else {
             iVar7 = 0;
             iVar9 = 0;
-            while (piVar4 = (int *)(in_stack_00000008 + iStack_2c), iVar9 < *piVar4) {
+            while (piVar4 = (int *)((int)span_data + iStack_2c), iVar9 < *piVar4) {
               iVar3 = *(int *)((int)piVar4 + iVar7 + 4);
               iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;
               if (((iVar3 < iVar8) && (iVar3 = iVar8, iVar5 < iVar8)) ||
@@ -89,16 +83,17 @@ void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void)
                 iVar7 = iVar7 + 4;
               }
               else {
-                (*pcVar2)(iVar3 * 2 + iStack_1c,in_stack_00000004 + iVar3,(iVar5 - iVar3) + 1);
+                (*pCVar2)((void *)(iVar3 * 2 + (int)pvStack_1c),(void *)((int)sprite_data + iVar3),
+                          (iVar5 - iVar3) + 1);
                 iVar9 = iVar9 + 1;
                 iVar7 = iVar7 + 4;
               }
             }
           }
           iStack_2c = iStack_2c + 0x84;
-          iStack_1c = iStack_1c + (iVar1 / 2) * 2;
-          in_stack_00000004 = in_stack_00000004 + in_stack_00000014;
-        } while (iStack_2c < in_stack_00000018 * 0x84);
+          pvStack_1c = (void *)((int)pvStack_1c + (iVar1 / 2) * 2);
+          sprite_data = (void *)((int)sprite_data + width);
+        } while (iStack_2c < height * 0x84);
       }
     }
   }

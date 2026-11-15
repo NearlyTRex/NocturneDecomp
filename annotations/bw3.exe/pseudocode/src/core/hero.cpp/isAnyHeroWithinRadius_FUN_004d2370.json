@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 55,
     "complexity_score": 40,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -25,6 +25,12 @@
       "addr": "0056d360",
       "from_addr": "0056d37b",
       "name": "core_trash.cpp_CTrash_process_FUN_0056d360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e230",
+      "from_addr": "0056e274",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,12 +56,67 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 8,
     "call_sites": [
       {
         "call_addr": "0049dec2",
         "call_type": "direct",
         "caller": "core_fire.cpp_initProcess_FUN_0049de60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e274",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e417",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e63a",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e6b1",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e72c",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

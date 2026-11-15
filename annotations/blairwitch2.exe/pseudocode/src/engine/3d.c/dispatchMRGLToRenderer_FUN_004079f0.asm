@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
@@ -184,8 +184,8 @@ section .text
     PUSH 0x5ca3d8                       ; 00407b56
     MOV [0x01d046a0],EAX                ; 00407b5b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00407b60 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00407b66
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00407b66
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00407b6b
     MOV EAX,[0x007ba070]                ; 00407b6e | DAT_007ba070
         ;   Label: LAB_00407b6e
@@ -249,8 +249,8 @@ section .text
     PUSH EAX                            ; 00407bf5
     MOV dword ptr [0x01d046a4],EBX      ; 00407bf6 | DAT_01d046a4
     MOV dword ptr [0x01d046a0],ECX      ; 00407bfc | DAT_01d046a0
-    CALL core_main.c_FUN_004e4500       ; 00407c02
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00407c02
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00407c07
     JMP 0x00407a3f                      ; 00407c0a
         ;   XREF to: 00407a3f (UNCONDITIONAL_JUMP)  ; LAB_00407a3f

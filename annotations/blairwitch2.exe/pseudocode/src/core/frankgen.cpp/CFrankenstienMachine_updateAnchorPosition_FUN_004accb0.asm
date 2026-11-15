@@ -33,13 +33,13 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
-;   core_actor.cpp_FUN_00408d70
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60
 ;   core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004aced0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -75,7 +75,7 @@ section .text
     FLD float ptr [EBP + 0x2dc]         ; 004acce8
     ADD ESP,0x4                         ; 004accee
     CALL crt_math.c_round_FUN_005b7ff0  ; 004accf1
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x30]        ; 004accf6
     MOV EBX,dword ptr [ESP + 0x30]      ; 004accfa
     MOV EDX,dword ptr [EBP + 0x5e4]     ; 004accfe
@@ -113,8 +113,8 @@ section .text
     PUSH EBP                            ; 004acd61
     LEA ESI,[ESP + 0x8]                 ; 004acd62
     LEA EDI,[ESP + 0x2c]                ; 004acd66
-    CALL core_actor.cpp_FUN_00408d70    ; 004acd6a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004acd6a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x8]                 ; 004acd6f
     LEA EAX,[ESP + 0x2c]                ; 004acd73
     ADD ESP,0x8                         ; 004acd77
@@ -188,8 +188,8 @@ section .text
     PUSH 0x5d6ce6                       ; 004ace24 | DAT_005d6ce6
     MOV dword ptr [0x01d046a0],EDX      ; 004ace29 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004ace2f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004ace35
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ace35
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ace3a
     JMP 0x004acce2                      ; 004ace3d
         ;   XREF to: 004acce2 (UNCONDITIONAL_JUMP)  ; LAB_004acce2

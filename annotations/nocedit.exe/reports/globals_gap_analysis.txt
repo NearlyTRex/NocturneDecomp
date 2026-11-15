@@ -421,7 +421,7 @@ ALL EXACT GAPS (1668) - size bounds are known precisely
          428 bytes  at 0x02d03eec  between CHAR_ARRAY_02d03ee8            and g_KeyboardState+0x200
          420 bytes  at 0x00437ab8  between PTR_caseD_3_00437ab4           and switchdataD_00437c5c
          416 bytes  at 0x00681f10  between PTR_s_GENERIC_00681f0c         and g_SoundResultBufferTemplate
-         404 bytes  at 0x03f6af94  between g_SoundListenerOrient          and g_SoundFileList
+         404 bytes  at 0x03f6af94  between g_SoundReverb                  and g_SoundFileList
          393 bytes  at 0x02f3125f  between g_LodMeshProgressBuffer+3      and g_LodMeshHighlightVertices
          368 bytes  at 0x005f81b4  between PTR_caseD_3_005f81b0           and PTR_caseD_1_005f8324
          360 bytes  at 0x005f7ecc  between PTR_caseD_3_005f7ec8           and PTR_caseD_1_005f8034
@@ -1777,7 +1777,7 @@ ALL EXACT GAPS (1668) - size bounds are known precisely
            4 bytes  at 0x03f68898  between g_Cached3DListenerOrientRight. and g_Cached3DListenerOrientRight.
            4 bytes  at 0x03f688a0  between g_Cached3DListenerOrientRight. and g_Cached3DListenerOrientRight.
            4 bytes  at 0x03f69324  between g_MixBufferCount               and g_VirtualSpeakerXPositions
-           4 bytes  at 0x03f693f4  between g_DeferredOrientRight          and g_AudioLatencySeconds
+           4 bytes  at 0x03f693f4  between g_CachedReverb                 and g_AudioLatencySeconds
            4 bytes  at 0x03f6b13c  between g_SoundMatchCount              and g_SoundMatchedFilenames
            4 bytes  at 0x03f6bac8  between CVector3f_03f6babc             and g_StrangerIndices
            4 bytes  at 0x03f6bbec  between g_TriListTextureCount          and g_TriListTextureNames
@@ -41274,7 +41274,7 @@ OVERLAPS (13364) - next global starts inside previous
     g_DefaultDeviceName                      char[256]            at 0x00681c60  size=256
     s__00681c64                              undefined4           at 0x00681c64
   416 bytes overlap
-    g_SoundModeTable                         SSoundModeEntry[27]  at 0x00681efc  size=432
+    g_ReverbPresetTable                      SReverbPreset[27]    at 0x00681efc  size=432
     PTR_s_GENERIC_00681f0c                   undefined4           at 0x00681f0c
   100 bytes overlap
     g_SoundResultBufferTemplate              char[104]            at 0x006820b0  size=104

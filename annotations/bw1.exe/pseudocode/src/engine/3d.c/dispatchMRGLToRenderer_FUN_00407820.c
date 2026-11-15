@@ -62,7 +62,7 @@ LAB_00407a02:
           _sprintf((char *)apSStack_110,"Unknown primitive : %d");
           _DAT_01d1d404 = 0xd16;
           _DAT_01d1d400 = "..\\engine\\3d.c";
-          core_main_c_FUN_005030e0(apSStack_110);
+          core_main_c_displayErrorAndQuit_FUN_005030e0((char *)apSStack_110);
         }
       }
       else if (bVar3 < 4) {
@@ -107,7 +107,7 @@ LAB_00407a02:
           if (1999 < _DAT_007c1070) {
             _DAT_01d1d400 = "..\\engine\\3d.c";
             _DAT_01d1d404 = 0xccc;
-            core_main_c_FUN_005030e0("renderFaceList - too many faces");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("renderFaceList - too many faces");
           }
           *(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074) = mrgl;
           _DAT_007c1070 = _DAT_007c1070 + 1;

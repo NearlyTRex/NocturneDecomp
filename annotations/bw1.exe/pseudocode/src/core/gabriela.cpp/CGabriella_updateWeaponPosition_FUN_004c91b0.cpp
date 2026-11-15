@@ -26,9 +26,10 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
   CVector3f *in_stack_fffffc20;
   float in_stack_fffffc24;
   CQuaternion4f *matrix_b;
+  CVector3f *in_stack_fffffc30;
   CMatrix3x4f local_3b0;
   CMatrix3x4f local_380;
-  float local_350 [12];
+  CMatrix3x4f local_350;
   CMatrix3x4f local_320;
   CMatrix3x4f local_2f0;
   CMatrix3x4f local_2c0;
@@ -44,14 +45,17 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
   CMatrix3x4f local_e0;
   CMatrix3x4f local_b0;
   float local_80;
-  float local_7c [5];
+  float local_7c [2];
+  CVector3f local_74;
   CVector3f local_68;
   float local_5c;
   float afStack_58 [2];
   CVector3f local_50;
   float local_44;
-  float local_40 [5];
+  float local_40 [2];
+  CVector3f local_38;
   float local_2c;
+  float afStack_28 [4];
   CInventory *local_18;
   CInventory *local_14;
   
@@ -135,12 +139,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c550
                       (&pCVar3->selected_weapon->base,"?CCrossbow" + 1);
     if (iVar4 != 0) {
-      core_xform_cpp_FUN_005b6270();
-      local_68.x = local_40[2];
-      *(float *)((int)&local_68 + (uint)bVar11 * -8 + 4) = local_40[(uint)bVar11 * -2 + 3];
-      *(float *)((int)&local_68 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-           local_40[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-      core_xform_cpp_matrixToEulerAngles_FUN_005b5930();
+      core_xform_cpp_getTranslation_FUN_005b6270(&local_2f0,&local_38);
+      local_68.x = local_38.x;
+      *(uint *)((int)&local_68 + (uint)bVar11 * -8 + 4) =
+           *(uint *)((int)&local_38 + (uint)bVar11 * -8 + 4);
+      *(uint *)((int)&local_68 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+           *(uint *)((int)&local_38 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+      core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_2f0,in_stack_fffffc30);
       local_50.x = local_5c;
       *(float *)((int)&local_50 + (uint)bVar11 * -8 + 4) = afStack_58[(uint)bVar11 * -2];
       *(float *)((int)&local_50 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 8) =
@@ -152,28 +157,28 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_2f0,&local_380,&local_140);
     pCVar8 = &local_140;
   }
-  pfVar7 = local_350;
+  pCVar9 = &local_350;
   for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *pfVar7 = pCVar8->m[0].w;
+    pCVar9->m[0].w = pCVar8->m[0].w;
     pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar11 * -2 + 1) * 4);
-    pfVar7 = pfVar7 + (uint)bVar11 * -2 + 1;
+    pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_005b6270();
-  local_44 = local_7c[2];
-  local_40[(uint)bVar11 * -2] = local_7c[(uint)bVar11 * -2 + 3];
+  core_xform_cpp_getTranslation_FUN_005b6270(&local_350,&local_74);
+  local_44 = local_74.x;
+  local_40[(uint)bVar11 * -2] = *(float *)((int)&local_74 + (uint)bVar11 * -8 + 4);
   local_40[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-       local_7c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+       *(float *)((int)&local_74 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
   pCVar2 = (this_ptr->base).inventory.selected_weapon;
   (pCVar2->base).location.position.x = local_44;
   (pCVar2->base).location.position.y = local_40[0];
   (pCVar2->base).location.position.z = local_40[1];
   local_18 = &(this_ptr->base).inventory;
-  core_xform_cpp_matrixToEulerAngles_FUN_005b5930();
+  core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_350,in_stack_fffffc30);
   pCVar3 = local_18;
   local_80 = local_2c;
-  local_7c[(uint)bVar11 * -2] = local_40[(uint)bVar11 * -2 + 6];
+  local_7c[(uint)bVar11 * -2] = afStack_28[(uint)bVar11 * -2];
   local_7c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-       local_40[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
+       afStack_28[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
   pCVar2 = pCVar3->selected_weapon;
   pUVar5 = &(pCVar2->base).orient;
   if (pUVar5 != (UOrientationVector *)&local_80) {

@@ -15,12 +15,12 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPt
     if (this_ptr->model_name[0] != '\0') {
       _DAT_01d046a0 = "..\\core\\skeleton.cpp";
       _DAT_01d046a4 = 0xde2;
-      core_main_c_FUN_004e4500("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",this_ptr->model_name);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.");
       return this_ptr->model_ptr;
     }
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
     _DAT_01d046a4 = 0xde0;
-    core_main_c_FUN_004e4500("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
   }
   return this_ptr->model_ptr;
 }

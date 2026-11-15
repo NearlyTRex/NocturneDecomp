@@ -108,7 +108,7 @@ LAB_0044c179:
   if (pcVar23 == (char *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcamera.cpp";
     _DAT_01d71de4 = 0x9c1;
-    core_main_c_FUN_004e4330("CDemonCamera::loadImage - no extention");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::loadImage - no extention");
   }
   pcVar25 = &DAT_005b9dd1;
   do {
@@ -120,9 +120,9 @@ LAB_0044c179:
     pcVar23[1] = cVar4;
     pcVar23 = pcVar23 + 2;
   } while (cVar4 != '\0');
-  p_Var5 = engine_dosio_cpp_FUN_004659c0("backdrop",local_144,&DAT_005b9dd6);
+  p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("backdrop",local_144,&DAT_005b9dd6);
   if ((p_Var5 != (_FILE *)0x0) ||
-     (p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9de5,local_144,&DAT_005b9de2),
+     (p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b9de5,local_144,&DAT_005b9de2),
      p_Var5 != (_FILE *)0x0)) {
     _fread(&DAT_00b9da48,0x100,3,p_Var5);
     _fclose(p_Var5);
@@ -151,7 +151,7 @@ LAB_0044c243:
     if (pcVar25 == (char *)0x0) {
       _DAT_01d71de0 = "..\\core\\dcamera.cpp";
       _DAT_01d71de4 = 0x9d4;
-      core_main_c_FUN_004e4330("CDemonCamera::loadImage - no ext");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::loadImage - no ext");
     }
     pcVar23 = &DAT_005b9e1e;
     do {
@@ -163,7 +163,7 @@ LAB_0044c243:
       pcVar25[1] = cVar4;
       pcVar25 = pcVar25 + 2;
     } while (cVar4 != '\0');
-    local_14 = engine_dosio_cpp_FUN_004659c0("backdrop",local_f4,&DAT_005b9e23);
+    local_14 = engine_dosio_cpp_getFile_FUN_004659c0("backdrop",local_f4,&DAT_005b9e23);
     if (local_14 != (_FILE *)0x0) {
       _fread((void *)0x149d6dc,0x1000,1,local_14);
       p_Var5 = local_14;
@@ -185,12 +185,12 @@ LAB_0044c243:
           if ((int)local_9c < 1) {
             _DAT_01d71de0 = "..\\core\\dcamera.cpp";
             _DAT_01d71de4 = 0x9f4;
-            core_main_c_FUN_004e4330("Hell froze loading %s",local_f4);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze loading %s");
           }
           if (500000 < local_9c) {
             _DAT_01d71de0 = "..\\core\\dcamera.cpp";
             _DAT_01d71de4 = 0x9fa;
-            core_main_c_FUN_004e4330("%s too big to fit in decompress buffer",local_f4);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("%s too big to fit in decompress buffer");
           }
           _fread(&DAT_007fa464,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_00441350(&g_CLZWDecompressInstance);
@@ -201,7 +201,7 @@ LAB_0044c243:
           if (iVar6 == 0) {
             _DAT_01d71de0 = "..\\core\\dcamera.cpp";
             _DAT_01d71de4 = 0xa03;
-            core_main_c_FUN_004e4330("Error decompressing %s",local_f4);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Error decompressing %s");
           }
           local_a4 = 0;
           if (0 < (int)_DAT_0149d6d8) {
@@ -245,9 +245,9 @@ LAB_0044c243:
       }
       _fclose(local_14);
     }
-    p_Var5 = engine_dosio_cpp_FUN_004659c0("backdrop",filename,&DAT_005b9ed0);
+    p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0("backdrop",filename,&DAT_005b9ed0);
     if ((p_Var5 != (_FILE *)0x0) ||
-       (p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9edf,filename,&DAT_005b9edc),
+       (p_Var5 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005b9edf,filename,&DAT_005b9edc),
        p_Var5 != (_FILE *)0x0)) {
       iVar20 = 0;
       iVar6 = 0;

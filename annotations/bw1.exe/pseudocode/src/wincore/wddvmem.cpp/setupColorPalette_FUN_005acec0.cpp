@@ -40,13 +40,13 @@ void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005acec0(void)
     if (iVar2 != 0) {
       _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d1d404 = 0x301;
-      core_main_c_FUN_005030e0("setpal - Unable to create palette object");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("setpal - Unable to create palette object");
     }
     iVar2 = (**(code **)(*_DAT_02c99304 + 0x7c))(_DAT_02c99304,_DAT_02c9930c);
     if (iVar2 != 0) {
       _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d1d404 = 0x307;
-      core_main_c_FUN_005030e0("setpal - Unable to set front buffer palette");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("setpal - Unable to set front buffer palette");
     }
   }
   if (DAT_0061b4a0 < 9) {

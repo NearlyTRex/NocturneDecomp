@@ -79,7 +79,7 @@ section .text
     FLD float ptr [ECX]                 ; 00593dbc
         ;   Label: LAB_00593dbc
     CALL crt_math.c_acos_FUN_005b9924   ; 00593dbe
-        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005b9924()
+        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005b9924(double x)
     FMUL double ptr [0x005eed9e]        ; 00593dc3 | DAT_005eed9e
     FSTP float ptr [EBX]                ; 00593dc9
     JMP 0x00593d7a                      ; 00593dcb

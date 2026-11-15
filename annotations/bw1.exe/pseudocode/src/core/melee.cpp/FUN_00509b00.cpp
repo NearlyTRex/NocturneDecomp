@@ -1,6 +1,6 @@
 // Name: core_melee.cpp_FUN_00509b00
 // Address: 00509b00
-// Address Range: [[00509b00, 00509b33] [00509b42, 00509b7b]]
+// Address Range: [[00509b00, 00509bcf]]
 // Convention: unknown
 // Signature: void core_melee_cpp_FUN_00509b00(COutStream *param_1)
 

@@ -11,22 +11,28 @@
 void __cdecl engine_mini3d_cpp_setColor3f_FUN_004f8ca0(float red,float green,float blue)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  ulonglong uVar4;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
+  uint unaff_retaddr;
+  uint uStack_4;
   
-  fVar1 = (float10)_DAT_005ddfe4;
-  fVar2 = (float10)red * fVar1;
-  fVar3 = (float10)green * fVar1;
-  fVar1 = (float10)blue * fVar1;
+  fVar1 = green * _DAT_005ddfe4;
+  fVar2 = blue * _DAT_005ddfe4;
+  fVar3 = _DAT_01d09860 * _DAT_005ddfe4;
   _DAT_01d0d2d8 = red;
-  round();
-  round();
-  round();
-  _DAT_01d0d2dc = green;
-  _DAT_01d0d2e0 = blue;
-  uVar4 = round((int)ROUND(fVar2),(int)ROUND(fVar3));
-  _DAT_01d0d2e4 = (int)ROUND(fVar1) | (int)uVar4 << 8 | (uint)((ulonglong)uVar4 >> 0x20);
+  dVar4 = round((double)(red * _DAT_005ddfe4));
+  dVar5 = round((double)fVar1);
+  dVar6 = round((double)fVar3);
+  _DAT_01d0d2dc = uStack_4;
+  _DAT_01d0d2e0 = unaff_retaddr;
+  dVar7 = round((double)fVar2);
+  _DAT_01d0d2e4 =
+       (int)ROUND(dVar7) |
+       (int)ROUND(dVar5) << 8 | (int)ROUND(dVar6) << 0x18 | (int)ROUND(dVar4) << 0x10;
   return;
 }

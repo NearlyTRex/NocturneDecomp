@@ -772,7 +772,7 @@
     {
       "addr": "004e2220",
       "from_addr": "004e2260",
-      "name": "core_lever.cpp_FUN_004e2220",
+      "name": "core_lever.cpp_CLever_getHandlePosition_FUN_004e2220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1184,6 +1184,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00556550",
+      "from_addr": "0055675e",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555560",
+      "from_addr": "00555844",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00555560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00554f80",
       "from_addr": "00554fe0",
       "name": "sound_snddx.cpp_FUN_00554f80",
@@ -1193,18 +1205,6 @@
       "addr": "00555020",
       "from_addr": "00555027",
       "name": "sound_snddx.cpp_FUN_00555020",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00555560",
-      "from_addr": "00555844",
-      "name": "sound_snddx.cpp_FUN_00555560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00556550",
-      "from_addr": "0055675e",
-      "name": "sound_snddx.cpp_FUN_00556550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1312,12 +1312,20 @@
         "005b800c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__fpureg_safe",
     "name": "crt_math.c_round_FUN_005b7ff0",
-    "signature": "void crt_math_c_round_FUN_005b7ff0(void)"
+    "signature": "double __fpureg_safe crt_math_c_round_FUN_005b7ff0(double value)"
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 1,
+    "estimated_params": 1,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.1818181818181817,
     "instruction_count": 11,
@@ -1359,9 +1367,9 @@
     }
   },
   "stack_frame": {
-    "frame_size": 12,
-    "local_size": 12,
-    "param_offset": 4,
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [

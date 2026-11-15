@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 15,
-    "cross_reference_count": 10,
+    "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -72,6 +72,12 @@
       "from_addr": "0052a076",
       "name": "core_script.cpp_readActorReference_FUN_0052a010",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005779d0",
+      "from_addr": "00577b14",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005779d0",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -95,7 +101,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 10,
+    "call_site_count": 11,
     "call_sites": [
       {
         "call_addr": "004bc5ac",
@@ -164,6 +170,17 @@
         "stack_params": 2
       },
       {
+        "call_addr": "00577b14",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_005779d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
         "call_addr": "004fc13f",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_loadActor_FUN_004fc040",
@@ -189,17 +206,6 @@
         "call_addr": "0059ef52",
         "call_type": "direct",
         "caller": "core_basicene.cpp_FUN_0059ee00",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0059cb01",
-        "call_type": "direct",
-        "caller": "core_hpatrol.cpp_FUN_0059c9c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

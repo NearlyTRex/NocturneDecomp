@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5eb1c5                       ; 00525fbb | = "Buffer overflow!!  File: %s"
     MOV dword ptr [0x01d1d400],EBP      ; 00525fc0 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00525fc6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00525fcb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525fcb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00525fd0
     JMP 0x00525f2e                      ; 00525fd3
         ;   XREF to: 00525f2e (UNCONDITIONAL_JUMP)  ; LAB_00525f2e

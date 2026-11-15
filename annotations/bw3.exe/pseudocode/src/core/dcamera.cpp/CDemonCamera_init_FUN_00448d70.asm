@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_00448f30
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;
 ; *****************************************************************************
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5b9b9a                       ; 00448e92 | = "CDemonCamera::init - Unable to alloc ..."
     MOV dword ptr [0x01d71de0],ECX      ; 00448e97 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00448e9d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00448ea3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00448ea3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00448ea8
     MOV EDX,dword ptr [EBX + 0x144]     ; 00448eab
         ;   Label: LAB_00448eab
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5b9be0                       ; 00448f07 | = "CDemonCamera::init - Unable to alloc ..."
     MOV [0x01d71de0],EAX                ; 00448f0c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00448f11 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00448f17
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00448f17
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00448f1c
     JMP 0x00448ed7                      ; 00448f1f
         ;   XREF to: 00448ed7 (UNCONDITIONAL_JUMP)  ; LAB_00448ed7

@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_0056e8c0(CTrigger *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_trigger_cpp_CTrigger_getBoundingBox_FUN_0056e8c0(CTrigger *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d661b

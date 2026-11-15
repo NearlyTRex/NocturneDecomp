@@ -81,7 +81,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;   crt_stdlib.c__qsort_FUN_005a29e8
@@ -1108,8 +1108,8 @@ section .text
     PUSH 0x5cc558                       ; 00513b6d | = "realloc returns NULL shrinking filena..."
     MOV dword ptr [0x01d71de0],EDI      ; 00513b72 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00513b78 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00513b7d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00513b7d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00513b82
     JMP 0x005133f3                      ; 00513b85
         ;   XREF to: 005133f3 (UNCONDITIONAL_JUMP)  ; LAB_005133f3

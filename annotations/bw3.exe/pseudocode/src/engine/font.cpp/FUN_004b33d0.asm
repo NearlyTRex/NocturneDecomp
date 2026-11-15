@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5)
+; int engine_font_cpp_FUN_004b33d0(byte *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_004b3403
     FMUL float ptr [0x005c2100]         ; 004b3409 | DAT_005c2100
     CALL crt_math.c_round_FUN_005a3120  ; 004b340f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xc]         ; 004b3414
     MOV EAX,dword ptr [ESP + 0xc]       ; 004b3418
     SHL EAX,0x18                        ; 004b341c

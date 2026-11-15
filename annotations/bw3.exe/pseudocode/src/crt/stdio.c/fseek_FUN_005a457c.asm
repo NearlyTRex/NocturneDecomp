@@ -14,11 +14,11 @@
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c950
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be1e3
 ;   crt_unknown.c_FUN_005a427c at 005a4376
-;   engine_dosio.cpp_FUN_004659c0 at 00465a69
-;   engine_pod.cpp_FUN_00512e70 at 00512eab
+;   engine_dosio.cpp_getFile_FUN_004659c0 at 00465a69
 ;   engine_pod.cpp_FUN_00513d20 at 00513d9d
 ;   engine_pod.cpp_FUN_00513ff0 at 00514096
 ;   engine_pod.cpp_FUN_00514110 at 005141af
+;   engine_pod.cpp_FUN_00514220 at 005142b8
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -20,7 +20,7 @@ void support_trisock_cpp_FUN_0059eeb0(void)
     if (_DAT_02c8ae58 == (HANDLE)0x0) {
       _DAT_01d1d400 = "..\\support\\trisock.cpp";
       _DAT_01d1d404 = 0x927;
-      core_main_c_FUN_005030e0("Can't create mutex");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create mutex");
       return;
     }
   }

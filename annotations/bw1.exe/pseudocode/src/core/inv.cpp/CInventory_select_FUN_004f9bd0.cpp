@@ -68,7 +68,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
       if (local_14 == (CHealthItem *)0x0) {
         _DAT_01d1d400 = "..\\core\\inv.cpp";
         _DAT_01d1d404 = 0x726;
-        core_main_c_FUN_005030e0("CInventory::select - Catch 22");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::select - Catch 22");
       }
       if ((float)_DAT_005e67f0 < *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2538)) {
         return 1;
@@ -140,7 +140,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
     if (pCVar3 == (CDemonActor *)0x0) {
       _DAT_01d1d400 = "..\\core\\inv.cpp";
       _DAT_01d1d404 = 0x720;
-      core_main_c_FUN_005030e0("CInventory::select - Catch 22");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::select - Catch 22");
     }
     core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
               (this_ptr,pCVar3[2].validation_magic);

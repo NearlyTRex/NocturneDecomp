@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   shape_edittool.cpp_CStrList_allocate_FUN_00499600
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5dc34e                       ; 0049952e | = "CStrList::insert - invalid index"
     MOV dword ptr [0x01d1d400],ECX      ; 00499533 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00499539 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049953f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049953f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00499544
     MOV EDI,dword ptr [EBX]             ; 00499547
         ;   Label: LAB_00499547
@@ -131,8 +131,8 @@ section .text
     PUSH 0x5dc385                       ; 004995e2 | = "CStrList::insert - out of memory"
     MOV dword ptr [0x01d1d400],ESI      ; 004995e7 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004995ed | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004995f3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004995f3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004995f8
     JMP 0x004995af                      ; 004995fb
         ;   XREF to: 004995af (UNCONDITIONAL_JUMP)  ; LAB_004995af

@@ -14,12 +14,12 @@ void __cdecl core_setutil_cpp_C3DSLight_setFilterFrame_FUN_0055d3f0(C3DSLight *t
   if (light == (CDemonLight *)0x0) {
     _DAT_01d1d400 = "..\\core\\setutil.cpp";
     _DAT_01d1d404 = 0x39f;
-    core_main_c_FUN_005030e0("C3DSLight::advanceFilter - NULL CDemonLight pointer!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("C3DSLight::advanceFilter - NULL CDemonLight pointer!");
   }
   if ((frame_index < 0) || (this_ptr->filter_count <= frame_index)) {
     _DAT_01d1d400 = "..\\core\\setutil.cpp";
     _DAT_01d1d404 = 0x3a3;
-    core_main_c_FUN_005030e0("C3DSLight::setFilterFrame - invalid filter frame number");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("C3DSLight::setFilterFrame - invalid filter frame number");
   }
   this_ptr->current_filter_frame = frame_index;
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30

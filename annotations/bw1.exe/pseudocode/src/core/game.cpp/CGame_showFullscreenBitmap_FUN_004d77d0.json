@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 512,
+    "complexity_score": 513,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 34,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
+    "pseudocode_lines": 183,
     "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 670
+    "total_lines": 671
   },
   "cross_references": [
     {
@@ -65,7 +65,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c08d0",
@@ -100,7 +100,7 @@
     {
       "addr": "00479180",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479180"
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
     },
     {
       "addr": "00478fb0",
@@ -626,23 +626,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_005e3303",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_00479180(&DAT_005e3303,this_ptr->bitmap_filename,&DAT_005e3300);",
+      "text": "(&DAT_005e3303,this_ptr->bitmap_filename,&DAT_005e3300);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_005e3300",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_00479180(&DAT_005e3303,this_ptr->bitmap_filename,&DAT_005e3300);",
+      "text": "(&DAT_005e3303,this_ptr->bitmap_filename,&DAT_005e3300);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 125,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "if (0 < DAT_0061b49c) {",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 128,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "local_14 = this_ptr->bitmap_width * ((local_24 * this_ptr->bitmap_height) / DAT_0061b49c);",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "if (0 < DAT_0061b498) {",
@@ -666,7 +666,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 134,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "pbVar4 = (byte *)((this_ptr->bitmap_width * iVar2) / DAT_0061b498 + local_14 +",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 136,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 0x10) {",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 137,
       "match": "DAT_01c4354c",
       "severity": "mild",
       "text": "*(ushort *)(*(int *)(&DAT_01c4354c + local_20) + iVar6) = auStack_32c[*pbVar4];",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 140,
       "match": "DAT_01c4354c",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(&DAT_01c4354c + local_20) + iVar7) = auStack_a2c[*pbVar4];",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 145,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "} while (iVar2 < DAT_0061b498);",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 149,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "} while (local_24 < DAT_0061b49c);",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 159,
+      "line": 160,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,this_ptr->key_fire), iVar2 != 0)) ||",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 167,
+      "line": 168,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,this_ptr->key_fire), iVar2 != 0))) {",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 134,
+      "line": 135,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "(int)local_18);",

@@ -39,7 +39,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5d6489                       ; 004a622e | = "Invalid field notes file version: %d,..."
     MOV dword ptr [0x01d046a0],EDX      ; 004a6233 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004a6239 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a623f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a623f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004a6244
     MOV ECX,0x40                        ; 004a6247
         ;   Label: LAB_004a6247

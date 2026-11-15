@@ -18,7 +18,7 @@ void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004a26e0(STextPage *thi
   }
   _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
   _DAT_01d046a4 = 0x450;
-  core_main_c_FUN_004e4500("TextPage::addResource - too many resources!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("TextPage::addResource - too many resources!");
   this_ptr->resources[this_ptr->resource_count] = resource;
   this_ptr->resource_count = this_ptr->resource_count + 1;
   return;

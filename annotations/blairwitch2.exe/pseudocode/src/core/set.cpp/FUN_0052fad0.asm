@@ -49,7 +49,7 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044a020
 ;   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044ab60
@@ -110,8 +110,8 @@ section .text
     PUSH EAX                            ; 0052fb3b
     LEA ESI,[EBP + -0x5c]               ; 0052fb3c
     LEA EDI,[EBP + -0x68]               ; 0052fb3f
-    CALL core_xform.cpp_FUN_00591530    ; 0052fb42
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0052fb42
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 0052fb47
     LEA EAX,[EBP + -0x68]               ; 0052fb4a
     LEA ESI,[EBP + -0x5c]               ; 0052fb4d
@@ -122,8 +122,8 @@ section .text
     PUSH EBX                            ; 0052fb54
     LEA ESI,[EBP + -0x44]               ; 0052fb55
     LEA EDI,[EBP + -0x14]               ; 0052fb58
-    CALL core_actor.cpp_FUN_00408d70    ; 0052fb5b
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0052fb5b
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + -0x44]               ; 0052fb60
     MOV EDX,dword ptr [EBP + -0x8]      ; 0052fb63
     ADD ESP,0x8                         ; 0052fb66
@@ -134,7 +134,7 @@ section .text
     LEA ESI,[EBP + -0x38]               ; 0052fb6d
     LEA EDI,[EBP + -0x50]               ; 0052fb70
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 0052fb73
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[EBP + -0x38]               ; 0052fb78
     MOV EDX,0x1cb3950                   ; 0052fb7b
     LEA EAX,[EBP + -0x14]               ; 0052fb80

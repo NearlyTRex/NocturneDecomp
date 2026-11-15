@@ -109,9 +109,9 @@
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00421800
 ;   core_bugs.cpp_FUN_00420840
-;   core_dirmat.cpp_FUN_004496e0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_005915b0
 ;
 ; *****************************************************************************
@@ -282,8 +282,8 @@ section .text
     PUSH EAX                            ; 004210cc
     LEA ESI,[ESP + 0x168]               ; 004210cd
     LEA EDI,[ESP + 0x9c]                ; 004210d4
-    CALL core_xform.cpp_FUN_00591530    ; 004210db
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004210db
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004210e0
     LEA ESI,[ESP + 0x160]               ; 004210e3
     MOV EBX,dword ptr [EBP + 0x18]      ; 004210ea
@@ -638,8 +638,8 @@ section .text
     PUSH EAX                            ; 0042164f
     LEA ESI,[ESP + 0xb0]                ; 00421650
     LEA EDI,[ESP + 0x80]                ; 00421657
-    CALL core_dirmat.cpp_FUN_004496e0   ; 0042165e
-        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004496e0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 ; 0042165e
+        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x4                         ; 00421663
     LEA ESI,[ESP + 0xac]                ; 00421666
     MOV EBX,dword ptr [EBP + 0x18]      ; 0042166d

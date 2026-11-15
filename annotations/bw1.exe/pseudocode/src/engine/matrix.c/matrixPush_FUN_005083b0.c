@@ -32,6 +32,6 @@ void __cdecl engine_matrix_c_matrixPush_FUN_005083b0(void)
   }
   _DAT_01d1d400 = "..\\engine\\matrix.c";
   _DAT_01d1d404 = 0x34b;
-  core_main_c_FUN_005030e0("Matrix unbalance");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance");
   return;
 }

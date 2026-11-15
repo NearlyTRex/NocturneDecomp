@@ -19,7 +19,7 @@ void __cdecl sound_sndmain_cpp_setDualListenerEnabled_FUN_00573e50(int enabled)
   if (_DAT_02c807ec < 1) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x183c;
-    core_main_c_FUN_005030e0("unlockSound - sound was not locked!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("unlockSound - sound was not locked!");
   }
   if (_DAT_02c807ec == 1) {
     sound_sndmain_cpp_flushSoundChanges_FUN_00575db0();

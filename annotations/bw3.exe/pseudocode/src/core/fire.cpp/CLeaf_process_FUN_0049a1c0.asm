@@ -52,7 +52,7 @@ section .text
     FST double ptr [ESP + 0x8]          ; 0049a204
     FMUL double ptr [0x005c05b8]        ; 0049a208 | DAT_005c05b8
     CALL crt_math.c_round_FUN_005a3120  ; 0049a20e
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0049a213
     MOV EDX,dword ptr [ESP + 0x10]      ; 0049a217
     IMUL EDX                            ; 0049a21b

@@ -29,8 +29,8 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
   uint *local_24;
   uint *local_20;
   int local_1c;
-  int *local_18;
-  int *local_14;
+  SSoftwareEdge *local_18;
+  SSoftwareEdge *local_14;
   
   if ((DAT_00713a7c != 0) &&
      (iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60
@@ -128,74 +128,80 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
     }
     iVar3 = 0;
     _DAT_01bc123c = 0;
-    local_14 = (int *)&DAT_01bc0788;
+    local_14 = (SSoftwareEdge *)&DAT_01bc0788;
     if (0 < _DAT_01bc0784) {
       do {
-        if ((_DAT_01bc0c88 == *local_14) && (local_14 != (int *)0x0)) goto LAB_0047acf4;
+        if ((_DAT_01bc0c88 == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+        goto LAB_0047acf4;
         iVar3 = iVar3 + 1;
-        local_14 = local_14 + 0x14;
+        local_14 = local_14 + 1;
       } while (iVar3 < _DAT_01bc0784);
     }
-    local_14 = (int *)0x0;
+    local_14 = (SSoftwareEdge *)0x0;
 LAB_0047acf4:
-    if (local_14 != (int *)0x0) {
-      local_18 = (int *)&DAT_01bc0788;
+    if (local_14 != (SSoftwareEdge *)0x0) {
+      local_18 = (SSoftwareEdge *)&DAT_01bc0788;
       iVar3 = 0;
       if (0 < _DAT_01bc0784) {
         do {
-          if ((_DAT_01bc0c88 == *local_18) && (local_18 != local_14)) goto LAB_0047ad2d;
+          if ((_DAT_01bc0c88 == (local_18->base).y_min) && (local_18 != local_14))
+          goto LAB_0047ad2d;
           iVar3 = iVar3 + 1;
-          local_18 = local_18 + 0x14;
+          local_18 = local_18 + 1;
         } while (iVar3 < _DAT_01bc0784);
       }
-      local_18 = (int *)0x0;
+      local_18 = (SSoftwareEdge *)0x0;
 LAB_0047ad2d:
       local_1c = _DAT_01bc0c88;
-      if (local_18 != (int *)0x0) {
+      if (local_18 != (SSoftwareEdge *)0x0) {
         do {
-          if (local_14[1] <= local_1c) {
-            *local_14 = -1;
-            local_14 = (int *)&DAT_01bc0788;
+          if ((local_14->base).y_max <= local_1c) {
+            (local_14->base).y_min = -1;
+            local_14 = (SSoftwareEdge *)&DAT_01bc0788;
             iVar3 = 0;
             if (0 < _DAT_01bc0784) {
               do {
-                if ((local_1c == *local_14) && (local_14 != local_18)) goto LAB_0047ad88;
+                if ((local_1c == (local_14->base).y_min) && (local_14 != local_18))
+                goto LAB_0047ad88;
                 iVar3 = iVar3 + 1;
-                local_14 = local_14 + 0x14;
+                local_14 = local_14 + 1;
               } while (iVar3 < _DAT_01bc0784);
             }
-            local_14 = (int *)0x0;
+            local_14 = (SSoftwareEdge *)0x0;
 LAB_0047ad88:
-            if (local_14 == (int *)0x0) {
+            if (local_14 == (SSoftwareEdge *)0x0) {
               return;
             }
           }
-          if (local_18[1] <= local_1c) {
-            *local_18 = -1;
-            local_18 = (int *)&DAT_01bc0788;
+          if ((local_18->base).y_max <= local_1c) {
+            (local_18->base).y_min = -1;
+            local_18 = (SSoftwareEdge *)&DAT_01bc0788;
             iVar3 = 0;
             if (0 < _DAT_01bc0784) {
               do {
-                if ((local_1c == *local_18) && (local_18 != local_14)) goto LAB_0047add8;
+                if ((local_1c == (local_18->base).y_min) && (local_18 != local_14))
+                goto LAB_0047add8;
                 iVar3 = iVar3 + 1;
-                local_18 = local_18 + 0x14;
+                local_18 = local_18 + 1;
               } while (iVar3 < _DAT_01bc0784);
             }
-            local_18 = (int *)0x0;
+            local_18 = (SSoftwareEdge *)0x0;
 LAB_0047add8:
-            if (local_18 == (int *)0x0) {
+            if (local_18 == (SSoftwareEdge *)0x0) {
               return;
             }
           }
-          engine_special_cpp_FUN_00580127();
+          local_74[0] = (SRenderVertex *)0x47adfb;
+          engine_special_cpp_FUN_00580127(local_18,local_14,local_1c);
           if (_DAT_01bc123c != 0) {
             return;
           }
-          local_14[2] = local_14[2] + local_14[3];
-          local_14[10] = local_14[10] + local_14[0xb];
-          local_18[2] = local_18[2] + local_18[3];
-          local_18[10] = local_18[10] + local_18[0xb];
-          local_1c = local_1c + 1;
+          (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
+          (local_18->base).depth_current =
+               (local_18->base).depth_current + (local_18->base).depth_gradient;
+          *(int *)(local_1c + 8) = *(int *)(local_1c + 8) + *(int *)(local_1c + 0xc);
+          *(int *)(local_1c + 0x28) = *(int *)(local_1c + 0x28) + *(int *)(local_1c + 0x2c);
+          local_1c = (int)local_20 + 1;
         } while( true );
       }
     }

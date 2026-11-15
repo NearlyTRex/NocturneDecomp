@@ -9,128 +9,132 @@
 int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *this_ptr)
 
 {
-  CCourse *pCVar1;
-  int iVar2;
-  byte bVar3;
-  float10 fVar4;
-  float afStackY_10b0 [1012];
+  uint uVar1;
+  CCourse *pCVar2;
+  int iVar3;
+  byte bVar4;
+  double dVar5;
+  float afStackY_10b4 [1010];
   CVector3f CStack_c8;
   CVector3f CStack_bc;
-  float fStack_b0;
-  float afStack_ac [5];
-  float fStack_98;
-  CVector3f CStack_8c;
-  CVector3f CStack_80;
+  CVector3f CStack_b0;
+  byte auStack_9c [8];
+  float afStack_94 [4];
+  CVector3f CStack_84;
+  float fStack_78;
   CVector3f CStack_74;
   CVector3f CStack_68;
-  CVector3f CStack_5c;
-  CVector3f CStack_50;
-  CVector3f CStack_44;
+  byte auStack_54 [16];
+  float fStack_44;
+  float fStack_3c;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
-  CCourse *pCStack_20;
+  int iStack_30;
+  CCourse *pCStack_2c;
+  CCourse *pCStack_28;
+  CCourse *pCStack_24;
   CCourse *pCStack_1c;
-  CCourse *pCStack_18;
+  int iStack_18;
   int iStack_14;
   int iStack_10;
-  int iStack_c;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (this_ptr->is_visible != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (DAT_0060b280,(SMRGLTextureBasic *)0x617f2c);
+    pCVar2 = &this_ptr->course;
     if (*(int *)(0x01D182F0 + 0x1008) == 0) {
       if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {
-        fVar4 = (float10)this_ptr->param;
-        pCVar1 = (CCourse *)round();
-        iStack_14 = (int)ROUND(fVar4);
-        if (0 < iStack_14) {
-          iVar2 = 0;
-          pCStack_20 = pCVar1;
+        dVar5 = round((double)this_ptr->param);
+        iStack_18 = (int)ROUND(dVar5);
+        if (0 < iStack_18) {
+          iVar3 = 0;
+          pCStack_24 = pCVar2;
           do {
-            fStack_30 = (float)iVar2;
-            iStack_c = iVar2;
+            fStack_3c = (float)iVar3;
+            iStack_18 = iVar3;
             core_course_cpp_CCourse_evaluate_FUN_00438c40
-                      (pCStack_20,fStack_30,&CStack_8c,&CStack_44);
-            core_actor_cpp_FUN_00408d70(this_ptr,&CStack_8c);
-            CStack_74.x = fStack_b0;
-            *(float *)((int)&CStack_74 + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2];
-            *(float *)((int)&CStack_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-                 afStack_ac[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-            if (&CStack_8c != &CStack_74) {
-              CStack_8c.x = CStack_74.x;
-              CStack_8c.y = CStack_74.y;
-              CStack_8c.z = CStack_74.z;
+                      (pCStack_2c,fStack_3c,(CVector3f *)(auStack_9c + 4),
+                       (CVector3f *)(auStack_54 + 4));
+            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                      (&this_ptr->base,(CVector3f *)(auStack_9c + 4),&CStack_bc);
+            CStack_84.y = CStack_bc.x;
+            *(uint *)((int)&CStack_84 + (uint)bVar4 * -8 + 8) =
+                 *(uint *)((int)&CStack_bc + (uint)bVar4 * -8 + 4);
+            (&fStack_78)[(uint)bVar4 * -2 + (uint)bVar4 * -2] =
+                 *(float *)((int)&CStack_bc + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+            if ((float *)(auStack_9c + 4) != &CStack_84.y) {
+              auStack_9c._4_4_ = CStack_84.y;
+              afStack_94[0] = CStack_84.z;
+              afStack_94[1] = fStack_78;
             }
-            core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(this_ptr,&CStack_8c);
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < iStack_c);
+            core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0
+                      (this_ptr,(CVector3f *)(auStack_9c + 4));
+            iVar3 = iVar3 + 1;
+          } while (iVar3 < iStack_18);
         }
       }
       else if (this_ptr->type == MARQUEE_DISPLAY_RING) {
-        fVar4 = (float10)this_ptr->param;
-        pCVar1 = (CCourse *)round();
-        iStack_28 = pCVar1->len;
-        iVar2 = (int)ROUND(fVar4);
-        iStack_10 = 0;
-        iStack_2c = iVar2;
-        if (0 < iStack_28) {
-          iStack_10 = 0;
-          pCStack_18 = pCVar1;
+        dVar5 = round((double)this_ptr->param);
+        pCStack_2c = (CCourse *)pCVar2->len;
+        iVar3 = (int)ROUND(dVar5);
+        iStack_14 = 0;
+        iStack_30 = iVar3;
+        if (0 < (int)pCStack_2c) {
+          iStack_14 = 0;
+          pCStack_1c = pCVar2;
           do {
-            if (iVar2 % this_ptr->phase != 0) {
-              iStack_c = iStack_10;
-              fStack_34 = (float)iStack_10;
+            if (iVar3 % this_ptr->phase != 0) {
+              iStack_10 = iStack_14;
+              fStack_38 = (float)iStack_14;
               core_course_cpp_CCourse_evaluate_FUN_00438c40
-                        (pCStack_18,fStack_34,&CStack_80,&CStack_50);
-              core_actor_cpp_FUN_00408d70(this_ptr,&CStack_80);
-              CStack_c8.x = fStack_98;
-              *(float *)((int)&CStack_c8 + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2 + 6];
-              *(float *)((int)&CStack_c8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-                   afStack_ac[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
-              if (&CStack_80 != &CStack_c8) {
-                CStack_80.x = CStack_c8.x;
-                CStack_80.y = CStack_c8.y;
-                CStack_80.z = CStack_c8.z;
+                        (pCStack_1c,fStack_38,&CStack_84,(CVector3f *)auStack_54);
+              core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                        (&this_ptr->base,&CStack_84,(CVector3f *)auStack_9c);
+              uVar1 = auStack_9c._0_4_;
+              *(uint *)((int)&CStack_c8 + (uint)bVar4 * -8) =
+                   *(uint *)(auStack_9c + (uint)bVar4 * -8 + 4);
+              *(float *)((int)&CStack_c8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
+                   afStack_94[(uint)bVar4 * -2 + (uint)bVar4 * -2];
+              if (&CStack_84 != (CVector3f *)&stack0xffffff34) {
+                CStack_84.x = (float)uVar1;
+                CStack_84.y = CStack_c8.x;
+                CStack_84.z = CStack_c8.y;
               }
-              core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(this_ptr,&CStack_80);
+              core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(this_ptr,&CStack_84);
             }
-            iStack_10 = iStack_10 + 1;
-            iVar2 = iVar2 + 1;
-          } while (iStack_10 < iStack_28);
+            iStack_14 = iStack_14 + 1;
+            iVar3 = iVar3 + 1;
+          } while (iStack_14 < (int)pCStack_2c);
         }
       }
     }
     else {
-      iStack_24 = (this_ptr->course).len;
-      iVar2 = 0;
-      pCVar1 = &this_ptr->course;
-      if (0 < iStack_24) {
+      pCStack_24 = (CCourse *)pCVar2->len;
+      iVar3 = 0;
+      if (0 < (int)pCStack_24) {
         do {
-          pCStack_1c = pCVar1;
-          fStack_38 = (float)iVar2;
-          iStack_c = iVar2;
-          core_course_cpp_CCourse_evaluate_FUN_00438c40(pCStack_1c,fStack_38,&CStack_68,&CStack_5c);
-          core_actor_cpp_FUN_00408d70(this_ptr,&CStack_68);
-          CStack_bc.x = afStack_ac[2];
-          *(float *)((int)&CStack_bc + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2 + 3];
-          *(float *)((int)&CStack_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-               afStack_ac[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-          if (&CStack_68 != &CStack_bc) {
-            CStack_68.x = CStack_bc.x;
-            CStack_68.y = CStack_bc.y;
-            CStack_68.z = CStack_bc.z;
+          pCStack_1c = pCVar2;
+          fStack_44 = (float)iVar3;
+          iStack_18 = iVar3;
+          core_course_cpp_CCourse_evaluate_FUN_00438c40(pCStack_28,fStack_44,&CStack_74,&CStack_68);
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                    (&this_ptr->base,&CStack_74,&CStack_b0);
+          CStack_c8.x = CStack_b0.x;
+          *(uint *)((int)&CStack_c8 + (uint)bVar4 * -8 + 4) =
+               *(uint *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4);
+          *(uint *)((int)&CStack_c8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+               *(uint *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+          if (&CStack_74 != &CStack_c8) {
+            CStack_74.x = CStack_c8.x;
+            CStack_74.y = CStack_c8.y;
+            CStack_74.z = CStack_c8.z;
           }
-          core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(this_ptr,&CStack_68);
-          iVar2 = iVar2 + 1;
-          pCVar1 = pCStack_1c;
-        } while (iVar2 < (int)pCStack_1c);
+          core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(this_ptr,&CStack_74);
+          iVar3 = iVar3 + 1;
+          pCVar2 = pCStack_1c;
+        } while (iVar3 < (int)pCStack_28);
       }
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);

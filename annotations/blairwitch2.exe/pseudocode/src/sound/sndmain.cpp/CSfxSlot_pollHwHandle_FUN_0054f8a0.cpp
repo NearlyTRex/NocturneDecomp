@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0(CSfxSlot *this
       if (this_ptr->sample == (CSfxSample *)0x0) {
         _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
         _DAT_01d046a4 = 0xcf9;
-        core_main_c_FUN_004e4500("SfxSlot::pollHwHandle - no sample?");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::pollHwHandle - no sample?");
       }
       iVar1 = (**(code **)(*_DAT_02648e80 + 0x54))(_DAT_02648e80,this_ptr);
       if (iVar1 != 0) {

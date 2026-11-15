@@ -37,10 +37,10 @@
 ;   ... and 28 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 ;   core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0
-;   core_box.cpp_FUN_0041a600
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 00538e19
     LEA ESI,[ESP + 0x130]               ; 00538e1a
     LEA EDI,[ESP + 0x190]               ; 00538e21
-    CALL core_box.cpp_FUN_0041a600      ; 00538e28
-        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a600()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600 ; 00538e28
+        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x130]               ; 00538e2d
     ADD ESP,0x8                         ; 00538e34
     LEA EAX,[ESP + 0x188]               ; 00538e37
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 00539107
     LEA ESI,[ESP + 0x160]               ; 00539108
     LEA EDI,[ESP + 0x10c]               ; 0053910f
-    CALL core_actor.cpp_FUN_00408d70    ; 00539116
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00539116
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x160]               ; 0053911b
     LEA EAX,[ESP + 0x10c]               ; 00539122
     ADD ESP,0x8                         ; 00539129
@@ -379,8 +379,8 @@ section .text
     PUSH 0x5e5f70                       ; 005391d8 | = "saveZBufferTable - already saved!"
     MOV [0x01d046a0],EAX                ; 005391dd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 005391e2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005391e8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005391e8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005391ed
     TEST EBX,EBX                        ; 005391f0
         ;   Label: LAB_005391f0
@@ -442,8 +442,8 @@ section .text
     PUSH 0x5e5fa5                       ; 005392b8 | = "saveZBufferTable - not saved!"
     MOV dword ptr [0x01d046a0],EDX      ; 005392bd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005392c3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005392c9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005392c9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005392ce
     TEST EBX,EBX                        ; 005392d1
         ;   Label: LAB_005392d1
@@ -621,7 +621,7 @@ section .text
     FILD dword ptr [ESP + 0x208]        ; 0053948a
     FMUL float ptr [EAX + 0x284]        ; 00539491 | g_CGameInstance.delta_time_float
     CALL crt_math.c_round_FUN_005b7ff0  ; 00539497
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1b4]       ; 0053949c
     CMP dword ptr [ESP + 0x1b4],0x3     ; 005394a3
     JGE 0x005394b8                      ; 005394ab

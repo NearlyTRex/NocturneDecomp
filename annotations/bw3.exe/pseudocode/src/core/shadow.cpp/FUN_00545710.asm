@@ -100,7 +100,7 @@ section .text
     FDIVRP                              ; 005457d8
     FMUL double ptr [0x005d1366]        ; 005457da | DAT_005d1366
     CALL crt_math.c_round_FUN_005a3120  ; 005457e0
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0xd0d8]      ; 005457e5
     MOV ESI,dword ptr [EBX + 0xcdd0]    ; 005457eb
         ;   Label: LAB_005457eb

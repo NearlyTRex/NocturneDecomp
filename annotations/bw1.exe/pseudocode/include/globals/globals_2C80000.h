@@ -9,6 +9,7 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CTextureList.h"
 #include "types/classes/CWater.h"
+#include "types/structs/SReverbSettings.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C80000
@@ -46,4 +47,8 @@ extern CTextureList g_CTextureListInstance;
 
 // CWater
 extern CWater g_CWaterInstance;
+
+// SReverbSettings
+extern SReverbSettings g_CachedReverb;
+extern SReverbSettings g_SoundReverb;
 

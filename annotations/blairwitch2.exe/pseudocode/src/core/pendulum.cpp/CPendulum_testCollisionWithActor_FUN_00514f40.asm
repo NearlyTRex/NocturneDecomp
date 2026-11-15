@@ -18,8 +18,8 @@
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449530
-;   core_dirmat.cpp_FUN_004495a0
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00537fa0
@@ -180,8 +180,8 @@ section .text
     PUSH EAX                            ; 00515121
     LEA ESI,[ESP + 0x15c]               ; 00515122
     LEA EDI,[ESP + 0xf0]                ; 00515129
-    CALL core_dirmat.cpp_FUN_004495a0   ; 00515130
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 00515130
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x15c]               ; 00515135
     ADD ESP,0x8                         ; 0051513c
     MOVSD ES:EDI,ESI                    ; 0051513f
@@ -287,8 +287,8 @@ section .text
     PUSH EAX                            ; 005152c4
     LEA EDI,[ESP + 0xfc]                ; 005152c5
     LEA EBX,[ESP + 0xfc]                ; 005152cc
-    CALL core_dirmat.cpp_FUN_00449530   ; 005152d3
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 005152d3
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x120]               ; 005152d8
     ADD ESP,0x8                         ; 005152df
     LEA EAX,[ESP + 0x184]               ; 005152e2

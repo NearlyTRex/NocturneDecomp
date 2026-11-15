@@ -14,11 +14,11 @@ void engine_texture_cpp_FUN_00597ac0(int param_1,uint param_2,uint param_3,uint 
   int iVar1;
   
   if ((DAT_00713a74 == 0) && (*(char *)(param_1 + 8) != '\0')) {
-    iVar1 = engine_texture_cpp_FUN_005970b0
-                      (_DAT_02c8a680,*(uint *)(param_1 + 4) & 0xffff,param_1 + 8);
+    iVar1 = engine_texture_cpp_CTextureCache_findTexture_FUN_005970b0
+                      (_DAT_02c8a680,*(uint *)(param_1 + 4) & 0xffff,(char *)(param_1 + 8));
     if (iVar1 == -1) {
       iVar1 = engine_texture_cpp_FUN_00596e60
-                        (_DAT_02c8a680,param_1 + 8,param_2,param_3,param_4,param_5);
+                        (_DAT_02c8a680,(char *)(param_1 + 8),param_2,param_3,param_4,param_5);
       *(int *)(param_1 + 4) = iVar1;
     }
     else {

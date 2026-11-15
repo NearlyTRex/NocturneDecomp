@@ -76,10 +76,10 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004c7207
     FMULP ST2                           ; 004c720b
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c720d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 004c7212
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c7214
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 004c7219
     FISTP dword ptr [ESP + 0xc]         ; 004c721b
     MOV EDI,dword ptr [ESP + 0xc]       ; 004c721f

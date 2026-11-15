@@ -13,8 +13,9 @@ void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004a0590(CFlame *this_ptr)
 {
   int iVar1;
   int iVar2;
-  float10 fVar3;
+  double dVar3;
   CVector3f CStack_28;
+  int iStack_18;
   float local_14;
   
   CStack_28.x = (this_ptr->base).location.position.x;
@@ -24,12 +25,11 @@ void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004a0590(CFlame *this_ptr)
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(&this_ptr->globe,&CStack_28);
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
                        (-this_ptr->randomness,this_ptr->randomness);
-  fVar3 = ((float10)local_14 + (float10)this_ptr->intensity) * (float10)_DAT_005d5925;
-  round();
-  local_14 = (float)(int)ROUND(fVar3);
-  (this_ptr->globe).intensity_multiplier = (int)local_14;
-  iVar1 = ((int)local_14 + ((int)local_14 >> 0x1f) * -0x100) -
-          (uint)(((int)local_14 >> 0x1f) << 7 < 0);
+  dVar3 = round
+                    ((double)((local_14 + this_ptr->intensity) * (float)_DAT_005d5925));
+  iStack_18 = (int)ROUND(dVar3);
+  (this_ptr->globe).intensity_multiplier = iStack_18;
+  iVar1 = (iStack_18 + (iStack_18 >> 0x1f) * -0x100) - (uint)((iStack_18 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;
   (this_ptr->globe).intensity.bytes[0] =
        (uchar)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);

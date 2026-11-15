@@ -22,7 +22,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemo
     if (100 < _DAT_01bdd85c) {
       _DAT_01d71de0 = "..\\engine\\drender.cpp";
       _DAT_01d71de4 = 0xbf3;
-      core_main_c_FUN_004e4330("CDR::texture - Too many captured textures");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDR::texture - Too many captured textures");
     }
     iVar2 = _DAT_01bdd85c * 0x48;
     *(int *)(iVar2 + 0x1c09784) = (texture->base).count;

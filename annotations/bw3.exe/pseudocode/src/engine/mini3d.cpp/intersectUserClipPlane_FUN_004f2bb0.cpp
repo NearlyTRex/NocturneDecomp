@@ -18,7 +18,7 @@ void __cdecl engine_mini3d_cpp_intersectUserClipPlane_FUN_004f2bb0(float *from,f
   if (ABS(fVar1) == 0.0) {
     _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
     _DAT_01d71de4 = 0x1473;
-    core_main_c_FUN_004e4330("Bad clip!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
   fVar1 = -(_DAT_01d7a6a4 * from[2] +
            _DAT_01d7a6a0 * from[1] + _DAT_01d7a69c * *from + _DAT_01d7a6a8) / fVar1;

@@ -54,7 +54,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 0058fdc8
     ADD ESP,0x8                         ; 0058fdcc
     CALL crt_math.c_round_FUN_005b7ff0  ; 0058fdcf
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP qword ptr [ESP]               ; 0058fdd4
     MOV EAX,dword ptr [ESP]             ; 0058fdd7
     PUSH EAX                            ; 0058fdda

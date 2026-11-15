@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 00459e2e (CONDITIONAL_JUMP)  ; LAB_00459e2e
     FLD double ptr [ESP]                ; 00459dfa
     CALL crt_math.c_acos_FUN_005b9924   ; 00459dfd
-        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005b9924()
+        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005b9924(double x)
     FLDZ                                ; 00459e02
     FXCH                                ; 00459e04
     FSTP float ptr [ESP + 0x10]         ; 00459e06

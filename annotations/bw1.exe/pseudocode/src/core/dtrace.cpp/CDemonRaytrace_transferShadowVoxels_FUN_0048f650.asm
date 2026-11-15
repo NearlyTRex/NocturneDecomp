@@ -52,7 +52,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048fa40
 ;   crt_math.c_round_FUN_005c03a0
 ;
@@ -110,7 +110,7 @@ section .text
     FLD1                                ; 0048f6cb
     FADDP                               ; 0048f6cd
     CALL crt_math.c_round_FUN_005c03a0  ; 0048f6cf
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x94]        ; 0048f6d4
     MOV EAX,dword ptr [ESP + 0x94]      ; 0048f6db
     MOV dword ptr [ESP + 0xa8],EAX      ; 0048f6e2
@@ -121,7 +121,7 @@ section .text
     FLD1                                ; 0048f6f8
     FADDP                               ; 0048f6fa
     CALL crt_math.c_round_FUN_005c03a0  ; 0048f6fc
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x98]        ; 0048f701
     MOV EAX,dword ptr [ESP + 0x98]      ; 0048f708
     MOV dword ptr [ESP + 0xa8],EAX      ; 0048f70f
@@ -132,7 +132,7 @@ section .text
     FLD1                                ; 0048f725
     FADDP                               ; 0048f727
     CALL crt_math.c_round_FUN_005c03a0  ; 0048f729
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0xa0]        ; 0048f72e
     MOV EAX,dword ptr [ESP + 0xa0]      ; 0048f735
     MOV dword ptr [ESP + 0xa8],EAX      ; 0048f73c
@@ -208,8 +208,8 @@ section .text
     FADDP                               ; 0048f832
     PUSH EAX                            ; 0048f834
     FSTP float ptr [ESP + 0x44]         ; 0048f835
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0048f839
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0048f839
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x60]                ; 0048f83e
     ADD ESP,0x8                         ; 0048f842
     MOVSD ES:EDI,ESI                    ; 0048f845

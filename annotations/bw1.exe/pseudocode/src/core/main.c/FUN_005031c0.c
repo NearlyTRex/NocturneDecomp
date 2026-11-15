@@ -24,7 +24,7 @@ void core_main_c_FUN_005031c0(void)
     uVar1 = toupper(uVar1 & 0xff);
     if (uVar1 < 0x34) {
       if ((0x30 < uVar1) && (uVar1 < 0x32)) {
-        core_game_cpp_FUN_004d7250(g_CGamePtr,0);
+        core_game_cpp_CGame_showChapterSelect_FUN_004d7250(g_CGamePtr,0);
       }
     }
     else if ((((0x34 < uVar1) && (0x40 < uVar1)) && (0x41 < uVar1)) && (uVar1 == 0x5a)) {

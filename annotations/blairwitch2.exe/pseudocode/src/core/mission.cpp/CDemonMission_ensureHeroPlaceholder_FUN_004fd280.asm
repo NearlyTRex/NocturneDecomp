@@ -27,7 +27,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d0940
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5deb72                       ; 004fd338 | = "Hell froze finding hero."
     MOV dword ptr [0x01d046a0],ECX      ; 004fd33d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 004fd343 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fd349
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fd349
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fd34e
     PUSH 0x2d8                          ; 004fd351
         ;   Label: LAB_004fd351

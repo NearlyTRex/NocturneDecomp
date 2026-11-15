@@ -18,7 +18,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0(CAlphaBitmap *
   int local_14;
   
   pixelCount = (right_x - left_x) + 1;
-  engine_alphabit_cpp_FUN_0040dca0(this_ptr);
+  engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040dca0(this_ptr);
   iVar1 = (bottom_y - top_y) + 1;
   iVar2 = top_y * this_ptr->width + left_x;
   srcIndices = (uchar *)(this_ptr->raw + iVar2);

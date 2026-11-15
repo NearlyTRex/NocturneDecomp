@@ -17,7 +17,7 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fa70
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_0040fbc0
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_005add50
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5d352e                       ; 004105f0 | = "CBaronWeapon::setWeaponState - I'm dr..."
     MOV dword ptr [0x01d1d400],EBP      ; 004105f5 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004105fb | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00410600
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00410600
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00410605
     PUSH EBX                            ; 00410608
         ;   Label: LAB_00410608

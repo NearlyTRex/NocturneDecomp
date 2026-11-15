@@ -31,14 +31,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
   if (_DAT_01c3eb50 == (CBitFont *)0x0) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xa4;
-    core_main_c_FUN_005030e0("gEdFont must be set by the application.");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
   _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   if (4 < _DAT_01c3eb5c) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x864;
-    core_main_c_FUN_005030e0("Can't open another window!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open another window!");
   }
   iVar1 = _DAT_01c3eb5c * 0x1f8;
   iVar2 = (int)((DAT_0061b498 + (DAT_0061b498 >> 0x1f) * -0x80) -

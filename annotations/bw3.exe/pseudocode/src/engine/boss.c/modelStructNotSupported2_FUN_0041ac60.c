@@ -13,6 +13,6 @@ SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041ac6
 {
   _DAT_01d71de0 = "..\\engine\\boss.c";
   _DAT_01d71de4 = 0x3a;
-  core_main_c_FUN_004e4330("modelStruct not supported");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("modelStruct not supported");
   return (SMRGLHeaderExtended *)0x0;
 }

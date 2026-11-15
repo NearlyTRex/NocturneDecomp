@@ -13,6 +13,6 @@ int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDeb
 {
   _DAT_01d1d400 = "..\\support\\trstream.cpp";
   _DAT_01d1d404 = 0xab7;
-  core_main_c_FUN_005030e0("COutStreamDebug::seek - invalid operation");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("COutStreamDebug::seek - invalid operation");
   return 0;
 }

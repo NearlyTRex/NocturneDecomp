@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 91,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 96
+    "total_lines": 97
   },
   "cross_references": [
     {
@@ -60,7 +60,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c0d10",
@@ -75,7 +75,7 @@
     {
       "addr": "00479180",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479180"
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
     }
   ],
   "globals": [
@@ -212,7 +212,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_stack_00000024",
       "severity": "moderate",
       "text": "if (in_stack_00000024 == 0) {",
@@ -220,7 +220,7 @@
     },
     {
       "description": "Raw hex address 0x538503 assigned to bare local `uStack_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 23,
       "match": "0x538503",
       "severity": "moderate",
       "text": "uStack_5c = 0x538503;",
@@ -228,7 +228,7 @@
     },
     {
       "description": "Raw hex address 0x538519 assigned to bare local `uStack_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 27,
+      "line": 28,
       "match": "0x538519",
       "severity": "moderate",
       "text": "uStack_5c = 0x538519;",

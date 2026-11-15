@@ -58,7 +58,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004de100(CGhoul *this_pt
           if (this_ptr_01 == (CPathMap *)0x0) {
             _DAT_01d1d400 = "..\\core\\ghoul.cpp";
             _DAT_01d1d404 = 0x12d;
-            core_main_c_FUN_005030e0("CGhoul::findDarkWayPoint - Can't get temp path map");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("CGhoul::findDarkWayPoint - Can't get temp path map");
           }
           CStack_30.x = 0.0;
           CStack_30.y = 0.0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_FUN_00464c10(int param_1)
+; void core_door_cpp_FUN_00464c10(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -18,7 +18,7 @@
 ;   undefined4 DAT_005deb98
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   crt_math.c_round_FUN_005a3120
 ;
@@ -50,7 +50,7 @@ section .text
     FMUL float ptr [ESI + 0x9ac]        ; 00464c49
     PUSH EBX                            ; 00464c4f
     CALL crt_math.c_round_FUN_005a3120  ; 00464c50
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 00464c55
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0 ; 00464c59
         ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
@@ -78,8 +78,8 @@ section .text
     PUSH ESI                            ; 00464ca9
     LEA ESI,[ESP + 0x14]                ; 00464caa
     MOV EDI,EBP                         ; 00464cae
-    CALL core_actor.cpp_FUN_00408b80    ; 00464cb0
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00464cb0
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 00464cb5
     ADD ESP,0x8                         ; 00464cb9
     MOVSD ES:EDI,ESI                    ; 00464cbc

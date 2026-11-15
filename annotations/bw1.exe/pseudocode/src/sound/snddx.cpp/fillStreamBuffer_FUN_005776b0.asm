@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[2]:
-;   sound_snddx.cpp_FUN_00577b60 at 00577bca
-;   sound_snddx.cpp_FUN_005784b0 at 00578572
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0 at 00578572
+;   sound_snddx.cpp_CDirectSoundDevice_start_FUN_00577b60 at 00577bca
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005f4c35

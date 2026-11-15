@@ -32,7 +32,7 @@
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
 ;   core_bodypart.cpp_createBodyPart_FUN_00418940
@@ -353,8 +353,8 @@ section .text
     PUSH EBX                            ; 00413f49
     LEA ESI,[ESP + 0x20]                ; 00413f4a
     MOV dword ptr [ESP + 0x14],ECX      ; 00413f4e
-    CALL core_actor.cpp_FUN_00408ac0    ; 00413f52
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00413f52
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00413f57
     PUSH 0x1                            ; 00413f5a
     LEA EAX,[ESP + 0x4]                 ; 00413f5c

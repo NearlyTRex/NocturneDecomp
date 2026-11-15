@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 134,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 87
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -25,9 +24,9 @@
         "00404ef6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60",
-    "signature": "int engine_3d_c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60(void)"
+    "signature": "void * __cdecl engine_3d_c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -77,9 +76,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -132,12 +131,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -149,24 +156,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(in_stack_00000004 + 8));",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -174,43 +165,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "else if (DAT_006141c0 == 0x20) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*(int *)(in_stack_00000004 + 4),(int *)(in_stack_00000004 + 0x18));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*(int *)(in_stack_00000004 + 4),(int *)(in_stack_00000004 + 0x18));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "return *(int *)(in_stack_00000004 + 4) * 4 + in_stack_00000004 + 0x18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "return *(int *)(in_stack_00000004 + 4) * 4 + in_stack_00000004 + 0x18;",
-      "type": "stack_param"
     }
   ]
 }

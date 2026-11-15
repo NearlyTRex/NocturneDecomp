@@ -27,7 +27,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_ddraw.c_DirectDrawCreate
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_00565a90
@@ -181,8 +181,8 @@ section .text
     PUSH 0x5d77d9                       ; 0057acd6 | = "videoRestore - Unable to set front bu..."
     MOV dword ptr [0x01d71de0],EBP      ; 0057acdb | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0057ace1 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0057ace6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057ace6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057aceb
     POP EBP                             ; 0057acee
     POP ESI                             ; 0057acef

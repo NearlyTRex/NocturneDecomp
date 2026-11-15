@@ -10,7 +10,6 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[176]:
-;   cockpit_ckptutil.c_FUN_00438e40 at 00438e7e
 ;   cockpit_ckptutil.c_FUN_00439090 at 00439108
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a2fc
 ;   cockpit_ckptutil.c_FUN_0043b090 at 0043b1b7
@@ -18,6 +17,7 @@
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 00437580
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0 at 00438c0e
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0cb
+;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40 at 00438e7e
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460 at 0043a56b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0 at 00537efd
 ;   ... and 166 more

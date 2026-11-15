@@ -174,13 +174,13 @@ section .text
     MOV CL,byte ptr [0x01c4e9dc]        ; 00439ad4 | DAT_01c4e9dc
     FXCH ST2                            ; 00439ada
     CALL crt_math.c_round_FUN_005c03a0  ; 00439adc
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 00439ae1
     CALL crt_math.c_round_FUN_005c03a0  ; 00439ae3
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00439ae8
     CALL crt_math.c_round_FUN_005c03a0  ; 00439aea
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 00439aef
     FISTP qword ptr [ESP + 0x10]        ; 00439af1
     FXCH                                ; 00439af5
@@ -275,13 +275,13 @@ section .text
     MOV CL,byte ptr [0x01c4e9d4]        ; 00439c29 | DAT_01c4e9d4
     FXCH ST2                            ; 00439c2f
     CALL crt_math.c_round_FUN_005c03a0  ; 00439c31
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 00439c36
     CALL crt_math.c_round_FUN_005c03a0  ; 00439c38
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 00439c3d
     CALL crt_math.c_round_FUN_005c03a0  ; 00439c3f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     SHL EAX,0x2                         ; 00439c44
     FXCH                                ; 00439c47
     FISTP qword ptr [ESP + 0x18]        ; 00439c49

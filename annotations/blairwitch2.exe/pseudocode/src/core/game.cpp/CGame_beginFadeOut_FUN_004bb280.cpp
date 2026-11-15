@@ -24,6 +24,7 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bb280(CGame *this_ptr)
   int aiStackY_1008 [3];
   float afStackY_ffc [979];
   CBoundingBox3D *in_stack_ffffff54;
+  CVector3f *input_local_point;
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
@@ -36,11 +37,11 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bb280(CGame *this_ptr)
   int iStack_5c;
   int aiStack_58 [2];
   float fStack_50;
-  float afStack_4c [5];
+  float afStack_4c [2];
+  CVector3f CStack_44;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_34 [2];
+  CVector3f CStack_2c;
   CVector3i CStack_20;
   float fStack_14;
   
@@ -60,24 +61,26 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bb280(CGame *this_ptr)
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
     fStack_38 = fStack_a4 + fStack_98;
-    fStack_34 = fStack_a0 + fStack_94;
-    fStack_30 = fStack_9c + fStack_90;
+    afStack_34[0] = fStack_a0 + fStack_94;
+    afStack_34[1] = fStack_9c + fStack_90;
     fStack_14 = fStack_a4 + fStack_98;
-    *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_4c[(uint)bVar4 * -2 + 6];
+    *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2];
     *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+         afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    input_local_point = &CStack_44;
     fStack_50 = fStack_14 * _DAT_005d83eb;
     afStack_4c[0] = unaff_EBP * _DAT_005d83eb;
     afStack_4c[1] = unaff_EDI * _DAT_005d83eb;
-    afStack_4c[2] = fStack_14 * _DAT_005d83eb;
-    afStack_4c[(uint)bVar4 * -2 + 3] = afStack_4c[(uint)bVar4 * -2];
-    afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+    CStack_44.x = fStack_14 * _DAT_005d83eb;
+    *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = afStack_4c[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408d70();
-    fStack_68 = fStack_2c;
-    afStack_64[(uint)bVar4 * -2] = afStack_4c[(uint)bVar4 * -2 + 9];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              (g_CScriptPtr->focus_actor,input_local_point,&CStack_2c);
+    fStack_68 = CStack_2c.x;
+    afStack_64[(uint)bVar4 * -2] = *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
     afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+         *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     CStack_74.x = (int)ROUND(fStack_68 * _DAT_005f7550);
     CStack_74.y = (int)ROUND(afStack_64[0] * _DAT_005f7550);
     CStack_74.z = (int)ROUND(afStack_64[1] * _DAT_005f7550);

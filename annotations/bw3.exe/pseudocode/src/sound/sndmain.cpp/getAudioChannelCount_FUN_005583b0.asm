@@ -6,7 +6,7 @@
 ;
 ; XREF[4]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9b0b
-;   sound_snddx.cpp_FUN_0055c0f0 at 0055c179
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0 at 0055c179
 ;   sound_sndmain.cpp_setAudioBitDepth_FUN_005583d0 at 005583d6
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00558410 at 00558415
 ;

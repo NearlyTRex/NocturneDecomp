@@ -275,7 +275,7 @@ void FUN_005baf0c(void);
 
 // Original: crt_unknown.c_strtok_FUN_005baf20
 // Address: 005baf20
-int strtok(byte *param_1,undefined4 param_2);
+char * __cdecl strtok(char *str,char *delimiters);
 
 // Original: crt_unknown.c_FUN_005baf80
 // Address: 005baf80

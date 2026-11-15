@@ -37,7 +37,7 @@ void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane *c
   if (ABS(local_14) == 0.0) {
     _DAT_01d71de0 = "..\\core\\mirror.cpp";
     _DAT_01d71de4 = 0x42;
-    core_main_c_FUN_004e4330("Bad clip!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Bad clip!");
   }
   fVar1 = -((clip_plane->C).f * vertex_a->z +
            (clip_plane->B).f * vertex_a->y + (clip_plane->A).f * vertex_a->x + (clip_plane->D).f) /

@@ -80,7 +80,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_morph.cpp_CMorphModel_findNearestPoint_FUN_00522ef0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
@@ -164,8 +164,8 @@ section .text
     PUSH 0x5ea8f8                       ; 005233e9 | = "CMorph::getReady - can't do this unle..."
     MOV dword ptr [0x01d1d400],EBX      ; 005233ee | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005233f4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005233fa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005233fa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005233ff
     JMP 0x00523338                      ; 00523402
         ;   XREF to: 00523338 (UNCONDITIONAL_JUMP)  ; LAB_00523338

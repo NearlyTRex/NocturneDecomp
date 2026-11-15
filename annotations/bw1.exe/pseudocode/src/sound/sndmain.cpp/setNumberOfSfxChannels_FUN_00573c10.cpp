@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_setNumberOfSfxChannels_FUN_00573c10(int channel_c
   }
   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
   _DAT_01d1d404 = 0x111f;
-  core_main_c_FUN_005030e0("setNumberOfSfxChannels - too many!");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("setNumberOfSfxChannels - too many!");
   DAT_006232e4 = channel_count;
   return;
 }

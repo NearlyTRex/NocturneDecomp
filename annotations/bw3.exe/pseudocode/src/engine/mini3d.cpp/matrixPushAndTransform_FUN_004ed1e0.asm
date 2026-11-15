@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045bef0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH 0x5c7e8e                       ; 004ed20b
     MOV dword ptr [0x01d71de0],EBX      ; 004ed210 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004ed216 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ed21c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ed21c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ed221
     MOV EAX,[0x01d76d00]                ; 004ed224 | DAT_01d76d00
         ;   Label: LAB_004ed224

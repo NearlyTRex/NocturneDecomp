@@ -20,7 +20,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet
   if (_DAT_020af5c8 < 1) {
     _DAT_01d1d400 = "..\\core\\setcolid.cpp";
     _DAT_01d1d404 = 0x42a;
-    core_main_c_FUN_005030e0("CDemonSet::popRaytraceState - stack empty");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::popRaytraceState - stack empty");
   }
   _DAT_020af5c8 = _DAT_020af5c8 + -1;
   iVar2 = _DAT_020af5c8 * 0xa0;

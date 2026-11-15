@@ -7,7 +7,7 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ;
-; XREF[23]:
+; XREF[24]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411d54
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413516
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c52a
@@ -18,7 +18,7 @@
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a4c0
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476d02
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047c4b8
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_005dcba3

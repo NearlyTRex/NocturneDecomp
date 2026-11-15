@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_hero_cpp_FUN_004cec50(int param_1)
+; bool core_hero_cpp_FUN_004cec50(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xa4]:1  local_a4
@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_weapon.cpp_FUN_0058a5f0
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
     PUSH EBX                            ; 004ced12
     LEA ESI,[ESP + 0x78]                ; 004ced13
     LEA EDI,[ESP + 0x60]                ; 004ced17
-    CALL core_actor.cpp_FUN_00408d70    ; 004ced1b
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004ced1b
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x78]                ; 004ced20
     ADD ESP,0x8                         ; 004ced24
     MOVSD ES:EDI,ESI                    ; 004ced27

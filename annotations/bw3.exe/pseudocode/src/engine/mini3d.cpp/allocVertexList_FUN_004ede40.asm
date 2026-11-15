@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d76f64
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5c7faa                       ; 004ede6b | = "CMini3D::allocVertexList - Out of mem..."
     MOV dword ptr [0x01d71de0],ECX      ; 004ede70 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004ede76 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ede7c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ede7c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ede81
     POP EBX                             ; 004ede84
     MOV EAX,[0x01d76f5c]                ; 004ede85 | DAT_01d76f5c

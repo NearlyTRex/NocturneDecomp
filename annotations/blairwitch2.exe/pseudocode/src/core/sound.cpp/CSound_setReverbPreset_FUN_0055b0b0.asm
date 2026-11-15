@@ -13,15 +13,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_sound_cpp_005ea927
 ;   TerminatedCString s_CSound_setReverbPreset_i_005ea939
-;   undefined4 DAT_0061c070
-;   undefined4 DAT_0061c074
-;   undefined4 DAT_0061c078
+;   undefined4 g_ReverbPresetTable[0].reverb.volume
+;   undefined4 g_ReverbPresetTable[0].reverb.decay_time
+;   undefined4 g_ReverbPresetTable[0].reverb.damping
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0055b080
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_sound.cpp_CSound_setReverb_FUN_0055b080
 ;
 ; *****************************************************************************
 
@@ -39,13 +39,13 @@ section .text
     MOV EAX,EBX                         ; 0055b0be
         ;   Label: LAB_0055b0be
     SHL EAX,0x4                         ; 0055b0c0
-    PUSH dword ptr [EAX + 0x61c078]     ; 0055b0c3 | DAT_0061c078
-    PUSH dword ptr [EAX + 0x61c074]     ; 0055b0c9 | DAT_0061c074
+    PUSH dword ptr [EAX + 0x61c078]     ; 0055b0c3 | g_ReverbPresetTable[0].reverb.damping
+    PUSH dword ptr [EAX + 0x61c074]     ; 0055b0c9 | g_ReverbPresetTable[0].reverb.decay_time
     MOV EBX,dword ptr [ESP + 0x10]      ; 0055b0cf
-    PUSH dword ptr [EAX + 0x61c070]     ; 0055b0d3 | DAT_0061c070
+    PUSH dword ptr [EAX + 0x61c070]     ; 0055b0d3 | g_ReverbPresetTable[0].reverb.volume
     PUSH EBX                            ; 0055b0d9
-    CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0055b080 ; 0055b0da
-        ;   XREF to: 0055b080 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0055b080(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
+    CALL core_sound.cpp_CSound_setReverb_FUN_0055b080 ; 0055b0da
+        ;   XREF to: 0055b080 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_setReverb_FUN_0055b080(CSound * this_ptr, float volume, float decay_time, float damping)
     ADD ESP,0x10                        ; 0055b0df
     POP EBX                             ; 0055b0e2
     RET                                 ; 0055b0e3
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5ea939                       ; 0055b0ee | = "CSound::setReverbPreset - invalid index"
     MOV dword ptr [0x01d046a0],EDX      ; 0055b0f3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0055b0f9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0055b0ff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055b0ff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0055b104
     JMP 0x0055b0be                      ; 0055b107
         ;   XREF to: 0055b0be (UNCONDITIONAL_JUMP)  ; LAB_0055b0be

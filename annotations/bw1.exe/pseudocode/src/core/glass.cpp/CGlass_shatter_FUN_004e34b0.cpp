@@ -18,7 +18,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
   byte bVar4;
   float afStackY_10c4 [993];
   float local_12c;
-  uint local_128;
+  float local_128;
   uint local_124;
   float local_120;
   float local_11c;
@@ -27,7 +27,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
   float local_110;
   uint local_10c;
   float local_108;
-  float local_104;
+  uint local_104;
   uint local_100;
   uint local_fc;
   uint local_f8;
@@ -55,31 +55,22 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
   float local_a0;
   float local_9c;
   uint local_98;
-  float local_94;
-  float local_88;
+  CVector3f local_94;
+  CVector3f local_88;
   float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  uint local_68;
+  float local_78 [2];
+  CVector3f local_70;
   float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
+  float local_60 [4];
   float local_50;
   float local_4c;
   float local_48;
   float local_44;
-  float local_40;
+  CVector3f local_40;
   float local_34;
-  uint local_30;
-  uint local_2c;
-  float local_28;
-  float local_24;
+  float local_30 [4];
   uint local_20;
-  float local_1c;
+  CVector3f local_1c;
   
   bVar4 = 0;
   if (this_ptr->shattered == 0) {
@@ -100,85 +91,85 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector
       core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730(g_CDemonSetPtr);
     }
     __arrinit(&stack0xfffffed4,4,&g_CVectorTypeInfo);
-    local_70 = (this_ptr->glass_size).x * (float)_DAT_005e3fd4;
-    local_6c = 0.0;
-    local_68 = 0;
-    core_dirmat_cpp_FUN_0045f690(&(this_ptr->base).orient_matrix,&stack0xffffff90);
-    local_c4 = local_94;
+    local_70.x = (this_ptr->glass_size).x * (float)_DAT_005e3fd4;
+    local_70.y = 0.0;
+    local_70.z = 0.0;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              (&(this_ptr->base).orient_matrix,&local_70,&local_94);
+    local_c4 = local_94.x;
     *(uint *)((int)&stack0xffffff40 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff70 + (uint)bVar4 * -8);
+         *(uint *)((int)&local_94 + (uint)bVar4 * -8 + 4);
     *(uint *)((int)&stack0xffffff44 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff74 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+         *(uint *)((int)&local_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     local_ac = (this_ptr->base).location.position.x + local_c4;
     local_a8 = (this_ptr->base).location.position.y + local_c0;
     local_a4 = (this_ptr->base).location.position.z + local_bc;
     local_34 = local_ac;
-    (&stack0xffffffd0)[(uint)bVar4 * 0xfffffffe] =
-         *(uint *)((int)&stack0xffffff58 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff5c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    if (&stack0xfffffed4 != &stack0xffffffcc) {
+    local_30[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffff58 + (uint)bVar4 * -8);
+    local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(float *)((int)&stack0xffffff5c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    if (&stack0xfffffed4 != &local_34) {
       local_12c = local_34;
-      local_128 = local_30;
-      local_124 = local_2c;
+      local_128 = local_30[0];
+      local_124 = local_30[1];
     }
-    local_6c = local_6c + (this_ptr->glass_size).y;
-    core_dirmat_cpp_FUN_0045f690(&(this_ptr->base).orient_matrix,&stack0xffffff90);
-    local_58 = local_88;
-    *(uint *)((int)&stack0xffffffac + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    local_64 = (this_ptr->base).location.position.x + local_58;
-    local_60 = (this_ptr->base).location.position.y + local_54;
-    local_5c = (this_ptr->base).location.position.z + local_50;
+    local_70.y = local_70.y + (this_ptr->glass_size).y;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              (&(this_ptr->base).orient_matrix,&local_70,&local_88);
+    local_60[2] = local_88.x;
+    local_60[(uint)bVar4 * -2 + 3] = *(float *)((int)&local_88 + (uint)bVar4 * -8 + 4);
+    local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+         *(float *)((int)&local_88 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    local_64 = (this_ptr->base).location.position.x + local_60[2];
+    local_60[0] = (this_ptr->base).location.position.y + local_60[3];
+    local_60[1] = (this_ptr->base).location.position.z + local_50;
     local_d0 = local_64;
-    (&stack0xffffff34)[(uint)bVar4 * 0xfffffffe] = (&stack0xffffffa0)[(uint)bVar4 * 0xfffffffe];
-    *(uint *)((int)&stack0xffffff38 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    (&stack0xffffff34)[(uint)bVar4 * 0xfffffffe] = local_60[(uint)bVar4 * -2];
+    *(float *)((int)&stack0xffffff38 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+         local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     if (&stack0xfffffee0 != &stack0xffffff30) {
       local_120 = local_d0;
       local_11c = local_cc;
       local_118 = local_c8;
     }
-    local_70 = -local_70;
-    core_dirmat_cpp_FUN_0045f690(&(this_ptr->base).orient_matrix,&stack0xffffff90);
-    local_dc = local_40;
+    local_70.x = -local_70.x;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              (&(this_ptr->base).orient_matrix,&local_70,&local_40);
+    local_dc = local_40.x;
     (&stack0xffffff28)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);
+         (float)*(uint *)((int)&local_40 + (uint)bVar4 * -8 + 4);
     *(uint *)((int)&stack0xffffff2c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+         *(uint *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     local_b8 = (this_ptr->base).location.position.x + local_dc;
     local_b4 = (this_ptr->base).location.position.y + local_d8;
     local_b0 = (this_ptr->base).location.position.z + local_d4;
     local_a0 = local_b8;
     (&stack0xffffff64)[(uint)bVar4 * 0xfffffffe] =
          (float)*(uint *)((int)&stack0xffffff4c + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffff68 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff50 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    local_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8] =
+         *(float *)((int)&stack0xffffff50 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
     if (&stack0xfffffeec != &stack0xffffff60) {
       local_114 = local_a0;
       local_110 = local_9c;
       local_10c = local_98;
     }
-    local_6c = 0.0;
-    core_dirmat_cpp_FUN_0045f690(&(this_ptr->base).orient_matrix,&stack0xffffff90);
-    local_4c = local_1c;
-    *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    local_70.y = 0.0;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              (&(this_ptr->base).orient_matrix,&local_70,&local_1c);
+    local_4c = local_1c.x;
+    local_60[(uint)bVar4 * -2 + 6] = *(float *)((int)&local_1c + (uint)bVar4 * -8 + 4);
+    local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
+         *(float *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     local_7c = (this_ptr->base).location.position.x + local_4c;
-    local_78 = (this_ptr->base).location.position.y + local_48;
-    local_74 = (this_ptr->base).location.position.z + local_44;
-    local_28 = local_7c;
-    (&stack0xffffffdc)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)((int)&stack0xffffff88 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffe0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff8c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    if (&stack0xfffffef8 != &stack0xffffffd8) {
-      local_108 = local_28;
-      local_104 = local_24;
+    local_78[0] = (this_ptr->base).location.position.y + local_48;
+    local_78[1] = (this_ptr->base).location.position.z + local_44;
+    local_30[2] = local_7c;
+    local_30[(uint)bVar4 * -2 + 3] = local_78[(uint)bVar4 * -2];
+    local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+         local_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    if (&stack0xfffffef8 != local_30 + 2) {
+      local_108 = local_30[2];
+      local_104 = local_30[3];
       local_100 = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00

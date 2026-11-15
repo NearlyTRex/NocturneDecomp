@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02628554
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CSkeleton_load_FUN_00540a10
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5e75af                       ; 00549068 | = "Can't load %s because skeleton manage..."
     MOV dword ptr [0x01d046a0],EBP      ; 0054906d | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00549073 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00549078
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00549078
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054907d
     XOR EAX,EAX                         ; 00549080
     POP EBP                             ; 00549082

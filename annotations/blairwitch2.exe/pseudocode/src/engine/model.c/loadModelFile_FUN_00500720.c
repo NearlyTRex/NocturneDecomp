@@ -43,28 +43,28 @@ LAB_00500746:
     _sprintf(local_5c,"Unable to get file size: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0xf0;
-    core_main_c_FUN_004e4500(local_5c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(local_5c);
   }
-  file = engine_dosio_cpp_FUN_00460c70("models",filename,&DAT_005def95);
+  file = engine_dosio_cpp_getFile_FUN_00460c70("models",filename,&DAT_005def95);
   if (file == (_FILE *)0x0) {
     _sprintf(local_5c,"Unable to open model: %s");
     _DAT_01d046a4 = 0xf5;
     _DAT_01d046a0 = "..\\engine\\model.c";
-    core_main_c_FUN_004e4500(local_5c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(local_5c);
   }
   pSVar1 = (SMRGLHeaderExtended *)malloc(size);
   if (pSVar1 == (SMRGLHeaderExtended *)0x0) {
     _sprintf(local_5c,"Out of model memory: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x100;
-    core_main_c_FUN_004e4500(local_5c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(local_5c);
   }
   SVar2 = _fread(pSVar1,1,size,file);
   if (SVar2 != size) {
     _sprintf(local_5c,"Model file read error: %s");
     _DAT_01d046a4 = 0x107;
     _DAT_01d046a0 = "..\\engine\\model.c";
-    core_main_c_FUN_004e4500(local_5c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(local_5c);
   }
   _fclose(file);
   iVar3 = (pSVar1->base).type;
@@ -72,7 +72,7 @@ LAB_00500746:
     _sprintf(local_5c,"Invalid model: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x10e;
-    core_main_c_FUN_004e4500(local_5c);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(local_5c);
   }
   return pSVar1;
 }

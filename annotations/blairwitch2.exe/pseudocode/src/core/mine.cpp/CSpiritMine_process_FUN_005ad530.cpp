@@ -15,7 +15,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   int iVar1;
   int iVar2;
   CMatrix3x4f *pCVar3;
-  float *pfVar4;
+  CMatrix3x4f *pCVar4;
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
@@ -25,20 +25,25 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   uint uVar10;
   float *pfVar11;
   float *pfVar12;
-  float fVar13;
+  uint *puVar13;
+  float fVar14;
   SDamageInfo SStack_16c;
   CMatrix3x4f CStack_130;
-  float afStack_100 [12];
+  CMatrix3x4f CStack_100;
   float fStack_d0;
   float afStack_cc [3];
   CQuaternion4f CStack_c0;
-  float afStack_b0 [10];
+  float afStack_b0 [3];
+  CVector3f CStack_a4;
+  uint uStack_98;
+  uint uStack_94;
+  uint uStack_90;
+  float fStack_8c;
   float afStack_88 [4];
   uint uStack_78;
-  uint uStack_74;
-  float afStack_70 [5];
-  float fStack_5c;
-  float fStack_58;
+  CVector3f CStack_74;
+  float fStack_68;
+  float afStack_64 [4];
   float fStack_54;
   float fStack_3c;
   float fStack_38;
@@ -109,8 +114,8 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
       fStack_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(3.1415927,6.2831855);
       fStack_14 = fStack_38;
       fStack_54 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(3.1415927,6.2831855);
-      fStack_5c = fStack_34;
-      fStack_58 = fStack_38;
+      afStack_64[2] = fStack_34;
+      afStack_64[3] = fStack_38;
       fStack_3c = fStack_54;
       fStack_14 = fStack_54;
       core_xform_cpp_FUN_00594380();
@@ -122,38 +127,38 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
            (afStack_cc + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
       core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&CStack_c0,&CStack_130);
       pCVar3 = &CStack_130;
-      pfVar4 = afStack_100;
+      pCVar4 = &CStack_100;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pfVar4 = pCVar3->m[0].w;
+        pCVar4->m[0].w = pCVar3->m[0].w;
         pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-        pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
+        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
       }
-      afStack_b0[3] = 0.0;
-      afStack_b0[4] = 0.0;
-      afStack_b0[5] = 1.0;
-      core_xform_cpp_FUN_00591530();
-      fVar13 = 4.2039e-45;
-      afStack_b0[6] = 0.0;
-      afStack_b0[8] = 0.0;
-      pfVar4 = afStack_b0 + 6;
-      pfVar12 = afStack_b0 + 9;
-      pfVar11 = afStack_70 + 2;
-      afStack_b0[7] = 1.0;
-      afStack_70[2] = (float)uStack_74;
-      afStack_70[(uint)bVar5 * -2 + 3] = afStack_70[(uint)bVar5 * -2];
-      afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-           afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      CStack_a4.x = 0.0;
+      CStack_a4.y = 0.0;
+      CStack_a4.z = 1.0;
+      core_xform_cpp_transformVector3x4_FUN_00591530(&CStack_a4,&CStack_100,&CStack_74);
+      fVar14 = 4.2039e-45;
+      uStack_98 = 0;
+      uStack_90 = 0;
+      puVar13 = &uStack_98;
+      pfVar12 = &fStack_8c;
+      pfVar11 = &fStack_68;
+      uStack_94 = 0x3f800000;
+      fStack_68 = CStack_74.x;
+      afStack_64[(uint)bVar5 * -2] = *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + 4);
+      afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+           *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       uVar10 = 0x3f266666;
       fVar9 = 0.9;
       fVar8 = 0.7;
-      afStack_b0[9] = (float)uStack_74;
-      afStack_88[(uint)bVar5 * -2] = afStack_70[(uint)bVar5 * -2];
+      fStack_8c = CStack_74.x;
+      afStack_88[(uint)bVar5 * -2] = *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + 4);
       afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+           *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar8,fVar9);
       core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                 (pCStack_18,0x40000000,this_ptr->effect_timer / this_ptr->effect_time,0,0x3f000000,
-                 0x40000000,0x3f051eb8,fStack_14,uVar10,pfVar11,pfVar12,pfVar4,fVar13);
+                 0x40000000,0x3f051eb8,fStack_14,uVar10,pfVar11,pfVar12,puVar13,fVar14);
     }
     if (fStack_20 <= this_ptr->trigger_radius) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffe58);

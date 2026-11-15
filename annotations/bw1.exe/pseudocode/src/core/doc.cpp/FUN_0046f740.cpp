@@ -28,15 +28,15 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
   byte bVar14;
   float afStackY_12c8 [42];
   int aiStackY_1220 [9];
-  float afStackY_11fc [42];
-  CDemonActor *apCStackY_1154 [6];
-  float afStackY_113c [18];
+  float afStackY_11fc [66];
   CDemonActor *apCStackY_10f4 [6];
   float afStackY_10dc [39];
   int aiStackY_1040 [6];
   CDemonActor *apCStackY_1028 [102];
   CVector3f *pCVar15;
   CBoundingBox3D *in_stack_fffff180;
+  CVector3f *in_stack_fffff188;
+  CVector3f *in_stack_fffff18c;
   CMatrix3x4f local_e50;
   CMatrix3x4f local_e20;
   CMatrix3x4f local_df0;
@@ -47,7 +47,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
   CMatrix3x4f local_d00;
   CMatrix3x4f local_cd0;
   float local_ca0 [12];
-  float local_c70 [12];
+  CMatrix3x4f local_c70;
   CMatrix3x4f local_c40;
   CMatrix3x4f local_c10;
   CMatrix3x4f local_be0;
@@ -131,9 +131,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
   float afStack_1f8 [2];
   CVector3f local_1f0;
   CVector3f local_1e4;
-  CDemonActor *local_1d8;
-  CDemonActor *local_1d4;
-  CDemonActor *local_1d0;
+  CVector3f local_1d8;
   CVector3f local_1cc;
   CVector3f local_1c0;
   CVector3f local_1b4;
@@ -142,14 +140,13 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
   CVector3f local_190;
   float local_184;
   float local_180 [5];
-  CDemonActor *local_16c;
-  CDemonActor *local_168 [2];
+  CVector3f local_16c;
   CVector3f local_160;
   uint local_154;
-  float local_150 [11];
+  float local_150 [8];
+  CVector3f local_130;
   float local_124;
-  uint local_120;
-  uint local_11c;
+  float local_120 [2];
   CVector3f local_118;
   uint local_10c;
   CDemonActor *local_108 [2];
@@ -237,13 +234,13 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       local_124 = -0.0120173;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
                 (&local_640,&local_88,&local_b8);
-      local_11c = 0x3fc9f99c;
-      local_120 = 0x3fca29c7;
+      local_120[1] = 1.57793;
+      local_120[0] = 1.5794;
       local_1f0.x = 0.665317;
       local_70.x = local_124;
-      *(float *)((int)&local_70 + (uint)bVar14 * -8 + 4) = local_150[(uint)bVar14 * -2 + 0xc];
+      *(float *)((int)&local_70 + (uint)bVar14 * -8 + 4) = local_120[(uint)bVar14 * -2];
       *(float *)((int)&local_70 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-           local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xd];
+           local_120[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
       local_1f0.y = -0.0635326;
       local_1f0.z = 0.227495;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
@@ -495,9 +492,9 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
   }
   local_22c.y = local_22c.x;
   local_22c.z = local_22c.x;
-  local_1d8 = (CDemonActor *)local_22c.x;
-  local_1d4 = (CDemonActor *)local_22c.x;
-  local_1d0 = (CDemonActor *)local_22c.x;
+  local_1d8.x = local_22c.x;
+  local_1d8.y = local_22c.x;
+  local_1d8.z = local_22c.x;
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600(param_2,DAT_007c5330);
   if (pCVar3 != (CDemonActor *)0x0) {
     (*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffff180);
@@ -518,14 +515,14 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
     local_244 = (CDemonActor *)(local_cc[2] * _DAT_005da0e8);
     local_240[0] = local_cc[3] * _DAT_005da0e8;
     local_240[1] = local_bc * _DAT_005da0e8;
-    local_16c = (CDemonActor *)(local_cc[2] * _DAT_005da0e8);
-    local_168[(uint)bVar14 * -2] = (CDemonActor *)local_240[(uint)bVar14 * -2];
-    local_168[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-         (CDemonActor *)local_240[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
+    local_16c.x = local_cc[2] * _DAT_005da0e8;
+    *(float *)((int)&local_16c + (uint)bVar14 * -8 + 4) = local_240[(uint)bVar14 * -2];
+    *(float *)((int)&local_16c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
+         local_240[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
     if (&local_1d8 != &local_16c) {
-      local_1d8 = local_16c;
-      local_1d4 = local_168[0];
-      local_1d0 = local_168[1];
+      local_1d8.x = local_16c.x;
+      local_1d8.y = local_16c.y;
+      local_1d8.z = local_16c.z;
     }
     uVar1 = pCVar3[4].blood_effect_color;
     if (uVar1 != 2) {
@@ -559,7 +556,7 @@ LAB_004705bf:
           pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);
           pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
         }
-        core_xform_cpp_matrixToEulerAngles_FUN_005b5930();
+        core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_700,in_stack_fffff188);
         local_274.x = (float)local_1fc;
         *(float *)((int)&local_274 + (uint)bVar14 * -8 + 4) = afStack_1f8[(uint)bVar14 * -2];
         *(float *)((int)&local_274 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
@@ -569,18 +566,17 @@ LAB_004705bf:
           local_22c.y = local_274.y;
           local_22c.z = local_274.z;
         }
-        local_1d0 = (CDemonActor *)
-                    (local_2e4 * (float)_DAT_005da0f4 + local_2f0 * (float)_DAT_005da0ec);
+        local_1d8.z = local_2e4 * (float)_DAT_005da0f4 + local_2f0 * (float)_DAT_005da0ec;
         goto LAB_00470270;
       }
       if (uVar1 != 3) {
         _DAT_01d1d400 = "..\\core\\doc.cpp";
         _DAT_01d1d404 = 0xe3d;
-        core_main_c_FUN_005030e0();
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Don't know how to carry light %s");
         goto LAB_00470270;
       }
     }
-    local_1d4 = local_2e8;
+    local_1d8.y = (float)local_2e8;
   }
 LAB_00470270:
   iVar6 = (*((param_2->vtable)._ub)->getAllowedMeleeAttackTypes)(param_2);
@@ -621,13 +617,13 @@ LAB_00470270:
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_3d0,pCVar11,&local_490);
     pCVar7 = &local_490;
-    pfVar8 = local_c70;
+    pCVar11 = &local_c70;
     for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *pfVar8 = pCVar7->m[0].w;
+      pCVar11->m[0].w = pCVar7->m[0].w;
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);
-      pfVar8 = pfVar8 + (uint)bVar14 * -2 + 1;
+      pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_005b5930();
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_c70,in_stack_fffff18c);
     local_100.x = (float)local_3c[5];
     local_108[(uint)bVar14 * -2 + 3] = local_3c[(uint)bVar14 * -2 + 6];
     local_108[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
@@ -668,11 +664,11 @@ LAB_0047045f:
             (&local_1cc,(param_1->model).bone_transform.bone_model_matrices + iVar5);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
             (&local_b20,&local_1cc,&local_22c);
-  core_xform_cpp_FUN_005b5080();
-  local_2c4[2] = local_150[8];
-  local_2c4[(uint)bVar14 * -2 + 3] = local_150[(uint)bVar14 * -2 + 9];
+  core_xform_cpp_transformVector3x4_FUN_005b5080(&local_1d8,&local_b20,&local_130);
+  local_2c4[2] = local_130.x;
+  local_2c4[(uint)bVar14 * -2 + 3] = *(float *)((int)&local_130 + (uint)bVar14 * -8 + 4);
   local_2c4[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
-       local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10];
+       *(float *)((int)&local_130 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
   iVar5 = 0xc;
   local_184 = local_1cc.x - local_2c4[2];
   local_180[0] = local_1cc.y - local_2c4[3];

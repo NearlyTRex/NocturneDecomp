@@ -66,7 +66,7 @@ section .text
     FILD dword ptr [ESP + 0x4]          ; 004b327f
     FMUL float ptr [ESP + 0x2c]         ; 004b3283
     CALL crt_math.c_round_FUN_005b7ff0  ; 004b3287
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 004b328c
     MOV EBP,dword ptr [ESP]             ; 004b328f
     TEST EBP,EBP                        ; 004b3292

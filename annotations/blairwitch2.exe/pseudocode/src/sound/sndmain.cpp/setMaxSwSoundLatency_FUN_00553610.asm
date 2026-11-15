@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00552b20
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5e9283                       ; 00553653 | = "setMaxSwSoundLatency - can't do this ..."
     MOV dword ptr [0x01d046a0],EDX      ; 00553658 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0055365e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00553664
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00553664
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00553669
     JMP 0x00553619                      ; 0055366c
         ;   XREF to: 00553619 (UNCONDITIONAL_JUMP)  ; LAB_00553619

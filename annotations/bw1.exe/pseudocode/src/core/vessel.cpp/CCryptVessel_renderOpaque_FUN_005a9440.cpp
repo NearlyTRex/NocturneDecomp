@@ -15,10 +15,10 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005a9440(CCryptVessel 
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float10 fVar5;
+  double dVar5;
   uint auStack_48 [6];
-  uint auStack_30 [6];
-  int iStack_18;
+  uint auStack_30 [5];
+  int iStack_1c;
   CVector3f *pCStack_14;
   
   bVar4 = 0;
@@ -44,15 +44,14 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005a9440(CCryptVessel 
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (DAT_00612560,pCStack_14,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
-  if ((this_ptr->state == 3) || (this_ptr->timer <= 0.0)) {
+  if ((this_ptr->state == 3) || ((double)this_ptr->timer <= 0.0)) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,-1);
   }
   else {
-    fVar5 = (float10)_DAT_005f915e - (float10)this_ptr->timer * (float10)_DAT_005f915e;
-    round();
-    iStack_18 = (int)ROUND(fVar5);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,iStack_18);
+    dVar5 = round(_DAT_005f915e - (double)this_ptr->timer * _DAT_005f915e);
+    iStack_1c = (int)ROUND(dVar5);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,iStack_1c);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,0x2e7);

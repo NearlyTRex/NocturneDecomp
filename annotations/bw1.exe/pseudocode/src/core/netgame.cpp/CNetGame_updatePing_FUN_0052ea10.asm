@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d51da0
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5ebe2c                       ; 0052ea35 | = "CNetGame::updatePing - invalid player..."
     MOV dword ptr [0x01d1d400],ECX      ; 0052ea3a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0052ea40 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052ea46
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052ea46
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052ea4b
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052ea4e
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()

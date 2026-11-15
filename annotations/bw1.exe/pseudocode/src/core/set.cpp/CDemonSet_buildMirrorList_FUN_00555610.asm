@@ -27,7 +27,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_box.cpp_FUN_004207b0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5f0bbe                       ; 005556d3 | = "CDemonSet::buildMirrorList - Too many..."
     MOV dword ptr [0x01d1d400],EDI      ; 005556d8 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005556de | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005556e3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005556e3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005556e8
     MOV EDX,dword ptr [0x00612560]      ; 005556eb | DAT_00612560
         ;   Label: LAB_005556eb

@@ -38,7 +38,7 @@
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890
 ;   core_set.cpp_CDemonSet_setGamma_FUN_0053b1c0
-;   core_setdir.cpp_FUN_0053f940
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
 ;   core_sound.cpp_CSound_init_FUN_0055fd30
 ;   core_sound.cpp_CSound_shutdown_FUN_0055fee0
 ;   crt_env.c_getenv_FUN_005a5ec0
@@ -593,8 +593,8 @@ section .text
     PUSH EDX                            ; 004baadc
     MOV ECX,dword ptr [0x00603b28]      ; 004baadd | g_CDemonSetPtr
     PUSH ECX                            ; 004baae3 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_0053f940   ; 004baae4
-        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053f940()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 ; 004baae4
+        ;   XREF to: 0053f940 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     MOV EAX,[0x006039e0]                ; 004baae9 | g_CScriptPtr
     ADD ESP,0xc                         ; 004baaee
     MOV dword ptr [EAX + 0x10],0x0      ; 004baaf1 | g_CScriptInstance.focus_actor_changed
@@ -788,15 +788,15 @@ section .text
     PUSH 0x5c288c                       ; 004bace7 | DAT_005c288c
     PUSH 0x5c288f                       ; 004bacec | = "quicksavedgame.sav"
     PUSH 0x5c28a2                       ; 004bacf1 | DAT_005c28a2
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004bacf6
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004bacf6
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004bacfb
     TEST EAX,EAX                        ; 004bacfe
     JZ 0x004bad64                       ; 004bad00
         ;   XREF to: 004bad64 (CONDITIONAL_JUMP)  ; LAB_004bad64
     PUSH EAX                            ; 004bad02
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004bad03
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bad08
     PUSH 0x5c28a7                       ; 004bad0b | = "Restore quick saved game?"
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004bad10

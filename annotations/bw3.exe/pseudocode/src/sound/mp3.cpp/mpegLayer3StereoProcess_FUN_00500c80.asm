@@ -92,7 +92,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00500be0
 ;
 ; *****************************************************************************
@@ -1088,8 +1088,8 @@ section .text
     PUSH 0x5ca2a8                       ; 00501973 | = "Error in streo processing.  File: %s"
     MOV [0x01d71de0],EAX                ; 00501978 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0050197d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00501983
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00501983
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00501988
     JMP 0x00500e82                      ; 0050198b
         ;   XREF to: 00500e82 (UNCONDITIONAL_JUMP)  ; LAB_00500e82

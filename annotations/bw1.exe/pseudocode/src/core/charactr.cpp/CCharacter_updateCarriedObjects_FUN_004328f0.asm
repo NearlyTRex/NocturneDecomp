@@ -42,7 +42,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_inverse_FUN_005b6380
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005b72c0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
@@ -157,8 +157,8 @@ section .text
     PUSH EAX                            ; 00432a3d
     LEA ESI,[ESP + 0x28c]               ; 00432a3e
     LEA EDI,[ESP + 0x274]               ; 00432a45
-    CALL core_xform.cpp_FUN_005b6270    ; 00432a4c
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 00432a4c
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0x28c]               ; 00432a51
     ADD ESP,0x4                         ; 00432a58
     MOVSD ES:EDI,ESI                    ; 00432a5b
@@ -176,7 +176,7 @@ section .text
     LEA ESI,[ESP + 0x298]               ; 00432a87
     LEA EDI,[ESP + 0x280]               ; 00432a8e
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00432a95
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x298]               ; 00432a9a
     ADD ESP,0x4                         ; 00432aa1
     MOVSD ES:EDI,ESI                    ; 00432aa4
@@ -223,7 +223,7 @@ section .text
     LEA ESI,[ESP + 0xf4]                ; 00432b2b
     LEA EDI,[ESP + 0x64]                ; 00432b32
     CALL core_xform.cpp_inverse_FUN_005b6380 ; 00432b36
-        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_005b6380()
+        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005b6380(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00432b3b
     ADD ESP,0x4                         ; 00432b40
     LEA EAX,[ESP + 0x60]                ; 00432b43

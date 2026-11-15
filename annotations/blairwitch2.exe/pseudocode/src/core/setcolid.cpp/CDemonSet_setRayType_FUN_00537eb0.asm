@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5e5f2d                       ; 00537ecf | = "CDemonSet::setRayType - use setRayTyp..."
     MOV dword ptr [0x01d046a0],ECX      ; 00537ed4 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00537eda | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00537ee0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537ee0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537ee5
     POP EBX                             ; 00537ee8
     RET                                 ; 00537ee9

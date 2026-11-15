@@ -13,6 +13,6 @@ uint __cdecl support_codec_cpp_CInStreamPipe_tell_FUN_00443e70(CInStreamPipe *th
 {
   _DAT_01d1d400 = "..\\support\\codec.cpp";
   _DAT_01d1d404 = 0x831;
-  core_main_c_FUN_005030e0("CInStreamPipe::tell - not allowed");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CInStreamPipe::tell - not allowed");
   return 0xffffffff;
 }

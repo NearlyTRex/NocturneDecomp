@@ -18,7 +18,7 @@
 ;   undefined4 DAT_02cf328c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_005586b0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH 0x5d3b81                       ; 0055870d | = "enableHwSoundMixing - Can't do this w..."
     MOV dword ptr [0x01d71de0],EDX      ; 00558712 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00558718 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055871e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055871e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558723
     MOV EAX,dword ptr [ESP + 0x4]       ; 00558726
     MOV [0x02cf328c],EAX                ; 0055872a | DAT_02cf328c

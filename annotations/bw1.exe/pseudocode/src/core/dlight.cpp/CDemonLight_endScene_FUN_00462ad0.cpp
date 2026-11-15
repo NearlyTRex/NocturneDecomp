@@ -20,7 +20,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(CDemonLight *this
   if ((this_ptr->base).scene_open_flag == 0) {
     _DAT_01d1d400 = "..\\core\\dlight.cpp";
     _DAT_01d1d404 = 0x164;
-    core_main_c_FUN_005030e0("CDemonLight::endScene - Scene not open");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonLight::endScene - Scene not open");
   }
   if ((this_ptr->base).skip_clear_buffer_flag == 0) {
     puVar2 = this_ptr->shadow_depth_buffer;

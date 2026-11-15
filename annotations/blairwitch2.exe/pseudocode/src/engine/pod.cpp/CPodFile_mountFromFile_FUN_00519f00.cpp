@@ -133,7 +133,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
           if (pcVar7 == (char *)0x0) {
             _DAT_01d046a0 = "..\\engine\\pod.cpp";
             _DAT_01d046a4 = 0x198;
-            core_main_c_FUN_004e4500("Out of memory!");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
         pcVar7 = local_ac;
@@ -222,7 +222,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
             if (pcVar7 == (char *)0x0) {
               _DAT_01d046a0 = "..\\engine\\pod.cpp";
               _DAT_01d046a4 = 0x1ed;
-              core_main_c_FUN_004e4500("Out of memory!");
+              core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
             }
             _fread(this_ptr->file_data_buffer,local_380,1,local_30);
             if ((local_30->_flag & 0x20) == 0) {
@@ -272,7 +272,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
       if (pcVar7 == (char *)0x0) {
         _DAT_01d046a0 = "..\\engine\\pod.cpp";
         _DAT_01d046a4 = 0x228;
-        core_main_c_FUN_004e4500("Out of memory!");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
       }
       _fread(this_ptr->file_data_buffer,size,1,local_30);
       iVar2 = this_ptr->file_count + -1;
@@ -329,7 +329,7 @@ LAB_00519fa2:
           if (pcVar7 == (char *)0x0) {
             _DAT_01d046a0 = "..\\engine\\pod.cpp";
             _DAT_01d046a4 = 0x260;
-            core_main_c_FUN_004e4500("Out of memory!");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
         pcVar7 = local_5c;
@@ -366,7 +366,7 @@ LAB_0051a22e:
     if (pcVar7 == (char *)0x0) {
       _DAT_01d046a0 = "..\\engine\\pod.cpp";
       _DAT_01d046a4 = 0x27b;
-      core_main_c_FUN_004e4500("realloc returns NULL shrinking filenameBlockSize to fit.");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("realloc returns NULL shrinking filenameBlockSize to fit.");
     }
   }
   iVar2 = 0;

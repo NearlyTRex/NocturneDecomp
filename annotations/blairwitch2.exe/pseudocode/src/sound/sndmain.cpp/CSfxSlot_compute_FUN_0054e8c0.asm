@@ -47,7 +47,7 @@
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0054cb70
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_0054e820
@@ -319,8 +319,8 @@ section .text
     PUSH 0x5e8602                       ; 0054eb63 | = "SfxSlot::compute - must be locked!"
     MOV dword ptr [0x01d046a0],ECX      ; 0054eb68 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0054eb6e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054eb74
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054eb74
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054eb79
     JMP 0x0054e8dc                      ; 0054eb7c
         ;   XREF to: 0054e8dc (UNCONDITIONAL_JUMP)  ; LAB_0054e8dc

@@ -44,7 +44,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041d8b0
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041d8b0
 ;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
@@ -73,8 +73,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x88]      ; 0041dcf1
     PUSH EDI                            ; 0041dcf8
     LEA ESI,[ESP + 0x3c]                ; 0041dcf9
-    CALL core_box.cpp_FUN_0041d8b0      ; 0041dcfd
-        ;   XREF to: 0041d8b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041d8b0()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041d8b0 ; 0041dcfd
+        ;   XREF to: 0041d8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041d8b0(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA EDI,[ESP + 0x48]                ; 0041dd02
     LEA ESI,[ESP + 0x3c]                ; 0041dd06
     ADD ESP,0x8                         ; 0041dd0a

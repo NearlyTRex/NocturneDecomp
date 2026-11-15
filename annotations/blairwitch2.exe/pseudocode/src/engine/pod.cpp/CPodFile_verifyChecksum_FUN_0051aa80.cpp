@@ -74,7 +74,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
     }
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x32c;
-    core_main_c_FUN_004e4500("Invalid pod version for %s: %d",this_ptr->filename,iVar5);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid pod version for %s: %d");
   }
   filename = this_ptr->filename;
   shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Verifying CRC for %s...",filename);

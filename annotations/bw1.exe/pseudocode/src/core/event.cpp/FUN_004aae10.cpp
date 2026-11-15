@@ -19,7 +19,7 @@ void core_event_cpp_FUN_004aae10(void)
   if ((in_stack_00000008 < 0) || (*in_stack_00000004 <= in_stack_00000008)) {
     _DAT_01d1d400 = "..\\core\\event.cpp";
     _DAT_01d1d404 = 0x1046;
-    core_main_c_FUN_005030e0("CRuleList::remove - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CRuleList::remove - invalid index");
   }
   iVar1 = *in_stack_00000004;
   *in_stack_00000004 = iVar1 + -1;

@@ -21,7 +21,7 @@
 ;   core_doc.cpp_FUN_004568e0 at 00456c17
 ;   core_stranger.cpp_FUN_00568500 at 005687d5
 ;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110 at 00573154
-;   core_tentacle.cpp_FUN_005732e0 at 00573332
+;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005732e0 at 00573332
 ;
 ; Called Functions:
 ;   core_xform.cpp_matrixToQuaternion_FUN_00593a50

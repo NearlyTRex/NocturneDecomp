@@ -19,7 +19,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_0050cf50(CNetGame *this_ptr)
   char *pcVar6;
   int iVar7;
   char *pcVar8;
-  float10 fVar9;
+  double dVar9;
   float fStack_138;
   float fStack_134;
   char acStack_130 [256];
@@ -102,10 +102,10 @@ LAB_0050d17c:
             pcVar8 = (char *)0x5e0b65;
             goto LAB_0050d17c;
           }
-          fVar9 = (float10)*(float *)(pcStack_1c + 0x28) * (float10)_DAT_005e0b9d;
-          round();
-          iStack_18 = (int)ROUND(fVar9);
-          _sprintf(acStack_130,(char *)0x5e0b60);
+          dVar9 = round
+                            ((double)(*(float *)(pcStack_1c + 0x28) * _DAT_005e0b9d));
+          pcStack_1c = (char *)(int)ROUND(dVar9);
+          _sprintf((char *)&fStack_134,(char *)0x5e0b60);
         }
         engine_2d_c_drawText_FUN_00401fe0(acStack_130,200,iVar4);
         if (*(int *)(pcStack_1c + 0x44) == 0) {

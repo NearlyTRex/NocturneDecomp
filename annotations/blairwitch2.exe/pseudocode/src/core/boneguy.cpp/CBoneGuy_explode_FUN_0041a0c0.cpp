@@ -44,7 +44,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
   if (0x14 < iVar2) {
     _DAT_01d046a0 = "..\\core\\boneguy.cpp";
     _DAT_01d046a4 = 0x444;
-    core_main_c_FUN_004e4500("CBoneGuy::explode - Not enough containers");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;
   if (0 < local_24->num_parts) {

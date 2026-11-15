@@ -16,8 +16,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d220
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
-;   core_xform.cpp_FUN_00583260
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;   crt_string.c__strnicmp_FUN_005a3f90
 ;
 ; *****************************************************************************
@@ -147,8 +147,8 @@ section .text
     PUSH EAX                            ; 0058b11b
     MOV dword ptr [EBP + -0x56],ECX     ; 0058b11c
     MOV dword ptr [EBP + -0x52],ECX     ; 0058b11f
-    CALL core_xform.cpp_FUN_00583260    ; 0058b122
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058b122
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x66]                ; 0058b127
     MOVSD ES:EDI,ESI                    ; 0058b12a
     MOVSD ES:EDI,ESI                    ; 0058b12b
@@ -190,8 +190,8 @@ section .text
     PUSH EAX                            ; 0058b196
     LEA ESI,[EBP + 0x1e]                ; 0058b197
     LEA EDI,[EBP + 0x5a]                ; 0058b19a
-    CALL core_xform.cpp_FUN_00583260    ; 0058b19d
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058b19d
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     FLD float ptr [EBP + -0x1e]         ; 0058b1a2
     FLD float ptr [EBP + -0x1a]         ; 0058b1a5
     FLD float ptr [EBP + -0x16]         ; 0058b1a8
@@ -269,7 +269,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe7a]          ; 0058b276
     PUSH EAX                            ; 0058b27c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0058b27d
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0058b282
     MOV EAX,dword ptr [ESI + 0x154]     ; 0058b285
     PUSH ESI                            ; 0058b28b
@@ -375,8 +375,8 @@ section .text
     PUSH EAX                            ; 0058b3ad
     LEA ESI,[EBP + 0xffffff6a]          ; 0058b3ae
     LEA EDI,[EBP + -0x36]               ; 0058b3b4
-    CALL core_xform.cpp_FUN_00583260    ; 0058b3b7
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0058b3b7
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0xffffff6a]          ; 0058b3bc
     MOVSD ES:EDI,ESI                    ; 0058b3c2
     MOVSD ES:EDI,ESI                    ; 0058b3c3

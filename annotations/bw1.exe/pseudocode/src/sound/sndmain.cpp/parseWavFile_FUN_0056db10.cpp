@@ -93,7 +93,7 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_0056db10(CInStream *stream,int *f
                 else {
                   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                   _DAT_01d1d404 = 0x211;
-                  core_main_c_FUN_005030e0("Hell froze");
+                  core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze");
                 }
                 goto LAB_0056dcfd;
               }
@@ -122,7 +122,7 @@ LAB_0056dcfd:
                     if ((iVar1 != 0) && (iVar1 != 2)) {
                       _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
                       _DAT_01d1d404 = 0x236;
-                      core_main_c_FUN_005030e0("Hell froze");
+                      core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze");
                     }
                     (sfx_sample->sample_info).sample_count =
                          (uStack_14 << 3) /

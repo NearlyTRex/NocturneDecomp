@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5e6195                       ; 0053ade8 | = "C3DSCamera::apply - shouldn't ever do..."
     MOV dword ptr [0x01d046a0],ECX      ; 0053aded | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0053adf3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0053adf9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053adf9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0053adfe
     JMP 0x0053ad39                      ; 0053ae01
         ;   XREF to: 0053ad39 (UNCONDITIONAL_JUMP)  ; LAB_0053ad39

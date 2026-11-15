@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
@@ -119,8 +119,8 @@ section .text
     PUSH 0x5e53e3                       ; 004f1b2b | = "CIcePick::getCarryObjToBodyXForm - wr..."
     MOV dword ptr [0x01d1d400],ECX      ; 004f1b30 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004f1b36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f1b3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f1b3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f1b41
     JMP 0x004f1aa6                      ; 004f1b44
         ;   XREF to: 004f1aa6 (UNCONDITIONAL_JUMP)  ; LAB_004f1aa6

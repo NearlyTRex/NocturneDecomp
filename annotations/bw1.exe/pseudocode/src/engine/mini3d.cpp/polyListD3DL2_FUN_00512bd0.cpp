@@ -21,6 +21,6 @@ void __cdecl engine_mini3d_cpp_polyListD3DL2_FUN_00512bd0(float *vertices,int ve
   }
   _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
   _DAT_01d1d404 = 0x7a9;
-  core_main_c_FUN_005030e0("CMini3D::polyList - Software does not suport multitexture");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::polyList - Software does not suport multitexture");
   return;
 }

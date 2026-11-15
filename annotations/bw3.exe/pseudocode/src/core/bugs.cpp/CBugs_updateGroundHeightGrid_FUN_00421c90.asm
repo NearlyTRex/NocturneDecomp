@@ -146,7 +146,7 @@ section .text
     FMUL float ptr [ESP + 0x94]         ; 00421d8a
     FXCH                                ; 00421d91
     CALL crt_math.c_round_FUN_005a3120  ; 00421d93
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x70]        ; 00421d98
     SUB ESP,0x8                         ; 00421d9c
     FSTP double ptr [ESP]               ; 00421d9f
@@ -167,7 +167,7 @@ section .text
     FMUL double ptr [0x005b7849]        ; 00421ddf | DAT_005b7849
     FXCH ST2                            ; 00421de5
     CALL crt_math.c_round_FUN_005a3120  ; 00421de7
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00421dec
     FSUB ST0,ST2                        ; 00421dee
     FXCH                                ; 00421df0

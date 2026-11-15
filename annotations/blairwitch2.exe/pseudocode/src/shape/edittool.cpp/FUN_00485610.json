@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 241,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 18,
+    "pseudocode_lines": 50,
+    "suspect_count": 23,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 183
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -191,7 +191,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 11,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "text_string = param_1->checkbox_text;",
@@ -255,7 +255,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->text_color_mode;",
@@ -263,7 +263,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(param_1);",
@@ -271,7 +271,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
@@ -287,7 +287,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->border_style_flag == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->checked_state == 1) {",
@@ -295,7 +319,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 48,
       "match": "DAT_01c3583a",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10);",
@@ -303,7 +327,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 48,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10);",
@@ -311,11 +335,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 48,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);",
+      "type": "unaffected_reg"
     }
   ]
 }

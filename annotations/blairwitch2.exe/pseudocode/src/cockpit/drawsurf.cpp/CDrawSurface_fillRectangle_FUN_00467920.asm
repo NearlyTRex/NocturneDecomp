@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_004664c0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -219,8 +219,8 @@ section .text
     PUSH 0x5d13cc                       ; 00467a98 | = "Invalid bitsPerPixel!"
     MOV dword ptr [0x01d046a0],EDX      ; 00467a9d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00467aa3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00467aa9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00467aa9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00467aae
     ADD ESP,0x14                        ; 00467ab1
     POP EBP                             ; 00467ab4

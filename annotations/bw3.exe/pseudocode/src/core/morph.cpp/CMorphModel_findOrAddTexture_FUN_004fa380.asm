@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5c9669                       ; 004fa3c5 | = "CMorphModel::findOrAddTexture - too m..."
     MOV dword ptr [0x01d71de0],EDI      ; 004fa3ca | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004fa3d0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fa3d5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fa3d5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fa3da
     MOV ESI,dword ptr [EBX + 0x64]      ; 004fa3dd
         ;   Label: LAB_004fa3dd

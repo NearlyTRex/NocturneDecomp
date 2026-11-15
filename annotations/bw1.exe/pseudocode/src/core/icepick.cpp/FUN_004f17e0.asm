@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH EDI                            ; 004f181e
     LEA ESI,[ESP + 0x2c]                ; 004f181f
     MOV dword ptr [ESP + 0x24],EBX      ; 004f1823
-    CALL core_actor.cpp_FUN_00408b40    ; 004f1827
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004f1827
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0x38]                ; 004f182c
     ADD ESP,0x8                         ; 004f1830
     LEA ESI,[ESP + 0x24]                ; 004f1833

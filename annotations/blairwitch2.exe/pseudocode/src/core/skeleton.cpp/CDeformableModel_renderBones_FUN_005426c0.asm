@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0
-;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_getTranslation_FUN_00592720
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 005426fe
     LEA ESI,[ESP + 0x1c]                ; 005426ff
     LEA EDI,[ESP + 0x10]                ; 00542703
-    CALL core_xform.cpp_FUN_00592720    ; 00542707
-        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00592720()
+    CALL core_xform.cpp_getTranslation_FUN_00592720 ; 00542707
+        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_00592720(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0x1c]                ; 0054270c
     ADD ESP,0x4                         ; 00542710
     MOV EBX,ESP                         ; 00542713

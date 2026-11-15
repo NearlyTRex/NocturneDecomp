@@ -70,9 +70,9 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
-;   core_dtrace.cpp_FUN_00477d90
-;   core_dtrace.cpp_FUN_00477db0
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0
+;   core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
@@ -341,8 +341,8 @@ section .text
     PUSH 0x203b37c                      ; 0057c61a | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0xf0]                ; 0057c61f
     LEA EDI,[ESP + 0x108]               ; 0057c626
-    CALL core_dtrace.cpp_FUN_00477d90   ; 0057c62d
-        ;   XREF to: 00477d90 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477d90()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90 ; 0057c62d
+        ;   XREF to: 00477d90 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0xf0]                ; 0057c632
     ADD ESP,0x4                         ; 0057c639
     MOVSD ES:EDI,ESI                    ; 0057c63c
@@ -351,8 +351,8 @@ section .text
     PUSH 0x203b37c                      ; 0057c63f | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0xfc]                ; 0057c644
     LEA EDI,[ESP + 0x9c]                ; 0057c64b
-    CALL core_dtrace.cpp_FUN_00477db0   ; 0057c652
-        ;   XREF to: 00477db0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477db0()
+    CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0 ; 0057c652
+        ;   XREF to: 00477db0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     LEA ESI,[ESP + 0xfc]                ; 0057c657
     ADD ESP,0x4                         ; 0057c65e
     MOVSD ES:EDI,ESI                    ; 0057c661
@@ -415,8 +415,8 @@ section .text
     PUSH EAX                            ; 0057c745
     MOV dword ptr [ESP + 0xe0],EDI      ; 0057c746
     LEA EDI,[ESP + 0xb8]                ; 0057c74d
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0057c754
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0057c754
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xc4]                ; 0057c759
     ADD ESP,0x8                         ; 0057c760
     LEA EDX,[ESP + 0xd4]                ; 0057c763

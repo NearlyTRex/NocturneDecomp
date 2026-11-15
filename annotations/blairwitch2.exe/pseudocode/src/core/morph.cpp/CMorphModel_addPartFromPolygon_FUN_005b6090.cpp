@@ -21,7 +21,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
   if (4 < this_ptr->part_count) {
     _DAT_01d046a0 = "..\\core\\morph.cpp";
     _DAT_01d046a4 = 0x77;
-    core_main_c_FUN_004e4500("CMorphModel::addPart - too many parts!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::addPart - too many parts!");
   }
   iVar5 = 0;
   pSVar6 = poly_data;
@@ -45,7 +45,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
      ) {
     _DAT_01d046a0 = "..\\core\\morph.cpp";
     _DAT_01d046a4 = 0x90;
-    core_main_c_FUN_004e4500("CMorphModel::setup - out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::setup - out of memory!");
   }
   if (vertex_data != (CVector3i *)0x0) {
     core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_005b6400

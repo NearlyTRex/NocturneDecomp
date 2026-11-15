@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
     PUSH 0x5bcaa4                       ; 00477193 | = "CDemonRaytrace::setPVS - Too many dra..."
     MOV dword ptr [0x01d71de0],ECX      ; 00477198 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0047719e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004771a4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004771a4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004771a9
     JMP 0x0047709c                      ; 004771ac
         ;   XREF to: 0047709c (UNCONDITIONAL_JUMP)  ; LAB_0047709c

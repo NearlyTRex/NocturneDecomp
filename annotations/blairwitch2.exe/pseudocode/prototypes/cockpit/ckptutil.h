@@ -23,7 +23,7 @@ void __cdecl basicIndexedTo16Bit(void *output_buffer,void *input_buffer,int pixe
 
 // Original: cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
 // Address: 0042c410
-code * __cdecl getColorConversionFunction(void);
+ColorConversionFunc * __cdecl getColorConversionFunction(void);
 
 // Original: cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
 // Address: 0042c520
@@ -51,15 +51,15 @@ void __cdecl blitSpanBasedSprite(void *sprite_data,void *span_data,int screen_x,
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042cc30
 // Address: 0042cc30
-void blitSpanBasedSpriteClipped(void);
+void __cdecl blitSpanBasedSpriteClipped(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitRectangleClipped_FUN_0042ce80
 // Address: 0042ce80
-int blitRectangleClipped(void);
+void __cdecl blitRectangleClipped(void *sprite_data,int dest_x,int dest_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitUnifiedSprite_FUN_0042cff0
 // Address: 0042cff0
-void blitUnifiedSprite(void);
+void __cdecl blitUnifiedSprite(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitSimpleSprite_FUN_0042d230
 // Address: 0042d230
@@ -83,7 +83,7 @@ void FUN_0042d730(void);
 
 // Original: cockpit_ckptutil.c_blitFullScreen_FUN_0042d820
 // Address: 0042d820
-void blitFullScreen(void);
+void __cdecl blitFullScreen(void *sprite_data,void *span_data);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850
 // Address: 0042d850
@@ -111,11 +111,11 @@ void __cdecl mirrorBitmapHorizontally(uchar *bitmap_data,int width,int height,in
 
 // Original: cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0
 // Address: 0042dec0
-void __cdecl loadEdgeListFile(char *param_1,int *param_2,int param_3);
+void __cdecl loadEdgeListFile(char *filename,SEdgeList *edge_lists,int expected_count);
 
-// Original: cockpit_ckptutil.c_FUN_0042e130
+// Original: cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130
 // Address: 0042e130
-void FUN_0042e130(char *param_1,int param_2,int param_3);
+void __cdecl saveEdgeListFile(char *filename,SEdgeList *edge_lists,int edge_list_count);
 
 // Original: cockpit_ckptutil.c_drawClippedEdges_FUN_0042e290
 // Address: 0042e290

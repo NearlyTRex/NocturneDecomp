@@ -42,7 +42,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00506320
@@ -285,8 +285,8 @@ section .text
     PUSH 0x5ca725                       ; 00504b17 | = "CNetGame::syncPlayers - don't use 0!"
     MOV dword ptr [0x01d71de0],ECX      ; 00504b1c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00504b22 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00504b28
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00504b28
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00504b2d
     JMP 0x005048b1                      ; 00504b30
         ;   XREF to: 005048b1 (UNCONDITIONAL_JUMP)  ; LAB_005048b1
@@ -370,8 +370,8 @@ section .text
     PUSH 0x5ca7f7                       ; 00504be0 | = "CNetGame::syncPlayers - invalid mode"
     MOV dword ptr [0x01d71de0],EDX      ; 00504be5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00504beb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00504bf1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00504bf1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00504bf6
     MOV EAX,0x1                         ; 00504bf9
         ;   Label: LAB_00504bf9

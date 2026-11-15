@@ -56,7 +56,7 @@
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50
 ;   core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5d1ea5                       ; 0054ac89 | = "CDeformableModel::exactRayTrace - too..."
     MOV dword ptr [0x01d71de0],EBX      ; 0054ac8e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0054ac94 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054ac9a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054ac9a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054ac9f
     MOV EDI,dword ptr [EBP + 0x18]      ; 0054aca2
         ;   Label: LAB_0054aca2

@@ -117,9 +117,9 @@ int __cdecl CHero::tryApproachNearbyActor(CHero *this_ptr);
 // Address: 004d3af0
 void __cdecl CHero::stopNearbyInteraction(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d3b20
+// Original: core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20
 // Address: 004d3b20
-int __cdecl FUN_004d3b20(CHero *this_ptr);
+int __cdecl CHero::findItemUseTarget(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d3c90
 // Address: 004d3c90

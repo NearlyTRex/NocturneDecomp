@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_invertAndGetTranslation_FUN_005b62b0(undefined4 param_1)
+; CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_005b62b0(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_inverse_FUN_005b6380
 ;
 ; *****************************************************************************
@@ -22,7 +24,7 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 005b62bc
     LEA EDI,[ESP + 0x4]                 ; 005b62c0
     CALL core_xform.cpp_inverse_FUN_005b6380 ; 005b62c4
-        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_005b6380()
+        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005b6380(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005b62c9
     LEA ESI,[ESP + 0x34]                ; 005b62ce
     ADD ESP,0x4                         ; 005b62d2
@@ -31,8 +33,8 @@ section .text
     PUSH ESI                            ; 005b62d9
     LEA ESI,[ESP + 0x64]                ; 005b62da
     MOV EDI,EBX                         ; 005b62de
-    CALL core_xform.cpp_FUN_005b6270    ; 005b62e0
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 005b62e0
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0x64]                ; 005b62e5
     ADD ESP,0x4                         ; 005b62e9
     MOVSD ES:EDI,ESI                    ; 005b62ec

@@ -81,9 +81,9 @@ CMotionList * __cdecl CMotionController::getMotionList(CMotionController *this_p
 // Address: 00524a10
 char * __cdecl CMotionController::getCurrentStateName(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_00524a40
+// Original: core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 // Address: 00524a40
-float FUN_00524a40(int *param_1,int param_2);
+float __cdecl CMotionController::getStateBlendWeight(CMotionController *this_ptr,int desired_state_index);
 
 // Original: core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 // Address: 00524ae0
@@ -105,9 +105,9 @@ int __cdecl CMotionController::advanceFrameAndCheckSignals(CMotionController *th
 // Address: 00524d70
 int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 
-// Original: core_motion.cpp_FUN_00524f40
+// Original: core_motion.cpp_CMotionController_advanceTween_FUN_00524f40
 // Address: 00524f40
-void FUN_00524f40(int *param_1,int param_2,float param_3,float *param_4);
+void __cdecl CMotionController::advanceTween(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
 
 // Original: core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 // Address: 00525020

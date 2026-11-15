@@ -16,32 +16,30 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
-  float10 fVar6;
-  uint auStack_38 [6];
-  uint auStack_20 [6];
+  double dVar6;
+  uint auStack_24 [7];
   
   bVar5 = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   if (0 < pCVar1->poly_count) {
     if (0.0 <= this_ptr->fade_timer) {
-      fVar6 = ((float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
-              (float10)_DAT_005b7505;
-      round();
-      this_ptr->fade_alpha = (int)ROUND(fVar6);
+      dVar6 = round
+                        ((double)((this_ptr->fade_timer / this_ptr->fade_time) * _DAT_005b7505));
+      this_ptr->fade_alpha = (int)ROUND(dVar6);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
               (0x01BDD7E4,&(this_ptr->base).location.position);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
               (0x01BDD7E4,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-    puVar3 = auStack_38;
-    puVar4 = auStack_20;
+    puVar3 = (uint *)&stack0xffffffc4;
+    puVar4 = auStack_24;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = *puVar3;
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar2 = core_box_cpp_FUN_0041daf0(auStack_20);
+    iVar2 = core_box_cpp_FUN_0041daf0(auStack_24);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->fade_alpha)
     ;
     if (this_ptr->dont_use_normals != 0) {

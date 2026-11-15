@@ -34,7 +34,7 @@
 ;   core_dfont.cpp_initFonts_FUN_00447ea0
 ;   core_flattn.cpp_FUN_004a67a0
 ;   core_inivar.cpp_readIniData_FUN_004d8d60
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_marquee.cpp_FUN_004e8620
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30
 ;   core_mission.cpp_CDemonMission_reset_FUN_004fb380
@@ -116,8 +116,8 @@ section .text
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004e4796
     PUSH EAX                            ; 004e4799
-    CALL core_main.c_FUN_004e4500       ; 004e479a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e479a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e479f
     CALL core_marquee.cpp_FUN_004e8620  ; 004e47a2
         ;   XREF to: 004e8620 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004e8620()
@@ -144,8 +144,8 @@ section .text
     PUSH 0x5dc236                       ; 004e47dd | = "Unable to set 640x480x32bpp.  Please ..."
     MOV dword ptr [0x01d046a0],EDI      ; 004e47e2 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004e47e8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e47ed
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e47ed
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e47f2
     CALL core_dfont.cpp_initFonts_FUN_00447ea0 ; 004e47f5
         ;   XREF to: 00447ea0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00447ea0()
@@ -770,7 +770,7 @@ section .text
     PUSH EAX                            ; 004e4da1
         ;   Label: LAB_004e4da1
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004e4da2
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004e4da7
     PUSH 0x1c0                          ; 004e4daa
     PUSH 0x5dc198                       ; 004e4daf | = "stderr.txt"
@@ -785,8 +785,8 @@ section .text
     PUSH 0x5dc1b2                       ; 004e4dce | = "Please copy Nocturne to your hard drive"
     MOV dword ptr [0x01d046a0],ESI      ; 004e4dd3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004e4dd9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e4ddf
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e4ddf
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e4de4
     JMP 0x004e4707                      ; 004e4de7
         ;   XREF to: 004e4707 (UNCONDITIONAL_JUMP)  ; LAB_004e4707

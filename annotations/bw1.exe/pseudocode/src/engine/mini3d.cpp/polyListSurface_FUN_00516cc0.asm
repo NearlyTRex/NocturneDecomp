@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01e7dac8
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_mini3d.cpp_allocVertexList_FUN_00512670
 ;   engine_mini3d.cpp_drawSurfaceTriangle_FUN_00517240
 ;   engine_mini3d.cpp_fillSurfaceTriangle_FUN_00516fd0
@@ -135,8 +135,8 @@ section .text
     PUSH 0x5e8f60                       ; 00516da3 | = "CMini3D::polyList - Too many verticie..."
     MOV dword ptr [0x01d1d400],EBX      ; 00516da8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00516dae | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00516db4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00516db4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00516db9
     JMP 0x00516cfc                      ; 00516dbc
         ;   XREF to: 00516cfc (UNCONDITIONAL_JUMP)  ; LAB_00516cfc

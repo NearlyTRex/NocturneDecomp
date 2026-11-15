@@ -20,22 +20,22 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00(CFilterFX *this_p
   core_dfilter_cpp_CFilterFX_free_FUN_00459ce0(this_ptr);
   if (filename != (char *)0x0) {
     _sprintf(acStack_108,(char *)0x5bac22);
-    p_Var1 = engine_dosio_cpp_FUN_004659c0(filename,acStack_108,(char *)0x5bac29);
+    p_Var1 = engine_dosio_cpp_getFile_FUN_004659c0(filename,acStack_108,(char *)0x5bac29);
     if (p_Var1 == (_FILE *)0x0) {
       _DAT_01d71de0 = "..\\core\\dfilter.cpp";
       _DAT_01d71de4 = 0x15a;
-      core_main_c_FUN_004e4330("Can't open movie %s.txt",filename);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open movie %s.txt");
     }
     _fscanf(p_Var1,(char *)0x5bac58);
     _fclose(p_Var1);
     pSVar2 = (SMovieFrame *)malloc(this_ptr->frame_count << 0xd);
     this_ptr->movie_data = pSVar2;
     _sprintf(acStack_108,(char *)0x5bac5c);
-    p_Var1 = engine_dosio_cpp_FUN_004659c0(filename,acStack_108,(char *)0x5bac63);
+    p_Var1 = engine_dosio_cpp_getFile_FUN_004659c0(filename,acStack_108,(char *)0x5bac63);
     if (p_Var1 == (_FILE *)0x0) {
       _DAT_01d71de0 = "..\\core\\dfilter.cpp";
       _DAT_01d71de4 = 0x166;
-      core_main_c_FUN_004e4330("Can't open movie %s.mov",filename);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open movie %s.mov");
     }
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
     _fclose(p_Var1);

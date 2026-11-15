@@ -27,7 +27,7 @@ void core_inv_cpp_FUN_004db8d0(CInventory *param_1,int param_2)
   if (this_ptr == (CAmmo *)0x0) {
     _DAT_01d71de0 = "..\\core\\inv.cpp";
     _DAT_01d71de4 = 0x498;
-    core_main_c_FUN_004e4330("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
   }
   this_ptr->ammo_count = *(int *)(param_2 + 0x568);
   this_ptr->ammo_type = *(EAmmoType *)(param_2 + 0x56c);

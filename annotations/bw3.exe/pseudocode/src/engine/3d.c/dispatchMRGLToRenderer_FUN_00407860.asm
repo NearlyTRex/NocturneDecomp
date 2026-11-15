@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -158,7 +158,7 @@ section .text
     ADD ESI,0x4                         ; 00407983
     INC EBX                             ; 00407986
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407987
-        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0()
+        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x007dd9f0]                ; 0040798c | DAT_007dd9f0
     ADD ESP,0x4                         ; 00407991
     CMP EBX,EAX                         ; 00407994
@@ -184,8 +184,8 @@ section .text
     PUSH 0x5b537b                       ; 004079c6
     MOV [0x01d71de0],EAX                ; 004079cb | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004079d0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004079d6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004079d6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004079db
     MOV EAX,[0x007dd9f0]                ; 004079de | DAT_007dd9f0
         ;   Label: LAB_004079de
@@ -249,8 +249,8 @@ section .text
     PUSH EAX                            ; 00407a65
     MOV dword ptr [0x01d71de4],EBX      ; 00407a66 | DAT_01d71de4
     MOV dword ptr [0x01d71de0],ECX      ; 00407a6c | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 00407a72
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00407a72
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00407a77
     JMP 0x004078af                      ; 00407a7a
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af
@@ -265,7 +265,7 @@ section .text
     ADD EBX,0x4                         ; 00407a90
     INC EDI                             ; 00407a93
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407a94
-        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0()
+        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x007dd9f0]                ; 00407a99 | DAT_007dd9f0
     ADD ESP,0x4                         ; 00407a9e
     CMP EDI,EAX                         ; 00407aa1

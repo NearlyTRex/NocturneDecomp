@@ -106,7 +106,7 @@ section .text
     FLD float ptr [EBX + 0x340]         ; 004fabb9
     FMUL float ptr [0x005e6890]         ; 004fabbf | DAT_005e6890
     CALL crt_math.c_round_FUN_005c03a0  ; 004fabc5
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 004fabca
     MOV EAX,[0x0061b498]                ; 004fabce | DAT_0061b498
         ;   Label: LAB_004fabce
@@ -198,7 +198,7 @@ section .text
     FLD float ptr [EBX + 0x344]         ; 004facd4
     FMUL float ptr [0x005e6890]         ; 004facda | DAT_005e6890
     CALL crt_math.c_round_FUN_005c03a0  ; 004face0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x24]        ; 004face5
     MOV EAX,[0x0061b498]                ; 004face9 | DAT_0061b498
         ;   Label: LAB_004face9

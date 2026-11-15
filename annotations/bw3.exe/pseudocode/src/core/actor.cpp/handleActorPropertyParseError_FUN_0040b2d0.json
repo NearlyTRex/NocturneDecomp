@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 108,
+    "complexity_score": 51,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 80
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -116,7 +116,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -392,15 +392,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007df9bc",
-      "severity": "mild",
-      "text": "pCVar1 = DAT_007df9bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
+      "line": 7,
       "match": "DAT_007df9bc",
       "severity": "mild",
       "text": "if (DAT_007df9bc != (CDemonActor *)0x0) {",
@@ -408,34 +400,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 8,
       "match": "DAT_007df9bc",
       "severity": "mild",
-      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(DAT_007df9bc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005b59e9",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_005b59e9;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007df9b8",
-      "severity": "mild",
-      "text": "if (DAT_007df9b8 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005b59ee",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_005b59ee;",
+      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(DAT_007df9bc);",
       "type": "undefined_data"
     }
   ]

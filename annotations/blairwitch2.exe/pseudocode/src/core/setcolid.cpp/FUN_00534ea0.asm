@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7)
+; CDemonSet * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CDemonActor *param_7)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
@@ -48,19 +48,19 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408cf0
-;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_FUN_004090f0
 ;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
-;   core_box.cpp_FUN_0041a600
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_0044f670
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_004779e0
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_00478550
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00536990
 ;   ... and 2 more
 ;
@@ -326,8 +326,8 @@ section .text
     PUSH EAX                            ; 0053528c
     LEA ESI,[ESP + 0x36c]               ; 0053528d
     LEA EDI,[ESP + 0x33c]               ; 00535294
-    CALL core_box.cpp_FUN_0041a600      ; 0053529b
-        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a600()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600 ; 0053529b
+        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x36c]               ; 005352a0
     ADD ESP,0x8                         ; 005352a7
     LEA EAX,[ESP + 0x334]               ; 005352aa
@@ -338,8 +338,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3a4]     ; 005352b5
     PUSH EDI                            ; 005352bc
     LEA ESI,[ESP + 0x2dc]               ; 005352bd
-    CALL core_actor.cpp_FUN_00408d70    ; 005352c4
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005352c4
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0x2c4]               ; 005352c9
     LEA ESI,[ESP + 0x2dc]               ; 005352d0
     ADD ESP,0x8                         ; 005352d7
@@ -843,8 +843,8 @@ section .text
     PUSH EBX                            ; 005359e8
     LEA ESI,[ESP + 0x30c]               ; 005359e9
     LEA EDI,[ESP + 0x384]               ; 005359f0
-    CALL core_actor.cpp_FUN_00408cf0    ; 005359f7
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 005359f7
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30c]               ; 005359fc
     ADD ESP,0x8                         ; 00535a03
     LEA EAX,[ESP + 0x37c]               ; 00535a06
@@ -883,8 +883,8 @@ section .text
     PUSH 0x5e5d2a                       ; 00535a70 | = "info.keyFramedModelInstancePtr != NUL..."
     MOV dword ptr [0x01d046a0],ECX      ; 00535a75 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00535a7b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00535a81
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535a81
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00535a86
     FLD float ptr [ESP + 0x2c8]         ; 00535a89
         ;   Label: LAB_00535a89
@@ -956,8 +956,8 @@ section .text
     PUSH ECX                            ; 00535ba0
     LEA ESI,[ESP + 0x330]               ; 00535ba1
     LEA EDI,[ESP + 0x270]               ; 00535ba8
-    CALL core_actor.cpp_FUN_00408de0    ; 00535baf
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00535baf
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 00535bb4
     LEA ESI,[ESP + 0x328]               ; 00535bb7
     MOV EAX,dword ptr [ESP + 0x3a0]     ; 00535bbe
@@ -1016,8 +1016,8 @@ section .text
     PUSH 0x5e5d8b                       ; 00535c97 | = "Invalid collision type!"
     MOV dword ptr [0x01d046a0],ECX      ; 00535c9c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00535ca2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00535ca8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535ca8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00535cad
     JMP 0x005350f1                      ; 00535cb0
         ;   XREF to: 005350f1 (UNCONDITIONAL_JUMP)  ; LAB_005350f1

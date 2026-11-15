@@ -24,7 +24,7 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_pt
   if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d1d400 = "..\\core\\hero.cpp";
     _DAT_01d1d404 = 0x1d3;
-    core_main_c_FUN_005030e0("Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory!");
   }
   pcVar3 = "Your_weapon";
   pCVar4 = pCVar2;

@@ -15,9 +15,9 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041d840
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
-;   core_dcamera.cpp_FUN_00449eb0
-;   core_dirmat.cpp_FUN_0045b870
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
 ;
 ; *****************************************************************************
 
@@ -108,8 +108,8 @@ section .text
     PUSH EBP                            ; 00450f4a
     LEA ESI,[ESP + 0x48]                ; 00450f4b
     LEA EDI,[ESP + 0xd8]                ; 00450f4f
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 00450f56
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 00450f56
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x48]                ; 00450f5b
     ADD ESP,0xc                         ; 00450f5f
     MOVSD ES:EDI,ESI                    ; 00450f62
@@ -203,8 +203,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0045108c
     PUSH EDX                            ; 0045108d
     LEA ESI,[ESP + 0x5c]                ; 0045108e
-    CALL core_dirmat.cpp_FUN_0045b870   ; 00451092
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 00451092
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00451097
     LEA EAX,[ESP + 0x24]                ; 0045109a
     LEA EDI,[ESP + 0x24]                ; 0045109e
@@ -238,8 +238,8 @@ section .text
     PUSH EBP                            ; 004510f8
     LEA ESI,[ESP + 0xb4]                ; 004510f9
     LEA EDI,[ESP + 0x54]                ; 00451100
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 00451104
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 00451104
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xb4]                ; 00451109
     ADD ESP,0xc                         ; 00451110
     MOVSD ES:EDI,ESI                    ; 00451113
@@ -264,8 +264,8 @@ section .text
     PUSH EBP                            ; 00451151
     LEA ESI,[ESP + 0x24]                ; 00451152
     LEA EDI,[ESP + 0x6c]                ; 00451156
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 0045115a
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 0045115a
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x24]                ; 0045115f
     ADD ESP,0xc                         ; 00451163
     MOVSD ES:EDI,ESI                    ; 00451166
@@ -287,8 +287,8 @@ section .text
     PUSH EBP                            ; 00451196
     LEA ESI,[ESP + 0xc0]                ; 00451197
     LEA EDI,[ESP + 0x90]                ; 0045119e
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 004511a5
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 004511a5
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xc0]                ; 004511aa
     ADD ESP,0xc                         ; 004511b1
     MOVSD ES:EDI,ESI                    ; 004511b4
@@ -313,8 +313,8 @@ section .text
     PUSH EBP                            ; 004511f1
     LEA ESI,[ESP + 0x78]                ; 004511f2
     LEA EDI,[ESP + 0x9c]                ; 004511f6
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 004511fd
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 004511fd
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x78]                ; 00451202
     ADD ESP,0xc                         ; 00451206
     MOVSD ES:EDI,ESI                    ; 00451209

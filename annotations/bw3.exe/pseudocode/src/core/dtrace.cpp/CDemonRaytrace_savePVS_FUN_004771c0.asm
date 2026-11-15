@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5bcaed                       ; 004771db | = "CDemonRenderer::getPVS - PVS is not v..."
     MOV dword ptr [0x01d71de0],ECX      ; 004771e0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004771e6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004771ec
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004771ec
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004771f1
     MOV EAX,[0x01c0b7b4]                ; 004771f4 | DAT_01c0b7b4
         ;   Label: LAB_004771f4
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5bcb2b                       ; 00477223 | = "CDemonRaytrace::getPVS - no cubes ren..."
     MOV [0x01d71de0],EAX                ; 00477228 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0047722d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00477233
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00477233
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00477238
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0047723b
         ;   Label: LAB_0047723b
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5bcb6c                       ; 0047724e | = "CDemonRaytrace::getPVS - out of memory"
     MOV dword ptr [0x01d71de0],EBX      ; 00477253 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00477259 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047725f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047725f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00477264
     MOV EDX,dword ptr [ESP + 0x14]      ; 00477267
         ;   Label: LAB_00477267
@@ -123,8 +123,8 @@ section .text
     PUSH 0x5bcba6                       ; 004772b0 | = "CDemonRenderer::savePVS - can't find ..."
     MOV [0x01d71de0],EAX                ; 004772b5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004772ba | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004772c0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004772c0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004772c5
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004772c8
         ;   Label: LAB_004772c8

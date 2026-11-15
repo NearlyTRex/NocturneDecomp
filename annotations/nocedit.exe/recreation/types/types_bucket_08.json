@@ -854,43 +854,6 @@
   },
   {
     "kind":"funcdef",
-    "name":"CSoundDevice_setSfxPos",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSoundDevice",
-          "ptr":1
-        }
-      },
-      {
-        "name":"slot",
-        "type":{
-          "kind":"class",
-          "name":"CSfxSlot",
-          "ptr":1
-        }
-      },
-      {
-        "name":"update_flags",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      }
-    ],
-    "ret":{
-      "kind":"builtin",
-      "name":"int",
-      "ptr":0
-    },
-    "size":-1,
-    "variadic":false
-  },
-  {
-    "kind":"funcdef",
     "name":"CSoundDevice_unlockSample",
     "params":[
       {
@@ -908,11 +871,27 @@
           "name":"int",
           "ptr":0
         }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
       }
     ],
     "ret":{
       "kind":"builtin",
-      "name":"int",
+      "name":"void",
       "ptr":0
     },
     "size":-1,

@@ -16,7 +16,7 @@
 ;   CGame g_CGameInstance
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004d7250
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250
 ;   crt_ctype.c_toupper_FUN_005c12b0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_2d.c_drawText_FUN_00401fe0
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_00503244
     MOV EDI,dword ptr [0x0061d95c]      ; 00503245 | g_CGamePtr
     PUSH EDI                            ; 0050324b | g_CGameInstance
-    CALL core_game.cpp_FUN_004d7250     ; 0050324c
-        ;   XREF to: 004d7250 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d7250()
+    CALL core_game.cpp_CGame_showChapterSelect_FUN_004d7250 ; 0050324c
+        ;   XREF to: 004d7250 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004d7250(CGame * this_ptr, int select_mode)
     ADD ESP,0x8                         ; 00503251
     JMP 0x00503230                      ; 00503254
         ;   XREF to: 00503230 (UNCONDITIONAL_JUMP)  ; LAB_00503230

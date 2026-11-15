@@ -17,7 +17,7 @@ void __cdecl core_cloth_cpp_CClothList_add_FUN_0043fa40(CClothList *this_ptr,cha
   if (9 < this_ptr->count) {
     _DAT_01d71de0 = "..\\core\\cloth.cpp";
     _DAT_01d71de4 = 0x5de;
-    core_main_c_FUN_004e4330("CClothList::add - list is full");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CClothList::add - list is full");
   }
   pacVar2 = this_ptr->filenames + this_ptr->count;
   do {

@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5d2a8e                       ; 0048441f | = "CEdScrollBar::setPosition - invalid d..."
     MOV dword ptr [0x01d046a0],EDI      ; 00484424 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0048442a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00484430
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00484430
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00484435
     POP EDI                             ; 00484438
     POP EBP                             ; 00484439

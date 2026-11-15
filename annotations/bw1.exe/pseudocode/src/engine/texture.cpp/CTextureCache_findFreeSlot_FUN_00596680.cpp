@@ -28,7 +28,7 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureC
       if (iVar4 != 0) {
         _DAT_01d1d400 = "..\\engine\\texture.cpp";
         _DAT_01d1d404 = 0xbc;
-        core_main_c_FUN_005030e0("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
       }
     }
   }

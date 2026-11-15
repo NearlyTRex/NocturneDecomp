@@ -1,20 +1,19 @@
 // Name: core_flies.cpp_CFlies_getBoundingBox_FUN_004c04b0
 // Address: 004c04b0
 // Address Range: [[004c04b0, 004c0518]]
-// Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
+// Convention: __stack_esi
+// Signature: CBoundingBox3D * __stack_esi core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __stack_esi core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   float fVar2;
   int iVar3;
-  CBoundingBox3D *unaff_ESI;
   float *pfVar4;
   CBoundingBox3D *pCVar5;
   float afStack_28 [4];
@@ -30,11 +29,11 @@ CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlie
   afStack_28[2] = (float)_DAT_005e077a * fVar2;
   fStack_14 = fVar2 * (float)_DAT_005e0782;
   pfVar4 = afStack_28;
-  pCVar5 = unaff_ESI;
+  pCVar5 = out_box;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
     (pCVar5->min).x = *pfVar4;
     pfVar4 = pfVar4 + 1;
     pCVar5 = (CBoundingBox3D *)&(pCVar5->min).y;
   }
-  return unaff_ESI;
+  return out_box;
 }

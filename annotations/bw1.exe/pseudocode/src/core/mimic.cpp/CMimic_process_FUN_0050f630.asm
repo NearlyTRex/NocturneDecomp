@@ -21,7 +21,7 @@
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00432e80
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00510c20
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_00510530
@@ -91,8 +91,8 @@ section .text
     PUSH 0x5e8974                       ; 0050f6d1 | = "CMimic::setup - can't use mimic in mu..."
     MOV dword ptr [0x01d1d400],ECX      ; 0050f6d6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0050f6dc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0050f6e2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f6e2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f6e7
     POP ESI                             ; 0050f6ea
     JMP 0x0050f644                      ; 0050f6eb

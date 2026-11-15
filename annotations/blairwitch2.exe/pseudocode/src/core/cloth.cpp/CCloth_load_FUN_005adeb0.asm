@@ -49,11 +49,11 @@
 ;   core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_0044efe0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_0044dcd0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5f0f71                       ; 005adec8 | DAT_005f0f71
     PUSH EBX                            ; 005adecd
     PUSH 0x5f0f74                       ; 005adece | = "models"
-    CALL engine_dosio.cpp_FUN_00460c70  ; 005aded3
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 005aded3
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005aded8
     MOV dword ptr [ESP + 0x208],EAX     ; 005adedb
     TEST EAX,EAX                        ; 005adee2
@@ -105,8 +105,8 @@ section .text
     PUSH 0x5f0fc9                       ; 005adf35 | = "%s is version %d, this .EXE is old an..."
     MOV dword ptr [0x01d046a0],EDX      ; 005adf3a | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005adf40 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005adf46
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005adf46
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 005adf4b
     MOV EBP,dword ptr [ESP + 0x208]     ; 005adf4e
         ;   Label: LAB_005adf4e
@@ -373,7 +373,7 @@ section .text
     PUSH EBX                            ; 005ae337
     XOR EDI,EDI                         ; 005ae338
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005ae33a
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     MOV EBP,dword ptr [ESI + 0x104]     ; 005ae33f
     ADD ESP,0x4                         ; 005ae345
     TEST EBP,EBP                        ; 005ae348
@@ -417,8 +417,8 @@ section .text
     PUSH 0x5f0f8d                       ; 005ae3b6 | = "CCloth::load - Unable to open file %s"
     MOV dword ptr [0x01d046a0],EDX      ; 005ae3bb | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005ae3c1 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005ae3c7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005ae3c7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005ae3cc
     JMP 0x005adeea                      ; 005ae3cf
         ;   XREF to: 005adeea (UNCONDITIONAL_JUMP)  ; LAB_005adeea

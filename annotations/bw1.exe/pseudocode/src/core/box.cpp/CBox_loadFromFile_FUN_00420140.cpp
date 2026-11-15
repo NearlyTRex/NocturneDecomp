@@ -12,8 +12,7 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_00420140(CBox *this_ptr,_FILE *f
   byte bVar1;
   float afStackY_1038 [949];
   char local_150 [256];
-  float local_50;
-  float afStack_4c [2];
+  CVector3f local_50;
   CVector3f local_44;
   CVector3f local_38;
   float local_2c;
@@ -33,11 +32,12 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_00420140(CBox *this_ptr,_FILE *f
   _fscanf(file_handle," %f,%f,%f\n");
   _fscanf(file_handle," %f,%f,%f\n");
   _fscanf(file_handle,&DAT_005d4b41);
-  core_dirmat_cpp_FUN_0045f690(&this_ptr->rotation_matrix,&this_ptr->linear_velocity_local);
-  local_2c = local_50;
-  local_28[(uint)bVar1 * -2] = afStack_4c[(uint)bVar1 * -2];
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+            (&this_ptr->rotation_matrix,&this_ptr->linear_velocity_local,&local_50);
+  local_2c = local_50.x;
+  local_28[(uint)bVar1 * -2] = *(float *)((int)&local_50 + (uint)bVar1 * -8 + 4);
   local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
-       afStack_4c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
+       *(float *)((int)&local_50 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (&this_ptr->linear_velocity == (CVector3f *)&local_2c) {
     return;
   }

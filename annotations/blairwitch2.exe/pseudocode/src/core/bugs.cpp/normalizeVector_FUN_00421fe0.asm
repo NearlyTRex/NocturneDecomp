@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_normalizeVector_FUN_00421fe0(float *param_1)
+; void __cdecl core_bugs_cpp_normalizeVector_FUN_00421fe0(CVector3f *dest)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dest
 ;
 ; *****************************************************************************
 

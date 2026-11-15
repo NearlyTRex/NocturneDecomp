@@ -18,7 +18,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera *t
   if (this_ptr->scene_open_flag == 0) {
     _DAT_01d71de0 = "..\\core\\dcamera.cpp";
     _DAT_01d71de4 = 0x3f2;
-    core_main_c_FUN_004e4330("CDemonCamera::endScene - Scene not open!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::endScene - Scene not open!");
   }
   else {
     this_ptr->scene_open_flag = 0;

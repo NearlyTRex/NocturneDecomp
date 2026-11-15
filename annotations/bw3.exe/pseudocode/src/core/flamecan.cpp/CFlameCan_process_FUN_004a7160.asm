@@ -78,7 +78,7 @@ section .text
     MOV ESI,dword ptr [0x00600530]      ; 004a71d8 | DAT_00600530
     PUSH ESI                            ; 004a71de
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004a71df
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004a71e4
     MOV EAX,dword ptr [EBX + 0x154]     ; 004a71e7
     PUSH EBX                            ; 004a71ed

@@ -63,7 +63,7 @@ ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo 
 
 // Original: core_crate.cpp_CCrate_getBoundingBox_FUN_004460b0
 // Address: 004460b0
-CBoundingBox3D * __cdecl CCrate::getBoundingBox(CCrate *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCrate::getBoundingBox(CCrate *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_crate.cpp_CCrate_getTargetPoints_FUN_004460f0
 // Address: 004460f0

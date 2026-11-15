@@ -9,9 +9,9 @@
 // Address: 0041a590
 void __cdecl CBoundingBox3D::expand(CBoundingBox3D *this_ptr,CVector3f *point);
 
-// Original: core_box.cpp_FUN_0041a600
+// Original: core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 // Address: 0041a600
-void FUN_0041a600(undefined4 *param_1,uint param_2);
+CVector3f * __stack2_esi CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670
 // Address: 0041a670
@@ -49,9 +49,9 @@ float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 // Address: 0041b700
 void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041bb80
+// Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041bb80
 // Address: 0041bb80
-void FUN_0041bb80(float *param_1,float *param_2);
+CVector3f * __stack2_esi CBoundingBox3D::clampPoint(CBoundingBox3D *this_ptr,CVector3f *in_point,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041bc20
 // Address: 0041bc20

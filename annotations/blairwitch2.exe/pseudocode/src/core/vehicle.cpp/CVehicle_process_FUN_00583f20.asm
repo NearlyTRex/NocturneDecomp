@@ -27,13 +27,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408d30
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_course.cpp_CCourse_evaluate_FUN_00438c40
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   core_mobster.cpp_CMobster_ctor_FUN_004fd810
@@ -211,8 +211,8 @@ section .text
     PUSH EBX                            ; 0058416c
     LEA ESI,[ESP + 0x10c]               ; 0058416d
     LEA EDI,[ESP + 0xa0]                ; 00584174
-    CALL core_actor.cpp_FUN_00408d30    ; 0058417b
-        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d30()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30 ; 0058417b
+        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x10c]               ; 00584180
     LEA EAX,[ESP + 0xa0]                ; 00584187
     ADD ESP,0x8                         ; 0058418e
@@ -356,8 +356,8 @@ section .text
     PUSH EBX                            ; 0058435e
     LEA ESI,[ESP + 0xf4]                ; 0058435f
     LEA EDI,[ESP + 0x124]               ; 00584366
-    CALL core_actor.cpp_FUN_00408de0    ; 0058436d
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0058436d
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xf4]                ; 00584372
     ADD ESP,0x8                         ; 00584379
     MOVSD ES:EDI,ESI                    ; 0058437c
@@ -574,8 +574,8 @@ section .text
     PUSH 0x5edcad                       ; 005845fa | = "CMobster::process - Out of memory!"
     MOV [0x01d046a0],EAX                ; 005845ff | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00584604 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0058460a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058460a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058460f
     PUSH 0x3f000000                     ; 00584612
         ;   Label: LAB_00584612

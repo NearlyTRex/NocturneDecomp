@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; code * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
+; ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void)
 ;
 ;
 ; XREF[8]:

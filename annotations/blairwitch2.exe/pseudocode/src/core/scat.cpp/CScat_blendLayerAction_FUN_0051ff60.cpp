@@ -32,11 +32,11 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
     local_28 = (1.0 - (this_ptr->base).base.layer_action_t) * local_28;
   }
   pCVar1 = &(this_ptr->base).base.model;
-  fVar2 = (float)core_motion_cpp_FUN_005038a0(pCVar1,4);
-  fVar3 = (float)core_motion_cpp_FUN_005038a0(pCVar1,5);
-  fVar4 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xc);
-  fVar5 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xd);
-  fVar6 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xe);
+  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,4);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,5);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xc);
+  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xd);
+  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xe);
   local_28 = (1.0 - (fVar6 + fVar5 + fVar4 + fVar3 + fVar2)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;

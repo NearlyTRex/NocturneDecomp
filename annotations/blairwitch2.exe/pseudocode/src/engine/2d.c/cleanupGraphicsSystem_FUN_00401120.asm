@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e4500 at 004e4579
+;   core_main.c_displayErrorAndQuit_FUN_004e4500 at 004e4579
 ;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e7d
 ;
 ; Called Functions:

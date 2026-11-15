@@ -40,6 +40,10 @@ def test_custom_storage_is_an_fpu_convention_or_a_register_pinned_parameter():
     assert asa.needs_custom_storage("__cdecl", {"params": [{"storage": {"reg": "EAX"}}]})
     assert not asa.needs_custom_storage("__cdecl", {"params": [{"storage": {}}, {}]})
     assert not asa.needs_custom_storage(None, {"params": None})
+    # Where the source records it, its own flag decides: a convention's register is no pin
+    assert not asa.needs_custom_storage("__stack_esi", {"params": [{"storage": {"reg": "ESI"}}],
+                                                        "custom_storage": False})
+    assert asa.needs_custom_storage("__cdecl", {"params": [{"storage": {}}], "custom_storage": True})
 
 
 @pytest.mark.parametrize("shape, verdict, confidence, supported", [
@@ -188,6 +192,7 @@ def test_refresh_resignatures_an_already_named_function_only_on_evidence():
     current = {"00000001": "core_a.cpp_f_FUN_00000001", "00000002": "core_a.cpp_g_FUN_00000002"}
     rows = run_plan(pairs, current, refresh_signatures = True)
     assert [r["action"] for r in rows.values()] == ["NAME_SIG", "ALREADY"]
+    assert [r["refresh"] for r in rows.values()] == [True, False]
 
 
 def test_a_unit_conflict_can_be_waived_and_a_placeholder_unit_is_no_conflict():
@@ -394,6 +399,60 @@ def test_the_plan_defers_a_receiver_its_prototype_cannot_bring():
     assert rows[2]["detail"].startswith("name claims class CBox and only its prototype supplies this_ptr")
 
 
+def test_a_refresh_keeps_a_typed_or_reshaped_prototype_unless_rewritten():
+    undefined = ghidra_fake.DataType("undefined4", 4)
+
+    def target(ret, *types):
+        func = Func("old", 0x10)
+        func.parameters = [ghidra_fake.Variable(f"p{i}", t) for i, t in enumerate(types)]
+        func.return_type = ret
+        return func
+
+    funcs = {"00000001": target(INT, INT), "00000002": target(INT, undefined), "00000003": target(INT, undefined, INT),
+             "00000004": target(None), "00000005": target(INT, INT), "00000006": target(None, INT)}
+    rows = [row("NAME_SIG", a = f"a{n}", b = f"0000000{n}", refresh = True) for n in range(1, 7)]
+    rows += [row("NAME_SIG", a = "a1", b = "00000001"), row("NAME_SIG", a = "a7", b = "00000099", refresh = True)]
+    asa.keep_typed_prototypes(rows, funcs, {"a5"})
+    assert [r["action"] for r in rows] == ["ALREADY", "NAME_SIG", "ALREADY", "NAME_SIG", "NAME_SIG", "NAME_SIG",
+                                           "NAME_SIG", "NAME_SIG"]
+    assert (rows[0]["detail"], rows[2]["detail"]) == ("prototype already typed",
+                                                       "parameter count differs from the source's")
+
+
+def test_a_refresh_of_a_prototype_already_in_place_is_no_work():
+    in_place = Func("old", 0x10)
+    in_place.parameters = [ghidra_fake.Variable("this_ptr", ghidra_fake.PointerDataType(CBOX))]
+    in_place.return_type = INT
+    other_conv = Func("old", 0x20)
+    other_conv.parameters, other_conv.return_type = in_place.parameters, INT
+    other_conv.convention = "__stdcall"
+    no_ret = Func("old", 0x30)
+    no_ret.parameters = in_place.parameters
+    funcs = {"00000001": in_place, "00000002": other_conv, "00000003": no_ret}
+    rows = [row("NAME_SIG", a = "a1", b = "00000001", refresh = True),
+            row("NAME_SIG", a = "a2", b = "00000001", refresh = True, conv = None, sig = None),
+            row("NAME_SIG", a = "a3", b = "00000002", refresh = True),
+            row("NAME_SIG", a = "a4", b = "00000003", refresh = True)]
+    asa.keep_typed_prototypes(rows, funcs, {"a1"})
+    assert [(r["action"], r.get("detail")) for r in rows] == [
+        ("ALREADY", "prototype already matches"), ("ALREADY", "prototype already typed"),
+        ("ALREADY", "prototype already typed"), ("NAME_SIG", None)]
+
+
+def test_a_prototype_only_row_already_in_place_is_no_work_and_keeps_its_name():
+    in_place = Func("old", 0x10)
+    in_place.parameters = [ghidra_fake.Variable("this_ptr", ghidra_fake.PointerDataType(CBOX))]
+    in_place.return_type = INT
+    untyped = Func("old", 0x20)
+    untyped.parameters = [ghidra_fake.Variable("p0", ghidra_fake.DataType("undefined4", 4))]
+    funcs = {"00000001": in_place, "00000002": untyped}
+    rows = [row("SIG_ONLY", a = "a1", b = "00000001"), row("SIG_ONLY", a = "a2", b = "00000002"),
+            row("NAME_SIG", a = "a3", b = "00000001")]
+    asa.keep_typed_prototypes(rows, funcs, set())
+    assert [(r["action"], r.get("detail"), r.get("withheld")) for r in rows] == [
+        ("ALREADY", "prototype already matches", True), ("SIG_ONLY", None, None), ("NAME_SIG", None, None)]
+
+
 def test_an_unreadable_result_is_reset_and_the_receiver_name_undone():
     func = Func("old", 0x10, breaks = True)
     assert apply(func, row("NAME_SIG", receiver_from_signature = True)) == "unreadable, reset"
@@ -518,6 +577,14 @@ def test_a_dry_run_reports_every_action_and_changes_nothing(world, capsys):
     assert not world["program"].transactions and world["pyghidra"].closed == 1
 
 
+def test_a_prototype_only_row_already_in_place_reports_the_name_it_keeps(world):
+    world["funcs"]["f4"].return_type = INT
+    assert run_main(world, "--signatures") == 0
+    report = world["paths"]["out"].read_text(encoding = "utf-8")
+    assert "SIG_ONLY" not in report
+    assert "  00000040 <- a4  0.40  identical      core_a.cpp_FUN_00000040  <- prototype already matches\n" in report
+
+
 def test_apply_names_signatures_and_saves_once(world, capsys):
     assert run_main(world, "--signatures", "--apply") == 0
     out = capsys.readouterr().out
@@ -533,7 +600,9 @@ def test_apply_names_signatures_and_saves_once(world, capsys):
     assert world["program"].getDomainFile().saves == 1 and "Saved." in out
 
 
-def test_a_rewritten_prototype_replaces_the_sources_convention_and_parameters(world):
+def test_a_rewritten_prototype_replaces_the_sources_convention_and_parameters(world, monkeypatch):
+    # The source's own custom storage does not hold: the rewrite's convention places storage by rule
+    monkeypatch.setitem(SourceImage.by_addr, "a4", {"ret": "int", "custom_storage": True})
     mapping = world["paths"]["mapping"]
     doc = json.loads(mapping.read_text(encoding = "utf-8"))
     doc["pairs"][3]["sig_rewrite"] = {"kind": "esi_output", "output": "out", "conv": "__stack_esi",

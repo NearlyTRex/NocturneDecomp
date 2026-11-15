@@ -22,7 +22,7 @@ void * __cdecl engine_mini3d_cpp_allocVertexBuffer_FUN_004f0460(int vertex_count
   }
   _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
   _DAT_01d71de4 = 0xddf;
-  core_main_c_FUN_004e4330("CMini3D::allocVertexBuffer - Allocation of %d vertex failed",vertex_count);
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::allocVertexBuffer - Allocation of %d vertex failed");
   uRam0000001f = 0x20;
   return (void *)0x20;
 }

@@ -14,7 +14,7 @@ int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_0049c100(CPickList *t
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x1185;
-    core_main_c_FUN_005030e0("CPickList::isItemEnabled - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPickList::isItemEnabled - invalid index");
   }
   if (this_ptr->enabled_capacity <= item_index) {
     return 1;

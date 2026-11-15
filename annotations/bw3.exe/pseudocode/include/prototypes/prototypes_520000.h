@@ -30,7 +30,7 @@ void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderTransparent_FUN_00522880(CPrye *this_ptr);
 void core_prye_cpp_FUN_005228c0(void);
-float * core_prye_cpp_FUN_00522950(void);
+undefined4 * core_prye_cpp_FUN_00522950(void);
 void core_prye_cpp_FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
 void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info);

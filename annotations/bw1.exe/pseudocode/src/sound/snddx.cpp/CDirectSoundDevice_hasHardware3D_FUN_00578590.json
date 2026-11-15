@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 85,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_ref",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00578590",
+    "address_range": [
+      [
+        "00578590",
+        "0057863d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590(CDirectSoundDevice *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4dd1",
+      "name": "s_Querry_DirectSound_capab_005f4dd1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c81d94",
+      "name": "DAT_02c81d94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81da0",
+      "name": "DAT_02c81da0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.320754716981132,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 40,
+      "INT_ADD": 19,
+      "INT_AND": 30,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "LOAD": 9,
+      "POPCOUNT": 14,
+      "RETURN": 3,
+      "STORE": 18
+    },
+    "pcode_op_count": 229
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00555b60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055b700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005aee20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0702
+    },
+    "nocturne.exe": {
+      "addr": "0052aa40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0702
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "error_code = (**(code **)(*_DAT_02c81d94 + 0x10))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xfffffe04",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe04,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xfffffe04",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_logSoundError_FUN_005773f0(&stack0xfffffe04);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 20,
+        "vtable_addr": "00605b9c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

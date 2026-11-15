@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 596,
-    "complexity_score": 693,
+    "complexity_score": 539,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 308,
-    "suspect_count": 37,
+    "pseudocode_lines": 274,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 904
+    "total_lines": 870
   },
   "cross_references": [
     {
@@ -360,7 +360,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 30,
       "match": "(short *)((int)src_buffer",
       "severity": "moderate",
       "text": "src_buffer = (short *)((int)src_buffer + 1);",
@@ -368,282 +368,186 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(short *)((int)psVar10",
+      "line": 31,
+      "match": "(short *)((int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(short *)((int)psVar10",
+      "line": 48,
+      "match": "(short *)((int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(char *)((int)uVar13",
+      "line": 59,
+      "match": "(byte *)((int)psVar7",
       "severity": "moderate",
-      "text": "((int)*(char *)((int)uVar13 + (int)ROUND(fVar12) * 2) +",
+      "text": "*(byte *)((int)psVar7 + 1) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(char *)((int)uVar13",
+      "line": 75,
+      "match": "(char *)((int)src_buffer",
       "severity": "moderate",
-      "text": "(int)*(char *)((int)uVar13 + 1 + (int)ROUND(fVar12) * 2) >> 1);",
+      "text": "(int)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) >> 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(short *)((int)psVar10",
+      "line": 78,
+      "match": "(short *)((int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(byte *)((int)uVar13",
+      "line": 90,
+      "match": "(byte *)((int)psVar7",
       "severity": "moderate",
-      "text": "*(byte *)psVar10 = *(byte *)((int)uVar13 + (int)ROUND(fVar12) * 2);",
+      "text": "*(byte *)((int)psVar7 + 1) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(byte *)((int)psVar10",
+      "line": 91,
+      "match": "(byte *)((int)src_buffer",
       "severity": "moderate",
-      "text": "*(byte *)((int)psVar10 + 1) =",
+      "text": "*(byte *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(byte *)((int)uVar13",
+      "line": 133,
+      "match": "(char *)((int)src_buffer",
       "severity": "moderate",
-      "text": "*(byte *)((int)uVar13 + 1 + (int)ROUND(fVar12) * 2);",
+      "text": "*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) * 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(char *)((int)uVar13",
+      "line": 146,
+      "match": "(char *)((int)src_buffer",
       "severity": "moderate",
-      "text": "*psVar10 = *(char *)((int)uVar13 + (int)ROUND(fVar12) * 2) * 0x80 +",
+      "text": "psVar7[1] = (short)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(char *)((int)uVar13",
+      "line": 162,
+      "match": "(short *)((int)psVar7",
       "severity": "moderate",
-      "text": "*(char *)((int)uVar13 + 1 + (int)ROUND(fVar12) * 2) * 0x80;",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(char *)((int)uVar13",
+      "line": 173,
+      "match": "(byte *)((int)psVar7",
       "severity": "moderate",
-      "text": "*psVar10 = (short)*(char *)((int)uVar13 + (int)ROUND(fVar12) * 2) << 8;",
+      "text": "*(byte *)((int)psVar7 + 1) = local_1c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(char *)((int)uVar13",
+      "line": 191,
+      "match": "(short *)((int)psVar7",
       "severity": "moderate",
-      "text": "psVar10[1] = (short)*(char *)((int)uVar13 + 1 + (int)ROUND(fVar12) * 2) << 8;",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
-      "match": "(ushort *)((int)uVar13",
+      "line": 206,
+      "match": "(byte *)((int)psVar7",
       "severity": "moderate",
-      "text": "(char)((ushort)*(ushort *)((int)uVar13 + (int)ROUND(fVar12) * 2) >> 8);",
+      "text": "*(byte *)((int)psVar7 + 1) = local_1c;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(short *)((int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 196,
-      "match": "(ushort *)((int)uVar13",
-      "severity": "moderate",
-      "text": "((ushort)*(ushort *)((int)uVar13 + (int)ROUND(fVar12) * 2) >> 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(short *)((int)uVar13",
-      "severity": "moderate",
-      "text": "(char)((int)*(short *)((int)uVar13 + (int)ROUND(fVar12) * 4) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(int *)((int)uVar13",
-      "severity": "moderate",
-      "text": "(*(int *)((int)uVar13 + (int)ROUND(fVar12) * 4) >> 0x10) >> 9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(short *)((int)psVar10",
-      "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 229,
-      "match": "(ushort *)((int)uVar13",
-      "severity": "moderate",
-      "text": "((ushort)*(ushort *)((int)uVar13 + (int)ROUND(fVar12) * 4) >> 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 232,
-      "match": "(uint *)((int)uVar13",
-      "severity": "moderate",
-      "text": "((uint)*(uint *)((int)uVar13 + (int)ROUND(fVar12) * 4) >> 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(byte *)((int)psVar10",
-      "severity": "moderate",
-      "text": "*(byte *)((int)psVar10 + 1) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 250,
-      "match": "(short *)((int)uVar13",
-      "severity": "moderate",
-      "text": "*psVar10 = *(short *)((int)uVar13 + (int)ROUND(fVar12) * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 263,
-      "match": "(ushort *)((int)uVar13",
-      "severity": "moderate",
-      "text": "uVar2 = *(ushort *)((int)uVar13 + (int)ROUND(fVar12) * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 280,
-      "match": "(short *)((int)uVar13",
-      "severity": "moderate",
-      "text": "*psVar10 = (short)((int)*(short *)((int)uVar13 + (int)ROUND(fVar12) * 4) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 281,
-      "match": "(int *)((int)uVar13",
-      "severity": "moderate",
-      "text": "(*(int *)((int)uVar13 + (int)ROUND(fVar12) * 4) >> 0x10) >> 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 294,
-      "match": "(ushort *)((int)uVar13",
-      "severity": "moderate",
-      "text": "*puVar9 = *(ushort *)((int)uVar13 + (int)ROUND(fVar12) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 296,
-      "match": "(ushort *)((int)uVar13",
-      "severity": "moderate",
-      "text": "puVar9[1] = *(ushort *)((int)uVar13 + 2 + (int)ROUND(fVar12) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
-      "match": "(int)psVar10",
-      "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 88,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "*(byte *)((int)psVar7 + 1) = uVar1;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 102,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "*(byte *)((int)psVar10 + 1) =",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 183,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 90,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "*(byte *)((int)psVar7 + 1) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 216,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 162,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "psVar10 = (short *)((int)psVar10 + 1);",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `psVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 234,
-      "match": "(int)psVar10",
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 173,
+      "match": "(int)psVar7",
       "severity": "moderate",
-      "text": "*(byte *)((int)psVar10 + 1) = local_18;",
+      "text": "*(byte *)((int)psVar7 + 1) = local_1c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "psVar7 = (short *)((int)psVar7 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 206,
+      "match": "(int)psVar7",
+      "severity": "moderate",
+      "text": "*(byte *)((int)psVar7 + 1) = local_1c;",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
-      "line": 28,
+      "line": 23,
       "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
       "severity": "moderate",
-      "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {

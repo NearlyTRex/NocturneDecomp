@@ -67,7 +67,7 @@
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90
 ;   core_fldnotes.cpp_STextView_reset_FUN_004a8e00
 ;   core_fldnotes.cpp_STextView_setRect_FUN_004a8eb0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_ctype.c_toupper_FUN_005a4120
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgets_FUN_005a3f00
@@ -134,8 +134,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x5fc]     ; 004aa8a3
     PUSH EDX                            ; 004aa8aa
     PUSH 0x5c11fd                       ; 004aa8ab | = "world"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004aa8b0
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004aa8b0
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004aa8b5
     MOV dword ptr [ESP + 0x5a8],EAX     ; 004aa8b8
     TEST EAX,EAX                        ; 004aa8bf
@@ -179,7 +179,7 @@ section .text
     PUSH EAX                            ; 004aa938
     XOR ESI,ESI                         ; 004aa939
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004aa93b
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004aa940
     XOR EDX,EDX                         ; 004aa943
     MOV ECX,dword ptr [0x01d0e36c]      ; 004aa945 | DAT_01d0e36c
@@ -271,7 +271,7 @@ section .text
         ;   XREF to: 004aaa46 (CONDITIONAL_JUMP)  ; LAB_004aaa46
     PUSH EBP                            ; 004aaa3d
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004aaa3e
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004aaa43
     MOV EDX,dword ptr [ESP + 0x600]     ; 004aaa46
         ;   Label: LAB_004aaa46
@@ -326,8 +326,8 @@ section .text
     PUSH 0x5c1218                       ; 004aaab7 | = "Can't open field notes file %s"
     MOV dword ptr [0x01d71de0],ECX      ; 004aaabc | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004aaac2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004aaac8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aaac8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004aaacd
     JMP 0x004aa8c7                      ; 004aaad0
         ;   XREF to: 004aa8c7 (UNCONDITIONAL_JUMP)  ; LAB_004aa8c7
@@ -1194,8 +1194,8 @@ section .text
     PUSH 0x5c13d5                       ; 004ab2c3 | = "Hell froze!"
     MOV dword ptr [0x01d71de0],EBX      ; 004ab2c8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004ab2ce | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ab2d4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab2d4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab2d9
     MOV EBX,dword ptr [0x01d0e36c]      ; 004ab2dc | DAT_01d0e36c
         ;   Label: LAB_004ab2dc
@@ -1345,8 +1345,8 @@ section .text
     PUSH 0x5c1489                       ; 004ab440 | = "Hell froze!"
     MOV dword ptr [0x01d71de0],EBX      ; 004ab445 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004ab44b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ab451
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab451
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab456
     MOV EAX,[0x01d0e36c]                ; 004ab459 | DAT_01d0e36c
         ;   Label: LAB_004ab459
@@ -1509,8 +1509,8 @@ section .text
     PUSH 0x5c1565                       ; 004ab5e0 | = "Hell froze!"
     MOV dword ptr [0x01d71de0],EBX      ; 004ab5e5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004ab5eb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004ab5f1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab5f1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab5f6
     MOV EAX,[0x01d0e36c]                ; 004ab5f9 | DAT_01d0e36c
         ;   Label: LAB_004ab5f9

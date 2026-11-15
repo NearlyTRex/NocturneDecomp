@@ -19,13 +19,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_buildRotationY_FUN_005b6e10
-;   core_xform.cpp_FUN_005b5080
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0
+;   core_xform.cpp_transformVector3x4_FUN_005b5080
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_005b5100
 ;
 ; *****************************************************************************
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 004cb30f
     LEA ESI,[ESP + 0x1ac]               ; 004cb310
     LEA EDI,[ESP + 0x158]               ; 004cb317
-    CALL core_xform.cpp_FUN_005b5080    ; 004cb31e
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 004cb31e
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x1ac]               ; 004cb323
     ADD ESP,0x8                         ; 004cb32a
     MOV ECX,0xc                         ; 004cb32d
@@ -273,7 +273,7 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 004cb596
     LEA EDI,[ESP + 0x16c]               ; 004cb59d
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 004cb5a4
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x130]               ; 004cb5a9
     ADD ESP,0x4                         ; 004cb5b0
     MOVSD ES:EDI,ESI                    ; 004cb5b3
@@ -336,8 +336,8 @@ section .text
     PUSH 0x5e1251                       ; 004cb67a | = "Don't know how to carry light %s"
     MOV dword ptr [0x01d1d400],EDI      ; 004cb67f | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004cb685 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004cb68a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004cb68a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004cb68f
     JMP 0x004cb25f                      ; 004cb692
         ;   XREF to: 004cb25f (UNCONDITIONAL_JUMP)  ; LAB_004cb25f

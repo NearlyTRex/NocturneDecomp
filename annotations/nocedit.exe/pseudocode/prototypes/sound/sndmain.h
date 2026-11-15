@@ -597,9 +597,9 @@ int __cdecl getCurrentSoundDevice(void);
 // Address: 005ab6d0
 int __cdecl getMixBufferCount(void);
 
-// Original: sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
+// Original: sound_sndmain.cpp_setReverb_FUN_005ab6e0
 // Address: 005ab6e0
-void __cdecl set3DListenerOrientRight(float orient_right_x,float orient_right_y,float orient_right_z);
+void __cdecl setReverb(float volume,float decay_time,float damping);
 
 // Original: sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720
 // Address: 005ab720

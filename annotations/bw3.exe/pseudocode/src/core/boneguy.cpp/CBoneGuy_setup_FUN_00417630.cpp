@@ -58,7 +58,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00417630(CBoneGuy *this_ptr)
   if (0x14 < iVar1) {
     _DAT_01d71de0 = "..\\core\\boneguy.cpp";
     _DAT_01d71de4 = 0x136;
-    core_main_c_FUN_004e4330("CBoneGuy::explode - Not enough containers");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CBoneGuy::explode - Not enough containers");
   }
   (this_ptr->base).base.carry_hands[0].bone_index = DAT_007e1624;
   (this_ptr->base).base.carry_hands[1].bone_index = DAT_007e1628;

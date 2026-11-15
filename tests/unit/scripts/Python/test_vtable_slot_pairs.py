@@ -310,7 +310,8 @@ def fixture_run(tmp_path, monkeypatch):
 def test_main_writes_the_proposals_as_ledger_pairs(run, tmp_path, capsys):
     ledger = run("--report", str(tmp_path / "r.txt"))
     assert (ledger["schema"], ledger["from"], ledger["to"]) == (1, "a.exe", "b.exe")
-    assert ["a1", "b1", "CBox_open. vtable tb slot 1, as ta's; 1 table(s) agree."] in ledger["pairs"]
+    assert {"a": "a1", "b": "b1",
+            "note": "CBox_open. vtable tb slot 1, as ta's; 1 table(s) agree."} in ledger["pairs"]
     out = capsys.readouterr().out
     assert "1 table pair(s); 0 slot(s) placed from uneven gaps, 0 left unplaced" in out
     assert "(no class_hierarchy.json for b.exe: the class check was skipped)" in out

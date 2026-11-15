@@ -23,7 +23,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
   int *piVar8;
   uint *puVar9;
   byte bVar10;
-  float afStackY_105c [994];
+  CDemonRenderer *apCStackY_105c [3];
+  CVector3f *apCStackY_1050 [6];
+  float afStackY_1038 [985];
   SRenderVertex in_stack_ffffff2c;
   byte auVar11 [24];
   byte in_stack_ffffff5c [32];
@@ -33,17 +35,18 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
   SProjectedVertex *output;
   CVector3f *euler_angles;
   CVector3f *translation;
-  CVector3f CStack_74;
+  CVector3f *in_stack_ffffff8c;
+  float fStack_70;
+  CDemonRenderer *pCStack_6c;
   float fStack_68;
-  float afStack_64 [5];
+  CVector3f *apCStack_64 [2];
+  CVector3f CStack_5c;
   float fStack_50;
-  float fStack_4c;
-  float fStack_48;
+  float afStack_4c [2];
   int iStack_44;
   int iStack_40;
   int iStack_3c;
-  float fStack_38;
-  float afStack_34 [2];
+  CVector3f CStack_38;
   CVector3f CStack_2c;
   int iStack_20;
   int iStack_1c;
@@ -59,14 +62,14 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
       pCStack_18 = bone_matrices;
       do {
         iStack_20 = iVar4 * 0x30;
-        core_xform_cpp_FUN_00592720();
-        fStack_50 = fStack_38;
-        afStack_64[(uint)bVar10 * -2 + 6] = afStack_34[(uint)bVar10 * -2];
-        afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-             afStack_34[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        core_xform_cpp_getTranslation_FUN_00592720(pCStack_18,&CStack_38);
+        fStack_50 = CStack_38.x;
+        afStack_4c[(uint)bVar10 * -2] = *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + 4);
+        afStack_4c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+             *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         iStack_44 = (int)ROUND(fStack_50 * _DAT_005fb998);
-        iStack_40 = (int)ROUND(fStack_4c * _DAT_005fb998);
-        iStack_3c = (int)ROUND(fStack_48 * _DAT_005fb998);
+        iStack_40 = (int)ROUND(afStack_4c[0] * _DAT_005fb998);
+        iStack_3c = (int)ROUND(afStack_4c[1] * _DAT_005fb998);
         this_ptr = (CDeformableModel *)&iStack_44;
         output = (SProjectedVertex *)
                  ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -123,26 +126,28 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
   }
   if (((render_flags & 2U) != 0) && (iVar4 = 0, 0 < pCStack_14->bone_count)) {
     do {
-      translation = &CStack_74;
-      core_xform_cpp_matrixToEulerAngles_FUN_00591de0();
+      translation = (CVector3f *)&stack0xffffff8c;
+      core_xform_cpp_matrixToEulerAngles_FUN_00591de0(bone_matrices,in_stack_ffffff8c);
       CStack_2c.x = fStack_68;
-      *(float *)((int)&CStack_2c + (uint)bVar10 * -8 + 4) = afStack_64[(uint)bVar10 * -2];
-      *(float *)((int)&CStack_2c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-      core_xform_cpp_FUN_00592720();
+      *(CVector3f **)((int)&CStack_2c + (uint)bVar10 * -8 + 4) = apCStack_64[(uint)bVar10 * -2];
+      *(CVector3f **)((int)&CStack_2c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           apCStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+      core_xform_cpp_getTranslation_FUN_00592720(bone_matrices,&CStack_5c);
+      in_stack_ffffff8c = (CVector3f *)CStack_5c.x;
       euler_angles = &CStack_2c;
-      CStack_74.x = afStack_64[2];
-      *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + 4) = afStack_64[(uint)bVar10 * -2 + 3];
+      *(uint *)((int)&stack0xffffff90 + (uint)bVar10 * -8) =
+           *(uint *)((int)&CStack_5c + (uint)bVar10 * -8 + 4);
       this_ptr_00 = DAT_0060b280;
-      *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+      (&pCStack_6c)[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
+           *(CDemonRenderer **)((int)&CStack_5c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                 (this_ptr_00,euler_angles,translation);
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(g_CEditorToolsPtr,0.5,0xff);
-      CStack_74.z = (float)DAT_0060b280;
-      CStack_74.y = 7.728015e-39;
+      pCStack_6c = DAT_0060b280;
+      fStack_70 = 7.728015e-39;
       engine_drender_cpp_pop_FUN_0046b4a0();
       iVar4 = iVar4 + 1;
+      bone_matrices = bone_matrices + 1;
     } while (iVar4 < *(int *)(unaff_ESI + 0x1d1f8));
   }
   return;

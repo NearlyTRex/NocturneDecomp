@@ -32,7 +32,7 @@
 ;   undefined4 DAT_0268014c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_005b6940
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5f16bb                       ; 005b67a5 | = "CMorphModel::setFaceList - invalid pa..."
     MOV dword ptr [0x01d046a0],ECX      ; 005b67aa | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 005b67b0 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b67b6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b67b6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b67bb
     MOV EAX,ESI                         ; 005b67be
         ;   Label: LAB_005b67be
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5f16fb                       ; 005b67e3 | = "CMorphModel::setFaceList - invalid ve..."
     MOV dword ptr [0x01d046a0],EBP      ; 005b67e8 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 005b67ee | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b67f3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b67f3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b67f8
     MOV EAX,dword ptr [ESP + 0x34]      ; 005b67fb
         ;   Label: LAB_005b67fb

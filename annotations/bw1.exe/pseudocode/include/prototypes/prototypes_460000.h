@@ -41,7 +41,7 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
 void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_djien_cpp_CDjien_getSackIndex_FUN_00461530(CDjien *this_ptr,int part_id);
 int __cdecl core_djien_cpp_CDjien_getTargetPoints_FUN_00461590(CDjien *this_ptr,CVector3f *out_points_array);
-int core_djien_cpp_FUN_004615b0(int param_1,int param_2,int param_3);
+int core_djien_cpp_FUN_004615b0(CCharacter *param_1,CVector3f *param_2,int param_3);
 CDjien * __cdecl core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags);
 SDjienBox * __cdecl core_djien_cpp_SDjienBox_ctor_FUN_00462440(SDjienBox *this_ptr);
 void core_djien_cpp_FUN_00462450(void);

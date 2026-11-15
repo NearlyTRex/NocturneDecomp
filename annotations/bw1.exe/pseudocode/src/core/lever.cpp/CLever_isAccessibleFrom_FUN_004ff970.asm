@@ -15,7 +15,7 @@
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004eb660 at 004eb782
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH EBX                            ; 004ff998
     LEA ESI,[ESP + 0x14]                ; 004ff999
     LEA EDI,[ESP + 0x8]                 ; 004ff99d
-    CALL core_actor.cpp_FUN_00408bb0    ; 004ff9a1
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004ff9a1
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x14]                ; 004ff9a6
     ADD ESP,0x8                         ; 004ff9aa
     MOVSD ES:EDI,ESI                    ; 004ff9ad

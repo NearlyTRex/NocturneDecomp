@@ -30,7 +30,7 @@
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
 ;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_morph.cpp_CMorph_getReady_FUN_00523310
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005230c0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
@@ -239,8 +239,8 @@ section .text
     PUSH 0x5e8936                       ; 0050f4b6 | = "CMimic failed to create morph target ..."
     MOV dword ptr [0x01d1d400],EDX      ; 0050f4bb | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0050f4c1 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0050f4c7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f4c7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f4cc
     MOV EAX,dword ptr [EBX + 0x47ac0]   ; 0050f4cf
         ;   Label: LAB_0050f4cf
@@ -365,8 +365,8 @@ section .text
     PUSH 0x5e87e8                       ; 0050f604 | = "CMimic::setup - can't use mimic in mu..."
     MOV dword ptr [0x01d1d400],ECX      ; 0050f609 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0050f60f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0050f615
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f615
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f61a
     JMP 0x0050f2a9                      ; 0050f61d
         ;   XREF to: 0050f2a9 (UNCONDITIONAL_JUMP)  ; LAB_0050f2a9

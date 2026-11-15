@@ -47,7 +47,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041a600
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00531e90
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
@@ -73,8 +73,8 @@ section .text
     PUSH EDX                            ; 0041b71d
     LEA ESI,[ESP + 0x9c]                ; 0041b71e
     LEA EDI,[ESP + 0xb4]                ; 0041b725
-    CALL core_box.cpp_FUN_0041a600      ; 0041b72c
-        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a600()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600 ; 0041b72c
+        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x9c]                ; 0041b731
     ADD ESP,0x8                         ; 0041b738
     LEA EAX,[ESP + 0xac]                ; 0041b73b

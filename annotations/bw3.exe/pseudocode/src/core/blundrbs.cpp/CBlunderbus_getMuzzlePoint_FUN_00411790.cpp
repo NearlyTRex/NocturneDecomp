@@ -15,27 +15,26 @@ CVector3f * __cdecl core_blundrbs_cpp_CBlunderbus_getMuzzlePoint_FUN_00411790(CB
   float *pfVar1;
   byte bVar2;
   float afStackY_1014 [1017];
-  CVector3f *in_stack_ffffffd4;
-  CVector3f *pCStack_20;
-  float afStack_1c [2];
-  CVector3f *pCStack_14;
-  float afStack_10 [2];
+  CVector3f CStack_2c;
+  float fStack_20;
+  float afStack_1c [4];
+  uint uStack_c;
   
   bVar2 = 0;
-  core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(&this_ptr->base,in_stack_ffffffd4);
-  pCStack_14 = in_stack_ffffffd4;
-  afStack_10[(uint)bVar2 * -2] = *(float *)(&stack0xffffffd8 + (uint)bVar2 * -8);
-  afStack_10[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-       *(float *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  if (&pCStack_20 != &pCStack_14) {
-    pCStack_20 = pCStack_14;
-    afStack_1c[0] = afStack_10[0];
-    afStack_1c[1] = afStack_10[1];
+  core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(&this_ptr->base,&CStack_2c);
+  afStack_1c[2] = CStack_2c.x;
+  afStack_1c[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);
+  afStack_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+       *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  if (&fStack_20 != afStack_1c + 2) {
+    fStack_20 = afStack_1c[2];
+    afStack_1c[0] = afStack_1c[3];
+    afStack_1c[1] = (float)uStack_c;
   }
-  pCStack_20 = (CVector3f *)((float)pCStack_20 + _DAT_005b654a);
+  fStack_20 = fStack_20 + _DAT_005b654a;
   afStack_1c[0] = afStack_1c[0] + _DAT_005b654e;
   pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);
-  unaff_ESI->x = (float)pCStack_20;
+  unaff_ESI->x = fStack_20;
   *pfVar1 = afStack_1c[(uint)bVar2 * -2];
   pfVar1[(uint)bVar2 * -2 + 1] = afStack_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   return unaff_ESI;

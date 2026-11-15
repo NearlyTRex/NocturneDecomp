@@ -10,110 +10,109 @@ CDemonActor * core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
 
 {
   char cVar1;
-  SIZE_T count;
-  int iVar2;
-  CDemonActor *pCVar3;
-  uint uVar4;
-  int iVar5;
-  char *pcVar6;
+  char *pcVar2;
+  int iVar3;
+  CDemonActor *pCVar4;
+  uint uVar5;
+  int iVar6;
   char *pcVar7;
+  char *pcVar8;
   byte bVar9;
   char local_34 [28];
   char local_18 [8];
-  SIZE_T local_10;
+  char *local_10;
   CDemonActor *local_c;
-  char *pcVar8;
   
   bVar9 = 0;
   local_c = (CDemonActor *)0x0;
-  count = strtok(param_1,"0123456789");
-  if ((int)count < 1) {
+  pcVar2 = strtok(param_1,"0123456789");
+  if ((int)pcVar2 < 1) {
     return (CDemonActor *)0x0;
   }
-  local_10 = count;
-  _strncpy(local_34,param_1,count);
-  local_34[count] = '\0';
-  pcVar6 = param_1 + count;
-  iVar2 = 0;
+  local_10 = pcVar2;
+  _strncpy(local_34,param_1,(SIZE_T)pcVar2);
+  local_34[(int)pcVar2] = '\0';
+  pcVar7 = param_1 + (int)pcVar2;
+  iVar3 = 0;
   do {
-    uVar4 = 0xffffffff;
+    uVar5 = 0xffffffff;
     pcVar8 = param_1;
     do {
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
       cVar1 = *pcVar8;
       pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
     } while (cVar1 != '\0');
-    if (~uVar4 - 1 <= count) break;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    count = count + 1;
-    local_18[iVar2] = cVar1;
-    iVar2 = iVar2 + 1;
+    if ((char *)(~uVar5 - 1) <= pcVar2) break;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
+    pcVar2 = pcVar2 + 1;
+    local_18[iVar3] = cVar1;
+    iVar3 = iVar3 + 1;
   } while( true );
-  local_18[iVar2] = '\0';
-  iVar2 = atoi(local_18);
+  local_18[iVar3] = '\0';
+  iVar3 = atoi(local_18);
   do {
-    if (((local_c != (CDemonActor *)0x0) || (iVar2 < 0)) || (99 < iVar2)) {
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+    if (((local_c != (CDemonActor *)0x0) || (iVar3 < 0)) || (99 < iVar3)) {
+      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (local_c,g_CPatrolPointClassInfo.name_hash);
-      return pCVar3;
+      return pCVar4;
     }
-    local_34[local_10] = '\0';
+    local_34[(int)local_10] = '\0';
     if ((int)*param_2 < 0) {
-      iVar2 = iVar2 + -1;
+      iVar3 = iVar3 + -1;
     }
     if (0 < (int)*param_2) {
-      iVar2 = iVar2 + 1;
+      iVar3 = iVar3 + 1;
     }
-    if (iVar2 < 0) {
-      uVar4 = (int)*param_2 >> 0x1f;
-      if ((*param_2 ^ uVar4) - uVar4 == 1) {
-        iVar2 = 99;
+    if (iVar3 < 0) {
+      uVar5 = (int)*param_2 >> 0x1f;
+      if ((*param_2 ^ uVar5) - uVar5 == 1) {
+        iVar3 = 99;
       }
-      uVar4 = (int)*param_2 >> 0x1f;
-      if ((*param_2 ^ uVar4) - uVar4 != 2) goto LAB_0059ca8e;
-      uVar4 = *param_2;
-      iVar2 = 0;
+      uVar5 = (int)*param_2 >> 0x1f;
+      if ((*param_2 ^ uVar5) - uVar5 != 2) goto LAB_0059ca8e;
+      uVar5 = *param_2;
+      iVar3 = 0;
 LAB_0059cab8:
-      *param_2 = -uVar4;
+      *param_2 = -uVar5;
     }
     else {
 LAB_0059ca8e:
-      if (99 < iVar2) {
-        uVar4 = (int)*param_2 >> 0x1f;
-        if ((*param_2 ^ uVar4) - uVar4 == 1) {
-          iVar2 = 0;
+      if (99 < iVar3) {
+        uVar5 = (int)*param_2 >> 0x1f;
+        if ((*param_2 ^ uVar5) - uVar5 == 1) {
+          iVar3 = 0;
         }
-        uVar4 = (int)*param_2 >> 0x1f;
-        if ((*param_2 ^ uVar4) - uVar4 == 2) {
-          uVar4 = *param_2;
-          iVar2 = 99;
+        uVar5 = (int)*param_2 >> 0x1f;
+        if ((*param_2 ^ uVar5) - uVar5 == 2) {
+          uVar5 = *param_2;
+          iVar3 = 99;
           goto LAB_0059cab8;
         }
       }
     }
-    IntegerToString(iVar2,local_18,10);
-    pcVar6 = local_18;
-    iVar5 = -1;
-    pcVar8 = local_34;
+    IntegerToString(iVar3,local_18,10);
+    pcVar2 = local_18;
+    iVar6 = -1;
+    pcVar7 = local_34;
     do {
-      pcVar7 = pcVar8;
-      if (iVar5 == 0) break;
-      iVar5 = iVar5 + -1;
-      pcVar7 = pcVar8 + (uint)bVar9 * -2 + 1;
-      cVar1 = *pcVar8;
       pcVar8 = pcVar7;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      pcVar8 = pcVar7 + (uint)bVar9 * -2 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar8;
     } while (cVar1 != '\0');
-    pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar8 + -1;
     do {
-      cVar1 = *pcVar6;
-      *pcVar7 = cVar1;
+      cVar1 = *pcVar2;
+      *pcVar8 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar2[1];
+      pcVar2 = pcVar2 + 2;
+      pcVar8[1] = cVar1;
+      pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     local_c = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(0x01D182F0,local_34);
   } while( true );

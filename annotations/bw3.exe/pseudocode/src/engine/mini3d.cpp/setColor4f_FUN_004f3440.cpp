@@ -11,10 +11,13 @@
 void __cdecl engine_mini3d_cpp_setColor4f_FUN_004f3440(float alpha,float red,float green,float blue)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  ulonglong uVar4;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   
   _DAT_01d7a6b8 = red;
   _DAT_01d7a6bc = green;
@@ -25,14 +28,15 @@ void __cdecl engine_mini3d_cpp_setColor4f_FUN_004f3440(float alpha,float red,flo
       (*_DAT_02cf60a4)(_DAT_01d76cc8,_DAT_01d76ccc,_DAT_01d76cd0,alpha);
     }
   }
-  fVar1 = (float10)_DAT_005c8331;
-  fVar2 = (float10)red * fVar1;
-  fVar3 = (float10)green * fVar1;
-  fVar1 = (float10)blue * fVar1;
-  round();
-  round();
-  round();
-  uVar4 = round((int)ROUND(fVar2),(int)ROUND(fVar3));
-  _DAT_01d7a6c4 = (int)ROUND(fVar1) | (int)uVar4 << 8 | (uint)((ulonglong)uVar4 >> 0x20);
+  fVar1 = green * _DAT_005c8331;
+  fVar2 = blue * _DAT_005c8331;
+  fVar3 = alpha * _DAT_005c8331;
+  dVar4 = round((double)(red * _DAT_005c8331));
+  dVar5 = round((double)fVar1);
+  dVar6 = round((double)fVar3);
+  dVar7 = round((double)fVar2);
+  _DAT_01d7a6c4 =
+       (int)ROUND(dVar7) |
+       (int)ROUND(dVar5) << 8 | (int)ROUND(dVar4) << 0x10 | (int)ROUND(dVar6) << 0x18;
   return;
 }

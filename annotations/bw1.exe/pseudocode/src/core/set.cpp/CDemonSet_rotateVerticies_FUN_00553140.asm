@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
 ;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5f0a1e                       ; 005531da | = "CDemonSet::rotateVerticies - tried to..."
     MOV dword ptr [0x01d1d400],ECX      ; 005531df | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005531e5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005531eb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005531eb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 005531f0
     JMP 0x0055315b                      ; 005531f3
         ;   XREF to: 0055315b (UNCONDITIONAL_JUMP)  ; LAB_0055315b

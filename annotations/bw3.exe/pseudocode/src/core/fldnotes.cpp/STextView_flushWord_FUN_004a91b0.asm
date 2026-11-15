@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a8490
 ;   core_fldnotes.cpp_STextView_addResource_FUN_004a9230
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5c0eeb                       ; 004a91f1 | = "Out of memory"
     MOV dword ptr [0x01d71de0],ECX      ; 004a91f6 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004a91fc | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004a9202
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9202
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004a9207
     POP EDI                             ; 004a920a
     MOV EAX,dword ptr [EBX + 0x40]      ; 004a920b

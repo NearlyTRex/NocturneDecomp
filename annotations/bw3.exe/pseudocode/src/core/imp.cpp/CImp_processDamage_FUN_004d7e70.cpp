@@ -19,20 +19,21 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7e70(CImp *this_ptr,SDamage
   byte bVar5;
   float afStackY_1010 [1009];
   char *sound_name;
-  float fStack_28;
+  CVector3f CStack_28;
   CVector3f CStack_1c;
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handles[0]);
   if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
     damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005c56a0;
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_28);
     iVar4 = 0;
-    CStack_1c.x = fStack_28;
+    CStack_1c.x = CStack_28.x;
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) =
-         *(uint *)(&stack0xffffffdc + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0

@@ -67,8 +67,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
@@ -80,7 +80,7 @@
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
-;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -157,8 +157,8 @@ section .text
     PUSH EAX                            ; 0046bebf
     PUSH EBX                            ; 0046bec0
     LEA ESI,[ESP + 0x144]               ; 0046bec1
-    CALL core_actor.cpp_FUN_00408b40    ; 0046bec8
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0046bec8
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046becd
     LEA EAX,[ESP + 0xc4]                ; 0046bed0
     LEA EDI,[ESP + 0xc4]                ; 0046bed7
@@ -374,8 +374,8 @@ section .text
     PUSH 0x4                            ; 0046c133
     MOV ECX,dword ptr [ESP + 0x154]     ; 0046c135
     PUSH ECX                            ; 0046c13c
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c13d
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c13d
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c142
     FLD float ptr [ESP + 0x168]         ; 0046c149
     ADD ESP,0x8                         ; 0046c150
@@ -387,8 +387,8 @@ section .text
     PUSH 0x1                            ; 0046c162
     MOV ESI,dword ptr [ESP + 0x154]     ; 0046c164
     PUSH ESI                            ; 0046c16b
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c16c
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c16c
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c171
     FLD float ptr [ESP + 0x168]         ; 0046c178
     ADD ESP,0x8                         ; 0046c17f
@@ -399,8 +399,8 @@ section .text
         ;   XREF to: 0046c428 (CONDITIONAL_JUMP)  ; LAB_0046c428
     PUSH 0x2                            ; 0046c191
     PUSH ESI                            ; 0046c193
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c194
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c194
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c199
     FLD float ptr [ESP + 0x168]         ; 0046c1a0
     ADD ESP,0x8                         ; 0046c1a7
@@ -411,8 +411,8 @@ section .text
         ;   XREF to: 0046c428 (CONDITIONAL_JUMP)  ; LAB_0046c428
     PUSH 0x3                            ; 0046c1b9
     PUSH ESI                            ; 0046c1bb
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c1bc
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c1bc
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c1c1
     FLD float ptr [ESP + 0x168]         ; 0046c1c8
     ADD ESP,0x8                         ; 0046c1cf
@@ -423,8 +423,8 @@ section .text
         ;   XREF to: 0046c447 (CONDITIONAL_JUMP)  ; LAB_0046c447
     PUSH 0x5                            ; 0046c1e1
     PUSH ESI                            ; 0046c1e3
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c1e4
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c1e4
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c1e9
     FLD float ptr [ESP + 0x168]         ; 0046c1f0
     ADD ESP,0x8                         ; 0046c1f7
@@ -435,8 +435,8 @@ section .text
         ;   XREF to: 0046c466 (CONDITIONAL_JUMP)  ; LAB_0046c466
     PUSH 0x6                            ; 0046c209
     PUSH ESI                            ; 0046c20b
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c20c
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c20c
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c211
     FLD float ptr [ESP + 0x168]         ; 0046c218
     ADD ESP,0x8                         ; 0046c21f
@@ -447,8 +447,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0x7                            ; 0046c231
     PUSH ESI                            ; 0046c233
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c234
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c234
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c239
     FLD float ptr [ESP + 0x168]         ; 0046c240
     ADD ESP,0x8                         ; 0046c247
@@ -459,8 +459,8 @@ section .text
         ;   XREF to: 0046c466 (CONDITIONAL_JUMP)  ; LAB_0046c466
     PUSH 0x8                            ; 0046c259
     PUSH ESI                            ; 0046c25b
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c25c
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c25c
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c261
     FLD float ptr [ESP + 0x168]         ; 0046c268
     ADD ESP,0x8                         ; 0046c26f
@@ -471,8 +471,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0x9                            ; 0046c281
     PUSH ESI                            ; 0046c283
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c284
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c284
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c289
     FLD float ptr [ESP + 0x168]         ; 0046c290
     ADD ESP,0x8                         ; 0046c297
@@ -483,8 +483,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0xa                            ; 0046c2a9
     PUSH ESI                            ; 0046c2ab
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c2ac
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c2ac
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c2b1
     FLD float ptr [ESP + 0x168]         ; 0046c2b8
     ADD ESP,0x8                         ; 0046c2bf
@@ -495,8 +495,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0xb                            ; 0046c2d1
     PUSH ESI                            ; 0046c2d3
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c2d4
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c2d4
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c2d9
     FLD float ptr [ESP + 0x168]         ; 0046c2e0
     ADD ESP,0x8                         ; 0046c2e7
@@ -507,8 +507,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0xc                            ; 0046c2f9
     PUSH ESI                            ; 0046c2fb
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c2fc
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c2fc
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c301
     FLD float ptr [ESP + 0x168]         ; 0046c308
     ADD ESP,0x8                         ; 0046c30f
@@ -519,8 +519,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0xd                            ; 0046c31d
     PUSH ESI                            ; 0046c31f
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c320
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c320
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c325
     FLD float ptr [ESP + 0x168]         ; 0046c32c
     ADD ESP,0x8                         ; 0046c333
@@ -531,8 +531,8 @@ section .text
         ;   XREF to: 0046c466 (CONDITIONAL_JUMP)  ; LAB_0046c466
     PUSH 0xe                            ; 0046c345
     PUSH ESI                            ; 0046c347
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c348
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c348
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c34d
     FLD float ptr [ESP + 0x168]         ; 0046c354
     ADD ESP,0x8                         ; 0046c35b
@@ -543,8 +543,8 @@ section .text
         ;   XREF to: 0046c391 (CONDITIONAL_JUMP)  ; LAB_0046c391
     PUSH 0xf                            ; 0046c369
     PUSH ESI                            ; 0046c36b
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c36c
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c36c
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c371
     FLD float ptr [ESP + 0x168]         ; 0046c378
     ADD ESP,0x8                         ; 0046c37f
@@ -577,8 +577,8 @@ section .text
     PUSH EAX                            ; 0046c3dd
     PUSH EBX                            ; 0046c3de
     LEA ESI,[ESP + 0xb4]                ; 0046c3df
-    CALL core_actor.cpp_FUN_00408b40    ; 0046c3e6
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0046c3e6
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046c3eb
     LEA EAX,[ESP + 0xf4]                ; 0046c3ee
     LEA EDI,[ESP + 0xf4]                ; 0046c3f5
@@ -629,8 +629,8 @@ section .text
     PUSH 0x10                           ; 0046c485
         ;   Label: LAB_0046c485
     PUSH ESI                            ; 0046c487
-    CALL core_motion.cpp_FUN_00524a40   ; 0046c488
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0046c488
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c48d
     FLD float ptr [ESP + 0x168]         ; 0046c494
     ADD ESP,0x8                         ; 0046c49b
@@ -737,8 +737,8 @@ section .text
     PUSH EBX                            ; 0046c60a
     LEA ESI,[ESP + 0x10c]               ; 0046c60b
     LEA EDI,[ESP + 0xdc]                ; 0046c612
-    CALL core_actor.cpp_FUN_00408b40    ; 0046c619
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0046c619
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046c61e
     LEA EAX,[ESP + 0x8]                 ; 0046c621
     LEA ESI,[ESP + 0x104]               ; 0046c625
@@ -763,8 +763,8 @@ section .text
     PUSH ESI                            ; 0046c66e
     LEA ESI,[ESP + 0xa0]                ; 0046c66f
     FSTP float ptr [ESP + 0x14]         ; 0046c676
-    CALL core_actor.cpp_FUN_00408bb0    ; 0046c67a
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0046c67a
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xa0]                ; 0046c67f
     ADD ESP,0x8                         ; 0046c686
     MOVSD ES:EDI,ESI                    ; 0046c689
@@ -805,7 +805,7 @@ section .text
     FLD double ptr [ESP]                ; 0046c6f8
     FMUL double ptr [0x005d9f34]        ; 0046c6fb | DAT_005d9f34
     CALL crt_math.c_round_FUN_005c03a0  ; 0046c701
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x160]       ; 0046c706
     MOV EAX,dword ptr [ESP + 0x160]     ; 0046c70d
     PUSH 0x0                            ; 0046c714
@@ -860,8 +860,8 @@ section .text
     PUSH EBX                            ; 0046c7b0
     LEA ESI,[ESP + 0x100]               ; 0046c7b1
     LEA EDI,[ESP + 0xd0]                ; 0046c7b8
-    CALL core_actor.cpp_FUN_00408bb0    ; 0046c7bf
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0046c7bf
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x100]               ; 0046c7c4
     ADD ESP,0x8                         ; 0046c7cb
     MOVSD ES:EDI,ESI                    ; 0046c7ce

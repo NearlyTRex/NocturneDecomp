@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_dpart.cpp_FUN_0047ab00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
 ;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5db4c4                       ; 004847c5
     MOV dword ptr [0x01d1d400],ECX      ; 004847ca | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004847d0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004847d5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004847d5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004847da
     MOV EAX,dword ptr [ESP + 0x6c]      ; 004847dd
         ;   Label: LAB_004847dd

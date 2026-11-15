@@ -29,7 +29,7 @@
 ;   undefined4 DAT_02648e80
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
 ;   sound_sndmain.cpp_unlockSound_FUN_00551440
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5e8d8c                       ; 0055111a | = "setSfxChannelVol - invalid channel in..."
     MOV dword ptr [0x01d046a0],EDX      ; 0055111f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00551125 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0055112b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055112b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00551130
     MOV EDX,dword ptr [ESP + 0x10]      ; 00551133
         ;   Label: LAB_00551133

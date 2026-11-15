@@ -1,8 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_clipper_c_clipPolygonLeftPlane_FUN_00439720(void)
+; int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00439720(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   input_vertices
+; SRenderVertex * * Stack[0x8]:4   output_vertices
+; int              Stack[0xc]:4   vertex_count
+;
+; Referenced Globals:
+;   undefined4 DAT_007e4d50
+;   undefined4 DAT_01d71de0
+;   undefined4 DAT_01d71de4
+;
+; Called Functions:
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
+;   engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0
 ;
 ; *****************************************************************************
 
@@ -47,8 +60,11 @@ section .text
         ;   Label: LAB_00439769
     JA 0x0043977a                       ; 0043976c
         ;   XREF to: 0043977a (CONDITIONAL_JUMP)  ; caseD_3
-    JMP dword ptr [EAX*0x4 + 0x439708]  ; 0043976e
+    JMP dword ptr [EAX*0x4 + 0x439708]  ; 0043976e | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    INC EBX                             ; 00439775
+        ;   Label: caseD_0
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],ESI ; 00439776
     MOV EAX,dword ptr [ESP + 0x4]       ; 0043977a
         ;   Label: caseD_3
     MOV EDX,dword ptr [ESP]             ; 0043977e
@@ -69,4 +85,63 @@ section .text
     POP ESI                             ; 0043979d
     POP EBX                             ; 0043979e
     RET                                 ; 0043979f
+    CMP dword ptr [0x007e4d50],0xc      ; 004397a0 | DAT_007e4d50
+        ;   Label: caseD_1
+    JL 0x004397cb                       ; 004397a7
+        ;   XREF to: 004397cb (CONDITIONAL_JUMP)  ; LAB_004397cb
+    MOV ECX,0x5b8f4a                    ; 004397a9
+    MOV EAX,0x5e                        ; 004397ae
+    PUSH 0x5b8f5e                       ; 004397b3
+    MOV dword ptr [0x01d71de0],ECX      ; 004397b8 | DAT_01d71de0
+    MOV [0x01d71de4],EAX                ; 004397be | DAT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004397c3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
+    ADD ESP,0x4                         ; 004397c8
+    MOV EAX,[0x007e4d50]                ; 004397cb | DAT_007e4d50
+        ;   Label: LAB_004397cb
+    IMUL EDX,EAX,0x30                   ; 004397d0
+    ADD EDX,0x7e4b10                    ; 004397d3
+    PUSH EDX                            ; 004397d9
+    PUSH ESI                            ; 004397da
+    INC EBX                             ; 004397db
+    INC EAX                             ; 004397dc
+    PUSH EDI                            ; 004397dd
+    MOV [0x007e4d50],EAX                ; 004397de | DAT_007e4d50
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004397e3
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0 ; 004397e7
+        ;   XREF to: 004391c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    ADD ESP,0xc                         ; 004397ec
+    JMP 0x0043977a                      ; 004397ef
+        ;   XREF to: 0043977a (UNCONDITIONAL_JUMP)  ; caseD_3
+    INC EBX                             ; 004397f1
+        ;   Label: caseD_2
+    MOV EAX,[0x007e4d50]                ; 004397f2 | DAT_007e4d50
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],ESI ; 004397f7
+    CMP EAX,0xc                         ; 004397fb
+    JL 0x00439823                       ; 004397fe
+        ;   XREF to: 00439823 (CONDITIONAL_JUMP)  ; LAB_00439823
+    MOV EDX,0x5b8f4a                    ; 00439800
+    MOV ECX,0x5e                        ; 00439805
+    PUSH 0x5b8f5e                       ; 0043980a
+    MOV dword ptr [0x01d71de0],EDX      ; 0043980f | DAT_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00439815 | DAT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043981b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
+    ADD ESP,0x4                         ; 00439820
+    MOV EAX,[0x007e4d50]                ; 00439823 | DAT_007e4d50
+        ;   Label: LAB_00439823
+    IMUL EDX,EAX,0x30                   ; 00439828
+    ADD EDX,0x7e4b10                    ; 0043982b
+    PUSH EDX                            ; 00439831
+    PUSH EDI                            ; 00439832
+    INC EBX                             ; 00439833
+    INC EAX                             ; 00439834
+    PUSH ESI                            ; 00439835
+    MOV [0x007e4d50],EAX                ; 00439836 | DAT_007e4d50
+    MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043983b
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0 ; 0043983f
+        ;   XREF to: 004391c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    ADD ESP,0xc                         ; 00439844
+    JMP 0x0043977a                      ; 00439847
+        ;   XREF to: 0043977a (UNCONDITIONAL_JUMP)  ; caseD_3
 

@@ -36,7 +36,7 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004c45e0(CBitFont *this_p
 LAB_004c478b:
             _DAT_01d1d400 = "..\\engine\\font.cpp";
             _DAT_01d1d404 = 0x8e4;
-            core_main_c_FUN_005030e0("CBitFont::remapPalette - Invalid bitsPerPixel");
+            core_main_c_displayErrorAndQuit_FUN_005030e0("CBitFont::remapPalette - Invalid bitsPerPixel");
           }
         }
         else if (DAT_0061b4a0 < 0x11) {

@@ -8,7 +8,7 @@
 ;
 ; XREF[11]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfc13
-;   core_game.cpp_FUN_004d7250 at 004d75b7
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d75b7
 ;   core_game.cpp_staticInit_FUN_004cb7d0 at 004cb813
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e5cf
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c890

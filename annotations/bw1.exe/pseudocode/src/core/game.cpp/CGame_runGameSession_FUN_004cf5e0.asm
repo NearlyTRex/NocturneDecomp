@@ -268,8 +268,8 @@ section .text
     PUSH ESI                            ; 004cf919
     MOV EDI,dword ptr [0x00622c18]      ; 004cf91a | g_CDemonSetPtr
     PUSH EDI                            ; 004cf920 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00559f80   ; 004cf921
-        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00559f80()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 ; 004cf921
+        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004cf926
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cf929
         ;   Label: LAB_004cf929
@@ -461,8 +461,8 @@ section .text
     PUSH ECX                            ; 004cfb2e
     MOV EBX,dword ptr [0x00622c18]      ; 004cfb2f | g_CDemonSetPtr
     PUSH EBX                            ; 004cfb35 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00559f80   ; 004cfb36
-        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00559f80()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 ; 004cfb36
+        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004cfb3b
     TEST EAX,EAX                        ; 004cfb3e
     JZ 0x004cfb4e                       ; 004cfb40

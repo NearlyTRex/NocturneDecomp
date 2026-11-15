@@ -18,9 +18,9 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_mine.cpp_FUN_005ad940
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -152,8 +152,8 @@ section .text
     PUSH EAX                            ; 005ad6a7
     MOV dword ptr [EBP + -0x16],ECX     ; 005ad6a8
     MOV dword ptr [EBP + -0x12],EDI     ; 005ad6ab
-    CALL core_xform.cpp_FUN_00591530    ; 005ad6ae
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005ad6ae
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 005ad6b3
     LEA EDI,[EBP + 0x22]                ; 005ad6b6
     XOR EAX,EAX                         ; 005ad6b9

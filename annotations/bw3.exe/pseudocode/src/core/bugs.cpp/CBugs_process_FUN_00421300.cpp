@@ -78,7 +78,8 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
     this_ptr_00 = 0x01D81080;
     if (this_ptr->count < 1) {
       this_ptr->count = 0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_00,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_00,(CDemonActor *)this_ptr,1);
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->loop_sfx_handle);
       if (iVar2 != 0) {
         sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->loop_sfx_handle);

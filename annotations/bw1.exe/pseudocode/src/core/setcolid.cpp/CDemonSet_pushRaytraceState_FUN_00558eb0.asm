@@ -20,7 +20,7 @@
 ;   undefined4 DAT_020af5c8
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     PUSH 0x5f0ee2                       ; 00559030 | = "CDemonSet::pushRaytraceState - stack ..."
     MOV dword ptr [0x01d1d400],ECX      ; 00559035 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0055903b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00559041
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00559041
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00559046
     JMP 0x00558ec5                      ; 00559049
         ;   XREF to: 00558ec5 (UNCONDITIONAL_JUMP)  ; LAB_00558ec5

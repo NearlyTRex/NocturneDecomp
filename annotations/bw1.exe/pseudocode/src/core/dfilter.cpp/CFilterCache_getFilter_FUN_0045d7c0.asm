@@ -26,7 +26,7 @@
 ;   core_dfilter.cpp_CDemonFilter_ctor_FUN_0045d950
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0045da30
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;   crt_string.c__strcmp_FUN_005c0f80
 ;
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5d83f4                       ; 0045d863 | = "CFilterCache::getFilter - Out of memory"
     MOV dword ptr [0x01d1d400],ESI      ; 0045d868 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0045d86e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0045d874
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045d874
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0045d879
     LEA ESI,[EBX*0x4 + 0x0]             ; 0045d87c
         ;   Label: LAB_0045d87c
@@ -158,8 +158,8 @@ section .text
     PUSH 0x5d83b5                       ; 0045d8dc | = "CFilterCache::getFilter - Too many fi..."
     MOV dword ptr [0x01d1d400],EDI      ; 0045d8e1 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0045d8e7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0045d8ec
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045d8ec
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0045d8f1
     JMP 0x0045d7ff                      ; 0045d8f4
         ;   XREF to: 0045d7ff (UNCONDITIONAL_JUMP)  ; LAB_0045d7ff

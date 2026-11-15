@@ -11,16 +11,14 @@
 void __cdecl wincore_winrun_cpp_sleep_FUN_00581a40(double seconds)
 
 {
-  float10 fVar1;
-  double dVar2;
+  double dVar1;
   
   if (seconds <= 0.0) {
     Sleep(0);
     return;
   }
-  dVar2 = ceil(seconds * _DAT_005d7e9b);
-  fVar1 = (float10)dVar2;
-  round();
-  Sleep((DWORD)(longlong)ROUND(fVar1));
+  dVar1 = ceil(seconds * _DAT_005d7e9b);
+  dVar1 = round(dVar1);
+  Sleep((DWORD)(longlong)ROUND(dVar1));
   return;
 }

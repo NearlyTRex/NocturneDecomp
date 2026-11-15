@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5db164                       ; 0047f6ad | = "Invalid bitsPerPixel!"
     MOV dword ptr [0x01d1d400],ECX      ; 0047f6b2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0047f6b8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0047f6be
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047f6be
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047f6c3
     ADD ESP,0x8                         ; 0047f6c6
     POP EBP                             ; 0047f6c9
@@ -229,8 +229,8 @@ section .text
     PUSH 0x5db192                       ; 0047f771 | = "Invalid bitsPerPixel!"
     MOV [0x01d1d400],EAX                ; 0047f776 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0047f77b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0047f781
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047f781
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047f786
     ADD ESP,0x8                         ; 0047f789
     POP EBP                             ; 0047f78c

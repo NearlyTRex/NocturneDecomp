@@ -15,7 +15,7 @@
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   core_door.cpp_CDoor_reposition_FUN_00477540
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
@@ -364,8 +364,8 @@ section .text
     PUSH ECX                            ; 00477efc
     LEA ESI,[ESP + 0x78]                ; 00477efd
     LEA EDI,[ESP + 0x90]                ; 00477f01
-    CALL core_dirmat.cpp_FUN_0045f700   ; 00477f08
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 00477f08
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x78]                ; 00477f0d
     ADD ESP,0x8                         ; 00477f11
     LEA EAX,[ESP + 0x58]                ; 00477f14

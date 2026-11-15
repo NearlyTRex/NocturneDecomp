@@ -26233,24 +26233,6 @@
     "instructions":48,
     "method":"poll",
     "name":"sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10",
-    "params":[
-      {
-        "name":"output_buffer",
-        "type":{
-          "kind":"builtin",
-          "name":"short",
-          "ptr":1
-        }
-      },
-      {
-        "name":"num_samples",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      }
-    ],
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -26438,11 +26420,11 @@
     "cls":"CSound",
     "conv":"__cdecl",
     "instructions":12,
-    "method":"set3DListenerOrientRight",
-    "name":"core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90",
+    "method":"setReverb",
+    "name":"core_sound.cpp_CSound_setReverb_FUN_005b3c90",
     "params":[
       {
-        "name":"listener_orient_x",
+        "name":"volume",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -26450,7 +26432,7 @@
         }
       },
       {
-        "name":"listener_orient_y",
+        "name":"decay_time",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -26458,7 +26440,7 @@
         }
       },
       {
-        "name":"listener_orient_z",
+        "name":"damping",
         "type":{
           "kind":"builtin",
           "name":"float",

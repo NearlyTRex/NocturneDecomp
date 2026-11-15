@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240
 ;
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5ed569                       ; 0057d221 | = "Out of memory"
     MOV dword ptr [0x01d046a0],ECX      ; 0057d226 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0057d22c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0057d232
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057d232
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057d237
     POP ESI                             ; 0057d23a
     JMP 0x0057d1fb                      ; 0057d23b

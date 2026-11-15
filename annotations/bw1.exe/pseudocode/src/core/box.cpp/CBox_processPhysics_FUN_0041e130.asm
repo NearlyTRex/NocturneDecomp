@@ -415,9 +415,9 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
-;   core_dirmat.cpp_FUN_0045f700
-;   core_dirmat.cpp_FUN_0045f840
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   core_dtrace.cpp_FUN_0048b150
 ;
 ; *****************************************************************************
@@ -528,8 +528,8 @@ section .text
     LEA EDI,[ESP + 0x2a0]               ; 0041e293
     PUSH EAX                            ; 0041e29a
     FSTP float ptr [ESP + 0x11c]        ; 0041e29b
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041e2a2
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041e2a2
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     FLD1                                ; 0041e2a7
     LEA ESI,[ESP + 0x424]               ; 0041e2a9
     ADD ESP,0x8                         ; 0041e2b0
@@ -607,8 +607,8 @@ section .text
     PUSH EAX                            ; 0041e3bd
     LEA EDI,[ESP + 0x49c]               ; 0041e3be
     MOV dword ptr [ESP + 0x694],EAX     ; 0041e3c5
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0041e3cc
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0041e3cc
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x5d4]               ; 0041e3d1
     ADD ESP,0x8                         ; 0041e3d8
     MOVSD ES:EDI,ESI                    ; 0041e3db
@@ -647,8 +647,8 @@ section .text
     FADD float ptr [ESP + 0x1e0]        ; 0041e456
     LEA EDI,[ESP + 0x1f0]               ; 0041e45d
     FSTP float ptr [EAX + 0x8]          ; 0041e464
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041e467
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041e467
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x37c]               ; 0041e46c
     LEA EAX,[ESP + 0x1f0]               ; 0041e473
     ADD ESP,0x8                         ; 0041e47a
@@ -858,8 +858,8 @@ section .text
     PUSH EAX                            ; 0041e72a
     LEA ESI,[ESP + 0x4bc]               ; 0041e72b
     LEA EDI,[ESP + 0x384]               ; 0041e732
-    CALL core_dirmat.cpp_FUN_0045f840   ; 0041e739
-        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f840()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840 ; 0041e739
+        ;   XREF to: 0045f840 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4bc]               ; 0041e73e
     LEA EAX,[ESP + 0x384]               ; 0041e745
     ADD ESP,0x4                         ; 0041e74c
@@ -897,8 +897,8 @@ section .text
     PUSH ESI                            ; 0041e7c8
     LEA ESI,[ESP + 0x25c]               ; 0041e7c9
     LEA EDI,[ESP + 0x4f0]               ; 0041e7d0
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0041e7d7
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0041e7d7
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x25c]               ; 0041e7dc
     ADD ESP,0x8                         ; 0041e7e3
     MOVSD ES:EDI,ESI                    ; 0041e7e6
@@ -1095,8 +1095,8 @@ section .text
     FSUB float ptr [ESP + 0x614]        ; 0041eb3c
     PUSH EAX                            ; 0041eb43
     FSTP float ptr [EBX + 0x8]          ; 0041eb44
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041eb47
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041eb47
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x4cc]               ; 0041eb4c
     ADD ESP,0x8                         ; 0041eb53
     MOVSD ES:EDI,ESI                    ; 0041eb56
@@ -1324,8 +1324,8 @@ section .text
     PUSH EAX                            ; 0041ef19
     LEA EDI,[ESP + 0x3ac]               ; 0041ef1a
     FSTP float ptr [ESP + 0x368]        ; 0041ef21
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041ef28
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041ef28
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x448]               ; 0041ef2d
     LEA EAX,[ESP + 0x3ac]               ; 0041ef34
     ADD ESP,0x8                         ; 0041ef3b
@@ -1534,8 +1534,8 @@ section .text
     PUSH ESI                            ; 0041f289
     LEA ESI,[ESP + 0x94]                ; 0041f28a
     FSTP float ptr [EBX + 0x8]          ; 0041f291
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041f294
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041f294
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x94]                ; 0041f299
     LEA EAX,[ESP + 0x400]               ; 0041f2a0
     ADD ESP,0x8                         ; 0041f2a7
@@ -1844,8 +1844,8 @@ section .text
     LEA ESI,[ESP + 0x34c]               ; 0041f7c4
     LEA EDI,[ESP + 0x550]               ; 0041f7cb
     FSTP float ptr [ESP + 0x530]        ; 0041f7d2
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041f7d9
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041f7d9
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x34c]               ; 0041f7de
     LEA EAX,[ESP + 0x550]               ; 0041f7e5
     ADD ESP,0x8                         ; 0041f7ec
@@ -2088,8 +2088,8 @@ section .text
     LEA ESI,[ESP + 0x510]               ; 0041fc19
     PUSH EAX                            ; 0041fc20
     FSTP float ptr [EBX + 0x8]          ; 0041fc21
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041fc24
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041fc24
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x514]               ; 0041fc29
     ADD ESP,0x8                         ; 0041fc30
     MOVSD ES:EDI,ESI                    ; 0041fc33
@@ -2411,8 +2411,8 @@ section .text
     PUSH ESI                            ; 004200cf
     LEA ESI,[ESP + 0x328]               ; 004200d0
     FSTP float ptr [EBX + 0x8]          ; 004200d7
-    CALL core_dirmat.cpp_FUN_0045f700   ; 004200da
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 004200da
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x328]               ; 004200df
     LEA EAX,[ESP + 0xa0]                ; 004200e6
     ADD ESP,0x8                         ; 004200ed

@@ -24,7 +24,7 @@ CFlies * core_gore_cpp_FUN_004e63e0(uint param_1,float *param_2,int param_3,floa
   if (this_ptr_00 == (CFlies *)0x0) {
     _DAT_01d1d400 = "..\\core\\gore.cpp";
     _DAT_01d1d404 = 0x67d;
-    core_main_c_FUN_005030e0("Can't create flies!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create flies!");
   }
   fVar2 = (float)_DAT_005e4155;
   (this_ptr_00->base).location.position.x = *param_2;

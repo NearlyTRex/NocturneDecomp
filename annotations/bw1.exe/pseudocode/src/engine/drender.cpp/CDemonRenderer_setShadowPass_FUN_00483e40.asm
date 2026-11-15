@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00462cd0 at 00462d12
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0 at 00462b43
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e1db0 at 004e1e2d
-;   core_setdir.cpp_FUN_00559f80 at 0055a02f
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055a02f
 ;   core_setdir.cpp_FUN_0055b330 at 0055b353
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 at 00481f06
 ;

@@ -40,7 +40,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_00523980(CMotionList *this_ptr
   _fscanf(file_handle,&DAT_005ea93b);
   _DAT_01d1d400 = "..\\core\\motion.cpp";
   _DAT_01d1d404 = 0x81;
-  core_main_c_FUN_005030e0("Error reading motion list.");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading motion list.");
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
@@ -97,7 +97,7 @@ LAB_00523a83:
         if (pSVar2 == (SMotionTransition *)0x0) {
           _DAT_01d1d400 = "..\\core\\motion.cpp";
           _DAT_01d1d404 = 0xc0;
-          core_main_c_FUN_005030e0("Out of memory");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
         }
         local_14 = 0;
         if (0 < local_20->transition_count) {

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
@@ -47,18 +46,10 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
   float local_150;
   float local_14c;
   float local_148;
-  float local_144;
+  CVector3f local_144;
   float local_138;
-  float local_134;
-  float local_130;
-  float local_12c;
-  float local_128;
-  float local_124;
-  float local_120;
-  float local_11c;
-  float local_118;
-  float local_114;
-  float local_110;
+  float local_134 [6];
+  float local_11c [4];
   float local_10c;
   float local_108;
   float local_104;
@@ -72,12 +63,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
   float local_e4;
   float local_e0;
   float local_dc;
-  float local_d8;
+  CVector3f local_d8;
   float local_cc;
-  float local_c8;
-  float local_c4;
-  float local_c0;
-  float local_bc;
+  float local_c8 [4];
   float local_b8;
   float local_b4;
   float local_b0;
@@ -104,11 +92,11 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
   float local_5c;
   int local_58;
   int local_54;
-  float *local_50;
+  CVector3f *local_50;
   uchar *local_4c;
   int local_48;
   CCloth *local_44;
-  float *local_40;
+  CVector3f *local_40;
   int local_3c;
   int local_38;
   char *local_34;
@@ -224,14 +212,13 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
         local_ec = pCVar11->y + local_9c->y;
         local_e8 = pCVar11->z + local_9c->z;
         local_cc = local_f0;
-        (&stack0xffffff38)[(uint)bVar24 * 0xfffffffe] =
-             (float)*(uint *)((int)&stack0xffffff14 + (uint)bVar24 * -8);
-        *(uint *)((int)&stack0xffffff3c + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-             *(uint *)((int)&stack0xffffff18 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
-        if (pSVar17 != (SClothVertex *)&stack0xffffff34) {
+        local_c8[(uint)bVar24 * -2] = local_11c[(uint)bVar24 * -2 + 0xc];
+        local_c8[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 1] =
+             local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 0xd];
+        if (pSVar17 != (SClothVertex *)&local_cc) {
           (pSVar17->position).x = local_cc;
-          (pSVar17->position).y = local_c8;
-          (pSVar17->position).z = local_c4;
+          (pSVar17->position).y = local_c8[0];
+          (pSVar17->position).z = local_c8[1];
         }
         pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);
         piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + local_54);
@@ -257,43 +244,41 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
         if (0 < local_a0->vertex_count[0]) {
           local_48 = 0;
           do {
-            local_12c = 0.0;
-            local_128 = 0.0;
+            local_134[2] = 0.0;
+            local_134[3] = 0.0;
             puVar18 = local_a0->vertex_data_ptr[0]->bone_indices + local_48 + -1;
-            local_124 = 0.0;
+            local_134[4] = 0.0;
             local_8c = puVar18;
-            local_50 = (float *)(puVar18 + 0x10);
+            local_50 = (CVector3f *)(puVar18 + 0x10);
             local_4c = puVar18;
             for (iVar8 = 0; puVar18 = puVar18 + 4, iVar8 < (int)(uint)*local_8c; iVar8 = iVar8 + 1)
             {
-              core_xform_cpp_FUN_005b5080(local_50,local_88 + local_4c[1]);
-              local_c0 = local_144;
-              *(uint *)((int)&stack0xffffff44 + (uint)bVar24 * -8) =
-                   *(uint *)(&stack0xfffffec0 + (uint)bVar24 * -8);
-              *(uint *)((int)&stack0xffffff48 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                   *(uint *)(&stack0xfffffec4 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
-              local_168 = local_c0 * *(float *)puVar18;
-              local_164 = local_bc * *(float *)puVar18;
+              core_xform_cpp_transformVector3x4_FUN_005b5080
+                        (local_50,local_88 + local_4c[1],&local_144);
+              local_c8[2] = local_144.x;
+              local_c8[(uint)bVar24 * -2 + 3] = *(float *)((int)&local_144 + (uint)bVar24 * -8 + 4);
+              local_c8[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 4] =
+                   *(float *)((int)&local_144 + (uint)bVar24 * -8 + (uint)bVar24 * -8 + 8);
+              local_168 = local_c8[2] * *(float *)puVar18;
+              local_164 = local_c8[3] * *(float *)puVar18;
               local_160 = local_b8 * *(float *)puVar18;
-              local_120 = local_c0 * *(float *)puVar18;
-              *(uint *)((int)&stack0xfffffee4 + (uint)bVar24 * -8) =
-                   *(uint *)((int)&stack0xfffffe9c + (uint)bVar24 * -8);
-              *(uint *)((int)&stack0xfffffee8 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                   *(uint *)((int)&stack0xfffffea0 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
-              local_12c = local_12c + local_120;
-              local_128 = local_128 + local_11c;
-              local_124 = local_124 + local_118;
-              local_50 = local_50 + 3;
+              local_134[5] = local_c8[2] * *(float *)puVar18;
+              local_11c[(uint)bVar24 * -2] = *(float *)((int)&stack0xfffffe9c + (uint)bVar24 * -8);
+              local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 1] =
+                   *(float *)((int)&stack0xfffffea0 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+              local_134[2] = local_134[2] + local_134[5];
+              local_134[3] = local_134[3] + local_11c[0];
+              local_134[4] = local_134[4] + local_11c[1];
+              local_50 = local_50 + 1;
               local_4c = local_4c + 1;
             }
-            local_b4 = (local_98->position).x - local_12c;
-            local_b0 = (local_98->position).y - local_128;
-            local_ac = (local_98->position).z - local_124;
+            local_b4 = (local_98->position).x - local_134[2];
+            local_b0 = (local_98->position).y - local_134[3];
+            local_ac = (local_98->position).z - local_134[4];
             local_fc = local_b4;
-            *(uint *)((int)&stack0xffffff08 + (uint)bVar24 * -8) =
-                 *(uint *)((int)&stack0xffffff50 + (uint)bVar24 * -8);
-            *(uint *)((int)&stack0xffffff0c + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                 *(uint *)((int)&stack0xffffff54 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+            local_11c[(uint)bVar24 * -2 + 9] = local_c8[(uint)bVar24 * -2 + 6];
+            local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 10] =
+                 local_c8[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 7];
             local_7c = local_f4 * local_f4 + local_fc * local_fc + local_f8 * local_f8;
             if (local_7c < local_94) {
               local_94 = local_7c;
@@ -361,39 +346,38 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043eea0(CCloth *this_ptr,CVector3f
             local_158 = 0.0;
             local_68 = pfVar19;
             local_154 = 0.0;
-            local_40 = pfVar19 + 4;
+            local_40 = (CVector3f *)(pfVar19 + 4);
             pfVar22 = pfVar19;
             for (local_14 = 0; pfVar22 = pfVar22 + 1, local_14 < (int)(uint)*(byte *)local_68;
                 local_14 = local_14 + 1) {
-              core_xform_cpp_FUN_005b5080(local_40,local_64 + *(byte *)((int)pfVar19 + 1));
-              local_114 = local_d8;
-              *(uint *)((int)&stack0xfffffef0 + (uint)bVar24 * -8) =
-                   *(uint *)(&stack0xffffff2c + (uint)bVar24 * -8);
-              *(uint *)((int)&stack0xfffffef4 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                   *(uint *)(&stack0xffffff30 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
-              local_e4 = local_114 * *pfVar22;
-              local_e0 = local_110 * *pfVar22;
+              core_xform_cpp_transformVector3x4_FUN_005b5080
+                        (local_40,local_64 + *(byte *)((int)pfVar19 + 1),&local_d8);
+              local_11c[2] = local_d8.x;
+              local_11c[(uint)bVar24 * -2 + 3] = *(float *)((int)&local_d8 + (uint)bVar24 * -8 + 4);
+              local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 4] =
+                   *(float *)((int)&local_d8 + (uint)bVar24 * -8 + (uint)bVar24 * -8 + 8);
+              local_e4 = local_11c[2] * *pfVar22;
+              local_e0 = local_11c[3] * *pfVar22;
               pfVar19 = (float *)((int)pfVar19 + 1);
               local_dc = local_10c * *pfVar22;
-              local_108 = local_114 * *pfVar22;
-              *(uint *)((int)&stack0xfffffefc + (uint)bVar24 * -8) =
-                   *(uint *)((int)&stack0xffffff20 + (uint)bVar24 * -8);
-              *(uint *)((int)&stack0xffffff00 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                   *(uint *)((int)&stack0xffffff24 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+              local_108 = local_11c[2] * *pfVar22;
+              local_11c[(uint)bVar24 * -2 + 6] = local_11c[(uint)bVar24 * -2 + 0xf];
+              local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 7] =
+                   local_11c[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 0x10];
               local_15c = local_15c + local_108;
               local_158 = local_158 + local_104;
               local_154 = local_154 + local_100;
-              local_40 = local_40 + 3;
+              local_40 = local_40 + 1;
             }
             local_150 = (local_78->position).x - local_15c;
             local_14c = (local_78->position).y - local_158;
             local_148 = (local_78->position).z - local_154;
             local_138 = local_150;
-            *(uint *)((int)&stack0xfffffecc + (uint)bVar24 * -8) =
-                 *(uint *)((int)&stack0xfffffeb4 + (uint)bVar24 * -8);
-            *(uint *)((int)&stack0xfffffed0 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
-                 *(uint *)((int)&stack0xfffffeb8 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
-            local_5c = local_130 * local_130 + local_138 * local_138 + local_134 * local_134;
+            local_134[(uint)bVar24 * -2] = *(float *)((int)&stack0xfffffeb4 + (uint)bVar24 * -8);
+            local_134[(uint)bVar24 * -2 + (uint)bVar24 * -2 + 1] =
+                 *(float *)((int)&stack0xfffffeb8 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+            local_5c = local_134[1] * local_134[1] +
+                       local_138 * local_138 + local_134[0] * local_134[0];
             if (local_5c < local_6c) {
               local_6c = local_5c;
               local_70 = local_1c;

@@ -12,8 +12,9 @@
 ; undefined4       Stack[-0x10c]:4  local_10c
 ; undefined        Stack[-0xc]:1  local_c
 ;
-; XREF[2]:
+; XREF[3]:
 ;   support_trisock.cpp_FUN_0056fef0 at 0057005b
+;   support_trisock.cpp_FUN_00571340 at 005714f7
 ;   support_trisock.cpp_FUN_00571d80 at 00571def
 ;
 ; Referenced Globals:

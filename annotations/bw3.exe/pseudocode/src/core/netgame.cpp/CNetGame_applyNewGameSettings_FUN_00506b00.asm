@@ -69,7 +69,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_00505950
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_005071a0
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00507660
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5cad25                       ; 00506b2d | = "CNetGame::applyNewGameSettings - shou..."
     MOV dword ptr [0x01d71de0],EBX      ; 00506b32 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00506b38 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00506b3e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00506b3e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00506b43
     MOV ECX,0x2c                        ; 00506b46
         ;   Label: LAB_00506b46
@@ -232,8 +232,8 @@ section .text
     PUSH 0x5cad85                       ; 00506ccb | = "Hell froze"
     MOV [0x01d71de0],EAX                ; 00506cd0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00506cd5 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00506cdb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00506cdb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00506ce0
     MOV ECX,dword ptr [ESP + 0x154]     ; 00506ce3
         ;   Label: LAB_00506ce3

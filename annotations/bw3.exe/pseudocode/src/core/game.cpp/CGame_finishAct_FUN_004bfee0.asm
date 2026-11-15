@@ -106,7 +106,7 @@ section .text
     FLD ST0                             ; 004bff77
     FMUL double ptr [0x005c3b60]        ; 004bff79 | DAT_005c3b60
     CALL crt_math.c_round_FUN_005a3120  ; 004bff7f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x52c]       ; 004bff84
     MOV EAX,dword ptr [ESP + 0x52c]     ; 004bff8b
     MOV dword ptr [ESP + 0x540],EAX     ; 004bff92
@@ -116,7 +116,7 @@ section .text
     FLD ST0                             ; 004bffa8
     FMUL double ptr [0x005c3b70]        ; 004bffaa | DAT_005c3b70
     CALL crt_math.c_round_FUN_005a3120  ; 004bffb0
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x528]       ; 004bffb5
     MOV EAX,dword ptr [ESP + 0x528]     ; 004bffbc
     MOV dword ptr [ESP + 0x540],EAX     ; 004bffc3
@@ -125,7 +125,7 @@ section .text
     FSUBP                               ; 004bffd7
     FST float ptr [EBP + 0x270]         ; 004bffd9
     CALL crt_math.c_round_FUN_005a3120  ; 004bffdf
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x534]       ; 004bffe4
     MOV EAX,dword ptr [ESP + 0x534]     ; 004bffeb
     MOV dword ptr [ESP + 0x540],EAX     ; 004bfff2
@@ -135,7 +135,7 @@ section .text
     FMUL double ptr [0x005c3b80]        ; 004c000c | DAT_005c3b80
     PUSH 0x5c3b1e                       ; 004c0012 | = "Mission time"
     CALL crt_math.c_round_FUN_005a3120  ; 004c0017
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x534]       ; 004c001c
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004c0023
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)

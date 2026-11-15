@@ -2,18 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 476,
-    "complexity_score": 296,
+    "complexity_score": 397,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 18,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 196,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 202,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 672
+    "total_lines": 678
   },
   "cross_references": [
     {
@@ -322,15 +325,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_0061b4c0",
       "severity": "mild",
-      "text": "if ((DAT_0061b4c0 != 0) && (iVar9 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {",
+      "text": "if ((DAT_0061b4c0 != 0) && (iVar10 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_00713a7c",
       "severity": "mild",
       "text": "if ((DAT_00713a7c != 0) &&",
@@ -338,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_00713a74",
       "severity": "mild",
       "text": "if ((_DAT_01c50948 != 0) && (DAT_00713a74 == 0)) {",
@@ -346,43 +349,107 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_02c9eb38",
       "severity": "mild",
-      "text": "*(int *)(&DAT_02c9eb38 + iVar8) = iVar2;",
+      "text": "*(byte **)(&DAT_02c9eb38 + iVar2) = puVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 88,
+      "match": "*(byte **)(iVar2 + 0x2c9eb3c",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar2 + 0x2c9eb3c) = puVar4;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 127,
+      "match": "DAT_02c9eb38",
+      "severity": "mild",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_02c9eb38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 141,
       "match": "DAT_02c9eb38",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_02c9eb38;",
+      "text": "local_18 = (SSoftwareEdge *)&DAT_02c9eb38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 158,
       "match": "DAT_02c9eb38",
       "severity": "mild",
-      "text": "local_18 = (int *)&DAT_02c9eb38;",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_02c9eb38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 176,
       "match": "DAT_02c9eb38",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_02c9eb38;",
+      "text": "local_18 = (SSoftwareEdge *)&DAT_02c9eb38;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_02c9eb38",
-      "severity": "mild",
-      "text": "local_18 = (int *)&DAT_02c9eb38;",
-      "type": "undefined_data"
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 89,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "if ((int)puVar9 < (int)puVar3) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 89,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "if ((int)puVar9 < (int)puVar3) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "if ((int)_DAT_02c9f03c < (int)puVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 156,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "if ((local_14->base).y_max <= (int)puVar9) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 174,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "if ((local_18->base).y_max <= (int)puVar9) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 192,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_00580127(local_18,local_14,(int)puVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 201,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar9 = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

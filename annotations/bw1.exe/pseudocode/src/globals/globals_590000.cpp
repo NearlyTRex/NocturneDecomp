@@ -6,8 +6,10 @@
 
 // undefined1*
 undefined1* switchdataD_0059311c = (undefined1*)0x005935B6; // caseD_0
+undefined1* switchdataD_0059b208 = (undefined1*)0x0059B277; // caseD_0
 undefined1* switchdataD_0059b230 = (undefined1*)0x0059B300; // caseD_0
 undefined1* switchdataD_0059bea8 = (undefined1*)0x0059BF05; // caseD_0
+undefined1* switchdataD_0059e308 = (undefined1*)0x0059E37A; // caseD_1
 undefined1* switchdataD_0059e318 = (undefined1*)0x0059E450; // caseD_fffffffb
 undefined1* switchdataD_0059f5cc = (undefined1*)0x0059F970; // caseD_30
 undefined1* switchdataD_0059f628 = (undefined1*)0x0059F8C3; // caseD_44

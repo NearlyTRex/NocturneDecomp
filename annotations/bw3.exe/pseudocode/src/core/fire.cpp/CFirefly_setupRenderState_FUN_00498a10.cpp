@@ -15,9 +15,9 @@ void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_00498a10(CFirefly *this
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   float afStackY_1000 [997];
   float local_60;
   float local_54;
@@ -63,15 +63,13 @@ void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_00498a10(CFirefly *this
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  fVar5 = (float10)_DAT_005c0540;
-  fVar6 = (float10)local_60 * fVar5;
-  fVar7 = (float10)local_54 * fVar5;
-  fVar5 = (float10)local_48 * fVar5;
-  round();
-  round();
-  round();
-  _DAT_01c73664 = (int)ROUND(fVar6);
-  _DAT_01c73668 = (int)ROUND(fVar7);
-  _DAT_01c7366c = (int)ROUND(fVar5);
+  dVar6 = (double)local_54 * _DAT_005c0540;
+  dVar7 = (double)local_48 * _DAT_005c0540;
+  dVar5 = round((double)local_60 * _DAT_005c0540);
+  dVar6 = round(dVar6);
+  dVar7 = round(dVar7);
+  _DAT_01c73664 = (int)ROUND(dVar5);
+  _DAT_01c73668 = (int)ROUND(dVar6);
+  _DAT_01c7366c = (int)ROUND(dVar7);
   return;
 }

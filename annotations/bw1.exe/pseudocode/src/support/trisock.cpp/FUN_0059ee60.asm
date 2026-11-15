@@ -4,6 +4,9 @@
 ; uint support_trisock_cpp_FUN_0059ee60(int param_1,undefined4 param_2)
 ;
 ;
+; XREF[1]:
+;   support_trisock.cpp_FUN_0059e350 at 0059e8a8
+;
 ; Called Functions:
 ;   support_trisock.cpp_FUN_0059ed90
 ;

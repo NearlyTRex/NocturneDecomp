@@ -2,25 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 308,
+    "complexity_score": 357,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 27,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 143,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 147,
+    "suspect_count": 18,
     "suspect_types": [
+      "bitcast_double_pair",
+      "raw_address_constant",
+      "sub84_truncation",
       "undefined_data",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 641
+    "total_lines": 645
   },
   "cross_references": [
     {
       "addr": "00473670",
       "from_addr": "004737b7",
-      "name": "core_dtrace.cpp_FUN_00473670",
+      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,7 +62,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3120",
@@ -356,7 +359,7 @@
       {
         "call_addr": "004737b7",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473670",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -645,31 +648,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 70,
       "match": "DAT_01c6af99",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c6af99)[iVar3] << 8 |",
+      "text": "((uint)(byte)(&DAT_01c6af99)[iVar2] << 8 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 71,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar3]);",
+      "text": "(uint)(byte)(&DAT_01c6af98)[iVar2] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar2]);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 71,
       "match": "DAT_01c6af9a",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar3]);",
+      "text": "(uint)(byte)(&DAT_01c6af98)[iVar2] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar2]);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 79,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af98)[iVar8] << 0x10 |",
@@ -677,7 +680,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 80,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8 | (uint)(byte)(&DAT_01c6af9a)[iVar8]);",
@@ -685,7 +688,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 80,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8 | (uint)(byte)(&DAT_01c6af9a)[iVar8]);",
@@ -693,7 +696,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 88,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af9a)[iVar8] |",
@@ -701,7 +704,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 89,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af98)[iVar8] << 0x10 |",
@@ -709,7 +712,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 90,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8);",
@@ -717,27 +720,51 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 119,
       "match": "DAT_01c6af9a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c6af9a)[iVar3] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 120,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 121,
       "match": "DAT_01c6af99",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c6af99)[iVar3] << 8);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 136,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar9),0),uVar11)) + _DAT_005bd195);",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 136,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar9),0),uVar11)) + _DAT_005bd195);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Raw hex address 0x47f23c assigned to bare local `uVar11`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar11` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 130,
+      "match": "0x47f23c",
+      "severity": "moderate",
+      "text": "uVar11 = 0x47f23c;",
+      "type": "raw_address_constant"
     }
   ]
 }

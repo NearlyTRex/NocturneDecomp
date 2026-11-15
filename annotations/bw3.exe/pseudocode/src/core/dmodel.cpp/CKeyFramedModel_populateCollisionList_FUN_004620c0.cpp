@@ -16,16 +16,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(
   int iVar2;
   byte bVar3;
   float afStackY_108c [1014];
-  float local_a4;
+  CVector3f local_a4;
   CVector3f local_98;
   CVector3f local_8c;
   CVector3f local_80;
-  float local_74;
-  float afStack_70 [2];
+  CVector3f local_74;
   CVector3f local_68;
   CVector3f local_5c;
-  float local_50;
-  float afStack_4c [2];
+  CVector3f local_50;
   CVector3f local_44;
   int local_38;
   CMatrix3x3f *local_34;
@@ -69,22 +67,23 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(
           local_8c.x = (float)pCVar1->x * _DAT_005de564;
           local_8c.y = (float)pCVar1->y * _DAT_005de564;
           local_8c.z = (float)pCVar1->z * _DAT_005de564;
-          core_dirmat_cpp_FUN_0045b800(local_34,&local_80);
-          local_44.x = local_50;
-          afStack_4c[(uint)bVar3 * -2 + 3] = afStack_4c[(uint)bVar3 * -2];
-          afStack_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-               afStack_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-          if (&local_80 != (CVector3f *)(afStack_4c + 2)) {
+          core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(local_34,&local_80,&local_50);
+          local_44.x = local_50.x;
+          *(uint *)((int)&local_44 + (uint)bVar3 * -8 + 4) =
+               *(uint *)((int)&local_50 + (uint)bVar3 * -8 + 4);
+          *(uint *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+               *(uint *)((int)&local_50 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+          if (&local_80 != &local_44) {
             local_80.x = local_44.x;
             local_80.y = local_44.y;
             local_80.z = local_44.z;
           }
-          core_dirmat_cpp_FUN_0045b800(local_30,&local_8c);
-          local_98.x = local_a4;
+          core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(local_30,&local_8c,&local_a4);
+          local_98.x = local_a4.x;
           *(uint *)((int)&local_98 + (uint)bVar3 * -8 + 4) =
-               *(uint *)(&stack0xffffff60 + (uint)bVar3 * -8);
+               *(uint *)((int)&local_a4 + (uint)bVar3 * -8 + 4);
           *(uint *)((int)&local_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-               *(uint *)(&stack0xffffff64 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+               *(uint *)((int)&local_a4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
           if (&local_8c != &local_98) {
             local_8c.x = local_98.x;
             local_8c.y = local_98.y;
@@ -98,11 +97,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(
               local_68.x = (float)pCVar1->x * _DAT_005de564;
               local_68.y = (float)pCVar1->y * _DAT_005de564;
               local_68.z = (float)pCVar1->z * _DAT_005de564;
-              core_dirmat_cpp_FUN_0045b800(local_24,&local_68);
-              local_5c.x = local_74;
-              *(float *)((int)&local_5c + (uint)bVar3 * -8 + 4) = afStack_70[(uint)bVar3 * -2];
-              *(float *)((int)&local_5c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-                   afStack_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+              core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(local_24,&local_68,&local_74)
+              ;
+              local_5c.x = local_74.x;
+              *(uint *)((int)&local_5c + (uint)bVar3 * -8 + 4) =
+                   *(uint *)((int)&local_74 + (uint)bVar3 * -8 + 4);
+              *(uint *)((int)&local_5c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+                   *(uint *)((int)&local_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
               if (&local_68 != &local_5c) {
                 local_68.x = local_5c.x;
                 local_68.y = local_5c.y;

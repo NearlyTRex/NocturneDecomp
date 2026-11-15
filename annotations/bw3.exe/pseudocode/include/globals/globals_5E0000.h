@@ -9,6 +9,8 @@
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 #include "types/classes/CZombiePriest_full_vtable.h"
 
@@ -93,6 +95,13 @@ extern CEnemy_full_vtable g_CStylerDemonVTable;
 
 // CHero_full_vtable
 extern CHero_full_vtable g_CPryeVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
 
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CFlashlightVTable;

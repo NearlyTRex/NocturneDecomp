@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5c94eb                       ; 004f9e66 | = "CMorphModel::animate - invalid part i..."
     MOV dword ptr [0x01d71de0],ESI      ; 004f9e6b | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004f9e71 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f9e76
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9e76
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9e7b
     MOV ECX,EBX                         ; 004f9e7e
         ;   Label: LAB_004f9e7e
@@ -73,8 +73,8 @@ section .text
     PUSH 0x5c9527                       ; 004f9ea5 | = "CMorphModel::animate - invalid vertex..."
     MOV [0x01d71de0],EAX                ; 004f9eaa | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004f9eaf | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f9eb5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f9eb5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f9eba
     XOR ECX,ECX                         ; 004f9ebd
         ;   Label: LAB_004f9ebd

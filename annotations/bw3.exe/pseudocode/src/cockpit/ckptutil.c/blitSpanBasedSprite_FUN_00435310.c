@@ -12,7 +12,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00435310(void *sprite_da
 
 {
   int iVar1;
-  code *pcVar2;
+  ColorConversionFunc *pCVar2;
   int *piVar3;
   int iVar4;
   int iVar5;
@@ -30,7 +30,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00435310(void *sprite_da
   iVar8 = iVar7 + 1;
   if (sprite_data != (void *)0x0) {
     sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
-    pcVar2 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
     iStack_30 = screen_y * 0x84;
     iVar5 = (src_y + screen_y) * 4;
     if (DAT_005fba20 == 8) {
@@ -48,7 +48,8 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00435310(void *sprite_da
               iVar5 = iVar5 + 4;
             }
             else {
-              (*pcVar2)(iVar4 + iStack_1c,(int)sprite_data + iVar4,(iVar6 - iVar4) + 1);
+              (*pCVar2)((void *)(iVar4 + iStack_1c),(void *)((int)sprite_data + iVar4),
+                        (iVar6 - iVar4) + 1);
               iVar9 = iVar9 + 1;
               iVar5 = iVar5 + 4;
             }
@@ -77,8 +78,8 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00435310(void *sprite_da
               iVar5 = iVar5 + 4;
             }
             else {
-              (*pcVar2)(iVar4 * 2 + iStack_18 + src_x * -2,(int)sprite_data + iVar4,
-                        (iVar6 - iVar4) + 1);
+              (*pCVar2)((void *)(iVar4 * 2 + iStack_18 + src_x * -2),
+                        (void *)((int)sprite_data + iVar4),(iVar6 - iVar4) + 1);
               iVar9 = iVar9 + 1;
               iVar5 = iVar5 + 4;
             }

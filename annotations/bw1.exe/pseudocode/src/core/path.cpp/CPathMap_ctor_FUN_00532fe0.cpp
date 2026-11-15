@@ -21,7 +21,7 @@ CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00532fe0(CPathMap *this_ptr)
   if (199 < _DAT_01e6be48) {
     _DAT_01d1d400 = "..\\core\\path.cpp";
     _DAT_01d1d404 = 0x123;
-    core_main_c_FUN_005030e0("Too many pathmaps!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many pathmaps!");
   }
   *(CPathMap **)(_DAT_01e6be48 * 4 + 0x1e6be4c) = this_ptr;
   _DAT_01e6be48 = _DAT_01e6be48 + 1;

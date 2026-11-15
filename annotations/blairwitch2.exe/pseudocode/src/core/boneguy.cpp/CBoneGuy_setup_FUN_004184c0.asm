@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
@@ -192,8 +192,8 @@ section .text
     PUSH 0x5cc132                       ; 00418682 | = "CBoneGuy::explode - Not enough contai..."
     MOV dword ptr [0x01d046a0],ECX      ; 00418687 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0041868d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00418693
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00418693
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00418698
     JMP 0x0041864b                      ; 0041869b
         ;   XREF to: 0041864b (UNCONDITIONAL_JUMP)  ; LAB_0041864b

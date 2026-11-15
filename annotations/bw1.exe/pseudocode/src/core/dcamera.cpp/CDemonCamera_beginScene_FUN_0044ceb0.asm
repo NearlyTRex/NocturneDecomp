@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044ce60
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
@@ -145,8 +145,8 @@ section .text
     PUSH 0x5d75d9                       ; 0044cfdc | = "CDemonCamera::beginScene - Scene alre..."
     MOV dword ptr [0x01d1d400],ECX      ; 0044cfe1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0044cfe7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0044cfed
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044cfed
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044cff2
     PUSH EDI                            ; 0044cff5
         ;   Label: LAB_0044cff5

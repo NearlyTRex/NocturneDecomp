@@ -1,10 +1,10 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 517,
+    "assembly_lines": 971,
     "complexity_score": 832,
     "cross_reference_count": 0,
-    "function_call_count": 0,
+    "function_call_count": 1,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 387,
@@ -14,7 +14,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 904
+    "total_lines": 1358
   },
   "cross_references": [],
   "function": {
@@ -22,31 +22,7 @@
     "address_range": [
       [
         "004570e0",
-        "00457344"
-      ],
-      [
-        "0045736c",
-        "004573e6"
-      ],
-      [
-        "0045740e",
-        "00457489"
-      ],
-      [
-        "004574b1",
-        "0045752c"
-      ],
-      [
-        "00457554",
-        "004575d2"
-      ],
-      [
-        "004575fa",
-        "00457678"
-      ],
-      [
-        "004576a0",
-        "004576c5"
+        "00457aeb"
       ]
     ],
     "convention": "unknown",
@@ -54,7 +30,13 @@
     "name": "core_dcube.cpp_FUN_004570e0",
     "signature": "undefined4 core_dcube_cpp_FUN_004570e0(void)"
   },
-  "function_calls": [],
+  "function_calls": [
+    {
+      "addr": "00455460",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_00455460"
+    }
+  ],
   "globals": [
     {
       "addr": "0152bd4c",
@@ -217,44 +199,58 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.477386934673367,
-    "instruction_count": 398,
+    "avg_pcode_per_instr": 5.608142493638677,
+    "instruction_count": 786,
     "opcode_distribution": {
       "BOOL_NEGATE": 24,
       "BOOL_OR": 40,
-      "BRANCH": 1,
+      "BRANCH": 13,
       "BRANCHIND": 6,
-      "CBRANCH": 58,
-      "COPY": 842,
-      "FLOAT2FLOAT": 60,
+      "CALL": 12,
+      "CBRANCH": 70,
+      "COPY": 1314,
+      "FLOAT2FLOAT": 84,
       "FLOAT_EQUAL": 18,
       "FLOAT_LESS": 18,
       "FLOAT_NAN": 36,
-      "INT_ADD": 115,
-      "INT_AND": 294,
-      "INT_CARRY": 13,
-      "INT_EQUAL": 195,
+      "FLOAT_NEG": 4,
+      "INT_ADD": 233,
+      "INT_AND": 462,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 363,
       "INT_LEFT": 72,
-      "INT_LESS": 33,
-      "INT_MULT": 12,
-      "INT_NOTEQUAL": 115,
+      "INT_LESS": 57,
+      "INT_MULT": 36,
+      "INT_NOTEQUAL": 139,
       "INT_OR": 102,
-      "INT_SBORROW": 33,
-      "INT_SCARRY": 20,
-      "INT_SEXT": 18,
-      "INT_SLESS": 97,
-      "INT_SUB": 37,
+      "INT_SBORROW": 57,
+      "INT_SCARRY": 80,
+      "INT_SEXT": 90,
+      "INT_SLESS": 181,
+      "INT_SUB": 181,
       "INT_XOR": 22,
       "INT_ZEXT": 72,
-      "LOAD": 102,
-      "POPCOUNT": 97,
+      "LOAD": 150,
+      "POPCOUNT": 181,
       "RETURN": 2,
-      "STORE": 12,
-      "SUBPIECE": 12
+      "STORE": 180,
+      "SUBPIECE": 60
     },
-    "pcode_op_count": 2578
+    "pcode_op_count": 4408
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00445a30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00453230",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
     "nocturne.exe": {
       "addr": "0044a150",
       "by": "body",

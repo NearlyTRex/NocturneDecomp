@@ -18,7 +18,7 @@ void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_0053d490(CPod *this_ptr,int ind
   if ((index < 0) || (this_ptr->pod_file_count <= index)) {
     _DAT_01d1d400 = "..\\engine\\pod.cpp";
     _DAT_01d1d404 = 0x6be;
-    core_main_c_FUN_005030e0("CPod::dismountPod - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CPod::dismountPod - invalid index");
   }
   if (this_ptr->pod_files[index] != (CPodFile *)0x0) {
     pCVar1 = engine_pod_cpp_CPodFile_dtor_FUN_0053b210(this_ptr->pod_files[index],0);

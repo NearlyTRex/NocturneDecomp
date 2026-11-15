@@ -14,8 +14,8 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_004663b0
-;   core_main.c_FUN_004e4330
+;   core_dpart.cpp_CDemonPart_free_FUN_004663b0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_calloc_FUN_005a4b20
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
@@ -30,8 +30,8 @@ section .text
     SUB ESP,0x100                       ; 004662b3
     MOV EBX,dword ptr [ESP + 0x110]     ; 004662b9
     PUSH EBX                            ; 004662c0
-    CALL core_dpart.cpp_FUN_004663b0    ; 004662c1
-        ;   XREF to: 004663b0 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_FUN_004663b0()
+    CALL core_dpart.cpp_CDemonPart_free_FUN_004663b0 ; 004662c1
+        ;   XREF to: 004663b0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_free_FUN_004663b0(CDemonPart * this_ptr)
     MOV EDX,dword ptr [EBX + 0x20]      ; 004662c6
     ADD ESP,0x4                         ; 004662c9
     TEST EDX,EDX                        ; 004662cc
@@ -72,8 +72,8 @@ section .text
     MOV EBP,0x5bc071                    ; 00466319
     PUSH EAX                            ; 0046631e
     MOV dword ptr [0x01d71de0],EBP      ; 0046631f | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 00466325
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00466325
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046632a
     PUSH 0xc                            ; 0046632d
         ;   Label: LAB_0046632d
@@ -92,8 +92,8 @@ section .text
     PUSH 0x5bc095                       ; 0046634d
     MOV dword ptr [0x01d71de0],ESI      ; 00466352 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00466358 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0046635e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046635e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00466363
     POP ESI                             ; 00466366
     JMP 0x004662d0                      ; 00466367
@@ -113,8 +113,8 @@ section .text
     PUSH 0x5bc0d1                       ; 0046638c
     MOV dword ptr [0x01d71de0],ECX      ; 00466391 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00466397 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0046639d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046639d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004663a2
     ADD ESP,0x100                       ; 004663a5
     POP EBP                             ; 004663ab

@@ -15,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00597a2
   bool bVar2;
   
   if ((DAT_00713a74 == 0) && (texture->texture_name[0] != '\0')) {
-    iVar1 = engine_texture_cpp_FUN_005970b0
+    iVar1 = engine_texture_cpp_CTextureCache_findTexture_FUN_005970b0
                       (_DAT_02c8a680,(texture->base).count & 0xffff,texture->texture_name);
     bVar2 = iVar1 == -1;
     if (bVar2) {

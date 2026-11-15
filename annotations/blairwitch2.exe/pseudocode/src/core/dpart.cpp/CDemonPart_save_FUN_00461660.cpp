@@ -13,6 +13,6 @@ void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00461660(CDemonPart *this_ptr)
 {
   _DAT_01d046a0 = "..\\core\\dpart.cpp";
   _DAT_01d046a4 = 0x132;
-  core_main_c_FUN_004e4500("CDemonPart::save is no longer needed");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonPart::save is no longer needed");
   return;
 }

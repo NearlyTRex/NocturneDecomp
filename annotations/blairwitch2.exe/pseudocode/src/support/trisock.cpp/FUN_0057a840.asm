@@ -16,7 +16,7 @@
 ;   undefined4 DAT_02653648
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   wincore_winrun.cpp_createMutex_FUN_0058fc90
 ;   wincore_winrun.cpp_createThread_FUN_0058fd20
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5ed333                       ; 0057a922
     MOV dword ptr [0x01d046a0],ECX      ; 0057a927 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0057a92d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0057a933
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057a933
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057a938
     JMP 0x0057a870                      ; 0057a93b
         ;   XREF to: 0057a870 (UNCONDITIONAL_JUMP)  ; LAB_0057a870

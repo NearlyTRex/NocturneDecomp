@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -49,7 +49,7 @@ section .text
     FLD float ptr [EBX + 0x284]         ; 004bd47c
     FMUL float ptr [0x005d884b]         ; 004bd482 | DAT_005d884b
     CALL crt_math.c_round_FUN_005b7ff0  ; 004bd488
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBX + 0x280]       ; 004bd48d
     MOV EBX,dword ptr [EBX + 0x280]     ; 004bd493
     MOV dword ptr [0x01c2a370],EBX      ; 004bd499 | DAT_01c2a370
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5d882f                       ; 004bd4ab | = "CGame::slamDT - invalid dt!"
     MOV dword ptr [0x01d046a0],EDX      ; 004bd4b0 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004bd4b6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004bd4bc
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004bd4bc
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004bd4c1
     JMP 0x004bd472                      ; 004bd4c4
         ;   XREF to: 004bd472 (UNCONDITIONAL_JUMP)  ; LAB_004bd472

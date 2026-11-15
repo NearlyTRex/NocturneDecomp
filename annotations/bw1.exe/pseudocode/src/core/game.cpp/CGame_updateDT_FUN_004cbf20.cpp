@@ -14,8 +14,7 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004cbf20(CGame *this_ptr)
   float fVar1;
   int iVar2;
   int iVar3;
-  int extraout_ECX;
-  float10 fVar4;
+  double dVar4;
   
   if (this_ptr->slow_motion_mode == 1) {
     if (this_ptr->slow_motion_timer <= 0.0) {
@@ -50,14 +49,14 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004cbf20(CGame *this_ptr)
   if (0x4000 < this_ptr->delta_time_int) {
     this_ptr->delta_time_int = 0x4000;
   }
-  fVar4 = (float10)this_ptr->delta_time_int * (float10)this_ptr->time_scale_factor;
-  round();
-  this_ptr->delta_time_int = (int)ROUND(fVar4);
-  if (extraout_ECX != 0) {
-    fVar4 = ((float10)_DAT_005e137c / (float10)_DAT_0061d968) * (float10)this_ptr->time_scale_factor
-    ;
-    round();
-    this_ptr->delta_time_int = (int)ROUND(fVar4);
+  iVar2 = _DAT_01cd0c3c;
+  dVar4 = round
+                    ((double)((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));
+  this_ptr->delta_time_int = (int)ROUND(dVar4);
+  if (iVar2 != 0) {
+    dVar4 = round
+                      ((double)((_DAT_005e137c / _DAT_0061d968) * this_ptr->time_scale_factor));
+    this_ptr->delta_time_int = (int)ROUND(dVar4);
   }
   _DAT_01c43530 = this_ptr->delta_time_int;
   this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)_DAT_005e1384;

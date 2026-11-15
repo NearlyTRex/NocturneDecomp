@@ -35,7 +35,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *t
   if (20000 < this_ptr->vertex_count) {
     _DAT_01d046a0 = "..\\core\\dcube.cpp";
     _DAT_01d046a4 = 0x7bb;
-    core_main_c_FUN_004e4500("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",this_ptr->vertex_count,20000);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d");
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);

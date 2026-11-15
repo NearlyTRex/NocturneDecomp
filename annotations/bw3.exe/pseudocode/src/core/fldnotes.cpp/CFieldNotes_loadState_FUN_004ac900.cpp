@@ -49,7 +49,7 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *t
   if ((local_4c < 1) || (2 < local_4c)) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0xbae;
-    core_main_c_FUN_004e4330("Invalid field notes file version: %d, latest this .exe supports is %d",local_4c,2);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid field notes file version: %d, latest this .exe supports is %d");
   }
   puVar5 = &DAT_005fe4b8;
   pcVar4 = local_34c;
@@ -158,19 +158,19 @@ LAB_004acc7a:
           if (pSVar1 == (SNotesEntry *)0x0) {
             _DAT_01d71de4 = 0xbe4;
             _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-            core_main_c_FUN_004e4330("CFieldNotes::loadState - No such map '%s'",local_14c);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - No such map '%s'");
           }
           if ((pSVar1->kind != 6) || (pSVar1->map_index < 0)) {
             _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
             _DAT_01d71de4 = 0xbe7;
-            core_main_c_FUN_004e4330("CFieldNotes::loadState - Entry '%s' is not an enabled map",local_14c);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - Entry '%s' is not an enabled map");
           }
           iVar2 = pSVar1->map_index;
           if ((local_3c != SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.width) ||
              (local_38 != SNotesMap_ARRAY_01d0e370[iVar2].reveal_mask.height)) {
             _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
             _DAT_01d71de4 = 0xbec;
-            core_main_c_FUN_004e4330("CFieldNotes::loadState - Map '%s' has changed size",local_14c);
+            core_main_c_displayErrorAndQuit_FUN_004e4330("CFieldNotes::loadState - Map '%s' has changed size");
           }
           _fscanf(file,"%*[^\n]\n");
           local_14 = 0;

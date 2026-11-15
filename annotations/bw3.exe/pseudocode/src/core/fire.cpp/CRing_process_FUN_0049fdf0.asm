@@ -260,7 +260,7 @@ section .text
     FMUL double ptr [0x005c0910]        ; 0049ff9b | DAT_005c0910
     FMUL double ptr [0x005c0918]        ; 0049ffa1 | DAT_005c0918
     CALL crt_math.c_round_FUN_005a3120  ; 0049ffa7
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP + 0x4e]        ; 0049ffac
     MOV EAX,dword ptr [EBP + 0x4e]      ; 0049ffaf
     PUSH EAX                            ; 0049ffb2

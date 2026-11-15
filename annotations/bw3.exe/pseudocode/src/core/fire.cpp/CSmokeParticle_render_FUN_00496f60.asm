@@ -53,7 +53,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_00538400
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
@@ -107,7 +107,7 @@ section .text
         ;   XREF to: 00497286 (CONDITIONAL_JUMP)  ; LAB_00497286
     FLD float ptr [EDI + 0x18]          ; 00496fc2
     CALL crt_math.c_round_FUN_005a3120  ; 00496fc5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x58]        ; 00496fca
     MOV ECX,dword ptr [ESP + 0x58]      ; 00496fce
     TEST ECX,ECX                        ; 00496fd2
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5c04d5                       ; 00496fe5 | = "CSmokeParticle::render - Frame out of..."
     MOV dword ptr [0x01d71de0],ESI      ; 00496fea | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 00496ff0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00496ff6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00496ff6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00496ffb
     MOV EBX,dword ptr [ESP + 0x58]      ; 00496ffe
         ;   Label: LAB_00496ffe

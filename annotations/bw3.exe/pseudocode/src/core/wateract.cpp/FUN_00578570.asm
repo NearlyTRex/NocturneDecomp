@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b870
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH EDX                            ; 00578603
     LEA ESI,[ESP + 0x20]                ; 00578604
     LEA EDI,[ESP + 0x8]                 ; 00578608
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0057860c
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0057860c
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x20]                ; 00578611
     ADD ESP,0x8                         ; 00578615
     MOV EAX,ESP                         ; 00578618

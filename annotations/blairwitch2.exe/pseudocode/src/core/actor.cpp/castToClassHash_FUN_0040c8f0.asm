@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ; uint             Stack[0x8]:4   class_name_hash
 ;
-; XREF[148]:
+; XREF[149]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30 at 00408ca2
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a3dc
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410aff
@@ -18,7 +18,7 @@
 ;   core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950 at 005a4967
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413960
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 00420436
-;   ... and 138 more
+;   ... and 139 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClassHash_FUN_0040c8c0

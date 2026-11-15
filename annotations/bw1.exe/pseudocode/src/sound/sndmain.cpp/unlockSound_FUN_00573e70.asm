@@ -26,7 +26,7 @@
 ;   undefined4 DAT_02c807ec
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
 ;   wincore_winrun.cpp_releaseMutex_FUN_005b37b0
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5f4440                       ; 00575f7c | = "unlockSound - sound was not locked!"
     MOV dword ptr [0x01d1d400],ECX      ; 00575f81 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00575f87 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575f8d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575f8d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575f92
     POP EBX                             ; 00575f95
     JMP 0x00573e7f                      ; 00575f96

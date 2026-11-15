@@ -67,7 +67,7 @@ section .text
     FILD dword ptr [ESP + 0x48]         ; 0059d17a
     FMUL double ptr [ESP + 0x40]        ; 0059d17e
     CALL crt_math.c_round_FUN_005a3120  ; 0059d182
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
         ;   Label: LAB_0059d182
     FISTP dword ptr [EBX + 0xd05c]      ; 0059d187
     MOV ECX,dword ptr [0x02d0c150]      ; 0059d18d | g_CWeaponClassInfo.name_hash

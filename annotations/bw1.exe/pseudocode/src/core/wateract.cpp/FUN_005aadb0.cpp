@@ -6,62 +6,58 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void core_wateract_cpp_FUN_005aadb0(int param_1)
 
 {
-  int iVar1;
+  CMatrix3x3f *this_ptr;
+  float *pfVar1;
   float *pfVar2;
-  uint *puVar3;
-  byte bVar4;
+  byte bVar3;
   float afStackY_1038 [1016];
-  float *pfVar5;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
-  float fStack_44;
-  uint uStack_38;
+  CVector3f *input;
+  float fStack_50;
+  float fStack_4c;
+  float fStack_48;
+  CVector3f CStack_44;
+  CVector3f CStack_38;
   float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  int iStack_20;
+  float afStack_28 [2];
+  CMatrix3x3f *pCStack_20;
   int iStack_1c;
   int iStack_18;
   float *pfStack_14;
   
-  bVar4 = 0;
+  bVar3 = 0;
   iStack_18 = 0;
   if (0 < *(int *)(param_1 + 0x298)) {
     iStack_1c = param_1 + 0x29c;
     pfStack_14 = (float *)(param_1 + 0x20);
-    pfVar2 = (float *)(param_1 + 0x2a8);
-    iStack_20 = param_1 + 0x3c;
+    pfVar1 = (float *)(param_1 + 0x2a8);
+    pCStack_20 = (CMatrix3x3f *)(param_1 + 0x3c);
     do {
-      iVar1 = iStack_20;
-      puVar3 = (uint *)(iStack_18 * 0x20 + iStack_1c);
-      fStack_2c = *pfVar2 - *pfStack_14;
-      fStack_28 = pfVar2[1] - pfStack_14[1];
-      pfVar5 = &stack0xffffffbc;
-      fStack_24 = pfVar2[2] - pfStack_14[2];
-      fStack_44 = *pfVar2 - *pfStack_14;
-      *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * 0xfffffffe * 4) =
-           *(uint *)((int)&stack0xffffffd8 + (uint)bVar4 * -8);
-      *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)((int)&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      core_dirmat_cpp_FUN_0045f700(iVar1,pfVar5);
-      uStack_50 = uStack_38;
-      *(uint *)((int)&stack0xffffffb4 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8);
-      *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      if (puVar3 != &stack0xffffffb0) {
-        *puVar3 = uStack_50;
-        puVar3[1] = uStack_4c;
-        puVar3[2] = uStack_48;
+      this_ptr = pCStack_20;
+      pfVar2 = (float *)(iStack_18 * 0x20 + iStack_1c);
+      fStack_2c = *pfVar1 - *pfStack_14;
+      afStack_28[0] = pfVar1[1] - pfStack_14[1];
+      input = &CStack_44;
+      afStack_28[1] = pfVar1[2] - pfStack_14[2];
+      CStack_44.x = *pfVar1 - *pfStack_14;
+      *(float *)((int)&CStack_44 + (uint)bVar3 * -8 + 4) = afStack_28[(uint)bVar3 * -2];
+      *(float *)((int)&CStack_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+           afStack_28[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(this_ptr,input,&CStack_38);
+      fStack_50 = CStack_38.x;
+      *(uint *)((int)&stack0xffffffb4 + (uint)bVar3 * -8) =
+           *(uint *)((int)&CStack_38 + (uint)bVar3 * -8 + 4);
+      *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+           *(uint *)((int)&CStack_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      if (pfVar2 != &stack0xffffffb0) {
+        *pfVar2 = fStack_50;
+        pfVar2[1] = fStack_4c;
+        pfVar2[2] = fStack_48;
       }
       iStack_18 = iStack_18 + 1;
-      pfVar2 = pfVar2 + 8;
+      pfVar1 = pfVar1 + 8;
     } while (iStack_18 < *(int *)(param_1 + 0x298));
   }
   return;

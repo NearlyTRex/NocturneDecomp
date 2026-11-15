@@ -61,7 +61,7 @@
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00541250
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380
@@ -109,8 +109,8 @@ section .text
     PUSH 0x5e6e76                       ; 0054289b | = "Deformable model file is corrupt"
     MOV dword ptr [0x01d046a0],EDX      ; 005428a0 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005428a6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005428ac
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005428ac
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005428b1
     MOV EAX,dword ptr [ESP + 0x28]      ; 005428b4
         ;   Label: LAB_005428b4
@@ -126,8 +126,8 @@ section .text
     PUSH 0x5e6eac                       ; 005428d2 | = "Can't load model of version %d, this ..."
     MOV dword ptr [0x01d046a0],EBP      ; 005428d7 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 005428dd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005428e2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005428e2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005428e7
     MOV EDI,dword ptr [ESP + 0x28]      ; 005428ea
         ;   Label: LAB_005428ea
@@ -966,8 +966,8 @@ section .text
     PUSH 0x5e6ff2                       ; 0054308b | = "CDeformableModel::loadStream - error ..."
     MOV dword ptr [0x01d046a0],EBX      ; 00543090 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00543096 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054309c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054309c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005430a1
     ADD ESP,0x7c                        ; 005430a4
     POP EBP                             ; 005430a7

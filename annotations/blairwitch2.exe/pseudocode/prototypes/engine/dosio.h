@@ -33,9 +33,9 @@ int __cdecl findFileNormally(SFoundFileInfo *info);
 // Address: 00460aa0
 int __cdecl getFileSize(char *directory,char *filename);
 
-// Original: engine_dosio.cpp_FUN_00460c70
+// Original: engine_dosio.cpp_getFile_FUN_00460c70
 // Address: 00460c70
-_FILE * __cdecl FUN_00460c70(char *directory,char *filename,char *mode);
+_FILE * __cdecl getFile(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.cpp_reopenFileStream_FUN_00460d30
 // Address: 00460d30

@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_actor.cpp_randomChance_FUN_0040d060
@@ -583,8 +583,8 @@ section .text
     PUSH 0x265370c                      ; 004fe4a5 | DAT_0265370c
     LEA ESI,[EBP + 0xfffffea6]          ; 004fe4aa
     LEA EDI,[EBP + 0x1a]                ; 004fe4b0
-    CALL core_xform.cpp_FUN_00591530    ; 004fe4b3
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004fe4b3
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004fe4b8
     LEA EAX,[EBP + 0x1a]                ; 004fe4bb
     LEA ESI,[EBP + 0xfffffea6]          ; 004fe4be
@@ -594,8 +594,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004fe4c7
     PUSH EBX                            ; 004fe4c8
     LEA ESI,[EBP + 0xfffffebe]          ; 004fe4c9
-    CALL core_actor.cpp_FUN_00408d70    ; 004fe4cf
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004fe4cf
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004fe4d4
     LEA EAX,[EBP + 0xffffff1e]          ; 004fe4d7
     PUSH EAX                            ; 004fe4dd
@@ -635,8 +635,8 @@ section .text
     PUSH 0x265370c                      ; 004fe550 | DAT_0265370c
     LEA ESI,[EBP + 0x32]                ; 004fe555
     LEA EDI,[EBP + 0xfffffeee]          ; 004fe558
-    CALL core_xform.cpp_FUN_00591530    ; 004fe55e
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004fe55e
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004fe563
     LEA EAX,[EBP + 0xfffffeee]          ; 004fe566
     LEA ESI,[EBP + 0x32]                ; 004fe56c
@@ -646,8 +646,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004fe572
     PUSH EBX                            ; 004fe573
     LEA ESI,[EBP + 0xffffff36]          ; 004fe574
-    CALL core_actor.cpp_FUN_00408d70    ; 004fe57a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004fe57a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004fe57f
     LEA EAX,[EBP + 0xfffffefa]          ; 004fe582
     PUSH EAX                            ; 004fe588
@@ -840,8 +840,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004fe7b0
     PUSH EBX                            ; 004fe7b1
     LEA ESI,[EBP + 0xfffffed6]          ; 004fe7b2
-    CALL core_actor.cpp_FUN_00408d70    ; 004fe7b8
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004fe7b8
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004fe7bd
     PUSH 0x0                            ; 004fe7c0
     LEA EAX,[EBP + -0x16]               ; 004fe7c2

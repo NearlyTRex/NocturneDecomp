@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5f1d46                       ; 00563554 | = "Can't find bone %s in skeleton %s!"
     MOV dword ptr [0x01d1d400],ESI      ; 00563559 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0056355f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563564
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563564
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00563569
     MOV EAX,0xffffffff                  ; 0056356c
     POP EBP                             ; 00563571

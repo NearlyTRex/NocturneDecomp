@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_004a9eb0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -92,8 +92,8 @@ section .text
     PUSH 0x5deb18                       ; 004a98dd | = "Event name %s too long!"
     MOV dword ptr [0x01d1d400],EDI      ; 004a98e2 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004a98e8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004a98ed
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a98ed
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004a98f2
     MOV EDI,dword ptr [EBP + 0x258c]    ; 004a98f5
         ;   Label: LAB_004a98f5
@@ -165,7 +165,7 @@ section .text
     PUSH EDI                            ; 004a9990
         ;   Label: LAB_004a9990
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004a9991
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004a9996
     MOV EBX,0x5deac6                    ; 004a9999 | = "..\\core\\event.cpp"
         ;   Label: LAB_004a9999
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5dead8                       ; 004a99a3 | = "Too many persistent events - check ev..."
     MOV dword ptr [0x01d1d400],EBX      ; 004a99a8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004a99ae | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004a99b4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a99b4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a99b9
     JMP 0x004a98bb                      ; 004a99bc
         ;   XREF to: 004a98bb (UNCONDITIONAL_JUMP)  ; LAB_004a98bb

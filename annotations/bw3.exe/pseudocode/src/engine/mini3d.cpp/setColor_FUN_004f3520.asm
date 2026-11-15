@@ -63,7 +63,7 @@ section .text
     FMULP ST3                           ; 004f356f
     FXCH ST3                            ; 004f3571
     CALL crt_math.c_round_FUN_005a3120  ; 004f3573
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 004f3578
     FSTP float ptr [0x01d7a6b8]         ; 004f357b | DAT_01d7a6b8
     MOV EDX,dword ptr [ESP]             ; 004f3581

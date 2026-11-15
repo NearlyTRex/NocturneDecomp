@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(int channel_index,f
   if ((channel_index < 0) || (0x1f < channel_index)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x1105;
-    core_main_c_FUN_005030e0("setSfxChannelVol - invalid channel index: %d",channel_index);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("setSfxChannelVol - invalid channel index: %d");
   }
   iVar1 = _DAT_02c80650;
   *(float *)(channel_index * 4 + 0x2c7fc90) = volume;

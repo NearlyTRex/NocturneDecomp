@@ -14,27 +14,22 @@ void core_scat_cpp_FUN_00520df0(int param_1)
   int iVar1;
   int iVar2;
   CMatrix3x4f *pCVar3;
-  CMatrix3x4f *pCVar4;
-  float *pfVar5;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
-  uint auStackY_1044 [940];
-  uint *puVar7;
-  CMatrix3x4f local_188;
+  float afStackY_1044 [940];
+  CVector3f *in_stack_fffffe78;
   CMatrix3x4f local_158;
   CMatrix3x4f local_128;
   CMatrix3x4f local_f8;
-  float local_c8 [12];
+  CMatrix3x4f local_c8;
   CMatrix3x4f local_98;
-  uint local_68;
-  uint uStack_64;
-  uint uStack_60;
-  uint local_5c;
+  CVector3f local_68;
+  float local_5c;
   uint auStack_58 [6];
-  uint auStack_40 [5];
-  uint local_2c;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
+  float afStack_40 [5];
+  CVector3f local_2c;
+  CVector3f local_20;
   int local_14;
   
   bVar6 = 0;
@@ -42,49 +37,49 @@ void core_scat_cpp_FUN_00520df0(int param_1)
     auStack_58[2] = 0;
     auStack_58[4] = 0x3fc90fdb;
     auStack_58[3] = 0x3fc90fdb;
-    local_20 = 0x3ec817db;
-    local_68 = 0;
-    uStack_64 = 0x3fc90fdb;
-    uStack_60 = 0x3fc90fdb;
-    local_1c = 0xbdd340d5;
-    local_18 = 0x3ddfa765;
+    local_20.x = 0.390807;
+    local_68.x = 0.0;
+    local_68.y = 1.5707964;
+    local_68.z = 1.5707964;
+    local_20.y = -0.103151;
+    local_20.z = 0.109206;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&local_158,auStack_40 + 8,&local_68);
+              (&local_158,&local_20,&local_68);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&local_158,(CMatrix3x4f *)(_DAT_01e620a0 * 0x30 + param_1 + 0x1134),&local_f8);
     pCVar3 = &local_f8;
-    pCVar4 = &local_98;
+    pCVar5 = &local_98;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar4->m[0].w = pCVar3->m[0].w;
+      pCVar5->m[0].w = pCVar3->m[0].w;
       pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-              (&local_128,param_1 + 0x20,param_1 + 0x30);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_98,&local_128,&local_188);
-    pCVar3 = &local_188;
-    pfVar5 = local_c8;
+              (&local_128,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
+    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
+              (&local_98,&local_128,(CMatrix3x4f *)&stack0xfffffe78);
+    pfVar4 = (float *)&stack0xfffffe78;
+    pCVar3 = &local_c8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *pfVar5 = pCVar3->m[0].w;
+      pCVar3->m[0].w = *pfVar4;
+      pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
       pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
     }
     iVar2 = *(int *)(param_1 + 0x25654);
     local_14 = *(int *)(iVar2 + 0x2b0);
-    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_c8);
-    puVar7 = auStack_58 + 5;
-    auStack_58[5] = auStack_40[2];
-    auStack_40[(uint)bVar6 * -2] = auStack_40[(uint)bVar6 * -2 + 3];
-    auStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         auStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-    core_xform_cpp_FUN_00592720(local_c8,puVar7);
+    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_c8,in_stack_fffffe78);
+    auStack_58[5] = afStack_40[2];
+    afStack_40[(uint)bVar6 * -2] = afStack_40[(uint)bVar6 * -2 + 3];
+    afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+    core_xform_cpp_getTranslation_FUN_00592720(&local_c8,&local_2c);
     iVar1 = local_14;
-    puVar7 = &local_5c;
-    local_5c = local_2c;
-    auStack_58[(uint)bVar6 * -2] = auStack_40[(uint)bVar6 * -2 + 6];
+    pfVar4 = &local_5c;
+    local_5c = local_2c.x;
+    auStack_58[(uint)bVar6 * -2] = *(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4);
     auStack_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         auStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
-    (**(code **)(iVar1 + 0x70))(iVar2,puVar7);
+         *(uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    (**(code **)(iVar1 + 0x70))(iVar2,pfVar4);
     return;
   }
   return;

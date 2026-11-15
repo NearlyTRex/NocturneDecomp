@@ -24,8 +24,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004b63e0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
@@ -71,8 +71,8 @@ section .text
     PUSH EBX                            ; 005adfed
     LEA ESI,[ESP + 0xac]                ; 005adfee
     LEA EDI,[ESP + 0x64]                ; 005adff5
-    CALL core_actor.cpp_FUN_00408b40    ; 005adff9
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005adff9
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xac]                ; 005adffe
     ADD ESP,0x8                         ; 005ae005
     MOVSD ES:EDI,ESI                    ; 005ae008
@@ -88,8 +88,8 @@ section .text
     PUSH EBX                            ; 005ae02d
     MOV dword ptr [ESP + 0x94],ECX      ; 005ae02e
     MOV dword ptr [ESP + 0x98],ECX      ; 005ae035
-    CALL core_actor.cpp_FUN_00408ac0    ; 005ae03c
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 005ae03c
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xa0]                ; 005ae041
     ADD ESP,0x8                         ; 005ae048
     MOVSD ES:EDI,ESI                    ; 005ae04b

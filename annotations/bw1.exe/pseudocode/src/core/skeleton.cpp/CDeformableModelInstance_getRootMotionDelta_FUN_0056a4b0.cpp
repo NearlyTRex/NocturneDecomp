@@ -9,18 +9,22 @@
 CVector3f * __stack3_esi core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0056a4b0(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,CVector3f *output_buffer)
 
 {
-  CSkeleton *pCVar1;
-  float *pfVar2;
-  CVector3f *pCVar3;
-  uint *puVar4;
-  int iVar5;
-  byte bVar6;
-  float10 fVar7;
-  float afStackY_105c [1016];
+  int iVar1;
+  CSkeleton *pCVar2;
+  uint *puVar3;
+  CVector3f *pCVar4;
+  uint *puVar5;
+  int iVar6;
+  byte bVar7;
+  double dVar8;
+  float unaff_retaddr;
+  float afStackY_1064 [1017];
+  float fVar9;
+  float fVar10;
   float fStack_74;
   float fStack_70;
-  float fStack_6c;
-  float fStack_68;
+  float fStack_64;
+  float fStack_60;
   float fStack_5c;
   float fStack_58;
   float fStack_54;
@@ -31,81 +35,84 @@ CVector3f * __stack3_esi core_skeleton_cpp_CDeformableModelInstance_getRootMotio
   float fStack_40;
   float fStack_3c;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  double dStack_2c;
-  float fStack_24;
-  float fStack_20;
+  uint uStack_30;
+  float fStack_2c;
+  float fStack_28;
+  int iStack_24;
+  int iStack_20;
   CSkeleton *pCStack_1c;
   int iStack_18;
-  int iStack_14;
-  int iStack_10;
   
-  bVar6 = 0;
+  bVar7 = 0;
   if (start_frame < end_frame) {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr);
-    pCStack_1c = pCVar1;
-    dStack_2c = floor((double)start_frame);
-    fVar7 = (float10)dStack_2c;
-    round();
-    iStack_18 = (int)ROUND(fVar7);
-    dStack_2c = ceil((double)end_frame);
-    fVar7 = (float10)dStack_2c;
-    round();
-    iStack_14 = (int)ROUND(fVar7);
+    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr);
+    pCStack_1c = pCVar2;
+    dVar8 = floor((double)start_frame);
+    fStack_2c = SUB84(__BITCAST_UINT64(dVar8),0);
+    fStack_28 = (float)((ulonglong)dVar8 >> 0x20);
+    fVar10 = 7.957083e-39;
+    dVar8 = round(dVar8);
+    pCStack_1c = (CSkeleton *)(int)ROUND(dVar8);
+    dVar8 = ceil((double)start_frame);
+    uStack_30 = SUB84(__BITCAST_UINT64(dVar8),0);
+    fStack_2c = (float)((ulonglong)dVar8 >> 0x20);
+    dVar8 = round(dVar8);
+    pCStack_1c = (CSkeleton *)(int)ROUND(dVar8);
+    fStack_40 = 0.0;
+    fStack_3c = 0.0;
     fStack_38 = 0.0;
-    fStack_34 = 0.0;
-    fStack_30 = 0.0;
-    if (iStack_18 < iStack_14) {
-      pCVar3 = pCVar1->frame_positions_2 + iStack_18;
-      iVar5 = iStack_18;
+    if (iStack_20 < (int)pCStack_1c) {
+      pCVar4 = pCVar2->frame_positions_2 + iStack_20;
+      iVar6 = iStack_20;
       do {
-        iVar5 = iVar5 + 1;
-        fStack_38 = fStack_38 + pCVar3->x;
-        fStack_34 = fStack_34 + pCVar3->y;
-        fStack_30 = fStack_30 + pCVar3->z;
-        pCVar3 = pCVar3 + 1;
-      } while (iVar5 < iStack_14);
+        iVar6 = iVar6 + 1;
+        fStack_40 = fStack_40 + pCVar4->x;
+        fStack_3c = fStack_3c + pCVar4->y;
+        fStack_38 = fStack_38 + pCVar4->z;
+        pCVar4 = pCVar4 + 1;
+      } while (iVar6 < (int)pCStack_1c);
     }
-    iStack_10 = iStack_18;
-    pCVar3 = pCStack_1c->frame_positions_2;
-    fStack_20 = start_frame - (float)iStack_18;
-    fStack_5c = pCVar3[iStack_18].x * fStack_20;
-    fStack_58 = pCVar3[iStack_18].y * fStack_20;
-    fStack_54 = pCVar3[iStack_18].z * fStack_20;
-    fStack_74 = fStack_5c;
-    *(uint *)((int)&stack0xffffff90 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffa8 + (uint)bVar6 * -8);
-    *(uint *)((int)&stack0xffffff94 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-    iStack_10 = iStack_14;
-    iVar5 = iStack_14 + -1;
-    fStack_24 = (float)iStack_14 - end_frame;
-    fStack_44 = pCVar3[iVar5].x * fStack_24;
-    fStack_38 = fStack_38 - fStack_74;
-    fStack_40 = pCVar3[iVar5].y * fStack_24;
-    fStack_3c = pCVar3[iVar5].z * fStack_24;
-    fStack_50 = fStack_44;
-    *(uint *)((int)&stack0xffffffb4 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8);
-    *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-    pfVar2 = &stack0xffffffc8;
-    fStack_38 = (fStack_38 - fStack_50) * (this_ptr->root_offset_scale).x;
-    fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * (this_ptr->root_offset_scale).y;
-    fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * (this_ptr->root_offset_scale).z;
+    iStack_18 = iStack_20;
+    iVar1 = *(int *)(iStack_24 + 0x1ec98);
+    fStack_28 = unaff_retaddr - (float)iStack_20;
+    fVar9 = *(float *)(iVar1 + iStack_20 * 0xc) * fStack_28;
+    fStack_64 = fVar9;
+    fStack_60 = *(float *)(iVar1 + 4 + iStack_20 * 0xc) * fStack_28;
+    fStack_5c = *(float *)(iVar1 + 8 + iStack_20 * 0xc) * fStack_28;
+    *(uint *)(&stack0xffffff88 + (uint)bVar7 * -8) =
+         *(uint *)((int)&stack0xffffffa0 + (uint)bVar7 * -8);
+    *(uint *)((int)&stack0xffffff8c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+         *(uint *)((int)&stack0xffffffa4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+    iStack_18 = (int)pCStack_1c;
+    iVar6 = (int)pCStack_1c + -1;
+    fStack_2c = (float)(int)pCStack_1c - (float)this_ptr;
+    fStack_4c = *(float *)(iVar1 + iVar6 * 0xc) * fStack_2c;
+    fStack_40 = fStack_40 - fVar9;
+    fStack_48 = *(float *)(iVar1 + 4 + iVar6 * 0xc) * fStack_2c;
+    fStack_44 = *(float *)(iVar1 + 8 + iVar6 * 0xc) * fStack_2c;
+    fStack_58 = fStack_4c;
+    *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8) =
+         *(uint *)((int)&stack0xffffffb8 + (uint)bVar7 * -8);
+    *(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+         *(uint *)((int)&stack0xffffffbc + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+    puVar5 = &stack0xffffff90;
+    puVar3 = &stack0xffffffc0;
+    fStack_40 = (fStack_40 - fStack_58) * (this_ptr->root_offset_scale).x;
+    fStack_3c = ((fStack_3c - fVar10) - fStack_54) * (this_ptr->root_offset_scale).y;
+    fStack_38 = ((fStack_38 - fStack_74) - fStack_50) * (this_ptr->root_offset_scale).z;
   }
   else {
-    pfVar2 = (float *)&DAT_02c8af28;
+    puVar5 = (uint *)&stack0xffffff98;
+    puVar3 = (uint *)&DAT_02c8af28;
   }
-  fStack_68 = *pfVar2;
-  *(float *)(&stack0xffffff9c + (uint)bVar6 * -8) = pfVar2[(uint)bVar6 * -2 + 1];
-  *(float *)(&stack0xffffffa0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       (pfVar2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-  puVar4 = (uint *)((int)output_buffer + (uint)bVar6 * -8 + 4);
-  output_buffer->x = fStack_68;
-  *puVar4 = *(uint *)(&stack0xffffff9c + (uint)bVar6 * -8);
-  puVar4[(uint)bVar6 * -2 + 1] =
-       *(uint *)(&stack0xffffffa0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  *puVar5 = *puVar3;
+  puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
+  (puVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
+       (puVar3 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+  puVar5 = (uint *)((int)output_buffer + (uint)bVar7 * -8 + 4);
+  output_buffer->x = fStack_70;
+  *puVar5 = *(uint *)(&stack0xffffff94 + (uint)bVar7 * -8);
+  puVar5[(uint)bVar7 * -2 + 1] =
+       *(uint *)(&stack0xffffff98 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
   return output_buffer;
 }

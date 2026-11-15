@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 373,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
-    "suspect_count": 25,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -45,7 +45,7 @@
     {
       "addr": "0045f840",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045f840"
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840"
     },
     {
       "addr": "00483850",
@@ -247,14 +247,14 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 16,
-      "match": "afStackY_1034",
+      "match": "aiStackY_1034",
       "severity": "moderate",
-      "text": "float afStackY_1034 [1006];",
+      "text": "int aiStackY_1034 [1006];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1 + 0x37b50 + param_2 * 0xac;",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = param_1 + 0x37b50 + param_2 * 0xac;",
@@ -270,18 +270,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(float *)((int)aCStack_40",
+      "line": 35,
+      "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
-      "text": "*(float *)((int)aCStack_40 + (uint)bVar3 * -8 + 4) = afStack_48[(uint)bVar3 * -2];",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(float *)((int)aCStack_40",
+      "match": "(uint *)((int)aCStack_40",
       "severity": "moderate",
-      "text": "*(float *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + -4);",
       "type": "pointer_cast"
     },
     {

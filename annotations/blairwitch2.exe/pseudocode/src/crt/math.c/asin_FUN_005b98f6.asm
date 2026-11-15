@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_asin_FUN_005b98f6(void)
+; float10 __fpustack_safe crt_math_c_asin_FUN_005b98f6(float10 sine_value)
 ;
 ;
 ; XREF[8]:
-;   core_dirmat.cpp_FUN_004496e0 at 00449784
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 at 00449784
 ;   core_dirmat.cpp_angleFromSinCos_FUN_00449610 at 00449638
 ;   core_muzzle.cpp_FUN_0059dd00 at 0059de8e
 ;   core_xform.cpp_FUN_005940b0 at 005940fa
@@ -35,7 +35,7 @@ section .text
         ;   XREF to: 005b9910 (CONDITIONAL_JUMP)  ; LAB_005b9910
     FXCH                                ; 005b9909
     CALL crt_math.c_atan2_FUN_005b9989  ; 005b990b
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     RET                                 ; 005b9910
         ;   Label: LAB_005b9910
 

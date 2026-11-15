@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
@@ -91,8 +91,8 @@ section .text
     MOV EDX,0x87d                       ; 0043a57f
     PUSH EAX                            ; 0043a584
     MOV dword ptr [0x01d1d404],EDX      ; 0043a585 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043a58b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043a58b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043a590
     TEST ESI,ESI                        ; 0043a593
         ;   Label: LAB_0043a593
@@ -460,8 +460,8 @@ section .text
     MOV EDX,0x8b7                       ; 0043ab33
     PUSH EAX                            ; 0043ab38
     MOV dword ptr [0x01d1d404],EDX      ; 0043ab39 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043ab3f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043ab3f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043ab44
     CMP EDI,dword ptr [ESP + 0x1ac]     ; 0043ab47
         ;   Label: LAB_0043ab47
@@ -686,8 +686,8 @@ section .text
     PUSH EAX                            ; 0043aec1
     MOV dword ptr [0x01d1d400],EDX      ; 0043aec2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0043aec8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043aece
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043aece
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043aed3
     MOV EDI,dword ptr [ESP + 0x204]     ; 0043aed6
         ;   Label: LAB_0043aed6

@@ -20,9 +20,9 @@
 ;   undefined4 DAT_01e620a8
 ;
 ; Called Functions:
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005038a0
 ;   core_scat.cpp_FUN_00520140
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -69,14 +69,14 @@ section .text
         ;   Label: LAB_0051ffc3
     LEA ESI,[EBX + 0x2b4]               ; 0051ffc5
     PUSH ESI                            ; 0051ffcb
-    CALL core_motion.cpp_FUN_005038a0   ; 0051ffcc
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0051ffcc
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x20],EAX      ; 0051ffd1
     ADD ESP,0x8                         ; 0051ffd5
     PUSH 0x5                            ; 0051ffd8
     PUSH ESI                            ; 0051ffda
-    CALL core_motion.cpp_FUN_005038a0   ; 0051ffdb
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0051ffdb
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 0051ffe0
     FLD float ptr [ESP + 0x24]          ; 0051ffe4
     ADD ESP,0x8                         ; 0051ffe8
@@ -84,8 +84,8 @@ section .text
     FADD float ptr [ESP + 0x1c]         ; 0051ffed
     PUSH ESI                            ; 0051fff1
     FSTP float ptr [ESP + 0x20]         ; 0051fff2
-    CALL core_motion.cpp_FUN_005038a0   ; 0051fff6
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0051fff6
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 0051fffb
     FLD float ptr [ESP + 0x24]          ; 0051ffff
     ADD ESP,0x8                         ; 00520003
@@ -93,8 +93,8 @@ section .text
     FADD float ptr [ESP + 0x1c]         ; 00520008
     PUSH ESI                            ; 0052000c
     FSTP float ptr [ESP + 0x20]         ; 0052000d
-    CALL core_motion.cpp_FUN_005038a0   ; 00520011
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 00520011
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 00520016
     FLD float ptr [ESP + 0x24]          ; 0052001a
     ADD ESP,0x8                         ; 0052001e
@@ -102,8 +102,8 @@ section .text
     FADD float ptr [ESP + 0x1c]         ; 00520023
     PUSH ESI                            ; 00520027
     FSTP float ptr [ESP + 0x20]         ; 00520028
-    CALL core_motion.cpp_FUN_005038a0   ; 0052002c
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0052002c
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 00520031
     FLD float ptr [ESP + 0x24]          ; 00520035
     ADD ESP,0x8                         ; 00520039

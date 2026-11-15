@@ -23,7 +23,7 @@ void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
 // Original: engine_matrix.c_transformWorldToView_FUN_005079d0
 // Address: 005079d0
-void transformWorldToView(void);
+CVector3i * __stack_esi transformWorldToView(CVector3i *input_coords,CVector3i *output_coords);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_00507aa0
 // Address: 00507aa0
@@ -67,11 +67,11 @@ int __cdecl integerSquareRoot(int value);
 
 // Original: engine_matrix.c_normalizeVector3DFixed_FUN_00508700
 // Address: 00508700
-void normalizeVector3DFixed(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFixed(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_normalizeVector3DFloat_FUN_00508780
 // Address: 00508780
-int * normalizeVector3DFloat(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFloat(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_vectorLength3DToInt_FUN_00508860
 // Address: 00508860

@@ -11,64 +11,65 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00570c40(CSfxSlot *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
-  int iVar3;
-  int extraout_ECX;
+  float fVar3;
   int iVar4;
-  CSfxSlot *pCVar5;
-  int extraout_EDX;
+  int iVar5;
   int iVar6;
-  float10 fVar7;
+  CSfxSlot *pCVar7;
+  double dVar8;
   
   if (_DAT_02c807ec < 1) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xa69;
-    core_main_c_FUN_005030e0("SfxSlot::kill - must be locked!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
-  iVar3 = DAT_006232ec;
+  iVar4 = DAT_006232ec;
   if (DAT_006232ec < 2) {
     this_ptr->channel_target_buffer_offsets[0] = 0;
   }
   else if (((this_ptr->options).flags & 1) == 0) {
-    fVar1 = (1.0 / _DAT_00605af8) * DAT_00623304;
-    fVar2 = (float)DAT_006232f0;
-    iVar4 = 99999;
-    pCVar5 = this_ptr;
+    fVar2 = (1.0 / _DAT_00605af8) * DAT_00623304;
+    fVar3 = (float)DAT_006232f0;
+    iVar6 = 99999;
+    iVar5 = 0;
+    pCVar7 = this_ptr;
     if (0 < DAT_006232ec) {
       do {
-        fVar7 = (float10)pCVar5->distance_to_speakers[0] * (float10)(fVar2 * fVar1);
-        round();
-        iVar6 = (int)ROUND(fVar7);
-        *(int *)(extraout_EDX + 0xb0) = iVar6;
-        if (iVar6 < iVar4) {
-          iVar4 = iVar6;
+        dVar8 = round
+                          ((double)(pCVar7->distance_to_speakers[0] * fVar3 * fVar2));
+        iVar1 = (int)ROUND(dVar8);
+        pCVar7->channel_target_buffer_offsets[0] = iVar1;
+        if (iVar1 < iVar6) {
+          iVar6 = iVar1;
         }
-        pCVar5 = (CSfxSlot *)(extraout_EDX + 4);
-      } while (extraout_ECX + 1 < iVar3);
+        iVar5 = iVar5 + 1;
+        pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
+      } while (iVar5 < iVar4);
     }
-    iVar6 = 0;
-    if (0 < iVar3) {
+    iVar5 = 0;
+    if (0 < iVar4) {
       do {
-        iVar6 = iVar6 + 1;
+        iVar5 = iVar5 + 1;
         this_ptr->channel_target_buffer_offsets[0] =
-             this_ptr->channel_target_buffer_offsets[0] - iVar4;
+             this_ptr->channel_target_buffer_offsets[0] - iVar6;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar6 < iVar3);
-      DAT_006232ec = iVar3;
+      } while (iVar5 < iVar4);
+      DAT_006232ec = iVar4;
       return;
     }
   }
   else {
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < DAT_006232ec) {
       do {
-        iVar4 = iVar4 + 1;
+        iVar6 = iVar6 + 1;
         this_ptr->channel_target_buffer_offsets[0] = 0;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar4 < DAT_006232ec);
+      } while (iVar6 < DAT_006232ec);
     }
   }
-  DAT_006232ec = iVar3;
+  DAT_006232ec = iVar4;
   return;
 }

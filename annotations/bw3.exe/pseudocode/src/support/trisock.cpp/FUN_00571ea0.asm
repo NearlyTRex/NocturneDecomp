@@ -16,7 +16,7 @@
 ;   undefined4 DAT_02cfd8a8
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_wsock32.c_WSAStartup
 ;   wincore_winrun.cpp_createMutex_FUN_00581920
 ;   wincore_winrun.cpp_FUN_00581c70
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5d6de4                       ; 00571ee9 | = "Can't create mutex"
     MOV dword ptr [0x01d71de0],ECX      ; 00571eee | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00571ef4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00571efa
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00571efa
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00571eff
     POP EBX                             ; 00571f02
     ADD ESP,0x190                       ; 00571f03

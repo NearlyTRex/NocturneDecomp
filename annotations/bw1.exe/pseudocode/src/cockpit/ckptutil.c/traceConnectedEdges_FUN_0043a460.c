@@ -126,7 +126,7 @@ void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x87d;
-          core_main_c_FUN_005030e0(acStack_1f4);
+          core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
         }
         uVar7 = (ushort)iVar12;
         if (0 < iVar2) {
@@ -258,7 +258,7 @@ LAB_0043a766:
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x8b7;
-          core_main_c_FUN_005030e0(acStack_1f4);
+          core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
         }
         if (iVar15 < iStack_48) {
           iStack_30 = iVar14 + -2;
@@ -347,7 +347,7 @@ LAB_0043a766:
     _sprintf(acStack_1f4,"Unable to allocate %u bytes for edge list.");
     _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
     _DAT_01d1d404 = 0x8f6;
-    core_main_c_FUN_005030e0(acStack_1f4);
+    core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
   }
   puVar13 = (uint *)0x7c6550;
   puVar16 = (uint *)(*in_stack_00000010 * 8 + (int)pvVar6);

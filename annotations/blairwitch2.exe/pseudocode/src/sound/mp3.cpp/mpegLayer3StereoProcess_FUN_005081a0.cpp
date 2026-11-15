@@ -458,7 +458,7 @@ LAB_0050839c:
           }
           _DAT_01d046a0 = "..\\sound\\mp3.cpp";
           _DAT_01d046a4 = 0xa3a;
-          core_main_c_FUN_004e4500("Error in streo processing.  File: %s",&DAT_01d23558);
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Error in streo processing.  File: %s");
         }
         iVar12 = iVar12 + 1;
         local_4c = local_4c + 2;

@@ -57,9 +57,9 @@ float __cdecl CGabriella::getFlashlightMinAngle(CGabriella *this_ptr);
 // Address: 004af950
 float __cdecl CGabriella::getFlashlightMaxAngle(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004af960
+// Original: core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004af960
 // Address: 004af960
-void FUN_004af960(int param_1);
+CVector3f * __stack_esi CGabriella::getTorsoCenterPosition(CGabriella *this_ptr,CVector3f *out_position);
 
 // Original: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20
 // Address: 004afa20

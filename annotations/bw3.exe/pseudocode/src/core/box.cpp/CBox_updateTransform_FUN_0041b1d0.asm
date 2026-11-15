@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;
 ; *****************************************************************************
 
@@ -168,8 +168,8 @@ section .text
     PUSH ESI                            ; 0041b368
     LEA ESI,[ESP + 0x2c]                ; 0041b369
     LEA EDI,[ESP + 0x20]                ; 0041b36d
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0041b371
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0041b371
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x2c]                ; 0041b376
     ADD ESP,0x8                         ; 0041b37a
     MOVSD ES:EDI,ESI                    ; 0041b37d

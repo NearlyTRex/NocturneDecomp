@@ -12,7 +12,7 @@
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420669
 ;   core_elephant.cpp_CElephantGun_process_FUN_00486c30 at 00486d08
-;   core_set.cpp_FUN_005365c0 at 005366e3
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 005366e3
 ;   core_set.cpp_FUN_00536990 at 00536aba
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00542aa0 at 00542b06
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0 at 0057b771
@@ -45,7 +45,7 @@ section .text
     FMUL double ptr [0x005bb5bc]        ; 0045fad6 | DAT_005bb5bc
     PUSH 0x0                            ; 0045fadc
     CALL crt_math.c_round_FUN_005a3120  ; 0045fade
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0045fae3
     MOV EDX,dword ptr [ESP + 0xc]       ; 0045fae7
     PUSH 0x0                            ; 0045faeb
@@ -64,7 +64,7 @@ section .text
     FMUL double ptr [0x005bb5b4]        ; 0045fb0b | DAT_005bb5b4
     PUSH 0x0                            ; 0045fb11
     CALL crt_math.c_round_FUN_005a3120  ; 0045fb13
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0045fb18
     MOV EDX,dword ptr [ESP + 0x8]       ; 0045fb1c
     PUSH 0x0                            ; 0045fb20

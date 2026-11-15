@@ -34,7 +34,7 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004992b0(CToss *this_ptr,int toss_ty
   else {
     _DAT_01d046a0 = "..\\core\\fire.cpp";
     _DAT_01d046a4 = 0xd76;
-    core_main_c_FUN_004e4500("CToss::create - invalid toss type.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CToss::create - invalid toss type.");
   }
   if (this_ptr->fuse_timer <= 0.0) {
     this_ptr->fuse_timer = 5.0;

@@ -18,7 +18,7 @@
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
@@ -178,8 +178,8 @@ section .text
     FSTP ST1                            ; 005b15f4
     LEA ESI,[ESP + 0x10]                ; 005b15f6
     FSTP float ptr [EAX + -0x18]        ; 005b15fa
-    CALL core_actor.cpp_FUN_00408b40    ; 005b15fd
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005b15fd
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x10]                ; 005b1602
     ADD ESP,0x8                         ; 005b1606
     XOR EBX,EBX                         ; 005b1609

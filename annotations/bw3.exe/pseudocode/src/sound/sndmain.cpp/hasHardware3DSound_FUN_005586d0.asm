@@ -7,8 +7,8 @@
 ; XREF[10]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9d28
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60 at 0055fc9c
-;   sound_snddx.cpp_FUN_0055b100 at 0055b3a9
-;   sound_snddx.cpp_FUN_0055b620 at 0055b627
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0055b620 at 0055b627
+;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0055b100 at 0055b3a9
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0 at 005533e2
 ;   sound_sndmain.cpp_flushSoundChanges_FUN_00558f20 at 00558f2c
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700 at 00556700

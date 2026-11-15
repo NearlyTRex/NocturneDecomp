@@ -21,7 +21,7 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionControll
      (iVar1 = _fscanf(file_handle,"\"%[^\"]\" , %f"), iVar1 != 2)) {
     _DAT_01d1d400 = "..\\core\\motion.cpp";
     _DAT_01d1d404 = 0x57e;
-    core_main_c_FUN_005030e0("CMotionController::load - error parsing file");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMotionController::load - error parsing file");
   }
   do {
     iVar1 = _fgetc(file_handle);

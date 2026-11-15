@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055ae07
 ;   core_setdir.cpp_FUN_00559c10 at 00559c63
-;   core_setdir.cpp_FUN_00559f80 at 0055ae07
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db315
@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
 ;
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5db32b                       ; 00481e2d | = "Can't use demonZFacetCount in shadow ..."
     MOV dword ptr [0x01d1d400],EBX      ; 00481e32 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00481e38 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00481e3e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00481e3e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00481e43
     PUSH 0x1bc1240                      ; 00481e46 | DAT_01bc1240
         ;   Label: LAB_00481e46

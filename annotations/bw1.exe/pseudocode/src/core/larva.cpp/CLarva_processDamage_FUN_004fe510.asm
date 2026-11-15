@@ -18,7 +18,7 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -112,8 +112,8 @@ section .text
     PUSH EBX                            ; 004fe5ed
     LEA ESI,[ESP + 0xe8]                ; 004fe5ee
     LEA EDI,[ESP + 0xf4]                ; 004fe5f5
-    CALL core_actor.cpp_FUN_00408b40    ; 004fe5fc
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004fe5fc
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe8]                ; 004fe601
     ADD ESP,0x8                         ; 004fe608
     MOVSD ES:EDI,ESI                    ; 004fe60b

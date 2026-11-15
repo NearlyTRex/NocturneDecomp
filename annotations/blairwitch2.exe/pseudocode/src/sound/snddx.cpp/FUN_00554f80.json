@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 97,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 5,
     "suspect_types": [
       "dropped_fyl2x",
@@ -15,13 +15,13 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 98
+    "total_lines": 96
   },
   "cross_references": [
     {
       "addr": "00556550",
       "from_addr": "00556617",
-      "name": "sound_snddx.cpp_FUN_00556550",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,7 +64,7 @@
       {
         "call_addr": "00556617",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00556550",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -79,7 +79,7 @@
       {
         "call_addr": "00556ad1",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00556550",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,18 +219,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar2 = (double)param_1;",
+      "text": "dVar1 = (double)param_1;",
       "type": "unnamed_param"
     },
     {
-      "description": "x87 log constant multiplied by `dVar2` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
-      "line": 18,
-      "match": "dVar2 = floor(dVar2 * 0.6931471805599453 * _DAT_005e9ab1);",
+      "description": "x87 log constant multiplied by `dVar1` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
+      "line": 17,
+      "match": "dVar1 = floor(dVar1 * 0.6931471805599453 * _DAT_005e9ab1);",
       "severity": "major",
-      "text": "dVar2 = floor(dVar2 * 0.6931471805599453 * _DAT_005e9ab1);",
+      "text": "dVar1 = floor(dVar1 * 0.6931471805599453 * _DAT_005e9ab1);",
       "type": "dropped_fyl2x"
     },
     {

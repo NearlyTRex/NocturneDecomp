@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
-;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_actor.cpp_randomChance_FUN_0040d060
@@ -339,7 +339,7 @@ section .text
     FLD float ptr [ESP + 0x1ac]         ; 00581ce6
     FLD float ptr [ESP + 0x1a4]         ; 00581ced
     CALL crt_math.c_atan2_FUN_005b9989  ; 00581cf4
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FLD float ptr [ESP + 0x1ac]         ; 00581cf9
     FMUL ST0                            ; 00581d00
     FLD float ptr [ESP + 0x1a4]         ; 00581d02
@@ -348,7 +348,7 @@ section .text
     FSQRT                               ; 00581d0d
     FLD float ptr [ESP + 0x1a8]         ; 00581d0f
     CALL crt_math.c_atan2_FUN_005b9989  ; 00581d16
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FXCH                                ; 00581d1b
     FSTP float ptr [ESP + 0x2f8]        ; 00581d1d
     FCHS                                ; 00581d24
@@ -554,8 +554,8 @@ section .text
     PUSH 0x5ed9ef                       ; 00581f99 | = "CVampireBoss::process - Need 4 waypoints"
     MOV dword ptr [0x01d046a0],ECX      ; 00581f9e | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00581fa4 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00581fa9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00581fa9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00581fae
     JMP 0x00581934                      ; 00581fb1
         ;   XREF to: 00581934 (UNCONDITIONAL_JUMP)  ; LAB_00581934
@@ -1204,8 +1204,8 @@ section .text
     PUSH EBX                            ; 0058278a
     LEA ESI,[ESP + 0x1b8]               ; 0058278b
     MOV dword ptr [ESP + 0x1c4],EDI     ; 00582792
-    CALL core_actor.cpp_FUN_00408cf0    ; 00582799
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 00582799
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0058279e
     PUSH 0x0                            ; 005827a1
     LEA EAX,[ESP + 0x274]               ; 005827a3

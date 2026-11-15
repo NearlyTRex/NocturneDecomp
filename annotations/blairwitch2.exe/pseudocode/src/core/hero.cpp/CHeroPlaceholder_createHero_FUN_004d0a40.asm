@@ -22,7 +22,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5da04d                       ; 004d0a77 | = "CHeroPlaceholder::createHero - failed."
     MOV dword ptr [0x01d046a0],ECX      ; 004d0a7c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004d0a82 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004d0a88
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d0a88
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d0a8d
     POP EDI                             ; 004d0a90
     PUSH EBX                            ; 004d0a91

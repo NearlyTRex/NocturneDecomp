@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5cf22a                       ; 00449f3b | = "getRestoreMemory - Need more static m..."
     MOV dword ptr [0x01d046a0],EBX      ; 00449f40 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00449f46 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00449f4c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00449f4c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00449f51
     POP EBX                             ; 00449f54
     POP ESI                             ; 00449f55

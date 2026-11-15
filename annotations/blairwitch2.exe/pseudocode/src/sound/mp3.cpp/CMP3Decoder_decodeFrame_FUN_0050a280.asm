@@ -87,7 +87,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   sound_mp3.cpp_antiAliasingButterfly_FUN_00508f10
 ;   sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00505eb0
@@ -313,7 +313,7 @@ section .text
     FDIVP                               ; 0050a52e
     MOV ESI,dword ptr [ESP + 0x5fd4]    ; 0050a530
     CALL crt_math.c_round_FUN_005b7ff0  ; 0050a537
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x6048]      ; 0050a53c
     TEST ESI,ESI                        ; 0050a543
     JZ 0x0050a54e                       ; 0050a545
@@ -660,8 +660,8 @@ section .text
     PUSH 0x5e034c                       ; 0050a979 | = "Not enough main data to decode frame %d."
     MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050a98a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050a98a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050a98f
     JMP 0x0050a935                      ; 0050a992
         ;   XREF to: 0050a935 (UNCONDITIONAL_JUMP)  ; LAB_0050a935

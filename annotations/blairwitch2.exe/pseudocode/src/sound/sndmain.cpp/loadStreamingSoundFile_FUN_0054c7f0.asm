@@ -31,7 +31,7 @@
 ;   undefined4 g_SfxSamples[1].locked_length
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -161,8 +161,8 @@ section .text
     PUSH 0x5e7f16                       ; 0054c8f2 | = "Out of memory."
     MOV [0x01d046a0],EAX                ; 0054c8f7 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054c8fc | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054c902
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054c902
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054c907
     PUSH ESI                            ; 0054c90a
         ;   Label: LAB_0054c90a
@@ -208,7 +208,7 @@ section .text
     ADD ESP,0x4                         ; 0054c9a8
     MOV dword ptr [EBP + 0x15c],0x0     ; 0054c9ab
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054c9b5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBP + 0x164]       ; 0054c9ba
     MOV ESI,dword ptr [EBP + 0x164]     ; 0054c9c0
     MOV dword ptr [EBP + 0x16c],0x0     ; 0054c9c6
@@ -309,7 +309,7 @@ section .text
     ADD ESP,0x4                         ; 0054cae8
     MOV dword ptr [EBP + 0x15c],0x0     ; 0054caeb
     CALL crt_math.c_round_FUN_005b7ff0  ; 0054caf5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBP + 0x164]       ; 0054cafa
     MOV EDX,dword ptr [EBP + 0x164]     ; 0054cb00
     MOV dword ptr [EBP + 0x16c],0x0     ; 0054cb06

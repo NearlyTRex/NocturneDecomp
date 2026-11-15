@@ -90,7 +90,7 @@ int __cdecl core_npc_cpp_CNPC_isInvulnerable_FUN_00531e80(CNPC *this_ptr);
 CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00531ea0(CNPC *this_ptr);
 CFont * __cdecl core_npc_cpp_FUN_00531eb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_FUN_00531ed0(CFont *this_ptr,uint flags);
-undefined4 engine_palette_cpp_FUN_00531ee0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+undefined4 engine_palette_cpp_FUN_00531ee0(int *param_1,char *param_2,int param_3,int param_4,int param_5);
 void engine_palette_cpp_FUN_005320b0(int *param_1);
 undefined4 engine_palette_cpp_FUN_00532120(void);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00532130(CParticle *this_ptr);
@@ -147,7 +147,7 @@ int __cdecl core_pendulum_cpp_didPhaseCross_FUN_00536930(float threshold,float o
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_00536a20(CPendulum *this_ptr,float delta_time);
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00537020(CPendulum *this_ptr,float delta_time);
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_00537190(CPendulum *this_ptr);
-CBoundingBox3D * __cdecl core_pendulum_cpp_CPendulum_getBoundingBox_FUN_00537210(CPendulum *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_pendulum_cpp_CPendulum_getBoundingBox_FUN_00537210(CPendulum *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_00537250(CPendulum *this_ptr);
 ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_005373f0(CPendulum *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_00537430(CPendulum *this_ptr);
@@ -203,7 +203,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_00539810(CPlatform *this_ptr
 void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_0053a340(CPlatform *this_ptr,float goal_param,float movement_rate);
 int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0053a700(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0053a740(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform *this_ptr,CDemonActor *actor);
 ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_0053ad50(CPlatform *this_ptr,SCollisionInfo *collision_info);
@@ -213,7 +213,7 @@ int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0053ada0(
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this_ptr,CDemonActor *actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0053aef0(CPlatform *this_ptr);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_0053b000(uint current_crc,uchar data_byte);
-uint engine_pod_cpp_FUN_0053b110(char *param_1,int param_2);
+uint engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *param_1,int param_2);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0053b210(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_0053b230(char **filename1_ptr,char **filename2_ptr);
@@ -237,7 +237,7 @@ void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0053cb00(CPod *this_ptr,char *se
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0053cb50(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_0053cc60(void);
 int engine_pod_cpp_FUN_0053ce50(undefined4 param_1,undefined4 param_2);
-int __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4);
+CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_0053cf50(CPod *this_ptr,SFoundFileInfo *found_file_info);
 void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0(CPod *this_ptr);
 int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_0053d3f0(CPod *this_ptr,char *target_filename);

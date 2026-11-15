@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_string.c__strncpy_FUN_005b9cf0
 ;   crt_unknown.c_FUN_005b9d26
@@ -101,8 +101,8 @@ section .text
     PUSH 0x5d0ca7                       ; 00461052 | = "CFileFinder::convertStruct - file too..."
     MOV dword ptr [0x01d046a0],EDI      ; 00461057 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0046105d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00461063
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00461063
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00461068
     JMP 0x00461014                      ; 0046106b
         ;   XREF to: 00461014 (UNCONDITIONAL_JUMP)  ; LAB_00461014

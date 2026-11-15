@@ -35,7 +35,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
 ;   crt_stdio.c_fputc_FUN_005bab40
@@ -127,8 +127,8 @@ section .text
     PUSH 0x5e19a5                       ; 0051490e | = "saveScreenRaw32 - Unable to open output"
     MOV dword ptr [0x01d046a0],EBX      ; 00514913 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00514919 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051491f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051491f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514924
     XOR EBP,EBP                         ; 00514927
         ;   Label: LAB_00514927
@@ -200,7 +200,7 @@ section .text
     PUSH EDI                            ; 005149ef
         ;   Label: LAB_005149ef
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005149f0
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005149f5
     ADD ESP,0x5c                        ; 005149f8
     POP EBP                             ; 005149fb
@@ -214,8 +214,8 @@ section .text
     PUSH 0x5e196e                       ; 00514a0a | = "saveScreenRaw32 - No ext found"
     MOV dword ptr [0x01d046a0],EDX      ; 00514a0f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00514a15 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00514a1b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00514a1b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514a20
     JMP 0x005148cd                      ; 00514a23
         ;   XREF to: 005148cd (UNCONDITIONAL_JUMP)  ; LAB_005148cd

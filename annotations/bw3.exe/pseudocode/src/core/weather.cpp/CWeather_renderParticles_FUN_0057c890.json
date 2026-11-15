@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 565,
-    "complexity_score": 734,
+    "complexity_score": 774,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 229,
-    "suspect_count": 48,
+    "suspect_count": 52,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -65,6 +65,11 @@
       "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046e6b0"
     },
     {
+      "addr": "0046d250",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250"
+    },
+    {
       "addr": "0046ce90",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
@@ -83,11 +88,6 @@
       "addr": "0046d4c0",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
-    },
-    {
-      "addr": "0046d250",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d250"
     },
     {
       "addr": "0046d080",
@@ -689,17 +689,17 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
-      "match": "aiStackY_1078",
+      "match": "auStackY_1078",
       "severity": "moderate",
-      "text": "int aiStackY_1078 [984];",
+      "text": "uint auStackY_1078 [984];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d250(DAT_005f2afc);",
+      "text": "engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(DAT_005f2afc,&local_78);",
       "type": "undefined_data"
     },
     {
@@ -992,10 +992,18 @@
     },
     {
       "description": "Pointer value `&local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "(int)&local_84",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_84 + (uint)bVar6 * -8 + 4) = aiStack_74[(uint)bVar6 * -2];",
+      "text": "*(uint *)((int)&local_84 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_78 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -1003,7 +1011,15 @@
       "line": 52,
       "match": "(int)&local_84",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -1032,10 +1048,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 50,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_84 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 51,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_84 + (uint)bVar6 * -8 + 4) = aiStack_74[(uint)bVar6 * -2];",
+      "text": "*(uint *)((int)&local_78 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1043,7 +1067,15 @@
       "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {

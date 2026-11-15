@@ -1,0 +1,435 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 389,
+    "complexity_score": 344,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 104,
+    "suspect_count": 21,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "stack_ref",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 493
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00579ad0",
+    "address_range": [
+      [
+        "00579ad0",
+        "00579f2a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00579ad0",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_00579ad0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00577a50",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577a50"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5340",
+      "name": "s_sound_snddx_cpp_005f5340",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5353",
+      "name": "s_DirectSoundDevice_startS_005f5353",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5384",
+      "name": "s_sound_snddx_cpp_005f5384",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5397",
+      "name": "s_DirectSoundDevice_startS_005f5397",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f53c1",
+      "name": "s_sound_snddx_cpp_005f53c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f53d4",
+      "name": "s_DirectSoundDevice_startS_005f53d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f542e",
+      "name": "s_Set_frequency_hardware_s_005f542e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f545a",
+      "name": "s_Set_volume_hardware_sfx_005f545a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5483",
+      "name": "s_Play_hardware_sfx_second_005f5483",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f54a6",
+      "name": "s_Set_hardware_sfx_seconda_005f54a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f54d2",
+      "name": "s_Set_hardware_sfx_seconda_005f54d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f5506",
+      "name": "s_Set_hardware_sfx_seconda_005f5506",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f552f",
+      "name": "s_Play_hardware_sfx_second_005f552f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.692063492063492,
+    "instruction_count": 315,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 3,
+      "BRANCH": 5,
+      "CALL": 25,
+      "CALLIND": 8,
+      "CBRANCH": 21,
+      "COPY": 278,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 141,
+      "INT_AND": 183,
+      "INT_CARRY": 39,
+      "INT_EQUAL": 153,
+      "INT_LEFT": 4,
+      "INT_LESS": 14,
+      "INT_MULT": 17,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 12,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 39,
+      "INT_SLESS": 79,
+      "INT_SUB": 120,
+      "INT_XOR": 9,
+      "LOAD": 90,
+      "POPCOUNT": 75,
+      "RETURN": 7,
+      "STORE": 110
+    },
+    "pcode_op_count": 1478
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005570a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055cc40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005afe80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4941
+    },
+    "nocturne.exe": {
+      "addr": "0052b9a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4128
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 39,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(**(int **)(iVar1 * 0x24 + 0x2c823e0) + 0x30))();",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 39,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(**(int **)(iVar1 * 0x24 + 0x2c823e0) + 0x30))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2c823e0);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 49,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2c823e0);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,0xffffd8f0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 57,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2c823e0);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 58,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(*piVar2 + 0x30))(piVar2,0,0,uStack_28);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 72,
+      "match": "*(int **)(iVar5 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(**(int **)(iVar5 + 0x2c823e0) + 0x44))",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 72,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(**(int **)(iVar5 + 0x2c823e0) + 0x44))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 73,
+      "match": "*(int **)(iVar5 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "(*(int **)(iVar5 + 0x2c823e0),iVar3);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 81,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2c823e0);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 82,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(*piVar2 + 0x34))(piVar2,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 89,
+      "match": "*(int **)(iVar1 * 0x24 + 0x2c823e0",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2c823e0);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 90,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,*(uint *)(iVar1 * 0x24 + 0x2c823f4));",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 100,
+      "match": "&stack0xfffff4f8",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffff4f8,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 101,
+      "match": "&stack0xfffff4f8",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_logSoundError_FUN_005773f0(&stack0xfffff4f8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)&slot->changed_flags",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)&slot->changed_flags",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 105,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 76,
+        "vtable_addr": "00605b9c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

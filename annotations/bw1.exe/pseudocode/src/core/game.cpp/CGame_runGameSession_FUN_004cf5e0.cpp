@@ -119,7 +119,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
     core_set_cpp_CDemonSet_setCameraView_FUN_0054f0d0(g_CDemonSetPtr,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_FUN_00559f80(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004d6030(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004d5e40(this_ptr);
@@ -176,7 +177,7 @@ LAB_004cf9e0:
     if (g_CDemonSetPtr->selected_camera_index < 0) {
       g_CScriptPtr->focus_actor_changed = 2;
 LAB_004cfb22:
-      iVar4 = core_setdir_cpp_FUN_00559f80
+      iVar4 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
                         (g_CDemonSetPtr,g_CScriptPtr->focus_actor,g_CScriptPtr->focus_actor_changed)
       ;
       if (iVar4 != 0) {

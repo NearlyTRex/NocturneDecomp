@@ -4,6 +4,9 @@
 ; undefined4 support_trisock_cpp_FUN_00570e20(int param_1,undefined4 *param_2)
 ;
 ;
+; XREF[1]:
+;   support_trisock.cpp_FUN_00571340 at 00571390
+;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   wincore_winrun.cpp_sleep_FUN_00581a40

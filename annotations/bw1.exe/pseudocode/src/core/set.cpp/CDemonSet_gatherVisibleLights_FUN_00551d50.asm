@@ -79,8 +79,8 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0
 ;   core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045edf0
-;   core_dirmat.cpp_FUN_0045f690
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;
 ; *****************************************************************************
 
@@ -306,8 +306,8 @@ section .text
     PUSH EDX                            ; 00551fae
     LEA ESI,[ESP + 0x98]                ; 00551faf
     LEA EDI,[ESP + 0x20]                ; 00551fb6
-    CALL core_dirmat.cpp_FUN_0045f700   ; 00551fba
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 00551fba
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x98]                ; 00551fbf
     LEA EAX,[ESP + 0x20]                ; 00551fc6
     ADD ESP,0x8                         ; 00551fca
@@ -449,8 +449,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x28]      ; 00552142
     PUSH EDI                            ; 00552145
     LEA ESI,[ESP + 0xa4]                ; 00552146
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0055214d
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0055214d
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA EDI,[ESP + 0x44]                ; 00552152
     ADD ESP,0x8                         ; 00552156
     LEA ESI,[ESP + 0x9c]                ; 00552159

@@ -37,3 +37,7 @@ CTextureList g_CTextureListInstance = {};
 // CWater
 CWater g_CWaterInstance = {};
 
+// SReverbSettings
+SReverbSettings g_CachedReverb = {};
+SReverbSettings g_SoundReverb = {};
+

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_FUN_005b7d60(float *param_1)
+; undefined4 * core_xform_cpp_FUN_005b7d60(float *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 005b7e77 (CONDITIONAL_JUMP)  ; LAB_005b7e77
     FLD float ptr [ESP]                 ; 005b7da9
     CALL crt_math.c_asin_FUN_005c1cd6   ; 005b7dac
-        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_asin_FUN_005c1cd6()
+        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_005c1cd6(float10 sine_value)
     FST float ptr [ESP + 0x4]           ; 005b7db1
     FCOMP float ptr [0x005fa1b0]        ; 005b7db5 | DAT_005fa1b0
     FNSTSW AX                           ; 005b7dbb
@@ -75,7 +75,7 @@ section .text
     FMUL float ptr [EDX + 0x8]          ; 005b7dec
     FSUBP                               ; 005b7def
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005b7df1
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FLD float ptr [EDX + 0xc]           ; 005b7df6
     FMUL ST0                            ; 005b7df9
     FSUBP ST2,ST0                       ; 005b7dfb
@@ -87,7 +87,7 @@ section .text
     FLD ST2                             ; 005b7e0a
     FXCH                                ; 005b7e0c
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005b7e0e
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FSTP ST2                            ; 005b7e13
     FSTP float ptr [ESP + 0x8]          ; 005b7e15
     FSTP float ptr [ESP + 0xc]          ; 005b7e19
@@ -116,7 +116,7 @@ section .text
     FMUL float ptr [EDX + 0x8]          ; 005b7e4a
     FSUBP                               ; 005b7e4d
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005b7e4f
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     MOV dword ptr [ESP + 0x4],0xbfc90fdb ; 005b7e54
     XOR EAX,EAX                         ; 005b7e5c
     FSTP float ptr [ESP + 0x8]          ; 005b7e5e
@@ -146,7 +146,7 @@ section .text
     FMUL float ptr [EDX + 0x8]          ; 005b7e93
     FSUBP                               ; 005b7e96
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005b7e98
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     MOV EBX,0x3fc90fdb                  ; 005b7e9d
     XOR ESI,ESI                         ; 005b7ea2
     MOV dword ptr [ESP + 0x4],EBX       ; 005b7ea4

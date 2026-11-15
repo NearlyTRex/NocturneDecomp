@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 0042c882
     MOV dword ptr [0x01d046a0],EDX      ; 0042c883 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0042c889 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042c88f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042c88f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042c894
     LEA EAX,[ESP + 0xa0]                ; 0042c897
         ;   Label: LAB_0042c897

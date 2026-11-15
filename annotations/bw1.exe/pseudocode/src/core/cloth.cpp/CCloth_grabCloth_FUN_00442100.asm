@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__strcmp_FUN_005c0f80
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5d6a2e                       ; 0044217b | = "CCloth::grabCloth - Can't find bone %s"
     MOV [0x01d1d400],EAX                ; 00442180 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00442185 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0044218b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044218b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00442190
     JMP 0x00442134                      ; 00442193
         ;   XREF to: 00442134 (UNCONDITIONAL_JUMP)  ; LAB_00442134

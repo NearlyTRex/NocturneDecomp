@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -147,8 +147,8 @@ section .text
     PUSH 0x5ca191                       ; 00403148 | = "vLine - invalid bitsPerPixel"
     MOV [0x01d046a0],EAX                ; 0040314d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00403152 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00403158
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00403158
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040315d
     POP EBP                             ; 00403160
     POP EDI                             ; 00403161

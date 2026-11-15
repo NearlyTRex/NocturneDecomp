@@ -6,21 +6,25 @@
 
 #include "nocturne.h"
 
+/* WARNING: Removing unreachable block (ram,0x00473f68) */
+/* WARNING: Removing unreachable block (ram,0x00473f74) */
+/* WARNING: Removing unreachable block (ram,0x00473f88) */
+/* WARNING: Removing unreachable block (ram,0x00473f92) */
+/* WARNING: Removing unreachable block (ram,0x00473f9b) */
+/* WARNING: Removing unreachable block (ram,0x00473fa4) */
+/* WARNING: Removing unreachable block (ram,0x00473f5c) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
-  int grid_y;
-  int grid_z;
-  CDemonCube *this_ptr_00;
-  int grid_x;
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  int unaff_EBX;
+  int unaff_EDI;
   
   _DAT_01510dac = _DAT_02653710;
   _DAT_01510dc8 = _DAT_02653714;
@@ -30,56 +34,41 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(C
   _DAT_01510db0 = _DAT_02653714;
   _DAT_01510da8 = _DAT_0265370c;
   if (cylinder->dir_x <= 0.0) {
-    fVar1 = (((float10)cylinder->center_x + (float10)cylinder->dir_x) -
-            (float10)(this_ptr->bbox_min).x) - (float10)cylinder->radius;
-    fVar2 = (float10)1 / (float10)(this_ptr->cell_size).x;
-    fVar3 = (float10)cylinder->center_x;
+    fVar5 = ((cylinder->center_x + cylinder->dir_x) - (this_ptr->bbox_min).x) - cylinder->radius;
+    fVar1 = (this_ptr->cell_size).x;
+    fVar4 = cylinder->center_x;
   }
   else {
-    fVar1 = ((float10)cylinder->center_x - (float10)(this_ptr->bbox_min).x) -
-            (float10)cylinder->radius;
-    fVar2 = (float10)1 / (float10)(this_ptr->cell_size).x;
-    fVar3 = (float10)cylinder->center_x + (float10)cylinder->dir_x;
+    fVar5 = (cylinder->center_x - (this_ptr->bbox_min).x) - cylinder->radius;
+    fVar1 = (this_ptr->cell_size).x;
+    fVar4 = cylinder->center_x + cylinder->dir_x;
   }
-  fVar1 = fVar1 * fVar2;
-  fVar2 = ((fVar3 - (float10)(this_ptr->bbox_min).x) + (float10)cylinder->radius) * fVar2;
+  fVar2 = (this_ptr->bbox_min).x;
+  fVar3 = cylinder->radius;
   _DAT_01510db8 = _DAT_01510dac;
   _DAT_01510dc4 = _DAT_01510dac;
-  round();
-  round();
-  grid_x = (int)ROUND(fVar1);
-  fVar4 = (float10)1 / (float10)(this_ptr->cell_size).y;
-  fVar1 = ((float10)cylinder->bottom_y - (float10)(this_ptr->bbox_min).y) * fVar4;
-  fVar4 = ((float10)cylinder->top_y - (float10)(this_ptr->bbox_min).y) * fVar4;
-  fVar3 = (float10)0;
-  round();
-  round();
-  if ((float10)cylinder->dir_z <= fVar3) {
-    fVar5 = (((float10)cylinder->center_z + (float10)cylinder->dir_z) -
-            (float10)(this_ptr->bbox_min).z) - (float10)cylinder->radius;
-    fVar6 = (float10)1 / (float10)(this_ptr->cell_size).z;
-    fVar3 = (float10)cylinder->center_z;
+  round((double)(fVar5 * (1.0 / fVar1)));
+  round((double)(((fVar4 - fVar2) + fVar3) * (1.0 / fVar1)));
+  fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);
+  fVar1 = cylinder->top_y;
+  fVar4 = *(float *)(unaff_EBX + 0x14);
+  round
+            ((double)((cylinder->bottom_y - *(float *)(unaff_EBX + 0x14)) * fVar5));
+  round((double)((fVar1 - fVar4) * fVar5));
+  if (cylinder->dir_z <= 0.0) {
+    fVar5 = ((cylinder->center_z + cylinder->dir_z) - *(float *)(unaff_EDI + 0x18)) -
+            cylinder->radius;
+    fVar1 = *(float *)(unaff_EDI + 0x30);
+    fVar4 = cylinder->center_z;
   }
   else {
-    fVar5 = ((float10)cylinder->center_z - (float10)(this_ptr->bbox_min).z) -
-            (float10)cylinder->radius;
-    fVar6 = (float10)1 / (float10)(this_ptr->cell_size).z;
-    fVar3 = (float10)cylinder->center_z + (float10)cylinder->dir_z;
+    fVar5 = (cylinder->center_z - *(float *)(unaff_EDI + 0x18)) - cylinder->radius;
+    fVar1 = *(float *)(unaff_EDI + 0x30);
+    fVar4 = cylinder->center_z + cylinder->dir_z;
   }
-  fVar5 = fVar5 * fVar6;
-  fVar6 = ((fVar3 - (float10)(this_ptr->bbox_min).z) + (float10)cylinder->radius) * fVar6;
-  round();
-  round();
-  for (; grid_y = (int)ROUND(fVar1), grid_x <= (int)ROUND(fVar2); grid_x = grid_x + 1) {
-    for (; grid_z = (int)ROUND(fVar5), grid_y <= (int)ROUND(fVar4); grid_y = grid_y + 1) {
-      for (; grid_z <= (int)ROUND(fVar6); grid_z = grid_z + 1) {
-        this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
-                                (this_ptr,grid_x,grid_y,grid_z);
-        if (this_ptr_00 != (CDemonCube *)0x0) {
-          core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00446d20(this_ptr_00,cylinder);
-        }
-      }
-    }
-  }
+  fVar2 = *(float *)(unaff_EDI + 0x18);
+  fVar3 = cylinder->radius;
+  round((double)(fVar5 * (1.0 / fVar1)));
+  round((double)(((fVar4 - fVar2) + fVar3) * (1.0 / fVar1)));
   return;
 }

@@ -25,7 +25,7 @@
 ;
 ; XREF[2]:
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00 at 0057fa6a
-;   core_turret.cpp_FUN_0057f0b0 at 0057f6a4
+;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 at 0057f6a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ed810

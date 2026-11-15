@@ -1,0 +1,48 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl sound_sndmain_cpp_setReverb_FUN_005756f0(float volume,float decay_time,float damping)
+;
+; Parameters:
+; float            Stack[0x4]:4   volume
+; float            Stack[0x8]:4   decay_time
+; float            Stack[0xc]:4   damping
+;
+; XREF[3]:
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d73e
+;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cc5b
+;   core_sound.cpp_CSound_setReverb_FUN_0057dad0 at 0057daf4
+;
+; Referenced Globals:
+;   undefined4 DAT_02c80650
+;   SReverbSettings g_CachedReverb
+;   undefined4 g_CachedReverb.decay_time
+;   undefined4 g_CachedReverb.damping
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005756f0
+        ;   Label: sound_sndmain.cpp_setReverb_FUN_005756f0
+    MOV [0x02c807d0],EAX                ; 005756f4 | g_CachedReverb
+    MOV EAX,dword ptr [ESP + 0x8]       ; 005756f9
+    MOV [0x02c807d4],EAX                ; 005756fd | g_CachedReverb.decay_time
+    MOV EAX,dword ptr [ESP + 0xc]       ; 00575702
+    MOV EDX,dword ptr [0x02c80650]      ; 00575706 | DAT_02c80650
+    MOV [0x02c807d8],EAX                ; 0057570c | g_CachedReverb.damping
+    TEST EDX,EDX                        ; 00575711
+    JNZ 0x00575716                      ; 00575713
+        ;   XREF to: 00575716 (CONDITIONAL_JUMP)  ; LAB_00575716
+    RET                                 ; 00575715
+    PUSH dword ptr [ESP + 0xc]          ; 00575716
+        ;   Label: LAB_00575716
+    PUSH dword ptr [ESP + 0xc]          ; 0057571a
+    MOV EAX,EDX                         ; 0057571e
+    PUSH dword ptr [ESP + 0xc]          ; 00575720
+    MOV EDX,dword ptr [EDX]             ; 00575724
+    PUSH EAX                            ; 00575726
+    CALL dword ptr [EDX + 0x2c]         ; 00575727
+    ADD ESP,0x10                        ; 0057572a
+    RET                                 ; 0057572d
+

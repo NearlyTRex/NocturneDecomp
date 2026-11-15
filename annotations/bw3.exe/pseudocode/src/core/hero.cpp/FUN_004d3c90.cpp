@@ -53,7 +53,7 @@ int core_hero_cpp_FUN_004d3c90(CHero *param_1)
   if (iVar1 != 0) {
     return 0;
   }
-  iVar1 = core_hero_cpp_FUN_004d3b20(param_1);
+  iVar1 = core_hero_cpp_CHero_findItemUseTarget_FUN_004d3b20(param_1);
   if (iVar1 != 0) {
     return 0;
   }

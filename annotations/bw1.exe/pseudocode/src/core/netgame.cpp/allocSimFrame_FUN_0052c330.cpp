@@ -32,7 +32,7 @@ SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0052c330(int sequence_num
   if (0x1ff < _DAT_01d715a8) {
     _DAT_01d1d400 = "..\\core\\netgame.cpp";
     _DAT_01d1d404 = 299;
-    core_main_c_FUN_005030e0("allocSimFrame - sim history list full");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
   }
   dest = (SSimFrame *)(_DAT_01d715a8 * 0x6c + 0x1d715ac);
   _DAT_01d715a8 = _DAT_01d715a8 + 1;

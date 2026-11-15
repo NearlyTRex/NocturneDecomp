@@ -123,7 +123,7 @@ section .text
     FST float ptr [ESP + 0x3c]          ; 00486b5b
     FLD float ptr [ESP + 0x34]          ; 00486b5f
     CALL crt_math.c_atan2_FUN_005b9989  ; 00486b63
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FLD float ptr [ESP + 0x3c]          ; 00486b68
     FMUL ST0                            ; 00486b6c
     FLD float ptr [ESP + 0x34]          ; 00486b6e

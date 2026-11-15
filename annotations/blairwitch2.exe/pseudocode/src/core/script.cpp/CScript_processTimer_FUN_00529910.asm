@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -66,8 +66,8 @@ section .text
     PUSH 0x5e4dc6                       ; 00529962 | = "CScript::processTimer - invalidTimeTo..."
     MOV dword ptr [0x01d046a0],EDX      ; 00529967 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0052996d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00529973
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00529973
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00529978
     JMP 0x00529927                      ; 0052997b
         ;   XREF to: 00529927 (UNCONDITIONAL_JUMP)  ; LAB_00529927

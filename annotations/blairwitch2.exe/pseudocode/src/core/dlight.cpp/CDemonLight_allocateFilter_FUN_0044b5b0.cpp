@@ -20,6 +20,6 @@ void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_0044b5b0(CDemonLight
   }
   _DAT_01d046a0 = "..\\core\\dlight.cpp";
   _DAT_01d046a4 = 0x547;
-  core_main_c_FUN_004e4500("CDemonLight::allocateFilter - Out of memory");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::allocateFilter - Out of memory");
   return;
 }

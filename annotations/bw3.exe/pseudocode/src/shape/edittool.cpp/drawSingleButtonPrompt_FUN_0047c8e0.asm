@@ -39,7 +39,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
@@ -281,8 +281,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047cb76 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d71de0],ECX      ; 0047cb7b | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0047cb81 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0047cb87
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047cb87
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047cb8c
     JMP 0x0047c8fe                      ; 0047cb8f
         ;   XREF to: 0047c8fe (UNCONDITIONAL_JUMP)  ; LAB_0047c8fe

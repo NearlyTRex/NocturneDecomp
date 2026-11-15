@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00541640(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data)
@@ -25,21 +24,17 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00541640(CDefor
   float local_68;
   float local_64;
   float local_60;
-  float local_5c;
+  CVector3f local_5c;
   float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
+  float local_4c [5];
+  CVector3f local_38;
   int local_2c;
   int *local_28;
   int local_24;
   int local_20;
   float *local_1c;
   float *local_18;
-  float *local_14;
+  CVector3f *local_14;
   
   bVar3 = 0;
   local_28 = output_buffer;
@@ -50,32 +45,33 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00541640(CDefor
     pfVar1 = (float *)(local_20 + *(int *)((int)this_ptr->vertex_data_ptr + local_2c));
     local_1c = pfVar1;
     if (*(char *)pfVar1 == '\x01') {
-      core_xform_cpp_FUN_00591530(pfVar1 + 4,bone_matrices + *(byte *)((int)pfVar1 + 1));
-      local_50 = local_5c;
-      (&stack0xffffffb4)[(uint)bVar3 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffffa8 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffac + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      if (&stack0xffffffbc != &stack0xffffffb0) {
-        local_44 = local_50;
-        local_40 = local_4c;
-        local_3c = local_48;
+      core_xform_cpp_transformVector3x4_FUN_00591530
+                ((CVector3f *)(pfVar1 + 4),bone_matrices + *(byte *)((int)pfVar1 + 1),&local_5c);
+      local_50 = local_5c.x;
+      local_4c[(uint)bVar3 * -2] = *(float *)((int)&local_5c + (uint)bVar3 * -8 + 4);
+      local_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+           *(float *)((int)&local_5c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      if (local_4c + 2 != &local_50) {
+        local_4c[2] = local_50;
+        local_4c[3] = local_4c[0];
+        local_4c[4] = local_4c[1];
       }
     }
     else {
-      local_40 = 0.0;
-      local_44 = 0.0;
-      local_3c = 0.0;
+      local_4c[3] = 0.0;
+      local_4c[2] = 0.0;
+      local_4c[4] = 0.0;
       local_18 = pfVar1;
-      local_14 = pfVar1 + 4;
+      local_14 = (CVector3f *)(pfVar1 + 4);
       for (iVar2 = 0; pfVar1 = pfVar1 + 1, iVar2 < (int)(uint)*(byte *)local_1c; iVar2 = iVar2 + 1)
       {
-        core_xform_cpp_FUN_00591530(local_14,bone_matrices + *(byte *)((int)local_18 + 1));
-        local_80 = local_38;
+        core_xform_cpp_transformVector3x4_FUN_00591530
+                  (local_14,bone_matrices + *(byte *)((int)local_18 + 1),&local_38);
+        local_80 = local_38.x;
         *(uint *)((int)&stack0xffffff84 + (uint)bVar3 * -8) =
-             *(uint *)((int)&stack0xffffffcc + (uint)bVar3 * 0xfffffffe * 4);
+             *(uint *)((int)&local_38 + (uint)bVar3 * -8 + 4);
         *(uint *)((int)&stack0xffffff88 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-             *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+             *(uint *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         local_68 = local_80 * *pfVar1;
         local_64 = local_7c * *pfVar1;
         local_60 = local_78 * *pfVar1;
@@ -84,16 +80,16 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00541640(CDefor
              *(uint *)((int)&stack0xffffff9c + (uint)bVar3 * -8);
         *(uint *)((int)&stack0xffffff94 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
              *(uint *)((int)&stack0xffffffa0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-        local_44 = local_44 + local_74;
-        local_40 = local_40 + local_70;
-        local_3c = local_3c + local_6c;
-        local_14 = local_14 + 3;
+        local_4c[2] = local_4c[2] + local_74;
+        local_4c[3] = local_4c[3] + local_70;
+        local_4c[4] = local_4c[4] + local_6c;
+        local_14 = local_14 + 1;
         local_18 = (float *)((int)local_18 + 1);
       }
     }
-    *local_28 = (int)ROUND(local_44 * _DAT_005fb998);
-    local_28[1] = (int)ROUND(local_40 * _DAT_005fb998);
-    local_28[2] = (int)ROUND(local_3c * _DAT_005fb998);
+    *local_28 = (int)ROUND(local_4c[2] * _DAT_005fb998);
+    local_28[1] = (int)ROUND(local_4c[3] * _DAT_005fb998);
+    local_28[2] = (int)ROUND(local_4c[4] * _DAT_005fb998);
     local_28 = local_28 + 3;
     local_20 = local_20 + 0x34;
   }

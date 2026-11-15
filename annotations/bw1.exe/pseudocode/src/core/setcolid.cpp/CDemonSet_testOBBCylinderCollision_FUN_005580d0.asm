@@ -48,8 +48,8 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_00420570
-;   core_dirmat.cpp_FUN_0045f690
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0048fed0
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_004904d0
 ;   crt_memory.c___arrinit_FUN_005c0357
@@ -79,8 +79,8 @@ section .text
     PUSH EDX                            ; 005580fc
     LEA ESI,[ESP + 0x1dc]               ; 005580fd
     LEA EDI,[ESP + 0x1e8]               ; 00558104
-    CALL core_box.cpp_FUN_00420570      ; 0055810b
-        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420570()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570 ; 0055810b
+        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x1dc]               ; 00558110
     ADD ESP,0x8                         ; 00558117
     LEA EAX,[ESP + 0x1e0]               ; 0055811a
@@ -92,8 +92,8 @@ section .text
     PUSH ECX                            ; 0055812c
     LEA ESI,[ESP + 0x1b8]               ; 0055812d
     LEA EDI,[ESP + 0x1d0]               ; 00558134
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0055813b
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0055813b
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x1b8]               ; 00558140
     ADD ESP,0x8                         ; 00558147
     MOVSD ES:EDI,ESI                    ; 0055814a

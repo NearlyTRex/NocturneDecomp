@@ -80,7 +80,7 @@ void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_pt
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00535a80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
-void __cdecl core_set_cpp_FUN_005365c0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_005365c0(CDemonSet *this_ptr);
 void core_set_cpp_FUN_00536990(CDemonSet *param_1);
 void core_set_cpp_FUN_00536c90(CDemonSet *param_1);
 void core_set_cpp_FUN_00536f90(CDemonSet *param_1);
@@ -143,7 +143,7 @@ SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
 void core_set_cpp_FUN_0053bb60(void *param_1);
 void __cdecl core_setcolid_cpp_staticInit_FUN_0053bb80(void);
-float * core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
+CDemonSet * core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CDemonActor *param_7);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0(CDemonSet *this_ptr,CVector3f *position);
 int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0053cbf0(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0053cc70(CDemonSet *this_ptr,CVector3f *world_position);
@@ -176,5 +176,5 @@ SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_0053f0b0(SRay
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_0053f0c0(SRaytraceState *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_0053f0d0(void);
 float core_setdir_cpp_FUN_0053f5d0(void);
-undefined4 core_setdir_cpp_FUN_0053f940(CDemonSet *param_1,CDemonActor *param_2,int param_3);
+int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 

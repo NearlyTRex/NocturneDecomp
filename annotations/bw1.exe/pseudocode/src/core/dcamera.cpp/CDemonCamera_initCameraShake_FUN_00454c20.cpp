@@ -11,29 +11,27 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00454c20(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 
 {
-  uint extraout_EDX;
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  float10 fVar4;
+  uint uVar1;
+  double dVar2;
+  double dVar3;
+  double dVar4;
+  double dVar5;
   
-  fVar1 = (float10)_DAT_005d7a7f;
-  fVar2 = (float10)peak_intensity * fVar1;
-  fVar3 = (float10)sustain_duration * fVar1;
-  fVar4 = (float10)attack_time * fVar1;
-  fVar1 = (float10)decay_time * fVar1;
+  dVar3 = (double)sustain_duration * _DAT_005d7a7f;
+  dVar4 = (double)attack_time * _DAT_005d7a7f;
+  uVar1 = 0;
+  dVar5 = (double)decay_time * _DAT_005d7a7f;
   _DAT_01342208 = 0;
-  round();
-  round();
-  round();
-  round();
-  DAT_00611228 = (int)ROUND(fVar3);
-  _DAT_01342204 = (int)ROUND(fVar4);
-  _DAT_0134220c = (int)ROUND(fVar1);
-  DAT_00611224 = (int)ROUND(fVar2);
-  DAT_0061122c = extraout_EDX;
+  dVar2 = round((double)peak_intensity * _DAT_005d7a7f);
+  dVar3 = round(dVar3);
+  dVar4 = round(dVar4);
+  dVar5 = round(dVar5);
+  DAT_00611228 = (int)ROUND(dVar3);
+  _DAT_01342204 = (int)ROUND(dVar4);
+  _DAT_0134220c = (int)ROUND(dVar5);
+  DAT_00611224 = (int)ROUND(dVar2);
   if (_DAT_01342204 == 0) {
-    DAT_0061122c = 1;
+    uVar1 = 1;
     _DAT_01342200 = DAT_00611228;
     if (DAT_00611228 == 0) {
       _DAT_01342210 = _DAT_0134220c;
@@ -41,5 +39,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00454c20(CDemonCa
       return;
     }
   }
+  DAT_0061122c = uVar1;
   return;
 }

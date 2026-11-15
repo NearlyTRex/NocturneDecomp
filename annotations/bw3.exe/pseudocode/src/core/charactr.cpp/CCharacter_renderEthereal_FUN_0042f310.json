@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 242,
+    "complexity_score": 267,
     "cross_reference_count": 7,
     "function_call_count": 14,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
       "raw_address_pointer_store",
+      "stack_ref",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -428,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
@@ -436,7 +437,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xc000);",
@@ -444,7 +445,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
+      "line": 16,
       "match": "*(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
       "severity": "moderate",
       "text": "if (this_ptr == *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {",
@@ -455,7 +456,7 @@
       "line": 18,
       "match": "DAT_007e2ae8",
       "severity": "mild",
-      "text": "fVar3 = (float10)DAT_007e2ae8 + (float10)g_CGamePtr->delta_time_float * (float10)_DAT_005b8376;",
+      "text": "((double)((float)DAT_007e2ae8 + g_CGamePtr->delta_time_float * _DAT_005b8376))",
       "type": "undefined_data"
     },
     {
@@ -463,7 +464,7 @@
       "line": 20,
       "match": "DAT_007e2ae8",
       "severity": "mild",
-      "text": "DAT_007e2ae8 = (int)ROUND(fVar3);",
+      "text": "DAT_007e2ae8 = (int)ROUND(dVar3);",
       "type": "undefined_data"
     },
     {
@@ -523,6 +524,14 @@
       "type": "undefined_data"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffe54c",
+      "severity": "moderate",
+      "text": "(this_ptr_00,(SPose *)&stack0xffffe54c);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 64,
       "match": "DAT_007e2ae8",
@@ -537,6 +546,14 @@
       "severity": "mild",
       "text": "DAT_005f2afc->skip_uv_extraction = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 68,
+      "match": "&stack0xffffe54c",
+      "severity": "moderate",
+      "text": "(this_ptr_00,(SPose *)&stack0xffffe54c);",
+      "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",

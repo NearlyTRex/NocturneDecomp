@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_plotPixel_FUN_00401130
 ;   engine_2d.c_project3DPointToScreen_FUN_00401780
 ;
@@ -177,8 +177,8 @@ section .text
     PUSH 0x5d20f2                       ; 00402c40
     MOV dword ptr [0x01d1d400],EDI      ; 00402c45 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00402c4b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00402c51
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00402c51
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00402c56
     POP EBP                             ; 00402c59
     POP EDI                             ; 00402c5a

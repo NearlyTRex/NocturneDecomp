@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   filename
 ; char *           Stack[0x14]:4   extension
 ;
-; XREF[27]:
+; XREF[28]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004a70d0 at 004a80d8
 ;   core_flashlit.cpp_FUN_004ba0b0 at 004ba0cb
 ;   core_flashlit.cpp_FUN_004ba130 at 004ba200
@@ -21,7 +21,7 @@
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00546432
 ;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054d7ee
 ;   engine_dosio.cpp_FUN_00479770 at 004797a8
-;   ... and 17 more
+;   ... and 18 more
 ;
 ; Called Functions:
 ;   crt_string.c_splitpath_FUN_005c2238

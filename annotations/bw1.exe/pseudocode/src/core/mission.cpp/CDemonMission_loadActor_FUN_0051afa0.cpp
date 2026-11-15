@@ -17,12 +17,6 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDem
   char local_dc [200];
   CDemonActor *local_14;
   
-  if (current_actor == (CDemonActor *)0x0) {
-    current_actor = (CDemonActor *)"(unknown)";
-  }
-  if (property_description == (char *)0x0) {
-    property_description = "(unknown)";
-  }
   do {
     iVar2 = _fgetc(file);
   } while (((&DAT_00626114)[(byte)((char)iVar2 + 1)] & 2) != 0);
@@ -59,8 +53,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDem
   do {
     _DAT_01d1d400 = "..\\core\\mission.cpp";
     _DAT_01d1d404 = 0x234;
-    core_main_c_FUN_005030e0("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description)
-    ;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading actor pointer.\nOwner: %s\nDescription: %s\n");
     pCVar1 = unaff_ESI;
 LAB_0051b028:
     while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {

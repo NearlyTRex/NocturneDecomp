@@ -2,13 +2,13 @@
 // Address: 0055dc40
 // Address Range: [[0055dc40, 0055dcb8]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0055dc40(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0055dc40(CWavOutDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0055dc40(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0055dc40(CWavOutDevice *this_ptr)
 
 {
   int iVar1;

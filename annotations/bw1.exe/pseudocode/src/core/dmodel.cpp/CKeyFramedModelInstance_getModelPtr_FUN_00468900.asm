@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5d9811                       ; 00468925 | = "Tried to do something with model %s, ..."
     MOV dword ptr [0x01d1d400],ECX      ; 0046892a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00468930 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00468936
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00468936
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0046893b
     POP ESI                             ; 0046893e
     MOV EAX,dword ptr [EBX + 0x178]     ; 0046893f

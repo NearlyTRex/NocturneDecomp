@@ -74,7 +74,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_p
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);
+  p_Var3 = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);
   if (p_Var3 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"Can't open %s");
@@ -118,11 +118,12 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_p
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     local_18 = malloc(this_ptr->bitmap_width * this_ptr->bitmap_height);
     if (local_18 != (void *)0x0) {
-      p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,this_ptr->bitmap_filename,&DAT_005c3904);
+      p_Var3 = engine_dosio_cpp_getFile_FUN_004659c0
+                         (&DAT_005c3907,this_ptr->bitmap_filename,&DAT_005c3904);
       if (p_Var3 == (_FILE *)0x0) {
         _DAT_01d71de0 = "..\\core\\game.cpp";
         _DAT_01d71de4 = 0x1287;
-        core_main_c_FUN_004e4330("Can't open %s",this_ptr->bitmap_filename);
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open %s");
       }
       _fread(local_18,this_ptr->bitmap_width,this_ptr->bitmap_height,p_Var3)
       ;

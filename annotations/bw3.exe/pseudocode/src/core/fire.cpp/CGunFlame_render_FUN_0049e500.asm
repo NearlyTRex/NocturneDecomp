@@ -120,11 +120,11 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-;   engine_drender.cpp_FUN_0046d1c0
-;   engine_drender.cpp_FUN_0046d250
 ;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
@@ -158,7 +158,7 @@ section .text
         ;   XREF to: 0049eeb6 (CONDITIONAL_JUMP)  ; LAB_0049eeb6
     FLD float ptr [EAX + 0x1c]          ; 0049e53a
     CALL crt_math.c_round_FUN_005a3120  ; 0049e53d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049e542
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049e549
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049e550
@@ -184,8 +184,8 @@ section .text
         ;   Label: LAB_0049e58a
     PUSH EDI                            ; 0049e590 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x100]               ; 0049e591
-    CALL engine_drender.cpp_FUN_0046d1c0 ; 0049e598
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0 ; 0049e598
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA EDI,[ESP + 0xe8]                ; 0049e59d
     LEA ESI,[ESP + 0x100]               ; 0049e5a4
     ADD ESP,0x4                         ; 0049e5ab
@@ -295,8 +295,8 @@ section .text
     MOV EDI,dword ptr [0x005f2afc]      ; 0049e73a | DAT_005f2afc
     PUSH EDI                            ; 0049e740 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x130]               ; 0049e741
-    CALL engine_drender.cpp_FUN_0046d250 ; 0049e748
-        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d250()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250 ; 0049e748
+        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 0049e74d
     PUSH 0x0                            ; 0049e750
     LEA EAX,[ESP + 0x7c]                ; 0049e752
@@ -348,8 +348,8 @@ section .text
     PUSH ESI                            ; 0049e7db | DAT_01bdd7e4
     LEA ESI,[ESP + 0x154]               ; 0049e7dc
     LEA EDI,[ESP + 0xdc]                ; 0049e7e3
-    CALL engine_drender.cpp_FUN_0046d1c0 ; 0049e7ea
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0 ; 0049e7ea
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x154]               ; 0049e7ef
     ADD ESP,0x4                         ; 0049e7f6
     MOVSD ES:EDI,ESI                    ; 0049e7f9
@@ -669,7 +669,7 @@ section .text
     FMUL float ptr [0x005c08d8]         ; 0049ec85 | DAT_005c08d8
         ;   Label: LAB_0049ec85
     CALL crt_math.c_round_FUN_005a3120  ; 0049ec8b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
         ;   Label: LAB_0049ec8b
     FISTP dword ptr [ESP + 0x19c]       ; 0049ec90
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049ec97
@@ -708,13 +708,13 @@ section .text
     FXCH ST2                            ; 0049ecf6
     FMULP ST3                           ; 0049ecf8
     CALL crt_math.c_round_FUN_005a3120  ; 0049ecfa
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0049ecff
     CALL crt_math.c_round_FUN_005a3120  ; 0049ed01
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 0049ed06
     CALL crt_math.c_round_FUN_005a3120  ; 0049ed08
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0049ed0d
     FISTP dword ptr [ESP + 0x18c]       ; 0049ed0f
     FXCH                                ; 0049ed16
@@ -817,7 +817,7 @@ section .text
     FLD float ptr [EAX + 0x1c]          ; 0049ee82
         ;   Label: LAB_0049ee82
     CALL crt_math.c_round_FUN_005a3120  ; 0049ee85
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049ee8a
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049ee91
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ee98
@@ -844,7 +844,7 @@ section .text
         ;   XREF to: 0049efad (CONDITIONAL_JUMP)  ; LAB_0049efad
     FLD float ptr [EAX + 0x1c]          ; 0049eed6
     CALL crt_math.c_round_FUN_005a3120  ; 0049eed9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049eede
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049eee5
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049eeec
@@ -862,7 +862,7 @@ section .text
     FLD float ptr [EAX + 0x1c]          ; 0049ef12
         ;   Label: LAB_0049ef12
     CALL crt_math.c_round_FUN_005a3120  ; 0049ef15
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049ef1a
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049ef21
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ef28
@@ -877,7 +877,7 @@ section .text
     FLD float ptr [EAX + 0x1c]          ; 0049ef45
         ;   Label: LAB_0049ef45
     CALL crt_math.c_round_FUN_005a3120  ; 0049ef48
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049ef4d
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049ef54
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ef5b
@@ -892,7 +892,7 @@ section .text
     FLD float ptr [EAX + 0x1c]          ; 0049ef79
         ;   Label: LAB_0049ef79
     CALL crt_math.c_round_FUN_005a3120  ; 0049ef7c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049ef81
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049ef88
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ef8f
@@ -907,7 +907,7 @@ section .text
     FLD float ptr [EAX + 0x1c]          ; 0049efad
         ;   Label: LAB_0049efad
     CALL crt_math.c_round_FUN_005a3120  ; 0049efb0
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x1a0]       ; 0049efb5
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 0049efbc
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049efc3

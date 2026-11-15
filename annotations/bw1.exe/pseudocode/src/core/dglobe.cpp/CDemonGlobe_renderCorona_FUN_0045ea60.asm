@@ -58,9 +58,9 @@
 ; Called Functions:
 ;   core_dcamera.cpp_initializeCoronaBuffers_FUN_00450ee0
 ;   crt_math.c_round_FUN_005c03a0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
-;   engine_drender.cpp_FUN_00483ae0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH ECX                            ; 0045ea87 | DAT_01bc120c
     LEA ESI,[ESP + 0x38]                ; 0045ea88
     LEA EDI,[ESP + 0x2c]                ; 0045ea8c
-    CALL engine_drender.cpp_FUN_00483ae0 ; 0045ea90
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0 ; 0045ea90
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00483ae0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 0045ea95
     ADD ESP,0x4                         ; 0045ea99
     LEA EAX,[ESP + 0x58]                ; 0045ea9c
@@ -197,7 +197,7 @@ section .text
     ADD EBX,0x24                        ; 0045ebfd
     PUSH EAX                            ; 0045ec00
     CALL crt_math.c_round_FUN_005c03a0  ; 0045ec01
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH ESI                            ; 0045ec06 | DAT_01bc120c
     FISTP dword ptr [ESP + 0x20]        ; 0045ec07
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50 ; 0045ec0b

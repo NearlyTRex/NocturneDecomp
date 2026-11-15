@@ -13,17 +13,17 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_
 {
   char cVar1;
   int iVar2;
-  uint uVar3;
+  void *pvVar3;
   char *pcVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  void *ptr;
   int iVar8;
   int iVar9;
   CEdButton *pCVar10;
   char *pcVar11;
   bool bVar12;
+  WatcomTypeInfo *type_info;
   char local_150 [256];
   uint local_50;
   int local_4c;
@@ -46,15 +46,17 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_
   if (_DAT_01c25590 == (CBitFont *)0x0) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xa0;
-    core_main_c_FUN_004e4500("gEdFont must be set by the application.");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
   _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
     return -1;
   }
-  uVar3 = operator_new_array(iVar2 * 0xe4 + 4,iVar2,&g_CEdButtonTypeInfo);
-  local_44 = (CEdButton *)__vec_new(uVar3);
+  type_info = &g_CEdButtonTypeInfo;
+  iVar8 = iVar2;
+  pvVar3 = (void *)operator_new_array(iVar2 * 0xe4 + 4);
+  local_44 = (CEdButton *)__vec_new(pvVar3,iVar8,type_info);
   iVar8 = 0;
   local_18 = 0;
   pCVar10 = local_44;
@@ -247,8 +249,8 @@ LAB_0047c1ff:
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   } while (iVar8 == -2);
-  ptr = __vec_delete(local_44,&g_CEdButtonTypeInfo);
-  FUN_005b7fce(ptr);
+  pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
+  FUN_005b7fce(pvVar3);
   DAT_006141cc = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);

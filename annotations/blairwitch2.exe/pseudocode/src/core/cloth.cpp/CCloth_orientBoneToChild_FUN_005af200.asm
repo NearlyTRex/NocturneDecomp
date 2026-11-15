@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
@@ -103,8 +103,8 @@ section .text
     PUSH 0x5f10be                       ; 005af2a7 | = "Can't orient bone with no children!"
     MOV dword ptr [0x01d046a0],ESI      ; 005af2ac | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 005af2b2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005af2b8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005af2b8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005af2bd
     MOV ECX,dword ptr [EBP + 0x6e]      ; 005af2c0
         ;   Label: LAB_005af2c0

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_0061b4d0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 00561428
     PUSH EDI                            ; 00561429
     LEA ESI,[ESP + 0xc]                 ; 0056142a
-    CALL core_actor.cpp_FUN_00408b40    ; 0056142e
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0056142e
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00561433
     JMP 0x0056139b                      ; 00561436
         ;   XREF to: 0056139b (UNCONDITIONAL_JUMP)  ; LAB_0056139b

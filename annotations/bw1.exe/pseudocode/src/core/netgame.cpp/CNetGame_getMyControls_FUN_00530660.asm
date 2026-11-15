@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5ec385                       ; 005306ae | = "CNetGame::getMyControls - I'm not in ..."
     MOV dword ptr [0x01d1d400],ESI      ; 005306b3 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 005306b9 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005306bf
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005306bf
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005306c4
     POP ESI                             ; 005306c7
     POP EDI                             ; 005306c8

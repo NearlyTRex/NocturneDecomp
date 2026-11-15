@@ -12,16 +12,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042e3a0(CCha
   int iVar1;
   SDamageDecal *pSVar2;
   int iVar3;
-  CMatrix3x4f *pCVar4;
-  uint *puVar5;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f *apCStackY_1020 [991];
   CVector3f *translation;
-  CMatrix3x4f local_98;
-  uint local_68 [3];
-  float local_5c;
-  float local_4c;
-  float local_3c;
+  CVector3f *in_stack_ffffff68;
+  CMatrix3x4f local_68;
   CVector3f local_38;
   CVector3f local_2c;
   float local_20;
@@ -35,18 +32,19 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042e3a0(CCha
     do {
       if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                  (&pSVar2->transform,apCStack_1c[2] + pSVar2->bone_index,&local_98);
-        pCVar4 = &local_98;
-        puVar5 = local_68;
+                  (&pSVar2->transform,apCStack_1c[2] + pSVar2->bone_index,
+                   (CMatrix3x4f *)&stack0xffffff68);
+        pfVar4 = (float *)&stack0xffffff68;
+        pCVar5 = &local_68;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *puVar5 = *(uint *)pCVar4;
-          pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-          puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+          pCVar5->m[0].w = *pfVar4;
+          pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+          pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
         }
-        core_xform_cpp_matrixToEulerAngles_FUN_00583b10(local_68);
-        local_2c.x = local_5c;
-        local_2c.y = local_4c;
-        local_2c.z = local_3c;
+        core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&local_68,in_stack_ffffff68);
+        local_2c.x = local_68.m[0].z;
+        local_2c.y = local_68.m[1].z;
+        local_2c.z = local_68.m[2].z;
         translation = &local_2c;
         local_38.x = local_20;
         *(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + 4) = apCStack_1c[(uint)bVar6 * -2];

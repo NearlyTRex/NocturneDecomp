@@ -17,7 +17,7 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
   CDjien *pCVar2;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
-  float10 fVar4;
+  double dVar4;
   CDjien *pCVar3;
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
@@ -107,10 +107,9 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
       this_ptr->num_sacks_to_blow = 6;
     }
   }
-  fVar4 = (float10)(this_ptr->base).base.hit_points;
-  round();
+  dVar4 = round((double)(this_ptr->base).base.hit_points);
   this_ptr->state_timer = 0.0;
-  _DAT_00612270 = (int)ROUND(fVar4);
+  _DAT_00612270 = (int)ROUND(dVar4);
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   return;
 }

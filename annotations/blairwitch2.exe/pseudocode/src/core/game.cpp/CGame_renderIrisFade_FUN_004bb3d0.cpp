@@ -14,36 +14,36 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004bb3d0(CGame *this_ptr)
   int iVar1;
   int iVar2;
   int iVar3;
-  float10 fVar4;
-  int local_18;
+  int iVar4;
+  double dVar5;
   
   if (this_ptr->alpha_fade_alpha == 1.0) {
     engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_006141b8 + -1,DAT_006141bc + -1,0);
   }
   if (((_DAT_01cb80e0 != 0) && (g_CFieldNotesPtr->is_displayed == 0)) &&
-     (core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(), DAT_006141c0 == 0x20)) {
-    fVar4 = (float10)_DAT_01cb810c * (float10)_DAT_01cb810c;
-    iVar3 = 0;
-    iVar1 = round();
-    if (0 < iVar1) {
-      local_18 = 0;
+     (core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(), iVar3 = DAT_006141bc,
+     DAT_006141c0 == 0x20)) {
+    iVar4 = 0;
+    dVar5 = round((double)(_DAT_01cb810c * _DAT_01cb810c));
+    if (0 < iVar3) {
+      iVar3 = 0;
       do {
-        iVar2 = 0;
-        iVar1 = *(int *)(&DAT_01c2a38c + local_18);
+        iVar1 = 0;
+        iVar2 = *(int *)(&DAT_01c2a38c + iVar3);
         if (0 < DAT_006141b8) {
           do {
-            if ((int)ROUND(fVar4) <
-                (_DAT_01cb8110 - iVar2) * (_DAT_01cb8110 - iVar2) +
-                (_DAT_01cb8114 - iVar3) * (_DAT_01cb8114 - iVar3)) {
-              *(short *)(iVar1 + 2) = *(short *)(iVar1 + 2) + 0x10;
+            if ((int)ROUND(dVar5) <
+                (_DAT_01cb8110 - iVar1) * (_DAT_01cb8110 - iVar1) +
+                (_DAT_01cb8114 - iVar4) * (_DAT_01cb8114 - iVar4)) {
+              *(short *)(iVar2 + 2) = *(short *)(iVar2 + 2) + 0x10;
             }
-            iVar2 = iVar2 + 1;
-            iVar1 = iVar1 + 4;
-          } while (iVar2 < DAT_006141b8);
+            iVar1 = iVar1 + 1;
+            iVar2 = iVar2 + 4;
+          } while (iVar1 < DAT_006141b8);
         }
-        iVar3 = iVar3 + 1;
-        local_18 = local_18 + 4;
-      } while (iVar3 < DAT_006141bc);
+        iVar4 = iVar4 + 1;
+        iVar3 = iVar3 + 4;
+      } while (iVar4 < DAT_006141bc);
     }
   }
   return;

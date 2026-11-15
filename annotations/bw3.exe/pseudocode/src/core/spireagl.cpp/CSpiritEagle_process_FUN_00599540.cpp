@@ -28,16 +28,15 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
   byte bVar13;
   float afStackY_106c [1012];
   char *state_name;
-  float *pfVar14;
+  CVector3f *input_local_point;
   EBloodType blood_type;
-  float fStack_84;
+  CVector3f CStack_84;
   CVector3f CStack_78;
-  float fStack_6c;
-  float afStack_68 [4];
-  float fStack_58;
+  CVector3f CStack_6c;
+  float fStack_60;
+  float afStack_5c [2];
   CVector3f CStack_54;
-  float fStack_48;
-  float afStack_44 [2];
+  CVector3f CStack_48;
   CVector3f CStack_3c;
   CVector3f CStack_30;
   float fStack_1c;
@@ -63,18 +62,20 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
               (pCVar11,0,&CStack_3c);
-    pfVar14 = &fStack_48;
-    fStack_48 = CStack_3c.x;
-    afStack_44[(uint)bVar13 * -2] = *(float *)((int)&CStack_3c + (uint)bVar13 * -8 + 4);
-    afStack_44[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-         *(float *)((int)&CStack_3c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar14);
+    input_local_point = &CStack_48;
+    CStack_48.x = CStack_3c.x;
+    *(uint *)((int)&CStack_48 + (uint)bVar13 * -8 + 4) =
+         *(uint *)((int)&CStack_3c + (uint)bVar13 * -8 + 4);
+    *(uint *)((int)&CStack_48 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
+         *(uint *)((int)&CStack_3c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,input_local_point,&CStack_84);
     blood_type = BLOOD_TYPE_RED;
-    CStack_54.x = fStack_84;
+    CStack_54.x = CStack_84.x;
     *(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + 4) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar13 * -8);
+         *(uint *)((int)&CStack_84 + (uint)bVar13 * -8 + 4);
     *(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
-         *(uint *)(&stack0xffffff84 + (uint)bVar13 * -8 + (uint)bVar13 * -8);
+         *(uint *)((int)&CStack_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,&CStack_54,blood_type);
     uStack_18 = 1;
     this_ptr->pool_me = 1;
@@ -101,20 +102,23 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
                 (0x01D81080,(CDemonActor *)this_ptr->morph_actor);
       this_ptr_00 = 0x01D81080;
       this_ptr->morph_actor = (CPryeMorph *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_00,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_00,(CDemonActor *)this_ptr,1);
     }
     if (iStack_14 != 0) {
-      core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).model.accumulated_root_motion);
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                ((CDemonActor *)this_ptr,&(this_ptr->base).model.accumulated_root_motion,&CStack_6c)
+      ;
       pCVar1 = &(this_ptr->base).base.location;
-      afStack_68[2] = fStack_6c;
-      afStack_68[(uint)bVar13 * -2 + 3] = afStack_68[(uint)bVar13 * -2];
-      afStack_68[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
-           afStack_68[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
+      fStack_60 = CStack_6c.x;
+      afStack_5c[(uint)bVar13 * -2] = *(float *)((int)&CStack_6c + (uint)bVar13 * -8 + 4);
+      afStack_5c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
+           *(float *)((int)&CStack_6c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
       fVar2 = (this_ptr->base).base.location.position.y;
       fVar3 = (this_ptr->base).base.location.position.z;
-      (pCVar1->position).x = (pCVar1->position).x + afStack_68[2];
-      (this_ptr->base).base.location.position.y = fVar2 + afStack_68[3];
-      (this_ptr->base).base.location.position.z = fVar3 + fStack_58;
+      (pCVar1->position).x = (pCVar1->position).x + fStack_60;
+      (this_ptr->base).base.location.position.y = fVar2 + afStack_5c[0];
+      (this_ptr->base).base.location.position.z = fVar3 + afStack_5c[1];
       pCVar5 = this_ptr->morph_actor;
       if (pCVar5 != (CPryeMorph *)0x0) {
         (pCVar5->base).base.base.location.position.x = (pCVar1->position).x;

@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5e01d5                       ; 004bdd63 | = "Field note %s has invalid type %d"
     MOV dword ptr [0x01d1d400],ESI      ; 004bdd68 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004bdd6e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bdd74
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bdd74
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004bdd79
     MOV dword ptr [0x0061d2e4],0x1      ; 004bdd7c | DAT_0061d2e4
         ;   Label: caseD_1

@@ -6,30 +6,29 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CBulletHole_init_FUN_004ac3e0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 
 {
   int iVar1;
-  CMatrix3x4f *pCVar2;
-  uint *puVar3;
+  float *pfVar2;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
   float10 fVar5;
-  float afStackY_1070 [967];
-  CMatrix3x4f local_148;
-  CMatrix3x4f local_118;
-  CMatrix3x4f local_e8;
-  uint local_b8 [12];
-  float local_88;
-  float afStack_84 [4];
-  float local_74;
-  float local_70;
-  float afStack_6c [2];
+  float afStackY_1078 [967];
+  CVector3f *euler_out;
+  float fStack_14c;
+  CMatrix3x4f CStack_120;
+  CMatrix3x4f CStack_f0;
+  CMatrix3x4f CStack_c0;
+  CVector3f CStack_90;
+  float fStack_84;
+  float afStack_80 [2];
+  CVector3f local_78;
   CBulletHole local_64;
-  float local_28;
-  float afStack_24 [4];
-  float local_14;
+  float local_28 [6];
   
   bVar4 = 0;
   if (this_ptr != (CBulletHole *)hit_position) {
@@ -48,66 +47,73 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004ac3e0(CBulletHole *this_ptr,C
     (this_ptr->position).y = local_64.position.y;
     (this_ptr->position).z = local_64.position.z;
   }
-  fVar5 = (float10)surface_normal->y;
+  fStack_14c = 6.866428e-39;
   local_64.euler_angles.y = local_64.position.x;
   local_64.euler_angles.z = local_64.position.y;
   local_64.texture_index = (int)local_64.position.z;
   local_64.actor_local_space.x = local_64.transformed_pos.x;
   local_64.actor_local_space.y = local_64.transformed_pos.y;
   local_64.actor_local_space.z = local_64.transformed_pos.z;
-  atan2();
+  fVar5 = atan2
+                    ((float10)surface_normal->y,
+                     SQRT((float10)surface_normal->x * (float10)surface_normal->x +
+                          (float10)surface_normal->z * (float10)surface_normal->z));
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = (float)-fVar5;
-  fVar5 = (float10)surface_normal->x;
-  atan2();
+  euler_out = (CVector3f *)0x4ac4e6;
+  fVar5 = atan2((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar5;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
   this_ptr->active = 1;
   this_ptr->texture_index = iVar1;
-  this_ptr->actor_ptr = hit_actor;
-  if (hit_actor != (CDemonActor *)0x0) {
+  this_ptr->actor_ptr = (CDemonActor *)hit_position;
+  if (hit_position != (CVector3f *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
-              (&local_118,&this_ptr->position,&this_ptr->euler_angles);
+              (&CStack_120,&this_ptr->position,&this_ptr->euler_angles);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
-              (&local_e8,&(this_ptr->actor_ptr->location).position,
+              (&CStack_f0,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_118,&local_e8,&local_148);
-    pCVar2 = &local_148;
-    puVar3 = local_b8;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
+              (&CStack_120,&CStack_f0,(CMatrix3x4f *)&stack0xfffffeb0);
+    pfVar2 = (float *)&stack0xfffffeb0;
+    pCVar3 = &CStack_c0;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *(uint *)pCVar2;
-      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+      pCVar3->m[0].w = *pfVar2;
+      pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_005b6270(local_b8);
-    local_64.active = (int)local_70;
-    *(float *)((int)&local_64 + (uint)bVar4 * -8 + 0x10) = afStack_6c[(uint)bVar4 * -2];
-    *(float *)((int)&local_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 0x14) =
-         afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&this_ptr->transformed_pos != (CVector3f *)&local_64.active) {
-      (this_ptr->transformed_pos).x = (float)local_64.active;
-      (this_ptr->transformed_pos).y = (float)local_64.actor_ptr;
-      (this_ptr->transformed_pos).z = local_64.euler_angles.x;
+    core_xform_cpp_getTranslation_FUN_005b6270(&CStack_c0,&local_78);
+    local_64.position.y = local_78.x;
+    *(uint *)((int)&local_64 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&local_78 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&local_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 0xc) =
+         *(uint *)((int)&local_78 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    if (&this_ptr->transformed_pos != (CVector3f *)&local_64.position.y) {
+      (this_ptr->transformed_pos).x = local_64.position.y;
+      (this_ptr->transformed_pos).y = local_64.position.z;
+      (this_ptr->transformed_pos).z = (float)local_64.active;
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_b8);
-    afStack_84[2] = local_28;
-    afStack_84[(uint)bVar4 * -2 + 3] = afStack_24[(uint)bVar4 * -2];
-    afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&this_ptr->euler_angles != (CVector3f *)(afStack_84 + 2)) {
-      (this_ptr->euler_angles).x = afStack_84[2];
-      (this_ptr->euler_angles).y = afStack_84[3];
-      (this_ptr->euler_angles).z = local_74;
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&CStack_c0,euler_out);
+    fStack_84 = local_64.actor_local_space.y;
+    afStack_80[(uint)bVar4 * -2] = local_28[(uint)bVar4 * -2 + -1];
+    afStack_80[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         local_28[(uint)bVar4 * -2 + (uint)bVar4 * -2];
+    if (&this_ptr->euler_angles != (CVector3f *)&fStack_84) {
+      (this_ptr->euler_angles).x = fStack_84;
+      (this_ptr->euler_angles).y = afStack_80[0];
+      (this_ptr->euler_angles).z = afStack_80[1];
     }
-    core_actor_cpp_FUN_00408b00(this_ptr->actor_ptr,surface_normal);
-    afStack_24[2] = local_88;
-    afStack_24[(uint)bVar4 * -2 + 3] = afStack_84[(uint)bVar4 * -2];
-    afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (&this_ptr->actor_local_space != (CVector3f *)(afStack_24 + 2)) {
-      (this_ptr->actor_local_space).x = afStack_24[2];
-      (this_ptr->actor_local_space).y = afStack_24[3];
-      (this_ptr->actor_local_space).z = local_14;
+    core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00
+              (this_ptr->actor_ptr,surface_normal,&CStack_90);
+    local_28[1] = CStack_90.x;
+    local_28[(uint)bVar4 * 0xfffffffe + 2] =
+         (float)*(uint *)((int)&CStack_90 + (uint)bVar4 * -8 + 4);
+    local_28[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 3] =
+         (float)*(uint *)((int)&CStack_90 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    if (&this_ptr->actor_local_space != (CVector3f *)(local_28 + 1)) {
+      (this_ptr->actor_local_space).x = local_28[1];
+      (this_ptr->actor_local_space).y = local_28[2];
+      (this_ptr->actor_local_space).z = local_28[3];
       return;
     }
   }

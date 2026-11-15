@@ -20,9 +20,8 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
-  float10 fVar8;
-  uint local_40 [6];
-  uint local_28 [6];
+  double dVar8;
+  uint auStack_2c [7];
   
   bVar7 = 0;
   if (((this_ptr->fade_state != -1) || ((this_ptr->base).is_spectral != 0)) ||
@@ -35,15 +34,13 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
     if (this_ptr->pool_me == 0) {
       if (0.0 < this_ptr->fade_timer) {
         if (this_ptr->fade_state == 0) {
-          fVar8 = ((float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
-                  (float10)_DAT_005cb5d0;
+          fVar1 = (this_ptr->fade_timer / this_ptr->fade_time) * _DAT_005cb5d0;
         }
         else {
-          fVar8 = ((float10)1 - (float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
-                  (float10)_DAT_005cb5d8;
+          fVar1 = (1.0 - this_ptr->fade_timer / this_ptr->fade_time) * (float)_DAT_005cb5d8;
         }
-        round();
-        this_ptr->fade_alpha = (int)ROUND(fVar8);
+        dVar8 = round((double)fVar1);
+        this_ptr->fade_alpha = (int)ROUND(dVar8);
         iVar3 = 0;
         if (0 < (this_ptr->base).cloth_list.count) {
           fVar1 = (float)_DAT_005cb5e0;
@@ -60,14 +57,14 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                 ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-      puVar5 = local_28;
-      puVar6 = local_40;
+      puVar5 = auStack_2c;
+      puVar6 = (uint *)&stack0xffffffbc;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar6 = *puVar5;
         puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
         puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
       }
-      iVar3 = core_box_cpp_FUN_0041daf0(local_40);
+      iVar3 = core_box_cpp_FUN_0041daf0(&stack0xffffffbc);
       this_ptr_01 = DAT_005f2afc;
       if (iVar3 != 0) {
         iVar3 = this_ptr->fade_alpha;

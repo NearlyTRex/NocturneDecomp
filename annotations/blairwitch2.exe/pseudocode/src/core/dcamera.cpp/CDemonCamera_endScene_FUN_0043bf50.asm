@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0043b7d0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_watcom.c__memcpy_FUN_00492718
 ;   engine_drender.cpp_popViewport_FUN_0046b740
 ;   engine_special.cpp_endScene_FUN_0055f5b0
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5ce353                       ; 0043c006 | = "CDemonCamera::endScene - Scene not open!"
     MOV dword ptr [0x01d046a0],ECX      ; 0043c00b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0043c011 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043c017
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043c017
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043c01c
     JMP 0x0043bf6e                      ; 0043c01f
         ;   XREF to: 0043bf6e (UNCONDITIONAL_JUMP)  ; LAB_0043bf6e

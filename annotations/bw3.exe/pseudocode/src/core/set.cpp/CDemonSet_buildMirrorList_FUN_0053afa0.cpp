@@ -49,7 +49,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0053afa0(CDemonSet *this
           if (99 < iVar1) {
             _DAT_01d71de0 = "..\\core\\set.cpp";
             _DAT_01d71de4 = 0x12ea;
-            core_main_c_FUN_004e4330("CDemonSet::buildMirrorList - Too many mirrors");
+            core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }
         engine_drender_cpp_pop_FUN_0046d080();

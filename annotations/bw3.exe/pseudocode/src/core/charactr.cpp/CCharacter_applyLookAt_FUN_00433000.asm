@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880
 ;   core_xform.cpp_multiplyQuaternion_FUN_00585990
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00585cd0
@@ -57,7 +57,7 @@ section .text
     LEA ESI,[ESP + 0x6c]                ; 00433036
     LEA EDI,[ESP + 0x3c]                ; 0043303a
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00585cd0 ; 0043303e
-        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00585cd0()
+        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00585cd0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x6c]                ; 00433043
     ADD ESP,0x4                         ; 00433047
     MOVSD ES:EDI,ESI                    ; 0043304a
@@ -82,7 +82,7 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 00433076
     LEA EDI,[ESP + 0x20]                ; 0043307a
     CALL core_xform.cpp_multiplyQuaternion_FUN_00585990 ; 0043307e
-        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00585990()
+        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00585990(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x60]                ; 00433083
     ADD ESP,0x8                         ; 00433087
     MOVSD ES:EDI,ESI                    ; 0043308a
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5b86f7                       ; 004330f5 | = "CCharacter::applyLookAt - never set l..."
     MOV dword ptr [0x01d71de0],ECX      ; 004330fa | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00433100 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00433106
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00433106
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0043310b
     JMP 0x00433030                      ; 0043310e
         ;   XREF to: 00433030 (UNCONDITIONAL_JUMP)  ; LAB_00433030

@@ -26,7 +26,7 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void)
   if (_DAT_01c2559c < 1) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0x3b8;
-    core_main_c_FUN_004e4500("paintWindowBackground called but no window was opened!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("paintWindowBackground called but no window was opened!");
   }
   iVar1 = (_DAT_01c2559c + -1) * 0x1f8;
   puVar7 = *(uint **)(iVar1 + 0x1c25778);

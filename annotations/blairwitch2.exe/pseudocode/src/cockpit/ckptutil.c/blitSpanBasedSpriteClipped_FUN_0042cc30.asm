@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042cc30(void)
+; void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042cc30(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   span_data
+; int              Stack[0xc]:4   screen_x
+; int              Stack[0x10]:4   screen_y
+; int              Stack[0x14]:4   src_x
+; int              Stack[0x18]:4   src_y
+; int              Stack[0x1c]:4   width
+; int              Stack[0x20]:4   height
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -56,7 +65,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x64]      ; 0042cc87
     MOV dword ptr [ESP + 0x48],ECX      ; 0042cc8b
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410 ; 0042cc8f
-        ;   XREF to: 0042c410 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410()
+        ;   XREF to: 0042c410 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410()
     MOV dword ptr [ESP + 0x30],EAX      ; 0042cc94
     MOV EAX,EBP                         ; 0042cc98
     SHL EAX,0x5                         ; 0042cc9a

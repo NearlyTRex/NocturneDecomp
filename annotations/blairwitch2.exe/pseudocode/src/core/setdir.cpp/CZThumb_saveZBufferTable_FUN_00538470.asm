@@ -33,7 +33,7 @@
 ;   undefined4 DAT_020b0258
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
 ;   core_setdir.cpp_CZThumb_free_FUN_005386a0
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
@@ -101,8 +101,8 @@ section .text
     PUSH 0x5e5fd6                       ; 005384e4 | = "Out of memory"
     MOV dword ptr [0x01d046a0],EBX      ; 005384e9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 005384ef | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005384f5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005384f5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005384fa
     MOV EBP,dword ptr [ESP + 0x2c]      ; 005384fd
         ;   Label: LAB_005384fd
@@ -131,8 +131,8 @@ section .text
     PUSH 0x5e5f70                       ; 00538540 | = "saveZBufferTable - already saved!"
     MOV dword ptr [0x01d046a0],EDX      ; 00538545 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0053854b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00538551
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00538551
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00538556
     TEST EBX,EBX                        ; 00538559
         ;   Label: LAB_00538559
@@ -187,8 +187,8 @@ section .text
     PUSH 0x5e5fa5                       ; 005385e0 | = "saveZBufferTable - not saved!"
     MOV dword ptr [0x01d046a0],EDX      ; 005385e5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005385eb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005385f1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005385f1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005385f6
     TEST ESI,ESI                        ; 005385f9
         ;   Label: LAB_005385f9

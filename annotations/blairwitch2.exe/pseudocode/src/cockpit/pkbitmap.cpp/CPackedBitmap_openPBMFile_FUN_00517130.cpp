@@ -18,16 +18,17 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00517130(CPacked
   
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_00516200(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_00516270(this_ptr,(char *)apply_palette_flag);
-  file_handle = engine_dosio_cpp_FUN_00460c70((char *)0x5e1d63,this_ptr->filename,(char *)0x5e1d60);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70
+                          ((char *)0x5e1d63,this_ptr->filename,(char *)0x5e1d60);
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_60,"Unable to open PBM file %s");
     _DAT_01d046a4 = 0x51a;
     _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
-    core_main_c_FUN_004e4500(acStack_60);
+    core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_60);
   }
   cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00516f30(this_ptr,file_handle,0);
   uStack_5c = 0x5171b3;
-  _fclose();
+  _fclose(file_handle);
   if (in_stack_00000024 == 0) {
     return;
   }

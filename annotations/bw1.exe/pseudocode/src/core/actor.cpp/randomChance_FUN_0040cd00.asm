@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[58]:
+; XREF[59]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c9a2
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412170 at 0041221a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411b31
@@ -20,7 +20,7 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424c1f
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 0042497f
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423fdc
-;   ... and 48 more
+;   ... and 49 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2eb1

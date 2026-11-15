@@ -37,7 +37,7 @@
 ;   undefined4 DAT_01c2a38c
 ;
 ; Called Functions:
-;   engine_alphabit.cpp_FUN_0040dca0
+;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0
 ;   engine_special.cpp_renderAlphaRow16_FUN_0055d5be
 ;   engine_special.cpp_renderAlphaRow32_FUN_0055d523
 ;
@@ -79,8 +79,8 @@ section .text
     RET                                 ; 0040d93e
     PUSH ESI                            ; 0040d93f
         ;   Label: LAB_0040d93f
-    CALL engine_alphabit.cpp_FUN_0040dca0 ; 0040d940
-        ;   XREF to: 0040dca0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dca0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0 ; 0040d940
+        ;   XREF to: 0040dca0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0040d945
     MOV EAX,dword ptr [ESI]             ; 0040d948
     MOV dword ptr [ESP + 0x18],EAX      ; 0040d94a

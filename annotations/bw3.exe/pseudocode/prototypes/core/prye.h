@@ -135,7 +135,7 @@ void FUN_005228c0(void);
 
 // Original: core_prye.cpp_FUN_00522950
 // Address: 00522950
-float * FUN_00522950(void);
+undefined4 * FUN_00522950(void);
 
 // Original: core_prye.cpp_FUN_00522b00
 // Address: 00522b00

@@ -27,7 +27,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5e4816                       ; 004eb066 | = "Out of memory!"
     MOV dword ptr [0x01d1d400],ECX      ; 004eb06b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004eb071 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004eb077
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004eb077
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004eb07c
     JMP 0x004eb008                      ; 004eb07f
         ;   XREF to: 004eb008 (UNCONDITIONAL_JUMP)  ; LAB_004eb008

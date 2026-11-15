@@ -1,6 +1,6 @@
 // Name: core_doc.cpp_FUN_00468a90
 // Address: 00468a90
-// Address Range: [[00468a90, 00468aa9] [00468ab0, 00468ab2] [00468ad0, 00468ad5]]
+// Address Range: [[00468a90, 00468ad5]]
 // Convention: unknown
 // Signature: undefined4 core_doc_cpp_FUN_00468a90(CDemonActor *param_1)
 

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005fba60
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0
@@ -104,8 +104,8 @@ section .text
     PUSH EBX                            ; 00566b7c
     LEA ESI,[ESP + 0x2c]                ; 00566b7d
     LEA EDI,[ESP + 0x8]                 ; 00566b81
-    CALL core_actor.cpp_FUN_00408b00    ; 00566b85
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00566b85
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x2c]                ; 00566b8a
     ADD ESP,0x8                         ; 00566b8e
     LEA EAX,[EBX + 0x2e0]               ; 00566b91

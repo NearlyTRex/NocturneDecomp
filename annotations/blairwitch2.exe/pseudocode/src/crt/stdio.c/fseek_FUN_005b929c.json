@@ -49,7 +49,7 @@
     {
       "addr": "00460c70",
       "from_addr": "00460d19",
-      "name": "engine_dosio.cpp_FUN_00460c70",
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,12 +62,6 @@
       "addr": "0051aa80",
       "from_addr": "0051aafd",
       "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00519dc0",
-      "from_addr": "00519dfb",
-      "name": "engine_pod.cpp_FUN_00519dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,6 +89,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00519dc0",
+      "from_addr": "00519dfb",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_00519dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005048e0",
+      "from_addr": "00504944",
+      "name": "sound_mp3.cpp_CFileBitStream_init_FUN_005048e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00509db0",
       "from_addr": "00509e45",
       "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0",
@@ -104,12 +110,6 @@
       "addr": "0050a0e0",
       "from_addr": "0050a10f",
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005048e0",
-      "from_addr": "00504944",
-      "name": "sound_mp3.cpp_FUN_005048e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +194,7 @@
       {
         "call_addr": "00460d19",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00460c70",
+        "caller": "engine_dosio.cpp_getFile_FUN_00460c70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

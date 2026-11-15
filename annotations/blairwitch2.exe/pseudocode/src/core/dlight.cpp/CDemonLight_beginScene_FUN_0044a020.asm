@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0043b7a0
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0043c5d0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_watcom.c__memset_FUN_00492670
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5cf2b2                       ; 0044a1bb | = "CDemonLight::beginScene - Scene alrea..."
     MOV dword ptr [0x01d046a0],ECX      ; 0044a1c0 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044a1c6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044a1cc
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044a1cc
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044a1d1
     JMP 0x0044a035                      ; 0044a1d4
         ;   XREF to: 0044a035 (UNCONDITIONAL_JUMP)  ; LAB_0044a035

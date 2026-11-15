@@ -183,7 +183,7 @@
       "line": 15,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(fVar1 = SQRT(in_stack_00000008 * in_stack_00000008 - in_stack_0000000c * in_stack_0000000c) /",
+      "text": "(dVar2 = (double)(SQRT(in_stack_00000008 * in_stack_00000008 -",
       "type": "stack_param"
     },
     {
@@ -191,23 +191,23 @@
       "line": 15,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(fVar1 = SQRT(in_stack_00000008 * in_stack_00000008 - in_stack_0000000c * in_stack_0000000c) /",
+      "text": "(dVar2 = (double)(SQRT(in_stack_00000008 * in_stack_00000008 -",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "(fVar1 = SQRT(in_stack_00000008 * in_stack_00000008 - in_stack_0000000c * in_stack_0000000c) /",
+      "text": "in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "(fVar1 = SQRT(in_stack_00000008 * in_stack_00000008 - in_stack_0000000c * in_stack_0000000c) /",
+      "text": "in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),",
       "type": "stack_param"
     },
     {
@@ -215,7 +215,7 @@
       "line": 16,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "in_stack_00000008, fVar1 < 1.0)) && (0.0 <= fVar1)) {",
+      "text": "in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),",
       "type": "stack_param"
     },
     {
@@ -231,7 +231,7 @@
       "line": 20,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "fVar1 = *in_stack_00000004 - (float)fVar2;",
+      "text": "fVar1 = *in_stack_00000004 - (float)dVar2;",
       "type": "stack_param"
     },
     {
@@ -239,7 +239,7 @@
       "line": 23,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "fVar1 = *in_stack_00000004 + (float)fVar2;",
+      "text": "fVar1 = *in_stack_00000004 + (float)dVar2;",
       "type": "stack_param"
     },
     {

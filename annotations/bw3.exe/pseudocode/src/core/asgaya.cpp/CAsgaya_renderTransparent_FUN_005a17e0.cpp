@@ -20,9 +20,9 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
-  float10 fVar8;
-  uint auStack_40 [6];
-  uint auStack_28 [6];
+  double dVar8;
+  uint auStack_44 [6];
+  uint auStack_2c [7];
   
   bVar7 = 0;
   if (this_ptr->pool_me != 0) {
@@ -30,15 +30,14 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this
   }
   if (0.0 < this_ptr->fade_timer) {
     if (this_ptr->appear_state == 0) {
-      fVar8 = ((float10)this_ptr->fade_timer / (float10)(this_ptr->base).fade_time) *
-              (float10)_DAT_005da636;
+      fVar1 = (this_ptr->fade_timer / (this_ptr->base).fade_time) * _DAT_005da636;
     }
     else {
-      fVar8 = ((float10)1 - (float10)this_ptr->fade_timer / (float10)(this_ptr->base).fade_time) *
-              (float10)_DAT_005da63e;
+      fVar1 = (1.0 - this_ptr->fade_timer / (this_ptr->base).fade_time) * (float)_DAT_005da63e;
     }
-    round();
-    this_ptr->render_alpha = (int)ROUND(fVar8);
+    auStack_44[0] = 0x5a1833;
+    dVar8 = round((double)fVar1);
+    this_ptr->render_alpha = (int)ROUND(dVar8);
     iVar4 = 0;
     if (0 < (this_ptr->base).base.cloth_list.count) {
       fVar1 = (float)_DAT_005da646;
@@ -55,14 +54,14 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar5 = auStack_40;
-  puVar6 = auStack_28;
+  puVar5 = auStack_44;
+  puVar6 = auStack_2c;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar6 = *puVar5;
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
     puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  iVar4 = core_box_cpp_FUN_0041daf0(auStack_28);
+  iVar4 = core_box_cpp_FUN_0041daf0(auStack_2c);
   this_ptr_01 = DAT_005f2afc;
   if (iVar4 != 0) {
     iVar4 = this_ptr->render_alpha;

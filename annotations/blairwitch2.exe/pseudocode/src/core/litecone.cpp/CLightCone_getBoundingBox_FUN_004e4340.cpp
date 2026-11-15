@@ -1,18 +1,17 @@
 // Name: core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4340
 // Address: 004e4340
 // Address Range: [[004e4340, 004e439b]]
-// Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4340(CLightCone *this_ptr,CBoundingBox3D *out_box)
+// Convention: __stack_esi
+// Signature: CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4340(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4340(CLightCone *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4340(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 {
   int iVar1;
-  CBoundingBox3D *unaff_ESI;
   float *pfVar2;
   CBoundingBox3D *pCVar3;
   float afStack_24 [4];
@@ -28,11 +27,11 @@ CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e434
   afStack_24[2] = 0.0;
   fStack_10 = this_ptr->falloff;
   pfVar2 = afStack_24;
-  pCVar3 = unaff_ESI;
+  pCVar3 = out_box;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     (pCVar3->min).x = *pfVar2;
     pfVar2 = pfVar2 + 1;
     pCVar3 = (CBoundingBox3D *)&(pCVar3->min).y;
   }
-  return unaff_ESI;
+  return out_box;
 }

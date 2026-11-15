@@ -25,14 +25,16 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   CBoundingBox3D *pCVar12;
   CMatrix3x4f *pCVar13;
   float *pfVar14;
-  byte bVar15;
-  float10 fVar16;
+  CMatrix3x4f *pCVar15;
+  byte bVar16;
   float10 fVar17;
   float10 fVar18;
+  float10 fVar19;
   float afStackY_10a0 [923];
   uint uStack_220;
-  CMatrix3x4f CStack_20c;
-  float afStack_1dc [12];
+  CVector3f *position;
+  CVector3f *in_stack_fffffdf4;
+  CMatrix3x4f CStack_1dc;
   CMatrix3x4f CStack_1ac;
   CMatrix3x4f CStack_17c;
   CVector3f CStack_14c;
@@ -45,20 +47,18 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   float fStack_e4;
   float fStack_e0;
   float afStack_dc [6];
-  byte auStack_c4 [4];
-  uint uStack_c0;
-  float fStack_b8;
-  float afStack_b4 [5];
+  CVector3f CStack_c4;
+  CVector3f CStack_b8;
+  CVector3f CStack_ac;
   CVector3f CStack_a0;
   CVector3f CStack_94;
   float fStack_88;
   float afStack_84 [5];
-  float fStack_70;
-  float afStack_64 [3];
-  uint uStack_58;
+  CVector3f CStack_70;
+  CVector3f CStack_64;
+  CVector3f CStack_58;
   float fStack_4c;
-  float fStack_48;
-  float fStack_44;
+  float afStack_48 [4];
   SGem *pSStack_38;
   float *pfStack_34;
   float *pfStack_30;
@@ -68,7 +68,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   int iStack_18;
   int iStack_14;
   
-  bVar15 = 0;
+  bVar16 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->panel_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->gem_model);
@@ -80,16 +80,16 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   pfVar14 = &fStack_f4;
   for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
     *pfVar14 = (pCVar12->min).x;
-    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);
-    pfVar14 = pfVar14 + (uint)bVar15 * -2 + 1;
+    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar16 * -8 + 4);
+    pfVar14 = pfVar14 + (uint)bVar16 * -2 + 1;
   }
   this_ptr->panel_radius = 12.1391;
-  fVar16 = (float10)fcos((float10)_DAT_005f98bc * (float10)_DAT_005dc4ed);
+  fVar17 = (float10)fcos((float10)_DAT_005f98bc * (float10)_DAT_005dc4ed);
   fVar1 = (this_ptr->emitter_pos).f.y;
   fVar2 = (this_ptr->emitter_pos).f.x;
   fVar3 = (this_ptr->emitter_pos).f.z;
   this_ptr->bbox_height = fStack_e4 - fStack_f0;
-  this_ptr->bbox_extent = (float)(((float10)this_ptr->panel_radius + (float10)fStack_e0) / fVar16);
+  this_ptr->bbox_extent = (float)(((float10)this_ptr->panel_radius + (float10)fStack_e0) / fVar17);
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
     fVar1 = this_ptr->bbox_height;
     (this_ptr->emitter_pos).f.x = 0.0;
@@ -106,7 +106,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
     (this_ptr->gem_pos).x = 0.0;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-            (&CStack_1ac,&this_ptr->gem_pos,&this_ptr->gem_orient);
+            (&CStack_1ac,&this_ptr->gem_pos,&(this_ptr->gem_orient).vec);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->gem_model);
   pSStack_38 = this_ptr->gems;
   pCStack_2c = &this_ptr->gems[0].position;
@@ -117,8 +117,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   pfVar14 = afStack_dc;
   for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
     *pfVar14 = (pCVar12->min).x;
-    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);
-    pfVar14 = pfVar14 + (uint)bVar15 * -2 + 1;
+    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar16 * -8 + 4);
+    pfVar14 = pfVar14 + (uint)bVar16 * -2 + 1;
   }
   do {
     iVar9 = iStack_28;
@@ -143,56 +143,60 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
     CStack_94.x = 0.0;
     CStack_94.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_11c,&CStack_94);
-    afStack_b4[4] = this_ptr->panel_radius;
-    afStack_b4[2] = 0.0;
-    afStack_b4[3] = 0.0;
-    core_dirmat_cpp_FUN_00449530(&CStack_11c,afStack_b4 + 2,&CStack_94);
-    pfVar14 = afStack_84 + 8;
-    pCVar13 = &CStack_20c;
-    afStack_64[0] = (float)uStack_58;
-    afStack_84[(uint)bVar15 * -2 + 9] = afStack_84[(uint)bVar15 * -2 + 0xc];
-    afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 10] =
-         afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xd];
-    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar13,pfVar14);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_1ac,&CStack_20c,&CStack_17c);
+    pCVar11 = &CStack_94;
+    CStack_ac.z = this_ptr->panel_radius;
+    CStack_ac.x = 0.0;
+    CStack_ac.y = 0.0;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530(&CStack_11c,&CStack_ac,&CStack_58);
+    position = &CStack_64;
+    pCVar13 = (CMatrix3x4f *)&stack0xfffffdf4;
+    CStack_64.x = CStack_58.x;
+    *(uint *)((int)&CStack_64 + (uint)bVar16 * -8 + 4) =
+         *(uint *)((int)&CStack_58 + (uint)bVar16 * -8 + 4);
+    *(uint *)((int)&CStack_64 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
+         *(uint *)((int)&CStack_58 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar13,position,pCVar11);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
+              (&CStack_1ac,(CMatrix3x4f *)&stack0xfffffdf4,&CStack_17c);
     pCVar13 = &CStack_17c;
-    pfVar14 = afStack_1dc;
+    pCVar15 = &CStack_1dc;
     for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *pfVar14 = pCVar13->m[0].w;
-      pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);
-      pfVar14 = pfVar14 + (uint)bVar15 * -2 + 1;
+      pCVar15->m[0].w = pCVar13->m[0].w;
+      pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);
+      pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_00592720(afStack_1dc);
-    fStack_88 = fStack_70;
-    afStack_84[(uint)bVar15 * -2] = afStack_84[(uint)bVar15 * -2 + 6];
+    core_xform_cpp_getTranslation_FUN_00592720(&CStack_1dc,&CStack_70);
+    fStack_88 = CStack_70.x;
+    afStack_84[(uint)bVar16 * -2] = *(float *)((int)&CStack_70 + (uint)bVar16 * -8 + 4);
     pSVar10 = pSStack_24;
-    afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
-         afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
+    afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
+         *(float *)((int)&CStack_70 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
     if ((CVector3f *)&fStack_88 != pCStack_2c) {
       pCStack_2c->x = fStack_88;
       pCStack_2c->y = afStack_84[0];
       pCStack_2c->z = afStack_84[1];
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(afStack_1dc);
+    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&CStack_1dc,in_stack_fffffdf4);
     fStack_4c = afStack_84[2];
-    afStack_84[(uint)bVar15 * -2 + 0xf] = afStack_84[(uint)bVar15 * -2 + 3];
-    afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x10] =
-         afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
-    if (&pSVar10->rotation != (CVector3f *)(afStack_84 + 0xe)) {
+    afStack_48[(uint)bVar16 * -2] = afStack_84[(uint)bVar16 * -2 + 3];
+    afStack_48[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
+         afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4];
+    if (&pSVar10->rotation != (CVector3f *)&fStack_4c) {
       (pSVar10->rotation).x = fStack_4c;
-      (pSVar10->rotation).y = fStack_48;
-      (pSVar10->rotation).z = fStack_44;
+      (pSVar10->rotation).y = afStack_48[0];
+      (pSVar10->rotation).z = afStack_48[1];
     }
     pCVar11 = &CStack_14c;
     __arrinit(&CStack_14c,4,&g_CVectorTypeInfo);
     iStack_18 = 0;
     do {
-      uStack_c0 = 0;
-      core_xform_cpp_FUN_00591530(auStack_c4,afStack_1dc);
-      CStack_a0.x = fStack_b8;
-      *(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + 4) = afStack_b4[(uint)bVar15 * -2];
-      *(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =
-           afStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
+      CStack_c4.y = 0.0;
+      core_xform_cpp_transformVector3x4_FUN_00591530(&CStack_c4,&CStack_1dc,&CStack_b8);
+      CStack_a0.x = CStack_b8.x;
+      *(uint *)((int)&CStack_a0 + (uint)bVar16 * -8 + 4) =
+           *(uint *)((int)&CStack_b8 + (uint)bVar16 * -8 + 4);
+      *(uint *)((int)&CStack_a0 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
+           *(uint *)((int)&CStack_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
       if (pCVar11 != &CStack_a0) {
         pCVar11->x = CStack_a0.x;
         pCVar11->y = CStack_a0.y;
@@ -212,18 +216,18 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
     pfStack_34 = pfStack_34 + 0x2e;
     iStack_28 = iStack_28 + 1;
   } while (iStack_28 < 0xc);
-  fVar16 = (float10)fcos((float10)_DAT_005f98bc);
-  fVar17 = (float10)fsin((float10)_DAT_005f98bc);
+  fVar17 = (float10)fcos((float10)_DAT_005f98bc);
+  fVar18 = (float10)fsin((float10)_DAT_005f98bc);
   fVar1 = (this_ptr->gem_pos).y;
   fVar5 = (float)_DAT_005dc4fd;
-  fVar18 = (float10)_DAT_005dc4ed;
+  fVar19 = (float10)_DAT_005dc4ed;
   fVar2 = this_ptr->panel_radius;
   pCVar11 = &this_ptr->reflectors[0].target_position;
   fVar3 = (this_ptr->emitter_pos).f.y;
   fVar4 = (float)_DAT_005dc505;
   this_ptr->reflectors[0].target_position.z =
-       (float)(fVar16 * (float10)this_ptr->panel_radius * fVar18);
-  pCVar11->x = (float)((float10)fVar2 * fVar17 * fVar18);
+       (float)(fVar17 * (float10)this_ptr->panel_radius * fVar19);
+  pCVar11->x = (float)((float10)fVar2 * fVar18 * fVar19);
   this_ptr->reflectors[0].target_position.y = fVar3 * fVar4 + fVar1 * fVar5;
   if (this_ptr->reflectors != (SReflector *)pCVar11) {
     this_ptr->reflectors[0].start_position.x = pCVar11->x;

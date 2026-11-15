@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004a0680(CTrail *this_ptr)
 
 {
   byte bVar1;
-  float afStackY_102c [997];
+  uint auStackY_102c [997];
   CVector3f *translation;
   SMRGLHeaderPrimitive local_84;
   uint local_6c;
@@ -23,8 +23,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004a0680(CTrail *this_ptr)
   float local_50;
   float local_4c;
   float local_48;
-  float local_44;
-  float afStack_40 [2];
+  CVector3f local_44;
   CVector3f local_38;
   CVector3i local_2c;
   CVector3i local_20;
@@ -49,12 +48,13 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004a0680(CTrail *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
             (DAT_005f2afc,&this_ptr->position);
-  engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250(DAT_005f2afc,&local_44);
   translation = (CVector3f *)0x0;
-  local_38.x = local_44;
-  *(float *)((int)&local_38 + (uint)bVar1 * -8 + 4) = afStack_40[(uint)bVar1 * -2];
-  *(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-       afStack_40[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
+  local_38.x = local_44.x;
+  *(uint *)((int)&local_38 + (uint)bVar1 * -8 + 4) =
+       *(uint *)((int)&local_44 + (uint)bVar1 * -8 + 4);
+  *(uint *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+       *(uint *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
             (DAT_005f2afc,&local_38,translation);
   local_48 = 0.0;

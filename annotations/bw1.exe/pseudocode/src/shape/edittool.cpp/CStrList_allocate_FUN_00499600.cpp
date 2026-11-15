@@ -16,12 +16,12 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00499600(CStrList *this_pt
   if (new_capacity < this_ptr->item_count) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xc45;
-    core_main_c_FUN_005030e0("CStrList::allocate - Can't shrink list!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::allocate - Can't shrink list!");
   }
   if (new_capacity < 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xc46;
-    core_main_c_FUN_005030e0("CStrList::allocate - invalid count: %d",new_capacity);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::allocate - invalid count: %d");
   }
   if (this_ptr->capacity < new_capacity) {
     this_ptr->capacity = new_capacity;
@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00499600(CStrList *this_pt
     if (ppcVar1 == (char **)0x0) {
       _DAT_01d1d400 = "..\\shape\\edittool.cpp";
       _DAT_01d1d404 = 0xc4a;
-      core_main_c_FUN_005030e0("CStrList::insert - out of memory");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::insert - out of memory");
       return;
     }
   }

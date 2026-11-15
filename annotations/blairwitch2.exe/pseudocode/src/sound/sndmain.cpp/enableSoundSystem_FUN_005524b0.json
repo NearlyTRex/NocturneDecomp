@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 258,
+    "complexity_score": 260,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 70,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_stride_bytecount",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 240
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -183,19 +183,19 @@
     },
     {
       "addr": "02649000",
-      "name": "DAT_02649000",
-      "type": "undefined4",
+      "name": "g_CachedReverb",
+      "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "02649004",
-      "name": "DAT_02649004",
+      "name": "g_CachedReverb.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02649008",
-      "name": "DAT_02649008",
+      "name": "g_CachedReverb.damping",
       "type": "undefined4",
       "value": null
     },
@@ -434,12 +434,12 @@
       "line": 61,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02648e80 + 0x2c))(_DAT_02648e80,_DAT_02649000,_DAT_02649004,_DAT_02649008);",
+      "text": "(**(code **)(*_DAT_02648e80 + 0x2c))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*_DAT_02648e80 + 4))(_DAT_02648e80);",

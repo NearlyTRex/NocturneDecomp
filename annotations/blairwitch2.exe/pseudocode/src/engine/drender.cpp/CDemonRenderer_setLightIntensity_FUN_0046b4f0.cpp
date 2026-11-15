@@ -11,10 +11,9 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0(CDemonRenderer *this_ptr,float intensity)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)intensity * (float10)_DAT_005d15bb;
-  round();
-  engine_light_cpp_setAmbientLightLevel_FUN_004e25c0((int)ROUND(fVar1));
+  dVar1 = round((double)(intensity * (float)_DAT_005d15bb));
+  engine_light_cpp_setAmbientLightLevel_FUN_004e25c0((int)ROUND(dVar1));
   return;
 }

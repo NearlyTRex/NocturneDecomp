@@ -8,7 +8,7 @@
 ; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d7250 at 004d7522
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d7522
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bc29
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e751
 ;
@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c550
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
@@ -173,8 +173,8 @@ section .text
     PUSH 0x5e9a56                       ; 0051c20a | = "CDemonMission::createHeros - too many..."
     MOV dword ptr [0x01d1d400],ESI      ; 0051c20f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0051c215 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051c21b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051c21b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051c220
     JMP 0x0051c0da                      ; 0051c223
         ;   XREF to: 0051c0da (UNCONDITIONAL_JUMP)  ; LAB_0051c0da

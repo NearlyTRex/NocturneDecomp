@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005754d0(int device_id)
   if (uVar1 != 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x1562;
-    core_main_c_FUN_005030e0("selectSoundDevice - device already open.");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("selectSoundDevice - device already open.");
   }
   if (device_id < 0) {
     device_id = DAT_006232fc;

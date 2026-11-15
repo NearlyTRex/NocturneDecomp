@@ -136,7 +136,7 @@ void core_set_cpp_FUN_0054e6a0(void)
             if (iVar5 == _DAT_01fe4cb4) {
               _DAT_01d1d400 = "..\\core\\set.cpp";
               _DAT_01d1d404 = 0x35c;
-              core_main_c_FUN_005030e0();
+              core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
             light_source = *(CDemonLight **)(&DAT_01fe4cb8 + iVar5 * 4);
             if (pCStack_28->cameras[0].is_panning == 0) {

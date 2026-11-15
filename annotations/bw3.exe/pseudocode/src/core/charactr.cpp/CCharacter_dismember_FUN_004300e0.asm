@@ -40,11 +40,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_enemy.cpp_FUN_00489c90
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
@@ -133,8 +133,8 @@ section .text
     PUSH ECX                            ; 004301e7
     LEA ESI,[ESP + 0x70]                ; 004301e8
     LEA EDI,[ESP + 0x7c]                ; 004301ec
-    CALL core_actor.cpp_FUN_00408b80    ; 004301f0
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004301f0
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004301f5
     LEA ESI,[ESP + 0x68]                ; 004301f8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004301fc
@@ -294,8 +294,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xe8]      ; 004303bc
     MOV dword ptr [ESP + 0x8c],ECX      ; 004303c3
     MOV dword ptr [ESP + 0x90],EAX      ; 004303ca
-    CALL core_dirmat.cpp_FUN_0045b800   ; 004303d1
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 004303d1
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xac]                ; 004303d6
     ADD ESP,0x8                         ; 004303dd
     MOVSD ES:EDI,ESI                    ; 004303e0

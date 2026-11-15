@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   support_codec.cpp_CInStreamPipe_close_FUN_004351e0
 ;
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5cda76                       ; 004352e1
     MOV dword ptr [0x01d046a0],ESI      ; 004352e6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004352ec | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004352f2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004352f2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004352f7
     POP ESI                             ; 004352fa
     POP EDI                             ; 004352fb

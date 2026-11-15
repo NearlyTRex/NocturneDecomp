@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   commands
 ;
-; XREF[38]:
+; XREF[39]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c921
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 004167a7
 ;   core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220 at 00418234
@@ -18,7 +18,7 @@
 ;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0 at 0045c8e8
 ;   core_dest.cpp_CActorDestination_process_FUN_0045d2a0 at 0045d437
 ;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 0046107a
-;   ... and 28 more
+;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c56ecc

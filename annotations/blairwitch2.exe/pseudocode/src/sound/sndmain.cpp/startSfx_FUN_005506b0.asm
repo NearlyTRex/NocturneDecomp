@@ -44,7 +44,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__stricmp_FUN_005b8130
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   engine_dosio.cpp_splitPath_FUN_00461070
@@ -295,8 +295,8 @@ section .text
     PUSH 0x5e7a38                       ; 0055094f | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d046a0],ESI      ; 00550954 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0055095a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00550960
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00550960
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00550965
     JMP 0x00550768                      ; 00550968
         ;   XREF to: 00550768 (UNCONDITIONAL_JUMP)  ; LAB_00550768

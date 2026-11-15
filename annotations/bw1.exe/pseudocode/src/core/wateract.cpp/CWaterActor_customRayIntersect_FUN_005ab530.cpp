@@ -20,12 +20,12 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005ab530(CWat
   CDemonTriangle CStack_c8;
   uint auStack_90 [6];
   uint auStack_78 [6];
-  float fStack_60;
-  float afStack_5c [2];
+  CVector3f CStack_60;
   CVector3f CStack_54;
-  float afStack_48 [4];
-  float afStack_38 [4];
-  float fStack_28;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  float fStack_30;
+  float afStack_2c [2];
   int iStack_24;
   SWaterVertex *pSStack_1c;
   int iStack_18;
@@ -57,16 +57,16 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005ab530(CWat
                           (&CStack_c8,ray_origin,ray_direction);
         fStack_14 = fVar1;
         if (((fVar1 < fStack_d0) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
-          afStack_38[2] = -CStack_c8.normal.x;
-          afStack_38[3] = -CStack_c8.normal.y;
-          fStack_28 = -CStack_c8.normal.z;
-          fStack_60 = -CStack_c8.normal.x;
-          afStack_5c[(uint)bVar6 * -2] = afStack_38[(uint)bVar6 * -2 + 3];
-          afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-               afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+          fStack_30 = -CStack_c8.normal.x;
+          afStack_2c[0] = -CStack_c8.normal.y;
+          afStack_2c[1] = -CStack_c8.normal.z;
+          CStack_60.x = -CStack_c8.normal.x;
+          *(float *)((int)&CStack_60 + (uint)bVar6 * -8 + 4) = afStack_2c[(uint)bVar6 * -2];
+          *(float *)((int)&CStack_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               afStack_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           fStack_d0 = fVar1;
-          if (afStack_48 != &fStack_60) {
-            afStack_48[0] = fStack_60;
+          if (&CStack_48 != &CStack_60) {
+            CStack_48.x = CStack_60.x;
           }
         }
         iStack_18 = iStack_18 + 1;
@@ -74,11 +74,13 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005ab530(CWat
       } while (iStack_18 < iStack_24);
     }
     if (fStack_d0 < 1.0) {
-      core_actor_cpp_FUN_00408ac0(this_ptr,afStack_48);
-      CStack_54.x = afStack_48[3];
-      afStack_48[(uint)bVar6 * -2 + -2] = afStack_38[(uint)bVar6 * -2];
-      afStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -1] =
-           afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,&CStack_48,&CStack_3c)
+      ;
+      CStack_54.x = CStack_3c.x;
+      *(uint *)((int)&CStack_54 + (uint)bVar6 * -8 + 4) =
+           *(uint *)((int)&CStack_3c + (uint)bVar6 * -8 + 4);
+      *(uint *)((int)&CStack_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           *(uint *)((int)&CStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       if (&CStack_54 != out_normal) {
         out_normal->x = CStack_54.x;
         out_normal->y = CStack_54.y;

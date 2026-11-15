@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_dpart.cpp_FUN_004615d0 at 004615fa
+;   core_dpart.cpp_CDemonPart_free_FUN_004615d0 at 004615fa
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b86a0

@@ -53,9 +53,9 @@ SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 // Address: 00420500
 void __cdecl CBoundingBox3D::expand(CBoundingBox3D *this_ptr,CVector3f *point);
 
-// Original: core_box.cpp_FUN_00420570
+// Original: core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570
 // Address: 00420570
-void FUN_00420570(undefined4 *param_1,uint param_2);
+CVector3f * __stack2_esi CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_004205e0
 // Address: 004205e0
@@ -93,9 +93,9 @@ float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 // Address: 00421670
 void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_00421af0
+// Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421af0
 // Address: 00421af0
-void FUN_00421af0(float *param_1,float *param_2);
+CVector3f * __stack2_esi CBoundingBox3D::clampPoint(CBoundingBox3D *this_ptr,CVector3f *in_point,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_00421b90
 // Address: 00421b90

@@ -21,6 +21,6 @@ void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00447860(CDemonFilter
   }
   _DAT_01d046a0 = "..\\core\\dfilter.cpp";
   _DAT_01d046a4 = 0x8d;
-  core_main_c_FUN_004e4500("CDemonFilter::allocMemory - Out of memory");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::allocMemory - Out of memory");
   return;
 }

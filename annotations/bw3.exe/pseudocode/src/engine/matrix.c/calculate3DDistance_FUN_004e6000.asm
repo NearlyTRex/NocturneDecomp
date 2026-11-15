@@ -45,7 +45,7 @@ section .text
     FADDP                               ; 004e6046
     FSQRT                               ; 004e6048
     CALL crt_math.c_round_FUN_005a3120  ; 004e604a
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 004e604f
     MOV EAX,dword ptr [ESP]             ; 004e6052
     ADD ESP,0x14                        ; 004e6055

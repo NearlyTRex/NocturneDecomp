@@ -11,11 +11,11 @@ SMRGLHeaderExtended * __cdecl loadModelFile(char *filename);
 
 // Original: engine_model.c_freeMRGLData_FUN_0051f8a0
 // Address: 0051f8a0
-void freeMRGLData(SMRGLHeaderExtended *param_1);
+void __cdecl freeMRGLData(SMRGLHeaderExtended *mrgl_data);
 
 // Original: engine_model.c_getMRGLBounds_FUN_0051f920
 // Address: 0051f920
-uint * getMRGLBounds(int *param_1);
+SMRGLModelBounds * __stack_esi getMRGLBounds(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 
 // Original: engine_model.c_getMRGLSize_FUN_0051fee0
 // Address: 0051fee0

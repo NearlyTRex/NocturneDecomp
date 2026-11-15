@@ -14,7 +14,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004a2de0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
@@ -100,8 +100,8 @@ section .text
     PUSH EBX                            ; 00488a69
     MOV dword ptr [EBP + -0x18],EDI     ; 00488a6a
     MOV dword ptr [EBP + -0x14],EDI     ; 00488a6d
-    CALL core_actor.cpp_FUN_00408b00    ; 00488a70
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00488a70
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00488a75
     LEA EAX,[EBP + -0xc]                ; 00488a78
     PUSH EAX                            ; 00488a7b

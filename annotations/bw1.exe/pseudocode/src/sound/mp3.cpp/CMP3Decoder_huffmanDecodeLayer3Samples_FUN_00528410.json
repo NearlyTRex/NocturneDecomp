@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 583,
+    "complexity_score": 543,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 198,
-    "suspect_count": 36,
+    "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -42,7 +42,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c2cac",
@@ -519,14 +519,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"wrong table number %u.  File: %s\",iVar6,&DAT_01d404c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_00622250",
       "severity": "mild",
@@ -539,14 +531,6 @@
       "match": "DAT_01d40dec",
       "severity": "mild",
       "text": "uVar9 = *(uint *)(&DAT_01d40dec + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"MP3 Huffman tree overflow!  File: %s\",&DAT_01d404c8);",
       "type": "undefined_data"
     },
     {
@@ -603,22 +587,6 @@
       "match": "DAT_01d40dec",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01d40dec + iVar8) = *(uint *)(&DAT_01d40dec + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(pcVar13,iVar6,&DAT_01d404c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"decoder table read error.  File: %s\",&DAT_01d404c8);",
       "type": "undefined_data"
     },
     {

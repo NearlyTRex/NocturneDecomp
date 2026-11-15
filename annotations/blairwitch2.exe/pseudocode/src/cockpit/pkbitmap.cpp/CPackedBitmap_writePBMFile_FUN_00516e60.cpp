@@ -43,6 +43,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPacke
   }
   _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
   _DAT_01d046a4 = 0x49c;
-  core_main_c_FUN_004e4500("Error writing PBM");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Error writing PBM");
   return;
 }

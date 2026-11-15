@@ -32,8 +32,10 @@
 #include "types/structs/SDynamicLight.h"
 #include "types/structs/SHuffmanTable.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/structs/SMRGLTextureModel.h"
 #include "types/structs/SMorphPoint.h"
 #include "types/structs/SMotion.h"
@@ -117,15 +119,15 @@ CMirror * __cdecl core_mirror_cpp_FUN_004f3fe0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f3ff0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f4070(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
-void core_mirror_cpp_FUN_004f50f0(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004f50f0(CMirrorReflection *this_ptr,CVector3f *input_vector,CVector3f *output_buffer);
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004f5370(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004f53f0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004f5480(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610(CMirror *this_ptr);
-void core_mirror_cpp_FUN_004f57c0(undefined4 param_1,int *param_2);
-void core_mirror_cpp_FUN_004f5870(undefined4 param_1,int *param_2,int *param_3);
+CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
+CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004f5870(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_004f5a60(SClipPlane *this_ptr);
 void core_mirror_cpp_FUN_004f5a70(void);
 void core_mission_cpp_FUN_004f5aa0(int param_1);
@@ -150,7 +152,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(CDemonM
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004f6de0(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0(CDemonMission *this_ptr,CLocation *teleport_target);
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void core_mission_cpp_FUN_004f6f80(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004f7230(CDemonMission *this_ptr,char *set_name);
@@ -170,8 +172,8 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004f7d19(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(SCPUInfo *cpu_info);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *filename);
-void engine_model_c_freeMRGLData_FUN_004f80f0(SMRGLHeaderExtended *param_1);
-uint * engine_model_c_getMRGLBounds_FUN_004f8170(int *param_1);
+void __cdecl engine_model_c_freeMRGLData_FUN_004f80f0(SMRGLHeaderExtended *mrgl_data);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_004f8170(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_004f8730(SMRGLHeaderExtended *header);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_004f89a0(char *filename,int model_size);
 void __cdecl core_moocow_cpp_staticInit_FUN_004f8ae0(void);
@@ -245,13 +247,13 @@ void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004fc280(CMotio
 void core_motion_cpp_FUN_004fc2c0(CMotionController *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController *this_ptr);
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004fc320(CMotionController *this_ptr);
-float core_motion_cpp_FUN_004fc350(int *param_1,int param_2);
+float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(CMotionController *this_ptr,int desired_state_index);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0(CMotionController *this_ptr,char *motion_name,float frame_number);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420(CMotionController *this_ptr,int target_motion_index,float target_frame_number);
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_004fc480(CMotionController *this_ptr);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004fc4b0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004fc680(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
-void core_motion_cpp_FUN_004fc850(int *param_1,int param_2,float param_3,float *param_4);
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004fc850(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
 float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004fca20(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
@@ -259,7 +261,7 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_004fcc90(CMotionControll
 void __cdecl core_motion_cpp_CMotionController_save_FUN_004fcd30(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_004fcdc0(CMotionController *this_ptr,CDemonActor *actor);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004fd150(SMpegFrame *frame);
-void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004fd3c0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);

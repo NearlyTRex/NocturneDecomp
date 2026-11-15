@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d05014
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5dc8fc                       ; 004ea829
     MOV dword ptr [0x01d046a0],EBX      ; 004ea82e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004ea834 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004ea83a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ea83a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ea83f
     POP EBX                             ; 004ea842
     POP ESI                             ; 004ea843

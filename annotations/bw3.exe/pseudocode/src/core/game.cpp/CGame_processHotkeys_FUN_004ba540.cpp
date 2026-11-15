@@ -18,11 +18,11 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr)
   int iVar5;
   int iVar6;
   CDemonActor *pCVar7;
-  _FILE *p_Var8;
+  _FILE *file_handle;
+  char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
   uint clear_enabled;
-  float fVar11;
+  float fVar10;
   float fStack_220;
   char acStack_21c [256];
   char acStack_11c [256];
@@ -64,7 +64,8 @@ LAB_004baa7c:
        (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
       (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = 1 - this_ptr->is_game_active, this_ptr->is_game_active = iVar5, iVar5 != 0)) {
-    core_setdir_cpp_FUN_0053f940(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
     g_CScriptPtr->focus_actor_changed = 0;
   }
   if ((this_ptr->is_game_active == 0) &&
@@ -102,7 +103,7 @@ LAB_004ba56c:
     }
   }
   if ((((this_ptr->developer_mode_enabled != 0) ||
-       (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
+       (pcVar8 = getenv("SPOOKHOUSE"), pcVar8 != (char *)0x0)) &&
       (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
@@ -164,38 +165,38 @@ LAB_004ba56c:
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
   if ((iVar5 != 0) && (this_ptr->letterbox_mode == 0)) {
     core_game_cpp_CGame_saveGame_FUN_004bda10(this_ptr,"quicksavedgame.sav");
-    fVar11 = 2.0;
-    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Quick Save");
-    core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,pcVar9,fVar11);
+    fVar10 = 2.0;
+    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Quick Save");
+    core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,pcVar8,fVar10);
   }
   if ((this_ptr->subtitle_system_enabled == 0) &&
      (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) {
-    p_Var8 = engine_dosio_cpp_FUN_004659c0
-                       (&DAT_005c28a2,"quicksavedgame.sav",&DAT_005c288c);
-    if (p_Var8 == (_FILE *)0x0) {
-      fVar11 = 2.0;
-      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960
+    file_handle = engine_dosio_cpp_getFile_FUN_004659c0
+                            (&DAT_005c28a2,"quicksavedgame.sav",&DAT_005c288c);
+    if (file_handle == (_FILE *)0x0) {
+      fVar10 = 2.0;
+      pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960
                          ("No quicked saved game to load");
-      core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,pcVar9,fVar11);
+      core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,pcVar8,fVar10);
     }
     else {
-      _fclose();
-      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960
+      _fclose(file_handle);
+      pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00508960
                          ("Restore quick saved game?");
       iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0
-                        (g_CEditorToolsPtr,pcVar9);
+                        (g_CEditorToolsPtr,pcVar8);
       if (iVar5 != 0) {
-        pcVar10 = "quicksavedgame.sav";
-        pcVar9 = this_ptr->chapter_reload_filename;
+        pcVar9 = "quicksavedgame.sav";
+        pcVar8 = this_ptr->chapter_reload_filename;
         this_ptr->need_chapter_reload = 1;
         do {
-          cVar1 = *pcVar10;
-          *pcVar9 = cVar1;
+          cVar1 = *pcVar9;
+          *pcVar8 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar10[1];
-          pcVar10 = pcVar10 + 2;
-          pcVar9[1] = cVar1;
+          cVar1 = pcVar9[1];
           pcVar9 = pcVar9 + 2;
+          pcVar8[1] = cVar1;
+          pcVar8 = pcVar8 + 2;
         } while (cVar1 != '\0');
       }
     }
@@ -205,7 +206,7 @@ LAB_004ba56c:
     this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
   }
   if (((this_ptr->developer_mode_enabled != 0) ||
-      (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
+      (pcVar8 = getenv("SPOOKHOUSE"), pcVar8 != (char *)0x0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
   }

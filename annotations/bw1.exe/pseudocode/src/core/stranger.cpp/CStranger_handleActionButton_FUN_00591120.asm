@@ -31,8 +31,8 @@
 ;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
 ;   core_hero.cpp_FUN_004eb3e0
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_FUN_00524a40
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0058ce80
 ;   core_stranger.cpp_CStranger_tryDescendLadder_FUN_0058d3c0
 ;   core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260
@@ -76,14 +76,14 @@ section .text
     PUSH EAX                            ; 00591159
     LEA ESI,[EBX + 0x158]               ; 0059115a
     PUSH ESI                            ; 00591160
-    CALL core_motion.cpp_FUN_00524a40   ; 00591161
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00591161
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 00591166
     ADD ESP,0x8                         ; 0059116a
     PUSH 0x1                            ; 0059116d
     PUSH ESI                            ; 0059116f
-    CALL core_motion.cpp_FUN_00524a40   ; 00591170
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00591170
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00591175
     FLD float ptr [ESP + 0xc]           ; 00591179
     ADD ESP,0x8                         ; 0059117d

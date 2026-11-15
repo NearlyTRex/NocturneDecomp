@@ -22,6 +22,6 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,
   }
   _DAT_01d1d400 = "..\\core\\course.cpp";
   _DAT_01d1d404 = 0x6e;
-  core_main_c_FUN_005030e0("CCourse::allocMemory - out of hunk!");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CCourse::allocMemory - out of hunk!");
   return;
 }

@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
-    "complexity_score": 345,
+    "complexity_score": 324,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 20,
+    "pseudocode_lines": 104,
+    "suspect_count": 18,
     "suspect_types": [
       "bit_int_float_compare",
       "displaced_global_access",
-      "extra_output",
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
+      "suspect_float",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 340
+    "total_lines": 339
   },
   "cross_references": [
     {
@@ -294,32 +294,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 30,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f0f5c);",
@@ -327,7 +303,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 30,
       "match": "DAT_005f0f5c",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f0f5c);",
@@ -335,31 +311,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_007e2cf4",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar9) = 0;",
+      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar8) = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_007e2cf4",
       "severity": "mild",
-      "text": "(&DAT_007e2cf4)[iVar9] =",
+      "text": "(&DAT_007e2cf4)[iVar8] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_007e2cf4",
       "severity": "mild",
-      "text": "(float)(&DAT_007e2cf4)[iVar9] + (pCVar10->fires[0].size * fVar2) / fVar3;",
+      "text": "(float)(&DAT_007e2cf4)[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 67,
       "match": "DAT_007e2cf4",
       "severity": "mild",
       "text": "if ((float)_DAT_005b836e <= (float)(&DAT_007e2cf4)[iVar6]) {",
@@ -367,74 +343,82 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_007e2cf4",
+      "line": 88,
+      "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "fVar14 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007e2cf4)[puVar11[1]];",
+      "text": "for (iVar8 = 0; pCVar4 = DAT_005f2afc, iVar8 < (int)(uint)*puVar11; iVar8 = iVar8 + 1) {",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 93,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "puVar8 = (uchar *)(extraout_ECX + 4);",
-      "type": "extra_output"
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_007e2cf4",
+      "severity": "mild",
+      "text": "((double)(*(float *)(puVar7 + 4) * (float)(&DAT_007e2cf4)[puVar10[1]]));",
+      "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "iVar9 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "*(int *)(*piVar7 + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar14);",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 94,
+      "match": "6.147831e-39",
+      "severity": "mild",
+      "text": "local_30 = (float)local_18 + 6.147831e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Pointer value `&DAT_007e2cf4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&DAT_007e2cf4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar9) = 0;",
+      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar4->vertex_buffer_ptr->a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)&pCVar4->vertex_buffer_ptr->a",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->a + local_18) = (int)ROUND(dVar13);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar9) = 0;",
+      "text": "*(uint *)((int)&DAT_007e2cf4 + iVar8) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 61,
-      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 102,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);",
+      "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->a + local_18) = (int)ROUND(dVar13);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 59,
+      "match": "pCVar9 = (T *)((pCVar9->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 76,
-      "match": "pCVar13 = (T *)pCVar13->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 74,
+      "match": "pCVar12 = (T *)pCVar12->ARRAY",
       "severity": "moderate",
-      "text": "pCVar13 = (CDeformableModel *)pCVar13->lod_info;",
+      "text": "pCVar12 = (CDeformableModel *)pCVar12->lod_info;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
-      "line": 79,
+      "line": 77,
       "match": "(int)this_ptr->hit_points < 0x40a00000",
       "severity": "moderate",
-      "text": "if ((iVar9 == pCVar4->bone_count) && ((int)this_ptr->hit_points < 0x40a00000)) {",
+      "text": "if ((iVar8 == pCVar5->bone_count) && ((int)this_ptr->hit_points < 0x40a00000)) {",
       "type": "bit_int_float_compare"
     },
     {

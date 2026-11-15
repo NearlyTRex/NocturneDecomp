@@ -2,27 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 104,
+    "complexity_score": 69,
     "cross_reference_count": 67,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 51
   },
   "cross_references": [
-    {
-      "addr": "00438e40",
-      "from_addr": "00438f8f",
-      "name": "cockpit_ckptutil.c_FUN_00438e40",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00438bd0",
       "from_addr": "00438dba",
@@ -33,6 +26,12 @@
       "addr": "0043a040",
       "from_addr": "0043a0d4",
       "name": "cockpit_ckptutil.c_rotateBitmap_FUN_0043a040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438e40",
+      "from_addr": "00438f8f",
+      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -168,6 +167,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d7250",
+      "from_addr": "004d72eb",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d77d0",
       "from_addr": "004d78c4",
       "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
@@ -177,12 +182,6 @@
       "addr": "004ce580",
       "from_addr": "004cf3e5",
       "name": "core_game.cpp_FUN_004ce580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d7250",
-      "from_addr": "004d72eb",
-      "name": "core_game.cpp_FUN_004d7250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,7 +259,7 @@
     {
       "addr": "0055b280",
       "from_addr": "0055b2e8",
-      "name": "core_setdir.cpp_FUN_0055b280",
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_0055b280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -348,12 +347,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053b110",
-      "from_addr": "0053b185",
-      "name": "engine_pod.cpp_FUN_0053b110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053bfc0",
       "from_addr": "0053c05b",
       "name": "engine_pod.cpp_FUN_0053bfc0",
@@ -384,6 +377,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0053b110",
+      "from_addr": "0053b185",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0053b110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00525ab0",
+      "from_addr": "00525b4b",
+      "name": "sound_mp3.cpp_CFileBitStream_init_FUN_00525ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052b100",
       "from_addr": "0052b138",
       "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_0052b100",
@@ -393,12 +398,6 @@
       "addr": "0052af80",
       "from_addr": "0052b0bf",
       "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00525ab0",
-      "from_addr": "00525b4b",
-      "name": "sound_mp3.cpp_FUN_00525ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -430,7 +429,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fclose_FUN_005c0d10",
-    "signature": "undefined4 __cdecl crt_stdio_c_fclose_FUN_005c0d10(int param_1)"
+    "signature": "int __cdecl crt_stdio_c_fclose_FUN_005c0d10(_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -517,12 +516,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -532,14 +539,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl _fclose(int param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -558,28 +557,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == puVar1[1]) break;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = FUN_005c0d54(param_1,1);",
-      "type": "unnamed_param"
     }
   ]
 }

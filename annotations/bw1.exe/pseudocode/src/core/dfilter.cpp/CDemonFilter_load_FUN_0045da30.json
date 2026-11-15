@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 172,
+    "complexity_score": 145,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 9,
+    "pseudocode_lines": 60,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 261
+    "total_lines": 259
   },
   "cross_references": [
     {
       "addr": "004232c0",
       "from_addr": "004236b6",
-      "name": "core_boxactor.cpp_FUN_004232c0",
+      "name": "core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,7 +57,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c03a0",
@@ -78,7 +77,7 @@
     {
       "addr": "00479180",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479180"
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
     },
     {
       "addr": "00478fb0",
@@ -207,7 +206,7 @@
       {
         "call_addr": "004236b6",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_004232c0",
+        "caller": "core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -342,64 +341,48 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_005d8465",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005d8465,filename,&DAT_005d8462);",
+      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005d8465,filename,&DAT_005d8462);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_005d8462",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005d8465,filename,&DAT_005d8462);",
+      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005d8465,filename,&DAT_005d8462);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_005d84a4",
       "severity": "mild",
       "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&DAT_005d84a4,filename);",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "this_ptr->count = extraout_EDX / this_ptr->size;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_005d8564",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005d8564,filename,&DAT_005d8561);",
+      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005d8564,filename,&DAT_005d8561);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_005d8561",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005d8564,filename,&DAT_005d8561);",
+      "text": "p_Var2 = engine_dosio_cpp_getFile_FUN_00479180(&DAT_005d8564,filename,&DAT_005d8561);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

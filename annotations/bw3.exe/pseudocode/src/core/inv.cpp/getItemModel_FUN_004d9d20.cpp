@@ -39,7 +39,7 @@ CDemonActor * core_inv_cpp_getItemModel_FUN_004d9d20(CDemonActor *param_1)
     }
     _DAT_01d71de0 = "..\\core\\inv.cpp";
     _DAT_01d71de4 = 0xaf;
-    core_main_c_FUN_004e4330("getModel - Can't classify : %s",param_1);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("getModel - Can't classify : %s");
     return (CDemonActor *)0x0;
   }
   pCVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CBoxActorClassInfo.name_hash);

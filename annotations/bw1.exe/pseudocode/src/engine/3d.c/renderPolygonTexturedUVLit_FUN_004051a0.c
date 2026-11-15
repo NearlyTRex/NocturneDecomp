@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a0(SMRGLHeaderPrimitive *prim)
@@ -15,21 +14,19 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a
   int iVar1;
   byte bVar2;
   UIntegerFloat aUStackY_1010 [1016];
-  UIntegerFloat UStack_28;
-  UIntegerFloat UStack_24;
-  UIntegerFloat UStack_20;
-  UIntegerFloat UStack_1c;
+  CVector3i CStack_28;
+  CVector3i CStack_1c;
   
   bVar2 = 0;
-  UStack_28 = (prim->surface_normal).A;
-  UStack_24 = (prim->surface_normal).B;
-  UStack_20 = (prim->surface_normal).C;
-  engine_matrix_c_normalizeVector3DFixed_FUN_00508700(&stack0xffffffd8);
-  UStack_28 = UStack_1c;
-  (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       (UIntegerFloat)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  CStack_28.x = *(int *)&(prim->surface_normal).A;
+  CStack_28.y = *(int *)&(prim->surface_normal).B;
+  CStack_28.z = *(int *)&(prim->surface_normal).C;
+  engine_matrix_c_normalizeVector3DFixed_FUN_00508700(&CStack_28,&CStack_1c);
+  CStack_28.x = CStack_1c.x;
+  *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c51d00 == 0) {

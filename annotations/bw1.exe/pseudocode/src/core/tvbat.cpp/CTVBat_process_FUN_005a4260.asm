@@ -33,7 +33,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dtrace.cpp_FUN_0048b150
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
 ;   crt_math.c_atan2_FUN_005c1d69
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
@@ -223,8 +223,8 @@ section .text
     PUSH 0x5f8c47                       ; 005a44a3 | = "CTVBat::process - can't follow orders..."
     MOV dword ptr [0x01d1d400],ECX      ; 005a44a8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005a44ae | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005a44b4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a44b4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a44b9
     MOV EAX,[0x01d06ab4]                ; 005a44bc | DAT_01d06ab4
         ;   Label: LAB_005a44bc
@@ -287,7 +287,7 @@ section .text
         ;   Label: LAB_005a45b1
     FLD float ptr [ESP + 0x114]         ; 005a45b8
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005a45bf
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FLD float ptr [ESP + 0x11c]         ; 005a45c4
     FMUL ST0                            ; 005a45cb
     FLD float ptr [ESP + 0x114]         ; 005a45cd
@@ -299,7 +299,7 @@ section .text
     FST float ptr [ESP + 0xc]           ; 005a45e3
     FXCH                                ; 005a45e7
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005a45e9
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     MOV EDI,dword ptr [EBX + 0xc1e8]    ; 005a45ee
     FXCH                                ; 005a45f4
     FSTP float ptr [ESP + 0x1d0]        ; 005a45f6

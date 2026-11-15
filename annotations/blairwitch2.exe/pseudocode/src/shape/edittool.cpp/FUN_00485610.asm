@@ -128,14 +128,14 @@ section .text
     INC EDI                             ; 004856eb
     PUSH EDI                            ; 004856ec
     CALL engine_2d.c_clipLineGlobal_FUN_00402ca0 ; 004856ed
-        ;   XREF to: 00402ca0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clipLineGlobal_FUN_00402ca0()
+        ;   XREF to: 00402ca0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402ca0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 004856f2
     PUSH EBX                            ; 004856f5
     PUSH EDI                            ; 004856f6
     PUSH ESI                            ; 004856f7
     PUSH EBP                            ; 004856f8
     CALL engine_2d.c_clipLineGlobal_FUN_00402ca0 ; 004856f9
-        ;   XREF to: 00402ca0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clipLineGlobal_FUN_00402ca0()
+        ;   XREF to: 00402ca0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402ca0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 004856fe
     ADD ESP,0x8                         ; 00485701
         ;   Label: LAB_00485701

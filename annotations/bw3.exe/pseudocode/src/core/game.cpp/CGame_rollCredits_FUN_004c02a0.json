@@ -2,22 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 412,
-    "complexity_score": 353,
+    "complexity_score": 454,
     "cross_reference_count": 2,
     "function_call_count": 23,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 193,
-    "suspect_count": 13,
+    "pseudocode_lines": 194,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 605
+    "total_lines": 606
   },
   "cross_references": [
     {
@@ -59,7 +61,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3120",
@@ -129,7 +131,7 @@
     {
       "addr": "004659c0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004659c0"
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0"
     },
     {
       "addr": "004b0fa0",
@@ -505,7 +507,7 @@
       "line": 45,
       "match": "(uint *)((int)local_154c",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_154c + iVar10) = 0;",
+      "text": "*(uint *)((int)local_154c + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -513,7 +515,7 @@
       "line": 50,
       "match": "DAT_005c3b9d",
       "severity": "mild",
-      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e)",
       "type": "undefined_data"
     },
     {
@@ -521,12 +523,12 @@
       "line": 50,
       "match": "DAT_005c3b8e",
       "severity": "mild",
-      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_005c3ba2",
       "severity": "mild",
       "text": "iVar4 = _strcmp(local_14c,&DAT_005c3ba2);",
@@ -534,47 +536,119 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(void **)((int)local_154c",
       "severity": "moderate",
-      "text": "*(void **)((int)local_154c + iVar10) = pvVar7;",
+      "text": "*(void **)((int)local_154c + iVar9) = pvVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 77,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar9 = *(char **)((int)local_154c + iVar10);",
+      "text": "pcVar8 = *(char **)((int)local_154c + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 115,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar11 = *(char **)((int)local_154c + local_30);",
+      "text": "pcVar10 = *(char **)((int)local_154c + local_34 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 166,
+      "match": "(CBitFont *)((int)(local_10->bitmap_files + -1) +",
+      "severity": "moderate",
+      "text": "local_10 = (CBitFont *)((int)(local_10->bitmap_files + -1) + 0x4c + (int)local_38);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 172,
+      "line": 173,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar10 = (**(code **)*0x01D70A78)(0x01D70A78,1);",
+      "text": "iVar9 = (**(code **)*0x01D70A78)(0x01D70A78,1,uVar13);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 183,
       "match": "(uint *)((int)local_154c",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)local_154c + iVar4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "if (0 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "local_18 = (int)local_24 * 4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)local_10",
+      "severity": "moderate",
+      "text": "if ((-1 < (int)local_10) && ((int)local_10 < local_20)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)local_10",
+      "severity": "moderate",
+      "text": "if ((-1 < (int)local_10) && ((int)local_10 < local_20)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 155,
+      "match": "(int)local_10",
+      "severity": "moderate",
+      "text": "(local_14,100,(int)local_10,local_30,0,acStack_550);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 157,
+      "match": "(int)y",
+      "severity": "moderate",
+      "text": "(pCVar3,300,(int)y,iVar9,0,pcVar10 + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 162,
+      "match": "(int)local_10",
+      "severity": "moderate",
+      "text": "(local_14,100,400,(int)local_10,local_30,0,pcVar10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x4c03c9 assigned to bare local `uVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 103,
+      "match": "0x4c03c9",
+      "severity": "moderate",
+      "text": "uVar13 = 0x4c03c9;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 77,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -582,7 +656,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 62,
+      "line": 63,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -590,7 +664,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 126,
+      "line": 127,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

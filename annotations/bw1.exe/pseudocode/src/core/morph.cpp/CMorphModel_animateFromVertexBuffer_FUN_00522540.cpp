@@ -18,14 +18,14 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_00522540(CMo
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x112;
-    core_main_c_FUN_005030e0("CMorphModel::animate - invalid part index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::animate - invalid part index");
   }
   iVar2 = this_ptr->parts[part_index].start_vertex;
   iVar3 = start_offset + iVar2;
   if (iVar2 + this_ptr->parts[part_index].vertex_count < iVar3 + vertex_count) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x119;
-    core_main_c_FUN_005030e0("CMorphModel::animate - invalid vertex range");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::animate - invalid vertex range");
   }
   iVar2 = 0;
   if (0 < vertex_count) {

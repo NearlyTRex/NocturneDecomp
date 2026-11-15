@@ -23,12 +23,12 @@ void core_event_cpp_FUN_004aacd0(void)
   if ((in_stack_00000008 < 0) || (*in_stack_00000004 < in_stack_00000008)) {
     _DAT_01d1d400 = "..\\core\\event.cpp";
     _DAT_01d1d404 = 0x1030;
-    core_main_c_FUN_005030e0("CRuleList::insert - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CRuleList::insert - invalid index");
   }
   if (4 < *in_stack_00000004) {
     _DAT_01d1d400 = "..\\core\\event.cpp";
     _DAT_01d1d404 = 0x1031;
-    core_main_c_FUN_005030e0("CRuleList::insert - list full");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CRuleList::insert - list full");
   }
   src = in_stack_00000004 + in_stack_00000008 * 0x19 + 1;
   memmove

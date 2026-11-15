@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 0053f5d0
 float FUN_0053f5d0(void);
 
-// Original: core_setdir.cpp_FUN_0053f940
+// Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
 // Address: 0053f940
-undefined4 FUN_0053f940(CDemonSet *param_1,CDemonActor *param_2,int param_3);
+int __cdecl CDemonSet::evaluateVirtualDirector(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 
 // Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00540ba0
 // Address: 00540ba0
@@ -29,9 +29,9 @@ void __cdecl CDemonSet::clearCameraSwitchCooldown(CDemonSet *this_ptr);
 // Address: 00540be0
 void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_FUN_00540c40
+// Original: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
 // Address: 00540c40
-void FUN_00540c40(SIZE_T *param_1,char *param_2);
+void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_FUN_00540cf0
 // Address: 00540cf0
@@ -41,9 +41,9 @@ void FUN_00540cf0(CDemonSet *param_1);
 // Address: 00540e80
 void __cdecl setPixelGrayscale(int x,int y,int grayscale_value);
 
-// Original: core_setdir.cpp_FUN_00540eb0
+// Original: core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0
 // Address: 00540eb0
-void FUN_00540eb0(int *param_1);
+void __cdecl CDemonSet::renderVirtualDirectors(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0
 // Address: 005412b0

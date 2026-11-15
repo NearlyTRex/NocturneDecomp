@@ -65,7 +65,7 @@ section .text
     FLD float ptr [EBX + 0x2538]        ; 00445a02
     ADD ESP,0x4                         ; 00445a08
     CALL crt_math.c_round_FUN_005c03a0  ; 00445a0b
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EDI                            ; 00445a10
     FISTP dword ptr [EBX + 0xc390]      ; 00445a11
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30 ; 00445a17

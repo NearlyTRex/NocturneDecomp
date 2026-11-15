@@ -19,6 +19,7 @@
 #include "types/classes/CMirrorReflection.h"
 #include "types/classes/CMobster.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/structs/SCPUInfo.h"
@@ -26,8 +27,10 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDynamicLight.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLModelBounds.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x510000
@@ -187,15 +190,15 @@ CMirror * __cdecl core_mirror_cpp_FUN_00518810(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_00518820(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
-void core_mirror_cpp_FUN_00519920(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_00519920(CMirrorReflection *this_ptr,CVector3f *input_vector,CVector3f *output_buffer);
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_00519be0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_00519c20(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00519cb0(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40(CMirror *this_ptr);
-void core_mirror_cpp_FUN_00519ff0(undefined4 param_1,int *param_2);
-void core_mirror_cpp_FUN_0051a0a0(undefined4 param_1,int *param_2,int *param_3);
+CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_00519ff0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
+CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_0051a0a0(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_0051a290(SClipPlane *this_ptr);
 void __cdecl core_mission_cpp_staticInit_FUN_0051a2a0(void);
 void core_mission_cpp_FUN_0051a2d0(int param_1);
@@ -220,7 +223,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_0051b5a0(CDemonM
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_0051b700(CDemonMission *this_ptr,CLocation *teleport_target);
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void core_mission_cpp_FUN_0051b7b0(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_0051ba60(CDemonMission *this_ptr,char *set_name);
@@ -241,7 +244,7 @@ void __cdecl core_mmx_c_detectMMXSupport_FUN_0051c539(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_0051c54f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_0051c5b0(void);
 void core_mobster_cpp_FUN_0051c5e0(int param_1);
-void core_mobster_cpp_getObjectGrabPointWorld_FUN_0051c6a0(int param_1);
+CVector3f * __stack_esi core_mobster_cpp_getObjectGrabPointWorld_FUN_0051c6a0(CDemonActor *actor,CVector3f *out);
 CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_0051c7a0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_0051c7c0(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_0051c7d0(CMobster *this_ptr);
@@ -262,7 +265,7 @@ ECollisionType __cdecl core_mobster_cpp_CMobster_getCollisionType_FUN_0051f310(C
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_0051f330(CMobster *this_ptr,int taunt_category);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint flags);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *filename);
-void engine_model_c_freeMRGLData_FUN_0051f8a0(SMRGLHeaderExtended *param_1);
-uint * engine_model_c_getMRGLBounds_FUN_0051f920(int *param_1);
+void __cdecl engine_model_c_freeMRGLData_FUN_0051f8a0(SMRGLHeaderExtended *mrgl_data);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_0051f920(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_0051fee0(SMRGLHeaderExtended *header);
 

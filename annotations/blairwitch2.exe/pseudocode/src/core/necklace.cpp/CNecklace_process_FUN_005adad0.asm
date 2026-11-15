@@ -15,9 +15,9 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -170,8 +170,8 @@ section .text
     PUSH EAX                            ; 005adc63
     MOV dword ptr [EBP + -0x6],EDX      ; 005adc64
     MOV dword ptr [EBP + -0x2],EDX      ; 005adc67
-    CALL core_xform.cpp_FUN_00591530    ; 005adc6a
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005adc6a
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x12]                ; 005adc6f
     MOVSD ES:EDI,ESI                    ; 005adc72
     MOVSD ES:EDI,ESI                    ; 005adc73

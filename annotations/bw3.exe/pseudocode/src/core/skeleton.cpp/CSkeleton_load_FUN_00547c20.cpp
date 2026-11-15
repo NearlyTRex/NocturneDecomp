@@ -15,11 +15,11 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00547c20(CSkeleton *this_ptr,c
   _FILE *file_handle;
   char *pcVar2;
   
-  file_handle = engine_dosio_cpp_FUN_004659c0(&DAT_005d166f,filename,&DAT_005d166c);
+  file_handle = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d166f,filename,&DAT_005d166c);
   if (file_handle == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x101;
-    core_main_c_FUN_004e4330("CSkeleton::load - Can't open %s",filename);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CSkeleton::load - Can't open %s");
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(this_ptr,file_handle);
   pcVar2 = this_ptr->loaded_filename;

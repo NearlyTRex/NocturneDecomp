@@ -25,8 +25,8 @@
 ;   undefined4 DAT_02652eb0
 ;
 ; Called Functions:
+;   engine_texture.cpp_CTextureCache_findTexture_FUN_00574490
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80
-;   engine_texture.cpp_FUN_00574490
 ;   engine_texture.cpp_FUN_00574520
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 00574e2b
     MOV ECX,dword ptr [0x02652eb0]      ; 00574e2c | DAT_02652eb0
     PUSH ECX                            ; 00574e32
-    CALL engine_texture.cpp_FUN_00574490 ; 00574e33
-        ;   XREF to: 00574490 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574490()
+    CALL engine_texture.cpp_CTextureCache_findTexture_FUN_00574490 ; 00574e33
+        ;   XREF to: 00574490 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findTexture_FUN_00574490(CTextureCache * this_ptr, int hint_index, char * texture_name)
     MOV EDX,EAX                         ; 00574e38
     ADD ESP,0xc                         ; 00574e3a
     CMP EAX,-0x1                        ; 00574e3d

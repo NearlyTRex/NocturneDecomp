@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_00444aa0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5b9818                       ; 0044494a
     MOV dword ptr [0x01d71de0],ECX      ; 0044494f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00444955 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0044495b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0044495b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00444960
     POP EBX                             ; 00444963
     RET                                 ; 00444964

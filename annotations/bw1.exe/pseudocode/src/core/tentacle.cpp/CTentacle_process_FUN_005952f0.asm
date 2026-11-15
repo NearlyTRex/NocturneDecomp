@@ -24,7 +24,7 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
@@ -37,8 +37,8 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
+;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00595f10
 ;   core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_00595c40
-;   core_tentacle.cpp_FUN_00595f10
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -192,8 +192,8 @@ section .text
     PUSH EBX                            ; 00595498
     LEA ESI,[ESP + 0x10]                ; 00595499
     LEA EDI,[ESP + 0x190]               ; 0059549d
-    CALL core_tentacle.cpp_FUN_00595f10 ; 005954a4
-        ;   XREF to: 00595f10 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_00595f10()
+    CALL core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00595f10 ; 005954a4
+        ;   XREF to: 00595f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00595f10(CTentacle * this_ptr, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 005954a9
     LEA ESI,[ESP + 0x10]                ; 005954ae
     ADD ESP,0x4                         ; 005954b2
@@ -202,8 +202,8 @@ section .text
     PUSH EAX                            ; 005954be
     LEA ESI,[ESP + 0x1f0]               ; 005954bf
     LEA EDI,[ESP + 0x1c0]               ; 005954c6
-    CALL core_xform.cpp_FUN_005b6270    ; 005954cd
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 005954cd
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x4                         ; 005954d2
     LEA EAX,[ESP + 0x1bc]               ; 005954d5
     LEA ESI,[ESP + 0x1ec]               ; 005954dc
@@ -214,8 +214,8 @@ section .text
     PUSH EBX                            ; 005954e7
     LEA ESI,[ESP + 0x248]               ; 005954e8
     LEA EDI,[ESP + 0x26c]               ; 005954ef
-    CALL core_actor.cpp_FUN_00408b40    ; 005954f6
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005954f6
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x248]               ; 005954fb
     ADD ESP,0x8                         ; 00595502
     MOVSD ES:EDI,ESI                    ; 00595505
@@ -293,7 +293,7 @@ section .text
     LEA ESI,[ESP + 0x100]               ; 00595601
     LEA EDI,[ESP + 0x160]               ; 00595608
     CALL core_xform.cpp_inverse_FUN_005b6380 ; 0059560f
-        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_005b6380()
+        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005b6380(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     ADD ESP,0x4                         ; 00595614
     LEA EAX,[ESP + 0x15c]               ; 00595617
     MOV ECX,0xc                         ; 0059561e

@@ -44,10 +44,10 @@ section .text
     ADD ECX,0x4                         ; 005072f5
     FXCH                                ; 005072f8
     CALL crt_math.c_round_FUN_005c03a0  ; 005072fa
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 005072ff
     CALL crt_math.c_round_FUN_005c03a0  ; 00507303
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV EAX,dword ptr [ESP + 0x8]       ; 00507308
     FISTP dword ptr [ESP + 0x8]         ; 0050730c
     MOV dword ptr [ECX + 0x1d1d50c],EAX ; 00507310

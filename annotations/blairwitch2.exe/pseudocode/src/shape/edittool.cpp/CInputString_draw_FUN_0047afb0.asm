@@ -35,7 +35,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   engine_2d.c_drawLine_FUN_004011a0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5d1f15                       ; 0047b020 | = "CInputString::draw - string too big f..."
     MOV dword ptr [0x01d046a0],ESI      ; 0047b025 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0047b02b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047b030
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047b030
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047b035
     MOV EDX,dword ptr [EBX + 0x130]     ; 0047b038
         ;   Label: LAB_0047b038

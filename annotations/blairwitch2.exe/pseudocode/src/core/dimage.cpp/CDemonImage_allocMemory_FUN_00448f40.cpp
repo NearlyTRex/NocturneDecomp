@@ -21,6 +21,6 @@ void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_00448f40(CDemonImage *t
   }
   _DAT_01d046a0 = "..\\core\\dimage.cpp";
   _DAT_01d046a4 = 0x31;
-  core_main_c_FUN_004e4500("CDemonImage::allocMemory - Out of memory!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonImage::allocMemory - Out of memory!");
   return;
 }

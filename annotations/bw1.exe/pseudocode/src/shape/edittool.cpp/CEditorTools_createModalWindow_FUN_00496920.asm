@@ -46,7 +46,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5dc106                       ; 0049696e | = "Can't open another window!"
     MOV dword ptr [0x01d1d400],EBP      ; 00496973 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00496979 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049697e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049697e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496983
     MOV EAX,[0x01c3eb5c]                ; 00496986 | DAT_01c3eb5c
         ;   Label: LAB_00496986
@@ -433,8 +433,8 @@ section .text
     PUSH 0x5dbc7e                       ; 00496d98 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d1d400],ECX      ; 00496d9d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00496da3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00496da9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00496da9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496dae
     JMP 0x00496938                      ; 00496db1
         ;   XREF to: 00496938 (UNCONDITIONAL_JUMP)  ; LAB_00496938

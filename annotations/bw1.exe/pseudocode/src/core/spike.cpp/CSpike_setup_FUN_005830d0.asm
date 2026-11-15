@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 00583119
     MOV dword ptr [ESP + 0x20],EDX      ; 0058311a
     MOV dword ptr [ESP + 0x24],EDX      ; 0058311e
-    CALL core_actor.cpp_FUN_00408ac0    ; 00583122
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00583122
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x2c]                ; 00583127
     ADD ESP,0x8                         ; 0058312b
     LEA EAX,[EBX + 0x20]                ; 0058312e

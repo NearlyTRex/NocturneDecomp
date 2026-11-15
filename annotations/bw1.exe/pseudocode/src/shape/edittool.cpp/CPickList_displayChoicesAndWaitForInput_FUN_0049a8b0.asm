@@ -11,7 +11,7 @@
 ;
 ; XREF[9]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfc6f
-;   core_game.cpp_FUN_004d7250 at 004d75ef
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d75ef
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e6a2
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c8dc
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c2bf
@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5dbc7e                       ; 0049a8cb | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d1d400],ECX      ; 0049a8d0 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0049a8d6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049a8dc
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049a8dc
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049a8e1
     MOV EAX,[0x01c3eb50]                ; 0049a8e4 | DAT_01c3eb50
         ;   Label: LAB_0049a8e4

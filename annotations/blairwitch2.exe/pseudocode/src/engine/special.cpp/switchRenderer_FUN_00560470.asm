@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_switchRenderer_FUN_00560470(void)
+; int __cdecl engine_special_cpp_switchRenderer_FUN_00560470(char *new_dll_name,int card_index)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   new_dll_name
+; int              Stack[0x8]:4   card_index
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264bba4

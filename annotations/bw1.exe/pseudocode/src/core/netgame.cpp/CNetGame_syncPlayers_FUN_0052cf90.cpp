@@ -29,7 +29,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
   if (sync_stage < 1) {
     _DAT_01d1d400 = "..\\core\\netgame.cpp";
     _DAT_01d1d404 = 0x337;
-    core_main_c_FUN_005030e0("CNetGame::syncPlayers - don't use 0!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::syncPlayers - don't use 0!");
   }
   if (this_ptr->connection_type == CONNECTION_NONE) {
     return 1;
@@ -130,7 +130,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
   else {
     _DAT_01d1d400 = "..\\core\\netgame.cpp";
     _DAT_01d1d404 = 0x3c0;
-    core_main_c_FUN_005030e0("CNetGame::syncPlayers - invalid mode");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::syncPlayers - invalid mode");
   }
   return 1;
 }

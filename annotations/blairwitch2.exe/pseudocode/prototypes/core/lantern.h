@@ -35,7 +35,7 @@ void __cdecl CLantern::process(CLantern *this_ptr,float delta_time);
 
 // Original: core_lantern.cpp_FUN_0059ced0
 // Address: 0059ced0
-void FUN_0059ced0(int param_1);
+void FUN_0059ced0(CDemonActor *param_1);
 
 // Original: core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000
 // Address: 0059d000

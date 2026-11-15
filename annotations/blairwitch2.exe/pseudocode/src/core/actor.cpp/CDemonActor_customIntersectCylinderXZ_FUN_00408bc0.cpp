@@ -13,6 +13,6 @@ void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0(C
 {
   _DAT_01d046a0 = "..\\core\\actor.cpp";
   _DAT_01d046a4 = 0x2e9;
-  core_main_c_FUN_004e4500("CDemonActor::customIntersectCylinderXZ should not be called for this base class");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::customIntersectCylinderXZ should not be called for this base class");
   return;
 }

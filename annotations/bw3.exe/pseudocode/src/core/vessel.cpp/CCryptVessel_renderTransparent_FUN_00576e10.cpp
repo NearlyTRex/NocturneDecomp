@@ -11,10 +11,9 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00576e10(CCryptVe
 {
   char cVar1;
   CKeyFramedModel *pCVar2;
-  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
-  float10 fVar5;
+  double dVar5;
   CVector3f CStack_2c;
   CVector3f CStack_20;
   int iStack_14;
@@ -39,10 +38,9 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00576e10(CCryptVe
             (DAT_005f2afc,&CStack_20,&CStack_2c);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);
   if (this_ptr->visual_type == CRYPT_VESSEL_WATER) {
-    fVar5 = (float10)this_ptr->water_anim_timer;
-    this_ptr_00 = (CKeyFramedModelInstance *)round();
-    iStack_14 = (int)ROUND(fVar5);
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_00);
+    dVar5 = round((double)this_ptr->water_anim_timer);
+    iStack_14 = (int)ROUND(dVar5);
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->orb_model);
     _sprintf(pCVar2->texture_list[0].texture_name,"BWATER%d.RAW")
     ;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,48000);

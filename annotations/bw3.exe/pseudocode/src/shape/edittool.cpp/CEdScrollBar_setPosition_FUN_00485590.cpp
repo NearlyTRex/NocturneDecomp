@@ -37,6 +37,6 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_00485590(CEdScrollB
   }
   _DAT_01d71de0 = "..\\shape\\edittool.cpp";
   _DAT_01d71de4 = 0x127f;
-  core_main_c_FUN_004e4330("CEdScrollBar::setPosition - invalid dimensions.");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CEdScrollBar::setPosition - invalid dimensions.");
   return;
 }

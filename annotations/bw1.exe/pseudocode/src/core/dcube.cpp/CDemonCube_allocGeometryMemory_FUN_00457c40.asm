@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
@@ -65,8 +65,8 @@ section .text
     PUSH 0x5d7ba2                       ; 00457c8a | = "CDemonCube::allocMemory - Out of tri ..."
     MOV dword ptr [0x01d1d400],EBP      ; 00457c8f | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00457c95 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00457c9a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457c9a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457c9f
     MOV EDX,dword ptr [EBX + 0x28]      ; 00457ca2
         ;   Label: LAB_00457ca2
@@ -84,8 +84,8 @@ section .text
     PUSH 0x5d7be0                       ; 00457cc0 | = "CDemonCube::allocMemory - Out of grou..."
     MOV dword ptr [0x01d1d400],ESI      ; 00457cc5 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00457ccb | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00457cd1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457cd1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457cd6
     POP EDI                             ; 00457cd9
     PUSH 0x40                           ; 00457cda
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5d7c26                       ; 00457cf4 | = "CDemonCube::allocMemory - Out of voxe..."
     MOV [0x01d1d400],EAX                ; 00457cf9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00457cfe | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00457d04
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457d04
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457d09
     PUSH 0x40                           ; 00457d0c
         ;   Label: LAB_00457d0c
@@ -124,8 +124,8 @@ section .text
     PUSH 0x5d7b61                       ; 00457d2b | = "CDemonCube::allocMemory - Out of vert..."
     MOV dword ptr [0x01d1d400],ECX      ; 00457d30 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00457d36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00457d3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457d3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457d41
     JMP 0x00457c6a                      ; 00457d44
         ;   XREF to: 00457c6a (UNCONDITIONAL_JUMP)  ; LAB_00457c6a
@@ -135,8 +135,8 @@ section .text
     PUSH 0x5d7c66                       ; 00457d53 | = "CDemonCube::allocMemory - Out of voxe..."
     MOV dword ptr [0x01d1d400],EBX      ; 00457d58 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00457d5e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00457d64
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00457d64
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00457d69
     POP EBP                             ; 00457d6c
     POP ESI                             ; 00457d6d

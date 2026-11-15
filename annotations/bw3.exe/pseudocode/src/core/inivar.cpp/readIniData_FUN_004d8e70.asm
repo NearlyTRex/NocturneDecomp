@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004b8e60
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_io.c__chmod_FUN_005a4bd0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
@@ -644,8 +644,8 @@ section .text
     PUSH 0x5c58df                       ; 004d959f | = "Please copy Blair Witch 3 to your har..."
     MOV dword ptr [0x01d71de0],EDX      ; 004d95a4 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004d95aa | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004d95b0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d95b0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d95b5
     JMP 0x004d8e93                      ; 004d95b8
         ;   XREF to: 004d8e93 (UNCONDITIONAL_JUMP)  ; LAB_004d8e93

@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_fire.cpp_CStake_init_FUN_00494150
 ;   core_fire.cpp_CStake_spawn_FUN_004941c0
 ;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 0049d316
     MOV dword ptr [ESP + 0x5c],EDI      ; 0049d317
     LEA EDI,[ESP + 0x48]                ; 0049d31b
-    CALL core_dirmat.cpp_FUN_00449530   ; 0049d31f
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0049d31f
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30]                ; 0049d324
     ADD ESP,0x8                         ; 0049d328
     MOVSD ES:EDI,ESI                    ; 0049d32b

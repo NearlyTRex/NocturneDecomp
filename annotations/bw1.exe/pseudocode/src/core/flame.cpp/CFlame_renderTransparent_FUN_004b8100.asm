@@ -44,11 +44,11 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_drender.cpp_FUN_00483b70
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -384,7 +384,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b8577
     FLD float ptr [EAX + 0x164]         ; 004b857a
     CALL crt_math.c_round_FUN_005c03a0  ; 004b8580
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x158]       ; 004b8585
     MOV EAX,dword ptr [ESP + 0x158]     ; 004b858c
     MOV EDX,EAX                         ; 004b8593
@@ -476,8 +476,8 @@ section .text
     PUSH ECX                            ; 004b86ba | DAT_01bc120c
     LEA ESI,[ESP + 0x108]               ; 004b86bb
     LEA EDI,[ESP + 0x144]               ; 004b86c2
-    CALL engine_drender.cpp_FUN_00483b70 ; 004b86c9
-        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b70()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70 ; 004b86c9
+        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00483b70(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x4                         ; 004b86ce
     LEA ESI,[ESP + 0x104]               ; 004b86d1
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b86d8

@@ -190,7 +190,7 @@ LAB_0053b65d:
               if (pcVar2 == (char *)0x0) {
                 _DAT_01d1d400 = "..\\engine\\pod.cpp";
                 _DAT_01d1d404 = 0x2d5;
-                core_main_c_FUN_005030e0("realloc returns NULL shrinking filenameBlockSize to fit.");
+                core_main_c_displayErrorAndQuit_FUN_005030e0("realloc returns NULL shrinking filenameBlockSize to fit.");
               }
             }
             iVar6 = 0;

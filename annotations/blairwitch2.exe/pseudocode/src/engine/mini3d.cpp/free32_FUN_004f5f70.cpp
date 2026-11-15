@@ -14,7 +14,7 @@ void __cdecl engine_mini3d_cpp_free32_FUN_004f5f70(void *ptr)
   if (ptr == (void *)0x0) {
     _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
     _DAT_01d046a4 = 0xe11;
-    core_main_c_FUN_004e4500("CMini3D::free32 - NULL pointer being freed");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::free32 - NULL pointer being freed");
   }
   FUN_005b86a0((int)ptr - (uint)*(byte *)((int)ptr + -1));
   return;

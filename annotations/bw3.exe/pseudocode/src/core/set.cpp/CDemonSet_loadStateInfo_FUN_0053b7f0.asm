@@ -34,7 +34,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   shape_edittool.cpp_FUN_0047cee0
 ;
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5d0937                       ; 0053b839 | = "Set saveState info is invalid version %d"
     MOV dword ptr [0x01d71de0],EBX      ; 0053b83e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0053b844 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053b84a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053b84a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0053b84f
     PUSH 0x5d0960                       ; 0053b852 | = "%*[^\n]\n"
         ;   Label: LAB_0053b852

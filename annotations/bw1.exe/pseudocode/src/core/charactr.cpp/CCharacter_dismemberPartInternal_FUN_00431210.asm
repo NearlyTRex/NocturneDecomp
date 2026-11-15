@@ -48,9 +48,9 @@
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041aaa0
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0056a7d0
-;   core_xform.cpp_FUN_005b5080
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
+;   core_xform.cpp_transformVector3x4_FUN_005b5080
 ;
 ; *****************************************************************************
 
@@ -195,7 +195,7 @@ section .text
     PUSH EAX                            ; 00431394
     LEA ESI,[EBP + 0x1a]                ; 00431395
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00431398
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 0043139d
     LEA EAX,[EBP + 0x26]                ; 004313a0
     PUSH EAX                            ; 004313a3
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 004313fa
     LEA ESI,[EBP + 0x56]                ; 004313fb
     LEA EDI,[EBP + 0x4a]                ; 004313fe
-    CALL core_xform.cpp_FUN_005b5080    ; 00431401
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 00431401
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x56]                ; 00431406
     LEA EAX,[EBP + 0x4a]                ; 00431409
     ADD ESP,0x8                         ; 0043140c

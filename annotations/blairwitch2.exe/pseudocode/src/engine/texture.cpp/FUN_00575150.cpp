@@ -61,19 +61,19 @@ void engine_texture_cpp_FUN_00575150(void)
     else {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x572;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - %s is not a 64, 128, or 256 texture");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - %s is not a 64, 128, or 256 texture");
     }
     pvStack_2c = malloc((int)pvStack_14 * (int)pvStack_14);
     if (pvStack_2c == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x577;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
     }
     pvStack_38 = malloc(0x300);
     if (pvStack_38 == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x57b;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
     }
     support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_60);
     iVar3 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
@@ -81,7 +81,7 @@ void engine_texture_cpp_FUN_00575150(void)
     if (iVar3 == 0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x580;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length",in_stack_00000004->texture_name);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length");
     }
     support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
               (&CStack_60,pvStack_2c,(int)pvStack_14 * (int)pvStack_14);
@@ -97,7 +97,7 @@ void engine_texture_cpp_FUN_00575150(void)
     if (iVar3 == 0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x58d;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open %s",acStack_260);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Can't open %s");
     }
     support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_60,pvStack_38,0x300);
     support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
@@ -108,7 +108,7 @@ void engine_texture_cpp_FUN_00575150(void)
       if (pvStack_18 == (void *)0x0) {
         _DAT_01d046a0 = "..\\engine\\texture.cpp";
         _DAT_01d046a4 = 0x595;
-        core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
       }
       support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
                 (&CStack_60,pvStack_18,(int)pvStack_14 * (int)pvStack_14);
@@ -118,14 +118,14 @@ void engine_texture_cpp_FUN_00575150(void)
     if (pvStack_30 == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\texture.cpp";
       _DAT_01d046a4 = 0x5d4;
-      core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
     }
     if (pvStack_18 != (void *)0x0) {
       pvStack_28 = malloc((int)pvStack_14 * (int)pvStack_14 * 4);
       if (pvStack_28 == (void *)0x0) {
         _DAT_01d046a0 = "..\\engine\\texture.cpp";
         _DAT_01d046a4 = 0x5da;
-        core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
       }
     }
     iStack_20 = 0;

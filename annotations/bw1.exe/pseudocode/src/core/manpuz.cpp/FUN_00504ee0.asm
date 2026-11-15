@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2)
+; void core_manpuz_cpp_FUN_00504ee0(CDemonActor *param_1,int param_2)
 ;
 ;
 ; XREF[3]:
@@ -13,9 +13,9 @@
 ;   undefined4 DAT_0060343c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH ESI                            ; 00504f53
     LEA ESI,[ESP + 0x38]                ; 00504f54
     MOV dword ptr [ESP + 0x30],EDX      ; 00504f58
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00504f5c
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00504f5c
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 00504f61
     LEA EAX,[ESP + 0x14]                ; 00504f65
     ADD ESP,0x8                         ; 00504f69
@@ -85,8 +85,8 @@ section .text
     PUSH EBP                            ; 00504f92
     LEA EDI,[ESP + 0x20]                ; 00504f93
     ADD EBX,0x58                        ; 00504f97
-    CALL core_actor.cpp_FUN_00408b40    ; 00504f9a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00504f9a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x8]                 ; 00504f9f
     ADD ESP,0x8                         ; 00504fa3
     LEA EAX,[ESP + 0x18]                ; 00504fa6

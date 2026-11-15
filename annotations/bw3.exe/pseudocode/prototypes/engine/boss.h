@@ -17,6 +17,6 @@ SMRGLHeaderExtended * __cdecl modelStructNotSupported2(char *filename);
 // Address: 0041ac90
 void __cdecl modelStructNotSupported3(SMRGLHeaderExtended *mrgl_data);
 
-// Original: engine_boss.c_FUN_0041acc0
+// Original: engine_boss.c_modelStructNotSupported4_FUN_0041acc0
 // Address: 0041acc0
-void FUN_0041acc0(void);
+void modelStructNotSupported4(void);

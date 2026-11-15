@@ -155,7 +155,7 @@ section .text
     PUSH ESI                            ; 00547074
     LEA ESI,[ESP + 0x6c]                ; 00547075
     CALL core_xform.cpp_multiplyQuaternion_FUN_00593c60 ; 00547079
-        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00593c60()
+        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 0054707e
     MOV EDI,dword ptr [ESP + 0xc8]      ; 00547081
     LEA ESI,[ESP + 0x64]                ; 00547088

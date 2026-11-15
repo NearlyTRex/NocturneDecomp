@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00519e50
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5e27d5                       ; 0051b14f | = "Out of memory!"
     MOV dword ptr [0x01d046a0],EBP      ; 0051b154 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0051b15a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051b15f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b15f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b164
     MOV EDX,dword ptr [ESP + 0x14]      ; 0051b167
         ;   Label: LAB_0051b167
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5e27a6                       ; 0051b18f | = "Too many .POD files at once!"
     MOV dword ptr [0x01d046a0],ECX      ; 0051b194 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0051b19a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051b1a0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b1a0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b1a5
     JMP 0x0051b11c                      ; 0051b1a8
         ;   XREF to: 0051b11c (UNCONDITIONAL_JUMP)  ; LAB_0051b11c
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5e27f6                       ; 0051b1bd | = "Can't mount %s"
     MOV dword ptr [0x01d046a0],ESI      ; 0051b1c2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0051b1c8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051b1ce
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b1ce
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0051b1d3
     POP EDI                             ; 0051b1d6
     INC dword ptr [EBX]                 ; 0051b1d7

@@ -159,17 +159,17 @@ section .text
     MOV EAX,dword ptr [EBX + 0x188]     ; 004417b1
     FXCH                                ; 004417b7
     CALL crt_math.c_round_FUN_005b7ff0  ; 004417b9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV [0x01c38bac],EAX                ; 004417be | DAT_01c38bac
     MOV EAX,dword ptr [EBX + 0x18c]     ; 004417c3
     FXCH                                ; 004417c9
     CALL crt_math.c_round_FUN_005b7ff0  ; 004417cb
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV [0x01c38bb0],EAX                ; 004417d0 | DAT_01c38bb0
     MOV EAX,dword ptr [EBX + 0x190]     ; 004417d5
     FXCH ST2                            ; 004417db
     CALL crt_math.c_round_FUN_005b7ff0  ; 004417dd
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV [0x01c38bb4],EAX                ; 004417e2 | DAT_01c38bb4
     MOV EAX,dword ptr [EBX + 0x194]     ; 004417e7
     FXCH                                ; 004417ed

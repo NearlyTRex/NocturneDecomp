@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004aa240
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 004aa02c
     PUSH EDI                            ; 004aa02d
     PUSH 0x5dec9d                       ; 004aa02e | = "Tried to assign actor var %s an actor..."
-    CALL core_main.c_FUN_005030e0       ; 004aa033
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004aa033
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004aa038
     PUSH EDI                            ; 004aa03b
         ;   Label: LAB_004aa03b
@@ -142,8 +142,8 @@ section .text
     PUSH 0x5deced                       ; 004aa0d8 | = "CEventList::setActorVariable - alread..."
     MOV dword ptr [0x01d1d400],ECX      ; 004aa0dd | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004aa0e3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004aa0e9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004aa0e9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004aa0ee
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 004aa0f1
         ;   Label: LAB_004aa0f1

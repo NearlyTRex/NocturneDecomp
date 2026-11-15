@@ -14,27 +14,25 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005702c0(CSfxSample *this_ptr
   bool bVar1;
   int iVar2;
   undefined3 extraout_var;
-  float10 fVar3;
-  double dVar4;
+  double dVar3;
   int origin;
   
   if (this_ptr->streaming_slot_index < 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8de;
-    core_main_c_FUN_005030e0();
+    core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSample::seek - '%s' isn't streamed!");
   }
-  dVar4 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
+  dVar3 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
                     (this_ptr,(double)playback_position,0);
-  fVar3 = (float10)dVar4;
-  round();
-  this_ptr->stream_read_position = (int)ROUND(fVar3);
+  dVar3 = round(dVar3);
+  this_ptr->stream_read_position = (int)ROUND(dVar3);
   if (this_ptr->stream_read_position < 0) {
     this_ptr->stream_read_position = 0;
   }
   if ((dest_buffer_offset < 0) || (this_ptr->streaming_buffer_size <= dest_buffer_offset)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8e9;
-    core_main_c_FUN_005030e0("SfxSample::seek - invalid destPtr");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSample::seek - invalid destPtr");
   }
   this_ptr->stream_write_position = dest_buffer_offset;
   if (this_ptr->mp3_data != (CMP3Decoder *)0x0) {
@@ -45,8 +43,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005702c0(CSfxSample *this_ptr
     }
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8f2;
-    core_main_c_FUN_005030e0
-              ("Error seeking %s to %d",this_ptr,this_ptr->stream_read_position);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Error seeking %s to %d");
     return;
   }
   bVar1 = support_trstream_cpp_CInStreamFile_isOpen_FUN_005a0d70(&this_ptr->file_stream);
@@ -60,6 +57,6 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005702c0(CSfxSample *this_ptr
   }
   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
   _DAT_01d1d404 = 0x8fd;
-  core_main_c_FUN_005030e0();
+  core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSample::seek - no MP3 and no wavFile for sample '%s'");
   return;
 }

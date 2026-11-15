@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 61,
+    "complexity_score": 66,
     "cross_reference_count": 9,
     "function_call_count": 9,
     "global_count": 31,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 66,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 286
+    "total_lines": 291
   },
   "cross_references": [
     {
@@ -297,19 +297,19 @@
     },
     {
       "addr": "03f693e8",
-      "name": "g_DeferredOrientRight",
-      "type": "CVector3f",
+      "name": "g_CachedReverb",
+      "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "03f693ec",
-      "name": "g_DeferredOrientRight.y",
+      "name": "g_CachedReverb.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f693f0",
-      "name": "g_DeferredOrientRight.z",
+      "name": "g_CachedReverb.damping",
       "type": "undefined4",
       "value": null
     },
@@ -357,7 +357,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 32,
       "match": "(uint *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -366,7 +366,7 @@
     },
     {
       "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "(int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -374,8 +374,26 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Raw hex address 0x5ab112 assigned to bare local `uStack00000090`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000090` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 61,
+      "match": "0x5ab112",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack00000090 = 0x5ab112;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5ab11e assigned to bare local `uStack00000090`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000090` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 66,
+      "match": "0x5ab11e",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack00000090 = 0x5ab11e;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "mem* byte count hardcodes an element stride (g_MixBufferSize * g_NumMixBuffers * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 34,
+      "line": 35,
       "match": "memset",
       "resolution_source": "keep",
       "severity": "moderate",

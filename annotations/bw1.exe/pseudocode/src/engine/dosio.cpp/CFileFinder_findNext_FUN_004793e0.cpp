@@ -17,7 +17,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(CFileFinder *this
   if (this_ptr->has_results == 0) {
     _DAT_01d1d400 = "..\\engine\\dosio.c";
     _DAT_01d1d404 = 0x28e;
-    core_main_c_FUN_005030e0("CFileFinder::open - search not opened!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CFileFinder::open - search not opened!");
   }
   BVar1 = FindNextFileA(this_ptr->search_handle,&_Stack_148);
   if (BVar1 != 0) {

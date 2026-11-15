@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0
@@ -165,8 +165,8 @@ section .text
     PUSH 0x5cf8da                       ; 0044edf9 | = "CKeyFramedModel::calcNormals() - vert..."
     MOV dword ptr [0x01d046a0],EBX      ; 0044edfe | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044ee04 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044ee0a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044ee0a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044ee0f
     JMP 0x0044ecd9                      ; 0044ee12
         ;   XREF to: 0044ecd9 (UNCONDITIONAL_JUMP)  ; LAB_0044ecd9
@@ -182,13 +182,13 @@ section .text
     FMULP ST3                           ; 0044ee32
     FXCH                                ; 0044ee34
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044ee36
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0044ee3b
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044ee3d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 0044ee42
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044ee44
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0044ee49
     FISTP dword ptr [EDX]               ; 0044ee4b
     FXCH                                ; 0044ee4d

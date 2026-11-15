@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_updateTransform_FUN_005b2050
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -179,8 +179,8 @@ section .text
     PUSH 0x5f12a0                       ; 005b2023
     MOV dword ptr [0x01d046a0],EDX      ; 005b2028 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005b202e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b2034
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b2034
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b2039
     JMP 0x005b1ec8                      ; 005b203c
         ;   XREF to: 005b1ec8 (UNCONDITIONAL_JUMP)  ; LAB_005b1ec8

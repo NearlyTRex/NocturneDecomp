@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
@@ -174,8 +174,8 @@ section .text
     PUSH EBX                            ; 0057068a
     LEA ESI,[ESP + 0x7c]                ; 0057068b
     LEA EDI,[ESP + 0x40]                ; 0057068f
-    CALL core_actor.cpp_FUN_00408de0    ; 00570693
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00570693
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x7c]                ; 00570698
     ADD ESP,0x8                         ; 0057069c
     LEA EAX,[ESP + 0x38]                ; 0057069f

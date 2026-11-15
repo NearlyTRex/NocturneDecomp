@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
@@ -42,7 +44,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_xform.cpp_determinant_FUN_005927e0
 ;
 ; *****************************************************************************
@@ -240,8 +242,8 @@ section .text
     PUSH 0x5eed5c                       ; 00592a3c | = "inverse() - Singular matrix"
     MOV dword ptr [0x01d046a0],ECX      ; 00592a41 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00592a47 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00592a4d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00592a4d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00592a52
     JMP 0x00592863                      ; 00592a55
         ;   XREF to: 00592863 (UNCONDITIONAL_JUMP)  ; LAB_00592863

@@ -16,6 +16,6 @@ CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005487
   }
   _DAT_01d71de0 = "..\\core\\skeleton.cpp";
   _DAT_01d71de4 = 0x2f6;
-  core_main_c_FUN_004e4330("Tried to do something with the skeleton, but skeleton ptr not set!");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Tried to do something with the skeleton, but skeleton ptr not set!");
   return this_ptr->skeleton_ptr;
 }

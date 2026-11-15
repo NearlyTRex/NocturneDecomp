@@ -72,7 +72,7 @@ void core_game_cpp_FUN_004b8e10(char *param_1,char *param_2)
   if (pCVar3 == (CDemonActor *)0x0) {
     _DAT_01d046a0 = "..\\core\\game.cpp";
     _DAT_01d046a4 = 0xb63;
-    core_main_c_FUN_004e4500("giveHeroWeapon - This is not a weapon");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("giveHeroWeapon - This is not a weapon");
   }
   pCVar3[2].particle_systems[0].position.z = 7.00649e-43;
   (*((actor_ptr->vtable)._ub)->pickup)(actor_ptr,*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4));

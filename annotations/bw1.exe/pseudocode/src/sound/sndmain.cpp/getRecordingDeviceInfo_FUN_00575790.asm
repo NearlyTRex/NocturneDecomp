@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00575730
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5f42de                       ; 005757cb | = "getRecordingDeviceInfo - invalid index"
     MOV dword ptr [0x01d1d400],EDX      ; 005757d0 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005757d6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005757dc
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005757dc
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005757e1
     JMP 0x005757a4                      ; 005757e4
         ;   XREF to: 005757a4 (UNCONDITIONAL_JUMP)  ; LAB_005757a4

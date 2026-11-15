@@ -15,7 +15,7 @@ int __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStream
   
   _DAT_01d1d400 = "..\\support\\trstream.cpp";
   _DAT_01d1d404 = 0x714;
-  core_main_c_FUN_005030e0("Hey, we're using windows handles for low-level file I/O!");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Hey, we're using windows handles for low-level file I/O!");
   (**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);
   this_ptr->position = 0;
   this_ptr->file_handle = handle;

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 239,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 41,
+    "suspect_count": 14,
     "suspect_types": [
-      "extra_output",
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 136
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -236,24 +235,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "byte *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "float *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != (float *)0x0) && (local_20 = 0, 0 < *(int *)(param_1 + 0x154))) {",
@@ -261,7 +244,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_2 != (float *)0x0) && (local_20 = 0, 0 < *(int *)(param_1 + 0x154))) {",
@@ -269,7 +252,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x150)) {",
@@ -277,63 +260,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2[2] * pfVar2[2] + *param_2 * *pfVar2 + param_2[1] * pfVar2[1];",
+      "text": "fVar1 = param_2[2] * pfVar3[2] + *param_2 * *pfVar3 + param_2[1] * pfVar3[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2[2] * pfVar2[2] + *param_2 * *pfVar2 + param_2[1] * pfVar2[1];",
+      "text": "fVar1 = param_2[2] * pfVar3[2] + *param_2 * *pfVar3 + param_2[1] * pfVar3[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2[2] * pfVar2[2] + *param_2 * *pfVar2 + param_2[1] * pfVar2[1];",
+      "text": "fVar1 = param_2[2] * pfVar3[2] + *param_2 * *pfVar3 + param_2[1] * pfVar3[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 29,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar4 = (float10)fVar1 * (float10)param_3 * (float10)_DAT_005ce43e *",
+      "text": "((double)(fVar1 * param_3 * (float)_DAT_005ce43e *",
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*extraout_ECX = local_18;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "pfVar2 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)(param_1 + 0x150));",
+      "text": "} while (iVar4 < *(int *)(param_1 + 0x150));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_20 < *(int *)(param_1 + 0x154));",

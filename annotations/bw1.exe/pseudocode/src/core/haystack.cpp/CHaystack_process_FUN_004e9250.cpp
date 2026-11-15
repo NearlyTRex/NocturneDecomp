@@ -39,8 +39,9 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_pt
   float afStack_74 [4];
   float fStack_64;
   float afStack_60 [3];
-  uint uStack_54;
+  CVector3f CStack_54;
   uint uStack_48;
+  float afStack_44 [2];
   CVector3f CStack_3c;
   float fStack_30;
   float afStack_2c [3];
@@ -227,16 +228,17 @@ switchD_004e9753_caseD_4:
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {
-      core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar3->location);
-      afStack_60[0] = (float)uStack_54;
-      afStack_74[(uint)bVar11 * -2 + 6] = afStack_74[(uint)bVar11 * -2 + 9];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                ((CDemonActor *)this_ptr,&(pCVar3->location).position,&CStack_54);
+      afStack_60[0] = CStack_54.x;
+      afStack_74[(uint)bVar11 * -2 + 6] = *(float *)((int)&CStack_54 + (uint)bVar11 * -8 + 4);
       afStack_74[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
-           afStack_74[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
+           *(float *)((int)&CStack_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_74 + 5);
       uStack_78 = uStack_48;
-      afStack_74[(uint)bVar11 * -2] = afStack_74[(uint)bVar11 * -2 + 0xc];
+      afStack_74[(uint)bVar11 * -2] = afStack_44[(uint)bVar11 * -2];
       afStack_74[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-           afStack_74[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
+           afStack_44[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
       pCStack_14 = (CCharacter_full_vtable *)
                    core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_74[0]);
       fStack_1c = (float)pCStack_14;

@@ -241,7 +241,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 0049bfd2
     MOV dword ptr [0x00622090],EDX      ; 0049bfd9 | DAT_00622090
     CALL crt_math.c_round_FUN_005b7ff0  ; 0049bfdf
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x98]        ; 0049bfe4
     MOV EAX,dword ptr [ESP + 0x98]      ; 0049bfeb
     MOV dword ptr [0x006220c0],EDX      ; 0049bff2 | DAT_006220c0

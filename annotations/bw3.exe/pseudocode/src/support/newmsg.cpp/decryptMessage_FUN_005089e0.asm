@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH 0x5cb44f                       ; 00508a41 | = "decryptMessage - invalid initial mask..."
     MOV dword ptr [0x01d71de0],ECX      ; 00508a46 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00508a4c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00508a52
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00508a52
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00508a57
     JMP 0x00508a15                      ; 00508a5a
         ;   XREF to: 00508a15 (UNCONDITIONAL_JUMP)  ; LAB_00508a15
@@ -98,8 +98,8 @@ section .text
     PUSH 0x5cb492                       ; 00508a80 | = "decryptMessage - error decrypting text!"
     MOV [0x01d71de0],EAX                ; 00508a85 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00508a8a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00508a90
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00508a90
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00508a95
     JMP 0x00508a1d                      ; 00508a98
         ;   XREF to: 00508a1d (UNCONDITIONAL_JUMP)  ; LAB_00508a1d
@@ -109,8 +109,8 @@ section .text
     PUSH 0x5cb4d0                       ; 00508aa4 | = "decryptMessage - premature null termi..."
     MOV dword ptr [0x01d71de0],ECX      ; 00508aa9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00508aaf | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00508ab5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00508ab5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00508aba
     LEA EAX,[EDI + 0x17]                ; 00508abd
     ADD ESP,0x4                         ; 00508ac0

@@ -27,7 +27,7 @@
 ;   undefined4 DAT_02cf341c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5d3063                       ; 005542c8 | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 005542cd | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005542d9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005542d9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005542de
     POP EDI                             ; 005542e1
     JMP 0x00554269                      ; 005542e2

@@ -12,11 +12,7 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
   CMotionList *pCVar1;
   int iVar2;
   float fVar3;
-  int *extraout_ECX;
-  int *extraout_ECX_00;
-  int extraout_EDX;
-  float10 fVar4;
-  float10 fVar5;
+  double dVar4;
   
   pCVar1 = this_ptr->motion_list_ptr;
   if (frame_number <= 0.0) {
@@ -27,12 +23,11 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
   }
   else {
     if (frame_number < (float)(pCVar1->motions[motion_index].frame_count + -1)) {
-      fVar5 = (float10)pCVar1->motions[motion_index].frame_start + (float10)frame_number;
-      fVar4 = fVar5;
-      round();
-      *extraout_ECX_00 = (int)ROUND(fVar5);
-      *out_frame2 = *extraout_ECX_00 + 1;
-      *out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);
+      fVar3 = (float)pCVar1->motions[motion_index].frame_start + frame_number;
+      dVar4 = round((double)fVar3);
+      *out_frame1 = (int)ROUND(dVar4);
+      *out_frame2 = *out_frame1 + 1;
+      *out_blend_weight = fVar3 - (float)*out_frame1;
       return;
     }
     *out_frame1 = pCVar1->motions[motion_index].frame_start +
@@ -44,15 +39,16 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
       *out_blend_weight = 0.0;
       return;
     }
-    fVar4 = (float10)this_ptr->motion_list_ptr->motions
-                     [pCVar1->motions[motion_index].exit_forward_to_motion].frame_start +
-            (float10)pCVar1->motions[motion_index].exit_forward_to_frame;
-    round();
-    *out_frame2 = (int)ROUND(fVar4);
-    fVar3 = frame_number - (float)(*(int *)(extraout_EDX + 100) + -1);
+    dVar4 = round
+                      ((double)((float)this_ptr->motion_list_ptr->motions
+                                       [pCVar1->motions[motion_index].exit_forward_to_motion].
+                                       frame_start +
+                               pCVar1->motions[motion_index].exit_forward_to_frame));
+    *out_frame2 = (int)ROUND(dVar4);
+    fVar3 = (float)motion_index - (float)(pCVar1->motions[motion_index].frame_count + -1);
     *out_blend_weight = fVar3;
     if (1.0 <= fVar3) {
-      *extraout_ECX = *out_frame2;
+      *out_frame1 = *out_frame2;
       *out_blend_weight = 0.0;
       return;
     }

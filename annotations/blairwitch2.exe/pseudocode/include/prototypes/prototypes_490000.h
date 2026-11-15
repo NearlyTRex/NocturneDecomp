@@ -106,7 +106,7 @@ int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_00492a90(CFilmReel *thi
 void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_00492b10(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_00492b30(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_00492b80(CFilmReel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_00492ba0(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_00492ba0(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00492be0(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_00492c00(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00492c10(CFilmProjector *this_ptr);

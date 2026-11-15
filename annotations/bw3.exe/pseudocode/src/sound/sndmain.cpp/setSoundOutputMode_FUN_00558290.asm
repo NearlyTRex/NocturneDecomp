@@ -28,7 +28,7 @@
 ;   undefined4 DAT_02cf3280
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_allocMixBuffers_FUN_00552970
 ;   sound_sndmain.cpp_isSoundBusy_FUN_005586c0
 ;
@@ -71,8 +71,8 @@ section .text
     PUSH 0x5d3abf                       ; 005582da | = "setSoundOutputMode - can't do this wh..."
     MOV dword ptr [0x01d71de0],EDX      ; 005582df | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 005582e5 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005582eb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005582eb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005582f0
     JMP 0x0055829f                      ; 005582f3
         ;   XREF to: 0055829f (UNCONDITIONAL_JUMP)  ; LAB_0055829f

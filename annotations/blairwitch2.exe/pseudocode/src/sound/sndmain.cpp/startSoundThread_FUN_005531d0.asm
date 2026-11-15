@@ -7,7 +7,7 @@
 ; double           Stack[0x4]:8   latency_seconds
 ;
 ; XREF[2]:
-;   sound_snddx.cpp_FUN_00555130 at 005551b9
+;   sound_snddx.cpp_CDirectSoundDevice_start_FUN_00555130 at 005551b9
 ;   sound_sndwav.cpp_CWavOutDevice_start_FUN_00557dc0 at 00557e5b
 ;
 ; Referenced Globals:

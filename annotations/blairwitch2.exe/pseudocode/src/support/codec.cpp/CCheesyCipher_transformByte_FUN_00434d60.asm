@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   support_codec.cpp_CCheesyCipher_advanceKey_FUN_00434e50
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5cd9e5                       ; 00434dad | = "Invalid mode."
     MOV dword ptr [0x01d046a0],ECX      ; 00434db2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00434db8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00434dbe
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00434dbe
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00434dc3
     XOR AL,AL                           ; 00434dc6
     POP EBX                             ; 00434dc8

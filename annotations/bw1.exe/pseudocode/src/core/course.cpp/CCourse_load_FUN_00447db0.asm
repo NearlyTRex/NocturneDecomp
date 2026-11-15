@@ -30,11 +30,11 @@
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00447d50
 ;   core_course.cpp_CCourse_free_FUN_00447ee0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5d7185                       ; 00447dc8 | DAT_005d7185
     PUSH EBX                            ; 00447dcd
     PUSH 0x5d7188                       ; 00447dce | DAT_005d7188
-    CALL engine_dosio.cpp_FUN_00479180  ; 00447dd3
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 00447dd3
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00447dd8
     MOV EBP,EAX                         ; 00447ddb
     TEST EAX,EAX                        ; 00447ddd
@@ -162,7 +162,7 @@ section .text
     PUSH EBP                            ; 00447ea0
         ;   Label: LAB_00447ea0
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 00447ea1
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 00447ea6
     ADD ESP,0x8                         ; 00447ea9
     POP EBP                             ; 00447eac
@@ -177,8 +177,8 @@ section .text
     PUSH 0x5d71a0                       ; 00447ebc | = "CCourse::load - can't open data\\%s"
     MOV dword ptr [0x01d1d400],EDX      ; 00447ec1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00447ec7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00447ecd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447ecd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00447ed2
     JMP 0x00447de5                      ; 00447ed5
         ;   XREF to: 00447de5 (UNCONDITIONAL_JUMP)  ; LAB_00447de5

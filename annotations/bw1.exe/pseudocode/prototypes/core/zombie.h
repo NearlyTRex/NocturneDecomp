@@ -19,7 +19,7 @@ void FUN_005ba7d0(int param_1);
 
 // Original: core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
 // Address: 005ba890
-void getObjectGrabPointWorld(int param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out_point);
 
 // Original: core_zombie.cpp_classifyObjectShape_FUN_005ba990
 // Address: 005ba990

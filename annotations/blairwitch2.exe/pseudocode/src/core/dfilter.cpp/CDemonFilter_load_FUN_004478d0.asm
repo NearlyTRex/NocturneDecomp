@@ -34,11 +34,11 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00447860
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5ceb69                       ; 004478df | DAT_005ceb69
     PUSH EDI                            ; 004478e4
     PUSH 0x5ceb6c                       ; 004478e5 | DAT_005ceb6c
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004478ea
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004478ea
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004478ef
     MOV ESI,EAX                         ; 004478f2
     TEST EAX,EAX                        ; 004478f4
@@ -66,7 +66,7 @@ section .text
     PUSH ESI                            ; 004478fc
         ;   Label: LAB_004478fc
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004478fd
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00447902
     PUSH EDI                            ; 00447905
     PUSH 0x5cebab                       ; 00447906 | DAT_005cebab
@@ -78,7 +78,7 @@ section .text
     FILD dword ptr [ESP]                ; 00447918
     FSQRT                               ; 0044791b
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044791d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EAX,EDX                         ; 00447922
     FISTP dword ptr [EBX]               ; 00447924
     SAR EDX,0x1f                        ; 00447926
@@ -98,8 +98,8 @@ section .text
     PUSH 0x5cebc3                       ; 00447947 | = "CDemonFilter::load - Non-square filte..."
     MOV dword ptr [0x01d046a0],EBP      ; 0044794c | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00447952 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447957
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447957
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0044795c
     MOV ESI,dword ptr [EBX]             ; 0044795f
         ;   Label: LAB_0044795f
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5cec04                       ; 00447977 | = "CDemonFilter::load - Bad filter size %d"
     MOV [0x01d046a0],EAX                ; 0044797c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00447981 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447987
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447987
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044798c
     MOV ESI,dword ptr [EBX + 0x4]       ; 0044798f
         ;   Label: LAB_0044798f
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5cec40                       ; 004479a9 | = "CDemonFilter::load - Bad filter size %d"
     MOV [0x01d046a0],EAX                ; 004479ae | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004479b3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004479b9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004479b9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004479be
     PUSH EBX                            ; 004479c1
         ;   Label: LAB_004479c1
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5cec68                       ; 004479ca | DAT_005cec68
     PUSH EDI                            ; 004479cf
     PUSH 0x5cec6b                       ; 004479d0 | DAT_005cec6b
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004479d5
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004479d5
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004479da
     MOV ESI,EAX                         ; 004479dd
     TEST EAX,EAX                        ; 004479df
@@ -161,7 +161,7 @@ section .text
     ADD ESP,0x10                        ; 004479f8
     PUSH ESI                            ; 004479fb
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004479fc
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00447a01
     XOR ECX,ECX                         ; 00447a04
     MOV EAX,dword ptr [EBX + 0x4]       ; 00447a06
@@ -190,8 +190,8 @@ section .text
     PUSH 0x5ceb84                       ; 00447a3d | = "CDemonFilter::load - Bad filename : %s"
     MOV dword ptr [0x01d046a0],EDX      ; 00447a42 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00447a48 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447a4e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447a4e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00447a53
     JMP 0x004478fc                      ; 00447a56
         ;   XREF to: 004478fc (UNCONDITIONAL_JUMP)  ; LAB_004478fc
@@ -213,8 +213,8 @@ section .text
     PUSH 0x5cec83                       ; 00447a87 | = "CDemonFilter::load - Bad filename"
     MOV dword ptr [0x01d046a0],EBP      ; 00447a8c | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00447a92 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447a97
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447a97
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00447a9c
     JMP 0x004479e7                      ; 00447a9f
         ;   XREF to: 004479e7 (UNCONDITIONAL_JUMP)  ; LAB_004479e7

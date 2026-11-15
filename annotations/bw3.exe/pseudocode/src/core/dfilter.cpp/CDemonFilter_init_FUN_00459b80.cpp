@@ -15,11 +15,10 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_00459b80(CDemonFilter *this_
   float fVar2;
   int iVar3;
   int iVar4;
-  int extraout_ECX;
   int iVar5;
-  float10 fVar6;
+  double dVar6;
   float local_28;
-  byte local_1c;
+  byte bStack_20;
   
   if (flags == 0) {
     core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00459910(this_ptr);
@@ -39,18 +38,18 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_00459b80(CDemonFilter *this_
           }
           fVar1 = (1.0 - local_28) * init_value;
           if (flags == 0) {
-            fVar6 = (float10)fVar1 * (float10)_DAT_005babfa * (float10)_DAT_005bac02;
+            fVar1 = fVar1 * (float)_DAT_005babfa * (float)_DAT_005bac02;
           }
           else {
-            fVar6 = (float10)this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] * (float10)fVar1;
+            fVar1 = (float)this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] * fVar1;
           }
-          round();
-          local_1c = (byte)(int)ROUND(fVar6);
-          if (0x3f < local_1c) {
-            local_1c = 0x3f;
+          dVar6 = round((double)fVar1);
+          bStack_20 = (byte)(int)ROUND(dVar6);
+          if (0x3f < bStack_20) {
+            bStack_20 = 0x3f;
           }
-          this_ptr->data_buffer[this_ptr->size * iVar5 + extraout_ECX] = local_1c;
-          iVar4 = extraout_ECX + 1;
+          this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] = bStack_20;
+          iVar4 = iVar4 + 1;
         } while (iVar4 < this_ptr->size);
       }
       iVar5 = iVar5 + 1;

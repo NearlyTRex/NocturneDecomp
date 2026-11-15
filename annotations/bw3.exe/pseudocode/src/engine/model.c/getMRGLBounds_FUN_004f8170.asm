@@ -1,18 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * engine_model_c_getMRGLBounds_FUN_004f8170(int *param_1)
+; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_004f8170(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)
 ;
+; Parameters:
+; SMRGLHeaderBasic * Stack[0x4]:4   mrgl_data
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_boss.c_FUN_0041acc0
+;   engine_boss.c_modelStructNotSupported4_FUN_0041acc0
 ;   engine_model.c_freeMRGLData_FUN_004f80f0
 ;   engine_model.c_loadModelFile_FUN_004f7f20
 ;
@@ -67,8 +69,8 @@ section .text
     PUSH EAX                            ; 004f81fe
     MOV dword ptr [0x01d71de0],ESI      ; 004f81ff | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004f8205 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f820b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f820b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f8210
     MOV EBP,0x80000000                  ; 004f8213
         ;   Label: LAB_004f8213
@@ -196,7 +198,7 @@ section .text
     FSTP float ptr [ESP + 0x148]        ; 004f83c8
     FLD float ptr [ESP + 0x14c]         ; 004f83cf
     CALL crt_math.c_round_FUN_005a3120  ; 004f83d6
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x150]       ; 004f83db
     MOV EDX,dword ptr [ESP + 0x150]     ; 004f83e2
     FSTP float ptr [ESP + 0x144]        ; 004f83e9
@@ -205,7 +207,7 @@ section .text
     FLD float ptr [ESP + 0x148]         ; 004f83f6
     MOV dword ptr [ESP + 0xd0],EAX      ; 004f83fd
     CALL crt_math.c_round_FUN_005a3120  ; 004f8404
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x150]       ; 004f8409
     MOV EAX,dword ptr [ESP + 0x134]     ; 004f8410
     MOV EDX,dword ptr [ESP + 0x150]     ; 004f8417
@@ -214,7 +216,7 @@ section .text
     FLD float ptr [ESP + 0x144]         ; 004f8424
     MOV dword ptr [ESP + 0xd4],EAX      ; 004f842b
     CALL crt_math.c_round_FUN_005a3120  ; 004f8432
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x150]       ; 004f8437
     MOV EAX,dword ptr [ESP + 0x134]     ; 004f843e
     MOV EDX,dword ptr [ESP + 0x150]     ; 004f8445
@@ -298,7 +300,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 004f8544
     LEA ESI,[ESP + 0xb8]                ; 004f8548
     CALL crt_math.c_round_FUN_005a3120  ; 004f854f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xdc]        ; 004f8554
     MOVSD.REP ES:EDI,ESI                ; 004f855b
         ;   Label: LAB_004f855b
@@ -323,14 +325,14 @@ section .text
     LEA EDI,[ESP + 0xbc]                ; 004f8594
     MOV EBX,EAX                         ; 004f859b
     CALL engine_model.c_getMRGLBounds_FUN_004f8170 ; 004f859d
-        ;   XREF to: 004f8170 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLBounds_FUN_004f8170()
+        ;   XREF to: 004f8170 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_004f8170(SMRGLHeaderBasic * mrgl_data, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 004f85a2
     MOV ECX,0xd                         ; 004f85a5
     LEA ESI,[ESP + 0xec]                ; 004f85aa
     PUSH EBX                            ; 004f85b1
     MOVSD.REP ES:EDI,ESI                ; 004f85b2
     CALL engine_model.c_freeMRGLData_FUN_004f80f0 ; 004f85b4
-        ;   XREF to: 004f80f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_004f80f0()
+        ;   XREF to: 004f80f0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_004f80f0(SMRGLHeaderExtended * mrgl_data)
     MOV ECX,0xd                         ; 004f85b9
     LEA EDI,[ESP + 0x54]                ; 004f85be
     LEA ESI,[ESP + 0xbc]                ; 004f85c2
@@ -341,8 +343,8 @@ section .text
         ;   Label: LAB_004f85ce
     LEA ESI,[ESP + 0x88]                ; 004f85cf
     LEA EDI,[ESP + 0x54]                ; 004f85d6
-    CALL engine_boss.c_FUN_0041acc0     ; 004f85da
-        ;   XREF to: 0041acc0 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_FUN_0041acc0()
+    CALL engine_boss.c_modelStructNotSupported4_FUN_0041acc0 ; 004f85da
+        ;   XREF to: 0041acc0 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported4_FUN_0041acc0()
     MOV ECX,0xd                         ; 004f85df
     LEA ESI,[ESP + 0x88]                ; 004f85e4
     ADD ESP,0x4                         ; 004f85eb
@@ -354,8 +356,8 @@ section .text
     PUSH 0x5c9049                       ; 004f85fd
     MOV dword ptr [0x01d71de0],EDI      ; 004f8602 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004f8608 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f860e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f860e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f8613
     JMP 0x004f81bc                      ; 004f8616
         ;   XREF to: 004f81bc (UNCONDITIONAL_JUMP)  ; LAB_004f81bc

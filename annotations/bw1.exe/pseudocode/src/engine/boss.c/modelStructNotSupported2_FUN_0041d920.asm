@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH 0x5d49ad                       ; 0041d92a | = "modelStruct not supported"
     MOV dword ptr [0x01d1d400],EDX      ; 0041d92f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0041d935 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0041d93b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0041d93b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041d940
     XOR EAX,EAX                         ; 0041d943
     RET                                 ; 0041d945

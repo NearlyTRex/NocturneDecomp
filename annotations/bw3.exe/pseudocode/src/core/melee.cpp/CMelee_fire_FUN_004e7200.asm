@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5c712e                       ; 004e720a | = "CMelee::fire - should never be called..."
     MOV dword ptr [0x01d71de0],EDX      ; 004e720f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004e7215 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004e721b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e721b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     MOV EAX,0x1                         ; 004e7220
     ADD ESP,0x4                         ; 004e7225
     RET                                 ; 004e7228

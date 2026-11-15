@@ -78,8 +78,8 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_00420ee0
-;   core_dirmat.cpp_FUN_0045f690
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
 ; *****************************************************************************
@@ -178,8 +178,8 @@ section .text
     PUSH ESI                            ; 0055bba1
     LEA ESI,[EBP + 0x22]                ; 0055bba2
     LEA EDI,[EBP + -0x3e]               ; 0055bba5
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0055bba8
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0055bba8
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + 0x22]                ; 0055bbad
     MOVSD ES:EDI,ESI                    ; 0055bbb0
     MOVSD ES:EDI,ESI                    ; 0055bbb1
@@ -242,8 +242,8 @@ section .text
     PUSH EDI                            ; 0055bc3f
     LEA ESI,[EBP + -0x2]                ; 0055bc40
     LEA EDI,[EBP + -0xe]                ; 0055bc43
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0055bc46
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0055bc46
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + -0x2]                ; 0055bc4b
     MOVSD ES:EDI,ESI                    ; 0055bc4e
     MOVSD ES:EDI,ESI                    ; 0055bc4f

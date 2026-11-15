@@ -21,7 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCh
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     _DAT_01d046a0 = "..\\core\\charactr.cpp";
     _DAT_01d046a4 = 0x11fe;
-    core_main_c_FUN_004e4500("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
   if ((float)_DAT_005cd22e <= this_ptr->layer_action_t) {
     if (this_ptr->layer_action_t <= (float)_DAT_005cd236) {

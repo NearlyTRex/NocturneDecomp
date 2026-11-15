@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;
@@ -71,8 +71,8 @@ section .text
     PUSH 0x5b5f86                       ; 0040d372 | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d71de0],EDX      ; 0040d377 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0040d37d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040d383
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040d383
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0040d388
     PUSH 0x400                          ; 0040d38b
         ;   Label: LAB_0040d38b
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5b5f48                       ; 0040d3ae | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d71de0],ECX      ; 0040d3b3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 0040d3b9 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040d3bf
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040d3bf
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0040d3c4
     JMP 0x0040d353                      ; 0040d3c7
         ;   XREF to: 0040d353 (UNCONDITIONAL_JUMP)  ; LAB_0040d353
@@ -105,8 +105,8 @@ section .text
     PUSH 0x5b5fc4                       ; 0040d3d3 | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d71de0],EDI      ; 0040d3d8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 0040d3de | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040d3e4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040d3e4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0040d3e9
     POP EBP                             ; 0040d3ec
     POP EDI                             ; 0040d3ed

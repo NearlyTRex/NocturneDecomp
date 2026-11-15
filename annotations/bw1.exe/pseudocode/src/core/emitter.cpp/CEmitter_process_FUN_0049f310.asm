@@ -26,8 +26,8 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_004308a0
@@ -569,8 +569,8 @@ section .text
     PUSH EDX                            ; 0049f9e5
     PUSH ECX                            ; 0049f9e6
     LEA ESI,[ESP + 0xbc]                ; 0049f9e7
-    CALL core_actor.cpp_FUN_00408bb0    ; 0049f9ee
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0049f9ee
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0049f9f3
     PUSH 0x1                            ; 0049f9f6
     PUSH 0x3f800000                     ; 0049f9f8
@@ -754,8 +754,8 @@ section .text
     PUSH EDX                            ; 0049fc43
     LEA ESI,[ESP + 0x38]                ; 0049fc44
     LEA EDI,[ESP + 0x68]                ; 0049fc48
-    CALL core_actor.cpp_FUN_00408ac0    ; 0049fc4c
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 0049fc4c
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 0049fc51
     ADD ESP,0x8                         ; 0049fc55
     MOVSD ES:EDI,ESI                    ; 0049fc58

@@ -18,12 +18,13 @@ void engine_texture_cpp_FUN_0056ab70(void)
   uint in_stack_0000000c;
   
   if ((DAT_007303f4 == 0) && (*(char *)(in_stack_00000004 + 8) != '\0')) {
-    iVar1 = engine_texture_cpp_FUN_0056a0a0
-                      (_DAT_02cfd0d0,*(uint *)(in_stack_00000004 + 4) & 0xffff,in_stack_00000004 + 8
-                      );
+    iVar1 = engine_texture_cpp_CTextureCache_findTexture_FUN_0056a0a0
+                      (_DAT_02cfd0d0,*(uint *)(in_stack_00000004 + 4) & 0xffff,
+                       (char *)(in_stack_00000004 + 8));
     if (iVar1 == -1) {
       iVar1 = engine_texture_cpp_FUN_00569ec0
-                        (_DAT_02cfd0d0,in_stack_00000004 + 8,in_stack_00000008,in_stack_0000000c);
+                        (_DAT_02cfd0d0,(char *)(in_stack_00000004 + 8),in_stack_00000008,
+                         in_stack_0000000c);
       *(int *)(in_stack_00000004 + 4) = iVar1;
     }
     else {

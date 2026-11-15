@@ -80,7 +80,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_00557570(CSfxSample *out_sample)
     else {
       _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
       _DAT_01d71de4 = 0x12d1;
-      core_main_c_FUN_004e4330("Unknown sample file format extension: %s",out_sample);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown sample file format extension: %s");
     }
 LAB_005576c8:
     sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00551620(out_sample);
@@ -89,7 +89,7 @@ LAB_005576c8:
     }
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x12dc;
-    core_main_c_FUN_004e4330("getSampleInfo - can't determine length for %s",out_sample);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("getSampleInfo - can't determine length for %s");
     return 1;
   }
   support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_40);

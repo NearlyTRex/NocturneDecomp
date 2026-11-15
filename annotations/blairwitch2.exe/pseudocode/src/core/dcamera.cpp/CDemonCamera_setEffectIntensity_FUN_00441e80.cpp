@@ -11,11 +11,9 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(CDemonCamera *this_ptr,float intensity)
 
 {
-  int iVar1;
-  float10 fVar2;
+  double dVar1;
   
-  fVar2 = (float10)intensity * (float10)_DAT_005ce636;
-  iVar1 = round();
-  *(int *)(iVar1 + 0x11e8) = (int)ROUND(fVar2);
+  dVar1 = round((double)(intensity * (float)_DAT_005ce636));
+  this_ptr->corona_blend_factor = (int)ROUND(dVar1);
   return;
 }

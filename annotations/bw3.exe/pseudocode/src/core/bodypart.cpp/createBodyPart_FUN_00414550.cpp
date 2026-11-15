@@ -31,7 +31,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00414550(CVector3f *pos
   if (this_ptr_00 == (CBodyPart *)0x0) {
     _DAT_01d71de0 = "..\\core\\bodypart.cpp";
     _DAT_01d71de4 = 0x32;
-    core_main_c_FUN_004e4330("Can't create body part!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;
   (this_ptr_00->base).location.position.y = position->y;

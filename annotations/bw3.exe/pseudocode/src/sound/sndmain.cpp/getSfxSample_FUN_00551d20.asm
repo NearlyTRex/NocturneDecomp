@@ -34,7 +34,7 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdlib.c__atexit_FUN_005a3e13
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   crt_string.c_memmove_FUN_005a54c0
@@ -340,8 +340,8 @@ section .text
     PUSH 0x5d28b4                       ; 00552039 | = "Can't open %s"
     MOV dword ptr [0x01d71de0],ECX      ; 0055203e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00552044 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055204a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055204a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055204f
     JMP 0x00551e9e                      ; 00552052
         ;   XREF to: 00551e9e (UNCONDITIONAL_JUMP)  ; LAB_00551e9e
@@ -465,8 +465,8 @@ section .text
     PUSH 0x5d2915                       ; 005521a3 | = "Don't know length of sample %s"
     MOV dword ptr [0x01d71de0],ECX      ; 005521a8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005521ae | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005521b4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005521b4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005521b9
     MOV dword ptr [EBP + 0x150],0x0     ; 005521bc
         ;   Label: LAB_005521bc
@@ -542,8 +542,8 @@ section .text
     PUSH 0x5d2985                       ; 005522aa | = "Unknown sample file format extension: %s"
     MOV dword ptr [0x01d71de0],ECX      ; 005522af | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005522b5 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005522bb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005522bb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     JMP 0x005520d8                      ; 005522c0
         ;   XREF to: 005520d8 (UNCONDITIONAL_JUMP)  ; LAB_005520d8
 

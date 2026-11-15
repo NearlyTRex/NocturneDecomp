@@ -159,7 +159,7 @@ switchD_0053320f_caseD_4:
     default:
       _DAT_01d1d400 = "..\\core\\path.cpp";
       _DAT_01d1d404 = 0x183;
-      core_main_c_FUN_005030e0("CPathMap::getDirection - Should never get here either");
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CPathMap::getDirection - Should never get here either");
     }
   }
   if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_00533418_default;

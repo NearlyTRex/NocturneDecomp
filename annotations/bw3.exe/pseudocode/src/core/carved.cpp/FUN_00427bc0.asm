@@ -35,7 +35,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
@@ -46,7 +46,7 @@
 ;   core_carved.cpp_FUN_004285c0
 ;   core_carved.cpp_FUN_00429090
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
@@ -304,8 +304,8 @@ section .text
     LEA EBX,[ESP + 0x1e0]               ; 00427ef8
     LEA ESI,[ESP + 0xfc]                ; 00427eff
     LEA EDI,[ESP + 0x1c8]               ; 00427f06
-    CALL core_actor.cpp_FUN_00408b80    ; 00427f0d
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00427f0d
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xfc]                ; 00427f12
     ADD ESP,0x8                         ; 00427f19
     LEA EAX,[ESP + 0x1c0]               ; 00427f1c
@@ -469,8 +469,8 @@ section .text
     LEA EBX,[ESP + 0x168]               ; 00428152
     LEA ESI,[ESP + 0x144]               ; 00428159
     LEA EDI,[ESP + 0x168]               ; 00428160
-    CALL core_actor.cpp_FUN_00408b80    ; 00428167
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00428167
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x144]               ; 0042816c
     ADD ESP,0x8                         ; 00428173
     LEA EAX,[ESP + 0x1d8]               ; 00428176
@@ -585,8 +585,8 @@ section .text
     PUSH 0x5b7d67                       ; 004282a5 | = "Invalid demon townsfolk object shape!"
     MOV [0x01d71de0],EAX                ; 004282aa | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004282af | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004282b5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004282b5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004282ba
     MOV EAX,0x1                         ; 004282bd
     MOV ESP,EBP                         ; 004282c2

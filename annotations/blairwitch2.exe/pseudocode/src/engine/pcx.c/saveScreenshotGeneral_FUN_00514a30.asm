@@ -36,7 +36,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5e19e0                       ; 00514b1d | = "Cannot write .PCX"
     MOV dword ptr [0x01d046a0],EBP      ; 00514b22 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00514b28 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00514b2d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00514b2d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514b32
     PUSH EBX                            ; 00514b35
         ;   Label: LAB_00514b35
@@ -199,7 +199,7 @@ section .text
         ;   XREF to: 00514ba0 (CONDITIONAL_JUMP)  ; LAB_00514ba0
     PUSH EBX                            ; 00514bc5
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00514bc6
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00514bcb
     POP ESI                             ; 00514bce
     POP EDI                             ; 00514bcf

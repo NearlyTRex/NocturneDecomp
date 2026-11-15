@@ -22,8 +22,8 @@
 ;   undefined4 DAT_01c35e78
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00401590
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940
+;   engine_2d.c_loadPaletteFile_FUN_00401590
 ;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00401042
     PUSH 0x5ca004                       ; 00401045 | = "vga.act"
-    CALL engine_2d.c_FUN_00401590       ; 0040104a
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401590()
+    CALL engine_2d.c_loadPaletteFile_FUN_00401590 ; 0040104a
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadPaletteFile_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0040104f
     PUSH 0x5ca00c                       ; 00401052 | = "vga.lte"
     ADD ESP,0x4                         ; 00401057

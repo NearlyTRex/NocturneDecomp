@@ -17,7 +17,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
   uint *puVar4;
   byte bVar5;
   float afStackY_108c [989];
-  CVector3f *initial_velocity;
+  CVector3f *pCVar6;
   float min_value;
   CBoundingBox3D *max_value;
   float fStack_bc;
@@ -26,16 +26,17 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
   float fStack_b0;
   float fStack_ac;
   float fStack_a8;
-  float fStack_a4;
+  CVector3f CStack_a4;
   CVector3f CStack_98;
   float fStack_8c;
   CVector3f local_88;
-  float fStack_74;
-  float afStack_70 [6];
+  CVector3f CStack_74;
+  float fStack_68;
+  CVector3f local_64;
   CVector3f local_58;
   float fStack_44;
-  float afStack_40 [4];
-  float fStack_30;
+  float afStack_40 [3];
+  CVector3f local_34;
   float local_28;
   float local_24;
   int local_20;
@@ -54,7 +55,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
       local_1c = 0;
       if (0 < local_20) {
         do {
-          initial_velocity = direction;
+          pCVar6 = direction;
           if ((direction != (CVector3f *)0x0) && (0.0 < spread_angle)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(direction);
             min_value = -spread_angle;
@@ -72,22 +73,23 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
             local_58.x = local_18 + local_58.x;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
                       ((CMatrix3x3f *)&stack0xfffffefc,&local_58);
-            afStack_70[5] =
-                 SQRT(direction->z * direction->z +
-                      direction->x * direction->x + direction->y * direction->y);
-            afStack_70[3] = 0.0;
-            afStack_70[4] = 0.0;
-            local_28 = afStack_70[5];
-            core_dirmat_cpp_FUN_0045f690(&stack0xfffffefc,afStack_70 + 3);
-            local_88.x = afStack_40[3];
-            *(float *)((int)&local_88 + (uint)bVar5 * -8 + 4) = afStack_40[(uint)bVar5 * -2 + 4];
-            *(float *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
-            initial_velocity = &local_88;
+            local_64.z = SQRT(direction->z * direction->z +
+                              direction->x * direction->x + direction->y * direction->y);
+            local_64.x = 0.0;
+            local_64.y = 0.0;
+            local_28 = local_64.z;
+            core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+                      ((CMatrix3x3f *)&stack0xfffffefc,&local_64,&local_34);
+            local_88.x = local_34.x;
+            *(uint *)((int)&local_88 + (uint)bVar5 * -8 + 4) =
+                 *(uint *)((int)&local_34 + (uint)bVar5 * -8 + 4);
+            *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+                 *(uint *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+            pCVar6 = &local_88;
             spread_angle = (float)max_value;
           }
           core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_0047cf20
-                    (this_ptr,local_1c,initial_velocity,render_in_background);
+                    (this_ptr,local_1c,pCVar6,render_in_background);
           local_1c = local_1c + 1;
         } while (local_1c < local_20);
       }
@@ -103,25 +105,28 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   afStack_40[2] = fStack_bc + fStack_b0;
-  afStack_40[3] = fStack_b8 + fStack_ac;
-  fStack_30 = fStack_b4 + fStack_a8;
-  afStack_70[2] = fStack_bc + fStack_b0;
-  afStack_70[(uint)bVar5 * -2 + 3] = afStack_40[(uint)bVar5 * -2 + 3];
-  afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-       afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  fStack_44 = afStack_70[2] * _DAT_005daeb5;
-  afStack_40[0] = afStack_70[3] * _DAT_005daeb5;
-  afStack_40[1] = afStack_70[4] * _DAT_005daeb5;
-  fStack_74 = afStack_70[2] * _DAT_005daeb5;
-  afStack_70[(uint)bVar5 * -2] = afStack_40[(uint)bVar5 * -2];
-  afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+  local_34.x = fStack_b8 + fStack_ac;
+  local_34.y = fStack_b4 + fStack_a8;
+  fStack_68 = fStack_bc + fStack_b0;
+  *(uint *)((int)&local_64 + (uint)bVar5 * -8) =
+       *(uint *)((int)&local_34 + (uint)bVar5 * -8);
+  *(uint *)((int)&local_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
+  pCVar6 = &CStack_74;
+  fStack_44 = fStack_68 * _DAT_005daeb5;
+  afStack_40[0] = local_64.x * _DAT_005daeb5;
+  afStack_40[1] = local_64.y * _DAT_005daeb5;
+  CStack_74.x = fStack_68 * _DAT_005daeb5;
+  *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + 4) = afStack_40[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_actor_cpp_FUN_00408b40(this_ptr);
-  CStack_98.x = fStack_a4;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            ((CDemonActor *)this_ptr,pCVar6,&CStack_a4);
+  CStack_98.x = CStack_a4.x;
   *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 4) =
-       *(uint *)(&stack0xffffff60 + (uint)bVar5 * -8);
+       *(uint *)((int)&CStack_a4 + (uint)bVar5 * -8 + 4);
   *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       *(uint *)(&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(uint *)((int)&CStack_a4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   if ((this_ptr->base).base.is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
               (g_CGorePtr,&CStack_98,direction,100,(this_ptr->base).base.blood_type);

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 132,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 65,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 218
   },
   "cross_references": [],
   "function": {
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_00557f00",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
   },
   "function_calls": [
     {
@@ -243,7 +242,7 @@
       },
       {
         "is_param": true,
-        "name": "out_buffer_size",
+        "name": "out_samples_per_block",
         "offset": 20,
         "size": 4,
         "type": "int *"
@@ -260,36 +259,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 60,
       "match": "DAT_0264b070",
       "severity": "mild",
-      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,&WStack_24,0,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 60,
       "match": "DAT_0061bf84",
       "severity": "mild",
-      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,&WStack_24,0,0,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "*in_stack_00000018 = _DAT_0264b100;",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

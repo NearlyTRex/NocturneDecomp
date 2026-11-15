@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00537fa0
 ;
@@ -132,8 +132,8 @@ section .text
     PUSH EBP                            ; 0057667a
     LEA ESI,[ESP + 0x9c]                ; 0057667b
     LEA EDI,[ESP + 0xa8]                ; 00576682
-    CALL core_actor.cpp_FUN_00408de0    ; 00576689
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00576689
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x9c]                ; 0057668e
     ADD ESP,0x8                         ; 00576695
     MOVSD ES:EDI,ESI                    ; 00576698

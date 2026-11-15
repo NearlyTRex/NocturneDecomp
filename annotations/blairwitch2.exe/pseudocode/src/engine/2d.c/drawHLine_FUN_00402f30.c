@@ -33,7 +33,7 @@ void __cdecl engine_2d_c_drawHLine_FUN_00402f30(int x1,int y,int x2)
 LAB_00403012:
           _DAT_01d046a0 = "..\\engine\\2d.c";
           _DAT_01d046a4 = 0x887;
-          core_main_c_FUN_004e4500("hLine - invalid bitsPerPixel");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("hLine - invalid bitsPerPixel");
           return;
         }
         memset

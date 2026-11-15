@@ -32,7 +32,7 @@
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040b050
 ;   core_actor.cpp_FUN_00408a50
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c920
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_FUN_005b8010
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5ca8b0                       ; 0040b0d0 | = "CDemonActor::save - tried to save act..."
     MOV dword ptr [0x01d046a0],EDX      ; 0040b0d5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0040b0db | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040b0e1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040b0e1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040b0e6
     PUSH EBX                            ; 0040b0e9
         ;   Label: LAB_0040b0e9
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5ca91d                       ; 0040b197 | = "IO Error after writing actor of type %s"
     MOV dword ptr [0x01d046a0],EDX      ; 0040b19c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0040b1a2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040b1a8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040b1a8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040b1ad
     JMP 0x0040b16d                      ; 0040b1b0
         ;   XREF to: 0040b16d (UNCONDITIONAL_JUMP)  ; LAB_0040b16d

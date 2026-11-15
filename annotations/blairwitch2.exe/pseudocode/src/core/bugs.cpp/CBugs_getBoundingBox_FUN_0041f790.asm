@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_bugs_cpp_CBugs_getBoundingBox_FUN_0041f790(CBugs *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_bugs_cpp_CBugs_getBoundingBox_FUN_0041f790(CBugs *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; *****************************************************************************
 

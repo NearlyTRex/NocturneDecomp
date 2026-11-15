@@ -42,7 +42,7 @@ void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource 
   if (pcVar2 == (char *)0x0) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0x36c;
-    core_main_c_FUN_004e4330("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
   }
   pcVar2 = this_ptr->link;
   do {

@@ -47,7 +47,7 @@ void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 
 // Original: core_teleport.cpp_CTeleport_getBoundingBox_FUN_00568f20
 // Address: 00568f20
-CBoundingBox3D * __cdecl CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_teleport.cpp_CTeleport_archive_FUN_00568fa0
 // Address: 00568fa0

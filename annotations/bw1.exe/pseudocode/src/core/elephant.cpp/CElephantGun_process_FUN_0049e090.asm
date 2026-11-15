@@ -19,7 +19,7 @@
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
@@ -68,8 +68,8 @@ section .text
     PUSH EBX                            ; 0049e0f0
     LEA ESI,[ESP + 0x34]                ; 0049e0f1
     LEA EDI,[ESP + 0x1c]                ; 0049e0f5
-    CALL core_actor.cpp_FUN_00408b40    ; 0049e0f9
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0049e0f9
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x34]                ; 0049e0fe
     ADD ESP,0x8                         ; 0049e102
     MOVSD ES:EDI,ESI                    ; 0049e105

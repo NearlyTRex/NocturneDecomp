@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1079,
-    "complexity_score": 2533,
+    "complexity_score": 2574,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 563,
-    "suspect_count": 191,
+    "pseudocode_lines": 564,
+    "suspect_count": 195,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -23,7 +23,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1642
+    "total_lines": 1643
   },
   "cross_references": [
     {
@@ -55,7 +55,7 @@
     {
       "addr": "00408cf0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408cf0"
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0"
     },
     {
       "addr": "0042a0c0",
@@ -123,14 +123,14 @@
       "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
     },
     {
+      "addr": "005038a0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0"
+    },
+    {
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "005038a0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005038a0"
     },
     {
       "addr": "0055ae50",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((param_1->base).layer_action_index == 9) &&",
@@ -553,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->base).carry_hands[1].carry_actor == (CDemonActor *)0x0)) {",
@@ -561,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).layer_action_t = 0.0;",
@@ -569,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).layer_action_index = 0;",
@@ -577,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->nearby_interactive_actor != (CDemonActor *)0x0) {",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = param_1 + 1;",
@@ -593,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)param_1[1].base.base.actor_name == 0) goto LAB_0045be11;",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = (param_1->base).carry_hands[1].carry_actor;",
@@ -609,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->inventories[0].selected_weapons[param_1->inventories[0].current_group];",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->inventories[0].selected_weapons[param_1->inventories[0].current_group];",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->inventories[0].selected_weapons[param_1->inventories[0].current_group];",
@@ -633,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->inventories[0].selected_weapons[param_1->inventories[0].current_group];",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = param_1 + 1;",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = param_1->inventories;",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = &(param_1->base).model.base;",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "local_40 = &(param_1->base).base.location.position;",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 91,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= 0.0) {",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1[1].base.base.health;",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (param_1->target_actor == (CDemonActor *)0x0) {",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,4);",
@@ -705,7 +705,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 118,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar3 = param_2 * (float)_DAT_005d064f +",
@@ -713,7 +713,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[1].base.base.actor_name + 0x10);",
@@ -721,7 +721,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[1].base.base.actor_name + 0x10) = fVar3;",
@@ -729,7 +729,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[1].base.base.actor_name + 0x10) = 0x428C0000;",
@@ -737,7 +737,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->player_input).action_state.fire != 0) {",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) || (param_1->is_wearing_gas_mask != GAS_MASK_AWAY)) {",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) || (param_1->is_wearing_gas_mask != GAS_MASK_IN_HAND)) {",
@@ -761,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1->is_wearing_gas_mask == GAS_MASK_ON_FACE))",
@@ -769,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1->is_wearing_gas_mask == GAS_MASK_IN_HAND)",
@@ -777,7 +777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = (CCharacter *)param_1[1].base.base.orient_matrix.m[2].y;",
@@ -785,7 +785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = param_1[1].base.base.orient_matrix.m[2].y;",
@@ -793,7 +793,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 157,
       "match": "(uint *)((int)fVar3",
       "severity": "moderate",
       "text": "switch(*(uint *)((int)fVar3 + 0x43c)) {",
@@ -801,7 +801,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 191,
+      "line": 190,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -809,7 +809,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 192,
+      "line": 191,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -817,7 +817,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 198,
+      "line": 197,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -825,7 +825,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 199,
+      "line": 198,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 200,
+      "line": 199,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -841,7 +841,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 201,
+      "line": 200,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -849,7 +849,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 202,
+      "line": 201,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -857,7 +857,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 218,
+      "line": 217,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -865,7 +865,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 219,
+      "line": 218,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -873,7 +873,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 225,
+      "line": 224,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -881,7 +881,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 226,
+      "line": 225,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -889,7 +889,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 227,
+      "line": 226,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -897,7 +897,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 228,
+      "line": 227,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -905,7 +905,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 229,
+      "line": 228,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -913,7 +913,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 242,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = (CCharacter *)param_1[1].base.base.orient_matrix.m[2].y;",
@@ -921,7 +921,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 247,
+      "line": 246,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)param_1[1].base.base.actor_name != 0)) &&",
@@ -929,7 +929,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 251,
+      "line": 250,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -937,7 +937,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 252,
+      "line": 251,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -945,7 +945,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 258,
+      "line": 257,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -953,7 +953,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 259,
+      "line": 258,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -961,7 +961,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 260,
+      "line": 259,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -969,7 +969,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 261,
+      "line": 260,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -977,7 +977,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 262,
+      "line": 261,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 284,
+      "line": 283,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -993,7 +993,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 285,
+      "line": 284,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -1001,7 +1001,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 291,
+      "line": 290,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -1009,7 +1009,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 292,
+      "line": 291,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -1017,7 +1017,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 293,
+      "line": 292,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -1025,7 +1025,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 294,
+      "line": 293,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -1033,7 +1033,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 295,
+      "line": 294,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -1041,7 +1041,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 322,
+      "line": 321,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((param_1->base).carry_hands[1].carry_actor == (CDemonActor *)0x0) {",
@@ -1049,7 +1049,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 322,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)param_1[1].base.base.actor_name == 0) goto LAB_0045be77;",
@@ -1057,7 +1057,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 332,
+      "line": 331,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = (param_1->base).layer_action_t;",
@@ -1065,7 +1065,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 333,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,&param_2,local_18);",
@@ -1073,7 +1073,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 333,
       "match": "param_2",
       "severity": "mild",
       "text": "(&param_1->base,&param_2,local_18);",
@@ -1081,7 +1081,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 335,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = (param_1->base).layer_actions[(param_1->base).layer_action_index].motion_index;",
@@ -1089,7 +1089,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 335,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = (param_1->base).layer_actions[(param_1->base).layer_action_index].motion_index;",
@@ -1097,7 +1097,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 337,
+      "line": 336,
       "match": "param_1",
       "severity": "mild",
       "text": "switch((param_1->base).layer_action_index) {",
@@ -1105,7 +1105,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 340,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) &&",
@@ -1113,7 +1113,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 341,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar3 = param_1[1].base.base.orient_matrix.m[2].y, fVar3 != 0.0)) {",
@@ -1121,7 +1121,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 342,
       "match": "(int *)((int)fVar3",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1129,7 +1129,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 343,
+      "line": 342,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1137,7 +1137,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 345,
+      "line": 344,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)(param_1->base).layer_action_t)) &&",
@@ -1145,7 +1145,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 345,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar3 = param_1[1].base.base.orient_matrix.m[2].y, fVar3 != 0.0)) {",
@@ -1153,7 +1153,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 347,
+      "line": 346,
       "match": "(int *)((int)fVar3",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1161,7 +1161,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 347,
+      "line": 346,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1169,7 +1169,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 349,
+      "line": 348,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)(param_1->base).layer_action_t)) &&",
@@ -1177,7 +1177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 349,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar3 = param_1[1].base.base.orient_matrix.m[2].y, fVar3 != 0.0)) {",
@@ -1185,7 +1185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 351,
+      "line": 350,
       "match": "(int *)((int)fVar3",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1193,7 +1193,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 351,
+      "line": 350,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1201,7 +1201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 355,
+      "line": 354,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)(param_1->base).layer_action_t)) &&",
@@ -1209,7 +1209,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 356,
+      "line": 355,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar3 = param_1[1].base.base.orient_matrix.m[2].y, fVar3 != 0.0)) {",
@@ -1217,7 +1217,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 357,
+      "line": 356,
       "match": "(int *)((int)fVar3",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1225,7 +1225,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 357,
+      "line": 356,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x80))(fVar3,2);",
@@ -1233,7 +1233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 359,
+      "line": 358,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) {",
@@ -1241,7 +1241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 361,
+      "line": 360,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x0264B290,(CDemonActor *)param_1,\"axeswing0?.wav\",local_40);",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 365,
+      "line": 364,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) &&",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 367,
+      "line": 366,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 375,
+      "line": 374,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 380,
+      "line": 379,
       "match": "param_1",
       "severity": "mild",
       "text": "(float)(int)local_14 <= (param_1->base).layer_action_t)) {",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 385,
+      "line": 384,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[1].base.base.health == 3) &&",
@@ -1289,7 +1289,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 387,
+      "line": 386,
       "match": "param_1",
       "severity": "mild",
       "text": "(float)(int)local_14 <= (param_1->base).layer_action_t)) {",
@@ -1297,7 +1297,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 388,
+      "line": 387,
       "match": "param_1",
       "severity": "mild",
       "text": "core_doc_cpp_FUN_0045bba0(param_1);",
@@ -1305,7 +1305,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 389,
+      "line": 388,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "local_60.x = (float)in_stack_ffffff88;",
@@ -1313,7 +1313,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 391,
+      "line": 390,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);",
@@ -1321,7 +1321,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 393,
+      "line": 392,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
@@ -1329,7 +1329,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 396,
+      "line": 395,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,",
@@ -1340,7 +1340,7 @@
       "line": 400,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408cf0(param_1,&local_60);",
+      "text": "((CDemonActor *)param_1,&local_60,&local_54);",
       "type": "unnamed_param"
     },
     {
@@ -1348,12 +1348,12 @@
       "line": 402,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "(&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] = afStack_50[(uint)bVar10 * -2];",
+      "text": "(&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 403,
+      "line": 404,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "(&stack0xffffff98)[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =",
@@ -1361,7 +1361,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 406,
+      "line": 407,
       "match": "&stack0xffffff94",
       "severity": "moderate",
       "text": "if (pCVar9 != (CVector3f *)&stack0xffffff94) {",
@@ -1369,7 +1369,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 411,
+      "line": 412,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(*(((local_38->base).vtable._uc)->_uc).isGrabbable)(local_38,in_stack_ffffff88);",
@@ -1377,7 +1377,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 412,
+      "line": 413,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
@@ -1385,7 +1385,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 414,
+      "line": 415,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->base).carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
@@ -1393,7 +1393,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 415,
+      "line": 416,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,&local_60);",
@@ -1401,18 +1401,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 415,
+      "line": 416,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,&local_60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 417,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.health = 0;",
       "type": "unnamed_param"
     },
     {
@@ -1420,15 +1412,15 @@
       "line": 418,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1[1].base.base.actor_name + 0x10) = 0x41200000;",
+      "text": "param_1[1].base.base.health = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 420,
+      "line": 419,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (1.0 <= (param_1->base).layer_action_t) {",
+      "text": "*(uint *)(param_1[1].base.base.actor_name + 0x10) = 0x41200000;",
       "type": "unnamed_param"
     },
     {
@@ -1436,7 +1428,7 @@
       "line": 421,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).layer_action_index = 0;",
+      "text": "if (1.0 <= (param_1->base).layer_action_t) {",
       "type": "unnamed_param"
     },
     {
@@ -1444,12 +1436,20 @@
       "line": 422,
       "match": "param_1",
       "severity": "mild",
+      "text": "(param_1->base).layer_action_index = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 423,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(param_1->base).layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 426,
+      "line": 427,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = (CCharacter *)param_1[1].base.base.orient_matrix.m[2].y;",
@@ -1457,7 +1457,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 431,
+      "line": 432,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -1465,7 +1465,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 432,
+      "line": 433,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -1473,7 +1473,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 438,
+      "line": 439,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -1481,7 +1481,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 439,
+      "line": 440,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -1489,7 +1489,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 440,
+      "line": 441,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -1497,7 +1497,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 441,
+      "line": 442,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -1505,7 +1505,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 442,
+      "line": 443,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -1513,7 +1513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 453,
+      "line": 454,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = param_1[1].base.base.orient_matrix.m[2].y;",
@@ -1521,7 +1521,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 454,
+      "line": 455,
       "match": "(int *)((int)fVar3",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0xe4))(fVar3,1);",
@@ -1529,7 +1529,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 454,
+      "line": 455,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0xe4))(fVar3,1);",
@@ -1537,7 +1537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 455,
+      "line": 456,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
@@ -1545,7 +1545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 458,
+      "line": 459,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)param_1[1].base.base.actor_name != 0) {",
@@ -1553,7 +1553,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 466,
+      "line": 467,
       "match": "7.00649e-45",
       "severity": "mild",
       "text": "case 7.00649e-45:",
@@ -1561,7 +1561,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 467,
+      "line": 468,
       "match": "1.68156e-44",
       "severity": "mild",
       "text": "case 1.68156e-44:",
@@ -1569,7 +1569,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 473,
+      "line": 474,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "case 8.40779e-45:",
@@ -1577,7 +1577,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 474,
+      "line": 475,
       "match": "9.80909e-45",
       "severity": "mild",
       "text": "case 9.80909e-45:",
@@ -1585,7 +1585,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 475,
+      "line": 476,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -1593,7 +1593,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 476,
+      "line": 477,
       "match": "1.26117e-44",
       "severity": "mild",
       "text": "case 1.26117e-44:",
@@ -1601,7 +1601,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 477,
+      "line": 478,
       "match": "1.82169e-44",
       "severity": "mild",
       "text": "case 1.82169e-44:",
@@ -1609,7 +1609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 486,
+      "line": 487,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1[1].base.base.orient_matrix.m[2].y = (float)local_1c,",
@@ -1617,7 +1617,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 489,
+      "line": 490,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
@@ -1625,7 +1625,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 489,
+      "line": 490,
       "match": "in_stack_ffffff8c",
       "severity": "moderate",
       "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
@@ -1633,7 +1633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 493,
+      "line": 494,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[1].base.base.health == 1) && (local_20 == 5)) {",
@@ -1641,7 +1641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 494,
+      "line": 495,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(param_1,1);",
@@ -1649,7 +1649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 495,
+      "line": 496,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].base.base.health = 0;",
@@ -1657,7 +1657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 497,
+      "line": 498,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = param_1->target_actor;",
@@ -1665,7 +1665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 503,
+      "line": 504,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01D182F0,param_1->target_actor);",
@@ -1673,7 +1673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 505,
+      "line": 506,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
@@ -1681,7 +1681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 505,
+      "line": 506,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
@@ -1689,7 +1689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 510,
+      "line": 511,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01D182F0,param_1->target_actor);",
@@ -1697,15 +1697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 512,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 512,
+      "line": 513,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
@@ -1716,7 +1708,7 @@
       "line": 513,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
+      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
       "type": "unnamed_param"
     },
     {
@@ -1724,15 +1716,15 @@
       "line": 514,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1 + 1;",
+      "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 519,
+      "line": 515,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).layer_action_index = 2;",
+      "text": "pCVar1 = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
@@ -1740,15 +1732,15 @@
       "line": 520,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).layer_action_t = 0.0;",
+      "text": "(param_1->base).layer_action_index = 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 524,
+      "line": 521,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.base.health = 6;",
+      "text": "(param_1->base).layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -1756,12 +1748,20 @@
       "line": 525,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[1].base.base.health = 6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 526,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->target_actor = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 531,
+      "line": 532,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_IN_HAND;",
@@ -1769,7 +1769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 534,
+      "line": 535,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_ON_FACE;",
@@ -1777,7 +1777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 537,
+      "line": 538,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((local_20 == 3) && ((int)param_1->is_wearing_gas_mask < 2)) {",
@@ -1785,7 +1785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 540,
+      "line": 541,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_AWAY;",
@@ -1793,7 +1793,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 542,
+      "line": 543,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[1].base.base.health == 7) && (local_20 == 6)) {",
@@ -1801,7 +1801,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 543,
+      "line": 544,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].base.base.health = 0;",
@@ -1809,7 +1809,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 545,
+      "line": 546,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = (param_1->base).layer_action_index;",
@@ -1817,7 +1817,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 546,
+      "line": 547,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((3 < iVar5) && (iVar5 < 9)) && (param_1[1].base.base.health == 0)) &&",
@@ -1825,7 +1825,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 547,
+      "line": 548,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->base).layer_action_t == 1.0)) {",
@@ -1833,7 +1833,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 548,
+      "line": 549,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).layer_action_index = 3;",
@@ -1841,7 +1841,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 549,
+      "line": 550,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).layer_action_t = 1.0;",
@@ -1849,15 +1849,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 551,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((param_1->base).layer_action_index == 0) && (ABS((param_1->base).layer_action_t) == 0.0)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 551,
+      "line": 552,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((param_1->base).layer_action_index == 0) && (ABS((param_1->base).layer_action_t) == 0.0)",
@@ -1868,7 +1860,7 @@
       "line": 552,
       "match": "param_1",
       "severity": "mild",
-      "text": ") && (*(int *)param_1[1].base.base.actor_name == 0)) {",
+      "text": "if ((((param_1->base).layer_action_index == 0) && (ABS((param_1->base).layer_action_t) == 0.0)",
       "type": "unnamed_param"
     },
     {
@@ -1876,7 +1868,7 @@
       "line": 553,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).layer_action_index = 2;",
+      "text": ") && (*(int *)param_1[1].base.base.actor_name == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -1884,20 +1876,20 @@
       "line": 554,
       "match": "param_1",
       "severity": "mild",
+      "text": "(param_1->base).layer_action_index = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 555,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(param_1->base).layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 556,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->base).layer_action_index == 0xf) && ((param_1->base).layer_action_t == 1.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 556,
+      "line": 557,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((param_1->base).layer_action_index == 0xf) && ((param_1->base).layer_action_t == 1.0)) {",
@@ -1908,7 +1900,7 @@
       "line": 557,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).layer_action_index = 1;",
+      "text": "if (((param_1->base).layer_action_index == 0xf) && ((param_1->base).layer_action_t == 1.0)) {",
       "type": "unnamed_param"
     },
     {
@@ -1916,12 +1908,20 @@
       "line": 558,
       "match": "param_1",
       "severity": "mild",
+      "text": "(param_1->base).layer_action_index = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 559,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(param_1->base).layer_action_t = 1.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 560,
+      "line": 561,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(&param_1->base,local_18);",
@@ -1929,7 +1929,7 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 390,
+      "line": 389,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
@@ -1937,15 +1937,31 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 392,
+      "line": 391,
       "match": "(int)&local_60",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 403,
+      "match": "(int)&local_54",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 405,
+      "match": "(int)&local_54",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 390,
+      "line": 389,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
@@ -1953,15 +1969,31 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 392,
+      "line": 391,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 403,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 405,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 341,
+      "line": 340,
       "match": "0x3e999999 < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) &&",
@@ -1969,7 +2001,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3ecccccc is the IEEE 754 bit pattern of 0.4f. Rewrite in a .keep as a plain float compare against 0.4f.",
-      "line": 345,
+      "line": 344,
       "match": "0x3ecccccc < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)(param_1->base).layer_action_t)) &&",
@@ -1977,7 +2009,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3effffff is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
-      "line": 349,
+      "line": 348,
       "match": "0x3effffff < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)(param_1->base).layer_action_t)) &&",
@@ -1985,7 +2017,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f333332 is the IEEE 754 bit pattern of 0.7f. Rewrite in a .keep as a plain float compare against 0.7f.",
-      "line": 355,
+      "line": 354,
       "match": "0x3f333332 < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)(param_1->base).layer_action_t)) &&",
@@ -1993,7 +2025,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 359,
+      "line": 358,
       "match": "0x3e999999 < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) {",
@@ -2001,7 +2033,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 365,
+      "line": 364,
       "match": "0x3e999999 < (int)(param_1->base).layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)(param_1->base).layer_action_t)) &&",

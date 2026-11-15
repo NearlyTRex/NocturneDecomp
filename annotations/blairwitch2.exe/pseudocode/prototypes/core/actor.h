@@ -71,7 +71,7 @@ void __cdecl CDemonActor::updateOrientationMatrix(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
 // Address: 00408b40
-CBoundingBox3D * __cdecl CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_actor.cpp_CDemonActor_getCollisionType_FUN_00408b80
 // Address: 00408b80
@@ -97,21 +97,21 @@ undefined4 FUN_00408c20(void);
 // Address: 00408c30
 float __cdecl CDemonActor::cylinderGroundCheck(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 
-// Original: core_actor.cpp_FUN_00408cf0
+// Original: core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 // Address: 00408cf0
-void FUN_00408cf0(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::transformVector(CDemonActor *this_ptr,CVector3f *input,CVector3f *output);
 
-// Original: core_actor.cpp_FUN_00408d30
+// Original: core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
 // Address: 00408d30
-void FUN_00408d30(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::inverseTransformVector(CDemonActor *this_ptr,CVector3f *input_vector,CVector3f *output_vector);
 
-// Original: core_actor.cpp_FUN_00408d70
+// Original: core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 // Address: 00408d70
-void FUN_00408d70(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::localToWorldPoint(CDemonActor *this_ptr,CVector3f *input_local_point,CVector3f *output_world_point);
 
-// Original: core_actor.cpp_FUN_00408de0
+// Original: core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 // Address: 00408de0
-void FUN_00408de0(int param_1,float *param_2);
+CVector3f * __stack2_esi CDemonActor::worldToLocalPoint(CDemonActor *this_ptr,CVector3f *input_world_point,CVector3f *output_local_point);
 
 // Original: core_actor.cpp_CDemonActor_playSound_FUN_00408e50
 // Address: 00408e50
@@ -143,7 +143,7 @@ int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *l
 
 // Original: core_actor.cpp_FUN_004090f0
 // Address: 004090f0
-undefined4 * FUN_004090f0(int param_1,int param_2,uint param_3);
+undefined4 * FUN_004090f0(CDemonActor *param_1,int param_2,uint param_3);
 
 // Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0
 // Address: 004093a0

@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   support_trisock.cpp_parseIPComponents_FUN_0059c5d0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5f82bb                       ; 0059c4fc
     MOV dword ptr [0x01d1d400],ECX      ; 0059c501 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0059c507 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0059c50d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059c50d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0059c512
     POP ESI                             ; 0059c515
     POP EDI                             ; 0059c516

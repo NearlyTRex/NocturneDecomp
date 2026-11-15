@@ -45,7 +45,7 @@ section .text
     PUSH EDX                            ; 0052b137
         ;   Label: LAB_0052b137
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0052b138
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0052b13d
     MOV dword ptr [EBX],0x0             ; 0052b140
     MOV EBX,dword ptr [ESI + 0x4]       ; 0052b146

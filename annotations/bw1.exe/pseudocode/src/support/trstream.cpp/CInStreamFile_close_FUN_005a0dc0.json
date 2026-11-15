@@ -38,12 +38,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015d5",
-      "name": "engine_2d.c_FUN_00401590",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00401010",
       "from_addr": "004010fa",
       "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
@@ -53,6 +47,12 @@
       "addr": "00402940",
       "from_addr": "00402ab3",
       "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401590",
+      "from_addr": "004015d5",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -176,7 +176,7 @@
       {
         "call_addr": "004015d5",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -123,7 +123,7 @@ int __cdecl core_pendulum_cpp_didPhaseCross_FUN_005155e0(float threshold,float o
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_005156d0(CPendulum *this_ptr,float delta_time);
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_ptr,float delta_time);
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_00515e40(CPendulum *this_ptr);
-CBoundingBox3D * __cdecl core_pendulum_cpp_CPendulum_getBoundingBox_FUN_00515ec0(CPendulum *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_pendulum_cpp_CPendulum_getBoundingBox_FUN_00515ec0(CPendulum *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_00515f00(CPendulum *this_ptr);
 ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_005160a0(CPendulum *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_005160e0(CPendulum *this_ptr);
@@ -179,7 +179,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005184c0(CPlatform *this_ptr
 void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_00518ff0(CPlatform *this_ptr,float goal_param,float movement_rate);
 int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_00519080(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_005191d0(CPlatform *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005193b0(CPlatform *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005193b0(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005197b0(CPlatform *this_ptr,CDemonActor *actor);
 ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_00519a00(CPlatform *this_ptr,SCollisionInfo *collision_info);
@@ -189,7 +189,7 @@ int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_00519a50(
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00519a60(CPlatform *this_ptr,CDemonActor *actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_00519ba0(CPlatform *this_ptr);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_00519cb0(uint current_crc,uchar data_byte);
-uint engine_pod_cpp_FUN_00519dc0(char *param_1,int param_2);
+uint engine_pod_cpp_crc32ComputeFileRange_FUN_00519dc0(char *param_1,int param_2);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_00519e50(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_00519ec0(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_00519ee0(char **filename1_ptr,char **filename2_ptr);
@@ -212,7 +212,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0051b3c0(CPod *pod,char *ext
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0051b580(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0051b5d0(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_0051b6e0(void);
-int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *param_2);
+int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_0051b8d0(CPod *this_ptr,char *pod_filename);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_0051b9d0(CPod *this_ptr,SFoundFileInfo *found_file_info);
 void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_0051ba20(CPod *this_ptr);
 int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_0051be70(CPod *this_ptr,char *target_filename);

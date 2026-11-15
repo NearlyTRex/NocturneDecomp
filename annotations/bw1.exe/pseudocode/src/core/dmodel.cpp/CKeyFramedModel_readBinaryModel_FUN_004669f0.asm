@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00467650
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5d936b                       ; 00466a2c | = "KFM file is invalid version %d"
     MOV [0x01d1d400],EAX                ; 00466a31 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 00466a36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00466a3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00466a3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00466a41
     XOR EDI,EDI                         ; 00466a44
         ;   Label: LAB_00466a44
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5d9335                       ; 00466a73 | = "Error reading keyframed model file"
     MOV dword ptr [0x01d1d400],EDX      ; 00466a78 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00466a7e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00466a84
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00466a84
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00466a89
     JMP 0x00466a16                      ; 00466a8c
         ;   XREF to: 00466a16 (UNCONDITIONAL_JUMP)  ; LAB_00466a16

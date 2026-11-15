@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   crt_math.c_atan2_FUN_005c1d69
 ;   crt_math.c_round_FUN_005c03a0
@@ -134,8 +134,8 @@ section .text
     PUSH 0x5f26ea                       ; 0056b0ce | = "CDeformableModelInstance::computeCyli..."
     MOV dword ptr [0x01d1d400],ECX      ; 0056b0d3 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0056b0d9 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056b0df
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056b0df
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056b0e4
     JMP 0x0056aff8                      ; 0056b0e7
         ;   XREF to: 0056aff8 (UNCONDITIONAL_JUMP)  ; LAB_0056aff8
@@ -150,11 +150,11 @@ section .text
         ;   Label: LAB_0056b0fb
     FILD dword ptr [EDX]                ; 0056b0fe
     CALL crt_math.c_atan2_FUN_005c1d69  ; 0056b100
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FMUL double ptr [0x005f2731]        ; 0056b105 | DAT_005f2731
     MOV EAX,dword ptr [ESP + 0x20]      ; 0056b10b
     CALL crt_math.c_round_FUN_005c03a0  ; 0056b10f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 0056b114
     MOV EBX,dword ptr [ESP]             ; 0056b117
     ADD EAX,EBX                         ; 0056b11a

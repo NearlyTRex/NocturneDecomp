@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00534820
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5de82b                       ; 004fc8b7 | = "CDemonMission::buildActiveSetActorLis..."
     MOV dword ptr [0x01d046a0],ECX      ; 004fc8bc | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004fc8c2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fc8c8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc8c8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc8cd
     MOV EAX,[0x0061b5a8]                ; 004fc8d0 | g_CDemonSetPtr
         ;   Label: LAB_004fc8d0

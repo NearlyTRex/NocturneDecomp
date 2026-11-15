@@ -31,7 +31,7 @@ void __cdecl CVehicle::process(CVehicle *this_ptr,float delta_time);
 
 // Original: core_vehicle.cpp_CVehicle_getBoundingBox_FUN_005a8490
 // Address: 005a8490
-CBoundingBox3D * __cdecl CVehicle::getBoundingBox(CVehicle *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CVehicle::getBoundingBox(CVehicle *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vehicle.cpp_CVehicle_archive_FUN_005a84d0
 // Address: 005a84d0

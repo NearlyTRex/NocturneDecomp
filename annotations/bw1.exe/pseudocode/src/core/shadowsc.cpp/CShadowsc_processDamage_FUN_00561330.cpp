@@ -13,6 +13,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *t
   EDamageType EVar1;
   float fVar2;
   SMotion *pSVar3;
+  CVector3f CStack_14;
   
   if (this_ptr->render_mode == 0) {
     EVar1 = damage_info->damage_type;
@@ -27,7 +28,8 @@ void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *t
       return;
     }
     if (EVar1 == DAMAGE_TYPE_BURN) {
-      core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_14);
     }
     fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar2;

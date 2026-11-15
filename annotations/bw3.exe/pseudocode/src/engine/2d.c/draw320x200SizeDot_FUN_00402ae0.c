@@ -26,7 +26,7 @@ void engine_2d_c_draw320x200SizeDot_FUN_00402ae0(void)
 LAB_00402c36:
         _DAT_01d71de0 = "..\\engine\\2d.c";
         _DAT_01d71de4 = 0x7da;
-        core_main_c_FUN_004e4330("draw320x200SizeDot: unknown graphics option");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("draw320x200SizeDot: unknown graphics option");
         return;
       }
       engine_2d_c_project3DPointToScreen_FUN_00401780

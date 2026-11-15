@@ -97,7 +97,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
     if (local_24 == (CDeformableModelInstance *)0x0) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x7e9;
-      core_main_c_FUN_004e4330("CDeformableModel::computePartDominantBones - out of memory!");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::computePartDominantBones - out of memory!");
     }
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0054e6e0(local_24,this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090(local_24);

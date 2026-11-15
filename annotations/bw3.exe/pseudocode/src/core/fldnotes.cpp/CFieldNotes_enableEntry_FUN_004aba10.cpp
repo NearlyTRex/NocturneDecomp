@@ -50,7 +50,7 @@ LAB_004aba48:
     default:
       _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
       _DAT_01d71de4 = 0xa7f;
-      core_main_c_FUN_004e4330("Field note %s has invalid type %d",pSVar1,pSVar1->kind);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Field note %s has invalid type %d");
 switchD_004aba5a_caseD_1:
       DAT_005fe374 = 1;
       return;

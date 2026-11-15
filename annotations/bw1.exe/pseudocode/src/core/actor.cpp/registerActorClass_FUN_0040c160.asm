@@ -34,7 +34,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_ctype.c_tolower_FUN_005c0820
 ;
 ; *****************************************************************************
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5d2d75                       ; 0040c219 | = "Too many actor types!"
     MOV dword ptr [0x01d1d400],ECX      ; 0040c21e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0040c224 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0040c22a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040c22a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040c22f
     JMP 0x0040c1c2                      ; 0040c232
         ;   XREF to: 0040c1c2 (UNCONDITIONAL_JUMP)  ; LAB_0040c1c2

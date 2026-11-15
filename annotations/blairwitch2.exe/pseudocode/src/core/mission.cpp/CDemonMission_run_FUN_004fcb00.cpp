@@ -20,12 +20,12 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
     if (_DAT_01cedee0 < 1) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x511;
-      core_main_c_FUN_004e4500("CDemonMission::run - hero list empty");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::run - hero list empty");
     }
     if (*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) == 0) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x512;
-      core_main_c_FUN_004e4500("CDemonMission::run - no gLocalHero");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0
               (this_ptr,*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2c));

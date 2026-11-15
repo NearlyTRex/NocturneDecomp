@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH 0x5e9414                       ; 0051ab7b | = "CDemonMission::getNextLoadedInventory..."
     MOV dword ptr [0x01d1d400],ECX      ; 0051ab80 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0051ab86 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051ab8c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051ab8c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051ab91
     POP ESI                             ; 0051ab94
     MOV EDI,dword ptr [ESP + 0x14]      ; 0051ab95
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5e945e                       ; 0051abd5 | = "CDemonMission::getNextLoadedInventory..."
     MOV [0x01d1d400],EAX                ; 0051abda | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0051abdf | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051abe5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051abe5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0051abea
     JMP 0x0051abad                      ; 0051abed
         ;   XREF to: 0051abad (UNCONDITIONAL_JUMP)  ; LAB_0051abad

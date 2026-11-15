@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 135,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
-      "stack_ref",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 161
+    "total_lines": 141
   },
   "cross_references": [],
   "function": {
@@ -167,43 +165,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061255c",
-      "severity": "mild",
-      "text": "(&DAT_0061255c->vertex_buffer_ptr->projected_vertex,&CStack_30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0061255c",
-      "severity": "mild",
-      "text": "(&DAT_0061255c->vertex_buffer_ptr[1].projected_vertex,&CStack_18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061255c",
-      "severity": "mild",
-      "text": "(&DAT_0061255c->vertex_buffer_ptr[2].projected_vertex,&CStack_24);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffff88",
-      "severity": "moderate",
-      "text": "poly = (SMRGLPrimitivePoly *)&stack0xffffff88;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Raw hex address 0x1bc120c assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 54,
+      "description": "Raw hex address 0x1bc120c assigned to bare local `poly`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `poly` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 34,
       "match": "0x1bc120c",
       "severity": "moderate",
-      "text": "this_ptr_00 = 0x01BC120C;",
+      "text": "poly = 0x01BC120C;",
       "type": "raw_address_constant"
     }
   ]

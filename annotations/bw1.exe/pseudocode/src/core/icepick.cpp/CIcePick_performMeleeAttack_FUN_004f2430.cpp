@@ -14,38 +14,39 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(CIcePick 
   int iVar2;
   int iVar3;
   byte bVar4;
-  float afStackY_1030 [6];
-  int aiStackY_1018 [993];
-  float *pfVar5;
+  int aiStackY_1030 [999];
+  CVector3f *input_local_point;
   SDamageInfo local_84;
-  float local_48;
-  float afStack_44 [2];
+  CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
-  float local_24;
-  int aiStack_20 [3];
+  CVector3f local_24;
+  int local_18;
   float local_14;
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
             (&(this_ptr->base).base.model,bone_index,&local_3c);
-  pfVar5 = &local_48;
-  local_48 = local_3c.x;
-  afStack_44[(uint)bVar4 * -2] = *(float *)((int)&local_3c + (uint)bVar4 * -8 + 4);
-  afStack_44[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       *(float *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  core_actor_cpp_FUN_00408b40(this_ptr,pfVar5);
-  local_30.x = local_24;
-  *(int *)((int)&local_30 + (uint)bVar4 * -8 + 4) = aiStack_20[(uint)bVar4 * -2];
-  *(int *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       aiStack_20[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  aiStack_20[2] = 0;
+  input_local_point = &local_48;
+  local_48.x = local_3c.x;
+  *(uint *)((int)&local_48 + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4);
+  *(uint *)((int)&local_48 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       *(uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            ((CDemonActor *)this_ptr,input_local_point,&local_24);
+  local_30.x = local_24.x;
+  *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_24 + (uint)bVar4 * -8 + 4);
+  *(uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       *(uint *)((int)&local_24 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  local_18 = 0;
   iVar3 = 0;
   iVar2 = 0;
   do {
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iVar3) {
-        if (aiStack_20[2] == 0) {
+        if (local_18 == 0) {
           return;
         }
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -68,7 +69,7 @@ LAB_004f24a7:
     iVar1 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).checkCylinderCollisionWorld)
                       ((CCharacter *)this_ptr_00,&local_30,1.0,&local_84);
     if (iVar1 == 0) goto LAB_004f24a7;
-    aiStack_20[2] = 1;
+    local_18 = 1;
     iVar3 = iVar3 + 1;
     iVar2 = iVar2 + 4;
   } while( true );

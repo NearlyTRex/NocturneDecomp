@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_004340b0
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_00434610
@@ -736,8 +736,8 @@ section .text
     PUSH EBX                            ; 00474ad5
     LEA ESI,[ESP + 0x2c]                ; 00474ad6
     LEA EDI,[ESP + 0x8]                 ; 00474ada
-    CALL core_actor.cpp_FUN_00408ac0    ; 00474ade
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00474ade
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00474ae3
     LEA ESI,[ESP + 0x24]                ; 00474ae6
     MOV EDX,dword ptr [ESP + 0x4c]      ; 00474aea

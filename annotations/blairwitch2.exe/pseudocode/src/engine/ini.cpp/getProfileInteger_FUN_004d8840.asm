@@ -14,7 +14,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdlib.c_atoi_FUN_005bad20
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004d8180
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5dac93                       ; 004d88c1
     MOV dword ptr [0x01d046a0],EDI      ; 004d88c6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 004d88cc | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004d88d2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d88d2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d88d7
     POP EDI                             ; 004d88da
     JMP 0x004d88a1                      ; 004d88db

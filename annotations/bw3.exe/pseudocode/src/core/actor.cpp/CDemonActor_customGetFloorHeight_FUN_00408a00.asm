@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH 0x5b550d                       ; 00408a0a | = "CDemonActor::customGetFloorHeight sho..."
     MOV dword ptr [0x01d71de0],EDX      ; 00408a0f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00408a15 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00408a1b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00408a1b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00408a20
     LEA EAX,[EAX]                       ; 00408a23
     LEA EDX,[EDX]                       ; 00408a29

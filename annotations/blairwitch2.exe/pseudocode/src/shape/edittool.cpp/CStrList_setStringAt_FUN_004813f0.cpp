@@ -20,7 +20,7 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004813f0(CStrList *this
   if ((index < 0) || (this_ptr->item_count <= index)) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xc93;
-    core_main_c_FUN_004e4500("CStrList::set - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::set - invalid index");
   }
   if (new_string == (char *)0x0) {
     new_string = &DAT_005d2760;
@@ -38,7 +38,7 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004813f0(CStrList *this
   if (this_ptr->data_array[index] == (char *)0x0) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xc9c;
-    core_main_c_FUN_004e4500("CStrList::set - out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::set - out of memory!");
   }
   pcVar2 = this_ptr->data_array[index];
   do {

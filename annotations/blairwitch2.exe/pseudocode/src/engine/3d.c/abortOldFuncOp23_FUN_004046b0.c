@@ -13,6 +13,6 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp23_FUN_004046b0(SMRGLHea
 {
   _DAT_01d046a0 = "..\\engine\\3d.c";
   _DAT_01d046a4 = 0x51a;
-  core_main_c_FUN_004e4500("old func");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("old func");
   return (SMRGLHeaderExtended *)0x0;
 }

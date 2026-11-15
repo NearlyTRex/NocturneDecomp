@@ -71,7 +71,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
     if (2999 < this_ptr->actor_lookup_count) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x1ed;
-      core_main_c_FUN_004e4500("Too many actors");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Too many actors");
     }
     this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar2;
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
@@ -84,7 +84,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
         if (2999 < this_ptr->actor_lookup_count) {
           _DAT_01d046a0 = "..\\core\\mission.cpp";
           _DAT_01d046a4 = 0x1f8;
-          core_main_c_FUN_004e4500("Too many actors");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Too many actors");
         }
         this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] =
              *(CDemonActor **)((int)(pCVar6 + 1) + 8);

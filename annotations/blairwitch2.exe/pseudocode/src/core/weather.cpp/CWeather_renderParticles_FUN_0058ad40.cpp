@@ -20,7 +20,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   CVector3f *world_position;
   uint uVar6;
   byte bVar7;
-  int aiStackY_10bc [1002];
+  uint auStackY_10bc [1002];
   SMRGLHeaderPrimitive local_fc;
   uint local_e4;
   uint local_e0;
@@ -36,8 +36,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   CVector3i local_98;
   CVector3i local_8c;
   CVector3i local_80;
-  float local_74;
-  int aiStack_70 [2];
+  CVector3f local_74;
   CVector3i local_68;
   CVector3i local_5c;
   CVector3i local_50;
@@ -56,11 +55,12 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
     return;
   }
-  engine_drender_cpp_FUN_0046b670(DAT_0060b280);
-  local_d4.x = local_74;
-  *(int *)((int)&local_d4 + (uint)bVar7 * -8 + 4) = aiStack_70[(uint)bVar7 * -2];
-  *(int *)((int)&local_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       aiStack_70[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670(DAT_0060b280,&local_74);
+  local_d4.x = local_74.x;
+  *(uint *)((int)&local_d4 + (uint)bVar7 * -8 + 4) =
+       *(uint *)((int)&local_74 + (uint)bVar7 * -8 + 4);
+  *(uint *)((int)&local_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+       *(uint *)((int)&local_74 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     local_d4.x = 0.0;
   }

@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_wsock32.c_ntohs
 ;   support_trisock.cpp_copyIPAddress_FUN_00578be0
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5ed02b                       ; 00578eca | = "sockaddr is not of AF_INET family!"
     MOV dword ptr [0x01d046a0],EDX      ; 00578ecf | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00578ed5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00578edb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00578edb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00578ee0
     JMP 0x00578e93                      ; 00578ee3
         ;   XREF to: 00578e93 (UNCONDITIONAL_JUMP)  ; LAB_00578e93

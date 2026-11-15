@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0047ef60(CDrawSurface *param_1,int param_2,int param_3,int param_4)
+; void cockpit_drawsurf_cpp_FUN_0047ef60(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@ section .text
     MOV EDI,0x1                         ; 0047ef8f
     MOV ECX,dword ptr [ESP + 0x30]      ; 0047ef94
     CALL crt_math.c_round_FUN_005c03a0  ; 0047ef98
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x14]        ; 0047ef9d
     MOV dword ptr [ESP + 0x4],EDI       ; 0047efa1
     MOV EAX,dword ptr [ECX + 0x8]       ; 0047efa5

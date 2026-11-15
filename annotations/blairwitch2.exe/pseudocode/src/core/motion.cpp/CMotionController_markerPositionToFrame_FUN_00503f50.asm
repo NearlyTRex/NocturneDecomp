@@ -71,7 +71,7 @@ section .text
     FLD float ptr [EBP + 0x1c]          ; 00503fa8
     FLD ST0                             ; 00503fab
     CALL crt_math.c_round_FUN_005b7ff0  ; 00503fad
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 00503fb2
     MOV EAX,dword ptr [ESP + 0x10]      ; 00503fb6
     MOV dword ptr [ESP + 0x14],EAX      ; 00503fba

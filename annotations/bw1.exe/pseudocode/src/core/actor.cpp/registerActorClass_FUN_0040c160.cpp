@@ -47,7 +47,7 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c160(CDemonA
   if (199 < iVar3) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0xa61;
-    core_main_c_FUN_005030e0("Too many actor types!");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many actor types!");
   }
   (&DAT_007c3048)[DAT_007c3044] = this_ptr;
   DAT_007c3044 = DAT_007c3044 + 1;

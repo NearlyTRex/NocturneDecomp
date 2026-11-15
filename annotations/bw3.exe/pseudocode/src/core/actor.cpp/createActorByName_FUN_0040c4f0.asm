@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getActorClassByName_FUN_0040c480
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5b5e28                       ; 0040c517 | = "Can't create instance of abstract typ..."
     MOV dword ptr [0x01d71de0],EBP      ; 0040c51c | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0040c522 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040c527
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c527
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c52c
     CALL dword ptr [EBX + 0x2c]         ; 0040c52f
         ;   Label: LAB_0040c52f
@@ -81,8 +81,8 @@ section .text
     PUSH 0x5b5de9                       ; 0040c549 | = "Can't create actor of unknown class t..."
     MOV dword ptr [0x01d71de0],EDX      ; 0040c54e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0040c554 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040c55a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c55a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c55f
     JMP 0x0040c506                      ; 0040c562
         ;   XREF to: 0040c506 (UNCONDITIONAL_JUMP)  ; LAB_0040c506
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5b5e64                       ; 0040c56f | = "Not enough memory to create %s"
     MOV dword ptr [0x01d71de0],EDX      ; 0040c574 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0040c57a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040c580
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040c580
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040c585
     MOV EAX,EBX                         ; 0040c588
     POP EBP                             ; 0040c58a

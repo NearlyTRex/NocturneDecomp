@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_buildColorLookupTable_FUN_00402880
 ;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
@@ -104,8 +104,8 @@ section .text
     PUSH 0x5ca0a3                       ; 004029a4 | = "hose!"
     MOV dword ptr [0x01d046a0],EDX      ; 004029a9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004029af | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004029b5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004029b5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004029ba
     PUSH 0x5ca0a9                       ; 004029bd | DAT_005ca0a9
         ;   Label: LAB_004029bd
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5ca0c8                       ; 00402a28 | = "Unable to write quick map!"
     MOV dword ptr [0x01d046a0],EBX      ; 00402a2d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00402a33 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00402a39
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00402a39
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00402a3e
     POP EBX                             ; 00402a41
     PUSH 0x8000                         ; 00402a42

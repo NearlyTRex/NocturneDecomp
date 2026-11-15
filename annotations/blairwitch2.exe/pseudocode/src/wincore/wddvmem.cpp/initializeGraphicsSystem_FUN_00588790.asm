@@ -29,7 +29,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_ddraw.c_DirectDrawCreate
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   engine_special.cpp_loadExternalRenderer_FUN_0055e8c0
@@ -78,8 +78,8 @@ section .text
     PUSH 0x5ee17b                       ; 005887fa | = "WDDVMEM: Fatal - out of Z buffer memory"
     MOV dword ptr [0x01d046a0],EDI      ; 005887ff | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 00588805 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0058880b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058880b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588810
     MOV EAX,[0x02661af0]                ; 00588813 | DAT_02661af0
         ;   Label: LAB_00588813
@@ -156,8 +156,8 @@ section .text
     PUSH 0x5ee138                       ; 005888c1 | = "WDDVMEM: Fatal - out of frame buffer ..."
     MOV dword ptr [0x01d046a0],ECX      ; 005888c6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 005888cc | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005888d2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005888d2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005888d7
     JMP 0x005887cc                      ; 005888da
         ;   XREF to: 005887cc (UNCONDITIONAL_JUMP)  ; LAB_005887cc

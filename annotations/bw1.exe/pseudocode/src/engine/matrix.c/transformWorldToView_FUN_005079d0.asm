@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_transformWorldToView_FUN_005079d0(void)
+; CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVector3i *input_coords,CVector3i *output_coords)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_coords
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c51d2c

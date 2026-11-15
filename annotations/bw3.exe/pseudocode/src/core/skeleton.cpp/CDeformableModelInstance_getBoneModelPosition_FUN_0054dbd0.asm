@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -116,8 +116,8 @@ section .text
     PUSH EBP                            ; 0054dc9e
     LEA ESI,[ESP + 0x74]                ; 0054dc9f
     LEA EDI,[ESP + 0x80]                ; 0054dca3
-    CALL core_xform.cpp_FUN_00583260    ; 0054dcaa
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0054dcaa
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x74]                ; 0054dcaf
     ADD ESP,0x8                         ; 0054dcb3
     JMP 0x0054dbf7                      ; 0054dcb6

@@ -18,7 +18,7 @@ void __cdecl engine_mini3d_cpp_allocVertexList_FUN_004ede40(void)
   if (_DAT_01d76f5c == (void *)0x0) {
     _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
     _DAT_01d71de4 = 0x67d;
-    core_main_c_FUN_004e4330("CMini3D::allocVertexList - Out of memory!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::allocVertexList - Out of memory!");
   }
   _DAT_01d76f60 = (int)_DAT_01d76f5c + 0x3fU & 0xffffffc0;
   _DAT_01d76f64 = _DAT_01d76f60;

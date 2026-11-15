@@ -28,6 +28,6 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecP
   }
   _DAT_01d71de0 = "..\\core\\bmppuzzl.cpp";
   _DAT_01d71de4 = 0x290;
-  core_main_c_FUN_004e4330("Too damn many buttons");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Too damn many buttons");
   return;
 }

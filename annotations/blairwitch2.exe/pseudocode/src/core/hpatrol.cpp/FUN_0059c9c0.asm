@@ -43,7 +43,7 @@ section .text
     PUSH ECX                            ; 0059c9d4
     MOV dword ptr [ESP + 0x30],EDX      ; 0059c9d5
     CALL crt_unknown.c_strtok_FUN_005baf20 ; 0059c9d9
-        ;   XREF to: 005baf20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_strtok_FUN_005baf20()
+        ;   XREF to: 005baf20 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_strtok_FUN_005baf20(char * str, char * delimiters)
     ADD ESP,0x8                         ; 0059c9de
     MOV EDI,EAX                         ; 0059c9e1
     MOV dword ptr [ESP + 0x24],EAX      ; 0059c9e3

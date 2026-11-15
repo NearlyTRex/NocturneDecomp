@@ -25,7 +25,7 @@
 ;   undefined4 DAT_0264161c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5e8c68                       ; 005504ee | = "popSfxOptions - stack empty"
     MOV dword ptr [0x01d046a0],EBX      ; 005504f3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 005504f9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005504ff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005504ff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00550504
     POP EBX                             ; 00550507
     POP ESI                             ; 00550508

@@ -35,7 +35,7 @@ void __cdecl CMansionPuzzleCircle::process(CMansionPuzzleCircle *this_ptr,float 
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_004e5900
 // Address: 004e5900
-CBoundingBox3D * __cdecl CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getCollisionType_FUN_004e5960
 // Address: 004e5960
@@ -63,7 +63,7 @@ void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_pt
 
 // Original: core_manpuz.cpp_FUN_004e6240
 // Address: 004e6240
-void FUN_004e6240(int param_1,int param_2);
+void FUN_004e6240(CDemonActor *param_1,int param_2);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
 // Address: 004e6340
@@ -159,7 +159,7 @@ void __cdecl CMirrorHack::process(CMirrorHack *this_ptr,float delta_time);
 
 // Original: core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004e7900
 // Address: 004e7900
-CBoundingBox3D * __cdecl CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_004e7940
 // Address: 004e7940

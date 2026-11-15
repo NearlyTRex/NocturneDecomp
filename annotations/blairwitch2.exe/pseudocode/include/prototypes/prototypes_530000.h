@@ -103,7 +103,7 @@ SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00534d10(SVDBox *this_ptr);
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_ctor_FUN_00534d20(CBoundingBox3D *this_ptr);
 void core_set_cpp_FUN_00534d80(void *param_1);
 void __cdecl core_setcolid_cpp_staticInit_FUN_00534da0(void);
-float * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
+CDemonSet * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CDemonActor *param_7);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0(CDemonSet *this_ptr,CVector3f *position);
 int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_00535e90(CDemonSet *this_ptr,CVector3f *world_position);

@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_script.cpp_CScript_findLabelIndex_FUN_0054acc0
 ;   core_script.cpp_CScript_step_FUN_00544460
 ;
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5ee2f3                       ; 005443d4 | = "Script has \"initSection\" label, but..."
     MOV dword ptr [0x01d1d400],EDI      ; 005443d9 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005443df | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005443e4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005443e4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005443e9
     JMP 0x00544360                      ; 005443ec
         ;   XREF to: 00544360 (UNCONDITIONAL_JUMP)  ; LAB_00544360
@@ -145,8 +145,8 @@ section .text
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00544413
     PUSH EDX                            ; 00544416
     PUSH 0x5ee345                       ; 00544417 | = "Error processing script.\nLine: %d\nT..."
-    CALL core_main.c_FUN_005030e0       ; 0054441c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054441c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 00544421
     JMP 0x00544392                      ; 00544424
         ;   XREF to: 00544392 (UNCONDITIONAL_JUMP)  ; LAB_00544392
@@ -160,8 +160,8 @@ section .text
     PUSH 0x5ee395                       ; 00544440 | = "Infinite loop detected in initSection.\n"
     MOV dword ptr [0x01d1d400],EDI      ; 00544445 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0054444b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00544450
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00544450
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00544455
     JMP 0x00544374                      ; 00544458
         ;   XREF to: 00544374 (UNCONDITIONAL_JUMP)  ; LAB_00544374

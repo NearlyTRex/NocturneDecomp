@@ -1,6 +1,6 @@
 // Name: support_trisock.cpp_FUN_0057ad10
 // Address: 0057ad10
-// Address Range: [[0057ad10, 0057ad39] [0057adfb, 0057ae56] [0057b4ad, 0057b601]]
+// Address Range: [[0057ad10, 0057b601]]
 // Convention: unknown
 // Signature: undefined4 support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
 
@@ -188,7 +188,7 @@ LAB_0057b03d:
             do {
               *(byte *)(iVar6 + 0x810) = 0;
               iVar5 = support_trisock_cpp_FUN_0057b680(param_1,0);
-              if (iVar5 < 0) goto LAB_0057adfb;
+              if (iVar5 < 0) goto switchD_0057ad33_default;
             } while (iVar5 == 0xd);
             if (iVar5 == 10) break;
             if (uVar7 < 0x1ff) {
@@ -197,7 +197,7 @@ LAB_0057b03d:
               iVar6 = iVar6 + 1;
             }
           }
-          if ((int)uVar7 < 0) goto LAB_0057adfb;
+          if ((int)uVar7 < 0) goto switchD_0057ad33_default;
           if (*(int *)(param_1 + 0xd1c) == 0) {
             pcVar9 = "Unknown error";
             pcVar8 = acStack_150;
@@ -230,7 +230,7 @@ LAB_0057b03d:
               _sprintf(pcStack_24,"%d: %s");
               *(uint *)(param_1 + 0xd28) = 0xfffffffb;
             }
-            goto LAB_0057adfb;
+            goto switchD_0057ad33_default;
           }
           if (*(int *)(param_1 + 0xd1c) != 1) goto LAB_0057b2ca;
           if (*(char *)(param_1 + 0x810) != '\0') {
@@ -247,7 +247,7 @@ LAB_0057b03d:
           *(uint *)(param_1 + 0x608) = 0;
           iVar6 = *(int *)(param_1 + 0xd28);
 joined_r0x0057b476:
-          if (iVar6 != 4) goto LAB_0057adfb;
+          if (iVar6 != 4) goto switchD_0057ad33_default;
         }
         while( true ) {
           if ((*(uint *)(param_1 + 0x60c) < 0x80000000) &&
@@ -274,7 +274,7 @@ joined_r0x0057b4a2:
       } while (iVar6 == 4);
     }
   }
-LAB_0057adfb:
+switchD_0057ad33_default:
   switch(*(uint *)(param_1 + 0xd28)) {
   case 0:
     *param_2 = '\0';

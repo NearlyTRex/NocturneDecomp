@@ -26,7 +26,7 @@ void __cdecl core_fldnotes_cpp_STextView_flushWord_FUN_004bb570(STextView *this_
   if (resource == (SPageResourceText *)0x0) {
     _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
     _DAT_01d1d404 = 0x581;
-    core_main_c_FUN_005030e0("Out of memory");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
   }
   (resource->base).x = this_ptr->word_x;
   (resource->base).y = this_ptr->word_y;

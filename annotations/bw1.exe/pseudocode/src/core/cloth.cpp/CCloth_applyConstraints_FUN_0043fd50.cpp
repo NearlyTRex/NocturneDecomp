@@ -201,7 +201,9 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043fd50(CCloth *this_pt
           local_64 = (float)(_DAT_01cc8050 - ((int)local_68 >> 1));
           local_1b0.position.x = local_20->radius1 * (float)_DAT_005d68b0 * local_1e0 * local_64;
           local_1b0.position.y = (float)_DAT_005d68b0 * local_20->radius2 * local_1dc * local_64;
-          core_dirmat_cpp_FUN_0045f690(&local_20->local_matrix,&local_1b0);
+          core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+                    (&local_20->local_matrix,&local_1b0.position,
+                     (CVector3f *)&local_1b0.bone_positions[0].y);
           local_84 = local_1b0.bone_positions[0].y;
           local_80[(uint)bVar6 * -2] = *(float *)((int)&local_1b0 + (uint)bVar6 * -8 + 0xf4);
           local_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

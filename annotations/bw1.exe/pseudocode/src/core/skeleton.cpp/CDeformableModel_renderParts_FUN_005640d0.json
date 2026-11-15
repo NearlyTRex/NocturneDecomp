@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 426,
+    "complexity_score": 443,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 261,
-    "suspect_count": 15,
+    "pseudocode_lines": 243,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 918
+    "total_lines": 900
   },
   "cross_references": [
     {
@@ -721,7 +722,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 53,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "local_84 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
@@ -729,7 +730,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 58,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);",
@@ -737,7 +738,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 74,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
@@ -745,23 +746,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 79,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "pSVar7 = DAT_00612560->vertex_buffer_ptr;",
+      "text": "pSVar4 = DAT_00612560->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 143,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,local_30,green_component,iVar10);",
+      "text": "(DAT_00612560,(int)local_30,(int)ROUND(dVar11),iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 149,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&local_12c);",
@@ -769,7 +770,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 158,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,",
@@ -777,31 +778,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 183,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(local_94[*local_98].textures + iVar2))",
+      "text": "(DAT_00612560,",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
-      "match": "(int *)((int)this_ptr",
+      "line": 184,
+      "match": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2",
       "severity": "moderate",
-      "text": "(iVar10 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),",
+      "text": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(float *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 226,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(local_a4[*local_9c].textures + iVar10));",
+      "text": "(DAT_00612560,",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2",
+      "severity": "moderate",
+      "text": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 244,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",
@@ -809,15 +826,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
+      "line": 245,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
       "type": "undefined_data"
     },
     {
+      "description": "Raw hex address 0x564810 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 138,
+      "match": "0x564810",
+      "severity": "moderate",
+      "text": "iVar7 = 0x564810;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 236,
+      "line": 217,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -825,10 +850,10 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 191,
+      "line": 172,
       "match": "(int *)(local_ac + 0x90)",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(*(int *)(local_ac + 0x90) + local_40 * 4);",
+      "text": "fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);",
       "type": "pointer_cast"
     }
   ]

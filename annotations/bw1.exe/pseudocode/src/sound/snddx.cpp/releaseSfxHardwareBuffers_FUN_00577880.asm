@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   sfx_handle
 ;
 ; XREF[3]:
-;   sound_snddx.cpp_FUN_00577cd0 at 00577cf8
-;   sound_snddx.cpp_FUN_00578cc0 at 00578f03
-;   sound_snddx.cpp_FUN_00579f30 at 00579f62
+;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0 at 00578f03
+;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_00579f30 at 00579f62
+;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_00577cd0 at 00577cf8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005f4c35

@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     PUSH 0x5db4fb                       ; 00484ca7 | = "CDR::captureFace - too many faces cap..."
     MOV dword ptr [0x01d1d400],EDI      ; 00484cac | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00484cb2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00484cb7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484cb7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484cbc
     MOV EDX,dword ptr [0x01bc1280]      ; 00484cbf | DAT_01bc1280
         ;   Label: LAB_00484cbf

@@ -24,7 +24,7 @@ uint __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *th
   if (pcVar1 == (char *)0x0) {
     _DAT_01d046a0 = "..\\support\\codec.cpp";
     _DAT_01d046a4 = 0x87b;
-    core_main_c_FUN_004e4500("CInStreamPipe::open - out of memory for %d byte buffer",this_ptr->buffer_size);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CInStreamPipe::open - out of memory for %d byte buffer");
   }
   this_ptr->buffer_length = 0;
   this_ptr->position = 0;

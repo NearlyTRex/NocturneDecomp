@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5bb81e                       ; 00461365 | = "Too many parts!"
     MOV dword ptr [0x01d71de0],EBP      ; 0046136a | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00461370 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00461375
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461375
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046137a
     MOV EAX,dword ptr [EBX + 0x104]     ; 0046137d
         ;   Label: LAB_0046137d
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5bb841                       ; 00461433 | = "Out of memory in CKeyFramedModel::all..."
     MOV dword ptr [0x01d71de4],ESI      ; 00461438 | DAT_01d71de4
     MOV dword ptr [0x01d71de0],ECX      ; 0046143e | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 00461444
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461444
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00461449
     CMP dword ptr [EBX + 0x100],0x1     ; 0046144c
     JZ 0x004614cd                       ; 00461453
@@ -147,8 +147,8 @@ section .text
     PUSH 0x5bb7f7                       ; 00461468 | = "Too many materials!"
     MOV dword ptr [0x01d71de0],ECX      ; 0046146d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00461473 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00461479
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461479
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046147e
     JMP 0x00461352                      ; 00461481
         ;   XREF to: 00461352 (UNCONDITIONAL_JUMP)  ; LAB_00461352
@@ -198,8 +198,8 @@ section .text
     PUSH 0x5bb8ad                       ; 00461507 | = "Out of memory for vertex normals in C..."
     MOV dword ptr [0x01d71de0],ESI      ; 0046150c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00461512 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00461518
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461518
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0046151d
     POP EBP                             ; 00461520
     POP EDI                             ; 00461521

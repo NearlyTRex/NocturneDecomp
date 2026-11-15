@@ -15,10 +15,10 @@
 ;   undefined4 DAT_01c35e60
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
@@ -228,8 +228,8 @@ section .text
     PUSH EBX                            ; 00588154
     LEA ESI,[ESP + 0xe0]                ; 00588155
     LEA EDI,[ESP + 0xa4]                ; 0058815c
-    CALL core_actor.cpp_FUN_00408d70    ; 00588163
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00588163
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe0]                ; 00588168
     ADD ESP,0x8                         ; 0058816f
     LEA EAX,[ESP + 0x9c]                ; 00588172
@@ -241,8 +241,8 @@ section .text
     PUSH EBP                            ; 00588184
     LEA ESI,[ESP + 0x104]               ; 00588185
     LEA EDI,[ESP + 0xf8]                ; 0058818c
-    CALL core_actor.cpp_FUN_00408de0    ; 00588193
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00588193
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x104]               ; 00588198
     ADD ESP,0x8                         ; 0058819f
     LEA EAX,[ESP + 0x78]                ; 005881a2

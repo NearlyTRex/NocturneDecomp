@@ -30,7 +30,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_0044fba0(char *filename)
   if (0xff < _DAT_01b13a1c) {
     _DAT_01d046a0 = "..\\core\\dmodel.cpp";
     _DAT_01d046a4 = 0x4cd;
-    core_main_c_FUN_004e4500("Can't load %s because keyFrame model manager is full.  (Size is %d)",filename,0x100);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't load %s because keyFrame model manager is full.  (Size is %d)");
   }
   pCVar2 = g_CKeyFramedModelPool + _DAT_01b13a1c;
   _DAT_01b13a1c = _DAT_01b13a1c + 1;

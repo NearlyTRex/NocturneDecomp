@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 97,
+    "complexity_score": 25,
     "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "fpu_register_input",
-      "undefined_data",
-      "unknown_type"
+      "undefined_data"
     ],
-    "total_lines": 25
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -122,9 +120,9 @@
         "005c1d7d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__fpureg",
     "name": "crt_math.c_atan2_FUN_005c1d69",
-    "signature": "void crt_math_c_atan2_FUN_005c1d69(void)"
+    "signature": "float10 __fpureg crt_math_c_atan2_FUN_005c1d69(float10 y,float10 x)"
   },
   "function_calls": [
     {
@@ -141,6 +139,14 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 2,
+    "estimated_params": 2,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.428571428571429,
     "instruction_count": 7,
@@ -190,69 +196,21 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
   },
   "suspects": [
     {
-      "description": "Unknown/unresolved type",
-      "line": 5,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 in_ST0;",
-      "type": "unknown_type"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 5,
-      "match": "in_ST0",
-      "severity": "mild",
-      "text": "unkbyte10 in_ST0;",
-      "type": "fpu_register_input"
-    },
-    {
-      "description": "Unknown/unresolved type",
-      "line": 6,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 in_ST1;",
-      "type": "unknown_type"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 6,
-      "match": "in_ST1",
-      "severity": "mild",
-      "text": "unkbyte10 in_ST1;",
-      "type": "fpu_register_input"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 5,
       "match": "DAT_006267b8",
       "severity": "mild",
       "text": "if ((DAT_006267b8 & 1) == 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 9,
-      "match": "in_ST0",
-      "severity": "mild",
-      "text": "fpatan(in_ST0,in_ST1);",
-      "type": "fpu_register_input"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 9,
-      "match": "in_ST1",
-      "severity": "mild",
-      "text": "fpatan(in_ST0,in_ST1);",
-      "type": "fpu_register_input"
     }
   ]
 }

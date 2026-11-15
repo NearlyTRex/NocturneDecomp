@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 743,
-    "complexity_score": 621,
+    "complexity_score": 629,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 331,
+    "pseudocode_lines": 339,
     "suspect_count": 28,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1074
+    "total_lines": 1082
   },
   "cross_references": [
     {
@@ -387,7 +387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_0070ca7c",
       "severity": "mild",
       "text": "if (DAT_0070ca7c != 0) {",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_00622014",
       "severity": "mild",
       "text": "((SRenderVertex *)(&DAT_00622014 + *vertex_indices * 0xc),",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_00622014",
       "severity": "mild",
       "text": "(SRenderVertex *)(&DAT_00622014 + vertex_indices[1] * 0xc),",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_00622014",
       "severity": "mild",
       "text": "(SRenderVertex *)(&DAT_00622014 + vertex_indices[2] * 0xc));",
@@ -419,18 +419,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00622014",
-      "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "(SRenderVertex *)(&DAT_00622014 + piVar4[1] * 0xc),",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),",
       "type": "undefined_data"
     },
     {
@@ -438,12 +430,20 @@
       "line": 47,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "(SRenderVertex *)(&DAT_00622014 + piVar4[2] * 0xc));",
+      "text": "(SRenderVertex *)(&DAT_00622014 + piVar6[1] * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 48,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_00622014 + piVar6[2] * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
       "match": "DAT_0070ca74",
       "severity": "mild",
       "text": "if ((_DAT_01c37788 == 0) || (DAT_0070ca74 != 0)) {",
@@ -451,50 +451,42 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 71,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),1);",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),1);",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),1);",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),1);",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar4 * 0xc),1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_00622028",
-      "severity": "mild",
-      "text": "iVar11 = *(int *)(&DAT_00622028 + iVar2) >> 0x10;",
+      "text": "((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),1);",
       "type": "undefined_data"
     },
     {
@@ -502,15 +494,15 @@
       "line": 137,
       "match": "DAT_00622028",
       "severity": "mild",
-      "text": "iVar8 = *(int *)(&DAT_00622028 + iVar9) >> 0x10;",
+      "text": "iVar11 = *(int *)(&DAT_00622028 + iVar2) >> 0x10;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_00622014",
+      "line": 138,
+      "match": "DAT_00622028",
       "severity": "mild",
-      "text": "puVar7 = &DAT_00622014 + *local_24 * 0xc;",
+      "text": "iVar8 = *(int *)(&DAT_00622028 + iVar9) >> 0x10;",
       "type": "undefined_data"
     },
     {
@@ -518,12 +510,20 @@
       "line": 141,
       "match": "DAT_00622014",
       "severity": "mild",
+      "text": "puVar7 = &DAT_00622014 + *local_24 * 0xc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_00622014",
+      "severity": "mild",
       "text": "puVar12 = &DAT_00622014 + vertex_indices[iVar3] * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_00622028",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_00622028 + iVar2) < *(int *)(&DAT_00622028 + iVar9)) {",
@@ -531,18 +531,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_00622028",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_00622028 + iVar2) < *(int *)(&DAT_00622028 + iVar9)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 145,
-      "match": "DAT_00622014",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_00622014 + vertex_indices[iVar3] * 0xc;",
       "type": "undefined_data"
     },
     {
@@ -550,12 +542,20 @@
       "line": 146,
       "match": "DAT_00622014",
       "severity": "mild",
+      "text": "puVar7 = &DAT_00622014 + vertex_indices[iVar3] * 0xc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_00622014",
+      "severity": "mild",
       "text": "puVar12 = &DAT_00622014 + *local_24 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 150,
       "match": "DAT_01e61b60",
       "severity": "mild",
       "text": "*(int *)(&DAT_01e61b60 + iVar11) = iVar8;",
@@ -563,39 +563,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 238,
       "match": "DAT_01e61b60",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_01e61b60;",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_01e61b60;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 250,
+      "line": 252,
       "match": "DAT_01e61b60",
       "severity": "mild",
-      "text": "piVar4 = (int *)&DAT_01e61b60;",
+      "text": "left = (SSoftwareEdge *)&DAT_01e61b60;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 266,
+      "line": 268,
       "match": "DAT_01e61b60",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_01e61b60;",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_01e61b60;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 284,
+      "line": 286,
       "match": "DAT_01e61b60",
       "severity": "mild",
-      "text": "piVar4 = (int *)&DAT_01e61b60;",
+      "text": "left = (SSoftwareEdge *)&DAT_01e61b60;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 327,
+      "line": 335,
       "match": "DAT_00622014",
       "severity": "mild",
       "text": "local_68[iVar3] = (SRenderVertex *)(&DAT_00622014 + iVar8 * 0xc);",

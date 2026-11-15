@@ -53,7 +53,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_ctype.c_toupper_FUN_005b8e40
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_memory.c___vec_new_FUN_005ba2b4
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5d1e85                       ; 0047c10c | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d046a0],ECX      ; 0047c111 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0047c117 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047c11d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047c11d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047c122
     MOV EAX,[0x01c25590]                ; 0047c125 | DAT_01c25590
         ;   Label: LAB_0047c125
@@ -125,7 +125,7 @@ section .text
     PUSH EAX                            ; 0047c186
     XOR EDI,EDI                         ; 0047c187
     CALL crt_memory.c___vec_new_FUN_005ba2b4 ; 0047c189
-        ;   XREF to: 005ba2b4 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_005ba2b4()
+        ;   XREF to: 005ba2b4 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_005ba2b4(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0047c18e
     XOR EBX,EBX                         ; 0047c191
     MOV dword ptr [ESP + 0x110],EAX     ; 0047c193

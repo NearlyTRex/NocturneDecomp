@@ -39,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 004df95f
     PUSH EAX                            ; 004df963
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004df964
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x2e0]     ; 004df969
     ADD ESP,0xc                         ; 004df96f
     LEA EDX,[EAX + 0x30]                ; 004df972
@@ -49,7 +49,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 004df97a
     PUSH EAX                            ; 004df97e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004df97f
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004df984
     LEA EAX,[ESP + 0x68]                ; 004df987
     PUSH EAX                            ; 004df98b
@@ -86,7 +86,7 @@ section .text
     LEA ESI,[ESP + 0xe4]                ; 004dfa09
     LEA EDI,[ESP + 0xd8]                ; 004dfa10
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 004dfa17
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0xe4]                ; 004dfa1c
     LEA EAX,[ESP + 0xd8]                ; 004dfa23
     ADD ESP,0x4                         ; 004dfa2a

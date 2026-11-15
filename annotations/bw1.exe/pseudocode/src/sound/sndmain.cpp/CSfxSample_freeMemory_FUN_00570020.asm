@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_unknown.c_FUN_005c0344
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_0052ae80
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00570130
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5f32e9                       ; 00570039 | = "SfxSample::freeMemory - freeing sampl..."
     MOV dword ptr [0x01d1d400],ECX      ; 0057003e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00570044 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0057004a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057004a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0057004f
     POP ESI                             ; 00570052
     PUSH EBX                            ; 00570053

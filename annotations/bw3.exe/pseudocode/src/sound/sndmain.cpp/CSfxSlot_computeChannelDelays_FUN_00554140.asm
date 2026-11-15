@@ -24,7 +24,7 @@
 ;   undefined4 DAT_02cf341c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d302e                       ; 005541a7 | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 005541ac | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 005541b2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005541b8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005541b8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005541bd
     JMP 0x00554159                      ; 005541c0
         ;   XREF to: 00554159 (UNCONDITIONAL_JUMP)  ; LAB_00554159
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005541f5
     FMUL float ptr [ESP + 0x4]          ; 005541f8
     CALL crt_math.c_round_FUN_005a3120  ; 005541fc
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 00554201
     MOV EAX,dword ptr [ESP]             ; 00554204
     MOV dword ptr [EDX + 0xb0],EAX      ; 00554207

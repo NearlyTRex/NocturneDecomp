@@ -16,15 +16,15 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004101f0(CBaron *this_pt
   float fVar3;
   SMotion *pSVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
+  float *pfVar6;
+  float *pfVar7;
   byte bVar8;
-  float10 fVar9;
-  uint auStack_58 [6];
-  uint auStack_40 [6];
-  CVector3f CStack_28;
+  double dVar9;
+  float afStack_5c [6];
+  float afStack_44 [6];
+  CVector3f CStack_2c;
   float fStack_1c;
-  int iStack_18;
+  uint uStack_18;
   
   bVar8 = 0;
   if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
@@ -33,36 +33,35 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004101f0(CBaron *this_pt
   pCVar1 = &(this_ptr->base).base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
   uVar2 = pSVar4->state_index;
-  fVar3 = (this_ptr->base).base.model.base.current_frame_number;
-  fStack_1c = fVar3;
+  afStack_5c[0] = (this_ptr->base).base.model.base.current_frame_number;
+  fStack_1c = afStack_5c[0];
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
   if (uVar2 < 6) {
     if (uVar2 != 5) {
 LAB_004103e7:
-      iStack_18 = 65000;
+      uStack_18 = 65000;
       goto LAB_00410269;
     }
 LAB_00410253:
-    fVar9 = ((float10)fVar3 * (float10)_DAT_005d350a) / (float10)pSVar4->frame_count;
+    fVar3 = afStack_5c[0] * (float)_DAT_005d350a;
   }
   else {
     if (uVar2 < 7) goto LAB_00410253;
     if (uVar2 != 7) goto LAB_004103e7;
-    fVar9 = (float10)pSVar4->frame_count;
-    fVar9 = ((fVar9 - (float10)fStack_1c) * (float10)_DAT_005d350a) / fVar9;
+    fVar3 = ((float)pSVar4->frame_count - fStack_1c) * (float)_DAT_005d350a;
   }
-  round();
-  iStack_18 = (int)ROUND(fVar9);
+  dVar9 = round((double)(fVar3 / (float)pSVar4->frame_count));
+  fStack_1c = (float)(int)ROUND(dVar9);
 LAB_00410269:
   if (this_ptr->shell_visible != 0) {
-    engine_3d_c_setRenderAlpha_FUN_00406bd0((iStack_18 * 2) / 3);
+    engine_3d_c_setRenderAlpha_FUN_00406bd0(((int)fStack_1c * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
               (DAT_00612560,&(this_ptr->base).base.base.location.position);
-    CStack_28.y = DAT_007c34dc;
-    CStack_28.x = 0.0;
-    CStack_28.z = 0.0;
+    CStack_2c.y = DAT_007c34dc;
+    CStack_2c.x = 0.0;
+    CStack_2c.z = 0.0;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-              (DAT_00612560,&CStack_28,(CVector3f *)0x0);
+              (DAT_00612560,&CStack_2c,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               ((CKeyFramedModelInstance *)&DAT_007c351c,0.0,0x23);
     engine_drender_cpp_pop_FUN_004839a0();
@@ -70,17 +69,17 @@ LAB_00410269:
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar6 = auStack_58;
-  puVar7 = auStack_40;
+  pfVar6 = afStack_5c;
+  pfVar7 = afStack_44;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-    puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+    *pfVar7 = *pfVar6;
+    pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
+    pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
   }
-  iVar5 = core_box_cpp_FUN_004207b0(auStack_40);
+  iVar5 = core_box_cpp_FUN_004207b0(afStack_44);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,iStack_18);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,(int)fStack_1c);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);
     pCVar1 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810(pCVar1,-1,0x2e7,1,0);

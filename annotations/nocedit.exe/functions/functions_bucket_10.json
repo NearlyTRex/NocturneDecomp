@@ -93266,38 +93266,6 @@
             ]
           },
           "type":"CWavOutDevice*"
-        },
-        {
-          "name":"output_buffer",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"short*"
-        },
-        {
-          "name":"num_samples",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
         }
       ],
       "ret_storage":{
@@ -93650,7 +93618,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90",
+    "name":"core_sound.cpp_CSound_setReverb_FUN_005b3c90",
     "ret":"void",
     "vars":{
       "params":[
@@ -93671,7 +93639,7 @@
           "type":"CSound*"
         },
         {
-          "name":"listener_orient_x",
+          "name":"volume",
           "storage":{
             "offset":8,
             "size":4,
@@ -93687,7 +93655,7 @@
           "type":"float"
         },
         {
-          "name":"listener_orient_y",
+          "name":"decay_time",
           "storage":{
             "offset":12,
             "size":4,
@@ -93703,7 +93671,7 @@
           "type":"float"
         },
         {
-          "name":"listener_orient_z",
+          "name":"damping",
           "storage":{
             "offset":16,
             "size":4,

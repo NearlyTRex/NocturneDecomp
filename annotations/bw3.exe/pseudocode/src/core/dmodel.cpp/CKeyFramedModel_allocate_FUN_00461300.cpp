@@ -25,12 +25,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00461300(CKeyFramedMod
   if (4 < this_ptr->texture_count) {
     _DAT_01d71de0 = "..\\core\\dmodel.cpp";
     _DAT_01d71de4 = 0x2c0;
-    core_main_c_FUN_004e4330("Too many materials!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Too many materials!");
   }
   if (0x1e < this_ptr->part_count) {
     _DAT_01d71de0 = "..\\core\\dmodel.cpp";
     _DAT_01d71de4 = 0x2c1;
-    core_main_c_FUN_004e4330("Too many parts!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Too many parts!");
   }
   pCVar1 = (CVector3i *)
            operator_new_array
@@ -51,9 +51,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00461300(CKeyFramedMod
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00460e10(this_ptr);
     _DAT_01d71de4 = 0x2d3;
     _DAT_01d71de0 = "..\\core\\dmodel.cpp";
-    core_main_c_FUN_004e4330
-              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",this_ptr->frame_count,this_ptr->vertex_count,
-               this_ptr->poly_count);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d");
     if (this_ptr->frame_count != 1) {
       return;
     }
@@ -68,6 +66,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00461300(CKeyFramedMod
   }
   _DAT_01d71de0 = "..\\core\\dmodel.cpp";
   _DAT_01d71de4 = 0x2db;
-  core_main_c_FUN_004e4330("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",this_ptr->vertex_count);
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d");
   return;
 }

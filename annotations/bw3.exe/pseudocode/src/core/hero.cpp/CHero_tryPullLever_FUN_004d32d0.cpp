@@ -20,7 +20,7 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
   float local_40;
   float local_3c;
   float local_38;
-  float local_34;
+  CVector3f local_34;
   CVector3f *local_28;
   float local_24;
   float local_20;
@@ -38,12 +38,13 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                              g_CLeverClassInfo.name_hash);
     if (this_ptr_00 != (CLever *)0x0) {
-      core_actor_cpp_FUN_00408bf0(this_ptr,&(this_ptr_00->base).location);
-      local_40 = local_34;
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                ((CDemonActor *)this_ptr,&(this_ptr_00->base).location.position,&local_34);
+      local_40 = local_34.x;
       (&stack0xffffffc4)[(uint)bVar2 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);
+           (float)*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
       *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-           *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+           *(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
       if ((((ABS(local_3c) <= (float)_DAT_005c4d2d) && (0.0 <= (double)local_38)) &&
           ((double)local_38 <= _DAT_005c4d35)) && (ABS(local_40) <= (float)_DAT_005c4d35)) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc0);

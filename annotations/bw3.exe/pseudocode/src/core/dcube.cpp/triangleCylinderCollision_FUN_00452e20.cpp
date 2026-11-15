@@ -21,9 +21,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00452e20(CDemonCubeTri
   uint uVar8;
   float fVar9;
   CVector3f local_7c;
-  float local_70;
-  float local_6c;
-  float local_68;
+  CVector3f local_70;
   CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
@@ -118,18 +116,20 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00452e20(CDemonCubeTri
         }
         if (_DAT_005ba12e <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
-          local_70 = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
-          local_68 = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
-          local_6c = cylinder_center->y;
-          fVar9 = (float)core_dcube_cpp_FUN_00452240(triangle,&local_70,&DAT_015485dc);
+          local_70.x = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
+          local_70.z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
+          local_70.y = cylinder_center->y;
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240
+                            (triangle,&local_70,(CVector3f *)&DAT_015485dc);
           if ((0.0 <= fVar9) &&
-             (local_6c = fVar9 * _DAT_015485e0 + local_6c, *out_height < local_6c)) {
-            *out_height = local_6c;
+             (local_70.y = fVar9 * _DAT_015485e0 + local_70.y, *out_height < local_70.y)) {
+            *out_height = local_70.y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
-          fVar9 = (float)core_dcube_cpp_FUN_00452240(triangle,cylinder_center,&DAT_015485dc);
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240
+                            (triangle,cylinder_center,(CVector3f *)&DAT_015485dc);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_40.y;

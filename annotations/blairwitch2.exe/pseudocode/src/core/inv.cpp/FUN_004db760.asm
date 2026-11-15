@@ -13,7 +13,7 @@
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_inv.cpp_FUN_004dadb0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5db71a                       ; 004db79e
     MOV dword ptr [0x01d046a0],ECX      ; 004db7a3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004db7a9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004db7af
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004db7af
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004db7b4
     MOV EAX,dword ptr [ESI + 0x6c4]     ; 004db7b7
         ;   Label: LAB_004db7b7

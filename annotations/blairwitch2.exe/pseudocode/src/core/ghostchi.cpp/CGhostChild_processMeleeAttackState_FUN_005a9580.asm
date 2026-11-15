@@ -19,7 +19,7 @@
 ;   undefined4 DAT_0265370c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
@@ -29,7 +29,7 @@
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_muzzle.cpp_FUN_0059dcb0
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -145,8 +145,8 @@ section .text
     PUSH 0x265370c                      ; 005a96ac | DAT_0265370c
     MOV dword ptr [EBX + 0x1185c],ECX   ; 005a96b1
     LEA EDI,[ESP + 0x60]                ; 005a96b7
-    CALL core_xform.cpp_FUN_00591530    ; 005a96bb
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005a96bb
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 005a96c0
     LEA EAX,[ESP + 0x58]                ; 005a96c3
     LEA ESI,[ESP + 0x40]                ; 005a96c7
@@ -157,8 +157,8 @@ section .text
     PUSH EBX                            ; 005a96cf
     LEA ESI,[ESP + 0x54]                ; 005a96d0
     LEA EDI,[ESP + 0x6c]                ; 005a96d4
-    CALL core_actor.cpp_FUN_00408d70    ; 005a96d8
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 005a96d8
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005a96dd
     LEA EAX,[ESP + 0x4]                 ; 005a96e0
     LEA ESI,[ESP + 0x4c]                ; 005a96e4

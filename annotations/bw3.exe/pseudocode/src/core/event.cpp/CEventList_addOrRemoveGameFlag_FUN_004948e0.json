@@ -53,7 +53,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3a90",
@@ -294,7 +294,7 @@
       "line": 31,
       "match": "DAT_005bfe8a",
       "severity": "mild",
-      "text": "p_Var3 = _fopen(\"events.txt\",&DAT_005bfe8a);",
+      "text": "file_handle = _fopen(\"events.txt\",&DAT_005bfe8a);",
       "type": "undefined_data"
     },
     {
@@ -302,7 +302,7 @@
       "line": 37,
       "match": "DAT_005bfe98",
       "severity": "mild",
-      "text": "FUN_005a3140(p_Var3,&DAT_005bfe98,pacVar5);",
+      "text": "FUN_005a3140(file_handle,&DAT_005bfe98,pacVar4);",
       "type": "undefined_data"
     },
     {
@@ -322,7 +322,7 @@
       "type": "unrolled_strlen"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((iVar7 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 24,
       "match": "memmove",
       "severity": "moderate",

@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[16]:
+; XREF[17]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f69e
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d760 at 0041d795
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540 at 0041d6d5
@@ -30,7 +30,7 @@
 ;   core_djien.cpp_FUN_00460cb0 at 00460e11
 ;   core_doc.cpp_FUN_0046caa0 at 0046d42e
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8a0b
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fa1bc

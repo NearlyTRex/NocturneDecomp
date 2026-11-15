@@ -123,7 +123,7 @@ LAB_0051ba8e:
           if (199 < iStack_24) {
             _DAT_01d046a0 = "..\\engine\\pod.cpp";
             _DAT_01d046a4 = 0x5c3;
-            core_main_c_FUN_004e4500("Too many POD dependency ordering rules");
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Too many POD dependency ordering rules");
           }
           if (iStack_58 < 0) {
             *(CPodFile **)((int)aiStack_ab0 + iVar5) = pCStack_2c;
@@ -182,7 +182,7 @@ LAB_0051ba8e:
       if (this_ptr->pod_file_count <= iStack_34) {
         _DAT_01d046a0 = "..\\engine\\pod.cpp";
         _DAT_01d046a4 = 0x615;
-        core_main_c_FUN_004e4500("Circular POD mount order dependency detected.");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Circular POD mount order dependency detected.");
       }
       pCVar2 = ((CPod *)(this_ptr->pod_files + iStack_34 + -1))->pod_files[0];
       pCVar1 = (CPod *)(this_ptr->pod_files + iStack_34 + -1);

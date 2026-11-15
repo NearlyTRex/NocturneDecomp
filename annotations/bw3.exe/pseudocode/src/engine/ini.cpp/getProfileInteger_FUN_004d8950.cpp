@@ -21,7 +21,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8950(char *section,char *ke
   if (iVar1 == 0) {
     _DAT_01d71de0 = "..\\engine\\ini.cpp";
     _DAT_01d71de4 = 0x23d;
-    core_main_c_FUN_004e4330("Bad ini read!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Bad ini read!");
   }
   iVar1 = atoi(acStack_20c);
   return iVar1;

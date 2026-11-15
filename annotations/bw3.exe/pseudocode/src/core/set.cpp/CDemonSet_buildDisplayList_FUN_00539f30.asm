@@ -21,10 +21,10 @@
 ;
 ; XREF[6]:
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_0053ba40 at 0053ba49
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536761
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 005360a3
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535bb9
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f18
-;   core_set.cpp_FUN_005365c0 at 00536761
 ;   core_set.cpp_FUN_00536990 at 00536b1e
 ;
 ; Referenced Globals:
@@ -46,12 +46,12 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_0053b9a0
 ;   crt_stdlib.c__qsort_FUN_005a29e8
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
-;   engine_drender.cpp_FUN_0046d1c0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     PUSH ESI                            ; 00539f6d | DAT_01bdd7e4
     LEA ESI,[ESP + 0x70]                ; 00539f6e
     LEA EDI,[ESP + 0x34]                ; 00539f72
-    CALL engine_drender.cpp_FUN_0046d1c0 ; 00539f76
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0 ; 00539f76
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x70]                ; 00539f7b
     ADD ESP,0x4                         ; 00539f7f
     MOVSD ES:EDI,ESI                    ; 00539f82
@@ -270,8 +270,8 @@ section .text
     PUSH EBX                            ; 0053a1ea
     LEA ESI,[ESP + 0x5c]                ; 0053a1eb
     LEA EDI,[ESP + 0x44]                ; 0053a1ef
-    CALL core_actor.cpp_FUN_00408b80    ; 0053a1f3
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0053a1f3
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 0053a1f8
     ADD ESP,0x8                         ; 0053a1fc
     MOVSD ES:EDI,ESI                    ; 0053a1ff

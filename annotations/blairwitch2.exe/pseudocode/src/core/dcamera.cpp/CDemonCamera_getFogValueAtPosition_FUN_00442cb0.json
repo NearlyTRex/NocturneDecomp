@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 63,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
       "warning_overlapping_globals"
     ],
     "total_lines": 99
@@ -182,22 +181,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "((SFogGrid *)0x146592c,(CVector3i *)(extraout_EDX + 0x16c),end_pos,",
-      "type": "extra_output"
     }
   ],
   "vtable_info": {

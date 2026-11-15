@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
+; void core_scat_cpp_FUN_005424f0(CDemonActor *param_1,float param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1ac]:4  local_1ac
@@ -36,8 +36,8 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_scat.cpp_FUN_00542b90
@@ -342,8 +342,8 @@ section .text
     PUSH EBX                            ; 005428d6
     LEA ESI,[ESP + 0x130]               ; 005428d7
     LEA EDI,[ESP + 0xc4]                ; 005428de
-    CALL core_actor.cpp_FUN_00408b40    ; 005428e5
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005428e5
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x130]               ; 005428ea
     ADD ESP,0x8                         ; 005428f1
     LEA EAX,[ESP + 0xbc]                ; 005428f4
@@ -355,8 +355,8 @@ section .text
     PUSH ESI                            ; 00542902
     LEA ESI,[ESP + 0xb8]                ; 00542903
     LEA EDI,[ESP + 0x124]               ; 0054290a
-    CALL core_actor.cpp_FUN_00408bb0    ; 00542911
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00542911
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xb8]                ; 00542916
     ADD ESP,0x8                         ; 0054291d
     MOVSD ES:EDI,ESI                    ; 00542920

@@ -48,7 +48,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_0052dfc0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
@@ -188,8 +188,8 @@ section .text
     PUSH 0x5eb60c                       ; 0052ef55 | = "removeChatOut - invalid index"
     MOV [0x01d1d400],EAX                ; 0052ef5a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0052ef5f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052ef65
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052ef65
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052ef6a
     MOV ECX,dword ptr [0x01d6dfb8]      ; 0052ef6d | DAT_01d6dfb8
         ;   Label: LAB_0052ef6d

@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041e0d0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
@@ -121,8 +121,8 @@ section .text
     LEA EDI,[ESP + 0x38]                ; 004b1e4f
     PUSH EBX                            ; 004b1e53
     FSTP float ptr [ESP + 0x20]         ; 004b1e54
-    CALL core_dirmat.cpp_FUN_0045f690   ; 004b1e58
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 004b1e58
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30]                ; 004b1e5d
     ADD ESP,0x8                         ; 004b1e61
     LEA EBX,[ESP + 0x1c]                ; 004b1e64

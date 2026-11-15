@@ -37,7 +37,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
 ;   crt_memory.c_memset_FUN_005a28f0
 ;
@@ -200,8 +200,8 @@ section .text
     PUSH 0x5cb755                       ; 0050d33a | = "queuePop - empty queue?!"
     MOV dword ptr [0x01d71de0],ECX      ; 0050d33f | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0050d345 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0050d34a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050d34a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050d34f
     JMP 0x0050d21d                      ; 0050d352
         ;   XREF to: 0050d21d (UNCONDITIONAL_JUMP)  ; LAB_0050d21d

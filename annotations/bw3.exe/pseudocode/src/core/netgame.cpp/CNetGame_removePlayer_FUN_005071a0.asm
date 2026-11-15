@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01dc2690
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c_memmove_FUN_005a54c0
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5cada4                       ; 005071c2 | = "CNetGame::removePlayer - invalid play..."
     MOV dword ptr [0x01d71de0],EBX      ; 005071c7 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 005071cd | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005071d3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005071d3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005071d8
     MOV EBX,dword ptr [ESP + 0x18]      ; 005071db
         ;   Label: LAB_005071db
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5cade6                       ; 005071f5 | = "CNetGame::removePlayer - tried to rem..."
     MOV dword ptr [0x01d71de0],EBP      ; 005071fa | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00507200 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00507205
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507205
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050720a
     MOV EBX,dword ptr [ESP + 0x18]      ; 0050720d
         ;   Label: LAB_0050720d

@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_mini3d.cpp_drawHLine_FUN_005182e0
 ;   engine_mini3d.cpp_setColor_FUN_00517d50
@@ -166,8 +166,8 @@ section .text
     PUSH 0x5dc1e3                       ; 004977ac | = "CEditorTools::paintWindow() called bu..."
     MOV dword ptr [0x01d1d400],ECX      ; 004977b1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 004977b7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004977bd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004977bd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004977c2
     JMP 0x00497674                      ; 004977c5
         ;   XREF to: 00497674 (UNCONDITIONAL_JUMP)  ; LAB_00497674

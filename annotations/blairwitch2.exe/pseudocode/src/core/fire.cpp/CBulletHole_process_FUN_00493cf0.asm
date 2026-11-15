@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0049c430 at 0049c620
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EDX                            ; 00493d0c
     LEA ESI,[ESP + 0x8]                 ; 00493d0d
     LEA EDI,[ESP + 0x14]                ; 00493d11
-    CALL core_actor.cpp_FUN_00408d70    ; 00493d15
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00493d15
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x8]                 ; 00493d1a
     ADD ESP,0x8                         ; 00493d1e
     LEA EAX,[ESP + 0xc]                 ; 00493d21

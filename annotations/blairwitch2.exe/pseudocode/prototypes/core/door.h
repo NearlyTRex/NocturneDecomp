@@ -51,11 +51,11 @@ void __cdecl CDoor::renderBackground(CDoor *this_ptr,int layer_flag);
 
 // Original: core_door.cpp_CDoor_getBoundingBox_FUN_0045fe80
 // Address: 0045fe80
-CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_door.cpp_FUN_0045fec0
 // Address: 0045fec0
-void FUN_0045fec0(int param_1);
+void FUN_0045fec0(CDemonActor *param_1);
 
 // Original: core_door.cpp_CDoor_archive_FUN_0045ff80
 // Address: 0045ff80
@@ -83,7 +83,7 @@ int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getOpenStandPos_FUN_00460350
 // Address: 00460350
-float * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr,float *param_2,undefined4 param_3);
+CVector3f * __stack3_esi CDoor::getOpenStandPos(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 
 // Original: core_door.cpp_CDoor_updateCollisionData_FUN_004605e0
 // Address: 004605e0

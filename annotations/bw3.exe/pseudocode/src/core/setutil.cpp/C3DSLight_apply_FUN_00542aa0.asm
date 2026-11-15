@@ -54,7 +54,7 @@ section .text
     FMUL double ptr [0x005d0fb2]        ; 00542ae8 | DAT_005d0fb2
     ADD ESP,0x8                         ; 00542aee
     CALL crt_math.c_round_FUN_005a3120  ; 00542af1
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP + 0x2fa4]      ; 00542af6
     PUSH dword ptr [EBX + 0x124]        ; 00542afc
     PUSH EBP                            ; 00542b02

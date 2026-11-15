@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 985,
-    "complexity_score": 1065,
+    "complexity_score": 1066,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 281,
     "suspect_count": 76,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1265
+    "total_lines": 1266
   },
   "cross_references": [
     {
@@ -88,7 +88,7 @@
     {
       "addr": "00559f80",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00559f80"
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80"
     },
     {
       "addr": "0057cc00",
@@ -118,7 +118,7 @@
     {
       "addr": "00479180",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479180"
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
     },
     {
       "addr": "00494d20",
@@ -629,31 +629,31 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 64,
+      "line": 65,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 65,
       "match": "code *",
       "severity": "moderate",
+      "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 66,
+      "match": "code *",
+      "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 85,
+      "line": 86,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) &&",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 86,
+      "line": 87,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 86,
+      "line": 87,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 99,
+      "line": 100,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) &&",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 100,
+      "line": 101,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
+      "line": 101,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -701,7 +701,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 103,
+      "line": 104,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -709,7 +709,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 104,
+      "line": 105,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -717,7 +717,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
+      "line": 105,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -725,23 +725,23 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 108,
+      "line": 109,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) ||",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 108,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) ||",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 109,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) ||",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 110,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0 &&",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 110,
+      "line": 111,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)))) {",
@@ -757,7 +757,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)))) {",
@@ -765,7 +765,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 122,
+      "line": 123,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) &&",
@@ -773,7 +773,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 123,
+      "line": 124,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar6 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 = DAT_0061b49c, iVar6 != 0)) &&",
@@ -781,7 +781,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 123,
+      "line": 124,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar6 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 = DAT_0061b49c, iVar6 != 0)) &&",
@@ -789,7 +789,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 124,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "(iVar6 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 = DAT_0061b49c, iVar6 != 0)) &&",
@@ -797,7 +797,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 125,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "(0x1df < DAT_0061b49c)) {",
@@ -805,7 +805,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 135,
+      "line": 136,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0 &&",
@@ -813,7 +813,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 136,
+      "line": 137,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "((iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0 && (0x1df < DAT_0061b49c)",
@@ -821,7 +821,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 136,
+      "line": 137,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0 && (0x1df < DAT_0061b49c)",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 137,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "((iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0 && (0x1df < DAT_0061b49c)",
@@ -837,7 +837,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 140,
+      "line": 141,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -845,7 +845,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 141,
+      "line": 142,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "if (((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) &&",
@@ -853,7 +853,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 141,
+      "line": 142,
       "match": "code *",
       "severity": "moderate",
       "text": "if (((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) &&",
@@ -861,7 +861,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 145,
+      "line": 146,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -869,7 +869,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 146,
+      "line": 147,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -877,7 +877,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 146,
+      "line": 147,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -885,7 +885,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 149,
+      "line": 150,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -893,7 +893,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 154,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -901,7 +901,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 157,
+      "line": 158,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -909,7 +909,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 165,
+      "line": 166,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) {",
@@ -917,7 +917,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 168,
       "match": "DAT_005e1a66",
       "severity": "mild",
       "text": "(&DAT_005e1a66,\"quicksavedgame.noc\",&DAT_005e1a50);",
@@ -925,7 +925,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 168,
       "match": "DAT_005e1a50",
       "severity": "mild",
       "text": "(&DAT_005e1a66,\"quicksavedgame.noc\",&DAT_005e1a50);",
@@ -933,7 +933,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 196,
+      "line": 197,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -941,7 +941,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 196,
+      "line": 197,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -949,7 +949,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 202,
+      "line": 203,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -957,7 +957,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 202,
+      "line": 203,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -965,7 +965,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 207,
+      "line": 208,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), pCVar4 = g_CDemonSetPtr, iVar5 != 0)",
@@ -973,7 +973,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 207,
+      "line": 208,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), pCVar4 = g_CDemonSetPtr, iVar5 != 0)",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 222,
+      "line": 223,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 222,
+      "line": 223,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 225,
+      "line": 226,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1005,7 +1005,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 225,
+      "line": 226,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1013,7 +1013,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 229,
+      "line": 230,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1021,7 +1021,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 229,
+      "line": 230,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1029,7 +1029,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 235,
+      "line": 236,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1037,7 +1037,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 235,
+      "line": 236,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1045,7 +1045,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 246,
+      "line": 247,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1053,7 +1053,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 246,
+      "line": 247,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -1061,7 +1061,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 258,
+      "line": 259,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) &&",
@@ -1069,7 +1069,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 259,
+      "line": 260,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -1077,7 +1077,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 259,
+      "line": 260,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -1085,7 +1085,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 263,
+      "line": 264,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0), iVar5 != 0)) &&",
@@ -1093,7 +1093,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 264,
+      "line": 265,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -1101,7 +1101,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 264,
+      "line": 265,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {",
@@ -1109,7 +1109,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 266,
+      "line": 267,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);",
@@ -1117,7 +1117,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 184,
+      "line": 185,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

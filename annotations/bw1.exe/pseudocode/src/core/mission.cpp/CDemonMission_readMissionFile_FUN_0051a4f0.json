@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 411,
+    "complexity_score": 409,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 231,
+    "pseudocode_lines": 229,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 801
+    "total_lines": 799
   },
   "cross_references": [
     {
@@ -89,7 +89,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "0051b160",
@@ -588,7 +588,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 105,
       "match": "DAT_005e92a8",
       "severity": "mild",
       "text": "_fscanf((_FILE *)load_flags,&DAT_005e92a8);",
@@ -596,7 +596,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 115,
       "match": "DAT_005e92ac",
       "severity": "mild",
       "text": "_fscanf((_FILE *)load_flags,&DAT_005e92ac);",
@@ -604,7 +604,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 125,
       "match": "DAT_0061f6c0",
       "severity": "mild",
       "text": "puVar7 = &DAT_0061f6c0;",
@@ -612,7 +612,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 132,
       "match": "DAT_0061f728",
       "severity": "mild",
       "text": "puVar7 = &DAT_0061f728;",
@@ -628,7 +628,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 146,
+      "line": 144,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 129,
+      "line": 127,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 136,
+      "line": 134,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",

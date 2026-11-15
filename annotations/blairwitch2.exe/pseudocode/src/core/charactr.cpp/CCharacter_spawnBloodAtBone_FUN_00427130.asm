@@ -26,7 +26,7 @@
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -75,8 +75,8 @@ section .text
     PUSH EBX                            ; 00427185
     LEA ESI,[ESP + 0x28]                ; 00427186
     LEA EDI,[ESP + 0x10]                ; 0042718a
-    CALL core_actor.cpp_FUN_00408d70    ; 0042718e
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0042718e
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x28]                ; 00427193
     ADD ESP,0x8                         ; 00427197
     MOVSD ES:EDI,ESI                    ; 0042719a

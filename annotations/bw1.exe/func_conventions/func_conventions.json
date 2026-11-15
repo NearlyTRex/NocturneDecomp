@@ -545,11 +545,15 @@
   },
   "CSoundDevice_allocateSample":{
     "convention":"__cdecl",
-    "param_bytes":20
+    "param_bytes":8
   },
   "CSoundDevice_allocateSfx":{
     "convention":"__cdecl",
     "param_bytes":8
+  },
+  "CSoundDevice_applySfxChanges":{
+    "convention":"__cdecl",
+    "param_bytes":12
   },
   "CSoundDevice_close":{
     "convention":"__cdecl",
@@ -587,17 +591,21 @@
     "convention":"__cdecl",
     "param_bytes":12
   },
+  "CSoundDevice_pollPlayback":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
   "CSoundDevice_reset":{
     "convention":"__cdecl",
     "param_bytes":4
   },
   "CSoundDevice_set3DListenerDistanceFactor":{
     "convention":"__cdecl",
-    "param_bytes":12
+    "param_bytes":8
   },
   "CSoundDevice_set3DListenerOrient":{
     "convention":"__cdecl",
-    "param_bytes":76
+    "param_bytes":40
   },
   "CSoundDevice_set3DListenerPos":{
     "convention":"__cdecl",
@@ -605,15 +613,15 @@
   },
   "CSoundDevice_set3DListenerVelocity":{
     "convention":"__cdecl",
-    "param_bytes":28
+    "param_bytes":16
   },
   "CSoundDevice_setMode":{
     "convention":"__cdecl",
     "param_bytes":20
   },
-  "CSoundDevice_setSfxPos":{
+  "CSoundDevice_setReverb":{
     "convention":"__cdecl",
-    "param_bytes":12
+    "param_bytes":16
   },
   "CSoundDevice_start":{
     "convention":"__cdecl",
@@ -625,7 +633,7 @@
   },
   "CSoundDevice_unlockSample":{
     "convention":"__cdecl",
-    "param_bytes":8
+    "param_bytes":16
   },
   "CStrList_clear":{
     "convention":"__cdecl",
@@ -682,6 +690,10 @@
   "CWeapon_updateLighting":{
     "convention":"unknown",
     "param_bytes":4
+  },
+  "ColorConversionFunc":{
+    "convention":"__cdecl",
+    "param_bytes":12
   },
   "CustomScanlineFunc":{
     "convention":"__cdecl",

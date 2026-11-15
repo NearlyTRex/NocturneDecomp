@@ -34,19 +34,16 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeath
   float local_a8;
   float local_a4;
   float local_a0;
-  float local_9c;
+  CVector3f local_9c;
   float fStack_90;
-  float fStack_8c;
-  float fStack_88;
+  float afStack_8c [2];
   CVector3f local_84;
   float fStack_78;
-  float afStack_74 [5];
-  float local_60;
+  float afStack_74 [2];
+  CVector3f local_6c;
+  CVector3f local_60;
   float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
+  float local_50 [4];
   float local_40;
   int local_3c;
   float local_38;
@@ -101,12 +98,12 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeath
           iVar4 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
           if (iVar4 != 0) {
             fStack_90 = *(float *)(iVar4 + 0x20) - (local_24->base).location.position.x;
-            fStack_8c = *(float *)(iVar4 + 0x24) - (local_24->base).location.position.y;
-            fStack_88 = *(float *)(iVar4 + 0x28) - (local_24->base).location.position.z;
+            afStack_8c[0] = *(float *)(iVar4 + 0x24) - (local_24->base).location.position.y;
+            afStack_8c[1] = *(float *)(iVar4 + 0x28) - (local_24->base).location.position.z;
             fStack_78 = fStack_90;
-            afStack_74[(uint)bVar7 * -2] = local_bc[(uint)bVar7 * -2 + 0xc];
+            afStack_74[(uint)bVar7 * -2] = afStack_8c[(uint)bVar7 * -2];
             afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+                 afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
             if (_DAT_005d7977 <
                 SQRT(afStack_74[1] * afStack_74[1] +
                      fStack_78 * fStack_78 + afStack_74[0] * afStack_74[0])) goto LAB_0057c3b7;
@@ -143,26 +140,26 @@ LAB_0057c3b7:
     }
   }
   if (local_3c == 0) {
-    core_dtrace_cpp_FUN_00477d90(&g_CDemonRaytraceInstance);
-    local_54 = afStack_74[2];
-    afStack_74[(uint)bVar7 * -2 + 9] = afStack_74[(uint)bVar7 * -2 + 3];
-    afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
-         afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    core_dtrace_cpp_FUN_00477db0(&g_CDemonRaytraceInstance);
-    local_c0 = local_60;
-    local_bc[(uint)bVar7 * -2] = afStack_74[(uint)bVar7 * -2 + 6];
+    core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90(&g_CDemonRaytraceInstance,&local_6c);
+    local_54 = local_6c.x;
+    local_50[(uint)bVar7 * -2] = *(float *)((int)&local_6c + (uint)bVar7 * -8 + 4);
+    local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+         *(float *)((int)&local_6c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0(&g_CDemonRaytraceInstance,&local_60);
+    local_c0 = local_60.x;
+    local_bc[(uint)bVar7 * -2] = *(float *)((int)&local_60 + (uint)bVar7 * -8 + 4);
     local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+         *(float *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     local_1c = (local_c0 - local_54) * (float)_DAT_005d796b;
     local_30 = 0.0;
     if (0.0 < local_1c) {
       local_30 = local_1c;
     }
-    local_34 = local_bc[0] - local_50;
+    local_34 = local_bc[0] - local_50[0];
     if (local_30 < local_34) {
       local_30 = local_34;
     }
-    local_38 = (local_bc[1] - local_4c) * (float)_DAT_005d796b;
+    local_38 = (local_bc[1] - local_50[1]) * (float)_DAT_005d796b;
     if (local_30 < local_38) {
       local_30 = local_38;
     }
@@ -170,18 +167,18 @@ LAB_0057c3b7:
     local_84.z = local_30;
     local_84.x = 0.0;
     local_84.y = 0.0;
-    core_dirmat_cpp_FUN_0045b800(&local_118,&local_84);
-    local_a8 = local_9c;
-    local_bc[(uint)bVar7 * -2 + 6] = local_bc[(uint)bVar7 * -2 + 9];
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(&local_118,&local_84,&local_9c);
+    local_a8 = local_9c.x;
+    local_bc[(uint)bVar7 * -2 + 6] = *(float *)((int)&local_9c + (uint)bVar7 * -8 + 4);
     local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-    local_48 = local_a8 + (this_ptr->direction).x;
-    local_44 = local_a4 + (this_ptr->direction).y;
+         *(float *)((int)&local_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_50[2] = local_a8 + (this_ptr->direction).x;
+    local_50[3] = local_a4 + (this_ptr->direction).y;
     local_40 = local_a0 + (this_ptr->direction).z;
-    local_b4.x = local_48;
-    local_bc[(uint)bVar7 * -2 + 3] = afStack_74[(uint)bVar7 * -2 + 0xc];
+    local_b4.x = local_50[2];
+    local_bc[(uint)bVar7 * -2 + 3] = local_50[(uint)bVar7 * -2 + 3];
     local_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+         local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
     if (&local_84 != (CVector3f *)(local_bc + 2)) {
       local_84.x = local_b4.x;
       local_84.y = local_b4.y;

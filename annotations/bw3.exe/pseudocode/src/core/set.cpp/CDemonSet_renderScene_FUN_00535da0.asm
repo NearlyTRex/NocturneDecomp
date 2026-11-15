@@ -679,8 +679,8 @@ section .text
     JZ 0x005363cf                       ; 005363c4
         ;   XREF to: 005363cf (CONDITIONAL_JUMP)  ; LAB_005363cf
     PUSH EBX                            ; 005363c6
-    CALL core_setdir.cpp_FUN_00540eb0   ; 005363c7
-        ;   XREF to: 00540eb0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00540eb0()
+    CALL core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0 ; 005363c7
+        ;   XREF to: 00540eb0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005363cc
     MOV ECX,dword ptr [EBX + 0x14d164]  ; 005363cf
         ;   Label: LAB_005363cf

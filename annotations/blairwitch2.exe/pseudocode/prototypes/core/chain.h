@@ -25,9 +25,9 @@ CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 // Address: 005b4720
 CChain * __cdecl CChain::ctor(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_005b4860
+// Original: core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860
 // Address: 005b4860
-void FUN_005b4860(int param_1);
+CVector3f * __stack_esi CChain::getTargetBoneWorldPosition(CChain *this_ptr,CVector3f *out_point);
 
 // Original: core_chain.cpp_CChain_setup_FUN_005b48e0
 // Address: 005b48e0

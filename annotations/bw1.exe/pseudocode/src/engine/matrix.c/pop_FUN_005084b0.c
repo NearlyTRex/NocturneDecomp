@@ -15,7 +15,7 @@ void __cdecl engine_matrix_c_pop_FUN_005084b0(void)
   if (_DAT_01d1dd74 < 0) {
     _DAT_01d1d400 = "..\\engine\\matrix.c";
     _DAT_01d1d404 = 0x358;
-    core_main_c_FUN_005030e0("Matrix unbalance2");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance2");
   }
   _DAT_01c51d5c = *(uint *)(_DAT_01d1dd74 * 4 + 0x1d1dd78);
   _DAT_01c51d60 = *(uint *)(_DAT_01d1dd74 * 4 + 0x1d1dda0);

@@ -33,7 +33,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040b680
 ;   core_actor.cpp_archiveVector_FUN_0040b400
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -331,8 +331,8 @@ section .text
     PUSH 0x5cc404                       ; 00512777 | = "CPlatform::archive - too many attache..."
     MOV dword ptr [0x01d71de0],EBP      ; 0051277c | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00512782 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00512787
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00512787
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051278c
     MOV EDX,dword ptr [ESP]             ; 0051278f
         ;   Label: LAB_0051278f

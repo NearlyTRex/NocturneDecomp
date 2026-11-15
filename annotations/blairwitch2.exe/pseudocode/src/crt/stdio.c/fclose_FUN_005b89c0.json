@@ -2,27 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 104,
+    "complexity_score": 69,
     "cross_reference_count": 65,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 51
   },
   "cross_references": [
-    {
-      "addr": "0042e130",
-      "from_addr": "0042e27f",
-      "name": "cockpit_ckptutil.c_FUN_0042e130",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0042f330",
       "from_addr": "0042f3c4",
@@ -33,6 +26,12 @@
       "addr": "0042dec0",
       "from_addr": "0042e0aa",
       "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e130",
+      "from_addr": "0042e27f",
+      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -342,12 +341,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00519dc0",
-      "from_addr": "00519e35",
-      "name": "engine_pod.cpp_FUN_00519dc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0051ad50",
       "from_addr": "0051ae1c",
       "name": "engine_pod.cpp_FUN_0051ad50",
@@ -372,6 +365,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00519dc0",
+      "from_addr": "00519e35",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_00519dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005048e0",
+      "from_addr": "0050497b",
+      "name": "sound_mp3.cpp_CFileBitStream_init_FUN_005048e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00509f30",
       "from_addr": "00509f68",
       "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00509f30",
@@ -381,12 +386,6 @@
       "addr": "00509db0",
       "from_addr": "00509eef",
       "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005048e0",
-      "from_addr": "0050497b",
-      "name": "sound_mp3.cpp_FUN_005048e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -418,7 +417,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fclose_FUN_005b89c0",
-    "signature": "undefined4 __cdecl crt_stdio_c_fclose_FUN_005b89c0(int param_1)"
+    "signature": "int __cdecl crt_stdio_c_fclose_FUN_005b89c0(_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -505,12 +504,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -520,14 +527,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl _fclose(int param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -546,28 +545,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == puVar1[1]) break;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2bc)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = FUN_005b8a04(param_1,1);",
-      "type": "unnamed_param"
     }
   ]
 }

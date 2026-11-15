@@ -40,7 +40,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -183,8 +183,8 @@ section .text
     PUSH 0x5c0717                       ; 0049d060 | = "CToss::create - invalid toss type."
     MOV dword ptr [0x01d71de0],EDX      ; 0049d065 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0049d06b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0049d071
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049d071
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0049d076
     JMP 0x0049cf31                      ; 0049d079
         ;   XREF to: 0049cf31 (UNCONDITIONAL_JUMP)  ; LAB_0049cf31

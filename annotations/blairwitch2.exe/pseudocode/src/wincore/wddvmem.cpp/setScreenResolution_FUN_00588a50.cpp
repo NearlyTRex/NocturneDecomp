@@ -69,7 +69,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(int width,int h
     _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d046a4 = 0xea;
     iStack_8c = 0x588b60;
-    core_main_c_FUN_004e4500();
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
   }
   iStack_8c = 0x588b7b;
   _DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);
@@ -77,7 +77,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(int width,int h
     _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d046a4 = 0xef;
     iStack_8c = 0x588ba6;
-    core_main_c_FUN_004e4500();
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of Z buffer memory");
   }
   iStack_8c = height;
   DAT_0070c62c = (int)_DAT_02661af0 + 0x10U & 0xfffffff0;
@@ -146,6 +146,6 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(int width,int h
   }
   _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
   _DAT_01d046a4 = 0x1bd;
-  core_main_c_FUN_004e4500("setScreenResolution - Create back buffer failed!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("setScreenResolution - Create back buffer failed!");
   return 0;
 }

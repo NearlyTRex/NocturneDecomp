@@ -39,7 +39,7 @@
 ;   undefined4 DAT_0152c2c8
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_004560f0
+;   core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EDX                            ; 00458246
     ADD EAX,EDI                         ; 00458247
     PUSH EAX                            ; 00458249
-    CALL core_dcube.cpp_FUN_004560f0    ; 0045824a
-        ;   XREF to: 004560f0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_004560f0()
+    CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0 ; 0045824a
+        ;   XREF to: 004560f0 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x38],EAX      ; 0045824f
     FLD float ptr [ESP + 0x38]          ; 00458253
     ADD ESP,0xc                         ; 00458257

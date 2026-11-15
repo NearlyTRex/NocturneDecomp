@@ -15,7 +15,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b9b0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550
 ;   engine_drender.cpp_pop_FUN_0046d080
@@ -42,8 +42,8 @@ section .text
     PUSH EAX                            ; 0043f182
     LEA EDI,[ESP + 0x34]                ; 0043f183
     MOV EBX,0x270                       ; 0043f187
-    CALL core_dirmat.cpp_FUN_0045b9b0   ; 0043f18c
-        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b9b0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0 ; 0043f18c
+        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x4                         ; 0043f191
     LEA EAX,[EBP + 0xa0]                ; 0043f194
     LEA ESI,[ESP + 0x24]                ; 0043f19a

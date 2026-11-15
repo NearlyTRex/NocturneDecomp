@@ -30,6 +30,6 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_005093d0(int offset_x,
   }
   _DAT_01d1d400 = "..\\engine\\matrix.c";
   _DAT_01d1d404 = 0x5cc;
-  core_main_c_FUN_005030e0("Matrix unbalance3");
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance3");
   return;
 }

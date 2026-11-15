@@ -32,9 +32,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00529b30(CScript *this_ptr
     if (300 < iVar2) {
       _DAT_01d046a4 = 0x1192;
       _DAT_01d046a0 = "..\\core\\script.cpp";
-      core_main_c_FUN_004e4500
-                ("Infinite loop detected trying to skip cinematic, at script line %d",
-                 this_ptr->parsed_lines[this_ptr->next_cmd].line_number);
+      core_main_c_displayErrorAndQuit_FUN_004e4500("Infinite loop detected trying to skip cinematic, at script line %d");
     }
   }
   return 1;

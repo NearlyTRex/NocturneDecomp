@@ -59,7 +59,7 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 
 // Original: engine_special.cpp_FUN_00563257
 // Address: 00563257
-void FUN_00563257(void);
+void __edi_esi_ebx FUN_00563257(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 
 // Original: engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 // Address: 005632a3
@@ -263,7 +263,7 @@ int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRen
 
 // Original: engine_special.cpp_switchRenderer_FUN_00566790
 // Address: 00566790
-void switchRenderer(void);
+int __cdecl switchRenderer(char *new_dll_name,int card_index);
 
 // Original: engine_special.cpp_getCurrentRenderer_FUN_005667e0
 // Address: 005667e0

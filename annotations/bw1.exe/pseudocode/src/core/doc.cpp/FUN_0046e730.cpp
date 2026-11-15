@@ -19,7 +19,8 @@ void core_doc_cpp_FUN_0046e730(int param_1,float param_2)
   *(uint *)(param_1 + 0x20054) = 0;
   *(uint *)(param_1 + 0x20050) = *(uint *)(param_1 + 0x20054);
   *(uint *)(param_1 + 0x2004c) = *(uint *)(param_1 + 0x20050);
-  fVar3 = (float)core_motion_cpp_FUN_00524a40(param_1 + 0x158,0);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
+                    ((CMotionController *)(param_1 + 0x158),0);
   if ((fVar3 <= 0.0) || (1.0 <= *(float *)(param_1 + 0x20028))) {
     *(uint *)(param_1 + 0x20024) = 0;
     *(uint *)(param_1 + 0x20058) = 0xffffffff;

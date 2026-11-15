@@ -22,12 +22,13 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
   CVector3f *direction;
   float fVar7;
   float fVar8;
-  uint uStack_6c;
+  float fStack_6c;
   uint uStack_60;
   float fStack_5c;
-  uint uStack_54;
-  float local_48;
+  CVector3f CStack_54;
+  CVector3f local_48;
   uint uStack_3c;
+  float afStack_38 [2];
   CVector3f local_30;
   float fStack_1c;
   float fStack_18;
@@ -75,14 +76,15 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
     return 1;
   }
   core_door_cpp_CDoor_getOpenStandPos_FUN_00478860
-            (this_ptr->door_target,&(this_ptr->look_offset).x,&(this_ptr->base).location);
+            (this_ptr->door_target,&this_ptr->look_offset,&(this_ptr->base).location.position,
+             &local_48);
   fVar8 = 0.0;
   fVar7 = 0.0;
-  local_30.x = local_48;
+  local_30.x = local_48.x;
   *(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) =
-       *(uint *)(&stack0xffffffbc + (uint)bVar6 * -8);
+       *(uint *)((int)&local_48 + (uint)bVar6 * -8 + 4);
   *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   direction = (CVector3f *)&DAT_02c8af28;
   path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)(&this_ptr->door_target->base)
   ;
@@ -96,18 +98,18 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
     this_ptr->walk_state = WALK_STATE_WALKING;
     return 1;
   }
-  core_actor_cpp_FUN_00408bb0(this_ptr,&this_ptr->door_target->open_position);
-  uStack_6c = uStack_54;
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+            (&this_ptr->base,&this_ptr->door_target->open_position,&CStack_54);
+  fStack_6c = CStack_54.x;
   *(uint *)((int)&stack0xffffff98 + (uint)bVar6 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffb0 + (uint)bVar6 * -8);
+       *(uint *)((int)&CStack_54 + (uint)bVar6 * -8 + 4);
   *(uint *)(&stack0xffffff9c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffb4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(uint *)((int)&CStack_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff94);
   uStack_60 = uStack_3c;
-  *(uint *)((int)&stack0xffffffa4 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar6 * -8);
-  *(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  *(float *)((int)&stack0xffffffa4 + (uint)bVar6 * -8) = afStack_38[(uint)bVar6 * -2];
+  afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -8] =
+       afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   this_ptr->turn_angle_accumulator = fStack_5c;
   if ((int)fStack_5c < 0x3f20d97c) {
     pCVar2 = (this_ptr->base).vtable._uc;

@@ -24,7 +24,7 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00555e30(CDemonSet *this_p
   if ((local_24 < 1) || (3 < local_24)) {
     _DAT_01d1d400 = "..\\core\\set.cpp";
     _DAT_01d1d404 = 0x1494;
-    core_main_c_FUN_005030e0("Set saveState info is invalid version %d",local_24);
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Set saveState info is invalid version %d");
   }
   _fscanf(file_handle,"%*[^\n]\n");
   _fscanf(file_handle,&DAT_005f0cbf);

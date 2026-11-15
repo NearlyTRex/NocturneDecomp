@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *this_ptr)
@@ -15,67 +14,61 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *thi
   byte bVar1;
   float afStackY_1070 [1016];
   uint local_88;
-  float local_7c;
-  float local_78;
-  float local_74;
+  CVector3f local_7c;
   float local_70;
-  float local_6c;
-  float local_68;
-  uint local_64;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
-  uint local_4c;
+  float local_6c [2];
+  CVector3f local_64;
+  CVector3f local_58;
+  float local_4c;
+  uint auStack_48 [2];
+  CVector3f local_40;
   uint local_34;
-  float local_30;
-  float local_28;
-  float local_24;
+  float local_30 [4];
   CLocation *local_20;
   int local_1c;
   int local_18;
   CHero *local_14;
   
   bVar1 = 0;
-  local_64 = 0;
-  local_5c = 0x3fc00000;
-  local_60 = 0;
-  core_actor_cpp_FUN_00408d70(this_ptr,&stack0xffffff9c);
-  local_28 = 5.0;
+  local_64.x = 0.0;
+  local_64.z = 1.5;
+  local_64.y = 0.0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,&local_64,&local_40);
+  local_30[2] = 5.0;
   local_1c = 0;
   local_20 = &(this_ptr->base).base.location;
   for (local_18 = 0; local_18 < g_CDemonSetPtr->character_count; local_18 = local_18 + 1) {
     local_14 = *(CHero **)((int)g_CDemonSetPtr->characters + local_1c);
     if (((local_14->base).talk_to_me_event[0] != '\0') && (this_ptr != local_14)) {
       local_70 = (local_14->base).base.location.position.x - (local_20->position).x;
-      local_6c = (local_14->base).base.location.position.y - (local_20->position).y;
-      local_68 = (local_14->base).base.location.position.z - (local_20->position).z;
-      local_7c = local_70;
-      (&stack0xffffff88)[(uint)bVar1 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xffffff94 + (uint)bVar1 * -8);
-      *(uint *)((int)&stack0xffffff8c + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-           *(uint *)((int)&stack0xffffff98 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-      if (ABS(local_78) <= (float)_DAT_005d9c6c) {
-        local_78 = 0.0;
-        local_24 = SQRT(local_74 * local_74 + local_7c * local_7c);
-        if (local_24 < local_28) {
-          core_actor_cpp_FUN_00408d30(this_ptr,&stack0xffffff84);
-          local_4c = local_58;
-          *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * 0xfffffffe * 4) =
-               *(uint *)((int)&stack0xffffffac + (uint)bVar1 * 0xfffffffe * 4);
-          *(uint *)(&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-               *(uint *)(&stack0xffffffb0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffb4);
+      local_6c[0] = (local_14->base).base.location.position.y - (local_20->position).y;
+      local_6c[1] = (local_14->base).base.location.position.z - (local_20->position).z;
+      local_7c.x = local_70;
+      *(float *)((int)&local_7c + (uint)bVar1 * -8 + 4) = local_6c[(uint)bVar1 * -2];
+      *(float *)((int)&local_7c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+           local_6c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
+      if (ABS(local_7c.y) <= (float)_DAT_005d9c6c) {
+        local_7c.y = 0.0;
+        local_30[3] = SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x);
+        if (local_30[3] < local_30[2]) {
+          core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+                    ((CDemonActor *)this_ptr,&local_7c,&local_58);
+          local_4c = local_58.x;
+          auStack_48[(uint)bVar1 * -2] = *(uint *)((int)&local_58 + (uint)bVar1 * -8 + 4);
+          auStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+               *(uint *)((int)&local_58 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_4c);
           local_34 = local_88;
-          (&stack0xffffffd0)[(uint)bVar1 * 0xfffffffe] =
-               (float)*(uint *)(&stack0xffffff7c + (uint)bVar1 * -8);
-          *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-               *(uint *)(&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-          if (ABS(local_30) <= (float)_DAT_005d9c74) {
+          local_30[(uint)bVar1 * -2] = *(float *)(&stack0xffffff7c + (uint)bVar1 * -8);
+          local_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+               *(float *)(&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+          if (ABS(local_30[0]) <= (float)_DAT_005d9c74) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action_actor = (CDemonActor *)local_14;
             this_ptr->hero_action_target = (CDemonActor *)local_14;
             this_ptr->hero_action = 2;
-            local_28 = local_24;
+            local_30[2] = local_30[3];
           }
         }
       }

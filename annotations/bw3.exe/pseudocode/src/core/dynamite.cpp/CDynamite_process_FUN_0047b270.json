@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 292,
+    "complexity_score": 303,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
-    "suspect_count": 15,
+    "pseudocode_lines": 93,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 254
+    "total_lines": 255
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     {
       "addr": "00408b80",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b80"
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80"
     },
     {
       "addr": "0040cf40",
@@ -272,6 +272,14 @@
     {
       "description": "Direct stack address reference",
       "line": 82,
+      "match": "&stack0xfffffffc",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr_01,&CStack_34,(CVector3f *)&stack0xfffffffc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "afStack_18[(uint)bVar5 * -2] = *(float *)(&stack0x00000000 + (uint)bVar5 * -8);",
@@ -279,7 +287,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
+      "line": 86,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "if (&CStack_34 != (CVector3f *)&stack0xffffffe4) {",
@@ -319,7 +327,7 @@
     },
     {
       "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&CStack_34` is always TRUE (the address of `CStack_34` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 85,
+      "line": 86,
       "match": "if ((T *)0x0 != &CStack_34)",
       "severity": "moderate",
       "text": "if (&CStack_34 != (CVector3f *)&stack0xffffffe4) {",

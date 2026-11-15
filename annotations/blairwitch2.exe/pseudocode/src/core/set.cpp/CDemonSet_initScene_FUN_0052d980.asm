@@ -41,7 +41,7 @@
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00449f60
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760
@@ -135,8 +135,8 @@ section .text
     PUSH 0x5e572b                       ; 0052da64 | = "CDemonSet::initScene - Memory leakage..."
     MOV dword ptr [0x01d046a0],EBP      ; 0052da69 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0052da6f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0052da74
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052da74
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052da79
     ADD EBX,0x4                         ; 0052da7c
         ;   Label: LAB_0052da7c
@@ -274,8 +274,8 @@ section .text
     PUSH 0x5e577c                       ; 0052dbf1 | = "CDemonSet::initScene - Too many spotl..."
     MOV dword ptr [0x01d046a0],EBP      ; 0052dbf6 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0052dbfc | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0052dc01
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052dc01
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052dc06
     JMP 0x0052dab9                      ; 0052dc09
         ;   XREF to: 0052dab9 (UNCONDITIONAL_JUMP)  ; LAB_0052dab9

@@ -34,7 +34,7 @@ void cockpit_ckptutil_c_FUN_00439090(void)
           _sprintf(acStack_114,"Edge out of range: edge %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x54a;
-          core_main_c_FUN_005030e0(acStack_114);
+          core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_114);
         }
         *(byte *)(iVar1 + in_stack_00000004) = (byte)uStack_14;
         iVar1 = (int)in_stack_00000008[2] +
@@ -43,7 +43,7 @@ void cockpit_ckptutil_c_FUN_00439090(void)
           _sprintf(acStack_114,"Edge out of range: edge %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x553;
-          core_main_c_FUN_005030e0(acStack_114);
+          core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_114);
         }
         in_stack_00000008 = in_stack_00000008 + 4;
         iVar3 = iVar3 + 1;

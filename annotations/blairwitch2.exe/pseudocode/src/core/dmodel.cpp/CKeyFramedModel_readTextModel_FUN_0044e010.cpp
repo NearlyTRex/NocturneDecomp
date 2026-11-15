@@ -56,7 +56,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFram
   _fscanf(file,&DAT_005cf66d);
   _DAT_01d046a0 = "..\\core\\dmodel.cpp";
   _DAT_01d046a4 = 0x128;
-  core_main_c_FUN_004e4500("KFM file is invalid version %d",0xffffffff);
+  core_main_c_displayErrorAndQuit_FUN_004e4500("KFM file is invalid version %d");
   iVar3 = 1;
   do {
     iVar2 = _fgetc(file);
@@ -131,7 +131,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFram
   if ((file->_flag & 0x20) != 0) {
     _DAT_01d046a0 = "..\\core\\dmodel.cpp";
     _DAT_01d046a4 = 0x197;
-    core_main_c_FUN_004e4500("Error reading KFM model");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Error reading KFM model");
   }
   if (local_48 == 0) {
     return;

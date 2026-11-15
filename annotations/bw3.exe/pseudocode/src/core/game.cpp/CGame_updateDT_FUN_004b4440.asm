@@ -111,7 +111,7 @@ section .text
     FMUL float ptr [EBX + 0x210]        ; 004b4534
     MOV ECX,dword ptr [0x01d22c44]      ; 004b453a | DAT_01d22c44
     CALL crt_math.c_round_FUN_005a3120  ; 004b4540
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0x310]       ; 004b4545
     TEST ECX,ECX                        ; 004b454b
     JNZ 0x004b45b7                      ; 004b454d
@@ -154,7 +154,7 @@ section .text
     FDIV float ptr [0x005fe9e8]         ; 004b45bd | DAT_005fe9e8
     FMUL float ptr [EBX + 0x210]        ; 004b45c3
     CALL crt_math.c_round_FUN_005a3120  ; 004b45c9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBX + 0x310]       ; 004b45ce
     JMP 0x004b454f                      ; 004b45d4
         ;   XREF to: 004b454f (UNCONDITIONAL_JUMP)  ; LAB_004b454f

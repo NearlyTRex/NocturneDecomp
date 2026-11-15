@@ -62,15 +62,15 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_initializeCoronaBuffers_FUN_0043f820
-;   core_dirmat.cpp_FUN_004495a0
-;   core_dirmat.cpp_FUN_004496e0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880
-;   engine_drender.cpp_FUN_0046b5e0
 ;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
@@ -98,8 +98,8 @@ section .text
     ADD EAX,0x10                        ; 0044ac88
     PUSH EAX                            ; 0044ac8b
     LEA ESI,[ESP + 0x60]                ; 0044ac8c
-    CALL core_dirmat.cpp_FUN_004496e0   ; 0044ac90
-        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004496e0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 ; 0044ac90
+        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x4                         ; 0044ac95
     PUSH 0x0                            ; 0044ac98
     LEA EAX,[ESP + 0x54]                ; 0044ac9a
@@ -198,8 +198,8 @@ section .text
     PUSH ESI                            ; 0044add8 | DAT_01ba5c50
     LEA ESI,[ESP + 0x84]                ; 0044add9
     LEA EDI,[ESP + 0x6c]                ; 0044ade0
-    CALL engine_drender.cpp_FUN_0046b5e0 ; 0044ade4
-        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b5e0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0 ; 0044ade4
+        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0(CDemonRenderer * this_ptr, CVector3f * output)
     LEA ESI,[ESP + 0x84]                ; 0044ade9
     ADD ESP,0x4                         ; 0044adf0
     XOR EBX,EBX                         ; 0044adf3
@@ -233,8 +233,8 @@ section .text
     PUSH EAX                            ; 0044ae48
     LEA ESI,[ESP + 0x4c]                ; 0044ae49
     LEA EDI,[ESP + 0xa0]                ; 0044ae4d
-    CALL core_dirmat.cpp_FUN_004495a0   ; 0044ae54
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 0044ae54
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x4c]                ; 0044ae59
     LEA EDX,[ESP + 0xa0]                ; 0044ae5d
     ADD ESP,0x8                         ; 0044ae64
@@ -338,7 +338,7 @@ section .text
     FMUL double ptr [0x005cf45f]        ; 0044af78 | DAT_005cf45f
     XOR EBX,EBX                         ; 0044af7e
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044af80
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 0044af85
     PUSH 0x43f860                       ; 0044af89
         ;   Label: LAB_0044af89

@@ -31,9 +31,10 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00446b60(CDemo
   if (0 < this_ptr->triangle_count) {
     iVar4 = 0;
     do {
-      local_14 = (float)core_dcube_cpp_FUN_00444a40
-                                  ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar4,
-                                   ray_origin,ray_direction);
+      local_14 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40
+                           ((CDemonCubeTriangle *)
+                            ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar4),ray_origin
+                            ,ray_direction);
       if (((0.0 <= local_14) && (local_14 < local_18)) && (local_14 <= 1.0)) {
         local_1c = iVar3;
         local_18 = local_14;

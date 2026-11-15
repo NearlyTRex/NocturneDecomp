@@ -33,7 +33,7 @@
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;   engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040dbd0
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     MOV EAX,[0x006141bc]                ; 004da99e | DAT_006141bc
     PUSH 0x5db441                       ; 004da9a3 | DAT_005db441
     MOV [0x01d02f40],EAX                ; 004da9a8 | DAT_01d02f40
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004da9ad
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004da9ad
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004da9b2
     ADD ESP,0xc                         ; 004da9b4
     TEST EAX,EAX                        ; 004da9b7
@@ -274,8 +274,8 @@ section .text
     XOR EBX,EBX                         ; 004dac3f
     PUSH 0x5db526                       ; 004dac41 | DAT_005db526
     MOV dword ptr [0x01cf0200],EBX      ; 004dac46 | DAT_01cf0200
-    CALL engine_dosio.cpp_FUN_00460c70  ; 004dac4c
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 004dac4c
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dac51
     MOV EBX,EAX                         ; 004dac54
     TEST EAX,EAX                        ; 004dac56
@@ -308,14 +308,14 @@ section .text
     ADD ESP,0x10                        ; 004dac9a
     PUSH EBX                            ; 004dac9d
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004dac9e
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004daca3
     JMP 0x004da9bf                      ; 004daca6
         ;   XREF to: 004da9bf (UNCONDITIONAL_JUMP)  ; LAB_004da9bf
     PUSH EBX                            ; 004dacab
         ;   Label: LAB_004dacab
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004dacac
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004dacb1
     POP EBP                             ; 004dacb4
         ;   Label: LAB_004dacb4

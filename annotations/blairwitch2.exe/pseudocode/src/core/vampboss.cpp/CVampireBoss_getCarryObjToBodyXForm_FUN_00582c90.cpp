@@ -17,45 +17,37 @@ CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm
   byte bVar4;
   CMatrix3x4f CStack_a8;
   CMatrix3x4f CStack_78;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   uint uStack_18;
   uint uStack_14;
   uint uStack_10;
   
   bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
-  uStack_48 = 0;
-  uStack_44 = 0x3e03126f;
-  uStack_40 = 0x40847ae1;
-  if (&uStack_30 != &uStack_48) {
-    uStack_2c = 0x3e03126f;
-    uStack_28 = 0x40847ae1;
-    uStack_30 = 0;
+  CStack_48.x = 0.0;
+  CStack_48.y = 0.128;
+  CStack_48.z = 4.14;
+  if (&CStack_30 != &CStack_48) {
+    CStack_30.y = 0.128;
+    CStack_30.z = 4.14;
+    CStack_30.x = 0.0;
   }
   uStack_10 = 0;
   uStack_18 = 0;
   uStack_14 = 0x4048f5c3;
-  uStack_24 = 0;
-  uStack_20 = 0x4048f5c3;
-  uStack_1c = 0;
-  if (&uStack_3c != &uStack_24) {
-    uStack_3c = 0;
-    uStack_38 = 0x4048f5c3;
-    uStack_34 = 0;
+  CStack_24.x = 0.0;
+  CStack_24.y = 3.14;
+  CStack_24.z = 0.0;
+  if (&CStack_3c != &CStack_24) {
+    CStack_3c.x = 0.0;
+    CStack_3c.y = 3.14;
+    CStack_3c.z = 0.0;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
-            (&CStack_78,&uStack_30,&uStack_3c);
+            (&CStack_78,&CStack_30,&CStack_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

@@ -22,9 +22,8 @@ void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(SRenderVertex 
   SRenderVertex *pSVar9;
   SRenderVertex **local_24;
   int local_20;
-  int local_1c;
-  int *local_18;
-  int *local_14;
+  SSoftwareEdge *local_18;
+  SSoftwareEdge *local_14;
   
   _DAT_01cb0258 = 0;
   _DAT_01cb05dc = DAT_006141bc;
@@ -100,74 +99,74 @@ void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(SRenderVertex 
       local_20 = local_20 + 1;
     } while (local_20 < vertex_count);
   }
-  local_18 = (int *)&DAT_01cb025c;
-  iVar3 = 0;
+  iVar3 = _DAT_01cb05dc;
+  local_18 = (SSoftwareEdge *)&DAT_01cb025c;
+  iVar4 = 0;
   if (0 < _DAT_01cb0258) {
     do {
-      if ((_DAT_01cb05dc == *local_18) && (local_18 != (int *)0x0)) goto LAB_004abe70;
-      iVar3 = iVar3 + 1;
-      local_18 = local_18 + 0xe;
-    } while (iVar3 < _DAT_01cb0258);
+      if ((_DAT_01cb05dc == (local_18->base).y_min) && (local_18 != (SSoftwareEdge *)0x0))
+      goto LAB_004abe70;
+      iVar4 = iVar4 + 1;
+      local_18 = (SSoftwareEdge *)&local_18->green_current;
+    } while (iVar4 < _DAT_01cb0258);
   }
-  local_18 = (int *)0x0;
+  local_18 = (SSoftwareEdge *)0x0;
 LAB_004abe70:
-  if (local_18 != (int *)0x0) {
-    iVar3 = 0;
-    local_14 = (int *)&DAT_01cb025c;
+  if (local_18 != (SSoftwareEdge *)0x0) {
+    iVar4 = 0;
+    local_14 = (SSoftwareEdge *)&DAT_01cb025c;
     if (0 < _DAT_01cb0258) {
       do {
-        if ((_DAT_01cb05dc == *local_14) && (local_14 != local_18)) goto LAB_004abea9;
-        iVar3 = iVar3 + 1;
-        local_14 = local_14 + 0xe;
-      } while (iVar3 < _DAT_01cb0258);
+        if ((_DAT_01cb05dc == (local_14->base).y_min) && (local_14 != local_18)) goto LAB_004abea9;
+        iVar4 = iVar4 + 1;
+        local_14 = (SSoftwareEdge *)&local_14->green_current;
+      } while (iVar4 < _DAT_01cb0258);
     }
-    local_14 = (int *)0x0;
+    local_14 = (SSoftwareEdge *)0x0;
 LAB_004abea9:
-    if (local_14 != (int *)0x0) {
-      local_1c = _DAT_01cb05dc;
+    if (local_14 != (SSoftwareEdge *)0x0) {
       do {
-        if (local_18[1] <= local_1c) {
-          *local_18 = -1;
-          local_18 = (int *)&DAT_01cb025c;
-          iVar3 = 0;
+        if ((local_18->base).y_max <= iVar3) {
+          (local_18->base).y_min = -1;
+          local_18 = (SSoftwareEdge *)&DAT_01cb025c;
+          iVar4 = 0;
           if (0 < _DAT_01cb0258) {
             do {
-              if ((local_1c == *local_18) && (local_18 != local_14)) goto LAB_004abf02;
-              iVar3 = iVar3 + 1;
-              local_18 = local_18 + 0xe;
-            } while (iVar3 < _DAT_01cb0258);
+              if ((iVar3 == (local_18->base).y_min) && (local_18 != local_14)) goto LAB_004abf02;
+              iVar4 = iVar4 + 1;
+              local_18 = (SSoftwareEdge *)&local_18->green_current;
+            } while (iVar4 < _DAT_01cb0258);
           }
-          local_18 = (int *)0x0;
+          local_18 = (SSoftwareEdge *)0x0;
 LAB_004abf02:
-          if (local_18 == (int *)0x0) {
+          if (local_18 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (local_14[1] <= local_1c) {
-          *local_14 = -1;
-          local_14 = (int *)&DAT_01cb025c;
-          iVar3 = 0;
+        if ((local_14->base).y_max <= iVar3) {
+          (local_14->base).y_min = -1;
+          local_14 = (SSoftwareEdge *)&DAT_01cb025c;
+          iVar4 = 0;
           if (0 < _DAT_01cb0258) {
             do {
-              if ((local_1c == *local_14) && (local_14 != local_18)) goto LAB_004abf52;
-              iVar3 = iVar3 + 1;
-              local_14 = local_14 + 0xe;
-            } while (iVar3 < _DAT_01cb0258);
+              if ((iVar3 == (local_14->base).y_min) && (local_14 != local_18)) goto LAB_004abf52;
+              iVar4 = iVar4 + 1;
+              local_14 = (SSoftwareEdge *)&local_14->green_current;
+            } while (iVar4 < _DAT_01cb0258);
           }
-          local_14 = (int *)0x0;
+          local_14 = (SSoftwareEdge *)0x0;
 LAB_004abf52:
-          if (local_14 == (int *)0x0) {
+          if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        engine_special_cpp_FUN_0055d6d7();
-        local_18[2] = local_18[2] + local_18[3];
-        local_18[6] = local_18[6] + local_18[7];
-        local_18[8] = local_18[8] + local_18[9];
-        local_1c = local_1c + 1;
-        local_14[2] = local_14[2] + local_14[3];
-        local_14[6] = local_14[6] + local_14[7];
-        local_14[8] = local_14[8] + local_14[9];
+        engine_special_cpp_FUN_0055d6d7(local_14,local_18,iVar3);
+        *(int *)(iVar3 + 8) = *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0xc);
+        *(int *)(iVar3 + 0x18) = *(int *)(iVar3 + 0x18) + *(int *)(iVar3 + 0x1c);
+        *(int *)(iVar3 + 0x20) = *(int *)(iVar3 + 0x20) + *(int *)(iVar3 + 0x24);
+        (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
+        (local_18->base).u_current = (local_18->base).u_current + (local_18->base).u_gradient;
+        (local_18->base).v_current = (local_18->base).v_current + (local_18->base).v_gradient;
       } while( true );
     }
   }

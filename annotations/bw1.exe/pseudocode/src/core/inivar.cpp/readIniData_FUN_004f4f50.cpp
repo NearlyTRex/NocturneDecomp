@@ -18,7 +18,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
   if (iVar1 != 0) {
     _DAT_01d1d400 = "..\\core\\inivar.cpp";
     _DAT_01d1d404 = 0x57;
-    core_main_c_FUN_005030e0("Please copy Nocturne to your hard drive");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Please copy Nocturne to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_210,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(&local_210,"Graphics");

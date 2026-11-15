@@ -45,7 +45,7 @@
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00446440
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880
@@ -268,8 +268,8 @@ section .text
     PUSH 0x5ce9dd                       ; 00446ade | = "CDemonCube::rotateVerticies - tried t..."
     MOV dword ptr [0x01d046a0],EBX      ; 00446ae3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00446ae9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00446aef
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00446aef
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00446af4
     JMP 0x004468ef                      ; 00446af7
         ;   XREF to: 004468ef (UNCONDITIONAL_JUMP)  ; LAB_004468ef

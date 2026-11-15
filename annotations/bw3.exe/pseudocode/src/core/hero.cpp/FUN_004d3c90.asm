@@ -22,7 +22,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
-;   core_hero.cpp_FUN_004d3b20
+;   core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -180,8 +180,8 @@ section .text
     RET                                 ; 004d3de4
     PUSH EBX                            ; 004d3de5
         ;   Label: LAB_004d3de5
-    CALL core_hero.cpp_FUN_004d3b20     ; 004d3de6
-        ;   XREF to: 004d3b20 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004d3b20(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20 ; 004d3de6
+        ;   XREF to: 004d3b20 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d3deb
     TEST EAX,EAX                        ; 004d3dee
     JZ 0x004d3df9                       ; 004d3df0

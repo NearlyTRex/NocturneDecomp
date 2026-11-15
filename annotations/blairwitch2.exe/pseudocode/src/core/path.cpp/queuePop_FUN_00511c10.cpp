@@ -16,7 +16,7 @@ void __cdecl core_path_cpp_queuePop_FUN_00511c10(int *out_x,int *out_cost,int *o
   if (_DAT_01e5ec6c == _DAT_01e5ec70) {
     _DAT_01d046a0 = "..\\core\\path.cpp";
     _DAT_01d046a4 = 0xdf;
-    core_main_c_FUN_004e4500("queuePop - empty queue?!");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("queuePop - empty queue?!");
   }
   *out_x = *(int *)(&DAT_01e5020c + _DAT_01e5ec6c * 0xc);
   *out_cost = *(int *)(&DAT_01e50210 + _DAT_01e5ec6c * 0xc);

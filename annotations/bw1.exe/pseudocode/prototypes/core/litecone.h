@@ -35,7 +35,7 @@ int __cdecl CLightCone::renderTransparent(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_CLightCone_getBoundingBox_FUN_00502f20
 // Address: 00502f20
-CBoundingBox3D * __cdecl CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_litecone.cpp_CLightCone_archive_FUN_00502f80
 // Address: 00502f80

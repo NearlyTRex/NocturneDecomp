@@ -177,17 +177,17 @@ void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_pt
 // Address: 0046d1a0
 CVector3i * __stack_esi CDemonRenderer::getCameraOriginFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
-// Original: engine_drender.cpp_FUN_0046d1c0
+// Original: engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
 // Address: 0046d1c0
-void FUN_0046d1c0(void);
+CVector3f * __stack_esi CDemonRenderer::getCameraOriginWorld(CDemonRenderer *this_ptr,CVector3f *output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
 // Address: 0046d230
 CVector3i * __stack_esi CDemonRenderer::getCameraRotationFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
-// Original: engine_drender.cpp_FUN_0046d250
+// Original: engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
 // Address: 0046d250
-void FUN_0046d250(void);
+CVector3f * __stack_esi CDemonRenderer::getCameraRotationRadians(CDemonRenderer *this_ptr,CVector3f *output);
 
 // Original: engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0
 // Address: 0046d2d0

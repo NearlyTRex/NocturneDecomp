@@ -1,0 +1,220 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 48,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00401010",
+      "from_addr": "0040104a",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401590",
+    "address_range": [
+      [
+        "00401590",
+        "00401616"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+    "signature": "void __cdecl engine_2d_c_loadPaletteFile_FUN_00401590(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "005a0dc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a08d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+    },
+    {
+      "addr": "005a0a50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0fd0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
+    },
+    {
+      "addr": "005a0c10",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_005a0c10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d205c",
+      "name": "s_art_005d205c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2060",
+      "name": "s_engine_2d_c_005d2060",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d206f",
+      "name": "s_Unable_to_open_VGA_palet_005d206f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f8",
+      "name": "DAT_01c4e9f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040104a",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 27,
+      "INT_ADD": 13,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "LOAD": 3,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 162
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00401590",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "bw3.exe": {
+      "addr": "00401590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004015a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5067
+    },
+    "nocturne.exe": {
+      "addr": "00401bd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5205
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01c4e9f8",
+      "severity": "mild",
+      "text": "support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_2c,&DAT_01c4e9f8,0x300);",
+      "type": "undefined_data"
+    }
+  ]
+}

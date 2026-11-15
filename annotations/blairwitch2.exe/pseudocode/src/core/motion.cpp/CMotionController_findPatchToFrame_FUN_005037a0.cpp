@@ -13,6 +13,6 @@ int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_005037a0(CMot
 {
   _DAT_01d046a0 = "..\\core\\motion.cpp";
   _DAT_01d046a4 = 0x2fa;
-  core_main_c_FUN_004e4500("CMotionController::findPatchToFrame should never be called for this base class!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CMotionController::findPatchToFrame should never be called for this base class!");
   return 0;
 }

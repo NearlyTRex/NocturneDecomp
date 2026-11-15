@@ -11,14 +11,17 @@
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004b0a20(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 
 {
+  CBitFont *this_ptr_00;
   int iVar1;
-  int iVar2;
-  char *pcVar3;
-  uint extraout_ECX;
+  uint uVar2;
+  int iVar3;
   char *pcVar4;
-  uint character_code;
-  float10 fVar5;
+  char *pcVar5;
+  uint uVar6;
+  int y_00;
+  double dVar7;
   
+  this_ptr_00 = this_ptr;
   if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c6cee8 != 0)) {
     if (this_ptr->win_font_enabled == 0) {
       iVar1 = engine_font_cpp_FUN_004b33d0(this_ptr,text,x,y,color_mode);
@@ -29,55 +32,84 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004b0a20(CBitFont *this_ptr,ch
     }
     return iVar1;
   }
-  pcVar3 = text;
-  if (this_ptr->win_font_enabled == 0) {
-    iVar1 = x;
-    if (this_ptr->use_3d_rendering != 0) {
-      fVar5 = (float10)_DAT_01d76c40 * (float10)_DAT_005c2074;
-      round();
-      this_ptr->accel_color = extraout_ECX | (int)ROUND(fVar5) << 0x18;
-    }
-    while (character_code = (uint)(byte)*text, character_code != 0) {
-      if (character_code == 0xd) {
-        text = text + 1;
-      }
-      else if (character_code == 10) {
+  pcVar4 = text;
+  if (this_ptr->win_font_enabled != 0) {
+    do {
+      pcVar5 = text;
+      if (*text == '\n') goto LAB_004b0ac4;
+      if (*text == '\0') goto LAB_004b0ac2;
+      pcVar5 = text + 1;
+      if (*pcVar5 == '\n') goto LAB_004b0ac4;
+      text = text + 2;
+      if (*pcVar5 == '\0') {
+LAB_004b0ac2:
+        pcVar5 = (char *)0x0;
+LAB_004b0ac4:
+        if (pcVar5 != (char *)0x0) {
+          *pcVar5 = '\0';
+        }
+        engine_palette_cpp_FUN_00509bc0(this_ptr->win_font_helper,pcVar4,x,y,color_mode,color_value)
+        ;
+        engine_palette_cpp_FUN_00509d90(this_ptr->win_font_helper);
+        if (pcVar5 == (char *)0x0) {
+          return 0;
+        }
+        *pcVar5 = '\n';
+        text = pcVar5 + 1;
         y = y + this_ptr->current_line_height + this_ptr->line_spacing;
-        text = text + 1;
-        iVar1 = x;
+        pcVar4 = text;
+      }
+    } while( true );
+  }
+  iVar1 = x;
+  y_00 = y;
+  if (this_ptr->use_3d_rendering == 0) goto LAB_004b0b31;
+  if (color_mode == -2) {
+    if (DAT_005fba20 == 0x20) {
+      uVar6 = _DAT_01d1ad68 << (DAT_01c6af74 & 0x1f) | _DAT_01d1ad6c << (DAT_01c6af80 & 0x1f);
+      uVar2 = _DAT_01d1ad70 << (DAT_01c6af8c & 0x1f);
+    }
+    else {
+      uVar6 = _DAT_01d1ad6c << 8 | _DAT_01d1ad68 << 0x10;
+      uVar2 = _DAT_01d1ad70;
+    }
+LAB_004b0b9b:
+    uVar6 = uVar6 | uVar2;
+  }
+  else {
+    if (-1 < color_mode) {
+      iVar3 = color_mode * 3;
+      uVar6 = (uint)(byte)(&DAT_01c6af9a)[iVar3];
+      if (DAT_005fba20 == 0x20) {
+        uVar2 = (uint)(byte)(&DAT_01c6af99)[iVar3] << (DAT_01c6af80 & 0x1f) |
+                (uint)(byte)(&DAT_01c6af98)[iVar3] << (DAT_01c6af74 & 0x1f);
+        uVar6 = uVar6 << (DAT_01c6af8c & 0x1f);
       }
       else {
-        iVar2 = engine_font_cpp_FUN_004b1460(this_ptr,character_code,iVar1,y,color_mode,color_value)
+        uVar2 = (uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af99)[iVar3] << 8
         ;
-        text = text + 1;
-        iVar1 = iVar1 + iVar2;
       }
+      goto LAB_004b0b9b;
     }
-    return iVar1 - x;
+    uVar6 = 0xffffff;
   }
-  do {
-    pcVar4 = text;
-    if (*text == '\n') goto LAB_004b0ac4;
-    if (*text == '\0') goto LAB_004b0ac2;
-    pcVar4 = text + 1;
-    if (*pcVar4 == '\n') goto LAB_004b0ac4;
-    text = text + 2;
-    if (*pcVar4 == '\0') {
-LAB_004b0ac2:
-      pcVar4 = (char *)0x0;
-LAB_004b0ac4:
-      if (pcVar4 != (char *)0x0) {
-        *pcVar4 = '\0';
-      }
-      engine_palette_cpp_FUN_00509bc0(this_ptr->win_font_helper,pcVar3,x,y,color_mode,color_value);
-      engine_palette_cpp_FUN_00509d90(this_ptr->win_font_helper);
-      if (pcVar4 == (char *)0x0) {
-        return 0;
-      }
-      *pcVar4 = '\n';
-      text = pcVar4 + 1;
-      y = y + this_ptr->current_line_height + this_ptr->line_spacing;
-      pcVar3 = text;
+  dVar7 = round((double)(_DAT_01d76c40 * (float)_DAT_005c2074));
+  this_ptr->accel_color = uVar6 | (int)ROUND(dVar7) << 0x18;
+LAB_004b0b31:
+  while (uVar6 = (uint)(byte)this_ptr->bitmap_count, uVar6 != 0) {
+    if (uVar6 == 0xd) {
+      this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);
     }
-  } while( true );
+    else if (uVar6 == 10) {
+      this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);
+      iVar1 = x;
+      y_00 = y_00 + this_ptr_00->current_line_height + this_ptr_00->line_spacing;
+    }
+    else {
+      iVar3 = engine_font_cpp_FUN_004b1460(this_ptr_00,uVar6,iVar1,y_00,y,color_mode);
+      this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);
+      iVar1 = iVar1 + iVar3;
+    }
+  }
+  return iVar1 - x;
 }

@@ -28,7 +28,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   core_dtrace.cpp_FUN_0048aaf0 at 0048ac37
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0 at 0048ac37
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cc69
 ;   engine_pod.cpp_FUN_0053bfc0 at 0053c18f
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0 at 00496270
@@ -52,7 +52,7 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_2d.c_drawVLine_FUN_00403040
@@ -120,7 +120,7 @@ section .text
     FMUL double ptr [0x005dc0d0]        ; 00496309 | DAT_005dc0d0
     FADD double ptr [0x005dc0d8]        ; 0049630f | DAT_005dc0d8
     CALL crt_math.c_round_FUN_005c03a0  ; 00496315
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 0049631a
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0049631e
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
@@ -330,7 +330,7 @@ section .text
     FMUL float ptr [ESP + 0xc]          ; 00496585
     FADD double ptr [0x005dc0d8]        ; 00496589 | DAT_005dc0d8
     CALL crt_math.c_round_FUN_005c03a0  ; 0049658f
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x48]        ; 00496594
     MOV EAX,dword ptr [ESP + 0x48]      ; 00496598
     ADD EAX,EBX                         ; 0049659c
@@ -415,7 +415,7 @@ section .text
     FDIVRP                              ; 0049668f
     FADD double ptr [0x005dc0d8]        ; 00496691 | DAT_005dc0d8
     CALL crt_math.c_round_FUN_005c03a0  ; 00496697
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x40]        ; 0049669c
     MOV ESI,dword ptr [ESP + 0x40]      ; 004966a0
     TEST ESI,ESI                        ; 004966a4
@@ -434,7 +434,7 @@ section .text
     FLD double ptr [ESP]                ; 004966c7
     FADD double ptr [0x005dc0d8]        ; 004966ca | DAT_005dc0d8
     CALL crt_math.c_round_FUN_005c03a0  ; 004966d0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004966d5
     MOV EAX,dword ptr [ESP + 0x10]      ; 004966d9
     MOV dword ptr [ESP + 0x40],EDX      ; 004966dd
@@ -506,8 +506,8 @@ section .text
     PUSH 0x5dc05a                       ; 00496799 | = "CEditorTools::updatePercentageWindow ..."
     MOV dword ptr [0x01d1d400],ECX      ; 0049679e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 004967a4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004967aa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004967aa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004967af
     JMP 0x004962c9                      ; 004967b2
         ;   XREF to: 004962c9 (UNCONDITIONAL_JUMP)  ; LAB_004962c9

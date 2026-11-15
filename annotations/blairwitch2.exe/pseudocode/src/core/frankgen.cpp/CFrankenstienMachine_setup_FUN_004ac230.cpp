@@ -1,6 +1,6 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004ac230
 // Address: 004ac230
-// Address Range: [[004ac230, 004ac262] [004ac2b9, 004ac2e2] [004ac432, 004ac454]]
+// Address Range: [[004ac230, 004ac454]]
 // Convention: __cdecl
 // Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004ac230(CFrankenstienMachine *this_ptr)
 

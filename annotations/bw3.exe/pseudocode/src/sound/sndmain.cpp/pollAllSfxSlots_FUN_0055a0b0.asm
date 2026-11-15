@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_snddx.cpp_FUN_0055b620 at 0055b645
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0055b620 at 0055b645
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3ed5
@@ -23,7 +23,7 @@
 ;   undefined4 DAT_02cf3420
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005526d0
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430
 ;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00555410
@@ -104,8 +104,8 @@ section .text
     PUSH 0x5d3eea                       ; 0055a140 | = "SfxSlot::pollSfx - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 0055a145 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0055a14b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0055a151
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055a151
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055a156
     JMP 0x0055a0c4                      ; 0055a159
         ;   XREF to: 0055a0c4 (UNCONDITIONAL_JUMP)  ; LAB_0055a0c4

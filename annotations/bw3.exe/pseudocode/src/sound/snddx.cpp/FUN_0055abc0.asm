@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   sound_snddx.cpp_FUN_0055c0f0 at 0055c2b7
-;   sound_snddx.cpp_FUN_0055cc40 at 0055ce5b
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0 at 0055c2b7
+;   sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0055cc40 at 0055ce5b
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -21,7 +21,7 @@ section .text
         ;   Label: sound_snddx.cpp_FUN_0055abc0
     FLD float ptr [ESP + 0x8]           ; 0055abc3
     CALL crt_math.c_round_FUN_005a3120  ; 0055abc7
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 0055abcc
     MOV EDX,dword ptr [ESP]             ; 0055abcf
     CMP EDX,0x64                        ; 0055abd2

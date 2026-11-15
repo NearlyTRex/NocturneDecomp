@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5b535c                       ; 004037ba | = "Bad MRGL struct"
     MOV dword ptr [0x01d71de0],EDX      ; 004037bf | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004037c5 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004037cb
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004037cb
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004037d0
     MOV EAX,dword ptr [ESP + 0x4]       ; 004037d3
     RET                                 ; 004037d7

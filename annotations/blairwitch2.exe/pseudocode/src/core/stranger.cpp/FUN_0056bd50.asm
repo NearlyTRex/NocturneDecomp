@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_stranger_cpp_FUN_0056bd50(void)
+; undefined4 * core_stranger_cpp_FUN_0056bd50(void)
 ;
 ;
 ; Referenced Globals:
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 0056be4e (CONDITIONAL_JUMP)  ; LAB_0056be4e
     FLD double ptr [ESP + 0x8]          ; 0056be0c
     CALL crt_math.c_acos_FUN_005b9924   ; 0056be10
-        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005b9924()
+        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005b9924(double x)
     FLDZ                                ; 0056be15
     FXCH                                ; 0056be17
     FSTP float ptr [ESP + 0x50]         ; 0056be19
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 0056bdbe (CONDITIONAL_JUMP)  ; LAB_0056bdbe
     FLD double ptr [ESP + 0x10]         ; 0056be9b
     CALL crt_math.c_acos_FUN_005b9924   ; 0056be9f
-        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005b9924()
+        ;   XREF to: 005b9924 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005b9924(double x)
     FLDZ                                ; 0056bea4
     FXCH                                ; 0056bea6
     FSTP float ptr [ESP + 0x44]         ; 0056bea8

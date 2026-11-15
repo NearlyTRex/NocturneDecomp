@@ -20,10 +20,8 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
   byte bVar6;
   float afStackY_1070 [1011];
   CKeyFramedModelInstance *this_ptr_00;
-  float local_88;
-  float local_7c;
-  uint local_78;
-  float local_74;
+  CVector3f local_88;
+  float local_7c [3];
   CVector3f local_70;
   CVector3f local_64;
   float local_58;
@@ -58,12 +56,12 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
       local_3c[(uint)bVar6 * -2 + 6] = local_3c[(uint)bVar6 * -2 + 3];
       local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
            local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-      if (&stack0xffffff84 != local_3c + 5) {
-        local_7c = local_28[0];
-        local_74 = local_20;
+      if (local_7c != local_3c + 5) {
+        local_7c[0] = local_28[0];
+        local_7c[2] = local_20;
       }
-      local_78 = 0;
-      if (((0.0 < SQRT(local_74 * local_74 + local_7c * local_7c)) ||
+      local_7c[1] = 0.0;
+      if (((0.0 < SQRT(local_7c[2] * local_7c[2] + local_7c[0] * local_7c[0])) ||
           (local_54[3] < (this_ptr->physics_box).linear_velocity.y)) &&
          ((float)_DAT_005c0760 < this_ptr->fuse_time - this_ptr->fuse_timer)) {
         iVar5 = this_ptr->toss_type;
@@ -105,11 +103,12 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
            *(uint *)(&DAT_02cfd908 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_00);
       local_70.z = local_70.z + (pCVar3->bounds).max.z;
-      core_dirmat_cpp_FUN_0045b800(&(this_ptr->physics_box).rotation_matrix,&local_70);
-      local_58 = local_88;
-      local_54[(uint)bVar6 * -2] = *(float *)(&stack0xffffff7c + (uint)bVar6 * -8);
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
+                (&(this_ptr->physics_box).rotation_matrix,&local_70,&local_88);
+      local_58 = local_88.x;
+      local_54[(uint)bVar6 * -2] = local_7c[(uint)bVar6 * -2 + -2];
       local_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-           *(float *)(&stack0xffffff80 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+           local_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -1];
       local_40 = (this_ptr->physics_box).position.x + local_58;
       local_3c[0] = (this_ptr->physics_box).position.y + local_54[0];
       local_3c[1] = (this_ptr->physics_box).position.z + local_54[1];

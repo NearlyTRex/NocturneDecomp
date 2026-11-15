@@ -51,7 +51,7 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_0045f4d0(CMatrix3x3f *this_p
   if (ABS(fVar30) == 0.0) {
     _DAT_01d1d400 = "..\\core\\dirmat.cpp";
     _DAT_01d1d404 = 0x6c;
-    core_main_c_FUN_005030e0("CMatrix::invert - Singular matrix");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CMatrix::invert - Singular matrix");
   }
   fVar1 = this_ptr->m[1].x;
   fVar2 = this_ptr->m[2].z;

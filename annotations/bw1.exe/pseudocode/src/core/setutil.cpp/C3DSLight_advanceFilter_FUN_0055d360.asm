@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5f1368                       ; 0055d3cf | = "C3DSLight::advanceFilter - NULL CDemo..."
     MOV dword ptr [0x01d1d400],ECX      ; 0055d3d4 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0055d3da | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055d3e0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055d3e0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055d3e5
     JMP 0x0055d36e                      ; 0055d3e8
         ;   XREF to: 0055d36e (UNCONDITIONAL_JUMP)  ; LAB_0055d36e

@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a98f0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5c10e6                       ; 004a9cc3 | = "Out of memory!"
     MOV dword ptr [0x01d71de0],EDI      ; 004a9cc8 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004a9cce | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004a9cd3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9cd3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004a9cd8
     MOV EDI,ESI                         ; 004a9cdb
         ;   Label: LAB_004a9cdb
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5c1096                       ; 004a9d3f | = "Too many field note entries in sectio..."
     MOV dword ptr [0x01d71de0],ECX      ; 004a9d44 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 004a9d4a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004a9d50
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9d50
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004a9d55
     JMP 0x004a9c99                      ; 004a9d58
         ;   XREF to: 004a9c99 (UNCONDITIONAL_JUMP)  ; LAB_004a9c99
@@ -127,8 +127,8 @@ section .text
     PUSH 0x5c110a                       ; 004a9d68 | = "Entry name '%s' is too long"
     MOV dword ptr [0x01d71de0],EDX      ; 004a9d6d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004a9d73 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004a9d79
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9d79
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004a9d7e
     JMP 0x004a9cec                      ; 004a9d81
         ;   XREF to: 004a9cec (UNCONDITIONAL_JUMP)  ; LAB_004a9cec

@@ -55,7 +55,7 @@ CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *o
 
 // Original: core_door.cpp_FUN_00464c10
 // Address: 00464c10
-void FUN_00464c10(int param_1);
+void FUN_00464c10(CDemonActor *param_1);
 
 // Original: core_door.cpp_CDoor_archive_FUN_00464cd0
 // Address: 00464cd0
@@ -83,7 +83,7 @@ int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getOpenStandPos_FUN_004650a0
 // Address: 004650a0
-float * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr,float *param_2,undefined4 param_3);
+CVector3f * __stack3_esi CDoor::getOpenStandPos(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 
 // Original: core_door.cpp_CDoor_updateCollisionData_FUN_00465330
 // Address: 00465330

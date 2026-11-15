@@ -19,7 +19,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6e22
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0 at 004d86a5
-;   core_game.cpp_FUN_004d7250 at 004d76fb
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d76fb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_No_files_found_005dbe05

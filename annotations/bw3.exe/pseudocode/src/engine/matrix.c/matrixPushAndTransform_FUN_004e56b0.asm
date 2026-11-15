@@ -48,7 +48,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_matrix.c_FUN_004e4d90
 ;   engine_matrix.c_FUN_004e4dd0
 ;
@@ -557,8 +557,8 @@ section .text
     PUSH 0x5c6eed                       ; 004e5dcf | = "Matrix unbalance"
     MOV dword ptr [0x01d71de0],EBX      ; 004e5dd4 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004e5dda | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004e5de0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e5de0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e5de5
     ADD ESP,0x30                        ; 004e5de8
     POP EBP                             ; 004e5deb

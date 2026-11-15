@@ -36,7 +36,7 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9db0(CDemonA
      class_name_hash = g_CBatteryClassInfo.name_hash, iVar1 == 0)) {
     _DAT_01d046a0 = "..\\core\\inv.cpp";
     _DAT_01d046a4 = 0xa3;
-    core_main_c_FUN_004e4500("getModel - Can't classify : %s",actor_ptr);
+    core_main_c_displayErrorAndQuit_FUN_004e4500("getModel - Can't classify : %s");
     return (CKeyFramedModelInstance *)0x0;
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,class_name_hash);

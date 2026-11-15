@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 67,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 30
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "0057fc10"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_turret.cpp_CTurret_getMuzzlePoint_FUN_0057fbf0",
-    "signature": "CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_0057fbf0(CTurret *this_ptr,CVector3f *out_point)"
+    "signature": "CVector3f * __stack_esi core_turret_cpp_CTurret_getMuzzlePoint_FUN_0057fbf0(CTurret *this_ptr,CVector3f *out_point)"
   },
   "function_calls": [],
   "globals": [],
@@ -34,7 +32,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "declared_stack_bytes": 8,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
     "matches_declared": true
   },
@@ -82,10 +80,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -94,13 +92,6 @@
         "offset": 4,
         "size": 4,
         "type": "CTurret *"
-      },
-      {
-        "is_param": true,
-        "name": "out_point",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3f *"
       }
     ]
   },
@@ -128,48 +119,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->x = (this_ptr->barrel_tip_pos).x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->y = fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->z = fVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

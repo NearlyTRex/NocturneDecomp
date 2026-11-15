@@ -14,7 +14,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_dcube.cpp_FUN_004570e0 at 004576f1
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_004558d0 at 004559aa
 ;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00 at 00455de2
 ;
@@ -25,7 +26,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -191,8 +192,8 @@ section .text
     PUSH 0x5d7a99                       ; 004555c0 | = "Bad clip!"
     MOV [0x01d1d400],EAX                ; 004555c5 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 004555ca | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004555d0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004555d0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004555d5
     JMP 0x004554ac                      ; 004555d8
         ;   XREF to: 004554ac (UNCONDITIONAL_JUMP)  ; LAB_004554ac

@@ -20,7 +20,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemo
       if (1999 < g_CDemonSetPtr->actor_count) {
         _DAT_01d71de0 = "..\\core\\mission.cpp";
         _DAT_01d71de4 = 0x394;
-        core_main_c_FUN_004e4330("CDemonMission::buildSetActorList - Too many actors in current set!");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::buildSetActorList - Too many actors in current set!");
       }
       pCVar2 = g_CDemonSetPtr;
       g_CDemonSetPtr->actors[g_CDemonSetPtr->actor_count] = pCVar1;

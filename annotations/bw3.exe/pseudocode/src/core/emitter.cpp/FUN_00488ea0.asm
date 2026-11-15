@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_FUN_00488ea0(int param_1)
+; void core_emitter_cpp_FUN_00488ea0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -11,7 +11,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004884ca
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     LEA ESI,[ESP + 0x40]                ; 00488f23
     PUSH EBP                            ; 00488f27
     FSTP float ptr [ESP + 0x40]         ; 00488f28
-    CALL core_actor.cpp_FUN_00408b80    ; 00488f2c
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00488f2c
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x44]                ; 00488f31
     ADD ESP,0x8                         ; 00488f35
     MOVSD ES:EDI,ESI                    ; 00488f38

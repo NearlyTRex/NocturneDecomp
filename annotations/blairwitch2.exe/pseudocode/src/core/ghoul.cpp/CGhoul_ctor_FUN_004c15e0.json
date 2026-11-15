@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 58,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "raw_address_constant",
+      "suspect_float",
       "warning_overlapping_globals"
     ],
     "total_lines": 108
@@ -178,6 +180,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 20,
+      "match": "6.987474e-39",
+      "severity": "mild",
+      "text": "fVar4 = 6.987474e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Raw hex address 0x4c1687 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 29,
+      "match": "0x4c1687",
+      "severity": "moderate",
+      "text": "iVar5 = 0x4c1687;",
+      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

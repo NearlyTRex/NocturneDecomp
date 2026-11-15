@@ -52,7 +52,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041b410
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0
 ;   core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20
@@ -349,8 +349,8 @@ section .text
     LEA EDI,[ESP + 0x34]                ; 0049d387
     PUSH EAX                            ; 0049d38b
     FSTP float ptr [ESP + 0x28]         ; 0049d38c
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0049d390
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0049d390
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0049d395
     MOV ESI,ESP                         ; 0049d398
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049d39a

@@ -193,7 +193,7 @@ __asm {
         push 0x5d7790
         mov dword ptr [DAT_01d71de0],ECX
         mov dword ptr [DAT_01d71de4],EBX
-        call core_main_c_FUN_004e4330
+        call core_main_c_displayErrorAndQuit_FUN_004e4330
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02d0bcf4],EDI

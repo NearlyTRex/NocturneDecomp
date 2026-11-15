@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 135,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 4,
+    "pseudocode_lines": 82,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
       "stack_alignment_array",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 277
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -46,7 +47,7 @@
     {
       "addr": "00408bf0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408bf0"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0"
     },
     {
       "addr": "0040ce40",
@@ -336,15 +337,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_01c74b6c",
       "severity": "mild",
       "text": "local_24 = *(CCharacter **)(&DAT_01c74b6c + local_2c);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(float *)((int)local_48",
+      "severity": "moderate",
+      "text": "local_50[(uint)bVar7 * -2] = *(float *)((int)local_48 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)local_48",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 74,
       "match": "DAT_01c74c38",
       "severity": "mild",
       "text": "this_ptr_00 = *(CFlameCan **)(&DAT_01c74c38 + iVar5);",

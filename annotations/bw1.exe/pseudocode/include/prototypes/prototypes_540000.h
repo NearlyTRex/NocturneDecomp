@@ -49,7 +49,7 @@ int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_00541de0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00541e30(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00542270(CScat *this_ptr,int hand_index);
-void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3);
+void core_scat_cpp_FUN_005424f0(CDemonActor *param_1,float param_2,float param_3);
 undefined4 core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 void core_scat_cpp_FUN_00542f20(int param_1);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00543070(CScat *this_ptr,uint flags);

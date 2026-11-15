@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_script.cpp_CScript_resetDialogState_FUN_00529b00
 ;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
@@ -88,8 +88,8 @@ section .text
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00529bbd
     PUSH EDX                            ; 00529bc0
     PUSH 0x5e4e5a                       ; 00529bc1 | = "Infinite loop detected trying to skip..."
-    CALL core_main.c_FUN_004e4500       ; 00529bc6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00529bc6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00529bcb
     JMP 0x00529b60                      ; 00529bce
         ;   XREF to: 00529b60 (UNCONDITIONAL_JUMP)  ; LAB_00529b60

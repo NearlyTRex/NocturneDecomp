@@ -39,7 +39,7 @@ int __cdecl CTrash::renderOpaque(CTrash *this_ptr);
 
 // Original: core_trash.cpp_CTrash_getBoundingBox_FUN_0056de10
 // Address: 0056de10
-CBoundingBox3D * __cdecl CTrash::getBoundingBox(CTrash *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTrash::getBoundingBox(CTrash *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trash.cpp_CTrash_getCollisionType_FUN_0056dee0
 // Address: 0056dee0

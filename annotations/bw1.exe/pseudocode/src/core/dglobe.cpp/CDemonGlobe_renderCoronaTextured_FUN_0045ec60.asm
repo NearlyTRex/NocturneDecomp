@@ -120,7 +120,7 @@ section .text
     ADD EBX,0x24                        ; 0045edc4
     PUSH EAX                            ; 0045edc7
     CALL crt_math.c_round_FUN_005c03a0  ; 0045edc8
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH ECX                            ; 0045edcd
     FISTP dword ptr [ESP + 0x1c]        ; 0045edce
     CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30 ; 0045edd2

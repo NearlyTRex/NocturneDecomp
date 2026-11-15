@@ -34,7 +34,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
 ;   core_inv.cpp_FUN_004dadb0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5d7a30                       ; 004b8e89 | = "giveHeroWeapon - This is not a weapon"
     MOV dword ptr [0x01d046a0],EDX      ; 004b8e8e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004b8e94 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004b8e9a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b8e9a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004b8e9f
     MOV dword ptr [EBX + 0x6c4],0x1f4   ; 004b8ea2
         ;   Label: LAB_004b8ea2

@@ -52,12 +52,12 @@ LAB_00549aa1:
   do {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x4d7;
-    core_main_c_FUN_004e4330("Deformable model file is corrupt");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Deformable model file is corrupt");
 LAB_00549ac4:
     if (0x00000007 < local_64) {
       _DAT_01d71de0 = "..\\core\\skeleton.cpp";
       _DAT_01d71de4 = 0x4da;
-      core_main_c_FUN_004e4330("Can't load model of version %d, this .exe can only handle up to version %d",local_64,0x00000007);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Can't load model of version %d, this .exe can only handle up to version %d");
     }
     if (local_64 < 3) {
       do {
@@ -245,7 +245,7 @@ LAB_00549ac4:
   if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x5a6;
-    core_main_c_FUN_004e4330("CDeformableModel::loadStream - error reading file!");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::loadStream - error reading file!");
     return;
   }
   return;

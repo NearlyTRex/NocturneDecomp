@@ -24,12 +24,13 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
   char *pcVar10;
   byte bVar11;
   float afStackY_106c [999];
-  float *pfVar12;
+  CVector3f *input_local_point;
   SDamageInfo SStack_c0;
   float local_84;
-  float local_80 [5];
-  float local_6c;
-  uint local_60;
+  float local_80 [2];
+  CVector3f local_78;
+  CVector3f local_6c;
+  CVector3f local_60;
   float local_50;
   CFlame *local_4c;
   CMatrix3x4f *local_48;
@@ -137,19 +138,22 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter *t
     do {
       if ((this_ptr->model).part_data.visibility_flags[local_20->bone_part] != 0) {
         (this_ptr->base).is_transparent = 1;
-        core_xform_cpp_FUN_00583260(&local_20->offset,local_48 + local_20->bone_index);
-        pfVar12 = local_80 + 2;
-        local_80[2] = (float)local_60;
-        local_80[(uint)bVar11 * -2 + 3] = local_80[(uint)bVar11 * -2 + 9];
-        local_80[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
-             local_80[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        core_xform_cpp_transformVector3x4_FUN_00583260
+                  (&local_20->offset,local_48 + local_20->bone_index,&local_60);
+        input_local_point = &local_78;
+        local_78.x = local_60.x;
+        *(uint *)((int)&local_78 + (uint)bVar11 * -8 + 4) =
+             *(uint *)((int)&local_60 + (uint)bVar11 * -8 + 4);
+        *(uint *)((int)&local_78 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+             *(uint *)((int)&local_60 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+                  (&this_ptr->base,input_local_point,&local_6c);
         iVar6 = local_2c;
         pCVar3 = local_4c;
-        local_84 = local_6c;
-        local_80[(uint)bVar11 * -2] = local_80[(uint)bVar11 * -2 + 6];
+        local_84 = local_6c.x;
+        local_80[(uint)bVar11 * -2] = *(float *)((int)&local_6c + (uint)bVar11 * -8 + 4);
         local_80[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-             local_80[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
+             *(float *)((int)&local_6c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
         (local_24->position).x = local_84;
         (local_24->position).y = local_80[0];
         (local_24->position).z = local_80[1];

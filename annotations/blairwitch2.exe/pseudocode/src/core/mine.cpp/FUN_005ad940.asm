@@ -49,7 +49,7 @@ section .text
     FMUL double ptr [0x005f0ef3]        ; 005ad98a | DAT_005f0ef3
     PUSH EBX                            ; 005ad990
     CALL crt_math.c_round_FUN_005b7ff0  ; 005ad991
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 005ad996
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810 ; 005ad99a
         ;   XREF to: 00448810 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810(CDemonGlobe * this_ptr, CVector3f * position)

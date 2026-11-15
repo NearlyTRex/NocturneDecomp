@@ -23,7 +23,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
   CDemonRenderer *this_ptr_01;
   CVector3f *pCVar7;
   CVector3f *pCVar8;
-  float local_130 [12];
+  CVector3f *in_stack_fffffed0;
   CMatrix3x4f local_100;
   CMatrix3x4f local_d0;
   uint local_a0 [6];
@@ -32,8 +32,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
   float afStack_6c [5];
   CVector3f local_58;
   CVector3f local_4c;
-  float local_40;
-  float afStack_3c [2];
+  CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
   int local_1c;
@@ -90,18 +89,20 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d22424,
                      &local_100);
           pCVar3 = &local_100;
-          pfVar5 = local_130;
+          pfVar5 = (float *)&stack0xfffffed0;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
             *pfVar5 = pCVar3->m[0].w;
             pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
             pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
           }
-          core_xform_cpp_FUN_005b6270(local_130);
-          local_34.x = local_40;
-          *(float *)((int)&local_34 + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2];
-          *(float *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_130);
+          core_xform_cpp_getTranslation_FUN_005b6270((CMatrix3x4f *)&stack0xfffffed0,&local_40);
+          local_34.x = local_40.x;
+          *(uint *)((int)&local_34 + (uint)bVar6 * -8 + 4) =
+               *(uint *)((int)&local_40 + (uint)bVar6 * -8 + 4);
+          *(uint *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               *(uint *)((int)&local_40 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+          core_xform_cpp_matrixToEulerAngles_FUN_005b5930
+                    ((CMatrix3x4f *)&stack0xfffffed0,in_stack_fffffed0);
           pCVar8 = &local_34;
           pCVar7 = &local_4c;
           local_4c.x = local_70;

@@ -44,7 +44,7 @@
 void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00540070(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,float delta_time);
 int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_00540390(CSimBox *this_ptr);
-CBoundingBox3D * __cdecl core_simbox_cpp_CSimBox_getBoundingBox_FUN_00540410(CSimBox *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_simbox_cpp_CSimBox_getBoundingBox_FUN_00540410(CSimBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00540450(CSimBox *this_ptr);
 ECollisionType __cdecl core_simbox_cpp_CSimBox_getCollisionType_FUN_00540500(CSimBox *this_ptr,SCollisionInfo *collision_info);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_00540510(CSimBox *this_ptr,uint flags);

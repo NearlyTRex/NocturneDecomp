@@ -63,7 +63,7 @@ section .text
     FLD float ptr [EBP + 0x1c]          ; 004fca73
     FLD ST0                             ; 004fca76
     CALL crt_math.c_round_FUN_005a3120  ; 004fca78
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004fca7d
     MOV EAX,dword ptr [ESP + 0x10]      ; 004fca81
     MOV dword ptr [ESP + 0x14],EAX      ; 004fca85

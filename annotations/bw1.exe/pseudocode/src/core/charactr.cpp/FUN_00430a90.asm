@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00430a90(int param_1,int param_2,int param_3,float param_4)
+; void core_charactr_cpp_FUN_00430a90(CDemonActor *param_1,int param_2,int param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -25,8 +25,8 @@
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004e5f40
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -75,8 +75,8 @@ section .text
     PUSH EBX                            ; 00430ae5
     LEA ESI,[ESP + 0x1c]                ; 00430ae6
     LEA EDI,[ESP + 0x58]                ; 00430aea
-    CALL core_actor.cpp_FUN_00408b40    ; 00430aee
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00430aee
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x1c]                ; 00430af3
     ADD ESP,0x8                         ; 00430af7
     LEA EAX,[ESP + 0x2c]                ; 00430afa
@@ -92,8 +92,8 @@ section .text
     MOV dword ptr [ESP + 0x3c],EDI      ; 00430b12
     LEA ESI,[ESP + 0x28]                ; 00430b16
     LEA EDI,[ESP + 0x4c]                ; 00430b1a
-    CALL core_actor.cpp_FUN_00408ac0    ; 00430b1e
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00430b1e
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x28]                ; 00430b23
     ADD ESP,0x8                         ; 00430b27
     MOVSD ES:EDI,ESI                    ; 00430b2a

@@ -10,23 +10,23 @@ void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_004421d0(CCloth *this_ptr,C
 
 {
   CVector3f *pCVar1;
-  SClothVertex *pSVar2;
-  byte bVar3;
-  float afStackY_1048 [15];
-  SClothVertex *apSStackY_100c [991];
+  CVector3f *input;
+  byte bVar2;
+  float afStackY_1048 [1006];
   CMatrix3x3f CStack_88;
-  float fStack_60;
-  float afStack_5c [4];
-  float fStack_4c;
+  CVector3f CStack_60;
+  float fStack_54;
+  float afStack_50 [2];
   CVector3f CStack_48;
-  float fStack_3c;
-  float afStack_38 [4];
+  CVector3f CStack_3c;
+  float fStack_30;
+  float fStack_2c;
   float fStack_28;
-  float fStack_24;
-  SClothVertex *apSStack_20 [3];
+  CVector3f CStack_24;
+  SClothVertex *pSStack_18;
   int iStack_14;
   
-  bVar3 = 0;
+  bVar2 = 0;
   pCVar1 = &this_ptr->last_euler;
   CStack_48.x = euler->x - pCVar1->x;
   CStack_48.y = euler->y - (this_ptr->last_euler).y;
@@ -36,35 +36,38 @@ void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_004421d0(CCloth *this_ptr,C
     (this_ptr->last_euler).y = euler->y;
     (this_ptr->last_euler).z = euler->z;
   }
-  afStack_38[2] = CStack_48.x;
-  afStack_38[3] = CStack_48.y;
+  fStack_30 = CStack_48.x;
+  fStack_2c = CStack_48.y;
   fStack_28 = CStack_48.z;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&CStack_88,&CStack_48);
   iStack_14 = 0;
   if (0 < (this_ptr->model).vertex_count) {
-    apSStack_20[2] = this_ptr->vertices;
+    pSStack_18 = this_ptr->vertices;
     pCVar1 = &this_ptr->vertices[0].secondary_velocity;
     do {
-      pSVar2 = apSStack_20[2] + iStack_14;
-      core_dirmat_cpp_FUN_0045f700(&CStack_88,pSVar2);
-      fStack_3c = fStack_24;
-      afStack_38[(uint)bVar3 * -2] = (float)apSStack_20[(uint)bVar3 * -2];
-      afStack_38[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-           (float)apSStack_20[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-      if (pSVar2 != (SClothVertex *)&fStack_3c) {
-        (pSVar2->position).x = fStack_3c;
-        (pSVar2->position).y = afStack_38[0];
-        (pSVar2->position).z = afStack_38[1];
+      input = &pSStack_18[iStack_14].position;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(&CStack_88,input,&CStack_24)
+      ;
+      CStack_3c.x = CStack_24.x;
+      *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + 4) =
+           *(uint *)((int)&CStack_24 + (uint)bVar2 * -8 + 4);
+      *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           *(uint *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+      if (input != &CStack_3c) {
+        input->x = CStack_3c.x;
+        input->y = CStack_3c.y;
+        input->z = CStack_3c.z;
       }
-      core_dirmat_cpp_FUN_0045f700(&CStack_88,apSStack_20[2] + iStack_14);
-      afStack_5c[2] = fStack_60;
-      afStack_5c[(uint)bVar3 * -2 + 3] = afStack_5c[(uint)bVar3 * -2];
-      afStack_5c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-           afStack_5c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-      if (pCVar1 != (CVector3f *)(afStack_5c + 2)) {
-        pCVar1->x = afStack_5c[2];
-        pCVar1->y = afStack_5c[3];
-        pCVar1->z = fStack_4c;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+                (&CStack_88,&pSStack_18[iStack_14].position,&CStack_60);
+      fStack_54 = CStack_60.x;
+      afStack_50[(uint)bVar2 * -2] = *(float *)((int)&CStack_60 + (uint)bVar2 * -8 + 4);
+      afStack_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+           *(float *)((int)&CStack_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+      if (pCVar1 != (CVector3f *)&fStack_54) {
+        pCVar1->x = fStack_54;
+        pCVar1->y = afStack_50[0];
+        pCVar1->z = afStack_50[1];
       }
       iStack_14 = iStack_14 + 1;
       pCVar1 = (CVector3f *)((int)(pCVar1 + 0x17) + 8);

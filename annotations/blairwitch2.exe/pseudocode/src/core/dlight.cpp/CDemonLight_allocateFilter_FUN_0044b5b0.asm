@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x5cf48a                       ; 0044b5d7 | = "CDemonLight::allocateFilter - Out of ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0044b5dc | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0044b5e2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044b5e8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044b5e8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044b5ed
     POP EBX                             ; 0044b5f0
     RET                                 ; 0044b5f1

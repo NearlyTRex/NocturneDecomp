@@ -52,7 +52,7 @@
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0
 ;   core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00465780
 ;   core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00463010
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__strcmp_FUN_005c0f80
 ;
 ; *****************************************************************************
@@ -152,8 +152,8 @@ section .text
     PUSH 0x5d76bf                       ; 0044e9f1 | = "CDemonCamera::precomputeLight - Too m..."
     MOV dword ptr [0x01d1d400],ESI      ; 0044e9f6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0044e9fc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0044ea02
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044ea02
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0044ea07
     PUSH EBX                            ; 0044ea0a
         ;   Label: LAB_0044ea0a

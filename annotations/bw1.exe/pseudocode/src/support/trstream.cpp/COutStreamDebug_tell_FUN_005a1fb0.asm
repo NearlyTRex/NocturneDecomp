@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x5f897e                       ; 005a1fba | = "COutStreamDebug::tell - invalid opera..."
     MOV dword ptr [0x01d1d400],EDX      ; 005a1fbf | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005a1fc5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005a1fcb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a1fcb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     MOV EAX,0xffffffff                  ; 005a1fd0
     ADD ESP,0x4                         ; 005a1fd5
     RET                                 ; 005a1fd8

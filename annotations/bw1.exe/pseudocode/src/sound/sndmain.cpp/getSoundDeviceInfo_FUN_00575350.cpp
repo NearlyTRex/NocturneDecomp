@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_00575350(int device_id,SSo
   if ((device_id < 0) || (iVar1 <= device_id)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x1510;
-    core_main_c_FUN_005030e0("getSoundDeviceInfo - invalid index");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("getSoundDeviceInfo - invalid index");
   }
   puVar2 = (uint *)(device_id * 0x118 + 0x2c7fd90);
   for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {

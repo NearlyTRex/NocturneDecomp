@@ -17,7 +17,7 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b9b0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -61,8 +61,8 @@ section .text
     ADD EAX,0x10                        ; 0045e6d8
     PUSH EAX                            ; 0045e6db
     LEA ESI,[ESP + 0x40]                ; 0045e6dc
-    CALL core_dirmat.cpp_FUN_0045b9b0   ; 0045e6e0
-        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b9b0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0 ; 0045e6e0
+        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x4                         ; 0045e6e5
     PUSH 0x0                            ; 0045e6e8
     LEA EAX,[ESP + 0x4c]                ; 0045e6ea
@@ -160,7 +160,7 @@ section .text
     FSUBP                               ; 0045e825
     MOV ECX,dword ptr [EDX + 0x1cc0]    ; 0045e827
     CALL crt_math.c_round_FUN_005a3120  ; 0045e82d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x9c]        ; 0045e832
     MOV EAX,dword ptr [ESP + 0x9c]      ; 0045e839
     IMUL EAX,ECX                        ; 0045e840
@@ -178,7 +178,7 @@ section .text
     FMULP                               ; 0045e868
     FXCH ST2                            ; 0045e86a
     CALL crt_math.c_round_FUN_005a3120  ; 0045e86c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xa0]        ; 0045e871
     ADD EAX,dword ptr [ESP + 0xa0]      ; 0045e878
     MOV EDX,dword ptr [EDX + 0x2f94]    ; 0045e87f
@@ -237,10 +237,10 @@ section .text
     FLD float ptr [ESP + 0xd0]          ; 0045e967
     FXCH ST2                            ; 0045e96e
     CALL crt_math.c_round_FUN_005a3120  ; 0045e970
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0045e975
     CALL crt_math.c_round_FUN_005a3120  ; 0045e977
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0045e97c
     FISTP dword ptr [ESP + 0xc0]        ; 0045e97e
     FISTP dword ptr [ESP + 0xbc]        ; 0045e985

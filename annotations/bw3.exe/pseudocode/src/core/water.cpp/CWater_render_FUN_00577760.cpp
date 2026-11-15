@@ -13,20 +13,24 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
 {
   int iVar1;
   int iVar2;
-  float10 fVar3;
-  float10 fVar4;
-  CVector3f local_78;
-  CVector3i local_6c;
-  CVector3i local_60;
-  CVector3i local_54;
-  CVector3i local_48 [2];
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float10 fVar6;
+  double dVar7;
+  double dVar8;
+  int unaff_retaddr;
+  CVector3f CStack_80;
+  CVector3i local_74;
+  CVector3i local_68;
+  CVector3i local_5c;
+  CVector3i local_50 [2];
+  float fStack_30;
   float local_2c;
-  float local_28;
-  int local_24;
+  int local_28;
+  float local_24;
   int local_20;
-  float local_1c;
-  int local_18;
-  int local_14;
+  int local_1c;
   
   if (ABS(this_ptr->water_level_y) != 0.0) {
     _DAT_02cfd974 = _DAT_02cfd974 + _DAT_01c5fad0;
@@ -38,14 +42,16 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
       }
     }
     local_2c = g_CGamePtr->delta_time_float;
-    fVar3 = (float10)_DAT_02cfd960 * (float10)local_2c * (float10)_DAT_005d71bb +
-            (float10)_DAT_02d059ac;
-    fVar4 = (float10)_DAT_02cfd964 * (float10)local_2c * (float10)_DAT_005d71bb +
-            (float10)_DAT_02d059b0;
-    round();
-    round();
-    _DAT_02d059ac = (int)ROUND(fVar3);
-    _DAT_02d059b0 = (int)ROUND(fVar4);
+    fVar5 = _DAT_02cfd964 * local_2c;
+    fVar3 = (float)_DAT_005d71bb;
+    fVar4 = (float)_DAT_02d059b0;
+    CStack_80.y = 8.032708e-39;
+    dVar7 = round
+                      ((double)(_DAT_02cfd960 * local_2c * fVar3 + (float)_DAT_02d059ac));
+    CStack_80.x = 8.032718e-39;
+    dVar8 = round((double)(fVar5 * fVar3 + fVar4));
+    _DAT_02d059ac = (int)ROUND(dVar7);
+    _DAT_02d059b0 = (int)ROUND(dVar8);
     if (0xffffff < _DAT_02d059ac) {
       _DAT_02d059ac = _DAT_02d059ac + -0x1000000;
     }
@@ -81,77 +87,77 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
     _DAT_02d059a8 =
          g_CGamePtr->delta_time_float * _DAT_005d71c3 * (float)_DAT_005d71cb * (float)_DAT_005d71d3
          + _DAT_02d059a8;
-    local_24 = 0;
+    local_2c = 0.0;
     if (0 < _DAT_02cfd97c) {
-      local_20 = 0;
+      local_28 = 0;
       do {
-        iVar1 = *(int *)(&DAT_02cfd980 + local_20);
-        iVar2 = *(int *)(&DAT_02d01980 + local_20);
-        local_1c = (float)iVar1;
-        local_28 = (float)iVar2;
-        local_78.x = local_1c * this_ptr->tile_size + _DAT_02cfd968;
-        local_78.y = this_ptr->water_level_y + _DAT_02cfd96c;
-        local_78.z = local_28 * this_ptr->tile_size + _DAT_02cfd970;
-        local_18 = iVar1;
-        local_14 = iVar2;
+        iVar1 = *(int *)(&DAT_02cfd980 + local_28);
+        iVar2 = *(int *)(&DAT_02d01980 + local_28);
+        local_24 = (float)iVar1;
+        fStack_30 = (float)iVar2;
+        CStack_80.x = local_24 * this_ptr->tile_size + _DAT_02cfd968;
+        CStack_80.y = this_ptr->water_level_y + _DAT_02cfd96c;
+        CStack_80.z = fStack_30 * this_ptr->tile_size + _DAT_02cfd970;
+        local_20 = iVar1;
+        local_1c = iVar2;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-                  (DAT_005f2afc,&local_78);
-        local_78.x = 0.0;
-        local_78.y = 0.0;
-        local_78.z = 0.0;
+                  (DAT_005f2afc,&CStack_80);
+        CStack_80.x = 0.0;
+        CStack_80.y = 0.0;
+        CStack_80.z = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
-          fVar3 = (float10)fsin((float10)local_28 * (float10)_DAT_005d71c3 * (float10)_DAT_005d71cb
-                                + (float10)local_1c * (float10)_DAT_005d71c3 +
+          fVar6 = (float10)fsin((float10)fStack_30 * (float10)_DAT_005d71c3 * (float10)_DAT_005d71cb
+                                + (float10)local_24 * (float10)_DAT_005d71c3 +
                                 (float10)_DAT_02d059a8);
-          local_78.y = (float)(fVar3 * (float10)_DAT_00606b24);
+          CStack_80.y = (float)(fVar6 * (float10)_DAT_00606b24);
         }
-        local_48[0].x = (int)ROUND(_DAT_005e5e7c * 0.0);
-        local_48[0].y = (int)ROUND(local_78.y * _DAT_005e5e7c);
-        local_48[0].z = (int)ROUND(_DAT_005e5e7c * 0.0);
+        local_50[0].x = (int)ROUND(_DAT_005e5e7c * 0.0);
+        local_50[0].y = (int)ROUND(CStack_80.y * _DAT_005e5e7c);
+        local_50[0].z = (int)ROUND(_DAT_005e5e7c * 0.0);
         engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                  (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,local_48);
-        local_78.x = this_ptr->tile_size;
+                  (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,local_50);
+        CStack_80.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
-          local_14 = iVar1 + 1;
-          fVar3 = (float10)fsin((float10)iVar2 * (float10)_DAT_005d71c3 * (float10)_DAT_005d71cb +
-                                (float10)local_14 * (float10)_DAT_005d71c3 + (float10)_DAT_02d059a8)
+          local_1c = iVar1 + 1;
+          fVar6 = (float10)fsin((float10)iVar2 * (float10)_DAT_005d71c3 * (float10)_DAT_005d71cb +
+                                (float10)local_1c * (float10)_DAT_005d71c3 + (float10)_DAT_02d059a8)
           ;
-          local_78.y = (float)(fVar3 * (float10)_DAT_00606b24);
+          CStack_80.y = (float)(fVar6 * (float10)_DAT_00606b24);
         }
-        local_60.x = (int)ROUND(local_78.x * _DAT_005e5e7c);
-        local_60.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
-        local_60.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
+        local_68.x = (int)ROUND(CStack_80.x * _DAT_005e5e7c);
+        local_68.y = (int)ROUND(CStack_80.y * _DAT_005e5e7c);
+        local_68.z = (int)ROUND(CStack_80.z * _DAT_005e5e7c);
         engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                  (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_60);
-        local_78.z = this_ptr->tile_size;
+                  (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_68);
+        CStack_80.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
-          local_14 = iVar1 + 1;
-          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_005d71c3 *
-                                (float10)_DAT_005d71cb + (float10)local_14 * (float10)_DAT_005d71c3
+          local_1c = iVar1 + 1;
+          fVar6 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_005d71c3 *
+                                (float10)_DAT_005d71cb + (float10)local_1c * (float10)_DAT_005d71c3
                                 + (float10)_DAT_02d059a8);
-          local_78.y = (float)(fVar3 * (float10)_DAT_00606b24);
+          CStack_80.y = (float)(fVar6 * (float10)_DAT_00606b24);
         }
-        local_6c.x = (int)ROUND(local_78.x * _DAT_005e5e7c);
-        local_6c.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
-        local_6c.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
+        local_74.x = (int)ROUND(CStack_80.x * _DAT_005e5e7c);
+        local_74.y = (int)ROUND(CStack_80.y * _DAT_005e5e7c);
+        local_74.z = (int)ROUND(CStack_80.z * _DAT_005e5e7c);
         engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                  (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_6c);
-        local_78.x = 0.0;
+                  (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_74);
+        CStack_80.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
-          fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_005d71c3 *
+          fVar6 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_005d71c3 *
                                 (float10)_DAT_005d71cb + (float10)iVar1 * (float10)_DAT_005d71c3 +
                                 (float10)_DAT_02d059a8);
-          local_78.y = (float)(fVar3 * (float10)_DAT_00606b24);
-          local_14 = iVar1;
+          CStack_80.y = (float)(fVar6 * (float10)_DAT_00606b24);
+          local_1c = iVar1;
         }
-        local_54.x = (int)ROUND(_DAT_005e5e7c * 0.0);
-        local_54.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
-        local_54.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
+        local_5c.x = (int)ROUND(_DAT_005e5e7c * 0.0);
+        local_5c.y = (int)ROUND(CStack_80.y * _DAT_005e5e7c);
+        local_5c.z = (int)ROUND(CStack_80.z * _DAT_005e5e7c);
         engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                  (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);
+                  (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_5c);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c6cee8 == 0) {
-            if (render_mode == 0) {
+            if (unaff_retaddr == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60
                         (DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);
             }
@@ -171,9 +177,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
           engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800
                     (DAT_005f2afc,(SMRGLPrimitivePoly *)&DAT_00606e2c);
         }
-        local_20 = local_20 + 4;
-        local_24 = local_24 + 1;
-      } while (local_24 < _DAT_02cfd97c);
+        local_28 = local_28 + 4;
+        local_2c = (float)((int)local_2c + 1);
+      } while ((int)local_2c < _DAT_02cfd97c);
     }
   }
   return;

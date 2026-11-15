@@ -43,7 +43,7 @@ int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00422700
 // Address: 00422700
-CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_boxactor.cpp_CBoxActor_archive_FUN_00422760
 // Address: 00422760
@@ -121,9 +121,9 @@ void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 // Address: 004231e0
 void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_004232c0
+// Original: core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0
 // Address: 004232c0
-void __cdecl FUN_004232c0(CLightActor *this_ptr);
+void __cdecl CLightActor::setupLightModel(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_dtor_FUN_00423720
 // Address: 00423720

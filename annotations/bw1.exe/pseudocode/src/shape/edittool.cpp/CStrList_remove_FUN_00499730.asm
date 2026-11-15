@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   crt_unknown.c_FUN_005c09f0
 ;
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5dc46e                       ; 00499756 | = "CStrList::remove - invalid range"
     MOV dword ptr [0x01d1d400],EBX      ; 0049975b | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00499761 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499767
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499767
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049976c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0049976f
         ;   Label: LAB_0049976f

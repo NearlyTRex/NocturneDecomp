@@ -74,7 +74,7 @@ int __cdecl engine_pod_cpp_FUN_00513d20(CPodFile *this_ptr)
     }
     _DAT_01d71de0 = "..\\engine\\pod.cpp";
     _DAT_01d71de4 = 0x388;
-    core_main_c_FUN_004e4330("Invalid pod version for %s: %d",this_ptr->filename,iVar5);
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid pod version for %s: %d");
   }
   filename = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0

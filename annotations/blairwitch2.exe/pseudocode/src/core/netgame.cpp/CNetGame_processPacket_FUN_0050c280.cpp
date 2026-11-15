@@ -373,7 +373,7 @@ LAB_0050c8d9:
     if (0x1ff < _DAT_01d54640) {
       _DAT_01d046a0 = "..\\core\\netgame.cpp";
       _DAT_01d046a4 = 299;
-      core_main_c_FUN_004e4500("allocSimFrame - sim history list full");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("allocSimFrame - sim history list full");
     }
     puVar3 = (uint *)(_DAT_01d54640 * 0x74 + 0x1d54644);
     _DAT_01d54640 = _DAT_01d54640 + 1;
@@ -390,7 +390,7 @@ LAB_0050cbd2:
         if (iVar5 < 0) {
           _DAT_01d046a0 = "..\\core\\netgame.cpp";
           _DAT_01d046a4 = 0x596;
-          core_main_c_FUN_004e4500("Player list mismatch processing SimFrame Update packet!");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Player list mismatch processing SimFrame Update packet!");
         }
         iVar8 = iVar5 * 0xd;
         iVar5 = iVar5 + 1;

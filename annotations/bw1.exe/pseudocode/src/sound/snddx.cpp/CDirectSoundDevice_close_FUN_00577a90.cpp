@@ -14,18 +14,16 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90(CDirectSoundDe
   int iVar1;
   int buffer_id;
   int iVar2;
-  int unaff_ESI;
-  int unaff_EDI;
   
   iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   buffer_id = 0;
   do {
     iVar2 = buffer_id + 1;
-    (*((this_ptr->base).vtable)->lockSample)(&this_ptr->base,buffer_id,unaff_EDI,unaff_ESI);
+    (*((this_ptr->base).vtable)->freeSample)(&this_ptr->base,buffer_id);
     buffer_id = iVar2;
   } while (iVar2 < 0x41);
   if (_DAT_02c81da0 != (int *)0x0) {
-    (**(code **)(*_DAT_02c81da0 + 8))();
+    (**(code **)(*_DAT_02c81da0 + 8))(_DAT_02c81da0);
     _DAT_02c81da0 = (int *)0x0;
   }
   if (_DAT_02c81d9c != (int *)0x0) {

@@ -48,7 +48,7 @@ section .text
     POP EBX                             ; 004380c6
     RET                                 ; 004380c7
     CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270 ; 004380c8
-        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
+        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
         ;   Label: LAB_004380c8
     MOV EDX,dword ptr [ESP + 0x50]      ; 004380cd
     MOV ESI,dword ptr [ESP + 0x48]      ; 004380d1

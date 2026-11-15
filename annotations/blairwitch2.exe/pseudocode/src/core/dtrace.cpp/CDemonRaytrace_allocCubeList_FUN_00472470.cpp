@@ -23,6 +23,6 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00472470(CDemonRay
   }
   _DAT_01d046a0 = "..\\core\\dtrace.cpp";
   _DAT_01d046a4 = 0x88;
-  core_main_c_FUN_004e4500("CDemonRaytrace::allocCubeList - Out of memory!");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRaytrace::allocCubeList - Out of memory!");
   return;
 }

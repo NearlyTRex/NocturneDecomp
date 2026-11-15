@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 398,
+    "complexity_score": 448,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 148,
-    "suspect_count": 23,
+    "suspect_count": 27,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "undefined_data",
@@ -57,7 +59,7 @@
     {
       "addr": "00408b00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b00"
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408b00"
     },
     {
       "addr": "00538400",
@@ -606,7 +608,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&this_ptr->position);",
@@ -614,7 +616,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 39,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&this_ptr->euler_angles,translation);",
@@ -622,7 +624,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_005fc964",
       "severity": "mild",
       "text": "texture = (SMRGLTextureBasic *)&DAT_005fc964;",
@@ -630,7 +632,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_005fc97c",
       "severity": "mild",
       "text": "texture = (SMRGLTextureBasic *)&DAT_005fc97c;",
@@ -638,7 +640,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_005fc994",
       "severity": "mild",
       "text": "texture = (SMRGLTextureBasic *)&DAT_005fc994;",
@@ -646,7 +648,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);",
@@ -654,7 +656,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_0060b02c",
       "severity": "mild",
       "text": "DAT_0060b02c = _DAT_0060b0bc;",
@@ -662,7 +664,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_0060b090",
       "severity": "mild",
       "text": "DAT_0060b090 = _DAT_0060b0c0;",
@@ -670,7 +672,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_6c);",
@@ -678,7 +680,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_48);",
@@ -686,7 +688,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 105,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_84);",
@@ -694,7 +696,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 113,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);",
@@ -702,7 +704,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 115,
       "match": "DAT_0060b038",
       "severity": "mild",
       "text": "DAT_0060b038 = 0xffff;",
@@ -710,7 +712,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 116,
       "match": "DAT_0060b03c",
       "severity": "mild",
       "text": "DAT_0060b03c = 0xffff;",
@@ -718,7 +720,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 117,
       "match": "DAT_0060b064",
       "severity": "mild",
       "text": "DAT_0060b064 = 0xffff;",
@@ -726,7 +728,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 118,
       "match": "DAT_0060b068",
       "severity": "mild",
       "text": "DAT_0060b068 = 0xffff;",
@@ -734,7 +736,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 119,
       "match": "DAT_0060b06c",
       "severity": "mild",
       "text": "DAT_0060b06c = 0xffff;",
@@ -742,7 +744,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 126,
       "match": "DAT_0060b034",
       "severity": "mild",
       "text": "DAT_0060b034 = 0xffff;",
@@ -757,8 +759,24 @@
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 134,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0xfe0000 assigned to bare local `_DAT_0060b060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 63,
+      "line": 62,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "_DAT_0060b060 = 0xfe0000;",
@@ -766,11 +784,27 @@
     },
     {
       "description": "Raw hex address 0xfe0000 assigned to bare local `_DAT_0060b08c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b08c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 64,
+      "line": 63,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "_DAT_0060b08c = 0xfe0000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 132,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 134,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

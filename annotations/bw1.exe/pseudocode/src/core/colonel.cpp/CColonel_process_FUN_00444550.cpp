@@ -36,7 +36,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
   float fStack_c4;
   float afStack_c0 [3];
   CVector3f local_b4;
-  uint local_a8;
+  float local_a8;
   float afStack_a4 [4];
   float local_94;
   uint local_90;
@@ -47,12 +47,9 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
   float local_78;
   float local_74;
   float local_70;
-  uint local_6c;
+  CVector3f local_6c;
   float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
+  float local_5c [4];
   float local_4c;
   CVector3f local_48;
   CVector3f local_3c;
@@ -184,22 +181,22 @@ switchD_00444a17_caseD_4:
     core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
     local_60 = (this_ptr->base).base.velocity.x * delta_time;
     pCVar14 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_5c = (this_ptr->base).base.velocity.y * delta_time;
-    local_58 = (this_ptr->base).base.velocity.z * delta_time;
+    local_5c[0] = (this_ptr->base).base.velocity.y * delta_time;
+    local_5c[1] = (this_ptr->base).base.velocity.z * delta_time;
     afStack_a4[2] = local_60;
-    afStack_a4[(uint)bVar11 * -2 + 3] = afStack_a4[(uint)bVar11 * -2 + 0x12];
+    afStack_a4[(uint)bVar11 * -2 + 3] = local_5c[(uint)bVar11 * -2];
     afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
-         afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x13];
+         local_5c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
     pCVar1 = &(this_ptr->base).base.position_delta;
-    local_54 = pCVar14->x + pCVar1->x;
-    local_50 = (this_ptr->base).base.model.accumulated_root_motion.y +
-               (this_ptr->base).base.position_delta.y;
+    local_5c[2] = pCVar14->x + pCVar1->x;
+    local_5c[3] = (this_ptr->base).base.model.accumulated_root_motion.y +
+                  (this_ptr->base).base.position_delta.y;
     local_4c = (this_ptr->base).base.model.accumulated_root_motion.z +
                (this_ptr->base).base.position_delta.z;
-    local_84 = local_54;
-    afStack_a4[(uint)bVar11 * -2 + 9] = afStack_a4[(uint)bVar11 * -2 + 0x15];
+    local_84 = local_5c[2];
+    afStack_a4[(uint)bVar11 * -2 + 9] = local_5c[(uint)bVar11 * -2 + 3];
     afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10] =
-         afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x16];
+         local_5c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
     local_78 = local_84 + afStack_a4[2];
     local_74 = local_80 + afStack_a4[3];
     local_70 = local_7c + local_94;
@@ -218,11 +215,12 @@ switchD_00444a17_caseD_4:
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {
-      core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar3->location);
-      local_a8 = local_6c;
-      afStack_a4[(uint)bVar11 * -2] = afStack_a4[(uint)bVar11 * -2 + 0xf];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                ((CDemonActor *)this_ptr,&(pCVar3->location).position,&local_6c);
+      local_a8 = local_6c.x;
+      afStack_a4[(uint)bVar11 * -2] = *(float *)((int)&local_6c + (uint)bVar11 * -8 + 4);
       afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-           afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10];
+           *(float *)((int)&local_6c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_a8);
       local_90 = local_30;
       afStack_a4[(uint)bVar11 * -2 + 6] = (float)apCStack_2c[(uint)bVar11 * -2];
@@ -253,11 +251,11 @@ switchD_00444a17_caseD_4:
               (&(this_ptr->base).base.model,0,&local_3c);
     pCVar5 = local_14;
     this_ptr_00 = apCStack_2c[2];
-    pCVar14 = (CVector3f *)(afStack_a4 + 0x17);
+    pCVar14 = (CVector3f *)(local_5c + 5);
     local_48.x = local_3c.x;
-    afStack_a4[(uint)bVar11 * -2 + 0x18] = *(float *)((int)&local_3c + (uint)bVar11 * -8 + 4);
+    local_5c[(uint)bVar11 * -2 + 6] = *(float *)((int)&local_3c + (uint)bVar11 * -8 + 4);
     actor = this_ptr;
-    afStack_a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x19] =
+    local_5c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
          *(float *)((int)&local_3c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     iVar6 = (*(pCVar5->_uc).attractActorToward)(this_ptr_00,(CDemonActor *)actor,pCVar14);
     if (iVar6 == 0) {

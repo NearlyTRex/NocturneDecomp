@@ -18,7 +18,12 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
   uint uVar3;
   uint *puVar4;
   byte bVar5;
-  float afStackY_10ac [954];
+  float afStackY_10ac [15];
+  uint auStackY_1070 [6];
+  float afStackY_1058 [6];
+  uint auStackY_1040 [6];
+  float afStackY_1028 [9];
+  uint auStackY_1004 [912];
   float fVar6;
   float fVar7;
   char local_1ac [200];
@@ -31,26 +36,24 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
   uint local_9c;
   uint local_98;
   CVector3f local_94;
-  float local_88;
-  float afStack_84 [5];
+  CVector3f local_88;
+  CVector3f local_7c;
   float local_70;
   float local_6c;
   uint local_68;
   float local_64;
   uint local_60;
   uint local_5c;
-  float local_58;
+  CVector3f local_58;
   float local_4c;
-  uint local_48;
-  uint local_44;
+  uint local_48 [2];
   float local_40;
   float local_3c [5];
   float local_28;
   float local_24;
   uint local_20;
   float local_1c;
-  uint local_18;
-  uint local_14;
+  uint local_18 [2];
   float local_10;
   
   bVar5 = 0;
@@ -67,19 +70,21 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
         puVar4[7] = 0;
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
                   (&(this_ptr->base).base.model,bone_index,&local_94);
-        afStack_84[2] = local_94.x;
-        afStack_84[(uint)bVar5 * -2 + 3] = *(float *)((int)&local_94 + (uint)bVar5 * -8 + 4);
-        afStack_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-             *(float *)((int)&local_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-        core_actor_cpp_FUN_00408b40(this_ptr,afStack_84 + 2);
-        local_4c = local_88;
-        (&local_6c)[(uint)bVar5 * -2 + 9] = afStack_84[(uint)bVar5 * -2];
-        (&local_6c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-             afStack_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+        local_7c.x = local_94.x;
+        *(uint *)((int)&local_7c + (uint)bVar5 * -8 + 4) =
+             *(uint *)((int)&local_94 + (uint)bVar5 * -8 + 4);
+        *(uint *)((int)&local_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+             *(uint *)((int)&local_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                  ((CDemonActor *)this_ptr,&local_7c,&local_88);
+        local_4c = local_88.x;
+        local_48[(uint)bVar5 * -2] = *(uint *)((int)&local_88 + (uint)bVar5 * -8 + 4);
+        local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+             *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
         if ((float *)(puVar4 + 0xb) != &local_4c) {
           puVar4[0xb] = (uint)local_4c;
-          puVar4[0xc] = local_48;
-          puVar4[0xd] = local_44;
+          puVar4[0xc] = local_48[0];
+          puVar4[0xd] = local_48[1];
         }
         fVar7 = 5.0;
         fVar6 = -5.0;
@@ -118,7 +123,7 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
         (&local_6c)[(uint)bVar5 * -2] = local_3c[(uint)bVar5 * -2];
         (&local_6c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
              local_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-        if ((float *)(puVar4 + 0xe) != afStack_84 + 5) {
+        if ((float *)(puVar4 + 0xe) != &local_70) {
           puVar4[0xe] = (uint)local_70;
           puVar4[0xf] = (uint)local_6c;
           puVar4[0x10] = local_68;
@@ -151,15 +156,17 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
           puVar4[0x13] = local_20;
         }
         core_spline_cpp_computeSplineBasis_FUN_00583d60(local_e4,(float)puVar4[7],0.0);
-        core_spline_cpp_FUN_00583f90(local_e4,puVar4 + 8,puVar4 + 0xb,puVar4 + 0xe,puVar4 + 0x11);
-        local_1c = local_58;
-        (&local_24)[(uint)bVar5 * -2 + 3] = (&local_6c)[(uint)bVar5 * -2 + 6];
-        (&local_24)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-             (&local_6c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+        core_spline_cpp_evaluateSplinePoint3D_FUN_00583f90
+                  (local_e4,(CVector3f *)(puVar4 + 8),(CVector3f *)(puVar4 + 0xb),
+                   (CVector3f *)(puVar4 + 0xe),(CVector3f *)(puVar4 + 0x11),&local_58);
+        local_1c = local_58.x;
+        local_18[(uint)bVar5 * -2] = *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4);
+        local_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+             *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
         if ((float *)(puVar4 + 1) != &local_1c) {
           puVar4[1] = (uint)local_1c;
-          puVar4[2] = local_18;
-          puVar4[3] = local_14;
+          puVar4[2] = local_18[0];
+          puVar4[3] = local_18[1];
         }
         core_spline_cpp_FUN_005841d0(local_e4,puVar4 + 8,puVar4 + 0xb,puVar4 + 0xe,puVar4 + 0x11);
         local_64 = local_ac;

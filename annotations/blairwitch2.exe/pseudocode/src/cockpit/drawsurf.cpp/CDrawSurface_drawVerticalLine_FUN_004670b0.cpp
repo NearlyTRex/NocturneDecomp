@@ -59,7 +59,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
         }
         _DAT_01d046a0 = "..\\cockpit\\drawsurf.cpp";
         _DAT_01d046a4 = 0x3fb;
-        core_main_c_FUN_004e4500("Invalid bitsPerPixel!");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid bitsPerPixel!");
         return;
       }
       if (DAT_006141c0 < 0x10) {
@@ -67,7 +67,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
 LAB_00467193:
           _DAT_01d046a0 = "..\\cockpit\\drawsurf.cpp";
           _DAT_01d046a4 = 0x3db;
-          core_main_c_FUN_004e4500("Invalid bitsPerPixel!");
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid bitsPerPixel!");
           return;
         }
         do {

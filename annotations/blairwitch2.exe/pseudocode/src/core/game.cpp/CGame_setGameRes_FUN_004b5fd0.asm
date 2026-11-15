@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_2d.c_resetGraphicsSystem_FUN_00402ac0
 ;   engine_special.cpp_selectCard_FUN_005600c0
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50
@@ -84,8 +84,8 @@ section .text
     PUSH 0x5d7684                       ; 004b6044 | = "CGame::setGameRes - Unable to set the..."
     MOV dword ptr [0x01d046a0],EBP      ; 004b6049 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004b604f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004b6054
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b6054
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 004b6059
     CALL engine_2d.c_resetGraphicsSystem_FUN_00402ac0 ; 004b605c
         ;   XREF to: 00402ac0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402ac0()

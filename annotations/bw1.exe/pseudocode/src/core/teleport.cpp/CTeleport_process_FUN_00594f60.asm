@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01d06ab4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_mission.cpp_CDemonMission_setTeleportTarget_FUN_0051b700
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH EBX                            ; 00594f8b
     LEA ESI,[ESP + 0x44]                ; 00594f8c
     LEA EDI,[ESP + 0x38]                ; 00594f90
-    CALL core_actor.cpp_FUN_00408bb0    ; 00594f94
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00594f94
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x44]                ; 00594f99
     ADD ESP,0x8                         ; 00594f9d
     MOVSD ES:EDI,ESI                    ; 00594fa0

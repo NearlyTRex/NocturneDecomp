@@ -36,7 +36,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00552970(int requested_size,i
      (_DAT_02cf32a4 == (void *)0x0)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x561;
-    core_main_c_FUN_004e4330("allocMixBuffers - out of memory");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("allocMixBuffers - out of memory");
   }
   iVar4 = 0;
   if (0 < DAT_0060422c) {

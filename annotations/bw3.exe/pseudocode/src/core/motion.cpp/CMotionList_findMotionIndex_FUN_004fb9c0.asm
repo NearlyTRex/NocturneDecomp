@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5c9b74                       ; 004fba20 | = "Can't find motion \"%s\" in motion list"
     MOV dword ptr [0x01d71de0],ESI      ; 004fba25 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004fba2b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fba31
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fba31
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fba36
     MOV EAX,0xffffffff                  ; 004fba39
     POP EBP                             ; 004fba3e

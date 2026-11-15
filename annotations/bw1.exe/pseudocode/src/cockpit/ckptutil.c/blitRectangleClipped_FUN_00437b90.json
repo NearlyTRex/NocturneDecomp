@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 419,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 34,
+    "pseudocode_lines": 51,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param",
+      "pointer_cast",
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 212
   },
   "cross_references": [],
   "function": {
@@ -26,9 +25,9 @@
         "00437cf5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90",
-    "signature": "int cockpit_ckptutil_c_blitRectangleClipped_FUN_00437b90(void)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00437b90(void *sprite_data,int dest_x,int dest_y,int width,int height)"
   },
   "function_calls": [
     {
@@ -73,9 +72,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -138,12 +137,48 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -155,268 +190,60 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar3;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _DAT_01c4f010 - in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar6 = _DAT_01c4f008 - in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004 != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar3 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "iVar4 = in_stack_00000010 + -1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 21,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 8) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 22,
       "match": "DAT_01c4354c",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008;",
+      "text": "iVar7 = *(int *)(&DAT_01c4354c + dest_y * 4) + dest_x;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000014",
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(void *)((int)sprite_data",
       "severity": "moderate",
-      "text": "(iVar1 = 0, iVar4 = in_stack_00000014, 0 < in_stack_00000014)))) {",
-      "type": "stack_param"
+      "text": "(*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000014",
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(void *)((int)sprite_data",
       "severity": "moderate",
-      "text": "(iVar1 = 0, iVar4 = in_stack_00000014, 0 < in_stack_00000014)))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*pcVar3)(iVar7 + iVar5,in_stack_00000004 + iVar5,(iVar6 - iVar5) + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "} while (iVar1 < in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008 * 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008 * 2;",
-      "type": "stack_param"
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 36,
       "match": "DAT_01c4354c",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(&DAT_01c4354c + in_stack_0000000c * 4) + in_stack_00000008 * 2;",
+      "text": "iVar7 = *(int *)(&DAT_01c4354c + dest_y * 4) + dest_x * 2;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000014",
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(void *)((int)sprite_data",
       "severity": "moderate",
-      "text": "iVar4 = in_stack_00000014;",
-      "type": "stack_param"
+      "text": "(*pCVar3)((void *)(iVar5 * 2 + iVar7),(void *)((int)sprite_data + iVar5),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000014",
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(void *)((int)sprite_data",
       "severity": "moderate",
-      "text": "if (0 < in_stack_00000014) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*pcVar3)(iVar5 * 2 + iVar7,in_stack_00000004 + iVar5,(iVar6 - iVar5) + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "} while (iVar1 < in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "return in_stack_00000010;",
-      "type": "stack_param"
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
+      "type": "pointer_cast"
     }
   ]
 }

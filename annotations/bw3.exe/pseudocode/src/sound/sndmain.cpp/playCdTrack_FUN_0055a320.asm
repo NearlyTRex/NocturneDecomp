@@ -40,7 +40,7 @@ section .text
     FLD ST0                             ; 0055a33d
     FMUL float ptr [0x005d3f8a]         ; 0055a33f | DAT_005d3f8a
     CALL crt_math.c_round_FUN_005a3120  ; 0055a345
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x44]        ; 0055a34a
     MOV EAX,dword ptr [ESP + 0x44]      ; 0055a34e
     MOV dword ptr [ESP + 0x50],EAX      ; 0055a352
@@ -54,7 +54,7 @@ section .text
     FSUBP                               ; 0055a36f
     PUSH ECX                            ; 0055a371
     CALL crt_math.c_round_FUN_005a3120  ; 0055a372
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x48]        ; 0055a377
     CALL crt_math.c_floor_FUN_005a3600  ; 0055a37b
         ;   XREF to: 005a3600 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005a3600(double input_value)
@@ -74,7 +74,7 @@ section .text
     MOV dword ptr [ESP + 0x54],EDI      ; 0055a3a9
     PUSH EAX                            ; 0055a3ad
     CALL crt_math.c_round_FUN_005a3120  ; 0055a3ae
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x48]        ; 0055a3b3
     CALL crt_memory.c_memset_FUN_005a28f0 ; 0055a3b7
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)

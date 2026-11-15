@@ -28,9 +28,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
   byte bVar13;
   float afStackY_108c [859];
   CDemonActor *in_stack_fffffd08;
-  CMatrix3x3f *in_stack_fffffd0c;
+  float *in_stack_fffffd0c;
   double dStack_2a0;
-  byte auStack_258 [92];
+  SIntersectXZCylinder SStack_258;
   byte auStack_1fc [88];
   float local_1a4;
   float local_1a0;
@@ -51,15 +51,14 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
   CBoundingBox3D local_d4;
   uint auStack_bc [6];
   float fStack_a4;
-  float afStack_a0 [3];
-  CKeyFramedModelInstance *pCStack_94;
-  float fStack_90;
-  float fStack_84;
-  float afStack_80 [5];
+  float afStack_a0 [2];
+  CVector3f CStack_98;
+  byte auStack_84 [8];
+  float afStack_7c [4];
   float fStack_6c;
-  float fStack_68;
+  CVector3f CStack_68;
   float fStack_54;
-  float afStack_50 [13];
+  CVector3f aCStack_50 [4];
   int local_1c;
   CDemonSet *local_18;
   
@@ -137,7 +136,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
                   iVar10 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90
                                      (this_ptr,(SIntersectXZCylinder *)local_198,
                                       (CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,
-                                      in_stack_fffffd0c);
+                                      (CMatrix3x3f *)in_stack_fffffd0c);
                   if (iVar10 != 0) {
                     this_ptr->collision_actor = actor;
                   }
@@ -146,7 +145,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
 LAB_0053e7d7:
                   _DAT_01d71de0 = "..\\core\\setcolid.cpp";
                   _DAT_01d71de4 = 0x3f1;
-                  core_main_c_FUN_004e4330();
+                  core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid collision type!");
                 }
               }
               else if (EVar9 < COLLISION_TYPE_CUSTOM) {
@@ -206,43 +205,47 @@ LAB_0053e7d7:
               }
               else {
                 if (EVar9 != COLLISION_TYPE_CUSTOM) goto LAB_0053e7d7;
-                afStack_a0[2] = (float)local_198._8_4_;
-                fStack_90 = (float)local_198._12_4_;
-                pCStack_94 = pCStack_120;
-                core_actor_cpp_FUN_00408bf0(actor);
+                CStack_98.x = (float)local_198._8_4_;
+                CStack_98.z = (float)local_198._12_4_;
+                CStack_98.y = (float)pCStack_120;
+                core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                          (actor,&CStack_98,(CVector3f *)(auStack_84 + 4));
                 uVar7 = local_198._20_4_;
-                afStack_50[0] = (float)local_198._16_4_;
-                fStack_a4 = afStack_80[0];
-                afStack_a0[(uint)bVar13 * -2] = afStack_80[(uint)bVar13 * -2 + 1];
+                aCStack_50[0].x = (float)local_198._16_4_;
+                fStack_a4 = (float)auStack_84._4_4_;
+                afStack_a0[(uint)bVar13 * -2] = afStack_7c[(uint)bVar13 * -2];
                 afStack_a0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-                     afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 2];
-                afStack_50[2] = (float)uVar7;
-                afStack_50[1] = 0.0;
-                core_actor_cpp_FUN_00408b40(actor);
-                afStack_80[3] = fStack_68;
-                afStack_80[(uint)bVar13 * -2 + 4] = afStack_80[(uint)bVar13 * -2 + 7];
-                afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 5] =
-                     afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 8];
+                     afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
+                aCStack_50[0].z = (float)uVar7;
+                aCStack_50[0].y = 0.0;
+                core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b40
+                          (actor,aCStack_50,&CStack_68);
+                afStack_7c[2] = CStack_68.x;
+                afStack_7c[(uint)bVar13 * -2 + 3] =
+                     *(float *)((int)&CStack_68 + (uint)bVar13 * -8 + 4);
+                afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
+                     *(float *)((int)&CStack_68 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
                 core_dtrace_cpp_initIntersectionCylinder_FUN_00474db0
-                          ((SIntersectXZCylinder *)auStack_258,fStack_a4,afStack_a0[1],afStack_80[3]
-                           ,fStack_6c,radius,bottom_y - (actor->location).position.y,
+                          (&SStack_258,fStack_a4,afStack_a0[1],afStack_7c[2],fStack_6c,radius,
+                           bottom_y - (actor->location).position.y,
                            top_y - (actor->location).position.y);
-                auStack_258._0_4_ = local_1a0;
-                (*((actor->vtable)._ub)->customIntersectCylinderXZ)
-                          (actor,(SIntersectXZCylinder *)auStack_258);
-                if ((float)auStack_258._8_4_ < (float)local_198._0_4_) {
-                  local_198._0_4_ = auStack_258._8_4_;
-                  in_stack_fffffd0c = (CMatrix3x3f *)(auStack_258 + 0xc);
+                SStack_258.closest_t = local_1a0;
+                (*((actor->vtable)._ub)->customIntersectCylinderXZ)(actor,&SStack_258);
+                if (SStack_258.push_normal.y < (float)local_198._0_4_) {
+                  local_198._0_4_ = SStack_258.push_normal.y;
+                  in_stack_fffffd0c = &SStack_258.push_normal.z;
                   in_stack_fffffd08 = actor;
-                  core_actor_cpp_FUN_00408b00();
-                  fStack_54 = fStack_84;
-                  afStack_50[(uint)bVar13 * -2] = afStack_80[(uint)bVar13 * -2];
-                  afStack_50[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-                       afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-                  if ((float *)(local_198 + 4) != afStack_80 + 0xb) {
+                  core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                            (actor,(CVector3f *)in_stack_fffffd0c,(CVector3f *)auStack_84);
+                  fStack_54 = (float)auStack_84._0_4_;
+                  *(float *)((int)aCStack_50 + (uint)bVar13 * -8) =
+                       afStack_7c[(uint)bVar13 * -2 + -1];
+                  *(float *)((int)aCStack_50 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 4) =
+                       afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2];
+                  if ((float *)(local_198 + 4) != &fStack_54) {
                     local_198._4_4_ = fStack_54;
-                    local_198._8_4_ = afStack_50[0];
-                    local_198._12_4_ = afStack_50[1];
+                    local_198._8_4_ = aCStack_50[0].x;
+                    local_198._12_4_ = aCStack_50[0].y;
                   }
                   this_ptr->collision_actor = actor;
                 }
@@ -254,7 +257,7 @@ LAB_0053e7d7:
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                 _DAT_01d71de0 = "..\\core\\setcolid.cpp";
                 _DAT_01d71de4 = 0x389;
-                core_main_c_FUN_004e4330("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
+                core_main_c_displayErrorAndQuit_FUN_004e4330("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
               }
               core_dtrace_cpp_initIntersectionCylinder_FUN_00474db0
                         ((SIntersectXZCylinder *)auStack_1fc,

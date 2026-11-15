@@ -26,17 +26,16 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
   CVector3f *velocity;
   CMatrix3x3f CStack_e8;
   float fStack_c0;
-  float afStack_bc [5];
+  float afStack_bc [2];
+  CVector3f CStack_b4;
   float fStack_a8;
-  float fStack_a4;
-  float fStack_9c;
-  float fStack_98;
+  float afStack_a4 [4];
   float fStack_94;
   CVector3f CStack_90;
   float fStack_84;
   float afStack_80 [4];
   float fStack_70;
-  float afStack_6c [3];
+  CVector3f CStack_6c;
   float fStack_60;
   float afStack_5c [4];
   float fStack_4c;
@@ -57,12 +56,12 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
     afStack_80[3] =
          (this_ptr->base).base.base.location.position.y - (pCVar1->base).location.position.y;
     fStack_70 = (this_ptr->base).base.base.location.position.z - (pCVar1->base).location.position.z;
-    fStack_9c = afStack_80[2];
-    afStack_bc[(uint)bVar8 * -2 + 9] = afStack_80[(uint)bVar8 * -2 + 3];
-    afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10] =
+    afStack_a4[2] = afStack_80[2];
+    afStack_a4[(uint)bVar8 * -2 + 3] = afStack_80[(uint)bVar8 * -2 + 3];
+    afStack_a4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
          afStack_80[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-    if ((ABS(fStack_98) < (float)_DAT_005cca21) &&
-       ((ABS(fStack_9c) < (float)_DAT_005cca21 && (ABS(fStack_94) < (float)_DAT_005cca21)))) {
+    if ((ABS(afStack_a4[3]) < (float)_DAT_005cca21) &&
+       ((ABS(afStack_a4[2]) < (float)_DAT_005cca21 && (ABS(fStack_94) < (float)_DAT_005cca21)))) {
       core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(this_ptr);
       core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(this_ptr,&((this_ptr->base).victim)->base);
       if (this_ptr->state == BUGS_STATE_ATTACK) {
@@ -85,16 +84,17 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
                        (this_ptr->base).base.base.direction_hint);
     if (iVar7 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_e8,&CStack_90);
-      afStack_6c[2] = _DAT_005f3e34 * delta_time;
-      afStack_6c[0] = 0.0;
-      afStack_6c[1] = 0.0;
-      fStack_14 = afStack_6c[2];
-      core_dirmat_cpp_FUN_00449530(&CStack_e8,afStack_80 + 5);
+      CStack_6c.z = _DAT_005f3e34 * delta_time;
+      CStack_6c.x = 0.0;
+      CStack_6c.y = 0.0;
+      fStack_14 = CStack_6c.z;
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530(&CStack_e8,&CStack_6c,&CStack_b4);
       velocity = &CStack_3c;
-      CStack_3c.x = afStack_bc[2];
-      *(float *)((int)&CStack_3c + (uint)bVar8 * -8 + 4) = afStack_bc[(uint)bVar8 * -2 + 3];
-      *(float *)((int)&CStack_3c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+      CStack_3c.x = CStack_b4.x;
+      *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_b4 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_3c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_b4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       pfVar5 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
       afStack_5c[2] = (this_ptr->base).base.base.location.position.x;
       afStack_5c[(uint)bVar8 * -2 + 3] = *pfVar5;
@@ -129,13 +129,13 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
       afStack_2c[3] = afStack_5c[0] * _DAT_005cca29;
       fStack_1c = afStack_5c[1] * _DAT_005cca29;
       fStack_a8 = fStack_60 * _DAT_005cca29;
-      afStack_bc[(uint)bVar8 * -2 + 6] = afStack_2c[(uint)bVar8 * -2 + 3];
-      afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
+      afStack_a4[(uint)bVar8 * -2] = afStack_2c[(uint)bVar8 * -2 + 3];
+      afStack_a4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
            afStack_2c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-      afStack_2c[0] = fStack_a4;
-      if (((((this_ptr->bounds).min.x <= fStack_30) && ((this_ptr->bounds).min.y <= fStack_a4)) &&
-          ((this_ptr->bounds).min.z <= afStack_2c[1])) &&
-         (((fStack_30 <= (this_ptr->bounds).max.x && (fStack_a4 <= (this_ptr->bounds).max.y)) &&
+      afStack_2c[0] = afStack_a4[0];
+      if (((((this_ptr->bounds).min.x <= fStack_30) && ((this_ptr->bounds).min.y <= afStack_a4[0]))
+          && ((this_ptr->bounds).min.z <= afStack_2c[1])) &&
+         (((fStack_30 <= (this_ptr->bounds).max.x && (afStack_a4[0] <= (this_ptr->bounds).max.y)) &&
           (afStack_2c[1] <= (this_ptr->bounds).max.z)))) {
         core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00421dd0(this_ptr,&CStack_48);
       }

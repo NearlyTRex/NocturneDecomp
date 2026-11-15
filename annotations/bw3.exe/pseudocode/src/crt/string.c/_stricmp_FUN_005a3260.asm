@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ;
-; XREF[108]:
+; XREF[109]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0 at 0050fdcf
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b110 at 0040b15a
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00416890 at 004168b0
@@ -18,7 +18,7 @@
 ;   core_demnfolk.cpp_FUN_004580a0 at 004580ba
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 0046243c
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492149
-;   ... and 98 more
+;   ... and 99 more
 ;
 ; *****************************************************************************
 

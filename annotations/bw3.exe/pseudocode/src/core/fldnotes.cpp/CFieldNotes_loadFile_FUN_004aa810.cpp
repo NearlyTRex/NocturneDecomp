@@ -70,11 +70,12 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004aa810(CFieldNotes *thi
   _DAT_01d0d008 = (uint)(error_text != (char *)0x0);
   local_48 = engine_dosio_cpp_getFileSize_FUN_004657f0("world",this_ptr->file_name);
   if (-1 < local_48) {
-    local_4c = engine_dosio_cpp_FUN_004659c0("world",this_ptr->file_name,&DAT_005c11fa);
+    local_4c = engine_dosio_cpp_getFile_FUN_004659c0
+                         ("world",this_ptr->file_name,&DAT_005c11fa);
     if (local_4c == (_FILE *)0x0) {
       _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
       _DAT_01d71de4 = 0x8ed;
-      core_main_c_FUN_004e4330("Can't open field notes file %s",this_ptr);
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open field notes file %s");
     }
     lVar6 = _ftell(local_4c);
     local_44 = (SNotesSection *)0x0;
@@ -466,7 +467,7 @@ LAB_004ab0bd:
                     if ((int)_DAT_01d0e36c < 1) {
                       _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
                       _DAT_01d71de4 = 0x976;
-                      core_main_c_FUN_004e4330("Hell froze!");
+                      core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze!");
                     }
                     puVar12 = (byte *)((int)&_DAT_01d0e36c[-1].map_index + 3);
                     iVar13 = sscanf((char *)local_1f4,"%s %d %d");
@@ -525,7 +526,7 @@ LAB_004ab1fb:
                       if ((int)_DAT_01d0e36c < 1) {
                         _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
                         _DAT_01d71de4 = 0x99a;
-                        core_main_c_FUN_004e4330("Hell froze!");
+                        core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze!");
                       }
                       puVar12 = (byte *)((int)&_DAT_01d0e36c[-1].map_index + 3);
                       iVar13 = SNotesMap_ARRAY_01d0e370[(int)puVar12].set_count;
@@ -587,7 +588,7 @@ LAB_004ab379:
                         if ((int)_DAT_01d0e36c < 1) {
                           _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
                           _DAT_01d71de4 = 0x9c6;
-                          core_main_c_FUN_004e4330("Hell froze!");
+                          core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze!");
                         }
                         puVar12 = (byte *)((int)&_DAT_01d0e36c[-1].map_index + 3);
                         iVar13 = SNotesMap_ARRAY_01d0e370[(int)puVar12].annotation_count;

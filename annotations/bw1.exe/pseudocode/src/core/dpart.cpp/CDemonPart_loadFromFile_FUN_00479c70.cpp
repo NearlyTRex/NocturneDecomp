@@ -19,9 +19,9 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
   int iVar6;
   int iVar7;
   char *buffer;
-  float10 fVar8;
-  float10 fVar9;
-  float10 fVar10;
+  double dVar8;
+  double dVar9;
+  double dVar10;
   float *in_stack_00000010;
   
   _fread(this_ptr,0x20,1,file_handle);
@@ -84,24 +84,22 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
     }
   }
   if (in_stack_00000010 != (float *)0x0) {
-    fVar8 = (float10)_DAT_005dabfd;
-    fVar9 = (float10)*in_stack_00000010 * fVar8;
-    fVar10 = (float10)in_stack_00000010[1] * fVar8;
-    fVar8 = (float10)in_stack_00000010[2] * fVar8;
+    dVar9 = (double)in_stack_00000010[1] * _DAT_005dabfd;
+    dVar10 = (double)in_stack_00000010[2] * _DAT_005dabfd;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    round();
-    round();
-    round();
+    dVar8 = round((double)*in_stack_00000010 * _DAT_005dabfd);
+    dVar9 = round(dVar9);
+    dVar10 = round(dVar10);
     if (0 < iVar7) {
       iVar7 = 0;
       do {
         piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar9);
+        *piVar1 = *piVar1 - (int)ROUND(dVar8);
         piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar10);
+        *piVar1 = *piVar1 - (int)ROUND(dVar9);
         piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar8);
+        *piVar1 = *piVar1 - (int)ROUND(dVar10);
         iVar5 = iVar5 + 1;
         iVar7 = iVar7 + 0xc;
       } while (iVar5 < this_ptr->vertex_count);

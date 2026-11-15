@@ -19,7 +19,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00462820(CDemonLight *th
   if ((this_ptr->base).scene_open_flag != 0) {
     _DAT_01d1d400 = "..\\core\\dlight.cpp";
     _DAT_01d1d404 = 0xf3;
-    core_main_c_FUN_005030e0("CDemonLight::beginScene - Scene already open");
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044ce60(&this_ptr->base,skip_clear_buffers);

@@ -28,7 +28,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_FUN_005b86a0
 ;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
 ;
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5d23a4                       ; 0047e831 | = "CEditorTools::popWindow() called but ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0047e836 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0047e83c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047e842
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e842
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e847
     JMP 0x0047e790                      ; 0047e84a
         ;   XREF to: 0047e790 (UNCONDITIONAL_JUMP)  ; LAB_0047e790

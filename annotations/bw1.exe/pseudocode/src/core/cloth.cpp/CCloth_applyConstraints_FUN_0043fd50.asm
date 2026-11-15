@@ -125,7 +125,7 @@
 ;   undefined4 DAT_01cc8050
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;
 ; *****************************************************************************
 
@@ -582,8 +582,8 @@ section .text
     FSTP ST1                            ; 0044040d
     PUSH EAX                            ; 0044040f
     FSTP float ptr [ESP + 0x3c]         ; 00440410
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00440414
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00440414
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00440419
     LEA ESI,[ESP + 0x120]               ; 0044041c
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 00440423

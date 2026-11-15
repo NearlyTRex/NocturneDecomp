@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
 ;   core_hero.cpp_CHero_canDoHeroAction_FUN_004ec950
-;   core_motion.cpp_FUN_00524a40
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;
 ; *****************************************************************************
 
@@ -48,14 +48,14 @@ section .text
         ;   Label: LAB_0047567c
     LEA EBX,[ESI + 0x158]               ; 0047567d
     PUSH EBX                            ; 00475683
-    CALL core_motion.cpp_FUN_00524a40   ; 00475684
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00475684
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 00475689
     ADD ESP,0x8                         ; 0047568d
     PUSH 0x1                            ; 00475690
     PUSH EBX                            ; 00475692
-    CALL core_motion.cpp_FUN_00524a40   ; 00475693
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00475693
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00475698
     FLD float ptr [ESP + 0xc]           ; 0047569c
     ADD ESP,0x8                         ; 004756a0
@@ -63,8 +63,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004756a5
     PUSH EBX                            ; 004756a9
     FSTP float ptr [ESP + 0x8]          ; 004756aa
-    CALL core_motion.cpp_FUN_00524a40   ; 004756ae
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004756ae
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004756b3
     FLD float ptr [ESP + 0xc]           ; 004756b7
     ADD ESP,0x8                         ; 004756bb
@@ -72,8 +72,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004756c0
     PUSH EBX                            ; 004756c4
     FSTP float ptr [ESP + 0x8]          ; 004756c5
-    CALL core_motion.cpp_FUN_00524a40   ; 004756c9
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004756c9
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004756ce
     FLD float ptr [ESP + 0xc]           ; 004756d2
     ADD ESP,0x8                         ; 004756d6
@@ -81,8 +81,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004756db
     PUSH EBX                            ; 004756df
     FSTP float ptr [ESP + 0x8]          ; 004756e0
-    CALL core_motion.cpp_FUN_00524a40   ; 004756e4
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004756e4
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004756e9
     FLD float ptr [ESP + 0xc]           ; 004756ed
     ADD ESP,0x8                         ; 004756f1
@@ -90,8 +90,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004756f6
     PUSH EBX                            ; 004756fa
     FSTP float ptr [ESP + 0x8]          ; 004756fb
-    CALL core_motion.cpp_FUN_00524a40   ; 004756ff
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004756ff
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00475704
     FLD float ptr [ESP + 0xc]           ; 00475708
     ADD ESP,0x8                         ; 0047570c
@@ -99,8 +99,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 00475711
     PUSH EBX                            ; 00475715
     FSTP float ptr [ESP + 0x8]          ; 00475716
-    CALL core_motion.cpp_FUN_00524a40   ; 0047571a
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0047571a
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 0047571f
     FLD float ptr [ESP + 0xc]           ; 00475723
     ADD ESP,0x8                         ; 00475727
@@ -108,8 +108,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 0047572c
     PUSH EBX                            ; 00475730
     FSTP float ptr [ESP + 0x8]          ; 00475731
-    CALL core_motion.cpp_FUN_00524a40   ; 00475735
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00475735
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 0047573a
     FLD float ptr [ESP + 0xc]           ; 0047573e
     ADD ESP,0x8                         ; 00475742
@@ -117,8 +117,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 00475747
     PUSH EBX                            ; 0047574b
     FSTP float ptr [ESP + 0x8]          ; 0047574c
-    CALL core_motion.cpp_FUN_00524a40   ; 00475750
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00475750
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00475755
     FLD float ptr [ESP + 0xc]           ; 00475759
     ADD ESP,0x8                         ; 0047575d
@@ -126,8 +126,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 00475762
     PUSH EBX                            ; 00475766
     FSTP float ptr [ESP + 0x8]          ; 00475767
-    CALL core_motion.cpp_FUN_00524a40   ; 0047576b
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0047576b
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00475770
     FLD float ptr [ESP + 0xc]           ; 00475774
     ADD ESP,0x8                         ; 00475778
@@ -135,8 +135,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 0047577d
     PUSH EBX                            ; 00475781
     FSTP float ptr [ESP + 0x8]          ; 00475782
-    CALL core_motion.cpp_FUN_00524a40   ; 00475786
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00475786
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 0047578b
     FLD float ptr [ESP + 0xc]           ; 0047578f
     ADD ESP,0x8                         ; 00475793
@@ -144,8 +144,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 00475798
     PUSH EBX                            ; 0047579c
     FSTP float ptr [ESP + 0x8]          ; 0047579d
-    CALL core_motion.cpp_FUN_00524a40   ; 004757a1
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004757a1
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004757a6
     FLD float ptr [ESP + 0xc]           ; 004757aa
     ADD ESP,0x8                         ; 004757ae
@@ -153,8 +153,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004757b3
     PUSH EBX                            ; 004757b7
     FSTP float ptr [ESP + 0x8]          ; 004757b8
-    CALL core_motion.cpp_FUN_00524a40   ; 004757bc
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004757bc
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004757c1
     FLD float ptr [ESP + 0xc]           ; 004757c5
     ADD ESP,0x8                         ; 004757c9
@@ -162,8 +162,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004757ce
     PUSH EBX                            ; 004757d2
     FSTP float ptr [ESP + 0x8]          ; 004757d3
-    CALL core_motion.cpp_FUN_00524a40   ; 004757d7
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004757d7
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004757dc
     FLD float ptr [ESP + 0xc]           ; 004757e0
     ADD ESP,0x8                         ; 004757e4
@@ -171,8 +171,8 @@ section .text
     FADD float ptr [ESP + 0x4]          ; 004757e9
     PUSH EBX                            ; 004757ed
     FSTP float ptr [ESP + 0x8]          ; 004757ee
-    CALL core_motion.cpp_FUN_00524a40   ; 004757f2
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004757f2
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004757f7
     FLD float ptr [ESP + 0xc]           ; 004757fb
     ADD ESP,0x8                         ; 004757ff

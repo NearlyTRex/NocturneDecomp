@@ -64,7 +64,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_resetAllPathMaps_FUN_00535280
 ;   core_set.cpp_CDemonSet_clear_FUN_0054d370
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00559580
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5f0490                       ; 0054d3fd | DAT_005f0490
     PUSH ESI                            ; 0054d402
     PUSH 0x5f0493                       ; 0054d403 | = "models"
-    CALL engine_dosio.cpp_FUN_00479180  ; 0054d408
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0054d408
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054d40d
     MOV EBX,EAX                         ; 0054d410
     TEST EAX,EAX                        ; 0054d412
@@ -913,7 +913,7 @@ section .text
     PUSH EBX                            ; 0054ddb0
         ;   Label: LAB_0054ddb0
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0054ddb1
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0054ddb6
     PUSH 0x0                            ; 0054ddb9
     PUSH 0x5f05fe                       ; 0054ddbb | = "Loading set geometry"
@@ -958,15 +958,15 @@ section .text
     PUSH 0x5f0613                       ; 0054de1d | DAT_005f0613
     PUSH EBX                            ; 0054de22
     PUSH 0x5f0616                       ; 0054de23 | DAT_005f0616
-    CALL engine_dosio.cpp_FUN_00479180  ; 0054de28
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0054de28
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054de2d
     TEST EAX,EAX                        ; 0054de30
     JZ 0x0054e380                       ; 0054de32
         ;   XREF to: 0054e380 (CONDITIONAL_JUMP)  ; LAB_0054e380
     PUSH EAX                            ; 0054de38
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0054de39
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0054de3e
     PUSH EBX                            ; 0054de41
     PUSH 0x1fe5c1c                      ; 0054de42 | g_CDemonRaytraceInstance
@@ -1129,8 +1129,8 @@ section .text
     PUSH 0x5f04aa                       ; 0054df9c | = "CDemonSet::Unable to open %s"
     MOV dword ptr [0x01d1d400],EDI      ; 0054dfa1 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0054dfa7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0054dfac
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054dfac
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0054dfb1
     JMP 0x0054d41a                      ; 0054dfb4
         ;   XREF to: 0054d41a (UNCONDITIONAL_JUMP)  ; LAB_0054d41a

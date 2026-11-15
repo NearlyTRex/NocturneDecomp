@@ -24,7 +24,8 @@ void __cdecl core_fire_cpp_CGunFlame_burnNearby_FUN_0049df60(CGunFlame *this_ptr
   uint class_name_hash;
   SDamageInfo SStack_90;
   float local_54;
-  float local_50 [9];
+  float local_50 [2];
+  CVector3f local_48 [2];
   int local_2c;
   int local_28;
   CCharacter *local_24;
@@ -41,13 +42,14 @@ void __cdecl core_fire_cpp_CGunFlame_burnNearby_FUN_0049df60(CGunFlame *this_ptr
       fVar2 = (local_24->base).location.position.z - (this_ptr->position).z;
       if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= _DAT_005c0858) {
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(&local_24->model);
-        core_actor_cpp_FUN_00408bf0(local_24,this_ptr);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                  (&local_24->base,&this_ptr->position,local_48);
         pCVar8 = local_24;
-        local_54 = local_50[2];
-        local_50[(uint)bVar7 * -2] = local_50[(uint)bVar7 * -2 + 3];
+        local_54 = local_48[0].x;
+        local_50[(uint)bVar7 * -2] = *(float *)((int)local_48 + (uint)bVar7 * -8 + 4);
         class_name_hash = g_CHeroClassInfo.name_hash;
         local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-             local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+             *(float *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840(&pCVar8->base,class_name_hash);
         if (((pCVar4 != (CDemonActor *)0x0) && (this_ptr->flame_type == 2)) ||
            ((pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840

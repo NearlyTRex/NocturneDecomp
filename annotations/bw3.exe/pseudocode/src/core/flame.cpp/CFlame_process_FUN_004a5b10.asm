@@ -247,7 +247,7 @@ section .text
     FADD float ptr [EAX + 0x160]        ; 004a5d8d
     FMUL double ptr [0x005c0bd4]        ; 004a5d93 | DAT_005c0bd4
     CALL crt_math.c_round_FUN_005a3120  ; 004a5d99
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x100]       ; 004a5d9e
     MOV EAX,dword ptr [ESP + 0x100]     ; 004a5da5
     FLD float ptr [ESP + 0xc4]          ; 004a5dac
@@ -420,7 +420,7 @@ section .text
     FLD float ptr [ESP + 0xec]          ; 004a5fd4
     FXCH                                ; 004a5fdb
     CALL crt_math.c_round_FUN_005a3120  ; 004a5fdd
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x104]       ; 004a5fe2
     FCOMP double ptr [0x005c0bcc]       ; 004a5fe9 | DAT_005c0bcc
     FNSTSW AX                           ; 004a5fef

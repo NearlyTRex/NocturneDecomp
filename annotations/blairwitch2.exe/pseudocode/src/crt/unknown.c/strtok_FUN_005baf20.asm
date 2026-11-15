@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_strtok_FUN_005baf20(byte *param_1,undefined4 param_2)
+; char * __cdecl crt_unknown_c_strtok_FUN_005baf20(char *str,char *delimiters)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; char *           Stack[0x8]:4   delimiters
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

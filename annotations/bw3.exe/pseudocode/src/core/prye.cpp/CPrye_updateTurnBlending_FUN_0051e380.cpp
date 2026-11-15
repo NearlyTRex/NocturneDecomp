@@ -20,7 +20,8 @@ void __cdecl core_prye_cpp_CPrye_updateTurnBlending_FUN_0051e380(CPrye *this_ptr
   (this_ptr->pending_velocity).z = 0.0;
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
-  fVar4 = (float)core_motion_cpp_FUN_004fc350(&(this_ptr->base).base.model,0);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350
+                    (&(this_ptr->base).base.model.base,0);
   if ((fVar4 <= 0.0) || (1.0 <= this_ptr->turn_blend_weight)) {
     this_ptr->turn_angle = 0.0;
     this_ptr->turn_motion_index = -1;

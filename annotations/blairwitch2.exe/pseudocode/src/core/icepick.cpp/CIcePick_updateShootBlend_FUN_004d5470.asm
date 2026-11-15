@@ -91,7 +91,7 @@ section .text
         ;   Label: LAB_004d5533
     PUSH dword ptr [EBX + 0x2566c]      ; 004d5537
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00593fa0 ; 004d553d
-        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00593fa0()
+        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004d5542
     LEA EDI,[ESP + 0x18]                ; 004d5545
     PUSH 0x544cc0                       ; 004d5549

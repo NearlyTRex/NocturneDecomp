@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
+; int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 ;
+; Parameters:
+; int              Stack[0x4]:4   char_code
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

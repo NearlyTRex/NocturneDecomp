@@ -21,7 +21,7 @@ char * __cdecl support_newmsg_cpp_decryptMessage_FUN_0050ff00(char *encrypted_ms
     if ((byte)(encrypted_msg[2] ^ bVar2) != 0x3e) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0xe2;
-      core_main_c_FUN_004e4500("decryptMessage - invalid initial mask value!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - invalid initial mask value!");
     }
     iVar4 = 2;
     pbVar3 = (byte *)(encrypted_msg + 2);
@@ -32,13 +32,13 @@ char * __cdecl support_newmsg_cpp_decryptMessage_FUN_0050ff00(char *encrypted_ms
       if (100000 < iVar4) {
         _DAT_01d046a0 = "..\\support\\newmsg.cpp";
         _DAT_01d046a4 = 0xed;
-        core_main_c_FUN_004e4500("decryptMessage - error decrypting text!");
+        core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - error decrypting text!");
       }
     }
     if (iVar4 < 0x17) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0x100;
-      core_main_c_FUN_004e4500("decryptMessage - premature null terminator!");
+      core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - premature null terminator!");
       return encrypted_msg + 0x17;
     }
   }

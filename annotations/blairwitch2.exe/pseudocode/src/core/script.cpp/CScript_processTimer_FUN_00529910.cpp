@@ -14,7 +14,7 @@ int __cdecl core_script_cpp_CScript_processTimer_FUN_00529910(CScript *this_ptr,
   if (delta_time < 0.0) {
     _DAT_01d046a0 = "..\\core\\script.cpp";
     _DAT_01d046a4 = 0x10e5;
-    core_main_c_FUN_004e4500("CScript::processTimer - invalidTimeToWait");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CScript::processTimer - invalidTimeToWait");
   }
   if (this_ptr->cmd_timer < 0.0) {
     this_ptr->cmd_timer = delta_time;

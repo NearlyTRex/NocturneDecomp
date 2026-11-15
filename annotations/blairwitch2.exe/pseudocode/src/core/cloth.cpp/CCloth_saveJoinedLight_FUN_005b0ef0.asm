@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5f1121                       ; 005b0f8f | = "CCloth::saveJoinedLight - Can't save ..."
     MOV dword ptr [0x01d046a0],EDX      ; 005b0f94 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005b0f9a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b0fa0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b0fa0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b0fa5
     JMP 0x005b0f04                      ; 005b0fa8
         ;   XREF to: 005b0f04 (UNCONDITIONAL_JUMP)  ; LAB_005b0f04
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5f116d                       ; 005b0fb7 | = "CCloth::saveJoinedLight - Model wasn'..."
     MOV dword ptr [0x01d046a0],EBX      ; 005b0fbc | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 005b0fc2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b0fc8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b0fc8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b0fcd
     JMP 0x005b0f12                      ; 005b0fd0
         ;   XREF to: 005b0f12 (UNCONDITIONAL_JUMP)  ; LAB_005b0f12

@@ -11,7 +11,7 @@
 ;   undefined4 DAT_0061c010
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004b6f80
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b969d
     PUSH EBX                            ; 004b969e
     LEA ESI,[ESP + 0x10]                ; 004b969f
-    CALL core_actor.cpp_FUN_00408b40    ; 004b96a3
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004b96a3
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004b96a8
     PUSH 0x1                            ; 004b96ab
     PUSH 0x3                            ; 004b96ad

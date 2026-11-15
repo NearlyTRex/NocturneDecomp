@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5d2918                       ; 0040afd7 | = "End of actor file tag mismatch for cl..."
     MOV dword ptr [0x01d1d400],ECX      ; 0040afdc | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0040afe2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0040afe7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040afe7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0040afec
     MOV EAX,dword ptr [ESP + 0xe4]      ; 0040afef
         ;   Label: LAB_0040afef
@@ -164,8 +164,8 @@ section .text
     PUSH 0x5d28c9                       ; 0040b02a | = "Start of actor file tag mismatch for ..."
     MOV dword ptr [0x01d1d400],ECX      ; 0040b02f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0040b035 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0040b03b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040b03b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040b040
     JMP 0x0040af2a                      ; 0040b043
         ;   XREF to: 0040af2a (UNCONDITIONAL_JUMP)  ; LAB_0040af2a
@@ -189,8 +189,8 @@ section .text
     PUSH 0x5d2960                       ; 0040b06c | = "IO Error after reading %s \"%s\""
     MOV dword ptr [0x01d1d400],EDX      ; 0040b071 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0040b077 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0040b07d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040b07d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0040b082
     JMP 0x0040affc                      ; 0040b085
         ;   XREF to: 0040affc (UNCONDITIONAL_JUMP)  ; LAB_0040affc

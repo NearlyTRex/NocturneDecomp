@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d94b98
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5c9f22                       ; 004fd1af | = "js_bound bad layer/modext (%d/%d)  Fi..."
     MOV dword ptr [0x01d71de0],EBP      ; 004fd1b4 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004fd1ba | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fd1bf
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd1bf
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 004fd1c4
     SHL ESI,0x2                         ; 004fd1c7
         ;   Label: LAB_004fd1c7
@@ -127,7 +127,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EBX       ; 004fd23f
     FLD double ptr [ECX + EAX*0x8 + 0x6011b8] ; 004fd243 | DAT_006011b8
     CALL crt_math.c_round_FUN_005a3120  ; 004fd24a
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004fd24f
     CMP EDI,0x1                         ; 004fd253
     JNZ 0x004fd2dd                      ; 004fd256
@@ -151,8 +151,8 @@ section .text
     PUSH 0x5c9ed8                       ; 004fd282 | = "MPEG Layer 2 - pick_table - can't loa..."
     MOV [0x01d71de0],EAX                ; 004fd287 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004fd28c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fd292
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd292
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fd297
     MOV EAX,dword ptr [ESP + 0xc]       ; 004fd29a
         ;   Label: LAB_004fd29a

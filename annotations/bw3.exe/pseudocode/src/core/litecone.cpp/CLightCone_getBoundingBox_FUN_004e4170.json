@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 107,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unaffected_reg",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 57
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -26,9 +25,9 @@
         "004e41cb"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4170",
-    "signature": "CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4170(CLightCone *this_ptr,CBoundingBox3D *out_box)"
+    "signature": "CBoundingBox3D * __stack_esi core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4170(CLightCone *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [],
   "globals": [
@@ -44,7 +43,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "declared_stack_bytes": 8,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
     "matches_declared": true
   },
@@ -105,10 +104,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -117,13 +116,6 @@
         "offset": 4,
         "size": 4,
         "type": "CLightCone *"
-      },
-      {
-        "is_param": true,
-        "name": "out_box",
-        "offset": 8,
-        "size": 4,
-        "type": "CBoundingBox3D *"
       }
     ]
   },
@@ -154,32 +146,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CBoundingBox3D *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "pCVar3 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 28,
+      "line": 27,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)&(pCVar3->min).y;",

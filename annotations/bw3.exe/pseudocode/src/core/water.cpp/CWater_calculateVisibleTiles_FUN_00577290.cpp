@@ -20,32 +20,27 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00577290(CWater *th
   int iVar7;
   int iVar8;
   byte bVar9;
-  float10 fVar10;
-  float afStackY_1058 [990];
-  SMRGLHeaderPrimitive local_c8;
-  uint local_b0;
-  uint local_ac;
-  uint local_a8;
-  uint local_a4;
-  CVector3i local_a0;
-  CVector3f local_94;
-  CVector3i local_88;
-  CVector3i local_7c;
+  double dVar10;
+  float afStackY_1058 [989];
+  CVector3i local_a4;
+  CVector3f local_98;
+  CVector3i local_8c;
+  CVector3i local_80;
   float local_70;
-  float local_6c [2];
-  CVector3i local_64;
+  float local_6c;
+  CVector3i local_68;
   float local_58;
-  float local_54 [5];
+  float local_54 [2];
+  CVector3f local_4c;
   int local_40;
   int local_3c;
-  int local_38;
-  float local_34;
-  float afStack_30 [4];
+  CVector3f local_34;
+  float local_28;
+  float local_24;
   float local_20;
   float local_1c;
   int local_18;
   int local_14;
-  int local_10;
   
   bVar9 = 0;
   iVar7 = 0;
@@ -61,99 +56,89 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00577290(CWater *th
   } while (iVar4 < 0x20);
   this_ptr->visible_area_sqft = 0.0;
   if (ABS(this_ptr->water_level_y) != 0.0) {
-    core_dtrace_cpp_FUN_00477d90();
-    local_70 = local_34;
-    local_6c[(uint)bVar9 * -2] = afStack_30[(uint)bVar9 * -2];
-    local_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         afStack_30[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-    core_dtrace_cpp_FUN_00477db0();
-    local_58 = local_54[2];
-    local_54[(uint)bVar9 * -2] = local_54[(uint)bVar9 * -2 + 3];
+    core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00477d90(&g_CDemonRaytraceInstance,&local_34);
+    local_70 = local_34.x;
+    (&local_6c)[(uint)bVar9 * -2] = *(float *)((int)&local_34 + (uint)bVar9 * -8 + 4);
+    *(uint *)((int)&local_68 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+         *(uint *)((int)&local_34 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+    core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00477db0(&g_CDemonRaytraceInstance,&local_4c);
+    local_58 = local_4c.x;
+    local_54[(uint)bVar9 * -2] = *(float *)((int)&local_4c + (uint)bVar9 * -8 + 4);
     local_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         local_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+         *(float *)((int)&local_4c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     fVar2 = (float)_DAT_005d71ab;
     _DAT_02cfd968 = (local_70 + local_58) * fVar2;
-    _DAT_02cfd970 = (local_6c[1] + local_54[1]) * fVar2;
-    afStack_30[2] = (local_58 - local_70) * fVar2 * (float)_DAT_005d71b3;
+    _DAT_02cfd970 = ((float)local_68.x + local_54[1]) * fVar2;
+    local_28 = (local_58 - local_70) * fVar2 * (float)_DAT_005d71b3;
     _DAT_02cfd96c = 0.0;
     local_1c = 0.0;
-    if (0.0 < afStack_30[2]) {
-      local_1c = afStack_30[2];
+    if (0.0 < local_28) {
+      local_1c = local_28;
     }
-    afStack_30[3] = local_54[0] - local_6c[0];
-    if (local_1c < afStack_30[3]) {
-      local_1c = afStack_30[3];
+    local_24 = local_54[0] - local_6c;
+    if (local_1c < local_24) {
+      local_1c = local_24;
     }
-    local_20 = (local_54[1] - local_6c[1]) * (float)_DAT_005d71ab * (float)_DAT_005d71b3;
+    local_20 = (local_54[1] - (float)local_68.x) * (float)_DAT_005d71ab * (float)_DAT_005d71b3;
     if (local_1c < local_20) {
       local_1c = local_20;
     }
-    fVar10 = (float10)1 + (float10)local_1c / (float10)this_ptr->tile_size;
-    round();
-    local_18 = (int)ROUND(fVar10);
+    dVar10 = round((double)(local_1c / this_ptr->tile_size + 1.0));
+    local_1c = (float)(int)ROUND(dVar10);
     _DAT_02cfd97c = 0;
-    iVar8 = -local_18;
-    local_14 = local_18;
-    if (SBORROW4(iVar8,local_18) != local_18 * -2 < 0) {
+    iVar8 = -(int)local_1c;
+    local_18 = (int)local_1c;
+    if (SBORROW4(iVar8,(int)local_1c) != (int)local_1c * -2 < 0) {
       do {
-        iVar6 = -local_14;
-        if (iVar6 < local_14) {
+        iVar6 = -local_18;
+        if (iVar6 < local_18) {
           do {
-            local_94.x = (float)iVar8 * this_ptr->tile_size + _DAT_02cfd968;
-            local_94.y = this_ptr->water_level_y + _DAT_02cfd96c;
-            local_94.z = (float)iVar6 * this_ptr->tile_size + _DAT_02cfd970;
-            local_10 = iVar6;
+            local_98.x = (float)iVar8 * this_ptr->tile_size + _DAT_02cfd968;
+            local_98.y = this_ptr->water_level_y + _DAT_02cfd96c;
+            local_98.z = (float)iVar6 * this_ptr->tile_size + _DAT_02cfd970;
+            local_14 = iVar6;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-                      (DAT_005f2afc,&local_94);
-            local_40 = (int)ROUND(local_94.x * _DAT_005e5e7c);
-            local_3c = (int)ROUND(local_94.y * _DAT_005e5e7c);
-            local_38 = (int)ROUND(local_94.z * _DAT_005e5e7c);
-            local_94.x = 0.0;
-            local_94.y = 0.0;
-            local_94.z = 0.0;
-            local_64.x = (int)ROUND(_DAT_005e5e7c * 0.0);
-            local_64.y = (int)ROUND(_DAT_005e5e7c * 0.0);
-            local_64.z = (int)ROUND(_DAT_005e5e7c * 0.0);
+                      (DAT_005f2afc,&local_98);
+            local_4c.z = (float)(int)ROUND(local_98.x * _DAT_005e5e7c);
+            local_40 = (int)ROUND(local_98.y * _DAT_005e5e7c);
+            local_3c = (int)ROUND(local_98.z * _DAT_005e5e7c);
+            local_98.x = 0.0;
+            local_98.y = 0.0;
+            local_98.z = 0.0;
+            local_68.x = (int)ROUND(_DAT_005e5e7c * 0.0);
+            local_68.y = (int)ROUND(_DAT_005e5e7c * 0.0);
+            local_68.z = (int)ROUND(_DAT_005e5e7c * 0.0);
             engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                      (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_64);
-            local_94.x = this_ptr->tile_size;
-            local_a0.x = (int)ROUND(local_94.x * _DAT_005e5e7c);
-            local_a0.y = (int)ROUND(local_94.y * _DAT_005e5e7c);
-            local_a0.z = (int)ROUND(local_94.z * _DAT_005e5e7c);
+                      (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_68);
+            local_98.x = this_ptr->tile_size;
+            local_a4.x = (int)ROUND(local_98.x * _DAT_005e5e7c);
+            local_a4.y = (int)ROUND(local_98.y * _DAT_005e5e7c);
+            local_a4.z = (int)ROUND(local_98.z * _DAT_005e5e7c);
             engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                      (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_a0);
-            local_94.z = this_ptr->tile_size;
-            local_7c.x = (int)ROUND(local_94.x * _DAT_005e5e7c);
-            local_7c.y = (int)ROUND(local_94.y * _DAT_005e5e7c);
-            local_7c.z = (int)ROUND(local_94.z * _DAT_005e5e7c);
+                      (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_a4);
+            local_98.z = this_ptr->tile_size;
+            local_80.x = (int)ROUND(local_98.x * _DAT_005e5e7c);
+            local_80.y = (int)ROUND(local_98.y * _DAT_005e5e7c);
+            local_80.z = (int)ROUND(local_98.z * _DAT_005e5e7c);
             engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                      (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_7c);
-            local_94.x = 0.0;
-            local_88.x = (int)ROUND(_DAT_005e5e7c * 0.0);
-            local_88.y = (int)ROUND(local_94.y * _DAT_005e5e7c);
-            local_88.z = (int)ROUND(local_94.z * _DAT_005e5e7c);
+                      (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_80);
+            local_98.x = 0.0;
+            local_8c.x = (int)ROUND(_DAT_005e5e7c * 0.0);
+            local_8c.y = (int)ROUND(local_98.y * _DAT_005e5e7c);
+            local_8c.z = (int)ROUND(local_98.z * _DAT_005e5e7c);
             engine_special_cpp_transformAndProjectPoint_FUN_005632a3
-                      (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_88);
+                      (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_8c);
             uVar3 = DAT_005f2b00;
             uVar5 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4;
             if (((uVar5 & 0x80000000) == 0) || ((char)uVar5 == '\0')) {
-              local_c8.base.count = 4;
-              local_c8.surface_normal.D.i = 0;
-              local_c8.surface_normal.C.i = 0;
-              local_c8.surface_normal.B.i = 0;
-              local_c8.surface_normal.A.i = 0;
-              local_b0 = 0;
-              local_a4 = 3;
               DAT_005f2b00 = 0x10;
-              local_ac = 1;
-              local_a8 = 2;
               iVar7 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580
-                                (DAT_005f2afc,&local_c8);
+                                (DAT_005f2afc,(SMRGLHeaderPrimitive *)&stack0xffffff34);
               if (iVar7 != 0) {
                 if (0xfff < _DAT_02cfd97c) {
                   _DAT_01d71de0 = "..\\core\\water.cpp";
                   _DAT_01d71de4 = 0x117;
-                  core_main_c_FUN_004e4330();
+                  core_main_c_displayErrorAndQuit_FUN_004e4330("Too many visible water tiles!");
                 }
                 *(int *)(&DAT_02cfd980 + _DAT_02cfd97c * 4) = iVar8;
                 *(int *)(&DAT_02d01980 + _DAT_02cfd97c * 4) = iVar6;
@@ -162,10 +147,10 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00577290(CWater *th
             }
             iVar6 = iVar6 + 1;
             DAT_005f2b00 = uVar3;
-          } while (iVar6 < local_14);
+          } while (iVar6 < local_18);
         }
         iVar8 = iVar8 + 1;
-      } while (iVar8 < local_18);
+      } while (iVar8 < (int)local_1c);
     }
     this_ptr->visible_area_sqft = (float)_DAT_02cfd97c * this_ptr->tile_size * this_ptr->tile_size;
     engine_console_cpp_CConsole_printf_FUN_00441ff0

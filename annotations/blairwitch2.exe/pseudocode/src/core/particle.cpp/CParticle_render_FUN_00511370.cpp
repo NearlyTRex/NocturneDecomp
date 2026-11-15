@@ -13,6 +13,6 @@ void __cdecl core_particle_cpp_CParticle_render_FUN_00511370(CParticle *this_ptr
 {
   _DAT_01d046a0 = "..\\core\\particle.cpp";
   _DAT_01d046a4 = 200;
-  core_main_c_FUN_004e4500("Base class shouldn't render");
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Base class shouldn't render");
   return;
 }

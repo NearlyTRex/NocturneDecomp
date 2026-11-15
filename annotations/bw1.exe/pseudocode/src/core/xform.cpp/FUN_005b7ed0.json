@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 98,
     "complexity_score": 293,
-    "cross_reference_count": 16,
+    "cross_reference_count": 17,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -117,6 +117,12 @@
       "from_addr": "005934b0",
       "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a23b0",
+      "from_addr": "005a2712",
+      "name": "core_turret.cpp_CTurret_process_FUN_005a23b0",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -147,7 +153,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 18,
+    "call_site_count": 20,
     "call_sites": [
       {
         "call_addr": "0040f69e",
@@ -289,7 +295,7 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 3,
+    "estimated_params": 2,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -621,14 +627,14 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 18,
+      "call_site_count": 20,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

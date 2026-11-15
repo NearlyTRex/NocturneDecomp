@@ -1,14 +1,14 @@
 // Name: engine_special.cpp_FUN_0055d6d7
 // Address: 0055d6d7
 // Address Range: [[0055d6d7, 0055d6dc]]
-// Convention: unknown
-// Signature: void engine_special_cpp_FUN_0055d6d7(void)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx engine_special_cpp_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_special_cpp_FUN_0055d6d7(void)
+void __edi_esi_ebx engine_special_cpp_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)
 
 {
                     /* WARNING: Could not recover jumptable at 0x0055d6d7. Too many branches */

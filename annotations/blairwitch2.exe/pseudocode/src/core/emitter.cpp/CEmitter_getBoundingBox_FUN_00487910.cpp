@@ -1,19 +1,18 @@
 // Name: core_emitter.cpp_CEmitter_getBoundingBox_FUN_00487910
 // Address: 00487910
 // Address Range: [[00487910, 00487981]]
-// Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
+// Convention: __stack_esi
+// Signature: CBoundingBox3D * __stack_esi core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __stack_esi core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   int iVar2;
-  CBoundingBox3D *unaff_ESI;
   float *pfVar3;
   CBoundingBox3D *pCVar4;
   float afStack_1c [4];
@@ -28,11 +27,11 @@ CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(C
   afStack_1c[2] = -(this_ptr->emitter_size).z * fVar1;
   afStack_1c[0] = -(this_ptr->emitter_size).x * fVar1;
   pfVar3 = afStack_1c;
-  pCVar4 = unaff_ESI;
+  pCVar4 = out_box;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     (pCVar4->min).x = *pfVar3;
     pfVar3 = pfVar3 + 1;
     pCVar4 = (CBoundingBox3D *)&(pCVar4->min).y;
   }
-  return unaff_ESI;
+  return out_box;
 }

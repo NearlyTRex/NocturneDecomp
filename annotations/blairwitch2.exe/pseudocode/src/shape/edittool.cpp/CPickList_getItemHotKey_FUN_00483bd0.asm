@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH 0x5d2a4f                       ; 00483bed | = "CPickList::getItemHotKey - invalid index"
     MOV dword ptr [0x01d046a0],ECX      ; 00483bf2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00483bf8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00483bfe
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00483bfe
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00483c03
     POP EDI                             ; 00483c06
     CMP EBX,dword ptr [ESI + 0x1b4]     ; 00483c07

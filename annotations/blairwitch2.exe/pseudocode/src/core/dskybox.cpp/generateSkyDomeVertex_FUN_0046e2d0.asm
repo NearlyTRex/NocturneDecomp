@@ -110,16 +110,16 @@ section .text
     PUSH EAX                            ; 0046e387
     FXCH                                ; 0046e388
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e38a
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     LEA EAX,[ESI*0x4 + 0x0]             ; 0046e38f
     FISTP dword ptr [ESP + 0xc]         ; 0046e396
     SUB EAX,ESI                         ; 0046e39a
     FXCH                                ; 0046e39c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e39e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046e3a3
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e3a5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046e3aa
     FISTP dword ptr [ESP + 0x8]         ; 0046e3ac
     MOV ESI,EAX                         ; 0046e3b0

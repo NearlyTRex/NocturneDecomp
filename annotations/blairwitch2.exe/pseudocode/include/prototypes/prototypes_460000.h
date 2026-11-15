@@ -54,7 +54,7 @@ EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00460300(CDoor *this_p
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00460310(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00460320(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00460330(CDoor *this_ptr);
-float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor *this_ptr,float *param_2,undefined4 param_3);
+CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_004605e0(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00460800(CDoor *this_ptr);
@@ -70,7 +70,7 @@ inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00460930(T_func0 handler) {
 int __cdecl engine_dosio_cpp_findFile_FUN_00460980(SFoundFileInfo *context);
 int __cdecl engine_dosio_cpp_findFileNormally_FUN_004609e0(SFoundFileInfo *info);
 int __cdecl engine_dosio_cpp_getFileSize_FUN_00460aa0(char *directory,char *filename);
-_FILE * __cdecl engine_dosio_cpp_FUN_00460c70(char *directory,char *filename,char *mode);
+_FILE * __cdecl engine_dosio_cpp_getFile_FUN_00460c70(char *directory,char *filename,char *mode);
 void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00460e10(CFileFinder *this_ptr);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_dtor_FUN_00460e30(CFileFinder *this_ptr,uint flags);
@@ -89,7 +89,7 @@ bool engine_dosio_cpp_FUN_004613b0(char *param_1);
 bool engine_dosio_cpp_FUN_00461440(char *param_1);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_004614b0(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004614d0(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_004615d0(int param_1);
+void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004615d0(CDemonPart *this_ptr);
 void core_dpart_cpp_FUN_00461612(void);
 void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00461630(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00461660(CDemonPart *this_ptr);
@@ -138,7 +138,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_00466770(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00466820(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00466960(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void cockpit_drawsurf_cpp_FUN_00466a50(CDrawSurface *param_1,int param_2,int param_3,int param_4);
+void cockpit_drawsurf_cpp_FUN_00466a50(int param_1,int param_2,int param_3,int param_4,int param_5);
 char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00466c60(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00466ca0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90(CDrawSurface *this_ptr,int start_x,int y,int end_x);
@@ -228,9 +228,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0(CD
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0046b520(CDemonRenderer *this_ptr,CVector3i *direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046b540(CDemonRenderer *this_ptr,CVector3f *light_direction);
 CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(CDemonRenderer *this_ptr,CVector3i *output);
-void engine_drender_cpp_FUN_0046b5e0(void);
+CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0(CDemonRenderer *this_ptr,CVector3f *output);
 CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650(CDemonRenderer *this_ptr,CVector3i *output);
-void engine_drender_cpp_FUN_0046b670(void);
+CVector3f * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046b670(CDemonRenderer *this_ptr,CVector3f *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046b6f0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_popViewport_FUN_0046b740(void);

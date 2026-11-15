@@ -15,7 +15,7 @@ void FUN_00417d60(int param_1);
 
 // Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00417e20
 // Address: 00417e20
-void getWorldBoundingBoxCenter(int param_1);
+CVector3f * __stack_esi getWorldBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417f20
 // Address: 00417f20
@@ -31,7 +31,7 @@ void rgbToHsv(void);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00418110
 // Address: 00418110
-void hsvToRgb(float *param_1);
+CColor3f * __stack_esi hsvToRgb(CColor3f *in_hsv,CColor3f *out_rgb);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0
 // Address: 004182d0

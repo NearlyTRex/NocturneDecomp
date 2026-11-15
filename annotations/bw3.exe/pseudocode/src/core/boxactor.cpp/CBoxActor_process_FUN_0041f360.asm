@@ -20,8 +20,8 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_box.cpp_CBox_process_FUN_0041b410
@@ -71,7 +71,7 @@ section .text
     FLD double ptr [ESP + 0x12c]        ; 0041f3bf
     ADD ESP,0x8                         ; 0041f3c6
     CALL crt_math.c_round_FUN_005a3120  ; 0041f3c9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x130]       ; 0041f3ce
     MOV EAX,dword ptr [ESP + 0x130]     ; 0041f3d5
     MOV dword ptr [ESP + 0x134],EAX     ; 0041f3dc
@@ -292,8 +292,8 @@ section .text
     PUSH EBX                            ; 0041f6f6
     LEA ESI,[ESP + 0xfc]                ; 0041f6f7
     LEA EDI,[ESP + 0x78]                ; 0041f6fe
-    CALL core_actor.cpp_FUN_00408b00    ; 0041f702
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0041f702
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xfc]                ; 0041f707
     ADD ESP,0x8                         ; 0041f70e
     LEA EAX,[EBX + 0x394]               ; 0041f711

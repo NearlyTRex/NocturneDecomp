@@ -83,7 +83,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_realloc_FUN_005b8ce0
 ;   crt_stdio.c_fclose_FUN_005b89c0
@@ -176,7 +176,7 @@ section .text
         ;   XREF to: 00519fb6 (CONDITIONAL_JUMP)  ; LAB_00519fb6
     PUSH EBP                            ; 00519fad
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00519fae
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00519fb3
     PUSH EBX                            ; 00519fb6
         ;   Label: LAB_00519fb6
@@ -315,8 +315,8 @@ section .text
     PUSH 0x5e2425                       ; 0051a149 | = "Out of memory!"
     MOV dword ptr [0x01d046a0],ECX      ; 0051a14e | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0051a154 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051a15a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a15a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a15f
     MOV EDI,dword ptr [ESP + 0x688]     ; 0051a162
         ;   Label: LAB_0051a162
@@ -379,7 +379,7 @@ section .text
         ;   Label: LAB_0051a22e
     PUSH EDI                            ; 0051a235
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0051a236
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051a23b
     CMP dword ptr [ESP + 0x68c],0x0     ; 0051a23e
     JZ 0x0051a285                       ; 0051a246
@@ -399,8 +399,8 @@ section .text
     PUSH 0x5e24a9                       ; 0051a26c | = "realloc returns NULL shrinking filena..."
     MOV dword ptr [0x01d046a0],ESI      ; 0051a271 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0051a277 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051a27d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a27d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a282
     MOV EAX,dword ptr [EBX + 0x410]     ; 0051a285
         ;   Label: LAB_0051a285
@@ -579,8 +579,8 @@ section .text
     PUSH 0x5e2467                       ; 0051a482 | = "Out of memory!"
     MOV dword ptr [0x01d046a0],ECX      ; 0051a487 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0051a48d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051a493
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a493
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a498
     MOV EDI,dword ptr [ESP + 0x674]     ; 0051a49b
         ;   Label: LAB_0051a49b
@@ -743,8 +743,8 @@ section .text
     PUSH 0x5e2446                       ; 0051a65f | = "Out of memory!"
     MOV dword ptr [0x01d046a0],EDI      ; 0051a664 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0051a66a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051a66f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a66f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a674
     MOV EDX,dword ptr [ESP + 0x674]     ; 0051a677
         ;   Label: LAB_0051a677
@@ -879,8 +879,8 @@ section .text
     PUSH 0x5e2488                       ; 0051a817 | = "Out of memory!"
     MOV dword ptr [0x01d046a0],ESI      ; 0051a81c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0051a822 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051a828
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a828
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a82d
     MOV EDI,dword ptr [ESP + 0x680]     ; 0051a830
         ;   Label: LAB_0051a830

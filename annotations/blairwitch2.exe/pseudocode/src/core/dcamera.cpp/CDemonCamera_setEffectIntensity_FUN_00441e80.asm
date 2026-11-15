@@ -30,7 +30,7 @@ section .text
     FMUL double ptr [0x005ce636]        ; 00441e84 | DAT_005ce636
     MOV EAX,dword ptr [ESP + 0x4]       ; 00441e8a
     CALL crt_math.c_round_FUN_005b7ff0  ; 00441e8e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EAX + 0x11e8]      ; 00441e93
     RET                                 ; 00441e99
 

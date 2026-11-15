@@ -156,7 +156,7 @@ section .text
         ;   Label: LAB_004e6132
     FLD float ptr [ESP + 0x40]          ; 004e6136
     CALL crt_math.c_atan2_FUN_005c1d69  ; 004e613a
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     FLD float ptr [ESP + 0x48]          ; 004e613f
     FMUL ST0                            ; 004e6143
     FLD float ptr [ESP + 0x40]          ; 004e6145
@@ -165,7 +165,7 @@ section .text
     FSQRT                               ; 004e614d
     FLD float ptr [ESP + 0x44]          ; 004e614f
     CALL crt_math.c_atan2_FUN_005c1d69  ; 004e6153
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     XOR EDI,EDI                         ; 004e6158
     XOR EBX,EBX                         ; 004e615a
     MOV dword ptr [ESP + 0x54],EDI      ; 004e615c

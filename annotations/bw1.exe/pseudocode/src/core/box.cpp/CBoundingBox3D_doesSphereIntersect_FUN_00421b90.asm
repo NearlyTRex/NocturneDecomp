@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a353
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_00421af0
+;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421af0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 00421b9f
     LEA ESI,[ESP + 0x14]                ; 00421ba0
     LEA EDI,[ESP + 0x8]                 ; 00421ba4
-    CALL core_box.cpp_FUN_00421af0      ; 00421ba8
-        ;   XREF to: 00421af0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00421af0()
+    CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421af0 ; 00421ba8
+        ;   XREF to: 00421af0 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421af0(CBoundingBox3D * this_ptr, CVector3f * in_point, CVector3f * out_point)
     LEA ESI,[ESP + 0x14]                ; 00421bad
     ADD ESP,0x8                         ; 00421bb1
     MOVSD ES:EDI,ESI                    ; 00421bb4

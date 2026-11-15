@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
@@ -15,10 +13,9 @@ void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr
   CDemonSet *this_ptr_01;
   byte bVar1;
   float afStackY_1010 [1016];
-  float local_28;
+  CVector3f local_28;
   float local_1c;
-  float local_18;
-  float local_14;
+  float local_18 [2];
   
   bVar1 = 0;
   this_ptr_00 = &this_ptr->light;
@@ -34,19 +31,18 @@ void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  core_dirmat_cpp_FUN_0045f840(rotation_matrix);
-  local_1c = local_28;
-  (&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (&this_ptr->rotation == (CVector3f *)&stack0xffffffe4) {
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(rotation_matrix,&local_28);
+  local_1c = local_28.x;
+  local_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);
+  local_18[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+       *(float *)((int)&local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if (&this_ptr->rotation == (CVector3f *)&local_1c) {
     this_ptr->frames_remaining = 2;
     return;
   }
   (this_ptr->rotation).x = local_1c;
-  (this_ptr->rotation).y = local_18;
-  (this_ptr->rotation).z = local_14;
+  (this_ptr->rotation).y = local_18[0];
+  (this_ptr->rotation).z = local_18[1];
   this_ptr->frames_remaining = 2;
   return;
 }

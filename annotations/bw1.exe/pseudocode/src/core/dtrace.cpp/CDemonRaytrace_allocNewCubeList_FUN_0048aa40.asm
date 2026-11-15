@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c___vec_new_FUN_005c2694
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x4                         ; 0048aa72
     PUSH EAX                            ; 0048aa75
     CALL crt_memory.c___vec_new_FUN_005c2694 ; 0048aa76
-        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_005c2694()
+        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_005c2694(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0048aa7b
     MOV dword ptr [EBX + 0x50],EAX      ; 0048aa7e
     TEST EAX,EAX                        ; 0048aa81
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5db799                       ; 0048aa92 | = "CDemonRaytrace::allocNewCubeList - Ou..."
     MOV dword ptr [0x01d1d400],EBX      ; 0048aa97 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0048aa9d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048aaa3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048aaa3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048aaa8
     POP ESI                             ; 0048aaab
     POP EBX                             ; 0048aaac

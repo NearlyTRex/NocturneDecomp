@@ -17,8 +17,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00497610(CBulletHole *this_ptr
   SMRGLTextureBasic *texture;
   CVector3f *translation;
   CVector3i local_84;
-  float local_78;
-  float afStack_74 [2];
+  CVector3f local_78;
   CVector3i local_6c;
   float local_60;
   float local_5c;
@@ -134,11 +133,12 @@ LAB_0049766e:
     DAT_0060b034 = 0xffff;
   }
   else {
-    core_actor_cpp_FUN_00408b00(this_ptr->actor_ptr,&this_ptr->actor_local_space);
-    local_30 = local_78;
-    local_2c[(uint)bVar2 * -2] = afStack_74[(uint)bVar2 * -2];
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              (this_ptr->actor_ptr,&this_ptr->actor_local_space,&local_78);
+    local_30 = local_78.x;
+    local_2c[(uint)bVar2 * -2] = *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4);
     local_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-         afStack_74[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+         *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_24.x = (int)ROUND((this_ptr->position).x * _DAT_005df8e4);
     local_24.y = (int)ROUND((this_ptr->position).y * _DAT_005df8e4);
     local_24.z = (int)ROUND((this_ptr->position).z * _DAT_005df8e4);

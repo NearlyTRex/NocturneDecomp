@@ -46,9 +46,9 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     PUSH EAX                            ; 00545cdd
     LEA ESI,[EBP + 0xa]                 ; 00545cde
     LEA EDI,[EBP + 0x2e]                ; 00545ce1
-    CALL core_xform.cpp_FUN_00583260    ; 00545ce4
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00545ce4
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0xa]                 ; 00545ce9
     MOVSD ES:EDI,ESI                    ; 00545cec
     MOVSD ES:EDI,ESI                    ; 00545ced
@@ -107,8 +107,8 @@ section .text
     PUSH EBX                            ; 00545cfc
     LEA ESI,[EBP + -0x2]                ; 00545cfd
     LEA EDI,[EBP + -0xe]                ; 00545d00
-    CALL core_actor.cpp_FUN_00408bf0    ; 00545d03
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00545d03
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[EBP + -0x2]                ; 00545d08
     MOVSD ES:EDI,ESI                    ; 00545d0b
     MOVSD ES:EDI,ESI                    ; 00545d0c

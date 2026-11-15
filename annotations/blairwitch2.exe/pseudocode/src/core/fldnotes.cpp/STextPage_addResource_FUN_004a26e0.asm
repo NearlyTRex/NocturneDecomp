@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH 0x5d5ac6                       ; 004a2703 | = "TextPage::addResource - too many reso..."
     MOV dword ptr [0x01d046a0],ECX      ; 004a2708 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a270e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a2714
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a2714
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2719
     POP ESI                             ; 004a271c
     MOV EAX,dword ptr [EBX]             ; 004a271d

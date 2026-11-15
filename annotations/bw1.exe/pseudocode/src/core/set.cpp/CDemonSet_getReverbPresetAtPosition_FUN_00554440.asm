@@ -23,7 +23,7 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c012
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH ECX                            ; 005544be
     LEA ESI,[ESP + 0x8]                 ; 005544bf
     LEA EDI,[ESP + 0x2c]                ; 005544c3
-    CALL core_dirmat.cpp_FUN_0045f700   ; 005544c7
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 005544c7
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x8]                 ; 005544cc
     ADD ESP,0x8                         ; 005544d0
     MOVSD ES:EDI,ESI                    ; 005544d3

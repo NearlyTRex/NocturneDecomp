@@ -11,9 +11,12 @@
 void core_set_cpp_FUN_005326b0(int param_1)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
+  float fVar1;
+  double dVar2;
+  double dVar3;
+  uint uStack_2c;
+  uint uStack_28;
+  uint uStack_24;
   uint uStack_20;
   uint uStack_1c;
   uint uStack_18;
@@ -27,17 +30,14 @@ void core_set_cpp_FUN_005326b0(int param_1)
     uStack_20 = (uStack_20 * 3) / 2;
   }
   if (param_1 == _DAT_0207babc) {
-    fVar1 = (float10)1 / (float10)_DAT_0207bac0;
-    fVar3 = (float10)uStack_1c * (float10)_DAT_0207bac0;
-    fVar2 = (float10)uStack_18 * fVar1;
-    fVar1 = (float10)uStack_20 * fVar1;
-    round();
-    uStack_1c = (int)ROUND(fVar3);
-    round();
-    round();
-    uStack_18 = (int)ROUND(fVar2);
-    uStack_20 = (int)ROUND(fVar1);
+    fVar1 = 1.0 / _DAT_0207bac0;
+    round((double)((float)uStack_1c * _DAT_0207bac0));
+    uStack_28 = 0x532734;
+    dVar2 = round((double)((float)uStack_18 * fVar1));
+    dVar3 = round((double)((float)uStack_20 * fVar1));
+    uStack_24 = (int)ROUND(dVar2);
+    uStack_2c = (int)ROUND(dVar3);
   }
-  core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(g_CDemonSetPtr,uStack_1c,uStack_18,uStack_20);
+  core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(g_CDemonSetPtr,uStack_28,uStack_24,uStack_2c);
   return;
 }

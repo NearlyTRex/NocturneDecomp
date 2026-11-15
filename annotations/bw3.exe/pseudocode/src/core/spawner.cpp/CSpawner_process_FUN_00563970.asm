@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
-;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_box.cpp_FUN_0041daf0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -158,8 +158,8 @@ section .text
     PUSH EBP                            ; 00563abb
     MOV EDI,0x3fc00000                  ; 00563abc
     MOV dword ptr [ESP + 0x40],ECX      ; 00563ac1
-    CALL core_actor.cpp_FUN_00408b00    ; 00563ac5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00563ac5
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00563aca
     LEA EAX,[ESP + 0x60]                ; 00563acd
     XOR EBX,EBX                         ; 00563ad1
@@ -169,8 +169,8 @@ section .text
     PUSH EBP                            ; 00563adc
     MOV dword ptr [ESP + 0x6c],EBX      ; 00563add
     MOV dword ptr [ESP + 0x70],EDI      ; 00563ae1
-    CALL core_actor.cpp_FUN_00408b00    ; 00563ae5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00563ae5
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     FLD float ptr [EBP + 0x24]          ; 00563aea
     ADD ESP,0x8                         ; 00563aed
     FADD float ptr [0x005d54b7]         ; 00563af0 | DAT_005d54b7

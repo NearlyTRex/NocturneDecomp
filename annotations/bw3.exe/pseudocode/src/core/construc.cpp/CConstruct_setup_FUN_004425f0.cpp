@@ -19,7 +19,7 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar3;
-  float10 fVar4;
+  double dVar4;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                     (0x01C6E360,"COMBATMODEHARD");
@@ -32,9 +32,8 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
   core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
-  fVar4 = (float10)(this_ptr->base).base.hit_points;
-  round();
-  this_ptr->initial_hit_points = (int)ROUND(fVar4);
+  dVar4 = round((double)(this_ptr->base).base.hit_points);
+  this_ptr->initial_hit_points = (int)ROUND(dVar4);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
   DAT_007f8e64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
                            (this_ptr_01,"Bip01 Head",1);
@@ -106,9 +105,8 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
       (this_ptr->base).attack_damage = 10.0;
       (this_ptr->base).pain_threshold = 10.0;
       (this_ptr->base).base.hit_points = 45.0;
-      fVar4 = (float10)(this_ptr->base).base.hit_points;
-      round();
-      this_ptr->initial_hit_points = (int)ROUND(fVar4);
+      dVar4 = round((double)(this_ptr->base).base.hit_points);
+      this_ptr->initial_hit_points = (int)ROUND(dVar4);
       return;
     }
     if (1 < uVar1) {
@@ -117,23 +115,20 @@ void __cdecl core_construc_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
         (this_ptr->base).pain_threshold = 10.0;
         (this_ptr->base).base.hit_points = 65.0;
         this_ptr->trail_texture_type = 2;
-        fVar4 = (float10)(this_ptr->base).base.hit_points;
-        round();
-        this_ptr->initial_hit_points = (int)ROUND(fVar4);
+        dVar4 = round((double)(this_ptr->base).base.hit_points);
+        this_ptr->initial_hit_points = (int)ROUND(dVar4);
         return;
       }
-      fVar4 = (float10)(this_ptr->base).base.hit_points;
-      round();
-      this_ptr->initial_hit_points = (int)ROUND(fVar4);
+      dVar4 = round((double)(this_ptr->base).base.hit_points);
+      this_ptr->initial_hit_points = (int)ROUND(dVar4);
       return;
     }
     (this_ptr->base).attack_damage = 15.0;
     (this_ptr->base).pain_threshold = 10.0;
     this_ptr->trail_texture_type = 3;
     (this_ptr->base).base.hit_points = 55.0;
-    fVar4 = (float10)(this_ptr->base).base.hit_points;
-    round();
-    this_ptr->initial_hit_points = (int)ROUND(fVar4);
+    dVar4 = round((double)(this_ptr->base).base.hit_points);
+    this_ptr->initial_hit_points = (int)ROUND(dVar4);
     return;
   }
   uVar1 = this_ptr->construct_variant;

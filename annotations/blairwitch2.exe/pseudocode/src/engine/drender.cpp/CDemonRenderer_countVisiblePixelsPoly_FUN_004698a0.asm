@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
 ;
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5d1532                       ; 0046991d | = "Can't use demonZFacetCount in shadow ..."
     MOV dword ptr [0x01d046a0],EBX      ; 00469922 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00469928 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0046992e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046992e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00469933
     PUSH 0x1ba5c84                      ; 00469936 | DAT_01ba5c84
         ;   Label: LAB_00469936

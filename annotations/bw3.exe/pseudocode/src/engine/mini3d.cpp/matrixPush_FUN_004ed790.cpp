@@ -21,7 +21,7 @@ void __cdecl engine_mini3d_cpp_matrixPush_FUN_004ed790(void)
   if (9 < _DAT_01d76d00) {
     _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
     _DAT_01d71de4 = 0x4b7;
-    core_main_c_FUN_004e4330("Matrix unbalance");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance");
   }
   puVar2 = _DAT_01d76cfc;
   puVar3 = (uint *)(&DAT_01d76d04 + _DAT_01d76d00 * 0x3c);

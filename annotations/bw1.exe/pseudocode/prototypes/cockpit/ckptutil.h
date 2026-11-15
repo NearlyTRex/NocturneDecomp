@@ -23,7 +23,7 @@ void __cdecl basicIndexedTo16Bit(void *output_buffer,void *input_buffer,int pixe
 
 // Original: cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
 // Address: 00437270
-code * __cdecl getColorConversionFunction(void);
+ColorConversionFunc * __cdecl getColorConversionFunction(void);
 
 // Original: cockpit_ckptutil.c_applyActPalette_FUN_00437380
 // Address: 00437380
@@ -39,7 +39,7 @@ void __cdecl loadACTPaletteFile(char *base_filename,uchar *output_buffer);
 
 // Original: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00437600
 // Address: 00437600
-void buildHardwarePalettes(void);
+void __cdecl buildHardwarePalettes(SRGBColorPalette *rgb_palette_data);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700
 // Address: 00437700
@@ -47,15 +47,15 @@ void __cdecl blitSpanBasedSprite(void *sprite_data,void *span_data,int screen_x,
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940
 // Address: 00437940
-void blitSpanBasedSpriteClipped(void);
+void __cdecl blitSpanBasedSpriteClipped(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90
 // Address: 00437b90
-int blitRectangleClipped(void);
+void __cdecl blitRectangleClipped(void *sprite_data,int dest_x,int dest_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00
 // Address: 00437d00
-void blitUnifiedSprite(void);
+void __cdecl blitUnifiedSprite(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 
 // Original: cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40
 // Address: 00437f40
@@ -79,7 +79,7 @@ void FUN_00438440(void);
 
 // Original: cockpit_ckptutil.c_blitFullScreen_FUN_00438530
 // Address: 00438530
-void blitFullScreen(void);
+void __cdecl blitFullScreen(void *sprite_data,void *span_data);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560
 // Address: 00438560
@@ -107,11 +107,11 @@ void __cdecl mirrorBitmapHorizontally(uchar *bitmap_data,int width,int height,in
 
 // Original: cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0
 // Address: 00438bd0
-void __cdecl loadEdgeListFile(char *param_1,int *param_2,int param_3);
+void __cdecl loadEdgeListFile(char *filename,SEdgeList *edge_lists,int expected_count);
 
-// Original: cockpit_ckptutil.c_FUN_00438e40
+// Original: cockpit_ckptutil.c_saveEdgeListFile_FUN_00438e40
 // Address: 00438e40
-void FUN_00438e40(char *param_1,int param_2,int param_3);
+void __cdecl saveEdgeListFile(char *filename,SEdgeList *edge_lists,int edge_list_count);
 
 // Original: cockpit_ckptutil.c_drawClippedEdges_FUN_00438fa0
 // Address: 00438fa0

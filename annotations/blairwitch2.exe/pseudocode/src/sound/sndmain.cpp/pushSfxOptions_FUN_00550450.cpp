@@ -21,7 +21,7 @@ void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_00550450(void)
   if (7 < _DAT_0264161c) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0xe98;
-    core_main_c_FUN_004e4500("pushSfxOptions - stack full");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("pushSfxOptions - stack full");
   }
   puVar2 = (uint *)((_DAT_0264161c + -1) * 0x60 + 0x2641620);
   puVar3 = (uint *)(_DAT_0264161c * 0x60 + 0x2641620);

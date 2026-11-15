@@ -24,7 +24,7 @@
 ;   core_bugs.cpp_FUN_00420840
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
 ;
@@ -206,8 +206,8 @@ section .text
     PUSH EAX                            ; 004201d4
     MOV dword ptr [ESP + 0x88],EDI      ; 004201d5
     LEA EDI,[ESP + 0xb4]                ; 004201dc
-    CALL core_dirmat.cpp_FUN_00449530   ; 004201e3
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004201e3
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x3c]                ; 004201e8
     ADD ESP,0x8                         ; 004201ec
     LEA EAX,[ESP + 0xac]                ; 004201ef

@@ -10,8 +10,9 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x18]:1  local_18
 ;
-; XREF[1]:
+; XREF[2]:
 ;   support_trisock.cpp_FUN_0056fef0 at 0057004c
+;   support_trisock.cpp_FUN_00571340 at 0057141f
 ;
 ; Called Functions:
 ;   crt_wsock32.c_connect
@@ -30,7 +31,7 @@ section .text
     PUSH EDX                            ; 0056f9c9
     LEA ESI,[ESP + 0x14]                ; 0056f9ca
     CALL support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0 ; 0056f9ce
-        ;   XREF to: 0056f7c0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0()
+        ;   XREF to: 0056f7c0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     ADD ESP,0x4                         ; 0056f9d3
     MOV EDI,ESP                         ; 0056f9d6
     PUSH 0x10                           ; 0056f9d8

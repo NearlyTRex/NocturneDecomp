@@ -12,23 +12,23 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004e5180(CBloodPool *this_ptr,i
 
 {
   EBloodType EVar1;
-  float10 fVar2;
-  CVector3i local_50;
-  CVector3i local_44;
+  double dVar2;
+  CVector3i CStack_54;
+  CVector3i local_48;
+  uint local_3c;
   uint local_38;
   uint local_34;
-  uint local_30;
-  CVector3i local_2c;
-  CVector3i local_20;
-  int local_14;
+  CVector3i local_30;
+  CVector3i local_24;
+  int local_18;
   
-  fVar2 = (float10)this_ptr->age * (float10)_DAT_005e40bd;
-  round();
-  local_14 = (int)ROUND(fVar2);
-  if (local_14 < 0) {
-    local_14 = 0;
+  CStack_54.x = 0x4e5199;
+  dVar2 = round((double)(this_ptr->age * (float)_DAT_005e40bd));
+  local_18 = (int)ROUND(dVar2);
+  if (local_18 < 0) {
+    local_18 = 0;
   }
-  else if ((0x1c < local_14) && (local_14 = 0x1c, expire_flag != 0)) {
+  else if ((0x1c < local_18) && (local_18 = 0x1c, this_ptr != (CBloodPool *)0x0)) {
     this_ptr->expired = 1;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
@@ -36,39 +36,39 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004e5180(CBloodPool *this_ptr,i
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (DAT_00612560,
              (SMRGLTextureBasic *)
-             (&DAT_0061e32c + local_14 * 0x18 + this_ptr->texture_variant * 0x2b8));
-  local_38 = 0xbfaa9fbe;
-  local_30 = 0xbfaa9fbe;
-  local_34 = 0;
-  local_20.x = (int)ROUND(_DAT_006016a8 * -1.333);
-  local_20.y = (int)ROUND(_DAT_006016a8 * 0.0);
-  local_20.z = (int)ROUND(_DAT_006016a8 * -1.333);
+             (&DAT_0061e32c + local_18 * 0x18 + this_ptr->texture_variant * 0x2b8));
+  local_3c = 0xbfaa9fbe;
+  local_34 = 0xbfaa9fbe;
+  local_38 = 0;
+  local_24.x = (int)ROUND(_DAT_006016a8 * -1.333);
+  local_24.y = (int)ROUND(_DAT_006016a8 * 0.0);
+  local_24.z = (int)ROUND(_DAT_006016a8 * -1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_20);
-  local_38 = 0x3faa9fbe;
-  local_34 = 0;
-  local_30 = 0xbfaa9fbe;
-  local_44.x = (int)ROUND(_DAT_006016a8 * 1.333);
-  local_44.y = (int)ROUND(_DAT_006016a8 * 0.0);
-  local_44.z = (int)ROUND(_DAT_006016a8 * -1.333);
+            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_24);
+  local_3c = 0x3faa9fbe;
+  local_38 = 0;
+  local_34 = 0xbfaa9fbe;
+  local_48.x = (int)ROUND(_DAT_006016a8 * 1.333);
+  local_48.y = (int)ROUND(_DAT_006016a8 * 0.0);
+  local_48.z = (int)ROUND(_DAT_006016a8 * -1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_44);
-  local_38 = 0x3faa9fbe;
-  local_30 = 0x3faa9fbe;
-  local_34 = 0;
-  local_2c.x = (int)ROUND(_DAT_006016a8 * 1.333);
-  local_2c.y = (int)ROUND(_DAT_006016a8 * 0.0);
-  local_2c.z = (int)ROUND(_DAT_006016a8 * 1.333);
+            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_48);
+  local_3c = 0x3faa9fbe;
+  local_34 = 0x3faa9fbe;
+  local_38 = 0;
+  local_30.x = (int)ROUND(_DAT_006016a8 * 1.333);
+  local_30.y = (int)ROUND(_DAT_006016a8 * 0.0);
+  local_30.z = (int)ROUND(_DAT_006016a8 * 1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_2c);
-  local_38 = 0xbfaa9fbe;
-  local_34 = 0;
-  local_30 = 0x3faa9fbe;
-  local_50.x = (int)ROUND(_DAT_006016a8 * -1.333);
-  local_50.y = (int)ROUND(_DAT_006016a8 * 0.0);
-  local_50.z = (int)ROUND(_DAT_006016a8 * 1.333);
+            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_30);
+  local_3c = 0xbfaa9fbe;
+  local_38 = 0;
+  local_34 = 0x3faa9fbe;
+  CStack_54.x = (int)ROUND(_DAT_006016a8 * -1.333);
+  CStack_54.y = (int)ROUND(_DAT_006016a8 * 0.0);
+  CStack_54.z = (int)ROUND(_DAT_006016a8 * 1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_00580173
-            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_50);
+            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_54);
   EVar1 = this_ptr->blood_type;
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004e5379:

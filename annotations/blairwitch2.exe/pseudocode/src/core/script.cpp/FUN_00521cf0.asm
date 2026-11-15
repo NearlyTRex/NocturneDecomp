@@ -32,7 +32,7 @@
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_string.c_splitpath_FUN_005b9e58
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   shape_edittool.cpp_CStrList_add_FUN_00480e70
@@ -116,8 +116,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x324]     ; 00521d9e
     PUSH EBP                            ; 00521da5
     PUSH 0x5e2edc                       ; 00521da6 | = "world"
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00521dab
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00521dab
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00521db0
     MOV ESI,EAX                         ; 00521db3
     TEST EAX,EAX                        ; 00521db5
@@ -158,7 +158,7 @@ section .text
         ;   XREF to: 00521ddf (CONDITIONAL_JUMP)  ; LAB_00521ddf
     PUSH ESI                            ; 00521e0c
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00521e0d
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521e12
     MOV ESI,dword ptr [ESP + 0x31c]     ; 00521e15
     PUSH ESI                            ; 00521e1c
@@ -201,7 +201,7 @@ section .text
     PUSH ESI                            ; 00521e66
         ;   Label: LAB_00521e66
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00521e67
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521e6c
     MOV EAX,dword ptr [ESP + 0x31c]     ; 00521e6f
     ADD EAX,0x34                        ; 00521e76

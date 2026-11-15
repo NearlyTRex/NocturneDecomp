@@ -71,7 +71,7 @@ ECollisionType __cdecl CBodyPart::getCollisionType(CBodyPart *this_ptr,SCollisio
 
 // Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_004156e0
 // Address: 004156e0
-CBoundingBox3D * __cdecl CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00415710
 // Address: 00415710

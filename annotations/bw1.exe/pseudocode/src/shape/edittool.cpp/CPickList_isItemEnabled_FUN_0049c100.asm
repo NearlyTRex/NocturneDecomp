@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5dc746                       ; 0049c11d | = "CPickList::isItemEnabled - invalid index"
     MOV dword ptr [0x01d1d400],ECX      ; 0049c122 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0049c128 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049c12e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c12e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c133
     POP EDI                             ; 0049c136
     CMP EBX,dword ptr [ESI + 0x1ac]     ; 0049c137

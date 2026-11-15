@@ -376,7 +376,7 @@ section .text
     FLD float ptr [EAX + 0x28]          ; 0050d2df
     FMUL float ptr [0x005e0b9d]         ; 0050d2e2 | DAT_005e0b9d
     CALL crt_math.c_round_FUN_005b7ff0  ; 0050d2e8
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x120]       ; 0050d2ed
     MOV ESI,dword ptr [ESP + 0x120]     ; 0050d2f4
     PUSH ESI                            ; 0050d2fb

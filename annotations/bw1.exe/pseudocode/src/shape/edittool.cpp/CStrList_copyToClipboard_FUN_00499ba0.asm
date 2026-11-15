@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -84,8 +84,8 @@ section .text
     PUSH 0x5dc57c                       ; 00499bff | = "CStrList::copyToClipboard - out of me..."
     MOV dword ptr [0x01d1d400],ESI      ; 00499c04 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00499c0a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499c10
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499c10
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00499c15
     MOV EDI,dword ptr [ESP]             ; 00499c18
         ;   Label: LAB_00499c18

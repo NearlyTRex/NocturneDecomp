@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fscanf_FUN_005a3230
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5c8901                       ; 004f67e0 | = "Error reading actor pointer.\nOwner: ..."
     MOV [0x01d71de0],EAX                ; 004f67e5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004f67ea | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f67f0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f67f0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004f67f5
     PUSH EBX                            ; 004f67f8
         ;   Label: LAB_004f67f8

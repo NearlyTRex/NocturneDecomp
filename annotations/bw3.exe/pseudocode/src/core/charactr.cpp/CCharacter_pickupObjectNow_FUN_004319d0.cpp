@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacte
   if ((param_2 < 0) || (1 < param_2)) {
     _DAT_01d71de0 = "..\\core\\charactr.cpp";
     _DAT_01d71de4 = 0xeec;
-    core_main_c_FUN_004e4330("CCharacter::pickupObjectNow - invalid hand index");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CCharacter::pickupObjectNow - invalid hand index");
   }
   if (param_3 != 0) {
     (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,param_2,(CVector3f *)0x0);
@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacte
       if (pSVar1->bone_index < 0) {
         _DAT_01d71de0 = "..\\core\\charactr.cpp";
         _DAT_01d71de4 = 0xf04;
-        core_main_c_FUN_004e4330("CCharacter::pickupObjectNow - invalid bone!");
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CCharacter::pickupObjectNow - invalid bone!");
       }
       (**(code **)(*(int *)(param_3 + 0x154) + 0x88))(param_3,this_ptr);
       pSVar1->carry_actor = (CDemonActor *)param_3;

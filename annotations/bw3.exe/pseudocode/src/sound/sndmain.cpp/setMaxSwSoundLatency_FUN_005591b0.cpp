@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005591b0(float latency)
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x1881;
-    core_main_c_FUN_004e4330("setMaxSwSoundLatency - can't do this while sound is active");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("setMaxSwSoundLatency - can't do this while sound is active");
   }
   if (latency < (float)_DAT_005d3db2) {
     latency = 0.05;

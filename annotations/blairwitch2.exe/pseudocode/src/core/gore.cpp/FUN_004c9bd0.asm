@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_flies.cpp_CFlies_ctor_FUN_004a6a90
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   crt_memory.c_operator_new_FUN_005b8be2
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5d955b                       ; 004c9c00 | = "Can't create flies!"
     MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004c9c11
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004c9c11
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004c9c16
     FLD float ptr [ESP + 0x1c]          ; 004c9c19
         ;   Label: LAB_004c9c19

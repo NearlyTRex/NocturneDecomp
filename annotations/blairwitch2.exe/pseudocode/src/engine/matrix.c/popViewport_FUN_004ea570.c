@@ -15,7 +15,7 @@ void __cdecl engine_matrix_c_popViewport_FUN_004ea570(void)
   if (_DAT_01d05270 < 0) {
     _DAT_01d046a0 = "..\\engine\\matrix.c";
     _DAT_01d046a4 = 0x56c;
-    core_main_c_FUN_004e4500("3D Window unbalance");
+    core_main_c_displayErrorAndQuit_FUN_004e4500("3D Window unbalance");
   }
   _DAT_01c38b78 = *(uint *)(_DAT_01d05270 * 4 + 0x1d0533c);
   _DAT_01c38b7c = *(uint *)(_DAT_01d05270 * 4 + 0x1d05364);

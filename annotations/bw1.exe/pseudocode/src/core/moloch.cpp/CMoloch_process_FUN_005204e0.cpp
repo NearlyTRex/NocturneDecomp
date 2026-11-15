@@ -30,7 +30,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_005204e0(CMoloch *this_ptr,floa
   uint uVar11;
   float fStack_1b60;
   SPose SStack_1b5c;
-  uint uStack_c0;
+  float fStack_c0;
   float afStack_bc [4];
   float fStack_ac;
   CVector3f CStack_a8;
@@ -46,7 +46,8 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_005204e0(CMoloch *this_ptr,floa
   CVector3f CStack_60;
   CVector3f CStack_54;
   float fStack_48;
-  float afStack_44 [5];
+  float afStack_44 [2];
+  CVector3f CStack_3c;
   CCharacter *pCStack_30;
   float fStack_2c;
   CMotionController *pCStack_28;
@@ -177,12 +178,13 @@ LAB_005205cd:
     goto LAB_005207a4;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {
-    core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar5->location);
-    uStack_c0 = afStack_44[2];
-    afStack_bc[(uint)bVar10 * -2] = afStack_44[(uint)bVar10 * -2 + 3];
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+              ((CDemonActor *)this_ptr,&(pCVar5->location).position,&CStack_3c);
+    fStack_c0 = CStack_3c.x;
+    afStack_bc[(uint)bVar10 * -2] = *(float *)((int)&CStack_3c + (uint)bVar10 * -8 + 4);
     afStack_bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         afStack_44[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&uStack_c0);
+         *(float *)((int)&CStack_3c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&fStack_c0);
     uStack_6c = uStack_84;
     afStack_98[(uint)bVar10 * -2 + 0xc] = afStack_98[(uint)bVar10 * -2 + 6];
     afStack_98[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =

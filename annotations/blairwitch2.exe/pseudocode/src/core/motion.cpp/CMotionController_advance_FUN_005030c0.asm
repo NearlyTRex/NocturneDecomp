@@ -56,15 +56,15 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10
 ;   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00503bd0
+;   core_motion.cpp_CMotionController_advanceTween_FUN_00503d80
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_005039e0
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00503470
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_00503560
 ;   core_motion.cpp_CMotionController_startTransition_FUN_005036e0
-;   core_motion.cpp_FUN_00503d80
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
@@ -283,8 +283,8 @@ section .text
     PUSH dword ptr [EBX + 0x1c]         ; 005032cd
     PUSH ECX                            ; 005032d0
     PUSH EBX                            ; 005032d1
-    CALL core_motion.cpp_FUN_00503d80   ; 005032d2
-        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503d80()
+    CALL core_motion.cpp_CMotionController_advanceTween_FUN_00503d80 ; 005032d2
+        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController * this_ptr, int motion_index, float current_frame, float * remaining_time)
     MOV EAX,0x1                         ; 005032d7
     ADD ESP,0x10                        ; 005032dc
     MOV dword ptr [ESP + 0xa4],EAX      ; 005032df
@@ -297,8 +297,8 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 005032f3
     PUSH EDX                            ; 005032f6
     PUSH EBX                            ; 005032f7
-    CALL core_motion.cpp_FUN_00503d80   ; 005032f8
-        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503d80()
+    CALL core_motion.cpp_CMotionController_advanceTween_FUN_00503d80 ; 005032f8
+        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController * this_ptr, int motion_index, float current_frame, float * remaining_time)
     ADD ESP,0x10                        ; 005032fd
     JMP 0x005031da                      ; 00503300
         ;   XREF to: 005031da (UNCONDITIONAL_JUMP)  ; LAB_005031da
@@ -309,8 +309,8 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 0050330d
     PUSH ECX                            ; 00503310
     PUSH EBX                            ; 00503311
-    CALL core_motion.cpp_FUN_00503d80   ; 00503312
-        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503d80()
+    CALL core_motion.cpp_CMotionController_advanceTween_FUN_00503d80 ; 00503312
+        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController * this_ptr, int motion_index, float current_frame, float * remaining_time)
     ADD ESP,0x10                        ; 00503317
     LEA EAX,[ESP + 0x8]                 ; 0050331a
     PUSH EAX                            ; 0050331e
@@ -318,8 +318,8 @@ section .text
     PUSH dword ptr [EBX + 0x1c]         ; 00503322
     PUSH ESI                            ; 00503325
     PUSH EBX                            ; 00503326
-    CALL core_motion.cpp_FUN_00503d80   ; 00503327
-        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503d80()
+    CALL core_motion.cpp_CMotionController_advanceTween_FUN_00503d80 ; 00503327
+        ;   XREF to: 00503d80 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_advanceTween_FUN_00503d80(CMotionController * this_ptr, int motion_index, float current_frame, float * remaining_time)
     MOV EAX,0x1                         ; 0050332c
     ADD ESP,0x10                        ; 00503331
     MOV dword ptr [ESP + 0xa4],EAX      ; 00503334
@@ -333,8 +333,8 @@ section .text
     PUSH 0x5dfb79                       ; 0050334e | = "CMotionController::advance: Tweening ..."
     MOV dword ptr [0x01d046a0],ECX      ; 00503353 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00503359 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050335e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050335e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503363
     JMP 0x005031d0                      ; 00503366
         ;   XREF to: 005031d0 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -397,8 +397,8 @@ section .text
     PUSH 0x5dfbd2                       ; 00503404 | = "Invalid transition command returned b..."
     MOV [0x01d046a0],EAX                ; 00503409 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050340e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00503414
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00503414
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503419
     JMP 0x00503261                      ; 0050341c
         ;   XREF to: 00503261 (UNCONDITIONAL_JUMP)  ; LAB_00503261

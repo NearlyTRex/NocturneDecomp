@@ -14,22 +14,22 @@ int __cdecl core_ghostchi_cpp_CGhostChild_getTargetPoints_FUN_005a99f0(CGhostChi
 {
   byte bVar1;
   float afStackY_1008 [1015];
-  float fStack_20;
+  CVector3f CStack_20;
   CVector3f CStack_14;
   
   bVar1 = 0;
   if ((this_ptr->base).fade_val < (float)_DAT_005f098f) {
     return 0;
   }
-  core_xform_cpp_FUN_00591530
-            (&DAT_0265370c,
+  core_xform_cpp_transformVector3x4_FUN_00591530
+            ((CVector3f *)&DAT_0265370c,
              (this_ptr->base).base.base.model.bone_transform.bone_model_matrices +
-             this_ptr->head_bone);
-  CStack_14.x = fStack_20;
+             this_ptr->head_bone,&CStack_20);
+  CStack_14.x = CStack_20.x;
   *(uint *)((int)&CStack_14 + (uint)bVar1 * -8 + 4) =
-       *(uint *)(&stack0xffffffe4 + (uint)bVar1 * -8);
+       *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + 4);
   *(uint *)((int)&CStack_14 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+       *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (out_points_array != &CStack_14) {
     out_points_array->x = CStack_14.x;
     out_points_array->y = CStack_14.y;

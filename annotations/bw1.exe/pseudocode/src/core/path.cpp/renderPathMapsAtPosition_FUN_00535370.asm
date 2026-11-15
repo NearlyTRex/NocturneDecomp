@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     PUSH 0x5ecb15                       ; 005353e5
     MOV dword ptr [0x01d1d400],EDX      ; 005353ea | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005353f0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005353f6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005353f6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005353fb
     JMP 0x005353b3                      ; 005353fe
         ;   XREF to: 005353b3 (UNCONDITIONAL_JUMP)  ; LAB_005353b3

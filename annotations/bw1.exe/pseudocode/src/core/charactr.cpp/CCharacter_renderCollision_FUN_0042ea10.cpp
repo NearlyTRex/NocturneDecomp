@@ -28,9 +28,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
   int local_fc;
   int local_f8;
   int local_f4;
-  float local_f0;
-  float afStack_ec [4];
-  float local_dc;
+  CVector3f local_f0;
+  float local_e4;
+  float local_e0 [2];
   CVector3i local_d8;
   CVector3i local_cc;
   float local_c0;
@@ -40,12 +40,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
   CVector3i local_a8;
   CVector3i local_9c;
   CVector3i local_90;
-  float local_84;
-  float afStack_80 [4];
-  float local_70;
+  CVector3f local_84;
+  float local_78;
+  float local_74 [6];
   float local_5c;
   CVector3f *local_58;
-  float *local_54;
+  CVector3f *local_54;
   float local_50;
   int local_4c;
   int local_48;
@@ -110,16 +110,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
       *(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_1c) = 0;
       *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_1c) = 0xffff;
       *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_1c) = 0;
-      core_actor_cpp_FUN_00408bb0(this_ptr,local_28);
-      afStack_80[2] = local_f0;
-      afStack_80[(uint)bVar7 * -2 + 3] = afStack_ec[(uint)bVar7 * -2];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(&this_ptr->base,local_28,&local_f0);
+      local_78 = local_f0.x;
+      local_74[(uint)bVar7 * -2] = *(float *)((int)&local_f0 + (uint)bVar7 * -8 + 4);
       iVar5 = local_1c;
-      afStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-           afStack_ec[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      if (&local_c0 != afStack_80 + 2) {
-        local_c0 = afStack_80[2];
-        local_bc = afStack_80[3];
-        local_b8 = local_70;
+      local_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+           *(float *)((int)&local_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      if (&local_c0 != &local_78) {
+        local_c0 = local_78;
+        local_bc = local_74[0];
+        local_b8 = local_74[1];
       }
       local_a8.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
       local_a8.y = (int)ROUND(local_bc * _DAT_005fd5f0);
@@ -137,7 +137,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     local_3c = local_3c + -0x8000;
   } while (local_38 != local_58);
   local_34 = this_ptr->collision_test_normals;
-  local_54 = &this_ptr->hero_proximity_timer;
+  local_54 = (CVector3f *)&this_ptr->hero_proximity_timer;
   local_44 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,local_44 / 5);
@@ -148,16 +148,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
       *(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_20) = 0;
       *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_20) = 0;
       *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_20) = 0xffff;
-      core_actor_cpp_FUN_00408bb0(this_ptr,local_24);
-      afStack_ec[2] = local_84;
-      afStack_ec[(uint)bVar7 * -2 + 3] = afStack_80[(uint)bVar7 * -2];
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(&this_ptr->base,local_24,&local_84);
+      local_e4 = local_84.x;
+      local_e0[(uint)bVar7 * -2] = *(float *)((int)&local_84 + (uint)bVar7 * -8 + 4);
       iVar5 = local_20;
-      afStack_ec[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-           afStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      if (&local_c0 != afStack_ec + 2) {
-        local_c0 = afStack_ec[2];
-        local_bc = afStack_ec[3];
-        local_b8 = local_dc;
+      local_e0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+           *(float *)((int)&local_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      if (&local_c0 != &local_e4) {
+        local_c0 = local_e4;
+        local_bc = local_e0[0];
+        local_b8 = local_e0[1];
       }
       local_cc.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
       local_cc.y = (int)ROUND(local_bc * _DAT_005fd5f0);
@@ -173,7 +173,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
               (DAT_00612560,&local_118,local_40);
     local_34 = local_34 + 3;
     local_44 = local_44 + -0x8000;
-  } while (local_34 != (CVector3f *)local_54);
+  } while (local_34 != local_54);
   local_50 = this_ptr->collision_cylinder_top * this_ptr->size_scale;
   if (local_50 < this_ptr->collision_cylinder_bottom * this_ptr->size_scale) {
     local_50 = (this_ptr->model).bounding_box.max.y;

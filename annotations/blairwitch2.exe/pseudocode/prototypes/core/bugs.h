@@ -39,7 +39,7 @@ void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_0041f790
 // Address: 0041f790
-CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bugs.cpp_CBugs_archive_FUN_0041f7c0
 // Address: 0041f7c0
@@ -111,7 +111,7 @@ void __cdecl CBugs::applySwarmTranslation(CBugs *this_ptr,CVector3f *new_positio
 
 // Original: core_bugs.cpp_normalizeVector_FUN_00421fe0
 // Address: 00421fe0
-void normalizeVector(float *param_1);
+void __cdecl normalizeVector(CVector3f *dest);
 
 // Original: core_bugs.cpp_convertVector_FUN_00422050
 // Address: 00422050

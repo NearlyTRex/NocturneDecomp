@@ -22,7 +22,7 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_00535280(void)
       if (*(int *)(iVar2 + 0x1e6be4c) == 0) {
         _DAT_01d1d400 = "..\\core\\path.cpp";
         _DAT_01d1d404 = 0x6a2;
-        core_main_c_FUN_005030e0("Global pathmap list corruption");
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Global pathmap list corruption");
       }
       puVar1 = (uint *)(iVar2 + 0x1e6be4c);
       iVar2 = iVar2 + 4;

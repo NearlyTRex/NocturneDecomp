@@ -28,7 +28,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 004839f3
     FMUL double ptr [0x005db3b4]        ; 004839f7 | DAT_005db3b4
     CALL crt_math.c_round_FUN_005c03a0  ; 004839fd
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 00483a02
     MOV EDX,dword ptr [ESP]             ; 00483a05
     PUSH EDX                            ; 00483a08

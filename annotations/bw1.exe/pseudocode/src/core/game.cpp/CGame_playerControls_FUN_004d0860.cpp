@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004d0860(CGame *this_ptr)
         default:
           _DAT_01d1d400 = "..\\core\\game.cpp";
           _DAT_01d1d404 = 0x87c;
-          core_main_c_FUN_005030e0("CGame::playerControls - unknown control type");
+          core_main_c_displayErrorAndQuit_FUN_005030e0("CGame::playerControls - unknown control type");
         }
         puVar2 = (uint *)&DAT_01c50950;
         puVar3 = (uint *)&DAT_01ccff98;

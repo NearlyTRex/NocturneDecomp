@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_lockSound_FUN_00558e90(void)
     if (_DAT_02cf3418 == (HANDLE)0x0) {
       _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
       _DAT_01d71de4 = 0x17e7;
-      core_main_c_FUN_004e4330("lockSound - unable to create mutex object");
+      core_main_c_displayErrorAndQuit_FUN_004e4330("lockSound - unable to create mutex object");
     }
   }
   wincore_winrun_cpp_waitForMutex_FUN_00581930(_DAT_02cf3418);
@@ -26,6 +26,6 @@ void __cdecl sound_sndmain_cpp_lockSound_FUN_00558e90(void)
   }
   _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
   _DAT_01d71de4 = 0x17f2;
-  core_main_c_FUN_004e4330("lockSound - lock imbalance?");
+  core_main_c_displayErrorAndQuit_FUN_004e4330("lockSound - lock imbalance?");
   return;
 }

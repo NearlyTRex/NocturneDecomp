@@ -50,7 +50,7 @@ LAB_0050d733:
   if (pcVar7 == (char *)0x0) {
     _DAT_01d71de0 = "..\\engine\\pcx.c";
     _DAT_01d71de4 = 0x67;
-    core_main_c_FUN_004e4330("saveScreenRaw16 - No ext found");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw16 - No ext found");
   }
   pcVar5 = &DAT_005cb9e1;
   do {
@@ -66,7 +66,7 @@ LAB_0050d733:
   if (file == (_FILE *)0x0) {
     _DAT_01d71de0 = "..\\engine\\pcx.c";
     _DAT_01d71de4 = 0x6d;
-    core_main_c_FUN_004e4330("saveScreenRaw16 - Unable to open output");
+    core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw16 - Unable to open output");
   }
   local_14 = 0;
   if (0 < DAT_005fba1c) {

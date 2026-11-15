@@ -9,6 +9,6 @@
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00466290(CDemonPart *this_ptr,uint flags)
 
 {
-  core_dpart_cpp_FUN_004663b0(this_ptr);
+  core_dpart_cpp_CDemonPart_free_FUN_004663b0(this_ptr);
   return this_ptr;
 }

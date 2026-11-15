@@ -62,13 +62,13 @@
 ;   undefined4 DAT_02c8af30
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a700
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
 ;   core_bodypart.cpp_FUN_0041ad40
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004fc9c0
@@ -274,8 +274,8 @@ section .text
     LEA EDI,[ESP + 0x38]                ; 00419e1f
     PUSH EBX                            ; 00419e23
     FSTP float ptr [ESP + 0x84]         ; 00419e24
-    CALL core_actor.cpp_FUN_00408ac0    ; 00419e2b
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00419e2b
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30]                ; 00419e30
     ADD ESP,0x8                         ; 00419e34
     LEA EAX,[EBX + 0x20]                ; 00419e37
@@ -350,8 +350,8 @@ section .text
     FADD float ptr [ESP + 0x88]         ; 00419f19
     PUSH EBX                            ; 00419f20
     FSTP float ptr [EAX + 0x8]          ; 00419f21
-    CALL core_actor.cpp_FUN_00408b40    ; 00419f24
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00419f24
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x6c]                ; 00419f29
     ADD ESP,0x8                         ; 00419f2d
     MOVSD ES:EDI,ESI                    ; 00419f30
@@ -481,13 +481,13 @@ section .text
     FMULP ST3                           ; 0041a0c9
     FXCH                                ; 0041a0cb
     CALL crt_math.c_round_FUN_005c03a0  ; 0041a0cd
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 0041a0d2
     CALL crt_math.c_round_FUN_005c03a0  ; 0041a0d4
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 0041a0d9
     CALL crt_math.c_round_FUN_005c03a0  ; 0041a0db
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 0041a0e0
     FISTP dword ptr [EDX]               ; 0041a0e2
     FXCH                                ; 0041a0e4
@@ -523,8 +523,8 @@ section .text
     PUSH EAX                            ; 0041a134
     LEA ESI,[ESP + 0x48]                ; 0041a135
     LEA EDI,[ESP + 0x60]                ; 0041a139
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0041a13d
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0041a13d
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x48]                ; 0041a142
     LEA EAX,[ESP + 0x60]                ; 0041a146
     ADD ESP,0x8                         ; 0041a14a

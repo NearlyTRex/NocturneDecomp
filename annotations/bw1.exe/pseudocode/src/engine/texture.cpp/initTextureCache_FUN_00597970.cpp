@@ -13,7 +13,7 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00597970(void)
 
 {
   int iVar1;
-  CTextureCache *pCVar2;
+  CTextureCache *extraout_EAX;
   
   iVar1 = operator_new(0x1800c);
   if (iVar1 == 0) {
@@ -27,6 +27,6 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00597970(void)
   }
   _DAT_01d1d400 = "..\\engine\\texture.cpp";
   _DAT_01d1d404 = 0x3c2;
-  pCVar2 = (CTextureCache *)core_main_c_FUN_005030e0("initTexture - out of memory!");
-  return pCVar2;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("initTexture - out of memory!");
+  return extraout_EAX;
 }
