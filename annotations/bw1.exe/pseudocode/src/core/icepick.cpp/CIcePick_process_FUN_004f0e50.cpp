@@ -65,7 +65,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,f
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_icepick_cpp_FUN_004f1b50(this_ptr,delta_time);
+    core_icepick_cpp_CIcePick_processAI_FUN_004f1b50(this_ptr,delta_time);
   }
   this_ptr->is_armed =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
@@ -195,7 +195,8 @@ switchD_004f148c_default:
                         (&(this_ptr->base).base.model.base,iVar5,1);
             }
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
-               (iVar5 = core_icepick_cpp_FUN_004f17e0(this_ptr), iVar5 == 0)) {
+               (iVar5 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f17e0(this_ptr),
+               iVar5 == 0)) {
               core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f1980(this_ptr);
             }
           }
@@ -322,7 +323,7 @@ LAB_004f1107:
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(unaff_ESI,(int)in_stack_ffffff44,1)
   ;
 LAB_004f111a:
-  core_inv_cpp_FUN_004f9f10(&(this_ptr->base).inventory);
+  core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(&(this_ptr->base).inventory);
   pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c600
                      ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash)
   ;
@@ -341,7 +342,8 @@ LAB_004f111a:
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar14 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01d06c74;
-    core_xform_cpp_FUN_005b7ed0(&this_ptr->head_look_euler);
+    core_xform_cpp_eulerToQuaternion_FUN_005b7ed0
+              (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff44);
     source_quaternions = &CStack_ac;
     CStack_ac.w = in_stack_ffffff44;
     afStack_9c[(uint)bVar12 * -2 + -3] = *(float *)(&stack0xffffff48 + (uint)bVar12 * -8);
@@ -353,7 +355,7 @@ LAB_004f111a:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
               (pCVar13,source_quaternions,fVar14,iVar5,blend_callback);
   }
-  core_icepick_cpp_FUN_004f1670(this_ptr,in_stack_00000014);
+  core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f1670(this_ptr,in_stack_00000014);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80
             ((CCharacter *)this_ptr,in_stack_00000014);
   return;

@@ -62,8 +62,8 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
 ;   core_dcamera.cpp_FUN_0044dd00
-;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0045ca30
-;   core_dlight.cpp_FUN_0045d530
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530
+;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560
 ;   ... and 22 more
 ;
 ; *****************************************************************************
@@ -801,8 +801,8 @@ section .text
     ADD ESP,0xc                         ; 005364cb
     MOV ESI,dword ptr [EBP + -0x10]     ; 005364ce
     PUSH ESI                            ; 005364d1
-    CALL core_dlight.cpp_FUN_0045d530   ; 005364d2
-        ;   XREF to: 0045d530 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045d530(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530 ; 005364d2
+        ;   XREF to: 0045d530 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 005364d7
     MOV EDI,dword ptr [EBX + 0x15acc8]  ; 005364da
     XOR ESI,ESI                         ; 005364e0
@@ -818,8 +818,8 @@ section .text
     ADD ESP,0xc                         ; 005364f3
     MOV ECX,dword ptr [EBP + -0x10]     ; 005364f6
     PUSH ECX                            ; 005364f9
-    CALL core_dlight.cpp_FUN_0045d530   ; 005364fa
-        ;   XREF to: 0045d530 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045d530(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530 ; 005364fa
+        ;   XREF to: 0045d530 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 005364ff
     PUSH EBX                            ; 00536502
     INC ESI                             ; 00536503
@@ -854,8 +854,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 00536543
     PUSH EAX                            ; 00536546
     XOR ESI,ESI                         ; 00536547
-    CALL core_dlight.cpp_FUN_0045d560   ; 00536549
-        ;   XREF to: 0045d560 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045d560(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560 ; 00536549
+        ;   XREF to: 0045d560 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x15acc8]  ; 0053654e
     ADD ESP,0x4                         ; 00536554
     TEST EDX,EDX                        ; 00536557
@@ -870,8 +870,8 @@ section .text
     ADD ESP,0xc                         ; 00536568
     MOV EDX,dword ptr [EBP + -0xc]      ; 0053656b
     PUSH EDX                            ; 0053656e
-    CALL core_dlight.cpp_FUN_0045d560   ; 0053656f
-        ;   XREF to: 0045d560 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045d560(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560 ; 0053656f
+        ;   XREF to: 0045d560 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00536574
     PUSH EBX                            ; 00536577
     INC ESI                             ; 00536578

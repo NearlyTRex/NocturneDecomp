@@ -23,12 +23,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005860b0",
-      "from_addr": "005860d6",
-      "name": "core_xform.cpp_FUN_005860b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005861d0",
       "from_addr": "005861f6",
       "name": "core_xform.cpp_FUN_005861d0",
@@ -44,6 +38,12 @@
       "addr": "00583800",
       "from_addr": "0058381d",
       "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005860b0",
+      "from_addr": "005860d6",
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005860b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,7 +196,7 @@
       {
         "call_addr": "005860d6",
         "call_type": "direct",
-        "caller": "core_xform.cpp_FUN_005860b0",
+        "caller": "core_xform.cpp_eulerToQuaternion_FUN_005860b0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

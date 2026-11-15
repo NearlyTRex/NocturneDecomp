@@ -185,9 +185,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_004178c0(CBodyPart 
 void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_00417a70(CBodyPart *this_ptr);
 int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ab0(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417ad0(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
-void core_bodypart_cpp_FUN_00417b20(float *param_1,float *param_2);
-void core_bodypart_cpp_FUN_00417b60(float *param_1,float *param_2);
-void core_bodypart_cpp_FUN_00417ba0(float *param_1,float *param_2);
+CVector3f * __stack2_esi core_bodypart_cpp_scaleVector_FUN_00417b20(CVector3f *src,float *scalar,CVector3f *dst);
+CVector3f * __stack2_esi core_bodypart_cpp_subtractVector_FUN_00417b60(CVector3f *a,CVector3f *b,CVector3f *dst);
+CVector3f * __stack2_esi core_bodypart_cpp_addVector_FUN_00417ba0(CVector3f *a,CVector3f *b,CVector3f *dst);
 void core_bodypart_cpp_FUN_00417c00(float *param_1);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_00417cb0(SBodyPartFire *this_ptr);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_00417cd0(SBodyPartFire *this_ptr,uint flags);

@@ -78,7 +78,7 @@
 ;   engine_drender.cpp_popViewport_FUN_00483c40
 ;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
-;   engine_matrix.c_FUN_00507350
+;   engine_matrix.c_interpolatedCos_FUN_00507390
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -168,8 +168,8 @@ section .text
     ADD ESP,0x8                         ; 004feac7
     SUB EBX,EAX                         ; 004feaca
     PUSH EBX                            ; 004feacc
-    CALL engine_matrix.c_FUN_00507350   ; 004feacd
-        ;   XREF to: 00507350 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_00507350(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_00507350 ; 004feacd
+        ;   XREF to: 00507350 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_00507350(int angle)
     ADD ESP,0x4                         ; 004fead2
     MOV EDX,EAX                         ; 004fead5
     MOV EAX,0x9088                      ; 004fead7
@@ -180,8 +180,8 @@ section .text
     MOV dword ptr [EAX + 0x15ae8c],0xffff6f78 ; 004feae9 | g_CDemonSetInstance.light_direction.y
     PUSH EBX                            ; 004feaf3
     MOV dword ptr [EAX + 0x15ae88],EDX  ; 004feaf4 | g_CDemonSetInstance.light_direction.x
-    CALL engine_matrix.c_FUN_00507390   ; 004feafa
-        ;   XREF to: 00507390 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_00507390(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_00507390 ; 004feafa
+        ;   XREF to: 00507390 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_00507390(int angle)
     ADD ESP,0x4                         ; 004feaff
     MOV EDX,EAX                         ; 004feb02
     MOV EAX,0x9088                      ; 004feb04

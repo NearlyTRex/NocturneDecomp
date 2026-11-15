@@ -113,7 +113,7 @@ ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004e443
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4440(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_004e4490(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_004e4500(char *format);
-void core_main_c_FUN_004e45e0(void);
+void __cdecl core_main_c_showDeveloperToolsMenu_FUN_004e45e0(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004e46b0(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv);
 void __cdecl core_main_c_finalizeGameSystems_FUN_004e4e20(void);
@@ -134,7 +134,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010(C
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0(CMansionPuzzleCircle *this_ptr,int gem_index);
-void __cdecl core_manpuz_cpp_FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
 int __cdecl core_manpuz_cpp_stepToward_FUN_004e6ac0(float *value,float target,float max_step);
@@ -183,8 +183,8 @@ CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004e8530(C
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags);
 undefined8 core_marquee_cpp_FUN_004e8620(void);
 void core_marquee_cpp_FUN_004e86a0(void);
-int __cdecl engine_matrix_c_FUN_004e86b0(int angle);
-int __cdecl engine_matrix_c_FUN_004e86f0(int angle);
+int __cdecl engine_matrix_c_interpolatedSin_FUN_004e86b0(int angle);
+int __cdecl engine_matrix_c_interpolatedCos_FUN_004e86f0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e8730(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e8a10(int pitch,int yaw,int roll);
 CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004e8d30(CVector3i *input_coords,CVector3i *output_coords);
@@ -234,7 +234,7 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004eb7c0(int *sensitivity_
 void core_menu_cpp_FUN_004eba50(int *param_1,char *param_2);
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message_text);
 void __cdecl core_menu_cpp_showCalibrationTest_FUN_004ebe30(void);
-void __cdecl core_menu_cpp_FUN_004ebf10(void);
+void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004ebf10(void);
 void __cdecl core_menu_cpp_configureCustomKeys_FUN_004ecc70(void);
 void __cdecl core_menu_cpp_configureSoundOptions_FUN_004ed260(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_004ee1a0(int initialize_systems);

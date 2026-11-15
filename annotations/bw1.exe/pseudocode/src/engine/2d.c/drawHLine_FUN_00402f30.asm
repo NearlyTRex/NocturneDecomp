@@ -15,9 +15,9 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0 at 00403224
 ;   shape_edittool.cpp_CEdButton_paint_FUN_0049d580 at 0049d87e
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660 at 004977d7
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 at 004975f0
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 at 004967f7
 ;   shape_edittool.cpp_FUN_00492de0 at 00492e04
-;   shape_edittool.cpp_FUN_00496ee0 at 004975f0
 ;   shape_edittool.cpp_draw3DBorder_FUN_0049c500 at 0049c6ac
 ;   ... and 1 more
 ;

@@ -14,12 +14,12 @@
 ;
 ; XREF[7]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 00534594
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 0053417e
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 0053674c
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535bae
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f28
-;   core_set.cpp_FUN_00533e60 at 0053417e
 ;   core_set.cpp_FUN_00536990 at 00536b08
-;   core_setdir.cpp_FUN_00540cf0 at 00540dd9
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0 at 00540dd9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

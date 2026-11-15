@@ -31,6 +31,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00432f10
 ;   ... and 16 more
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_005b84b4
     PUSH dword ptr [EBP + 0x92]         ; 005b84b5
     PUSH EBX                            ; 005b84bb
-    CALL core_charactr.cpp_FUN_00432f10 ; 005b84bc
-        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432f10()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 ; 005b84bc
+        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCharacter * this_ptr, float delta_time, int disable_search)
     LEA EAX,[EBX + 0x249c]              ; 005b84c1
     MOV dword ptr [EAX + 0x8],0x0       ; 005b84c7
     FLD float ptr [EBP + 0x92]          ; 005b84ce

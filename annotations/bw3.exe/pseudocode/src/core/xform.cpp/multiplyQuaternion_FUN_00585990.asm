@@ -14,9 +14,9 @@
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000 at 0043307e
-;   core_charactr.cpp_FUN_0042cd70 at 0042cf7e
-;   core_prye.cpp_FUN_0051c1c0 at 0051dee5
-;   core_prye.cpp_FUN_0051ee10 at 0051efbd
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042cf7e
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051efbd
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051dee5
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e105
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e2a9
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 at 0054d33b

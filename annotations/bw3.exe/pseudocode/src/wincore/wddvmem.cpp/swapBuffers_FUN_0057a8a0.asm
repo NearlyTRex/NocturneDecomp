@@ -19,8 +19,8 @@
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f63
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bedfd
 ;   core_level.cpp_CLevelLoader_update_FUN_004e0000 at 004e005b
-;   core_main.c_FUN_004e4400 at 004e4442
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4ae6
+;   core_main.c_showDeveloperToolsMenu_FUN_004e4400 at 004e4442
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e82d6
 ;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7ea6
 ;   ... and 28 more

@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b93e0
-;   core_game.cpp_FUN_004b8e60
+;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 ;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60
@@ -1378,8 +1378,8 @@ section .text
         ;   XREF to: 004ec2a6 (CONDITIONAL_JUMP)  ; LAB_004ec2a6
     MOV ESI,dword ptr [0x005fe9dc]      ; 004ebdf6 | g_CGamePtr
     PUSH ESI                            ; 004ebdfc
-    CALL core_game.cpp_FUN_004b8e60     ; 004ebdfd
-        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e60()
+    CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60 ; 004ebdfd
+        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ebe02
     PUSH 0x0                            ; 004ebe05
     LEA EAX,[ESP + 0xc]                 ; 004ebe07
@@ -2264,8 +2264,8 @@ section .text
         ;   XREF to: 004ebe26 (CONDITIONAL_JUMP)  ; LAB_004ebe26
     MOV EAX,[0x005fe9dc]                ; 004ec6bb | g_CGamePtr
     PUSH EAX                            ; 004ec6c0
-    CALL core_game.cpp_FUN_004b8e60     ; 004ec6c1
-        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e60()
+    CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60 ; 004ec6c1
+        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ec6c6
     PUSH 0x5c7dfc                       ; 004ec6c9 | = "One or more keys not valid.  Restorin..."
     MOV EDX,dword ptr [0x005fb140]      ; 004ec6ce | g_CEditorToolsPtr

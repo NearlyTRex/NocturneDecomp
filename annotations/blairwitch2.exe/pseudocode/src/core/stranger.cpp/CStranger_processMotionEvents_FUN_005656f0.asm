@@ -610,8 +610,8 @@ section .text
         ;   XREF to: 00565806 (UNCONDITIONAL_JUMP)  ; LAB_00565806
     PUSH EBX                            ; 00565d69
         ;   Label: LAB_00565d69
-    CALL core_stranger.cpp_FUN_0056a160 ; 00565d6a
-        ;   XREF to: 0056a160 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_0056a160(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160 ; 00565d6a
+        ;   XREF to: 0056a160 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160(CStranger * this_ptr)
     ADD ESP,0x4                         ; 00565d6f
     JMP 0x00565806                      ; 00565d72
         ;   XREF to: 00565806 (UNCONDITIONAL_JUMP)  ; LAB_00565806

@@ -25,6 +25,6 @@ CVector3f * __stack5_esi evaluateSplinePoint3D(float *basis,CVector3f *p0,CVecto
 // Address: 005616e0
 float __cdecl evaluateSplineTangentScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 
-// Original: core_spline.cpp_FUN_00561780
+// Original: core_spline.cpp_evaluateSplineTangent3D_FUN_00561780
 // Address: 00561780
-void FUN_00561780(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+CVector3f * __stack5_esi evaluateSplineTangent3D(float *basis,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3,CVector3f *out);

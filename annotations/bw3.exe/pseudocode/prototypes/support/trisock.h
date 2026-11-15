@@ -205,13 +205,13 @@ undefined4 FUN_00571d80(int param_1,int param_2);
 // Address: 00571e50
 uint FUN_00571e50(int param_1,undefined4 param_2);
 
-// Original: support_trisock.cpp_FUN_00571ea0
+// Original: support_trisock.cpp_startupWinsock_FUN_00571ea0
 // Address: 00571ea0
-void FUN_00571ea0(void);
+int __cdecl startupWinsock(void);
 
-// Original: support_trisock.cpp_FUN_00571f10
+// Original: support_trisock.cpp_cleanupWinsock_FUN_00571f10
 // Address: 00571f10
-int __cdecl FUN_00571f10(void);
+int __cdecl cleanupWinsock(void);
 
 // Original: support_trisock.cpp_FUN_00571fc0
 // Address: 00571fc0

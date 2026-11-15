@@ -66,8 +66,8 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbe70(CInventory *th
          _DAT_01d70a38 +
          ((int)((_DAT_01c5fad0 + (_DAT_01c5fad0 >> 0x1f) * -4) -
                (uint)((_DAT_01c5fad0 >> 0x1f) << 1 < 0)) >> 2);
-    iVar2 = engine_matrix_c_FUN_004e4d90(_DAT_01d70a38);
-    iVar3 = engine_matrix_c_FUN_004e4dd0(_DAT_01d70a38);
+    iVar2 = engine_matrix_c_interpolatedSin_FUN_004e4d90(_DAT_01d70a38);
+    iVar3 = engine_matrix_c_interpolatedCos_FUN_004e4dd0(_DAT_01d70a38);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar2 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar2 * 0x482b) >> 0x20) << 0x10;

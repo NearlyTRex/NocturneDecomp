@@ -1,0 +1,193 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 95,
+    "complexity_score": 48,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 128
+  },
+  "cross_references": [
+    {
+      "addr": "00513d20",
+      "from_addr": "00513f02",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00514220",
+    "address_range": [
+      [
+        "00514220",
+        "00514315"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_00514220",
+    "signature": "uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_00514220(CPodFile *this_ptr,int file_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a32b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
+    },
+    {
+      "addr": "005a43ec",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005a43ec"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "00512d60",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00512d60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00513f02",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.467532467532467,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "CALL": 7,
+      "CBRANCH": 5,
+      "COPY": 63,
+      "INT_ADD": 27,
+      "INT_AND": 51,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 20,
+      "INT_SUB": 27,
+      "INT_XOR": 2,
+      "LOAD": 15,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 344
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051af80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053c4c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005507f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6904
+    },
+    "nocturne.exe": {
+      "addr": "004f86a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.712
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      },
+      {
+        "is_param": true,
+        "name": "file_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

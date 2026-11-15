@@ -18,7 +18,7 @@
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005a6da0 at 005a6f86
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408560
+;   core_actor.cpp_deleteActor_FUN_00408560
 ;   crt_string.c_memmove_FUN_005c25d0
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     JZ 0x004f8d6e                       ; 004f8dab
         ;   XREF to: 004f8d6e (CONDITIONAL_JUMP)  ; LAB_004f8d6e
     PUSH EDI                            ; 004f8dad
-    CALL core_actor.cpp_FUN_00408560    ; 004f8dae
-        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408560()
+    CALL core_actor.cpp_deleteActor_FUN_00408560 ; 004f8dae
+        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408560(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004f8db3
     POP EBP                             ; 004f8db6
     POP EDI                             ; 004f8db7

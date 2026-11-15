@@ -172,7 +172,7 @@ LAB_0050cf69:
         (iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar4 != 0)))) {
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
-      core_main_c_FUN_005031c0();
+      core_main_c_showDeveloperToolsMenu_FUN_005031c0();
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       engine_texture_cpp_FUN_00597c30();
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);

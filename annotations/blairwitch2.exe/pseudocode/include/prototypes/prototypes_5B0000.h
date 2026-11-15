@@ -23,9 +23,11 @@
 #include "types/classes/CMorphModel.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SChainVertex.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLTextureModel.h"
@@ -37,8 +39,8 @@
 // FUNCTION PROTOTYPES - Range 0x5B0000
 // =============================================================================
 
-void core_cloth_cpp_FUN_005b0c90(void);
-void __cdecl core_cloth_cpp_FUN_005b0ce0(CCloth *this_ptr,int bone_index,int show_labels);
+void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_005b0c90(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_005b0ce0(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_005b0ef0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_005b0fe0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_005b1440(CClothList *this_ptr);
@@ -61,7 +63,7 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_005b1ba0(SClothVerte
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_005b1bc0(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_005b1c70(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_005b1c80(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
-void core_box_cpp_FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+void __cdecl core_box_cpp_CBox_setupN_FUN_005b1eb0(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
 void __cdecl core_box_cpp_CBox_updateTransform_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_005b2290(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float delta_time);
@@ -80,7 +82,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
 int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_005b56c0(CChain *this_ptr);
 CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_005b5ca0(CChain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_chain_cpp_CChain_archive_FUN_005b5e10(CChain *this_ptr);
-undefined4 core_chain_cpp_FUN_005b5f40(void);
+ECollisionType __cdecl core_chain_cpp_CChain_getCollisionType_FUN_005b5f40(CChain *this_ptr,SCollisionInfo *collision_info);
 CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_005b5f50(CChain *this_ptr,uint flags);
 SChainVertex * __cdecl core_chain_cpp_SChainVertex_ctor_FUN_005b5fa0(SChainVertex *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_005b5fe0(CMorphModel *this_ptr);

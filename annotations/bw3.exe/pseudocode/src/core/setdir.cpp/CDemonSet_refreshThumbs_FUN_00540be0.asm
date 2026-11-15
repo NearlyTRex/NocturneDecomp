@@ -15,8 +15,8 @@
 ;   undefined4 DAT_005d0cc1
 ;
 ; Called Functions:
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
-;   core_setdir.cpp_FUN_00540cf0
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   engine_dosio.cpp_getFile_FUN_004659c0
@@ -41,8 +41,8 @@ section .text
     JNZ 0x00540c1d                      ; 00540c01
         ;   XREF to: 00540c1d (CONDITIONAL_JUMP)  ; LAB_00540c1d
     PUSH ESI                            ; 00540c03
-    CALL core_setdir.cpp_FUN_00540cf0   ; 00540c04
-        ;   XREF to: 00540cf0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00540cf0()
+    CALL core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0 ; 00540c04
+        ;   XREF to: 00540cf0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00540c09
     MOV EBX,dword ptr [ESP + 0x10]      ; 00540c0c
     PUSH EBX                            ; 00540c10

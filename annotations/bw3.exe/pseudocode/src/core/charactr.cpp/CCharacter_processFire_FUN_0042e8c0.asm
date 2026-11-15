@@ -27,7 +27,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042d089
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d089
 ;
 ; Referenced Globals:
 ;   undefined4 s_character_onfire_fallapa_005b82fd+1

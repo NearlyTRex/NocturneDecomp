@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 717,
-    "complexity_score": 1715,
+    "complexity_score": 1875,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 355,
-    "suspect_count": 129,
+    "suspect_count": 145,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -70,14 +70,14 @@
       "name": "core_actor.cpp_isOfClass_FUN_0040c790"
     },
     {
-      "addr": "00416bd0",
-      "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00416bd0"
-    },
-    {
       "addr": "00416c50",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00416c50"
+      "name": "core_bodypart.cpp_addVector_FUN_00416c50"
+    },
+    {
+      "addr": "00416bd0",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_scaleVector_FUN_00416bd0"
     },
     {
       "addr": "0042b9e0",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_fffffdd4",
       "severity": "moderate",
       "text": "CCharacter *in_stack_fffffdd4;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((int)param_1[1].model.bone_origins[0x23].y < 0) {",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x12].z - param_2;",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 73,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x12].z - param_2;",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x12].z = fVar1;",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x12].y = (float)((int)param_1[1].model.bone_origins[0x12].y + 1);",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x12].y = (float)((int)param_1[1].model.bone_origins[0x12].y + 1);",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x12].z = (float)local_18;",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0.0 < param_1[1].model.bone_origins[0x13].x) {",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 87,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1[1].model.bone_origins[0x13].x - param_2;",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 = param_1[1].model.bone_origins[0x13].x - param_2;",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 87,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1[1].model.bone_origins[0x13].x - param_2;",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x = param_2;",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 88,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x = param_2;",
@@ -575,7 +575,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 89,
       "match": "param_2",
       "severity": "mild",
       "text": "if (0.0 <= param_2) {",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x = 0.0;",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x13].y;",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar6 = &(param_1->base).location;",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 104,
       "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->actors + local_28);",
@@ -615,7 +615,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar5 = (*((this_ptr->base).vtable._ub)->canPickup)(&this_ptr->base,&param_1->base),",
@@ -623,7 +623,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 113,
+      "line": 109,
       "match": "6.38202e-39",
       "severity": "mild",
       "text": "fStack_234 = 6.38202e-39;",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 111,
       "match": "in_stack_fffffdd4",
       "severity": "moderate",
       "text": "(&this_ptr->base,(CBoundingBox3D *)in_stack_fffffdd4);",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 119,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "CStack_e4.z = *unaff_EBP - fStack_154;",
@@ -647,23 +647,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 124,
+      "line": 120,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "CStack_d8.x = unaff_EBP[1] - fStack_150;",
+      "text": "CStack_d8.x = unaff_EBP[1] - CStack_150.x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 125,
+      "line": 121,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "CStack_d8.y = unaff_EBP[2] - afStack_14c[0];",
+      "text": "CStack_d8.y = unaff_EBP[2] - CStack_150.y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 126,
+      "line": 122,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "fStack_64 = *unaff_EBP - fStack_154;",
@@ -671,7 +671,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 126,
       "match": "in_stack_fffffdd4",
       "severity": "moderate",
       "text": "in_stack_fffffdd4 = (CCharacter *)0x457ee5;",
@@ -679,7 +679,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 129,
       "match": "in_stack_fffffdd4",
       "severity": "moderate",
       "text": "(in_stack_fffffdd4 = param_1, iVar5 = core_demnfolk_cpp_FUN_00458140(), iVar5 != 0)) &&",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "(in_stack_fffffdd4 = param_1, iVar5 = core_demnfolk_cpp_FUN_00458140(), iVar5 != 0)) &&",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 130,
       "match": "in_stack_fffffdd4",
       "severity": "moderate",
       "text": "((in_stack_fffffdd4 = this_ptr,",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "((uint)param_1[1].model.bone_origins[0x12].y & 3))))) {",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
       "text": "(fStack_224 <= param_1[1].model.bone_origins[0x12].x * _DAT_005ba832)) {",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 151,
+      "line": 147,
       "match": "&stack0xfffffde4",
       "severity": "moderate",
       "text": "*(CCharacter **)(&stack0xfffffde4 + unaff_ESI) = this_ptr;",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 151,
+      "line": 147,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*(CCharacter **)(&stack0xfffffde4 + unaff_ESI) = this_ptr;",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 151,
+      "line": 147,
       "match": "*(CCharacter **)(&stack0xfffffde4",
       "severity": "moderate",
       "text": "*(CCharacter **)(&stack0xfffffde4 + unaff_ESI) = this_ptr;",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 152,
+      "line": 148,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*(int *)((int)aiStack_1f4 + unaff_ESI) = local_20;",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 148,
       "match": "(int *)((int)aiStack_1f4",
       "severity": "moderate",
       "text": "*(int *)((int)aiStack_1f4 + unaff_ESI) = local_20;",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 153,
+      "line": 149,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 4;",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 153,
+      "line": 149,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 4;",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 155,
+      "line": 151,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if (0x27 < unaff_ESI) break;",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 165,
+      "line": 161,
       "match": "&stack0xfffffde4",
       "severity": "moderate",
       "text": "param_1[1].model.bone_origins[0x13].y = *(float *)(&stack0xfffffde4 + iVar5 * 4 + -0x14);",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 161,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].y = *(float *)(&stack0xfffffde4 + iVar5 * 4 + -0x14);",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 166,
+      "line": 162,
       "match": "&stack0xfffffdf8",
       "severity": "moderate",
       "text": "fVar1 = *(float *)(&stack0xfffffdf8 + iVar5 * 4);",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 167,
+      "line": 163,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = param_1[1].model.bone_origins[0x12].y;",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x = -40.0;",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].z = fVar1;",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 166,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x12].y = (float)((int)fVar2 + 1);",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 171,
       "match": "(int *)((int)fVar1",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x94))(fVar1);",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 175,
+      "line": 171,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x94))(fVar1);",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 175,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].y = 0.0;",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x = 0.0;",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 181,
+      "line": 177,
       "match": "param_1",
       "severity": "mild",
       "text": "core_demnfolk_cpp_FUN_00458fb0(param_1);",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x13].y;",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 181,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "fVar2 = (pCVar6->position).x - *(float *)((int)fVar1 + 0x20);",
@@ -895,7 +895,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 182,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "fVar1 = (param_1->base).location.position.z - *(float *)((int)fVar1 + 0x28);",
@@ -903,7 +903,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = (param_1->base).location.position.z - *(float *)((int)fVar1 + 0x28);",
@@ -911,7 +911,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 187,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x13].z;",
@@ -919,7 +919,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 188,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_origins[0x13].x =",
@@ -927,7 +927,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 189,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 * fStack_234 + param_1[1].model.bone_origins[0x13].x;",
@@ -935,7 +935,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 189,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 * fStack_234 + param_1[1].model.bone_origins[0x13].x;",
@@ -943,23 +943,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
+      "line": 190,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_38 = (float)core_demnfolk_cpp_FUN_004580a0(param_1,fVar1);",
+      "text": "afStack_48[4] = (float)core_demnfolk_cpp_FUN_004580a0(param_1,fVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 192,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((-1 < (int)fStack_38) && (param_1[1].model.bone_origins[0x13].x < 0.0)) {",
+      "text": "if ((-1 < (int)afStack_48[4]) && (param_1[1].model.bone_origins[0x13].x < 0.0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 193,
       "match": "param_1",
       "severity": "mild",
       "text": "out_box = (CBoundingBox3D *)param_1[1].model.bone_origins[0x13].y;",
@@ -967,7 +967,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 194,
       "match": "(code **)((int)out_box",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)((int)out_box[0xe].min.y + 0x84))(out_box,param_1);",
@@ -975,7 +975,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 198,
+      "line": 194,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)((int)out_box[0xe].min.y + 0x84))(out_box,param_1);",
@@ -983,7 +983,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 194,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (**(code **)((int)out_box[0xe].min.y + 0x84))(out_box,param_1);",
@@ -991,7 +991,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 196,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar4 = core_demnfolk_cpp_FUN_00458140(param_1,param_1[1].model.bone_origins[0x13].z),",
@@ -999,7 +999,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 196,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar4 = core_demnfolk_cpp_FUN_00458140(param_1,param_1[1].model.bone_origins[0x13].z),",
@@ -1007,7 +1007,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x13].z;",
@@ -1015,7 +1015,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 204,
+      "line": 200,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (fVar1 == 1.4013e-45) {",
@@ -1023,7 +1023,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 202,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = (CDemonActor *)param_1[1].model.bone_origins[0x13].y;",
@@ -1031,15 +1031,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(float *)((int)aCStack_114",
+      "line": 216,
+      "match": "(uint *)((int)aCStack_84",
       "severity": "moderate",
-      "text": "afStack_b0[(uint)bVar11 * -2 + 6] = *(float *)((int)aCStack_114 + (uint)bVar11 * -8 + 4);",
+      "text": "*(uint *)((int)aCStack_84 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 236,
+      "line": 218,
+      "match": "(uint *)((int)aCStack_84",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 232,
+      "match": "(float *)((int)aCStack_114",
+      "severity": "moderate",
+      "text": "afStack_a4[(uint)bVar11 * -2 + 3] = *(float *)((int)aCStack_114 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 234,
       "match": "(float *)((int)aCStack_114",
       "severity": "moderate",
       "text": "*(float *)((int)aCStack_114 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
@@ -1047,7 +1063,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 243,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[1].model.bone_origins[0x13].y;",
@@ -1055,7 +1071,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
+      "line": 244,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "if (afStack_f0 + 1 != (float *)((int)fVar1 + 0x20)) {",
@@ -1063,7 +1079,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 245,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "afStack_f0[1] = *(float *)((int)fVar1 + 0x20);",
@@ -1071,7 +1087,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 246,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "afStack_f0[2] = *(float *)((int)fVar1 + 0x24);",
@@ -1079,7 +1095,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 247,
       "match": "(float *)((int)fVar1",
       "severity": "moderate",
       "text": "CStack_e4.z = *(float *)((int)fVar1 + 0x28);",
@@ -1087,7 +1103,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 255,
+      "line": 253,
       "match": "4.2039e-45",
       "severity": "mild",
       "text": "if (fVar1 != 4.2039e-45) goto LAB_00457d36;",
@@ -1095,7 +1111,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 258,
+      "line": 256,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = (CDemonActor *)param_1[1].model.bone_origins[0x13].y;",
@@ -1122,7 +1138,7 @@
       "line": 312,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "if (fStack_38 == 1.4013e-45) {",
+      "text": "if (afStack_48[4] == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
@@ -1191,7 +1207,7 @@
     },
     {
       "description": "Pointer value `&CStack_d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 127,
+      "line": 123,
       "match": "(int)&CStack_d8",
       "severity": "moderate",
       "text": "afStack_60[(uint)bVar11 * -2] = *(float *)((int)&CStack_d8 + (uint)bVar11 * -8);",
@@ -1199,26 +1215,82 @@
     },
     {
       "description": "Pointer value `&CStack_d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 125,
       "match": "(int)&CStack_d8",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&CStack_d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 270,
-      "match": "(int)&CStack_d8",
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 139,
+      "match": "(int)&CStack_54",
       "severity": "moderate",
-      "text": "afStack_b0[(uint)bVar11 * -2] = *(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + 4) * 4);",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8) = afStack_f0[(uint)bVar11 * -2];",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&CStack_d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 272,
-      "match": "(int)&CStack_d8",
+      "description": "Pointer value `&CStack_150` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 215,
+      "match": "(int)&CStack_150",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 5) * 4);",
+      "text": "*(uint *)((int)&CStack_150 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_150` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 217,
+      "match": "(int)&CStack_150",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_150 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 269,
+      "match": "(int)&CStack_b4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 270,
+      "match": "(int)&CStack_cc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 271,
+      "match": "(int)&CStack_b4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 272,
+      "match": "(int)&CStack_cc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_144` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 276,
+      "match": "(int)&CStack_144",
+      "severity": "moderate",
+      "text": "afStack_a4[(uint)bVar11 * -2] = *(float *)((int)&CStack_144 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_144` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 278,
+      "match": "(int)&CStack_144",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_144 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -1226,7 +1298,7 @@
       "line": 281,
       "match": "(int)&CStack_12c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_12c + (uint)bVar11 * -8 + 4) = afStack_b0[(uint)bVar11 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_12c + (uint)bVar11 * -8 + 4) = afStack_a4[(uint)bVar11 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -1287,7 +1359,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 118,
+      "line": 114,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1295,7 +1367,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 210,
+      "line": 207,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1303,7 +1375,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 262,
+      "line": 261,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1311,7 +1383,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 238,
+      "line": 236,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_e4.x = CStack_9c.x;",
@@ -1327,7 +1399,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 127,
+      "line": 123,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "afStack_60[(uint)bVar11 * -2] = *(float *)((int)&CStack_d8 + (uint)bVar11 * -8);",
@@ -1335,7 +1407,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 129,
+      "line": 125,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 1) * 4);",
@@ -1343,10 +1415,50 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 139,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8) = afStack_f0[(uint)bVar11 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 215,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_150 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 217,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_150 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 269,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 270,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "afStack_b0[(uint)bVar11 * -2] = *(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + 4) * 4);",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 271,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -1354,7 +1466,23 @@
       "line": 272,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_d8 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 5) * 4);",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 276,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_a4[(uint)bVar11 * -2] = *(float *)((int)&CStack_144 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 278,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_144 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -1362,7 +1490,7 @@
       "line": 281,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_12c + (uint)bVar11 * -8 + 4) = afStack_b0[(uint)bVar11 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_12c + (uint)bVar11 * -8 + 4) = afStack_a4[(uint)bVar11 * -2];",
       "type": "pointer_cast"
     },
     {

@@ -29,8 +29,8 @@
 ;   core_script.cpp_trimLine_FUN_005431a0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_realloc_FUN_005c10d0
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0
-;   shape_edittool.cpp_FUN_0049df50
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00543fec
         ;   Label: LAB_00543fec
     PUSH EDX                            ; 00543fef
-    CALL shape_edittool.cpp_FUN_0049df50 ; 00543ff0
-        ;   XREF to: 0049df50 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049df50(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50 ; 00543ff0
+        ;   XREF to: 0049df50 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00543ff5
     CMP EBP,EAX                         ; 00543ff8
     JL 0x00544004                       ; 00543ffa

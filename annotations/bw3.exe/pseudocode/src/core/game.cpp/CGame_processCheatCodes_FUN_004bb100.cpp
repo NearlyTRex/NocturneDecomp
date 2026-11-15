@@ -616,7 +616,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004bb100(CGame *this_ptr)
       }
       if (iVar5 == local_180) {
         DAT_01d22c70 = (byte)((uint)iVar5 >> 8) ^ (byte)((uint)local_180 >> 8);
-        pCVar10 = core_inv_cpp_FUN_004db990
+        pCVar10 = core_inv_cpp_CInventory_findItemByName_FUN_004db990
                             ((CInventory *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e8),
                              "Skeleton_key");
         if (pCVar10 == (CDemonActor *)0x0) {

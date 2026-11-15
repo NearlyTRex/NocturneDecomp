@@ -700,7 +700,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
       }
       if (local_294 == local_298) {
         DAT_01cd0c68 = 0;
-        pCVar12 = core_inv_cpp_FUN_004f8c40
+        pCVar12 = core_inv_cpp_CInventory_findItemByName_FUN_004f8c40
                             ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),
                              "Skeleton_key");
         if (pCVar12 == (CDemonActor *)0x0) {
@@ -1997,9 +1997,9 @@ LAB_004d42bf:
         pCVar6->combat_difficulty_mode = 0;
         engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                   (&CStack_abc,"system\\nocturne.ini","Game");
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_abc,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_abc,"combatDifficultyMode",g_CGamePtr->combat_difficulty_mode);
         fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090
@@ -2042,9 +2042,9 @@ LAB_004d42bf:
         pCVar6->combat_difficulty_mode = 0;
         engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                   (&CStack_6b4,"system\\nocturne.ini","Game");
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_6b4,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_6b4,"combatDifficultyMode",g_CGamePtr->combat_difficulty_mode);
         fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090
@@ -2087,9 +2087,9 @@ LAB_004d42bf:
         pCVar6->combat_difficulty_mode = 1;
         engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                   (&CStack_cc0,"system\\nocturne.ini","Game");
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_cc0,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_cc0,"combatDifficultyMode",g_CGamePtr->combat_difficulty_mode);
         fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090
@@ -2132,9 +2132,9 @@ LAB_004d42bf:
         pCVar6->combat_difficulty_mode = 1;
         engine_ini_cpp_CIniFile_ctor_FUN_004f4b00
                   (&CStack_8b8,"system\\nocturne.ini","Game");
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_8b8,"puzzleDifficultyMode",g_CGamePtr->puzzle_difficulty_mode);
-        engine_ini_cpp_FUN_004f4d70
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                   (&CStack_8b8,"combatDifficultyMode",g_CGamePtr->combat_difficulty_mode);
         fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090

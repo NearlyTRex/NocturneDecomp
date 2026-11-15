@@ -180,7 +180,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_0056b410(CTommyGun *this_ptr)
             core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(this_ptr_03);
           }
           else {
-            core_crate_cpp_FUN_004461c0(pCStack_20);
+            core_crate_cpp_CCrate_explode_FUN_004461c0(pCStack_20);
           }
         }
         else {

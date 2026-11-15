@@ -9,6 +9,7 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CSkeleton.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/structs/SPlayerInput.h"
 #include "types/structs/SRenderVertex.h"
 
@@ -43,7 +44,7 @@ int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004b12e0(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004b1300(int text_color);
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color);
 void engine_font_cpp_FUN_004b13a0(int param_1);
-int __cdecl engine_font_cpp_FUN_004b1460(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
+int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
 int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont *this_ptr,char *text);
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004b2c10(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
@@ -74,21 +75,21 @@ void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int x1,int y1,int x2,int y
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004b4d50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processFudge_FUN_004b4f00(CGame *this_ptr);
-void core_game_cpp_FUN_004b5040(void);
-void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void);
+void __cdecl core_game_cpp_drawCreditsLine_FUN_004b5040(char *text_string);
+void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b51e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(CGame *this_ptr);
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr);
-void core_game_cpp_FUN_004b8e60(int param_1);
+void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004b8e60(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004b93e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004b97b0(CGame *this_ptr,SPlayerInput *player_control);
 void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004b97f0(int key_index,int *output_state);
 void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004b9820(int key_index,uint *out_state);
-void core_game_cpp_FUN_004b9850(void);
-void core_game_cpp_FUN_004b98f0(void);
+void __cdecl core_game_cpp_rampControlAxis_FUN_004b9850(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
+void __cdecl core_game_cpp_dampControlAxis_FUN_004b98f0(float *axis_value,float damp_time,float damp_rate);
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(CGame *this_ptr,SPlayerInput *player_control);
 void core_game_cpp_FUN_004ba220(int param_1,int param_2);
 void core_game_cpp_FUN_004ba280(int param_1,int param_2);
@@ -107,12 +108,12 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void);
 void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004bd6d0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004bd7d0(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004bd8d0(CGame *this_ptr);
-void core_game_cpp_FUN_004bd8f0(void);
+void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004bd8f0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004bd930(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004bda10(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int load_mode);
-void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2);
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004beb80(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004bf2e0(void);

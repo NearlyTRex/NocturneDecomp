@@ -15,7 +15,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cb2b
-;   core_charactr.cpp_FUN_00433c60 at 00433dfc
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 at 00433dfc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d0c72

@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_0052fad0 at 0052fdd7
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fdd7
 ;   core_set.cpp_FUN_0052fea0 at 00530193
 ;
 ; Referenced Globals:

@@ -112,15 +112,15 @@ static undefined1* DAT_006045C0 = (undefined1*)engine_palette_cpp_FUN_00532120;
 static undefined1* DAT_006045E0 = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
 static undefined1* DAT_006045E4 = (undefined1*)core_particle_cpp_CParticle_process_FUN_00532250;
 static undefined1* DAT_006045E8 = (undefined1*)core_particle_cpp_CParticle_render_FUN_005326d0;
-static undefined1* DAT_006045EC = (undefined1*)core_particle_cpp_FUN_00532700;
+static undefined1* DAT_006045EC = (undefined1*)core_particle_cpp_CParticle_onCollision_FUN_00532700;
 static undefined1* DAT_00604A38 = (undefined1*)0x0053C620; // LAB_0053c620
 static undefined1* DAT_00604A3C = (undefined1*)engine_pod_cpp_CPod_findFile_FUN_0053cf50;
-static undefined1* DAT_00604A40 = (undefined1*)engine_pod_cpp_FUN_0053c650;
+static undefined1* DAT_00604A40 = (undefined1*)engine_pod_cpp_CPod_mount_FUN_0053c650;
 static undefined1* DAT_00604A44 = (undefined1*)engine_pod_cpp_CPod_dismount_FUN_0053c800;
 static undefined1* DAT_00604A48 = (undefined1*)engine_pod_cpp_CPod_remount_FUN_0053c750;
 static undefined1* DAT_00604AA8 = (undefined1*)core_podmain_cpp_CDemonPod_load_FUN_0053d580;
 static undefined1* DAT_00604AAC = (undefined1*)engine_pod_cpp_CPod_findFile_FUN_0053cf50;
-static undefined1* DAT_00604AB0 = (undefined1*)engine_pod_cpp_FUN_0053c650;
+static undefined1* DAT_00604AB0 = (undefined1*)engine_pod_cpp_CPod_mount_FUN_0053c650;
 static undefined1* DAT_00604AB4 = (undefined1*)engine_pod_cpp_CPod_dismount_FUN_0053c800;
 static undefined1* DAT_00604AB8 = (undefined1*)engine_pod_cpp_CPod_remount_FUN_0053c750;
 static undefined1* DAT_00607358 = (undefined1*)crt_unknown_c_FUN_005c10a1;
@@ -179,7 +179,7 @@ static undefined1* DAT_00607484 = (undefined1*)support_trstream_cpp_COutStreamDe
 static undefined1* DAT_00608168 = (undefined1*)engine_winfont_cpp_CWinFont_drawText_FUN_005b1c00;
 static undefined1* DAT_0060816C = (undefined1*)engine_winfont_cpp_CWinFont_getStringWidth_FUN_005b2100;
 static undefined1* DAT_00608170 = (undefined1*)engine_winfont_cpp_CWinFont_getStringHeight_FUN_005b2160;
-static undefined1* DAT_00608174 = (undefined1*)engine_winfont_cpp_FUN_005b21d0;
+static undefined1* DAT_00608174 = (undefined1*)engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005b21d0;
 
 // undefined4 constants
 static undefined4 DAT_00600c20 = 0x450FC000;

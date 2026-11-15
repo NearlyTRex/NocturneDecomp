@@ -217,7 +217,7 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0052c470(CNetGame *this_pt
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0052c500(CNetGame *this_ptr,uint flags);
 void __cdecl core_netgame_cpp_CNetGame_init_FUN_0052c520(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_shutdown_FUN_0052c5d0(CNetGame *this_ptr);
-undefined4 core_netgame_cpp_FUN_0052c600(void);
+int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0052c600(CNetGame *this_ptr);
 int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetGame *this_ptr,uint32_t *server_ip);
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0052c970(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(CNetGame *this_ptr,int perform_handshake);

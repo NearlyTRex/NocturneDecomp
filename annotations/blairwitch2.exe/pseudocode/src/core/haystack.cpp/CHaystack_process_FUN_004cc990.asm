@@ -32,8 +32,8 @@
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -427,8 +427,8 @@ section .text
     JZ 0x004ccd9f                       ; 004cce0a
         ;   XREF to: 004ccd9f (CONDITIONAL_JUMP)  ; LAB_004ccd9f
     PUSH EBX                            ; 004cce0c
-    CALL core_hero.cpp_FUN_004cec50     ; 004cce0d
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 004cce0d
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     XOR EBP,EBP                         ; 004cce12
     ADD ESP,0x4                         ; 004cce14
     TEST EAX,EAX                        ; 004cce17

@@ -121,9 +121,9 @@ void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 // Address: 004b7580
 void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
-// Original: core_game.cpp_FUN_004b7650
+// Original: core_game.cpp_dampControlAxis_FUN_004b7650
 // Address: 004b7650
-void FUN_004b7650(void);
+void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0
 // Address: 004b76c0
@@ -241,17 +241,17 @@ void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 // Address: 004bbf70
 void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
-// Original: core_game.cpp_FUN_004bc840
+// Original: core_game.cpp_CGame_showChapterSelect_FUN_004bc840
 // Address: 004bc840
-void FUN_004bc840(CGame *param_1,int param_2);
+void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004bcb50
 // Address: 004bcb50
 void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 
-// Original: core_game.cpp_FUN_004bcbf0
+// Original: core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0
 // Address: 004bcbf0
-void __cdecl FUN_004bcbf0(CGame *this_ptr);
+void __cdecl CGame::showFullscreenBitmap(CGame *this_ptr);
 
 // Original: core_game.cpp_hostNetworkGame_FUN_004bd2f0
 // Address: 004bd2f0

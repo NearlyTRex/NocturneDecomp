@@ -11,7 +11,7 @@
 ;   support_trisock.cpp_FUN_00570ae0 at 00570bd5
 ;   support_trisock.cpp_FUN_00570ea0 at 00570ec8
 ;   support_trisock.cpp_FUN_00570fb0 at 00571007
-;   support_trisock.cpp_FUN_00571f10 at 00571f46
+;   support_trisock.cpp_cleanupWinsock_FUN_00571f10 at 00571f46
 ;
 ; Referenced Globals:
 ;   void* PTR_WaitForSingleObject_005b3680 = 001b42d2

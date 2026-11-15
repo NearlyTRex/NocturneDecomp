@@ -53,13 +53,13 @@ void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *eul
 // Address: 0043e2a0
 void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_0043f110
+// Original: core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043f110
 // Address: 0043f110
-void FUN_0043f110(void);
+void __cdecl CCloth::renderCollisionBones(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043f160
+// Original: core_cloth.cpp_CCloth_renderBone_FUN_0043f160
 // Address: 0043f160
-void __cdecl FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
+void __cdecl CCloth::renderBone(CCloth *this_ptr,int bone_index,int show_labels);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043f370
 // Address: 0043f370

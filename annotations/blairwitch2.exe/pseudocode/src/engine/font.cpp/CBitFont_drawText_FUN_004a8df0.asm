@@ -31,7 +31,7 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3cdd
 ;   core_game.cpp_drawCreditsLine_FUN_004b3b10 at 004b3b31
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b3b90 at 004b3be3
-;   core_inv.cpp_FUN_004dd9b0 at 004ddb97
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 at 004ddb97
 ;   ... and 16 more
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
-;   engine_font.cpp_FUN_004a9870
+;   engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870
 ;   engine_font.cpp_FUN_004ab840
 ;   engine_palette.cpp_FUN_00510cd0
 ;
@@ -324,8 +324,8 @@ section .text
     PUSH EBP                            ; 004a9081
     PUSH EAX                            ; 004a9082
     PUSH EBX                            ; 004a9083
-    CALL engine_font.cpp_FUN_004a9870   ; 004a9084
-        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004a9870(CBitFont * this_ptr, int character_code, int x, int y, ...)
+    CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870 ; 004a9084
+        ;   XREF to: 004a9870 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x18                        ; 004a9089
     ADD EBP,EAX                         ; 004a908c
     INC ESI                             ; 004a908e

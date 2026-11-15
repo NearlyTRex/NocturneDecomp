@@ -30,13 +30,13 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00432330
-;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
@@ -58,8 +58,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0059954c
     PUSH EDX                            ; 0059954f
     MOV ESI,dword ptr [EBP + 0x14]      ; 00599550
-    CALL core_charactr.cpp_FUN_00433c60 ; 00599553
-        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433c60()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 ; 00599553
+        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x14]      ; 00599558
     ADD ESI,0x158                       ; 0059955b
     MOV ECX,0x1                         ; 00599561
@@ -222,8 +222,8 @@ section .text
     PUSH EDI                            ; 00599742
     PUSH dword ptr [EBP + 0x18]         ; 00599743
     PUSH EBX                            ; 00599746
-    CALL core_charactr.cpp_FUN_00432330 ; 00599747
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 00599747
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     ADD ESP,0xc                         ; 0059974c
     PUSH dword ptr [EBP + 0x18]         ; 0059974f
     PUSH EBX                            ; 00599752

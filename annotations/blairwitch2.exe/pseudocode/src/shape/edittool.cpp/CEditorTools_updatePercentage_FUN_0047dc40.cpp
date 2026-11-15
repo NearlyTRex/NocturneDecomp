@@ -47,14 +47,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047dc40(CEdit
     }
     local_54 = current_progress / total_progress;
   }
-  uVar11 = 0x47dcaa;
   dVar9 = round
                     ((double)(local_54 * (float)_DAT_005d2337 + (float)_DAT_005d233f));
   iVar7 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar1 = (_DAT_01c2559c + -1) * 0x1f8;
   if (((int)ROUND(dVar9) != *(int *)(iVar1 + 0x1c25790)) ||
      (0x47ffff < iVar7 - *(int *)(iVar1 + 0x1c25794))) {
-    shape_edittool_cpp_FUN_0047e870(this_ptr,uVar11);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0

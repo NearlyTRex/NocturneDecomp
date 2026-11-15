@@ -60,8 +60,8 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0(CDemon
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
-void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos);
-void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_00474550(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00475000(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00475ff0(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices);
@@ -75,7 +75,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00476b50(CDemon
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476c30(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 CVector3f * __stack_esi core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00476d20(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 CVector3f * __stack_esi core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00476d40(CDemonRaytrace *this_ptr,CVector3f *output_vector);
-void core_dtrace_cpp_FUN_00476d60(int param_1,int param_2);
+CVector3f * __stack2_esi core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00476d60(CDemonRaytrace *this_ptr,int cube_index,CVector3f *output_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_00476df0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_00477160(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);
@@ -167,7 +167,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0(CE
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_0047e870(void);
+void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CEditorTools *this_ptr,int line_position);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools *this_ptr,int use_clipping);

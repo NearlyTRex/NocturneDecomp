@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 911,
-    "complexity_score": 656,
+    "complexity_score": 657,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 296,
+    "pseudocode_lines": 297,
     "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1207
+    "total_lines": 1208
   },
   "cross_references": [
     {
@@ -59,7 +59,7 @@
     {
       "addr": "004dd310",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dd310"
+      "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310"
     },
     {
       "addr": "004d9eb0",
@@ -388,6 +388,18 @@
     "pcode_op_count": 3922
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dd9b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2884
+    },
+    "bw1.exe": {
+      "addr": "004fae10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.407
+    },
     "nocedit.exe": {
       "addr": "00500690",
       "by": "name",
@@ -734,7 +746,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar5 = (DAT_005fba1c - iVar5) + iVar7;",
@@ -742,7 +754,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 131,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "local_20 = (DAT_005fba18 - iVar6) + iVar7;",
@@ -750,7 +762,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 149,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -758,7 +770,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 162,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(local_44,local_364,(DAT_005fba18 - iVar7) - iVar1,(DAT_005fba1c - iVar7) - local_60",
@@ -766,7 +778,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 162,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(local_44,local_364,(DAT_005fba18 - iVar7) - iVar1,(DAT_005fba1c - iVar7) - local_60",
@@ -774,7 +786,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 173,
+      "line": 174,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar5 = (DAT_005fba1c - iVar5) + iVar7;",
@@ -782,7 +794,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 175,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "local_30 = (DAT_005fba18 - iVar6) + iVar7;",
@@ -790,7 +802,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 199,
+      "line": 200,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -798,7 +810,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "iVar7 = (DAT_005fba18 + -4) - iVar5;",
@@ -806,7 +818,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 238,
       "match": "DAT_005c6640",
       "severity": "mild",
       "text": "_sprintf(acStack_474,&DAT_005c6640);",
@@ -814,7 +826,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 241,
       "match": "DAT_005c6643",
       "severity": "mild",
       "text": "_sprintf(acStack_470,&DAT_005c6643);",
@@ -822,7 +834,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 244,
       "match": "DAT_005c6645",
       "severity": "mild",
       "text": "_sprintf(acStack_470,&DAT_005c6645);",
@@ -830,7 +842,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 258,
+      "line": 259,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -838,7 +850,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 265,
+      "line": 266,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar5) + -4);",
@@ -846,7 +858,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 268,
+      "line": 269,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar5 = (DAT_005fba1c + -4) - local_38 * (int)pCVar4;",
@@ -854,7 +866,7 @@
     },
     {
       "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
+      "line": 127,
       "match": "(int)local_50",
       "severity": "moderate",
       "text": "(local_44,local_564,0x1d5be88,10,0x100,iVar6 - (int)local_50);",
@@ -862,7 +874,7 @@
     },
     {
       "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 212,
+      "line": 213,
       "match": "(int)local_50",
       "severity": "moderate",
       "text": "iVar3 = (int)local_50 / 2;",
@@ -870,7 +882,7 @@
     },
     {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 268,
+      "line": 269,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "iVar5 = (DAT_005fba1c + -4) - local_38 * (int)pCVar4;",
@@ -878,7 +890,7 @@
     },
     {
       "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 269,
+      "line": 270,
       "match": "(int)local_28",
       "severity": "moderate",
       "text": "if (((_DAT_01549abc != local_24) || (_DAT_01dd4890 == 0)) && (iVar6 = 0, 0 < (int)local_28)) {",
@@ -886,7 +898,7 @@
     },
     {
       "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 276,
+      "line": 277,
       "match": "(int)local_28",
       "severity": "moderate",
       "text": "} while (iVar6 < (int)local_28);",
@@ -894,7 +906,7 @@
     },
     {
       "description": "Raw hex address 0x4de062 assigned to bare local `bottom_y`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `bottom_y` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 214,
+      "line": 215,
       "match": "0x4de062",
       "severity": "moderate",
       "text": "bottom_y = 0x4de062;",
@@ -902,7 +914,7 @@
     },
     {
       "description": "Raw hex address 0x4de0b4 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 224,
+      "line": 225,
       "match": "0x4de0b4",
       "severity": "moderate",
       "text": "iVar1 = 0x4de0b4;",
@@ -910,7 +922,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 233,
+      "line": 234,
       "match": "(int *)(iVar5 + 0x2538)",
       "severity": "moderate",
       "text": "if ((0x3f800000 < *(int *)(iVar5 + 0x2538)) || (*(float *)(iVar5 + 0x2538) <= 0.0)) {",

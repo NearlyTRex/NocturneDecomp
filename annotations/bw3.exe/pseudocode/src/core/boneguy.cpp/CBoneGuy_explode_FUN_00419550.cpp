@@ -88,7 +88,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_00419550(CBoneGuy *this_ptr)
         pCVar6->z = (body_part->base).orient.vec.z;
       }
       pCVar6 = pCVar6 + 6;
-      core_xform_cpp_FUN_005860b0(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_005860b0(&(body_part->base).orient);
       pCVar4 = (CBoneGuy *)((local_20->base).base.base.orient_matrix.m + 1);
       local_1c = local_1c + 1;
       puVar7 = (uint *)((int)local_20 + (uint)bVar9 * -8 + 0xd11c);

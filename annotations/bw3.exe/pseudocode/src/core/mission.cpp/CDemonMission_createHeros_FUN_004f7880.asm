@@ -8,7 +8,7 @@
 ; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004be8d0 at 004bead0
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004bead0
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f73f9
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506059
 ;

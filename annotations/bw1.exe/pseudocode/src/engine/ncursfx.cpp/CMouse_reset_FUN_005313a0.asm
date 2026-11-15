@@ -7,7 +7,7 @@
 ; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_00503a30 at 00503a4e
+;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503a4e
 ;
 ; *****************************************************************************
 

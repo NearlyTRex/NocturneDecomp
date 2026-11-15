@@ -70,7 +70,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00532b00(CDemonSet *this_ptr
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00532b30(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00532b80(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_FUN_00533e60(void);
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60(CDemonSet *this_ptr,int light_index);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(CDemonSet *this_ptr,int layer_flag);
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00534820(CDemonSet *this_ptr,CDemonActor *actor);
@@ -134,7 +134,7 @@ void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_0053b440(CDemonSet *this
 void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0(CDemonSet *this_ptr,int *light_state_buffer);
-int core_set_cpp_FUN_0053b6e0(int *param_1,undefined4 param_2);
+void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0053b6e0(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_ptr,int expire_flag);
@@ -165,7 +165,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_0053ec70(CDemonSet *t
 void __cdecl core_setcolid_cpp_CDemonSet_enableCollision_FUN_0053ec80(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(CDemonSet *this_ptr,int ray_type);
 void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
-void core_setcolid_cpp_FUN_0053ed10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info);
 SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80(SCollisionInfo *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(CDemonSet *this_ptr,CDemonActor *actor);

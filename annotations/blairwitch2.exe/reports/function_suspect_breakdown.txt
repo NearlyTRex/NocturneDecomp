@@ -4,59 +4,59 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2065 functions
-  1 suspects: 913 functions
-  2 suspects: 479 functions
-  3 suspects: 299 functions
+  0 suspects: 2077 functions
+  1 suspects: 922 functions
+  2 suspects: 483 functions
+  3 suspects: 300 functions
   4 suspects: 181 functions
-  5 suspects: 139 functions
-  6 suspects: 142 functions
+  5 suspects: 136 functions
+  6 suspects: 139 functions
   7 suspects: 119 functions
   8 suspects: 104 functions
-  9 suspects: 94 functions
-  10 suspects: 67 functions
+  9 suspects: 92 functions
+  10 suspects: 65 functions
   11 suspects: 68 functions
-  12 suspects: 78 functions
-  13 suspects: 52 functions
+  12 suspects: 75 functions
+  13 suspects: 53 functions
   14 suspects: 60 functions
-  15 suspects: 41 functions
-  16 suspects: 34 functions
+  15 suspects: 42 functions
+  16 suspects: 33 functions
   17 suspects: 40 functions
-  18 suspects: 37 functions
-  19 suspects: 26 functions
-  20 suspects: 32 functions
-  21 suspects: 28 functions
-  22 suspects: 24 functions
-  23 suspects: 15 functions
+  18 suspects: 38 functions
+  19 suspects: 25 functions
+  20 suspects: 31 functions
+  21 suspects: 25 functions
+  22 suspects: 23 functions
+  23 suspects: 14 functions
   24 suspects: 24 functions
-  25 suspects: 21 functions
-  26 suspects: 25 functions
-  27 suspects: 24 functions
-  28 suspects: 13 functions
-  29 suspects: 22 functions
-  30 suspects: 16 functions
+  25 suspects: 20 functions
+  26 suspects: 24 functions
+  27 suspects: 23 functions
+  28 suspects: 12 functions
+  29 suspects: 23 functions
+  30 suspects: 14 functions
   31 suspects: 20 functions
   32 suspects: 19 functions
-  33 suspects: 9 functions
-  34 suspects: 14 functions
+  33 suspects: 10 functions
+  34 suspects: 15 functions
   35 suspects: 9 functions
-  36 suspects: 14 functions
+  36 suspects: 12 functions
   37 suspects: 13 functions
-  38 suspects: 8 functions
-  39 suspects: 12 functions
+  38 suspects: 9 functions
+  39 suspects: 10 functions
   40 suspects: 13 functions
-  41 suspects: 11 functions
+  41 suspects: 10 functions
   42 suspects: 6 functions
-  43 suspects: 7 functions
+  43 suspects: 6 functions
   44 suspects: 7 functions
   45 suspects: 9 functions
   46 suspects: 11 functions
-  47 suspects: 10 functions
+  47 suspects: 12 functions
   48 suspects: 8 functions
-  49 suspects: 7 functions
+  49 suspects: 8 functions
   50 suspects: 4 functions
   51 suspects: 6 functions
-  52 suspects: 8 functions
+  52 suspects: 7 functions
   53 suspects: 6 functions
   54 suspects: 7 functions
   55 suspects: 4 functions
@@ -65,11 +65,11 @@ SUSPECT COUNT DISTRIBUTION
   58 suspects: 7 functions
   59 suspects: 6 functions
   60 suspects: 2 functions
-  61 suspects: 6 functions
+  61 suspects: 5 functions
   62 suspects: 2 functions
   63 suspects: 2 functions
   64 suspects: 2 functions
-  65 suspects: 6 functions
+  65 suspects: 4 functions
   66 suspects: 4 functions
   67 suspects: 5 functions
   68 suspects: 5 functions
@@ -87,7 +87,7 @@ SUSPECT COUNT DISTRIBUTION
   82 suspects: 1 functions
   83 suspects: 3 functions
   84 suspects: 2 functions
-  85 suspects: 1 functions
+  85 suspects: 2 functions
   86 suspects: 1 functions
   87 suspects: 1 functions
   88 suspects: 2 functions
@@ -102,6 +102,7 @@ SUSPECT COUNT DISTRIBUTION
   105 suspects: 2 functions
   106 suspects: 1 functions
   109 suspects: 1 functions
+  114 suspects: 1 functions
   115 suspects: 3 functions
   116 suspects: 2 functions
   117 suspects: 1 functions
@@ -124,7 +125,7 @@ SUSPECT COUNT DISTRIBUTION
   186 suspects: 1 functions
   195 suspects: 1 functions
   196 suspects: 1 functions
-  199 suspects: 2 functions
+  199 suspects: 1 functions
   219 suspects: 2 functions
   220 suspects: 2 functions
   225 suspects: 2 functions
@@ -135,16 +136,17 @@ SUSPECT COUNT DISTRIBUTION
   253 suspects: 1 functions
   278 suspects: 1 functions
   318 suspects: 1 functions
-  351 suspects: 2 functions
+  351 suspects: 1 functions
+  355 suspects: 1 functions
   619 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [warning_overlapping_globals] (552 functions)
+  [warning_overlapping_globals] (560 functions)
   ------------------------------------------------------------
-    cockpit_ckptutil.c_setLineBlendingDisabled_FUN_004 (  5 lines)
+    cockpit_ckptutil.c_isLineClippingDisabled_FUN_0042 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_dcamera.cpp_log2Custom_FUN_0043ffd0           (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -180,7 +182,13 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_3d.c_setBlendMode_FUN_00406df0              (  6 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    cockpit_ckptutil.c_FUN_0042f2f0                    (  6 lines)
+    engine_3d.c_setProcessorType_FUN_00407890          (  6 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    engine_3d.c_setRenderingQuality_FUN_004078a0       (  6 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042 (  6 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    cockpit_ckptutil.c_setLineBlendingDisabled_FUN_004 (  6 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     cockpit_ckptutil.c_setLineClippingDisabled_FUN_004 (  6 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -262,9 +270,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_texture.cpp_updateTextureWithPalette_FUN_00 (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_texture.cpp_FUN_00575070                    (  7 lines)
+    engine_texture.cpp_loadAndUpdateTexture_FUN_005750 (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_texture.cpp_FUN_005750d0                    (  7 lines)
+    engine_texture.cpp_renderTextureAtlas_FUN_005750d0 (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_texture.cpp_FUN_00575140                    (  7 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -374,7 +382,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     shape_edittool.cpp_CEdScrollBar_clearActiveButtonI (  9 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    shape_edittool.cpp_FUN_00484e70                    (  9 lines)
+    shape_edittool.cpp_CEdButton_clearActiveButtonIfMa (  9 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    shape_edittool.cpp_CEdCheck_clearActiveButtonIfMat (  9 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_game.cpp_beginProfileTimer_FUN_004bd4d0       (  9 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -398,6 +408,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_fire.cpp_transformWorldToScreen_FUN_0049eb90  ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_gabriela.cpp_weaponDrawBlendWeightCallback_FU ( 10 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_game.cpp_endProfileTimer_FUN_004bd4f0         ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_gore.cpp_CBloodSplat_processAge_FUN_004c8690  ( 10 lines)
@@ -415,6 +427,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_special.cpp_beginScene_FUN_0055f590         ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_special.cpp_endScene_FUN_0055f5b0           ( 10 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    engine_special.cpp_setMipMapLevel_FUN_0055f750     ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_special.cpp_drawPolygon_FUN_0055f8f0        ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -442,7 +456,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_special.cpp_getVideoMemory_FUN_00560090     ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_special.cpp_FUN_005601a0                    ( 10 lines)
+    engine_special.cpp_getTextureInfo_FUN_005601a0     ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_ ( 10 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -487,12 +501,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     sound_sndmain.cpp_getSfxChannelVol_FUN_00551190    ( 11 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0 ( 11 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_special.cpp_FUN_0055f610                    ( 11 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_special.cpp_FUN_0055f650                    ( 11 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
-    engine_special.cpp_FUN_0055f750                    ( 11 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_special.cpp_selectCard_FUN_005600c0         ( 11 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -760,6 +768,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_mission.cpp_CDemonMission_removeAllActors_FUN ( 18 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_netgame.cpp_findSimFrame_FUN_0050b110         ( 18 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_setutil.cpp_C3DSLight_setFilterFrame_FUN_0053 ( 18 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_getRecordingFormat_FUN_00553020  ( 18 lines)
@@ -831,6 +841,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_CDeformableModelInstance_renderP ( 21 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_lockSound_FUN_005532f0           ( 21 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_stranger.cpp_adjustAimAngleForOffset_FUN_0056 ( 21 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_gore.cpp_CBloodPool_init_FUN_004c8d10         ( 22 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -1010,6 +1022,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     sound_sndmain.cpp_freeMixBuffers_FUN_0054cfc0      ( 32 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
+    shape_edittool.cpp_CEditorTools_drawCenteredWirefr ( 33 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2 ( 33 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_gargoyle.cpp_CGargoyle_ctor_FUN_004bfae0      ( 33 lines)
@@ -1019,6 +1033,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_mini3d.cpp_transformVertexOrtho_FUN_004f473 ( 33 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_mini3d.cpp_projectVertex_FUN_004f5860       ( 33 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af8 ( 33 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_svetlana.cpp_CSvetlana_advanceMotion_FUN_0057 ( 33 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -1172,6 +1188,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0 ( 61 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
+    engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0051b6e ( 61 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_setutil.cpp_C3DSLight_process_FUN_0053b8d0    ( 61 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_gabriela.cpp_CGabriella_processDamage_FUN_004 ( 62 lines)
@@ -1249,11 +1267,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_matrix.c_matrixPushAndTransform_FUN_004e8fd (206 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
 
-  [undefined_data] (121 functions)
+  [undefined_data] (122 functions)
   ------------------------------------------------------------
-    engine_2d.c_FUN_00402800                           (  4 lines)
+    engine_2d.c_getTextWrapEnabled_FUN_00402800        (  4 lines)
       return DAT_0060936c;...
-    engine_2d.c_FUN_00402840                           (  4 lines)
+    engine_2d.c_getTextColor_FUN_00402840              (  4 lines)
       return DAT_00609370;...
     core_baron.cpp_CBaronWeapon_getActorType_FUN_00410 (  4 lines)
       return (CDemonActorType *)&DAT_007bc698;...
@@ -1279,9 +1297,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return DAT_0061bcc4;...
     wincore_winrun.cpp_getValue_FUN_0058eb60           (  4 lines)
       return DAT_02662de4;...
-    engine_2d.c_FUN_00402810                           (  5 lines)
+    engine_2d.c_setTextWrapEnabled_FUN_00402810        (  5 lines)
       DAT_0060936c = enabled;...
-    engine_2d.c_FUN_00402850                           (  5 lines)
+    engine_2d.c_setTextColor_FUN_00402850              (  5 lines)
       DAT_00609370 = color;...
     engine_2d.c_FUN_00402860                           (  5 lines)
       DAT_00609370 = 0xf8;...
@@ -1307,7 +1325,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       DAT_00617e44 = enabled;...
     engine_mini3d.cpp_getTransformMatrix_FUN_004f4a60  (  5 lines)
       return (float *)&DAT_01d167ac;...
-    engine_prim.c_FUN_0051c1a0                         (  5 lines)
+    engine_prim.c_setCullingMode_FUN_0051c1a0          (  5 lines)
       DAT_0070ca7c = culling_mode;...
     core_setdir.cpp_setPixelGrayscale_FUN_00538400     (  5 lines)
       *(int *)(*(int *)(&DAT_01c2a38c + y * 4) + x * 4) = grayscal...
@@ -1377,6 +1395,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fov,&DAT...
     core_set.cpp_staticInit_FUN_0052bbe0               ( 13 lines)
       __arrinit(&DAT_0200e8f4,4000,&g_CVectorTypeInfo);...
+    core_cloth.cpp_CCloth_renderCollisionBones_FUN_005 ( 13 lines)
+      engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN...
     core_barrier.cpp_CBarrier_getCollisionType_FUN_004 ( 14 lines)
       iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(DAT_007bbff4,t...
     core_boxactor.cpp_staticInit_FUN_0041bc90          ( 14 lines)
@@ -1423,7 +1443,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->item,&DA...
     core_bodypart.cpp_CBodyPart_setup_FUN_00415ee0     ( 20 lines)
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca0...
-    core_manpuz.cpp_FUN_004e6820                       ( 21 lines)
+    core_manpuz.cpp_CMansionPuzzleCircle_renderReflect ( 21 lines)
       (DAT_0060b280,&this_ptr->reflectors[reflector_index].rotatio...
     core_enemy.cpp_CEnemy_releaseVictim_FUN_004889d0   ( 22 lines)
       if (((byte *)(this_ptr->base).base.validation_magic == &DAT_...
@@ -1494,7 +1514,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_charactr.cpp_CCharacter_archive_FUN_00422c30  ( 78 lines)
       if (DAT_007bc038 == 1) {...
 
-  [negative_offset] (70 functions)
+  [negative_offset] (71 functions)
   ------------------------------------------------------------
     core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0  (  6 lines)
       return (SBodyPartFire *)&pCVar1[-1].do_visibility_check;...
@@ -1510,6 +1530,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (CTire *)(pCVar1[-1].model_name + 0xf0);...
     core_script.cpp_CScript_dtor_FUN_00521600          (  7 lines)
       return (CScript *)&pCVar1[-4].vtable;...
+    core_set.cpp_CDemonSet_dtor_FUN_0052c060           (  7 lines)
+      return (CDemonSet *)&pCVar1[-1].enabled;...
     sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810     (  7 lines)
       return (CSfxSample *)&pCVar1[-10].buffer_alloc;...
     core_fire.cpp_CToss_ctor_FUN_00499270              (  9 lines)
@@ -1711,8 +1733,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar3 = (CInventory *)&pCVar3->owner;...
     engine_pod.cpp_CPod_getNextSearchResult_FUN_0051b5 ( 53 lines)
       pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
-    core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN ( 59 lines)
-      pCVar5 = (CInventory *)&pCVar5->owner;...
+    core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN ( 60 lines)
+      pCVar4 = (CInventory *)&pCVar4->owner;...
     core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0  ( 64 lines)
       pCVar4 = (CInventory *)&pCVar4->owner;...
 
@@ -1948,10 +1970,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_schngeis.cpp_CSchnellGeist_processMotionEvent ( 59 lines)
       this_ptr_00 = 0x0264B290;...
 
-  [param_count_too_few] (6 functions)
+  [param_count_too_few] (5 functions)
   ------------------------------------------------------------
-    core_dlight.cpp_FUN_0044b050                       (  4 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
     core_mission.cpp_FUN_004fd450                      (  4 lines)
       Function declares 0 params but call sites push 2 (2 missing)...
     engine_drender.cpp_pop_FUN_0046b4a0                (  5 lines)
@@ -2219,11 +2239,19 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/netgame.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0
     File: core/set.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
+  engine_special.cpp_selectTextureFromPalette_FUN_0055f650
+    File: engine/special.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
+  engine_special.cpp_updateTextureFromPalette_FUN_0055f690
+    File: engine/special.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
   engine_special.cpp_restoreVideoMode_FUN_0055f8c0
     File: engine/special.cpp, Lines: 10, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
-  engine_special.cpp_FUN_00560120
+  engine_special.cpp_lockHoldBuffer_FUN_00560120
     File: engine/special.cpp, Lines: 10, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
-  engine_special.cpp_FUN_00560140
+  engine_special.cpp_unlockHoldBuffer_FUN_00560140
+    File: engine/special.cpp, Lines: 10, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
+  engine_special.cpp_lockTexture_FUN_00560160
+    File: engine/special.cpp, Lines: 10, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
+  engine_special.cpp_unlockTexture_FUN_00560180
     File: engine/special.cpp, Lines: 10, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_stairs.cpp_CStairs_archive_FUN_00562010
     File: core/stairs.cpp, Lines: 10, Types: ['undefined_data']
@@ -2265,10 +2293,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeleton.cpp, Lines: 11, Types: ['undefined_data']
   sound_sndmain.cpp_setNextSfxUserData_FUN_005502b0
     File: sound/sndmain.cpp, Lines: 11, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
-  engine_special.cpp_FUN_0055f710
-    File: engine/special.cpp, Lines: 11, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
-  engine_special.cpp_FUN_00560180
-    File: engine/special.cpp, Lines: 11, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   engine_special.cpp_FUN_005602a0
     File: engine/special.cpp, Lines: 11, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0
@@ -2405,8 +2429,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dtrace.cpp, Lines: 17, Types: ['alloc_magic_size', 'warning_overlapping_globals']
   core_fire.cpp_CBulletTrail_init_FUN_004972d0
     File: core/fire.cpp, Lines: 17, Types: ['unrolled_memcpy']
-  core_inv.cpp_CInventory_saveItems_FUN_004dc460
-    File: core/inv.cpp, Lines: 17, Types: ['shadow_pointer_walk', 'undefined_data']
   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de
     File: cockpit/pkbitmap.cpp, Lines: 17, Types: ['builtin_function', 'warning_overlapping_globals']
   core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00534990
@@ -2479,6 +2501,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/game.cpp, Lines: 19, Types: ['undefined_data', 'warning_overlapping_globals']
   core_health.cpp_CHealthItem_ctor_FUN_004cda70
     File: core/health.cpp, Lines: 19, Types: ['negative_offset']
+  core_inv.cpp_CInventory_saveItems_FUN_004dc460
+    File: core/inv.cpp, Lines: 19, Types: ['shadow_pointer_walk', 'undefined_data']
   engine_mini3d.cpp_getProjectedSize_FUN_004f4a70
     File: engine/mini3d.cpp, Lines: 19, Types: ['bit_int_float_compare', 'warning_overlapping_globals']
   engine_mini3d.cpp_setColorARGB_FUN_004f8eb0
@@ -2811,6 +2835,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/drender.cpp, Lines: 41, Types: ['undefined_data', 'warning_overlapping_globals']
   engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_
     File: engine/drender.cpp, Lines: 41, Types: ['undefined_data', 'warning_overlapping_globals']
+  shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470
+    File: shape/edittool.cpp, Lines: 41, Types: ['unrolled_strcpy', 'warning_overlapping_globals']
   core_level.cpp_CLevelLoader_show_FUN_004e1480
     File: core/level.cpp, Lines: 41, Types: ['undefined_data']
   core_sound.cpp_filterSoundFilesByPattern_FUN_00558cb0
@@ -2903,6 +2929,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/trigger.cpp, Lines: 56, Types: ['unrolled_strcpy']
   core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00461e10
     File: core/dpart.cpp, Lines: 57, Types: ['undefined_data', 'warning_overlapping_globals']
+  core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_00474550
+    File: core/dtrace.cpp, Lines: 57, Types: ['undefined_data', 'warning_overlapping_globals']
   core_lever.cpp_CLever_archive_FUN_004e22e0
     File: core/lever.cpp, Lines: 59, Types: ['undefined_data', 'unrolled_strcpy']
   core_wateract.cpp_CWaterActor_process_FUN_00587280
@@ -2957,7 +2985,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/cow.cpp, Lines: 88, Types: ['warning_overlapping_globals', 'warning_type_propagation']
   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
     File: core/ammo.cpp, Lines: 90, Types: ['undefined_data', 'unrolled_strcpy']
-  core_stranger.cpp_FUN_00567530
+  core_stranger.cpp_CStranger_updateTurnBlending_FUN_00567530
     File: core/stranger.cpp, Lines: 90, Types: ['unrolled_memset', 'warning_overlapping_globals']
   core_door.cpp_CDoor_archive_FUN_0045ff80
     File: core/door.cpp, Lines: 92, Types: ['undefined_data', 'unrolled_strcpy']
@@ -2995,8 +3023,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/edittool.cpp, Lines: 169, Types: ['undefined_data', 'unrolled_strlen']
   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
     File: core/box.cpp, Lines: 176, Types: ['unrolled_memset', 'warning_unreachable']
-  core_charactr.cpp_FUN_0042bff0
-    File: core/charactr.cpp, Lines: 4, Types: ['param_count_too_few', 'unnamed_param']
   core_event.cpp_FUN_00492630
     File: core/event.cpp, Lines: 4, Types: ['param_count_too_few', 'unnamed_param']
   core_muzzle.cpp_FUN_0059dc70
@@ -3013,16 +3039,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/bodypart.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
   core_moon.cpp_FUN_00502790
     File: core/moon.cpp, Lines: 5, Types: ['unnamed_param']
-  core_set.cpp_FUN_00534d80
-    File: core/set.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
   wincore_winrun.cpp_FUN_0058ffc0
     File: wincore/winrun.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
   wincore_winrun.cpp_FUN_00590790
     File: wincore/winrun.cpp, Lines: 5, Types: ['param_count_too_few', 'unnamed_param']
-  engine_3d.c_FUN_00407890
-    File: engine/3d.c, Lines: 6, Types: ['unnamed_param', 'warning_overlapping_globals']
-  engine_3d.c_FUN_004078a0
-    File: engine/3d.c, Lines: 6, Types: ['unnamed_param', 'warning_overlapping_globals']
   core_charactr.cpp_FUN_00422c10
     File: core/charactr.cpp, Lines: 6, Types: ['unnamed_param']
   cockpit_drawsurf.cpp_FUN_00467910
@@ -3041,15 +3061,13 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/weapon.cpp, Lines: 7, Types: ['param_count_too_few', 'unnamed_param']
   core_muzzle.cpp_FUN_0059dce0
     File: core/muzzle.cpp, Lines: 7, Types: ['param_count_too_few', 'unnamed_param']
-  cockpit_ckptutil.c_FUN_0042f310
-    File: cockpit/ckptutil.c, Lines: 8, Types: ['stack_param', 'warning_overlapping_globals']
   cockpit_drawsurf.cpp_FUN_00467900
     File: cockpit/drawsurf.cpp, Lines: 8, Types: ['stack_param', 'warning_overlapping_globals']
   core_game.cpp_pollKeyStateOnChange_FUN_004b7550
     File: core/game.cpp, Lines: 8, Types: ['undefined_data']
   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
     File: core/setdir.cpp, Lines: 8, Types: ['undefined_data', 'warning_overlapping_globals']
-  engine_special.cpp_FUN_0055d6d7
+  engine_special.cpp_renderScanline_FUN_0055d6d7
     File: engine/special.cpp, Lines: 8, Types: ['warning_indirect_jump', 'warning_jumptable', 'warning_overlapping_globals']
   core_flashlit.cpp_FUN_004a1540
     File: core/flashlit.cpp, Lines: 9, Types: ['undefined_data', 'warning_overlapping_globals']
@@ -3073,14 +3091,18 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/game.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004f
     File: core/mirror.cpp, Lines: 10, Types: ['undefined_data']
+  engine_special.cpp_selectTexture_FUN_0055f5d0
+    File: engine/special.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
+  engine_special.cpp_updateTexture_FUN_0055f610
+    File: engine/special.cpp, Lines: 10, Types: ['undefined_data', 'warning_overlapping_globals']
+  engine_special.cpp_updateTextureBGRA_FUN_0055f710
+    File: engine/special.cpp, Lines: 10, Types: ['undefined_data', 'unresolved_funcptr', 'warning_overlapping_globals']
   core_water.cpp_CWater_captureTextures_FUN_00585de0
     File: core/water.cpp, Lines: 10, Types: ['undefined_data']
   core_actor.cpp_handleActorPropertyParseError_FUN_0040b380
     File: core/actor.cpp, Lines: 11, Types: ['undefined_data', 'warning_overlapping_globals']
   core_dcube.cpp_staticInit_FUN_00443d00
     File: core/dcube.cpp, Lines: 11, Types: ['undefined_data']
-  shape_edittool.cpp_FUN_00485560
-    File: shape/edittool.cpp, Lines: 11, Types: ['stack_param', 'warning_overlapping_globals']
   core_moon.cpp_CMoon_update_FUN_005024a0
     File: core/moon.cpp, Lines: 11, Types: ['unnamed_param', 'warning_overlapping_globals']
   core_slew.cpp_CSlew_init_FUN_00549380
@@ -3143,6 +3165,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/2d.c, Lines: 18, Types: ['undefined_data', 'warning_overlapping_globals']
   cockpit_ckptutil.c_setEdgeData_FUN_0042f6b0
     File: cockpit/ckptutil.c, Lines: 18, Types: ['pointer_cast', 'pointer_truncation']
+  core_event.cpp_CRuleList_remove_FUN_004924a0
+    File: core/event.cpp, Lines: 18, Types: ['pointer_stride_bytecount', 'warning_overlapping_globals']
   engine_mini3d.cpp_setAlpha_FUN_004f3570
     File: engine/mini3d.cpp, Lines: 19, Types: ['undefined_data', 'unresolved_funcptr', 'warning_overlapping_globals']
   sound_sndmain.cpp_set3DListenerOrient_FUN_005514f0
@@ -3155,8 +3179,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/fire.cpp, Lines: 20, Types: ['undefined_data', 'warning_overlapping_globals']
   core_fldnotes.cpp_CFieldNotes_setImageSuffix_FUN_004a56c0
     File: core/fldnotes.cpp, Lines: 20, Types: ['undefined_data']
-  core_netgame.cpp_FUN_0050b110
-    File: core/netgame.cpp, Lines: 20, Types: ['stack_param', 'warning_overlapping_globals']
   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00553610
     File: sound/sndmain.cpp, Lines: 20, Types: ['undefined_data', 'warning_overlapping_globals']
   core_turret.cpp_CTurret_updateInteraction_FUN_0057f970
@@ -3175,6 +3197,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/bugs.cpp, Lines: 22, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_charactr.cpp_CCharacter_getBoundingBox_FUN_004271e0
     File: core/charactr.cpp, Lines: 22, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
+  support_codec.cpp_CCodec_process_FUN_00433ee0
+    File: support/codec.cpp, Lines: 22, Types: ['unresolved_funcptr']
   core_flame.cpp_CFlame_setup_FUN_0049f270
     File: core/flame.cpp, Lines: 22, Types: ['undefined_data']
   core_bmppuzzl.cpp_processActivePuzzle_FUN_0059ac60
@@ -3375,10 +3399,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndmain.cpp, Lines: 32, Types: ['stack_ref', 'unresolved_funcptr', 'warning_overlapping_globals']
   core_succubus.cpp_CSuccubus_dtor_FUN_00570090
     File: core/succubus.cpp, Lines: 32, Types: ['negative_offset']
-  engine_texture.cpp_FUN_005739b0
+  engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0
     File: engine/texture.cpp, Lines: 32, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270
     File: core/tvbat.cpp, Lines: 32, Types: ['unaffected_reg', 'unrolled_memcpy']
+  core_xform.cpp_buildYFlipMatrix_FUN_00593540
+    File: core/xform.cpp, Lines: 32, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
   core_dcube.cpp_FUN_00446f50
     File: core/dcube.cpp, Lines: 33, Types: ['stack_param', 'undefined_data']
   shape_edittool.cpp_CEdButton_wasClicked_FUN_00485240
@@ -3389,7 +3415,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/ladder.cpp, Lines: 33, Types: ['unaffected_reg', 'unrolled_memcpy']
   engine_console.cpp_CConsole_scrollUp_FUN_004368f0
     File: engine/console.cpp, Lines: 34, Types: ['unrolled_memcpy']
-  core_crate.cpp_FUN_0043a350
+  core_crate.cpp_CCrate_explode_FUN_0043a350
     File: core/crate.cpp, Lines: 34, Types: ['unaffected_reg', 'unrolled_memcpy']
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004
     File: shape/edittool.cpp, Lines: 34, Types: ['bitcast_double_pair', 'pointer_cast']
@@ -3421,6 +3447,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/xform.cpp, Lines: 36, Types: ['unrolled_memcpy', 'warning_overlapping_globals']
   core_batman.cpp_CBatman_ctor_FUN_00412b20
     File: core/batman.cpp, Lines: 37, Types: ['unrolled_memset', 'unrolled_strcpy', 'warning_overlapping_globals']
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042e380
+    File: cockpit/ckptutil.c, Lines: 37, Types: ['pointer_cast', 'warning_overlapping_globals']
   shape_edittool.cpp_CPickList_setOkButtonText_FUN_00482150
     File: shape/edittool.cpp, Lines: 37, Types: ['unrolled_strcpy', 'unrolled_strlen', 'warning_overlapping_globals']
   shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004821c
@@ -3577,6 +3605,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/menu.cpp, Lines: 72, Types: ['raw_address_constant', 'raw_address_pointer_store', 'unresolved_funcptr']
   core_dstrendr.cpp_renderDepthTestStatistics16xUnrolled_FUN_0
     File: core/dstrendr.cpp, Lines: 83, Types: ['undefined_data', 'warning_overlapping_globals']
+  cockpit_ckptutil.c_generateScrollHeightMap_FUN_0042dae0
+    File: cockpit/ckptutil.c, Lines: 85, Types: ['pointer_cast', 'warning_overlapping_globals']
   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120
     File: core/netgame.cpp, Lines: 95, Types: ['pointer_stride_bytecount', 'undefined_data', 'warning_overlapping_globals']
   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00555c

@@ -5,6 +5,14 @@
 // Function prototypes for engine/drender.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_drender.cpp_renderTriangleTextured_FUN_0047a480
+// Address: 0047a480
+void __cdecl renderTriangleTextured(int *vertex_indices,int vertex_count);
+
+// Original: engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
+// Address: 0047ab00
+void __cdecl renderTriangleSimple(CVector3i *vertex_indices,int vertex_count);
+
 // Original: engine_drender.cpp_staticInit_FUN_00481a10
 // Address: 00481a10
 void __cdecl staticInit(void);

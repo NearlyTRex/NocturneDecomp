@@ -181,7 +181,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_0047b510(CDraculaBride 
       }
     }
   }
-  core_dracbrid_cpp_FUN_0047de00(this_ptr,delta_time);
+  core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0047de00(this_ptr,delta_time);
   iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
@@ -298,7 +298,7 @@ LAB_0047ba2f:
       }
       if (iVar9 == g_CDemonSetPtr->enemy_count) {
         _sprintf(acStack_530,"bride-%d?.wav");
-        core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_530,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_530,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,0x17,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -448,10 +448,10 @@ LAB_0047ba2f:
   case 9:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(acStack_5f8,"bride-%d?.wav");
-      core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_5f8,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_5f8,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd00(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_5f8,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_5f8,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -543,10 +543,10 @@ LAB_0047c5d3:
   case 0xe:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(acStack_4cc,"bride-%d?.wav");
-      core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_4cc,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_4cc,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd00(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_4cc,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_4cc,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -735,10 +735,10 @@ LAB_0047c5d3:
   case 0x17:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(acStack_594,"bride-%d?.wav");
-      core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_594,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_594,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd00(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0047d920(this_ptr,acStack_594,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(this_ptr,acStack_594,1.0);
       }
     }
     switch(this_ptr->mist_state) {

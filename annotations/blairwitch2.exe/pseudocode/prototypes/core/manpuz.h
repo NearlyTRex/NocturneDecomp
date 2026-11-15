@@ -73,9 +73,9 @@ void __cdecl CMansionPuzzleCircle::renderPanel(CMansionPuzzleCircle *this_ptr,in
 // Address: 004e63c0
 void __cdecl CMansionPuzzleCircle::renderGem(CMansionPuzzleCircle *this_ptr,int gem_index);
 
-// Original: core_manpuz.cpp_FUN_004e6820
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820
 // Address: 004e6820
-void __cdecl FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);
+void __cdecl CMansionPuzzleCircle::renderReflector(CMansionPuzzleCircle *this_ptr,int reflector_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0
 // Address: 004e68c0

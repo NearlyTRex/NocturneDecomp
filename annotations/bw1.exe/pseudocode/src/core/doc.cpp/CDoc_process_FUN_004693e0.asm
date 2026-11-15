@@ -18,9 +18,9 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
-;   core_charactr.cpp_FUN_00432f10
 ;   core_doc.cpp_FUN_00469550
 ;   core_game.cpp_CGame_slamDT_FUN_004d7f50
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_00469425
     PUSH dword ptr [ESP + 0x20]         ; 00469426
     PUSH EBX                            ; 0046942a
-    CALL core_charactr.cpp_FUN_00432f10 ; 0046942b
-        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432f10()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 ; 0046942b
+        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCharacter * this_ptr, float delta_time, int disable_search)
     MOV EAX,[0x0061d95c]                ; 00469430 | g_CGamePtr
     ADD ESP,0xc                         ; 00469435
     FLD float ptr [EAX + 0x294]         ; 00469438 | g_CGameInstance.delta_time_float

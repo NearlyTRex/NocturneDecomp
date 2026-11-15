@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[20]:
-;   cockpit_ckptutil.c_FUN_004387f0 at 0043882b
+;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_004387f0 at 0043882b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0 at 00537dfb
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 at 0053838a
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 005386a0

@@ -41,9 +41,9 @@ void __cdecl showCalibrationTestPattern(char *message_text);
 // Address: 004ebe30
 void __cdecl showCalibrationTest(void);
 
-// Original: core_menu.cpp_FUN_004ebf10
+// Original: core_menu.cpp_configureGraphicsOptions_FUN_004ebf10
 // Address: 004ebf10
-void __cdecl FUN_004ebf10(void);
+void __cdecl configureGraphicsOptions(void);
 
 // Original: core_menu.cpp_configureCustomKeys_FUN_004ecc70
 // Address: 004ecc70

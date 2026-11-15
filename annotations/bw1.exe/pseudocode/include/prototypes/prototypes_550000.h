@@ -36,8 +36,8 @@
 
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00550260(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr,int skip_prerender);
-void __cdecl core_set_cpp_FUN_00550da0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00551170(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonSet *this_ptr);
 void core_set_cpp_FUN_00551480(CDemonSet *param_1);
 void core_set_cpp_FUN_005516c0(CDemonSet *param_1);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_005518e0(CDemonSet *this_ptr,CDemonLight *light);
@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_00555ab0(CDemonSet *this
 void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00555ad0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00555ca0(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_00555ce0(CDemonSet *this_ptr,int *light_state_buffer);
-int core_set_cpp_FUN_00555d20(int *param_1,undefined4 param_2);
+void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00555d20(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00555e30(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00555fe0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00556040(CDemonSet *this_ptr,int expire_flag);
@@ -137,7 +137,7 @@ void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_0055b1e0(CDemonSet *
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_0055b220(CDemonSet *this_ptr,char *filename);
 void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_0055b280(CDemonSet *this_ptr,char *filename);
-void core_setdir_cpp_FUN_0055b330(CDemonSet *param_1);
+void __cdecl core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_0055b4c0(int x,int y,int grayscale_value);
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_0055b4f0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_0055b8f0(CDemonSet *this_ptr,_FILE *file_handle);
@@ -147,7 +147,7 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(SVDBox *obb_a,SVDBo
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_0055c020(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_0055c060(CDemonSet *this_ptr,CVector3f *position);
-void __cdecl core_setdir_cpp_FUN_0055c0a0(CDemonSet *this_ptr);
+void __cdecl core_setdir_cpp_CDemonSet_freeThumbs_FUN_0055c0a0(CDemonSet *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_0055c0b0(C3DSCamera *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_0055c0e0(C3DSCamera *this_ptr,uint flags);
 void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_0055c100(C3DSCamera *this_ptr);

@@ -30,7 +30,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
-;   core_crate.cpp_FUN_00449600
+;   core_crate.cpp_CCrate_explode_FUN_00449600
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004b9180
@@ -575,8 +575,8 @@ section .text
         ;   XREF to: 0054044b (UNCONDITIONAL_JUMP)  ; LAB_0054044b
     PUSH ESI                            ; 00540791
         ;   Label: LAB_00540791
-    CALL core_crate.cpp_FUN_00449600    ; 00540792
-        ;   XREF to: 00449600 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_00449600(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_00449600 ; 00540792
+        ;   XREF to: 00449600 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_00449600(CCrate * this_ptr)
     ADD ESP,0x4                         ; 00540797
     JMP 0x0054044b                      ; 0054079a
         ;   XREF to: 0054044b (UNCONDITIONAL_JUMP)  ; LAB_0054044b

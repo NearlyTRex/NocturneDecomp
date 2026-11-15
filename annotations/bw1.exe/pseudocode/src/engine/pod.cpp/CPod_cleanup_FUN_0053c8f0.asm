@@ -7,7 +7,7 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_main.c_FUN_00503a30 at 00503aa8
+;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503aa8
 ;   engine_pod.cpp_CPod_dtor_FUN_0053c5f0 at 0053c607
 ;
 ; Called Functions:

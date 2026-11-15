@@ -130,7 +130,7 @@ LAB_004d5052:
               bVar2 = true;
               if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI))
               {
-                iVar9 = core_hero_cpp_FUN_004cec50(this_ptr);
+                iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004cec50(&this_ptr->base);
                 bVar2 = false;
                 if (iVar9 != 0) goto LAB_004d50f7;
                 iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);
@@ -197,7 +197,7 @@ switchD_004d528c_default:
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                (iVar5 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(this_ptr),
                iVar5 == 0)) {
-              core_icepick_cpp_FUN_004d5780(this_ptr);
+              core_icepick_cpp_CIcePick_startThrowAttack_FUN_004d5780(this_ptr);
             }
           }
         }

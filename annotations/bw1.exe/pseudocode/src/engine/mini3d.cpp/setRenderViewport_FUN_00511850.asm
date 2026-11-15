@@ -12,8 +12,8 @@
 ; XREF[4]:
 ;   engine_mini3d.cpp_setRenderSurface_FUN_00514b70 at 00514bb4
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920 at 00496d10
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 at 00496fc6
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0 at 00496e3b
-;   shape_edittool.cpp_FUN_00496ee0 at 00496fc6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e8b6f

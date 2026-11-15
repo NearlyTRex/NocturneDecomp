@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   text_color
 ;
 ; XREF[3]:
-;   core_cloth.cpp_FUN_00441500 at 004416fd
+;   core_cloth.cpp_CCloth_renderBone_FUN_00441500 at 004416fd
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20 at 00564cf6
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004985b0 at 00498640
 ;

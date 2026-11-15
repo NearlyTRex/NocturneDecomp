@@ -33,7 +33,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051c2b2
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c2b2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_prye_cpp_005cd3f7
@@ -63,7 +63,7 @@
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
-;   core_prye.cpp_FUN_0051ee10
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -500,14 +500,14 @@ section .text
         ;   XREF to: 0051ec44 (CONDITIONAL_JUMP)  ; LAB_0051ec44
     PUSH 0x0                            ; 0051ec39
     PUSH EBX                            ; 0051ec3b
-    CALL core_prye.cpp_FUN_0051ee10     ; 0051ec3c
-        ;   XREF to: 0051ee10 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051ee10()
+    CALL core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 ; 0051ec3c
+        ;   XREF to: 0051ee10 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye * this_ptr, int arm_side)
     ADD ESP,0x8                         ; 0051ec41
     PUSH 0x1                            ; 0051ec44
         ;   Label: LAB_0051ec44
     PUSH EBX                            ; 0051ec46
-    CALL core_prye.cpp_FUN_0051ee10     ; 0051ec47
-        ;   XREF to: 0051ee10 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051ee10()
+    CALL core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 ; 0051ec47
+        ;   XREF to: 0051ee10 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye * this_ptr, int arm_side)
     MOV ESI,dword ptr [0x01ed3714]      ; 0051ec4c | DAT_01ed3714
     MOV EAX,[0x01ed36f4]                ; 0051ec52 | DAT_01ed36f4
     SHL ESI,0x4                         ; 0051ec57

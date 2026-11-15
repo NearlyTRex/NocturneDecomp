@@ -18,7 +18,7 @@ CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint f
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_mirror_cpp_FUN_004f98c0(&this_ptr->mirror,0);
+  pCVar1 = core_mirror_cpp_CMirror_dtor_FUN_004f98c0(&this_ptr->mirror,0);
   pCVar2 = (CGlass *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408930
                      ((CDemonActor *)&pCVar1[-3].reflection.corner3,1);

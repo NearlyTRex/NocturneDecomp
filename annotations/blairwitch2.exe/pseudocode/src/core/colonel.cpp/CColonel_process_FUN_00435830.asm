@@ -32,8 +32,8 @@
 ;   core_colonel.cpp_CColonel_processAI_FUN_00435e30
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -403,8 +403,8 @@ section .text
     JZ 0x00435c28                       ; 00435c7c
         ;   XREF to: 00435c28 (CONDITIONAL_JUMP)  ; LAB_00435c28
     PUSH EBX                            ; 00435c7e
-    CALL core_hero.cpp_FUN_004cec50     ; 00435c7f
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 00435c7f
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     XOR EBP,EBP                         ; 00435c84
     ADD ESP,0x4                         ; 00435c86
     TEST EAX,EAX                        ; 00435c89

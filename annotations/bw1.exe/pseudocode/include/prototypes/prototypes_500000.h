@@ -70,10 +70,10 @@ ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_0050301
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00503020(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_00503070(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_005030e0(char *format);
-void core_main_c_FUN_005031c0(void);
+void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005031c0(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_00503290(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv);
-void core_main_c_FUN_00503a30(void);
+void __cdecl core_main_c_finalizeGameSystems_FUN_00503a30(void);
 void __cdecl core_manpuz_cpp_staticInit_FUN_00503ac0(void);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10(void);
 CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30(CMansionPuzzleCircle *this_ptr);
@@ -140,8 +140,8 @@ CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_005071d0(C
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_ptr,uint flags);
 undefined8 core_marquee_cpp_FUN_005072c0(void);
 void core_marquee_cpp_FUN_00507340(void);
-int __cdecl engine_matrix_c_FUN_00507350(int angle);
-int __cdecl engine_matrix_c_FUN_00507390(int angle);
+int __cdecl engine_matrix_c_interpolatedSin_FUN_00507350(int angle);
+int __cdecl engine_matrix_c_interpolatedCos_FUN_00507390(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_005076b0(int pitch,int yaw,int roll);
 CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_005079d0(CVector3i *input_coords,CVector3i *output_coords);

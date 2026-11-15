@@ -16,7 +16,7 @@
 ;   support_trisock.cpp_FUN_00570ae0 at 00570c31
 ;   support_trisock.cpp_FUN_00570e20 at 00570e58
 ;   support_trisock.cpp_FUN_00570ea0 at 00570f22
-;   support_trisock.cpp_FUN_00571f10 at 00571f94
+;   support_trisock.cpp_cleanupWinsock_FUN_00571f10 at 00571f94
 ;
 ; Referenced Globals:
 ;   void* PTR_Sleep_005b3658 = 001b4236

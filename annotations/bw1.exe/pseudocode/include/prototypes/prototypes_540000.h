@@ -112,7 +112,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0054d370(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_FUN_0054e6a0(void);
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0(CDemonSet *this_ptr,int light_index);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet *this_ptr,int layer_flag);
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet *this_ptr,CDemonActor *actor);

@@ -74,8 +74,9 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
   if (iVar5 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00433c60(this_ptr,param_2);
-  core_charactr_cpp_FUN_00432330(this_ptr,param_2,(this_ptr->base).pool_me == 1);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,param_2);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            ((CCharacter *)this_ptr,param_2,(uint)((this_ptr->base).pool_me == 1));
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;

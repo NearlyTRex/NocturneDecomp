@@ -25,9 +25,9 @@ void __cdecl CPackedBitmapSet::alloc(CPackedBitmapSet *this_ptr,int bitmap_count
 // Address: 00517710
 void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 
-// Original: cockpit_pkbmpset.cpp_FUN_005177e0
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0
 // Address: 005177e0
-void FUN_005177e0(void);
+void __cdecl CPackedBitmapSet::loadJoinedRAW(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60
 // Address: 00517a60

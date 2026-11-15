@@ -58,8 +58,8 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_00435320
+;   core_colonel.cpp_CColonel_processAI_FUN_00444b50
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00445140
-;   core_colonel.cpp_FUN_00444b50
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
@@ -112,8 +112,8 @@ section .text
         ;   XREF to: 004445e2 (CONDITIONAL_JUMP)  ; LAB_004445e2
     PUSH dword ptr [ESP + 0xdc]         ; 004445d2
     PUSH EBX                            ; 004445d9
-    CALL core_colonel.cpp_FUN_00444b50  ; 004445da
-        ;   XREF to: 00444b50 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_FUN_00444b50(CColonel * this_ptr, float delta_time)
+    CALL core_colonel.cpp_CColonel_processAI_FUN_00444b50 ; 004445da
+        ;   XREF to: 00444b50 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_CColonel_processAI_FUN_00444b50(CColonel * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004445df
     PUSH dword ptr [ESP + 0xdc]         ; 004445e2
         ;   Label: LAB_004445e2
@@ -301,8 +301,8 @@ section .text
     PUSH dword ptr [EBX + 0x1ffc0]      ; 00444841
     PUSH EAX                            ; 00444847
     LEA ESI,[ESP + 0x20]                ; 00444848
-    CALL core_xform.cpp_FUN_005b7ed0    ; 0044484c
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 0044484c
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00444851
     LEA EAX,[ESP + 0xc]                 ; 00444854
     PUSH EAX                            ; 00444858

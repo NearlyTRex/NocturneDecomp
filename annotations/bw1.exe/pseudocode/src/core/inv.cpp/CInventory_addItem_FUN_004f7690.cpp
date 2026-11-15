@@ -1183,7 +1183,7 @@ LAB_004f84d6:
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
       *(int *)(pCVar5[4].actor_name + 8) = pCStack_24->ammo_count;
       (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
-      core_actor_cpp_FUN_00408560(item_actor);
+      core_actor_cpp_deleteActor_FUN_00408560(item_actor);
       engine_console_cpp_CConsole_printf_FUN_00445430
                 (g_CConsolePtr,"Found dynamite.  Creating weapon for it.\n");
       core_inv_cpp_CInventory_addItem_FUN_004f7690(this_ptr,pCVar5,1);
@@ -1254,7 +1254,7 @@ LAB_004f84d6:
             *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar10[2].validation_magic;
             (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
             (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);
-            core_actor_cpp_FUN_00408560(pCStack_18->items[0]);
+            core_actor_cpp_deleteActor_FUN_00408560(pCStack_18->items[0]);
             pCStack_18->items[0] = actor;
             core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(pCVar5);
             bVar2 = true;

@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 166,
+    "complexity_score": 120,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 231
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056bd50",
+    "address_range": [
+      [
+        "0056bd50",
+        "0056bef4"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0056bd50",
+    "signature": "CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0056bd50(CVector3f *direction,float *offset_pair,CVector3f *out_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d0c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0"
+    },
+    {
+      "addr": "005838f0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0"
+    },
+    {
+      "addr": "005b9924",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_005b9924"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ebc5d",
+      "name": "DAT_005ebc5d",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.6453900709219855,
+    "instruction_count": 141,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 15,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 9,
+      "COPY": 511,
+      "FLOAT2FLOAT": 44,
+      "FLOAT_ADD": 4,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 16,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 3,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 6,
+      "INT_ADD": 74,
+      "INT_AND": 51,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 32,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 40,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 24,
+      "INT_ZEXT": 44,
+      "LOAD": 49,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 34
+    },
+    "pcode_op_count": 1078
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0058e9a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00522950",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005c37e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8881
+    },
+    "nocturne.exe": {
+      "addr": "0053d790",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8881
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "offset_pair",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056bd58",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_1028",
+      "severity": "moderate",
+      "text": "float afStackY_1028 [3];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 12,
+      "match": "apCStackY_101c",
+      "severity": "moderate",
+      "text": "CVector3f *apCStackY_101c [1002];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(float *)((int)apCStack_2c",
+      "severity": "moderate",
+      "text": "pfVar2 = (float *)((int)apCStack_2c[0] + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

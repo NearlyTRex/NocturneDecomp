@@ -25,7 +25,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004cc970
+;   core_gore.cpp_getBloodColorParams_FUN_004cc970
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_00538400
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -249,8 +249,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ccecb
     MOV EDX,dword ptr [EAX + 0x40]      ; 004ccece
     PUSH EDX                            ; 004cced1
-    CALL core_gore.cpp_FUN_004cc970     ; 004cced2
-        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cc970()
+    CALL core_gore.cpp_getBloodColorParams_FUN_004cc970 ; 004cced2
+        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type, int * out_light, int * out_color, int * out_fog)
     ADD ESP,0x10                        ; 004cced7
     XOR ECX,ECX                         ; 004cceda
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004ccedc

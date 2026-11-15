@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_ptr,float delta_time)
@@ -18,14 +17,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
   float fVar4;
   float fVar5;
   int iVar6;
-  float *pfVar7;
+  uint *puVar7;
   byte bVar8;
-  float afStackY_100c [994];
+  uint auStackY_100c [994];
   CBoundingBox3D *in_stack_ffffff88;
   SDamageInfo SStack_70;
   float fStack_24;
-  float fStack_20;
-  float afStack_1c [3];
+  uint uStack_20;
+  CVector3f CStack_1c;
   
   bVar8 = 0;
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
@@ -54,10 +53,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
         fVar3 = this_ptr->physics_timer - delta_time;
         this_ptr->physics_timer = fVar3;
         if (0.0 <= fVar3) {
-          pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
+          puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
           fStack_24 = (this_ptr->base).location.position.x;
-          (&fStack_20)[(uint)bVar8 * -2] = *pfVar7;
-          afStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2] = pfVar7[(uint)bVar8 * -2 + 1];
+          (&uStack_20)[(uint)bVar8 * -2] = *puVar7;
+          *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               puVar7[(uint)bVar8 * -2 + 1];
           core_box_cpp_CBox_process_FUN_0041b410(&this_ptr->physics_box,delta_time);
           (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
           pUVar1 = &(this_ptr->base).orient;
@@ -83,8 +83,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
             SStack_70.attacker = &this_ptr->base;
             SStack_70.wielder = &this_ptr->base;
             SStack_70.damage_type = DAMAGE_TYPE_BODY_PART;
-            core_setcolid_cpp_FUN_0053ed10
-                      (g_CDemonSetPtr,afStack_1c,&(this_ptr->base).location,&SStack_70);
+            core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10
+                      (g_CDemonSetPtr,&CStack_1c,&(this_ptr->base).location.position,&SStack_70);
             core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(this_ptr,delta_time);
             return;
           }

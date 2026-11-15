@@ -21,7 +21,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041fa65
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 004216c0
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e47d
-;   core_cloth.cpp_FUN_0043f160 at 0043f1b2
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043f160 at 0043f1b2
 ;   core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0 at 00445fca
 ;   ... and 37 more
 ;

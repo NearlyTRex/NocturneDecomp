@@ -74,14 +74,14 @@ ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004e426
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4270(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_004e42c0(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_004e4330(char *format);
-void core_main_c_FUN_004e4400(void);
+void __cdecl core_main_c_showDeveloperToolsMenu_FUN_004e4400(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004e44d0(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv);
-void core_main_c_FUN_004e4c70(void);
+void __cdecl core_main_c_finalizeGameSystems_FUN_004e4c70(void);
 undefined8 core_main_c_FUN_004e4d00(void);
 void core_main_c_FUN_004e4d80(void);
-int __cdecl engine_matrix_c_FUN_004e4d90(int angle);
-int engine_matrix_c_FUN_004e4dd0(uint param_1);
+int __cdecl engine_matrix_c_interpolatedSin_FUN_004e4d90(int angle);
+int __cdecl engine_matrix_c_interpolatedCos_FUN_004e4dd0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e4e10(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e50f0(int pitch,int yaw,int roll);
 void __cdecl engine_matrix_c_transformToCache_FUN_004e5540(int cacheIndex,CVector3i *inputPoint);
@@ -128,7 +128,7 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004e80f0(int *sensitivity_
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004e8380(char *message_text);
 void __cdecl core_menu_cpp_showCalibrationTest_FUN_004e84d0(void);
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004e85a0(void);
-undefined4 core_menu_cpp_FUN_004e8f30(void);
+int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_004e8f30(void);
 void __cdecl core_menu_cpp_configureCustomKeys_FUN_004e8f80(void);
 void __cdecl core_menu_cpp_configureSoundOptions_FUN_004e94f0(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_004ea280(int initialize_systems);

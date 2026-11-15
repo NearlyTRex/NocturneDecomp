@@ -219,9 +219,9 @@ LAB_0051e8aa:
       pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
                          ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
       if ((pCVar4 != (CDemonActor *)0x0) && (this_ptr->weapon != (CWeapon *)0x0)) {
-        core_prye_cpp_FUN_0051ee10(this_ptr,0);
+        core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(this_ptr,0);
       }
-      core_prye_cpp_FUN_0051ee10(this_ptr,1);
+      core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(this_ptr,1);
       iVar14 = _DAT_01ed36f0;
       puVar7 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3714].w
       ;

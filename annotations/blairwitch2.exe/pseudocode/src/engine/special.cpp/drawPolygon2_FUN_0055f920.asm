@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[6]:
-;   core_dpart.cpp_FUN_00461f70 at 00461ff1
-;   core_dpart.cpp_FUN_004625f0 at 0046266d
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431490
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 00433144
+;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0 at 0046266d
+;   engine_drender.cpp_renderTriangleTextured_FUN_00461f70 at 00461ff1
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e1f0
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050 at 0051d126
 ;

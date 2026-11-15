@@ -35,8 +35,8 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70
 ;   core_inv.cpp_FUN_004db9e0
+;   core_prye.cpp_CPrye_getThrowDirection_FUN_00524800
 ;   core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360
-;   core_prye.cpp_FUN_00524800
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0053cff0
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 005221aa
     LEA ESI,[EBP + -0x42]               ; 005221ab
     LEA EDI,[EBP + -0x12]               ; 005221ae
-    CALL core_prye.cpp_FUN_00524800     ; 005221b1
-        ;   XREF to: 00524800 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00524800()
+    CALL core_prye.cpp_CPrye_getThrowDirection_FUN_00524800 ; 005221b1
+        ;   XREF to: 00524800 (UNCONDITIONAL_CALL)  ; CVector3f * core_prye.cpp_CPrye_getThrowDirection_FUN_00524800(CPrye * this_ptr, CVector3f * out_direction)
     ADD ESP,0x4                         ; 005221b6
     LEA EAX,[EBP + -0x12]               ; 005221b9
     LEA ESI,[EBP + -0x42]               ; 005221bc

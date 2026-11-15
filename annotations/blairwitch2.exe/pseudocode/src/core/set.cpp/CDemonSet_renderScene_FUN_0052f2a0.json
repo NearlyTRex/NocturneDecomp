@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 838,
-    "complexity_score": 668,
+    "complexity_score": 699,
     "cross_reference_count": 1,
     "function_call_count": 38,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 323,
-    "suspect_count": 30,
+    "pseudocode_lines": 324,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -20,7 +20,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1161
+    "total_lines": 1162
   },
   "cross_references": [
     {
@@ -110,19 +110,19 @@
       "name": "core_dcamera.cpp_FUN_00440500"
     },
     {
-      "addr": "0044a520",
-      "is_variadic": false,
-      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520"
-    },
-    {
       "addr": "0044b020",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044b020"
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020"
     },
     {
       "addr": "0044b050",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044b050"
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044b050"
+    },
+    {
+      "addr": "0044a520",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520"
     },
     {
       "addr": "0049c780",
@@ -688,7 +688,7 @@
       "line": 68,
       "match": "DAT_01fc8e88",
       "severity": "mild",
-      "text": "if ((*(CDemonLight **)(&DAT_01fc8e88 + iVar8))->light_enabled_flag != 0) {",
+      "text": "if ((*(CDemonLight **)(&DAT_01fc8e88 + iVar9))->light_enabled_flag != 0) {",
       "type": "undefined_data"
     },
     {
@@ -696,7 +696,7 @@
       "line": 70,
       "match": "DAT_01fc8e88",
       "severity": "mild",
-      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)(&DAT_01fc8e88 + iVar8));",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)(&DAT_01fc8e88 + iVar9));",
       "type": "undefined_data"
     },
     {
@@ -704,15 +704,15 @@
       "line": 80,
       "match": "*(CDemonLight **)(local_24 + 0x1fc960c",
       "severity": "moderate",
-      "text": "light_source = *(CDemonLight **)(local_24 + 0x1fc960c);",
+      "text": "pCVar3 = *(CDemonLight **)(local_24 + 0x1fc960c);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 90,
-      "match": "*(CDemonLight **)(iVar5 + 0x1fc960c",
+      "match": "*(CDemonLight **)(iVar6 + 0x1fc960c",
       "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)(iVar5 + 0x1fc960c));",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)(iVar6 + 0x1fc960c));",
       "type": "raw_address_pointer_store"
     },
     {
@@ -726,17 +726,17 @@
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 112,
-      "match": "*(CDemonGlobe **)(iVar5 + 0x1fc9620",
+      "match": "*(CDemonGlobe **)(iVar6 + 0x1fc9620",
       "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)(iVar5 + 0x1fc9620),1);",
+      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)(iVar6 + 0x1fc9620),1);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 126,
-      "match": "*(CDemonGlobe **)(iVar5 + 0x1fc97b4",
+      "match": "*(CDemonGlobe **)(iVar6 + 0x1fc97b4",
       "severity": "moderate",
-      "text": "globe = *(CDemonGlobe **)(iVar5 + 0x1fc97b4);",
+      "text": "globe = *(CDemonGlobe **)(iVar6 + 0x1fc97b4);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -752,7 +752,7 @@
       "line": 160,
       "match": "DAT_01fc8e88",
       "severity": "mild",
-      "text": "puVar6 = (uint *)(&DAT_01fc8e88 + iVar8);",
+      "text": "puVar7 = (uint *)(&DAT_01fc8e88 + iVar9);",
       "type": "undefined_data"
     },
     {
@@ -768,7 +768,7 @@
       "line": 206,
       "match": "(uint *)((int)local_20",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)local_20 + (uint)bVar9 * -8 + 8);",
+      "text": "puVar7 = (uint *)((int)local_20 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -776,7 +776,7 @@
       "line": 208,
       "match": "&stack0xffffff80",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar9 * -8) = *puVar6;",
+      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar10 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
@@ -784,7 +784,7 @@
       "line": 209,
       "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -792,7 +792,7 @@
       "line": 213,
       "match": "&stack0xffffff80",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar9 * -8);",
+      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar10 * -8);",
       "type": "stack_ref"
     },
     {
@@ -800,15 +800,31 @@
       "line": 215,
       "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 257,
+      "match": "*(CDemonLight **)(local_40 + 0x1fc960c",
+      "severity": "moderate",
+      "text": "local_1c = *(CDemonLight **)(local_40 + 0x1fc960c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 261,
+      "match": "(float *)((int)local_1c",
+      "severity": "moderate",
+      "text": "pfVar8 = (float *)((int)local_1c + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 206,
       "match": "(int)local_20",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)local_20 + (uint)bVar9 * -8 + 8);",
+      "text": "puVar7 = (uint *)((int)local_20 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -816,7 +832,7 @@
       "line": 212,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -824,7 +840,15 @@
       "line": 214,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 261,
+      "match": "(int)local_1c",
+      "severity": "moderate",
+      "text": "pfVar8 = (float *)((int)local_1c + (uint)bVar10 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -832,7 +856,7 @@
       "line": 266,
       "match": "(int)&local_78",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + 4) = afStack_68[(uint)bVar9 * -2];",
+      "text": "*(float *)((int)&local_78 + (uint)bVar10 * -8 + 4) = afStack_68[(uint)bVar10 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -840,23 +864,23 @@
       "line": 267,
       "match": "(int)&local_78",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(float *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 307,
+      "line": 308,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pCVar3->previous_transform_state).position.x = (pCVar3->location).position.x;",
+      "text": "(pCVar4->previous_transform_state).position.x = (pCVar4->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 313,
+      "line": 314,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = (pCVar3->orient).vec.x;",
+      "text": "(pUVar1->vec).x = (pCVar4->orient).vec.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -864,7 +888,7 @@
       "line": 212,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -872,7 +896,7 @@
       "line": 214,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -880,7 +904,7 @@
       "line": 266,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + 4) = afStack_68[(uint)bVar9 * -2];",
+      "text": "*(float *)((int)&local_78 + (uint)bVar10 * -8 + 4) = afStack_68[(uint)bVar10 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -888,23 +912,23 @@
       "line": 267,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "text": "*(float *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 249,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "match": "pCVar5 = (T *)pCVar5->ARRAY",
       "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 318,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 319,
+      "match": "pCVar5 = (T *)pCVar5->ARRAY",
       "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
       "type": "shadow_pointer_walk"
     }
   ]

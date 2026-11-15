@@ -147,7 +147,7 @@ void core_shadow_cpp_FUN_005438d0(CEnemy *param_1,float param_2)
   iVar14 = pSVar7->state_index;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar16->base);
   fStack_2c = (float)pSVar7->frame_count;
-  core_charactr_cpp_FUN_00433c60(param_1,param_2);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(&param_1->base,param_2);
   iVar8 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)(param_1);
   if (iVar8 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00556be0((uint)param_1[1].base.base.orient.vec.x);

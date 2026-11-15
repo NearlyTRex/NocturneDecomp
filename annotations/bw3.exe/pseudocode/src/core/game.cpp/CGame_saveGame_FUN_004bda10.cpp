@@ -118,7 +118,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004bda10(CGame *this_ptr,char *sav
              (double)this_ptr->total_game_time,(double)this_ptr->end_timer,
              this_ptr->damageable_enemy_count,this_ptr->total_kill_count);
   FUN_005a3140();
-  core_set_cpp_FUN_0053b6e0(g_CDemonSetPtr,file_handle);
+  core_set_cpp_CDemonSet_saveStateInfo_FUN_0053b6e0(g_CDemonSetPtr,file_handle);
   core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(g_CFieldNotesPtr,file_handle);
   _fclose(file_handle);
   DAT_007df9c0 = (_FILE *)0x0;

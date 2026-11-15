@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_hero.cpp_FUN_004d2cd0 at 004d2cda
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0 at 004d2cda
 ;   core_inv.cpp_CInventory_load_FUN_004dc750 at 004dc772
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 0051843f
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052dff8

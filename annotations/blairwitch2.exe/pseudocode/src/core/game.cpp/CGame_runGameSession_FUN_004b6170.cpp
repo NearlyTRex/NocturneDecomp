@@ -337,7 +337,7 @@ LAB_004b6635:
       local_18 = 1;
       goto LAB_004b66e4;
     }
-    core_game_cpp_FUN_004bcbf0(this_ptr);
+    core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(this_ptr);
     if (this_ptr->wait_for_keypress != 0) {
       wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
     }

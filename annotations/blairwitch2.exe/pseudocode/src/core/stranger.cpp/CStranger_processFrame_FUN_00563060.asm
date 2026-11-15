@@ -712,8 +712,8 @@ section .text
     ADD ESP,0x4                         ; 0056392d
     PUSH dword ptr [EBP + 0x18]         ; 00563930
     PUSH EBX                            ; 00563933
-    CALL core_stranger.cpp_FUN_00567530 ; 00563934
-        ;   XREF to: 00567530 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00567530(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_updateTurnBlending_FUN_00567530 ; 00563934
+        ;   XREF to: 00567530 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateTurnBlending_FUN_00567530(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00563939
     CMP dword ptr [ESP + 0x420],0x0     ; 0056393c
     JZ 0x0056395e                       ; 00563944
@@ -1057,14 +1057,14 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00563dad
     PUSH 0x0                            ; 00563db0
     PUSH EBX                            ; 00563db2
-    CALL core_stranger.cpp_FUN_0056bf00 ; 00563db3
-        ;   XREF to: 0056bf00 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_0056bf00(CStranger * this_ptr, int hand_index, float delta_time)
+    CALL core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00 ; 00563db3
+        ;   XREF to: 0056bf00 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger * this_ptr, int hand_index, float delta_time)
     ADD ESP,0xc                         ; 00563db8
     PUSH dword ptr [EBP + 0x18]         ; 00563dbb
     PUSH 0x1                            ; 00563dbe
     PUSH EBX                            ; 00563dc0
-    CALL core_stranger.cpp_FUN_0056bf00 ; 00563dc1
-        ;   XREF to: 0056bf00 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_0056bf00(CStranger * this_ptr, int hand_index, float delta_time)
+    CALL core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00 ; 00563dc1
+        ;   XREF to: 0056bf00 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00(CStranger * this_ptr, int hand_index, float delta_time)
     ADD ESP,0xc                         ; 00563dc6
     PUSH dword ptr [EBP + 0x18]         ; 00563dc9
     PUSH EBX                            ; 00563dcc

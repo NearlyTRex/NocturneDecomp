@@ -22,7 +22,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290(
   _DAT_01c35e50 = this_ptr->clip_right;
   _DAT_01c35e4c = (CDrawSurface *)this_ptr->clip_top;
   _DAT_01c35e54 = this_ptr->clip_bottom;
-  disabled = cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f300();
+  disabled = cockpit_ckptutil_c_isLineClippingDisabled_FUN_0042f300();
   cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(1);
   cockpit_ckptutil_c_drawLineAA_FUN_0042e930
             (y1 + this_ptr->x,x2 + this_ptr->y,y2 + this_ptr->x,in_stack_00000018 + this_ptr->y,

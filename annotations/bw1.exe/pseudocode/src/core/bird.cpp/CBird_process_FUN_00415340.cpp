@@ -38,7 +38,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
   float afStack_34 [4];
   float fStack_24;
   CVector3f CStack_20;
-  uint uStack_14;
+  int iStack_14;
   
   bVar5 = 0;
   iVar3 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(&this_ptr->base,delta_time);
@@ -47,7 +47,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_00434790(&this_ptr->base,delta_time);
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
-  uStack_14 = 0;
+  iStack_14 = 0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.x =
@@ -82,7 +82,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
          *(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(this_ptr_01,pCVar6,blood_type);
     this_ptr->pool_me = 1;
-    uStack_14 = 1;
+    iStack_14 = 1;
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
@@ -165,7 +165,8 @@ LAB_004154bd:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(&this_ptr->base,&CStack_74);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(&(this_ptr->base).model);
-  core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,uStack_14);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
+            (&this_ptr->base,delta_time,iStack_14);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80(&this_ptr->base,delta_time);
   return;
 }

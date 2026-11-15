@@ -11,7 +11,7 @@
 ; uint             Stack[0x14]:4   blend_color
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004c2810 at 004c3a55
+;   engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810 at 004c3a55
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006104f0

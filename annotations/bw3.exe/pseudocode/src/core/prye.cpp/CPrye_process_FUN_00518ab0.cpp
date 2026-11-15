@@ -18,7 +18,8 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
   float fStack_10;
   float fStack_c;
   
-  iVar2 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
+  iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     if (0.0 < (this_ptr->base).base.bind_time) {
       core_prye_cpp_FUN_00526dc0(this_ptr,delta_time);
@@ -56,7 +57,8 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
         this_ptr->quick_turn_active = 0;
       }
     }
-    core_charactr_cpp_FUN_00432330(this_ptr,delta_time,iVar2 != 0);
+    core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+              ((CCharacter *)this_ptr,delta_time,(uint)(iVar2 != 0));
     fStack_c = g_CGamePtr->delta_time_float;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                        (&(this_ptr->base).base.model.base);
@@ -77,12 +79,12 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
     }
     if (((this_ptr->base).action_pending == 7) || (bVar1)) {
       fStack_10 = delta_time * (float)_DAT_005cd01f;
-      core_prye_cpp_FUN_00518cd0(this_ptr,fStack_10);
-      core_prye_cpp_FUN_00518cd0(this_ptr,fStack_10);
-      core_prye_cpp_FUN_00518cd0(this_ptr,fStack_10);
+      core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);
+      core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);
+      core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,fStack_10);
       delta_time = fStack_10;
     }
-    core_prye_cpp_FUN_00518cd0(this_ptr,delta_time);
+    core_prye_cpp_CPrye_processFrame_FUN_00518cd0(this_ptr,delta_time);
     core_game_cpp_CGame_slamDT_FUN_004bf3a0(g_CGamePtr,fStack_c);
   }
   return;

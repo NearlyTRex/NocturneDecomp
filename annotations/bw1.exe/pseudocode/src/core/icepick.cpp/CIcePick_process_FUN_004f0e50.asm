@@ -257,8 +257,8 @@ section .text
     LEA EAX,[EBX + 0x1fae8]             ; 004f111a
         ;   Label: LAB_004f111a
     PUSH EAX                            ; 004f1120
-    CALL core_inv.cpp_FUN_004f9f10      ; 004f1121
-        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9f10()
+    CALL core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 ; 004f1121
+        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004f9f10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004f1126
     MOV EDX,dword ptr [0x02c99770]      ; 004f1129 | g_CWeaponClassInfo.name_hash
     PUSH EDX                            ; 004f112f
@@ -301,8 +301,8 @@ section .text
     PUSH dword ptr [EBX + 0x1ffc8]      ; 004f11a1
     PUSH EAX                            ; 004f11a7
     LEA ESI,[ESP + 0x10]                ; 004f11a8
-    CALL core_xform.cpp_FUN_005b7ed0    ; 004f11ac
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 004f11ac
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004f11b1
     LEA EAX,[ESP + 0x1c]                ; 004f11b4
     PUSH EAX                            ; 004f11b8
@@ -319,8 +319,8 @@ section .text
     PUSH dword ptr [ESP + 0xd0]         ; 004f11ce
         ;   Label: LAB_004f11ce
     PUSH EBX                            ; 004f11d5
-    CALL core_icepick.cpp_FUN_004f1670  ; 004f11d6
-        ;   XREF to: 004f1670 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f1670(CIcePick * this_ptr, float delta_time)
+    CALL core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670 ; 004f11d6
+        ;   XREF to: 004f1670 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f11db
     PUSH dword ptr [ESP + 0xd0]         ; 004f11de
     PUSH EBX                            ; 004f11e5
@@ -337,8 +337,8 @@ section .text
     PUSH dword ptr [ESP + 0xd0]         ; 004f11f9
         ;   Label: LAB_004f11f9
     PUSH EBX                            ; 004f1200
-    CALL core_icepick.cpp_FUN_004f1b50  ; 004f1201
-        ;   XREF to: 004f1b50 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f1b50(CIcePick * this_ptr, float delta_time)
+    CALL core_icepick.cpp_CIcePick_processAI_FUN_004f1b50 ; 004f1201
+        ;   XREF to: 004f1b50 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_processAI_FUN_004f1b50(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f1206
     JMP 0x004f0e93                      ; 004f1209
         ;   XREF to: 004f0e93 (UNCONDITIONAL_JUMP)  ; LAB_004f0e93
@@ -490,8 +490,8 @@ section .text
     JZ 0x004f0f65                       ; 004f139d
         ;   XREF to: 004f0f65 (CONDITIONAL_JUMP)  ; LAB_004f0f65
     PUSH EBX                            ; 004f13a3
-    CALL core_icepick.cpp_FUN_004f17e0  ; 004f13a4
-        ;   XREF to: 004f17e0 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_FUN_004f17e0(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f17e0 ; 004f13a4
+        ;   XREF to: 004f17e0 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f17e0(CIcePick * this_ptr)
     ADD ESP,0x4                         ; 004f13a9
     TEST EAX,EAX                        ; 004f13ac
     JNZ 0x004f0f65                      ; 004f13ae

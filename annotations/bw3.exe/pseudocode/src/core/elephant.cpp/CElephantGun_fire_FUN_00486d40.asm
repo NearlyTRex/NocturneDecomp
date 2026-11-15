@@ -32,7 +32,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
-;   core_crate.cpp_FUN_004461c0
+;   core_crate.cpp_CCrate_explode_FUN_004461c0
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
@@ -616,8 +616,8 @@ section .text
         ;   XREF to: 00487506 (UNCONDITIONAL_JUMP)  ; LAB_00487506
     PUSH ESI                            ; 004874fd
         ;   Label: LAB_004874fd
-    CALL core_crate.cpp_FUN_004461c0    ; 004874fe
-        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_004461c0(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_004461c0 ; 004874fe
+        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_004461c0(CCrate * this_ptr)
     ADD ESP,0x4                         ; 00487503
     MOV ECX,dword ptr [ESP + 0x170]     ; 00487506
         ;   Label: LAB_00487506

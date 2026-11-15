@@ -11,7 +11,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa839
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 at 004ac919
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be051
-;   core_game.cpp_FUN_004be8d0 at 004bea37
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004bea37
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f7383
 ;
 ; Referenced Globals:

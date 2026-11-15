@@ -205,13 +205,13 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 // Address: 00492350
 void __cdecl CRuleList::clear(CRuleList *this_ptr);
 
-// Original: core_event.cpp_FUN_00492360
+// Original: core_event.cpp_CRuleList_insert_FUN_00492360
 // Address: 00492360
-void FUN_00492360(void);
+void __cdecl CRuleList::insert(CRuleList *this_ptr,int index,char *condition,char *event);
 
-// Original: core_event.cpp_FUN_004924a0
+// Original: core_event.cpp_CRuleList_remove_FUN_004924a0
 // Address: 004924a0
-void FUN_004924a0(void);
+void __cdecl CRuleList::remove(CRuleList *this_ptr,int index);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00492570
 // Address: 00492570

@@ -52,11 +52,11 @@
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0047abd0
 ;   shape_edittool.cpp_CInputString_deleteSelection_FUN_0047ab80
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0
-;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -133,8 +133,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x364]     ; 0047d352
         ;   Label: LAB_0047d352
     PUSH EAX                            ; 0047d359
-    CALL shape_edittool.cpp_FUN_0047e870 ; 0047d35a
-        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e870()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 ; 0047d35a
+        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047d35f
     LEA EAX,[ESP + 0x208]               ; 0047d362
     PUSH EAX                            ; 0047d369

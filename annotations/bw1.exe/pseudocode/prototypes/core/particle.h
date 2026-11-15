@@ -25,6 +25,6 @@ void __cdecl CParticle::process(CParticle *this_ptr);
 // Address: 005326d0
 void __cdecl CParticle::render(CParticle *this_ptr);
 
-// Original: core_particle.cpp_FUN_00532700
+// Original: core_particle.cpp_CParticle_onCollision_FUN_00532700
 // Address: 00532700
-undefined4 FUN_00532700(void);
+int __cdecl CParticle::onCollision(CParticle *this_ptr,CVector3f *collision_normal);

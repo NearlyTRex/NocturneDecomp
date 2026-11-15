@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   param_2
 ;
 ; XREF[5]:
-;   core_menu.cpp_FUN_004ebf10 at 004ec023
 ;   core_menu.cpp_configureCustomKeys_FUN_004ecc70 at 004ecd08
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec023
 ;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed2fd
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee51d
 ;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee239

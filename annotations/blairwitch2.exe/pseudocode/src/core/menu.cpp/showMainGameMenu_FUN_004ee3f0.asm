@@ -32,9 +32,9 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
-;   core_game.cpp_FUN_004bc840
-;   core_main.c_FUN_004e45e0
+;   core_main.c_showDeveloperToolsMenu_FUN_004e45e0
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0
 ;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0
 ;   core_moon.cpp_CMoon_free_FUN_00502450
@@ -308,8 +308,8 @@ section .text
     PUSH 0x2                            ; 004ee69d
     MOV ESI,dword ptr [0x00616494]      ; 004ee69f | g_CGamePtr
     PUSH ESI                            ; 004ee6a5 | g_CGameInstance
-    CALL core_game.cpp_FUN_004bc840     ; 004ee6a6
-        ;   XREF to: 004bc840 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bc840()
+    CALL core_game.cpp_CGame_showChapterSelect_FUN_004bc840 ; 004ee6a6
+        ;   XREF to: 004bc840 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004bc840(CGame * this_ptr, int select_mode)
         ;   Label: LAB_004ee6a6
     ADD ESP,0x8                         ; 004ee6ab
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004ee6ae
@@ -396,8 +396,8 @@ section .text
     CALL core_sound.cpp_CSound_reset_FUN_0055adb0 ; 004ee76c
         ;   XREF to: 0055adb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0055adb0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004ee771
-    CALL core_main.c_FUN_004e45e0       ; 004ee774
-        ;   XREF to: 004e45e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e45e0()
+    CALL core_main.c_showDeveloperToolsMenu_FUN_004e45e0 ; 004ee774
+        ;   XREF to: 004e45e0 (UNCONDITIONAL_CALL)  ; void core_main.c_showDeveloperToolsMenu_FUN_004e45e0()
     MOV ECX,dword ptr [0x0061c068]      ; 004ee779 | DAT_0061c068
     PUSH ECX                            ; 004ee77f
     CALL core_sound.cpp_CSound_configure_FUN_0055ac50 ; 004ee780

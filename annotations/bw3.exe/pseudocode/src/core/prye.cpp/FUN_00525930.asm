@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_FUN_00525930(int param_1)
+; void core_prye_cpp_FUN_00525930(CPrye *param_1)
 ;
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518cd0 at 00519c22
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519c22
 ;
 ; Called Functions:
 ;   core_hero.cpp_FUN_004d4900
-;   core_prye.cpp_FUN_00521880
+;   core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880
 ;   core_prye.cpp_FUN_005262f0
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     JNZ 0x00525997                      ; 00525977
         ;   XREF to: 00525997 (CONDITIONAL_JUMP)  ; LAB_00525997
     PUSH EBX                            ; 00525979
-    CALL core_prye.cpp_FUN_00521880     ; 0052597a
-        ;   XREF to: 00521880 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00521880()
+    CALL core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880 ; 0052597a
+        ;   XREF to: 00521880 (UNCONDITIONAL_CALL)  ; int core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880(CPrye * this_ptr)
     ADD ESP,0x4                         ; 0052597f
     TEST EAX,EAX                        ; 00525982
     JNZ 0x005259a9                      ; 00525984

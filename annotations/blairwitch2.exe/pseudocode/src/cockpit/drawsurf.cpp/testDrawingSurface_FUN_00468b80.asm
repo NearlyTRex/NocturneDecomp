@@ -12,6 +12,7 @@
 ;   undefined4 DAT_006141bc
 ;
 ; Called Functions:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_004665c0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00466710
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_00466740
@@ -26,7 +27,6 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00468680
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440
-;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00468410
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -846,8 +846,8 @@ section .text
     ADD ESP,0x4                         ; 004694c6
     LEA EAX,[ESP + 0x48]                ; 004694c9
     PUSH EAX                            ; 004694cd
-    CALL cockpit_drawsurf.cpp_FUN_004677e0 ; 004694ce
-        ;   XREF to: 004677e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_004677e0(CDrawSurface * this_ptr)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0 ; 004694ce
+        ;   XREF to: 004677e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0(CDrawSurface * this_ptr)
     ADD ESP,0x4                         ; 004694d3
     POP EBX                             ; 004694d6
     POP EDI                             ; 004694d7

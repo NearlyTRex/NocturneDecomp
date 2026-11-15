@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 00408100
 float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
 
-// Original: core_actor.cpp_FUN_004085a0
+// Original: core_actor.cpp_deleteActor_FUN_004085a0
 // Address: 004085a0
-void FUN_004085a0(int param_1);
+void __cdecl deleteActor(CDemonActor *actor_ptr);
 
 // Original: core_actor.cpp_initTransformCache_FUN_004085c0
 // Address: 004085c0

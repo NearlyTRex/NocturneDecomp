@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 118,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 90,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
       "warning_overlapping_globals"
     ],
-    "total_lines": 279
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -77,7 +76,7 @@
     {
       "addr": "004ce310",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ce310"
+      "name": "core_gore.cpp_CFootstep_render_FUN_004ce310"
     }
   ],
   "globals": [
@@ -264,14 +263,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1d4aecc assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 81,
-      "match": "0x1d4aecc",
-      "severity": "moderate",
-      "text": "iVar2 = 0x1d4aecc;",
-      "type": "raw_address_constant"
     }
   ]
 }

@@ -61,7 +61,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004cc970
+;   core_gore.cpp_getBloodColorParams_FUN_004cc970
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -255,32 +255,32 @@ section .text
     PUSH 0x60b034                       ; 004cd8e4 | DAT_0060b034
     MOV EDI,dword ptr [ESI + 0x18]      ; 004cd8e9
     PUSH EDI                            ; 004cd8ec
-    CALL core_gore.cpp_FUN_004cc970     ; 004cd8ed
-        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cc970()
+    CALL core_gore.cpp_getBloodColorParams_FUN_004cc970 ; 004cd8ed
+        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type, int * out_light, int * out_color, int * out_fog)
     ADD ESP,0x10                        ; 004cd8f2
     PUSH 0x60b06c                       ; 004cd8f5 | DAT_0060b06c
     PUSH 0x60b068                       ; 004cd8fa | DAT_0060b068
     PUSH 0x60b064                       ; 004cd8ff | DAT_0060b064
     MOV EBP,dword ptr [ESI + 0x18]      ; 004cd904
     PUSH EBP                            ; 004cd907
-    CALL core_gore.cpp_FUN_004cc970     ; 004cd908
-        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cc970()
+    CALL core_gore.cpp_getBloodColorParams_FUN_004cc970 ; 004cd908
+        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type, int * out_light, int * out_color, int * out_fog)
     ADD ESP,0x10                        ; 004cd90d
     PUSH 0x60b09c                       ; 004cd910 | DAT_0060b09c
     PUSH 0x60b098                       ; 004cd915 | DAT_0060b098
     PUSH 0x60b094                       ; 004cd91a | DAT_0060b094
     MOV EAX,dword ptr [ESI + 0x18]      ; 004cd91f
     PUSH EAX                            ; 004cd922
-    CALL core_gore.cpp_FUN_004cc970     ; 004cd923
-        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cc970()
+    CALL core_gore.cpp_getBloodColorParams_FUN_004cc970 ; 004cd923
+        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type, int * out_light, int * out_color, int * out_fog)
     ADD ESP,0x10                        ; 004cd928
     PUSH 0x60b0cc                       ; 004cd92b | DAT_0060b0cc
     PUSH 0x60b0c8                       ; 004cd930 | DAT_0060b0c8
     PUSH 0x60b0c4                       ; 004cd935 | DAT_0060b0c4
     MOV EDX,dword ptr [ESI + 0x18]      ; 004cd93a
     PUSH EDX                            ; 004cd93d
-    CALL core_gore.cpp_FUN_004cc970     ; 004cd93e
-        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cc970()
+    CALL core_gore.cpp_getBloodColorParams_FUN_004cc970 ; 004cd93e
+        ;   XREF to: 004cc970 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type, int * out_light, int * out_color, int * out_fog)
     ADD ESP,0x10                        ; 004cd943
     PUSH 0x1d22e48                      ; 004cd946
     MOV ECX,dword ptr [0x005f2afc]      ; 004cd94b | DAT_005f2afc

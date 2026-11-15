@@ -114,7 +114,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004cc990(CHaystack *this_pt
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           bVar4 = true;
           if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
-            iVar9 = core_hero_cpp_FUN_004cec50(this_ptr);
+            iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004cec50(&this_ptr->base);
             bVar4 = false;
             if (iVar9 != 0) goto LAB_004ccd9f;
             iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);

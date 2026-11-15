@@ -223,8 +223,8 @@
     ],
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00402840",
-    "name":"engine_2d.c_FUN_00402840",
+    "method":"getTextColor",
+    "name":"engine_2d.c_getTextColor_FUN_00402840",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -2949,19 +2949,12 @@
     "callers":[
       "0040e670"
     ],
+    "cls":"CAmmo",
     "conv":"__cdecl",
     "instructions":4,
-    "method":"FUN_0040e440",
-    "name":"core_ammo.cpp_FUN_0040e440",
+    "method":"setAmmoCount",
+    "name":"core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CAmmo",
-          "ptr":1
-        }
-      },
       {
         "name":"ammo_count",
         "type":{
@@ -2971,7 +2964,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -10583,14 +10576,25 @@
       "005b89c0",
       "005b910c"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":213,
-    "method":"FUN_004bc840",
-    "name":"core_game.cpp_FUN_004bc840",
-    "receiver":false,
+    "method":"showChapterSelect",
+    "name":"core_game.cpp_CGame_showChapterSelect_FUN_004bc840",
+    "params":[
+      {
+        "name":"select_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -14173,19 +14177,12 @@
     "callers":[
       "004c72f0"
     ],
+    "cls":"CMirror",
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_004f98c0",
-    "name":"core_mirror.cpp_FUN_004f98c0",
+    "method":"dtor",
+    "name":"core_mirror.cpp_CMirror_dtor_FUN_004f98c0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMirror",
-          "ptr":1
-        }
-      },
       {
         "name":"flags",
         "type":{
@@ -14195,7 +14192,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CMirror",
@@ -15198,22 +15195,15 @@
     "callers":[
       "0058e050"
     ],
+    "cls":"CFont",
     "conv":"__cdecl",
     "data_refs":[
       "005fa8bc"
     ],
     "instructions":3,
-    "method":"FUN_00510cc0",
-    "name":"engine_palette.cpp_FUN_00510cc0",
+    "method":"dtor",
+    "name":"engine_palette.cpp_CFont_dtor_FUN_00510cc0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CFont",
-          "ptr":1
-        }
-      },
       {
         "name":"flags",
         "type":{
@@ -15223,7 +15213,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CFont",
@@ -15913,19 +15903,12 @@
       "00593fe0",
       "00594020"
     ],
+    "cls":"CScat",
     "conv":"__cdecl",
     "instructions":186,
-    "method":"FUN_00520140",
-    "name":"core_scat.cpp_FUN_00520140",
+    "method":"blendAimBones",
+    "name":"core_scat.cpp_CScat_blendAimBones_FUN_00520140",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CScat",
-          "ptr":1
-        }
-      },
       {
         "name":"hand_index",
         "type":{
@@ -15935,7 +15918,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19605,8 +19588,8 @@
     ],
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00560140",
-    "name":"engine_special.cpp_FUN_00560140",
+    "method":"unlockHoldBuffer",
+    "name":"engine_special.cpp_unlockHoldBuffer_FUN_00560140",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -20036,14 +20019,40 @@
       "0040d0c0",
       "005b9924"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":56,
-    "method":"FUN_0056bcc0",
-    "name":"core_stranger.cpp_FUN_0056bcc0",
+    "method":"adjustAimAngleForOffset",
+    "name":"core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0",
+    "params":[
+      {
+        "name":"angle",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/stranger.cpp",
@@ -22399,15 +22408,33 @@
   },
   {
     "addr":"00593540",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":29,
-    "method":"FUN_00593540",
-    "name":"core_xform.cpp_FUN_00593540",
+    "method":"buildYFlipMatrix",
+    "name":"core_xform.cpp_buildYFlipMatrix_FUN_00593540",
+    "params":[
+      {
+        "name":"y_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"matrix_out",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -24647,17 +24674,28 @@
   },
   {
     "addr":"005b5f40",
-    "conv":"unknown",
+    "cls":"CChain",
+    "conv":"__cdecl",
     "data_refs":[
       "006012c0"
     ],
     "instructions":2,
-    "method":"FUN_005b5f40",
-    "name":"core_chain.cpp_FUN_005b5f40",
-    "receiver":false,
+    "method":"getCollisionType",
+    "name":"core_chain.cpp_CChain_getCollisionType_FUN_005b5f40",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"enum",
+      "name":"ECollisionType",
       "ptr":0
     },
     "tu":"core/chain.cpp",

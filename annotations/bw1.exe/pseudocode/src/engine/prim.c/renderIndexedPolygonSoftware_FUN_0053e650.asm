@@ -39,7 +39,7 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
 ;   engine_prim.c_findEdgeInBuffer_FUN_0053db80
 ;   engine_special.cpp_drawPolygon2_FUN_00582370
-;   engine_special.cpp_FUN_00580127
+;   engine_special.cpp_renderScanline_FUN_00580127
 ;
 ; *****************************************************************************
 
@@ -282,8 +282,8 @@ section .text
         ;   Label: LAB_0053e8bc
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0053e8c0
     MOV ESI,EBP                         ; 0053e8c4
-    CALL engine_special.cpp_FUN_00580127 ; 0053e8c6
-        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580127(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_00580127 ; 0053e8c6
+        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00580127(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 0053e8cb
     ADD dword ptr [EBP + 0x8],EAX       ; 0053e8ce
     MOV EBX,dword ptr [EBP + 0x18]      ; 0053e8d1

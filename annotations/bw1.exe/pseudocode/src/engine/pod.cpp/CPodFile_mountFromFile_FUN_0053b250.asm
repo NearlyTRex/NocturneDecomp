@@ -64,10 +64,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60 at 0053cca0
+;   engine_pod.cpp_CPod_mount_FUN_0053c650 at 0053c67a
 ;   engine_pod.cpp_CPod_remount_FUN_0053c750 at 0053c7a1
-;   engine_pod.cpp_FUN_0053c650 at 0053c67a
-;   engine_pod.cpp_FUN_0053cc60 at 0053cca0
-;   engine_pod.cpp_FUN_0053ce50 at 0053ce71
+;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0053ce50 at 0053ce71
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_File_not_found_005ed662

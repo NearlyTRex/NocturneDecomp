@@ -305,7 +305,7 @@ LAB_0053fb10:
             }
           }
           local_68[0] = (SRenderVertex *)0x53fb29;
-          engine_special_cpp_FUN_00580127(left,local_14,local_18);
+          engine_special_cpp_renderScanline_FUN_00580127(left,local_14,local_18);
           *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
           *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
           *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);

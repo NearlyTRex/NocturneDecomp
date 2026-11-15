@@ -63,7 +63,7 @@ LAB_00488d8f:
   if (*name == '@') {
     return 0x0FFFFFFF;
   }
-  core_actor_cpp_FUN_00408a50(actor_ptr,class_name);
+  core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(actor_ptr);
   _sprintf(&DAT_01c3dd10,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
   return (CDemonActor *)0x0;
 }

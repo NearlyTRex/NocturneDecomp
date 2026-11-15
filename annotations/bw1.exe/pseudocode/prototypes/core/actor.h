@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 004080c0
 float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
 
-// Original: core_actor.cpp_FUN_00408560
+// Original: core_actor.cpp_deleteActor_FUN_00408560
 // Address: 00408560
-void FUN_00408560(int param_1);
+void __cdecl deleteActor(CDemonActor *actor_ptr);
 
 // Original: core_actor.cpp_initTransformCache_FUN_00408580
 // Address: 00408580
@@ -33,9 +33,9 @@ CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 // Address: 00408760
 void __cdecl CDemonActor::process(CDemonActor *this_ptr,float delta_time);
 
-// Original: core_actor.cpp_FUN_00408790
+// Original: core_actor.cpp_CDemonActor_renderTransparent_FUN_00408790
 // Address: 00408790
-undefined4 FUN_00408790(void);
+int __cdecl CDemonActor::renderTransparent(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_renderBackground_FUN_004087a0
 // Address: 004087a0

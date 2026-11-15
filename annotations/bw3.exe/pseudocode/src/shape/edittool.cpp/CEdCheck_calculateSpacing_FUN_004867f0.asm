@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00486810 at 0048688b
-;   shape_edittool.cpp_FUN_00486670 at 00486706
+;   shape_edittool.cpp_CEdCheck_setupWithText_FUN_00486670 at 00486706
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780

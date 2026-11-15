@@ -11,7 +11,7 @@
 ; int *            Stack[0x14]:4   out_device_ids
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004ebf10 at 004ebf74
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ebf74
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264bc48

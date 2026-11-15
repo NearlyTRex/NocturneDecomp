@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   color_value
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00481920 at 004819b0
+;   shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00481920 at 004819b0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bd345

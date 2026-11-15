@@ -18,7 +18,7 @@
 ;   core_event.cpp_CEventList_setCounter_FUN_00491400 at 0049145e
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_00491280 at 0049133e
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90 at 00491bc9
-;   core_event.cpp_FUN_00492360 at 004923f0
+;   core_event.cpp_CRuleList_insert_FUN_00492360 at 004923f0
 ;   ... and 34 more
 ;
 ; *****************************************************************************

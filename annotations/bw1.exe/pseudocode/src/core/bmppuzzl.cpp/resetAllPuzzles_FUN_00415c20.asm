@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_00503a30 at 00503a33
+;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503a33
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050398e
 ;
 ; Referenced Globals:

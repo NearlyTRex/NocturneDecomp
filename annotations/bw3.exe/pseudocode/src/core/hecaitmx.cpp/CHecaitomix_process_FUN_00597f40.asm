@@ -22,15 +22,15 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00432330
-;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
@@ -76,8 +76,8 @@ section .text
     ADD ESP,0x4                         ; 00597f8f
     PUSH dword ptr [EBP + 0x92]         ; 00597f92
     PUSH EBX                            ; 00597f98
-    CALL core_charactr.cpp_FUN_00433c60 ; 00597f99
-        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433c60()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 ; 00597f99
+        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00597f9e
     MOV EDX,dword ptr [EBX + 0xcdd0]    ; 00597fa1
     XOR EAX,EAX                         ; 00597fa7
@@ -88,8 +88,8 @@ section .text
         ;   Label: LAB_00597fae
     PUSH dword ptr [EBP + 0x92]         ; 00597faf
     PUSH EBX                            ; 00597fb5
-    CALL core_charactr.cpp_FUN_00432330 ; 00597fb6
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 00597fb6
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     LEA EAX,[EBX + 0x249c]              ; 00597fbb
     MOV dword ptr [EAX + 0x8],0x0       ; 00597fc1
     FLD float ptr [EBP + 0x92]          ; 00597fc8

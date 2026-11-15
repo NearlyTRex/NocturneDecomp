@@ -12,6 +12,7 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDoor.h"
+#include "types/classes/CGame.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CSkeleton.h"
@@ -142,7 +143,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00429e60(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
-void core_charactr_cpp_FUN_0042a2d0(int param_1,float param_2,int param_3);
+void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a2d0(CCharacter *this_ptr,float blend_weight,int blend_mode);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a3d0(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter *this_ptr,int state_index);
@@ -161,7 +162,7 @@ void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1);
 void core_charactr_cpp_FUN_0042b760(int param_1,float *param_2);
 void core_charactr_cpp_FUN_0042bef0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_0042bf20(CDemonActor *actor,float x);
-undefined4 core_charactr_cpp_FUN_0042bff0(int param_1);
+float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042bff0(CGame *game_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042c000(CCharacter *this_ptr,uint flags);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042c0a0(SFire *this_ptr);
 undefined4 core_charactr_cpp_FUN_0042c0c0(void);
@@ -188,24 +189,24 @@ void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void *sprite_data,vo
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042d9f0(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
 void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042da80(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
-void cockpit_ckptutil_c_FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
+void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_0042dae0(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042dd00(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042de30(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042dec0(char *filename,SEdgeList *edge_lists,int expected_count);
 void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_0042e130(char *filename,SEdgeList *edge_lists,int edge_list_count);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042e290(SEdge *edges,int count,int x_offset,int y_offset);
-void cockpit_ckptutil_c_FUN_0042e380(void);
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_0042e380(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042e660(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int y1,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042ebf0(int x,int y,float alpha,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_0042f260(int x,int y,int color);
-undefined4 cockpit_ckptutil_c_FUN_0042f2f0(void);
-int __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f300(void);
-void cockpit_ckptutil_c_FUN_0042f310(void);
+undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_0042f2f0(void);
+int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_0042f300(void);
+void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f310(int disabled);
 void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(int disabled);
-void * cockpit_ckptutil_c_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
-void cockpit_ckptutil_c_FUN_0042f4f0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
+void cockpit_ckptutil_c_rotateBitmap_FUN_0042f4f0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_0042f6b0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
-void * cockpit_ckptutil_c_FUN_0042f750(void);
+void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0042f750(void);
 

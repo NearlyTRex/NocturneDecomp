@@ -1,0 +1,84 @@
+// Name: core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f17e0
+// Address: 004f17e0
+// Address Range: [[004f17e0, 004f1974]]
+// Convention: __cdecl
+// Signature: int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f17e0(CIcePick *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f17e0(CIcePick *this_ptr)
+
+{
+  CDemonActor *this_ptr_00;
+  CDemonActor *pCVar1;
+  byte bVar2;
+  float afStackY_1048 [1015];
+  float fStack_60;
+  float fStack_5c;
+  float fStack_58;
+  float fStack_54;
+  float fStack_50;
+  float fStack_4c;
+  CVector3f local_48;
+  CVector3f local_3c;
+  float local_30;
+  float afStack_2c [3];
+  int local_20;
+  int local_1c;
+  float fStack_18;
+  
+  bVar2 = 0;
+  this_ptr->pending_pickup_target = (CDemonActor *)0x0;
+  afStack_2c[2] = 4.0;
+  local_48.x = 1.0;
+  local_48.z = 2.0;
+  local_48.y = 0.0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            ((CDemonActor *)this_ptr,&local_48,&local_3c);
+  local_20 = 0;
+  local_1c = 0;
+  local_30 = local_3c.x;
+  afStack_2c[(uint)bVar2 * -2] = *(float *)((int)&local_3c + (uint)bVar2 * -8 + 4);
+  afStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  for (; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
+    pCVar1 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
+    if (pCVar1 == (CDemonActor *)0x0) {
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
+                         (this_ptr_00,g_CTommyGunClassInfo.name_hash);
+      if (pCVar1 != (CDemonActor *)0x0) {
+        fStack_60 = (this_ptr_00->location).position.x - local_30;
+        fStack_5c = (this_ptr_00->location).position.y - afStack_2c[0];
+        fStack_58 = (this_ptr_00->location).position.z - afStack_2c[1];
+        fStack_54 = fStack_60;
+        *(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =
+             *(uint *)((int)&stack0xffffffa4 + (uint)bVar2 * -8);
+        *(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+             *(uint *)((int)&stack0xffffffa8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+        if ((ABS(fStack_50) <= (float)_DAT_005e53c7) &&
+           (fStack_18 = fStack_54 * fStack_54 + fStack_4c * fStack_4c, fStack_18 <= afStack_2c[2]))
+        {
+          this_ptr->pending_pickup_target = this_ptr_00;
+          afStack_2c[2] = fStack_18;
+        }
+      }
+    }
+    local_1c = local_1c + 4;
+  }
+  if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
+    return 0;
+  }
+  (this_ptr->base).base.base.location.position.x =
+       ((this_ptr->pending_pickup_target->location).position.x - local_30) +
+       (this_ptr->base).base.base.location.position.x;
+  (this_ptr->base).base.base.location.position.z =
+       ((this_ptr->pending_pickup_target->location).position.z - afStack_2c[1]) +
+       (this_ptr->base).base.base.location.position.z;
+  core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
+            (&(this_ptr->base).base.model.base,0x13,1);
+  return 1;
+}

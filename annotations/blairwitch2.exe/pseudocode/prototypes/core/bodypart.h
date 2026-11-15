@@ -129,17 +129,17 @@ int __cdecl CBodyPart::getAllowedMeleeAttackTypes(CBodyPart *this_ptr);
 // Address: 00417ad0
 void __cdecl CBodyPart::fillAttackDamageInfo(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_bodypart.cpp_FUN_00417b20
+// Original: core_bodypart.cpp_scaleVector_FUN_00417b20
 // Address: 00417b20
-void FUN_00417b20(float *param_1,float *param_2);
+CVector3f * __stack2_esi scaleVector(CVector3f *src,float *scalar,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_00417b60
+// Original: core_bodypart.cpp_subtractVector_FUN_00417b60
 // Address: 00417b60
-void FUN_00417b60(float *param_1,float *param_2);
+CVector3f * __stack2_esi subtractVector(CVector3f *a,CVector3f *b,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_00417ba0
+// Original: core_bodypart.cpp_addVector_FUN_00417ba0
 // Address: 00417ba0
-void FUN_00417ba0(float *param_1,float *param_2);
+CVector3f * __stack2_esi addVector(CVector3f *a,CVector3f *b,CVector3f *dst);
 
 // Original: core_bodypart.cpp_FUN_00417c00
 // Address: 00417c00

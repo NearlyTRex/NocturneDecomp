@@ -256,7 +256,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0057b6e0(char *wildcar
 void __cdecl core_sound_cpp_updateListeners_FUN_0057b780(void);
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0057be00(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_0057bef0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
-void core_sound_cpp_FUN_0057c4e0(void);
+void core_sound_cpp_resetTrainSounds_FUN_0057c4e0(void);
 uint core_sound_cpp_processTrainSounds_FUN_0057c580(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0057cb10(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_0057cb30(CSound *this_ptr);

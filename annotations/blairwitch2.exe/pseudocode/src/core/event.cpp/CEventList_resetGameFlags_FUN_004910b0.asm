@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_ctor_FUN_00489360 at 0048936f
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc0c7
-;   core_game.cpp_FUN_004bc840 at 004bc9aa
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840 at 004bc9aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_puzzleModeHard_005d4d13

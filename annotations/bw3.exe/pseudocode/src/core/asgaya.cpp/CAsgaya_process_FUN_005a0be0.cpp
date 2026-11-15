@@ -23,7 +23,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
   CLocation *pCVar9;
   CDeformableModelInstance *pCVar10;
   byte bVar11;
-  uint unaff_retaddr;
+  int unaff_retaddr;
   float afStackY_1154 [996];
   CGore *this_ptr_01;
   CVector3f *pCVar12;
@@ -63,7 +63,8 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
   uint uStack_14;
   
   bVar11 = 0;
-  iVar4 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     return;
   }
@@ -98,7 +99,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
     this_ptr->bible_spawned = 1;
   }
   if (this_ptr->appear_state == 0) {
-    core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
   }
   fStack_188 = delta_time * this_ptr->speed;
   uStack_18 = 1;
@@ -384,7 +385,8 @@ LAB_005a0ed4:
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,unaff_retaddr);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            ((CCharacter *)this_ptr,delta_time,unaff_retaddr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   return;
 }

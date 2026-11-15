@@ -174,7 +174,7 @@ void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr
              afStack_1c8[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 5];
         (afStack_1c8 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1] =
              (afStack_1c8 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 5)[(uint)bVar14 * -2 + 1];
-        core_xform_cpp_FUN_00585de0();
+        core_xform_cpp_quaternionToEulerAngles_FUN_00585de0();
         fStack_17c = afStack_d0[2];
         afStack_1c8[(uint)bVar14 * -2 + 0x14] = afStack_d0[(uint)bVar14 * -2 + 3];
         afStack_1c8[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0x15] =

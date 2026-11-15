@@ -137,7 +137,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0057fc20(CTurret *this_ptr)
           core_flamecan_cpp_CFlameCan_ignite_FUN_004a08d0(this_ptr_02);
         }
         else {
-          core_crate_cpp_FUN_0043a350(pCStack_20);
+          core_crate_cpp_CCrate_explode_FUN_0043a350(pCStack_20);
         }
       }
       else {

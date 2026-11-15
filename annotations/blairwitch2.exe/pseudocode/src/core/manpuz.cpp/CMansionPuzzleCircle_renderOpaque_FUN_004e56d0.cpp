@@ -52,7 +52,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0(CMans
     }
     iVar2 = 0;
     do {
-      core_manpuz_cpp_FUN_004e6820(this_ptr,iVar2);
+      core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820(this_ptr,iVar2);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 2);
     uStack_30 = 0x4e57b9;

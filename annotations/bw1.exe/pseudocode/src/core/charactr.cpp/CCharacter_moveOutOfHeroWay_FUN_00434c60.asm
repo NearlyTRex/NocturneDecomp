@@ -26,7 +26,7 @@
 ;
 ; XREF[4]:
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee4d3
-;   core_icepick.cpp_FUN_004f1b50 at 004f2115
+;   core_icepick.cpp_CIcePick_processAI_FUN_004f1b50 at 004f2115
 ;   core_moloch.cpp_CMoloch_processAI_FUN_00520c10 at 00521001
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0 at 00593e85
 ;

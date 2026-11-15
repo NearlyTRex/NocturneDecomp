@@ -41,7 +41,7 @@ void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004db8e0(CInventory *this_pt
         if (should_delete_actor == 0) {
           return;
         }
-        core_actor_cpp_FUN_00408730(item_to_remove);
+        core_actor_cpp_deleteActor_FUN_00408730(item_to_remove);
         return;
       }
       iVar4 = iVar4 + 1;

@@ -13,10 +13,10 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004170f1
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0 at 004f9332
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fea78
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 005510fa
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590 at 005555c8
-;   core_set.cpp_FUN_00550da0 at 005510fa
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055a99a
-;   core_setdir.cpp_FUN_0055b330 at 0055b3ec
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330 at 0055b3ec
 ;   shape_spotview.cpp_CSpotView_applyCamera_FUN_005847e0 at 005848c9
 ;
 ; Called Functions:

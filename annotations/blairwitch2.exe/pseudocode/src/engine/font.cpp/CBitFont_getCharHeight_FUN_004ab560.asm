@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b334e
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be564
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3c7d
-;   core_inv.cpp_FUN_004dd9b0 at 004ddb41
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 at 004ddb41
 ;   ... and 29 more
 ;
 ; *****************************************************************************

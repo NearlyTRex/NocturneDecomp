@@ -224,7 +224,8 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00468b80(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360
               ((CDrawSurface *)&stack0x00000340,100,iVar4);
     cockpit_drawsurf_cpp_setColor_FUN_00465ea0(4);
-    cockpit_drawsurf_cpp_FUN_004677e0((CDrawSurface *)&stack0x0000034c);
+    cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0
+              ((CDrawSurface *)&stack0x0000034c);
     return;
   }
   return;

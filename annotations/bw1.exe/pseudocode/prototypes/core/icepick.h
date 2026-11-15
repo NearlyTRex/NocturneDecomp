@@ -29,13 +29,13 @@ void __cdecl CIcePick::setup(CIcePick *this_ptr);
 // Address: 004f0e50
 void __cdecl CIcePick::process(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f1670
+// Original: core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670
 // Address: 004f1670
-void __cdecl FUN_004f1670(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick::updateShootBlend(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f17e0
+// Original: core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f17e0
 // Address: 004f17e0
-int __cdecl FUN_004f17e0(CIcePick *this_ptr);
+int __cdecl CIcePick::findAndPickupGun(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f1980
 // Address: 004f1980
@@ -45,9 +45,9 @@ int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 // Address: 004f19e0
 CMatrix3x4f * __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_icepick.cpp_FUN_004f1b50
+// Original: core_icepick.cpp_CIcePick_processAI_FUN_004f1b50
 // Address: 004f1b50
-void __cdecl FUN_004f1b50(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick::processAI(CIcePick *this_ptr,float delta_time);
 
 // Original: core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340
 // Address: 004f2340

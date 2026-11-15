@@ -39,7 +39,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   shape_edittool.cpp_CStrList_add_FUN_00480e70
-;   shape_edittool.cpp_FUN_004858f0
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0
 ;
 ; *****************************************************************************
 
@@ -209,8 +209,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x31c]     ; 00521e6f
     ADD EAX,0x34                        ; 00521e76
     PUSH EAX                            ; 00521e79
-    CALL shape_edittool.cpp_FUN_004858f0 ; 00521e7a
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_004858f0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0 ; 00521e7a
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00521e7f
     INC EAX                             ; 00521e82
     PUSH EAX                            ; 00521e83

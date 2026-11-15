@@ -16,9 +16,9 @@
 ;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150 at 00480233
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f327
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0 at 0047f0ab
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 at 0047e9a3
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047ddd7
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047b174
-;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004832c9
 ;   ... and 6 more
 ;
 ; Referenced Globals:

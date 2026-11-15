@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004918d0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c_memmove_FUN_005ba1f0
@@ -52,8 +52,8 @@ section .text
     PUSH EBP                            ; 004916a7
     MOV dword ptr [0x01d046a0],EDX      ; 004916a8 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004916ae | DAT_01d046a4
-    CALL core_actor.cpp_FUN_00408a50    ; 004916b4
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004916b4
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004916b9
     PUSH EAX                            ; 004916bc
     PUSH EDI                            ; 004916bd

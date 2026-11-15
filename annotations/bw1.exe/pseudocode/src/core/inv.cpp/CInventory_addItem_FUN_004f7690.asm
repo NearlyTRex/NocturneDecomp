@@ -42,7 +42,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
-;   core_actor.cpp_FUN_00408560
+;   core_actor.cpp_deleteActor_FUN_00408560
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
@@ -2008,8 +2008,8 @@ section .text
     ADD ESP,0x8                         ; 004f8870
     MOV EDI,dword ptr [ESP + 0x33c]     ; 004f8873
     PUSH EDI                            ; 004f887a
-    CALL core_actor.cpp_FUN_00408560    ; 004f887b
-        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408560()
+    CALL core_actor.cpp_deleteActor_FUN_00408560 ; 004f887b
+        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408560(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004f8880
     PUSH 0x5e64bc                       ; 004f8883 | = "Found dynamite.  Creating weapon for ..."
     MOV EAX,[0x00611100]                ; 004f8888 | g_CConsolePtr
@@ -2258,8 +2258,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004f8b28
     MOV EDX,dword ptr [EAX + 0x14]      ; 004f8b2f
     PUSH EDX                            ; 004f8b32
-    CALL core_actor.cpp_FUN_00408560    ; 004f8b33
-        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408560()
+    CALL core_actor.cpp_deleteActor_FUN_00408560 ; 004f8b33
+        ;   XREF to: 00408560 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408560(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004f8b38
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004f8b3b
     PUSH EDI                            ; 004f8b42

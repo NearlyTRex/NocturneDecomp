@@ -24,8 +24,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_005a3650
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00
-;   core_xform.cpp_FUN_005b7c00
-;   core_xform.cpp_FUN_005b7ed0
+;   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
+;   core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00
 ;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
@@ -284,8 +284,8 @@ section .text
     PUSH ESI                            ; 005a2706
     LEA ESI,[ESP + 0x6c]                ; 005a2707
     LEA EDI,[ESP + 0x8c]                ; 005a270b
-    CALL core_xform.cpp_FUN_005b7ed0    ; 005a2712
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 005a2712
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x6c]                ; 005a2717
     ADD ESP,0x4                         ; 005a271b
     MOVSD ES:EDI,ESI                    ; 005a271e
@@ -295,8 +295,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xe8]      ; 005a2722
     PUSH EDI                            ; 005a2729
     LEA ESI,[ESP + 0x7c]                ; 005a272a
-    CALL core_xform.cpp_FUN_005b7ed0    ; 005a272e
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 005a272e
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA EDI,[ESP + 0x9c]                ; 005a2733
     LEA ESI,[ESP + 0x7c]                ; 005a273a
     ADD ESP,0x4                         ; 005a273e
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 005a2796
     LEA ESI,[ESP + 0xcc]                ; 005a2797
     LEA EDI,[ESP + 0xd8]                ; 005a279e
-    CALL core_xform.cpp_FUN_005b7c00    ; 005a27a5
-        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7c00()
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00 ; 005a27a5
+        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00()
     LEA ESI,[ESP + 0xcc]                ; 005a27aa
     ADD ESP,0x4                         ; 005a27b1
     LEA EAX,[ESP + 0xd4]                ; 005a27b4

@@ -16,7 +16,7 @@
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c8dc
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c2bf
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057dbac
-;   engine_pod.cpp_FUN_0053bfc0 at 0053c211
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0 at 0053c211
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 004953fe
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 004950b7
 ;

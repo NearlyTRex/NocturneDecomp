@@ -141,9 +141,9 @@ void __cdecl drawAlphaBlendedPixels(uint *dest_buffer,uchar *src_indices,uint *c
 // Address: 004c2750
 void FUN_004c2750(int param_1);
 
-// Original: engine_font.cpp_FUN_004c2810
+// Original: engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810
 // Address: 004c2810
-int __cdecl FUN_004c2810(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
+int __cdecl CBitFont::drawCharacter(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
 
 // Original: engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 // Address: 004c3ea0

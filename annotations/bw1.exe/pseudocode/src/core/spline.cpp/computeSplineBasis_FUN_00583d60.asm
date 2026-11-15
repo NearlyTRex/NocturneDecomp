@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_dracbrid.cpp_FUN_0047d920 at 0047dcb6
-;   core_dracbrid.cpp_FUN_0047de00 at 0047e044
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dcb6
+;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0047de00 at 0047e044
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004c0080 at 004c0144
 ;
 ; Referenced Globals:

@@ -7,7 +7,7 @@
 ; XREF[9]:
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c026a
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8d36
-;   core_main.c_FUN_004e4400 at 004e444c
+;   core_main.c_showDeveloperToolsMenu_FUN_004e4400 at 004e444c
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004e8380 at 004e84b6
 ;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533b60
 ;   engine_2d.c_getInputWithPrompt_FUN_00403310 at 00403368

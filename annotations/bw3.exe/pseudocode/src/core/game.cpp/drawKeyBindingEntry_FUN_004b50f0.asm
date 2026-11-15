@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void)
+; void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   key_code
+; char *           Stack[0x8]:4   action_name
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

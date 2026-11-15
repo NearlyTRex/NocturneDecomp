@@ -712,8 +712,8 @@ section .text
     ADD ESP,0x4                         ; 005863cd
     PUSH dword ptr [EBP + 0x18]         ; 005863d0
     PUSH EBX                            ; 005863d3
-    CALL core_stranger.cpp_FUN_0058a010 ; 005863d4
-        ;   XREF to: 0058a010 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_0058a010(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_updateTurnBlending_FUN_0058a010 ; 005863d4
+        ;   XREF to: 0058a010 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateTurnBlending_FUN_0058a010(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005863d9
     CMP dword ptr [ESP + 0x474],0x0     ; 005863dc
     JZ 0x005863fe                       ; 005863e4
@@ -1071,8 +1071,8 @@ section .text
     ADD ESP,0x8                         ; 00586864
     LEA EAX,[EBX + 0x1fae8]             ; 00586867
     PUSH EAX                            ; 0058686d
-    CALL core_inv.cpp_FUN_004f9f10      ; 0058686e
-        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9f10()
+    CALL core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 ; 0058686e
+        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004f9f10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 00586873
     PUSH dword ptr [EBP + 0x18]         ; 00586876
     PUSH EBX                            ; 00586879

@@ -69,7 +69,7 @@ int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00452770(SIntersect
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
 uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00452cb0(CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height);
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00452e20(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
-undefined4 core_dcube_cpp_FUN_00453230(void);
+undefined4 core_dcube_cpp_clipTriangleToAABB_FUN_00453230(void);
 void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer);
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00453cb0(CDemonCube *this_ptr);
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00453cf0(CDemonCube *this_ptr,uint flags);
@@ -151,7 +151,7 @@ CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_0045b1f0(CDemonImage 
 void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045b210(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_0045b270(CDemonImage *this_ptr);
 ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_0045b2a0(CDemonImage *this_ptr,uint red,uint green,uint blue);
-void core_dimage_cpp_FUN_0045b300(void);
+void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0045b300(CDemonImage *this_ptr,char *filename,int width,int height);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_0045b640(CMatrix3x3f *this_ptr);
 CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
@@ -186,13 +186,13 @@ void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_0045ce10(int x,int y,int gra
 void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_0045ce40(CDemonLight *this_ptr,int screen_x,int screen_y,int display_size);
 void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0045d070(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_FUN_0045d530(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_FUN_0045d560(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_0045daf0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_0045db40(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x,int filter_pos_y);
 void __cdecl core_dlight_cpp_captureLightTextures_FUN_0045de60(void);
 void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0(CDemonLight *this_ptr);
-void core_dlight_cpp_FUN_0045e6a0(void);
+void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0045e6a0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_0045f490(CDemonLight *this_ptr);
 int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_0045f4d0(CDemonLight *this_ptr,CRect *rect);

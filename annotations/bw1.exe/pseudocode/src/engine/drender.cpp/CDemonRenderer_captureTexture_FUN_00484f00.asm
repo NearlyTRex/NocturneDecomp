@@ -17,7 +17,7 @@
 ;   core_curtain.cpp_CCurtain_setup_FUN_0044a380 at 0044a3a9
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 00450678
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20 at 0044ff91
-;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 004647cc
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820 at 00463d29
 ;   ... and 64 more
 ;
 ; Referenced Globals:

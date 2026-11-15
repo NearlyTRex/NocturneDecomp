@@ -32,11 +32,11 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_00461f70
-;   core_dpart.cpp_FUN_004625f0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0046c720
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_00469e80
+;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0
+;   engine_drender.cpp_renderTriangleTextured_FUN_00461f70
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00
 ;   engine_special.cpp_drawPolyList2_FUN_0055fa90
 ;
@@ -209,8 +209,8 @@ section .text
     PUSH EAX                            ; 0046c17c
     DEC EDI                             ; 0046c17d
     ADD EBX,0x12                        ; 0046c17e
-    CALL core_dpart.cpp_FUN_00461f70    ; 0046c181
-        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00461f70(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00461f70 ; 0046c181
+        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00461f70(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046c186
     JMP 0x0046c0bf                      ; 0046c189
         ;   XREF to: 0046c0bf (UNCONDITIONAL_JUMP)  ; LAB_0046c0bf
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 0046c1cd
     DEC EDI                             ; 0046c1ce
     ADD EBX,0x12                        ; 0046c1cf
-    CALL core_dpart.cpp_FUN_004625f0    ; 0046c1d2
-        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_004625f0 ; 0046c1d2
+        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046c1d7
     TEST EDI,EDI                        ; 0046c1da
     JG 0x0046c1ab                       ; 0046c1dc

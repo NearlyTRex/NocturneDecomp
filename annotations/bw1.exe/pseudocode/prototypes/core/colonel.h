@@ -29,9 +29,9 @@ void __cdecl CColonel::setup(CColonel *this_ptr);
 // Address: 00444550
 void __cdecl CColonel::process(CColonel *this_ptr,float delta_time);
 
-// Original: core_colonel.cpp_FUN_00444b50
+// Original: core_colonel.cpp_CColonel_processAI_FUN_00444b50
 // Address: 00444b50
-void __cdecl FUN_00444b50(CColonel *this_ptr,float delta_time);
+void __cdecl CColonel::processAI(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_processMotionEvents_FUN_00445140
 // Address: 00445140

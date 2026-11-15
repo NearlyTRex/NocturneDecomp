@@ -118,7 +118,7 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = fStack_3c;
     (this_ptr->ref_r_upperarm_bone_pos).z = fStack_38;
   }
-  core_prye_cpp_FUN_0051c1c0(this_ptr);
+  core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   this_ptr->door_align_timer = 0.0;

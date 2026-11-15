@@ -6,8 +6,8 @@
 ;
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0da
-;   core_set.cpp_FUN_00550da0 at 00551108
-;   core_setdir.cpp_FUN_0055b330 at 0055b408
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00551108
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330 at 0055b408
 ;   engine_mini3d.cpp_clearZBuffer_FUN_005111a0 at 005111ae
 ;
 ; Referenced Globals:

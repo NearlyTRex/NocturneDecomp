@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004cec50 at 004ced95
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50 at 004ced95
 ;
 ; *****************************************************************************
 

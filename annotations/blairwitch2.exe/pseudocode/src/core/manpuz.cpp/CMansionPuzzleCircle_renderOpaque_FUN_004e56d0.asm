@@ -17,7 +17,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
-;   core_manpuz.cpp_FUN_004e6820
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 004e57a2
         ;   Label: LAB_004e57a2
     PUSH EBP                            ; 004e57a3
-    CALL core_manpuz.cpp_FUN_004e6820   ; 004e57a4
-        ;   XREF to: 004e6820 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004e6820(CMansionPuzzleCircle * this_ptr, int reflector_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820 ; 004e57a4
+        ;   XREF to: 004e6820 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 004e57a9
     ADD ESP,0x8                         ; 004e57aa
     CMP EBX,0x2                         ; 004e57ad

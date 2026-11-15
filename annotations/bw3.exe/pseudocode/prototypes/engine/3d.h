@@ -313,13 +313,13 @@ void __cdecl renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive,int re
 // Address: 004075b0
 void __cdecl renderPolygonWithRenderFlagsUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
-// Original: engine_3d.c_FUN_00407700
+// Original: engine_3d.c_setProcessorType_FUN_00407700
 // Address: 00407700
-void FUN_00407700(undefined4 param_1);
+void __cdecl setProcessorType(int processor_type);
 
-// Original: engine_3d.c_FUN_00407710
+// Original: engine_3d.c_setRenderingQuality_FUN_00407710
 // Address: 00407710
-void FUN_00407710(undefined4 param_1);
+void __cdecl setRenderingQuality(int quality);
 
 // Original: engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 // Address: 00407720

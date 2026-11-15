@@ -164,7 +164,7 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
           core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(this_ptr_03);
         }
         else {
-          core_crate_cpp_FUN_004461c0(this_ptr_02);
+          core_crate_cpp_CCrate_explode_FUN_004461c0(this_ptr_02);
         }
       }
       else {

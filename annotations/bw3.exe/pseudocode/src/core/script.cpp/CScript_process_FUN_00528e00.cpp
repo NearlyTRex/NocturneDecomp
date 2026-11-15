@@ -24,7 +24,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_00528e00(CScript *this_ptr)
       this_ptr->script_state = 0;
     }
     iVar3 = 0;
-    local_18 = (float)core_charactr_cpp_FUN_00434b00(g_CGamePtr);
+    local_18 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
     _DAT_01ed7014 = 0;
     local_14 = local_18;
     do {

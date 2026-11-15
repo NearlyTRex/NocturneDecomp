@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_menu.cpp_FUN_004ebf10 at 004ec3d8
 ;   core_menu.cpp_configureCustomKeys_FUN_004ecc70 at 004ecfa8
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec3d8
 ;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004edafc
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee627
 ;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee2f7

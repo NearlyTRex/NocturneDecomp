@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_lerpMatrix3x4_FUN_005854a0(undefined4 *param_1,undefined4 *param_2,float param_3)
+; CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005854a0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined4       Stack[-0xc4]:4  local_c4
@@ -18,7 +22,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431fae
-;   core_prye.cpp_FUN_0051f490 at 0051f7ac
+;   core_prye.cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490 at 0051f7ac
 ;   core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056ca44
 ;
 ; Called Functions:

@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "004dbd80",
+      "from_addr": "004dbe5f",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc750",
+      "from_addr": "004dc9a8",
+      "name": "core_inv.cpp_CInventory_load_FUN_004dc750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dbb40",
+      "from_addr": "004dbc2b",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dcb40",
+      "from_addr": "004dcbaa",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dd2d0",
+    "address_range": [
+      [
+        "004dd2d0",
+        "004dd309"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory *this_ptr,int ammo_type)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004dbc2b",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dcbaa",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dc9a8",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_load_FUN_004dc750",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dbe5f",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3846153846153846,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 11,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "LOAD": 9,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 44
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dd020",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5652
+    },
+    "bw1.exe": {
+      "addr": "004fa4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6341
+    },
+    "nocedit.exe": {
+      "addr": "004ffe10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6341
+    },
+    "nocturne.exe": {
+      "addr": "004c1b90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6341
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "ammo_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 005030e0
 void __cdecl displayErrorAndQuit(char *format);
 
-// Original: core_main.c_FUN_005031c0
+// Original: core_main.c_showDeveloperToolsMenu_FUN_005031c0
 // Address: 005031c0
-void FUN_005031c0(void);
+void __cdecl showDeveloperToolsMenu(void);
 
 // Original: core_main.c_enterMainGameMenu_FUN_00503290
 // Address: 00503290
@@ -25,6 +25,6 @@ int __cdecl enterMainGameMenu(void);
 // Address: 005032a0
 void __cdecl initializeGameSystems(int argc,char **argv);
 
-// Original: core_main.c_FUN_00503a30
+// Original: core_main.c_finalizeGameSystems_FUN_00503a30
 // Address: 00503a30
-void FUN_00503a30(void);
+void __cdecl finalizeGameSystems(void);

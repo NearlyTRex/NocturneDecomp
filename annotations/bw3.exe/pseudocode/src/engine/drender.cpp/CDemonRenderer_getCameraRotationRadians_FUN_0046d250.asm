@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[10]:
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530 at 0045d586
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0 at 0045e324
-;   core_dlight.cpp_FUN_0045d530 at 0045d586
 ;   core_fire.cpp_CExplosion_render_FUN_0049c8e0 at 0049c965
 ;   core_fire.cpp_CGunFlame_render_FUN_0049e500 at 0049e748
 ;   core_fire.cpp_CLaserBeam_render_FUN_0049b1d0 at 0049b680

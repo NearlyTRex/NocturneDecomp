@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_CDemonActor_save_FUN_0040b0a0
-;   core_actor.cpp_FUN_00408a50
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c920
 ;   core_gore.cpp_CGore_save_FUN_004c9f20
 ;   core_inv.cpp_CInventory_saveItems_FUN_004dc460
@@ -225,8 +225,8 @@ section .text
     PUSH ESI                            ; 004fbeb7
         ;   Label: LAB_004fbeb7
     PUSH ESI                            ; 004fbeb8
-    CALL core_actor.cpp_FUN_00408a50    ; 004fbeb9
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004fbeb9
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004fbebe
     PUSH EAX                            ; 004fbec1
     PUSH 0x5de52f                       ; 004fbec2 | = "%s \"%s\"\n"

@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051d92a
-;   core_prye.cpp_FUN_00521880 at 00521be7
+;   core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880 at 00521be7
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051d92a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cca97

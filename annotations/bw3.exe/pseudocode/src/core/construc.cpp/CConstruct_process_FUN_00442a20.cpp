@@ -373,7 +373,7 @@ LAB_00442bf6:
              *(uint *)
               ((int)(&stack0xfffffd60 + ((uint)bVar17 * -2 + (uint)bVar17 * -2 + 1) * 4) +
               ((uint)bVar17 * -2 + 1) * 4);
-        core_xform_cpp_FUN_00585de0();
+        core_xform_cpp_quaternionToEulerAngles_FUN_00585de0();
         afStack_214[2] = fStack_1d0;
         afStack_214[(uint)bVar17 * -2 + 3] = afStack_1cc[(uint)bVar17 * -2];
         afStack_214[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 4] =

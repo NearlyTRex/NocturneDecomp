@@ -39,11 +39,11 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,floa
   float afStack_1c [3];
   
   bVar9 = 0;
-  iVar5 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(&this_ptr->base,delta_time);
   if (iVar5 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,0);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330(&this_ptr->base,delta_time,0);
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;

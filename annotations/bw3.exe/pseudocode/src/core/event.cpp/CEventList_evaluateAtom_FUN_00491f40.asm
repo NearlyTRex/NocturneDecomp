@@ -166,7 +166,7 @@
 ;   core_event.cpp_resolveActorByName_FUN_0048b950
 ;   core_game.cpp_CGame_fadeIn_FUN_004bd8d0
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004de610
-;   core_inv.cpp_FUN_004db990
+;   core_inv.cpp_CInventory_findItemByName_FUN_004db990
 ;   core_inv.cpp_FUN_004dba80
 ;   ... and 9 more
 ;
@@ -1202,8 +1202,8 @@ section .text
     PUSH EDX                            ; 004928dc
     LEA EAX,[EDI + 0x206e8]             ; 004928dd
     PUSH EAX                            ; 004928e3
-    CALL core_inv.cpp_FUN_004db990      ; 004928e4
-        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004db990(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004db990 ; 004928e4
+        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db990(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004928e9
     TEST EAX,EAX                        ; 004928ec
     JZ 0x004928fb                       ; 004928ee

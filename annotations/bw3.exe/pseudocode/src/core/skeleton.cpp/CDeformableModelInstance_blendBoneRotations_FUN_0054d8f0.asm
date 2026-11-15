@@ -14,8 +14,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051cb74
-;   core_prye.cpp_FUN_0051ee10 at 0051f0e8
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051f0e8
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051cb74
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e14f
 ;
 ; Referenced Globals:

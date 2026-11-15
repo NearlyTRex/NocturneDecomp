@@ -9,9 +9,9 @@
 // Address: 004fb280
 void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
-// Original: core_motion.cpp_FUN_004fb6b0
+// Original: core_motion.cpp_CMotionList_save_FUN_004fb6b0
 // Address: 004fb6b0
-void FUN_004fb6b0(int *param_1,undefined4 param_2);
+void __cdecl CMotionList::save(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 // Address: 004fb9c0

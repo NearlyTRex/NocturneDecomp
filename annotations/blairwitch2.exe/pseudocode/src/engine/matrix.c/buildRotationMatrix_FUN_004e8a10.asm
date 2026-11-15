@@ -27,8 +27,8 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   engine_matrix.c_FUN_004e86b0
-;   engine_matrix.c_FUN_004e86f0
+;   engine_matrix.c_interpolatedCos_FUN_004e86f0
+;   engine_matrix.c_interpolatedSin_FUN_004e86b0
 ;   engine_matrix.c_invertTransformMatrix_FUN_004e8730
 ;
 ; *****************************************************************************
@@ -44,35 +44,35 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004e8a1a
     PUSH EDI                            ; 004e8a1e
     PUSH EBX                            ; 004e8a1f
-    CALL engine_matrix.c_FUN_004e86b0   ; 004e8a20
-        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86b0(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_004e86b0 ; 004e8a20
+        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e86b0(int angle)
     ADD ESP,0x4                         ; 004e8a25
     PUSH EBX                            ; 004e8a28
     MOV EBP,EAX                         ; 004e8a29
-    CALL engine_matrix.c_FUN_004e86f0   ; 004e8a2b
-        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86f0(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_004e86f0 ; 004e8a2b
+        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004e86f0(int angle)
     MOV dword ptr [ESP + 0xc],EAX       ; 004e8a30
     ADD ESP,0x4                         ; 004e8a34
     PUSH ESI                            ; 004e8a37
-    CALL engine_matrix.c_FUN_004e86b0   ; 004e8a38
-        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86b0(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_004e86b0 ; 004e8a38
+        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e86b0(int angle)
     ADD ESP,0x4                         ; 004e8a3d
     PUSH ESI                            ; 004e8a40
     MOV EBX,EAX                         ; 004e8a41
-    CALL engine_matrix.c_FUN_004e86f0   ; 004e8a43
-        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86f0(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_004e86f0 ; 004e8a43
+        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004e86f0(int angle)
     ADD ESP,0x4                         ; 004e8a48
     MOV EDX,dword ptr [ESP + 0x24]      ; 004e8a4b
     PUSH EDX                            ; 004e8a4f
     MOV ESI,EAX                         ; 004e8a50
-    CALL engine_matrix.c_FUN_004e86b0   ; 004e8a52
-        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86b0(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_004e86b0 ; 004e8a52
+        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e86b0(int angle)
     ADD ESP,0x4                         ; 004e8a57
     MOV ECX,dword ptr [ESP + 0x24]      ; 004e8a5a
     PUSH ECX                            ; 004e8a5e
     MOV EDI,EAX                         ; 004e8a5f
-    CALL engine_matrix.c_FUN_004e86f0   ; 004e8a61
-        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86f0(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_004e86f0 ; 004e8a61
+        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004e86f0(int angle)
     MOV ECX,EAX                         ; 004e8a66
     ADD ESP,0x4                         ; 004e8a68
     MOV EAX,ESI                         ; 004e8a6b

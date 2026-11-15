@@ -23,6 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00431d10(CCha
   CMatrix3x4f *apCStackY_1010 [848];
   CMatrix3x4f *in_stack_fffffd38;
   CVector3f *in_stack_fffffd44;
+  CMatrix3x4f CStack_28c;
   CMatrix3x4f CStack_25c;
   CMatrix3x4f CStack_22c;
   CMatrix3x4f CStack_1fc;
@@ -34,7 +35,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00431d10(CCha
   CMatrix3x4f CStack_10c;
   CMatrix3x4f CStack_dc;
   CMatrix3x4f CStack_ac;
-  float afStack_7c [12];
+  CMatrix3x4f CStack_7c;
   float local_4c;
   float local_48 [2];
   CLocation *local_40;
@@ -88,20 +89,21 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00431d10(CCha
           }
           core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                     (&CStack_10c,&CStack_25c,(CMatrix3x4f *)&stack0xfffffd44);
-          puVar5 = (uint *)&stack0xfffffd44;
-          puVar8 = (uint *)&stack0xfffffd74;
-          for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar8 = *puVar5;
-            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-            puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-          }
-          core_xform_cpp_lerpMatrix3x4_FUN_005854a0(pCVar3 + 1,&stack0xfffffd74,pCVar3[5].y);
-          pfVar6 = afStack_7c;
-          pCVar7 = &CStack_22c;
+          pfVar6 = (float *)&stack0xfffffd44;
+          pCVar7 = &CStack_28c;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             pCVar7->m[0].w = *pfVar6;
             pfVar6 = pfVar6 + (uint)bVar10 * -2 + 1;
             pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
+          }
+          core_xform_cpp_lerpMatrix3x4_FUN_005854a0
+                    ((CMatrix3x4f *)(pCVar3 + 1),&CStack_28c,pCVar3[5].y,&CStack_7c);
+          pCVar7 = &CStack_7c;
+          pCVar9 = &CStack_22c;
+          for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+            pCVar9->m[0].w = pCVar7->m[0].w;
+            pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
+            pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);
           }
           core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                     (&CStack_22c,(CMatrix3x4f *)((int)pCVar3->x * 0x30 + iStack_14),&CStack_1fc);

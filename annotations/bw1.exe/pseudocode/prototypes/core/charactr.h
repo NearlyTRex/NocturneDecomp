@@ -45,9 +45,9 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 // Address: 0042cc30
 float __cdecl clampFloat(float value,float limit);
 
-// Original: core_charactr.cpp_FUN_0042cc80
+// Original: core_charactr.cpp_clampNormalizedAngle_FUN_0042cc80
 // Address: 0042cc80
-float FUN_0042cc80(float param_1,float param_2);
+float __cdecl clampNormalizedAngle(float angle,float limit);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 // Address: 0042ccf0
@@ -325,9 +325,9 @@ void __cdecl CCharacter::advanceGesture(CCharacter *this_ptr,float delta_time);
 // Address: 00432e80
 void __cdecl CCharacter::computeBoundingBox(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00432f10
+// Original: core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 // Address: 00432f10
-void FUN_00432f10(CCharacter *param_1,float param_2,int param_3);
+void __cdecl CCharacter::findSomethingToLookAt(CCharacter *this_ptr,float delta_time,int disable_search);
 
 // Original: core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30
 // Address: 00433b30
@@ -417,9 +417,9 @@ void FUN_004354a0(int param_1,CWayPoint *param_2);
 // Address: 00435500
 void __cdecl setActorXPos(CDemonActor *actor,float x);
 
-// Original: core_charactr.cpp_FUN_004355d0
+// Original: core_charactr.cpp_getGameDeltaTime_FUN_004355d0
 // Address: 004355d0
-undefined4 FUN_004355d0(int param_1);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_004355e0
 // Address: 004355e0

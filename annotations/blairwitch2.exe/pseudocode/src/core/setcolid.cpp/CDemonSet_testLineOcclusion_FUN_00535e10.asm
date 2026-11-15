@@ -16,7 +16,7 @@
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b225f
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a71b
 ;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c15
-;   core_stranger.cpp_FUN_0056bf00 at 0056c788
+;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00 at 0056c788
 ;   core_zombie.cpp_CZombie_process_FUN_00595f30 at 00596211
 ;
 ; Referenced Globals:

@@ -24,9 +24,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_004ebf10 at 004ec035
 ;   core_menu.cpp_calibrateGamepad_FUN_004eb490 at 004eb4af
 ;   core_menu.cpp_configureCustomKeys_FUN_004ecc70 at 004ecd15
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec035
 ;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed30a
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee52a
 ;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee246

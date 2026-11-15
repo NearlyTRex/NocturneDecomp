@@ -9,7 +9,7 @@
 ;
 ; XREF[17]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a52b
-;   core_charactr.cpp_FUN_00432f10 at 004334f8
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 004334f8
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c13
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471b86
 ;   core_doc.cpp_FUN_004724a0 at 00472cdf

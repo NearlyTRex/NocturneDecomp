@@ -13,7 +13,7 @@
 ;
 ; XREF[9]:
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00428df8
-;   core_charactr.cpp_FUN_00432f10 at 00433517
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 00433517
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459470
 ;   core_doc.cpp_FUN_004724a0 at 00472d28
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 at 004cb17f

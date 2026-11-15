@@ -53,9 +53,9 @@ uint __cdecl intersectVerticalCylinderSegment(CVector3f *segment_start,CVector3f
 // Address: 00445620
 uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
 
-// Original: core_dcube.cpp_FUN_00445a30
+// Original: core_dcube.cpp_clipTriangleToAABB_FUN_00445a30
 // Address: 00445a30
-undefined4 FUN_00445a30(void);
+undefined4 clipTriangleToAABB(void);
 
 // Original: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00446440
 // Address: 00446440

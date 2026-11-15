@@ -17,7 +17,7 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f82b
 ;   core_bugs.cpp_CBugs_process_FUN_00421300 at 0042144f
 ;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 00425a63
-;   core_charactr.cpp_FUN_00432330 at 004324dc
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 004324dc
 ;   ... and 45 more
 ;
 ; Referenced Globals:

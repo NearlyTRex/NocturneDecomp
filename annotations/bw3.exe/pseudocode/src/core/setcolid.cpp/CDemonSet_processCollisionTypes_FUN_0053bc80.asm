@@ -34,7 +34,7 @@
 ;   core_fire.cpp_CCrater_activate_FUN_0049d590 at 0049d5e6
 ;   core_fire.cpp_CRing_activate_FUN_0049fce0 at 0049fd16
 ;   core_gore.cpp_CBloodPool_init_FUN_004cdff0 at 004ce01b
-;   core_prye.cpp_FUN_00521880 at 00521daf
+;   core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880 at 00521daf
 ;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056dabd
 ;
 ; Referenced Globals:

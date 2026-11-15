@@ -17,8 +17,8 @@
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0 at 004fc3ff
 ;   core_motion.cpp_CMotionController_setMotionList_FUN_004fc280 at 004fc29c
 ;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a7a4
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051ef00
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e900
-;   core_prye.cpp_CPrye_setup_FUN_00518680 at 005188c4
 ;   ... and 14 more
 ;
 ; Referenced Globals:

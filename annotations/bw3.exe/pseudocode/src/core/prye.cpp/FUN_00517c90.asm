@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051de70
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051de70
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cca77

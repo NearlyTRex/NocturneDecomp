@@ -42,9 +42,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
-;   core_actor.cpp_FUN_00408730
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_deleteActor_FUN_00408730
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
@@ -799,8 +799,8 @@ section .text
     RET                                 ; 004db4e2
     PUSH EAX                            ; 004db4e3
         ;   Label: LAB_004db4e3
-    CALL core_actor.cpp_FUN_00408a50    ; 004db4e4
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004db4e4
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004db4e9
     PUSH EAX                            ; 004db4ec
     PUSH EBP                            ; 004db4ed
@@ -839,8 +839,8 @@ section .text
     ADD ESP,0x8                         ; 004db553
     MOV EAX,dword ptr [ESP + 0x334]     ; 004db556
     PUSH EAX                            ; 004db55d
-    CALL core_actor.cpp_FUN_00408730    ; 004db55e
-        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408730()
+    CALL core_actor.cpp_deleteActor_FUN_00408730 ; 004db55e
+        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408730(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004db563
     PUSH 0x5db6ac                       ; 004db566 | = "Found dynamite.  Creating weapon for ..."
     MOV EDX,dword ptr [0x00609ed0]      ; 004db56b | g_CConsolePtr
@@ -961,14 +961,14 @@ section .text
     JZ 0x004db62c                       ; 004db693
         ;   XREF to: 004db62c (CONDITIONAL_JUMP)  ; LAB_004db62c
     PUSH ESI                            ; 004db695
-    CALL core_actor.cpp_FUN_00408a50    ; 004db696
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004db696
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004db69b
     PUSH EAX                            ; 004db69e
     MOV ECX,dword ptr [ESP + 0x318]     ; 004db69f
     PUSH ECX                            ; 004db6a6
-    CALL core_actor.cpp_FUN_00408a50    ; 004db6a7
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004db6a7
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004db6ac
     PUSH EAX                            ; 004db6af
     CALL crt_string.c__strcmp_FUN_005b8c30 ; 004db6b0

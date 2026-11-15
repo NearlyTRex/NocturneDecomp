@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051b550 at 0051b7e5
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051b7e5
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0

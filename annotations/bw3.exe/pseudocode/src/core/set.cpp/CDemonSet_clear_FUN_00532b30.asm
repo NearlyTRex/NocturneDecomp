@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
-;   core_setdir.cpp_FUN_00541a60
+;   core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60
 ;   core_setutil.cpp_C3DSCamera_free_FUN_00541ac0
 ;   core_terrain.cpp_CTerrain_free_FUN_005723b0
 ;
@@ -50,8 +50,8 @@ section .text
     ADD ESP,0x4                         ; 00532b6d
     MOV ECX,dword ptr [ESP + 0xc]       ; 00532b70
     PUSH ECX                            ; 00532b74
-    CALL core_setdir.cpp_FUN_00541a60   ; 00532b75
-        ;   XREF to: 00541a60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_00541a60(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60 ; 00532b75
+        ;   XREF to: 00541a60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00532b7a
     POP ESI                             ; 00532b7d
     POP EBX                             ; 00532b7e

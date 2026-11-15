@@ -13,7 +13,7 @@ void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00540be0(CDemonSet *thi
   
   file = engine_dosio_cpp_getFile_FUN_004659c0(&DAT_005d0cc1,filename,&DAT_005d0cbe);
   if (file == (_FILE *)0x0) {
-    core_setdir_cpp_FUN_00540cf0(this_ptr);
+    core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0(this_ptr);
     core_setdir_cpp_CDemonSet_writeThumbs_FUN_00540c40(this_ptr,filename);
     return;
   }

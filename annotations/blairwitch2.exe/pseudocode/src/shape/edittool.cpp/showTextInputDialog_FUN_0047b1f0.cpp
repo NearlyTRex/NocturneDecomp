@@ -60,7 +60,7 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
   DAT_006141cc = 0x7f;
   iVar2 = 0;
 LAB_0047b3b6:
-  shape_edittool_cpp_FUN_0047e870(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(g_CEditorToolsPtr);
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(g_CEditorToolsPtr,1);
   shape_edittool_cpp_CInputString_draw_FUN_0047afb0(&local_320,_DAT_01c35e48,_DAT_01c35e4c);
   shape_edittool_cpp_CEdButton_paint_FUN_00484f20(&local_fc,(uint)(iVar2 == 0));

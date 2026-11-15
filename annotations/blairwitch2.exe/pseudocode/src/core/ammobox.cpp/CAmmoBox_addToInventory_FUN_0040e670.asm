@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_doc.cpp_FUN_00458320 at 0045835c
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004b0a40 at 004b0a6d
-;   core_stranger.cpp_FUN_0056a160 at 0056a19c
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160 at 0056a19c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_005cb271
@@ -24,8 +24,8 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
+;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
-;   core_ammo.cpp_FUN_0040e440
 ;   core_inv.cpp_CInventory_addItem_FUN_004dadb0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
@@ -99,8 +99,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x470]     ; 0040e70a
     PUSH EAX                            ; 0040e710
     PUSH EBX                            ; 0040e711
-    CALL core_ammo.cpp_FUN_0040e440     ; 0040e712
-        ;   XREF to: 0040e440 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040e440(CAmmo * this_ptr, int ammo_count)
+    CALL core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440 ; 0040e712
+        ;   XREF to: 0040e440 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440(CAmmo * this_ptr, int ammo_count)
     MOV EAX,dword ptr [EBP + 0x474]     ; 0040e717
     ADD ESP,0x8                         ; 0040e71d
     MOV dword ptr [EBX + 0x474],EAX     ; 0040e720

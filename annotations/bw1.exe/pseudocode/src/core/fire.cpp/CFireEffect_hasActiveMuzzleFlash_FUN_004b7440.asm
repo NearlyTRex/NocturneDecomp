@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00550da0 at 0055103e
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 0055103e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c9f1bc

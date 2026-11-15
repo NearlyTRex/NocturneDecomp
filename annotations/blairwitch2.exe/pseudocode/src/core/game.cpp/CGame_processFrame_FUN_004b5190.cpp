@@ -150,7 +150,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
             }
           }
           else {
-            core_set_cpp_FUN_0052fad0(g_CDemonSetPtr);
+            core_set_cpp_CDemonSet_renderGogglesView_FUN_0052fad0(g_CDemonSetPtr);
           }
         }
         else {
@@ -177,7 +177,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
         engine_font_cpp_CBitFont_drawText_FUN_004a8df0
                   (this_ptr_01,local_4e0,(DAT_006141b8 - iVar2) / 2,0x32,1,0);
       }
-      core_inv_cpp_FUN_004dd9b0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c);
+      core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0
+                ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c));
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_005307a0(g_CDemonSetPtr);
       }
@@ -295,12 +296,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(this_ptr->debug_info_string,0,DAT_006141bc + -0x21);
         if (_DAT_0264bba0 != 0) {
-          engine_special_cpp_FUN_005601a0(0x400);
-          engine_special_cpp_FUN_005601a0(0x200);
-          engine_special_cpp_FUN_005601a0(0x100);
-          engine_special_cpp_FUN_005601a0(0x80);
-          engine_special_cpp_FUN_005601a0(0x40);
-          engine_special_cpp_FUN_005601a0(0x20);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x400);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x200);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x100);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x80);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x40);
+          engine_special_cpp_getTextureInfo_FUN_005601a0(0x20);
           _sprintf((char *)&local_830.taken,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,0x2c);
         }

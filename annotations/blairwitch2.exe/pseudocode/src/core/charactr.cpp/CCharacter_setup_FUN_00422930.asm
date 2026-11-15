@@ -25,8 +25,8 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
-;   core_actor.cpp_FUN_00408a50
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a3d0
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_00425bb0
@@ -268,8 +268,8 @@ section .text
     PUSH EAX                            ; 00422b94
         ;   Label: LAB_00422b94
     MOV EDI,dword ptr [EBP + 0x14]      ; 00422b95
-    CALL core_actor.cpp_FUN_00408a50    ; 00422b98
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 00422b98
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00422b9d
     LEA ESI,[EAX + 0x1]                 ; 00422ba0
     ADD EDI,0x25b4                      ; 00422ba3

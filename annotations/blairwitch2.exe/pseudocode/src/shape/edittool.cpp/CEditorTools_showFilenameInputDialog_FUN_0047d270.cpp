@@ -49,7 +49,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270
   local_18 = DAT_006141cc;
   DAT_006141cc = 0x7f;
   do {
-    shape_edittool_cpp_FUN_0047e870(this_ptr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(this_ptr);
     strupr(local_158.string_data);
     if (*directory_path != '\0') {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Directory: ");

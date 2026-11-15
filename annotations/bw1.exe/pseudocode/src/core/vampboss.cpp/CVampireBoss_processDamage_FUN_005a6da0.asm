@@ -28,8 +28,8 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
+;   core_inv.cpp_CInventory_findItemByName_FUN_004f8c40
 ;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
-;   core_inv.cpp_FUN_004f8c40
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
@@ -225,8 +225,8 @@ section .text
     PUSH EBX                            ; 005a6f6e
     LEA ESI,[EAX + 0x1fae8]             ; 005a6f6f
     PUSH ESI                            ; 005a6f75
-    CALL core_inv.cpp_FUN_004f8c40      ; 005a6f76
-        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004f8c40(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004f8c40 ; 005a6f76
+        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004f8c40(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 005a6f7b
     CMP EAX,EBX                         ; 005a6f7e
     JNZ 0x005a6f9e                      ; 005a6f80

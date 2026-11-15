@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_drawLineAA_FUN_00439640
-;   cockpit_ckptutil.c_FUN_0043a030
-;   cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010
+;   cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043a010
+;   cockpit_ckptutil.c_setLineClippingDisabled_FUN_0043a030
 ;
 ; *****************************************************************************
 
@@ -47,12 +47,12 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0047f7dc
     MOV dword ptr [0x01c4f00c],ESI      ; 0047f7df | DAT_01c4f00c
     MOV [0x01c4f014],EAX                ; 0047f7e5 | DAT_01c4f014
-    CALL cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010 ; 0047f7ea
-        ;   XREF to: 0043a010 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010()
+    CALL cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043a010 ; 0047f7ea
+        ;   XREF to: 0043a010 (UNCONDITIONAL_CALL)  ; int cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043a010()
     PUSH 0x1                            ; 0047f7ef
     MOV ESI,EAX                         ; 0047f7f1
-    CALL cockpit_ckptutil.c_FUN_0043a030 ; 0047f7f3
-        ;   XREF to: 0043a030 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0043a030()
+    CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_0043a030 ; 0047f7f3
+        ;   XREF to: 0043a030 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_0043a030(int disabled)
     MOV EDX,dword ptr [0x01bc11e8]      ; 0047f7f8 | DAT_01bc11e8
     ADD ESP,0x4                         ; 0047f7fe
     MOV ECX,dword ptr [EBX + 0xc]       ; 0047f801
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 00439640 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_drawLineAA_FUN_00439640(int x0, int y0, int x1, int y1, ...)
     ADD ESP,0x14                        ; 0047f829
     PUSH ESI                            ; 0047f82c
-    CALL cockpit_ckptutil.c_FUN_0043a030 ; 0047f82d
-        ;   XREF to: 0043a030 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0043a030()
+    CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_0043a030 ; 0047f82d
+        ;   XREF to: 0043a030 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_0043a030(int disabled)
     ADD ESP,0x4                         ; 0047f832
     MOV EAX,dword ptr [ESP]             ; 0047f835
     MOV dword ptr [0x01c4f008],EDI      ; 0047f838 | DAT_01c4f008

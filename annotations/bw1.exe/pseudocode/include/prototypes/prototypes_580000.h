@@ -24,8 +24,10 @@
 #include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
+#include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
@@ -35,7 +37,7 @@
 // =============================================================================
 
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
-void __edi_esi_ebx engine_special_cpp_FUN_00580127(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00580127(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0058043c(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00580740(void);
@@ -46,12 +48,12 @@ int __cdecl engine_special_cpp_lockFrame_FUN_00581f50(void);
 int __cdecl engine_special_cpp_unlockFrame_FUN_00581fa0(int clear_lock_flag);
 int __cdecl engine_special_cpp_beginScene_FUN_00581fe0(void);
 int __cdecl engine_special_cpp_endScene_FUN_00582000(void);
-undefined4 engine_special_cpp_FUN_00582020(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_00582060(void);
-undefined4 engine_special_cpp_FUN_005820a0(void);
-undefined4 engine_special_cpp_FUN_005820e0(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_FUN_00582160(void);
-undefined4 engine_special_cpp_FUN_005821a0(void);
+int __cdecl engine_special_cpp_selectTexture_FUN_00582020(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_updateTexture_FUN_00582060(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_selectTextureFromPalette_FUN_005820a0(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_005820e0(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureBGRA_FUN_00582160(SMRGLTextureBasic *texture_info,int flags);
+int __cdecl engine_special_cpp_setMipMapLevel_FUN_005821a0(int mipmap_level);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005821c0(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_005822e0(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_00582310(void);
@@ -76,11 +78,11 @@ int __cdecl engine_special_cpp_restoreZBuffer_FUN_00582aa0(int slot,int left,int
 int __cdecl engine_special_cpp_getVideoMemory_FUN_00582ae0(int *total_memory,int *available_memory,int *memory_type);
 int __cdecl engine_special_cpp_selectCard_FUN_00582b10(int card_index);
 int __cdecl engine_special_cpp_buildCardList_FUN_00582b30(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
-int __cdecl engine_special_cpp_FUN_00582b70(void);
-int __cdecl engine_special_cpp_FUN_00582b90(void);
-undefined4 engine_special_cpp_FUN_00582bb0(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_00582bd0(void);
-int __cdecl engine_special_cpp_FUN_00582bf0(int texture_size);
+int __cdecl engine_special_cpp_lockHoldBuffer_FUN_00582b70(void);
+int __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00582b90(void);
+int __cdecl engine_special_cpp_lockTexture_FUN_00582bb0(int texture_id);
+int __cdecl engine_special_cpp_unlockTexture_FUN_00582bd0(void);
+int __cdecl engine_special_cpp_getTextureInfo_FUN_00582bf0(int texture_size);
 int __cdecl engine_special_cpp_setVideoModeX_FUN_00582c10(int width,int height,int bits_per_pixel,int flags);
 int __cdecl engine_special_cpp_lockFrameX_FUN_00582c90(void);
 undefined4 engine_special_cpp_FUN_00582cf0(void);
@@ -105,7 +107,7 @@ float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00583ef0(float *basis,flo
 int __cdecl core_spline_cpp_evaluateSplintInt_FUN_00583f30(float *basis,int v0,int v1,int v2,int v3);
 CVector3f * __stack5_esi core_spline_cpp_evaluateSplinePoint3D_FUN_00583f90(float *basis,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3,CVector3f *out);
 float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00584130(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
-void core_spline_cpp_FUN_005841d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+CVector3f * __stack5_esi core_spline_cpp_evaluateSplineTangent3D_FUN_005841d0(float *basis,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3,CVector3f *out);
 void __cdecl shape_spotview_cpp_staticInit_FUN_00584380(void);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00584390(CSpotView *this_ptr);
 void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_005843f0(CSpotView *this_ptr,uint control_flags);
@@ -147,8 +149,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00585b00(CStranger *th
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005881d0(CStranger *this_ptr,float delta_time);
 CVector3f * __stack_esi core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00588a10(CStranger *this_ptr,CVector3f *out_position);
 void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_FUN_00589f10(CStranger *this_ptr,SPose *out_pose);
-void __cdecl core_stranger_cpp_FUN_0058a010(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_00589f10(CStranger *this_ptr,SPose *out_pose);
+void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_0058a010(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_0058a320(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_0058a360(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0058aab0(CStranger *this_ptr,int arm_side);

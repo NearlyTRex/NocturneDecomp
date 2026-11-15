@@ -249,8 +249,8 @@
     ],
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00402800",
-    "name":"engine_2d.c_FUN_00402800",
+    "method":"getTextWrapEnabled",
+    "name":"engine_2d.c_getTextWrapEnabled_FUN_00402800",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -3843,14 +3843,32 @@
     "calls":[
       "0040cd60"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_0042cc80",
-    "name":"core_charactr.cpp_FUN_0042cc80",
+    "method":"clampNormalizedAngle",
+    "name":"core_charactr.cpp_clampNormalizedAngle_FUN_0042cc80",
+    "params":[
+      {
+        "name":"angle",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"limit",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -5052,19 +5070,12 @@
       "00498360",
       "00580173"
     ],
+    "cls":"CCloth",
     "conv":"__cdecl",
     "instructions":162,
-    "method":"FUN_00441500",
-    "name":"core_cloth.cpp_FUN_00441500",
+    "method":"renderBone",
+    "name":"core_cloth.cpp_CCloth_renderBone_FUN_00441500",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCloth",
-          "ptr":1
-        }
-      },
       {
         "name":"bone_index",
         "type":{
@@ -5082,7 +5093,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -5737,21 +5748,12 @@
       "004b6c60",
       "0051b740"
     ],
+    "cls":"CCrate",
     "conv":"__cdecl",
     "instructions":60,
-    "method":"FUN_00449600",
-    "name":"core_crate.cpp_FUN_00449600",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCrate",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"explode",
+    "name":"core_crate.cpp_CCrate_explode_FUN_00449600",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -7356,8 +7358,8 @@
     ],
     "conv":"__cdecl",
     "instructions":502,
-    "method":"FUN_0047a480",
-    "name":"core_dpart.cpp_FUN_0047a480",
+    "method":"renderTriangleTextured",
+    "name":"engine_drender.cpp_renderTriangleTextured_FUN_0047a480",
     "params":[
       {
         "name":"vertex_indices",
@@ -7382,7 +7384,7 @@
       "name":"void",
       "ptr":0
     },
-    "tu":"core/dpart.cpp",
+    "tu":"engine/drender.cpp",
     "variadic":false
   },
   {
@@ -7402,8 +7404,8 @@
     ],
     "conv":"__cdecl",
     "instructions":366,
-    "method":"FUN_0047ab00",
-    "name":"core_dpart.cpp_FUN_0047ab00",
+    "method":"renderTriangleSimple",
+    "name":"engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
     "params":[
       {
         "name":"vertex_indices",
@@ -7428,7 +7430,7 @@
       "name":"void",
       "ptr":0
     },
-    "tu":"core/dpart.cpp",
+    "tu":"engine/drender.cpp",
     "variadic":false
   },
   {
@@ -7527,19 +7529,12 @@
       "00583f90",
       "005841d0"
     ],
+    "cls":"CDraculaBride",
     "conv":"__cdecl",
     "instructions":246,
-    "method":"FUN_0047de00",
-    "name":"core_dracbrid.cpp_FUN_0047de00",
+    "method":"updateFreakySounds",
+    "name":"core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0047de00",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDraculaBride",
-          "ptr":1
-        }
-      },
       {
         "name":"delta_time",
         "type":{
@@ -7549,7 +7544,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8981,18 +8976,29 @@
       "005acff0",
       "005bfb18"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":65,
-    "method":"FUN_00494500",
-    "name":"shape_edittool.cpp_FUN_00494500",
-    "receiver":false,
+    "method":"drawWindowStatusMessage",
+    "name":"shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_00494500",
+    "params":[
+      {
+        "name":"format_string",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"00494600",
@@ -9001,14 +9007,25 @@
       "004c4510",
       "005030e0"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":40,
-    "method":"FUN_00494600",
-    "name":"shape_edittool.cpp_FUN_00494600",
-    "receiver":false,
+    "method":"createCenteredDialog",
+    "name":"shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_00494600",
+    "params":[
+      {
+        "name":"dialog_text",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -15996,14 +16013,15 @@
       "0052e040",
       "0059c740"
     ],
-    "conv":"unknown",
+    "cls":"CNetGame",
+    "conv":"__cdecl",
     "instructions":53,
-    "method":"FUN_0052c600",
-    "name":"core_netgame.cpp_FUN_0052c600",
-    "receiver":false,
+    "method":"initializeNetworkToHost",
+    "name":"core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0052c600",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -16305,17 +16323,28 @@
   },
   {
     "addr":"00532700",
-    "conv":"unknown",
+    "cls":"CParticle",
+    "conv":"__cdecl",
     "data_refs":[
       "006045ec"
     ],
     "instructions":2,
-    "method":"FUN_00532700",
-    "name":"core_particle.cpp_FUN_00532700",
-    "receiver":false,
+    "method":"onCollision",
+    "name":"core_particle.cpp_CParticle_onCollision_FUN_00532700",
+    "params":[
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/particle.cpp",
@@ -23515,8 +23544,8 @@
     ],
     "conv":"unknown",
     "instructions":130,
-    "method":"FUN_005b7c00",
-    "name":"core_xform.cpp_FUN_005b7c00",
+    "method":"quaternionToEulerAngles",
+    "name":"core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00",
     "receiver":false,
     "ret":{
       "kind":"builtin",

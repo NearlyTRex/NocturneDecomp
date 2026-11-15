@@ -61,9 +61,9 @@ void __cdecl CIniFile::setString(CIniFile *this_ptr,char *key,char *value);
 // Address: 004f4d10
 void __cdecl CIniFile::getInteger(CIniFile *this_ptr,char *key_name,int *value_ptr);
 
-// Original: engine_ini.cpp_FUN_004f4d70
+// Original: engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70
 // Address: 004f4d70
-void __cdecl FUN_004f4d70(CIniFile *this_ptr,char *key,int value);
+void __cdecl CIniFile::setInteger(CIniFile *this_ptr,char *key,int value);
 
 // Original: engine_ini.cpp_CIniFile_getFloat_FUN_004f4db0
 // Address: 004f4db0

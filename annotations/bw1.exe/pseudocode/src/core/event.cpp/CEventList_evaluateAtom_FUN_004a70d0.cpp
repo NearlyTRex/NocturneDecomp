@@ -366,7 +366,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
           iVar7 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
           local_104 = 0;
           if ((iVar7 != 0) &&
-             (pCVar11 = core_inv_cpp_FUN_004f8c40((CInventory *)(iVar7 + 0x1fae8),acStack_6a1 + 1),
+             (pCVar11 = core_inv_cpp_CInventory_findItemByName_FUN_004f8c40
+                                  ((CInventory *)(iVar7 + 0x1fae8),acStack_6a1 + 1),
              pCVar11 != (CDemonActor *)0x0)) {
             local_104 = 1;
           }

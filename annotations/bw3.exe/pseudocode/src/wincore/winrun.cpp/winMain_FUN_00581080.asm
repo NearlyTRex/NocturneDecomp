@@ -47,7 +47,7 @@
 ; Called Functions:
 ;   BringWindowToTop
 ;   core_main.c_enterMainGameMenu_FUN_004e44d0
-;   core_main.c_FUN_004e4c70
+;   core_main.c_finalizeGameSystems_FUN_004e4c70
 ;   core_main.c_initializeGameSystems_FUN_004e44e0
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_stdlib.c_srand_FUN_005a35f0
@@ -272,8 +272,8 @@ section .text
     ADD ESP,0x8                         ; 005812cf
     CALL core_main.c_enterMainGameMenu_FUN_004e44d0 ; 005812d2
         ;   XREF to: 004e44d0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004e44d0()
-    CALL core_main.c_FUN_004e4c70       ; 005812d7
-        ;   XREF to: 004e4c70 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4c70()
+    CALL core_main.c_finalizeGameSystems_FUN_004e4c70 ; 005812d7
+        ;   XREF to: 004e4c70 (UNCONDITIONAL_CALL)  ; void core_main.c_finalizeGameSystems_FUN_004e4c70()
     PUSH 0x0                            ; 005812dc
     CALL dword ptr CS:[0x5b3540]        ; 005812de | PTR_ExitProcess_005b3540
     XOR BH,BH                           ; 005812f1

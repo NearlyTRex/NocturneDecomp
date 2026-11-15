@@ -168,7 +168,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr)
             core_flamecan_cpp_CFlameCan_ignite_FUN_004a08d0(this_ptr_03);
           }
           else {
-            core_crate_cpp_FUN_0043a350(pCStack_20);
+            core_crate_cpp_CCrate_explode_FUN_0043a350(pCStack_20);
           }
         }
         else {

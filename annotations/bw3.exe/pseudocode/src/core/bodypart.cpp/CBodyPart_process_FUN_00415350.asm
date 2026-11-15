@@ -26,7 +26,7 @@
 ;   core_box.cpp_CBox_process_FUN_0041b410
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_setcolid.cpp_FUN_0053ed10
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10
 ;
 ; *****************************************************************************
 
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 00415540 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x14]         ; 00415541
     MOV dword ptr [ESP + 0x40],EDI      ; 00415545
-    CALL core_setcolid.cpp_FUN_0053ed10 ; 00415549
-        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ed10()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10 ; 00415549
+        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041554e
     PUSH dword ptr [EBP + 0x18]         ; 00415551
     PUSH EBX                            ; 00415554

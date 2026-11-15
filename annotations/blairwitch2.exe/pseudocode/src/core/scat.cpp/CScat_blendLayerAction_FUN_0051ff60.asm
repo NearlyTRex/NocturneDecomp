@@ -23,7 +23,7 @@
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_scat.cpp_FUN_00520140
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;
@@ -200,8 +200,8 @@ section .text
     PUSH ECX                            ; 00520124
         ;   Label: LAB_00520124
     PUSH EBX                            ; 00520125
-    CALL core_scat.cpp_FUN_00520140     ; 00520126
-        ;   XREF to: 00520140 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00520140(CScat * this_ptr, int hand_index)
+    CALL core_scat.cpp_CScat_blendAimBones_FUN_00520140 ; 00520126
+        ;   XREF to: 00520140 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_blendAimBones_FUN_00520140(CScat * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 0052012b
     MOV ESP,EBP                         ; 0052012e
     POP EBP                             ; 00520130

@@ -81,9 +81,9 @@ int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int
 // Address: 004f8b70
 void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weapon);
 
-// Original: core_inv.cpp_FUN_004f8c40
+// Original: core_inv.cpp_CInventory_findItemByName_FUN_004f8c40
 // Address: 004f8c40
-CDemonActor * __cdecl FUN_004f8c40(CInventory *this_ptr,char *item_name);
+CDemonActor * __cdecl CInventory::findItemByName(CInventory *this_ptr,char *item_name);
 
 // Original: core_inv.cpp_FUN_004f8c90
 // Address: 004f8c90
@@ -145,9 +145,9 @@ CLightGun * __cdecl CInventory::getActiveLightGun(CInventory *this_ptr);
 // Address: 004f9ef0
 int FUN_004f9ef0(int param_1);
 
-// Original: core_inv.cpp_FUN_004f9f10
+// Original: core_inv.cpp_CInventory_updateInventory_FUN_004f9f10
 // Address: 004f9f10
-void FUN_004f9f10(CInventory *param_1);
+void __cdecl CInventory::updateInventory(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470
 // Address: 004fa470
@@ -185,9 +185,9 @@ void __cdecl drawItemIconBackground(int x1,int y1,int x2,int y2,int alpha);
 // Address: 004faaf0
 void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004fae10
+// Original: core_inv.cpp_CInventory_renderAllItems_FUN_004fae10
 // Address: 004fae10
-void FUN_004fae10(CInventory *param_1);
+void __cdecl CInventory::renderAllItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004fc240
 // Address: 004fc240

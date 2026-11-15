@@ -45,9 +45,9 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 // Address: 0042b920
 float __cdecl clampFloat(float value,float limit);
 
-// Original: core_charactr.cpp_FUN_0042b970
+// Original: core_charactr.cpp_clampNormalizedAngle_FUN_0042b970
 // Address: 0042b970
-float FUN_0042b970(float param_1,float param_2);
+float __cdecl clampNormalizedAngle(float angle,float limit);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 // Address: 0042b9e0
@@ -77,9 +77,9 @@ int __cdecl CCharacter::isOnGround(CCharacter *this_ptr);
 // Address: 0042cd30
 void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042cd70
+// Original: core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 // Address: 0042cd70
-undefined4 FUN_0042cd70(CCharacter *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5);
+int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_FUN_0042d390
 // Address: 0042d390
@@ -325,9 +325,9 @@ void __cdecl CCharacter::advanceGesture(CCharacter *this_ptr,float delta_time);
 // Address: 004322a0
 void __cdecl CCharacter::computeBoundingBox(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00432330
+// Original: core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 // Address: 00432330
-void FUN_00432330(CCharacter *param_1,float param_2,int param_3);
+void __cdecl CCharacter::findSomethingToLookAt(CCharacter *this_ptr,float delta_time,int disable_search);
 
 // Original: core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000
 // Address: 00433000
@@ -381,9 +381,9 @@ float __cdecl CCharacter::getLayerActionBlendWeight(CCharacter *this_ptr,int sta
 // Address: 00433ae0
 void __cdecl CCharacter::chooseNextLayerAction(CCharacter *this_ptr,int layer_action_index);
 
-// Original: core_charactr.cpp_FUN_00433c60
+// Original: core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 // Address: 00433c60
-void FUN_00433c60(CCharacter *param_1,float param_2);
+void __cdecl CCharacter::processSmoking(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 // Address: 00433fb0
@@ -413,9 +413,9 @@ void FUN_004349d0(int param_1,CWayPoint *param_2);
 // Address: 00434a30
 void __cdecl setActorXPos(CDemonActor *actor,float x);
 
-// Original: core_charactr.cpp_FUN_00434b00
+// Original: core_charactr.cpp_getGameDeltaTime_FUN_00434b00
 // Address: 00434b00
-undefined4 FUN_00434b00(int param_1);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_00434b10
 // Address: 00434b10

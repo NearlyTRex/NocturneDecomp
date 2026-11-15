@@ -8,9 +8,9 @@
 ; uchar            Stack[0x8]:1   data_byte
 ;
 ; XREF[4]:
-;   engine_pod.cpp_FUN_00513d20 at 00513e20
-;   engine_pod.cpp_FUN_00514220 at 005142e9
-;   engine_pod.cpp_FUN_005149c0 at 00514ad1
+;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_00514220 at 005142e9
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20 at 00513e20
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_005149c0 at 00514ad1
 ;   engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70 at 00512ed2
 ;
 ; *****************************************************************************

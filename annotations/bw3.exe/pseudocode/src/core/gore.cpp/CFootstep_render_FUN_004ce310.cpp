@@ -1,0 +1,85 @@
+// Name: core_gore.cpp_CFootstep_render_FUN_004ce310
+// Address: 004ce310
+// Address Range: [[004ce310, 004ce521]]
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_CFootstep_render_FUN_004ce310(CFootstep *this_ptr,int expire_flag)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_gore_cpp_CFootstep_render_FUN_004ce310(CFootstep *this_ptr,int expire_flag)
+
+{
+  uint uVar1;
+  CVector3f *pCVar2;
+  SProjectedVertex *output;
+  CVector3i local_1c;
+  
+  uVar1 = *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+  if (this_ptr->area_id == uVar1) {
+    _DAT_01d22ea0 = this_ptr->area_id ^ uVar1;
+    _DAT_01d22e8c = 4;
+    _DAT_01d22ea4 = 1;
+    _DAT_01d22ea8 = 2;
+    _DAT_01d22eac = 3;
+    DAT_0060b02c = 0x80000;
+    _DAT_0060b05c = 0xf80000;
+    _DAT_0060b08c = 0xf80000;
+    DAT_0060b090 = 0xf80000;
+    _DAT_0060b0c0 = 0xf80000;
+    _DAT_0060b030 = 0x80000;
+    _DAT_0060b060 = 0x80000;
+    _DAT_0060b0bc = 0x80000;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->alpha);
+    _DAT_01d22e90 = 0;
+    _DAT_01d22e94 = 0;
+    _DAT_01d22e98 = 0;
+    _DAT_01d22e9c = 0;
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+              (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005ffeac);
+    pCVar2 = this_ptr->corners;
+    output = (SProjectedVertex *)&DAT_0060b014;
+    do {
+      local_1c.x = (int)ROUND(pCVar2->x * _DAT_005e0e18);
+      local_1c.y = (int)ROUND(pCVar2->y * _DAT_005e0e18);
+      local_1c.z = (int)ROUND(pCVar2->z * _DAT_005e0e18);
+      pCVar2 = pCVar2 + 1;
+      engine_special_cpp_transformPoint_FUN_0056356c(output,&local_1c);
+      output = output + 2;
+    } while (pCVar2 != (CVector3f *)&this_ptr->alpha);
+    if (this_ptr->is_bloody == 0) {
+      DAT_0060b038 = 0x7ff;
+      DAT_0060b03c = 0x7ff;
+      DAT_0060b064 = 0x7ff;
+      DAT_0060b068 = 0x7ff;
+      DAT_0060b06c = 0x7ff;
+      _DAT_0060b094 = 0x7ff;
+      _DAT_0060b098 = 0x7ff;
+      _DAT_0060b09c = 0x7ff;
+      _DAT_0060b0c4 = 0x7ff;
+      _DAT_0060b0c8 = 0x7ff;
+      _DAT_0060b0cc = 0x7ff;
+      DAT_0060b034 = 0x7ff;
+    }
+    else {
+      core_gore_cpp_getBloodColorParams_FUN_004cc970
+                (this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
+      core_gore_cpp_getBloodColorParams_FUN_004cc970
+                (this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
+      core_gore_cpp_getBloodColorParams_FUN_004cc970
+                (this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c
+                );
+      core_gore_cpp_getBloodColorParams_FUN_004cc970
+                (this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc
+                );
+    }
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
+              (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e88);
+    if (expire_flag != 0) {
+      this_ptr->expired = 1;
+      return;
+    }
+  }
+  return;
+}

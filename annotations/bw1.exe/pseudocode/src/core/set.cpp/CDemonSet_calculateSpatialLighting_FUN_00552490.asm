@@ -17,7 +17,7 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710 at 005528b8
-;   core_set.cpp_FUN_00550da0 at 00551020
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00551020
 ;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055e416
 ;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b56a
 ;

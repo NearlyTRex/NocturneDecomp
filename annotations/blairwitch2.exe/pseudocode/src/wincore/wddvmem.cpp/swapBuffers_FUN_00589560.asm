@@ -18,10 +18,10 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be702
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6d7a
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b6143
-;   core_game.cpp_FUN_004bcbf0 at 004bcdfb
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 at 004bcdfb
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e1b40
-;   core_main.c_FUN_004e45e0 at 004e4627
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4c96
+;   core_main.c_showDeveloperToolsMenu_FUN_004e45e0 at 004e4627
 ;   core_menu.cpp_FUN_004eba50 at 004ebc36
 ;   ... and 31 more
 ;

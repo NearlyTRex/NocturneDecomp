@@ -92,8 +92,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00463080
         ;   Label: LAB_00463080
     PUSH EBX                            ; 00463086
-    CALL core_dracbrid.cpp_FUN_004658e0 ; 00463087
-        ;   XREF to: 004658e0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004658e0(CDraculaBride * this_ptr, float delta_time)
+    CALL core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004658e0 ; 00463087
+        ;   XREF to: 004658e0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004658e0(CDraculaBride * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0046308c
     PUSH dword ptr [EBP + 0x92]         ; 0046308f
     PUSH EBX                            ; 00463095
@@ -508,8 +508,8 @@ section .text
     PUSH 0x3f800000                     ; 00463576
     PUSH EAX                            ; 0046357b
     PUSH EBX                            ; 0046357c
-    CALL core_dracbrid.cpp_FUN_00465400 ; 0046357d
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 0046357d
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00463582
     PUSH 0x3e4ccccd                     ; 00463585
     CALL core_actor.cpp_randomChance_FUN_0040d060 ; 0046358a
@@ -522,8 +522,8 @@ section .text
     PUSH 0x3f800000                     ; 0046359c
     PUSH EAX                            ; 004635a1
     PUSH EBX                            ; 004635a2
-    CALL core_dracbrid.cpp_FUN_00465400 ; 004635a3
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 004635a3
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 004635a8
     JMP 0x00463527                      ; 004635ab
         ;   XREF to: 00463527 (UNCONDITIONAL_JUMP)  ; LAB_00463527
@@ -1380,8 +1380,8 @@ section .text
     PUSH 0x3f800000                     ; 00464002
     PUSH EAX                            ; 00464007
     PUSH EBX                            ; 00464008
-    CALL core_dracbrid.cpp_FUN_00465400 ; 00464009
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 00464009
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0046400e
     PUSH 0x3e4ccccd                     ; 00464011
     CALL core_actor.cpp_randomChance_FUN_0040d060 ; 00464016
@@ -1394,8 +1394,8 @@ section .text
     PUSH 0x3f800000                     ; 00464028
     PUSH EAX                            ; 0046402d
     PUSH EBX                            ; 0046402e
-    CALL core_dracbrid.cpp_FUN_00465400 ; 0046402f
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 0046402f
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00464034
     PUSH dword ptr [EBP + 0x92]         ; 00464037
         ;   Label: LAB_00464037
@@ -1776,8 +1776,8 @@ section .text
     PUSH 0x3f800000                     ; 0046447d
     PUSH EAX                            ; 00464482
     PUSH EBX                            ; 00464483
-    CALL core_dracbrid.cpp_FUN_00465400 ; 00464484
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 00464484
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00464489
     PUSH 0x1                            ; 0046448c
     PUSH 0x17                           ; 0046448e
@@ -1828,8 +1828,8 @@ section .text
     PUSH 0x3f800000                     ; 0046451d
     PUSH EAX                            ; 00464522
     PUSH EBX                            ; 00464523
-    CALL core_dracbrid.cpp_FUN_00465400 ; 00464524
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 00464524
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00464529
     PUSH 0x3e4ccccd                     ; 0046452c
     CALL core_actor.cpp_randomChance_FUN_0040d060 ; 00464531
@@ -1842,8 +1842,8 @@ section .text
     PUSH 0x3f800000                     ; 00464543
     PUSH EAX                            ; 00464548
     PUSH EBX                            ; 00464549
-    CALL core_dracbrid.cpp_FUN_00465400 ; 0046454a
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 0046454a
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0046454f
     PUSH dword ptr [EBP + 0x92]         ; 00464552
         ;   Label: LAB_00464552

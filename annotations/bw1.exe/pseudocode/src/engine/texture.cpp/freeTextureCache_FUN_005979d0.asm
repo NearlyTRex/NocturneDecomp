@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0344
+;   engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0
 ;   engine_texture.cpp_CTextureCache_reset_FUN_005965c0
-;   engine_texture.cpp_FUN_005965d0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH ECX                            ; 005979f4
         ;   Label: LAB_005979f4
     MOV EBX,ECX                         ; 005979f5
-    CALL engine_texture.cpp_FUN_005965d0 ; 005979f7
-        ;   XREF to: 005965d0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005965d0(CTextureCache * this_ptr)
+    CALL engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0 ; 005979f7
+        ;   XREF to: 005965d0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 005979fc
     PUSH EBX                            ; 005979ff
     CALL crt_unknown.c_FUN_005c0344     ; 00597a00

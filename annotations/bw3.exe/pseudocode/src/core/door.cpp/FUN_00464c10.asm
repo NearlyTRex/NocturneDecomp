@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051c306
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c306
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005deb98

@@ -111,6 +111,6 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FIL
       core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::load - Can't find your weapon");
     }
   }
-  core_inv_cpp_FUN_004dd2d0(this_ptr,999);
+  core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(this_ptr,999);
   return;
 }

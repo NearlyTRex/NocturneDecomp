@@ -258,7 +258,7 @@ LAB_0051dcd6:
             return;
           }
         }
-        engine_special_cpp_FUN_0055d6d7(left,local_14,iVar8);
+        engine_special_cpp_renderScanline_FUN_0055d6d7(left,local_14,iVar8);
         *(int *)(iVar8 + 8) = *(int *)(iVar8 + 8) + *(int *)(iVar8 + 0xc);
         *(int *)(iVar8 + 0x18) = *(int *)(iVar8 + 0x18) + *(int *)(iVar8 + 0x1c);
         *(int *)(iVar8 + 0x20) = *(int *)(iVar8 + 0x20) + *(int *)(iVar8 + 0x24);

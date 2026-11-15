@@ -19,10 +19,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(CDem
   if (this_ptr->face_capture_enabled == 0) {
     if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&
        ((DAT_01c51d14 & 5) != 0)) {
-      core_dpart_cpp_FUN_0047a480(vertex_indices,vertex_count);
+      engine_drender_cpp_renderTriangleTextured_FUN_0047a480(vertex_indices,vertex_count);
     }
     else {
-      core_dpart_cpp_FUN_0047ab00((CVector3i *)vertex_indices,vertex_count);
+      engine_drender_cpp_renderTriangleSimple_FUN_0047ab00((CVector3i *)vertex_indices,vertex_count)
+      ;
     }
   }
   else {

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 135,
+    "complexity_score": 136,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 146
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -181,16 +181,6 @@
   },
   "function_calls": [
     {
-      "addr": "0047a480",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_0047a480"
-    },
-    {
-      "addr": "0047ab00",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_0047ab00"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
       "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
@@ -214,6 +204,16 @@
       "addr": "0043de60",
       "is_variadic": false,
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_0043de60"
+    },
+    {
+      "addr": "0047ab00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00"
+    },
+    {
+      "addr": "0047a480",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_0047a480"
     }
   ],
   "globals": [
@@ -376,7 +376,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_01c51d14",
       "severity": "mild",
       "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_01c51d14",
       "severity": "mild",
       "text": "((DAT_01c51d14 & 5) != 0)) {",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_01c51d15",
       "severity": "mild",
       "text": "if ((DAT_01c51d15 & 2) == 0) {",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_007c7554",
       "severity": "mild",
       "text": "if (2 < DAT_007c7554) {",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007c7558",
       "severity": "mild",
       "text": "core_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007c7554",
       "severity": "mild",
       "text": "core_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",

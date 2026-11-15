@@ -112,7 +112,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290(
             } while (iVar3 < vertices_per_face);
           }
           if (this_ptr->face_capture_enabled == 0) {
-            core_dpart_cpp_FUN_004625f0(aCStack_68,iVar3);
+            engine_drender_cpp_renderTriangleSimple_FUN_004625f0(aCStack_68,iVar3);
           }
           else {
             core_xform_cpp_transformAndClipGeometry_FUN_00594f40(iVar3,&aCStack_68[0].x);

@@ -9,9 +9,9 @@
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags)
 
 {
-  int iVar1;
+  C3DSCamera *pCVar1;
   
   core_set_cpp_CDemonSet_clear_FUN_0052c090(this_ptr);
-  iVar1 = core_set_cpp_FUN_00534d80(this_ptr->cameras,0);
-  return (CDemonSet *)(iVar1 + -4);
+  pCVar1 = core_set_cpp_C3DSCamera_arrdtor250_FUN_00534d80(this_ptr->cameras,0);
+  return (CDemonSet *)&pCVar1[-1].enabled;
 }

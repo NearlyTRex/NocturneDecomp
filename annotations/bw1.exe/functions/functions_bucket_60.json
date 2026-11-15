@@ -716,14 +716,29 @@
         "start":"00408560"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_FUN_00408560",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_actor.cpp_deleteActor_FUN_00408560",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"actor_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ]
     }
   },
   {
@@ -3809,10 +3824,10 @@
         "start":"0041afe0"
       }
     ],
+    "conv":"__stack2_esi",
     "importable":true,
-    "name":"core_bodypart.cpp_FUN_0041afe0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_bodypart.cpp_subtractVector_FUN_0041afe0",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -3864,8 +3879,64 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"a",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"b",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"dst",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -8396,8 +8467,9 @@
         "start":"004427e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"support_codec.cpp_FUN_004427e0",
+    "name":"support_codec.cpp_flushBitBuffer_FUN_004427e0",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -12119,7 +12191,7 @@
       }
     ],
     "importable":true,
-    "name":"core_dcube.cpp_FUN_004570e0",
+    "name":"core_dcube.cpp_clipTriangleToAABB_FUN_004570e0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -20702,10 +20774,10 @@
         "start":"00496ee0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00496ee0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -20981,9 +21053,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEditorTools*"
+        }
+      ]
     }
   },
   {
@@ -32970,7 +33057,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_FUN_004f17e0",
+    "name":"core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f17e0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -45971,13 +46058,45 @@
         "start":"0053cc60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_pod.cpp_FUN_0053cc60",
-    "ret":"undefined1",
+    "name":"engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPod*"
+        },
+        {
+          "name":"pod_filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -55982,7 +56101,7 @@
       }
     ],
     "importable":true,
-    "name":"core_sound.cpp_FUN_0057c4e0",
+    "name":"core_sound.cpp_resetTrainSounds_FUN_0057c4e0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -56211,12 +56330,38 @@
         "start":"00582060"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00582060",
-    "ret":"undefined1",
+    "name":"engine_special.cpp_updateTexture_FUN_00582060",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"texture_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -56229,13 +56374,54 @@
         "start":"005820e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_005820e0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_special.cpp_updateTextureFromPalette_FUN_005820e0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"tex",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
+        },
+        {
+          "name":"palette_data",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRGBColorPalette*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -56248,12 +56434,54 @@
         "start":"00582160"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00582160",
-    "ret":"undefined1",
+    "name":"engine_special.cpp_updateTextureBGRA_FUN_00582160",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"texture_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -65885,7 +66113,7 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_005b7d60",
+    "name":"core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005b7d60",
     "ret":"undefined1",
     "sig":"default",
     "vars":{

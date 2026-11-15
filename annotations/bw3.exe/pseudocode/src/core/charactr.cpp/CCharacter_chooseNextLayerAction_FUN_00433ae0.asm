@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00524940 at 00524caf
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00524caf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b87d8

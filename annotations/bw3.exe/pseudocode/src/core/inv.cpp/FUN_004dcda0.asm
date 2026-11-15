@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00524940 at 0052499e
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 0052499e
 ;
 ; *****************************************************************************
 

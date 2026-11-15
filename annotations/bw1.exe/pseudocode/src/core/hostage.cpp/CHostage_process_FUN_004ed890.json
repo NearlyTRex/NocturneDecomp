@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1760,
-    "complexity_score": 1550,
+    "complexity_score": 1551,
     "cross_reference_count": 0,
     "function_call_count": 41,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 795,
+    "pseudocode_lines": 796,
     "suspect_count": 70,
     "suspect_types": [
       "concat_reconstruction",
@@ -22,7 +22,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2555
+    "total_lines": 2556
   },
   "cross_references": [],
   "function": {
@@ -85,6 +85,11 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80"
     },
     {
+      "addr": "00432f10",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10"
+    },
+    {
       "addr": "00431cc0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_followActor_FUN_00431cc0"
@@ -123,11 +128,6 @@
       "addr": "0042d700",
       "is_variadic": false,
       "name": "core_charactr.cpp_FUN_0042d700"
-    },
-    {
-      "addr": "00432f10",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00432f10"
     },
     {
       "addr": "00435320",
@@ -707,7 +707,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 781,
+      "line": 782,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "(pCVar16->model).bone_origins[0x4f].z = 8.40779e-45;",

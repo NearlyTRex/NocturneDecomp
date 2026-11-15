@@ -19,7 +19,7 @@ void __cdecl engine_texture_cpp_freeTextureCache_FUN_005979d0(void)
     _DAT_02c8a680 = (CTextureCache *)0x0;
     return;
   }
-  engine_texture_cpp_FUN_005965d0(_DAT_02c8a680);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005965d0(_DAT_02c8a680);
   FUN_005c0344(pCVar1);
   _DAT_02c8a680 = (CTextureCache *)0x0;
   return;

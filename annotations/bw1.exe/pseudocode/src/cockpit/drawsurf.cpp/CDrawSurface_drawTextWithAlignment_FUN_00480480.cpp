@@ -35,10 +35,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0048048
   _DAT_01c4f00c = this_ptr->clip_top;
   _DAT_01c4f014 = this_ptr->clip_bottom;
   if (_DAT_01bc11ec == (CBitFont *)0x0) {
-    iVar5 = engine_2d_c_FUN_00402800();
-    color = engine_2d_c_FUN_00402840();
-    engine_2d_c_FUN_00402830();
-    engine_2d_c_FUN_00402850(_DAT_01bc11e8);
+    iVar5 = engine_2d_c_getTextWrapEnabled_FUN_00402800();
+    color = engine_2d_c_getTextColor_FUN_00402840();
+    engine_2d_c_disableTextWrap_FUN_00402830();
+    engine_2d_c_setTextColor_FUN_00402850(_DAT_01bc11e8);
     switch(alignment_mode) {
     case TEXT_ALIGN_RIGHT:
       engine_2d_c_drawTextRightAlignedColor_FUN_00402540(text,left_x,y_00);
@@ -64,8 +64,8 @@ LAB_00480697:
     case TEXT_ALIGN_CENTER_IN_AREA:
       engine_2d_c_drawTextCenteredColor_FUN_004026d0(text,left_x,right_x,(y_00 + -10 + iVar6) / 2);
     }
-    engine_2d_c_FUN_00402850(color);
-    engine_2d_c_FUN_00402810(iVar5);
+    engine_2d_c_setTextColor_FUN_00402850(color);
+    engine_2d_c_setTextWrapEnabled_FUN_00402810(iVar5);
     _DAT_01c4f008 = uVar1;
     _DAT_01c4f00c = uVar2;
     _DAT_01c4f010 = uVar3;

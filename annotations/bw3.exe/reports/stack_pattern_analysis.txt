@@ -198,7 +198,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00412eec: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00415350
-    File: core/bodypart.cpp, Suspects: 9
+    File: core/bodypart.cpp, Suspects: 10
     - [stack_alignment] at 00415359: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_processFires_FUN_00415570
@@ -214,16 +214,16 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bodypart.cpp, Suspects: 28
     - [stack_alignment] at 004157cc: AND ESP,0xfffffff8
 
-  core_bodypart.cpp_FUN_00416bd0
-    File: core/bodypart.cpp, Suspects: 13
+  core_bodypart.cpp_scaleVector_FUN_00416bd0
+    File: core/bodypart.cpp, Suspects: 0
     - [alt_frame_pointer] at 00416bee: MOV ESI,ESP
 
-  core_bodypart.cpp_FUN_00416c10
-    File: core/bodypart.cpp, Suspects: 13
+  core_bodypart.cpp_subtractVector_FUN_00416c10
+    File: core/bodypart.cpp, Suspects: 0
     - [alt_frame_pointer] at 00416c28: MOV ESI,ESP
 
-  core_bodypart.cpp_FUN_00416c50
-    File: core/bodypart.cpp, Suspects: 13
+  core_bodypart.cpp_addVector_FUN_00416c50
+    File: core/bodypart.cpp, Suspects: 0
     - [alt_frame_pointer] at 00416c68: MOV ESI,ESP
 
   core_bodypart.cpp_FUN_00416cb0
@@ -252,7 +252,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0041759a: MOV EDI,ESP
 
   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930
-    File: core/boneguy.cpp, Suspects: 36
+    File: core/boneguy.cpp, Suspects: 47
     - [stack_alignment] at 0041893c: AND ESP,0xfffffff8
 
   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 28.2 suspects/function
-  Without stack patterns: avg 6.6 suspects/function
+  With stack patterns:    avg 25.8 suspects/function
+  Without stack patterns: avg 6.4 suspects/function

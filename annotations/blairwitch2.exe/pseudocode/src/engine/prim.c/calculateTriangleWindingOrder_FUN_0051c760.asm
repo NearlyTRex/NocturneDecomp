@@ -15,13 +15,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   core_dpart.cpp_FUN_00461f70 at 00462051
-;   core_dpart.cpp_FUN_004625f0 at 004626cd
 ;   core_zombie.cpp_FUN_0059a0b0 at 0059a371
 ;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a833
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431414
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 004330cc
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290 at 0046c3a5
+;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0 at 004626cd
+;   engine_drender.cpp_renderTriangleTextured_FUN_00461f70 at 00462051
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e17d
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050 at 0051d09d
 ;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cbd3

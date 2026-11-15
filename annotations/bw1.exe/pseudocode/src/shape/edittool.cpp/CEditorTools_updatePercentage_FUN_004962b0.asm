@@ -30,7 +30,7 @@
 ; XREF[4]:
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0 at 0048ac37
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cc69
-;   engine_pod.cpp_FUN_0053bfc0 at 0053c18f
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0 at 0053c18f
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0 at 00496270
 ;
 ; Referenced Globals:
@@ -66,7 +66,7 @@
 ;   engine_mini3d.cpp_fillRect_FUN_00518010
 ;   engine_mini3d.cpp_setAlpha_FUN_00512320
 ;   engine_mini3d.cpp_setColor_FUN_00517d50
-;   shape_edittool.cpp_FUN_00496ee0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -143,8 +143,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00496357
         ;   Label: LAB_00496357
     PUSH EDI                            ; 0049635a
-    CALL shape_edittool.cpp_FUN_00496ee0 ; 0049635b
-        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496ee0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 ; 0049635b
+        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00496360
     PUSH 0xffff                         ; 00496363
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 00496368

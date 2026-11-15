@@ -146,8 +146,8 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *thi
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_00479f60(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_0047a320(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_0047a440(int scanline_y,SSoftwareEdge *exclude_edge);
-void __cdecl core_dpart_cpp_FUN_0047a480(int *vertex_indices,int vertex_count);
-void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_0047a480(int *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_0047b000(void);
 CDraculaBride * __cdecl core_dracbrid_cpp_factoryFuncDraculaBride_FUN_0047b080(void);
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_0047b0a0(CDraculaBride *this_ptr);
@@ -163,9 +163,9 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDracul
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0047d750(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0047d790(CDraculaBride *this_ptr,CVector3f *out_points_array);
-void core_dracbrid_cpp_FUN_0047d890(float param_1,float param_2,float param_3);
-void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
-void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
+void core_dracbrid_cpp_randomizePosition_FUN_0047d890(float param_1,float param_2,float param_3);
+void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
+void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0047e150(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_0047e170(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags);
@@ -195,7 +195,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0047f860
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_0047f8c0(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_0047f9c0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void __cdecl cockpit_drawsurf_cpp_FUN_0047fcf0(CDrawSurface *this_ptr);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0047fcf0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_0047fdf0(void);
 undefined4 cockpit_drawsurf_cpp_FUN_0047fe00(void);
 void cockpit_drawsurf_cpp_FUN_0047fe10(void);

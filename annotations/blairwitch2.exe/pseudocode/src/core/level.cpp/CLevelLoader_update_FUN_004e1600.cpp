@@ -65,13 +65,13 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
               (DAT_0060b280,&local_44);
     g_CDemonSetPtr->rendering_mode = 1;
     iVar7 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
-    iVar6 = engine_matrix_c_FUN_004e86b0(iVar7);
+    iVar6 = engine_matrix_c_interpolatedSin_FUN_004e86b0(iVar7);
     pCVar2 = g_CDemonSetPtr;
     (g_CDemonSetPtr->light_direction).y = -37000;
     (pCVar2->light_direction).x =
          (uint)((longlong)iVar6 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar6 * 37000) >> 0x20) << 0x10;
-    iVar6 = engine_matrix_c_FUN_004e86f0(iVar7);
+    iVar6 = engine_matrix_c_interpolatedCos_FUN_004e86f0(iVar7);
     pCVar2 = g_CDemonSetPtr;
     g_CDemonSetPtr->ambient_base_quick = 0x280;
     (pCVar2->light_direction).z =

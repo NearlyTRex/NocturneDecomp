@@ -28,7 +28,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_00419790(CBoneGuy *thi
     pCVar4 = &this_ptr->boxes[0].source_pos;
     pCVar3 = this_ptr;
     do {
-      core_xform_cpp_FUN_005860b0(&((pCVar3->boxes[0].body_part)->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_005860b0(&((pCVar3->boxes[0].body_part)->base).orient);
       puVar5 = (uint *)((int)pCVar3 + (uint)bVar7 * -8 + 0xd10c);
       pCVar3->boxes[0].dest_orient.w = local_24;
       puVar6 = puVar5 + (uint)bVar7 * -2 + 1;

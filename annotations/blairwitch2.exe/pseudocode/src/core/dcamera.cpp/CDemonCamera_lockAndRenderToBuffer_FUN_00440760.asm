@@ -21,10 +21,10 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_special.cpp_beginScene_FUN_0055f590
-;   engine_special.cpp_FUN_00560120
-;   engine_special.cpp_FUN_00560140
 ;   engine_special.cpp_lockFrame_FUN_0055f500
+;   engine_special.cpp_lockHoldBuffer_FUN_00560120
 ;   engine_special.cpp_unlockFrame_FUN_0055f550
+;   engine_special.cpp_unlockHoldBuffer_FUN_00560140
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     CMP EDI,0x1e0                       ; 00440786
     JLE 0x004407d1                      ; 0044078c
         ;   XREF to: 004407d1 (CONDITIONAL_JUMP)  ; LAB_004407d1
-    CALL engine_special.cpp_FUN_00560140 ; 0044078e
-        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00560140()
+    CALL engine_special.cpp_unlockHoldBuffer_FUN_00560140 ; 0044078e
+        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockHoldBuffer_FUN_00560140()
     CMP dword ptr [0x0264bba0],0x0      ; 00440793 | DAT_0264bba0
     JNZ 0x004407e7                      ; 0044079a
         ;   XREF to: 004407e7 (CONDITIONAL_JUMP)  ; LAB_004407e7
@@ -57,8 +57,8 @@ section .text
     POP ESI                             ; 0044079d
     MOV EAX,EAX                         ; 0044079e
     RET                                 ; 004407a0
-    CALL engine_special.cpp_FUN_00560120 ; 004407a1
-        ;   XREF to: 00560120 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00560120()
+    CALL engine_special.cpp_lockHoldBuffer_FUN_00560120 ; 004407a1
+        ;   XREF to: 00560120 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockHoldBuffer_FUN_00560120()
         ;   Label: LAB_004407a1
     TEST EAX,EAX                        ; 004407a6
     JNZ 0x00440773                      ; 004407a8

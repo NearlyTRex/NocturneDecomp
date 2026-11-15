@@ -141,13 +141,13 @@ void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format);
 // Address: 00494400
 void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *format);
 
-// Original: shape_edittool.cpp_FUN_00494500
+// Original: shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_00494500
 // Address: 00494500
-void FUN_00494500(void);
+void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_FUN_00494600
+// Original: shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_00494600
 // Address: 00494600
-void FUN_00494600(void);
+void __cdecl CEditorTools::createCenteredDialog(CEditorTools *this_ptr,char *dialog_text);
 
 // Original: shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690
 // Address: 00494690
@@ -225,9 +225,9 @@ void __cdecl CEditorTools::restoreWindowAndCleanup(CEditorTools *this_ptr);
 // Address: 00496df0
 void __cdecl CEditorTools::popWindowState(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00496ee0
+// Original: shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0
 // Address: 00496ee0
-void FUN_00496ee0(void);
+void __cdecl CEditorTools::paintCurrentWindow(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660
 // Address: 00497660
@@ -537,9 +537,9 @@ CEdButton * __cdecl CEdButton::ctor(CEdButton *this_ptr);
 // Address: 0049d4b0
 CEdButton * __cdecl CEdButton::dtor(CEdButton *this_ptr,uint flags);
 
-// Original: shape_edittool.cpp_FUN_0049d4d0
+// Original: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_0049d4d0
 // Address: 0049d4d0
-void __cdecl FUN_0049d4d0(CEdButton *this_ptr);
+void __cdecl CEdButton::clearActiveButtonIfMatch(CEdButton *this_ptr);
 
 // Original: shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_0049d530
 // Address: 0049d530
@@ -561,13 +561,13 @@ int __cdecl calculateButtonWidth(char *button_text);
 // Address: 0049d9e0
 int __cdecl calculateButtonHeight(char *button_text);
 
-// Original: shape_edittool.cpp_FUN_0049dad0
+// Original: shape_edittool.cpp_CEdCheck_setupWithText_FUN_0049dad0
 // Address: 0049dad0
-void FUN_0049dad0(void);
+void __cdecl CEdCheck::setupWithText(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text);
 
-// Original: shape_edittool.cpp_FUN_0049dbc0
+// Original: shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_0049dbc0
 // Address: 0049dbc0
-void FUN_0049dbc0(void);
+void __cdecl CEdCheck::clearActiveButtonIfMatch(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0
 // Address: 0049dbe0
@@ -589,6 +589,6 @@ void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 // Address: 0049dea0
 int __cdecl wildcardStringMatch(char *pattern,char *target_string,int case_sensitive);
 
-// Original: shape_edittool.cpp_FUN_0049df50
+// Original: shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50
 // Address: 0049df50
-int __cdecl FUN_0049df50(CStrList *this_ptr);
+int __cdecl CStrList::getItemCount(CStrList *this_ptr);

@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 215,
+    "complexity_score": 225,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "undefined_data",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
     "total_lines": 294
   },
@@ -78,7 +78,7 @@
     {
       "addr": "0053ed10",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_FUN_0053ed10"
+      "name": "core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10"
     }
   ],
   "globals": [
@@ -249,16 +249,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -266,15 +258,15 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
-      "match": "afStackY_100c",
+      "line": 15,
+      "match": "auStackY_100c",
       "severity": "moderate",
-      "text": "float afStackY_100c [994];",
+      "text": "uint auStackY_100c [994];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff88;",
@@ -282,7 +274,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "if (pCVar2 != (CVector3f *)&DAT_02cfd900) {",
@@ -290,10 +282,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(float *)((int)this_ptr",
+      "line": 49,
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);",
+      "text": "puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -305,8 +297,16 @@
       "type": "stack_param"
     },
     {
+      "description": "Pointer value `&CStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&CStack_1c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 34,
+      "line": 33,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->bounding_box).min.x = pCVar2->x;",
@@ -319,6 +319,14 @@
       "severity": "moderate",
       "text": "(pUVar1->vec).x = pCVar2->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

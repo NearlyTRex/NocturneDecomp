@@ -85,7 +85,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00511340(CPlatform 
          *(uint *)
           ((int)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
           ((uint)bVar2 * -2 + 1) * 4);
-    core_xform_cpp_FUN_00585de0(&stack0xffffff68);
+    core_xform_cpp_quaternionToEulerAngles_FUN_00585de0(&stack0xffffff68);
     local_78.x = local_3c;
     *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];
     *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =

@@ -9141,8 +9141,8 @@ section .text
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     PUSH EAX                            ; 00528adf
     PUSH ESI                            ; 00528ae0
-    CALL core_enemy.cpp_FUN_00488850    ; 00528ae1
-        ;   XREF to: 00488850 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00488850()
+    CALL core_enemy.cpp_CEnemy_setVictim_FUN_00488850 ; 00528ae1
+        ;   XREF to: 00488850 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setVictim_FUN_00488850(CEnemy * this_ptr, CDemonActor * victim)
     ADD ESP,0x8                         ; 00528ae6
     JMP 0x005223fb                      ; 00528ae9
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -9371,8 +9371,8 @@ section .text
     PUSH EAX                            ; 00528dc7
     LEA ESI,[ESP + 0x4b78]              ; 00528dc8
     LEA EDI,[ESP + 0x4b9c]              ; 00528dcf
-    CALL core_bodypart.cpp_FUN_00417b60 ; 00528dd6
-        ;   XREF to: 00417b60 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00417b60()
+    CALL core_bodypart.cpp_subtractVector_FUN_00417b60 ; 00528dd6
+        ;   XREF to: 00417b60 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_subtractVector_FUN_00417b60(CVector3f * a, CVector3f * b, CVector3f * dst)
     LEA ESI,[ESP + 0x4b78]              ; 00528ddb
     ADD ESP,0x8                         ; 00528de2
     LEA EAX,[ESP + 0x4b94]              ; 00528de5

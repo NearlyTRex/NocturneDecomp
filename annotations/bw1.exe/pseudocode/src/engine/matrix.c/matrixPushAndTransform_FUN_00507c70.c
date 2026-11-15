@@ -57,12 +57,12 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_00507c70(int rot_x,int r
   iVar7 = iVar4;
   iVar8 = iVar5;
   if ((rot_x != 0 || rot_y != 0) || rot_z != 0) {
-    iVar7 = engine_matrix_c_FUN_00507350(rot_x);
-    iVar8 = engine_matrix_c_FUN_00507390(rot_x);
-    iVar9 = engine_matrix_c_FUN_00507350(rot_y);
-    iVar10 = engine_matrix_c_FUN_00507390(rot_y);
-    iVar11 = engine_matrix_c_FUN_00507350(rot_z);
-    iVar12 = engine_matrix_c_FUN_00507390(rot_z);
+    iVar7 = engine_matrix_c_interpolatedSin_FUN_00507350(rot_x);
+    iVar8 = engine_matrix_c_interpolatedCos_FUN_00507390(rot_x);
+    iVar9 = engine_matrix_c_interpolatedSin_FUN_00507350(rot_y);
+    iVar10 = engine_matrix_c_interpolatedCos_FUN_00507390(rot_y);
+    iVar11 = engine_matrix_c_interpolatedSin_FUN_00507350(rot_z);
+    iVar12 = engine_matrix_c_interpolatedCos_FUN_00507390(rot_z);
     lVar1 = (longlong)
             (int)((uint)((longlong)iVar9 * (longlong)iVar7) >> 0x10 |
                  (int)((ulonglong)((longlong)iVar9 * (longlong)iVar7) >> 0x20) << 0x10) *

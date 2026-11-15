@@ -95,8 +95,9 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   if (iVar6 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,0);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            ((CCharacter *)this_ptr,delta_time,0);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;

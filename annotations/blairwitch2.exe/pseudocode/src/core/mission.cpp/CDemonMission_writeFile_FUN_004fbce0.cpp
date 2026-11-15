@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
   int *piVar1;
   CDemonActor *pCVar2;
   CDemonActor *pCVar3;
-  uint uVar4;
+  char *pcVar4;
   char (*pacVar5) [256];
   CVector3i *pCVar6;
   int iVar7;
@@ -66,8 +66,9 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
   pCVar2 = this_ptr->first_actor;
   this_ptr->actor_lookup_count = 0;
   for (; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    uVar4 = core_actor_cpp_FUN_00408a50(pCVar2,pCVar2);
-    FUN_005b8010(file_handle,"%s \"%s\"\n",uVar4);
+    pCVar3 = pCVar2;
+    pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(pCVar2);
+    FUN_005b8010(file_handle,"%s \"%s\"\n",pcVar4,pCVar3);
     if (2999 < this_ptr->actor_lookup_count) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x1ed;

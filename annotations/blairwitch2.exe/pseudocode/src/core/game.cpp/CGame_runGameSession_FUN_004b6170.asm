@@ -1089,8 +1089,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004b6daa
         ;   Label: LAB_004b6daa
     PUSH ECX                            ; 004b6dad
-    CALL core_game.cpp_FUN_004bcbf0     ; 004b6dae
-        ;   XREF to: 004bcbf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bcbf0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 ; 004b6dae
+        ;   XREF to: 004bcbf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b6db3
     MOV EBX,dword ptr [EAX + 0x21c]     ; 004b6db6
     ADD ESP,0x4                         ; 004b6dbc

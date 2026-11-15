@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   weapon_category
 ;
 ; XREF[2]:
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fb0d8
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0 at 004f8e5c
-;   core_inv.cpp_FUN_004fae10 at 004fb0d8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e6818

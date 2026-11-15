@@ -35,10 +35,10 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_00461f70
-;   core_dpart.cpp_FUN_004625f0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
+;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0
+;   engine_drender.cpp_renderTriangleTextured_FUN_00461f70
 ;   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0051c820
 ;   engine_special.cpp_drawPolyList_FUN_0055f950
 ;
@@ -125,8 +125,8 @@ section .text
     PUSH EAX                            ; 0046be29
     DEC EDI                             ; 0046be2a
     ADD EBX,ESI                         ; 0046be2b
-    CALL core_dpart.cpp_FUN_004625f0    ; 0046be2d
-        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_004625f0 ; 0046be2d
+        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046be32
     TEST EDI,EDI                        ; 0046be35
     JLE 0x0046bdc0                      ; 0046be37
@@ -214,8 +214,8 @@ section .text
     PUSH ECX                            ; 0046bf26
     LEA EAX,[ESP + 0x4]                 ; 0046bf27
     PUSH EAX                            ; 0046bf2b
-    CALL core_dpart.cpp_FUN_00461f70    ; 0046bf2c
-        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00461f70(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00461f70 ; 0046bf2c
+        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00461f70(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046bf31
     MOV EBP,dword ptr [ESP + 0x38]      ; 0046bf34
     DEC EDI                             ; 0046bf38

@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
-;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -570,8 +570,8 @@ section .text
     PUSH EDX                            ; 004edf49
     PUSH dword ptr [EBP + 0x18]         ; 004edf4a
     PUSH EBX                            ; 004edf4d
-    CALL core_charactr.cpp_FUN_00432f10 ; 004edf4e
-        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432f10()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 ; 004edf4e
+        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCharacter * this_ptr, float delta_time, int disable_search)
     ADD ESP,0xc                         ; 004edf53
     PUSH dword ptr [EBP + 0x18]         ; 004edf56
     PUSH EBX                            ; 004edf59

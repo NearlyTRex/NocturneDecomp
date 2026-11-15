@@ -45,9 +45,9 @@ int __cdecl CEnemy::canSeeTarget(CEnemy *this_ptr,CDemonActor *target);
 // Address: 00488450
 void __cdecl CEnemy::updateVictim(CEnemy *this_ptr,float delta_time);
 
-// Original: core_enemy.cpp_FUN_00488850
+// Original: core_enemy.cpp_CEnemy_setVictim_FUN_00488850
 // Address: 00488850
-void FUN_00488850(int param_1,int param_2);
+void __cdecl CEnemy::setVictim(CEnemy *this_ptr,CDemonActor *victim);
 
 // Original: core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 // Address: 00488890

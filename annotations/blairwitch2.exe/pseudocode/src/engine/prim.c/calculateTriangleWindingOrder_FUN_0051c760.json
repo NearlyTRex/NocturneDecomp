@@ -17,18 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "00461f70",
-      "from_addr": "00462051",
-      "name": "core_dpart.cpp_FUN_00461f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004625f0",
-      "from_addr": "004626cd",
-      "name": "core_dpart.cpp_FUN_004625f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0059a0b0",
       "from_addr": "0059a371",
       "name": "core_zombie.cpp_FUN_0059a0b0",
@@ -56,6 +44,18 @@
       "addr": "0046c290",
       "from_addr": "0046c3a5",
       "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004625f0",
+      "from_addr": "004626cd",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461f70",
+      "from_addr": "00462051",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -155,7 +155,7 @@
       {
         "call_addr": "00462051",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00461f70",
+        "caller": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +166,7 @@
       {
         "call_addr": "004626cd",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_004625f0",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

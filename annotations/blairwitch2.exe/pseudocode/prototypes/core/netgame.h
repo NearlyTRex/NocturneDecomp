@@ -33,9 +33,9 @@ void resetChatCounts(void);
 // Address: 0050b070
 void __cdecl removeChatOut(int index);
 
-// Original: core_netgame.cpp_FUN_0050b110
+// Original: core_netgame.cpp_findSimFrame_FUN_0050b110
 // Address: 0050b110
-int FUN_0050b110(void);
+int __cdecl findSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_0050b160
 // Address: 0050b160

@@ -124,7 +124,7 @@ ECollisionType __cdecl core_goggles_cpp_CGoggles_getCollisionType_FUN_004cc830(C
 CBoundingBox3D * __cdecl core_goggles_cpp_CGoggles_getBoundingBox_FUN_004cc840(CGoggles *this_ptr,CBoundingBox3D *out_box);
 CGoggles * __cdecl core_goggles_cpp_CGoggles_dtor_FUN_004cc880(CGoggles *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004cc8d0(void);
-void core_gore_cpp_FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4);
+void __cdecl core_gore_cpp_getBloodColorParams_FUN_004cc970(EBloodType blood_type,int *out_light,int *out_color,int *out_fog);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ccac0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *this_ptr);
@@ -143,7 +143,7 @@ void __cdecl core_gore_cpp_CBloodPool_init_FUN_004cdff0(CBloodPool *this_ptr,CVe
 int __cdecl core_gore_cpp_CBloodPool_load_FUN_004ce090(CBloodPool *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodPool_save_FUN_004ce0f0(CBloodPool *this_ptr,_FILE *file_handle);
 void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
-void core_gore_cpp_FUN_004ce310(undefined4 *param_1,int param_2);
+void __cdecl core_gore_cpp_CFootstep_render_FUN_004ce310(CFootstep *this_ptr,int expire_flag);
 CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ce530(CGore *this_ptr);
 CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ce550(CGore *this_ptr,uint flags);
 void __cdecl core_gore_cpp_CGore_reset_FUN_004ce560(CGore *this_ptr);

@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   memory_type
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004ebf10 at 004ebfc0
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ebfc0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264bc40

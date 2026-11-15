@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d3c90 at 004d3d8e
+;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90 at 004d3d8e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005c653e
@@ -40,7 +40,7 @@
 ;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
-;   core_inv.cpp_FUN_004dd2d0
+;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_004dcba2
     PUSH ECX                            ; 004dcba8
     PUSH EBP                            ; 004dcba9
-    CALL core_inv.cpp_FUN_004dd2d0      ; 004dcbaa
-        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd2d0()
+    CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0 ; 004dcbaa
+        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004dcbaf
     XOR EAX,EAX                         ; 004dcbb2
         ;   Label: LAB_004dcbb2

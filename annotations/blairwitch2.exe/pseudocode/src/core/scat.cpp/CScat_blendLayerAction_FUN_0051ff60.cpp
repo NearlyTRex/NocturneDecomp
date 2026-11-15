@@ -58,7 +58,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
               (pCVar1,iVar7,fVar2,local_28,_DAT_01e620a8,
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     if ((this_ptr->base).base.layer_action_index == 1) {
-      core_scat_cpp_FUN_00520140(this_ptr,1);
+      core_scat_cpp_CScat_blendAimBones_FUN_00520140(this_ptr,1);
       return;
     }
   }

@@ -39,8 +39,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
-;   core_bodypart.cpp_FUN_00416bd0
-;   core_bodypart.cpp_FUN_00416c50
+;   core_bodypart.cpp_addVector_FUN_00416c50
+;   core_bodypart.cpp_scaleVector_FUN_00416bd0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_demnfolk.cpp_FUN_004549e0
 ;   core_demnfolk.cpp_FUN_004580a0
@@ -272,8 +272,8 @@ section .text
     PUSH EAX                            ; 004579fb
     MOV dword ptr [ESP + 0x1fc],EDI     ; 004579fc
     LEA EDI,[ESP + 0xf4]                ; 00457a03
-    CALL core_bodypart.cpp_FUN_00416c50 ; 00457a0a
-        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416c50()
+    CALL core_bodypart.cpp_addVector_FUN_00416c50 ; 00457a0a
+        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_00416c50(CVector3f * a, CVector3f * b, CVector3f * dst)
     LEA ESI,[ESP + 0x1c0]               ; 00457a0f
     ADD ESP,0x8                         ; 00457a16
     LEA EAX,[ESP + 0xec]                ; 00457a19
@@ -283,8 +283,8 @@ section .text
     PUSH EAX                            ; 00457a23
     LEA ESI,[ESP + 0x1ec]               ; 00457a24
     LEA EDI,[ESP + 0x1e0]               ; 00457a2b
-    CALL core_bodypart.cpp_FUN_00416bd0 ; 00457a32
-        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416bd0()
+    CALL core_bodypart.cpp_scaleVector_FUN_00416bd0 ; 00457a32
+        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_00416bd0(CVector3f * src, float * scalar, CVector3f * dst)
     LEA ESI,[ESP + 0x1ec]               ; 00457a37
     ADD ESP,0x8                         ; 00457a3e
     LEA EAX,[ESP + 0x13c]               ; 00457a41
@@ -437,8 +437,8 @@ section .text
     PUSH EAX                            ; 00457c52
     LEA ESI,[ESP + 0x178]               ; 00457c53
     LEA EDI,[ESP + 0x190]               ; 00457c5a
-    CALL core_bodypart.cpp_FUN_00416c50 ; 00457c61
-        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416c50()
+    CALL core_bodypart.cpp_addVector_FUN_00416c50 ; 00457c61
+        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_00416c50(CVector3f * a, CVector3f * b, CVector3f * dst)
     LEA ESI,[ESP + 0x178]               ; 00457c66
     ADD ESP,0x8                         ; 00457c6d
     LEA EAX,[ESP + 0x188]               ; 00457c70
@@ -448,8 +448,8 @@ section .text
     PUSH EAX                            ; 00457c7a
     LEA ESI,[ESP + 0xfc]                ; 00457c7b
     LEA EDI,[ESP + 0x198]               ; 00457c82
-    CALL core_bodypart.cpp_FUN_00416bd0 ; 00457c89
-        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416bd0()
+    CALL core_bodypart.cpp_scaleVector_FUN_00416bd0 ; 00457c89
+        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_00416bd0(CVector3f * src, float * scalar, CVector3f * dst)
     LEA ESI,[ESP + 0xfc]                ; 00457c8e
     ADD ESP,0x8                         ; 00457c95
     LEA EAX,[ESP + 0x10c]               ; 00457c98

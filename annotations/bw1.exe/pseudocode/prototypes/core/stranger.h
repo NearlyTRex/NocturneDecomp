@@ -53,13 +53,13 @@ CVector3f * __stack_esi CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3
 // Address: 00588ad0
 void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_00589f10
+// Original: core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10
 // Address: 00589f10
-void __cdecl FUN_00589f10(CStranger *this_ptr,SPose *out_pose);
+void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
-// Original: core_stranger.cpp_FUN_0058a010
+// Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_0058a010
 // Address: 0058a010
-void __cdecl FUN_0058a010(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger::updateTurnBlending(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_0058a320
 // Address: 0058a320

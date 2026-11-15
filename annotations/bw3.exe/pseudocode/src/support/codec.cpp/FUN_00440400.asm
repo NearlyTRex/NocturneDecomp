@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0 at 00440f04
 ;   support_codec.cpp_FUN_00440260 at 00440275
-;   support_codec.cpp_FUN_00440440 at 0044044c
-;   support_codec.cpp_FUN_00440ef0 at 00440f04
+;   support_codec.cpp_flushBitBuffer_FUN_00440440 at 0044044c
 ;
 ; *****************************************************************************
 

@@ -37,9 +37,9 @@ void __cdecl showCalibrationTest(void);
 // Address: 004e85a0
 void __cdecl configureGraphicsOptions(void);
 
-// Original: core_menu.cpp_FUN_004e8f30
+// Original: core_menu.cpp_checkAndCalibrateGamepad_FUN_004e8f30
 // Address: 004e8f30
-undefined4 FUN_004e8f30(void);
+int __cdecl checkAndCalibrateGamepad(void);
 
 // Original: core_menu.cpp_configureCustomKeys_FUN_004e8f80
 // Address: 004e8f80

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005db968
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048c510
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     FADD float ptr [ESP + 0xc]          ; 0048cb3a
     PUSH ESI                            ; 0048cb3e
     FSTP float ptr [ESP + 0x1c]         ; 0048cb3f
-    CALL core_dtrace.cpp_FUN_0048c510   ; 0048cb43
-        ;   XREF to: 0048c510 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_FUN_0048c510(CDemonRaytrace * this_ptr, CVector3f * world_pos)
+    CALL core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510 ; 0048cb43
+        ;   XREF to: 0048c510 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRaytrace * this_ptr, CVector3f * world_pos)
     ADD ESP,0x8                         ; 0048cb48
     INC EBX                             ; 0048cb4b
         ;   Label: LAB_0048cb4b

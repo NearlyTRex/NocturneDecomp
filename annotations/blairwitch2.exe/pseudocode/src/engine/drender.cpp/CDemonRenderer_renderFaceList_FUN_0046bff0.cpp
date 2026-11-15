@@ -48,7 +48,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
               this_ptr->vertex_buffer_ptr[local_24.z].v = (uint)face_array->v_coord_2 << 8;
             }
             face_array = face_array + 1;
-            core_dpart_cpp_FUN_00461f70(&local_24.x,3);
+            engine_drender_cpp_renderTriangleTextured_FUN_00461f70(&local_24.x,3);
           }
         }
         else {
@@ -97,7 +97,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
             local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
             face_array = face_array + 1;
-            core_dpart_cpp_FUN_004625f0(&local_24,3);
+            engine_drender_cpp_renderTriangleSimple_FUN_004625f0(&local_24,3);
             uVar1 = _DAT_01c38b54;
             uVar2 = _DAT_01c38b58;
           } while (0 < face_count);

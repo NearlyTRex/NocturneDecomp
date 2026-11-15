@@ -32,13 +32,13 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_00461f70
-;   core_dpart.cpp_FUN_004625f0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40
 ;   core_zombie.cpp_FUN_0059a0b0
 ;   engine_clipper.c_clipAndRasterize_FUN_00431d90
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000
+;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0
+;   engine_drender.cpp_renderTriangleTextured_FUN_00461f70
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EBX                            ; 004695c4
         ;   Label: LAB_004695c4
     PUSH ESI                            ; 004695c5
-    CALL core_dpart.cpp_FUN_004625f0    ; 004695c6
-        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_004625f0 ; 004695c6
+        ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004625f0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 004695cb
         ;   Label: LAB_004695cb
     POP EBP                             ; 004695ce
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 004695f8
         ;   Label: LAB_004695f8
     PUSH ESI                            ; 004695f9
-    CALL core_dpart.cpp_FUN_00461f70    ; 004695fa
-        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00461f70(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00461f70 ; 004695fa
+        ;   XREF to: 00461f70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00461f70(int * vertex_indices, int vertex_count)
     JMP 0x004695cb                      ; 004695ff
         ;   XREF to: 004695cb (UNCONDITIONAL_JUMP)  ; LAB_004695cb
     CMP dword ptr [EDI + 0x4],0x0       ; 00469601

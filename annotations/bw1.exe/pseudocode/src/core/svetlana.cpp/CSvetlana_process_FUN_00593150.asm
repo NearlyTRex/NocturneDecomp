@@ -313,8 +313,8 @@ section .text
     PUSH dword ptr [EBX + 0x95624]      ; 005934a5
     PUSH EAX                            ; 005934ab
     LEA ESI,[ESP + 0x20]                ; 005934ac
-    CALL core_xform.cpp_FUN_005b7ed0    ; 005934b0
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 005934b0
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 005934b5
     LEA EAX,[ESP + 0xc]                 ; 005934b8
     PUSH EAX                            ; 005934bc

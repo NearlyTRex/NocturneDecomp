@@ -26,7 +26,7 @@
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
 ;   crt_env.c_getenv_FUN_005c3050
 ;   crt_unknown.c_FUN_005c25c0
-;   support_trisock.cpp_FUN_0059eeb0
+;   support_trisock.cpp_startupWinsock_FUN_0059eeb0
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     SAR EDX,0x1f                        ; 0052c546
     IDIV ESI                            ; 0052c549
     MOV [0x01d51d9c],EAX                ; 0052c54b | DAT_01d51d9c
-    CALL support_trisock.cpp_FUN_0059eeb0 ; 0052c550
-        ;   XREF to: 0059eeb0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0059eeb0()
+    CALL support_trisock.cpp_startupWinsock_FUN_0059eeb0 ; 0052c550
+        ;   XREF to: 0059eeb0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_startupWinsock_FUN_0059eeb0()
     PUSH 0x5eb67a                       ; 0052c555 | = "USERNAME"
     CALL crt_env.c_getenv_FUN_005c3050  ; 0052c55a
         ;   XREF to: 005c3050 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_005c3050(char * name)

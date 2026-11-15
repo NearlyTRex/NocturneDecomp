@@ -57,9 +57,9 @@ void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 // Address: 00567430
 void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
-// Original: core_stranger.cpp_FUN_00567530
+// Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_00567530
 // Address: 00567530
-void __cdecl FUN_00567530(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger::updateTurnBlending(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00567840
 // Address: 00567840
@@ -85,9 +85,9 @@ CMatrix3x4f * __stack3_esi CStranger::computeWeaponAttachXForm(CStranger *this_p
 // Address: 00569620
 int __cdecl CStranger::tryPickupObject(CStranger *this_ptr,char *class_name);
 
-// Original: core_stranger.cpp_FUN_0056a160
+// Original: core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160
 // Address: 0056a160
-void __cdecl FUN_0056a160(CStranger *this_ptr);
+void __cdecl CStranger::processPickupComplete(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_dropRightHandObject_FUN_0056a1e0
 // Address: 0056a1e0
@@ -117,17 +117,17 @@ int __cdecl CStranger::renderOpaque(CStranger *this_ptr);
 // Address: 0056bc80
 int __cdecl CStranger::renderTransparent(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0056bcc0
+// Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0
 // Address: 0056bcc0
-void FUN_0056bcc0(void);
+void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
-// Original: core_stranger.cpp_FUN_0056bd50
+// Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0056bd50
 // Address: 0056bd50
-undefined4 * FUN_0056bd50(void);
+CVector3f * __stack2_esi calculateAimAnglesWithOffset(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
 
-// Original: core_stranger.cpp_FUN_0056bf00
+// Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00
 // Address: 0056bf00
-void __cdecl FUN_0056bf00(CStranger *this_ptr,int hand_index,float delta_time);
+void __cdecl CStranger::autoAimAtThreat(CStranger *this_ptr,int hand_index,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10
 // Address: 0056ca10

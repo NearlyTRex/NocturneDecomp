@@ -258,7 +258,7 @@ LAB_00517022:
             return;
           }
         }
-        engine_special_cpp_FUN_00563257(local_14,right,iVar9);
+        engine_special_cpp_renderScanline_FUN_00563257(local_14,right,iVar9);
         (right->base).x_current = (right->base).x_current + (right->base).x_gradient;
         (right->base).u_current = (right->base).u_current + (right->base).u_gradient;
         (right->base).v_current = (right->base).v_current + (right->base).v_gradient;

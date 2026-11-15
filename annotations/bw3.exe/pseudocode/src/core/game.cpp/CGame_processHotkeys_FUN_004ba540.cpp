@@ -39,7 +39,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr)
   }
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   if ((iVar5 != 0) &&
-     (pCVar7 = core_inv_cpp_FUN_004db990
+     (pCVar7 = core_inv_cpp_CInventory_findItemByName_FUN_004db990
                          ((CInventory *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e8),
                           "voodoo_doll"), pCVar7 != (CDemonActor *)0x0)) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,"UseSPS");

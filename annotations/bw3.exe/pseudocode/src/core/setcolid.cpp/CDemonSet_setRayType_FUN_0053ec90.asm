@@ -11,13 +11,13 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a688
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410755
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 0042477d
-;   core_charactr.cpp_FUN_00432330 at 004329c0
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 004329c0
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 00486ffb
 ;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b21c
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea3c
 ;   core_game.cpp_FUN_004c07b0 at 004c11a1
 ;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d119a
-;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 00522166
+;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 00523374
 ;   ... and 3 more
 ;
 ; Referenced Globals:

@@ -85,9 +85,9 @@ void __cdecl initIntersectionCylinder(SIntersectXZCylinder *this_ptr,float start
 // Address: 0048c300
 void __cdecl CDemonRaytrace::testCylinderCollision(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_dtrace.cpp_FUN_0048c510
+// Original: core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510
 // Address: 0048c510
-void __cdecl FUN_0048c510(CDemonRaytrace *this_ptr,CVector3f *world_pos);
+void __cdecl CDemonRaytrace::renderGridCube(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40
 // Address: 0048ca40
@@ -145,9 +145,9 @@ CVector3f * __stack_esi CDemonRaytrace::getBBoxMin(CDemonRaytrace *this_ptr,CVec
 // Address: 0048f230
 CVector3f * __stack_esi CDemonRaytrace::getBBoxMax(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 
-// Original: core_dtrace.cpp_FUN_0048f250
+// Original: core_dtrace.cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_0048f250
 // Address: 0048f250
-void FUN_0048f250(int param_1,int param_2);
+CVector3f * __stack2_esi CDemonRaytrace::convertCubeIndexToPosition(CDemonRaytrace *this_ptr,int cube_index,CVector3f *output_position);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0
 // Address: 0048f2e0

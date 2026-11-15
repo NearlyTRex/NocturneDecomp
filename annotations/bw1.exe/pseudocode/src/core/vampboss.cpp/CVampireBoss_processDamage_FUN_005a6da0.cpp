@@ -53,7 +53,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
           pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,g_CHeroClassInfo.name_hash);
           if (pCVar4 != (CDemonActor *)0x0) {
             this_ptr_00 = &pCVar4[0x179].orient_matrix.m[1].z;
-            pCVar4 = core_inv_cpp_FUN_004f8c40((CInventory *)this_ptr_00,this_ptr_01->actor_name);
+            pCVar4 = core_inv_cpp_CInventory_findItemByName_FUN_004f8c40
+                               ((CInventory *)this_ptr_00,this_ptr_01->actor_name);
             if (pCVar4 == this_ptr_01) {
               core_inv_cpp_CInventory_removeItem_FUN_004f8d00
                         ((CInventory *)this_ptr_00,this_ptr_01,0);

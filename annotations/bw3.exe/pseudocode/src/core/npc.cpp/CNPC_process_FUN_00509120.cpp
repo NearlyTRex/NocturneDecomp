@@ -38,15 +38,15 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   float fStack_20;
   float fStack_1c;
   float fStack_18;
-  uint uStack_14;
+  int iStack_14;
   
   bVar7 = 0;
-  iVar5 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(&this_ptr->base,delta_time);
   if (iVar5 == 0) {
     return;
   }
   if ((-1 < this_ptr->fade_state) || (this_ptr->fade_state == -1)) {
-    core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(&this_ptr->base,delta_time);
   }
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
@@ -54,7 +54,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
   fStack_90 = delta_time * this_ptr->speed;
-  uStack_14 = 0;
+  iStack_14 = 0;
   pCVar1 = &(this_ptr->base).model;
   while (0.0 < fStack_90) {
     iVar5 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar1->base,&stack0xffffff70);
@@ -82,7 +82,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
          *(uint *)((int)&CStack_44 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,pCVar8,blood_type);
     this_ptr->pool_me = 1;
-    uStack_14 = 1;
+    iStack_14 = 1;
   }
   fVar3 = this_ptr->speed;
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
@@ -181,7 +181,8 @@ LAB_005092c8:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(&this_ptr->base,&CStack_74);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(this_ptr->base).model);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,uStack_14);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            (&this_ptr->base,delta_time,iStack_14);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(&this_ptr->base,delta_time);
   return;
 }

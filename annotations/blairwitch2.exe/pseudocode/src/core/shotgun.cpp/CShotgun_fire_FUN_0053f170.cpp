@@ -200,7 +200,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
               }
               else {
                 this_ptr_00 = (CDemonSet *)0x53f936;
-                core_crate_cpp_FUN_0043a350(pCStack_30);
+                core_crate_cpp_CCrate_explode_FUN_0043a350(pCStack_30);
               }
             }
             else {

@@ -29,7 +29,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_00435320
-;   core_inv.cpp_FUN_004f9f10
+;   core_inv.cpp_CInventory_updateInventory_FUN_004f9f10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -255,8 +255,8 @@ section .text
     LEA EAX,[EBX + 0x1fae8]             ; 00541092
         ;   Label: LAB_00541092
     PUSH EAX                            ; 00541098
-    CALL core_inv.cpp_FUN_004f9f10      ; 00541099
-        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9f10()
+    CALL core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 ; 00541099
+        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004f9f10(CInventory * this_ptr)
     MOV EDI,dword ptr [EBX + 0x1ffc0]   ; 0054109e
     ADD ESP,0x4                         ; 005410a4
     TEST EDI,EDI                        ; 005410a7
@@ -396,8 +396,8 @@ section .text
     PUSH dword ptr [EBX + 0x1ffbc]      ; 00541216
     PUSH EAX                            ; 0054121c
     LEA ESI,[ESP + 0x10]                ; 0054121d
-    CALL core_xform.cpp_FUN_005b7ed0    ; 00541221
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 00541221
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00541226
     LEA EAX,[ESP + 0x1c]                ; 00541229
     PUSH EAX                            ; 0054122d

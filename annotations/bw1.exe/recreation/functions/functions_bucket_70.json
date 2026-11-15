@@ -4314,14 +4314,57 @@
       "0041de90",
       "005030e0"
     ],
-    "conv":"unknown",
+    "cls":"CBox",
+    "conv":"__cdecl",
     "instructions":137,
-    "method":"FUN_0041dcf0",
-    "name":"core_box.cpp_FUN_0041dcf0",
-    "receiver":false,
+    "method":"setupN",
+    "name":"core_box.cpp_CBox_setupN_FUN_0041dcf0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"point_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"point_array",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/box.cpp",
@@ -5537,14 +5580,72 @@
       "005c0344",
       "005c1268"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":168,
-    "method":"FUN_004387f0",
-    "name":"cockpit_ckptutil.c_FUN_004387f0",
+    "method":"generateScrollHeightMap",
+    "name":"cockpit_ckptutil.c_generateScrollHeightMap_FUN_004387f0",
+    "params":[
+      {
+        "name":"bitmap_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height_output",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"num_height_rows",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"transparency_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -8571,21 +8672,12 @@
     "calls":[
       "0047fb20"
     ],
+    "cls":"CDrawSurface",
     "conv":"__cdecl",
     "instructions":13,
-    "method":"FUN_0047fcf0",
-    "name":"cockpit_drawsurf.cpp_FUN_0047fcf0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDrawSurface",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"drawAnimatedFullSurface",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0047fcf0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13359,14 +13451,40 @@
   },
   {
     "addr":"004d0e70",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":39,
-    "method":"FUN_004d0e70",
-    "name":"core_game.cpp_FUN_004d0e70",
+    "method":"dampControlAxis",
+    "name":"core_game.cpp_dampControlAxis_FUN_004d0e70",
+    "params":[
+      {
+        "name":"axis_value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damp_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damp_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -14713,19 +14831,12 @@
       "005695e0",
       "005b7af0"
     ],
+    "cls":"CIcePick",
     "conv":"__cdecl",
     "instructions":90,
-    "method":"FUN_004f1670",
-    "name":"core_icepick.cpp_FUN_004f1670",
+    "method":"updateShootBlend",
+    "name":"core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CIcePick",
-          "ptr":1
-        }
-      },
       {
         "name":"delta_time",
         "type":{
@@ -14735,7 +14846,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14969,19 +15080,12 @@
     "calls":[
       "005bfb40"
     ],
+    "cls":"CIniFile",
     "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_004f4d70",
-    "name":"engine_ini.cpp_FUN_004f4d70",
+    "method":"setInteger",
+    "name":"engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CIniFile",
-          "ptr":1
-        }
-      },
       {
         "name":"key",
         "type":{
@@ -14999,7 +15103,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19426,8 +19530,8 @@
     "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":263,
-    "method":"renderGogglesView",
-    "name":"core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170",
+    "method":"renderMonsterVisionView",
+    "name":"core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -22023,8 +22127,8 @@
     ],
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00582b70",
-    "name":"engine_special.cpp_FUN_00582b70",
+    "method":"lockHoldBuffer",
+    "name":"engine_special.cpp_lockHoldBuffer_FUN_00582b70",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -22041,8 +22145,8 @@
     ],
     "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_00582bf0",
-    "name":"engine_special.cpp_FUN_00582bf0",
+    "method":"getTextureInfo",
+    "name":"engine_special.cpp_getTextureInfo_FUN_00582bf0",
     "params":[
       {
         "name":"texture_size",
@@ -22692,8 +22796,8 @@
     ],
     "conv":"unknown",
     "instructions":5,
-    "method":"FUN_00597cf0",
-    "name":"engine_texture.cpp_FUN_00597cf0",
+    "method":"renderTextureAtlas",
+    "name":"engine_texture.cpp_renderTextureAtlas_FUN_00597cf0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -24329,15 +24433,33 @@
       "00542270",
       "0058aab0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":25,
     "method":"quaternionFromAngleZ",
     "name":"core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70",
+    "params":[
+      {
+        "name":"angle_radians",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

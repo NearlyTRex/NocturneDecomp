@@ -57,9 +57,9 @@ void __cdecl renderAlphaRow32(uint *destPixels,uchar *srcIndices,uchar *srcAlpha
 // Address: 0058000e
 void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 
-// Original: engine_special.cpp_FUN_00580127
+// Original: engine_special.cpp_renderScanline_FUN_00580127
 // Address: 00580127
-void __edi_esi_ebx FUN_00580127(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+void __edi_esi_ebx renderScanline(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 
 // Original: engine_special.cpp_transformAndProjectPoint_FUN_00580173
 // Address: 00580173
@@ -101,29 +101,29 @@ int __cdecl beginScene(void);
 // Address: 00582000
 int __cdecl endScene(void);
 
-// Original: engine_special.cpp_FUN_00582020
+// Original: engine_special.cpp_selectTexture_FUN_00582020
 // Address: 00582020
-undefined4 FUN_00582020(undefined4 param_1);
+int __cdecl selectTexture(SMRGLTextureBasic *texture_info);
 
-// Original: engine_special.cpp_FUN_00582060
+// Original: engine_special.cpp_updateTexture_FUN_00582060
 // Address: 00582060
-undefined4 FUN_00582060(void);
+int __cdecl updateTexture(SMRGLTextureBasic *texture_info);
 
-// Original: engine_special.cpp_FUN_005820a0
+// Original: engine_special.cpp_selectTextureFromPalette_FUN_005820a0
 // Address: 005820a0
-undefined4 FUN_005820a0(void);
+int __cdecl selectTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
-// Original: engine_special.cpp_FUN_005820e0
+// Original: engine_special.cpp_updateTextureFromPalette_FUN_005820e0
 // Address: 005820e0
-undefined4 FUN_005820e0(undefined4 param_1,undefined4 param_2);
+int __cdecl updateTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
-// Original: engine_special.cpp_FUN_00582160
+// Original: engine_special.cpp_updateTextureBGRA_FUN_00582160
 // Address: 00582160
-undefined4 FUN_00582160(void);
+int __cdecl updateTextureBGRA(SMRGLTextureBasic *texture_info,int flags);
 
-// Original: engine_special.cpp_FUN_005821a0
+// Original: engine_special.cpp_setMipMapLevel_FUN_005821a0
 // Address: 005821a0
-undefined4 FUN_005821a0(void);
+int __cdecl setMipMapLevel(int mipmap_level);
 
 // Original: engine_special.cpp_setResolutionAndColorTable_FUN_005821c0
 // Address: 005821c0
@@ -221,25 +221,25 @@ int __cdecl selectCard(int card_index);
 // Address: 00582b30
 int __cdecl buildCardList(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 
-// Original: engine_special.cpp_FUN_00582b70
+// Original: engine_special.cpp_lockHoldBuffer_FUN_00582b70
 // Address: 00582b70
-int __cdecl FUN_00582b70(void);
+int __cdecl lockHoldBuffer(void);
 
-// Original: engine_special.cpp_FUN_00582b90
+// Original: engine_special.cpp_unlockHoldBuffer_FUN_00582b90
 // Address: 00582b90
-int __cdecl FUN_00582b90(void);
+int __cdecl unlockHoldBuffer(void);
 
-// Original: engine_special.cpp_FUN_00582bb0
+// Original: engine_special.cpp_lockTexture_FUN_00582bb0
 // Address: 00582bb0
-undefined4 FUN_00582bb0(undefined4 param_1);
+int __cdecl lockTexture(int texture_id);
 
-// Original: engine_special.cpp_FUN_00582bd0
+// Original: engine_special.cpp_unlockTexture_FUN_00582bd0
 // Address: 00582bd0
-undefined4 FUN_00582bd0(void);
+int __cdecl unlockTexture(void);
 
-// Original: engine_special.cpp_FUN_00582bf0
+// Original: engine_special.cpp_getTextureInfo_FUN_00582bf0
 // Address: 00582bf0
-int __cdecl FUN_00582bf0(int texture_size);
+int __cdecl getTextureInfo(int texture_size);
 
 // Original: engine_special.cpp_setVideoModeX_FUN_00582c10
 // Address: 00582c10

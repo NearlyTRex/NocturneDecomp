@@ -24,8 +24,8 @@
 ;
 ; XREF[3]:
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00474940 at 00474a54
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400 at 0047489f
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 at 004742f1
-;   core_dtrace.cpp_FUN_00474400 at 0047489f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01548b58

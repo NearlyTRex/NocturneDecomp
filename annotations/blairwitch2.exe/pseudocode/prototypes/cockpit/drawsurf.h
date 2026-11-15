@@ -105,9 +105,9 @@ void __cdecl CDrawSurface::drawSolidRectangle(CDrawSurface *this_ptr,int x1,int 
 // Address: 00467610
 void __cdecl CDrawSurface::drawAnimatedDashedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_004677e0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0
 // Address: 004677e0
-void __cdecl FUN_004677e0(CDrawSurface *this_ptr);
+void __cdecl CDrawSurface::drawAnimatedFullSurface(CDrawSurface *this_ptr);
 
 // Original: cockpit_drawsurf.cpp_FUN_004678e0
 // Address: 004678e0

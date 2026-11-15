@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040b050
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c920
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_FUN_005b8010
@@ -50,8 +50,8 @@ section .text
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040c920 ; 0040b0af
         ;   XREF to: 0040c920 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040c920()
     PUSH EBX                            ; 0040b0b4
-    CALL core_actor.cpp_FUN_00408a50    ; 0040b0b5
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 0040b0b5
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040b0ba
     MOV DL,byte ptr [EBX]               ; 0040b0bd
     MOV ESI,EAX                         ; 0040b0bf

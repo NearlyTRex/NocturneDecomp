@@ -394,8 +394,8 @@
     ],
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00402810",
-    "name":"engine_2d.c_FUN_00402810",
+    "method":"setTextWrapEnabled",
+    "name":"engine_2d.c_setTextWrapEnabled_FUN_00402810",
     "params":[
       {
         "name":"enabled",
@@ -736,14 +736,24 @@
   },
   {
     "addr":"00407890",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00407890",
-    "name":"engine_3d.c_FUN_00407890",
+    "method":"setProcessorType",
+    "name":"engine_3d.c_setProcessorType_FUN_00407890",
+    "params":[
+      {
+        "name":"processor_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -4347,14 +4357,24 @@
   },
   {
     "addr":"0042f310",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_0042f310",
-    "name":"cockpit_ckptutil.c_FUN_0042f310",
+    "method":"setLineBlendingDisabled",
+    "name":"cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0042f310",
+    "params":[
+      {
+        "name":"disabled",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -13113,8 +13133,8 @@
     ],
     "conv":"__cdecl",
     "instructions":855,
-    "method":"FUN_004ebf10",
-    "name":"core_menu.cpp_FUN_004ebf10",
+    "method":"configureGraphicsOptions",
+    "name":"core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -14934,14 +14954,24 @@
   },
   {
     "addr":"0050b110",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_0050b110",
-    "name":"core_netgame.cpp_FUN_0050b110",
+    "method":"findSimFrame",
+    "name":"core_netgame.cpp_findSimFrame_FUN_0050b110",
+    "params":[
+      {
+        "name":"sequence_number",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -20221,14 +20251,24 @@
   },
   {
     "addr":"0055f610",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_0055f610",
-    "name":"engine_special.cpp_FUN_0055f610",
+    "method":"updateTexture",
+    "name":"engine_special.cpp_updateTexture_FUN_0055f610",
+    "params":[
+      {
+        "name":"texture_info",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -20236,14 +20276,32 @@
   },
   {
     "addr":"0055f690",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":26,
-    "method":"FUN_0055f690",
-    "name":"engine_special.cpp_FUN_0055f690",
+    "method":"updateTextureFromPalette",
+    "name":"engine_special.cpp_updateTextureFromPalette_FUN_0055f690",
+    "params":[
+      {
+        "name":"tex",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"palette_data",
+        "type":{
+          "kind":"struct",
+          "name":"SRGBColorPalette",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -20251,14 +20309,32 @@
   },
   {
     "addr":"0055f710",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":21,
-    "method":"FUN_0055f710",
-    "name":"engine_special.cpp_FUN_0055f710",
+    "method":"updateTextureBGRA",
+    "name":"engine_special.cpp_updateTextureBGRA_FUN_0055f710",
+    "params":[
+      {
+        "name":"texture_info",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -23124,17 +23200,18 @@
   },
   {
     "addr":"0058e790",
-    "conv":"unknown",
+    "cls":"CWinFont",
+    "conv":"__cdecl",
     "data_refs":[
       "005fe284"
     ],
     "instructions":2,
-    "method":"FUN_0058e790",
-    "name":"engine_winfont.cpp_FUN_0058e790",
-    "receiver":false,
+    "method":"getLineSpacing",
+    "name":"engine_winfont.cpp_CWinFont_getLineSpacing_FUN_0058e790",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/winfont.cpp",
@@ -23740,8 +23817,8 @@
     ],
     "conv":"unknown",
     "instructions":131,
-    "method":"FUN_00594210",
-    "name":"core_xform.cpp_FUN_00594210",
+    "method":"quaternionToEulerAnglesZYX",
+    "name":"core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00594210",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -25194,14 +25271,15 @@
       "0046b7e0",
       "005b0ce0"
     ],
-    "conv":"unknown",
+    "cls":"CCloth",
+    "conv":"__cdecl",
     "instructions":26,
-    "method":"FUN_005b0c90",
-    "name":"core_cloth.cpp_FUN_005b0c90",
-    "receiver":false,
+    "method":"renderCollisionBones",
+    "name":"core_cloth.cpp_CCloth_renderCollisionBones_FUN_005b0c90",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/cloth.cpp",

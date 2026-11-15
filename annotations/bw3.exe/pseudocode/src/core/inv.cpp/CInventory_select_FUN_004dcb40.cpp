@@ -121,7 +121,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
       _DAT_01d71de4 = 0x7bc;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::select - Catch 22");
     }
-    core_inv_cpp_FUN_004dd2d0(this_ptr,pCVar3[2].validation_magic);
+    core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
+              (this_ptr,pCVar3[2].validation_magic);
   }
   return 0;
 }

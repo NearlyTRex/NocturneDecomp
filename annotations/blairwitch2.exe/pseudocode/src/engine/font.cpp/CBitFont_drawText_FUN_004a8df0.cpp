@@ -105,7 +105,8 @@ LAB_004a8f2c:
       y_00 = y_00 + this_ptr->current_line_height + this_ptr->line_spacing;
     }
     else {
-      iVar3 = engine_font_cpp_FUN_004a9870(this_ptr,uVar2,iVar1,y_00,y,color_mode);
+      iVar3 = engine_font_cpp_CBitFont_drawCharacter_FUN_004a9870
+                        (this_ptr,uVar2,iVar1,y_00,y,color_mode);
       text = text + 1;
       iVar1 = iVar1 + iVar3;
     }

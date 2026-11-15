@@ -12,6 +12,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CGun.h"
 #include "types/classes/CHeal.h"
@@ -115,7 +116,7 @@ undefined4 switchD_004d4890::caseD_1(void);
 undefined4 core_hero_cpp_FUN_004d2ae0(void);
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004d2af0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004d2c20(CHero *this_ptr);
-void core_hero_cpp_FUN_004d2cd0(int param_1);
+void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004d2cd0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004d2cf0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero *this_ptr,int ignore_lock);
@@ -128,14 +129,14 @@ void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004d3850(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004d3af0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004d3b20(CHero *this_ptr);
-int core_hero_cpp_FUN_004d3c90(CHero *param_1);
+int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004d3c90(CHero *this_ptr);
 bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero *this_ptr,char *class_name);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004d4090(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004d4160(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004d41a0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004d41e0(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004d4200(CHero *this_ptr,int ai_task);
-int core_hero_cpp_FUN_004d4230(int param_1,float *param_2);
+CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004d4230(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004d43e0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004d4410(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d4520(CHero *this_ptr);
@@ -239,7 +240,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void);
 void core_inv_cpp_FUN_004da840(void);
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0(CInventory *this_ptr,CWeapon *weapon);
-CDemonActor * __cdecl core_inv_cpp_FUN_004db990(CInventory *this_ptr,char *item_name);
+CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004db990(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_FUN_004db9e0(CInventory *this_ptr,char *class_name);
 undefined4 core_inv_cpp_FUN_004dba30(int param_1,int param_2);
 bool core_inv_cpp_FUN_004dba80(CInventory *param_1,char *param_2);
@@ -256,8 +257,8 @@ void core_inv_cpp_setupItems_FUN_004dcad0(int param_1);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDemonActor *actor_ptr);
 undefined4 core_inv_cpp_FUN_004dcda0(void);
 void core_inv_cpp_FUN_004dcdb0(CInventory *param_1);
-void core_inv_cpp_FUN_004dd2d0(int param_1);
-bool core_inv_cpp_FUN_004dd310(undefined4 param_1,int param_2,int param_3);
+void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory *this_ptr,int ammo_type);
+int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004dd310(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340(CInventory *this_ptr,int reset_both);
 void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004dd390(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd3c0(CInventory *this_ptr);

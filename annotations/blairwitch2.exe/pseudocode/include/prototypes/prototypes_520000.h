@@ -24,7 +24,7 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-void __cdecl core_scat_cpp_FUN_00520140(CScat *this_ptr,int hand_index);
+void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00520140(CScat *this_ptr,int hand_index);
 void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3);
 undefined4 core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 void core_scat_cpp_FUN_00520df0(int param_1);
@@ -99,6 +99,6 @@ void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_0052e910(CDemonSet *this_pt
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0052e940(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender);
-void __cdecl core_set_cpp_FUN_0052fad0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0052fad0(CDemonSet *this_ptr);
 void core_set_cpp_FUN_0052fea0(CDemonSet *param_1);
 

@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 00510772
-;   cockpit_pkbmpset.cpp_FUN_00510810 at 005108e6
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810 at 005108e6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

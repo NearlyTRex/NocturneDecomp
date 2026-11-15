@@ -239,7 +239,7 @@ LAB_0049479f:
         pCVar10 = pCVar10 + 1;
       } while (iVar5 < iVar2);
     }
-    shape_edittool_cpp_FUN_00496ee0(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(g_CEditorToolsPtr);
     iVar5 = 0;
     pCVar10 = local_44;
     if (0 < iVar2) {

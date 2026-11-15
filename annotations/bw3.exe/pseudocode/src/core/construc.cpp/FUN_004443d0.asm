@@ -14,7 +14,7 @@
 ;   TerminatedCString s_stick_growl_distant_wav_005b97de
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005860b0
+;   core_xform.cpp_eulerToQuaternion_FUN_005860b0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     ADD EAX,0x30                        ; 004443fd
     PUSH EAX                            ; 00444400
     LEA ESI,[ESP + 0x4]                 ; 00444401
-    CALL core_xform.cpp_FUN_005860b0    ; 00444405
-        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005860b0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005860b0 ; 00444405
+        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_005860b0()
     LEA ESI,[ESP + 0x4]                 ; 0044440a
     LEA EDI,[EBX + 0xd19c]              ; 0044440e
     ADD ESP,0x4                         ; 00444414

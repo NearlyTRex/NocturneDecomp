@@ -51,7 +51,7 @@ void __cdecl core_styler_cpp_CStyler_process_FUN_0059d9e0(CStyler *this_ptr,floa
   if (iVar9 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;

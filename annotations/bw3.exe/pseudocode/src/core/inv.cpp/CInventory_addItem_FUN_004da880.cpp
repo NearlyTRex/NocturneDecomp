@@ -826,7 +826,7 @@ LAB_004db104:
             *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar7[2].validation_magic;
             (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
             (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);
-            core_actor_cpp_FUN_004085a0(local_18->items[0]);
+            core_actor_cpp_deleteActor_FUN_004085a0(local_18->items[0]);
             local_18->items[0] = actor;
             core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar4);
             bVar2 = true;

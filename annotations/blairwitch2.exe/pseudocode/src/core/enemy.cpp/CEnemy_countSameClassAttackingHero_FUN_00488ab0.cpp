@@ -21,7 +21,7 @@ int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0(CEnem
   
   iVar5 = 0;
   iVar4 = 0;
-  class_name = (char *)core_actor_cpp_FUN_00408a50(this_ptr);
+  class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50((CDemonActor *)this_ptr);
   iVar3 = 0;
   while( true ) {
     if (g_CDemonSetPtr->enemy_count <= iVar5) break;

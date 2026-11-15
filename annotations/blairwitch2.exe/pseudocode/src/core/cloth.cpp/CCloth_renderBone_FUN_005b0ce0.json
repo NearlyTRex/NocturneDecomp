@@ -1,0 +1,390 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 183,
+    "complexity_score": 316,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 86,
+    "suspect_count": 20,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 269
+  },
+  "cross_references": [
+    {
+      "addr": "005b0c90",
+      "from_addr": "005b0cbb",
+      "name": "core_cloth.cpp_CCloth_renderCollisionBones_FUN_005b0c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b0ce0",
+    "address_range": [
+      [
+        "005b0ce0",
+        "005b0ee9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_renderBone_FUN_005b0ce0",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_005b0ce0(CCloth *this_ptr,int bone_index,int show_labels)"
+  },
+  "function_calls": [
+    {
+      "addr": "004496e0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0"
+    },
+    {
+      "addr": "0046b350",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350"
+    },
+    {
+      "addr": "0046b970",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970"
+    },
+    {
+      "addr": "0046b4a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_0046b4a0"
+    },
+    {
+      "addr": "0055d723",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
+    },
+    {
+      "addr": "0047fd00",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00"
+    },
+    {
+      "addr": "0047f1c0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f1107",
+      "name": "DAT_005f1107",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f110b",
+      "name": "DAT_005f110b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006011a0",
+      "name": "DAT_006011a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005b0cbb",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_renderCollisionBones_FUN_005b0c90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.185185185185185,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CALLOTHER": 2,
+      "CBRANCH": 3,
+      "COPY": 302,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 10,
+      "INT2FLOAT": 1,
+      "INT_ADD": 84,
+      "INT_AND": 59,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 59,
+      "INT_LESS": 4,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 3,
+      "INT_SLESS": 29,
+      "INT_SUB": 45,
+      "INT_XOR": 3,
+      "INT_ZEXT": 6,
+      "LOAD": 37,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 59,
+      "SUBPIECE": 2,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 840
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00441500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043f160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043b7e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8554
+    },
+    "nocturne.exe": {
+      "addr": "00437ab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8554
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "show_labels",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "aiStackY_1034",
+      "severity": "moderate",
+      "text": "int aiStackY_1034 [1006];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,euler_angles,translation);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar1),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffff90",
+      "severity": "moderate",
+      "text": ",(CVector3i *)&stack0xffffff90);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,vertex_index1,iStack_28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,vertex_index1,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,vertex_index1,unaff_EDI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 58,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar1),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)",
+      "type": "pointer_cast"
+    }
+  ]
+}

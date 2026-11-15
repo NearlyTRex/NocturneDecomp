@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00475000 at 00475584
-;   core_dtrace.cpp_FUN_00474020 at 004740b5
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00474020 at 004740b5
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 0053859e
 ;
 ; Called Functions:

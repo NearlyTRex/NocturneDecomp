@@ -9,8 +9,8 @@
 ; XREF[8]:
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90 at 0044dd11
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060 at 004650b4
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820 at 004638b2
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 0046431d
-;   core_dlight.cpp_FUN_00463820 at 004638b2
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0 at 0048d544
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005545cf
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0 at 00554b15

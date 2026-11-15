@@ -43,7 +43,7 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_00521480(CMooCow *this_ptr,floa
   if (iVar5 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,0);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(&this_ptr->base,delta_time,0);
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;

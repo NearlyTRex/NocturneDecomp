@@ -13,10 +13,10 @@
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 0041764a
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425ac7
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 at 00432103
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 0043236a
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 at 0042fc6c
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042ce17
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042e8d9
-;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0 at 00433fec
-;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010 at 0042f05e
 ;   ... and 65 more
 ;
 ; Called Functions:

@@ -34,7 +34,7 @@
 ;   undefined4 DAT_01e65900
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042bff0
+;   core_charactr.cpp_getGameDeltaTime_FUN_0042bff0
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00521840
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
@@ -60,8 +60,8 @@ section .text
     JNZ 0x00521ac0                      ; 005218b8
         ;   XREF to: 00521ac0 (CONDITIONAL_JUMP)  ; LAB_00521ac0
     PUSH EAX                            ; 005218be
-    CALL core_charactr.cpp_FUN_0042bff0 ; 005218bf
-        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042bff0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042bff0 ; 005218bf
+        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042bff0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 005218c4
     FLD float ptr [ESP + 0x1c]          ; 005218c8
     FDIV float ptr [0x005e2eb3]         ; 005218cc | DAT_005e2eb3
@@ -261,8 +261,8 @@ section .text
     PUSH EAX                            ; 00521ac0
         ;   Label: LAB_00521ac0
     MOV dword ptr [0x01e620f0],EDX      ; 00521ac1 | DAT_01e620f0
-    CALL core_charactr.cpp_FUN_0042bff0 ; 00521ac7
-        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042bff0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042bff0 ; 00521ac7
+        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042bff0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00521acc
     FLD float ptr [ESP + 0x1c]          ; 00521ad0
     FDIV float ptr [0x005e2eb3]         ; 00521ad4 | DAT_005e2eb3

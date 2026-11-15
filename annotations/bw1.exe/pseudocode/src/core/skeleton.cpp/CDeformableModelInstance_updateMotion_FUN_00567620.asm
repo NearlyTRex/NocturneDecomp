@@ -96,7 +96,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8e48
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0 at 005675af
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0 at 00567601
-;   core_stranger.cpp_FUN_00589f10 at 00589f4e
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10 at 00589f4e
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240

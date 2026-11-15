@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518cd0 at 00519e51
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519e51
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0052636c = 005265aa

@@ -7,14 +7,14 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[65]:
-;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3c4
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0 at 0042e0aa
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330 at 0042f3c4
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130 at 0042e27f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 005171ae
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0 at 00516e0c
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400 at 00517461
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0 at 005179d3
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60 at 00517b44
-;   cockpit_pkbmpset.cpp_FUN_005177e0 at 005179d3
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0 at 005ae33a
 ;   core_course.cpp_CCourse_load_FUN_00438af0 at 00438be1
 ;   ... and 55 more

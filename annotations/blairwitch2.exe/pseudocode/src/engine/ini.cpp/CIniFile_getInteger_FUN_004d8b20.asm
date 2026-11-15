@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004bc840 at 004bc91f
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840 at 004bc91f
 ;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d8dbb
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00525669
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553794

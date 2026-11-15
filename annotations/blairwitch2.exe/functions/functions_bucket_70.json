@@ -7548,13 +7548,38 @@
         "start":"0042bff0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042bff0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_charactr.cpp_getGameDeltaTime_FUN_0042bff0",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"game_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGame*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -8208,7 +8233,7 @@
       }
     ],
     "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_0042f2f0",
+    "name":"cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042f2f0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -8226,7 +8251,7 @@
       }
     ],
     "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_0042f4f0",
+    "name":"cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -14250,7 +14275,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dpart.cpp_FUN_00461f70",
+    "name":"engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -14430,7 +14455,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dpart.cpp_FUN_004625f0",
+    "name":"engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -14791,7 +14816,7 @@
       }
     ],
     "importable":true,
-    "name":"core_dracbrid.cpp_FUN_00465370",
+    "name":"core_dracbrid.cpp_randomizePosition_FUN_00465370",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -19261,10 +19286,10 @@
         "start":"0047e870"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_0047e870",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -19540,9 +19565,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEditorTools*"
+        }
+      ]
     }
   },
   {
@@ -20631,7 +20671,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00484e70",
+    "name":"shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00484e70",
     "ret":"void",
     "vars":{
       "params":[
@@ -20707,13 +20747,77 @@
         "start":"00485470"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00485470",
-    "ret":"undefined1",
+    "name":"shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEdCheck*"
+        },
+        {
+          "name":"x_pos",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"y_pos",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"checkbox_text",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -20771,7 +20875,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_004858f0",
+    "name":"shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0",
     "ret":"int",
     "vars":{
       "params":[
@@ -28567,7 +28671,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_FUN_004a9870",
+    "name":"engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870",
     "ret":"int",
     "vars":{
       "locals":[
@@ -30423,7 +30527,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004bcbf0",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -34828,7 +34932,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_matrix.c_FUN_004e86f0",
+    "name":"engine_matrix.c_interpolatedCos_FUN_004e86f0",
     "ret":"int",
     "vars":{
       "params":[
@@ -52840,7 +52944,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_texture.cpp_FUN_00575070",
+    "name":"engine_texture.cpp_loadAndUpdateTexture_FUN_00575070",
     "ret":"void",
     "vars":{
       "params":[

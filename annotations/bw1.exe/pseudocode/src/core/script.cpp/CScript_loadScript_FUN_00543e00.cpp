@@ -68,7 +68,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00543e00(CScript *this_ptr,ch
             if (iVar6 == 10) goto LAB_00543f00;
             if (iVar6 == 0) {
               _fclose(file_handle);
-              shape_edittool_cpp_FUN_0049df50(&this_ptr->script_text);
+              shape_edittool_cpp_CStrList_getItemCount_FUN_0049df50(&this_ptr->script_text);
               shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
                         (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.");
               core_script_cpp_CScript_clear_FUN_00543740(this_ptr);

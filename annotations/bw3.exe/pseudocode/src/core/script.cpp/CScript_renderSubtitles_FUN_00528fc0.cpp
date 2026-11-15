@@ -23,12 +23,12 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(CScript *this_
   int iVar7;
   
   if (g_CGamePtr->letterbox_mode == 0) {
-    fVar3 = (float)core_charactr_cpp_FUN_00434b00(g_CGamePtr);
+    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
     _DAT_01ed7010 = _DAT_01ed7010 - fVar3 / _DAT_005cde18;
   }
   else {
     _DAT_01ed3800 = g_CGamePtr->letterbox_mode;
-    fVar3 = (float)core_charactr_cpp_FUN_00434b00(g_CGamePtr);
+    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_00434b00(g_CGamePtr);
     _DAT_01ed7010 = fVar3 / _DAT_005cde18 + _DAT_01ed7010;
   }
   iVar7 = DAT_005fba1c;

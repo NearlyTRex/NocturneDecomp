@@ -5,9 +5,9 @@
 // Function prototypes for engine/prim.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_prim.c_FUN_0051c1a0
+// Original: engine_prim.c_setCullingMode_FUN_0051c1a0
 // Address: 0051c1a0
-void __cdecl FUN_0051c1a0(int culling_mode);
+void __cdecl setCullingMode(int culling_mode);
 
 // Original: engine_prim.c_setupBasicSoftwareEdge_FUN_0051c1b0
 // Address: 0051c1b0

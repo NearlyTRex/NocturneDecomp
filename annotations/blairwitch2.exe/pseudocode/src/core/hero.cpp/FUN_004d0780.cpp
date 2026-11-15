@@ -20,7 +20,7 @@ uint core_hero_cpp_FUN_004d0780(CHero *param_1,int param_2)
   pCVar1 = (param_1->base).base.vtable._uh;
   param_1->hero_action_range = 0.0;
   iVar3 = (*(pCVar1->_uh).canDoHeroAction)(param_1,1);
-  if ((iVar3 != 0) && (iVar3 = core_hero_cpp_FUN_004cec50(param_1), iVar3 != 0)) {
+  if ((iVar3 != 0) && (iVar3 = core_hero_cpp_CHero_tryInteract_FUN_004cec50(param_1), iVar3 != 0)) {
     return 1;
   }
   iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2);

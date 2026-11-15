@@ -32,13 +32,13 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_0047a480
-;   core_dpart.cpp_FUN_0047ab00
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
 ;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
+;   engine_drender.cpp_renderTriangleTextured_FUN_0047a480
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EBX                            ; 00481ad4
         ;   Label: LAB_00481ad4
     PUSH ESI                            ; 00481ad5
-    CALL core_dpart.cpp_FUN_0047ab00    ; 00481ad6
-        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 ; 00481ad6
+        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00481adb
         ;   Label: LAB_00481adb
     POP EBP                             ; 00481ade
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 00481b08
         ;   Label: LAB_00481b08
     PUSH ESI                            ; 00481b09
-    CALL core_dpart.cpp_FUN_0047a480    ; 00481b0a
-        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047a480(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_0047a480 ; 00481b0a
+        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_0047a480(int * vertex_indices, int vertex_count)
     JMP 0x00481adb                      ; 00481b0f
         ;   XREF to: 00481adb (UNCONDITIONAL_JUMP)  ; LAB_00481adb
     CMP dword ptr [EDI + 0x4],0x0       ; 00481b11

@@ -75,7 +75,7 @@
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0
 ;   core_game.cpp_scaleBoneRecursive_FUN_004bb090
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880
-;   core_inv.cpp_FUN_004db990
+;   core_inv.cpp_CInventory_findItemByName_FUN_004db990
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_005353b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   ... and 17 more
@@ -999,8 +999,8 @@ section .text
     XOR BH,DH                           ; 004bbb31
     PUSH EAX                            ; 004bbb33
     MOV byte ptr [0x01d22c70],BH        ; 004bbb34 | DAT_01d22c70
-    CALL core_inv.cpp_FUN_004db990      ; 004bbb3a
-        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004db990(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004db990 ; 004bbb3a
+        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db990(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004bbb3f
     TEST EAX,EAX                        ; 004bbb42
     JNZ 0x004bbbe2                      ; 004bbb44

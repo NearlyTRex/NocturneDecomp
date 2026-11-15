@@ -25,9 +25,9 @@ void __cdecl clipPolygonAgainstPlane(SClipPlane *clip_plane,CVector3f *input_ver
 // Address: 004f3fc0
 CMirror * __cdecl CMirror::ctor(CMirror *this_ptr);
 
-// Original: core_mirror.cpp_FUN_004f3fe0
+// Original: core_mirror.cpp_CMirror_dtor_FUN_004f3fe0
 // Address: 004f3fe0
-CMirror * __cdecl FUN_004f3fe0(CMirror *this_ptr,uint flags);
+CMirror * __cdecl CMirror::dtor(CMirror *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_CMirror_setupCorners_FUN_004f3ff0
 // Address: 004f3ff0

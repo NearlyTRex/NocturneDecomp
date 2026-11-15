@@ -9,9 +9,9 @@
 ;
 ; XREF[15]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60 at 0045edd2
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820 at 00463d90
+;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990 at 00464fd1
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 00464944
-;   core_dlight.cpp_FUN_00463820 at 00463d90
-;   core_dlight.cpp_FUN_00464990 at 00464fd1
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_00465890 at 00465d50
 ;   core_fire.cpp_CFireball_render_FUN_004ae640 at 004ae9ff
 ;   core_fire.cpp_CFirefly_render_FUN_004adaf0 at 004adc2f

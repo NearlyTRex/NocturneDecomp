@@ -52,7 +52,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40(CDemonR
                           (float)grid_y * fVar2 + fVar5;
             CStack_34.z = (float)iStack_1c * (this_ptr->cell_size).z * _DAT_005db968 +
                           (float)grid_z * fVar3 + fVar6;
-            core_dtrace_cpp_FUN_0048c510(this_ptr,&CStack_34);
+            core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(this_ptr,&CStack_34);
           }
           iVar7 = iVar7 + 1;
         } while (iVar7 < 8);

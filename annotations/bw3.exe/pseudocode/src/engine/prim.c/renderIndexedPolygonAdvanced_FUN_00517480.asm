@@ -43,7 +43,7 @@
 ;   engine_prim.c_prepareDepthBuffer_FUN_00515920
 ;   engine_prim.c_replaceWWithDepth_FUN_00515a80
 ;   engine_special.cpp_drawPolygon2_FUN_00565c40
-;   engine_special.cpp_FUN_00563257
+;   engine_special.cpp_renderScanline_FUN_00563257
 ;
 ; *****************************************************************************
 
@@ -449,8 +449,8 @@ section .text
         ;   Label: LAB_0051787a
     MOV EBX,dword ptr [ESP + 0x50]      ; 0051787e
     MOV EDI,EBP                         ; 00517882
-    CALL engine_special.cpp_FUN_00563257 ; 00517884
-        ;   XREF to: 00563257 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00563257(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_00563257 ; 00517884
+        ;   XREF to: 00563257 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00563257(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0x54]      ; 00517889
     MOV EDX,dword ptr [ESP + 0x54]      ; 0051788d
     MOV EAX,dword ptr [EAX + 0xc]       ; 00517891

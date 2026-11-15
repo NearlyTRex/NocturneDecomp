@@ -22,12 +22,12 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_0047ab00
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
 ;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_004848be
     LEA EAX,[ESP + 0x4]                 ; 004848bf
     PUSH EAX                            ; 004848c3
-    CALL core_dpart.cpp_FUN_0047ab00    ; 004848c4
-        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 ; 004848c4
+        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
     JMP 0x00484871                      ; 004848c9
         ;   XREF to: 00484871 (UNCONDITIONAL_JUMP)  ; LAB_00484871
     CMP EDI,0xc0                        ; 004848cb

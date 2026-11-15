@@ -368,7 +368,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (pCVar8->items[0],g_CWeaponClassInfo.name_hash);
         if (pCVar3 != (CDemonActor *)0x0) {
-          pcVar11 = (char *)core_actor_cpp_FUN_00408a50(pCVar3);
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(pCVar3);
           iVar5 = _stricmp(pcVar12,pcVar11);
           if (iVar5 == 0) break;
         }
@@ -383,7 +383,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
       (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       pCVar3[2].particle_systems[0].position.z = (float)pCStack_1c->ammo_count;
       (*((pCVar3->vtable)._ub)->pickup)(pCVar3,this_ptr->owner);
-      core_actor_cpp_FUN_00408730(item_actor);
+      core_actor_cpp_deleteActor_FUN_00408730(item_actor);
       engine_console_cpp_CConsole_printf_FUN_00436710
                 (g_CConsolePtr,"Found dynamite.  Creating weapon for it.\n");
       core_inv_cpp_CInventory_addItem_FUN_004dadb0(this_ptr,pCVar3,1,0);
@@ -428,8 +428,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CD
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (pCVar8->items[0],g_CWeaponClassInfo.name_hash);
         if ((pCVar8->item_groups[0] == this_ptr->current_group) && (pCVar3 != (CDemonActor *)0x0)) {
-          pcVar12 = (char *)core_actor_cpp_FUN_00408a50(pCVar3);
-          pcVar11 = (char *)core_actor_cpp_FUN_00408a50(pCStack_18);
+          pcVar12 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(pCVar3);
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(pCStack_18);
           iVar5 = _strcmp(pcVar11,pcVar12);
           class_name_hash = g_CTommyGunClassInfo.name_hash;
           if ((iVar5 == 0) &&

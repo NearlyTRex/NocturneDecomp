@@ -227,7 +227,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_0058e450(CWinFo
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_0058e640(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_0058e6c0(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_0058e720(CWinFont *this_ptr,char *text_string);
-undefined4 engine_winfont_cpp_FUN_0058e790(void);
+int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_0058e790(CWinFont *this_ptr);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_0058e9d0(void);
 int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void);

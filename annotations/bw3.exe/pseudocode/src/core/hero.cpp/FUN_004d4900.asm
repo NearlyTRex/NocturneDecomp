@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_00518cd0 at 00519ed9
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519ed9
 ;   core_prye.cpp_FUN_00525930 at 0052596d
 ;
 ; Referenced Globals:

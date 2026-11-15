@@ -12,6 +12,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
 #include "types/classes/CIniFile.h"
 #include "types/classes/CKedward.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -40,7 +41,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_00580110(CWinFo
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_00580300(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_00580380(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005803e0(CWinFont *this_ptr,char *text_string);
-undefined4 engine_winfont_cpp_FUN_00580450(void);
+int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_00580450(CWinFont *this_ptr);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_00580460(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_00580690(void);
 int __cdecl wincore_winrun_cpp_getTime_FUN_005806a0(void);
@@ -117,9 +118,9 @@ void core_xform_cpp_FUN_00584b00(void);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_00584f70(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_00584ff0(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_FUN_00585270(void);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildYFlipMatrix_FUN_00585270(float y_offset,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005852d0(float z_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_lerpMatrix3x4_FUN_005854a0(undefined4 *param_1,undefined4 *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005854a0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out);
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005855f0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 void core_xform_cpp_matrixToQuaternion_FUN_00585780(float *param_1);
@@ -132,9 +133,9 @@ CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(flo
 void core_xform_cpp_quaternionFromAngleY_FUN_00585d10(float param_1);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00585d50(float angle_radians,CQuaternion4f *quat_out);
 void core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float param_1,float *param_2);
-undefined4 * core_xform_cpp_FUN_00585de0(float *param_1);
-undefined4 * core_xform_cpp_FUN_00585f40(float *param_1);
-void core_xform_cpp_FUN_005860b0(float *param_1);
+undefined4 * core_xform_cpp_quaternionToEulerAngles_FUN_00585de0(float *param_1);
+undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(float *param_1);
+void core_xform_cpp_eulerToQuaternion_FUN_005860b0(float *param_1);
 void core_xform_cpp_FUN_005861d0(float *param_1);
 void __cdecl core_yow_cpp_staticInit_FUN_005862e0(void);
 CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_00586310(void);
@@ -155,7 +156,7 @@ void __cdecl core_xform_cpp_clampClippedVertices_FUN_00587c20(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_00588410(void);
 float core_zombie_cpp_FUN_005884f0(int param_1);
-void core_zombie_cpp_FUN_00588590(int param_1);
+CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointLocal_FUN_00588590(CDemonActor *actor,CVector3f *out_point);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_00588650(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00588750(CVector3f *dimensions);
 CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005888a0(void);
@@ -210,7 +211,7 @@ CDemonActorType * __cdecl core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0
 CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_setup_FUN_0058d5e0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePriest *this_ptr,float param_2);
-void core_zombiepriest_cpp_FUN_0058e8d0(CDemonActor *param_1,float param_2);
+void core_zombiepriest_cpp_FUN_0058e8d0(CEnemy *param_1,float param_2);
 CMatrix3x4f * __stack2_esi core_zombiepriest_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 undefined4 core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest *this_ptr);

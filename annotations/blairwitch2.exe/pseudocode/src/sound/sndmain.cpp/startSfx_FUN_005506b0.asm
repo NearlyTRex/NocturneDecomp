@@ -14,7 +14,7 @@
 ;
 ; XREF[16]:
 ;   core_doc.cpp_FUN_00450c60 at 00453176
-;   core_dracbrid.cpp_FUN_00465400 at 004658b0
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 at 004658b0
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0 at 00491c39
 ;   core_fire.cpp_CFireball_onCollision_FUN_004964c0 at 00496566
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40 at 004aca7f

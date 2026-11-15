@@ -22,7 +22,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b1c0(CDemonActor *this_ptr,
   char local_78 [100];
   uint local_14;
   
-  str1 = (char *)core_actor_cpp_FUN_00408a50(this_ptr);
+  str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(this_ptr);
   local_dc[0] = '\0';
   local_78[0] = '\0';
   _fscanf(file_handle," { %s \"%[^\"]\"\n");

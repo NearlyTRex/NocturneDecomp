@@ -24,12 +24,12 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e8a10(int pitch,int yaw,
   int iVar11;
   int iVar12;
   
-  iVar6 = engine_matrix_c_FUN_004e86b0(pitch);
-  iVar7 = engine_matrix_c_FUN_004e86f0(pitch);
-  iVar8 = engine_matrix_c_FUN_004e86b0(yaw);
-  iVar9 = engine_matrix_c_FUN_004e86f0(yaw);
-  iVar10 = engine_matrix_c_FUN_004e86b0(roll);
-  iVar11 = engine_matrix_c_FUN_004e86f0(roll);
+  iVar6 = engine_matrix_c_interpolatedSin_FUN_004e86b0(pitch);
+  iVar7 = engine_matrix_c_interpolatedCos_FUN_004e86f0(pitch);
+  iVar8 = engine_matrix_c_interpolatedSin_FUN_004e86b0(yaw);
+  iVar9 = engine_matrix_c_interpolatedCos_FUN_004e86f0(yaw);
+  iVar10 = engine_matrix_c_interpolatedSin_FUN_004e86b0(roll);
+  iVar11 = engine_matrix_c_interpolatedCos_FUN_004e86f0(roll);
   lVar1 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *

@@ -20,7 +20,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00464f10
-;   core_dracbrid.cpp_FUN_00465400
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
@@ -214,8 +214,8 @@ section .text
         ;   Label: LAB_00465119
     PUSH 0x5d11b5                       ; 0046511e | = "bride-die?.wav"
     PUSH EBP                            ; 00465123
-    CALL core_dracbrid.cpp_FUN_00465400 ; 00465124
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 00465124
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00465129
     JMP 0x0046508c                      ; 0046512c
         ;   XREF to: 0046508c (UNCONDITIONAL_JUMP)  ; LAB_0046508c
@@ -248,8 +248,8 @@ section .text
     PUSH 0x40000000                     ; 0046516a
     PUSH 0x5d11c4                       ; 0046516f | = "bride-hurt?.wav"
     PUSH EBP                            ; 00465174
-    CALL core_dracbrid.cpp_FUN_00465400 ; 00465175
-        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 ; 00465175
+        ;   XREF to: 00465400 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0046517a
     JMP 0x0046508c                      ; 0046517d
         ;   XREF to: 0046508c (UNCONDITIONAL_JUMP)  ; LAB_0046508c

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CAsciiUnarmor_decode_FUN_00441610 at 0044164a
-;   support_codec.cpp_FUN_00440ef0 at 00440f54
+;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0 at 00440f54
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_00440400

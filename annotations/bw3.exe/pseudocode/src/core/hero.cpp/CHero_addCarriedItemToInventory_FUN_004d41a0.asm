@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_0051b550 at 0051b841
-;   core_prye.cpp_FUN_00524940 at 00524bd6
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051b841
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00524bd6
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880

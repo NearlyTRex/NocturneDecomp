@@ -11,6 +11,7 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDoor.h"
+#include "types/classes/CGame.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWayPoint.h"
@@ -68,7 +69,7 @@ int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_00432090(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00432220(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004322a0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00432330(CCharacter *param_1,float param_2,int param_3);
+void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter *this_ptr,float delta_time,int disable_search);
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00433120(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130(CCharacter *this_ptr,uint *out_crc);
@@ -82,7 +83,7 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0(CCharacter
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00433880(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(CCharacter *this_ptr,int state_index);
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0(CCharacter *this_ptr,int layer_action_index);
-void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2);
+void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(CCharacter *this_ptr,int bone_index);
 int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810(CCharacter *this_ptr,char *sound_name);
@@ -90,7 +91,7 @@ void core_charactr_cpp_FUN_00434850(int param_1,float param_2);
 int core_charactr_cpp_FUN_004348b0(int param_1,char *param_2);
 void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_00434a30(CDemonActor *actor,float x);
-undefined4 core_charactr_cpp_FUN_00434b00(int param_1);
+float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_00434b00(CGame *game_ptr);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_00434b10(SFire *this_ptr);
 undefined4 core_charactr_cpp_FUN_00434b30(void);
 void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a(void *output_buffer,void *input_buffer,int pixel_count);
@@ -115,22 +116,22 @@ void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00436140(void *sprite_data,vo
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00436170(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00436310(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
 void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_004363a0(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
-void cockpit_ckptutil_c_FUN_00436400(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
+void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00436400(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00436620(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00436750(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004367e0(char *filename,SEdgeList *edge_lists,int expected_count);
 void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00436a50(char *filename,SEdgeList *edge_lists,int edge_list_count);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(SEdge *edges,int count,int x_offset,int y_offset);
-void cockpit_ckptutil_c_FUN_00436ca0(void);
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_00436ca0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00436f80(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00437250(int x0,int y0,int x1,int y1,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x,int y,float alpha,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_00437b80(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00437c10(void);
-undefined4 cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00437c20(void);
-void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00437c30(void);
-void cockpit_ckptutil_c_FUN_00437c40(undefined4 param_1);
+int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_00437c20(void);
+void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00437c30(int disabled);
+void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00437c40(int disabled);
 void * cockpit_ckptutil_c_rotateBitmap_FUN_00437c50(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_00437e10(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00437fd0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
@@ -174,8 +175,8 @@ void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043d830(CCloth *thi
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043d9b0(CCloth *this_ptr,SClothVertex *vertex);
 void __cdecl core_cloth_cpp_CCloth_process_FUN_0043e270(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_FUN_0043f110(void);
-void __cdecl core_cloth_cpp_FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
+void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_0043f110(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043f370(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_0043f8c0(CClothList *this_ptr);

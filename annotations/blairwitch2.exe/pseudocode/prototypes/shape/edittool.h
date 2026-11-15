@@ -221,9 +221,9 @@ void __cdecl CEditorTools::restoreWindowAndCleanup(CEditorTools *this_ptr);
 // Address: 0047e780
 void __cdecl CEditorTools::popWindowState(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0047e870
+// Original: shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870
 // Address: 0047e870
-void FUN_0047e870(void);
+void __cdecl CEditorTools::paintCurrentWindow(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0
 // Address: 0047eff0
@@ -261,9 +261,9 @@ void __cdecl draw3DInterpolatedLine(CVector3f *start_point,CVector3f *end_point)
 // Address: 00480150
 void __cdecl CEditorTools::draw3DWireframeCube(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 
-// Original: shape_edittool.cpp_FUN_00480720
+// Original: shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00480720
 // Address: 00480720
-void FUN_00480720(CEditorTools *param_1,float *param_2,int param_3);
+void __cdecl CEditorTools::drawCenteredWireframeCube(CEditorTools *this_ptr,CVector3f *dimensions,int color_value);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0
 // Address: 004807e0
@@ -537,9 +537,9 @@ CEdButton * __cdecl CEdButton::ctor(CEdButton *this_ptr);
 // Address: 00484e50
 CEdButton * __cdecl CEdButton::dtor(CEdButton *this_ptr,uint flags);
 
-// Original: shape_edittool.cpp_FUN_00484e70
+// Original: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00484e70
 // Address: 00484e70
-void __cdecl FUN_00484e70(CEdButton *this_ptr);
+void __cdecl CEdButton::clearActiveButtonIfMatch(CEdButton *this_ptr);
 
 // Original: shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00484ed0
 // Address: 00484ed0
@@ -561,13 +561,13 @@ int __cdecl calculateButtonWidth(char *button_text);
 // Address: 00485380
 int __cdecl calculateButtonHeight(char *button_text);
 
-// Original: shape_edittool.cpp_FUN_00485470
+// Original: shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470
 // Address: 00485470
-void FUN_00485470(void);
+void __cdecl CEdCheck::setupWithText(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text);
 
-// Original: shape_edittool.cpp_FUN_00485560
+// Original: shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_00485560
 // Address: 00485560
-void FUN_00485560(void);
+void __cdecl CEdCheck::clearActiveButtonIfMatch(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580
 // Address: 00485580
@@ -589,6 +589,6 @@ void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 // Address: 00485840
 int __cdecl wildcardStringMatch(char *pattern,char *target_string,int case_sensitive);
 
-// Original: shape_edittool.cpp_FUN_004858f0
+// Original: shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0
 // Address: 004858f0
-int __cdecl FUN_004858f0(CStrList *this_ptr);
+int __cdecl CStrList::getItemCount(CStrList *this_ptr);

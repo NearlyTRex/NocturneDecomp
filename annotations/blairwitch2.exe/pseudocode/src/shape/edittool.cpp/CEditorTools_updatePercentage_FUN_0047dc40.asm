@@ -66,7 +66,7 @@
 ;   engine_mini3d.cpp_fillRect_FUN_004f90d0
 ;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
-;   shape_edittool.cpp_FUN_0047e870
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -143,8 +143,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0047dce7
         ;   Label: LAB_0047dce7
     PUSH EDI                            ; 0047dcea
-    CALL shape_edittool.cpp_FUN_0047e870 ; 0047dceb
-        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e870()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 ; 0047dceb
+        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047dcf0
     PUSH 0xffff                         ; 0047dcf3
     CALL engine_3d.c_setRenderAlpha_FUN_00406da0 ; 0047dcf8

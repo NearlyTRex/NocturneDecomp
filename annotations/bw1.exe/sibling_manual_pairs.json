@@ -1270,17 +1270,17 @@
   },
   {
    "a": "00434650",
-   "b": "00439ffe",
+   "b": "0043a000",
    "note": "isLineBlendingDisabled_FUN_00434650. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.50x), so the slot is sound: logic-change d=0.429 (15/10 B)."
   },
   {
    "a": "00434670",
-   "b": "0043a010",
+   "b": "0043a020",
    "note": "setLineBlendingDisabled_FUN_00434670. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.50x), so the slot is sound: logic-change d=0.200 (12/8 B)."
   },
   {
    "a": "00434680",
-   "b": "0043a01c",
+   "b": "0043a030",
    "note": "setLineClippingDisabled_FUN_00434680. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.33x), so the slot is sound: logic-change d=0.143 (12/16 B)."
   },
   {
@@ -1690,7 +1690,7 @@
   },
   {
    "a": "00471ad0",
-   "b": "0045f18e",
+   "b": "0045f190",
    "note": "CDemonImage_load_FUN_00471ad0. TU-positional anchor in core/dimage.cpp between verified neighbours; bodies drifted but sizes agree (1.03x), so the slot is sound: logic-change d=0.015 (596/581 B)."
   },
   {
@@ -1740,7 +1740,7 @@
   },
   {
    "a": "00475210",
-   "b": "0046498e",
+   "b": "00464990",
    "note": "CDemonLight_renderRadialVolumetricScattering_FUN_00475210. TU-positional anchor in core/dlight.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.095 (1724/1742 B)."
   },
   {
@@ -2235,12 +2235,12 @@
   },
   {
    "a": "0049e870",
-   "b": "004944fe",
+   "b": "00494500",
    "note": "CEditorTools_drawWindowStatusMessage_FUN_0049e870. TU-positional anchor in shape/edittool.cpp between verified neighbours; bodies drifted but sizes agree (1.21x), so the slot is sound: logic-change d=0.095 (208/252 B)."
   },
   {
    "a": "0049e940",
-   "b": "004945fe",
+   "b": "00494600",
    "note": "CEditorTools_createCenteredDialog_FUN_0049e940. TU-positional anchor in shape/edittool.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.011 (143/145 B)."
   },
   {
@@ -2540,12 +2540,12 @@
   },
   {
    "a": "004b1680",
-   "b": "004aacce",
+   "b": "004aacd0",
    "note": "CRuleList_insert_FUN_004b1680. TU-positional anchor in core/event.cpp between verified neighbours; bodies drifted but sizes agree (1.00x), so the slot is sound: logic-change d=0.018 (320/319 B)."
   },
   {
    "a": "004b17c0",
-   "b": "004aae0e",
+   "b": "004aae10",
    "note": "CRuleList_remove_FUN_004b17c0. TU-positional anchor in core/event.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.007 (208/210 B)."
   },
   {
@@ -4675,7 +4675,7 @@
   },
   {
    "a": "0053f860",
-   "b": "0052c5fc",
+   "b": "0052c600",
    "note": "CNetGame_initializeNetworkToHost_FUN_0053f860. TU-positional anchor in core/netgame.cpp between verified neighbours; bodies drifted but sizes agree (1.09x), so the slot is sound: logic-change d=0.094 (160/175 B)."
   },
   {
@@ -4945,7 +4945,7 @@
   },
   {
    "a": "00550230",
-   "b": "0053bfbe",
+   "b": "0053bfc0",
    "note": "CPodFile_verifyChecksum_FUN_00550230. TU-positional anchor in engine/pod.cpp between verified neighbours; bodies drifted but sizes agree (1.20x), so the slot is sound: logic-change d=0.343 (863/717 B)."
   },
   {
@@ -5200,7 +5200,7 @@
   },
   {
    "a": "0056a470",
-   "b": "0054e69e",
+   "b": "0054e6a0",
    "note": "CDemonSet_precomputeLightVisibility_FUN_0056a470. TU-positional anchor in core/set.cpp between verified neighbours; bodies drifted but sizes agree (1.02x), so the slot is sound: logic-change d=0.031 (1439/1473 B)."
   },
   {
@@ -8465,7 +8465,7 @@
   },
   {
    "a": "0056c990",
-   "b": "00551170",
+   "b": "00550da0",
    "note": "CDemonSet_renderGogglesView_FUN_0056c990. Ranked residue, mutual best: score 0.79, margin 0.11."
   },
   {
@@ -8807,6 +8807,501 @@
    "a": "0043f590",
    "b": "00443790",
    "note": "CLZWDecompress_finalize_FUN_0043f590. CLZWDecompress vtable slot 0xc; writes the pending current_code to the output stream."
+  },
+  {
+   "a": "00434660",
+   "b": "0043a010",
+   "note": "isLineClippingDisabled_FUN_00434660. Read by hand: the four ckptutil line helpers are getter/getter/setter/setter over the blending (bss) and clipping (data)..."
+  },
+  {
+   "a": "004027f0",
+   "b": "00402800",
+   "note": "getTextWrapEnabled_FUN_004027f0. Read by hand (high): Global getter in engine/2d.c in the same slot, shifted +0x10 like its neighbours (buildColorLookupTable..."
+  },
+  {
+   "a": "00402800",
+   "b": "00402810",
+   "note": "setTextWrapEnabled_FUN_00402800. Read by hand (high): Body is `DAT_0061049c = enabled`, and the disable wrapper at 00402830 calls it with 0, the same as noce..."
+  },
+  {
+   "a": "00402820",
+   "b": "00402830",
+   "note": "disableTextWrap_FUN_00402820. Read by hand (high): Body is push 0; call FUN_00402810 (the setTextWrapEnabled equivalent); ret, identical to nocedit. The only..."
+  },
+  {
+   "a": "00402830",
+   "b": "00402840",
+   "note": "getTextColor_FUN_00402830. Read by hand (high): Returns the global that the following setter (FUN_00402850, the setTextColor slot) writes and drawTextColor r..."
+  },
+  {
+   "a": "00402840",
+   "b": "00402850",
+   "note": "setTextColor_FUN_00402840. Read by hand (high): Stores the arg into DAT_006104a0, the global returned by the getter at 00402840 and read by drawTextColor. It..."
+  },
+  {
+   "a": "00407870",
+   "b": "004076c0",
+   "note": "setProcessorType_FUN_00407870. Read by hand (high): 1-arg global setter that sits between renderPolygonWithRenderFlagsUV and the setRenderingQuality-shaped 0..."
+  },
+  {
+   "a": "00407880",
+   "b": "004076d0",
+   "note": "setRenderingQuality_FUN_00407880. Read by hand (high): Single-global setter. Its global is in initialised data (like g_RenderingQuality=1) and is read by loa..."
+  },
+  {
+   "a": "00408820",
+   "b": "00408560",
+   "note": "deleteActor_FUN_00408820. Read by hand (high): Null-check then vtable dtor call with flag 2 on the actor; in bw1 slot 0xd0 of the actor vtable is CDemonActor..."
+  },
+  {
+   "a": "00408ac0",
+   "b": "00408790",
+   "note": "CDemonActor_renderTransparent_FUN_00408ac0. Read by hand (high): Same vtable slot in the CAnvil table: right after renderOpaque and before CDemonActor_render..."
+  },
+  {
+   "a": "0041b4e0",
+   "b": "0041afa0",
+   "note": "scaleVector_FUN_0041b4e0. Read by hand (medium): x/y/z each multiplied by *scalar (3 FMULs). Same TU (bodypart.cpp) and same call sites as the nocedit helper..."
+  },
+  {
+   "a": "0041b510",
+   "b": "0041afe0",
+   "note": "subtractVector_FUN_0041b510. Read by hand (medium): Middle of the scale/subtract/add vector trio in bodypart.cpp; the next function 0041b020 is the FADD twin..."
+  },
+  {
+   "a": "0041b540",
+   "b": "0041b020",
+   "note": "addVector_FUN_0041b540. Read by hand (medium): Same three callers: CBoneGuy_updatePickupBehavior, CMobster_processWeaponPickup, CZombie_processPickup. Same c..."
+  },
+  {
+   "a": "0041df50",
+   "b": "0041dcf0",
+   "note": "CBox_setupN_FUN_0041df50. Read by hand (high): Same 'CBox::setupN - Too many scrape points' error, the same 999/-999 min/max scan, the same scrape-point copy..."
+  },
+  {
+   "a": "00428670",
+   "b": "0042cc80",
+   "note": "clampNormalizedAngle_FUN_00428670. Read by hand (high): Identical body: normalizeAngleToPi(angle), then clamp to [-limit, limit]."
+  },
+  {
+   "a": "0042d5a0",
+   "b": "00432f10",
+   "note": "CCharacter_findSomethingToLookAt_FUN_0042d5a0. Read by hand (high): Has look_at_search_timer/look_at_target/look_at_candidate, the 5.5 eye offset, the 0x4461..."
+  },
+  {
+   "a": "0042f9e0",
+   "b": "004355d0",
+   "note": "getGameDeltaTime_FUN_0042f9e0. Read by hand (high): CGame field getter called as fn(g_CGamePtr) from CScript_process and CScript_renderSubtitles, the same tw..."
+  },
+  {
+   "a": "00432df0",
+   "b": "004387f0",
+   "note": "generateScrollHeightMap_FUN_00432df0. Read by hand (high): Same error strings ('Invalid height array size.', 'No room for scroll bitmap height table.') and t..."
+  },
+  {
+   "a": "004336e0",
+   "b": "00439090",
+   "note": "rasterizeEdgeEndpoints_FUN_004336e0. Read by hand (high): Only function in ckptutil.c with 'Edge out of range: edge %d'. It writes 0xfb at both edge endpoint..."
+  },
+  {
+   "a": "0043b790",
+   "b": "004414b0",
+   "note": "CCloth_renderCollisionBones_FUN_0043b790. Read by hand (high): Identical: setCurrentPolygonColor(renderer, 0xff), then renderBone(this, i, 0) for each i < co..."
+  },
+  {
+   "a": "0043b7e0",
+   "b": "00441500",
+   "note": "CCloth_renderBone_FUN_0043b7e0. Read by hand (high): Same body: getEulerAngles + applyScaledTransform, a 13-step loop over radius1/radius2 with 2x transformA..."
+  },
+  {
+   "a": "0043e7e0",
+   "b": "004427e0",
+   "note": "flushBitBuffer_FUN_0043e7e0. Read by hand (high), found while rejecting the mapper's CLZWDictionary_writeCodeBits: The BW function writes the full bytes thro..."
+  },
+  {
+   "a": "0043f170",
+   "b": "00443290",
+   "note": "CLZWDictionary_writeCodeBits_FUN_0043f170. Read by hand (high), found while rejecting the mapper's flushBitBuffer: Not a byte flush. It walks bits from 1<<(n..."
+  },
+  {
+   "a": "0043ff20",
+   "b": "00444b50",
+   "note": "CColonel_processAI_FUN_0043ff20. Read by hand (high): Same flow: HERO_TASK_STAND/GUARD/KILL checks, closestEnemy within 20, getPathMap, findPathWithRetry, no..."
+  },
+  {
+   "a": "00448a70",
+   "b": "00449600",
+   "note": "CCrate_explode_FUN_00448a70. Read by hand (high): Same body: ACTOR_CREATED check, the '%s exploding!' print, bbox-top position, CFireEffect_createExplosion(3..."
+  },
+  {
+   "a": "00456400",
+   "b": "004570e0",
+   "note": "clipTriangleToAABB_FUN_00456400. Read by hand (high): Copies 3 vertex pointers into the cube input buffer with count=3, then computes the same 6-bit outcodes..."
+  },
+  {
+   "a": "00473a20",
+   "b": "00463820",
+   "note": "CDemonLight_renderLightBloomQuad_FUN_00473a20. Read by hand (high): Same callee sequence: setBlendMode x2, 4x transformAndProjectPoint, getCameraOriginFixed,..."
+  },
+  {
+   "a": "00473f90",
+   "b": "00463850",
+   "note": "CDemonLight_renderLightGlowSprites_FUN_00473f90. Read by hand (high): 1-byte stub, but it is called from CDemonSet_renderScene at exactly nocedit's call site..."
+  },
+  {
+   "a": "00483370",
+   "b": "0047a480",
+   "note": "renderTriangleTextured_FUN_00483370. Read by hand (high): Same winding-order cull, triangle counter, min-scanline init 0x4b0 (=GAME_SCREEN_MAX_HEIGHT), fixed..."
+  },
+  {
+   "a": "004839f0",
+   "b": "0047ab00",
+   "note": "renderTriangleSimple_FUN_004839f0. Read by hand (high): Same four callers (clipAndFillPoly, renderFaceList, renderFacetList, renderGeometryBatch) and the sam..."
+  },
+  {
+   "a": "00486430",
+   "b": "0047d890",
+   "note": "randomizePosition_FUN_00486430. Read by hand (high): Same three getRandomFloatFromRange calls (-5..5, -2..2, -5..5) added to x/y/z, result copied out. BW's p..."
+  },
+  {
+   "a": "004864c0",
+   "b": "0047d920",
+   "note": "CDraculaBride_startFreakySound_FUN_004864c0. Read by hand (high): Same body: random 1..7 timer, isSoundBusy, 6-slot SFreaky loop with isSfxPlaying, bone posi..."
+  },
+  {
+   "a": "004869a0",
+   "b": "0047de00",
+   "note": "CDraculaBride_updateFreakySounds_FUN_004869a0. Read by hand (high): freaky_timer countdown, then a loop over the SFreaky array: owner match, isSfxPlaying, co..."
+  },
+  {
+   "a": "00488990",
+   "b": "0047fcf0",
+   "note": "CDrawSurface_drawAnimatedFullSurface_FUN_00488990. Read by hand (high): Byte-identical: pushes height-1, width-1, 0, 0 and calls the already-named CDrawSurfa..."
+  },
+  {
+   "a": "00496e70",
+   "b": "0048c510",
+   "note": "CDemonRaytrace_renderGridCube_FUN_00496e70. Read by hand (high): Same body: cell_size, copyAndTransform3DPoint, 8x transformAndProjectPoint, setCurrentPolygo..."
+  },
+  {
+   "a": "00499ba0",
+   "b": "0048f250",
+   "note": "CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0. Read by hand (high): Same division of the cube index by grid y*z and then by z, scaled by cell_size (..."
+  },
+  {
+   "a": "004a0f80",
+   "b": "00496ee0",
+   "note": "CEditorTools_paintCurrentWindow_FUN_004a0f80. Read by hand (high): Same strings: 'gEdFont must be set by the application.' and 'CEditorTools::paintWindow() c..."
+  },
+  {
+   "a": "004a6530",
+   "b": "0049d4d0",
+   "note": "CEdButton_clearActiveButtonIfMatch_FUN_004a6530. Read by hand (high): Clears the active-control global if it equals this. Called from the CEdButton dtor, as..."
+  },
+  {
+   "a": "004a6a60",
+   "b": "0049dad0",
+   "note": "CEdCheck_setupWithText_FUN_004a6a60. Read by hand (high): Same 'gEdFont must be set by the application.' check, getCharHeight(0x6a) and getTextHeight. Then c..."
+  },
+  {
+   "a": "004a6b50",
+   "b": "0049dbc0",
+   "note": "CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50. Read by hand (high): Same 17-byte shape comparing [ESP+4] against the active-control global. It sits just bef..."
+  },
+  {
+   "a": "004a6ed0",
+   "b": "0049df50",
+   "note": "CStrList_getItemCount_FUN_004a6ed0. Read by hand (high): A getter of field 0 that sits right after wildcardStringMatch, at the same +0xb0 distance as in noce..."
+  },
+  {
+   "a": "004aacc0",
+   "b": "004a1d00",
+   "note": "CEventList_executeCommand_FUN_004aacc0. Read by hand (high): Giant string dispatch with the same command names in the same order (advanceLightFilter, createE..."
+  },
+  {
+   "a": "004ce7a0",
+   "b": "004c2810",
+   "note": "CBitFont_drawCharacter_FUN_004ce7a0. Read by hand (high): 0..0xff range check, char_widths+char_spacing return, recursive shadow draw at shadow_offset_x/y wi..."
+  },
+  {
+   "a": "004d29f0",
+   "b": "004c6150",
+   "note": "weaponDrawBlendWeightCallback_FUN_004d29f0. Read by hand (high): Same shape: hierarchy_distance 0 gives w*c1, 1 gives w*c2, else w. It sits right before flas..."
+  },
+  {
+   "a": "004dc2d0",
+   "b": "004d0dd0",
+   "note": "rampControlAxis_FUN_004dc2d0. Read by hand (high): Identical logic: keyboard-state lookup of negative/positive key, then ramp *axis by delta_time*max/ramp_ti..."
+  },
+  {
+   "a": "004dc370",
+   "b": "004d0e70",
+   "note": "dampControlAxis_FUN_004dc370. Read by hand (high): Identical body: rate = delta_time_float*arg3/arg2, then decay *axis toward 0 from either sign and clamp at 0."
+  },
+  {
+   "a": "004f8810",
+   "b": "004f1670",
+   "note": "CIcePick_updateShootBlend_FUN_004f8810. Read by hand (high): Same is_armed/guns_drawn blend ramp, the same 'shoot' motion blendMotion, the same aim_pitch cla..."
+  },
+  {
+   "a": "004f8970",
+   "b": "004f17e0",
+   "note": "CIcePick_findAndPickupGun_FUN_004f8970. Read by hand (high): Same body: clears pending_pickup_target, localToWorldPoint(1,0,2), scans actors for uncarried CT..."
+  },
+  {
+   "a": "004f8c70",
+   "b": "004f1b50",
+   "note": "CIcePick_processAI_FUN_004f8c70. Read by hand (high): memset of player_input, 0.25/0.785 constants, 20/30 ranges, 9999.9 closestEnemy, moveOutOfHeroWay, find..."
+  },
+  {
+   "a": "004fbc90",
+   "b": "004f4d70",
+   "note": "CIniFile_setInteger_FUN_004fbc90. Read by hand (high): sprintf into a 100-byte buffer, then set the string. It sits between getInteger 004f4d10 and getFloat..."
+  },
+  {
+   "a": "004fe9d0",
+   "b": "004f8c40",
+   "note": "CInventory_findItemByName_FUN_004fe9d0. Read by hand (high): Identical stricmp loop over items[]->actor_name. bw1 has the same four callers: CEventList_evalu..."
+  },
+  {
+   "a": "004ffad0",
+   "b": "004f9f10",
+   "note": "CInventory_updateInventory_FUN_004ffad0. Read by hand (medium): Opens the same way (cached_ammo_count vs selected_weapon->ammo_count, then resetWeaponSwitchT..."
+  },
+  {
+   "a": "00500690",
+   "b": "004fae10",
+   "note": "CInventory_renderAllItems_FUN_00500690. Read by hand (high): Same strings ('%s\\n\\n%s', '%d x%3.0f%%', ' are loaded.', CTommyGun/CShotgun/CElephantGun). Same..."
+  },
+  {
+   "a": "005073a0",
+   "b": "005031c0",
+   "note": "showDeveloperToolsMenu_FUN_005073a0. Read by hand (high): Same 'Nocturne(R) Debug/editor Menu' loop: '1. Play a mission' goes to CGame_showChapterSelect, 'Z...."
+  },
+  {
+   "a": "00508570",
+   "b": "00503a30",
+   "note": "finalizeGameSystems_FUN_00508570. Read by hand (high): Same shutdown sequence: CNetGame_shutdown, CMouse_reset, clearMission, sound shutdown, freeAllModels x..."
+  },
+  {
+   "a": "0050c5c0",
+   "b": "00507350",
+   "note": "interpolatedSin_FUN_0050c5c0. Read by hand (high): Interpolated lookup on the first table that initializeTrigTables fills with fsin (0x1d1d510). The cos tabl..."
+  },
+  {
+   "a": "0050c600",
+   "b": "00507390",
+   "note": "interpolatedCos_FUN_0050c600. Read by hand (high): Interpolated table lookup whose table is the preceding twin's table +0x404 (1d1d914 vs 1d1d510), matching..."
+  },
+  {
+   "a": "005213e0",
+   "b": "00518810",
+   "note": "CMirror_dtor_FUN_005213e0. Read by hand (high): Only caller is CGlass_dtor, at the same point (just before CDemonActor_dtor) as nocedit's call to CMirror_dto..."
+  },
+  {
+   "a": "00544eb0",
+   "b": "00531eb0",
+   "note": "CFont_ctor_FUN_00544eb0. Read by hand (high): The only caller is CWinFont_ctor (+6, same call site as nocedit). It stores the CFont vtable pointer into the o..."
+  },
+  {
+   "a": "00544ec0",
+   "b": "00531ed0",
+   "note": "CFont_dtor_FUN_00544ec0. Read by hand (high): Stores the CFont vtable into this and returns. The only caller, CWinFont_dtor, calls it with (this,1) right aft..."
+  },
+  {
+   "a": "00545ab0",
+   "b": "00532700",
+   "note": "CParticle_onCollision_FUN_00545ab0. Read by hand (high): `mov eax,1; ret`, identical to nocedit. It fills slot 0xc of the 4-slot CParticle vtable (setup, pro..."
+  },
+  {
+   "a": "0054bf40",
+   "b": "00538b30",
+   "note": "CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40. Read by hand (high): All four 'CPackedBitmapSet::loadJoinedRAW' error strings, then reset, getFileSize, getFile,..."
+  },
+  {
+   "a": "005507f0",
+   "b": "0053c4c0",
+   "note": "CPodFile_computeFileCRC_FUN_005507f0. Read by hand (high): Same \"CPodFile::computeOneFileCRC - invalid index\" / \"can't open %s\" errors, then fseek to the dir..."
+  },
+  {
+   "a": "00550a10",
+   "b": "0053c650",
+   "note": "CPod_mount_FUN_00550a10. Read by hand (high): new CPodFile(0x42c), CPodFile_ctor and CPodFile_mountFromFile, with the 100-pod limit and the pod-count increme..."
+  },
+  {
+   "a": "00551000",
+   "b": "0053cc60",
+   "note": "CPod_computeAndStoreCRC_FUN_00551000. Read by hand (high): Same strings ('Computing CRC over entire pod: %s...', 'Can't mount %s to check version', 'Invalid..."
+  },
+  {
+   "a": "00551280",
+   "b": "0053ce50",
+   "note": "CPod_verifyIntegrity_FUN_00551280. Read by hand (high): CPodFile ctor, mountFromFile, then a callee that holds the 'Verifying CRC for %s'/'CRC CHECK FAILED'..."
+  },
+  {
+   "a": "00551b90",
+   "b": "0053d7a0",
+   "note": "setCullingMode_FUN_00551b90. Read by hand (high): Stores the param into a global that isVisiblePlane, the zraster and renderScanlinePolygon read. Sits right..."
+  },
+  {
+   "a": "005711b0",
+   "b": "00555d20",
+   "note": "CDemonSet_saveStateInfo_FUN_005711b0. Read by hand (high): Same '// Set state version' and '// Camera count, enabled list' output with a per-camera enabled l..."
+  },
+  {
+   "a": "00575df0",
+   "b": "0055c0a0",
+   "note": "CDemonSet_freeThumbs_FUN_00575df0. Read by hand (medium): A single `ret`. Its only caller is CDemonSet_clear_FUN_0054d370 at +0x45, the same offset where noc..."
+  },
+  {
+   "a": "00575f60",
+   "b": "0055b330",
+   "note": "CDemonSet_saveThumbsNoFile_FUN_00575f60. Read by hand (medium): BW refreshThumbs calls this exactly where nocedit calls saveThumbsNoFile (file missing, so ge..."
+  },
+  {
+   "a": "005b26f0",
+   "b": "0057c4e0",
+   "note": "resetTrainSounds_FUN_005b26f0. Read by hand (high): Same body: stack-address compare against the train-noise global, velocity = -active_fog.scroll, last came..."
+  },
+  {
+   "a": "005b5710",
+   "b": "00580127",
+   "note": "renderScanline_FUN_005b5710. Read by hand (high): Single JMP [global] thunk. The global is the scanline render func pointer that the renderPolygon*Op functio..."
+  },
+  {
+   "a": "005b72c0",
+   "b": "00582020",
+   "note": "selectTexture_FUN_005b72c0. Read by hand (high): Calls the pointer that bw1 loadExternalRenderer fills with GetProcAddress('APIDLLselectTexture') (02c833b0),..."
+  },
+  {
+   "a": "005b7300",
+   "b": "00582060",
+   "note": "updateTexture_FUN_005b7300. Read by hand (high): Same shape as nocedit: gate on the use-external-renderer flag, then push 5 args (param, texture dimension, t..."
+  },
+  {
+   "a": "005b7340",
+   "b": "005820a0",
+   "note": "selectTextureFromPalette_FUN_005b7340. Read by hand (high): There are four sibling APIDLL wrappers (selectTexture, updateTexture, selectTextureFromPalette, u..."
+  },
+  {
+   "a": "005b7380",
+   "b": "005820e0",
+   "note": "updateTextureFromPalette_FUN_005b7380. Read by hand (high), found while rejecting the mapper's selectTextureBGRA: Calls the pointer that loadExternalRenderer..."
+  },
+  {
+   "a": "005b7400",
+   "b": "00582160",
+   "note": "updateTextureBGRA_FUN_005b7400. Read by hand (high): Function pointer comes from getProcAddress(...,'APIDLLupdateTextureBGRA'), called with (tex, current dim..."
+  },
+  {
+   "a": "005b7440",
+   "b": "005821a0",
+   "note": "setMipMapLevel_FUN_005b7440. Read by hand (high): Asm matches: pushes [esp+4] to 02c833c0, which loadExternalRenderer fills with GetProcAddress('APIDLLsetMip..."
+  },
+  {
+   "a": "005b7df0",
+   "b": "00582b70",
+   "note": "lockHoldBuffer_FUN_005b7df0. Read by hand (high): Null-checked call through an APIDLL slot. The only caller is CDemonCamera_lockAndRenderToBuffer at +0x41, t..."
+  },
+  {
+   "a": "005b7e10",
+   "b": "00582b90",
+   "note": "unlockHoldBuffer_FUN_005b7e10. Read by hand (high): A null-checked call through the APIDLL pointer at the same table offset (+0x70 from selectTexture). The o..."
+  },
+  {
+   "a": "005b7e30",
+   "b": "00582bb0",
+   "note": "lockTexture_FUN_005b7e30. Read by hand (high): 1-arg 'if (ptr == NULL) return 0; return ptr(arg)' APIDLL wrapper. It is 3rd after buildCardList, after the tw..."
+  },
+  {
+   "a": "005b7e50",
+   "b": "00582bd0",
+   "note": "unlockTexture_FUN_005b7e50. Read by hand (high): if (ptr==0) return 0; else call ptr. The pointer is the one loadExternalRenderer fills from 'APIDLLunlockTex..."
+  },
+  {
+   "a": "005b7e70",
+   "b": "00582bf0",
+   "note": "getTextureInfo_FUN_005b7e70. Read by hand (high): Function pointer comes from getProcAddress(...,'APIDLLgetTextureInfo'), behind the external-renderer flag."
+  },
+  {
+   "a": "005b9490",
+   "b": "005841d0",
+   "note": "evaluateSplineTangent3D_FUN_005b9490. Read by hand (high): Weighted sum of p0..p3 with basis[4..7] (offsets 0x10..0x1c), the tangent half of the basis. BW ch..."
+  },
+  {
+   "a": "005bf720",
+   "b": "00589f10",
+   "note": "CStranger_extractTurnPose_FUN_005bf720. Read by hand (high): Same sequence: save pose, updateMotion(turn_motion_index, turn_blend_weight*40), take the bone's..."
+  },
+  {
+   "a": "005bf800",
+   "b": "0058a010",
+   "note": "CStranger_updateTurnBlending_FUN_005bf800. Read by hand (high): Identical body: zero pending_velocity, getStateBlendWeight(model,0), turn_angle decay *10, tu..."
+  },
+  {
+   "a": "005dcb30",
+   "b": "005965d0",
+   "note": "CTextureCache_freeTextures_FUN_005dcb30. Read by hand (high): Resets current_texture_count, frees each entry's texture/opacity/palette buffers and clears wra..."
+  },
+  {
+   "a": "005dd930",
+   "b": "00597c90",
+   "note": "loadAndUpdateTexture_FUN_005dd930. Read by hand (high): ensureTextureLoaded(arg), then a texture-update call. The only caller, CDemonRenderer_updateTexture,..."
+  },
+  {
+   "a": "005dd990",
+   "b": "00597cf0",
+   "note": "renderTextureAtlas_FUN_005dd990. Read by hand (medium): Same slot in texture.cpp (after enableTextureFiltering and getTextureCacheStats, before getCurrentTex..."
+  },
+  {
+   "a": "005e1ec0",
+   "b": "0059eeb0",
+   "note": "startupWinsock_FUN_005e1ec0. Read by hand (high): Calls WSAStartup(0x101,&wsadata). It is the callee at the same point in CNetGame_init (+0x30) as in nocedit..."
+  },
+  {
+   "a": "005e1ee0",
+   "b": "0059ef20",
+   "note": "cleanupWinsock_FUN_005e1ee0. Read by hand (medium): Ends in WSACleanup and is reached from CNetGame_shutdown (callsite 0053f830). BW change: prepends a 'kill..."
+  },
+  {
+   "a": "005f2b70",
+   "b": "005b21d0",
+   "note": "CWinFont_getLineSpacing_FUN_005f2b70. Read by hand (high): `XOR EAX,EAX; RET` in CWinFont vtable slot 4, after dtor/drawText/getStringWidth/getStringHeight,..."
+  },
+  {
+   "a": "005f6f40",
+   "b": "005b7090",
+   "note": "buildYFlipMatrix_FUN_005f6f40. Read by hand (high): An identity 3x4 matrix with m[1][1]=-1 and ty=y*2, copied out through ESI. It sits between buildXFlipMatr..."
+  },
+  {
+   "a": "005f7ac0",
+   "b": "005b7c00",
+   "note": "quaternionToEulerAngles_FUN_005f7ac0. Read by hand (medium): Located right after quaternionFromAxisAngle in xform.cpp, where nocedit has quaternionToEulerAng..."
+  },
+  {
+   "a": "005f7af0",
+   "b": "005b7d60",
+   "note": "quaternionToEulerAnglesZYX_FUN_005f7af0. Read by hand (medium): Located right after FUN_005b7c00, the quaternionToEulerAngles equivalent (BW's extractTurnPos..."
+  },
+  {
+   "a": "005f7b20",
+   "b": "005b7ed0",
+   "note": "eulerToQuaternion_FUN_005f7b20. Read by hand (medium): Fourth function after quaternionFromAxisAngle in xform.cpp (after toEuler 005b7c00, confirmed via the..."
+  },
+  {
+   "a": "005f8d30",
+   "b": "005ba7d0",
+   "note": "getObjectGrabPointLocal_FUN_005f8d30. Read by hand (high): Calls the actor's getBoundingBox through the vtable and returns (min+max)*0.5 for x/y and min.z+co..."
+  },
+  {
+   "a": "005fcd20",
+   "b": "005bee80",
+   "note": "addRasterizerEdge_FUN_005fcd20. Read by hand (high): Identical algorithm: swap by screen_y, write y_min/y_max, update global min/max Y, compute the 0xfffffff..."
+  },
+  {
+   "a": "005fcfc0",
+   "b": "005bf120",
+   "note": "rasterizeTriangle_FUN_005fcfc0. Read by hand (high): Same size (1272 bytes) and same two callers (CDemonRenderer_clipAndFillPoly, renderGeometryBatch). Same..."
   }
  ]
 }

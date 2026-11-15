@@ -47,8 +47,7 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
   CVector3f CStack_f8;
   CVector3f CStack_ec;
   CVector3f CStack_e0;
-  float fStack_d4;
-  float afStack_d0 [2];
+  CVector3f CStack_d4;
   CVector3f CStack_c8;
   CVector3f CStack_bc;
   CVector3f CStack_b0;
@@ -93,12 +92,13 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      core_prye_cpp_FUN_00524800(this_ptr);
+      core_prye_cpp_CPrye_getThrowDirection_FUN_00524800(this_ptr,&CStack_d4);
       pCVar10 = &CStack_a4;
-      CStack_a4.x = fStack_d4;
-      *(float *)((int)&CStack_a4 + (uint)bVar7 * -8 + 4) = afStack_d0[(uint)bVar7 * -2];
-      *(float *)((int)&CStack_a4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-           afStack_d0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+      CStack_a4.x = CStack_d4.x;
+      *(uint *)((int)&CStack_a4 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + 4);
+      *(uint *)((int)&CStack_a4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
       core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
                 ((CDemonActor *)this_ptr,pCVar10,&CStack_c8);
       pCVar9 = pCStack_18;

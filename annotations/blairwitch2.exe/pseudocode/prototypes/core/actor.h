@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 00408290
 float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
 
-// Original: core_actor.cpp_FUN_00408730
+// Original: core_actor.cpp_deleteActor_FUN_00408730
 // Address: 00408730
-void FUN_00408730(int param_1);
+void __cdecl deleteActor(CDemonActor *actor_ptr);
 
 // Original: core_actor.cpp_initTransformCache_FUN_00408750
 // Address: 00408750
@@ -33,9 +33,9 @@ CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 // Address: 00408980
 void __cdecl CDemonActor::process(CDemonActor *this_ptr,float delta_time);
 
-// Original: core_actor.cpp_FUN_004089b0
+// Original: core_actor.cpp_CDemonActor_renderTransparent_FUN_004089b0
 // Address: 004089b0
-undefined4 FUN_004089b0(void);
+int __cdecl CDemonActor::renderTransparent(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_renderBackground_FUN_004089c0
 // Address: 004089c0
@@ -53,9 +53,9 @@ void __cdecl CDemonActor::restoreRenderState(CDemonActor *this_ptr);
 // Address: 00408a20
 CDemonActorType * __cdecl CDemonActor::getActorType(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408a50
+// Original: core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 // Address: 00408a50
-void FUN_00408a50(int param_1);
+char * __cdecl CDemonActor::getActorClassName(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_setup_FUN_00408a80
 // Address: 00408a80

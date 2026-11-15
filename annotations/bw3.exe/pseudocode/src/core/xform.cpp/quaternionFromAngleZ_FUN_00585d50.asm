@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042cf5b
-;   core_prye.cpp_FUN_0051c1c0 at 0051e012
-;   core_prye.cpp_FUN_0051ee10 at 0051ee77
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042cf5b
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051ee77
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051e012
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d81af

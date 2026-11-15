@@ -39,7 +39,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
   float afStack_34 [4];
   float fStack_24;
   CVector3f CStack_20;
-  uint local_14;
+  int local_14;
   
   bVar7 = 0;
   iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(&this_ptr->base,delta_time);
@@ -160,7 +160,8 @@ LAB_00531950:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(&this_ptr->base,&CStack_74);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(&(this_ptr->base).model);
-  core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,local_14);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
+            (&this_ptr->base,delta_time,local_14);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80(&this_ptr->base,delta_time);
   return;
 }

@@ -17,7 +17,7 @@
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424814
 ;   core_burncrss.cpp_CBurncross_renderOpaque_FUN_00425360 at 004253b6
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 0043023a
-;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431927
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 00432621
 ;   ... and 111 more
 ;
 ; Called Functions:

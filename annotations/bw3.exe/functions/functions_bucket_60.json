@@ -6847,10 +6847,10 @@
         "start":"00433c60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_00433c60",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -7190,9 +7190,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -7381,7 +7412,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_cloth.cpp_FUN_0043f160",
+    "name":"core_cloth.cpp_CCloth_renderBone_FUN_0043f160",
     "ret":"void",
     "vars":{
       "params":[
@@ -10563,7 +10594,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dlight.cpp_FUN_0045d560",
+    "name":"core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560",
     "ret":"void",
     "vars":{
       "params":[
@@ -14985,13 +15016,29 @@
         "start":"00486760"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00486760",
-    "ret":"undefined1",
+    "name":"shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_00486760",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEdCheck*"
+        }
+      ]
     }
   },
   {
@@ -24266,7 +24313,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_FUN_004b1460",
+    "name":"engine_font.cpp_CBitFont_drawCharacter_FUN_004b1460",
     "ret":"int",
     "vars":{
       "locals":[
@@ -25926,14 +25973,29 @@
         "start":"004b8e60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004b8e60",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGame*"
+        }
+      ]
     }
   },
   {
@@ -30471,7 +30533,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mirror.cpp_FUN_004f3fe0",
+    "name":"core_mirror.cpp_CMirror_dtor_FUN_004f3fe0",
     "ret":"CMirror*",
     "vars":{
       "params":[
@@ -33825,13 +33887,54 @@
         "start":"0050a3e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_particle.cpp_FUN_0050a3e0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_particle.cpp_CParticle_onCollision_FUN_0050a3e0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CParticle*"
+        },
+        {
+          "name":"collision_normal",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -36073,13 +36176,45 @@
         "start":"00533e60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_FUN_00533e60",
-    "ret":"undefined1",
+    "name":"core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"light_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -37625,10 +37760,10 @@
         "start":"0053b6e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_FUN_0053b6e0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_set.cpp_CDemonSet_saveStateInfo_FUN_0053b6e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -37648,9 +37783,40 @@
           "type":"undefined8"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
     }
   },
   {
@@ -37969,7 +38135,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setdir.cpp_FUN_00541a60",
+    "name":"core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60",
     "ret":"void",
     "vars":{
       "params":[
@@ -41867,7 +42033,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00566460",
+    "name":"engine_special.cpp_unlockHoldBuffer_FUN_00566460",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -42668,7 +42834,7 @@
       }
     ],
     "importable":true,
-    "name":"engine_texture.cpp_FUN_0056ace0",
+    "name":"engine_texture.cpp_renderTextureAtlas_FUN_0056ace0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -46936,7 +47102,7 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_00585de0",
+    "name":"core_xform.cpp_quaternionToEulerAngles_FUN_00585de0",
     "ret":"undefined1",
     "sig":"default",
     "vars":{

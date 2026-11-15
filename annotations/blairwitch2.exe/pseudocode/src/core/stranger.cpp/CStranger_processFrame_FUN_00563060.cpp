@@ -966,7 +966,7 @@ switchD_00564c2e_caseD_6:
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e600(this_ptr_01,fVar17);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470((CCharacter *)this_ptr);
-  core_stranger_cpp_FUN_00567530(this_ptr,delta_time);
+  core_stranger_cpp_CStranger_updateTurnBlending_FUN_00567530(this_ptr,delta_time);
   if (iStack_68 != 0) {
     (this_ptr->pending_velocity).z = 0.0;
     (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
@@ -1336,8 +1336,8 @@ LAB_005639ef:
     }
   }
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005683d0(this_ptr,0);
-  core_stranger_cpp_FUN_0056bf00(this_ptr,0,delta_time);
-  core_stranger_cpp_FUN_0056bf00(this_ptr,1,delta_time);
+  core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(this_ptr,0,delta_time);
+  core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0056bf00(this_ptr,1,delta_time);
   core_stranger_cpp_CStranger_handleFireButton_FUN_0056e850(this_ptr,delta_time);
   core_inv_cpp_CInventory_updateInventory_FUN_004dccd0((this_ptr->base).inventories);
   core_stranger_cpp_CStranger_processWeaponTick_FUN_0056eed0(this_ptr,delta_time);

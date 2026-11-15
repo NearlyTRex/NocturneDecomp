@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 324,
+    "complexity_score": 325,
     "cross_reference_count": 25,
     "function_call_count": 5,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 105,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 370
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -69,7 +69,7 @@
     {
       "addr": "004fae10",
       "from_addr": "004fb00f",
-      "name": "core_inv.cpp_FUN_004fae10",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -133,6 +133,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00494500",
+      "from_addr": "004945b8",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_00494500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496ee0",
+      "from_addr": "0049726f",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004958d0",
       "from_addr": "00495a75",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
@@ -148,18 +160,6 @@
       "addr": "0049b830",
       "from_addr": "0049bd22",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00494500",
-      "from_addr": "004945b8",
-      "name": "shape_edittool.cpp_FUN_00494500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00496ee0",
-      "from_addr": "0049726f",
-      "name": "shape_edittool.cpp_FUN_00496ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -190,7 +190,7 @@
     {
       "addr": "004c2810",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c2810"
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810"
     },
     {
       "addr": "004c47f0",
@@ -305,7 +305,7 @@
       {
         "call_addr": "0049726f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00496ee0",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -724,7 +724,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",

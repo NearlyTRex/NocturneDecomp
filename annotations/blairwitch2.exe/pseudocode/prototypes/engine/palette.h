@@ -5,9 +5,9 @@
 // Function prototypes for engine/palette.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_palette.cpp_FUN_00510cc0
+// Original: engine_palette.cpp_CFont_dtor_FUN_00510cc0
 // Address: 00510cc0
-CFont * __cdecl FUN_00510cc0(CFont *this_ptr,uint flags);
+CFont * __cdecl CFont::dtor(CFont *this_ptr,uint flags);
 
 // Original: engine_palette.cpp_FUN_00510cd0
 // Address: 00510cd0

@@ -147,15 +147,14 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char local_2d4 [100];
   char local_270 [100];
   CMatrix3x3f local_20c;
-  uint local_1e4;
-  float afStack_1e0 [2];
+  CVector3f local_1e4;
   CVector3f local_1d8;
   uint local_1cc;
   float local_1c8 [5];
   float local_1b4 [3];
   CVector3f local_1a8;
   CVector3f local_19c;
-  uint local_190;
+  float local_190;
   float afStack_18c [5];
   float local_178;
   int local_174;
@@ -2339,11 +2338,11 @@ joined_r0x00546052:
                                                   }
                                                   local_34 = local_34 + 1;
                                                   if (((_DAT_01e810a8 == 0) &&
-                                                      (pCVar13 = core_inv_cpp_FUN_004f8c40
-                                                                           ((CInventory *)
-                                                                            (*(int *)(_DAT_01d06ab4
-                                                                                      * 4 + 
-                                                  0x1d06aa4) + 0x1fae8),local_26c4),
+                                                      (pCVar13 = 
+                                                  core_inv_cpp_CInventory_findItemByName_FUN_004f8c40
+                                                            ((CInventory *)
+                                                             (*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4
+                                                                      ) + 0x1fae8),local_26c4),
                                                   pCVar13 != (CDemonActor *)0x0)) &&
                                                   (core_inv_cpp_CInventory_removeItem_FUN_004f8d00
                                                              ((CInventory *)
@@ -2936,7 +2935,7 @@ LAB_005494ec:
                                                               (&local_4720,
                                                                "system\\nocturne.ini",
                                                                &DAT_005ef902);
-                                                    engine_ini_cpp_FUN_004f4d70
+                                                    engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
                                                               (&local_4720,local_165c,local_80);
                                                     engine_ini_cpp_CIniFile_dtor_FUN_004f4b30
                                                               (&local_4720,0);
@@ -3262,17 +3261,19 @@ LAB_00549af2:
                                                   pCVar13 == (CDemonActor *)0x0))
                                                   goto joined_r0x00546052;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    core_bodypart_cpp_FUN_0041afe0
-                                                              (&pCVar13->location,
-                                                               &local_4c->location);
-                                                    local_190 = local_1e4;
+                                                    core_bodypart_cpp_subtractVector_FUN_0041afe0
+                                                              (&(pCVar13->location).position,
+                                                               &(local_4c->location).position,
+                                                               &local_1e4);
+                                                    local_190 = local_1e4.x;
                                                     afStack_18c[(uint)bVar20 * -2] =
-                                                         afStack_1e0[(uint)bVar20 * -2];
+                                                         *(float *)((int)&local_1e4 +
+                                                                   (uint)bVar20 * -8 + 4);
                                                     afStack_18c
                                                     [(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1] =
-                                                         afStack_1e0
-                                                         [(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1]
-                                                    ;
+                                                         *(float *)((int)&local_1e4 +
+                                                                   (uint)bVar20 * -8 +
+                                                                   (uint)bVar20 * -8 + 8);
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
                                                             (&local_190);

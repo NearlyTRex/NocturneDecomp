@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_00440d70
 ;   support_codec.cpp_CLZWDictionary_findCode_FUN_00440d30
-;   support_codec.cpp_FUN_00440ef0
+;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 004411ea
     PUSH EAX                            ; 004411ed
     PUSH ESI                            ; 004411ee
-    CALL support_codec.cpp_FUN_00440ef0 ; 004411ef
-        ;   XREF to: 00440ef0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440ef0()
+    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0 ; 004411ef
+        ;   XREF to: 00440ef0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, void * ostream)
     ADD ESP,0x10                        ; 004411f4
     MOV EDI,EAX                         ; 004411f7
     TEST EAX,EAX                        ; 004411f9

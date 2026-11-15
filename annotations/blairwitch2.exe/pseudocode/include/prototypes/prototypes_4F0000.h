@@ -197,7 +197,7 @@ void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004f9460(SClipPlane *o
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f9610(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
 void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004f98a0(CMirror *this_ptr);
-CMirror * __cdecl core_mirror_cpp_FUN_004f98c0(CMirror *this_ptr,uint flags);
+CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_004f98c0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f98d0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f9950(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);

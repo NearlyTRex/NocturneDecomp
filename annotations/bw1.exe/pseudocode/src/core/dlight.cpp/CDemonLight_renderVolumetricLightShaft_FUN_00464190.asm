@@ -93,7 +93,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dlight.cpp_FUN_00463820 at 00463dbb
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820 at 00463dbb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d91d4

@@ -21,11 +21,11 @@
 ;
 ; XREF[6]:
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_00556080 at 00556089
-;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170 at 0055131a
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00550f41
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170 at 0055131a
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550883
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550399
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f758
-;   core_set.cpp_FUN_00550da0 at 00550f41
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_buildDispList_d_items_3_005f0b6a

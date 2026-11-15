@@ -109,7 +109,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
   float fStack_44;
   float fStack_40;
   int iStack_3c;
-  uint uStack_38;
+  int iStack_38;
   float fStack_34;
   CMotionController *pCStack_30;
   CDoor *pCStack_2c;
@@ -229,12 +229,12 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
   iStack_3c = 0;
-  uStack_38 = 0;
+  iStack_38 = 0;
   pCStack_18 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(pCStack_30,10);
   if (0.0 < (float)pCStack_18) {
     iStack_3c = 1;
-    uStack_38 = 1;
+    iStack_38 = 1;
   }
   if ((this_ptr->base).base.hit_points <= 0.0) {
     pCStack_18 = (CCharacter_full_vtable *)
@@ -248,7 +248,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
                 (&(this_ptr->base).base.model.base,6,1);
     }
 LAB_004edcf2:
-    uStack_38 = 1;
+    iStack_38 = 1;
   }
   else {
     pCVar15 = (this_ptr->base).base.grabbed_by;
@@ -777,7 +777,8 @@ LAB_004ede83:
       this_ptr->gun_blend_weight = 0.0;
     }
   }
-  core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,uStack_38);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
+            ((CCharacter *)this_ptr,delta_time,iStack_38);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   if ((1.0 <= this_ptr->gun_raise_progress) &&
      (pCVar16 = (CCharacter *)

@@ -64,10 +64,14 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004cdd30(CBloodPool *this_ptr,i
     local_40.z = (int)ROUND(_DAT_005e0e18 * 1.333);
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
               (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_40);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
               (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
   }

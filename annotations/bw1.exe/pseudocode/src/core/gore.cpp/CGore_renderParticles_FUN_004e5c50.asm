@@ -7,10 +7,10 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170 at 00551387
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00550fb6
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170 at 00551387
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 005508ac
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550443
-;   core_set.cpp_FUN_00550da0 at 00550fb6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560

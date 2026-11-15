@@ -5,13 +5,13 @@
 // Function prototypes for engine/matrix.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_matrix.c_FUN_004e86b0
+// Original: engine_matrix.c_interpolatedSin_FUN_004e86b0
 // Address: 004e86b0
-int __cdecl FUN_004e86b0(int angle);
+int __cdecl interpolatedSin(int angle);
 
-// Original: engine_matrix.c_FUN_004e86f0
+// Original: engine_matrix.c_interpolatedCos_FUN_004e86f0
 // Address: 004e86f0
-int __cdecl FUN_004e86f0(int angle);
+int __cdecl interpolatedCos(int angle);
 
 // Original: engine_matrix.c_invertTransformMatrix_FUN_004e8730
 // Address: 004e8730

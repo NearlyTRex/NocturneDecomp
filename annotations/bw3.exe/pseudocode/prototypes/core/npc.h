@@ -64,7 +64,3 @@ CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);
 // Original: core_npc.cpp_CNPC_dtor_FUN_00509af0
 // Address: 00509af0
 CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);
-
-// Original: core_npc.cpp_FUN_00509b90
-// Address: 00509b90
-CFont * __cdecl FUN_00509b90(CFont *this_ptr);

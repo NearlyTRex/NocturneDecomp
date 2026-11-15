@@ -1,0 +1,288 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 15,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "0041c9a0",
+      "from_addr": "0041cc02",
+      "name": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042a930",
+      "from_addr": "0042ac28",
+      "name": "core_carved.cpp_FUN_0042a930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045b560",
+      "from_addr": "0045b852",
+      "name": "core_demnfolk.cpp_FUN_0045b560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e5d0",
+      "from_addr": "0051e860",
+      "name": "core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bd560",
+      "from_addr": "005bd852",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_005bd560",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041afa0",
+    "address_range": [
+      [
+        "0041afa0",
+        "0041afd4"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_bodypart.cpp_scaleVector_FUN_0041afa0",
+    "signature": "CVector3f * __stack2_esi core_bodypart_cpp_scaleVector_FUN_0041afa0(CVector3f *src,float *scalar,CVector3f *dst)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0041cc02",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042ac28",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_FUN_0042a930",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042ae82",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_FUN_0042a930",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045b852",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_FUN_0045b560",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045baa9",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_FUN_0045b560",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051e860",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005bd852",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_005bd560",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005bdaa9",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_005bd560",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.043478260869565,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "COPY": 78,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 15,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "INT_ZEXT": 6,
+      "LOAD": 13,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 162
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00417b20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00416bd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041b4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5556
+    },
+    "nocturne.exe": {
+      "addr": "00417f60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5556
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "scalar",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0041afbe",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

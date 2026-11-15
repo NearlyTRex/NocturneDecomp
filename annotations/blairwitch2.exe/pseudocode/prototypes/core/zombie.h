@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 005956b0
 float FUN_005956b0(int param_1);
 
-// Original: core_zombie.cpp_FUN_00595750
+// Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_00595750
 // Address: 00595750
-void FUN_00595750(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out_point);
 
 // Original: core_zombie.cpp_getObjectGrabPointWorld_FUN_00595810
 // Address: 00595810

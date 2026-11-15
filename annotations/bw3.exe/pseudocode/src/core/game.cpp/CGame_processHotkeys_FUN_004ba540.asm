@@ -32,7 +32,7 @@
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10
-;   core_inv.cpp_FUN_004db990
+;   core_inv.cpp_CInventory_findItemByName_FUN_004db990
 ;   core_script.cpp_CScript_resetDialogState_FUN_00530500
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_005353b0
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280
@@ -523,8 +523,8 @@ section .text
     PUSH 0x5c2850                       ; 004baa24 | = "voodoo_doll"
     ADD EAX,0x206e8                     ; 004baa29
     PUSH EAX                            ; 004baa2e
-    CALL core_inv.cpp_FUN_004db990      ; 004baa2f
-        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004db990(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004db990 ; 004baa2f
+        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db990(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004baa34
     TEST EAX,EAX                        ; 004baa37
     JZ 0x004baa4f                       ; 004baa39

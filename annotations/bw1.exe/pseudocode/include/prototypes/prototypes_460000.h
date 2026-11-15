@@ -64,13 +64,13 @@ void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_00463100(int x,int y,int gra
 void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00463130(CDemonLight *this_ptr,int screen_x,int screen_y,int display_size);
 void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_00463460(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_FUN_00463820(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_FUN_00463850(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00463820(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00463850(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00463de0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x,int filter_pos_y);
 void __cdecl core_dlight_cpp_captureLightTextures_FUN_00464150(void);
 void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190(CDemonLight *this_ptr);
-void core_dlight_cpp_FUN_00464990(void);
+void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00465780(CDemonLight *this_ptr);
 int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_004657c0(CDemonLight *this_ptr,CRect *rect);

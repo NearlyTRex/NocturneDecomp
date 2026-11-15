@@ -49,7 +49,7 @@
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_0051ac40
 ;   core_script.cpp_CScript_saveState_FUN_0054b710
 ;   core_set.cpp_CDemonSet_saveMasterLightStates_FUN_00555ce0
-;   core_set.cpp_FUN_00555d20
+;   core_set.cpp_CDemonSet_saveStateInfo_FUN_00555d20
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -296,8 +296,8 @@ section .text
     PUSH EBP                            ; 004d6689
     MOV EDI,dword ptr [0x00622c18]      ; 004d668a | g_CDemonSetPtr
     PUSH EDI                            ; 004d6690 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00555d20      ; 004d6691
-        ;   XREF to: 00555d20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00555d20()
+    CALL core_set.cpp_CDemonSet_saveStateInfo_FUN_00555d20 ; 004d6691
+        ;   XREF to: 00555d20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_saveStateInfo_FUN_00555d20(CDemonSet * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004d6696
     PUSH EBP                            ; 004d6699
     MOV EAX,[0x0061d418]                ; 004d669a | g_CFieldNotesPtr

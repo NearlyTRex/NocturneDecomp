@@ -237,7 +237,7 @@ int __cdecl core_hero_cpp_CHero_canReachPickup_FUN_004cea40(CHero *this_ptr,CDem
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004cea50(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004ceb80(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004cec30(CHero *this_ptr);
-bool core_hero_cpp_FUN_004cec50(CDemonActor *param_1);
+int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero *this_ptr,int ignore_lock);
 void core_hero_cpp_FUN_004cf200(int param_1);

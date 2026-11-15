@@ -153,14 +153,14 @@ section .text
     ADD EDX,EAX                         ; 004dbe58
     PUSH EDX                            ; 004dbe5a
     MOV dword ptr [0x01d02f44],EDX      ; 004dbe5b | DAT_01d02f44
-    CALL engine_matrix.c_FUN_004e86b0   ; 004dbe61
-        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86b0(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_004e86b0 ; 004dbe61
+        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e86b0(int angle)
     ADD ESP,0x4                         ; 004dbe66
     MOV ESI,EAX                         ; 004dbe69
     MOV EAX,[0x01d02f44]                ; 004dbe6b | DAT_01d02f44
     PUSH EAX                            ; 004dbe70
-    CALL engine_matrix.c_FUN_004e86f0   ; 004dbe71
-        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86f0(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_004e86f0 ; 004dbe71
+        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004e86f0(int angle)
     MOV EDX,0x482b                      ; 004dbe76
     ADD ESP,0x4                         ; 004dbe7b
     MOV ECX,EAX                         ; 004dbe7e

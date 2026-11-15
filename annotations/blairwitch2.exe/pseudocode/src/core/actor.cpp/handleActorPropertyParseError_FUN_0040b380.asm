@@ -34,7 +34,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     PUSH EDX                            ; 0040b3eb
         ;   Label: LAB_0040b3eb
     MOV EBX,EDX                         ; 0040b3ec
-    CALL core_actor.cpp_FUN_00408a50    ; 0040b3ee
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 0040b3ee
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040b3f3
     JMP 0x0040b39c                      ; 0040b3f6
         ;   XREF to: 0040b39c (UNCONDITIONAL_JUMP)  ; LAB_0040b39c

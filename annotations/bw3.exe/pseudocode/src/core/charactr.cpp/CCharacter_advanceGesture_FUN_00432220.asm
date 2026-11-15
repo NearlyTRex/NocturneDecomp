@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042d099
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d099
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310

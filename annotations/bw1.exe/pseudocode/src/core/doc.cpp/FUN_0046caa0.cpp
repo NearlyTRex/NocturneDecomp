@@ -43,8 +43,8 @@ void core_doc_cpp_FUN_0046caa0(CDoc *param_1)
   CDeformableModel_MotionBlendWeightFunc *local_223c;
   SPoseData local_221c;
   float afStack_1714 [59];
-  CMotionList *apCStack_1628 [53];
-  float afStack_1554 [884];
+  CMotionList *apCStack_1628 [80];
+  float afStack_14e8 [857];
   CMatrix3x3f CStack_784;
   float afStack_754 [6];
   float fStack_73c;
@@ -79,8 +79,7 @@ void core_doc_cpp_FUN_0046caa0(CDoc *param_1)
   CQuaternion4f CStack_59c;
   CQuaternion4f CStack_58c;
   CQuaternion4f CStack_57c;
-  float fStack_56c;
-  float local_568 [3];
+  CQuaternion4f CStack_56c;
   CQuaternion4f CStack_55c;
   byte auStack_54c [16];
   uint auStack_53c [4];
@@ -209,7 +208,8 @@ void core_doc_cpp_FUN_0046caa0(CDoc *param_1)
   float local_cc [4];
   CVector3f CStack_bc;
   float fStack_b0;
-  float local_ac [5];
+  float local_ac [2];
+  CVector3f CStack_a4;
   CVector3f local_98;
   float local_88;
   float local_84 [4];
@@ -1074,23 +1074,24 @@ void core_doc_cpp_FUN_0046caa0(CDoc *param_1)
             );
 LAB_0046d3c6:
   if (g_CGamePtr->goggles_active != 0) {
-    local_ac[3] = 0.0;
-    local_ac[4] = 0.0;
-    local_ac[2] = 0.0;
+    CStack_a4.y = 0.0;
+    CStack_a4.z = 0.0;
+    CStack_a4.x = 0.0;
     if ((param_1->guns_drawn != 0) && (param_1->weapon != (CWeapon *)0x0)) {
-      local_ac[2] = (param_1->right_arm_aim).target_pitch;
+      CStack_a4.x = (param_1->right_arm_aim).target_pitch;
     }
     blend_callback_00 = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar12 = 1.0;
     iVar13 = _DAT_01b68814;
-    core_xform_cpp_FUN_005b7ed0(local_ac + 2);
-    auStack_69c._0_4_ = fStack_56c;
-    *(float *)(auStack_69c + (uint)bVar8 * -8 + 4) = local_568[(uint)bVar8 * -2];
-    *(float *)(auStack_69c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-         local_568[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-    *(float *)((int)(auStack_69c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) +
-              ((uint)bVar8 * -2 + 1) * 4) =
-         (local_568 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
+    core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&CStack_a4,&CStack_56c);
+    auStack_69c._0_4_ = CStack_56c.w;
+    puVar5 = (uint *)((int)&CStack_56c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+    *(uint *)(auStack_69c + (uint)bVar8 * -8 + 4) =
+         *(uint *)((int)&CStack_56c + (uint)bVar8 * -8 + 4);
+    *(uint *)(auStack_69c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) = *puVar5;
+    *(uint *)
+     ((int)(auStack_69c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) + ((uint)bVar8 * -2 + 1) * 4) =
+         puVar5[(uint)bVar8 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
               (&(param_1->base).base.model,(CQuaternion4f *)auStack_69c,fVar12,iVar13,
                blend_callback_00);

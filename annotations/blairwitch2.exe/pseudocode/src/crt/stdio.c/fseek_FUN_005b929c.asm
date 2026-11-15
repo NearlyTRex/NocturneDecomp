@@ -15,10 +15,10 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc182
 ;   crt_unknown.c_FUN_005b8f9c at 005b9096
 ;   engine_dosio.cpp_getFile_FUN_00460c70 at 00460d19
+;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80 at 0051b018
 ;   engine_pod.cpp_CPodFile_getAuditRecord_FUN_0051ad50 at 0051adf6
 ;   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0051ae70 at 0051af0f
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a30e
-;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80 at 0051aafd
 ;   ... and 8 more
 ;
 ; Referenced Globals:

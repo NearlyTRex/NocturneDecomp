@@ -134,10 +134,14 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
     }
     engine_special_cpp_transformAndProjectPoint_FUN_005632a3
               (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,(int *)&DAT_0060b094,(int *)&DAT_0060b098,(int *)&DAT_0060b09c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,(int *)&DAT_0060b0c4,(int *)&DAT_0060b0c8,(int *)&DAT_0060b0cc);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
               (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
     if (this_ptr->is_wall_splat == 1) {

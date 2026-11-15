@@ -44,7 +44,7 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00521af0(CScript *this_ptr
     local_18 = iVar1 - local_1c;
     if (2 < local_18) {
       do {
-        iVar1 = shape_edittool_cpp_FUN_004858f0(local_14);
+        iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004858f0(local_14);
         if (iVar1 <= index) break;
         if (index == local_20) {
           if (this_ptr->script_state == 0) {

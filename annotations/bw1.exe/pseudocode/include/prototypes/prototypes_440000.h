@@ -52,8 +52,8 @@
 
 void __cdecl core_cloth_cpp_CCloth_process_FUN_00440610(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_FUN_004414b0(void);
-void __cdecl core_cloth_cpp_FUN_00441500(CCloth *this_ptr,int bone_index,int show_labels);
+void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_004414b0(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00441500(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_00441710(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00441c60(CClothList *this_ptr);
@@ -79,7 +79,7 @@ void support_codec_cpp_FUN_004425b0(int *param_1,int param_2,uint param_3);
 undefined4 support_codec_cpp_FUN_004425e0(undefined4 *param_1,undefined4 *param_2);
 int support_codec_cpp_FUN_00442600(byte *param_1,int param_2,uint param_3,int *param_4);
 int support_codec_cpp_FUN_004427a0(int *param_1,int *param_2);
-int support_codec_cpp_FUN_004427e0(int *param_1,int *param_2);
+int __cdecl support_codec_cpp_flushBitBuffer_FUN_004427e0(int *param_1,int *param_2);
 void support_codec_cpp_FUN_00442880(uint *param_1,byte param_2);
 undefined4 support_codec_cpp_FUN_00442a80(undefined4 param_1,_FILE *param_2,int param_3);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00442ba0(CCodec *this_ptr);
@@ -99,7 +99,7 @@ void __cdecl support_codec_cpp_CLZWDictionary_initTable_FUN_00443070(CLZWDiction
 int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004430d0(CLZWDictionary *this_ptr,int search_code,int start_index);
 int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_00443110(CLZWDictionary *this_ptr,int code,int parent_index);
 uint support_codec_cpp_FUN_004431b0(int param_1,undefined4 param_2,undefined4 param_3);
-undefined4 support_codec_cpp_FUN_00443290(int param_1,uint param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00443290(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,void *ostream);
 int support_codec_cpp_FUN_00443370(int param_1,int param_2,int *param_3);
 int __cdecl support_codec_cpp_FUN_004433f0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00443490(CLZWCompress *this_ptr,int buffer_size,int num_bits);
@@ -147,7 +147,7 @@ CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_00444320(CC
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_00444330(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_setup_FUN_004443a0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,float delta_time);
-void __cdecl core_colonel_cpp_FUN_00444b50(CColonel *this_ptr,float delta_time);
+void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00444b50(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_00445140(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_004451a0(CColonel *this_ptr);
 int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004451b0(CColonel *this_ptr);
@@ -225,7 +225,7 @@ void __cdecl core_crate_cpp_CCrate_archive_FUN_00449480(CCrate *this_ptr);
 ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_004494d0(CCrate *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __stack_esi core_crate_cpp_CCrate_getBoundingBox_FUN_004494f0(CCrate *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_00449530(CCrate *this_ptr,CVector3f *out_points_array);
-void __cdecl core_crate_cpp_FUN_00449600(CCrate *this_ptr);
+void __cdecl core_crate_cpp_CCrate_explode_FUN_00449600(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_004496c0(CCrate *this_ptr,uint flags);
 void __cdecl core_crossbow_cpp_staticInit_FUN_00449710(void);
 CCrossbow * __cdecl core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void);

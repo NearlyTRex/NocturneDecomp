@@ -160,7 +160,7 @@ LAB_004abf52:
             return;
           }
         }
-        engine_special_cpp_FUN_0055d6d7(local_14,local_18,iVar3);
+        engine_special_cpp_renderScanline_FUN_0055d6d7(local_14,local_18,iVar3);
         *(int *)(iVar3 + 8) = *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0xc);
         *(int *)(iVar3 + 0x18) = *(int *)(iVar3 + 0x18) + *(int *)(iVar3 + 0x1c);
         *(int *)(iVar3 + 0x20) = *(int *)(iVar3 + 0x20) + *(int *)(iVar3 + 0x24);

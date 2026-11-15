@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   section
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004be8d0 at 004be99f
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004be99f
 ;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d8ea0
 ;   core_inivar.cpp_writeIniData_FUN_004d95c0 at 004d95d6
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052cc7b

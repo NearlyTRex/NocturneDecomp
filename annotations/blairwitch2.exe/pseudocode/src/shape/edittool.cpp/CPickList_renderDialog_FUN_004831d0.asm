@@ -53,9 +53,9 @@
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00483aa0
-;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     SUB ESP,0x154                       ; 004831d4
     MOV EDX,dword ptr [0x006138e0]      ; 004831da | g_CEditorToolsPtr
     PUSH EDX                            ; 004831e0
-    CALL shape_edittool.cpp_FUN_0047e870 ; 004831e1
-        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e870()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 ; 004831e1
+        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004831e6
     PUSH 0x1                            ; 004831e9
     MOV ECX,dword ptr [0x006138e0]      ; 004831eb | g_CEditorToolsPtr

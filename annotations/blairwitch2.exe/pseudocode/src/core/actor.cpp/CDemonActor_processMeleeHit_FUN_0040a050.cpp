@@ -377,7 +377,7 @@ LAB_0040a3a9:
               core_flamecan_cpp_CFlameCan_ignite_FUN_004a08d0(this_ptr_01);
             }
             else {
-              core_crate_cpp_FUN_0043a350(pCStack_2c);
+              core_crate_cpp_CCrate_explode_FUN_0043a350(pCStack_2c);
             }
           }
           else {

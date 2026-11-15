@@ -230,7 +230,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemon
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_0048c230(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_0048c300(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
-void __cdecl core_dtrace_cpp_FUN_0048c510(CDemonRaytrace *this_ptr,CVector3f *world_pos);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_0048c510(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_0048ca40(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode);
@@ -245,7 +245,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0048f040(CDemon
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0048f120(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 CVector3f * __stack_esi core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0048f210(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 CVector3f * __stack_esi core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0048f230(CDemonRaytrace *this_ptr,CVector3f *output_vector);
-void core_dtrace_cpp_FUN_0048f250(int param_1,int param_2);
+CVector3f * __stack2_esi core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_0048f250(CDemonRaytrace *this_ptr,int cube_index,CVector3f *output_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_0048f5b0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0048f650(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);

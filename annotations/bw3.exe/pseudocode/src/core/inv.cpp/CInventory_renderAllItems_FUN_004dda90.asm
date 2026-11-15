@@ -63,7 +63,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
-;   core_inv.cpp_FUN_004dd310
+;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310
 ;   core_inv.cpp_getItemDescription_FUN_004d9eb0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
 ;   core_inv.cpp_loadAssets_FUN_004da570
@@ -170,8 +170,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x338]     ; 004ddbb5
     PUSH ECX                            ; 004ddbbb
     PUSH EAX                            ; 004ddbbc
-    CALL core_inv.cpp_FUN_004dd310      ; 004ddbbd
-        ;   XREF to: 004dd310 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd310()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310 ; 004ddbbd
+        ;   XREF to: 004dd310 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004ddbc2
     TEST EAX,EAX                        ; 004ddbc5
     JZ 0x004de4d6                       ; 004ddbc7

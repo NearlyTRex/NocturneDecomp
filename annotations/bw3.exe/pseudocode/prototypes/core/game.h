@@ -61,13 +61,13 @@ void __cdecl CGame::updateStatusDisplays(CGame *this_ptr);
 // Address: 004b4f00
 void __cdecl CGame::processFudge(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004b5040
+// Original: core_game.cpp_drawCreditsLine_FUN_004b5040
 // Address: 004b5040
-void FUN_004b5040(void);
+void __cdecl drawCreditsLine(char *text_string);
 
 // Original: core_game.cpp_drawKeyBindingEntry_FUN_004b50f0
 // Address: 004b50f0
-void drawKeyBindingEntry(void);
+void __cdecl drawKeyBindingEntry(EInputCodeType key_code,char *action_name);
 
 // Original: core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0
 // Address: 004b51e0
@@ -89,9 +89,9 @@ void __cdecl CGame::setScreenResolutionAndDisplayFangs(CGame *this_ptr);
 // Address: 004b7f90
 int __cdecl CGame::runGameSession(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004b8e60
+// Original: core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60
 // Address: 004b8e60
-void FUN_004b8e60(int param_1);
+void __cdecl CGame::restoreDefaultControls(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_playerControls_FUN_004b92e0
 // Address: 004b92e0
@@ -113,13 +113,13 @@ void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 // Address: 004b9820
 void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
-// Original: core_game.cpp_FUN_004b9850
+// Original: core_game.cpp_rampControlAxis_FUN_004b9850
 // Address: 004b9850
-void FUN_004b9850(void);
+void __cdecl rampControlAxis(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
 
-// Original: core_game.cpp_FUN_004b98f0
+// Original: core_game.cpp_dampControlAxis_FUN_004b98f0
 // Address: 004b98f0
-void FUN_004b98f0(void);
+void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_004b9960
 // Address: 004b9960
@@ -193,9 +193,9 @@ void __cdecl CGame::renderIrisFade(CGame *this_ptr);
 // Address: 004bd8d0
 uint __cdecl CGame::fadeIn(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bd8f0
+// Original: core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004bd8f0
 // Address: 004bd8f0
-void FUN_004bd8f0(void);
+void __cdecl CGame::resetWeaponSwitchTimers(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910
 // Address: 004bd910
@@ -213,9 +213,9 @@ void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 // Address: 004bdfb0
 void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
-// Original: core_game.cpp_FUN_004be8d0
+// Original: core_game.cpp_CGame_showChapterSelect_FUN_004be8d0
 // Address: 004be8d0
-void FUN_004be8d0(CGame *param_1,int param_2);
+void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004beb80
 // Address: 004beb80

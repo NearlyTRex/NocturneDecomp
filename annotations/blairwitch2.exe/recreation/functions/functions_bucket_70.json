@@ -4745,14 +4745,24 @@
       "005216e0",
       "005218a0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_0042bff0",
-    "name":"core_charactr.cpp_FUN_0042bff0",
+    "method":"getGameDeltaTime",
+    "name":"core_charactr.cpp_getGameDeltaTime_FUN_0042bff0",
+    "params":[
+      {
+        "name":"game_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CGame",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -5171,8 +5181,8 @@
     "addr":"0042f2f0",
     "conv":"unknown",
     "instructions":2,
-    "method":"FUN_0042f2f0",
-    "name":"cockpit_ckptutil.c_FUN_0042f2f0",
+    "method":"isLineBlendingDisabled",
+    "name":"cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042f2f0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -5192,8 +5202,8 @@
     ],
     "conv":"unknown",
     "instructions":141,
-    "method":"FUN_0042f4f0",
-    "name":"cockpit_ckptutil.c_FUN_0042f4f0",
+    "method":"rotateBitmap",
+    "name":"cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -7808,8 +7818,8 @@
     ],
     "conv":"__cdecl",
     "instructions":502,
-    "method":"FUN_00461f70",
-    "name":"core_dpart.cpp_FUN_00461f70",
+    "method":"renderTriangleTextured",
+    "name":"engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
     "params":[
       {
         "name":"vertex_indices",
@@ -7834,7 +7844,7 @@
       "name":"void",
       "ptr":0
     },
-    "tu":"core/dpart.cpp",
+    "tu":"engine/drender.cpp",
     "variadic":false
   },
   {
@@ -7854,8 +7864,8 @@
     ],
     "conv":"__cdecl",
     "instructions":366,
-    "method":"FUN_004625f0",
-    "name":"core_dpart.cpp_FUN_004625f0",
+    "method":"renderTriangleSimple",
+    "name":"engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
     "params":[
       {
         "name":"vertex_indices",
@@ -7880,7 +7890,7 @@
       "name":"void",
       "ptr":0
     },
-    "tu":"core/dpart.cpp",
+    "tu":"engine/drender.cpp",
     "variadic":false
   },
   {
@@ -8033,8 +8043,8 @@
     ],
     "conv":"unknown",
     "instructions":43,
-    "method":"FUN_00465370",
-    "name":"core_dracbrid.cpp_FUN_00465370",
+    "method":"randomizePosition",
+    "name":"core_dracbrid.cpp_randomizePosition_FUN_00465370",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -9947,14 +9957,15 @@
       "004f9390",
       "004f93b0"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":592,
-    "method":"FUN_0047e870",
-    "name":"shape_edittool.cpp_FUN_0047e870",
-    "receiver":false,
+    "method":"paintCurrentWindow",
+    "name":"shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10458,21 +10469,12 @@
     "callers":[
       "00484e50"
     ],
+    "cls":"CEdButton",
     "conv":"__cdecl",
     "instructions":4,
-    "method":"FUN_00484e70",
-    "name":"shape_edittool.cpp_FUN_00484e70",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CEdButton",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"clearActiveButtonIfMatch",
+    "name":"shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00484e70",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -10527,14 +10529,41 @@
       "004ab560",
       "004e4500"
     ],
-    "conv":"unknown",
+    "cls":"CEdCheck",
+    "conv":"__cdecl",
     "instructions":75,
-    "method":"FUN_00485470",
-    "name":"shape_edittool.cpp_FUN_00485470",
-    "receiver":false,
+    "method":"setupWithText",
+    "name":"shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
+    "params":[
+      {
+        "name":"x_pos",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_pos",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"checkbox_text",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10570,21 +10599,12 @@
       "00521cf0",
       "00521ec0"
     ],
+    "cls":"CStrList",
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_004858f0",
-    "name":"shape_edittool.cpp_FUN_004858f0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CStrList",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"getItemCount",
+    "name":"shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -12675,19 +12695,12 @@
       "004a9710",
       "004a9870"
     ],
+    "cls":"CBitFont",
     "conv":"__cdecl",
     "instructions":1516,
-    "method":"FUN_004a9870",
-    "name":"engine_font.cpp_FUN_004a9870",
+    "method":"drawCharacter",
+    "name":"engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CBitFont",
-          "ptr":1
-        }
-      },
       {
         "name":"character_code",
         "type":{
@@ -12729,7 +12742,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -13163,21 +13176,12 @@
       "005b89c0",
       "005b9e58"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":444,
-    "method":"FUN_004bcbf0",
-    "name":"core_game.cpp_FUN_004bcbf0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"showFullscreenBitmap",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -15199,8 +15203,8 @@
     ],
     "conv":"__cdecl",
     "instructions":18,
-    "method":"FUN_004e86f0",
-    "name":"engine_matrix.c_FUN_004e86f0",
+    "method":"interpolatedCos",
+    "name":"engine_matrix.c_interpolatedCos_FUN_004e86f0",
     "params":[
       {
         "name":"angle",
@@ -21951,8 +21955,8 @@
     ],
     "conv":"__cdecl",
     "instructions":13,
-    "method":"FUN_00575070",
-    "name":"engine_texture.cpp_FUN_00575070",
+    "method":"loadAndUpdateTexture",
+    "name":"engine_texture.cpp_loadAndUpdateTexture_FUN_00575070",
     "params":[
       {
         "name":"texture",

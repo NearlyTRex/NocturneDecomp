@@ -5,6 +5,14 @@
 // Function prototypes for engine/drender.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_drender.cpp_renderTriangleTextured_FUN_00461f70
+// Address: 00461f70
+void __cdecl renderTriangleTextured(int *vertex_indices,int vertex_count);
+
+// Original: engine_drender.cpp_renderTriangleSimple_FUN_004625f0
+// Address: 004625f0
+void __cdecl renderTriangleSimple(CVector3i *vertex_indices,int vertex_count);
+
 // Original: engine_drender.cpp_staticInit_FUN_00469500
 // Address: 00469500
 void __cdecl staticInit(void);
@@ -81,9 +89,9 @@ void __cdecl CDemonRenderer::renderSolidTexturedPoly(CDemonRenderer *this_ptr,SM
 // Address: 0046a4a0
 void __cdecl CDemonRenderer::renderFullEffectsDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: engine_drender.cpp_FUN_0046a580
+// Original: engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0046a580
 // Address: 0046a580
-void FUN_0046a580(void);
+void __cdecl CDemonRenderer::renderFullEffectsPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0046a6f0
 // Address: 0046a6f0

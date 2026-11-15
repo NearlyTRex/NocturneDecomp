@@ -20,14 +20,14 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
-;   core_charactr.cpp_FUN_0042cd70
-;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_prye.cpp_FUN_00518cd0
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0
 ;   core_prye.cpp_FUN_00526dc0
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x50]      ; 00518ab5
     PUSH dword ptr [ESP + 0x54]         ; 00518ab9
     PUSH EBX                            ; 00518abd
-    CALL core_charactr.cpp_FUN_0042cd70 ; 00518abe
-        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042cd70()
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 ; 00518abe
+        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00518ac3
     TEST EAX,EAX                        ; 00518ac6
     JZ 0x00518c66                       ; 00518ac8
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_00518bb8
     PUSH dword ptr [ESP + 0x5c]         ; 00518bb9
     PUSH EBX                            ; 00518bbd
-    CALL core_charactr.cpp_FUN_00432330 ; 00518bbe
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 00518bbe
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     MOV EAX,[0x005fe9dc]                ; 00518bc3 | g_CGamePtr
     ADD ESP,0xc                         ; 00518bc8
     FLD float ptr [EAX + 0x314]         ; 00518bcb | g_CGameInstance.delta_time_float
@@ -150,24 +150,24 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 00518c14
     PUSH dword ptr [ESP + 0x40]         ; 00518c18
     PUSH EBX                            ; 00518c1c
-    CALL core_prye.cpp_FUN_00518cd0     ; 00518c1d
-        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00518cd0()
+    CALL core_prye.cpp_CPrye_processFrame_FUN_00518cd0 ; 00518c1d
+        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_processFrame_FUN_00518cd0(CPrye * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00518c22
     PUSH dword ptr [ESP + 0x40]         ; 00518c25
     PUSH EBX                            ; 00518c29
-    CALL core_prye.cpp_FUN_00518cd0     ; 00518c2a
-        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00518cd0()
+    CALL core_prye.cpp_CPrye_processFrame_FUN_00518cd0 ; 00518c2a
+        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_processFrame_FUN_00518cd0(CPrye * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00518c2f
     PUSH dword ptr [ESP + 0x40]         ; 00518c32
     PUSH EBX                            ; 00518c36
-    CALL core_prye.cpp_FUN_00518cd0     ; 00518c37
-        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00518cd0()
+    CALL core_prye.cpp_CPrye_processFrame_FUN_00518cd0 ; 00518c37
+        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_processFrame_FUN_00518cd0(CPrye * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00518c3c
     PUSH dword ptr [ESP + 0x40]         ; 00518c3f
     PUSH EBX                            ; 00518c43
         ;   Label: LAB_00518c43
-    CALL core_prye.cpp_FUN_00518cd0     ; 00518c44
-        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00518cd0()
+    CALL core_prye.cpp_CPrye_processFrame_FUN_00518cd0 ; 00518c44
+        ;   XREF to: 00518cd0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_processFrame_FUN_00518cd0(CPrye * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00518c49
     MOV EBP,dword ptr [0x005fe9dc]      ; 00518c4c | g_CGamePtr
     PUSH dword ptr [ESP + 0x44]         ; 00518c52

@@ -222,12 +222,12 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
              *(uint *)(&stack0xffffff84 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
                   (&g_CDemonCameraInstance,pCVar10,pSVar11);
-        core_dlight_cpp_FUN_0045d530(local_20);
+        core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530(local_20);
         iVar5 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(this_ptr,iVar5,0);
-            core_dlight_cpp_FUN_0045d530(local_20);
+            core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530(local_20);
             iVar5 = iVar5 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(this_ptr);
           } while (iVar5 < this_ptr->mirror_glass_actor_count);
@@ -276,11 +276,11 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580
                   (&g_CDemonCameraInstance,pCVar10,pSVar11);
         iVar5 = 0;
-        core_dlight_cpp_FUN_0045d560(local_1c);
+        core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560(local_1c);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(this_ptr,iVar5,0);
-            core_dlight_cpp_FUN_0045d560(local_1c);
+            core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_0045d560(local_1c);
             iVar5 = iVar5 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(this_ptr);
           } while (iVar5 < this_ptr->mirror_glass_actor_count);

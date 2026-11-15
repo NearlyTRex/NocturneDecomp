@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombiepriest_cpp_FUN_0058e8d0(CDemonActor *param_1,float param_2)
+; void core_zombiepriest_cpp_FUN_0058e8d0(CEnemy *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xbc]:4  local_bc
@@ -51,7 +51,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
-;   core_enemy.cpp_FUN_00489600
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
@@ -96,8 +96,8 @@ section .text
     PUSH ECX                            ; 0058e90b
         ;   Label: LAB_0058e90b
     PUSH EBX                            ; 0058e90c
-    CALL core_enemy.cpp_FUN_00489600    ; 0058e90d
-        ;   XREF to: 00489600 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489600()
+    CALL core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600 ; 0058e90d
+        ;   XREF to: 00489600 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600(CEnemy * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 0058e912
     TEST EAX,EAX                        ; 0058e915
     JZ 0x0058ec20                       ; 0058e917

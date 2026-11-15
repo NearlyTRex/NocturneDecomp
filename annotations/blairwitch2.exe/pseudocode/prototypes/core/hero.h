@@ -77,9 +77,9 @@ void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 // Address: 004cec30
 void __cdecl CHero::createDefaultWeapon(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004cec50
+// Original: core_hero.cpp_CHero_tryInteract_FUN_004cec50
 // Address: 004cec50
-bool FUN_004cec50(CDemonActor *param_1);
+int __cdecl CHero::tryInteract(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
 // Address: 004cee90

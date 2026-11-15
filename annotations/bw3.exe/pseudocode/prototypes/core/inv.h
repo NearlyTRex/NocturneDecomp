@@ -65,9 +65,9 @@ int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int
 // Address: 004db8d0
 void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,CWeapon *weapon);
 
-// Original: core_inv.cpp_FUN_004db990
+// Original: core_inv.cpp_CInventory_findItemByName_FUN_004db990
 // Address: 004db990
-CDemonActor * __cdecl FUN_004db990(CInventory *this_ptr,char *item_name);
+CDemonActor * __cdecl CInventory::findItemByName(CInventory *this_ptr,char *item_name);
 
 // Original: core_inv.cpp_FUN_004db9e0
 // Address: 004db9e0
@@ -133,13 +133,13 @@ undefined4 FUN_004dcda0(void);
 // Address: 004dcdb0
 void FUN_004dcdb0(CInventory *param_1);
 
-// Original: core_inv.cpp_FUN_004dd2d0
+// Original: core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 // Address: 004dd2d0
-void FUN_004dd2d0(int param_1);
+void __cdecl CInventory::updateSelectedWeaponAmmoDisplay(CInventory *this_ptr,int ammo_type);
 
-// Original: core_inv.cpp_FUN_004dd310
+// Original: core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310
 // Address: 004dd310
-bool FUN_004dd310(undefined4 param_1,int param_2,int param_3);
+int __cdecl CInventory::isWeaponInCategory(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 
 // Original: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340
 // Address: 004dd340

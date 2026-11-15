@@ -7,7 +7,7 @@
 ; HWND             Stack[0x4]:4   window_handle
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_004ebf10 at 004ec856
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec856
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770 at 0055f79a
 ;   engine_special.cpp_switchRenderer_FUN_00560470 at 005604aa
 ;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790 at 005888a5

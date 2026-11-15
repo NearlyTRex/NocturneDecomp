@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01cb05e0
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0055d6d7
+;   engine_special.cpp_renderScanline_FUN_0055d6d7
 ;
 ; *****************************************************************************
 
@@ -330,8 +330,8 @@ section .text
         ;   Label: LAB_004ac0c3
     MOV ESI,dword ptr [ESP + 0xc]       ; 004ac0c7
     MOV EBX,dword ptr [ESP + 0x8]       ; 004ac0cb
-    CALL engine_special.cpp_FUN_0055d6d7 ; 004ac0cf
-        ;   XREF to: 0055d6d7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d6d7(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_0055d6d7 ; 004ac0cf
+        ;   XREF to: 0055d6d7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0xc]       ; 004ac0d4
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ac0d8
     MOV EAX,dword ptr [EAX + 0xc]       ; 004ac0dc

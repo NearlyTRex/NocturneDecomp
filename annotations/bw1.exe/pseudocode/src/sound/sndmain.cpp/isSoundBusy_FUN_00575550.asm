@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[7]:
-;   core_dracbrid.cpp_FUN_0047d920 at 0047d956
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047d956
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c164
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cc68
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0 at 00574efb

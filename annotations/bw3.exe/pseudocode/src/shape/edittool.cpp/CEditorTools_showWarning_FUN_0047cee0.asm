@@ -13,10 +13,10 @@
 ; XREF[8]:
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 at 004acb03
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4890
-;   core_prye.cpp_FUN_0051b550 at 0051c00b
-;   core_prye.cpp_FUN_00520d20 at 00520d8e
-;   core_prye.cpp_FUN_00521880 at 00521ad3
-;   core_prye.cpp_FUN_00524940 at 00525909
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051c00b
+;   core_prye.cpp_CPrye_processPickupComplete_FUN_00520d20 at 00520d8e
+;   core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880 at 00521ad3
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00525909
 ;   core_script.cpp_CScript_loadState_FUN_00530ad0 at 00530de4
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_0053b7f0 at 0053b888
 ;

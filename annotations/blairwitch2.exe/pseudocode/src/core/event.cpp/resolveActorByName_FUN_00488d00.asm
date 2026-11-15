@@ -32,7 +32,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_isOfClassHash_FUN_0040c8c0
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_00491860
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
@@ -177,8 +177,8 @@ section .text
         ;   Label: LAB_00488dfd
     PUSH EBP                            ; 00488e01
     PUSH ESI                            ; 00488e02
-    CALL core_actor.cpp_FUN_00408a50    ; 00488e03
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 00488e03
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00488e08
     PUSH EAX                            ; 00488e0b
     PUSH EBX                            ; 00488e0c

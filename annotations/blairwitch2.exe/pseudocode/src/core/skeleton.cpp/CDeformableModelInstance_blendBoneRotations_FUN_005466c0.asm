@@ -22,8 +22,8 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afb37
 ;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004ccc91
 ;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d4fc6
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005203aa
 ;   core_scat.cpp_CScat_process_FUN_0051ecc0 at 0051f10b
-;   core_scat.cpp_FUN_00520140 at 005203aa
 ;   ... and 4 more
 ;
 ; Referenced Globals:

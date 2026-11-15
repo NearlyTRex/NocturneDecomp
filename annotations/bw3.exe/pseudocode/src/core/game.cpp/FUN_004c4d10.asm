@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_ctor_FUN_004b4180 at 004b440c
-;   core_game.cpp_FUN_004be8d0 at 004be938
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004be938
 ;
 ; *****************************************************************************
 

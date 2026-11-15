@@ -301,7 +301,7 @@ LAB_00565858:
       if (bone_index < 0x17) {
         if (bone_index < 0x15) {
           if (bone_index != 0x13) goto LAB_00565ebd;
-          core_stranger_cpp_FUN_0056a160(this_ptr);
+          core_stranger_cpp_CStranger_processPickupComplete_FUN_0056a160(this_ptr);
         }
         else if (bone_index < 0x16) {
           if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {

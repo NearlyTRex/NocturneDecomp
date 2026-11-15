@@ -36,7 +36,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
   int local_18;
   int *local_14;
   
-  shape_edittool_cpp_FUN_0047e870(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(g_CEditorToolsPtr);
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(g_CEditorToolsPtr,1);
   local_28 = _DAT_01c35e48;
   local_24 = this_ptr->scroll_top;

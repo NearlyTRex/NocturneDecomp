@@ -24,7 +24,7 @@
 ; XREF[3]:
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be896
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba9d9
-;   core_inv.cpp_FUN_004fae10 at 004fb645
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fb645
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

@@ -24,8 +24,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0
 ;   core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620
-;   core_xform.cpp_FUN_005b7c00
 ;   core_xform.cpp_quaternionFromAngleY_FUN_005b7b30
+;   core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EAX                            ; 0046e686
     LEA ESI,[ESP + 0x1ac0]              ; 0046e687
     LEA EDI,[ESP + 0x1acc]              ; 0046e68e
-    CALL core_xform.cpp_FUN_005b7c00    ; 0046e695
-        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7c00()
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00 ; 0046e695
+        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00()
     LEA ESI,[ESP + 0x1ac0]              ; 0046e69a
     ADD ESP,0x4                         ; 0046e6a1
     MOVSD ES:EDI,ESI                    ; 0046e6a4

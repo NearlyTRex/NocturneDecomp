@@ -14,10 +14,10 @@
 ;
 ; XREF[7]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fd08
-;   core_colonel.cpp_FUN_00444b50 at 00444c3a
+;   core_colonel.cpp_CColonel_processAI_FUN_00444b50 at 00444c3a
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0 at 004c7b9d
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0 at 004e99af
-;   core_icepick.cpp_FUN_004f1b50 at 004f1c99
+;   core_icepick.cpp_CIcePick_processAI_FUN_004f1b50 at 004f1c99
 ;   core_scat.cpp_CScat_updateAI_FUN_005415c0 at 005416a5
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0 at 00593a09
 ;

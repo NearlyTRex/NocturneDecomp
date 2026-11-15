@@ -22,14 +22,14 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042cd70
-;   core_charactr.cpp_FUN_00432330
-;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
@@ -52,8 +52,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0050912f
     PUSH dword ptr [EBP + 0x18]         ; 00509132
     PUSH EBX                            ; 00509135
-    CALL core_charactr.cpp_FUN_0042cd70 ; 00509136
-        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042cd70()
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 ; 00509136
+        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0050913b
     TEST EAX,EAX                        ; 0050913e
     JZ 0x00509418                       ; 00509140
@@ -102,8 +102,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005091a5
         ;   Label: LAB_005091a5
     PUSH EBX                            ; 005091a8
-    CALL core_charactr.cpp_FUN_00433c60 ; 005091a9
-        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433c60()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 ; 005091a9
+        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005091ae
     JMP 0x00509155                      ; 005091b1
         ;   XREF to: 00509155 (UNCONDITIONAL_JUMP)  ; LAB_00509155
@@ -313,8 +313,8 @@ section .text
     PUSH ECX                            ; 005093ff
     PUSH dword ptr [EBP + 0x18]         ; 00509400
     PUSH EBX                            ; 00509403
-    CALL core_charactr.cpp_FUN_00432330 ; 00509404
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 00509404
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     ADD ESP,0xc                         ; 00509409
     PUSH dword ptr [EBP + 0x18]         ; 0050940c
     PUSH EBX                            ; 0050940f

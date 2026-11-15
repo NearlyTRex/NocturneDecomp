@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 243,
+    "complexity_score": 244,
     "cross_reference_count": 26,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 104,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 385
+    "total_lines": 386
   },
   "cross_references": [
     {
@@ -73,7 +73,7 @@
     {
       "addr": "004dd9b0",
       "from_addr": "004ddb97",
-      "name": "core_inv.cpp_FUN_004dd9b0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -143,6 +143,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047e870",
+      "from_addr": "0047ebff",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047d270",
       "from_addr": "0047d415",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
@@ -158,12 +164,6 @@
       "addr": "004831d0",
       "from_addr": "004836c2",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047e870",
-      "from_addr": "0047ebff",
-      "name": "shape_edittool.cpp_FUN_0047e870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +194,7 @@
     {
       "addr": "004a9870",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a9870"
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870"
     },
     {
       "addr": "004ab840",
@@ -304,7 +304,7 @@
       {
         "call_addr": "0047ebff",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e870",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",

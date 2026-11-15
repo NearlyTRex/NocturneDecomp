@@ -21,11 +21,11 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfbcf
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7f27
 ;   core_netgame.cpp_CNetGame_init_FUN_0052c520 at 0052c5a6
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0052c600 at 0052c621
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0 at 0052c6c2
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0052d450 at 0052dccc
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e46b
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0 at 0052c5d7
-;   core_netgame.cpp_FUN_0052c600 at 0052c621
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Disconnecting_from_serve_005eb85a

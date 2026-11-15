@@ -42,7 +42,7 @@
     {
       "addr": "00489600",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00489600"
+      "name": "core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600"
     },
     {
       "addr": "00491aa0",
@@ -291,7 +291,7 @@
       "line": 64,
       "match": "(CEnemy **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CEnemy **)((int)g_CDemonSetPtr->characters + iStack_20);",
+      "text": "this_ptr_00 = *(CEnemy **)((int)g_CDemonSetPtr->characters + iStack_20);",
       "type": "pointer_cast"
     },
     {
@@ -315,7 +315,7 @@
       "line": 84,
       "match": "DAT_01c5bc4c",
       "severity": "mild",
-      "text": "*(CEnemy **)(&DAT_01c5bc4c + iStack_24) = this_ptr_01;",
+      "text": "*(CEnemy **)(&DAT_01c5bc4c + iStack_24) = this_ptr_00;",
       "type": "undefined_data"
     },
     {
@@ -347,7 +347,7 @@
       "line": 112,
       "match": "DAT_01c5bc4c",
       "severity": "mild",
-      "text": "this_ptr_00 = *(CCharacter **)(&DAT_01c5bc4c + iVar3 * 4);",
+      "text": "target = *(CCharacter **)(&DAT_01c5bc4c + iVar3 * 4);",
       "type": "undefined_data"
     },
     {

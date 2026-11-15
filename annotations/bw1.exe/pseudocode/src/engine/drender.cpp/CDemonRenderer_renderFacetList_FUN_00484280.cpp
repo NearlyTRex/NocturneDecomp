@@ -50,7 +50,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
               this_ptr->vertex_buffer_ptr[local_1c].v = primitive_array->vertices[3].texture_v;
             }
           }
-          core_dpart_cpp_FUN_0047a480(&local_28.x,(primitive_array->base).base.count);
+          engine_drender_cpp_renderTriangleTextured_FUN_0047a480
+                    (&local_28.x,(primitive_array->base).base.count);
           primitive_array =
                (SMRGLPrimitiveQuad *)
                ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
@@ -107,7 +108,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
              (SMRGLPrimitiveQuad *)
              ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
              primitive_stride);
-        core_dpart_cpp_FUN_0047ab00(&local_28,(pSVar1->base).count);
+        engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(&local_28,(pSVar1->base).count);
       }
     }
   }

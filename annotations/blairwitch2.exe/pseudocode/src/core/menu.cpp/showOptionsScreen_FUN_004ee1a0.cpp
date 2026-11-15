@@ -53,7 +53,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004ee1a0(int initialize_systems
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     switch(iVar2) {
     case 0:
-      core_menu_cpp_FUN_004ebf10();
+      core_menu_cpp_configureGraphicsOptions_FUN_004ebf10();
       break;
     case 1:
       core_menu_cpp_configureSoundOptions_FUN_004ed260();

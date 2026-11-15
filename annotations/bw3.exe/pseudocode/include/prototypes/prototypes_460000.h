@@ -170,8 +170,8 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00466540(CDemonPart *thi
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_00466830(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d10(int scanline_y,SSoftwareEdge *exclude_edge);
-void __cdecl core_dpart_cpp_FUN_00466d50(int *vertex_indices,int vertex_count);
-void __cdecl core_dpart_cpp_FUN_004673d0(CVector3i *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004673d0(CVector3i *vertex_indices,int vertex_count);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00467900(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00467940(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_00467a70(int color_value);
@@ -197,7 +197,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_00468f20
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00468f80(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00469080(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004691e0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void __cdecl cockpit_drawsurf_cpp_FUN_004693b0(CDrawSurface *this_ptr);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004693b0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_004694b0(void);
 undefined4 cockpit_drawsurf_cpp_FUN_004694c0(void);
 void cockpit_drawsurf_cpp_FUN_004694d0(void);

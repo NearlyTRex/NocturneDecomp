@@ -142,11 +142,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         if (DAT_007c3978 == (int *)0x0) {
           if (this_ptr->goggles_active == 0) {
             if (this_ptr->special_view_active != 0) {
-              core_set_cpp_CDemonSet_renderGogglesView_FUN_00551170(g_CDemonSetPtr);
+              core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(g_CDemonSetPtr);
             }
           }
           else {
-            core_set_cpp_FUN_00550da0(g_CDemonSetPtr);
+            core_set_cpp_CDemonSet_renderGogglesView_FUN_00550da0(g_CDemonSetPtr);
           }
         }
         else {
@@ -163,7 +163,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         _sprintf((char *)0x1ccfe98,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_00535d80((char *)0x1ccfe98);
       }
-      core_inv_cpp_FUN_004fae10(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8);
+      core_inv_cpp_CInventory_renderAllItems_FUN_004fae10
+                ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8));
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_00551a50(g_CDemonSetPtr);
       }
@@ -283,12 +284,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(this_ptr->debug_info_string,0,DAT_0061b49c + -0x21);
         if (_DAT_02c83370 != 0) {
-          engine_special_cpp_FUN_00582bf0(0x400);
-          engine_special_cpp_FUN_00582bf0(0x200);
-          engine_special_cpp_FUN_00582bf0(0x100);
-          engine_special_cpp_FUN_00582bf0(0x80);
-          engine_special_cpp_FUN_00582bf0(0x40);
-          engine_special_cpp_FUN_00582bf0(0x20);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x400);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x200);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x100);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x80);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x40);
+          engine_special_cpp_getTextureInfo_FUN_00582bf0(0x20);
           _sprintf(acStack_2d4,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,0x2c);
         }

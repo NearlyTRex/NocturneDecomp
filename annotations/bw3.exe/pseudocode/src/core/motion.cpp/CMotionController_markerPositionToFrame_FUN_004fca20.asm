@@ -17,9 +17,9 @@
 ;
 ; XREF[4]:
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c71c7
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051ef19
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e917
-;   core_prye.cpp_FUN_0051c1c0 at 0051cbb3
-;   core_prye.cpp_FUN_0051ee10 at 0051ef19
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051cbb3
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120

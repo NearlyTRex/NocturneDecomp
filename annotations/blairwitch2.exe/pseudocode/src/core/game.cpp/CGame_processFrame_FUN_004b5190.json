@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1267,
-    "complexity_score": 891,
+    "complexity_score": 892,
     "cross_reference_count": 1,
     "function_call_count": 61,
     "global_count": 72,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 371,
+    "pseudocode_lines": 372,
     "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1638
+    "total_lines": 1639
   },
   "cross_references": [
     {
@@ -111,7 +111,7 @@
     {
       "addr": "004dd9b0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dd9b0"
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0"
     },
     {
       "addr": "0050f120",
@@ -134,6 +134,11 @@
       "name": "core_script.cpp_CScript_renderSubtitles_FUN_005218a0"
     },
     {
+      "addr": "0052fad0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0"
+    },
+    {
       "addr": "005307a0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_renderLightDebugView_FUN_005307a0"
@@ -147,11 +152,6 @@
       "addr": "0052ef80",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80"
-    },
-    {
-      "addr": "0052fad0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0052fad0"
     },
     {
       "addr": "0052fea0",
@@ -266,7 +266,7 @@
     {
       "addr": "005601a0",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005601a0"
+      "name": "engine_special.cpp_getTextureInfo_FUN_005601a0"
     },
     {
       "addr": "0055f500",
@@ -1355,7 +1355,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 179,
+      "line": 180,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);",
@@ -1363,7 +1363,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 181,
+      "line": 182,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "(iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x2f), iVar2 != 0)) {",
@@ -1371,7 +1371,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 181,
+      "line": 182,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x2f), iVar2 != 0)) {",
@@ -1379,7 +1379,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 197,
       "match": "DAT_005d72e4",
       "severity": "mild",
       "text": "(\"movie\",local_118,&DAT_005d72e4);",
@@ -1387,7 +1387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_28 = (local_30 * DAT_006141b8) / 0x00000040;",
@@ -1395,7 +1395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 207,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_20 = ((local_30 + 1) * DAT_006141b8) / 0x00000040;",
@@ -1403,7 +1403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 208,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar2 = (local_38 * DAT_006141bc) / 0x00000040;",
@@ -1411,7 +1411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 209,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar4 = (local_3c * DAT_006141bc) / 0x00000040;",
@@ -1419,7 +1419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 219,
       "match": "DAT_01c2a38c",
       "severity": "mild",
       "text": "puVar6 = (uint *)(local_28 * 4 + *(int *)(&DAT_01c2a38c + local_24));",
@@ -1427,7 +1427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 266,
+      "line": 267,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x16);",
@@ -1435,7 +1435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 270,
+      "line": 271,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0xb);",
@@ -1443,7 +1443,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 278,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x4d);",
@@ -1451,7 +1451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 284,
+      "line": 285,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x42);",
@@ -1459,7 +1459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 287,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x37);",
@@ -1467,7 +1467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 288,
+      "line": 289,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x2c);",
@@ -1475,7 +1475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 289,
+      "line": 290,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0(this_ptr->debug_info_string,0,DAT_006141bc + -0x21);",
@@ -1483,7 +1483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 318,
+      "line": 319,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "(g_CScriptPtr,0,0xf0,DAT_006141b8 + -1,DAT_006141bc + -1);",
@@ -1491,7 +1491,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 318,
+      "line": 319,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "(g_CScriptPtr,0,0xf0,DAT_006141b8 + -1,DAT_006141bc + -1);",
@@ -1499,7 +1499,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 323,
+      "line": 324,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00401fe0(local_5e0,0,DAT_006141bc + -0x42);",
@@ -1507,7 +1507,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 326,
+      "line": 327,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2);",
@@ -1515,7 +1515,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 340,
+      "line": 341,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "(_DAT_01511cb8,0,DAT_006141b8,DAT_006141bc + _DAT_01511cb8->max_char_height * -2,",
@@ -1523,7 +1523,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 340,
+      "line": 341,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "(_DAT_01511cb8,0,DAT_006141b8,DAT_006141bc + _DAT_01511cb8->max_char_height * -2,",
@@ -1531,7 +1531,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 341,
+      "line": 342,
       "match": "DAT_01c34510",
       "severity": "mild",
       "text": "(uint)DAT_01c34510,0,local_2e0);",
@@ -1555,7 +1555,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 330,
+      "line": 331,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

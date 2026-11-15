@@ -39,7 +39,7 @@ void __cdecl CZombiePriest::process(CZombiePriest *this_ptr,float param_2);
 
 // Original: core_zombiepriest.cpp_FUN_0058e8d0
 // Address: 0058e8d0
-void FUN_0058e8d0(CDemonActor *param_1,float param_2);
+void FUN_0058e8d0(CEnemy *param_1,float param_2);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0
 // Address: 0058ecd0

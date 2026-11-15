@@ -625,8 +625,8 @@ section .text
     MOV ESI,dword ptr [0x0061abc0]      ; 00494cae | g_CEditorToolsPtr
         ;   Label: LAB_00494cae
     PUSH ESI                            ; 00494cb4
-    CALL shape_edittool.cpp_FUN_00496ee0 ; 00494cb5
-        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496ee0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 ; 00494cb5
+        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00494cba
     XOR ESI,ESI                         ; 00494cbd
     TEST EBP,EBP                        ; 00494cbf

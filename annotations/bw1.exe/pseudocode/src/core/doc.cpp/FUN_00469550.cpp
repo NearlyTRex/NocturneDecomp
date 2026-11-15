@@ -1370,7 +1370,7 @@ LAB_0046a09c:
   core_doc_cpp_FUN_004724a0(param_1,0);
   core_doc_cpp_FUN_004724a0(param_1,1);
   core_doc_cpp_FUN_00475920(param_1);
-  core_inv_cpp_FUN_004f9f10();
+  core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(&(param_1->base).inventory);
   core_doc_cpp_FUN_00476150(param_1);
   if (iStack_18 == 0) {
     core_hero_cpp_FUN_004eb5b0();

@@ -20,14 +20,14 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042cd70
-;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00434850
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
@@ -50,8 +50,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004f8ccc
     PUSH dword ptr [EBP + 0x18]         ; 004f8ccf
     PUSH EBX                            ; 004f8cd2
-    CALL core_charactr.cpp_FUN_0042cd70 ; 004f8cd3
-        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042cd70()
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 ; 004f8cd3
+        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f8cd8
     TEST EAX,EAX                        ; 004f8cdb
     JNZ 0x004f8ce6                      ; 004f8cdd
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_004f8ce6
     PUSH dword ptr [EBP + 0x18]         ; 004f8ce8
     PUSH EBX                            ; 004f8ceb
-    CALL core_charactr.cpp_FUN_00432330 ; 004f8cec
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 004f8cec
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     LEA EAX,[EBX + 0x249c]              ; 004f8cf1
     MOV dword ptr [EAX + 0x8],0x0       ; 004f8cf7
     ADD ESP,0xc                         ; 004f8cfe

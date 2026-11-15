@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518cd0 at 00519e60
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519e60
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTVBat_005c5ea4

@@ -20,7 +20,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(CD
   else {
     culling_mode = 2;
   }
-  engine_prim_c_FUN_00515500(culling_mode);
+  engine_prim_c_setCullingMode_FUN_00515500(culling_mode);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450
             (this_ptr,(uint)(state_flag == 0));
   return;

@@ -121,25 +121,25 @@ void __cdecl drawTextCenteredColor(char *text,int left_x,int right_x,int y);
 // Address: 00402710
 void __cdecl drawTextCenteredXYColor(int left_x,int right_x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402800
+// Original: engine_2d.c_getTextWrapEnabled_FUN_00402800
 // Address: 00402800
-int __cdecl FUN_00402800(void);
+int __cdecl getTextWrapEnabled(void);
 
-// Original: engine_2d.c_FUN_00402810
+// Original: engine_2d.c_setTextWrapEnabled_FUN_00402810
 // Address: 00402810
-void __cdecl FUN_00402810(int enabled);
+void __cdecl setTextWrapEnabled(int enabled);
 
-// Original: engine_2d.c_FUN_00402830
+// Original: engine_2d.c_disableTextWrap_FUN_00402830
 // Address: 00402830
-void __cdecl FUN_00402830(void);
+void __cdecl disableTextWrap(void);
 
-// Original: engine_2d.c_FUN_00402840
+// Original: engine_2d.c_getTextColor_FUN_00402840
 // Address: 00402840
-int __cdecl FUN_00402840(void);
+int __cdecl getTextColor(void);
 
-// Original: engine_2d.c_FUN_00402850
+// Original: engine_2d.c_setTextColor_FUN_00402850
 // Address: 00402850
-void __cdecl FUN_00402850(int color);
+void __cdecl setTextColor(int color);
 
 // Original: engine_2d.c_FUN_00402860
 // Address: 00402860

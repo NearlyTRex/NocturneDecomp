@@ -577,14 +577,24 @@
   },
   {
     "addr":"004078a0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_004078a0",
-    "name":"engine_3d.c_FUN_004078a0",
+    "method":"setRenderingQuality",
+    "name":"engine_3d.c_setRenderingQuality_FUN_004078a0",
+    "params":[
+      {
+        "name":"quality",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -3028,15 +3038,41 @@
       "004ff610",
       "005984e0"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":23,
-    "method":"FUN_00417b20",
-    "name":"core_bodypart.cpp_FUN_00417b20",
+    "method":"scaleVector",
+    "name":"core_bodypart.cpp_scaleVector_FUN_00417b20",
+    "params":[
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scalar",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -3048,15 +3084,41 @@
       "004ff610",
       "005984e0"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":27,
-    "method":"FUN_00417ba0",
-    "name":"core_bodypart.cpp_FUN_00417ba0",
+    "method":"addVector",
+    "name":"core_bodypart.cpp_addVector_FUN_00417ba0",
+    "params":[
+      {
+        "name":"a",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"b",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/bodypart.cpp",
     "variadic":false
@@ -6038,21 +6100,12 @@
       "0055d723",
       "005b7ff0"
     ],
+    "cls":"CDemonLight",
     "conv":"__cdecl",
     "instructions":370,
-    "method":"FUN_0044b020",
-    "name":"core_dlight.cpp_FUN_0044b020",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonLight",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"renderLightBloomQuad",
+    "name":"core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8156,19 +8209,12 @@
       "0055d723",
       "005b849c"
     ],
+    "cls":"CDemonRaytrace",
     "conv":"__cdecl",
     "instructions":353,
-    "method":"FUN_00474020",
-    "name":"core_dtrace.cpp_FUN_00474020",
+    "method":"renderGridCube",
+    "name":"core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00474020",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonRaytrace",
-          "ptr":1
-        }
-      },
       {
         "name":"world_pos",
         "type":{
@@ -8178,7 +8224,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8492,14 +8538,33 @@
     "calls":[
       "00480150"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":71,
-    "method":"FUN_00480720",
-    "name":"shape_edittool.cpp_FUN_00480720",
-    "receiver":false,
+    "method":"drawCenteredWireframeCube",
+    "name":"shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00480720",
+    "params":[
+      {
+        "name":"dimensions",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"color_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -9279,14 +9344,25 @@
       "004e4500",
       "005ba1f0"
     ],
-    "conv":"unknown",
+    "cls":"CRuleList",
+    "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_004924a0",
-    "name":"core_event.cpp_FUN_004924a0",
-    "receiver":false,
+    "method":"remove",
+    "name":"core_event.cpp_CRuleList_remove_FUN_004924a0",
+    "params":[
+      {
+        "name":"index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/event.cpp",
@@ -10926,17 +11002,59 @@
   },
   {
     "addr":"004ad1a0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "004afe14"
     ],
     "instructions":20,
-    "method":"FUN_004ad1a0",
-    "name":"core_gabriela.cpp_FUN_004ad1a0",
+    "method":"weaponDrawBlendWeightCallback",
+    "name":"core_gabriela.cpp_weaponDrawBlendWeightCallback_FUN_004ad1a0",
+    "params":[
+      {
+        "name":"current_bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"target_bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"hierarchy_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"instance",
+        "type":{
+          "kind":"class",
+          "name":"CDeformableModelInstance",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/gabriela.cpp",
@@ -12939,19 +13057,12 @@
       "0046b350",
       "0046b4a0"
     ],
+    "cls":"CMansionPuzzleCircle",
     "conv":"__cdecl",
     "instructions":58,
-    "method":"FUN_004e6820",
-    "name":"core_manpuz.cpp_FUN_004e6820",
+    "method":"renderReflector",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMansionPuzzleCircle",
-          "ptr":1
-        }
-      },
       {
         "name":"reflector_index",
         "type":{
@@ -12961,7 +13072,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14741,14 +14852,26 @@
     "calls":[
       "005b8010"
     ],
-    "conv":"unknown",
+    "cls":"CMotionList",
+    "conv":"__cdecl",
     "instructions":252,
-    "method":"FUN_00502c20",
-    "name":"core_motion.cpp_FUN_00502c20",
-    "receiver":false,
+    "method":"save",
+    "name":"core_motion.cpp_CMotionList_save_FUN_00502c20",
+    "params":[
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/motion.cpp",
@@ -15764,17 +15887,28 @@
   },
   {
     "addr":"005113a0",
-    "conv":"unknown",
+    "cls":"CParticle",
+    "conv":"__cdecl",
     "data_refs":[
       "005fa8f8"
     ],
     "instructions":2,
-    "method":"FUN_005113a0",
-    "name":"core_particle.cpp_FUN_005113a0",
-    "receiver":false,
+    "method":"onCollision",
+    "name":"core_particle.cpp_CParticle_onCollision_FUN_005113a0",
+    "params":[
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/particle.cpp",
@@ -16241,8 +16375,8 @@
     ],
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_0051c1a0",
-    "name":"engine_prim.c_FUN_0051c1a0",
+    "method":"setCullingMode",
+    "name":"engine_prim.c_setCullingMode_FUN_0051c1a0",
     "params":[
       {
         "name":"culling_mode",
@@ -19335,8 +19469,8 @@
     ],
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00560120",
-    "name":"engine_special.cpp_FUN_00560120",
+    "method":"lockHoldBuffer",
+    "name":"engine_special.cpp_lockHoldBuffer_FUN_00560120",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -19353,8 +19487,8 @@
     ],
     "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_005601a0",
-    "name":"engine_special.cpp_FUN_005601a0",
+    "method":"getTextureInfo",
+    "name":"engine_special.cpp_getTextureInfo_FUN_005601a0",
     "params":[
       {
         "name":"texture_size",
@@ -21691,8 +21825,8 @@
     ],
     "conv":"unknown",
     "instructions":90,
-    "method":"FUN_005944a0",
-    "name":"core_xform.cpp_FUN_005944a0",
+    "method":"eulerToQuaternionIndirect",
+    "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005944a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",

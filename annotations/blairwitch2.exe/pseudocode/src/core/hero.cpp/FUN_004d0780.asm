@@ -14,12 +14,12 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004cfd60
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0
 ;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
-;   core_hero.cpp_FUN_004cec50
 ;   core_hero.cpp_FUN_004cf200
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     JZ 0x004d07c0                       ; 004d07ad
         ;   XREF to: 004d07c0 (CONDITIONAL_JUMP)  ; LAB_004d07c0
     PUSH EBX                            ; 004d07af
-    CALL core_hero.cpp_FUN_004cec50     ; 004d07b0
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 004d07b0
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d07b5
     TEST EAX,EAX                        ; 004d07b8
     JNZ 0x004d08b3                      ; 004d07ba

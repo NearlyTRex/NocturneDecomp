@@ -215,8 +215,8 @@ section .text
         ;   XREF to: 00494000 (CONDITIONAL_JUMP)  ; LAB_00494000
     MOV ECX,dword ptr [0x0061abc0]      ; 00493f1b | g_CEditorToolsPtr
     PUSH ECX                            ; 00493f21
-    CALL shape_edittool.cpp_FUN_00496ee0 ; 00493f22
-        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00496ee0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 ; 00493f22
+        ;   XREF to: 00496ee0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00493f27
     PUSH 0x1                            ; 00493f2a
     MOV EAX,[0x0061abc0]                ; 00493f2c | g_CEditorToolsPtr

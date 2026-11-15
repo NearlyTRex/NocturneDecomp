@@ -11,7 +11,7 @@
 void engine_texture_cpp_FUN_00575010(void)
 
 {
-  engine_texture_cpp_FUN_005739b0(_DAT_02652eb0);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005739b0(_DAT_02652eb0);
   _DAT_02652eb4 = 0;
   return;
 }

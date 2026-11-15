@@ -45,13 +45,13 @@ CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,uint flags);
 // Address: 00433eb0
 void __cdecl CCodec::init(CCodec *this_ptr);
 
-// Original: support_codec.cpp_FUN_00433ee0
+// Original: support_codec.cpp_CCodec_process_FUN_00433ee0
 // Address: 00433ee0
-undefined4 FUN_00433ee0(undefined4 param_1,int *param_2,int *param_3);
+int __cdecl CCodec::process(CCodec *this_ptr,void *istream,void *ostream);
 
-// Original: support_codec.cpp_FUN_00433f50
+// Original: support_codec.cpp_CCodec_finalize_FUN_00433f50
 // Address: 00433f50
-int __cdecl FUN_00433f50(CCodec *this_ptr,void *ostream);
+int __cdecl CCodec::finalize(CCodec *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_CCodec_processToBuffer_FUN_00433f60
 // Address: 00433f60

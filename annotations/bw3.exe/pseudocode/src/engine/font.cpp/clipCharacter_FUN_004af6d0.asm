@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   bitmap_width
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004b1460 at 004b16ae
+;   engine_font.cpp_CBitFont_drawCharacter_FUN_004b1460 at 004b16ae
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6b5a8

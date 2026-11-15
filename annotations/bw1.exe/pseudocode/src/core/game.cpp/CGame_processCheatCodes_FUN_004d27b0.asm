@@ -1011,8 +1011,8 @@ section .text
     XOR BH,BH                           ; 004d3211
     PUSH EAX                            ; 004d3213
     MOV byte ptr [0x01cd0c68],BH        ; 004d3214 | DAT_01cd0c68
-    CALL core_inv.cpp_FUN_004f8c40      ; 004d321a
-        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004f8c40(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004f8c40 ; 004d321a
+        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004f8c40(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004d321f
     TEST EAX,EAX                        ; 004d3222
     JNZ 0x004d32c2                      ; 004d3224
@@ -4018,8 +4018,8 @@ section .text
     PUSH 0x5e29e2                       ; 004d5472 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x20c]               ; 004d5477
     PUSH EAX                            ; 004d547e
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d547f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d547f
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004d5484 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5489
     MOV ECX,dword ptr [EAX + 0xe8]      ; 004d548c | g_CGameInstance.combat_difficulty_mode
@@ -4027,8 +4027,8 @@ section .text
     PUSH 0x5e29f7                       ; 004d5493 | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x20c]               ; 004d5498
     PUSH EAX                            ; 004d549f
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d54a0
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d54a0
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d54a5
     PUSH 0x40a00000                     ; 004d54a8
     PUSH 0x5e2a0c                       ; 004d54ad | = "DEBUG: Game set to easy puzzle / easy..."
@@ -4127,8 +4127,8 @@ section .text
     PUSH 0x5e2ac5                       ; 004d55ca | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x614]               ; 004d55cf
     PUSH EAX                            ; 004d55d6
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d55d7
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d55d7
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004d55dc | g_CGamePtr
     ADD ESP,0xc                         ; 004d55e1
     MOV EDX,dword ptr [EAX + 0xe8]      ; 004d55e4 | g_CGameInstance.combat_difficulty_mode
@@ -4136,8 +4136,8 @@ section .text
     PUSH 0x5e2ada                       ; 004d55eb | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x614]               ; 004d55f0
     PUSH EAX                            ; 004d55f7
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d55f8
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d55f8
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d55fd
     PUSH 0x40a00000                     ; 004d5600
     PUSH 0x5e2aef                       ; 004d5605 | = "DEBUG: Game set to hard puzzle / easy..."
@@ -4237,8 +4237,8 @@ section .text
     PUSH 0x5e2baa                       ; 004d5720 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004d5725
     PUSH EAX                            ; 004d5729
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d572a
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d572a
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004d572f | g_CGamePtr
     ADD ESP,0xc                         ; 004d5734
     MOV EDX,dword ptr [EAX + 0xe8]      ; 004d5737 | g_CGameInstance.combat_difficulty_mode
@@ -4246,8 +4246,8 @@ section .text
     PUSH 0x5e2bbf                       ; 004d573e | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004d5743
     PUSH EAX                            ; 004d5747
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d5748
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d5748
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d574d
     PUSH 0x40a00000                     ; 004d5750
     PUSH 0x5e2bd4                       ; 004d5755 | = "DEBUG: Game set to easy puzzle / hard..."
@@ -4347,8 +4347,8 @@ section .text
     PUSH 0x5e2c85                       ; 004d5871 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x410]               ; 004d5876
     PUSH EAX                            ; 004d587d
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d587e
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d587e
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     MOV EAX,[0x0061d95c]                ; 004d5883 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5888
     MOV EDX,dword ptr [EAX + 0xe8]      ; 004d588b | g_CGameInstance.combat_difficulty_mode
@@ -4356,8 +4356,8 @@ section .text
     PUSH 0x5e2c9a                       ; 004d5892 | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x410]               ; 004d5897
     PUSH EAX                            ; 004d589e
-    CALL engine_ini.cpp_FUN_004f4d70    ; 004d589f
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 004d589f
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004d58a4
     PUSH 0x40a00000                     ; 004d58a7
     PUSH 0x5e2caf                       ; 004d58ac | = "DEBUG: Game set to hard puzzle / hard..."

@@ -25,7 +25,7 @@ void core_construc_cpp_FUN_004443d0(int param_1)
     puVar3 = (uint *)(param_1 + 0xd1bc);
     iVar2 = param_1;
     do {
-      core_xform_cpp_FUN_005860b0(*(int *)(iVar2 + 0xd1c8) + 0x30);
+      core_xform_cpp_eulerToQuaternion_FUN_005860b0(*(int *)(iVar2 + 0xd1c8) + 0x30);
       puVar4 = (uint *)(iVar2 + 0xd1a0 + (uint)bVar6 * -8);
       *(uint *)(iVar2 + 0xd19c) = local_24;
       puVar5 = puVar4 + (uint)bVar6 * -2 + 1;

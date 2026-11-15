@@ -9,9 +9,9 @@
 // Address: 004cc8d0
 void __cdecl staticInit(void);
 
-// Original: core_gore.cpp_FUN_004cc970
+// Original: core_gore.cpp_getBloodColorParams_FUN_004cc970
 // Address: 004cc970
-void FUN_004cc970(undefined4 param_1,int *param_2,int *param_3,int *param_4);
+void __cdecl getBloodColorParams(EBloodType blood_type,int *out_light,int *out_color,int *out_fog);
 
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004ccac0
 // Address: 004ccac0
@@ -85,9 +85,9 @@ int __cdecl CBloodPool::save(CBloodPool *this_ptr,_FILE *file_handle);
 // Address: 004ce170
 void __cdecl CFootstep::init(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
 
-// Original: core_gore.cpp_FUN_004ce310
+// Original: core_gore.cpp_CFootstep_render_FUN_004ce310
 // Address: 004ce310
-void FUN_004ce310(undefined4 *param_1,int param_2);
+void __cdecl CFootstep::render(CFootstep *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CGore_ctor_FUN_004ce530
 // Address: 004ce530

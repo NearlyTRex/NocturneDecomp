@@ -93,9 +93,9 @@ void __cdecl blitWithTransparencyFallback(void *src_data,int width,int height,vo
 // Address: 004363a0
 void __cdecl copyScreenRegion(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
 
-// Original: cockpit_ckptutil.c_FUN_00436400
+// Original: cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400
 // Address: 00436400
-void FUN_00436400(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
+void __cdecl generateScrollHeightMap(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color);
 
 // Original: cockpit_ckptutil.c_rotateCircularBitmap_FUN_00436620
 // Address: 00436620
@@ -117,9 +117,9 @@ void __cdecl saveEdgeListFile(char *filename,SEdgeList *edge_lists,int edge_list
 // Address: 00436bb0
 void __cdecl drawClippedEdges(SEdge *edges,int count,int x_offset,int y_offset);
 
-// Original: cockpit_ckptutil.c_FUN_00436ca0
+// Original: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_00436ca0
 // Address: 00436ca0
-void FUN_00436ca0(void);
+void __cdecl rasterizeEdgeEndpoints(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 
 // Original: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_00436f80
 // Address: 00436f80
@@ -145,17 +145,17 @@ void __cdecl putPixel(int x,int y,int color);
 // Address: 00437c10
 undefined4 isLineBlendingDisabled(void);
 
-// Original: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_00437c20
+// Original: cockpit_ckptutil.c_isLineClippingDisabled_FUN_00437c20
 // Address: 00437c20
-undefined4 setLineBlendingDisabled(void);
+int __cdecl isLineClippingDisabled(void);
 
-// Original: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00437c30
+// Original: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_00437c30
 // Address: 00437c30
-void setLineClippingDisabled(void);
+void __cdecl setLineBlendingDisabled(int disabled);
 
-// Original: cockpit_ckptutil.c_FUN_00437c40
+// Original: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00437c40
 // Address: 00437c40
-void FUN_00437c40(undefined4 param_1);
+void __cdecl setLineClippingDisabled(int disabled);
 
 // Original: cockpit_ckptutil.c_rotateBitmap_FUN_00437c50
 // Address: 00437c50

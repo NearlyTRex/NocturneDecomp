@@ -73,9 +73,9 @@ void __cdecl CScat::updateWeaponState(CScat *this_ptr,float delta_time);
 // Address: 0051ff60
 void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00520140
+// Original: core_scat.cpp_CScat_blendAimBones_FUN_00520140
 // Address: 00520140
-void __cdecl FUN_00520140(CScat *this_ptr,int hand_index);
+void __cdecl CScat::blendAimBones(CScat *this_ptr,int hand_index);
 
 // Original: core_scat.cpp_FUN_005203c0
 // Address: 005203c0

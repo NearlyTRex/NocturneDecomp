@@ -11,7 +11,7 @@
 ; XREF[9]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041be6c
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446460
-;   core_crate.cpp_FUN_00449600 at 004496a6
+;   core_crate.cpp_CCrate_explode_FUN_00449600 at 004496a6
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004b91d0 at 004b924f
 ;   core_hiram.cpp_CHiram_process_FUN_004ed2b0 at 004ed342
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f85a2

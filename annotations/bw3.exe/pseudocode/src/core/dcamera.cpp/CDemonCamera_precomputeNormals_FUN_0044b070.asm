@@ -29,8 +29,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 00534199
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f5d
-;   core_set.cpp_FUN_00533e60 at 00534199
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9d7e

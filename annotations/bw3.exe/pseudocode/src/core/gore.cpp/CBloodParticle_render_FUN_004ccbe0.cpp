@@ -114,7 +114,8 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
     _DAT_0060b0c0 = DAT_0060b090;
     core_set_cpp_CDemonSet_computeLighting_FUN_00538400
               (g_CDemonSetPtr,&CStack_108,(CVector3i *)&DAT_01d22e7c,0,4);
-    core_gore_cpp_FUN_004cc970(this_ptr->blood_type,&iStack_28,&iStack_24,&iStack_2c);
+    core_gore_cpp_getBloodColorParams_FUN_004cc970
+              (this_ptr->blood_type,&iStack_28,&iStack_24,&iStack_2c);
     iVar3 = 0;
     do {
       lVar1 = (longlong)iStack_28 * (longlong)*(int *)((int)&DAT_0060b034 + iVar3);

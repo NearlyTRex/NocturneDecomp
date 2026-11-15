@@ -165,9 +165,9 @@ void __cdecl drawItemIconBackground(int x1,int y1,int x2,int y2,int alpha);
 // Address: 004dd670
 void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004dd9b0
+// Original: core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0
 // Address: 004dd9b0
-void FUN_004dd9b0(CInventory *param_1);
+void __cdecl CInventory::renderAllItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004dee70
 // Address: 004dee70

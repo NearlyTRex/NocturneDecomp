@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[95]:
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 at 00408a62
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a6c1
-;   core_actor.cpp_FUN_00408a50 at 00408a62
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600 at 0040e625
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fc43
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411cae

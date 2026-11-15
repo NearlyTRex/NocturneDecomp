@@ -97,9 +97,9 @@ CMatrix3x4f * __stack_esi buildRotationY(float angle_radians,CMatrix3x4f *matrix
 // Address: 005934e0
 CMatrix3x4f * __stack_esi buildXFlipMatrix(float x_offset,CMatrix3x4f *matrix_out);
 
-// Original: core_xform.cpp_FUN_00593540
+// Original: core_xform.cpp_buildYFlipMatrix_FUN_00593540
 // Address: 00593540
-void FUN_00593540(void);
+CMatrix3x4f * __stack_esi buildYFlipMatrix(float y_offset,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_buildZFlipMatrix_FUN_005935a0
 // Address: 005935a0
@@ -165,17 +165,17 @@ void quaternionFromAxisAngle(float param_1,float *param_2);
 // Address: 005940b0
 undefined4 * FUN_005940b0(float *param_1);
 
-// Original: core_xform.cpp_FUN_00594210
+// Original: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00594210
 // Address: 00594210
-undefined4 * FUN_00594210(float *param_1);
+undefined4 * quaternionToEulerAnglesZYX(float *param_1);
 
 // Original: core_xform.cpp_eulerToQuaternion_FUN_00594380
 // Address: 00594380
 CQuaternion4f * __stack_esi eulerToQuaternion(CVector3f *euler_angles,CQuaternion4f *quat_out);
 
-// Original: core_xform.cpp_FUN_005944a0
+// Original: core_xform.cpp_eulerToQuaternionIndirect_FUN_005944a0
 // Address: 005944a0
-void FUN_005944a0(float *param_1);
+void eulerToQuaternionIndirect(float *param_1);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_005945b0
 // Address: 005945b0

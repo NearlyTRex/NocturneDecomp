@@ -340,7 +340,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_FUN_00402840",
+    "name":"engine_2d.c_getTextColor_FUN_00402840",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -2876,7 +2876,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammo.cpp_FUN_0040e440",
+    "name":"core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440",
     "ret":"void",
     "vars":{
       "params":[
@@ -22243,10 +22243,10 @@
         "start":"004bc840"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004bc840",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_game.cpp_CGame_showChapterSelect_FUN_004bc840",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -22346,9 +22346,40 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGame*"
+        },
+        {
+          "name":"select_mode",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -29206,7 +29237,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mirror.cpp_FUN_004f98c0",
+    "name":"core_mirror.cpp_CMirror_dtor_FUN_004f98c0",
     "ret":"CMirror*",
     "vars":{
       "params":[
@@ -31684,7 +31715,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_palette.cpp_FUN_00510cc0",
+    "name":"engine_palette.cpp_CFont_dtor_FUN_00510cc0",
     "ret":"CFont*",
     "vars":{
       "params":[
@@ -33055,7 +33086,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_scat.cpp_FUN_00520140",
+    "name":"core_scat.cpp_CScat_blendAimBones_FUN_00520140",
     "ret":"void",
     "vars":{
       "locals":[
@@ -42556,7 +42587,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00560140",
+    "name":"engine_special.cpp_unlockHoldBuffer_FUN_00560140",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -44066,13 +44097,61 @@
         "start":"0056bcc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_0056bcc0",
-    "ret":"undefined1",
+    "name":"core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"angle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"distance",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"offset",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -49003,12 +49082,53 @@
         "start":"00593540"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
-    "name":"core_xform.cpp_FUN_00593540",
-    "ret":"undefined1",
+    "name":"core_xform.cpp_buildYFlipMatrix_FUN_00593540",
+    "ret":"CMatrix3x4f*",
     "vars":{
+      "params":[
+        {
+          "name":"y_offset",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"matrix_out",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x4f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53334,13 +53454,54 @@
         "start":"005b5f40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_005b5f40",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_chain.cpp_CChain_getCollisionType_FUN_005b5f40",
+    "ret":"ECollisionType",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CChain*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

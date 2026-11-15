@@ -15,7 +15,7 @@
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   engine_palette.cpp_FUN_00510cc0
+;   engine_palette.cpp_CFont_dtor_FUN_00510cc0
 ;   engine_winfont.cpp_CWinFont_reset_FUN_0058e640
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     ADD ESP,0x4                         ; 0058e06c
     PUSH 0x1                            ; 0058e06f
     PUSH EBX                            ; 0058e071
-    CALL engine_palette.cpp_FUN_00510cc0 ; 0058e072
-        ;   XREF to: 00510cc0 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_FUN_00510cc0(CFont * this_ptr, uint flags)
+    CALL engine_palette.cpp_CFont_dtor_FUN_00510cc0 ; 0058e072
+        ;   XREF to: 00510cc0 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_CFont_dtor_FUN_00510cc0(CFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058e077
     MOV DL,byte ptr [ESP + 0xc]         ; 0058e07a
     MOV EBX,EAX                         ; 0058e07e

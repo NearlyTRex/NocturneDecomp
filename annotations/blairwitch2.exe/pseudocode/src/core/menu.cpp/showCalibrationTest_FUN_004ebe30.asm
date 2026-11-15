@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4e14
-;   core_menu.cpp_FUN_004ebf10 at 004ec91a
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec91a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_brightness_005dcb76

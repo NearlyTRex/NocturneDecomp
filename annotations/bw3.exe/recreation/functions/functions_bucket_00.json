@@ -249,8 +249,8 @@
     ],
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00402800",
-    "name":"engine_2d.c_FUN_00402800",
+    "method":"getTextWrapEnabled",
+    "name":"engine_2d.c_getTextWrapEnabled_FUN_00402800",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -581,14 +581,24 @@
   },
   {
     "addr":"00407700",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00407700",
-    "name":"engine_3d.c_FUN_00407700",
+    "method":"setProcessorType",
+    "name":"engine_3d.c_setProcessorType_FUN_00407700",
+    "params":[
+      {
+        "name":"processor_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -4525,14 +4535,24 @@
       "00528e00",
       "00528fc0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00434b00",
-    "name":"core_charactr.cpp_FUN_00434b00",
+    "method":"getGameDeltaTime",
+    "name":"core_charactr.cpp_getGameDeltaTime_FUN_00434b00",
+    "params":[
+      {
+        "name":"game_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CGame",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -4570,14 +4590,72 @@
       "005a30c4",
       "005a40df"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":168,
-    "method":"FUN_00436400",
-    "name":"cockpit_ckptutil.c_FUN_00436400",
+    "method":"generateScrollHeightMap",
+    "name":"cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400",
+    "params":[
+      {
+        "name":"bitmap_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height_output",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"num_height_rows",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"transparency_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -6403,14 +6481,41 @@
       "005a3890",
       "005a3a90"
     ],
-    "conv":"unknown",
+    "cls":"CDemonImage",
+    "conv":"__cdecl",
     "instructions":165,
-    "method":"FUN_0045b300",
-    "name":"core_dimage.cpp_FUN_0045b300",
-    "receiver":false,
+    "method":"load",
+    "name":"core_dimage.cpp_CDemonImage_load_FUN_0045b300",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dimage.cpp",
@@ -8488,19 +8593,12 @@
       "005a3120",
       "005a3600"
     ],
+    "cls":"CDemonRaytrace",
     "conv":"__cdecl",
     "instructions":368,
-    "method":"FUN_00474400",
-    "name":"core_dtrace.cpp_FUN_00474400",
+    "method":"rayVoxelGridTest",
+    "name":"core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonRaytrace",
-          "ptr":1
-        }
-      },
       {
         "name":"start_pos",
         "type":{
@@ -8518,7 +8616,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -9410,14 +9508,25 @@
       "0041ee30",
       "0053cca0"
     ],
-    "conv":"unknown",
+    "cls":"CEnemy",
+    "conv":"__cdecl",
     "instructions":95,
-    "method":"FUN_00489600",
-    "name":"core_enemy.cpp_FUN_00489600",
-    "receiver":false,
+    "method":"canSeeTarget",
+    "name":"core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600",
+    "params":[
+      {
+        "name":"target",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/enemy.cpp",
@@ -13478,14 +13587,14 @@
       "00580790",
       "005a4120"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":69,
-    "method":"FUN_004e4400",
-    "name":"core_main.c_FUN_004e4400",
+    "method":"showDeveloperToolsMenu",
+    "name":"core_main.c_showDeveloperToolsMenu_FUN_004e4400",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/main.c",
@@ -15143,14 +15252,15 @@
       "00505950",
       "0056f730"
     ],
-    "conv":"unknown",
+    "cls":"CNetGame",
+    "conv":"__cdecl",
     "instructions":53,
-    "method":"FUN_00503f00",
-    "name":"core_netgame.cpp_FUN_00503f00",
-    "receiver":false,
+    "method":"initializeNetworkToHost",
+    "name":"core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_00503f00",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -15922,8 +16032,8 @@
     ],
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00515500",
-    "name":"engine_prim.c_FUN_00515500",
+    "method":"setCullingMode",
+    "name":"engine_prim.c_setCullingMode_FUN_00515500",
     "params":[
       {
         "name":"culling_mode",
@@ -16240,15 +16350,26 @@
     "calls":[
       "0054dbd0"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__stack_esi",
     "instructions":70,
-    "method":"FUN_0051c100",
-    "name":"core_prye.cpp_FUN_0051c100",
-    "receiver":false,
+    "method":"getHandsMidpoint",
+    "name":"core_prye.cpp_CPrye_getHandsMidpoint_FUN_0051c100",
+    "params":[
+      {
+        "name":"out_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/prye.cpp",
     "variadic":false
@@ -16266,14 +16387,25 @@
       "00585d10",
       "00585de0"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_0051e280",
-    "name":"core_prye.cpp_FUN_0051e280",
-    "receiver":false,
+    "method":"extractTurnPose",
+    "name":"core_prye.cpp_CPrye_extractTurnPose_FUN_0051e280",
+    "params":[
+      {
+        "name":"out_pose",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/prye.cpp",
@@ -16331,14 +16463,15 @@
       "0053ebe0",
       "0053ec10"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__cdecl",
     "instructions":494,
-    "method":"FUN_00521880",
-    "name":"core_prye.cpp_FUN_00521880",
-    "receiver":false,
+    "method":"tryPlaceObject",
+    "name":"core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/prye.cpp",
@@ -16386,14 +16519,33 @@
       "005a30d7",
       "005a4b74"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__cdecl",
     "instructions":771,
-    "method":"FUN_00522b00",
-    "name":"core_prye.cpp_FUN_00522b00",
-    "receiver":false,
+    "method":"autoAimAtThreat",
+    "name":"core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00",
+    "params":[
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/prye.cpp",
@@ -16442,15 +16594,26 @@
       "0045b550",
       "0045b800"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__stack_esi",
     "instructions":38,
-    "method":"FUN_00524800",
-    "name":"core_prye.cpp_FUN_00524800",
-    "receiver":false,
+    "method":"getThrowDirection",
+    "name":"core_prye.cpp_CPrye_getThrowDirection_FUN_00524800",
+    "params":[
+      {
+        "name":"out_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/prye.cpp",
     "variadic":false
@@ -19691,14 +19854,24 @@
   },
   {
     "addr":"00566480",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_00566480",
-    "name":"engine_special.cpp_FUN_00566480",
+    "method":"lockTexture",
+    "name":"engine_special.cpp_lockTexture_FUN_00566480",
+    "params":[
+      {
+        "name":"texture_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -20158,8 +20331,8 @@
     ],
     "conv":"__cdecl",
     "instructions":13,
-    "method":"FUN_0056ac80",
-    "name":"engine_texture.cpp_FUN_0056ac80",
+    "method":"loadAndUpdateTexture",
+    "name":"engine_texture.cpp_loadAndUpdateTexture_FUN_0056ac80",
     "params":[
       {
         "name":"texture",

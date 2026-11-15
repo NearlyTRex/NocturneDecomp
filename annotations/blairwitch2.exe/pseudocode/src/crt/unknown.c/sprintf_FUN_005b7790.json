@@ -17,30 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "0042e380",
-      "from_addr": "0042e3f8",
-      "name": "cockpit_ckptutil.c_FUN_0042e380",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042f330",
-      "from_addr": "0042f3bb",
-      "name": "cockpit_ckptutil.c_FUN_0042f330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042f4f0",
-      "from_addr": "0042f5ec",
-      "name": "cockpit_ckptutil.c_FUN_0042f4f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042f750",
-      "from_addr": "0042f85b",
-      "name": "cockpit_ckptutil.c_FUN_0042f750",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042c780",
       "from_addr": "0042c86c",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
@@ -53,15 +29,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0042f330",
+      "from_addr": "0042f3bb",
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e380",
+      "from_addr": "0042e3f8",
+      "name": "cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042e380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042c520",
       "from_addr": "0042c573",
       "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0042f4f0",
+      "from_addr": "0042f5ec",
+      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042e130",
       "from_addr": "0042e16e",
       "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_0042e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f750",
+      "from_addr": "0042f85b",
+      "name": "cockpit_ckptutil.c_traceConnectedEdges_FUN_0042f750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,15 +101,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00517a60",
-      "from_addr": "00517abc",
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60",
+      "addr": "005177e0",
+      "from_addr": "0051788e",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005177e0",
-      "from_addr": "0051788e",
-      "name": "cockpit_pkbmpset.cpp_FUN_005177e0",
+      "addr": "00517a60",
+      "from_addr": "00517abc",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -373,7 +373,7 @@
     {
       "addr": "004dd9b0",
       "from_addr": "004ddb2f",
-      "name": "core_inv.cpp_FUN_004dd9b0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -407,12 +407,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ebf10",
-      "from_addr": "004ec1ab",
-      "name": "core_menu.cpp_FUN_004ebf10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004eb490",
       "from_addr": "004eb54b",
       "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
@@ -428,6 +422,12 @@
       "addr": "004ecc70",
       "from_addr": "004ecd84",
       "name": "core_menu.cpp_configureCustomKeys_FUN_004ecc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ec1ab",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
       "type": "UNCONDITIONAL_CALL"
     },
     {

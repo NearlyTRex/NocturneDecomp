@@ -101,7 +101,7 @@ float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00534c80(float dist_sq);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00534d00(SRoom *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00534d10(SVDBox *this_ptr);
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_ctor_FUN_00534d20(CBoundingBox3D *this_ptr);
-void core_set_cpp_FUN_00534d80(void *param_1);
+C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor250_FUN_00534d80(C3DSCamera *objs,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_00534da0(void);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_00534ea0(CDemonSet *this_ptr,CVector3f *position,float radius);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0(CDemonSet *this_ptr,CVector3f *position);

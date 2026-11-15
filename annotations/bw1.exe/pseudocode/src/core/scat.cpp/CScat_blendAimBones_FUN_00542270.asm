@@ -84,7 +84,7 @@ section .text
     LEA ESI,[ESP + 0xc8]                ; 005422ce
     LEA EDI,[ESP + 0x28]                ; 005422d5
     CALL core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70 ; 005422d9
-        ;   XREF to: 005b7b70 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70()
+        ;   XREF to: 005b7b70 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xc8]                ; 005422de
     ADD ESP,0x4                         ; 005422e5
         ;   Label: LAB_005422e5
@@ -127,7 +127,7 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 0054234a
     LEA EDI,[ESP + 0x28]                ; 00542351
     CALL core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70 ; 00542355
-        ;   XREF to: 005b7b70 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70()
+        ;   XREF to: 005b7b70 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xa8]                ; 0054235a
     JMP 0x005422e5                      ; 00542361
         ;   XREF to: 005422e5 (UNCONDITIONAL_JUMP)  ; LAB_005422e5

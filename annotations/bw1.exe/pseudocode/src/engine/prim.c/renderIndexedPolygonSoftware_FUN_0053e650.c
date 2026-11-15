@@ -193,7 +193,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0053e650(int *vertex
           }
         }
         local_64[0] = (SRenderVertex *)0x53e8cb;
-        engine_special_cpp_FUN_00580127(local_14,edge_ptr,local_18);
+        engine_special_cpp_renderScanline_FUN_00580127(local_14,edge_ptr,local_18);
         piVar6 = &(edge_ptr->base).x_current;
         *piVar6 = *piVar6 + (edge_ptr->base).x_gradient;
         (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;

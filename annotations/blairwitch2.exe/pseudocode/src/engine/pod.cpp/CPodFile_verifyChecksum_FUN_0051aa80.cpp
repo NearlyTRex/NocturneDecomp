@@ -16,9 +16,11 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
   _FILE *p_Var2;
   int iVar3;
   int iVar4;
-  uint current_crc;
-  int iVar5;
-  CPickList CStack_3e0;
+  uint uVar5;
+  int iVar6;
+  byte *in_stack_fffffc20;
+  CStrList *pCVar7;
+  CStrList aCStack_3d8 [59];
   uint uStack_20;
   int iStack_1c;
   _FILE *p_Stack_18;
@@ -30,8 +32,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
   if (this_ptr->pod_format_version == 200) {
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40
               (g_CEditorToolsPtr,"Checking individual file CRCs");
-    iVar5 = 0;
-    shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(&CStack_3e0);
+    iVar6 = 0;
+    shape_edittool_cpp_CPickList_ctor_FUN_00481fc0((CPickList *)&stack0xfffffc20);
     if (0 < this_ptr->file_count) {
       iVar4 = 0;
       do {
@@ -42,34 +44,36 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
                   (g_CEditorToolsPtr,(float)iStack_14,
                    (float)(int)((pCVar1[iVar3].offset + pCVar1[iVar3].size) - pCVar1->offset));
         pCVar1 = this_ptr->directory_entries;
-        iVar3 = engine_pod_cpp_FUN_0051af80(this_ptr,iVar5);
-        if (iVar3 != *(int *)((int)&pCVar1->checksum + iVar4)) {
+        uVar5 = engine_pod_cpp_CPodFile_computeFileCRC_FUN_0051af80(this_ptr,iVar6);
+        pCVar7 = aCStack_3d8;
+        if (uVar5 != *(uint *)((int)&pCVar1->checksum + iVar4)) {
           shape_edittool_cpp_CStrList_add_FUN_00480e70
-                    (&CStack_3e0.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));
+                    (aCStack_3d8,*(char **)((int)&this_ptr->directory_entries->name + iVar4));
+          in_stack_fffffc20 = (byte *)pCVar7;
         }
-        iVar5 = iVar5 + 1;
+        iVar6 = iVar6 + 1;
         iVar4 = iVar4 + 0x14;
-      } while (iVar5 < this_ptr->file_count);
+      } while (iVar6 < this_ptr->file_count);
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760(g_CEditorToolsPtr);
-    if (CStack_3e0.base.item_count != 0) {
+    if (in_stack_fffffc20 != (byte *)0x0) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250
-                (&CStack_3e0,"!!!CRC CHECK FAILED!! on these files:",-1,0);
-      shape_edittool_cpp_CPickList_dtor_FUN_004820b0(&CStack_3e0,0);
+                ((CPickList *)&stack0xfffffc20,"!!!CRC CHECK FAILED!! on these files:",-1,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004820b0((CPickList *)&stack0xfffffc20,0);
       return 0;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004820b0(&CStack_3e0,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004820b0((CPickList *)&stack0xfffffc20,0);
   }
-  iVar5 = this_ptr->pod_format_version;
+  iVar6 = this_ptr->pod_format_version;
   iVar4 = -1;
-  if (iVar5 == 1) {
+  if (iVar6 == 1) {
     iVar4 = 0x54;
   }
-  else if (iVar5 == 200) {
+  else if (iVar6 == 200) {
     iVar4 = 8;
   }
   else {
-    if (iVar5 == 100) {
+    if (iVar6 == 100) {
       return 0;
     }
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
@@ -91,16 +95,16 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_p
   p_Var2 = _fopen(filename,(char *)0x5e2404);
   p_Stack_18 = p_Var2;
   _fseek(p_Var2,iVar4,0);
-  iVar5 = iStack_1c;
+  iVar6 = iStack_1c;
   iVar4 = 0;
-  current_crc = 0xffffffff;
+  uVar5 = 0xffffffff;
   if (0 < iStack_1c) {
     do {
       iVar3 = _fgetc(p_Var2);
       iVar4 = iVar4 + 1;
-      current_crc = engine_pod_cpp_crc32UpdateByte_FUN_00519cb0(current_crc,(uchar)iVar3);
-    } while (iVar4 < iVar5);
+      uVar5 = engine_pod_cpp_crc32UpdateByte_FUN_00519cb0(uVar5,(uchar)iVar3);
+    } while (iVar4 < iVar6);
   }
   _fclose(p_Stack_18);
-  return (uint)(current_crc == uStack_20);
+  return (uint)(uVar5 == uStack_20);
 }

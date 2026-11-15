@@ -58,7 +58,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
-;   core_actor.cpp_FUN_004085a0
+;   core_actor.cpp_deleteActor_FUN_004085a0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
 ;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0
@@ -1769,8 +1769,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x324]     ; 004db87f
     MOV EDX,dword ptr [EAX + 0x14]      ; 004db886
     PUSH EDX                            ; 004db889
-    CALL core_actor.cpp_FUN_004085a0    ; 004db88a
-        ;   XREF to: 004085a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004085a0()
+    CALL core_actor.cpp_deleteActor_FUN_004085a0 ; 004db88a
+        ;   XREF to: 004085a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_004085a0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004db88f
     MOV EAX,dword ptr [ESP + 0x324]     ; 004db892
     PUSH EDI                            ; 004db899

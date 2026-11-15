@@ -53,7 +53,7 @@
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0
-;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -209,8 +209,8 @@ section .text
     MOV EAX,[0x006138e0]                ; 0047b3b6 | g_CEditorToolsPtr
         ;   Label: LAB_0047b3b6
     PUSH EAX                            ; 0047b3bb
-    CALL shape_edittool.cpp_FUN_0047e870 ; 0047b3bc
-        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047e870()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 ; 0047b3bc
+        ;   XREF to: 0047e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047b3c1
     PUSH 0x1                            ; 0047b3c4
     MOV EDX,dword ptr [0x006138e0]      ; 0047b3c6 | g_CEditorToolsPtr

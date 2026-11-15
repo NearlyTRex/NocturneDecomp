@@ -32,7 +32,7 @@
 ;   core_doc.cpp_FUN_004562a0 at 004564ec
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afcea
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 at 00518426
-;   core_scat.cpp_FUN_00520140 at 005202b9
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005202b9
 ;   ... and 9 more
 ;
 ; Referenced Globals:

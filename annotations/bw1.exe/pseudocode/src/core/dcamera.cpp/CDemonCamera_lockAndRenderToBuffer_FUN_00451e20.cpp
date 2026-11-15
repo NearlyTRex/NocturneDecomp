@@ -17,7 +17,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20(CDe
     engine_special_cpp_lockFrame_FUN_00581f50();
   }
   else {
-    iVar1 = engine_special_cpp_FUN_00582b70();
+    iVar1 = engine_special_cpp_lockHoldBuffer_FUN_00582b70();
     if (iVar1 == 0) {
       _DAT_01d1d400 = "..\\core\\dcamera.cpp";
       _DAT_01d1d404 = 0xe84;
@@ -32,7 +32,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20(CDe
     }
   }
   else {
-    iVar1 = engine_special_cpp_FUN_00582b90();
+    iVar1 = engine_special_cpp_unlockHoldBuffer_FUN_00582b90();
     if (_DAT_02c83370 == 0) {
       return iVar1;
     }

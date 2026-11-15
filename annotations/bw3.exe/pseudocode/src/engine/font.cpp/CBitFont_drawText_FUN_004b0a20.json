@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 324,
+    "complexity_score": 325,
     "cross_reference_count": 23,
     "function_call_count": 5,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 105,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 370
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -57,7 +57,7 @@
     {
       "addr": "004b5040",
       "from_addr": "004b5066",
-      "name": "core_game.cpp_FUN_004b5040",
+      "name": "core_game.cpp_drawCreditsLine_FUN_004b5040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -121,6 +121,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047d0a0",
+      "from_addr": "0047d158",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047d0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047fa80",
       "from_addr": "0047fe0f",
       "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
@@ -142,12 +148,6 @@
       "addr": "004843d0",
       "from_addr": "004848c2",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047d0a0",
-      "from_addr": "0047d158",
-      "name": "shape_edittool.cpp_FUN_0047d0a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -178,7 +178,7 @@
     {
       "addr": "004b1460",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b1460"
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004b1460"
     },
     {
       "addr": "004b33d0",
@@ -688,7 +688,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)&this_ptr->bitmap_count",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
@@ -712,7 +712,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",

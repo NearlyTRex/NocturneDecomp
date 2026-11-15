@@ -8,7 +8,7 @@
 ; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00520d20 at 00520d5c
+;   core_prye.cpp_CPrye_processPickupComplete_FUN_00520d20 at 00520d5c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_005b615c

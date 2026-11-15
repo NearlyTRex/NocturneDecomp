@@ -16,7 +16,7 @@
 ;   undefined1 DAT_00609590
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   crt_unknown.c_FUN_005b8010
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_004dc477
     PUSH ECX                            ; 004dc47a
     PUSH ECX                            ; 004dc47b
-    CALL core_actor.cpp_FUN_00408a50    ; 004dc47c
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004dc47c
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dc481
     PUSH EAX                            ; 004dc484
     PUSH 0x609590                       ; 004dc485 | DAT_00609590

@@ -37,8 +37,8 @@
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60
 ;   core_menu.cpp_configureCustomKeys_FUN_004ecc70
+;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10
 ;   core_menu.cpp_configureSoundOptions_FUN_004ed260
-;   core_menu.cpp_FUN_004ebf10
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0
 ;   core_moon.cpp_CMoon_free_FUN_00502450
 ;   core_moon.cpp_CMoon_init_FUN_005023e0
@@ -169,8 +169,8 @@ section .text
         ;   XREF to: 004ee317 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x4ee184]  ; 004ee30b | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    CALL core_menu.cpp_FUN_004ebf10     ; 004ee312
-        ;   XREF to: 004ebf10 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_004ebf10()
+    CALL core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 ; 004ee312
+        ;   XREF to: 004ebf10 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureGraphicsOptions_FUN_004ebf10()
         ;   Label: caseD_0
     PUSH 0x1                            ; 004ee317
         ;   Label: default

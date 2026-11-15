@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450
-;   engine_prim.c_FUN_00515500
+;   engine_prim.c_setCullingMode_FUN_00515500
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     JZ 0x0046d49a                       ; 0046d471
         ;   XREF to: 0046d49a (CONDITIONAL_JUMP)  ; LAB_0046d49a
     PUSH 0x2                            ; 0046d473
-    CALL engine_prim.c_FUN_00515500     ; 0046d475
-        ;   XREF to: 00515500 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_00515500(int culling_mode)
+    CALL engine_prim.c_setCullingMode_FUN_00515500 ; 0046d475
+        ;   XREF to: 00515500 (UNCONDITIONAL_CALL)  ; void engine_prim.c_setCullingMode_FUN_00515500(int culling_mode)
         ;   Label: LAB_0046d475
     ADD ESP,0x4                         ; 0046d47a
     CMP dword ptr [ESP + 0xc],0x0       ; 0046d47d

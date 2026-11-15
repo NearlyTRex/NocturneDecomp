@@ -9,9 +9,9 @@
 // Address: 005695b0
 void __cdecl CTextureCache::reset(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_FUN_005695c0
+// Original: engine_texture.cpp_CTextureCache_freeTextures_FUN_005695c0
 // Address: 005695c0
-void __cdecl FUN_005695c0(CTextureCache *this_ptr);
+void __cdecl CTextureCache::freeTextures(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00569670
 // Address: 00569670
@@ -97,9 +97,9 @@ void FUN_0056ac20(void);
 // Address: 0056ac50
 void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture);
 
-// Original: engine_texture.cpp_FUN_0056ac80
+// Original: engine_texture.cpp_loadAndUpdateTexture_FUN_0056ac80
 // Address: 0056ac80
-void __cdecl FUN_0056ac80(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
+void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 
 // Original: engine_texture.cpp_enableTextureFiltering_FUN_0056acb0
 // Address: 0056acb0
@@ -109,9 +109,9 @@ void __cdecl enableTextureFiltering(int enabled);
 // Address: 0056acc0
 void __cdecl getTextureCacheStats(char *output_buffer);
 
-// Original: engine_texture.cpp_FUN_0056ace0
+// Original: engine_texture.cpp_renderTextureAtlas_FUN_0056ace0
 // Address: 0056ace0
-void FUN_0056ace0(void);
+void renderTextureAtlas(void);
 
 // Original: engine_texture.cpp_getCurrentTexture_FUN_0056acf0
 // Address: 0056acf0

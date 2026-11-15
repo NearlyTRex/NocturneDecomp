@@ -14,7 +14,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041fb07
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 0042176c
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e49d
-;   core_cloth.cpp_FUN_0043f160 at 0043f2e3
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043f160 at 0043f2e3
 ;   ... and 45 more
 ;
 ; Called Functions:

@@ -22,9 +22,9 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 0059d9fe (CONDITIONAL_JUMP)  ; LAB_0059d9fe
     PUSH dword ptr [EBP + 0x18]         ; 0059da1c
     PUSH EBX                            ; 0059da1f
-    CALL core_charactr.cpp_FUN_00433c60 ; 0059da20
-        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433c60()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 ; 0059da20
+        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x249c]              ; 0059da25
     ADD ESP,0x8                         ; 0059da2b
     MOV dword ptr [EAX + 0x8],0x0       ; 0059da2e

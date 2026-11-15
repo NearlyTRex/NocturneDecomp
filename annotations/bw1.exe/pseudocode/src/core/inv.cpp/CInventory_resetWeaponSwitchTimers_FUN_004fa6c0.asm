@@ -12,7 +12,7 @@
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0 at 004f8fee
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0 at 004f8de8
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370 at 004fc3ca
-;   core_inv.cpp_FUN_004f9f10 at 004f9f3d
+;   core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 at 004f9f3d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d06ab4

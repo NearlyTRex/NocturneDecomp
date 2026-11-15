@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_mirror.cpp_FUN_004f3fe0
+;   core_mirror.cpp_CMirror_dtor_FUN_004f3fe0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 004cc5fc
     ADD EBX,0x21c                       ; 004cc5fe
     PUSH EBX                            ; 004cc604
-    CALL core_mirror.cpp_FUN_004f3fe0   ; 004cc605
-        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; CMirror * core_mirror.cpp_FUN_004f3fe0(CMirror * this_ptr, uint flags)
+    CALL core_mirror.cpp_CMirror_dtor_FUN_004f3fe0 ; 004cc605
+        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; CMirror * core_mirror.cpp_CMirror_dtor_FUN_004f3fe0(CMirror * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cc60a
     PUSH 0x1                            ; 004cc60d
     LEA EBX,[EAX + 0xfffffde4]          ; 004cc60f

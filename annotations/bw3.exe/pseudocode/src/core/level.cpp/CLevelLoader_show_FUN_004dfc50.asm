@@ -16,7 +16,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be142
-;   core_game.cpp_FUN_004be8d0 at 004beaa7
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004beaa7
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f73df
 ;
 ; Referenced Globals:

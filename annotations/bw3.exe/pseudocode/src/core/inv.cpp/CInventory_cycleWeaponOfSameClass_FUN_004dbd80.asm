@@ -14,7 +14,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340
-;   core_inv.cpp_FUN_004dd2d0
+;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;
 ; *****************************************************************************
@@ -135,8 +135,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004dbe54
     PUSH ESI                            ; 004dbe58
     MOV dword ptr [ESI + 0x338],EAX     ; 004dbe59
-    CALL core_inv.cpp_FUN_004dd2d0      ; 004dbe5f
-        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd2d0()
+    CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0 ; 004dbe5f
+        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004dbe64
     ADD ESP,0x4                         ; 004dbe67
     POP EBP                             ; 004dbe6a

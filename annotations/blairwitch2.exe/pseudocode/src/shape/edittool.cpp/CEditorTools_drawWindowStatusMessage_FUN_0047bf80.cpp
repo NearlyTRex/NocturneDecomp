@@ -23,7 +23,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf8
   puStack_14 = &stack0x0000000c;
   _vsprintf((char *)0x1c235f0,format_string,(va_list_t)&puStack_14);
   puStack_14 = (byte *)0x0;
-  shape_edittool_cpp_FUN_0047e870(this_ptr);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047e870(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
   engine_font_cpp_CBitFont_drawText_FUN_004a8df0

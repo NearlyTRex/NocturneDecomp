@@ -976,7 +976,7 @@ LAB_0058636e:
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e1a0(this_ptr_01,fVar17);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
-  core_stranger_cpp_FUN_0058a010(this_ptr,delta_time);
+  core_stranger_cpp_CStranger_updateTurnBlending_FUN_0058a010(this_ptr,delta_time);
   if (iStack_1c != 0) {
     (this_ptr->pending_velocity).z = 0.0;
     (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
@@ -1348,7 +1348,7 @@ LAB_0058648f:
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0058eb50(this_ptr,0,delta_time);
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0058eb50(this_ptr,1,delta_time);
   core_stranger_cpp_CStranger_handleFireButton_FUN_005914a0(this_ptr,delta_time);
-  core_inv_cpp_FUN_004f9f10();
+  core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(&(this_ptr->base).inventory);
   core_stranger_cpp_CStranger_processWeaponTick_FUN_00591b20(this_ptr,delta_time);
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {
     (this_ptr->base).base.base.is_transparent = 1;

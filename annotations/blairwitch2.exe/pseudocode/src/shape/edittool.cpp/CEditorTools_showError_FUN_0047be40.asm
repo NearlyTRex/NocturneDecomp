@@ -18,7 +18,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc46e
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9e8e
 ;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbe12
-;   core_game.cpp_FUN_004bcbf0 at 004bd01f
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 at 004bd01f
 ;   core_game.cpp_hostNetworkGame_FUN_004bd2f0 at 004bd37e
 ;   ... and 19 more
 ;

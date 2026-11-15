@@ -116,7 +116,8 @@ LAB_004de3dc:
                0xf8,0);
   }
   if (this_ptr->render_mode_flag != 0) {
-    iVar1 = core_inv_cpp_FUN_004dd310(this_ptr,this_ptr->selected_weapon,1);
+    iVar1 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004dd310
+                      (this_ptr,&this_ptr->selected_weapon->base,1);
     if (iVar1 == 0) {
       core_inv_cpp_getItemDescription_FUN_004d9eb0(&this_ptr->selected_weapon->base);
       core_inv_cpp_getItemDisplayName_FUN_004d9e40(&this_ptr->selected_weapon->base);

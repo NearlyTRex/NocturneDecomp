@@ -35,8 +35,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 005342a9
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 0053526a
-;   core_set.cpp_FUN_00533e60 at 005342a9
 ;
 ; Referenced Globals:
 ;   undefined4 s_movscrn_raw_005b9d05+1

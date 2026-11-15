@@ -34,7 +34,8 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_t
         this_ptr->quick_turn_active = 0;
       }
     }
-    core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,iVar2 != 0);
+    core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
+              ((CCharacter *)this_ptr,delta_time,(uint)(iVar2 != 0));
     delta_time_00 = g_CGamePtr->delta_time_float;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                        (&(this_ptr->base).base.model.base);

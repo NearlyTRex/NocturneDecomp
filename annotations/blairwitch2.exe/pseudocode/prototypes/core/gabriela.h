@@ -9,9 +9,9 @@
 // Address: 004ad0c0
 void __cdecl staticInit(void);
 
-// Original: core_gabriela.cpp_FUN_004ad1a0
+// Original: core_gabriela.cpp_weaponDrawBlendWeightCallback_FUN_004ad1a0
 // Address: 004ad1a0
-float FUN_004ad1a0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl weaponDrawBlendWeightCallback(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004ad1e0
 // Address: 004ad1e0

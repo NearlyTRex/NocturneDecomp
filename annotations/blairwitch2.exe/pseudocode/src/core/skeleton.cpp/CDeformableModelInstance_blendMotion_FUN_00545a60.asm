@@ -45,7 +45,7 @@
 ; XREF[18]:
 ;   core_basicene.cpp_FUN_0059f390 at 0059f400
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_004291f0 at 004292e3
-;   core_charactr.cpp_FUN_0042a2d0 at 0042a318
+;   core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a2d0 at 0042a318
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 004558e7
 ;   core_doc.cpp_FUN_00453d80 at 0045515a
 ;   core_doc.cpp_FUN_004562a0 at 00456450

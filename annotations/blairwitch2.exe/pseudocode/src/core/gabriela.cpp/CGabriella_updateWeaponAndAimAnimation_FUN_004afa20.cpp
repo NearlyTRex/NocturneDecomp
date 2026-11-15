@@ -267,7 +267,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa
           core_xform_cpp_multiplyQuaternion_FUN_00593c60
                     ((CQuaternion4f *)&DAT_01cb0624,&local_1bc,&local_ec);
           fVar10 = local_30;
-          pcVar11 = core_gabriela_cpp_FUN_004ad1a0;
+          pcVar11 = core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004ad1a0;
           pCVar9 = &local_ac;
           pCVar8 = &(this_ptr->base).base.model;
           local_ac.w = local_ec.w;

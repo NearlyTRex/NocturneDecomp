@@ -30,10 +30,10 @@
 ; XREF[10]:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e130 at 0041e739
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00426ec0 at 0042768e
-;   core_cloth.cpp_FUN_00441500 at 0044152c
+;   core_cloth.cpp_CCloth_renderBone_FUN_00441500 at 0044152c
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_00463460 at 00463490
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060 at 004652a9
-;   core_dlight.cpp_FUN_00464990 at 004649d0
+;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990 at 004649d0
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_004af340 at 004af3b1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f3a4
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560 at 00483578

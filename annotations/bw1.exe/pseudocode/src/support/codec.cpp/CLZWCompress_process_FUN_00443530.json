@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 72,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 1,
+    "pseudocode_lines": 56,
+    "suspect_count": 6,
     "suspect_types": [
+      "extra_output",
       "unresolved_funcptr"
     ],
-    "total_lines": 184
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -48,7 +49,7 @@
     {
       "addr": "00443290",
       "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00443290"
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_00443290"
     }
   ],
   "globals": [],
@@ -166,8 +167,48 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX != 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX == -1) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX != -2) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (extraout_EAX != 0) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*(int *)istream + 4))(istream);",

@@ -92,7 +92,7 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
         pCVar6->y = (body_part->base).orient.vec.y;
         pCVar6->z = (body_part->base).orient.vec.z;
       }
-      core_xform_cpp_FUN_005860b0(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_005860b0(&(body_part->base).orient);
       pCVar3 = local_18;
       pSVar4 = local_18->boxes;
       local_18 = (CConstruct *)((local_18->base).base.base.orient_matrix.m + 1);

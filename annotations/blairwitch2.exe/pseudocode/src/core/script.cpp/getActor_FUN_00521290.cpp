@@ -72,7 +72,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifie
   }
   iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c8c0(actor_ptr,expected_class_hash);
   if (iVar2 == 0) {
-    core_actor_cpp_FUN_00408a50(actor_ptr,expected_class);
+    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(actor_ptr);
     _sprintf(&DAT_01e65100,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
     return (CDemonActor *)0x0;
   }

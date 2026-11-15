@@ -14,7 +14,7 @@
 ;   core_fire.cpp_safeAcos_FUN_004933c0 at 004933ff
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10 at 0056cf3a
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 005665cd
-;   core_stranger.cpp_FUN_0056bcc0 at 0056bd0d
+;   core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0 at 0056bd0d
 ;   ... and 5 more
 ;
 ; Referenced Globals:

@@ -8,7 +8,7 @@
 ; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ;
 ; XREF[7]:
-;   core_dtrace.cpp_FUN_00475090 at 004754a4
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090 at 004754a4
 ;   core_dtri.cpp_CDemonTriangle_render_FUN_0047aea0 at 0047afdd
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0053ad70 at 0053add6
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 0054085b

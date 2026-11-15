@@ -5,6 +5,7 @@ annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/FUN_00438440.c
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/applyActPalette_FUN_00437380.c
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/flipEdgeArrayHorizontally_FUN_0043af20.c
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/mirrorBitmapHorizontally_FUN_00438b40.c
+annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawAnimatedFullSurface_FUN_0047fcf0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawCircleFromBottomLeft_FUN_0047ec20.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawCircleFromBottomRight_FUN_0047ec50.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawCircleFromTopLeft_FUN_0047ebc0.cpp
@@ -26,7 +27,6 @@ annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextRig
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextRightAligned_FUN_00480750.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_fillFullSurface_FUN_0047ffd0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_initFromParent_FUN_0047e240.cpp
-annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/FUN_0047fcf0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/computeCohenSutherlandOutcode_FUN_0047f170.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_applyPalette_FUN_005380b0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_ctor_FUN_00537490.cpp
@@ -63,6 +63,7 @@ annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSoundWithDelay
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSound_FUN_00408c20.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_process_FUN_00408760.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderBackground_FUN_004087a0.cpp
+annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderTransparent_FUN_00408790.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_restoreRenderState_FUN_004087f0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_setup_FUN_00408850.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_shouldIgnoreForTargeting_FUN_0040c5a0.cpp
@@ -73,7 +74,6 @@ annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateCollisionDat
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateOrientationMatrix_FUN_004088b0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CVector3f_ctor_FUN_0040cfe0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CVector3f_dtor_FUN_0040d090.cpp
-annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_00408790.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_00408890.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_004089f0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_00408cc0.cpp
@@ -84,6 +84,7 @@ annotations/bw1.exe/pseudocode/src/core/actor.cpp/crc32ProcessByte_FUN_0040ce20.
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/crc32ProcessInt_FUN_0040cf40.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/crc32ProcessString_FUN_0040cf80.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/crc32ProcessVector_FUN_0040cf60.cpp
+annotations/bw1.exe/pseudocode/src/core/actor.cpp/deleteActor_FUN_00408560.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/isOfClassHash_FUN_0040c5d0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/isOfClass_FUN_0040c550.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/matchesClassName_FUN_0040c5b0.cpp
@@ -239,8 +240,11 @@ annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCarrier_FUN_00
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getCollisionType_FUN_00419aa0.cpp
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_onDropped_FUN_00419b10.cpp
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_pickup_FUN_00419b00.cpp
+annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/addVector_FUN_0041b020.cpp
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/factoryFuncBodyPart_FUN_00418b10.cpp
+annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/scaleVector_FUN_0041afa0.cpp
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/staticInit_FUN_00418910.cpp
+annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/subtractVector_FUN_0041afe0.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getActorType_FUN_0041b3c0.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getCollisionType_FUN_0041d830.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_processDamage_FUN_0041d330.cpp
@@ -340,6 +344,8 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_shatter_FUN_0043
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_spawnFlies_FUN_00433e50.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/SFire_ctor_FUN_004355e0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/clampFloat_FUN_0042cc30.cpp
+annotations/bw1.exe/pseudocode/src/core/charactr.cpp/clampNormalizedAngle_FUN_0042cc80.cpp
+annotations/bw1.exe/pseudocode/src/core/charactr.cpp/getGameDeltaTime_FUN_004355d0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/setActorXPos_FUN_00435500.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CClothList_ctor_FUN_00441c60.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CClothList_dtor_FUN_00441ca0.cpp
@@ -476,8 +482,8 @@ annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_dtor_FUN_00462530
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_freeMasterZBuffer_FUN_004627f0.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_free_FUN_00462670.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_initializeVisibilityBuffer_FUN_00465780.cpp
+annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_renderLightGlowSprites_FUN_00463850.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_testShadowMapRegion_FUN_004657c0.cpp
-annotations/bw1.exe/pseudocode/src/core/dlight.cpp/FUN_00463850.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_ctor_FUN_00468860.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_preCache_FUN_004688e0.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_arrdtor256_FUN_00468990.cpp
@@ -535,6 +541,7 @@ annotations/bw1.exe/pseudocode/src/core/drone.cpp/CDrone_setup_FUN_00485cc0.cpp
 annotations/bw1.exe/pseudocode/src/core/drone.cpp/factoryFuncDrone_FUN_00485c20.cpp
 annotations/bw1.exe/pseudocode/src/core/drone.cpp/staticInit_FUN_00485bf0.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/memcpyMMX_FUN_004886f1.cpp
+annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_convertCubeIndexToPosition_FUN_0048f250.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_ctor_FUN_0048a8f0.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_dtor_FUN_0048a930.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_freeTriList_FUN_0048ace0.cpp
@@ -778,6 +785,7 @@ annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_processJoystickControls_F
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_restoreDefaultControls_FUN_004d0400.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_saveClockTime_FUN_004cbf10.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_setFudgeTarget_FUN_004cc9a0.cpp
+annotations/bw1.exe/pseudocode/src/core/game.cpp/dampControlAxis_FUN_004d0e70.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/staticInit_FUN_004cb7d0.cpp
 annotations/bw1.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_archive_FUN_004dd2d0.cpp
 annotations/bw1.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_getActorType_FUN_004dc260.cpp
@@ -994,9 +1002,9 @@ annotations/bw1.exe/pseudocode/src/core/litecone.cpp/CLightCone_process_FUN_0050
 annotations/bw1.exe/pseudocode/src/core/litecone.cpp/CLightCone_setup_FUN_00502e10.cpp
 annotations/bw1.exe/pseudocode/src/core/litecone.cpp/factoryFuncLightCone_FUN_00502d40.cpp
 annotations/bw1.exe/pseudocode/src/core/litecone.cpp/staticInit_FUN_00502d10.cpp
-annotations/bw1.exe/pseudocode/src/core/main.c/FUN_005031c0.c
-annotations/bw1.exe/pseudocode/src/core/main.c/FUN_00503a30.c
 annotations/bw1.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_00503290.c
+annotations/bw1.exe/pseudocode/src/core/main.c/finalizeGameSystems_FUN_00503a30.c
+annotations/bw1.exe/pseudocode/src/core/main.c/showDeveloperToolsMenu_FUN_005031c0.c
 annotations/bw1.exe/pseudocode/src/core/main.c/staticInit_FUN_00503070.c
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_customGetFloorHeight_FUN_00504b90.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_dtor_FUN_00506760.cpp
@@ -1056,7 +1064,7 @@ annotations/bw1.exe/pseudocode/src/core/minecar.cpp/CMineCar_getActorType_FUN_00
 annotations/bw1.exe/pseudocode/src/core/minecar.cpp/CMineCar_process_FUN_00510e20.cpp
 annotations/bw1.exe/pseudocode/src/core/minecar.cpp/factoryFuncMineCar_FUN_00510dc0.cpp
 annotations/bw1.exe/pseudocode/src/core/minecar.cpp/staticInit_FUN_00510d90.cpp
-annotations/bw1.exe/pseudocode/src/core/mirror.cpp/FUN_00518810.cpp
+annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirror_dtor_FUN_00518810.cpp
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/SClipPlane_ctor_FUN_0051a290.cpp
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/computePlaneFromTriangle_FUN_005183b0.cpp
 annotations/bw1.exe/pseudocode/src/core/mission.cpp/CDemonMission_addActorToList_FUN_0051b160.cpp
@@ -1146,7 +1154,7 @@ annotations/bw1.exe/pseudocode/src/core/npc.cpp/factoryFuncNPC_FUN_00531640.cpp
 annotations/bw1.exe/pseudocode/src/core/npc.cpp/staticInit_FUN_00531610.cpp
 annotations/bw1.exe/pseudocode/src/core/particle.cpp/CParticle_ctor_FUN_00532130.cpp
 annotations/bw1.exe/pseudocode/src/core/particle.cpp/CParticle_dtor_FUN_00532150.cpp
-annotations/bw1.exe/pseudocode/src/core/particle.cpp/FUN_00532700.cpp
+annotations/bw1.exe/pseudocode/src/core/particle.cpp/CParticle_onCollision_FUN_00532700.cpp
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/CPassenger_archive_FUN_00532dc0.cpp
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/CPassenger_getActorType_FUN_00532760.cpp
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/factoryFuncPassenger_FUN_00532740.cpp
@@ -1236,9 +1244,9 @@ annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/staticInit_FUN_005561c0.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_clearCameraSwitchCooldown_FUN_0055b200.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_findVdirBoxAtPosition_FUN_0055c060.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_findVdirBoxRoot_FUN_0055c020.cpp
+annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_freeThumbs_FUN_0055c0a0.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_isPointInVdirGroup_FUN_0055ba50.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_setPendingCamera_FUN_0055b1e0.cpp
-annotations/bw1.exe/pseudocode/src/core/setdir.cpp/FUN_0055c0a0.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/staticInit_FUN_00559710.cpp
 annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSCamera_ctor_FUN_0055c0b0.cpp
 annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSCamera_dtor_FUN_0055c0e0.cpp
@@ -1345,6 +1353,7 @@ annotations/bw1.exe/pseudocode/src/core/spike.cpp/factoryFuncSpike_FUN_00582f60.
 annotations/bw1.exe/pseudocode/src/core/spike.cpp/staticInit_FUN_00582f30.cpp
 annotations/bw1.exe/pseudocode/src/core/spline.cpp/evaluateSplinePoint3D_FUN_00583f90.cpp
 annotations/bw1.exe/pseudocode/src/core/spline.cpp/evaluateSplineScalar_FUN_00583ef0.cpp
+annotations/bw1.exe/pseudocode/src/core/spline.cpp/evaluateSplineTangent3D_FUN_005841d0.cpp
 annotations/bw1.exe/pseudocode/src/core/spline.cpp/evaluateSplineTangentScalar_FUN_00584130.cpp
 annotations/bw1.exe/pseudocode/src/core/spline.cpp/evaluateSplintInt_FUN_00583f30.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_customGetFloorHeight_FUN_00584c60.cpp
@@ -1584,9 +1593,9 @@ annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_shouldIgnoreForTarget
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/factoryFuncZombie_FUN_005baae0.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/staticInit_FUN_005ba700.cpp
 annotations/bw1.exe/pseudocode/src/default.c
-annotations/bw1.exe/pseudocode/src/engine/2d.c/FUN_00402830.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/cleanupGraphicsSystem_FUN_00401120.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/computeOutcode_FUN_00402c60.c
+annotations/bw1.exe/pseudocode/src/engine/2d.c/disableTextWrap_FUN_00402830.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/drawLine_FUN_004011a0.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/drawRect_FUN_00403170.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/drawTextCenteredAtColor_FUN_00402600.c
@@ -1675,9 +1684,9 @@ annotations/bw1.exe/pseudocode/src/engine/ini.cpp/writeProfileString_FUN_004f4ad
 annotations/bw1.exe/pseudocode/src/engine/keys.cpp/CKeys_getInputKey_FUN_004fd260.cpp
 annotations/bw1.exe/pseudocode/src/engine/keys.cpp/CKeys_getUppercasedInputKey_FUN_004fd270.cpp
 annotations/bw1.exe/pseudocode/src/engine/keys.cpp/clearKeypresses_FUN_004fd250.cpp
-annotations/bw1.exe/pseudocode/src/engine/matrix.c/FUN_00507350.c
-annotations/bw1.exe/pseudocode/src/engine/matrix.c/FUN_00507390.c
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/calculate3DDistance_FUN_005085c0.c
+annotations/bw1.exe/pseudocode/src/engine/matrix.c/interpolatedCos_FUN_00507390.c
+annotations/bw1.exe/pseudocode/src/engine/matrix.c/interpolatedSin_FUN_00507350.c
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/vectorLength3DToInt_FUN_00508860.c
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/CMini3D_dtor_FUN_00511020.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/SDynamicLight_ctor_FUN_00518360.cpp
@@ -1698,7 +1707,7 @@ annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_dtor_FUN_00531280.c
 annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_load_FUN_005312c0.cpp
 annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_reset_FUN_005313a0.cpp
 annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/staticInit_FUN_00531200.cpp
-annotations/bw1.exe/pseudocode/src/engine/palette.cpp/FUN_00531ed0.cpp
+annotations/bw1.exe/pseudocode/src/engine/palette.cpp/CFont_dtor_FUN_00531ed0.cpp
 annotations/bw1.exe/pseudocode/src/engine/palette.cpp/FUN_00532120.cpp
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/CPodFile_cleanup_FUN_0053be30.cpp
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/CPodFile_ctor_FUN_0053b1a0.cpp
@@ -1720,7 +1729,7 @@ annotations/bw1.exe/pseudocode/src/engine/texture.cpp/loadTextureAndGetData_FUN_
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_ctor_FUN_005b1ad0.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_drawText_FUN_005b1c00.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_dtor_FUN_005b1b90.cpp
-annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/FUN_005b21d0.cpp
+annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_getLineSpacing_FUN_005b21d0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdButton_ctor_FUN_0049d480.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdButton_dtor_FUN_0049d4b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEdCheck_calculateBaseWidth_FUN_0049dc20.cpp
@@ -1754,10 +1763,10 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_dtor_FUN_004993a0
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_findByFirstField_FUN_004999a0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_findString_FUN_00499960.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getFieldAt_FUN_004998b0.cpp
+annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getItemCount_FUN_0049df50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_getStringAt_FUN_004998a0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateWithFullPaths_FUN_0049a480.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_sortAll_FUN_004997f0.cpp
-annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049df50.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/qsortByString_FUN_00499810.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/staticInit_FUN_00492920.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/wildcardStringMatch_FUN_0049dea0.cpp
@@ -1841,7 +1850,6 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_getChar_FUN_0
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_isEof_FUN_00443ed0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_peekChar_FUN_00443d40.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_ungetChar_FUN_00443d10.cpp
-annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWCompress_finalize_FUN_00443630.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWCompress_init_FUN_004434e0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDecompress_init_FUN_004436f0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_addNode_FUN_00443110.cpp
@@ -1849,6 +1857,7 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_ctor_FUN_004
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_dtor_FUN_00442f90.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_findCode_FUN_004430d0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_free_FUN_00442fb0.cpp
+annotations/bw1.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_writeCodeBits_FUN_00443290.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/resetBitBuffer_FUN_00442470.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/CSocket_closeSocket_FUN_0059cc40.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/CSocket_createSocket_FUN_0059c910.cpp

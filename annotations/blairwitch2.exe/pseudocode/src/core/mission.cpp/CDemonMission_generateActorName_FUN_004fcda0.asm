@@ -24,7 +24,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 004fcda6
     PUSH EDI                            ; 004fcdaa
     MOV byte ptr [EDI],0x0              ; 004fcdab
-    CALL core_actor.cpp_FUN_00408a50    ; 004fcdae
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004fcdae
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004fcdb3
     MOV BL,byte ptr [EAX]               ; 004fcdb6
     MOV EDX,EAX                         ; 004fcdb8

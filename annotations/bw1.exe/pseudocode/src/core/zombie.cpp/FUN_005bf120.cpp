@@ -196,7 +196,7 @@ LAB_005bf3ac:
             return;
           }
         }
-        engine_special_cpp_FUN_00580127(local_18,local_14,(int)puVar9);
+        engine_special_cpp_renderScanline_FUN_00580127(local_18,local_14,(int)puVar9);
         if (_DAT_01bc123c != 0) {
           return;
         }

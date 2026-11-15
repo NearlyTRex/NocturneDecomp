@@ -810,9 +810,9 @@
    "b": "005739b0",
    "name": "engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30",
    "confidence": 0.85,
-   "verdict": "CONTRADICTED",
-   "status": "reject",
-   "note": "Withheld: a positional pair the body evidence contradicts in all three BW games (no shared callee or string, a conflicting one). Only a prototype would transfer; leave it until a body review settles the pair."
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE after a body review: the same per-entry free of the texture, opacity and palette buffers, current_texture_count reset and wrap_indicator cleared. BW frees with plain free instead of debugFree (hence no shared callee or string), adds a true-colour buffer, a memset of the entry table and an external-renderer callback."
   },
   {
    "a": "005dd7a0",
@@ -1020,6 +1020,51 @@
    "verdict": "CONFIRMED",
    "status": "approve",
    "note": "APPROVE despite size_mismatch: same getFileSize, seek to the start offset and crc32UpdateByte loop from 0xffffffff; BW reads with fgetc where nocedit reads 64 KiB blocks."
+  },
+  {
+   "a": "00456400",
+   "b": "00445a30",
+   "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: read by hand, same 3-vertex copy into the cube input buffer and the same 6-bit outcode clip."
+  },
+  {
+   "a": "005b26f0",
+   "b": "00559ab0",
+   "name": "core_sound.cpp_resetTrainSounds_FUN_005b26f0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: read by hand, same train-noise global compare, velocity = -active_fog.scroll and last-camera reset."
+  },
+  {
+   "a": "005dd990",
+   "b": "005750d0",
+   "name": "engine_texture.cpp_renderTextureAtlas_FUN_005dd990",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: read by hand, the same 16-byte wrapper calling the cache-wide routine with the texture cache global."
+  },
+  {
+   "a": "005f7af0",
+   "b": "00594210",
+   "name": "core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: read by hand, same closed-form body as bw1 005b7d60, in the same xform.cpp position."
+  },
+  {
+   "a": "005f7b70",
+   "b": "005944a0",
+   "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "approve",
+   "note": "APPROVE despite size_mismatch: read by hand, follows eulerToQuaternion as in nocedit; closed-form half-angle rewrite."
   }
  ]
 }

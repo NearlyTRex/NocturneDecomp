@@ -72,8 +72,8 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
          _DAT_01d02f44 +
          ((int)((_DAT_01c2a370 + (_DAT_01c2a370 >> 0x1f) * -4) -
                (uint)((_DAT_01c2a370 >> 0x1f) << 1 < 0)) >> 2);
-    iVar3 = engine_matrix_c_FUN_004e86b0(_DAT_01d02f44);
-    iVar4 = engine_matrix_c_FUN_004e86f0(_DAT_01d02f44);
+    iVar3 = engine_matrix_c_interpolatedSin_FUN_004e86b0(_DAT_01d02f44);
+    iVar4 = engine_matrix_c_interpolatedCos_FUN_004e86f0(_DAT_01d02f44);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;

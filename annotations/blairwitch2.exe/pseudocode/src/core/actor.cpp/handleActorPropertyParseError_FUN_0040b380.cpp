@@ -11,8 +11,8 @@
 void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(char *property_description,char *property_type)
 
 {
-  if (DAT_007bc03c != 0) {
-    core_actor_cpp_FUN_00408a50(DAT_007bc03c);
+  if (DAT_007bc03c != (CDemonActor *)0x0) {
+    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(DAT_007bc03c);
   }
   _DAT_01d046a0 = "..\\core\\actor.cpp";
   _DAT_01d046a4 = 0x85e;

@@ -20,7 +20,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 at 00431a95
-;   core_charactr.cpp_FUN_0042cd70 at 0042d2f5
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d2f5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b857b

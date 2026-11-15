@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   position_source_ptr
 ;
 ; XREF[7]:
-;   core_dracbrid.cpp_FUN_00465400 at 0046586d
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400 at 0046586d
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40 at 004aca72
 ;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e3a87
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220 at 004e7377

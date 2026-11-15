@@ -259,7 +259,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0
 ;   core_bodypart.cpp_createBodyPart_FUN_00414550
-;   core_bodypart.cpp_FUN_00416c10
+;   core_bodypart.cpp_subtractVector_FUN_00416c10
 ;   core_bugs.cpp_FUN_004242d0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432090
@@ -6389,8 +6389,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0052e122
     ADD EAX,0x206e8                     ; 0052e129
     PUSH EAX                            ; 0052e12e
-    CALL core_inv.cpp_FUN_004db990      ; 0052e12f
-        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004db990(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004db990 ; 0052e12f
+        ;   XREF to: 004db990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db990(CInventory * this_ptr, char * item_name)
     MOV ESI,EAX                         ; 0052e134
     ADD ESP,0x8                         ; 0052e136
     TEST EAX,EAX                        ; 0052e139
@@ -8275,8 +8275,8 @@ section .text
     PUSH EAX                            ; 0052f7cb
     LEA ESI,[ESP + 0x477c]              ; 0052f7cc
     LEA EDI,[ESP + 0x4794]              ; 0052f7d3
-    CALL core_bodypart.cpp_FUN_00416c10 ; 0052f7da
-        ;   XREF to: 00416c10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416c10()
+    CALL core_bodypart.cpp_subtractVector_FUN_00416c10 ; 0052f7da
+        ;   XREF to: 00416c10 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_subtractVector_FUN_00416c10(CVector3f * a, CVector3f * b, CVector3f * dst)
     LEA ESI,[ESP + 0x477c]              ; 0052f7df
     ADD ESP,0x8                         ; 0052f7e6
     LEA EAX,[ESP + 0x478c]              ; 0052f7e9

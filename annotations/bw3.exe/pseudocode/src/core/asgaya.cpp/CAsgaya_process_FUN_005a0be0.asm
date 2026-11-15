@@ -29,15 +29,15 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042cd70
-;   core_charactr.cpp_FUN_00432330
-;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
@@ -58,8 +58,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005a0bef
     PUSH dword ptr [EBP + 0x18]         ; 005a0bf2
     PUSH EDX                            ; 005a0bf5
-    CALL core_charactr.cpp_FUN_0042cd70 ; 005a0bf6
-        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042cd70()
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 ; 005a0bf6
+        ;   XREF to: 0042cd70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005a0bfb
     TEST EAX,EAX                        ; 005a0bfe
     JZ 0x005a1082                       ; 005a0c00
@@ -183,8 +183,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005a0d6b
         ;   Label: LAB_005a0d6b
     PUSH EAX                            ; 005a0d6e
-    CALL core_charactr.cpp_FUN_00433c60 ; 005a0d6f
-        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433c60()
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 ; 005a0d6f
+        ;   XREF to: 00433c60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005a0d74
     JMP 0x005a0c26                      ; 005a0d77
         ;   XREF to: 005a0c26 (UNCONDITIONAL_JUMP)  ; LAB_005a0c26
@@ -407,8 +407,8 @@ section .text
     PUSH EAX                            ; 005a1069
     PUSH dword ptr [EBP + 0x18]         ; 005a106a
     PUSH EBX                            ; 005a106d
-    CALL core_charactr.cpp_FUN_00432330 ; 005a106e
-        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432330()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 ; 005a106e
+        ;   XREF to: 00432330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter * this_ptr, float delta_time, int disable_search)
     ADD ESP,0xc                         ; 005a1073
     PUSH dword ptr [EBP + 0x18]         ; 005a1076
     PUSH EBX                            ; 005a1079

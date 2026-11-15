@@ -22,8 +22,8 @@
 ;   crt_stdio.c_fread_FUN_005b87c0
 ;   crt_stdio.c_fseek_FUN_005b929c
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
+;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80
 ;   engine_pod.cpp_crc32UpdateByte_FUN_00519cb0
-;   engine_pod.cpp_FUN_0051af80
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40
@@ -213,8 +213,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x414]     ; 0051ac58
     PUSH EBX                            ; 0051ac5e
     LEA EBP,[EAX + ESI*0x1]             ; 0051ac5f
-    CALL engine_pod.cpp_FUN_0051af80    ; 0051ac62
-        ;   XREF to: 0051af80 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0051af80()
+    CALL engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80 ; 0051ac62
+        ;   XREF to: 0051af80 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80(CPodFile * this_ptr, int file_index)
     MOV EDX,dword ptr [EBP + 0x10]      ; 0051ac67
     ADD ESP,0x8                         ; 0051ac6a
     CMP EAX,EDX                         ; 0051ac6d

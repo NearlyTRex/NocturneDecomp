@@ -1,0 +1,18 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00463850(CDemonLight *this_ptr)
+;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+;
+; XREF[1]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550d29
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 00463850
+        ;   Label: core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00463850
+

@@ -101,8 +101,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_pt
     this_ptr->sfx_handle = 0;
     return;
   }
-  iVar8 = core_actor_cpp_FUN_00408a50(this_ptr);
-  pcVar7 = (char *)(iVar8 + 1);
+  pcVar7 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(&this_ptr->base);
+  pcVar7 = pcVar7 + 1;
   pcVar6 = this_ptr->descriptive_name;
   do {
     cVar1 = *pcVar7;

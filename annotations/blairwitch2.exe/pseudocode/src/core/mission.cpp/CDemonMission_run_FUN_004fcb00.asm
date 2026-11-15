@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc796
-;   core_game.cpp_FUN_004bc840 at 004bca55
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840 at 004bca55
 ;   core_game.cpp_hostNetworkGame_FUN_004bd2f0 at 004bd357
 ;   core_game.cpp_joinNetworkGame_FUN_004bd3a0 at 004bd424
 ;

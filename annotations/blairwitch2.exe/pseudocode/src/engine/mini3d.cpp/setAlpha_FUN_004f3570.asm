@@ -12,12 +12,12 @@
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 at 0047befd
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 at 0047ff19
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80 at 0047bff6
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 at 0047ebae
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d3ea
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047dd05
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047aff4
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048369b
 ;   shape_edittool.cpp_FUN_0047a990 at 0047a9b6
-;   shape_edittool.cpp_FUN_0047e870 at 0047ebae
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba00
 ;
 ; Referenced Globals:

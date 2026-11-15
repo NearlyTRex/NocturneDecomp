@@ -28,7 +28,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_setcolid.cpp_FUN_0053ed10
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
 ;   crt_math.c_floor_FUN_005a3600
 ;   crt_math.c_round_FUN_005a3120
@@ -360,8 +360,8 @@ section .text
     MOV dword ptr [ESP + 0x48],EBX      ; 0041f7d4
     PUSH EDX                            ; 0041f7d8
     FSTP float ptr [ESP + 0x18]         ; 0041f7d9
-    CALL core_setcolid.cpp_FUN_0053ed10 ; 0041f7dd
-        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ed10()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10 ; 0041f7dd
+        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041f7e2
     FLD float ptr [EBX + 0x6dc]         ; 0041f7e5
         ;   Label: LAB_0041f7e5

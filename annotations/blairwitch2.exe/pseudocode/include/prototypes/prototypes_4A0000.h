@@ -236,7 +236,7 @@ int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004a96e0(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004a9700(int text_color);
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004a9710(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color);
 void engine_font_cpp_FUN_004a97a0(int param_1);
-int __cdecl engine_font_cpp_FUN_004a9870(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
+int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004a9870(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
 int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont *this_ptr,char *text);
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
@@ -271,7 +271,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
 ECollisionType __cdecl core_frankgen_cpp_CFrankenstienMachine_getCollisionType_FUN_004ad020(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004ad0c0(void);
-float core_gabriela_cpp_FUN_004ad1a0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004ad1a0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004ad1e0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004ad230(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
 CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_004ad290(void);

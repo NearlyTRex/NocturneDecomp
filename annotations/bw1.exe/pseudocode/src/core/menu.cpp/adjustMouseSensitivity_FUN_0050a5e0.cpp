@@ -44,7 +44,7 @@ LAB_0050a643:
              _DAT_01c43540);
   local_18 = 0;
   do {
-    shape_edittool_cpp_FUN_00496ee0();
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(g_CEditorToolsPtr);
     if (_DAT_01c4353c != local_18) {
       iVar3 = (int)(((longlong)_DAT_01c4353c * 0x3c000) / (longlong)(DAT_0061b498 + -1)) + 0x4000;
       local_18 = _DAT_01c4353c;

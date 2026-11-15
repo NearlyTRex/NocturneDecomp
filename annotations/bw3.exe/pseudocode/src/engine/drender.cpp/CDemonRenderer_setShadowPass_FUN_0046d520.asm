@@ -15,7 +15,7 @@
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940 at 004ca9bd
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 0059178b
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 0053f9ef
-;   core_setdir.cpp_FUN_00540cf0 at 00540d13
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0 at 00540d13
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580 at 0046b5d6
 ;
 ; Referenced Globals:

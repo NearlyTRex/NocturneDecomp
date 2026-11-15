@@ -6,7 +6,7 @@
 ;
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0 at 0043ba1a
-;   core_set.cpp_FUN_0052fad0 at 0052fe38
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fe38
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 005385a6
 ;   engine_mini3d.cpp_clearZBuffer_FUN_004f2410 at 004f241e
 ;

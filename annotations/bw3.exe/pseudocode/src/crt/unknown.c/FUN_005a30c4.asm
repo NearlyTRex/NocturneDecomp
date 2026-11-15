@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[179]:
-;   cockpit_ckptutil.c_FUN_00436400 at 00436594
+;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400 at 00436594
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770 at 004087bd
 ;   core_ammo.cpp_CAmmoBullet_dtor_FUN_0040e420 at 0040e462
 ;   core_ammo.cpp_CAmmoManaLarge_dtor_FUN_0040e470 at 0040e4b2

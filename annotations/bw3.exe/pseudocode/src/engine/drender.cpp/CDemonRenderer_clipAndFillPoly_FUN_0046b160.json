@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 135,
+    "complexity_score": 136,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 146
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -186,16 +186,6 @@
       "name": "core_asgaya.cpp_FUN_005a1ea0"
     },
     {
-      "addr": "00466d50",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_00466d50"
-    },
-    {
-      "addr": "004673d0",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_004673d0"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
       "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
@@ -214,6 +204,16 @@
       "addr": "0043bac0",
       "is_variadic": false,
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_0043bac0"
+    },
+    {
+      "addr": "004673d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004673d0"
+    },
+    {
+      "addr": "00466d50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00466d50"
     }
   ],
   "globals": [
@@ -376,7 +376,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_01c6e2b4",
       "severity": "mild",
       "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c6e2b4 & 1) != 0)) &&",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_01c6e2b4",
       "severity": "mild",
       "text": "((DAT_01c6e2b4 & 5) != 0)) {",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_01c6e2b5",
       "severity": "mild",
       "text": "if ((DAT_01c6e2b5 & 2) == 0) {",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_007e3e88",
       "severity": "mild",
       "text": "if (2 < DAT_007e3e88) {",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007e3e8c",
       "severity": "mild",
       "text": "core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007e3e88",
       "severity": "mild",
       "text": "core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);",

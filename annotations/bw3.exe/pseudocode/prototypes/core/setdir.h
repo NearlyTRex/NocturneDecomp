@@ -33,9 +33,9 @@ void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 // Address: 00540c40
 void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_FUN_00540cf0
+// Original: core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
 // Address: 00540cf0
-void FUN_00540cf0(CDemonSet *param_1);
+void __cdecl CDemonSet::saveThumbsNoFile(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_setPixelGrayscale_FUN_00540e80
 // Address: 00540e80
@@ -73,6 +73,6 @@ int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 // Address: 00541a20
 int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
-// Original: core_setdir.cpp_FUN_00541a60
+// Original: core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60
 // Address: 00541a60
-void __cdecl FUN_00541a60(CDemonSet *this_ptr);
+void __cdecl CDemonSet::freeThumbs(CDemonSet *this_ptr);

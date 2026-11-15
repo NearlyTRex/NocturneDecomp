@@ -1,21 +1,19 @@
 // Name: core_game.cpp_drawKeyBindingEntry_FUN_004b50f0
 // Address: 004b50f0
 // Address Range: [[004b50f0, 004b51d7]]
-// Convention: unknown
-// Signature: void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void)
+void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name)
 
 {
-  EInputCodeType in_stack_00000004;
   char acStack_110 [256];
   
-  core_menu_cpp_getKeyDisplayName_FUN_004eaa60(in_stack_00000004);
+  core_menu_cpp_getKeyDisplayName_FUN_004eaa60(key_code);
   _sprintf(acStack_110,"?%s = %s" + 1);
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20
             (_DAT_01549aa8,acStack_110,_DAT_01d22c54 + 2,_DAT_01d22c58 + 2,0,-1);

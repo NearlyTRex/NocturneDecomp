@@ -1203,8 +1203,8 @@ section .text
     ADD ESP,0x8                         ; 0046a4a2
     LEA EAX,[EBX + 0x1fae8]             ; 0046a4a5
     PUSH EAX                            ; 0046a4ab
-    CALL core_inv.cpp_FUN_004f9f10      ; 0046a4ac
-        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9f10()
+    CALL core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 ; 0046a4ac
+        ;   XREF to: 004f9f10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004f9f10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0046a4b1
     PUSH dword ptr [EBP + 0x18]         ; 0046a4b4
     PUSH EBX                            ; 0046a4b7

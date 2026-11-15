@@ -163,7 +163,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00527d70(CRifle *this_ptr)
             core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(pCStack_18);
           }
           else {
-            core_crate_cpp_FUN_004461c0((CCrate *)pCStack_14);
+            core_crate_cpp_CCrate_explode_FUN_004461c0((CCrate *)pCStack_14);
           }
         }
         else {

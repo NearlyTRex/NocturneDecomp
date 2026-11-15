@@ -1643,8 +1643,8 @@ section .text
     JC 0x004adcc3                       ; 004ae8e7
         ;   XREF to: 004adcc3 (CONDITIONAL_JUMP)  ; LAB_004adcc3
     PUSH EBX                            ; 004ae8ed
-    CALL core_hero.cpp_FUN_004cec50     ; 004ae8ee
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 004ae8ee
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ae8f3
     TEST EAX,EAX                        ; 004ae8f6
     JNZ 0x004adcc3                      ; 004ae8f8

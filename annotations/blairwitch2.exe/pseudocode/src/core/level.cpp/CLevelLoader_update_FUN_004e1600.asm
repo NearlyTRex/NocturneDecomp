@@ -67,8 +67,8 @@
 ;   engine_drender.cpp_popViewport_FUN_0046b740
 ;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_matrix.c_FUN_004e86b0
-;   engine_matrix.c_FUN_004e86f0
+;   engine_matrix.c_interpolatedCos_FUN_004e86f0
+;   engine_matrix.c_interpolatedSin_FUN_004e86b0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;
@@ -197,8 +197,8 @@ section .text
     ADD ESP,0x8                         ; 004e175d
     SUB EBX,EAX                         ; 004e1760
     PUSH EBX                            ; 004e1762
-    CALL engine_matrix.c_FUN_004e86b0   ; 004e1763
-        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86b0(int angle)
+    CALL engine_matrix.c_interpolatedSin_FUN_004e86b0 ; 004e1763
+        ;   XREF to: 004e86b0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004e86b0(int angle)
     ADD ESP,0x4                         ; 004e1768
     MOV EDX,EAX                         ; 004e176b
     MOV EAX,0x9088                      ; 004e176d
@@ -208,8 +208,8 @@ section .text
     MOV dword ptr [EDX + 0x15ae8c],0xffff6f78 ; 004e177e | g_CDemonSetInstance.light_direction.y
     PUSH EBX                            ; 004e1788
     MOV dword ptr [EDX + 0x15ae88],EAX  ; 004e1789 | g_CDemonSetInstance.light_direction.x
-    CALL engine_matrix.c_FUN_004e86f0   ; 004e178f
-        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e86f0(int angle)
+    CALL engine_matrix.c_interpolatedCos_FUN_004e86f0 ; 004e178f
+        ;   XREF to: 004e86f0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004e86f0(int angle)
     ADD ESP,0x4                         ; 004e1794
     MOV EDX,EAX                         ; 004e1797
     MOV EAX,0x9088                      ; 004e1799

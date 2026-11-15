@@ -24,25 +24,25 @@ uint core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2)
   CVector3f *pCVar9;
   CBoundingBox3D *out_box;
   float fVar10;
+  float *scalar;
   float fVar11;
   float fStack_10c;
-  byte auStack_e0 [8];
-  float fStack_d8;
-  byte auStack_d4 [12];
+  CVector3f CStack_e0;
+  CVector3f CStack_d4;
   uint auStack_c8 [6];
-  uint uStack_b0;
-  float afStack_ac [4];
-  float fStack_9c;
-  float fStack_94;
+  CVector3f CStack_b0;
+  float fStack_a4;
+  float afStack_a0 [4];
   float fStack_90;
   CVector3f CStack_8c;
   CVector3f CStack_80;
   float fStack_70;
-  float afStack_6c [4];
-  float afStack_5c [3];
+  float fStack_6c;
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f CStack_44;
-  uint uStack_30;
+  float fStack_30;
   int local_2c;
   CLocation *local_28;
   float *local_24;
@@ -86,15 +86,15 @@ uint core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2)
                (iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar1,"CTommyGun"),
                iVar4 != 0)) {
               fStack_70 = (pCVar1->location).position.x - *local_24;
-              afStack_6c[0] = (pCVar1->location).position.y - local_24[1];
-              afStack_6c[1] = (pCVar1->location).position.z - local_24[2];
-              fStack_94 = fStack_70;
-              afStack_ac[(uint)bVar8 * -2 + 7] = afStack_6c[(uint)bVar8 * -2];
-              *(float *)((int)&CStack_8c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-                   afStack_6c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+              fStack_6c = (pCVar1->location).position.y - local_24[1];
+              CStack_68.x = (pCVar1->location).position.z - local_24[2];
+              afStack_a0[3] = fStack_70;
+              afStack_a0[(uint)bVar8 * -2 + 4] = (&fStack_6c)[(uint)bVar8 * -2];
+              *(uint *)((int)&CStack_8c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+                   *(uint *)((int)&CStack_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
               fStack_90 = fStack_90 * fStack_90 * fStack_90 * fStack_90;
               fStack_10c = SQRT(CStack_8c.x * CStack_8c.x +
-                                fStack_94 * fStack_94 + fStack_90 * fStack_90);
+                                afStack_a0[3] * afStack_a0[3] + fStack_90 * fStack_90);
               if (((float)_DAT_005d8c40 <= fStack_10c) && ((int)fStack_10c < 0x41700001)) {
                 *(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar1;
                 local_18 = (float)((int)local_18 + 4);
@@ -143,6 +143,7 @@ uint core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2)
             if (iVar3 == 3) {
               pCVar1 = (CDemonActor *)param_1[1].model.bone_origins[0x13].x;
               (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,out_box);
+              scalar = &fStack_30;
               puVar6 = auStack_c8;
               puVar7 = (uint *)&stack0xffffff18;
               for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -150,23 +151,24 @@ uint core_zombiepriest_cpp_FUN_0058efb0(CCharacter *param_1,float param_2)
                 puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
                 puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
               }
-              uStack_30 = 0x3f000000;
-              core_bodypart_cpp_FUN_00416c50(auStack_e0,auStack_d4,&uStack_30);
-              afStack_5c[0] = (float)uStack_b0;
-              afStack_6c[(uint)bVar8 * -2 + 5] = afStack_ac[(uint)bVar8 * -2];
-              afStack_6c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 6] =
-                   afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-              core_bodypart_cpp_FUN_00416bd0(afStack_6c + 4);
+              fStack_30 = 0.5;
+              core_bodypart_cpp_addVector_FUN_00416c50(&CStack_e0,&CStack_d4,&CStack_b0);
+              CStack_5c.x = CStack_b0.x;
+              *(uint *)((int)&CStack_5c + (uint)bVar8 * -8 + 4) =
+                   *(uint *)((int)&CStack_b0 + (uint)bVar8 * -8 + 4);
+              *(uint *)((int)&CStack_5c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+                   *(uint *)((int)&CStack_b0 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+              core_bodypart_cpp_scaleVector_FUN_00416bd0(&CStack_5c,scalar,&CStack_68);
               pCVar9 = &CStack_44;
-              afStack_ac[2] = afStack_6c[1];
-              afStack_ac[(uint)bVar8 * -2 + 3] = afStack_6c[(uint)bVar8 * -2 + 2];
-              afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-                   afStack_6c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 3];
-              fStack_9c = fStack_d8 + (float)_DAT_005d8c48;
-              CStack_44.x = afStack_ac[2];
-              *(float *)((int)&CStack_44 + (uint)bVar8 * -8 + 4) = afStack_ac[(uint)bVar8 * -2 + 3];
+              fStack_a4 = CStack_68.x;
+              afStack_a0[(uint)bVar8 * -2] = *(float *)((int)&CStack_68 + (uint)bVar8 * -8 + 4);
+              afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+                   *(float *)((int)&CStack_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+              afStack_a0[1] = CStack_e0.z + (float)_DAT_005d8c48;
+              CStack_44.x = fStack_a4;
+              *(float *)((int)&CStack_44 + (uint)bVar8 * -8 + 4) = afStack_a0[(uint)bVar8 * -2];
               *(float *)((int)&CStack_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-                   afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+                   afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
               core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80(pCVar1,pCVar9,&CStack_50);
               fVar11 = 0.034906585;
               fVar10 = 0.3;

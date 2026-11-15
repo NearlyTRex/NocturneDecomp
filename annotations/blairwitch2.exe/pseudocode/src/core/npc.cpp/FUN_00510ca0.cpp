@@ -10,6 +10,6 @@ CFont * __cdecl core_npc_cpp_FUN_00510ca0(CFont *this_ptr)
 
 {
   this_ptr->queued_text_count = 0;
-  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_FUN_00510cc0_005fa8bc;
+  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_CFont_dtor_FUN_00510cc0_005fa8bc;
   return this_ptr;
 }

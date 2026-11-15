@@ -9,7 +9,7 @@
 ; XREF[11]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 at 0042fcb7
 ;   core_doc.cpp_FUN_00469550 at 0046bd60
-;   core_dracbrid.cpp_FUN_0047d920 at 0047dda8
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dda8
 ;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aef76
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500ee3
 ;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 00502643

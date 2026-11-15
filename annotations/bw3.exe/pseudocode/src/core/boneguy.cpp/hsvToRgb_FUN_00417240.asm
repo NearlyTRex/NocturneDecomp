@@ -27,7 +27,7 @@
 ;
 ; XREF[2]:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 004175a1
-;   core_gore.cpp_FUN_004cc970 at 004cca2a
+;   core_gore.cpp_getBloodColorParams_FUN_004cc970 at 004cca2a
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00417228 = 004172b2

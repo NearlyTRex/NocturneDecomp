@@ -115,7 +115,7 @@ void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004f3b80(SClipPlane *o
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
 void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004f3fc0(CMirror *this_ptr);
-CMirror * __cdecl core_mirror_cpp_FUN_004f3fe0(CMirror *this_ptr,uint flags);
+CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_004f3fe0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f3ff0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f4070(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
@@ -228,7 +228,7 @@ undefined4 * core_morph_cpp_FUN_004fb1c0(undefined4 *param_1);
 undefined4 core_morph_cpp_FUN_004fb1f0(undefined4 param_1);
 void core_morph_cpp_FUN_004fb210(undefined4 *param_1);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle);
-void core_motion_cpp_FUN_004fb6b0(int *param_1,undefined4 param_2);
+void __cdecl core_motion_cpp_CMotionList_save_FUN_004fb6b0(CMotionList *this_ptr,_FILE *file_handle);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
 int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList *this_ptr,char *state_name,int error_on_not_found);
 CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_004fbad0(CMotionController *this_ptr);

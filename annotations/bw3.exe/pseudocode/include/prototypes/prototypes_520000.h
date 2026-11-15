@@ -7,7 +7,6 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CPryeMorph.h"
@@ -22,23 +21,23 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-void core_prye_cpp_FUN_00520d20(int param_1);
+void __cdecl core_prye_cpp_CPrye_processPickupComplete_FUN_00520d20(CPrye *this_ptr);
 void core_prye_cpp_FUN_00520da0(int param_1);
 undefined4 core_prye_cpp_FUN_00520df0(void);
-undefined4 core_prye_cpp_FUN_00521880(CCharacter *param_1);
+int __cdecl core_prye_cpp_CPrye_tryPlaceObject_FUN_00521880(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderTransparent_FUN_00522880(CPrye *this_ptr);
 void core_prye_cpp_FUN_005228c0(void);
 undefined4 * core_prye_cpp_FUN_00522950(void);
-void core_prye_cpp_FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,int hand_index,float delta_time);
 void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_ptr,float delta_time,int is_weapon_active);
 CMatrix3x4f * __stack2_esi core_prye_cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0(CPrye *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-void core_prye_cpp_FUN_00524800(int param_1);
-void core_prye_cpp_FUN_00524940(CHero *param_1,float param_2);
-void core_prye_cpp_FUN_00525930(int param_1);
+CVector3f * __stack_esi core_prye_cpp_CPrye_getThrowDirection_FUN_00524800(CPrye *this_ptr,CVector3f *out_direction);
+void __cdecl core_prye_cpp_CPrye_updateWeaponLayerActions_FUN_00524940(CPrye *this_ptr,float delta_time);
+void core_prye_cpp_FUN_00525930(CPrye *param_1);
 void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type);
 undefined4 core_prye_cpp_FUN_005262f0(int param_1);

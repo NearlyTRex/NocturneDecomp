@@ -24,10 +24,12 @@ void wincore_winrun_cpp_FUN_005b44a0(CIniFile *param_1)
   iStack_1c = 0;
   do {
     _sprintf(acStack_120,"7Controller_%d_type" + 1);
-    engine_ini_cpp_FUN_004f4d70(param_1,acStack_120,*(int *)(iStack_18 + 0x2c9cf14));
+    engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+              (param_1,acStack_120,*(int *)(iStack_18 + 0x2c9cf14));
     if (*(int *)(iStack_18 + 0x2c9cf14) != 0) {
       _sprintf(acStack_120,"Controller_%d_pc_stick");
-      engine_ini_cpp_FUN_004f4d70(param_1,acStack_120,*(int *)(iStack_1c + 0x2c9d1c4));
+      engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+                (param_1,acStack_120,*(int *)(iStack_1c + 0x2c9d1c4));
       iVar1 = 0;
       iStack_14 = iStack_18;
       iVar2 = iStack_20;
@@ -38,11 +40,14 @@ void wincore_winrun_cpp_FUN_005b44a0(CIniFile *param_1)
           if (3 < iVar1) goto LAB_005b4507;
         }
         _sprintf(acStack_120,"Controller_%d_axis_%d_min");
-        engine_ini_cpp_FUN_004f4d70(param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1d4));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1d4));
         _sprintf(acStack_120,"Controller_%d_axis_%d_max");
-        engine_ini_cpp_FUN_004f4d70(param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1d8));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1d8));
         _sprintf(acStack_120,"Controller_%d_axis_%d_center");
-        engine_ini_cpp_FUN_004f4d70(param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1dc));
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+                  (param_1,acStack_120,*(int *)(iVar2 + 0x2c9d1dc));
         iVar1 = iVar1 + 1;
         iVar2 = iVar2 + 0xc;
       } while (iVar1 < 4);

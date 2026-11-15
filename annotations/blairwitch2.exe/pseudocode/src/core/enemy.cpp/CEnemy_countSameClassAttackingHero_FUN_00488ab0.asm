@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01cedef4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     PUSH EDX                            ; 00488abb
     XOR EDI,EDI                         ; 00488abc
     XOR ESI,ESI                         ; 00488abe
-    CALL core_actor.cpp_FUN_00408a50    ; 00488ac0
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 00488ac0
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00488ac5
     XOR EBP,EBP                         ; 00488ac8
     MOV dword ptr [ESP],EAX             ; 00488aca

@@ -125,7 +125,7 @@ switchD_0057096f_caseD_9:
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           bVar3 = true;
           if ((this_ptr->blades_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
-            iVar8 = core_hero_cpp_FUN_004cec50(this_ptr);
+            iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004cec50(&this_ptr->base);
             bVar3 = false;
             if (iVar8 != 0) goto LAB_00570a09;
             iVar8 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(&this_ptr->base,0);

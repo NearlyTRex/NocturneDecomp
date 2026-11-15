@@ -25,22 +25,22 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster 
   float fVar9;
   CVector3f *pCVar10;
   CBoundingBox3D *in_stack_fffffefc;
+  float *scalar;
   float fVar11;
-  float fStack_c4;
-  uint uStack_9c;
-  float fStack_94;
-  float fStack_90;
-  float fStack_8c;
-  float fStack_88;
+  CVector3f CStack_cc;
+  CVector3f CStack_c0;
+  uint auStack_b4 [6];
+  CVector3f CStack_9c;
+  float afStack_90 [6];
   CVector3f CStack_78;
   CVector3f aCStack_6c [2];
-  float fStack_54;
-  uint auStack_50 [5];
+  CVector3f CStack_54;
+  CVector3f CStack_48;
   CVector3f CStack_3c;
   CVector3f CStack_30;
   float *local_24;
   int local_20;
-  int local_1c;
+  float local_1c;
   float local_18;
   
   bVar8 = 0;
@@ -70,7 +70,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster 
           CStack_30.y = 0.0;
           local_24 = (float *)0x0;
           local_20 = 0;
-          local_1c = 0;
+          local_1c = 0.0;
           CStack_30.z = (float)pCVar5;
           while ((int)local_24 < g_CDemonSetPtr->actor_count) {
             pCVar2 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
@@ -81,14 +81,13 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster 
               CStack_78.z = (pCVar2->location).position.x - *local_24;
               aCStack_6c[0].x = (pCVar2->location).position.y - local_24[1];
               aCStack_6c[0].y = (pCVar2->location).position.z - local_24[2];
-              fStack_94 = CStack_78.z;
-              *(uint *)((int)&stack0xffffff70 + (uint)bVar8 * -8) =
-                   *(uint *)((int)aCStack_6c + (uint)bVar8 * -8);
-              *(uint *)
-               ((int)&stack0xffffff78 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + -1) * 4) =
-                   *(uint *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);
-              fStack_90 = fStack_90 * fStack_90 * fStack_90 * fStack_90;
-              fVar9 = SQRT(fStack_8c * fStack_8c + fStack_94 * fStack_94 + fStack_90 * fStack_90);
+              CStack_9c.z = CStack_78.z;
+              afStack_90[(uint)bVar8 * -2] = *(float *)((int)aCStack_6c + (uint)bVar8 * -8);
+              afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+                   *(float *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);
+              afStack_90[0] = afStack_90[0] * afStack_90[0] * afStack_90[0] * afStack_90[0];
+              fVar9 = SQRT(afStack_90[1] * afStack_90[1] +
+                           CStack_9c.z * CStack_9c.z + afStack_90[0] * afStack_90[0]);
               if (((float)_DAT_005dee3d <= fVar9) && ((int)fVar9 < 0x41700001)) {
                 *(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar2;
                 local_18 = (float)((int)local_18 + 4);
@@ -97,7 +96,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster 
               }
             }
             local_20 = local_20 + 1;
-            local_1c = local_1c + 4;
+            local_1c = (float)((int)local_1c + 4);
           }
           if (0 < (int)CStack_30.y) {
             iVar4 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,(int)CStack_30.y + -1);
@@ -135,32 +134,31 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster 
                                 (this_ptr->target_weapon,(CDemonActor *)this_ptr), iVar3 == 3)) {
             pCVar2 = this_ptr->target_weapon;
             (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,in_stack_fffffefc);
-            puVar6 = (uint *)&stack0xffffff4c;
+            scalar = &local_1c;
+            puVar6 = auStack_b4;
             puVar7 = (uint *)&stack0xffffff2c;
             for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
               *puVar7 = *puVar6;
               puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
               puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
             }
-            local_1c = 0x3f000000;
-            core_bodypart_cpp_FUN_00417ba0();
-            auStack_50[2] = uStack_9c;
-            auStack_50[(uint)bVar8 * -2 + 3] = *(uint *)(&stack0xffffff68 + (uint)bVar8 * -8);
-            auStack_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-                 *(uint *)((int)&stack0xffffff6c + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4);
-            core_bodypart_cpp_FUN_00417b20();
+            local_1c = 0.5;
+            core_bodypart_cpp_addVector_FUN_00417ba0(&CStack_cc,&CStack_c0,&CStack_9c);
+            CStack_48.x = CStack_9c.x;
+            *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + 4) = afStack_90[(uint)bVar8 * -2 + -2];
+            *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+                 afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -1];
+            core_bodypart_cpp_scaleVector_FUN_00417b20(&CStack_48,scalar,&CStack_54);
             pCVar10 = &CStack_30;
-            fStack_90 = fStack_54;
-            *(uint *)((int)&stack0xffffff78 + ((uint)bVar8 * -2 + -1) * 4) =
-                 auStack_50[(uint)bVar8 * -2];
-            *(uint *)((int)&stack0xffffff78 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4) =
-                 auStack_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-            fStack_88 = fStack_c4 + (float)_DAT_005dee45;
-            CStack_30.x = fStack_90;
-            *(uint *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) =
-                 *(uint *)((int)&stack0xffffff78 + ((uint)bVar8 * -2 + -1) * 4);
-            *(uint *)((int)&CStack_30 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =
-                 *(uint *)((int)&stack0xffffff78 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4);
+            afStack_90[0] = CStack_54.x;
+            afStack_90[(uint)bVar8 * -2 + 1] = *(float *)((int)&CStack_54 + (uint)bVar8 * -8 + 4);
+            afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2] =
+                 *(float *)((int)&CStack_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+            afStack_90[2] = CStack_cc.z + (float)_DAT_005dee45;
+            CStack_30.x = afStack_90[0];
+            *(float *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) = afStack_90[(uint)bVar8 * -2 + 1];
+            *(float *)((int)&CStack_30 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =
+                 afStack_90[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2];
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(pCVar2,pCVar10,&CStack_3c);
             fVar11 = 0.034906585;
             fVar9 = 0.3;

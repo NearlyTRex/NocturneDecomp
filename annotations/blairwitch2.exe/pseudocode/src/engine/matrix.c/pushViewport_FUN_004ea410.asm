@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 at 0046b726
-;   shape_edittool.cpp_FUN_0047e870 at 0047eda5
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 at 0047eda5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005dc876

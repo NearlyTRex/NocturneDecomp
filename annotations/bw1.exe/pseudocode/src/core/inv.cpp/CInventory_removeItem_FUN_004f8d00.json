@@ -75,7 +75,7 @@
     {
       "addr": "00408560",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408560"
+      "name": "core_actor.cpp_deleteActor_FUN_00408560"
     },
     {
       "addr": "005c25d0",
@@ -258,15 +258,15 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 39,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar3 - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 30,
       "match": "memmove",
       "severity": "moderate",

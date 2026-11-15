@@ -31,7 +31,7 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db760(CInventor
   }
   this_ptr_00->ammo_count = weapon->ammo_count;
   this_ptr_00->ammo_type = weapon->ammo_type;
-  pcVar3 = (char *)core_actor_cpp_FUN_00408a50(weapon);
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(&weapon->base);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,pcVar3);
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   pcVar3 = "Some_ammo";

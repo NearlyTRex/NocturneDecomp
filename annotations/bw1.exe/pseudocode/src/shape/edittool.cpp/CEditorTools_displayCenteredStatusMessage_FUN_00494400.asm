@@ -12,12 +12,12 @@
 ;
 ; XREF[7]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e847
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0052c600 at 0052c616
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0 at 0052c786
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c983
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e710
-;   core_netgame.cpp_FUN_0052c600 at 0052c616
-;   engine_pod.cpp_FUN_0053bfc0 at 0053c016
-;   engine_pod.cpp_FUN_0053cc60 at 0053cc7e
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0 at 0053c016
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60 at 0053cc7e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68

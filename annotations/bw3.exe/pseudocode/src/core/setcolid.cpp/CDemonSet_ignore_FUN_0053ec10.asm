@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417f1f
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424790
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426a16
-;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 at 0042c385
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 0043299f
 ;   ... and 29 more
 ;
 ; Referenced Globals:

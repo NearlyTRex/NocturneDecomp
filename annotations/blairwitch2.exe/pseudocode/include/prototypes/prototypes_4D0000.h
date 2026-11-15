@@ -118,7 +118,7 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *this_ptr,float delta_time);
 int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(CIcePick *this_ptr);
-int __cdecl core_icepick_cpp_FUN_004d5780(CIcePick *this_ptr);
+int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004d5780(CIcePick *this_ptr);
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004d5950(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick *this_ptr,float delta_time);
@@ -206,7 +206,7 @@ void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd2f0(CIn
 void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004dd4e0(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670(CInventory *this_ptr);
-void core_inv_cpp_FUN_004dd9b0(CInventory *param_1);
+void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004dee70(CInventory *this_ptr,uint key_mask,int show_message);
 void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004def40(CInventory *this_ptr,uint key_mask);
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004defa0(CInventory *this_ptr);

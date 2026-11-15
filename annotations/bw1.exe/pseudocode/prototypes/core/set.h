@@ -37,9 +37,9 @@ void __cdecl CDemonSet::load(CDemonSet *this_ptr,char *filename);
 // Address: 0054e3c0
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_0054e6a0
+// Original: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0
 // Address: 0054e6a0
-void FUN_0054e6a0(void);
+void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int light_index);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0054ec60
 // Address: 0054ec60
@@ -77,13 +77,13 @@ void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 // Address: 00550580
 void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
-// Original: core_set.cpp_FUN_00550da0
+// Original: core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0
 // Address: 00550da0
-void __cdecl FUN_00550da0(CDemonSet *this_ptr);
-
-// Original: core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170
-// Address: 00551170
 void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
+
+// Original: core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170
+// Address: 00551170
+void __cdecl CDemonSet::renderMonsterVisionView(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_00551480
 // Address: 00551480
@@ -293,9 +293,9 @@ void __cdecl CDemonSet::loadMasterLightStates(CDemonSet *this_ptr,int *light_sta
 // Address: 00555ce0
 int __cdecl CDemonSet::saveMasterLightStates(CDemonSet *this_ptr,int *light_state_buffer);
 
-// Original: core_set.cpp_FUN_00555d20
+// Original: core_set.cpp_CDemonSet_saveStateInfo_FUN_00555d20
 // Address: 00555d20
-int FUN_00555d20(int *param_1,undefined4 param_2);
+void __cdecl CDemonSet::saveStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_set.cpp_CDemonSet_loadStateInfo_FUN_00555e30
 // Address: 00555e30

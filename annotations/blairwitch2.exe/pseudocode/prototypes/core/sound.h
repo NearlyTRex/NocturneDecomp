@@ -25,9 +25,9 @@ void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char 
 // Address: 005594c0
 uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
-// Original: core_sound.cpp_FUN_00559ab0
+// Original: core_sound.cpp_resetTrainSounds_FUN_00559ab0
 // Address: 00559ab0
-void FUN_00559ab0(void);
+void resetTrainSounds(void);
 
 // Original: core_sound.cpp_processTrainSounds_FUN_00559b50
 // Address: 00559b50

@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d46d3
 ;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525c6b
-;   core_prye.cpp_FUN_0051b550 at 0051c014
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051c014
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_onLocked_FUN_00465550

@@ -194,8 +194,8 @@
     ],
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00402850",
-    "name":"engine_2d.c_FUN_00402850",
+    "method":"setTextColor",
+    "name":"engine_2d.c_setTextColor_FUN_00402850",
     "params":[
       {
         "name":"color",
@@ -621,15 +621,16 @@
     "calls":[
       "00436710"
     ],
-    "conv":"unknown",
+    "cls":"CDemonActor",
+    "conv":"__cdecl",
     "instructions":14,
-    "method":"FUN_00408a50",
-    "name":"core_actor.cpp_FUN_00408a50",
-    "receiver":false,
+    "method":"getActorClassName",
+    "name":"core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/actor.cpp",
     "variadic":false
@@ -4093,14 +4094,33 @@
     "calls":[
       "00545a60"
     ],
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "instructions":27,
-    "method":"FUN_0042a2d0",
-    "name":"core_charactr.cpp_FUN_0042a2d0",
-    "receiver":false,
+    "method":"blendLayerActionMotion",
+    "name":"core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a2d0",
+    "params":[
+      {
+        "name":"blend_weight",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blend_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -4193,8 +4213,8 @@
     ],
     "conv":"unknown",
     "instructions":616,
-    "method":"FUN_0042f750",
-    "name":"cockpit_ckptutil.c_FUN_0042f750",
+    "method":"traceConnectedEdges",
+    "name":"cockpit_ckptutil.c_traceConnectedEdges_FUN_0042f750",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -4503,6 +4523,7 @@
   },
   {
     "addr":"00433f50",
+    "cls":"CCodec",
     "conv":"__cdecl",
     "data_refs":[
       "005f4230",
@@ -4510,17 +4531,9 @@
       "005f4320"
     ],
     "instructions":2,
-    "method":"FUN_00433f50",
-    "name":"support_codec.cpp_FUN_00433f50",
+    "method":"finalize",
+    "name":"support_codec.cpp_CCodec_finalize_FUN_00433f50",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCodec",
-          "ptr":1
-        }
-      },
       {
         "name":"ostream",
         "type":{
@@ -4530,7 +4543,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -5132,21 +5145,12 @@
       "0049e360",
       "004fc7b0"
     ],
+    "cls":"CCrate",
     "conv":"__cdecl",
     "instructions":60,
-    "method":"FUN_0043a350",
-    "name":"core_crate.cpp_FUN_0043a350",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCrate",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"explode",
+    "name":"core_crate.cpp_CCrate_explode_FUN_0043a350",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -5862,14 +5866,15 @@
     "callers":[
       "0052f2a0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonLight",
+    "conv":"__cdecl",
     "instructions":1,
-    "method":"FUN_0044b050",
-    "name":"core_dlight.cpp_FUN_0044b050",
-    "receiver":false,
+    "method":"renderLightGlowSprites",
+    "name":"core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044b050",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dlight.cpp",
@@ -7629,14 +7634,49 @@
     "calls":[
       "00474020"
     ],
-    "conv":"unknown",
+    "cls":"CDemonRaytrace",
+    "conv":"__cdecl",
     "instructions":108,
-    "method":"FUN_00474550",
-    "name":"core_dtrace.cpp_FUN_00474550",
-    "receiver":false,
+    "method":"renderVoxelGrid",
+    "name":"core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_00474550",
+    "params":[
+      {
+        "name":"voxel_data",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grid_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"grid_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"grid_z",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dtrace.cpp",
@@ -9022,14 +9062,25 @@
     "callers":[
       "00522350"
     ],
-    "conv":"unknown",
+    "cls":"CEnemy",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_00488850",
-    "name":"core_enemy.cpp_FUN_00488850",
-    "receiver":false,
+    "method":"setVictim",
+    "name":"core_enemy.cpp_CEnemy_setVictim_FUN_00488850",
+    "params":[
+      {
+        "name":"victim",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/enemy.cpp",
@@ -11313,14 +11364,40 @@
   },
   {
     "addr":"004b7650",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":39,
-    "method":"FUN_004b7650",
-    "name":"core_game.cpp_FUN_004b7650",
+    "method":"dampControlAxis",
+    "name":"core_game.cpp_dampControlAxis_FUN_004b7650",
+    "params":[
+      {
+        "name":"axis_value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damp_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damp_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -12493,14 +12570,15 @@
       "0040c8f0",
       "0058a5f0"
     ],
-    "conv":"unknown",
+    "cls":"CHero",
+    "conv":"__cdecl",
     "instructions":159,
-    "method":"FUN_004cec50",
-    "name":"core_hero.cpp_FUN_004cec50",
-    "receiver":false,
+    "method":"tryInteract",
+    "name":"core_hero.cpp_CHero_tryInteract_FUN_004cec50",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/hero.cpp",
@@ -17183,21 +17261,12 @@
       "00591530",
       "00591de0"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":310,
-    "method":"FUN_0052fad0",
-    "name":"core_set.cpp_FUN_0052fad0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"renderGogglesView",
+    "name":"core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19929,14 +19998,24 @@
   },
   {
     "addr":"0055f5d0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_0055f5d0",
-    "name":"engine_special.cpp_FUN_0055f5d0",
+    "method":"selectTexture",
+    "name":"engine_special.cpp_selectTexture_FUN_0055f5d0",
+    "params":[
+      {
+        "name":"texture_info",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -19944,14 +20023,32 @@
   },
   {
     "addr":"0055f650",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":26,
-    "method":"FUN_0055f650",
-    "name":"engine_special.cpp_FUN_0055f650",
+    "method":"selectTextureFromPalette",
+    "name":"engine_special.cpp_selectTextureFromPalette_FUN_0055f650",
+    "params":[
+      {
+        "name":"tex",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLTextureBasic",
+          "ptr":1
+        }
+      },
+      {
+        "name":"palette_data",
+        "type":{
+          "kind":"struct",
+          "name":"SRGBColorPalette",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -19959,14 +20056,24 @@
   },
   {
     "addr":"0055f750",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_0055f750",
-    "name":"engine_special.cpp_FUN_0055f750",
+    "method":"setMipMapLevel",
+    "name":"engine_special.cpp_setMipMapLevel_FUN_0055f750",
+    "params":[
+      {
+        "name":"mipmap_level",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -20356,15 +20463,41 @@
       "005838f0",
       "005b9924"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":141,
-    "method":"FUN_0056bd50",
-    "name":"core_stranger.cpp_FUN_0056bd50",
+    "method":"calculateAimAnglesWithOffset",
+    "name":"core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0056bd50",
+    "params":[
+      {
+        "name":"direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset_pair",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/stranger.cpp",
     "variadic":false
@@ -20860,8 +20993,8 @@
     ],
     "conv":"unknown",
     "instructions":5,
-    "method":"FUN_005750d0",
-    "name":"engine_texture.cpp_FUN_005750d0",
+    "method":"renderTextureAtlas",
+    "name":"engine_texture.cpp_renderTextureAtlas_FUN_005750d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -22869,15 +23002,33 @@
   },
   {
     "addr":"00595750",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":67,
-    "method":"FUN_00595750",
-    "name":"core_zombie.cpp_FUN_00595750",
+    "method":"getObjectGrabPointLocal",
+    "name":"core_zombie.cpp_getObjectGrabPointLocal_FUN_00595750",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/zombie.cpp",
     "variadic":false

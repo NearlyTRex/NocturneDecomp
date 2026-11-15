@@ -43,15 +43,15 @@
 ;   undefined4 DAT_01c35e54
 ;
 ; Called Functions:
+;   engine_2d.c_disableTextWrap_FUN_00402830
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600
 ;   engine_2d.c_drawTextCenteredColor_FUN_004026d0
 ;   engine_2d.c_drawTextColor_FUN_00402440
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540
-;   engine_2d.c_FUN_00402800
-;   engine_2d.c_FUN_00402810
-;   engine_2d.c_FUN_00402830
-;   engine_2d.c_FUN_00402840
-;   engine_2d.c_FUN_00402850
+;   engine_2d.c_getTextColor_FUN_00402840
+;   engine_2d.c_getTextWrapEnabled_FUN_00402800
+;   engine_2d.c_setTextColor_FUN_00402850
+;   engine_2d.c_setTextWrapEnabled_FUN_00402810
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0
 ;   engine_font.cpp_CBitFont_drawTextRight_FUN_004a91a0
@@ -296,13 +296,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 00468191
         ;   Label: default
     PUSH EAX                            ; 00468195
-    CALL engine_2d.c_FUN_00402850       ; 00468196
-        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402850(int color)
+    CALL engine_2d.c_setTextColor_FUN_00402850 ; 00468196
+        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402850(int color)
     ADD ESP,0x4                         ; 0046819b
     MOV EDX,dword ptr [ESP + 0xc]       ; 0046819e
     PUSH EDX                            ; 004681a2
-    CALL engine_2d.c_FUN_00402810       ; 004681a3
-        ;   XREF to: 00402810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402810(int enabled)
+    CALL engine_2d.c_setTextWrapEnabled_FUN_00402810 ; 004681a3
+        ;   XREF to: 00402810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextWrapEnabled_FUN_00402810(int enabled)
     JMP 0x0046804c                      ; 004681a8
         ;   XREF to: 0046804c (UNCONDITIONAL_JUMP)  ; LAB_0046804c
     SUB EBX,0x5                         ; 004681ad
@@ -350,19 +350,19 @@ section .text
     ADD ESP,0x10                        ; 004681f6
     JMP 0x00468191                      ; 004681f9
         ;   XREF to: 00468191 (UNCONDITIONAL_JUMP)  ; default
-    CALL engine_2d.c_FUN_00402800       ; 004681fb
-        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00402800()
+    CALL engine_2d.c_getTextWrapEnabled_FUN_00402800 ; 004681fb
+        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getTextWrapEnabled_FUN_00402800()
         ;   Label: LAB_004681fb
     MOV dword ptr [ESP + 0xc],EAX       ; 00468200
-    CALL engine_2d.c_FUN_00402840       ; 00468204
-        ;   XREF to: 00402840 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00402840()
+    CALL engine_2d.c_getTextColor_FUN_00402840 ; 00468204
+        ;   XREF to: 00402840 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getTextColor_FUN_00402840()
     MOV dword ptr [ESP + 0x18],EAX      ; 00468209
-    CALL engine_2d.c_FUN_00402830       ; 0046820d
-        ;   XREF to: 00402830 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402830()
+    CALL engine_2d.c_disableTextWrap_FUN_00402830 ; 0046820d
+        ;   XREF to: 00402830 (UNCONDITIONAL_CALL)  ; void engine_2d.c_disableTextWrap_FUN_00402830()
     MOV EDX,dword ptr [0x01ba5c2c]      ; 00468212 | DAT_01ba5c2c
     PUSH EDX                            ; 00468218
-    CALL engine_2d.c_FUN_00402850       ; 00468219
-        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402850(int color)
+    CALL engine_2d.c_setTextColor_FUN_00402850 ; 00468219
+        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402850(int color)
     ADD ESP,0x4                         ; 0046821e
     CMP dword ptr [ESP + 0x4c],0x7      ; 00468221
     JA 0x00468191                       ; 00468226

@@ -25,7 +25,7 @@
 ;
 ; XREF[2]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00 at 0041b025
-;   core_box.cpp_FUN_0041b030 at 0041b189
+;   core_box.cpp_CBox_setupN_FUN_0041b030 at 0041b189
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7371

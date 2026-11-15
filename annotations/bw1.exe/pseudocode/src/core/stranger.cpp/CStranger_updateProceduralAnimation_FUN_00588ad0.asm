@@ -256,8 +256,8 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 00588b78
     PUSH EAX                            ; 00588b7f
     PUSH EBX                            ; 00588b80
-    CALL core_stranger.cpp_FUN_00589f10 ; 00588b81
-        ;   XREF to: 00589f10 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00589f10(CStranger * this_ptr, SPose * out_pose)
+    CALL core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10 ; 00588b81
+        ;   XREF to: 00589f10 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10(CStranger * this_ptr, SPose * out_pose)
     ADD ESP,0x8                         ; 00588b86
     XOR EAX,EAX                         ; 00588b89
     PUSH 0x567360                       ; 00588b8b
@@ -420,8 +420,8 @@ section .text
     PUSH 0x3f800000                     ; 00588dd9
     PUSH EAX                            ; 00588dde
     LEA ESI,[ESP + 0x1cf8]              ; 00588ddf
-    CALL core_xform.cpp_FUN_005b7ed0    ; 00588de6
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 00588de6
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00588deb
     LEA EAX,[ESP + 0x1c54]              ; 00588dee
     LEA EDI,[ESP + 0x1c54]              ; 00588df5

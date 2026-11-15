@@ -85,7 +85,7 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
-;   core_inv.cpp_FUN_004dd9b0
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120
 ;   ... and 46 more
 ;
@@ -463,8 +463,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b55b6
     ADD EAX,0x2437c                     ; 004b55bd
     PUSH EAX                            ; 004b55c2
-    CALL core_inv.cpp_FUN_004dd9b0      ; 004b55c3
-        ;   XREF to: 004dd9b0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd9b0()
+    CALL core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 ; 004b55c3
+        ;   XREF to: 004dd9b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004b55c8
     MOV ESI,dword ptr [EAX + 0x298]     ; 004b55ce
     ADD ESP,0x4                         ; 004b55d4
@@ -809,33 +809,33 @@ section .text
     JZ 0x004b5a56                       ; 004b59df
         ;   XREF to: 004b5a56 (CONDITIONAL_JUMP)  ; LAB_004b5a56
     PUSH 0x400                          ; 004b59e1
-    CALL engine_special.cpp_FUN_005601a0 ; 004b59e6
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b59e6
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b59eb
     PUSH EAX                            ; 004b59ee
     PUSH 0x200                          ; 004b59ef
-    CALL engine_special.cpp_FUN_005601a0 ; 004b59f4
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b59f4
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b59f9
     PUSH EAX                            ; 004b59fc
     PUSH 0x100                          ; 004b59fd
-    CALL engine_special.cpp_FUN_005601a0 ; 004b5a02
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b5a02
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a07
     PUSH EAX                            ; 004b5a0a
     PUSH 0x80                           ; 004b5a0b
-    CALL engine_special.cpp_FUN_005601a0 ; 004b5a10
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b5a10
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a15
     PUSH EAX                            ; 004b5a18
     PUSH 0x40                           ; 004b5a19
-    CALL engine_special.cpp_FUN_005601a0 ; 004b5a1b
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b5a1b
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a20
     PUSH EAX                            ; 004b5a23
     PUSH 0x20                           ; 004b5a24
-    CALL engine_special.cpp_FUN_005601a0 ; 004b5a26
-        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005601a0(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005601a0 ; 004b5a26
+        ;   XREF to: 005601a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005601a0(int texture_size)
     ADD ESP,0x4                         ; 004b5a2b
     PUSH EAX                            ; 004b5a2e
     PUSH 0x5d7603                       ; 004b5a2f | = "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d"
@@ -1129,8 +1129,8 @@ section .text
     MOV ESI,dword ptr [0x0061b5a8]      ; 004b5d3c | g_CDemonSetPtr
         ;   Label: LAB_004b5d3c
     PUSH ESI                            ; 004b5d42
-    CALL core_set.cpp_FUN_0052fad0      ; 004b5d43
-        ;   XREF to: 0052fad0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052fad0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 ; 004b5d43
+        ;   XREF to: 0052fad0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0(CDemonSet * this_ptr)
     JMP 0x004b54cb                      ; 004b5d48
         ;   XREF to: 004b54cb (UNCONDITIONAL_JUMP)  ; LAB_004b54cb
     PUSH 0x5d74ec                       ; 004b5d4d | = "SPOOKHOUSE"

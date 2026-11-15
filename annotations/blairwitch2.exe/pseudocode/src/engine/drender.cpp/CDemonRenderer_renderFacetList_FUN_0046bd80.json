@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 213,
+    "complexity_score": 214,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 119,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 363
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -44,16 +44,6 @@
   },
   "function_calls": [
     {
-      "addr": "00461f70",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_00461f70"
-    },
-    {
-      "addr": "004625f0",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_004625f0"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
       "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
@@ -62,6 +52,16 @@
       "addr": "00469d00",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0"
+    },
+    {
+      "addr": "00461f70",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70"
     },
     {
       "addr": "0051c820",
@@ -345,7 +345,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_0060b288",
       "severity": "mild",
       "text": "*(SMRGLPrimitiveQuad **)(&DAT_0060b288 + local_18) = primitive_array;",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_0060b288",
       "severity": "mild",
       "text": "(this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_0060b288,iVar3,",
@@ -361,7 +361,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
@@ -369,7 +369,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
@@ -377,7 +377,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 75,
+      "line": 76,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.",

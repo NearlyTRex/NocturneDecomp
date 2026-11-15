@@ -15,7 +15,7 @@
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c253
 ;   core_script.cpp_staticInit_FUN_005430c0 at 005430c5
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057db6c
-;   engine_pod.cpp_FUN_0053bfc0 at 0053c122
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0 at 0053c122
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 0049522c
 ;   ... and 1 more
 ;

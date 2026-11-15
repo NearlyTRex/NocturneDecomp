@@ -24,7 +24,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_005295e0(CScript *this
   core_script_cpp_CScript_freeParsedLines_FUN_00528da0(this_ptr);
   index = 0;
   do {
-    iVar2 = shape_edittool_cpp_FUN_00486af0(&this_ptr->script_text);
+    iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_00486af0(&this_ptr->script_text);
     if (iVar2 <= index) {
       return;
     }

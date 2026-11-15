@@ -284,12 +284,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b6f30(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_005fba1c + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(this_ptr->debug_info_string,0,DAT_005fba1c + -0x21);
         if (_DAT_02cf5fcc != 0) {
-          engine_special_cpp_FUN_005664c0(0x400);
-          engine_special_cpp_FUN_005664c0(0x200);
-          engine_special_cpp_FUN_005664c0(0x100);
-          engine_special_cpp_FUN_005664c0(0x80);
-          engine_special_cpp_FUN_005664c0(0x40);
-          engine_special_cpp_FUN_005664c0(0x20);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x400);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x200);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x100);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x80);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x40);
+          engine_special_cpp_getTextureInfo_FUN_005664c0(0x20);
           _sprintf(acStack_2d4,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,0x2c);
         }

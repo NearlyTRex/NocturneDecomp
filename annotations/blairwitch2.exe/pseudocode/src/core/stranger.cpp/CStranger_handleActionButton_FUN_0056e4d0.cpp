@@ -73,7 +73,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(CStrang
       (this_ptr->base).player_input.action_state.fire = 0;
       return;
     }
-    iVar2 = core_hero_cpp_FUN_004cec50(this_ptr);
+    iVar2 = core_hero_cpp_CHero_tryInteract_FUN_004cec50(&this_ptr->base);
     if (iVar2 == 0) {
       iVar2 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(&this_ptr->base);
       if (iVar2 != 0) {

@@ -22,7 +22,9 @@
 #include "types/classes/CWavOutDevice.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
+#include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
@@ -236,7 +238,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcar
 void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void);
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_005594c0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
-void core_sound_cpp_FUN_00559ab0(void);
+void core_sound_cpp_resetTrainSounds_FUN_00559ab0(void);
 uint core_sound_cpp_processTrainSounds_FUN_00559b50(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055a0e0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_0055a100(CSound *this_ptr);
@@ -276,7 +278,7 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005
 void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0055d523(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0055d5be(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
-void __edi_esi_ebx engine_special_cpp_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0(void);
@@ -287,12 +289,12 @@ int __cdecl engine_special_cpp_lockFrame_FUN_0055f500(void);
 int __cdecl engine_special_cpp_unlockFrame_FUN_0055f550(int clear_lock_flag);
 int __cdecl engine_special_cpp_beginScene_FUN_0055f590(void);
 int __cdecl engine_special_cpp_endScene_FUN_0055f5b0(void);
-undefined4 engine_special_cpp_FUN_0055f5d0(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_0055f610(void);
-undefined4 engine_special_cpp_FUN_0055f650(void);
-undefined4 engine_special_cpp_FUN_0055f690(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_FUN_0055f710(void);
-undefined4 engine_special_cpp_FUN_0055f750(void);
+int __cdecl engine_special_cpp_selectTexture_FUN_0055f5d0(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_updateTexture_FUN_0055f610(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_selectTextureFromPalette_FUN_0055f650(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_0055f690(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureBGRA_FUN_0055f710(SMRGLTextureBasic *texture_info,int flags);
+int __cdecl engine_special_cpp_setMipMapLevel_FUN_0055f750(int mipmap_level);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_0055f890(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_0055f8c0(void);

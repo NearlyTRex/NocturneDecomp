@@ -31,7 +31,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
-;   core_crate.cpp_FUN_004461c0
+;   core_crate.cpp_CCrate_explode_FUN_004461c0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dmodel.cpp_loadModel_FUN_00462420
@@ -656,8 +656,8 @@ section .text
         ;   XREF to: 004d1820 (UNCONDITIONAL_JUMP)  ; LAB_004d1820
     PUSH ESI                            ; 004d1817
         ;   Label: LAB_004d1817
-    CALL core_crate.cpp_FUN_004461c0    ; 004d1818
-        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_004461c0(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_004461c0 ; 004d1818
+        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_004461c0(CCrate * this_ptr)
     ADD ESP,0x4                         ; 004d181d
     MOV EDI,dword ptr [ESP + 0x1b0]     ; 004d1820
         ;   Label: LAB_004d1820

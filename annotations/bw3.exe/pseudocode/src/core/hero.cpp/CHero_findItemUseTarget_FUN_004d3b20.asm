@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d3c90 at 004d3de6
+;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90 at 004d3de6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4dcd

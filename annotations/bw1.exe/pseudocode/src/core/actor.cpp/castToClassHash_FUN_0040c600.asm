@@ -16,8 +16,8 @@
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 0041365a
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 00426466
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427b40 at 00427b6b
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 004331ea
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432502
-;   core_charactr.cpp_FUN_00432f10 at 004331ea
 ;   ... and 126 more
 ;
 ; Called Functions:

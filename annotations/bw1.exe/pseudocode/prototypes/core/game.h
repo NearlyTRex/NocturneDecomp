@@ -117,13 +117,13 @@ void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 // Address: 004d0da0
 void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
-// Original: core_game.cpp_FUN_004d0dd0
+// Original: core_game.cpp_rampControlAxis_FUN_004d0dd0
 // Address: 004d0dd0
-void FUN_004d0dd0(void);
+void __cdecl rampControlAxis(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
 
-// Original: core_game.cpp_FUN_004d0e70
+// Original: core_game.cpp_dampControlAxis_FUN_004d0e70
 // Address: 004d0e70
-void FUN_004d0e70(void);
+void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0
 // Address: 004d0ee0

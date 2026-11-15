@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01e65908
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042bff0
+;   core_charactr.cpp_getGameDeltaTime_FUN_0042bff0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
 ;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
@@ -62,8 +62,8 @@ section .text
         ;   Label: LAB_0052171e
     PUSH EAX                            ; 00521723 | g_CGameInstance
     XOR ESI,ESI                         ; 00521724
-    CALL core_charactr.cpp_FUN_0042bff0 ; 00521726
-        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042bff0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042bff0 ; 00521726
+        ;   XREF to: 0042bff0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042bff0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x8],EAX       ; 0052172b
     XOR EDX,EDX                         ; 0052172f
     FLD float ptr [ESP + 0x8]           ; 00521731

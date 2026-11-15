@@ -35,7 +35,7 @@
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
-;   core_xform.cpp_FUN_005b7ed0
+;   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
 ;
 ; *****************************************************************************
 
@@ -177,8 +177,8 @@ section .text
         ;   Label: LAB_00447432
     PUSH EDI                            ; 00447435
     LEA ESI,[ESP + 0x4]                 ; 00447436
-    CALL core_xform.cpp_FUN_005b7ed0    ; 0044743a
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 0044743a
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0044743f
     MOV EDI,dword ptr [ESP + 0x2c]      ; 00447442
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00447446

@@ -18,9 +18,10 @@ void core_djien_cpp_FUN_00460cb0(CCharacter *param_1)
   UOrientationVector *pUVar6;
   uint *puVar7;
   uint *puVar8;
-  byte bVar9;
+  uint *puVar9;
+  byte bVar10;
   UActorVTable aUStackY_1824 [1520];
-  UActorVTable local_48;
+  CQuaternion4f local_48;
   CVector3f local_38;
   UOrientationVector *local_2c;
   CDeformableModel *local_28;
@@ -30,7 +31,7 @@ void core_djien_cpp_FUN_00460cb0(CCharacter *param_1)
   int local_18;
   float local_14;
   
-  bVar9 = 0;
+  bVar10 = 0;
   param_1[1].model.rest_bone_scales[0x60] = 1.4013e-45;
   param_1[1].model.rest_bone_scales[99] = 0.0;
   local_28 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(&param_1->model);
@@ -70,17 +71,15 @@ void core_djien_cpp_FUN_00460cb0(CCharacter *param_1)
         (pUVar6->vec).y = (body_part->base).orient.vec.y;
         (pUVar6->vec).z = (body_part->base).orient.vec.z;
       }
-      core_xform_cpp_FUN_005b7ed0(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&(body_part->base).orient.vec,&local_48);
       pCVar5 = (CCharacter *)((local_1c->base).orient_matrix.m + 1);
-      puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc328);
-      local_1c[1].base.vtable = local_48;
-      puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
-      *puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);
-      *puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      puVar8[(uint)bVar9 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-            ((uint)bVar9 * -2 + 1) * 4);
+      puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 0xc328);
+      local_1c[1].base.vtable = (UActorVTable)local_48.w;
+      puVar9 = puVar8 + (uint)bVar10 * -2 + 1;
+      puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar7;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       pUVar6 = pUVar6 + 6;
       local_18 = local_18 + 1;
       local_1c = pCVar5;

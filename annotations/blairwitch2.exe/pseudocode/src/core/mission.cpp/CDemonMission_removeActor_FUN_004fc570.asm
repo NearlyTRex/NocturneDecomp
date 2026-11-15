@@ -16,7 +16,7 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcbc6
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408730
+;   core_actor.cpp_deleteActor_FUN_00408730
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     JZ 0x004fc579                       ; 004fc58e
         ;   XREF to: 004fc579 (CONDITIONAL_JUMP)  ; LAB_004fc579
     PUSH EBX                            ; 004fc590
-    CALL core_actor.cpp_FUN_00408730    ; 004fc591
-        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408730()
+    CALL core_actor.cpp_deleteActor_FUN_00408730 ; 004fc591
+        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408730(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004fc596
     POP EBX                             ; 004fc599
     RET                                 ; 004fc59a

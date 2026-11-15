@@ -33,12 +33,12 @@
 ;
 ; Called Functions:
 ;   core_asgaya.cpp_FUN_005a1ea0
-;   core_dpart.cpp_FUN_00466d50
-;   core_dpart.cpp_FUN_004673d0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_clipper.c_clipAndRasterize_FUN_0043a840
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
+;   engine_drender.cpp_renderTriangleSimple_FUN_004673d0
+;   engine_drender.cpp_renderTriangleTextured_FUN_00466d50
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EBX                            ; 0046b194
         ;   Label: LAB_0046b194
     PUSH ESI                            ; 0046b195
-    CALL core_dpart.cpp_FUN_004673d0    ; 0046b196
-        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_004673d0 ; 0046b196
+        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046b19b
         ;   Label: LAB_0046b19b
     POP EBP                             ; 0046b19e
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 0046b1c8
         ;   Label: LAB_0046b1c8
     PUSH ESI                            ; 0046b1c9
-    CALL core_dpart.cpp_FUN_00466d50    ; 0046b1ca
-        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00466d50(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00466d50 ; 0046b1ca
+        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00466d50(int * vertex_indices, int vertex_count)
     JMP 0x0046b19b                      ; 0046b1cf
         ;   XREF to: 0046b19b (UNCONDITIONAL_JUMP)  ; LAB_0046b19b
     CMP dword ptr [EDI + 0x4],0x0       ; 0046b1d1

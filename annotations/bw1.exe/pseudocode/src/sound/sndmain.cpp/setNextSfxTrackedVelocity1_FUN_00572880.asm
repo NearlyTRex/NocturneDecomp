@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   velocity_source_ptr
 ;
 ; XREF[4]:
-;   core_dracbrid.cpp_FUN_0047d920 at 0047dd99
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dd99
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d3bc
 ;   core_sound.cpp_processTrainSounds_FUN_0057c580 at 0057c9c2
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0 at 005a89de

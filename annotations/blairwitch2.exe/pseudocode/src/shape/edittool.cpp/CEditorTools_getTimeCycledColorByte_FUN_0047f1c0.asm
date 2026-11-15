@@ -7,7 +7,7 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_cloth.cpp_FUN_005b0ce0 at 005b0ec1
+;   core_cloth.cpp_CCloth_renderBone_FUN_005b0ce0 at 005b0ec1
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f220
 ;
 ; Referenced Globals:

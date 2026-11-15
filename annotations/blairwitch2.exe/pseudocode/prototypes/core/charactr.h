@@ -353,9 +353,9 @@ int __cdecl CCharacter::updateWanderToWaypoint(CCharacter *this_ptr,float delta_
 // Address: 0042a0c0
 int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 
-// Original: core_charactr.cpp_FUN_0042a2d0
+// Original: core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a2d0
 // Address: 0042a2d0
-void FUN_0042a2d0(int param_1,float param_2,int param_3);
+void __cdecl CCharacter::blendLayerActionMotion(CCharacter *this_ptr,float blend_weight,int blend_mode);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 // Address: 0042a330
@@ -429,9 +429,9 @@ void FUN_0042bef0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 // Address: 0042bf20
 void __cdecl setActorXPos(CDemonActor *actor,float x);
 
-// Original: core_charactr.cpp_FUN_0042bff0
+// Original: core_charactr.cpp_getGameDeltaTime_FUN_0042bff0
 // Address: 0042bff0
-undefined4 FUN_0042bff0(int param_1);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042c000
 // Address: 0042c000

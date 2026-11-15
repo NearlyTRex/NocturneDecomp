@@ -28,7 +28,7 @@
 ;   ... and 81 more
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004b8e60
+;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_io.c__chmod_FUN_005a4bd0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
@@ -235,8 +235,8 @@ section .text
     ADD ESP,0xc                         ; 004d90af
     MOV EDI,dword ptr [0x005fe9dc]      ; 004d90b2 | g_CGamePtr
     PUSH EDI                            ; 004d90b8
-    CALL core_game.cpp_FUN_004b8e60     ; 004d90b9
-        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004b8e60()
+    CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60 ; 004d90b9
+        ;   XREF to: 004b8e60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60(CGame * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 004d90be | g_CGamePtr
     ADD ESP,0x4                         ; 004d90c3
     ADD EAX,0x28                        ; 004d90c6

@@ -23,7 +23,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408730
+;   core_actor.cpp_deleteActor_FUN_00408730
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
@@ -126,8 +126,8 @@ section .text
     JZ 0x004db957                       ; 004db9b5
         ;   XREF to: 004db957 (CONDITIONAL_JUMP)  ; LAB_004db957
     PUSH EBP                            ; 004db9b7
-    CALL core_actor.cpp_FUN_00408730    ; 004db9b8
-        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408730()
+    CALL core_actor.cpp_deleteActor_FUN_00408730 ; 004db9b8
+        ;   XREF to: 00408730 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408730(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004db9bd
     POP EBP                             ; 004db9c0
     POP EDI                             ; 004db9c1

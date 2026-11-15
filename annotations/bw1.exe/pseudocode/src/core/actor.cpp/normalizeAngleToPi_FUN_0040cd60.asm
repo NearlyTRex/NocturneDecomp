@@ -18,9 +18,9 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_00416620 at 004166de
 ;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 0042219a
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426870 at 00426c24
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 00433ab8
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 at 00431ea5
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432412
-;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_0042d540 at 0042d58d
 ;   ... and 55 more
 ;
 ; Referenced Globals:

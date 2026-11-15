@@ -12,7 +12,7 @@
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427260 at 00427330
-;   core_crate.cpp_FUN_0043a350 at 0043a3e4
+;   core_crate.cpp_CCrate_explode_FUN_0043a350 at 0043a3e4
 ;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048a5d4
 ;   core_fire.cpp_CToss_process_FUN_004993f0 at 0049945f
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004a0920 at 004a09d5

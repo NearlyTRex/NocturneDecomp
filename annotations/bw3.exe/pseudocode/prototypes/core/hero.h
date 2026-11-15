@@ -69,9 +69,9 @@ int __cdecl CHero::getGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type
 // Address: 004d2c20
 void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d2cd0
+// Original: core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0
 // Address: 004d2cd0
-void FUN_004d2cd0(int param_1);
+void __cdecl CHero::createDefaultWeapon(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryInteract_FUN_004d2cf0
 // Address: 004d2cf0
@@ -121,9 +121,9 @@ void __cdecl CHero::stopNearbyInteraction(CHero *this_ptr);
 // Address: 004d3b20
 int __cdecl CHero::findItemUseTarget(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d3c90
+// Original: core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90
 // Address: 004d3c90
-int FUN_004d3c90(CHero *param_1);
+int __cdecl CHero::tryUseSelectedItem(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20
 // Address: 004d3e20
@@ -149,9 +149,9 @@ void __cdecl CHero::removeMatchingKeys(CHero *this_ptr,uint key_mask);
 // Address: 004d4200
 void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
-// Original: core_hero.cpp_FUN_004d4230
+// Original: core_hero.cpp_CHero_closestEnemy_FUN_004d4230
 // Address: 004d4230
-int FUN_004d4230(int param_1,float *param_2);
+CEnemy * __cdecl CHero::closestEnemy(CHero *this_ptr,float *out_distance);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004d43e0
 // Address: 004d43e0

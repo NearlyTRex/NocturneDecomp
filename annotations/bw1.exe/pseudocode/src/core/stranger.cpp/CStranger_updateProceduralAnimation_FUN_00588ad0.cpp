@@ -73,7 +73,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
   CQuaternion4f CStack_3dc;
   float local_3c8;
   float afStack_3c4 [3];
-  CQuaternion4f local_3b8;
+  byte local_3b8 [16];
   float local_3a8 [3];
   CQuaternion4f CStack_39c;
   CQuaternion4f CStack_38c;
@@ -149,7 +149,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
   float local_b0;
   float local_ac;
   float local_a8;
-  float afStack_a0 [4];
+  CVector3f CStack_a0;
   float local_90;
   float afStack_8c [4];
   float local_7c;
@@ -186,7 +186,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(pCVar1);
   if ((0.0 < (float)local_2020) && (-1 < this_ptr->turn_motion_index)) {
-    core_stranger_cpp_FUN_00589f10(this_ptr,(SPose *)local_200c);
+    core_stranger_cpp_CStranger_extractTurnPose_FUN_00589f10(this_ptr,(SPose *)local_200c);
     local_200c._0_4_ = 0.0;
     local_200c._8_4_ = 0.0;
     core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_00568830
@@ -277,7 +277,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
     local_158[1] = local_c4 - local_1d8[0];
     local_a8 = fVar12 - local_1e0;
     local_d4[(uint)bVar9 * -2 + 0xc] = local_158[(uint)bVar9 * -2];
-    local_d4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
+    *(float *)((int)&CStack_a0 + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4) =
          local_158[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
     pCVar1 = local_1c;
@@ -312,13 +312,14 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
               (pCVar1,(CQuaternion4f *)local_4f8,(float)local_202c,(int)_DAT_02c83610,
                core_skeleton_cpp_blendWeightCallback_FUN_00567360);
-    core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(local_d4[0],&local_3b8);
-    local_3c8 = local_3b8.w;
-    afStack_3c4[(uint)bVar9 * -2] = local_3a8[(uint)bVar9 * -2 + -3];
+    core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(local_d4[0],(CQuaternion4f *)local_3b8);
+    local_3c8 = (float)local_3b8._0_4_;
+    afStack_3c4[(uint)bVar9 * -2] = *(float *)(local_3b8 + (uint)bVar9 * -8 + 4);
     afStack_3c4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         local_3a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -2];
+         *(float *)(local_3b8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     (afStack_3c4 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =
-         (local_3a8 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + -2)[(uint)bVar9 * -2 + 1];
+         *(float *)((int)(local_3b8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) +
+                   ((uint)bVar9 * -2 + 1) * 4);
     local_2028 = &local_3c8;
     rotation_quat = local_18;
     local_2034 = (float *)local_202c;
@@ -770,17 +771,17 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00588ad0(
             (this_ptr_02,rotation_quat,(float)local_2028,(int)local_2034,blend_callback);
 LAB_00588d7e:
   if (g_CGamePtr->goggles_active != 0) {
-    afStack_a0[1] = 0.0;
-    afStack_a0[2] = 0.0;
-    afStack_a0[0] = 0.0;
+    CStack_a0.y = 0.0;
+    CStack_a0.z = 0.0;
+    CStack_a0.x = 0.0;
     if ((this_ptr->guns_drawn != 0) && (this_ptr->weapon != (CWeapon *)0x0)) {
-      afStack_a0[0] = (this_ptr->right_arm_aim).target_pitch;
+      CStack_a0.x = (this_ptr->right_arm_aim).target_pitch;
     }
     blend_callback_00 = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar12 = 1.0;
     iVar13 = _DAT_02c83600;
-    core_xform_cpp_FUN_005b7ed0(local_d4 + 0xd);
-    CStack_44c.w = local_3b8.z;
+    core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(&CStack_a0,(CQuaternion4f *)(local_3b8 + 0xc));
+    CStack_44c.w = (float)local_3b8._12_4_;
     pfVar5 = (float *)((int)&CStack_44c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     *(float *)((int)&CStack_44c + (uint)bVar9 * -8 + 4) = local_3a8[(uint)bVar9 * -2];
     *pfVar5 = local_3a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];

@@ -7,13 +7,13 @@
 ; ulong            Stack[0x4]:4   size
 ;
 ; XREF[58]:
-;   cockpit_ckptutil.c_FUN_0042f330 at 0042f432
-;   cockpit_ckptutil.c_FUN_0042f4f0 at 0042f51f
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0 at 0042e034
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330 at 0042f432
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520 at 0042c5d5
+;   cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0 at 0042f51f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 005170ae
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0 at 005178d3
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60 at 00517a9e
-;   cockpit_pkbmpset.cpp_FUN_005177e0 at 005178d3
 ;   core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050 at 005a8079
 ;   core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50 at 005a7fc3
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570 at 0043b676

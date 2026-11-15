@@ -213,8 +213,8 @@ section .text
     PUSH EAX                            ; 00419d44
     LEA ESI,[EBP + -0x3e]               ; 00419d45
     LEA EDI,[EBP + 0xffffff0e]          ; 00419d48
-    CALL core_xform.cpp_FUN_00585de0    ; 00419d4e
-        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00585de0()
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_00585de0 ; 00419d4e
+        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_00585de0()
     LEA ESI,[EBP + -0x3e]               ; 00419d53
     MOVSD ES:EDI,ESI                    ; 00419d56
     MOVSD ES:EDI,ESI                    ; 00419d57

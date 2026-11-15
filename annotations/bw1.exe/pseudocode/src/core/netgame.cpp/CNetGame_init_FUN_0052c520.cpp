@@ -19,7 +19,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0052c520(CNetGame *this_ptr)
   _DAT_01d51da0 = 1;
   _DAT_01d51d9c = wincore_winrun_cpp_getTime_FUN_005b2420();
   _DAT_01d51d9c = _DAT_01d51d9c / 0x12;
-  support_trisock_cpp_FUN_0059eeb0();
+  support_trisock_cpp_startupWinsock_FUN_0059eeb0();
   pcVar2 = getenv("USERNAME");
   if (pcVar2 == (char *)0x0) {
     pcVar2 = getenv("COMPUTERNAME");

@@ -28,7 +28,7 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_00418940
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
-;   core_xform.cpp_FUN_005b7ed0
+;   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
 ;
 ; *****************************************************************************
 
@@ -151,8 +151,8 @@ section .text
         ;   Label: LAB_00460e09
     PUSH ESI                            ; 00460e0c
     LEA ESI,[ESP + 0x4]                 ; 00460e0d
-    CALL core_xform.cpp_FUN_005b7ed0    ; 00460e11
-        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7ed0()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005b7ed0 ; 00460e11
+        ;   XREF to: 005b7ed0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00460e16
     MOV EDI,dword ptr [ESP + 0x2c]      ; 00460e19
     MOV ESI,ESP                         ; 00460e1d

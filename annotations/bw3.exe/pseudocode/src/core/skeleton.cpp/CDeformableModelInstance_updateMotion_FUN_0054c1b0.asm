@@ -92,7 +92,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_prye.cpp_FUN_0051e280 at 0051e2be
+;   core_prye.cpp_CPrye_extractTurnPose_FUN_0051e280 at 0051e2be
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130 at 0054c13f
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180 at 0054c191
 ;

@@ -16,8 +16,8 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e16fa
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004f9950 at 004f9972
 ;   core_moon.cpp_CMoon_render_FUN_00502510 at 005025ab
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fe12
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0 at 00534304
-;   core_set.cpp_FUN_0052fad0 at 0052fe12
 ;   ... and 1 more
 ;
 ; Referenced Globals:

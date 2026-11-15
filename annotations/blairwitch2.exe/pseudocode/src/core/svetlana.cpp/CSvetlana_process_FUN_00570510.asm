@@ -34,8 +34,8 @@
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_cloth.cpp_CCloth_process_FUN_005afdf0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
 ;   ... and 13 more
 ;
 ; *****************************************************************************
@@ -504,8 +504,8 @@ section .text
     JZ 0x00570a09                       ; 00570a74
         ;   XREF to: 00570a09 (CONDITIONAL_JUMP)  ; LAB_00570a09
     PUSH EBX                            ; 00570a76
-    CALL core_hero.cpp_FUN_004cec50     ; 00570a77
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 00570a77
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     XOR EDI,EDI                         ; 00570a7c
     ADD ESP,0x4                         ; 00570a7e
     TEST EAX,EAX                        ; 00570a81

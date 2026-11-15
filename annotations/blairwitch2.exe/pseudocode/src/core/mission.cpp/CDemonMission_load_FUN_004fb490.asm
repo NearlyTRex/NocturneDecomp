@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   load_flags
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004bc840 at 004bca22
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840 at 004bca22
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcc57
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d568
 ;

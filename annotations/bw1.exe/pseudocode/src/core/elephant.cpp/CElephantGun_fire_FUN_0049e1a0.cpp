@@ -209,7 +209,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_0049e1a0(CElephantGun *this_
               }
               else {
                 pCVar5 = (CDemonSet *)0x49e963;
-                core_crate_cpp_FUN_00449600(pCStack_38);
+                core_crate_cpp_CCrate_explode_FUN_00449600(pCStack_38);
               }
             }
             else {

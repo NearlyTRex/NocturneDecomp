@@ -19,8 +19,8 @@
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 at 004d2c74
 ;   core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0 at 005260db
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e775
-;   core_prye.cpp_CPrye_updateTurnBlending_FUN_0051e380 at 0051e3b0
-;   core_prye.cpp_FUN_00518cd0 at 005190ba
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 005190ba
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051b8ad
 ;   ... and 5 more
 ;
 ; *****************************************************************************

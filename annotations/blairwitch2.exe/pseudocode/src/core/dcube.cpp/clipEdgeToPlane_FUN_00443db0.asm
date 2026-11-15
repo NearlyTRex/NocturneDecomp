@@ -15,9 +15,9 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[3]:
-;   core_dcube.cpp_FUN_00445a30 at 00446041
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00444220 at 004442fa
 ;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00444650 at 00444732
+;   core_dcube.cpp_clipTriangleToAABB_FUN_00445a30 at 00446041
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_005ce7be

@@ -40,18 +40,18 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
   CVector3f CStack_3c;
   CVector3f CStack_30;
   float fStack_1c;
-  uint uStack_18;
+  int iStack_18;
   int iStack_14;
   
   bVar13 = 0;
-  core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(&this_ptr->base,delta_time);
   pCVar11 = &(this_ptr->base).model;
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
-  uStack_18 = 1;
+  iStack_18 = 1;
   fStack_1c = delta_time;
   while (0.0 < fStack_1c) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar11->base,&fStack_1c);
@@ -77,7 +77,7 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
     *(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
          *(uint *)((int)&CStack_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,&CStack_54,blood_type);
-    uStack_18 = 1;
+    iStack_18 = 1;
     this_ptr->pool_me = 1;
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
@@ -217,7 +217,8 @@ LAB_005996b8:
        (this_ptr->base).model.accumulated_root_motion.y;
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(this_ptr->base).model);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,uStack_18);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            (&this_ptr->base,delta_time,iStack_18);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(&this_ptr->base,delta_time);
   return;
 }

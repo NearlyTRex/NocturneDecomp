@@ -28,7 +28,7 @@
 ;   core_hero.cpp_CHero_setup_FUN_004d26b0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
-;   core_prye.cpp_FUN_0051c1c0
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -317,8 +317,8 @@ section .text
     MOV dword ptr [EBX + 0x8],EAX       ; 00518999
     PUSH EBP                            ; 0051899c
         ;   Label: LAB_0051899c
-    CALL core_prye.cpp_FUN_0051c1c0     ; 0051899d
-        ;   XREF to: 0051c1c0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051c1c0()
+    CALL core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 ; 0051899d
+        ;   XREF to: 0051c1c0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye * this_ptr)
     MOV dword ptr [EBP + 0x20cc8],0x0   ; 005189a2
     MOV dword ptr [EBP + 0x20cdc],0x0   ; 005189ac
     MOV dword ptr [EBP + 0x20cf0],0x0   ; 005189b6
