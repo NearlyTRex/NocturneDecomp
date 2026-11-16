@@ -1,30 +1,27 @@
 // Name: core_boneguy.cpp_rgbToHsv_FUN_00417f50
 // Address: 00417f50
 // Address Range: [[00417f50, 004180f6]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_rgbToHsv_FUN_00417f50(void)
+// Convention: __stack_esi
+// Signature: CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_00417f50(CColor3f *in_rgb,CColor3f *out_hsv)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_boneguy_cpp_rgbToHsv_FUN_00417f50(void)
+CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_00417f50(CColor3f *in_rgb,CColor3f *out_hsv)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *unaff_ESI;
-  float *in_stack_00000004;
   float fStack_48;
   float fStack_44;
   float fStack_40;
   float fStack_20;
   
-  fVar1 = *in_stack_00000004;
-  fVar2 = in_stack_00000004[1];
-  fVar3 = in_stack_00000004[2];
+  fVar1 = in_rgb->r;
+  fVar2 = in_rgb->g;
+  fVar3 = in_rgb->b;
   fStack_20 = fVar1;
   if (fVar2 < fVar1) {
     fStack_20 = fVar2;
@@ -65,8 +62,8 @@ void core_boneguy_cpp_rgbToHsv_FUN_00417f50(void)
       fStack_44 = fStack_44 + _DAT_005cc00a;
     }
   }
-  *unaff_ESI = fStack_44;
-  unaff_ESI[1] = fStack_48;
-  unaff_ESI[2] = fStack_40;
-  return;
+  out_hsv->r = fStack_44;
+  out_hsv->g = fStack_48;
+  out_hsv->b = fStack_40;
+  return out_hsv;
 }

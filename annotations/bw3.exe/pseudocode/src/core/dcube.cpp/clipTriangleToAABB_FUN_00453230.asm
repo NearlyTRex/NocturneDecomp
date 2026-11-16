@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dcube_cpp_clipTriangleToAABB_FUN_00453230(void)
+; uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max)
 ;
+; Parameters:
+; CVector3f * *    Stack[0x4]:4   triangle_vertices
+; CVector3f *      Stack[0x8]:4   aabb_min
+; CVector3f *      Stack[0xc]:4   aabb_max
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_015485fc

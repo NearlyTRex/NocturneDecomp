@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5)
+; void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag)
 ;
 ; Parameters:
 ; CLeaf *          Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
-; CVector3f *      Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; float            Stack[0x14]:4   param_5
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; CKeyFramedModel * Stack[0x10]:4   model
+; float            Stack[0x14]:4   drag
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930 at 004a2974

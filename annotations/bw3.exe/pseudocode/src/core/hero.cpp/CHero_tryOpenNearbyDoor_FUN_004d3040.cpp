@@ -16,9 +16,10 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero *this_ptr,i
   byte bVar2;
   float afStackY_1038 [1015];
   CVector3f local_50;
-  float local_44;
-  float local_40 [5];
-  uint local_2c;
+  CVector3f local_44;
+  float local_38;
+  float local_34 [2];
+  CVector3f local_2c;
   float local_20;
   float local_1c;
   int local_18;
@@ -40,19 +41,20 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero *this_ptr,i
          (float)_DAT_005c4d15 && (this_ptr_00->door_state == DOOR_STATE_CLOSED)))) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                 ((CDemonActor *)this_ptr,&this_ptr_00->open_position,&local_50);
-      local_44 = local_50.x;
-      local_40[(uint)bVar2 * -2] = *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4);
-      local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-           *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-      if (0.0 < local_40[1]) {
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_44);
-        local_40[2] = (float)local_2c;
-        local_40[(uint)bVar2 * -2 + 3] = local_40[(uint)bVar2 * -2 + 6];
-        local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-             local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
-        if ((ABS(local_40[3]) <= _DAT_005c4d1d) && (ABS(local_40[0]) <= (float)_DAT_005c4d25)) {
-          local_40[0] = 0.0;
-          local_1c = SQRT(local_40[1] * local_40[1] + local_44 * local_44);
+      local_44.x = local_50.x;
+      *(uint *)((int)&local_44 + (uint)bVar2 * -8 + 4) =
+           *(uint *)((int)&local_50 + (uint)bVar2 * -8 + 4);
+      *(uint *)((int)&local_44 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           *(uint *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+      if (0.0 < local_44.z) {
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_44,&local_2c);
+        local_38 = local_2c.x;
+        local_34[(uint)bVar2 * -2] = *(float *)((int)&local_2c + (uint)bVar2 * -8 + 4);
+        local_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+             *(float *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+        if ((ABS(local_34[0]) <= _DAT_005c4d1d) && (ABS(local_44.y) <= (float)_DAT_005c4d25)) {
+          local_44.y = 0.0;
+          local_1c = SQRT(local_44.z * local_44.z + local_44.x * local_44.x);
           if (local_1c < local_20) {
             iVar1 = core_door_cpp_CDoor_getMoveType_FUN_00465380
                               (this_ptr_00,(CDemonActor *)this_ptr,ignore_lock);

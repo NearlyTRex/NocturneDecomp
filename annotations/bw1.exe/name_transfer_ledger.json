@@ -975,6 +975,60 @@
    "verdict": "CONFIRMED",
    "status": "reject",
    "note": "REJECT the prototype only: the name is already in place. BW returns an error code and writes through its own stream object, so nocedit's void (SBitBuffer *, _ostream *) is wrong here; the prototype is set by hand with void * for the stream."
+  },
+  {
+   "a": "0043e530",
+   "b": "00442490",
+   "name": "support_codec.cpp_readBitsFromStream_FUN_0043e530",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW drops bytes_remaining and reads through its own stream object (3 stack args, int return), so nocedit's (SBitBuffer *, int, _istream *, int *) is wrong here; the prototype is set by hand with void * for the stream."
+  },
+  {
+   "a": "0043e6c0",
+   "b": "00442600",
+   "name": "support_codec.cpp_writeBitsToStream_FUN_0043e6c0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW returns an error code and writes through its own stream object, so nocedit's void (..., _ostream *) is wrong here; the prototype is set by hand with void * for the stream."
+  },
+  {
+   "a": "004aa6c0",
+   "b": "004a1630",
+   "name": "core_event.cpp_extractParenArg_FUN_004aa6c0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW adds a fourth argument, a flag that makes the opening parenthesis required (callers pop 16, nocedit 12); set by hand."
+  },
+  {
+   "a": "0042cdb0",
+   "b": "004325b0",
+   "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW adds a CMatrix3x4f * carry offset passed on to computePickup (callers pop 20, nocedit 16); set by hand."
+  },
+  {
+   "a": "004e2890",
+   "b": "004d7730",
+   "name": "core_game.cpp_CGame_displayBitmap_FUN_004e2890",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW adds a float display time stored in bitmap_display_time (callers pop 20, nocedit 16); set by hand."
+  },
+  {
+   "a": "0042ce80",
+   "b": "00432690",
+   "name": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80",
+   "confidence": 1.0,
+   "verdict": "CONFIRMED",
+   "status": "reject",
+   "note": "REJECT the prototype only: BW adds a CMatrix3x4f * carry offset copied into the hand's carry_offset; set by hand."
   }
  ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_resetChatCounts_FUN_0050b060(void)
+; void __cdecl core_netgame_cpp_resetChatCounts_FUN_0050b060(void)
 ;
 ;
 ; Referenced Globals:

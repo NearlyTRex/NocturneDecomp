@@ -55,7 +55,7 @@ uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *c
 
 // Original: core_dcube.cpp_clipTriangleToAABB_FUN_00453230
 // Address: 00453230
-undefined4 clipTriangleToAABB(void);
+uint __cdecl clipTriangleToAABB(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max);
 
 // Original: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00453c40
 // Address: 00453c40

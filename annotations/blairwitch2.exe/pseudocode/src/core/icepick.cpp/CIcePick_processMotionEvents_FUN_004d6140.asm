@@ -116,7 +116,7 @@ section .text
     PUSH EBX                            ; 004d61f3
     MOV dword ptr [EBX + 0x25664],0x0   ; 004d61f4
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 004d61fe
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 004d6203
     JMP 0x004d6190                      ; 004d6206
         ;   XREF to: 004d6190 (UNCONDITIONAL_JUMP)  ; LAB_004d6190

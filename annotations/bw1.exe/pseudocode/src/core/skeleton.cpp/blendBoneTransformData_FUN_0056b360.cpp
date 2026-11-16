@@ -9,13 +9,14 @@
 void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0056b360(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 
 {
-  CQuaternion4f *pCVar1;
-  int iVar2;
+  CQuaternion4f *quat1_in;
+  int iVar1;
+  uint *puVar2;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
   float afStackY_1854 [1524];
-  float fStack_78;
+  CQuaternion4f CStack_78;
   float fStack_68;
   float fStack_64;
   float fStack_60;
@@ -61,7 +62,7 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0056b360(SPose *result
     (result_pose->pose_data).root_position.y = fStack_4c;
     (result_pose->pose_data).root_position.z = fStack_48;
   }
-  iVar2 = 0;
+  iVar1 = 0;
   fStack_44 = fStack_5c;
   fStack_40 = fStack_58;
   fStack_3c = fStack_54;
@@ -73,25 +74,23 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0056b360(SPose *result
   fStack_24 = fStack_60;
   pCStack_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(instance_ptr);
   if (0 < pCStack_1c->bone_count) {
-    pCVar1 = (bone_data_out->pose_data).bone_rotations;
+    quat1_in = (bone_data_out->pose_data).bone_rotations;
     pCStack_18 = (bone_data_in->pose_data).bone_rotations;
     pSStack_14 = result_pose;
     do {
-      core_xform_cpp_slerpQuaternion_FUN_005b7940(pCVar1,pCStack_18,blend_weight);
-      iVar2 = iVar2 + 1;
-      pCVar1 = pCVar1 + 1;
+      core_xform_cpp_slerpQuaternion_FUN_005b7940(quat1_in,pCStack_18,blend_weight,&CStack_78);
+      iVar1 = iVar1 + 1;
+      quat1_in = quat1_in + 1;
       puVar3 = (uint *)((int)pSStack_14 + (uint)bVar5 * -8 + 0x10);
-      (pSStack_14->pose_data).bone_rotations[0].w = fStack_78;
+      (pSStack_14->pose_data).bone_rotations[0].w = CStack_78.w;
       puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-      *puVar3 = *(uint *)(&stack0xffffff8c + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffff90 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      puVar4[(uint)bVar5 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffff90 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-            ((uint)bVar5 * -2 + 1) * 4);
+      puVar2 = (uint *)((int)&CStack_78 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+      *puVar3 = *(uint *)((int)&CStack_78 + (uint)bVar5 * -8 + 4);
+      *puVar4 = *puVar2;
+      puVar4[(uint)bVar5 * -2 + 1] = puVar2[(uint)bVar5 * -2 + 1];
       pSStack_14 = (SPose *)&(pSStack_14->pose_data).bone_rotations[0].x;
       pCStack_18 = pCStack_18 + 1;
-    } while (iVar2 < pCStack_1c->bone_count);
+    } while (iVar1 < pCStack_1c->bone_count);
   }
   core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(result_pose,instance_ptr);
   return;

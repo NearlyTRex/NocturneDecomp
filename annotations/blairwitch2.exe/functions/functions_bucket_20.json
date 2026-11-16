@@ -7276,7 +7276,7 @@
           "type":"CCheesyCipher*"
         },
         {
-          "name":"param_2",
+          "name":"mode",
           "storage":{
             "offset":8,
             "size":4,
@@ -7289,7 +7289,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         }
       ]
     }
@@ -7394,7 +7394,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CInStreamPipe_seek_FUN_00435120",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -7412,6 +7412,38 @@
             ]
           },
           "type":"CInStreamPipe*"
+        },
+        {
+          "name":"offset",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"origin",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -7665,7 +7697,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_conveyor.cpp_CConveyor_getCollisionType_FUN_00438820",
-    "ret":"undefined4",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -7683,6 +7715,22 @@
             ]
           },
           "type":"CConveyor*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
         }
       ],
       "ret_storage":{
@@ -15703,7 +15751,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_doc.cpp_CDoc_isWeaponDrawn_FUN_0045dc20",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -21981,7 +22029,7 @@
           "type":"CFireEffect*"
         },
         {
-          "name":"param_2",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -21994,10 +22042,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CVector3f*"
         },
         {
-          "name":"param_3",
+          "name":"velocity",
           "storage":{
             "offset":12,
             "size":4,
@@ -22010,10 +22058,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CVector3f*"
         },
         {
-          "name":"param_4",
+          "name":"fade_rate",
           "storage":{
             "offset":16,
             "size":4,
@@ -22029,7 +22077,7 @@
           "type":"int"
         },
         {
-          "name":"param_5",
+          "name":"intensity",
           "storage":{
             "offset":20,
             "size":4,
@@ -22045,7 +22093,7 @@
           "type":"int"
         },
         {
-          "name":"param_6",
+          "name":"texture_index",
           "storage":{
             "offset":24,
             "size":4,
@@ -22061,7 +22109,7 @@
           "type":"int"
         },
         {
-          "name":"param_7",
+          "name":"time_scale",
           "storage":{
             "offset":28,
             "size":4,
@@ -22077,7 +22125,7 @@
           "type":"int"
         },
         {
-          "name":"param_8",
+          "name":"jitter",
           "storage":{
             "offset":32,
             "size":4,
@@ -22093,7 +22141,7 @@
           "type":"float"
         },
         {
-          "name":"param_9",
+          "name":"size",
           "storage":{
             "offset":36,
             "size":4,
@@ -48220,7 +48268,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20",
-    "ret":"undefined4*",
+    "ret":"CInStreamFile*",
     "vars":{
       "params":[
         {
@@ -48240,7 +48288,7 @@
           "type":"CInStreamFile*"
         },
         {
-          "name":"param_2",
+          "name":"directory",
           "storage":{
             "offset":8,
             "size":4,
@@ -48253,10 +48301,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"filename",
           "storage":{
             "offset":12,
             "size":4,
@@ -48269,7 +48317,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -48822,7 +48870,7 @@
           "type":"COutStreamFile*"
         },
         {
-          "name":"param_2",
+          "name":"data",
           "storage":{
             "offset":8,
             "size":4,
@@ -48835,10 +48883,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"void*"
         },
         {
-          "name":"param_3",
+          "name":"size",
           "storage":{
             "offset":12,
             "size":4,
@@ -50649,13 +50697,53 @@
         "start":"005944a0"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005944a0",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"CQuaternion4f*",
     "vars":{
+      "params":[
+        {
+          "name":"euler_angles",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"quat_out",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

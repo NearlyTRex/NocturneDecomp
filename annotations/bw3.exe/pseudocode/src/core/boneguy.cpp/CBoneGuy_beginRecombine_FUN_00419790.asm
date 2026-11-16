@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 004197c0
     LEA ESI,[ESP + 0x4]                 ; 004197c1
     CALL core_xform.cpp_eulerToQuaternion_FUN_005860b0 ; 004197c5
-        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_005860b0()
+        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005860b0(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x4]                 ; 004197ca
     LEA EDI,[EBX + 0xd108]              ; 004197ce
     ADD ESP,0x4                         ; 004197d4

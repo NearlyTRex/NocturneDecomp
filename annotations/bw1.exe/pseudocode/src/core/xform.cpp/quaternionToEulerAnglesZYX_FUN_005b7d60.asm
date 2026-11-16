@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(float *param_1)
+; CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(CQuaternion4f *quat_in,CVector3f *vector_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat_in
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fa1a4

@@ -214,7 +214,7 @@ section .text
     PUSH EBX                            ; 00424693
     PUSH ESI                            ; 00424694
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0 ; 00424695
-        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
+        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter * this_ptr, int hand_index, float blend_time, CMatrix3x4f * carry_offset)
     ADD ESP,0x10                        ; 0042469a
     JMP 0x00424680                      ; 0042469d
         ;   XREF to: 00424680 (UNCONDITIONAL_JUMP)  ; LAB_00424680

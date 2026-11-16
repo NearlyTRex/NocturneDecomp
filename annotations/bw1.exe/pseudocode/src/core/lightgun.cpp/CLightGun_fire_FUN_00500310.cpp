@@ -62,8 +62,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00500310(CLightGun *this_ptr)
   CCharacter *apCStack_108 [3];
   byte auStack_fc [12];
   float afStack_f0 [5];
-  float fStack_dc;
-  float afStack_d8 [7];
+  CVector3f aCStack_dc [2];
   uint uStack_bc;
   CVector3f CStack_b8;
   byte auStack_a8 [12];
@@ -117,13 +116,14 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00500310(CLightGun *this_ptr)
     afStack_f0[(uint)bVar12 * -2] = afStack_78[(uint)bVar12 * -2];
     afStack_f0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
          afStack_78[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-    fStack_dc = (float)uVar2 + (float)auStack_fc._8_4_;
-    afStack_d8[0] = afStack_9c[0] + afStack_f0[0];
-    afStack_d8[1] = afStack_9c[1] + afStack_f0[1];
+    aCStack_dc[0].x = (float)uVar2 + (float)auStack_fc._8_4_;
+    aCStack_dc[0].y = afStack_9c[0] + afStack_f0[0];
+    aCStack_dc[0].z = afStack_9c[1] + afStack_f0[1];
     aCStack_70[0].x = (float)uVar2 + (float)auStack_fc._8_4_;
-    *(float *)((int)aCStack_70 + (uint)bVar12 * -8 + 4) = afStack_d8[(uint)bVar12 * -2];
-    *(float *)((int)aCStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-         afStack_d8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+    *(uint *)((int)aCStack_70 + (uint)bVar12 * -8 + 4) =
+         *(uint *)((int)aCStack_dc + (uint)bVar12 * -8 + 4);
+    *(uint *)((int)aCStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+         *(uint *)((int)aCStack_dc + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
     CStack_118.x = (float)auStack_a8._8_4_;
     *(float *)((int)&CStack_118 + (uint)bVar12 * -8 + 4) = afStack_9c[(uint)bVar12 * -2];
     pCVar13 = g_CDemonSetPtr;
@@ -263,7 +263,8 @@ LAB_00500809:
             afStack_78[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
                  afStack_f0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
             afStack_78[0] = 0.0;
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(auStack_84 + 8);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+                      ((CVector3f *)(auStack_84 + 8),aCStack_dc);
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010((SDamageInfo *)&iStack_1fc);
             dVar14 = 3.570605925608789e-307;
             in_stack_fffffe14 =

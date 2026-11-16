@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_slew.cpp_CSlew_init_FUN_0056ba00
 // Address: 0056ba00
-undefined8 __cdecl CSlew::init(CSlew *this_ptr);
+void __cdecl CSlew::init(CSlew *this_ptr);
 
 // Original: core_slew.cpp_CSlew_processInput_FUN_0056ba50
 // Address: 0056ba50

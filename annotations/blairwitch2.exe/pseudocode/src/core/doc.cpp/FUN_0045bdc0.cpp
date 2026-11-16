@@ -510,14 +510,14 @@ LAB_0045bfdc:
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,param_1->target_actor);
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
-                      (&param_1->base,1,(int)param_1->target_actor,0,0);
+                      (&param_1->base,1,param_1->target_actor,0.0,(CMatrix3x4f *)0x0);
           }
           else if (local_20 == 6) {
             core_inv_cpp_CInventory_removeItem_FUN_004db8e0(local_24,pCVar7,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,param_1->target_actor);
             core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
-                      (&param_1->base,1,(int)param_1->target_actor,0,0);
+                      (&param_1->base,1,param_1->target_actor,0.0,(CMatrix3x4f *)0x0);
             param_1[1].base.base.orient_matrix.m[2].y = 0.0;
             pCVar1 = param_1 + 1;
             (pCVar1->base).base.actor_name[0] = '\0';

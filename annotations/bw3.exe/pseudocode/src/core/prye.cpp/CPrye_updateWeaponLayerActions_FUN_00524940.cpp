@@ -587,7 +587,7 @@ LAB_00524bde:
               pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);
               if (pCVar5 != (CDemonActor *)0x0) {
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
-                          ((CCharacter *)this_ptr,0,(int)pCVar5,0,0);
+                          ((CCharacter *)this_ptr,0,pCVar5,0.0,(CMatrix3x4f *)0x0);
                 pCVar5[0x1a].create_event[0x38] = '\x01';
                 pCVar5[0x1a].create_event[0x39] = '\0';
                 pCVar5[0x1a].create_event[0x3a] = '\0';
@@ -622,7 +622,7 @@ LAB_00524bde:
         core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
                   (0x01D81080,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
-                  ((CCharacter *)this_ptr,1,(int)(this_ptr->base).target_actor,0,0);
+                  ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040c790
                           ((this_ptr->base).target_actor,"CTrap");
         if (iVar6 == 0) {

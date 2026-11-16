@@ -163,7 +163,7 @@ int __cdecl core_event_cpp_parseIntOrCounter_FUN_00488cc0(char *str);
 CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_00488d00(char *name,uint class_hash,char *class_name);
 int __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(char *buffer,int *offset,CVector3f *out_position);
 void __cdecl core_event_cpp_trimWhitespace_FUN_00488f50(char *str);
-char * core_event_cpp_extractParenArg_FUN_00488fc0(int *param_1,char *param_2,int param_3,int param_4);
+char * __cdecl core_event_cpp_extractParenArg_FUN_00488fc0(char **cursor,char *out_buf,int max_len,int require_open_paren);
 int __cdecl core_event_cpp_parseDeathType_FUN_004890e0(char *type_name,int *out_type_id);
 int __cdecl core_event_cpp_parseDamageType_FUN_00489270(char *type_name,int *out_type_id);
 CEventList * __cdecl core_event_cpp_CEventList_ctor_FUN_00489360(CEventList *this_ptr);

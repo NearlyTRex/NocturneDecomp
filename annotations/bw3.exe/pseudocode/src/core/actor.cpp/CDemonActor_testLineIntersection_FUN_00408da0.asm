@@ -84,7 +84,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00408e29
     MOVSD ES:EDI,ESI                    ; 00408e2a
     CALL core_actor.cpp_rayCylinderIntersect_FUN_00408100 ; 00408e2b
-        ;   XREF to: 00408100 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00408100()
+        ;   XREF to: 00408100 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_00408100(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x98],EAX      ; 00408e30
     FLD float ptr [ESP + 0x98]          ; 00408e37
     ADD ESP,0x10                        ; 00408e3e

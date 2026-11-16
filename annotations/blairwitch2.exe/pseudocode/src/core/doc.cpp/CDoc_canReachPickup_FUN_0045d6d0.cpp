@@ -26,7 +26,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   float fStack_10c;
   float fStack_108;
   CVector3f CStack_104;
-  uint uStack_f8;
+  float fStack_f8;
   CVector3f CStack_f4;
   float fStack_e0;
   float afStack_dc [4];
@@ -37,15 +37,15 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   CVector3f CStack_ac;
   CVector3f CStack_a0;
   float fStack_8c;
-  float afStack_88 [5];
+  float afStack_88 [2];
+  CVector3f CStack_80;
   byte auStack_74 [8];
   float afStack_6c [4];
   float fStack_5c;
   float afStack_58 [3];
   CVector3f CStack_4c;
-  float fStack_38;
-  float afStack_34 [5];
-  float fStack_20;
+  CVector3f CStack_38;
+  float afStack_2c [4];
   float afStack_1c [3];
   
   bVar5 = 0;
@@ -56,25 +56,25 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
               (item,&(this_ptr->base).base.base.location.position,(CVector3f *)(auStack_c8 + 4));
-    afStack_34[0] = (float)auStack_c8._4_4_;
-    afStack_34[(uint)bVar5 * -2 + 1] = afStack_c0[(uint)bVar5 * -2];
-    afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2] =
+    CStack_38.y = (float)auStack_c8._4_4_;
+    afStack_2c[(uint)bVar5 * -2 + -1] = afStack_c0[(uint)bVar5 * -2];
+    afStack_2c[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
          afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     afStack_1c[0] =
-         SQRT(afStack_34[2] * afStack_34[2] +
-              afStack_34[0] * afStack_34[0] + afStack_34[1] * afStack_34[1]);
+         SQRT(afStack_2c[0] * afStack_2c[0] + CStack_38.y * CStack_38.y + CStack_38.z * CStack_38.z)
+    ;
     if (afStack_1c[0] <= 0.0) {
-      afStack_34[1] = 0.0;
-      afStack_34[0] = 0.0;
-      afStack_34[2] = 0.0;
+      CStack_38.z = 0.0;
+      CStack_38.y = 0.0;
+      afStack_2c[0] = 0.0;
     }
     else {
       fVar1 = 1.0 / afStack_1c[0];
-      afStack_34[0] = afStack_34[0] * fVar1;
-      afStack_34[1] = afStack_34[1] * fVar1;
-      afStack_34[2] = afStack_34[2] * fVar1;
+      CStack_38.y = CStack_38.y * fVar1;
+      CStack_38.z = CStack_38.z * fVar1;
+      afStack_2c[0] = afStack_2c[0] * fVar1;
     }
-    if (0.0 < afStack_34[2]) {
+    if (0.0 < afStack_2c[0]) {
       return 0;
     }
     CStack_f4.x = 0.0;
@@ -108,19 +108,20 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                 (item,&(this_ptr->base).base.base.location.position,(CVector3f *)auStack_74);
-      fStack_38 = (float)auStack_74._0_4_;
-      afStack_34[(uint)bVar5 * -2] = *(float *)(auStack_74 + (uint)bVar5 * -8 + 4);
-      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+      CStack_38.x = (float)auStack_74._0_4_;
+      afStack_2c[(uint)bVar5 * -2 + -2] = *(float *)(auStack_74 + (uint)bVar5 * -8 + 4);
+      afStack_2c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1] =
            *(float *)(auStack_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      if (1.0 < ABS(fStack_38)) {
+      if (1.0 < ABS(CStack_38.x)) {
         return 0;
       }
       in_stack_fffffec0 = (CBoundingBox3D *)0x45d9dc;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_38);
-      uStack_f8 = afStack_88[2];
-      *(float *)((int)&CStack_f4 + (uint)bVar5 * -8) = afStack_88[(uint)bVar5 * -2 + 3];
-      *(float *)((int)&CStack_f4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
-           afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_38,&CStack_80);
+      fStack_f8 = CStack_80.x;
+      *(uint *)((int)&CStack_f4 + (uint)bVar5 * -8) =
+           *(uint *)((int)&CStack_80 + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_f4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_80 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       if ((float)_DAT_005d0807 < ABS(CStack_f4.x)) {
         return 0;
       }
@@ -167,14 +168,14 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
        afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70(item,input_local_point,&CStack_104);
-  fStack_20 = CStack_104.x;
+  afStack_2c[3] = CStack_104.x;
   afStack_1c[(uint)bVar5 * -2] = *(float *)((int)&CStack_104 + (uint)bVar5 * -8 + 4);
   afStack_1c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        *(float *)((int)&CStack_104 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  afStack_dc[2] = fStack_20 - fStack_b0;
+  afStack_dc[2] = afStack_2c[3] - fStack_b0;
   afStack_dc[3] = afStack_1c[0] - CStack_ac.x;
   fStack_cc = afStack_1c[1] - CStack_ac.y;
-  fStack_e0 = fStack_20 - fStack_b0;
+  fStack_e0 = afStack_2c[3] - fStack_b0;
   afStack_dc[(uint)bVar5 * -2] = afStack_dc[(uint)bVar5 * -2 + 3];
   afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        afStack_dc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];

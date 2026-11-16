@@ -123,7 +123,7 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004d3040(CHero *this_ptr,i
 void core_hero_cpp_FUN_004d3210(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr);
-undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004d3460(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004d3460(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004d3500(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004d3850(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr);
@@ -253,7 +253,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004dc560(CInventory *this_ptr,_FIL
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004dc700(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004dca90(CInventory *this_ptr);
-void core_inv_cpp_setupItems_FUN_004dcad0(int param_1);
+void __cdecl core_inv_cpp_setupItems_FUN_004dcad0(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDemonActor *actor_ptr);
 void * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004dcda0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dcdb0(CInventory *this_ptr);

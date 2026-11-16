@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 004ec29e
     PUSH EBX                            ; 004ec29f
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 004ec2a0
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 004ec2a5
     MOV dword ptr [EBX + 0x1ff78],0x0   ; 004ec2a8
     POP ESI                             ; 004ec2b2

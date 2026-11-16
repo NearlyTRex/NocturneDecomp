@@ -116,7 +116,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_00464f10(CDracul
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00465230(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00465270(CDraculaBride *this_ptr,CVector3f *out_points_array);
-void core_dracbrid_cpp_randomizePosition_FUN_00465370(float param_1,float param_2,float param_3);
+CVector3f * __stack3_esi core_dracbrid_cpp_randomizePosition_FUN_00465370(float src_x,float src_y,float src_z,CVector3f *dest);
 void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_00465400(CDraculaBride *this_ptr,char *sound_name,float volume);
 void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004658e0(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00465c30(SFreaky *this_ptr);

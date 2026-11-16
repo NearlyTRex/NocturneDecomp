@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 249,
+    "complexity_score": 74,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 20,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
@@ -40,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size)"
   },
   "function_calls": [
     {
@@ -158,56 +157,56 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "velocity",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "fade_rate",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "intensity",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_6",
+        "name": "texture_index",
         "offset": 24,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_7",
+        "name": "time_scale",
         "offset": 28,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_8",
+        "name": "jitter",
         "offset": 32,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
-        "name": "param_9",
+        "name": "size",
         "offset": 36,
         "size": 4,
         "type": "float"
@@ -222,142 +221,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*(CFirefly_ARRAY_01cba2b8[iVar1].base.vtable)->setup)(&this_ptr_00->base,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(*(CFirefly_ARRAY_01cba2b8[iVar1].base.vtable)->setup)(&this_ptr_00->base,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(uint)((longlong)param_5 * (longlong)iVar2) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)param_5 * (longlong)iVar2) >> 0x20) << 0x10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "CFirefly_ARRAY_01cba2b8[iVar1].fade_rate = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "CFirefly_ARRAY_01cba2b8[iVar1].texture_index = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "CFirefly_ARRAY_01cba2b8[iVar1].time_scale = param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "CFirefly_ARRAY_01cba2b8[iVar1].jitter = param_8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "CFirefly_ARRAY_01cba2b8[iVar1].size = param_9;",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

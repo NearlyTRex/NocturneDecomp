@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2)
+; float __cdecl core_xform_cpp_angleFromSinCos_FUN_00591d10(float sin_value,float cos_value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   sin_value
+; float            Stack[0x8]:4   cos_value
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eecde

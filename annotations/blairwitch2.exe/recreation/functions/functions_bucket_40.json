@@ -1123,14 +1123,32 @@
     "calls":[
       "00407fc0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
     "method":"drawLine3DFromIndices",
     "name":"engine_3d.c_drawLine3DFromIndices_FUN_00407f40",
+    "params":[
+      {
+        "name":"vertex_index1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_index2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -8254,15 +8272,49 @@
     "calls":[
       "005ba1f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":130,
     "method":"extractParenArg",
     "name":"core_event.cpp_extractParenArg_FUN_00488fc0",
+    "params":[
+      {
+        "name":"cursor",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":2
+        }
+      },
+      {
+        "name":"out_buf",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"max_len",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"require_open_paren",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/event.cpp",
     "variadic":false
@@ -11729,8 +11781,8 @@
     "name":"core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/hero.cpp",
@@ -15607,14 +15659,32 @@
       "005b910c",
       "005b929c"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":52,
     "method":"crc32ComputeFileRange",
     "name":"engine_pod.cpp_crc32ComputeFileRange_FUN_00519dc0",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -21217,8 +21287,8 @@
     "name":"support_trstream.cpp_COutStreamMemory_tell_FUN_0057e0c0",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -21615,14 +21685,14 @@
     "calls":[
       "005b86a0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":32,
     "method":"freeRenderBuffers",
     "name":"wincore_wddvmem.cpp_freeRenderBuffers_FUN_00588740",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",
@@ -23139,15 +23209,15 @@
     "name":"core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0",
     "params":[
       {
-        "name":"param_2",
+        "name":"delta_time",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"mode",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -24051,26 +24121,26 @@
     "name":"core_bwspart.cpp_CSimpleParticleSystem_setFade_FUN_005a8140",
     "params":[
       {
-        "name":"param_2",
+        "name":"fade_start",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"fade_end",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       },
       {
-        "name":"param_4",
+        "name":"fade_duration",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }

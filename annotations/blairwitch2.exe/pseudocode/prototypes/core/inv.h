@@ -115,7 +115,7 @@ void __cdecl CInventory::loadItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_setupItems_FUN_004dc850
 // Address: 004dc850
-void setupItems(int param_1);
+void __cdecl setupItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_select_FUN_004dc8c0
 // Address: 004dc8c0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_slew_cpp_CSlew_init_FUN_00550590(CSlew *this_ptr)
+; void __cdecl core_slew_cpp_CSlew_init_FUN_00550590(CSlew *this_ptr)
 ;
 ; Parameters:
 ; CSlew *          Stack[0x4]:4   this_ptr

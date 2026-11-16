@@ -25,8 +25,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0056
   CQuaternion4f CStack_70;
   CQuaternion4f CStack_60;
   float fStack_50;
-  float afStack_4c [5];
-  float fStack_38;
+  float afStack_4c [2];
+  CVector3f CStack_44;
+  CVector3f CStack_38;
   CVector3f CStack_2c;
   float fStack_20;
   float afStack_1c [4];
@@ -46,15 +47,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0056
   afStack_1c[2] = target_position->x - fStack_20;
   afStack_1c[3] = target_position->y - afStack_1c[0];
   fStack_c = target_position->z - afStack_1c[1];
-  afStack_4c[2] = afStack_1c[2];
-  afStack_4c[(uint)bVar3 * -2 + 3] = afStack_1c[(uint)bVar3 * -2 + 3];
-  afStack_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+  CStack_44.x = afStack_1c[2];
+  *(float *)((int)&CStack_44 + (uint)bVar3 * -8 + 4) = afStack_1c[(uint)bVar3 * -2 + 3];
+  *(float *)((int)&CStack_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        afStack_1c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_4c + 2);
-  fStack_50 = fStack_38;
-  afStack_4c[(uint)bVar3 * -2] = afStack_4c[(uint)bVar3 * -2 + 6];
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_44,&CStack_38);
+  fStack_50 = CStack_38.x;
+  afStack_4c[(uint)bVar3 * -2] = *(float *)((int)&CStack_38 + (uint)bVar3 * -8 + 4);
   afStack_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       afStack_4c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
+       *(float *)((int)&CStack_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(fStack_50,&CStack_80);
   CStack_c0.w = CStack_80.w;
   puVar2 = (uint *)((int)&CStack_c0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);

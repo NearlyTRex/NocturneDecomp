@@ -3995,14 +3995,14 @@
   },
   {
     "addr":"00437c10",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
     "method":"isLineBlendingDisabled",
     "name":"cockpit_ckptutil.c_isLineBlendingDisabled_FUN_00437c10",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -4016,14 +4016,48 @@
       "005a3650",
       "005a3770"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":141,
     "method":"rotateBitmap",
     "name":"cockpit_ckptutil.c_rotateBitmap_FUN_00437e10",
+    "params":[
+      {
+        "name":"source_data",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bytes_per_pixel",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -4059,14 +4093,14 @@
     "calls":[
       "0043a8c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":71,
     "method":"clipPolygonRightPlaneGlobal",
     "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90",
     "receiver":false,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined1",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4521,26 +4555,26 @@
     "name":"support_codec.cpp_CAsciiUnarmor_decode_FUN_00441610",
     "params":[
       {
-        "name":"param_2",
+        "name":"istream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"ostream",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -7821,15 +7855,49 @@
     "calls":[
       "005a54c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":130,
     "method":"extractParenArg",
     "name":"core_event.cpp_extractParenArg_FUN_0048bc10",
+    "params":[
+      {
+        "name":"cursor",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":2
+        }
+      },
+      {
+        "name":"out_buf",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"max_len",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"require_open_paren",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/event.cpp",
     "variadic":false
@@ -17862,8 +17930,8 @@
     "name":"core_slew.cpp_CSlew_init_FUN_00550590",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined8",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/slew.cpp",
@@ -19222,14 +19290,14 @@
   },
   {
     "addr":"0055f610",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":42,
     "method":"resetTrainSounds",
     "name":"core_sound.cpp_resetTrainSounds_FUN_0055f610",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/sound.cpp",
@@ -21630,15 +21698,33 @@
       "0056c140",
       "0058e8d0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":25,
     "method":"quaternionFromAngleY",
     "name":"core_xform.cpp_quaternionFromAngleY_FUN_00585d10",
+    "params":[
+      {
+        "name":"angle_radians",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -21648,15 +21734,41 @@
     "callers":[
       "0054e170"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":32,
     "method":"quaternionFromAxisAngle",
     "name":"core_xform.cpp_quaternionFromAxisAngle_FUN_00585d90",
+    "params":[
+      {
+        "name":"angle_radians",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"axis_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

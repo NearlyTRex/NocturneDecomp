@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_isOpen_FUN_00435180(CInStreamPipe *this_ptr)
+; int __cdecl support_codec_cpp_CInStreamPipe_isOpen_FUN_00435180(CInStreamPipe *this_ptr)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr

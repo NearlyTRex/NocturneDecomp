@@ -1377,7 +1377,7 @@ section .text
     PUSH 0x3f19999a                     ; 00451943
     PUSH EDI                            ; 00451948
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 00451949
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 0045194e
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00451951
         ;   Label: LAB_00451951
@@ -1732,7 +1732,7 @@ section .text
     LEA ESI,[EBP + 0xfffffd02]          ; 00451d4f
     LEA EDI,[EBP + 0xfffffe8e]          ; 00451d55
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00451d5b
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffd02]          ; 00451d60
     ADD ESP,0x4                         ; 00451d66
     MOVSD ES:EDI,ESI                    ; 00451d69
@@ -2389,7 +2389,7 @@ section .text
     LEA ESI,[EBP + 0xfffffebe]          ; 00452546
     LEA EDI,[EBP + 0xfffffdce]          ; 0045254c
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00452552
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffebe]          ; 00452557
     ADD ESP,0x4                         ; 0045255d
     MOVSD ES:EDI,ESI                    ; 00452560

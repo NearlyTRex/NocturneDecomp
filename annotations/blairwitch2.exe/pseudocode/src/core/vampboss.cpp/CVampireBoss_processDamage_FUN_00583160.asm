@@ -250,7 +250,7 @@ section .text
     PUSH 0x0                            ; 00583366
     PUSH EBP                            ; 00583368
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 00583369
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 0058336e
     PUSH 0x5edb3e                       ; 00583371 | = "VampireBossBitesIt"
     MOV ECX,dword ptr [0x006141f0]      ; 00583376 | DAT_006141f0

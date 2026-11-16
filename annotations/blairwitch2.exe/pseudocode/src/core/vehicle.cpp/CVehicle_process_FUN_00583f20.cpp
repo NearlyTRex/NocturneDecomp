@@ -329,7 +329,7 @@ joined_r0x005847f3:
   (*((this_ptr_01->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr_01);
   (*((actor->base).base.vtable._ub)->setup)((CDemonActor *)actor);
   core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
-            ((CCharacter *)this_ptr_01,1,(int)actor,0,0);
+            ((CCharacter *)this_ptr_01,1,(CDemonActor *)actor,0.0,(CMatrix3x4f *)0x0);
   core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
             (0x01D182F0,(CDemonActor *)this_ptr_01);
   core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,(CDemonActor *)actor);

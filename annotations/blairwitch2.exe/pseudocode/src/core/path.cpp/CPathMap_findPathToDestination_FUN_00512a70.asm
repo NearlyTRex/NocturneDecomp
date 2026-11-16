@@ -195,7 +195,7 @@ section .text
     LEA ESI,[ESP + 0x40]                ; 00512b46
     LEA EDI,[ESP + 0x124]               ; 00512b4a
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512b51
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x40]                ; 00512b56
     ADD ESP,0x4                         ; 00512b5a
     LEA EAX,[ESP + 0x120]               ; 00512b5d
@@ -298,7 +298,7 @@ section .text
     LEA ESI,[ESP + 0x154]               ; 00512c86
     LEA EDI,[ESP + 0x190]               ; 00512c8d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512c94
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x154]               ; 00512c99
     ADD ESP,0x4                         ; 00512ca0
     LEA EAX,[ESP + 0x18c]               ; 00512ca3
@@ -367,7 +367,7 @@ section .text
     LEA ESI,[ESP + 0x19c]               ; 00512d6e
     LEA EDI,[ESP + 0x148]               ; 00512d75
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512d7c
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x19c]               ; 00512d81
     ADD ESP,0x4                         ; 00512d88
     LEA EAX,[ESP + 0x144]               ; 00512d8b
@@ -532,7 +532,7 @@ section .text
     LEA ESI,[ESP + 0x13c]               ; 00512fb0
     LEA EDI,[ESP + 0x100]               ; 00512fb7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512fbe
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x13c]               ; 00512fc3
     ADD ESP,0x4                         ; 00512fca
     MOVSD ES:EDI,ESI                    ; 00512fcd
@@ -583,7 +583,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0051305f
     LEA EDI,[ESP + 0x4]                 ; 00513063
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00513067
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x28]                ; 0051306c
     ADD ESP,0x4                         ; 00513070
     MOVSD ES:EDI,ESI                    ; 00513073
@@ -734,7 +734,7 @@ section .text
     LEA ESI,[ESP + 0x1c0]               ; 00513200
     LEA EDI,[ESP + 0x184]               ; 00513207
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051320e
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x1c0]               ; 00513213
     ADD ESP,0x4                         ; 0051321a
     LEA EAX,[ESP + 0x180]               ; 0051321d
@@ -883,7 +883,7 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 00513404
     LEA EDI,[ESP + 0x1c]                ; 0051340b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051340f
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x130]               ; 00513414
     ADD ESP,0x4                         ; 0051341b
     LEA EAX,[ESP + 0x18]                ; 0051341e
@@ -933,7 +933,7 @@ section .text
     LEA ESI,[ESP + 0x94]                ; 00513496
     LEA EDI,[ESP + 0x88]                ; 0051349d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005134a4
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x94]                ; 005134a9
     ADD ESP,0x4                         ; 005134b0
     LEA EAX,[ESP + 0x84]                ; 005134b3

@@ -20,13 +20,12 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *t
   float fVar4;
   CVector3f local_78;
   CVector3f local_6c;
-  uint local_60;
-  float afStack_5c [5];
-  float local_48;
-  float local_44;
+  CVector3f local_60;
+  float local_54;
+  float local_50 [4];
   float local_40;
-  float local_3c;
-  float afStack_38 [4];
+  CVector3f local_3c;
+  float local_30;
   float local_28;
   float local_20;
   float local_1c;
@@ -39,22 +38,22 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *t
     return;
   }
   local_6c.x = (actor->location).position.x - (this_ptr->base).location.position.x;
-  local_44 = (actor->location).position.y - (this_ptr->base).location.position.y;
+  local_50[3] = (actor->location).position.y - (this_ptr->base).location.position.y;
   local_6c.z = (actor->location).position.z - (this_ptr->base).location.position.z;
-  local_48 = local_6c.x;
+  local_50[2] = local_6c.x;
   local_40 = local_6c.z;
   if (0.0 <= min_dist) {
     if ((this_ptr->is_spectral == 0) &&
-       ((((float)_DAT_005b8466 < ABS(local_44) || ((float)_DAT_005b846e < ABS(local_6c.x))) ||
+       ((((float)_DAT_005b8466 < ABS(local_50[3]) || ((float)_DAT_005b846e < ABS(local_6c.x))) ||
         ((float)_DAT_005b846e < ABS(local_6c.z))))) {
-      local_6c.y = local_44;
+      local_6c.y = local_50[3];
       engine_console_cpp_CConsole_printf_FUN_00441ff0
                 (g_CConsolePtr,"%s confused while following %s\n");
       *out_state = 3;
       return;
     }
     local_6c.y = 0.0;
-    afStack_38[2] = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x);
+    local_30 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x);
     if (max_dist < 0.0) {
       max_dist = 1e+30;
     }
@@ -73,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *t
     if (min_dist < (float)_DAT_005b847e) {
       min_dist = 0.01;
     }
-    if (min_dist <= afStack_38[2]) {
+    if (min_dist <= local_30) {
       fVar4 = 0.0;
       fVar3 = 0.0;
       direction = (CVector3f *)&DAT_02cfd900;
@@ -86,7 +85,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *t
         *out_state = 3;
         return;
       }
-      if (afStack_38[2] <= max_dist) {
+      if (local_30 <= max_dist) {
         *out_state = 1;
         return;
       }
@@ -99,16 +98,17 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *t
   local_6c.y = 0.0;
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b40
             (&this_ptr->base,&local_6c,&local_78);
-  local_3c = local_78.x;
-  afStack_38[(uint)bVar2 * -2] = *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4);
-  afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-       *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_3c);
-  afStack_5c[2] = (float)local_60;
-  afStack_5c[(uint)bVar2 * -2 + 3] = afStack_5c[(uint)bVar2 * -2];
-  afStack_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-       afStack_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  this_ptr->turn_angle_accumulator = afStack_5c[3];
+  local_3c.x = local_78.x;
+  *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&local_78 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_3c,&local_60);
+  local_54 = local_60.x;
+  local_50[(uint)bVar2 * -2] = *(float *)((int)&local_60 + (uint)bVar2 * -8 + 4);
+  local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  this_ptr->turn_angle_accumulator = local_50[0];
   if (*out_state == 0) {
     if ((float)_DAT_005b848e < ABS(this_ptr->turn_angle_accumulator)) goto LAB_004312a4;
     if (*out_state != 1) goto LAB_0043134b;

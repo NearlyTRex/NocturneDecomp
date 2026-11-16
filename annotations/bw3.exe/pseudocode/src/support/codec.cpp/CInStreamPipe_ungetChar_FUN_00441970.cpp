@@ -2,11 +2,11 @@
 // Address: 00441970
 // Address Range: [[00441970, 00441995]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00441970(CInStreamPipe *this_ptr)
+// Signature: int __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00441970(CInStreamPipe *this_ptr,int ch)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00441970(CInStreamPipe *this_ptr)
+int __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00441970(CInStreamPipe *this_ptr,int ch)
 
 {
   if ((this_ptr->buffer != (char *)0x0) && (0 < this_ptr->position)) {

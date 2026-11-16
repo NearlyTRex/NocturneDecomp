@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00434ce0(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3)
+; CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00434ce0(CCheesyCipher *this_ptr,int mode,uint key)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   mode
+; uint             Stack[0xc]:4   key
 ;
 ; Called Functions:
 ;   support_codec.cpp_CCheesyCipher_setKey_FUN_00434d30
@@ -31,7 +31,7 @@ section .text
     MOV EBX,EAX                         ; 00434cf5
     MOV dword ptr [EAX],0x5f4314        ; 00434cf7
     CALL support_codec.cpp_CCheesyCipher_setMode_FUN_00434d20 ; 00434cfd
-        ;   XREF to: 00434d20 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CCheesyCipher_setMode_FUN_00434d20(CCheesyCipher * this_ptr, undefined4 param_2)
+        ;   XREF to: 00434d20 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CCheesyCipher_setMode_FUN_00434d20(CCheesyCipher * this_ptr, int mode)
     ADD ESP,0x8                         ; 00434d02
     MOV ESI,dword ptr [ESP + 0x14]      ; 00434d05
     PUSH ESI                            ; 00434d09

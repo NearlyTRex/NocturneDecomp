@@ -79,11 +79,11 @@ void __cdecl CShadow::processDamage(CShadow *this_ptr,SDamageInfo *param_2);
 
 // Original: core_shadow.cpp_CShadow_getDeathState_FUN_0053ec30
 // Address: 0053ec30
-undefined4 __cdecl CShadow::getDeathState(CShadow *this_ptr);
+EDeathState __cdecl CShadow::getDeathState(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_CShadow_getTargetPoints_FUN_0053ec70
 // Address: 0053ec70
-undefined4 __cdecl CShadow::getTargetPoints(CShadow *this_ptr,undefined4 *param_2);
+int __cdecl CShadow::getTargetPoints(CShadow *this_ptr,CVector3f *out_points_array);
 
 // Original: core_shadow.cpp_FUN_0053ece0
 // Address: 0053ece0

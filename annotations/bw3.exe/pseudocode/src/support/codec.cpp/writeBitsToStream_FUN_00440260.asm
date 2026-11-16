@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_codec_cpp_FUN_00440260(byte *param_1,int param_2,uint param_3,int *param_4)
+; int __cdecl support_codec_cpp_writeBitsToStream_FUN_00440260(SBitBuffer *bit_buffer,int bit_count,uint bit_value,void *ostream)
 ;
+; Parameters:
+; SBitBuffer *     Stack[0x4]:4   bit_buffer
+; int              Stack[0x8]:4   bit_count
+; uint             Stack[0xc]:4   bit_value
+; void *           Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -18,7 +23,7 @@
 section .text
 
     PUSH EBX                            ; 00440260
-        ;   Label: support_codec.cpp_FUN_00440260
+        ;   Label: support_codec.cpp_writeBitsToStream_FUN_00440260
     PUSH ESI                            ; 00440261
     PUSH EDI                            ; 00440262
     PUSH EBP                            ; 00440263

@@ -257,7 +257,7 @@ section .text
     PUSH 0x1                            ; 0056dd65
     PUSH EBX                            ; 0056dd67
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0056dd68
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 0056dd6d
     PUSH 0x5ebd6e                       ; 0056dd70 | = "CTrap"
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0056dd75

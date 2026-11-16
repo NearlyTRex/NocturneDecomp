@@ -21,7 +21,7 @@ void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0(CLZWDic
       do {
         if ((iVar1 - 1U & uVar3) != 0) {
           if ((code_value & uVar3) == 0) break;
-          iVar2 = support_codec_cpp_FUN_00440260(bit_buffer,1,1,ostream);
+          iVar2 = support_codec_cpp_writeBitsToStream_FUN_00440260(bit_buffer,1,1,ostream);
           if ((iVar2 < 0) && (iVar2 != -2)) {
             return;
           }
@@ -35,7 +35,8 @@ void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0(CLZWDic
     if (uVar3 != 0) {
       while( true ) {
         while( true ) {
-          iVar1 = support_codec_cpp_FUN_00440260(bit_buffer,1,(uVar3 & code_value) != 0,ostream);
+          iVar1 = support_codec_cpp_writeBitsToStream_FUN_00440260
+                            (bit_buffer,1,(uint)((uVar3 & code_value) != 0),ostream);
           uVar3 = (int)uVar3 >> 1;
           if (iVar1 < 0) break;
           if (uVar3 == 0) {

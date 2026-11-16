@@ -166,7 +166,7 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0058e240(CStranger *this_pt
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0058e8d0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e910(float *angle,float distance,float offset);
-undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void);
+CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0058eb50(CStranger *this_ptr,int hand_index,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0058fcb0(CStranger *this_ptr,SDamageInfo *damage_info);

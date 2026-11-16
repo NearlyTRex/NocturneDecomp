@@ -10,6 +10,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -104,8 +105,8 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEff
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004a27e0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
-void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
-void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
+void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
@@ -128,7 +129,7 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004a3d50(CFireE
 void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
-void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,undefined4 *param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 void __cdecl core_fire_cpp_CFireEffect_createStormEffect_FUN_004a3fd0(CFireEffect *this_ptr,CVector3f position);
 void __cdecl core_fire_cpp_CFireEffect_load_FUN_004a4030(CFireEffect *this_ptr,_FILE *file_handle);
 void __cdecl core_fire_cpp_CFireEffect_save_FUN_004a40b0(CFireEffect *this_ptr,_FILE *file_handle);

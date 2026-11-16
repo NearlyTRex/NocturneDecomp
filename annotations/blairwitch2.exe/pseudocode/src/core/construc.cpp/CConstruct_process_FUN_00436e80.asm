@@ -226,7 +226,7 @@ section .text
     LEA ESI,[EBP + 0xffffff0e]          ; 00437080
     LEA EDI,[EBP + 0xfffffeea]          ; 00437086
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005940b0 ; 0043708c
-        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined1 core_xform.cpp_quaternionToEulerAngles_FUN_005940b0()
+        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005940b0(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[EBP + 0xffffff0e]          ; 00437091
     MOVSD ES:EDI,ESI                    ; 00437097
     MOVSD ES:EDI,ESI                    ; 00437098
@@ -374,7 +374,7 @@ section .text
     PUSH EDX                            ; 00437238
     INC EBX                             ; 00437239
     CALL core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0 ; 0043723a
-        ;   XREF to: 0049d6a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, int param_4, ...)
+        ;   XREF to: 0049d6a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int fade_rate, ...)
     ADD ESP,0x24                        ; 0043723f
     CMP EBX,0xa                         ; 00437242
     JL 0x00437216                       ; 00437245
@@ -984,7 +984,7 @@ section .text
     LEA ESI,[EBP + 0xffffff4a]          ; 00437935
     LEA EDI,[EBP + 0xffffff3e]          ; 0043793b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00437941
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xffffff4a]          ; 00437946
     MOVSD ES:EDI,ESI                    ; 0043794c
     MOVSD ES:EDI,ESI                    ; 0043794d

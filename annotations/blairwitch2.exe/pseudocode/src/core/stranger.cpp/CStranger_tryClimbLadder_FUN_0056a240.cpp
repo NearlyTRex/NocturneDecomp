@@ -26,10 +26,9 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *t
   float fStack_124;
   float fStack_120;
   float fStack_11c;
-  float fStack_118;
+  CVector3f CStack_118;
   float fStack_10c;
-  float fStack_108;
-  float fStack_104;
+  float afStack_108 [2];
   CVector3f CStack_100;
   float fStack_f4;
   CVector3f local_f0;
@@ -37,14 +36,14 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *t
   float fStack_d0;
   float afStack_cc [4];
   float fStack_bc;
-  uint uStack_b8;
+  float fStack_b8;
   float fStack_b4;
   CVector3f CStack_ac;
   float fStack_a0;
-  float afStack_9c [5];
+  float afStack_9c [2];
+  CVector3f CStack_94;
   float fStack_88;
-  float fStack_84;
-  float fStack_80;
+  float afStack_84 [2];
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f local_64;
@@ -109,12 +108,12 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *t
             local_f0.x = fStack_12c + fStack_120;
             local_f0.y = fStack_128 + fStack_11c;
             fStack_88 = fStack_130 + fStack_124;
-            afStack_9c[(uint)bVar4 * -2 + 6] = *(float *)((int)&local_f0 + (uint)bVar4 * -8);
-            afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
+            afStack_84[(uint)bVar4 * -2] = *(float *)((int)&local_f0 + (uint)bVar4 * -8);
+            afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
                  *(float *)((int)&local_f0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
             afStack_54[2] = fStack_88 * _DAT_005ebac5;
-            afStack_54[3] = fStack_84 * _DAT_005ebac5;
-            fStack_44 = fStack_80 * _DAT_005ebac5;
+            afStack_54[3] = afStack_84[0] * _DAT_005ebac5;
+            fStack_44 = afStack_84[1] * _DAT_005ebac5;
             fStack_40 = fStack_88 * _DAT_005ebac5;
             afStack_54[(uint)bVar4 * -2 + 6] = afStack_54[(uint)bVar4 * -2 + 3];
             afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
@@ -123,11 +122,10 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *t
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
                       (&unaff_EBP->base,&local_64,&CStack_70);
             CStack_100.x = CStack_70.x;
-            *(uint *)((int)&CStack_100 + (uint)bVar4 * -8 + 4) =
-                 *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + 4);
-            *(uint *)((int)&CStack_100 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4 + 8) =
-                 *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-            if (&local_64 != &CStack_100) {
+            afStack_108[(uint)bVar4 * -2 + 3] = *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + 4);
+            afStack_108[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+                 *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+            if (&local_64 != (CVector3f *)(afStack_108 + 2)) {
               local_64.x = CStack_100.x;
               local_64.y = CStack_100.y;
               local_64.z = CStack_100.z;
@@ -175,19 +173,19 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *t
                   (this_ptr->ladder_offset).z = fStack_bc;
                 }
                 fStack_10c = local_64.x - (this_ptr->base).base.base.location.position.x;
-                fStack_108 = local_64.y - (this_ptr->base).base.base.location.position.y;
-                fStack_104 = local_64.z - (this_ptr->base).base.base.location.position.z;
-                fStack_118 = fStack_10c;
-                *(uint *)(&stack0xfffffeec + (uint)bVar4 * -8) =
-                     *(uint *)((int)&stack0xfffffef8 + (uint)bVar4 * -8);
-                *(uint *)(&stack0xfffffef0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-                     *(uint *)
-                      ((int)&stack0xfffffefc + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4);
-                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0();
-                uStack_b8 = afStack_9c[2];
-                afStack_cc[(uint)bVar4 * -2 + 6] = afStack_9c[(uint)bVar4 * -2 + 3];
+                afStack_108[0] = local_64.y - (this_ptr->base).base.base.location.position.y;
+                afStack_108[1] = local_64.z - (this_ptr->base).base.base.location.position.z;
+                CStack_118.x = fStack_10c;
+                *(float *)((int)&CStack_118 + (uint)bVar4 * -8 + 4) = afStack_108[(uint)bVar4 * -2];
+                *(float *)((int)&CStack_118 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+                     afStack_108[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
+                          (&CStack_118,&CStack_94);
+                fStack_b8 = CStack_94.x;
+                afStack_cc[(uint)bVar4 * -2 + 6] =
+                     *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + 4);
                 afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-                     afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+                     *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
                 this_ptr->ladder_facing_angle = fStack_b4;
                 this_ptr_00 = g_CConsolePtr;
                 this_ptr->ladder_blend_time = 1.0;

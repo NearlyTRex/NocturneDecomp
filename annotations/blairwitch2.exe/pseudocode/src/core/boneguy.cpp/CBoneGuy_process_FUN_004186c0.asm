@@ -226,7 +226,7 @@ section .text
     LEA ESI,[EBP + -0x2e]               ; 004188cc
     LEA EDI,[EBP + -0x22]               ; 004188cf
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005940b0 ; 004188d2
-        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined1 core_xform.cpp_quaternionToEulerAngles_FUN_005940b0()
+        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005940b0(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[EBP + -0x2e]               ; 004188d7
     MOVSD ES:EDI,ESI                    ; 004188da
     MOVSD ES:EDI,ESI                    ; 004188db
@@ -414,7 +414,7 @@ section .text
     PUSH EBX                            ; 00418abc
     MOV dword ptr [EBX + 0x10b04],0x0   ; 00418abd
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 00418ac7
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00418acc
     JMP 0x00418a72                      ; 00418acf
         ;   XREF to: 00418a72 (UNCONDITIONAL_JUMP)  ; LAB_00418a72

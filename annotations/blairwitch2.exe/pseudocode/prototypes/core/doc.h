@@ -203,7 +203,7 @@ int __cdecl CDoc::isWeaponDrawn(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_drawWeapon_FUN_0045dc30
 // Address: 0045dc30
-void __cdecl CDoc::drawWeapon(CDoc *this_ptr,int param_2);
+void __cdecl CDoc::drawWeapon(CDoc *this_ptr,int guns_drawn);
 
 // Original: core_doc.cpp_CDoc_getGrabbed_FUN_0045dc40
 // Address: 0045dc40

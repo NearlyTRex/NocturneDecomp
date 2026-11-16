@@ -1,47 +1,47 @@
 // Name: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 // Address: 00576250
 // Address Range: [[00576250, 005762e2]]
-// Convention: unknown
-// Signature: float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(float *param_1)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles)
 
 #include "nocturne.h"
 
-float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(float *param_1)
+CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles)
 
 {
-  float *extraout_ECX;
+  CVector3f *extraout_ECX;
   float *extraout_EDX;
-  float *unaff_ESI;
-  byte bVar1;
+  float *pfVar1;
+  byte bVar2;
   float10 x;
-  float10 fVar2;
+  float10 fVar3;
   float afStack_1008 [1022];
   uint local_10;
   float local_c;
   
-  bVar1 = 0;
+  bVar2 = 0;
   local_10 = 0;
-  if ((ABS(*param_1) == 0.0) && (ABS(param_1[2]) == 0.0)) {
-    if (0.0 < param_1[1]) {
+  if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {
+    if (0.0 < in_direction_vector->y) {
       local_c = -1.5707964;
     }
     else {
       local_c = 1.5707964;
     }
-    *unaff_ESI = local_c;
-    unaff_ESI[1] = 0.0;
-    unaff_ESI[2] = 0.0;
-    return unaff_ESI;
+    out_euler_angles->x = local_c;
+    out_euler_angles->y = 0.0;
+    out_euler_angles->z = 0.0;
+    return out_euler_angles;
   }
   afStack_1008[0x3fb] = 8.025096e-39;
-  atan2((float10)*param_1,(float10)param_1[2]);
+  atan2((float10)in_direction_vector->x,(float10)in_direction_vector->z);
   x = SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +
            (float10)extraout_EDX[2] * (float10)extraout_EDX[2]);
-  fVar2 = atan2((float10)extraout_EDX[1],x);
+  fVar3 = atan2((float10)extraout_EDX[1],x);
   afStack_1008[0x3fb] = (float)x;
-  *extraout_ECX = (float)-fVar2;
-  extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1008[(uint)bVar1 * -2 + 0x3fb];
-  (extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       afStack_1008[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
+  pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);
+  extraout_ECX->x = (float)-fVar3;
+  *pfVar1 = afStack_1008[(uint)bVar2 * -2 + 0x3fb];
+  pfVar1[(uint)bVar2 * -2 + 1] = afStack_1008[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fc];
   return extraout_ECX;
 }

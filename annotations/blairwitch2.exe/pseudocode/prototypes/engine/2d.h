@@ -163,7 +163,7 @@ void __cdecl reinitializeGraphicsSystem(void);
 
 // Original: engine_2d.c_draw320x200SizeDot_FUN_00402ae0
 // Address: 00402ae0
-void draw320x200SizeDot(void);
+void __cdecl draw320x200SizeDot(int x_3d,int y_3d,int z_depth);
 
 // Original: engine_2d.c_computeOutcode_FUN_00402c60
 // Address: 00402c60

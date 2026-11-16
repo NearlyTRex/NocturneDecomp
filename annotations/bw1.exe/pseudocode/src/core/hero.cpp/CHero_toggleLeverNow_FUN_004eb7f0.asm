@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

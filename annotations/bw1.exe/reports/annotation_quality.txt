@@ -12,18 +12,18 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          5,440
-  Unnamed functions (FUN_):          270 ( 5.0%)
-  Functions with unnamed params:     45 ( 0.8%)
-  Functions with type issues:        1,362 (25.0%)
+  Unnamed functions (FUN_):          269 ( 4.9%)
+  Functions with unnamed params:     29 ( 0.5%)
+  Functions with type issues:        1,341 (24.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   4
-    Missing register params:           8
-    Wrong calling convention:          187
-    Undefined types in variables:      1078
-    Unresolved stack params:           270
+    Missing register params:           7
+    Wrong calling convention:          177
+    Undefined types in variables:      1065
+    Unresolved stack params:           265
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -138,9 +138,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00428390  unknown       0 callers
     0x00428450  unknown       0 callers
 
-  support/codec.cpp (9 unnamed)
+  support/codec.cpp (8 unnamed)
     0x004427a0  unknown       3 callers
-    0x00442600  unknown       2 callers
     0x004425b0  unknown       1 callers
     0x004425e0  unknown       1 callers
     0x00442880  unknown       1 callers
@@ -442,11 +441,6 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  CFireEffect_createFirefly
-    Address: 0x004b5fa0  File: core/fire.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (int), param_5 (int), param_6 (int), param_7 (int), param_8 (float), param_9 (float)
-    Named:   this_ptr (CFireEffect *)
-
   CPackedBitmapSet_loadBitmapSetFromRange
     Address: 0x00538a60  File: cockpit/pkbmpset.cpp
     Unnamed: param_2 (char *), param_3 (int), param_4 (int), param_5 (int), param_6 (int), param_7 (int), param_8 (int)
@@ -462,40 +456,10 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int), param_3 (int), param_4 (CVector3i *), param_5 (int), param_6 (SMRGLHeaderPrimitive *), param_7 (SMRGLTextureModel *), param_8 (int *)
     Named:   this_ptr (CMorph *)
 
-  CCharacter_pickupObjectNow
-    Address: 0x004325b0  File: core/charactr.cpp
-    Unnamed: param_2 (int), param_3 (int), param_4 (undefined4), param_5 (undefined4)
-    Named:   this_ptr (CCharacter *)
-
   CFireEffect_createBulletTrail
     Address: 0x004b5db0  File: core/fire.cpp
     Unnamed: param_2 (CVector3f *), param_3 (CVector3f *), param_4 (CKeyFramedModel *), param_5 (float)
     Named:   this_ptr (CFireEffect *)
-
-  CFireEffect_createLeaf
-    Address: 0x004b5f00  File: core/fire.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (CKeyFramedModel *), param_5 (undefined4)
-    Named:   this_ptr (CFireEffect *)
-
-  CLeaf_init
-    Address: 0x004af0f0  File: core/fire.cpp
-    Unnamed: param_2 (CVector3f *), param_3 (CVector3f *), param_4 (undefined4), param_5 (float)
-    Named:   this_ptr (CLeaf *)
-
-  CGame_displayBitmap
-    Address: 0x004d7730  File: core/game.cpp
-    Unnamed: param_2 (char *), param_3 (undefined4), param_4 (undefined4), param_5 (uint)
-    Named:   this_ptr (CGame *)
-
-  CInStreamPipe_open
-    Address: 0x00443f90  File: support/codec.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (ulong)
-    Named:   this_ptr (CInStreamPipe *)
-
-  CCharacter_computePickup
-    Address: 0x00432690  File: core/charactr.cpp
-    Unnamed: param_2 (int), param_3 (float), param_4 (int *)
-    Named:   this_ptr (CCharacter *)
 
   CDrawSurface_drawTextCenteredFullWidth
     Address: 0x00480e10  File: cockpit/drawsurf.cpp
@@ -517,31 +481,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int), param_3 (CStrList *)
     Named:   this_ptr (CStrList *)
 
-  CAsciiArmor_encode
-    Address: 0x004438d0  File: support/codec.cpp
-    Unnamed: param_2 (undefined4), param_3 (int *)
-    Named:   this_ptr (CAsciiArmor *)
-
-  CAsciiUnarmor_decode
-    Address: 0x004439b0  File: support/codec.cpp
-    Unnamed: param_2 (int *), param_3 (undefined4)
-    Named:   this_ptr (CAsciiUnarmor *)
-
-  CCheesyCipher_ctor
-    Address: 0x00443a00  File: support/codec.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4)
-    Named:   this_ptr (CCheesyCipher *)
-
-  CCheesyCipher_process
-    Address: 0x00443af0  File: support/codec.cpp
-    Unnamed: param_2 (int *), param_3 (int *)
-    Named:   this_ptr (CCheesyCipher *)
-
-  CInStreamPipe_read
-    Address: 0x00443d80  File: support/codec.cpp
-    Unnamed: param_2 (undefined4 *), param_3 (uint)
-    Named:   this_ptr (CInStreamPipe *)
-
   CInStreamMemory_openOwned
     Address: 0x005a1480  File: support/trstream.cpp
     Unnamed: param_2 (int), param_3 (int)
@@ -556,16 +495,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x005a1360  File: support/trstream.cpp
     Unnamed: param_2 (int), param_3 (uint)
     Named:   this_ptr (CInStreamMemory *)
-
-  COutStreamFile_seek
-    Address: 0x005a1940  File: support/trstream.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4)
-    Named:   this_ptr (COutStreamFile *)
-
-  COutStreamFile_write
-    Address: 0x005a18f0  File: support/trstream.cpp
-    Unnamed: param_2 (undefined4), param_3 (int)
-    Named:   this_ptr (COutStreamFile *)
 
   COutStreamMemory_open
     Address: 0x005a1d60  File: support/trstream.cpp
@@ -627,19 +556,9 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int)
     Named:   this_ptr (CDemonRenderer *)
 
-  CAsciiArmor_flush
-    Address: 0x00443920  File: support/codec.cpp
-    Unnamed: param_2 (int *)
-    Named:   this_ptr (CAsciiArmor *)
-
   CCheesyCipher_setKey
     Address: 0x00443a50  File: support/codec.cpp
     Unnamed: param_2 (uint)
-    Named:   this_ptr (CCheesyCipher *)
-
-  CCheesyCipher_setMode
-    Address: 0x00443a40  File: support/codec.cpp
-    Unnamed: param_2 (undefined4)
     Named:   this_ptr (CCheesyCipher *)
 
   CCheesyCipher_transformByte
@@ -684,36 +603,30 @@ Wrong return type (64-bit return via EDX:EAX) (4)
   convertDirectionVectorToEulerAngles
     Address: 0x005a7520  File: core/vecdir.cpp
     Evidence: extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(float *param_1)
+    Signature: CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f *in_direction_vector,CVector3f *out_euler_angles)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
   slerpQuaternion
     Address: 0x005b7940  File: core/xform.cpp
     Evidence: extraout_EDX, extraout_EDX
-    Signature: float * core_xform_cpp_slerpQuaternion_FUN_005b7940(float *param_1,float *param_2,float param_3)
+    Signature: CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
   quaternionToEulerAngles
     Address: 0x005b7c00  File: core/xform.cpp
     Evidence: extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: undefined4 * core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(float *param_1)
+    Signature: CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(CQuaternion4f *quat_in,CVector3f *out_euler)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
   quaternionToEulerAnglesZYX
     Address: 0x005b7d60  File: core/xform.cpp
     Evidence: extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(float *param_1)
+    Signature: CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(CQuaternion4f *quat_in,CVector3f *vector_out)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (8)
+Missing register parameters (likely wrong calling convention) (7)
 --------------------------------------------------------------------------------
-
-  clipPolygonBottomPlaneGlobal
-    Address: 0x0043d500  File: engine/clipper.c
-    Evidence: in_AL, in_AL, in_AL, in_AL, in_AL, in_AL, in_AL, in_AL, in_AL
-    Signature: byte engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043d500(void)
-    Suggested: Likely register-based calling convention
 
   CDrawSurface_clipLine
     Address: 0x0047f1b0  File: cockpit/drawsurf.cpp
@@ -758,7 +671,7 @@ Missing register parameters (likely wrong calling convention) (8)
     Suggested: Likely __thiscall (ECX = this pointer)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (187)
+Wrong calling convention (unaffected register usage) (177)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -857,12 +770,6 @@ Wrong calling convention (unaffected register usage) (187)
     Signature: CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b2a0(CDemonActor *actor,CVector3f *out)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  rgbToHsv
-    Address: 0x0041b3d0  File: core/boneguy.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_boneguy_cpp_rgbToHsv_FUN_0041b3d0(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CBoneGuy_updatePickupBehavior
     Address: 0x0041c9a0  File: core/boneguy.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
@@ -873,12 +780,6 @@ Wrong calling convention (unaffected register usage) (187)
     Address: 0x0041d000  File: core/boneguy.cpp
     Evidence: unaff_EDI, unaff_EDI
     Signature: int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d000(CBoneGuy *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  modelStructNotSupported4
-    Address: 0x0041d980  File: engine/boss.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_boss_c_modelStructNotSupported4_FUN_0041d980(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CBoxActor_setupPhysicsBox
@@ -1064,7 +965,7 @@ Wrong calling convention (unaffected register usage) (187)
   FUN_004722f0
     Address: 0x004722f0  File: core/doc.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: undefined4 * core_doc_cpp_FUN_004722f0(void)
+    Signature: float * core_doc_cpp_FUN_004722f0(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDoc_doHeroAction
@@ -1119,12 +1020,6 @@ Wrong calling convention (unaffected register usage) (187)
     Address: 0x00479b22  File: core/dpart.cpp
     Evidence: unaff_EBX, unaff_EBX
     Signature: void core_dpart_cpp_FUN_00479b22(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  randomizePosition
-    Address: 0x0047d890  File: core/dracbrid.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dracbrid_cpp_randomizePosition_FUN_0047d890(float param_1,float param_2,float param_3)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDrawSurface_drawLineBresenham
@@ -1613,12 +1508,6 @@ Wrong calling convention (unaffected register usage) (187)
     Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0057a7f0(CWavOutDevice *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  renderMMXPerspectiveScanline32
-    Address: 0x0057de01  File: engine/special.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   FUN_0057eeac
     Address: 0x0057eeac  File: engine/special.cpp
     Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -1653,12 +1542,6 @@ Wrong calling convention (unaffected register usage) (187)
     Address: 0x0058d3c0  File: core/stranger.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0058d3c0(CStranger *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  calculateAimAnglesWithOffset
-    Address: 0x0058e9a0  File: core/stranger.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CStranger_handleFireButton
@@ -1769,12 +1652,6 @@ Wrong calling convention (unaffected register usage) (187)
     Signature: int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005a6b00(CVampireBoss *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  convertDirectionVectorToEulerAngles
-    Address: 0x005a7520  File: core/vecdir.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(float *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CVehicle_process
     Address: 0x005a7b50  File: core/vehicle.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -1841,30 +1718,6 @@ Wrong calling convention (unaffected register usage) (187)
     Signature: void core_xform_cpp_FUN_005b6920(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  matrixToQuaternion
-    Address: 0x005b75a0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_matrixToQuaternion_FUN_005b75a0(float *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  slerpQuaternion
-    Address: 0x005b7940  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: float * core_xform_cpp_slerpQuaternion_FUN_005b7940(float *param_1,float *param_2,float param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  quaternionFromAxisAngle
-    Address: 0x005b7bb0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_quaternionFromAxisAngle_FUN_005b7bb0(float param_1,float *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  eulerToQuaternionIndirect
-    Address: 0x005b7ff0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: undefined1 core_xform_cpp_eulerToQuaternionIndirect_FUN_005b7ff0(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   getObjectGrabPointLocal
     Address: 0x005ba7d0  File: core/zombie.cpp
     Evidence: unaff_EBP, unaff_EBP
@@ -1884,14 +1737,8 @@ Wrong calling convention (unaffected register usage) (187)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (270)
+Unresolved stack parameters (missing from signature) (265)
 --------------------------------------------------------------------------------
-
-  draw320x200SizeDot
-    Address: 0x00402ae0  File: engine/2d.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void engine_2d_c_draw320x200SizeDot_FUN_00402ae0(void)
-    Suggested: Signature is missing stack parameters entirely
 
   clipAndDrawLine
     Address: 0x00402cf0  File: engine/2d.c
@@ -1914,7 +1761,7 @@ Unresolved stack parameters (missing from signature) (270)
   drawLine3DFromIndices
     Address: 0x00407d70  File: engine/3d.c
     Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
-    Signature: void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)
+    Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_getWorldBoundingBox
@@ -1993,12 +1840,6 @@ Unresolved stack parameters (missing from signature) (270)
     Address: 0x0041b2a0  File: core/boneguy.cpp
     Evidence: in_stack_ffffff78, in_stack_ffffff78
     Signature: CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b2a0(CDemonActor *actor,CVector3f *out)
-    Suggested: Signature is missing stack parameters entirely
-
-  rgbToHsv
-    Address: 0x0041b3d0  File: core/boneguy.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void core_boneguy_cpp_rgbToHsv_FUN_0041b3d0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CBoneGuy_process
@@ -2139,16 +1980,10 @@ Unresolved stack parameters (missing from signature) (270)
     Signature: void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00439640(int x0,int y0,int x1,int y1,int color)
     Suggested: Signature is missing stack parameters entirely
 
-  traceConnectedEdges
-    Address: 0x0043a460  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000020, in_stack_00000024, in_stack_00000004, in_stack_00000014, in_stack_00000018, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000001c, in_stack_00000024, in_stack_00000020, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000024, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
-    Signature: void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CCheesyCipher_ctor
     Address: 0x00443a00  File: support/codec.cpp
     Evidence: in_stack_00000014, in_stack_00000014
-    Signature: CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00443a00(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3)
+    Signature: CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00443a00(CCheesyCipher *this_ptr,int mode,uint key)
     Suggested: Signature is missing stack parameters entirely
 
   CConstruct_process
@@ -2199,12 +2034,6 @@ Unresolved stack parameters (missing from signature) (270)
     Signature: int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044bf20(CCurtain *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  clipTriangleToAABB
-    Address: 0x004570e0  File: core/dcube.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: undefined4 core_dcube_cpp_clipTriangleToAABB_FUN_004570e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_00458790
     Address: 0x00458790  File: core/demnfolk.cpp
     Evidence: in_stack_ffffff78, in_stack_ffffff78
@@ -2213,7 +2042,7 @@ Unresolved stack parameters (missing from signature) (270)
 
   CDemnfolk_process
     Address: 0x00459100  File: core/demnfolk.cpp
-    Evidence: in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0
+    Evidence: in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac4, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac8, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0, in_stack_fffffac0
     Signature: void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00459100(CDemnfolk *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2285,8 +2114,8 @@ Unresolved stack parameters (missing from signature) (270)
 
   FUN_004722f0
     Address: 0x004722f0  File: core/doc.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: undefined4 * core_doc_cpp_FUN_004722f0(void)
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
+    Signature: float * core_doc_cpp_FUN_004722f0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CDoc_updateWeaponLayerActions
@@ -2967,6 +2796,12 @@ Unresolved stack parameters (missing from signature) (270)
     Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
     Suggested: Signature is missing stack parameters entirely
 
+  loadPBGFile
+    Address: 0x00538750  File: cockpit/pkbitmap.cpp
+    Evidence: in_stack_0000001c, in_stack_00000020, in_stack_0000001c, in_stack_00000020, in_stack_0000001c
+    Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
+    Suggested: Signature is missing stack parameters entirely
+
   CPackedBitmapSet_loadBitmapSetFromRange
     Address: 0x00538a60  File: cockpit/pkbmpset.cpp
     Evidence: in_stack_0000002c, in_stack_00000030, in_stack_0000002c, in_stack_00000030
@@ -3249,12 +3084,6 @@ Unresolved stack parameters (missing from signature) (270)
     Signature: int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  calculateAimAnglesWithOffset
-    Address: 0x0058e9a0  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CStranger_updateWeaponLayerActions
     Address: 0x005907a0  File: core/stranger.cpp
     Evidence: in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff90
@@ -3465,12 +3294,6 @@ Unresolved stack parameters (missing from signature) (270)
     Signature: void core_xform_cpp_FUN_005b6920(void)
     Suggested: Signature is missing stack parameters entirely
 
-  eulerToQuaternionIndirect
-    Address: 0x005b7ff0  File: core/xform.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: undefined1 core_xform_cpp_eulerToQuaternionIndirect_FUN_005b7ff0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   getObjectGrabPointLocal
     Address: 0x005ba7d0  File: core/zombie.cpp
     Evidence: in_stack_ffffff90, in_stack_ffffff90
@@ -3485,7 +3308,7 @@ Unresolved stack parameters (missing from signature) (270)
 
   CZombie_process
     Address: 0x005bafb0  File: core/zombie.cpp
-    Evidence: in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8
+    Evidence: in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8
     Signature: void __cdecl core_zombie_cpp_CZombie_process_FUN_005bafb0(CZombie *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -3508,7 +3331,7 @@ Unresolved stack parameters (missing from signature) (270)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1078)
+Undefined types in variables (1065)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -6841,11 +6664,6 @@ Undefined types in variables (1078)
     Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CFireEffect_createLeaf
-    Address: 0x004b5f00  File: core/fire.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4), param_5 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   SNotesEntry_layout
     Address: 0x004bbd10  File: core/fldnotes.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -7166,11 +6984,6 @@ Undefined types in variables (1078)
     Locals:  local_3c (undefined), local_34 (undefined), local_33 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CInStreamPipe_open
-    Address: 0x00443f90  File: support/codec.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4), param_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   calibrateCPUSpeed
     Address: 0x005b21e0  File: wincore/winrun.cpp
     Locals:  local_20 (undefined8), local_18 (undefined4), local_14 (undefined4)
@@ -7266,11 +7079,6 @@ Undefined types in variables (1078)
     Locals:  local_84 (undefined), local_6c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  CCharacter_pickupObjectNow
-    Address: 0x004325b0  File: core/charactr.cpp
-    Params:  param_4 (undefined4), param_5 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CCharacter_preProcess
     Address: 0x0042e160  File: core/charactr.cpp
     Locals:  local_10 (undefined4), local_8 (undefined4)
@@ -7356,11 +7164,6 @@ Undefined types in variables (1078)
     Locals:  local_78 (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CFireEffect_createFirefly
-    Address: 0x004b5fa0  File: core/fire.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CFireEffect_load
     Address: 0x004b7370  File: core/fire.cpp
     Locals:  local_110 (undefined), local_10 (undefined4)
@@ -7384,11 +7187,6 @@ Undefined types in variables (1078)
   CFrankenstienMachine_setPartFrame
     Address: 0x004c5e80  File: core/frankgen.cpp
     Locals:  local_c (undefined4), local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CGame_displayBitmap
-    Address: 0x004d7730  File: core/game.cpp
-    Params:  param_3 (undefined4), param_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGame_processFrame
@@ -7751,11 +7549,6 @@ Undefined types in variables (1078)
     Locals:  local_34 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CCheesyCipher_ctor
-    Address: 0x00443a00  File: support/codec.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CLZWDictionary_readCodeFromStream
     Address: 0x004431b0  File: support/codec.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
@@ -7779,11 +7572,6 @@ Undefined types in variables (1078)
   CInStreamFile_read
     Address: 0x005a0c10  File: support/trstream.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  COutStreamFile_seek
-    Address: 0x005a1940  File: support/trstream.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   convertPaletteToDirectColor
@@ -8074,11 +7862,6 @@ Undefined types in variables (1078)
   CExplosion_process
     Address: 0x004b1820  File: core/fire.cpp
     Locals:  local_10 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  CLeaf_init
-    Address: 0x004af0f0  File: core/fire.cpp
-    Params:  param_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CShell_setup
@@ -8791,21 +8574,6 @@ Undefined types in variables (1078)
     Locals:  local_34 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  CAsciiArmor_encode
-    Address: 0x004438d0  File: support/codec.cpp
-    Params:  param_2 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CAsciiUnarmor_decode
-    Address: 0x004439b0  File: support/codec.cpp
-    Params:  param_3 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CCheesyCipher_setMode
-    Address: 0x00443a40  File: support/codec.cpp
-    Params:  param_2 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CCodec_processBuffer
     Address: 0x00442d90  File: support/codec.cpp
     Locals:  local_24 (undefined)
@@ -8821,11 +8589,6 @@ Undefined types in variables (1078)
     Locals:  local_24 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  CInStreamPipe_read
-    Address: 0x00443d80  File: support/codec.cpp
-    Params:  param_2 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
   CLZWCompress_process
     Address: 0x00443530  File: support/codec.cpp
     Locals:  local_14 (undefined4)
@@ -8836,7 +8599,7 @@ Undefined types in variables (1078)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00442600
+  writeBitsToStream
     Address: 0x00442600  File: support/codec.cpp
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8869,11 +8632,6 @@ Undefined types in variables (1078)
   CInStreamFile_fillBuffer
     Address: 0x005a0ec0  File: support/trstream.cpp
     Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  COutStreamFile_write
-    Address: 0x005a18f0  File: support/trstream.cpp
-    Params:  param_2 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   COutStream_printf
@@ -9167,10 +8925,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0056d490  (void)
     0x005774f0  (void)
 
-  support_codec.cpp  (9 functions)
+  support_codec.cpp  (8 functions)
     0x004425b0  (int *param_1,int param_2,uint param_3)
     0x004425e0  (undefined4 *param_1,undefined4 *param_2)
-    0x00442600  (byte *param_1,int param_2,uint param_3,int *param_4)
     0x004427a0  (int *param_1,int *param_2)
     0x00442880  (uint *param_1,byte param_2)
     0x00442a80  (undefined4 param_1,_FILE *param_2,int param_3)

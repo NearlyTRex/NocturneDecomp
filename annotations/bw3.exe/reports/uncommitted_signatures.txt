@@ -1,11 +1,7 @@
-bw3.exe: 5895 functions, 376 game and 461 CRT with an uncommitted or undefined signature
-  ret undefined1     347
-  sig default        301
-  conv unknown       46
-  param undefined4   30
-  ret undefined4     15
-  param undefined4*  2
-  ret undefined8     1
+bw3.exe: 5895 functions, 312 game and 461 CRT with an uncommitted or undefined signature
+  ret undefined1     312
+  sig default        278
+  conv unknown       34
 
 support_trisock.cpp  30
   0056fa20  support_trisock.cpp_FUN_0056fa20                             sig default, ret undefined1
@@ -38,31 +34,6 @@ support_trisock.cpp  30
   00572290  support_trisock.cpp_FUN_00572290                             sig default, ret undefined1
   00572310  support_trisock.cpp_FUN_00572310                             sig default, ret undefined1
   00572330  support_trisock.cpp_FUN_00572330                             sig default, ret undefined1
-
-support_codec.cpp  23
-  004400f0  support_codec.cpp_writeBitsToStream_FUN_004400f0             sig default, ret undefined1
-  00440210  support_codec.cpp_FUN_00440210                               sig default, ret undefined1
-  00440240  support_codec.cpp_FUN_00440240                               sig default, ret undefined1
-  00440260  support_codec.cpp_FUN_00440260                               sig default, ret undefined1
-  00440400  support_codec.cpp_FUN_00440400                               sig default, ret undefined1
-  004404e0  support_codec.cpp_FUN_004404e0                               sig default, ret undefined1
-  004406e0  support_codec.cpp_FUN_004406e0                               sig default, ret undefined1
-  00441490  support_codec.cpp_FUN_00441490                               sig default, ret undefined1
-  00441510  support_codec.cpp_FUN_00441510                               sig default, ret undefined1
-  00441530  support_codec.cpp_CAsciiArmor_encode_FUN_00441530            ret undefined4, param 1:undefined4
-  00441580  support_codec.cpp_CAsciiArmor_flush_FUN_00441580             ret undefined4
-  00441610  support_codec.cpp_CAsciiUnarmor_decode_FUN_00441610          ret undefined4, param 2:undefined4
-  00441660  support_codec.cpp_CCheesyCipher_ctor_FUN_00441660            param 1:undefined4, param 2:undefined4
-  004416a0  support_codec.cpp_CCheesyCipher_setMode_FUN_004416a0         param 1:undefined4
-  00441750  support_codec.cpp_CCheesyCipher_process_FUN_00441750         ret undefined4
-  00441970  support_codec.cpp_CInStreamPipe_ungetChar_FUN_00441970       ret undefined4
-  004419e0  support_codec.cpp_CInStreamPipe_read_FUN_004419e0            param 1:undefined4*
-  00441aa0  support_codec.cpp_CInStreamPipe_seek_FUN_00441aa0            ret undefined4
-  00441ad0  support_codec.cpp_CInStreamPipe_tell_FUN_00441ad0            ret undefined4
-  00441b00  support_codec.cpp_CInStreamPipe_isOpen_FUN_00441b00          ret undefined4
-  00441b30  support_codec.cpp_CInStreamPipe_isEof_FUN_00441b30           ret undefined4
-  00441bf0  support_codec.cpp_CInStreamPipe_open_FUN_00441bf0            ret undefined4, param 1:undefined4, param 2:undefined4, param 3:undefined4
-  00441c80  support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80      ret undefined4
 
 wincore_winrun.cpp  19
   00580870  wincore_winrun.cpp_FUN_00580870                              sig default, ret undefined1
@@ -136,7 +107,7 @@ core_prye.cpp  13
   005271d0  core_prye.cpp_FUN_005271d0                                   sig default, ret undefined1
   00527200  core_prye.cpp_FUN_00527200                                   sig default, ret undefined1
 
-engine_texture.cpp  13
+engine_texture.cpp  12
   00569e50  engine_texture.cpp_FUN_00569e50                              sig default, ret undefined1
   00569ec0  engine_texture.cpp_FUN_00569ec0                              sig default, ret undefined1
   00569f20  engine_texture.cpp_FUN_00569f20                              sig default, ret undefined1
@@ -147,11 +118,10 @@ engine_texture.cpp  13
   0056a8f0  engine_texture.cpp_FUN_0056a8f0                              sig default, ret undefined1
   0056aab0  engine_texture.cpp_FUN_0056aab0                              sig default, ret undefined1
   0056ab70  engine_texture.cpp_FUN_0056ab70                              ret undefined1, conv unknown
-  0056ace0  engine_texture.cpp_renderTextureAtlas_FUN_0056ace0           ret undefined1, conv unknown
   0056ad50  engine_texture.cpp_FUN_0056ad50                              ret undefined1, conv unknown
   0056ad60  engine_texture.cpp_FUN_0056ad60                              ret undefined1, conv unknown
 
-core_charactr.cpp  12
+core_charactr.cpp  11
   0042b430  core_charactr.cpp_FUN_0042b430                               sig default, ret undefined1
   0042c1e0  core_charactr.cpp_FUN_0042c1e0                               sig default, ret undefined1
   0042d390  core_charactr.cpp_FUN_0042d390                               sig default, ret undefined1
@@ -159,24 +129,10 @@ core_charactr.cpp  12
   0042d860  core_charactr.cpp_FUN_0042d860                               sig default, ret undefined1
   0042d8a0  core_charactr.cpp_FUN_0042d8a0                               sig default, ret undefined1
   0042f280  core_charactr.cpp_FUN_0042f280                               sig default, ret undefined1
-  004319d0  core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0    param 3:undefined4, param 4:undefined4
   00434850  core_charactr.cpp_FUN_00434850                               sig default, ret undefined1
   004348b0  core_charactr.cpp_FUN_004348b0                               sig default, ret undefined1
   004349d0  core_charactr.cpp_FUN_004349d0                               sig default, ret undefined1
   00434b30  core_charactr.cpp_FUN_00434b30                               ret undefined1, conv unknown
-
-core_game.cpp  11
-  004ba220  core_game.cpp_FUN_004ba220                                   sig default, ret undefined1
-  004ba280  core_game.cpp_FUN_004ba280                                   sig default, ret undefined1
-  004bd470  core_game.cpp_FUN_004bd470                                   sig default, ret undefined1
-  004beb80  core_game.cpp_CGame_displayBitmap_FUN_004beb80               param 2:undefined4, param 3:undefined4
-  004c07b0  core_game.cpp_FUN_004c07b0                                   sig default, ret undefined1
-  004c4870  core_game.cpp_FUN_004c4870                                   sig default, ret undefined1
-  004c4a60  core_game.cpp_FUN_004c4a60                                   sig default, ret undefined1
-  004c4bc0  core_game.cpp_FUN_004c4bc0                                   sig default, ret undefined1
-  004c4cc0  core_game.cpp_FUN_004c4cc0                                   sig default, ret undefined1
-  004c4d10  core_game.cpp_FUN_004c4d10                                   sig default, ret undefined1
-  004c4d50  core_game.cpp_FUN_004c4d50                                   sig default, ret undefined1
 
 shape_edittool.cpp  11
   0047b4e0  shape_edittool.cpp_FUN_0047b4e0                              ret undefined1, conv unknown
@@ -203,17 +159,17 @@ core_carved.cpp  10
   00428810  core_carved.cpp_FUN_00428810                                 sig default, ret undefined1
   00429090  core_carved.cpp_FUN_00429090                                 sig default, ret undefined1
 
-core_xform.cpp  10
-  00583a40  core_xform.cpp_angleFromSinCos_FUN_00583a40                  sig default, ret undefined1
-  00584b00  core_xform.cpp_FUN_00584b00                                  sig default, ret undefined1
-  00585780  core_xform.cpp_matrixToQuaternion_FUN_00585780               sig default, ret undefined1
-  00585b20  core_xform.cpp_slerpQuaternion_FUN_00585b20                  sig default, ret undefined1
-  00585d10  core_xform.cpp_quaternionFromAngleY_FUN_00585d10             sig default, ret undefined1
-  00585d90  core_xform.cpp_quaternionFromAxisAngle_FUN_00585d90          sig default, ret undefined1
-  00585de0  core_xform.cpp_quaternionToEulerAngles_FUN_00585de0          sig default, ret undefined1
-  00585f40  core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00585f40       sig default, ret undefined1
-  005860b0  core_xform.cpp_eulerToQuaternion_FUN_005860b0                sig default, ret undefined1
-  005861d0  core_xform.cpp_eulerToQuaternionIndirect_FUN_005861d0        ret undefined1, conv unknown
+core_game.cpp  10
+  004ba220  core_game.cpp_FUN_004ba220                                   sig default, ret undefined1
+  004ba280  core_game.cpp_FUN_004ba280                                   sig default, ret undefined1
+  004bd470  core_game.cpp_FUN_004bd470                                   sig default, ret undefined1
+  004c07b0  core_game.cpp_FUN_004c07b0                                   sig default, ret undefined1
+  004c4870  core_game.cpp_FUN_004c4870                                   sig default, ret undefined1
+  004c4a60  core_game.cpp_FUN_004c4a60                                   sig default, ret undefined1
+  004c4bc0  core_game.cpp_FUN_004c4bc0                                   sig default, ret undefined1
+  004c4cc0  core_game.cpp_FUN_004c4cc0                                   sig default, ret undefined1
+  004c4d10  core_game.cpp_FUN_004c4d10                                   sig default, ret undefined1
+  004c4d50  core_game.cpp_FUN_004c4d50                                   sig default, ret undefined1
 
 core_demnfolk.cpp  9
   00454780  core_demnfolk.cpp_FUN_00454780                               sig default, ret undefined1
@@ -236,17 +192,16 @@ engine_font.cpp  8
   004b37d0  engine_font.cpp_FUN_004b37d0                                 sig default, ret undefined1
   004b3920  engine_font.cpp_FUN_004b3920                                 ret undefined1, conv unknown
 
-cockpit_ckptutil.c  7
-  00435e90  cockpit_ckptutil.c_FUN_00435e90                              ret undefined1, conv unknown
-  00435f20  cockpit_ckptutil.c_FUN_00435f20                              sig default, ret undefined1
-  00436050  cockpit_ckptutil.c_FUN_00436050                              ret undefined1, conv unknown
-  00437c10  cockpit_ckptutil.c_isLineBlendingDisabled_FUN_00437c10       ret undefined1, conv unknown
-  00437e10  cockpit_ckptutil.c_rotateBitmap_FUN_00437e10                 sig default, ret undefined1
-  00438070  cockpit_ckptutil.c_traceConnectedEdges_FUN_00438070          ret undefined1, conv unknown
-  00438ca0  cockpit_ckptutil.c_generateTransparencySpans_FUN_00438ca0    sig default, ret undefined1
+support_codec.cpp  7
+  00440210  support_codec.cpp_FUN_00440210                               sig default, ret undefined1
+  00440240  support_codec.cpp_FUN_00440240                               sig default, ret undefined1
+  00440400  support_codec.cpp_FUN_00440400                               sig default, ret undefined1
+  004404e0  support_codec.cpp_FUN_004404e0                               sig default, ret undefined1
+  004406e0  support_codec.cpp_FUN_004406e0                               sig default, ret undefined1
+  00441490  support_codec.cpp_FUN_00441490                               sig default, ret undefined1
+  00441510  support_codec.cpp_FUN_00441510                               sig default, ret undefined1
 
-core_actor.cpp  7
-  00408100  core_actor.cpp_rayCylinderIntersect_FUN_00408100             sig default, ret undefined1
+core_actor.cpp  6
   004088d0  core_actor.cpp_FUN_004088d0                                  sig default, ret undefined1
   00408a30  core_actor.cpp_FUN_00408a30                                  sig default, ret undefined1
   00408d00  core_actor.cpp_FUN_00408d00                                  sig default, ret undefined1
@@ -262,14 +217,6 @@ core_construc.cpp  6
   004445d0  core_construc.cpp_FUN_004445d0                               sig default, ret undefined1
   004445f0  core_construc.cpp_FUN_004445f0                               sig default, ret undefined1
 
-core_fire.cpp  6
-  0049a140  core_fire.cpp_CLeaf_init_FUN_0049a140                        param 3:undefined4
-  0049a380  core_fire.cpp_CLeaf_onCollision_FUN_0049a380                 ret undefined4
-  0049fce0  core_fire.cpp_CRing_activate_FUN_0049fce0                    param 1:undefined4*, param 2:undefined4, param 3:undefined4
-  004a2930  core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930            param 1:undefined4, param 2:undefined4, param 4:undefined4
-  004a29d0  core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0         param 1:undefined4, param 2:undefined4
-  004a3f70  core_fire.cpp_CFireEffect_createRing_FUN_004a3f70            param 1:undefined4, param 2:undefined4, param 3:undefined4
-
 core_zombie.cpp  6
   005884f0  core_zombie.cpp_FUN_005884f0                                 sig default, ret undefined1
   0058cc90  core_zombie.cpp_FUN_0058cc90                                 sig default, ret undefined1
@@ -278,26 +225,12 @@ core_zombie.cpp  6
   0058ce40  core_zombie.cpp_FUN_0058ce40                                 sig default, ret undefined1
   0058ced0  core_zombie.cpp_FUN_0058ced0                                 sig default, ret undefined1
 
-core_boneguy.cpp  5
-  00417080  core_boneguy.cpp_rgbToHsv_FUN_00417080                       ret undefined1, conv unknown
-  004198b0  core_boneguy.cpp_FUN_004198b0                                sig default, ret undefined1
-  00419950  core_boneguy.cpp_FUN_00419950                                sig default, ret undefined1
-  004199f0  core_boneguy.cpp_FUN_004199f0                                sig default, ret undefined1
-  00419a90  core_boneguy.cpp_FUN_00419a90                                sig default, ret undefined1
-
 core_flattn.cpp  5
   004ad4d0  core_flattn.cpp_FUN_004ad4d0                                 sig default, ret undefined1
   004ad550  core_flattn.cpp_FUN_004ad550                                 sig default, ret undefined1
   004ad5e0  core_flattn.cpp_FUN_004ad5e0                                 sig default, ret undefined1
   004ad660  core_flattn.cpp_FUN_004ad660                                 sig default, ret undefined1
   004ad6e0  core_flattn.cpp_FUN_004ad6e0                                 sig default, ret undefined1
-
-core_hero.cpp  5
-  004d3210  core_hero.cpp_FUN_004d3210                                   sig default, ret undefined1
-  004d3460  core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460              ret undefined4
-  004d4840  core_hero.cpp_FUN_004d4840                                   sig default, ret undefined1
-  004d4900  core_hero.cpp_FUN_004d4900                                   sig default, ret undefined1
-  004d4ce0  core_hero.cpp_FUN_004d4ce0                                   ret undefined1, conv unknown
 
 engine_dosio.cpp  5
   00465650  engine_dosio.cpp_FUN_00465650                                sig default, ret undefined1
@@ -306,24 +239,23 @@ engine_dosio.cpp  5
   00466190  engine_dosio.cpp_FUN_00466190                                sig default, ret undefined1
   00466220  engine_dosio.cpp_FUN_00466220                                sig default, ret undefined1
 
-engine_special.cpp  5
-  00560f31  engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31 sig default, ret undefined1
-  005616a0  engine_special.cpp_FUN_005616a0                              sig default, ret undefined1
-  00561fdc  engine_special.cpp_FUN_00561fdc                              sig default, ret undefined1
-  005625a3  engine_special.cpp_FUN_005625a3                              sig default, ret undefined1
-  005665c0  engine_special.cpp_FUN_005665c0                              ret undefined1, conv unknown
-
 cockpit_drawsurf.cpp  4
   004694b0  cockpit_drawsurf.cpp_FUN_004694b0                            sig default, ret undefined1
   004694c0  cockpit_drawsurf.cpp_FUN_004694c0                            ret undefined1, conv unknown
   004694d0  cockpit_drawsurf.cpp_FUN_004694d0                            ret undefined1, conv unknown
   004694e0  cockpit_drawsurf.cpp_FUN_004694e0                            sig default, ret undefined1
 
-core_inv.cpp  4
-  004d9fc0  core_inv.cpp_FUN_004d9fc0                                    sig default, ret undefined1
-  004da020  core_inv.cpp_FUN_004da020                                    sig default, ret undefined1
-  004dba30  core_inv.cpp_FUN_004dba30                                    sig default, ret undefined1
-  004dcad0  core_inv.cpp_setupItems_FUN_004dcad0                         sig default, ret undefined1
+core_boneguy.cpp  4
+  004198b0  core_boneguy.cpp_FUN_004198b0                                sig default, ret undefined1
+  00419950  core_boneguy.cpp_FUN_00419950                                sig default, ret undefined1
+  004199f0  core_boneguy.cpp_FUN_004199f0                                sig default, ret undefined1
+  00419a90  core_boneguy.cpp_FUN_00419a90                                sig default, ret undefined1
+
+core_hero.cpp  4
+  004d3210  core_hero.cpp_FUN_004d3210                                   sig default, ret undefined1
+  004d4840  core_hero.cpp_FUN_004d4840                                   sig default, ret undefined1
+  004d4900  core_hero.cpp_FUN_004d4900                                   sig default, ret undefined1
+  004d4ce0  core_hero.cpp_FUN_004d4ce0                                   ret undefined1, conv unknown
 
 core_set.cpp  4
   00532630  core_set.cpp_FUN_00532630                                    sig default, ret undefined1
@@ -337,11 +269,16 @@ core_zombiepriest.cpp  4
   0058f610  core_zombiepriest.cpp_FUN_0058f610                           sig default, ret undefined1
   0058f630  core_zombiepriest.cpp_FUN_0058f630                           sig default, ret undefined1
 
-support_trstream.cpp  4
-  00572550  support_trstream.cpp_FUN_00572550                            ret undefined1, conv unknown
-  005748e0  support_trstream.cpp_COutStreamFile_write_FUN_005748e0       param 1:undefined4
-  00574930  support_trstream.cpp_COutStreamFile_seek_FUN_00574930        param 1:undefined4, param 2:undefined4
-  00574d00  support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00      ret undefined4
+engine_special.cpp  4
+  005616a0  engine_special.cpp_FUN_005616a0                              sig default, ret undefined1
+  00561fdc  engine_special.cpp_FUN_00561fdc                              sig default, ret undefined1
+  005625a3  engine_special.cpp_FUN_005625a3                              sig default, ret undefined1
+  005665c0  engine_special.cpp_FUN_005665c0                              ret undefined1, conv unknown
+
+cockpit_ckptutil.c  3
+  00435e90  cockpit_ckptutil.c_FUN_00435e90                              ret undefined1, conv unknown
+  00435f20  cockpit_ckptutil.c_FUN_00435f20                              sig default, ret undefined1
+  00436050  cockpit_ckptutil.c_FUN_00436050                              ret undefined1, conv unknown
 
 core_ammo.cpp  3
   0040e0c0  core_ammo.cpp_FUN_0040e0c0                                   sig default, ret undefined1
@@ -358,6 +295,11 @@ core_hotdemon.cpp  3
   004d6360  core_hotdemon.cpp_FUN_004d6360                               sig default, ret undefined1
   004d63e0  core_hotdemon.cpp_FUN_004d63e0                               sig default, ret undefined1
 
+core_inv.cpp  3
+  004d9fc0  core_inv.cpp_FUN_004d9fc0                                    sig default, ret undefined1
+  004da020  core_inv.cpp_FUN_004da020                                    sig default, ret undefined1
+  004dba30  core_inv.cpp_FUN_004dba30                                    sig default, ret undefined1
+
 core_morph.cpp  3
   004fb1c0  core_morph.cpp_FUN_004fb1c0                                  sig default, ret undefined1
   004fb1f0  core_morph.cpp_FUN_004fb1f0                                  sig default, ret undefined1
@@ -367,24 +309,6 @@ core_tawiscara.cpp  3
   00595710  core_tawiscara.cpp_FUN_00595710                              sig default, ret undefined1
   00595760  core_tawiscara.cpp_FUN_00595760                              sig default, ret undefined1
   00596380  core_tawiscara.cpp_FUN_00596380                              sig default, ret undefined1
-
-engine_3d.c  3
-  00403dd0  engine_3d.c_FUN_00403dd0                                     sig default, ret undefined1
-  00407ab0  engine_3d.c_drawLine2DFromIndices_FUN_00407ab0               sig default, ret undefined1
-  00407db0  engine_3d.c_drawLine3DFromIndices_FUN_00407db0               sig default, ret undefined1
-
-engine_clipper.c  3
-  0043ad90  engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90    ret undefined1, conv unknown
-  0043b3c0  engine_clipper.c_FUN_0043b3c0                                ret undefined1, conv unknown
-  0043b4e0  engine_clipper.c_FUN_0043b4e0                                sig default, ret undefined1
-
-cockpit_pkbitmap.cpp  2
-  0050fcb8  cockpit_pkbitmap.cpp_FUN_0050fcb8                            sig default, ret undefined1
-  00510430  cockpit_pkbitmap.cpp_loadPBGFile_FUN_00510430                sig default, ret undefined1
-
-cockpit_pkbmpset.cpp  2
-  00510740  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 param 1:undefined4, param 2:undefined4, param 6:undefined4, param 7:undefined4
-  00510de0  cockpit_pkbmpset.cpp_FUN_00510de0                            sig default, ret undefined1
 
 core_baal.cpp  2
   00597700  core_baal.cpp_FUN_00597700                                   sig default, ret undefined1
@@ -406,10 +330,6 @@ core_enemy.cpp  2
   00489c90  core_enemy.cpp_FUN_00489c90                                  sig default, ret undefined1
   0048a1b0  core_enemy.cpp_FUN_0048a1b0                                  sig default, ret undefined1
 
-core_event.cpp  2
-  0048bc10  core_event.cpp_extractParenArg_FUN_0048bc10                  sig default, ret undefined1
-  0048c2e0  core_event.cpp_FUN_0048c2e0                                  sig default, ret undefined1
-
 core_hino.cpp  2
   0059b740  core_hino.cpp_FUN_0059b740                                   sig default, ret undefined1
   0059d000  core_hino.cpp_FUN_0059d000                                   sig default, ret undefined1
@@ -422,10 +342,6 @@ core_motion.cpp  2
   004fc0c0  core_motion.cpp_FUN_004fc0c0                                 sig default, ret undefined1
   004fc2c0  core_motion.cpp_FUN_004fc2c0                                 sig default, ret undefined1
 
-core_sound.cpp  2
-  0055f610  core_sound.cpp_resetTrainSounds_FUN_0055f610                 ret undefined1, conv unknown
-  0055f6b0  core_sound.cpp_processTrainSounds_FUN_0055f6b0               ret undefined1, conv unknown
-
 core_spawner.cpp  2
   00563e40  core_spawner.cpp_FUN_00563e40                                sig default, ret undefined1
   00563e50  core_spawner.cpp_FUN_00563e50                                sig default, ret undefined1
@@ -434,9 +350,9 @@ core_weather.cpp  2
   0057c2c0  core_weather.cpp_FUN_0057c2c0                                sig default, ret undefined1
   0057d420  core_weather.cpp_FUN_0057d420                                sig default, ret undefined1
 
-engine_2d.c  2
-  00402860  engine_2d.c_FUN_00402860                                     sig default, ret undefined1
-  00402ae0  engine_2d.c_draw320x200SizeDot_FUN_00402ae0                  ret undefined1, conv unknown
+engine_clipper.c  2
+  0043b3c0  engine_clipper.c_FUN_0043b3c0                                ret undefined1, conv unknown
+  0043b4e0  engine_clipper.c_FUN_0043b4e0                                sig default, ret undefined1
 
 engine_ini.cpp  2
   004d8d90  engine_ini.cpp_FUN_004d8d90                                  ret undefined1, conv unknown
@@ -450,12 +366,14 @@ sound_snddx.cpp  2
   0055ab20  sound_snddx.cpp_FUN_0055ab20                                 sig default, ret undefined1
   0055abc0  sound_snddx.cpp_FUN_0055abc0                                 sig default, ret undefined1
 
-wincore_wddvmem.cpp  2
-  005797d0  wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005797d0       ret undefined1, conv unknown
-  005798a0  wincore_wddvmem.cpp_freeRenderBuffers_FUN_005798a0           ret undefined1, conv unknown
-
 (no unit)  1
   004d2ab0  caseD_1                                                      sig default, ret undefined1
+
+cockpit_pkbitmap.cpp  1
+  0050fcb8  cockpit_pkbitmap.cpp_FUN_0050fcb8                            sig default, ret undefined1
+
+cockpit_pkbmpset.cpp  1
+  00510de0  cockpit_pkbmpset.cpp_FUN_00510de0                            sig default, ret undefined1
 
 core_asgaya.cpp  1
   005a1e60  core_asgaya.cpp_FUN_005a1e60                                 ret undefined1, conv unknown
@@ -469,9 +387,6 @@ core_burncrss.cpp  1
 core_darkwolf.cpp  1
   00598fb0  core_darkwolf.cpp_FUN_00598fb0                               sig default, ret undefined1
 
-core_dcube.cpp  1
-  00453230  core_dcube.cpp_clipTriangleToAABB_FUN_00453230               ret undefined1, conv unknown
-
 core_dirmat.cpp  1
   0045bef0  core_dirmat.cpp_FUN_0045bef0                                 sig default, ret undefined1
 
@@ -483,6 +398,9 @@ core_dlight.cpp  1
 
 core_dpart.cpp  1
   004663f2  core_dpart.cpp_FUN_004663f2                                  sig default, ret undefined1
+
+core_event.cpp  1
+  0048c2e0  core_event.cpp_FUN_0048c2e0                                  sig default, ret undefined1
 
 core_firestff.cpp  1
   004a5930  core_firestff.cpp_FUN_004a5930                               sig default, ret undefined1
@@ -499,17 +417,11 @@ core_imp.cpp  1
 core_kedward.cpp  1
   005919a0  core_kedward.cpp_FUN_005919a0                                sig default, ret undefined1
 
-core_lightsta.cpp  1
-  004e1070  core_lightsta.cpp_CLightStaff_fire_FUN_004e1070              ret undefined4
-
 core_mattnntt.cpp  1
   00593a90  core_mattnntt.cpp_FUN_00593a90                               sig default, ret undefined1
 
 core_melee.cpp  1
   004e7540  core_melee.cpp_FUN_004e7540                                  sig default, ret undefined1
-
-core_menu.cpp  1
-  004eadf0  core_menu.cpp_getSinglePressedKey_FUN_004eadf0               sig default, ret undefined1
 
 core_mission.cpp  1
   004f7bf0  core_mission.cpp_FUN_004f7bf0                                sig default, ret undefined1
@@ -526,9 +438,6 @@ core_setdir.cpp  1
 core_skeleton.cpp  1
   00550580  core_skeleton.cpp_FUN_00550580                               sig default, ret undefined1
 
-core_slew.cpp  1
-  00550590  core_slew.cpp_CSlew_init_FUN_00550590                        ret undefined8
-
 core_spireagl.cpp  1
   00599c80  core_spireagl.cpp_FUN_00599c80                               sig default, ret undefined1
 
@@ -541,20 +450,23 @@ core_toxhand.cpp  1
 core_tvbat.cpp  1
   00576230  core_tvbat.cpp_FUN_00576230                                  sig default, ret undefined1
 
-core_vecdir.cpp  1
-  00576250  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 sig default, ret undefined1
-
 core_wateract.cpp  1
   00578ff0  core_wateract.cpp_FUN_00578ff0                               sig default, ret undefined1
 
 core_weapon.cpp  1
   0057b030  core_weapon.cpp_FUN_0057b030                                 sig default, ret undefined1
 
+core_xform.cpp  1
+  00584b00  core_xform.cpp_FUN_00584b00                                  sig default, ret undefined1
+
+engine_2d.c  1
+  00402860  engine_2d.c_FUN_00402860                                     sig default, ret undefined1
+
+engine_3d.c  1
+  00403dd0  engine_3d.c_FUN_00403dd0                                     sig default, ret undefined1
+
 engine_alphabit.cpp  1
   0040dbe0  engine_alphabit.cpp_FUN_0040dbe0                             sig default, ret undefined1
-
-engine_boss.c  1
-  0041acc0  engine_boss.c_modelStructNotSupported4_FUN_0041acc0          sig default, ret undefined1
 
 engine_drender.cpp  1
   0046bd80  engine_drender.cpp_FUN_0046bd80                              ret undefined1, conv unknown
@@ -565,8 +477,8 @@ engine_light.cpp  1
 engine_mini3d.cpp  1
   004f0310  engine_mini3d.cpp_FUN_004f0310                               ret undefined1, conv unknown
 
-engine_pod.cpp  1
-  00512e70  engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70            sig default, ret undefined1
-
 sound_sndmain.cpp  1
   00552850  sound_sndmain.cpp_allocateHwSample_FUN_00552850              sig default, ret undefined1
+
+support_trstream.cpp  1
+  00572550  support_trstream.cpp_FUN_00572550                            ret undefined1, conv unknown

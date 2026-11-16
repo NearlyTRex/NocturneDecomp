@@ -123,7 +123,7 @@ void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
 // Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0
 // Address: 0058e9a0
-undefined4 * calculateAimAnglesWithOffset(void);
+CVector3f * __stack2_esi calculateAimAnglesWithOffset(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
 
 // Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50
 // Address: 0058eb50

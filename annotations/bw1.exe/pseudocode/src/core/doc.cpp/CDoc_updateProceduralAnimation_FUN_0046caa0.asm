@@ -462,7 +462,7 @@ section .text
     LEA ESI,[ESP + 0x2250]              ; 0046cd2e
     LEA EDI,[ESP + 0x1e84]              ; 0046cd35
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046cd3c
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0046cd41
     LEA ESI,[ESP + 0x224c]              ; 0046cd44
     MOV EAX,dword ptr [ESP + 0x2298]    ; 0046cd4b
@@ -769,7 +769,7 @@ section .text
     LEA ESI,[ESP + 0x1f2c]              ; 0046d1d6
     LEA EDI,[ESP + 0x1f5c]              ; 0046d1dd
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046d1e4
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x1f2c]              ; 0046d1e9
     ADD ESP,0x4                         ; 0046d1f0
     MOVSD ES:EDI,ESI                    ; 0046d1f3
@@ -826,7 +826,7 @@ section .text
     LEA ESI,[ESP + 0x2208]              ; 0046d2bd
     LEA EDI,[ESP + 0x21b4]              ; 0046d2c4
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046d2cb
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0046d2d0
     LEA ESI,[ESP + 0x2204]              ; 0046d2d3
     MOV EAX,dword ptr [ESP + 0x2288]    ; 0046d2da
@@ -1152,7 +1152,7 @@ section .text
     LEA ESI,[ESP + 0x204c]              ; 0046d749
     LEA EDI,[ESP + 0x1ee4]              ; 0046d750
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046d757
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0046d75c
     LEA ESI,[ESP + 0x2048]              ; 0046d75f
     MOV EAX,dword ptr [ESP + 0x2298]    ; 0046d766
@@ -1327,7 +1327,7 @@ section .text
     LEA ESI,[ESP + 0x1ea8]              ; 0046d9dc
     LEA EDI,[ESP + 0x2154]              ; 0046d9e3
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046d9ea
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0046d9ef
     LEA ESI,[ESP + 0x1ea4]              ; 0046d9f2
     MOV EAX,dword ptr [ESP + 0x2288]    ; 0046d9f9
@@ -1564,7 +1564,7 @@ section .text
     LEA ESI,[ESP + 0x1fa4]              ; 0046dd71
     LEA EDI,[ESP + 0x1ed8]              ; 0046dd78
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0046dd7f
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0046dd84
     LEA ESI,[ESP + 0x1fa0]              ; 0046dd87
     MOV EAX,dword ptr [ESP + 0x2298]    ; 0046dd8e

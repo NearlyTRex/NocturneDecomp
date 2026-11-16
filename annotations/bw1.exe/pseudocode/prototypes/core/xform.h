@@ -51,7 +51,7 @@ void __cdecl buildMatrixFromEulerAndPositionDirect(CMatrix3x4f *output_matrix,CV
 
 // Original: core_xform.cpp_angleFromSinCos_FUN_005b5860
 // Address: 005b5860
-float angleFromSinCos(float param_1,float param_2);
+float __cdecl angleFromSinCos(float sin_value,float cos_value);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 // Address: 005b5930
@@ -119,7 +119,7 @@ CMatrix3x4f * __stack_esi quaternionToMatrix3x4(CQuaternion4f *quat_in,CMatrix3x
 
 // Original: core_xform.cpp_matrixToQuaternion_FUN_005b75a0
 // Address: 005b75a0
-void matrixToQuaternion(float *param_1);
+CQuaternion4f * __stack_esi matrixToQuaternion(CMatrix3x3f *matrix_in,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_negateFirstComponent_FUN_005b7750
 // Address: 005b7750
@@ -139,7 +139,7 @@ void __cdecl quaternionToAxisAngle(CQuaternion4f *quat_in,float *angle_out,CVect
 
 // Original: core_xform.cpp_slerpQuaternion_FUN_005b7940
 // Address: 005b7940
-float * slerpQuaternion(float *param_1,float *param_2,float param_3);
+CQuaternion4f * __stack3_esi slerpQuaternion(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
 // Address: 005b7af0
@@ -155,15 +155,15 @@ CQuaternion4f * __stack_esi quaternionFromAngleZ(float angle_radians,CQuaternion
 
 // Original: core_xform.cpp_quaternionFromAxisAngle_FUN_005b7bb0
 // Address: 005b7bb0
-void quaternionFromAxisAngle(float param_1,float *param_2);
+CQuaternion4f * __stack2_esi quaternionFromAxisAngle(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00
 // Address: 005b7c00
-undefined4 * quaternionToEulerAngles(float *param_1);
+CVector3f * __stack_esi quaternionToEulerAngles(CQuaternion4f *quat_in,CVector3f *out_euler);
 
 // Original: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005b7d60
 // Address: 005b7d60
-undefined4 * quaternionToEulerAnglesZYX(float *param_1);
+CVector3f * __stack_esi quaternionToEulerAnglesZYX(CQuaternion4f *quat_in,CVector3f *vector_out);
 
 // Original: core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
 // Address: 005b7ed0
@@ -171,7 +171,7 @@ CQuaternion4f * __stack_esi eulerToQuaternion(CVector3f *euler_angles,CQuaternio
 
 // Original: core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0
 // Address: 005b7ff0
-undefined1 eulerToQuaternionIndirect(void);
+CQuaternion4f * __stack_esi eulerToQuaternionIndirect(CVector3f *euler_angles,CQuaternion4f *quat_out);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_005b9630
 // Address: 005b9630

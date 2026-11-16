@@ -24,19 +24,19 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombi
   code *pcVar8;
   float local_b8;
   float local_b4;
-  float local_b0;
+  CQuaternion4f local_b0;
   CQuaternion4f local_a0;
   CQuaternion4f local_90;
   float local_80;
-  float local_7c [5];
+  float local_7c [2];
+  CVector3f local_74;
   CVector3f local_68;
   CVector3f local_5c;
   float local_50;
-  float local_4c [4];
-  float local_3c;
+  float local_4c [2];
+  CVector3f local_44;
   float local_38;
-  float local_34;
-  float local_30;
+  float local_34 [2];
   CVector3f local_2c;
   float local_20;
   float local_1c;
@@ -81,28 +81,28 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombi
            *(float *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       pCVar1 = (this_ptr->base).victim;
       local_38 = (pCVar1->base).location.position.x - local_50;
-      local_34 = (pCVar1->base).location.position.y - local_4c[0];
-      local_30 = (pCVar1->base).location.position.z - local_4c[1];
-      local_4c[2] = local_38;
-      local_4c[(uint)bVar6 * -2 + 3] = local_4c[(uint)bVar6 * -2 + 6];
-      local_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-           local_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+      local_34[0] = (pCVar1->base).location.position.y - local_4c[0];
+      local_34[1] = (pCVar1->base).location.position.z - local_4c[1];
+      local_44.x = local_38;
+      *(float *)((int)&local_44 + (uint)bVar6 * -8 + 4) = local_34[(uint)bVar6 * -2];
+      *(float *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           local_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
                          (&((this_ptr->base).victim)->base,g_CHeroClassInfo.name_hash);
       fVar7 = _DAT_005d8c0c;
       if (pCVar3 != (CDemonActor *)0x0) {
         fVar7 = _DAT_005d8c10;
       }
-      local_4c[3] = local_4c[3] + fVar7;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(local_4c + 2);
-      local_80 = local_7c[2];
-      local_7c[(uint)bVar6 * -2] = local_7c[(uint)bVar6 * -2 + 3];
+      local_44.y = local_44.y + fVar7;
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_44,&local_74);
+      local_80 = local_74.x;
+      local_7c[(uint)bVar6 * -2] = *(float *)((int)&local_74 + (uint)bVar6 * -8 + 4);
       local_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-           local_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+           *(float *)((int)&local_74 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                            (local_7c[0] - (this_ptr->base).base.base.orient.vec.y);
-      local_b8 = SQRT(local_3c * local_3c + local_4c[2] * local_4c[2] + local_4c[3] * local_4c[3]);
+      local_b8 = SQRT(local_44.z * local_44.z + local_44.x * local_44.x + local_44.y * local_44.y);
       if ((local_b4 <= ABS((float)local_18)) || (local_b8 <= (float)_DAT_005d8c18)) {
         fVar7 = this_ptr->firing_blend - delta_time;
         this_ptr->firing_blend = fVar7;
@@ -156,18 +156,17 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombi
       local_18 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
                 (local_18,&local_a0,this_ptr->firing_blend,iVar2,pcVar8);
-      core_xform_cpp_quaternionFromAngleY_FUN_00585d10(local_7c[0] + (float)_DAT_005d8c20);
+      core_xform_cpp_quaternionFromAngleY_FUN_00585d10(local_7c[0] + (float)_DAT_005d8c20,&local_b0)
+      ;
       pcVar8 = core_skeleton_cpp_blendWeightCallback_FUN_0054bef0;
-      local_a0.w = local_b0;
-      puVar4 = (uint *)((int)&local_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      local_a0.w = local_b0.w;
+      puVar5 = (uint *)((int)&local_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      puVar4 = (uint *)((int)&local_b0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       *(uint *)((int)&local_a0 + (uint)bVar6 * -8 + 4) =
-           *(uint *)(&stack0xffffff54 + (uint)bVar6 * -8);
+           *(uint *)((int)&local_b0 + (uint)bVar6 * -8 + 4);
       iVar2 = _DAT_02d24998;
-      *puVar4 = *(uint *)(&stack0xffffff58 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      puVar4[(uint)bVar6 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffff58 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
-            ((uint)bVar6 * -2 + 1) * 4);
+      *puVar5 = *puVar4;
+      puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
                 (local_18,&local_a0,this_ptr->firing_blend,iVar2,pcVar8);
       return;

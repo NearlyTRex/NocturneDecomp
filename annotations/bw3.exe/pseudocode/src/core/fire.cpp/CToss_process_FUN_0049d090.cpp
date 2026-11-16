@@ -67,7 +67,8 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
         iVar5 = this_ptr->toss_type;
         position = &this_ptr->physics_box;
         if (iVar5 == 1) {
-          core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(0x01C73654,position,1,0);
+          core_fire_cpp_CFireEffect_createRing_FUN_004a3f70
+                    (0x01C73654,&position->position,1,(CCharacter *)0x0);
           core_sound_cpp_CSound_playActorSound_FUN_005609d0
                     (0x02CF5680,(CDemonActor *)this_ptr,"wp_bindevil.wav",
                      &position->position);
@@ -132,7 +133,8 @@ void __cdecl core_fire_cpp_CToss_process_FUN_0049d090(CToss *this_ptr)
       sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
       break;
     case 1:
-      core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(0x01C73654,&this_ptr->physics_box,1,0);
+      core_fire_cpp_CFireEffect_createRing_FUN_004a3f70
+                (0x01C73654,&(this_ptr->physics_box).position,1,(CCharacter *)0x0);
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
                 (0x02CF5680,(CDemonActor *)this_ptr,"wp_bindevil.wav",
                  &(this_ptr->physics_box).position);

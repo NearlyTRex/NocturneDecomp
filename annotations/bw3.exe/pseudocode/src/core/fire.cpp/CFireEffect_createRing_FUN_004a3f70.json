@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 92,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 51
@@ -39,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createRing_FUN_004a3f70",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,undefined4 *param_2,undefined4 param_3,undefined4 param_4)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)"
   },
   "function_calls": [
     {
@@ -143,24 +142,24 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "ring_type",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "owner",
         "offset": 16,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCharacter *"
       }
     ]
   },
@@ -172,54 +171,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,uint *param_2,uint param_3,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,uint *param_2,uint param_3,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,uint *param_2,uint param_3,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CRing *)(_DAT_01d0bb90 * 0x1e4 + 0x1d0bb94),param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((CRing *)(_DAT_01d0bb90 * 0x1e4 + 0x1d0bb94),param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "((CRing *)(_DAT_01d0bb90 * 0x1e4 + 0x1d0bb94),param_2,param_3,param_4);",
-      "type": "unnamed_param"
     }
   ]
 }

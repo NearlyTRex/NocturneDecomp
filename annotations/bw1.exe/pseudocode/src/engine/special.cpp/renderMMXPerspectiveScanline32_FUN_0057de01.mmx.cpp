@@ -1,14 +1,14 @@
 // Name: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0057de01
 // Address: 0057de01
 // Address Range: [[0057de01, 0057df81] [0057df90, 0057e04c] [0057e050, 0057e0db] [0057e0e0, 0057e109] [0057e110, 0057e234] [0057e240, 0057e2a9] [0057e2b0, 0057e2b5] [0057e2c0, 0057e389] [0057e3c0, 0057e429] [0057e430, 0057e568] [0057e576, 0057e58d] [0057e590, 0057e59b] [0057e5a0, 0057e5e2]]
-// Convention: unknown
-// Signature: void engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(void)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(void)
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

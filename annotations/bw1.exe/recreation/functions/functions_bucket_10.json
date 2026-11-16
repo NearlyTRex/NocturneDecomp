@@ -4194,7 +4194,7 @@
     "name":"core_charactr.cpp_CCharacter_computePickup_FUN_00432690",
     "params":[
       {
-        "name":"param_2",
+        "name":"hand_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -4202,7 +4202,7 @@
         }
       },
       {
-        "name":"param_3",
+        "name":"blend_time",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -4210,10 +4210,10 @@
         }
       },
       {
-        "name":"param_4",
+        "name":"carry_offset",
         "type":{
-          "kind":"builtin",
-          "name":"int",
+          "kind":"class",
+          "name":"CMatrix3x4f",
           "ptr":1
         }
       }
@@ -4802,10 +4802,60 @@
     "instructions":139,
     "method":"generateTransparencySpans",
     "name":"cockpit_ckptutil.c_generateTransparencySpans_FUN_0043b090",
+    "params":[
+      {
+        "name":"bitmap_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"span_output",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"transparent_color_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5053,14 +5103,40 @@
       "004431b0",
       "004438d0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":111,
-    "method":"writeBitsToStream",
-    "name":"support_codec.cpp_writeBitsToStream_FUN_00442490",
+    "method":"readBitsFromStream",
+    "name":"support_codec.cpp_readBitsFromStream_FUN_00442490",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bit_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"istream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5530,10 +5606,20 @@
     "instructions":18,
     "method":"ungetChar",
     "name":"support_codec.cpp_CInStreamPipe_ungetChar_FUN_00443d10",
+    "params":[
+      {
+        "name":"ch",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5553,42 +5639,42 @@
     "name":"support_codec.cpp_CInStreamPipe_open_FUN_00443f90",
     "params":[
       {
-        "name":"param_2",
+        "name":"codec",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CCodec",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"source",
         "type":{
           "kind":"builtin",
-          "name":"ulong",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"owns_streams",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"buffer_size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -7609,15 +7695,49 @@
     "calls":[
       "0040cc00"
     ],
-    "conv":"unknown",
+    "conv":"__stack3_esi",
     "instructions":43,
     "method":"randomizePosition",
     "name":"core_dracbrid.cpp_randomizePosition_FUN_0047d890",
+    "params":[
+      {
+        "name":"src_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/dracbrid.cpp",
     "variadic":false
@@ -17671,14 +17791,32 @@
       "005c157c",
       "005c170c"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":52,
     "method":"crc32ComputeFileRange",
     "name":"engine_pod.cpp_crc32ComputeFileRange_FUN_0053b110",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -22900,8 +23038,8 @@
     "name":"support_trstream.cpp_COutStreamMemory_tell_FUN_005a1d10",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",

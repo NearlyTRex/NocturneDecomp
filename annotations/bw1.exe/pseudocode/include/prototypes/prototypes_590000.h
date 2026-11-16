@@ -167,7 +167,7 @@ void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00597c60(SMRGLTextu
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00597c90(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_00597cc0(int enabled);
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_00597cd0(char *output_buffer);
-void engine_texture_cpp_renderTextureAtlas_FUN_00597cf0(void);
+void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00597cf0(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00597d00(void);
 void engine_texture_cpp_FUN_00597d60(void);
 void engine_texture_cpp_FUN_00597d70(void);

@@ -75,7 +75,7 @@ void __cdecl engine_special_cpp_clearScreen_FUN_00560d70(void);
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_00560dd4(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_00560e37(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_00560ec2(int left,int right,int top,int bottom);
-void engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void engine_special_cpp_FUN_005616a0(void);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void engine_special_cpp_FUN_00561fdc(void);
@@ -255,7 +255,7 @@ void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(SMRGLTextu
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_0056ac80(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_0056acb0(int enabled);
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_0056acc0(char *output_buffer);
-void engine_texture_cpp_renderTextureAtlas_FUN_0056ace0(void);
+void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_0056ace0(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_0056acf0(void);
 void engine_texture_cpp_FUN_0056ad50(void);
 void engine_texture_cpp_FUN_0056ad60(void);

@@ -23,13 +23,9 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004dc630(CGargoyle *this_
   float local_60;
   float local_5c;
   float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_24;
-  float local_20;
-  float local_1c;
+  CVector3f local_54;
+  CVector3f local_48 [3];
+  CVector3f local_24;
   
   bVar7 = 0;
   pCVar2 = (this_ptr->base).victim;
@@ -41,22 +37,22 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004dc630(CGargoyle *this_
     local_58 = (this_ptr->base).base.base.location.position.z - (pCVar2->base).location.position.z;
     if (SQRT(local_58 * local_58 + local_60 * local_60 + local_5c * local_5c) <=
         (this_ptr->base).guard_distance) {
-      local_54 = local_60;
-      local_50 = local_5c;
-      local_4c = local_58;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffac);
-      local_24 = local_48;
-      (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xffffffbc + (uint)bVar7 * 0xfffffffe * 4);
-      *(uint *)((int)&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           *(uint *)(&stack0xffffffc0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      if (&stack0xffffffac != &stack0xffffffdc) {
-        local_54 = local_24;
-        local_50 = local_20;
-        local_4c = local_1c;
+      local_54.x = local_60;
+      local_54.y = local_5c;
+      local_54.z = local_58;
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_54,local_48);
+      local_24.x = local_48[0].x;
+      *(uint *)((int)&local_24 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)local_48 + (uint)bVar7 * -8 + 4);
+      *(uint *)((int)&local_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)local_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      if (&local_54 != &local_24) {
+        local_54.x = local_24.x;
+        local_54.y = local_24.y;
+        local_54.z = local_24.z;
       }
       fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                        ((((this_ptr->base).victim)->base).orient.vec.y - local_50);
+                        ((((this_ptr->base).victim)->base).orient.vec.y - local_54.y);
       if ((fVar6 < _DAT_005e391c) || (_DAT_005e3920 < fVar6)) {
         return 1;
       }

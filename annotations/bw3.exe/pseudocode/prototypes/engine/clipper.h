@@ -75,7 +75,7 @@ void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex
 
 // Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90
 // Address: 0043ad90
-byte clipPolygonRightPlaneGlobal(void);
+void __cdecl clipPolygonRightPlaneGlobal(void);
 
 // Original: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043aed0
 // Address: 0043aed0

@@ -47,14 +47,13 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005af4a0(CWerewolf *this_pt
   CVector3f CStack_384;
   CVector3f CStack_378;
   CVector3f CStack_36c;
-  float fStack_360;
-  float fStack_35c;
-  float fStack_358;
+  CVector3f CStack_360;
   CVector3f CStack_354;
   CVector3f CStack_348;
   CVector3f CStack_33c;
-  float fStack_330;
-  float afStack_32c [4];
+  CVector3f CStack_330;
+  float fStack_324;
+  float fStack_320;
   float fStack_31c;
   CVector3f CStack_318;
   CVector3f CStack_30c;
@@ -68,7 +67,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005af4a0(CWerewolf *this_pt
   CVector3f CStack_2b8;
   CVector3f CStack_2ac;
   CVector3f CStack_2a0;
-  uint uStack_294;
+  float fStack_294;
   float afStack_290 [4];
   float fStack_280;
   float fStack_27c;
@@ -96,8 +95,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005af4a0(CWerewolf *this_pt
   float fStack_1c8;
   float afStack_1c4 [2];
   CVector3f CStack_1bc;
-  uint uStack_1b0;
-  float afStack_1ac [2];
+  CVector3f CStack_1b0;
   CVector3f CStack_1a4;
   CVector3f CStack_198;
   CVector3f CStack_18c;
@@ -499,17 +497,18 @@ LAB_005b0404:
                         (this_ptr->base).base.base.location.position.y;
             fStack_a0 = (pCVar4->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
-            fStack_330 = fStack_a8;
-            afStack_32c[(uint)bVar13 * -2] = afStack_bc[(uint)bVar13 * -2 + 6];
-            afStack_32c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
+            CStack_330.x = fStack_a8;
+            *(float *)((int)&CStack_330 + (uint)bVar13 * -8 + 4) = afStack_bc[(uint)bVar13 * -2 + 6]
+            ;
+            *(float *)((int)&CStack_330 + ((uint)bVar13 * -2 + (uint)bVar13 * -2 + 1) * 4 + 4) =
                  afStack_bc[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7];
-            if (&fStack_360 != &fStack_330) {
-              fStack_360 = fStack_330;
-              fStack_35c = afStack_32c[0];
-              fStack_358 = afStack_32c[1];
+            if (&CStack_360 != &CStack_330) {
+              CStack_360.x = CStack_330.x;
+              CStack_360.y = CStack_330.y;
+              CStack_360.z = CStack_330.z;
             }
-            fStack_38 = SQRT(fStack_358 * fStack_358 +
-                             fStack_360 * fStack_360 + fStack_35c * fStack_35c);
+            fStack_38 = SQRT(CStack_360.z * CStack_360.z +
+                             CStack_360.x * CStack_360.x + CStack_360.y * CStack_360.y);
             fStack_2c = 20.0;
             if (this_ptr->type == WEREWOLF_TYPE_TRAIN_ALPHA) {
               fStack_2c = 10.0;
@@ -519,11 +518,12 @@ LAB_005b0404:
             }
             pCStack_48 = &(this_ptr->base).base.model.base;
             if (fStack_2c < fStack_38) {
-              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
-              uStack_294 = uStack_1b0;
-              afStack_290[(uint)bVar13 * -2] = afStack_1ac[(uint)bVar13 * -2];
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+                        (&CStack_360,&CStack_1b0);
+              fStack_294 = CStack_1b0.x;
+              afStack_290[(uint)bVar13 * -2] = *(float *)((int)&CStack_1b0 + (uint)bVar13 * -8 + 4);
               afStack_290[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-                   afStack_1ac[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
+                   *(float *)((int)&CStack_1b0 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                     (afStack_290[0] - (this_ptr->base).base.base.orient.vec.y);
               if (ABS(fStack_14) < (float)_DAT_005f9af2) {
@@ -795,12 +795,13 @@ LAB_005afc45:
                        (this_ptr->base).base.base.location.position.y;
           fStack_274 = (pCVar4->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
-          afStack_32c[2] = fStack_27c;
-          afStack_32c[(uint)bVar13 * -2 + 3] = afStack_290[(uint)bVar13 * -2 + 6];
-          afStack_32c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
+          fStack_324 = fStack_27c;
+          *(float *)((int)&CStack_330 + ((uint)bVar13 * -2 + 3) * 4 + 4) =
+               afStack_290[(uint)bVar13 * -2 + 6];
+          *(float *)((int)&CStack_330 + ((uint)bVar13 * -2 + (uint)bVar13 * -2 + 4) * 4 + 4) =
                afStack_290[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7];
           fStack_34 = SQRT(fStack_31c * fStack_31c +
-                           afStack_32c[2] * afStack_32c[2] + afStack_32c[3] * afStack_32c[3]);
+                           fStack_324 * fStack_324 + fStack_320 * fStack_320);
           if (((this_ptr->base).guard_distance < fStack_34) || ((float)_DAT_005f9ada < fStack_34)) {
             (this_ptr->base).victim = (CCharacter *)0x0;
             goto LAB_005af702;

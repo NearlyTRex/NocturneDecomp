@@ -22,9 +22,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
   uint uStack_dc;
   float local_d8;
   CVector3f local_d4;
-  float local_c8;
-  float local_c4 [4];
-  float local_b4;
+  CVector3f local_c8;
+  CVector3f CStack_bc;
   float local_b0;
   float local_ac [4];
   float fStack_9c;
@@ -53,8 +52,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
   local_84 = (this_ptr->end_position).y - (this_ptr->start_position).y;
   local_b0 = (this_ptr->end_position).z - (this_ptr->start_position).z;
   local_80 = local_b0;
-  local_c4[3] = local_88;
-  local_b4 = local_84;
+  CStack_bc.y = local_88;
+  CStack_bc.z = local_84;
   pCVar1 = this_ptr->model_ptr;
   local_7c[3] = (pCVar1->bounds).max.x - (pCVar1->bounds).min.x;
   local_6c = (pCVar1->bounds).max.y - (pCVar1->bounds).min.y;
@@ -79,20 +78,21 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_p
     local_1c = local_2c;
     local_28 = (float)local_2c;
     fVar2 = 1.0 / (float)local_2c;
-    local_b0 = local_c4[2] * fVar2;
-    local_ac[0] = local_c4[3] * fVar2;
-    local_ac[1] = local_b4 * fVar2;
-    fStack_5c = local_c4[2] * fVar2;
+    local_b0 = CStack_bc.x * fVar2;
+    local_ac[0] = CStack_bc.y * fVar2;
+    local_ac[1] = CStack_bc.z * fVar2;
+    fStack_5c = CStack_bc.x * fVar2;
     local_58[(uint)bVar4 * -2] = local_ac[(uint)bVar4 * -2];
     local_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          local_ac[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(local_c4 + 2);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_bc,&local_c8);
     iVar3 = local_2c;
     local_24 = 0;
-    local_98.x = local_c8;
-    *(float *)((int)&local_98 + (uint)bVar4 * -8 + 4) = local_c4[(uint)bVar4 * -2];
-    *(float *)((int)&local_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         local_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    local_98.x = local_c8.x;
+    *(uint *)((int)&local_98 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_c8 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&local_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&local_c8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if (0 < iVar3) {
       iStack_30 = iVar3 + -1;
       do {

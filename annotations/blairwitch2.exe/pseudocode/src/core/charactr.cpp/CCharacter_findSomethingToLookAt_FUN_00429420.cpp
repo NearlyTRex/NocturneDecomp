@@ -45,8 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(CCh
   float fStack_114;
   float fStack_110;
   uint uStack_10c;
-  float fStack_108;
-  float afStack_104 [2];
+  CVector3f CStack_108;
   CVector3f CStack_fc;
   float fStack_f0;
   float afStack_ec [4];
@@ -56,8 +55,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(CCh
   float afStack_c8 [2];
   CVector3f CStack_c0;
   CVector3f CStack_b4;
-  float fStack_a8;
-  float afStack_a4 [2];
+  CVector3f CStack_a8;
   CVector3f CStack_9c;
   CVector3f CStack_90;
   CVector3f CStack_84;
@@ -269,15 +267,16 @@ LAB_00429762:
          afStack_ec[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
     core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30
               (&this_ptr->base,pCVar7,&CStack_84);
-    fStack_108 = CStack_84.x;
-    afStack_104[(uint)bVar6 * -2] = *(float *)((int)&CStack_84 + (uint)bVar6 * -8 + 4);
-    afStack_104[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         *(float *)((int)&CStack_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_108);
-    fStack_174 = fStack_a8;
-    afStack_170[(uint)bVar6 * -2] = afStack_a4[(uint)bVar6 * -2];
+    CStack_108.x = CStack_84.x;
+    *(uint *)((int)&CStack_108 + (uint)bVar6 * -8 + 4) =
+         *(uint *)((int)&CStack_84 + (uint)bVar6 * -8 + 4);
+    *(uint *)((int)&CStack_108 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         *(uint *)((int)&CStack_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_108,&CStack_a8);
+    fStack_174 = CStack_a8.x;
+    afStack_170[(uint)bVar6 * -2] = *(float *)((int)&CStack_a8 + (uint)bVar6 * -8 + 4);
     afStack_170[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         afStack_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+         *(float *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     if (afStack_194 + 2 != &fStack_174) {
       afStack_194[2] = fStack_174;
       afStack_194[3] = afStack_170[0];

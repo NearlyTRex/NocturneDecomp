@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_randomizePosition_FUN_0047d890(float param_1,float param_2,float param_3)
+; CVector3f * __stack3_esi core_dracbrid_cpp_randomizePosition_FUN_0047d890(float src_x,float src_y,float src_z,CVector3f *dest)
 ;
+; Parameters:
+; float            Stack[0x4]:4   src_x
+; float            Stack[0x8]:4   src_y
+; float            Stack[0xc]:4   src_z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00

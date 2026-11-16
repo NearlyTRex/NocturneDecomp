@@ -30,7 +30,7 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 005a488e
     PUSH EDX                            ; 005a4892
     CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005a4893
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a4898
     RET                                 ; 005a489b
 

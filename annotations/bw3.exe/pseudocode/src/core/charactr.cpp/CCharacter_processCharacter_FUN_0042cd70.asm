@@ -135,7 +135,7 @@ section .text
     LEA ESI,[ESP + 0xc4]                ; 0042ce35
     LEA EDI,[ESP + 0xdc]                ; 0042ce3c
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_00585de0 ; 0042ce43
-        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_00585de0()
+        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_00585de0(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[ESP + 0xc4]                ; 0042ce48
     ADD ESP,0x4                         ; 0042ce4f
     MOVSD ES:EDI,ESI                    ; 0042ce52
@@ -178,7 +178,7 @@ section .text
     PUSH dword ptr [ESP + 0xd0]         ; 0042cefc
     FSTP float ptr [ESP + 0xd8]         ; 0042cf03
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00585d10 ; 0042cf0a
-        ;   XREF to: 00585d10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00585d10()
+        ;   XREF to: 00585d10 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00585d10(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0042cf0f
     LEA EAX,[ESP + 0xa0]                ; 0042cf12
     LEA ESI,[ESP + 0xb0]                ; 0042cf19
@@ -501,7 +501,7 @@ section .text
     PUSH EDI                            ; 0042d2f3
     PUSH EBX                            ; 0042d2f4
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0 ; 0042d2f5
-        ;   XREF to: 00431ab0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
+        ;   XREF to: 00431ab0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter * this_ptr, int hand_index, float blend_time, CMatrix3x4f * carry_offset)
     ADD ESP,0x10                        ; 0042d2fa
     INC EDI                             ; 0042d2fd
     ADD ESI,0x78                        ; 0042d2fe

@@ -31,12 +31,11 @@ void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_0045ab40(CDoc *this_ptr)
   CVector3f CStack_120;
   float fStack_114;
   float afStack_110 [5];
-  float fStack_fc;
+  CVector3f CStack_fc;
   CVector3f CStack_f0;
   CVector3f CStack_e4;
   CVector3f CStack_d8;
-  float fStack_cc;
-  float afStack_c8 [2];
+  CVector3f CStack_cc;
   CVector3f CStack_c0;
   float fStack_b4;
   float afStack_b0 [4];
@@ -157,17 +156,16 @@ void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_0045ab40(CDoc *this_ptr)
   afStack_90[3] = fStack_b4 - fStack_114;
   fStack_80 = afStack_b0[0] - afStack_110[0];
   fStack_7c = afStack_b0[1] - afStack_110[1];
-  fStack_cc = fStack_b4 - fStack_114;
-  afStack_c8[(uint)bVar4 * -2] = afStack_90[(uint)bVar4 * -2 + 4];
-  afStack_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+  CStack_cc.x = fStack_b4 - fStack_114;
+  *(float *)((int)&CStack_cc + (uint)bVar4 * -8 + 4) = afStack_90[(uint)bVar4 * -2 + 4];
+  *(float *)((int)&CStack_cc + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 5];
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_cc);
-  fVar1 = SQRT(afStack_c8[1] * afStack_c8[1] + fStack_cc * fStack_cc + afStack_c8[0] * afStack_c8[0]
-              );
-  afStack_90[0] = fStack_fc;
-  afStack_90[(uint)bVar4 * -2 + 1] = afStack_110[(uint)bVar4 * -2 + 6];
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_cc,&CStack_fc);
+  fVar1 = SQRT(CStack_cc.z * CStack_cc.z + CStack_cc.x * CStack_cc.x + CStack_cc.y * CStack_cc.y);
+  afStack_90[0] = CStack_fc.x;
+  afStack_90[(uint)bVar4 * -2 + 1] = *(float *)((int)&CStack_fc + (uint)bVar4 * -8 + 4);
   afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 2] =
-       afStack_110[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+       *(float *)((int)&CStack_fc + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   if ((float)_DAT_005d059f < fVar1) {
     fStack_28 = -CStack_120.x;
     if ((((float)_DAT_005d059f <= fVar1) &&

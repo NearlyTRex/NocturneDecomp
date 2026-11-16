@@ -28,7 +28,7 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0(CL
     uVar5 = (int)uVar2 >> 1;
     uVar4 = uVar5;
     if ((iVar1 - 1U & uVar2) != 0) {
-      uVar3 = support_codec_cpp_writeBitsToStream_FUN_00442490(bit_buffer,1,istream);
+      uVar3 = support_codec_cpp_readBitsFromStream_FUN_00442490(bit_buffer,1,istream);
       if ((int)uVar3 < 0) {
         support_codec_cpp_FUN_004425b0(bit_buffer,iVar6,uVar7);
         return uVar3;
@@ -43,7 +43,7 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0(CL
     return local_14;
   }
   do {
-    uVar4 = support_codec_cpp_writeBitsToStream_FUN_00442490(bit_buffer,1,istream);
+    uVar4 = support_codec_cpp_readBitsFromStream_FUN_00442490(bit_buffer,1,istream);
     if ((int)uVar4 < 0) {
       support_codec_cpp_FUN_004425b0(bit_buffer,iVar6,uVar7);
       return 0xffffffff;

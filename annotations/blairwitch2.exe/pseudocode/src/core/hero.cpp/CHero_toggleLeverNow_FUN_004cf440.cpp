@@ -2,11 +2,11 @@
 // Address: 004cf440
 // Address Range: [[004cf440, 004cf4dc]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr)
+// Signature: int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr)
+int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr)
 
 {
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"@CHero::toggleLeverNow\n" + 1)

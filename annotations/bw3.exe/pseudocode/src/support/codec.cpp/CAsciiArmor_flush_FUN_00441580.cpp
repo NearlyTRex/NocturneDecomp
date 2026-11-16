@@ -2,11 +2,11 @@
 // Address: 00441580
 // Address Range: [[00441580, 004415ca]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_ptr,int *param_2)
+// Signature: int __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_ptr,void *ostream)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_ptr,int *param_2)
+int __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_ptr,void *ostream)
 
 {
   int iVar1;
@@ -16,6 +16,6 @@ uint __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_
   if (iStack_4 < 1) {
     return 1;
   }
-  (**(code **)(*param_2 + 4))(param_2,"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"[iVar1]);
+  (**(code **)(*(int *)ostream + 4))(ostream,"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"[iVar1]);
   return 1;
 }

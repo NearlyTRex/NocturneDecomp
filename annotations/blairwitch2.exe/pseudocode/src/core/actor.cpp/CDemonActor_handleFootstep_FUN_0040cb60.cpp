@@ -28,7 +28,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  float afStack_48 [11];
+  CVector3f aCStack_48 [3];
   uint uStack_1c;
   float fStack_18;
   float fStack_14;
@@ -97,10 +97,10 @@ LAB_0040cc81:
         fVar6 = (float10)fcos((float10)fStack_18);
         fVar7 = (float10)fcos((float10)fStack_14);
         fVar8 = (float10)fsin((float10)fStack_14);
-        afStack_48[1] = 0.0;
+        aCStack_48[0].y = 0.0;
         uStack_1c = 0x41700000;
-        afStack_48[0] = (float)(fVar7 * fVar6);
-        afStack_48[2] = (float)(fVar8 * fVar6);
+        aCStack_48[0].x = (float)(fVar7 * fVar6);
+        aCStack_48[0].z = (float)(fVar8 * fVar6);
         if (&CStack_6c != position) {
           CStack_6c.x = position->x;
           CStack_6c.y = position->y;
@@ -108,7 +108,7 @@ LAB_0040cc81:
         }
         iVar4 = iVar4 + 1;
         core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600
-                  (0x01C3DEB4,position,afStack_48,(CKeyFramedModel *)0x0,0x41700000);
+                  (0x01C3DEB4,position,aCStack_48,(CKeyFramedModel *)0x0,15.0);
       } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }

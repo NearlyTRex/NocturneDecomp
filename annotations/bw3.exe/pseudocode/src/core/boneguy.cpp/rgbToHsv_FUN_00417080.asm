@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_rgbToHsv_FUN_00417080(void)
+; CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_00417080(CColor3f *in_rgb,CColor3f *out_hsv)
 ;
+; Parameters:
+; CColor3f *       Stack[0x4]:4   in_rgb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6d42

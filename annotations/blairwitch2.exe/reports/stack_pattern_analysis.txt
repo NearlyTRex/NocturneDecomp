@@ -65,13 +65,13 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00407ca1: MOV EDI,ESP
 
   engine_3d.c_drawLine3DFromIndices_FUN_00407f40
-    File: engine/3d.c, Suspects: 16
+    File: engine/3d.c, Suspects: 12
     - [alt_frame_pointer] at 00407f5a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407f91: MOV EDI,ESP
     - [alt_frame_pointer] at 00407fa1: MOV EDI,ESP
 
   core_actor.cpp_rayCylinderIntersect_FUN_00408290
-    File: core/actor.cpp, Suspects: 93
+    File: core/actor.cpp, Suspects: 2
     - [stack_alignment] at 0040829c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
@@ -83,7 +83,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00408dfa: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90
-    File: core/actor.cpp, Suspects: 6
+    File: core/actor.cpp, Suspects: 10
     - [stack_alignment] at 00408f9c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
@@ -248,7 +248,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00417e51: MOV ESI,ESP
 
   core_boneguy.cpp_rgbToHsv_FUN_00417f50
-    File: core/boneguy.cpp, Suspects: 9
+    File: core/boneguy.cpp, Suspects: 1
     - [stack_alignment] at 00417f58: AND ESP,0xfffffff8
 
   core_boneguy.cpp_hsvToRgb_FUN_00418110
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 24.2 suspects/function
+  With stack patterns:    avg 24.3 suspects/function
   Without stack patterns: avg 6.3 suspects/function

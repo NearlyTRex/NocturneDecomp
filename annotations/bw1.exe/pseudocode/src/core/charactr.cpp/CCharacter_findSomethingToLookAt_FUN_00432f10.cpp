@@ -27,8 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
   float fStack_248;
   float fStack_244;
   CVector3f CStack_240;
-  float fStack_234;
-  float afStack_230 [2];
+  CVector3f CStack_234;
   CVector3f CStack_228;
   float fStack_21c;
   float afStack_218 [4];
@@ -41,8 +40,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
   float fStack_1d4;
   float afStack_1d0 [4];
   uint uStack_1c0;
-  float fStack_1bc;
-  float afStack_1b8 [2];
+  CVector3f CStack_1bc;
   CVector3f CStack_1b0;
   CVector3f CStack_1a4;
   CVector3f CStack_198;
@@ -52,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
   float fStack_168;
   float afStack_164 [4];
   float fStack_154;
-  float fStack_150;
+  CVector3f CStack_150;
   CVector3f CStack_144;
   CVector3f CStack_138;
   CVector3f CStack_12c;
@@ -67,7 +65,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
   CVector3f CStack_cc;
   CVector3f CStack_c0;
   float fStack_b4;
-  float afStack_b0 [5];
+  float afStack_b0 [2];
+  CVector3f CStack_a8;
   float fStack_9c;
   float fStack_98;
   float fStack_94;
@@ -207,19 +206,21 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
                afStack_218[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
           core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00
                     (&this_ptr->base,pCVar10,&CStack_180);
-          fStack_234 = CStack_180.x;
-          afStack_230[(uint)bVar8 * -2] = *(float *)((int)&CStack_180 + (uint)bVar8 * -8 + 4);
-          afStack_230[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(float *)((int)&CStack_180 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-          if ((0.0 <= afStack_230[1]) &&
-             (fStack_244 = afStack_230[1] * afStack_230[1] +
-                           fStack_234 * fStack_234 + afStack_230[0] * afStack_230[0],
+          CStack_234.x = CStack_180.x;
+          *(uint *)((int)&CStack_234 + (uint)bVar8 * -8 + 4) =
+               *(uint *)((int)&CStack_180 + (uint)bVar8 * -8 + 4);
+          *(uint *)((int)&CStack_234 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+               *(uint *)((int)&CStack_180 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          if ((0.0 <= CStack_234.z) &&
+             (fStack_244 = CStack_234.z * CStack_234.z +
+                           CStack_234.x * CStack_234.x + CStack_234.y * CStack_234.y,
              fStack_1c = fStack_244, (int)fStack_244 < 0x44610001)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&fStack_234);
-            fStack_b4 = fStack_1bc;
-            afStack_b0[(uint)bVar8 * -2] = afStack_1b8[(uint)bVar8 * -2];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+                      (&CStack_234,&CStack_1bc);
+            fStack_b4 = CStack_1bc.x;
+            afStack_b0[(uint)bVar8 * -2] = *(float *)((int)&CStack_1bc + (uint)bVar8 * -8 + 4);
             afStack_b0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-                 afStack_1b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+                 *(float *)((int)&CStack_1bc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
             if ((ABS(afStack_b0[0]) <= (float)_DAT_005d5d77) &&
                (ABS(fStack_b4) <= (float)_DAT_005d5d7f)) {
               fStack_248 = 10.0;
@@ -285,7 +286,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
       afStack_e0[(uint)bVar8 * -2] = *(float *)((int)&CStack_240 + (uint)bVar8 * -8 + 4);
       afStack_e0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
            *(float *)((int)&CStack_240 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      if (afStack_b0 + 5 != &fStack_e4) {
+      if (&fStack_9c != &fStack_e4) {
         fStack_9c = fStack_e4;
         fStack_98 = afStack_e0[0];
         fStack_94 = afStack_e0[1];
@@ -305,7 +306,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCh
       afStack_164[(uint)bVar8 * -2] = *(float *)((int)&CStack_84 + (uint)bVar8 * -8 + 4);
       afStack_164[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
            *(float *)((int)&CStack_84 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      if (afStack_b0 + 5 != &fStack_168) {
+      if (&fStack_9c != &fStack_168) {
         fStack_9c = fStack_168;
         fStack_98 = afStack_164[0];
         fStack_94 = afStack_164[1];
@@ -397,15 +398,16 @@ LAB_0043370e:
          afStack_1f4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
     core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00
               (&this_ptr->base,&CStack_1b0,&CStack_c0);
-    afStack_b0[2] = CStack_c0.x;
-    afStack_b0[(uint)bVar8 * -2 + 3] = *(float *)((int)&CStack_c0 + (uint)bVar8 * -8 + 4);
-    afStack_b0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-         *(float *)((int)&CStack_c0 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_b0 + 2);
-    fStack_1d4 = fStack_150;
-    afStack_1d0[(uint)bVar8 * -2] = afStack_164[(uint)bVar8 * -2 + 6];
+    CStack_a8.x = CStack_c0.x;
+    *(uint *)((int)&CStack_a8 + (uint)bVar8 * -8 + 4) =
+         *(uint *)((int)&CStack_c0 + (uint)bVar8 * -8 + 4);
+    *(uint *)((int)&CStack_a8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+         *(uint *)((int)&CStack_c0 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_a8,&CStack_150);
+    fStack_1d4 = CStack_150.x;
+    afStack_1d0[(uint)bVar8 * -2] = *(float *)((int)&CStack_150 + (uint)bVar8 * -8 + 4);
     afStack_1d0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-         afStack_164[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
+         *(float *)((int)&CStack_150 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     if (afStack_1d0 + 2 != &fStack_1d4) {
       afStack_1d0[2] = fStack_1d4;
       afStack_1d0[3] = afStack_1d0[0];

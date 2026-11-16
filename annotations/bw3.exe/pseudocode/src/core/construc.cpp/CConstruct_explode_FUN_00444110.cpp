@@ -21,11 +21,12 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
   CVector3f *pCVar6;
   uint *puVar7;
   uint *puVar8;
-  bool bVar9;
-  byte bVar10;
+  uint *puVar9;
+  bool bVar10;
+  byte bVar11;
   float afStackY_1820 [1520];
   int part_index;
-  float local_44;
+  CQuaternion4f local_44;
   CVector3f local_34;
   CVector3f *local_28;
   UOrientationVector *local_24;
@@ -34,7 +35,7 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
   CConstruct *local_18;
   float local_14;
   
-  bVar10 = 0;
+  bVar11 = 0;
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->recombine_interpolation = 0.0;
@@ -65,8 +66,8 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
                             (local_28,local_24,&local_34,(CDemonActor *)this_ptr,1,1,BLOOD_TYPE_NONE
                             );
       part_index = this_ptr->part_indices[0];
-      bVar9 = iVar5 == part_index;
-      if (bVar9) {
+      bVar10 = iVar5 == part_index;
+      if (bVar10) {
         this_ptr->pickable_box_index = part_index;
         body_part->dont_pick_me_up = 0;
         body_part->render_disabled = 1;
@@ -76,7 +77,7 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
         part_index = iVar5;
       }
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590
-                ((CCharacter *)this_ptr,body_part,part_index,(uint)!bVar9);
+                ((CCharacter *)this_ptr,body_part,part_index,(uint)!bVar10);
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(body_part);
       local_18->boxes[0].body_part = body_part;
       pCVar1 = &(body_part->base).location;
@@ -92,19 +93,17 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_
         pCVar6->y = (body_part->base).orient.vec.y;
         pCVar6->z = (body_part->base).orient.vec.z;
       }
-      core_xform_cpp_eulerToQuaternion_FUN_005860b0(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_005860b0(&(body_part->base).orient.vec,&local_44);
       pCVar3 = local_18;
       pSVar4 = local_18->boxes;
       local_18 = (CConstruct *)((local_18->base).base.base.orient_matrix.m + 1);
-      puVar7 = (uint *)((int)pCVar3 + (uint)bVar10 * -8 + 0xd1b0);
-      (pSVar4->start_orient).w = local_44;
-      puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
-      *puVar7 = *(uint *)(&stack0xffffffc0 + (uint)bVar10 * -8);
-      *puVar8 = *(uint *)(&stack0xffffffc4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-      puVar8[(uint)bVar10 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffc4 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-            ((uint)bVar10 * -2 + 1) * 4);
+      puVar8 = (uint *)((int)pCVar3 + (uint)bVar11 * -8 + 0xd1b0);
+      (pSVar4->start_orient).w = local_44.w;
+      puVar9 = puVar8 + (uint)bVar11 * -2 + 1;
+      puVar7 = (uint *)((int)&local_44 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+      *puVar8 = *(uint *)((int)&local_44 + (uint)bVar11 * -8 + 4);
+      *puVar9 = *puVar7;
+      puVar9[(uint)bVar11 * -2 + 1] = puVar7[(uint)bVar11 * -2 + 1];
       iVar5 = iVar5 + 1;
       pCVar6 = pCVar6 + 6;
     } while (iVar5 < local_20->num_parts);

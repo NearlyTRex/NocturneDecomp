@@ -150,13 +150,11 @@ int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *t
   CMatrix3x3f local_20c;
   CVector3f local_1e4;
   CVector3f local_1d8;
-  float local_1cc;
-  float afStack_1c8 [2];
+  CVector3f local_1cc;
   CVector3f local_1c0;
-  uint local_1b4;
-  float afStack_1b0 [2];
+  CVector3f local_1b4;
   CVector3f local_1a8;
-  uint local_19c;
+  float local_19c;
   float local_198 [5];
   float local_184 [3];
   int local_178;
@@ -3282,25 +3280,30 @@ LAB_0052f1d9:
                                                               (&(pCVar12->location).position,
                                                                &(local_40->location).position,
                                                                &local_1e4);
-                                                    local_1cc = local_1e4.x;
-                                                    afStack_1c8[(uint)bVar19 * -2] =
-                                                         *(float *)((int)&local_1e4 +
-                                                                   (uint)bVar19 * -8 + 4);
-                                                    afStack_1c8
-                                                    [(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1] =
-                                                         *(float *)((int)&local_1e4 +
-                                                                   (uint)bVar19 * -8 +
-                                                                   (uint)bVar19 * -8 + 8);
+                                                    local_1cc.x = local_1e4.x;
+                                                    *(uint *)
+                                                     ((int)&local_1cc + (uint)bVar19 * -8 + 4) =
+                                                         *(uint *)
+                                                          ((int)&local_1e4 + (uint)bVar19 * -8 + 4);
+                                                    *(uint *)
+                                                     ((int)&local_1cc +
+                                                     (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8) =
+                                                         *(uint *)
+                                                          ((int)&local_1e4 +
+                                                          (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8)
+                                                    ;
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-                                                            (&local_1cc);
-                                                  local_19c = local_1b4;
+                                                            (&local_1cc,&local_1b4);
+                                                  local_19c = local_1b4.x;
                                                   local_198[(uint)bVar19 * -2] =
-                                                       afStack_1b0[(uint)bVar19 * -2];
+                                                       *(float *)((int)&local_1b4 +
+                                                                 (uint)bVar19 * -8 + 4);
                                                   local_198[(uint)bVar19 * -2 +
                                                             (uint)bVar19 * -2 + 1] =
-                                                       afStack_1b0
-                                                       [(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
+                                                       *(float *)((int)&local_1b4 +
+                                                                 (uint)bVar19 * -8 +
+                                                                 (uint)bVar19 * -8 + 8);
                                                   (local_40->orient).vec.y = local_198[0];
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
                                                             (local_40);

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   owner
 ;
 ; XREF[9]:
 ;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0b0e

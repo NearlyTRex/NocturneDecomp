@@ -43,8 +43,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
   float fStack_26c;
   float fStack_268;
   uint uStack_264;
-  float fStack_260;
-  float afStack_25c [2];
+  CVector3f CStack_260;
   CVector3f CStack_254;
   float fStack_248;
   float afStack_244 [4];
@@ -58,14 +57,14 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
   float fStack_1f4;
   float afStack_1f0 [2];
   CVector3f CStack_1e8;
-  uint uStack_1dc;
+  float fStack_1dc;
   float afStack_1d8 [2];
   CVector3f CStack_1d0;
-  uint uStack_1c4;
-  float afStack_1c0 [5];
+  float fStack_1c4;
+  float afStack_1c0 [2];
+  CVector3f CStack_1b8;
   CVector3f CStack_1ac;
-  uint uStack_1a0;
-  float afStack_19c [2];
+  CVector3f CStack_1a0;
   CVector3f CStack_194;
   CVector3f CStack_188;
   CVector3f CStack_17c;
@@ -79,7 +78,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
   float fStack_134;
   float fStack_130;
   float fStack_12c;
-  float afStack_128 [3];
+  CVector3f CStack_128;
   CVector3f CStack_11c;
   CVector3f CStack_110;
   float fStack_104;
@@ -284,19 +283,21 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
                (pCVar3->base).location.position.y - (this_ptr->base).base.base.location.position.y;
           fStack_b4 = (pCVar3->base).location.position.z -
                       (this_ptr->base).base.base.location.position.z;
-          fStack_260 = afStack_c4[2];
-          afStack_25c[(uint)bVar10 * -2] = afStack_c4[(uint)bVar10 * -2 + 3];
-          afStack_25c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+          CStack_260.x = afStack_c4[2];
+          *(float *)((int)&CStack_254 + ((uint)bVar10 * -2 + -2) * 4) =
+               afStack_c4[(uint)bVar10 * -2 + 3];
+          *(float *)((int)&CStack_254 + ((uint)bVar10 * -2 + (uint)bVar10 * -2 + -1) * 4) =
                afStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-          fStack_84 = SQRT(afStack_25c[1] * afStack_25c[1] +
-                           fStack_260 * fStack_260 + afStack_25c[0] * afStack_25c[0]);
+          fStack_84 = SQRT(CStack_260.z * CStack_260.z +
+                           CStack_260.x * CStack_260.x + CStack_260.y * CStack_260.y);
           fStack_78 = fStack_84;
           if (fStack_84 < 0x40600000) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&fStack_260);
-            uStack_1c4 = afStack_1c0[2];
-            afStack_1c0[(uint)bVar10 * -2] = afStack_1c0[(uint)bVar10 * -2 + 3];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+                      (&CStack_260,&CStack_1b8);
+            fStack_1c4 = CStack_1b8.x;
+            afStack_1c0[(uint)bVar10 * -2] = *(float *)((int)&CStack_1b8 + (uint)bVar10 * -8 + 4);
             afStack_1c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-                 afStack_1c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+                 *(float *)((int)&CStack_1b8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_1c0[0] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005d9e44) {
@@ -394,15 +395,16 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
             afStack_c4[1] =
                  (pCVar3->base).location.position.z - (this_ptr->base).base.base.location.position.z
             ;
-            afStack_128[0] = fStack_c8;
-            afStack_154[(uint)bVar10 * -2 + 0xc] = afStack_c4[(uint)bVar10 * -2];
-            afStack_154[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
+            CStack_128.x = fStack_c8;
+            *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + 4) = afStack_c4[(uint)bVar10 * -2];
+            *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
                  afStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(afStack_154 + 0xb);
-            uStack_1dc = uStack_1a0;
-            afStack_1d8[(uint)bVar10 * -2] = afStack_19c[(uint)bVar10 * -2];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+                      (&CStack_128,&CStack_1a0);
+            fStack_1dc = CStack_1a0.x;
+            afStack_1d8[(uint)bVar10 * -2] = *(float *)((int)&CStack_1a0 + (uint)bVar10 * -8 + 4);
             afStack_1d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-                 afStack_19c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+                 *(float *)((int)&CStack_1a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                   (afStack_1d8[0] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005d9e44) {
@@ -549,11 +551,11 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
               core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
                         (&pCStack_2c->base,&CStack_230,&CStack_2b4);
               CStack_11c.x = CStack_2b4.x;
-              afStack_154[(uint)bVar10 * -2 + 0xf] =
-                   *(float *)((int)&CStack_2b4 + (uint)bVar10 * -8 + 4);
-              afStack_154[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-                   *(float *)((int)&CStack_2b4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-              if (&CStack_1d0 != (CVector3f *)(afStack_154 + 0xe)) {
+              *(uint *)((int)&CStack_11c + (uint)bVar10 * -8 + 4) =
+                   *(uint *)((int)&CStack_2b4 + (uint)bVar10 * -8 + 4);
+              *(uint *)((int)&CStack_11c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+                   *(uint *)((int)&CStack_2b4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+              if (&CStack_1d0 != &CStack_11c) {
                 CStack_1d0.x = CStack_11c.x;
                 CStack_1d0.y = CStack_11c.y;
                 CStack_1d0.z = CStack_11c.z;
@@ -571,7 +573,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
                 CStack_254.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
                 CStack_254.x = fStack_48;
                 CStack_254.y = 0.0;
-                if (&CStack_290 != (CVector3f *)(afStack_25c + 2)) {
+                if (&CStack_290 != &CStack_254) {
                   CStack_290.x = fStack_48;
                   CStack_290.y = 0.0;
                   CStack_290.z = CStack_254.z;

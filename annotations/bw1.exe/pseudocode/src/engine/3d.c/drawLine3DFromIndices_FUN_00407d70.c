@@ -1,12 +1,12 @@
 // Name: engine_3d.c_drawLine3DFromIndices_FUN_00407d70
 // Address: 00407d70
 // Address Range: [[00407d70, 00407de2]]
-// Convention: unknown
-// Signature: void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2)
 
 #include "nocturne.h"
 
-void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)
+void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2)
 
 {
   int iVar1;
@@ -17,14 +17,14 @@ void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)
   uint local_68 [12];
   uint local_38 [12];
   
-  puVar2 = &DAT_00629014 + param_1 * 0xc;
+  puVar2 = &DAT_00629014 + vertex_index1 * 0xc;
   puVar3 = local_68;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
-  puVar2 = &DAT_00629014 + param_2 * 0xc;
+  puVar2 = &DAT_00629014 + vertex_index2 * 0xc;
   puVar3 = local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;

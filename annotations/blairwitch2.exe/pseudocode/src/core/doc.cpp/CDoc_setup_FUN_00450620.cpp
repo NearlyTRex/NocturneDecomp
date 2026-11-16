@@ -146,7 +146,7 @@ LAB_0045096f:
              (this_ptr->base).base.closest_distance_threshold,&(this_ptr->base).base.model);
   this_ptr_01 = (this_ptr->base).base.base.particle_systems;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_01,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_01,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_01,(CDemonActor *)this_ptr);
   pcVar5 = "LANTERN";
   pCVar3 = &this_ptr->lantern_box;
   do {

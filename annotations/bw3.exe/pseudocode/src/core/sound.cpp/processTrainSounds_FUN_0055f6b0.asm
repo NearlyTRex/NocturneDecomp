@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
+; void __cdecl core_sound_cpp_processTrainSounds_FUN_0055f6b0(void)
 ;
 ;
 ; Referenced Globals:

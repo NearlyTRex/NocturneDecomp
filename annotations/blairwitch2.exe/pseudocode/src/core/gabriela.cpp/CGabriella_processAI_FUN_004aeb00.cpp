@@ -36,7 +36,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
   float fStack_19c;
   float local_198;
   float fStack_194;
-  uint local_174;
+  float local_174;
   float local_170;
   float fStack_16c;
   float local_168;
@@ -47,7 +47,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
   float fStack_14c;
   float fStack_148;
   CVector3f CStack_140;
-  float local_134 [8];
+  float local_134 [2];
+  CVector3f local_12c [2];
   CVector3f local_114;
   float afStack_108 [4];
   float fStack_f8;
@@ -67,7 +68,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
   float local_88;
   float fStack_84;
   float local_78;
-  float local_74 [9];
+  float local_74 [2];
+  CVector3f local_6c [2];
   float fStack_50;
   float afStack_4c [2];
   CVector3f CStack_44;
@@ -166,15 +168,16 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
                        (this_ptr->base).base.base.location.position.y;
         local_134[1] = (local_1c->base).base.location.position.z -
                        (this_ptr->base).base.base.location.position.z;
-        local_134[2] = CStack_140.z;
-        local_134[(uint)bVar10 * -2 + 3] = local_134[(uint)bVar10 * -2];
-        local_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+        local_12c[0].x = CStack_140.z;
+        *(float *)((int)local_12c + (uint)bVar10 * -8 + 4) = local_134[(uint)bVar10 * -2];
+        *(float *)((int)local_12c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
              local_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_134 + 2);
-        local_174 = local_74[2];
-        *(float *)((int)&stack0xfffffe90 + (uint)bVar10 * -8) = local_74[(uint)bVar10 * -2 + 3];
-        *(float *)((int)&stack0xfffffe94 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4) =
-             local_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_12c,local_6c);
+        local_174 = local_6c[0].x;
+        *(uint *)((int)&stack0xfffffe90 + (uint)bVar10 * -8) =
+             *(uint *)((int)local_6c + (uint)bVar10 * -8 + 4);
+        *(uint *)((int)&stack0xfffffe94 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4) =
+             *(uint *)((int)local_6c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                              (local_170 - (this_ptr->base).base.base.orient.vec.y);
         fVar11 = local_18 * _DAT_005d6fcb * (float)_DAT_005d6fc3;
@@ -245,11 +248,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
                *(float *)((int)&stack0xfffffe98 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4);
           local_134[0] = (unaff_EDI->location).position.x + fStack_50;
           local_134[1] = (unaff_EDI->location).position.y + afStack_4c[0];
-          local_134[2] = (unaff_EDI->location).position.z + afStack_4c[1];
+          local_12c[0].x = (unaff_EDI->location).position.z + afStack_4c[1];
           CStack_44.x = local_134[0];
           *(float *)((int)&CStack_44 + (uint)bVar10 * -8 + 4) = local_134[(uint)bVar10 * -2 + 1];
-          *(float *)((int)&CStack_44 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4 + 8) =
-               local_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+          *(uint *)((int)&CStack_44 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4 + 8) =
+               *(uint *)((int)local_12c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
           fStack_38 = CStack_44.x - CStack_140.x;
           afStack_34[0] = CStack_44.y - CStack_140.y;
           afStack_34[1] = CStack_44.z - CStack_140.z;
@@ -276,11 +279,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004aeb00(CGabriella *thi
           }
           local_74[0] = local_8c * _DAT_005d6ff7;
           local_74[1] = local_88 * _DAT_005d6ff7;
-          local_74[2] = fStack_84 * _DAT_005d6ff7;
+          local_6c[0].x = fStack_84 * _DAT_005d6ff7;
           local_c8 = local_8c * _DAT_005d6ff7;
           afStack_dc[(uint)bVar10 * -2 + 6] = local_74[(uint)bVar10 * -2 + 1];
           afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-               local_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+               *(float *)((int)local_6c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
           local_114.y = fVar11 + local_c8;
           local_114.z = fVar4 + local_c4;
           afStack_108[0] = fVar5 + local_c0;

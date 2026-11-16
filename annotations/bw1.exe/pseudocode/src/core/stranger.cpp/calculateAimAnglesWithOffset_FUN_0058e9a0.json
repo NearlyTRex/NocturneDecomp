@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 280,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 20,
+    "pseudocode_lines": 65,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 226
+    "total_lines": 231
   },
   "cross_references": [],
   "function": {
@@ -26,10 +25,10 @@
         "0058eb44"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0",
-    "signature": "undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)"
+    "signature": "CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles)"
   },
   "function_calls": [
     {
@@ -60,9 +59,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -134,12 +133,27 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "offset_pair",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -168,32 +182,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "float *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "float *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 11,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [3];",
@@ -201,123 +191,19 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "apuStackY_101c",
+      "line": 12,
+      "match": "apCStackY_101c",
       "severity": "moderate",
-      "text": "uint *apuStackY_101c [1002];",
+      "text": "CVector3f *apCStackY_101c [1002];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(float *)((int)apCStack_2c",
       "severity": "moderate",
-      "text": "fVar1 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "fVar1 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(dVar3 = (double)(SQRT(fVar1 * fVar1 - -*in_stack_00000008 * -*in_stack_00000008) / fVar1),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(dVar3 = (double)(SQRT(fVar1 * fVar1 - -*in_stack_00000008 * -*in_stack_00000008) / fVar1),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = (float)dVar3;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "afStack_3c[2] = afStack_3c[2] + unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "afStack_3c[2] = afStack_3c[2] - unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(dVar3 = (double)(SQRT(fStack_4c * fStack_4c - in_stack_00000008[1] * in_stack_00000008[1])",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(dVar3 = (double)(SQRT(fStack_4c * fStack_4c - in_stack_00000008[1] * in_stack_00000008[1])",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "if (0.0 <= unaff_ESI) {",
-      "type": "unaffected_reg"
+      "text": "pfVar2 = (float *)((int)apCStack_2c[0] + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 88,
+    "complexity_score": 43,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 44
@@ -40,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)"
   },
   "function_calls": [
     {
@@ -134,17 +133,17 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "rotation_matrix",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x3f *"
       }
     ]
   },
@@ -158,43 +157,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_01c86730",
       "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
+      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),position,rotation_matrix);",
       "type": "undefined_data"
     }
   ]

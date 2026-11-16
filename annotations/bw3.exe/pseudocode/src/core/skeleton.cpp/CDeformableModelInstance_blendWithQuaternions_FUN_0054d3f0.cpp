@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,CVector3f *source_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
@@ -17,20 +16,18 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   int iVar3;
   CQuaternion4f *quat1_in;
   float *pfVar4;
-  CQuaternion4f *pCVar5;
-  uint *puVar6;
+  uint *puVar5;
   uint *puVar7;
-  float *pfVar8;
+  uint *puVar8;
   byte bVar9;
   float afStackY_18e4 [1522];
-  float fStack_108;
-  float local_f8;
+  CQuaternion4f CStack_108;
+  CQuaternion4f local_f8;
   CQuaternion4f local_e8;
   CQuaternion4f local_d8;
   CQuaternion4f local_c8;
   CQuaternion4f local_b8;
-  float local_a8;
-  float afStack_a4 [3];
+  CQuaternion4f local_a8;
   CQuaternion4f local_98;
   float fStack_88;
   float afStack_84 [4];
@@ -59,6 +56,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   CDeformableModelInstance *local_1c;
   CSkeleton *local_18;
   float local_14;
+  CQuaternion4f *pCVar6;
   
   bVar9 = 0;
   if ((float)_DAT_005d201c < blend_weight) {
@@ -75,16 +73,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
                             (local_18,iVar3,bone_index);
           if (-1 < iVar2) {
             local_14 = (*blend_callback)(iVar3,bone_index,blend_weight,iVar2,this_ptr);
-            core_xform_cpp_slerpQuaternion_FUN_00585b20(local_24,source_quaternions,local_14);
-            puVar6 = (uint *)((int)local_2c + (uint)bVar9 * -8 + 0x6b4);
-            (local_2c->bone_transform).pose_data.bone_rotations[0].w = fStack_108;
-            puVar7 = puVar6 + (uint)bVar9 * -2 + 1;
-            *puVar6 = *(uint *)(&stack0xfffffefc + (uint)bVar9 * -8);
-            *puVar7 = *(uint *)(&stack0xffffff00 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-            puVar7[(uint)bVar9 * -2 + 1] =
-                 *(uint *)
-                  ((int)(&stack0xffffff00 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-                  ((uint)bVar9 * -2 + 1) * 4);
+            core_xform_cpp_slerpQuaternion_FUN_00585b20
+                      (local_24,source_quaternions,local_14,&CStack_108);
+            puVar7 = (uint *)((int)local_2c + (uint)bVar9 * -8 + 0x6b4);
+            (local_2c->bone_transform).pose_data.bone_rotations[0].w = CStack_108.w;
+            puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
+            puVar5 = (uint *)((int)&CStack_108 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+            *puVar7 = *(uint *)((int)&CStack_108 + (uint)bVar9 * -8 + 4);
+            *puVar8 = *puVar5;
+            puVar8[(uint)bVar9 * -2 + 1] = puVar5[(uint)bVar9 * -2 + 1];
           }
           source_quaternions = source_quaternions + 1;
           iVar3 = iVar3 + 1;
@@ -104,47 +101,46 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
                             (local_18,iVar3,bone_index);
           if (-1 < iVar2) {
             iVar2 = local_28->bone_list[0].parent_index;
-            pCVar5 = quat1_in;
+            pCVar6 = quat1_in;
             if (-1 < iVar2) {
               local_14 = (float)(iVar2 * 0x10);
               core_xform_cpp_negateFirstComponent_FUN_00585930(source_quaternions + iVar2,&local_e8)
               ;
-              pCVar5 = &local_c8;
+              pCVar6 = &local_c8;
               local_c8.w = local_e8.w;
               puVar7 = (uint *)((int)&local_c8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-              puVar6 = (uint *)((int)&local_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+              puVar5 = (uint *)((int)&local_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
               *(uint *)((int)&local_c8 + (uint)bVar9 * -8 + 4) =
                    *(uint *)((int)&local_e8 + (uint)bVar9 * -8 + 4);
-              *puVar7 = *puVar6;
-              puVar7[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
-              core_xform_cpp_multiplyQuaternion_FUN_00585990(quat1_in,pCVar5,&local_98);
-              pCVar5 = (CQuaternion4f *)((int)&local_30->w + (int)local_14);
+              *puVar7 = *puVar5;
+              puVar7[(uint)bVar9 * -2 + 1] = puVar5[(uint)bVar9 * -2 + 1];
+              core_xform_cpp_multiplyQuaternion_FUN_00585990(quat1_in,pCVar6,&local_98);
+              pCVar6 = (CQuaternion4f *)((int)&local_30->w + (int)local_14);
               local_d8.w = local_98.w;
               puVar7 = (uint *)((int)&local_d8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-              puVar6 = (uint *)((int)&local_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+              puVar5 = (uint *)((int)&local_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
               *(uint *)((int)&local_d8 + (uint)bVar9 * -8 + 4) =
                    *(uint *)((int)&local_98 + (uint)bVar9 * -8 + 4);
-              *puVar7 = *puVar6;
-              puVar7[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
-              core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_d8,pCVar5,&local_b8);
-              pCVar5 = &local_b8;
+              *puVar7 = *puVar5;
+              puVar7[(uint)bVar9 * -2 + 1] = puVar5[(uint)bVar9 * -2 + 1];
+              core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_d8,pCVar6,&local_b8);
+              pCVar6 = &local_b8;
             }
-            puVar6 = (uint *)((int)pCVar5 + (uint)bVar9 * -8 + 4);
-            local_f8 = pCVar5->w;
-            puVar7 = puVar6 + (uint)bVar9 * -2 + 1;
-            *(uint *)((int)&stack0xffffff0c + (uint)bVar9 * 0xfffffffe * 4) = *puVar6;
-            *(uint *)(&stack0xffffff10 + (uint)bVar9 * -8 + (uint)bVar9 * -8) = *puVar7;
-            *(uint *)
-             ((int)(&stack0xffffff10 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-             ((uint)bVar9 * -2 + 1) * 4) = puVar7[(uint)bVar9 * -2 + 1];
-            core_xform_cpp_slerpQuaternion_FUN_00585b20(local_20,&stack0xffffff08,blend_weight);
-            pfVar4 = (float *)((int)local_1c + (uint)bVar9 * -8 + 0x6b4);
-            (local_1c->bone_transform).pose_data.bone_rotations[0].w = local_a8;
-            pfVar8 = pfVar4 + (uint)bVar9 * -2 + 1;
-            *pfVar4 = afStack_a4[(uint)bVar9 * -2];
-            *pfVar8 = afStack_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-            pfVar8[(uint)bVar9 * -2 + 1] =
-                 (afStack_a4 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
+            puVar5 = (uint *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
+            local_f8.w = pCVar6->w;
+            puVar8 = (uint *)((int)&local_f8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+            puVar7 = puVar5 + (uint)bVar9 * -2 + 1;
+            *(uint *)((int)&local_f8 + (uint)bVar9 * -8 + 4) = *puVar5;
+            *puVar8 = *puVar7;
+            puVar8[(uint)bVar9 * -2 + 1] = puVar7[(uint)bVar9 * -2 + 1];
+            core_xform_cpp_slerpQuaternion_FUN_00585b20(local_20,&local_f8,blend_weight,&local_a8);
+            puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0x6b4);
+            (local_1c->bone_transform).pose_data.bone_rotations[0].w = local_a8.w;
+            puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
+            puVar5 = (uint *)((int)&local_a8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+            *puVar7 = *(uint *)((int)&local_a8 + (uint)bVar9 * -8 + 4);
+            *puVar8 = *puVar5;
+            puVar8[(uint)bVar9 * -2 + 1] = puVar5[(uint)bVar9 * -2 + 1];
           }
           quat1_in = quat1_in + 1;
           iVar3 = iVar3 + 1;

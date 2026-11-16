@@ -27,12 +27,9 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   float fStack_144;
   float fStack_140;
   float fStack_13c;
-  uint uStack_120;
+  CVector3f CStack_120;
   float fStack_114;
-  float fStack_110;
-  float fStack_10c;
-  float fStack_108;
-  float fStack_104;
+  float afStack_110 [4];
   float fStack_100;
   float fStack_fc;
   float fStack_f8;
@@ -53,8 +50,9 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   float fStack_58;
   CVector3f CStack_54;
   CVector3f CStack_48;
-  float fStack_3c;
-  float afStack_38 [10];
+  CVector3f CStack_3c;
+  float fStack_30;
+  float afStack_2c [7];
   
   bVar6 = 0;
   iVar4 = 0;
@@ -71,25 +69,25 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
               (item,&(this_ptr->base).base.base.location.position,(CVector3f *)(auStack_f0 + 4));
-    afStack_38[3] = (float)auStack_f0._4_4_;
-    afStack_38[(uint)bVar6 * -2 + 4] = afStack_e8[(uint)bVar6 * -2];
-    afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5] =
+    afStack_2c[0] = (float)auStack_f0._4_4_;
+    afStack_2c[(uint)bVar6 * -2 + 1] = afStack_e8[(uint)bVar6 * -2];
+    afStack_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 2] =
          afStack_e8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    afStack_38[6] =
-         SQRT(afStack_38[5] * afStack_38[5] +
-              afStack_38[3] * afStack_38[3] + afStack_38[4] * afStack_38[4]);
-    if (afStack_38[6] <= 0.0) {
-      afStack_38[4] = 0.0;
-      afStack_38[3] = 0.0;
-      afStack_38[5] = 0.0;
+    afStack_2c[3] =
+         SQRT(afStack_2c[2] * afStack_2c[2] +
+              afStack_2c[0] * afStack_2c[0] + afStack_2c[1] * afStack_2c[1]);
+    if (afStack_2c[3] <= 0.0) {
+      afStack_2c[1] = 0.0;
+      afStack_2c[0] = 0.0;
+      afStack_2c[2] = 0.0;
     }
     else {
-      fVar1 = 1.0 / afStack_38[6];
-      afStack_38[3] = afStack_38[3] * fVar1;
-      afStack_38[4] = afStack_38[4] * fVar1;
-      afStack_38[5] = afStack_38[5] * fVar1;
+      fVar1 = 1.0 / afStack_2c[3];
+      afStack_2c[0] = afStack_2c[0] * fVar1;
+      afStack_2c[1] = afStack_2c[1] * fVar1;
+      afStack_2c[2] = afStack_2c[2] * fVar1;
     }
-    if (0.0 < afStack_38[5]) {
+    if (0.0 < afStack_2c[2]) {
       return 0;
     }
     afStack_b0[1] = 3.0;
@@ -123,17 +121,17 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                 (item,&(this_ptr->base).base.base.location.position,(CVector3f *)auStack_f0);
-      fStack_3c = (float)auStack_f0._0_4_;
-      afStack_38[(uint)bVar6 * -2] = afStack_e8[(uint)bVar6 * -2 + -1];
-      afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+      CStack_3c.x = (float)auStack_f0._0_4_;
+      *(float *)((int)&CStack_3c + (uint)bVar6 * -8 + 4) = afStack_e8[(uint)bVar6 * -2 + -1];
+      *(float *)((int)&CStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            afStack_e8[(uint)bVar6 * -2 + (uint)bVar6 * -2];
       in_stack_fffffea8 = (CBoundingBox3D *)0x526b17;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250();
-      afStack_38[2] = (float)uStack_120;
-      afStack_38[(uint)bVar6 * -2 + 3] = *(float *)(&stack0xfffffee4 + (uint)bVar6 * -8);
-      afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-           *(float *)(&stack0xfffffee8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      if ((float)_DAT_005cd98f < ABS(afStack_38[3])) {
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_3c,&CStack_120);
+      fStack_30 = CStack_120.x;
+      afStack_2c[(uint)bVar6 * -2] = *(float *)((int)&CStack_120 + (uint)bVar6 * -8 + 4);
+      afStack_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           *(float *)((int)&CStack_120 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      if ((float)_DAT_005cd98f < ABS(afStack_2c[0])) {
         return 0;
       }
     }
@@ -178,19 +176,18 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   fStack_6c = fStack_150 + fStack_144;
   afStack_68[0] = fStack_14c + fStack_140;
   afStack_68[1] = fStack_148 + fStack_13c;
-  fStack_108 = fStack_150 + fStack_144;
-  *(float *)((int)&stack0xfffffefc + (uint)bVar6 * -8) = afStack_68[(uint)bVar6 * -2];
-  *(float *)((int)&stack0xffffff00 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+  afStack_110[2] = fStack_150 + fStack_144;
+  afStack_110[(uint)bVar6 * -2 + 3] = afStack_68[(uint)bVar6 * -2];
+  afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
        afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   input_local_point = &CStack_90;
-  fStack_114 = fStack_108 * _DAT_005cd997;
-  fStack_110 = fStack_104 * _DAT_005cd997;
-  fStack_10c = fStack_100 * _DAT_005cd997;
-  CStack_90.x = fStack_108 * _DAT_005cd997;
-  *(uint *)((int)&CStack_90 + (uint)bVar6 * -8 + 4) =
-       *(uint *)((int)&stack0xfffffef0 + (uint)bVar6 * -8);
-  *(uint *)((int)&CStack_90 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-       *(uint *)((int)&stack0xfffffef4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  fStack_114 = afStack_110[2] * _DAT_005cd997;
+  afStack_110[0] = afStack_110[3] * _DAT_005cd997;
+  afStack_110[1] = fStack_100 * _DAT_005cd997;
+  CStack_90.x = afStack_110[2] * _DAT_005cd997;
+  *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + 4) = afStack_110[(uint)bVar6 * -2];
+  *(float *)((int)&CStack_90 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80(item,input_local_point,&CStack_48);
   CStack_84.x = CStack_48.x;
   *(uint *)((int)&CStack_84 + (uint)bVar6 * -8 + 4) =
@@ -207,9 +204,9 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   fStack_f8 = afStack_68[3] - afStack_b0[6];
   fStack_f4 = fStack_58 - fStack_94;
   fStack_d8 = afStack_68[2] - afStack_b0[5];
-  afStack_d4[(uint)bVar6 * -2] = *(float *)((int)&stack0xffffff08 + (uint)bVar6 * -8);
+  afStack_d4[(uint)bVar6 * -2] = afStack_110[(uint)bVar6 * -2 + 6];
   afStack_d4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       *(float *)((int)&stack0xffffff0c + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
   if ((ABS(afStack_d4[0]) <= (float)_DAT_005cd99f) &&
      (((fVar1 = SQRT(fStack_d8 * fStack_d8 + afStack_d4[1] * afStack_d4[1]), pickup_type == 5 ||
        (fVar1 <= _DAT_005cd9a7)) && (0.0 <= afStack_d4[1])))) {

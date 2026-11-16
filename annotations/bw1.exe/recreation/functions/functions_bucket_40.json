@@ -669,14 +669,48 @@
       "00408d60",
       "00409170"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":374,
     "method":"rayCylinderIntersect",
     "name":"core_actor.cpp_rayCylinderIntersect_FUN_004080c0",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -5832,10 +5866,10 @@
     "name":"support_codec.cpp_CCheesyCipher_setMode_FUN_00443a40",
     "params":[
       {
-        "name":"param_2",
+        "name":"mode",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -5906,10 +5940,28 @@
     "instructions":9,
     "method":"seek",
     "name":"support_codec.cpp_CInStreamPipe_seek_FUN_00443e40",
+    "params":[
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"origin",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -23783,18 +23835,18 @@
     "name":"support_trstream.cpp_COutStreamFile_seek_FUN_005a1940",
     "params":[
       {
-        "name":"param_2",
+        "name":"offset",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"origin",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -23802,7 +23854,7 @@
     "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"bool",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -25214,15 +25266,49 @@
     "calls":[
       "005c1d69"
     ],
-    "conv":"unknown",
+    "conv":"__stack3_esi",
     "instructions":154,
     "method":"slerpQuaternion",
     "name":"core_xform.cpp_slerpQuaternion_FUN_005b7940",
+    "params":[
+      {
+        "name":"quat1_in",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat2_in",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"t",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

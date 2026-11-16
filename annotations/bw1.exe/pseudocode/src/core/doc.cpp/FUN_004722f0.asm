@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_doc_cpp_FUN_004722f0(void)
+; float * core_doc_cpp_FUN_004722f0(void)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 00472303
     LEA EDI,[ESP + 0x38]                ; 00472307
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0047230b
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x2c]                ; 00472310
     ADD ESP,0x4                         ; 00472314
     MOVSD ES:EDI,ESI                    ; 00472317

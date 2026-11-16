@@ -9,9 +9,9 @@
 // Address: 004400d0
 void __cdecl resetBitBuffer(SBitBuffer *bit_buffer);
 
-// Original: support_codec.cpp_writeBitsToStream_FUN_004400f0
+// Original: support_codec.cpp_readBitsFromStream_FUN_004400f0
 // Address: 004400f0
-uint writeBitsToStream(byte *param_1,int param_2,int *param_3);
+int __cdecl readBitsFromStream(SBitBuffer *bit_buffer,int bit_count,void *istream);
 
 // Original: support_codec.cpp_FUN_00440210
 // Address: 00440210
@@ -21,9 +21,9 @@ void FUN_00440210(int *param_1,int param_2,uint param_3);
 // Address: 00440240
 undefined4 FUN_00440240(undefined4 *param_1,undefined4 *param_2);
 
-// Original: support_codec.cpp_FUN_00440260
+// Original: support_codec.cpp_writeBitsToStream_FUN_00440260
 // Address: 00440260
-int FUN_00440260(byte *param_1,int param_2,uint param_3,int *param_4);
+int __cdecl writeBitsToStream(SBitBuffer *bit_buffer,int bit_count,uint bit_value,void *ostream);
 
 // Original: support_codec.cpp_FUN_00440400
 // Address: 00440400
@@ -167,11 +167,11 @@ void FUN_00441510(int param_1);
 
 // Original: support_codec.cpp_CAsciiArmor_encode_FUN_00441530
 // Address: 00441530
-undefined4 __cdecl CAsciiArmor::encode(CAsciiArmor *this_ptr,undefined4 param_2,int *param_3);
+int __cdecl CAsciiArmor::encode(CAsciiArmor *this_ptr,void *istream,void *ostream);
 
 // Original: support_codec.cpp_CAsciiArmor_flush_FUN_00441580
 // Address: 00441580
-undefined4 __cdecl CAsciiArmor::flush(CAsciiArmor *this_ptr,int *param_2);
+int __cdecl CAsciiArmor::flush(CAsciiArmor *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_CAsciiUnarmor_ctor_FUN_004415f0
 // Address: 004415f0
@@ -179,15 +179,15 @@ CAsciiUnarmor * __cdecl CAsciiUnarmor::ctor(CAsciiUnarmor *this_ptr);
 
 // Original: support_codec.cpp_CAsciiUnarmor_decode_FUN_00441610
 // Address: 00441610
-undefined4 __cdecl CAsciiUnarmor::decode(CAsciiUnarmor *this_ptr,int *param_2,undefined4 param_3);
+int __cdecl CAsciiUnarmor::decode(CAsciiUnarmor *this_ptr,void *istream,void *ostream);
 
 // Original: support_codec.cpp_CCheesyCipher_ctor_FUN_00441660
 // Address: 00441660
-CCodec * __cdecl CCheesyCipher::ctor(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3);
+CCheesyCipher * __cdecl CCheesyCipher::ctor(CCheesyCipher *this_ptr,int mode,uint key);
 
 // Original: support_codec.cpp_CCheesyCipher_setMode_FUN_004416a0
 // Address: 004416a0
-void __cdecl CCheesyCipher::setMode(CCheesyCipher *this_ptr,int param_2);
+void __cdecl CCheesyCipher::setMode(CCheesyCipher *this_ptr,int mode);
 
 // Original: support_codec.cpp_CCheesyCipher_setKey_FUN_004416b0
 // Address: 004416b0
@@ -199,7 +199,7 @@ uint __cdecl CCheesyCipher::transformByte(CCheesyCipher *this_ptr,byte param_2);
 
 // Original: support_codec.cpp_CCheesyCipher_process_FUN_00441750
 // Address: 00441750
-undefined4 __cdecl CCheesyCipher::process(CCheesyCipher *this_ptr,int *param_2,int *param_3);
+int __cdecl CCheesyCipher::process(CCheesyCipher *this_ptr,void *istream,void *ostream);
 
 // Original: support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0
 // Address: 004417d0
@@ -219,7 +219,7 @@ uint __cdecl CInStreamPipe::getChar(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_ungetChar_FUN_00441970
 // Address: 00441970
-undefined4 __cdecl CInStreamPipe::ungetChar(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::ungetChar(CInStreamPipe *this_ptr,int ch);
 
 // Original: support_codec.cpp_CInStreamPipe_peekChar_FUN_004419a0
 // Address: 004419a0
@@ -227,23 +227,23 @@ uint __cdecl CInStreamPipe::peekChar(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_read_FUN_004419e0
 // Address: 004419e0
-int __cdecl CInStreamPipe::read(CInStreamPipe *this_ptr,undefined4 *param_2,uint param_3);
+int __cdecl CInStreamPipe::read(CInStreamPipe *this_ptr,void *buffer,int count);
 
 // Original: support_codec.cpp_CInStreamPipe_seek_FUN_00441aa0
 // Address: 00441aa0
-undefined4 __cdecl CInStreamPipe::seek(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::seek(CInStreamPipe *this_ptr,int offset,int origin);
 
 // Original: support_codec.cpp_CInStreamPipe_tell_FUN_00441ad0
 // Address: 00441ad0
-undefined4 __cdecl CInStreamPipe::tell(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::tell(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_isOpen_FUN_00441b00
 // Address: 00441b00
-undefined4 __cdecl CInStreamPipe::isOpen(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::isOpen(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_isEof_FUN_00441b30
 // Address: 00441b30
-undefined4 __cdecl CInStreamPipe::isEof(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::isEof(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_close_FUN_00441b60
 // Address: 00441b60
@@ -251,11 +251,11 @@ void __cdecl CInStreamPipe::close(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_open_FUN_00441bf0
 // Address: 00441bf0
-undefined4 __cdecl CInStreamPipe::open(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5);
+void __cdecl CInStreamPipe::open(CInStreamPipe *this_ptr,CCodec *codec,void *source,int owns_streams,int buffer_size);
 
 // Original: support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80
 // Address: 00441c80
-undefined4 __cdecl CInStreamPipe::fillBuffer(CInStreamPipe *this_ptr);
+int __cdecl CInStreamPipe::fillBuffer(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CCheesyCipher_dtor_FUN_00441d80
 // Address: 00441d80

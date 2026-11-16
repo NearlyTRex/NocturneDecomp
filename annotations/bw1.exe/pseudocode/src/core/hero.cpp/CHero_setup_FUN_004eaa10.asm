@@ -43,7 +43,7 @@ section .text
     PUSH EAX                            ; 004eaa33
     MOV dword ptr [EBX + 0xc1d0],0x0    ; 004eaa34
     CALL core_inv.cpp_setupItems_FUN_004f9b20 ; 004eaa3e
-        ;   XREF to: 004f9b20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_setupItems_FUN_004f9b20()
+        ;   XREF to: 004f9b20 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_setupItems_FUN_004f9b20(CInventory * this_ptr)
     MOV dword ptr [EBX + 0x1ff60],0x0   ; 004eaa43
     MOV dword ptr [EBX + 0x1ff64],0x0   ; 004eaa4d
     MOV dword ptr [EBX + 0x1ff68],0x0   ; 004eaa57

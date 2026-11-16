@@ -85,16 +85,13 @@ void __cdecl core_shadow_cpp_CShadow_process_FUN_0053c500(CShadow *this_ptr,floa
   float fStack_1c8;
   float fStack_1c4;
   float fStack_1c0;
-  float fStack_1bc;
-  float fStack_1b8;
-  float fStack_1b4;
+  CVector3f CStack_1bc;
   CVector3f CStack_1b0;
   CVector3i CStack_1a4;
-  uint uStack_198;
-  float afStack_194 [5];
-  float fStack_180;
-  float fStack_17c;
-  float fStack_178;
+  float fStack_198;
+  float afStack_194 [2];
+  CVector3f CStack_18c;
+  CVector3f CStack_180;
   float fStack_174;
   float fStack_170;
   float fStack_16c;
@@ -405,8 +402,9 @@ LAB_0053d90f:
             fStack_70 = (pCVar13->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
             fStack_168 = fStack_78;
-            afStack_194[(uint)bVar17 * -2 + 0xc] = afStack_98[(uint)bVar17 * -2 + 9];
-            afStack_194[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 0xd] =
+            *(float *)((int)&CStack_180 + ((uint)bVar17 * -2 + 6) * 4 + 4) =
+                 afStack_98[(uint)bVar17 * -2 + 9];
+            *(float *)((int)&CStack_180 + ((uint)bVar17 * -2 + (uint)bVar17 * -2 + 7) * 4 + 4) =
                  afStack_98[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 10];
             if (SQRT(fStack_160 * fStack_160 + fStack_168 * fStack_168 + fStack_164 * fStack_164) <
                 (float)_DAT_005e667d) {
@@ -463,17 +461,18 @@ LAB_0053d90f:
                         (this_ptr->base).base.base.location.position.y;
             fStack_b8 = (pCVar13->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
-            fStack_180 = fStack_c0;
-            afStack_194[(uint)bVar17 * -2 + 6] = afStack_f8[(uint)bVar17 * -2 + 0xf];
-            afStack_194[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 7] =
+            CStack_180.x = fStack_c0;
+            *(float *)((int)&CStack_180 + (uint)bVar17 * -8 + 4) =
+                 afStack_f8[(uint)bVar17 * -2 + 0xf];
+            *(float *)((int)&CStack_180 + ((uint)bVar17 * -2 + (uint)bVar17 * -2 + 1) * 4 + 4) =
                  afStack_f8[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 0x10];
-            if (afStack_1e8 + 0xb != afStack_194 + 5) {
-              fStack_1bc = fStack_180;
-              fStack_1b8 = fStack_17c;
-              fStack_1b4 = fStack_178;
+            if (&CStack_1bc != &CStack_180) {
+              CStack_1bc.x = CStack_180.x;
+              CStack_1bc.y = CStack_180.y;
+              CStack_1bc.z = CStack_180.z;
             }
-            fStack_34 = SQRT(fStack_1b4 * fStack_1b4 +
-                             fStack_1bc * fStack_1bc + fStack_1b8 * fStack_1b8);
+            fStack_34 = SQRT(CStack_1bc.z * CStack_1bc.z +
+                             CStack_1bc.x * CStack_1bc.x + CStack_1bc.y * CStack_1bc.y);
             fStack_28 = 20.0;
             if (this_ptr->type == 1) {
               fStack_28 = 10.0;
@@ -483,11 +482,12 @@ LAB_0053d90f:
             }
             pCVar15 = &(this_ptr->base).base.model;
             if (fStack_28 < fStack_34) {
-              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0();
-              uStack_198 = afStack_194[2];
-              afStack_194[(uint)bVar17 * -2] = afStack_194[(uint)bVar17 * -2 + 3];
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
+                        (&CStack_1bc,&CStack_18c);
+              fStack_198 = CStack_18c.x;
+              afStack_194[(uint)bVar17 * -2] = *(float *)((int)&CStack_18c + (uint)bVar17 * -8 + 4);
               afStack_194[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 1] =
-                   afStack_194[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 4];
+                   *(float *)((int)&CStack_18c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
               in_stack_fffffcd8 =
                    (CShadow *)(afStack_194[0] - (this_ptr->base).base.base.orient.vec.y);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)in_stack_fffffcd8);
@@ -797,9 +797,10 @@ LAB_0053d2f5:
     fStack_170 = afStack_224[3] + (this_ptr->base).base.base.location.position.y;
     fStack_16c = CStack_234.z + (this_ptr->base).base.base.location.position.z;
     CStack_204.x = fStack_174;
-    afStack_224[(uint)bVar17 * -2 + 9] = afStack_194[(uint)bVar17 * -2 + 9];
+    afStack_224[(uint)bVar17 * -2 + 9] =
+         *(float *)((int)&CStack_180 + ((uint)bVar17 * -2 + 3) * 4 + 4);
     afStack_224[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 10] =
-         afStack_194[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 10];
+         *(float *)((int)&CStack_180 + ((uint)bVar17 * -2 + (uint)bVar17 * -2 + 4) * 4 + 4);
     if (&CStack_234 != (CVector3f *)(afStack_224 + 8)) {
       CStack_234.x = CStack_204.x;
       CStack_234.y = CStack_204.y;

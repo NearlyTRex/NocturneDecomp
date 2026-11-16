@@ -1,49 +1,41 @@
 // Name: cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460
 // Address: 0043a460
 // Address Range: [[0043a460, 0043af1d]]
-// Convention: unknown
-// Signature: void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
+// Convention: __cdecl
+// Signature: SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
+SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 
 {
   int iVar1;
-  int iVar2;
-  int *piVar3;
-  ushort *puVar4;
-  int iVar5;
-  void *pvVar6;
-  ushort uVar7;
+  uint uVar2;
+  int iVar3;
+  int *piVar4;
+  ushort *puVar5;
+  int iVar6;
+  SEdge *pSVar7;
   ushort uVar8;
   ushort uVar9;
-  uint uVar10;
-  uint uVar11;
-  int iVar12;
-  uint *puVar13;
+  int *piVar10;
+  ushort uVar11;
+  uint uVar12;
+  uint uVar13;
   int iVar14;
-  int iVar15;
-  uint *puVar16;
-  byte bVar17;
-  int in_stack_00000004;
-  int *in_stack_00000008;
-  void *in_stack_0000000c;
-  int *in_stack_00000010;
-  int in_stack_00000014;
-  int in_stack_00000018;
-  int in_stack_0000001c;
-  int in_stack_00000020;
-  int in_stack_00000024;
+  uint *puVar15;
+  int iVar16;
+  int iVar17;
+  SEdge *pSVar18;
+  byte bVar19;
   char acStack_1f4 [256];
   int iStack_f4;
   int iStack_f0;
   int iStack_ec;
-  int *piStack_e8;
-  int *piStack_e4;
+  SEdgeList *pSStack_e8;
+  SEdgeList *pSStack_e4;
   int iStack_e0;
   int iStack_dc;
   int iStack_d8;
@@ -78,12 +70,12 @@ void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
   int iStack_64;
   int iStack_60;
   int iStack_5c;
-  int iStack_58;
+  byte *puStack_58;
   int iStack_54;
   int iStack_50;
   int iStack_4c;
   int iStack_48;
-  int iStack_44;
+  SEdge *pSStack_44;
   int iStack_40;
   uint uStack_3c;
   int iStack_38;
@@ -91,276 +83,281 @@ void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
   int iStack_30;
   int iStack_2c;
   int iStack_28;
-  int *piStack_24;
+  SEdgeList *pSStack_24;
   int iStack_20;
   uint uStack_1c;
   int iStack_18;
   int iStack_14;
   
-  bVar17 = 0;
-  uVar10 = 0;
-  if (in_stack_00000004 == 0) {
-    return (void *)0x0;
+  bVar19 = 0;
+  uVar12 = 0;
+  if (edge_lists == (SEdgeList *)0x0) {
+    return (SEdge *)0x0;
   }
-  iStack_48 = in_stack_00000014 + -1;
-  iStack_ec = in_stack_00000018 + -1;
-  iVar12 = 0;
-  piStack_e8 = in_stack_00000008;
+  iStack_48 = max_y + -1;
+  iStack_ec = gap_tolerance_x + -1;
+  iVar14 = 0;
+  pSStack_e8 = scanline_data;
   if (0 < iStack_ec) {
     do {
-      iStack_dc = iVar12 + 1;
-      iStack_cc = iVar12 * 0x84;
+      iStack_dc = iVar14 + 1;
+      iStack_cc = iVar14 * 0x84;
       iStack_e0 = 0;
-      piStack_34 = in_stack_00000008 + iStack_dc * 0x21;
-      piStack_e4 = piStack_e8;
+      piStack_34 = (int *)((int)scanline_data + iStack_dc * 0x84);
+      pSStack_e4 = pSStack_e8;
       iStack_80 = iStack_dc;
       iStack_70 = iStack_dc;
       iStack_68 = iStack_dc;
       iStack_2c = iStack_dc;
-      for (iStack_20 = 0; piVar3 = (int *)((int)in_stack_00000008 + iStack_cc), iStack_20 < *piVar3;
-          iStack_20 = iStack_20 + 1) {
-        iVar2 = *(int *)((int)piVar3 + iStack_e0 + 4);
-        iVar14 = *(int *)((int)piVar3 + iStack_e0 + 0x44) + iVar2;
-        iVar15 = iVar14 + -1;
-        if (0x1ff < (int)uVar10) {
+      for (iStack_20 = 0; piVar4 = (int *)((int)&scanline_data->edge_data + iStack_cc),
+          iStack_20 < *piVar4; iStack_20 = iStack_20 + 1) {
+        iVar3 = *(int *)((int)piVar4 + iStack_e0 + 4);
+        iVar16 = *(int *)((int)piVar4 + iStack_e0 + 0x44) + iVar3;
+        iVar17 = iVar16 + -1;
+        if (0x1ff < (int)uVar12) {
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x87d;
           core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
         }
-        uVar7 = (ushort)iVar12;
-        if (0 < iVar2) {
-          iStack_d4 = iVar2 + 1;
-          iStack_d8 = iVar2 + -1;
+        uVar8 = (ushort)iVar14;
+        if (0 < iVar3) {
+          iStack_d4 = iVar3 + 1;
+          iStack_d8 = iVar3 + -1;
           iStack_ac = 0;
           iStack_c4 = 0;
-          piStack_24 = piStack_e4;
+          pSStack_24 = pSStack_e4;
           piStack_a8 = piStack_34;
           while( true ) {
-            piVar3 = in_stack_00000008 + iStack_2c * 0x21;
-            if (*piVar3 <= iStack_ac) break;
-            iVar5 = *(int *)((int)piVar3 + iStack_c4 + 4);
-            iStack_74 = *(int *)((int)piVar3 + iStack_c4 + 0x44) + iVar5 + -1;
+            piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data);
+            if (*piVar4 <= iStack_ac) break;
+            iVar6 = *(int *)((int)piVar4 + iStack_c4 + 4);
+            iStack_74 = *(int *)((int)piVar4 + iStack_c4 + 0x44) + iVar6 + -1;
             iStack_38 = 0;
             if (0 < iStack_20) {
-              iStack_44 = *piStack_e4;
-              iStack_58 = iStack_44 + piStack_e4[0x10] + -1;
-              if (iVar5 < iStack_58) {
+              pSStack_44 = pSStack_e4->edge_data;
+              puStack_58 = (byte *)
+                           ((int)&(pSStack_e4[8].edge_data)->x0 + (int)((int)&pSStack_44[-1].y1 + 1)
+                           );
+              if (iVar6 < (int)puStack_58) {
                 iStack_38 = 1;
               }
             }
-            uVar9 = (ushort)iVar2;
-            uVar8 = (ushort)iVar5;
-            if ((iVar5 < iStack_d8) && (iVar2 <= iStack_74)) {
-              iVar1 = uVar10 * 8;
-              uVar11 = uVar10 + 1;
-              puVar4 = (ushort *)(iVar1 + 0x7c6550);
-              uStack_1c = uVar11;
+            uVar11 = (ushort)iVar3;
+            uVar9 = (ushort)iVar6;
+            if ((iVar6 < iStack_d8) && (iVar3 <= iStack_74)) {
+              iVar1 = uVar12 * 8;
+              uVar13 = uVar12 + 1;
+              puVar5 = (ushort *)(iVar1 + 0x7c6550);
+              uStack_1c = uVar13;
               if (iStack_38 != 0) {
-                if (in_stack_0000001c < (iVar2 - iStack_58) + -1) goto LAB_0043a8d0;
+                if (gap_tolerance_y < (iVar3 - (int)puStack_58) + -1) goto LAB_0043a8d0;
                 uStack_98 = 0;
-                *puVar4 = 0;
-                *puVar4 = (ushort)iStack_58;
+                *puVar5 = 0;
+                *puVar5 = (ushort)puStack_58;
                 *(ushort *)(iVar1 + 0x7c6552) = 0;
-                *(ushort *)(iVar1 + 0x7c6552) = uVar7;
+                *(ushort *)(iVar1 + 0x7c6552) = uVar8;
                 *(ushort *)(iVar1 + 0x7c6554) = 0;
-                uVar8 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-                *(ushort *)(iVar1 + 0x7c6554) = uVar9;
-                *(ushort *)(iVar1 + 0x7c6556) = uVar8;
-                *(ushort *)(iVar1 + 0x7c6556) = uVar8 | uVar7 & 0x7fff;
+                uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+                *(ushort *)(iVar1 + 0x7c6554) = uVar11;
+                *(ushort *)(iVar1 + 0x7c6556) = uVar9;
+                *(ushort *)(iVar1 + 0x7c6556) = uVar9 | uVar8 & 0x7fff;
                 *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
-                uVar8 = *(ushort *)(iVar1 + 0x7c6556);
-                iStack_a0 = iVar2;
-                iStack_9c = iVar12;
+                uVar9 = *(ushort *)(iVar1 + 0x7c6556);
+                iStack_a0 = iVar3;
+                iStack_9c = iVar14;
                 goto LAB_0043a762;
               }
               iStack_b8 = iStack_dc;
-              *puVar4 = 0;
-              *puVar4 = uVar9;
+              *puVar5 = 0;
+              *puVar5 = uVar11;
               *(ushort *)(iVar1 + 0x7c6552) = 0;
-              *(ushort *)(iVar1 + 0x7c6552) = uVar7;
+              *(ushort *)(iVar1 + 0x7c6552) = uVar8;
               *(ushort *)(iVar1 + 0x7c6554) = 0;
-              uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-              *(ushort *)(iVar1 + 0x7c6554) = uVar8;
-              *(ushort *)(iVar1 + 0x7c6556) = uVar9;
-              *(ushort *)(iVar1 + 0x7c6556) = uVar9 | (ushort)iStack_dc & 0x7fff;
+              uVar11 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+              *(ushort *)(iVar1 + 0x7c6554) = uVar9;
+              *(ushort *)(iVar1 + 0x7c6556) = uVar11;
+              *(ushort *)(iVar1 + 0x7c6556) = uVar11 | (ushort)iStack_dc & 0x7fff;
               *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
               *(ushort *)(iVar1 + 0x7c6556) = *(ushort *)(iVar1 + 0x7c6556);
-              iStack_c0 = iVar5;
+              iStack_c0 = iVar6;
               iStack_b0 = iStack_38;
             }
             else {
 LAB_0043a8d0:
               iStack_bc = 0;
               if (0 < iStack_ac) {
-                iStack_44 = *piStack_a8;
-                iStack_18 = iStack_44 + piStack_a8[0x10] + -1;
-                if (iVar2 < iStack_18) {
+                pSStack_44 = (SEdge *)*piStack_a8;
+                iStack_18 = (int)pSStack_44 + piStack_a8[0x10] + -1;
+                if (iVar3 < iStack_18) {
                   iStack_bc = 1;
                 }
               }
-              uVar11 = uVar10;
-              if ((iStack_d4 < iVar5) && (iVar5 <= iVar15)) {
-                if ((iStack_bc == 0) && ((iVar5 - iVar2) + 1 <= in_stack_00000024)) {
+              uVar13 = uVar12;
+              if ((iStack_d4 < iVar6) && (iVar6 <= iVar17)) {
+                if ((iStack_bc == 0) && ((iVar6 - iVar3) + 1 <= gap_tolerance_horizontal)) {
                   iStack_8c = iStack_80;
                   uStack_88 = 1;
-                  iVar1 = uVar10 * 8;
-                  puVar4 = (ushort *)(iVar1 + 0x7c6550);
-                  *puVar4 = 0;
-                  *puVar4 = uVar9;
+                  iVar1 = uVar12 * 8;
+                  puVar5 = (ushort *)(iVar1 + 0x7c6550);
+                  *puVar5 = 0;
+                  *puVar5 = uVar11;
                   *(ushort *)(iVar1 + 0x7c6552) = 0;
-                  *(ushort *)(iVar1 + 0x7c6552) = uVar7;
+                  *(ushort *)(iVar1 + 0x7c6552) = uVar8;
                   *(ushort *)(iVar1 + 0x7c6554) = 0;
-                  *(ushort *)(iVar1 + 0x7c6554) = uVar8;
-                  uVar8 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-                  *(ushort *)(iVar1 + 0x7c6556) = uVar8;
-                  *(ushort *)(iVar1 + 0x7c6556) = uVar8 | (ushort)iStack_80 & 0x7fff;
+                  *(ushort *)(iVar1 + 0x7c6554) = uVar9;
+                  uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+                  *(ushort *)(iVar1 + 0x7c6556) = uVar9;
+                  *(ushort *)(iVar1 + 0x7c6556) = uVar9 | (ushort)iStack_80 & 0x7fff;
                   *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
-                  uVar8 = *(ushort *)(iVar1 + 0x7c6556) | 0x8000;
-                  iStack_94 = iVar12;
-                  iStack_90 = iVar5;
+                  uVar9 = *(ushort *)(iVar1 + 0x7c6556) | 0x8000;
+                  iStack_94 = iVar14;
+                  iStack_90 = iVar6;
                 }
                 else {
-                  if ((iStack_bc == 0) || (in_stack_00000020 < (iVar5 - iStack_18) + -1))
+                  if ((iStack_bc == 0) || (gap_tolerance_connected < (iVar6 - iStack_18) + -1))
                   goto LAB_0043a766;
                   iStack_84 = iStack_18;
                   iStack_a4 = iStack_70;
                   uStack_78 = 1;
-                  iVar1 = uVar10 * 8;
-                  puVar4 = (ushort *)(iVar1 + 0x7c6550);
-                  *puVar4 = 0;
-                  *puVar4 = *puVar4 | (ushort)iStack_18;
+                  iVar1 = uVar12 * 8;
+                  puVar5 = (ushort *)(iVar1 + 0x7c6550);
+                  *puVar5 = 0;
+                  *puVar5 = *puVar5 | (ushort)iStack_18;
                   *(ushort *)(iVar1 + 0x7c6552) = 0;
                   *(ushort *)(iVar1 + 0x7c6552) = *(ushort *)(iVar1 + 0x7c6552) | (ushort)iStack_70;
                   *(ushort *)(iVar1 + 0x7c6554) = 0;
-                  *(ushort *)(iVar1 + 0x7c6554) = *(ushort *)(iVar1 + 0x7c6554) | uVar8;
-                  uVar8 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-                  *(ushort *)(iVar1 + 0x7c6556) = uVar8;
-                  *(ushort *)(iVar1 + 0x7c6556) = uVar8 | (ushort)iStack_70 & 0x7fff;
+                  *(ushort *)(iVar1 + 0x7c6554) = *(ushort *)(iVar1 + 0x7c6554) | uVar9;
+                  uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+                  *(ushort *)(iVar1 + 0x7c6556) = uVar9;
+                  *(ushort *)(iVar1 + 0x7c6556) = uVar9 | (ushort)iStack_70 & 0x7fff;
                   *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
-                  uVar8 = *(ushort *)(iVar1 + 0x7c6556) | 0x8000;
-                  iStack_7c = iVar5;
-                  iStack_14 = iVar5;
+                  uVar9 = *(ushort *)(iVar1 + 0x7c6556) | 0x8000;
+                  iStack_7c = iVar6;
+                  iStack_14 = iVar6;
                 }
 LAB_0043a762:
-                puVar4[3] = uVar8;
-                uVar11 = uVar10 + 1;
+                puVar5[3] = uVar9;
+                uVar13 = uVar12 + 1;
               }
             }
 LAB_0043a766:
             iStack_c4 = iStack_c4 + 4;
             iStack_ac = iStack_ac + 1;
             piStack_a8 = piStack_a8 + 1;
-            uVar10 = uVar11;
+            uVar12 = uVar13;
           }
         }
-        if (0x1ff < (int)uVar10) {
+        if (0x1ff < (int)uVar12) {
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
           _DAT_01d1d404 = 0x8b7;
           core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
         }
-        if (iVar15 < iStack_48) {
-          iStack_30 = iVar14 + -2;
+        if (iVar17 < iStack_48) {
+          iStack_30 = iVar16 + -2;
           iStack_28 = iStack_e0;
           iStack_50 = 0;
-          for (iStack_b4 = 0; piVar3 = in_stack_00000008 + iStack_2c * 0x21, iStack_d0 = iVar14,
-              iStack_b4 < *piVar3; iStack_b4 = iStack_b4 + 1) {
-            iStack_40 = *(int *)((int)piVar3 + iStack_50 + 4);
+          for (iStack_b4 = 0; piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data),
+              iStack_d0 = iVar16, iStack_b4 < *piVar4; iStack_b4 = iStack_b4 + 1) {
+            iStack_40 = *(int *)((int)piVar4 + iStack_50 + 4);
             iStack_60 = 0;
-            iStack_44 = *(int *)((int)in_stack_00000008 + iStack_cc) + -1;
-            iVar5 = iStack_40 + *(int *)((int)piVar3 + iStack_50 + 0x44) + -1;
-            if ((iStack_20 < iStack_44) &&
-               (*(int *)((int)in_stack_00000008 + iStack_cc + iStack_e0 + 8) < iVar5)) {
+            piVar10 = (int *)((int)&scanline_data->edge_data + iStack_cc);
+            pSStack_44 = (SEdge *)(*piVar10 + -1);
+            iVar6 = iStack_40 + *(int *)((int)piVar4 + iStack_50 + 0x44) + -1;
+            if ((iStack_20 < (int)pSStack_44) && (*(int *)((int)piVar10 + iStack_e0 + 8) < iVar6)) {
               iStack_60 = 1;
             }
-            if (((iVar14 < iVar5) && (iStack_40 <= iVar15)) && (iStack_60 == 0)) {
+            if (((iVar16 < iVar6) && (iStack_40 <= iVar17)) && (iStack_60 == 0)) {
               iStack_5c = iStack_68;
-              iVar1 = uVar10 * 8;
+              iVar1 = uVar12 * 8;
               *(ushort *)(iVar1 + 0x7c6550) = 0;
-              *(ushort *)(iVar1 + 0x7c6550) = (ushort)iVar15;
+              *(ushort *)(iVar1 + 0x7c6550) = (ushort)iVar17;
               *(ushort *)(iVar1 + 0x7c6552) = 0;
-              *(ushort *)(iVar1 + 0x7c6552) = uVar7;
+              *(ushort *)(iVar1 + 0x7c6552) = uVar8;
               *(ushort *)(iVar1 + 0x7c6554) = 0;
-              *(ushort *)(iVar1 + 0x7c6554) = (ushort)iVar5;
-              uVar8 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-              *(ushort *)(iVar1 + 0x7c6556) = uVar8;
-              *(ushort *)(iVar1 + 0x7c6556) = uVar8 | (ushort)iStack_68 & 0x7fff;
+              *(ushort *)(iVar1 + 0x7c6554) = (ushort)iVar6;
+              uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+              *(ushort *)(iVar1 + 0x7c6556) = uVar9;
+              *(ushort *)(iVar1 + 0x7c6556) = uVar9 | (ushort)iStack_68 & 0x7fff;
               *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
-              uVar10 = uVar10 + 1;
+              uVar12 = uVar12 + 1;
               *(ushort *)(iVar1 + 0x7c6556) = *(ushort *)(iVar1 + 0x7c6556);
-              iStack_6c = iVar12;
-              iStack_64 = iVar5;
+              iStack_6c = iVar14;
+              iStack_64 = iVar6;
               iStack_54 = iStack_60;
             }
             else {
               iStack_c8 = 0;
-              iStack_44 = in_stack_00000008[iStack_2c * 0x21] + -1;
-              if ((iStack_b4 < iStack_44) &&
-                 (*(int *)((int)(in_stack_00000008 + iStack_2c * 0x21) + iStack_50 + 8) < iVar15)) {
+              piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data);
+              pSStack_44 = (SEdge *)(*piVar4 + -1);
+              if ((iStack_b4 < (int)pSStack_44) && (*(int *)((int)piVar4 + iStack_50 + 8) < iVar17))
+              {
                 iStack_c8 = 1;
               }
-              if (((iVar5 < iStack_30) && (iVar2 <= iVar5)) &&
-                 ((iStack_c8 == 0 && ((iVar15 - iVar5) + 1 <= in_stack_00000024)))) {
+              if (((iVar6 < iStack_30) && (iVar3 <= iVar6)) &&
+                 ((iStack_c8 == 0 && ((iVar17 - iVar6) + 1 <= gap_tolerance_horizontal)))) {
                 uStack_3c = 1;
-                iVar1 = uVar10 * 8;
-                puVar4 = (ushort *)(iVar1 + 0x7c6550);
-                *puVar4 = 0;
-                *puVar4 = *puVar4 | (ushort)iVar15;
+                iVar1 = uVar12 * 8;
+                puVar5 = (ushort *)(iVar1 + 0x7c6550);
+                *puVar5 = 0;
+                *puVar5 = *puVar5 | (ushort)iVar17;
                 *(ushort *)(iVar1 + 0x7c6552) = 0;
-                *(ushort *)(iVar1 + 0x7c6552) = *(ushort *)(iVar1 + 0x7c6552) | uVar7;
+                *(ushort *)(iVar1 + 0x7c6552) = *(ushort *)(iVar1 + 0x7c6552) | uVar8;
                 *(ushort *)(iVar1 + 0x7c6554) = 0;
-                *(ushort *)(iVar1 + 0x7c6554) = *(ushort *)(iVar1 + 0x7c6554) | (ushort)iVar5;
-                uVar8 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
-                *(ushort *)(iVar1 + 0x7c6556) = uVar8;
-                *(ushort *)(iVar1 + 0x7c6556) = uVar8 | (ushort)iStack_2c & 0x7fff;
+                *(ushort *)(iVar1 + 0x7c6554) = *(ushort *)(iVar1 + 0x7c6554) | (ushort)iVar6;
+                uVar9 = *(ushort *)(iVar1 + 0x7c6556) & 0x8000;
+                *(ushort *)(iVar1 + 0x7c6556) = uVar9;
+                *(ushort *)(iVar1 + 0x7c6556) = uVar9 | (ushort)iStack_2c & 0x7fff;
                 *(byte *)(iVar1 + 0x7c6557) = *(byte *)(iVar1 + 0x7c6557) & 0x7f;
-                uVar10 = uVar10 + 1;
+                uVar12 = uVar12 + 1;
                 *(ushort *)(iVar1 + 0x7c6556) = *(ushort *)(iVar1 + 0x7c6556) | 0x8000;
-                iStack_f4 = iVar15;
-                iStack_f0 = iVar12;
-                iStack_4c = iVar5;
-                iStack_14 = iVar5;
+                iStack_f4 = iVar17;
+                iStack_f0 = iVar14;
+                iStack_4c = iVar6;
+                iStack_14 = iVar6;
               }
             }
             iStack_50 = iStack_50 + 4;
           }
         }
         iStack_e0 = iStack_e0 + 4;
-        piStack_e4 = piStack_e4 + 1;
+        pSStack_e4 = (SEdgeList *)&pSStack_e4->edge_count;
       }
-      piStack_e8 = piStack_e8 + 0x21;
-      iVar12 = iVar12 + 1;
-    } while (iVar12 < iStack_ec);
+      pSStack_e8 = (SEdgeList *)&pSStack_e8[0x10].edge_count;
+      iVar14 = iVar14 + 1;
+    } while (iVar14 < iStack_ec);
   }
-  if (uVar10 == 0) {
-    if (in_stack_0000000c == (void *)0x0) {
-      *in_stack_00000010 = 0;
+  if (uVar12 == 0) {
+    if (existing_edges == (SEdge *)0x0) {
+      *max_x = 0;
     }
-    return in_stack_0000000c;
+    return existing_edges;
   }
-  if (in_stack_0000000c == (void *)0x0) {
-    *in_stack_00000010 = 0;
+  if (existing_edges == (SEdge *)0x0) {
+    *max_x = 0;
   }
-  pvVar6 = realloc(in_stack_0000000c,*in_stack_00000010 * 8 + uVar10 * 8);
-  if (pvVar6 == (void *)0x0) {
+  pSVar7 = (SEdge *)realloc(existing_edges,*max_x * 8 + uVar12 * 8);
+  if (pSVar7 == (SEdge *)0x0) {
     _sprintf(acStack_1f4,"Unable to allocate %u bytes for edge list.");
     _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
     _DAT_01d1d404 = 0x8f6;
     core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_1f4);
   }
-  puVar13 = (uint *)0x7c6550;
-  puVar16 = (uint *)(*in_stack_00000010 * 8 + (int)pvVar6);
-  for (iVar12 = (uVar10 & 0x1fffffff) << 1; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *puVar16 = *puVar13;
-    puVar13 = puVar13 + (uint)bVar17 * -2 + 1;
-    puVar16 = puVar16 + (uint)bVar17 * -2 + 1;
+  puVar15 = (uint *)0x7c6550;
+  pSVar18 = pSVar7 + *max_x;
+  for (iVar14 = (uVar12 & 0x1fffffff) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
+    uVar2 = *puVar15;
+    pSVar18->x0 = (short)uVar2;
+    pSVar18->y0 = (short)((uint)uVar2 >> 0x10);
+    puVar15 = puVar15 + (uint)bVar19 * -2 + 1;
+    pSVar18 = (SEdge *)&pSVar18[-(uint)bVar19].x1;
   }
-  for (iVar12 = 0; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *(byte *)puVar16 = *(byte *)puVar13;
-    puVar13 = (uint *)((int)puVar13 + (uint)bVar17 * -2 + 1);
-    puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);
+  for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
+    *(byte *)&pSVar18->x0 = *(byte *)puVar15;
+    puVar15 = (uint *)((int)puVar15 + (uint)bVar19 * -2 + 1);
+    pSVar18 = (SEdge *)((int)pSVar18 + (uint)bVar19 * -2 + 1);
   }
-  *in_stack_00000010 = *in_stack_00000010 + uVar10;
-  return pvVar6;
+  *max_x = *max_x + uVar12;
+  return pSVar7;
 }

@@ -130,8 +130,8 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEff
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004b5db0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004b5eb0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
-void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
-void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
+void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004b6070(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004b6140(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);

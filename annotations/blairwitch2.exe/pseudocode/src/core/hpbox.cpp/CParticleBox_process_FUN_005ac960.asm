@@ -187,7 +187,7 @@ section .text
     MOV dword ptr [ESP + 0xa4],ECX      ; 005acb2a
     MOV dword ptr [ESP + 0xac],ECX      ; 005acb31
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005acb38
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005acb3d
     INC ESI                             ; 005acb40
         ;   Label: LAB_005acb40
@@ -288,7 +288,7 @@ section .text
     MOV dword ptr [ESP + 0xc0],ECX      ; 005accae
     MOV dword ptr [ESP + 0xc4],EDX      ; 005accb5
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005accbc
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005accc1
     MOV EAX,dword ptr [ESP + 0x170]     ; 005accc4
         ;   Label: LAB_005accc4
@@ -440,7 +440,7 @@ section .text
     MOV dword ptr [ESP + 0x38],ESI      ; 005acf21
     MOV dword ptr [ESP + 0x40],ESI      ; 005acf25
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005acf29
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005acf2e
     JMP 0x005acd10                      ; 005acf31
         ;   XREF to: 005acd10 (UNCONDITIONAL_JUMP)  ; LAB_005acd10
@@ -516,7 +516,7 @@ section .text
     MOV dword ptr [ESP + 0x6c],ECX      ; 005ad04a
     MOV dword ptr [ESP + 0x70],EDX      ; 005ad04e
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad052
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005ad057
     XOR EAX,EAX                         ; 005ad05a
     MOV dword ptr [ESP + 0x16c],EAX     ; 005ad05c
@@ -644,7 +644,7 @@ section .text
     FSTP float ptr [ESP]                ; 005ad248
     PUSH EAX                            ; 005ad24b
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad24c
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005ad251
     FLD float ptr [0x005f0ebb]          ; 005ad254 | DAT_005f0ebb
     FLD float ptr [ESP + 0x34]          ; 005ad25a
@@ -687,7 +687,7 @@ section .text
     PUSH 0x3f000000                     ; 005ad2e1
     PUSH EDX                            ; 005ad2e6
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad2e7
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005ad2ec
     JMP 0x005ad073                      ; 005ad2ef
         ;   XREF to: 005ad073 (UNCONDITIONAL_JUMP)  ; LAB_005ad073

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,int *param_2,int *param_3)
+; int __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,void *istream,void *ostream)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; int *            Stack[0x8]:4   param_2
-; int *            Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   istream
+; void *           Stack[0xc]:4   ostream
 ;
 ; Called Functions:
 ;   support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0

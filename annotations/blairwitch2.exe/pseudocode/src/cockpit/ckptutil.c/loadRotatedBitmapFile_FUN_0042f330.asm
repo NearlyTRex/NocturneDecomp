@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)
+; char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; char *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   apply_palette
+; int              Stack[0x18]:4   palette_index
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

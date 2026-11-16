@@ -153,7 +153,7 @@ section .text
     PUSH EBX                            ; 004d461a
     MOV dword ptr [EBX + 0x20ba0],ESI   ; 004d461b
     CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460 ; 004d4621
-        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460(CHero * this_ptr)
+        ;   XREF to: 004d3460 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d4626
     PUSH EBX                            ; 004d4629
     CALL core_hero.cpp_FUN_004d3210     ; 004d462a

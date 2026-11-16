@@ -4715,10 +4715,10 @@
     "name":"support_codec.cpp_CCheesyCipher_setMode_FUN_00434d20",
     "params":[
       {
-        "name":"param_2",
+        "name":"mode",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -4789,10 +4789,28 @@
     "instructions":9,
     "method":"seek",
     "name":"support_codec.cpp_CInStreamPipe_seek_FUN_00435120",
+    "params":[
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"origin",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4954,10 +4972,20 @@
     "instructions":2,
     "method":"getCollisionType",
     "name":"core_conveyor.cpp_CConveyor_getCollisionType_FUN_00438820",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"enum",
+      "name":"ECollisionType",
       "ptr":0
     },
     "tu":"core/conveyor.cpp",
@@ -6767,8 +6795,8 @@
     "name":"core_doc.cpp_CDoc_isWeaponDrawn_FUN_0045dc20",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/doc.cpp",
@@ -9829,31 +9857,23 @@
     "name":"core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_4",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"fade_rate",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -9861,7 +9881,7 @@
         }
       },
       {
-        "name":"param_6",
+        "name":"intensity",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -9869,7 +9889,7 @@
         }
       },
       {
-        "name":"param_7",
+        "name":"texture_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -9877,7 +9897,15 @@
         }
       },
       {
-        "name":"param_8",
+        "name":"time_scale",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"jitter",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -9885,7 +9913,7 @@
         }
       },
       {
-        "name":"param_9",
+        "name":"size",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -20583,26 +20611,26 @@
     "name":"support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20",
     "params":[
       {
-        "name":"param_2",
+        "name":"directory",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"filename",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"class",
+      "name":"CInStreamFile",
       "ptr":1
     },
     "tu":"support/trstream.cpp",
@@ -20855,15 +20883,15 @@
     "name":"support_trstream.cpp_COutStreamFile_write_FUN_0057dca0",
     "params":[
       {
-        "name":"param_2",
+        "name":"data",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"size",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -21833,15 +21861,33 @@
     "calls":[
       "00449c20"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":90,
     "method":"eulerToQuaternionIndirect",
     "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005944a0",
+    "params":[
+      {
+        "name":"euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

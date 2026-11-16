@@ -43,10 +43,9 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
   CVector3f CStack_114;
   CVector3f CStack_108;
   float fStack_fc;
-  float afStack_f8 [5];
-  float fStack_e4;
-  float fStack_e0;
-  float fStack_dc;
+  float afStack_f8 [2];
+  CVector3f CStack_f0;
+  CVector3f CStack_e4;
   CVector3f CStack_d8;
   float fStack_cc;
   float afStack_c8 [2];
@@ -235,17 +234,18 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
           fStack_18c = fStack_cc - CStack_d8.x;
           afStack_188[0] = afStack_c8[0] - CStack_d8.y;
           afStack_188[1] = afStack_c8[1] - CStack_d8.z;
-          fStack_e4 = fStack_cc - CStack_d8.x;
-          afStack_f8[(uint)bVar7 * -2 + 6] = afStack_188[(uint)bVar7 * -2];
-          afStack_f8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+          CStack_e4.x = fStack_cc - CStack_d8.x;
+          *(float *)((int)&CStack_e4 + (uint)bVar7 * -8 + 4) = afStack_188[(uint)bVar7 * -2];
+          *(float *)((int)&CStack_e4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_188[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-          if ((0.0 < (double)fStack_dc) && ((double)fStack_dc <= _DAT_005cd6d7)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(afStack_f8 + 5);
-            fVar5 = SQRT(fStack_dc * fStack_dc + fStack_e4 * fStack_e4 + fStack_e0 * fStack_e0);
-            fStack_fc = afStack_f8[2];
-            afStack_f8[(uint)bVar7 * -2] = afStack_f8[(uint)bVar7 * -2 + 3];
+          if ((0.0 < (double)CStack_e4.z) && ((double)CStack_e4.z <= _DAT_005cd6d7)) {
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_e4,&CStack_f0);
+            fVar5 = SQRT(CStack_e4.z * CStack_e4.z +
+                         CStack_e4.x * CStack_e4.x + CStack_e4.y * CStack_e4.y);
+            fStack_fc = CStack_f0.x;
+            afStack_f8[(uint)bVar7 * -2] = *(float *)((int)&CStack_f0 + (uint)bVar7 * -8 + 4);
             afStack_f8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 afStack_f8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+                 *(float *)((int)&CStack_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
             if ((float)_DAT_005cd6cf < fVar5) {
               fStack_18 = -fStack_168;
               if ((((float)_DAT_005cd6cf <= fVar5) &&
@@ -285,19 +285,21 @@ void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,in
               fStack_98 = fStack_98 + _DAT_005cd6df;
             }
             fStack_234 = 0.5235988;
-            if (fStack_dc < (float)_DAT_005cd6e7) {
+            if (CStack_e4.z < (float)_DAT_005cd6e7) {
               fStack_234 = 1.5707964;
             }
             if (((ABS(fStack_9c) <= fStack_234) && (local_40 <= fStack_98)) &&
                (fStack_98 <= local_44)) {
-              fVar5 = SQRT(fStack_dc * fStack_dc + fStack_e4 * fStack_e4 + fStack_e0 * fStack_e0);
+              fVar5 = SQRT(CStack_e4.z * CStack_e4.z +
+                           CStack_e4.x * CStack_e4.x + CStack_e4.y * CStack_e4.y);
               fVar1 = 1.0 / fVar5;
-              fStack_e0 = fStack_e0 * fVar1;
-              fStack_e4 = fStack_e4 * fVar1;
-              fStack_dc = fStack_dc * fVar1;
+              CStack_e4.y = CStack_e4.y * fVar1;
+              CStack_e4.x = CStack_e4.x * fVar1;
+              CStack_e4.z = CStack_e4.z * fVar1;
               fVar5 = fVar5 * (float)_DAT_005cd6b7 +
                       ((float)_DAT_005cd6af -
-                      (fStack_dc * fStack_a0 + fStack_e4 * fStack_a8 + fStack_e0 * fStack_a4));
+                      (CStack_e4.z * fStack_a0 + CStack_e4.x * fStack_a8 + CStack_e4.y * fStack_a4))
+              ;
               if (fVar5 < fStack_30) {
                 core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
                 core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(g_CDemonSetPtr,2);

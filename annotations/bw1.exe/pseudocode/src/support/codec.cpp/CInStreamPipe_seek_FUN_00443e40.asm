@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_seek_FUN_00443e40(CInStreamPipe *this_ptr)
+; int __cdecl support_codec_cpp_CInStreamPipe_seek_FUN_00443e40(CInStreamPipe *this_ptr,int offset,int origin)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   offset
+; int              Stack[0xc]:4   origin
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005d6ab5

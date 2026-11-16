@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy *this_ptr,CDemonActor *param_2,int param_3)
+; void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy *this_ptr,float delta_time,int mode)
 ;
 ; Parameters:
 ; CBasicEnemy *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; float            Stack[0x8]:4   delta_time
+; int              Stack[0xc]:4   mode
 ;
 ; XREF[17]:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 at 0059e559

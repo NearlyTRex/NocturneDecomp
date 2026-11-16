@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_event_cpp_extractParenArg_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4)
+; char * __cdecl core_event_cpp_extractParenArg_FUN_004a1630(char **cursor,char *out_buf,int max_len,int require_open_paren)
 ;
+; Parameters:
+; char * *         Stack[0x4]:4   cursor
+; char *           Stack[0x8]:4   out_buf
+; int              Stack[0xc]:4   max_len
+; int              Stack[0x10]:4   require_open_paren
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004a1d00 at 004a20d4

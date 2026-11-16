@@ -134,8 +134,8 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_00574820(COutStreamFile *this_ptr,COutStreamFile *other);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile *this_ptr,uint flags);
 uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0(COutStreamFile *this_ptr,byte param_2);
-int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3);
-bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_00574930(COutStreamFile *this_ptr,long param_2,int param_3);
+int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *data,int size);
+int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_00574930(COutStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_00574960(COutStreamFile *this_ptr);
 bool __cdecl support_trstream_cpp_COutStreamFile_isOpen_FUN_00574980(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile *this_ptr);
@@ -174,7 +174,7 @@ EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_00576100(CTVBat *thi
 void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_00576130(CTVBat *this_ptr,SDamageInfo *damage_info);
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_005761a0(CTVBat *this_ptr,uint flags);
 void core_tvbat_cpp_FUN_00576230(void);
-float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(float *param_1);
+CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles);
 void __cdecl core_vessel_cpp_staticInit_FUN_005762f0(void);
 CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00576320(void);
 CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_00576340(CCryptVessel *this_ptr);
@@ -234,8 +234,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_0057943
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005795e0(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void);
-void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void);
-void wincore_wddvmem_cpp_freeRenderBuffers_FUN_005798a0(void);
+void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void);
+void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005798a0(void);
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005798f0(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00579a60(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00579b20(void);

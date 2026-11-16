@@ -1284,10 +1284,10 @@
         "start":"00407d70"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"engine_3d.c_drawLine3DFromIndices_FUN_00407d70",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -1323,9 +1323,40 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"vertex_index1",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_index2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -10749,7 +10780,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CCheesyCipher_process_FUN_00443af0",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -10769,7 +10800,7 @@
           "type":"CCheesyCipher*"
         },
         {
-          "name":"param_2",
+          "name":"istream",
           "storage":{
             "offset":8,
             "size":4,
@@ -10782,10 +10813,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"void*"
         },
         {
-          "name":"param_3",
+          "name":"ostream",
           "storage":{
             "offset":12,
             "size":4,
@@ -10798,7 +10829,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -10859,7 +10890,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CInStreamPipe_tell_FUN_00443e70",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -22689,7 +22720,7 @@
           "type":"CLeaf*"
         },
         {
-          "name":"param_2",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -22705,7 +22736,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_3",
+          "name":"velocity",
           "storage":{
             "offset":12,
             "size":4,
@@ -22721,7 +22752,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_4",
+          "name":"model",
           "storage":{
             "offset":16,
             "size":4,
@@ -22734,10 +22765,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CKeyFramedModel*"
         },
         {
-          "name":"param_5",
+          "name":"drag",
           "storage":{
             "offset":20,
             "size":4,
@@ -31016,7 +31047,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -51258,14 +51289,10 @@
         "start":"00597cf0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"engine_texture.cpp_renderTextureAtlas_FUN_00597cf0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"00597d70",
@@ -52384,7 +52411,7 @@
           "type":"COutStreamFile*"
         },
         {
-          "name":"param_2",
+          "name":"data",
           "storage":{
             "offset":8,
             "size":4,
@@ -52397,10 +52424,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"void*"
         },
         {
-          "name":"param_3",
+          "name":"size",
           "storage":{
             "offset":12,
             "size":4,
@@ -52909,14 +52936,10 @@
         "start":"005abff0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"wincore_wddvmem.cpp_freeRenderBuffers_FUN_005abff0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"005ac270",
@@ -54232,17 +54255,51 @@
         "start":"005b7ff0"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0",
-    "ret":"undefined1",
+    "ret":"CQuaternion4f*",
     "vars":{
+      "params":[
+        {
+          "name":"euler_angles",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"quat_out",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        }
+      ],
       "ret_storage":{
-        "reg":"AL",
-        "size":1,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":1
+            "size":4
           }
         ]
       }

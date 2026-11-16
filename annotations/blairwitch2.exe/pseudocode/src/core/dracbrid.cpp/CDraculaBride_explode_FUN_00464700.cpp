@@ -27,8 +27,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00464700(CDraculaBride 
   float fStack_ac;
   float fStack_a8;
   CVector3f CStack_a4;
-  CVector3f CStack_98;
-  float fStack_8c;
+  byte auStack_98 [8];
+  float afStack_90 [2];
   CVector3f local_88;
   CVector3f CStack_74;
   float fStack_68;
@@ -57,15 +57,15 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00464700(CDraculaBride 
         do {
           pCVar6 = direction;
           if ((direction != (CVector3f *)0x0) && (0.0 < spread_angle)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(direction);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
+                      (direction,(CVector3f *)(auStack_98 + 4));
             min_value = -spread_angle;
             local_24 = min_value;
-            local_58.x = CStack_98.y;
-            *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =
-                 *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 8);
+            local_58.x = (float)auStack_98._4_4_;
+            *(float *)((int)&local_58 + (uint)bVar5 * -8 + 4) = afStack_90[(uint)bVar5 * -2];
             max_value = (CBoundingBox3D *)spread_angle;
             *(float *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 (&fStack_8c)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+                 afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(min_value,spread_angle);
             local_58.y = local_18 + local_58.y;
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -122,14 +122,13 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00464700(CDraculaBride 
        afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
             ((CDemonActor *)this_ptr,pCVar6,&CStack_a4);
-  CStack_98.x = CStack_a4.x;
-  *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 4) =
-       *(uint *)((int)&CStack_a4 + (uint)bVar5 * -8 + 4);
-  *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       *(uint *)((int)&CStack_a4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  auStack_98._0_4_ = CStack_a4.x;
+  afStack_90[(uint)bVar5 * -2 + -1] = *(float *)(auStack_98 + (uint)bVar5 * -8 + -8);
+  afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
+       *(float *)(auStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -4);
   if ((this_ptr->base).base.is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
-              (g_CGorePtr,&CStack_98,direction,100,(this_ptr->base).base.blood_type);
+              (g_CGorePtr,(CVector3f *)auStack_98,direction,100,(this_ptr->base).base.blood_type);
     return;
   }
   (this_ptr->base).base.fire_count = 0;

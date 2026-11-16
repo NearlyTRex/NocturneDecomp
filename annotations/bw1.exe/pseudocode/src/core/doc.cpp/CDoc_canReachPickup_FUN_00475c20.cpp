@@ -35,16 +35,14 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
   float fStack_b0;
   float afStack_ac [3];
   CVector3f CStack_a0;
-  uint uStack_8c;
+  float fStack_8c;
   float afStack_88 [3];
   CVector3f CStack_7c;
-  uint uStack_68;
-  float afStack_64 [2];
+  CVector3f CStack_68;
   CVector3f CStack_5c;
   float fStack_50;
   float afStack_4c [5];
-  float fStack_38;
-  float afStack_34 [2];
+  CVector3f CStack_38;
   CVector3f CStack_2c;
   CVector3f CStack_20;
   
@@ -107,16 +105,17 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                 (item,&(this_ptr->base).base.base.location.position,&CStack_2c);
-      fStack_38 = CStack_2c.x;
-      afStack_34[(uint)bVar5 * -2] = *(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4);
-      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           *(float *)((int)&CStack_2c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+      CStack_38.x = CStack_2c.x;
+      *(uint *)((int)&CStack_38 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_2c + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           *(uint *)((int)&CStack_2c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       in_stack_fffffec0 = (CBoundingBox3D *)0x475f0f;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
-      uStack_8c = uStack_68;
-      afStack_88[(uint)bVar5 * -2] = afStack_64[(uint)bVar5 * -2];
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_38,&CStack_68);
+      fStack_8c = CStack_68.x;
+      afStack_88[(uint)bVar5 * -2] = *(float *)((int)&CStack_68 + (uint)bVar5 * -8 + 4);
       afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+           *(float *)((int)&CStack_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       if ((float)_DAT_005da5cc < ABS(afStack_88[0])) {
         return 0;
       }

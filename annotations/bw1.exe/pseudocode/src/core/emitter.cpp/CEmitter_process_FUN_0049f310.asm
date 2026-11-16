@@ -291,7 +291,7 @@ section .text
     MOV EDI,dword ptr [0x0061c010]      ; 0049f5f4 | DAT_0061c010
     PUSH EDI                            ; 0049f5fa
     CALL core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0 ; 0049f5fb
-        ;   XREF to: 004b5fa0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, int param_4, ...)
+        ;   XREF to: 004b5fa0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int fade_rate, ...)
     ADD ESP,0x24                        ; 0049f600
     JMP 0x0049f448                      ; 0049f603
         ;   XREF to: 0049f448 (UNCONDITIONAL_JUMP)  ; LAB_0049f448
@@ -498,7 +498,7 @@ section .text
     MOV EDI,dword ptr [0x0061c010]      ; 0049f8f3 | DAT_0061c010
     PUSH EDI                            ; 0049f8f9
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00 ; 0049f8fa
-        ;   XREF to: 004b5f00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, CKeyFramedModel * param_4, ...)
+        ;   XREF to: 004b5f00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr, ...)
     ADD ESP,0x14                        ; 0049f8ff
     MOV EAX,dword ptr [EBX + 0x20]      ; 0049f902
     MOV dword ptr [ESP + 0x84],EAX      ; 0049f905

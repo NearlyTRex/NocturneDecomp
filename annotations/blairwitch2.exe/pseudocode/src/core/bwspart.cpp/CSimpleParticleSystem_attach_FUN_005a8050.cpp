@@ -2,11 +2,11 @@
 // Address: 005a8050
 // Address Range: [[005a8050, 005a80cc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)
+// Signature: void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner)
 
 #include "nocturne.h"
 
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner)
 
 {
   CDemonActor *pCVar1;
@@ -15,7 +15,7 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleP
   int iVar4;
   
   if (this_ptr->owner == (CDemonActor *)0x0) {
-    this_ptr->owner = param_2;
+    this_ptr->owner = owner;
     iVar3 = 0;
     pvVar2 = malloc(this_ptr->max_particles * 0x60);
     this_ptr->particles = pvVar2;

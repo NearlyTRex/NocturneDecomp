@@ -1,15 +1,14 @@
 // Name: core_sound.cpp_resetTrainSounds_FUN_0055f610
 // Address: 0055f610
 // Address Range: [[0055f610, 0055f693]]
-// Convention: unknown
-// Signature: void core_sound_cpp_resetTrainSounds_FUN_0055f610(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sound_cpp_resetTrainSounds_FUN_0055f610(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_sound_cpp_resetTrainSounds_FUN_0055f610(void)
+void __cdecl core_sound_cpp_resetTrainSounds_FUN_0055f610(void)
 
 {
   if (&stack0x00000000 == g_CSpawnerClassInfo.class_name + 4) {

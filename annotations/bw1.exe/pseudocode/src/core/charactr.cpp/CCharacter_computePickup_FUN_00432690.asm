@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00432690(CCharacter *this_ptr,int param_2,float param_3,int *param_4)
+; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00432690(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; float            Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   blend_time
+; CMatrix3x4f *    Stack[0x10]:4   carry_offset
 ; Local Variables:
 ; undefined8       Stack[-0x168]:8  local_168
 ; undefined        Stack[-0x160]:1  local_160

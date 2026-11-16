@@ -75,7 +75,7 @@ int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description
 
 // Original: core_menu.cpp_getSinglePressedKey_FUN_0050d5b0
 // Address: 0050d5b0
-int getSinglePressedKey(void);
+int __cdecl getSinglePressedKey(void);
 
 // Original: core_menu.cpp_configureCustomKeyBindings_FUN_0050d640
 // Address: 0050d640

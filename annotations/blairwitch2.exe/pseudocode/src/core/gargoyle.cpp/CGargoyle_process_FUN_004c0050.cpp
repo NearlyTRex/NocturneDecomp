@@ -45,23 +45,21 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
   float fStack_d4;
   float afStack_d0 [4];
   float fStack_c0;
-  uint uStack_bc;
-  uint uStack_b0;
-  float fStack_ac;
+  CVector3f CStack_bc;
+  float fStack_b0;
+  float afStack_ac [2];
   CVector3f CStack_a4;
   float fStack_98;
   float afStack_94 [4];
   float fStack_84;
   CVector3f CStack_80;
-  float fStack_74;
-  float afStack_70 [5];
-  uint uStack_5c;
+  CVector3f CStack_74;
+  float fStack_68;
+  float afStack_64 [2];
+  CVector3f CStack_5c;
   float fStack_50;
-  uint uStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
+  float afStack_4c [2];
+  CVector3f CStack_44;
   float fStack_38;
   float fStack_34;
   float fStack_30;
@@ -94,7 +92,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
   fStack_34 = delta_time * (this_ptr->base).speed;
   pCStack_18 = &(this_ptr->base).base.model.base;
   while (0.0 < fStack_34) {
-    iVar4 = core_motion_cpp_CMotionController_advance_FUN_005030c0(pCStack_18,afStack_70 + 0xf);
+    iVar4 = core_motion_cpp_CMotionController_advance_FUN_005030c0(pCStack_18,&fStack_34);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar4);
   }
   fVar11 = (this_ptr->base).speed;
@@ -136,20 +134,21 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
                (pCVar3->base).location.position.y - (this_ptr->base).base.base.location.position.y;
           fStack_108 = (pCVar3->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
-          fStack_44 = afStack_118[2];
-          afStack_70[(uint)bVar9 * -2 + 0xc] = afStack_118[(uint)bVar9 * -2 + 3];
-          afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
+          CStack_44.x = afStack_118[2];
+          *(float *)((int)&CStack_44 + (uint)bVar9 * -8 + 4) = afStack_118[(uint)bVar9 * -2 + 3];
+          *(float *)((int)&CStack_44 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
                afStack_118[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-          fStack_38 = SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44 + fStack_40 * fStack_40);
+          fStack_38 = SQRT(CStack_44.z * CStack_44.z +
+                           CStack_44.x * CStack_44.x + CStack_44.y * CStack_44.y);
           fStack_28 = fStack_38;
           if (fStack_38 < 0x40400000) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_70 + 0xb);
-            uStack_b0 = uStack_bc;
-            afStack_d0[(uint)bVar9 * -2 + 9] = afStack_d0[(uint)bVar9 * -2 + 6];
-            afStack_d0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
-                 afStack_d0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_44,&CStack_bc);
+            fStack_b0 = CStack_bc.x;
+            afStack_ac[(uint)bVar9 * -2] = *(float *)((int)&CStack_bc + (uint)bVar9 * -8 + 4);
+            afStack_ac[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+                 *(float *)((int)&CStack_bc + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                  (fStack_ac - (this_ptr->base).base.base.orient.vec.y);
+                                  (afStack_ac[0] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005d8dd2) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,3,1);
             }
@@ -236,11 +235,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
                    (this_ptr->base).base.base.location.position.z -
                    (pCVar3->base).location.position.z;
               fStack_50 = fStack_d4;
-              afStack_70[(uint)bVar9 * -2 + 9] = afStack_d0[(uint)bVar9 * -2];
-              afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
+              afStack_4c[(uint)bVar9 * -2] = afStack_d0[(uint)bVar9 * -2];
+              afStack_4c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                    afStack_d0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-              uStack_4c = 0;
-              fStack_30 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50);
+              afStack_4c[0] = 0.0;
+              fStack_30 = SQRT(afStack_4c[1] * afStack_4c[1] + fStack_50 * fStack_50);
               fStack_24 = fStack_30;
               if (_DAT_005f75e8 < fStack_30) {
                 iVar4 = core_actor_cpp_randomChance_FUN_0040d060(0.1);
@@ -262,17 +261,18 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
                 afStack_13c[1] =
                      (pCVar3->base).location.position.z -
                      (this_ptr->base).base.base.location.position.z;
-                fStack_74 = fStack_140;
-                afStack_70[(uint)bVar9 * -2] = afStack_13c[(uint)bVar9 * -2];
-                afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+                CStack_74.x = fStack_140;
+                *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + 4) = afStack_13c[(uint)bVar9 * -2];
+                *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
                      afStack_13c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_74);
-                afStack_70[2] = (float)uStack_5c;
-                afStack_70[(uint)bVar9 * -2 + 3] = afStack_70[(uint)bVar9 * -2 + 6];
-                afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-                     afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
+                          (&CStack_74,&CStack_5c);
+                fStack_68 = CStack_5c.x;
+                afStack_64[(uint)bVar9 * -2] = *(float *)((int)&CStack_5c + (uint)bVar9 * -8 + 4);
+                afStack_64[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+                     *(float *)((int)&CStack_5c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
                 fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                      (afStack_70[3] - (this_ptr->base).base.base.orient.vec.y);
+                                      (afStack_64[0] - (this_ptr->base).base.base.orient.vec.y);
                 if (ABS(fStack_14) < (float)_DAT_005d8dd2) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                             (&(this_ptr->base).base.model.base,3,1);

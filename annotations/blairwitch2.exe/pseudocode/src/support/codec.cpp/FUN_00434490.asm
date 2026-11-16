@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint support_codec_cpp_FUN_00434490(int param_1,undefined4 param_2,undefined4 param_3)
+; uint support_codec_cpp_FUN_00434490(int param_1,SBitBuffer *param_2,void *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_004338a0
-;   support_codec.cpp_writeBitsToStream_FUN_00433780
+;   support_codec.cpp_readBitsFromStream_FUN_00433780
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH 0x1                            ; 004344c5
     MOV EAX,dword ptr [ESP + 0x28]      ; 004344c7
     PUSH EAX                            ; 004344cb
-    CALL support_codec.cpp_writeBitsToStream_FUN_00433780 ; 004344cc
-        ;   XREF to: 00433780 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00433780()
+    CALL support_codec.cpp_readBitsFromStream_FUN_00433780 ; 004344cc
+        ;   XREF to: 00433780 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_00433780(SBitBuffer * bit_buffer, int bit_count, void * istream)
     MOV ESI,EAX                         ; 004344d1
     ADD ESP,0xc                         ; 004344d3
     TEST EAX,EAX                        ; 004344d6
@@ -100,8 +100,8 @@ section .text
     PUSH 0x1                            ; 00434519
     MOV EAX,dword ptr [ESP + 0x28]      ; 0043451b
     PUSH EAX                            ; 0043451f
-    CALL support_codec.cpp_writeBitsToStream_FUN_00433780 ; 00434520
-        ;   XREF to: 00433780 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00433780()
+    CALL support_codec.cpp_readBitsFromStream_FUN_00433780 ; 00434520
+        ;   XREF to: 00433780 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_00433780(SBitBuffer * bit_buffer, int bit_count, void * istream)
     ADD ESP,0xc                         ; 00434525
     TEST EAX,EAX                        ; 00434528
     JL 0x00434547                       ; 0043452a

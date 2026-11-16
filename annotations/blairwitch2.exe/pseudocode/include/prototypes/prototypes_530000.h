@@ -23,6 +23,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZThumb.h"
+#include "types/enums/EDeathState.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDisplayListSortEntry.h"
@@ -205,8 +206,8 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0053e6c0(CShadow *this
 void __cdecl core_shadow_cpp_CShadow_archive_FUN_0053e860(CShadow *this_ptr);
 void core_shadow_cpp_FUN_0053e9a0(int param_1,int *param_2);
 void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2);
-undefined4 __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr);
-undefined4 __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_0053ec70(CShadow *this_ptr,undefined4 *param_2);
+EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr);
+int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_0053ec70(CShadow *this_ptr,CVector3f *out_points_array);
 void core_shadow_cpp_FUN_0053ece0(CCharacter *param_1);
 CShadow * __cdecl core_shadow_cpp_CShadow_dtor_FUN_0053eed0(CShadow *this_ptr,uint flags);
 void __cdecl core_shotgun_cpp_staticInit_FUN_0053ef70(void);

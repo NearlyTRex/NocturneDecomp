@@ -512,7 +512,7 @@ section .text
     PUSH EAX                            ; 0059646b
     PUSH EBX                            ; 0059646c
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0059646d
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00596472
     PUSH ESI                            ; 00596475
     PUSH EDI                            ; 00596476
@@ -2172,7 +2172,7 @@ section .text
     LEA ESI,[EBP + 0xfffffcf2]          ; 005978cd
     LEA EDI,[EBP + 0xfffffc0e]          ; 005978d3
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005978d9
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffcf2]          ; 005978de
     MOVSD ES:EDI,ESI                    ; 005978e4
     MOVSD ES:EDI,ESI                    ; 005978e5
@@ -2750,7 +2750,7 @@ section .text
     LEA ESI,[EBP + 0xfffffd82]          ; 00597fc4
     LEA EDI,[EBP + 0xfffffcaa]          ; 00597fca
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00597fd0
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffd82]          ; 00597fd5
     MOVSD ES:EDI,ESI                    ; 00597fdb
     MOVSD ES:EDI,ESI                    ; 00597fdc

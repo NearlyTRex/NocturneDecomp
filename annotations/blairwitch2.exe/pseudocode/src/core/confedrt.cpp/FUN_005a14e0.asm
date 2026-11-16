@@ -217,7 +217,7 @@ section .text
     MOV EDI,dword ptr [0x00614d30]      ; 005a16fe | DAT_00614d30
     PUSH EDI                            ; 005a1704
     CALL core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170 ; 005a1705
-        ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 005a170a
     PUSH 0xffff                         ; 005a170d
     PUSH 0x0                            ; 005a1712

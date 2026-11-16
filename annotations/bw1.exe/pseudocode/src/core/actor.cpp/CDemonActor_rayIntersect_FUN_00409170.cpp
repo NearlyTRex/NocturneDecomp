@@ -124,8 +124,9 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *
   }
   else {
     if ((uint)bbox_type < 3) {
-      fStack_108 = (float)core_actor_cpp_rayCylinderIntersect_FUN_004080c0
-                                    (collision_info,auStack_80 + 8,local_3c,&local_48);
+      fStack_108 = core_actor_cpp_rayCylinderIntersect_FUN_004080c0
+                             (collision_info,(CVector3f *)(auStack_80 + 8),(CVector3f *)local_3c,
+                              &local_48);
       goto LAB_0040936d;
     }
     if (bbox_type == 3) {

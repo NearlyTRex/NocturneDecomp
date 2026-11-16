@@ -2,11 +2,11 @@
 // Address: 0059d360
 // Address Range: [[0059d360, 0059d419]]
 // Convention: __cdecl
-// Signature: void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,CMatrix3x3f *param_3)
+// Signature: void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 #include "nocturne.h"
 
-void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,CMatrix3x3f *param_3)
+void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
   CDemonGlobe *this_ptr_00;
@@ -19,19 +19,19 @@ void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this
   
   bVar1 = 0;
   this_ptr_00 = &this_ptr->light;
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(this_ptr_00,param_2);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(this_ptr_00,position);
   (this_ptr->light).intensity_multiplier = 0x8000;
   (this_ptr->light).intensity.bytes[0] = ' ';
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860(this_ptr_00,8.0);
   this_ptr_01 = g_CDemonSetPtr;
   (this_ptr->light).corona_mode = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(this_ptr_01,this_ptr_00);
-  if (&this_ptr->position != param_2) {
-    (this_ptr->position).x = param_2->x;
-    (this_ptr->position).y = param_2->y;
-    (this_ptr->position).z = param_2->z;
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(param_3,&local_28);
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(rotation_matrix,&local_28);
   local_1c = local_28.x;
   local_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);
   local_18[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =

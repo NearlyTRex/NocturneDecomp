@@ -610,14 +610,48 @@
       "00408da0",
       "004091b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":374,
     "method":"rayCylinderIntersect",
     "name":"core_actor.cpp_rayCylinderIntersect_FUN_00408100",
+    "params":[
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -3012,15 +3046,33 @@
   },
   {
     "addr":"00417080",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":135,
     "method":"rgbToHsv",
     "name":"core_boneguy.cpp_rgbToHsv_FUN_00417080",
+    "params":[
+      {
+        "name":"in_rgb",
+        "type":{
+          "kind":"class",
+          "name":"CColor3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_hsv",
+        "type":{
+          "kind":"class",
+          "name":"CColor3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CColor3f",
+      "ptr":1
     },
     "tu":"core/boneguy.cpp",
     "variadic":false
@@ -5179,18 +5231,18 @@
     "name":"support_codec.cpp_CAsciiArmor_flush_FUN_00441580",
     "params":[
       {
-        "name":"param_2",
+        "name":"ostream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5208,8 +5260,8 @@
     "name":"support_codec.cpp_CInStreamPipe_isOpen_FUN_00441b00",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5234,8 +5286,8 @@
     "name":"support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -10162,10 +10214,20 @@
     "instructions":2,
     "method":"onCollision",
     "name":"core_fire.cpp_CLeaf_onCollision_FUN_0049a380",
+    "params":[
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -11937,7 +11999,7 @@
     "name":"core_game.cpp_CGame_displayBitmap_FUN_004beb80",
     "params":[
       {
-        "name":"param_2",
+        "name":"filename",
         "type":{
           "kind":"builtin",
           "name":"char",
@@ -11945,26 +12007,26 @@
         }
       },
       {
-        "name":"param_3",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"width",
         "type":{
           "kind":"builtin",
-          "name":"uint",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"display_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -21139,8 +21201,8 @@
     "name":"support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -22157,15 +22219,33 @@
     "callers":[
       "005854a0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":175,
     "method":"matrixToQuaternion",
     "name":"core_xform.cpp_matrixToQuaternion_FUN_00585780",
+    "params":[
+      {
+        "name":"matrix_in",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

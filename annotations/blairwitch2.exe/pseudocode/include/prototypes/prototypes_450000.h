@@ -68,7 +68,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
 void core_doc_cpp_FUN_0045db40(int param_1);
 void core_doc_cpp_FUN_0045dbf0(int param_1,undefined4 param_2);
 int __cdecl core_doc_cpp_CDoc_isWeaponDrawn_FUN_0045dc20(CDoc *this_ptr);
-void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int param_2);
+void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int guns_drawn);
 int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_0045dc40(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_doc_cpp_CDoc_reset_FUN_0045dd30(CDoc *this_ptr);
 EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_0045dda0(CDoc *this_ptr);

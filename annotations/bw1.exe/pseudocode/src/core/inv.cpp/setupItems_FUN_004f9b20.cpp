@@ -1,43 +1,48 @@
 // Name: core_inv.cpp_setupItems_FUN_004f9b20
 // Address: 004f9b20
 // Address Range: [[004f9b20, 004f9bc0]]
-// Convention: unknown
-// Signature: void core_inv_cpp_setupItems_FUN_004f9b20(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_inv_cpp_setupItems_FUN_004f9b20(CInventory *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_inv_cpp_setupItems_FUN_004f9b20(int param_1)
+void __cdecl core_inv_cpp_setupItems_FUN_004f9b20(CInventory *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
+  CDemonActor *this_ptr_00;
+  CLightGun *pCVar1;
+  CGoggles *pCVar2;
+  CInventory *pCVar3;
   int iVar4;
   
-  if (*(int *)(param_1 + 0x458) != 0) {
+  if (this_ptr->preserve_items != 0) {
     _DAT_01d1d400 = "..\\core\\inv.cpp";
     _DAT_01d1d404 = 0x6c0;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::setupItems - we should own the items at this point!");
   }
   iVar4 = 0;
-  iVar3 = param_1;
-  if (0 < *(int *)(param_1 + 0x10)) {
+  pCVar3 = this_ptr;
+  if (0 < this_ptr->item_count) {
     do {
-      pCVar1 = *(CDemonActor **)(iVar3 + 0x14);
-      (*((pCVar1->vtable)._ub)->setup)(pCVar1);
-      if (*(int *)(param_1 + 0x460) == 0) {
-        pCVar2 = (CGoggles *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,g_CGogglesClassInfo.name_hash);
-        *(CDemonActor **)(param_1 + 0x460) = pCVar2;
+      this_ptr_00 = pCVar3->items[0];
+      (*((this_ptr_00->vtable)._ub)->setup)(this_ptr_00);
+      if (this_ptr->goggles_ptr == (CGoggles *)0x0) {
+        pCVar2 = (CGoggles *)
+                 core_actor_cpp_castToClassHash_FUN_0040c600
+                           (this_ptr_00,g_CGogglesClassInfo.name_hash);
+        this_ptr->goggles_ptr = pCVar2;
       }
-      if (*(int *)(param_1 + 0x45c) == 0) {
-        pCVar1 = (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,g_CGasMaskClassInfo.name_hash);
-        *(CDemonActor **)(param_1 + 0x45c) = pCVar1;
+      if (this_ptr->light_gun_ptr == (CLightGun *)0x0) {
+        pCVar1 = (CLightGun *)
+                 core_actor_cpp_castToClassHash_FUN_0040c600
+                           (this_ptr_00,g_CGasMaskClassInfo.name_hash);
+        this_ptr->light_gun_ptr = pCVar1;
       }
       iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 4;
-    } while (iVar4 < *(int *)(param_1 + 0x10));
+      pCVar3 = (CInventory *)&pCVar3->owner;
+    } while (iVar4 < this_ptr->item_count);
   }
   return;
 }

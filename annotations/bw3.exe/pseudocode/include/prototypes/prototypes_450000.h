@@ -69,7 +69,7 @@ int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00452770(SIntersect
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
 uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00452cb0(CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height);
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00452e20(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
-undefined4 core_dcube_cpp_clipTriangleToAABB_FUN_00453230(void);
+uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00453230(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max);
 void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer);
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00453cb0(CDemonCube *this_ptr);
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00453cf0(CDemonCube *this_ptr,uint flags);

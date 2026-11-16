@@ -11,7 +11,7 @@ CSimpleParticleSystem * __cdecl CSimpleParticleSystem::ctor(CSimpleParticleSyste
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50
 // Address: 005a7f50
-int __cdecl CSimpleParticleSystem::ctorCapacity(CSimpleParticleSystem *this_ptr,int param_2);
+CSimpleParticleSystem * __cdecl CSimpleParticleSystem::ctorCapacity(CSimpleParticleSystem *this_ptr,int max_particles);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_dtor_FUN_005a8000
 // Address: 005a8000
@@ -19,11 +19,11 @@ CSimpleParticleSystem * __cdecl CSimpleParticleSystem::dtor(CSimpleParticleSyste
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
 // Address: 005a8030
-void __cdecl CSimpleParticleSystem::setMaxParticles(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl CSimpleParticleSystem::setMaxParticles(CSimpleParticleSystem *this_ptr,int max_particles);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050
 // Address: 005a8050
-void __cdecl CSimpleParticleSystem::attach(CSimpleParticleSystem *this_ptr,CDemonActor *param_2);
+void __cdecl CSimpleParticleSystem::attach(CSimpleParticleSystem *this_ptr,CDemonActor *owner);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0
 // Address: 005a80d0
@@ -39,7 +39,7 @@ int __cdecl CSimpleParticleSystem::isActive(CSimpleParticleSystem *this_ptr);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_setFade_FUN_005a8140
 // Address: 005a8140
-void __cdecl CSimpleParticleSystem::setFade(CSimpleParticleSystem *this_ptr,float param_2,float param_3,float param_4);
+void __cdecl CSimpleParticleSystem::setFade(CSimpleParticleSystem *this_ptr,float fade_start,float fade_end,float fade_duration);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_resetFade_FUN_005a8160
 // Address: 005a8160
@@ -63,7 +63,7 @@ void __cdecl CSimpleParticleSystem::render(CSimpleParticleSystem *this_ptr);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 // Address: 005a8300
-void __cdecl CSimpleParticleSystem::emit(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
+void __cdecl CSimpleParticleSystem::emit(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index);
 
 // Original: core_bwspart.cpp_FUN_005a84c0
 // Address: 005a84c0

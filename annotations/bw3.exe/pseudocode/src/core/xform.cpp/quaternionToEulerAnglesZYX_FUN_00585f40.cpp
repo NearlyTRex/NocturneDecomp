@@ -1,79 +1,80 @@
 // Name: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00585f40
 // Address: 00585f40
 // Address Range: [[00585f40, 005860a0]]
-// Convention: unknown
-// Signature: undefined4 * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(float *param_1)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(CQuaternion4f *quat_in,CVector3f *vector_out)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint * core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(float *param_1)
+CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_00585f40(CQuaternion4f *quat_in,CVector3f *vector_out)
 
 {
-  uint *extraout_ECX;
-  uint *extraout_ECX_00;
-  uint *extraout_ECX_01;
+  CVector3f *extraout_ECX;
+  CVector3f *extraout_ECX_00;
+  CVector3f *extraout_ECX_01;
   float *extraout_EDX;
-  byte bVar1;
-  float10 fVar2;
+  float *pfVar1;
+  byte bVar2;
   float10 fVar3;
+  float10 fVar4;
   float afStack_1010 [1025];
   
-  bVar1 = 0;
-  afStack_1010[0x3fc] = (-*param_1 * param_1[1] - param_1[2] * param_1[3]) * _DAT_005d81cf;
+  bVar2 = 0;
+  afStack_1010[0x3fc] = (-quat_in->w * quat_in->x - quat_in->y * quat_in->z) * _DAT_005d81cf;
   if (afStack_1010[0x3fc] < _DAT_005d81d3) {
     afStack_1010[0x3fb] = 8.116035e-39;
-    fVar2 = atan2
-                      (-(float10)param_1[1] * (float10)param_1[3] -
-                       (float10)*param_1 * (float10)param_1[2],
-                       ((float10)_DAT_005d81e3 - (float10)param_1[2] * (float10)param_1[2]) -
-                       (float10)param_1[3] * (float10)param_1[3]);
+    fVar3 = atan2
+                      (-(float10)quat_in->x * (float10)quat_in->z -
+                       (float10)quat_in->w * (float10)quat_in->y,
+                       ((float10)_DAT_005d81e3 - (float10)quat_in->y * (float10)quat_in->y) -
+                       (float10)quat_in->z * (float10)quat_in->z);
     afStack_1010[0x3fc] = -1.5707964;
-    afStack_1010[0x3fd] = (float)fVar2;
+    afStack_1010[0x3fd] = (float)fVar3;
     afStack_1010[0x3fe] = 0.0;
-    *extraout_ECX_00 = 0xbfc90fdb;
-    extraout_ECX_00[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];
-    (extraout_ECX_00 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-         afStack_1010[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fe];
+    pfVar1 = (float *)((int)extraout_ECX_00 + (uint)bVar2 * -8 + 4);
+    extraout_ECX_00->x = -1.5707964;
+    *pfVar1 = afStack_1010[(uint)bVar2 * -2 + 0x3fd];
+    pfVar1[(uint)bVar2 * -2 + 1] = afStack_1010[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fe];
     return extraout_ECX_00;
   }
   if (afStack_1010[0x3fc] <= _DAT_005d81d7) {
     afStack_1010[0x3fb] = 8.115806e-39;
-    fVar2 = asin((float10)afStack_1010[0x3fc]);
-    afStack_1010[0x3fc] = (float)fVar2;
-    if (fVar2 < (float10)_DAT_005d81db) {
+    fVar3 = asin((float10)afStack_1010[0x3fc]);
+    afStack_1010[0x3fc] = (float)fVar3;
+    if (fVar3 < (float10)_DAT_005d81db) {
       afStack_1010[0x3fc] = afStack_1010[0x3fc] + _DAT_005d81df;
     }
-    fVar2 = ((float10)_DAT_005d81e3 - (float10)param_1[1] * (float10)param_1[1]) -
-            (float10)param_1[2] * (float10)param_1[2];
+    fVar3 = ((float10)_DAT_005d81e3 - (float10)quat_in->x * (float10)quat_in->x) -
+            (float10)quat_in->y * (float10)quat_in->y;
     atan2
-              ((float10)param_1[1] * (float10)param_1[3] - (float10)*param_1 * (float10)param_1[2],
-               fVar2);
-    fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];
-    fVar3 = atan2
+              ((float10)quat_in->x * (float10)quat_in->z - (float10)quat_in->w * (float10)quat_in->y
+               ,fVar3);
+    fVar3 = fVar3 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];
+    fVar4 = atan2
                       ((float10)extraout_EDX[1] * (float10)extraout_EDX[2] -
-                       (float10)*extraout_EDX * (float10)extraout_EDX[3],fVar2);
-    afStack_1010[0x3fb] = (float)fVar2;
-    afStack_1010[0x3fc] = (float)fVar3;
-    *extraout_ECX = 0x585fd6;
-    extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fb];
-    (extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-         afStack_1010[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
+                       (float10)*extraout_EDX * (float10)extraout_EDX[3],fVar3);
+    afStack_1010[0x3fb] = (float)fVar3;
+    afStack_1010[0x3fc] = (float)fVar4;
+    pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);
+    extraout_ECX->x = 8.115903e-39;
+    *pfVar1 = afStack_1010[(uint)bVar2 * -2 + 0x3fb];
+    pfVar1[(uint)bVar2 * -2 + 1] = afStack_1010[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fc];
     return extraout_ECX;
   }
   afStack_1010[0x3fb] = 8.116137e-39;
-  fVar2 = atan2
-                    (-(float10)param_1[1] * (float10)param_1[3] -
-                     (float10)*param_1 * (float10)param_1[2],
-                     ((float10)_DAT_005d81e3 - (float10)param_1[2] * (float10)param_1[2]) -
-                     (float10)param_1[3] * (float10)param_1[3]);
+  fVar3 = atan2
+                    (-(float10)quat_in->x * (float10)quat_in->z -
+                     (float10)quat_in->w * (float10)quat_in->y,
+                     ((float10)_DAT_005d81e3 - (float10)quat_in->y * (float10)quat_in->y) -
+                     (float10)quat_in->z * (float10)quat_in->z);
   afStack_1010[0x3fc] = 1.5707964;
   afStack_1010[0x3fe] = 0.0;
-  afStack_1010[0x3fd] = (float)fVar2;
-  *extraout_ECX_01 = 0x3fc90fdb;
-  extraout_ECX_01[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];
-  (extraout_ECX_01 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       afStack_1010[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fe];
+  afStack_1010[0x3fd] = (float)fVar3;
+  pfVar1 = (float *)((int)extraout_ECX_01 + (uint)bVar2 * -8 + 4);
+  extraout_ECX_01->x = 1.5707964;
+  *pfVar1 = afStack_1010[(uint)bVar2 * -2 + 0x3fd];
+  pfVar1[(uint)bVar2 * -2 + 1] = afStack_1010[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fe];
   return extraout_ECX_01;
 }

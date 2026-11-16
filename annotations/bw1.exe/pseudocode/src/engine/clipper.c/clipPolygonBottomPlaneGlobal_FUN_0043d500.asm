@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043d500(void)
+; void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043d500(void)
 ;
 ;
 ; Referenced Globals:

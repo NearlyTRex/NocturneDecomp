@@ -148,11 +148,11 @@ void __cdecl core_fire_cpp_CRock_setup_FUN_00499fe0(CRock *this_ptr,CVector3f *p
 void __cdecl core_fire_cpp_loadRockAssets_FUN_0049a000(void);
 void __cdecl core_fire_cpp_CRock_process_FUN_0049a010(CRock *this_ptr);
 void __cdecl core_fire_cpp_CRock_render_FUN_0049a090(CRock *this_ptr);
-void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 void __cdecl core_fire_cpp_loadLeafAssets_FUN_0049a170(void);
 void __cdecl core_fire_cpp_CLeaf_process_FUN_0049a1c0(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_render_FUN_0049a2c0(CLeaf *this_ptr);
-undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_0049a380(CLeaf *this_ptr);
+int __cdecl core_fire_cpp_CLeaf_onCollision_FUN_0049a380(CLeaf *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_0049a390(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_0049a450(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(CMuzzleFlash *this_ptr);
@@ -197,6 +197,6 @@ void __cdecl core_fire_cpp_CLightningBolt_activate_FUN_0049f420(CLightningBolt *
 void __cdecl core_fire_cpp_CLightningBolt_activateDirectional_FUN_0049f470(CLightningBolt *this_ptr,CVector3f *start_position,CVector3f *end_position,float end_width,float end_spread,int mode,float lifetime,int render_alpha);
 void __cdecl core_fire_cpp_CLightningBolt_process_FUN_0049f4e0(CLightningBolt *this_ptr);
 void __cdecl core_fire_cpp_CLightningBolt_render_FUN_0049f520(CLightningBolt *this_ptr);
-void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4);
+void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr);
 

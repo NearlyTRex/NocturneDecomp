@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,undefined4 *param_2,uint param_3)
+; int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,void *buffer,int count)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   count
 ;
 ; Called Functions:
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020
@@ -88,7 +88,7 @@ section .text
     PUSH EBX                            ; 00443e07
         ;   Label: LAB_00443e07
     CALL support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 ; 00443e08
-        ;   XREF to: 00444020 (UNCONDITIONAL_CALL)  ; undefined4 support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020(CInStreamPipe * this_ptr)
+        ;   XREF to: 00444020 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020(CInStreamPipe * this_ptr)
     ADD ESP,0x4                         ; 00443e0d
     CMP EAX,-0x1                        ; 00443e10
     JL 0x00443df8                       ; 00443e13

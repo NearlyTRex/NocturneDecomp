@@ -122,8 +122,8 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
 void __cdecl core_charactr_cpp_CCharacter_setDoorTarget_FUN_00428ab0(CCharacter *this_ptr,CDoor *door_target);
 void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ac0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428af0(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
-void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
+void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset);
+void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset);
 void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00428d60(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00428e30(CCharacter *this_ptr,float delta_time);
@@ -201,12 +201,12 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042ebf0(int x,int y,float alpha,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_0042f260(int x,int y,int color);
-undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_0042f2f0(void);
+int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_0042f2f0(void);
 int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_0042f300(void);
 void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0042f310(int disabled);
 void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_0042f320(int disabled);
-void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
-void cockpit_ckptutil_c_rotateBitmap_FUN_0042f4f0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index);
+void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_0042f4f0(uchar *source_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_0042f6b0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
-void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0042f750(void);
+SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0042f750(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal);
 

@@ -166,7 +166,7 @@ section .text
     PUSH EAX                            ; 005a0d37
     MOV EDI,EAX                         ; 005a0d38
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 005a0d3a
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     MOV EAX,EDI                         ; 005a0d3f
     ADD ESP,0x14                        ; 005a0d41
     MOV EDX,dword ptr [EAX + 0x33fd0]   ; 005a0d44

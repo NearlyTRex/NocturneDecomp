@@ -31,16 +31,14 @@ void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1)
   CVector3f CStack_c4;
   CVector3f local_b8;
   CVector3f local_ac;
-  float local_a0;
-  float local_9c [4];
-  float fStack_8c;
+  CVector3f local_a0;
+  float fStack_94;
+  float afStack_90 [2];
   CVector3f local_88;
   float fStack_7c;
   float afStack_78 [2];
   CVector3f CStack_70;
-  float local_64;
-  float local_60;
-  float local_5c;
+  CVector3f local_64;
   CVector3f local_58;
   float local_4c;
   float local_48 [2];
@@ -91,27 +89,27 @@ void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1)
   local_4c = fVar2 - local_ac.x;
   local_48[0] = local_118.y - local_ac.y;
   local_48[1] = local_118.z - local_ac.z;
-  local_64 = fVar2 - local_ac.x;
-  afStack_78[(uint)bVar4 * -2 + 6] = local_48[(uint)bVar4 * -2];
-  afStack_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
+  local_64.x = fVar2 - local_ac.x;
+  *(float *)((int)&local_64 + (uint)bVar4 * -8 + 4) = local_48[(uint)bVar4 * -2];
+  *(float *)((int)&local_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        local_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  local_64 = local_64 * _DAT_005efd3b;
-  local_60 = local_60 * _DAT_005efd3b;
-  local_5c = local_5c * _DAT_005efd3b;
-  local_28 = local_64 + local_ac.x;
-  local_24[0] = local_60 + local_ac.y;
-  local_24[1] = local_5c + local_ac.z;
-  local_a0 = local_28;
-  local_9c[(uint)bVar4 * -2] = local_24[(uint)bVar4 * -2];
-  local_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+  local_64.x = local_64.x * _DAT_005efd3b;
+  local_64.y = local_64.y * _DAT_005efd3b;
+  local_64.z = local_64.z * _DAT_005efd3b;
+  local_28 = local_64.x + local_ac.x;
+  local_24[0] = local_64.y + local_ac.y;
+  local_24[1] = local_64.z + local_ac.z;
+  local_a0.x = local_28;
+  *(float *)((int)&local_a0 + (uint)bVar4 * -8 + 4) = local_24[(uint)bVar4 * -2];
+  *(float *)((int)&local_a0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        local_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  if (afStack_78 + 5 != &local_a0) {
-    local_64 = local_a0;
-    local_60 = local_9c[0];
-    local_5c = local_9c[1];
+  if (&local_64 != &local_a0) {
+    local_64.x = local_a0.x;
+    local_64.y = local_a0.y;
+    local_64.z = local_a0.z;
   }
   core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
-            (0x01C3DEB4,afStack_78 + 5,&param_1->orient_matrix);
+            (0x01C3DEB4,&local_64,&param_1->orient_matrix);
   core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
             (0x01C3DEB4,&local_ac,1.5,(CVector3f *)0x0,0xffff);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
@@ -164,13 +162,13 @@ void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1)
     local_24[2] = (float)_DAT_005efd3f /
                   SQRT(afStack_78[1] * afStack_78[1] +
                        fStack_7c * fStack_7c + afStack_78[0] * afStack_78[0]);
-    local_9c[2] = fStack_7c * local_24[2];
-    local_9c[3] = afStack_78[0] * local_24[2];
-    fStack_8c = afStack_78[1] * local_24[2];
+    fStack_94 = fStack_7c * local_24[2];
+    afStack_90[0] = afStack_78[0] * local_24[2];
+    afStack_90[1] = afStack_78[1] * local_24[2];
     fStack_124 = fStack_7c * local_24[2];
-    afStack_120[(uint)bVar4 * -2] = local_9c[(uint)bVar4 * -2 + 3];
+    afStack_120[(uint)bVar4 * -2] = afStack_90[(uint)bVar4 * -2];
     afStack_120[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         local_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+         afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     if (&SStack_160.impact_point != (CVector3f *)&fStack_124) {
       SStack_160.impact_point.x = fStack_124;
       SStack_160.impact_point.y = afStack_120[0];

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(void)
+; CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(CQuaternion4f *quat_in,CVector3f *out_euler)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

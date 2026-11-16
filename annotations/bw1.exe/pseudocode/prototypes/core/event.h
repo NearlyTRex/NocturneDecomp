@@ -47,7 +47,7 @@ void __cdecl trimWhitespace(char *str);
 
 // Original: core_event.cpp_extractParenArg_FUN_004a1630
 // Address: 004a1630
-char * extractParenArg(int *param_1,char *param_2,int param_3,int param_4);
+char * __cdecl extractParenArg(char **cursor,char *out_buf,int max_len,int require_open_paren);
 
 // Original: core_event.cpp_parseDeathType_FUN_004a1750
 // Address: 004a1750

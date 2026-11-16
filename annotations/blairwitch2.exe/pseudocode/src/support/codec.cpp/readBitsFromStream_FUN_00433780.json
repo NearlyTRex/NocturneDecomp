@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 89,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unknown_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 174
+  },
+  "cross_references": [
+    {
+      "addr": "00434bb0",
+      "from_addr": "00434bc6",
+      "name": "support_codec.cpp_CAsciiArmor_encode_FUN_00434bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434490",
+      "from_addr": "004344cc",
+      "name": "support_codec.cpp_FUN_00434490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00433780",
+    "address_range": [
+      [
+        "00433780",
+        "00433894"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_readBitsFromStream_FUN_00433780",
+    "signature": "int __cdecl support_codec_cpp_readBitsFromStream_FUN_00433780(SBitBuffer *bit_buffer,int bit_count,void *istream)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004344cc",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00434490",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00434520",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00434490",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00434bc6",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CAsciiArmor_encode_FUN_00434bb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.027027027027027,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 36,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 116,
+      "INT_ADD": 54,
+      "INT_AND": 134,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 59,
+      "INT_LEFT": 10,
+      "INT_LESS": 8,
+      "INT_NEGATE": 3,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 37,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 37,
+      "INT_SUB": 23,
+      "INT_XOR": 5,
+      "LOAD": 48,
+      "POPCOUNT": 25,
+      "RETURN": 5,
+      "STORE": 21
+    },
+    "pcode_op_count": 669
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00442490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004400f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043e530",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4157
+    },
+    "nocturne.exe": {
+      "addr": "00438ab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4157
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bit_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "SBitBuffer *"
+      },
+      {
+        "is_param": true,
+        "name": "bit_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "istream",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(*(int *)istream + 4))(istream);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 39,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(*(int *)istream + 4))(istream);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "bit_count._0_1_ = (byte)iVar2;",
+      "type": "unknown_field"
+    }
+  ]
+}

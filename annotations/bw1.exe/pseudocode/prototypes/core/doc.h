@@ -123,7 +123,7 @@ void FUN_00472260(void);
 
 // Original: core_doc.cpp_FUN_004722f0
 // Address: 004722f0
-undefined4 * FUN_004722f0(void);
+float * FUN_004722f0(void);
 
 // Original: core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0
 // Address: 004724a0

@@ -27,8 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427360(CCharacter *thi
   float local_c4;
   float fStack_c0;
   float fStack_a4;
-  float local_a0;
-  float fStack_9c;
+  CVector3f local_a0;
   float fStack_8c;
   CVector3f local_88;
   CVector3f CStack_74;
@@ -58,14 +57,15 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427360(CCharacter *thi
         do {
           pCVar6 = impact_point;
           if ((impact_point != (CVector3f *)0x0) && (0.0 < impact_force)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(impact_point);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(impact_point,&local_a0)
+            ;
             min_value = -impact_force;
             local_24 = min_value;
-            auStack_5c._4_4_ = local_a0;
-            local_54[(uint)bVar5 * -2] = *(float *)((int)&stack0xffffff64 + (uint)bVar5 * -8);
+            auStack_5c._4_4_ = local_a0.x;
+            local_54[(uint)bVar5 * -2] = *(float *)((int)&local_a0 + (uint)bVar5 * -8 + 4);
             max_value = (CBoundingBox3D *)impact_force;
             local_54[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-                 *(float *)(&stack0xffffff68 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+                 *(float *)((int)&local_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(min_value,impact_force);
             local_54[0] = local_18 + local_54[0];
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -105,13 +105,13 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427360(CCharacter *thi
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   fStack_a4 = fStack_d4 + fStack_c8;
-  local_a0 = fStack_d0 + local_c4;
-  fStack_9c = fStack_cc + fStack_c0;
+  local_a0.x = fStack_d0 + local_c4;
+  local_a0.y = fStack_cc + fStack_c0;
   fStack_8c = fStack_d4 + fStack_c8;
   *(uint *)((int)&local_88 + (uint)bVar5 * -8) =
-       *(uint *)((int)&stack0xffffff60 + (uint)bVar5 * -8);
+       *(uint *)((int)&local_a0 + (uint)bVar5 * -8);
   *(uint *)((int)&local_88 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
-       *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(uint *)((int)&local_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
   pCVar6 = &CStack_74;
   fStack_44 = fStack_8c * _DAT_005ccdc6;
   local_40.x = local_88.x * _DAT_005ccdc6;

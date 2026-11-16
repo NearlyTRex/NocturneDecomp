@@ -30,12 +30,11 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
   float local_80;
   float local_7c [5];
   CVector3f local_68;
-  float local_5c;
-  float local_58 [4];
-  float local_48;
+  CVector3f local_5c;
+  float local_50;
+  float local_4c [2];
   CVector3f local_44;
-  float local_38;
-  float afStack_34 [2];
+  CVector3f local_38;
   CVector3f local_2c;
   float local_20;
   float local_1c;
@@ -82,29 +81,29 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
       local_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            *(float *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       pCVar1 = (this_ptr->base).victim;
-      local_58[2] = (pCVar1->base).location.position.x - local_80;
-      local_58[3] = (pCVar1->base).location.position.y - local_7c[0];
-      local_48 = (pCVar1->base).location.position.z - local_7c[1];
-      local_5c = local_58[2];
-      local_58[(uint)bVar6 * -2] = local_58[(uint)bVar6 * -2 + 3];
-      local_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-           local_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+      local_50 = (pCVar1->base).location.position.x - local_80;
+      local_4c[0] = (pCVar1->base).location.position.y - local_7c[0];
+      local_4c[1] = (pCVar1->base).location.position.z - local_7c[1];
+      local_5c.x = local_50;
+      *(float *)((int)&local_5c + (uint)bVar6 * -8 + 4) = local_4c[(uint)bVar6 * -2];
+      *(float *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           local_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (&((this_ptr->base).victim)->base,g_CHeroClassInfo.name_hash);
       fVar7 = _DAT_005dee11;
       if (pCVar3 != (CDemonActor *)0x0) {
         fVar7 = _DAT_005dee15;
       }
-      local_58[0] = local_58[0] + fVar7;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_5c);
-      local_7c[2] = local_38;
-      local_7c[(uint)bVar6 * -2 + 3] = afStack_34[(uint)bVar6 * -2];
+      local_5c.y = local_5c.y + fVar7;
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_5c,&local_38);
+      local_7c[2] = local_38.x;
+      local_7c[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_38 + (uint)bVar6 * -8 + 4);
       local_7c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-           afStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+           *(float *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                            (local_7c[3] - (this_ptr->base).base.base.orient.vec.y);
-      local_b8 = SQRT(local_58[1] * local_58[1] + local_5c * local_5c + local_58[0] * local_58[0]);
+      local_b8 = SQRT(local_5c.z * local_5c.z + local_5c.x * local_5c.x + local_5c.y * local_5c.y);
       if ((local_b4 <= ABS((float)local_18)) || (local_b8 <= (float)_DAT_005dee1d)) {
         fVar7 = this_ptr->firing_blend - delta_time;
         this_ptr->firing_blend = fVar7;

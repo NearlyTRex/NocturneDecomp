@@ -22,9 +22,9 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_00589f10(CStranger 
   SPose SStack_1ae4;
   CQuaternion4f local_48;
   CQuaternion4f local_38;
-  uint local_28;
-  float afStack_24 [5];
-  float local_10;
+  CVector3f local_28;
+  float local_1c;
+  float local_18 [3];
   
   bVar3 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -34,16 +34,17 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_00589f10(CStranger 
             (this_ptr_00,this_ptr->turn_motion_index,
              this_ptr->turn_blend_weight * (float)_DAT_005f6ad9,-1);
   core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00
-            ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + _DAT_02c83600);
-  afStack_24[2] = (float)local_28;
-  afStack_24[(uint)bVar3 * -2 + 3] = afStack_24[(uint)bVar3 * -2];
-  afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-       afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+            ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + _DAT_02c83600,
+             &local_28);
+  local_1c = local_28.x;
+  local_18[(uint)bVar3 * -2] = *(float *)((int)&local_28 + (uint)bVar3 * -8 + 4);
+  local_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       *(float *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
   bone_index = -1;
-  local_10 = -afStack_24[3];
+  local_18[2] = -local_18[0];
   blend_weight = 1.0;
-  core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(local_10,&local_38);
+  core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(local_18[2],&local_38);
   local_48.w = local_38.w;
   puVar2 = (uint *)((int)&local_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   puVar1 = (uint *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);

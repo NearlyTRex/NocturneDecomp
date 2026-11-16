@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)
+; void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
-; int              Stack[0x18]:4   param_6
-; int              Stack[0x1c]:4   param_7
-; float            Stack[0x20]:4   param_8
-; float            Stack[0x24]:4   param_9
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; int              Stack[0x10]:4   fade_rate
+; int              Stack[0x14]:4   intensity
+; int              Stack[0x18]:4   texture_index
+; int              Stack[0x1c]:4   time_scale
+; float            Stack[0x20]:4   jitter
+; float            Stack[0x24]:4   size
 ;
 ; XREF[2]:
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004463d4

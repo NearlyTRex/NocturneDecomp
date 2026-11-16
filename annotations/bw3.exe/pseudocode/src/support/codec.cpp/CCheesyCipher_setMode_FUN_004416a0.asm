@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CCheesyCipher_setMode_FUN_004416a0(CCheesyCipher *this_ptr,int param_2)
+; void __cdecl support_codec_cpp_CCheesyCipher_setMode_FUN_004416a0(CCheesyCipher *this_ptr,int mode)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   mode
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CCheesyCipher_ctor_FUN_00441660 at 0044167d

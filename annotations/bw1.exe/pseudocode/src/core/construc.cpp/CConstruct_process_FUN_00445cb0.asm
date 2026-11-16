@@ -349,7 +349,7 @@ section .text
     LEA ESI,[EBP + 0xfffffde6]          ; 00446067
     LEA EDI,[EBP + 0xfffffdf6]          ; 0044606d
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 00446073
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     LEA ESI,[EBP + 0xfffffde6]          ; 00446078
     LEA EAX,[EBP + 0xfffffdf6]          ; 0044607e
     ADD ESP,0xc                         ; 00446084
@@ -361,7 +361,7 @@ section .text
     LEA ESI,[EBP + 0xffffff56]          ; 0044608c
     LEA EDI,[EBP + 0xffffff1a]          ; 00446092
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00 ; 00446098
-        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00()
+        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[EBP + 0xffffff56]          ; 0044609d
     MOVSD ES:EDI,ESI                    ; 004460a3
     MOVSD ES:EDI,ESI                    ; 004460a4
@@ -626,7 +626,7 @@ section .text
     INC ESI                             ; 004463d0
     MOV dword ptr [EBP + -0x16],EDX     ; 004463d1
     CALL core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0 ; 004463d4
-        ;   XREF to: 004b5fa0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, int param_4, ...)
+        ;   XREF to: 004b5fa0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int fade_rate, ...)
     ADD ESP,0x24                        ; 004463d9
     CMP ESI,0xa                         ; 004463dc
     JL 0x0044639d                       ; 004463df
@@ -1281,7 +1281,7 @@ section .text
     LEA ESI,[EBP + -0x4a]               ; 00446b63
     LEA EDI,[EBP + 0xfffffe2a]          ; 00446b66
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00446b6c
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + -0x4a]               ; 00446b71
     MOVSD ES:EDI,ESI                    ; 00446b74
     MOVSD ES:EDI,ESI                    ; 00446b75

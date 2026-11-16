@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)
+; CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *directory,char *filename)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   directory
+; char *           Stack[0xc]:4   filename
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_0057b9c0

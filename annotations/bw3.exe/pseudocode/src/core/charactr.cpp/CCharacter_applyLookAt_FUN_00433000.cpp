@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *this_ptr)
@@ -18,15 +17,14 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *t
   float afStackY_1860 [1521];
   CQuaternion4f *quat2_in;
   int bone_index;
-  float local_84;
-  float local_74;
+  CQuaternion4f local_84;
+  CQuaternion4f local_74;
   CQuaternion4f local_64;
   CQuaternion4f local_54;
   CQuaternion4f local_44;
   CQuaternion4f local_34;
   CQuaternion4f local_24;
-  float local_14;
-  uint auStack_10 [3];
+  CQuaternion4f local_14;
   
   bVar3 = 0;
   if (0.0 < this_ptr->look_at_weight) {
@@ -44,35 +42,33 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *t
     *puVar2 = *puVar1;
     puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
     quat2_in = &local_54;
-    core_xform_cpp_quaternionFromAngleY_FUN_00585d10(this_ptr->look_at_yaw);
-    local_64.w = local_84;
-    puVar1 = (uint *)((int)&local_64 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_xform_cpp_quaternionFromAngleY_FUN_00585d10(this_ptr->look_at_yaw,&local_84);
+    local_64.w = local_84.w;
+    puVar2 = (uint *)((int)&local_64 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    puVar1 = (uint *)((int)&local_84 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     *(uint *)((int)&local_64 + (uint)bVar3 * -8 + 4) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar3 * -8);
-    *puVar1 = *(uint *)(&stack0xffffff84 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    puVar1[(uint)bVar3 * -2 + 1] =
-         *(uint *)
-          ((int)(&stack0xffffff84 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
-          ((uint)bVar3 * -2 + 1) * 4);
+         *(uint *)((int)&local_84 + (uint)bVar3 * -8 + 4);
+    *puVar2 = *puVar1;
+    puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
     core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_64,quat2_in,&local_34);
-    local_74 = local_34.w;
+    local_74.w = local_34.w;
+    puVar2 = (uint *)((int)&local_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     puVar1 = (uint *)((int)&local_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-    *(uint *)((int)&stack0xffffff90 + (uint)bVar3 * 0xfffffffe * 4) =
+    *(uint *)((int)&local_74 + (uint)bVar3 * -8 + 4) =
          *(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4);
-    *(uint *)(&stack0xffffff94 + (uint)bVar3 * -8 + (uint)bVar3 * -8) = *puVar1;
-    *(uint *)
-     ((int)(&stack0xffffff94 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4) =
-         puVar1[(uint)bVar3 * -2 + 1];
+    *puVar2 = *puVar1;
+    puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
     bone_index = this_ptr->look_at_head_bone;
     core_xform_cpp_slerpQuaternion_FUN_00585b20
-              ((this_ptr->model).bone_transform.pose_data.bone_rotations + bone_index,
-               &stack0xffffff8c,this_ptr->look_at_weight);
-    local_44.w = local_14;
-    puVar1 = (uint *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-    *(uint *)((int)&local_44 + (uint)bVar3 * -8 + 4) = auStack_10[(uint)bVar3 * -2];
-    *puVar1 = auStack_10[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    puVar1[(uint)bVar3 * -2 + 1] =
-         (auStack_10 + (uint)bVar3 * -2 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1];
+              ((this_ptr->model).bone_transform.pose_data.bone_rotations + bone_index,&local_74,
+               this_ptr->look_at_weight,&local_14);
+    local_44.w = local_14.w;
+    puVar2 = (uint *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    puVar1 = (uint *)((int)&local_14 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    *(uint *)((int)&local_44 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&local_14 + (uint)bVar3 * -8 + 4);
+    *puVar2 = *puVar1;
+    puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880
               (&this_ptr->model,&local_44,bone_index);
   }

@@ -339,7 +339,7 @@ void __cdecl dispatchMRGLToRenderer(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_3d.c_drawLine2DFromIndices_FUN_00407ab0
 // Address: 00407ab0
-void drawLine2DFromIndices(int param_1,int param_2);
+void __cdecl drawLine2DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine2D_FUN_00407b30
 // Address: 00407b30
@@ -347,7 +347,7 @@ void __cdecl clipAndDrawLine2D(SRenderVertex vertex1,SRenderVertex vertex2);
 
 // Original: engine_3d.c_drawLine3DFromIndices_FUN_00407db0
 // Address: 00407db0
-void drawLine3DFromIndices(int param_1,int param_2);
+void __cdecl drawLine3DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00407e30
 // Address: 00407e30

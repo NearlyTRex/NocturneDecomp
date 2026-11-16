@@ -1374,9 +1374,14 @@
    "note": "resetBitBuffer_FUN_0043e510. TU-size anchor in support/codec.cpp between verified neighbours; corroborated by reloc-masked bytes: identical d=0.000 (32/32 B)."
   },
   {
-   "a": "0043e6c0",
+   "a": "0043e530",
    "b": "00442490",
-   "note": "writeBitsToStream_FUN_0043e6c0. TU-size anchor in support/codec.cpp between verified neighbours; bodies drifted but sizes agree (1.00x), so the slot is sound: logic-change d=0.629 (288/288 B)."
+   "note": "readBitsFromStream_FUN_0043e530. Read by hand: follows resetBitBuffer as in nocedit, reads bytes through the stream's vtable +4 and returns the bits; callers are readCodeFromStream and CAsciiArmor_encode. Was paired with writeBitsToStream."
+  },
+  {
+   "a": "0043e6c0",
+   "b": "00442600",
+   "note": "writeBitsToStream_FUN_0043e6c0. Read by hand: called by writeCodeBits and CAsciiUnarmor_decode, takes (buffer, bit_count, bit_value, stream) and returns an error code; drains whole bytes through a new helper first."
   },
   {
    "a": "0043ea00",

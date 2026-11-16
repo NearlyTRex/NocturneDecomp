@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 694,
+    "complexity_score": 394,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 59,
+    "pseudocode_lines": 69,
+    "suspect_count": 30,
     "suspect_types": [
       "extra_output",
-      "param_count_too_few",
+      "pointer_cast",
       "pointer_truncation",
-      "stack_param",
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 216
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -65,10 +64,10 @@
         "0059420e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005940b0",
-    "signature": "undefined1 core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(void)"
+    "signature": "CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(CQuaternion4f *quat_in,CVector3f *out_euler)"
   },
   "function_calls": [
     {
@@ -127,12 +126,11 @@
         "call_addr": "004551d5",
         "call_type": "direct",
         "caller": "core_doc.cpp_FUN_00455170",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -141,12 +139,11 @@
         "call_addr": "0051843f",
         "call_type": "direct",
         "caller": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -155,12 +152,11 @@
         "call_addr": "00567495",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -169,12 +165,11 @@
         "call_addr": "0057eb55",
         "call_type": "direct",
         "caller": "core_turret.cpp_CTurret_process_FUN_0057e760",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -183,12 +178,11 @@
         "call_addr": "004188d2",
         "call_type": "direct",
         "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 11,
         "method": "push_count",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -197,22 +191,21 @@
         "call_addr": "0043708c",
         "call_type": "direct",
         "caller": "core_construc.cpp_CConstruct_process_FUN_00436e80",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 11,
         "method": "push_count",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.769230769230769,
@@ -278,10 +271,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -311,6 +304,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "quat_in",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
       }
     ]
   },
@@ -342,271 +342,103 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "uint *extraout_ECX;",
+      "text": "CVector3f *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "CVector3f *extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
-      "match": "extraout_ECX_00",
+      "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "uint *extraout_ECX_00;",
+      "text": "CVector3f *extraout_ECX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "uint *extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "float *extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "float *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(*in_stack_00000004 * in_stack_00000004[1] - in_stack_00000004[2] * in_stack_00000004[3]) *",
-      "type": "stack_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 23,
+      "line": 20,
       "match": "8.196904e-39",
       "severity": "mild",
       "text": "afStack_1010[0x3fb] = 8.196904e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
-      "match": "in_stack_00000004",
+      "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
-      "type": "stack_param"
+      "text": "pfVar1 = (float *)((int)extraout_ECX_00 + (uint)bVar2 * -8 + 4);",
+      "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "in_stack_00000004",
+      "match": "(float *)((int)extraout_ECX_00",
       "severity": "moderate",
-      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
-      "type": "stack_param"
+      "text": "pfVar1 = (float *)((int)extraout_ECX_00 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "extraout_ECX_00->x = -1.5707964;",
+      "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 33,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "*extraout_ECX_00 = 0xbfc90fdb;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "extraout_ECX_00[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "(extraout_ECX_00 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "return (char)extraout_ECX_00;",
+      "text": "return extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 40,
+      "line": 36,
       "match": "8.196675e-39",
       "severity": "mild",
       "text": "afStack_1010[0x3fb] = 8.196675e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "fVar2 = ((float10)_DAT_005eedce - (float10)in_stack_00000004[1] * (float10)in_stack_00000004[1])",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "fVar2 = ((float10)_DAT_005eedce - (float10)in_stack_00000004[1] * (float10)in_stack_00000004[1])",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "- (float10)in_stack_00000004[2] * (float10)in_stack_00000004[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "- (float10)in_stack_00000004[2] * (float10)in_stack_00000004[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],fVar2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],fVar2);",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 47,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
+      "text": "fVar3 = fVar3 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 47,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "fVar2 = fVar2 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
+      "text": "fVar3 = fVar3 - (float10)extraout_EDX[3] * (float10)extraout_EDX[3];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
+      "line": 49,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "((float10)*extraout_EDX * (float10)extraout_EDX[3] +",
@@ -614,7 +446,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
+      "line": 49,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "((float10)*extraout_EDX * (float10)extraout_EDX[3] +",
@@ -622,190 +454,123 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 50,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar2);",
+      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar3);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 50,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar2);",
+      "text": "(float10)extraout_EDX[1] * (float10)extraout_EDX[2],fVar3);",
       "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(float *)((int)extraout_ECX",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 54,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "extraout_ECX->x = 8.196772e-39;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 54,
+      "match": "8.196772e-39",
+      "severity": "mild",
+      "text": "extraout_ECX->x = 8.196772e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 57,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "*extraout_ECX = 0x594144;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fb];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "(extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "return (char)extraout_ECX;",
+      "text": "return extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 63,
+      "line": 59,
       "match": "8.197006e-39",
       "severity": "mild",
       "text": "afStack_1010[0x3fb] = 8.197006e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((float10)*in_stack_00000004 * (float10)in_stack_00000004[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "-(float10)in_stack_00000004[1] * (float10)in_stack_00000004[3],",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 68,
-      "match": "in_stack_00000004",
+      "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
-      "type": "stack_param"
+      "text": "pfVar1 = (float *)((int)extraout_ECX_01 + (uint)bVar2 * -8 + 4);",
+      "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 68,
-      "match": "in_stack_00000004",
+      "match": "(float *)((int)extraout_ECX_01",
       "severity": "moderate",
-      "text": "(float10)in_stack_00000004[2] * (float10)in_stack_00000004[2]) -",
-      "type": "stack_param"
+      "text": "pfVar1 = (float *)((int)extraout_ECX_01 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 69,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(float10)in_stack_00000004[3] * (float10)in_stack_00000004[3]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
       "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "*extraout_ECX_01 = 0x3fc90fdb;",
+      "text": "extraout_ECX_01->x = 1.5707964;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
+      "line": 72,
       "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "extraout_ECX_01[(uint)bVar1 * -2 + 1] = afStack_1010[(uint)bVar1 * -2 + 0x3fd];",
+      "text": "return extraout_ECX_01;",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_ECX_01",
+      "description": "Pointer value `extraout_ECX_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)extraout_ECX_00",
       "severity": "moderate",
-      "text": "(extraout_ECX_01 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "return (char)extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Pointer value `extraout_ECX_00` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(char)extraout_ECX_00",
-      "severity": "moderate",
-      "text": "return (char)extraout_ECX_00;",
+      "text": "pfVar1 = (float *)((int)extraout_ECX_00 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `extraout_ECX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
-      "match": "(char)extraout_ECX",
+      "description": "Pointer value `extraout_ECX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)extraout_ECX",
       "severity": "moderate",
-      "text": "return (char)extraout_ECX;",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `extraout_ECX_01` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 77,
-      "match": "(char)extraout_ECX_01",
+      "description": "Pointer value `extraout_ECX_01` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)extraout_ECX_01",
       "severity": "moderate",
-      "text": "return (char)extraout_ECX_01;",
+      "text": "pfVar1 = (float *)((int)extraout_ECX_01 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_truncation"
-    },
-    {
-      "call_site_count": 6,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

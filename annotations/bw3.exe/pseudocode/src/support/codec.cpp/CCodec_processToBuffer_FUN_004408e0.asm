@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00440922
     PUSH EAX                            ; 00440924
     CALL support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00 ; 00440925
-        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
+        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 0044092a
     MOV EDX,dword ptr [EDI]             ; 0044092d
     PUSH 0x0                            ; 0044092f

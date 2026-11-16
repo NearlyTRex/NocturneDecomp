@@ -69,7 +69,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00441f50(CDemonCamer
       _DAT_01d046a4 = 0x1325;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Can't create %s");
     }
-    support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_5c,0x146592c,0x1000);
+    support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_5c,(void *)0x146592c,0x1000);
     if (_DAT_01466948 == 0) {
       flags = 0;
     }

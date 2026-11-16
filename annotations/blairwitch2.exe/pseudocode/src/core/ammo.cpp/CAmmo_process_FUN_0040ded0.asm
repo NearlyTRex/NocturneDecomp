@@ -214,7 +214,7 @@ section .text
     PUSH EDI                            ; 0040e0d7
     FSTP float ptr [EBP + 0x2a]         ; 0040e0d8
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 0040e0db
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 0040e0e0
     LEA ESP,[EBP + 0x7a]                ; 0040e0e3
     POP EBP                             ; 0040e0e6

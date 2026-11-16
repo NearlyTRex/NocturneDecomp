@@ -27,7 +27,7 @@ CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_rgbToHsv_FUN_00417f50
 // Address: 00417f50
-void rgbToHsv(void);
+CColor3f * __stack_esi rgbToHsv(CColor3f *in_rgb,CColor3f *out_hsv);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00418110
 // Address: 00418110

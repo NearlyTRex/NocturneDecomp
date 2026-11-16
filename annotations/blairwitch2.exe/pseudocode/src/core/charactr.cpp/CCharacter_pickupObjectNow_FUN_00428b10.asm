@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)
+; void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
+; int              Stack[0x8]:4   hand_index
+; CDemonActor *    Stack[0xc]:4   object
+; float            Stack[0x10]:4   blend_time
+; CMatrix3x4f *    Stack[0x14]:4   carry_offset
 ;
 ; XREF[10]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418ac7
@@ -103,7 +103,7 @@ section .text
     PUSH EBP                            ; 00428bbd
     MOV dword ptr [EBX + 0x8],ESI       ; 00428bbe
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0 ; 00428bc1
-        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
+        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter * this_ptr, int hand_index, float blend_time, CMatrix3x4f * carry_offset)
     ADD ESP,0x10                        ; 00428bc6
     POP EBP                             ; 00428bc9
         ;   Label: LAB_00428bc9

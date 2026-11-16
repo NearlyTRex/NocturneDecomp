@@ -158,7 +158,7 @@ section .text
     PUSH EAX                            ; 00458362
     LEA ESI,[EBP + 0x4e]                ; 00458363
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00458366
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0045836b
     PUSH 0x40c00000                     ; 0045836e
     LEA EAX,[EBP + 0x2a]                ; 00458373

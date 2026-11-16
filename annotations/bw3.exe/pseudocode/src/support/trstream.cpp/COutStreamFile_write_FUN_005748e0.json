@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 66,
+    "complexity_score": 11,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [
@@ -44,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_write_FUN_005748e0",
-    "signature": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *data,int size)"
   },
   "function_calls": [
     {
@@ -162,62 +160,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "data",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "size",
         "offset": 12,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "SVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((SVar1 == param_3) || ((this_ptr->file->_flag & 0x20) == 0)) {",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

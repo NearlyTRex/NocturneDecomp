@@ -227,11 +227,11 @@ uint __cdecl COutStreamFile::putChar(COutStreamFile *this_ptr,byte param_2);
 
 // Original: support_trstream.cpp_COutStreamFile_write_FUN_005a18f0
 // Address: 005a18f0
-int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *param_2,int param_3);
+int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *data,int size);
 
 // Original: support_trstream.cpp_COutStreamFile_seek_FUN_005a1940
 // Address: 005a1940
-bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,long param_2,int param_3);
+int __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_COutStreamFile_tell_FUN_005a1970
 // Address: 005a1970

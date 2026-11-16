@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 163,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 12,
+    "pseudocode_lines": 22,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -28,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CInStreamPipe_open_FUN_00435270",
-    "signature": "undefined4 __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)"
+    "signature": "void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *codec,void *source,int owns_streams,int buffer_size)"
   },
   "function_calls": [
     {
@@ -123,31 +122,31 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "codec",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCodec *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "source",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "owns_streams",
         "offset": 16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "buffer_size",
         "offset": 20,
         "size": 4,
-        "type": "ulong"
+        "type": "int"
       }
     ]
   },
@@ -161,91 +160,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->codec = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->source = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->owns_streams = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "this_ptr->buffer_size = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pcVar1 = (char *)malloc(param_5);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",
+      "text": "(**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",
+      "text": "(**(code **)((int)this_ptr->codec->vtable + 4))(this_ptr->codec);",
       "type": "unresolved_funcptr"
     }
   ]

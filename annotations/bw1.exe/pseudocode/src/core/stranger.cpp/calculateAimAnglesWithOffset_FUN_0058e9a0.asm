@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
+; CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   direction
+; float *          Stack[0x8]:4   offset_pair
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f6ed1
@@ -29,7 +32,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0058e9b3
     LEA EDI,[ESP + 0x38]                ; 0058e9b7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0058e9bb
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x2c]                ; 0058e9c0
     ADD ESP,0x4                         ; 0058e9c4
     MOVSD ES:EDI,ESI                    ; 0058e9c7

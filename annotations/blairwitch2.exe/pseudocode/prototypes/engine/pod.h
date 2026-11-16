@@ -11,7 +11,7 @@ uint __cdecl crc32UpdateByte(uint current_crc,uchar data_byte);
 
 // Original: engine_pod.cpp_crc32ComputeFileRange_FUN_00519dc0
 // Address: 00519dc0
-uint crc32ComputeFileRange(char *param_1,int param_2);
+uint __cdecl crc32ComputeFileRange(char *filename,int start_offset);
 
 // Original: engine_pod.cpp_CPodFile_ctor_FUN_00519e50
 // Address: 00519e50

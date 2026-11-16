@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *param_1,int param_2)
+; uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *filename,int start_offset)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; int              Stack[0x8]:4   start_offset
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005c0d10

@@ -243,7 +243,7 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero *this_ptr,i
 void core_hero_cpp_FUN_004cf200(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004cf2b0(CHero *this_ptr);
-undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004cf4e0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004cf830(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004cf890(CHero *this_ptr);

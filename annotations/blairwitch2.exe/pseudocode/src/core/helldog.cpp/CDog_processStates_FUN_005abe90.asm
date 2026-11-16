@@ -69,7 +69,7 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 005abedb
     PUSH ESI                            ; 005abedf
     CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005abee0
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005abee5
     JMP 0x005abe9e                      ; 005abee8
         ;   XREF to: 005abe9e (UNCONDITIONAL_JUMP)  ; LAB_005abe9e

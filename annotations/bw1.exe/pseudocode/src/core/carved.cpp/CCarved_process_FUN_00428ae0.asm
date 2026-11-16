@@ -530,7 +530,7 @@ section .text
     PUSH EAX                            ; 0042904f
     PUSH EBX                            ; 00429050
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 00429051
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00429056
     PUSH ESI                            ; 00429059
     PUSH EDI                            ; 0042905a
@@ -1952,7 +1952,7 @@ section .text
     LEA ESI,[EBP + 0xfffffeb6]          ; 0042a1a4
     LEA EDI,[EBP + 0xfffffe1a]          ; 0042a1aa
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042a1b0
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffeb6]          ; 0042a1b5
     MOVSD ES:EDI,ESI                    ; 0042a1bb
     MOVSD ES:EDI,ESI                    ; 0042a1bc

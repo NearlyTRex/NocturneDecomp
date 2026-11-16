@@ -314,7 +314,7 @@ section .text
     PUSH 0x3f800000                     ; 005a0ee9
     PUSH ESI                            ; 005a0eee
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005a0eef
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005a0ef4
     INC EBX                             ; 005a0ef7
         ;   Label: LAB_005a0ef7

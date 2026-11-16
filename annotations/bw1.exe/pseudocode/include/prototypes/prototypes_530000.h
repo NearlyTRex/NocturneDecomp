@@ -181,7 +181,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPacked
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00538530(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00538550(int total_entries,_FILE *file_header);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-CPackedBitmap * cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_00538900(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00538930(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(CPackedBitmapSet *this_ptr);
@@ -215,7 +215,7 @@ int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0053ada0(
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this_ptr,CDemonActor *actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0053aef0(CPlatform *this_ptr);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_0053b000(uint current_crc,uchar data_byte);
-uint engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *param_1,int param_2);
+uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0053b110(char *filename,int start_offset);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0053b210(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_0053b230(char **filename1_ptr,char **filename2_ptr);

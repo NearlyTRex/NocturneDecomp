@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_slerpQuaternion_FUN_00585b20(float *param_1,float *param_2,float param_3)
+; CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00585b20(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_in
+; CQuaternion4f *  Stack[0x8]:4   quat2_in
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined        Stack[-0x5c]:1  local_5c

@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_004439b0(CAsciiUnarmor *this_ptr,int *param_2,undefined4 param_3)
+; int __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_004439b0(CAsciiUnarmor *this_ptr,void *istream,void *ostream)
 ;
 ; Parameters:
 ; CAsciiUnarmor *  Stack[0x4]:4   this_ptr
-; int *            Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   istream
+; void *           Stack[0xc]:4   ostream
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00442600
 ;   support_codec.cpp_FUN_00443830
+;   support_codec.cpp_writeBitsToStream_FUN_00442600
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 004439e6
     PUSH 0x6                            ; 004439e7
     PUSH ESI                            ; 004439e9
-    CALL support_codec.cpp_FUN_00442600 ; 004439ea
-        ;   XREF to: 00442600 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00442600()
+    CALL support_codec.cpp_writeBitsToStream_FUN_00442600 ; 004439ea
+        ;   XREF to: 00442600 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_writeBitsToStream_FUN_00442600(SBitBuffer * bit_buffer, int bit_count, uint bit_value, void * ostream)
     ADD ESP,0x10                        ; 004439ef
     JMP 0x004439c2                      ; 004439f2
         ;   XREF to: 004439c2 (UNCONDITIONAL_JUMP)  ; LAB_004439c2

@@ -193,7 +193,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004dc2c0(CInventory *this_ptr,_FIL
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004dc460(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004dc810(CInventory *this_ptr);
-void core_inv_cpp_setupItems_FUN_004dc850(int param_1);
+void __cdecl core_inv_cpp_setupItems_FUN_004dc850(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *this_ptr);

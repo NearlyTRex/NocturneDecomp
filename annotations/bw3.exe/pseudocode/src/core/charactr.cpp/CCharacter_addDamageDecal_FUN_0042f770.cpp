@@ -34,14 +34,14 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter
   CMatrix3x4f local_108;
   CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
-  float local_78;
-  float afStack_74 [2];
+  CVector3f local_78;
   CVector3f local_6c;
   float local_60;
   float local_5c [2];
   CVector3f local_54;
   float local_48;
-  float local_44 [9];
+  float local_44 [5];
+  CVector3f local_30;
   float local_20;
   float local_1c;
   SDamageDecal *local_18;
@@ -64,9 +64,9 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter
     local_48 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
     local_44[0] = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
     local_44[1] = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
-    local_78 = local_48;
-    afStack_74[(uint)bVar8 * -2] = local_44[(uint)bVar8 * -2];
-    afStack_74[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+    local_78.x = local_48;
+    *(float *)((int)&local_78 + (uint)bVar8 * -8 + 4) = local_44[(uint)bVar8 * -2];
+    *(float *)((int)&local_78 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
          local_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
     local_44[2] = local_48;
     local_44[(uint)bVar8 * -2 + 3] = local_44[(uint)bVar8 * -2];
@@ -97,14 +97,15 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter
     *(float *)((int)&local_6c + (uint)bVar8 * -8 + 4) = local_5c[(uint)bVar8 * -2];
     *(float *)((int)&local_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
          local_5c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_78);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_78,&local_30);
     euler_angles = &local_54;
     position = &local_6c;
     pCVar6 = &local_2b8;
-    local_54.x = local_44[5];
-    *(float *)((int)&local_54 + (uint)bVar8 * -8 + 4) = local_44[(uint)bVar8 * -2 + 6];
-    *(float *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-         local_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
+    local_54.x = local_30.x;
+    *(uint *)((int)&local_54 + (uint)bVar8 * -8 + 4) =
+         *(uint *)((int)&local_30 + (uint)bVar8 * -8 + 4);
+    *(uint *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+         *(uint *)((int)&local_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(pCVar6,position,euler_angles);
     pCVar6 = &local_2b8;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-0.034906585,0.034906585);

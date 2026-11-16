@@ -23,17 +23,20 @@ uint core_prye_cpp_FUN_00520df0(void)
   byte bVar6;
   float10 fVar7;
   CCharacter *in_stack_00000004;
-  float afStackY_1100 [1000];
+  float afStackY_1100 [24];
+  int aiStackY_10a0 [3];
+  float afStackY_1094 [6];
+  int aiStackY_107c [3];
+  float afStackY_1070 [964];
   float fStack_130;
   float fStack_12c;
   float fStack_128;
   float fStack_124;
   float fStack_120;
   float fStack_11c;
-  float fStack_118;
+  CVector3f CStack_118;
   float fStack_10c;
-  float fStack_108;
-  float fStack_104;
+  float afStack_108 [2];
   CVector3f CStack_100;
   float fStack_f4;
   CVector3f CStack_f0;
@@ -42,13 +45,13 @@ uint core_prye_cpp_FUN_00520df0(void)
   float afStack_cc [3];
   int iStack_c0;
   float afStack_bc [2];
-  int iStack_b4;
+  int aiStack_b4 [2];
   CVector3f CStack_ac;
   float fStack_a0;
-  float afStack_9c [5];
+  float afStack_9c [2];
+  CVector3f CStack_94;
   float fStack_88;
-  float fStack_84;
-  float fStack_80;
+  float afStack_84 [2];
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
@@ -91,7 +94,7 @@ uint core_prye_cpp_FUN_00520df0(void)
           CStack_70.y = CStack_f0.x;
           *(uint *)((int)&CStack_70 + (uint)bVar6 * -8 + 8) =
                *(uint *)((int)&CStack_f0 + (uint)bVar6 * -8 + 4);
-          *(uint *)((int)&CStack_64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
+          *(uint *)((int)&CStack_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
                *(uint *)((int)&CStack_f0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           if ((ABS(CStack_64.x) <= (float)_DAT_005cd52f) && (0.0 <= (double)CStack_64.x)) {
             (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,SUB84(__BITCAST_UINT64((double)CStack_64.x),0))
@@ -115,12 +118,12 @@ uint core_prye_cpp_FUN_00520df0(void)
             CStack_f0.x = fStack_12c + fStack_120;
             CStack_f0.y = fStack_128 + fStack_11c;
             fStack_88 = fStack_130 + fStack_124;
-            afStack_9c[(uint)bVar6 * -2 + 6] = *(float *)((int)&CStack_f0 + (uint)bVar6 * -8);
-            afStack_9c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+            afStack_84[(uint)bVar6 * -2] = *(float *)((int)&CStack_f0 + (uint)bVar6 * -8);
+            afStack_84[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                  *(float *)((int)&CStack_f0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
             afStack_54[2] = fStack_88 * _DAT_005cd51f;
-            afStack_54[3] = fStack_84 * _DAT_005cd51f;
-            fStack_44 = fStack_80 * _DAT_005cd51f;
+            afStack_54[3] = afStack_84[0] * _DAT_005cd51f;
+            fStack_44 = afStack_84[1] * _DAT_005cd51f;
             fStack_40 = fStack_88 * _DAT_005cd51f;
             afStack_54[(uint)bVar6 * -2 + 6] = afStack_54[(uint)bVar6 * -2 + 3];
             afStack_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
@@ -129,11 +132,10 @@ uint core_prye_cpp_FUN_00520df0(void)
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
                       (unaff_EBP,&CStack_64,&CStack_70);
             CStack_100.x = CStack_70.x;
-            *(uint *)((int)&CStack_100 + (uint)bVar6 * -8 + 4) =
-                 *(uint *)((int)&CStack_70 + (uint)bVar6 * -8 + 4);
-            *(uint *)((int)&CStack_100 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8) =
-                 *(uint *)((int)&CStack_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-            if (&CStack_64 != &CStack_100) {
+            afStack_108[(uint)bVar6 * -2 + 3] = *(float *)((int)&CStack_70 + (uint)bVar6 * -8 + 4);
+            afStack_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+                 *(float *)((int)&CStack_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+            if (&CStack_64 != (CVector3f *)(afStack_108 + 2)) {
               CStack_64.x = CStack_100.x;
               CStack_64.y = CStack_100.y;
               CStack_64.z = CStack_100.z;
@@ -186,20 +188,19 @@ uint core_prye_cpp_FUN_00520df0(void)
                   in_stack_00000004[2].flames[0x15].globe.position_scaled.y = (int)afStack_bc[0];
                 }
                 fStack_10c = CStack_64.x - (in_stack_00000004->base).location.position.x;
-                fStack_108 = CStack_64.y - (in_stack_00000004->base).location.position.y;
-                fStack_104 = CStack_64.z - (in_stack_00000004->base).location.position.z;
-                fStack_118 = fStack_10c;
-                *(uint *)(&stack0xfffffeec + (uint)bVar6 * -8) =
-                     *(uint *)(&stack0xfffffeec + ((uint)bVar6 * -2 + 3) * 4);
-                *(uint *)(&stack0xfffffeec + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =
-                     *(uint *)
-                      (&stack0xfffffeec + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4);
-                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250();
-                afStack_bc[1] = afStack_9c[2];
-                afStack_bc[(uint)bVar6 * -2 + 2] = afStack_9c[(uint)bVar6 * -2 + 3];
-                afStack_bc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
-                     afStack_9c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-                in_stack_00000004[2].flames[0x15].globe.position_scaled.z = iStack_b4;
+                afStack_108[0] = CStack_64.y - (in_stack_00000004->base).location.position.y;
+                afStack_108[1] = CStack_64.z - (in_stack_00000004->base).location.position.z;
+                CStack_118.x = fStack_10c;
+                *(float *)((int)&CStack_118 + (uint)bVar6 * -8 + 4) = afStack_108[(uint)bVar6 * -2];
+                *(float *)((int)&CStack_118 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+                     afStack_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+                          (&CStack_118,&CStack_94);
+                afStack_bc[1] = CStack_94.x;
+                aiStack_b4[(uint)bVar6 * -2] = *(int *)((int)&CStack_94 + (uint)bVar6 * -8 + 4);
+                aiStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                     *(int *)((int)&CStack_94 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+                in_stack_00000004[2].flames[0x15].globe.position_scaled.z = aiStack_b4[0];
                 this_ptr = g_CConsolePtr;
                 in_stack_00000004[2].flames[0x15].globe.linear_radius_scaled = 0x3f800000;
                 engine_console_cpp_CConsole_printf_FUN_00441ff0

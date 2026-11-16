@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
@@ -16,10 +15,10 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
   int iVar1;
   byte bVar2;
   float afStackY_1038 [1012];
-  float local_40;
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_50;
+  float local_44;
+  float local_40 [2];
+  CVector3f local_38;
   CVector3f local_2c;
   CDemonActor *local_20;
   int local_1c;
@@ -39,20 +38,21 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
          iVar1 != 0)) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                   ((CDemonActor *)this_ptr,&(this_ptr_00->base).location.position,&local_2c);
-        local_38 = local_2c.x;
-        (&stack0xffffffcc)[(uint)bVar2 * 0xfffffffe] =
-             (float)*(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4);
-        *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+        local_38.x = local_2c.x;
+        *(uint *)((int)&local_38 + (uint)bVar2 * -8 + 4) =
+             *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4);
+        *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
              *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-        if (((1.0 <= (double)local_34) &&
-            ((((double)local_34 <= _DAT_005e48fd && ((float)_DAT_005e4905 <= local_30)) &&
-             ((double)local_30 <= _DAT_005e490d)))) && (ABS(local_38) <= (float)_DAT_005e490d)) {
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffc8);
-          *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
-          *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-          if (ABS(local_40) <= (float)_DAT_005e4915) {
+        if (((1.0 <= (double)local_38.y) &&
+            ((((double)local_38.y <= _DAT_005e48fd && ((float)_DAT_005e4905 <= local_38.z)) &&
+             ((double)local_38.z <= _DAT_005e490d)))) && (ABS(local_38.x) <= (float)_DAT_005e490d))
+        {
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_38,&local_50);
+          local_44 = local_50.x;
+          local_40[(uint)bVar2 * -2] = *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4);
+          local_40[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+               *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+          if (ABS(local_40[0]) <= (float)_DAT_005e4915) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action = 5;
             this_ptr->hero_action_actor = local_20;

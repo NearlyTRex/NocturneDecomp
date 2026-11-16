@@ -51,7 +51,7 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   float fStack_194;
   float fStack_190;
   float fStack_18c;
-  uint uStack_188;
+  CVector3f CStack_188;
   CVector3i CStack_17c;
   CVector3i CStack_170;
   float fStack_164;
@@ -78,14 +78,15 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
-  uint uStack_98;
+  float fStack_98;
   float afStack_94 [4];
   float fStack_84;
   float fStack_80;
   CVector3i CStack_74;
   CVector3i CStack_68;
-  float fStack_5c;
-  float afStack_58 [4];
+  CVector3f CStack_5c;
+  float fStack_50;
+  float fStack_4c;
   float fStack_48;
   float fStack_44;
   float fStack_40;
@@ -273,7 +274,7 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
               (g_CDemonSetPtr,*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4));
     fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
                           (g_CDemonSetPtr,&CStack_bc,&CStack_c8);
-    afStack_58[3] = fStack_14;
+    fStack_4c = fStack_14;
     if ((0.0 <= fStack_14) && ((int)fStack_14 < 0x3f800001)) {
       pCStack_34 = g_CDemonSetPtr->collision_actor;
     }
@@ -452,11 +453,10 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
   afStack_1a8[(uint)bVar9 * -2] = afStack_e8[(uint)bVar9 * -2 + 6];
   afStack_1a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        afStack_e8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-  afStack_58[2] =
-       SQRT(afStack_1a8[1] * afStack_1a8[1] +
-            fStack_1ac * fStack_1ac + afStack_1a8[0] * afStack_1a8[0]);
+  fStack_50 = SQRT(afStack_1a8[1] * afStack_1a8[1] +
+                   fStack_1ac * fStack_1ac + afStack_1a8[0] * afStack_1a8[0]);
   if ((_DAT_01cb3930 != (CCharacter *)0x0) && (_DAT_01cb3948 == (CCharacter *)0x0)) {
-    if ((afStack_58[2] < _DAT_005d8acb) &&
+    if ((fStack_50 < _DAT_005d8acb) &&
        (_DAT_01cb3930 = _DAT_01cb3948, pCStack_38 == (CCharacter *)0x0)) {
       param_2[3] = 1;
     }
@@ -512,15 +512,16 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
     fStack_218 = (_DAT_01cb3948->base).location.position.x - *(float *)(iVar5 + 0x20);
     fStack_214 = (_DAT_01cb3948->base).location.position.y - *(float *)(iVar5 + 0x24);
     fStack_210 = (_DAT_01cb3948->base).location.position.z - *(float *)(iVar5 + 0x28);
-    fStack_5c = fStack_218;
-    afStack_58[(uint)bVar9 * -2] = *(float *)((int)&stack0xfffffdec + (uint)bVar9 * -8);
-    afStack_58[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         *(float *)((int)&stack0xfffffdf0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0();
-    uStack_98 = uStack_188;
-    afStack_94[(uint)bVar9 * -2] = afStack_1a8[(uint)bVar9 * -2 + 9];
+    CStack_5c.x = fStack_218;
+    *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + 4) =
+         *(uint *)((int)&stack0xfffffdec + (uint)bVar9 * -8);
+    *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         *(uint *)((int)&stack0xfffffdf0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_5c,&CStack_188);
+    fStack_98 = CStack_188.x;
+    afStack_94[(uint)bVar9 * -2] = *(float *)((int)&CStack_188 + (uint)bVar9 * -8 + 4);
     afStack_94[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         afStack_1a8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+         *(float *)((int)&CStack_188 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                           (afStack_94[0] -
                            *(float *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x34));

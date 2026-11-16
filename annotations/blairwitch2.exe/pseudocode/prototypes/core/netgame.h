@@ -27,7 +27,7 @@ float __cdecl getElapsedSeconds(uint timestamp);
 
 // Original: core_netgame.cpp_resetChatCounts_FUN_0050b060
 // Address: 0050b060
-void resetChatCounts(void);
+void __cdecl resetChatCounts(void);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_0050b070
 // Address: 0050b070

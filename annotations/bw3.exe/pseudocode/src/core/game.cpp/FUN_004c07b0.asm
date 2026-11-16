@@ -1533,7 +1533,7 @@ section .text
     LEA ESI,[ESP + 0x168]               ; 004c1bfa
     LEA EDI,[ESP + 0x51c]               ; 004c1c01
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004c1c08
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x168]               ; 004c1c0d
     ADD ESP,0x4                         ; 004c1c14
     MOV EAX,[0x01d5ba14]                ; 004c1c17 | DAT_01d5ba14
@@ -1715,7 +1715,7 @@ section .text
     LEA ESI,[ESP + 0x534]               ; 004c1e90
     LEA EDI,[ESP + 0x15c]               ; 004c1e97
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004c1e9e
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x534]               ; 004c1ea3
     ADD ESP,0x4                         ; 004c1eaa
     MOV EAX,[0x01d5ba14]                ; 004c1ead | DAT_01d5ba14
@@ -3120,7 +3120,7 @@ section .text
     LEA ESI,[ESP + 0x1e0]               ; 004c30da
     LEA EDI,[ESP + 0x21c]               ; 004c30e1
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004c30e8
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x1e0]               ; 004c30ed
     ADD ESP,0x4                         ; 004c30f4
     MOVSD ES:EDI,ESI                    ; 004c30f7

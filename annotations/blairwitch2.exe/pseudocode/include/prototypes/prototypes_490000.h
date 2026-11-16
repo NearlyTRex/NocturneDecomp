@@ -149,11 +149,11 @@ void __cdecl core_fire_cpp_CRock_setup_FUN_004965f0(CRock *this_ptr,CVector3f *p
 void __cdecl core_fire_cpp_loadRockAssets_FUN_00496610(void);
 void __cdecl core_fire_cpp_CRock_process_FUN_00496620(CRock *this_ptr);
 void __cdecl core_fire_cpp_CRock_render_FUN_004966a0(CRock *this_ptr);
-void __cdecl core_fire_cpp_CLeaf_init_FUN_00496750(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_00496750(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 void __cdecl core_fire_cpp_loadLeafAssets_FUN_00496780(void);
 void __cdecl core_fire_cpp_CLeaf_process_FUN_004967d0(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_render_FUN_004968d0(CLeaf *this_ptr);
-undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_00496990(CLeaf *this_ptr);
+int __cdecl core_fire_cpp_CLeaf_onCollision_FUN_00496990(CLeaf *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004969a0(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_00496a60(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00496a90(CMuzzleFlash *this_ptr);
@@ -221,7 +221,7 @@ void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0(CFireEffe
 void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50(CFireEffect *this_ptr,CVector3f *impact_pos,CVector3f *surface_normal,int ground_type,CDemonActor *hit_actor);
 void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int intensity_target,int intensity_scale,int spark_type,int fade_rate);
 void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
-void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0049d1c0(CFireEffect *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0049d2c0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type);
@@ -229,8 +229,8 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0049d450(CFireEff
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_0049d4b0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0049d500(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0049d5b0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
-void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
-void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
+void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0049d7e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);

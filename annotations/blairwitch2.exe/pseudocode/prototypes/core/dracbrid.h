@@ -67,7 +67,7 @@ int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *ou
 
 // Original: core_dracbrid.cpp_randomizePosition_FUN_00465370
 // Address: 00465370
-void randomizePosition(float param_1,float param_2,float param_3);
+CVector3f * __stack3_esi randomizePosition(float src_x,float src_y,float src_z,CVector3f *dest);
 
 // Original: core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400
 // Address: 00465400

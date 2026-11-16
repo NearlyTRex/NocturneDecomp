@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 200,
+    "complexity_score": 41,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 98
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -88,7 +86,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset)"
   },
   "function_calls": [
     {
@@ -332,31 +330,31 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "hand_index",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "object",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "CDemonActor *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "blend_time",
         "offset": 16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "carry_offset",
         "offset": 20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x4f *"
       }
     ]
   },
@@ -368,126 +366,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (1 < param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (1 < param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pSVar1 = this_ptr->carry_hands + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_3 + 0x2b0) + 0x90))(param_3,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_3 + 0x2b0) + 0x90))(param_3,this_ptr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_3 + 0x2b0) + 0x90))(param_3,this_ptr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pSVar1->carry_actor = (CDemonActor *)param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(this_ptr,param_2,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(this_ptr,param_2,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(this_ptr,param_2,param_4,param_5);",
-      "type": "unnamed_param"
     }
   ]
 }

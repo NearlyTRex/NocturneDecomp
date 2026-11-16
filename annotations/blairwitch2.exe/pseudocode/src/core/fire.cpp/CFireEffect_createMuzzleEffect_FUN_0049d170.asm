@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3)
+; void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ;
 ; XREF[2]:
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a1705
@@ -48,7 +48,7 @@ section .text
     PUSH EDI                            ; 0049d1ad
     PUSH EAX                            ; 0049d1ae
     CALL core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360 ; 0049d1af
-        ;   XREF to: 0059d360 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect * this_ptr, CVector3f * param_2, undefined4 param_3)
+        ;   XREF to: 0059d360 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 0049d1b4
     POP EDI                             ; 0049d1b7
     POP ESI                             ; 0049d1b8

@@ -283,11 +283,11 @@ int __cdecl CCharacter::hasDoorTarget(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 // Address: 004319d0
-void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
+void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset);
 
 // Original: core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
 // Address: 00431ab0
-void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
+void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset);
 
 // Original: core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00431c40
 // Address: 00431c40

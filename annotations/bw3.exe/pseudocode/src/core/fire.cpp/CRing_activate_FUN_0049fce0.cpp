@@ -2,13 +2,13 @@
 // Address: 0049fce0
 // Address Range: [[0049fce0, 0049fde9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4)
+// Signature: void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,uint *param_2,int param_3,CCharacter *param_4)
+void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 
 {
   float fVar1;
@@ -18,10 +18,10 @@ void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,uint *par
   float10 fVar5;
   float10 fVar6;
   
-  if (&this_ptr->center != (CVector3f *)param_2) {
-    (this_ptr->center).x = (float)*param_2;
-    (this_ptr->center).y = (float)param_2[1];
-    (this_ptr->center).z = (float)param_2[2];
+  if (&this_ptr->center != position) {
+    (this_ptr->center).x = position->x;
+    (this_ptr->center).y = position->y;
+    (this_ptr->center).z = position->z;
   }
   fVar1 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
                     (g_CDemonSetPtr,&this_ptr->center,0.0);
@@ -29,8 +29,8 @@ void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,uint *par
   if ((this_ptr->center).y - fVar1 < 1.0) {
     (this_ptr->center).y = fVar1 + 1.0;
   }
-  this_ptr->ring_type = param_3;
-  this_ptr->owner = param_4;
+  this_ptr->ring_type = ring_type;
+  this_ptr->owner = owner;
   pCVar3 = this_ptr->points;
   iVar4 = 0;
   pCVar2 = this_ptr;

@@ -3043,12 +3043,53 @@
         "start":"00417f50"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_boneguy.cpp_rgbToHsv_FUN_00417f50",
-    "ret":"undefined1",
+    "ret":"CColor3f*",
     "vars":{
+      "params":[
+        {
+          "name":"in_rgb",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CColor3f*"
+        },
+        {
+          "name":"out_hsv",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CColor3f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -5509,7 +5550,7 @@
           "type":"CCharacter*"
         },
         {
-          "name":"param_2",
+          "name":"hand_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -5525,7 +5566,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"blend_time",
           "storage":{
             "offset":12,
             "size":4,
@@ -5541,7 +5582,7 @@
           "type":"float"
         },
         {
-          "name":"param_4",
+          "name":"carry_offset",
           "storage":{
             "offset":16,
             "size":4,
@@ -5554,7 +5595,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CMatrix3x4f*"
         }
       ]
     }
@@ -5885,12 +5926,166 @@
         "start":"0042f750"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"cockpit_ckptutil.c_traceConnectedEdges_FUN_0042f750",
-    "ret":"undefined1",
+    "ret":"SEdge*",
     "vars":{
+      "params":[
+        {
+          "name":"edge_lists",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SEdgeList*"
+        },
+        {
+          "name":"scanline_data",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SEdgeList*"
+        },
+        {
+          "name":"existing_edges",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SEdge*"
+        },
+        {
+          "name":"max_x",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"max_y",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"gap_tolerance_x",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"gap_tolerance_y",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"gap_tolerance_connected",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"gap_tolerance_horizontal",
+          "storage":{
+            "offset":36,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x24]",
+                "offset":36,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -6735,7 +6930,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CCheesyCipher_process_FUN_00434dd0",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -6755,7 +6950,7 @@
           "type":"CCheesyCipher*"
         },
         {
-          "name":"param_2",
+          "name":"istream",
           "storage":{
             "offset":8,
             "size":4,
@@ -6768,10 +6963,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"void*"
         },
         {
-          "name":"param_3",
+          "name":"ostream",
           "storage":{
             "offset":12,
             "size":4,
@@ -6784,7 +6979,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -6845,7 +7040,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CInStreamPipe_tell_FUN_00435150",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -18071,7 +18266,7 @@
           "type":"CLeaf*"
         },
         {
-          "name":"param_2",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -18087,7 +18282,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_3",
+          "name":"velocity",
           "storage":{
             "offset":12,
             "size":4,
@@ -18103,7 +18298,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_4",
+          "name":"model",
           "storage":{
             "offset":16,
             "size":4,
@@ -18116,10 +18311,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CKeyFramedModel*"
         },
         {
-          "name":"param_5",
+          "name":"drag",
           "storage":{
             "offset":20,
             "size":4,
@@ -25086,7 +25281,7 @@
           "type":"CGame*"
         },
         {
-          "name":"param_2",
+          "name":"filename",
           "storage":{
             "offset":8,
             "size":4,
@@ -25102,7 +25297,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"width",
           "storage":{
             "offset":12,
             "size":4,
@@ -25115,10 +25310,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         },
         {
-          "name":"param_4",
+          "name":"height",
           "storage":{
             "offset":16,
             "size":4,
@@ -25131,10 +25326,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         },
         {
-          "name":"param_5",
+          "name":"display_time",
           "storage":{
             "offset":20,
             "size":4,
@@ -25147,7 +25342,7 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"float"
         }
       ]
     }
@@ -28583,14 +28778,29 @@
         "start":"004dc850"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_inv.cpp_setupItems_FUN_004dc850",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CInventory*"
+        }
+      ]
     }
   },
   {
@@ -47297,14 +47507,10 @@
         "start":"00559b50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_sound.cpp_processTrainSounds_FUN_00559b50",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"0055a1d0",
@@ -52072,14 +52278,10 @@
         "start":"005750d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"engine_texture.cpp_renderTextureAtlas_FUN_005750d0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"00575150",
@@ -55396,10 +55598,10 @@
         "start":"00593a50"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_matrixToQuaternion_FUN_00593a50",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -55499,8 +55701,48 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"matrix_in",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3f*"
+        },
+        {
+          "name":"quat_out",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -57593,7 +57835,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50",
-    "ret":"int",
+    "ret":"CSimpleParticleSystem*",
     "vars":{
       "params":[
         {
@@ -57613,7 +57855,7 @@
           "type":"CSimpleParticleSystem*"
         },
         {
-          "name":"param_2",
+          "name":"max_particles",
           "storage":{
             "offset":8,
             "size":4,
@@ -57626,7 +57868,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -57673,7 +57915,7 @@
           "type":"CSimpleParticleSystem*"
         },
         {
-          "name":"param_2",
+          "name":"owner",
           "storage":{
             "offset":8,
             "size":4,
@@ -57686,7 +57928,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -57753,7 +57995,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_bwspart.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250",
-    "ret":"undefined4",
+    "ret":"float",
     "vars":{
       "params":[
         {

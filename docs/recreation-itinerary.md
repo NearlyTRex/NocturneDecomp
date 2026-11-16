@@ -35,7 +35,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 20 | 0 |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 10 | 5 | 5.2% | 77 | 0 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 15 | 0 |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 14 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
 | 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 26 | 2 | 9.3% | 59 | 0 |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 4 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% | 164 | 0 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 67 | 0 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 0 |
-| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2139** | **0** |
+| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2140** | **0** |
 
 ## Step 0: Math value types
 
@@ -2032,7 +2032,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `flushBitBuffer` 0x0043e7e0 (39)
     - BW: [ ] bw1 0x004427e0 = bw2 0x00433ad0 = bw3 0x00440440 (logic-change)
   - [ ] `writeBitsToStream` 0x0043e6c0 (104)
-    - BW: [ ] bw1 0x00442490 = bw2 0x00433780 = bw3 0x004400f0 (logic-change)
+    - BW: [ ] bw1 0x00442600 = bw2 0x004338f0 = bw3 0x00440260 (logic-change)
   - [x] `extractBitsFromBuffer` 0x0043e840 (130)
 - class `CLZWDecompress`
   - [x] `init` 0x0043f4d0 (20)
@@ -3638,6 +3638,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00443790 = bw2 0x00434a70 = bw3 0x004413f0 (logic-change)
 - free functions
   - [ ] `readBitsFromStream` 0x0043e530 (144)
+    - BW: [ ] bw1 0x00442490 = bw2 0x00433780 = bw3 0x004400f0 (logic-change)
 - class `CLZWDictionary`
   - [ ] `readCodeFromStream` 0x0043f030 (76)
     - BW: [ ] bw1 0x004431b0 = bw3 0x00440e10 (logic-change)
@@ -9203,11 +9204,11 @@ the retail game has it too. Sizes are in instructions.
 | `sound/snddx.cpp` | 3 | 1 | 106 | 0 |
 | `sound/sndmain.cpp` | 16 | 16 | 647 | 0 |
 | `sound/sndwav.cpp` | 1 | 1 | 1 | 0 |
-| `support/codec.cpp` | 34 | 27 | 1170 | 0 |
+| `support/codec.cpp` | 33 | 27 | 1004 | 0 |
 | `support/trisock.cpp` | 35 | 2 | 3263 | 0 |
 | `support/trstream.cpp` | 81 | 79 | 3090 | 0 |
 | `wincore/winrun.cpp` | 23 | 0 | 1225 | 0 |
-| **All** | **2077** | **1448** | **191999** | **0** |
+| **All** | **2076** | **1448** | **191833** | **0** |
 
 ### `cockpit/ckptutil.c`
 - [ ] unnamed bw1 0x00438280, bw2 0x0042d570, bw3 0x00435e90 (6)
@@ -11437,7 +11438,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CAsciiArmor::dtor` bw1 0x004441c0, bw2 0x004354a0, bw3 0x00441e20 (31)
 - [ ] unnamed bw1 0x004425b0, bw2 0x004338a0, bw3 0x00440210 (19)
 - [ ] unnamed bw1 0x004425e0, bw2 0x004338d0, bw3 0x00440240 (10)
-- [ ] unnamed bw1 0x00442600, bw2 0x004338f0, bw3 0x00440260 (166)
 - [ ] unnamed bw1 0x004427a0, bw2 0x00433a90, bw3 0x00440400 (30)
 - [ ] unnamed bw1 0x00442a80, bw3 0x004406e0 (43)
 - [ ] unnamed bw1 0x004433f0, bw2 0x004346d0, bw3 0x00441050 (74)

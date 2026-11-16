@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 61,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 40
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CAsciiArmor_flush_FUN_00434c00",
-    "signature": "undefined4 __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00434c00(CAsciiArmor *this_ptr,int *param_2)"
+    "signature": "int __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00434c00(CAsciiArmor *this_ptr,void *ostream)"
   },
   "function_calls": [
     {
@@ -108,45 +107,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "ostream",
         "offset": 8,
         "size": 4,
-        "type": "int *"
+        "type": "void *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00434c00(CAsciiArmor *this_ptr,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*param_2 + 4))(param_2,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
+      "text": "(**(code **)(*(int *)ostream + 4))(ostream,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*param_2 + 4))(param_2,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*param_2 + 4))(param_2,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

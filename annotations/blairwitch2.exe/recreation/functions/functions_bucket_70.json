@@ -5189,14 +5189,14 @@
   },
   {
     "addr":"0042f2f0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
     "method":"isLineBlendingDisabled",
     "name":"cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042f2f0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5210,14 +5210,48 @@
       "005b8580",
       "005b86a0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":141,
     "method":"rotateBitmap",
     "name":"cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0",
+    "params":[
+      {
+        "name":"source_data",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bytes_per_pixel",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5342,14 +5376,48 @@
     "calls":[
       "00433a90"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":166,
-    "method":"FUN_004338f0",
-    "name":"support_codec.cpp_FUN_004338f0",
+    "method":"writeBitsToStream",
+    "name":"support_codec.cpp_writeBitsToStream_FUN_004338f0",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bit_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bit_value",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"ostream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5819,10 +5887,20 @@
     "instructions":18,
     "method":"ungetChar",
     "name":"support_codec.cpp_CInStreamPipe_ungetChar_FUN_00434ff0",
+    "params":[
+      {
+        "name":"ch",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5842,42 +5920,42 @@
     "name":"support_codec.cpp_CInStreamPipe_open_FUN_00435270",
     "params":[
       {
-        "name":"param_2",
+        "name":"codec",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CCodec",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"source",
         "type":{
           "kind":"builtin",
-          "name":"ulong",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"owns_streams",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"buffer_size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -6203,18 +6281,18 @@
     "name":"core_cow.cpp_CZombieCow_getTargetPoints_FUN_00439bf0",
     "params":[
       {
-        "name":"param_2",
+        "name":"out_points_array",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"class",
+          "name":"CVector3f",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/cow.cpp",
@@ -8097,15 +8175,49 @@
     "calls":[
       "0040cf60"
     ],
-    "conv":"unknown",
+    "conv":"__stack3_esi",
     "instructions":43,
     "method":"randomizePosition",
     "name":"core_dracbrid.cpp_randomizePosition_FUN_00465370",
+    "params":[
+      {
+        "name":"src_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/dracbrid.cpp",
     "variadic":false
@@ -11558,19 +11670,19 @@
     "name":"core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"rotation_matrix",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
         }
       }
     ],
@@ -19035,18 +19147,18 @@
     "name":"core_shadow.cpp_CShadow_getTargetPoints_FUN_0053ec70",
     "params":[
       {
-        "name":"param_2",
+        "name":"out_points_array",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"class",
+          "name":"CVector3f",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/shadow.cpp",
@@ -22571,18 +22683,18 @@
     "name":"support_trstream.cpp_COutStreamFile_seek_FUN_0057dcf0",
     "params":[
       {
-        "name":"param_2",
+        "name":"offset",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"origin",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -22590,7 +22702,7 @@
     "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"bool",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -22990,15 +23102,33 @@
     "calls":[
       "005b9989"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":58,
     "method":"convertDirectionVectorToEulerAngles",
     "name":"core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0",
+    "params":[
+      {
+        "name":"in_direction_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/vecdir.cpp",
     "variadic":false
@@ -23224,14 +23354,14 @@
       "004e4500",
       "005b8580"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":57,
     "method":"allocateRenderBuffers",
     "name":"wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00588670",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",

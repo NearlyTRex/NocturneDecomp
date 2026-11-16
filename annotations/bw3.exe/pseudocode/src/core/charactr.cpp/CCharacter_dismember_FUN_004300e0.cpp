@@ -30,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_004300e0(CCharacter *thi
   byte auStack_8c [8];
   float local_84 [4];
   float fStack_74;
-  float local_70 [3];
+  CVector3f local_70;
   CVector3f local_64;
   CVector3f local_58;
   float fStack_44;
@@ -56,14 +56,16 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_004300e0(CCharacter *thi
         do {
           pCVar7 = impact_point;
           if ((impact_point != (CVector3f *)0x0) && (0.0 < impact_force)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(impact_point);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(impact_point,&local_70)
+            ;
             min_value = -impact_force;
             local_28[1] = min_value;
-            local_ac.x = local_70[0];
-            *(float *)((int)&local_ac + (uint)bVar6 * -8 + 4) = local_70[(uint)bVar6 * -2 + 1];
+            local_ac.x = local_70.x;
+            *(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4) =
+                 *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);
             max_value = (CBoundingBox3D *)impact_force;
-            *(float *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-                 local_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 2];
+            *(uint *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+                 *(uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,impact_force);
             local_ac.y = local_18 + local_ac.y;
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -106,13 +108,13 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_004300e0(CCharacter *thi
   afStack_40[0] = fStack_b8 + local_ac.x;
   afStack_40[1] = fStack_b4 + local_ac.y;
   fStack_74 = fStack_bc + fStack_b0;
-  local_70[(uint)bVar6 * -2] = afStack_40[(uint)bVar6 * -2];
-  local_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+  *(float *)((int)&local_70 + (uint)bVar6 * -8) = afStack_40[(uint)bVar6 * -2];
+  *(float *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =
        afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   pCVar7 = &CStack_38;
   fStack_2c = fStack_74 * _DAT_005b839e;
-  local_28[0] = local_70[0] * _DAT_005b839e;
-  local_28[1] = local_70[1] * _DAT_005b839e;
+  local_28[0] = local_70.x * _DAT_005b839e;
+  local_28[1] = local_70.y * _DAT_005b839e;
   CStack_38.x = fStack_74 * _DAT_005b839e;
   *(float *)((int)&CStack_38 + (uint)bVar6 * -8 + 4) = local_28[(uint)bVar6 * -2];
   *(float *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =

@@ -27,11 +27,11 @@ uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,fl
 
 // Original: core_sound.cpp_resetTrainSounds_FUN_0057c4e0
 // Address: 0057c4e0
-void resetTrainSounds(void);
+void __cdecl resetTrainSounds(void);
 
 // Original: core_sound.cpp_processTrainSounds_FUN_0057c580
 // Address: 0057c580
-uint processTrainSounds(void);
+void __cdecl processTrainSounds(void);
 
 // Original: core_sound.cpp_CSound_ctor_FUN_0057cb10
 // Address: 0057cb10

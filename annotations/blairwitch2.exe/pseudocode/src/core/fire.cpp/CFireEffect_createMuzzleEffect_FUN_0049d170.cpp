@@ -2,13 +2,13 @@
 // Address: 0049d170
 // Address Range: [[0049d170, 0049d1b9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,uint param_3)
+void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
   int iVar1;
@@ -19,6 +19,6 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffe
     _DAT_01c8672c = 0;
   }
   core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360
-            ((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);
+            ((CMuzzleEffect *)(&DAT_01c86730 + iVar1),position,rotation_matrix);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_lightsta_cpp_CLightStaff_fire_FUN_004e1070(CLightStaff *this_ptr)
+; int __cdecl core_lightsta_cpp_CLightStaff_fire_FUN_004e1070(CLightStaff *this_ptr)
 ;
 ; Parameters:
 ; CLightStaff *    Stack[0x4]:4   this_ptr
@@ -782,7 +782,7 @@ section .text
     LEA ESI,[ESP + 0x138]               ; 004e1bf7
     LEA EDI,[ESP + 0x1ec]               ; 004e1bfe
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004e1c05
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x138]               ; 004e1c0a
     ADD ESP,0x4                         ; 004e1c11
     MOVSD ES:EDI,ESI                    ; 004e1c14

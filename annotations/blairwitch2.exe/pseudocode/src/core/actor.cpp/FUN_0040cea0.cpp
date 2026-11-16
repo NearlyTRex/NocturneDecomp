@@ -2,11 +2,11 @@
 // Address: 0040cea0
 // Address Range: [[0040cea0, 0040cecf]]
 // Convention: unknown
-// Signature: void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,float param_3,float param_4,float param_5)
 
 #include "nocturne.h"
 
-void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,uint param_3,uint param_4,uint param_5)
+void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,float param_3,float param_4,float param_5)
 
 {
   core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140

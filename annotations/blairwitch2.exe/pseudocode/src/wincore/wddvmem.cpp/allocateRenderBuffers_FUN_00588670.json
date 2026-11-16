@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 154,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 90
+    "total_lines": 89
   },
   "cross_references": [],
   "function": {
@@ -24,9 +24,9 @@
         "00588735"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00588670",
-    "signature": "void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_00588670(void)"
+    "signature": "void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_00588670(void)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 7,
       "match": "DAT_00622010",
       "severity": "mild",
       "text": "DAT_00622010 = malloc",
@@ -187,7 +187,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 8,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "(((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "(((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -",
@@ -196,14 +204,6 @@
     {
       "description": "Undefined global data reference",
       "line": 9,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "(((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "(uint)((DAT_006141c0 >> 0x1f) << 2 < 0)) >> 3) *",
@@ -211,7 +211,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 10,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "DAT_006141b8 * DAT_006141bc);",
@@ -219,7 +219,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 10,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "DAT_006141b8 * DAT_006141bc);",
@@ -227,7 +227,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 11,
       "match": "DAT_00622010",
       "severity": "mild",
       "text": "if (DAT_00622010 == (void *)0x0) {",
@@ -235,7 +235,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "_DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);",
@@ -243,7 +243,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "_DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 18,
       "match": "DAT_0070c62c",
       "severity": "mild",
       "text": "DAT_0070c62c = (int)_DAT_02661af0 + 0x10U & 0xfffffff0;",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_0070c62c",
       "severity": "mild",
       "text": "DAT_0070c62c = (int)_DAT_02661af0 + 0x10U & 0xfffffff0;",

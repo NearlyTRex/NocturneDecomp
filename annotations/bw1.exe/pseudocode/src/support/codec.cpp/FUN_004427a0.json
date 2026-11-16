@@ -24,15 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00442600",
-      "from_addr": "00442615",
-      "name": "support_codec.cpp_FUN_00442600",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004427e0",
       "from_addr": "004427ec",
       "name": "support_codec.cpp_flushBitBuffer_FUN_004427e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442600",
+      "from_addr": "00442615",
+      "name": "support_codec.cpp_writeBitsToStream_FUN_00442600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +70,7 @@
       {
         "call_addr": "00442615",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00442600",
+        "caller": "support_codec.cpp_writeBitsToStream_FUN_00442600",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

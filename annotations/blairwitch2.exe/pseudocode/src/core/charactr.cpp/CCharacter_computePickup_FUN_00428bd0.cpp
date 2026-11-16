@@ -2,13 +2,13 @@
 // Address: 00428bd0
 // Address Range: [[00428bd0, 00428d52]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int param_2,float param_3,int *param_4)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int param_2,float param_3,int *param_4)
+void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset)
 
 {
   int iVar1;
@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter 
   CMatrix3x4f local_40;
   
   bVar5 = 0;
-  pSVar2 = this_ptr->carry_hands + param_2;
+  pSVar2 = this_ptr->carry_hands + hand_index;
   if (pSVar2->bone_index < 0) {
     _DAT_01d046a0 = "..\\core\\charactr.cpp";
     _DAT_01d046a4 = 0xe32;
@@ -62,23 +62,23 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(CCharacter 
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
   }
-  if (param_3 <= 0.0) {
+  if (blend_time <= 0.0) {
     pSVar2->blend_factor = 1.0;
     pSVar2->blend_speed = 0.0;
   }
   else {
     pSVar2->blend_factor = 0.0;
-    pSVar2->blend_speed = 1.0 / param_3;
+    pSVar2->blend_speed = 1.0 / blend_time;
   }
-  if (param_4 == (int *)0x0) {
+  if (carry_offset == (CMatrix3x4f *)0x0) {
     pSVar2->has_carry_offset = 0;
     return;
   }
   pSVar2->has_carry_offset = 1;
   pCVar3 = &pSVar2->carry_offset;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = (float)*param_4;
-    param_4 = param_4 + (uint)bVar5 * -2 + 1;
+    pCVar3->m[0].w = carry_offset->m[0].w;
+    carry_offset = (CMatrix3x4f *)((int)carry_offset + ((uint)bVar5 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
   }
   return;

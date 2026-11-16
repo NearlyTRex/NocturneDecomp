@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(float *param_1)
+; CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f *in_direction_vector,CVector3f *out_euler_angles)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   in_direction_vector
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

@@ -358,12 +358,12 @@ section .text
     LEA ESI,[EBX + 0x154]               ; 004509b6
     PUSH ESI                            ; 004509bc
     CALL core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 004509bd
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, int max_particles)
     ADD ESP,0x8                         ; 004509c2
     PUSH EBX                            ; 004509c5
     PUSH ESI                            ; 004509c6
     CALL core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 004509c7
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, CDemonActor * owner)
     MOV ESI,0x5cfe23                    ; 004509cc | = "LANTERN"
     LEA EAX,[EBX + 0x259b4]             ; 004509d1
     ADD ESP,0x8                         ; 004509d7

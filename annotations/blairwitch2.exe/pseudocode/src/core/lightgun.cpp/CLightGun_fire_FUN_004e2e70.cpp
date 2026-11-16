@@ -49,7 +49,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   CVector3f CStack_160;
   float afStack_154 [9];
   CVector3f CStack_130;
-  uint uStack_124;
+  float fStack_124;
   float afStack_120 [2];
   CVector3f CStack_118;
   CVector3f aCStack_10c [2];
@@ -57,9 +57,9 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   CVector3f CStack_e8;
   CVector3f CStack_d8;
   CVector3f CStack_c4;
-  float fStack_b4;
-  float afStack_b0 [4];
-  float afStack_a0 [3];
+  CVector3f CStack_b8;
+  float afStack_ac [3];
+  CVector3f CStack_a0;
   byte auStack_94 [8];
   float afStack_8c [4];
   float fStack_7c;
@@ -84,7 +84,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
   this_ptr->charge_level = 0.0;
   this_ptr->beam_length = fVar6;
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-  afStack_a0[2] = (float)uStack_124;
+  CStack_a0.z = fStack_124;
   *(float *)(auStack_94 + (uint)bVar12 * -8) = afStack_120[(uint)bVar12 * -2];
   *(float *)(auStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4) =
        afStack_120[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
@@ -255,12 +255,13 @@ LAB_004e312d:
                  fStack_4c * fStack_4c + afStack_48[0] * afStack_48[0]) < (float)_DAT_005dc0b2) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                     (pCVar4,&position->position,&CStack_c4);
-          afStack_a0[0] = CStack_c4.x;
-          afStack_a0[(uint)bVar12 * -2 + 1] = *(float *)((int)&CStack_c4 + (uint)bVar12 * -8 + 4);
+          CStack_a0.x = CStack_c4.x;
+          *(uint *)(auStack_94 + (uint)bVar12 * -8 + -8) =
+               *(uint *)((int)&CStack_c4 + (uint)bVar12 * -8 + 4);
           *(uint *)(auStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + -4) =
                *(uint *)((int)&CStack_c4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-          afStack_a0[1] = 0.0;
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 4);
+          CStack_a0.y = 0.0;
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_a0,&CStack_b8);
           core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffe04);
           dVar14 = 3.3617115671562693e-307;
           in_stack_fffffe14 =
@@ -291,15 +292,15 @@ LAB_004e312d:
         CStack_24.y = (float)(CStack_16c.z + unaff_retaddr[1]);
         pCVar10 = (CVector3f *)auStack_78;
         CStack_24.z = (float)(CStack_160.x + unaff_retaddr[2]);
-        fStack_b4 = CStack_16c.y + *unaff_retaddr;
-        afStack_b0[(uint)bVar12 * -2] = *(float *)((int)&CStack_24 + (uint)bVar12 * -8 + 4);
-        afStack_b0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+        CStack_b8.y = CStack_16c.y + *unaff_retaddr;
+        afStack_ac[(uint)bVar12 * -2 + -1] = *(float *)((int)&CStack_24 + (uint)bVar12 * -8 + 4);
+        afStack_ac[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
              *(float *)((int)&CStack_24 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
         core_actor_cpp_CVector3f_ctor_FUN_0040d340(pCVar10);
-        auStack_78._0_4_ = fStack_b4 * _DAT_005dc0aa;
-        auStack_78._4_4_ = afStack_b0[0] * _DAT_005dc0aa;
-        auStack_78._8_4_ = afStack_b0[1] * _DAT_005dc0aa;
-        CStack_d8.x = fStack_b4 * _DAT_005dc0aa;
+        auStack_78._0_4_ = CStack_b8.y * _DAT_005dc0aa;
+        auStack_78._4_4_ = CStack_b8.z * _DAT_005dc0aa;
+        auStack_78._8_4_ = afStack_ac[0] * _DAT_005dc0aa;
+        CStack_d8.x = CStack_b8.y * _DAT_005dc0aa;
         *(uint *)((int)&CStack_d8 + (uint)bVar12 * -8 + 4) =
              *(uint *)(auStack_78 + (uint)bVar12 * -8 + 4);
         *(float *)((int)&CStack_d8 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =

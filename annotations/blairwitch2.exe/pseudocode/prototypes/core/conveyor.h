@@ -43,7 +43,7 @@ void __cdecl CConveyor::archive(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_getCollisionType_FUN_00438820
 // Address: 00438820
-undefined4 __cdecl CConveyor::getCollisionType(CConveyor *this_ptr);
+ECollisionType __cdecl CConveyor::getCollisionType(CConveyor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_00438830
 // Address: 00438830

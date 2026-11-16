@@ -324,7 +324,7 @@ section .text
     PUSH 0x1                            ; 00524c35
     PUSH EBX                            ; 00524c37
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00524c38
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00524c3d
     PUSH 0x5cd7a9                       ; 00524c40 | = "CTrap"
     MOV EDX,dword ptr [EBX + 0x20bac]   ; 00524c45
@@ -1367,7 +1367,7 @@ section .text
     PUSH 0x0                            ; 00525845
     PUSH EBX                            ; 00525847
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00525848
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     MOV dword ptr [ESI + 0x23a0],0x1    ; 0052584d
     ADD ESP,0x14                        ; 00525857
     MOV dword ptr [EBX + 0x20b88],0x41700000 ; 0052585a

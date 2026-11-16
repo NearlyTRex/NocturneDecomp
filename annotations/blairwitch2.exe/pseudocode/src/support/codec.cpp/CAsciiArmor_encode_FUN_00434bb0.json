@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 80,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 43
@@ -26,13 +25,13 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CAsciiArmor_encode_FUN_00434bb0",
-    "signature": "undefined4 __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_00434bb0(CAsciiArmor *this_ptr,undefined4 param_2,int *param_3)"
+    "signature": "int __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_00434bb0(CAsciiArmor *this_ptr,void *istream,void *ostream)"
   },
   "function_calls": [
     {
       "addr": "00433780",
       "is_variadic": false,
-      "name": "support_codec.cpp_writeBitsToStream_FUN_00433780"
+      "name": "support_codec.cpp_readBitsFromStream_FUN_00433780"
     }
   ],
   "globals": [
@@ -105,68 +104,28 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "istream",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "ostream",
         "offset": 12,
         "size": 4,
-        "type": "int *"
+        "type": "void *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_00434bb0(CAsciiArmor *this_ptr,uint param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_00434bb0(CAsciiArmor *this_ptr,uint param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = support_codec_cpp_writeBitsToStream_FUN_00433780(&this_ptr->bit_buffer,6,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*param_3 + 4))(param_3,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
+      "text": "(**(code **)(*(int *)ostream + 4))(ostream,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(**(code **)(*param_3 + 4))(param_3,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(**(code **)(*param_3 + 4))(param_3,\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

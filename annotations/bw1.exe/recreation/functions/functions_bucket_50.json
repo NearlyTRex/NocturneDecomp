@@ -2191,15 +2191,33 @@
   },
   {
     "addr":"0041b3d0",
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":135,
     "method":"rgbToHsv",
     "name":"core_boneguy.cpp_rgbToHsv_FUN_0041b3d0",
+    "params":[
+      {
+        "name":"in_rgb",
+        "type":{
+          "kind":"class",
+          "name":"CColor3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_hsv",
+        "type":{
+          "kind":"class",
+          "name":"CColor3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CColor3f",
+      "ptr":1
     },
     "tu":"core/boneguy.cpp",
     "variadic":false
@@ -3978,26 +3996,26 @@
     "name":"support_codec.cpp_CAsciiArmor_encode_FUN_004438d0",
     "params":[
       {
-        "name":"param_2",
+        "name":"istream",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"ostream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4047,8 +4065,8 @@
     "name":"support_codec.cpp_CInStreamPipe_isEof_FUN_00443ed0",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -16370,15 +16388,65 @@
       "005bfb40",
       "005c0d10"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":102,
     "method":"loadPBGFile",
     "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750",
+    "params":[
+      {
+        "name":"bitmap_set_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPackedBitmapSet",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pbg_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frames_per_bitmap",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_data_load",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"selected_bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CPackedBitmap",
+      "ptr":1
     },
     "tu":"cockpit/pkbitmap.cpp",
     "variadic":false

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00443d10(CInStreamPipe *this_ptr)
+; int __cdecl support_codec_cpp_CInStreamPipe_ungetChar_FUN_00443d10(CInStreamPipe *this_ptr,int ch)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   ch
 ;
 ; *****************************************************************************
 

@@ -63,14 +63,13 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
   char acStack_255 [100];
   char acStack_1f1 [101];
   char local_18c [64];
-  uint local_14c;
+  float local_14c;
   float local_148 [2];
   CVector3f local_140;
-  float local_134 [3];
+  CVector3f local_134;
   CVector3f local_128;
   CVector3f local_11c;
-  uint local_110;
-  float afStack_10c [2];
+  CVector3f local_110;
   uint local_104;
   int local_100;
   int local_fc;
@@ -1046,18 +1045,21 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
                         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                                   ((CDemonActor *)pCVar11,&(pCVar14->base).base.location.position,
                                    &local_11c);
-                        local_134[0] = local_11c.x;
-                        local_134[(uint)bVar18 * -2 + 1] =
-                             *(float *)((int)&local_11c + (uint)bVar18 * -8 + 4);
-                        local_134[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 2] =
-                             *(float *)((int)&local_11c + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
-                        ;
-                        local_134[1] = 0.0;
-                        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(local_134);
-                        local_14c = local_110;
-                        local_148[(uint)bVar18 * -2] = afStack_10c[(uint)bVar18 * -2];
+                        local_134.x = local_11c.x;
+                        *(uint *)((int)&local_134 + (uint)bVar18 * -8 + 4) =
+                             *(uint *)((int)&local_11c + (uint)bVar18 * -8 + 4);
+                        *(uint *)((int)&local_134 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
+                             = *(uint *)
+                                ((int)&local_11c + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
+                        local_134.y = 0.0;
+                        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+                                  (&local_134,&local_110);
+                        local_14c = local_110.x;
+                        local_148[(uint)bVar18 * -2] =
+                             *(float *)((int)&local_110 + (uint)bVar18 * -8 + 4);
                         local_148[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
-                             afStack_10c[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1];
+                             *(float *)((int)&local_110 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
+                        ;
                         if (local_10b8 * _DAT_005bfdd8 * (float)_DAT_005bfde0 < ABS(local_148[0])) {
                           local_104 = 0;
                         }

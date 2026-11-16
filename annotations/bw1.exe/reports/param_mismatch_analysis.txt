@@ -15,27 +15,17 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5719
 Functions with no callers: 2698
-Parameter mismatches detected: 434
-Signature accuracy rate: 85.6%
+Parameter mismatches detected: 423
+Signature accuracy rate: 86.0%
 
 Mismatches by confidence:
-  High confidence:   21 (multiple call sites agree)
-  Medium confidence: 80 (some agreement)
-  Low confidence:    333 (limited data)
+  High confidence:   19 (multiple call sites agree)
+  Medium confidence: 77 (some agreement)
+  Low confidence:    327 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
-
-  core_event.cpp_extractParenArg_FUN_004a1630
-    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
-    Call sites: 7, Confidence: high
-    File: core/event.cpp
-    Signature: char * core_event_cpp_extractParenArg_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4)
-    Sample call sites:
-      core_event.cpp_FUN_004a1d00 at 004a20d4: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
-      core_event.cpp_FUN_004a1d00 at 004a25e4: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
-      core_event.cpp_FUN_004a1d00 at 004a2dba: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
 
   crt_unknown.c_FUN_005c5f7c
     Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
@@ -76,16 +66,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_unknown.c_FUN_005cdce0 at 005cdd48: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
       crt_unknown.c_FUN_005cdce0 at 005cdd93: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
       crt_unknown.c_FUN_005cdce0 at 005cdddd: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
-
-  core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
-    Call sites: 6, Confidence: high
-    File: core/xform.cpp
-    Signature: undefined4 * core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(float *param_1)
-    Sample call sites:
-      core_doc.cpp_CDoc_extractTurnP at 0046e695: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
-      core_platfrm.cpp_CPlatform_eva at 0053978f: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
-      core_stranger.cpp_CStranger_ex at 00589f75: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
 
   crt_unknown.c_FUN_005c8f5f
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
@@ -241,7 +221,6 @@ MEDIUM CONFIDENCE MISMATCHES
 
   crt_unknown.c_FUN_005c5450                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_005ce300                         declared:0 est:7 (+7) [2 calls]
-  core_actor.cpp_rayCylinderIntersect_FUN_004080c0   declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_0059d360                   declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_0059d4b0                   declared:0 est:6 (+6) [2 calls]
   core_flashlit.cpp_FUN_004ba540                     declared:0 est:5 (+5) [2 calls]
@@ -250,7 +229,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005c9478                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005caf60                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005ccff0                         declared:0 est:5 (+5) [2 calls]
-  core_xform.cpp_quaternionFromAxisAngle_FUN_005b7bb declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005c12d0                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005c5ab0                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005c9db8                         declared:0 est:4 (+4) [2 calls]
@@ -262,7 +240,6 @@ MEDIUM CONFIDENCE MISMATCHES
   engine_texture.cpp_FUN_005976a0                    declared:0 est:4 (+4) [2 calls]
   support_codec.cpp_FUN_004425b0                     declared:0 est:4 (+4) [2 calls]
   core_set.cpp_FUN_00551990                          declared:0 est:3 (+3) [2 calls]
-  core_vecdir.cpp_convertDirectionVectorToEulerAngle declared:0 est:3 (+3) [50 calls]
   crt_unknown.c_FUN_005c44f0                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_005c9988                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_005ca420                         declared:0 est:3 (+3) [2 calls]
@@ -289,14 +266,17 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005ccb40                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_005cd0f0                         declared:0 est:2 (+2) [5 calls]
   crt_unknown.c_FUN_005cda1e                         declared:0 est:2 (+2) [1 calls]
+  crt_unknown.c_FUN_005cdf00                         declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_ldexp_FUN_005cd881                   declared:0 est:2 (+2) [1 calls]
+  engine_keyframe.c_calculatePackedSurfaceNormal_FUN declared:2 est:0 (-2) [2 calls]
 
-  ... and 30 more
+  ... and 27 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  333 functions with low-confidence mismatches
+  327 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
     core_actor.cpp_checkNameHash_FUN_0040c580     declared:2 est:1 (-1)
@@ -304,10 +284,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
     core_actor.cpp_FUN_0040cff0                   declared:0 est:4 (+4)
     engine_alphabit.cpp_FUN_0040d9a0              declared:0 est:1 (+1)
     core_bird.cpp_FUN_00415830                    declared:0 est:2 (+2)
-    engine_boss.c_modelStructNotSupported4_FUN_00 declared:0 est:2 (+2)
     core_box.cpp_CBox_processPhysics_FUN_0041e130 declared:2 est:1 (-1)
     core_carved.cpp_FUN_00428550                  declared:0 est:4 (+4)
     core_carved.cpp_FUN_0042a930                  declared:0 est:4 (+4)
+    core_carved.cpp_FUN_0042b290                  declared:0 est:2 (+2)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
@@ -316,7 +296,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 38
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 396
+Functions where declaration has FEWER params than estimated: 385
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -327,12 +307,12 @@ Distribution of differences (estimated - declared):
   -2 params: 6 functions
   -1 params: 26 functions
   +1 params: 102 functions
-  +2 params: 97 functions
-  +3 params: 61 functions
-  +4 params: 56 functions
-  +5 params: 30 functions
-  +6 params: 25 functions
-  +7 params: 12 functions
+  +2 params: 95 functions
+  +3 params: 58 functions
+  +4 params: 55 functions
+  +5 params: 27 functions
+  +6 params: 24 functions
+  +7 params: 11 functions
   +8 params: 4 functions
   +9 params: 3 functions
   +10 params: 5 functions

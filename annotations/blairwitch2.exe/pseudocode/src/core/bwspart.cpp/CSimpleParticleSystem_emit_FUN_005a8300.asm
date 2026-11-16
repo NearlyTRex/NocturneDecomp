@@ -1,22 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
-; undefined4       Stack[0x18]:4   param_6
-; undefined4       Stack[0x1c]:4   param_7
-; undefined4       Stack[0x20]:4   param_8
-; undefined4       Stack[0x24]:4   param_9
-; float *          Stack[0x28]:4   param_10
-; undefined4 *     Stack[0x2c]:4   param_11
-; undefined4 *     Stack[0x30]:4   param_12
-; undefined4       Stack[0x34]:4   param_13
+; float            Stack[0x8]:4   lifetime
+; float            Stack[0xc]:4   alpha_start
+; float            Stack[0x10]:4   alpha_end
+; float            Stack[0x14]:4   size_start
+; float            Stack[0x18]:4   size_end
+; float            Stack[0x1c]:4   red
+; float            Stack[0x20]:4   green
+; float            Stack[0x24]:4   blue
+; CVector3f *      Stack[0x28]:4   position_offset
+; CVector3f *      Stack[0x2c]:4   velocity
+; CVector3f *      Stack[0x30]:4   acceleration
+; int              Stack[0x34]:4   texture_index
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

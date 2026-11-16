@@ -212,7 +212,7 @@ section .text
     LEA EAX,[EBP + -0x26]               ; 004b52ce
     PUSH EAX                            ; 004b52d1
     CALL core_slew.cpp_CSlew_init_FUN_00549380 ; 004b52d2
-        ;   XREF to: 00549380 (UNCONDITIONAL_CALL)  ; undefined8 core_slew.cpp_CSlew_init_FUN_00549380(CSlew * this_ptr)
+        ;   XREF to: 00549380 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_init_FUN_00549380(CSlew * this_ptr)
     MOV EDX,dword ptr [0x01cedef4]      ; 004b52d7 | DAT_01cedef4
     MOV EDX,dword ptr [EDX*0x4 + 0x1cedee4] ; 004b52dd
     LEA EAX,[EBP + -0x26]               ; 004b52e4

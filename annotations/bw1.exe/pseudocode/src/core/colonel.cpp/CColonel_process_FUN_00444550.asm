@@ -174,7 +174,7 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 0044467d
     LEA EDI,[ESP + 0x48]                ; 00444684
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00444688
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0xa8]                ; 0044468d
     ADD ESP,0x4                         ; 00444694
     MOVSD ES:EDI,ESI                    ; 00444697
@@ -481,7 +481,7 @@ section .text
     PUSH EBX                            ; 004449f4
         ;   Label: LAB_004449f4
     CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0 ; 004449f5
-        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
+        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004449fa
     JMP 0x00444948                      ; 004449fd
         ;   XREF to: 00444948 (UNCONDITIONAL_JUMP)  ; LAB_00444948

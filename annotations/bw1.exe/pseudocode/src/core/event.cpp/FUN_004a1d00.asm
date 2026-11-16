@@ -727,7 +727,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a20d0
     PUSH EAX                            ; 004a20d3
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a20d4
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a20d9
     TEST EAX,EAX                        ; 004a20dc
     JNZ 0x004a2140                      ; 004a20de
@@ -1290,7 +1290,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a25e0
     PUSH EAX                            ; 004a25e3
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a25e4
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a25e9
     TEST EAX,EAX                        ; 004a25ec
     JNZ 0x004a2140                      ; 004a25ee
@@ -1623,7 +1623,7 @@ section .text
     PUSH EBX                            ; 004a2913
     PUSH ESI                            ; 004a2914
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 004a2915
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 004a291a
     JMP 0x004a21fb                      ; 004a291d
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -2112,7 +2112,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a2db6
     PUSH EAX                            ; 004a2db9
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a2dba
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a2dbf
     TEST EAX,EAX                        ; 004a2dc2
     JNZ 0x004a2140                      ; 004a2dc4
@@ -2349,7 +2349,7 @@ section .text
     MOV ECX,dword ptr [0x0061d95c]      ; 004a2ffd | g_CGamePtr
     PUSH ECX                            ; 004a3003 | g_CGameInstance
     CALL core_game.cpp_CGame_displayBitmap_FUN_004d7730 ; 004a3004
-        ;   XREF to: 004d7730 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayBitmap_FUN_004d7730(CGame * this_ptr, char * param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 004d7730 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayBitmap_FUN_004d7730(CGame * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 004a3009
     JMP 0x004a21fb                      ; 004a300c
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3508,7 +3508,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a3ab2
     PUSH EAX                            ; 004a3ab5
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a3ab6
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a3abb
     TEST EAX,EAX                        ; 004a3abe
     JNZ 0x004a2140                      ; 004a3ac0
@@ -3563,7 +3563,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a3b39
     PUSH EAX                            ; 004a3b3c
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a3b3d
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a3b42
     TEST EAX,EAX                        ; 004a3b45
     JNZ 0x004a2140                      ; 004a3b47
@@ -3618,7 +3618,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a3bc3
     PUSH EAX                            ; 004a3bc6
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a3bc7
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a3bcc
     TEST EAX,EAX                        ; 004a3bcf
     JNZ 0x004a2140                      ; 004a3bd1
@@ -3673,7 +3673,7 @@ section .text
     LEA EAX,[EBP + -0x7a]               ; 004a3c4e
     PUSH EAX                            ; 004a3c51
     CALL core_event.cpp_extractParenArg_FUN_004a1630 ; 004a3c52
-        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_004a1630()
+        ;   XREF to: 004a1630 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_extractParenArg_FUN_004a1630(char * * cursor, char * out_buf, int max_len, int require_open_paren)
     ADD ESP,0x10                        ; 004a3c57
     TEST EAX,EAX                        ; 004a3c5a
     JNZ 0x004a2140                      ; 004a3c5c

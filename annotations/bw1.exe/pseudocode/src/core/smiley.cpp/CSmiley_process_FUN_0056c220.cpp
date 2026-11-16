@@ -40,14 +40,13 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_0056c220(CSmiley *this_ptr,floa
   float afStack_164 [4];
   float fStack_154;
   CVector3f CStack_150;
-  uint uStack_144;
+  float fStack_144;
   float afStack_140 [2];
   CVector3f CStack_138;
   CVector3f CStack_12c;
   CVector3f CStack_120;
   CVector3f CStack_114;
-  float fStack_108;
-  float afStack_104 [2];
+  CVector3f CStack_108;
   CVector3f CStack_fc;
   CVector3f CStack_f0;
   float fStack_e4;
@@ -61,10 +60,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_0056c220(CSmiley *this_ptr,floa
   float fStack_9c;
   float fStack_98;
   float fStack_94;
-  uint uStack_90;
+  CVector3f CStack_90;
   float fStack_84;
-  float fStack_80;
-  float fStack_7c;
+  float afStack_80 [2];
   CVector3f CStack_78;
   float fStack_6c;
   float afStack_68 [2];
@@ -176,23 +174,24 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_0056c220(CSmiley *this_ptr,floa
         if (pCVar3 != (CCharacter *)0x0) {
           fStack_84 = (pCVar3->base).location.position.x -
                       (this_ptr->base).base.base.location.position.x;
-          fStack_80 = (pCVar3->base).location.position.y -
-                      (this_ptr->base).base.base.location.position.y;
-          fStack_7c = (pCVar3->base).location.position.z -
-                      (this_ptr->base).base.base.location.position.z;
-          fStack_108 = fStack_84;
-          afStack_104[(uint)bVar10 * -2] = afStack_b0[(uint)bVar10 * -2 + 0xc];
-          afStack_104[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-               afStack_b0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
-          fStack_28 = SQRT(afStack_104[1] * afStack_104[1] +
-                           fStack_108 * fStack_108 + afStack_104[0] * afStack_104[0]);
+          afStack_80[0] =
+               (pCVar3->base).location.position.y - (this_ptr->base).base.base.location.position.y;
+          afStack_80[1] =
+               (pCVar3->base).location.position.z - (this_ptr->base).base.base.location.position.z;
+          CStack_108.x = fStack_84;
+          *(float *)((int)&CStack_108 + (uint)bVar10 * -8 + 4) = afStack_80[(uint)bVar10 * -2];
+          *(float *)((int)&CStack_108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+               afStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          fStack_28 = SQRT(CStack_108.z * CStack_108.z +
+                           CStack_108.x * CStack_108.x + CStack_108.y * CStack_108.y);
           fStack_18 = fStack_28;
           if (fStack_28 < 0x40200000 + 1.0) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&fStack_108);
-            uStack_144 = uStack_90;
-            afStack_140[(uint)bVar10 * -2] = afStack_b0[(uint)bVar10 * -2 + 9];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_108,&CStack_90)
+            ;
+            fStack_144 = CStack_90.x;
+            afStack_140[(uint)bVar10 * -2] = *(float *)((int)&CStack_90 + (uint)bVar10 * -8 + 4);
             afStack_140[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-                 afStack_b0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+                 *(float *)((int)&CStack_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             pCStack_14 = (CVector3f *)
                          core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                    (afStack_140[0] - (this_ptr->base).base.base.orient.vec.y);

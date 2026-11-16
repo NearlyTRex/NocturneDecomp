@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
+; int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
 ;
 ;
 ; Referenced Globals:

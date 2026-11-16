@@ -1,12 +1,12 @@
 // Name: core_menu.cpp_getSinglePressedKey_FUN_004eadf0
 // Address: 004eadf0
 // Address Range: [[004eadf0, 004eae67]]
-// Convention: unknown
-// Signature: int core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
 
 #include "nocturne.h"
 
-int core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
+int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004eadf0(void)
 
 {
   int iVar1;

@@ -40,7 +40,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   float fStack_214;
   float fStack_210;
   CVector3f aCStack_208 [2];
-  uint uStack_1f0;
+  float fStack_1f0;
   float afStack_1ec [4];
   float fStack_1dc;
   float fStack_1d8;
@@ -70,8 +70,9 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   float fStack_f8;
   float afStack_f4 [6];
   float fStack_dc;
-  float afStack_d8 [3];
-  CVector3f CStack_cc;
+  float afStack_d8 [2];
+  CVector3f CStack_d0;
+  uint uStack_c4;
   CVector3f CStack_b8;
   float afStack_ac [3];
   CVector3f CStack_a0;
@@ -161,10 +162,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
         break;
       case 2:
         if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
-          CStack_cc.y = 3.0;
-          CStack_cc.z = 2.0;
-          CStack_cc.x = 0.0;
-          if (&CStack_180 != (CVector3f *)(afStack_d8 + 3)) {
+          CStack_d0.z = 3.0;
+          uStack_c4 = 0x40000000;
+          CStack_d0.y = 0.0;
+          if (&CStack_180 != (CVector3f *)&CStack_d0.y) {
             CStack_180.y = 3.0;
             CStack_180.z = 2.0;
             CStack_180.x = 0.0;
@@ -254,11 +255,12 @@ LAB_00569a2a:
                afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -1];
           if (ABS(aCStack_208[0].x) <= 1.0) {
             in_stack_fffffd84 = (CDemonActor *)0x569a05;
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(aCStack_208);
-            uStack_1f0 = afStack_d8[2];
-            afStack_1ec[(uint)bVar8 * -2] = afStack_d8[(uint)bVar8 * -2 + 3];
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(aCStack_208,&CStack_d0)
+            ;
+            fStack_1f0 = CStack_d0.x;
+            afStack_1ec[(uint)bVar8 * -2] = *(float *)((int)&CStack_d0 + (uint)bVar8 * -8 + 4);
             afStack_1ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-                 afStack_d8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+                 *(float *)((int)&CStack_d0 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8);
             if (ABS(afStack_1ec[0]) <= (float)_DAT_005eba6d) goto LAB_00569a2a;
           }
         }

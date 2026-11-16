@@ -114,8 +114,8 @@ int core_bwspart_cpp_FUN_005a86a0(int param_1)
       fStack_20 = (*(float *)(param_1 + 0x10) - *(float *)(param_1 + 0xc)) *
                   (1.0 - *(float *)(param_1 + 8) / *(float *)(param_1 + 4)) +
                   *(float *)(param_1 + 0xc);
-      fVar4 = (float)core_bwspart_cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
-                               (*(CSimpleParticleSystem **)(param_1 + 0x54));
+      fVar4 = core_bwspart_cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
+                        (*(CSimpleParticleSystem **)(param_1 + 0x54));
       this_ptr = DAT_0060b280;
       local_14 = (float)iStack_24;
       pSVar1 = DAT_0060b280->vertex_buffer_ptr;

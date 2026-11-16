@@ -97,8 +97,9 @@ void __cdecl core_carved_cpp_CCarved_process_FUN_00428ae0(CCarved *this_ptr,floa
   CVector3f CStack_2a0;
   CVector3f CStack_294;
   CVector3f CStack_288;
-  float fStack_27c;
-  float afStack_278 [5];
+  CVector3f CStack_27c;
+  float fStack_270;
+  float afStack_26c [2];
   CVector3f CStack_264;
   CVector3f CStack_258;
   CVector3f CStack_24c;
@@ -117,8 +118,7 @@ void __cdecl core_carved_cpp_CCarved_process_FUN_00428ae0(CCarved *this_ptr,floa
   float fStack_1e8;
   float fStack_1e4;
   CVector3f CStack_1e0;
-  uint uStack_1d4;
-  float afStack_1d0 [2];
+  CVector3f CStack_1d4;
   CVector3f CStack_1c8;
   CVector3f CStack_1bc;
   CVector3f CStack_1b0;
@@ -240,7 +240,7 @@ LAB_00428b77:
             iVar7 = core_carved_cpp_FUN_0042b290(this_ptr);
             if (-1 < iVar7) {
               core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
-                        ((CCharacter *)this_ptr,iVar7,(int)pCVar14,0x3e4ccccd,0);
+                        ((CCharacter *)this_ptr,iVar7,pCVar14,0.2,(CMatrix3x4f *)0x0);
               engine_console_cpp_CConsole_printf_FUN_00445430
                         (g_CConsolePtr,"%s picked up %s using hand %d\n");
             }
@@ -800,16 +800,18 @@ LAB_00429a81:
             in_stack_fffffb34 = (CCarved *)0x42a191;
             core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                       ((CDemonActor *)this_ptr,&(pCVar3->base).location.position,&CStack_1e0);
-            fStack_27c = CStack_1e0.x;
-            afStack_278[(uint)bVar21 * -2] = *(float *)((int)&CStack_1e0 + (uint)bVar21 * -8 + 4);
-            afStack_278[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1] =
-                 *(float *)((int)&CStack_1e0 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
-            afStack_278[2] = (float)uStack_1d4;
-            afStack_278[(uint)bVar21 * -2 + 3] = afStack_1d0[(uint)bVar21 * -2];
-            afStack_278[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 4] =
-                 afStack_1d0[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1];
-            if ((((ABS(afStack_278[3]) < (float)_DAT_005d54ad) && (-1 < iStack_48)) &&
+            CStack_27c.x = CStack_1e0.x;
+            *(uint *)((int)&CStack_27c + (uint)bVar21 * -8 + 4) =
+                 *(uint *)((int)&CStack_1e0 + (uint)bVar21 * -8 + 4);
+            *(uint *)((int)&CStack_27c + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8) =
+                 *(uint *)((int)&CStack_1e0 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+                      (&CStack_27c,&CStack_1d4);
+            fStack_270 = CStack_1d4.x;
+            afStack_26c[(uint)bVar21 * -2] = *(float *)((int)&CStack_1d4 + (uint)bVar21 * -8 + 4);
+            afStack_26c[(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1] =
+                 *(float *)((int)&CStack_1d4 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
+            if ((((ABS(afStack_26c[0]) < (float)_DAT_005d54ad) && (-1 < iStack_48)) &&
                 ((uVar8 = this_ptr->object_shape_class, 1 < uVar8 && ((2 < uVar8 && (uVar8 == 3)))))
                 ) && ((this_ptr->base).base.carry_hands[iStack_48].carry_actor != (CDemonActor *)0x0
                      )) {

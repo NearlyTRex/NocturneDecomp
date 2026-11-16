@@ -114,7 +114,7 @@ void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004bd930(CGame *this_ptr,c
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004bda10(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,int select_mode);
-void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004beb80(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
+void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004beb80(CGame *this_ptr,char *filename,int width,int height,float display_time);
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004bf2e0(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004bf3a0(CGame *this_ptr,float delta_time);

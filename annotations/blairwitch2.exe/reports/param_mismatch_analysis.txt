@@ -15,27 +15,17 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5948
 Functions with no callers: 2825
-Parameter mismatches detected: 475
-Signature accuracy rate: 84.8%
+Parameter mismatches detected: 465
+Signature accuracy rate: 85.1%
 
 Mismatches by confidence:
-  High confidence:   30 (multiple call sites agree)
-  Medium confidence: 88 (some agreement)
-  Low confidence:    357 (limited data)
+  High confidence:   28 (multiple call sites agree)
+  Medium confidence: 86 (some agreement)
+  Low confidence:    351 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
-
-  core_event.cpp_extractParenArg_FUN_00488fc0
-    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
-    Call sites: 7, Confidence: high
-    File: core/event.cpp
-    Signature: char * core_event_cpp_extractParenArg_FUN_00488fc0(int *param_1,char *param_2,int param_3,int param_4)
-    Sample call sites:
-      core_event.cpp_CEventList_exec at 004899d1: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
-      core_event.cpp_CEventList_exec at 00489ee0: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
-      core_event.cpp_CEventList_exec at 0048a6b1: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
 
   crt_unknown.c_FUN_005bdcac
     Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
@@ -106,16 +96,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_charactr.cpp_CCharacter_r at 00426943: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
       core_shadow.cpp_CShadow_render at 0053e7fb: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
       core_cross.cpp_CCross_renderTr at 005a6ccd: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
-
-  core_xform.cpp_quaternionToEulerAngles_FUN_005940b0
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
-    Call sites: 6, Confidence: high
-    File: core/xform.cpp
-    Signature: undefined1 core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(void)
-    Sample call sites:
-      core_doc.cpp_FUN_00455170 at 004551d5: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
-      core_platfrm.cpp_CPlatform_eva at 0051843f: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
-      core_stranger.cpp_CStranger_ex at 00567495: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
 
   crt_unknown.c_FUN_005c0c9f
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
@@ -339,7 +319,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005c11b8                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005c2c60                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005c4cf0                         declared:0 est:5 (+5) [2 calls]
-  core_xform.cpp_quaternionFromAxisAngle_FUN_0059406 declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005b8e60                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005bd7e0                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005c1af8                         declared:0 est:4 (+4) [2 calls]
@@ -353,7 +332,6 @@ MEDIUM CONFIDENCE MISMATCHES
   core_bwspart.cpp_FUN_005a84c0                      declared:0 est:3 (+3) [2 calls]
   core_event.cpp_FUN_00492630                        declared:0 est:3 (+3) [2 calls]
   core_muzzle.cpp_FUN_0059d7f0                       declared:0 est:3 (+3) [27 calls]
-  core_vecdir.cpp_convertDirectionVectorToEulerAngle declared:0 est:3 (+3) [50 calls]
   crt_unknown.c_FUN_005bc220                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_005c16c8                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_005c2120                         declared:0 est:3 (+3) [2 calls]
@@ -379,17 +357,18 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005c32a8                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_005c349c                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_005c476c                         declared:0 est:2 (+2) [1 calls]
+  crt_unknown.c_FUN_005c47ce                         declared:0 est:2 (+2) [1 calls]
+  crt_unknown.c_FUN_005c4840                         declared:0 est:2 (+2) [1 calls]
 
-  ... and 38 more
+  ... and 36 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  357 functions with low-confidence mismatches
+  351 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
-    core_actor.cpp_rayCylinderIntersect_FUN_00408 declared:0 est:5 (+5)
     core_actor.cpp_checkNameHash_FUN_0040c870     declared:2 est:1 (-1)
     core_actor.cpp_matchesClassName_FUN_0040c8a0  declared:2 est:1 (-1)
     core_actor.cpp_FUN_0040ce40                   declared:0 est:5 (+5)
@@ -397,7 +376,8 @@ LOW CONFIDENCE MISMATCHES (limited data)
     core_actor.cpp_FUN_0040cea0                   declared:0 est:6 (+6)
     core_actor.cpp_FUN_0040d350                   declared:0 est:4 (+4)
     core_ammo.cpp_FUN_0040e450                    declared:0 est:2 (+2)
-    engine_boss.c_modelStructNotSupported4_FUN_00 declared:0 est:2 (+2)
+    core_charactr.cpp_FUN_004246e0                declared:0 est:6 (+6)
+    core_charactr.cpp_FUN_00424b50                declared:0 est:6 (+6)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
@@ -406,7 +386,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 38
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 437
+Functions where declaration has FEWER params than estimated: 427
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -417,12 +397,12 @@ Distribution of differences (estimated - declared):
   -2 params: 6 functions
   -1 params: 26 functions
   +1 params: 108 functions
-  +2 params: 113 functions
-  +3 params: 77 functions
-  +4 params: 55 functions
-  +5 params: 35 functions
+  +2 params: 111 functions
+  +3 params: 74 functions
+  +4 params: 54 functions
+  +5 params: 32 functions
   +6 params: 25 functions
-  +7 params: 11 functions
+  +7 params: 10 functions
   +8 params: 5 functions
   +9 params: 3 functions
   +10 params: 4 functions

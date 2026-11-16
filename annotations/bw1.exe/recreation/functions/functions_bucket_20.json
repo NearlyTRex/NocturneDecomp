@@ -5614,18 +5614,18 @@
     "name":"support_codec.cpp_CAsciiArmor_flush_FUN_00443920",
     "params":[
       {
-        "name":"param_2",
+        "name":"ostream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5643,8 +5643,8 @@
     "name":"support_codec.cpp_CInStreamPipe_isOpen_FUN_00443ea0",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5669,8 +5669,8 @@
     "name":"support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -11464,31 +11464,23 @@
     "name":"core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_4",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"fade_rate",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -11496,7 +11488,7 @@
         }
       },
       {
-        "name":"param_6",
+        "name":"intensity",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -11504,7 +11496,7 @@
         }
       },
       {
-        "name":"param_7",
+        "name":"texture_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -11512,7 +11504,15 @@
         }
       },
       {
-        "name":"param_8",
+        "name":"time_scale",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"jitter",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -11520,7 +11520,7 @@
         }
       },
       {
-        "name":"param_9",
+        "name":"size",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -14314,14 +14314,24 @@
       "0040c600",
       "005030e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":53,
     "method":"setupItems",
     "name":"core_inv.cpp_setupItems_FUN_004f9b20",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CInventory",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/inv.cpp",
@@ -21784,15 +21794,41 @@
       "005a7520",
       "005c1d04"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":141,
     "method":"calculateAimAnglesWithOffset",
     "name":"core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0",
+    "params":[
+      {
+        "name":"direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset_pair",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/stranger.cpp",
     "variadic":false
@@ -23475,15 +23511,33 @@
     "calls":[
       "005c1d69"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":58,
     "method":"convertDirectionVectorToEulerAngles",
     "name":"core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520",
+    "params":[
+      {
+        "name":"in_direction_vector",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/vecdir.cpp",
     "variadic":false
@@ -23654,14 +23708,14 @@
       "005030e0",
       "005c08d0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":57,
     "method":"allocateRenderBuffers",
     "name":"wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005abf20",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",
@@ -24096,15 +24150,33 @@
     "callers":[
       "005b72c0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":175,
     "method":"matrixToQuaternion",
     "name":"core_xform.cpp_matrixToQuaternion_FUN_005b75a0",
+    "params":[
+      {
+        "name":"matrix_in",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

@@ -3322,14 +3322,32 @@
       "005030e0",
       "005bfb70"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":26,
     "method":"modelStructNotSupported4",
     "name":"engine_boss.c_modelStructNotSupported4_FUN_0041d980",
+    "params":[
+      {
+        "name":"mrgl_data",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderExtended",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_bounds",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLModelBounds",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/boss.c",
@@ -4916,14 +4934,14 @@
   },
   {
     "addr":"0043a000",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
     "method":"isLineBlendingDisabled",
     "name":"cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0043a000",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -4937,14 +4955,48 @@
       "005c08d0",
       "005c09f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":141,
     "method":"rotateBitmap",
     "name":"cockpit_ckptutil.c_rotateBitmap_FUN_0043a200",
+    "params":[
+      {
+        "name":"source_data",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"width",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bytes_per_pixel",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5046,14 +5098,14 @@
     "calls":[
       "0043d000"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":74,
     "method":"clipPolygonBottomPlaneGlobal",
     "name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500",
     "receiver":false,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined1",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -5240,14 +5292,48 @@
     "calls":[
       "004427a0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":166,
-    "method":"FUN_00442600",
-    "name":"support_codec.cpp_FUN_00442600",
+    "method":"writeBitsToStream",
+    "name":"support_codec.cpp_writeBitsToStream_FUN_00442600",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bit_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bit_value",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"ostream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -5451,18 +5537,18 @@
     "name":"support_codec.cpp_CCheesyCipher_ctor_FUN_00443a00",
     "params":[
       {
-        "name":"param_2",
+        "name":"mode",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"key",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"uint",
           "ptr":0
         }
       }
@@ -5470,7 +5556,7 @@
     "receiver":true,
     "ret":{
       "kind":"class",
-      "name":"CCodec",
+      "name":"CCheesyCipher",
       "ptr":1
     },
     "tu":"support/codec.cpp",
@@ -5524,18 +5610,18 @@
     "name":"support_codec.cpp_CInStreamPipe_read_FUN_00443d80",
     "params":[
       {
-        "name":"param_2",
+        "name":"buffer",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"void",
           "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"count",
         "type":{
           "kind":"builtin",
-          "name":"uint",
+          "name":"int",
           "ptr":0
         }
       }
@@ -10757,23 +10843,23 @@
     "name":"core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_4",
+        "name":"model_ptr",
         "type":{
           "kind":"class",
           "name":"CKeyFramedModel",
@@ -10781,10 +10867,10 @@
         }
       },
       {
-        "name":"param_5",
+        "name":"drag",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -18819,8 +18905,8 @@
     "name":"core_slew.cpp_CSlew_init_FUN_0056ba00",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined8",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/slew.cpp",
@@ -20241,14 +20327,14 @@
       "005c04e0",
       "005c084c"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":329,
     "method":"processTrainSounds",
     "name":"core_sound.cpp_processTrainSounds_FUN_0057c580",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/sound.cpp",
@@ -23593,15 +23679,33 @@
       "005c1cd6",
       "005c1d69"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":130,
     "method":"quaternionToEulerAngles",
     "name":"core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00",
+    "params":[
+      {
+        "name":"quat_in",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_euler",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

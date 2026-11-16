@@ -43,7 +43,7 @@ void __cdecl CZombieCow::processDamage(CZombieCow *this_ptr,SDamageInfo *damage_
 
 // Original: core_cow.cpp_CZombieCow_getTargetPoints_FUN_00439bf0
 // Address: 00439bf0
-undefined4 __cdecl CZombieCow::getTargetPoints(CZombieCow *this_ptr,undefined4 *param_2);
+int __cdecl CZombieCow::getTargetPoints(CZombieCow *this_ptr,CVector3f *out_points_array);
 
 // Original: core_cow.cpp_CZombieCow_dtor_FUN_00439c60
 // Address: 00439c60

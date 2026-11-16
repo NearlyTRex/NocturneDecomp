@@ -219,7 +219,7 @@ void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004beb80
 // Address: 004beb80
-void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
+void __cdecl CGame::displayBitmap(CGame *this_ptr,char *filename,int width,int height,float display_time);
 
 // Original: core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20
 // Address: 004bec20

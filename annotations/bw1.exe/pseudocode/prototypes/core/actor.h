@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_actor.cpp_rayCylinderIntersect_FUN_004080c0
 // Address: 004080c0
-float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl rayCylinderIntersect(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_actor.cpp_deleteActor_FUN_00408560
 // Address: 00408560

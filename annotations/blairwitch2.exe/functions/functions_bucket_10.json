@@ -1124,10 +1124,10 @@
         "start":"00408290"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_rayCylinderIntersect_FUN_00408290",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -1595,8 +1595,81 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
+        },
+        {
+          "name":"ray_origin",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"ray_direction",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_normal",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -4058,14 +4131,44 @@
         "start":"0041a510"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_boss.c_modelStructNotSupported4_FUN_0041a510",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"mrgl_data",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        },
+        {
+          "name":"out_bounds",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLModelBounds*"
+        }
+      ]
     }
   },
   {
@@ -6911,7 +7014,7 @@
           "type":"CCharacter*"
         },
         {
-          "name":"param_2",
+          "name":"hand_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -6927,7 +7030,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"object",
           "storage":{
             "offset":12,
             "size":4,
@@ -6940,10 +7043,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
-          "name":"param_4",
+          "name":"blend_time",
           "storage":{
             "offset":16,
             "size":4,
@@ -6956,10 +7059,10 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"float"
         },
         {
-          "name":"param_5",
+          "name":"carry_offset",
           "storage":{
             "offset":20,
             "size":4,
@@ -6972,7 +7075,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CMatrix3x4f*"
         }
       ]
     }
@@ -8232,7 +8335,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_codec.cpp_CAsciiUnarmor_decode_FUN_00434c90",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -8252,7 +8355,7 @@
           "type":"CAsciiUnarmor*"
         },
         {
-          "name":"param_2",
+          "name":"istream",
           "storage":{
             "offset":8,
             "size":4,
@@ -8265,10 +8368,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"void*"
         },
         {
-          "name":"param_3",
+          "name":"ostream",
           "storage":{
             "offset":12,
             "size":4,
@@ -8281,7 +8384,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -20926,7 +21029,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_fire.cpp_CLeaf_onCollision_FUN_00496990",
-    "ret":"undefined4",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -20944,6 +21047,22 @@
             ]
           },
           "type":"CLeaf*"
+        },
+        {
+          "name":"collision_normal",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -61428,13 +61547,54 @@
         "start":"00591d10"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_xform.cpp_angleFromSinCos_FUN_00591d10",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"sin_value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"cos_value",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -61524,13 +61684,53 @@
         "start":"00594210"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionToEulerAnglesZYX_FUN_00594210",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"CVector3f*",
     "vars":{
+      "params":[
+        {
+          "name":"quat_in",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        },
+        {
+          "name":"vector_out",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

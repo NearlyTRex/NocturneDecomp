@@ -344,7 +344,7 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 00500dcf
     LEA EDI,[ESP + 0x54]                ; 00500dd6
     CALL engine_boss.c_modelStructNotSupported4_FUN_0041a510 ; 00500dda
-        ;   XREF to: 0041a510 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported4_FUN_0041a510()
+        ;   XREF to: 0041a510 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported4_FUN_0041a510(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * out_bounds)
     MOV ECX,0xd                         ; 00500ddf
     LEA ESI,[ESP + 0x88]                ; 00500de4
     ADD ESP,0x4                         ; 00500deb

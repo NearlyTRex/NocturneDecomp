@@ -38,12 +38,12 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00510160(CPacked
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00510210(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00510230(int total_entries,_FILE *file_header);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005102b0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-CPackedBitmap * cockpit_pkbitmap_cpp_loadPBGFile_FUN_00510430(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00510430(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005105e0(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00510610(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00510670(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,int param_7,int param_8,int param_9,int param_10);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00510a90(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 void cockpit_pkbmpset_cpp_FUN_00510de0(void);
@@ -73,7 +73,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00512aa0(CPlatform *this
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_00512be0(CPlatform *this_ptr);
 CPlatform * __cdecl core_platfrm_cpp_CPlatform_dtor_FUN_00512cf0(CPlatform *this_ptr,uint flags);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_00512d60(uint current_crc,uchar data_byte);
-uint engine_pod_cpp_crc32ComputeFileRange_FUN_00512e70(char *param_1,int param_2);
+uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_00512e70(char *filename,int start_offset);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_00512f00(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_00512f70(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_00512f90(char **filename1_ptr,char **filename2_ptr);

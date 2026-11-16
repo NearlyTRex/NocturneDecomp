@@ -21,8 +21,7 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
   CMatrix3x4f CStack_154;
   CMatrix3x4f CStack_124;
   CVector3f CStack_f4;
-  float fStack_e8;
-  float afStack_e4 [2];
+  CVector3f CStack_e8;
   CVector3f CStack_dc;
   CVector3f CStack_d0;
   CVector3f CStack_c4;
@@ -36,8 +35,7 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
   float fStack_64;
   float afStack_60 [2];
   CVector3f CStack_58;
-  float fStack_4c;
-  float afStack_48 [2];
+  CVector3f CStack_4c;
   CVector3f CStack_40;
   float fStack_34;
   float afStack_30 [4];
@@ -109,19 +107,20 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
     fStack_64 = afStack_30[2] - fStack_34;
     afStack_60[0] = afStack_30[3] - afStack_30[0];
     afStack_60[1] = fStack_20 - afStack_30[1];
-    fStack_e8 = afStack_30[2] - fStack_34;
-    afStack_e4[(uint)bVar4 * -2] = afStack_60[(uint)bVar4 * -2];
-    afStack_e4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+    CStack_e8.x = afStack_30[2] - fStack_34;
+    *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&fStack_e8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_e8,&CStack_4c);
     falloff = 6.0;
     pCVar5 = &CStack_70;
     fov = 56.0;
     position = &CStack_f4;
-    CStack_70.x = fStack_4c;
-    *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + 4) = afStack_48[(uint)bVar4 * -2];
-    *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    CStack_70.x = CStack_4c.x;
+    *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(position,pCVar5,fov,falloff);
   }
   iVar1 = core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510((CCharacter *)this_ptr);

@@ -1778,7 +1778,7 @@ section .text
     LEA ESI,[EBP + 0xfffffeda]          ; 005b08b7
     LEA EDI,[EBP + 0xfffffdf6]          ; 005b08bd
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 005b08c3
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffeda]          ; 005b08c8
     MOVSD ES:EDI,ESI                    ; 005b08ce
     MOVSD ES:EDI,ESI                    ; 005b08cf

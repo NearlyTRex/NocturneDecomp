@@ -2,11 +2,11 @@
 // Address: 0057ce20
 // Address Range: [[0057ce20, 0057ce8d]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)
+// Signature: CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *directory,char *filename)
 
 #include "nocturne.h"
 
-uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)
+CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *directory,char *filename)
 
 {
   CInStreamFile *this_ptr_00;
@@ -22,6 +22,6 @@ uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce
   this_ptr_00->buffer_start = 0;
   this_ptr_00->buffer_capacity = 0;
   this_ptr_00->buffer_length = 0;
-  support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(this_ptr_00,param_2,param_3);
-  return &this_ptr_00->base;
+  support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(this_ptr_00,directory,filename);
+  return this_ptr_00;
 }

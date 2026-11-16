@@ -36,13 +36,12 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004cc990(CHaystack *this_pt
   float fStack_90;
   float afStack_8c [2];
   CVector3f CStack_84;
-  uint uStack_78;
+  float fStack_78;
   float afStack_74 [4];
   float fStack_64;
-  float afStack_60 [3];
+  CVector3f CStack_60;
   CVector3f CStack_54;
-  uint uStack_48;
-  float afStack_44 [2];
+  CVector3f CStack_48;
   CVector3f CStack_3c;
   float fStack_30;
   float afStack_2c [3];
@@ -231,15 +230,16 @@ switchD_004cce93_caseD_4:
     if ((this_ptr->base).base.grabbed_type == 0) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                 ((CDemonActor *)this_ptr,&(pCVar3->location).position,&CStack_54);
-      afStack_60[0] = CStack_54.x;
-      afStack_74[(uint)bVar12 * -2 + 6] = *(float *)((int)&CStack_54 + (uint)bVar12 * -8 + 4);
-      afStack_74[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7] =
-           *(float *)((int)&CStack_54 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_74 + 5);
-      uStack_78 = uStack_48;
-      afStack_74[(uint)bVar12 * -2] = afStack_44[(uint)bVar12 * -2];
+      CStack_60.x = CStack_54.x;
+      *(uint *)((int)&CStack_60 + (uint)bVar12 * -8 + 4) =
+           *(uint *)((int)&CStack_54 + (uint)bVar12 * -8 + 4);
+      *(uint *)((int)&CStack_60 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+           *(uint *)((int)&CStack_54 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_60,&CStack_48);
+      fStack_78 = CStack_48.x;
+      afStack_74[(uint)bVar12 * -2] = *(float *)((int)&CStack_48 + (uint)bVar12 * -8 + 4);
       afStack_74[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-           afStack_44[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+           *(float *)((int)&CStack_48 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
       pCStack_14 = (CCharacter_full_vtable *)
                    core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(afStack_74[0]);
       fStack_1c = (float)pCStack_14;

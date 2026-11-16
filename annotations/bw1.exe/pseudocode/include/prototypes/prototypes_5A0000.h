@@ -95,8 +95,8 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005a17
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_005a1830(COutStreamFile *this_ptr,COutStreamFile *other);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(COutStreamFile *this_ptr,uint flags);
 uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005a18c0(COutStreamFile *this_ptr,byte param_2);
-int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *param_2,int param_3);
-bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_005a1940(COutStreamFile *this_ptr,long param_2,int param_3);
+int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *data,int size);
+int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_005a1940(COutStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_005a1970(COutStreamFile *this_ptr);
 bool __cdecl support_trstream_cpp_COutStreamFile_isOpen_FUN_005a1990(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_close_FUN_005a19b0(COutStreamFile *this_ptr);
@@ -179,7 +179,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0(CVam
 ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_005a73c0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampireBoss *this_ptr,uint flags);
 void __cdecl core_vecdir_cpp_staticInit_FUN_005a7500(void);
-float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(float *param_1);
+CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f *in_direction_vector,CVector3f *out_euler_angles);
 void __cdecl core_vehicle_cpp_staticInit_FUN_005a75c0(void);
 CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void);
 CDemonActorType * __cdecl core_vehicle_cpp_CVehicle_getActorType_FUN_005a7610(CVehicle *this_ptr);
@@ -250,8 +250,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005abb8
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005abd30(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005abd80(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005abde0(void);
-void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005abf20(void);
-void wincore_wddvmem_cpp_freeRenderBuffers_FUN_005abff0(void);
+void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005abf20(void);
+void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005abff0(void);
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ac040(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ac1b0(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ac270(void);

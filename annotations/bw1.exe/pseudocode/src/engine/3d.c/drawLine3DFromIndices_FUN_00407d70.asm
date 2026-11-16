@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)
+; void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   vertex_index1
+; int              Stack[0x8]:4   vertex_index2
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
 ; undefined        Stack[-0x38]:1  local_38

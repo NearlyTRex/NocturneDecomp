@@ -202,7 +202,7 @@ section .text
     LEA ESI,[EBP + 0xfffffece]          ; 00419d20
     LEA EDI,[EBP + 0xfffffebe]          ; 00419d26
     CALL core_xform.cpp_slerpQuaternion_FUN_00585b20 ; 00419d2c
-        ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00585b20()
+        ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00585b20(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     LEA ESI,[EBP + 0xfffffece]          ; 00419d31
     LEA EAX,[EBP + 0xfffffebe]          ; 00419d37
     ADD ESP,0xc                         ; 00419d3d
@@ -214,7 +214,7 @@ section .text
     LEA ESI,[EBP + -0x3e]               ; 00419d45
     LEA EDI,[EBP + 0xffffff0e]          ; 00419d48
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_00585de0 ; 00419d4e
-        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_00585de0()
+        ;   XREF to: 00585de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_00585de0(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[EBP + -0x3e]               ; 00419d53
     MOVSD ES:EDI,ESI                    ; 00419d56
     MOVSD ES:EDI,ESI                    ; 00419d57
@@ -413,7 +413,7 @@ section .text
     PUSH EBX                            ; 00419f72
     MOV dword ptr [EBX + 0xd064],0x0    ; 00419f73
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00419f7d
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00419f82
     JMP 0x00419f28                      ; 00419f85
         ;   XREF to: 00419f28 (UNCONDITIONAL_JUMP)  ; LAB_00419f28

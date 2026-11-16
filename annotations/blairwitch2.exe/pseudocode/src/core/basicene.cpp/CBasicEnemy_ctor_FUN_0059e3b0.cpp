@@ -77,7 +77,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   *(uint *)(iVar7 + 0x914) = 0x3e800000;
   *(uint *)(iVar7 + 0x918) = 0x3f000000;
   *(uint *)(iVar7 + 0x91c) = 0x3e800000;
-  core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(this_ptr_00,0,0);
+  core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(this_ptr_00,0.0,0);
   core_muzzle_cpp_FUN_0059d6f0(iVar7,"ChaseComplete","Chasing");
   core_muzzle_cpp_FUN_0059d8e0(iVar7,"Nothing");
   core_muzzle_cpp_FUN_0059da70(iVar7);

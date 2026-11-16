@@ -41,19 +41,15 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00487eb0(CEmitter *this_ptr,f
   float fStack_174;
   float fStack_170;
   float fStack_16c;
-  CVector3f CStack_168;
-  uint uStack_15c;
+  byte auStack_168 [8];
+  float afStack_160 [2];
   CVector3f CStack_158;
   CVector3f CStack_14c;
   float fStack_138;
   CVector3f CStack_134;
   CVector3f CStack_128;
-  float fStack_11c;
-  float fStack_118;
-  float fStack_114;
-  uint uStack_110;
-  uint uStack_10c;
-  uint uStack_108;
+  CVector3f CStack_11c;
+  CVector3f CStack_110;
   CVector3f CStack_104;
   CVector3f CStack_f8;
   CVector3f CStack_ec;
@@ -270,12 +266,12 @@ LAB_00487f67:
       *(float *)((int)aCStack_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
            afStack_5c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
       core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
-                (this_ptr->dest_actor,aCStack_54,&CStack_168);
-      fStack_138 = CStack_168.x;
+                (this_ptr->dest_actor,aCStack_54,(CVector3f *)auStack_168);
+      fStack_138 = (float)auStack_168._0_4_;
       *(uint *)((int)&CStack_134 + (uint)bVar10 * -8) =
-           *(uint *)((int)&CStack_168 + (uint)bVar10 * -8 + 4);
-      *(uint *)((int)&CStack_134 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&CStack_168 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+           *(uint *)(auStack_168 + (uint)bVar10 * -8 + 4);
+      *(float *)((int)&CStack_134 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =
+           afStack_160[(uint)bVar10 * -2 + (uint)bVar10 * -2];
       pCVar2 = this_ptr->dest_actor;
       afStack_c8[2] = (pCVar2->location).position.x + fStack_138;
       afStack_c8[3] = (pCVar2->location).position.y + CStack_134.x;
@@ -295,32 +291,33 @@ LAB_00487f67:
     }
     break;
   case EMITTER_TYPE_LEAF:
-    uStack_15c = 0;
-    CStack_168.z = 0.0;
-    CStack_168.y = 0.0;
+    afStack_160[1] = 0.0;
+    afStack_160[0] = 0.0;
+    auStack_168._4_4_ = 0.0;
     fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
                           (0.0,this_ptr->emit_radius * _DAT_005bda38);
     fStack_20 = fStack_18 - this_ptr->emit_radius;
     fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
                           (0.0,this_ptr->emit_radius * _DAT_005bda38);
-    fStack_11c = (this_ptr->base).location.position.x + fStack_20;
-    fStack_118 = (this_ptr->base).location.position.y;
-    fStack_114 = (fStack_18 - this_ptr->emit_radius) + (this_ptr->base).location.position.z;
+    CStack_11c.x = (this_ptr->base).location.position.x + fStack_20;
+    CStack_11c.y = (this_ptr->base).location.position.y;
+    CStack_11c.z = (fStack_18 - this_ptr->emit_radius) + (this_ptr->base).location.position.z;
     fVar17 = this_ptr->wind_resist;
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
     core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930
-              (0x01C73654,&fStack_11c,&CStack_168.y,pCVar5,fVar17);
-    fStack_11c = (this_ptr->base).location.position.x;
-    fStack_118 = (this_ptr->base).location.position.z;
-    fStack_114 = fStack_118;
+              (0x01C73654,&CStack_11c,(CVector3f *)(auStack_168 + 4),pCVar5,fVar17);
+    CStack_11c.x = (this_ptr->base).location.position.x;
+    CStack_11c.y = (this_ptr->base).location.position.z;
+    CStack_11c.z = CStack_11c.y;
     break;
   case EMITTER_TYPE_FIREFLY:
-    uStack_108 = 0;
-    uStack_110 = 0;
-    uStack_10c = 0x42000000;
+    CStack_110.z = 0.0;
+    CStack_110.x = 0.0;
+    CStack_110.y = 32.0;
     core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0
-              (0x01C73654,&(this_ptr->base).location,&uStack_110,this_ptr->fizzle,this_ptr->bright
-               ,this_ptr->firefly_type,this_ptr->delta_mult,this_ptr->max_speed,this_ptr->ff_size);
+              (0x01C73654,&(this_ptr->base).location.position,&CStack_110,this_ptr->fizzle,
+               this_ptr->bright,this_ptr->firefly_type,this_ptr->delta_mult,this_ptr->max_speed,
+               this_ptr->ff_size);
 LAB_00487fe8:
     core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0
               (&this_ptr->globe,&(this_ptr->base).location.position);

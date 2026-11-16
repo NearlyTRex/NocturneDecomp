@@ -21,14 +21,13 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
   float afStackY_1930 [1490];
   float fVar8;
   float fVar9;
-  uint uVar10;
-  float *pfVar11;
-  float *pfVar12;
+  float blue;
+  CVector3f *position_offset;
+  CVector3f *velocity;
   CQuaternion4f *quat2_in;
-  float *pfVar13;
+  CVector3f *acceleration;
   CQuaternion4f *quat2_in_00;
   CMatrix3x4f *matrix;
-  uint uVar14;
   CMatrix3x4f CStack_1b4;
   CMatrix3x4f CStack_184;
   CQuaternion4f CStack_154;
@@ -44,8 +43,8 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
   float fStack_b4;
   float afStack_b0 [4];
   float fStack_a0;
-  float afStack_9c [3];
-  float afStack_90 [3];
+  CVector3f CStack_9c;
+  CVector3f CStack_90;
   CVector3f CStack_84;
   float fStack_78;
   float afStack_74 [2];
@@ -53,8 +52,9 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
   float fStack_60;
   float afStack_5c [2];
   CVector3f CStack_54;
-  float fStack_48;
-  float afStack_44 [4];
+  CVector3f CStack_48;
+  float fStack_3c;
+  float fStack_38;
   float fStack_34;
   CSimpleParticleSystem *pCStack_1c;
   CSimpleParticleSystem *pCStack_18;
@@ -88,10 +88,10 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
       do {
         iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
         if (iVar2 != 0) {
-          afStack_44[3] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
-          fStack_14 = afStack_44[3];
-          afStack_44[2] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
-          fStack_14 = afStack_44[2];
+          fStack_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
+          fStack_14 = fStack_38;
+          fStack_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
+          fStack_14 = fStack_3c;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           core_xform_cpp_quaternionFromAngleZ_FUN_00594020(fStack_14,&CStack_f4);
           quat2_in_00 = &CStack_c4;
@@ -102,7 +102,7 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
                *(uint *)((int)&CStack_f4 + (uint)bVar7 * -8 + 4);
           *puVar5 = *puVar3;
           puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
-          core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(afStack_44[2],&CStack_144);
+          core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(fStack_3c,&CStack_144);
           quat2_in = &CStack_104;
           CStack_104.w = CStack_144.w;
           puVar5 = (uint *)((int)&CStack_104 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -111,7 +111,7 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
                *(uint *)((int)&CStack_144 + (uint)bVar7 * -8 + 4);
           *puVar5 = *puVar3;
           puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
-          core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(afStack_44[3],&CStack_134);
+          core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(fStack_38,&CStack_134);
           CStack_114.w = CStack_134.w;
           puVar5 = (uint *)((int)&CStack_114 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           puVar3 = (uint *)((int)&CStack_134 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -150,40 +150,40 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
           fStack_34 = CStack_54.y;
           fStack_14 = CStack_54.y;
           core_xform_cpp_transformVector3x4_FUN_00591530(&CStack_54,matrix,&CStack_84);
-          afStack_90[0] = 0.0;
-          afStack_90[1] = 5.0;
-          afStack_90[2] = 0.0;
+          CStack_90.x = 0.0;
+          CStack_90.y = 5.0;
+          CStack_90.z = 0.0;
           fStack_b4 = CStack_84.x;
           afStack_b0[(uint)bVar7 * -2] = *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + 4);
           afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-          uVar14 = 0;
-          pfVar13 = afStack_b0 + 8;
+          iVar2 = 0;
+          acceleration = &CStack_90;
           fStack_78 = fStack_b4 + afStack_b0[2];
           afStack_74[0] = afStack_b0[0] + afStack_b0[3];
           afStack_74[1] = afStack_b0[1] + fStack_a0;
-          fStack_48 = fStack_b4 + afStack_b0[2];
-          afStack_44[(uint)bVar7 * -2] = afStack_74[(uint)bVar7 * -2];
-          afStack_44[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+          CStack_48.x = fStack_b4 + afStack_b0[2];
+          *(float *)((int)&CStack_48 + (uint)bVar7 * -8 + 4) = afStack_74[(uint)bVar7 * -2];
+          *(float *)((int)&CStack_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-          pfVar12 = afStack_b0 + 5;
-          pfVar11 = &fStack_48;
-          fStack_60 = fStack_48 - afStack_b0[2];
-          uVar10 = 0;
-          afStack_5c[0] = afStack_44[0] - afStack_b0[3];
+          velocity = &CStack_9c;
+          position_offset = &CStack_48;
+          fStack_60 = CStack_48.x - afStack_b0[2];
+          blue = 0.0;
+          afStack_5c[0] = CStack_48.y - afStack_b0[3];
           fVar9 = 0.2;
-          afStack_5c[1] = afStack_44[1] - fStack_a0;
+          afStack_5c[1] = CStack_48.z - fStack_a0;
           fVar8 = 0.0;
-          afStack_9c[0] = fStack_48 - afStack_b0[2];
-          afStack_b0[(uint)bVar7 * -2 + 6] = afStack_5c[(uint)bVar7 * -2];
-          afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+          CStack_9c.x = CStack_48.x - afStack_b0[2];
+          *(float *)((int)&CStack_9c + (uint)bVar7 * -8 + 4) = afStack_5c[(uint)bVar7 * -2];
+          *(float *)((int)&CStack_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
           fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar8,fVar9);
           fStack_14 = fVar8;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.3,0.6);
           core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-                    (pCStack_18,0x3f800000,0x3f800000,0,0x3f333333,0,fStack_14,fVar8,uVar10,pfVar11,
-                     pfVar12,pfVar13,uVar14);
+                    (pCStack_18,1.0,1.0,0.0,0.7,0.0,fStack_14,fVar8,blue,position_offset,velocity,
+                     acceleration,iVar2);
         }
         iVar1 = iVar1 + 1;
       } while (iVar1 < 0x14);

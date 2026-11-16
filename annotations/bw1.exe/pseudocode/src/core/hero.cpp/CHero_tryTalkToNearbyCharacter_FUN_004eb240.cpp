@@ -13,16 +13,15 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
 {
   byte bVar1;
   float afStackY_1070 [1016];
-  uint local_88;
+  CVector3f local_88;
   CVector3f local_7c;
   float local_70;
   float local_6c [2];
   CVector3f local_64;
   CVector3f local_58;
-  float local_4c;
-  uint auStack_48 [2];
+  CVector3f local_4c;
   CVector3f local_40;
-  uint local_34;
+  float local_34;
   float local_30 [4];
   CLocation *local_20;
   int local_1c;
@@ -54,15 +53,16 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
         if (local_30[3] < local_30[2]) {
           core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00
                     ((CDemonActor *)this_ptr,&local_7c,&local_58);
-          local_4c = local_58.x;
-          auStack_48[(uint)bVar1 * -2] = *(uint *)((int)&local_58 + (uint)bVar1 * -8 + 4);
-          auStack_48[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+          local_4c.x = local_58.x;
+          *(uint *)((int)&local_4c + (uint)bVar1 * -8 + 4) =
+               *(uint *)((int)&local_58 + (uint)bVar1 * -8 + 4);
+          *(uint *)((int)&local_4c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
                *(uint *)((int)&local_58 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_4c);
-          local_34 = local_88;
-          local_30[(uint)bVar1 * -2] = *(float *)(&stack0xffffff7c + (uint)bVar1 * -8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_4c,&local_88);
+          local_34 = local_88.x;
+          local_30[(uint)bVar1 * -2] = *(float *)((int)&local_88 + (uint)bVar1 * -8 + 4);
           local_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
-               *(float *)(&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+               *(float *)((int)&local_88 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
           if (ABS(local_30[0]) <= (float)_DAT_005e483d) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action_actor = (CDemonActor *)local_14;

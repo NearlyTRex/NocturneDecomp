@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_rotateBitmap_FUN_00437e10(undefined4 *param_1,int param_2,uint param_3,uint param_4)
+; void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00437e10(uchar *source_data,int width,int height,int bytes_per_pixel)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   source_data
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   bytes_per_pixel
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

@@ -160,9 +160,10 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *p
   CMatrix3x3f local_2a4;
   CVector3f local_27c;
   CVector3f local_270;
-  uint local_264;
-  float afStack_260 [5];
-  float local_24c [3];
+  CVector3f local_264;
+  float local_258;
+  float local_254 [2];
+  CVector3f local_24c;
   CVector3f local_240;
   float local_234;
   float afStack_230 [5];
@@ -3750,26 +3751,31 @@ LAB_00528804:
                                                               (&(pCVar15->location).position,
                                                                &(local_48->location).position,
                                                                &local_270);
-                                                    local_24c[0] = local_270.x;
-                                                    afStack_260[(uint)bVar21 * -2 + 6] =
-                                                         *(float *)((int)&local_270 +
-                                                                   (uint)bVar21 * -8 + 4);
-                                                    afStack_260
-                                                    [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 7] =
-                                                         *(float *)((int)&local_270 +
-                                                                   (uint)bVar21 * -8 +
-                                                                   (uint)bVar21 * -8 + 8);
+                                                    local_24c.x = local_270.x;
+                                                    *(uint *)
+                                                     ((int)&local_24c + (uint)bVar21 * -8 + 4) =
+                                                         *(uint *)
+                                                          ((int)&local_270 + (uint)bVar21 * -8 + 4);
+                                                    *(uint *)
+                                                     ((int)&local_24c +
+                                                     (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8) =
+                                                         *(uint *)
+                                                          ((int)&local_270 +
+                                                          (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8)
+                                                    ;
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-                                                            (afStack_260 + 5);
-                                                  afStack_260[2] = (float)local_264;
-                                                  afStack_260[(uint)bVar21 * -2 + 3] =
-                                                       afStack_260[(uint)bVar21 * -2];
-                                                  afStack_260
-                                                  [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 4] =
-                                                       afStack_260
-                                                       [(uint)bVar21 * -2 + (uint)bVar21 * -2 + 1];
-                                                  (local_48->orient).vec.y = afStack_260[3];
+                                                            (&local_24c,&local_264);
+                                                  local_258 = local_264.x;
+                                                  local_254[(uint)bVar21 * -2] =
+                                                       *(float *)((int)&local_264 +
+                                                                 (uint)bVar21 * -8 + 4);
+                                                  local_254[(uint)bVar21 * -2 +
+                                                            (uint)bVar21 * -2 + 1] =
+                                                       *(float *)((int)&local_264 +
+                                                                 (uint)bVar21 * -8 +
+                                                                 (uint)bVar21 * -8 + 8);
+                                                  (local_48->orient).vec.y = local_254[0];
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
                                                             (local_48);
                                                   }

@@ -47,16 +47,12 @@ void __cdecl core_scat_cpp_CScat_process_FUN_0051ecc0(CScat *this_ptr,float delt
   CVector3f CStack_7c;
   float fStack_70;
   float afStack_6c [5];
-  float afStack_58 [3];
+  CVector3f CStack_58;
   float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
+  float afStack_48 [4];
   float fStack_38;
   CVector3f CStack_34;
-  uint uStack_28;
-  float afStack_24 [2];
+  CVector3f CStack_28;
   CVector3f CStack_1c;
   
   bVar14 = 0;
@@ -208,15 +204,16 @@ LAB_0051f19d:
   if (pCVar7 == (CDemonActor *)0x0) {
     pCVar17 = &(this_ptr->base).base.model.accumulated_root_motion;
     pCVar1 = &(this_ptr->base).base.position_delta;
-    fStack_40 = pCVar17->x + pCVar1->x;
-    fStack_3c = (this_ptr->base).base.model.accumulated_root_motion.y +
-                (this_ptr->base).base.position_delta.y;
+    afStack_48[2] = pCVar17->x + pCVar1->x;
+    afStack_48[3] =
+         (this_ptr->base).base.model.accumulated_root_motion.y +
+         (this_ptr->base).base.position_delta.y;
     fStack_38 = (this_ptr->base).base.model.accumulated_root_motion.z +
                 (this_ptr->base).base.position_delta.z;
-    CStack_1c.x = fStack_40;
-    *(float *)((int)&CStack_1c + (uint)bVar14 * -8 + 4) = afStack_6c[(uint)bVar14 * -2 + 0xc];
+    CStack_1c.x = afStack_48[2];
+    *(float *)((int)&CStack_1c + (uint)bVar14 * -8 + 4) = afStack_48[(uint)bVar14 * -2 + 3];
     *(float *)((int)&CStack_1c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-         afStack_6c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xd];
+         afStack_48[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -227,12 +224,12 @@ LAB_0051f19d:
     core_charactr_cpp_FUN_00423a10(this_ptr,in_stack_0000001c);
     fStack_4c = (this_ptr->base).base.velocity.x * in_stack_0000001c;
     pCVar17 = &CStack_1c;
-    fStack_48 = (this_ptr->base).base.velocity.y * in_stack_0000001c;
-    fStack_44 = (this_ptr->base).base.velocity.z * in_stack_0000001c;
+    afStack_48[0] = (this_ptr->base).base.velocity.y * in_stack_0000001c;
+    afStack_48[1] = (this_ptr->base).base.velocity.z * in_stack_0000001c;
     fStack_70 = fStack_4c;
-    afStack_6c[(uint)bVar14 * -2] = afStack_6c[(uint)bVar14 * -2 + 9];
+    afStack_6c[(uint)bVar14 * -2] = afStack_48[(uint)bVar14 * -2];
     afStack_6c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-         afStack_6c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10];
+         afStack_48[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
     CStack_1c.x = CStack_1c.x + fStack_70;
     CStack_1c.y = CStack_1c.y + afStack_6c[0];
     CStack_1c.z = CStack_1c.z + afStack_6c[1];
@@ -241,15 +238,16 @@ LAB_0051f19d:
   }
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
             ((CDemonActor *)this_ptr,&(pCVar7->location).position,&CStack_7c);
-  afStack_58[0] = CStack_7c.x;
-  afStack_6c[(uint)bVar14 * -2 + 6] = *(float *)((int)&CStack_7c + (uint)bVar14 * -8 + 4);
-  afStack_6c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7] =
-       *(float *)((int)&CStack_7c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_6c + 5);
-  afStack_6c[2] = (float)uStack_28;
-  afStack_6c[(uint)bVar14 * -2 + 3] = afStack_24[(uint)bVar14 * -2];
+  CStack_58.x = CStack_7c.x;
+  *(uint *)((int)&CStack_58 + (uint)bVar14 * -8 + 4) =
+       *(uint *)((int)&CStack_7c + (uint)bVar14 * -8 + 4);
+  *(uint *)((int)&CStack_58 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
+       *(uint *)((int)&CStack_7c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_58,&CStack_28);
+  afStack_6c[2] = CStack_28.x;
+  afStack_6c[(uint)bVar14 * -2 + 3] = *(float *)((int)&CStack_28 + (uint)bVar14 * -8 + 4);
   afStack_6c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
-       afStack_24[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
+       *(float *)((int)&CStack_28 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
   this_ptr_00 = (CMotionController *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(afStack_6c[3]);
   if ((float)this_ptr_00 < _DAT_005e2b3f) {
     this_ptr_00 = (CMotionController *)((float)this_ptr_00 + _DAT_005e2b43);

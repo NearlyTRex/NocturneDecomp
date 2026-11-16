@@ -21,7 +21,7 @@ int __cdecl core_firestff_cpp_CFirestaff_fire_FUN_004a4d00(CFirestaff *this_ptr)
   iVar1 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr->base);
   if (iVar1 != 0) {
     core_fire_cpp_CFireEffect_createRing_FUN_004a3f70
-              (0x01C73654,&CStack_18,0,(this_ptr->base).carried_by_actor);
+              (0x01C73654,&CStack_18,0,(CCharacter *)(this_ptr->base).carried_by_actor);
     this_ptr_00 = 0x02CF5680;
     (this_ptr->base).fire_cooldown_timer = 1.0;
     core_sound_cpp_CSound_playActorSound_FUN_005609d0

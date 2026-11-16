@@ -1,15 +1,14 @@
 // Name: wincore_wddvmem.cpp_freeRenderBuffers_FUN_00588740
 // Address: 00588740
 // Address Range: [[00588740, 0058878c]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_freeRenderBuffers_FUN_00588740(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_00588740(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void wincore_wddvmem_cpp_freeRenderBuffers_FUN_00588740(void)
+void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_00588740(void)
 
 {
   if (DAT_00622010 == 0) {

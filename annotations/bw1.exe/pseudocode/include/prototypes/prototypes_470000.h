@@ -43,7 +43,7 @@ void __cdecl core_doc_cpp_CDoc_archive_FUN_00471970(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00472220(CDoc *this_ptr);
 void core_doc_cpp_FUN_00472260(void);
-undefined4 * core_doc_cpp_FUN_004722f0(void);
+float * core_doc_cpp_FUN_004722f0(void);
 void __cdecl core_doc_cpp_CDoc_autoAimAtThreat_FUN_004724a0(CDoc *this_ptr,int hand_index,float delta_time);
 void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_00473160(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamageInfo *damage_info);
@@ -161,7 +161,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDracul
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0047d750(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0047d790(CDraculaBride *this_ptr,CVector3f *out_points_array);
-void core_dracbrid_cpp_randomizePosition_FUN_0047d890(float param_1,float param_2,float param_3);
+CVector3f * __stack3_esi core_dracbrid_cpp_randomizePosition_FUN_0047d890(float src_x,float src_y,float src_z,CVector3f *dest);
 void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
 void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0047e150(SFreaky *this_ptr);

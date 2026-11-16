@@ -33,9 +33,7 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   float afStack_ec [6];
   CQuaternion4f CStack_d4;
   CQuaternion4f CStack_c4;
-  uint uStack_b4;
-  uint uStack_b0;
-  uint uStack_ac;
+  CVector3f CStack_b4;
   CVector3f CStack_a8;
   float fStack_9c;
   float afStack_98 [2];
@@ -43,20 +41,13 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   float fStack_84;
   float afStack_80 [2];
   CVector3f CStack_78;
-  uint uStack_6c;
-  float afStack_68 [4];
-  float fStack_58;
-  float fStack_54;
-  float fStack_50;
+  CVector3f CStack_6c;
+  float fStack_60;
+  float afStack_5c [4];
   float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
+  CVector3f CStack_48;
   float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_38 [4];
   float fStack_28;
   float fStack_24;
   float fStack_20;
@@ -81,16 +72,16 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
     pfVar5 = pfVar5 + (uint)bVar9 * -2 + 1;
     pfVar6 = pfVar6 + (uint)bVar9 * -2 + 1;
   }
-  fStack_30 = fStack_104 + fStack_f8;
-  fStack_2c = fStack_100 + fStack_f4;
+  afStack_38[2] = fStack_104 + fStack_f8;
+  afStack_38[3] = fStack_100 + fStack_f4;
   fStack_28 = fStack_fc + fStack_f0;
   fStack_3c = fStack_104 + fStack_f8;
-  afStack_68[(uint)bVar9 * -2 + 0xc] = afStack_68[(uint)bVar9 * -2 + 0xf];
-  afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
-       afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
-  afStack_68[2] = fStack_3c * _DAT_005f0f37;
-  afStack_68[3] = fStack_38 * _DAT_005f0f37;
-  fStack_58 = fStack_34 * _DAT_005f0f37;
+  afStack_38[(uint)bVar9 * -2] = afStack_38[(uint)bVar9 * -2 + 3];
+  afStack_38[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+       afStack_38[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+  fStack_60 = fStack_3c * _DAT_005f0f37;
+  afStack_5c[0] = afStack_38[0] * _DAT_005f0f37;
+  afStack_5c[1] = afStack_38[1] * _DAT_005f0f37;
   fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
   fStack_14 = fStack_24;
   fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
@@ -100,10 +91,10 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   fStack_18 = fStack_14;
   CStack_a8.y = fStack_20;
   CStack_a8.z = fStack_14;
-  fStack_84 = afStack_68[2];
-  afStack_80[(uint)bVar9 * -2] = afStack_68[(uint)bVar9 * -2 + 3];
+  fStack_84 = fStack_60;
+  afStack_80[(uint)bVar9 * -2] = afStack_5c[(uint)bVar9 * -2];
   afStack_80[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+       afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
   core_xform_cpp_eulerToQuaternion_FUN_00594380(&CStack_a8,&CStack_c4);
   CStack_d4.w = CStack_c4.w;
   puVar7 = (uint *)((int)&CStack_d4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
@@ -131,25 +122,26 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   afStack_98[(uint)bVar9 * -2] = *(float *)((int)&CStack_78 + (uint)bVar9 * -8 + 4);
   afStack_98[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
        *(float *)((int)&CStack_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-  fStack_54 = fStack_9c + fStack_84;
-  fStack_50 = afStack_98[0] + afStack_80[0];
+  afStack_5c[2] = fStack_9c + fStack_84;
+  afStack_5c[3] = afStack_98[0] + afStack_80[0];
   fStack_4c = afStack_98[1] + afStack_80[1];
-  fStack_48 = fStack_9c + fStack_84;
-  afStack_68[(uint)bVar9 * -2 + 9] = afStack_68[(uint)bVar9 * -2 + 6];
-  afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
-       afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-  uStack_6c = _DAT_0265370c;
-  afStack_68[(uint)bVar9 * -2] = *(float *)(&DAT_02653710 + (uint)bVar9 * -8);
-  afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       *(float *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-  uStack_b4 = 0;
-  uStack_b0 = 0x3f800000;
-  uStack_ac = 0;
-  fStack_48 = fStack_48 + (this_ptr->base).base.location.position.x;
-  fStack_44 = fStack_44 + (this_ptr->base).base.location.position.y;
-  fStack_40 = fStack_40 + (this_ptr->base).base.location.position.z;
+  CStack_48.x = fStack_9c + fStack_84;
+  *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + 4) = afStack_5c[(uint)bVar9 * -2 + 3];
+  *(float *)((int)&CStack_48 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+       afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+  CStack_6c.x = _DAT_0265370c;
+  *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + 4) =
+       *(uint *)(&DAT_02653710 + (uint)bVar9 * -8);
+  *(uint *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+       *(uint *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+  CStack_b4.x = 0.0;
+  CStack_b4.y = 1.0;
+  CStack_b4.z = 0.0;
+  CStack_48.x = CStack_48.x + (this_ptr->base).base.location.position.x;
+  CStack_48.y = CStack_48.y + (this_ptr->base).base.location.position.y;
+  CStack_48.z = CStack_48.z + (this_ptr->base).base.location.position.z;
   core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-            (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3ed26e98,0x3ee66666,
-             0x3f800000,afStack_68 + 8,&uStack_6c,&uStack_b4,0);
+            (g_CSimpleParticleSystemPtr,1.0,1.0,0.0,0.4,0.0,0.411,0.45,1.0,&CStack_48,&CStack_6c,
+             &CStack_b4,0);
   return;
 }

@@ -24,31 +24,21 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
   float afStackY_10b4 [1007];
   float local_dc;
   CVector3f local_d8;
-  float local_cc;
-  float afStack_c8 [5];
-  uint local_b4;
-  float afStack_b0 [4];
-  float local_a0;
-  float local_9c;
-  float local_98;
-  float local_94;
+  CVector3f local_cc;
+  float local_bc;
+  CVector3f local_b4;
+  CVector3f local_a8;
+  CVector3f local_9c;
   float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
+  float local_8c [4];
   float local_7c;
-  uint local_78;
+  float local_78;
   float local_74;
-  float local_6c;
-  float local_68;
-  float local_64;
+  CVector3f local_6c;
   float local_60;
   float local_5c;
   float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
+  CVector3f local_54;
   float local_48;
   float local_40;
   float local_3c;
@@ -71,11 +61,11 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
     local_60 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar6 + 0x20);
     local_5c = (this_ptr->base).base.base.location.position.y - *(float *)(iVar6 + 0x24);
     local_58 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar6 + 0x28);
-    local_9c = local_60;
-    afStack_b0[(uint)bVar7 * -2 + 6] = afStack_b0[(uint)bVar7 * -2 + 0x15];
-    afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16];
-    local_48 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
+    local_9c.x = local_60;
+    *(float *)((int)&local_9c + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2 + 0xc];
+    *(float *)((int)&local_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+         local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+    local_48 = SQRT(local_9c.z * local_9c.z + local_9c.x * local_9c.x + local_9c.y * local_9c.y);
     if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_48 < _DAT_005d9942)) &&
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
@@ -91,22 +81,22 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
         local_24 = 1;
       }
     }
-    local_84 = (local_2c->base).base.location.position.x -
-               (this_ptr->base).base.base.location.position.x;
-    local_80 = (local_2c->base).base.location.position.y -
-               (this_ptr->base).base.base.location.position.y;
+    local_8c[2] = (local_2c->base).base.location.position.x -
+                  (this_ptr->base).base.base.location.position.x;
+    local_8c[3] = (local_2c->base).base.location.position.y -
+                  (this_ptr->base).base.base.location.position.y;
     local_7c = (local_2c->base).base.location.position.z -
                (this_ptr->base).base.base.location.position.z;
-    local_54 = local_84;
-    afStack_b0[(uint)bVar7 * -2 + 0x18] = afStack_b0[(uint)bVar7 * -2 + 0xc];
-    afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x19] =
-         afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
-    if (afStack_b0 + 5 != afStack_b0 + 0x17) {
-      local_9c = local_54;
-      local_98 = local_50;
-      local_94 = local_4c;
+    local_54.x = local_8c[2];
+    local_8c[(uint)bVar7 * -2 + 0xf] = local_8c[(uint)bVar7 * -2 + 3];
+    local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10] =
+         local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+    if (&local_9c != (CVector3f *)(local_8c + 0xe)) {
+      local_9c.x = local_54.x;
+      local_9c.y = local_54.y;
+      local_9c.z = local_54.z;
     }
-    fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
+    fVar1 = SQRT(local_9c.z * local_9c.z + local_9c.x * local_9c.x + local_9c.y * local_9c.y);
     local_1c = fVar1;
     if ((float)_DAT_005d994e <= fVar1) {
       this_ptr_01 = (CPathMap *)0x0;
@@ -163,11 +153,11 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
         }
       }
       if (local_24 == 1) {
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 5);
-        local_78 = local_b4;
-        afStack_b0[(uint)bVar7 * -2 + 0xf] = afStack_b0[(uint)bVar7 * -2];
-        afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10] =
-             afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_9c,&local_b4);
+        local_78 = local_b4.x;
+        local_8c[(uint)bVar7 * -2 + 6] = *(float *)((int)&local_b4 + (uint)bVar7 * -8 + 4);
+        local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+             *(float *)((int)&local_b4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                              (local_74 - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
@@ -188,39 +178,38 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
     }
     local_90 = (local_2c->base).base.location.position.x -
                (this_ptr->base).base.base.location.position.x;
-    local_8c = (local_2c->base).base.location.position.y -
-               (this_ptr->base).base.base.location.position.y;
-    local_88 = (local_2c->base).base.location.position.z -
-               (this_ptr->base).base.base.location.position.z;
-    afStack_b0[2] = local_90;
-    afStack_b0[(uint)bVar7 * -2 + 3] = afStack_b0[(uint)bVar7 * -2 + 9];
-    afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-    if (afStack_b0 + 5 != afStack_b0 + 2) {
-      local_9c = afStack_b0[2];
-      local_98 = afStack_b0[3];
-      local_94 = local_a0;
+    local_8c[0] = (local_2c->base).base.location.position.y -
+                  (this_ptr->base).base.base.location.position.y;
+    local_8c[1] = (local_2c->base).base.location.position.z -
+                  (this_ptr->base).base.base.location.position.z;
+    local_a8.x = local_90;
+    *(float *)((int)&local_a8 + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2];
+    *(float *)((int)&local_a8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+         local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+    if (&local_9c != &local_a8) {
+      local_9c.x = local_a8.x;
+      local_9c.y = local_a8.y;
+      local_9c.z = local_a8.z;
     }
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 5);
-    local_6c = local_cc;
-    afStack_b0[(uint)bVar7 * -2 + 0x12] = afStack_c8[(uint)bVar7 * -2];
-    afStack_b0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
-         afStack_c8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-    if (afStack_b0 + 5 != afStack_b0 + 0x11) {
-      local_9c = local_6c;
-      local_98 = local_68;
-      local_94 = local_64;
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_9c,&local_cc);
+    local_6c.x = local_cc.x;
+    local_8c[(uint)bVar7 * -2 + 9] = *(float *)((int)&local_cc + (uint)bVar7 * -8 + 4);
+    local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
+         *(float *)((int)&local_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    if (&local_9c != (CVector3f *)(local_8c + 8)) {
+      local_9c.x = local_6c.x;
+      local_9c.y = local_6c.y;
+      local_9c.z = local_6c.z;
     }
-    afStack_c8[3] =
-         core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                   (local_98 - (this_ptr->base).base.base.orient.vec.y);
-    if (local_30 < afStack_c8[3]) {
-      afStack_c8[3] = local_30;
+    local_bc = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                         (local_9c.y - (this_ptr->base).base.base.orient.vec.y);
+    if (local_30 < local_bc) {
+      local_bc = local_30;
     }
-    if (afStack_c8[3] < -local_30) {
-      afStack_c8[3] = -local_30;
+    if (local_bc < -local_30) {
+      local_bc = -local_30;
     }
-    local_28 = afStack_c8[3] - (this_ptr->head_look_euler).y;
+    local_28 = local_bc - (this_ptr->head_look_euler).y;
     if (delta_time * _DAT_005d997e < local_28) {
       local_28 = delta_time * _DAT_005d997e;
     }

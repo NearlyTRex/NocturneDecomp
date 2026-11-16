@@ -1,8 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
+; SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 ;
+; Parameters:
+; SEdgeList *      Stack[0x4]:4   edge_lists
+; SEdgeList *      Stack[0x8]:4   scanline_data
+; SEdge *          Stack[0xc]:4   existing_edges
+; int *            Stack[0x10]:4   max_x
+; int              Stack[0x14]:4   max_y
+; int              Stack[0x18]:4   gap_tolerance_x
+; int              Stack[0x1c]:4   gap_tolerance_y
+; int              Stack[0x20]:4   gap_tolerance_connected
+; int              Stack[0x24]:4   gap_tolerance_horizontal
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400

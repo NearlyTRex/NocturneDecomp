@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; CKeyFramedModel * Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; CKeyFramedModel * Stack[0x10]:4   model_ptr
+; float            Stack[0x14]:4   drag
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cce0
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 004a2972
     PUSH EBX                            ; 004a2973
     CALL core_fire.cpp_CLeaf_init_FUN_0049a140 ; 004a2974
-        ;   XREF to: 0049a140 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLeaf_init_FUN_0049a140(CLeaf * this_ptr, CVector3f * param_2, CVector3f * param_3, undefined4 param_4, ...)
+        ;   XREF to: 0049a140 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLeaf_init_FUN_0049a140(CLeaf * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model, ...)
     ADD ESP,0x14                        ; 004a2979
     POP EBP                             ; 004a297c
     POP EBX                             ; 004a297d

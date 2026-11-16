@@ -233,7 +233,7 @@ section .text
     PUSH EDX                            ; 0040ccde
     INC ESI                             ; 0040ccdf
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930 ; 0040cce0
-        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, CKeyFramedModel * param_4, ...)
+        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr, ...)
     MOV ECX,dword ptr [EBP + 0x11c]     ; 0040cce5
     ADD ESP,0x14                        ; 0040cceb
     CMP ESI,ECX                         ; 0040ccee

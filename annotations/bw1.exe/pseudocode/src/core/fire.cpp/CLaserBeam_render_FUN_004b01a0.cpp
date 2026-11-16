@@ -89,17 +89,16 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
   float local_1a8;
   float local_1a4;
   float local_1a0;
-  float local_19c;
-  float local_198 [5];
+  CVector3f local_19c;
+  CVector3f local_190;
   float local_184;
-  float local_180;
-  float local_17c;
+  float local_180 [2];
   CVector3f local_178;
   float local_16c;
   float local_168 [4];
   float local_158;
   CVector3f local_154;
-  float local_148;
+  CVector3f local_148;
   CVector3i local_13c;
   CVector3f local_130;
   CVector3f local_124;
@@ -148,17 +147,18 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
   local_1fc = (this_ptr->hit_position).x - (this_ptr->origin).x;
   local_1f8[0] = (this_ptr->hit_position).y - (this_ptr->origin).y;
   local_1f8[1] = (this_ptr->hit_position).z - (this_ptr->origin).z;
-  local_19c = local_1fc;
-  local_198[(uint)bVar9 * -2] = local_1f8[(uint)bVar9 * -2];
-  local_198[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+  local_19c.x = local_1fc;
+  *(float *)((int)&local_19c + (uint)bVar9 * -8 + 4) = local_1f8[(uint)bVar9 * -2];
+  *(float *)((int)&local_19c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        local_1f8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(local_1bc + 8);
-  fVar2 = SQRT(local_198[1] * local_198[1] + local_19c * local_19c + local_198[0] * local_198[0]);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_19c,&local_148);
+  fVar2 = SQRT(local_19c.z * local_19c.z + local_19c.x * local_19c.x + local_19c.y * local_19c.y);
   pCVar13 = &local_e8;
-  local_e8.x = local_148;
-  *(float *)((int)&local_e8 + (uint)bVar9 * -8 + 4) = local_168[(uint)bVar9 * -2 + 9];
-  *(float *)((int)&local_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-       local_168[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+  local_e8.x = local_148.x;
+  *(uint *)((int)&local_e8 + (uint)bVar9 * -8 + 4) =
+       *(uint *)((int)&local_148 + (uint)bVar9 * -8 + 4);
+  *(uint *)((int)&local_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+       *(uint *)((int)&local_148 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&local_2c0,pCVar13);
   local_380 = this_ptr->beam_width;
   local_394 = this_ptr->reticle_intensity;
@@ -258,12 +258,12 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
       local_1bc[0] = local_2c0.m[1].z * fVar3;
       local_1bc[1] = local_2c0.m[2].z * fVar3;
       local_184 = local_2c0.m[0].z * fVar3;
-      local_198[(uint)bVar9 * -2 + 6] = local_1bc[(uint)bVar9 * -2];
-      local_198[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+      local_180[(uint)bVar9 * -2] = local_1bc[(uint)bVar9 * -2];
+      local_180[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
            local_1bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
       local_21c[2] = (this_ptr->origin).x + local_184;
-      local_21c[3] = (this_ptr->origin).y + local_180;
-      local_20c = (this_ptr->origin).z + local_17c;
+      local_21c[3] = (this_ptr->origin).y + local_180[0];
+      local_20c = (this_ptr->origin).z + local_180[1];
       local_154.x = local_21c[2];
       local_168[(uint)bVar9 * -2 + 6] = local_21c[(uint)bVar9 * -2 + 3];
       local_168[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
@@ -494,10 +494,10 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
   }
   if (0.0 < local_394) {
     fVar2 = 1.0 / fVar2;
-    local_220 = local_19c * fVar2;
-    local_21c[0] = local_198[0] * fVar2;
-    local_21c[1] = local_198[1] * fVar2;
-    local_118 = local_19c * fVar2;
+    local_220 = local_19c.x * fVar2;
+    local_21c[0] = local_19c.y * fVar2;
+    local_21c[1] = local_19c.z * fVar2;
+    local_118 = local_19c.x * fVar2;
     local_114[(uint)bVar9 * -2] = local_21c[(uint)bVar9 * -2];
     local_114[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
          local_21c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
@@ -515,11 +515,13 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004b01a0(CLaserBeam *this_ptr)
     *(float *)((int)&local_10c + (uint)bVar9 * -8 + 4) = local_fc[(uint)bVar9 * -2];
     *(float *)((int)&local_10c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          local_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&this_ptr->reflection_normal);
-    local_124.x = local_198[2];
-    *(float *)((int)&local_124 + (uint)bVar9 * -8 + 4) = local_198[(uint)bVar9 * -2 + 3];
-    *(float *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-         local_198[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+              (&this_ptr->reflection_normal,&local_190);
+    local_124.x = local_190.x;
+    *(uint *)((int)&local_124 + (uint)bVar9 * -8 + 4) =
+         *(uint *)((int)&local_190 + (uint)bVar9 * -8 + 4);
+    *(uint *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         *(uint *)((int)&local_190 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
     if (&local_e8 != &local_124) {
       local_e8.x = local_124.x;
       local_e8.y = local_124.y;

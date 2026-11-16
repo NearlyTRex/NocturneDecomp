@@ -578,7 +578,7 @@ section .text
     LEA ESI,[EBP + 0xfffffd66]          ; 005925eb
     LEA EDI,[EBP + -0x72]               ; 005925f1
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 005925f4
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffd66]          ; 005925f9
     MOVSD ES:EDI,ESI                    ; 005925ff
     MOVSD ES:EDI,ESI                    ; 00592600
@@ -1136,7 +1136,7 @@ section .text
     MOV dword ptr [EBX + 0xd0a8],0x0    ; 00592cae
     LEA EDI,[EBP + 0xfffffdae]          ; 00592cb8
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00592cbe
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffdf6]          ; 00592cc3
     MOVSD ES:EDI,ESI                    ; 00592cc9
     MOVSD ES:EDI,ESI                    ; 00592cca
@@ -1563,7 +1563,7 @@ section .text
     LEA ESI,[EBP + 0xfffffee6]          ; 00593188
     LEA EDI,[EBP + 0xfffffec2]          ; 0059318e
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00593194
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffee6]          ; 00593199
     MOVSD ES:EDI,ESI                    ; 0059319f
     MOVSD ES:EDI,ESI                    ; 005931a0

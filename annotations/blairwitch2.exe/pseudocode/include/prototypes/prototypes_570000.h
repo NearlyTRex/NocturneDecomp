@@ -150,7 +150,7 @@ void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00575040(SMRGLTextu
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00575070(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005750a0(int enabled);
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005750b0(char *output_buffer);
-void engine_texture_cpp_renderTextureAtlas_FUN_005750d0(void);
+void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005750d0(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005750e0(void);
 void engine_texture_cpp_FUN_00575140(void);
 void engine_texture_cpp_FUN_00575150(void);
@@ -281,7 +281,7 @@ int __cdecl support_trstream_cpp_CInStream_readLine_FUN_0057cc20(CInStream *this
 int __cdecl support_trstream_cpp_CInStream_skipWhitespace_FUN_0057ccc0(CInStream *this_ptr);
 CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile *this_ptr);
 CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile *this_ptr,char *path);
-undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3);
+CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *directory,char *filename);
 CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_copy_FUN_0057ce90(CInStreamFile *this_ptr,CInStreamFile *other);
 CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile *this_ptr,uint flags);
 int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_0057cf20(CInStreamFile *this_ptr);
@@ -323,8 +323,8 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_0057db
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_0057dbe0(COutStreamFile *this_ptr,COutStreamFile *other);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(COutStreamFile *this_ptr,uint flags);
 uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_0057dc70(COutStreamFile *this_ptr,byte param_2);
-int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile *this_ptr,void *param_2,int param_3);
-bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,long param_2,int param_3);
+int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile *this_ptr,void *data,int size);
+int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_0057dd20(COutStreamFile *this_ptr);
 bool __cdecl support_trstream_cpp_COutStreamFile_isOpen_FUN_0057dd40(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_close_FUN_0057dd60(COutStreamFile *this_ptr);

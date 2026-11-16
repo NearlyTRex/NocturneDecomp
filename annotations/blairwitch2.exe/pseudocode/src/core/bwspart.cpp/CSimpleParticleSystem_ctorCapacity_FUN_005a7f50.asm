@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)
+; CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   max_particles
 ;
 ; XREF[1]:
 ;   core_bwgrndma.cpp_FUN_005a7eb0 at 005a7eba

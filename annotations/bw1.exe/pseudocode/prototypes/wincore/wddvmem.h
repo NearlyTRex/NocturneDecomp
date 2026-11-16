@@ -23,11 +23,11 @@ int __cdecl reinitializeDirectDraw(void);
 
 // Original: wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005abf20
 // Address: 005abf20
-void allocateRenderBuffers(void);
+void __cdecl allocateRenderBuffers(void);
 
 // Original: wincore_wddvmem.cpp_freeRenderBuffers_FUN_005abff0
 // Address: 005abff0
-void freeRenderBuffers(void);
+void __cdecl freeRenderBuffers(void);
 
 // Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ac040
 // Address: 005ac040

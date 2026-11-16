@@ -3481,15 +3481,89 @@
       "005a28c0",
       "005a3e50"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":616,
     "method":"traceConnectedEdges",
     "name":"cockpit_ckptutil.c_traceConnectedEdges_FUN_00438070",
+    "params":[
+      {
+        "name":"edge_lists",
+        "type":{
+          "kind":"struct",
+          "name":"SEdgeList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_data",
+        "type":{
+          "kind":"struct",
+          "name":"SEdgeList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"existing_edges",
+        "type":{
+          "kind":"struct",
+          "name":"SEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"max_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"max_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"gap_tolerance_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"gap_tolerance_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"gap_tolerance_connected",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"gap_tolerance_horizontal",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SEdge",
+      "ptr":1
     },
     "tu":"cockpit/ckptutil.c",
     "variadic":false
@@ -3700,14 +3774,40 @@
       "00440e10",
       "00441530"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":111,
-    "method":"writeBitsToStream",
-    "name":"support_codec.cpp_writeBitsToStream_FUN_004400f0",
+    "method":"readBitsFromStream",
+    "name":"support_codec.cpp_readBitsFromStream_FUN_004400f0",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bit_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"istream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4177,10 +4277,20 @@
     "instructions":18,
     "method":"ungetChar",
     "name":"support_codec.cpp_CInStreamPipe_ungetChar_FUN_00441970",
+    "params":[
+      {
+        "name":"ch",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4200,42 +4310,42 @@
     "name":"support_codec.cpp_CInStreamPipe_open_FUN_00441bf0",
     "params":[
       {
-        "name":"param_2",
+        "name":"codec",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CCodec",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
+        "name":"source",
         "type":{
           "kind":"builtin",
-          "name":"ulong",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"owns_streams",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"buffer_size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -9741,27 +9851,27 @@
     "name":"core_fire.cpp_CFireEffect_createRing_FUN_004a3f70",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ring_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"owner",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
         }
       }
     ],
@@ -13105,8 +13215,8 @@
     "name":"core_lightsta.cpp_CLightStaff_fire_FUN_004e1070",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/lightsta.cpp",
@@ -13568,14 +13678,14 @@
     "calls":[
       "004b93e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":45,
     "method":"getSinglePressedKey",
     "name":"core_menu.cpp_getSinglePressedKey_FUN_004eadf0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/menu.cpp",
@@ -16122,14 +16232,32 @@
       "005a43ec",
       "005a457c"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":52,
     "method":"crc32ComputeFileRange",
     "name":"engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"engine/pod.cpp",

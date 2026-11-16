@@ -115,7 +115,7 @@ void __cdecl getTextureCacheStats(char *output_buffer);
 
 // Original: engine_texture.cpp_renderTextureAtlas_FUN_0056ace0
 // Address: 0056ace0
-void renderTextureAtlas(void);
+void __cdecl renderTextureAtlas(void);
 
 // Original: engine_texture.cpp_getCurrentTexture_FUN_0056acf0
 // Address: 0056acf0

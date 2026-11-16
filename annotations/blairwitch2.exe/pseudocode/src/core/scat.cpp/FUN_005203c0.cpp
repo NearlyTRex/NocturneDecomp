@@ -42,15 +42,12 @@ void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3)
   float fStack_b8;
   float fStack_b4;
   CVector3f CStack_b0;
-  float fStack_a4;
-  float afStack_a0 [4];
-  float fStack_90;
-  float fStack_8c;
-  float fStack_88;
+  CVector3f CStack_a4;
+  float fStack_98;
+  float afStack_94 [4];
   float fStack_84;
   CVector3f CStack_80;
-  float fStack_74;
-  float afStack_70 [2];
+  CVector3f CStack_74;
   CVector3f CStack_68;
   float fStack_5c;
   float afStack_58 [4];
@@ -115,14 +112,14 @@ void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3)
           afStack_58[2] = fStack_110 + fStack_104;
           afStack_58[3] = fStack_10c + fStack_100;
           fStack_48 = fStack_108 + fStack_fc;
-          afStack_a0[2] = fStack_110 + fStack_104;
-          afStack_a0[(uint)bVar8 * -2 + 3] = afStack_58[(uint)bVar8 * -2 + 3];
-          afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
+          fStack_98 = fStack_110 + fStack_104;
+          afStack_94[(uint)bVar8 * -2] = afStack_58[(uint)bVar8 * -2 + 3];
+          afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                afStack_58[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-          fStack_e0 = afStack_a0[2] * _DAT_005e2bcf;
-          afStack_dc[0] = afStack_a0[3] * _DAT_005e2bcf;
-          afStack_dc[1] = fStack_90 * _DAT_005e2bcf;
-          CStack_d4.x = afStack_a0[2] * _DAT_005e2bcf;
+          fStack_e0 = fStack_98 * _DAT_005e2bcf;
+          afStack_dc[0] = afStack_94[0] * _DAT_005e2bcf;
+          afStack_dc[1] = afStack_94[1] * _DAT_005e2bcf;
+          CStack_d4.x = fStack_98 * _DAT_005e2bcf;
           afStack_dc[(uint)bVar8 * -2 + 3] = afStack_dc[(uint)bVar8 * -2];
           afStack_dc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
                afStack_dc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
@@ -143,29 +140,29 @@ void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3)
         *(uint *)((int)&CStack_ec + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              *(uint *)((int)&CStack_80 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(param_1,&CStack_ec,&CStack_f8);
-        fStack_8c = CStack_f8.x;
-        afStack_a0[(uint)bVar8 * -2 + 6] = *(float *)((int)&CStack_f8 + (uint)bVar8 * -8 + 4);
-        afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
+        afStack_94[2] = CStack_f8.x;
+        afStack_94[(uint)bVar8 * -2 + 3] = *(float *)((int)&CStack_f8 + (uint)bVar8 * -8 + 4);
+        afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
              *(float *)((int)&CStack_f8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
                   ((CDeformableModelInstance *)(param_1 + 1),_DAT_01e62080,&CStack_68);
-        fVar4 = fStack_8c;
+        fVar4 = afStack_94[2];
         fStack_bc = CStack_68.x;
         afStack_dc[(uint)bVar8 * -2 + 9] = *(float *)((int)&CStack_68 + (uint)bVar8 * -8 + 4);
         afStack_dc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10] =
              *(float *)((int)&CStack_68 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         fStack_c8 = fVar4 - fStack_bc;
-        fStack_c4 = fStack_88 - fStack_b8;
+        fStack_c4 = afStack_94[3] - fStack_b8;
         fStack_c0 = fStack_84 - fStack_b4;
-        fStack_a4 = fVar4 - fStack_bc;
-        afStack_a0[(uint)bVar8 * -2] = afStack_dc[(uint)bVar8 * -2 + 6];
-        afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+        CStack_a4.x = fVar4 - fStack_bc;
+        *(float *)((int)&CStack_a4 + (uint)bVar8 * -8 + 4) = afStack_dc[(uint)bVar8 * -2 + 6];
+        *(float *)((int)&CStack_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
              afStack_dc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_a4);
-        fStack_5c = fStack_74;
-        afStack_58[(uint)bVar8 * -2] = afStack_70[(uint)bVar8 * -2];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_a4,&CStack_74);
+        fStack_5c = CStack_74.x;
+        afStack_58[(uint)bVar8 * -2] = *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + 4);
         afStack_58[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             afStack_70[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+             *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         local_1a8 = fStack_5c;
         local_24 = afStack_58[0];
       }

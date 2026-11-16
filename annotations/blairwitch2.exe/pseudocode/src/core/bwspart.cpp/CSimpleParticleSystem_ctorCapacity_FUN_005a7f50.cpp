@@ -2,11 +2,11 @@
 // Address: 005a7f50
 // Address Range: [[005a7f50, 005a7ffd]]
 // Convention: __cdecl
-// Signature: int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)
+// Signature: CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles)
 
 #include "nocturne.h"
 
-int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)
+CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles)
 
 {
   void *pvVar1;
@@ -20,7 +20,7 @@ int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSi
   this_ptr->fade_current = 1.0;
   this_ptr->fade_start = 1.0;
   this_ptr->fade_end = 1.0;
-  this_ptr->max_particles = param_2;
+  this_ptr->max_particles = max_particles;
   this_ptr->fade_duration = 1.0;
   this_ptr->fade_timer = 0.0;
   this_ptr->stop_after_fade = 0;
@@ -38,5 +38,5 @@ int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSi
     } while (iVar2 < this_ptr->max_particles);
   }
   this_ptr->active = 1;
-  return (int)this_ptr;
+  return this_ptr;
 }

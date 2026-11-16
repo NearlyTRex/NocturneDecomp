@@ -45,7 +45,7 @@ section .text
     MOV EAX,ESP                         ; 00440b96
     PUSH EAX                            ; 00440b98
     CALL support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00 ; 00440b99
-        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
+        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
     MOV EBP,dword ptr [ESI]             ; 00440b9e
     SUB EBP,EAX                         ; 00440ba0
     ADD ESP,0x4                         ; 00440ba2

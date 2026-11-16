@@ -123,7 +123,7 @@ int core_event_cpp_FUN_004a1d00(CEventList *param_1,char *param_2)
   int local_128;
   int local_124;
   int local_120;
-  uint local_11c;
+  float local_11c;
   int local_118;
   int local_114;
   CCharacter *local_110;
@@ -349,8 +349,8 @@ LAB_004a1d87:
         memmove(local_14c,local_248d + 2,SVar17);
         SVar17 = SVar17 - 1;
       }
-      pcVar20 = (char *)core_event_cpp_extractParenArg_FUN_004a1630
-                                  (&local_158,&stack0xffffd574,0x100);
+      pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                          ((char **)&local_158,&stack0xffffd574,0x100,0);
       if (pcVar20 != (char *)0x0) goto LAB_004a2140;
       uVar16 = 0xffffffff;
       pcVar20 = &stack0xffffd574;
@@ -537,7 +537,8 @@ LAB_004a1d87:
             while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
               local_158 = local_158 + 1;
             }
-            pcVar20 = (char *)core_event_cpp_extractParenArg_FUN_004a1630(&local_158,local_fb4,200);
+            pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                ((char **)&local_158,local_fb4,200,1);
             if (pcVar20 != (char *)0x0) goto LAB_004a2140;
             core_set_cpp_CDemonSet_addLightFilter_FUN_00555a20
                       (g_CDemonSetPtr,local_fb4,&local_64,&local_140);
@@ -645,7 +646,7 @@ LAB_004a1d87:
                 core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
                           (&local_26c,&local_194,&local_170);
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
-                          (pCVar7,local_13c,(int)pCVar9,0,&local_26c);
+                          (pCVar7,local_13c,(CDemonActor *)pCVar9,0.0,&local_26c);
               }
             }
             else {
@@ -812,8 +813,8 @@ LAB_004a1d87:
                     while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
                       local_158 = local_158 + 1;
                     }
-                    pcVar20 = (char *)core_event_cpp_extractParenArg_FUN_004a1630
-                                                (&local_158,local_1dc4,200);
+                    pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                        ((char **)&local_158,local_1dc4,200,1);
                     if (pcVar20 != (char *)0x0) goto LAB_004a2140;
                     pCVar7 = (CCharacter *)
                              core_event_cpp_resolveActorByName_FUN_004a1370
@@ -864,7 +865,7 @@ LAB_004a1d87:
                       while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
                         local_158 = local_158 + 1;
                       }
-                      local_11c = 0;
+                      local_11c = 0.0;
                       pbVar11 = local_158;
                       if (*local_158 == 0x2c) {
                         local_120 = -1;
@@ -1309,8 +1310,8 @@ LAB_004a1d87:
                                     while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
                                       local_158 = local_158 + 1;
                                     }
-                                    pcVar20 = (char *)core_event_cpp_extractParenArg_FUN_004a1630
-                                                                (&local_158,local_1fc,0x20);
+                                    pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                                        ((char **)&local_158,local_1fc,0x20,1);
                                     if (pcVar20 != (char *)0x0) {
 LAB_004a2140:
                                       pcVar19 = &DAT_01c56ed0;
@@ -1341,8 +1342,8 @@ LAB_004a2140:
                                       while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
                                         local_158 = local_158 + 1;
                                       }
-                                      pcVar20 = (char *)core_event_cpp_extractParenArg_FUN_004a1630
-                                                                  (&local_158,local_23c,0x20);
+                                      pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                                          ((char **)&local_158,local_23c,0x20,1);
                                       if (pcVar20 != (char *)0x0) goto LAB_004a2140;
                                       if (local_15c != 0) {
                                         core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
@@ -1358,9 +1359,8 @@ LAB_004a2140:
                                         while (((&DAT_00626114)[(byte)(*local_158 + 1)] & 2) != 0) {
                                           local_158 = local_158 + 1;
                                         }
-                                        pcVar20 = (char *)
-                                                  core_event_cpp_extractParenArg_FUN_004a1630
-                                                            (&local_158,local_1dc,0x20);
+                                        pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                                            ((char **)&local_158,local_1dc,0x20,1);
                                         if (pcVar20 != (char *)0x0) goto LAB_004a2140;
                                         if (local_15c != 0) {
                                           core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60
@@ -1378,9 +1378,9 @@ LAB_004a2140:
                                           {
                                             local_158 = local_158 + 1;
                                           }
-                                          pcVar20 = (char *)
-                                                  core_event_cpp_extractParenArg_FUN_004a1630
-                                                            (&local_158,local_21c,0x20);
+                                          pcVar20 = core_event_cpp_extractParenArg_FUN_004a1630
+                                                              ((char **)&local_158,local_21c,0x20,1)
+                                          ;
                                           if (pcVar20 != (char *)0x0) goto LAB_004a2140;
                                           if (local_15c != 0) {
                                             core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60

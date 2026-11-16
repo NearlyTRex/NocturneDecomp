@@ -21,14 +21,12 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(CHero *this_
   float local_94 [2];
   CVector3f local_8c;
   CVector3f CStack_80;
-  float local_74;
-  float local_70 [4];
-  float fStack_60;
-  uint local_5c;
-  float local_58;
-  uint local_50;
+  CVector3f local_74;
+  float fStack_68;
+  float afStack_64 [5];
+  CVector3f local_50;
   float local_44;
-  float local_3c;
+  float afStack_40 [2];
   CVector3f CStack_38;
   int local_24;
   int local_20;
@@ -47,29 +45,29 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(CHero *this_
     local_98 = (this_ptr_00->base).base.location.position.x - ((CVector3f *)&local_1c->x)->x;
     local_94[0] = (this_ptr_00->base).base.location.position.y - local_1c->y;
     local_94[1] = (this_ptr_00->base).base.location.position.z - local_1c->z;
-    local_74 = local_98;
-    local_70[(uint)bVar3 * -2] = local_94[(uint)bVar3 * -2];
-    local_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+    local_74.x = local_98;
+    *(float *)((int)&local_74 + (uint)bVar3 * -8 + 4) = local_94[(uint)bVar3 * -2];
+    *(float *)((int)&local_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          local_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    if (((ABS(local_70[0]) <= (float)_DAT_005e48e5) &&
-        (local_70[0] = 0.0,
-        SQRT(local_70[1] * local_70[1] + local_74 * local_74) <= (float)_DAT_005e48e5)) &&
+    if (((ABS(local_74.y) <= (float)_DAT_005e48e5) &&
+        (local_74.y = 0.0,
+        SQRT(local_74.z * local_74.z + local_74.x * local_74.x) <= (float)_DAT_005e48e5)) &&
        (this_ptr_00 != this_ptr)) {
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_74);
-      local_5c = local_50;
-      local_70[(uint)bVar3 * -2 + 6] = local_70[(uint)bVar3 * -2 + 9];
-      local_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
-           local_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&local_74,&local_50);
+      afStack_64[2] = local_50.x;
+      afStack_64[(uint)bVar3 * -2 + 3] = *(float *)((int)&local_50 + (uint)bVar3 * -8 + 4);
+      afStack_64[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+           *(float *)((int)&local_50 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
       local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                           (local_58 - (this_ptr->base).base.orient.vec.y);
+                           (afStack_64[3] - (this_ptr->base).base.orient.vec.y);
       if (ABS(local_18) <= (float)_DAT_005e48ed) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
                   ((CDemonActor *)this_ptr_00,local_1c,&local_8c);
         local_44 = local_8c.x;
-        local_70[(uint)bVar3 * -2 + 0xc] = *(float *)((int)&local_8c + (uint)bVar3 * -8 + 4);
-        local_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =
+        afStack_40[(uint)bVar3 * -2] = *(float *)((int)&local_8c + (uint)bVar3 * -8 + 4);
+        afStack_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
              *(float *)((int)&local_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-        if (local_3c <= 0.0) {
+        if (afStack_40[1] <= 0.0) {
           (*((this_ptr_00->base).base.vtable._ub)->getInteractionInfo)
                     ((CDemonActor *)this_ptr_00,&SStack_b8);
           if ((SStack_b8.can_interact != 0) && (SStack_b8.interacting_actor == (CDemonActor *)0x0))
@@ -79,12 +77,12 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(CHero *this_
             CStack_38.y = (float)SStack_b8.interacting_actor;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
                       ((CDemonActor *)this_ptr_00,&CStack_38,&CStack_80);
-            local_70[2] = CStack_80.x;
-            local_70[(uint)bVar3 * -2 + 3] = *(float *)((int)&CStack_80 + (uint)bVar3 * -8 + 4);
-            local_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+            fStack_68 = CStack_80.x;
+            afStack_64[(uint)bVar3 * -2] = *(float *)((int)&CStack_80 + (uint)bVar3 * -8 + 4);
+            afStack_64[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
                  *(float *)((int)&CStack_80 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-            fVar1 = local_70[2] - ((CVector3f *)&local_1c->x)->x;
-            fVar2 = fStack_60 - local_1c->z;
+            fVar1 = fStack_68 - ((CVector3f *)&local_1c->x)->x;
+            fVar2 = afStack_64[1] - local_1c->z;
             if (SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)_DAT_005e48f5) {
               this_ptr->hero_action_range = 0.0;
               this_ptr->hero_action = 9;

@@ -4255,14 +4255,40 @@
       "00434490",
       "00434bb0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":111,
-    "method":"writeBitsToStream",
-    "name":"support_codec.cpp_writeBitsToStream_FUN_00433780",
+    "method":"readBitsFromStream",
+    "name":"support_codec.cpp_readBitsFromStream_FUN_00433780",
+    "params":[
+      {
+        "name":"bit_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SBitBuffer",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bit_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"istream",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4309,18 +4335,18 @@
     "name":"support_codec.cpp_CAsciiArmor_flush_FUN_00434c00",
     "params":[
       {
-        "name":"param_2",
+        "name":"ostream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4338,8 +4364,8 @@
     "name":"support_codec.cpp_CInStreamPipe_isOpen_FUN_00435180",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -4364,8 +4390,8 @@
     "name":"support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00435300",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -9495,23 +9521,23 @@
     "name":"core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_4",
+        "name":"model_ptr",
         "type":{
           "kind":"class",
           "name":"CKeyFramedModel",
@@ -9519,10 +9545,10 @@
         }
       },
       {
-        "name":"param_5",
+        "name":"drag",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -16994,15 +17020,65 @@
       "005b7790",
       "005b89c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":102,
     "method":"loadPBGFile",
     "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400",
+    "params":[
+      {
+        "name":"bitmap_set_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPackedBitmapSet",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pbg_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frames_per_bitmap",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_data_load",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"selected_bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CPackedBitmap",
+      "ptr":1
     },
     "tu":"cockpit/pkbitmap.cpp",
     "variadic":false
@@ -19556,8 +19632,8 @@
     "name":"core_slew.cpp_CSlew_init_FUN_00549380",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined8",
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/slew.cpp",
@@ -23866,15 +23942,15 @@
     "name":"core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380",
     "params":[
       {
-        "name":"param_2",
+        "name":"label",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"value",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -23882,7 +23958,7 @@
         }
       },
       {
-        "name":"param_4",
+        "name":"buffer",
         "type":{
           "kind":"builtin",
           "name":"char",
@@ -25087,98 +25163,98 @@
     "name":"core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300",
     "params":[
       {
-        "name":"param_2",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_3",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_4",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_5",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_6",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_7",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_8",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_9",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
-        }
-      },
-      {
-        "name":"param_10",
+        "name":"lifetime",
         "type":{
           "kind":"builtin",
           "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"alpha_start",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"alpha_end",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size_start",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size_end",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"red",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"green",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"blue",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"position_offset",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
           "ptr":1
         }
       },
       {
-        "name":"param_11",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"class",
+          "name":"CVector3f",
           "ptr":1
         }
       },
       {
-        "name":"param_12",
+        "name":"acceleration",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"class",
+          "name":"CVector3f",
           "ptr":1
         }
       },
       {
-        "name":"param_13",
+        "name":"texture_index",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }

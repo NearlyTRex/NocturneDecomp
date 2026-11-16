@@ -135,7 +135,7 @@ section .text
     PUSH EDX                            ; 0042ba2a
     FSTP float ptr [ESP + 0x10]         ; 0042ba2b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0042ba2f
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0042ba34
     LEA ESI,[ESP + 0x70]                ; 0042ba37
     MOV ECX,dword ptr [EBP + 0x18]      ; 0042ba3b
@@ -166,7 +166,7 @@ section .text
     PUSH EAX                            ; 0042ba86
     FSTP float ptr [ESP + 0x120]        ; 0042ba87
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0042ba8e
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0042ba93
     FLD float ptr [ESP + 0x11c]         ; 0042ba96
     FSUB float ptr [ESP + 0xc]          ; 0042ba9d
@@ -333,7 +333,7 @@ section .text
     LEA ESI,[ESP + 0x20]                ; 0042bcaa
     LEA EDI,[ESP + 0xa4]                ; 0042bcae
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0042bcb5
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x20]                ; 0042bcba
     ADD ESP,0x4                         ; 0042bcbe
     MOVSD ES:EDI,ESI                    ; 0042bcc1

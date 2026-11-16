@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 342,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 27,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 231
@@ -25,9 +23,9 @@
         "0042f4ee"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330",
-    "signature": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)"
+    "signature": "char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index)"
   },
   "function_calls": [
     {
@@ -84,9 +82,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -147,12 +145,55 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "apply_palette",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "palette_index",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -162,214 +203,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void * cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uStack_1c = param_3 * param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uStack_1c = param_3 * param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == (void *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = malloc(uStack_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == (void *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_getFile_FUN_00460c70((char *)0x5cd754,param_1,(char *)0x5cd751);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(byte *)((int)param_2",
-      "severity": "moderate",
-      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar2 = puVar2 + param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "} while (uVar1 < param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (uStack_18 < param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042c670(param_1,param_2,uStack_1c,(int)param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042c670(param_1,param_2,uStack_1c,(int)param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042c670(param_1,param_2,uStack_1c,(int)param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "return param_6;",
-      "type": "unnamed_param"
     }
   ]
 }

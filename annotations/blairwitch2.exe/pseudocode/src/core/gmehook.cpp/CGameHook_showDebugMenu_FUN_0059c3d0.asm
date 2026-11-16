@@ -82,7 +82,7 @@ section .text
     PUSH 0x5ef717                       ; 0059c438 | = "DebugStateDisplay"
     PUSH EBX                            ; 0059c43d
     CALL core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380 ; 0059c43e
-        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, undefined4 param_2, int param_3, char * param_4)
+        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, char * label, int value, char * buffer)
     ADD ESP,0x10                        ; 0059c443
     LEA EAX,[ESP + 0x3c0]               ; 0059c446
     PUSH EAX                            ; 0059c44d
@@ -98,7 +98,7 @@ section .text
     PUSH 0x5ef729                       ; 0059c467 | = "DebugBarrierDisplay"
     PUSH EBX                            ; 0059c46c
     CALL core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380 ; 0059c46d
-        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, undefined4 param_2, int param_3, char * param_4)
+        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, char * label, int value, char * buffer)
     ADD ESP,0x10                        ; 0059c472
     LEA EAX,[ESP + 0x3c0]               ; 0059c475
     PUSH EAX                            ; 0059c47c
@@ -114,7 +114,7 @@ section .text
     PUSH 0x5ef73d                       ; 0059c496 | = "DebugWayPointDisplay"
     PUSH EBX                            ; 0059c49b
     CALL core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380 ; 0059c49c
-        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, undefined4 param_2, int param_3, char * param_4)
+        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, char * label, int value, char * buffer)
     ADD ESP,0x10                        ; 0059c4a1
     LEA EAX,[ESP + 0x3c0]               ; 0059c4a4
     PUSH EAX                            ; 0059c4ab
@@ -130,7 +130,7 @@ section .text
     PUSH 0x5ef752                       ; 0059c4c5 | = "DebugFollowSlotDisplay"
     PUSH EBX                            ; 0059c4ca
     CALL core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380 ; 0059c4cb
-        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, undefined4 param_2, int param_3, char * param_4)
+        ;   XREF to: 0059c380 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook * this_ptr, char * label, int value, char * buffer)
     ADD ESP,0x10                        ; 0059c4d0
     LEA EAX,[ESP + 0x3c0]               ; 0059c4d3
     PUSH EAX                            ; 0059c4da

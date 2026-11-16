@@ -19,4 +19,4 @@ void __cdecl modelStructNotSupported3(SMRGLHeaderExtended *mrgl_data);
 
 // Original: engine_boss.c_modelStructNotSupported4_FUN_0041a510
 // Address: 0041a510
-void modelStructNotSupported4(void);
+void __stack_esi modelStructNotSupported4(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds);

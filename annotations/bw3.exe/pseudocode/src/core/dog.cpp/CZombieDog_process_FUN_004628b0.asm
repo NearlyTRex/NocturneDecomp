@@ -469,7 +469,7 @@ section .text
     PUSH EAX                            ; 00462d74
     LEA ESI,[EBP + 0xffffff12]          ; 00462d75
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00462d7b
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     FLD float ptr [EBP + -0x72]         ; 00462d80
     FMUL ST0                            ; 00462d83
     FLD float ptr [EBP + -0x76]         ; 00462d85
@@ -842,7 +842,7 @@ section .text
     LEA ESI,[EBP + 0xe]                 ; 0046314f
     LEA EDI,[EBP + 0x32]                ; 00463152
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00463155
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xe]                 ; 0046315a
     MOVSD ES:EDI,ESI                    ; 0046315d
     MOVSD ES:EDI,ESI                    ; 0046315e
@@ -1075,7 +1075,7 @@ section .text
     PUSH EAX                            ; 00463369
     LEA ESI,[EBP + 0xffffff36]          ; 0046336a
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00463370
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     FLD float ptr [EBP + 0xfffffeda]    ; 00463375
     FMUL ST0                            ; 0046337b
     FLD float ptr [EBP + 0xfffffed6]    ; 0046337d

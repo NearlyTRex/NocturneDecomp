@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 334,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 79,
-    "suspect_count": 24,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 245
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_0043b090",
-    "signature": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6)"
+    "signature": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(void *bitmap_buffer,char *filename,void *span_output,int width,int height,int transparent_color_index)"
   },
   "function_calls": [
     {
@@ -59,9 +58,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -119,12 +118,55 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bitmap_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "span_output",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "transparent_color_index",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -136,188 +178,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_0043b090(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (0xff < param_6) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (0 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_30 = param_4 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_2c = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbStack_24 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "piStack_1c = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0 < param_4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (*pbVar4 == param_6) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 49,
-      "match": "(int *)((int)param_3",
+      "match": "(int *)((int)span_output",
       "severity": "moderate",
-      "text": "*(int *)((int)param_3 + iVar2 + 0x44) =",
+      "text": "*(int *)((int)span_output + iVar2 + 0x44) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)((int)param_3 + iVar2 + 0x44) =",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(int *)((int)param_3",
+      "match": "(int *)((int)span_output",
       "severity": "moderate",
-      "text": "(iVar5 - *(int *)((int)param_3 + iVar2 + 4)) + 1;",
+      "text": "(iVar5 - *(int *)((int)span_output + iVar2 + 4)) + 1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(iVar5 - *(int *)((int)param_3 + iVar2 + 4)) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "else if (*pbVar4 != param_6) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(int *)((int)param_3",
+      "match": "(int *)((int)span_output",
       "severity": "moderate",
-      "text": "*(int *)((int)param_3 + iVar2 + 4) = iVar3;",
+      "text": "*(int *)((int)span_output + iVar2 + 4) = iVar3;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)((int)param_3 + iVar2 + 4) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (iVar3 < param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "} while (iStack_20 < param_5);",
-      "type": "unnamed_param"
     }
   ]
 }

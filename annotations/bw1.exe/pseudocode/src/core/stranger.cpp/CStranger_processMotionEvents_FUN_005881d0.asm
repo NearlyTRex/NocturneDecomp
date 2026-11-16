@@ -629,7 +629,7 @@ section .text
     PUSH EBX                            ; 00588876
         ;   Label: LAB_00588876
     CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0 ; 00588877
-        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
+        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 0058887c
     JMP 0x005882ec                      ; 0058887f
         ;   XREF to: 005882ec (UNCONDITIONAL_JUMP)  ; LAB_005882ec

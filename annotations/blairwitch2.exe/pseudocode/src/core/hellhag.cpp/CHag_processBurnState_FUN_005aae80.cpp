@@ -18,18 +18,16 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
   CVector3f *pCVar4;
   byte bVar5;
   float afStackY_10b8 [990];
-  uint uVar6;
+  float fVar6;
+  float alpha_end;
   float fVar7;
-  uint uVar8;
-  float max_value;
-  uint uVar9;
-  uint uVar10;
-  uint uVar11;
-  uint uVar12;
-  CVector3f *pCVar13;
-  float *pfVar14;
-  uint *puVar15;
-  uint uVar16;
+  float size_end;
+  float red;
+  float green;
+  float blue;
+  CVector3f *position_offset;
+  CVector3f *pCVar8;
+  CVector3f *acceleration;
   SDamageInfo SStack_10c;
   float fStack_d0;
   float afStack_cc [4];
@@ -43,8 +41,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
   CVector3f CStack_a0;
   CVector3f CStack_94;
   CVector3f CStack_88;
-  float fStack_7c;
-  float afStack_78 [2];
+  CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
   CVector3f CStack_58;
@@ -109,35 +106,35 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
           afStack_48[(uint)bVar5 * -2] = afStack_cc[(uint)bVar5 * -2 + 9];
           afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
-          uVar16 = 2;
+          iVar1 = 2;
           fStack_34 = fStack_4c;
-          puVar15 = (uint *)&DAT_0265370c;
+          acceleration = (CVector3f *)&DAT_0265370c;
           afStack_30[1] = afStack_48[1];
-          pfVar14 = &fStack_7c;
-          pCVar13 = &CStack_70;
-          uVar12 = 0x3f800000;
-          uVar11 = 0x3f800000;
-          uVar10 = 0x3f800000;
-          uVar9 = 0;
-          max_value = 1.0;
+          pCVar8 = &CStack_7c;
+          position_offset = &CStack_70;
+          blue = 1.0;
+          green = 1.0;
+          red = 1.0;
+          size_end = 0.0;
+          fVar7 = 1.0;
           afStack_30[0] = fStack_14 + afStack_48[0];
-          fVar7 = 0.5;
-          fStack_7c = fStack_4c;
-          afStack_78[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2];
-          afStack_78[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+          fVar6 = 0.5;
+          CStack_7c.x = fStack_4c;
+          *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + 4) = afStack_30[(uint)bVar5 * -2];
+          *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-          fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar7,max_value);
-          uVar8 = 0;
-          uVar6 = 0x3f000000;
-          fStack_14 = fVar7;
+          fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar6,fVar7);
+          alpha_end = 0.0;
+          fVar7 = 0.5;
+          fStack_14 = fVar6;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,1.5);
           core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-                    (pCStack_18,fStack_14,uVar6,uVar8,fVar7,uVar9,uVar10,uVar11,uVar12,&pCVar13->x,
-                     pfVar14,puVar15,uVar16);
+                    (pCStack_18,fStack_14,fVar7,alpha_end,fVar6,size_end,red,green,blue,
+                     position_offset,pCVar8,acceleration,iVar1);
           iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0x32);
           if (iVar1 == 0) {
             fStack_d0 = pCVar4->x * *pfVar3;
-            pCVar13 = &CStack_70;
+            pCVar8 = &CStack_70;
             afStack_cc[0] = (this_ptr->base).burn_direction.y * *pfVar3;
             afStack_cc[1] = (this_ptr->base).burn_direction.z * *pfVar3;
             CStack_a0.x = fStack_d0;
@@ -145,7 +142,7 @@ void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,
             *(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                  afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-                      ((CDemonActor *)this_ptr,pCVar13,&CStack_88);
+                      ((CDemonActor *)this_ptr,pCVar8,&CStack_88);
             CStack_40.x = CStack_88.x;
             *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) =
                  *(uint *)((int)&CStack_88 + (uint)bVar5 * -8 + 4);

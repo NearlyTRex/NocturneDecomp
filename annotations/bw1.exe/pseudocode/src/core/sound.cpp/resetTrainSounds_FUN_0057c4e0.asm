@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_resetTrainSounds_FUN_0057c4e0(void)
+; void __cdecl core_sound_cpp_resetTrainSounds_FUN_0057c4e0(void)
 ;
 ;
 ; Referenced Globals:

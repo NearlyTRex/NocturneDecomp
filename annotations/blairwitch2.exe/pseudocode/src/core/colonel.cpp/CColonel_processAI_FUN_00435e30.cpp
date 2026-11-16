@@ -25,26 +25,18 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
   float local_dc;
   CVector3f local_d8;
   float local_cc;
-  float local_c8 [6];
+  float local_c8 [2];
+  CVector3f local_c0;
   float local_b0;
   float local_a8;
   float local_a4 [5];
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
+  CVector3f local_90;
+  CVector3f local_84;
+  CVector3f local_78;
+  CVector3f local_6c;
   float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
+  float local_5c [2];
+  CVector3f local_54;
   float local_48;
   float local_44;
   float local_40;
@@ -67,11 +59,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
     local_a8 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
     local_a4[0] = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
     local_a4[1] = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
-    local_84 = local_a8;
-    local_a4[(uint)bVar6 * -2 + 9] = local_a4[(uint)bVar6 * -2];
-    local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
+    local_84.x = local_a8;
+    *(float *)((int)&local_84 + (uint)bVar6 * -8 + 4) = local_a4[(uint)bVar6 * -2];
+    *(float *)((int)&local_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
          local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    local_44 = SQRT(local_7c * local_7c + local_84 * local_84 + local_80 * local_80);
+    local_44 = SQRT(local_84.z * local_84.z + local_84.x * local_84.x + local_84.y * local_84.y);
     if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_44 < _DAT_005cdbf1)) &&
         ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
        && ((pCVar3 = core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(&this_ptr->base,&stack0xffffff20)
@@ -85,16 +77,16 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
                   (this_ptr->base).base.base.location.position.y;
     local_c8[1] = (local_28->base).base.location.position.z -
                   (this_ptr->base).base.base.location.position.z;
-    local_6c = local_cc;
-    local_a4[(uint)bVar6 * -2 + 0xf] = local_c8[(uint)bVar6 * -2];
-    local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10] =
+    local_6c.x = local_cc;
+    *(float *)((int)&local_6c + (uint)bVar6 * -8 + 4) = local_c8[(uint)bVar6 * -2];
+    *(float *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
          local_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    if (local_a4 + 8 != local_a4 + 0xe) {
-      local_84 = local_6c;
-      local_80 = local_68;
-      local_7c = local_64;
+    if (&local_84 != &local_6c) {
+      local_84.x = local_6c.x;
+      local_84.y = local_6c.y;
+      local_84.z = local_6c.z;
     }
-    local_48 = SQRT(local_7c * local_7c + local_84 * local_84 + local_80 * local_80);
+    local_48 = SQRT(local_84.z * local_84.z + local_84.x * local_84.x + local_84.y * local_84.y);
     local_dc = local_48;
     if ((float)_DAT_005cdbfd <= local_48) {
       this_ptr_01 = (CPathMap *)0x0;
@@ -147,11 +139,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
         core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
       }
       if (local_24 == 1) {
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_a4 + 8);
-        local_a4[2] = local_c8[2];
-        local_a4[(uint)bVar6 * -2 + 3] = local_c8[(uint)bVar6 * -2 + 3];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_84,&local_c0);
+        local_a4[2] = local_c0.x;
+        local_a4[(uint)bVar6 * -2 + 3] = *(float *)((int)&local_c0 + (uint)bVar6 * -8 + 4);
         local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-             local_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+             *(float *)((int)&local_c0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                              (local_a4[3] - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_18 * _DAT_005cdc05 * (float)_DAT_005cdc0d;
@@ -172,31 +164,32 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
     }
     local_60 = (local_28->base).base.location.position.x -
                (this_ptr->base).base.base.location.position.x;
-    local_5c = (local_28->base).base.location.position.y -
-               (this_ptr->base).base.base.location.position.y;
-    local_58 = (local_28->base).base.location.position.z -
-               (this_ptr->base).base.base.location.position.z;
-    local_90 = local_60;
-    local_a4[(uint)bVar6 * -2 + 6] = local_a4[(uint)bVar6 * -2 + 0x12];
+    local_5c[0] = (local_28->base).base.location.position.y -
+                  (this_ptr->base).base.base.location.position.y;
+    local_5c[1] = (local_28->base).base.location.position.z -
+                  (this_ptr->base).base.base.location.position.z;
+    local_90.x = local_60;
+    local_a4[(uint)bVar6 * -2 + 6] = local_5c[(uint)bVar6 * -2];
     local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
-         local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13];
-    if (local_a4 + 8 != local_a4 + 5) {
-      local_84 = local_90;
-      local_80 = local_8c;
-      local_7c = local_88;
+         local_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    if (&local_84 != (CVector3f *)(local_a4 + 5)) {
+      local_84.x = local_90.x;
+      local_84.y = local_90.y;
+      local_84.z = local_90.z;
     }
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_a4 + 8);
-    local_78 = local_54;
-    local_a4[(uint)bVar6 * -2 + 0xc] = local_a4[(uint)bVar6 * -2 + 0x15];
-    local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd] =
-         local_a4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16];
-    if (local_a4 + 8 != local_a4 + 0xb) {
-      local_84 = local_78;
-      local_80 = local_74;
-      local_7c = local_70;
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_84,&local_54);
+    local_78.x = local_54.x;
+    *(uint *)((int)&local_78 + (uint)bVar6 * -8 + 4) =
+         *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
+    *(uint *)((int)&local_78 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+         *(uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    if (&local_84 != &local_78) {
+      local_84.x = local_78.x;
+      local_84.y = local_78.y;
+      local_84.z = local_78.z;
     }
     local_b0 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                         (local_80 - (this_ptr->base).base.base.orient.vec.y);
+                         (local_84.y - (this_ptr->base).base.base.orient.vec.y);
     if (local_2c < local_b0) {
       local_b0 = local_2c;
     }

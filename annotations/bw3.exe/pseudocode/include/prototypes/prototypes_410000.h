@@ -41,6 +41,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/structs/SScrape.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -160,7 +161,7 @@ CVector3f * __stack_esi core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_00416e90(
 CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_00416f50(CDemonActor *actor,CVector3f *out);
 CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417050(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_00417070(CBoneGuy *this_ptr);
-void core_boneguy_cpp_rgbToHsv_FUN_00417080(void);
+CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_00417080(CColor3f *in_rgb,CColor3f *out_hsv);
 CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00417240(CColor3f *in_hsv,CColor3f *out_rgb);
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00417630(CBoneGuy *this_ptr);
@@ -201,7 +202,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_dtor_FUN_0041aba0(CEnemy *this_ptr,uint f
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041ac30(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041ac60(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041ac90(SMRGLHeaderExtended *mrgl_data);
-void engine_boss_c_modelStructNotSupported4_FUN_0041acc0(void);
+void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041acc0(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds);
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041ad40(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041adf0(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041ae00(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_eulerToQuaternionIndirect_FUN_005944a0(float *param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005944a0(CVector3f *euler_angles,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   euler_angles
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eedee

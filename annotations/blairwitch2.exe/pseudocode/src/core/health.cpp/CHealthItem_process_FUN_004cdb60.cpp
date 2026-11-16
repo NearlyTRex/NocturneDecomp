@@ -32,21 +32,16 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   float fStack_d4;
   CQuaternion4f CStack_d0;
   CQuaternion4f CStack_c0;
-  uint uStack_b0;
-  uint uStack_ac;
-  uint uStack_a8;
+  CVector3f CStack_b0;
   float fStack_a4;
   float afStack_a0 [2];
   CVector3f CStack_98;
   float fStack_8c;
   float afStack_88 [4];
   float fStack_78;
-  float fStack_74;
-  float fStack_70;
-  float fStack_6c;
+  CVector3f CStack_74;
   CVector3f CStack_68;
-  uint uStack_5c;
-  float afStack_58 [2];
+  CVector3f CStack_5c;
   CVector3f CStack_50;
   float fStack_44;
   float afStack_40 [4];
@@ -127,22 +122,23 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   afStack_40[2] = fStack_8c + afStack_88[2];
   afStack_40[3] = afStack_88[0] + afStack_88[3];
   fStack_30 = afStack_88[1] + fStack_78;
-  fStack_74 = fStack_8c + afStack_88[2];
-  afStack_88[(uint)bVar9 * -2 + 6] = afStack_40[(uint)bVar9 * -2 + 3];
-  afStack_88[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+  CStack_74.x = fStack_8c + afStack_88[2];
+  *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + 4) = afStack_40[(uint)bVar9 * -2 + 3];
+  *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
        afStack_40[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-  uStack_5c = _DAT_0265370c;
-  afStack_58[(uint)bVar9 * -2] = *(float *)(&DAT_02653710 + (uint)bVar9 * -8);
-  afStack_58[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       *(float *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-  uStack_ac = 0x3f800000;
-  uStack_b0 = 0;
-  uStack_a8 = 0;
-  fStack_74 = fStack_74 + (this_ptr->base).location.position.x;
-  fStack_70 = fStack_70 + (this_ptr->base).location.position.y;
-  fStack_6c = fStack_6c + (this_ptr->base).location.position.z;
+  CStack_5c.x = _DAT_0265370c;
+  *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + 4) =
+       *(uint *)(&DAT_02653710 + (uint)bVar9 * -8);
+  *(uint *)((int)&CStack_5c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+       *(uint *)(&DAT_02653714 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+  CStack_b0.y = 1.0;
+  CStack_b0.x = 0.0;
+  CStack_b0.z = 0.0;
+  CStack_74.x = CStack_74.x + (this_ptr->base).location.position.x;
+  CStack_74.y = CStack_74.y + (this_ptr->base).location.position.y;
+  CStack_74.z = CStack_74.z + (this_ptr->base).location.position.z;
   core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-            (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3f800000,0,0,
-             afStack_88 + 5,&uStack_5c,&uStack_b0,0);
+            (g_CSimpleParticleSystemPtr,1.0,1.0,0.0,0.4,0.0,1.0,0.0,0.0,&CStack_74,&CStack_5c,
+             &CStack_b0,0);
   return;
 }

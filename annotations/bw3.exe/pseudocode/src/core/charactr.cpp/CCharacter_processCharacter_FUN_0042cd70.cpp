@@ -21,10 +21,9 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
   float fVar7;
   CCharacter *pCVar8;
   uint *puVar9;
-  float *pfVar10;
+  uint *puVar10;
   uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
+  byte bVar12;
   float in_stack_00000014;
   float afStackY_18b0 [1511];
   CQuaternion4f *quat2_in;
@@ -41,8 +40,8 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
   CQuaternion4f local_84;
   CQuaternion4f local_74;
   CQuaternion4f local_64;
-  float local_54;
-  float afStack_50 [6];
+  CQuaternion4f local_54;
+  CVector3f local_44;
   float local_38;
   float local_34;
   float local_30;
@@ -53,7 +52,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
   CCharacter *local_18;
   float local_14;
   
-  bVar13 = 0;
+  bVar12 = 0;
   fVar7 = this_ptr->sound_cooldown - delta_time;
   bVar3 = false;
   this_ptr->sound_cooldown = fVar7;
@@ -77,12 +76,12 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
       for (iVar4 = 0;
           pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(local_20),
           iVar4 < pCVar5->bone_count; iVar4 = iVar4 + 1) {
-        core_xform_cpp_quaternionToEulerAngles_FUN_00585de0(local_1c);
-        local_2c = afStack_50[3];
-        local_28[(uint)bVar13 * -2] = afStack_50[(uint)bVar13 * -2 + 4];
-        local_28[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-             afStack_50[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 5];
-        if (afStack_50 + 6 != &local_2c) {
+        core_xform_cpp_quaternionToEulerAngles_FUN_00585de0(local_1c,&local_44);
+        local_2c = local_44.x;
+        local_28[(uint)bVar12 * -2] = *(float *)((int)&local_44 + (uint)bVar12 * -8 + 4);
+        local_28[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+             *(float *)((int)&local_44 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        if (&local_38 != &local_2c) {
           local_38 = local_2c;
           local_34 = local_28[0];
           local_30 = local_28[1];
@@ -93,47 +92,48 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
         local_38 = local_14 + local_38;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-0.15707964,0.15707964);
         local_30 = local_14 + local_30;
-        core_xform_cpp_quaternionFromAngleY_FUN_00585d10(local_34);
+        core_xform_cpp_quaternionFromAngleY_FUN_00585d10(local_34,&local_54);
         quat2_in_00 = &local_64;
-        local_64.w = local_54;
-        pfVar10 = (float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        *(float *)((int)&local_64 + (uint)bVar13 * -8 + 4) = afStack_50[(uint)bVar13 * -2];
-        *pfVar10 = afStack_50[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-        pfVar10[(uint)bVar13 * -2 + 1] =
-             (afStack_50 + (uint)bVar13 * -2 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
+        local_64.w = local_54.w;
+        puVar10 = (uint *)((int)&local_64 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        puVar9 = (uint *)((int)&local_54 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        *(uint *)((int)&local_64 + (uint)bVar12 * -8 + 4) =
+             *(uint *)((int)&local_54 + (uint)bVar12 * -8 + 4);
+        *puVar10 = *puVar9;
+        puVar10[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
         core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(local_38,&local_a4);
         quat2_in = &local_c4;
         local_c4.w = local_a4.w;
-        puVar11 = (uint *)((int)&local_c4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        puVar9 = (uint *)((int)&local_a4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        *(uint *)((int)&local_c4 + (uint)bVar13 * -8 + 4) =
-             *(uint *)((int)&local_a4 + (uint)bVar13 * -8 + 4);
-        *puVar11 = *puVar9;
-        puVar11[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
+        puVar10 = (uint *)((int)&local_c4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        puVar9 = (uint *)((int)&local_a4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        *(uint *)((int)&local_c4 + (uint)bVar12 * -8 + 4) =
+             *(uint *)((int)&local_a4 + (uint)bVar12 * -8 + 4);
+        *puVar10 = *puVar9;
+        puVar10[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
         core_xform_cpp_quaternionFromAngleZ_FUN_00585d50(local_30,&local_94);
         local_74.w = local_94.w;
-        puVar11 = (uint *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        puVar9 = (uint *)((int)&local_94 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        *(uint *)((int)&local_74 + (uint)bVar13 * -8 + 4) =
-             *(uint *)((int)&local_94 + (uint)bVar13 * -8 + 4);
-        *puVar11 = *puVar9;
-        puVar11[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
+        puVar10 = (uint *)((int)&local_74 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        puVar9 = (uint *)((int)&local_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        *(uint *)((int)&local_74 + (uint)bVar12 * -8 + 4) =
+             *(uint *)((int)&local_94 + (uint)bVar12 * -8 + 4);
+        *puVar10 = *puVar9;
+        puVar10[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
         core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_74,quat2_in,&local_d4);
         local_84.w = local_d4.w;
-        puVar11 = (uint *)((int)&local_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        puVar9 = (uint *)((int)&local_d4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        *(uint *)((int)&local_84 + (uint)bVar13 * -8 + 4) =
-             *(uint *)((int)&local_d4 + (uint)bVar13 * -8 + 4);
-        *puVar11 = *puVar9;
-        puVar11[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
+        puVar10 = (uint *)((int)&local_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        puVar9 = (uint *)((int)&local_d4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        *(uint *)((int)&local_84 + (uint)bVar12 * -8 + 4) =
+             *(uint *)((int)&local_d4 + (uint)bVar12 * -8 + 4);
+        *puVar10 = *puVar9;
+        puVar10[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
         core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_84,quat2_in_00,&local_b4);
-        puVar11 = (uint *)((int)local_18 + (uint)bVar13 * -8 + 0x80c);
+        puVar10 = (uint *)((int)local_18 + (uint)bVar12 * -8 + 0x80c);
         (local_18->model).bone_transform.pose_data.bone_rotations[0].w = local_b4.w;
-        puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
-        puVar9 = (uint *)((int)&local_b4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-        *puVar11 = *(uint *)((int)&local_b4 + (uint)bVar13 * -8 + 4);
-        *puVar12 = *puVar9;
-        puVar12[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
+        puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
+        puVar9 = (uint *)((int)&local_b4 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+        *puVar10 = *(uint *)((int)&local_b4 + (uint)bVar12 * -8 + 4);
+        *puVar11 = *puVar9;
+        puVar11[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
         local_1c = local_1c + 1;
         local_18 = (CCharacter *)((local_18->base).actor_name + 0x10);
       }
@@ -187,7 +187,8 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(CCharacte
     do {
       while ((pCVar8->carry_hands[0].carry_actor != (CDemonActor *)0x0 &&
              (pCVar8->carry_hands[0].has_carry_offset == 0))) {
-        core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(this_ptr,iVar4,0.0,(int *)0x0);
+        core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0
+                  (this_ptr,iVar4,0.0,(CMatrix3x4f *)0x0);
         iVar4 = iVar4 + 1;
         pCVar8 = (CCharacter *)(pCVar8->base).create_event;
         if (1 < iVar4) goto LAB_0042d163;
@@ -221,11 +222,11 @@ LAB_0042d163:
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
     this_ptr_01 = &CStack_f0;
     puVar9 = &uStack_d8;
-    puVar11 = (uint *)&stack0xffffff08;
+    puVar10 = (uint *)&stack0xffffff08;
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar11 = *puVar9;
-      puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
-      puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
+      *puVar10 = *puVar9;
+      puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
+      puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
     }
     iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_01,in_stack_ffffff0c);
     if (iVar4 == 0) {

@@ -135,7 +135,7 @@ void __cdecl CRock::render(CRock *this_ptr);
 
 // Original: core_fire.cpp_CLeaf_init_FUN_0049a140
 // Address: 0049a140
-void __cdecl CLeaf::init(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl CLeaf::init(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 
 // Original: core_fire.cpp_loadLeafAssets_FUN_0049a170
 // Address: 0049a170
@@ -151,7 +151,7 @@ void __cdecl CLeaf::render(CLeaf *this_ptr);
 
 // Original: core_fire.cpp_CLeaf_onCollision_FUN_0049a380
 // Address: 0049a380
-undefined4 __cdecl CLeaf::onCollision(CLeaf *this_ptr);
+int __cdecl CLeaf::onCollision(CLeaf *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_CMuzzleFlash_init_FUN_0049a390
 // Address: 0049a390
@@ -331,7 +331,7 @@ void __cdecl CLightningBolt::render(CLightningBolt *this_ptr);
 
 // Original: core_fire.cpp_CRing_activate_FUN_0049fce0
 // Address: 0049fce0
-void __cdecl CRing::activate(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4);
+void __cdecl CRing::activate(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 
 // Original: core_fire.cpp_CRing_process_FUN_0049fdf0
 // Address: 0049fdf0
@@ -467,11 +467,11 @@ void __cdecl CFireEffect::createRock(CFireEffect *this_ptr,CVector3f *position,C
 
 // Original: core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930
 // Address: 004a2930
-void __cdecl CFireEffect::createLeaf(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+void __cdecl CFireEffect::createLeaf(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
 
 // Original: core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0
 // Address: 004a29d0
-void __cdecl CFireEffect::createFirefly(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl CFireEffect::createFirefly(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 
 // Original: core_fire.cpp_CFireEffect_createLaserSegment_FUN_004a2aa0
 // Address: 004a2aa0
@@ -563,7 +563,7 @@ void __cdecl CFireEffect::createRainDrop(CFireEffect *this_ptr,CVector3f *positi
 
 // Original: core_fire.cpp_CFireEffect_createRing_FUN_004a3f70
 // Address: 004a3f70
-void __cdecl CFireEffect::createRing(CFireEffect *this_ptr,undefined4 *param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CFireEffect::createRing(CFireEffect *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 
 // Original: core_fire.cpp_CFireEffect_createStormEffect_FUN_004a3fd0
 // Address: 004a3fd0

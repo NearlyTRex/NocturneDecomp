@@ -197,7 +197,7 @@ section .text
     LEA ESI,[ESP + 0x78]                ; 004648bb
     LEA EDI,[ESP + 0xb4]                ; 004648bf
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004648c6
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 004648cb
     LEA ESI,[ESP + 0x74]                ; 004648ce
     PUSH dword ptr [ESP]                ; 004648d2

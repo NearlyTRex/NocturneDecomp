@@ -160,7 +160,7 @@ section .text
     LEA EAX,[ESP + 0x1b8]               ; 00453726
     PUSH EAX                            ; 0045372d
     CALL support_trstream.cpp_COutStreamFile_write_FUN_005a18f0 ; 0045372e
-        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, void * data, int size)
     MOV EBX,dword ptr [0x01481e48]      ; 00453733 | DAT_01481e48
     ADD ESP,0xc                         ; 00453739
     TEST EBX,EBX                        ; 0045373c
@@ -174,7 +174,7 @@ section .text
     LEA EAX,[ESP + 0x1b8]               ; 0045375a
     PUSH EAX                            ; 00453761
     CALL support_trstream.cpp_COutStreamFile_write_FUN_005a18f0 ; 00453762
-        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, void * data, int size)
     ADD ESP,0xc                         ; 00453767
     MOV EAX,dword ptr [ESP + 0x210]     ; 0045376a
     FLD double ptr [0x005d79ef]         ; 00453771 | DAT_005d79ef

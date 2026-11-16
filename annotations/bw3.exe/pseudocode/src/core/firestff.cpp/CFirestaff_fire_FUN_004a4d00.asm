@@ -56,7 +56,7 @@ section .text
     MOV ESI,dword ptr [0x005fc5a0]      ; 004a4d4b | DAT_005fc5a0
     PUSH ESI                            ; 004a4d51
     CALL core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 ; 004a4d52
-        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
+        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, CVector3f * position, int ring_type, CCharacter * owner)
     ADD ESP,0x10                        ; 004a4d57
     LEA EAX,[ESP + 0xc]                 ; 004a4d5a
     PUSH EAX                            ; 004a4d5e

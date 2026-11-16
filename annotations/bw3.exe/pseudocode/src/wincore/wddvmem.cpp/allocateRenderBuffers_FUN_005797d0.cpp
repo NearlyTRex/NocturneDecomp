@@ -1,15 +1,14 @@
 // Name: wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005797d0
 // Address: 005797d0
 // Address Range: [[005797d0, 00579895]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void)
+void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void)
 
 {
   DAT_0060b010 = malloc

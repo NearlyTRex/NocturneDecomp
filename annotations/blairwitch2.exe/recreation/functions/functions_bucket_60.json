@@ -135,14 +135,40 @@
       "00401780",
       "004e4500"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":132,
     "method":"draw320x200SizeDot",
     "name":"engine_2d.c_draw320x200SizeDot_FUN_00402ae0",
+    "params":[
+      {
+        "name":"x_3d",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_3d",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_depth",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/2d.c",
@@ -4890,18 +4916,18 @@
     "name":"support_codec.cpp_CCheesyCipher_ctor_FUN_00434ce0",
     "params":[
       {
-        "name":"param_2",
+        "name":"mode",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"key",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"uint",
           "ptr":0
         }
       }
@@ -4909,7 +4935,7 @@
     "receiver":true,
     "ret":{
       "kind":"class",
-      "name":"CCodec",
+      "name":"CCheesyCipher",
       "ptr":1
     },
     "tu":"support/codec.cpp",
@@ -4963,18 +4989,18 @@
     "name":"support_codec.cpp_CInStreamPipe_read_FUN_00435060",
     "params":[
       {
-        "name":"param_2",
+        "name":"buffer",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"void",
           "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"count",
         "type":{
           "kind":"builtin",
-          "name":"uint",
+          "name":"int",
           "ptr":0
         }
       }
@@ -16379,14 +16405,14 @@
   },
   {
     "addr":"0050b060",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":4,
     "method":"resetChatCounts",
     "name":"core_netgame.cpp_resetChatCounts_FUN_0050b060",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -23742,15 +23768,41 @@
     "callers":[
       "00546f40"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":32,
     "method":"quaternionFromAxisAngle",
     "name":"core_xform.cpp_quaternionFromAxisAngle_FUN_00594060",
+    "params":[
+      {
+        "name":"angle_radians",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"axis_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -24272,7 +24324,7 @@
     "name":"core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
           "kind":"class",
           "name":"CVector3f",
@@ -24280,11 +24332,11 @@
         }
       },
       {
-        "name":"param_3",
+        "name":"rotation_matrix",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
         }
       }
     ],

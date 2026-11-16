@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint support_codec_cpp_writeBitsToStream_FUN_00433780(byte *param_1,int param_2,int *param_3)
+; int __cdecl support_codec_cpp_readBitsFromStream_FUN_00433780(SBitBuffer *bit_buffer,int bit_count,void *istream)
 ;
+; Parameters:
+; SBitBuffer *     Stack[0x4]:4   bit_buffer
+; int              Stack[0x8]:4   bit_count
+; void *           Stack[0xc]:4   istream
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CAsciiArmor_encode_FUN_00434bb0 at 00434bc6
@@ -13,7 +17,7 @@
 section .text
 
     PUSH EBX                            ; 00433780
-        ;   Label: support_codec.cpp_writeBitsToStream_FUN_00433780
+        ;   Label: support_codec.cpp_readBitsFromStream_FUN_00433780
     PUSH ESI                            ; 00433781
     PUSH EDI                            ; 00433782
     PUSH EBP                            ; 00433783

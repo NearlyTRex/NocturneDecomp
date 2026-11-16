@@ -13,7 +13,7 @@ void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(CHero *this_pt
     return;
   }
   core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
-            (&this_ptr->base,hand_index,(int)this_ptr->object_to_pick_up,0x3dcccccd,0);
+            (&this_ptr->base,hand_index,this_ptr->object_to_pick_up,0.1,(CMatrix3x4f *)0x0);
   this_ptr->object_to_pick_up = (CDemonActor *)0x0;
   return;
 }

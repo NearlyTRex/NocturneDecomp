@@ -51,7 +51,7 @@ CInStreamFile * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,char *pa
 
 // Original: support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20
 // Address: 0057ce20
-undefined4 * __cdecl CInStreamFile::ctorOpenInDirectory(CInStreamFile *this_ptr,char *param_2,char *param_3);
+CInStreamFile * __cdecl CInStreamFile::ctorOpenInDirectory(CInStreamFile *this_ptr,char *directory,char *filename);
 
 // Original: support_trstream.cpp_CInStreamFile_copy_FUN_0057ce90
 // Address: 0057ce90
@@ -219,11 +219,11 @@ uint __cdecl COutStreamFile::putChar(COutStreamFile *this_ptr,byte param_2);
 
 // Original: support_trstream.cpp_COutStreamFile_write_FUN_0057dca0
 // Address: 0057dca0
-int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *param_2,int param_3);
+int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *data,int size);
 
 // Original: support_trstream.cpp_COutStreamFile_seek_FUN_0057dcf0
 // Address: 0057dcf0
-bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,long param_2,int param_3);
+int __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_COutStreamFile_tell_FUN_0057dd20
 // Address: 0057dd20

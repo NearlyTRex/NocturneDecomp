@@ -34,10 +34,10 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005be020(CZombie *this
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
-  float fStack_58;
-  float afStack_54 [4];
-  float fStack_44;
-  float fStack_40;
+  CVector3f CStack_58;
+  float fStack_4c;
+  float afStack_48 [2];
+  CVector3f CStack_40;
   CVector3f CStack_34;
   CVector3f CStack_28;
   float fStack_1c;
@@ -105,22 +105,23 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005be020(CZombie *this
     afStack_18[(uint)bVar4 * -2] = *(float *)((int)&CStack_7c + (uint)bVar4 * -8 + 4);
     afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(float *)((int)&CStack_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    afStack_54[2] = fStack_1c - fStack_d0;
-    afStack_54[3] = afStack_18[0] - afStack_cc[0];
-    fStack_44 = afStack_18[1] - afStack_cc[1];
-    fStack_58 = fStack_1c - fStack_d0;
-    afStack_54[(uint)bVar4 * -2] = afStack_54[(uint)bVar4 * -2 + 3];
-    afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&fStack_58);
+    fStack_4c = fStack_1c - fStack_d0;
+    afStack_48[0] = afStack_18[0] - afStack_cc[0];
+    afStack_48[1] = afStack_18[1] - afStack_cc[1];
+    CStack_58.x = fStack_1c - fStack_d0;
+    *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + 4) = afStack_48[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_58,&CStack_40);
     falloff = 6.0;
     pCVar5 = &CStack_64;
     fov = 56.0;
     position = &CStack_e8;
-    CStack_64.x = fStack_40;
-    *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + 4) = afStack_54[(uint)bVar4 * -2 + 6];
-    *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+    CStack_64.x = CStack_40.x;
+    *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_dlight_cpp_renderConeLightGeometry_FUN_00465890(position,pCVar5,fov,falloff);
   }
   if ((this_ptr->base).base.was_rendered_opaque == 0) {

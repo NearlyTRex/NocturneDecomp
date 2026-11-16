@@ -16,18 +16,16 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
   float *pfVar3;
   byte bVar4;
   float afStackY_10bc [990];
-  uint uVar5;
+  float fVar5;
+  float alpha_end;
   float fVar6;
-  uint uVar7;
-  float max_value;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  uint uVar11;
-  CVector3f *pCVar12;
-  float *pfVar13;
-  uint *puVar14;
-  uint uVar15;
+  float size_end;
+  float red;
+  float green;
+  float blue;
+  CVector3f *position_offset;
+  CVector3f *pCVar7;
+  CVector3f *acceleration;
   SDamageInfo SStack_110;
   CVector3f CStack_d4;
   float fStack_c8;
@@ -36,7 +34,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
   float fStack_b0;
   float fStack_ac;
   float fStack_a8;
-  float afStack_a4 [3];
+  CVector3f CStack_a4;
   CVector3f CStack_98;
   float fStack_8c;
   float afStack_88 [2];
@@ -90,15 +88,15 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
                  *(uint *)((int)&CStack_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
             core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
                       ((CDemonActor *)this_ptr,&CStack_74,&CStack_44);
-            pCVar12 = pCStack_18;
+            pCVar7 = pCStack_18;
             CStack_80.x = CStack_44.x;
             *(uint *)((int)&CStack_80 + (uint)bVar4 * -8 + 4) =
                  *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + 4);
             *(uint *)((int)&CStack_80 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                  *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-            fStack_50 = pCVar12->x * *pfVar3;
-            afStack_4c[0] = pCVar12->y * *pfVar3;
-            afStack_4c[1] = pCVar12->z * *pfVar3;
+            fStack_50 = pCVar7->x * *pfVar3;
+            afStack_4c[0] = pCVar7->y * *pfVar3;
+            afStack_4c[1] = pCVar7->z * *pfVar3;
             fStack_c8 = fStack_50;
             afStack_c4[(uint)bVar4 * -2] = afStack_4c[(uint)bVar4 * -2];
             afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -111,35 +109,35 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
             afStack_c4[(uint)bVar4 * -2 + 3] = afStack_c4[(uint)bVar4 * -2 + 6];
             afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
                  afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-            uVar15 = 2;
+            iVar1 = 2;
             fStack_68 = afStack_c4[2];
-            puVar14 = (uint *)&DAT_0265370c;
+            acceleration = (CVector3f *)&DAT_0265370c;
             afStack_64[1] = (float)uStack_b4;
-            pfVar13 = afStack_c4 + 8;
-            pCVar12 = &CStack_80;
-            uVar11 = 0x3f800000;
-            uVar10 = 0x3f800000;
-            uVar9 = 0x3f800000;
-            uVar8 = 0;
-            max_value = 1.0;
+            pCVar7 = &CStack_a4;
+            position_offset = &CStack_80;
+            blue = 1.0;
+            green = 1.0;
+            red = 1.0;
+            size_end = 0.0;
+            fVar6 = 1.0;
             afStack_64[0] = fStack_14 + afStack_c4[3];
-            fVar6 = 0.5;
-            afStack_a4[0] = afStack_c4[2];
-            afStack_c4[(uint)bVar4 * -2 + 9] = afStack_64[(uint)bVar4 * -2];
-            afStack_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
+            fVar5 = 0.5;
+            CStack_a4.x = afStack_c4[2];
+            *(float *)((int)&CStack_a4 + (uint)bVar4 * -8 + 4) = afStack_64[(uint)bVar4 * -2];
+            *(float *)((int)&CStack_a4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                  afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-            fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar6,max_value);
-            uVar7 = 0;
-            uVar5 = 0x3f000000;
-            fStack_14 = fVar6;
+            fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar5,fVar6);
+            alpha_end = 0.0;
+            fVar6 = 0.5;
+            fStack_14 = fVar5;
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.0);
             core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
-                      (pCStack_28,fStack_14,uVar5,uVar7,fVar6,uVar8,uVar9,uVar10,uVar11,&pCVar12->x,
-                       pfVar13,puVar14,uVar15);
+                      (pCStack_28,fStack_14,fVar6,alpha_end,fVar5,size_end,red,green,blue,
+                       position_offset,pCVar7,acceleration,iVar1);
             iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0x32);
             if (iVar1 == 0) {
               fStack_8c = pCStack_18->x * *pfVar3;
-              pCVar12 = &CStack_80;
+              pCVar7 = &CStack_80;
               afStack_88[0] = pCStack_18->y * *pfVar3;
               afStack_88[1] = pCStack_18->z * *pfVar3;
               CStack_d4.x = fStack_8c;
@@ -147,7 +145,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
               *(float *)((int)&CStack_d4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                    afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
               core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-                        ((CDemonActor *)this_ptr,pCVar12,&CStack_38);
+                        ((CDemonActor *)this_ptr,pCVar7,&CStack_38);
               CStack_98.x = CStack_38.x;
               *(uint *)((int)&CStack_98 + (uint)bVar4 * -8 + 4) =
                    *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + 4);

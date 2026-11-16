@@ -16,8 +16,8 @@
 ;   support_codec.cpp_CLZWCompress_process_FUN_00434810 at 0043486f
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_004338f0
 ;   support_codec.cpp_FUN_00433a90
+;   support_codec.cpp_writeBitsToStream_FUN_004338f0
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH 0x1                            ; 004345ce
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004345d0
     PUSH EDX                            ; 004345d3
-    CALL support_codec.cpp_FUN_004338f0 ; 004345d4
-        ;   XREF to: 004338f0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_004338f0()
+    CALL support_codec.cpp_writeBitsToStream_FUN_004338f0 ; 004345d4
+        ;   XREF to: 004338f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_writeBitsToStream_FUN_004338f0(SBitBuffer * bit_buffer, int bit_count, uint bit_value, void * ostream)
     ADD ESP,0x10                        ; 004345d9
     TEST EAX,EAX                        ; 004345dc
     JL 0x004345f3                       ; 004345de
@@ -123,8 +123,8 @@ section .text
     PUSH 0x1                            ; 0043460b
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0043460d
     PUSH EAX                            ; 00434610
-    CALL support_codec.cpp_FUN_004338f0 ; 00434611
-        ;   XREF to: 004338f0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_004338f0()
+    CALL support_codec.cpp_writeBitsToStream_FUN_004338f0 ; 00434611
+        ;   XREF to: 004338f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_writeBitsToStream_FUN_004338f0(SBitBuffer * bit_buffer, int bit_count, uint bit_value, void * ostream)
     ADD ESP,0x10                        ; 00434616
     TEST EAX,EAX                        ; 00434619
     JL 0x0043462c                       ; 0043461b

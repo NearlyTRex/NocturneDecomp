@@ -99,7 +99,7 @@ int __cdecl CHero::tryPullLever(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460
 // Address: 004d3460
-undefined4 __cdecl CHero::toggleLeverNow(CHero *this_ptr);
+int __cdecl CHero::toggleLeverNow(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500
 // Address: 004d3500

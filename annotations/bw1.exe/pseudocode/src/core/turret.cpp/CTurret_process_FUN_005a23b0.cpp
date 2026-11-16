@@ -18,26 +18,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005a23b0(CTurret *this_ptr,floa
   CVector3f *pCVar5;
   int iVar6;
   uint uVar7;
-  float *pfVar8;
-  byte bVar9;
+  uint *puVar8;
+  uint *puVar9;
+  byte bVar10;
   float afStackY_187c [1497];
   char *sound_name;
   float fStack_108;
   char acStack_104 [100];
   CQuaternion4f CStack_a0;
   CQuaternion4f CStack_90;
-  float fStack_80;
-  float afStack_7c [7];
-  uint uStack_60;
-  uint uStack_50;
-  float fStack_40;
+  CQuaternion4f CStack_80;
+  CQuaternion4f CStack_70;
+  CQuaternion4f CStack_60;
+  CQuaternion4f CStack_50;
+  CVector3f CStack_40;
   CVector3f CStack_34;
   double dStack_28;
   CVector3f *pCStack_20;
   CVector3f *pCStack_1c;
   float fStack_18;
   
-  bVar9 = 0;
+  bVar10 = 0;
   EVar3 = this_ptr->state;
   (this_ptr->base).muzzle_flash_color.r = -1;
   switch(EVar3) {
@@ -119,32 +120,38 @@ LAB_005a2447:
     pCStack_1c = (CVector3f *)&(this_ptr->base).base.orient;
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(pCStack_1c,&CStack_a0);
-      fStack_80 = CStack_a0.w;
-      pfVar8 = (float *)((int)&CStack_a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      afStack_7c[(uint)bVar9 * -2] = *(float *)((int)&CStack_a0 + (uint)bVar9 * -8 + 4);
-      afStack_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] = *pfVar8;
-      (afStack_7c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =
-           pfVar8[(uint)bVar9 * -2 + 1];
+      CStack_80.w = CStack_a0.w;
+      puVar9 = (uint *)((int)&CStack_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&CStack_a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&CStack_80 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&CStack_a0 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(pCStack_20,&CStack_90);
-      afStack_7c[3] = CStack_90.w;
-      pfVar8 = (float *)((int)&CStack_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      afStack_7c[(uint)bVar9 * -2 + 4] = *(float *)((int)&CStack_90 + (uint)bVar9 * -8 + 4);
-      afStack_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 5] = *pfVar8;
-      (afStack_7c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 5)[(uint)bVar9 * -2 + 1] =
-           pfVar8[(uint)bVar9 * -2 + 1];
-      core_xform_cpp_slerpQuaternion_FUN_005b7940(&fStack_80,afStack_7c + 3);
-      uStack_50 = uStack_60;
-      afStack_7c[(uint)bVar9 * -2 + 0xc] = afStack_7c[(uint)bVar9 * -2 + 8];
-      afStack_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
-           afStack_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 9];
-      (afStack_7c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd)[(uint)bVar9 * -2 + 1] =
-           (afStack_7c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 9)[(uint)bVar9 * -2 + 1];
-      core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00();
+      CStack_70.w = CStack_90.w;
+      puVar9 = (uint *)((int)&CStack_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&CStack_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&CStack_70 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&CStack_90 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_slerpQuaternion_FUN_005b7940
+                (&CStack_80,&CStack_70,
+                 (delta_time / (this_ptr->timer + delta_time)) * (float)_DAT_005f8a68,&CStack_60);
+      CStack_50.w = CStack_60.w;
+      puVar9 = (uint *)((int)&CStack_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&CStack_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&CStack_50 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&CStack_60 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(&CStack_50,&CStack_40);
       pCVar5 = pCStack_1c;
-      CStack_34.x = fStack_40;
-      *(float *)((int)&CStack_34 + (uint)bVar9 * -8 + 4) = afStack_7c[(uint)bVar9 * -2 + 0x10];
-      *(float *)((int)&CStack_34 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-           afStack_7c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x11];
+      CStack_34.x = CStack_40.x;
+      *(uint *)((int)&CStack_34 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&CStack_40 + (uint)bVar10 * -8 + 4);
+      *(uint *)((int)&CStack_34 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           *(uint *)((int)&CStack_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       if (&CStack_34 != pCVar5) {
         pCVar5->x = CStack_34.x;
         pCVar5->y = CStack_34.y;

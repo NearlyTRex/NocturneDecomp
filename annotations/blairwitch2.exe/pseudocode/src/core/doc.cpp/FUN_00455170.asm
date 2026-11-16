@@ -63,7 +63,7 @@ section .text
     LEA ESI,[ESP + 0x1ac0]              ; 004551c7
     LEA EDI,[ESP + 0x1acc]              ; 004551ce
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005940b0 ; 004551d5
-        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; undefined1 core_xform.cpp_quaternionToEulerAngles_FUN_005940b0()
+        ;   XREF to: 005940b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005940b0(CQuaternion4f * quat_in, CVector3f * out_euler)
     LEA ESI,[ESP + 0x1ac0]              ; 004551da
     ADD ESP,0x4                         ; 004551e1
     MOVSD ES:EDI,ESI                    ; 004551e4

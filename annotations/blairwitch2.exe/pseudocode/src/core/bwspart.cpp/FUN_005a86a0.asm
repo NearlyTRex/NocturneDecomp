@@ -315,7 +315,7 @@ section .text
     PUSH EDX                            ; 005a89b8
     FSTP float ptr [ESP + 0x94]         ; 005a89b9
     CALL core_bwspart.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250 ; 005a89c0
-        ;   XREF to: 005a8250 (UNCONDITIONAL_CALL)  ; undefined4 core_bwspart.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250(CSimpleParticleSystem * this_ptr)
+        ;   XREF to: 005a8250 (UNCONDITIONAL_CALL)  ; float core_bwspart.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250(CSimpleParticleSystem * this_ptr)
     MOV dword ptr [ESP + 0xa0],EAX      ; 005a89c5
     FLD float ptr [ESP + 0xa0]          ; 005a89cc
     ADD ESP,0x4                         ; 005a89d3

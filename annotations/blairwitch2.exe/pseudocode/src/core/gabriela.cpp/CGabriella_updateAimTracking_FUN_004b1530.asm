@@ -343,7 +343,7 @@ section .text
     PUSH EAX                            ; 004b1920
     LEA ESI,[ESP + 0xb0]                ; 004b1921
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004b1928
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 004b192d
     FLD float ptr [EBP + 0x18]          ; 004b1930
     FDIV float ptr [0x005f7340]         ; 004b1933 | DAT_005f7340

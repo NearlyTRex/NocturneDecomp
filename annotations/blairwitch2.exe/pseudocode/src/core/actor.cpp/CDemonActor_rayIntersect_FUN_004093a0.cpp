@@ -119,7 +119,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
   }
   else {
     if ((uint)bbox_type < 3) {
-      local_100 = (float)core_actor_cpp_rayCylinderIntersect_FUN_00408290(collision_info);
+      local_100 = core_actor_cpp_rayCylinderIntersect_FUN_00408290
+                            (collision_info,&local_84.min,&local_48,&local_60);
       local_14 = local_100;
       goto LAB_0040957e;
     }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter *this_ptr,float delta_time)
 
 {
@@ -21,10 +19,10 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
   CVector3f *direction;
   float fVar5;
   float fVar6;
-  float fStack_6c;
-  uint uStack_60;
-  float fStack_5c;
-  uint uStack_54;
+  CVector3f CStack_6c;
+  float fStack_60;
+  float afStack_5c [2];
+  CVector3f CStack_54;
   CVector3f local_48;
   CVector3f CStack_3c;
   CVector3f local_30;
@@ -80,19 +78,18 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
       }
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
                 (&this_ptr->base,&this_ptr->door_target->open_position,&CStack_3c);
-      fStack_6c = CStack_3c.x;
-      *(uint *)((int)&stack0xffffff98 + (uint)bVar4 * 0xfffffffe * 4) =
+      CStack_6c.x = CStack_3c.x;
+      *(uint *)((int)&CStack_6c + (uint)bVar4 * -8 + 4) =
            *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + 4);
-      *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+      *(uint *)((int)&CStack_6c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
            *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff94);
-      uStack_60 = uStack_54;
-      *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffb0 + (uint)bVar4 * -8);
-      *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      this_ptr->turn_angle_accumulator = fStack_5c;
-      if ((int)fStack_5c < 0x3f20d97c) {
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_6c,&CStack_54);
+      fStack_60 = CStack_54.x;
+      afStack_5c[(uint)bVar4 * -2] = *(float *)((int)&CStack_54 + (uint)bVar4 * -8 + 4);
+      afStack_5c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+           *(float *)((int)&CStack_54 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      this_ptr->turn_angle_accumulator = afStack_5c[0];
+      if ((int)afStack_5c[0] < 0x3f20d97c) {
         pCVar1 = (this_ptr->base).vtable._uc;
         this_ptr->walk_state = WALK_STATE_IDLE;
         (*(pCVar1->_uc).clearDoorTarget)(this_ptr);

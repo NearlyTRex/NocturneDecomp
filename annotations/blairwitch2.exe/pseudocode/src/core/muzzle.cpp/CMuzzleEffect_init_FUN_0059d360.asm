@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,CMatrix3x3f *param_3)
+; void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
 ; Parameters:
 ; CMuzzleEffect *  Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined4       Stack[-0x1c]:4  local_1c

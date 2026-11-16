@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 62,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 48
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20",
-    "signature": "undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)"
+    "signature": "CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *directory,char *filename)"
   },
   "function_calls": [
     {
@@ -99,52 +97,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "directory",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "filename",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(this_ptr_00,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(this_ptr_00,param_2,param_3);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

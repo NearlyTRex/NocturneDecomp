@@ -319,7 +319,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x24]      ; 0040944b
     PUSH EDI                            ; 0040944e
     CALL core_actor.cpp_rayCylinderIntersect_FUN_004080c0 ; 0040944f
-        ;   XREF to: 004080c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_004080c0()
+        ;   XREF to: 004080c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_004080c0(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     JMP 0x00409358                      ; 00409454
         ;   XREF to: 00409358 (UNCONDITIONAL_JUMP)  ; LAB_00409358
     PUSH EBX                            ; 00409459

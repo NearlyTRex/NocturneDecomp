@@ -199,7 +199,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_0050d1a0(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType *key_code_ptr,char *description);
-int core_menu_cpp_getSinglePressedKey_FUN_0050d5b0(void);
+int __cdecl core_menu_cpp_getSinglePressedKey_FUN_0050d5b0(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_0050d640(void);
 void __cdecl core_mimic_cpp_staticInit_FUN_0050f000(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0050f030(void);

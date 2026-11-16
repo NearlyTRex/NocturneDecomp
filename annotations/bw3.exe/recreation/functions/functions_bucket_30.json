@@ -547,14 +547,32 @@
     "calls":[
       "00407b30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
     "method":"drawLine2DFromIndices",
     "name":"engine_3d.c_drawLine2DFromIndices_FUN_00407ab0",
+    "params":[
+      {
+        "name":"vertex_index1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_index2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -614,14 +632,32 @@
     "calls":[
       "00407e30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
     "method":"drawLine3DFromIndices",
     "name":"engine_3d.c_drawLine3DFromIndices_FUN_00407db0",
+    "params":[
+      {
+        "name":"vertex_index1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_index2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/3d.c",
@@ -5638,7 +5674,7 @@
     "name":"core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0",
     "params":[
       {
-        "name":"param_2",
+        "name":"hand_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -5646,7 +5682,7 @@
         }
       },
       {
-        "name":"param_3",
+        "name":"blend_time",
         "type":{
           "kind":"builtin",
           "name":"float",
@@ -5654,10 +5690,10 @@
         }
       },
       {
-        "name":"param_4",
+        "name":"carry_offset",
         "type":{
-          "kind":"builtin",
-          "name":"int",
+          "kind":"class",
+          "name":"CMatrix3x4f",
           "ptr":1
         }
       }
@@ -6419,26 +6455,26 @@
     "name":"support_codec.cpp_CAsciiArmor_encode_FUN_00441530",
     "params":[
       {
-        "name":"param_2",
+        "name":"istream",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"ostream",
         "type":{
           "kind":"builtin",
-          "name":"int",
+          "name":"void",
           "ptr":1
         }
       }
     ],
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -6488,8 +6524,8 @@
     "name":"support_codec.cpp_CInStreamPipe_isEof_FUN_00441b30",
     "receiver":true,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -7308,14 +7344,40 @@
     "calls":[
       "004515b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":786,
     "method":"clipTriangleToAABB",
     "name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+    "params":[
+      {
+        "name":"triangle_vertices",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":2
+        }
+      },
+      {
+        "name":"aabb_min",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"aabb_max",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"core/dcube.cpp",
@@ -11136,23 +11198,23 @@
     "name":"core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930",
     "params":[
       {
-        "name":"param_2",
+        "name":"position",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_3",
+        "name":"velocity",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
-          "ptr":0
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
         }
       },
       {
-        "name":"param_4",
+        "name":"model_ptr",
         "type":{
           "kind":"class",
           "name":"CKeyFramedModel",
@@ -11160,10 +11222,10 @@
         }
       },
       {
-        "name":"param_5",
+        "name":"drag",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -18611,15 +18673,65 @@
       "005a28c0",
       "005a3a90"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":102,
     "method":"loadPBGFile",
     "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_00510430",
+    "params":[
+      {
+        "name":"bitmap_set_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPackedBitmapSet",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pbg_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frames_per_bitmap",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_data_load",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"selected_bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CPackedBitmap",
+      "ptr":1
     },
     "tu":"cockpit/pkbitmap.cpp",
     "variadic":false
@@ -22105,14 +22217,14 @@
       "005a3260",
       "005a35cc"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":329,
     "method":"processTrainSounds",
     "name":"core_sound.cpp_processTrainSounds_FUN_0055f6b0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/sound.cpp",
@@ -24025,18 +24137,18 @@
     "name":"support_trstream.cpp_COutStreamFile_seek_FUN_00574930",
     "params":[
       {
-        "name":"param_2",
+        "name":"offset",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"origin",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
@@ -24044,7 +24156,7 @@
     "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"bool",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -25226,15 +25338,33 @@
     "calls":[
       "0045bef0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":94,
     "method":"eulerToQuaternion",
     "name":"core_xform.cpp_eulerToQuaternion_FUN_005860b0",
+    "params":[
+      {
+        "name":"euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"quat_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false

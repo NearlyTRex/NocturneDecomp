@@ -129,7 +129,7 @@ section .text
     LEA ESI,[ESP + 0x100]               ; 00542c88
     LEA EDI,[ESP + 0x10c]               ; 00542c8f
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00542c96
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 00542c9b
     LEA ESI,[ESP + 0xfc]                ; 00542c9e
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00542ca5

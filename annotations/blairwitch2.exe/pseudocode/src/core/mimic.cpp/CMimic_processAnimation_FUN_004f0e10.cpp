@@ -51,7 +51,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004f0e10(CMimic *this_pt
   float local_1c0;
   float afStack_1bc [2];
   CVector3f local_1b4;
-  uint local_1a8;
+  float local_1a8;
   float local_1a4 [2];
   CVector3f local_19c;
   float local_190;
@@ -72,17 +72,14 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004f0e10(CMimic *this_pt
   CVector3f local_f4;
   CVector3f local_e8;
   CVector3f local_dc;
-  float local_d0;
-  float local_cc;
-  float local_c8;
+  CVector3f local_d0;
   CVector3f local_c4;
   float local_b8;
   float local_b4 [2];
   CVector3f local_ac;
   CVector3f local_a0;
   CVector3f local_94;
-  uint local_88;
-  float afStack_84 [2];
+  CVector3f local_88;
   CVector3f local_7c;
   float local_70;
   float local_6c [2];
@@ -124,9 +121,9 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004f0e10(CMimic *this_pt
   afStack_1bc[(uint)bVar11 * -2] = *(float *)((int)&local_10c + (uint)bVar11 * -8 + 4);
   afStack_1bc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
        *(float *)((int)&local_10c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  local_d0 = local_1c0;
-  local_cc = 0.0;
-  local_c8 = afStack_1bc[1];
+  local_d0.x = local_1c0;
+  local_d0.y = 0.0;
+  local_d0.z = afStack_1bc[1];
   local_20 = &(this_ptr->base).base.model;
   local_24 = -1.0;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&local_20->base);
@@ -139,13 +136,13 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004f0e10(CMimic *this_pt
          (ABS((this_ptr->base).base.base.location.position.y -
               *(float *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24)) <= (float)_DAT_005dd959))
       {
-        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_d0);
-        local_1a8 = local_88;
-        local_1a4[(uint)bVar11 * -2] = afStack_84[(uint)bVar11 * -2];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_d0,&local_88);
+        local_1a8 = local_88.x;
+        local_1a4[(uint)bVar11 * -2] = *(float *)((int)&local_88 + (uint)bVar11 * -8 + 4);
         local_1a4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-             afStack_84[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+             *(float *)((int)&local_88 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_1a4[0]);
-        if (SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc) <
+        if (SQRT(local_d0.z * local_d0.z + local_d0.x * local_d0.x + local_d0.y * local_d0.y) <
             (1.0 - ABS(local_14) * (float)_DAT_005dd961) * (float)_DAT_005dd969 +
             (float)_DAT_005dd971) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790

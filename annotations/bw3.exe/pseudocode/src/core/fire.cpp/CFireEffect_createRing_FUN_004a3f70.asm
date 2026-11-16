@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   ring_type
+; CCharacter *     Stack[0x10]:4   owner
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d310
@@ -43,7 +43,7 @@ section .text
     ADD EAX,0x1d0bb94                   ; 004a3f97
     PUSH EAX                            ; 004a3f9c
     CALL core_fire.cpp_CRing_activate_FUN_0049fce0 ; 004a3f9d
-        ;   XREF to: 0049fce0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CRing_activate_FUN_0049fce0(CRing * this_ptr, undefined4 * param_2, undefined4 param_3, undefined4 param_4)
+        ;   XREF to: 0049fce0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CRing_activate_FUN_0049fce0(CRing * this_ptr, CVector3f * position, int ring_type, CCharacter * owner)
     MOV ESI,dword ptr [0x01d0bb90]      ; 004a3fa2 | DAT_01d0bb90
     INC ESI                             ; 004a3fa8
     ADD ESP,0x10                        ; 004a3fa9

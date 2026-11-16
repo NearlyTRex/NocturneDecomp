@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4)
+; void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 ;
 ; Parameters:
 ; CRing *          Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   ring_type
+; CCharacter *     Stack[0x10]:4   owner
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

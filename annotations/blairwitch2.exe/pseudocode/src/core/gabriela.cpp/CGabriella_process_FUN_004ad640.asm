@@ -847,7 +847,7 @@ section .text
     LEA ESI,[EBP + 0xffffff0a]          ; 004adfba
     LEA EDI,[EBP + 0xfffffe0e]          ; 004adfc0
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004adfc6
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xffffff0a]          ; 004adfcb
     ADD ESP,0x4                         ; 004adfd1
     MOVSD ES:EDI,ESI                    ; 004adfd4
@@ -1061,7 +1061,7 @@ section .text
     LEA ESI,[EBP + 0xfffffe26]          ; 004ae242
     LEA EDI,[EBP + 0xfffffef2]          ; 004ae248
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004ae24e
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[EBP + 0xfffffe26]          ; 004ae253
     ADD ESP,0x4                         ; 004ae259
     MOVSD ES:EDI,ESI                    ; 004ae25c
@@ -1702,7 +1702,7 @@ section .text
         ;   XREF to: 004ae98d (CONDITIONAL_JUMP)  ; LAB_004ae98d
     PUSH EBX                            ; 004ae967
     CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 ; 004ae968
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ae96d
     JMP 0x004adcc3                      ; 004ae970
         ;   XREF to: 004adcc3 (UNCONDITIONAL_JUMP)  ; LAB_004adcc3

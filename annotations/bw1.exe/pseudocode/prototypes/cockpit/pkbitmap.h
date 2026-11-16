@@ -115,4 +115,4 @@ CPackedBitmap * __cdecl parsePBGFile(CPackedBitmapSet *bitmap_set_ptr,_FILE *fil
 
 // Original: cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750
 // Address: 00538750
-CPackedBitmap * loadPBGFile(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * __cdecl loadPBGFile(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);

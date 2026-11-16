@@ -235,7 +235,7 @@ section .text
     PUSH 0x3f800000                     ; 005add10
     PUSH EDX                            ; 005add15
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005add16
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005add1b
     LEA ESP,[EBP + 0x7a]                ; 005add1e
     POP EBP                             ; 005add21

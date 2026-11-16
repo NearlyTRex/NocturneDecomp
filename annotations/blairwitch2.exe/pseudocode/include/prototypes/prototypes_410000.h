@@ -38,6 +38,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -198,7 +199,7 @@ CVector3f * __stack_esi core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_00417d60(
 CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_00417e20(CDemonActor *actor,CVector3f *out);
 CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417f20(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_00417f40(CBoneGuy *this_ptr);
-void core_boneguy_cpp_rgbToHsv_FUN_00417f50(void);
+CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_00417f50(CColor3f *in_rgb,CColor3f *out_hsv);
 CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00418110(CColor3f *in_hsv,CColor3f *out_rgb);
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_004184c0(CBoneGuy *this_ptr);
@@ -219,7 +220,7 @@ SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_ctor_FUN_0041a470(SBoneGuyBox
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041a480(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041a4b0(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041a4e0(SMRGLHeaderExtended *mrgl_data);
-void engine_boss_c_modelStructNotSupported4_FUN_0041a510(void);
+void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041a510(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds);
 void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(CBoundingBox3D *this_ptr,CVector3f *point);
 CVector3f * __stack2_esi core_box_cpp_CBoundingBox3D_getCorner_FUN_0041a600(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670(CBoundingBox3D *this_ptr);

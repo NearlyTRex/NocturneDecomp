@@ -145,7 +145,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004f95b0(CInventory *this_ptr,_FIL
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004f9750(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_load_FUN_004f97a0(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004f9ae0(CInventory *this_ptr);
-void core_inv_cpp_setupItems_FUN_004f9b20(int param_1);
+void __cdecl core_inv_cpp_setupItems_FUN_004f9b20(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004f9ed0(CInventory *this_ptr);
 int core_inv_cpp_FUN_004f9ef0(int param_1);

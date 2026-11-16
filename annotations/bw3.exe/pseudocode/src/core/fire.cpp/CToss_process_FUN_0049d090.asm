@@ -142,7 +142,7 @@ section .text
     MOV EDI,dword ptr [0x005fc5a0]      ; 0049d155 | DAT_005fc5a0
     PUSH EDI                            ; 0049d15b
     CALL core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 ; 0049d15c
-        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
+        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, CVector3f * position, int ring_type, CCharacter * owner)
     ADD ESP,0x10                        ; 0049d161
     PUSH EBX                            ; 0049d164
     PUSH 0x5c073a                       ; 0049d165 | = "wp_bindevil.wav"
@@ -306,7 +306,7 @@ section .text
     MOV ECX,dword ptr [0x005fc5a0]      ; 0049d309 | DAT_005fc5a0
     PUSH ECX                            ; 0049d30f
     CALL core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 ; 0049d310
-        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
+        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, CVector3f * position, int ring_type, CCharacter * owner)
     ADD ESP,0x10                        ; 0049d315
     PUSH ESI                            ; 0049d318
     PUSH 0x5c074a                       ; 0049d319 | = "wp_bindevil.wav"

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)
+; void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00435270(CInStreamPipe *this_ptr,CCodec *codec,void *source,int owns_streams,int buffer_size)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; ulong            Stack[0x14]:4   param_5
+; CCodec *         Stack[0x8]:4   codec
+; void *           Stack[0xc]:4   source
+; int              Stack[0x10]:4   owns_streams
+; int              Stack[0x14]:4   buffer_size
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

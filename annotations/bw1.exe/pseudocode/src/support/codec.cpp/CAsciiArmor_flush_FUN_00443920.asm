@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00443920(CAsciiArmor *this_ptr,int *param_2)
+; int __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00443920(CAsciiArmor *this_ptr,void *ostream)
 ;
 ; Parameters:
 ; CAsciiArmor *    Stack[0x4]:4   this_ptr
-; int *            Stack[0x8]:4   param_2
+; void *           Stack[0x8]:4   ostream
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789ABCDEFGHJKLM_00610d70
